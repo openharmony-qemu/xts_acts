@@ -3514,7 +3514,583 @@ export default function AudioSuiteEngineTest() {
       done();
     })
 
-    
+    /**
+     * @tc.name       OH_AudioSuiteEngine_AudioNodeType_004
+     * @tc.number     OH_AudioSuiteEngine_AudioNodeType_004
+     * @tc.desc       OH_AudioNodeType and OH_AudioSuite_SurroundDirection enum
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 0
+     */
+    it('OH_AudioSuiteEngine_AudioNodeType_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      console.info('=====> OH_AudioSuiteEngine_AudioNodeType_004 start ====>');
+      let result : number = audiosuiteenginetest.OH_AudioSuiteEngine_AudioNodeType_004();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> OH_AudioSuiteEngine_AudioNodeType_004 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_SetSpaceRenderPositionParams_001
+     * @tc.number     AudioSuiteEngine_SetSpaceRenderPositionParams_001
+     * @tc.desc       SetSpaceRenderPositionParams AUDIOSUITE_SUCCESS
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 0
+     */
+    it('AudioSuiteEngine_SetSpaceRenderPositionParams_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderPositionParams_001 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetSpaceRenderPositionParams_001();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderPositionParams_001 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_SetSpaceRenderPositionParams_002
+     * @tc.number     AudioSuiteEngine_SetSpaceRenderPositionParams_002
+     * @tc.desc       SetSpaceRenderPositionParams AUDIOSUITE_ERROR_NODE_NOT_EXIST
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_SetSpaceRenderPositionParams_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderPositionParams_002 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetSpaceRenderPositionParams_002();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderPositionParams_002 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_SetSpaceRenderPositionParams_003
+     * @tc.number     AudioSuiteEngine_SetSpaceRenderPositionParams_003
+     * @tc.desc       SetSpaceRenderPositionParams AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_SetSpaceRenderPositionParams_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderPositionParams_003 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetSpaceRenderPositionParams_003();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderPositionParams_003 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_SetSpaceRenderPositionParams_004
+     * @tc.number     AudioSuiteEngine_SetSpaceRenderPositionParams_004
+     * @tc.desc       SetSpaceRenderPositionParams AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_SetSpaceRenderPositionParams_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderPositionParams_004 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetSpaceRenderPositionParams_004();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderPositionParams_004 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_SetSpaceRenderPositionParams_005
+     * @tc.number     AudioSuiteEngine_SetSpaceRenderPositionParams_005
+     * @tc.desc       SetSpaceRenderPositionParams AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_SetSpaceRenderPositionParams_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderPositionParams_005 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetSpaceRenderPositionParams_005();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderPositionParams_005 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderPositionParams_001
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderPositionParams_001
+     * @tc.desc       GetSpaceRenderPositionParams AUDIOSUITE_SUCCESS
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 0
+     */
+    it('AudioSuiteEngine_GetSpaceRenderPositionParams_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderPositionParams_001 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderPositionParams_001();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderPositionParams_001 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderPositionParams_002
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderPositionParams_002
+     * @tc.desc       GetSpaceRenderPositionParams AUDIOSUITE_ERROR_NODE_NOT_EXIST
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_GetSpaceRenderPositionParams_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderPositionParams_002 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderPositionParams_002();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderPositionParams_002 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderPositionParams_003
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderPositionParams_003
+     * @tc.desc       GetSpaceRenderPositionParams AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_GetSpaceRenderPositionParams_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderPositionParams_003 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderPositionParams_003();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderPositionParams_003 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderPositionParams_004
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderPositionParams_004
+     * @tc.desc       GetSpaceRenderPositionParams AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_GetSpaceRenderPositionParams_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderPositionParams_004 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderPositionParams_004();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderPositionParams_004 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderPositionParams_005
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderPositionParams_005
+     * @tc.desc       GetSpaceRenderPositionParams AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_GetSpaceRenderPositionParams_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderPositionParams_005 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderPositionParams_005();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderPositionParams_005 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderPositionParams_006
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderPositionParams_006
+     * @tc.desc       GetSpaceRenderPositionParams AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_GetSpaceRenderPositionParams_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderPositionParams_006 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderPositionParams_006();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderPositionParams_006 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_SetSpaceRenderRotationParams_001
+     * @tc.number     AudioSuiteEngine_SetSpaceRenderRotationParams_001
+     * @tc.desc       SetSpaceRenderRotationParams AUDIOSUITE_SUCCESS
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 0
+     */
+    it('AudioSuiteEngine_SetSpaceRenderRotationParams_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderRotationParams_001 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetSpaceRenderRotationParams_001();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderRotationParams_001 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_SetSpaceRenderRotationParams_002
+     * @tc.number     AudioSuiteEngine_SetSpaceRenderRotationParams_002
+     * @tc.desc       SetSpaceRenderRotationParams AUDIOSUITE_ERROR_NODE_NOT_EXIST
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_SetSpaceRenderRotationParams_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderRotationParams_002 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetSpaceRenderRotationParams_002();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderRotationParams_002 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_SetSpaceRenderRotationParams_003
+     * @tc.number     AudioSuiteEngine_SetSpaceRenderRotationParams_003
+     * @tc.desc       SetSpaceRenderRotationParams AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_SetSpaceRenderRotationParams_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderRotationParams_003 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetSpaceRenderRotationParams_003();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderRotationParams_003 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_SetSpaceRenderRotationParams_004
+     * @tc.number     AudioSuiteEngine_SetSpaceRenderRotationParams_004
+     * @tc.desc       SetSpaceRenderRotationParams AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_SetSpaceRenderRotationParams_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderRotationParams_004 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetSpaceRenderRotationParams_004();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderRotationParams_004 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_SetSpaceRenderRotationParams_005
+     * @tc.number     AudioSuiteEngine_SetSpaceRenderRotationParams_005
+     * @tc.desc       SetSpaceRenderRotationParams AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_SetSpaceRenderRotationParams_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderRotationParams_005 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetSpaceRenderRotationParams_005();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderRotationParams_005 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderRotationParams_001
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderRotationParams_001
+     * @tc.desc       GetSpaceRenderRotationParams AUDIOSUITE_SUCCESS
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 0
+     */
+    it('AudioSuiteEngine_GetSpaceRenderRotationParams_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderRotationParams_001 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderRotationParams_001();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderRotationParams_001 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderRotationParams_002
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderRotationParams_002
+     * @tc.desc       GetSpaceRenderRotationParams AUDIOSUITE_ERROR_NODE_NOT_EXIST
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_GetSpaceRenderRotationParams_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderRotationParams_002 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderRotationParams_002();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderRotationParams_002 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderRotationParams_003
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderRotationParams_003
+     * @tc.desc       GetSpaceRenderRotationParams AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_GetSpaceRenderRotationParams_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderRotationParams_003 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderRotationParams_003();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderRotationParams_003 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderRotationParams_004
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderRotationParams_004
+     * @tc.desc       GetSpaceRenderRotationParams AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_GetSpaceRenderRotationParams_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderRotationParams_004 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderRotationParams_004();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderRotationParams_004 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderRotationParams_005
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderRotationParams_005
+     * @tc.desc       GetSpaceRenderRotationParams AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_GetSpaceRenderRotationParams_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderRotationParams_005 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderRotationParams_005();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderRotationParams_005 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderRotationParams_006
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderRotationParams_006
+     * @tc.desc       GetSpaceRenderRotationParams AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_GetSpaceRenderRotationParams_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderRotationParams_006 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderRotationParams_006();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderRotationParams_006 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_SetSpaceRenderExtensionParams_001
+     * @tc.number     AudioSuiteEngine_SetSpaceRenderExtensionParams_001
+     * @tc.desc       SetSpaceRenderExtensionParams AUDIOSUITE_SUCCESS
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 0
+     */
+    it('AudioSuiteEngine_SetSpaceRenderExtensionParams_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderExtensionParams_001 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetSpaceRenderExtensionParams_001();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderExtensionParams_001 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_SetSpaceRenderExtensionParams_002
+     * @tc.number     AudioSuiteEngine_SetSpaceRenderExtensionParams_002
+     * @tc.desc       SetSpaceRenderExtensionParams AUDIOSUITE_ERROR_NODE_NOT_EXIST
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_SetSpaceRenderExtensionParams_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderExtensionParams_002 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetSpaceRenderExtensionParams_002();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderExtensionParams_002 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_SetSpaceRenderExtensionParams_003
+     * @tc.number     AudioSuiteEngine_SetSpaceRenderExtensionParams_003
+     * @tc.desc       SetSpaceRenderExtensionParams AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_SetSpaceRenderExtensionParams_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderExtensionParams_003 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetSpaceRenderExtensionParams_003();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderExtensionParams_003 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_SetSpaceRenderExtensionParams_004
+     * @tc.number     AudioSuiteEngine_SetSpaceRenderExtensionParams_004
+     * @tc.desc       SetSpaceRenderExtensionParams AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_SetSpaceRenderExtensionParams_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderExtensionParams_004 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetSpaceRenderExtensionParams_004();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderExtensionParams_004 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_SetSpaceRenderExtensionParams_005
+     * @tc.number     AudioSuiteEngine_SetSpaceRenderExtensionParams_005
+     * @tc.desc       SetSpaceRenderExtensionParams AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_SetSpaceRenderExtensionParams_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderExtensionParams_005 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetSpaceRenderExtensionParams_005();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_SetSpaceRenderExtensionParams_005 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderExtensionParams_001
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderExtensionParams_001
+     * @tc.desc       GetSpaceRenderExtensionParams AUDIOSUITE_SUCCESS
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 0
+     */
+    it('AudioSuiteEngine_GetSpaceRenderExtensionParams_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderExtensionParams_001 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderExtensionParams_001();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderExtensionParams_001 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderExtensionParams_002
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderExtensionParams_002
+     * @tc.desc       GetSpaceRenderExtensionParams AUDIOSUITE_ERROR_NODE_NOT_EXIST
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_GetSpaceRenderExtensionParams_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderExtensionParams_002 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderExtensionParams_002();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderExtensionParams_002 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderExtensionParams_003
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderExtensionParams_003
+     * @tc.desc       GetSpaceRenderExtensionParams AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_GetSpaceRenderExtensionParams_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderExtensionParams_003 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderExtensionParams_003();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderExtensionParams_003 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderExtensionParams_004
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderExtensionParams_004
+     * @tc.desc       GetSpaceRenderExtensionParams AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_GetSpaceRenderExtensionParams_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderExtensionParams_004 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderExtensionParams_004();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderExtensionParams_004 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderExtensionParams_005
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderExtensionParams_005
+     * @tc.desc       GetSpaceRenderExtensionParams AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_GetSpaceRenderExtensionParams_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderExtensionParams_005 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderExtensionParams_005();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderExtensionParams_005 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       AudioSuiteEngine_GetSpaceRenderExtensionParams_006
+     * @tc.number     AudioSuiteEngine_GetSpaceRenderExtensionParams_006
+     * @tc.desc       GetSpaceRenderExtensionParams AUDIOSUITE_ERROR_INVALID_PARAM
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('AudioSuiteEngine_GetSpaceRenderExtensionParams_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderExtensionParams_006 start ====>');
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_GetSpaceRenderExtensionParams_006();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> AudioSuiteEngine_GetSpaceRenderExtensionParams_006 end ====>');
+      done();
+    })
 
   })
 }
