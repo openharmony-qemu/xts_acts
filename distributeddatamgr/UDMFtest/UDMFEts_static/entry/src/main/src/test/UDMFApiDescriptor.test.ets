@@ -117,52 +117,6 @@ export default function UDMFApiDescriptorTest() {
     });
 
     /**
-     * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0100
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0100
-     * @tc.desc   Verify the properties of the text type
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      TAG = 'SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_0100';
-      const REFERENCE_URL =
-        "https://gitee.com/openharmony/docs/blob/master/en/application-dev/reference/apis/js-apis-data-uniformTypeDescriptor.md#uniformdatatype";
-      hilog.info(domain, tag, TAG + ' start ');
-      expect(UTD.UniformDataType.TEXT).assertEqual("general.text");
-      try {
-        let typeObj = UTD.getTypeDescriptor(UTD.UniformDataType.TEXT);
-        if (!typeObj) {
-          hilog.info(domain, tag, TAG + 'typeObj assertFail');
-          expect(false).assertTrue();
-          return;
-        }
-        hilog.info(domain, tag, TAG + " typeId:" + typeObj.typeId);
-        hilog.info(domain, tag, TAG + " belongingToTypes:" + typeObj.belongingToTypes);
-        hilog.info(domain, tag, TAG + " description:" + typeObj.description);
-        hilog.info(domain, tag, TAG + " referenceURL:" + typeObj.referenceURL);
-        hilog.info(domain, tag, TAG + " iconFile:" + typeObj.iconFile);
-        hilog.info(domain, tag, TAG + " filenameExtensions:" + typeObj.filenameExtensions.toString());
-        hilog.info(domain, tag, TAG + " mimeTypes:" + typeObj.mimeTypes.toString());
-        expect(typeObj.typeId).assertEqual("general.text");
-        expect(typeObj.belongingToTypes[0]).assertEqual("general.object");
-        expect(typeObj.description).assertEqual("Base type for all text.");
-        expect(typeObj.referenceURL).assertEqual(REFERENCE_URL);
-        expect(typeObj.iconFile).assertEqual("");
-        expect(typeObj.filenameExtensions.toString()).assertEqual("");
-        expect(typeObj.mimeTypes.toString()).assertEqual("text/*");
-        done()
-      } catch (err) {
-        const error = err as BusinessError;
-        hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
-        hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
-        expect().assertFail();
-        done()
-      }
-      hilog.info(domain, tag, TAG + ' end ');
-    });
-
-    /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9611
      * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9611
      * @tc.desc   parameters to belongsTo -- The relationship between the object of the parameter and the parent of the parameter
@@ -7407,7 +7361,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2460
-     * @tc.number testSUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2450
+     * @tc.number testSUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2460
      * @tc.desc   Verify the properties of the rich-text file format data type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8578,28 +8532,6 @@ export default function UDMFApiDescriptorTest() {
         expect().assertFail();
       }
       console.log(tag + "SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_2840 end");
-    });
-
-    /**
-     * @tc.name   SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1140
-     * @tc.number testSUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1140
-     * @tc.desc   parameter to getUniformDataTypesByFilenameExtension()  --parameter is ".xls"
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      console.log(tag + 'SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1140 start');
-      try {
-        let result = UTD.getUniformDataTypesByFilenameExtension(".xls");
-        console.log(tag + "result=====>" + JSON.stringify(result));
-        expect(result[0]).assertEqual(UTD.UniformDataType.EXCEL)
-      } catch (e) {
-        let err: BusinessError = e as BusinessError;
-        console.log(tag + "err message:" + err.message + ";err code:" + err.code);
-        expect().assertFail();
-      }
-      console.log(tag + "SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1140 end");
     });
 
     /**

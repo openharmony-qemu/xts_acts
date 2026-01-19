@@ -536,7 +536,7 @@ export default function UtdMimeTypeTest() {
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0350
      * @tc.number testSUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_0350
-     * @tc.desc   getUniformDataTypeByMIMEType paramter is "audio/vnd.rn-realaudio"
+     * @tc.desc   getUniformDataTypeByMIMEType test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -2703,7 +2703,7 @@ export default function UtdMimeTypeTest() {
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1900
      * @tc.number testSUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1900
-     * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.text-master"
+     * @tc.desc   getUniformDataTypeByMIMEType test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -2837,7 +2837,7 @@ export default function UtdMimeTypeTest() {
 
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1990
-     * @tc.number testSUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1980
+     * @tc.number testSUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_1990
      * @tc.desc   getUniformDataTypeByMIMEType paramter is "application/vnd.oasis.opendocument.spreadsheet-template"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2883,7 +2883,7 @@ export default function UtdMimeTypeTest() {
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2020
      * @tc.number testSUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_2020
-     * @tc.desc   getUniformDataTypeByMIMEType paramter is  "application/vnd.rn-realmedia"
+     * @tc.desc   getUniformDataTypeByMIMEType test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
