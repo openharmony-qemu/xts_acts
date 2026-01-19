@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,6 +31,7 @@ import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { UtilsTest } from '../Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 export default function ExpectedFrameRateRange() {
   describe('ExpectedFrameRateRange', () => {
@@ -81,7 +82,7 @@ it('ExpectedFrameRateRange_static_001', Level.LEVEL3, async (done: () => void): 
       }
       let callback = (indexEvent: emitter.EventData) => {
         console.info('ExpectedFrameRateRange_static_001 get state result is: ' + JSON.stringify(indexEvent))
-        const event: Record<string,undefined|null|Object> = indexEvent.data as Record<string,undefined|null|Object>
+        const event: Record<String,RecordData> = indexEvent.data as Record<String,RecordData>
         try {
           expect(event['min']).assertEqual(60);
           expect(event['max']).assertEqual(120);

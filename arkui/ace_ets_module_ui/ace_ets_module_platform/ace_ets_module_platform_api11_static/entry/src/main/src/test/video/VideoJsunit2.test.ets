@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,6 +37,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import events_emitter from '@ohos.events.emitter'
 import { BusinessError } from '@ohos.base';
 import { PlaybackSpeed } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 export default function videoJsunit2() {
   describe('videoTest', () => {
@@ -101,7 +102,7 @@ it('testVideoStatic02', Level.LEVEL1, async (done: () => void): Promise<void> =>
         let eventData: events_emitter.EventData = {
           data: {
             'progressRates': PlaybackSpeed.Speed_Forward_2_00_X,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 235,
@@ -132,7 +133,7 @@ it('testVideoStatic03', Level.LEVEL1, async (done: () => void): Promise<void> =>
         let eventData: events_emitter.EventData = {
           data: {
             "progressRates": PlaybackSpeed.Speed_Forward_1_75_X,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 235,
@@ -163,7 +164,7 @@ it('testVideoStatic04', Level.LEVEL1, async (done: () => void): Promise<void> =>
         let eventData: events_emitter.EventData = {
           data: {
             "progressRates": PlaybackSpeed.Speed_Forward_1_25_X,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 235,
@@ -194,7 +195,7 @@ it('testVideoStatic05', Level.LEVEL1, async (done: () => void): Promise<void> =>
         let eventData: events_emitter.EventData = {
           data: {
             "progressRates": PlaybackSpeed.Speed_Forward_1_00_X,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 235,
@@ -226,7 +227,7 @@ it('testVideoStatic06', Level.LEVEL1, async (done: () => void): Promise<void> =>
         let eventData: events_emitter.EventData = {
           data: {
             "progressRates": PlaybackSpeed.Speed_Forward_0_75_X,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 235,
@@ -258,7 +259,7 @@ it('testVideoStatic07', Level.LEVEL1, async (done: () => void): Promise<void> =>
         let eventData: events_emitter.EventData = {
           data: {
             "isStopped": true,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 235,

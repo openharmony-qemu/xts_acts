@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,9 +14,9 @@
  */
 
 import webview from '@ohos.web.webview'
-import { BusinessError, Callback } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { State } from '@ohos.arkui.stateManagement'
-import { Button, ClickEvent, Column, Component, Entry, Row, Text, Web,RecordData } from '@ohos.arkui.component'
+import { Button, ClickEvent, Column, Component, Entry, Row, Text, Web } from '@ohos.arkui.component'
 import { Driver, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import { Hypium } from '../../../hypium';

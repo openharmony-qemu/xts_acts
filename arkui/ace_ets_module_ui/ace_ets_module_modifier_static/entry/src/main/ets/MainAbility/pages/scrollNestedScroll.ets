@@ -21,6 +21,7 @@ import { Entry, Column, Component, Scroll, Scroller, Flex,  TextAlign,NestedScro
 import { BusinessError } from '@ohos.base';
 import { AppStorage,State } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 class CustomModifier extends ScrollModifier {
   applyNormalAttribute(instance: ScrollAttribute): void {
     // super.applyNormalAttribute?.(instance);
@@ -52,7 +53,7 @@ struct ScrollNestedScroll {
                   "ACTION": this.parentScrollTime > 0 && this.selfScrollTime > 0,
                   "parentScrollTime": this.parentScrollTime,
                   "selfScrollTime": this.selfScrollTime
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 77004,

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from './Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -104,8 +105,8 @@ it('sourceTypeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise
       let callback = (indexData: events_emitter.EventData) => {
         console.info("sourceTypeTest_static_0100 get event state result is: " + JSON.stringify(indexData));
         // let eve = indexData.data as Eve
-        const data = indexData.data as Record<string, Object | undefined | null>
-        const event = data['event'] as Record<string, Object | undefined | null>
+        const data = indexData.data as Record<String,RecordData>
+        const event = data['event'] as Record<String,RecordData>
         expect(event['source']).assertEqual(0)
       }
       let innerEvent: events_emitter.InnerEvent = {

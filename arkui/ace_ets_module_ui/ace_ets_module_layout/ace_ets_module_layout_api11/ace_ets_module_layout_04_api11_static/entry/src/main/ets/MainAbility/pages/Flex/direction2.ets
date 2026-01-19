@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,6 +16,7 @@
 import { Entry, Component, Column, Direction,Text, Flex, ColumnOptions, Margin, Alignment, Row } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -63,7 +64,7 @@ struct PositionExample {
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       console.info("direction2 page state change called:" + JSON.stringify(eventData));
       if (data['direction'] != null) {
         this.sDirection = data['direction'] as Direction;

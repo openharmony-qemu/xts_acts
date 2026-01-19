@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from './Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { SharedTransitionEffectType} from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 interface EventD {
   duration?: number
@@ -84,7 +85,7 @@ it('sharedTransitionTest_static_0100', Level.LEVEL0, async (done: () => void): P
             "duration": 2000,
             "delay": 5,
             "type": SharedTransitionEffectType.Exchange
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 194,
@@ -96,7 +97,7 @@ it('sharedTransitionTest_static_0100', Level.LEVEL0, async (done: () => void): P
         console.log("sharedTransitionTest_static_0100 change component data error: " + err.message);
       }
       let callback = (indexEventOne: events_emitter.EventData) => {
-        const data = indexEventOne.data as Record<String,undefined|null|Object>
+        const data = indexEventOne.data as Record<String,RecordData>
         console.info("sharedTransitionTest_static_0100 get state result is: " + JSON.stringify(indexEventOne));
         try {
           expect(data["duration"] as int).assertEqual(2000);

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,6 +42,7 @@ import {
   Visibility
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -71,7 +72,7 @@ struct AppearExample {
             let backData: emitter.EventData = {
               data: {
                 "ACTION": this.isShow,
-              } as Record<String, undefined | null | Object>
+              } as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 58,
@@ -98,7 +99,7 @@ struct AppearExample {
               let backData2: emitter.EventData = {
                 data: {
                   "APPEAR": this.appearFlag,
-                } as Record<String, undefined | null | Object>
+                } as Record<String,RecordData>
               }
               let backEvent2: emitter.InnerEvent = {
                 eventId: 59,
@@ -121,7 +122,7 @@ struct AppearExample {
               let backData1: emitter.EventData = {
                 data: {
                   "ACTION": this.disAppearFlag,
-                } as Record<String, undefined | null | Object>
+                } as Record<String,RecordData>
               }
               let backEvent1: emitter.InnerEvent = {
                 eventId: 60,
@@ -142,7 +143,7 @@ struct AppearExample {
   private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("[appear] page stateChangCallBack");
     if (eventData != null) {
-      const data = eventData.data as Record<String, undefined | null | Object>
+      const data = eventData.data as Record<String,RecordData>
       console.info("[appear] page state change called:" + JSON.stringify(eventData));
       if (data['isShow'] != null) {
         this.isShow = data['isShow'] as boolean;

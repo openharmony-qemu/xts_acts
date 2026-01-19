@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,6 +40,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -109,7 +110,7 @@ export default function stageAlertDialog() {
           }
           let callback1 = (eventData: emitter.EventData) => {
             console.info("stageAlertDialog001 get event state result is: " + JSON.stringify(eventData));
-            expect(((eventData.data) as Record<String,undefined|null|Object>)?.['STATUS']).assertEqual(true);
+            expect(((eventData.data) as Record<String,RecordData>)?.['STATUS']).assertEqual(true);
             done();
           }
           try {
@@ -147,7 +148,7 @@ export default function stageAlertDialog() {
           }
           let callback1 = (eventData: emitter.EventData) => {
             console.info("stageAlertDialog002 get event state result is: " + JSON.stringify(eventData));
-            expect(((eventData.data) as Record<String,undefined|null|Object>)?.['STATUS']).assertEqual(10);
+            expect(((eventData.data) as Record<String,RecordData>)?.['STATUS']).assertEqual(10);
             done();
           }
           try {
@@ -185,7 +186,7 @@ export default function stageAlertDialog() {
           }
           let callback1 = (eventData: emitter.EventData) => {
             console.info("stageAlertDialog003_static get event state result is: " + JSON.stringify(eventData));
-            expect(((eventData.data) as Record<String,undefined|null|Object>)?.['STATUS']).assertEqual("STATUS");
+            expect(((eventData.data) as Record<String,RecordData>)?.['STATUS']).assertEqual("STATUS");
             done();
           }
           try {

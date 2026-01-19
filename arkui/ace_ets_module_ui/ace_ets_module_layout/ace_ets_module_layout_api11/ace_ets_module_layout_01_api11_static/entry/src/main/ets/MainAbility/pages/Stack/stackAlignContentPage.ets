@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,6 +17,7 @@
 import events_emitter from '@ohos.events.emitter';
 import {Entry,Component,Column,Text,Flex,Stack,FlexDirection,Alignment,ItemAlign,Margin,TextAlign,TextOverflow,FontWeight,GridRow,FlexAlign,GridCol,AttributeModifier,StackAttribute} from '@ohos.arkui.component'
 import {State, Observed} from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base';
 
 @Observed
 class MyStackAlignContentModifier implements AttributeModifier<StackAttribute> {
@@ -34,7 +35,7 @@ struct StackAlignContentExample {
   private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     if (eventData != null) {
       console.info("stackAlignContent page state change called:" + JSON.stringify(eventData));
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       if (data["alignContentValue"] != null) {
         this.mod1.alignContentValue = data["alignContentValue"] as Alignment;
         //old test

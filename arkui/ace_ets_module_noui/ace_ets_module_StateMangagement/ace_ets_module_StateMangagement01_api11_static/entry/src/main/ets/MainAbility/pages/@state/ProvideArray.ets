@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -69,7 +69,7 @@ struct Child_AI {
 @Component
 struct Ancestors_AI {
   // @Provide装饰的联合类型count由入口组件Ancestors提供其后代组件
-  @Provide Array: Array<Number> | Array<boolean> | Boolean | Array<Resource>|Array<Int> = [1];
+  @Provide Array: Array<Number> | Array<boolean> | Boolean | Array<Resource>|Array<Int> = [1] as Array<Int>;
 
 
   build() {
@@ -82,7 +82,7 @@ struct Ancestors_AI {
       Text("设置变量Array<Number>类型[1]-->[10]").height('5%')
       Button('change')
         .onClick(():void => {
-          this.Array = [10];
+          this.Array = [10] as Array<number>;
         })
         .key('state1')
         .height('5%')

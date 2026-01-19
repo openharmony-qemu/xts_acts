@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,6 +38,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -101,7 +102,7 @@ it('testGridColOffset_static_01', Level.LEVEL1, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "gridColOffsetNum": 1,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -124,7 +125,7 @@ it('testGridColOffset_static_01', Level.LEVEL1, async (done: () => void): Promis
         let eventData3: events_emitter.EventData = {
           data: {
             "gridColOffsetNum": 2,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent3: events_emitter.InnerEvent = {
           eventId: 182,
@@ -169,7 +170,7 @@ it('testGridColSpan_static_02', Level.LEVEL1, async (done: () => void): Promise<
         let eventData: events_emitter.EventData = {
           data: {
             "spanNum": 0,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -192,7 +193,7 @@ it('testGridColSpan_static_02', Level.LEVEL1, async (done: () => void): Promise<
         let eventData3: events_emitter.EventData = {
           data: {
             "spanNum": 1,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent3: events_emitter.InnerEvent = {
           eventId: 184,
@@ -243,7 +244,7 @@ it('testGridColOrder_static_03', Level.LEVEL1, async (done: () => void): Promise
         let eventData: events_emitter.EventData = {
           data: {
             "orderNum": 1,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,

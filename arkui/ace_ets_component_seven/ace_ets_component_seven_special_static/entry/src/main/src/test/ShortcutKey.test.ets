@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,6 +24,7 @@ import inspector from '@ohos.arkui.inspector'
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility } from './Util.test'
+import { RecordData } from '@ohos.base';
 
 export default function shortcutKeyJsunit() {
 
@@ -67,8 +68,8 @@ it('ArkUI_Shortcut_Key_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       console.info(`${SUITE} ${CASE} START`);
 
       let callback = (event: events_emitter.EventData) => {
-        expect((event.data as Record<string,undefined|null|Object>)['msg']).assertEqual('Ctrl_B');
-        console.info(`${SUITE} ${CASE} event.data.msg:` + (event.data as Record<string,undefined|null|Object>)['msg']);
+        expect((event.data as Record<String,RecordData>)['msg']).assertEqual('Ctrl_B');
+        console.info(`${SUITE} ${CASE} event.data.msg:` + (event.data as Record<String,RecordData>)['msg']);
         done();
       }
       let event: events_emitter.InnerEvent = {
