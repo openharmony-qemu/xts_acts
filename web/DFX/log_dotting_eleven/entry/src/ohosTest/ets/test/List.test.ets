@@ -15,8 +15,10 @@
 import WebViewScrollCallback from './WebViewScrollCallback.test';
 import WebViewNavigationPolicy from './WebViewNavigationPolicy.test';
 import WebViewOnWindowNewExt from './WebViewOnWindowNewExt.test';
+import WebViewWindowFeatures from './WebViewWindowFeatures.test';
 export default function testsuite() {
   WebViewScrollCallback();
   WebViewNavigationPolicy();
-  WebViewOnWindowNewExt()
+  WebViewOnWindowNewExt();
+  WebViewWindowFeatures();
 }
