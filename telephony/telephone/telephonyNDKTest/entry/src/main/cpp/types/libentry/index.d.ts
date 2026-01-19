@@ -34,3 +34,5 @@ export const OHTelephonyGetNetworkStateParam: (a: number) => number;
 export const OHTelephonyGetNetworkStateForSlot: (soltId: number) => XTSNetworkStateObj;
 
 export const OHTelephonyGetNetworkState: () => XTSNetworkStateObj;
+
+export const OH_Telephony_GetNetworkStateForSlot0100: () => number;
