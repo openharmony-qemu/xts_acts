@@ -50,6 +50,7 @@ import menuSubMenuExpandSymbolTest from './MenuTest/subMenuExpandSymbol.test';
 import selectModalModeTest from './MenuTest/selectModalMode.test';
 import PreviewScaleModeTest from './MenuTest/PreviewScaleModeTest.test';
 import AvailableLayoutAreaTest from './MenuTest/AvailableLayoutAreaTest.test';
+import BindMenuWithResponse from './Menu/BindMenuWithResponse.test';
 
 export default function testsuite() {
   bindMenuHapticFeedbackMode();
@@ -87,4 +88,5 @@ export default function testsuite() {
   maskTest();
   maskColorTest();
   maskBackgroundBlurStyleTest();
+  BindMenuWithResponse();
 }
