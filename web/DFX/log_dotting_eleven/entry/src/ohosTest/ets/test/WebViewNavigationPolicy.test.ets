@@ -73,7 +73,7 @@ export default function WebViewNavigationPolicyTest() {
      */
     it('testWebViewNavigationPolicy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitWebViewNavigationPolicy001', 101008)
-      Utils.registerEvent('testWebViewNavigationPolicy001', navigationPolicy.NEW_POPUP, 20260113, done);
+      Utils.registerEvent('testWebViewNavigationPolicy001', NavigationPolicy.NEW_POPUP, 20260113, done);
       await Utils.waitAndClickComponent(driver, "WebViewNavigationPolicyButton","testWebViewNavigationPolicy001");
     })
     /**
@@ -86,7 +86,7 @@ export default function WebViewNavigationPolicyTest() {
      */
     it('testWebViewNavigationPolicy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitWebViewNavigationPolicy002', 101008)
-      Utils.registerEvent('testWebViewNavigationPolicy002', navigationPolicy.NEW_WINDOW, 20260114, done);
+      Utils.registerEvent('testWebViewNavigationPolicy002', NavigationPolicy.NEW_WINDOW, 20260114, done);
       await Utils.waitAndClickComponent(driver, "WebViewNavigationPolicyButton","testWebViewNavigationPolicy002");
     })
     /**
@@ -99,7 +99,7 @@ export default function WebViewNavigationPolicyTest() {
      */
     it('testWebViewNavigationPolicy003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitWebViewNavigationPolicy003', 101008)
-      Utils.registerEvent('testWebViewNavigationPolicy003', navigationPolicy.NEW_BACKGROUND_TAB, 20260115, done);
+      Utils.registerEvent('testWebViewNavigationPolicy003', NavigationPolicy.NEW_BACKGROUND_TAB, 20260115, done);
       await Utils.waitAndClickComponent(driver, "WebViewNavigationPolicyButton","testWebViewNavigationPolicy003");
     })
 
@@ -113,7 +113,7 @@ export default function WebViewNavigationPolicyTest() {
      */
     it('testWebViewNavigationPolicy004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitWebViewNavigationPolicy004', 101008)
-      Utils.registerEvent('testWebViewNavigationPolicy004', navigationPolicy.NEW_BACKGROUND_TAB, 20260116, done);
+      Utils.registerEvent('testWebViewNavigationPolicy004', NavigationPolicy.NEW_BACKGROUND_TAB, 20260116, done);
       await Utils.waitAndClickComponent(driver, "WebViewNavigationPolicyButton","testWebViewNavigationPolicy004");
     })
     /**
@@ -126,7 +126,7 @@ export default function WebViewNavigationPolicyTest() {
      */
     it('testWebViewNavigationPolicy005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitWebViewNavigationPolicy005', 101008)
-      Utils.registerEvent('testWebViewNavigationPolicy005', navigationPolicy.NEW_FOREGROUND_TAB, 20260117, done);
+      Utils.registerEvent('testWebViewNavigationPolicy005', NavigationPolicy.NEW_FOREGROUND_TAB, 20260117, done);
       await Utils.waitAndClickComponent(driver, "WebViewNavigationPolicyButton","testWebViewNavigationPolicy005");
     })
   })
