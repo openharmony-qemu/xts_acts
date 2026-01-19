@@ -89,25 +89,30 @@ static Camera_PhotoOutput *photoOutput = nullptr;
 static Camera_CaptureSession *captureSession = nullptr;
 #define NEED_SLEEP_SECONDS 1
 
-static void CameraManagerStatusCallback(Camera_Manager *cameraManager, Camera_StatusInfo *status) {
+static void CameraManagerStatusCallback(Camera_Manager *cameraManager, Camera_StatusInfo *status)
+{
     LOGI("CameraManagerStatusCallback is called");
 }
 
-static CameraManager_Callbacks *GetCameraManagerListener() {
+static CameraManager_Callbacks *GetCameraManagerListener()
+{
     static CameraManager_Callbacks cameraManagerListener = {.onCameraStatus = CameraManagerStatusCallback};
     return &cameraManagerListener;
 }
 
-static void OnCameraInputError(const Camera_Input *cameraInput, Camera_ErrorCode errorCode) {
+static void OnCameraInputError(const Camera_Input *cameraInput, Camera_ErrorCode errorCode)
+{
     LOGI("OnCameraInput errorCode: %{public}d", errorCode);
 }
 
-static CameraInput_Callbacks *GetCameraInputListener(void) {
+static CameraInput_Callbacks *GetCameraInputListener(void)
+{
     static CameraInput_Callbacks cameraInputCallbacks = {.onError = OnCameraInputError};
     return &cameraInputCallbacks;
 }
 
-static bool IsSupportedSceneMode(Camera_Device camera, Camera_SceneMode sceneMode) {
+static bool IsSupportedSceneMode(Camera_Device camera, Camera_SceneMode sceneMode)
+{
     Camera_SceneMode *sceneModes = nullptr;
     uint32_t sceneModeSize = 0;
     Camera_ErrorCode ret = OH_CameraManager_GetSupportedSceneModes(&camera, &sceneModes, &sceneModeSize);
@@ -124,11 +129,12 @@ static bool IsSupportedSceneMode(Camera_Device camera, Camera_SceneMode sceneMod
     return false;
 }
 
-static void CreateAndOpenCamera() {
+static void CreateAndOpenCamera()
+{
     uint32_t size = 0;
     uint32_t cameraDeviceIndex = 0;
     Camera_ErrorCode ret = OH_Camera_GetCameraManager(&cameraManager);
-    LOGI("OH_Camera_GetCameraManager failed. %{public}d",ret);
+    LOGI("OH_Camera_GetCameraManager failed. %{public}d", ret);
     if (cameraManager == nullptr || ret != CAMERA_OK) {
         LOGI("OH_Camera_GetCameraManager failed.");
         return;
@@ -137,12 +143,9 @@ static void CreateAndOpenCamera() {
     if (ret != CAMERA_OK) {
         LOGI("OH_CameraManager_RegisterCallback failed.");
     }
-    LOGI("OH_CameraManager_GetSupportedCameras failed. %{public}d",cameraManager);
-    LOGI("OH_CameraManager_GetSupportedCameras failed. %{public}d",cameras);
-    LOGI("OH_CameraManager_GetSupportedCameras failed. %{public}d",size);
     ret = OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &size);
     if (cameras == nullptr || size == 0 || ret != CAMERA_OK) {
-        LOGI("OH_CameraManager_GetSupportedCameras failed. %{public}d",ret);
+        LOGI("OH_CameraManager_GetSupportedCameras failed. %{public}d", ret);
         return;
     }
     ret = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[cameraDeviceIndex], &cameraInput);
@@ -162,7 +165,8 @@ static void CreateAndOpenCamera() {
     LOGI("camer input 创建成功");
 }
 
-static void CreatePhotoOutput(const char *surfaceID) {
+static void CreatePhotoOutput(const char *surfaceID)
+{
     const Camera_Device camera = cameras[0];
     Camera_OutputCapability *cameraOutputCapability = nullptr;
     bool isSupported = IsSupportedSceneMode(camera, Camera_SceneMode::NORMAL_PHOTO);
@@ -196,7 +200,8 @@ static void CreatePhotoOutput(const char *surfaceID) {
     }
 }
 
-static void CreateCaptureSession() {
+static void CreateCaptureSession()
+{
     if (cameraManager == nullptr) {
         LOGI("cameraManager is nullptr.");
     }
@@ -234,7 +239,6 @@ static void CreateCaptureSession() {
     }
     LOGI("camera session start end");
 }
-
 static OH_ImageReceiverNative *receiver = nullptr;
 static OH_ImageReceiverOptions *options = nullptr;
 napi_value OHImageSourceInfoCreateTest(napi_env env, napi_callback_info info)
@@ -273,13 +277,10 @@ napi_value OHImageNativeGetFormatTest(napi_env env, napi_callback_info info)
     LOGI("get argValue %{public}d", index);
     napi_ref jsCallbackHandler;
     napi_create_reference(env, argValue[1], 1, &(jsCallbackHandler));
-    LOGI("get 1");
     OH_ImageReceiverOptions *options = nullptr;
     OH_ImageReceiverOptions_Create(&options);
-    LOGI("get 2");
     OH_ImageReceiverNative *receiver = nullptr;
     OH_ImageReceiverNative_Create(options, &receiver);
-    LOGI("get 3");
     uint64_t surfaceId = 0;
     OH_ImageReceiverNative_GetReceivingSurfaceId(receiver, &surfaceId);
     LOGI("surfaceId is:%{public}d", surfaceId);
@@ -287,20 +288,14 @@ napi_value OHImageNativeGetFormatTest(napi_env env, napi_callback_info info)
         LOGI("ImageReceiverNativeCTest buffer available.");
     };
     Image_ErrorCode errCode = OH_ImageReceiverNative_On(receiver, myImageReceiverCallback);
-    LOGI("get 4");
     std::string surfaceIDStr = std::to_string(surfaceId);
     const char *constCharPtr = surfaceIDStr.c_str();
     CreateAndOpenCamera();
-    LOGI("get 5");
     CreatePhotoOutput(constCharPtr);
-    LOGI("get 6");
     CreateCaptureSession();
-    LOGI("get 7");
     std::this_thread::sleep_for(std::chrono::seconds(NEED_SLEEP_SECONDS));
-    LOGI("get 8");
     OH_ImageNative *image = nullptr;
     errCode = OH_ImageReceiverNative_ReadLatestImage(receiver, &image);
-    LOGI("get 9");
     if (errCode != IMAGE_SUCCESS) {
         LOGI("ImageReceiverNativeCTest get image receiver next image failed, errCode: %{public}d.", errCode);
     }
@@ -331,7 +326,7 @@ napi_value OHImageNativeGetFormatTest(napi_env env, napi_callback_info info)
     LOGI("OH_ImageReceiverNative_On end");
     return result;
 }
-napi_value OHImageNativeGetBufferDataTest(napi_env env, napi_callback_info info) 
+napi_value OHImageNativeGetBufferDataTest(napi_env env, napi_callback_info info)
 {
     LOGI("OH_ImageReceiverNative_On start");
     napi_value thisVar = nullptr;
@@ -411,29 +406,24 @@ napi_value OHPixelmapNativeReadPixelsTest(napi_env env, napi_callback_info info)
     Image_ErrorCode code;
     OH_Pixelmap_InitializationOptions *ops;
     code = OH_PixelmapInitializationOptions_Create(&ops);
-    LOGI("get 2 %{public}d", code);
     code = OH_PixelmapInitializationOptions_SetWidth(ops, width);
-    LOGI("get 3 %{public}d", code);
     code = OH_PixelmapInitializationOptions_SetHeight(ops, height);
-    LOGI("get 4 %{public}d", code);
     code = OH_PixelmapInitializationOptions_SetPixelFormat(ops, PIXEL_FORMAT_BGRA_8888);
-    LOGI("get 5 %{public}d", code);
     code = OH_PixelmapInitializationOptions_SetAlphaType(ops, PIXELMAP_ALPHA_TYPE_UNKNOWN);
-    LOGI("get 6 %{public}d", code);
     OH_PixelmapNative *pixelmap = nullptr;
     uint8_t *buffer;
     uint8_t *destination;
     size_t bufferSize = 0;
-    size_t ImageBufferSize = 0;
+    size_t imageBufferSize = 0;
     bufferSize = IMAGE_BUFFER_SIZE;
-    ImageBufferSize = IMAGE_BUFFER_SIZE;
+    imageBufferSize = IMAGE_BUFFER_SIZE;
     buffer = (uint8_t *)malloc(bufferSize);
-    destination = (uint8_t *)malloc(ImageBufferSize);
+    destination = (uint8_t *)malloc(imageBufferSize);
     code = OH_PixelmapNative_CreatePixelmap(data, dataLength, ops, &pixelmap);
     Image_ErrorCode errorCode;
     switch (index) {
     case CASE_INDEX_1:
-        errorCode = OH_PixelmapNative_ReadPixels(pixelmap, destination, &ImageBufferSize);
+        errorCode = OH_PixelmapNative_ReadPixels(pixelmap, destination, &imageBufferSize);
         break;
     default:
         break;
@@ -458,30 +448,25 @@ napi_value OHPixelmapNativeWritePixelsTest(napi_env env, napi_callback_info info
     Image_ErrorCode code;
     OH_Pixelmap_InitializationOptions *ops;
     code = OH_PixelmapInitializationOptions_Create(&ops);
-    LOGI("get 2 %{public}d", code);
     code = OH_PixelmapInitializationOptions_SetWidth(ops, width);
-    LOGI("get 3 %{public}d", code);
     code = OH_PixelmapInitializationOptions_SetHeight(ops, height);
-    LOGI("get 4 %{public}d", code);
     code = OH_PixelmapInitializationOptions_SetPixelFormat(ops, PIXEL_FORMAT_BGRA_8888);
-    LOGI("get 5 %{public}d", code);
     code = OH_PixelmapInitializationOptions_SetAlphaType(ops, PIXELMAP_ALPHA_TYPE_UNKNOWN);
-    LOGI("get 6 %{public}d", code);
     OH_PixelmapNative *pixelmap = nullptr;
     uint8_t *buffer;
     uint8_t *destination;
     size_t bufferSize = 0;
-    size_t ImageBufferSize = 0;
+    size_t imageBufferSize = 0;
     bufferSize = IMAGE_BUFFER_SIZE;
-    ImageBufferSize = IMAGE_BUFFER_SIZE;
+    imageBufferSize = IMAGE_BUFFER_SIZE;
     buffer = (uint8_t *)malloc(bufferSize);
-    destination = (uint8_t *)malloc(ImageBufferSize);
+    destination = (uint8_t *)malloc(imageBufferSize);
     code = OH_PixelmapNative_CreatePixelmap(data, dataLength, ops, &pixelmap);
     Image_ErrorCode errorCode;
     switch (index) {
     case CASE_INDEX_1:
-        errorCode = OH_PixelmapNative_ReadPixels(pixelmap, destination, &ImageBufferSize);
-        errorCode = OH_PixelmapNative_WritePixels(pixelmap, destination, ImageBufferSize);
+        errorCode = OH_PixelmapNative_ReadPixels(pixelmap, destination, &imageBufferSize);
+        errorCode = OH_PixelmapNative_WritePixels(pixelmap, destination, imageBufferSize);
         break;
     default:
         break;
@@ -517,26 +502,19 @@ napi_value OHImageNativeGetBufferDataValueTest(napi_env env, napi_callback_info 
         LOGI("ImageReceiverNativeCTest buffer available.");
     };
     Image_ErrorCode errCode = OH_ImageReceiverNative_On(receiver, myImageReceiverCallback);
-    LOGI("OH_ImageReceiverNative_On SUCCEED");
     std::string surfaceIDStr = std::to_string(surfaceId);
     const char *constCharPtr = surfaceIDStr.c_str();
     CreateAndOpenCamera();
-    LOGI("CreateAndOpenCamera SUCCEED");
     CreatePhotoOutput(constCharPtr);
-    LOGI("CreatePhotoOutput SUCCEED");
     CreateCaptureSession();
-    LOGI("CreateCaptureSession SUCCEED");
     std::this_thread::sleep_for(std::chrono::seconds(NEED_SLEEP_SECONDS));
-    LOGI("sleep_for SUCCEED");
     OH_ImageNative *image = nullptr;
     OH_ImageBufferData imageBufferData;
     errCode = OH_ImageReceiverNative_ReadLatestImage(receiver, &image);
-    LOGI("OH_ImageReceiverNative_ReadLatestImage SUCCEED");
     if (errCode != IMAGE_SUCCESS) {
         LOGI("ImageReceiverNativeCTest get image receiver next image failed, errCode: %{public}d.", errCode);
     }
-    Image_ErrorCode errorCode;
-    errorCode = OH_ImageNative_GetBufferData(image, &imageBufferData);
+    errCode = OH_ImageNative_GetBufferData(image, &imageBufferData);
     int code;
     switch (index) {
     case CASE_INDEX_1:

@@ -29,23 +29,6 @@ const CASE_INDEX_4 = 4;
 const CASE_INDEX_5 = 5;
 const CASE_INDEX_6 = 6;
 const TAG = 'OHImageSizeSupp';
-let fdNumber: number;
-async function getFd(path: string) {
-  let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-  console.info(TAG, 'get testContext success', context);
-  let basePath = context.filesDir;
-  console.info(TAG, 'get filesDir success',);
-  let filePath = basePath + '/' + path;
-  console.info(TAG, 'image case filePath is ' + filePath);
-  await fileio.open(filePath).then((data) => {
-    fdNumber = data;
-    console.info(TAG, "image case open fd success " + fdNumber);
-  }, (err: BusinessError) => {
-    console.info(TAG, "image cese open fd fail" + err)
-  }).catch((err: BusinessError) => {
-    console.info(TAG, "image case open fd err " + err);
-  })
-}
 
 export default function ImageOHImageSourceInfoCreate() {
   describe('ImageOHImageSourceInfoCreate', () => {
@@ -172,7 +155,7 @@ export default function ImageOHImageSourceInfoCreate() {
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_001
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_001
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-EFFECT_SUCCESS
      * @tc.size    MediumTest0
      * @tc.type    Function
      * @tc.level   Level 0
@@ -189,7 +172,7 @@ export default function ImageOHImageSourceInfoCreate() {
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_002
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_002
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-BUFFER_SIZE
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-BUFFER_SIZE-EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -206,7 +189,7 @@ export default function ImageOHImageSourceInfoCreate() {
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_003
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_003
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-PIXEL_STRIDE
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-PIXEL_STRIDE-EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -223,7 +206,7 @@ export default function ImageOHImageSourceInfoCreate() {
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_004
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_004
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-NUM_STRIDE
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-NUM_STRIDE-EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -240,7 +223,7 @@ export default function ImageOHImageSourceInfoCreate() {
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_005
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_005
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-ROW_STRIDE
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-ROW_STRIDE-EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -257,7 +240,7 @@ export default function ImageOHImageSourceInfoCreate() {
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_006
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_006
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-NATIVE_BUFFER
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-NATIVE_BUFFER-EFFECT_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
