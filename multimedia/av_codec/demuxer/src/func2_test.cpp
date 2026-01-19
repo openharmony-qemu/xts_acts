@@ -23,7 +23,6 @@
 #include "meta/meta_key.h"
 #include "meta/meta.h"
 #include "av_common.h"
-#include "securec.h"
 
 #include <iostream>
 #include <cstdio>
@@ -75,9 +74,6 @@ constexpr int32_t TRACKFRAME_223 = 223;
 constexpr int32_t TRACKFRAME_417 = 417;
 constexpr int64_t VIDEOTRACKSEEK = 900000;
 constexpr int64_t AUDIOTRACKSEEK = 130604;
-constexpr uint8_t NUM_FOUR = 4;
-constexpr uint8_t NUM_EIGHT = 8;
-constexpr uint8_t NUM_NINE = 9;
 int32_t g_unselect = -1;
 int g_trackType = 0;
 const std::string TRACK_REF_TYPE_DEPTH = "vdep";
@@ -135,24 +131,6 @@ void DemuxerFunc2NdkTest::TearDown()
 } // namespace Media
 } // namespace OHOS
 
-struct SkipSampleInfo {
-    int32_t frame;
-    uint32_t skipSamples;
-    uint32_t discardPadding;
-    int skipReason;
-    int discardReason;
-    size_t buffSize;
-};
-
-struct ExpectSkipSampleInfo {
-    int32_t expectFrame;
-    uint32_t expectSkipSamples;
-    uint32_t expectDiscardPadding;
-    int expectSkipReason;
-    int expectDiscardReason;
-    size_t expectBuffSize;
-};
-
 static int64_t GetFileSize(const char *fileName)
 {
     int64_t fileSize = 0;
@@ -191,46 +169,6 @@ static bool InitFile(const char *file, int32_t trackNum, int &fd, int64_t &size)
         }
     }
     return true;
-}
-
-static bool CompareSkipSampleValue(SkipSampleInfo& info, ExpectSkipSampleInfo expectInfo)
-{
-    if (info.frame != expectInfo.expectFrame) {
-        return false;
-    }
-    if (info.skipSamples != expectInfo.expectSkipSamples) {
-        return false;
-    }
-    if (info.discardPadding != expectInfo.expectDiscardPadding) {
-        return false;
-    }
-    if (info.skipReason != expectInfo.expectSkipReason) {
-        return false;
-    }
-    if (info.discardReason != expectInfo.expectDiscardReason) {
-        return false;
-    }
-    if (info.buffSize != expectInfo.expectBuffSize) {
-        return false;
-    }
-    return true;
-}
-
-static void GetSkipSampleInfo(uint8_t *addr, size_t buffSize, int &audioFrame, std::vector<SkipSampleInfo> &skipSample)
-{
-    if (OH_AVFormat_GetBuffer(format, OH_MD_KEY_BUFFER_SKIP_SAMPLES_INFO, &addr, &buffSize)) {
-        uint32_t skipSamples;
-        memcpy_s(&skipSamples, sizeof(uint32_t), addr, sizeof(uint32_t));
-        uint32_t discardPadding;
-        memcpy_s(&discardPadding, sizeof(uint32_t), addr + NUM_FOUR, sizeof(uint32_t));
-        uint8_t skipReason;
-        memcpy_s(&skipReason, sizeof(uint8_t), addr + NUM_EIGHT, sizeof(uint8_t));
-        uint8_t discardReason;
-        memcpy_s(&discardReason, sizeof(uint8_t), addr + NUM_NINE, sizeof(uint8_t));
-        SkipSampleInfo skipSampleInfo{audioFrame, skipSamples, discardPadding, static_cast<int>(skipReason),
-            static_cast<int>(discardReason), buffSize};
-        skipSample.push_back(skipSampleInfo);
-    }
 }
 
 static void SetAudioValue(OH_AVCodecBufferAttr attr, bool &audioIsEnd, int &audioFrame, int &aKeyCount)
@@ -2114,33 +2052,41 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_SKIP_SAMPLE_FUNC_0010, TestSize.Level0)
     OH_AVCodecBufferAttr attr;
     bool audioIsEnd = false;
     int audioFrame = 0;
-    std::vector<SkipSampleInfo> skipSample;
+    int skipSampleCounts = 0;
+    std::map<int32_t, std::vector<uint8_t>> skipInfoMap = {
+        {0, {0x51, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}},
+        {3051, {0x00, 0x00, 0x00, 0x00, 0xa3, 0x01, 0x00, 0x00, 0x00, 0x00}},
+    }
     const char *file = "/data/test/media/audio/MP3_8K_1.mp3";
     int fd = 0;
     int64_t size = 0;
     ASSERT_TRUE(InitFile(file, 1, fd, size));
     int aKeyCount = 0;
-    uint8_t *addr = nullptr;
+    uint8_t* addr = nullptr;
     size_t buffSize = 0;
     while (!audioIsEnd) {
-        for (int32_t index = 0; index < g_trackCount; index++) {
-            avBuffer = OH_AVBuffer_Create(size);
-            ASSERT_NE(avBuffer, nullptr);
-            ASSERT_EQ(AV_ERR_OK, OH_AVDemuxer_ReadSampleBuffer(demuxer, index, avBuffer));
-            ASSERT_EQ(AV_ERR_OK, OH_AVBuffer_GetBufferAttr(avBuffer, &attr));
-            format = OH_AVBuffer_GetParameter(avBuffer);
-            ASSERT_NE(format, nullptr);
-            ASSERT_EQ(AV_ERR_OK, OH_AVBuffer_Destroy(avBuffer));
-            avBuffer = nullptr;
-            GetSkipSampleInfo(addr, buffSize, audioFrame, skipSample);
-            SetAudioValue(attr, audioIsEnd, audioFrame, aKeyCount);
-            OH_AVFormat_Destroy(format);
-            format = nullptr;
+        avBuffer = OH_AVBuffer_Create(size);
+        ASSERT_NE(avBuffer, nullptr);
+        ASSERT_EQ(AV_ERR_OK, OH_AVDemuxer_ReadSampleBuffer(demuxer, 0, avBuffer));
+        ASSERT_EQ(AV_ERR_OK, OH_AVBuffer_GetBufferAttr(avBuffer, &attr));
+        format = OH_AVBuffer_GetParameter(avBuffer);
+        ASSERT_NE(format, nullptr);
+        ASSERT_EQ(AV_ERR_OK, OH_AVBuffer_Destroy(avBuffer));
+        avBuffer = nullptr;
+        if (OH_AVFormat_GetBuffer(format, OH_MD_KEY_BUFFER_SKIP_SAMPLES_INFO, &addr, &buffSize)) {
+            skipSampleCounts++;
+            ASSERT_EQ(buffSize, 10);
+            for (auto i = 0; i < buffSize; i++) {
+                printf(" %02x", addr[i]);
+                ASSERT_EQ(addr[i], skipInfoMap[audioFrame][i]);
+            }
+            printf("\n");
         }
+        SetAudioValue(attr, audioIsEnd, audioFrame, aKeyCount);
+        OH_AVFormat_Destroy(format);
+        format = nullptr;
     }
-    ASSERT_EQ(skipSample.size(), 2);
-    ASSERT_EQ(true, CompareSkipSampleValue(skipSample[0], {0, 1105, 0, 0, 0, 10}));
-    ASSERT_EQ(true, CompareSkipSampleValue(skipSample[1], {3051, 0, 419, 0, 0, 10}));
+    ASSERT_EQ(skipSampleCounts, 2);
     ASSERT_EQ(audioFrame, 3052);
     ASSERT_EQ(aKeyCount, 3052);
     close(fd);
@@ -2158,7 +2104,10 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_SKIP_SAMPLE_FUNC_0010, TestSize.Level0)
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_SKIP_SAMPLE_FUNC_0020, TestSize.Level0)
 {
     OH_AVCodecBufferAttr attr;
-    std::vector<SkipSampleInfo> skipSample;
+    std::map<int32_t, std::vector<uint8_t>> skipInfoMap = {
+        {6862, {0x00, 0x00, 0x00, 0x00, 0xf4, 0x00, 0x00, 0x00, 0x00, 0x00}},
+    };
+    int skipSampleCounts = 0;
     bool audioIsEnd = false;
     int audioFrame = 0;
     const char *file = "/data/test/media/audio/OGG_8K_1.ogg";
@@ -2169,23 +2118,28 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_SKIP_SAMPLE_FUNC_0020, TestSize.Level0)
     uint8_t *addr = nullptr;
     size_t buffSize = 0;
     while (!audioIsEnd) {
-        for (int32_t index = 0; index < g_trackCount; index++) {
-            avBuffer = OH_AVBuffer_Create(size);
-            ASSERT_NE(avBuffer, nullptr);
-            ASSERT_EQ(AV_ERR_OK, OH_AVDemuxer_ReadSampleBuffer(demuxer, index, avBuffer));
-            ASSERT_EQ(AV_ERR_OK, OH_AVBuffer_GetBufferAttr(avBuffer, &attr));
-            format = OH_AVBuffer_GetParameter(avBuffer);
-            ASSERT_NE(format, nullptr);
-            ASSERT_EQ(AV_ERR_OK, OH_AVBuffer_Destroy(avBuffer));
-            avBuffer = nullptr;
-            GetSkipSampleInfo(addr, buffSize, audioFrame, skipSample);
-            SetAudioValue(attr, audioIsEnd, audioFrame, aKeyCount);
-            OH_AVFormat_Destroy(format);
-            format = nullptr;
+        avBuffer = OH_AVBuffer_Create(size);
+        ASSERT_NE(avBuffer, nullptr);
+        ASSERT_EQ(AV_ERR_OK, OH_AVDemuxer_ReadSampleBuffer(demuxer, 0, avBuffer));
+        ASSERT_EQ(AV_ERR_OK, OH_AVBuffer_GetBufferAttr(avBuffer, &attr));
+        format = OH_AVBuffer_GetParameter(avBuffer);
+        ASSERT_NE(format, nullptr);
+        ASSERT_EQ(AV_ERR_OK, OH_AVBuffer_Destroy(avBuffer));
+        avBuffer = nullptr;
+        if (OH_AVFormat_GetBuffer(format, OH_MD_KEY_BUFFER_SKIP_SAMPLES_INFO, &addr, &buffSize)) {
+            skipSampleCounts++;
+            ASSERT_EQ(buffSize, 10);
+            for (auto i = 0; i < buffSize; i++) {
+                printf(" %02x", addr[i]);
+                ASSERT_EQ(addr[i], skipInfoMap[audioFrame][i]);
+            }
+            printf("\n");
         }
+        SetAudioValue(attr, audioIsEnd, audioFrame, aKeyCount);
+        OH_AVFormat_Destroy(format);
+        format = nullptr;
     }
-    ASSERT_EQ(skipSample.size(), 1);
-    ASSERT_EQ(true, CompareSkipSampleValue(skipSample[0], {6862, 0, 244, 0, 0, 10}));
+    ASSERT_EQ(skipSampleCounts, 1);
     ASSERT_EQ(audioFrame, 6863);
     ASSERT_EQ(aKeyCount, 6863);
     close(fd);
