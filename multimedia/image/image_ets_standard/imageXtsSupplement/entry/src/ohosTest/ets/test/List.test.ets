@@ -199,6 +199,7 @@ import ImageExifDateTimeSupp from './image/ImageExifDateTime.test';
 import ImageExifVersionSupp from './image/ImageExifVersion.test';
 import ImageExifComponentsConfiguration from './image/ImageExifComponentsConfiguration.test';
 import ImageExifShutterSpeedValue from './image/ImageExifShutterSpeedValue.test';
+import imageCreateCroppedAndScaledPixelMap from './image/ImageCreateScaledPixelMap.test';
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -382,4 +383,5 @@ export default function testsuite() {
   ImageSourceRelatedSoundFileSupp();
   ImageWidthLengthSupp();
   ImageDescriptionSupp();
+  imageCreateCroppedAndScaledPixelMap();
 }
