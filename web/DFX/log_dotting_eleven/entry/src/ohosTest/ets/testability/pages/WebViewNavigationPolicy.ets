@@ -55,6 +55,7 @@ struct Index {
   @State isPageEnd: number = -1;
   @State str: string = "";
   @State navigationPolicy:number = 5;
+  @State navigationPolicyArr: navigationPolicy[] = [NEW_POPUP,NEW_WINDOW,NEW_BACKGROUND_TAB,NEW_FOREGROUND_TAB]
   webTag: string = 'ArkWeb1';
   dialogController: CustomDialogController | null = null;
   controller: web_webview.WebviewController = new web_webview.WebviewController(this.webTag);
@@ -114,7 +115,7 @@ struct Index {
                   Utils.sleep(2000);
                   await driver.click(downX, downY);
                   setTimeout(() =>{
-                    Utils.emitEvent(this.navigationPolicy, 20260113)
+                    Utils.emitEvent(this.navigationPolicyArr[this.navigationPolicy], 20260113)
                   },4000)
                 }
               } catch (error) {
@@ -146,7 +147,7 @@ struct Index {
                   Utils.sleep(2000);
                   await driver.click(downX, downY);
                   setTimeout(() =>{
-                    Utils.emitEvent(this.navigationPolicy, 20260114)
+                    Utils.emitEvent(this.navigationPolicyArr[this.navigationPolicy], 20260114)
                   },4000)
                 }
               } catch (error) {
@@ -175,7 +176,7 @@ struct Index {
                   Utils.sleep(2000);
                   await driver.click(downX, downY);
                   setTimeout(() =>{
-                    Utils.emitEvent(this.navigationPolicy, 20260115)
+                    Utils.emitEvent(this.navigationPolicyArr[this.navigationPolicy], 20260115)
                   },4000)
                 }
               } catch (error) {
@@ -206,7 +207,7 @@ struct Index {
                   Utils.sleep(2000);
                   await driver.click(downX, downY);
                   setTimeout(() =>{
-                    Utils.emitEvent(this.navigationPolicy, 20260116)
+                    Utils.emitEvent(this.navigationPolicyArr[this.navigationPolicy], 20260116)
                   },4000)
                 }
               } catch (error) {
@@ -237,7 +238,7 @@ struct Index {
                   Utils.sleep(2000);
                   await driver.click(downX, downY);
                   setTimeout(() =>{
-                    Utils.emitEvent(this.navigationPolicy, 20260117)
+                    Utils.emitEvent(this.navigationPolicyArr[this.navigationPolicy], 20260117)
                   },4000)
                 }
               } catch (error) {
