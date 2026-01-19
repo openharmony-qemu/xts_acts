@@ -96,7 +96,7 @@ static constexpr uint32_t MAKER_NOTE_SIZE_MAX = 64 * 1024;
 #define OH_CREATEFROMFD_NUMBER_3 3
 
 
-Image_String CreateImageStringFromArg(napi_env env, napi_value arg)
+static Image_String CreateImageStringFromArg(napi_env env, napi_value arg)
 {
     Image_String imgStr = {0};
     size_t strLen = 0;
