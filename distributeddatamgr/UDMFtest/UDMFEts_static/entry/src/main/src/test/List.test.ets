@@ -17,9 +17,13 @@ import UDMFApiTest from "./UDMF.test";
 import UDMFApiDescriptorTest from "./UDMFApiDescriptor.test";
 import UDMFApiDataAllTest from "./UDMFApiDataAll.test";
 import UDMFApiUtdUdsTest from "./UDMFApiUtdUds.test";
+import UtdMimeTypeTest from "./UtdMimeTypeTest.test";
+import UDMFApiPromiseTest from "./UDMFApiPromise.test";
 export default function testsuite() {
     UDMFApiTest();
     UDMFApiDescriptorTest();
     UDMFApiDataAllTest();
     UDMFApiUtdUdsTest();
+    UtdMimeTypeTest();
+    UDMFApiPromiseTest();
 }
