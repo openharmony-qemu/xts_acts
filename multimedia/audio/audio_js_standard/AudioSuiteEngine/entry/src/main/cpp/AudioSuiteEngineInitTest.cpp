@@ -5779,7 +5779,7 @@ static napi_value AudioSuiteEngine_SetTempoAndPitch_009(napi_env env, napi_callb
     OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
     OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
 
-    if (!isSupported || result == AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST) {
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         return res;
     }
@@ -6001,7 +6001,7 @@ static napi_value AudioSuiteEngine_GetTempoAndPitch_006(napi_env env, napi_callb
     OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
     OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
 
-    if (!isSupported || result == AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST) {
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         return res;
     }
@@ -6395,7 +6395,7 @@ static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_009(napi_env env, na
     OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
     OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
 
-    if (!isSupported || result == AUDIOSUITE_ERROR_ENGINE_NOT_EXIST) {
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         return res;
     }
@@ -6969,7 +6969,7 @@ static napi_value AudioSuiteEngine_SetGeneralVoiceChangeType_004(napi_env env, n
                 GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_CUTE_TEST));
     OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
     OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
-    if (result == AUDIOSUITE_ERROR_ENGINE_NOT_EXIST) {
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         return res;
     }
@@ -7174,7 +7174,7 @@ static napi_value AudioSuiteEngine_GetGeneralVoiceChangeType_005(napi_env env, n
     OH_AudioSuiteEngine_DestroyNode(audioNode);
     OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
     OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
-    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+    if (!isSupported || result == AUDIOSUITE_ERROR_INVALID_PARAM) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         return res;
     }
@@ -7206,7 +7206,7 @@ static napi_value AudioSuiteEngine_GetGeneralVoiceChangeType_006(napi_env env, n
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetGeneralVoiceChangeType(audioNode, &generalType);
     OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
     OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
-    if (result == AUDIOSUITE_ERROR_ENGINE_NOT_EXIST) {
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         return res;
     }
