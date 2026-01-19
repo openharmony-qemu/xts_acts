@@ -47,6 +47,7 @@ import AddColorStopErrorCodeTest from './Canvas/AddColorStopErrorCodeTest';
 import CanvasParamsUnitTest from './Canvas/CanvasParamsUnitTest.test';
 import CanvasParamsImageAnalyzerTest from './Canvas/CanvasParamsImageAnalyzerTest.test';
 import CanvasParamsVisibilityTest from './Canvas/CanvasParamsVisibilityTest.test';
+import CanvasParamsAntialiasTest from './Canvas/CanvasParamsAntialiasTest.test';
 
 export default function testsuite() {
 
@@ -85,4 +86,5 @@ export default function testsuite() {
   CanvasParamsUnitTest();
   CanvasParamsImageAnalyzerTest();
   CanvasParamsVisibilityTest();
+  CanvasParamsAntialiasTest();
 }
