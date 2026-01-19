@@ -134,8 +134,8 @@ let applicationDefinedRecord:unifiedDataChannel.ApplicationDefinedRecord = new u
 applicationDefinedRecord.applicationDefinedType = 'applicationDefinedType';
 applicationDefinedRecord.rawData = u8Array;
 
-export default function UDMFApiDescriptorTest() {
-	describe("UDMFApiDescriptorTest", (): void => {
+export default function UDMFApiPromiseTest() {
+	describe("UDMFApiPromiseTest", (): void => {
 		beforeEach(async () => {
 			console.log(tag, `beforeEach`);
 			let options:unifiedDataChannel.Options = {
