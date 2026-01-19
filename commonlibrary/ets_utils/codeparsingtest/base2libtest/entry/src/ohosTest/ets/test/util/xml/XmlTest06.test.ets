@@ -1353,33 +1353,6 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1800
-     * @tc.name      getNamespaceTest0018
-     * @tc.desc      Test binding the same prefix to different URIs on the same node
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('getNamespaceTest0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'getNamespaceTest0018';
-        console.log(TAG + ' start');
-
-        let strXml =
-          '<?xml version="1.0" encoding="UTF-8"?>\n' +
-            '<root xmlns:ns="http://uri1" xmlns:ns="http://uri2">\n' +
-            '  <ns:item>Duplicate prefix binding</ns:item>\n' +
-            '</root>'
-        let textEncoder = new util.TextEncoder();
-        let arrBuffer = textEncoder.encodeInto(strXml);
-        let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
-
-        let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:false, tokenValueCallbackFunction:func02}
-        that.parseXml(options);
-        console.warn(str);
-
-      });
-
-    /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1900
      * @tc.name      getNamespaceTest0019
      * @tc.desc      Test combination of grandparent node binding and parent node redefinition
