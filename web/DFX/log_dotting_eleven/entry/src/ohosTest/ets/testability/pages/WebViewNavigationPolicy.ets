@@ -55,7 +55,7 @@ struct Index {
   @State isPageEnd: number = -1;
   @State str: string = "";
   @State navigationPolicy:number = 5;
-  @State navigationPolicyArr: navigationPolicy[] = [navigationPolicy.NEW_POPUP,navigationPolicy.NEW_WINDOW,navigationPolicy.NEW_BACKGROUND_TAB,navigationPolicy.NEW_FOREGROUND_TAB]
+  @State navigationPolicyArr: NavigationPolicy[] = [NavigationPolicy.NEW_POPUP,NavigationPolicy.NEW_WINDOW,NavigationPolicy.NEW_BACKGROUND_TAB,NavigationPolicy.NEW_FOREGROUND_TAB]
   webTag: string = 'ArkWeb1';
   dialogController: CustomDialogController | null = null;
   controller: web_webview.WebviewController = new web_webview.WebviewController(this.webTag);
