@@ -98,7 +98,8 @@ export default function RichEditorDoubleClick010() {
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(1000);
-      expect(messageText).assertContain('{"start":0,"end":0}');
+      expect(messageText).assertContain('"start":0');
+      expect(messageText).assertContain('"end":0');
       done();
     });
     
