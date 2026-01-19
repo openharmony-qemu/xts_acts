@@ -25,6 +25,7 @@ import HttpRequestInterceptor from './HttpRequestInterceptor.test';
 import HttpRequestMaxAutoRedirectsTest from './HttpRequestRedirects.test';
 import HttpRequestMaxAutoRedirectsWithInterceptorTest from './HttpRequestRedirectsInterceptor.test';
 import HttpRequestCustomMethodTest from './HttpRequestCustomMethod.test';
+import HttpRequestSniTest from './HttpRequestSni.test';
 
 export default function testsuite() {
   HttpRequestInterceptor();
@@ -38,6 +39,7 @@ export default function testsuite() {
     HttpRequestAndDestroyTest();
     HttpRequestInStreamTest();
     HttpRequestOptionsTest();
+    HttpRequestSniTest();
     httpErrorCodeTest();
   } else {
     EmptyTest()
