@@ -741,19 +741,22 @@ napi_value VideoDecoder_AVDecodeSync(napi_env env, napi_callback_info info)
     int32_t ret = -1;
     OH_AVCapability* cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_H263, false, SOFTWARE);
     const char* capName = OH_AVCapability_GetName(cap);
-    if (cap != nullptr) {
-        auto vDecSample = std::make_shared<OHOS::Media::AVDecodeTest>();
-        vDecSample->defaultWidth = DEFAULT_WIDTH;
-        vDecSample->defaultHeight = DEFAULT_HEIGHT;
-        vDecSample->defualtPixelFormat = DEFAULT_FRAME_RATE;
-        vDecSample->enbleSyncMode = 1;
-        vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
-        vDecSample->CreateVideoDecoder(capName);
-        vDecSample->ConfigureVideoDecoder();
-        vDecSample->StartSyncVideoDecoder();
-        vDecSample->WaitForEOS();
-        ret = vDecSample->errCount;
+    if (cap == nullptr) {
+        napi_value retValue;
+        napi_create_int32(env, ret, &retValue);
+        return retValue;
     }
+    auto vDecSample = std::make_shared<OHOS::Media::AVDecodeTest>();
+    vDecSample->defaultWidth = DEFAULT_WIDTH;
+    vDecSample->defaultHeight = DEFAULT_HEIGHT;
+    vDecSample->defualtPixelFormat = DEFAULT_FRAME_RATE;
+    vDecSample->enbleSyncMode = 1;
+    vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
+    vDecSample->CreateVideoDecoder(capName);
+    vDecSample->ConfigureVideoDecoder();
+    vDecSample->StartSyncVideoDecoder();
+    vDecSample->WaitForEOS();
+    ret = vDecSample->errCount;
     napi_value retValue;
     napi_create_int32(env, ret, &retValue);
     return retValue;
