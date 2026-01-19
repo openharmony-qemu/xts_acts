@@ -198,6 +198,10 @@ export const OH_PixelmapNative_ConvertAlphaFormatTest:(a: number) => number;
 export const ImageSourceCreatSuccessTest:(a: number) => number;
 export const PixelmapNativeGetNativeBufferNotExist:(a: number) => number;
 export const ImageSourceCreate:(a: number, b:string) => number;
+export const ImageSourceNativeGetImagePropertyLong:(a: number,b: number,c:string) => number;
+export const ImageSourceNativeGetImagePropertyShort:(a: number,b: number,c:string) => number;
+export const ImageSourceNativeGetImagePropertyDouble:(a: number,b: number,c:string) => number;
+export const ImageSourceGetImagePropertyArraySize:(a: number,b: number,c:string) => number;
 export const OHImageSourceNativeModifyImagePropertyDoubleSupp:(a: number,b:number,c:string) => number;
 export const ImageModifyImagePropertyIntArraySupp:(a: number,b:number,c:string,d:number[]) => number;
 export const ImageModifyImagePropertyDoubleArraySupp:(a: number,b:number,c:string,d:number[]) => number;
@@ -206,3 +210,4 @@ export const PixelmapNativeCropTest:(a: number) => number;
 export const ConvertAlphaFormatTest:(a: number) => number;
 export const DecodingOptionsReleaseTest:(a: number) => number;
 export const CreatePixelmapFromSurfaceWithTransformationTest:(a: number,b: string) => number;
+
