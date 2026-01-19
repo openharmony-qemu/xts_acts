@@ -44,15 +44,17 @@ struct BindMenuWithResponse {
   }
 
   build() {
-    Stack() {
+    Column() {
       Button('BindContextMenu长按和右键点击触发菜单')
         .bindContextMenuWithResponse(this.MenuBuilderWithParam, {
           enableArrow: true,
         })
         .id('bindClickId')
+      Button('hide').id('hideId')
     }
     .height('100%')
     .width('100%')
+    .justifyContent(FlexAlign.Center)
     .backgroundColor('#f0f0f0')
   }
 }
