@@ -56,6 +56,8 @@
 #include <native_drawing/drawing_types.h>
 #include <native_drawing/drawing_surface.h>
 #include <native_drawing/drawing_path_effect.h>
+#include <native_drawing/drawing_lattice.h>
+#include <native_drawing/drawing_path_iterator.h>
 #include <stdexcept>
 #include <string>
 #include <vector>

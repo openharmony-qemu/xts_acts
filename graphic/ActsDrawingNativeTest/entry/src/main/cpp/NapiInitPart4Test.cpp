@@ -70,6 +70,30 @@ napi_value DrawingRegionAdvancedOperations(napi_env env, napi_callback_info info
         return resultValue;
     });
 }
+// Path Iterator related functions
+napi_value DrawingPathIterator(napi_env env, napi_callback_info info)
+{
+   return NapiTry(env, [&]() -> napi_value {
+       int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+       static const std::array<DrawingNativeFn, PATH_ITERATOR_HANDLER_COUNT> handlers = {
+           OHOS::Rosen::Drawing::TestPathIteratorCreateNormal,
+           OHOS::Rosen::Drawing::TestPathIteratorCreateNull,
+           OHOS::Rosen::Drawing::TestPathIteratorCreateMultipleCalls,
+           OHOS::Rosen::Drawing::TestPathIteratorDestroyNormal,
+           OHOS::Rosen::Drawing::TestPathIteratorDestroyNull,
+           OHOS::Rosen::Drawing::TestPathIteratorHasNextNormal,
+           OHOS::Rosen::Drawing::TestPathIteratorHasNextNull,
+           OHOS::Rosen::Drawing::TestPathIteratorNextNormal,
+           OHOS::Rosen::Drawing::TestPathIteratorNextNull,
+           OHOS::Rosen::Drawing::TestPathIteratorPeekNormal,
+           OHOS::Rosen::Drawing::TestPathIteratorPeekNull,
+       };
+       int result = DispatchByCaseNum(caseNum, handlers);
+       napi_value resultValue;
+       napi_create_int32(env, result, &resultValue);
+       return resultValue;
+   });
+}
 
 // Path Part4 InverseFillType related functions
 napi_value DrawingPathPart4InverseFillType(napi_env env, napi_callback_info info)
@@ -118,6 +142,26 @@ napi_value DrawingCanvasDrawPixelMapMesh(napi_env env, napi_callback_info info)
     });
 }
 
+// Lattice related functions
+napi_value DrawingLattice(napi_env env, napi_callback_info info)
+{
+   return NapiTry(env, [&]() -> napi_value {
+       int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+       static const std::array<DrawingNativeFn, LATTICE_HANDLER_COUNT> handlers = {
+           OHOS::Rosen::Drawing::TestLatticeCreateNormal,
+           OHOS::Rosen::Drawing::TestLatticeCreateNull,
+           OHOS::Rosen::Drawing::TestLatticeCreateAbnormal,
+           OHOS::Rosen::Drawing::TestLatticeCreateEnumTraversal,
+           OHOS::Rosen::Drawing::TestLatticeCreateMultipleCalls,
+           OHOS::Rosen::Drawing::TestLatticeDestroyNormal,
+           OHOS::Rosen::Drawing::TestLatticeDestroyNull,
+       };
+       int result = DispatchByCaseNum(caseNum, handlers);
+       napi_value resultValue;
+       napi_create_int32(env, result, &resultValue);
+       return resultValue;
+   });
+}
 
 // Rect Part2 Inset/Contains/SetEmpty/IsEmpty/Offset/OffsetTo/Sort/Union related functions
 napi_value DrawingRectPart2OtherOperations(napi_env env, napi_callback_info info)
