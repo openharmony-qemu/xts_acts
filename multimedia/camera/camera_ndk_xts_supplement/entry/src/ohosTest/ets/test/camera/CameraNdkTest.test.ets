@@ -55,75 +55,75 @@ export default function CameraNdkTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00001
-     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00001
-     * @tc.desc        OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES --EFFECT_SUCCESS
+     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00001
+     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00001
+     * @tc.desc        OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00001', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00001'
+    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00001', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00001'
       let res = cameraObj.captureDeleteCameraDevices(CASE_INDEX_1);
       console.info(TAG, testName, res);
       expect(res).assertEqual(EFFECT_SUCCESS);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00002
-     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00002
-     * @tc.desc        OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES --CAMERA_INVALID_ARGUMENT
+     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00002
+     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00002
+     * @tc.desc        OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00002', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00002'
+    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00002', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00002'
       let res = cameraObj.captureDeleteCameraDevices(CASE_INDEX_2);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00003
-     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00003
-     * @tc.desc        OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES --CAMERA_INVALID_ARGUMENT
+     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00003
+     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00003
+     * @tc.desc        OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00003', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00003'
+    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00003', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00003'
       let res = cameraObj.captureDeleteCameraDevices(CASE_INDEX_3);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00004
-     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00004
-     * @tc.desc        OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES --CAMERA_INVALID_ARGUMENT
+     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00004
+     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00004
+     * @tc.desc        OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00004', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00004'
+    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00004', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00004'
       let res = cameraObj.captureDeleteCameraDevices(CASE_INDEX_4);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00005
-     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00005
-     * @tc.desc        OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES --CAMERA_INVALID_ARGUMENT
+     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00005
+     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00005
+     * @tc.desc        OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00005', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICES_00005'
+    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00005', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00005'
       let res = cameraObj.captureDeleteCameraDevices(CASE_INDEX_5);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
@@ -132,7 +132,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_IS_BANDWIDTH_COMPRESSION_SUPPORTED_00001
      * @tc.name        SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_IS_BANDWIDTH_COMPRESSION_SUPPORTED_00001
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICES --EFFECT_SUCCESS
+     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -589,135 +589,135 @@ export default function CameraNdkTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00001
-     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00001
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICES --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00001
+     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00001
+     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00001', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00001'
+    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00001', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00001'
       let res = cameraObj.captureGetCameraDevices(CASE_INDEX_1);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00002
-     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00002
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICES --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00002
+     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00002
+     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00002', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00002'
+    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00002', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00002'
       let res = cameraObj.captureGetCameraDevices(CASE_INDEX_2);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00003
-     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00003
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICES --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00003
+     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00003
+     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00003', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00003'
+    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00003', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00003'
       let res = cameraObj.captureGetCameraDevices(CASE_INDEX_3);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00004
-     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00004
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICES --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00004
+     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00004
+     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00004', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00004'
+    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00004', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00004'
       let res = cameraObj.captureGetCameraDevices(CASE_INDEX_4);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00005
-     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00005
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICES --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00005
+     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00005
+     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00005', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_00005'
+    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00005', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00005'
       let res = cameraObj.captureGetCameraDevices(CASE_INDEX_5);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_ERROR_00001
-     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_ERROR_00001
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICES --CAMERA_INVALID_ARGUMENT
+     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00001
+     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00001
+     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_ERROR_00001', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_ERROR_00001'
+    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00001', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00001'
       let res = cameraObj.captureGetCameraDevicesError(CASE_INDEX_1);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_ERROR_00002
-     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_ERROR_00002
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICES --CAMERA_INVALID_ARGUMENT
+     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00002
+     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00002
+     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_ERROR_00002', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_ERROR_00002'
+    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00002', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00002'
       let res = cameraObj.captureGetCameraDevicesError(CASE_INDEX_2);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_ERROR_00003
-     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_ERROR_00003
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICES --CAMERA_INVALID_ARGUMENT
+     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00003
+     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00003
+     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_ERROR_00003', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_ERROR_00003'
+    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00003', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00003'
       let res = cameraObj.captureGetCameraDevicesError(CASE_INDEX_3);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_ERROR_00004
-     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_ERROR_00004
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICES --CAMERA_INVALID_ARGUMENT
+     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00004
+     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00004
+     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_ERROR_00004', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICES_ERROR_00004'
+    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00004', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00004'
       let res = cameraObj.captureGetCameraDevicesError(CASE_INDEX_4);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
@@ -799,75 +799,75 @@ export default function CameraNdkTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00001
-     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00001
+     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00006
+     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00006
      * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00001', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00001'
+    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00006', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00006'
       let res = cameraObj.captureCameraDeviceQueryInfoConnectionTypes(CASE_INDEX_1);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00002
-     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00002
+     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00007
+     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00007
      * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00002', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00002'
+    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00007', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00007'
       let res = cameraObj.captureCameraDeviceQueryInfoConnectionTypes(CASE_INDEX_2);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00003
-     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00003
+     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00008
+     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00008
      * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00003', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00003'
+    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00008', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00008'
       let res = cameraObj.captureCameraDeviceQueryInfoConnectionTypes(CASE_INDEX_3);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00004
-     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00004
+     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00009
+     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00009
      * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00004', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00004'
+    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00009', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00009'
       let res = cameraObj.captureCameraDeviceQueryInfoConnectionTypes(CASE_INDEX_4);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00005
-     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00005
+     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00010
+     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00010
      * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00005', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPES_00005'
+    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00010', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00010'
       let res = cameraObj.captureCameraDeviceQueryInfoConnectionTypes(CASE_INDEX_5);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
@@ -949,75 +949,75 @@ export default function CameraNdkTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00001
-     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00001
+     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00001
+     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00001
      * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00001', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00001'
+    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00001', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00001'
       let res = cameraObj.captureCameraDeviceQueryInfoCameraPositions(CASE_INDEX_1);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00002
-     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00002
+     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00002
+     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00002
      * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00002', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00002'
+    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00002', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00002'
       let res = cameraObj.captureCameraDeviceQueryInfoCameraPositions(CASE_INDEX_2);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00003
-     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00003
+     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00003
+     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00003
      * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00003', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00003'
+    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00003', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00003'
       let res = cameraObj.captureCameraDeviceQueryInfoCameraPositions(CASE_INDEX_3);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00004
-     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00004
+     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00004
+     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00004
      * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00004', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00004'
+    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00004', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00004'
       let res = cameraObj.captureCameraDeviceQueryInfoCameraPositions(CASE_INDEX_4);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00005
-     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00005
+     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00005
+     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00005
      * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00005', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITIONS_00005'
+    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00005', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00005'
       let res = cameraObj.captureCameraDeviceQueryInfoCameraPositions(CASE_INDEX_5);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
@@ -1099,75 +1099,75 @@ export default function CameraNdkTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00001
-     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00001
+     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00006
+     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00006
      * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00001', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00001'
+    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00006', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00006'
       let res = cameraObj.captureCameraDeviceQueryInfoCameraTypeSizes(CASE_INDEX_1);
       console.info(TAG, testName, res);
       expect(res).assertEqual(EFFECT_SUCCESS);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00002
-     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00002
+     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00007
+     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00007
      * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00002', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00002'
+    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00007', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00007'
       let res = cameraObj.captureCameraDeviceQueryInfoCameraTypeSizes(CASE_INDEX_2);
       console.info(TAG, testName, res);
       expect(res).assertEqual(EFFECT_SUCCESS);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00003
-     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00003
+     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00008
+     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00008
      * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00003', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00003'
+    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00008', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00008'
       let res = cameraObj.captureCameraDeviceQueryInfoCameraTypeSizes(CASE_INDEX_3);
       console.info(TAG, testName, res);
       expect(res).assertEqual(EFFECT_SUCCESS);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00004
-     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00004
+     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00009
+     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00009
      * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00004', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00004'
+    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00009', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00009'
       let res = cameraObj.captureCameraDeviceQueryInfoCameraTypeSizes(CASE_INDEX_4);
       console.info(TAG, testName, res);
       expect(res).assertEqual(EFFECT_SUCCESS);
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00005
-     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00005
+     * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00010
+     * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00010
      * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00005', Level.LEVEL0, async () => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZES_00005'
+    it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00010', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00010'
       let res = cameraObj.captureCameraDeviceQueryInfoCameraTypeSizes(CASE_INDEX_5);
       console.info(TAG, testName, res);
       expect(res).assertEqual(EFFECT_SUCCESS);

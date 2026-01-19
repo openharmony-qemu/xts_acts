@@ -41,7 +41,7 @@ static Camera_Profile *photoProfile = nullptr;
 static Camera_PreviewOutput *previewOutput = nullptr;
 static Camera_PhotoOutput *photoOutput = nullptr;
 static Camera_CaptureSession *captureSession = nullptr;
-static char _faceId[256];
+static char  g_faceId[256];
 
 static void CameraManagerStatusCallback(Camera_Manager *cameraManager, Camera_StatusInfo *status)
 {
@@ -119,7 +119,7 @@ static void CreateAndOpenCamera()
     LOGI("camer input 创建成功");
 }
 
-static void createPhotoOutput(char *sur_faceId)
+static void createPhotoOutput(char *surFaceId)
 {
     const Camera_Device camera = cameras[0];
     Camera_OutputCapability *cameraOutputCapability = nullptr;
@@ -143,10 +143,10 @@ static void createPhotoOutput(char *sur_faceId)
         photoProfile = cameraOutputCapability->photoProfiles[0];
     }
     Camera_ErrorCode preCode =
-        OH_CameraManager_CreatePreviewOutput(cameraManager, previewProfile, sur_faceId, &previewOutput);
+        OH_CameraManager_CreatePreviewOutput(cameraManager, previewProfile, surFaceId, &previewOutput);
     if (cameraOutputCapability == nullptr || preCode != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreatePreviewOutput failed. %{public}d  %{public}s", preCode,
-                     sur_faceId);
+                     surFaceId);
     }
     Camera_ErrorCode photoSurface =
         OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager, photoProfile, &photoOutput);
@@ -202,7 +202,7 @@ napi_value initWithSurfaces(napi_env env, napi_callback_info info)
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    napi_get_value_string_utf8(env, args[0], _faceId, sizeof(_faceId), &uuidLen);
+    napi_get_value_string_utf8(env, args[0],  g_faceId, sizeof( g_faceId), &uuidLen);
     napi_value ret;
     napi_create_int32(env, 0, &ret);
     return ret;
@@ -211,7 +211,7 @@ napi_value initWithSurfaces(napi_env env, napi_callback_info info)
 void CreatePhotoSession()
 {
     CreateAndOpenCamera();
-    createPhotoOutput(_faceId);
+    createPhotoOutput( g_faceId);
     CreateCaptureSession();
 }
 
@@ -427,7 +427,8 @@ napi_value captureGetSupportedFullCameraOutputCapabilityWithSceneMode(napi_env e
     return ret;
 }
 
-void OnOcclusionDetectionCallback(const Camera_Input* cameraInput, Camera_OcclusionDetectionResult occlusionDetectionResult)
+void OnOcclusionDetectionCallback(const Camera_Input *cameraInput,
+                                  Camera_OcclusionDetectionResult occlusionDetectionResult)
 {
     
 };

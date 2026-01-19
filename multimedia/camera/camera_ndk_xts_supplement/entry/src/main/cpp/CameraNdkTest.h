@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef CAMERA_NDK_XTS_SUPPLEMENT_CAMERASESSIONNDKTESTSUPPS_HS
-#define CAMERA_NDK_XTS_SUPPLEMENT_CAMERASESSIONNDKTESTSUPPS_HS
+#ifndef CAMERA_NDK_XTS_SUPPLEMENT_CAMERASESSIONNDKSUPPTEST_H
+#define CAMERA_NDK_XTS_SUPPLEMENT_CAMERASESSIONNDKSUPPTEST_H
 #include "hilog/log.h"
 #include "ohcamera/camera.h"
 #include "ohcamera/camera_input.h"
