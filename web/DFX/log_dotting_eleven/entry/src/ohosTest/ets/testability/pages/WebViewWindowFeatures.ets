@@ -106,7 +106,7 @@ struct WebViewWindowFeatures {
               try {
                 if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment');
-                  Utils.emitEvent(600, 20260123)
+                  Utils.emitEvent(500, 20260123)
                 } else {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("window.open.html"))
@@ -134,7 +134,7 @@ struct WebViewWindowFeatures {
               try {
                 if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment');
-                  Utils.emitEvent(500, 20260124)
+                  Utils.emitEvent(600, 20260124)
                 } else {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("window.open.html"))
