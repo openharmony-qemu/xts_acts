@@ -25,7 +25,7 @@ struct promptExample {
 
   build() {
     Column() {
-      Text(this.errCode)
+      Text(this.errCode).key('errorCode')
       Button("showActionMenuError").onClick(() => {
         try {
           promptAction.showActionMenu(undefined)
@@ -34,7 +34,7 @@ struct promptExample {
           this.errCode = code.toString()
         }
 
-      })
+      }).id('showActionMenuError')
       Button('showDialog2')
         .key('button5')
         .backgroundColor('#ffe20b56')
