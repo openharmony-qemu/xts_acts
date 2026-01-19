@@ -203,7 +203,7 @@ export default function ApiCoverStaticTest() {
             expect(Array.isArray(data![i].bundleNames)).assertEqual(true);
             expect(data![i].bundleNames.length).assertLarger(0.0);
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0200 getRunningProcessInformation data' + i + '.state: ' + data![i].state);
-            expect(typeof data![i].state).assertEqual("number");
+            expect(typeof data![i].state).assertEqual("int");
             expect(data![i].state >= -1 && data![i].state <= 5).assertTrue();
           }
           hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0200 getRunningProcessInformation done');

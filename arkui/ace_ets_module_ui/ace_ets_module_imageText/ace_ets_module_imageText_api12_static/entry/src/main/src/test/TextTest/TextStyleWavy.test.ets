@@ -47,7 +47,7 @@ export default function TextStyleWavy() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextStyleWavy state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textPageWavy" == pages.name)) {
           console.info("get TextStyleWavy pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

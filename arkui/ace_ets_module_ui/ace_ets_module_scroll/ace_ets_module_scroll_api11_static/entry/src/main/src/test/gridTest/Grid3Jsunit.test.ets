@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,6 +21,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 export default function gridJsunit() {
   describe('grid3Test', () => {
@@ -78,7 +79,7 @@ it('gridTest01_static_01', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "columnsGap": '3px'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 110,
@@ -122,7 +123,7 @@ it('gridTest02_static_02', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "rowsGap": '3px'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 111,
@@ -167,7 +168,7 @@ it('gridTest03_static_03', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "columnsTemplate": '1fr 1fr 1fr 1fr'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 112,
@@ -213,7 +214,7 @@ it('gridTest04_static_04', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "rowsTemplate": '1fr 1fr 1fr 1fr'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 113,

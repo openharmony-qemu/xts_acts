@@ -278,7 +278,7 @@ export default function abilitystaticTest() {
           expect().assertFail();
           done();
         }).catch((err): void => {
-          hilog.info(domain, tag, `SUB_Ability_AbilityRuntime_AppManager_Static_0300 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
+          hilog.info(domain, tag, `SUB_Ability_AbilityRuntime_AppManager_Static_0300 killProcessesByBundleName fail, code is ${err.code}`);
           expect(err.code).assertEqual(16000050);
           done();
         });

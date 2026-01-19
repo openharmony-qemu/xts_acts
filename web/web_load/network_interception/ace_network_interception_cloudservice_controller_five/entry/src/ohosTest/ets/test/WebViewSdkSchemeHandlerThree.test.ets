@@ -43,6 +43,7 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
         } catch (err) {
             console.error("push webViewSdkSchemeHandlerThree page error:" + err);
         }
+      await driver.waitForComponent(ON.id('webViewSdkSchemeHandlerThreeButton'), 10000);
       console.log("waitForComponent webViewSdkSchemeHandlerThreeButton==>");
       done();
     });
@@ -198,6 +199,38 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
     it('testSchemeHandlerDidFailCompleteIfNoResponse008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSchemeHandlerDidFailCompleteIfNoResponse008', 142401);
       Utils.registerBaseEvent('testSchemeHandlerDidFailCompleteIfNoResponse008', 17100101, 142500, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('webViewSdkSchemeHandlerThreeButton', 10, '');
+    })
+    /**
+     * @tc.name   testSchemeHandlerDidReceiveResponseBodyNull
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_didReceiveResponseBody_Error_API_0100
+     * @tc.desc   test didReceiveResponseBody null errorCode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSchemeHandlerDidReceiveResponseBodyNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitSchemeHandlerDidReceiveResponseBodyNull', 142401);
+      Utils.registerBaseEvent('testSchemeHandlerDidReceiveResponseBodyNull', 401, 26011601, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('webViewSdkSchemeHandlerThreeButton', 10, '');
+    })
+    /**
+     * @tc.name   testSchemeHandlerDidReceiveResponseBodyUndefined
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_didReceiveResponseBody_Error_API_0200
+     * @tc.desc   test didReceiveResponseBody undefined errorCode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSchemeHandlerDidReceiveResponseBodyUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitSchemeHandlerDidReceiveResponseBodyUndefined', 142401);
+      Utils.registerBaseEvent('testSchemeHandlerDidReceiveResponseBodyUndefined', 401, 26011602, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

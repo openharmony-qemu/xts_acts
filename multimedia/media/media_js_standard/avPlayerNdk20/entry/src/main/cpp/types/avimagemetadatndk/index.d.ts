@@ -22,6 +22,7 @@ export const OH_AVImageGenerator_QueryOptions0101: (fd: number, offset: number, 
 export const OH_AVImageGenerator_QueryOptions0102: (fd: number, offset: number, size: number) => number;
 export const OH_AVImageGenerator_QueryOptions0103: (fd: number, offset: number, size: number) => number;
 export const OH_AVMetadataExtractor_SetFDSource0100: () => number;
+export const OH_AVMetadataExtractor_SetFDSource0101: () => number;
 export const OH_AVMetadataExtractor_FetchMetadata0100: () => number;
 export const OH_AVMetadataExtractor_FetchMetadata0101: () => number;
 export const OH_AVMetadataExtractor_FetchAlbumCover0100: () => number;

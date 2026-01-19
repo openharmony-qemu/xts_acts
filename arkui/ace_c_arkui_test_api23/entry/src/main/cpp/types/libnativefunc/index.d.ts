@@ -68,6 +68,8 @@ export const TestContainerPickerSelectionIndicator015: () => number;
 
 export const TestContainerPickerSelectionIndicator016: () => number;
 
+export const TestContainerPickerSelectionIndicator017: () => number;
+
 export const TestContainerPickerSubComponent001: () => number;
 
 export const TestContainerPickerSubComponent002: () => number;
@@ -75,6 +77,34 @@ export const TestContainerPickerSubComponent002: () => number;
 export const TestContainerPickerSubComponent003: () => number;
 
 export const TestContainerPickerSubComponent004: () => number;
+
+export const TestContainerPickerSubComponent005: () => number;
+
+export const TextEnumTest_001: () => number;
+export const TextEnumTest_002: () => number;
+export const TextEnumTest_003: () => number;
+export const TextEnumTest_004: () => number;
+export const TextEnumTest_005: () => number;
+export const TextEnumTest_006: () => number;
+export const TextEnumTest_007: () => number;
+export const TextEnumTest_008: () => number;
+export const TextEnumTest_009: () => number;
+export const TextEnumTest_010: () => number;
+export const TextEnumTest_011: () => number;
+export const TextEnumTest_012: () => number;
+export const TextEnumTest_013: () => number;
+export const TextEnumTest_014: () => number;
+export const TextEnumTest_015: () => number;
+export const TextEnumTest_016: () => number;
+export const TextEnumTest_017: () => number;
+export const TextEnumTest_018: () => number;
+export const TextEnumTest_019: () => number;
+export const TextEnumTest_020: () => number;
+export const TextEnumTest_021: () => number;
+export const TextEnumTest_022: () => number;
+export const TextEnumTest_023: () => number;
+
+export const TextMarqueeOptionsTest: () => number;
 
 export const testMotionPathOptions001: () => number;
 export const testMotionPathOptions002: () => number;
@@ -98,3 +128,27 @@ export const TestAtomicServiceMenuBarSetVisible01: () => number;
 export const TestIsInRenderStateReturnValue001: () => number;
 
 export const TestIsInRenderStateReturnValue002: () => number;
+
+export const testPullUpToCancelRefresh01: () => number;
+export const testPullUpToCancelRefresh02: () => number;
+export const testPullUpToCancelRefreshError: () => number;
+
+export const testImageAntialiased001: () => number;
+
+export const testImageAntialiased002: () => number;
+
+export const testImageAntialiased003: () => number;
+
+export const testImageAntialiased004: () => number;
+
+export const testImageAntialiased005: () => number;
+
+export const ListEmptyTest_001: () => number;
+export const ListEmptyTest_002: () => number;
+export const ListEmptyTest_003: () => number;
+export const ListEmptyTest_004: () => number;
+export const GridIndexTest_001: () => number;
+export const GridEmptyTest_001: () => number;
+export const GridEmptyTest_002: () => number;
+export const GridEmptyTest_003: () => number;
+export const GridEmptyTest_004: () => number;

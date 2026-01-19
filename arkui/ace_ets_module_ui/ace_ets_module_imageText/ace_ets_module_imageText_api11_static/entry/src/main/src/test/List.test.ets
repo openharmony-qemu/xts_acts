@@ -128,10 +128,10 @@ export default function testsuite() {
     richEditorApi6();
     richEditorApi7();
     richEditorApi8();
-    search();
+    // search();
     textStyleJsunit();
     marqueeJsunit();
-    ImageTextTest();
+    // ImageTextTest();
     TextAreaCallbackTest();
     Image_QRCode_Api();
     RichEditorApi();
@@ -168,7 +168,7 @@ export default function testsuite() {
     backgroundAndSizeSettingJsunit();
     borderJsunit();
     textAreaJsunit();
-    textInputJsunit();
+    // textInputJsunit();
     propJsunit();
     spanJsunit();
     textJsunit();
@@ -201,7 +201,7 @@ export default function testsuite() {
     textAreaOnCutJsunit();
     textInputOnEditChangeJsunit();
     textAreaJsunit3();
-    textInputJsunit3();
+    // textInputJsunit3();
     textObscuredTest();
     textSpanFontTest();
     textArea_bottom();

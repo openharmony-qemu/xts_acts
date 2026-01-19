@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,6 +27,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 import {SharedTransitionEffectType,Color} from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 interface Action {
   ACTION: boolean
 }
@@ -94,7 +95,7 @@ it('test_NavigatorClick_static_002', Level.LEVEL0, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "typeValue": "NavigationType.Back"
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 138,

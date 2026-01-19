@@ -104,7 +104,6 @@ group("componentAttrssTest") {
         "ace_ets_component_common_attrss_zIndex_static:ActsAceEtsComponentCommonAttrsZIndexStaticTest",
         "ace_ets_component_common_attrss_onDisAppear_static:ActsAceEtsComponentCommonAttrsOnDisAppearStaticTest",
         "ace_ets_component_common_attrss_onVisibleAreaChange_static:ActsAceEtsComponentCommonAttrsOnVisibleAreaChangeStaticTest",
-        "ace_ets_component_common_attrss_gridSpan_static:ActsAceEtsComponentCommonAttrsGridSpanStaticTest",
       ]
     } else {
       deps = [
@@ -265,7 +264,6 @@ group("componentAttrssTest") {
         "ace_ets_component_common_attrss_width_nowear_static:ActsAceEtsComponentCommonAttrsWidthNowearStaticTest",
         "ace_ets_component_common_attrss_onDisAppear_static:ActsAceEtsComponentCommonAttrsOnDisAppearStaticTest",
         "ace_ets_component_common_attrss_onVisibleAreaChange_static:ActsAceEtsComponentCommonAttrsOnVisibleAreaChangeStaticTest",
-        "ace_ets_component_common_attrss_gridSpan_static:ActsAceEtsComponentCommonAttrsGridSpanStaticTest",
         "ace_ets_component_common_attrss_gridSpan_nowear_static:ActsAceEtsComponentCommonAttrsGridSpanNowearStaticTest",
         "ace_ets_component_common_attrss_layoutWeight_nowear_static:ActsAceEtsComponentCommonAttrsLayoutWeightNowearStaticTest",
         "ace_ets_component_common_attrss_onDisAppear_nowear_static:ActsAceEtsComponentCommonAttrsOnDisAppearNowearStaticTest",

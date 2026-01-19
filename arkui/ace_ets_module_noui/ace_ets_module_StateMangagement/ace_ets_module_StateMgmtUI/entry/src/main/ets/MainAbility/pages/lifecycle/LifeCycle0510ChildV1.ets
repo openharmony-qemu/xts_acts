@@ -16,10 +16,8 @@ import router from '@ohos.router'
 import hilog from '@ohos.hilog'
 
 AppStorage.setOrCreate('Appear', 0)
-AppStorage.setOrCreate('Attach', 0)
 AppStorage.setOrCreate('Built', 0)
 AppStorage.setOrCreate('Disappear', 0)
-AppStorage.setOrCreate('Detach', 0)
 AppStorage.setOrCreate('Recycle', 0)
 AppStorage.setOrCreate('Reuse', 0)
 
@@ -53,17 +51,15 @@ struct LifeCycle0510ChildV1 {
 @Component
 struct Child {
   @StorageLink('Appear') appearNum: number = -1
-  @StorageLink('Attach') attachNum: number = -1
   @StorageLink('Built') builtNum: number = -1
   @StorageLink('Disappear') disappearNum: number = -1
-  @StorageLink('Detach') detachNum: number = -1
   @StorageLink('Recycle') recycleNum: number = -1
   @StorageLink('Reuse') reuseNum: number = -1
 
   build() {
     Column() {
       Row() {
-        Text((this.appearNum + this.attachNum + this.builtNum + this.disappearNum + this.detachNum + this.recycleNum +
+        Text((this.appearNum + this.builtNum + this.disappearNum + this.recycleNum +
         this.reuseNum).toString())
           .height('5%')
           .id('tvV1Num')

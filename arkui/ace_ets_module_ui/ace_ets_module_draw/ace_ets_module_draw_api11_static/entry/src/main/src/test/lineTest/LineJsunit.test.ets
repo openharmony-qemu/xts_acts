@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,6 +37,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { startAbility, stopApplication, UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -160,7 +161,7 @@ it('lineTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void>
           data: {
             "startPoint": 50.0,
             "startPointOne": 50.0,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 131,
@@ -199,7 +200,7 @@ it('lineTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void>
           data: {
             "endPoint": 100.0,
             "endPointOne": 150.0,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 131,
@@ -239,7 +240,7 @@ it('lineTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<void>
           data: {
             "startPoint": 'A',
             "startPointOne": 'B',
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 131,
@@ -278,7 +279,7 @@ it('lineTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void>
           data: {
             "endPoint": 'A',
             "endPointOne": 'B',
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 131,

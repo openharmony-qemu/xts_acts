@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,6 +37,7 @@ import {
   Margin
 } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 // import {TranslateOption} from '@ohos.matrix4';
 @Entry
 @Component
@@ -56,7 +57,7 @@ struct TransformExample {
   private stateChangCallBack: (eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     console.info("transFormExample page state change called:" + String(eventData.data));
     if (eventData != null) {
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       if (data['rotateValue'] != null) {
         console.info("transFormExample page state change called:" + data['rotateValue']);
         this.rotateValue = data['rotateValue'] as RotateOptions;

@@ -40,6 +40,9 @@
         "MainAbility/pages/EdgeOutlineWidthsPage",
         "MainAbility/pages/OpacityTest",
         "MainAbility/pages/LinearGradientBlurTest",
-        "MainAbility/pages/ContrastTest"
+        "MainAbility/pages/ContrastTest",
+        "MainAbility/pages/RectShapePage",
+        "MainAbility/pages/TransitionEffectOpacity",
+        "MainAbility/pages/MaterialFilter"
     ]
 }

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { RecordData } from '@ohos.base';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -49,7 +50,7 @@ export default function textInputEnterKeyTypeTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textInputEnterKeyTypeTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textInputEnterKeyType" == pages.name)) {
           console.info("get textInputEnterKeyTypeTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);
@@ -85,7 +86,7 @@ export default function textInputEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType":  EnterKeyType.Go
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 810,
@@ -124,7 +125,7 @@ export default function textInputEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType":  EnterKeyType.Search
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 810,
@@ -163,7 +164,7 @@ export default function textInputEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType":  EnterKeyType.Send
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 810,
@@ -202,7 +203,7 @@ export default function textInputEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType":  EnterKeyType.Next
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 810,
@@ -241,7 +242,7 @@ export default function textInputEnterKeyTypeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "enterKeyType":  EnterKeyType.Done
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 810,

@@ -72,6 +72,48 @@ TEST(FatalError)
     CHECK(g_fatalHandlerFinished);
 }
 
+void FixJSVMExceptionTest()
+{
+    JSVM_Status expected = JSVM_ESCAPE_CALLED_TWICE;
+    CHECK(expected == JSVM_ESCAPE_CALLED_TWICE);
+    expected = JSVM_GENERIC_FAILURE;
+    CHECK(expected == JSVM_GENERIC_FAILURE);
+    expected = JSVM_HANDLE_SCOPE_MISMATCH;
+    CHECK(expected == JSVM_HANDLE_SCOPE_MISMATCH);
+    expected = JSVM_INVALID_ARG;
+    CHECK(expected == JSVM_INVALID_ARG);
+    expected = JSVM_INVALID_TYPE;
+    CHECK(expected == JSVM_INVALID_TYPE);
+    expected = JSVM_PENDING_EXCEPTION;
+    CHECK(expected == JSVM_PENDING_EXCEPTION);
+}
+
+void FixJSVMExpectedTest()
+{
+    JSVM_Status expected = JSVM_ARRAY_EXPECTED;
+    CHECK(expected == JSVM_ARRAY_EXPECTED);
+    expected = JSVM_BIGINT_EXPECTED;
+    CHECK(expected == JSVM_BIGINT_EXPECTED);
+    expected = JSVM_BOOLEAN_EXPECTED;
+    CHECK(expected == JSVM_BOOLEAN_EXPECTED);
+    expected = JSVM_DATE_EXPECTED;
+    CHECK(expected == JSVM_DATE_EXPECTED);
+    expected = JSVM_DETACHABLE_ARRAYBUFFER_EXPECTED;
+    CHECK(expected == JSVM_DETACHABLE_ARRAYBUFFER_EXPECTED);
+    expected = JSVM_FUNCTION_EXPECTED;
+    CHECK(expected == JSVM_FUNCTION_EXPECTED);
+    expected = JSVM_JIT_MODE_EXPECTED;
+    CHECK(expected == JSVM_JIT_MODE_EXPECTED);
+    expected = JSVM_STRING_EXPECTED;
+    CHECK(expected == JSVM_STRING_EXPECTED);
+    expected = JSVM_NAME_EXPECTED;
+    CHECK(expected == JSVM_NAME_EXPECTED);
+    expected = JSVM_NUMBER_EXPECTED;
+    CHECK(expected == JSVM_NUMBER_EXPECTED);
+    expected = JSVM_OBJECT_EXPECTED;
+    CHECK(expected == JSVM_OBJECT_EXPECTED);
+}
+
 void FixJSVMStatusTest()
 {
     JSVM_Status status = JSVM_CANCELLED;
@@ -144,6 +186,8 @@ TEST(PromiseReject)
     FixJSVMPromiseRejectTest();
     FixJSVMMessageErrorTest();
     FixJSVMGCCallbackFlagsTest();
+    FixJSVMExpectedTest();
+    FixJSVMExceptionTest();
     JSVMTEST_CALL(OH_JSVM_SetHandlerForPromiseReject(vm, OnPromiseReject));
     jsvm::Run("new Promise((resolve, reject) => { reject(42); })");
 }

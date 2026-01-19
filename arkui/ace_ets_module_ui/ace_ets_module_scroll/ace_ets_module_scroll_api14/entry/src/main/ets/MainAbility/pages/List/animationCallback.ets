@@ -30,7 +30,7 @@ struct ListAnimationCallback {
         .onClick(() => {
           this.scroller.scrollPage({ next: true, animation: true })
         })
-      List({ space: 10, initialIndex: 0, scroller: this.scroller }) {
+      List({ initialIndex: 0, scroller: this.scroller }) {
         ForEach(this.arr, (item: number) => {
           ListItem() {
             Text('' + item)

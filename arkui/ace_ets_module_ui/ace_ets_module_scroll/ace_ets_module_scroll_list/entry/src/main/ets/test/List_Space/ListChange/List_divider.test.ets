@@ -152,24 +152,28 @@ export default function List_divider() {
       expect(Math.abs(Math.round(List_divider_013.right - List_divider_013.left) - Math.round(vp2px(300))) <= 1).assertTrue();
       expect(Math.abs(Math.round(List_divider_014.right - List_divider_014.left) - Math.round(vp2px(300))) <= 1).assertTrue();
 
+      console.info('testListDividerStrokeWidthToForty 111');
       expect(Math.abs(Math.round(List_divider_011.bottom - List_divider_011.top) - Math.round(vp2px(100))) <= 1).assertTrue();
       expect(Math.abs(Math.round(List_divider_012.bottom - List_divider_012.top) - Math.round(vp2px(100))) <= 1).assertTrue();
       expect(Math.abs(Math.round(List_divider_013.bottom - List_divider_013.top) - Math.round(vp2px(100))) <= 1).assertTrue();
       expect(Math.abs(Math.round(List_divider_014.bottom - List_divider_014.top) - Math.round(vp2px(100))) <= 1).assertTrue();
 
+      console.info('testListDividerStrokeWidthToForty 222');
       expect(Math.floor(Math.abs(List_divider_011.left - List_divider_01.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(List_divider_012.left - List_divider_01.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(List_divider_013.left - List_divider_01.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(List_divider_014.left - List_divider_01.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(List_divider_011.top - List_divider_01.top)) <= 1).assertTrue();
+      console.info('testListDividerStrokeWidthToForty 333');
       expect(Math.floor(Math.abs((List_divider_014.bottom - List_divider_01.bottom) - vp2px(20))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((List_divider_012.top - List_divider_011.bottom) - vp2px(40))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((List_divider_013.top - List_divider_012.bottom) - vp2px(40))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((List_divider_014.top - List_divider_013.bottom) - vp2px(40))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((List_divider_01.bottom - List_divider_01.top) - vp2px(500))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((List_divider_01.right - List_divider_01.left) - vp2px(350))) <= 1).assertTrue();
+      console.info('testListDividerStrokeWidthToForty 444');
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2),  Math.round(globalThis.winTop + (bottom-top)/2 + top), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(globalThis.winTop + top));
+      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2),  Math.round(globalThis.winTop + (bottom-top)*0.4 + top), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(globalThis.winTop + top));
       await CommonFunc.sleep(3000);
       let List_divider_014Again = CommonFunc.getComponentRect('List_divider_014');
       expect(Math.floor(Math.abs(List_divider_01.bottom - List_divider_014Again.bottom)) <= 1)

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,6 +23,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 export default function OhosRouterJsunit() {
   describe('ohosRouterJsunit', () => {
@@ -102,7 +103,7 @@ it('ohosRouterTest002_static', Level.LEVEL2, async (done: () => void): Promise<v
       await CommonFunc.sleep(1500);
       let callback = (paramsEvent: events_emitter.EventData) => {
         console.info("[ohosRouterTest002_static] get state result is: " + JSON.stringify(paramsEvent));
-        expect((paramsEvent.data as Record<String,undefined|null|Object>)['params']).assertEqual('B Page');
+        expect((paramsEvent.data as Record<String,RecordData>)['params']).assertEqual('B Page');
       }
       let paramsEvent: events_emitter.InnerEvent = {
         eventId: 142,
@@ -200,7 +201,7 @@ it('ohosRouterTest005_static', Level.LEVEL2, async (done: () => void): Promise<v
       await CommonFunc.sleep(1500);
       let callback = (paramsEvent: events_emitter.EventData) => {
         console.info("[ohosRouterTest005_static] get state result is: " + JSON.stringify(paramsEvent));
-        expect((paramsEvent.data as Record<String,undefined|null|Object>)['params']).assertEqual('B Page');
+        expect((paramsEvent.data as Record<String,RecordData>)['params']).assertEqual('B Page');
       }
       let paramsEvent: events_emitter.InnerEvent = {
         eventId: 142,

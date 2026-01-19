@@ -52,7 +52,7 @@ export const OHDrawingTypographyUpdateDecorationColor: (caseName: number) => num
 
 export const OHDrawingSetTypographyVerticalAlignment: (caseName: number) => number;
 
-export const OH_Drawing_TypographyTest: (caseName: number) => number;
+export const OHDrawingTypographyTest: (caseName: number) => number;
 
 export const OHDrawingAddTextStyleDecoration: (caseName: number) => number;
 

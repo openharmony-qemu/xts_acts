@@ -53,73 +53,75 @@ struct scrollTo {
       .backgroundColor(0xFAEEE0)
       .height(80)
 
-      Button('scrollTo+90')
-        .height('5%')
-        .id('scrollTo1')
-        .onClick(() => {
-          const yOffset: number = this.scroller.currentOffset().yOffset;
-          this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset + 90 })
-        })
+      Row(){
+        Button('scrollTo+90')
+          .height('5%')
+          .id('scrollTo1')
+          .onClick(() => {
+            const yOffset: number = this.scroller.currentOffset().yOffset;
+            this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset + 90 })
+          })
 
+        Button('scrollTo-100')
+          .height('5%')
+          .id('scrollTo2')
+          .onClick(() => {
+            const yOffset: number = this.scroller.currentOffset().yOffset;
+            this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset - 100 })
+          })
+      }
 
-      Button('scrollTo-100')
-        .height('5%')
-        .id('scrollTo2')
-        .onClick(() => {
-          const yOffset: number = this.scroller.currentOffset().yOffset;
-          this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset - 100 })
-        })
+      Row(){
+        Button('scrollTo 0')
+          .height('5%')
+          .id('scrollTo3')
+          .onClick(() => {
+            const yOffset: number = this.scroller.currentOffset().yOffset;
+            this.scroller.scrollTo({ xOffset: 0, yOffset: 0 })
+          })
 
+        Button('scrollTo 100%')
+          .height('5%')
+          .id('scrollTo4')
+          .onClick(() => {
+            this.scroller.scrollTo({ xOffset: 0, yOffset: '100%' })
+          })
+      }
 
-      Button('scrollTo 0')
-        .height('5%')
-        .id('scrollTo3')
-        .onClick(() => {
-          const yOffset: number = this.scroller.currentOffset().yOffset;
-          this.scroller.scrollTo({ xOffset: 0, yOffset: 0 })
-        })
+      Row(){
+        Button('scrollTo 900')
+          .height('5%')
+          .id('scrollTo5')
+          .onClick(() => {
+            this.scroller.scrollTo({ xOffset: 0, yOffset: 900 })
+          })
 
-      Button('scrollTo 100%')
-        .height('5%')
-        .id('scrollTo4')
-        .onClick(() => {
-          this.scroller.scrollTo({ xOffset: 0, yOffset: '100%' })
-        })
+        Button('scrollTo 270')
+          .height('5%')
+          .id('scrollTo6')
+          .onClick(() => {
+            const yOffset: number = this.scroller.currentOffset().yOffset;
+            this.scroller.scrollTo({ xOffset: 0, yOffset: 270 })
+          })
+      }
 
+      Row(){
+        Button('scrollTo aa100%')
+          .height('5%')
+          .id('scrollTo7')
+          .onClick(() => {
+            const yOffset: number = this.scroller.currentOffset().yOffset;
+            this.scroller.scrollTo({ xOffset: 0, yOffset: 'aa100%' })
+          })
 
-      Button('scrollTo 900')
-        .height('5%')
-        .id('scrollTo5')
-        .onClick(() => {
-          this.scroller.scrollTo({ xOffset: 0, yOffset: 900 })
-        })
-
-      Button('scrollTo 270')
-        .height('5%')
-        .id('scrollTo6')
-        .onClick(() => {
-          const yOffset: number = this.scroller.currentOffset().yOffset;
-          this.scroller.scrollTo({ xOffset: 0, yOffset: 270 })
-        })
-
-
-      Button('scrollTo aa100%')
-        .height('5%')
-        .id('scrollTo7')
-        .onClick(() => {
-          const yOffset: number = this.scroller.currentOffset().yOffset;
-          this.scroller.scrollTo({ xOffset: 0, yOffset: 'aa100%' })
-        })
-
-
-      Button('scrollTo aa')
-        .height('5%')
-        .id('scrollTo8')
-        .onClick(() => {
-          const yOffset: number = this.scroller.currentOffset().yOffset;
-          this.scroller.scrollTo({ xOffset: 0, yOffset: 'aa' })
-        })
-
+        Button('scrollTo aa')
+          .height('5%')
+          .id('scrollTo8')
+          .onClick(() => {
+            const yOffset: number = this.scroller.currentOffset().yOffset;
+            this.scroller.scrollTo({ xOffset: 0, yOffset: 'aa' })
+          })
+      }
 
       Button('scrollTo undefined')
         .height('5%')

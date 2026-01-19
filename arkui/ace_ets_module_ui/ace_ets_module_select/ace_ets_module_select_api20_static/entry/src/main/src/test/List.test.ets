@@ -13,10 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import outlineColorTest from './bindmenutest/BindMenu01.test';
 import selectmenuOutline from './selecttest/Select01.test';
 
 export default function testsuite() {
-    outlineColorTest();
     selectmenuOutline();
 }

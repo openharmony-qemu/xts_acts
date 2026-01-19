@@ -551,6 +551,94 @@ export default function drawingTsRegionPart2Test() {
       }
     });
     /**
+     * @tc.name   testRegionQuickContainsNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_2007
+     * @tc.desc   testRegionQuickContainsNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRegionQuickContainsNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const msg = 'testRegionQuickContainsNull';
+      let region = new drawing.Region();
+      region.setRect(100, 750, 400, 800);
+      let othregion = new drawing.Region();
+      othregion.setRect(200, 850, 300, 950);
+      region.op(othregion, drawing.RegionOp.UNION );
+      try {
+        let result =region.quickContains(undefined, 800, 250, 900);
+        console.info(msg + `quickContains 1 successed result: ${result}`);
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `quickContains 1 failed. Error code is: ${e.code}. Error message is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let result =region.quickContains(null, 800, 250, 900);
+        console.info(msg + `quickContains 2 successed result: ${result}`);
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `quickContains 2 failed. Error code is: ${e.code}. Error message is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let result =region.quickContains(200, null, 250, 900);
+        console.info(msg + `quickContains 3 successed result: ${result}`);
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `quickContains 3 failed. Error code is: ${e.code}. Error message is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let result =region.quickContains(200, undefined, 250, 900);
+        console.info(msg + `quickContains 4 successed result: ${result}`);
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `quickContains 4 failed. Error code is: ${e.code}. Error message is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let result =region.quickContains(200, 280, null, 900);
+        console.info(msg + `quickContains 5 successed result: ${result}`);
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `quickContains 5 failed. Error code is: ${e.code}. Error message is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let result =region.quickContains(200, 280, undefined, 900);
+        console.info(msg + `quickContains 6 successed result: ${result}`);
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `quickContains 6 failed. Error code is: ${e.code}. Error message is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let result =region.quickContains(200, 280, 500, null);
+        console.info(msg + `quickContains 7 successed result: ${result}`);
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `quickContains 7 failed. Error code is: ${e.code}. Error message is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let result =region.quickContains(200, 280, 500, undefined);
+        console.info(msg + `quickContains 8 successed result: ${result}`);
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `quickContains 8 failed. Error code is: ${e.code}. Error message is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+    });
+    /**
      * @tc.name   testRegionQuickContainsNormalMultipleCalls
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_2006
      * @tc.desc   testRegionQuickContainsNormalMultipleCalls

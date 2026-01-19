@@ -22,9 +22,13 @@ import sim from '@ohos.telephony.sim';
 import httpErrorCodeTest from './HttpErrorCodeTest.test';
 import HttpRequestGmssl from './HttpRequestGmssl.test.ets';
 import HttpRequestInterceptor from './HttpRequestInterceptor.test';
+import HttpRequestMaxAutoRedirectsTest from './HttpRequestRedirects.test';
+import HttpRequestMaxAutoRedirectsWithInterceptorTest from './HttpRequestRedirectsInterceptor.test';
 
 export default function testsuite() {
   HttpRequestInterceptor();
+  HttpRequestMaxAutoRedirectsTest();
+  HttpRequestMaxAutoRedirectsWithInterceptorTest();
   if (sim.getMaxSimCount() > 1) {
     HttpRequestGmssl();
     HttpRequestDataCATest();

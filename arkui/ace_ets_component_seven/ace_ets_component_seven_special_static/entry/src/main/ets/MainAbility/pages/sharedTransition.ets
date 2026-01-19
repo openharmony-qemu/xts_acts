@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,6 +17,7 @@ import { Entry, Component, AttributeModifier, SharedTransitionEffectType, ListIt
   Padding, Image, TextAlign, ClickEvent, $r } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -45,7 +46,7 @@ struct SharedTransition7Example {
           //         "duration": this.duration,
           //         "delay": this.delay,
           //         "type": this.type
-          //       } as Record<string,undefined|null|Object>
+          //       } as Record<String,RecordData>
           //     }
           //     let backEvent: events_emitter.InnerEvent = {
           //       eventId: 193,
@@ -76,7 +77,7 @@ struct SharedTransition7Example {
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info("sharedTransition page state change called:" + JSON.stringify(eventData));
-      const data = eventData.data as Record<string,undefined|null|object>
+      const data = eventData.data as Record<String,RecordData>
       if (data['duration'] != null) {
         this.duration = data['duration'] as number
       }

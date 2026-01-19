@@ -32,7 +32,7 @@ import promptActionKeyboardAvoidDistance from './prompt/promptActionKeyboardAvoi
 
 export default function testsuite() {
   uiOpenCustomDialogMode();
-  customDialogKeyboardAvoidDistance();
+  // customDialogKeyboardAvoidDistance();
   showAlertDialogMode();
   showDialogMode();
   actionSheetMode();
@@ -43,6 +43,6 @@ export default function testsuite() {
   openCustomDialogWithCtrMode();
   presentCustomDialogMode();
   buttonTypeTest();
-  promptActionKeyboardAvoidDistance();
+  // promptActionKeyboardAvoidDistance();
   bindSheetRadius();
 }

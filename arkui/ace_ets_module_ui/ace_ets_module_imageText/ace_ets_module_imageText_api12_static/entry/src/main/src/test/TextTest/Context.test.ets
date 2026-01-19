@@ -47,7 +47,7 @@ export default function Context() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Context state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("Context" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

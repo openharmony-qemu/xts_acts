@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 #include "common/common.h"
+#include "text/TextEnumTest.cpp"
 #include "containerPicker/ContainerPickerCanLoopTest.cpp"
 #include "containerPicker/ContainerPickerEnableHapticFeedbackTest.cpp"
 #include "containerPicker/ContainerPickerSelectedIndexTest.cpp"
@@ -22,6 +23,11 @@
 #include "MotionPath/MotionPathOptionsTest.cpp"
 #include "publicCapacity/AtomicServiceMenuBarSetVisibleTest.cpp"
 #include "node/IsInRenderStateReturnValueTest.cpp"
+#include "refresh/RefreshAttrsTest.cpp"
+#include "image/ImageAntialiasedTest.cpp"
+#include "list/ListEmptyTest.cpp"
+#include "grid/GridEmptyTest.cpp"
+#include "TextMarqueeOptions/TextMarqueeOptionsTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -89,6 +95,8 @@ static napi_value Init(napi_env env, napi_value exports)
          TestContainerPickerSelectionIndicator015, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestContainerPickerSelectionIndicator016", nullptr,
          TestContainerPickerSelectionIndicator016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestContainerPickerSelectionIndicator017", nullptr,
+         TestContainerPickerSelectionIndicator017, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestContainerPickerSubComponent001", nullptr,
          TestContainerPickerSubComponent001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestContainerPickerSubComponent002", nullptr,
@@ -97,6 +105,8 @@ static napi_value Init(napi_env env, napi_value exports)
          TestContainerPickerSubComponent003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestContainerPickerSubComponent004", nullptr,
          TestContainerPickerSubComponent004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestContainerPickerSubComponent005", nullptr,
+         TestContainerPickerSubComponent005, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextDirection_001", nullptr, TextDirection_001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"TextDirection_002", nullptr, TextDirection_002, nullptr, nullptr, nullptr,
@@ -127,6 +137,54 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"testMotionPathOptions009", nullptr, MotionPathNode, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"TextEnumTest_001", nullptr, TextEnumTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextEnumTest_002", nullptr, TextEnumTest_002, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_003", nullptr, TextEnumTest_003, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_004", nullptr, TextEnumTest_004, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_005", nullptr, TextEnumTest_005, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_006", nullptr, TextEnumTest_006, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_007", nullptr, TextEnumTest_007, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_008", nullptr, TextEnumTest_008, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_009", nullptr, TextEnumTest_009, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_010", nullptr, TextEnumTest_010, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_011", nullptr, TextEnumTest_011, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextEnumTest_012", nullptr, TextEnumTest_012, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_013", nullptr, TextEnumTest_013, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_014", nullptr, TextEnumTest_014, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_015", nullptr, TextEnumTest_015, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_016", nullptr, TextEnumTest_016, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_017", nullptr, TextEnumTest_017, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_018", nullptr, TextEnumTest_018, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_019", nullptr, TextEnumTest_019, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_020", nullptr, TextEnumTest_020, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"TextEnumTest_021", nullptr, TextEnumTest_021, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextEnumTest_022", nullptr, TextEnumTest_022, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextEnumTest_023", nullptr, TextEnumTest_023, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextMarqueeOptionsTest", nullptr, TextMarqueeOptionsTest, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         {"TestAtomicServiceMenuBarSetVisible01", nullptr,
          TestAtomicServiceMenuBarSetVisible01, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextSelectionTest", nullptr, MotionPathNode, nullptr, nullptr, nullptr,
@@ -135,6 +193,40 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestIsInRenderStateReturnValue002", nullptr, TestIsInRenderStateReturnValue002,
          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testPullUpToCancelRefresh01", nullptr, TestPullUpToCancelRefresh01, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testPullUpToCancelRefresh02", nullptr, TestPullUpToCancelRefresh02, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testPullUpToCancelRefreshError", nullptr, TestPullUpToCancelRefreshError, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageAntialiased001", nullptr,
+         TestImageAntialiased001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAntialiased002", nullptr,
+         TestImageAntialiased002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAntialiased003", nullptr,
+         TestImageAntialiased003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAntialiased004", nullptr,
+         TestImageAntialiased004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAntialiased005", nullptr,
+         TestImageAntialiased005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ListEmptyTest_001", nullptr, ListEmptyTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ListEmptyTest_002", nullptr, ListEmptyTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ListEmptyTest_003", nullptr, ListEmptyTest_003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ListEmptyTest_004", nullptr, ListEmptyTest_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GridIndexTest_001", nullptr, GridIndexTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GridEmptyTest_001", nullptr, GridEmptyTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GridEmptyTest_002", nullptr, GridEmptyTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GridEmptyTest_003", nullptr, GridEmptyTest_003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GridEmptyTest_004", nullptr, GridEmptyTest_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

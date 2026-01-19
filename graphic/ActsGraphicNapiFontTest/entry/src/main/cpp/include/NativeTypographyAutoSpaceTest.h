@@ -21,20 +21,9 @@
 #include <native_drawing/drawing_text_typography.h>
 #include "include/OhosCommonTest.h"
 
-constexpr double DEFAULT_FONT_SIZE = 40;
-constexpr double DEFAULT_LAYOUT_WIDTH = 1000;
-constexpr double BOUNDARY_LAYOUT_WIDTH_SINGLE_RUN = 388.319641;
-constexpr double BOUNDARY_LAYOUT_WIDTH_MULTI_LINE = 956.159546;
-constexpr int LINE_INDEX_0 = 0;
-constexpr int LINE_INDEX_1 = 1;
-constexpr int LINE_INDEX_2 = 2;
-constexpr int LINE_INDEX_3 = 3;
-constexpr int AUTO_SPACE_DIVISOR = 8;
-constexpr int AUTO_SPACE_MULTIPLIER_2 = 2;
-constexpr int AUTO_SPACE_MULTIPLIER_3 = 3;
-constexpr int LINE_COUNT_OFFSET = 1;
-
 struct NativeTypographyAutoSpaceTestContext {
+    const double defaultFontSize = 40;
+
     OH_Drawing_FontCollection* fontCollection_{ nullptr };
     OH_Drawing_TextStyle* txtStyle_{ nullptr };
     OH_Drawing_TypographyCreate* handler_{ nullptr };
@@ -98,7 +87,7 @@ struct NativeTypographyAutoSpaceTestContext {
         ASSERT_NE(txtStyle_, nullptr);
         fontCollection_ = OH_Drawing_CreateSharedFontCollection();
         ASSERT_NE(fontCollection_, nullptr);
-        OH_Drawing_SetTextStyleFontSize(txtStyle_, DEFAULT_FONT_SIZE);
+        OH_Drawing_SetTextStyleFontSize(txtStyle_, defaultFontSize);
     }
 };
 

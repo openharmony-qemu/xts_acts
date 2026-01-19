@@ -426,10 +426,11 @@ async function configCameraOutput(
 
 function setColorSpaceBeforeCommitConfig(
   logger: Logger,
-  session: camera.VideoSession|camera.PhotoSession,
+  session: camera.VideoSession,
   isHdr: boolean
 ): void {
-  let colorSpace: colorSpaceManager.ColorSpace = isHdr? colorSpaceManager.ColorSpace.BT2020_HLG_LIMIT : colorSpaceManager.ColorSpace.BT709_LIMIT;
+  let colorSpace: colorSpaceManager.ColorSpace = isHdr ? colorSpaceManager.ColorSpace.BT2020_HLG_LIMIT :
+                                                         colorSpaceManager.ColorSpace.BT709_LIMIT;
   let colorSpaces: Array<colorSpaceManager.ColorSpace> = session.getSupportedColorSpaces();
   logger.log(`supported colorSpaces: ${JSON.stringify(colorSpaces)}`);
   let isSupportedColorSpaces = colorSpaces.indexOf(colorSpace) >= 0;
@@ -444,8 +445,7 @@ function setColorSpaceBeforeCommitConfig(
     let activeColorSpace:colorSpaceManager.ColorSpace = session.getActiveColorSpace();
     logger.log(`activeColorSpace: ${activeColorSpace}`);
   } else {
-    session.setColorSpace(colorSpaces[0]);
-    logger.log(`colorSpace: ${colorSpace} is not support, set to default: ${colorSpaces[0]}`);
+    logger.log(`colorSpace: ${colorSpace} is not supported, skip setting color space`);
   }
 }
 
@@ -461,7 +461,6 @@ async function startPhotoSession(
   photoSession.addInput(cameraInput);
   photoSession.addOutput(photoOutput);
   photoSession.addOutput(previewOutput);
-  setColorSpaceBeforeCommitConfig(logger, photoSession, false);
   await photoSession.commitConfig();
   logger.log('Photo session committed');
   await photoSession.start();

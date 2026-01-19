@@ -38,6 +38,12 @@ add_library(nativerender SHARED
     node/ConvertPositionToWindowTest.cpp
     node/IsInRenderStateTest.cpp
     node/ConvertPositionFromWindowTest.cpp
+    ScrollToVisible/ScrollToVisibleTest.cpp
+    deleteBackward/DeleteBackwardTest.cpp
+    deleteBackward/TextAreaDeleteBackwardTest.cpp
+    textTest/TexeTest.cpp
+    textTest/TextInputTest.cpp
+    textTest/TextAreaTest.cpp
 )
 
 add_library(nativefunc SHARED
@@ -48,6 +54,14 @@ add_library(nativefunc SHARED
     containerPicker/ContainerPickerSelectedIndexTest.cpp
     containerPicker/ContainerPickerSelectionIndicatorTest.cpp
     containerPicker/ContainerPickerSubComponentTest.cpp
+    TextMarqueeOptions/TextMarqueeOptionsTest.cpp
+    image/ImageAntialiasedTest.cpp
+)
+
+add_library(nativeNode SHARED 
+    InitTest.cpp 
+    SelectedDragPreviewStyle/SelectedDragPreviewStyleTest.cpp 
+    SelectedDragPreviewStyle/ContainerTest.cpp
 )
 
 find_library(
@@ -86,3 +100,10 @@ target_link_libraries(nativerender PUBLIC
     libnative_drawing.so libpixelmap.so libace_napi.z.so ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib} libudmf.so)
 target_link_libraries(nativefunc PUBLIC
 libnative_drawing.so libpixelmap.so libace_napi.z.so libudmf.so ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib})
+target_link_libraries(nativeNode PUBLIC libace_napi.z.so)
+target_link_libraries(nativeNode PUBLIC libace_napi.z.so)
+target_link_libraries(nativeNode PUBLIC libace_ndk.z.so)
+target_link_libraries(nativeNode PUBLIC libnative_drawing.so)
+target_link_libraries(nativeNode PUBLIC libhilog_ndk.z.so)
+target_link_libraries(nativeNode PUBLIC libhilog_ndk.z.so libpixelmap.so)
+target_link_libraries(nativeNode PUBLIC libudmf.so)

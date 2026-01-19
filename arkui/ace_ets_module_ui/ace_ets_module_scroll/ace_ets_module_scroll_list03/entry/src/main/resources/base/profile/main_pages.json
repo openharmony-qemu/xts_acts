@@ -11,6 +11,7 @@
         "MainAbility/pages/List/listAniDel",
         "MainAbility/pages/List/listAnVisible",
         "MainAbility/pages/List/listHeight",
+        "MainAbility/pages/List/listScrollerBar",
         "MainAbility/pages/ListItemGroup/groupAnVisible",
         "MainAbility/pages/ListItemGroup/groupHeight",
         "MainAbility/pages/List/cachedListMin",
@@ -46,6 +47,8 @@
         "MainAbility/pages/emptyBranch/listRepeatTrue",
         "MainAbility/pages/emptyBranch/listRepeatFalse",
         "MainAbility/pages/emptyBranch/listRepeatUn",
-        "MainAbility/pages/emptyBranch/listRepeatNull"
+        "MainAbility/pages/emptyBranch/listRepeatNull",
+        "MainAbility/pages/List/editModeList",
+        "MainAbility/pages/List/editBadgeList"
     ]
 }

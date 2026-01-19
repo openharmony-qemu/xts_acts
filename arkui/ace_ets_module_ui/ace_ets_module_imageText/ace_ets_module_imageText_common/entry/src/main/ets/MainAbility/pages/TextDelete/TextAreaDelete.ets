@@ -20,15 +20,17 @@ struct textArea {
 
   build() {
     Column() {
-      TextArea({ text: '测试文本⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️', controller: this.controller })
-        .defaultFocus(true)
+      TextArea({ text: '测试文本⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️', controller: this.controller })
         .id('miningTimeTextArea')
+        .width('80%')
+        .height('10%')
 
-      Button('Delete backward character')
+      Button('1')
         .onClick(() => {
           this.controller.deleteBackward();
         })
         .id('textareadeleteBackward')
     }
+    .width('100%')
   }
 }

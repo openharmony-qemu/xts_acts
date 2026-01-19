@@ -48,7 +48,7 @@ export const Sleep = (ms: int) => {
 export default function NewEAWorkerTes2() {
   describe('NewEAWorkerTest2', (): void => {
     afterEach(() => {
-      await Utils.msSleep(300);
+      await Utils.msSleep(100);
     })
 
     /**
@@ -210,6 +210,7 @@ export default function NewEAWorkerTes2() {
           WorkerPriority.PRIORITY_IDLE,
           WorkerPriority.PRIORITY_LOW
         ];
+        let count = 0
         try {
           const result: number[] = [];
           const workers = list.map((p, idx: int): EAWorker => {
@@ -219,16 +220,15 @@ export default function NewEAWorkerTes2() {
             worker.postTask(() => {
               console.info(`${TAG} idx: ${idx} priority：${p}`);
               result.push(idx)
+              count++
             });
             return worker;
           });
-          workers.forEach(worker => {
-            worker.quit()
-          });
+        
           console.info(`${TAG} workers: ${workers}`);
           console.info(`${TAG} result.length: ${result.length}`);
-          const end = Date.now() + 500;
-          while (Date.now() < end) {
+          while (count < 10) {
+            await Sleep(10);
           }
           expect(result.length).assertEqual(10);
           workers.forEach(worker => {

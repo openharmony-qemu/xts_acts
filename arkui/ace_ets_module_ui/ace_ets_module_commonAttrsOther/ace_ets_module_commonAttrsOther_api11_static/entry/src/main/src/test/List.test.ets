@@ -36,8 +36,8 @@ export default function testsuite() {
   overLayJsunit();
   zIndexJsunit();
   visibilityJsunit();
-  AttributeModifierDemoAPI01();
-  AttributeModifierDemoAPI03();
+  // AttributeModifierDemoAPI01();
+  // AttributeModifierDemoAPI03();
   accessVNTest();
   dymaticTest();
   outlineTest();

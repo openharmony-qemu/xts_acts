@@ -453,7 +453,7 @@ async function lockJob(lockName: string, flagBuf: Int32Array): Promise<void> {
     await new Promise<number>((resolve): void => {
       setTimeout((): void => {
         resolve(1);
-      }, 100);
+      }, 1000);
     });
     Atomics.compareExchange(flagBuf, 0, 1, 0);
   }, AsyncLockMode.SHARED);

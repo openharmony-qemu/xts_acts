@@ -25,6 +25,19 @@ namespace OHOS {
 namespace Rosen {
 namespace Drawing {
 namespace {
+const double DEFAULT_FONT_SIZE = 40;
+const double DEFAULT_LAYOUT_WIDTH = 1000;
+const double BOUNDARY_LAYOUT_WIDTH_SINGLE_RUN = 388.319641;
+const double BOUNDARY_LAYOUT_WIDTH_MULTI_LINE = 956.159546;
+const int LINE_INDEX_0 = 0;
+const int LINE_INDEX_1 = 1;
+const int LINE_INDEX_2 = 2;
+const int LINE_INDEX_3 = 3;
+const int AUTO_SPACE_DIVISOR = 8;
+const int AUTO_SPACE_MULTIPLIER_2 = 2;
+const int AUTO_SPACE_MULTIPLIER_3 = 3;
+const int LINE_COUNT_OFFSET = 1;
+
 struct ParagraphMetrics {
     double longestLine;
     double line1;

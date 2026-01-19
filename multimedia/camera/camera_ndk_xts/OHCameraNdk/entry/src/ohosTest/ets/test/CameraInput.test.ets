@@ -279,6 +279,89 @@ export default function CameraInputTest() {
       console.log(TAG+"testOHCameraInputUnregisterCallback0300:"+ret);
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
-
+    /**
+     * @tc.name   testOHCameraInputRegisterOcclusionDetectionCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputRegisterOcclusionDetectionCallback0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraInputRegisterOcclusionDetectionCallback0100', Level.LEVEL0, () => {
+      createCameraInput()
+      let ret = cameras.oHCameraInputRegisterOcclusionDetectionCallback(0);
+      console.log(TAG+"testOHCameraInputRegisterOcclusionDetectionCallback0100:"+ret);
+      expect(ret).assertEqual(CAMERA_OK);
+    })
+    /**
+     * @tc.name   testOHCameraInputRegisterOcclusionDetectionCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputRegisterOcclusionDetectionCallback0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraInputRegisterOcclusionDetectionCallback0200', Level.LEVEL0, () => {
+      createCameraInput()
+      let ret = cameras.oHCameraInputRegisterOcclusionDetectionCallback(1);
+      console.log(TAG+"testOHCameraInputRegisterOcclusionDetectionCallback0200:"+ret);
+      expect(ret).assertEqual(CAMERA_ERROR_7400101);
+    })
+    /**
+     * @tc.name   testOHCameraInputRegisterOcclusionDetectionCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputRegisterOcclusionDetectionCallback0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraInputRegisterOcclusionDetectionCallback0300', Level.LEVEL0, () => {
+      createCameraInput()
+      let ret = cameras.oHCameraInputRegisterOcclusionDetectionCallback(2);
+      console.log(TAG+"testOHCameraInputRegisterOcclusionDetectionCallback0300:"+ret);
+      expect(ret).assertEqual(CAMERA_ERROR_7400101);
+    })
+    /**
+     * @tc.name   testOHCameraInputUnRegisterOcclusionDetectionCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputUnRegisterOcclusionDetectionCallback0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraInputUnRegisterOcclusionDetectionCallback0100', Level.LEVEL0, () => {
+      createCameraInput()
+      let ret = cameras.oHCameraInputUnRegisterOcclusionDetectionCallback(0);
+      console.log(TAG+"testOHCameraInputUnRegisterOcclusionDetectionCallback0100:"+ret);
+      expect(ret).assertEqual(CAMERA_OK);
+    })
+    /**
+     * @tc.name   testOHCameraInputUnRegisterOcclusionDetectionCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputUnRegisterOcclusionDetectionCallback0200
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraInputUnRegisterOcclusionDetectionCallback0200', Level.LEVEL0, () => {
+      createCameraInput()
+      let ret = cameras.oHCameraInputUnRegisterOcclusionDetectionCallback(1);
+      console.log(TAG+"testOHCameraInputUnRegisterOcclusionDetectionCallback0200:"+ret);
+      expect(ret).assertEqual(CAMERA_ERROR_7400101);
+    })
+    /**
+     * @tc.name   testOHCameraInputUnRegisterOcclusionDetectionCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraInputUnRegisterOcclusionDetectionCallback0300
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraInputUnRegisterOcclusionDetectionCallback0300', Level.LEVEL0, () => {
+      createCameraInput()
+      let ret = cameras.oHCameraInputUnRegisterOcclusionDetectionCallback(2);
+      console.log(TAG+"testOHCameraInputUnRegisterOcclusionDetectionCallback0300:"+ret);
+      expect(ret).assertEqual(CAMERA_OK);
+    })
   })
 }

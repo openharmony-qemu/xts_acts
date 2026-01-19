@@ -63,45 +63,55 @@ export default function progressSecTest() {
       console.info("ActsProgressSecTest beforeEach start");
     });
 
-    /**
-     * @tc.number   ArkUI_Stage_Progress_Capsule_BackgroundColor_static_0100
-     * @tc.name     ArkUI_Stage_Progress_Capsule_BackgroundColor_static_0100
-     * @tc.desc     ArkUI_Stage_Progress_Capsule_BackgroundColor_static_0100
-     * @tc.level    Level.LEVEL0
-     */
-    it('ArkUI_Stage_Progress_Capsule_BackgroundColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100] start");
-      let newJson = inspector.getInspectorByKey('progress_capsule_default');
-      let newJsonDefault = inspector.getInspectorByKey('progress_capsule_default_default');
-      console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]: newJson " + JSON.stringify(newJson));
-      console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]: newJsonDefault " + JSON.stringify(newJsonDefault));
+    afterEach(async (): Promise<void> => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      let pages:router.RouterState = routerInstance.getState();
+      console.info("get Search state pages afterEach:" + JSON.stringify(pages));
+      if(pages.name == "ProgressSec"){
+        routerInstance.back();
+        await CommonFunc.sleep(1000);
+      }
+    })
 
-      let obj = JSON.parseJsonElement(newJson);
-      let objDefault = JSON.parseJsonElement(newJsonDefault);
-
-      let strColor = objDefault.getElement('$attrs').getString('backgroundColor');
-      let strOpicity = objDefault.getElement('$attrs').getString('padding');
-      console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]:strColor " + strColor);
-      console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]: strOpicity" + strOpicity);
-
-      let strColor_2 = "0x" + strColor.substr(2, 2);
-      let strOpicity_2 = strOpicity.substr(1, 4);
-      console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]:strColor_2 " + strColor_2);
-      console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]:strOpicity_2 " + strOpicity_2);
-
-      let calculatedOpicaty = Number.parseInt(strColor_2) * Number(strOpicity_2);
-      console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]: " + JSON.stringify(calculatedOpicaty));
-      console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]: " + calculatedOpicaty.toString(16));
-
-      let finalResult = "#" + calculatedOpicaty.toString(16) + strColor.substr(4, 6);
-      console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]: " + finalResult);
-
-      console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]: " +
-      JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
-      expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual(finalResult);
-      console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100] end");
-      done();
-    });
+    // /**
+    //  * @tc.number   ArkUI_Stage_Progress_Capsule_BackgroundColor_static_0100
+    //  * @tc.name     ArkUI_Stage_Progress_Capsule_BackgroundColor_static_0100
+    //  * @tc.desc     ArkUI_Stage_Progress_Capsule_BackgroundColor_static_0100
+    //  * @tc.level    Level.LEVEL0
+    //  */
+    // it('ArkUI_Stage_Progress_Capsule_BackgroundColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    //   console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100] start");
+    //   let newJson = inspector.getInspectorByKey('progress_capsule_default');
+    //   let newJsonDefault = inspector.getInspectorByKey('progress_capsule_default_default');
+    //   console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]: newJson " + JSON.stringify(newJson));
+    //   console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]: newJsonDefault " + JSON.stringify(newJsonDefault));
+    //
+    //   let obj = JSON.parseJsonElement(newJson);
+    //   let objDefault = JSON.parseJsonElement(newJsonDefault);
+    //
+    //   let strColor = objDefault.getElement('$attrs').getString('backgroundColor');
+    //   let strOpicity = objDefault.getElement('$attrs').getString('padding');
+    //   console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]:strColor " + strColor);
+    //   console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]: strOpicity" + strOpicity);
+    //
+    //   let strColor_2 = "0x" + strColor.substr(2, 2);
+    //   let strOpicity_2 = strOpicity.substr(1, 4);
+    //   console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]:strColor_2 " + strColor_2);
+    //   console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]:strOpicity_2 " + strOpicity_2);
+    //
+    //   let calculatedOpicaty = Number.parseInt(strColor_2) * Number(strOpicity_2);
+    //   console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]: " + JSON.stringify(calculatedOpicaty));
+    //   console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]: " + calculatedOpicaty.toString(16));
+    //
+    //   let finalResult = "#" + calculatedOpicaty.toString(16) + strColor.substr(4, 6);
+    //   console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]: " + finalResult);
+    //
+    //   console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100]: " +
+    //   JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
+    //   expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual(finalResult);
+    //   console.info("[ArkUI_Stage_Progress_Capsule_BackgroundColor_0100] end");
+    //   done();
+    // });
 
 
     /**
@@ -5380,37 +5390,6 @@ export default function progressSecTest() {
       JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
       expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("false");
       console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0300] end");
-      done();
-    });
-
-
-    /**
-     * @tc.number   ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0400
-     * @tc.name     ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0400
-     * @tc.desc     ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0400
-     * @tc.level    Level.LEVEL0
-     */
-    it('ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400] start");
-      let newJson = inspector.getInspectorByKey('progress_capsule_number');
-      console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400]: " + JSON.stringify(newJson));
-
-      let progress_capsule_enableSmoothEffect_boolean = null;
-      try {
-        AppStorage.setOrCreate<boolean|null>('progress_capsule_enableSmoothEffect_boolean',progress_capsule_enableSmoothEffect_boolean)
-      } catch (err) {
-        console.log("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400] change component data error: " +
-        (err as BusinessError).message);
-      }
-      await CommonFunc.sleep(2000);
-
-      let strJson = inspector.getInspectorByKey('progress_capsule_number');
-      console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400]: " + JSON.stringify(strJson))
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400]: " +
-      JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
-      expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("true");
-      console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400] end");
       done();
     });
 

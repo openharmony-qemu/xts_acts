@@ -41,7 +41,7 @@ export default function getListItemRect5() {
     await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
 
 
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
+
     beforeAll(() => {
 
     });
@@ -122,10 +122,10 @@ it('getListItemRect5_static_0100', Level.LEVEL0, async (done: () => void): Promi
 
       console.log('assert size')
       console.log('listItem_0.right - listItem_0.left' + (listItem_0.right - listItem_0.left))
-      expect(Math.abs(uiContext.vp2px(Math.round(width)) - Math.round(listItem_0.right - listItem_0.left)) <= 1)
+      expect(Math.abs(UIContext.resolveUIContext()!.vp2px(Math.round(width)) - Math.round(listItem_0.right - listItem_0.left)) <= 1)
         .assertTrue();
       console.log('listItem_0.bottom - listItem_0.top' + (listItem_0.bottom - listItem_0.top))
-      expect(Math.abs(uiContext.vp2px(Math.round(height)) - Math.round(listItem_0.bottom - listItem_0.top)) <= 1)
+      expect(Math.abs(UIContext.resolveUIContext()!.vp2px(Math.round(height)) - Math.round(listItem_0.bottom - listItem_0.top)) <= 1)
         .assertTrue();
 
       done();
@@ -145,7 +145,7 @@ it('getListItemRect5_static_0200', Level.LEVEL0, async (done: () => void): Promi
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       const message1: MessageManager<Axis> = AppStorage.get<MessageManager<Axis>>("messageManagerAxis")!
       const message2: MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManagerString")!
-      message.notify({ name: 'index', value: 0 })
+      message.notify({ name: 'index', value: 0.0 as Double })
       message1.notify({ name: 'listDirection1', value: Axis.Horizontal })
       message.notify({ name: 'width2', value: 30.0 })
       message2.notify({ name: 'height2', value: '100%' })
@@ -186,10 +186,10 @@ it('getListItemRect5_static_0200', Level.LEVEL0, async (done: () => void): Promi
 
       console.log('assert size')
       console.log('listItem_0.right - listItem_0.left' + (listItem_0.right - listItem_0.left))
-      expect(Math.abs(uiContext.vp2px(Math.round(width)) - Math.round(listItem_0.right - listItem_0.left)) <= 1)
+      expect(Math.abs(UIContext.resolveUIContext()!.vp2px(Math.round(width)) - Math.round(listItem_0.right - listItem_0.left)) <= 1)
         .assertTrue();
       console.log('listItem_0.bottom - listItem_0.top' + (listItem_0.bottom - listItem_0.top))
-      expect(Math.abs(uiContext.vp2px(Math.round(height)) - Math.round(listItem_0.bottom - listItem_0.top)) <= 1)
+      expect(Math.abs(UIContext.resolveUIContext()!.vp2px(Math.round(height)) - Math.round(listItem_0.bottom - listItem_0.top)) <= 1)
         .assertTrue();
 
       done();

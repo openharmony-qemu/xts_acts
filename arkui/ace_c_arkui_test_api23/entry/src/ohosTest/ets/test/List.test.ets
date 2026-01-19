@@ -32,6 +32,9 @@ import rowReverseTest from './row/RowReverseTest.test'
 import TextCompressLeadingPunctuationTest from "./text/TextCompressLeadingPunctuationTest.test";
 import TextAreaCompressLeadingPunctuationTest from "./textArea/TextAreaCompressLeadingPunctuationTest.test";
 import TextInputCompressLeadingPunctuationTest from "./textInput/TextInputCompressLeadingPunctuationTest.test";
+import TextEnumTest from "./text/TextEnum.test";
+import TextMarqueeOptionsTest from './TextMarqueeOptions/TextMarqueeOptions.test';
+import ScrollToVisibleTest from './ScrollToVisible/ScrollToVisible.test';
 import distanceTest from './distance/DistanceTest.test'
 import hoverEffectTest from './hoverEffect/HoverEffectTest.test'
 import monopolizeTest from './monopolize/MonopolizeTest.test'
@@ -43,6 +46,18 @@ import IsInRenderStateReturnValueTest from "./node/IsInRenderStateReturnValueTes
 import ConvertPositionToWindowTest from "./node/ConvertPositionToWindowTest.test";
 import IsInRenderStateTest from "./node/IsInRenderStateTest.test";
 import ConvertPositionFromWindowTest from "./node/ConvertPositionFromWindowTest.test";
+import refreshAttrsTest from './refresh/RefreshAttrsTest.test'
+import ImageAntialiasedTest from './imageTest/ImageAntialiasedTest.test'
+import ListEmptyTest from "./list/ListEmptyTest.test";
+import GridEmptyTest from "./grid/GridEmptyTest.test";
+import TextInputDeletBackward from "./deleteBackward/DeleteBackwardTest.test";
+import TextAreaDeletBackward from "./deleteBackward/TextAreaDeleteBackwardTest.test";
+import TextTest from "./TextTest/TextTest.test";
+import TextInputTest from "./TextTest/TextInputTest.test";
+import TextAreaTest from "./TextTest/TextAreaTest.test";
+import SelectedDragPreviewStyleTextTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTextTest.test'
+import SelectedDragPreviewStyleTextInputTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTextInputTest.test'
+import SelectedDragPreviewStyleTextAreaTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTextAreaTest.test'
 
 export default function testsuite() {
   IsInRenderStateReturnValueTest(); //此条方在最前面，勿动
@@ -69,6 +84,7 @@ export default function testsuite() {
   TextCompressLeadingPunctuationTest();
   TextAreaCompressLeadingPunctuationTest();
   TextInputCompressLeadingPunctuationTest();
+  TextEnumTest();
   hoverEffectTest();
   distanceTest();
   monopolizeTest();
@@ -76,4 +92,18 @@ export default function testsuite() {
   AtomicServiceMenuBarSetVisibleTest();
   TextDirectionTest();
   TextSelectionTest();
+  refreshAttrsTest();
+  ImageAntialiasedTest();
+  ListEmptyTest();
+  GridEmptyTest();
+  TextAreaDeletBackward();
+  TextTest();
+  TextInputTest();
+  TextAreaTest();
+  TextInputDeletBackward();
+  SelectedDragPreviewStyleTextTest()
+  SelectedDragPreviewStyleTextAreaTest()
+  SelectedDragPreviewStyleTextInputTest()
+  TextMarqueeOptionsTest();
+  ScrollToVisibleTest();
 }
