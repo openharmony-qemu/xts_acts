@@ -349,5 +349,25 @@ export default function CameraInputTest() {
      }
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100 ends here");
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100
+     * @tc.desc   camera status callback on CameraInput async api for CameraInputOcclusionDetection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100--------------");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 start for camera");
+      await startCameraSession();
+      await createInput();
+      let ret = cameraObj.cameraInputOcclusionDetection();
+      if (ret != 0) {
+        expect().assertFail();
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 end for camera");
+    });
   })
 }

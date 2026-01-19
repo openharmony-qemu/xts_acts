@@ -21,6 +21,39 @@ export default function ActsNotificationGeofenceLiveViewTest() {
   describe('ActsNotificationGeofenceLiveViewTest', () => {
 
     /**
+     * @tc.name   Sub_Notification_Ans_GeofenceLiveView_0006
+     * @tc.number Sub_Notification_Ans_GeofenceLiveView_0006
+     * @tc.desc   Third-party app calls setGeofenceEnabled, error 202 returned
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Ans_GeofenceLiveView_0006', Level.LEVEL2, async (done: Function) => {
+      let caseName = 'Sub_Notification_Ans_GeofenceLiveView_0006'
+      console.log(`${caseName}: create`)
+      try {
+        notificationManager.setGeofenceEnabled(true)
+          .then(() => {
+            console.info(`${caseName}  setGeoFenceEnabled success`);
+            expect(false).assertTrue();
+            done()
+          })
+          .catch((err: BusinessError) => {
+            console.error(`${caseName} call setGeoFenceEnabled failed(.catch), errCode: ` + err.code + `, errMsg: ` +
+            `err.message`);
+            expect(err.code).assertEqual(202);
+          })
+        done();
+      } catch (err) {
+        let e = err as BusinessError;
+        console.error(`[${caseName}]: ` + e.code + e.message);
+        expect().assertFail();
+        done();
+      }
+      console.log(`[${caseName}]: end`)
+    })
+
+    /**
      * @tc.name   Sub_Notification_Ans_GeofenceLiveView_0010
      * @tc.number Sub_Notification_Ans_GeofenceLiveView_0010
      * @tc.desc   isGeofenceEnabled returns default true after device flash

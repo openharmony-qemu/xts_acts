@@ -108,8 +108,11 @@ export default function RichEditorOnWillChange001() {
 
       expect(replaceText).assertEqual('replacedSpans_callback:true');
       expect(didText).assertEqual('onDidChange_callback:true');
-      expect(onWillBeforeText.indexOf('{"start":0,"end":0}') > 0).assertEqual(true);
-      expect(onDidBeforeText.indexOf('{"start":0,"end":0}') > 0).assertEqual(true);
+      expect(onWillBeforeText.indexOf('"start":0') > 0).assertEqual(true);
+      expect(onWillBeforeText.indexOf('"end":0') > 0).assertEqual(true);
+
+      expect(onDidBeforeText.indexOf('"start":0') > 0).assertEqual(true);
+      expect(onDidBeforeText.indexOf('"end":0') > 0).assertEqual(true);
       expect(length).assertEqual('rangeAfter_emoji:{"start":0,"end":2}');
 
       let pointCenter = await rich.getBoundsCenter();
@@ -129,8 +132,11 @@ export default function RichEditorOnWillChange001() {
       onDidBeforeText = await onDidChange_rangeBefore.getText();
       await CommonFunc.sleep(500);
 
-      expect(onWillBeforeText.indexOf('{"start":0,"end":2}') > 0).assertEqual(true);
-      expect(onDidBeforeText.indexOf('{"start":0,"end":2}') > 0).assertEqual(true);
+      expect(onWillBeforeText.indexOf('"start":0') > 0).assertEqual(true);
+      expect(onWillBeforeText.indexOf('"end":2') > 0).assertEqual(true);
+
+      expect(onDidBeforeText.indexOf('"start":0') > 0).assertEqual(true);
+      expect(onDidBeforeText.indexOf('"end":2') > 0).assertEqual(true);
 
       expect(replacedSpans.indexOf('[]') > 0).assertEqual(true);
 

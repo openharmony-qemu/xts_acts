@@ -13,6 +13,14 @@
 
 import("//test/xts/tools/build/suite.gni")
 
+ohos_app_assist_suite("ActsUiTestEntry") {
+  testonly = true
+  subsystem_name = "testfwk"
+  part_name = "arkxtest"
+  certificate_profile = "./signature/auto_ohos_default_com.uitest.test.p7b"
+  hap_name = "ActsUiTestEntry"
+}
+
 ohos_js_app_suite("ActsUiTest") {
   test_hap = true
   testonly = true
@@ -20,4 +28,7 @@ ohos_js_app_suite("ActsUiTest") {
   hap_name = "ActsUiTest"
   part_name = "arkxtest"
   subsystem_name = "testfwk"
+  deps = [
+    ":ActsUiTestEntry",
+  ]
 }

@@ -136,7 +136,7 @@ export default function sequenceRunnerTaskTest() {
           }
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -203,7 +203,7 @@ export default function sequenceRunnerTaskTest() {
           }
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -268,7 +268,7 @@ export default function sequenceRunnerTaskTest() {
           }
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -334,7 +334,7 @@ export default function sequenceRunnerTaskTest() {
           }
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -388,7 +388,7 @@ export default function sequenceRunnerTaskTest() {
           });
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -441,7 +441,7 @@ export default function sequenceRunnerTaskTest() {
           }
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -491,7 +491,7 @@ export default function sequenceRunnerTaskTest() {
           }
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -546,7 +546,7 @@ export default function sequenceRunnerTaskTest() {
           }
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -587,7 +587,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -631,7 +631,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
         expect('10').assertEqual(string(count1))
@@ -673,7 +673,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -715,7 +715,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -756,7 +756,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -797,7 +797,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -839,7 +839,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -881,7 +881,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -923,7 +923,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -964,7 +964,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -1008,7 +1008,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -1051,7 +1051,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -1094,7 +1094,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -1137,7 +1137,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -1180,7 +1180,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -1223,7 +1223,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -1266,7 +1266,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 
@@ -1309,7 +1309,7 @@ export default function sequenceRunnerTaskTest() {
           })
         }
 
-        while (count2 < 10) {
+        while (count1 < 10 || count2 < 10) {
           await sleep(100)
         }
 

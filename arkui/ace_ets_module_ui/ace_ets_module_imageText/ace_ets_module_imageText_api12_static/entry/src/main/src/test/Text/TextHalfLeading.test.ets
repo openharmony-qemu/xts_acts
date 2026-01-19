@@ -47,7 +47,7 @@ export default function TextHalfLeading() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextHalfLeading state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextHalfLeading" == pages.name)) {
           console.info("get TextHalfLeading pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

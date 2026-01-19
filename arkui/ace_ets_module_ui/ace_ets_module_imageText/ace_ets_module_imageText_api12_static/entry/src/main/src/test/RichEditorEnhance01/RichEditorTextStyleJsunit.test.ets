@@ -62,7 +62,7 @@ export default function RichEditorTextStyleJsunit() {
         defaultRouter.clear();
         let pages:router.RouterState = defaultRouter.getState();
         console.info("get RichEditorTextStyleJsunit state pages:" + JSON.stringify(pages));
-        if (!("RichEditorTextStyleJsunit" == pages.name)) {
+        if (!("RichEditor_TextStyle" == pages.name)) {
           console.info("get RichEditorTextStyleJsunit pages.name:" + JSON.stringify(pages.name));
           defaultRouter.pushUrl(options);
           let driver = Driver.create();

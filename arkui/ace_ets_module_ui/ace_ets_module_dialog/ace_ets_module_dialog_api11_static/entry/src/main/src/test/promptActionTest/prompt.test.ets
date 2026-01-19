@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -53,6 +53,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -116,7 +117,7 @@ export default function promptShowDialogJsunit() {
         }
         let callback1 = (eventData: emitter.EventData) => {
           console.info("testpromptShowDialog001 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
+          expect(((eventData.data) as Record<String,RecordData>)?.["STATUS"]).assertEqual(true);
           done()
         }
         console.info("onSelect_001 click result is: " +
@@ -147,7 +148,7 @@ export default function promptShowDialogJsunit() {
         }
         let callback2 = (backData1: emitter.EventData) => {
           console.info("onRequestPopupData_0011 get event state result is: " + JSON.stringify(backData1));
-          expect(((backData1.data) as Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
+          expect(((backData1.data) as Record<String,RecordData>)?.["STATUS"]).assertEqual(true);
           done()
         }
         console.info("onSelect_002 click result is: " +

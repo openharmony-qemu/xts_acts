@@ -43,11 +43,10 @@ struct V1ObjectLink {
   @LocalStorageLink('z') z: A = new A('aa');
 
   build() {
-    Column({ space: 20 }) {
+    Column() {
       Text('test')
-        .fontSize(16)
+        .height('5%')
         .textAlign(TextAlign.Center)
-        .width('80%')
         Child01()
     }
     .width('100%')
@@ -62,13 +61,12 @@ export struct Child01 {
   @State resultText: string | undefined = 'this is null'
 
   build() {
-    Column({ space: 10 }) {
+    Column() {
       Text(this.resultText)
       .id('LocalStoragePropText')
       Button('testV1')
         .id('LocalStoragePropTest')
-        .fontSize(20)
-        .margin(10)
+        .height('5%')
         .onClick(() => {
           this.resultText = '';
           this.resultText = this.resultText + text(this.a)

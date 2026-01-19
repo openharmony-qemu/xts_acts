@@ -666,6 +666,45 @@ export default function AudioHapticTest() {
       }
     })
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_STATIC_0200
+     * @tc.desc   Notification_createPlayer_release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioHapticPlayerOptions: audioHaptic.AudioHapticPlayerOptions = {
+        muteAudio: true,
+        muteHaptics: true
+      }
+      let flag: boolean = false;
+      try {
+        const AudioHapticPlayer: audioHaptic.AudioHapticPlayer | null= await AudioHapticManager.createPlayer(sourceId_Notification);
+        console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
+        await sleep(100);
+        console.log(`${tag} AudioHapticPlayer release 1`);
+        await AudioHapticPlayer!.release();
+        console.log(`${tag} AudioHapticPlayer release success`);
+        flag = true;
+        expect(flag).assertTrue();
+        done();
+      } catch(err: BusinessError) {
+        console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
+        if (err.code === 5400106) {
+          expect(true).assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (err) {
+        console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${(err as BusinessError).code}`);
+        expect(false).assertTrue();
+        done()
+      }
+    })
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0100
      * @tc.desc   Notification_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_Muted
@@ -1480,6 +1519,9 @@ export default function AudioHapticTest() {
         muteAudio: false,
         muteHaptics: false
       }
+      let endOfStreamCallBack = () => {
+        console.info('Receive the callback of endOfStream');
+      }
       try {
         let AudioHapticPlayer = await AudioHapticManager.createPlayer(sourceId_Notification, AudioHapticPlayerOptions);
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
@@ -1488,7 +1530,7 @@ export default function AudioHapticTest() {
             console.info(`${tag} on endOfStream called `);
             console.log(`${tag} AudioHapticPlayer release success`);
           });
-          AudioHapticPlayer!.offEndOfStream();
+          AudioHapticPlayer!.offEndOfStream(endOfStreamCallBack);
           await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
@@ -1553,6 +1595,57 @@ export default function AudioHapticTest() {
           done()
         }
       } catch(err) {
+        console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
+        if (err.code === 5400106) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_AUDIOINTERRUPT_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_AUDIOINTERRUPT_STATIC_0200
+     * @tc.desc   AudioHapticPlayer_on_audioInterrupt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_AUDIOINTERRUPT_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
+      AudioHapticManager.setAudioLatencyMode(sourceId_Ringtone, AudioLatencyMode);
+      console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
+      let AudioHapticPlayerOptions: audioHaptic.AudioHapticPlayerOptions = {
+        muteAudio: true,
+        muteHaptics: true
+      }
+      let audioInterruptCallback = (interruptEvent: audio.InterruptEvent) => {
+        console.log(`${tag} off audioInterrupt called`);
+      }
+      try {
+        let AudioHapticPlayer = await AudioHapticManager.createPlayer(sourceId_Ringtone, AudioHapticPlayerOptions);
+        console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
+        await sleep(100);
+        try {
+          AudioHapticPlayer!.onAudioInterrupt((InterruptEvent) => {
+            console.info(`${tag} on audioInterrupt called `);
+          });
+          await AudioHapticPlayer!.start();
+          console.log(`${tag} AudioHapticPlayer start success`);
+          await sleep(1000);
+          AudioHapticPlayer!.offAudioInterrupt(audioInterruptCallback);
+          await AudioHapticPlayer!.release();
+          console.log(`${tag} AudioHapticPlayer release success`);
+          expect(true).assertTrue();
+          done();
+        } catch (err: BusinessError) {
+          console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
+          expect(false).assertTrue();
+          done()
+        }
+      } catch(err: BusinessError) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           done();

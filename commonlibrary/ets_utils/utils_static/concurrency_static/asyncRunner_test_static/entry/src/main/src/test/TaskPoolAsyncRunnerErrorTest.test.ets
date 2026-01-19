@@ -24,9 +24,7 @@ import {
   Size,
   Level
 } from '../../../hypium/index';
-import { webview } from '@kit.ArkWeb';
 import { BusinessError } from "@ohos.base";
-// import { ErrorEvent, MessageEvents, taskpool, worker } from '@kit.ArkTS';
 import {
   printArgs3,
   printArgs1,
@@ -60,7 +58,6 @@ export default function taskPoolAsyncRunnerErrorTest() {
   describe('TaskPoolAsyncRunnerErrorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
-      webview.WebviewController.initializeWebEngine()
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -70,6 +67,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
       // This API supports only one parameter: preset action function.
     })
     afterEach(async () => {
+	  await sleep(50);
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.

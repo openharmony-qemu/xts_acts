@@ -60,7 +60,7 @@ export default function inspectorJsunit() {
       console.info("[testInspectorTestAdd0001] component width strJson:" + strJson);
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
-      expect(JSON.parse(strJson).$attrs.fontSize).assertEqual("50.00fp");
+      expect(JSON.parse(strJson).$attrs.fontSize).assertEqual("20.00fp");
       console.info("[testInspectorTestAdd0001] fontSize value :" + JSON.parse(strJson).$attrs.fontSize);
 
     });

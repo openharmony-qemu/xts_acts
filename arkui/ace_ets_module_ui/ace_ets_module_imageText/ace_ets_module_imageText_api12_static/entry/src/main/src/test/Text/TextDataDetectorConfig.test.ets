@@ -48,7 +48,7 @@ export default function TextDataDetectorConfig() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextDataDetectorConfig state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextDataDetectorConfig" == pages.name)) {
           console.info("get TextDataDetectorConfig pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

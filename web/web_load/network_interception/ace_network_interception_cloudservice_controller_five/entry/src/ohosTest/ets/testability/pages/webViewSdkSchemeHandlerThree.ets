@@ -57,8 +57,8 @@ struct webViewSdkSchemeHandlerThree {
               Button('webThree click')
               .key('webViewSdkSchemeHandlerThreeButton')
               .onClick(async () => {
-                  await waitForExist(()=>this.isReceive, this.emitKey, 0);
-                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                  await waitForExist(()=>this.isReceive, this.emitKey, 0, 1000);
+                  await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
                   console.info('key==>' + this.emitKey);
                   this.isReceive = -1;
                   this.controller.clearWebSchemeHandler();
@@ -259,6 +259,48 @@ struct webViewSdkSchemeHandlerThree {
                             console.log(this.emitKey + 'didFail end');
                           } catch (error) {
                             Utils.emitEvent(Number(error.code), 142500);
+                            console.log(this.emitKey + 'error code' + error.code);
+                          }
+                          return true
+                        })
+                        this.controller.setWebSchemeHandler('https', this.schemeHandler);
+                        this.controller.loadUrl(URL);
+                      } catch (error) {
+                        console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                      }
+                      break;
+                    }
+                    case 'emitSchemeHandlerDidReceiveResponseBodyNull': {
+                      try {
+                        this.schemeHandler.onRequestStart((
+                          request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
+                          try {
+                            console.log(this.emitKey + 'didReceiveResponseBody start');
+                            resourceHandler.didReceiveResponseBody(null);
+                            console.log(this.emitKey + 'didReceiveResponseBody end');
+                          } catch (error) {
+                            Utils.emitEvent(Number(error.code), 26011601);
+                            console.log(this.emitKey + 'error code' + error.code);
+                          }
+                          return true
+                        })
+                        this.controller.setWebSchemeHandler('https', this.schemeHandler);
+                        this.controller.loadUrl(URL);
+                      } catch (error) {
+                        console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                      }
+                      break;
+                    }
+                    case 'emitSchemeHandlerDidReceiveResponseBodyUndefined': {
+                      try {
+                        this.schemeHandler.onRequestStart((
+                          request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
+                          try {
+                            console.log(this.emitKey + 'didReceiveResponseBody start');
+                            resourceHandler.didReceiveResponseBody(undefined);
+                            console.log(this.emitKey + 'didReceiveResponseBody end');
+                          } catch (error) {
+                            Utils.emitEvent(Number(error.code), 26011602);
                             console.log(this.emitKey + 'error code' + error.code);
                           }
                           return true

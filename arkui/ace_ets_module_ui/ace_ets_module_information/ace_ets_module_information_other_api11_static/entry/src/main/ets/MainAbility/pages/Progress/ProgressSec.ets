@@ -48,7 +48,7 @@ struct progressSecTest {
   @StoragePropRef('progress_capsule_content_string') progress_capsule_content_string: string|undefined = '下载'
   @StoragePropRef('progress_capsule_enableScanEffect_boolean') progress_capsule_enableScanEffect_boolean: boolean|undefined = false
   @StoragePropRef('progress_capsule_showDefaultPercentage_boolean') progress_capsule_showDefaultPercentage_boolean: boolean|undefined = false
-  @StoragePropRef('progress_capsule_enableSmoothEffect_boolean') progress_capsule_enableSmoothEffect_boolean: boolean = false
+  @StoragePropRef('progress_capsule_enableSmoothEffect_boolean') progress_capsule_enableSmoothEffect_boolean: boolean|undefined = false
   @StoragePropRef('progress_ring_strokeWidth_number') progress_ring_strokeWidth_number: number|undefined = 4
   @StoragePropRef('progress_ring_strokeWidth_string') progress_ring_strokeWidth_string: string = '4vp'
   @StoragePropRef('progress_ring_strokeWidth_resource') progress_ring_strokeWidth_resource: Resource = $r('sys.float.ohos_id_text_margin_vertical')

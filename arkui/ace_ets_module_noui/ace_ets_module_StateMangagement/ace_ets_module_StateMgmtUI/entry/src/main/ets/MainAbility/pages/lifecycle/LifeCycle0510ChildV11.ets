@@ -14,9 +14,7 @@
  */
 import {
   ComponentAppear,
-  ComponentAttach,
   ComponentBuilt,
-  ComponentDetach,
   ComponentDisappear,
   ComponentInit,
   ComponentRecycle,
@@ -29,9 +27,7 @@ let initNum: number = 0
 @Component
 struct LifeCycle0510ChildV11 {
   @State isFlag: boolean = true
-  @StorageLink('Attach') attachNum: number = 0
   @StorageLink('Built') builtNum: number = 0
-  @StorageLink('Detach') detachNum: number = 0
   @StorageLink('Appear') appearNum: number = 0
   @StorageLink('Disappear') disappearNum: number = 0
 
@@ -48,16 +44,6 @@ struct LifeCycle0510ChildV11 {
   @ComponentInit
   componentInit() {
     initNum += 1
-  }
-
-  @ComponentDetach
-  componentDetach() {
-    this.detachNum += 1
-  }
-
-  @ComponentAttach
-  componentAttach() {
-    this.attachNum += 1
   }
 
   @ComponentBuilt

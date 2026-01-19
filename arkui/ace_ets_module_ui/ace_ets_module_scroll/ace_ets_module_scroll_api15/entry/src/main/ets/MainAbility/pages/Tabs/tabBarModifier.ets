@@ -68,7 +68,7 @@ struct TabsBarModifierExample {
       .id('tabBar_pTest_01')
       .barWidth(300)
       .barHeight(60)
-      .width(300)
+      .width('100%')
       .height('60%')
       .backgroundColor(0xf1f3f5)
       .barMode(BarMode.Scrollable)

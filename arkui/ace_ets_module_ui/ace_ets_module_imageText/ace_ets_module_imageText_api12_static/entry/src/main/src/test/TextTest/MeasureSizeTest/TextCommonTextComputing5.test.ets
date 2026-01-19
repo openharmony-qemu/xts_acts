@@ -46,7 +46,7 @@ export default function TextCommonTextComputing5() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextCommonTextComputing5 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextCommonTextComputing0200" == pages.name)) {
           console.info("get TextCommonTextComputing5 pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

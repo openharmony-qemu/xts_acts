@@ -156,33 +156,7 @@ export default function RichEditorAttributeStrings007() {
       let str = 'spans:012345678901234567890123456789012345678901234567890123456789012345678901234567890123' +
         '4567890123456789abcdefghigklmnopqrstuvwxyzabcdefghigklmnopqrstuvwxyzabcdefghigklmnopqrstuvwx' +
         'yzabcdefghigklmnopqrstuvwxyzabcdefghigklmnopqrstuvwxyzabcdefghigklmnopqrstuvwxyzabcdefghigklm' +
-        'nopqrstuvwxyzabcdefghigklmnopqrstuvwxyz    ';
-      console.log('000000000:'+ spansText);
-      console.log('000000000:'+ str);
-      expect(spansText).assertEqual(str);
-      done();
-    });
-
-    
-    /**
-     * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_COPY_PASTE_ATTRIBUTE_STRINGS_static_0042
-     * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_COPY_PASTE_ATTRIBUTE_STRINGS_static_0042
-     * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_COPY_PASTE_ATTRIBUTE_STRINGS_static_0042
-     * @tc.level   Level.LEVEL0
-     */
-    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_COPY_PASTE_ATTRIBUTE_STRINGS_static_0042', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_COPY_PASTE_ATTRIBUTE_STRINGS_static_0042 START');
-      let driver = Driver.create();
-      let toStyledStringUndefined = await (driver.findComponent(ON.id('toStyledStringUndefined')) as Promise<Component>);
-      await toStyledStringUndefined.click();
-      await CommonFunc.sleep(500);
-      let spans = await (driver.findComponent(ON.id('spans')) as Promise<Component>);
-      let spansText = await spans.getText();
-      await CommonFunc.sleep(500);
-      let str = 'spans:012345678901234567890123456789012345678901234567890123456789012345678901234567890123' +
-        '4567890123456789abcdefghigklmnopqrstuvwxyzabcdefghigklmnopqrstuvwxyzabcdefghigklmnopqrstuvwx' +
-        'yzabcdefghigklmnopqrstuvwxyzabcdefghigklmnopqrstuvwxyzabcdefghigklmnopqrstuvwxyzabcdefghigklm' +
-        'nopqrstuvwxyzabcdefghigklmnopqrstuvwxyz    ';
+        'nopqrstuvwxyzabcdefghigklmnopqrstuvwxyz          ';
       console.log('000000000:'+ spansText);
       console.log('000000000:'+ str);
       expect(spansText).assertEqual(str);

@@ -149,20 +149,6 @@ export default function commonBackgroundBlurStyleJsunit() {
     });
 
     /**
-     * @tc.name   testcommonBackgroundBlurStyle006
-     * @tc.number testcommonBackgroundBlurStyle006
-     * @tc.desc   acecommonBackgroundBlurStyleEtsTest006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testcommonBackgroundBlurStyle006', Level.LEVEL2, async () => {
-      console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle006 START');
-      console.info('common onKeyEvent click result is: ' + JSON.stringify(sendEventByKey('onKeyEventButton', 10, '')));
-
-    });
-
-    /**
      * @tc.name   testcommonHoverEffectHighlight0001
      * @tc.number testcommonHoverEffectHighlight0001
      * @tc.desc   acecommonHoverEffectHighlightEtsTest0006

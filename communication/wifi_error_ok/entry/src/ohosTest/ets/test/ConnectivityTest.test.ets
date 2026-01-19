@@ -445,5 +445,70 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0600
+     * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0600
+     * @tc.desc   testing OH_Wifi_GetDeviceMacAddress interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_COMMUNICATION_WIFI_NAPI_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_COMMUNICATION_WIFI_NAPI_0600 start====");
+          let result: number = wifindktest.GetDeviceMacAddress0600();
+          console.info("====>SUB_COMMUNICATION_WIFI_NAPI_0600 END====" + result);
+          expect(result).assertEqual(201);
+          done()
+        } catch (err) {
+          console.error("====>SUB_COMMUNICATION_WIFI_NAPI_0600 catch err: " + err);
+          expect(false).assertEqual(KEY_CODE_EVENT_OK);
+        }
+      })
+    /**
+     * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0700
+     * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0700
+     * @tc.desc   testing OH_Wifi_GetDeviceMacAddress interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_COMMUNICATION_WIFI_NAPI_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_COMMUNICATION_WIFI_NAPI_0700 start====");
+          let result: number = wifindktest.GetDeviceMacAddress0700();
+          console.info("====>SUB_COMMUNICATION_WIFI_NAPI_0700 END====" + result);
+          expect(result).assertEqual(801);
+          done()
+        } catch (err) {
+          console.error("====>SUB_COMMUNICATION_WIFI_NAPI_0700 catch err: " + err);
+          expect(false).assertEqual(KEY_CODE_EVENT_OK);
+        }
+      })
+    /**
+     * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0800
+     * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0800
+     * @tc.desc   testing OH_Wifi_GetDeviceMacAddress interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_COMMUNICATION_WIFI_NAPI_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_COMMUNICATION_WIFI_NAPI_0800 start====");
+          let result: number = wifindktest.GetDeviceMacAddress0800();
+          console.info("====>SUB_COMMUNICATION_WIFI_NAPI_0800 END====" + result);
+          expect(result).assertEqual(2501000);
+          done()
+        } catch (err) {
+          console.error("====>SUB_COMMUNICATION_WIFI_NAPI_0800 catch err: " + err);
+          expect(false).assertEqual(KEY_CODE_EVENT_OK);
+        }
+      })
+  
   })
 }

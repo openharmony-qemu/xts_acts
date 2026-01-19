@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -71,6 +71,7 @@ import events_emitter from '@ohos.events.emitter';
 import web_webview from '@ohos.web.webview';
 import webview from '@ohos.web.webview';
 import Utils from '../common/Utils';
+import { RecordData } from '@ohos.base';
 
 class TestObj {
   constructor() {
@@ -386,7 +387,7 @@ struct Index {
     (eventData: events_emitter.EventData) => {
       console.info("web page valueChangeCallBack");
       if (eventData != null) {
-        const data = eventData.data as Record<String,undefined|null|Object>
+        const data = eventData.data as Record<String,RecordData>
         console.info("valueChangeCallBack:" + JSON.stringify(eventData));
         if (data['ACTION'] != null) {
           this.str = data['ACTION'] as string;

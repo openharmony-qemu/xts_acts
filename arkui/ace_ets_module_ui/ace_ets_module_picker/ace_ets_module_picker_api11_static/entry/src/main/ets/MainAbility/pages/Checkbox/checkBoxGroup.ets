@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,6 +41,7 @@ import {
   SelectStatus
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -96,7 +97,7 @@ struct CheckBoxGroupPart {
             let backData: events_emitter.EventData = {
               data: {
                 "STATUS": itemName.status
-              } as Record<string, Object | null | undefined>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60301,

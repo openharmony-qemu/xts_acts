@@ -101,26 +101,20 @@ export default function DialogTest() {
      * @tc.desc     ArkUX_Dialog_Visual_static_0060
      * @tc.level    Level.LEVEL2
      */
-it('ArkUX_Dialog_Visual_static_0060', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ArkUX_Dialog_Visual_static_0060', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Dialog_Visual_static_0060 START');
-      setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Dialog_Visual_0060');
-          await CommonFunc.sleep(500);
-          console.info('ArkUX_Dialog_Visual_static_0060 START  :' + JSON.stringify(strJson));
-          let obj = JSON.parseJsonElement(strJson);
-          await CommonFunc.sleep(500);
-          console.info("ArkUX_Dialog_Visual_static_0060 obj is: " + JSON.stringify(obj));
-          let fontSize = obj.getElement('$attrs').getString("fontSize");
-          await CommonFunc.sleep(500);
-          expect(fontSize).assertEqual("20.00fp");
-          console.info('ArkUX_Dialog_Visual_static_0060 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Dialog_Visual_static_0060 ERR  ' + JSON.stringify(err));
-        }
-        done();
-      }, 500)
+      await CommonFunc.sleep(500);
+      let strJson = inspector.getInspectorByKey('ArkUX_Dialog_Visual_0060');
+      await CommonFunc.sleep(500);
+      console.info('ArkUX_Dialog_Visual_static_0060 START  :' + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      await CommonFunc.sleep(500);
+      console.info("ArkUX_Dialog_Visual_static_0060 obj is: " + JSON.stringify(obj));
+      let fontSize = obj.getElement('$attrs').getString("fontSize");
+      await CommonFunc.sleep(500);
+      expect(fontSize).assertEqual("20.00fp");
+      console.info('ArkUX_Dialog_Visual_static_0060 END ');
+      done();
     });
   })
 }

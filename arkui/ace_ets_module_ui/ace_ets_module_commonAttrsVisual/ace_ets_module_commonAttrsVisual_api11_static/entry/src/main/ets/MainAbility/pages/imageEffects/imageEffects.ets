@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -52,6 +52,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
 import { Callback, RecordData } from '@ohos.base';
+import { RecordData } from '@ohos.base';
 
 
 @Entry
@@ -258,13 +259,13 @@ struct ImageEffectsExample {
   private stateChangCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
     ``
     if (eventData.data != null) {
-      const data: Record<String, undefined | null | Object> =
-        eventData.data as Record<String, undefined | null | Object>
+      const data: Record<String,RecordData> =
+        eventData.data as Record<String,RecordData>
       console.info("imageEffects page state change called:" + JSON.stringify(eventData));
       if (data['blurValue'] != null) {
         console.log('test blurValue start is: ' + data['blurValue'])
         this.blurValue = data['blurValue'] as Long
-        console.log('test blurValue end is: ' + this.blurValue)
+        console.log('test blurValue end is: ' + this.blurValue) // test blurValue end is: 2147483648
       }
       if (data['shadowValue'] != null) {
         console.log('test shadowValue start is: ' + JSON.stringify(data['shadowValue']))

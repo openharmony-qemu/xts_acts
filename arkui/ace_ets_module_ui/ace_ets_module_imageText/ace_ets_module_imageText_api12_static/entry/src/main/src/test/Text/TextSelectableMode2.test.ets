@@ -49,7 +49,7 @@ export default function typeNodeTextSelectableMode2Test() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get typeNodeTextSelectableMode2Test state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextSelectableMode2" == pages.name)) {
           console.info("get typeNodeTextSelectableMode2Test pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

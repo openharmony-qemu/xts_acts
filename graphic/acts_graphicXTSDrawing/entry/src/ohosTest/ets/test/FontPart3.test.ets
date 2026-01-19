@@ -96,33 +96,40 @@ export default function fontPart3Test() {
 
       try {
         font.textToGlyphs(null, 2);
-        console.info(msg + ' textToGlyphs successed');
+        console.info(msg + ' 1 textToGlyphs successed');
       } catch( e ) {
-        console.info(msg + ` textToGlyphs errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        console.info(msg + ` 1 textToGlyphs errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        font.textToGlyphs(undefined, 2);
+        console.info(msg + ' 2 textToGlyphs successed');
+      } catch( e ) {
+        console.info(msg + ` 2 textToGlyphs errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
 
       try {
         font.textToGlyphs('奇8龍@Fly#龘2023!*你好', null);
-        console.info(msg + ' textToGlyphs succeeded');
+        console.info(msg + ' 3 textToGlyphs succeeded');
       } catch( e ) {
-        console.info(msg + ` textToGlyphs errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        console.info(msg + ` 3 textToGlyphs errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
 
       try {
         font.textToGlyphs(null, 2);
-        console.info(msg + ' textToGlyphs successed');
+        console.info(msg + ' 4 textToGlyphs successed');
       } catch( e ) {
-        console.info(msg + ` textToGlyphs errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        console.info(msg + ` 4 textToGlyphs errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
 
       try {
         font.textToGlyphs('奇8龍@Fly#龘2023!*你好', undefined);
-        console.info(msg + ' textToGlyphs succeeded');
+        console.info(msg + ' 5 textToGlyphs succeeded');
       } catch( e ) {
-        console.info(msg + ` textToGlyphs errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        console.info(msg + ` 5 textToGlyphs errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
     });

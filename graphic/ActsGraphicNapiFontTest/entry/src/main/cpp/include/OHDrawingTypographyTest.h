@@ -23,8 +23,10 @@
 #include "include/OhosCommonTest.h"
 
 namespace OHOS {
+namespace Rosen {
+namespace Drawing {
 
-struct OHDrawingTypographyTest {
+struct OHDrawingTypographyTestContext {
     OH_Drawing_TypographyStyle* typoStyle_{ nullptr };
     OH_Drawing_TextStyle* txtStyle_{ nullptr };
     OH_Drawing_FontCollection* fontCollection_{ nullptr };
@@ -33,9 +35,9 @@ struct OHDrawingTypographyTest {
     OH_Drawing_Bitmap* cBitmap_{ nullptr };
     OH_Drawing_Canvas* canvas_{ nullptr };
 
-    OHDrawingTypographyTest() {}
+    OHDrawingTypographyTestContext() {}
 
-    ~OHDrawingTypographyTest()
+    ~OHDrawingTypographyTestContext()
     {
         if (canvas_ != nullptr) {
             OH_Drawing_CanvasDestroy(canvas_);
@@ -107,8 +109,6 @@ struct OHDrawingTypographyTest {
     }
 };
 
-namespace Rosen {
-namespace Drawing {
 // OH_Drawing_TypographyTest functions (001-086, 102-105, WithIndent)
 int OHDrawingTypographyTest001();
 int OHDrawingTypographyTest002();
@@ -120,7 +120,6 @@ int OHDrawingTypographyTest007();
 int OHDrawingTypographyTest008();
 int OHDrawingTypographyTest009();
 int OHDrawingTypographyTest010();
-int OHDrawingTypographyTest011();
 int OHDrawingTypographyTest012();
 int OHDrawingTypographyTest013();
 int OHDrawingTypographyTest014();
@@ -185,10 +184,8 @@ int OHDrawingTypographyTest072();
 int OHDrawingTypographyTest073();
 int OHDrawingTypographyTest074();
 int OHDrawingTypographyTest075();
-int OHDrawingTypographyTest076();
 int OHDrawingTypographyTest077();
 int OHDrawingTypographyTest078();
-int OHDrawingTypographyTest079();
 int OHDrawingTypographyTest080();
 int OHDrawingTypographyTest081();
 int OHDrawingTypographyTest082();
@@ -203,10 +200,7 @@ int OHDrawingTypographyTest105();
 int OHDrawingTypographyTestWithIndent();
 // Other functions
 int OHDrawingAddTextStyleDecoration001();
-int OHDrawingSetTypographyTextTab001();
 int OHDrawingTextLineEnumerateCaretOffsets001();
-int OHDrawingSetTextHighContrast001();
-int OHDrawingSetTextHighContrast002();
 int TestOHDrawingUnregisterFont001();
 int TestOHDrawingUnregisterFont002();
 } // namespace Drawing

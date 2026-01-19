@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,6 +40,7 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -86,7 +87,7 @@ struct bindPopupOffset {
               let backData: emitter.EventData = {
                 data: {
                   "offset": this.offset1,
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let backEvent: emitter.InnerEvent = {
                 eventId: 12065,
@@ -121,7 +122,7 @@ struct bindPopupOffset {
               let backData: emitter.EventData = {
                 data: {
                   "offset": this.offset00,
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let backEvent: emitter.InnerEvent = {
                 eventId: 12067,
@@ -156,7 +157,7 @@ struct bindPopupOffset {
               let backData: emitter.EventData = {
                 data: {
                   "offset": this.offset050,
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let backEvent: emitter.InnerEvent = {
                 eventId: 12068,
@@ -190,7 +191,7 @@ struct bindPopupOffset {
               // let backData: emitter.EventData = {
               //   data: {
               //     "offset": this.offsetnull,  //  @State offsetnull: Position | undefined = undefined;
-              //   } as Record<String,undefined|null|Object>
+              //   } as Record<String,RecordData>
               // }
               let backEvent: emitter.InnerEvent = {
                 eventId: 12069,
@@ -224,7 +225,7 @@ struct bindPopupOffset {
               let backData: emitter.EventData = {
                 data: {
                   "offset": this.offset10,
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let backEvent: emitter.InnerEvent = {
                 eventId: 12070,
@@ -258,7 +259,7 @@ struct bindPopupOffset {
               let backData: emitter.EventData = {
                 data: {
                   "offset": this.offset1,
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let backEvent: emitter.InnerEvent = {
                 eventId: 12066,
@@ -293,7 +294,7 @@ struct bindPopupOffset {
               let backData: emitter.EventData = {
                 data: {
                   "offset": this.offset10,
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let backEvent: emitter.InnerEvent = {
                 eventId: 12071,
@@ -328,7 +329,7 @@ struct bindPopupOffset {
               let backData: emitter.EventData = {
                 data: {
                   "offset": this.offset00,
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let backEvent: emitter.InnerEvent = {
                 eventId: 12072,
@@ -363,7 +364,7 @@ struct bindPopupOffset {
               let backData: emitter.EventData = {
                 data: {
                   "offset": this.offset050,
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let backEvent: emitter.InnerEvent = {
                 eventId: 12073,
@@ -398,7 +399,7 @@ struct bindPopupOffset {
               // let backData: emitter.EventData = {
               //   data: {
               //     "offset": this.offsetnull,
-              //   } as Record<String,undefined|null|Object>
+              //   } as Record<String,RecordData>
               // }
               let backEvent: emitter.InnerEvent = {
                 eventId: 12074,

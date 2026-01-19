@@ -15,7 +15,7 @@
 import { RenderNode, FrameNode, NodeController } from "@ohos.arkui.node"
 
 const renderNode = new RenderNode();
-renderNode.size = { width: 200, height: 200 };
+renderNode.size = { width: 200, height: 150 };
 renderNode.backgroundColor = 0XFF00FF00
 renderNode.shadowAlpha = 0.5;
 
@@ -44,11 +44,12 @@ struct getShadowAlpha {
   build() {
     Column(){
       Column() {
-        NodeContainer(this.MyNodeController)
-        Text('shadowAlpha:' + this.getShadowAlpha).key('getAlpha')
+        NodeContainer(this.MyNodeController).height('80%')
+        Text('shadowAlpha:' + this.getShadowAlpha).key('getAlpha').height('10%')
 
         Button('Click to set')
           .key('setAlpha')
+          .height('10%')
           .onClick(() => {
             this.getShadowAlpha = renderNode.shadowAlpha
           })

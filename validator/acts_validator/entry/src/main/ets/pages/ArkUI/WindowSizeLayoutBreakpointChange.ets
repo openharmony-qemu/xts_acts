@@ -53,7 +53,7 @@ struct TabBarIndicatorPixmap {
     console.log('GBR page1 widthBpt：'+ this.widthBreakpoint.toString() + ' ' +'heightBpt:'+ this.heightBreakpoint.toString())
   }
 
-    @Builder
+  @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
     Button({ stateEffect: this.isOk }) {
       Image($r('app.media.ic_public_pass'))
@@ -100,7 +100,7 @@ struct TabBarIndicatorPixmap {
       });
     })
   }
-  
+
   aboutToAppear(): void {
     FirstDialog.ChooseDialog(this.stepTips, this.name);
   }
@@ -115,33 +115,98 @@ struct TabBarIndicatorPixmap {
 
   build() {
     Column() {
-      Text(this.message)
-      Button('注册窗口尺寸布局断点变化监听').fontSize(20).width('80%').margin({top: 20})
+      Row() {
+        Button() {
+          Image($r('app.media.ic_public_back'))
+            .width('20vp')
+            .height('18vp')
+            .margin({ left: '20vp' })
+        }
+        .backgroundColor(Color.Black)
+        .size({ width: '40vp', height: '30vp' })
         .onClick(() => {
-          this.getUIContext()
-            .getUIObserver()
-            .on('windowSizeLayoutBreakpointChange', this.winSizeLayoutBreakpointCallback);
+          router.back({
+            url: 'pages/ArkUI/ArkUI_index',
+            params: { result: 'None' }
+          });
         })
-      Button('注销窗口尺寸布局断点变化监听').fontSize(20).width('80%').margin({top: 20})
+
+        Text(this.name)
+          .fontColor(Color.White)
+          .fontSize('18fp')
+          .margin({ left: '-20vp' })
+        Text('hello')
+          .fontColor(Color.White)
+          .visibility(Visibility.Hidden)
+      }
+      .backgroundColor(Color.Black)
+      .height('10%')
+      .width('100%')
+      .justifyContent(FlexAlign.SpaceBetween)
+
+      Column() {
+        Text(this.message)
+        Button('注册窗口尺寸布局断点变化监听').fontSize(20).width('80%').margin({top: 20})
+          .onClick(() => {
+            this.getUIContext()
+              .getUIObserver()
+              .on('windowSizeLayoutBreakpointChange', this.winSizeLayoutBreakpointCallback);
+          })
+        Button('注销窗口尺寸布局断点变化监听').fontSize(20).width('80%').margin({top: 20})
+          .onClick(() => {
+            this.getUIContext()
+              .getUIObserver()
+              .off('windowSizeLayoutBreakpointChange', this.winSizeLayoutBreakpointCallback);
+          })
+        Button('全部解除').fontSize(20).width('80%').margin({top: 20})
+          .onClick(() => {
+            this.getUIContext()
+              .getUIObserver()
+              .off('windowSizeLayoutBreakpointChange');
+          })
+        Button('竖屏').fontSize(20).width('80%').margin({top: 20})
+          .onClick(() => {
+            this.changeOrientation(false)
+          })
+        Button('横屏').fontSize(20).width('80%').margin({top: 20})
+          .onClick(() => {
+            this.changeOrientation(true)
+          })
+      }.width('100%')
+      .height('80%')
+      .backgroundColor('#F1F3F5')
+
+      Row() {
+        this.PassBtn($r('app.string.btn_fullscreen'), true);
+        Button() {
+          Image($r('app.media.ic_public_help'))
+            .width('20vp')
+            .height('20vp')
+        }
+        .margin({ bottom: '20vp' })
+        .width('30%')
+        .height('30vp')
+        .backgroundColor(Color.Grey)
         .onClick(() => {
-          this.getUIContext()
-            .getUIObserver()
-            .off('windowSizeLayoutBreakpointChange', this.winSizeLayoutBreakpointCallback);
+          AlertDialog.show(
+            {
+              title: '操作提示',
+              message: this.stepTips,
+              confirm: {
+                value: 'OK',
+                action: () => {
+                }
+              }
+            }
+          )
         })
-      Button('全部解除').fontSize(20).width('80%').margin({top: 20})
-        .onClick(() => {
-          this.getUIContext()
-            .getUIObserver()
-            .off('windowSizeLayoutBreakpointChange');
-        })
-      Button('竖屏').fontSize(20).width('80%').margin({top: 20})
-        .onClick(() => {
-          this.changeOrientation(false)
-        })
-      Button('横屏').fontSize(20).width('80%').margin({top: 20})
-        .onClick(() => {
-          this.changeOrientation(true)
-        })
+        this.FailBtn($r('app.string.btn_fullscreen'), true);
+      }
+      .height('10%')
+      .width('100%')
+      .justifyContent(FlexAlign.SpaceEvenly)
+      .backgroundColor(Color.Black)
+
     }.width('100%')
     .height('100%')
     .backgroundColor('#F1F3F5')

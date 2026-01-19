@@ -342,7 +342,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
       } catch (err) {
         console.error(caseName + 'Failed. Cause: ' + JSON.stringify(err));
         await terminateAbility(caseName);
-        if (isPCStatus == '') {
+        if (err.code == 801) {
           expect(err.code).assertEqual(801);
         } else {
           expect(err.code).assertEqual(201);
@@ -422,23 +422,17 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
     it('testSetWindowContainerColorNoPermissionwithMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorNoPermissionwithMainWindow ';
       console.log(caseName + 'begin');
-      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
-      console.info(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       try {
         let windowClass = windowStage.getMainWindowSync();
         windowClass.setWindowContainerColor('#00000000', '#FF00ff33');
         console.info(`${caseName} success`);
       } catch (err) {
         console.error(caseName + 'Failed. Cause: ' + JSON.stringify(err));
-        if (canIUseRes) {
-          if (isPCStatus == '') {
+          if (err.code == 801) {
             expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(201);
           }
-        } else {
-          expect(err.code).assertEqual(801);
-        }
         done()
       }
     });
@@ -454,8 +448,6 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
     it('testSetWindowContainerColorNoPermissionwithSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorNoPermissionwithSubwindow ';
       console.log(caseName + 'begin');
-      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
-      console.info(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       let subWindowClass: window.Window | undefined;
       try {
         subWindowClass = await windowStage.createSubWindow(caseName);
@@ -467,15 +459,11 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
       } catch (err) {
         console.error(caseName + 'Failed. Cause: ' + JSON.stringify(err));
         await subWindowClass?.destroyWindow()
-        if (canIUseRes) {
-          if (isPCStatus == '') {
+          if (err.code == 801) {
             expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(201);
           }
-        } else {
-          expect(err.code).assertEqual(801);
-        }
         done()
       }
     });
@@ -491,8 +479,6 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
     it('testSetWindowContainerColorPermissionwithSystemWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithSystemWindow ';
       console.log(caseName + 'begin');
-      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
-      console.info(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       let subWindowClass: window.Window | undefined;
       let config: window.Configuration = {
         name: 'dialogWindow',
@@ -509,15 +495,11 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
       } catch (err) {
         console.error(caseName + 'Failed. Cause: ' + JSON.stringify(err));
         await subWindowClass?.destroyWindow()
-        if (canIUseRes) {
-          if (isPCStatus == '') {
+          if (err.code == 801) {
             expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(201);
           }
-        } else {
-          expect(err.code).assertEqual(801);
-        }
         done()
       }
     });

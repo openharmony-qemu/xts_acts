@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
-import buffer from "@ohos.fastbuffer";
+import buffer from '@ohos.fastbuffer';
 
 let TAG = "testAlloc0001";
 
@@ -8527,6 +8527,24 @@ export default function FastBufferTest() {
         console.error(`${TAG} err is ${err}`);
         expect().assertFail();
       }
+    })
+
+    /**
+     * @tc.name   testWrite0005
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITE_0500
+     * @tc.desc   Testing write
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWrite0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      TAG = "testWrite0005";
+      let str1 = 'hello world';
+      let length1 = buffer.byteLength(str1, 'utf-8')
+      expect(length1).assertEqual(11);
+      let str2 = '\u00bd + \u00bc = \u00be';
+      let length2 = buffer.byteLength(str2, 'utf-8')
+      expect(length2).assertEqual(12);
     })
   })
 }

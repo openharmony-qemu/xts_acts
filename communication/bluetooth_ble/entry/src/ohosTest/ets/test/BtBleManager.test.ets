@@ -852,7 +852,42 @@ function wrDescriptorVal() {
             }
             done();
           })
-
+         /**
+          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0300
+          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0300
+          * @tc.desc   Test SetBLEMtuSize api10.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
+          it('SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done : Function) =>  {
+            try {
+              gattC.setBLEMtuSize(23);
+              console.info("[bluetooth_js]setBLEMtuSize success");
+            } catch (error) {
+              console.error(`[bluetooth_js]MtuSize 3 failed, code is ${error.code},message is ${error.message}`);
+              expect(Number(error.code)).assertEqual(2900099);
+            }
+            done();
+          })
+          /**
+          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0400
+          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0400
+          * @tc.desc   Test SetBLEMtuSize api10.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
+          it('SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done : Function) =>  {
+            try {
+              gattC.setBLEMtuSize(517);
+              console.info("[bluetooth_js]setBLEMtuSize success");
+            } catch (error) {
+              console.error(`[bluetooth_js]MtuSize 4 failed, code is ${error.code},message is ${error.message}`);
+              expect(Number(error.code)).assertEqual(2900099);
+            }
+            done();
+          })
           /**
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_1900
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_1900

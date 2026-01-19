@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,11 +46,11 @@ struct Inspector {
   }
 
   build() {
-    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+    Column({ space: 2}) {
 
       Text("inspector")
-        .width('100%')
-        .height('5%')
+        .width(180)
+        .height(20)
         .fontSize(5)
         .opacity(1)
         .align(Alignment.TopStart)
@@ -64,8 +64,9 @@ struct Inspector {
       Row() {
         Column() {
           Text(this.message)
+            .height(20)
             .key("inspectorApiOne")
-            .fontSize(50)
+            .fontSize(20)
             .fontWeight(FontWeight.Bold)
             .onClick(() => {
               let getInspectorNodesObj = JSON.stringify(getInspectorNodes())
@@ -87,6 +88,7 @@ struct Inspector {
               }
             })
           Text("inspectorApiTwo")
+            .height(20)
             .key("inspectorApiTwo")
             .fontSize(20)
             .fontWeight(FontWeight.Bold)
@@ -112,6 +114,7 @@ struct Inspector {
             })
 
           Text("inspectorApiThree")
+            .height(20)
             .key("inspectorApiThree")
             .fontSize(20)
             .fontWeight(FontWeight.Bold)
@@ -120,6 +123,7 @@ struct Inspector {
             })
 
           Text("inspectorApiFour")
+            .height(20)
             .key("inspectorApiFour")
             .fontSize(20)
             .fontWeight(FontWeight.Bold)
@@ -150,8 +154,9 @@ struct Inspector {
                 console.info("inspector_103 onClick emit action state err: " + JSON.stringify((err as Error)?.message))
               }
             })
-          Text(this.text01).id("text01_id")
+
           Button("getFilteredInspectorTree").id("getFilteredInspectorTree")
+            .height(20)
             .onClick(() => {
               console.log("getFilteredInspectorTree...")
               try {
@@ -161,8 +166,14 @@ struct Inspector {
                 console.log("catch err msg response:" + JSON.stringify(err))
               }
             })
-          Text(this.text02).id("text02_id")
+
+          Row({space:2}){
+            Text(this.text01).id("text01_id").height(20)
+            Text(this.text02).id("text02_id").height(20)
+          }
+
           Button("getFilteredInspectorTreeById").id("getFilteredInspectorTreeById")
+            .height(20)
             .onClick(() => {
               console.log("getFilteredInspectorTreeById...")
               try {
@@ -173,12 +184,9 @@ struct Inspector {
                 console.log("catch err msg response:" + JSON.stringify(err))
               }
             })
-
         }
-        .width('100%')
       }
-      .height('95%')
-
     }.width("100%").height("100%")
   }
 }
+

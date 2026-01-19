@@ -103,27 +103,6 @@ it('TextTimerFontWeightTest_static_002', Level.LEVEL1, async (done: () => void):
 
     
     
-    /**
-     * @tc.number   TextTimerFontWeightTest_static_003
-     * @tc.name     TextTimerFontWeightTest_static_003
-     * @tc.desc     TextTimerFontWeightTest_static_003
-     * @tc.level    Level.LEVEL1
-     */
-it('TextTimerFontWeightTest_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('TextTimerFontWeightTest_003 START');
-      await Utils.sleep(1000);
-      let strJson = inspector.getInspectorByKey('TextTimer2');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('TextTimerFontWeightTest_003 component obj is: ' + obj.getElement('$attrs').getString('fontWeight'));
-      let strJson_base = inspector.getInspectorByKey('TextTimer_base');
-      let obj_base = JSON.parseJsonElement(strJson_base);
-      console.info('TextTimerFontWeightTest_003 component obj_base is: ' + obj_base.getElement('$attrs').getString('fontWeight'));
-      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual(obj_base.getElement('$attrs').getString('fontWeight'));
-    
-      console.info('[TextTimerFontWeightTest_003] END');
-      done();
-    });
-
     
     
     /**

@@ -36,6 +36,12 @@ const int32_t NUM_SIX = 6;
 const int32_t NUM_TEN = 10;
 const int32_t NUM_ELEVEN = 11;
 const int32_t REQUEST_FRAME_SIZE = 4096;
+float g_speedMin = 0.5;
+float g_speedMax = 10.0;
+float g_pitchMin = 0.1;
+float g_pitchMax = 5.0;
+float g_changeOptionMin = 0.3;
+float g_changeOptionMax = 3.0;
 const OH_AudioFormat audioFormatInput = {.samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
                                          .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
                                          .channelCount = NUM_TWO,
@@ -57,6 +63,10 @@ std::vector<OH_AudioNode_Type> audioNodeTypeTest = {
     static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_VOICE_BEAUTIFIER_TEST),
     static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_ENVIRONMENT_EFFECT_TEST),
     static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_AUDIO_MIXER_TEST),
+    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST),
+    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST),
+    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE_TEST),
+    static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_TEMPO_PITCH_TEST),
 };
 
 std::vector<OH_Audio_SampleFormat> audioSampleFormatTest = {
@@ -84,6 +94,32 @@ std::vector<OH_Audio_SampleRate> audioSampleRateTest = {
     static_cast<OH_Audio_SampleRate>(AudioSampleRateTest::SAMPLE_RATE_192000_TEST),
 };
 
+std::vector<OH_AudioSuite_PureVoiceChangeType> pureVoiceChangeTypeTest = {
+    static_cast<OH_AudioSuite_PureVoiceChangeType>(PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST),
+    static_cast<OH_AudioSuite_PureVoiceChangeType>(PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CUTE_TEST),
+    static_cast<OH_AudioSuite_PureVoiceChangeType>(PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_FEMALE_TEST),
+    static_cast<OH_AudioSuite_PureVoiceChangeType>(PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_MALE_TEST),
+    static_cast<OH_AudioSuite_PureVoiceChangeType>(PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_MONSTER_TEST),
+    static_cast<OH_AudioSuite_PureVoiceChangeType>(PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_ROBOTS_TEST),
+    static_cast<OH_AudioSuite_PureVoiceChangeType>(PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_SEASONED_TEST),
+};
+
+std::vector<OH_AudioSuite_GeneralVoiceChangeType> generalVoiceChangeTypeTest = {
+    static_cast<OH_AudioSuite_GeneralVoiceChangeType>(GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_CUTE_TEST),
+    static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+        GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_CYBERPUNK_TEST),
+    static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+        GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_FEMALE_TEST),
+    static_cast<OH_AudioSuite_GeneralVoiceChangeType>(GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_MALE_TEST),
+    static_cast<OH_AudioSuite_GeneralVoiceChangeType>(GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_MIX_TEST),
+    static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+        GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_MONSTER_TEST),
+    static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+        GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_SEASONED_TEST),
+    static_cast<OH_AudioSuite_GeneralVoiceChangeType>(GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_SYNTH_TEST),
+    static_cast<OH_AudioSuite_GeneralVoiceChangeType>(GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_TRILL_TEST),
+    static_cast<OH_AudioSuite_GeneralVoiceChangeType>(GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_WAR_TEST),
+};
 std::vector<char> audioData(g_frameSize);
 bool g_finishedFlag = false;
 OH_EqualizerFrequencyBandGains frequencyBandGains[]{
@@ -4970,6 +5006,43 @@ static napi_value OH_AudioSuiteEngine_AudioNodeType_002(napi_env env, napi_callb
     return result;
 }
 
+static napi_value OH_AudioSuiteEngine_AudioNodeType_003(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AudioNode_Type spacerRender =
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST);
+    OH_AudioNode_Type pureVoice =
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST);
+    OH_AudioNode_Type geberalVoice =
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE_TEST);
+    OH_AudioNode_Type tempoPitch = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_TEMPO_PITCH_TEST);
+
+    if (spacerRender != OH_AudioNode_Type::EFFECT_NODE_TYPE_SPACE_RENDER) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_003 fail, EFFECT_NODE_TYPE_SPACE_RENDER is: %{public}d",
+            EFFECT_NODE_TYPE_SPACE_RENDER);
+        return result;
+    }
+    if (pureVoice != OH_AudioNode_Type::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_003 fail, EFFECT_NODE_TYPE_PURE_VOICE_CHANGE is: %{public}d",
+            EFFECT_NODE_TYPE_PURE_VOICE_CHANGE);
+        return result;
+    }
+    if (geberalVoice != OH_AudioNode_Type::EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_003 fail, EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE is: %{public}d",
+            EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE);
+        return result;
+    }
+    if (tempoPitch != OH_AudioNode_Type::EFFECT_NODE_TYPE_TEMPO_PITCH) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_003 fail, EFFECT_NODE_TYPE_TEMPO_PITCH is: %{public}d", EFFECT_NODE_TYPE_TEMPO_PITCH);
+        return result;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
+    return result;
+}
 static napi_value OH_AudioSuiteEngine_PipelineWorkMode_001(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -5234,6 +5307,1990 @@ static napi_value OH_AudioSuiteEngine_VoiceBeautifierType_001(napi_env env, napi
     }
     napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
     return result;
+}
+
+static napi_value AudioPureVoiceChangeTypeTest_001(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AudioSuite_PureVoiceChangeType cartoon =
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST);
+    OH_AudioSuite_PureVoiceChangeType cute =
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CUTE_TEST);
+    OH_AudioSuite_PureVoiceChangeType female =
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_FEMALE_TEST);
+    OH_AudioSuite_PureVoiceChangeType male =
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_MALE_TEST);
+
+    if (cartoon != OH_AudioSuite_PureVoiceChangeType::PURE_VOICE_CHANGE_TYPE_CARTOON) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioPureVoiceChangeTypeTest_001 fail, PURE_VOICE_CHANGE_TYPE_CARTOON is: %{public}d",
+            PURE_VOICE_CHANGE_TYPE_CARTOON);
+        return result;
+    }
+    if (cute != OH_AudioSuite_PureVoiceChangeType::PURE_VOICE_CHANGE_TYPE_CUTE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioPureVoiceChangeTypeTest_001 fail, PURE_VOICE_CHANGE_TYPE_CUTE is: %{public}d",
+            PURE_VOICE_CHANGE_TYPE_CUTE);
+        return result;
+    }
+    if (female != OH_AudioSuite_PureVoiceChangeType::PURE_VOICE_CHANGE_TYPE_FEMALE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioPureVoiceChangeTypeTest_001 fail, PURE_VOICE_CHANGE_TYPE_FEMALE is: %{public}d",
+            PURE_VOICE_CHANGE_TYPE_FEMALE);
+        return result;
+    }
+    if (male != OH_AudioSuite_PureVoiceChangeType::PURE_VOICE_CHANGE_TYPE_MALE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioPureVoiceChangeTypeTest_001 fail, PURE_VOICE_CHANGE_TYPE_MALE is: %{public}d",
+            PURE_VOICE_CHANGE_TYPE_MALE);
+        return result;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
+    return result;
+}
+
+static napi_value AudioPureVoiceChangeTypeTest_002(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AudioSuite_PureVoiceChangeType monster =
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_MONSTER_TEST);
+    OH_AudioSuite_PureVoiceChangeType robots =
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_ROBOTS_TEST);
+    OH_AudioSuite_PureVoiceChangeType seasoned =
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_SEASONED_TEST);
+
+    if (monster != OH_AudioSuite_PureVoiceChangeType::PURE_VOICE_CHANGE_TYPE_MONSTER) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioPureVoiceChangeTypeTest_002 fail, PURE_VOICE_CHANGE_TYPE_MONSTER is: %{public}d",
+            PURE_VOICE_CHANGE_TYPE_MONSTER);
+        return result;
+    }
+    if (robots != OH_AudioSuite_PureVoiceChangeType::PURE_VOICE_CHANGE_TYPE_ROBOTS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioPureVoiceChangeTypeTest_002 fail, PURE_VOICE_CHANGE_TYPE_ROBOTS is: %{public}d",
+            PURE_VOICE_CHANGE_TYPE_ROBOTS);
+        return result;
+    }
+    if (seasoned != OH_AudioSuite_PureVoiceChangeType::PURE_VOICE_CHANGE_TYPE_SEASONED) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioPureVoiceChangeTypeTest_002 fail, PURE_VOICE_CHANGE_TYPE_SEASONED is: %{public}d",
+            PURE_VOICE_CHANGE_TYPE_SEASONED);
+        return result;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
+    return result;
+}
+
+static napi_value AudioGeneralVoiceChangeTypeTest_001(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AudioSuite_GeneralVoiceChangeType cute =
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+            GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_CUTE_TEST);
+    OH_AudioSuite_GeneralVoiceChangeType cyberpunk =
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+            GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_CYBERPUNK_TEST);
+    OH_AudioSuite_GeneralVoiceChangeType female =
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+            GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_FEMALE_TEST);
+    OH_AudioSuite_GeneralVoiceChangeType male =
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+            GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_MALE_TEST);
+    OH_AudioSuite_GeneralVoiceChangeType mix =
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+            GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_MIX_TEST);
+
+    if (cute != OH_AudioSuite_GeneralVoiceChangeType::GENERAL_VOICE_CHANGE_TYPE_CUTE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("VoiceChangeType_001 fail, GENERAL_VOICE_CHANGE_TYPE_CUTE is: %{public}d",  GENERAL_VOICE_CHANGE_TYPE_CUTE);
+        return result;
+    }
+    if (cyberpunk != OH_AudioSuite_GeneralVoiceChangeType::GENERAL_VOICE_CHANGE_TYPE_CYBERPUNK) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("VoiceChangeType_001 fail, GENERAL_VOICE_CHANGE_TYPE_CYBERPUNK is: %{public}d",
+            GENERAL_VOICE_CHANGE_TYPE_CYBERPUNK);
+        return result;
+    }
+    if (female != OH_AudioSuite_GeneralVoiceChangeType::GENERAL_VOICE_CHANGE_TYPE_FEMALE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("VoiceChangeType_001 fail, GENERAL_VOICE_CHANGE_TYPE_FEMALE is: %{public}d",
+            GENERAL_VOICE_CHANGE_TYPE_FEMALE);
+        return result;
+    }
+    if (male != OH_AudioSuite_GeneralVoiceChangeType::GENERAL_VOICE_CHANGE_TYPE_MALE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("VoiceChangeType_001 fail, GENERAL_VOICE_CHANGE_TYPE_MALE is: %{public}d", GENERAL_VOICE_CHANGE_TYPE_MALE);
+        return result;
+    }
+    if (mix != OH_AudioSuite_GeneralVoiceChangeType::GENERAL_VOICE_CHANGE_TYPE_MIX) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("VoiceChangeType_001 fail, GENERAL_VOICE_CHANGE_TYPE_MIX is: %{public}d", GENERAL_VOICE_CHANGE_TYPE_MIX);
+        return result;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
+    return result;
+}
+
+static napi_value AudioGeneralVoiceChangeTypeTest_002(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AudioSuite_GeneralVoiceChangeType monster =
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+            GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_MONSTER_TEST);
+    OH_AudioSuite_GeneralVoiceChangeType seasoned =
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+            GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_SEASONED_TEST);
+    OH_AudioSuite_GeneralVoiceChangeType synth =
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+            GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_SYNTH_TEST);
+    OH_AudioSuite_GeneralVoiceChangeType trill =
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+            GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_TRILL_TEST);
+    OH_AudioSuite_GeneralVoiceChangeType war =
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+            GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_WAR_TEST);
+
+    if (monster != OH_AudioSuite_GeneralVoiceChangeType::GENERAL_VOICE_CHANGE_TYPE_MONSTER) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("VoiceChangeType_002 fail, GENERAL_VOICE_CHANGE_TYPE_MONSTER is: %{public}d",
+            GENERAL_VOICE_CHANGE_TYPE_MONSTER);
+        return result;
+    }
+    if (seasoned != OH_AudioSuite_GeneralVoiceChangeType::GENERAL_VOICE_CHANGE_TYPE_SEASONED) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("VoiceChangeType_002 fail, GENERAL_VOICE_CHANGE_TYPE_SEASONED is: %{public}d",
+            GENERAL_VOICE_CHANGE_TYPE_SEASONED);
+        return result;
+    }
+    if (synth != OH_AudioSuite_GeneralVoiceChangeType::GENERAL_VOICE_CHANGE_TYPE_SYNTH) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("VoiceChangeType_002 fail, GENERAL_VOICE_CHANGE_TYPE_SYNTH is: %{public}d",
+            GENERAL_VOICE_CHANGE_TYPE_SYNTH);
+        return result;
+    }
+    if (trill != OH_AudioSuite_GeneralVoiceChangeType::GENERAL_VOICE_CHANGE_TYPE_TRILL) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("VoiceChangeType_002 fail, GENERAL_VOICE_CHANGE_TYPE_TRILL is: %{public}d",
+            GENERAL_VOICE_CHANGE_TYPE_TRILL);
+        return result;
+    }
+    if (war != OH_AudioSuite_GeneralVoiceChangeType::GENERAL_VOICE_CHANGE_TYPE_WAR) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("VoiceChangeType_002 fail, GENERAL_VOICE_CHANGE_TYPE_WAR is: %{public}d", GENERAL_VOICE_CHANGE_TYPE_WAR);
+        return result;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
+    return result;
+}
+
+static napi_value AudioPureVoiceChangeGenderOptionTest_001(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AudioSuite_PureVoiceChangeGenderOption female =
+        static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST);
+    OH_AudioSuite_PureVoiceChangeGenderOption male =
+        static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_MALE_TEST);
+
+    if (female != OH_AudioSuite_PureVoiceChangeGenderOption::PURE_VOICE_CHANGE_FEMALE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioPureVoiceChangeGenderOptionTest_001 fail, PURE_VOICE_CHANGE_FEMALE is: %{public}d",
+            PURE_VOICE_CHANGE_FEMALE);
+        return result;
+    }
+    if (male != OH_AudioSuite_PureVoiceChangeGenderOption::PURE_VOICE_CHANGE_MALE) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioPureVoiceChangeGenderOptionTest_001 fail, PURE_VOICE_CHANGE_MALE is: %{public}d",
+            PURE_VOICE_CHANGE_MALE);
+        return result;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
+    return result;
+}
+
+static napi_value AudioSuiteEngine_SetTempoAndPitch_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_TEMPO_PITCH_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMin, g_pitchMin);
+ 
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetTempoAndPitch_001 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetTempoAndPitch_002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_TEMPO_PITCH_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMax, g_pitchMax);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetTempoAndPitch_002 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetTempoAndPitch_003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_TEMPO_PITCH_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMin - 0.1, g_pitchMin);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetTempoAndPitch_003 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetTempoAndPitch_004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_TEMPO_PITCH_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMin, g_pitchMin - 0.1);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetTempoAndPitch_004 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetTempoAndPitch_005(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_TEMPO_PITCH_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMax + 0.1, g_pitchMax);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetTempoAndPitch_005 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetTempoAndPitch_006(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_TEMPO_PITCH_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMax, g_pitchMax + 0.1);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetTempoAndPitch_006 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetTempoAndPitch_007(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(nullptr, g_speedMax, g_pitchMax);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetTempoAndPitch_007 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetTempoAndPitch_008(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    for (const auto setNodeType : audioNodeTypeTest) {
+        if (setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST) ||
+            setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST) ||
+            setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_TEMPO_PITCH_TEST)) {
+            continue;
+        }
+        OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+        OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+        OH_AudioNodeBuilder *builder = nullptr;
+        OH_AudioNode *audioNode = nullptr;
+        bool isSupported = IsNodeTypeSupported(setNodeType);
+        OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+        OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+            <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+        OH_AudioSuiteNodeBuilder_Create(&builder);
+        OH_AudioSuiteNodeBuilder_SetNodeType(builder, setNodeType);
+        OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+        OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMax, g_pitchMax);
+        OH_AudioSuiteNodeBuilder_Destroy(builder);
+        OH_AudioSuiteEngine_DestroyNode(audioNode);
+        OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        if (isSupported && result != AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+            LOG("SetTempoAndPitch_008 fail, result is: %{public}d, setNodeType is: %{public}d ", result, setNodeType);
+            return res;
+        }
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetTempoAndPitch_009(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_TEMPO_PITCH_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMin, g_pitchMin);
+
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetTempoAndPitch_009 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetTempoAndPitch_010(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteNodeBuilder_SetFormat(builder, audioFormatOutput);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMin, g_pitchMin);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetTempoAndPitch_010 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetTempoAndPitch_011(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteNodeBuilder_SetFormat(builder, audioFormatInput);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(builder, MyOnWriteData, g_userData);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMin, g_pitchMin);
+    
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetTempoAndPitch_011 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetTempoAndPitch_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_TEMPO_PITCH_TEST);
+    float speed;
+    float pitch;
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMin, g_pitchMin);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetTempoAndPitch(audioNode, &speed, &pitch);
+    
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetTempoAndPitch_001 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetTempoAndPitch_002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    float speed;
+    float pitch;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetTempoAndPitch(nullptr, &speed, &pitch);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetTempoAndPitch_002 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetTempoAndPitch_003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    float pitch;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetTempoAndPitch(nullptr, nullptr, &pitch);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetTempoAndPitch_003 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetTempoAndPitch_004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetTempoAndPitch(nullptr, nullptr, nullptr);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetTempoAndPitch_004 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetTempoAndPitch_005(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    float speed;
+    float pitch;
+    for (const auto setNodeType : audioNodeTypeTest) {
+        if (setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST) ||
+            setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST) ||
+            setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_TEMPO_PITCH_TEST)) {
+            continue;
+        }
+        OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+        OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+        OH_AudioNodeBuilder *builder = nullptr;
+        OH_AudioNode *audioNode = nullptr;
+        bool isSupported = IsNodeTypeSupported(setNodeType);
+        OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+        OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+            <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+        OH_AudioSuiteNodeBuilder_Create(&builder);
+        OH_AudioSuiteNodeBuilder_SetNodeType(builder, setNodeType);
+        OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+        OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetTempoAndPitch(audioNode, &speed, &pitch);
+        OH_AudioSuiteNodeBuilder_Destroy(builder);
+        OH_AudioSuiteEngine_DestroyNode(audioNode);
+        OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        if (isSupported && result != AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+            LOG("GetTempoAndPitch_005 fail, result is: %{public}d, setNodeType is: %{public}d ", result, setNodeType);
+            return res;
+        }
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetTempoAndPitch_006(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_TEMPO_PITCH_TEST);
+    float speed;
+    float pitch;
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetTempoAndPitch(audioNode, &speed, &pitch);
+    
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetTempoAndPitch_006 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetTempoAndPitch_007(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST);
+    float speed;
+    float pitch;
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteNodeBuilder_SetFormat(builder, audioFormatOutput);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetTempoAndPitch(audioNode, &speed, &pitch);
+    
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetTempoAndPitch_007 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetTempoAndPitch_008(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST);
+    float speed;
+    float pitch;
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteNodeBuilder_SetFormat(builder, audioFormatInput);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(builder, MyOnWriteData, g_userData);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetTempoAndPitch(audioNode, &speed, &pitch);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetTempoAndPitch_008 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    for (const auto setNodeType : audioNodeTypeTest) {
+        if (setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST) ||
+            setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST) ||
+            setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST)) {
+            continue;
+        }
+        OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+        OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+        OH_AudioNodeBuilder *builder = nullptr;
+        OH_AudioNode *audioNode = nullptr;
+        bool isSupported = IsNodeTypeSupported(setNodeType);
+        OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+        OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+        OH_AudioSuiteNodeBuilder_Create(&builder);
+        OH_AudioSuiteNodeBuilder_SetNodeType(builder, setNodeType);
+        OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+        OH_AudioSuite_PureVoiceChangeOption option = {
+            static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+                PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+            static_cast<OH_AudioSuite_PureVoiceChangeType>(
+                PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};
+        OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
+        OH_AudioSuiteNodeBuilder_Destroy(builder);
+        OH_AudioSuiteEngine_DestroyNode(audioNode);
+        OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+        if (isSupported && result != AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+            LOG("SetPureVoiceChange_001 fail, result is: %{public}d, setNodeType is: %{public}d ", result, setNodeType);
+            return res;
+        }
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    for (const auto optionType : pureVoiceChangeTypeTest) {
+        OH_AudioSuite_PureVoiceChangeOption option = {
+            static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+            optionType};
+        OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
+        if (isSupported && result != AUDIOSUITE_SUCCESS) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+            LOG("AudioSuiteEngine_SetPureVoiceChangeOption_002 fail, result is: %{public}d", result);
+            OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+            OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+            return res;
+        }
+    }
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    for (const auto optionType : pureVoiceChangeTypeTest) {
+        OH_AudioSuite_PureVoiceChangeOption option = {
+            static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_MALE_TEST),
+            optionType};
+        OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
+        if (isSupported && result != AUDIOSUITE_SUCCESS) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+            LOG("AudioSuiteEngine_SetPureVoiceChangeOption_003 fail, result is: %{public}d", result);
+            OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+            OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+            return res;
+        }
+    }
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuite_PureVoiceChangeOption option = {
+        static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+        PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(
+        PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST),
+        g_changeOptionMin};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
+ 
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetPureVoiceChangeOption_004 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_005(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuite_PureVoiceChangeOption option = {
+        static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+        PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(
+        PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST),
+        g_changeOptionMax};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
+ 
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetPureVoiceChangeOption_005 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_006(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    float pitch = g_changeOptionMin - 0.1f;
+    OH_AudioSuite_PureVoiceChangeOption option = {
+        static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+        PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(
+        PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST),
+        pitch};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
+ 
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetPureVoiceChangeOption_006 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_007(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    float pitch = g_changeOptionMax + 0.1f;
+    OH_AudioSuite_PureVoiceChangeOption option = {
+        static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+        PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(
+        PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST),
+        pitch};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
+ 
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetPureVoiceChangeOption_007 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_008(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_PureVoiceChangeOption option = {
+        static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(nullptr, option);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetPureVoiceChangeOption_008 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_009(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuite_PureVoiceChangeOption option = {
+        static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
+ 
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetPureVoiceChangeOption_009 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_010(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteNodeBuilder_SetFormat(builder, audioFormatOutput);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuite_PureVoiceChangeOption option = {
+        static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
+ 
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetPureVoiceChangeOption_010 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_011(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteNodeBuilder_SetFormat(builder, audioFormatInput);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(builder, MyOnWriteData, g_userData);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuite_PureVoiceChangeOption option = {
+        static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
+ 
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetPureVoiceChangeOption_011 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    for (const auto setNodeType : audioNodeTypeTest) {
+        if (setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST) ||
+            setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST) ||
+            setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST)) {
+            continue;
+        }
+        OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+        OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+        OH_AudioNodeBuilder *builder = nullptr;
+        OH_AudioNode *audioNode = nullptr;
+        bool isSupported = IsNodeTypeSupported(setNodeType);
+        OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+        OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+        OH_AudioSuiteNodeBuilder_Create(&builder);
+        OH_AudioSuiteNodeBuilder_SetNodeType(builder, setNodeType);
+        OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+        OH_AudioSuite_PureVoiceChangeOption option = {
+            static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+                PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+            static_cast<OH_AudioSuite_PureVoiceChangeType>(
+                PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};
+        OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, &option);
+
+        OH_AudioSuiteNodeBuilder_Destroy(builder);
+        OH_AudioSuiteEngine_DestroyNode(audioNode);
+        OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+        if (isSupported && result != AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+            LOG("GetPureVoiceChange_001 fail, result is: %{public}d, setNodeType is: %{public}d ", result, setNodeType);
+            return res;
+        }
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    for (const auto optionType : pureVoiceChangeTypeTest) {
+        OH_AudioSuite_PureVoiceChangeOption option = {
+            static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+            optionType};
+        OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
+        OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, &option);
+        if (isSupported && result != AUDIOSUITE_SUCCESS) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+            LOG("AudioSuiteEngine_GetPureVoiceChangeOption_002 fail, result is: %{public}d", result);
+            OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+            OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+            return res;
+        }
+    }
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    for (const auto optionType : pureVoiceChangeTypeTest) {
+        OH_AudioSuite_PureVoiceChangeOption option = {
+            static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_MALE_TEST),
+            optionType};
+        OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
+        OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, &option);
+        if (isSupported && result != AUDIOSUITE_SUCCESS) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+            LOG("AudioSuiteEngine_GetPureVoiceChangeOption_003 fail, result is: %{public}d", result);
+            OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+            OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+            return res;
+        }
+    }
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuite_PureVoiceChangeOption option = {
+        static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+        PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(
+        PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST),
+        g_changeOptionMin};
+    OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, &option);
+ 
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetPureVoiceChangeOption_004 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_005(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuite_PureVoiceChangeOption option = {
+        static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+        PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(
+        PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST),
+        g_changeOptionMax};
+    OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, &option);
+ 
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetPureVoiceChangeOption_005 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_006(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_PureVoiceChangeOption option = {
+        static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(nullptr, &option);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetPureVoiceChangeOption_006 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_007(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, nullptr);
+ 
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetPureVoiceChangeOption_007 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_008(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(nullptr, nullptr);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetPureVoiceChangeOption_008 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_009(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_PURE_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuite_PureVoiceChangeOption option = {
+        static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, &option);
+ 
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetPureVoiceChangeOption_009 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_010(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteNodeBuilder_SetFormat(builder, audioFormatOutput);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuite_PureVoiceChangeOption option = {
+        static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, &option);
+ 
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetPureVoiceChangeOption_010 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_011(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteNodeBuilder_SetFormat(builder, audioFormatInput);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(builder, MyOnWriteData, g_userData);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuite_PureVoiceChangeOption option = {
+        static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        static_cast<OH_AudioSuite_PureVoiceChangeType>(
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, &option);
+ 
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetPureVoiceChangeOption_011 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetGeneralVoiceChangeType_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type =
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    for (const auto changeType : generalVoiceChangeTypeTest) {
+        OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetGeneralVoiceChangeType(audioNode, changeType);
+        if (isSupported && result != AUDIOSUITE_SUCCESS) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+            LOG("AudioSuiteEngine_SetGeneralVoiceChangeType_001 fail, result is: %{public}d", result);
+            OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+            OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+            return res;
+        }
+    }
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetGeneralVoiceChangeType_002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    for (const auto setNodeType : audioNodeTypeTest) {
+        if (setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST) ||
+            setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST) ||
+            setNodeType ==
+            static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE_TEST)) {
+            continue;
+        }
+        OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+        OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+        OH_AudioNodeBuilder *builder = nullptr;
+        OH_AudioNode *audioNode = nullptr;
+        bool isSupported = IsNodeTypeSupported(setNodeType);
+        OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+        OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+        OH_AudioSuiteNodeBuilder_Create(&builder);
+        OH_AudioSuiteNodeBuilder_SetNodeType(builder, setNodeType);
+        OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+        OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetGeneralVoiceChangeType(audioNode,
+            static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+                GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_CUTE_TEST));
+        OH_AudioSuiteNodeBuilder_Destroy(builder);
+        OH_AudioSuiteEngine_DestroyNode(audioNode);
+        OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+        if (isSupported && result != AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+            LOG("SetVoiceChangeType_002 fail, result is: %{public}d, setNodeType is: %{public}d ", result, setNodeType);
+            return res;
+        }
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetGeneralVoiceChangeType_003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetGeneralVoiceChangeType(nullptr,
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+            GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_CUTE_TEST));
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetGeneralVoiceChangeType_003 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetGeneralVoiceChangeType_004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type =
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetGeneralVoiceChangeType(audioNode,
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+        GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_CUTE_TEST));
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetGeneralVoiceChangeType_006 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetGeneralVoiceChangeType_005(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteNodeBuilder_SetFormat(builder, audioFormatOutput);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetGeneralVoiceChangeType(audioNode,
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+        GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_CUTE_TEST));
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetGeneralVoiceChangeType_007 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetGeneralVoiceChangeType_006(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteNodeBuilder_SetFormat(builder, audioFormatInput);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(builder, MyOnWriteData, g_userData);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetGeneralVoiceChangeType(audioNode,
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+        GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_CUTE_TEST));
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetGeneralVoiceChangeType_008 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetGeneralVoiceChangeType_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type =
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    for (const auto changeType : generalVoiceChangeTypeTest) {
+        OH_AudioSuiteEngine_SetGeneralVoiceChangeType(audioNode, changeType);
+        OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetGeneralVoiceChangeType(audioNode,
+            (OH_AudioSuite_GeneralVoiceChangeType *)&changeType);
+        if (isSupported && result != AUDIOSUITE_SUCCESS) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+            LOG("AudioSuiteEngine_GetGeneralVoiceChangeType_001 fail, result is: %{public}d", result);
+            OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+            OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+            return res;
+        }
+    }
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetGeneralVoiceChangeType_002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    for (const auto setNodeType : audioNodeTypeTest) {
+        if (setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST) ||
+            setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST) ||
+            setNodeType ==
+            static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE_TEST)) {
+            continue;
+        }
+        OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+        OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+        OH_AudioNodeBuilder *builder = nullptr;
+        OH_AudioNode *audioNode = nullptr;
+        bool isSupported = IsNodeTypeSupported(setNodeType);
+        OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+        OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+        OH_AudioSuiteNodeBuilder_Create(&builder);
+        OH_AudioSuiteNodeBuilder_SetNodeType(builder, setNodeType);
+        OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+        OH_AudioSuite_GeneralVoiceChangeType generalType;
+        OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetGeneralVoiceChangeType(audioNode, &generalType);
+        OH_AudioSuiteNodeBuilder_Destroy(builder);
+        OH_AudioSuiteEngine_DestroyNode(audioNode);
+        OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+        if (isSupported && result != AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+            LOG("GetVoiceChangeType_002 fail, result is: %{public}d, setNodeType is: %{public}d ", result, setNodeType);
+            return res;
+        }
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetGeneralVoiceChangeType_003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_GeneralVoiceChangeType generalType;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetGeneralVoiceChangeType(nullptr, &generalType);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetGeneralVoiceChangeType_003 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetGeneralVoiceChangeType_004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetGeneralVoiceChangeType(nullptr, nullptr);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetGeneralVoiceChangeType_004 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetGeneralVoiceChangeType_005(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type =
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetGeneralVoiceChangeType(audioNode, nullptr);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (!isSupported || result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetGeneralVoiceChangeType_005 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetGeneralVoiceChangeType_006(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type =
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuite_GeneralVoiceChangeType generalType;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetGeneralVoiceChangeType(audioNode, &generalType);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetGeneralVoiceChangeType_006 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetGeneralVoiceChangeType_007(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteNodeBuilder_SetFormat(builder, audioFormatOutput);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuite_GeneralVoiceChangeType generalType;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetGeneralVoiceChangeType(audioNode, &generalType);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetGeneralVoiceChangeType_007 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetGeneralVoiceChangeType_008(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST);
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, static_cast
+        <OH_AudioSuite_PipelineWorkMode>(AudioSuitePipelineWorkModeTest::AUDIOSUITE_PIPELINE_EDIT_MODE_TEST));
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteNodeBuilder_SetFormat(builder, audioFormatInput);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(builder, MyOnWriteData, g_userData);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_GeneralVoiceChangeType generalType;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetGeneralVoiceChangeType(audioNode, &generalType);
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        return res;
+    }
+
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetGeneralVoiceChangeType_008 fail, result is: %{public}d", result);
+    return res;
 }
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -5539,6 +7596,8 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_AudioSuiteEngine_AudioNodeType_002", nullptr, OH_AudioSuiteEngine_AudioNodeType_002,
             nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_AudioSuiteEngine_AudioNodeType_003", nullptr, OH_AudioSuiteEngine_AudioNodeType_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_AudioSuiteEngine_PipelineWorkMode_001", nullptr, OH_AudioSuiteEngine_PipelineWorkMode_001,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_AudioSuiteEngine_AudioSuitePipelineState_001", nullptr, OH_AudioSuiteEngine_AudioSuitePipelineState_001,
@@ -5556,6 +7615,126 @@ static napi_value Init(napi_env env, napi_value exports)
         { "AudioSuiteEngine_IsNodeTypeSupported_0001", nullptr, AudioSuiteEngine_IsNodeTypeSupported_0001,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "AudioSuiteEngine_IsNodeTypeSupported_0002", nullptr, AudioSuiteEngine_IsNodeTypeSupported_0002,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioPureVoiceChangeTypeTest_001", nullptr, AudioPureVoiceChangeTypeTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioPureVoiceChangeTypeTest_002", nullptr, AudioPureVoiceChangeTypeTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioGeneralVoiceChangeTypeTest_001", nullptr, AudioGeneralVoiceChangeTypeTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioGeneralVoiceChangeTypeTest_002", nullptr, AudioGeneralVoiceChangeTypeTest_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioPureVoiceChangeGenderOptionTest_001", nullptr, AudioPureVoiceChangeGenderOptionTest_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetTempoAndPitch_001", nullptr, AudioSuiteEngine_SetTempoAndPitch_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetTempoAndPitch_002", nullptr, AudioSuiteEngine_SetTempoAndPitch_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetTempoAndPitch_003", nullptr, AudioSuiteEngine_SetTempoAndPitch_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetTempoAndPitch_004", nullptr, AudioSuiteEngine_SetTempoAndPitch_004,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetTempoAndPitch_005", nullptr, AudioSuiteEngine_SetTempoAndPitch_005,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetTempoAndPitch_006", nullptr, AudioSuiteEngine_SetTempoAndPitch_006,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetTempoAndPitch_007", nullptr, AudioSuiteEngine_SetTempoAndPitch_007,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetTempoAndPitch_008", nullptr, AudioSuiteEngine_SetTempoAndPitch_008,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetTempoAndPitch_009", nullptr, AudioSuiteEngine_SetTempoAndPitch_009,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetTempoAndPitch_010", nullptr, AudioSuiteEngine_SetTempoAndPitch_010,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetTempoAndPitch_011", nullptr, AudioSuiteEngine_SetTempoAndPitch_011,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetTempoAndPitch_001", nullptr, AudioSuiteEngine_GetTempoAndPitch_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetTempoAndPitch_002", nullptr, AudioSuiteEngine_GetTempoAndPitch_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetTempoAndPitch_003", nullptr, AudioSuiteEngine_GetTempoAndPitch_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetTempoAndPitch_004", nullptr, AudioSuiteEngine_GetTempoAndPitch_004,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetTempoAndPitch_005", nullptr, AudioSuiteEngine_GetTempoAndPitch_005,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetTempoAndPitch_006", nullptr, AudioSuiteEngine_GetTempoAndPitch_006,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetTempoAndPitch_007", nullptr, AudioSuiteEngine_GetTempoAndPitch_007,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetTempoAndPitch_008", nullptr, AudioSuiteEngine_GetTempoAndPitch_008,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetPureVoiceChangeOption_001", nullptr, AudioSuiteEngine_SetPureVoiceChangeOption_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetPureVoiceChangeOption_002", nullptr, AudioSuiteEngine_SetPureVoiceChangeOption_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetPureVoiceChangeOption_003", nullptr, AudioSuiteEngine_SetPureVoiceChangeOption_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetPureVoiceChangeOption_004", nullptr, AudioSuiteEngine_SetPureVoiceChangeOption_004,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetPureVoiceChangeOption_005", nullptr, AudioSuiteEngine_SetPureVoiceChangeOption_005,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetPureVoiceChangeOption_006", nullptr, AudioSuiteEngine_SetPureVoiceChangeOption_006,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetPureVoiceChangeOption_007", nullptr, AudioSuiteEngine_SetPureVoiceChangeOption_007,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetPureVoiceChangeOption_008", nullptr, AudioSuiteEngine_SetPureVoiceChangeOption_008,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetPureVoiceChangeOption_009", nullptr, AudioSuiteEngine_SetPureVoiceChangeOption_009,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetPureVoiceChangeOption_010", nullptr, AudioSuiteEngine_SetPureVoiceChangeOption_010,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetPureVoiceChangeOption_011", nullptr, AudioSuiteEngine_SetPureVoiceChangeOption_011,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetPureVoiceChangeOption_001", nullptr, AudioSuiteEngine_GetPureVoiceChangeOption_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetPureVoiceChangeOption_002", nullptr, AudioSuiteEngine_GetPureVoiceChangeOption_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetPureVoiceChangeOption_003", nullptr, AudioSuiteEngine_GetPureVoiceChangeOption_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetPureVoiceChangeOption_004", nullptr, AudioSuiteEngine_GetPureVoiceChangeOption_004,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetPureVoiceChangeOption_005", nullptr, AudioSuiteEngine_GetPureVoiceChangeOption_005,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetPureVoiceChangeOption_006", nullptr, AudioSuiteEngine_GetPureVoiceChangeOption_006,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetPureVoiceChangeOption_007", nullptr, AudioSuiteEngine_GetPureVoiceChangeOption_007,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetPureVoiceChangeOption_008", nullptr, AudioSuiteEngine_GetPureVoiceChangeOption_008,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetPureVoiceChangeOption_009", nullptr, AudioSuiteEngine_GetPureVoiceChangeOption_009,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetPureVoiceChangeOption_010", nullptr, AudioSuiteEngine_GetPureVoiceChangeOption_010,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetPureVoiceChangeOption_011", nullptr, AudioSuiteEngine_GetPureVoiceChangeOption_011,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetGeneralVoiceChangeType_001", nullptr, AudioSuiteEngine_SetGeneralVoiceChangeType_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetGeneralVoiceChangeType_002", nullptr, AudioSuiteEngine_SetGeneralVoiceChangeType_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetGeneralVoiceChangeType_003", nullptr, AudioSuiteEngine_SetGeneralVoiceChangeType_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetGeneralVoiceChangeType_004", nullptr, AudioSuiteEngine_SetGeneralVoiceChangeType_004,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetGeneralVoiceChangeType_005", nullptr, AudioSuiteEngine_SetGeneralVoiceChangeType_005,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetGeneralVoiceChangeType_006", nullptr, AudioSuiteEngine_SetGeneralVoiceChangeType_006,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetGeneralVoiceChangeType_001", nullptr, AudioSuiteEngine_GetGeneralVoiceChangeType_001,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetGeneralVoiceChangeType_002", nullptr, AudioSuiteEngine_GetGeneralVoiceChangeType_002,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetGeneralVoiceChangeType_003", nullptr, AudioSuiteEngine_GetGeneralVoiceChangeType_003,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetGeneralVoiceChangeType_004", nullptr, AudioSuiteEngine_GetGeneralVoiceChangeType_004,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetGeneralVoiceChangeType_005", nullptr, AudioSuiteEngine_GetGeneralVoiceChangeType_005,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetGeneralVoiceChangeType_006", nullptr, AudioSuiteEngine_GetGeneralVoiceChangeType_006,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetGeneralVoiceChangeType_007", nullptr, AudioSuiteEngine_GetGeneralVoiceChangeType_007,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetGeneralVoiceChangeType_008", nullptr, AudioSuiteEngine_GetGeneralVoiceChangeType_008,
             nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

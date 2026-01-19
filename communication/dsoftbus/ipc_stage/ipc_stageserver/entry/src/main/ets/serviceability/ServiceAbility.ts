@@ -423,6 +423,28 @@ class Stub extends rpc.RemoteObject {
             console.info(logTag + "onRemoteMessageRequest success");
             return true;
           }
+        case 100:
+          {
+            console.info(logTag + 'code is 100');
+            let remoteObject = data.readRemoteObject();
+            let option2 = new rpc.MessageOption();
+            let data2 = rpc.MessageSequence.create();
+            let reply2 = rpc.MessageSequence.create();
+            remoteObject.sendMessageRequest(1, data2, reply2, option2)
+              .then((result: rpc.RequestResult) => {
+                 console.info(logTag + '100 send request done, error code: ' + result.errCode );
+              })
+              .catch((err: Error) => {
+                console.info(logTag + '100 send request got exception: ' + err);
+              })
+              .finally(() => {
+                data2.reclaim();
+                reply2.reclaim();
+                 console.info(logTag + 'case 100 test done');
+              })
+             console.info(logTag + 'onRemoteMessageRequest success');
+            return true;
+          }
         case 16777215:
           {
             let res = data.readString();

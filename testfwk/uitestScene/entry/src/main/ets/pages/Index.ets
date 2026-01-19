@@ -217,6 +217,7 @@ struct ScrollExample {
               .height(50)
               .enabled(true)
               .margin({ top: 5 })
+              .textAlign(TextAlign.Center)
             ForEach(this.arr, (item:number) => {
               Text(item.toString())
                 .width('100%')

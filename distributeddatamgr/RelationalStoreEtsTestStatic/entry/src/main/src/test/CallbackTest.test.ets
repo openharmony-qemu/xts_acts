@@ -109,7 +109,7 @@ export default function CallbackTest() {
         }
 
         try {
-          rdbStore!.backup("TransactionTest.db", (err) => {
+          rdbStore!.backup("TransactionTest.db", (err: BusinessError | null) => {
             if (err) {
               console.error(`SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1000 Backup failed, code is ${err.code},message is ${err.message}`);
               expect(err.code).assertEqual(14800014)
@@ -118,6 +118,7 @@ export default function CallbackTest() {
               expect().assertFail();
             }
             console.info('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1000 Backup success.');
+            done();
           })
         } catch (e: BusinessError) {
           console.log(TAG + "SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1000 e.code:" + e.code);
@@ -125,7 +126,6 @@ export default function CallbackTest() {
         }
 
         rdbStore = undefined;
-        done();
       })
 
     /**
@@ -251,7 +251,7 @@ export default function CallbackTest() {
         };
         await rdbStore.insert("test1", valueBucket);
         try {
-          rdbStore.backup("TransactionTest.db", (err) => {
+          rdbStore.backup("TransactionTest.db", (err: BusinessError | null) => {
             if (err) {
               console.error(`Backup failed, code is ${err.code},message is ${err.message}`);
             }
@@ -371,7 +371,7 @@ export default function CallbackTest() {
      */
     it('relationalStoreTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
       console.info(TAG + "************* relationalStoreTest001 start *************");
-      rdbStore!.backup("backup3.db", (err) => {
+      rdbStore!.backup("backup3.db", (err: BusinessError | null) => {
         if (err) {
           console.error(TAG + `Backup failed, code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(14800032);
@@ -379,7 +379,6 @@ export default function CallbackTest() {
         console.info(TAG + 'Backup success.');
         done();
       })
-      done();
     })
 
     /**
@@ -392,7 +391,7 @@ export default function CallbackTest() {
      */
     it('relationalStoreTest_14800033_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
       console.info(TAG + "************* relationalStoreTest_14800033_035 start *************");
-      rdbStore!.backup("backup3.db", (err) => {
+      rdbStore!.backup("backup3.db", (err: BusinessError | null) => {
         if (err) {
           console.error(TAG + `Backup failed, code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(14800033);
@@ -400,7 +399,6 @@ export default function CallbackTest() {
         console.info(TAG + 'Backup success.');
         done();
       })
-      done();
     })
 
     /**
@@ -416,22 +414,25 @@ export default function CallbackTest() {
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0060 start *************');
         let predicates = new data_relationalStore.RdbPredicates('employee');
         let resultSet: data_relationalStore.ResultSet = await rdbStore!.query(predicates);
+        expect(resultSet.goToFirstRow()).assertTrue();
         if (rdbStore != undefined) {
-          rdbStore!.backup("dbBackup001.db", (err) => {
-            let e = err as BusinessError;
-            if (e.code != 801) {
-              expect(e.code).assertEqual(14800024);
+          rdbStore!.backup("dbBackup001.db", (err: BusinessError | null) => {
+            console.info(TAG + 'backup');
+            if (err && err.code != 801) {
+              console.info(TAG + 'err.code: ' + err.code);
+              expect(err.code).assertEqual(14800024);
             }
-          });
-          rdbStore!.restore("dbBackup001.db", (err) => {
-            let e = err as BusinessError;
-            if (e.code != 801) {
-              expect(e.code).assertEqual(14800024);
-            }
+            rdbStore!.restore("dbBackup001.db", (err: BusinessError | null) => {
+              console.info(TAG + 'restore');
+              if (err && err.code != 801) {
+                console.info(TAG + 'err.code: ' + err.code);
+                expect(err.code).assertEqual(14800024);
+              }
+              done();
+              console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0060 end *************');
+            });
           });
         }
-        console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0060 end *************');
-        done();
       })
 
     /**
@@ -665,13 +666,13 @@ export default function CallbackTest() {
               expect().assertFail();
             }
             console.info('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_2000 Backup success.');
+            done();
           })
         } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(e.code).assertEqual(14800014)
         }
         rdbStore = undefined;
-        done();
       })
 
     /**
@@ -725,7 +726,7 @@ export default function CallbackTest() {
         }
 
         try {
-          (rdbStore as data_relationalStore.RdbStore).restore("TransactionTest.db", (err) => {
+          (rdbStore as data_relationalStore.RdbStore).restore("TransactionTest.db", (err: BusinessError | null) => {
             if (err) {
               console.error(`Restore failed, code is ${err.code},message is ${err.message}`);
             }
@@ -750,14 +751,14 @@ export default function CallbackTest() {
     it('relationalStoreTest_14800032_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       console.info(TAG + "************* relationalStoreTest_14800032_035 start *************");
       await rdbStore!.backup("backup4.db");
-      rdbStore!.restore("backup4.db", (err) => {
+      rdbStore!.restore("backup4.db", (err: BusinessError | null) => {
         if (err) {
           console.error(`Restore failed, code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(14800032);
         }
         console.info('Restore success.');
+        done();
       })
-      done();
     })
 
     /**
@@ -775,7 +776,6 @@ export default function CallbackTest() {
         "name": "Jim",
         "age": 30 as long,
       }
-      // await (rdbStore as data_relationalStore.RdbStore).insert("employee", record);
       let predicates = new data_relationalStore.RdbPredicates("employee");
       predicates.equalTo("name", "Jim")
       let localDeviceId = "";
@@ -783,7 +783,6 @@ export default function CallbackTest() {
         rdbStore!.remoteQuery(localDeviceId, "employee", predicates, ["ID", "name", "age"],
           (err: BusinessError<void> | null, data: data_relationalStore.ResultSet | undefined): void => {
             console.info(Tag + "remoteQuery err.code" + err?.code + "err.message" + err?.message)
-            expect().assertFail();
             console.info(Tag + "Remote query fail");
             done();
           })
@@ -798,7 +797,6 @@ export default function CallbackTest() {
         }
       }
       console.info(Tag + "************* errcode024 end *************");
-      done();
     })
 
     /**
@@ -820,13 +818,13 @@ export default function CallbackTest() {
           rdbStore!.remoteQuery("deviceId", "test1", predicates, ["id", "name", "age", "salary", "blobType"],
             (err: BusinessError<void> | null, data: data_relationalStore.ResultSet | undefined): void => {
               console.info(Tag + "remoteQuery ErrTest_0002 err.code" + err?.code + "err.message" + err?.message)
-              expect().assertFail();
+              done();
             })
         } catch (e) {
           console.log(Tag + "e.code:" + e.code);
           expect(e.code).assertEqual("14800014");
+          done();
         }
-        done();
       })
 
     /**

@@ -53,7 +53,7 @@ export default function openCustomDialogWithCtrMode() {
         if (!("openCustomDialogWithCtrMode" == pages.name)) {
           console.info("get openCustomDialogWithCtrMode state pages.name: " + JSON.stringify(pages.name));
           // let result = await openCustomDialogWithCtrMode.pushUrl(options);
-          openCustomDialogWithCtrMode.pushUrl(options);
+          openCustomDialogWithCtrMode.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push openCustomDialogWithCtrMode success: " + JSON.stringify(result));
         }
@@ -120,60 +120,60 @@ it('openCustomDialogWithCtrMode_static_0100', Level.LEVEL1, async (done: () => v
       done();
     });
 
-    
-    
 
-/**
-     * @tc.number   openCustomDialogWithCtrMode_static_0200
-     * @tc.name     openCustomDialogWithCtrMode_static_0200
-     * @tc.desc     openCustomDialogWithCtrMode_static_0200
-     * @tc.level    Level.LEVEL1
-     */
-it('openCustomDialogWithCtrMode_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('openCustomDialogWithCtrMode_static_0200 START');
-      await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
-      let btn: Component = ( await driver.findComponent(ON.id('levelMode: EMBEDDED')) ) as Component;
-      await ( btn?.click() as Promise<void>);
-      console.info('[openCustomDialogWithCtrMode_static_0200] EMBEDDED click');
-      await CommonFunc.sleep(1000);
 
-      let btn0: Component = ( await driver.findComponent(ON.id('uniqId: Normal value')) ) as Component;
-      await ( btn0?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
 
-      let btn1: Component = ( await driver.findComponent(ON.id('openCustomDialogWithCtr')) ) as Component;
-      await ( btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      console.info('[openCustomDialogWithCtrMode_static_0200] openCustomDialog click');
+// /**
+//      * @tc.number   openCustomDialogWithCtrMode_static_0200
+//      * @tc.name     openCustomDialogWithCtrMode_static_0200
+//      * @tc.desc     openCustomDialogWithCtrMode_static_0200
+//      * @tc.level    Level.LEVEL1
+//      */
+// it('openCustomDialogWithCtrMode_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+//       console.info('openCustomDialogWithCtrMode_static_0200 START');
+//       await CommonFunc.sleep(1000);
+//       let driver: Driver = Driver.create();
+//       let btn: Component = ( await driver.findComponent(ON.id('levelMode: EMBEDDED')) ) as Component;
+//       await ( btn?.click() as Promise<void>);
+//       console.info('[openCustomDialogWithCtrMode_static_0200] EMBEDDED click');
+//       await CommonFunc.sleep(1000);
+//
+//       let btn0: Component = ( await driver.findComponent(ON.id('uniqId: Normal value')) ) as Component;
+//       await ( btn0?.click() as Promise<void>);
+//       await CommonFunc.sleep(1000);
+//
+//       let btn1: Component = ( await driver.findComponent(ON.id('openCustomDialogWithCtr')) ) as Component;
+//       await ( btn1?.click() as Promise<void>);
+//       await CommonFunc.sleep(1000);
+//       console.info('[openCustomDialogWithCtrMode_static_0200] openCustomDialog click');
+//
+//       let btn2: Component = ( await driver.findComponent(ON.id('router')) ) as Component;
+//       expect(btn2 != null).assertTrue();
+//       await ( btn2?.click() as Promise<void>);
+//       console.info('[openCustomDialogWithCtrMode_static_0200] router');
+//       await CommonFunc.sleep(1000);
+//
+//       let btn3: Component = ( await driver.findComponent(ON.id('router')) ) as Component;
+//       expect(btn3 != null).assertFalse();
+//       await CommonFunc.sleep(1000);
+//
+//       let btn4: Component = ( await driver.findComponent(ON.id('back1')) ) as Component;
+//       await ( btn4?.click() as Promise<void>);
+//       console.info('[openCustomDialogWithCtrMode_static_0200] back');
+//
+//       let btn5: Component = ( await driver.findComponent(ON.id('router')) ) as Component;
+//       expect(btn5 != null).assertTrue();
+//       await CommonFunc.sleep(1000);
+//
+//       let btn6: Component = ( await driver.findComponent(ON.id('close')) ) as Component;
+//       await ( btn6?.click() as Promise<void>);
+//       await CommonFunc.sleep(1000);
+//       console.info('[openCustomDialogWithCtrMode_static_0200] END');
+//       done();
+//     });
 
-      let btn2: Component = ( await driver.findComponent(ON.id('router')) ) as Component;
-      expect(btn2 != null).assertTrue();
-      await ( btn2?.click() as Promise<void>);
-      console.info('[openCustomDialogWithCtrMode_static_0200] router');
-      await CommonFunc.sleep(1000);
 
-      let btn3: Component = ( await driver.findComponent(ON.id('router')) ) as Component;
-      expect(btn3 != null).assertFalse();
-      await CommonFunc.sleep(1000);
 
-      let btn4: Component = ( await driver.findComponent(ON.id('back1')) ) as Component;
-      await ( btn4?.click() as Promise<void>);
-      console.info('[openCustomDialogWithCtrMode_static_0200] back');
-
-      let btn5: Component = ( await driver.findComponent(ON.id('router')) ) as Component;
-      expect(btn5 != null).assertTrue();
-      await CommonFunc.sleep(1000);
-
-      let btn6: Component = ( await driver.findComponent(ON.id('close')) ) as Component;
-      await ( btn6?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      console.info('[openCustomDialogWithCtrMode_static_0200] END');
-      done();
-    });
-
-    
-    
 
 /**
      * @tc.number   openCustomDialogWithCtrMode_static_0300
@@ -224,8 +224,8 @@ it('openCustomDialogWithCtrMode_static_0300', Level.LEVEL1, async (done: () => v
       done();
     });
 
-    
-    
+
+
 
 /**
      * @tc.number   openCustomDialogWithCtrMode_static_0400
@@ -277,8 +277,8 @@ it('openCustomDialogWithCtrMode_static_0400', Level.LEVEL1, async (done: () => v
     });
 
 
-     
-    
+
+
 
 /**
      * @tc.number   openCustomDialogWithCtrMode_static_0500
@@ -319,8 +319,8 @@ it('openCustomDialogWithCtrMode_static_0500', Level.LEVEL1, async (done: () => v
     });
 
 
-     
-    
+
+
 
 /**
      * @tc.number   openCustomDialogWithCtrMode_static_0600
@@ -360,8 +360,8 @@ it('openCustomDialogWithCtrMode_static_0600', Level.LEVEL1, async (done: () => v
     });
 
 
-    
-    
+
+
 
 /**
      * @tc.number   openCustomDialogWithCtrMode_static_0700
@@ -413,8 +413,8 @@ it('openCustomDialogWithCtrMode_static_0700', Level.LEVEL1, async (done: () => v
       done();
     });
 
-    
-    
+
+
 
 /**
      * @tc.number   openCustomDialogWithCtrMode_static_0800

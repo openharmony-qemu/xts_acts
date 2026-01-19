@@ -202,3 +202,12 @@ export const ImageSourceNativeGetImagePropertyLong:(a: number,b: number,c:string
 export const ImageSourceNativeGetImagePropertyShort:(a: number,b: number,c:string) => number;
 export const ImageSourceNativeGetImagePropertyDouble:(a: number,b: number,c:string) => number;
 export const ImageSourceGetImagePropertyArraySize:(a: number,b: number,c:string) => number;
+export const OHImageSourceNativeModifyImagePropertyDoubleSupp:(a: number,b:number,c:string) => number;
+export const ImageModifyImagePropertyIntArraySupp:(a: number,b:number,c:string,d:number[]) => number;
+export const ImageModifyImagePropertyDoubleArraySupp:(a: number,b:number,c:string,d:number[]) => number;
+export const OHImageSourceNativeModifyImagePropertyBlobSupp:(a: number,b:number,c:string,d:ArrayBufferLike) => number;
+export const PixelmapNativeCropTest:(a: number) => number;
+export const ConvertAlphaFormatTest:(a: number) => number;
+export const DecodingOptionsReleaseTest:(a: number) => number;
+export const CreatePixelmapFromSurfaceWithTransformationTest:(a: number,b: string) => number;
+

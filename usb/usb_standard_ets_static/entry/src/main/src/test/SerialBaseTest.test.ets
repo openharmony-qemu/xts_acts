@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 Huawei Device Co., Ltd.
+* Copyright (C) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -135,6 +135,32 @@ export default function SerialBaseTest() {
         expect(portList.length > 0).assertTrue();
         done();
       } catch (error) {
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   testGetPortList002
+     * @tc.number SUB_USB_HostMgr_Serial_ANI_getPortList_Func_0200
+     * @tc.desc   getPortList return value is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetPortList002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> =>  {
+      try {
+        console.info(TAG, 'testGetPortList002 start');
+        if (checkDevice() === false) {
+          let portList: serialManager.SerialPort[] = serialManager.getPortList();
+          console.info(TAG, 'testGetPortList002 portList: ', JSON.stringify(portList));
+          expect(portList.length).assertEqual(0);
+          done();
+          return Promise.resolve();
+        } else {
+          done();
+        }
+      } catch (error) {
+        console.info(TAG, 'testGetPortList002 portList: ', JSON.stringify(error));
         expect().assertFail();
       }
     })
