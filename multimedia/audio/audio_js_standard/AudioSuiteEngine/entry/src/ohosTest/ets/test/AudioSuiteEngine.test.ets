@@ -26,20 +26,6 @@ export default function AudioSuiteEngineTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name   AudioSuiteEngineTest_0001
-     * @tc.number AudioSuiteEngineTest_0001
-     * @tc.desc   AudioSuiteEngine create test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('AudioSuiteEngineTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    async (done: Function) => {
-      let flag : number = 1;
-      expect(flag).assertEqual(TEST_RESULT.TEST_PASS);
-      done();
-    })
-    /**
      * @tc.name   AudioSuiteEngineCreateTest_0003
      * @tc.number AudioSuiteEngineCreateTest_0003
      * @tc.desc   AudioSuiteEngineCreate AUDIOSUITE_SUCCESS test
