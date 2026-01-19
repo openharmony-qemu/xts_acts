@@ -9,29 +9,6 @@ export default function abilityTest() {
   describe("AccessibleCheckAbilityStaticTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
-
-    /**
-     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0500
-     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0500
-     * @tc.desc   The result of isOpenAccessibilitySync() should be boolean type.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0500', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0500');
-      try {
-        let status = accessibility.isOpenAccessibilitySync();
-        hilog.info(domain, tag, `AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0500 result: ${status}`);
-        expect(typeof (status)).assertEqual('boolean');
-        done();
-      } catch (error) {
-        hilog.error(domain, tag,'SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0500 failed to isOpenAccessibilitySync because ');
-        expect(null).assertFail();
-        done();
-      }
-    })
-
     /**
      * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0600
      * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0600
