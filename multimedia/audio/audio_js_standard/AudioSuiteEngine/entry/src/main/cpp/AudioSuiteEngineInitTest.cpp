@@ -6143,7 +6143,8 @@ static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_002(napi_env env, na
     for (const auto optionType : pureVoiceChangeTypeTest) {
         OH_AudioSuite_PureVoiceChangeOption option = {
             static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
-                PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST), optionType};
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+            optionType};
         OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
         if (isSupported && result != AUDIOSUITE_SUCCESS) {
             napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
@@ -6181,7 +6182,8 @@ static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_003(napi_env env, na
     for (const auto optionType : pureVoiceChangeTypeTest) {
         OH_AudioSuite_PureVoiceChangeOption option = {
             static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
-                PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_MALE_TEST), optionType};
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_MALE_TEST),
+            optionType};
         OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
         if (isSupported && result != AUDIOSUITE_SUCCESS) {
             napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
@@ -6217,9 +6219,10 @@ static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_004(napi_env env, na
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
     OH_AudioSuite_PureVoiceChangeOption option = {
         static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
-            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
-            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), g_changeOptionMin};
+        PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST),
+        g_changeOptionMin};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
  
     OH_AudioSuiteNodeBuilder_Destroy(builder);
@@ -6254,9 +6257,10 @@ static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_005(napi_env env, na
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
     OH_AudioSuite_PureVoiceChangeOption option = {
         static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
-            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
-            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), g_changeOptionMax};
+        PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST),
+        g_changeOptionMax};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
  
     OH_AudioSuiteNodeBuilder_Destroy(builder);
@@ -6292,9 +6296,10 @@ static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_006(napi_env env, na
     float pitch = g_changeOptionMin - 0.1f;
     OH_AudioSuite_PureVoiceChangeOption option = {
         static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
-            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
-            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), pitch};
+        PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST),
+        pitch};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
  
     OH_AudioSuiteNodeBuilder_Destroy(builder);
@@ -6330,9 +6335,10 @@ static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_007(napi_env env, na
     float pitch = g_changeOptionMax + 0.1f;
     OH_AudioSuite_PureVoiceChangeOption option = {
         static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
-            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
-            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), pitch};
+        PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST),
+        pitch};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
  
     OH_AudioSuiteNodeBuilder_Destroy(builder);
@@ -6543,7 +6549,8 @@ static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_002(napi_env env, na
     for (const auto optionType : pureVoiceChangeTypeTest) {
         OH_AudioSuite_PureVoiceChangeOption option = {
             static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
-                PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST), optionType};
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+            optionType};
         OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
         OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, &option);
         if (isSupported && result != AUDIOSUITE_SUCCESS) {
@@ -6582,7 +6589,8 @@ static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_003(napi_env env, na
     for (const auto optionType : pureVoiceChangeTypeTest) {
         OH_AudioSuite_PureVoiceChangeOption option = {
             static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
-                PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_MALE_TEST), optionType};
+            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_MALE_TEST),
+            optionType};
         OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
         OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, &option);
         if (isSupported && result != AUDIOSUITE_SUCCESS) {
@@ -6619,9 +6627,10 @@ static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_004(napi_env env, na
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
     OH_AudioSuite_PureVoiceChangeOption option = {
         static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
-            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
-            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), g_changeOptionMin};
+        PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST),
+        g_changeOptionMin};
     OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, &option);
  
@@ -6657,9 +6666,10 @@ static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_005(napi_env env, na
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
     OH_AudioSuite_PureVoiceChangeOption option = {
         static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
-            PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
+        PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
-            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), g_changeOptionMax};
+        PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST),
+        g_changeOptionMax};
     OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, &option);
  
@@ -6899,7 +6909,7 @@ static napi_value AudioSuiteEngine_SetGeneralVoiceChangeType_002(napi_env env, n
         if (setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST) ||
             setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST) ||
             setNodeType ==
-                static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE_TEST)) {
+            static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE_TEST)) {
             continue;
         }
         OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
@@ -6965,8 +6975,8 @@ static napi_value AudioSuiteEngine_SetGeneralVoiceChangeType_004(napi_env env, n
     OH_AudioSuiteNodeBuilder_Destroy(builder);
     OH_AudioSuiteEngine_DestroyNode(audioNode);
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetGeneralVoiceChangeType(audioNode,
-            static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
-                GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_CUTE_TEST));
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+        GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_CUTE_TEST));
     OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
     OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
     if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
@@ -6997,8 +7007,8 @@ static napi_value AudioSuiteEngine_SetGeneralVoiceChangeType_005(napi_env env, n
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
 
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetGeneralVoiceChangeType(audioNode,
-            static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
-                GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_CUTE_TEST));
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+        GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_CUTE_TEST));
     OH_AudioSuiteNodeBuilder_Destroy(builder);
     OH_AudioSuiteEngine_DestroyNode(audioNode);
     OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
@@ -7032,8 +7042,8 @@ static napi_value AudioSuiteEngine_SetGeneralVoiceChangeType_006(napi_env env, n
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
 
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetGeneralVoiceChangeType(audioNode,
-            static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
-                GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_CUTE_TEST));
+        static_cast<OH_AudioSuite_GeneralVoiceChangeType>(
+        GeneralVoiceChangeTypeTest::GENERAL_VOICE_CHANGE_TYPE_CUTE_TEST));
     OH_AudioSuiteNodeBuilder_Destroy(builder);
     OH_AudioSuiteEngine_DestroyNode(audioNode);
     OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
@@ -7093,7 +7103,7 @@ static napi_value AudioSuiteEngine_GetGeneralVoiceChangeType_002(napi_env env, n
         if (setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST) ||
             setNodeType == static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::OUTPUT_NODE_TYPE_DEFAULT_TEST) ||
             setNodeType ==
-                static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE_TEST)) {
+            static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_GENERAL_VOICE_CHANGE_TEST)) {
             continue;
         }
         OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
