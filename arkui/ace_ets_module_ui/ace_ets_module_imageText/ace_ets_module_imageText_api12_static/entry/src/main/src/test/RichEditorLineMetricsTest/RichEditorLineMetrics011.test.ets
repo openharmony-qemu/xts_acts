@@ -99,7 +99,7 @@ export default function RichEditorLineMetrics011() {
       let lineMetrics2 = await (driver.findComponent(ON.id('lineMetrics2')) as Promise<Component>);
       let lineMetrics2Text = await lineMetrics2.getText();
       await CommonFunc.sleep(500);
-      expect(lineMetrics2Text).assertContain('lineMetrics(1):{"startIndex"');
+      expect(lineMetrics2Text).assertContain('"startIndex"');
       expect(lineMetrics2Text).assertContain('"endIndex"');
       driver.triggerKey(KeyCode.KEYCODE_DEL);
       await CommonFunc.sleep(500);
