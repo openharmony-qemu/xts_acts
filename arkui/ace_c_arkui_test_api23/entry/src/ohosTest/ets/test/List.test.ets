@@ -33,6 +33,8 @@ import TextCompressLeadingPunctuationTest from "./text/TextCompressLeadingPunctu
 import TextAreaCompressLeadingPunctuationTest from "./textArea/TextAreaCompressLeadingPunctuationTest.test";
 import TextInputCompressLeadingPunctuationTest from "./textInput/TextInputCompressLeadingPunctuationTest.test";
 import TextEnumTest from "./text/TextEnum.test";
+import TextMarqueeOptionsTest from './TextMarqueeOptions/TextMarqueeOptions.test';
+import ScrollToVisibleTest from './ScrollToVisible/ScrollToVisible.test';
 import distanceTest from './distance/DistanceTest.test'
 import hoverEffectTest from './hoverEffect/HoverEffectTest.test'
 import monopolizeTest from './monopolize/MonopolizeTest.test'
@@ -98,4 +100,6 @@ export default function testsuite() {
   SelectedDragPreviewStyleTextTest()
   SelectedDragPreviewStyleTextAreaTest()
   SelectedDragPreviewStyleTextInputTest()
+  TextMarqueeOptionsTest();
+  ScrollToVisibleTest();
 }

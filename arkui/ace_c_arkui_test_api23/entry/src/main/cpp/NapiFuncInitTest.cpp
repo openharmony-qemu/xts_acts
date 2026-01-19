@@ -25,6 +25,7 @@
 #include "node/IsInRenderStateReturnValueTest.cpp"
 #include "refresh/RefreshAttrsTest.cpp"
 #include "image/ImageAntialiasedTest.cpp"
+#include "TextMarqueeOptions/TextMarqueeOptionsTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -175,6 +176,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TextEnumTest_020", nullptr, TextEnumTest_020, nullptr, nullptr, nullptr,
         napi_default, nullptr},
         {"TextEnumTest_021", nullptr, TextEnumTest_021, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextEnumTest_022", nullptr, TextEnumTest_022, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextEnumTest_023", nullptr, TextEnumTest_023, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextMarqueeOptionsTest", nullptr, TextMarqueeOptionsTest, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"TestAtomicServiceMenuBarSetVisible01", nullptr,
          TestAtomicServiceMenuBarSetVisible01, nullptr, nullptr, nullptr, napi_default, nullptr},

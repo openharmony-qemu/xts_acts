@@ -3,6 +3,7 @@
         "MainAbility/pages/index/index",
         "MainAbility/pages/bindmenu/bindmenu",
         "MainAbility/pages/select/selectModifier",
-        "MainAbility/pages/select/select"
+        "MainAbility/pages/select/select",
+        "MainAbility/pages/select/selectKeyboardAvoidMode"
     ]
 }

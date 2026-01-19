@@ -64,7 +64,11 @@ struct editModeOptionsGridExample {
         }, (day: string) => day)
       }
       .id('grid_editMode')
-      .editModeOptions({ enableGatherSelectedItemsAnimation: this.enable })
+      .editModeOptions({ enableGatherSelectedItemsAnimation: this.enable,
+        onGetPreviewBadge: () => {
+          return true
+        }
+      })
       .columnsTemplate('1fr 1fr 1fr')
       .rowsTemplate('1fr 1fr 1fr')
       .columnsGap(10)
