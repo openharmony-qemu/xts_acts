@@ -3184,35 +3184,39 @@ export default function TextPicker() {
     });
 
     /**
-     * @tc.name   testPicker62
-     * @tc.number testPicker62
-     * @tc.desc   Testing recommendationTypeList
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     testPicker62
+     * @tc.name       testPicker62
+     * @tc.desc       Testing select errCode
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
-    it('testPicker62',Level.LEVEL0, async (done: Function) => {
+    it('testPicker62', Level.LEVEL0, async (done: Function) => {
       if (!isExecutePicker) {
         done();
         return;
       }
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      pickerOptions.recommendationOptions = {
-        recommendationTypeList: [photoAccessHelper.RecommendationType.CAT, photoAccessHelper.RecommendationType.DOG, 
-        photoAccessHelper.RecommendationType.ARCHITECTURE, photoAccessHelper.RecommendationType.LANDSCAPE],
-      }
-
-      try{
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-          console.info('testPicker62, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
-          JSON.stringify(PhotoSelectResult));
+      pickerOptions.maxSelectNumber = 1;
+      pickerOptions.singleSelectionMode = photoAccessHelper.SingleSelectionMode.BROWSER_AND_SELECT_MODE;
+      let state: photoAccessHelper.MovingPhotoBadgeStateType = photoAccessHelper.MovingPhotoBadgeStateType.NOT_MOVING_PHOTO;
+      pickerOptions.globalMovingPhotoState = state;
+      let photoPicker = new photoAccessHelper.PhotoViewPicker();
+      try {
+        photoPicker.select(pickerOptions).then((photoSelectResult: photoAccessHelper.PhotoPickerResult) => {
+          console.log('select错误码覆盖 PhotoViewPicker.select success, PhotoPickerResult uri: ' +
+          JSON.stringify(photoSelectResult))'
+          // except(true).assertTrue();
         })
-      } catch(err) {
-        expect(false).assertTrue();
-        console.error(`testPicker62, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+      } catch (error) {
+        console.error("select错误码覆盖 error:" + JSON.stringify(error) + error.code);
+        except(error.code).assertEqual(23800151);
       }
-      console.info("testPicker62 finish");
+      console.info('select错误码覆盖 finish');
+      await CommonFunc.sleep(2000);
+      router.back();
+      console.info('testPicker62 finished');
+      expect(passed).assertTrue();
       done();
     });
 
@@ -3285,6 +3289,9 @@ export default function TextPicker() {
         console.info('testPicker64 result event.data.msg =' + result?.gridPinchMode?.defaultGridLevel);
         console.info('testPicker64 result expect = ' + expectResult);
         expect(result?.gridPinchMode?.defaultGridLevel).assertEqual(expectResult);
+        expect(photoAccessHelper.GridLevel.COMPACT).assertEqual(2);
+        expect(photoAccessHelper.GridLevel.STANDARD).assertEqual(1);
+        expect(photoAccessHelper.GridLevel.SPACIOUS).assertEqual(0);
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -3370,6 +3377,28 @@ export default function TextPicker() {
       let strJson: string = getInspectorByKey('PhotoPickerComponent');
       
       expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      try {
+        pickerController.setMovingPhotoState(state);
+      } catch (e) {
+         console.log(`testPicker66, r1=${JSON.stringify(e)}, code  ${e.code} msg=${e.message}`);
+      }
+
+      try {
+        // 非法场景错误码覆盖
+        pickerController.setMovingPhotoState(-1);
+      } catch (e) {
+         console.log(`testPicker66, r2=${JSON.stringify(e)}`);
+         expect( e.code).assertEqual(23800151);
+      }
+
+      try {
+        // 非法场景错误码覆盖
+        pickerController.setMovingPhotoState(photoAccessHelper.MovingPhotoBadgeStateType.MOVING_PHOTO_ENABLED);
+      } catch (e) {
+         console.log(`testPicker66, r3=${JSON.stringify(e)}`);
+         expect( e.code).assertEqual(23800202);
+      }
+
       await CommonFunc.sleep(2000);
       router.back();
       console.info("testPicker66 finish");
@@ -3391,11 +3420,19 @@ export default function TextPicker() {
       }
       let uris = ['file://media/photo/test.jpg'];
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
+      console.log("testPicker67 start");
+      let requestPhotoUrisReadPermission = {
+        authorizedUris: ['file://media/photo/test.jpg'],
+        invalidUris: []
+      } as photoAccessHelper.RequestReadPermissionResult;
+      console.log("testPicker67 RequestReadPermissionResult");
       try {
         phAccessHelper.requestPhotoUrisReadPermissionEx(uris).then((result) => {
           console.info("requestPhotoUrisReadPermissionEx, result = " + JSON.stringify(result));
           if (result) {
             expect(true).assertTrue();
+            expect(requestPhotoUrisReadPermission.authorizedUris).assertEqual(uris);
+            expect(requestPhotoUrisReadPermission.invalidUris).assertEqual([]);
             console.info('success');
           } else {
             console.error("testPicker67 empty result");
@@ -3407,6 +3444,39 @@ export default function TextPicker() {
         expect(false).assertTrue();
       }
       console.info("testPicker67 finish");
+      done();
+    });
+
+    /**
+     * @tc.name   testPicker74
+     * @tc.number testPicker74
+     * @tc.desc   Testing recommendationTypeList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPicker74',Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.recommendationOptions = {
+        recommendationTypeList: [photoAccessHelper.RecommendationType.CAT, photoAccessHelper.RecommendationType.DOG, 
+        photoAccessHelper.RecommendationType.ARCHITECTURE, photoAccessHelper.RecommendationType.LANDSCAPE],
+      }
+
+      try{
+        let photoPicker = new photoAccessHelper.PhotoViewPicker();
+        photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+          console.info('testPicker74, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
+          JSON.stringify(PhotoSelectResult));
+        })
+      } catch(err) {
+        expect(false).assertTrue();
+        console.error(`testPicker74, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+      }
+      console.info("testPicker74 finish");
       done();
     });
   })
