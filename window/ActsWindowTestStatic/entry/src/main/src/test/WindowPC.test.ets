@@ -2283,7 +2283,7 @@ export default function WindowPCTest() {
                     if (err.code == 801) {
                         done();
                     } else {
-                        expect(err.code).assertEqual(401);
+                        expect(err.code).assertEqual(1300002);
                         done();
                     }
                 })
