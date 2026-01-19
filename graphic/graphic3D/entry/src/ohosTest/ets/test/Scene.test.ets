@@ -1070,6 +1070,14 @@ export default function sceneTest() {
           }
         }
 
+        // Test null return scenarios
+        if (scene && scene.root && cubeNode) {
+          // Test cloneNode with null node should return null
+          let resultNullNode = scene.cloneNode(null, scene.root, "testNode");
+          expect(resultNullNode).assertNull();
+          console.info(msg + " cloneNode with null node returns null");
+        }
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
