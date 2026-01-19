@@ -41,7 +41,7 @@ static Camera_Profile *photoProfile = nullptr;
 static Camera_PreviewOutput *previewOutput = nullptr;
 static Camera_PhotoOutput *photoOutput = nullptr;
 static Camera_CaptureSession *captureSession = nullptr;
-static char faceID[256];
+static char face_Id[256];
 
 static void CameraManagerStatusCallback(Camera_Manager *cameraManager, Camera_StatusInfo *status)
 {
@@ -97,7 +97,7 @@ static void CreateAndOpenCamera()
         OH_LOG_ERROR(LOG_APP, "OH_CameraManager_RegisterCallback failed.");
     }
     ret = OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &size);
-    LOGI("OH_CameraManager_GetSupportedCameras %{public}s %{public}d",cameras[0].cameraId, size);
+    LOGI("OH_CameraManager_GetSupportedCameras %{public}s %{public}d", cameras[0].cameraId, size);
     if (cameras == nullptr || size == 0 || ret != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedCameras failed.");
         return;
@@ -119,7 +119,7 @@ static void CreateAndOpenCamera()
     LOGI("camer input 创建成功");
 }
 
-static void createPhotoOutput(char *surfaceID)
+static void createPhotoOutput(char *surface_Id)
 {
     const Camera_Device camera = cameras[0];
     Camera_OutputCapability *cameraOutputCapability = nullptr;
@@ -143,10 +143,10 @@ static void createPhotoOutput(char *surfaceID)
         photoProfile = cameraOutputCapability->photoProfiles[0];
     }
     Camera_ErrorCode preCode =
-        OH_CameraManager_CreatePreviewOutput(cameraManager, previewProfile, surfaceID, &previewOutput);
+        OH_CameraManager_CreatePreviewOutput(cameraManager, previewProfile, surface_Id, &previewOutput);
     if (cameraOutputCapability == nullptr || preCode != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreatePreviewOutput failed. %{public}d  %{public}s", preCode,
-                     surfaceID);
+                     surface_Id);
     }
     Camera_ErrorCode photoSurface =
         OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager, photoProfile, &photoOutput);
@@ -202,7 +202,7 @@ napi_value initWithSurfaces(napi_env env, napi_callback_info info)
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    napi_get_value_string_utf8(env, args[0], face_Id, sizeof(face_Id), &uuidLen);
     napi_value ret;
     napi_create_int32(env, 0, &ret);
     return ret;
@@ -211,11 +211,11 @@ napi_value initWithSurfaces(napi_env env, napi_callback_info info)
 void createPhotoSession()
 {
     CreateAndOpenCamera();
-    createPhotoOutput(faceID);
+    createPhotoOutput(face_Id);
     CreateCaptureSession();
 }
 
-void releasePhotoSession()
+void ReleasePhotoSession()
 {
     if (cameraInput != nullptr) {
         OH_CameraInput_Release(cameraInput);
@@ -274,7 +274,7 @@ napi_value captureDeleteCameraDevices(napi_env env, napi_callback_info info)
     default:
         break;
     }
-    releasePhotoSession();
+    ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
     return ret;
@@ -309,7 +309,7 @@ napi_value captureIsBandwidthCompressionSupported(napi_env env, napi_callback_in
     default:
         break;
     }
-    releasePhotoSession();
+    ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
     return ret;
@@ -352,7 +352,7 @@ napi_value captureEnableBandwidthCompression(napi_env env, napi_callback_info in
     default:
         break;
     }
-    releasePhotoSession();
+    ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
     return ret;
@@ -421,13 +421,13 @@ napi_value captureGetSupportedFullCameraOutputCapabilityWithSceneMode(napi_env e
     default:
         break;
     }
-    releasePhotoSession();
+    ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
     return ret;
 }
 
-void OnOcclusionDetectionCallback(const Camera_Input* cameraInput,Camera_OcclusionDetectionResult occlusionDetectionResult)
+void OnOcclusionDetectionCallback(const Camera_Input* cameraInput, Camera_OcclusionDetectionResult occlusionDetectionResult)
 {
     
 };
@@ -460,7 +460,7 @@ napi_value captureRegisterOcclusionDetectionCallback(napi_env env, napi_callback
     default:
         break;
     }
-    releasePhotoSession();
+    ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
     return ret;
@@ -494,7 +494,7 @@ napi_value captureUnregisterOcclusionDetectionCallback(napi_env env, napi_callba
     default:
         break;
     }
-    releasePhotoSession();
+    ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
     return ret;
@@ -562,7 +562,7 @@ napi_value captureGetCameraDevices(napi_env env, napi_callback_info info)
     default:
         break;
     }
-    releasePhotoSession();
+    ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
     return ret;
@@ -597,8 +597,10 @@ napi_value captureGetCameraDevicesError(napi_env env, napi_callback_info info)
     case CASE_INDEX_4:
         result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo, &cameraSize, nullptr);
         break;
+    default:
+        break;    
     }
-    releasePhotoSession();
+    ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
     return ret;
@@ -658,7 +660,7 @@ napi_value captureCameraDeviceQueryInfoCameraType(napi_env env, napi_callback_in
     default:
         break;
     }
-    releasePhotoSession();
+    ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
     return ret;
@@ -672,7 +674,7 @@ napi_value captureSessionIsBandwidthCompressionSupportedTest(napi_env env, napi_
     createPhotoSession();
     bool enable;
     Camera_ErrorCode error = OH_PreviewOutput_IsBandwidthCompressionSupported(previewOutput, &enable);
-    releasePhotoSession();
+    ReleasePhotoSession();
     napi_value result;
     napi_get_boolean(env, enable, &result);
     return result;
@@ -732,7 +734,7 @@ napi_value captureCameraDeviceQueryInfoConnectionTypes(napi_env env, napi_callba
     default:
         break;
     }
-    releasePhotoSession();
+    ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
     return ret;
@@ -792,7 +794,7 @@ napi_value captureCameraDeviceQueryInfoConnectionType(napi_env env, napi_callbac
     default:
         break;
     }
-    releasePhotoSession();
+    ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
     return ret;
@@ -852,7 +854,7 @@ napi_value captureCameraDeviceQueryInfoCameraPositions(napi_env env, napi_callba
     default:
         break;
     }
-    releasePhotoSession();
+    ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
     return ret;
@@ -912,7 +914,7 @@ napi_value captureCameraDeviceQueryInfoCameraTypeSize(napi_env env, napi_callbac
     default:
         break;
     }
-    releasePhotoSession();
+    ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
     return ret;
@@ -972,7 +974,7 @@ napi_value captureCameraDeviceQueryInfoCameraTypeSizes(napi_env env, napi_callba
     default:
         break;
     }
-    releasePhotoSession();
+    ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
     return ret;
@@ -1032,7 +1034,7 @@ napi_value captureCameraDeviceQueryInfo(napi_env env, napi_callback_info info)
     default:
         break;
     }
-    releasePhotoSession();
+    ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
     return ret;
