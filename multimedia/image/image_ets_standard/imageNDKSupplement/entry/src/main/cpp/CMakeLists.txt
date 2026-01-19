@@ -57,7 +57,9 @@ add_library(imageEffect SHARED
     ImageResultIRNdkErrCodeTest.cpp
     ImageNdkErrCodeTest.cpp
     ImageReceiverNativeReadTest.cpp
-    OHImageNdkFrameworkTest.cpp)
+    OHImageNdkFrameworkTest.cpp
+    ImageSourceNativeGetImagePropertyTest.cpp
+    )
 
 
 find_library(
