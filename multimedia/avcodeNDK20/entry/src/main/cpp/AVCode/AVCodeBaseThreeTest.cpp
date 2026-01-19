@@ -738,7 +738,7 @@ napi_value VideoEncoder_QueryInputBuffer(napi_env env, napi_callback_info info)
 
 napi_value VideoDecoder_AVDecodeSync(napi_env env, napi_callback_info info)
 {
-    int32_t ret = -1;
+    int ret = 0;
     OH_AVCapability* cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_H263, false, SOFTWARE);
     const char* capName = OH_AVCapability_GetName(cap);
     if (cap == nullptr) {
@@ -756,7 +756,7 @@ napi_value VideoDecoder_AVDecodeSync(napi_env env, napi_callback_info info)
     vDecSample->ConfigureVideoDecoder();
     vDecSample->StartSyncVideoDecoder();
     vDecSample->WaitForEOS();
-    ret = vDecSample->errCount;
+    int32_t ret = vDecSample->errCount;
     napi_value retValue;
     napi_create_int32(env, ret, &retValue);
     return retValue;
