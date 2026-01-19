@@ -79,6 +79,9 @@ export default function BindMenuWithResponse() {
       await CommonFunc.sleep(1000);
       let menu: Component = await driver.findComponent(ON.type('Menu'));
       expect(menu !== null).assertTrue();
+      let hideBtn = await driver.findComponent(ON.id('hideId'));
+      await hideBtn?.click();
+      await CommonFunc.sleep(1000);
       console.info('BindMenuWithResponse_0100 END');
       done();
     });
@@ -103,6 +106,9 @@ export default function BindMenuWithResponse() {
       await CommonFunc.sleep(1000);
       let menu: Component = await driver.findComponent(ON.type('Menu'));
       expect(menu !== null).assertTrue();
+      let hideBtn = await driver.findComponent(ON.id('hideId'));
+      await hideBtn?.click();
+      await CommonFunc.sleep(1000);
       console.info('BindMenuWithResponse_0200 END');
       done();
     });
