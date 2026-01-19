@@ -3039,6 +3039,8 @@ export default function RelationStoreRdbStoreTest() {
         console.error(tag + `trans batchInsertWithReturning failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
+      await trans?.commit();
+      let trans1 = await rdbStore.createTransaction(options);
       const valueBucket: data_relationalStore.ValuesBucket = {
         'data1': 'lisi',
         "data2": 10 as long,
@@ -3050,26 +3052,29 @@ export default function RelationStoreRdbStoreTest() {
         columns: ['data1', 'data2'],
       }
       try {
-        let results1 = await trans.updateWithReturning(valueBucket, predicates, config1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        let results1 = await trans1.updateWithReturning(valueBucket, predicates, config1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         console.log(tag + " trans updateWithReturning" + results1.changed);
         expect(results1.changed).assertEqual(1);
       } catch (e) {
         console.error(tag + `trans updateWithReturning failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
+      await trans1?.commit();
+      let trans2 = await rdbStore.createTransaction(options);
       let predicates1 = new data_relationalStore.RdbPredicates("test");
       predicates1.equalTo('data2', 10 as long);
       const config2: data_relationalStore.ReturningConfig = {
         columns: ['data1', 'data2'],
       }
       try {
-        let results2 = await trans.deleteWithReturning(predicates1, config2);
+        let results2 = await trans2.deleteWithReturning(predicates1, config2);
         console.log(tag + "trans deleteWithReturning" + results2.changed);
         expect(results2.changed).assertEqual(1);
       } catch (e) {
         console.error(tag + `trans deleteWithReturning failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
+      await trans2?.commit();
       done();
       hilog.info(domain, tag, '%{public}s', '************* testTransWithReturning001 end *************');
     })
@@ -3095,6 +3100,8 @@ export default function RelationStoreRdbStoreTest() {
         console.error(tag + `trans batchInsertWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
+      await trans?.commit();
+      let trans1 = await rdbStore.createTransaction(options);
       const valueBucket: data_relationalStore.ValuesBucket = {
         'data1': 'lisi',
         "data2": 10 as long,
@@ -3106,26 +3113,29 @@ export default function RelationStoreRdbStoreTest() {
         columns: ['data1', 'data2'],
       }
       try {
-        let results1 = trans.updateWithReturningSync(valueBucket, predicates, config1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        let results1 = trans1.updateWithReturningSync(valueBucket, predicates, config1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         console.log(tag + " trans updateWithReturningSync" + results1.changed);
         expect(results1.changed).assertEqual(1);
       } catch (e) {
         console.error(tag + `trans updateWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
+      await trans1?.commit();
+      let trans2 = await rdbStore.createTransaction(options);
       let predicates1 = new data_relationalStore.RdbPredicates("test");
       predicates1.equalTo('data2', 10 as long);
       const config2: data_relationalStore.ReturningConfig = {
         columns: ['data1', 'data2'],
       }
       try {
-        let results2 = trans.deleteWithReturningSync(predicates1, config2);
+        let results2 = trans2.deleteWithReturningSync(predicates1, config2);
         console.log(tag + "trans deleteWithReturningSync" + results2.changed);
         expect(results2.changed).assertEqual(1);
       } catch (e) {
         console.error(tag + `trans deleteWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
+      await trans2?.commit();
       done();
       hilog.info(domain, tag, '%{public}s', '************* testTransWithReturningSync001 end *************');
     })
