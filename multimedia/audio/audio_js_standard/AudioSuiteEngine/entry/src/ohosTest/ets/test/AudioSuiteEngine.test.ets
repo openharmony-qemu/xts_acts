@@ -3401,38 +3401,6 @@ export default function AudioSuiteEngineTest() {
     })
 
     /**
-     * @tc.number     AudioSuiteEngine_SetGeneralVoiceChangeType_007
-     * @tc.name       AudioSuiteEngine_SetGeneralVoiceChangeType_007
-     * @tc.desc       AudioSuite SetGeneralVoiceChangeType test
-     * @tc.size       MEDIUM
-     * @tc.type       FUNCTION
-     * @tc.level      LEVEL 2
-     */
-    it('AudioSuiteEngine_SetGeneralVoiceChangeType_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetGeneralVoiceChangeType_007();
-      console.info(`Tag: AudioSuiteEngine_SetGeneralVoiceChangeType_007 : ${result}`);
-      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
-      done();
-    })
-
-    /**
-     * @tc.number     AudioSuiteEngine_SetGeneralVoiceChangeType_008
-     * @tc.name       AudioSuiteEngine_SetGeneralVoiceChangeType_008
-     * @tc.desc       AudioSuite SetGeneralVoiceChangeType test
-     * @tc.size       MEDIUM
-     * @tc.type       FUNCTION
-     * @tc.level      LEVEL 2
-     */
-    it('AudioSuiteEngine_SetGeneralVoiceChangeType_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-      let result : number = audiosuiteenginetest.AudioSuiteEngine_SetGeneralVoiceChangeType_008();
-      console.info(`Tag: AudioSuiteEngine_SetGeneralVoiceChangeType_008 : ${result}`);
-      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
-      done();
-    })
-
-    /**
      * @tc.number     AudioSuiteEngine_GetGeneralVoiceChangeType_001
      * @tc.name       AudioSuiteEngine_GetGeneralVoiceChangeType_001
      * @tc.desc       AudioSuite GetGeneralVoiceChangeType test
