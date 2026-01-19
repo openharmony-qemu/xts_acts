@@ -102,25 +102,25 @@ export default function SegmentBtnMaterialTest0070() {
         .$children[1]
         .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj6 is: " + JSON.stringify(obj6));
-      expect(JSON.stringify(JSON.parse(JSON.stringify(obj6.$attrs.systemMaterial))))
+      expect(JSON.stringify(obj6.$attrs.systemMaterial))
         .assertEqual('{"material":{"type":"MaterialType.SEMI_TRANSPARENT"}}');
       let obj7: ESObject = JSON.parse(JSON.stringify(obj5))
         .$children[2]
         .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj7 is: " + JSON.stringify(obj7));
-      expect(JSON.stringify(JSON.parse(JSON.stringify(obj7.$attrs.systemMaterial))))
+      expect(JSON.stringify(obj7.$attrs.systemMaterial))
         .assertEqual('{"material":{"type":"MaterialType.SEMI_TRANSPARENT"}}');
       let obj8: ESObject = JSON.parse(JSON.stringify(obj5))
         .$children[3]
         .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj8 is: " + JSON.stringify(obj8));
-      expect(JSON.stringify(JSON.parse(JSON.stringify(obj8.$attrs.systemMaterial))))
+      expect(JSON.stringify(obj8.$attrs.systemMaterial))
         .assertEqual('{"material":{"type":"MaterialType.SEMI_TRANSPARENT"}}');
       let obj9: ESObject = JSON.parse(JSON.stringify(obj5))
         .$children[3]
         .$children[1]
       console.info("[SegmentBtnMaterialTest0070_001] component obj9 is: " + JSON.stringify(obj9));
-      expect(JSON.stringify(JSON.parse(JSON.stringify(obj9.$attrs.systemMaterial))))
+      expect(JSON.stringify(obj9.$attrs.systemMaterial))
         .assertEqual('{"material":{"type":"MaterialType.SEMI_TRANSPARENT"}}');
       await CommonFunc.sleep(1000);
       await btn.click();
