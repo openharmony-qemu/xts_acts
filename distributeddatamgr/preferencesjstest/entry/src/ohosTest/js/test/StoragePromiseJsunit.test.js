@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2021-2022 Huawei Device Co., Ltd.
+* Copyright (c) 2021-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -13,8 +13,10 @@
 * limitations under the License.
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium";
-import storage from '@ohos.data.storage'
+import storage from '@ohos.data.storage';
+import deviceInfo from '@ohos.deviceInfo';
 
+const TAG = ['STORAGE_PROMISE_TEST'];
 const PATH = '/data/storage/el2/database/test_storage';
 const KEY_TEST_INT_ELEMENT = 'key_test_int';
 const KEY_TEST_LONG_ELEMENT = 'key_test_long';
@@ -24,11 +26,15 @@ const KEY_TEST_STRING_ELEMENT = 'key_test_string';
 const MAX_KEY_LENGTH = 'X'.repeat(1024)
 const MAX_VALUE_LENGTH = 'y'.repeat(16*1024*1024)
 let mPref;
+let currentDeviceIsWatch = false;
 
 export default function storagePromiseTest() {
     describe('storagePromiseTest', function () {
         beforeAll(async function () {
-            console.info('beforeAll')
+            console.info('beforeAll');
+            let deviceTypeInfo = deviceInfo.deviceType;
+            currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;
+            console.info(TAG + "the value of the deviceType is : " + deviceInfo.deviceType);
         })
 
         afterAll(async function () {
@@ -460,15 +466,20 @@ export default function storagePromiseTest() {
          * @tc.level  LEVEL2
          */
         it('testMaxLengthofValue0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+          if (currentDeviceIsWatch) {
+            done();
+            return;
+          } else {
             await mPref.clearSync();
             await mPref.putSync("test", "abc");
             await mPref.put("test", MAX_VALUE_LENGTH).then((ret) => {
-                expect(MAX_VALUE_LENGTH).assertEqual(mPref.getSync("test", "defaultvalue"));
-                done();
+              expect(MAX_VALUE_LENGTH).assertEqual(mPref.getSync("test", "defaultvalue"));
+              done();
             }).catch((err) => {
-                expect(null).assertFail();
-                done();
-            });
+              expect(null).assertFail();
+              done();
+            })
+          }
         })
 
 
@@ -482,15 +493,20 @@ export default function storagePromiseTest() {
          * @tc.level  LEVEL2
          */
         it('testMaxLengthofValue0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+          if (currentDeviceIsWatch){
+            done();
+            return;
+          } else {
             await mPref.clearSync();
             await mPref.putSync("test", MAX_VALUE_LENGTH);
             await mPref.put("test", "y".repeat(16*1024*1024)).then((ret) => {
-                expect(MAX_VALUE_LENGTH).assertEqual(mPref.getSync("test", "defaultvalue"));
-                done();
+              expect(MAX_VALUE_LENGTH).assertEqual(mPref.getSync("test", "defaultvalue"));
+              done();
             }).catch((err) => {
-                expect(null).assertFail();
-                done();
-            });
+              expect(null).assertFail();
+              done();
+            })
+          }
         })
 
 
@@ -544,17 +560,22 @@ export default function storagePromiseTest() {
          * @tc.level  LEVEL2
          */
         it('testMaxLengthofValue0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+          if (currentDeviceIsWatch){
+            done();
+            return;
+          } else {
             await mPref.clearSync();
             await mPref.putSync("test", MAX_VALUE_LENGTH)
             await mPref.put("test", "y".repeat(16*1024*1024)).then((ret) => {
-                expect(MAX_VALUE_LENGTH).assertEqual(mPref.getSync("test", "defaultvalue"));
+              expect(MAX_VALUE_LENGTH).assertEqual(mPref.getSync("test", "defaultvalue"));
             }).catch((err) => {
-                expect(null).assertFail();
-                done();
-            });
+              expect(null).assertFail();
+              done();
+            })
             await mPref.putSync("test", MAX_VALUE_LENGTH)
             expect(MAX_VALUE_LENGTH).assertEqual(mPref.getSync("test", "defaultvalue"));
             done();
+          }
         })
 
         /**

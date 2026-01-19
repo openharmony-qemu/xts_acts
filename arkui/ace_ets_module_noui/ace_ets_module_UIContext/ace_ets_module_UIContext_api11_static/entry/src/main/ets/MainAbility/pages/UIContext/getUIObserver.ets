@@ -77,7 +77,7 @@ struct NavRouterExample {
           this.isActiveWLAN = false
         })
         .onClick((e:ClickEvent) => {
-          this.stack.pushPath(new NavPathInfo('pageOne',undefined),true )
+          this.stack.pushPath(new NavPathInfo('pageOne',undefined),true ) //点击后页面没跳转
         })
         .id("Wlan_Id")
       }

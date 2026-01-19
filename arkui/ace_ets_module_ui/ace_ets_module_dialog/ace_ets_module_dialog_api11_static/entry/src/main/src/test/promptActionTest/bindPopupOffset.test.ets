@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -54,6 +54,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -121,7 +122,7 @@ it('bindPopupOffsetTest_static_0100', Level.LEVEL2, async (done: () => void): Pr
         }
         let callback = (indexEvent: emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['offset']).assertEqual({
+          expect(((indexEvent.data) as Record<String,RecordData>)?.['offset']).assertEqual({
             x: 10, y: 10
           } as Position);
           done();
@@ -160,7 +161,7 @@ it('bindPopupOffsetTest_static_0200', Level.LEVEL2, async (done: () => void): Pr
         }
         let callback = (indexEvent: emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0200 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['offset']).assertEqual({
+          expect(((indexEvent.data) as Record<String,RecordData>)?.['offset']).assertEqual({
             x: 10, y: 10
           } as Position);
           done();
@@ -199,7 +200,7 @@ it('bindPopupOffsetTest_static_0300', Level.LEVEL2, async (done: () => void): Pr
         }
         let callback = (indexEvent: emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0300 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['offset']).assertEqual({
+          expect(((indexEvent.data) as Record<String,RecordData>)?.['offset']).assertEqual({
             x: 0, y: 0
           } as Position);
           done();
@@ -238,7 +239,7 @@ it('bindPopupOffsetTest_static_0400', Level.LEVEL2, async (done: () => void): Pr
         }
         let callback = (indexEvent: emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0400 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['offset']).assertEqual({
+          expect(((indexEvent.data) as Record<String,RecordData>)?.['offset']).assertEqual({
             x: 0, y: 50
           } as Position);
           done();
@@ -277,7 +278,7 @@ it('bindPopupOffsetTest_static_0500', Level.LEVEL2, async (done: () => void): Pr
         }
         let callback = (indexEvent: emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0500 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['offset']).assertEqual(null);
+          expect(((indexEvent.data) as Record<String,RecordData>)?.['offset']).assertEqual(null);
           done();
         }
         try {
@@ -313,7 +314,7 @@ it('bindPopupOffsetTest_static_0600', Level.LEVEL2, async (done: () => void): Pr
         }
         let callback = (indexEvent: emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0600 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['offset']).assertEqual({
+          expect(((indexEvent.data) as Record<String,RecordData>)?.['offset']).assertEqual({
             x: -10, y: -10
           } as Position);
           done();
@@ -352,7 +353,7 @@ it('bindPopupOffsetTest_static_0700', Level.LEVEL2, async (done: () => void): Pr
         }
         let callback = (indexEvent: emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0700 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['offset']).assertEqual({
+          expect(((indexEvent.data) as Record<String,RecordData>)?.['offset']).assertEqual({
             x: -10, y: -10
           } as Position);
           done();
@@ -391,7 +392,7 @@ it('bindPopupOffsetTest_static_0800', Level.LEVEL2, async (done: () => void): Pr
         }
         let callback = (indexEvent: emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0800 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['offset']).assertEqual({
+          expect(((indexEvent.data) as Record<String,RecordData>)?.['offset']).assertEqual({
             x: 0, y: 0
           } as Position);
           done();
@@ -430,7 +431,7 @@ it('bbindPopupOffsetTest_static_0900', Level.LEVEL2, async (done: () => void): P
         }
         let callback = (indexEvent: emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_0900 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['offset']).assertEqual({
+          expect(((indexEvent.data) as Record<String,RecordData>)?.['offset']).assertEqual({
             x: 0, y: 50
           } as Position);
           done();
@@ -469,7 +470,7 @@ it('bindPopupOffsetTest_static_1000', Level.LEVEL2, async (done: () => void): Pr
         }
         let callback = (indexEvent: emitter.EventData) => {
           console.info("bindPopupOffsetTest_static_1000 get state result is: " + JSON.stringify(indexEvent));
-          // expect( ((indexEvent.data)as  Record<String,undefined|null|Object>)?.['offset']).assertEqual(null);
+          // expect( ((indexEvent.data)as  Record<String,RecordData>)?.['offset']).assertEqual(null);
           done();
         }
         try {

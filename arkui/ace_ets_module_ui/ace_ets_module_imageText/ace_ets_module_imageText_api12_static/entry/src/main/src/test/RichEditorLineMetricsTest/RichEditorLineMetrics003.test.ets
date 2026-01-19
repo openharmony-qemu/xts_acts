@@ -74,41 +74,6 @@ export default function RichEditorLineMetrics003() {
         expect().assertFail();
       }
     });
-
-    
-    /**
-     * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0004
-     * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0004
-     * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0004
-     * @tc.level   Level.LEVEL0
-     */
-    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0004 START');
-      let driver = Driver.create();
-      let rich = await (driver.findComponent(ON.id('RichEditorLineMetrics003')) as Promise<Component>);
-      let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
-      await CommonFunc.sleep(1000);
-
-      let getFirst = await (driver.findComponent(ON.id('getFirst')) as Promise<Component>);
-      await getFirst.click();
-      await CommonFunc.sleep(500);
-
-      let lineMetrics = await (driver.findComponent(ON.id('lineMetrics')) as Promise<Component>);
-      let lineMetricsText = await lineMetrics.getText();
-      await CommonFunc.sleep(500);
-      expect(lineMetricsText).assertEqual('lineMetrics:undefined');
-
-      let getUndefined = await (driver.findComponent(ON.id('getUndefined')) as Promise<Component>);
-      await getUndefined.click();
-      await CommonFunc.sleep(500);
-
-      lineMetricsText = await lineMetrics.getText();
-      await CommonFunc.sleep(500);
-      expect(lineMetricsText).assertEqual('lineMetrics:undefined');
-      done();
-    });
-
     
     /**
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0005

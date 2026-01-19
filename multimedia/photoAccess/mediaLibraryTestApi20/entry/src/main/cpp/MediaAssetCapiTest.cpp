@@ -274,7 +274,7 @@ static void HandleUri(OH_MediaAsset *photoAsset)
     g_uriRet = OH_MediaAsset_GetUri(photoAsset, &uri);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetUri uri :%{public}s", uri);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAsset_GetUri g_uriRet :%{public}d", g_uriRet);
-    GLOBAL_MEDIA_ASSET_URI = uri;
+    GLOBAL_MEDIA_ASSET_URI = "/data/storage/el2/base/haps/entry_test/files/01.jpg";
 }
 
 static void HandleNoSuchFile(OH_MediaAsset *photoAsset)
@@ -395,7 +395,7 @@ static void HandleAddResourceWithUri(OH_MediaAsset *photoAsset)
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "OH_MediaAssetChangeRequest_AddResourceWithUri  :%{public}d",
                  ret);
     MediaLibrary_ResourceType resourceType1 = MEDIA_LIBRARY_IMAGE_RESOURCE;
-    char *fileUri1 = const_cast<char *>(GLOBAL_MEDIA_ASSET_URI);
+    char *fileUri1 = const_cast<char *>("/data/storage/el2/base/haps/entry_test/files/01.dat");
     g_addResourceWithUriNotSupported =
         OH_MediaAssetChangeRequest_AddResourceWithUri(changeRequest, resourceType1, fileUri1);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia",

@@ -46,11 +46,9 @@ struct V1ObjectLink {
   @State resultText: string | undefined = 'this is null'
 
   build() {
-    Column({ space: 20 }) {
+    Column() {
       Text(this.resultText)
-        .fontSize(16)
-        .textAlign(TextAlign.Center)
-        .width('80%')
+        .textAlign(TextAlign.Center).height('5%')
       Child02({ a7: this.a7 })
     }
     .width('100%')
@@ -65,13 +63,13 @@ export struct Child02 {
   @State resultText3: string | undefined = 'this is null'
 
   build() {
-    Column({ space: 10 }) {
+    Column() {
       Text(this.resultText3)
+        .height('5%')
         .id('ObjectLinkText')
       Button('@ObjectLink')
         .id('ObjectLinkTest')
-        .fontSize(20)
-        .margin(10)
+        .height('5%')
         .onClick(() => {
           this.resultText3 = '';
           this.resultText3 = this.resultText3 + text(this.a7)

@@ -21,9 +21,9 @@ import webCacheModeSpecial from './WebCacheModeSpecial.test'
 
 export default function testsuite() {
   webAttributeTest()
-  webOnBeforeUnload()
   webAttributeEnhancedTest()
   webBlockNetworkSpecial()
   webMixedModeSpecial()
   webCacheModeSpecial()
+  webOnBeforeUnload()
 }

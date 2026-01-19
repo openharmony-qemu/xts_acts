@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,6 +27,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 export default function cachedShowFlow() {
   describe('cachedShowFlow', () => {
@@ -98,7 +99,7 @@ it('cachedShowFlow_static_0200', Level.LEVEL1, async (done: () => void): Promise
           data: {
             "clip1": false,
             "show1": false
-          } as Record<string, object | null | undefined>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 125,
@@ -134,7 +135,7 @@ it('cachedShowFlow_static_0300', Level.LEVEL1, async (done: () => void): Promise
           data: {
             "clip1": true,
             "show1": false
-          } as Record<string, object | null | undefined>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 125,
@@ -170,7 +171,7 @@ it('cachedShowFlow_static_0400', Level.LEVEL1, async (done: () => void): Promise
             data: {
               "clip1": true,
               "show1": true
-            } as Record<string, object | null | undefined>
+            } as Record<String,RecordData>
           } as events_emitter.EventData
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 125,
@@ -211,7 +212,7 @@ it('cachedShowFlow_static_0400', Level.LEVEL1, async (done: () => void): Promise
     //       data: {
     //         "clip1": false,
     //         "show1": null
-    //       } as Record<string, object|null|undefined>
+    //       } as Record<string, RecordData>
     //     } as events_emitter.EventData
     //     let innerEvent: events_emitter.InnerEvent = {
     //       eventId: 125,
@@ -245,7 +246,7 @@ it('cachedShowFlow_static_0400', Level.LEVEL1, async (done: () => void): Promise
     //       data: {
     //         "clip1": false,
     //         "show1": undefined
-    //       } as Record<string, object|null|undefined>
+    //       } as Record<string, RecordData>
     //     } as events_emitter.EventData
     //     let innerEvent: events_emitter.InnerEvent = {
     //       eventId: 125,

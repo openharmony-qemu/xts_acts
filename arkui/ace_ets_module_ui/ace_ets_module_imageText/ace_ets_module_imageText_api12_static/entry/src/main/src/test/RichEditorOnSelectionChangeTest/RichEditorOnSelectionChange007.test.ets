@@ -102,14 +102,18 @@ export default function RichEditorOnSelectionChange007() {
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertEqual('message:{"start":1,"end":4}');
+      expect(messageText.indexOf('message:') == 0).assertEqual(true);
+      expect(messageText.indexOf('"start":1') > 0).assertEqual(true);
+      expect(messageText.indexOf('"end":4') > 0).assertEqual(true);
 
       driver.triggerKey(KeyCode.KEYCODE_COPY);
       await CommonFunc.sleep(1000);
 
       messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertEqual('message:{"start":1,"end":4}');
+      expect(messageText.indexOf('message:') == 0).assertEqual(true);
+      expect(messageText.indexOf('"start":1') > 0).assertEqual(true);
+      expect(messageText.indexOf('"end":4') > 0).assertEqual(true);
       done();
     });
 

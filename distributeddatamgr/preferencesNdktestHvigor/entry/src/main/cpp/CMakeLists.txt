@@ -14,3 +14,9 @@ target_link_libraries(entry PUBLIC
      libhilog_ndk.z.so
      libohpreferences.so
 )
+add_library(capability SHARED PreferenceNdkTest.cpp)
+ 	target_link_libraries(capability PUBLIC
+ 	libace_napi.z.so
+ 	libhilog_ndk.z.so
+ 	libohpreferences.so
+)

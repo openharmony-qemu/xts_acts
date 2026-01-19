@@ -20,8 +20,11 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../Utils';
 import CommonFunc from '../../MainAbility/common/Common';
 import {
-  SegmentButtonItemOptions
+  SegmentButtonItemOptions,
+  SegmentButtonItemOptionsArray,
+  SegmentButtonItemTuple
 } from '@kit.ArkUI';
+
 export default function SegmentButtonOptionsReturnValue() {
   describe('SegmentButtonOptionsReturnValue', () => {
     beforeEach(async (done: Function) => {
@@ -123,6 +126,36 @@ export default function SegmentButtonOptionsReturnValue() {
       expect(res_0032!.length).assertEqual(0);
       console.info("[SegmentButtonOptionsReturnValue_003] component appstorage.clear: " + JSON.stringify(AppStorage.clear()));
       console.info('[SegmentButtonOptionsReturnValue_003] END');
+      done();
+    })
+
+    /**
+     * @tc.name   SegmentButtonOptionsReturnValue_004
+     * @tc.number SegmentButtonOptionsReturnValue_004
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SegmentButtonOptionsReturnValue_004', Level.LEVEL0, async (done: Function) => {
+      console.info('[SegmentButtonOptionsReturnValue_004] START');
+      await CommonFunc.sleep(2000);
+      let x: SegmentButtonItemOptionsArray =
+        SegmentButtonItemOptionsArray.create([{ text: '1' }, { text: '2' }, { text: '3' }] as SegmentButtonItemTuple)
+      let res_0041: SegmentButtonItemOptions[] = x.splice(0, 1);
+      console.info("[SegmentButtonOptionsReturnValue_004] component res_0041 is: " + JSON.stringify(res_0041));
+      let res_0042: SegmentButtonItemOptions[] = x.splice(0, 1);
+      console.info("[SegmentButtonOptionsReturnValue_004] component res_0042 is: " + JSON.stringify(res_0042));
+      let res_0043: SegmentButtonItemOptions | undefined = x.pop();
+      console.info("[SegmentButtonOptionsReturnValue_004] component res_0043 is: " + JSON.stringify(res_0042));
+      let res_0044: SegmentButtonItemOptions | undefined = x.shift();
+      console.info("[SegmentButtonOptionsReturnValue_004] component res_0044 is: " + JSON.stringify(res_0042));
+      expect(res_0041.length > 0).assertTrue();
+      expect(res_0042.length == 0).assertTrue();
+      expect(res_0043).assertUndefined();
+      expect(res_0044).assertUndefined();
+      await CommonFunc.sleep(2000);
+      console.info('[SegmentButtonOptionsReturnValue_004] END');
       done();
     })
 

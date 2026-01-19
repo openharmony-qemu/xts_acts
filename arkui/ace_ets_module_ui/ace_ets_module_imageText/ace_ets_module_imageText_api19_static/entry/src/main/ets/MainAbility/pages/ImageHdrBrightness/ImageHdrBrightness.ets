@@ -19,7 +19,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct ImageHdrBrightness {
-  @State hdrBrightnessValue: number | null | undefined = 0.0
+  @State hdrBrightnessValue: number | undefined = 0.0
 
   build() {
     Column({space: 8} as ColumnOptions) {
@@ -70,7 +70,7 @@ struct ImageHdrBrightness {
         Button('null')
           .id('hdrNull')
           .onClick((e: ClickEvent) => {
-            this.hdrBrightnessValue = null
+
           })
         Button('undefined')
           .id('hdrUndefined')

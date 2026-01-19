@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,6 +23,7 @@ import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import { Button, Component, Entry, Flex, FlexAlign, Padding } from '@ohos.arkui.component'
+import { RecordData } from '@ohos.base';
 
 
 
@@ -67,7 +68,7 @@ struct EnabledExample {
     (eventData: events_emitter.EventData): void => {
       console.info("[testEnable02] stateChangCallBack ",eventData);
       if (eventData !== null && eventData.data !== null) {
-        const data = eventData.data as Record<string, Object | undefined | null>
+        const data = eventData.data as Record<String,RecordData>
         console.info('[stateChangCallBackTwo] state change called:' + JSON.stringify(eventData));
         if (data['enabled'] !== null) {
           this.enabledd = data['enabled'] as boolean

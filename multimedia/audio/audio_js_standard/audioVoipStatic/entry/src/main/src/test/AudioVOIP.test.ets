@@ -142,15 +142,6 @@ export default function audioVoip() {
             }
         }
 
-        let closeFileDescriptor = async () => {
-            console.log(`${TagRender}:case closeFile for fileNumber: ${fdRead}`);
-            await fileio.close(fdRead).then(() => {
-                console.log(`${TagRender}:case closeFile success for file`);
-            }).catch((error: Error) => {
-                console.log(`${TagRender}:case closeFile err: ${error}`);
-            });
-        }
-
         let getFdRead = async (pathName: string) => {
             try {
                 let testContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
@@ -437,7 +428,6 @@ export default function audioVoip() {
             Utils.msSleep(100);
             console.info(`${TagRender}: resultFlag : ${resultFlag}`);
             expect(resultFlag).assertTrue();
-            await closeFileDescriptor();
             done();
         })
 
@@ -530,7 +520,6 @@ export default function audioVoip() {
             Utils.msSleep(100);
             console.info(`${TagRender}: resultFlag : ${resultFlag}`);
             expect(resultFlag).assertTrue();
-            await closeFileDescriptor();
             done();
         })
     });

@@ -75,7 +75,7 @@ export default function BackWithResultStaticTest() {
           expect().assertFail();
           done();
         }).catch((err): void => {
-          hilog.info(domain, tag, `backToCallerAbilityWithResult1 failed, code is ${JSON.stringify(err)}`);
+          hilog.info(domain, tag, `backToCallerAbilityWithResult1 failed, code is ${err.code}`);
           expect(err.code).assertEqual(16000074);
           done();
         });

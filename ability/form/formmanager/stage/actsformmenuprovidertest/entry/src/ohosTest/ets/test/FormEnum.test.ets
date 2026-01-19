@@ -34,10 +34,11 @@ export default function formEnumTest() {
     it('SUB_ABILITY_FORM_FWK_FORM_LOCATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_LOCATION_0100';
       hilog.info(domain, tag, `${itName} start`);
-      expect(5).assertEqual(formInfo.FormLocation.FORM_MANAGER_NEGATIVE_SCREEN);
-      expect(4).assertEqual(formInfo.FormLocation.FORM_CENTER_NEGATIVE_SCREEN);
+      expect(8).assertEqual(formInfo.FormLocation.STANDBY);
       expect(7).assertEqual(formInfo.FormLocation.AI_SUGGESTION);
       expect(6).assertEqual(formInfo.FormLocation.SCREEN_LOCK);
+      expect(5).assertEqual(formInfo.FormLocation.FORM_MANAGER_NEGATIVE_SCREEN);
+      expect(4).assertEqual(formInfo.FormLocation.FORM_CENTER_NEGATIVE_SCREEN);
       expect(3).assertEqual(formInfo.FormLocation.NEGATIVE_SCREEN);
       expect(2).assertEqual(formInfo.FormLocation.FORM_MANAGER);
       expect(1).assertEqual(formInfo.FormLocation.FORM_CENTER);

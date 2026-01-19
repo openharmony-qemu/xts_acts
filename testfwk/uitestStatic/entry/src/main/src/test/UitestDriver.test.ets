@@ -31,22 +31,25 @@ async function exitInputMethod() {
   }
 }
 
-async function maxUiWindow(driver: Driver, window: UiWindow | null) {
+async function maxUiWindow(driver: Driver, window: UiWindow | null): Promise<boolean> {
   if (window != null) {
     try {
       let windowMode = await window.getWindowMode();
-      if (windowMode != WindowMode.FLOATING) {
-        await window.resume();
-        await driver.delayMs(8000);
+      if (windowMode == WindowMode.FULLSCREEN) {
+        console.log(`${tag}, maxUiWindow FULLSCREEN`);
+        return true;
       }
       await window.maximize();
+      await driver.delayMs(3000);
+      return true;
     } catch (error) {
       console.log(`${tag}, maxUiWindow error,${JSON.stringify(error)}`);
+      return false;
     }
   } else {
     console.log(`${tag}, maxUiWindow null`);
+    return false;
   }
-  await driver.delayMs(3000);
 }
 
 export default function uitestDriverTest() {
@@ -1925,7 +1928,7 @@ export default function uitestDriverTest() {
         if (text1 != null) {
           let inputText = await text1.getText();
           hilog.info(domain, tag, `testDriverInputText_static inputText success, ${ JSON.stringify(inputText) }`);
-          expect(inputText).assertEqual('Hello W123orld');
+          expect(inputText).assertEqual('Hello 123World');
         }
       } catch(error) {
         hilog.info(domain, tag, `testDriverInputText_static error, ${ JSON.stringify(error) }`);
@@ -2080,7 +2083,7 @@ export default function uitestDriverTest() {
           if (text1 != null) {
             let msg = await text1.getText();
             hilog.info(domain, tag, `testDriverInputTextMode_static msg, ${ JSON.stringify(msg) }`);
-            expect(msg == 'Hello W123orld').assertTrue()
+            expect(msg == 'Hello 123World').assertTrue()
           }
         }
       } catch(error) {
@@ -2133,7 +2136,7 @@ export default function uitestDriverTest() {
         if (text2 != null) {
           let msg = await text2.getText();
           hilog.info(domain, tag, `testDriverInputTextMode1_static msg, ${ JSON.stringify(msg) }`);
-          expect(msg== 'Hello W长贵儿orld').assertTrue()
+          expect(msg== 'Hello 长贵儿World').assertTrue()
         }
       } catch(error) {
         hilog.info(domain, tag, `testDriverInputTextMode1_static error, ${ JSON.stringify(error) }`);
@@ -2184,7 +2187,7 @@ export default function uitestDriverTest() {
         if (text1 != null) {
           let msg = await text1.getText();
           hilog.info(domain, tag, `testDriverInputTextMode2_static msg, ${ JSON.stringify(msg) }`);
-          expect(msg== 'Hello W123orld').assertTrue()
+          expect(msg== 'Hello 123World').assertTrue()
         }
       } catch(error) {
         hilog.info(domain, tag, `testDriverInputTextMode2_static error, ${ JSON.stringify(error) }`);

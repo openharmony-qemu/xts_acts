@@ -28,7 +28,7 @@ struct SearchEvent {
   @State insertValue4: string = ''
   @State insertValue5: string = ''
   @State insertValue6: string = ''
-  @State text: string = '0'
+  @State text: string = ''
 
   build() {
     Column() {

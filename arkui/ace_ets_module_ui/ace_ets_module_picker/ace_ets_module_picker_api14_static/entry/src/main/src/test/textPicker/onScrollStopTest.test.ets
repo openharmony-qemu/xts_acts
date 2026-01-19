@@ -59,6 +59,14 @@ export default function onScrollStopTest(){
       }
     });
 
+    afterEach(async () => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.clear();
+      let options:router.RouterOptions = {
+        url: 'MainAbility/pages/index/index',
+      }
+      routerInstance.replaceUrl(options);
+    });
     
     
     

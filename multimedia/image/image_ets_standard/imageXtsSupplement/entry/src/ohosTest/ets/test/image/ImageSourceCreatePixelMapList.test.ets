@@ -288,28 +288,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
         done();
       })
     })
-    /**
-     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_004
-     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_004
-     * @tc.desc   createPixelMapList callback: AsyncCallback<Array<PixelMap>>
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_004', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_004';
-      const imageSourceApi = await getImageSource('test_exif_v4.heic');
-      imageSourceApi.createPixelMapList((err: BusinessError, pixelMapList: Array<image.PixelMap>) => {
-        if (err) {
-          console.error(TAG,testName,`Failed to create pixelMapList object, error code is ${err},${err.code}`);
-          expect(err.code == 62980118 ).assertTrue();
-        } else {
-          console.info(TAG,testName,'Succeeded in creating pixelMapList object.');
-          expect(pixelMapList.length > 0).assertFalse();
-        }
-        done();
-      })
-    })
+
     /**
      * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_005
      * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_005

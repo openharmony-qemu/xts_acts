@@ -1803,5 +1803,40 @@ export default function cameraErrorCodeUsecaseTest() {
       }
       done();
     })
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GETCAMERADEVICES_0100
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GETCAMERADEVICES_0100
+     * @tc.desc   test getCameraDevices api with error code 7400201
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GETCAMERADEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GETCAMERADEVICES_0100--------------");
+      if (isEmpty01(mCameraManager)) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GETCAMERADEVICES_0100 mCameraManager == null || undefined");
+        expect().assertFail();
+        done();
+      }
+      if (isEmpty02(mCameraDevicesArray)) {
+        console.info(TAG + "No cameras available for setup");
+        expect().assertFail();
+        done();
+        return;
+      }
+      let baseDevice = mCameraDevicesArray[0];
+      let validPos = cameraObj.CameraPosition.CAMERA_POSITION_UNSPECIFIED;
+      let validTypes = [baseDevice.cameraType];
+      let validConn = baseDevice.connectionType;
+      try {
+        let devices = mCameraManager!.getCameraDevices(validPos, validTypes, validConn);
+        expect().assertFail();
+      } catch (error: Error) {
+        console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GETCAMERADEVICES_0100 Invalid Position Code: " + error.code);
+        expect(String(error.code)).assertEqual('7400201');
+      }
+      done();
+    })
   })
 }

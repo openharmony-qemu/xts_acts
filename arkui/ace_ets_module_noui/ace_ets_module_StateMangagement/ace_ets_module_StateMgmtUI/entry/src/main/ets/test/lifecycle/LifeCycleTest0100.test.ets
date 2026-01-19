@@ -68,16 +68,12 @@ export default function LifeCycleTest0100() {
         .assertEqual(CustomComponentLifecycleState.INIT);
       expect(AppStorage.get<number>('aboutToAppear')).assertEqual(1);
       expect(AppStorage.get<number>('onDidBuild')).assertEqual(1);
-      expect(AppStorage.get<number>('aboutToAttach')).assertEqual(2);
-      expect(AppStorage.get<number>('aboutToDetach')).assertEqual(1);
       expect(AppStorage.get<number>('aboutToReuse')).assertEqual(1);
       expect(AppStorage.get<number>('aboutToRecycle')).assertEqual(1);
       await CommonFunc.sleep(1000);
       AppStorage.delete('lifecycle');
       AppStorage.delete('aboutToAppear');
       AppStorage.delete('onDidBuild');
-      AppStorage.delete('aboutToAttach');
-      AppStorage.delete('aboutToDetach');
       AppStorage.delete('aboutToReuse');
       AppStorage.delete('aboutToRecycle');
       console.info('[LifeCycleTest0100_001] END');

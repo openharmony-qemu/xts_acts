@@ -28,6 +28,7 @@ import graphicTextNewAPI from './GraphicTextNewAPI.test'
 import GraphicTextAPI21Test from './GraphicTextAPI21Test.test'
 import GraphicTextAPI22 from './GraphicTextAPI22.test'
 import GraphicTextAPI23 from './GraphicTextAPI23.test'
+import graphicTextA1Test from './GraphicTextA1.test'
 
 export default function testsuite() {
   graphicTextATest();
@@ -46,4 +47,5 @@ export default function testsuite() {
   GraphicTextAPI21Test();
   GraphicTextAPI22();
   GraphicTextAPI23();
+  graphicTextA1Test();
 }

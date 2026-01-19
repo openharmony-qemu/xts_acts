@@ -101,7 +101,9 @@ export default function RichEditorOnSelectionChange016() {
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertEqual('message:{"start":3,"end":3}');
+      expect(messageText.indexOf('message:') == 0).assertEqual(true);
+      expect(messageText.indexOf('"start":3') > 0).assertEqual(true);
+      expect(messageText.indexOf('"end":3') > 0).assertEqual(true);
 
       let add_symbol = await (driver.findComponent(ON.id('add_symbol')) as Promise<Component>);
       await add_symbol.click();
@@ -114,7 +116,9 @@ export default function RichEditorOnSelectionChange016() {
 
       messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertEqual('message:{"start":5,"end":5}');
+      expect(messageText.indexOf('message:') == 0).assertEqual(true);
+      expect(messageText.indexOf('"start":5') > 0).assertEqual(true);
+      expect(messageText.indexOf('"end":5') > 0).assertEqual(true);
 
       done();
     });

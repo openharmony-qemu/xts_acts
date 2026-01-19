@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,6 +17,7 @@ import hilog from '@ohos.hilog';
 import events_emitter from '@ohos.events.emitter';
 import { Entry, Component, Column, Text, Rating, Margin, Row, TextPickerResult, TextPickerDialogOptions,Image, TextPicker, Button, ClickEvent } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -33,7 +34,7 @@ struct TextPickerSec {
   private valueChangeCallBack:(eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("key==> page valueChangeCallBack");
     if (eventData != null && eventData.data != null) {
-      const data = eventData.data as Record<string, Object | null | undefined>
+      const data = eventData.data as Record<String,RecordData>
       if (data!['type'] == "TextPicker" && data!['text'] == "true") {
         this.flag = true
         this.canLoop = true

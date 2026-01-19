@@ -23,6 +23,9 @@
 #include "MotionPath/MotionPathOptionsTest.cpp"
 #include "publicCapacity/AtomicServiceMenuBarSetVisibleTest.cpp"
 #include "node/IsInRenderStateReturnValueTest.cpp"
+#include "refresh/RefreshAttrsTest.cpp"
+#include "image/ImageAntialiasedTest.cpp"
+#include "TextMarqueeOptions/TextMarqueeOptionsTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -90,6 +93,8 @@ static napi_value Init(napi_env env, napi_value exports)
          TestContainerPickerSelectionIndicator015, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestContainerPickerSelectionIndicator016", nullptr,
          TestContainerPickerSelectionIndicator016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestContainerPickerSelectionIndicator017", nullptr,
+         TestContainerPickerSelectionIndicator017, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestContainerPickerSubComponent001", nullptr,
          TestContainerPickerSubComponent001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestContainerPickerSubComponent002", nullptr,
@@ -98,6 +103,8 @@ static napi_value Init(napi_env env, napi_value exports)
          TestContainerPickerSubComponent003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestContainerPickerSubComponent004", nullptr,
          TestContainerPickerSubComponent004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestContainerPickerSubComponent005", nullptr,
+         TestContainerPickerSubComponent005, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextDirection_001", nullptr, TextDirection_001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"TextDirection_002", nullptr, TextDirection_002, nullptr, nullptr, nullptr,
@@ -170,6 +177,12 @@ static napi_value Init(napi_env env, napi_value exports)
         napi_default, nullptr},
         {"TextEnumTest_021", nullptr, TextEnumTest_021, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"TextEnumTest_022", nullptr, TextEnumTest_022, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextEnumTest_023", nullptr, TextEnumTest_023, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextMarqueeOptionsTest", nullptr, TextMarqueeOptionsTest, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         {"TestAtomicServiceMenuBarSetVisible01", nullptr,
          TestAtomicServiceMenuBarSetVisible01, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextSelectionTest", nullptr, MotionPathNode, nullptr, nullptr, nullptr,
@@ -178,6 +191,22 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestIsInRenderStateReturnValue002", nullptr, TestIsInRenderStateReturnValue002,
          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testPullUpToCancelRefresh01", nullptr, TestPullUpToCancelRefresh01, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testPullUpToCancelRefresh02", nullptr, TestPullUpToCancelRefresh02, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testPullUpToCancelRefreshError", nullptr, TestPullUpToCancelRefreshError, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageAntialiased001", nullptr,
+         TestImageAntialiased001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAntialiased002", nullptr,
+         TestImageAntialiased002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAntialiased003", nullptr,
+         TestImageAntialiased003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAntialiased004", nullptr,
+         TestImageAntialiased004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAntialiased005", nullptr,
+         TestImageAntialiased005, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

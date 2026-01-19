@@ -4,9 +4,6 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Multimedia.AVSession.AVCast",
-                    "SystemCapability.Multimedia.AVSession.Core",
-                    "SystemCapability.Multimedia.AVSession.ExtendedDisplayCast",
                     "SystemCapability.Multimedia.AVSession.Manager"
                 ]
             }

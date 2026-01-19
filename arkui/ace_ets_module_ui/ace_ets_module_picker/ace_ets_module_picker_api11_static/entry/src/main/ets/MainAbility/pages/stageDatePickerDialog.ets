@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,6 +18,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { Entry, Component, Column, Text, Rating, Margin, Row, DatePickerResult, Alignment, TextAlign, TextOverflow, ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base';
 @Entry
 @Component
 struct stageDatePickerDialog {
@@ -59,7 +60,7 @@ struct stageDatePickerDialog {
               let backData: events_emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<string, Object | null | undefined>
+                } as Record<String,RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 60220,
@@ -106,7 +107,7 @@ struct stageDatePickerDialog {
               let backData1: events_emitter.EventData = {
                 data: {
                   "STATUS": 10
-                } as Record<string, Object | null | undefined>
+                } as Record<String,RecordData>
               }
               let backEvent1: events_emitter.InnerEvent = {
                 eventId: 60221,
@@ -153,7 +154,7 @@ struct stageDatePickerDialog {
               let backData2: events_emitter.EventData = {
                 data: {
                   "STATUS": "STATUS"
-                } as Record<string, Object | null | undefined>
+                } as Record<String,RecordData>
               }
               let backEvent2: events_emitter.InnerEvent = {
                 eventId: 60222,

@@ -1,6 +1,6 @@
 'use static';
 /**
-  * Copyright (c) 2025 Huawei Device Co., Ltd.
+  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,6 +24,7 @@ import router from '@ohos.router';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import Utils from '../../../ets/MainAbility/common/Utils'
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 export default function routerStandardJsunit() {
   describe('routerStandardTest', () => {
@@ -73,7 +74,7 @@ it('testrouterStandard0011_static', Level.LEVEL2, async (done: () => void): Prom
         }
         let callback1 = (eventData: events_emitter.EventData) => {
           console.info("testrouterStandard_0011_static get event data is: " + JSON.stringify(eventData));
-          expect((eventData.data as Record<String,undefined|null|Object>)['ArrayData']).assertEqual("45");
+          expect((eventData.data as Record<String,RecordData>)['ArrayData']).assertEqual("45");
 
         }
         events_emitter.on(standardEvent, callback1);
@@ -105,7 +106,7 @@ it('testrouterSingle0001_static', Level.LEVEL2, async (done: () => void): Promis
         }
         let callback2 = (eventData: events_emitter.EventData) => {
           console.info("testrouterSingle_0001_static get event data is: " + JSON.stringify(eventData));
-          expect((eventData.data as Record<String,undefined|null|Object>)['ArrayData']).assertEqual("46");
+          expect((eventData.data as Record<String,RecordData>)['ArrayData']).assertEqual("46");
         }
         events_emitter.on(singleEvent, callback2);
         console.info("testrouterSingle_0001_static click result1 is: " + JSON.stringify(inspector.sendEventByKey('SingleText', 10, "")));

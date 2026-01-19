@@ -48,7 +48,7 @@ export default function TextAreaApi4() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextAreaApi4 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextAreaApi4" == pages.name)) {
           console.info("get TextAreaApi4 pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);
