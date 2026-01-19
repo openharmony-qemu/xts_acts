@@ -223,6 +223,15 @@ export default function shadowEffectTest() {
         console.info(msg + ` createLinearGradient9 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
+      try {
+        let matrix = new drawing.Matrix();
+        let shaderEffect = drawing.ShaderEffect.createLinearGradient({x : 100.1, y : 100.1}, {x : 300.1, y : 300.1},
+          [], drawing.TileMode.REPEAT, [0.1,0.9], matrix);
+        console.info(msg + ` [] createLinearGradient create successed,shaderEffect:` + JSON.stringify(shaderEffect));
+      } catch( e ) {
+        console.info(msg + ` [] create errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
     });
 
     /**
@@ -293,7 +302,6 @@ export default function shadowEffectTest() {
         console.info(msg + ` create errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
-
       try {
         let shaderEffect = drawing.ShaderEffect.createLinearGradient({x : 100.1, y : 100.1}, {x : 300.1, y : 300.1},
           [ 0xFF00FF00, 0xFFFF0000 ], null, null, null);
@@ -1388,7 +1396,7 @@ export default function shadowEffectTest() {
         expect(e.code).assertEqual(401);
       }
       try {
-        let shader4 = drawing.ShaderEffect.createComposeShader(dstShader, null, drawing.BlendMode.SRC);
+        let shader4 = drawing.ShaderEffect.createComposeShader(dstShader, undefined, drawing.BlendMode.SRC);
         console.info(msg + ' createLightingColorFilter shader4 successed');
         expect().assertFail();
       } catch( e ) {

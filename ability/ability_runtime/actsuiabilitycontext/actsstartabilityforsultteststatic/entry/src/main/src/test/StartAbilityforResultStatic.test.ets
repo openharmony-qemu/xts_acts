@@ -22,6 +22,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import StartOptions from '@ohos.app.ability.StartOptions'
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -30,7 +31,16 @@ let context: common.UIAbilityContext
 export default function startAbilityForResultTestStatic() {
   describe('ActsstartAbilityForResultTestStatic', () => {
 
-    beforeAll(() => {
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       hilog.info(domain, tag, 'getAbilityDelegator success');
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.startabilityforresulttest.static")
@@ -262,6 +272,7 @@ export default function startAbilityForResultTestStatic() {
       };
       try {
         context.startAbilityForResult(want, options, (err: BusinessError<void> | null) => {
+        hilog.info(domain, tag,`startAbilityForResult start`);
           if (err && err.code !== 0) {
             hilog.info(domain, tag,`startAbilityForResult failed, code is ${err?.code}, message is ${err?.message}`);
             expect().assertFail();
@@ -277,6 +288,7 @@ export default function startAbilityForResultTestStatic() {
         expect().assertFail();
         done();
       }
+      hilog.info(domain, tag,`startAbilityForResult end`);
     })
 
     /**

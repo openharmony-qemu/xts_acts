@@ -578,5 +578,189 @@ export default function onSinglePhotoChangeTest() {
         done();
       }
     });
+
+    /**
+     * @tc.number     SUB_PHOTOACCESS_HELPER_CHANGE_1300
+     * @tc.name       onSinglePhotoChange_013
+     * @tc.desc       onSinglePhotoChange maximum number of listener 201
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('onSinglePhotoChange_013', Level.LEVEL0, async (done: Function) => {
+      let tag: string = 'onSinglePhotoChange_013';
+      try {
+        await createImageAsset(done, 'onSinglePhotoChange_013');
+        let fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
+        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await album.getAssets(fetchOps);
+        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        console.log(`${tag} start create callback`);
+        // 定义回调函数类型
+        type PhotoChangeCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => void;
+        // 创建回调函数生成器
+        const createCallback = (index: number): PhotoChangeCallback => {
+          return (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+            console.log(`${tag} : newCallback${index}`);
+            expect(false).assertTrue();
+            done();
+          };
+        };
+        // 生成并注册201个回调
+        const callbacks: PhotoChangeCallback[] = [];
+        for (let i = 1; i <= 201; i++) {
+          console.log(`${tag} start create callback${i}`);
+          const callback = createCallback(i);
+          callbacks.push(callback);
+          helper.onSinglePhotoChange(asset, callback);
+        }
+        console.error(`${tag} success, expect fail`);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${tag} failed :: ${err}, ${err.code}`);
+        expect(err.code).assertEqual('23800151');
+        helper.offSinglePhotoChange();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_PHOTOACCESS_HELPER_CHANGE_1400
+     * @tc.name       onSinglePhotoAlbumChange_014
+     * @tc.desc       onSinglePhotoAlbumChange maximum number of listener 51
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('onSinglePhotoAlbumChange_014', Level.LEVEL0, async (done: Function) => {
+      let tag: string = 'onSinglePhotoAlbumChange_014';
+      try {
+        await createImageAsset(done, 'onSinglePhotoAlbumChange_014');
+        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
+        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+        console.log(`${tag} start create callback`);
+        // 定义回调函数类型
+        type PhotoChangeCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => void;
+        // 创建回调函数生成器
+        const createCallback = (index: number): PhotoChangeCallback => {
+          return (changeData: photoAccessHelper.AlbumChangeInfos) => {
+            console.log(`${tag} : newCallback${index}`);
+            expect(false).assertTrue();
+            done();
+          };
+        };
+        // 生成并注册51个回调
+        const callbacks: PhotoChangeCallback[] = [];
+        for (let i = 1; i <= 51; i++) {
+          console.log(`${tag} start create callback${i}`);
+          const callback = createCallback(i);
+          callbacks.push(callback);
+          helper.onSinglePhotoAlbumChange(album, callback);
+        }
+        console.error(`${tag} success, expect fail`);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${tag} failed :: ${err}, ${err.code}`);
+        expect(err.code).assertEqual('23800151');
+        helper.offSinglePhotoAlbumChange();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_PHOTOACCESS_HELPER_CHANGE_1500
+     * @tc.name       onSinglePhotoChange_015
+     * @tc.desc       onSinglePhotoChange maximum number of listener 200
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('onSinglePhotoChange_015', Level.LEVEL0, async (done: Function) => {
+      let tag: string = 'onSinglePhotoChange_015';
+      try {
+        await createImageAsset(done, 'onSinglePhotoChange_015');
+        let fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
+        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await album.getAssets(fetchOps);
+        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        console.log(`${tag} start create callback`);
+        // 定义回调函数类型
+        type PhotoChangeCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => void;
+        // 创建回调函数生成器
+        const createCallback = (index: number): PhotoChangeCallback => {
+          return (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+            console.log(`${tag} : newCallback${index}`);
+            expect(false).assertTrue();
+            done();
+          };
+        };
+        // 生成并注册200个回调
+        const callbacks: PhotoChangeCallback[] = [];
+        for (let i = 1; i <= 200; i++) {
+          console.log(`${tag} start create callback${i}`);
+          const callback = createCallback(i);
+          callbacks.push(callback);
+          helper.onSinglePhotoChange(asset, callback);
+        }
+        console.log(`${tag} success`);
+        helper.offSinglePhotoChange();
+        done();
+      } catch (err) {
+        console.error(`${tag} failed :: ${err}, ${err.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_PHOTOACCESS_HELPER_CHANGE_1600
+     * @tc.name       onSinglePhotoAlbumChange_016
+     * @tc.desc       onSinglePhotoAlbumChange maximum number of listener 50
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('onSinglePhotoAlbumChange_016', Level.LEVEL0, async (done: Function) => {
+      let tag: string = 'onSinglePhotoAlbumChange_016';
+      try {
+        await createImageAsset(done, 'onSinglePhotoAlbumChange_016');
+        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
+        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+        // 定义回调函数类型
+        type PhotoChangeCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => void;
+        // 创建回调函数生成器
+        const createCallback = (index: number): PhotoChangeCallback => {
+          return (changeData: photoAccessHelper.AlbumChangeInfos) => {
+            console.log(`${tag} : newCallback${index}`);
+            expect(false).assertTrue();
+            done();
+          };
+        };
+        // 生成并注册50个回调
+        const callbacks: PhotoChangeCallback[] = [];
+        for (let i = 1; i <= 50; i++) {
+          console.log(`${tag} start create callback${i}`);
+          const callback = createCallback(i);
+          callbacks.push(callback);
+          helper.onSinglePhotoAlbumChange(album, callback);
+        }
+        console.log(`${tag} success`);
+        helper.offSinglePhotoAlbumChange();
+        done();
+      } catch (err) {
+        console.error(`${tag} failed :: ${err}, ${err.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
   });
 }

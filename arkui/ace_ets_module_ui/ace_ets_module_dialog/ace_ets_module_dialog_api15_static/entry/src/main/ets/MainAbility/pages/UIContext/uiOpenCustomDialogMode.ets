@@ -101,7 +101,7 @@ export struct MyComponent {
 
 @Builder
 function customDialogDemo() {
-  const dialogRouter = AppStorage.get<Router>("router") as Router
+  const dialogRouter = AppStorage.get<Router>('router') as Router
   Column({ space: 5 } as ColumnOptions) {
     Text('自定义弹窗')
     Button(`router`)

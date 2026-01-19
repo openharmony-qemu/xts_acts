@@ -1824,7 +1824,7 @@ export default function InputConsumerTest() {
         try {
           let options: inputConsumer.KeyPressedConfig = {
             key: 17,
-            action: 2,
+            action: 3,
             isRepeat: true
           }
           let callback = (event: KeyEvent) => {

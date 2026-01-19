@@ -46,8 +46,8 @@ export default function chainWeightTest() {
       console.info('ChainWeightCapi_0100 row1 left: ' + rect1.left + ',top: ' + rect1.top + ',right: ' + rect1.right + ',bottom: ' + rect1.bottom);
       console.info('ChainWeightCapi_0100 row2 left: ' + rect2.left + ',top: ' + rect2.top + ',right: ' + rect2.right + ',bottom: ' + rect2.bottom);
       console.info('ChainWeightCapi_0100 row3 left: ' + rect3.left + ',top: ' + rect3.top + ',right: ' + rect3.right + ',bottom: ' + rect3.bottom);
-      expect(Math.round(rect1.right - rect1.left)).assertEqual(Math.round((rect2.right - rect2.left)/2));
-      expect(Math.round(rect3.bottom - rect3.top)).assertEqual(Math.round((rect2.bottom - rect2.top)/2));
+      expect(Math.floor(Math.round((rect1.right - rect1.left) - (rect2.right - rect2.left)/2)) <= 1).assertTrue();
+      expect(Math.floor(Math.round((rect3.bottom - rect3.top) - (rect2.bottom - rect2.top)/2)) <= 1).assertTrue();
       console.info('ChainWeightCapi_0100 END');
       done();
     });

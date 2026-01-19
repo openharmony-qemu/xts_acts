@@ -86,7 +86,7 @@ it('ArkUI_Menu_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
 
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.text('Menu1'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info(`${SUITE} ${CASE} END`);
       done()
@@ -119,7 +119,7 @@ it('ArkUI_Menu_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
 
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.text('Menu1'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       console.info(`${SUITE} ${CASE} END`);

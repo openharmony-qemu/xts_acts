@@ -2515,7 +2515,7 @@ export default function TextPicker() {
       await CommonFunc.sleep(1000);
       let chooostModeButton: Component = await driver.findComponent(ON.text('TEXT_DONE'));
       let button: Component = await driver.findComponent(ON.id('btnSelectPhoto'));
-      if (button !== undefined && chooostModeButton !== undefined) {
+      if (button !== undefined  && chooostModeButton !== undefined) {
         await chooostModeButton.click();
         await button.click();
       } else {
@@ -2524,7 +2524,7 @@ export default function TextPicker() {
       }
 
       const checkbox = await driver.waitForComponent(ON.type('Checkbox'), 3000);
-      if (checkbox !== undefined) {
+      if (checkbox !== undefined && checkbox !== null) {
         await checkbox.click();
         await CommonFunc.sleep(1000);
         const finishBtn: Component = await driver.findComponent(ON.id('Complete'));
@@ -3213,6 +3213,200 @@ export default function TextPicker() {
         console.error(`testPicker62, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
       }
       console.info("testPicker62 finish");
+      done();
+    });
+
+    /**	 
+     * @tc.number     testPicker63	 
+     * @tc.name       testPicker63	 
+     * @tc.desc       Testing showSingleAssetCreationDialogEx with isImageFullyDisplayed param.	 
+     * @tc.size       MediumTest	 
+     * @tc.type       Function	 
+     * @tc.level      Level 0	 
+     */	 
+     it('testPicker63', Level.LEVEL0, async (done: Function) => {	 
+       if (!isExecutePicker) {	 
+         done();	 
+         return;	 
+       }	 
+       const context = getContext();	 
+       const creationSetting: photoAccessHelper.PhotoCreationConfig = {	 
+         title: 'test',	 
+         fileNameExtension: 'jpg',	 
+         photoType: photoAccessHelper.PhotoType.IMAGE,	 
+       };	 
+       const boxPath = fileUri.getUriFromPath(context.filesDir + '/test.jpg').toString();	 
+       const isImageFullyDisplayed = true;	 
+       photoAccessHelper	 
+         .getPhotoAccessHelper(context)	 
+         .showAssetsCreationDialogEx([boxPath], [creationSetting])	 
+         .catch((error:Error) => {	 
+           console.error('testPicker63 showAssetsCreationDialogEx error =', JSON.stringify(error));	 
+           expect(false).assertTrue();	 
+         });	 
+       await CommonFunc.sleep(2000);	 
+       console.info('testPicker63 showAssetsCreationDialogEx success');	 
+       photoAccessHelper	 
+         .getPhotoAccessHelper(context)	 
+         .showSingleAssetCreationDialogEx(boxPath, creationSetting, isImageFullyDisplayed)	 
+         .catch((error:Error) => {	 
+           console.error('testPicker63 showSingleAssetCreationDialogEx error =', JSON.stringify(error));	 
+           expect(false).assertTrue();	 
+         });	 
+       await CommonFunc.sleep(2000);	 
+       console.info('testPicker63 showSingleAssetCreationDialogEx success');	 
+       console.info('testPicker63 success');	 
+       expect(true).assertTrue();
+       done();
+    });
+
+    /**
+     * @tc.name   testPicker64
+     * @tc.number testPicker64
+     * @tc.desc   Testing  change PhotoPickerComponent pickerOptions gridPinchMode property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPicker64',Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.gridPinchMode = {
+        gridPinchModeType: photoAccessHelper.GridPinchModeType.FULL_FUNCTION_GRID,
+        defaultGridLevel: photoAccessHelper.GridLevel.COMPACT
+      };
+      let callback = (event: events_emitter.EventData) => {
+        let expectResult: photoAccessHelper.GridLevel = pickerOptions.gridPinchMode?.defaultGridLevel ?? photoAccessHelper.GridLevel.STANDARD;
+        let result: PhotoPickerResult = event?.data?.msg;
+        console.info('testPicker64 result event.data.msg =' + result?.gridPinchMode?.defaultGridLevel);
+        console.info('testPicker64 result expect = ' + expectResult);
+        expect(result?.gridPinchMode?.defaultGridLevel).assertEqual(expectResult);
+      }
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      console.info("testPicker64 JSON.parse(strJson) is" + strJson);
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await clickResultButton(driver);
+      router.back();
+      console.info("testPicker64 finish");
+      events_emitter.off(event.eventId);
+      done();
+    });
+
+    /**
+     * @tc.name   testPicker65
+     * @tc.number testPicker65
+     * @tc.desc   Testing isReturnToPhotoBrowserEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPicker65',Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let sheetPickerOptions: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+      sheetPickerOptions.isReturnToPhotoBrowserEnabled = false;
+      try{
+        let photoPicker = new photoAccessHelper.PhotoViewPicker();
+        photoPicker.select(sheetPickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+          console.info('testPicker65, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
+          JSON.stringify(PhotoSelectResult));
+        })
+      } catch(err) {
+        expect(false).assertTrue();
+        console.error(`testPicker65, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+      }
+      console.info("testPicker65 finish");
+      done();
+    });
+
+    /**
+     * @tc.name   testPicker66
+     * @tc.number testPicker66
+     * @tc.desc   Testing MovingPhotoBadgeStateType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPicker66',Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      let state: photoAccessHelper.MovingPhotoBadgeStateType = 
+        photoAccessHelper.MovingPhotoBadgeStateType.MOVING_PHOTO_ENABLED;
+      pickerOptions.globalMovingPhotoState = state;
+      let pickerController: PickerController = new PickerController();
+      pickerController.setMovingPhotoState(state);
+
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await CommonFunc.sleep(2000);
+      router.back();
+      console.info("testPicker66 finish");
+      done();
+    });
+ 	 
+    /**
+     * @tc.name   testPicker67
+     * @tc.number testPicker67
+     * @tc.desc   Testing requestPhotoUrisReadPermissionEx
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPicker67',Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let uris = ['file://media/photo/test.jpg'];
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
+      try {
+        phAccessHelper.requestPhotoUrisReadPermissionEx(uris).then((result) => {
+          console.info("requestPhotoUrisReadPermissionEx, result = " + JSON.stringify(result));
+          if (result) {
+            expect(true).assertTrue();
+            console.info('success');
+          } else {
+            console.error("testPicker67 empty result");
+            expect(false).assertTrue();
+          }
+        })
+      } catch(error) {
+        console.error("testPicker67 error: " + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
+      console.info("testPicker67 finish");
       done();
     });
   })

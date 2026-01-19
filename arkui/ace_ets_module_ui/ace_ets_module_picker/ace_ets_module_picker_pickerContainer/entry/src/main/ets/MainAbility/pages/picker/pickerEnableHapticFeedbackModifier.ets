@@ -14,14 +14,14 @@
  */
 import { MessageManager, Callback } from '../../common/MessageManager';
 
-class EnabledPickerModifier implements AttributeModifier<PickerAttribute> {
+class EnabledPickerModifier implements AttributeModifier<UIPickerComponentAttribute> {
   private enabled: Optional<boolean> = undefined
 
   constructor(enable?: Optional<boolean>) {
     this.enabled = enable
   }
 
-  applyNormalAttribute(instance: PickerAttribute): void {
+  applyNormalAttribute(instance: UIPickerComponentAttribute): void {
     instance.enableHapticFeedback(this.enabled)
   }
 }
@@ -42,7 +42,7 @@ struct PickerEnableHapticFeedbackModifierPage {
 
   build() {
     Row() {
-      Picker({
+      UIPickerComponent({
         selectedIndex: this.selectedIndex,
       }) {
         ForEach(this.monthArray, (item: string) => {
@@ -62,7 +62,7 @@ struct PickerEnableHapticFeedbackModifierPage {
         }
       })
 
-      Picker({
+      UIPickerComponent({
         selectedIndex: this.selectedIndex,
       }) {
         ForEach(this.monthArray, (item: string) => {
@@ -82,7 +82,7 @@ struct PickerEnableHapticFeedbackModifierPage {
         }
       })
 
-      Picker({
+      UIPickerComponent({
         selectedIndex: this.selectedIndex,
       }) {
         ForEach(this.monthArray, (item: string) => {
@@ -102,7 +102,7 @@ struct PickerEnableHapticFeedbackModifierPage {
         }
       })
 
-      Picker({
+      UIPickerComponent({
         selectedIndex: this.selectedIndex,
       }) {
         ForEach(this.monthArray, (item: string) => {
@@ -122,7 +122,7 @@ struct PickerEnableHapticFeedbackModifierPage {
         }
       })
 
-      Picker({
+      UIPickerComponent({
         selectedIndex: this.selectedIndex,
       }) {
         ForEach(this.monthArray, (item: string) => {

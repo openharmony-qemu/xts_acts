@@ -40,11 +40,11 @@ struct HapticFeedbackMode1 {
       RichEditor(this.optionsR)
         .id('HapticFeedbackMode.ENABLED')
         .onReady((): void => {
-          // this.controllerR.addTextSpan('测试文本', {
-          //   style: {
-          //     fontSize: '15vp'
-          //   }
-          // });
+          this.controllerR.addTextSpan('测试文本', {
+            style: {
+              fontSize: '15vp'
+            }
+          });
 
         })
         .bindSelectionMenu(RichEditorSpanType.DEFAULT, this.panel, RichEditorResponseType.DEFAULT, {
@@ -112,11 +112,11 @@ struct HapticFeedbackMode1 {
       RichEditor(this.optionsR3)
         .id('HapticFeedbackMode.AUTO')
         .onReady((): void => {
-          // this.controllerR3.addTextSpan('测试文本', {
-          //   style: {
-          //     fontSize: '15vp'
-          //   }
-          // });
+          this.controllerR3.addTextSpan('测试文本', {
+            style: {
+              fontSize: '15vp'
+            }
+          });
           this.controllerR3.addImageSpan($r("app.media.icon"),
             {
               imageStyle:

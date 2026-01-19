@@ -315,7 +315,7 @@ export default function AVSessionErrorCode() {
 
         /**
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0200
-         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_0200
          * @tc.desc   test setAVPlaybackState(promise) errcode 401
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST

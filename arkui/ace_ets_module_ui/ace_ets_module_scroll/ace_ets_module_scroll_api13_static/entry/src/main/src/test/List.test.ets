@@ -20,9 +20,9 @@ import tabsOpacityJsunit from './TabsTest/tabsOpacityJsunit.test';
 import offsetRemainScroll from './ScrollTest/offsetRemainScroll.test';
 
 export default function testsuite() {
-  headerListJsunit(); // SDK 12.9 err 1 0702表格256
-  // listItemGroupComponent(); // SDK 12.15 pass 2
-  // tabsOpacityJsunit(); //SDK 12.15 pass 1
-  // offsetRemainScroll(); //SDK 12.15 pass 1
-  // bindTabsScroll(); // master 22 pass
+  headerListJsunit();
+  listItemGroupComponent();
+  tabsOpacityJsunit();
+  offsetRemainScroll();
+  bindTabsScroll();
 }

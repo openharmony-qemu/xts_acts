@@ -15,7 +15,6 @@
 {
   "app": {
     "signingConfigs": [
-
     ],
     "products": [
       {
@@ -30,8 +29,7 @@
             "caseSensitiveCheck": true,
             "useNormalizedOHMUrl": true
           }
-        },
-      }
+        },      }
     ],
     "buildModeSet": [
       {

@@ -29,6 +29,7 @@ export default function windowKeyBorad() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
+    let driver: Driver;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -49,7 +50,7 @@ export default function windowKeyBorad() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
-      let driver: Driver = Driver.create();
+      driver = Driver.create();
       await sleep(1000);
       if (isFreeWindowMode==false) {
         let input = await driver.findComponent(ON.id('textInput'));
@@ -146,7 +147,6 @@ export default function windowKeyBorad() {
             done();
           }
           mainWindow.on('keyboardWillShow', callback);
-          let driver: Driver = Driver.create();
           await sleep(1000);
           let input = await driver.findComponent(ON.id('textInput'));
           console.info(`${caseName}  input: ` + JSON.stringify(input));
@@ -287,7 +287,6 @@ export default function windowKeyBorad() {
             done();
           }
           mainWindow.on('keyboardWillHide', callback);
-          let driver: Driver = Driver.create();
           await sleep(1000);
           let input = await driver.findComponent(ON.id('textInput'));
           await sleep(1000);
@@ -423,7 +422,6 @@ export default function windowKeyBorad() {
           }
           mainWindow.on('keyboardWillHide', callback3);
           mainWindow.on('keyboardWillHide', callback4);
-          let driver: Driver = Driver.create();
           await sleep(1000);
           let input = await driver.findComponent(ON.id('textInput'));
           await sleep(1000);
@@ -497,7 +495,6 @@ export default function windowKeyBorad() {
           mainWindow.on('keyboardWillHide', callback4);
           mainWindow.off('keyboardWillShow', callback1);
           mainWindow.off('keyboardWillHide', callback3);
-          let driver: Driver = Driver.create();
           await sleep(1000);
           let input = await driver.findComponent(ON.id('textInput'));
           await sleep(1000);
@@ -569,7 +566,6 @@ export default function windowKeyBorad() {
 
           mainWindow.off('keyboardWillShow');
           mainWindow.off('keyboardWillHide');
-          let driver: Driver = Driver.create();
           await sleep(1000);
           let input = await driver.findComponent(ON.id('textInput'));
           await sleep(1000);
@@ -628,7 +624,6 @@ export default function windowKeyBorad() {
           mainWindow.on('keyboardWillShow', callback1);
           mainWindow.on('keyboardWillHide', callback2);
 
-          let driver: Driver = Driver.create();
           await sleep(1000);
           let input = await driver.findComponent(ON.id('textInput'));
           await sleep(1000);

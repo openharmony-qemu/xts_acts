@@ -21,6 +21,7 @@ import {
   PreselectedInfo,
   UpdatablePickerConfigs,
   MovingPhotoBadgeStateChangedCallback,
+  PickerError
 } from '@ohos.file.PhotoPickerComponent';
 import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo } from '@ohos.file.AlbumPickerComponent';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
@@ -95,6 +96,7 @@ struct PickerComponent {
     result.preselectedInfos = this.pickerOptions.preselectedInfos ?? [];
     result.isSlidingSupported = this.pickerOptions.isSlidingSupported ?? false;
     result.edgeEffect = this.pickerOptions.edgeEffect ?? EdgeEffect.Spring;
+    result.gridPinchMode = this.pickerOptions.gridPinchMode;
     return result;
   }
 
@@ -146,6 +148,11 @@ struct PickerComponent {
   private onSelectedItemsDeleted(baseItemInfos: Array<BaseItemInfo>): void {
     console.info('onSelectedItemsDeleted');
     // 已勾选图片被删除时的回调
+  }
+
+  private onPinchGridSwitched(gridLevel: photoAccessHelper.GridLevel): void {
+    console.info('onSelectedItemsDeleted');
+    // 捏合图片时的回调
   }
 
   private onExceedMaxSelected(exceedMaxCountType: MaxCountType): void {
@@ -213,6 +220,18 @@ struct PickerComponent {
     this.pickerOptions.preselectedInfos = [...this.selectedUrisWithPickerIndex];
     console.info('onDeselect' + JSON.stringify(this.selectedUris));
   }
+
+  private onPhotoBrowserChangeStart(itemInfo: BaseItemInfo): void {
+ 	  console.info('onPhotoBrowserChangeStart, itemInfo=' + JSON.stringify(itemInfo));
+  }
+
+  private onError(pickerError: PickerError): void {
+    let functionName = pickerError?.functionName;
+    let errorCode = pickerError?.errorCode;
+    let message = pickerError?.message;
+    console.info(`onError, functionName=${functionName}, errorCode=${errorCode}, message=${message}`);
+  }
+ 	 
 
   private onItemClicked(itemInfo: ItemInfo, clickType: ClickType): boolean {
     if (!itemInfo) {
@@ -358,6 +377,9 @@ struct PickerComponent {
         onScrollStopAtStart: this.onScrollStopAtStartCallback,
         onMovingPhotoBadgeStateChanged: this.onMovingPhotoBadgeStateChangedCallback,
         pickerController: this.pickerController,
+        onPinchGridSwitched: (gridLevel: photoAccessHelper.GridLevel): void => this.onPinchGridSwitched(gridLevel),
+        onPhotoBrowserChangeStart: (itemInfo: BaseItemInfo): void => this.onPhotoBrowserChangeStart(itemInfo),
+ 	      onError: (pickerError: PickerError): void => this.onError(pickerError),
       })
         .height('70%')
         .width('100%')

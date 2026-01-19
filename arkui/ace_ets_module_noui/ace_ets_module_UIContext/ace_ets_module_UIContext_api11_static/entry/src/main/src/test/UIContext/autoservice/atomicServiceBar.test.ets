@@ -78,7 +78,7 @@ it('ArkuiContext_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
         console.log('++++++++++++++++2')
           await CommonFunc.sleep(2000);
           if (atomicServiceBar != undefined) {
-              // support service 
+              // support service
               hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
               atomicServiceBar.setVisible(false);
               expect(true).assertTrue();

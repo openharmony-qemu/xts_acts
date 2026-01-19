@@ -277,7 +277,7 @@ export default function AVTransCoderTest() {
     });
     beforeEach(async () => {
       console.info('beforeEach case');
-      await sleep(1000);
+      await mediaTestBase.msleepAsync(500);
       avTranscoder = null;
       outputFdObject = null;
       outputName = '';
@@ -300,7 +300,7 @@ export default function AVTransCoderTest() {
       } catch (error) {
         console.info('closeRawFd' + error);
       }
-      await sleep(1000);
+      await mediaTestBase.msleepAsync(500);
     });
     afterAll(async () => {
       console.info('afterAll case');

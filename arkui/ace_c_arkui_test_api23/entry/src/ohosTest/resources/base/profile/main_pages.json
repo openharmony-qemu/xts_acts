@@ -19,6 +19,17 @@
     "MainAbility/pages/textInput/TextInputCompressLeadingPunctuationTest",
     "MainAbility/pages/distance/DistanceTest",
     "MainAbility/pages/hoverEffect/HoverEffectTest",
-    "MainAbility/pages/monopolize/MonopolizeTest"
+    "MainAbility/pages/monopolize/MonopolizeTest",
+    "MainAbility/pages/textSelection/textSelectionTest",
+    "MainAbility/pages/node/ConvertPositionToWindowTest",
+    "MainAbility/pages/node/IsInRenderStateTest",
+    "MainAbility/pages/node/ConvertPositionFromWindowTest",
+    "MainAbility/pages/deleteBackward/DeleteBackwardTest",
+    "MainAbility/pages/deleteBackward/TextAreaDeleteBackwardTest",
+    "MainAbility/pages/textTest/TextTest",
+    "MainAbility/pages/textTest/TextInputTest",
+    "MainAbility/pages/textTest/TextAreaTest",
+    "MainAbility/pages/SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest",
+    "MainAbility/pages/ScrollToVisible/ScrollToVisible"
   ]
 }

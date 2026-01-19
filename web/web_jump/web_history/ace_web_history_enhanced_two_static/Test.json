@@ -11,7 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsWebHistoryEnhancedTwoStaicTest.hap"
+                "ActsWebHistoryEnhancedTwoStaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

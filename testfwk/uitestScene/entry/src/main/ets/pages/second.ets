@@ -29,11 +29,9 @@ struct Second {
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text(`${this.content}`)
-        .fontSize(50)
         .fontWeight(FontWeight.Bold)
       Button() {
         Text('back to index')
-          .fontSize(20)
           .fontWeight(FontWeight.Bold)
       }.type(ButtonType.Capsule)
       .margin({
@@ -48,7 +46,6 @@ struct Second {
         .width(300)
         .height(50)
         .enabled(true)
-        .fontSize(25)
         .id('changTest')
         .margin({ top: 20 })
       TextInput()
@@ -56,7 +53,6 @@ struct Second {
         .width(300)
         .height(50)
         .enabled(true)
-        .fontSize(25)
         .id('changContext')
         .margin({ top: 20 })
     }

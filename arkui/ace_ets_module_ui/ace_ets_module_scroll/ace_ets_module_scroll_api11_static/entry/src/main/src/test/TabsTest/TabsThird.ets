@@ -970,9 +970,9 @@ it('[ArkUI_Tabs_BarGridAlign_2400]', 0, async (done: () => void): Promise<void> 
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "barGridAlignSmNumber": -2,
-            "barGridAlignMdNumber": 4,
-            "barGridAlignLgNumber": 6
+            "barGridAlignSmNumber": -2.0,
+            "barGridAlignMdNumber": 4.0,
+            "barGridAlignLgNumber": 6.0
            } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -1013,9 +1013,9 @@ it('[ArkUI_Tabs_BarGridAlign_2500]', 0, async (done: () => void): Promise<void> 
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "barGridAlignSmNumber": 100000,
-            "barGridAlignMdNumber": 4,
-            "barGridAlignLgNumber": 6
+            "barGridAlignSmNumber": 100000.0,
+            "barGridAlignMdNumber": 4.0,
+            "barGridAlignLgNumber": 6.0
            } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -1057,8 +1057,8 @@ it('[ArkUI_Tabs_BarGridAlign_2600]', 0, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 'undefined',
-            "barGridAlignMdNumber": 4,
-            "barGridAlignLgNumber": 6
+            "barGridAlignMdNumber": 4.0,
+            "barGridAlignLgNumber": 6.0
            } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -1100,8 +1100,8 @@ it('[ArkUI_Tabs_BarGridAlign_2700]', 0, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 'null',
-            "barGridAlignMdNumber": 4,
-            "barGridAlignLgNumber": 6
+            "barGridAlignMdNumber": 4.0,
+            "barGridAlignLgNumber": 6.0
            } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -5265,7 +5265,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900', 0, async (done: () => v
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "bottomTabBarStyleLabelStyleMaxLines": -1
+            "bottomTabBarStyleLabelStyleMaxLines": -1.0
           } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -5763,7 +5763,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300', 0, async (done: () => v
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "bottomTabBarStyleLabelStyleMaxFontSizeNumber": -1
+            "bottomTabBarStyleLabelStyleMaxFontSizeNumber": -1.0
           } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -6697,7 +6697,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700', 0, async (done: () => v
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "bottomTabBarStyleLabelStyleFontWeightNumber": 150
+            "bottomTabBarStyleLabelStyleFontWeightNumber": 150.0
           } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -6736,7 +6736,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800', 0, async (done: () => v
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "bottomTabBarStyleLabelStyleFontWeightNumber": -1
+            "bottomTabBarStyleLabelStyleFontWeightNumber": -1.0
           } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -6775,7 +6775,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900', 0, async (done: () => v
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "bottomTabBarStyleLabelStyleFontWeightNumber": 100000
+            "bottomTabBarStyleLabelStyleFontWeightNumber": 100000.0
           } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {

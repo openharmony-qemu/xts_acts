@@ -48,7 +48,7 @@ export default function textInputLetterSpacing() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textInputLetterSpacing state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textInputLetterSpacing" == pages.name)) {
           console.info("get textInputLetterSpacing pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

@@ -3344,5 +3344,62 @@ export default function CameraErrorCodeUsecaseTest() {
       }
       done();
     })
+    
+    /**
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_CAMERA_DEVICES_0100
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_CAMERA_DEVICES_0100
+     * @tc.desc   test getCameraDevices api with invalid parameters (error code 7400201)
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_CAMERA_DEVICES_0100', Level.LEVEL0, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_CAMERA_DEVICES_0100--------------");
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_CAMERA_DEVICES_0100 mCameraManager == null || undefined");
+        expect().assertFail();
+        done();
+      }
+      if (isEmpty(mCameraDevicesArray)) {
+        console.info(TAG + "No cameras available for setup");
+        done();
+        return;
+      }
+      await createInput(0);
+      createCameraSessionInstance();
+      mCameraSession.addInput(mCameraInput);
+      createOutput(0);
+      mCameraSession.addOutput(mPreviewOutput);
+      mCameraSession.addOutput(mPhotoOutput);
+      let baseDevice = mCameraDevicesArray[0];
+      let validPos = baseDevice.cameraPosition;
+      let validTypes = [baseDevice.cameraType];
+      let validConn = baseDevice.connectionType;
+      try {
+        console.info(TAG + "Testing Invalid Position: -1");
+        let devices = mCameraManager.getCameraDevices(-1, validTypes, validConn);
+        expect().assertFail();
+      } catch (error) {
+        console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_CAMERA_DEVICES_0100 Invalid Position Code: " + error.code);
+        expect(error.code).assertEqual('7400201');
+      }
+      try {
+        console.info(TAG + "Testing Invalid ConnectionType: -1");
+        let devices = mCameraManager.getCameraDevices(validPos, validTypes, -1);
+        expect().assertFail();
+      } catch (error) {
+        console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_CAMERA_DEVICES_0100 Invalid ConnectionType Code: " + error.code);
+        expect(error.code).assertEqual('7400201');
+      }
+      try {
+        console.info(TAG + "Testing Invalid CameraType inside Array: -1");
+        let devices = mCameraManager.getCameraDevices(validPos, [-1], validConn);
+        expect().assertFail();
+      } catch (error) {
+        console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_CAMERA_DEVICES_0100 Invalid CameraType Code: " + error.code);
+        expect(error.code).assertEqual('7400201');
+      }
+      done();
+    })
   })
 }

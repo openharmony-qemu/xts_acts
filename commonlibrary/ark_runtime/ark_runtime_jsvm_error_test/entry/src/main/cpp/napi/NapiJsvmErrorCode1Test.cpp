@@ -776,6 +776,9 @@ napi_value TestMemoryPressureNotificationJSOK(napi_env env1, napi_callback_info 
     JSVM_Status status = OH_JSVM_MemoryPressureNotification(env, JSVM_MEMORY_PRESSURE_LEVEL_NONE);
     int32_t resValue = (status == JSVM_OK) ? 0 : 1;
 
+    JSVM_Status status2 = OH_JSVM_MemoryPressureNotification(env, JSVM_MEMORY_PRESSURE_LEVEL_LOW_MEMORY);
+    resValue += (status == JSVM_OK);
+
     OH_JSVM_CloseHandleScope(env, handlescope);
     OH_JSVM_CloseEnvScope(env, envScope);
     OH_JSVM_DestroyEnv(env);

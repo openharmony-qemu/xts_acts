@@ -54,14 +54,14 @@ export default function propJsunit() {
     beforeEach(async (): Promise<void> => {
       console.info("propTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/PropRef',
+        url: 'MainAbility/pages/text/Prop',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get propTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("Prop" == pages.name)) {
           console.info("get propTest pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

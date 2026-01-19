@@ -169,7 +169,8 @@ class TestRemoteStub extends rpc.RemoteObject {
       hilog.info(domain, tag, '%{public}s', ' TestRemoteStub broker: ' + broker);
       this.modifyLocalInterface(broker, descriptor);
       hilog.info(domain, tag, '%{public}s', ' modifyLocalInterface done');
-    } catch(err: BusinessError) {
+    } catch(err) {
+      err = err as BusinessError;
       hilog.info(domain, tag, '%{public}s', 'TestRemoteStub error is: ' + err);
       hilog.info(domain, tag, '%{public}s', 'TestRemoteStub error code is: ' + err.code);
       expect(err.code).assertEqual(0);
@@ -6202,10 +6203,15 @@ export default function abilityTest() {
         }
         rpc.IPCSkeleton.restoreCallingIdentity(des);
       } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_Skeleton_restoreCallingIdentity_0200 error is: ' + err);
         expect(err.message == null).assertTrue();
+      } finally {
+        expect(testFlag).assertTrue();
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Skeleton_restoreCallingIdentity_0200 reclaim done');
+        done();
       }
-      done();
       hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_Skeleton_restoreCallingIdentity_0200 --------------------');
     });
 
@@ -6624,12 +6630,14 @@ export default function abilityTest() {
         let res = testRemoteObject.getLocalInterface(des);
       } catch (err) {
         err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_0200 error is: ' + err);
         expect(err.message == null).assertTrue();
       } finally {
+        expect(testFlag).assertTrue();
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_0200 reclaim done');
+        done();
       }
-      done();
       hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_RemoteObject_getLocalInterface_0200 --------------------');
     });
 
@@ -6703,9 +6711,12 @@ export default function abilityTest() {
         let testRemoteObject = new TestRemoteObject('testObject');
         testRemoteObject.modifyLocalInterface(testRemoteObject.getLocalInterface('testObject'), des)
       } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_RemoteObject_modifyLocalInterface_0300 error is: ' + err);
         expect(err.message == null).assertTrue();
       } finally {
+        expect(testFlag).assertTrue();
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_RemoteObject_modifyLocalInterface_0300 reclaim done');
         done();
       }
@@ -7688,14 +7699,16 @@ export default function abilityTest() {
         let res = testRemoteObject.getLocalInterface(des);
       } catch (err) {
         err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 401).assertTrue();
         expect(err.message != null).assertTrue();
       } finally {
+        expect(testFlag).assertFalse();
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_ErrorCode_0100 reclaim done');
+        done();
       }
-      done();
       hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_RemoteObject_getLocalInterface_ErrorCode_0100 --------------------');
     });
 
@@ -7720,8 +7733,8 @@ export default function abilityTest() {
         expect(err.message != null).assertTrue();
       } finally {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0100 reclaim done');
+        done();
       }
-      done();
       hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0100 --------------------');
     });
 
@@ -7748,11 +7761,13 @@ export default function abilityTest() {
         expect(res).assertEqual(des);
       } catch (err) {
         err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 401).assertTrue();
         expect(err.message != null).assertTrue();
       } finally {
+        expect(testFlag).assertFalse();
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0200 reclaim done');
         done();
       }
@@ -7780,11 +7795,13 @@ export default function abilityTest() {
         testRemoteObject.modifyLocalInterface(testRemoteObject.getLocalInterface('testObject'), des)
       } catch (err) {
         err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 401).assertTrue();
         expect(err.message != null).assertTrue();
       } finally {
+        expect(testFlag).assertFalse();
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0100 reclaim done');
         done();
       }
@@ -7811,12 +7828,15 @@ export default function abilityTest() {
         let testRemoteObject = new TestRemoteObject('testObject');
         testRemoteObject.modifyLocalInterface(testRemoteObject.getLocalInterface('testObject'), des)
       } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 401).assertTrue();
         expect(err.message != null).assertTrue();
       } finally {
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0200 reclaim done');
+        expect(testFlag).assertFalse();
         done();
       }
       hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0200 --------------------');
@@ -7842,12 +7862,16 @@ export default function abilityTest() {
         rpc.IPCSkeleton.restoreCallingIdentity(des);
       } catch (err) {
         err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 401).assertTrue();
         expect(err.message != null).assertTrue();
+      } finally {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100 reclaim done');
+        expect(testFlag).assertFalse();
+        done();
       }
-      done();
       hilog.info(domain, tag, '%{public}s','-------------------- end SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100 --------------------');
     });
 
@@ -7870,12 +7894,17 @@ export default function abilityTest() {
         }
         rpc.IPCSkeleton.restoreCallingIdentity(des);
       } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 401).assertTrue();
         expect(err.message != null).assertTrue();
+      } finally {
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0200 reclaim done');
+        expect(testFlag).assertFalse();
+        done();
       }
-      done();
       hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0200 --------------------');
     });
 

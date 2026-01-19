@@ -70,14 +70,14 @@ it('loadingDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.
       try {
         console.info('[loadingDialogTest_static_0100] START');
           let driver = Driver.create();
-          await driver.delayMs(2000);
+          await CommonFunc.sleep(2000);
           // 点击打开loadingDialog
           let openAlertDialog = await driver.findComponent(ON.type('Button').text('LoadingDialog'))
-          openAlertDialog?.click();
-          await driver.delayMs(1000);
+          await (openAlertDialog?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
           // 点击打开loadingDialog是否存在以下入口。
           let content = await driver.findComponent(ON.text('text'));
-          await driver.delayMs(1000);
+          await CommonFunc.sleep(1000);
           console.info('[loadingDialogTest_static_0100] END');
           done();
       } catch (error) {

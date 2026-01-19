@@ -55,7 +55,6 @@ export default function layoutWeightFlexTest() {
     'QRCode',
     'Radio',
     'Rating',
-    'RichText',
     'ScrollBar',
     'Search',
     'Slider',

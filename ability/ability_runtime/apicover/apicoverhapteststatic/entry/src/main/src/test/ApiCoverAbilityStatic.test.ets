@@ -28,6 +28,7 @@ import Want from '@ohos.app.ability.Want';
 import { ElementName } from 'bundleManager.ElementName';
 import rpc from '@ohos.rpc';
 import { BusinessError } from '@ohos.base';
+import { Driver, ON } from '@ohos.UiTest';
 
 class ConnectOptions implements common.ConnectOptions {
   public isConnect: boolean = false;
@@ -63,6 +64,15 @@ export default function ApiCoverStaticTest() {
     const BUNDLE_NAME = 'com.example.apicoverhaptest.static';
 
     beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -193,7 +203,7 @@ export default function ApiCoverStaticTest() {
             expect(Array.isArray(data![i].bundleNames)).assertEqual(true);
             expect(data![i].bundleNames.length).assertLarger(0.0);
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0200 getRunningProcessInformation data' + i + '.state: ' + data![i].state);
-            expect(typeof data![i].state).assertEqual("number");
+            expect(typeof data![i].state).assertEqual("int");
             expect(data![i].state >= -1 && data![i].state <= 5).assertTrue();
           }
           hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0200 getRunningProcessInformation done');

@@ -225,16 +225,21 @@ export default function startAbilityOpenLink() {
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0800', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0800`;
-      link = 'https://'
+      link = 'xxxxx://'
       console.log(`${tag}, it begin`);
       try {
-        context.openLink(link)
-          .catch((error: BusinessError) => {
+        context.openLink(link).then((result) => {
+            console.info(`#${tag}# open link successful`);
+            expect().assertFail();
+            done();
+          }).catch((error: BusinessError) => {
             console.info(`#${tag}# open link err : ${error}`);
-          })
+            expect(error.code).assertEqual(16000019);
+            done();
+          });
       } catch (err) {
         console.info(`#${tag}# open fail : ${err}`);
-        expect(err.code).assertEqual(invalidParamErrNo);
+        expect().assertFail();
         done();
       }
     });

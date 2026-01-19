@@ -47,3 +47,27 @@ export const distanceTest: (a: string) => void;
 export const hoverEffectTest: (a: string) => void;
 
 export const monopolizeTest: (a: string) => void;
+
+export const textSelectionTest: (a: string) => void;
+
+export const TestConvertPositionToWindow001: (a: string) => void;
+
+export const TestIsInRenderState001: (a: string) => void;
+
+export const TestConvertPositionFromWindow001: (a: string) => void;
+
+export const CreateScrollToVisibleNodeTest: (a: string) => void;
+
+export const GetTextAreaScrollToVisibleTest: () => number;
+
+export const GetTextInputScrollToVisibleTest: () => number;
+
+export const DeleteBackwardTest: (a: string) => void;
+
+export const TextAreaDeleteBackwardTest: (a: string) => void;
+
+export const TextTest: (a: string) => void;
+
+export const TextInputTest: (a: string) => void;
+
+export const TextAreaTest: (a: string) => void;

@@ -1479,14 +1479,15 @@ export default function uitestDriverTestApi22() {
      */
     it('tesKnuckleKnockS_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, tesKnuckleKnockS_static start`);
-      let window = await driver.findWindow({ bundleName: 'com.uitest.acts.static' });
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver.delayMs(waitUiReadyMs)
+      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
       console.log(`${TestTag}, tesKnuckleKnockS_static window,${JSON.stringify(window)}`);
       if (window != null) {
         try {
           let windowMode = await window.getWindowMode();
-          if (windowMode != WindowMode.FLOATING) {
-            await window.resume();
-            await driver.delayMs(8000);
+          if (windowMode == WindowMode.FULLSCREEN) {
+            return;
           }
           await window.maximize();
         } catch (error) {
@@ -1532,8 +1533,10 @@ export default function uitestDriverTestApi22() {
         expect(screenPng != null).assertTrue();
         await driver.pressBack();
         await Utils.msSleep(2000)
+        await stopApplication('com.uitestScene.acts')        
       } catch (error: BusinessError) {
         console.log(`${TestTag}, tesKnuckleKnockS_static error, ${JSON.stringify(error)}`);
+        await stopApplication('com.uitestScene.acts')
         expect(error.code).assertEqual(17000005);
       }
       await Utils.msSleep(3000)

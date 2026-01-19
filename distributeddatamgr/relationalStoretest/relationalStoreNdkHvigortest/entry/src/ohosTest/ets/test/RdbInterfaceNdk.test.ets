@@ -255,5 +255,26 @@ export default function rdbInterfaceNdkTest() {
           done();
         }
       });
+      /**
+       * @tc.name   OH_Rdb_ErrCode_0100
+       * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_InterfaceTest_1500
+       * @tc.desc   OH_Rdb_ErrCode_0100
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('OH_Rdb_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let res = testndk.OH_Rdb_ErrCode_0100();
+        console.info(TAG + "OH_Rdb_ErrCode_0100 res=" + res );
+        if(res == 0)
+        {
+          expect(res).assertEqual(0);
+          done();
+        }
+        else{
+          expect(res).assertEqual(1);
+          done();
+        }
+      });
   })
 }

@@ -16,8 +16,8 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
-
-import { Driver } from '@kit.TestKit';
+import {inputMethod} from '@kit.IMEKit';
+import { Driver, ON, BY } from '@kit.TestKit';
 
 const EVENT_ID_SET_SUITE_KEY = 175201;
 const driver = Driver.create();
@@ -26,6 +26,7 @@ const driver = Driver.create();
 @Component
 struct WebOnInterceptKeyEvent {
   controller: webView.WebviewController = new webView.WebviewController();
+  inputMethodController = inputMethod.getController()
   @State str: string = "";
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
@@ -84,6 +85,12 @@ struct WebOnInterceptKeyEvent {
                 await Utils.triggerKey(2047,driver)
                 await Utils.waitForExist(()=>this.isOnInterceptKeyEventEnd, 'isOnInterceptKeyEventEnd', 1, 1000);
                 await Utils.waitForReleaseDriver(this.str,driver)
+                let buttonTwo = await driver.findComponent(ON.id('KeyHideKbd'));
+                if (buttonTwo) {
+                  await buttonTwo.click()
+                } else {
+                  this.inputMethodController.hideTextInput()
+                }
                 Utils.emitEvent(this.onInterceptKeyEventCode, 175210)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);

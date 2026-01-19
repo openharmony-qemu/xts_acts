@@ -285,6 +285,7 @@ static void InitPush6(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("EnumOHAVOutputFormat4", EnumOHAVOutputFormat4));
     desc.push_back(XL("EnumOHAVOutputFormat5", EnumOHAVOutputFormat5));
     desc.push_back(XL("EnumOHAVOutputFormat6", EnumOHAVOutputFormat6));
+    desc.push_back(XL("EnumOHAVOutputFormat7", EnumOHAVOutputFormat7));
     desc.push_back(XL("EnumOHAVColorPrimary1", EnumOHAVColorPrimary1));
     desc.push_back(XL("EnumOHAVColorPrimary2", EnumOHAVColorPrimary2));
     desc.push_back(XL("EnumOHAVColorPrimary3", EnumOHAVColorPrimary3));

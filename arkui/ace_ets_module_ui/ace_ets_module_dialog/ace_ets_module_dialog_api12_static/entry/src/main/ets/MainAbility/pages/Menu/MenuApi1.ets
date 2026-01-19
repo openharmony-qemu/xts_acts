@@ -30,6 +30,7 @@ struct MenuApi1 {
 
   @Builder
   MyMenu() {
+      Column() {
       Menu() {
         MenuItem({
           content: "菜单选项",
@@ -44,17 +45,21 @@ struct MenuApi1 {
         MenuItem({
           content: "菜单选项",
         } as MenuItemOptions).height('8%')
-
-      }.height('80%')
+      }
       .menuItemDivider(undefined)
       .id('Menu')
 
       Text(this.text).id('MenuApi1_text1')
-      Button('getInspectorByKey').onClick((e: ClickEvent) => {
+      Button('getInspectorByKey')
+        .id('MenuApi1_btn2')
+        .onClick((e: ClickEvent) => {
+          console.info("MenuApi1_static_0100 set text0: " + this.text)
         this.text = String(JSON.parseJsonElement(inspector.getInspectorByKey('Menu'))
           .getElement('$attrs')
           .tryGetElement('menuItemDivider'))
-      }).id('MenuApi1_btn2')
+        console.info("MenuApi1_static_0100 set text: " + this.text)
+      })
+    }
   }
 
   build() {

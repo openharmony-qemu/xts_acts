@@ -200,10 +200,6 @@ export const RenderNodeErrorCode052: () => number;
 export const RenderNodeErrorCode053: () => number;
 export const RenderNodeErrorCode054: () => number;
 export const RenderNodeErrorCode055: () => number;
-export const RenderNodeErrorCode056: () => number;
-export const RenderNodeErrorCode057: () => number;
-export const RenderNodeErrorCode058: () => number;
-export const RenderNodeErrorCode059: () => number;
 export const RenderNodeErrorCode060: () => number;
 
 export const RenderNodeNullTest001: () => number;

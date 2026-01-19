@@ -339,6 +339,28 @@ export default function audioRoutingManager() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0200
+     * @tc.desc   Off prefer output device - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let routingManager = audio.getAudioManager().getRoutingManager();
+      try {
+        routingManager.offPreferOutputDeviceChangeForRendererInfo();
+        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0200 SUCCESS`);
+        expect(true).assertTrue();
+        done();
+      } catch (e: BusinessError) {
+        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0200 ERROR: ${e.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0100
      * @tc.desc   Get preferred output device - Sync

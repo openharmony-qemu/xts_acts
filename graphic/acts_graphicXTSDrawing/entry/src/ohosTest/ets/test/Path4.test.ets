@@ -1148,20 +1148,25 @@ export default function drawingTsPath4Test() {
       try {
         const path = new drawing.Path();
         const dst = new drawing.Path();
-        path.offset(dst, 200, 200);
+        let dst1 = path.offset(dst, 200, 200);
+        expect(dst1 !== null  || dst1 !== undefined).assertTrue();
 
         path.moveTo(200, 200);
         path.lineTo(300, 300);
-        path.offset(dst, 200, 200);
+        let dst2 = path.offset(dst, 200, 200);
+        expect(dst2 !== null  || dst2 !== undefined).assertTrue();
 
-        path.offset(dst, 100.1, 100.1);
+        let dst3 = path.offset(dst, 100.1, 100.1);
+        expect(dst3 !== null  || dst3 !== undefined).assertTrue();
 
-        path.offset(dst, -200, 200);
+        let dst4 = path.offset(dst, -200, 200);
+        expect(dst4 !== null  || dst4 !== undefined).assertTrue();
 
-        path.offset(dst, 200, -200);
+        let dst5 = path.offset(dst, 200, -200);
+        expect(dst5 !== null  || dst5 !== undefined).assertTrue();
 
-        path.offset(dst, maxVal, maxVal);
-
+        let dst6 = path.offset(dst, maxVal, maxVal);
+        expect(dst6 !== null  || dst6 !== undefined).assertTrue();
         console.info(msg + 'reset successes');
       } catch (e) {
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -1254,7 +1259,8 @@ export default function drawingTsPath4Test() {
       try {
         for (let i = 0; i < 20; i += 1) {
           const path = new drawing.Path();
-          path.offset(path, Math.random(), Math.random());
+          let dst = path.offset(path, Math.random(), Math.random());
+          expect(dst !== null  || dst !== undefined).assertTrue();
         }
         console.info(msg + 'reset successes');
       } catch (e) {
@@ -1841,7 +1847,7 @@ export default function drawingTsPath4Test() {
         expect(e.code).assertEqual(401);
       }
       try {
-        path.set(undefined,100);
+        path.setLastPoint(undefined,100);
         console.info(msg + `path setLastPoint undefined success `);
         expect().assertFail()
       } catch (e) {

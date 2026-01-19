@@ -23,7 +23,8 @@ group("data") {
     "dataHasDoubleCard:ActsNetworkMgrDataHasDoubleCardTest",
 "ActsCellularDataAbnormalNopTestStatic:ActsCellularDataAbnormalNopStaticTest",
 "ActsTelephonyDataHasCardTestStatic:ActsTelephonyDataHasCardStaticTest",
-"ActsTelephonyDataNoCardTestStatic:ActsTelephonyDataNoCardStaticTest"
+"ActsTelephonyDataNoCardTestStatic:ActsTelephonyDataNoCardStaticTest",
+"ActsCellularDataAbnormalTestStatic:ActsCellularDataAbnormalStaticTest"
     ]
   }
 }

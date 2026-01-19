@@ -32,7 +32,8 @@
         {
             "test-file-name": [
                 "ActsUiTest.hap",
-                "ActsUiTestScene.hap"
+                "ActsUiTestScene.hap",
+                "ActsUiTestEntry.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

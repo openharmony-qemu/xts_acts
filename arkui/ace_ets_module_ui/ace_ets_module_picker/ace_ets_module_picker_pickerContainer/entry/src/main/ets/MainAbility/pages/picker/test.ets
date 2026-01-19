@@ -16,7 +16,7 @@ struct PickerExample {
 
   build() {
     Row() {
-      Picker() {
+      UIPickerComponent() {
         ForEach(this.monthArray, (item: string) => {
           Text(item)
             .fontSize(this.fontSize)

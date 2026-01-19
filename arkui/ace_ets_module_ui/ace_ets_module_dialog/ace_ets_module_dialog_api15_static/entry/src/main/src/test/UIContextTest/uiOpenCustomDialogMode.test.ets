@@ -53,7 +53,7 @@ export default function uiOpenCustomDialogMode() {
         if (!("uiOpenCustomDialogMode" == pages.name)) {
           console.info("get uiOpenCustomDialogMode state pages.name: " + JSON.stringify(pages.name));
           // let result = await uiOpenCustomDialogMode.pushUrl(options);
-          uiOpenCustomDialogMode.pushUrl(options);
+          uiOpenCustomDialogMode.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push uiOpenCustomDialogMode success: " + JSON.stringify(result));
         }
@@ -171,8 +171,8 @@ it('uiopenCustomDialogMode_static_0200', Level.LEVEL1, async (done: () => void):
       done();
     });
 
-    
-    
+
+
 
 /**
      * @tc.number   uiopenCustomDialogMode_static_0300
@@ -223,8 +223,8 @@ it('uiopenCustomDialogMode_static_0300', Level.LEVEL1, async (done: () => void):
       done();
     });
 
-    
-    
+
+
 
 /**
      * @tc.number   uiopenCustomDialogMode_static_0400
@@ -276,8 +276,8 @@ it('uiopenCustomDialogMode_static_0400', Level.LEVEL1, async (done: () => void):
     });
 
 
-     
-    
+
+
 
 /**
      * @tc.number   uiopenCustomDialogMode_static_0500
@@ -318,8 +318,8 @@ it('uiopenCustomDialogMode_static_0500', Level.LEVEL1, async (done: () => void):
     });
 
 
-     
-    
+
+
 
 /**
      * @tc.number   uiopenCustomDialogMode_static_0600
@@ -358,8 +358,8 @@ it('uiopenCustomDialogMode_static_0600', Level.LEVEL1, async (done: () => void):
       done();
     });
 
-    
-    
+
+
 
 /**
      * @tc.number   uiopenCustomDialogMode_static_0700
@@ -411,8 +411,8 @@ it('uiopenCustomDialogMode_static_0700', Level.LEVEL1, async (done: () => void):
       done();
     });
 
-    
-    
+
+
 
 /**
      * @tc.number   uiopenCustomDialogMode_static_0800

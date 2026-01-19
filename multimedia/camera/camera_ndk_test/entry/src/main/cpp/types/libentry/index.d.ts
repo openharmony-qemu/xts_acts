@@ -234,6 +234,8 @@ export const cameraInputClose: () => number;
 
 export const cameraInputRelease: () => number;
 
+export const cameraInputOcclusionDetection: () => number;
+
 export const previewOutputStart: () => number;
 
 export const previewOutputStop: () => number;
@@ -264,6 +266,12 @@ export const metadataOutputStop: () => number;
 
 export const metadataOutputRelease: () => number;
 
+export const MetadataOutputRemoveMetadataObjectTypes: () => number; 
+ 	  
+export const MetadataOutputAddMetadataObjectTypes: () => number; 
+
+export const CreateMetadataOutputWithObjectTypes: () => number; 
+ 	 
 export const sessionBegin: () => number;
 
 export const sessionCommitConfig: () => number;
@@ -334,9 +342,15 @@ export const sessionUnregisterControlCenterEffectStatusChange: (index:number) =>
 
 export const sessionGetPhotoRotation: (a: number) => number;
 
+export const sessionGetPhotoRotationWithoutDeviceDegree: () => number;
+
 export const sessionGetVideoRotation: (a: number) => number;
 
+export const sessionGetVideoRotationWithoutDeviceDegree: () => number;
+
 export const sessionGetPreviewRotation: (a: number) => number;
+
+export const sessionGetPreviewRotationWithoutDisplayRotation: () => number;
 
 export const sessionGetImageRotation: (a: number) => number;
 
@@ -375,6 +389,8 @@ export const oHCameraManagerGetSupportedSceneModes: (index:number) => supportedS
 export const oHCameraManagerDeleteSceneModes: (index:number) => number;
 
 export const oHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode: (index:number) => number;
+
+export const oHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode: (index:number) => number;
 
 export const oHCaptureSessionSetSessionMode: (index:number) => number;
 
@@ -442,9 +458,13 @@ export const oHPhotoOutputSetPhotoQualityPrioritization: (a:number, b:number) =>
 
 export const oHPhotoNativeGetMainImage: (index:number) => number;
 
+export const oHPhotoNativeGetUncompressedImage: (index:number) => number;
+
 export const oHPhotoNativeRelease: (index:number) => number;
 
 export const oHCameraManagerCreatePhotoOutputWithoutSurface: (index:number) => number;
+
+export const oHCameraManagerCreateYuvPhotoOutputWithoutSurface: (index:number) => number;
 
 export const releaseCamera: () => number;
 
@@ -538,6 +558,12 @@ export const oHCameraManagerGetCameraDevice: (index:number) => number;
  
 export const oHCameraManagerGetCameraConcurrentInfos: (index:number) => number;
  
+export const oHCameraManagerGetCameraDevices: (index:number) => number;
+
+export const oHCameraManagerDeleteCameraDevices: (index:number) => number;
+
+export const setInvalidDeviceQueryInfo: (isDeviceQueryInfoInvalid:boolean) => number;
+
 export const oHCameraInputOpenConcurrentCameras: (index:number) => number;
 
 export const oHCameraInputIsPhysicalCameraOrientationVariable: () => orientationVariable;

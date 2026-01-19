@@ -113,24 +113,30 @@ export default function RichEditorOnWillChange013() {
       let onWillBefore = await onWillChange_rangeBefore.getText();
       await CommonFunc.sleep(500);
 
-      expect(onWillBefore.indexOf('onWillChange_rangeBefore:{"start":2,"end":4}') == 0).assertEqual(true);
+      expect(onWillBefore.indexOf('onWillChange_rangeBefore:') == 0).assertEqual(true);
+      expect(onWillBefore.indexOf('"start":2') > 0).assertEqual(true);
+      expect(onWillBefore.indexOf('"end":4') > 0).assertEqual(true);
 
       let onDidChange_rangeBefore = await (driver.findComponent(ON.id('onDidChange_rangeBefore')) as Promise<Component>);
       let onDidBefore = await onDidChange_rangeBefore.getText();
       await CommonFunc.sleep(500);
 
-      expect(onDidBefore.indexOf('onDidChange rangeBefore:{"start":2,"end":4}') == 0).assertEqual(true);
+      expect(onDidBefore.indexOf('onDidChange rangeBefore:') == 0).assertEqual(true);
+      expect(onDidBefore.indexOf('"start":2') > 0).assertEqual(true);
+      expect(onDidBefore.indexOf('"end":4') > 0).assertEqual(true);
 
       let ondid_rangeAfter = await (driver.findComponent(ON.id('ondid_rangeAfter')) as Promise<Component>);
       let ondidRangeAfter = await ondid_rangeAfter.getText();
       await CommonFunc.sleep(500);
-      expect(ondidRangeAfter.indexOf('ondid rangeAfter:{"start":2,"end":2}') == 0).assertEqual(true);
+
+      expect(ondidRangeAfter.indexOf('ondid rangeAfter:') == 0).assertEqual(true);
+      expect(ondidRangeAfter.indexOf('"start":2') > 0).assertEqual(true);
+      expect(ondidRangeAfter.indexOf('"end":2') > 0).assertEqual(true);
 
       let replacedSpansCallback = await (driver.findComponent(ON.id('replacedSpansCallback')) as Promise<Component>);
       let replaceCall = await replacedSpansCallback.getText();
       await CommonFunc.sleep(500);
       expect(replaceCall.indexOf('[]') > 0).assertEqual(true);
-
       done();
     });
 

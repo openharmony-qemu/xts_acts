@@ -24,6 +24,7 @@ import nodeList from './frameNodeTest/nodeList.test';
 import nodeListItemGroup from './frameNodeTest/nodeListItemGroup.test';
 import NodeAdapter001Test from './nodeAdapterTest/NodeAdapter001Test.test';
 import IsOnMainTreeMethodTest from './frameNodeTest/IsOnMainTreeMethodTest.test';
+import isInRenderStateTest from './frameNodeTest/isInRenderStateTest.test';
 
 export default function testsuite() {
   APIsetOnclickTest();
@@ -38,4 +39,6 @@ export default function testsuite() {
   nodeListItemGroup()
   NodeAdapter001Test()
   IsOnMainTreeMethodTest()
+  isInRenderStateTest()
+
 }

@@ -13,13 +13,15 @@
  * limitations under the License.
  */
 import requestCacheDownloadJSTest from './requestCacheDownload.test';
-import requestCacheDownloadHttpJSTest from './RequestCacheDownloadHttp.test'
-import requestCacheDownloadStateSecret from './RequestCacheDownloadStateSecret.test'
-import requestCacheDownloadStrategyJSTest from './RequestCacheDownloadStrategy.test'
+import requestCacheDownloadHttpJSTest from './RequestCacheDownloadHttp.test';
+import requestCacheDownloadStateSecret from './RequestCacheDownloadStateSecret.test';
+import requestCacheDownloadStrategyJSTest from './RequestCacheDownloadStrategy.test';
+import requestCacheDownloadOnOffJSTest from './RequestCacheDownloadOnOff.test';
 
 export default function testsuite() {
   requestCacheDownloadJSTest();
   requestCacheDownloadHttpJSTest();
   requestCacheDownloadStateSecret();
   requestCacheDownloadStrategyJSTest();
+  requestCacheDownloadOnOffJSTest();
 }

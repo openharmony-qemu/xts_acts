@@ -169,7 +169,7 @@ export default function List_divider() {
 	  expect(Math.floor(Math.abs((List_divider_01.bottom - List_divider_01.top) - vp2px(500))) <= 1).assertTrue();
 	  expect(Math.floor(Math.abs((List_divider_01.right - List_divider_01.left) - vp2px(350))) <= 1).assertTrue();
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2),  Math.round(globalThis.winTop + (bottom-top)/2 + top), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(globalThis.winTop + top));
+      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2),  Math.round(globalThis.winTop + (bottom-top)*0.4 + top), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(globalThis.winTop + top));
       await CommonFunc.sleep(3000);
       let List_divider_014Again: RectValue = CommonFunc.getComponentRect('List_divider_014');
       expect(Math.floor(Math.abs(List_divider_01.bottom - List_divider_014Again.bottom)) <= 1)

@@ -49,7 +49,7 @@ export default function textInputEnterKeyTypeTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textInputEnterKeyTypeTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textInputEnterKeyType" == pages.name)) {
           console.info("get textInputEnterKeyTypeTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

@@ -46,6 +46,8 @@ const int ERR_CODE_6 = 6;
 const int ERR_CODE_7 = 7;
 const int ERR_CODE_8 = 8;
 const int ERR_CODE_9 = 9;
+const int ERR_CODE_10 = 10;
+const int ERR_CODE_11 = 11;
 const uint64_t UNIT_STACK_SIZE = 2 * 1024 * 1024;
 const uint64_t UNIT_TASK_DELAY = 200000;
 const uint32_t TASK_SUBMIT_REF = 2;
@@ -4113,6 +4115,36 @@ static napi_value ffrtQueueQosCheck(napi_env env, napi_callback_info info)
     queueqos = ffrt_queue_attr_get_qos(&queue_attr);
     if (queueqos != static_cast<int>(ffrt::qos_default)) {
         result = ERR_CODE_5;
+    }
+    ffrt_queue_attr_set_qos(&queue_attr, static_cast<ffrt_qos_t>(ffrt::qos_deadline_request));
+    queueqos = ffrt_queue_attr_get_qos(&queue_attr);
+    if (queueqos != static_cast<int>(ffrt::qos_deadline_request)) {
+        result = ERR_CODE_6;
+    }
+    ffrt_queue_attr_set_qos(&queue_attr, static_cast<ffrt_qos_t>(ffrt::qos_user_interactive));
+    queueqos = ffrt_queue_attr_get_qos(&queue_attr);
+    if (queueqos != static_cast<int>(ffrt::qos_user_interactive)) {
+        result = ERR_CODE_7;
+    }
+    ffrt_queue_attr_set_qos(&queue_attr, static_cast<ffrt_qos_t>(ffrt::qos_max));
+    queueqos = ffrt_queue_attr_get_qos(&queue_attr);
+    if (queueqos != static_cast<int>(ffrt::qos_max)) {
+        result = ERR_CODE_8;
+    }
+    ffrt_queue_attr_set_qos(&queue_attr, static_cast<int>(ffrt_qos_deadline_request));
+    queueqos = ffrt_queue_attr_get_qos(&queue_attr);
+    if (queueqos != static_cast<int>(ffrt_qos_deadline_request)) {
+        result = ERR_CODE_9;
+    }
+    ffrt_queue_attr_set_qos(&queue_attr, static_cast<int>(ffrt_qos_user_interactive));
+    queueqos = ffrt_queue_attr_get_qos(&queue_attr);
+    if (queueqos != static_cast<int>(ffrt_qos_user_interactive)) {
+        result = ERR_CODE_10;
+    }
+    ffrt_queue_attr_set_qos(&queue_attr, static_cast<int>(ffrt_qos_max));
+    queueqos = ffrt_queue_attr_get_qos(&queue_attr);
+    if (queueqos != static_cast<int>(ffrt_qos_max)) {
+        result = ERR_CODE_11;
     }
     ffrt_mutex_t mutex = {0};
     ffrt_fiber_t fiber = {0};

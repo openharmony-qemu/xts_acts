@@ -26,7 +26,7 @@ const CREATE_TABLE_ALL_DATA_TYPE_SQL = "CREATE TABLE IF NOT EXISTS test "
   + "name TEXT NOT NULL  , age INTEGER , salary REAL , blobType BLOB ) ;";
 
 let str: ValueType = "zhangSan";
-let num: ValueType = 18;
+let num: ValueType = 18 as long;
 let bool: ValueType = true;
 let vb: ValuesBucket = {
   "name": str,
@@ -94,7 +94,7 @@ export default function dataSharePredicatesTest() {
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.equalTo("name", "zhangSan");
         predicates.and();
-        predicates.equalTo("age", 18);
+        predicates.equalTo("age", 18 as long);
         expect(predicates != null && predicates != undefined).assertTrue()
       } catch (e: BusinessError) {
         expect().assertFail()
@@ -113,7 +113,7 @@ export default function dataSharePredicatesTest() {
     it('testIn0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
 
       try {
-        let numbersArr = new Array<ValueType>(255, 11.6, 13.0);
+        let numbersArr = new Array<ValueType>(255.0, 11.6, 13.0);
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         // Replace static in with inValues interface.
         predicates.inValues("age", numbersArr);
@@ -154,7 +154,7 @@ export default function dataSharePredicatesTest() {
     it('testGreaterThan0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
-        predicates.greaterThan("age", 18);
+        predicates.greaterThan("age", 18 as long);
         expect(predicates != null && predicates != undefined).assertTrue()
       }catch (e: BusinessError) {
         expect().assertFail()
@@ -173,7 +173,7 @@ export default function dataSharePredicatesTest() {
     it('testGreaterThanOrEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
-        predicates.greaterThanOrEqualTo("age", 18);
+        predicates.greaterThanOrEqualTo("age", 18 as long);
         expect(predicates != null && predicates != undefined).assertTrue()
       }catch (e: BusinessError) {
         expect().assertFail()
@@ -192,7 +192,7 @@ export default function dataSharePredicatesTest() {
     it('testLessThanOrEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
-        predicates.lessThanOrEqualTo("age", 18);
+        predicates.lessThanOrEqualTo("age", 18 as long);
         expect(predicates != null && predicates != undefined).assertTrue()
       }catch (e: BusinessError) {
         expect().assertFail()
@@ -211,7 +211,7 @@ export default function dataSharePredicatesTest() {
     it('testLessThan0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
-        predicates.lessThan("age", 18);
+        predicates.lessThan("age", 18 as long);
         expect(predicates != null && predicates != undefined).assertTrue()
       }catch (e: BusinessError) {
         expect().assertFail()
@@ -230,7 +230,7 @@ export default function dataSharePredicatesTest() {
     it('testNotEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
-        predicates.notEqualTo("age", 18);
+        predicates.notEqualTo("age", 18 as long);
         expect(predicates != null && predicates != undefined).assertTrue()
       }catch (e: BusinessError) {
         expect().assertFail()
@@ -249,7 +249,7 @@ export default function dataSharePredicatesTest() {
     it('testNotBetween0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
-        predicates.notBetween("age", 18,24);
+        predicates.notBetween("age", 18 as long, 24 as long);
         expect(predicates != null && predicates != undefined).assertTrue()
       }catch (e: BusinessError) {
         expect().assertFail()
@@ -268,7 +268,7 @@ export default function dataSharePredicatesTest() {
     it('testBetween0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
-        predicates.between("age", 18,24);
+        predicates.between("age", 18 as long, 24 as long);
         expect(predicates != null && predicates != undefined).assertTrue()
       }catch (e: BusinessError) {
         expect().assertFail()
@@ -287,7 +287,7 @@ export default function dataSharePredicatesTest() {
     it('testNotInValues0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
-        predicates.notInValues("age", [2,4]);
+        predicates.notInValues("age", [2 as long, 4 as long]);
         expect(predicates != null && predicates != undefined).assertTrue()
       }catch (e: BusinessError) {
         expect().assertFail()
@@ -306,10 +306,10 @@ export default function dataSharePredicatesTest() {
     it('testBeginWrap0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
-        predicates.notEqualTo("age", 18)
+        predicates.notEqualTo("age", 18 as long)
         .or()
         .beginWrap()
-        .equalTo("age", 24)
+        .equalTo("age", 24 as long)
         .endWrap()
         .like("name","li%");
         expect(predicates != null && predicates != undefined).assertTrue()

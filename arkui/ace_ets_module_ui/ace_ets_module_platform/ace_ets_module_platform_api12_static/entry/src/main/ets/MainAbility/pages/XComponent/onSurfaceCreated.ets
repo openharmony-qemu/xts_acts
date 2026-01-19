@@ -42,12 +42,12 @@ import {
 } from '@ohos.arkui.component';
 import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 
-// let para: Record<string,string> = {
-//   'onSurfaceCreated': 'Init',
-//   'onSurfaceChanged': 'Init',
-//   'onSurfaceDestroyed': 'Init',
-//   } as Record<string,string>;
-// let storage: LocalStorage = new LocalStorage(para);
+let para: Record<string,string> = {
+  'onSurfaceCreated': 'Init',
+  'onSurfaceChanged': 'Init',
+  'onSurfaceDestroyed': 'Init',
+  } as Record<string,string>;
+let storage: LocalStorage = new LocalStorage(para);
 
 
 class CustomXComponentController extends XComponentController {
@@ -92,11 +92,11 @@ struct onSurfaceCreated1 {
         })
       Text(this.changeText).id('onSurfaceChanged_text')
         .onClick((e: ClickEvent) => {
-          // this.changeText = AppStorage.get<string>('onSurfaceChanged')!
+          this.changeText = AppStorage.get<string>('onSurfaceChanged')!
         })
       Text(this.destroyText).id('onSurfaceDestroyed_text')
         .onClick((e: ClickEvent) => {
-          // this.destroyText = AppStorage.get<string>('onSurfaceDestroyed')!
+          this.destroyText = AppStorage.get<string>('onSurfaceDestroyed')!
         })
       Button("change size").id('onSurfaceChanged_button')
         .onClick((e: ClickEvent) => {

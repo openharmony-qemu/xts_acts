@@ -2,6 +2,8 @@
     "src": [
         "MainAbility/pages/index/index",
         "MainAbility/pages/GestureGroup/gesture",
-        "MainAbility/pages/addGestureApplyGesture"
+        "MainAbility/pages/addGestureApplyGesture",
+        "MainAbility/pages/GestureType/BoxSelect",
+        "MainAbility/pages/GestureType/WebTextMenuGesture"
     ]
 }

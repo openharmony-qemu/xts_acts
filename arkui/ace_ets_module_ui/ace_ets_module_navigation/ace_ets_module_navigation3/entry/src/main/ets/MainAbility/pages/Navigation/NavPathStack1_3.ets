@@ -80,35 +80,42 @@ struct NavPathStack1_3{
         Button('pushPath pageOne').onClick((event: ClickEvent) => {
           this.derivedStack.pushPath({name:'pageOne'})
         }).id('NavPathStack1_3_btn1')
+          .height('5%')
 
         Button('pushPathByName pageTwo').onClick((event: ClickEvent) => {
           this.derivedStack.pushPathByName1('pageTwo',new param('ok'))
         }).id('NavPathStack1_3_btn2')
+          .height('5%')
 
         Button('pushPathByName(onPop) pageThree').onClick((event: ClickEvent) => {
           this.derivedStack.pushPathByName2('pageThree',new param('ok'),(popInfo) => {
             console.log(popInfo.info.name)
           })
         }).id('NavPathStack1_3_btn3')
+          .height('5%')
 
         Button('pushDestination pageOne').onClick((event: ClickEvent) => {
           this.derivedStack.pushDestination({name:'pageOne'})
         }).id('NavPathStack1_3_btn4')
+          .height('5%')
 
         Button('pushDestinationByName pageOne').onClick((event: ClickEvent) => {
           this.derivedStack.pushDestinationByName1('pageOne',new param('ok'))
         }).id('NavPathStack1_3_btn5')
+          .height('5%')
 
         Button('pushDestinationByName(onPop) pageOne').onClick((event: ClickEvent) => {
           this.derivedStack.pushDestinationByName2('pageOne',new param('ok'),(popInfo) => {
             console.log(popInfo.info.name)
           })
         }).id('NavPathStack1_3_btn6')
+          .height('5%')
       }
     }
     .title('navigation')
     .navDestination(this.pageMap)
     .mode(NavigationMode.Split)
+    .titleMode(NavigationTitleMode.Mini)
   }
 }
 

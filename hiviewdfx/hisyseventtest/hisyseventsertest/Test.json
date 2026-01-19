@@ -23,7 +23,8 @@
                 "service_control stop hiview"
             ],
             "teardown-command": [
-                "service_control start hiview"
+                "service_control start hiview",
+                "sleep 60"
             ]
         }
     ]

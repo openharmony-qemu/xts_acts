@@ -75,7 +75,7 @@ build() {
         .onWillChange((value: RichEditorChangeValue): boolean=> {
           value.replacedImageSpans!.forEach((item: RichEditorImageSpanResult) => {
             console.log('RichEditorController item:' + JSON.stringify(item));
-            this.imageStyle = JSON.stringify(item.imageStyle.layoutStyle);
+            this.imageStyle = JSON.stringify(item.imageStyle.layoutStyle?.margin);
           })
           return true
         })

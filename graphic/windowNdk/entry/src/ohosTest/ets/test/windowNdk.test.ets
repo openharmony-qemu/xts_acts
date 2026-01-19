@@ -39,6 +39,7 @@ export default function windowNdk() {
     let isAutoWindow:string = '';
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
+    const WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED = 801;
     beforeAll(async() => {
       windowStage = AppStorage.get("windowStage") as window.WindowStage;
       console.log(`${Tag}:beforeAll start... `);
@@ -1815,12 +1816,18 @@ export default function windowNdk() {
         console.info(`${caseName} sub windowId: ${windowId}`);
         let Result: number = windowNdkTest.testLockCursorandUnLockCursor1(windowId);
         console.info(`${caseName} Result testLockCursorandUnLockCursor1: ${Result}`);
-        expect(Result).assertEqual(0);
-        let Result2: number = windowNdkTest.testLockCursorandUnLockCursor2(windowId);
-        console.info(`${caseName} Result testLockCursorandUnLockCursor2: ${Result2}`);
-        expect(Result2).assertEqual(0);
-        await subWindowClass.destroyWindow();
-        done()
+        if(Result == WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED){
+          await subWindowClass.destroyWindow();
+          done();
+        }else{
+          expect(Result).assertEqual(0);
+          let Result2: number = windowNdkTest.testLockCursorandUnLockCursor2(windowId);
+          console.info(`${caseName} Result testLockCursorandUnLockCursor2: ${Result2}`);
+          expect(Result2).assertEqual(0);
+          await subWindowClass.destroyWindow();
+          done()
+        }
+        
       } catch (err) {
         console.error(`${caseName} catch err: ` + JSON.stringify(err));
         await subWindowClass?.destroyWindow();

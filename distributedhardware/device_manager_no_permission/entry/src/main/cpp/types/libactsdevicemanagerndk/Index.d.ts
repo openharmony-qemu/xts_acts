@@ -13,3 +13,5 @@
  * limitations under the License.
  */
 export const GetLocalDeviceNameErrorCodeOK: ()=> number;
+export const FisrtGetLocalDeviceNameErrorCode401: ()=> number;
+export const SecondGetLocalDeviceNameErrorCode401: ()=> number;

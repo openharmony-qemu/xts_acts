@@ -74,7 +74,7 @@ it('APICanvasSizeTest_static_0100', Level.LEVEL2 , async (done: () => void): Pro
       console.info("[APICanvasSizeTest_static_0100] heightParent is: " + heightParent);
 
       let button1 = await driver.findComponent(ON.id('APICanvasSizeButton1'));
-      button1?.click();
+      await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
       let strJson = inspector.getInspectorByKey('APICanvasSizeText1');
@@ -104,7 +104,7 @@ it('APICanvasSizeTest_static_0200', Level.LEVEL2 , async (done: () => void): Pro
       console.info("[APICanvasSizeTest_static_0200] heightParent is: " + heightParent);
 
       let button1 = await driver.findComponent(ON.id('APICanvasSizeButton2'));
-      button1?.click();
+      await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
       let strJson = inspector.getInspectorByKey('APICanvasSizeText2');

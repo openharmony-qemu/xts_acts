@@ -91,7 +91,7 @@ struct SheetSizeExample1 {
           this.myBuilder()
         },
           {
-            // detents: this.detents as TripleLengthDetents,
+            detents: this.detents as TripleLengthDetents,
             backgroundColor: Color.Gray,
             blurStyle: BlurStyle.Thick,
             showClose: true,

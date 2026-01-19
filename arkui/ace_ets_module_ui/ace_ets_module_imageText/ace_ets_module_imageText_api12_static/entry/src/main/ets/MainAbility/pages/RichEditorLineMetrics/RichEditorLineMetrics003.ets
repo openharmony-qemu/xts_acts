@@ -55,22 +55,6 @@ build() {
 
     Column() {
       Text('lineMetrics:' + this.lineMetrics).id('lineMetrics')
-      Button('get lineMetrics(null)').id('getFirst')
-        .onClick((e: ClickEvent) => {
-          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
-          let lineMetrics = layoutManager.getLineMetrics(0);
-          console.log('RichEditorController 0 lineMetrics:' + lineMetrics);
-          this.lineMetrics = JSON.stringify(lineMetrics);
-        })
-        .margin({ bottom: 20, top: 10 } as Margin)
-      Button('get lineMetrics(undefined)').id('getUndefined')
-        .onClick((e: ClickEvent) => {
-          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
-          let lineMetrics = layoutManager.getLineMetrics(0);
-          console.log('RichEditorController 0 lineMetrics:' + lineMetrics);
-          this.lineMetrics = JSON.stringify(lineMetrics);
-        })
-        .margin({ bottom: 20, top: 10 } as Margin)
       Button('get lineMetrics(-1)').id('get1')
         .onClick((e: ClickEvent) => {
           let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;

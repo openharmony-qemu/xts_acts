@@ -44,17 +44,15 @@ struct V1ObjectLink {
   @State resultText: string | undefined = 'this is null'
 
   build() {
-    Column({ space: 20 }) {
+    Column() {
       Text(this.resultText)
         .id('LocalStorageLinkText')
-        .fontSize(16)
+        .height('5%')
         .textAlign(TextAlign.Center)
-        .width('80%')
-
+        
       Button('testV1')
         .id('LocalStorageLinkTest')
-        .fontSize(20)
-        .margin(10)
+        .height('5%')
         .onClick(() => {
           this.resultText = '';
           this.resultText = this.resultText + text(this.z)

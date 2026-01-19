@@ -224,9 +224,9 @@ struct HitTestBehaviorPage {
         Blank().backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
       }
     } else if (this.targetView == 'Text') {
-      Text('text1') {
-        Span('span').applyStyles(this.onChildTouchStyle)
-      }.applyStyles(this.commonStyle)
+      // Text('text1') {
+      //   Span('span').applyStyles(this.onChildTouchStyle)
+      // }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Checkbox') {
       Checkbox({ name: 'checkbox1', group: 'checkboxGroup' }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'CheckboxGroup') {

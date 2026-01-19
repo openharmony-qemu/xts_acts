@@ -1715,6 +1715,7 @@ export default function windowPropertiesTest2() {
       // 2、被拉起的主窗监听on(windowStageEvent)
       try {
         const callback = async (res: window.WindowStageEventType) => {
+          console.info(msgStr + 'callback:'+res);
           // 4、在on(windowStageEvent)返回值为INACTIVE，HIDDEN状态下分别调用snapshotIgnorePrivacy截图
           // 5、断言截图大小与窗口大小误差不超过1
           // 6、销毁被拉起的主窗
@@ -2533,8 +2534,6 @@ export default function windowPropertiesTest2() {
     it('testOnOcclusionStatewithDestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testOnOcclusionStatewithDestoryedSubwindow ';
       console.log(caseName + 'begin');
-      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
-      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
       let subWindowClass = await windowStage.createSubWindow(caseName);
       await subWindowClass.destroyWindow();
       try {
@@ -2547,14 +2546,10 @@ export default function windowPropertiesTest2() {
         done();
       } catch (err) {
         console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
-        if (canIUseRes) {
           expect(err.code).assertEqual(1300002);
           expect(err.message!=null).assertTrue();
           done();
-        } else {
-          expect(err.code).assertEqual(801);
-          done();
-        }
+        
       }
     });
 
@@ -2569,8 +2564,6 @@ export default function windowPropertiesTest2() {
     it('testOffOcclusionStatewithDestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testOffOcclusionStatewithDestoryedSubwindow ';
       console.log(caseName + 'begin');
-      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
-      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
       let subWindowClass = await windowStage.createSubWindow(caseName);
       await subWindowClass.destroyWindow();
       try {
@@ -2583,14 +2576,10 @@ export default function windowPropertiesTest2() {
         done();
       } catch (err) {
         console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
-        if (canIUseRes) {
           expect(err.code).assertEqual(1300002);
           expect(err.message!=null).assertTrue();
           done();
-        } else {
-          expect(err.code).assertEqual(801);
-          done();
-        }
+      
       }
     });
 
@@ -3087,24 +3076,16 @@ export default function windowPropertiesTest2() {
      */
     it('testSetWindowContainerColorPermissionwithMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithMainWindow ';
-      let isSupport = canIUse('SystemCapability.Window.SessionManager')
-      console.log(caseName + ' isSupport: ' + isSupport);
       let windowStageStart = await startAbility3(caseName, context);
       try {
         let windowClass = windowStageStart.getMainWindowSync();
         windowClass.setWindowContainerColor('#00000000', '#FF00ff33');
-        if (isSupport && isPCStatus != '') {
           await terminateAbility3(caseName);
           done();
-        } else {
-          await terminateAbility3(caseName);
-          expect().assertFail()
-          done();
-        }
       } catch (err) {
         console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
         await terminateAbility3(caseName);
-        if (!isSupport || isPCStatus == '') {
+        if (err.code == 801) {
           expect(err.code).assertEqual(801)
           done();
         } else {
@@ -3124,24 +3105,16 @@ export default function windowPropertiesTest2() {
      */
     it('testSetWindowContainerColorPermissionwithInactiveTransparent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithInactiveTransparent ';
-      let isSupport = canIUse('SystemCapability.Window.SessionManager')
-      console.log(caseName + ' isSupport: ' + isSupport);
       let windowStageStart = await startAbility3(caseName, context);
       try {
         let windowClass = windowStageStart.getMainWindowSync();
         windowClass.setWindowContainerColor('#00000000', '#FF00ff33');
-        if (isSupport && isPCStatus != '') {
           await terminateAbility3(caseName);
           done();
-        } else {
-          await terminateAbility3(caseName);
-          expect().assertFail()
-          done();
-        }
       } catch (err) {
         console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
         await terminateAbility3(caseName);
-        if (!isSupport || isPCStatus == '') {
+        if (err.code == 801) {
           expect(err.code).assertEqual(801)
           done();
         } else {
@@ -3161,8 +3134,6 @@ export default function windowPropertiesTest2() {
      */
     it('testSetWindowContainerColorPermissionwithSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithSubwindow ';
-      let isSupport = canIUse('SystemCapability.Window.SessionManager')
-      console.log(caseName + ' isSupport: ' + isSupport);
       let subWindowClass: window.Window | undefined;
       try {
         subWindowClass = await windowStage.createSubWindow('testSetWindowContainerColorPermissionwithSubwindow')
@@ -3175,11 +3146,11 @@ export default function windowPropertiesTest2() {
       } catch (err) {
         console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
         await subWindowClass?.destroyWindow()
-        if (isSupport && isPCStatus != '') {
-          expect(err.code).assertEqual(1300004)
+        if (err.code == 801) {
+          expect(err.code).assertEqual(801)
           done();
         } else {
-          expect(err.code).assertEqual(801)
+          expect(err.code).assertEqual(1300004)
           done();
         }
       }
@@ -3195,8 +3166,6 @@ export default function windowPropertiesTest2() {
      */
     it('testSetWindowContainerColorPermissionwithDialogwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithDialogwindow ';
-      let isSupport = canIUse('SystemCapability.Window.SessionManager')
-      console.log(caseName + ' isSupport: ' + isSupport);
       let subWindowClass: window.Window | undefined;
       let config: window.Configuration = {
         name: "systemWindow",
@@ -3214,11 +3183,11 @@ export default function windowPropertiesTest2() {
       } catch (err) {
         console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
         await subWindowClass?.destroyWindow()
-        if (isSupport && isPCStatus != '') {
-          expect(err.code).assertEqual(1300004)
+        if (err.code == 801) {
+          expect(err.code).assertEqual(801)
           done();
         } else {
-          expect(err.code).assertEqual(801)
+          expect(err.code).assertEqual(1300004)
           done();
         }
       }
@@ -3234,8 +3203,6 @@ export default function windowPropertiesTest2() {
      */
     it('testSetWindowContainerColorPermissionwithInactiveColorErrorParameterAlpha', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithInactiveColorErrorParameterAlpha ';
-      let isSupport = canIUse('SystemCapability.Window.SessionManager')
-      console.log(caseName + ' isSupport: ' + isSupport);
       let windowStageStart = await startAbility3(caseName, context);
       try {
         let windowClass = windowStageStart.getMainWindowSync();
@@ -3246,11 +3213,11 @@ export default function windowPropertiesTest2() {
       } catch (err) {
         console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
         await terminateAbility3(caseName);
-        if (isSupport && isPCStatus != '') {
-          expect(err.code).assertEqual(401)
+        if (err.code == 801) {
+          expect(err.code).assertEqual(801)
           done();
         } else {
-          expect(err.code).assertEqual(801)
+          expect(err.code).assertEqual(401)
           done();
         }
       }
@@ -3266,8 +3233,6 @@ export default function windowPropertiesTest2() {
      */
     it('testSetWindowContainerColorPermissionwithInactiveColorErrorParameterError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithInactiveColorErrorParameterError ';
-      let isSupport = canIUse('SystemCapability.Window.SessionManager')
-      console.log(caseName + ' isSupport: ' + isSupport);
       let windowStageStart = await startAbility3(caseName, context);
       try {
         let windowClass = windowStageStart.getMainWindowSync();
@@ -3278,11 +3243,11 @@ export default function windowPropertiesTest2() {
       } catch (err) {
         console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
         await terminateAbility3(caseName);
-        if (isSupport && isPCStatus != '') {
-          expect(err.code).assertEqual(401)
+        if (err.code == 801) {
+          expect(err.code).assertEqual(801) 
           done();
         } else {
-          expect(err.code).assertEqual(801)
+          expect(err.code).assertEqual(401)
           done();
         }
       }

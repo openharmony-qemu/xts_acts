@@ -60,6 +60,14 @@ import RelationStoreError801Test from "./RelationStoreError801Api.test";
 import RelationStoreError1001Test from "./RelationStoreError1001Api.test";
 import RelationStoreSqlExecTimeTest from "./RelationStoreSqlExecTimeTest.test";
 import VectorStore from "./VectorStore.test";
+import RdbStoreSqliteErrorOccurredTest from  "./RdbOnErrorLog.test";
+import RdbStoreDataChangeTestEts from  "./RdbStoreDataChangeEts.test";
+import PerfStatEtsTest from  "./RdbStorePerfStatEts.test";
+import RdbstorePredicatesEts from "./RdbStorePredicatesEts.test";
+import RdbstoreRekeyEts from "./RdbStoreRekeyEts.test";
+import RelationalStoreRekeyExEtsTest from "./RelationalStoreRekeyExEtsTest.test";
+import RdbStoreGetSqlInfoTest from "./RdbStoreGetSqlInfoEts.test";
+import RdbStoreSetLocaleTest from "./RdbStoreSetLocaleEts.test"
 
 export default function testsuite() {
   RelationStoreRdbStoreTest();
@@ -115,4 +123,15 @@ export default function testsuite() {
 
   CallbackTest();
   AsyncCallback();
+
+  RdbStoreSqliteErrorOccurredTest();
+  RdbStoreDataChangeTestEts();
+  PerfStatEtsTest();
+
+  RdbstorePredicatesEts();
+  RdbstoreRekeyEts();
+  RelationalStoreRekeyExEtsTest();
+
+  RdbStoreGetSqlInfoTest();
+  RdbStoreSetLocaleTest();
 }

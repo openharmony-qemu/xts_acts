@@ -53,20 +53,20 @@ struct RelativeGuideLine2 {
 
         Button('changeDir').onClick(() => {
           this.guideLineDir1 = Axis.Vertical
-        }).key('changeDir2')
+        }).key('changeDir2').width('30%')
 
         Button('changeId').onClick(() => {
           this.guideLineDir1 = Axis.Horizontal
           this.guideLineDir2 = Axis.Vertical
           this.anchor1 = 'guideLine2'
-        }).key('changeId2')
+        }).key('changeId2').width('30%')
 
         Button('setEnd').onClick(() => {
           this.guideLineDir1 = Axis.Horizontal
           this.guideLineDir2 = Axis.Vertical
           this.anchor1 = 'guideLine2'
           this.linePosition = { end: -50 }
-        }).key('setEnd')
+        }).key('setEnd').width('30%')
 
       }.height('10%')
 

@@ -264,7 +264,7 @@ struct ImageEffectsExample {
       if (data['blurValue'] != null) {
         console.log('test blurValue start is: ' + data['blurValue'])
         this.blurValue = data['blurValue'] as Long
-        console.log('test blurValue end is: ' + this.blurValue)
+        console.log('test blurValue end is: ' + this.blurValue) // test blurValue end is: 2147483648
       }
       if (data['shadowValue'] != null) {
         console.log('test shadowValue start is: ' + JSON.stringify(data['shadowValue']))

@@ -79,6 +79,7 @@ struct WebViewControllerDownloadTest {
   failedDownload: webview.WebDownloadItem = new webview.WebDownloadItem();
 
   aboutToAppear() {
+    console.info('Entry aboutToAppear');
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
       priority: events_emitter.EventPriority.LOW

@@ -136,14 +136,21 @@ export default function drawingTsCanvasPart4Test() {
           alpha: 0.1, red: 0.1, green: 0.1, blue: 0.1
         });
 
-        console.info(msg + 'test successes');
+        console.info(msg + ' 1 test successes');
       } catch (e) {
-        console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 1 test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        const canvas = new drawing.Canvas(pixel);
+        let color: number = 0xffff0000;
+        canvas.clear(color);
+        console.info(msg + ' 2 test successes');
+      } catch (e) {
+        console.info(msg + ` 2 test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
     })
-
-
     /**
      * @tc.name   testCanvasClearMultipleCalls
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_2601

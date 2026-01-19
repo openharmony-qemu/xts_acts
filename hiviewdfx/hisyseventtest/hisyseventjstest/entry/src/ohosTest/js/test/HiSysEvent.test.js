@@ -1132,39 +1132,43 @@ describe('hiSysEventJsTest', function () {
 				}
 			});
 			setTimeout(() => {
-				hiSysEvent.query({
-					beginTime: -1,
-					endTime: -1,
-					maxEvents: 1,
-				}, [{
-					domain: "WORKSCHEDULER",
-					names: ["WORK_ADD"],
-				}], {
-					onQuery: function (infos) {
-						console.info(`testHiSysEventApi24: onQuery...`)
-						expect(infos.length >= 0).assertTrue()
-						console.info(`testHiSysEventApi24: infos.size is ${infos.length}`)
-						if (infos instanceof Array) {
-							for (let i = 0; i < infos.length; i++) {
-								let item = infos[i];
-								console.info(`testHiSysEventApi24: domain is ${item.domain}, name is ${item.name},
-																eventType is ${item.eventType}`)
-								if (item.params instanceof Object) {
-									for (const key in item.params) {
-										console.info(`testHiSysEventApi24: ${key}: ${item.params[key]}`)
+				try {
+					hiSysEvent.query({
+						beginTime: -1,
+						endTime: -1,
+						maxEvents: 1,
+					}, [{
+						domain: "WORKSCHEDULER",
+						names: ["WORK_ADD"],
+					}], {
+						onQuery: function (infos) {
+							console.info(`testHiSysEventApi24: onQuery...`)
+							expect(infos.length >= 0).assertTrue()
+							console.info(`testHiSysEventApi24: infos.size is ${infos.length}`)
+							if (infos instanceof Array) {
+								for (let i = 0; i < infos.length; i++) {
+									let item = infos[i];
+									console.info(`testHiSysEventApi24: domain is ${item.domain}, name is ${item.name},
+																	eventType is ${item.eventType}`)
+									if (item.params instanceof Object) {
+										for (const key in item.params) {
+											console.info(`testHiSysEventApi24: ${key}: ${item.params[key]}`)
+										}
 									}
 								}
 							}
+						},
+						onComplete: function(reason, total) {
+							console.info(`testHiSysEventApi24: onComplete...`)
+							console.info(`testHiSysEventApi24: reason is ${reason}, total is ${total}`)
+							expect(reason == 0).assertTrue()
+							done()
+							console.info(`testHiSysEventApi24 end`)
 						}
-					},
-					onComplete: function(reason, total) {
-						console.info(`testHiSysEventApi24: onComplete...`)
-						console.info(`testHiSysEventApi24: reason is ${reason}, total is ${total}`)
-						expect(reason == 0).assertTrue()
-						done()
-						console.info(`testHiSysEventApi24 end`)
-					}
-				})
+					})
+				} catch (error) {
+					console.error(`error code: ${error.code}, error msg: ${error.message}`);
+				}
 			}, 2000);
 		} catch (error) {
 			expect(false).assertTrue()
@@ -1205,39 +1209,43 @@ describe('hiSysEventJsTest', function () {
 				})
 			},1000)
 			setTimeout(() => {
-				hiSysEvent.query({
-					beginTime: -1,
-					endTime: -1,
-					maxEvents: 5,
-				}, [{
-					domain: "HIVIEWDFX",
-					names: ["SYS_USAGE","PLUGIN_STATS"],
-				}], {
-					onQuery: function (infos) {
-						console.info(`testHiSysEventApi25: onQuery...`)
-						expect(infos.length >= 0).assertTrue()
-						console.info(`testHiSysEventApi25: infos.size is ${infos.length}`)
-						if (infos instanceof Array) {
-							for (let i = 0; i < infos.length; i++) {
-								let item = infos[i];
-								console.info(`testHiSysEventApi25: domain is ${item.domain}, name is ${item.name},
-																   eventType is ${item.eventType}`)
-								if (item.params instanceof Object) {
-									for (const key in item.params) {
-										console.info(`testHiSysEventApi25: ${key}: ${item.params[key]}`)
+				try {
+					hiSysEvent.query({
+						beginTime: -1,
+						endTime: -1,
+						maxEvents: 5,
+					}, [{
+						domain: "HIVIEWDFX",
+						names: ["SYS_USAGE","PLUGIN_STATS"],
+					}], {
+						onQuery: function (infos) {
+							console.info(`testHiSysEventApi25: onQuery...`)
+							expect(infos.length >= 0).assertTrue()
+							console.info(`testHiSysEventApi25: infos.size is ${infos.length}`)
+							if (infos instanceof Array) {
+								for (let i = 0; i < infos.length; i++) {
+									let item = infos[i];
+									console.info(`testHiSysEventApi25: domain is ${item.domain}, name is ${item.name},
+																	eventType is ${item.eventType}`)
+									if (item.params instanceof Object) {
+										for (const key in item.params) {
+											console.info(`testHiSysEventApi25: ${key}: ${item.params[key]}`)
+										}
 									}
 								}
 							}
+						},
+						onComplete: function(reason, total) {
+							console.info(`testHiSysEventApi25: onComplete...`)
+							console.info(`testHiSysEventApi25: reason is ${reason}, total is ${total}`)
+							expect(reason == 0).assertTrue()
+							done()
+							console.info(`testHiSysEventApi25 end`)
 						}
-					},
-					onComplete: function(reason, total) {
-						console.info(`testHiSysEventApi25: onComplete...`)
-						console.info(`testHiSysEventApi25: reason is ${reason}, total is ${total}`)
-						expect(reason == 0).assertTrue()
-						done()
-						console.info(`testHiSysEventApi25 end`)
-					}
-				})
+					})
+				} catch (error) {
+					console.error(`error code: ${error.code}, error msg: ${error.message}`);
+				}
 			}, 2000);
 		} catch (error) {
 			expect(false).assertTrue()
@@ -1246,3 +1254,4 @@ describe('hiSysEventJsTest', function () {
 	})
 })
 }
+

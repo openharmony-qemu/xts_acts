@@ -230,8 +230,8 @@ export default function SecurityHuksCipherSM2CallbackJsunit() {
             expect(arrayEqual(plainData, decryptedResult)).assertTrue();
 
             //delete
-            publicDeleteKeyFunc(srcKeyAlias, genHuksOptions);
-            publicDeleteKeyFunc(newSrcKeyAlias, genHuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, genHuksOptions);
+            await publicDeleteKeyFunc(newSrcKeyAlias, genHuksOptions);
             done();
         });
 
@@ -245,8 +245,8 @@ export default function SecurityHuksCipherSM2CallbackJsunit() {
          */
         it('Security_HUKS_Cipher_API8_SM2_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             //init update finish
-            const srcKeyAlias = 'Security_HUKS_Cipher_API8_SM2_001A';
-            const newSrcKeyAlias = 'Security_HUKS_Cipher_API8_SM2_001B';
+            const srcKeyAlias = 'Security_HUKS_Cipher_API8_SM2_002A';
+            const newSrcKeyAlias = 'Security_HUKS_Cipher_API8_SM2_002B';
 
             let HuksOptions = {
                 properties: new Array(
@@ -298,8 +298,8 @@ export default function SecurityHuksCipherSM2CallbackJsunit() {
             expect(arrayEqual(plainData, decryptedResult)).assertTrue();
 
             //delete
-            publicDeleteKeyFunc(srcKeyAlias, genHuksOptions);
-            publicDeleteKeyFunc(newSrcKeyAlias, genHuksOptions);
+            await publicDeleteKeyFunc(srcKeyAlias, genHuksOptions);
+            await publicDeleteKeyFunc(newSrcKeyAlias, genHuksOptions);
             done();
         });
 

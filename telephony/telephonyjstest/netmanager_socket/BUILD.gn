@@ -20,5 +20,5 @@ ohos_js_app_suite("ActsNetManagerSocketEtsTest") {
   certificate_profile = "signature/openharmony_sx.p7b"
   hap_name = "ActsNetManagerSocketEtsTest"
   part_name = "netstack"
-  subsystem_name = "netmanager"
+  subsystem_name = "communication"
 }

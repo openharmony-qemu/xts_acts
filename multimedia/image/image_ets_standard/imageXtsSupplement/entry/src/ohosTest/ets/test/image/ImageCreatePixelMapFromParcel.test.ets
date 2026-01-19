@@ -67,12 +67,10 @@ export default function ImageCreatePixelMapFromParcelSupp() {
       AppStorage.setOrCreate('empty','')
     });
     beforeEach(async () => {
-      await sleep(500);
       console.info('beforeEach case');
     });
     afterEach(async () => {
       console.info('afterEach case');
-      await sleep(500)
     });
     afterAll(() => {
       console.info('afterAll case');

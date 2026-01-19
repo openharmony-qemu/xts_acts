@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeEach } from "../../../hypium/index";
+import { describe, beforeAll, it, expect, TestType, Size, Level, beforeEach } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -21,6 +21,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
+import { Driver, ON } from '@ohos.UiTest';
 
 let context: common.UIAbilityContext
 let domain: int = 0x0000;
@@ -28,6 +29,18 @@ let tag: string = 'testTag';
 
 export default function BackWithResultStaticTest() {
   describe('BackWithResultStaticTest', () => {
+
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
 
     beforeEach(() => {
       hilog.info(domain, tag, 'beforeAll start');
@@ -61,15 +74,17 @@ export default function BackWithResultStaticTest() {
           hilog.info(domain, tag, 'backToCallerAbilityWithResult succeed');
           expect().assertFail();
           done();
-        }).catch((err: Error): void => {
-          hilog.info(domain, tag, `backToCallerAbilityWithResult1 failed, code is ${JSON.stringify(err)}`);
+        }).catch((err): void => {
+          hilog.info(domain, tag, `backToCallerAbilityWithResult1 failed, code is ${err.code}`);
           expect(err.code).assertEqual(16000074);
           done();
         });
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, `getGroupDir faile, err: ${error}`);
-        expect().assertFail();
-        done();
+      } catch (error) {
+        if (error instanceof BusinessError) {
+          hilog.info(domain, tag, `getGroupDir faile, err: ${error}`);
+          expect().assertFail();
+          done();
+        }
       }
     })
   })

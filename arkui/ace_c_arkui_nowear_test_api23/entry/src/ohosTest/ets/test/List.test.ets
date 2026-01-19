@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,6 +17,7 @@ import TestErrorCodeTest from './touchTestInfo/ErrorCodeTest.test'
 import NodeAdoptChildTest from './node/NodeAdoptChildTest.test'
 import NodeAdoptedTest from './node/NodeAdoptedTest.test'
 import focusScopeTest from './focusScope/FocusScopeTest.test'
+import AccessibilityValueTest from "./accessibilityValue/AccessibilityValueTest.test"
 
 export default function testsuite() {
   NodeAdoptChildTest(); // 此条特殊用例请放在首行，勿动
@@ -24,4 +25,5 @@ export default function testsuite() {
   TestErrorCodeTest();
   touchTestInfoTest();
   focusScopeTest();
+  AccessibilityValueTest();
 }
