@@ -56,6 +56,12 @@ export const TestIsInRenderState001: (a: string) => void;
 
 export const TestConvertPositionFromWindow001: (a: string) => void;
 
+export const CreateScrollToVisibleNodeTest: (a: string) => void;
+
+export const GetTextAreaScrollToVisibleTest: () => number;
+
+export const GetTextInputScrollToVisibleTest: () => number;
+
 export const DeleteBackwardTest: (a: string) => void;
 
 export const TextAreaDeleteBackwardTest: (a: string) => void;
