@@ -97,11 +97,9 @@ export default function BindMenuWithResponse() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('bindClickId'));
-      
-      await driver.mouseClick({
-        x: Math.round((button.right - button.left) * 0.5 + button.left),
-        y: Math.round((button.bottom - button.top) * 0.5 + button.top)
-      }, MouseButton.MOUSE_BUTTON_RIGHT)
+      let point = await button.getBoundsCenter();
+      console.info('[BindMenuWithResponse_0200] point' + JSON.stringify(point));
+      await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
       console.info('[BindMenuWithResponse_0200] mouse right click');
       await CommonFunc.sleep(1000);
       let item = getInspectorByKey('longTextId');
