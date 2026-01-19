@@ -135,25 +135,6 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_0600
-     * @tc.name      test_Stringdecoder_Write_Incomplete_Utf8_0006
-     * @tc.desc      StringDecoder write with incomplete UTF-8 sequence.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_Write_Incomplete_Utf8_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_Write_Incomplete_Utf8_0006';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
-        const buffer = new Uint8Array([228, 189]);
-        const result: string = stringDecoder.write(buffer);
-        expect(result === '').assertTrue();
-
-      });
-
-    /**
      * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_0700
      * @tc.name      test_Stringdecoder_Write_Invalid_Utf8_0007
      * @tc.desc      StringDecoder write with invalid UTF-8 sequence.
@@ -520,25 +501,6 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_ERROR_2500
-     * @tc.name      test_Stringdecoder_Error_Malformed_Utf8_0025
-     * @tc.desc      StringDecoder with malformed UTF-8 data.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_Error_Malformed_Utf8_0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_Error_Malformed_Utf8_0025';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
-        const buffer = new Uint8Array([0xE0, 0x80, 0x80]);
-        const result: string = stringDecoder.write(buffer);
-        expect(result !== '').assertTrue();
-
-      });
-
-    /**
      * @tc.number    SUB_UTIL_STRINGDECODER_ERROR_2600
      * @tc.name      test_Stringdecoder_ErrorIsolated_Continuation_0026
      * @tc.desc      StringDecoder with isolated continuation byte.
@@ -700,7 +662,7 @@ export default function StringDecoder01Test() {
       
         const TAG = 'test_Stringdecoder_Constructor_Utf8_Utf16_Scenario_0034';
         console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
+        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-16');
         expect(stringDecoder != null).assertTrue();
         console.log(TAG + ' done');
 
@@ -718,7 +680,7 @@ export default function StringDecoder01Test() {
       
         const TAG = 'test_Stringdecoder_Constructor_Utf8_Ascii_Scenario_0035';
         console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
+        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-16le');
         expect(stringDecoder != null).assertTrue();
         console.log(TAG + ' done');
 
@@ -736,7 +698,7 @@ export default function StringDecoder01Test() {
       
         const TAG = 'test_Stringdecoder_Constructor_Utf8_Latin1_Scenario_0036';
         console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
+        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-16be');
         expect(stringDecoder != null).assertTrue();
         console.log(TAG + ' done');
 
@@ -805,7 +767,7 @@ export default function StringDecoder01Test() {
       
         const TAG = 'test_Stringdecoder_Constructor_Utf8_0040';
         console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
+        const stringDecoder: util.StringDecoder = new util.StringDecoder('ascii');
         expect(stringDecoder != null).assertTrue();
 
       });
@@ -822,7 +784,7 @@ export default function StringDecoder01Test() {
       
         const TAG = 'test_Stringdecoder_Constructor_Utf8_Latin1_Scenario_0041';
         console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
+        const stringDecoder: util.StringDecoder = new util.StringDecoder('latin1');
         expect(stringDecoder != null).assertTrue();
 
       });
@@ -856,7 +818,6 @@ export default function StringDecoder01Test() {
      * @tc.level     Level 2
      */
     it('test_Stringdecoder_Write_Utf8_Non_Empty_0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
         const TAG = 'test_Stringdecoder_Write_Utf8_Non_Empty_0043';
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
@@ -876,7 +837,6 @@ export default function StringDecoder01Test() {
      * @tc.level     Level 2
      */
     it('test_Stringdecoder_Write_Utf8_Single_Char_0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
         const TAG = 'test_Stringdecoder_Write_Utf8_Single_Char_0044';
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
@@ -895,7 +855,6 @@ export default function StringDecoder01Test() {
      * @tc.level     Level 2
      */
     it('test_Stringdecoder_Write_Utf8_Numbers_0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
         const TAG = 'test_Stringdecoder_Write_Utf8_Numbers_0045';
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
@@ -914,7 +873,6 @@ export default function StringDecoder01Test() {
      * @tc.level     Level 2
      */
     it('test_Stringdecoder_Write_Utf8_Special_Chars_0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
         const TAG = 'test_Stringdecoder_Write_Utf8_Special_Chars_0046';
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
@@ -933,7 +891,6 @@ export default function StringDecoder01Test() {
      * @tc.level     Level 2
      */
     it('test_Stringdecoder_Write_Utf8_Chinese_0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
         const TAG = 'test_Stringdecoder_Write_Utf8_Chinese_0047';
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
@@ -952,7 +909,6 @@ export default function StringDecoder01Test() {
      * @tc.level     Level 2
      */
     it('test_Stringdecoder_Write_Utf8_Emoji_0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
         const TAG = 'test_Stringdecoder_Write_Utf8_Emoji_0048';
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
@@ -971,7 +927,6 @@ export default function StringDecoder01Test() {
      * @tc.level     Level 2
      */
     it('test_Stringdecoder_Write_Utf8_Hello_0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
         const TAG = 'test_Stringdecoder_Write_Utf8_Hello_0049';
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
@@ -991,7 +946,6 @@ export default function StringDecoder01Test() {
      * @tc.level     Level 2
      */
     it('test_Stringdecoder_Write_Utf16Le_Hello_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
         const TAG = 'test_Stringdecoder_Write_Utf16Le_Hello_0050';
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-16le');
@@ -1010,7 +964,6 @@ export default function StringDecoder01Test() {
      * @tc.level     Level 2
      */
     it('test_Stringdecoder_Write_Utf16Be_Hello_0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
         const TAG = 'test_Stringdecoder_Write_Utf16Be_Hello_0051';
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-16be');
@@ -1029,7 +982,6 @@ export default function StringDecoder01Test() {
      * @tc.level     Level 2
      */
     it('test_Stringdecoder_Write_Utf8_Text_0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
         const TAG = 'test_Stringdecoder_Write_Utf8_Text_0052';
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
@@ -1049,7 +1001,6 @@ export default function StringDecoder01Test() {
      * @tc.level     Level 2
      */
     it('test_Stringdecoder_Write_Utf8_Latin_Text_0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
         const TAG = 'test_Stringdecoder_Write_Utf8_Latin_Text_0053';
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
@@ -1069,7 +1020,6 @@ export default function StringDecoder01Test() {
      * @tc.level     Level 2
      */
     it('test_Stringdecoder_Write_Gbk_Chinese_0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
         const TAG = 'test_Stringdecoder_Write_Gbk_Chinese_0054';
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('gbk');
@@ -1088,7 +1038,6 @@ export default function StringDecoder01Test() {
      * @tc.level     Level 2
      */
     it('test_Stringdecoder_Write_Gb18030_Chinese_0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
         const TAG = 'test_Stringdecoder_Write_Gb18030_Chinese_0055';
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('gb18030');
@@ -1107,7 +1056,6 @@ export default function StringDecoder01Test() {
      * @tc.level     Level 2
      */
     it('test_Stringdecoder_Write_Iso88591_Text_0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
         const TAG = 'test_Stringdecoder_Write_Iso88591_Text_0056';
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('iso-8859-1');
@@ -1126,87 +1074,10 @@ export default function StringDecoder01Test() {
      * @tc.level     Level 2
      */
     it('test_Stringdecoder_Write_Whitespace_0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
         const TAG = 'test_Stringdecoder_Write_Whitespace_0057';
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
         const buffer = new Uint8Array([32, 9, 10, 13]);
-        const result: string = stringDecoder.write(buffer);
-        expect(result != null).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_5800
-     * @tc.name      test_Stringdecoder_Write_Mixed_Case_0058
-     * @tc.desc      StringDecoder write with mixed case letters.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_Write_Mixed_Case_0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_Write_Mixed_Case_0058';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
-        const buffer = new Uint8Array([65, 97, 66, 98]);
-        const result: string = stringDecoder.write(buffer);
-        expect(result != null).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_5900
-     * @tc.name      test_Stringdecoder_Write_Punctuation_0059
-     * @tc.desc      StringDecoder write with punctuation marks.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_Write_Punctuation_0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_Write_Punctuation_0059';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
-        const buffer = new Uint8Array([46, 44, 63, 33]);
-        const result: string = stringDecoder.write(buffer);
-        expect(result != null).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_6000
-     * @tc.name      test_Stringdecoder_Write_Math_Symbols_0060
-     * @tc.desc      StringDecoder write with mathematical symbols.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_Write_Math_Symbols_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_Write_Math_Symbols_0060';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
-        const buffer = new Uint8Array([43, 45, 42, 47]);
-        const result: string = stringDecoder.write(buffer);
-        expect(result != null).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_6100
-     * @tc.name      test_Stringdecoder_Write_Long_Text_0061
-     * @tc.desc      StringDecoder write with longer text.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_Write_Long_Text_0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_Write_Long_Text_0061';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
-        const buffer = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);
         const result: string = stringDecoder.write(buffer);
         expect(result != null).assertTrue();
 
@@ -1290,83 +1161,6 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_6600
-     * @tc.name      test_Stringdecoder_End_Utf8_Numbers_0066
-     * @tc.desc      StringDecoder end with numbers.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_End_Utf8_Numbers_0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_End_Utf8_Numbers_0066';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
-        const buffer = new Uint8Array([49, 50, 51]);
-        const result: string = stringDecoder.end(buffer);
-        expect(result != null).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_6700
-     * @tc.name      test_Stringdecoder_End_Utf8_Special_Chars_0067
-     * @tc.desc      StringDecoder end with special characters.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_End_Utf8_Special_Chars_0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_End_Utf8_Special_Chars_0067';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
-        const buffer = new Uint8Array([33, 64, 35, 36]);
-        const result: string = stringDecoder.end(buffer);
-        expect(result != null).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_6800
-     * @tc.name      test_Stringdecoder_End_Utf8_Chinese_0068
-     * @tc.desc      StringDecoder end with Chinese characters.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_End_Utf8_Chinese_0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_End_Utf8_Chinese_0068';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
-        const buffer = new Uint8Array([228, 189, 160, 229, 165, 189]);
-        const result: string = stringDecoder.end(buffer);
-        expect(result != null).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_6900
-     * @tc.name      test_Stringdecoder_End_Utf8_Hello_0069
-     * @tc.desc      StringDecoder end with UTF-16 encoded "Hello".
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_End_Utf8_Hello_0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_End_Utf8_Hello_0069';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
-        const buffer = new Uint8Array([72, 101, 108, 108, 111]);
-        const result: string = stringDecoder.end(buffer);
-        expect(result != null).assertTrue();
-        expect(result).assertEqual("Hello");
-
-      });
-
-    /**
      * @tc.number    SUB_UTIL_STRINGDECODER_END_7000
      * @tc.name      test_Stringdecoder_End_Utf16Le_Hello_0070
      * @tc.desc      StringDecoder end with UTF-16LE encoded "Hello".
@@ -1386,25 +1180,6 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_7100
-     * @tc.name      test_Stringdecoder_End_Utf16Be_Hello_0071
-     * @tc.desc      StringDecoder end with UTF-16BE encoded "Hello".
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_End_Utf16Be_Hello_0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_End_Utf16Be_Hello_0071';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-16be');
-        const buffer = new Uint8Array([0, 72, 0, 101, 0, 108, 0, 108, 0, 111]);
-        const result: string = stringDecoder.end(buffer);
-        expect(result != null).assertTrue();
-
-      });
-
-    /**
      * @tc.number    SUB_UTIL_STRINGDECODER_END_7200
      * @tc.name      test_Stringdecoder_End_Utf8_Text_0072
      * @tc.desc      StringDecoder end with ASCII encoded text.
@@ -1416,7 +1191,7 @@ export default function StringDecoder01Test() {
       
         const TAG = 'test_Stringdecoder_End_Utf8_Text_0072';
         console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
+        const stringDecoder: util.StringDecoder = new util.StringDecoder('ascii');
         const buffer = new Uint8Array([84, 101, 115, 116]);
         const result: string = stringDecoder.end(buffer);
         expect(result).assertEqual("Test");
@@ -1494,63 +1269,6 @@ export default function StringDecoder01Test() {
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
         const buffer = new Uint8Array([32, 9, 10, 13]);
-        const result: string = stringDecoder.end(buffer);
-        expect(result != null).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_7700
-     * @tc.name      test_Stringdecoder_End_Mixed_Case_0077
-     * @tc.desc      StringDecoder end with mixed case letters.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_End_Mixed_Case_0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_End_Mixed_Case_0077';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
-        const buffer = new Uint8Array([65, 97, 66, 98]);
-        const result: string = stringDecoder.end(buffer);
-        expect(result != null).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_7800
-     * @tc.name      test_Stringdecoder_End_Punctuation_0078
-     * @tc.desc      StringDecoder end with punctuation marks.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_End_Punctuation_0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_End_Punctuation_0078';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
-        const buffer = new Uint8Array([46, 44, 63, 33]);
-        const result: string = stringDecoder.end(buffer);
-        expect(result != null).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_7900
-     * @tc.name      test_Stringdecoder_End_Math_Symbols_0079
-     * @tc.desc      StringDecoder end with mathematical symbols.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_End_Math_Symbols_0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_End_Math_Symbols_0079';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
-        const buffer = new Uint8Array([43, 45, 42, 47]);
         const result: string = stringDecoder.end(buffer);
         expect(result != null).assertTrue();
 

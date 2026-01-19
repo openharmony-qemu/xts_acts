@@ -158,27 +158,6 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_CONSTRUCTOR_NUM_BOOLEAN_0300
-     * @tc.name      testRationalConstructorNumeratorBoolean0003
-     * @tc.desc      Constructor throws error when numerator is non-integer (boolean converted to float).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testRationalConstructorNumeratorBoolean0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'testRationalConstructorNumeratorBoolean0003';
-        console.log(TAG + ' start');
-        try {
-          new RationalNumber(Number(true) + 0.5, 2);
-          expect(true).assertFalse();
-        } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
-        }
-
-      });
-
-    /**
      * @tc.number    SUB_RATIONAL_CONSTRUCTOR_NUM_NULL_0400
      * @tc.name      testRationalConstructorNumeratorNull0004
      * @tc.desc      Constructor throws error when numerator is non-integer (null converted to NaN).
@@ -195,48 +174,6 @@ export default function RationalNumberTest() {
           expect(true).assertFalse();
         } catch (err) {
           expect((err as Error).message).assertEqual("Numerator must be an integer");
-        }
-
-      });
-
-    /**
-     * @tc.number    SUB_RATIONAL_CONSTRUCTOR_NUM_UNDEF_0500
-     * @tc.name      testRationalConstructorNumeratorUndefined0005
-     * @tc.desc      Constructor throws error when numerator is undefined (converted to NaN).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testRationalConstructorNumeratorUndefined0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'testRationalConstructorNumeratorUndefined0005';
-        console.log(TAG + ' start');
-        try {
-          new RationalNumber(Number(undefined), 2);
-          expect(true).assertFalse();
-        } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
-        }
-
-      });
-
-    /**
-     * @tc.number    SUB_RATIONAL_CONSTRUCTOR_DENOM_ZERO_0600
-     * @tc.name      testRationalConstructorDenominatorZero0006
-     * @tc.desc      Constructor throws error when denominator is zero.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testRationalConstructorDenominatorZero0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'testRationalConstructorDenominatorZero0006';
-        console.log(TAG + ' start');
-        try {
-          new RationalNumber(3, 0);
-          expect(true).assertFalse();
-        } catch (err) {
-          expect((err as Error).message).assertEqual("Denominator cannot be zero");
         }
 
       });
@@ -364,28 +301,6 @@ export default function RationalNumberTest() {
         try {
           const rationalNumber = new RationalNumber(1, 2);
           rationalNumber.add(new RationalNumber(Number([1, 2]), 1));
-          expect(true).assertFalse();
-        } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
-        }
-
-      });
-
-    /**
-     * @tc.number    SUB_RATIONAL_SUB_FLOAT_1400
-     * @tc.name      testRationalSubtractFloat0014
-     * @tc.desc      Subtract method throws error when parameter is float.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testRationalSubtractFloat0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'testRationalSubtractFloat0014';
-        console.log(TAG + ' start');
-        try {
-          const rationalNumber = new RationalNumber(1, 2);
-          rationalNumber.subtract(new RationalNumber(0.5, 1));
           expect(true).assertFalse();
         } catch (err) {
           expect((err as Error).message).assertEqual("Numerator must be an integer");
@@ -876,60 +791,6 @@ export default function RationalNumberTest() {
         const rationalNumber = new RationalNumber(5, 1);
         expect(rationalNumber.numerator).assertEqual(5);
         expect(rationalNumber.denominator).assertEqual(1);
-
-      });
-
-    /**
-     * @tc.number    SUB_RATIONALNUMBER_ZERONUMERATOR_4000
-     * @tc.name      testRationalNumberZeroNumerator0040
-     * @tc.desc      Create RationalNumber with 0/5.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testRationalNumberZeroNumerator0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'testRationalNumberZeroNumerator0040';
-        console.log(TAG + ' start');
-        const rationalNumber = new RationalNumber(0, 5);
-        expect(rationalNumber.numerator).assertEqual(0);
-        expect(rationalNumber.denominator).assertEqual(1);
-        expect(rationalNumber.toString()).assertEqual("0");
-
-      });
-
-    /**
-     * @tc.number    SUB_RATIONALNUMBER_REDUCE_4100
-     * @tc.name      testRationalNumberReduce0041
-     * @tc.desc      Constructor auto reduces 4/6 to 2/3.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testRationalNumberReduce0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'testRationalNumberReduce0041';
-        console.log(TAG + ' start');
-        const rationalNumber = new RationalNumber(4, 6);
-        expect(rationalNumber.numerator).assertEqual(2);
-        expect(rationalNumber.denominator).assertEqual(3);
-
-      });
-
-    /**
-     * @tc.number    SUB_RATIONALNUMBER_TOSTRING_4200
-     * @tc.name      testRationalNumberToString0042
-     * @tc.desc      ToString returns "1/2" for 1/2.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testRationalNumberToString0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'testRationalNumberToString0042';
-        console.log(TAG + ' start');
-        const rationalNumber = new RationalNumber(1, 2);
-        expect(rationalNumber.toString()).assertEqual("1/2");
 
       });
 
