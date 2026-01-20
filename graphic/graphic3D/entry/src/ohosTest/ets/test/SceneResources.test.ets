@@ -2063,5 +2063,74 @@ export default function sceneResourcesTest() {
         done();
       }
     })
+    /**
+     * @tc.name   testEffectSetPropertyValue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1025
+     * @tc.desc   Test setPropertyValue method of Effect to set effect property values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEffectSetPropertyValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testEffectSetPropertyValue";
+      console.info(msg + ' begin ');
+      try {
+        // Load scene and create effect
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        let rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory obtained successfully");
+
+        // Create effect with valid effectId
+        let effectParameters: EffectParameters = {effectId: "89b83608-c910-433e-9fd8-22f3ef64eabd"};
+        let effect: Effect = await rf.createEffect(effectParameters);
+        expect(effect != null).assertTrue();
+        console.info(msg + " effect created successfully");
+
+        // Test 1: Set 'thresholdSoft' property value (should return true)
+        let result1 = effect.setPropertyValue('thresholdSoft', 1);
+        console.info(msg + " set thresholdSoft result: " + result1);
+        expect(result1).assertTrue();
+        console.info(msg + " thresholdSoft property set successfully");
+
+        // Verify the value was set
+        let thresholdSoftValue = effect.getPropertyValue('thresholdSoft');
+        console.info(msg + " thresholdSoftValue after set: " + JSON.stringify(thresholdSoftValue));
+        expect(thresholdSoftValue).assertEqual(1);
+
+        // Test 2: Set 'thresholdHard' property value (should return true)
+        let result2 = effect.setPropertyValue('thresholdHard', 1);
+        console.info(msg + " set thresholdHard result: " + result2);
+        expect(result2).assertTrue();
+        console.info(msg + " thresholdHard property set successfully");
+
+        // Verify the value was set
+        let thresholdHardValue = effect.getPropertyValue('thresholdHard');
+        console.info(msg + " thresholdHardValue after set: " + JSON.stringify(thresholdHardValue));
+        expect(thresholdHardValue).assertEqual(1);
+
+        // Test 3: Set 'thresholdSoft' property value with undefined (should return true)
+        let dataUndefined:undefined;
+        let result3 = effect.setPropertyValue('thresholdSoft', dataUndefined);
+        console.info(msg + " set thresholdSoft with undefined result: " + result3);
+        expect(result3).assertFalse();
+        console.info(msg + " thresholdSoft property with undefined set successfully");
+
+        // Verify the value was set
+        let thresholdSoftWithUndefineValue = effect.getPropertyValue('thresholdSoft');
+        console.info(msg + " thresholdSoftValue with undefined after set: " + JSON.stringify(thresholdSoftWithUndefineValue));
+        expect(thresholdSoftWithUndefineValue).assertEqual(1);
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testEffectSetPropertyValue " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }
