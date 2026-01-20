@@ -68,19 +68,19 @@ export default function LayoutChildrenTest() {
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('Button1'));
       await btn.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('Button3'));
       await btn1.click();
-      await CommonFunc.sleep(500);
-      expect(AppStorage.get('onLayoutChildren')).assertEqual('onLayoutChildrenByID');
-      AppStorage.delete('onLayoutChildren')
+      await CommonFunc.sleep(1000);
+      expect(AppStorage.get('layoutChildrenState')).assertEqual('onLayoutChildrenByID');
+      AppStorage.delete('layoutChildrenState')
       let btn2 = await driver.findComponent(ON.id('Button2'));
       await btn2.click();
       let btn3 = await driver.findComponent(ON.id('Button3'));
       await btn3.click();
       await CommonFunc.sleep(1000);
-      expect(AppStorage.get('offLayoutChildren')).assertEqual('offLayoutChildrenByID');
-      AppStorage.delete('offLayoutChildren')
+      expect(AppStorage.get('layoutChildrenState')).assertEqual('offLayoutChildrenByID');
+      AppStorage.delete('layoutChildrenState')
       console.info('[LayoutChildrenTest_0100] END');
       done();
     });
