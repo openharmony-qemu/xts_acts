@@ -21,5 +21,6 @@
 napi_value OHHuksNativeApi22Type0300(napi_env env, napi_callback_info info);
 napi_value OHHuksNativeApi22Type0400(napi_env env, napi_callback_info info);
 napi_value OHHuksNativeApi22Type0500(napi_env env, napi_callback_info info);
+napi_value OHHuksNativeApi22Type0600(napi_env env, napi_callback_info info);
 
 #endif
