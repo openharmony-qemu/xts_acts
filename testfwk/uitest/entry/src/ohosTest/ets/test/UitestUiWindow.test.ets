@@ -599,6 +599,30 @@ export default function uiUiWindowTest() {
     })
 
     /**
+     * @tc.name   testWindowMinimize_float
+     * @tc.number uitestUiWindowTest_new013
+     * @tc.desc   Call the minimize interface in fullscreen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWindowMinimize_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(waitUiReadyMs)
+      await setFloat(driver)
+      try {
+        let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        await window.minimize()
+        await driver.delayMs(waitUiReadyMs)
+        let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        expect(window1 == null).assertTrue()
+      } catch (error) {
+        console.log('testWindowMinimize_full error is ' + error)
+        expect(error.code == WindowsErrorCode).assertTrue()
+      }
+    })
+
+    /**
      * @tc.name   testWindowMinimize_split
      * @tc.number uitestUiWindowTest_new014
      * @tc.desc   Call the minimize interface in split.
@@ -635,6 +659,30 @@ export default function uiUiWindowTest() {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       await setFull(driver)
+      try {
+        let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        await window.close()
+        await driver.delayMs(waitUiReadyMs)
+        let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        expect(window1 == null).assertTrue()
+      } catch (error) {
+        console.log('testWindowClose_full error is ' + error)
+        expect(error.code == WindowsErrorCode).assertTrue()
+      }
+    })
+
+    /**
+     * @tc.name   testWindowClose_float
+     * @tc.number uitestUiWindowTest_new015
+     * @tc.desc   Call the close interface in fullscreen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWindowClose_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(waitUiReadyMs)
+      await setFloat(driver)
       try {
         let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
         await window.close()
@@ -720,6 +768,33 @@ export default function uiUiWindowTest() {
       }
     })
 
+    /**
+     * @tc.name   testWindowMaximize_split
+     * @tc.number uitestUiWindowTest_new018
+     * @tc.desc   Call the maximize interface in float.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWindowMaximize_split', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(waitUiReadyMs)
+      await setSplit(driver)
+      try {
+        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        await window2.maximize()
+        await driver.delayMs(waitUiReadyMs)
+        let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let mode = await window3.getWindowMode()
+        expect(mode == WindowMode.FULLSCREEN).assertTrue()
+      } catch (error) {
+        console.log('testWindowMaximize_float error is ' + error)
+        expect(error.code == WindowsErrorCode).assertTrue()
+      }
+      await stopApplication('com.uitestScene.acts');
+      await envRecovery(driver)
+    })
+
   })
-  
+
 }
