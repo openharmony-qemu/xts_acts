@@ -146,7 +146,7 @@ export default function formApiCoverTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it(`SUB_ABILITY_FORM_FWK_START_UI_ABILITY_COVER_0100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('SUB_ABILITY_FORM_FWK_START_UI_ABILITY_COVER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let name: string = 'SUB_ABILITY_FORM_FWK_START_UI_ABILITY_COVER_0100';
       console.info(`${name} start`);
       try {
@@ -155,7 +155,7 @@ export default function formApiCoverTest() {
         expect().assertFail();
       } catch (error) {
         console.log(`${name} exception caught: ${JSON.stringify(error)}`);
-         if (error.code === ERROR_CODE9) {
+        if (error.code === ERROR_CODE9) {
           expect(error.code).assertEqual(ERROR_CODE9);
         } else if(error.code === ERROR_CODE2) {
           expect(error.code).assertEqual(ERROR_CODE2);

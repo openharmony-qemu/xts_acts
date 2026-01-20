@@ -35,6 +35,7 @@ const ERROR_CODE6 = 16501003;
 const ERROR_CODE7 = 16501007;
 const ERROR_CODE8 = 16501001;
 const ERROR_CODE9 = 16500060;
+const ERROR_CODE10 = 16501015;
 
 let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
@@ -319,15 +320,15 @@ export default function formProviderTest() {
     });
 
     /**
-     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0900
-     * @tc.number SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0900
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0900
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0900
      * @tc.desc   Open the card EditAbility page
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let TAG = 'SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0900';
+    it('SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let TAG = 'SUB_ABILITY_FORM_FWK_TEST_OPEN_FORM_EDIT_ABILITY_0900';
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       let formId: string = '0';
       await formProvider.getPublishedRunningFormInfos().then((data: formInfo.RunningFormInfo[]) => {
@@ -381,15 +382,15 @@ export default function formProviderTest() {
     });
 
     /**
-     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0910
-     * @tc.number SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0910
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0900
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0900
      * @tc.desc   Close the card EditAbility page
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let TAG = 'SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0910';
+    it('SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let TAG = 'SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0900';
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       let formId: string = '0';
       await formProvider.getPublishedRunningFormInfos().then((data: formInfo.RunningFormInfo[]) => {
@@ -415,26 +416,20 @@ export default function formProviderTest() {
       });
       try {
         formProvider.closeFormEditAbility();
-        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider openFormEditAbility success`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider closeFormEditAbility success`);
         done();
       } catch (error) {
         if (error.code === ERROR_CODE) {
           expect(error.code).assertEqual(ERROR_CODE);
-        } else if(error.code === ERROR_CODE1) {
-          expect(error.code).assertEqual(ERROR_CODE1);
-        } else if (error.code === ERROR_CODE2) {
-          expect(error.code).assertEqual(ERROR_CODE2);
-        } else if (error.code === ERROR_CODE6) {
-          expect(error.code).assertEqual(ERROR_CODE6);
-        } else if (error.code === ERROR_CODE7) {
-          expect(error.code).assertEqual(ERROR_CODE7);
+        } else if (error.code === ERROR_CODE3) {
+          expect(error.code).assertEqual(ERROR_CODE3);
         } else if (error.code === ERROR_CODE5) {
           expect(error.code).assertEqual(ERROR_CODE5);
-        } else if (error.code === ERROR_CODE8) {
-          expect(error.code).assertEqual(ERROR_CODE8);
+        } else if (error.code === ERROR_CODE10) {
+          expect(error.code).assertEqual(ERROR_CODE10);
         } else {
           hilog.info(DOMAIN, COMMON_TAG, '%{public}s',
-            `${TAG} formProvider openFormEditAbility, error: ${JSON.stringify(error)}`);
+            `${TAG} formProvider closeFormEditAbility, error: ${JSON.stringify(error)}`);
           expect().assertFail();
         }
         done();
