@@ -200,7 +200,7 @@ export default function abilityTest() {
         hilog.info(domain, tag, 'on captions state changed');
       }
       try {
-        lcaptionsManager.onEnableChange(callbackdata);
+        captionsManager.onEnableChange(callbackdata);
         captionsManager.offEnableChange(callbackdata);
         captionsManager.offEnableChange();
         done();
