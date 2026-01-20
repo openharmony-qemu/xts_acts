@@ -2008,5 +2008,60 @@ export default function sceneResourcesTest() {
         done();
       }
     })
+    /**
+     * @tc.name   testEffectGetPropertyValue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1024
+     * @tc.desc   Test getPropertyValue method of Effect to get effect property values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEffectGetPropertyValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testEffectGetPropertyValue";
+      console.info(msg + ' begin ');
+      try {
+        // Load scene and create effect
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        let rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory obtained successfully");
+
+        // Create effect with valid effectId
+        let effectParameters: EffectParameters = {effectId: "89b83608-c910-433e-9fd8-22f3ef64eabd"};
+        let effect: Effect = await rf.createEffect(effectParameters);
+        expect(effect != null).assertTrue();
+        console.info(msg + " effect created successfully");
+
+        // Test 1: Get 'thresholdSoft' property value (should return Object)
+        let thresholdSoftValue = effect.getPropertyValue('thresholdSoft');
+        console.info(msg + " thresholdSoftValue: " + JSON.stringify(thresholdSoftValue));
+        expect(thresholdSoftValue != null).assertTrue();
+        expect(typeof thresholdSoftValue).assertEqual('number');
+        console.info(msg + " thresholdSoft property value retrieved successfully");
+
+        // Test 2: Get 'thresholdHard' property value (should return Object)
+        let thresholdHardValue = effect.getPropertyValue('thresholdHard');
+        console.info(msg + " thresholdHardValue: " + JSON.stringify(thresholdHardValue));
+        expect(thresholdHardValue != null).assertTrue();
+        expect(typeof thresholdHardValue).assertEqual('number');
+        console.info(msg + " thresholdHard property value retrieved successfully");
+
+        // Test 3: Get non-existent property value (should return null or undefined)
+        let invalidValue = effect.getPropertyValue('invalidProperty');
+        console.info(msg + " invalidValue: " + JSON.stringify(invalidValue));
+        expect(invalidValue == null || invalidValue == undefined).assertTrue();
+        console.info(msg + " non-existent property returns null or undefined as expected");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testEffectGetPropertyValue " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }
