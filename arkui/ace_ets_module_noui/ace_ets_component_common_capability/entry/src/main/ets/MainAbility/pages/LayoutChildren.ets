@@ -26,7 +26,7 @@ struct ImageExample {
   listenerForRowByID: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(8)
   listenerForRootByID: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(6)
   listenerForTextByID: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(9)
-  @State ll: Resource | null = $r('app.media.startIcon');
+  @State ll: Resource | null = $r('app.media.icon');
   @State textString: string = ''
 
   @State layoutChildrenState: string = 'init'
