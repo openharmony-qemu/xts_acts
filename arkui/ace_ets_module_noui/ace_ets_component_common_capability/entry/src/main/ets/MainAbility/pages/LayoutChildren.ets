@@ -26,15 +26,15 @@ struct ImageExample {
   listenerForRowByID: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(8)
   listenerForRootByID: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(6)
   listenerForTextByID: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(9)
-  @State ll: Resource | null = $r('app.media.icon');
+  @State ll: Resource | null = $r('app.media.startIcon');
   @State textString: string = ''
 
   @State layoutChildrenState: string = 'init'
 
   onLayoutChildrenCompleteByID() {
     console.log("lll onLayoutChildrenCompleteByID");
-    AppStorage.SetOrCreate('onLayoutChildren', 'onLayoutChildrenByID');
-    console.info("layoutChildrenState:onLayoutChildrenByID")
+    let log='onLayoutChildrenByID'
+    return log
   }
 
   build() {
@@ -52,8 +52,11 @@ struct ImageExample {
         }.width('100%')
 
         Column() {
+          Text(this.layoutChildrenState).id('layoutChildrenStateid')
           Button("onLayoutChildrenByID").id("Button1").onClick((event: ClickEvent) => {
             this.listenerForRootByID.onLayoutChildren(this.onLayoutChildrenCompleteByID);
+            this.layoutChildrenState=this.onLayoutChildrenCompleteByID()
+            AppStorage.SetOrCreate('layoutChildrenState', this.layoutChildrenState);
           })
           Button("offLayoutChildrenByID").id("Button2").onClick((event: ClickEvent) => {
             this.listenerForRootByID.offLayoutChildren(this.onLayoutChildrenCompleteByID);
@@ -62,7 +65,7 @@ struct ImageExample {
             console.info("layoutChildrenState:offLayoutChildrenByID");
           })
           Button("change").id("Button3").onClick((event: ClickEvent) => {
-            this.textString = this.textString + "1"
+            this.textString = this.textString + '1'
             this.imageWidth += 10;
           })
         }.padding({ top: 30 })
@@ -71,7 +74,6 @@ struct ImageExample {
     }.width('100%')
   }
   aboutToAppear(): void {
-    let listenerForRowByID1: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(2)
     try {
       let listenerForRowByID2: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(2147483648)
       let listenerForRowByID3: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(-2)
