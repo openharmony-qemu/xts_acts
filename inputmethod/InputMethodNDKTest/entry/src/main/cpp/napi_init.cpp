@@ -286,14 +286,14 @@ static napi_value SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0100(nap
     TextEditorProxy_Create();
     AttachOptions_Create(false);
     size_t argc = 3;
-    napi_value arg[3] = {nullptr};
+    napi_value args[3] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     ArkUI_ContextHandle context = nullptr;
     int ret = 0;
     ret = OH_ArkUI_GetContextFromNapiValue(env, args[0], &context);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>AttachWithUIContext ret: %{piblic}s", ret);
     InputMethod_ErrorCode returnValue = OH_InputMethodController_AttachWithUIContext(context,
-     g_txtEditProxy, g_options, &g_inputMethodProxy);
+        g_txtEditProxy, g_options, &g_inputMethodProxy);
     if (returnValue == InputMethod_ErrorCode::IME_ERR_OK) {
         napi_value result = nullptr;
         NAPI_CALL(env, napi_create_string_utf8(env, "OK", NAPI_AUTO_LENGTH, &result));
@@ -311,7 +311,7 @@ static napi_value SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0200(nap
     TextEditorProxy_Create();
     AttachOptions_Create(false);
     InputMethod_ErrorCode returnValue = OH_InputMethodController_AttachWithUIContext(NULL,
-     g_txtEditProxy, g_options, &g_inputMethodProxy);
+        g_txtEditProxy, g_options, &g_inputMethodProxy);
     if (returnValue == InputMethod_ErrorCode::IME_ERR_NULL_POINTER) {
         napi_value result = nullptr;
         NAPI_CALL(env, napi_create_string_utf8(env, "OK", NAPI_AUTO_LENGTH, &result));
@@ -1340,10 +1340,10 @@ static napi_value Init(napi_env env, napi_value exports)
          SUB_IMF_NDK_TextConfig_SetPlaceholder_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"SUB_IMF_NDK_InputMethod_ErrorCode_0100", nullptr,
          SUB_IMF_NDK_InputMethod_ErrorCode_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0100", nullptr, SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0100,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0200", nullptr, SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0200,
-         nullptr, nullptr, nullptr, napi_default, nullptr}};
+        {"SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0100", nullptr,
+         SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0200", nullptr,
+         SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0200, nullptr, nullptr, nullptr, napi_default, nullptr}};
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
 }
