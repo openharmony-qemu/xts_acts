@@ -1140,6 +1140,49 @@ export default function contact_NopTest() {
       }
       console.info('--------SUB_Telephony_Contact_Nop033----after----');
     })
+
+    /**
+     * @tc.name SUB_Telephony_Contact_Nop034
+     * @tc.number SUB_Telephony_Contact_Nop034
+     * @tc.desc Using the SUB_Telephony_Contact_Nop034 (context, contact.Contact[]) promise method without permission
+     * @tc.type: Function
+     * @tc.size: MEDIUMTEST
+     * @tc.level 3
+     */
+    it("SUB_Telephony_Contact_Nop033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('--------SUB_Telephony_Contact_Nop034----before----');
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        const contactData: contact.Contact = {
+          name: {
+            fullName: 'abc'
+          },
+          phoneNumbers: [{
+            phoneNumber: '13800000000'
+          }]
+        };
+        const promise = contact.addContacts(context,[contactData]);
+        promise.then((data) => {
+          console.log(`SUB_Telephony_Contact_Nop034 success: data->${JSON.stringify(data)}`);
+          try {
+            expect().assertFail();
+          } catch (err) {
+            done();
+          }
+        }).catch((err) => {
+          try {
+            expect(err.code).assertEqual(PERMISSION_DENIED_CODE);
+          } catch (err) {
+            console.log("SUB_Telephony_Contact_Nop034 promise: err->${JSON.stringify(err)});
+          }
+          done;
+        })
+      } catch (err) {
+        console.error("SUB_Telephony_Contact_Nop034 error:" + JSON.stringify(err));
+        done()
+      }
+      console.info('--------SUB_Telephony_Contact_Nop034----after----');
+    })
   })
 }
 
