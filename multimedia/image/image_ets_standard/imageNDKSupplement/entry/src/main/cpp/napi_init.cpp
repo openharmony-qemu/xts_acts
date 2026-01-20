@@ -18,6 +18,7 @@
 #include "ImagePackerNativeTest.h"
 #include "ImagePictureNativeTest.h"
 #include "ImagePixelMapTest.h"
+#include "OHImageSourceNativeSupplementTest.h"
 #include "PixelmapNativeCropTest.h"
 #include "napi/native_api.h"
 #include "ImageReceiverNativeReadTest.h"
@@ -243,6 +244,10 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("ComposeOptionsReleaseTest", ComposeOptionsReleaseTest),
     DESCRIPTOR("GetHdrComposedPixelmapWithOptionsTest", GetHdrComposedPixelmapWithOptionsTest),
     DESCRIPTOR("ComposeOptionsCreateTest", ComposeOptionsCreateTest),
+    DESCRIPTOR("OHImageSourceNativeGetImagePropertyIntArraySupp", OHImageSourceNativeGetImagePropertyIntArraySupp),
+    DESCRIPTOR("OHImageSourceNativeModifyImagePropertyLongSupp", OHImageSourceNativeModifyImagePropertyLongSupp),
+    DESCRIPTOR("ImageSourceNativeGetImagePropertyDoubleArraySupp", ImageSourceNativeGetImagePropertyDoubleArraySupp),
+    DESCRIPTOR("ImageErrCodeSupp", ImageErrCodeSupp),
 
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)

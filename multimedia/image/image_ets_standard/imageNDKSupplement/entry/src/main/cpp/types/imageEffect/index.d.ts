@@ -215,4 +215,7 @@ export const GetDesiredPixelFormatTest:(a: number) => number;
 export const ComposeOptionsReleaseTest:(a: number) => number;
 export const GetHdrComposedPixelmapWithOptionsTest:(a: number) => number;
 export const ComposeOptionsCreateTest:(a: number) => number;
-
+export const OHImageSourceNativeGetImagePropertyIntArraySupp:(a: number, b:number, c:string, d:number[]) => number;
+export const OHImageSourceNativeModifyImagePropertyLongSupp:(a: number, b:number,c:string, d:number) => number;
+export const ImageSourceNativeGetImagePropertyDoubleArraySupp:(a: number, b:number, c:string, d:number) => number;
+export const ImageErrCodeSupp:(a: number) => number;
