@@ -772,7 +772,7 @@ export default function ApiCoverTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_AppPreloadType_0400', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Ability_AbilityBase_AppPreloadType_0500', Level.LEVEL0, async (done: Function) => {
       expect(4).assertEqual(application.AppPreloadType.TYPE_CREATE_BACKGROUND_ABILITY);
       done();
     })
