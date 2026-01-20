@@ -1,5 +1,5 @@
 /*
- * Copyright (c) huawei Technologies Co., Ltd. 2025. All right reserved
+ * Copyright (c) huawei Technologies Co., Ltd. 2025. All rights reserved
  */
 
 import { describe, beforeAll, afterEach, it, expect, beforeEach, Level, Size, TestType } from '@ohos/hypium'
@@ -13,11 +13,11 @@ import { image } from '@kit.ImageKit';
 
 const TEST_CONTACTS_NUM = 2;
 
-function sleep (time:number):Promise<string>{
-  return new Promise<string>((resolve)=>{
-    setTimeout(()=>{
+function sleep (time:number):Promise<string> {
+  return new Promise<string>((resolve) => {
+    setTimeout(() => {
       resolve('ok')
-    },time)
+    }, time)
   });
 }
 
@@ -101,12 +101,12 @@ export default function AddContactSTest() {
       key: '0',
       contactAttributes: {
         attributes: [contact.Attribute.ATTR_CONTACT_EVENT, contact.Attribute.ATTR_EMAIL,
-        contact.Attribute.ATTR_GROUP_MEMBERSHIP,
-        contact.Attribute.ATTR_IM, contact.Attribute.ATTR_NAME, contact.Attribute.ATTR_NICKNAME,
-        contact.Attribute.ATTR_NOTE, contact.Attribute.ATTR_ORGANIZATION, contact.Attribute.ATTR_PHONE,
-        contact.Attribute.ATTR_PORTRAIT, contact.Attribute.ATTR_POSTAL_ADDRESS,
-        contact.Attribute.ATTR_RELATION,
-        contact.Attribute.ATTR_SIP_ADDRESS, contact.Attribute.ATTR_WEBSITE]
+          contact.Attribute.ATTR_GROUP_MEMBERSHIP,
+          contact.Attribute.ATTR_IM, contact.Attribute.ATTR_NAME, contact.Attribute.ATTR_NICKNAME,
+          contact.Attribute.ATTR_NOTE, contact.Attribute.ATTR_ORGANIZATION, contact.Attribute.ATTR_PHONE,
+          contact.Attribute.ATTR_PORTRAIT, contact.Attribute.ATTR_POSTAL_ADDRESS,
+          contact.Attribute.ATTR_RELATION,
+          contact.Attribute.ATTR_SIP_ADDRESS, contact.Attribute.ATTR_WEBSITE]
       },
       emails: [{
         email: `13800000000@email.com`, 
@@ -262,24 +262,24 @@ export default function AddContactSTest() {
             sleep(500);
             let promise2 = contact.addContacts(context, phoneNumContacts);  
             promise2.then((data: number[]) => {
-            console.log(`${caseName} success data>${JSON.stringify(data)}`);
-            expect(data.length === TEST_CONTACTS_NUM).assertTrue();
-            contact.queryContactsByPhoneNumber(context, '13800000000', 
-              (err: BusinessError, data: contact.Contact[]) => {
-                if (err) {
-                  console.info(`${caseName} queryContacts:err->${JSON.stringify(err)}`);
-                  ExpectFail();
-                  done();
-                } else {
-                  console.info(`${caseName} queryContacts:success->${JSON.stringify(data)}`);
-                  ExpectTrue(data.length === TEST_CONTACTS_NUM * 2);
-                  done()
-                }
-              });
+              console.log(`${caseName} success data>${JSON.stringify(data)}`);
+              expect(data.length === TEST_CONTACTS_NUM).assertTrue();
+              contact.queryContactsByPhoneNumber(context, '13800000000', 
+                (err: BusinessError, data: contact.Contact[]) => {
+                  if (err) {
+                    console.info(`${caseName} queryContacts:err->${JSON.stringify(err)}`);
+                    ExpectFail();
+                    done();
+                  } else {
+                    console.info(`${caseName} queryContacts:success->${JSON.stringify(data)}`);
+                    ExpectTrue(data.length === TEST_CONTACTS_NUM * 2);
+                    done()
+                  }
+                });
             }).catch ((err: BusinessError) =>{
-              console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
-              ExpectFail();
-              done();
+                console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
+                ExpectFail();
+                done();
             });
           }).catch ((err: BusinessError) =>{
               console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
@@ -322,12 +322,12 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, phoneNumContacts);
           promise.then((data: number[]) => {
-              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-              expect(data.length === TEST_CONTACTS_NUM).assertTrue();
-              done();
-            }).catch((err: BusinessError) => {
-              console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
-              ExpectFail();
+            console.log(`${caseName} success: data>${JSON.stringify(data)}`);
+            expect(data.length === TEST_CONTACTS_NUM).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
+            ExpectFail();
               done();
           });
         } catch (err) {
@@ -353,11 +353,11 @@ export default function AddContactSTest() {
         let phoneNumContacts: contact.Contact[] = [];
         for (let i = 0; i < TEST_CONTACTS_NUM; i++) {
           let phoneNumContact: contact.Contact = {
-              name: {
-                fullName: `李四${i}`
-              }, phoneNumbers: [{
-                phoneNumber: ''
-              }]
+            name: {
+              fullName: `李四${i}`
+            }, phoneNumbers: [{
+              phoneNumber: ''
+            }]
           };
           phoneNumContacts.push(phoneNumContact);
         }
@@ -365,13 +365,13 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, phoneNumContacts);
           promise.then((data: number[]) => {
-              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-              expect(data.length === TEST_CONTACTS_NUM).assertTrue();
-              done();
-            }).catch((err: BusinessError) => {
-              console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
-              ExpectFail();
-              done();
+            console.log(`${caseName} success: data>${JSON.stringify(data)}`);
+            expect(data.length === TEST_CONTACTS_NUM).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
           });
         } catch (err) {
           console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
@@ -396,11 +396,11 @@ export default function AddContactSTest() {
         let phoneNumContacts: contact.Contact[] = [];
         for (let i = 0; i < TEST_CONTACTS_NUM; i++) {
           let phoneNumContact: contact.Contact = {
-              name: {
-                fullName: `李四${i}`
-              }, phoneNumbers: [{
-                phoneNumber: '13800000000'
-              }]
+            name: {
+              fullName: `李四${i}`
+            }, phoneNumbers: [{
+              phoneNumber: '13800000000'
+            }]
           };
           phoneNumContacts.push(phoneNumContact);
         }
@@ -408,13 +408,13 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, phoneNumContacts);
           promise.then((data: number[]) => {
-              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-              expect(data.length === TEST_CONTACTS_NUM).assertTrue();
-              done();
-            }).catch((err: BusinessError) => {
-              console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
-              ExpectFail();
-              done();
+            console.log(`${caseName} success: data>${JSON.stringify(data)}`);
+            expect(data.length === TEST_CONTACTS_NUM).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
           });
         } catch (err) {
           console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
@@ -438,24 +438,24 @@ export default function AddContactSTest() {
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContact: contact.Contact = {
-            name: {
-              fullName: 'Frank'
-            }, phoneNumbers: [{
-              phoneNumber: '12345'
-            }]
+          name: {
+            fullName: 'Frank'
+          }, phoneNumbers: [{
+            phoneNumber: '12345'
+          }]
         };
         try {
           sleep(500);
           let promise = contact.addContacts(context, [phoneNumContact]);
           promise.then((data: number[]) => {
-              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-              expect(data.length === 1).assertTrue();
-              expect(data[0] > 0).assertTrue();
-              done();
-            }).catch((err: BusinessError) => {
-              console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
-              ExpectFail();
-              done();
+            console.log(`${caseName} success: data>${JSON.stringify(data)}`);
+            expect(data.length === 1).assertTrue();
+            expect(data[0] > 0).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
           });
         } catch (err) {
           console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
@@ -479,29 +479,29 @@ export default function AddContactSTest() {
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContact: contact.Contact = {
-            name: {
-              fullName: 'Frank'
-            }, phoneNumbers: [{
-              phoneNumber: '13800000000'
-            }, {
-              phoneNumber: '13811111111'
-            }, {
-              phoneNumber: '13800000000'
-            }, {
-              phoneNumber: '13822222222'
-            }]
+          name: {
+            fullName: 'Frank'
+          }, phoneNumbers: [{
+            phoneNumber: '13800000000'
+          }, {
+            phoneNumber: '13811111111'
+          }, {
+            phoneNumber: '13800000000'
+          }, {
+            phoneNumber: '13822222222'
+          }]
         };
         try {
           sleep(500);
           let promise = contact.addContacts(context, [phoneNumContact]);
           promise.then((data: number[]) => {
-              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-              expect(data.length > 0).assertTrue();
-              done();
-            }).catch((err: BusinessError) => {
-              console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
-              ExpectFail();
-              done();
+            console.log(`${caseName} success: data>${JSON.stringify(data)}`);
+            expect(data.length > 0).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
           });
         } catch (err) {
           console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
@@ -535,13 +535,13 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, [phoneNumContact]);
           promise.then((data: number[]) => {
-              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-              expect(data.length > 0).assertTrue();
-              done();
-            }).catch((err: BusinessError) => {
-              console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
-              ExpectFail();
-              done();
+            console.log(`${caseName} success: data>${JSON.stringify(data)}`);
+            expect(data.length > 0).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
           });
         } catch (err) {
           console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
@@ -575,13 +575,13 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, [phoneNumContact]);
           promise.then((data: number[]) => {
-              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-              expect(data.length > 0).assertTrue();
-              done();
-            }).catch((err: BusinessError) => {
-              console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
-              ExpectFail();
-              done();
+            console.log(`${caseName} success: data>${JSON.stringify(data)}`);
+            expect(data.length > 0).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
           });
         } catch (err) {
           console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
@@ -609,13 +609,13 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, phoneNumContacts);
           promise.then((data: number[]) => {
-              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-              expect(data.length > 0).assertTrue();
-              done();
-            }).catch((err: BusinessError) => {
-              console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
-              ExpectFail();
-              done();
+            console.log(`${caseName} success: data>${JSON.stringify(data)}`);
+            expect(data.length > 0).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
           });
         } catch (err) {
           console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
@@ -639,23 +639,23 @@ export default function AddContactSTest() {
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContact: contact.Contact = {
-            name: {
-              fullName: '张三'
-            }, phoneNumbers: [{
-              phoneNumber: '13800000000'
-            }]
+          name: {
+            fullName: '张三'
+          }, phoneNumbers: [{
+            phoneNumber: '13800000000'
+          }]
         };
         try {
           sleep(500);
           let promise = contact.addContacts(context, [phoneNumContact]);
           promise.then((data: number[]) => {
-              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-              expect(data.length > 0).assertTrue();
-              done();
-            }).catch((err: BusinessError) => {
-              console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
-              ExpectFail();
-              done();
+            console.log(`${caseName} success: data>${JSON.stringify(data)}`);
+            expect(data.length > 0).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
           });
         } catch (err) {
           console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
@@ -679,11 +679,11 @@ export default function AddContactSTest() {
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContact: contact.Contact = {
-            name: {
-              fullName: '张三'
-            }, phoneNumbers: [{
-              phoneNumber: '13800000000'
-            }]
+          name: {
+            fullName: '张三'
+          }, phoneNumbers: [{
+            phoneNumber: '13800000000'
+          }]
         };
         try {
           sleep(500);
@@ -692,11 +692,11 @@ export default function AddContactSTest() {
             tasks.push(contact.addContacts(context, [phoneNumContact])); 
           }
           await promise.all(tasks).then((taskResults: number[][])=> {
-              taskResults.forEach((data: number[], index:number) => {
-                console.log(`${caseName} ${index} success: data>${JSON.stringify(data)}`);
-                expect(data.length > 0).assertTrue();
-              })
+            taskResults.forEach((data: number[], index:number) => {
+              console.log(`${caseName} ${index} success: data>${JSON.stringify(data)}`);
+              expect(data.length > 0).assertTrue();
             })
+          })
           done();
         } catch (err) {
           console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
@@ -734,13 +734,13 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, phoneNumContacts);
           promise.then((data: number[]) => {
-              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-              expect(data.length === 100).assertTrue();
-              done();
-            }).catch((err: BusinessError) => {
-              console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
-              ExpectFail();
-              done();
+            console.log(`${caseName} success: data>${JSON.stringify(data)}`);
+            expect(data.length === 100).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
           });
         } catch (err) {
           console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
@@ -768,13 +768,13 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, [contactDataError]);
           promise.then((data: number[]) => {
-              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-              expect(data.length > 0).assertTrue();
-              done();
-            }).catch((err: BusinessError) => {
-              console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
-              ExpectFail();
-              done();
+            console.log(`${caseName} success: data>${JSON.stringify(data)}`);
+            expect(data.length > 0).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
           });
         } catch (err) {
           console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
@@ -797,10 +797,10 @@ export default function AddContactSTest() {
         const caseName: string = 'testTelephonyContactAddContacts1500';
         try {
           contact.addContacts(context, undefined).then((data: number[]) => {
-              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-              expect().assertFail();
-              done();
-            })
+            console.log(`${caseName} success: data>${JSON.stringify(data)}`);
+            expect().assertFail();
+            done();
+          })
         } catch (err) {
           console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
           expect(err.code === 16700002).assertTrue();
@@ -822,10 +822,10 @@ export default function AddContactSTest() {
         const caseName: string = 'testTelephonyContactAddContacts1600';
         try {
           contact.addContacts(context, null).then((data: number[]) => {
-              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-              expect().assertFail();
-              done();
-            })
+            console.log(`${caseName} success: data>${JSON.stringify(data)}`);
+            expect().assertFail();
+            done();
+          })
         } catch (err) {
           console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
           expect(err.code === 16700002).assertTrue();
