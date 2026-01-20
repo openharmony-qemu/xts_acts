@@ -37,7 +37,6 @@ export default function testsuite() {
   positionSettingJsunit()
   OnTextSelectionChangeTest()
   editMenuOptionsApi12Test()
-  editMenuIdAIWriterTest()
   TextContentGetSelectionTest()
   editMenuOptionsApi16Test()
   OnPrepareMenuTest()
@@ -47,4 +46,5 @@ export default function testsuite() {
   MovingPhotoViewApi13Test()
   MovingPhotoViewApi18Test()
   SpanOnHoverTest()
+  editMenuIdAIWriterTest()
 }
