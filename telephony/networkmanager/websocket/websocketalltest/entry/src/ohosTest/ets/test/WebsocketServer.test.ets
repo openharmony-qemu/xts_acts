@@ -45,7 +45,7 @@ function expectFail(info: string = ''): void {
 
 let serverConfig: webSocket.WebSocketServerConfig ={
   serverIP: "0.0.0.0",
-  serverPort: 8088,
+  serverPort: 8050,
   maxConcurrentClientsNumber: 10,
   maxConnectionsForOneClient: 4,
 }
@@ -120,7 +120,7 @@ export default function WebsocketServerTest() {
         console.info(`${caseName} --> ${server}`);
         let serverConfig: webSocket.WebSocketServerConfig ={
           serverIP: "0.0.0.0",
-          serverPort: 8087,
+          serverPort: 8051,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
         }
@@ -166,7 +166,7 @@ export default function WebsocketServerTest() {
         console.info(`${caseName} --> ${server}`);
         let serverConfig: webSocket.WebSocketServerConfig ={
           serverIP: "0.0.0.0",
-          serverPort: 8087,
+          serverPort: 8052,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
           protocol: "my-protocol",
@@ -217,7 +217,7 @@ export default function WebsocketServerTest() {
         }
         let serverConfig: webSocket.WebSocketServerConfig ={
           serverIP: "0.0.0.0",
-          serverPort: 8087,
+          serverPort: 8053,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
           protocol: "my-protocol",
@@ -269,7 +269,7 @@ export default function WebsocketServerTest() {
         }
         let serverConfig: webSocket.WebSocketServerConfig ={
           serverIP: undefined,
-          serverPort: 8087,
+          serverPort: 8054,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
           protocol: "my-protocol",
@@ -321,7 +321,7 @@ export default function WebsocketServerTest() {
         }
         let serverConfig: webSocket.WebSocketServerConfig ={
           serverIP: "0.0.0.0",
-          serverPort: 8087,
+          serverPort: 8055,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
           protocol: "my-protocol",
@@ -416,7 +416,7 @@ export default function WebsocketServerTest() {
         console.info(`${caseName} --> ${server}`);
         let serverConfig: webSocket.WebSocketServerConfig ={
           serverIP: "0.0.0.0..",
-          serverPort: 8088,
+          serverPort: 8056,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
         }
@@ -462,7 +462,7 @@ export default function WebsocketServerTest() {
         console.info(`${caseName} --> ${server}`);
         let serverConfig: webSocket.WebSocketServerConfig ={
           serverIP: "0.0.0.0",
-          serverPort: 8088,
+          serverPort: 8057,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 11,
         }
@@ -508,7 +508,7 @@ export default function WebsocketServerTest() {
         let server: webSocket.WebSocketServer= webSocket.createWebSocketServer()
         let serverConfig: webSocket.WebSocketServerConfig ={
           serverIP: "0.0.0.0",
-          serverPort: 8088,
+          serverPort: 8058,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
         }
@@ -534,7 +534,7 @@ export default function WebsocketServerTest() {
         await sleep(100)
         let client: webSocket.WebSocket = webSocket.createWebSocket()
         console.info(`${caseName}client-- >${client}`)
-        client.connect('ws://127.0.0.1:8088', (err: BusinessError, value: boolean) => {
+        client.connect('ws://127.0.0.1:8058', (err: BusinessError, value: boolean) => {
           if (value) {
             console.info(`${caseName} test connect success and value is ${value}`);
           } else {
@@ -583,7 +583,7 @@ export default function WebsocketServerTest() {
         let server: webSocket.WebSocketServer= webSocket.createWebSocketServer()
         let serverConfig: webSocket.WebSocketServerConfig ={
           serverIP: "0.0.0.0",
-          serverPort: 8089,
+          serverPort: 8059,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
         }
@@ -609,7 +609,7 @@ export default function WebsocketServerTest() {
         await sleep(500)
         let client: webSocket.WebSocket = webSocket.createWebSocket()
         console.info(`${caseName}client-- >${client}`)
-        client.connect('ws://127.0.0.1:8089', (err: BusinessError, value: boolean) => {
+        client.connect('ws://127.0.0.1:8059', (err: BusinessError, value: boolean) => {
           if (value) {
             console.info(`${caseName} test connect success and value is ${value}`);
           } else {
@@ -675,7 +675,7 @@ export default function WebsocketServerTest() {
         let server: webSocket.WebSocketServer= webSocket.createWebSocketServer()
         let serverConfig: webSocket.WebSocketServerConfig = {
           serverIP: "0.0.0.0",
-          serverPort: 8088,
+          serverPort: 8060,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
         }
@@ -696,7 +696,7 @@ export default function WebsocketServerTest() {
         await new Promise<string>((resolve)=> {
           let client: webSocket.WebSocket = webSocket.createWebSocket()
           console.info(`${caseName}client-- >${client}`)
-          client.connect('ws://127.0.0.1:8088', (err: BusinessError, value: boolean) => {
+          client.connect('ws://127.0.0.1:8060', (err: BusinessError, value: boolean) => {
             if (value) {
               console.info(`${caseName} test connect success and value is ${value}`);
             } else {
@@ -760,7 +760,7 @@ export default function WebsocketServerTest() {
         let server: webSocket.WebSocketServer= webSocket.createWebSocketServer()
         let serverConfig: webSocket.WebSocketServerConfig = {
           serverIP: "0.0.0.0",
-          serverPort: 8088,
+          serverPort: 8061,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
         }
@@ -781,7 +781,7 @@ export default function WebsocketServerTest() {
         await new Promise<string>((resolve)=> {
           let client: webSocket.WebSocket = webSocket.createWebSocket()
           console.info(`${caseName}client-- >${client}`)
-          client.connect('ws://127.0.0.1:8088', (err: BusinessError, value: boolean) => {
+          client.connect('ws://127.0.0.1:8061', (err: BusinessError, value: boolean) => {
             if (value) {
               console.info(`${caseName} test connect success and value is ${value}`);
             } else {
@@ -841,7 +841,7 @@ export default function WebsocketServerTest() {
         let server: webSocket.WebSocketServer= webSocket.createWebSocketServer()
         let serverConfig: webSocket.WebSocketServerConfig = {
           serverIP: "0.0.0.0",
-          serverPort: 8099,
+          serverPort: 8062,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
         }
@@ -861,7 +861,7 @@ export default function WebsocketServerTest() {
         })
         let client: webSocket.WebSocket = webSocket.createWebSocket()
         console.info(`${caseName}client-- >${client}`)
-        client.connect('ws://127.0.0.1:8099', (err: BusinessError, value: boolean) => {
+        client.connect('ws://127.0.0.1:8062', (err: BusinessError, value: boolean) => {
           if (value) {
             console.info(`${caseName} test connect success and value is ${value}`);
           } else {
@@ -932,7 +932,7 @@ export default function WebsocketServerTest() {
         })
         let client: webSocket.WebSocket = webSocket.createWebSocket()
         console.info(`${caseName}client-- >${client}`)
-        client.connect('ws://127.0.0.1:8088', (err: BusinessError, value: boolean) => {
+        client.connect('ws://127.0.0.1:8050', (err: BusinessError, value: boolean) => {
           if (value) {
             console.info(`${caseName} test connect success and value is ${value}`);
           } else {
@@ -990,7 +990,7 @@ export default function WebsocketServerTest() {
           console.info(`${caseName} --> ${server}`);
           let serverConfig: webSocket.WebSocketServerConfig ={
             serverIP: "0.0.0.0",
-            serverPort: 8088,
+            serverPort: 8063,
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
