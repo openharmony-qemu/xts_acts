@@ -57,7 +57,7 @@ export default function abilityTest() {
       }
     })
 
-    /*
+    /**
      * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0400
      * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0400
      * @tc.desc    getCaptionsManager
@@ -87,7 +87,7 @@ export default function abilityTest() {
       }
     })
 
-    /*
+    /**
      * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0500
      * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0500
      * @tc.desc    onEnableChange
@@ -111,7 +111,7 @@ export default function abilityTest() {
       }
     })
 
-    /*
+    /**
      * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0600
      * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0600
      * @tc.desc    onStyleChange
@@ -135,7 +135,7 @@ export default function abilityTest() {
       }
     })
 
-    /*
+    /**
      * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0700
      * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0700
      * @tc.desc    offEnableChange
@@ -160,7 +160,7 @@ export default function abilityTest() {
       }
     })
 
-    /*
+    /**
      * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0800
      * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0800
      * @tc.desc    offStyleChange
@@ -185,7 +185,7 @@ export default function abilityTest() {
       }
     })
 
-    /*
+    /**
      * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0900
      * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0900
      * @tc.desc    The parameter input is 'enableChange', test the onEnableChange() function, and return undefined
@@ -199,14 +199,19 @@ export default function abilityTest() {
       let callbackdata = (data: boolean) => {
         hilog.info(domain, tag, 'on captions state changed');
       }
-      captionsManager.onEnableChange(callbackdata);
-      captionsManager.offEnableChange(callbackdata);
-      captionsManager.offEnableChange();
-      expect(true).assertTrue();
-      done();
+      try {
+        lcaptionsManager.onEnableChange(callbackdata);
+        captionsManager.offEnableChange(callbackdata);
+        captionsManager.offEnableChange();
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0900 failed');
+        expect(null).assertFail();
+        done();
+      }
     })
 
-    /*
+    /**
      * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1000
      * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1000
      * @tc.desc    The parameter input is 'styleChange', test the onStyleChange() function, and return undefined
@@ -220,11 +225,16 @@ export default function abilityTest() {
       let callbackdata = (data: accessibility.CaptionsStyle) => {
         hilog.info(domain, tag, 'on captions style changed');
       }
-      captionsManager.onStyleChange(callbackdata);
-      captionsManager.offStyleChange(callbackdata);
-      captionsManager.offStyleChange();
-      expect(true).assertTrue();
-      done();
+      try {
+        captionsManager.onStyleChange(callbackdata);
+        captionsManager.offStyleChange(callbackdata);
+        captionsManager.offStyleChange();
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1000 failed');
+        expect(null).assertFail();
+        done();
+      }
     })
 
 
