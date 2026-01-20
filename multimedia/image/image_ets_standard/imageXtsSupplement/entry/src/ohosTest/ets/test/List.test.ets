@@ -183,8 +183,6 @@ import ImageSourcePixelYDimensionSupp from './image/ImageSourcePixelYDimension.t
 import ImageSourceRelatedSoundFileSupp from './image/ImageSourceRelatedSoundFile.test';
 import ImageWidthLengthSupp from './image/ImageExifWidthLength.test';
 import ImageDescriptionSupp from './image/ImageDescriptionPhotometricInterpretation.test';
-
-
 import ImageGPSSpeed from './image/ImageGPSSpeed.test';
 import ImageGPSTrackRef from './image/ImageGPSTrackRef.test';
 import ImageGPSTrack from './image/ImageGPSTrack.test';
@@ -206,6 +204,7 @@ import ImageLensSpecificationSupp from './image/ImageExifLensSpecification.test'
 import ImageExifOECFSupp from './image/ImageExifOECF.test';
 import ImageBitsPerSampleStripOffsetsSupp from './image/ImageBitsPerSampleStripOffsets.test';
 import ImageSourceMetadataSupp from './image/ImageSourceMetadata.test';
+import ImageGetImagePropertyOptionsSupp from './image/ImageGetImagePropertyOptions.test';
 import ImageGammaSupp from './image/ImageGammaSupp.test';
 
 export default function testsuite() {
@@ -397,5 +396,6 @@ export default function testsuite() {
   ImageExifOECFSupp();
   ImageBitsPerSampleStripOffsetsSupp();
   ImageSourceMetadataSupp();
+  ImageGetImagePropertyOptionsSupp();
   ImageGammaSupp()
 }
