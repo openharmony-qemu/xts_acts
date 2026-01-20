@@ -209,10 +209,10 @@ void MyAudioRendererOnFastStatusChangeCallback(OH_AudioRenderer* renderer, void*
 }
 
 void MyPlaybackCapturerStartCallback(OH_AudioCapturer* capturer, void* userData,
- 	OH_AudioStream_playbackCaptureStartState state)
+    OH_AudioStream_playbackCaptureStartState state)
 {
- 	(void)userData;
- 	LOG("MyPlaybackCapturerStartCallback, state is %{public}d", state);
+    (void)userData;
+    LOG("MyPlaybackCapturerStartCallback, state is %{public}d", state);
 }
 
 static napi_value CreateAudioStreamBuilder(napi_env env, napi_callback_info info)
