@@ -1015,27 +1015,27 @@ export default function ApiCoverTest() {
         }
       }
       let lifeCallback2:InteropAbilityLifecycleCallback = {
-        onAbilityCreate:(ability: any)=>{
+        onAbilityCreate:(ability: object)=>{
          console.log(`${tag} onAbilityCreate success, ability: ${JSON.stringify(ability)}`);
          try{expect().assertFail()}catch{}
         },
-        onWindowStageCreate:(ability: any, window: window.WindowStage)=>{
+        onWindowStageCreate:(ability: object, window: window.WindowStage)=>{
            console.log(`${tag} onWindowStageCreate success, ability: ${JSON.stringify(ability)}`);
            try{expect().assertFail()}catch{}
         },
-        onWindowStageDestroy:(ability: any, window: window.WindowStage)=>{
+        onWindowStageDestroy:(ability: object, window: window.WindowStage)=>{
            console.log(`${tag} onWindowStageDestroy success, ability: ${JSON.stringify(ability)}`);
            try{expect().assertFail()}catch{}
         },
-        onAbilityDestroy:(ability: any)=>{
+        onAbilityDestroy:(ability: object)=>{
            console.log(`${tag} onAbilityDestroy success, ability: ${JSON.stringify(ability)}`);
            try{expect().assertFail()}catch{}
         },
-        onAbilityForeground:(ability: any)=>{
+        onAbilityForeground:(ability: object)=>{
            console.log(`${tag} onAbilityForeground success, ability: ${JSON.stringify(ability)}`);
            try{expect().assertFail()}catch{}
         },
-        onAbilityBackground:(ability: any)=>{
+        onAbilityBackground:(ability: object)=>{
            console.log(`${tag} onAbilityBackground success, ability: ${JSON.stringify(ability)}`);
            try{expect().assertFail()}catch{}
         }

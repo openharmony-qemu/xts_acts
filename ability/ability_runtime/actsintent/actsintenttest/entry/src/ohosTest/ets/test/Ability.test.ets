@@ -79,7 +79,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRunTime_InsightIntentProvider_4900
      * @tc.number SUB_Ability_AbilityRunTime_InsightIntentProvider_4900
-     * @tc.desc   Test sendExecuteResult with instanceId is -1.
+     * @tc.desc   Test sendIntentResult with instanceId is -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -147,7 +147,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRunTime_InsightIntentProvider_5100
      * @tc.number SUB_Ability_AbilityRunTime_InsightIntentProvider_5100
-     * @tc.desc   Test sendExecuteResult with instanceId is undefined.
+     * @tc.desc   Test sendIntentResult with instanceId is undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -194,13 +194,14 @@ export default function abilityTest() {
           try{ expect().assertFail();}catch{}
           done();
         }).catch((err:BusinessError)=>{
-          try{expect(err?.code).assertEqual(16000003);}catch{}
+          console.error(`[${caseName}]: error ` + err.code + err.message);
+          try{ expect().assertFail();}catch{}
           done();
         })
       } catch (err) {
         let error = err as BusinessError;
-        console.error(`[${caseName}]: error` + error.code + error.message);
-        expect().assertFail();
+        console.error(`[${caseName}]: catch ` + error.code + error.message);
+        expect(error?.code).assertEqual(16000050);
         done();
       }
       console.log(`[${caseName}]: end`)
@@ -209,7 +210,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRunTime_InsightIntentProvider_5300
      * @tc.number SUB_Ability_AbilityRunTime_InsightIntentProvider_5300
-     * @tc.desc   Test sendExecuteResult with result is undefined.
+     * @tc.desc   Test sendIntentResult with result is undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -222,13 +223,14 @@ export default function abilityTest() {
           try{ expect().assertFail();}catch{}
           done();
         }).catch((err:BusinessError)=>{
-          try{expect(err?.code).assertEqual(16000003);}catch{}
+          console.error(`[${caseName}]: error ` + err.code + err.message);
+          try{ expect().assertFail();}catch{}
           done();
         })
       } catch (err) {
         let error = err as BusinessError;
-        console.error(`[${caseName}]: error` + error.code + error.message);
-        expect().assertFail();
+        console.error(`[${caseName}]: catch ` + error.code + error.message);
+        expect(error?.code).assertEqual(16000050);
         done();
       }
       console.log(`[${caseName}]: end`)
