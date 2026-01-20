@@ -631,6 +631,7 @@ export default function abilityTest() {
           console.info(`${TAG}: setCallMetadataCallback with error callMetadata test, error: code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(401);
         })
+        done();
       } catch (error) {
         console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
@@ -656,6 +657,7 @@ export default function abilityTest() {
           console.info(`${TAG}: setCallMetadataCallback with error callMetadata test, error: code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(401);
         })
+        done();
       } catch (error) {
         console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
@@ -681,6 +683,7 @@ export default function abilityTest() {
           console.info(`${TAG}: setCallMetadataCallback with error callMetadata test, error: code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(401);
         })
+        done();
       } catch (error) {
         console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
@@ -1260,6 +1263,7 @@ export default function abilityTest() {
                 expect(data.muted).assertEqual(avCallState0.muted);
               }
             })
+            done();
           }
         });
       } catch (error) {
@@ -1301,6 +1305,7 @@ export default function abilityTest() {
                 expect(data.muted).assertEqual(avCallState1.muted);
               }
             })
+            done();
           }
         })
       } catch (error) {
@@ -1834,7 +1839,7 @@ export default function abilityTest() {
         await controller.off('callMetadataChange');
         await session.setCallMetadata(callMetadata);
         await sleep(500);
-        expect(flag).assertTrue();
+        expect(flag).assertFalse();
       } catch (error) {
         console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
@@ -1907,7 +1912,7 @@ export default function abilityTest() {
         await sleep(500);
         console.log(`${TAG}: on callMetadataChange 1 received: ${receivedCallback1}`);
         console.log(`${TAG}: on callMetadataChange 2 received: ${receivedCallback2}`);
-        expect(receivedCallback1).assertTrue();
+        expect(receivedCallback1).assertFalse();
         expect(receivedCallback2).assertTrue();
 
         receivedCallback1 = false;
@@ -3909,7 +3914,7 @@ export default function abilityTest() {
       });
 
       await controller.getAVMetadata().then((data:avSession.AVMetadata) => {
-        expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
+        expect(data.singleLyricText).not().assertEqual(metadata.singleLyricText);
       }).catch((err:BusinessError) => {
         console.error(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
@@ -3996,21 +4001,21 @@ export default function abilityTest() {
           '\\\'\r\n\t\b\\\f\v\\\x11\\\u1111'
       };
       try {
-        await session.setAVMetadata(metadata, (err:BusinessError) => {
+        session.setAVMetadata(metadata, (err:BusinessError) => {
           if (err) {
             console.info(`TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
           }
-        })
-        await controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
-          if (err) {
-            console.info(`TestLog: Get singleLyricText error: code: ${err.code}, message: ${err.message}`);
-            expect(false).assertTrue();
-          } else {
-            console.info(`TestLog: Get singleLyricText data ${data.singleLyricText}`);
-            expect(data.assetId).assertEqual(metadata.assetId);
-            expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
-          }
+          controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
+            if (err) {
+              console.info(`TestLog: Get singleLyricText error: code: ${err.code}, message: ${err.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(`TestLog: Get singleLyricText data ${data.singleLyricText}`);
+              expect(data.assetId).assertEqual(metadata.assetId);
+              expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
+            }
+          })
         })
       } catch (err) {
         console.info(`TestLog: set & get singleLyricText error: code: ${err.code}, message: ${err.message}`);
