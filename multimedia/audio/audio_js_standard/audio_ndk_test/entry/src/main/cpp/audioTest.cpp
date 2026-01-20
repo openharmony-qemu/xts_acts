@@ -209,7 +209,7 @@ void MyAudioRendererOnFastStatusChangeCallback(OH_AudioRenderer* renderer, void*
 }
 
 void MyPlaybackCapturerStartCallback(OH_AudioCapturer* capturer, void* userData,
-    OH_AudioStream_playbackCaptureStartState state)
+    OH_AudioStream_PlaybackCaptureStartState state)
 {
     (void)userData;
     LOG("MyPlaybackCapturerStartCallback, state is %{public}d", state);
