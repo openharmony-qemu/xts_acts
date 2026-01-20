@@ -4641,5 +4641,210 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       }
     });
 
+ 
+    /**
+     * @tc.number     SUB_WMS_SYSTEM_PROPERTIES_WINDOW_SIZE_0100
+     * @tc.name       testEnvSystemPropertiesWindowSizewithMainwindow
+     * @tc.desc       testEnvSystemPropertiesWindowSizewithMainwindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testEnvSystemPropertiesWindowSizewithMainwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testEnvSystemPropertiesWindowSizewithMainwindow';
+      console.log(caseName + 'begin');
+      let driver = await Driver.create();
+      let windowClass: window.Window | undefined;
+      let windowStageStart = await startAbility4(caseName, context);
+      windowClass = windowStageStart.getMainWindowSync();
+      await windowClass.setUIContent('testability/pages/Index3');
+      await windowClass.showWindow();
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let isFreeMode = windowClass.isInFreeWindowMode();
+      console.log(`${caseName} isFreeMode: ${isFreeMode}`);
+      try {
+        if (!canIUseRes || !isFreeMode) {
+          await terminateAbility4(caseName)
+          done();
+        } else {
+          let btnClick = await driver.findComponent(ON.id('index3Btn'))
+          await sleep(1000)
+          await btnClick.click();
+          await sleep(1000)
+          let windowSizeVP = AppStorage.get('windowSizeVP') as window.SizeInVP;
+          let windowSizePX = AppStorage.get('windowSizePX') as window.Size;
+          console.log(caseName + ' windowSizeVP: ' + JSON.stringify(windowSizeVP))
+          console.log(caseName + ' windowSizePX: ' + JSON.stringify(windowSizePX))
+          const callback = async (size: window.Size) => {
+            console.log(caseName + ' callback size: ' + JSON.stringify(size));
+            expect(size.width).assertEqual(windowSizePX.width);
+            expect(size.height).assertEqual(windowSizePX.height);
+            let widthVp2Px = vp2px(windowSizeVP.width);
+            let heightVp2Px = vp2px(windowSizeVP.height);
+            console.log(caseName + ' widthVp2Px: ' + widthVp2Px)
+            console.log(caseName + ' heightVp2Px: ' + heightVp2Px)
+            expect(size.width).assertEqual(widthVp2Px);
+            expect(size.height).assertEqual(heightVp2Px);
+            await terminateAbility4(caseName)
+            done()
+          }
+          windowClass.on('windowSizeChange', callback);
+          await windowClass.resize(windowSizePX.width, windowSizePX.height);
+          await sleep(1000)
+        }
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await windowClass?.destroyWindow();
+        await terminateAbility4(caseName)
+        expect().assertFail();
+        done()
+      }
+    });
+
+
+    /**
+     * @tc.number     SUB_WMS_SYSTEM_PROPERTIES_WINDOW_SIZE_0200
+     * @tc.name       testEnvSystemPropertiesWindowSizewithSubwindow
+     * @tc.desc       testEnvSystemPropertiesWindowSizewithSubwindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testEnvSystemPropertiesWindowSizewithSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testEnvSystemPropertiesWindowSizewithSubwindow';
+      console.log(caseName + 'begin');
+      let driver = await Driver.create();
+      let windowClass = await windowStage.createSubWindow('testEnvSystemPropertiesWindowSizewithSubwindow')
+      await windowClass.setUIContent('testability/pages/Index3');
+      await windowClass.showWindow();
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let isFreeMode = windowClass.isInFreeWindowMode();
+      console.log(`${caseName} isFreeMode: ${isFreeMode}`);
+      try {
+        if (!canIUseRes || !isFreeMode) {
+          await windowClass.destroyWindow()
+          done();
+        } else {
+          let btnClick = await driver.findComponent(ON.id('index3Btn'))
+          await sleep(1000)
+          await btnClick.click();
+          await sleep(1000)
+          let windowSizeVP = AppStorage.get('windowSizeVP') as window.SizeInVP;
+          let windowSizePX = AppStorage.get('windowSizePX') as window.Size;
+          console.log(caseName + ' windowSizeVP: ' + JSON.stringify(windowSizeVP))
+          console.log(caseName + ' windowSizePX: ' + JSON.stringify(windowSizePX))
+          const callback = async (size: window.Size) => {
+            console.log(caseName + ' callback size: ' + JSON.stringify(size));
+            expect(size.width).assertEqual(windowSizePX.width);
+            expect(size.height).assertEqual(windowSizePX.height);
+            let widthVp2Px = vp2px(windowSizeVP.width);
+            let heightVp2Px = vp2px(windowSizeVP.height);
+            console.log(caseName + ' widthVp2Px: ' + widthVp2Px)
+            console.log(caseName + ' heightVp2Px: ' + heightVp2Px)
+            expect(size.width).assertEqual(widthVp2Px);
+            expect(size.height).assertEqual(heightVp2Px);
+            await windowClass.destroyWindow()
+            done()
+          }
+          windowClass.on('windowSizeChange', callback);
+          await windowClass.resize(windowSizePX.width, windowSizePX.height);
+          await sleep(1000)
+        }
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await windowClass?.destroyWindow()
+        expect().assertFail();
+        done()
+      }
+    });
+
+    /**
+     * @tc.number     SUB_WMS_START_MOVING_REPEAT_0100
+     * @tc.name       teststartMovingRepeated
+     * @tc.desc       teststartMovingRepeated
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('teststartMovingRepeated', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'teststartMovingRepeated';
+      console.log(caseName + 'begin');
+      let windowClass = windowStage.getMainWindowSync()
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let isFreeMode = windowClass.isInFreeWindowMode();
+      console.log(`${caseName} isFreeMode: ${isFreeMode}`);
+      let subWindowClass: window.Window | undefined;
+      try {
+        subWindowClass = await windowStage.createSubWindow('teststartMovingRepeated');
+        await windowClass.setUIContent('testability/pages/Index1');
+        await windowClass.showWindow();
+        await sleep(500)
+        await subWindowClass.startMoving();
+        await subWindowClass.startMoving();
+        await subWindowClass.destroyWindow()
+        expect().assertFail();
+        done()
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await subWindowClass?.destroyWindow()
+        if (isFreeMode) {
+          expect(err.code).assertEqual(1300001);
+          done()
+        } else {
+          expect(err.code).assertEqual(801);
+          done()
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_WMS_START_MOVING_WITH_OFFSETX_OFFSETY_REPEAT_0100
+     * @tc.name       teststartMovingwithOffsetXandOffsetYRepeated
+     * @tc.desc       teststartMovingwithOffsetXandOffsetYRepeated
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('teststartMovingwithOffsetXandOffsetYRepeated', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'teststartMovingwithOffsetXandOffsetYRepeated';
+      console.log(caseName + 'begin');
+      let windowClass = windowStage.getMainWindowSync()
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let isFreeMode = windowClass.isInFreeWindowMode();
+      console.log(`${caseName} isFreeMode: ${isFreeMode}`);
+      let subWindowClass: window.Window | undefined;
+      try {
+        subWindowClass = await windowStage.createSubWindow('teststartMovingRepeated');
+        await subWindowClass.setUIContent('testability/pages/Index1');
+        await subWindowClass.showWindow();
+        await sleep(500)
+        let windowRect = subWindowClass.getWindowProperties().windowRect;
+        console.log(`${caseName} subWindowClass windowRect: ${JSON.stringify(windowRect)}`);
+        let offSetX = windowRect.left + windowRect.width / 2;
+        console.log(`${caseName}  offSetX: ${JSON.stringify(offSetX)}`);
+        let offSetY = windowRect.top + windowRect.height / 2;
+        console.log(`${caseName}  offSetY: ${JSON.stringify(offSetY)}`);
+        await subWindowClass.startMoving(offSetX, offSetY);
+        await subWindowClass.startMoving(offSetX, offSetY);
+        await subWindowClass.destroyWindow()
+        expect().assertFail();
+        done()
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await subWindowClass?.destroyWindow()
+        if (isFreeMode) {
+          expect(err.code).assertEqual(1300001);
+          done()
+        } else {
+          expect(err.code).assertEqual(801);
+          done()
+        }
+      }
+    });
+
   })
 }

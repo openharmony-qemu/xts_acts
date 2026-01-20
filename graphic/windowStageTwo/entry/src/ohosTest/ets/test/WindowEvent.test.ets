@@ -48,6 +48,39 @@ async function sleep(time: number) {
   clearTimeout(timeoutId)
 }
 
+async function startAbility3(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility3'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest3') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility3(caseName: string) {
+  let pageContext = AppStorage.get('contextTest3') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
 export default function windowEventTest() {
   describe('windowEvent_test', () => {
     console.log('describe window_api_test start!!!')
@@ -213,6 +246,358 @@ export default function windowEventTest() {
       }
     });
 
-    
+    /**
+     * @tc.name   testSetReceiveDragEventEnabledwithMainWindow
+     * @tc.number SUB_WMS_SET_RECEIVE_DRAG_EVENT_ENABLED_0100
+     * @tc.desc   验证主窗setReceiveDragEventEnabled接口和isReceiveDragEventEnabled接口可以配合使用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetReceiveDragEventEnabledwithMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testSetReceiveDragEventEnabledwithMainWindow ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowStageStart = await startAbility3(caseName, context);
+      let windowClass = windowStageStart.getMainWindowSync();
+      await windowClass.setUIContent('testability/pages/Index2');
+      await windowClass.showWindow();
+      await sleep(500);
+      try {
+        await windowClass.setReceiveDragEventEnabled(false);
+        let res1 = windowClass.isReceiveDragEventEnabled();
+        console.info(caseName + ' windowClass.isReceiveDragEventEnabled() res1: ' + JSON.stringify(res1));
+        expect(res1).assertEqual(false)
+        await windowClass.setReceiveDragEventEnabled(true);
+        let res2 = windowClass.isReceiveDragEventEnabled();
+        console.info(caseName + ' windowClass.isReceiveDragEventEnabled() res2: ' + JSON.stringify(res2));
+        expect(res1).assertEqual(true);
+        await terminateAbility3(caseName);
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await terminateAbility3(caseName);
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetReceiveDragEventEnabledwithSubWindow
+     * @tc.number SUB_WMS_SET_RECEIVE_DRAG_EVENT_ENABLED_0200
+     * @tc.desc   验证子窗setReceiveDragEventEnabled接口和isReceiveDragEventEnabled接口可以配合使用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetReceiveDragEventEnabledwithSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testSetReceiveDragEventEnabledwithSubWindow ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowClass = await windowStage.createSubWindow('testSetReceiveDragEventEnabledwithSubWindow')
+      await windowClass.setUIContent('testability/pages/Index2');
+      await windowClass.showWindow();
+      await sleep(500);
+      try {
+        await windowClass.setReceiveDragEventEnabled(false);
+        let res1 = windowClass.isReceiveDragEventEnabled();
+        console.info(caseName + ' windowClass.isReceiveDragEventEnabled() res1: ' + JSON.stringify(res1));
+        expect(res1).assertEqual(false)
+        await windowClass.setReceiveDragEventEnabled(true);
+        let res2 = windowClass.isReceiveDragEventEnabled();
+        console.info(caseName + ' windowClass.isReceiveDragEventEnabled() res2: ' + JSON.stringify(res2));
+        expect(res1).assertEqual(true);
+        await windowClass.destroyWindow();
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await windowClass.destroyWindow()
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+
+    /**
+     * @tc.name   testSetReceiveDragEventEnabledwithDialogWindow
+     * @tc.number SUB_WMS_SET_RECEIVE_DRAG_EVENT_ENABLED_0300
+     * @tc.desc   验证系统窗setReceiveDragEventEnabled接口和isReceiveDragEventEnabled接口可以配合使用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetReceiveDragEventEnabledwithDialogWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testSetReceiveDragEventEnabledwithDialogWindow ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let config: window.Configuration = {
+        name: "testSetReceiveDragEventEnabledwithDialogWindow",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      };
+      let windowClass = await window.createWindow(config);
+      await windowClass.setUIContent('testability/pages/Index2');
+      await windowClass.showWindow();
+      await sleep(500);
+      try {
+        await windowClass.setReceiveDragEventEnabled(false);
+        let res1 = windowClass.isReceiveDragEventEnabled();
+        console.info(caseName + ' windowClass.isReceiveDragEventEnabled() res1: ' + JSON.stringify(res1));
+        expect(res1).assertEqual(false)
+        await windowClass.setReceiveDragEventEnabled(true);
+        let res2 = windowClass.isReceiveDragEventEnabled();
+        console.info(caseName + ' windowClass.isReceiveDragEventEnabled() res2: ' + JSON.stringify(res2));
+        expect(res1).assertEqual(true);
+        await windowClass.destroyWindow();
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await windowClass.destroyWindow()
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+
+    /**
+     * @tc.name   testSetReceiveDragEventEnabledwithDestroyedWindow
+     * @tc.number SUB_WMS_SET_RECEIVE_DRAG_EVENT_ENABLED_0400
+     * @tc.desc   验证窗口销毁后调用setReceiveDragEventEnabled接口和isReceiveDragEventEnabled接口报1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetReceiveDragEventEnabledwithDestroyedWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testSetReceiveDragEventEnabledwithDestroyedWindow ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowClass = await windowStage.createSubWindow('testSetReceiveDragEventEnabledwithDestroyedWindow')
+      await windowClass.destroyWindow();
+      await sleep(500);
+      try {
+        await windowClass.setReceiveDragEventEnabled(false);
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+        } else {
+          expect(e.code).assertEqual(1300002);
+        }
+      }
+      try {
+        let res1 = windowClass.isReceiveDragEventEnabled();
+        console.info(caseName + ' windowClass.isReceiveDragEventEnabled() res1: ' + JSON.stringify(res1));
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect(e.code).assertEqual(1300002);
+          done()
+        }
+      }
+    });
+
+
+    /**
+     * @tc.name   testSetSeparationTouchEnabledwithDestroyedWindow
+     * @tc.number SUB_WMS_SET_SEPARATION_TOUCH_ENABLED_0100
+     * @tc.desc   验证setSeparationTouchEnabled接口和isSeparationTouchEnabled接口可以报1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetSeparationTouchEnabledwithDestroyedWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testSetSeparationTouchEnabledwithDestroyedWindow ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowClass = await windowStage.createSubWindow('testSetSeparationTouchEnabledwithDestroyedWindow')
+      await windowClass.destroyWindow();
+      await sleep(500);
+      try {
+        await windowClass.setSeparationTouchEnabled(false);
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+        } else {
+          expect(e.code).assertEqual(1300002);
+        }
+      }
+      try {
+        let res1 = windowClass.isSeparationTouchEnabled();
+        console.info(caseName + ' windowClass.isReceiveDragEventEnabled() res1: ' + JSON.stringify(res1));
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect(e.code).assertEqual(1300002);
+          done()
+        }
+      }
+    });
+
+
+    /**
+     * @tc.name   testSetSeparationTouchEnabledwithMainwindow
+     * @tc.number SUB_WMS_SET_SEPARATION_TOUCH_ENABLED_0200
+     * @tc.desc   验证主窗setSeparationTouchEnabled接口和isSeparationTouchEnabled接口可以配合使用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetSeparationTouchEnabledwithMainwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testSetSeparationTouchEnabledwithMainwindow ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowStageStart = await startAbility3(caseName, context);
+      let windowClass = windowStageStart.getMainWindowSync();
+      await windowClass.setUIContent('testability/pages/Index2');
+      await windowClass.showWindow();
+      await sleep(500);
+      try {
+        await windowClass.setSeparationTouchEnabled(false);
+        let res1 = windowClass.isSeparationTouchEnabled();
+        console.info(caseName + ' windowClass.isSeparationTouchEnabled() res1: ' + JSON.stringify(res1));
+        expect(res1).assertEqual(false);
+        await windowClass.setSeparationTouchEnabled(true);
+        let res2 = windowClass.isSeparationTouchEnabled();
+        console.info(caseName + ' windowClass.isSeparationTouchEnabled() res2 ' + JSON.stringify(res2));
+        expect(res2).assertEqual(true);
+        await terminateAbility3(caseName);
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await terminateAbility3(caseName);
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+
+    /**
+     * @tc.name   testSetSeparationTouchEnabledwithMainwindow
+     * @tc.number SUB_WMS_SET_SEPARATION_TOUCH_ENABLED_0200
+     * @tc.desc   验证主窗setSeparationTouchEnabled接口和isSeparationTouchEnabled接口可以配合使用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetSeparationTouchEnabledwithMainwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testSetSeparationTouchEnabledwithMainwindow ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowClass = await windowStage.createSubWindow('testSetSeparationTouchEnabledwithMainwindow')
+      await windowClass.setUIContent('testability/pages/Index2');
+      await windowClass.showWindow();
+      await sleep(500);
+      try {
+        await windowClass.setSeparationTouchEnabled(false);
+        let res1 = windowClass.isSeparationTouchEnabled();
+        console.info(caseName + ' windowClass.isSeparationTouchEnabled() res1: ' + JSON.stringify(res1));
+        expect(res1).assertEqual(false);
+        await windowClass.setSeparationTouchEnabled(true);
+        let res2 = windowClass.isSeparationTouchEnabled();
+        console.info(caseName + ' windowClass.isSeparationTouchEnabled() res2 ' + JSON.stringify(res2));
+        expect(res2).assertEqual(true);
+        await windowClass.destroyWindow()
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await windowClass.destroyWindow()
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetSeparationTouchEnabledwithDialogwindow
+     * @tc.number SUB_WMS_SET_SEPARATION_TOUCH_ENABLED_0400
+     * @tc.desc   验证系统窗setSeparationTouchEnabled接口和isSeparationTouchEnabled接口可以配合使用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetSeparationTouchEnabledwithDialogwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testSetSeparationTouchEnabledwithDialogwindow ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let config: window.Configuration = {
+        name: "testSetSeparationTouchEnabledwithDialogwindow",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      };
+      let windowClass = await window.createWindow(config);
+      await windowClass.setUIContent('testability/pages/Index2');
+      await windowClass.showWindow();
+      await sleep(500);
+      try {
+        await windowClass.setSeparationTouchEnabled(false);
+        let res1 = windowClass.isSeparationTouchEnabled();
+        console.info(caseName + ' windowClass.isSeparationTouchEnabled() res1: ' + JSON.stringify(res1));
+        expect(res1).assertEqual(false);
+        await windowClass.setSeparationTouchEnabled(true);
+        let res2 = windowClass.isSeparationTouchEnabled();
+        console.info(caseName + ' windowClass.isSeparationTouchEnabled() res2 ' + JSON.stringify(res2));
+        expect(res2).assertEqual(true);
+        await windowClass.destroyWindow()
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await windowClass.destroyWindow()
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
   })
 }
