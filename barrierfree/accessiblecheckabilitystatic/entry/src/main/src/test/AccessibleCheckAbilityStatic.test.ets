@@ -50,7 +50,7 @@ export default function abilityTest() {
       }
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0700
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0700
       * @tc.desc    The result of isScreenReaderOpenSync() should be boolean type.
@@ -71,7 +71,7 @@ export default function abilityTest() {
       }
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0900
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0900
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
@@ -98,7 +98,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1000
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1000
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
@@ -126,7 +126,7 @@ export default function abilityTest() {
 
 
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1700
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1700
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
@@ -152,7 +152,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2500
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2500
       * @tc.desc    The result of Rect should be boolean type.
@@ -179,7 +179,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+   /**
     * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0800
     * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0800
     * @tc.desc    The parameters input are all and 'install', test the getAbilityLists() function,
@@ -204,7 +204,7 @@ export default function abilityTest() {
       }
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2600
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2600
       * @tc.desc    The result of CaptionsStyle should be boolean type.
@@ -226,7 +226,7 @@ export default function abilityTest() {
       done();
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2700
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2700
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
@@ -260,7 +260,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+   /**
     * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2800
     * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2800
     * @tc.desc    The parameter input eventType is scroll, test the sendAccessibilityEvent() function
@@ -286,7 +286,7 @@ export default function abilityTest() {
       };
     })
 
-    /*
+   /**
     * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2900
     * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2900
     * @tc.desc    The parameter input eventType is scroll, test the sendAccessibilityEvent() function
@@ -312,7 +312,7 @@ export default function abilityTest() {
       };
     })
 
-    /*
+   /**
     * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3000
     * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3000
     * @tc.desc    The parameter input eventType is scroll, test the sendAccessibilityEvent() function
@@ -338,7 +338,7 @@ export default function abilityTest() {
       };
     })
 
-    /*
+   /**
     * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3100
     * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3100
     * @tc.desc    The parameter input eventType is scroll, test the sendAccessibilityEvent() function
@@ -364,7 +364,7 @@ export default function abilityTest() {
       };
     })
 
-    /*
+   /**
     * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3200
     * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3200
     * @tc.desc    The parameter input eventType is scroll, test the sendAccessibilityEvent() function
@@ -390,7 +390,7 @@ export default function abilityTest() {
       };
     })
 
-    /*
+   /**
     * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3300
     * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3300
     * @tc.desc    The typy of EventInfo is announceForAccessibilityNotInterrupt, The triggerAction of EventInfo is click ,The textAnnouncedForAccessibility of EventInfo is test123  test sendEvent() function
@@ -420,7 +420,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+   /**
     * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3400
     * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3400
     * @tc.desc    The typy of EventInfo is announceForAccessibilityNotInterrupt, The triggerAction of EventInfo is click ,The textAnnouncedForAccessibility of EventInfo is test123  test sendEvent() function
@@ -452,7 +452,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1100
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1100
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
@@ -478,7 +478,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1200
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1200
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
@@ -505,7 +505,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1300
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1300
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
@@ -532,7 +532,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1400
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1400
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
@@ -559,7 +559,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1500
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1500
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
@@ -586,7 +586,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1600
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1600
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
@@ -614,7 +614,7 @@ export default function abilityTest() {
     })
 
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1800
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1800
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
@@ -640,7 +640,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1900
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1900
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
@@ -666,7 +666,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2000
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2000
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
@@ -692,7 +692,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2100
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2100
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
@@ -719,7 +719,7 @@ export default function abilityTest() {
     })
 
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2200
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2200
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
@@ -745,7 +745,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2300
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2300
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
@@ -771,7 +771,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+     /**
       * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2400
       * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_2400
       * @tc.desc    The parameters input are all and 'enable', test the getAbilityLists() function,
