@@ -50,7 +50,6 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
       }
       done()
     });
-	
 
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
@@ -89,7 +88,7 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
      */
     it('testOnMicrophoneCaptureStateChange002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnMicrophoneCaptureStateChange002", 300752)
-      Utils.registerEvent("testOnMicrophoneCaptureStateChange002", 1, 20251229, done);
+      Utils.registerEvent("testOnMicrophoneCaptureStateChange002", MicrophoneCaptureState.PAUSED, 20251229, done);
       Utils.waitAndClickComponent(driver, "webViewOnMicrophoneCaptureStateChangeButton");
     })
 
@@ -104,7 +103,7 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
      */
     it('testOnMicrophoneCaptureStateChange003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnMicrophoneCaptureStateChange003", 300752)
-      Utils.registerEvent("testOnMicrophoneCaptureStateChange003", 2, 20251230, done);
+      Utils.registerEvent("testOnMicrophoneCaptureStateChange003", MicrophoneCaptureState.ACTIVE, 20251230, done);
       Utils.waitAndClickComponent(driver, "webViewOnMicrophoneCaptureStateChangeButton");
     })
 
@@ -118,7 +117,7 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
      */
     it('testOnMicrophoneCaptureStateChange004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnMicrophoneCaptureStateChange004", 300752)
-      Utils.registerEvent("testOnMicrophoneCaptureStateChange004", 0, 20251231, done);
+      Utils.registerEvent("testOnMicrophoneCaptureStateChange004", MicrophoneCaptureState.NONE, 20251231, done);
       Utils.waitAndClickComponent(driver, "webViewOnMicrophoneCaptureStateChangeButton");
     })
 
