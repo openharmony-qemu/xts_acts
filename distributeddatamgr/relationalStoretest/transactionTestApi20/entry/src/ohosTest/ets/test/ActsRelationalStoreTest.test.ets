@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import testNapi from 'libentry.so'
+import deviceInfo from '@ohos.deviceInfo';
 
 const RDB_OK = 0;
 const RDB_ERR = -1;
@@ -955,12 +956,23 @@ export default function ActsRelationalStoreTest() {
      */
     it('SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetLocale_4000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let currentDeviceIsWatch = false;
+        let deviceTypeInfo = deviceInfo.deviceType;
+        currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;
+        console.info('====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetLocale_4000 the value of the deviceType is :' + deviceInfo.deviceType);
         try {
           console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetLocale_4000 start====");
           let result: number = testNapi.testSetLocaleSuccess();
           console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetLocale_4000 result====", result);
-          expect(result).assertEqual(RDB_OK);
-          done();
+          if (currentDeviceIsWatch) {
+            expect(result).assertEqual(RDB_E_NOT_SUPPORTED);
+            console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetLocale_4000 the device is not support");
+            done();
+          } else {
+            expect(result).assertEqual(RDB_OK);
+            console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetLocale_4000 end====");
+            done();
+          }
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetLocale_4000 catch err: " + err);
           expect(err).assertFail();
