@@ -46,10 +46,9 @@ struct extensionCreateSubWindowWithFalseOpt {
             const subWindowConfig: window.SubWindowOptions = {
               title: 'This is a subwindow',
               decorEnabled: true,
-              followCreatorLifecycle: false
             };
             // 创建子窗口
-            await extensionWindow?.createSubWindowWithOptions('createSubWindowWithOptionsFalse', subWindowConfig, true)
+            await extensionWindow?.createSubWindowWithOptions('createSubWindowWithOptionsFalse', subWindowConfig, false)
             console.log('success in page')
             this.message = 'success'
           } catch (err) {

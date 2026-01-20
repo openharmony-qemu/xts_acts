@@ -46,7 +46,6 @@ struct extensionCreateSubWindowWithTrueOpt {
             const subWindowConfig: window.SubWindowOptions = {
               title: 'This is a subwindow',
               decorEnabled: true,
-              followCreatorLifecycle: true
             };
             // 创建子窗口
             await extensionWindow?.createSubWindowWithOptions('createSubWindowWithOptionsTrue', subWindowConfig, true)
