@@ -13,9 +13,10 @@
  * limitations under the License.
  */
 import inputMethod from '@ohos.inputMethod';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import * as env from './lib/Const';
-import { BusinessError } from '@ohos.base'
+import { BusinessError } from '@ohos.base';
+import { UIContext } from '@kit.ArkUI';
 
 function expectTrue(data: boolean) {
   try {
@@ -539,6 +540,68 @@ export default function inputMethodTest() {
         done();
       } catch (err) {
         console.info(`====>inputmethoh_test_0061 errCode:${err.code}, errMessage is ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_MultiScreenCollaboration_1401
+     * @tc.number Sub_InputMethod_IMF_MultiScreenCollaboration_1401
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_MultiScreenCollaboration_1401', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_MultiScreenCollaboration_1401';
+      let uiContext = AppStorage.get<UIContext>("uiContext") as UIContext;
+      console.info(`${CASE_NAME} UIContext is ${uiContext}`);
+      let inputAttribute: inputMethod.InputAttribute = {
+        textInputType: inputMethod.TextInputType.TEXT,
+        enterKeyType: inputMethod.EnterKeyType.GO
+      }
+      let textConfig: inputMethod.TextConfig = { inputAttribute: inputAttribute };
+      try {
+        await inputMethod.getController().attachWithUIContext(uiContext, textConfig);
+        console.info(`${CASE_NAME} attachWithUIContext success `);
+        expect(textConfig !== null).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_MultiScreenCollaboration_1400
+     * @tc.number Sub_InputMethod_IMF_MultiScreenCollaboration_1400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_MultiScreenCollaboration_1400', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_MultiScreenCollaboration_1400';
+      let uiContext = AppStorage.get<UIContext>("uiContext") as UIContext;
+      console.info(`${CASE_NAME} UIContext is ${uiContext}`);
+      let inputAttribute: inputMethod.InputAttribute = {
+        textInputType: inputMethod.TextInputType.TEXT,
+        enterKeyType: inputMethod.EnterKeyType.GO
+      }
+      let textConfig: inputMethod.TextConfig = { inputAttribute: inputAttribute };
+      let attachOptions: inputMethod.AttachOptions = {
+        requestKeyboardReason: inputMethod.RequestKeyboardReason.NONE,
+        showKeyboard: true
+      };
+      try {
+        await inputMethod.getController().attachWithUIContext(uiContext, textConfig, attachOptions);
+        console.info(`${CASE_NAME} attachWithUIContext success `);
+        expect(textConfig !== null).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
         expect().assertFail();
         done();
       }
