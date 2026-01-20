@@ -1123,30 +1123,30 @@ export default function XmlDynamicSerializerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testXMLBoundaryValue002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let thatSer = new xml.XmlDynamicSerializer();
-    //   let max = 100000;
-    //   let view1 = '';
-    //   let result = '';
-    //   for (let i = 0; i < max / 25; ++i) {
-    //     thatSer.setNamespace("h", "aaa");
-    //     thatSer.startElement("note");
-    //     thatSer.endElement();
-    //     result += '\r\n<h:note xmlns:h="aaa"/>'
-    //   }
-    //   let arrayBuffer = thatSer.getOutput();
-    //   let view = new Uint8Array(arrayBuffer);
-    //   for (let i = 0; i < view.length; ++i) {
-    //     view1 = view1 + String.fromCodePoint(view[i]);
-    //   }
-    //   let m = 0;
-    //   for (let i = 0; i < max; ++i) {
-    //     if (view1.charAt(i) == result.charAt(i)) {
-    //       m++;
-    //     }
-    //   }
-    //   expect(m).assertEqual(max);
-    // })
+    it('testXMLBoundaryValue002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let thatSer = new xml.XmlDynamicSerializer();
+      let max = 3000;
+      let view1 = '';
+      let result = '';
+      for (let i = 0; i < max / 25; ++i) {
+        thatSer.setNamespace("h", "aaa");
+        thatSer.startElement("note");
+        thatSer.endElement();
+        result += '\r\n<h:note xmlns:h="aaa"/>'
+      }
+      let arrayBuffer = thatSer.getOutput();
+      let view = new Uint8Array(arrayBuffer);
+      for (let i = 0; i < view.length; ++i) {
+        view1 = view1 + String.fromCodePoint(view[i]);
+      }
+      let m = 0;
+      for (let i = 0; i < max; ++i) {
+        if (view1.charAt(i) == result.charAt(i)) {
+          m++;
+        }
+      }
+      expect(m).assertEqual(max);
+    })
 
 
     /**
