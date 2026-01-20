@@ -1,16 +1,5 @@
 /*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Copyright (c) huawei Technologies Co., Ltd. 2025. All right reserved
  */
 
 import { describe, beforeAll, afterEach, it, expect, beforeEach, Level, Size, TestType } from '@ohos/hypium'
@@ -27,7 +16,8 @@ const TEST_CONTACTS_NUM = 2;
 function sleep (time:number):Promise<string>{
   return new Promise<string>((resolve)=>{
     setTimeout(()=>{
-      resolve('ok')},time)
+      resolve('ok')
+    },time)
   });
 }
 
@@ -35,25 +25,26 @@ const ExpectTrue = (n: boolean) => {
   try {
     expect(n).assertTrue();
   } catch (err) {
-    console.info("expectInfo", `test failed`);
+    console.info('expectInfo', `test failed`);
   }
 }
 const ExpectFail = () => {
   try {
     expect().assertFail();
   } catch (err) {
-    console.info("expectInfo", `test failed`);
+    console.info('expectInfo', `test failed`);
   }
 }
 
 async function getPermissions() {
   console.info('getPermission start');
-  type MyPermissions = "ohos.permission.WRITE_CONTACTS" | "ohos.permission.READ_CONTACTS";
+  type MyPermissions = 'ohos.permission.WRITE_CONTACTS' | 'ohos.permission.READ_CONTACTS';
   let list: MyPermissions[] = ['ohos.permission.WRITE_CONTACTS', 'ohos.permission.READ_CONTACTS'];
   try {
     let userId: number = await account.getAccountManager().getOsAccountLocalId();
     let applicationFlags: number = bundleManager.ApplicationFlag.GET_APPLICATION_INFO_DEFAULT;
-    let applicationInfo: bundleManager.ApplicationInfo = await bundleManager.getApplicationInfoSync('com.example.contacttest', applicationFlags, userId);
+    let applicationInfo: bundleManager.ApplicationInfo = 
+      await bundleManager.getApplicationInfoSync('com.example.contacttest', applicationFlags, userId);
     let tokenId: number = applicationInfo.accessTokenId;
     for (let index = 0; index < list.length; index++) {
       await abilityAccessCtrl.createAtManager().grantUserGrantedPermission(tokenId, list[index], 1);
@@ -65,10 +56,10 @@ async function getPermissions() {
 }
 
 export default function AddContactSTest() {
-  describe('AddContactAsTest', () => {
+  describe('AddContactsTest', () => {
 
     beforeAll(async (done: Function) => {
-      console.info("beforeAll case");
+      console.info('beforeAll case');
       await getPermissions();
       done();
     });
@@ -78,7 +69,7 @@ export default function AddContactSTest() {
         let context: Context = AppStorage.get('context') as Context;
         let contactList: contact.Contact[] = [];
         try {
-          contactList = await contact.queryContactsByPhoneNumber(context,"13800000000");
+          contactList = await contact.queryContactsByPhoneNumber(context,'13800000000');
         } catch (queryErr) {
           console.info(`afterEach queryContacts catch err: ${JSON.stringify(queryErr)}`);
           done();
@@ -107,7 +98,7 @@ export default function AddContactSTest() {
     let uri = GetUri(fileName);
     let contactData: contact.Contact = {
       id: 0,
-      key: "0",
+      key: '0',
       contactAttributes: {
         attributes: [contact.Attribute.ATTR_CONTACT_EVENT, contact.Attribute.ATTR_EMAIL,
         contact.Attribute.ATTR_GROUP_MEMBERSHIP,
@@ -118,7 +109,10 @@ export default function AddContactSTest() {
         contact.Attribute.ATTR_SIP_ADDRESS, contact.Attribute.ATTR_WEBSITE]
       },
       emails: [{
-        email: "13800000000@email.com", labelName: "自定义邮箱", labelId: 1, displayName: "emailDisplayName"
+        email: '13800000000@email.com', 
+        labelName: '自定义邮箱', 
+        labelId: 1, 
+        displayName: 'emailDisplayName'
       }],
       events: [{
         eventDate: "event", labelName: "自定义event", labelId: 2
@@ -127,61 +121,61 @@ export default function AddContactSTest() {
         groupId: 1, title: "群组"
       }],
       imAddresses: [{
-        imAddress: "imAddress", labelName: "自定义", labelId: 3
+        imAddress: 'imAddress', labelName: '自定义', labelId: 3
       }],
       phoneNumbers: [{
-        phoneNumber: "13800000000", labelName: "自定义phoneNumbers", labelId: 4
+        phoneNumber: '13800000000', labelName: '自定义phoneNumbers', labelId: 4
       }],
       portrait: {
         uri: uri
       },
       postalAddresses: [{
-        city: "南京",
-        country: "中国",
-        labelName: "labelName",
-        neighborhood: "neighborhood",
-        pobox: "pobox",
-        postalAddress: "postalAddress",
-        postcode: "postcode",
-        region: "region",
-        street: "street",
+        city: '南京',
+        country: '中国',
+        labelName: 'labelName',
+        neighborhood: 'neighborhood',
+        pobox: 'pobox',
+        postalAddress: 'postalAddress',
+        postcode: 'postcode',
+        region: 'region',
+        street: 'street',
         labelId: 5
       }],
       relations: [{
-        relationName: "relationName", labelName: "自定义relationName", labelId: 6
+        relationName: 'relationName', labelName: '自定义relationName', labelId: 6
       }],
       sipAddresses: [{
-        sipAddress: "sipAddress", labelName: "自定义sipAddress", labelId: 6
+        sipAddress: 'sipAddress', labelName: '自定义sipAddress', labelId: 6
       }],
       websites: [{
         website: "website"
       }],
       name: {
-        familyName: "familyName",
-        familyNamePhonetic: "familyNamePhonetic",
-        fullName: "小李",
-        givenName: "givenName",
-        givenNamePhonetic: "givenNamePhonetic",
-        middleName: "middleName",
-        middleNamePhonetic: "middleNamePhonetic",
-        namePrefix: "namePrefix",
-        nameSuffix: "nameSuffix"
+        familyName: 'familyName',
+        familyNamePhonetic: 'familyNamePhonetic',
+        fullName: `小李${math.random() * 1000}`,
+        givenName: 'givenName',
+        givenNamePhonetic: 'givenNamePhonetic',
+        middleName: 'middleName',
+        middleNamePhonetic: 'middleNamePhonetic',
+        namePrefix: 'namePrefix',
+        nameSuffix: 'nameSuffix'
       },
       nickName: {
-        nickName: "nickName"
+        nickName: 'nickName'
       },
       note: {
-        noteContent: "note"
+        noteContent: 'note'
       },
       organization: {
-        name: "TT", title: "开发"
+        name: 'TT', title: '开发'
       }
     };
 
     let holder: contact.Holder = {
       holderId: 1,
-      bundleName: "com.ohos.contacts",
-      displayName: "phone"
+      bundleName: 'com.ohos.contacts',
+      displayName: 'phone'
     };
 
     let attr: contact.ContactAttributes = {
@@ -206,25 +200,25 @@ export default function AddContactSTest() {
     /**
      * @tc.name   testTelephonyContactAddContacts0100
      * @tc.number SUB_Telephony_Contact_AddContacts_0100
-     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.desc   Add a contacts and useing the promise method as an asynchronous method 10+
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContacts0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, 
       async (done: Function) => {
-        const caseName: string = "testTelephonyContactAddContacts0100";
+        const caseName: string = 'testTelephonyContactAddContacts0100';
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContacts: contact.Contact[] = [];
         try {
           contact.addContacts(context, phoneNumContacts).then((data: number[]) => {
-            console.log(`${caseName} addContacts: success data>${JSON.stringify(data)}`);
+            console.log(`${caseName} success: data>${JSON.stringify(data)}`);
             expect().assertFail();
             done();
-          }) catch ((err: BusinessError) => {
-            console.info(`${caseName} fail: err->${JSON.stringify(err)}`);
-            expect(err.code == 16700002).assertTrue();
+          }).catch ((err: BusinessError) => {
+            console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
+            expect(err.code === 16700002).assertTrue();
             done();
           });
           } catch (err) {
@@ -238,23 +232,23 @@ export default function AddContactSTest() {
     /**
      * @tc.name   testTelephonyContactAddContacts0200
      * @tc.number SUB_Telephony_Contact_AddContacts_0200
-     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.desc   Add a contacts and useing the promise method as an asynchronous method 10+
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testTelephonyContactAddContacts0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
       async (done: Function) => {
-        const caseName: string = "testTelephonyContactAddContacts0200";
+        const caseName: string = 'testTelephonyContactAddContacts0200';
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContacts: contact.Contact[] = [];
         for (let i = 0; i < TEST_CONTACTS_NUM; i++) {
           let phoneNumContact: contact.Contact = {
             name: {
-              fullName: '李四${i}'
+              fullName: `李四${i}`
             }, phoneNumbers: [{
-              phoneNumber: '13800000000'
+              phoneNumber: `13800000000`
             }]
           };
           phoneNumContacts.push(phoneNumContact);
@@ -263,36 +257,37 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, phoneNumContacts);
           promise.then((data: number[]) => {
-            console.log(`${caseName} addContacts: success data>${JSON.stringify(data)}`);
+            console.log(`${caseName} success: data>${JSON.stringify(data)}`);
             expect(data.length === TEST_CONTACTS_NUM).assertTrue();
             sleep(500);
             let promise2 = contact.addContacts(context, phoneNumContacts);  
             promise2.then((data: number[]) => {
-            console.log(`${caseName} addContacts: success data>${JSON.stringify(data)}`);
+            console.log(`${caseName} success data>${JSON.stringify(data)}`);
             expect(data.length === TEST_CONTACTS_NUM).assertTrue();
-            contact.queryContactsByPhoneNumber(context, "13800000000", (err: BusinessError, data: contact.Contact[]) => {
-              if (err) {
-                console.info(`${caseName} queryContacts:err->${JSON.stringify(err)}`);
-                ExpectFail();
-                done();
-              } else {
-                console.info(`${caseName} queryContacts:success->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === TEST_CONTACTS_NUM * 2);
-                done()
-              }
-            });
+            contact.queryContactsByPhoneNumber(context, '13800000000', 
+              (err: BusinessError, data: contact.Contact[]) => {
+                if (err) {
+                  console.info(`${caseName} queryContacts:err->${JSON.stringify(err)}`);
+                  ExpectFail();
+                  done();
+                } else {
+                  console.info(`${caseName} queryContacts:success->${JSON.stringify(data)}`);
+                  ExpectTrue(data.length === TEST_CONTACTS_NUM * 2);
+                  done()
+                }
+              });
             }).catch ((err: BusinessError) =>{
-              console.info(`${caseName} fail: err->${JSON.stringify(err)}`);
+              console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
               ExpectFail();
               done();
             });
           }).catch ((err: BusinessError) =>{
-              console.info(`${caseName} fail: err->${JSON.stringify(err)}`);
+              console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
               ExpectFail();
               done();
           });
         } catch (err) =>{
-            console.info(`${caseName} fail: err->${JSON.stringify(err)}`);
+            console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
             ExpectFail();
             done();
         }
@@ -302,14 +297,14 @@ export default function AddContactSTest() {
     /**
      * @tc.name   testTelephonyContactAddContacts0300
      * @tc.number SUB_Telephony_Contact_AddContacts_0300
-     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.desc   Add a contacts and useing the promise method as an asynchronous method 10+
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testTelephonyContactAddContact0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, 
+    it('testTelephonyContactAddContacts0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, 
       async (done: Function) => {
-        const caseName: string = "testTelephonyContactAddContact0300";
+        const caseName: string = 'testTelephonyContactAddContacts0300';
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContacts: contact.Contact[] = [];
@@ -327,40 +322,39 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, phoneNumContacts);
           promise.then((data: number[]) => {
-              console.log(`${caseName} addContact: success data>${JSON.stringify(data)}`);
+              console.log(`${caseName} success data>${JSON.stringify(data)}`);
               expect(data.length === TEST_CONTACTS_NUM).assertTrue();
               done();
             }).catch((err: BusinessError) => {
-              console.info(`${caseName} fail: err->${JSON.stringify(err)}`);
+              console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
               ExpectFail();
               done();
           });
         } catch (err) {
-          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          console.error(`${caseName} catch: err->${JSON.stringify(err)}`);
           ExpectFail();
           done();
         }
         console.info(`${caseName} test end `);
       })
-
     /**
      * @tc.name   testTelephonyContactAddContacts0400
      * @tc.number SUB_Telephony_Contact_AddContacts_0400
-     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.desc   Add a contacts and useing the promise method as an asynchronous method 10+
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContacts0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, 
       async (done: Function) => {
-        const caseName: string = "testTelephonyContactAddContacts0400";
+        const caseName: string = 'testTelephonyContactAddContacts0400';
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContacts: contact.Contact[] = [];
         for (let i = 0; i < TEST_CONTACTS_NUM; i++) {
           let phoneNumContact: contact.Contact = {
               name: {
-                fullName: '李四${i}'
+                fullName: `李四${i}`
               }, phoneNumbers: [{
                 phoneNumber: ''
               }]
@@ -371,40 +365,39 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, phoneNumContacts);
           promise.then((data: number[]) => {
-              console.log(`${caseName} addContact: success data>${JSON.stringify(data)}`);
+              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
               expect(data.length === TEST_CONTACTS_NUM).assertTrue();
               done();
             }).catch((err: BusinessError) => {
-              console.info(`${caseName} fail: err->${JSON.stringify(err)}`);
+              console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
               ExpectFail();
               done();
           });
         } catch (err) {
-          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          console.error(`${caseName} catch: err->${JSON.stringify(err)}`);
           ExpectFail();
           done();
         }
         console.info(`${caseName} test end `);
       })
-
      /**
      * @tc.name   testTelephonyContactAddContacts0500
      * @tc.number SUB_Telephony_Contact_AddContacts_0500
-     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.desc   Add a contacts and useing the promise method as an asynchronous method 10+
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContacts0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, 
       async (done: Function) => {
-        const caseName: string = "testTelephonyContactAddContacts0500";
+        const caseName: string = 'testTelephonyContactAddContacts0500';
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContacts: contact.Contact[] = [];
         for (let i = 0; i < TEST_CONTACTS_NUM; i++) {
           let phoneNumContact: contact.Contact = {
               name: {
-                fullName: '李四${i}'
+                fullName: `李四${i}`
               }, phoneNumbers: [{
                 phoneNumber: '13800000000'
               }]
@@ -415,11 +408,11 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, phoneNumContacts);
           promise.then((data: number[]) => {
-              console.log(`${caseName} addContact: success data>${JSON.stringify(data)}`);
+              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
               expect(data.length === TEST_CONTACTS_NUM).assertTrue();
               done();
             }).catch((err: BusinessError) => {
-              console.info(`${caseName} fail: err->${JSON.stringify(err)}`);
+              console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
               ExpectFail();
               done();
           });
@@ -434,14 +427,14 @@ export default function AddContactSTest() {
      /**
      * @tc.name   testTelephonyContactAddContacts0600
      * @tc.number SUB_Telephony_Contact_AddContacts_0600
-     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.desc   Add a contacts and useing the promise method as an asynchronous method 10+
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContacts0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, 
       async (done: Function) => {
-        const caseName: string = "testTelephonyContactAddContacts0600";
+        const caseName: string = 'testTelephonyContactAddContacts0600';
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContact: contact.Contact = {
@@ -455,12 +448,12 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, [phoneNumContact]);
           promise.then((data: number[]) => {
-              console.log(`${caseName} addContact: success data>${JSON.stringify(data)}`);
+              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
               expect(data.length === 1).assertTrue();
               expect(data[0] > 0).assertTrue();
               done();
             }).catch((err: BusinessError) => {
-              console.info(`${caseName} fail: err->${JSON.stringify(err)}`);
+              console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
               ExpectFail();
               done();
           });
@@ -475,14 +468,14 @@ export default function AddContactSTest() {
       /**
      * @tc.name   testTelephonyContactAddContacts0700
      * @tc.number SUB_Telephony_Contact_AddContacts_0700
-     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.desc   Add a contacts and useing the promise method as an asynchronous method 10+
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContacts0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, 
       async (done: Function) => {
-        const caseName: string = "testTelephonyContactAddContacts0700";
+        const caseName: string = 'testTelephonyContactAddContacts0700';
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContact: contact.Contact = {
@@ -502,11 +495,11 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, [phoneNumContact]);
           promise.then((data: number[]) => {
-              console.log(`${caseName} addContact: success data>${JSON.stringify(data)}`);
+              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
               expect(data.length > 0).assertTrue();
               done();
             }).catch((err: BusinessError) => {
-              console.info(`${caseName} fail: err->${JSON.stringify(err)}`);
+              console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
               ExpectFail();
               done();
           });
@@ -521,21 +514,21 @@ export default function AddContactSTest() {
       /**
      * @tc.name   testTelephonyContactAddContacts0800
      * @tc.number SUB_Telephony_Contact_AddContacts_0800
-     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.desc   Add a contacts and useing the promise method as an asynchronous method 10+
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContacts0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, 
       async (done: Function) => {
-        const caseName: string = "testTelephonyContactAddContacts0800";
+        const caseName: string = 'testTelephonyContactAddContacts0800';
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContact: contact.Contact = {
           name: {
             fullName: '张三发发发发发发发发发张三发发发发发发发发发张三发发发发发发发发发张三发发发发发发发发发张三发发发发发发发发发张三发发发发发发发发发张三发发发发发发发发发'
           }, phoneNumbers: [{
-            phoneNumber: '13811111111'
+            phoneNumber: '13800000000'
           }]
         };
         try {
@@ -546,7 +539,7 @@ export default function AddContactSTest() {
               expect(data.length > 0).assertTrue();
               done();
             }).catch((err: BusinessError) => {
-              console.info(`${caseName} fail: err->${JSON.stringify(err)}`);
+              console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
               ExpectFail();
               done();
           });
@@ -556,19 +549,19 @@ export default function AddContactSTest() {
           done();
         }
         console.info(`${caseName} test end `);
-      })
+      });
 
      /**
      * @tc.name   testTelephonyContactAddContacts0900
      * @tc.number SUB_Telephony_Contact_AddContacts_0900
-     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.desc   Add a contacts and useing the promise method as an asynchronous method 10+
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContacts0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, 
       async (done: Function) => {
-        const caseName: string = "testTelephonyContactAddContacts0900";
+        const caseName: string = 'testTelephonyContactAddContacts0900';
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContact: contact.Contact = {
@@ -582,11 +575,11 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, [phoneNumContact]);
           promise.then((data: number[]) => {
-              console.log(`${caseName} addContact: success data>${JSON.stringify(data)}`);
+              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
               expect(data.length > 0).assertTrue();
               done();
             }).catch((err: BusinessError) => {
-              console.info(`${caseName} fail: err->${JSON.stringify(err)}`);
+              console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
               ExpectFail();
               done();
           });
@@ -601,14 +594,14 @@ export default function AddContactSTest() {
      /**
      * @tc.name   testTelephonyContactAddContacts1000
      * @tc.number SUB_Telephony_Contact_AddContacts_1000
-     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.desc   Add a contacts and useing the promise method as an asynchronous method 10+
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContacts1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, 
       async (done: Function) => {
-        const caseName: string = "testTelephonyContactAddContacts1000";
+        const caseName: string = 'testTelephonyContactAddContacts1000';
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContacts = [contactData, contactData];
@@ -616,7 +609,7 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, phoneNumContacts);
           promise.then((data: number[]) => {
-              console.log(`${caseName} addContact: success data>${JSON.stringify(data)}`);
+              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
               expect(data.length > 0).assertTrue();
               done();
             }).catch((err: BusinessError) => {
@@ -635,14 +628,14 @@ export default function AddContactSTest() {
       /**
      * @tc.name   testTelephonyContactAddContacts1100
      * @tc.number SUB_Telephony_Contact_AddContacts_1100
-     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.desc   Add a contacts and useing the promise method as an asynchronous method 10+
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContacts1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, 
       async (done: Function) => {
-        const caseName: string = "testTelephonyContactAddContacts1100";
+        const caseName: string = 'testTelephonyContactAddContacts1100';
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContact: contact.Contact = {
@@ -656,11 +649,11 @@ export default function AddContactSTest() {
           sleep(500);
           let promise = contact.addContacts(context, [phoneNumContact]);
           promise.then((data: number[]) => {
-              console.log(`${caseName} addContact: success data>${JSON.stringify(data)}`);
+              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
               expect(data.length > 0).assertTrue();
               done();
             }).catch((err: BusinessError) => {
-              console.info(`${caseName} fail: err->${JSON.stringify(err)}`);
+              console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
               ExpectFail();
               done();
           });
@@ -675,14 +668,14 @@ export default function AddContactSTest() {
       /**
      * @tc.name   testTelephonyContactAddContacts1200
      * @tc.number SUB_Telephony_Contact_AddContacts_1200
-     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.desc   Add a contacts and useing the promise method as an asynchronous method 10+
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContacts1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, 
       async (done: Function) => {
-        const caseName: string = "testTelephonyContactAddContacts1200";
+        const caseName: string = 'testTelephonyContactAddContacts1200';
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContact: contact.Contact = {
@@ -700,7 +693,7 @@ export default function AddContactSTest() {
           }
           await promise.all(tasks).then((taskResults: number[][])=> {
               taskResults.forEach((data: number[], index:number) => {
-                console.log(`${caseName} addContact: success data>${JSON.stringify(data)}`);
+                console.log(`${caseName} ${index} success: data>${JSON.stringify(data)}`);
                 expect(data.length > 0).assertTrue();
               })
             })
@@ -716,14 +709,14 @@ export default function AddContactSTest() {
       /**
      * @tc.name   testTelephonyContactAddContacts1300
      * @tc.number SUB_Telephony_Contact_AddContacts_1300
-     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.desc   Add a contacts and useing the promise method as an asynchronous method 10+
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testTelephonyContactAddContacts1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, 
       async (done: Function) => {
-        const caseName: string = "testTelephonyContactAddContacts1300";
+        const caseName: string = 'testTelephonyContactAddContacts1300';
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContacts: contact.Contact[] = [];
@@ -732,7 +725,7 @@ export default function AddContactSTest() {
             name: {
               fullName: ''
             }, phoneNumbers: [{
-              phoneNumber: '13800000000'
+              phoneNumber: `13800000000`
             }]
           };
           phoneNumContacts.push(phoneNumContact);
@@ -745,7 +738,7 @@ export default function AddContactSTest() {
               expect(data.length === 100).assertTrue();
               done();
             }).catch((err: BusinessError) => {
-              console.info(`${caseName} fail: err->${JSON.stringify(err)}`);
+              console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
               ExpectFail();
               done();
           });
@@ -761,25 +754,25 @@ export default function AddContactSTest() {
      /**
      * @tc.name   testTelephonyContactAddContacts1400
      * @tc.number SUB_Telephony_Contact_AddContacts_1400
-     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('testTelephonyContactAddContacts1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
       async (done: Function) => {
         let context: Context = AppStorage.get('context') as Context;
-        let contactDataError = contact.Contact = {};
+        let contactDataError: contact.Contact = {};
         const caseName: string = "testTelephonyContactAddContacts1400";
         try {
           sleep(500);
-          let promise = contact.addContacts(context, contactDataError);
+          let promise = contact.addContacts(context, [contactDataError]);
           promise.then((data: number[]) => {
-              console.log(`${caseName} addContact: success data>${JSON.stringify(data)}`);
+              console.log(`${caseName} success: data>${JSON.stringify(data)}`);
               expect(data.length > 0).assertTrue();
               done();
             }).catch((err: BusinessError) => {
-              console.info(`${caseName} fail: err->${JSON.stringify(err)}`);
+              console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
               ExpectFail();
               done();
           });
@@ -794,7 +787,7 @@ export default function AddContactSTest() {
      /**
      * @tc.name   testTelephonyContactAddContacts1500
      * @tc.number SUB_Telephony_Contact_AddContacts_1500
-     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -802,7 +795,7 @@ export default function AddContactSTest() {
     it('testTelephonyContactAddContacts1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
       async (done: Function) => {
         let context: Context = AppStorage.get('context') as Context;
-        const caseName: string = "testTelephonyContactAddContacts1500";
+        const caseName: string = 'testTelephonyContactAddContacts1500';
         try {
           contact.addContacts(context, undefined).then((data: number[]) => {
               console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -811,7 +804,7 @@ export default function AddContactSTest() {
             })
         } catch (err) {
           console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-          except(err.code === 16700002).assertTrue();
+          expect(err.code === 16700002).assertTrue();
           done();
         }
       });
@@ -819,15 +812,15 @@ export default function AddContactSTest() {
       /**
      * @tc.name   testTelephonyContactAddContacts1600
      * @tc.number SUB_Telephony_Contact_AddContacts_1600
-     * @tc.desc   Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('testTelephonyContactAddContacts1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
       async (done: Function) => {
         let context: Context = AppStorage.get('context') as Context;
-        const caseName: string = "testTelephonyContactAddContacts1600";
+        const caseName: string = 'testTelephonyContactAddContacts1600';
         try {
           contact.addContacts(context, null).then((data: number[]) => {
               console.log(`${caseName} success: data>${JSON.stringify(data)}`);
@@ -836,7 +829,7 @@ export default function AddContactSTest() {
             })
         } catch (err) {
           console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-          except(err.code === 16700002).assertTrue();
+          expect(err.code === 16700002).assertTrue();
           done();
         }
       });
