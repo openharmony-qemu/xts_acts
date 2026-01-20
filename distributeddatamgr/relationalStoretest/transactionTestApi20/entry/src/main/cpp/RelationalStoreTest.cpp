@@ -1421,13 +1421,10 @@ napi_value TestSetLocaleSuccess(napi_env env, napi_callback_info info)
 
     int ret = OH_Rdb_SetLocale(testRdbStore, "zh");
 
-    int eCode = 801;
-    if (OH_Rdb_ErrCode::RDB_OK) {
-        napi_create_int32(env, ret == 0, &result);
-    } else if (OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED) {
-        napi_create_int32(env, ret == eCode, &result);
+    if (ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED || ret == OH_Rdb_ErrCode::RDB_OK) {
+        napi_create_int32(env, ret, &result);
     } else {
-        napi_create_int32(env, ret == -1, &result);
+        napi_create_int32(env, -1, &result);
     }
 
     OH_Rdb_CloseStore(testRdbStore);
