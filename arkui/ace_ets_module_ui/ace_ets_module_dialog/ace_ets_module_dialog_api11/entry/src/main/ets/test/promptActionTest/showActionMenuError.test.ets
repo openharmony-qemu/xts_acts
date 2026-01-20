@@ -64,7 +64,7 @@ export default function showActionMenuError() {
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('errorCode');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      let errorCode = JSON.stringify(obj.$attrs.content)
+      let errorCode = obj.$attrs.content
       expect(errorCode).assertEqual('401');
       console.info('[showActionMenuError_0100] END');
       done();
