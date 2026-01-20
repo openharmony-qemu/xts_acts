@@ -31,7 +31,7 @@ struct webViewController {
   @State flag:number = 1;
   @State str:string = ""
   @State newState:number = 3;
-  @State CameraCaptureStateArr:CameraCaptureState[] = [CameraCaptureState.NONE,CameraCaptureState.PAUSED,CameraCaptureState.ACTIVE]
+  @State MicrophoneCaptureStateArr:MicrophoneCaptureState[] = [MicrophoneCaptureState.NONE,MicrophoneCaptureState.PAUSED,MicrophoneCaptureState.ACTIVE]
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -101,11 +101,11 @@ struct webViewController {
             case "emitOnMicrophoneCaptureStateChange002": {
               try {
                 if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                  Utils.emitEvent(this.CameraCaptureStateArr[1], 20251229);
+                  Utils.emitEvent(this.MicrophoneCaptureStateArr[1], 20251229);
                 } else {
                   this.controller.pauseMicrophone();
                   setTimeout(() => {
-                    Utils.emitEvent(this.CameraCaptureStateArr[this.newState], 20251229);
+                    Utils.emitEvent(this.MicrophoneCaptureStateArr[this.newState], 20251229);
                   },1000)
                 }
 
@@ -117,12 +117,12 @@ struct webViewController {
             case "emitOnMicrophoneCaptureStateChange003": {
               try {
                 if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                  Utils.emitEvent(this.CameraCaptureStateArr[2], 20251230);
+                  Utils.emitEvent(this.MicrophoneCaptureStateArr[2], 20251230);
                 } else {
                   await Utils.sleep(1000);
                   this.controller.resumeMicrophone();
                   setTimeout(() => {
-                    Utils.emitEvent(this.CameraCaptureStateArr[this.newState], 20251230);
+                    Utils.emitEvent(this.MicrophoneCaptureStateArr[this.newState], 20251230);
                   },500)
                 }
 
@@ -134,12 +134,12 @@ struct webViewController {
             case "emitOnMicrophoneCaptureStateChange004": {
               try {
                 if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                  Utils.emitEvent(this.CameraCaptureStateArr[0], 20251231);
+                  Utils.emitEvent(this.MicrophoneCaptureStateArr[0], 20251231);
                 } else {
                   await Utils.sleep(1000);
                   this.controller.stopMicrophone();
                   setTimeout(() => {
-                    Utils.emitEvent(this.CameraCaptureStateArr[this.newState], 20251231);
+                    Utils.emitEvent(this.MicrophoneCaptureStateArr[this.newState], 20251231);
                   },500)
                 }
 
