@@ -333,7 +333,7 @@ struct chipTest {
           }
         }
 
-      }.height('70%')
+      }.height('80%')
       .width('100%')
       .backgroundColor(Color.White)
 
