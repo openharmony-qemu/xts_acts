@@ -14,7 +14,9 @@
  */
  
 import fontTest from './font.test';
+import Font2Test from './Font2.test';
 
 export default function testsuite() {
   fontTest();
+  Font2Test();
 }
