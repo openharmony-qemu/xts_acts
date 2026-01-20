@@ -33,6 +33,7 @@ import MultiSegmentButtonV2PageTest from './segmentButtonV2/MultiSegmentButtonV2
 import SegmentButtonV2Test0010 from './segmentButtonV2/SegmentButtonV2Test0010.test';
 import TabSegmentButtonV2Test from './segmentButtonV2/TabSegmentButtonV2Test.test';
 import SegBtnSelectBackgrountColorTest from './defaultValue/SegBtnSelectBackgrountColorTest.test';
+import SegmentBtnMaterialTest0070 from './segmentButton/SegmentBtnMaterialTest0070.test';
 
 export default function testsuite() {
   SegmentButtonBorderTest();
@@ -50,12 +51,11 @@ export default function testsuite() {
   SegmentBtnItemTest0010();
   maxFontScaleTest();
   segmentbuttonTest();
-
   SegmentButtonV2Test();
   MultiSegmentButtonV2PageTest();
   SegmentButtonV2Test0010();
   TabSegmentButtonV2Test();
   SegBtnSelectBackgrountColorTest();
-
+  SegmentBtnMaterialTest0070();
 
 }
