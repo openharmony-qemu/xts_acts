@@ -18,8 +18,8 @@ import window from '@ohos.window';
 @Entry
 @Component
 struct Index3 {
-  @Env(SystemProperties.WINDOW_SIZE) windowSizeVP: window.SizeInVP = {width: 0, height: 0};
-  @Env(SystemProperties.WINDOW_SIZE_PX) windowSizePX: window.Size = {width: 0, height: 0};
+  @Env(SystemProperties.WINDOW_SIZE) windowSizeVP: window.SizeInVP;
+  @Env(SystemProperties.WINDOW_SIZE_PX) windowSizePX: window.Size;
   private caseName: string = 'testEnvSystemPropertiesWindowSizewithMainwindow|testEnvSystemPropertiesWindowSizewithSubwindow';
   build() {
     Row() {
@@ -27,10 +27,12 @@ struct Index3 {
         Button()
           .id('index3Btn')
           .onClick(()=>{
-            AppStorage.setOrCreate('windowSizeVP', this.windowSizeVP);
-            AppStorage.setOrCreate('windowSizePX', this.windowSizePX);
             console.log(this.caseName + ' page Index3 this.windowSizeVP: ' + JSON.stringify(this.windowSizeVP))
             console.log(this.caseName + ' page Index3 this.windowSizePX: ' + JSON.stringify(this.windowSizePX))
+            if (this.windowSizeVP && this.windowSizePX) {
+              AppStorage.setOrCreate('windowSizeVP', this.windowSizeVP);
+              AppStorage.setOrCreate('windowSizePX', this.windowSizePX);
+            }
           })
       }
       .width('100%')
