@@ -88,7 +88,7 @@ export default function ActsAceWebViewOnCameraCaptureStateChangeCase() {
      */
     it('testOnCameraCaptureStateChange002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnCameraCaptureStateChange002", 300758)
-      Utils.registerEvent("testOnCameraCaptureStateChange002", CameraCaptureState.PAUSED, 20260202, done);
+      Utils.registerEvent("testOnCameraCaptureStateChange002", 1, 20260202, done);
       Utils.waitAndClickComponent(driver, "webViewOnCameraCaptureStateChangeButton");
     })
 
@@ -103,7 +103,7 @@ export default function ActsAceWebViewOnCameraCaptureStateChangeCase() {
      */
     it('testOnCameraCaptureStateChange003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnCameraCaptureStateChange003", 300758)
-      Utils.registerEvent("testOnCameraCaptureStateChange003", CameraCaptureState.ACTIVE, 20260203, done);
+      Utils.registerEvent("testOnCameraCaptureStateChange003", 2, 20260203, done);
       Utils.waitAndClickComponent(driver, "webViewOnCameraCaptureStateChangeButton");
     })
 
@@ -117,7 +117,7 @@ export default function ActsAceWebViewOnCameraCaptureStateChangeCase() {
      */
     it('testOnCameraCaptureStateChange004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnCameraCaptureStateChange004", 300758)
-      Utils.registerEvent("testOnCameraCaptureStateChange004", CameraCaptureState.NONE, 20260204, done);
+      Utils.registerEvent("testOnCameraCaptureStateChange004", 0, 20260204, done);
       Utils.waitAndClickComponent(driver, "webViewOnCameraCaptureStateChangeButton");
     })
 
