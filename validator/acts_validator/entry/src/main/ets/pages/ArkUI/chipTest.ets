@@ -1,18 +1,17 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the 'License');
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an 'AS IS' BASIS,
+ * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import router from '@ohos.router';
 import promptAction from '@ohos.promptAction';
 import fs from '@ohos.file.fs';
@@ -72,43 +71,30 @@ struct SectionItem {
 @Component
 struct chipTest {
   @State name: string = 'chipTest';
-  @State stepTips: string =  '设备支持屏幕朗读时\n' + '操作步骤:\n' + '1、点击closeOPtions下chip组件的删除符号，观察朗读内容\n'+
+  @State StepTips: string =  '设备支持屏幕朗读时\n' + '操作步骤:\n' + '1、点击closeOPtions下chip组件的删除符号，观察朗读内容\n'+
     '2、分别点击后缀Symbol播报下激活态和未激活态的后缀图标，观察朗读内容\n' +'\n'+
     '预期结果：1、朗读内容为：删除，按钮，删除文本\n' +
     '2、朗读内容为：已激活音乐，按钮，新手提醒\n' +
     '3、朗读内容为：未激活音乐，按钮，新手提醒\n';
-  @State isVue: boolean = false;
+  @State vueStatus: boolean = false;
+  @State active: boolean = false;
   @State intervalNum: number = 0;
   @State yesEnable: boolean = false
   // 默认不支持
   @State onAccessibilityHoverEnable: boolean = false;
-  @State passed:boolean = false
-
+  @State color: Color = Color.Blue;
+  @State currentIndex: number = 0
+  @State selectedFontColor: string = '#007DFF'
+  @State fontColor: string = '#182431'
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.isVue == false) {
-      Button({ stateEffect: this.isVue }) {
+    if (this.vueStatus) {
+      Button({ stateEffect: this.vueStatus }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
-      }
-      .margin({ bottom: '20vp' })
-      .width('30%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .opacity(0.4)
-      .onClick(() => {
-
-      })
-    } else {
-      Button({ stateEffect: this.isVue }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }
-      .margin({ bottom: '20vp' })
-      .width('30%')
+      }.width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .onClick(() => {
@@ -122,6 +108,18 @@ struct chipTest {
           message: '通过', duration: 1000
         });
       })
+    } else {
+      Button({ stateEffect: this.vueStatus }) {
+        Image($r('app.media.ic_public_pass'))
+          .width('20vp')
+          .height('20vp')
+      }
+      .width('30%')
+      .height('30vp')
+      .backgroundColor(Color.Grey)
+      .opacity(0.4)
+      .onClick(() => {
+      })
     }
   }
 
@@ -132,7 +130,6 @@ struct chipTest {
         .width('20vp')
         .height('20vp')
     }
-    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -150,13 +147,7 @@ struct chipTest {
   }
 
   aboutToAppear() {
-    FirstDialog.ChooseDialog(this.stepTips, this.name);
-  }
-
-  onPageShow() {
-    this.intervalNum = setInterval(() => {
-      this.isVue = true;
-    }, 1000)
+    FirstDialog.ChooseDialog(this.StepTips, this.name);
   }
 
   onPageHide() {
@@ -168,41 +159,42 @@ struct chipTest {
   }
 
   build() {
-    Column() {
-      Row() {
-        Button() {
-          Image($r('app.media.ic_public_back'))
-            .width('20vp')
-            .height('18vp')
-            .margin({ left: '20vp' })
+    Column({ space: 10 }) {
+      Column() {
+        Row() {
+          Button() {
+            Image($r('app.media.ic_public_back'))
+              .width('20vp')
+              .height('18vp')
+              .margin({ left: '20vp' })
+          }
+          .backgroundColor(Color.Black)
+          .size({ width: '40vp', height: '30vp' })
+          .onClick(() => {
+            router.back({
+              url: 'pages/ArkUI/ArkUI_index',
+              params: { result: 'None' }
+            })
+          })
+
+          Text(this.name)
+            .fontColor(Color.White)
+            .fontSize('18fp')
+            .margin({ left: '-20vp' })
+          Text('hello')
+            .fontColor(Color.White)
+            .visibility(Visibility.Hidden)
         }
         .backgroundColor(Color.Black)
-        .size({ width: '40vp', height: '30vp' })
-        .onClick(() => {
-          router.back({
-            url: 'pages/ArkUI/ArkUI_index',
-            params: { result: 'None' }
-          })
-        })
+        .width('100%')
+        .height('10%')
+        .justifyContent(FlexAlign.SpaceBetween)
 
-        Text(this.name)
-          .fontColor(Color.White)
-          .fontSize('18fp')
-          .margin({ left: '-20vp' })
-        Text('hello')
-          .fontColor(Color.White)
-          .visibility(Visibility.Hidden)
-      }
-      .backgroundColor(Color.Black)
-      .height('10%')
-      .width('100%')
-      .justifyContent(FlexAlign.SpaceBetween)
-
-      Column({ space: 12 }) {
-        Row() {
-          Text(`是否设备支持屏幕朗读`).fontColor(Color.Green).fontSize('18fp').margin({top:20})
+        Row({ space: 10 }) {
+          Text(`是否设备支持屏幕朗读`).fontColor(Color.Green).fontSize('18fp').margin({ top: 20 })
         }
-        Row() {
+
+        Row({ space: 10 }) {
           Column() {
             Button(`不支持`)
               .borderRadius(8)
@@ -211,7 +203,6 @@ struct chipTest {
               .enabled(!this.yesEnable)
               .opacity(!this.yesEnable ? 1 : 0.4)
               .onClick(async () => {
-                this.isVue = true
               })
           }
 
@@ -223,9 +214,11 @@ struct chipTest {
               .onClick(async () => {
                 this.yesEnable = true
                 this.onAccessibilityHoverEnable = true
+                this.vueStatus=true
               })
           }
         }
+
         Column() {
           SectionGroup({ title: 'closeOptions播报' }) {
             SectionItem({ title: 'closeOptions播报' }) {
@@ -340,9 +333,7 @@ struct chipTest {
           }
         }
 
-
-
-      }.height('80%')
+      }.height('70%')
       .width('100%')
       .backgroundColor(Color.White)
 
@@ -353,7 +344,6 @@ struct chipTest {
             .width('20vp')
             .height('20vp')
         }
-        .margin({ bottom: '20vp' })
         .width('30%')
         .height('30vp')
         .backgroundColor(Color.Grey)
@@ -361,7 +351,7 @@ struct chipTest {
           AlertDialog.show(
             {
               title: '操作提示',
-              message: this.stepTips,
+              message: this.StepTips,
               confirm: {
                 value: 'OK',
                 action: () => {
@@ -373,13 +363,12 @@ struct chipTest {
 
         this.FailBtn($r('app.string.btn_fullscreen'), true);
       }
+      // .padding(20)
       .height('10%')
       .width('100%')
       .justifyContent(FlexAlign.SpaceEvenly)
       .backgroundColor(Color.Black)
-
     }.width('100%')
     .height('100%')
-    .backgroundColor('#F1F3F5')
   }
 }

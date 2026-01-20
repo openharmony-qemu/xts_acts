@@ -158,61 +158,71 @@ struct AccessibilityHoverDemo {
       .justifyContent(FlexAlign.SpaceBetween)
 
       Column() {
-          Row() {
-            Text(`是否设备支持屏幕朗读`).fontColor(Color.Green).fontSize('18fp').margin({top:20})
+        Row() {
+          Text(`是否设备支持屏幕朗读`).fontColor(Color.Green).fontSize('18fp').margin({top:20})
+        }
+        Row() {
+          Column() {
+            Button(`不支持`)
+              .borderRadius(8)
+              .backgroundColor(0x317aff)
+              .width('30%')
+              .enabled(!this.yesEnable)
+              .opacity(!this.yesEnable ? 1 : 0.4)
+              .onClick(async () => {
+              })
           }
-          Row() {
-            Column() {
-              Button(`支持`)
-                .borderRadius(8)
-                .backgroundColor(0x317aff)
-                .width('30%')
-                .onClick(async () => {
-                  this.yesEnable = true
-                  this.onAccessibilityHoverEnable = true
-                })
+          Column() {
+            Button(`支持`)
+              .borderRadius(8)
+              .backgroundColor(0x317aff)
+              .width('30%')
+              .onClick(async () => {
+                this.yesEnable = true
+                this.onAccessibilityHoverEnable = true
+              })
+          }
+        }
+        Text(this.text1).key('hoverTest1').margin(5)
+        Text(this.text2).key('hoverTest2').margin(5)
+        Text(this.text3).key('hoverTest3').margin(5)
+        Text(this.text4).key('hoverTest4').margin(5)
+        Button(this.hoverText)
+          .width(180)
+          .height('20%')
+          .margin(10)
+          .enabled(this.onAccessibilityHoverEnable)
+          .opacity(this.onAccessibilityHoverEnable ? 1 : 0.4)
+          .key('hoverButton')
+          .backgroundColor(this.color)
+          .onTouch((event) => {
+            console.info("onTouch")
+          })
+          .onAccessibilityHover((isHover: boolean, event: AccessibilityHoverEvent) => {
+            // 通过onAccessibilityHover事件动态修改按钮在是否有鼠标悬浮时的文本内容与背景颜色
+            console.info('testHover_' + JSON.stringify(event))
+            if (event.type == AccessibilityHoverType.HOVER_ENTER) {
+              this.text1 = 'HOVER_ENTER'
             }
-          }
-          Text(this.text1).key('hoverTest1').margin(5)
-          Text(this.text2).key('hoverTest2').margin(5)
-          Text(this.text3).key('hoverTest3').margin(5)
-          Text(this.text4).key('hoverTest4').margin(5)
-          Button(this.hoverText)
-            .width(180)
-            .height('20%')
-            .margin(10)
-            .enabled(this.onAccessibilityHoverEnable)
-            .opacity(this.onAccessibilityHoverEnable ? 1 : 0.4)
-            .key('hoverButton')
-            .backgroundColor(this.color)
-            .onTouch((event) => {
-              console.info("onTouch")
-            })
-            .onAccessibilityHover((isHover: boolean, event: AccessibilityHoverEvent) => {
-              // 通过onAccessibilityHover事件动态修改按钮在是否有鼠标悬浮时的文本内容与背景颜色
-              console.info('testHover_' + JSON.stringify(event))
-              if (event.type == AccessibilityHoverType.HOVER_ENTER) {
-                this.text1 = 'HOVER_ENTER'
-              }
-              if (event.type == AccessibilityHoverType.HOVER_MOVE) {
-                this.text2 = 'HOVER_MOVE'
-              }
-              if (event.type == AccessibilityHoverType.HOVER_EXIT) {
-                this.text3 = 'HOVER_EXIT'
-              }
-              if (event.type == AccessibilityHoverType.HOVER_CANCEL) {
-                this.text4 = 'HOVER_CANCEL'
-              }
-              if (isHover) {
-                this.hoverText = 'hover';
-                this.color = Color.Pink;
-              } else {
-                this.hoverText = 'no hover';
-                this.color = Color.Black;
-              }
-            })
+            if (event.type == AccessibilityHoverType.HOVER_MOVE) {
+              this.text2 = 'HOVER_MOVE'
+            }
+            if (event.type == AccessibilityHoverType.HOVER_EXIT) {
+              this.text3 = 'HOVER_EXIT'
+            }
+            if (event.type == AccessibilityHoverType.HOVER_CANCEL) {
+              this.text4 = 'HOVER_CANCEL'
+            }
+            if (isHover) {
+              this.hoverText = 'hover';
+              this.color = Color.Pink;
+            } else {
+              this.hoverText = 'no hover';
+              this.color = Color.Black;
+            }
+          })
 
-        }.height('80%')
+      }.height('80%')
       .width('100%')
       .backgroundColor(Color.White)
 
@@ -248,9 +258,9 @@ struct AccessibilityHoverDemo {
       .justifyContent(FlexAlign.SpaceEvenly)
       .backgroundColor(Color.Black)
 
-      }.width('100%')
-      .height('100%')
-      .backgroundColor('#F1F3F5')
-    }
+    }.width('100%')
+    .height('100%')
+    .backgroundColor('#F1F3F5')
+  }
 
 }
