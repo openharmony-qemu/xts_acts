@@ -41,7 +41,6 @@ function func(inputStr: string): unifiedDataChannel.UnifiedData {
   return data;
 }
 
-
 interface PersonData {
   f_name: string;
   l_name: string;
@@ -57,7 +56,7 @@ interface PersonData1 {
 };
 
 export default function UDMFJsApiTest() {
-  describe("UDMF2ApiTest", (): void => {
+  describe("UDMFJsApiTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'UDMFApiDescriptorTest start');
     let TAG = '';
 
