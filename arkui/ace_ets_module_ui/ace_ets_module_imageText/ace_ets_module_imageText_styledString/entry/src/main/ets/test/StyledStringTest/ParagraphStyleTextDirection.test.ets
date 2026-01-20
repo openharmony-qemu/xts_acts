@@ -15,6 +15,7 @@
 import { describe, beforeEach, it, expect, Level } from "@ohos/hypium"
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
+import { Driver, ON } from '@ohos.UiTest';
 
 
 export default function StyledStringTextDirectionTest() {
