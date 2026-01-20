@@ -38,10 +38,6 @@ constexpr int SHAPE_W = 800;
 
 void AddContextDeviceAIPP(OH_AI_ContextHandle context, string aippPath)
 {
-    if (!IsNPU()) {
-        OHPrintf("NNRt is not NPU, skip this test");
-        return;
-    }
     size_t num = 0;
     auto descs = OH_AI_GetAllNNRTDeviceDescs(&num);
     if (descs == nullptr) {
@@ -76,32 +72,13 @@ void AddContextDeviceAIPP(OH_AI_ContextHandle context, string aippPath)
 }
 } // namespace
 
-// 正常接口测试：OH_AI_ModelPredictWithConfig接口调用
-/**
- * @tc.name   SUBAIMindSporeAIPP0001
- * @tc.number SUBAIMindSporeAIPP0001
- * @tc.desc   SUBAIMindSporeAIPP0001
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL0
- */
-int SUBAIMindSporeAIPP0001()
+void CreateAIPPModelData(OH_AI_ModelHandle model, OH_AI_TensorHandleArray* inTensorArray)
 {
-    OHPrintf("==========OH_AI_ContextCreate==========\n");
-    OH_AI_ContextHandle context = OH_AI_ContextCreate();
-    string aippPath = FilePath("two_add_operators_config.json");
-    AddContextDeviceAIPP(context, aippPath);
-    OH_AI_ModelHandle model = OH_AI_ModelCreate();
-    ASSERT_NE(model, nullptr);
-    OH_AI_Status buildRet =
-        OH_AI_ModelBuildFromFile(model, FilePath("two_add_operators.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
-    ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
-    OH_AI_TensorHandleArray inTensorArray;
     int64_t shape[MAX_DIMS];
     size_t shapeNum;
     OH_AI_TensorHandleArray inputsHandle = OH_AI_ModelGetInputs(model);
-    inTensorArray.handle_num = inputsHandle.handle_num;
-    inTensorArray.handle_list = (OH_AI_TensorHandle*)malloc(sizeof(OH_AI_TensorHandle) * inTensorArray.handle_num);
+    inTensorArray->handle_num = inputsHandle.handle_num;
+    inTensorArray->handle_list = (OH_AI_TensorHandle*)malloc(sizeof(OH_AI_TensorHandle) * inTensorArray->handle_num);
     for (size_t i = 0; i < inputsHandle.handle_num; i++) {
         auto oriTensor = inputsHandle.handle_list[i];
         OH_AI_TensorGetShape(oriTensor, &shapeNum);
@@ -114,8 +91,35 @@ int SUBAIMindSporeAIPP0001()
             OH_AI_TensorGetName(oriTensor), OH_AI_DATATYPE_NUMBERTYPE_UINT8, shape, shapeNum, nullptr, 0);
         OH_AI_TensorSetAllocator(inTensor, inAllocator);
         OH_AI_TensorSetFormat(inTensor, OH_AI_FORMAT_NCHW);
-        inTensorArray.handle_list[i] = inTensor;
+        inTensorArray->handle_list[i] = inTensor;
     }
+}
+// 正常接口测试：OH_AI_ModelPredictWithConfig接口调用
+/**
+ * @tc.name   SUBAIMindSporeAIPP0001
+ * @tc.number SUBAIMindSporeAIPP0001
+ * @tc.desc   SUBAIMindSporeAIPP0001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeAIPP0001()
+{
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
+    OHPrintf("==========OH_AI_ContextCreate==========\n");
+    OH_AI_ContextHandle context = OH_AI_ContextCreate();
+    string aippPath = FilePath("two_add_operators_config.json");
+    AddContextDeviceAIPP(context, aippPath);
+    OH_AI_ModelHandle model = OH_AI_ModelCreate();
+    ASSERT_NE(model, nullptr);
+    OH_AI_Status buildRet =
+        OH_AI_ModelBuildFromFile(model, FilePath("two_add_operators.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
+    ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
+    OH_AI_TensorHandleArray inTensorArray{};
+    CreateAIPPModelData(model, &inTensorArray);
     FillInputsData(inTensorArray, "two_add_operators", false);
     OH_AI_TensorHandleArray outputs;
     const char* predictConfig =
@@ -146,6 +150,10 @@ int SUBAIMindSporeAIPP0001()
  */
 int SUBAIMindSporeAIPP0002()
 {
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context = OH_AI_ContextCreate();
     string aippPath = FilePath("two_add_operators_config.json");
@@ -155,26 +163,8 @@ int SUBAIMindSporeAIPP0002()
     OH_AI_Status buildRet =
         OH_AI_ModelBuildFromFile(model, FilePath("two_add_operators.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
-    OH_AI_TensorHandleArray inTensorArray;
-    int64_t shape[MAX_DIMS];
-    size_t shapeNum;
-    OH_AI_TensorHandleArray inputsHandle = OH_AI_ModelGetInputs(model);
-    inTensorArray.handle_num = inputsHandle.handle_num;
-    inTensorArray.handle_list = (OH_AI_TensorHandle*)malloc(sizeof(OH_AI_TensorHandle) * inTensorArray.handle_num);
-    for (size_t i = 0; i < inputsHandle.handle_num; i++) {
-        auto oriTensor = inputsHandle.handle_list[i];
-        OH_AI_TensorGetShape(oriTensor, &shapeNum);
-        shape[SHAPE_INDEX_0] = SHAPE_N;
-        shape[SHAPE_INDEX_1] = SHAPE_C;
-        shape[SHAPE_INDEX_2] = SHAPE_H;
-        shape[SHAPE_INDEX_3] = SHAPE_W;
-        void* inAllocator = OH_AI_TensorGetAllocator(oriTensor);
-        OH_AI_TensorHandle inTensor = OH_AI_TensorCreate(
-            OH_AI_TensorGetName(oriTensor), OH_AI_DATATYPE_NUMBERTYPE_UINT8, shape, shapeNum, nullptr, 0);
-        OH_AI_TensorSetAllocator(inTensor, inAllocator);
-        OH_AI_TensorSetFormat(inTensor, OH_AI_FORMAT_NCHW);
-        inTensorArray.handle_list[i] = inTensor;
-    }
+    OH_AI_TensorHandleArray inTensorArray{};
+    CreateAIPPModelData(model, &inTensorArray);
     FillInputsData(inTensorArray, "two_add_operators", false);
     OH_AI_TensorHandleArray outputs;
     OH_AI_KernelCallBack beforeCallBack = PrintBeforeCallback;
@@ -207,6 +197,10 @@ int SUBAIMindSporeAIPP0002()
  */
 int SUBAIMindSporeAIPP0003()
 {
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context = OH_AI_ContextCreate();
     string aippPath = FilePath("two_add_operators_config.json");
@@ -216,26 +210,8 @@ int SUBAIMindSporeAIPP0003()
     OH_AI_Status buildRet =
         OH_AI_ModelBuildFromFile(model, FilePath("two_add_operators.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
-    OH_AI_TensorHandleArray inTensorArray;
-    int64_t shape[MAX_DIMS];
-    size_t shapeNum;
-    OH_AI_TensorHandleArray inputsHandle = OH_AI_ModelGetInputs(model);
-    inTensorArray.handle_num = inputsHandle.handle_num;
-    inTensorArray.handle_list = (OH_AI_TensorHandle*)malloc(sizeof(OH_AI_TensorHandle) * inTensorArray.handle_num);
-    for (size_t i = 0; i < inputsHandle.handle_num; i++) {
-        auto oriTensor = inputsHandle.handle_list[i];
-        OH_AI_TensorGetShape(oriTensor, &shapeNum);
-        shape[SHAPE_INDEX_0] = SHAPE_N;
-        shape[SHAPE_INDEX_1] = SHAPE_C;
-        shape[SHAPE_INDEX_2] = SHAPE_H;
-        shape[SHAPE_INDEX_3] = SHAPE_W;
-        void* inAllocator = OH_AI_TensorGetAllocator(oriTensor);
-        OH_AI_TensorHandle inTensor = OH_AI_TensorCreate(
-            OH_AI_TensorGetName(oriTensor), OH_AI_DATATYPE_NUMBERTYPE_UINT8, shape, shapeNum, nullptr, 0);
-        OH_AI_TensorSetAllocator(inTensor, inAllocator);
-        OH_AI_TensorSetFormat(inTensor, OH_AI_FORMAT_NCHW);
-        inTensorArray.handle_list[i] = inTensor;
-    }
+    OH_AI_TensorHandleArray inTensorArray{};
+    CreateAIPPModelData(model, &inTensorArray);
     FillInputsData(inTensorArray, "two_add_operators", false);
     OH_AI_TensorHandleArray outputs;
     const char* predictConfig =
@@ -264,6 +240,10 @@ int SUBAIMindSporeAIPP0003()
  */
 int SUBAIMindSporeAIPP0004()
 {
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context = OH_AI_ContextCreate();
     string aippPath = FilePath("two_add_operators_config.json");
@@ -301,6 +281,10 @@ int SUBAIMindSporeAIPP0004()
  */
 int SUBAIMindSporeAIPP0005()
 {
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context = OH_AI_ContextCreate();
     string aippPath = FilePath("two_add_operators_config.json");
@@ -353,6 +337,10 @@ int SUBAIMindSporeAIPP0005()
  */
 int SUBAIMindSporeAIPP0006()
 {
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context = OH_AI_ContextCreate();
     string aippPath = FilePath("two_add_operators_config.json");
@@ -362,26 +350,8 @@ int SUBAIMindSporeAIPP0006()
     OH_AI_Status buildRet =
         OH_AI_ModelBuildFromFile(model, FilePath("two_add_operators.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
-    OH_AI_TensorHandleArray inTensorArray;
-    int64_t shape[MAX_DIMS];
-    size_t shapeNum;
-    OH_AI_TensorHandleArray inputsHandle = OH_AI_ModelGetInputs(model);
-    inTensorArray.handle_num = inputsHandle.handle_num;
-    inTensorArray.handle_list = (OH_AI_TensorHandle*)malloc(sizeof(OH_AI_TensorHandle) * inTensorArray.handle_num);
-    for (size_t i = 0; i < inputsHandle.handle_num; i++) {
-        auto oriTensor = inputsHandle.handle_list[i];
-        OH_AI_TensorGetShape(oriTensor, &shapeNum);
-        shape[SHAPE_INDEX_0] = SHAPE_N;
-        shape[SHAPE_INDEX_1] = SHAPE_C;
-        shape[SHAPE_INDEX_2] = SHAPE_H;
-        shape[SHAPE_INDEX_3] = SHAPE_W;
-        void* inAllocator = OH_AI_TensorGetAllocator(oriTensor);
-        OH_AI_TensorHandle inTensor = OH_AI_TensorCreate(
-            OH_AI_TensorGetName(oriTensor), OH_AI_DATATYPE_NUMBERTYPE_UINT8, shape, shapeNum, nullptr, 0);
-        OH_AI_TensorSetAllocator(inTensor, inAllocator);
-        OH_AI_TensorSetFormat(inTensor, OH_AI_FORMAT_NCHW);
-        inTensorArray.handle_list[i] = inTensor;
-    }
+    OH_AI_TensorHandleArray inTensorArray{};
+    CreateAIPPModelData(model, &inTensorArray);
     FillInputsData(inTensorArray, "two_add_operators", false);
     OH_AI_TensorHandleArray outputs;
     const char* predictConfig = "";
@@ -393,9 +363,9 @@ int SUBAIMindSporeAIPP0006()
     return OH_AI_STATUS_SUCCESS;
 }
 
-void CreateAIPPModelData(OH_AI_ModelHandle model,
-                         OH_AI_TensorHandleArray* inTensorArray,
-                         OH_AI_TensorHandleArray* outTensorArray)
+void CreateAIPPModelDataCopyFree(OH_AI_ModelHandle model,
+                                 OH_AI_TensorHandleArray* inTensorArray,
+                                 OH_AI_TensorHandleArray* outTensorArray)
 {
     int64_t shape[MAX_DIMS];
     size_t shapeNum;
@@ -444,6 +414,10 @@ void CreateAIPPModelData(OH_AI_ModelHandle model,
  */
 int SUBAIMindSporeAIPP0007()
 {
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context = OH_AI_ContextCreate();
     string aippPath = FilePath("two_add_operators_config.json");
@@ -455,7 +429,7 @@ int SUBAIMindSporeAIPP0007()
     ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
     OH_AI_TensorHandleArray inTensorArray{};
     OH_AI_TensorHandleArray outTensorArray{};
-    CreateAIPPModelData(model, &inTensorArray, &outTensorArray);
+    CreateAIPPModelDataCopyFree(model, &inTensorArray, &outTensorArray);
     FillInputsData(inTensorArray, "two_add_operators", false);
     const char* predictConfig =
         "input_para:src_h=800,src_w=800;swap_func:rbuv_swap_switch=false,ax_swap_switch=false;crop_func:load_start_pos_"
@@ -485,6 +459,10 @@ int SUBAIMindSporeAIPP0007()
  */
 int SUBAIMindSporeAIPP0008()
 {
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context = OH_AI_ContextCreate();
     string aippPath = FilePath("two_add_operators_config.json");
@@ -494,26 +472,8 @@ int SUBAIMindSporeAIPP0008()
     OH_AI_Status buildRet =
         OH_AI_ModelBuildFromFile(model, FilePath("two_add_operators.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
-    OH_AI_TensorHandleArray inTensorArray;
-    int64_t shape[MAX_DIMS];
-    size_t shapeNum;
-    OH_AI_TensorHandleArray inputsHandle = OH_AI_ModelGetInputs(model);
-    inTensorArray.handle_num = inputsHandle.handle_num;
-    inTensorArray.handle_list = (OH_AI_TensorHandle*)malloc(sizeof(OH_AI_TensorHandle) * inTensorArray.handle_num);
-    for (size_t i = 0; i < inputsHandle.handle_num; i++) {
-        auto oriTensor = inputsHandle.handle_list[i];
-        OH_AI_TensorGetShape(oriTensor, &shapeNum);
-        shape[SHAPE_INDEX_0] = SHAPE_N;
-        shape[SHAPE_INDEX_1] = SHAPE_C;
-        shape[SHAPE_INDEX_2] = SHAPE_H;
-        shape[SHAPE_INDEX_3] = SHAPE_W;
-        void* inAllocator = OH_AI_TensorGetAllocator(oriTensor);
-        OH_AI_TensorHandle inTensor = OH_AI_TensorCreate(
-            OH_AI_TensorGetName(oriTensor), OH_AI_DATATYPE_NUMBERTYPE_UINT8, shape, shapeNum, nullptr, 0);
-        OH_AI_TensorSetAllocator(inTensor, inAllocator);
-        OH_AI_TensorSetFormat(inTensor, OH_AI_FORMAT_NCHW);
-        inTensorArray.handle_list[i] = inTensor;
-    }
+    OH_AI_TensorHandleArray inTensorArray{};
+    CreateAIPPModelData(model, &inTensorArray);
     FillInputsData(inTensorArray, "two_add_operators", false);
     OH_AI_TensorHandleArray outputs;
     const char* predictConfig =
@@ -544,6 +504,10 @@ int SUBAIMindSporeAIPP0008()
  */
 int SUBAIMindSporeAIPP0009()
 {
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context = OH_AI_ContextCreate();
     string aippPath = FilePath("two_add_operators_config_error.json");
@@ -569,6 +533,10 @@ int SUBAIMindSporeAIPP0009()
  */
 int SUBAIMindSporeAIPP0010()
 {
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context = OH_AI_ContextCreate();
     string aippPath = FilePath("two_add_operators_config.json");
@@ -578,26 +546,8 @@ int SUBAIMindSporeAIPP0010()
     OH_AI_Status buildRet =
         OH_AI_ModelBuildFromFile(model, FilePath("two_add_operators.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
-    OH_AI_TensorHandleArray inTensorArray;
-    int64_t shape[MAX_DIMS];
-    size_t shapeNum;
-    OH_AI_TensorHandleArray inputsHandle = OH_AI_ModelGetInputs(model);
-    inTensorArray.handle_num = inputsHandle.handle_num;
-    inTensorArray.handle_list = (OH_AI_TensorHandle*)malloc(sizeof(OH_AI_TensorHandle) * inTensorArray.handle_num);
-    for (size_t i = 0; i < inputsHandle.handle_num; i++) {
-        auto oriTensor = inputsHandle.handle_list[i];
-        OH_AI_TensorGetShape(oriTensor, &shapeNum);
-        shape[SHAPE_INDEX_0] = SHAPE_N;
-        shape[SHAPE_INDEX_1] = SHAPE_C;
-        shape[SHAPE_INDEX_2] = SHAPE_H;
-        shape[SHAPE_INDEX_3] = SHAPE_W;
-        void* inAllocator = OH_AI_TensorGetAllocator(oriTensor);
-        OH_AI_TensorHandle inTensor = OH_AI_TensorCreate(
-            OH_AI_TensorGetName(oriTensor), OH_AI_DATATYPE_NUMBERTYPE_UINT8, shape, shapeNum, nullptr, 0);
-        OH_AI_TensorSetAllocator(inTensor, inAllocator);
-        OH_AI_TensorSetFormat(inTensor, OH_AI_FORMAT_NCHW);
-        inTensorArray.handle_list[i] = inTensor;
-    }
+    OH_AI_TensorHandleArray inTensorArray{};
+    CreateAIPPModelData(model, &inTensorArray);
     FillInputsData(inTensorArray, "two_add_operators", false);
     OH_AI_TensorHandleArray outputs;
     const char* predictConfig = "input_para_error:src_h=800,src_w=800;";
