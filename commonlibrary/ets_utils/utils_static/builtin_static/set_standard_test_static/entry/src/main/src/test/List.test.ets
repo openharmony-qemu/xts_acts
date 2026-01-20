@@ -14,7 +14,7 @@
  */
 
 
-import SetSetTest from "./set.test";
+import SetSetTest from "./Set.test";
 import SetAddTest from "./SetAdd.test";
 import SetClearTest from "./SetClear.test";
 import SetConstructorTest from "./SetConstructor.test";
