@@ -20,6 +20,24 @@ namespace OHOS {
 namespace Rosen {
 namespace Drawing {
 
+constexpr float PATH_LINE_TO_COORD = 5.0f;
+constexpr float PATH_QUAD_TO_X1 = 10.0f;
+constexpr float PATH_QUAD_TO_Y1 = 50.0f;
+constexpr float PATH_QUAD_TO_X2 = 100.0f;
+constexpr float PATH_QUAD_TO_Y2 = 100.0f;
+constexpr float PATH_CONIC_TO_X1 = 150.0f;
+constexpr float PATH_CONIC_TO_Y1 = 200.0f;
+constexpr float PATH_CONIC_TO_X2 = 250.0f;
+constexpr float PATH_CONIC_TO_Y2 = 350.0f;
+constexpr float PATH_CONIC_WEIGHT = 0.5f;
+constexpr float PATH_CUBIC_TO_X1 = 350.0f;
+constexpr float PATH_CUBIC_TO_Y1 = 450.0f;
+constexpr float PATH_CUBIC_TO_X2 = 450.0f;
+constexpr float PATH_CUBIC_TO_Y2 = 550.0f;
+constexpr float PATH_CUBIC_TO_X3 = 550.0f;
+constexpr float PATH_CUBIC_TO_Y3 = 650.0f;
+constexpr int MULTIPLE_CALLS_COUNT = 10;
+
 // Common SetUp and TearDown functions implementation
 void DrawingNativePathIteratorTestSetUp()
 {
@@ -49,10 +67,10 @@ int TestPathIteratorCreateNormal()
 
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, 5, 5);
-    OH_Drawing_PathQuadTo(path, 10, 50, 100, 100);
-    OH_Drawing_PathConicTo(path, 150, 200, 250, 350, 0.5);
-    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathLineTo(path, PATH_LINE_TO_COORD, PATH_LINE_TO_COORD);
+    OH_Drawing_PathQuadTo(path, PATH_QUAD_TO_X1, PATH_QUAD_TO_Y1, PATH_QUAD_TO_X2, PATH_QUAD_TO_Y2);
+    OH_Drawing_PathConicTo(path, PATH_CONIC_TO_X1, PATH_CONIC_TO_Y1, PATH_CONIC_TO_X2, PATH_CONIC_TO_Y2, PATH_CONIC_WEIGHT);
+    OH_Drawing_PathCubicTo(path, PATH_CUBIC_TO_X1, PATH_CUBIC_TO_Y1, PATH_CUBIC_TO_X2, PATH_CUBIC_TO_Y2, PATH_CUBIC_TO_X3, PATH_CUBIC_TO_Y3);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator* pathIterator = nullptr;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorCreate(path, &pathIterator);
@@ -80,10 +98,10 @@ int TestPathIteratorCreateNull()
 
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, 5, 5);
-    OH_Drawing_PathQuadTo(path, 10, 50, 100, 100);
-    OH_Drawing_PathConicTo(path, 150, 200, 250, 350, 0.5);
-    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathLineTo(path, PATH_LINE_TO_COORD, PATH_LINE_TO_COORD);
+    OH_Drawing_PathQuadTo(path, PATH_QUAD_TO_X1, PATH_QUAD_TO_Y1, PATH_QUAD_TO_X2, PATH_QUAD_TO_Y2);
+    OH_Drawing_PathConicTo(path, PATH_CONIC_TO_X1, PATH_CONIC_TO_Y1, PATH_CONIC_TO_X2, PATH_CONIC_TO_Y2, PATH_CONIC_WEIGHT);
+    OH_Drawing_PathCubicTo(path, PATH_CUBIC_TO_X1, PATH_CUBIC_TO_Y1, PATH_CUBIC_TO_X2, PATH_CUBIC_TO_Y2, PATH_CUBIC_TO_X3, PATH_CUBIC_TO_Y3);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator* pathIterator = nullptr;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorCreate(nullptr, &pathIterator);
@@ -114,13 +132,13 @@ int TestPathIteratorCreateMultipleCalls()
 
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, 5, 5);
-    OH_Drawing_PathQuadTo(path, 10, 50, 100, 100);
-    OH_Drawing_PathConicTo(path, 150, 200, 250, 350, 0.5);
-    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathLineTo(path, PATH_LINE_TO_COORD, PATH_LINE_TO_COORD);
+    OH_Drawing_PathQuadTo(path, PATH_QUAD_TO_X1, PATH_QUAD_TO_Y1, PATH_QUAD_TO_X2, PATH_QUAD_TO_Y2);
+    OH_Drawing_PathConicTo(path, PATH_CONIC_TO_X1, PATH_CONIC_TO_Y1, PATH_CONIC_TO_X2, PATH_CONIC_TO_Y2, PATH_CONIC_WEIGHT);
+    OH_Drawing_PathCubicTo(path, PATH_CUBIC_TO_X1, PATH_CUBIC_TO_Y1, PATH_CUBIC_TO_X2, PATH_CUBIC_TO_Y2, PATH_CUBIC_TO_X3, PATH_CUBIC_TO_Y3);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator* pathIterator = nullptr;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < MULTIPLE_CALLS_COUNT; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorCreate(path, &pathIterator);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
         EXPECT_NE(pathIterator, nullptr);
@@ -148,10 +166,10 @@ int TestPathIteratorDestroyNormal()
 
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, 5, 5);
-    OH_Drawing_PathQuadTo(path, 10, 50, 100, 100);
-    OH_Drawing_PathConicTo(path, 150, 200, 250, 350, 0.5);
-    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathLineTo(path, PATH_LINE_TO_COORD, PATH_LINE_TO_COORD);
+    OH_Drawing_PathQuadTo(path, PATH_QUAD_TO_X1, PATH_QUAD_TO_Y1, PATH_QUAD_TO_X2, PATH_QUAD_TO_Y2);
+    OH_Drawing_PathConicTo(path, PATH_CONIC_TO_X1, PATH_CONIC_TO_Y1, PATH_CONIC_TO_X2, PATH_CONIC_TO_Y2, PATH_CONIC_WEIGHT);
+    OH_Drawing_PathCubicTo(path, PATH_CUBIC_TO_X1, PATH_CUBIC_TO_Y1, PATH_CUBIC_TO_X2, PATH_CUBIC_TO_Y2, PATH_CUBIC_TO_X3, PATH_CUBIC_TO_Y3);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator* pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
@@ -198,10 +216,10 @@ int TestPathIteratorHasNextNormal()
 
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, 5, 5);
-    OH_Drawing_PathQuadTo(path, 10, 50, 100, 100);
-    OH_Drawing_PathConicTo(path, 150, 200, 250, 350, 0.5);
-    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathLineTo(path, PATH_LINE_TO_COORD, PATH_LINE_TO_COORD);
+    OH_Drawing_PathQuadTo(path, PATH_QUAD_TO_X1, PATH_QUAD_TO_Y1, PATH_QUAD_TO_X2, PATH_QUAD_TO_Y2);
+    OH_Drawing_PathConicTo(path, PATH_CONIC_TO_X1, PATH_CONIC_TO_Y1, PATH_CONIC_TO_X2, PATH_CONIC_TO_Y2, PATH_CONIC_WEIGHT);
+    OH_Drawing_PathCubicTo(path, PATH_CUBIC_TO_X1, PATH_CUBIC_TO_Y1, PATH_CUBIC_TO_X2, PATH_CUBIC_TO_Y2, PATH_CUBIC_TO_X3, PATH_CUBIC_TO_Y3);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator* pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
@@ -239,10 +257,10 @@ int TestPathIteratorHasNextNull()
 
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, 5, 5);
-    OH_Drawing_PathQuadTo(path, 10, 50, 100, 100);
-    OH_Drawing_PathConicTo(path, 150, 200, 250, 350, 0.5);
-    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathLineTo(path, PATH_LINE_TO_COORD, PATH_LINE_TO_COORD);
+    OH_Drawing_PathQuadTo(path, PATH_QUAD_TO_X1, PATH_QUAD_TO_Y1, PATH_QUAD_TO_X2, PATH_QUAD_TO_Y2);
+    OH_Drawing_PathConicTo(path, PATH_CONIC_TO_X1, PATH_CONIC_TO_Y1, PATH_CONIC_TO_X2, PATH_CONIC_TO_Y2, PATH_CONIC_WEIGHT);
+    OH_Drawing_PathCubicTo(path, PATH_CUBIC_TO_X1, PATH_CUBIC_TO_Y1, PATH_CUBIC_TO_X2, PATH_CUBIC_TO_Y2, PATH_CUBIC_TO_X3, PATH_CUBIC_TO_Y3);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator* pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
@@ -275,10 +293,10 @@ int TestPathIteratorNextNormal()
 
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, 5, 5);
-    OH_Drawing_PathQuadTo(path, 10, 50, 100, 100);
-    OH_Drawing_PathConicTo(path, 150, 200, 250, 350, 0.5);
-    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathLineTo(path, PATH_LINE_TO_COORD, PATH_LINE_TO_COORD);
+    OH_Drawing_PathQuadTo(path, PATH_QUAD_TO_X1, PATH_QUAD_TO_Y1, PATH_QUAD_TO_X2, PATH_QUAD_TO_Y2);
+    OH_Drawing_PathConicTo(path, PATH_CONIC_TO_X1, PATH_CONIC_TO_Y1, PATH_CONIC_TO_X2, PATH_CONIC_TO_Y2, PATH_CONIC_WEIGHT);
+    OH_Drawing_PathCubicTo(path, PATH_CUBIC_TO_X1, PATH_CUBIC_TO_Y1, PATH_CUBIC_TO_X2, PATH_CUBIC_TO_Y2, PATH_CUBIC_TO_X3, PATH_CUBIC_TO_Y3);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator* pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
@@ -314,10 +332,10 @@ int TestPathIteratorNextNull()
 
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, 5, 5);
-    OH_Drawing_PathQuadTo(path, 10, 50, 100, 100);
-    OH_Drawing_PathConicTo(path, 150, 200, 250, 350, 0.5);
-    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathLineTo(path, PATH_LINE_TO_COORD, PATH_LINE_TO_COORD);
+    OH_Drawing_PathQuadTo(path, PATH_QUAD_TO_X1, PATH_QUAD_TO_Y1, PATH_QUAD_TO_X2, PATH_QUAD_TO_Y2);
+    OH_Drawing_PathConicTo(path, PATH_CONIC_TO_X1, PATH_CONIC_TO_Y1, PATH_CONIC_TO_X2, PATH_CONIC_TO_Y2, PATH_CONIC_WEIGHT);
+    OH_Drawing_PathCubicTo(path, PATH_CUBIC_TO_X1, PATH_CUBIC_TO_Y1, PATH_CUBIC_TO_X2, PATH_CUBIC_TO_Y2, PATH_CUBIC_TO_X3, PATH_CUBIC_TO_Y3);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator* pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
@@ -363,10 +381,10 @@ int TestPathIteratorPeekNormal()
 
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, 5, 5);
-    OH_Drawing_PathQuadTo(path, 10, 50, 100, 100);
-    OH_Drawing_PathConicTo(path, 150, 200, 250, 350, 0.5);
-    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathLineTo(path, PATH_LINE_TO_COORD, PATH_LINE_TO_COORD);
+    OH_Drawing_PathQuadTo(path, PATH_QUAD_TO_X1, PATH_QUAD_TO_Y1, PATH_QUAD_TO_X2, PATH_QUAD_TO_Y2);
+    OH_Drawing_PathConicTo(path, PATH_CONIC_TO_X1, PATH_CONIC_TO_Y1, PATH_CONIC_TO_X2, PATH_CONIC_TO_Y2, PATH_CONIC_WEIGHT);
+    OH_Drawing_PathCubicTo(path, PATH_CUBIC_TO_X1, PATH_CUBIC_TO_Y1, PATH_CUBIC_TO_X2, PATH_CUBIC_TO_Y2, PATH_CUBIC_TO_X3, PATH_CUBIC_TO_Y3);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator* pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
@@ -403,10 +421,10 @@ int TestPathIteratorPeekNull()
 
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, 5, 5);
-    OH_Drawing_PathQuadTo(path, 10, 50, 100, 100);
-    OH_Drawing_PathConicTo(path, 150, 200, 250, 350, 0.5);
-    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathLineTo(path, PATH_LINE_TO_COORD, PATH_LINE_TO_COORD);
+    OH_Drawing_PathQuadTo(path, PATH_QUAD_TO_X1, PATH_QUAD_TO_Y1, PATH_QUAD_TO_X2, PATH_QUAD_TO_Y2);
+    OH_Drawing_PathConicTo(path, PATH_CONIC_TO_X1, PATH_CONIC_TO_Y1, PATH_CONIC_TO_X2, PATH_CONIC_TO_Y2, PATH_CONIC_WEIGHT);
+    OH_Drawing_PathCubicTo(path, PATH_CUBIC_TO_X1, PATH_CUBIC_TO_Y1, PATH_CUBIC_TO_X2, PATH_CUBIC_TO_Y2, PATH_CUBIC_TO_X3, PATH_CUBIC_TO_Y3);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator* pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
