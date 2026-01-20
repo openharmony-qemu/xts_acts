@@ -17,12 +17,14 @@ import ConnectionRegisterTest from './ConnectionResgister.test';
 import NetExtAttributeHasNetTest from './NetExtAttributeHasNet.test';
 import ConnectionBasicTest from './ConnectionBasic.test';
 import ConnectionGetNetCapabilitiesWithWifiTest from './ConnectionGetNetCapabilitiesWithWifi.test';
+import GetAddressesByNameWithOptionsTest from './ConnectionGetAddressesByNameWithOptions.test';
 import EmptyTest from './Empty.test';
 
 let netHandle = connection.getDefaultNetSync();
 
 export default function testsuite() {
       if(netHandle.netId != 0){
+        GetAddressesByNameWithOptionsTest();
         NetExtAttributeHasNetTest();
         ConnectionRegisterTest();
         ConnectionBasicTest();
