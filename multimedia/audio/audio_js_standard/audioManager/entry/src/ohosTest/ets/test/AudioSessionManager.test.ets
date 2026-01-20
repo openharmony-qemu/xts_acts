@@ -159,5 +159,27 @@ export default function audioSessionManagerTest() {
         }
         done();
       })
+    
+    /**
+     * @tc.name   AUDIOSESSIONMANAGER_ISOTHERMEDIAPLAYING_001
+     * @tc.number AUDIOSESSIONMANAGER_ISOTHERMEDIAPLAYING_001
+     * @tc.desc   IsOtherMediaPlaying
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AUDIOSESSIONMANAGER_ISOTHERMEDIAPLAYING_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let audioManager: audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        let isExistence: boolean = audioSessionManager.IsOtherMediaPlaying();
+        console.info(`ISOTHERMEDIAPLAYING_001 isExistence is: ${isExistence}`);
+        expect(isExistence).assertFalse();
+      } catch (err) {
+        console.info(`ISOTHERMEDIAPLAYING_001 err.code: ${err.code}, err.message: ${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
   })
 }
