@@ -206,6 +206,7 @@ import ImageBitsPerSampleStripOffsetsSupp from './image/ImageBitsPerSampleStripO
 import ImageSourceMetadataSupp from './image/ImageSourceMetadata.test';
 import ImageGetImagePropertyOptionsSupp from './image/ImageGetImagePropertyOptions.test';
 import ImageGammaSupp from './image/ImageGammaSupp.test';
+import ImagePictureMetadataTest from './image/ImagePictureMetadata.Test.test';
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -398,4 +399,5 @@ export default function testsuite() {
   ImageSourceMetadataSupp();
   ImageGetImagePropertyOptionsSupp();
   ImageGammaSupp()
+  ImagePictureMetadataTest()
 }
