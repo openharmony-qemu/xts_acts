@@ -18,8 +18,8 @@ import window from '@ohos.window';
 @Entry
 @Component
 struct Index3 {
-  @Env(SystemProperties.WINDOW_SIZE) windowSizeVP: window.SizeInVP | undefined;
-  @Env(SystemProperties.WINDOW_SIZE_PX) windowSizePX: window.Size | undefined;
+  @Env(SystemProperties.WINDOW_SIZE) windowSizeVP: window.SizeInVP = {width: 0, height: 0};
+  @Env(SystemProperties.WINDOW_SIZE_PX) windowSizePX: window.Size = {width: 0, height: 0};
   private caseName: string = 'testEnvSystemPropertiesWindowSizewithMainwindow|testEnvSystemPropertiesWindowSizewithSubwindow';
   build() {
     Row() {

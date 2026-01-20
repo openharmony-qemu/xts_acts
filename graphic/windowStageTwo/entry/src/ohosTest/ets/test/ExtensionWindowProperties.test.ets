@@ -873,6 +873,8 @@ export default function extensionWindowPropertiesTest() {
     it('testCreateSubWindowWithOptionsFollowFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testCreateSubWindowWithOptionsFollowFalse';
       console.log(caseName + 'start run');
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
       if (isSupport) {
         done()
       } else {

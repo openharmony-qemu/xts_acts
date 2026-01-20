@@ -3548,15 +3548,15 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.name   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation
+     * @tc.name   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2
      * @tc.number SUB_WMS_DMS_CHANGE_WITH_ATTRIBUTE_SETPERFERORIENTATION_0300
-     * @tc.desc   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation
+     * @tc.desc   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOnChangeWithAttribute_rotation_orientation_setPreferOrientation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testOnChangeWithAttribute_rotation_orientation_setPreferOrientation ';
+    it('testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2 ';
       console.log(caseName + 'begin');
       let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
       console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));

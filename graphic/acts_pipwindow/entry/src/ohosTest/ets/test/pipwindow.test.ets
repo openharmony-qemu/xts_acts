@@ -5196,15 +5196,15 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.name   testPiPStateChangeAutoStart
-     * @tc.number SUB_WMS_PIP_WINDOW_PIPSTATE_AUTOSTART_0100
-     * @tc.desc   testPiPStateChangeAutoStart
+     * @tc.name   testPiPStateChangeRequestDelete
+     * @tc.number SUB_WMS_PIP_WINDOW_PIPSTATE_REQUESTDELETE_0100
+     * @tc.desc   testPiPStateChangeRequestDelete
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testPiPStateChangeAutoStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let caseName = 'testPiPStateChangeAutoStart';
+    it('testPiPStateChangeRequestDelete', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'testPiPStateChangeRequestDelete';
       console.log(tag + caseName +' begin');
       if(isPipWindowEnabled) {
         let pipController:pipWindow.PiPController| undefined = undefined;

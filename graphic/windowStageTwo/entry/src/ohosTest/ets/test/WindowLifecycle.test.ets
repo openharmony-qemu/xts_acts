@@ -3400,7 +3400,7 @@ export default function WindowLifecycle() {
           await text.click();
           await sleep(500);
           let param: Record<string, Object> = {
-              info: "restoreMainWindow",
+              'info': 'restoreMainWindow',
           };
           await subWindowClass.restoreMainWindow(param);
           await sleep(500)

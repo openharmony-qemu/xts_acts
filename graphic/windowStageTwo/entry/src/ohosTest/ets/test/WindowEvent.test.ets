@@ -20,6 +20,7 @@ import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
 import settings from '@ohos.settings';
 import window from '@ohos.window';
+import { StartOptions } from '@kit.AbilityKit';
 
 function expectedError(TRUE_FLAG: boolean, error: BusinessError, caseName: string, apiName: string, done: Function, code: number) {
   let msgStr: string = 'jsUnittest ' + caseName + ' ' + apiName + ' failed, err: ';
@@ -513,19 +514,19 @@ export default function windowEventTest() {
 
 
     /**
-     * @tc.name   testSetSeparationTouchEnabledwithMainwindow
-     * @tc.number SUB_WMS_SET_SEPARATION_TOUCH_ENABLED_0200
+     * @tc.name   testSetSeparationTouchEnabledwithSubwindow
+     * @tc.number SUB_WMS_SET_SEPARATION_TOUCH_ENABLED_0300
      * @tc.desc   验证主窗setSeparationTouchEnabled接口和isSeparationTouchEnabled接口可以配合使用
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSetSeparationTouchEnabledwithMainwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testSetSeparationTouchEnabledwithMainwindow ';
+    it('testSetSeparationTouchEnabledwithSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testSetSeparationTouchEnabledwithSubwindow ';
       console.log(caseName + 'begin');
       let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
       console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
-      let windowClass = await windowStage.createSubWindow('testSetSeparationTouchEnabledwithMainwindow')
+      let windowClass = await windowStage.createSubWindow('testSetSeparationTouchEnabledwithSubwindow')
       await windowClass.setUIContent('testability/pages/Index2');
       await windowClass.showWindow();
       await sleep(500);

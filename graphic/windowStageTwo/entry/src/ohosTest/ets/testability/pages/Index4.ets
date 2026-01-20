@@ -21,8 +21,26 @@ struct Index4 {
   @State text: string = 'text1';
   @State positionInfo: CaretOffset = { index: 0, x: 0, y: 0 }
   controller: TextInputController = new TextInputController()
-  @Env(SystemProperties.WINDOW_AVOID_AREA) windowAvoidAreaInfoVP: window.UIEnvWindowAvoidAreaInfoVP | undefined;
-  @Env(SystemProperties.WINDOW_AVOID_AREA_PX) windowAvoidAreaInfoPX: window.UIEnvWindowAvoidAreaInfoPX | undefined;
+  @Env(SystemProperties.WINDOW_AVOID_AREA) windowAvoidAreaInfoVP: window.UIEnvWindowAvoidAreaInfoVP =
+    {statusBar: {visible: false, leftRect: {left: 0, top: 0, width: 0, height: 0}, bottomRect: {left: 0, top: 0, width: 0, height: 0},
+      rightRect: {left: 0, top: 0, width: 0, height: 0}, topRect: {left: 0, top: 0, width: 0, height: 0},},
+      cutout: {visible: false, leftRect: {left: 0, top: 0, width: 0, height: 0}, bottomRect: {left: 0, top: 0, width: 0, height: 0},
+        rightRect: {left: 0, top: 0, width: 0, height: 0}, topRect: {left: 0, top: 0, width: 0, height: 0},},
+      keyboard: {visible: false, leftRect: {left: 0, top: 0, width: 0, height: 0}, bottomRect: {left: 0, top: 0, width: 0, height: 0},
+        rightRect: {left: 0, top: 0, width: 0, height: 0}, topRect: {left: 0, top: 0, width: 0, height: 0},},
+      navigationIndicator: {visible: false, leftRect: {left: 0, top: 0, width: 0, height: 0}, bottomRect: {left: 0, top: 0, width: 0, height: 0},
+        rightRect: {left: 0, top: 0, width: 0, height: 0}, topRect: {left: 0, top: 0, width: 0, height: 0},},
+    };
+  @Env(SystemProperties.WINDOW_AVOID_AREA_PX) windowAvoidAreaInfoPX: window.UIEnvWindowAvoidAreaInfoPX =
+    {statusBar: {visible: false, leftRect: {left: 0, top: 0, width: 0, height: 0}, bottomRect: {left: 0, top: 0, width: 0, height: 0},
+      rightRect: {left: 0, top: 0, width: 0, height: 0}, topRect: {left: 0, top: 0, width: 0, height: 0},},
+      cutout: {visible: false, leftRect: {left: 0, top: 0, width: 0, height: 0}, bottomRect: {left: 0, top: 0, width: 0, height: 0},
+        rightRect: {left: 0, top: 0, width: 0, height: 0}, topRect: {left: 0, top: 0, width: 0, height: 0},},
+      keyboard: {visible: false, leftRect: {left: 0, top: 0, width: 0, height: 0}, bottomRect: {left: 0, top: 0, width: 0, height: 0},
+        rightRect: {left: 0, top: 0, width: 0, height: 0}, topRect: {left: 0, top: 0, width: 0, height: 0},},
+      navigationIndicator: {visible: false, leftRect: {left: 0, top: 0, width: 0, height: 0}, bottomRect: {left: 0, top: 0, width: 0, height: 0},
+        rightRect: {left: 0, top: 0, width: 0, height: 0}, topRect: {left: 0, top: 0, width: 0, height: 0},},
+    };
   private caseName: string = 'testEnvSystemPropertiesWindowAvoidAreawithMainWindow|testEnvSystemPropertiesWindowAvoidAreawithSubWindow';
   build() {
     Row() {
