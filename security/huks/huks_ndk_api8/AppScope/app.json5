@@ -15,7 +15,7 @@
 
 {
   "app": {
-    "bundleName": "com.security.huks.napitest",
+    "bundleName": "com.acts.huks.ndkapi8",
     "vendor": "huawei",
     "versionCode": 1000000,
     "versionName": "1.0.0",
