@@ -47,7 +47,7 @@ export default function abilityTest() {
       })
     })
 
-    /*
+   /**
     * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9100
     * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9100
     * @tc.desc    The typy of EventInfo is announceForAccessibilityNotInterrupt, The triggerAction of EventInfo is click ,The textAnnouncedForAccessibility of EventInfo is test123  test sendEvent() function
@@ -78,7 +78,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+   /**
     * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9200
     * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9200
     * @tc.desc    The typy of EventInfo is requestFocusForAccessibilityNotInterrupt, The triggerAction of EventInfo is click ,The elementId of EventInfo is 16  test sendEvent() function
@@ -109,7 +109,7 @@ export default function abilityTest() {
 
     })
 
-    /*
+   /**
     * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9300
     * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9300
     * @tc.desc    The typy of EventInfo is scrolling, The triggerAction of EventInfo is click ,The elementId of EventInfo is 16  test sendEvent() function
