@@ -16,6 +16,7 @@
 #include "AccessPixelsTest.h"
 #include "ImagePackerCreateTest.h"
 #include "ImagePackerNativeTest.h"
+#include "ImagePictureNativeTest.h"
 #include "ImagePixelMapTest.h"
 #include "PixelmapNativeCropTest.h"
 #include "napi/native_api.h"
@@ -237,6 +238,11 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("ConvertAlphaFormatTest", ConvertAlphaFormatTest),
     DESCRIPTOR("DecodingOptionsReleaseTest", DecodingOptionsReleaseTest),
     DESCRIPTOR("CreatePixelmapFromSurfaceWithTransformationTest", CreatePixelmapFromSurfaceWithTransformationTest),
+    DESCRIPTOR("SetDesiredPixelFormatTest", SetDesiredPixelFormatTest),
+    DESCRIPTOR("GetDesiredPixelFormatTest", GetDesiredPixelFormatTest),
+    DESCRIPTOR("ComposeOptionsReleaseTest", ComposeOptionsReleaseTest),
+    DESCRIPTOR("GetHdrComposedPixelmapWithOptionsTest", GetHdrComposedPixelmapWithOptionsTest),
+    DESCRIPTOR("ComposeOptionsCreateTest", ComposeOptionsCreateTest),
 
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)

@@ -210,4 +210,9 @@ export const PixelmapNativeCropTest:(a: number) => number;
 export const ConvertAlphaFormatTest:(a: number) => number;
 export const DecodingOptionsReleaseTest:(a: number) => number;
 export const CreatePixelmapFromSurfaceWithTransformationTest:(a: number,b: string) => number;
+export const SetDesiredPixelFormatTest:(a: number) => number;
+export const GetDesiredPixelFormatTest:(a: number) => number;
+export const ComposeOptionsReleaseTest:(a: number) => number;
+export const GetHdrComposedPixelmapWithOptionsTest:(a: number) => number;
+export const ComposeOptionsCreateTest:(a: number) => number;
 

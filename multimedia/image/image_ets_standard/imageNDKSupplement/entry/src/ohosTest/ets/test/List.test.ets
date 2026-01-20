@@ -55,6 +55,7 @@ import OHImageSourceNativeSupp from './ImageSourceNativeGetImageProperty.test';
 import imageFrameworkImageSourceNativeModifySuppTest from './ImageSourceNativeModify.test';
 import PixelMapNativeCropTest from './PixelmapNativeCropTest.test';
 import ImagePackerNativeTest from './ImagePackerNativeTest.test';
+import ImagePictureNativeTest from './ImagePictureNativeTest.test';
 
 
 export default function testsuite() {
@@ -100,4 +101,5 @@ export default function testsuite() {
   imageFrameworkImageSourceNativeModifySuppTest();
   PixelMapNativeCropTest();
   ImagePackerNativeTest();
+  ImagePictureNativeTest();
 }
