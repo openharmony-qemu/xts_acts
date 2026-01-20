@@ -56,6 +56,7 @@ import TextAreaDeleteTest from './TextDeleteTest/TextAreaDelete.test';
 import TextInputDelete from './TextDeleteTest/TextInputDelete.test';
 import TextControllerTest from './TextControllerTest/TextControllerTest.test';
 import SelectedDragPreviewStyleTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest.test';
+import SetTextSelectionTest from './SetTextSelectionTest/SetTextSelectionTest.test';
 
 export default function testsuite() {
   TextControllerTest();
@@ -99,5 +100,6 @@ export default function testsuite() {
   SearchDeleteTest();
   TextAreaDeleteTest();
   TextInputDelete();
-  SelectedDragPreviewStyleTest()
+  SelectedDragPreviewStyleTest();
+  SetTextSelectionTest()
 }
