@@ -106,6 +106,7 @@ import TextMenuItemIdTest from './TextTest/TextMenuItemId.test';
 import TextFontWeightTest from './TextTest/TextFontWeightTest.test';
 import TextDirectionTest from './TextTest/TextDirection.test';
 import SelectedDragPreviewStyle from './SelectedDragPreviewStyle/SelectedDragPreviewStyle.test';
+import TextMarqueeOptionsTest from './TextTest/TextMarqueeOptionsTest.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -202,4 +203,5 @@ export default function testsuite() {
   TextFontWeightTest();
   TextDirectionTest();
   SelectedDragPreviewStyle();
+  TextMarqueeOptionsTest();
 }

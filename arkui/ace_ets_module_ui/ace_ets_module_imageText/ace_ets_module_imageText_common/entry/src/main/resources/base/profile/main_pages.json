@@ -46,6 +46,7 @@
         "MainAbility/pages/TextDelete/SearchDelete",
         "MainAbility/pages/TextDelete/TextInputDelete",
         "MainAbility/pages/TextDelete/TextAreaDelete",
-        "MainAbility/pages/SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest"
+        "MainAbility/pages/SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest",
+        "MainAbility/pages/ScrollToVisibleTest"
     ]
 }
