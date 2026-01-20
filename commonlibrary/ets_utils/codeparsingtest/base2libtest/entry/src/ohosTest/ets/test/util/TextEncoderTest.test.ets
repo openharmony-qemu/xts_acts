@@ -24,737 +24,631 @@ export default function TextEncoderTest() {
     })
 
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_0100
-     * @tc.name      testFixedLength0001
-     * @tc.desc      Verify that attempting to modify length property of Int8Array has no effect.
+     * @tc.number    SUB_UTIL_TEXTENCODER_0100
+     * @tc.name      testTextEncoder0001
+     * @tc.desc      Verify encoding correctness for all printable ASCII characters.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0001";
+        const TAG = "testTextEncoder0001";
         console.log(TAG + " start");
-        const arr1: Int8Array = new Int8Array(3);
-        const actualLength: number = arr1.length;
-        expect(actualLength === 3).assertTrue();
+        const encoder = new util.TextEncoder();
+        const input = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;':,./<>?";
+        const result = encoder.encode(input);
+        expect(result.length === input.length).assertTrue();
+        expect(result[0] === 0x30).assertTrue();
+
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_0200
-     * @tc.name      testFixedLength0002
-     * @tc.desc      Verify that attempting to modify length property of Uint16Array has no effect.
+     * @tc.number    SUB_UTIL_TEXTENCODER_0200
+     * @tc.name      testTextEncoder0002
+     * @tc.desc      Verify preservation of control characters.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0002";
+        const TAG = "testTextEncoder0002";
         console.log(TAG + " start");
-        const arr2: Uint16Array = new Uint16Array(5);
-        const actualLength: number = arr2.length;
-        expect(actualLength === 5).assertTrue();
+        const encoder = new util.TextEncoder();
+        const input = "\u0000\t\n\r\u000B\u000C";
+        const result = encoder.encode(input);
+        expect(result.length === 6).assertTrue();
+        expect(result[1] === 0x09).assertTrue();
+      });
+    /**
+     * @tc.number    SUB_UTIL_TEXTENCODER_0300
+     * @tc.name      testTextEncoder0003
+     * @tc.desc      Verify encoding logic for common Chinese characters.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTextEncoder0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      
+        const TAG = "testTextEncoder0003";
+        console.log(TAG + " start");
+        const encoder = new util.TextEncoder();
+        const input = "你好世界";
+        const result = encoder.encode(input);
+        expect(result.length === 12).assertTrue();
+        expect(result[0] === 0xE4).assertTrue();
+      });
+    /**
+     * @tc.number    SUB_UTIL_TEXTENCODER_0400
+     * @tc.name      testTextEncoder0004
+     * @tc.desc      Verify handling of 4-byte characters (Emoji).
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTextEncoder0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      
+        const TAG = "testTextEncoder0004";
+        console.log(TAG + " start");
+        const encoder = new util.TextEncoder();
+        const input = "🦄𠮷";
+        const result = encoder.encode(input);
+        expect(result.length === 8).assertTrue();
+        expect(result[0] === 0xF0).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_0300
-     * @tc.name      testFixedLength0003
-     * @tc.desc      Verify the relationship between length and byteLength of Float32Array.
+     * @tc.number    SUB_UTIL_TEXTENCODER_0500
+     * @tc.name      testTextEncoder0005
+     * @tc.desc      Verify offset calculations for mixed languages.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0003";
+        const TAG = "testTextEncoder0005";
         console.log(TAG + " start");
-        const arr3: Float32Array = new Float32Array(4);
-        const lengthRelation: boolean = arr3.byteLength === arr3.length * 4;
-        expect(lengthRelation).assertTrue();
+        const encoder = new util.TextEncoder();
+        const input = "A©中😊";
+        const result = encoder.encode(input);
+        const expectedLen = 1 + 2 + 3 + 4;
+        expect(result.length === expectedLen).assertTrue();
+        expect(result[0] === 0x41).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_0400
-     * @tc.name      testFixedLength0004
-     * @tc.desc      Verify the specific values of length and byteLength of Int32Array.
+     * @tc.number    SUB_UTIL_TEXTENCODER_0600
+     * @tc.name      testTextEncoder0006
+     * @tc.desc      Verify that BOM (U+FEFF) is correctly encoded.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0004";
+    it("testTextEncoder0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = "testTextEncoder0006";
         console.log(TAG + " start");
-        const arr4: Int32Array = new Int32Array(2);
-        const arrayLength: number = arr4.length;
-        const byteLength: number = arr4.byteLength;
-        expect(arrayLength === 2 && byteLength === 8).assertTrue();
+        const encoder = new util.TextEncoder();
+        const input = "\uFEFFTest";
+        const result = encoder.encode(input);
+        expect(result.length === 7).assertTrue();
+        expect(result[0] === 0xEF).assertTrue();
+
+
+      });
+
+    /**
+     * @tc.number    SUB_UTIL_TEXTENCODER_0900
+     * @tc.name      testTextEncoder0009
+     * @tc.desc      Verify encoding integrity for a large string.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTextEncoder0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      
+        const TAG = "testTextEncoder0009";
+        console.log(TAG + " start");
+        const encoder = new util.TextEncoder();
+        let str = "";
+        for(let i=0; i<1000; i++) str += "0123456789";
+        const result = encoder.encode(str);
+        expect(result.length === 10000).assertTrue();
+        expect(result[0] === 0x30).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_0500
-     * @tc.name      testFixedLength0005
-     * @tc.desc      Verify the value of BYTES_PER_ELEMENT constant for Uint8Array.
+     * @tc.number    SUB_UTIL_TEXTENCODER_1000
+     * @tc.name      testTextEncoder0010
+     * @tc.desc      Verify boundaries between 1-byte and 2-byte characters.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0005";
+        const TAG = "testTextEncoder0010";
         console.log(TAG + " start");
-        const arr5: Uint8Array = new Uint8Array(1);
-        const bytesPerElement: number = Uint8Array.BYTES_PER_ELEMENT;
-        expect(bytesPerElement === 1).assertTrue();
+        const encoder = new util.TextEncoder();
+        const input = "\u007F\u0080";
+        const result = encoder.encode(input);
+        expect(result.length === 3).assertTrue();
+        expect(result[0] === 0x7F).assertTrue();
+        expect(result[1] === 0xC2).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_0600
-     * @tc.name      testFixedLength0006
-     * @tc.desc      Verify the value of BYTES_PER_ELEMENT constant for Int16Array.
+     * @tc.number    SUB_UTIL_TEXTENCODER_1100
+     * @tc.name      testTextEncoder0011
+     * @tc.desc      Verify the structure of the return object {read, written}.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0006";
+        const TAG = "testTextEncoder0011";
         console.log(TAG + " start");
-        const arr6: Int16Array = new Int16Array(1);
-        const bytesPerElement: number = Int16Array.BYTES_PER_ELEMENT;
-        expect(bytesPerElement === 2).assertTrue();
+        const encoder = new util.TextEncoder();
+        const dest = new Uint8Array(10);
+        const ret = encoder.encodeInto("abc", dest);
+        expect(ret.read === 3).assertTrue();
+        expect(ret.written === 3).assertTrue();
+
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_0700
-     * @tc.name      testFixedLength0007
-     * @tc.desc      Verify the value of BYTES_PER_ELEMENT constant for Float64Array.
+     * @tc.number    SUB_UTIL_TEXTENCODER_1200
+     * @tc.name      testTextEncoder0012
+     * @tc.desc      Verify behavior when buffer size exactly equals required length.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0007";
+        const TAG = "testTextEncoder0012";
         console.log(TAG + " start");
-        const arr7: Float64Array = new Float64Array(1);
-        const bytesPerElement: number = Float64Array.BYTES_PER_ELEMENT;
-        expect(bytesPerElement === 8).assertTrue();
+        const encoder = new util.TextEncoder();
+        const dest = new Uint8Array(3);
+        const ret = encoder.encodeInto("中", dest);
+        expect(ret.read === 1).assertTrue();
+        expect(ret.written === 3).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_0800
-     * @tc.name      testFixedLength0008
-     * @tc.desc      Verify that the length of Int16Array view based on ArrayBuffer cannot be modified.
+     * @tc.number    SUB_UTIL_TEXTENCODER_1300
+     * @tc.name      testTextEncoder0013
+     * @tc.desc      Verify unused buffer areas are not polluted.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0008";
+        const TAG = "testTextEncoder0013";
         console.log(TAG + " start");
-        const buffer8: ArrayBuffer = new ArrayBuffer(8);
-        const arr8: Int16Array = new Int16Array(buffer8);
-        const viewLength: number = arr8.length;
-        expect(viewLength === 4).assertTrue();
+        const encoder = new util.TextEncoder();
+        const dest = new Uint8Array([1, 1, 1, 1, 1]);
+        const ret = encoder.encodeInto("A", dest);
+        expect(ret.written === 1).assertTrue();
+        expect(dest[0] === 0x41).assertTrue();
+        expect(dest[1] === 1).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_0900
-     * @tc.name      testFixedLength0009
-     * @tc.desc      Verify that the length of offset Uint32Array view cannot be modified.
+     * @tc.number    SUB_UTIL_TEXTENCODER_1400
+     * @tc.name      testTextEncoder0014
+     * @tc.desc      Verify atomic truncation: no partial bytes written.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0009";
+        const TAG = "testTextEncoder0014";
         console.log(TAG + " start");
-        const buffer9: ArrayBuffer = new ArrayBuffer(16);
-        const arr9: Uint32Array = new Uint32Array(buffer9, 4, 2);
-        const viewLength: number = arr9.length;
-        expect(viewLength === 2).assertTrue();
+        const encoder = new util.TextEncoder();
+        const dest = new Uint8Array(2);
+        const ret = encoder.encodeInto("中", dest);
+        expect(ret.written === 0).assertTrue();
+        expect(dest[0] === 0).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_1000
-     * @tc.name      testFixedLength0010
-     * @tc.desc      Verify that length of Int8Array is a read-only property and cannot be modified.
+     * @tc.number    SUB_UTIL_TEXTENCODER_1500
+     * @tc.name      testTextEncoder0015
+     * @tc.desc      Verify truncation behavior when buffer is partially sufficient.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0010";
+        const TAG = "testTextEncoder0015";
         console.log(TAG + " start");
-        const arr10: Int8Array = new Int8Array(3);
-        const actualLength: number = arr10.length;
-        expect(actualLength === 3).assertTrue();
+        const encoder = new util.TextEncoder();
+        const dest = new Uint8Array(4);
+        const ret = encoder.encodeInto("AB中", dest);
+        expect(ret.read === 2).assertTrue();
+        expect(ret.written === 2).assertTrue();
+
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_1100
-     * @tc.name      testFixedLength0011
-     * @tc.desc      Verify that the length of Uint16Array is consistent with the number of elements.
+     * @tc.number    SUB_UTIL_TEXTENCODER_1600
+     * @tc.name      testTextEncoder0016
+     * @tc.desc      Verify read/written counts for surrogate pairs (Emoji).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0011";
+        const TAG = "testTextEncoder0016";
         console.log(TAG + " start");
-        const arr11: Uint16Array = new Uint16Array([1, 2, 3, 4]);
-        const lengthConsistency: boolean = arr11.length === 4;
-        expect(lengthConsistency).assertTrue();
+        const encoder = new util.TextEncoder();
+        const dest = new Uint8Array(10);
+        const ret = encoder.encodeInto("😊", dest);
+        expect(ret.read === 2).assertTrue();
+        expect(ret.written === 4).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_1200
-     * @tc.name      testFixedLength0012
-     * @tc.desc      Fixed element length of Float32Array.
+     * @tc.number    SUB_UTIL_TEXTENCODER_1700
+     * @tc.name      testTextEncoder0017
+     * @tc.desc      Verify writing data into a subarray.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0012";
+        const TAG = "testTextEncoder0017";
         console.log(TAG + " start");
-        const arr12: Float32Array = new Float32Array(2);
-        arr12[0] = 1.5;
-        const firstElement: number = arr12[0];
-        const outOfBoundsElement: boolean = arr12[3] === undefined;
-        expect(firstElement === 1.5 && outOfBoundsElement).assertTrue();
+        const encoder = new util.TextEncoder();
+        const fullBuf = new Uint8Array(10);
+        const subBuf = fullBuf.subarray(5);
+        const ret = encoder.encodeInto("ABC", subBuf);
+        expect(ret.written === 3).assertTrue();
+        expect(fullBuf[5] === 0x41).assertTrue();
+        expect(fullBuf[0] === 0).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_1300
-     * @tc.name      testFixedLength0013
-     * @tc.desc      Verify that the calculation of Int32Array length using byteLength and BYTES_PER_ELEMENT is correct.
+     * @tc.number    SUB_UTIL_TEXTENCODER_1800
+     * @tc.name      testTextEncoder0018
+     * @tc.desc      Verify encodeInto interaction with empty string.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0013";
+        const TAG = "testTextEncoder0018";
         console.log(TAG + " start");
-        const arr13: Int32Array = new Int32Array(3);
-        const lengthCalculation: boolean = (arr13.byteLength / Int32Array.BYTES_PER_ELEMENT) === arr13.length;
-        expect(lengthCalculation).assertTrue();
+        const encoder = new util.TextEncoder();
+        const dest = new Uint8Array(10);
+        const ret = encoder.encodeInto("", dest);
+        expect(ret.read === 0 && ret.written === 0).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_1400
-     * @tc.name      testFixedLength0014
-     * @tc.desc      Verify that the length of Int8Array view created from Uint8Array cannot be modified.
+     * @tc.number    SUB_UTIL_TEXTENCODER_1900
+     * @tc.name      testTextEncoder0019
+     * @tc.desc      Verify accumulated writes (streaming).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0014";
+        const TAG = "testTextEncoder0019";
         console.log(TAG + " start");
-        const source14: Uint8Array = new Uint8Array(4);
-        const arr14: Int8Array = new Int8Array(source14);
-        const viewLength: number = arr14.length;
-        expect(viewLength === 4).assertTrue();
+        const encoder = new util.TextEncoder();
+        const dest = new Uint8Array(6);
+        let offset = 0;
+        let ret = encoder.encodeInto("A", dest.subarray(offset));
+        offset += ret.written;
+        ret = encoder.encodeInto("中", dest.subarray(offset));
+        offset += ret.written;
+        ret = encoder.encodeInto("!", dest.subarray(offset));
+        expect(dest[0] === 0x41).assertTrue();
+        expect(dest[1] === 0xE4).assertTrue();
+        expect(dest[4] === 0x21).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_1500
-     * @tc.name      testFixedLength0015
-     * @tc.desc      Verify that modifying length of zero-length Float64Array has no effect.
+     * @tc.number    SUB_UTIL_TEXTENCODER_2000
+     * @tc.name      testTextEncoder0020
+     * @tc.desc      Verify truncation for 4-byte characters.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0015";
+        const TAG = "testTextEncoder0020";
         console.log(TAG + " start");
-        const arr15: Float64Array = new Float64Array(0);
-        const actualLength: number = arr15.length;
-        expect(actualLength === 0).assertTrue();
+        const encoder = new util.TextEncoder();
+        const dest = new Uint8Array(3);
+        const ret = encoder.encodeInto("🦄", dest);
+        expect(ret.written === 0).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_1600
-     * @tc.name      testFixedLength0016
-     * @tc.desc      Verify that calling push() on Int8Array has no effect on length and returns expected value.
+     * @tc.number    SUB_UTIL_TEXTENCODER_2100
+     * @tc.name      testTextEncoder0021
+     * @tc.desc      Verify isolated high surrogate handling.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0016";
+        const TAG = "testTextEncoder0021";
         console.log(TAG + " start");
-        const arr16 = new Int8Array(2);
-        const arrayLength = arr16.length;
-        const pushResult = 3;
-        expect(arrayLength === 2 && pushResult === 3).assertTrue();
+        const encoder = new util.TextEncoder();
+        const result = encoder.encode("\uD800");
+        expect(result != null).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_1700
-     * @tc.name      testFixedLength0017
-     * @tc.desc      Verify that calling pop() on Uint32Array has no effect on length and element value.
+     * @tc.number    SUB_UTIL_TEXTENCODER_2200
+     * @tc.name      testTextEncoder0022
+     * @tc.desc      Verify isolated low surrogate handling.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0017";
+        const TAG = "testTextEncoder0022";
         console.log(TAG + " start");
-        const arr17: Uint32Array = new Uint32Array([10, 20, 30]);
-        const arrayLength: number = arr17.length;
-        const lastElement: number = arr17[2];
-        expect(arrayLength === 3 && lastElement === 30).assertTrue();
+        const encoder = new util.TextEncoder();
+        const result = encoder.encode("\uDC00");
+        expect(result != null).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_1800
-     * @tc.name      testFixedLength0018
-     * @tc.desc      Verify that calling unshift() on Float32Array has no effect on length and first element value.
+     * @tc.number    SUB_UTIL_TEXTENCODER_2300
+     * @tc.name      testTextEncoder0023
+     * @tc.desc      Verify handling of reversed surrogate pairs.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0018";
+        const TAG = "testTextEncoder0023";
         console.log(TAG + " start");
-        const arr18: Float32Array = new Float32Array(2);
-        const arrayLength: number = arr18.length;
-        const firstElement: number = arr18[0];
-        expect(arrayLength === 2 && firstElement === 0).assertTrue();
+        const encoder = new util.TextEncoder();
+        const result = encoder.encode("\uDC00\uD800");
+        expect(result != null).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_1900
-     * @tc.name      testFixedLength0019
-     * @tc.desc      Verify that calling shift() on Int16Array has no effect on length and first element value.
+     * @tc.number    SUB_UTIL_TEXTENCODER_2400
+     * @tc.name      testTextEncoder0024
+     * @tc.desc      Verify string ending with an isolated high surrogate.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0019";
+        const TAG = "testTextEncoder0024";
         console.log(TAG + " start");
-        const arr19: Int16Array = new Int16Array([100, 200, 300]);
-        const arrayLength: number = arr19.length;
-        const firstElement: number = arr19[0];
-        expect(arrayLength === 3 && firstElement === 100).assertTrue();
+        const encoder = new util.TextEncoder();
+        const result = encoder.encode("A\uD800");
+        expect(result != null).assertTrue();
+        expect(result.length >= 1).assertTrue();
+        expect(result[0] === 0x41).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_2000
-     * @tc.name      testFixedLength0020
-     * @tc.desc      Verify that using delete operator on Uint8Array sets element to 0 and keeps length unchanged.
+     * @tc.number    SUB_UTIL_TEXTENCODER_2500
+     * @tc.name      testTextEncoder0025
+     * @tc.desc      Verify counting logic when encoding illegal surrogates.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0020";
+        const TAG = "testTextEncoder0025";
         console.log(TAG + " start");
-        const arr20: Uint8Array = new Uint8Array([10, 20, 30]);
-        const deletedElement: number = 0;
-        const arrayLength: number = arr20.length;
-        expect(deletedElement === 0 && arrayLength === 3).assertTrue();
+        const encoder = new util.TextEncoder();
+        const dest = new Uint8Array(10);
+        const ret = encoder.encodeInto("\uD800", dest);
+        expect(ret.read !== undefined).assertTrue();
+        expect(ret.written !== undefined).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_2100
-     * @tc.name      testFixedLength0021
-     * @tc.desc      Verify that calling splice() on Int32Array has no effect on length and element value.
+     * @tc.number    SUB_UTIL_TEXTENCODER_2600
+     * @tc.name      testTextEncoder0026
+     * @tc.desc      Verify TextEncoder instance is stateless.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0021";
+        const TAG = "testTextEncoder0026";
         console.log(TAG + " start");
-        const arr21: Int32Array = new Int32Array([1, 2, 3, 4]);
-        const arrayLength: number = arr21.length;
-        const targetElement: number = arr21[1];
-        expect(arrayLength === 4 && targetElement === 2).assertTrue();
+        const encoder = new util.TextEncoder();
+        const res1 = encoder.encode("A");
+        const res2 = encoder.encode("B");
+        expect(res1[0] === 0x41).assertTrue();
+        expect(res2[0] === 0x42).assertTrue();
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_2200
-     * @tc.name      testFixedLength0022
-     * @tc.desc      Verify that calling concat() on Float64Array returns new array and keeps original length unchanged.
+     * @tc.number    SUB_UTIL_TEXTENCODER_2700
+     * @tc.name      testTextEncoder0027
+     * @tc.desc      Consistency check: Verify encode() and encodeInto() produce identical results.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0022";
+        const TAG = "testTextEncoder0027";
         console.log(TAG + " start");
-        const arr22: Float64Array = new Float64Array([1.1, 2.2]);
-        const originalLength: number = arr22.length;
-        const newArrayLength: number = 3;
-        expect(originalLength === 2 && newArrayLength === 3).assertTrue();
-
-      });
-    /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_2300
-     * @tc.name      testFixedLength0023
-     * @tc.desc      Verify that calling slice() on Uint16Array returns new array and keeps original length unchanged.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFixedLength0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0023";
-        console.log(TAG + " start");
-        const arr23: Uint16Array = new Uint16Array([10, 20, 30]);
-        const result23: Uint16Array = arr23.slice(1);
-        const originalLength: number = arr23.length;
-        const slicedLength: number = result23.length;
-        expect(originalLength === 3 && slicedLength === 2).assertTrue();
-
-      });
-    /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_2400
-     * @tc.name      testFixedLength0024
-     * @tc.desc      Verify that calling fill() on Int8Array can effectively modify element values.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFixedLength0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0024";
-        console.log(TAG + " start");
-        const arr24: Int8Array = new Int8Array(3);
-        arr24.fill(-1);
-        const firstElement: number = arr24[0];
-        const secondElement: number = arr24[1];
-        expect(firstElement === -1 && secondElement === -1).assertTrue();
-
-      });
-    /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_2500
-     * @tc.name      testFixedLength0025
-     * @tc.desc      Verify that calling copyWithin() on Float32Array can effectively copy elements.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFixedLength0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0025";
-        console.log(TAG + " start");
-        const arr25: Float32Array = new Float32Array([1.0, 2.0, 3.0, 4.0]);
-        arr25.copyWithin(0, 2);
-        const firstElement: number = arr25[0];
-        const secondElement: number = arr25[1];
-        expect(firstElement === 3.0 && secondElement === 4.0).assertTrue();
-
-      });
-    /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_2600
-     * @tc.name      testFixedLength0026
-     * @tc.desc      Verify that Uint8Array does not support push() and no new element is added.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFixedLength0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0026";
-        console.log(TAG + " start");
-        const arr26: Uint8Array = new Uint8Array(2);
-        const hasNoNewElement: boolean = arr26[2] === undefined;
-        expect(hasNoNewElement).assertTrue();
-
-      });
-    /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_2700
-     * @tc.name      testFixedLength0027
-     * @tc.desc      Verify that Int16Array does not support pop() and last element remains unchanged.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFixedLength0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0027";
-        console.log(TAG + " start");
-        const arr27: Int16Array = new Int16Array([10, 20]);
-        const lastElement: number = arr27[1];
-        expect(lastElement === 20).assertTrue();
-
-      });
-    /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_2800
-     * @tc.name      testFixedLength0028
-     * @tc.desc      Verify that Int32Array does not support shift() and first element remains unchanged.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFixedLength0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0028";
-        console.log(TAG + " start");
-        const arr28: Int32Array = new Int32Array([5, 10, 15]);
-        const firstElement: number = arr28[0];
-        expect(firstElement === 5).assertTrue();
-
-      });
-    /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_2900
-     * @tc.name      testFixedLength0029
-     * @tc.desc      Verify that the length of Float64Array remains unchanged after simulating delete operation.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFixedLength0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0029";
-        console.log(TAG + " start");
-        const arr29: Float64Array = new Float64Array(4);
-        const arrayLength: number = arr29.length;
-        expect(arrayLength === 4).assertTrue();
-
-      });
-    /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_3000
-     * @tc.name      testFixedLength0030
-     * @tc.desc      Verify that the length of Uint32Array remains unchanged after multiple push() attempts.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFixedLength0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0030";
-        console.log(TAG + " start");
-        const arr30: Uint32Array = new Uint32Array(1);
-        const arrayLength: number = arr30.length;
-        expect(arrayLength === 1).assertTrue();
-
-      });
-    /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_3100
-     * @tc.name      testFixedLength0031
-     * @tc.desc      Verify that length and byteLength of zero-length Int8Array are both 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFixedLength0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0031";
-        console.log(TAG + " start");
-        const arr31: Int8Array = new Int8Array(0);
-        const arrayLength: number = arr31.length;
-        const byteLength: number = arr31.byteLength;
-        expect(arrayLength === 0 && byteLength === 0).assertTrue();
-
-      });
-    /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_3200
-     * @tc.name      testFixedLength0032
-     * @tc.desc      Verify that accessing elements of zero-length Float32Array returns undefined.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFixedLength0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0032";
-        console.log(TAG + " start");
-        const arr32: Float32Array = new Float32Array(0);
-        const element: number | undefined = arr32[0];
-        const isUndefined: boolean = element === undefined;
-        expect(isUndefined).assertTrue();
-
-      });
-    /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_3300
-     * @tc.name      testFixedLength0033
-     * @tc.desc      Verify that calling pop() on zero-length Uint16Array returns undefined and length remains 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFixedLength0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0033";
-        console.log(TAG + " start");
-        const arr33: Uint16Array = new Uint16Array(0);
-        const popResult: undefined = undefined;
-        const arrayLength: number = arr33.length;
-        expect(popResult === undefined && arrayLength === 0).assertTrue();
-
-      });
-    /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_3400
-     * @tc.name      testFixedLength0034
-     * @tc.desc      Verify that Uint8Array with maximum safe length can be created successfully.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFixedLength0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0034";
-        console.log(TAG + " start");
-        try {
-          const maxLen34: number = 268435455;
-          const buffer: ArrayBuffer = new ArrayBuffer(maxLen34);
-          const arr34: Uint8Array = new Uint8Array(buffer);
-          const isCreatedSuccessfully: boolean = arr34.length === maxLen34;
-          expect(isCreatedSuccessfully).assertTrue();
-        } catch (e) {
-          const errorMessage: string = e instanceof Error ? e.message : String(e);
-          console.log(`34. Large length creation：${errorMessage}`);
-          expect(false).assertTrue();
+        const encoder = new util.TextEncoder();
+        const input = "Complex-String-中文-😊";
+        const res1 = encoder.encode(input);
+        const dest = new Uint8Array(res1.length);
+        const res2Struct = encoder.encodeInto(input, dest);
+        expect(res1.length === res2Struct.written).assertTrue();
+        for(let i=0; i<res1.length; i++) {
+          expect(res1[i] === dest[i]).assertTrue();
         }
 
       });
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_3500
-     * @tc.name      testFixedLength0035
-     * @tc.desc      Verify that creating Uint8Array with length exceeding maximum limit throws RangeError.
+     * @tc.number    SUB_UTIL_TEXTENCODER_2800
+     * @tc.name      testTextEncoder0028
+     * @tc.desc      Verify chunked writing logic for large strings.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTextEncoder0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-        const TAG = "testFixedLength0035";
+        const TAG = "testTextEncoder0028";
         console.log(TAG + " start");
-        try {
-          const excessiveLength: number = 4294967296;
-          const buffer: ArrayBuffer = new ArrayBuffer(excessiveLength);
-          const arr35: Uint8Array = new Uint8Array(buffer);
-          expect(false).assertTrue();
-        } catch (e) {
-          const isRangeError: boolean = e instanceof RangeError;
-          console.log(`35. Super maximum length：${isRangeError}`);
-          expect(isRangeError).assertTrue();
+        const encoder = new util.TextEncoder();
+        const longStr = "A".repeat(200);
+        const dest = new Uint8Array(100);
+        const ret = encoder.encodeInto(longStr, dest);
+        expect(ret.written === 100).assertTrue();
+        expect(ret.read === 100).assertTrue();
+        expect(dest[99] === 0x41).assertTrue();
+
+      });
+    /**
+     * @tc.number    SUB_UTIL_TEXTENCODER_2900
+     * @tc.name      testTextEncoder0029
+     * @tc.desc      Verify encoding of the maximum valid Unicode code point.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTextEncoder0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      
+        const TAG = "testTextEncoder0029";
+        console.log(TAG + " start");
+        const encoder = new util.TextEncoder();
+        const result = encoder.encode("\u{10FFFF}");
+        expect(result.length === 4).assertTrue();
+        expect(result[0] === 0xF4).assertTrue();
+
+      });
+    /**
+     * @tc.number    SUB_UTIL_TEXTENCODER_3000
+     * @tc.name      testTextEncoder0030
+     * @tc.desc      Verify robustness when encodeInto target buffer has zero length.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTextEncoder0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      
+        const TAG = "testTextEncoder0030";
+        console.log(TAG + " start");
+        const encoder = new util.TextEncoder();
+        const dest = new Uint8Array(0);
+        const ret = encoder.encodeInto("Something", dest);
+        expect(ret.written === 0).assertTrue();
+        expect(ret.read === 0).assertTrue();
+
+
+      });
+
+    /**
+     * @tc.number    SUB_UTIL_TEXTENCODER_3100
+     * @tc.name      testTextEncoder0031
+     * @tc.desc      Verify encoding of high-range ASCII characters (0x7F).
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTextEncoder0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = "testTextEncoder0031";
+        console.log(TAG + " start");
+        const encoder = new util.TextEncoder();
+        const result = encoder.encode("\x7F");
+        expect(result.length === 1).assertTrue();
+        expect(result[0] === 0x7F).assertTrue();
+
+      });
+
+
+    /**
+     * @tc.number    SUB_UTIL_TEXTENCODER_3200
+     * @tc.name      testTextEncoder0032
+     * @tc.desc      Comprehensive check mixing 1, 2, 3, and 4-byte characters.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTextEncoder0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = "testTextEncoder0032";
+        console.log(TAG + " start");
+        const encoder = new util.TextEncoder();
+        const input = "aµऄ𐍈";
+        const result = encoder.encode(input);
+        expect(result.length === 1 + 2 + 3 + 4).assertTrue();
+        expect(result[0] === 0x61).assertTrue();
+        expect(result[1] === 0xC2).assertTrue();
+        expect(result[3] === 0xE0).assertTrue();
+        expect(result[6] === 0xF0).assertTrue();
+
+      });
+
+    /**
+     * @tc.number    SUB_UTIL_TEXTENCODER_3300
+     * @tc.name      testTextEncoder0033
+     * @tc.desc      Verify memory stability by looping encodeInto multiple times.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testTextEncoder0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = "testTextEncoder0033";
+        console.log(TAG + " start");
+        const encoder = new util.TextEncoder();
+        const dest = new Uint8Array(10);
+        for(let i=0; i<100; i++) {
+          const ret = encoder.encodeInto("Test", dest);
+          expect(ret.written === 4).assertTrue();
+          expect(dest[0] === 0x54).assertTrue();
         }
-
       });
+
     /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_3600
-     * @tc.name      testFixedLength0036
-     * @tc.desc      Verify length and byteLength characteristics of single-element Int32Array.
+     * @tc.number    SUB_UTIL_TEXTENCODER_3400
+     * @tc.name      testTextEncoder0034
+     * @tc.desc      Verify that encoding an empty string returns a valid Uint8Array instance.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFixedLength0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0036";
+    it("testTextEncoder0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const TAG = "testTextEncoder0034";
         console.log(TAG + " start");
-        const buffer: ArrayBuffer = new ArrayBuffer(4);
-        const arr36: Int32Array = new Int32Array(buffer);
-        arr36[0] = 123;
-        const length: number = arr36.length;
-        const byteLen: number = arr36.byteLength;
-        expect(length === 1 && byteLen === 4).assertTrue();
+        const encoder = new util.TextEncoder();
+        const result = encoder.encode("");
 
-      });
-    /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_3700
-     * @tc.name      testFixedLength0037
-     * @tc.desc      Verify that maximum element values do not affect the length of Uint8Array.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFixedLength0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0037";
-        console.log(TAG + " start");
-        const buffer: ArrayBuffer = new ArrayBuffer(2);
-        const arr37: Uint8Array = new Uint8Array(buffer);
-        arr37[0] = 255;
-        arr37[1] = 255;
-        const arrayLength: number = arr37.length;
-        expect(arrayLength === 2).assertTrue();
-
-      });
-    /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_3800
-     * @tc.name      testFixedLength0038
-     * @tc.desc      Verify that the buffer byteLength of zero-length Float64Array is 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFixedLength0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0038";
-        console.log(TAG + " start");
-        const buffer: ArrayBuffer = new ArrayBuffer(0);
-        const arr38: Float64Array = new Float64Array(buffer);
-        const bufferByteLength: number = arr38.buffer.byteLength;
-        expect(bufferByteLength === 0).assertTrue();
-
-      });
-    /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_3900
-     * @tc.name      testFixedLength0039
-     * @tc.desc      Verify that length property of length-1 Int16Array is read-only and cannot be modified.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFixedLength0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0039";
-        console.log(TAG + " start");
-        const buffer: ArrayBuffer = new ArrayBuffer(2);
-        const arr39: Int16Array = new Int16Array(buffer);
-        const arrayLength: number = arr39.length;
-        expect(arrayLength === 1).assertTrue();
-
-      });
-    /**
-     * @tc.number    SUB_BASEDATA_FIXED_LENGTH_4000
-     * @tc.name      testFixedLength0040
-     * @tc.desc      Verify the relationship between byteLength and element length of large Int32Array.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFixedLength0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = "testFixedLength0040";
-        console.log(TAG + " start");
-        try {
-          const len40: number = 1024 * 1024 / 4;
-          const buffer: ArrayBuffer = new ArrayBuffer(len40 * 4);
-          const arr40: Int32Array = new Int32Array(buffer);
-          const isByteLengthCorrect: boolean = arr40.byteLength === len40 * 4;
-          expect(isByteLengthCorrect).assertTrue();
-        } catch (e) {
-          const errorMessage: string = e instanceof Error ? e.message : String(e);
-          console.log(`40. large length byte relation：${errorMessage}`);
-          expect(false).assertTrue();
+        if (result != undefined && result != null) {
+          expect(result.constructor.name === 'Uint8Array').assertTrue();
+          expect(result.buffer.byteLength === 0).assertTrue();
+        } else {
+          expect(result == undefined).assertTrue();
         }
-
       });
   })
 }
