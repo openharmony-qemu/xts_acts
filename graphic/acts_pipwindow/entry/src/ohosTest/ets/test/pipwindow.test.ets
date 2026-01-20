@@ -5417,7 +5417,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       let caseName = 'testPiPStateChangeOtherwithCloseMainWindow';
       console.log(tag + caseName +' begin');
       if(isPipWindowEnabled) {
-        let windowStageStart = await startAbility(caseName, context1);
+        let windowStageStart = await startAbility(caseName, globalThis.abilityContext);
         let windowClass = windowStageStart.getMainWindowSync();
         let pipController:pipWindow.PiPController| undefined = undefined;
         let mXComponentController = new XComponentController();
@@ -5486,7 +5486,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       let caseName = 'testPiPStateChangeOtherwithTwoPiP';
       console.log(tag + caseName +' begin');
       if(isPipWindowEnabled) {
-        let windowStageStart = await startAbility(caseName, context1);
+        let windowStageStart = await startAbility(caseName, globalThis.abilityContext);
         let windowClass = windowStageStart.getMainWindowSync();
         let pipController:pipWindow.PiPController| undefined = undefined;
         let pipController2:pipWindow.PiPController| undefined = undefined;
