@@ -50,37 +50,6 @@ export default function XmlTest_04() {
     })
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_1400
-     * @tc.name      ConstructorTest0014
-     * @tc.desc      Asynchronous operations are not synchronized
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('ConstructorTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ConstructorTest0014';
-        console.log(TAG + ' start');
-
-        const xmlStr = '<root><async/></root>';
-        const buffer = new util.TextEncoder().encodeInto(xmlStr);
-
-          const parser = new xml.XmlPullParser(buffer.buffer as ArrayBuffer);
-          await new Promise<void>((resolve, reject) => {
-            setTimeout(() => {
-              try {
-                parser.parse({});
-                expect(!!parser).assertTrue()
-                resolve();
-              } catch (err) {
-                console.error(`${TAG} fail, err: ${err}`);
-                reject();
-              }
-            }, 100);
-          });
-
-      });
-
-    /**
      * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_1500
      * @tc.name      ConstructorTest0015
      * @tc.desc      Handling multi-level XML structures

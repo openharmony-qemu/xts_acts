@@ -4,7 +4,7 @@ import Base64HelperTest from './util/Base64HelperTest.test'
 import StringDecoder01Test from './util/StringDecoderTest01.test'
 import StringDecoder02Test from './util/StringDecoderTest02.test'
 import RationalNumberTest from './util/RationalNumberTest.test'
-import TextEncoder from './util/TextEncoderTest.test'
+import TextEncoderTest from './util/TextEncoderTest.test'
 import XmlTest01 from "./util/xml/XmlTest01.test"
 import XmlTest02 from "./util/xml/XmlTest02.test"
 import XmlTest03 from "./util/xml/XmlTest03.test"
@@ -31,7 +31,7 @@ export default function testsuite() {
   StringDecoder01Test();
   StringDecoder02Test();
   RationalNumberTest(); 
-  TextEncoder();
+  TextEncoderTest();
   XmlTest01();
   XmlTest02();
   XmlTest03();

@@ -1248,7 +1248,7 @@ export default function StreamTest_02() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('ontest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('ontest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done: ()=> void): Promise<void> => {
         const TAG = 'ontest0013';
         console.log(TAG + ' start');
         const testData = 'test';
@@ -1256,7 +1256,7 @@ export default function StreamTest_02() {
         complexWritable.write(testData, 'utf8');
         expect(complexWritable instanceof ComplexWritable).assertEqual(true);
         expect(complexWritable instanceof stream.Writable).assertEqual(true);
-
+        done();
       })
   })
 }

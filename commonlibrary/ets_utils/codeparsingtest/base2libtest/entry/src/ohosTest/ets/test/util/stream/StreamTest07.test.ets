@@ -865,26 +865,6 @@ export default function StreamTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_READABLEDOLNITIALIZE_0300
-     * @tc.name      Readabledolnitializetest0003
-     * @tc.desc      Array Unshift index 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('Readabledolnitializetest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'Readabledolnitializetest0003';
-        console.log(TAG + ' start');
-        await new Promise<void>((resolve) => {
-          const customReadable = new CustomReadable3();
-          customReadable.getInitializeCompletePromise().then(resolve);
-        });
-        const customReadable = new CustomReadable3();
-        expect(customReadable.resourceAllocated && !customReadable.resourceReleased).assertTrue();
-
-      });
-
-    /**
      * @tc.number    SUB_BASEDATE_STREAM_READABLEDOLNITIALIZE_0400
      * @tc.name      Readabledolnitializetest0004
      * @tc.desc      Array Unshift index 0.

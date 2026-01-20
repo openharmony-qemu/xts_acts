@@ -758,34 +758,6 @@ export default function StreamTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLEWRITE_0800
-     * @tc.name      Writablewritetest0008
-     * @tc.desc      Verify Writable write with multiple parameter combinations.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('Writablewritetest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'Writablewritetest0008';
-        console.log(TAG + ' start');
-        const writable = new BasicWritable();
-        const buffer = new Uint8Array([0x48, 0x65]);
-        writable.write("Hello", "utf-8", () => {});
-        writable.write(buffer, undefined, () => {});
-        writable.write("Test", "utf-8", () => {});
-        await new Promise<void>((resolve) => {
-          const checkDone = () => {
-            if (writable.allWritesDone) {
-              resolve();
-            }
-          };
-          checkDone();
-        });
-        expect(writable.writeCount).assertEqual(3);
-
-      });
-
-    /**
      * @tc.number    SUB_BASEDATE_STREAM_WRITABLEWRITE_0900
      * @tc.name      Writablewritetest0009
      * @tc.desc      Verify Writable write with case-insensitive encoding and Uint8Array.

@@ -1,5 +1,6 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import util from '@ohos.util';
 
 export default function TextEncoderTest() {
   describe('TextEncoderTest', () => {

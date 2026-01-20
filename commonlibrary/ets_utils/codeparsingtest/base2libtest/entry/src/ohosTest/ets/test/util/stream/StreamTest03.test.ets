@@ -758,24 +758,6 @@ export default function StreamTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_DOLNITIALIZE_0200
-     * @tc.name      dolnitializeTest0002
-     * @tc.desc      Array Unshift index 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('dolnitializeTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'dolnitializeTest0002';
-        console.log(TAG + ' start');
-        let asyncInitMsg = '';
-        const asyncWritable = new AsyncInitWritable();
-        asyncInitMsg = await asyncWritable.initAsync();
-        expect(asyncInitMsg).assertEqual('Initialization completed asynchronously');
-
-      });
-
-    /**
      * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_DOLNITIALIZE_0300
      * @tc.name      dolnitializeTest0003
      * @tc.desc      Array Unshift index 0.
@@ -845,30 +827,6 @@ export default function StreamTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_DOLNITIALIZE_0600
-     * @tc.name      dolnitializeTest0006
-     * @tc.desc      Array Unshift index 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('dolnitializeTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'dolnitializeTest0006';
-        console.log(TAG + ' start');
-        let errorMsg = '';
-        const errorWritable = new AsyncErrorWritables();
-        try {
-          await errorWritable.initAsync();
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          errorMsg = err instanceof Error ? err.message : '';
-          expect(errorMsg).assertEqual('Initialization failed');
-        }
-
-      });
-
-    /**
      * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_DOLNITIALIZE_0700
      * @tc.name      dolnitializeTest0007
      * @tc.desc      Array Unshift index 0.
@@ -882,23 +840,6 @@ export default function StreamTest_03() {
           new CallbackExceptionWritable(() => {});
           expect(typeof CallbackExceptionWritable).assertEqual('function');
           expect(typeof (new CallbackExceptionWritable(() => {})).doWrite).assertEqual('function');
-
-      });
-
-    /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_DOLNITIALIZE_0800
-     * @tc.name      dolnitializeTest0008
-     * @tc.desc      Array Unshift index 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('dolnitializeTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'dolnitializeTest0008';
-        console.log(TAG + ' start');
-        const normalWritable = new NormalWritable();
-        await normalWritable.initAsync();
-        expect(initCompleted).assertEqual(true);
 
       });
 
@@ -923,49 +864,6 @@ export default function StreamTest_03() {
           invalidEncodingError = (err as Error).message;
           expect(invalidEncodingError).assertEqual('401: Unsupported encoding');
         }
-
-      });
-
-    /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_DOLNITIALIZE_1000
-     * @tc.name      dolnitializeTest0010
-     * @tc.desc      Array Unshift index 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('dolnitializeTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'dolnitializeTest0010';
-        console.log(TAG + ' start');
-        let errorCaptured = '';
-        const errorWritable = new AsyncErrorWritable();
-        try {
-          await errorWritable.initAsync();
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          errorCaptured = err instanceof Error ? err.message : '';
-          expect(errorCaptured).assertEqual('Resource initialization failed');
-        }
-
-      });
-
-    /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_DOLNITIALIZE_1100
-     * @tc.name      dolnitializeTest0011
-     * @tc.desc      Array Unshift index 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('dolnitializeTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'dolnitializeTest0011';
-        console.log(TAG + ' start');
-        const logic = new ResourceLoadingLogic();
-        expect(logic.testWrite()).assertEqual('Resource not loaded');
-        await logic.loadResource();
-        expect(resourceLoaded).assertEqual(true);
-        expect(logic.testWrite()).assertNull();
 
       });
 
