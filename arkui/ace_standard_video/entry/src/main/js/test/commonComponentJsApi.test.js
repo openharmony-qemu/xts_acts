@@ -51,7 +51,7 @@ describe('aceJsTest', function () {
 
     beforeEach(async function() {
         console.info('aceJsTest main beforeEach start');
-        await sleep(1000)
+        await sleep(2000)
     });
 
     /**

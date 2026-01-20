@@ -40,7 +40,7 @@ export default function() {
 
         beforeEach(async function() {
             console.info('aceJsTest ohosTest beforeEach start');
-            await sleep(1000)
+            await sleep(2000)
         });    
 
         /**
