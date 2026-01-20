@@ -1,6 +1,7 @@
 {
   "src": [
     "MainAbility/pages/index/index",
+    "MainAbility/pages/blendMode/blendMode",
     "MainAbility/pages/image/getUIContextApi01",
     "MainAbility/pages/image/getUIContextApi02",
     "MainAbility/pages/image/getUIContextApi03",
