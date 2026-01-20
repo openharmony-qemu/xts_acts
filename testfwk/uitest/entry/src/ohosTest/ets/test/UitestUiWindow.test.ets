@@ -600,7 +600,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowMinimize_float
-     * @tc.number uitestUiWindowTest_new013
+     * @tc.number uitestUiWindowTest_new014
      * @tc.desc   Call the minimize interface in fullscreen.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -624,7 +624,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowMinimize_split
-     * @tc.number uitestUiWindowTest_new014
+     * @tc.number uitestUiWindowTest_new015
      * @tc.desc   Call the minimize interface in split.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -649,7 +649,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowClose_full
-     * @tc.number uitestUiWindowTest_new015
+     * @tc.number uitestUiWindowTest_new016
      * @tc.desc   Call the close interface in fullscreen.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -673,7 +673,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowClose_float
-     * @tc.number uitestUiWindowTest_new015
+     * @tc.number uitestUiWindowTest_new017
      * @tc.desc   Call the close interface in fullscreen.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -697,7 +697,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowClose_split
-     * @tc.number uitestUiWindowTest_new016
+     * @tc.number uitestUiWindowTest_new018
      * @tc.desc   Call the close interface in split.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -723,7 +723,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowMaximize_full
-     * @tc.number uitestUiWindowTest_new017
+     * @tc.number uitestUiWindowTest_new019
      * @tc.desc   Call the maximize interface in fullscreen.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -745,7 +745,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowMaximize_float
-     * @tc.number uitestUiWindowTest_new018
+     * @tc.number uitestUiWindowTest_new020
      * @tc.desc   Call the maximize interface in float.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -770,7 +770,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowMaximize_split
-     * @tc.number uitestUiWindowTest_new018
+     * @tc.number uitestUiWindowTest_new021
      * @tc.desc   Call the maximize interface in float.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
