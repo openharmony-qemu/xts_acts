@@ -31,6 +31,7 @@ struct webViewController {
   @State flag:number = 1;
   @State str:string = ""
   @State newState:number = 3;
+  @State CameraCaptureStateArr:CameraCaptureState[] = [CameraCaptureState.NONE,CameraCaptureState.PAUSED,CameraCaptureState.ACTIVE]
  
 
   onPageShow() {
@@ -101,11 +102,11 @@ struct webViewController {
             case "emitOnCameraCaptureStateChange002": {
               try {
                 if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                  Utils.emitEvent(1, 20260202);
+                  Utils.emitEvent(this.CameraCaptureStateArr[1], 20260202);
                 } else {
                   this.controller.stopCamera();
                   setTimeout(() => {
-                    Utils.emitEvent(this.newState, 20260202);
+                    Utils.emitEvent(this.CameraCaptureStateArr[this.newState], 20260202);
                   },1000)
                 }
 
@@ -117,12 +118,12 @@ struct webViewController {
             case "emitOnCameraCaptureStateChange003": {
               try {
                 if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                  Utils.emitEvent(2, 20260203);
+                  Utils.emitEvent(this.CameraCaptureStateArr[2], 20260203);
                 } else {
                   await Utils.sleep(1000);
                   this.controller.startCamera();
                   setTimeout(() => {
-                    Utils.emitEvent(this.newState, 20260203);
+                    Utils.emitEvent(this.CameraCaptureStateArr[this.newState], 20260203);
                   },500)
                 }
 
@@ -134,12 +135,12 @@ struct webViewController {
             case "emitOnCameraCaptureStateChange004": {
               try {
                 if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                  Utils.emitEvent(0, 20260204);
+                  Utils.emitEvent(this.CameraCaptureStateArr[0], 20260204);
                 } else {
                   await Utils.sleep(1000);
                   this.controller.closeCamera();
                   setTimeout(() => {
-                    Utils.emitEvent(this.newState, 20260204);
+                    Utils.emitEvent(this.CameraCaptureStateArr[this.newState], 20260204);
                   },500)
                 }
 
