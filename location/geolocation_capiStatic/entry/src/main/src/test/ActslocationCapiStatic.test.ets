@@ -660,6 +660,8 @@ export default function actslocationTest() {
                         geofence: geofence,
                         monitorTransitionEvents: transitionStatusList,
                         notifications: notificationRequestList,
+                        loiterTimeMs: 10000,
+                        fenceExtensionAbilityName: "fenceExtensionAbility",
                         geofenceTransitionCallback: (err: BusinessError<void>|null, transition: geoLocationManager.GeofenceTransition|undefined) => {
                         if (err) {
                             console.error('geofenceTransitionCallback: err=' + JSON.stringify(err));
@@ -670,6 +672,10 @@ export default function actslocationTest() {
                         }
                     }
                     try {
+                        console.info("SUB_Location_addGnssGeofence_0100 ======>loiterTimeMs ", typeof gnssGeofenceRequest.loiterTimeMs);
+                        expect(typeof gnssGeofenceRequest.loiterTimeMs).assertEqual("int");
+                        console.info("SUB_Location_addGnssGeofence_0100 ======>fenceExtensionAbilityName ", typeof gnssGeofenceRequest.fenceExtensionAbilityName);
+                        expect(typeof gnssGeofenceRequest.fenceExtensionAbilityName).assertEqual("string");
                         geoLocationManager.addGnssGeofence(gnssGeofenceRequest).then((id) => {
                         console.info("addGnssGeofence_0100 success, fence id: " + id);
                         expect(true).assertEqual(id!=null);
