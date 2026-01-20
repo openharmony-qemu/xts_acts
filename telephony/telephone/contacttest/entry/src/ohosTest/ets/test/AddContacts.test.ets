@@ -613,7 +613,7 @@ export default function AddContactSTest() {
               expect(data.length > 0).assertTrue();
               done();
             }).catch((err: BusinessError) => {
-              console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
+              console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
               ExpectFail();
               done();
           });
@@ -781,7 +781,7 @@ export default function AddContactSTest() {
           ExpectFail();
           done();
         }
-      })
+      });
 
      /**
      * @tc.name   testTelephonyContactAddContacts1500
