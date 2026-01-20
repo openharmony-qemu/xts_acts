@@ -19,6 +19,9 @@ import UDMFApiDataAllTest from "./UDMFApiDataAll.test";
 import UDMFApiUtdUdsTest from "./UDMFApiUtdUds.test";
 import UtdMimeTypeTest from "./UtdMimeTypeTest.test";
 import UDMFApiPromiseTest from "./UDMFApiPromise.test";
+import UDMFJsApiTest from "./UDMFJsAPI.test";
+import UtdFileNameTest from "./UtdFileNameExtentions.test";
+import UDMFDragBigDataJsApiTest from "./UDMFDragBigDataJsApi.test";
 export default function testsuite() {
     UDMFApiTest();
     UDMFApiDescriptorTest();
@@ -26,4 +29,7 @@ export default function testsuite() {
     UDMFApiUtdUdsTest();
     UtdMimeTypeTest();
     UDMFApiPromiseTest();
+    UDMFDragBigDataJsApiTest();
+    UDMFJsApiTest();
+    UtdFileNameTest();
 }
