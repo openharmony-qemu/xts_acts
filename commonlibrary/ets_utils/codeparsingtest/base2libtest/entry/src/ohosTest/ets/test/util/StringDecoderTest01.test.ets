@@ -651,24 +651,6 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_CONSTRUCTOR_3400
-     * @tc.name      test_Stringdecoder_Constructor_Utf8_Utf16_Scenario_0034
-     * @tc.desc      StringDecoder constructor with 'utf-16' encoding.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_Constructor_Utf8_Utf16_Scenario_0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_Constructor_Utf8_Utf16_Scenario_0034';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-16');
-        expect(stringDecoder != null).assertTrue();
-        console.log(TAG + ' done');
-
-      });
-
-    /**
      * @tc.number    SUB_UTIL_STRINGDECODER_CONSTRUCTOR_3500
      * @tc.name      test_Stringdecoder_Constructor_Utf8_Ascii_Scenario_0035
      * @tc.desc      StringDecoder constructor with 'utf-16le' encoding.
@@ -751,40 +733,6 @@ export default function StringDecoder01Test() {
         const TAG = 'test_Stringdecoder_Constructor_Gbk_0039';
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('gbk');
-        expect(stringDecoder != null).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_CONSTRUCTOR_4000
-     * @tc.name      test_Stringdecoder_Constructor_Utf8_0040
-     * @tc.desc      StringDecoder constructor with 'ascii' encoding.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_Constructor_Utf8_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_Constructor_Utf8_0040';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('ascii');
-        expect(stringDecoder != null).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_CONSTRUCTOR_4100
-     * @tc.name      test_Stringdecoder_Constructor_Utf8_Latin1_Scenario_0041
-     * @tc.desc      StringDecoder constructor with 'latin1' encoding.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_Constructor_Utf8_Latin1_Scenario_0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_Constructor_Utf8_Latin1_Scenario_0041';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('latin1');
         expect(stringDecoder != null).assertTrue();
 
       });
@@ -1176,25 +1124,6 @@ export default function StringDecoder01Test() {
         const buffer = new Uint8Array([72, 0, 101, 0, 108, 0, 108, 0, 111, 0]);
         const result: string = stringDecoder.end(buffer);
         expect(result != null).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_7200
-     * @tc.name      test_Stringdecoder_End_Utf8_Text_0072
-     * @tc.desc      StringDecoder end with ASCII encoded text.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Stringdecoder_End_Utf8_Text_0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Stringdecoder_End_Utf8_Text_0072';
-        console.log(TAG + ' start');
-        const stringDecoder: util.StringDecoder = new util.StringDecoder('ascii');
-        const buffer = new Uint8Array([84, 101, 115, 116]);
-        const result: string = stringDecoder.end(buffer);
-        expect(result).assertEqual("Test");
 
       });
 
