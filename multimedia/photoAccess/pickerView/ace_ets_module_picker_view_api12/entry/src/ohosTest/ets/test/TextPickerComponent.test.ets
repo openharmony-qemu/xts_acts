@@ -2861,6 +2861,7 @@ export default function TextPicker() {
 
         let msg: PhotoPickerResult = event?.data?.msg;
         console.info('testPicker56 result msg ' + JSON.stringify(msg));
+        expect(photoAccessHelper.PlayMode.DEFAULT).assertEqual(0);
         expect(expectedMaxSelectNumber).assertEqual(msg.maxSelectCount);
         expect(expectedMaxSelectPhotoNumber).assertEqual(msg.maxPhotoSelectNumber);
         expect(expectedMaxSelectVideoNumber).assertEqual(msg.maxVideoSelectNumber);
