@@ -50,6 +50,7 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
       }
       done()
     });
+	
 
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
