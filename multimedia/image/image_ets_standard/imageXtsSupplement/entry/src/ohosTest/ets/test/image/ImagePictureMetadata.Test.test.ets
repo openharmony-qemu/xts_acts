@@ -118,10 +118,8 @@ export default function ImagePictureMetadataTest() {
           sourceDensity: 98,
         };
         let imageSource: image.ImageSource = image.createImageSource(array, ops);
-        console.info(TAG, '11111111111');
         let exifCommodityPixelMap: image.PixelMap = await imageSource.createPixelMap();
         let exifPictureObj: image.Picture = image.createPicture(exifCommodityPixelMap);
-        console.info(TAG, '2222222222222');
         let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
         console.info(TAG, 'metadataType')
         let metaData: image.Metadata | null = await exifPictureObj.getMetadata(metadataType);
@@ -158,7 +156,6 @@ export default function ImagePictureMetadataTest() {
           sourceDensity: 98,
         };
         let imageSource: image.ImageSource = image.createImageSource(array, ops);
-        console.info(TAG, '11111111111');
         let imageData = await imageSource.readImageMetadata()
         console.info(TAG, 'metadataType')
         imageData.heifsMetadata?.getProperties(undefined)
@@ -193,7 +190,6 @@ export default function ImagePictureMetadataTest() {
           sourceDensity: 98,
         };
         let imageSource: image.ImageSource = image.createImageSource(array, ops);
-        console.info(TAG,'11111111111');
         let imageData = await imageSource.readImageMetadata()
         console.info(TAG, 'metadataType')
         imageData.heifsMetadata?.setProperties(undefined)
@@ -228,7 +224,6 @@ export default function ImagePictureMetadataTest() {
           sourceDensity: 98,
         };
         let imageSource: image.ImageSource = image.createImageSource(array, ops);
-        console.info(TAG,'11111111111');
         let imageData = await imageSource.readImageMetadata()
         console.info(TAG, 'metadataType')
         imageData.heifsMetadata?.setBlob(new ArrayBuffer(0))
