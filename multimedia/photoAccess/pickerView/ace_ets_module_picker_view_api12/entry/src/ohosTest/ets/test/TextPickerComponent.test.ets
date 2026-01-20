@@ -50,6 +50,7 @@ import {
   PhotoSource,RecentPhotoInfo
 } from '@ohos.file.RecentPhotoComponent';
 import { fileUri } from '@kit.CoreFileKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 const SEEK_START = 3;
 const SEEK_FINISH = 4;
@@ -2487,7 +2488,8 @@ export default function TextPicker() {
         "recommendationType": 0,
         "selectedRecommendationType": 0,
         "time": 1756371999125,
-        "version": 1.0
+        "version": 1.0,
+        "gridLevel": 1
       } as photoAccessHelper.ContextRecoveryInfo;
       sheetPickerOptions.contextRecoveryInfo = contextRecoveryInfo;
       sheetPickerOptions.isMovingPhotoBadgeShown = true;
@@ -3477,6 +3479,40 @@ export default function TextPicker() {
         console.error(`testPicker74, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
       }
       console.info("testPicker74 finish");
+      done();
+    });
+
+    /**
+     * @tc.name   testPicker75
+     * @tc.number testPicker75
+     * @tc.desc   Testing PhotoViewPicker.select with callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPicker75',Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      let state: photoAccessHelper.MovingPhotoBadgeStateType = 
+        photoAccessHelper.MovingPhotoBadgeStateType.NOT_MOVING_PHOTO;
+      pickerOptions.globalMovingPhotoState = state;
+      let photoPicker = new photoAccessHelper.PhotoViewPicker();
+      try{
+        photoPicker.select(pickerOptions, (err: BusinessError, PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+          if (err) {
+            console.error(`select callback错误码覆盖 failed with err: ${err.code}, ${err.message}`);
+            return ;
+          }
+          console.info('select callback错误码覆盖 successfully,uri:' + JSON.stringify(PhotoSelectResult));
+        })
+      } catch(error) {
+        console.error(`testPicker75, PhotoViewPicker.select failed with err: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(23800151);
+      }
+      console.info("testPicker75 finish");
       done();
     });
   })
