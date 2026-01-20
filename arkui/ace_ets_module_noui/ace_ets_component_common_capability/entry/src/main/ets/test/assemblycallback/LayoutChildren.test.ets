@@ -72,7 +72,7 @@ export default function LayoutChildrenTest() {
       let btn1 = await driver.findComponent(ON.id('Button3'));
       await btn1.click();
       await CommonFunc.sleep(500);
-      expect(AppStorage.get('onLayoutChildren')).assertEqual('onLayoutChildrenCompleteByID');
+      expect(AppStorage.get('onLayoutChildren')).assertEqual('onLayoutChildrenByID');
       AppStorage.delete('onLayoutChildren')
       let btn2 = await driver.findComponent(ON.id('Button2'));
       await btn2.click();
