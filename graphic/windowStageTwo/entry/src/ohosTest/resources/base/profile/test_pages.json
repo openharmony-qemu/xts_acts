@@ -33,6 +33,10 @@
     "testability/pages/WindowTest/LoadContentByName",
     "testability/pages/WindowTest/KeyBoradTest",
     "testability/pages/Navdestination",
-    "testability/pages/Navdestination2"
+    "testability/pages/Navdestination2",
+    "testability/pages/WindowTest/EmbeddedComponentCreateSubWindowOptionsFalsePage",
+    "testability/pages/WindowTest/extensionCreateSubWindowWithFalseOpt",
+    "testability/pages/WindowTest/EmbeddedComponentCreateSubWindowOptionsTruePage",
+    "testability/pages/WindowTest/extensionCreateSubWindowWithTrueOpt"
   ]
 }

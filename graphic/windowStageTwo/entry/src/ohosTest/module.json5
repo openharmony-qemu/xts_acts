@@ -225,6 +225,22 @@
         "type": "embeddedUI"
       },
       {
+        "name": "EmbeddedCreateSubWindowTrueAbility",
+        "description": "$string:TestAbility_desc",
+        "label": "$string:TestAbility_label",
+        "exported": true,
+        "srcEntry": "./ets/testability/EmbeddedCreateSubWindowTrueOptionsAbility.ets",
+        "type": "embeddedUI"
+      },
+      {
+        "name": "EmbeddedCreateSubWindowFalseAbility",
+        "description": "$string:TestAbility_desc",
+        "label": "$string:TestAbility_label",
+        "exported": true,
+        "srcEntry": "./ets/testability/EmbeddedCreateSubWindowFalseOptionsAbility.ets",
+        "type": "embeddedUI"
+      },
+      {
         "name": "EmbeddedRectTestAbility",
         "description": "$string:TestAbility_desc",
         "label": "$string:TestAbility_label",
