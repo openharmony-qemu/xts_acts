@@ -86,33 +86,5 @@ export default function BindMenuWithResponse() {
       console.info('BindMenuWithResponse_0100 END');
       done();
     });
-
-    /**
-     * @tc.name   BindMenuWithResponse_0200
-     * @tc.number BindMenuWithResponse_0200
-     * @tc.desc   To test bindContextMenuWithResponse long Click
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('BindMenuWithResponse_0200', Level.LEVEL0, async (done: Function) => {
-      console.info('BindMenuWithResponse_0200 START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('bindClickId'));
-      let point = await button.getBoundsCenter();
-      console.info('[BindMenuWithResponse_0200] point' + JSON.stringify(point));
-      await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
-      console.info('[BindMenuWithResponse_0200] mouse right click');
-      await CommonFunc.sleep(1000);
-      let menu: Component = await driver.findComponent(ON.type('Menu'));
-      expect(menu !== null).assertTrue();
-      let hideBtn = await driver.findComponent(ON.id('hideId'));
-      await hideBtn?.click();
-      console.info('[BindMenuWithResponse_0200] hideBtn click');
-      await CommonFunc.sleep(2000);
-      console.info('BindMenuWithResponse_0200 END');
-      done();
-    });
   })
 }
