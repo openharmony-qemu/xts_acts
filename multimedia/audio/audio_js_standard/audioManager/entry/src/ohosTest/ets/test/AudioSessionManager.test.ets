@@ -172,7 +172,7 @@ export default function audioSessionManagerTest() {
       let audioManager: audio.AudioManager = audio.getAudioManager();
       let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
       try {
-        let isExistence: boolean = audioSessionManager.IsOtherMediaPlaying();
+        let isExistence: boolean = audioSessionManager.isOtherMediaPlaying();
         console.info(`ISOTHERMEDIAPLAYING_001 isExistence is: ${isExistence}`);
         expect(isExistence).assertFalse();
       } catch (err) {
