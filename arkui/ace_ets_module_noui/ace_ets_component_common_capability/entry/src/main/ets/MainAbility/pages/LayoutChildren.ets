@@ -26,14 +26,13 @@ struct ImageExample {
   listenerForRowByID: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(8)
   listenerForRootByID: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(6)
   listenerForTextByID: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(9)
-  @State ll: Resource | null = $r('app.media.startIcon');
+  @State ll: Resource | null = $r('app.media.icon');
   @State textString: string = ''
 
   @State layoutChildrenState: string = 'init'
 
   onLayoutChildrenCompleteByID() {
     console.log("lll onLayoutChildrenCompleteByID");
-    // this.layoutChildrenState = 'onLayoutChildrenCompleteByID'
     AppStorage.SetOrCreate('onLayoutChildren', 'onLayoutChildrenByID');
     console.info("layoutChildrenState:onLayoutChildrenByID")
   }
@@ -55,8 +54,6 @@ struct ImageExample {
         Column() {
           Button("onLayoutChildrenByID").id("Button1").onClick((event: ClickEvent) => {
             this.listenerForRootByID.onLayoutChildren(this.onLayoutChildrenCompleteByID);
-            // this.layoutChildrenState = 'onLayoutChildrenByID';
-            // AppStorage.SetOrCreate('layoutChildrenState', this.layoutChildrenState);
           })
           Button("offLayoutChildrenByID").id("Button2").onClick((event: ClickEvent) => {
             this.listenerForRootByID.offLayoutChildren(this.onLayoutChildrenCompleteByID);
@@ -74,12 +71,10 @@ struct ImageExample {
     }.width('100%')
   }
   aboutToAppear(): void {
-    // let listenerForRowByID1: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(2)
-    // listenerForRowByID1.offLayoutChildren(null)
+    let listenerForRowByID1: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(2)
     try {
       let listenerForRowByID2: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(2147483648)
       let listenerForRowByID3: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(-2)
-      // listenerForRowByID1.offLayoutChildren(null)
     }catch (e) {
       console.log(`eee {e}` + e)
     }
