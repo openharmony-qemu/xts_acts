@@ -16,6 +16,7 @@
 import { afterEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium'
 import huksndk from 'libhuksndk.so'
 import Utils from './Utils'
+import { CheckWifiInfo } from './utils/common/NetworkUtils';
 
 export default function huksNdkTest() {
   describe('SecurityHuksTest', () => {
@@ -665,6 +666,7 @@ export default function huksNdkTest() {
      * @tc.level  LEVEL2
      */
     it('testOHHuksAnonAttestKeyItem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      await CheckWifiInfo();
       let result: number = huksndk.oHHuksAnonAttestKeyItem();
       expect(result).assertEqual(0);
       done();
