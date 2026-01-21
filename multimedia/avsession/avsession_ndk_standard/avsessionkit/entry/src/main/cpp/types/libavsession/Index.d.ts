@@ -195,9 +195,9 @@ export const AVSessionRegisterOutputDeviceChangeCallbackSuccess: () => number;
 
 export const AVSessionRegisterOutputDeviceChangeCallbackInvalidParam: () => number;
 
-export const AVSessionUnRegisterOutputDeviceChangeCallbackSuccess: () => number;
+export const AVSessionUnregisterOutputDeviceChangeCallbackSuccess: () => number;
 
-export const AVSessionUnRegisterOutputDeviceChangeCallbackInvalidParam: () => number;
+export const AVSessionUnregisterOutputDeviceChangeCallbackInvalidParam: () => number;
 
 export const AVSessionUnregisterCommandCallbackCommandInvalid: () => number;
 
@@ -220,8 +220,6 @@ export const AVSessionErrCodeCommandInvalid: () => number;
 export const AVSessionAcquireSessionSuccess: () => number;
 
 export const AVSessionAcquireSessionInvalidParam: () => number;
-
-export const AVSessionCreateAVCastControllerSuccess: () => number;
 
 export const AVSessionCreateAVCastControllerInvalidParam: () => number;
 
@@ -257,6 +255,14 @@ export const AVSessionGetSupportedProtocolsSuccess: () => number;
 
 export const AVSessionGetSupportedProtocolsInvalidParam: () => number;
 
+export const AVSessionPlaybackFilterSTATE: () => number;
+
+export const AVSessionPlaybackFilterPOSITION: () => number;
+
+export const AVSessionPlaybackFilterSPEED: () => number;
+
+export const AVSessionPlaybackFilterVOLUME: () => number;
+
 export const AVMediaDescriptionBuilderCreateSuccess: () => number;
 
 export const AVMediaDescriptionBuilderCreateInvalidParam: () => number;
@@ -281,9 +287,9 @@ export const AVMediaDescriptionBuilderSetArtistSuccess: () => number;
 
 export const AVMediaDescriptionBuilderSetArtistInvalidParam: () => number;
 
-// export const AVMediaDescriptionBuilderSetAlbumCoverUriSuccess: () => number;
+export const AVMediaDescriptionBuilderSetAlbumCoverUriSuccess: () => number;
 
-// export const AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam: () => number;
+export const AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam: () => number;
 
 export const AVMediaDescriptionBuilderSetMediaTypeSuccess: () => number;
 
@@ -337,9 +343,9 @@ export const AVMediaDescriptionGetArtistSuccess: () => number;
 
 export const AVMediaDescriptionGetArtistInvalidParam: () => number;
 
-// export const AVMediaDescriptionGetAlbumCoverUriSuccess: () => number;
+export const AVMediaDescriptionGetAlbumCoverUriSuccess: () => number;
 
-// export const AVMediaDescriptionGetAlbumCoverUriInvalidParam: () => number;
+export const AVMediaDescriptionGetAlbumCoverUriInvalidParam: () => number;
 
 export const AVMediaDescriptionGetMediaTypeSuccess: () => number;
 
@@ -377,110 +383,94 @@ export const AVMediaDescriptionDestroySuccess: () => number;
 
 export const AVMediaDescriptionDestroyInvalidParam: () => number;
 
-export const AVCastControllerDestroySuccess: () => number;
-
 export const AVCastControllerDestroyInvalidParam: () => number;
-
-export const AVCastControllerGetPlaybackStateSuccess: () => number;
 
 export const AVCastControllerGetPlaybackStateInvalidParam: () => number;
 
-export const AVCastControllerRegisterPlaybackStateChangedCallbackSuccess: () => number;
-
 export const AVCastControllerRegisterPlaybackStateChangedCallbackInvalidParam: () => number;
-
-export const AVCastControllerUnregisterPlaybackStateChangedCallbackSuccess: () => number;
 
 export const AVCastControllerUnregisterPlaybackStateChangedCallbackInvalidParam: () => number;
 
-export const AVCastControllerRegisterMediaItemChangedCallbackSuccess: () => number;
-
 export const AVCastControllerRegisterMediaItemChangedCallbackInvalidParam: () => number;
-
-export const AVCastControllerUnregisterMediaItemChangedCallbackSuccess: () => number;
 
 export const AVCastControllerUnregisterMediaItemChangedCallbackInvalidParam: () => number;
 
-export const AVCastControllerRegisterPlayNextCallbackSuccess: () => number;
-
 export const AVCastControllerRegisterPlayNextCallbackInvalidParam: () => number;
-
-export const AVCastControllerUnregisterPlayNextCallbackSuccess: () => number;
 
 export const AVCastControllerUnregisterPlayNextCallbackInvalidParam: () => number;
 
-export const AVCastControllerRegisterPlayPreviousCallbackSuccess: () => number;
-
 export const AVCastControllerRegisterPlayPreviousCallbackInvalidParam: () => number;
-
-export const AVCastControllerUnregisterPlayPreviousCallbackSuccess: () => number;
 
 export const AVCastControllerUnregisterPlayPreviousCallbackInvalidParam: () => number;
 
-export const AVCastControllerRegisterSeekDoneCallbackSuccess: () => number;
-
 export const AVCastControllerRegisterSeekDoneCallbackInvalidParam: () => number;
-
-export const AVCastControllerUnregisterSeekDoneCallbackSuccess: () => number;
 
 export const AVCastControllerUnregisterSeekDoneCallbackInvalidParam: () => number;
 
-export const AVCastControllerRegisterEndOfStreamCallbackSuccess: () => number;
-
 export const AVCastControllerRegisterEndOfStreamCallbackInvalidParam: () => number;
-
-export const AVCastControllerUnregisterEndOfStreamCallbackSuccess: () => number;
 
 export const AVCastControllerUnregisterEndOfStreamCallbackInvalidParam: () => number;
 
-export const AVCastControllerRegisterErrorCallbackSuccess: () => number;
-
 export const AVCastControllerRegisterErrorCallbackInvalidParam: () => number;
-
-export const AVCastControllerUnregisterErrorCallbackSuccess: () => number;
 
 export const AVCastControllerUnregisterErrorCallbackInvalidParam: () => number;
 
-export const AVCastControllerSendCommonCommandSuccess: () => number;
-
 export const AVCastControllerSendCommonCommandInvalidParam: () => number;
-
-export const AVCastControllerSendSeekCommandSuccess: () => number;
 
 export const AVCastControllerSendSeekCommandInvalidParam: () => number;
 
-export const AVCastControllerSendRewindCommandSuccess: () => number;
+export const AVCastControllerSendFastForwardCommandInvalidParam: () => number;
 
 export const AVCastControllerSendRewindCommandInvalidParam: () => number;
 
-export const AVCastControllerSendSetSpeedCommandSuccess: () => number;
-
 export const AVCastControllerSendSetSpeedCommandInvalidParam: () => number;
-
-export const AVCastControllerSendVolumeCommandSuccess: () => number;
 
 export const AVCastControllerSendVolumeCommandInvalidParam: () => number;
 
-export const AVCastControllerPrepareSuccess: () => number;
-
 export const AVCastControllerPrepareInvalidParam: () => number;
-
-export const AVCastControllerStartSuccess: () => number;
 
 export const AVCastControllerStartInvalidParam: () => number;
 
-export const AVSessionGetPlaybackStateSuccess: () => number;
-
 export const AVSessionGetPlaybackStateInvalidParam: () => number;
-
-export const AVSessionGetPlaybackPositionSuccess: () => number;
 
 export const AVSessionGetPlaybackPositionInvalidParam: () => number;
 
-export const AVSessionGetPlaybackSpeedSuccess: () => number;
-
 export const AVSessionGetPlaybackSpeedInvalidParam: () => number;
 
-export const AVSessionGetPlaybackVolumeSuccess: () => number;
-
 export const AVSessionGetPlaybackVolumeInvalidParam: () => number;
+
+export const AVCastControlCommandTypePlay: () => number;
+
+export const AVCastControlCommandTypePause: () => number;
+
+export const AVCastControlCommandTypeStop: () => number;
+
+export const AVCastControlCommandTypePlayNext: () => number;
+
+export const AVCastControlCommandTypePlayPrevious: () => number;
+
+export const AVCastControlCommandTypeFastForward: () => number;
+
+export const AVCastControlCommandTypeRewind: () => number;
+
+export const AVCastControlCommandTypeSeek: () => number;
+
+export const AVCastControlCommandTypeSetVolume: () => number;
+
+export const AVCastControlCommandTypeSetSpeed: () => number;
+
+export const AVSessionPlaybackSpeed0_75X: () => number;
+
+export const AVSessionPlaybackSpeed1_00X: () => number;
+
+export const AVSessionPlaybackSpeed1_25X: () => number;
+
+export const AVSessionPlaybackSpeed1_75X: () => number;
+
+export const AVSessionPlaybackSpeed2_00X: () => number;
+
+export const AVSessionPlaybackSpeed0_50X: () => number;
+
+export const AVSessionPlaybackSpeed1_50X: () => number;
+
+export const AVSessionOutputDeviceInfo: () => number;

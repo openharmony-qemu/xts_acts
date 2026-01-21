@@ -18,15 +18,15 @@ import libavsession from 'libavsession.so'
 
 const OS_ACCOUNT_ERR_OK = 0;
 
-export default function AVSessionMediaDescriptionTest() {
-  describe('AVSessionMediaDescriptionTest', () => {
+export default function AVSessionTest4() {
+  describe('AVSessionTest4', () => {
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderCreate_001
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderCreate001
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_Create interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderCreate001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderCreate_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_Create interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -41,12 +41,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderCreate_002
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderCreate002
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_Create interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderCreate002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderCreate_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_Create interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderCreate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -61,12 +61,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderDestroy_001
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderDestroy001
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_Destroy interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderDestroy001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderDestroy_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_Destroy interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -81,12 +81,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderDestroy_002
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderDestroy002
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_Destroy interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderDestroy002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderDestroy_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_Destroy interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderDestroy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -101,12 +101,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetAssetId_001
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetAssetId001
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetAssetId interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetAssetId001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetAssetId_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetAssetId interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetAssetId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -121,12 +121,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetAssetId_002
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetAssetId002
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetAssetId interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetAssetId002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetAssetId_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetAssetId interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetAssetId002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -141,12 +141,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetTitle_001
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetTitle001
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetTitle interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetTitle001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetTitle_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetTitle interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetTitle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -161,12 +161,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetTitle_002
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetTitle002
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetTitle interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetTitle002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetTitle_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetTitle interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetTitle002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -181,12 +181,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetSubtitle_001
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetSubtitle001
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetSubtitle interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetSubtitle001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetSubtitle_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetSubtitle interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetSubtitle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -201,12 +201,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
       
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetSubtitle_002
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetSubtitle002
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetSubtitle interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetSubtitle002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetSubtitle_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetSubtitle interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetSubtitle002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -221,12 +221,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetArtist_001
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetArtist001
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetArtist interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetArtist001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetArtist_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetArtist interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetArtist001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -241,12 +241,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
       
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetArtist_002
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetArtist002  
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetArtist interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetArtist002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetArtist_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetArtist interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetArtist002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -260,53 +260,53 @@ export default function AVSessionMediaDescriptionTest() {
         }
       });
 
-    // /**
-    //  * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetAlbumCoverUri_001
-    //  * @tc.name     testAVSessionAVMediaDescriptionBuilderSetAlbumCoverUri001
-    //  * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetAlbumCoverUri interface.
-    //  * @tc.level    Level1
-    //  * @tc.size     MediumTest
-    //  * @tc.type     Function
-    //  */
-    // it('testAVSessionAVMediaDescriptionBuilderSetAlbumCoverUri001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   async (done: Function) => {
-    //     try {
-    //       let result: number = libavsession.AVMediaDescriptionBuilderSetAlbumCoverUriSuccess();
-    //       expect(result).assertEqual(1);
-    //       done()
-    //     } catch (err) {
-    //       console.error("====>testAVSessionAVMediaDescriptionBuilderSetAlbumCoverUri001 catch err: " + err);
-    //       expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
-    //     }
-    //   });
+    /**
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetAlbumCoverUri001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetAlbumCoverUri_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetAlbumCoverUri interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionAVMediaDescriptionBuilderSetAlbumCoverUri001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVMediaDescriptionBuilderSetAlbumCoverUriSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionAVMediaDescriptionBuilderSetAlbumCoverUri001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
       
-    // /** 
-    //  * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetAlbumCoverUri_002
-    //  * @tc.name     testAVSessionAVMediaDescriptionBuilderSetAlbumCoverUri002
-    //  * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetAlbumCoverUri interface.
-    //  * @tc.level    Level1
-    //  * @tc.size     MediumTest
-    //  * @tc.type     Function
-    //  */
-    // it('testAVSessionAVMediaDescriptionBuilderSetAlbumCoverUri002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   async (done: Function) => {
-    //     try {
-    //       let result: number = libavsession.AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam();
-    //       expect(result).assertEqual(1);
-    //       done()
-    //     } catch (err) {
-    //       console.error("====>testAVSessionAVMediaDescriptionBuilderSetAlbumCoverUri002 catch err: " + err);
-    //       expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
-    //     }
-    //   });
+    /** 
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetAlbumCoverUri002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetAlbumCoverUri_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetAlbumCoverUri interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionAVMediaDescriptionBuilderSetAlbumCoverUri002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionAVMediaDescriptionBuilderSetAlbumCoverUri002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetMediaType_001
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetMediaType001
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaType interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetMediaType001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetMediaType_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaType interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetMediaType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -321,12 +321,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
       
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetMediaType_002
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetMediaType002
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaType interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetMediaType002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetMediaType_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaType interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetMediaType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -341,12 +341,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetLyricContent_001
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetLyricContent001
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetLyricContent interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetLyricContent001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetLyricContent_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetLyricContent interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetLyricContent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -361,12 +361,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
       
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetLyricContent_002
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetLyricContent002
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetLyricContent interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetLyricContent002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetLyricContent_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetLyricContent interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetLyricContent002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -381,12 +381,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetDuration_001
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetDuration001
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetDuration interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetDuration001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetDuration_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetDuration interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetDuration001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -401,12 +401,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
       
     /** 
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetDuration_002
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetDuration002
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetDuration interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetDuration002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetDuration_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetDuration interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetDuration002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -421,12 +421,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetMediaUri_001
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetMediaUri001
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaUri interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetMediaUri001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetMediaUri_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaUri interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetMediaUri001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -441,12 +441,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
       
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetMediaUri_002
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetMediaUri002
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaUri interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetMediaUri002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetMediaUri_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaUri interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetMediaUri002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -461,12 +461,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetStartPosition_001
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetStartPosition001
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetStartPosition interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetStartPosition001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetStartPosition_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetStartPosition interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetStartPosition001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -481,12 +481,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
       
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetStartPosition_002
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetStartPosition002
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetStartPosition interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetStartPosition002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetStartPosition_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetStartPosition interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetStartPosition002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -501,12 +501,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetMediaSize_001
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetMediaSize001
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaSize interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetMediaSize001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetMediaSize_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaSize interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetMediaSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -521,12 +521,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
       
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetMediaSize_002
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetMediaSize002
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaSize interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetMediaSize002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetMediaSize_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetMediaSize interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetMediaSize002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -541,12 +541,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetAlbumTitle_001
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetAlbumTitle001
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetAlbumTitle interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetAlbumTitle001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetAlbumTitle_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetAlbumTitle interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetAlbumTitle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -561,12 +561,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetAlbumTitle_002
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetAlbumTitle002
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetAlbumTitle interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetAlbumTitle002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetAlbumTitle_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetAlbumTitle interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetAlbumTitle002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -581,12 +581,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetAppName_001
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetAppName001
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetAppName interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetAppName001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetAppName_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetAppName interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetAppName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -601,12 +601,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderSetAppName_002
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderSetAppName002
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_SetAppName interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderSetAppName002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderSetAppName_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_SetAppName interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderSetAppName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -621,12 +621,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderGenerateAVMediaDescription_001
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderGenerateAVMediaDescription001
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_GenerateAVMediaDescription interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderGenerateAVMediaDescription001
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderGenerateAVMediaDescription_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_GenerateAVMediaDescription interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderGenerateAVMediaDescription001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -641,12 +641,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionBuilderGenerateAVMediaDescription_002
-     * @tc.name     testAVSessionAVMediaDescriptionBuilderGenerateAVMediaDescription002
-     * @tc.desc     testing OH_AVSession_AVMediaDescriptionBuilder_GenerateAVMediaDescription interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionBuilderGenerateAVMediaDescription002
+     * @tc.number SUB_AVSession_AVMediaDescriptionBuilderGenerateAVMediaDescription_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescriptionBuilder_GenerateAVMediaDescription interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionBuilderGenerateAVMediaDescription002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -661,12 +661,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetAssetId_001
-     * @tc.name     testAVSessionAVMediaDescriptionGetAssetId001
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetAssetId interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetAssetId001
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetAssetId_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetAssetId interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetAssetId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -680,12 +680,12 @@ export default function AVSessionMediaDescriptionTest() {
         }
       });
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetAssetId_002
-     * @tc.name     testAVSessionAVMediaDescriptionGetAssetId002
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetAssetId interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetAssetId002
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetAssetId_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetAssetId interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetAssetId002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -700,12 +700,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetTitle_001
-     * @tc.name     testAVSessionAVMediaDescriptionGetTitle001
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetTitle interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetTitle001
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetTitle_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetTitle interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetTitle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -720,12 +720,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetTitle_002
-     * @tc.name     testAVSessionAVMediaDescriptionGetTitle002
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetTitle interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetTitle002
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetTitle_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetTitle interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetTitle002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -740,12 +740,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetSubtitle_001
-     * @tc.name     testAVSessionAVMediaDescriptionGetSubtitle001
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetSubtitle interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetSubtitle001
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetSubtitle_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetSubtitle interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetSubtitle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -759,12 +759,12 @@ export default function AVSessionMediaDescriptionTest() {
         }
       });
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetSubtitle_002
-     * @tc.name     testAVSessionAVMediaDescriptionGetSubtitle002
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetSubtitle interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetSubtitle002
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetSubtitle_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetSubtitle interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetSubtitle002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -779,12 +779,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetArtist_001
-     * @tc.name     testAVSessionAVMediaDescriptionGetArtist001
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetArtist interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetArtist001
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetArtist_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetArtist interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetArtist001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -799,12 +799,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetArtist_002 
-     * @tc.name     testAVSessionAVMediaDescriptionGetArtist002
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetArtist interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetArtist002
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetArtist_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetArtist interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetArtist002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -818,53 +818,53 @@ export default function AVSessionMediaDescriptionTest() {
         }
       });
 
-    // /**
-    //  * @tc.number   SUB_AVSession_AVMediaDescriptionGetAlbumCoverUri_001
-    //  * @tc.name     testAVSessionAVMediaDescriptionGetAlbumCoverUri001
-    //  * @tc.desc     testing OH_AVSession_AVMediaDescription_GetAlbumCoverUri interface.
-    //  * @tc.level    Level1
-    //  * @tc.size     MediumTest
-    //  * @tc.type     Function
-    //  */
-    // it('testAVSessionAVMediaDescriptionGetAlbumCoverUri001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   async (done: Function) => {
-    //     try {
-    //       let result: number = libavsession.AVMediaDescriptionGetAlbumCoverUriSuccess();
-    //       expect(result).assertEqual(1);
-    //       done()
-    //     } catch (err) {
-    //       console.error("====>testAVSessionAVMediaDescriptionGetAlbumCoverUri001 catch err: " + err);
-    //       expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
-    //     }
-    //   });
-
-    // /**
-    //  * @tc.number   SUB_AVSession_AVMediaDescriptionGetAlbumCoverUri_002
-    //  * @tc.name     testAVSessionAVMediaDescriptionGetAlbumCoverUri002
-    //  * @tc.desc     testing OH_AVSession_AVMediaDescription_GetAlbumCoverUri interface.
-    //  * @tc.level    Level1
-    //  * @tc.size     MediumTest
-    //  * @tc.type     Function
-    //  */
-    // it('testAVSessionAVMediaDescriptionGetAlbumCoverUri002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   async (done: Function) => {
-    //     try {
-    //       let result: number = libavsession.AVMediaDescriptionGetAlbumCoverUriInvalidParam();
-    //       expect(result).assertEqual(1);
-    //       done()
-    //     } catch (err) {
-    //       console.error("====>testAVSessionAVMediaDescriptionGetAlbumCoverUri002 catch err: " + err);
-    //       expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
-    //     }
-    //   });
+    /**
+     * @tc.name   testAVSessionAVMediaDescriptionGetAlbumCoverUri001
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetAlbumCoverUri_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetAlbumCoverUri interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionAVMediaDescriptionGetAlbumCoverUri001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVMediaDescriptionGetAlbumCoverUriSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionAVMediaDescriptionGetAlbumCoverUri001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetMediaType_001
-     * @tc.name     testAVSessionAVMediaDescriptionGetMediaType001
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetMediaType interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetAlbumCoverUri002
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetAlbumCoverUri_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetAlbumCoverUri interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionAVMediaDescriptionGetAlbumCoverUri002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVMediaDescriptionGetAlbumCoverUriInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionAVMediaDescriptionGetAlbumCoverUri002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionAVMediaDescriptionGetMediaType001
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetMediaType_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetMediaType interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetMediaType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -879,12 +879,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetMediaType_002
-     * @tc.name     testAVSessionAVMediaDescriptionGetMediaType002
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetMediaType interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetMediaType002
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetMediaType_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetMediaType interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetMediaType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -899,12 +899,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetLyricContent_001
-     * @tc.name     testAVSessionAVMediaDescriptionGetLyricContent001
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetLyricContent interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetLyricContent001
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetLyricContent_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetLyricContent interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetLyricContent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -919,12 +919,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetLyricContent_002
-     * @tc.name     testAVSessionAVMediaDescriptionGetLyricContent002
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetLyricContent interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetLyricContent002
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetLyricContent_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetLyricContent interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetLyricContent002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -939,12 +939,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetDuration_001
-     * @tc.name     testAVSessionAVMediaDescriptionGetDuration001
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetDuration interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetDuration001
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetDuration_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetDuration interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetDuration001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -959,12 +959,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetDuration_002
-     * @tc.name     testAVSessionAVMediaDescriptionGetDuration002
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetDuration interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetDuration002
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetDuration_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetDuration interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetDuration002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -979,12 +979,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetMediaUri_001
-     * @tc.name     testAVSessionAVMediaDescriptionGetMediaUri001
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetMediaUri interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetMediaUri001
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetMediaUri_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetMediaUri interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetMediaUri001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -999,12 +999,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetMediaUri_002
-     * @tc.name     testAVSessionAVMediaDescriptionGetMediaUri002
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetMediaUri interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetMediaUri002
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetMediaUri_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetMediaUri interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetMediaUri002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1019,12 +1019,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetStartPosition_001
-     * @tc.name     testAVSessionAVMediaDescriptionGetStartPosition001
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetStartPosition interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetStartPosition001
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetStartPosition_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetStartPosition interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetStartPosition001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1039,12 +1039,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetStartPosition_002
-     * @tc.name     testAVSessionAVMediaDescriptionGetStartPosition002
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetStartPosition interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetStartPosition002
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetStartPosition_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetStartPosition interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetStartPosition002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1059,12 +1059,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetMediaSize_001
-     * @tc.name     testAVSessionAVMediaDescriptionGetMediaSize001
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetMediaSize interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetMediaSize001
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetMediaSize_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetMediaSize interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetMediaSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1079,12 +1079,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetMediaSize_002
-     * @tc.name     testAVSessionAVMediaDescriptionGetMediaSize002
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetMediaSize interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetMediaSize002
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetMediaSize_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetMediaSize interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetMediaSize002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1099,12 +1099,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetAlbumTitle_001
-     * @tc.name     testAVSessionAVMediaDescriptionGetAlbumTitle001
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetAlbumTitle interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetAlbumTitle001
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetAlbumTitle_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetAlbumTitle interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetAlbumTitle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1119,12 +1119,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetAlbumTitle_002
-     * @tc.name     testAVSessionAVMediaDescriptionGetAlbumTitle002
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetAlbumTitle interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetAlbumTitle002
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetAlbumTitle_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetAlbumTitle interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetAlbumTitle002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1139,12 +1139,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetAppName_001
-     * @tc.name     testAVSessionAVMediaDescriptionGetAppName001
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetAppName interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetAppName001
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetAppName_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetAppName interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetAppName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1159,12 +1159,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionGetAppName_002
-     * @tc.name     testAVSessionAVMediaDescriptionGetAppName002
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_GetAppName interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionGetAppName002
+     * @tc.number SUB_AVSession_AVMediaDescriptionGetAppName_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_GetAppName interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionGetAppName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1179,12 +1179,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionDestroy_001
-     * @tc.name     testAVSessionAVMediaDescriptionDestroy001
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_Destroy interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionDestroy001
+     * @tc.number SUB_AVSession_AVMediaDescriptionDestroy_001
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_Destroy interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1199,12 +1199,12 @@ export default function AVSessionMediaDescriptionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMediaDescriptionDestroy_002
-     * @tc.name     testAVSessionAVMediaDescriptionDestroy002
-     * @tc.desc     testing OH_AVSession_AVMediaDescription_Destroy interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMediaDescriptionDestroy002
+     * @tc.number SUB_AVSession_AVMediaDescriptionDestroy_002
+     * @tc.desc   testing OH_AVSession_AVMediaDescription_Destroy interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMediaDescriptionDestroy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

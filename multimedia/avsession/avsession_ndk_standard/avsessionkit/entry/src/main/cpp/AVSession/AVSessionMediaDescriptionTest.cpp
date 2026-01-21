@@ -618,38 +618,38 @@ napi_value AVMediaDescriptionGetArtistInvalidParam(napi_env env, napi_callback_i
     return retValue;
 }
 
-// napi_value AVMediaDescriptionGetAlbumCoverUriSuccess(napi_env env, napi_callback_info info)
-// {
-//     OH_AVSession_AVMediaDescriptionBuilder *builder = nullptr;
-//     OH_AVSession_AVMediaDescriptionBuilder_Create(&builder);
-//     const char *albumCoverUri = "albumCoverUri001";
-//     OH_AVSession_AVMediaDescriptionBuilder_SetAlbumCoverUri(builder, albumCoverUri);
-//     OH_AVSession_AVMediaDescription *avMediaDescription = nullptr;
-//     OH_AVSession_AVMediaDescriptionBuilder_GenerateAVMediaDescription(builder, &avMediaDescription);
-//     char *getAlbumCoverUri = nullptr;
-//     int32_t result = OH_AVSession_AVMediaDescription_GetAlbumCoverUri(avMediaDescription, &getAlbumCoverUri);
-//     napi_value retValue;
-//     if (result == AVQUEUEITEM_SUCCESS) {
-//         napi_create_int32(env, g_trueValue, &retValue);
-//     } else {
-//         napi_create_int32(env, g_falseValue, &retValue);
-//     }
-//     return retValue;
-// }
+napi_value AVMediaDescriptionGetAlbumCoverUriSuccess(napi_env env, napi_callback_info info)
+{
+    OH_AVSession_AVMediaDescriptionBuilder *builder = nullptr;
+    OH_AVSession_AVMediaDescriptionBuilder_Create(&builder);
+    const char *albumCoverUri = "albumCoverUri001";
+    OH_AVSession_AVMediaDescriptionBuilder_SetAlbumCoverUri(builder, albumCoverUri);
+    OH_AVSession_AVMediaDescription *avMediaDescription = nullptr;
+    OH_AVSession_AVMediaDescriptionBuilder_GenerateAVMediaDescription(builder, &avMediaDescription);
+    char *getAlbumCoverUri = nullptr;
+    int32_t result = OH_AVSession_AVMediaDescription_GetAlbumCoverUri(avMediaDescription, &getAlbumCoverUri);
+    napi_value retValue;
+    if (result == AVQUEUEITEM_SUCCESS) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
 
-// napi_value AVMediaDescriptionGetAlbumCoverUriInvalidParam(napi_env env, napi_callback_info info)
-// {
-//     OH_AVSession_AVMediaDescription *avMediaDescription = nullptr;
-//     char *getAlbumCoverUri = nullptr;
-//     int32_t result = OH_AVSession_AVMediaDescription_GetAlbumCoverUri(avMediaDescription, &getAlbumCoverUri);
-//     napi_value retValue;
-//     if (result == AVQUEUEITEM_ERROR_INVALID_PARAM) {
-//         napi_create_int32(env, g_trueValue, &retValue);
-//     } else {
-//         napi_create_int32(env, g_falseValue, &retValue);
-//     }
-//     return retValue;
-// }
+napi_value AVMediaDescriptionGetAlbumCoverUriInvalidParam(napi_env env, napi_callback_info info)
+{
+    OH_AVSession_AVMediaDescription *avMediaDescription = nullptr;
+    char *getAlbumCoverUri = nullptr;
+    int32_t result = OH_AVSession_AVMediaDescription_GetAlbumCoverUri(avMediaDescription, &getAlbumCoverUri);
+    napi_value retValue;
+    if (result == AVQUEUEITEM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
 
 napi_value AVMediaDescriptionGetMediaTypeSuccess(napi_env env, napi_callback_info info)
 {
@@ -749,8 +749,6 @@ napi_value AVMediaDescriptionGetDurationInvalidParam(napi_env env, napi_callback
     }
     return retValue;
 }
-
-
 
 napi_value AVMediaDescriptionGetMediaUriSuccess(napi_env env, napi_callback_info info)
 {
