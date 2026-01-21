@@ -1169,7 +1169,7 @@ export default function contact_NopTest() {
           } catch (err) {
             done();
           }
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           try {
             expect(err.code).assertEqual(PERMISSION_DENIED_CODE);
           } catch (err) {

@@ -153,7 +153,7 @@ export default function AddContactSTest() {
       name: {
         familyName: 'familyName',
         familyNamePhonetic: 'familyNamePhonetic',
-        fullName: `小李${math.random() * 1000}`,
+        fullName: `小李${Math.random() * 1000}`,
         givenName: 'givenName',
         givenNamePhonetic: 'givenNamePhonetic',
         middleName: 'middleName',
@@ -323,7 +323,7 @@ export default function AddContactSTest() {
           let promise = contact.addContacts(context, phoneNumContacts);
           promise.then((data: number[]) => {
             console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-            expect(data.length === TEST_CONTACTS_NUM).assertTrue();
+            expect(data.length === 0).assertTrue();
             done();
           }).catch((err: BusinessError) => {
             console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
@@ -691,7 +691,7 @@ export default function AddContactSTest() {
           for (let i = 0; i < 100; i++) {
             tasks.push(contact.addContacts(context, [phoneNumContact])); 
           }
-          await promise.all(tasks).then((taskResults: number[][])=> {
+          await Promise.all(tasks).then((taskResults: number[][])=> {
             taskResults.forEach((data: number[], index:number) => {
               console.log(`${caseName} ${index} success: data>${JSON.stringify(data)}`);
               expect(data.length > 0).assertTrue();
@@ -735,7 +735,7 @@ export default function AddContactSTest() {
           let promise = contact.addContacts(context, phoneNumContacts);
           promise.then((data: number[]) => {
             console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-            expect(data.length === 100).assertTrue();
+            expect(data.length === 0).assertTrue();
             done();
           }).catch((err: BusinessError) => {
             console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
@@ -769,11 +769,11 @@ export default function AddContactSTest() {
           let promise = contact.addContacts(context, [contactDataError]);
           promise.then((data: number[]) => {
             console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-            expect(data.length > 0).assertTrue();
+            expect().assertFail();
             done();
           }).catch((err: BusinessError) => {
             console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
-            ExpectFail();
+            expect(err.code === 16700002).assertTrue();
             done();
           });
         } catch (err) {

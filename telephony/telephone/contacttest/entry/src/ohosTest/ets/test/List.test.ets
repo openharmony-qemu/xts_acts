@@ -34,7 +34,6 @@ import sim from '@ohos.telephony.sim';
 export default function testsuite() {
   if (sim.getMaxSimCount()!=0){
     AddContactTest();
-    AddContactsTest();
     if (deviceInfo.deviceType !== 'wearable') {
       SelectContactsTest();
     } 
@@ -49,6 +48,7 @@ export default function testsuite() {
     IsMyCardTest();
     ContactTest();
     ContactsTest()
+    AddContactsTest();
   }else{
     EmptyTest()
   }
