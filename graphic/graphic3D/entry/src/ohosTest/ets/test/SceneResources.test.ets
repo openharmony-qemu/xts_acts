@@ -2128,11 +2128,17 @@ export default function sceneResourcesTest() {
         expect(typeof thresholdHardValue).assertEqual('number');
         console.info(msg + " thresholdHard property value retrieved successfully");
 
-        // Test 3: Get non-existent property value (should return null or undefined)
+        // Test 3: Get non-existent property value (should return null)
         let invalidValue = effect.getPropertyValue('invalidProperty');
         console.info(msg + " invalidValue: " + JSON.stringify(invalidValue));
-        expect(invalidValue == null || invalidValue == undefined).assertTrue();
-        console.info(msg + " non-existent property returns null or undefined as expected");
+        expect(invalidValue).assertNull();
+        console.info(msg + " non-existent property returns null as expected");
+
+        // Test 4: Get undefined property value (should return undefined)
+        let undefinedValue = effect.getPropertyValue(undefined);
+        console.info(msg + " undefinedValue: " + JSON.stringify(undefinedValue));
+        expect(undefinedValue).assertUndefined();
+        console.info(msg + " undefined property returns undefined as expected");
 
         console.info(msg + " test completed successfully");
         done();
