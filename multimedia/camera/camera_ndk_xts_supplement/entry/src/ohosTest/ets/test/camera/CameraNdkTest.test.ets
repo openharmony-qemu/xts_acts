@@ -20,7 +20,9 @@ import { indexSurfaceId } from '../../testability/pages/Index';
 
 const EFFECT_SUCCESS = 0;
 const CAMERA_INVALID_ARGUMENT = 7400101;
-const CAMERA_SERVICE_FATAL_ERROR = 7400201
+const CAMERA_SERVICE_FATAL_ERROR = 7400201;
+const CAMERA_OPERATION_NOT_ALLOWED = 7400102;
+const CAMERA_SESSION_NOT_CONFIG = 7400103;
 const CASE_INDEX_1 = 1;
 const CASE_INDEX_2 = 2;
 const CASE_INDEX_3 = 3;
@@ -371,6 +373,29 @@ export default function CameraNdkTest() {
         expect(result).assertFalse();
       }
     });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_SUPPORTED_FULL_CAMERA_OUTPUT_CAPABILITY_WITH_SCENE_MODE_00001
+     * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_SUPPORTED_FULL_CAMERA_OUTPUT_CAPABILITY_WITH_SCENE_MODE_00001
+     * @tc.desc        OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode --EFFECT_SUCCESS
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_SUPPORTED_FULL_CAMERA_OUTPUT_CAPABILITY_WITH_SCENE_MODE_00001',
+      Level.LEVEL0, async () => {
+        const testName =
+          'SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_SUPPORTED_FULL_CAMERA_OUTPUT_CAPABILITY_WITH_SCENE_MODE_00001'
+        let result = cameraObj.captureIsGetCameraDevices();
+        if (result) {
+          let res = cameraObj.captureGetSupportedFullCameraOutputCapabilityWithSceneMode(CASE_INDEX_1);
+          console.info(TAG, testName, res);
+          expect(res).assertEqual(EFFECT_SUCCESS);
+        } else {
+          console.info(TAG, testName, ' 该设备不支持此功能', result);
+          expect(result).assertFalse();
+        }
+      });
 
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_SUPPORTED_FULL_CAMERA_OUTPUT_CAPABILITY_WITH_SCENE_MODE_00004
@@ -1246,6 +1271,109 @@ export default function CameraNdkTest() {
       let res = cameraObj.captureCameraDeviceQueryInfo(CASE_INDEX_5);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
+    });
+
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_ERROR_00001
+     * @tc.name        SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_ERROR_00001
+     * @tc.desc        OH_PreviewOutput_EnableBandwidthCompression --CAMERA_OPERATION_NOT_ALLOWED
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_ERROR_00001', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_ERROR_00001'
+      let result = cameraObj.captureSessionIsBandwidthCompressionSupportedTest();
+      if (result) {
+        let res = cameraObj.captureEnableBandwidthCompressionError(CASE_INDEX_1);
+        console.info(TAG, testName, res);
+        expect(res).assertEqual(CAMERA_OPERATION_NOT_ALLOWED);
+      } else {
+        console.info(TAG, testName, ' 该设备不支持此功能', result);
+        expect(result).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_ERROR_00002
+     * @tc.name        SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_ERROR_00002
+     * @tc.desc        OH_PreviewOutput_EnableBandwidthCompression --CAMERA_OPERATION_NOT_ALLOWED
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_ERROR_00002', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_ERROR_00002'
+      let result = cameraObj.captureSessionIsBandwidthCompressionSupportedTest();
+      if (result) {
+        let res = cameraObj.captureEnableBandwidthCompressionError(CASE_INDEX_2);
+        console.info(TAG, testName, res);
+        expect(res).assertEqual(CAMERA_OPERATION_NOT_ALLOWED);
+      } else {
+        console.info(TAG, testName, ' 该设备不支持此功能', result);
+        expect(result).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_ROTATION_00001
+     * @tc.name        SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_ROTATION_00001
+     * @tc.desc        OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation --CAMERA_INVALID_ARGUMENT
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_ROTATION_00001', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_ROTATION_00001'
+      let res = cameraObj.getPreviewRotationWithoutDisplayRotation(CASE_INDEX_1);
+      console.info(TAG, testName, res);
+      expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_ROTATION_00002
+     * @tc.name        SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_ROTATION_00002
+     * @tc.desc        OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation --CAMERA_INVALID_ARGUMENT
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_ROTATION_00002', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_ROTATION_00002'
+      let res = cameraObj.getPreviewRotationWithoutDisplayRotation(CASE_INDEX_2);
+      console.info(TAG, testName, res);
+      expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_ROTATION_00003
+     * @tc.name        SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_ROTATION_00003
+     * @tc.desc        OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation --CAMERA_INVALID_ARGUMENT
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_ROTATION_00003', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_ROTATION_00003'
+      let res = cameraObj.getPreviewRotationWithoutDisplayRotation(CASE_INDEX_3);
+      console.info(TAG, testName, res);
+      expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_ROTATION_00004
+     * @tc.name        SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_ROTATION_00004
+     * @tc.desc        OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation --CAMERA_INVALID_ARGUMENT
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_ROTATION_00004', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_GET_PREVIEW_ROTATION_WITHOUT_DISPLAY_ROTATION_00004'
+      let res = cameraObj.getPreviewRotationWithoutDisplayRotation(CASE_INDEX_4);
+      console.info(TAG, testName, res);
+      expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
     });
   })
 }
