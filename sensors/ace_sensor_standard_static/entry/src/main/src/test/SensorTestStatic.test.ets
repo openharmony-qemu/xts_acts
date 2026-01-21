@@ -326,10 +326,10 @@ export default function SensorJsStaticTest() {
       hilog.info(domain, tag, 'beforeAll called');
       try {
         sensor.getSensorList((err: BusinessError<void> | null, data: Array<sensor.Sensor> | undefined) => {
-            hilog.info(0x0000, 'testTag',  `beforeAll Succeeded in getting GetSensorList err.code ${err?.code} ,err.message${err?.message}`);
-            sensorList = data
-            done();
-          });
+          hilog.info(0x0000, 'testTag',  `beforeAll Succeeded in getting GetSensorList err.code ${err?.code} ,err.message${err?.message}`);
+          sensorList = data
+          done();
+        });
         hilog.info(0x0000, 'testTag', `beforeAll success ${sensorList}`);
         done();
       } catch (error: BusinessError) {
@@ -2743,7 +2743,7 @@ export default function SensorJsStaticTest() {
         expect(true).assertFalse();
         done();
       }
-      hilog.info(domain, tag, TAG + "----------end----------"); 
+      hilog.info(domain, tag, TAG + "----------end----------");
     })
 
     /**
@@ -4234,18 +4234,22 @@ export default function SensorJsStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("SensorSyncTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+    it("SensorSyncTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info('----------------------SensorSyncTest_001---------------------------');
       TAG = 'SensorSyncTest_001';
       try {
         let ret = sensor.getSingleSensorSync(sensor.SensorId.ACCELEROMETER);
+        await isAvailable(sensor.SensorId.ACCELEROMETER);
         console.info(TAG + ' getSingleSensorSyncFunc: ' + JSON.stringify(ret));
         done();
       } catch (error ) {
         const sensorError = error as BusinessError;
         console.info(TAG + ' fail, errCode:' + sensorError.code + ' ,msg:' + sensorError.message);
-        let isIncluded = CODEARR.includes(sensorError.code);
-        expect(isIncluded).assertTrue();
+        if (Available) {
+          expect(error.code == 14500101).assertTrue();
+        } else {
+          expect(error.code == 14500102).assertTrue();
+        }
         done();
       }
     })
@@ -4270,7 +4274,6 @@ export default function SensorJsStaticTest() {
         done();
       } catch (error) {
         console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
-        let isIncluded = CODEARR.includes(error.code)
         expect(false).assertTrue();
         done();
       }
@@ -4284,7 +4287,7 @@ export default function SensorJsStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testOnOffSensorStatusChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+    it('testOnOffSensorStatusChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = 'testOnOffSensorStatusChange001'
       console.info(TAG + ' in');
       const onCallback = (event: sensor.SensorStatusEvent)=> {
@@ -4381,6 +4384,7 @@ export default function SensorJsStaticTest() {
         done();
       } catch (error) {
         console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
+        expect(false).assertTrue();
         done();
       }
     })
@@ -4415,6 +4419,7 @@ export default function SensorJsStaticTest() {
         done();
       } catch (error) {
         console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message)
+        expect(false).assertTrue();
         done();
       }
     })
@@ -4638,7 +4643,6 @@ export default function SensorJsStaticTest() {
       const TAG = '====>GetSensorListByDeviceSync_JSTest_005'
       try {
         const deviceId = -1;
-        await isAvailable(sensor.SensorId.ACCELEROMETER);
         const result = sensor.getSensorListByDeviceSync(deviceId);
         console.info(TAG + ` success result.length: ${result.length}  ,result: ${JSON.stringify(result)}`);
         if (result.length === 0) {
@@ -4648,12 +4652,8 @@ export default function SensorJsStaticTest() {
         }
         done();
       } catch (error) {
-        console.info(TAG + ` fail, errCode: ${error.code} ,msg: ${error.message}`);
-        if (Available) {
-          expect(error.code == 14500101).assertTrue();
-        } else {
-          expect(error.code == 14500102).assertTrue();
-        }
+        console.info(TAG + ` fail, errCode: ${error.code}  ,msg: ${error.message}`);
+        expect(false).assertTrue();
         done();
       }
     })
