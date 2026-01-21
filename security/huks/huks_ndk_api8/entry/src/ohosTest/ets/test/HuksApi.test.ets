@@ -56,5 +56,18 @@ export default function SecurityHuksApiTest() {
       let result: number = huksndk.huksNativeApi22Type0500();
       expect(result).assertEqual(0);
     });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Type_Native_API22_Func_0600
+     * @tc.number SUB_Security_HUKS_Type_Native_API22_Func_0600
+     * @tc.desc   test OH_Huks_AlgSuite
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_HUKS_Type_Native_API22_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      let result: number = huksndk.huksNativeApi22Type0600();
+      expect(result).assertEqual(0);
+    });
   })
 }

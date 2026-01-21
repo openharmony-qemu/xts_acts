@@ -1402,6 +1402,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"huksNativeApi22Type0400", nullptr, OHHuksNativeApi22Type0400, nullptr, nullptr, nullptr, napi_default,
             nullptr},
         {"huksNativeApi22Type0500", nullptr, OHHuksNativeApi22Type0500, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"huksNativeApi22Type0600", nullptr, OHHuksNativeApi22Type0600, nullptr, nullptr, nullptr, napi_default,
             nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
