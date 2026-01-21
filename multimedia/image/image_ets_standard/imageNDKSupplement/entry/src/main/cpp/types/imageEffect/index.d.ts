@@ -14,6 +14,7 @@
  */
 import { image } from '@kit.ImageKit';
 import { resourceManager } from '@kit.LocalizationKit';
+import { Callback } from '@kit.BasicServicesKit';
 
 interface PackingOption_format {
   format: string;
@@ -210,6 +211,11 @@ export const PixelmapNativeCropTest:(a: number) => number;
 export const ConvertAlphaFormatTest:(a: number) => number;
 export const DecodingOptionsReleaseTest:(a: number) => number;
 export const CreatePixelmapFromSurfaceWithTransformationTest:(a: number,b: string) => number;
+export const ImageModifyImagePropertyShortSupp:(a: number,b:number,c:string,d:number) => number;
+export const OHImageNativeGetColorSpaceSupp:(a: number,b:Callback<image.ImageReceiver>) => number;
+export const OHImageSourceNativeGetImagePropertyBlobSupp:(a: number,b:number,c:string,d:ArrayBufferLike) => number;
+export const OHImageSourceNativeGetImagePropertyStringSupp:(a: number,b:number,c:string,d:number) => number;
+
 export const SetDesiredPixelFormatTest:(a: number) => number;
 export const GetDesiredPixelFormatTest:(a: number) => number;
 export const ComposeOptionsReleaseTest:(a: number) => number;

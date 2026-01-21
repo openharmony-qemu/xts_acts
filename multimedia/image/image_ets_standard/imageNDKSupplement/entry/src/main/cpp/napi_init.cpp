@@ -248,7 +248,9 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHImageSourceNativeModifyImagePropertyLongSupp", OHImageSourceNativeModifyImagePropertyLongSupp),
     DESCRIPTOR("ImageSourceNativeGetImagePropertyDoubleArraySupp", ImageSourceNativeGetImagePropertyDoubleArraySupp),
     DESCRIPTOR("ImageErrCodeSupp", ImageErrCodeSupp),
-
+    DESCRIPTOR("ImageModifyImagePropertyShortSupp", ImageModifyImagePropertyShortSupp),
+    DESCRIPTOR("OHImageSourceNativeGetImagePropertyBlobSupp", OHImageSourceNativeGetImagePropertyBlobSupp),
+    DESCRIPTOR("OHImageSourceNativeGetImagePropertyStringSupp", OHImageSourceNativeGetImagePropertyStringSupp),
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {
