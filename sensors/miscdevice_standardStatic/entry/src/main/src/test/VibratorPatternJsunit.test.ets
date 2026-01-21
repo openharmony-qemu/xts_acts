@@ -2155,9 +2155,7 @@ export default function VibratorJsTest_misc_9() {
       try {
         let ret = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
         console.log(TAG + "ret:" + ret);
-        if(!ret){
-          console.log(TAG + ' is not supported.');
-        }
+        expect(typeof ret === 'boolean').assertTrue();
         done();
       } catch (error:Error) {
         console.log(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
