@@ -329,7 +329,7 @@ export default function cameraAddMetadataObjectSuppTest() {
           let metaDataoutputCapability = mCameraManager.getSupportedOutputCapability(useDevice);
           const types = metaDataoutputCapability.supportedMetadataObjectTypes;
           console.log(TAG, testName, `相机支持的元数据类型：${types}`);
-          mMetadataOutput.addMetadataObjectTypes([1]);
+          mMetadataOutput.addMetadataObjectTypes([-1]);
           console.info(TAG, testName, `addMetadataObjectTypes successs`);
           expect().assertFail();
         } catch (err) {
@@ -361,7 +361,7 @@ export default function cameraAddMetadataObjectSuppTest() {
           let metaDataoutputCapability = mCameraManager.getSupportedOutputCapability(useDevice);
           const types = metaDataoutputCapability.supportedMetadataObjectTypes;
           console.log(TAG, testName, `相机支持的元数据类型：${types}`);
-          mMetadataOutput.removeMetadataObjectTypes([1]);
+          mMetadataOutput.removeMetadataObjectTypes([-1]);
           console.info(TAG, testName, `removeMetadataObjectTypes successs`);
           expect().assertFail();
         } catch (err) {
