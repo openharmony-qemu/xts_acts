@@ -314,17 +314,17 @@ export default function PhotoAccessHelperReadonlyCommentSupp() {
 
 
     /**
-     * @tc.number    PHOTO_ACCESS_HELPER_GET_ALBUMKEYS_001
-     * @tc.name      PHOTO_ACCESS_HELPER_GET_ALBUMKEYS_001
+     * @tc.number    PHOTO_ACCESS_HELPER_GET_ALBUMKEYS_0001
+     * @tc.name      PHOTO_ACCESS_HELPER_GET_ALBUMKEYS_0001
      * @tc.desc      AlbumKeys.CHANGE_TIME == 'change_time'
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it('PHOTO_ACCESS_HELPER_GET_ALBUMKEYS_001', Level.LEVEL1, async (done:Function)=> {
-      console.info(TAG,'--------PHOTO_ACCESS_HELPER_GET_ALBUMKEYS_001---------')
+    it('PHOTO_ACCESS_HELPER_GET_ALBUMKEYS_0001', Level.LEVEL1, async (done:Function)=> {
+      console.info(TAG,'--------PHOTO_ACCESS_HELPER_GET_ALBUMKEYS_0001---------')
       expect(photoAccessHelper.AlbumKeys.CHANGE_TIME == 'change_time').assertTrue();
-      console.info(TAG,'--------PHOTO_ACCESS_HELPER_GET_ALBUMKEYS_001,end here---------')
+      console.info(TAG,'--------PHOTO_ACCESS_HELPER_GET_ALBUMKEYS_0001,end here---------')
       done();
     })
 
