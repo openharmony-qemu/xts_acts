@@ -278,12 +278,12 @@ export default function CameraSessionSuppTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPROTED_VIDEO_SESSION_Abnormal_0100
-     * @tc.name      : CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPROTED_VIDEO_SESSION_Abnormal_0100
-     * @tc.desc      : white balance api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number    CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPROTED_VIDEO_SESSION_Abnormal_0100
+     * @tc.name      CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPROTED_VIDEO_SESSION_Abnormal_0100
+     * @tc.desc      white balance api
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it('CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPROTED_VIDEO_SESSION_Abnormal_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPROTED_VIDEO_SESSION_Abnormal_0100';
