@@ -249,7 +249,7 @@ napi_property_descriptor desc[] = {
     {"oHDrawingRegisterFontByIndex010", nullptr, OHDrawingRegisterFontByIndex010,
      nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHDrawingRegisterFontBufferByIndex001", nullptr, OHDrawingRegisterFontBufferByIndex001,
-      nullptr, nullptr, nullptr, napi_default, nullptr},
+     nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHDrawingRegisterFontBufferByIndex002", nullptr, OHDrawingRegisterFontBufferByIndex002,
      nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHDrawingRegisterFontBufferByIndex003", nullptr, OHDrawingRegisterFontBufferByIndex003,
