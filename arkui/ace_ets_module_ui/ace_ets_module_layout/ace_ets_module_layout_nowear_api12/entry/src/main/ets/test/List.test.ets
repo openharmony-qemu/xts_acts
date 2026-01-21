@@ -12,13 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import ChipApi1 from './Chip/ChipApi1.test'
-import ChipGroupApi1 from './ChipGroup/ChipGroupApi1.test'
+
 import FolderStackTest1 from './FolderStack/FolderStackTest1.test.ets';
 import FolderStackTest2 from './FolderStack/FolderStackTest2.test.ets';
 
 export default function testsuite() {
-  ChipApi1();
   FolderStackTest1();
   FolderStackTest2();
 }

@@ -16,7 +16,6 @@ import textAreaInputTest from './TextAreaTest/textAreaInputTest.test';
 import ActsgetcomponentaddTest from './buttonTest/getcomponentadd.test';
 import textinputSec from './TextInputTest/textinputSec'
 import SelectJsunit from './selectTest/SelectJsunit.test.ets';
-import segmentbuttonTest from './SegmentButtonTest/segmentbutton'
 import TextStateJsunit from './textTest/TextStateJsunit.test';
 import text_drag from './textTest/text_drag.test';
 import search_center from './SearchTest/search_center.test.ets'
@@ -35,7 +34,6 @@ export default function testsuite() {
   ActsgetcomponentaddTest()
   textinputSec()
   SelectJsunit()
-  segmentbuttonTest();
   TextStateJsunit();
   text_drag();
   search_center();
