@@ -265,7 +265,7 @@ export default function AtomicsTest() {
         array[0] = 0;
         const modifyTask = (array: Int32Array): void => {
           setTimeout(() => {
-            const newValue: number = 42;
+            const newValue: int = 42;
             Atomics.store(array, 0, newValue);
             const numAwoken: number = Atomics.notify(array, 0);
             console.log(`${TAG} TaskPool thread: notified ${numAwoken} waiting threads`);
