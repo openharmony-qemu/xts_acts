@@ -1976,3 +1976,202 @@ int DemuxerFunction8900()
     return 0;
 }
 
+int DemuxerFunction9000()
+{
+    const char *file = "/data/storage/el2/base/files/media/01_video_audio.mp4";
+    int fd = open(file, O_RDONLY);
+    int64_t size = GET_FILE_SIZE(file);
+    cout << file << "----------------------" << fd << "---------" << size << endl;
+    source = OH_AVSource_CreateWithFD(fd, 0, size);
+    if (source == nullptr) { return -1; }
+    sourceFormat = OH_AVSource_GetSourceFormat(source);
+    if (sourceFormat == nullptr) { return -1; }
+    const char *stringVal;
+    if (!(OH_AVFormat_GetStringValue(sourceFormat, OH_MD_KEY_ARTIST, &stringVal))) { return -1; }
+    if (strcmp(stringVal, "sam") != 0) { return -1; }
+    close(fd);
+    return 0;
+}
+
+int SubMediaDemuxerFunction0200()
+{
+    OH_AVCodecBufferAttr attr;
+    bool audioIsEnd = false;
+    int audioFrame = 0;
+    const char *file = "/data/storage/el2/base/files/media/audio/amr_nb_8000_1.amr";
+    int fd = open(file, O_RDONLY);
+    int64_t size = GET_FILE_SIZE(file);
+    cout << file << "----------------------" << fd << "---------" << size << endl;
+    source = OH_AVSource_CreateWithFD(fd, 0, size);
+    if (source == nullptr) { return -1; }
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) { return -1; }
+    sourceFormat = OH_AVSource_GetSourceFormat(source);
+    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
+    if (g_trackCount != 1) { return -1; }
+    if (OH_AVDemuxer_SelectTrackByID(demuxer, 0) != AV_ERR_OK) { return -1; }
+    memory = OH_AVMemory_Create(size);
+    if (memory == nullptr) {
+        close(fd);
+        return -1;
+    }
+    int aKeyCount = 0;
+    while (!audioIsEnd) {
+        if (OH_AVDemuxer_ReadSample(demuxer, 0, memory, &attr) != AV_ERR_OK) { return -1; }
+        SetAudioValue(attr, audioIsEnd, audioFrame, aKeyCount);
+    }
+    cout << file << "audioFrame " << audioFrame <<   "   aKeyCount " << aKeyCount  << endl;
+    if (audioFrame != EXPECTED_AUDIO_FRAMES_1501) { return -1; }
+    if (aKeyCount != EXPECTED_AUDIO_FRAMES_1501) { return -1; }
+    close(fd);
+    return 0;
+}
+
+int SubMediaDemuxerFunction0300()
+{
+    OH_AVCodecBufferAttr attr;
+    bool audioIsEnd = false;
+    int audioFrame = 0;
+    const char *file = "/data/storage/el2/base/files/media/audio/amr_wb_16000_1.amr";
+    int fd = open(file, O_RDONLY);
+    int64_t size = GET_FILE_SIZE(file);
+    cout << file << "----------------------" << fd << "---------" << size << endl;
+    source = OH_AVSource_CreateWithFD(fd, 0, size);
+    if (source == nullptr) { return -1; }
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) { return -1; }
+    sourceFormat = OH_AVSource_GetSourceFormat(source);
+    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount))) { return -1; }
+    if (g_trackCount != 1) { return -1; }
+    if (OH_AVDemuxer_SelectTrackByID(demuxer, 0) != AV_ERR_OK) { return -1; }
+    memory = OH_AVMemory_Create(size);
+    if (memory == nullptr) {
+        close(fd);
+        return -1;
+    }
+    int aKeyCount = 0;
+    while (!audioIsEnd) {
+        if (OH_AVDemuxer_ReadSample(demuxer, 0, memory, &attr) != AV_ERR_OK) { return -1; }
+        SetAudioValue(attr, audioIsEnd, audioFrame, aKeyCount);
+    }
+    cout << file << "audioFrame " << audioFrame <<  "   aKeyCount " << aKeyCount << endl;
+    if (audioFrame != EXPECTED_AUDIO_FRAMES_1500) { return -1; }
+    if (aKeyCount != EXPECTED_AUDIO_FRAMES_1500) { return -1; }
+    close(fd);
+    return 0;
+}
+
+int SubMediaDemuxerFunction1000()
+{
+    const char *file = "/data/storage/el2/base/files/media/audio/amr_nb_8000_1.amr";
+    int fd = open(file, O_RDONLY);
+    int64_t size = GET_FILE_SIZE(file);
+    cout << file << "----------------------" << fd << "---------" << size << endl;
+    source = OH_AVSource_CreateWithFD(fd, 0, size);
+    if (source == nullptr) { return -1; }
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) { return -1; }
+    trackFormat = OH_AVSource_GetTrackFormat(source, 0);
+    if (trackFormat == nullptr) { return -1; }
+    const char *codecMime = "";
+    if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_CODEC_MIME, &codecMime))) { return -1; }
+    cout << "codecMime" << codecMime << endl;
+    if (strcmp(codecMime, OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB) != 0) { return -1; }
+    close(fd);
+    return 0;
+}
+
+int SubMediaDemuxerFunction1100()
+{
+    const char *file = "/data/storage/el2/base/files/media/audio/amr_wb_16000_1.amr";
+    int fd = open(file, O_RDONLY);
+    int64_t size = GET_FILE_SIZE(file);
+    cout << file << "----------------------" << fd << "---------" << size << endl;
+    source = OH_AVSource_CreateWithFD(fd, 0, size);
+    if (source == nullptr) { return -1; }
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) { return -1; }
+    trackFormat = OH_AVSource_GetTrackFormat(source, 0);
+    if (trackFormat == nullptr) { return -1; }
+    const char *codecMime = "";
+    if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_CODEC_MIME, &codecMime))) { return -1; }
+    cout << "codecMime" << codecMime << endl;
+    if (strcmp(codecMime, OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB) != 0) { return -1; }
+    close(fd);
+    return 0;
+}
+
+int SubMediaDemuxerFunction1200()
+{
+    if (access(HEVC_LIB_PATH.c_str(), F_OK) != 0) { return 0; }
+    
+    const char *file = "/data/storage/el2/base/files/media/hevc_v_a.ts";
+    int fd = open(file, O_RDONLY);
+    int64_t size = GET_FILE_SIZE(file);
+    cout << file << "----------------------" << fd << "---------" << size << endl;
+    source = OH_AVSource_CreateWithFD(fd, 0, size);
+    if (source == nullptr) { return -1; }
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) { return -1; }
+    sourceFormat = OH_AVSource_GetSourceFormat(source);
+    if (!(OH_AVFormat_GetIntValue(sourceFormat, OH_MD_KEY_TRACK_COUNT, &g_trackCount)) ||
+        g_trackCount != EXPECTED_TRACK_COUNT_DUAL) { return -1; }
+
+    for (int32_t index = 0; index < g_trackCount; index++) {
+        if (OH_AVDemuxer_SelectTrackByID(demuxer, index) != AV_ERR_OK) { return -1; }
+    }
+    
+    bool audioIsEnd = false;
+    bool videoIsEnd = false;
+    int audioFrame = 0;
+    int videoFrame = 0;
+    int aKeyCount = 0;
+    int vKeyCount = 0;
+    DualTrackParams params = {&audioIsEnd, &videoIsEnd, &audioFrame, &videoFrame, &aKeyCount, &vKeyCount};
+    if (ProcessDualTrackLoop(params) != 0) {
+        return -1;
+    }
+    if (audioFrame != EXPECTED_AUDIO_FRAMES_384 || aKeyCount != EXPECTED_AUDIO_FRAMES_384 ||
+        videoFrame != EXPECTED_VIDEO_FRAMES_602 || vKeyCount != EXPECTED_KEY_FRAMES_3) { return -1; }
+    close(fd);
+    return 0;
+}
+
+int SubMediaDemuxerFunction1300()
+{
+    if (access(HEVC_LIB_PATH.c_str(), F_OK) != 0) {
+        return 0;
+    }
+    int tarckType = 0;
+    OH_AVCodecBufferAttr attr;
+    bool videoIsEnd = false;
+    int videoFrame = 0;
+    const char *file = "/data/storage/el2/base/files/media/hevc_v.ts";
+    int fd = open(file, O_RDONLY);
+    int64_t size = GET_FILE_SIZE(file);
+    cout << file << "----------------------" << fd << "---------" << size << endl;
+    source = OH_AVSource_CreateWithFD(fd, 0, size);
+    if (source == nullptr) { return -1; }
+
+    demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) { return -1; }
+
+    if (OH_AVDemuxer_SelectTrackByID(demuxer, 0) != AV_ERR_OK) { return -1; }
+    int vKeyCount = 0;
+    while (!videoIsEnd) {
+        trackFormat = OH_AVSource_GetTrackFormat(source, 0);
+        if (trackFormat == nullptr) { return -1; }
+        if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &tarckType))) { return -1; }
+        OH_AVFormat_Destroy(trackFormat);
+        trackFormat = nullptr;
+        if (videoIsEnd && (tarckType == MEDIA_TYPE_VID)) {
+            continue;
+        }
+        if (OH_AVDemuxer_ReadSample(demuxer, 0, memory, &attr) != AV_ERR_OK) { return -1; }
+        SetVideoValue(attr, videoIsEnd, videoFrame, vKeyCount);
+    }
+    if (videoFrame != EXPECTED_VIDEO_FRAMES_602) { return -1; }
+    if (vKeyCount != EXPECTED_KEY_FRAMES_3) { return -1; }
+    close(fd);
+    return 0;
+}
