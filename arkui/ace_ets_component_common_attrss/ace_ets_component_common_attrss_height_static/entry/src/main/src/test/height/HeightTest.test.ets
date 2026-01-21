@@ -98,7 +98,6 @@ export default function heightTest() {
     'Grid',
     'List',
     'ListItem',
-    //    'Panel',
     'Refresh',
     'Row',
     //    'Scroll',
@@ -118,7 +117,6 @@ export default function heightTest() {
     //    'GridCol',
     'GridItem',
     'RelativeContainer',
-    // 'Navigator', // Navigation 替换
     'Menu',
     'MenuItem',
     //    'MenuItemGroup'

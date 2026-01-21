@@ -88,8 +88,6 @@ export default function touchableTest() {
     'List',
     'ListItem',
     'ListItemGroup',  //pass
-    'Navigator',//pass
-    'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',

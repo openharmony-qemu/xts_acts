@@ -81,7 +81,6 @@ export default function onAreaChangeTest() {
     'List',
     'ListItem',
     'ListItemGroup',
-    'Panel',
     'RelativeContainer',
     'Row',
     'RowSplit',
