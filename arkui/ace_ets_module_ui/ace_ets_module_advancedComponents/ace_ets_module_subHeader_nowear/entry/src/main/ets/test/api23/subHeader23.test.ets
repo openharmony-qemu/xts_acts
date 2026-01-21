@@ -50,7 +50,7 @@ export default function subHeader23() {
 
     /**
      * @tc.number subHeader23
-     * @tc.name   subHeader23
+     * @tc.name   subHeader23_0100
      * @tc.desc   Test subHeader23
      * @tc.size   MediumTest
      * @tc.type   Function
