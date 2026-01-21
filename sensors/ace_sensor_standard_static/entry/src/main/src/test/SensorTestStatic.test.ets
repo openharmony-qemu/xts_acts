@@ -4638,6 +4638,7 @@ export default function SensorJsStaticTest() {
       const TAG = '====>GetSensorListByDeviceSync_JSTest_005'
       try {
         const deviceId = -1;
+        await isAvailable(sensor.SensorId.ACCELEROMETER);
         const result = sensor.getSensorListByDeviceSync(deviceId);
         console.info(TAG + ` success result.length: ${result.length}  ,result: ${JSON.stringify(result)}`);
         if (result.length === 0) {
@@ -4647,8 +4648,12 @@ export default function SensorJsStaticTest() {
         }
         done();
       } catch (error) {
-        console.info(TAG + ` fail, errCode: ${error.code}  ,msg: ${error.message}`);
-        expect(false).assertTrue();
+        console.info(TAG + ` fail, errCode: ${error.code} ,msg: ${error.message}`);
+        if (Available) {
+          expect(error.code == 14500101).assertTrue();
+        } else {
+          expect(error.code == 14500102).assertTrue();
+        }
         done();
       }
     })
