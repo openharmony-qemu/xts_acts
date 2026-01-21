@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -107,13 +107,11 @@ struct OnWindowNewExt {
                   console.log('pbbbnetment');
                   Utils.emitEvent(true, 20260118)
                 } else {
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl($rawfile("window.open.html"))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  Utils.sleep(1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT, 2047);
-                  let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
+                  let webRect = Utils.getComponentRect('WebViewOnWindowNewExtWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
@@ -136,12 +134,10 @@ struct OnWindowNewExt {
                   console.log('pbbbnetment2');
                   Utils.emitEvent(false, 20260119)
                 } else {
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl($rawfile("window.open.html"))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-                  let buttonOne = await driver.findComponent(ON.text('打开新标签'));
+                  Utils.sleep(1000);
+                  let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   await buttonOne.click();
-                  let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
+                  let webRect = Utils.getComponentRect('WebViewOnWindowNewExtWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
@@ -169,7 +165,7 @@ struct OnWindowNewExt {
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   await buttonOne.click();
-                  let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
+                  let webRect = Utils.getComponentRect('WebViewOnWindowNewExtWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
@@ -197,7 +193,7 @@ struct OnWindowNewExt {
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   await buttonOne.click();
-                  let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
+                  let webRect = Utils.getComponentRect('WebViewOnWindowNewExtWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
@@ -219,14 +215,14 @@ struct OnWindowNewExt {
               try {
                 if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment3');
-                  Utils.emitEvent(2, 20260122)
+                  Utils.emitEvent(0, 20260122)
                 } else {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("window.open.html"))
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   await buttonOne.click();
-                  let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
+                  let webRect = Utils.getComponentRect('WebViewOnWindowNewExtWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
