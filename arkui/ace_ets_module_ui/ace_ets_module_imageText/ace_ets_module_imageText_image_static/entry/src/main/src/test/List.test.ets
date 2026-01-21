@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
+import blendNodeTest from './BlendModeTest/blendNodeTest.test';
 import getUIContextApiTest from './imageTest/getUIContextApi.test';
 
 export default function testsuite() {
+  blendNodeTest();
   getUIContextApiTest();
 }
