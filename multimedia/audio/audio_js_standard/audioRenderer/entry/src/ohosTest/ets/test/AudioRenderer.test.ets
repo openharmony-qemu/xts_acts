@@ -15005,7 +15005,7 @@ export default function audioRendererTest() {
  	      encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW 
  	    }
  	    let audioRendererInfo:audio.AudioRendererInfo = {
- 	      usage: audio.StreamUsage.STREAM_USAGE_VOICE_MEDIA,
+ 	      usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
  	      rendererFlags: 0
  	    }
  	    let audioRendererOptions:audio.AudioRendererOptions = {
