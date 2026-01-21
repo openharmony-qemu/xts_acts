@@ -1,22 +1,11 @@
-import {
-  describe,
-  beforeAll,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  Level,
-  Size,
-  TestType
-} from "../../../hypium/index";
+import { describe, it, expect, Level, Size, TestType } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
 import cloudData from '@ohos.data.cloudData';
 
-const domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-const TAG: string = 'CloudDataErrorCode-->'; //日志标识字符串,作为TAG标识当前runner类下的测试行为
+const domain: int = 0x0000;
+const TAG: string = 'CloudDataErrorCode-->';
 
 export default function CloudDataErrorCode() {
 
