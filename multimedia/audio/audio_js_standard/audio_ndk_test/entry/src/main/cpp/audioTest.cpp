@@ -208,6 +208,13 @@ void MyAudioRendererOnFastStatusChangeCallback(OH_AudioRenderer* renderer, void*
     LOG("MyAudioRendererOnFastStatusChangeCallback, status is %{public}d", status);
 }
 
+void MyPlaybackCapturerStartCallback(OH_AudioCapturer* capturer, void* userData,
+    OH_AudioStream_PlaybackCaptureStartState state)
+{
+    (void)userData;
+    LOG("MyPlaybackCapturerStartCallback, state is %{public}d", state);
+}
+
 static napi_value CreateAudioStreamBuilder(napi_env env, napi_callback_info info)
 {
     OH_AudioStreamBuilder *builder;
@@ -8695,6 +8702,335 @@ static napi_value AudioSessionManagerIsOtherMediaPlaying_001(napi_env env, napi_
     napi_create_int32(env, TEST_PASS, &value);
     return value;
 }
+
+static napi_value AudioCapturer_RequestPlaybackStart_Callback_0001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    void *userData;
+    OH_AudioStream_Result result = OH_AudioCapturer_RequestPlaybackCaptureStart(g_audioCapturer,
+        MyPlaybackCapturerStartCallback, userData);
+    if (result != AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        LOG("AudioCapturer_RequestPlaybackStart_Callback_0001 fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioCapturer_RequestPlaybackStart_Callback_0002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    void *userData;
+    OH_AudioStream_Result result = OH_AudioCapturer_RequestPlaybackCaptureStart(nullptr,
+        MyPlaybackCapturerStartCallback, userData);
+    if (result != AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        LOG("AudioCapturer_RequestPlaybackStart_Callback_0002 fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioCapturer_RequestPlaybackStart_Callback_0003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    void *userData;
+    OH_AudioStream_Result result = OH_AudioCapturer_RequestPlaybackCaptureStart(g_audioCapturer,
+        nullptr, userData);
+    if (result != AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        LOG("AudioCapturer_RequestPlaybackStart_Callback_0003 fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioCapturer_RequestPlaybackStart_Callback_0004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    void *userData;
+    OH_AudioStream_Result result = OH_AudioCapturer_RequestPlaybackCaptureStart(g_audioCapturer,
+        MyPlaybackCapturerStartCallback, nullptr);
+    if (result != AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        LOG("AudioCapturer_RequestPlaybackStart_Callback_0004 fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioCapturer_RequestPlaybackStart_Callback_0005(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    void *userData;
+    OH_AudioStream_Result result = OH_AudioCapturer_RequestPlaybackCaptureStart(nullptr,
+        MyPlaybackCapturerStartCallback, nullptr);
+    if (result != AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        LOG("AudioCapturer_RequestPlaybackStart_Callback_0005 fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioCapturer_RequestPlaybackStart_Callback_0006(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    void *userData;
+    OH_AudioStream_Result result = OH_AudioCapturer_RequestPlaybackCaptureStart(g_audioCapturer,
+        nullptr, nullptr);
+    if (result != AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        LOG("AudioCapturer_RequestPlaybackStart_Callback_0006 fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioCapturer_RequestPlaybackStart_Callback_0007(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    void *userData;
+    OH_AudioStream_Result result = OH_AudioCapturer_RequestPlaybackCaptureStart(nullptr,
+        nullptr, nullptr);
+    if (result != AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        LOG("AudioCapturer_RequestPlaybackStart_Callback_0007 fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioStreamBuilder_SetPlaybackCaptureMode_0001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* g_capturerBuilder = nullptr;
+    OH_AudioStream_Result createResult = OH_AudioStreamBuilder_Create(&g_capturerBuilder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (createResult != AUDIOSTREAM_SUCCESS) {
+        LOG("AudioStreamBuilder_Create_0001 fail, result is: %{public}d", createResult);
+        napi_value result;
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetPlaybackCaptureMode(g_capturerBuilder,
+        AUDIOSTREAM_PLAYBACKCAPTURE_MODE_MEDIA|AUDIOSTREAM_PLAYBACKCAPTURE_MODE_DEFAULT|
+        AUDIOSTREAM_PLAYBACKCAPTURE_MODE_EXCLUDING_SELF);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("AudioStreamBuilder_SetPlaybackCaptureMode_0001 fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioStreamBuilder_SetPlaybackCaptureMode_0002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* g_capturerBuilder = nullptr;
+    OH_AudioStream_Result createResult = OH_AudioStreamBuilder_Create(&g_capturerBuilder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (createResult != AUDIOSTREAM_SUCCESS) {
+        LOG("AudioStreamBuilder_Create_0002 fail, result is: %{public}d", createResult);
+        napi_value result;
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetPlaybackCaptureMode(g_capturerBuilder,
+        AUDIOSTREAM_PLAYBACKCAPTURE_MODE_MEDIA|AUDIOSTREAM_PLAYBACKCAPTURE_MODE_DEFAULT);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("AudioStreamBuilder_SetPlaybackCaptureMode_0002 fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioStreamBuilder_SetPlaybackCaptureMode_0003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* g_capturerBuilder = nullptr;
+    OH_AudioStream_Result createResult = OH_AudioStreamBuilder_Create(&g_capturerBuilder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (createResult != AUDIOSTREAM_SUCCESS) {
+        LOG("AudioStreamBuilder_Create_0003 fail, result is: %{public}d", createResult);
+        napi_value result;
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetPlaybackCaptureMode(g_capturerBuilder,
+        AUDIOSTREAM_PLAYBACKCAPTURE_MODE_EXCLUDING_SELF|AUDIOSTREAM_PLAYBACKCAPTURE_MODE_MEDIA);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("AudioStreamBuilder_SetPlaybackCaptureMode_0003 fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioStreamBuilder_SetPlaybackCaptureMode_0004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* g_capturerBuilder = nullptr;
+    OH_AudioStream_Result createResult = OH_AudioStreamBuilder_Create(&g_capturerBuilder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (createResult != AUDIOSTREAM_SUCCESS) {
+        LOG("AudioStreamBuilder_Create_0004 fail, result is: %{public}d", createResult);
+        napi_value result;
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetPlaybackCaptureMode(g_capturerBuilder,
+        AUDIOSTREAM_PLAYBACKCAPTURE_MODE_DEFAULT|AUDIOSTREAM_PLAYBACKCAPTURE_MODE_EXCLUDING_SELF);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("AudioStreamBuilder_SetPlaybackCaptureMode_0004 fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioStreamBuilder_SetPlaybackCaptureMode_0005(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* g_capturerBuilder = nullptr;
+    OH_AudioStream_Result createResult = OH_AudioStreamBuilder_Create(&g_capturerBuilder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (createResult != AUDIOSTREAM_SUCCESS) {
+        LOG("AudioStreamBuilder_Create_0005 fail, result is: %{public}d", createResult);
+        napi_value result;
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetPlaybackCaptureMode(g_capturerBuilder,
+        AUDIOSTREAM_PLAYBACKCAPTURE_MODE_DEFAULT);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("AudioStreamBuilder_SetPlaybackCaptureMode_0005 fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioStreamBuilder_SetPlaybackCaptureMode_0006(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* g_capturerBuilder = nullptr;
+    OH_AudioStream_Result createResult = OH_AudioStreamBuilder_Create(&g_capturerBuilder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (createResult != AUDIOSTREAM_SUCCESS) {
+        LOG("AudioStreamBuilder_Create_0006 fail, result is: %{public}d", createResult);
+        napi_value result;
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetPlaybackCaptureMode(g_capturerBuilder,
+        AUDIOSTREAM_PLAYBACKCAPTURE_MODE_EXCLUDING_SELF);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("AudioStreamBuilder_SetPlaybackCaptureMode_0006 fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioStreamBuilder_SetPlaybackCaptureMode_0007(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* g_capturerBuilder = nullptr;
+    OH_AudioStream_Result createResult = OH_AudioStreamBuilder_Create(&g_capturerBuilder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (createResult != AUDIOSTREAM_SUCCESS) {
+        LOG("AudioStreamBuilder_Create_0007 fail, result is: %{public}d", createResult);
+        napi_value result;
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetPlaybackCaptureMode(g_capturerBuilder,
+        AUDIOSTREAM_PLAYBACKCAPTURE_MODE_MEDIA);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("AudioStreamBuilder_SetPlaybackCaptureMode_0007 fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioStreamBuilder_SetPlaybackCaptureMode_0008(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* g_capturerBuilder = nullptr;
+    OH_AudioStream_Result createResult = OH_AudioStreamBuilder_Create(&g_capturerBuilder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (createResult != AUDIOSTREAM_SUCCESS) {
+        LOG("AudioStreamBuilder_Create_0008 fail, result is: %{public}d", createResult);
+        napi_value result;
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetPlaybackCaptureMode(nullptr,
+        AUDIOSTREAM_PLAYBACKCAPTURE_MODE_MEDIA);
+    if (result != AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        LOG("AudioStreamBuilder_SetPlaybackCaptureMode_0008 fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioStreamBuilder_SetPlaybackCaptureMode_0009(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* g_capturerBuilder = nullptr;
+    OH_AudioStream_Result createResult = OH_AudioStreamBuilder_Create(&g_capturerBuilder, AUDIOSTREAM_TYPE_CAPTURER);
+    if (createResult != AUDIOSTREAM_SUCCESS) {
+        LOG("AudioStreamBuilder_Create_0009 fail, result is: %{public}d", createResult);
+        napi_value result;
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetPlaybackCaptureMode(g_capturerBuilder, 3);
+    if (result != AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        LOG("AudioStreamBuilder_SetPlaybackCaptureMode_0009 fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioStream_PlaybackCaptureStartState_0001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    int32_t playbackCaptureSuccess = 0;
+    int32_t playbackCaptureFiled = 1;
+    int32_t playbackCaptureUnauthorized = 2;
+    if (playbackCaptureSuccess != AUDIOSTREAM_PLAYBACKCAPTURE_START_STATE_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIOSTREAM_PLAYBACKCAPTURE_START_STATE_SUCCESS fail, result is: %{public}d",
+            AUDIOSTREAM_PLAYBACKCAPTURE_START_STATE_SUCCESS);
+    }
+    if (playbackCaptureFiled != AUDIOSTREAM_PLAYBACKCAPTURE_START_STATE_FAILED) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIOSTREAM_PLAYBACKCAPTURE_START_STATE_FAILED fail, result is: %{public}d",
+            AUDIOSTREAM_PLAYBACKCAPTURE_START_STATE_FAILED);
+    }
+    if (playbackCaptureUnauthorized != AUDIOSTREAM_PLAYBACKCAPTURE_START_STATE_NOT_AUTHORIZED) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIOSTREAM_PLAYBACKCAPTURE_START_STATE_NOT_AUTHORIZED fail, result is: %{public}d",
+            AUDIOSTREAM_PLAYBACKCAPTURE_START_STATE_NOT_AUTHORIZED);
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
 EXTERN_C_START
 napi_property_descriptor desc1[] = {
     {"AudioSuiteRendererGetLatency_0100", nullptr, AudioSuiteRendererGetLatency_0100,
@@ -9301,6 +9637,40 @@ napi_property_descriptor desc3[] = {
         AudioSessionManagerMuteSuggestion_004, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"audioSessionManagerMuteSuggestion_005", nullptr,
         AudioSessionManagerMuteSuggestion_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioCapturer_RequestPlaybackStart_Callback_0001", nullptr,
+        AudioCapturer_RequestPlaybackStart_Callback_0001, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioCapturer_RequestPlaybackStart_Callback_0002", nullptr,
+        AudioCapturer_RequestPlaybackStart_Callback_0002, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioCapturer_RequestPlaybackStart_Callback_0003", nullptr,
+        AudioCapturer_RequestPlaybackStart_Callback_0003, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioCapturer_RequestPlaybackStart_Callback_0004", nullptr,
+        AudioCapturer_RequestPlaybackStart_Callback_0004, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioCapturer_RequestPlaybackStart_Callback_0005", nullptr,
+        AudioCapturer_RequestPlaybackStart_Callback_0005, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioCapturer_RequestPlaybackStart_Callback_0006", nullptr,
+        AudioCapturer_RequestPlaybackStart_Callback_0006, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioCapturer_RequestPlaybackStart_Callback_0007", nullptr,
+        AudioCapturer_RequestPlaybackStart_Callback_0007, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioStreamBuilder_SetPlaybackCaptureMode_0001", nullptr,
+        AudioStreamBuilder_SetPlaybackCaptureMode_0001, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioStreamBuilder_SetPlaybackCaptureMode_0002", nullptr,
+        AudioStreamBuilder_SetPlaybackCaptureMode_0002, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioStreamBuilder_SetPlaybackCaptureMode_0003", nullptr,
+        AudioStreamBuilder_SetPlaybackCaptureMode_0003, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioStreamBuilder_SetPlaybackCaptureMode_0004", nullptr,
+        AudioStreamBuilder_SetPlaybackCaptureMode_0004, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioStreamBuilder_SetPlaybackCaptureMode_0005", nullptr,
+        AudioStreamBuilder_SetPlaybackCaptureMode_0005, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioStreamBuilder_SetPlaybackCaptureMode_0006", nullptr,
+        AudioStreamBuilder_SetPlaybackCaptureMode_0006, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioStreamBuilder_SetPlaybackCaptureMode_0007", nullptr,
+        AudioStreamBuilder_SetPlaybackCaptureMode_0007, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioStreamBuilder_SetPlaybackCaptureMode_0008", nullptr,
+        AudioStreamBuilder_SetPlaybackCaptureMode_0008, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioStreamBuilder_SetPlaybackCaptureMode_0009", nullptr,
+        AudioStreamBuilder_SetPlaybackCaptureMode_0009, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioStream_PlaybackCaptureStartState_0001", nullptr,
+        AudioStream_PlaybackCaptureStartState_0001, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 static napi_value Init(napi_env env, napi_value exports)
 {
