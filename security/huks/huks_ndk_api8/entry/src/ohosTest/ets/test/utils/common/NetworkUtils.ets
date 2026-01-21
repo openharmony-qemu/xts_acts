@@ -1,19 +1,5 @@
 import { wifiManager } from '@kit.ConnectivityKit'
-import { Sleep } from './CommonUtils';
 import { Logger } from './Logger';
-
-
-export async function OpenWifi() {
-  try {
-    if (!wifiManager.isWifiActive()) {
-      wifiManager.enableWifi();
-      await Sleep(5 * 1000);
-      Logger.info(`OpenWifi success`);
-    }
-  } catch (err) {
-    Logger.error(`OpenWifi catch error ${JSON.stringify(err)}`)
-  }
-}
 
 export async function CheckWifiInfo() {
   try {
