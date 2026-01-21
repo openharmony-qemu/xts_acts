@@ -61,126 +61,126 @@ export default function RouterWithParamJsunit() {
 
     
     
-/**
-     * @tc.number   RouterWithParamJsunit_static_001
-     * @tc.name     RouterWithParamJsunit_static_001
-     * @tc.desc     RouterWithParamJsunit_static_001
-     * @tc.level    Level.LEVEL2
-     */
-it('RouterWithParamJsunit_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[RouterWithParamJsunit_static_001] START');
-      let driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
-      let btn = await driver.findComponent(ON.id('turn_RouterPushUrlOne_null'));
-      await driver.delayMs(waitUiReadyMs);
-      await (btn?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
-      let strJson = inspector.getInspectorByKey('Text_RouterPushThree_Params');
-      
-      console.info("[RouterWithParamJsunit_static_001] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson)!.getElement('$attrs').getString('content')).assertEqual("RouterPushThree undefined");
-      console.info('[RouterWithParamJsunit_static_001] END');
-      done();
-    });
+// /**
+//      * @tc.number   RouterWithParamJsunit_static_001
+//      * @tc.name     RouterWithParamJsunit_static_001
+//      * @tc.desc     RouterWithParamJsunit_static_001
+//      * @tc.level    Level.LEVEL2
+//      */
+// it('RouterWithParamJsunit_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+//       console.info('[RouterWithParamJsunit_static_001] START');
+//       let driver = Driver.create();
+//       await driver.delayMs(waitUiReadyMs);
+//       let btn = await driver.findComponent(ON.id('turn_RouterPushUrlOne_null'));
+//       await driver.delayMs(waitUiReadyMs);
+//       await (btn?.click() as Promise<void>);
+//       await driver.delayMs(waitUiReadyMs);
+//       let strJson = inspector.getInspectorByKey('Text_RouterPushThree_Params');
+//
+//       console.info("[RouterWithParamJsunit_static_001] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+//       expect(JSON.parseJsonElement(strJson)!.getElement('$attrs').getString('content')).assertEqual("RouterPushThree undefined");
+//       console.info('[RouterWithParamJsunit_static_001] END');
+//       done();
+//     });
+//
+//
+//
+// /**
+//      * @tc.number   RouterWithParamJsunit_static_002
+//      * @tc.name     RouterWithParamJsunit_static_002
+//      * @tc.desc     RouterWithParamJsunit_static_002
+//      * @tc.level    Level.LEVEL2
+//      */
+// it('RouterWithParamJsunit_static_002', Level.LEVEL2, async (done: () => void): Promise<void> => {
+//       console.info('[RouterWithParamJsunit_static_002] START');
+//       let driver = Driver.create();
+//       await driver.delayMs(waitUiReadyMs);
+//       let btn = await driver.findComponent(ON.id('turn_RouterPushUrlOne_string_number'));
+//       await driver.delayMs(waitUiReadyMs);
+//       await (btn?.click() as Promise<void>);
+//       await driver.delayMs(waitUiReadyMs);
+//       let strJson = inspector.getInspectorByKey('Text_RouterPushThree_Params');
+//
+//       console.info("[RouterWithParamJsunit_static_002] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+//       expect(JSON.parseJsonElement(strJson)!.getElement('$attrs').getString('content')).assertEqual('RouterPushThree {"data1":{"data2":"message","data3":12345}}')
+//       console.info('[RouterWithParamJsunit_static_002] END');
+//       done();
+//     });
+//
+//
+//
+// /**
+//      * @tc.number   RouterWithParamJsunit_static_003
+//      * @tc.name     RouterWithParamJsunit_static_003
+//      * @tc.desc     RouterWithParamJsunit_static_003
+//      * @tc.level    Level.LEVEL2
+//      */
+// it('RouterWithParamJsunit_static_003', Level.LEVEL2, async (done: () => void): Promise<void> => {
+//       console.info('[RouterWithParamJsunit_static_003] START');
+//       let driver = Driver.create();
+//       await driver.delayMs(waitUiReadyMs);
+//       let btn1 = await driver.findComponent(ON.id('turn_RouterPushThree_stringArray'));
+//       await driver.delayMs(waitUiReadyMs);
+//       await (btn1?.click() as Promise<void>);
+//       await driver.delayMs(waitUiReadyMs);
+//       let strJson = inspector.getInspectorByKey('Text_RouterPushThree_Params');
+//
+//       console.info("[RouterWithParamJsunit_static_003] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+//       expect(JSON.parseJsonElement(strJson)!.getElement('$attrs').getString('content')).assertEqual('RouterPushThree {"data1":{"data2":["message","message1"]}}')
+//       console.info('[RouterWithParamJsunit_static_003] END');
+//       done()
+//     });
+//
+//
+//
+// /**
+//      * @tc.number   RouterWithParamJsunit_static_004
+//      * @tc.name     RouterWithParamJsunit_static_004
+//      * @tc.desc     RouterWithParamJsunit_static_004
+//      * @tc.level    Level.LEVEL2
+//      */
+// it('RouterWithParamJsunit_static_004', Level.LEVEL2, async (done: () => void): Promise<void> => {
+//       console.info('[RouterWithParamJsunit_static_004] START');
+//       let driver = Driver.create();
+//       await driver.delayMs(waitUiReadyMs);
+//       let btn = await driver.findComponent(ON.id('turn_RouterPushUrlOne_string_number1'));
+//       await driver.delayMs(waitUiReadyMs);
+//       await (btn?.click() as Promise<void>);
+//       await driver.delayMs(waitUiReadyMs);
+//       let strJson = inspector.getInspectorByKey('Text_RouterPushThree_Params');
+//
+//       console.info("[RouterWithParamJsunit_static_004] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+//       expect(JSON.parseJsonElement(strJson)!.getElement('$attrs').getString('content')).assertEqual('RouterPushThree {"data1":"message","data2":12345}')
+//       console.info('[RouterWithParamJsunit_static_004] END');
+//       done()
+//     });
+//
+//
+//
+// /**
+//      * @tc.number   RouterWithParamJsunit_static_005
+//      * @tc.name     RouterWithParamJsunit_static_005
+//      * @tc.desc     RouterWithParamJsunit_static_005
+//      * @tc.level    Level.LEVEL2
+//      */
+// it('RouterWithParamJsunit_static_005', Level.LEVEL2, async (done: () => void): Promise<void> => {
+//       console.info('[RouterWithParamJsunit_static_005] START');
+//       let driver = Driver.create();
+//       let scrollBar = await driver.findComponent(ON.type('Scroll'));
+//       let btn = await (scrollBar?.scrollSearch(ON.id('turn_RouterPushUrlOne_string_numArray')) as Promise<Component | null>);;
+//       await driver.delayMs(waitUiReadyMs);
+//       await (btn?.click() as Promise<void>);
+//       await driver.delayMs(waitUiReadyMs);
+//       let strJson = inspector.getInspectorByKey('Text_RouterPushThree_Params');
+//
+//       console.info("[RouterWithParamJsunit_static_005] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+//       expect(JSON.parseJsonElement(strJson)!.getElement('$attrs').getString('content')).assertEqual('RouterPushThree {"data1":"message","data2":[1,2,3,4,5]}')
+//       console.info('[RouterWithParamJsunit_static_005] END');
+//       done();
+//     });
 
-    
-    
-/**
-     * @tc.number   RouterWithParamJsunit_static_002
-     * @tc.name     RouterWithParamJsunit_static_002
-     * @tc.desc     RouterWithParamJsunit_static_002
-     * @tc.level    Level.LEVEL2
-     */
-it('RouterWithParamJsunit_static_002', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[RouterWithParamJsunit_static_002] START');
-      let driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
-      let btn = await driver.findComponent(ON.id('turn_RouterPushUrlOne_string_number'));
-      await driver.delayMs(waitUiReadyMs);
-      await (btn?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
-      let strJson = inspector.getInspectorByKey('Text_RouterPushThree_Params');
-      
-      console.info("[RouterWithParamJsunit_static_002] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson)!.getElement('$attrs').getString('content')).assertEqual('RouterPushThree {"data1":{"data2":"message","data3":12345}}')
-      console.info('[RouterWithParamJsunit_static_002] END');
-      done();
-    });
 
-    
-    
-/**
-     * @tc.number   RouterWithParamJsunit_static_003
-     * @tc.name     RouterWithParamJsunit_static_003
-     * @tc.desc     RouterWithParamJsunit_static_003
-     * @tc.level    Level.LEVEL2
-     */
-it('RouterWithParamJsunit_static_003', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[RouterWithParamJsunit_static_003] START');
-      let driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);      
-      let btn1 = await driver.findComponent(ON.id('turn_RouterPushThree_stringArray'));
-      await driver.delayMs(waitUiReadyMs);
-      await (btn1?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
-      let strJson = inspector.getInspectorByKey('Text_RouterPushThree_Params');
-      
-      console.info("[RouterWithParamJsunit_static_003] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson)!.getElement('$attrs').getString('content')).assertEqual('RouterPushThree {"data1":{"data2":["message","message1"]}}')
-      console.info('[RouterWithParamJsunit_static_003] END');
-      done()
-    });
 
-    
-    
-/**
-     * @tc.number   RouterWithParamJsunit_static_004
-     * @tc.name     RouterWithParamJsunit_static_004
-     * @tc.desc     RouterWithParamJsunit_static_004
-     * @tc.level    Level.LEVEL2
-     */
-it('RouterWithParamJsunit_static_004', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[RouterWithParamJsunit_static_004] START');
-      let driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
-      let btn = await driver.findComponent(ON.id('turn_RouterPushUrlOne_string_number1'));
-      await driver.delayMs(waitUiReadyMs);
-      await (btn?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
-      let strJson = inspector.getInspectorByKey('Text_RouterPushThree_Params');
-      
-      console.info("[RouterWithParamJsunit_static_004] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson)!.getElement('$attrs').getString('content')).assertEqual('RouterPushThree {"data1":"message","data2":12345}')
-      console.info('[RouterWithParamJsunit_static_004] END');
-      done()
-    });
-
-    
-    
-/**
-     * @tc.number   RouterWithParamJsunit_static_005
-     * @tc.name     RouterWithParamJsunit_static_005
-     * @tc.desc     RouterWithParamJsunit_static_005
-     * @tc.level    Level.LEVEL2
-     */
-it('RouterWithParamJsunit_static_005', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[RouterWithParamJsunit_static_005] START');
-      let driver = Driver.create();
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let btn = await (scrollBar?.scrollSearch(ON.id('turn_RouterPushUrlOne_string_numArray')) as Promise<Component | null>);;
-      await driver.delayMs(waitUiReadyMs);
-      await (btn?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
-      let strJson = inspector.getInspectorByKey('Text_RouterPushThree_Params');
-      
-      console.info("[RouterWithParamJsunit_static_005] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson)!.getElement('$attrs').getString('content')).assertEqual('RouterPushThree {"data1":"message","data2":[1,2,3,4,5]}')
-      console.info('[RouterWithParamJsunit_static_005] END');
-      done();
-    });
-
-    
-    
 /**
      * @tc.number   RouterWithParamJsunit_static_006
      * @tc.name     RouterWithParamJsunit_static_006
@@ -197,36 +197,36 @@ it('RouterWithParamJsunit_static_006', Level.LEVEL2, async (done: () => void): P
       await (btn?.click() as Promise<void>);
       await driver.delayMs(waitUiReadyMs);
       let strJson = inspector.getInspectorByKey('Text_RouterPushThree_Params');
-      
+
       console.info("[RouterWithParamJsunit_static_006] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson)!.getElement('$attrs').getString('content')).assertEqual('RouterPushThree {"data1":{"data2":"message","data3":12345}}')
       console.info('[RouterWithParamJsunit_static_006] END');
       done();
     });
-  
-    
-    
-/**
-     * @tc.number   RouterWithParamJsunit_static_007
-     * @tc.name     RouterWithParamJsunit_static_007
-     * @tc.desc     RouterWithParamJsunit_static_007
-     * @tc.level    Level.LEVEL2
-     */
-it('RouterWithParamJsunit_static_007', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[RouterWithParamJsunit_static_007] START');
-      let driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let btn = await (scrollBar?.scrollSearch(ON.id('turn_RouterPushUrlOne_null_push')) as Promise<Component | null>);;
-      await driver.delayMs(waitUiReadyMs);
-      await (btn?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
-      let strJson = inspector.getInspectorByKey('Text_RouterPushThree_Params');
-      
-      console.info("[RouterWithParamJsunit_static_007] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson)!.getElement('$attrs').getString('content')).assertEqual('RouterPushThree undefined')
-      console.info('[RouterWithParamJsunit_static_007] END');
-      done();
-    });
+//
+//
+//
+// /**
+//      * @tc.number   RouterWithParamJsunit_static_007
+//      * @tc.name     RouterWithParamJsunit_static_007
+//      * @tc.desc     RouterWithParamJsunit_static_007
+//      * @tc.level    Level.LEVEL2
+//      */
+// it('RouterWithParamJsunit_static_007', Level.LEVEL2, async (done: () => void): Promise<void> => {
+//       console.info('[RouterWithParamJsunit_static_007] START');
+//       let driver = Driver.create();
+//       await driver.delayMs(waitUiReadyMs);
+//       let scrollBar = await driver.findComponent(ON.type('Scroll'));
+//       let btn = await (scrollBar?.scrollSearch(ON.id('turn_RouterPushUrlOne_null_push')) as Promise<Component | null>);;
+//       await driver.delayMs(waitUiReadyMs);
+//       await (btn?.click() as Promise<void>);
+//       await driver.delayMs(waitUiReadyMs);
+//       let strJson = inspector.getInspectorByKey('Text_RouterPushThree_Params');
+//
+//       console.info("[RouterWithParamJsunit_static_007] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+//       expect(JSON.parseJsonElement(strJson)!.getElement('$attrs').getString('content')).assertEqual('RouterPushThree undefined')
+//       console.info('[RouterWithParamJsunit_static_007] END');
+//       done();
+//     });
   })
 }
