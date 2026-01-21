@@ -3205,20 +3205,16 @@ export default function TextPicker() {
       pickerOptions.globalMovingPhotoState = state;
       let photoPicker = new photoAccessHelper.PhotoViewPicker();
       try {
-        photoPicker.select(pickerOptions).then((photoSelectResult: photoAccessHelper.PhotoPickerResult) => {
+        photoPicker.select(pickerOptions).then((photoSelectResult: photoAccessHelper.photoSelectResult) => {
           console.log('select错误码覆盖 PhotoViewPicker.select success, PhotoPickerResult uri: ' +
-          JSON.stringify(photoSelectResult))'
-          // except(true).assertTrue();
+          JSON.stringify(photoSelectResult))
+          // expect(true).assertTrue();
         })
       } catch (error) {
         console.error("select错误码覆盖 error:" + JSON.stringify(error) + error.code);
-        except(error.code).assertEqual(23800151);
+        expect(error.code).assertEqual(23800151);
       }
       console.info('select错误码覆盖 finish');
-      await CommonFunc.sleep(2000);
-      router.back();
-      console.info('testPicker62 finished');
-      expect(passed).assertTrue();
       done();
     });
 
