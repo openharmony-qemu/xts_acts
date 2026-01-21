@@ -3205,7 +3205,7 @@ export default function TextPicker() {
       pickerOptions.globalMovingPhotoState = state;
       let photoPicker = new photoAccessHelper.PhotoViewPicker();
       try {
-        photoPicker.select(pickerOptions).then((photoSelectResult: photoAccessHelper.photoSelectResult) => {
+        photoPicker.select(pickerOptions).then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
           console.log('select错误码覆盖 PhotoViewPicker.select success, PhotoPickerResult uri: ' +
           JSON.stringify(photoSelectResult))
           // expect(true).assertTrue();
