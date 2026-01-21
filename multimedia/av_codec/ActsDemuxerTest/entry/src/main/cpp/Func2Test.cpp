@@ -1956,3 +1956,126 @@ int DemuxerFunctionAudioTrack0180()
     return 0;
 }
 
+int DemuxerFunctionAudioTrack0190()
+{
+    const char *file = "/data/storage/el2/base/files/media/Muxer_Auxiliary_02.mp4";
+    int fd = 0;
+    InitFile(file, TRACKNUM_4, fd);
+    if (!(g_initResult)) { return -1; }
+    bool videoIsEnd = false;
+    int videoFrame = 0;
+    OH_AVCodecBufferAttr bufferAttr;
+    const char *trackRefType = nullptr;
+    const char *trackdescription = nullptr;
+    int32_t *trackIdsDepth = nullptr;
+    size_t bufferSize;
+    if (OH_AVDemuxer_SeekToTime(demuxer, AUDIOTRACKSEEK / THOUSAND, SEEK_MODE_NEXT_SYNC) != AV_ERR_OK) { return -1; }
+    while (!videoIsEnd) {
+        trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_1);
+        if (trackFormat == nullptr) { return -1; }
+        if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) { return -1; }
+        if (OH_AVDemuxer_ReadSampleBuffer(demuxer, TRACKNUM_1, avBuffer) != AV_ERR_OK) { return -1; }
+        if (avBuffer == nullptr) { return -1; }
+        if (OH_AVBuffer_GetBufferAttr(avBuffer, &bufferAttr) != AV_ERR_OK) { return -1; }
+        if (g_trackType == MEDIA_TYPE_AUXILIARY) {
+            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_REFERENCE_TYPE,
+                &trackRefType))) { return -1; }
+            if (strcmp(trackRefType, TRACK_REF_TYPE_DEPTH.c_str()) != 0) { return -1; }
+            if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_DESCRIPTION,
+                &trackdescription))) { return -1; }
+            if (strcmp(trackdescription, AUXILIARY_DEPTH_TRACK_KEY.c_str()) != 0) { return -1; }
+            if (!(OH_AVFormat_GetIntBuffer(
+                trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS, &trackIdsDepth, &bufferSize))) { return -1; }
+            if (bufferSize != TRACKNUM_3) { return -1; }
+            if (trackIdsDepth[TRACKNUM_0] != TRACKNUM_0) { return -1; }
+            if (trackIdsDepth[TRACKNUM_1] != TRACKNUM_2) { return -1; }
+            if (trackIdsDepth[TRACKNUM_2] != TRACKNUM_3) { return -1; }
+            SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
+        }
+        OH_AVFormat_Destroy(trackFormat);
+        trackFormat = nullptr;
+    }
+    if (fd >= 0) {
+        close(fd);
+        fd = -1;
+    }
+    return 0;
+}
+
+int DemuxerFunctionAdd0010()
+{
+    const char *file = "/data/storage/el2/base/files/media/test_size_large.mp4";
+    int fd = 0;
+    InitFile(file, TRACKNUM_2, fd);
+    if (!(g_initResult)) { return -1; }
+    if (OH_AVDemuxer_SeekToTime(demuxer, EXPECTED_SEEK_TIME_2487, SEEK_MODE_NEXT_SYNC) != AV_ERR_UNKNOWN) { return -1; }
+    if (fd >= 0) {
+        close(fd);
+        fd = -1;
+    }
+    return 0;
+}
+
+int DemuxerFunctionAdd0020()
+{
+    const char *file = "/data/storage/el2/base/files/media/test_size_large.mp4";
+    int fd = 0;
+    InitFile(file, TRACKNUM_2, fd);
+    if (!(g_initResult)) { return -1; }
+    if (OH_AVDemuxer_ReadSampleBuffer(demuxer, 1, avBuffer) != AV_ERR_UNKNOWN) { return -1; }
+    if (fd >= 0) {
+        close(fd);
+        fd = -1;
+    }
+    return 0;
+}
+
+int DemuxerFunctionAdd0030()
+{
+    OH_LOG_INFO(LOG_APP, "[ADD_0030] START");
+
+    // 初始化 memory (需要用于 OH_AVDemuxer_ReadSample)
+    int32_t width = 3840;
+    int32_t height = 2160;
+    memory = OH_AVMemory_Create(width * height);
+    if (memory == nullptr) {
+        OH_LOG_INFO(LOG_APP, "[ADD_0030] OH_AVMemory_Create failed");
+        return -1;
+    }
+    OH_LOG_INFO(LOG_APP, "[ADD_0030] Memory created successfully");
+
+    const char *file = "/data/storage/el2/base/files/media/test_size_large.mp4";
+    int fd = 0;
+    InitFile(file, TRACKNUM_2, fd);
+    if (!(g_initResult)) {
+        OH_LOG_INFO(LOG_APP, "[ADD_0030] InitFile failed");
+        OH_AVMemory_Destroy(memory);
+        memory = nullptr;
+        return -1;
+    }
+    OH_LOG_INFO(LOG_APP, "[ADD_0030] InitFile success, trackCount=%{public}d", g_trackCount);
+
+    OH_AVCodecBufferAttr attr;
+    OH_LOG_INFO(LOG_APP, "[ADD_0030] Calling ReadSample with track 1, expecting AV_ERR_UNKNOWN");
+    int result = OH_AVDemuxer_ReadSample(demuxer, 1, memory, &attr);
+    OH_LOG_INFO(LOG_APP, "[ADD_0030] ReadSample returned: %{public}d, expected: AV_ERR_UNKNOWN", result);
+
+    OH_AVMemory_Destroy(memory);
+    memory = nullptr;
+
+    if (result != AV_ERR_UNKNOWN) {
+        OH_LOG_INFO(LOG_APP, "[ADD_0030] Result mismatch!");
+        if (fd >= 0) {
+            close(fd);
+            fd = -1;
+        }
+        return -1;
+    }
+
+    OH_LOG_INFO(LOG_APP, "[ADD_0030] SUCCESS");
+    if (fd >= 0) {
+        close(fd);
+        fd = -1;
+    }
+    return 0;
+}
