@@ -220,19 +220,28 @@
 </head>
 <body>
 <div class="container">
+    <!--    <header>-->
+    <!--        <h1>showSaveFilePicker 测试页面</h1>-->
+    <!--        <p class="subtitle">测试现代浏览器的文件保存API，允许用户选择下载位置</p>-->
+    <!--    </header>-->
+
     <div class="main-content">
         <div class="editor-section">
+
+
             <div class="actions">
                 <button id="saveBtn" class="primary-btn">
                     保存文件
                 </button>
+
                 <button id="resetBtn" class="secondary-btn">
                     重置内容
                 </button>
             </div>
-
+            <button id="excludeAcceptAllOptionBtn" class="secondary-btn">
+                <span class="button-icon">🔄</span>excludeAcceptAllOption的值为：true
+            </button>
             <h2>文件内容编辑</h2>
-
             <div class="form-group">
                 <label for="filename">文件名</label>
                 <input type="text" id="filename" placeholder="输入文件名（如：example.txt）" value="test-file.txt">

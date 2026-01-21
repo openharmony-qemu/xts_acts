@@ -198,9 +198,6 @@ struct webViewController {
             }
 
             case "emitOnShowFileSelector07": {
-              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                Utils.emitEvent(0, 202601077);
-              } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/showSaveFilePicker1.html")
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
@@ -216,14 +213,10 @@ struct webViewController {
                   let buttonThree = await driver.findComponent(ON.text('取消'));
                   await buttonThree.click()
                 }
-              }
               break;
             }
 
             case "emitOnShowFileSelector08": {
-              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                Utils.emitEvent(false, 202601078);
-              } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/showSaveFilePicker1.html")
                 await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
@@ -238,16 +231,10 @@ struct webViewController {
                   let buttonThree = await driver.findComponent(ON.text('取消'));
                   await buttonThree.click()
                 }
-              }
               break;
             }
 
             case "emitOnShowFileSelector09": {
-
-              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                //蓝区RK 手表
-                Utils.emitEvent(0, 202601079);
-              } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/showSaveFilePicker1.html")
                 await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
@@ -262,7 +249,6 @@ struct webViewController {
                   let buttonThree = await driver.findComponent(ON.text('取消'));
                   await buttonThree.click()
                 }
-              }
               break;
             }
 
