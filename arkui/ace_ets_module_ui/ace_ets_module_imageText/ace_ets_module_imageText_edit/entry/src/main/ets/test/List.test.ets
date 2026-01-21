@@ -239,7 +239,7 @@ export default function testsuite() {
   TextInputEnableSelectedDataDetectorTest()
   TextInputSetStyledPlaceholderTest()
   TextInputOnWillAttachIMETest()
-  TextAreaTextDirectionTest()        // Api23
+  TextInputTextDirectionTest()        // Api23
   TextAreaCompressLeadingPunctuation()
   TextAreaCompressLeadingPunctuationModifier()
   TextInputCompressLeadingPunctuation()

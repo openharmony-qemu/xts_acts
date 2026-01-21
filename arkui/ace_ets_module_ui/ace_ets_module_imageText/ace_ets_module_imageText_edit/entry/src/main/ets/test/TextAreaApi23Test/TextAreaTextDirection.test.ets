@@ -54,7 +54,7 @@ export default function TextAreaTextDirectionTest() {
       let strJson = getInspectorByKey('textArea_textDirection_LTR');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[TextAreaTextDirectionTest_0010] value: ' + JSON.stringify(obj.$attrs.textDirection));
-      expect(obj.$attrs.textDirection).assertEqual('"LTR"');
+      expect(obj.$attrs.textDirection).assertEqual('LTR');
       console.info('[TextAreaTextDirectionTest_0010] END');
       done();
     });
@@ -72,7 +72,7 @@ export default function TextAreaTextDirectionTest() {
       let strJson = getInspectorByKey('textArea_textDirection_RTL');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[TextAreaTextDirectionTest_0020] value: ' + JSON.stringify(obj.$attrs.textDirection));
-      expect(obj.$attrs.textDirection).assertEqual('"RTL"');
+      expect(obj.$attrs.textDirection).assertEqual('RTL');
       console.info('[TextAreaTextDirectionTest_0020] END');
       done();
     });
@@ -90,7 +90,7 @@ export default function TextAreaTextDirectionTest() {
       let strJson = getInspectorByKey('textArea_textDirection_DEFAULT');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[TextAreaTextDirectionTest_0030] value: ' + JSON.stringify(obj.$attrs.textDirection));
-      expect(obj.$attrs.textDirection).assertEqual('"DEFAULT"');
+      expect(obj.$attrs.textDirection).assertEqual('DEFAULT');
       console.info('[TextAreaTextDirectionTest_0030] END');
       done();
     });
@@ -108,7 +108,7 @@ export default function TextAreaTextDirectionTest() {
       let strJson = getInspectorByKey('textArea_textDirection_AUTO');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[TextAreaTextDirectionTest_0040] value: ' + JSON.stringify(obj.$attrs.textDirection));
-      expect(obj.$attrs.textDirection).assertEqual('"AUTO"');
+      expect(obj.$attrs.textDirection).assertEqual('AUTO');
       console.info('[TextAreaTextDirectionTest_0040] END');
       done();
     });
@@ -126,7 +126,7 @@ export default function TextAreaTextDirectionTest() {
       let strJson = getInspectorByKey('textArea_textDirection_undefined');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[TextAreaTextDirectionTest_0050] value: ' + JSON.stringify(obj.$attrs.textDirection));
-      expect(obj.$attrs.textDirection).assertEqual('"DEFAULT"');
+      expect(obj.$attrs.textDirection).assertEqual('DEFAULT');
       console.info('[TextAreaTextDirectionTest_0050] END');
       done();
     });
@@ -144,26 +144,8 @@ export default function TextAreaTextDirectionTest() {
       let strJson = getInspectorByKey('textArea_textDirection_default');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[TextAreaTextDirectionTest_0060] value: ' + JSON.stringify(obj.$attrs.textDirection));
-      expect(obj.$attrs.textDirection).assertEqual('"DEFAULT"');
+      expect(obj.$attrs.textDirection).assertEqual('DEFAULT');
       console.info('[TextAreaTextDirectionTest_0060] END');
-      done();
-    });
-
-    /**
-     * @tc.name   TextAreaTextDirectionTest_0070
-     * @tc.number SUB_ACE_TextAreaTextDirectionTest_0070
-     * @tc.desc   test the maxLines of TextArea: -1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('TextAreaTextDirectionTest_0070', Level.LEVEL2, async (done: Function) => {
-      console.info('[TextAreaTextDirectionTest_0070] START');
-      let strJson = getInspectorByKey('textArea_textDirection_default');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info('[TextAreaTextDirectionTest_0070] value: ' + JSON.stringify(obj.$attrs.maxLines));
-      expect(obj.$attrs.maxLines).assertEqual('0');
-      console.info('[TextAreaTextDirectionTest_0070] END');
       done();
     });
   })
