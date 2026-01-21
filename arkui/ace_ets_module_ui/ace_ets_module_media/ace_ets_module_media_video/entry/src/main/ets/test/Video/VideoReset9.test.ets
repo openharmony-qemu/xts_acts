@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +17,7 @@ import router from '@ohos.router';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium"
 import CommonFunc from '../../MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
-
+import wifiMg from '@ohos.wifiManager';
 
 export default function VideoReset9() {
   describe('VideoReset9', () => {
@@ -39,6 +39,40 @@ export default function VideoReset9() {
       } catch (err) {
         console.error("push VideoReset9 page error: " + err);
       }
+      
+      if(!wifiMg.isWifiActive()){
+        console.info("======> wifi_test/enable wifi:" + wifiMg.enableWifi());
+        await CommonFunc.sleep(5000);
+      }
+      
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+        console.info("======> Internet chload : " + JSON.stringify(data.chload));
+        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+            
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info("======> WLAN connection established ");
+        } else {
+          expect().message("======> WLAN Network error").assertFail(); //方式一
+          //throw new Error("======> WLAN Network error");//方式二
+          done();
+        }
+        if (data.chload >= 800 || data.rssi <= -80) {
+          expect().message("======> WLAN Network error").assertFail();//方式一
+          //throw new Error("======> WLAN Network error");//方式二
+          done();
+        } else if (data.chload >= 500) {
+          console.info("======> The internet connection is poor. ");
+        }
+            
+      } catch (err) {
+        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+        throw (err as Error);
+        done();
+      }
+      
       done()
     });
 
@@ -57,11 +91,10 @@ export default function VideoReset9() {
      */
     it('VideoReset9_0100', Level.LEVEL2, async  (done:Function) =>{
       console.info('[VideoReset9_0100] START');
+      
       await CommonFunc.sleep(5000);
-
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-
       let btn1 = await driver.findComponent(ON.id('VideoReset9_start'));
       await btn1.click()
       console.info("[VideoReset9_0100] btnStart");
@@ -99,7 +132,7 @@ export default function VideoReset9() {
 
       console.info('[VideoReset9_0100] END');
       done();
+
     });
   })
 }
-
