@@ -132,6 +132,20 @@ protected:
     OH_AVFormat *format;
     bool isFirstFrame_ = true;
     int64_t timeStamp_ = 0;
+private:
+    //EncoderConfigureHEAAC
+    void SetHeAacConfig();
+    int32_t ValidateAndConfigureEncoder();
+    int32_t ManageHeAacThreadsAndResources();
+    //EncoderConfigureHEAACv2
+    void SetHeAacV2Config();
+    int32_t ConfigureAudioEncoder();
+    int32_t StartAndManageThreads();
+    void CleanupResources();
+    //EncoderConfigureByCap
+    void SetCapConfig();
+    int32_t CreateAndStartThreads();
+    void CleanupCapResources();
 };
 } // namespace OHOS
 

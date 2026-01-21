@@ -364,16 +364,19 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureLCAAC()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAAC()
-{
+void OHOS::AudioCodeCapiEncoderNdkTest::SetHeAacConfig() {
     inputFilePath_ = AAC_INPUT_FILE_PATH;
     outputFilePath_ = AAC_OUTPUT_FILE_PATH;
     frameBytes_ = AAC_DEFAULT_FRAME_BYTES;
+    
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, CHANNEL_COUNT);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, OH_BitsPerSample::SAMPLE_S16LE);
     OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, BITS_RATE);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, SAMPLE_RATE);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, AAC_PROFILE_HE);
+}
+
+int32_t OHOS::AudioCodeCapiEncoderNdkTest::ValidateAndConfigureEncoder() {
     if (IsSupportHeAac()) {
         if (OH_AudioCodec_Configure(audioEnc_, format) != AV_ERR_OK) {
             return OHOS::RESULT_CONFIG_FAIL;
@@ -387,13 +390,17 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAAC()
         }
         return OHOS::RESULT_UNDEFINED_ERROR;
     }
+    return AV_ERR_OK;
+}
 
+int32_t OHOS::AudioCodeCapiEncoderNdkTest::ManageHeAacThreadsAndResources() {
     isRunning_.store(true);
 
     inputLoop_ = make_unique<thread>(&AudioCodeCapiEncoderNdkTest::InputFuncAv, this);
     if (inputLoop_ == nullptr) {
         return OHOS::RESULT_CONFIG_FAIL;
     }
+
     outputLoop_ = make_unique<thread>(&AudioCodeCapiEncoderNdkTest::OutputFuncAv, this);
     if (outputLoop_ == nullptr) {
         if (inputLoop_ != nullptr && inputLoop_->joinable()) {
@@ -405,6 +412,7 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAAC()
     if (OH_AudioCodec_Start(audioEnc_) != AV_ERR_OK) {
         return OHOS::START_CODEC_FAILED;
     }
+
     while (isRunning_.load()) {
         sleep(1);
     }
@@ -417,7 +425,6 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAAC()
         }
         inputLoop_->join();
     }
-
     if (outputLoop_ != nullptr && outputLoop_->joinable()) {
         {
             unique_lock<mutex> lock(signalAv_->outMutex_);
@@ -425,12 +432,31 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAAC()
         }
         outputLoop_->join();
     }
+
     if (OH_AudioCodec_Flush(audioEnc_) != AV_ERR_OK) {
         return OHOS::FLUSH_ERROR;
     }
     if (OH_AudioCodec_Destroy(audioEnc_) != AV_ERR_OK) {
         return OHOS::ERROR_DESTROY_FAILED;
     }
+
+    return AV_ERR_OK;
+}
+
+int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAAC()
+{
+    SetHeAacConfig();
+
+    int32_t ret = ValidateAndConfigureEncoder();
+    if (ret != AV_ERR_OK) {
+        return ret;
+    }
+
+    ret = ManageHeAacThreadsAndResources();
+    if (ret != AV_ERR_OK) {
+        return ret;
+    }
+
     return ProceByMimeFunc(OH_AVCODEC_MIMETYPE_AUDIO_AAC, true);
 }
 /**
@@ -441,8 +467,7 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAAC()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAACv2()
-{
+void OHOS::AudioCodeCapiEncoderNdkTest::SetHeAacV2Config() {
     inputFilePath_ = AAC_INPUT_FILE_PATH;
     outputFilePath_ = AAC_OUTPUT_FILE_PATH;
     frameBytes_ = AAC_DEFAULT_FRAME_BYTES;
@@ -451,6 +476,9 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAACv2()
     OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, BITS_RATE);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, SAMPLE_RATE);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, AAC_PROFILE_HE_V2);
+}
+
+int32_t OHOS::AudioCodeCapiEncoderNdkTest::ConfigureAudioEncoder() {
     if (IsSupportHeAac()) {
         if (OH_AudioCodec_Configure(audioEnc_, format) != AV_ERR_OK) {
             return OHOS::RESULT_CONFIG_FAIL;
@@ -464,27 +492,35 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAACv2()
         }
         return OHOS::RESULT_UNDEFINED_ERROR;
     }
+    return AV_ERR_OK;
+}
+
+int32_t OHOS::AudioCodeCapiEncoderNdkTest::StartAndManageThreads() {
     isRunning_.store(true);
 
-    inputLoop_ = make_unique<thread>(&AudioCodeCapiEncoderNdkTest::InputFuncAv, this);
+    inputLoop_ = std::make_unique<std::thread>(&AudioCodeCapiEncoderNdkTest::InputFuncAv, this);
     if (inputLoop_ == nullptr) {
         return OHOS::RESULT_CONFIG_FAIL;
     }
-    outputLoop_ = make_unique<thread>(&AudioCodeCapiEncoderNdkTest::OutputFuncAv, this);
-    if (inputLoop_ != nullptr && inputLoop_->joinable()) {
-            inputLoop_->join();
-        }
+
+    outputLoop_ = std::make_unique<std::thread>(&AudioCodeCapiEncoderNdkTest::OutputFuncAv, this);
     if (OH_AudioCodec_Start(audioEnc_) != AV_ERR_OK) {
         return OHOS::START_CODEC_FAILED;
     }
+
     while (isRunning_.load()) {
         sleep(1);
     }
 
+    return AV_ERR_OK;
+}
+
+void OHOS::AudioCodeCapiEncoderNdkTest::CleanupResources() {
     isRunning_.store(false);
+
     if (inputLoop_ != nullptr && inputLoop_->joinable()) {
         {
-            unique_lock<mutex> lock(signalAv_->inMutex_);
+            std::unique_lock<std::mutex> lock(signalAv_->inMutex_);
             signalAv_->inCond_.notify_all();
         }
         inputLoop_->join();
@@ -492,17 +528,35 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAACv2()
 
     if (outputLoop_ != nullptr && outputLoop_->joinable()) {
         {
-            unique_lock<mutex> lock(signalAv_->outMutex_);
+            std::unique_lock<std::mutex> lock(signalAv_->outMutex_);
             signalAv_->outCond_.notify_all();
         }
         outputLoop_->join();
     }
+
     if (OH_AudioCodec_Flush(audioEnc_) != AV_ERR_OK) {
-        return OHOS::FLUSH_ERROR;
+        return;
     }
     if (OH_AudioCodec_Destroy(audioEnc_) != AV_ERR_OK) {
-        return OHOS::ERROR_DESTROY_FAILED;
+        return;
     }
+}
+
+int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAACv2()
+{
+    SetHeAacV2Config();
+
+    int32_t ret = ConfigureAudioEncoder();
+    if (ret != AV_ERR_OK) {
+        return ret;
+    }
+
+    ret = StartAndManageThreads();
+    if (ret != AV_ERR_OK) {
+        return ret;
+    }
+
+    CleanupResources();
 
     return ProceByMimeFunc(OH_AVCODEC_MIMETYPE_AUDIO_AAC, true);
 }
@@ -514,27 +568,29 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAACv2()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureByCap()
-{
+void OHOS::AudioCodeCapiEncoderNdkTest::SetCapConfig() {
     inputFilePath_ = AAC_INPUT_FILE_PATH;
     outputFilePath_ = AAC_OUTPUT_FILE_PATH;
     frameBytes_ = AAC_DEFAULT_FRAME_BYTES;
+    
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, CHANNEL_COUNT);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, OH_BitsPerSample::SAMPLE_S16LE);
     OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, BITS_RATE);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, SAMPLE_RATE);
+    
     if (IsSupportHeAac()) {
         OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, AAC_PROFILE_HE);
     }
-    if (OH_AudioCodec_Configure(audioEnc_, format) != AV_ERR_OK) {
-        return OHOS::RESULT_CONFIG_FAIL;
-    }
+}
+
+int32_t OHOS::AudioCodeCapiEncoderNdkTest::CreateAndStartThreads() {
     isRunning_.store(true);
 
     inputLoop_ = make_unique<thread>(&AudioCodeCapiEncoderNdkTest::InputFuncAv, this);
     if (inputLoop_ == nullptr) {
         return OHOS::RESULT_CONFIG_FAIL;
     }
+
     outputLoop_ = make_unique<thread>(&AudioCodeCapiEncoderNdkTest::OutputFuncAv, this);
     if (outputLoop_ == nullptr) {
         if (inputLoop_ != nullptr && inputLoop_->joinable()) {
@@ -542,14 +598,21 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureByCap()
         }
         return OHOS::RESULT_CONFIG_FAIL;
     }
+
     if (OH_AudioCodec_Start(audioEnc_) != AV_ERR_OK) {
         return OHOS::RESULT_CONFIG_FAIL;
     }
+
     while (isRunning_.load()) {
         sleep(1);
     }
 
+    return AV_ERR_OK;
+}
+
+void OHOS::AudioCodeCapiEncoderNdkTest::CleanupCapResources() {
     isRunning_.store(false);
+
     if (inputLoop_ != nullptr && inputLoop_->joinable()) {
         {
             unique_lock<mutex> lock(signalAv_->inMutex_);
@@ -565,12 +628,30 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureByCap()
         }
         outputLoop_->join();
     }
+
     if (OH_AudioCodec_Flush(audioEnc_) != AV_ERR_OK) {
-        return OHOS::FLUSH_ERROR;
+        return;
     }
     if (OH_AudioCodec_Destroy(audioEnc_) != AV_ERR_OK) {
-        return OHOS::DESTROY_ERROR;
+        return;
     }
+}
+
+int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureByCap()
+{
+    SetCapConfig();
+
+    if (OH_AudioCodec_Configure(audioEnc_, format) != AV_ERR_OK) {
+        return OHOS::RESULT_CONFIG_FAIL;
+    }
+
+    int32_t ret = CreateAndStartThreads();
+    if (ret != AV_ERR_OK) {
+        return ret;
+    }
+
+    CleanupCapResources();
+
     return ProceByCapabilityFunc(OH_AVCODEC_MIMETYPE_AUDIO_AAC, true);
 }
 /**
