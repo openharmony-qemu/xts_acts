@@ -81,7 +81,6 @@ export default function aspectRatioWidthTest() {
     'GridItem',
     'List',
     // 'ListItem',
-    'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',

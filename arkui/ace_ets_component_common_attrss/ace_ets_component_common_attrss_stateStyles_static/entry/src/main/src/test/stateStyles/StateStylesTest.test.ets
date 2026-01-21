@@ -79,8 +79,6 @@ export default function stateStylesTest() {
     'List',
     'ListItem',
     'ListItemGroup',
-    'Navigator',
-    'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',

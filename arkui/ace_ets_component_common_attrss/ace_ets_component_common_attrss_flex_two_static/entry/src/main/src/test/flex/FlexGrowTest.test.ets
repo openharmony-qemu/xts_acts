@@ -71,7 +71,6 @@ export default function flexGrowTest() {
     'ScrollBar',
     'Row',
     'RelativeContainer',
-    'Navigator',
     'TextTimer',
     'Progress',
     'QRCode',
