@@ -29,7 +29,7 @@ enum CaseNum {
     CASE_NUM_4,
     CASE_NUM_5
 };
-int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int32_t defaultValue) 
+int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int32_t defaultValue)
 {
     return defaultValue;
 }
@@ -185,7 +185,6 @@ static napi_value Aac_Profile(napi_env env, napi_callback_info info)
         return resultValue;
     });
 }
-
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)

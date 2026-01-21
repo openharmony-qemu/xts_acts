@@ -151,7 +151,7 @@ void OHOS::AudioCodeCapiEncoderNdkTest::InputFuncAv()
     }
     while (isRunning_.load()) {
         unique_lock<mutex> lock(signalAv_->inMutex_);
-        signalAv_ -> inCond_.wait(lock, [this]() -> bool { 
+        signalAv_ -> inCond_.wait(lock, [this]() -> bool {
             return (signalAv_->inQueue_.size() > 0) || (!isRunning_.load());
         });
         if (!isRunning_.load()) {
@@ -200,8 +200,8 @@ void OHOS::AudioCodeCapiEncoderNdkTest::OutputFuncAv()
 
     while (isRunning_.load()) {
         unique_lock<mutex> lock(signalAv_->outMutex_);
-        signalAv_ -> inCond_.wait(lock, [this]() -> bool { 
-            return (signalAv_->inQueue_.size() > 0) || (!isRunning_.load()); 
+        signalAv_ -> inCond_.wait(lock, [this]() -> bool {
+            return (signalAv_->inQueue_.size() > 0) || (!isRunning_.load());
         });
 
         if (!isRunning_.load()) {
@@ -328,7 +328,7 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureLCAAC()
         return OHOS::RESULT_UNDEFINED_ERROR;
     }
     while (isRunning_.load()) {
-        sleep(1); 
+        sleep(1);
     }
     
     isRunning_.store(false);
@@ -406,7 +406,7 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAAC()
         return OHOS::START_CODEC_FAILED;
     }
     while (isRunning_.load()) {
-        sleep(1); 
+        sleep(1);
     }
 
     isRunning_.store(false);
@@ -478,7 +478,7 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAACv2()
         return OHOS::START_CODEC_FAILED;
     }
     while (isRunning_.load()) {
-        sleep(1); 
+        sleep(1);
     }
 
     isRunning_.store(false);
@@ -546,7 +546,7 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureByCap()
         return OHOS::RESULT_CONFIG_FAIL;
     }
     while (isRunning_.load()) {
-        sleep(1); 
+        sleep(1);
     }
 
     isRunning_.store(false);

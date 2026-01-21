@@ -87,10 +87,10 @@ void OnInputBufferAvailableAv(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *da
 void OnOutputBufferAvailableAv(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *data, void *userData);
 
 // AudioCodeCapiEncoderNdkTest 类声明
-class AudioCodeCapiEncoderNdkTest 
+class AudioCodeCapiEncoderNdkTest
 {
 public:
-    ~AudioCodeCapiEncoderNdkTest() 
+    ~AudioCodeCapiEncoderNdkTest()
     {
         TearDown();
     }
