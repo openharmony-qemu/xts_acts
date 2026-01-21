@@ -65,9 +65,12 @@ napi_value DeleteBackwardTest::CreateNativeNode(napi_env env, napi_callback_info
             IDTest(text_input, "textInputMiningTips");
             nodeAPI->setAttribute(text_input, NODE_TEXT_INPUT_TEXT, &text_placeholder);
             
-            auto controller{ OH_ArkUI_TextContentBaseController_Create() };
+            auto controller= OH_ArkUI_TextContentBaseController_Create () ;
             ArkUI_AttributeItem item_controller{ .object = controller };
             nodeAPI->setAttribute(text_input, NODE_TEXT_INPUT_TEXT_CONTENT_CONTROLLER_BASE, &item_controller);
+
+            ArkUI_TextContentBaseController* controller1= OH_ArkUI_TextContentBaseController_Create () ;
+            OH_ArkUI_TextContentBaseController_Dispose(controller1);
             
             auto button{ nodeAPI->createNode(ARKUI_NODE_BUTTON) };
             ArkUI_AttributeItem button_label{ .string = "DeleteBackward" };

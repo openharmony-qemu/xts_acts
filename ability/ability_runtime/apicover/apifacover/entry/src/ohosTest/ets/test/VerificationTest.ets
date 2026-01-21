@@ -140,6 +140,9 @@ export default function verificationTest() {
         let lastRequestWant: ESObject = undefined;
         let launchReason: ESObject = undefined;
         let lastExitReason: ESObject = undefined;
+        let launchUTCTime: ESObject = undefined;
+        let launchUptime: ESObject = undefined;
+        let specifiedId: ESObject = undefined;
         let subscriber: commonEventManager.CommonEventSubscriber;
         let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["Stage_MainAbility3_onCreate", "Stage_MainAbility3_onDestroy"]
@@ -155,8 +158,86 @@ export default function verificationTest() {
               lastRequestWant = data.parameters?.lastRequestWant;
               launchReason = data.parameters?.launchReason;
               lastExitReason = data.parameters?.lastExitReason;
+              launchUTCTime = data.parameters?.launchUTCTime;
+              launchUptime = data.parameters?.launchUptime;
+              specifiedId = data.parameters?.specifiedId;
             }
             if (data.event == "Stage_MainAbility3_onDestroy") {
+              expect(launchWant.bundleName).assertEqual("ohos.acts.aafwk.test.stagesupplement");
+              expect(lastRequestWant.bundleName).assertEqual("ohos.acts.aafwk.test.stagesupplement");
+              expect(launchReason != AbilityConstant.LaunchReason.CALL).assertTrue();
+              expect(launchReason != AbilityConstant.LaunchReason.CONTINUATION).assertTrue();
+              expect(lastExitReason != AbilityConstant.LastExitReason.UNKNOWN).assertTrue();
+              expect(launchUTCTime > 0).assertTrue();
+              expect(launchUptime > 0).assertTrue();
+              expect(!specifiedId).assertTrue();
+              commonEvent.unsubscribe(subscriber, () => {
+                console.info(TAG + "===UnSubscribeInfoCallback===");
+                done();
+              })
+            }
+          })
+        })
+
+        let wantNum: Want = {
+          bundleName: 'ohos.acts.aafwk.test.stagesupplement',
+          abilityName: 'MainAbility3'
+        }
+        AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(wantNum)
+          .then((data) => {
+            console.info(TAG + "startAbility data = " + JSON.stringify(data));
+          })
+          .catch((err: BusinessError) => {
+            console.info(TAG + "startAbility err = " + JSON.stringify(err));
+            if (err.code != 16000017) {
+              expect().assertFail();
+              done();
+            }
+          });
+      } catch (err) {
+        console.info(TAG + "catch err = " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+  /**
+    * @tc.name   SUB_AA_OpenHarmony_AbilityConstant_0300
+    * @tc.number SUB_AA_OpenHarmony_AbilityConstant_0300
+    * @tc.desc   Function test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AA_OpenHarmony_AbilityConstant_0300', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_AA_OpenHarmony_AbilityConstant_0300 ==>';
+      console.info(TAG + " start");
+      try {
+        let launchWant: ESObject = undefined;
+        let lastRequestWant: ESObject = undefined;
+        let launchReason: ESObject = undefined;
+        let lastExitReason: ESObject = undefined;
+        let specifiedId: ESObject = undefined;
+        let subscriber: commonEventManager.CommonEventSubscriber;
+        let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: ["Stage_MainAbility6_onCreate", "Stage_MainAbility6_onDestroy"]
+        }
+
+        commonEvent.createSubscriber(subscribeInfo, (err, data) => {
+          console.info(TAG + "===CreateSubscriberCallback===");
+          subscriber = data;
+          commonEvent.subscribe(subscriber, (err, data) => {
+            console.info(TAG + "===SubscribeInfoCallback===" + JSON.stringify(data));
+            if (data.event == "Stage_MainAbility6_onCreate") {
+              launchWant = data.parameters?.launchWant;
+              lastRequestWant = data.parameters?.lastRequestWant;
+              launchReason = data.parameters?.launchReason;
+              lastExitReason = data.parameters?.lastExitReason;
+              if(JSON.stringify(data).indexOf('specifiedId') != -1){
+                specifiedId = data.parameters?.specifiedId;
+                expect(specifiedId).assertEqual("onAcceptWant");
+              }
+            }
+            if (data.event == "Stage_MainAbility6_onDestroy") {
               expect(launchWant.bundleName).assertEqual("ohos.acts.aafwk.test.stagesupplement");
               expect(lastRequestWant.bundleName).assertEqual("ohos.acts.aafwk.test.stagesupplement");
               expect(launchReason != AbilityConstant.LaunchReason.CALL).assertTrue();
@@ -172,7 +253,7 @@ export default function verificationTest() {
 
         let wantNum: Want = {
           bundleName: 'ohos.acts.aafwk.test.stagesupplement',
-          abilityName: 'MainAbility3'
+          abilityName: 'MainAbility6'
         }
         AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(wantNum)
           .then((data) => {

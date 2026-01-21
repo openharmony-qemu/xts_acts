@@ -41,6 +41,8 @@
 #include "SelectedDragPreviewStyleTest.h"
 
 namespace NativeXComponentSample {
+    static ArkUI_NodeHandle drag_text = nullptr;
+    static ArkUI_NodeHandle text = nullptr;
     ColorManager ColorManager::ColorManager_;
 
     ColorManager::~ColorManager() {
@@ -119,84 +121,92 @@ namespace NativeXComponentSample {
         if (nodeAPI != nullptr) {
             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ColorManager", "CreateNativeNode  34444");
             if (nodeAPI->createNode != nullptr && nodeAPI->addChild != nullptr) {
-                OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ColorManager", "OnSurfaceCreatedCB  222--1");
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ColorManager", "OnSurfaceCreatedCB  222--1");
 
-                auto startDrag = nodeAPI->createNode(ARKUI_NODE_COLUMN);
-                auto text = nodeAPI->createNode(ARKUI_NODE_TEXT);
-                ArkUI_AttributeItem LABEL_Item = {.string = "CAPI测试"};
-                ArkUI_NumberValue fontSize[] = {20};
-                ArkUI_AttributeItem Font_Item = {fontSize, 1};
-                ArkUI_NumberValue marginValue[] = {20};
-                ArkUI_AttributeItem marginItem = {marginValue, 1};
-                nodeAPI->setAttribute(text, NODE_TEXT_CONTENT, &LABEL_Item);
-                nodeAPI->setAttribute(text, NODE_TEXT_FONT, &Font_Item);
-                nodeAPI->setAttribute(text, NODE_MARGIN, &marginItem);
-                nodeAPI->registerNodeEvent(text, NODE_ON_PRE_DRAG, 1, nullptr);
-                ArkUI_AttributeItem text_id_item = {};
-                text_id_item.string = "Drag";
-                nodeAPI->setAttribute(text, NODE_ID, &text_id_item);
-                OH_ArkUI_SetNodeDraggable(text, true); 
+            auto startDrag = nodeAPI->createNode(ARKUI_NODE_COLUMN);
+            ArkUI_NumberValue WidthPercentValue[] = {PARAM_1};
+            ArkUI_AttributeItem WidthItemPercent = {WidthPercentValue, PARAM_1};
+            ArkUI_NumberValue HeightPercentValue[] = {PARAM_1};
+            ArkUI_AttributeItem HeightPercentItem = {HeightPercentValue, PARAM_1};
+            nodeAPI->setAttribute(startDrag, NODE_WIDTH_PERCENT, &WidthItemPercent);
+            nodeAPI->setAttribute(startDrag, NODE_HEIGHT_PERCENT, &HeightPercentItem);
+            ArkUI_NumberValue marginValue[] = {PARAM_5};
+            ArkUI_AttributeItem marginItem = {marginValue, PARAM_1};
+            
+            drag_text = nodeAPI->createNode(ARKUI_NODE_TEXT);
+            ArkUI_AttributeItem Text_Item = {.string = "test测试"};
+            ArkUI_NumberValue copyOptVal = {.i32 = ARKUI_TEXT_COPY_OPTIONS_IN_APP};
+            ArkUI_AttributeItem copyOptItem = {&copyOptVal, PARAM_1};
+            nodeAPI->setAttribute(drag_text, NODE_TEXT_CONTENT, &Text_Item);
+            nodeAPI->setAttribute(drag_text, NODE_TEXT_COPY_OPTION, &copyOptItem);
+            ArkUI_SelectedDragPreviewStyle *text_options = OH_ArkUI_SelectedDragPreviewStyle_Create();
+            OH_ArkUI_SelectedDragPreviewStyle_SetColor(text_options, 0xFFFF0000);
+            uint32_t getColorText = OH_ArkUI_SelectedDragPreviewStyle_GetColor(text_options);
+            ArkUI_AttributeItem textColorItem = {.size = PARAM_1, .object = text_options};
+            nodeAPI->setAttribute(drag_text, NODE_TEXT_SELECTED_DRAG_PREVIEW_STYLE, &textColorItem);
+            ArkUI_AttributeItem text_test_id_item = {};
+            text_test_id_item.string = "text_test_capi";
+            nodeAPI->setAttribute(drag_text, NODE_ID, &text_test_id_item);
+            OH_ArkUI_SetNodeDraggable(drag_text, true);
+            
+            auto textInput = nodeAPI->createNode(ARKUI_NODE_TEXT_INPUT);
+            ArkUI_AttributeItem input_Item = {.string = "TEXT_INPUT测试"};
+            nodeAPI->setAttribute(textInput, NODE_TEXT_INPUT_TEXT, &input_Item);
+            nodeAPI->setAttribute(textInput, NODE_MARGIN, &marginItem);
+            nodeAPI->registerNodeEvent(textInput, NODE_ON_DRAG_START, PARAM_2, nullptr);
+            ArkUI_SelectedDragPreviewStyle *textInput_options = OH_ArkUI_SelectedDragPreviewStyle_Create();
+            OH_ArkUI_SelectedDragPreviewStyle_SetColor(textInput_options, 0xFFFFFF00);
+            uint32_t getColorTextInput = OH_ArkUI_SelectedDragPreviewStyle_GetColor(textInput_options);
+            
+            ArkUI_AttributeItem textInputColorItem = {.size = PARAM_1, .object = textInput_options};
+            nodeAPI->setAttribute(textInput, NODE_TEXT_INPUT_SELECTED_DRAG_PREVIEW_STYLE, &textInputColorItem);
+            ArkUI_AttributeItem textInput_test_id_item = {};
+            textInput_test_id_item.string = "textInput_test_capi";
+            nodeAPI->setAttribute(textInput, NODE_ID, &textInput_test_id_item);
+            OH_ArkUI_SetNodeDraggable(textInput, true);
 
-                auto drag_text = nodeAPI->createNode(ARKUI_NODE_TEXT);
-                ArkUI_AttributeItem Text_Item = {.string = "test测试"};
-                ArkUI_NumberValue copyOptVal = { .i32 = ARKUI_TEXT_COPY_OPTIONS_IN_APP };
-                ArkUI_AttributeItem copyOptItem = { &copyOptVal, 1 };
-                nodeAPI->setAttribute(drag_text, NODE_TEXT_CONTENT, &Text_Item);
-                nodeAPI->setAttribute(drag_text, NODE_TEXT_COPY_OPTION, &copyOptItem);
-                ArkUI_SelectedDragPreviewStyle *text_options = OH_ArkUI_SelectedDragPreviewStyle_Create();
-                OH_ArkUI_SelectedDragPreviewStyle_SetColor(text_options, 0xFFFF0000);
-                ArkUI_AttributeItem textColorItem = {.size = 1, .object = text_options};
-                nodeAPI->setAttribute(drag_text, NODE_TEXT_SELECTED_DRAG_PREVIEW_STYLE, &textColorItem);
-                ArkUI_AttributeItem text_test_id_item = {};
-                text_test_id_item.string = "text_test_capi";
-                nodeAPI->setAttribute(drag_text, NODE_ID, &text_test_id_item);
-                OH_ArkUI_SetNodeDraggable(drag_text, true);
+            auto textArea = nodeAPI->createNode(ARKUI_NODE_TEXT_AREA);
+            ArkUI_AttributeItem arae_Item0 = {.string = "TEXT_AREA测试"};
+            nodeAPI->setAttribute(textArea, NODE_TEXT_AREA_TEXT, &arae_Item0);
+            nodeAPI->setAttribute(textArea, NODE_MARGIN, &marginItem);
+            ArkUI_SelectedDragPreviewStyle *textArea_options = OH_ArkUI_SelectedDragPreviewStyle_Create();
+            OH_ArkUI_SelectedDragPreviewStyle_SetColor(textArea_options, Undefined);
+            uint32_t getColorTextArea = OH_ArkUI_SelectedDragPreviewStyle_GetColor(textArea_options);
+            OH_ArkUI_SelectedDragPreviewStyle_Dispose(nullptr);
+            ArkUI_AttributeItem textAreaColorItem = {.size = PARAM_1, .object = textArea_options};
+            nodeAPI->setAttribute(textArea, NODE_TEXT_AREA_SELECTED_DRAG_PREVIEW_STYLE, &textAreaColorItem);
+            ArkUI_AttributeItem textArea_test_id_item = {};
+            textArea_test_id_item.string = "textArea_test_capi";
+            nodeAPI->setAttribute(textArea, NODE_ID, &textArea_test_id_item);
+            OH_ArkUI_SetNodeDraggable(textArea, true);
+            
+            std::string contentTextStr2 = std::to_string(getColorText) + std::to_string(getColorTextInput) +
+                                            std::to_string(getColorTextArea);
+            
+            text = nodeAPI->createNode(ARKUI_NODE_TEXT);
+            ArkUI_AttributeItem LABEL_Item = {.string = contentTextStr2.c_str()};
+            ArkUI_NumberValue fontSize[] = {PARAM_20};
+            ArkUI_AttributeItem Font_Item = {fontSize, PARAM_1};
+            nodeAPI->setAttribute(text, NODE_TEXT_CONTENT, &LABEL_Item);
+            nodeAPI->setAttribute(text, NODE_TEXT_FONT, &Font_Item);
+            nodeAPI->setAttribute(text, NODE_MARGIN, &marginItem);
+            nodeAPI->registerNodeEvent(text, NODE_ON_PRE_DRAG, PARAM_1, nullptr);
+            ArkUI_AttributeItem text_id_item = {};
+            text_id_item.string = "Drag";
+            nodeAPI->setAttribute(text, NODE_ID, &text_id_item);
+            OH_ArkUI_SetNodeDraggable(text, true);
+            
+            OH_ArkUI_SelectedDragPreviewStyle_Dispose(text_options);
+            OH_ArkUI_SelectedDragPreviewStyle_Dispose(textInput_options);
+            OH_ArkUI_SelectedDragPreviewStyle_Dispose(textArea_options);
 
-                auto textInput = nodeAPI->createNode(ARKUI_NODE_TEXT_INPUT);
-                ArkUI_AttributeItem input_Item = {.string = "TEXT_INPUT测试"};
-                nodeAPI->setAttribute(textInput, NODE_TEXT_INPUT_TEXT, &input_Item);
-                ArkUI_NumberValue textInputHeightValue[] = {50};
-                ArkUI_AttributeItem textInputHeightItem = {textInputHeightValue, 1};
-                ArkUI_NumberValue textInputDragWidthValue[] = {230};
-                ArkUI_AttributeItem textInputDragWidthItem = {textInputDragWidthValue, 1};
-                nodeAPI->setAttribute(textInput, NODE_WIDTH, &textInputDragWidthItem);
-                nodeAPI->setAttribute(textInput, NODE_HEIGHT, &textInputHeightItem);
-                nodeAPI->setAttribute(textInput, NODE_MARGIN, &marginItem);
-                nodeAPI->registerNodeEvent(textInput, NODE_ON_DRAG_START, 2, nullptr);
-                ArkUI_SelectedDragPreviewStyle *textInput_options = OH_ArkUI_SelectedDragPreviewStyle_Create();
-                OH_ArkUI_SelectedDragPreviewStyle_SetColor(textInput_options, 0xFFFFFF00);
-                ArkUI_AttributeItem textInputColorItem = {.size = 1, .object = textInput_options};
-                nodeAPI->setAttribute(textInput, NODE_TEXT_INPUT_SELECTED_DRAG_PREVIEW_STYLE, &textInputColorItem);
-                ArkUI_AttributeItem textInput_test_id_item = {};
-                textInput_test_id_item.string = "textInput_test_capi";
-                nodeAPI->setAttribute(textInput, NODE_ID, &textInput_test_id_item);
-                OH_ArkUI_SetNodeDraggable(textInput, true);
-
-                auto textArea = nodeAPI->createNode(ARKUI_NODE_TEXT_AREA);
-                ArkUI_AttributeItem arae_Item0 = {.string = "TEXT_AREA测试"};
-                ArkUI_NumberValue textAreaheightValue[] = {50};
-                ArkUI_AttributeItem textAreaheightItem = {textAreaheightValue, 1};
-                ArkUI_NumberValue widthValue[] = {200};
-                ArkUI_AttributeItem widthItem = {widthValue, 1};
-                nodeAPI->setAttribute(textArea, NODE_TEXT_AREA_TEXT, &arae_Item0);
-                nodeAPI->setAttribute(textArea, NODE_WIDTH, &widthItem);
-                nodeAPI->setAttribute(textArea, NODE_HEIGHT, &textAreaheightItem);
-                nodeAPI->setAttribute(textArea, NODE_MARGIN, &marginItem);
-                ArkUI_SelectedDragPreviewStyle *textArea_options = OH_ArkUI_SelectedDragPreviewStyle_Create();
-                OH_ArkUI_SelectedDragPreviewStyle_SetColor(textArea_options, Undefined);
-                ArkUI_AttributeItem textAreaColorItem = {.size = 1, .object = textArea_options};
-                nodeAPI->setAttribute(textArea, NODE_TEXT_AREA_SELECTED_DRAG_PREVIEW_STYLE, &textAreaColorItem);
-                ArkUI_AttributeItem textArea_test_id_item = {};
-                textArea_test_id_item.string = "textArea_test_capi";
-                nodeAPI->setAttribute(textArea, NODE_ID, &textArea_test_id_item);
-                OH_ArkUI_SetNodeDraggable(textArea, true);
-
-                nodeAPI->addChild(startDrag, text);
-                nodeAPI->addChild(startDrag, drag_text);
-                nodeAPI->addChild(startDrag, textInput);
-                nodeAPI->addChild(startDrag, textArea);
-                OH_NativeXComponent_AttachNativeRootNode(component, startDrag);
-            }
+            nodeAPI->addChild(startDrag, text);
+            nodeAPI->addChild(startDrag, drag_text);
+            nodeAPI->addChild(startDrag, textInput);
+            nodeAPI->addChild(startDrag, textArea);
+            
+            OH_NativeXComponent_AttachNativeRootNode(component, startDrag);
+        }
         }
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ColorManager", "CreateNativeNode  555");
         return nullptr;

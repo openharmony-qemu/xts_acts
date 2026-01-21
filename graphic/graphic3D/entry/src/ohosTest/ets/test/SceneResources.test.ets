@@ -1581,6 +1581,85 @@ export default function sceneResourcesTest() {
       }
     })
     /**
+     * @tc.name   testShaderSetShaderInputs
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1015
+     * @tc.desc   Test setShaderInputs method of Shader to set shader inputs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testShaderSetShaderInputs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testShaderSetShaderInputs";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != undefined).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+        shader = await rf.createShader({ name: "CustomShader", uri: $rawfile("shaders/custom_shader/custom_material_sample.shader")});
+        expect(shader != undefined).assertTrue();
+        console.info(msg + " shader created successfully");
+
+        material = await rf.createMaterial({ name: "CustomMaterial" }, MaterialType.SHADER);
+        expect(material != null).assertTrue();
+        console.info(msg + " material created successfully");
+
+        if (material) {
+          console.info(msg + " material colorShader set start");
+          material.colorShader = shader as Shader;
+        }
+
+        expect(material?.colorShader != null).assertTrue();
+        console.info(msg + " colorShader set successfully");
+
+        // Create a dummy image for testing
+        let testImage: scene3d.Image = await rf.createImage({ name: "testImage", uri: $rawfile("gltf/Cube/glTF/Cube_BaseColor.png")});
+        console.info(msg + " createImage successfully");
+
+        // Test setShaderInputs with various input types
+        if (material && material.colorShader) {
+          console.info(msg + " material && material.colorShader == True");
+          material.colorShader.setShaderInputs({
+            "time": 1.5,
+            "vec_1": {x: 1.0, y: 1.0, z: -1.0, w: -1.0},
+            "vec_2": {x: 0.0, y: 0.0, z: 0.0},
+            "vec_3": {x: 0.0, y: 0.5},
+            "BASE_COLOR_Image": testImage
+          });
+          console.info(msg + " setShaderInputs called successfully");
+
+          // Verify inputs were set
+          expect(typeof material.colorShader.inputs["time"]).assertEqual('number');
+          expect(material.colorShader.inputs["time"]).assertEqual(1.5);
+          console.info(msg + " time input verified");
+
+          expect(material.colorShader.inputs["vec_1"] != null).assertTrue();
+          console.info(msg + " vec_1 input verified");
+
+          expect(material.colorShader.inputs["vec_2"] != null).assertTrue();
+          console.info(msg + " vec_2 input verified");
+
+          expect(material.colorShader.inputs["vec_3"] != null).assertTrue();
+          console.info(msg + " vec_3 input verified");
+
+          expect(material.colorShader.inputs["BASE_COLOR_Image"] != null).assertTrue();
+          console.info(msg + " BASE_COLOR_Image input verified");
+        }
+        else {
+          console.info(msg + " material && material.colorShader == False");
+          expect(material && material.colorShader).assertTrue();
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testShaderSetShaderInputs " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
      * @tc.name   testMaterialTypeOCCLUSION
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1018
      * @tc.desc   Test MaterialType.OCCLUSION enum value and verify OCCLUSION material can be created
@@ -2004,6 +2083,130 @@ export default function sceneResourcesTest() {
         done();
       } catch (err) {
         console.info(msg + " Failed in testMat4x4PropertyComponentsProjection " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testEffectGetPropertyValue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1024
+     * @tc.desc   Test getPropertyValue method of Effect to get effect property values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEffectGetPropertyValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testEffectGetPropertyValue";
+      console.info(msg + ' begin ');
+      try {
+        // Load scene and create effect
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        let rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory obtained successfully");
+
+        // Create effect with valid effectId
+        let effectParameters: EffectParameters = {effectId: "89b83608-c910-433e-9fd8-22f3ef64eabd"};
+        let effect: Effect = await rf.createEffect(effectParameters);
+        expect(effect != null).assertTrue();
+        console.info(msg + " effect created successfully");
+
+        // Test 1: Get 'thresholdSoft' property value (should return Object)
+        let thresholdSoftValue = effect.getPropertyValue('thresholdSoft');
+        console.info(msg + " thresholdSoftValue: " + JSON.stringify(thresholdSoftValue));
+        expect(thresholdSoftValue != null).assertTrue();
+        expect(typeof thresholdSoftValue).assertEqual('number');
+        console.info(msg + " thresholdSoft property value retrieved successfully");
+
+        // Test 2: Get 'thresholdHard' property value (should return Object)
+        let thresholdHardValue = effect.getPropertyValue('thresholdHard');
+        console.info(msg + " thresholdHardValue: " + JSON.stringify(thresholdHardValue));
+        expect(thresholdHardValue != null).assertTrue();
+        expect(typeof thresholdHardValue).assertEqual('number');
+        console.info(msg + " thresholdHard property value retrieved successfully");
+
+        // Test 3: Get non-existent property value (should return null or undefined)
+        let invalidValue = effect.getPropertyValue('invalidProperty');
+        console.info(msg + " invalidValue: " + JSON.stringify(invalidValue));
+        expect(invalidValue == null || invalidValue == undefined).assertTrue();
+        console.info(msg + " non-existent property returns null or undefined as expected");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testEffectGetPropertyValue " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testEffectSetPropertyValue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1025
+     * @tc.desc   Test setPropertyValue method of Effect to set effect property values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEffectSetPropertyValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testEffectSetPropertyValue";
+      console.info(msg + ' begin ');
+      try {
+        // Load scene and create effect
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        let rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory obtained successfully");
+
+        // Create effect with valid effectId
+        let effectParameters: EffectParameters = {effectId: "89b83608-c910-433e-9fd8-22f3ef64eabd"};
+        let effect: Effect = await rf.createEffect(effectParameters);
+        expect(effect != null).assertTrue();
+        console.info(msg + " effect created successfully");
+
+        // Test 1: Set 'thresholdSoft' property value (should return true)
+        let result1 = effect.setPropertyValue('thresholdSoft', 1);
+        console.info(msg + " set thresholdSoft result: " + result1);
+        expect(result1).assertTrue();
+        console.info(msg + " thresholdSoft property set successfully");
+
+        // Verify the value was set
+        let thresholdSoftValue = effect.getPropertyValue('thresholdSoft');
+        console.info(msg + " thresholdSoftValue after set: " + JSON.stringify(thresholdSoftValue));
+        expect(thresholdSoftValue).assertEqual(1);
+
+        // Test 2: Set 'thresholdHard' property value (should return true)
+        let result2 = effect.setPropertyValue('thresholdHard', 1);
+        console.info(msg + " set thresholdHard result: " + result2);
+        expect(result2).assertTrue();
+        console.info(msg + " thresholdHard property set successfully");
+
+        // Verify the value was set
+        let thresholdHardValue = effect.getPropertyValue('thresholdHard');
+        console.info(msg + " thresholdHardValue after set: " + JSON.stringify(thresholdHardValue));
+        expect(thresholdHardValue).assertEqual(1);
+
+        // Test 3: Set 'thresholdSoft' property value with undefined (should return true)
+        let dataUndefined:undefined;
+        let result3 = effect.setPropertyValue('thresholdSoft', dataUndefined);
+        console.info(msg + " set thresholdSoft with undefined result: " + result3);
+        expect(result3).assertFalse();
+        console.info(msg + " thresholdSoft property with undefined set successfully");
+
+        // Verify the value was set
+        let thresholdSoftWithUndefineValue = effect.getPropertyValue('thresholdSoft');
+        console.info(msg + " thresholdSoftValue with undefined after set: " + JSON.stringify(thresholdSoftWithUndefineValue));
+        expect(thresholdSoftWithUndefineValue).assertEqual(1);
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testEffectSetPropertyValue " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
