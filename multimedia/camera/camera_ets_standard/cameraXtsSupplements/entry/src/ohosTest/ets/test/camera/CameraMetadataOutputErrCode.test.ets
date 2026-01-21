@@ -308,12 +308,12 @@ export default function cameraAddMetadataObjectSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_addMetadataObjectTypes_001
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_addMetadataObjectTypes_001
-     * @tc.desc      : test camera MetadataObjectType addMetadataObjectTypes cover 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number  SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_addMetadataObjectTypes_001
+     * @tc.name    SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_addMetadataObjectTypes_001
+     * @tc.desc    test camera MetadataObjectType addMetadataObjectTypes cover 7400101
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_addMetadataObjectTypes_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_addMetadataObjectTypes_001';
@@ -340,12 +340,12 @@ export default function cameraAddMetadataObjectSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_removeMetadataObjectTypes_001
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_removeMetadataObjectTypes_001
-     * @tc.desc      : test camera MetadataObjectType removeMetadataObjectTypes cover 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number  SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_removeMetadataObjectTypes_001
+     * @tc.name    SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_removeMetadataObjectTypes_001
+     * @tc.desc    test camera MetadataObjectType removeMetadataObjectTypes cover 7400101
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_removeMetadataObjectTypes_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_removeMetadataObjectTypes_001';

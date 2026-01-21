@@ -208,6 +208,7 @@ import ImageGetImagePropertyOptionsSupp from './image/ImageGetImagePropertyOptio
 import ImageGammaSupp from './image/ImageGammaSupp.test';
 import ImagePictureMetadataTest from './image/ImagePictureMetadata.Test.test';
 import MultimediaImageTest from './image/MultimediaImage.test';
+import ImageExifMetadataTestSupp from './image/ImageExifMetadata.test';
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -402,4 +403,5 @@ export default function testsuite() {
   ImageGammaSupp()
   ImagePictureMetadataTest()
   MultimediaImageTest()
+  ImageExifMetadataTestSupp()
 }
