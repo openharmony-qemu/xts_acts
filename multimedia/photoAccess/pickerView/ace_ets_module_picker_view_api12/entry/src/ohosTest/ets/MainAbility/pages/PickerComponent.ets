@@ -365,10 +365,6 @@ struct PickerComponent {
           {
             sceneType: photoAccessHelper.SceneType.PHOTO_BROWSER_SWIPE,
             playMode: photoAccessHelper.PlayMode.AUTO_PLAY,
-          },
-          {
-            sceneType: photoAccessHelper.SceneType.PHOTO_BROWSER_SWIPE,
-            playMode: photoAccessHelper.PlayMode.DEFAULT,
           }
         ];
         updatedOptions.appAlbumFilters = 
