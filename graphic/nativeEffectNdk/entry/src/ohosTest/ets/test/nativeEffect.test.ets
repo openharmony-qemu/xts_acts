@@ -396,5 +396,21 @@ export default function nativeEffectTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+    * @tc.name   testOHEffectUnsupportedOperation001
+    * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Effect_OHEffectUnsupportedOperation001
+    * @tc.desc   test OHEffectUnsupportedOperation001
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('testOHEffectUnsupportedOperation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeEffectNdk.oHEffectUnsupportedOperation001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
   })
 }
