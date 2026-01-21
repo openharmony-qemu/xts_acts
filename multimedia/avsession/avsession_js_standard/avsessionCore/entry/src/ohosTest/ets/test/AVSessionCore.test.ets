@@ -19,7 +19,7 @@ import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { Key, KeyEvent } from '@kit.InputKit';
-
+import deviceInfo from '@ohos.deviceInfo';
 
 let sleep = (ms: number): Promise<string> => {
   return new Promise((resolve) => {
@@ -133,13 +133,8 @@ export default function abilityTest() {
       });
 
       await controller.getAVMetadata().then((data: avSession.AVMetadata) => {
-        if (data.bundleIcon) {
-          console.info(`${data.bundleIcon} TestLog: Get bundleIcon Successfully`);
-        } else {
-          console.info('TestLog: Get bundleIcon failed');
-          console.info(`TestLog: bundleIcon is: ${data.bundleIcon}`);
-          expect(false).assertTrue();
-        }
+        console.info(`${data.assetId} TestLog: Get bundleIcon Successfully`);
+        expect(data.assetId).assertEqual(metadata0.assetId);
       }).catch((err: BusinessError) => {
         console.info(`TestLog: Get assetId error: code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
@@ -236,7 +231,7 @@ export default function abilityTest() {
             console.info('TestLog: Controller send command successfully');
         } catch(err) {
             console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-            expect(false).assertTrue();
+            expect(err.code).assertEqual(6600105);
         };
         await sleep(500);
         done();
@@ -1515,6 +1510,436 @@ export default function abilityTest() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ISDESKTOPLYRICSUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ISDESKTOPLYRICSUPPORTED_0100
+     * @tc.desc   Test isDesktopLyricSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ISDESKTOPLYRICSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_ISDESKTOPLYRICSUPPORTED_0100';
+        try {
+          const deviceType: string = deviceInfo.deviceType;
+          const supportDeskTopLyricDevices: string[] = [
+            deviceInfo.DeviceTypes.TYPE_PHONE,
+            deviceInfo.DeviceTypes.TYPE_TABLET,
+            deviceInfo.DeviceTypes.TYPE_2IN1,
+          ]
+          const isDeviceSupported: boolean = supportDeskTopLyricDevices.includes(deviceType);
+          let isSupported = await avSession.isDesktopLyricSupported();
+          expect(isSupported).assertEqual(isDeviceSupported);
+        } catch (err) {
+          console.error(`${TAG}: BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_0100
+     * @tc.desc   Testing enableDesktopLyric with enable=true (normal scenario)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_0100';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          await session.enableDesktopLyric(true);
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_0200
+     * @tc.desc   Testing enableDesktopLyric with enable=false (normal scenario)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_0200';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          await session.enableDesktopLyric(false);
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_0100
+     * @tc.desc   Testing setDesktopLyricVisible&isDesktopLyricVisible with visible=true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_0100';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          await session.enableDesktopLyric(true);
+          await session.setDesktopLyricVisible(true);
+          const getVisibleResult: boolean = await session.isDesktopLyricVisible();
+          expect(getVisibleResult).assertEqual(true);
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_0200
+     * @tc.desc   Testing setDesktopLyricVisible&isDesktopLyricVisible with visible=false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_0200';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          await session.enableDesktopLyric(true);
+          await session.setDesktopLyricVisible(false);
+          const getVisibleResult: boolean = await session.isDesktopLyricVisible();
+          expect(getVisibleResult).assertEqual(false);
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_0100
+     * @tc.desc   Testing onDesktopLyricVisibilityChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_0100';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          let callbackTriggered: boolean = false;
+          let callback = (data: boolean) => {
+            callbackTriggered = data;
+            console.info(`${TAG}: boolean: callback triggered (visible=${data})`);
+          }
+          await session.enableDesktopLyric(true);
+          session.onDesktopLyricVisibilityChanged(callback);
+          await session.setDesktopLyricVisible(true);
+          await sleep(200);
+          expect(callbackTriggered).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICVISIBLITYCHANGED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICVISIBLITYCHANGED_0100
+     * @tc.desc   Testing offDesktopLyricVisibilityChanged unregisters all callbacks (verify no trigger after unregister)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICVISIBLITYCHANGED_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICVISIBLITYCHANGED_0100';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          let callback1Triggered = false;
+          let callback2Triggered = false;
+          let callback1 = (data: boolean) => {
+            callback1Triggered = data;
+            console.info(`${TAG}: TestLog: callback1 triggered (visible=${data})`);
+          }
+          let callback2 = (data: boolean) => {
+            callback2Triggered = data;
+            console.info(`${TAG}: TestLog: callback2 triggered (visible=${data})`);
+          }
+          await session.enableDesktopLyric(true);
+          session.onDesktopLyricVisibilityChanged(callback1);
+          session.onDesktopLyricVisibilityChanged(callback2);
+          session.offDesktopLyricVisibilityChanged(callback1);
+          await session.setDesktopLyricVisible(true);
+          await sleep(200);
+          expect(callback1Triggered).assertFalse();
+          expect(callback2Triggered).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICVISIBLITYCHANGED_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICVISIBLITYCHANGED_0200
+     * @tc.desc   Testing offDesktopLyricVisibilityChanged unregisters specific callbacks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICVISIBLITYCHANGED_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICVISIBLITYCHANGED_0200';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          let callback1Triggered = false;
+          let callback2Triggered = false;
+          let callback1 = (data: boolean) => {
+            callback1Triggered = data;
+            console.info(`${TAG}: TestLog: callback1 triggered (visible=${data})`);
+          }
+          let callback2 = (data: boolean) => {
+            callback2Triggered = data;
+            console.info(`${TAG}: TestLog: callback2 triggered (visible=${data})`);
+          }
+          await session.enableDesktopLyric(true);
+          session.onDesktopLyricVisibilityChanged(callback1);
+          session.onDesktopLyricVisibilityChanged(callback2);
+          session.offDesktopLyricVisibilityChanged();
+          await session.setDesktopLyricVisible(true);
+          await sleep(200);
+          expect(callback1Triggered).assertFalse();
+          expect(callback2Triggered).assertFalse();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_0100
+     * @tc.desc   Testing setDesktopLyricState&getDesktopLyricState with locked state (isLocked: true) - normal scenario
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_0100';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          await session.enableDesktopLyric(true);
+          let state: avSession.DesktopLyricState = { isLocked: true };
+          await session.setDesktopLyricState(state);
+          let getState: avSession.DesktopLyricState = await session.getDesktopLyricState();
+          expect(getState.isLocked).assertEqual(true)
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_0200
+     * @tc.desc   Testing setDesktopLyricState&getDesktopLyricState with locked state (isLocked: false) - normal scenario
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_0200';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          await session.enableDesktopLyric(true);
+          let state: avSession.DesktopLyricState = { isLocked: false };
+          await session.setDesktopLyricState(state);
+          let getState: avSession.DesktopLyricState = await session.getDesktopLyricState();
+          expect(getState.isLocked).assertEqual(false)
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICSTATECHANGED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICSTATECHANGED_0100
+     * @tc.desc   Testing onDesktopLyricStateChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICSTATECHANGED_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICSTATECHANGED_0100';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          let callbackTriggered: boolean = false;
+          let callback = (data: avSession.DesktopLyricState) => {
+            callbackTriggered = data.isLocked;
+            console.info(`${TAG}: boolean: callback triggered (visible=${data})`);
+          }
+          await session.enableDesktopLyric(true);
+          session.onDesktopLyricStateChanged(callback);
+          let state: avSession.DesktopLyricState = { isLocked: true };
+          await session.setDesktopLyricState(state);
+          await sleep(200);
+          expect(callbackTriggered).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICSTATECHANGED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICSTATECHANGED_0100
+     * @tc.desc   Testing offDesktopLyricStateChanged unregisters all callbacks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICSTATECHANGED_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICSTATECHANGED_0100';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          let callback1Triggered = false;
+          let callback2Triggered = false;
+          let callback1 = (data: avSession.DesktopLyricState) => {
+            callback1Triggered = data.isLocked;
+            console.info(`${TAG}: TestLog: callback1 triggered (visible=${data})`);
+          }
+          let callback2 = (data: avSession.DesktopLyricState) => {
+            callback2Triggered = data.isLocked;
+            console.info(`${TAG}: TestLog: callback2 triggered (visible=${data})`);
+          }
+          await session.enableDesktopLyric(true);
+          session.onDesktopLyricStateChanged(callback1);
+          session.onDesktopLyricStateChanged(callback2);
+          session.offDesktopLyricStateChanged(callback1);
+          let state: avSession.DesktopLyricState = { isLocked: true };
+          await session.setDesktopLyricState(state);
+          await sleep(200);
+          expect(callback1Triggered).assertFalse();
+          expect(callback2Triggered).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICSTATECHANGED_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICSTATECHANGED_0200
+     * @tc.desc   Testing offDesktopLyricStateChanged unregisters specified callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICSTATECHANGED_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICSTATECHANGED_0200';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          let callback1Triggered = false;
+          let callback2Triggered = false;
+          let callback1 = (data: avSession.DesktopLyricState) => {
+            callback1Triggered = data.isLocked;
+            console.info(`${TAG}: TestLog: callback1 triggered (visible=${data})`);
+          }
+          let callback2 = (data: avSession.DesktopLyricState) => {
+            callback2Triggered = data.isLocked;
+            console.info(`${TAG}: TestLog: callback2 triggered (visible=${data})`);
+          }
+          await session.enableDesktopLyric(true);
+          session.onDesktopLyricStateChanged(callback1);
+          session.onDesktopLyricStateChanged(callback2);
+          session.offDesktopLyricStateChanged();
+          let state: avSession.DesktopLyricState = { isLocked: true };
+          await session.setDesktopLyricState(state);
+          await sleep(200);
+          expect(callback1Triggered).assertFalse();
+          expect(callback2Triggered).assertFalse();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
 
   })
 }

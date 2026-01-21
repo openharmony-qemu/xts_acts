@@ -2709,7 +2709,1178 @@ export default function abilityTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_0300
+     * @tc.desc   Testing enableDesktopLyric when session not exit (throw 6600102)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_0300';
+        try {
+          await session.destroy();
+          try {
+            await session.enableDesktopLyric(true);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_SESSION_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_0400
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_0400
+     * @tc.desc   Testing enableDesktopLyric when desktop lyrics feature is not supported (throw 6600111)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_0400';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (isSupported) {
+            done();
+            return;
+          }
+          await session.enableDesktopLyric(true);
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_SUPPORTED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_0100
+     * @tc.desc   Testing setDesktopLyricVisible when desktop lyrics feature is not supported (throw 6600111)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_0100';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (isSupported) {
+            done();
+            return;
+          }
+          await session.setDesktopLyricVisible(true);
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_SUPPORTED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_0200
+     * @tc.desc   Testing setDesktopLyricVisible when desktop lyrics feature of this application is not enabled (throw 6600110)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_0200';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          await session.enableDesktopLyric(false);
+          await session.setDesktopLyricVisible(true);
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_ENABLED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_0300
+     * @tc.desc   Testing setDesktopLyricVisible when session does not exist (throw 6600102)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE_0300';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          await session.destroy();
+          try {
+            await session.setDesktopLyricVisible(true);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_SESSION_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ISDESKTOPLYRICVISIBLE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ISDESKTOPLYRICVISIBLE_0100
+     * @tc.desc   Testing isDesktopLyricVisible when desktop lyrics feature is not supported (throw 6600111)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ISDESKTOPLYRICVISIBLE_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_ISDESKTOPLYRICVISIBLE_0100';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (isSupported) {
+            done();
+            return;
+          }
+          await session.isDesktopLyricVisible();
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_SUPPORTED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ISDESKTOPLYRICVISIBLE_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ISDESKTOPLYRICVISIBLE_0200
+     * @tc.desc   Testing isDesktopLyricVisible when desktop lyrics feature of this application is not enabled (throw 6600110)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ISDESKTOPLYRICVISIBLE_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_ISDESKTOPLYRICVISIBLE_0200';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          await session.enableDesktopLyric(false);
+          await session.isDesktopLyricVisible();
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_ENABLED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ISDESKTOPLYRICVISIBLE_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ISDESKTOPLYRICVISIBLE_0300
+     * @tc.desc   Testing isDesktopLyricVisible when session does not exist (throw 6600102)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ISDESKTOPLYRICVISIBLE_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_ISDESKTOPLYRICVISIBLE_0300';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          await session.destroy();
+          try {
+            await session.isDesktopLyricVisible();
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_SESSION_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_0200
+     * @tc.desc   Testing onDesktopLyricVisibilityChanged when session not exit (throw 6600102)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_0200';
+        try {
+          await session.destroy();
+          try {
+            session.onDesktopLyricVisibilityChanged((data: boolean) => {
+            });
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_SESSION_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICVISIBLITYCHANGED_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICVISIBLITYCHANGED_0300
+     * @tc.desc   Testing offDesktopLyricVisibilityChanged when session not exit (throw 6600102)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICVISIBLITYCHANGED_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICVISIBLITYCHANGED_0300';
+        try {
+          await session.destroy();
+          try {
+            session.offDesktopLyricVisibilityChanged();
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_SESSION_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_0100
+     * @tc.desc   Testing setDesktopLyricState when desktop lyrics feature is not supported. (throw 6600111)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_0100';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (isSupported) {
+            done();
+            return;
+          }
+          let state: avSession.DesktopLyricState = { isLocked: false };
+          await session.setDesktopLyricState(state);
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_SUPPORTED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_0200
+     * @tc.desc   Testing setDesktopLyricState when desktop lyrics feature of this application is not enabled. (throw 6600110)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_0200';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          await session.enableDesktopLyric(false);
+          let state: avSession.DesktopLyricState = { isLocked: false };
+          await session.setDesktopLyricState(state);
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_ENABLED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_0300
+     * @tc.desc   Testing setDesktopLyricState when session does not exist. (throw 6600102)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE_0300';
+        try {
+          await session.destroy();
+          try {
+            let state: avSession.DesktopLyricState = { isLocked: false };
+            await session.setDesktopLyricState(state);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_SESSION_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETDESKTOPLYRICSTATE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETDESKTOPLYRICSTATE_0100
+     * @tc.desc   Testing getDesktopLyricState when desktop lyrics feature is not supported. (throw 6600111)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_GETDESKTOPLYRICSTATE_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_GETDESKTOPLYRICSTATE_0100';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (isSupported) {
+            done();
+            return;
+          }
+          await session.getDesktopLyricState();
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_SUPPORTED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETDESKTOPLYRICSTATE_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETDESKTOPLYRICSTATE_0200
+     * @tc.desc   Testing getDesktopLyricState when desktop lyrics feature of this application is not enabled. (throw 6600110)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_GETDESKTOPLYRICSTATE_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_GETDESKTOPLYRICSTATE_0200';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          await session.enableDesktopLyric(false);
+          await session.getDesktopLyricState();
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_ENABLED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETDESKTOPLYRICSTATE_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETDESKTOPLYRICSTATE_0300
+     * @tc.desc   Testing getDesktopLyricState when session does not exist. (throw 6600102)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_GETDESKTOPLYRICSTATE_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_GETDESKTOPLYRICSTATE_0300';
+        try {
+          await session.destroy();
+          try {
+            await session.getDesktopLyricState();
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_SESSION_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICSTATECHANGED_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICSTATECHANGED_0200
+     * @tc.desc   Testing onDesktopLyricStateChanged when session not exit (throw 6600102)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICSTATECHANGED_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICSTATECHANGED_0200';
+        try {
+          await session.destroy();
+          try {
+            session.onDesktopLyricStateChanged((data: avSession.DesktopLyricState) => {
+            });
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_SESSION_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICSTATECHANGED_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICSTATECHANGED_0300
+     * @tc.desc   Testing offDesktopLyricStateChanged when session not exit (throw 6600102)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICSTATECHANGED_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICSTATECHANGED_0300';
+        try {
+          await session.destroy();
+          try {
+            session.offDesktopLyricStateChanged();
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_SESSION_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_0200
+     * @tc.desc   Testing isDesktopLyricEnabled when the session does not exist.(throw 6600102）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_0200';
+        try {
+          await session.destroy();
+          try {
+            await controller.isDesktopLyricEnabled();
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_SESSION_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_0300
+     * @tc.desc   Test isDesktopLyricEnabled when the controller does not exit. (throw 6600103)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_0300';
+        try {
+          await controller.destroy();
+          try {
+            await controller.isDesktopLyricEnabled();
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_CONTROLLER_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_0400
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_0400
+     * @tc.desc   Test isDesktopLyricEnabled when the desktop lyrics feature is not supported. (throw 6600111)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICENABLED_0400';
+        try {
+          let isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (isSupported) {
+            done();
+            return;
+          }
+          await controller.isDesktopLyricEnabled();
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_SUPPORTED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICENABLED_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICENABLED_0200
+     * @tc.desc   Testing onDesktopLyricEnabled when session controller does not exist. (throw 6600103)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICENABLED_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICENABLED_0200';
+        try {
+          await controller.destroy();
+          try {
+            controller.onDesktopLyricEnabled((data: boolean) => {
+            });
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_CONTROLLER_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICENABLED_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICENABLED_0300
+     * @tc.desc   Testing offDesktopLyricEnabled when session controller not exist(throw 6600103)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICENABLED_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICENABLED_0300';
+        try {
+          await controller.destroy();
+          try {
+            controller.offDesktopLyricEnabled();
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_CONTROLLER_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICVISIBLE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICVISIBLE_0100
+     * @tc.desc   Testing setDesktopLyricVisible when desktop lyrics feature is not supported (throw 6600111)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICVISIBLE_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICVISIBLE_0100';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (isSupported) {
+            done();
+            return;
+          }
+          await controller.setDesktopLyricVisible(true);
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_SUPPORTED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICVISIBLE_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICVISIBLE_0200
+     * @tc.desc   Testing setDesktopLyricVisible when desktop lyrics feature of this application is not enabled (throw 6600110)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICVISIBLE_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICVISIBLE_0200';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          await session.enableDesktopLyric(false);
+          await controller.setDesktopLyricVisible(true);
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_ENABLED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICVISIBLE_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICVISIBLE_0300
+     * @tc.desc   Testing setDesktopLyricVisible when session does not exist (throw 6600102)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICVISIBLE_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICVISIBLE_0300';
+        try {
+          await session.destroy();
+          try {
+            await controller.setDesktopLyricVisible(true);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_SESSION_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICVISIBLE_0400
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICVISIBLE_0400
+     * @tc.desc   Testing setDesktopLyricVisible when session controller does not exist (throw 6600103)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICVISIBLE_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICVISIBLE_0400';
+        try {
+          await controller.destroy();
+          try {
+            await controller.setDesktopLyricVisible(true);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_CONTROLLER_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICVISIBLE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICVISIBLE_0100
+     * @tc.desc   Testing isDesktopLyricVisible when desktop lyrics feature is not supported (throw 6600111)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICVISIBLE_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICVISIBLE_0100';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (isSupported) {
+            done();
+            return;
+          }
+          await controller.isDesktopLyricVisible();
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_SUPPORTED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICVISIBLE_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICVISIBLE_0200
+     * @tc.desc   Testing isDesktopLyricVisible when desktop lyrics feature of this application is not enabled (throw 6600110)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICVISIBLE_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICVISIBLE_0200';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          await session.enableDesktopLyric(false);
+          await controller.isDesktopLyricVisible();
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_ENABLED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICVISIBLE_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICVISIBLE_0300
+     * @tc.desc   Testing isDesktopLyricVisible when session does not exist (throw 6600102)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICVISIBLE_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICVISIBLE_0300';
+        try {
+          await session.destroy();
+          try {
+            await controller.isDesktopLyricVisible();
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_SESSION_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICVISIBLE_0400
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICVISIBLE_0400
+     * @tc.desc   Testing isDesktopLyricVisible when session controller does not exist. (throw 6600103)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICVISIBLE_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ISDESKTOPLYRICVISIBLE_0400';
+        try {
+          await controller.destroy();
+          try {
+            await controller.isDesktopLyricVisible();
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_CONTROLLER_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ONDESKTOPLYRICVISIBLITYCHANGED_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ONDESKTOPLYRICVISIBLITYCHANGED_0200
+     * @tc.desc   Testing onDesktopLyricVisibilityChanged when session controller does not exist. (throw 6600103)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ONDESKTOPLYRICVISIBLITYCHANGED_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ONDESKTOPLYRICVISIBLITYCHANGED_0200';
+        try {
+          await controller.destroy();
+          try {
+            controller.onDesktopLyricVisibilityChanged((data: boolean) => {
+            });
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_CONTROLLER_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_OFFDESKTOPLYRICVISIBLITYCHANGED_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_OFFDESKTOPLYRICVISIBLITYCHANGED_0300
+     * @tc.desc   Testing offDesktopLyricVisibilityChanged when session controller does not exist.(throw 6600103)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_OFFDESKTOPLYRICVISIBLITYCHANGED_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_OFFDESKTOPLYRICVISIBLITYCHANGED_0300';
+        try {
+          await controller.destroy();
+          try {
+            controller.offDesktopLyricVisibilityChanged();
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_CONTROLLER_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICSTATE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICSTATE_0100
+     * @tc.desc   Testing setDesktopLyricState when desktop lyrics feature is not supported. (throw 6600111)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICSTATE_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICSTATE_0100';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (isSupported) {
+            done();
+            return;
+          }
+          let state: avSession.DesktopLyricState = { isLocked: false };
+          await controller.setDesktopLyricState(state);
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_SUPPORTED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICSTATE_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICSTATE_0200
+     * @tc.desc   Testing setDesktopLyricState when desktop lyrics feature of this application is not enabled. (throw 6600110)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICSTATE_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICSTATE_0200';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          await session.enableDesktopLyric(false);
+          let state: avSession.DesktopLyricState = { isLocked: false };
+          await controller.setDesktopLyricState(state);
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_ENABLED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICSTATE_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICSTATE_0300
+     * @tc.desc   Testing setDesktopLyricState when session does not exist. (throw 6600102)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICSTATE_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICSTATE_0300';
+        try {
+          await session.destroy();
+          try {
+            let state: avSession.DesktopLyricState = { isLocked: false };
+            await controller.setDesktopLyricState(state);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_SESSION_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICSTATE_0400
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICSTATE_0400
+     * @tc.desc   Testing setDesktopLyricState when session controller does not exist.(throw 6600103)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICSTATE_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_SETDESKTOPLYRICSTATE_0400';
+        try {
+          await controller.destroy();
+          try {
+            let state: avSession.DesktopLyricState = { isLocked: false };
+            await controller.setDesktopLyricState(state);
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_CONTROLLER_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_GETDESKTOPLYRICSTATE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_GETDESKTOPLYRICSTATE_0100
+     * @tc.desc   Testing getDesktopLyricState when desktop lyrics feature is not supported. (throw 6600111)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_GETDESKTOPLYRICSTATE_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_GETDESKTOPLYRICSTATE_0100';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (isSupported) {
+            done();
+            return;
+          }
+          await controller.getDesktopLyricState();
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_SUPPORTED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_GETDESKTOPLYRICSTATE_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_GETDESKTOPLYRICSTATE_0200
+     * @tc.desc   Testing getDesktopLyricState when desktop lyrics feature of this application is not enabled. (throw 6600110)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_GETDESKTOPLYRICSTATE_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_GETDESKTOPLYRICSTATE_0200';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          await session.enableDesktopLyric(false);
+          await controller.getDesktopLyricState();
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_ENABLED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_GETDESKTOPLYRICSTATE_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_GETDESKTOPLYRICSTATE_0300
+     * @tc.desc   Testing getDesktopLyricState when session does not exist. (throw 6600102)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_GETDESKTOPLYRICSTATE_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_GETDESKTOPLYRICSTATE_0300';
+        try {
+          await session.destroy();
+          try {
+            await controller.getDesktopLyricState();
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_SESSION_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_GETDESKTOPLYRICSTATE_0400
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_GETDESKTOPLYRICSTATE_0400
+     * @tc.desc   Testing getDesktopLyricState when session controller does not exist. (throw 6600103)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_GETDESKTOPLYRICSTATE_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_GETDESKTOPLYRICSTATE_0400';
+        try {
+          await controller.destroy();
+          try {
+            await controller.getDesktopLyricState();
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_CONTROLLER_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ONDESKTOPLYRICSTATECHANGED_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ONDESKTOPLYRICSTATECHANGED_0200
+     * @tc.desc   Testing onDesktopLyricStateChanged when session not exit (throw 6600103)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ONDESKTOPLYRICSTATECHANGED_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_ONDESKTOPLYRICSTATECHANGED_0200';
+        try {
+          await controller.destroy();
+          try {
+            controller.onDesktopLyricStateChanged((data: avSession.DesktopLyricState) => {
+            });
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_CONTROLLER_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSIONCONTROLLER_OFFDESKTOPLYRICSTATECHANGED_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSIONCONTROLLER_OFFDESKTOPLYRICSTATECHANGED_0300
+     * @tc.desc   Testing offDesktopLyricStateChanged when session not exit (throw 6600103)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSIONCONTROLLER_OFFDESKTOPLYRICSTATECHANGED_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSIONCONTROLLER_OFFDESKTOPLYRICSTATECHANGED_0300';
+        try {
+          await controller.destroy();
+          try {
+            controller.offDesktopLyricStateChanged();
+            expect(false).assertTrue();
+          } catch (err) {
+            console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(avSession.AVSessionErrorCode.ERR_CODE_CONTROLLER_NOT_EXIST);
+          }
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
 
   })
 }

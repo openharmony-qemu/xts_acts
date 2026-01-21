@@ -43,24 +43,6 @@ export default function abilityTest() {
       // This API supports only one parameter: clear action function.
     })
 
-
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ENUM_ERR_CODE_ENUM_ALL_0100
-     * @tc.number SUB_MULTIMEDIA_AVSESSION_ENUM_ERR_CODE_ENUM_ALL_0100
-     * @tc.desc   Testing AVSessionErrorCode Enum
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-     it('SUB_MULTIMEDIA_AVSESSION_ENUM_ERR_CODE_ENUM_ALL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
-      console.info(`TestLog: ERR_CODE_CAST_CONTROL_UNSPECIFIED is ${avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_UNSPECIFIED}`);
-      expect(avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_UNSPECIFIED).assertEqual(6611000 as avSession.AVSessionErrorCode);
-
-      done();
-    })
-
-
     /**
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_ENUM_ERR_CODE_CAST_CONTROL_UNSPECIFIED_0100
      * @tc.number SUB_MULTIMEDIA_AVSESSION_ENUM_ERR_CODE_CAST_CONTROL_UNSPECIFIED_0100
@@ -1082,6 +1064,43 @@ export default function abilityTest() {
         done();
       })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_DESKTOP_LYRIC_NOT_ENABLED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_DESKTOP_LYRIC_NOT_ENABLED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_DESKTOP_LYRIC_NOT_ENABLED_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+        let err_code: avSession.AVSessionErrorCode =
+          avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_ENABLED;
+        if (err_code != 6600110) {
+          console.info("ERR_CODE_DESKTOP_LYRIC_NOT_ENABLED", err_code, typeof err_code);
+          expect(false).assertTrue();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_DESKTOP_LYRIC_NOT_SUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_DESKTOP_LYRIC_NOT_SUPPORTED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_DESKTOP_LYRIC_NOT_SUPPORTED_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+        let err_code: avSession.AVSessionErrorCode =
+          avSession.AVSessionErrorCode.ERR_CODE_DESKTOP_LYRIC_NOT_SUPPORTED;
+        if (err_code != 6600111) {
+          console.info("ERR_CODE_DESKTOP_LYRIC_NOT_SUPPORTED", err_code, typeof err_code);
+          expect(false).assertTrue();
+        }
+        done();
+      })
 
       /**
      * @tc.number      SUB_MULTIMEDIA_AVSESSION_CALLTYPE_ENUM_0100
