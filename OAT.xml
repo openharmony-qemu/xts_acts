@@ -117,6 +117,20 @@ Note:If the text contains special characters, please escape them according to th
                 <filteritem type="filename" name="*.ape" desc="all bin file have check"/>
             </filefilter>
             <filefilter name="defaultFilter" desc="Filters for default" >
+              <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/amr_nb_8000_1.amr" desc="resource files do not to be added"/>
+                <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/hevc_pcm_a.flv" desc="resource files do not to be added"/>
+                <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/AAC_48000_1.aac" desc="resource files do not to be added"/>
+                <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/vtt_6100.vtt" desc="resource files do not to be added"/>
+                <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/hevc_v_a.ts" desc="resource files do not to be added"/>
+                <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/amr_wb_16000_1.amr" desc="resource files do not to be added"/>
+                <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/FLAC_48000_1.flac" desc="resource files do not to be added"/>
+                <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/ts_video.ts" desc="resource files do not to be added"/>
+                <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/OGG_48000_1.ogg" desc="resource files do not to be added"/>
+                <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/ape.ape" desc="resource files do not to be added"/>
+                <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/hevc_v.ts" desc="resource files do not to be added"/>
+                <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/avc_mp3_error.flv" desc="resource files do not to be added"/>
+                <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/mkv.mkv" desc="resource files do not to be added"/>
+                <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/avc_mp3.flv" desc="resource files do not to be added"/>
                 <filteritem type="filepath" name="global/global_stage/entry/src/main/resources/rawfile/rawfiletest.xml" desc="resource files do not to be added"/>
                 <filteritem type="filepath" name="global/crossplatform/resourcemanageretstest/src/main/resources/rawfile/rawfiletest.xml" desc="resource files do not to be added"/>
                 <filteritem type="filepath" name="global/global_napi_test/entry/src/main/resources/rawfile/test/aa.xml" desc="resource files do not to be added"/>
