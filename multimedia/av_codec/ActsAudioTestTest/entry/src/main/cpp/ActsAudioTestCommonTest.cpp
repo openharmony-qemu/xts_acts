@@ -364,7 +364,8 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureLCAAC()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-void OHOS::AudioCodeCapiEncoderNdkTest::SetHeAacConfig() {
+void OHOS::AudioCodeCapiEncoderNdkTest::SetHeAacConfig()
+{
     inputFilePath_ = AAC_INPUT_FILE_PATH;
     outputFilePath_ = AAC_OUTPUT_FILE_PATH;
     frameBytes_ = AAC_DEFAULT_FRAME_BYTES;
@@ -376,7 +377,8 @@ void OHOS::AudioCodeCapiEncoderNdkTest::SetHeAacConfig() {
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, AAC_PROFILE_HE);
 }
 
-int32_t OHOS::AudioCodeCapiEncoderNdkTest::ValidateAndConfigureEncoder() {
+int32_t OHOS::AudioCodeCapiEncoderNdkTest::ValidateAndConfigureEncoder()
+{
     if (IsSupportHeAac()) {
         if (OH_AudioCodec_Configure(audioEnc_, format) != AV_ERR_OK) {
             return OHOS::RESULT_CONFIG_FAIL;
@@ -393,7 +395,8 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::ValidateAndConfigureEncoder() {
     return AV_ERR_OK;
 }
 
-int32_t OHOS::AudioCodeCapiEncoderNdkTest::ManageHeAacThreadsAndResources() {
+int32_t OHOS::AudioCodeCapiEncoderNdkTest::ManageHeAacThreadsAndResources()
+{
     isRunning_.store(true);
 
     inputLoop_ = make_unique<thread>(&AudioCodeCapiEncoderNdkTest::InputFuncAv, this);
@@ -467,7 +470,8 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAAC()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-void OHOS::AudioCodeCapiEncoderNdkTest::SetHeAacV2Config() {
+void OHOS::AudioCodeCapiEncoderNdkTest::SetHeAacV2Config()
+{
     inputFilePath_ = AAC_INPUT_FILE_PATH;
     outputFilePath_ = AAC_OUTPUT_FILE_PATH;
     frameBytes_ = AAC_DEFAULT_FRAME_BYTES;
@@ -478,7 +482,8 @@ void OHOS::AudioCodeCapiEncoderNdkTest::SetHeAacV2Config() {
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, AAC_PROFILE_HE_V2);
 }
 
-int32_t OHOS::AudioCodeCapiEncoderNdkTest::ConfigureAudioEncoder() {
+int32_t OHOS::AudioCodeCapiEncoderNdkTest::ConfigureAudioEncoder()
+{
     if (IsSupportHeAac()) {
         if (OH_AudioCodec_Configure(audioEnc_, format) != AV_ERR_OK) {
             return OHOS::RESULT_CONFIG_FAIL;
@@ -495,7 +500,8 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::ConfigureAudioEncoder() {
     return AV_ERR_OK;
 }
 
-int32_t OHOS::AudioCodeCapiEncoderNdkTest::StartAndManageThreads() {
+int32_t OHOS::AudioCodeCapiEncoderNdkTest::StartAndManageThreads()
+{
     isRunning_.store(true);
 
     inputLoop_ = std::make_unique<std::thread>(&AudioCodeCapiEncoderNdkTest::InputFuncAv, this);
@@ -515,7 +521,8 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::StartAndManageThreads() {
     return AV_ERR_OK;
 }
 
-void OHOS::AudioCodeCapiEncoderNdkTest::CleanupResources() {
+void OHOS::AudioCodeCapiEncoderNdkTest::CleanupResources()
+{
     isRunning_.store(false);
 
     if (inputLoop_ != nullptr && inputLoop_->joinable()) {
@@ -568,7 +575,8 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureHEAACv2()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-void OHOS::AudioCodeCapiEncoderNdkTest::SetCapConfig() {
+void OHOS::AudioCodeCapiEncoderNdkTest::SetCapConfig()
+{
     inputFilePath_ = AAC_INPUT_FILE_PATH;
     outputFilePath_ = AAC_OUTPUT_FILE_PATH;
     frameBytes_ = AAC_DEFAULT_FRAME_BYTES;
@@ -583,7 +591,8 @@ void OHOS::AudioCodeCapiEncoderNdkTest::SetCapConfig() {
     }
 }
 
-int32_t OHOS::AudioCodeCapiEncoderNdkTest::CreateAndStartThreads() {
+int32_t OHOS::AudioCodeCapiEncoderNdkTest::CreateAndStartThreads()
+{
     isRunning_.store(true);
 
     inputLoop_ = make_unique<thread>(&AudioCodeCapiEncoderNdkTest::InputFuncAv, this);
@@ -610,7 +619,8 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::CreateAndStartThreads() {
     return AV_ERR_OK;
 }
 
-void OHOS::AudioCodeCapiEncoderNdkTest::CleanupCapResources() {
+void OHOS::AudioCodeCapiEncoderNdkTest::CleanupCapResources()
+{
     isRunning_.store(false);
 
     if (inputLoop_ != nullptr && inputLoop_->joinable()) {

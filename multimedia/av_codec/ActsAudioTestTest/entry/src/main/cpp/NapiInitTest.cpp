@@ -51,20 +51,24 @@ template <typename Func> napi_value NapiTry(napi_env env, Func&& func)
     return nullptr;
 }
 
+static int32_t HandleLcaacEncoderConfigure(int32_t caseNum) 
+{
+    OHOS::AudioCodeCapiEncoderNdkTest encoderTestObj;
+    switch (caseNum) 
+    {
+        case CASE_NUM_0:
+            return encoderTestObj.EncoderConfigureLCAAC();
+        default:
+            return 0;
+    }
+}
 static napi_value Encoder_Configure_LCAAC(napi_env env, napi_callback_info info)
 {
-    return NapiTry(env, [&]() -> napi_value {
+    return NapiTry(env, [&]() -> napi_value 
+    {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
-        int result = 0;
-        OHOS::AudioCodeCapiEncoderNdkTest encoderTestObj;
-        switch (caseNum) {
-            case CASE_NUM_0:
-                result = encoderTestObj.EncoderConfigureLCAAC();
-                break;
-            default:
-                break
-        }
-        napi_value resultValue;
+        int32_t result = HandleLcaacEncoderConfigure(caseNum);
+        napi_value resultValue = nullptr;
         napi_create_int32(env, result, &resultValue);
         return resultValue;
     });
