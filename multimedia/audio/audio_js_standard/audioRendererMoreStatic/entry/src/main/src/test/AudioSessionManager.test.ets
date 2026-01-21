@@ -809,7 +809,7 @@ export default function audioSessionManagerTest() {
             console.info(`DeviceInfo displayName: ${device.displayName}`);
             expect(device.displayName).assertInstanceOf('String');
             console.info(`DeviceInfo encodingTypes: ${device.encodingTypes?.[0]}`);
-            expect(device.encodingTypes?.[0] !== undefined && device.encodingTypes![0] >= 0 as audio.AudioEncodingType).assertEqual(true);
+            expect(device.encodingTypes?.[0] !== undefined && device.encodingTypes![0] >= audio.AudioEncodingType.fromValue(0) ).assertEqual(true);
             console.info(`DeviceInfo spatializationSupported: ${device.spatializationSupported}`);
             expect(device.spatializationSupported).assertInstanceOf('Boolean');
             console.info(`DeviceInfo model: ${device.model}`);

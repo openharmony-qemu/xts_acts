@@ -38,7 +38,7 @@ export default function abilityTest() {
             let color = new ArrayBuffer(96);
             let bufferArr = new Uint8Array(color);
             bufferArr.fill(3, 0, 95);
-            let opts: image.InitializationOptions = { editable: true, pixelFormat: 3 as image.PixelMapFormat, size: { height: 4, width: 6 }, alphaType: 3 as image.AlphaType };
+            let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.fromValue(3), size: { height: 4, width: 6 }, alphaType: image.AlphaType.fromValue(3) };
             return image.createPixelMap(color, opts);
         }
 

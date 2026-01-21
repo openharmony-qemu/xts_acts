@@ -2211,7 +2211,7 @@ export class KeyboardControllerStatic {
     });
     try {
       setTimeout(() => {
-        let mode = this.immersive as inputMethodEngine.ImmersiveMode;
+        let mode = inputMethodEngine.ImmersiveMode.fromValue(this.immersive);
         console.info(`${TAG} ====>Sub_InputMethod_IME_Immersive_1200 ImmersiveMode : ` + JSON.stringify(mode));
         if (mode == 2) {
           commonEventPublishData = {
