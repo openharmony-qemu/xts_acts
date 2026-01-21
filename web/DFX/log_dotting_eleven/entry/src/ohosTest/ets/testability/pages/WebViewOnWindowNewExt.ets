@@ -139,7 +139,7 @@ struct OnWindowNewExt {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("window.open.html"))
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-                  let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
+                  let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   await buttonOne.click();
                   let webRect = Utils.getComponentRect('WebViewOnWindowNewExtWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
@@ -219,7 +219,7 @@ struct OnWindowNewExt {
               try {
                 if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment3');
-                  Utils.emitEvent(0, 20260122)
+                  Utils.emitEvent(2, 20260122)
                 } else {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("window.open.html"))
