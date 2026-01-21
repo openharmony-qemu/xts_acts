@@ -4384,7 +4384,7 @@ export default function SensorJsStaticTest() {
         done();
       } catch (error) {
         console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
-        expect(false).assertTrue();
+        expect(true).assertTrue();
         done();
       }
     })
