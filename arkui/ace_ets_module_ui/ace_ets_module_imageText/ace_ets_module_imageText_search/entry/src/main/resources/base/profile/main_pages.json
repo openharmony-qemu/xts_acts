@@ -43,6 +43,7 @@
         "MainAbility/pages/SearchApi22/SearchEnableSelectedDataDetector",
         "MainAbility/pages/SearchApi22/SearchSetStyledPlaceholder",
         "MainAbility/pages/SearchApi22/SearchOnWillAttachIME",
+        "MainAbility/pages/SearchApi23/SearchTextDirection",
         "MainAbility/pages/Search/SearchCompressLeadingPunctuation",
         "MainAbility/pages/Search/SearchCompressLeadingPunctuationModifier",
         "MainAbility/pages/Search/DividerColorTest"
