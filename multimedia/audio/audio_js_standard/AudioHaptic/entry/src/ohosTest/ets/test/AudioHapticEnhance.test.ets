@@ -220,13 +220,13 @@ export default function AudioHapticTest() {
      * @tc.level  LEVEL0
      */
     it("AUDIO_RINGTONE_PUBLIC_PLAY_TYPE_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      expect(systemSoundManager.SystemSoundType.PHOTO_SHUTTER).assertEqual(SystemSoundManagerTest.PHOTO_SHUTTER_TEST);
+      expect(systemSoundManager.SystemSoundType.PHOTO_SHUTTER).assertEqual(SystemSoundTypeTest.PHOTO_SHUTTER_TEST);
       console.info(`AUDIO_RINGTONE_PUBLIC_PLAY_TYPE_0001 PHOTO_SHUTTER is:${systemSoundManager.SystemSoundType.PHOTO_SHUTTER}`);
 
-      expect(systemSoundManager.SystemSoundType.VIDEO_RECORDING_BEGIN).assertEqual(SystemSoundManagerTest.VIDEO_RECORDING_BEGIN_TEST);
+      expect(systemSoundManager.SystemSoundType.VIDEO_RECORDING_BEGIN).assertEqual(SystemSoundTypeTest.VIDEO_RECORDING_BEGIN_TEST);
       console.info(`AUDIO_RINGTONE_PUBLIC_PLAY_TYPE_0001 VIDEO_RECORDING_BEGIN is:${systemSoundManager.SystemSoundType.VIDEO_RECORDING_BEGIN}`);
 
-      expect(systemSoundManager.SystemSoundType.VIDEO_RECORDING_END).assertEqual(SystemSoundManagerTest.VIDEO_RECORDING_END_TEST);
+      expect(systemSoundManager.SystemSoundType.VIDEO_RECORDING_END).assertEqual(SystemSoundTypeTest.VIDEO_RECORDING_END_TEST);
       console.info(`AUDIO_RINGTONE_PUBLIC_PLAY_TYPE_0001 VIDEO_RECORDING_END is:${systemSoundManager.SystemSoundType.VIDEO_RECORDING_END}`);
 
       done();
@@ -275,7 +275,7 @@ export default function AudioHapticTest() {
            expect(false).assertTrue();
         });
        
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0001 ERROR, code: ${error.code}, message: ${error.message}`);
         expect(false).assertTrue();
         done();
@@ -327,9 +327,9 @@ export default function AudioHapticTest() {
            expect(false).assertTrue();
         });
        
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0002 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         done();
       }
       done();
@@ -379,9 +379,9 @@ export default function AudioHapticTest() {
            expect(false).assertTrue();
         });
        
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0003 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         done();
       }
       done();
@@ -431,9 +431,9 @@ export default function AudioHapticTest() {
            expect(false).assertTrue();
         });
        
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0004 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         done();
       }
       done();
@@ -482,7 +482,7 @@ export default function AudioHapticTest() {
            expect(false).assertTrue();
         });
        
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0005 ERROR, code: ${error.code}, message: ${error.message}`);
         expect(false).assertTrue();
         done();
@@ -534,9 +534,9 @@ export default function AudioHapticTest() {
            expect(false).assertTrue();
         });
        
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0006 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         done();
       }
       done();
@@ -586,9 +586,9 @@ export default function AudioHapticTest() {
            expect(false).assertTrue();
         });
        
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0007 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         done();
       }
       done();
@@ -638,9 +638,9 @@ export default function AudioHapticTest() {
            expect(false).assertTrue();
         });
        
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0008 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         done();
       }
       done();
@@ -689,7 +689,7 @@ export default function AudioHapticTest() {
            expect(false).assertTrue();
         });
        
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0009 ERROR, code: ${error.code}, message: ${error.message}`);
         expect(false).assertTrue();
         done();
@@ -741,9 +741,9 @@ export default function AudioHapticTest() {
            expect(false).assertTrue();
         });
        
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0010 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         done();
       }
       done();
@@ -793,9 +793,9 @@ export default function AudioHapticTest() {
            expect(false).assertTrue();
         });
        
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0011 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         done();
       }
       done();
@@ -845,9 +845,9 @@ export default function AudioHapticTest() {
            expect(false).assertTrue();
         });
        
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0012 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         done();
       }
       done();
@@ -882,9 +882,9 @@ export default function AudioHapticTest() {
            expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         });
        
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0013 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         done();
       }
       done();
@@ -919,9 +919,9 @@ export default function AudioHapticTest() {
            expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         });
        
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0014 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         done();
       }
       done();
@@ -956,9 +956,9 @@ export default function AudioHapticTest() {
            expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         });
        
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0015 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         done();
       }
       done();
@@ -1000,9 +1000,9 @@ export default function AudioHapticTest() {
            expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         });
 
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0016 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         done();
       }
       done();
@@ -1044,9 +1044,9 @@ export default function AudioHapticTest() {
            expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         });
 
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0017 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         done();
       }
       done();
@@ -1088,9 +1088,9 @@ export default function AudioHapticTest() {
            expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         });
 
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0018 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         done();
       }
       done();
@@ -1139,9 +1139,9 @@ export default function AudioHapticTest() {
            expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         });
 
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0019 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         done();
       }
       done();
@@ -1190,9 +1190,9 @@ export default function AudioHapticTest() {
            expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         });
 
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0020 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         done();
       }
       done();
@@ -1241,9 +1241,9 @@ export default function AudioHapticTest() {
            expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         });
 
-      } catch(error) => {
+      } catch(error) {
         console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0021 ERROR, code: ${error.code}, message: ${error.message}`);
-        expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
+        expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.CRASH_OR_BLOCKING_ERR);
         done();
       }
       done();
