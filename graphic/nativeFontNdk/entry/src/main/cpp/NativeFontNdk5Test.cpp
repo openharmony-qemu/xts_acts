@@ -129,7 +129,7 @@ inline void SafeFreeStringData(OH_Drawing_String* str)
     }
 }
 
-static bool ReadFontFile(uint8_t** buffer, size_t* bufferSize) 
+static bool ReadFontFile(uint8_t** buffer, size_t* bufferSize)
 {
     FILE* fontFile = fopen(TEST_FONT_PATH, "rb");
     if (fontFile == nullptr) {
