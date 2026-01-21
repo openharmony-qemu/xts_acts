@@ -45,6 +45,7 @@ import TextMenuType from './TextMenuType.test';
 
 import RichEditorDeleteTest from './RichEditorDeleteTest/RichEditorDelete.test';
 import TextDirectionTest from './TextDirectionTest.test';
+import ScrollToVisibleTest from './ScrollToVisibleTest.test';
 import IncludeFontPaddingTest from './RichEditorDisplayOptimizationTest/IncludeFontPadding.test';
 import FallbackLineSpacingTest from './RichEditorDisplayOptimizationTest/FallbackLineSpacing.test';
 import TextTest from './TextTest/TextTest.test';
