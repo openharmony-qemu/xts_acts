@@ -51,11 +51,10 @@ template <typename Func> napi_value NapiTry(napi_env env, Func&& func)
     return nullptr;
 }
 
-static int32_t HandleLcaacEncoderConfigure(int32_t caseNum) 
+static int32_t HandleLcaacEncoderConfigure(int32_t caseNum)
 {
     OHOS::AudioCodeCapiEncoderNdkTest encoderTestObj;
-    switch (caseNum) 
-    {
+    switch (caseNum) {
         case CASE_NUM_0:
             return encoderTestObj.EncoderConfigureLCAAC();
         default:
@@ -64,8 +63,7 @@ static int32_t HandleLcaacEncoderConfigure(int32_t caseNum)
 }
 static napi_value Encoder_Configure_LCAAC(napi_env env, napi_callback_info info)
 {
-    return NapiTry(env, [&]() -> napi_value 
-    {
+    return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         int32_t result = HandleLcaacEncoderConfigure(caseNum);
         napi_value resultValue = nullptr;
@@ -123,7 +121,7 @@ static napi_value Sample_Rate(napi_env env, napi_callback_info info)
             case CASE_NUM_0:
                 result = encoderTestObj.sample_rate();
                 break;
-            default
+            default:
                 break;
         }
         napi_value resultValue;
@@ -183,6 +181,7 @@ static napi_value Aac_Profile(napi_env env, napi_callback_info info)
                 result = encoderTestObj.aac_profile();
                 break;
             default:
+                break;
                 }
         napi_value resultValue;
         napi_create_int32(env, result, &resultValue);
