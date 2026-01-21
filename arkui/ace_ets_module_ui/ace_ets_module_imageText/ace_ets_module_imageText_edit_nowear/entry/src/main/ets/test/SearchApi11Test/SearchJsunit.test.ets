@@ -219,7 +219,7 @@ export default function SearchJsunit() {
       await textComponent6.click()
       await CommonFunc.sleep(3000);
       console.info("[SearchJsunit_0300] click cut succ ");
-      let strJson4 = getInspectorByKey('cut');
+      let strJson4 = getInspectorByKey('cut_SearchPage');
       let obj4: ESObject = JSON.parse(strJson4);
       console.info("[SearchJsunit_0300] obj4: " + JSON.stringify(obj4));
       expect(obj4.$attrs.content).assertEqual('onCut:hello');

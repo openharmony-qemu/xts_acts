@@ -1017,7 +1017,7 @@ export default function AtomicsTest() {
 
           for (let i = 0; i < taskCount; i++) {
             waitTasks.push(new Promise<void>((resolve, reject) => {
-              taskpool.execute(() => {
+              taskpool.execute(async () => {
                 Atomics.add(readyCounter, 0, 1);
                 const waitResult = Atomics.wait(sharedArray, 0, 0n);
                 if (waitResult === 'ok') {
@@ -1088,7 +1088,7 @@ export default function AtomicsTest() {
           for (let i = 0; i < taskCount; i++) {
             const waitValue = BigInt(i + 1);
             waitTasks.push(new Promise<void>((resolve, reject) => {
-              taskpool.execute(() => {
+              taskpool.execute(async () => {
                 Atomics.add(readyCounter, 0, 1);
                 const waitResult = Atomics.wait(sharedArray, 0, waitValue);
                 if (waitResult === 'ok') {
@@ -1164,7 +1164,7 @@ export default function AtomicsTest() {
             const waitValue = 0n;
 
             waitTasks.push(new Promise<void>((resolve, reject) => {
-              taskpool.execute(() => {
+              taskpool.execute(async () => {
                 Atomics.add(readyCounter, 0, 1);
                 Atomics.wait(sharedArray, waitPosition, waitValue);
                 resolve(undefined);

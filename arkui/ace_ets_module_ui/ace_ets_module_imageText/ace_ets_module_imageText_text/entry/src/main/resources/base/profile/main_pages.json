@@ -93,7 +93,8 @@
         "MainAbility/pages/Text/TextCompressLeadingPunctuation",
         "MainAbility/pages/Text/TextCompressLeadingPunctuationModifier",
         "MainAbility/pages/Text/TextFontWeightTest",
+        "MainAbility/pages/Text/TextTextDirection",
         "MainAbility/pages/SelectedDragPreviewStyle/SelectedDragPreviewStyle",
-        "MainAbility/pages/Text/TextTextDirection"
+        "MainAbility/pages/Text/TextMarqueeOptionsTest"
     ]
 }

@@ -29,7 +29,7 @@ export default function pasteboardDetectPatternsTest() {
     });
     beforeEach(async () => {
       console.info(tag+'beforeEach');
-      await systemPasteboard.clearDataSync();
+      systemPasteboard.clearDataSync();
 
     });
     afterEach(async () => {

@@ -109,8 +109,7 @@ struct MyItemGroup {
   }
 
   build() {
-    Text('2222222222222222222222222222222')
-    ListItemGroup({    //master22 注释后显示2222
+    ListItemGroup({
       headerComponent: this.GetHeader(),
       footerComponent: this.GetFooter()
     }) {
@@ -162,12 +161,11 @@ struct ListItemGroupExample {
         })
       List({ space: 5 }) {
         ForEach(this.timeTable, (item: TimeTable) => {
-          Text('++++++++++++++++++++++')
-          MyItemGroup({ item: item }) //master22不显示
+          MyItemGroup({ item: item })
         }, (item: TimeTable) => item.title )
       }
       .width('90%')
-      //.sticky(StickyStyle.Header | StickyStyle.Footer)
+      .sticky(StickyStyle.BOTH)
       .scrollBar(BarState.Off)
     }
     .width('100%')

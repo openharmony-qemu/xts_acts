@@ -332,3 +332,4 @@ export const audioSessionManagerMuteSuggestion_002: () => number;
 export const audioSessionManagerMuteSuggestion_003: () => number;
 export const audioSessionManagerMuteSuggestion_004: () => number;
 export const audioSessionManagerMuteSuggestion_005: () => number;
+export const AudioSessionManagerIsOtherMediaPlaying_001: () => number;

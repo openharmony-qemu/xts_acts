@@ -30,7 +30,7 @@ export default function SelectedDragPreviewStyleTextTest() {
     /**
      * @tc.name   SelectedDragPreviewStyleTextTest0737
      * @tc.number SUB_ARKUI_CAPI_TEXT_METHOD_0100
-     * @tc.desc   test onCut event callback
+     * @tc.desc   test OH_ArkUI_SelectedDragPreviewStyle_SetColor on Text
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -47,6 +47,26 @@ export default function SelectedDragPreviewStyleTextTest() {
       console.info('[SelectedDragPreviewStyleTextTest0737] MinLines obj is: ' + JSON.stringify(obj.$attrs.selectedDragPreviewStyle));
       expect(obj.$attrs.selectedDragPreviewStyle).assertEqual('#FFFF0000');
       console.info('[SelectedDragPreviewStyleTextTest0737] END')
+      done();
+    })
+
+    /**
+     * @tc.name   SelectedDragPreviewStyleTextTest0738
+     * @tc.number SUB_ARKUI_CAPI_TEXT_METHOD_0200
+     * @tc.desc   test OH_ArkUI_SelectedDragPreviewStyle_GetColor on text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SelectedDragPreviewStyleTextTest0738', Level.LEVEL1, async (done: Function) => {
+      let driver = await Driver.create();
+      let strJson = getInspectorByKey('Drag');
+      let obj: ESObject = JSON.parse(strJson);
+      await Utils.sleep(1000);
+      console.info('[SelectedDragPreviewStyleTextInputTest0738] strJson is: ' + strJson);
+      console.info('[SelectedDragPreviewStyleTextInputTest0738] content obj is: ' + JSON.stringify(obj.$attrs.content));
+      expect(obj.$attrs.content).assertEqual('429490176042949670405');
+      console.info('[SelectedDragPreviewStyleTextInputTest0738] END')
       done();
     })
   })

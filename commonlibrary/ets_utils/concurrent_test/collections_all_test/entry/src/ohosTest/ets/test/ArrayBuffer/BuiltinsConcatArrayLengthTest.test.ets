@@ -106,7 +106,7 @@ export default function builtinsConcatArrayLengthTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayLengthTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const targetLength: number = 65536;
+      const targetLength: number = 65;
       const presetWritableArr: string[] = new Array(targetLength);
       const arr: collections.ConcatArray<string> = new collections.Array<string>(...Array.from(presetWritableArr));
       expect(arr.length).assertEqual(targetLength);

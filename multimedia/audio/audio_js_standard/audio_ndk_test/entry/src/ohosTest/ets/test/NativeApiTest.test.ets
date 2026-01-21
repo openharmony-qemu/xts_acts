@@ -4892,5 +4892,19 @@ export default function audioNDK() {
       expect(result).assertEqual(TEST_PASS);
       done();
     })
+    /**
+     * @tc.name   AudioSessionManagerIsOtherMediaPlaying_001
+     * @tc.number AudioSessionManagerIsOtherMediaPlaying_001
+     * @tc.desc   IsOtherMediaPlaying
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioSessionManagerIsOtherMediaPlaying_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioSessionManagerIsOtherMediaPlaying_001();
+      console.info(`Tag: AudioSessionManagerIsOtherMediaPlaying_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
   })
 }

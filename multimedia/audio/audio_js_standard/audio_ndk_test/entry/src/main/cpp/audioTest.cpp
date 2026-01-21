@@ -8661,6 +8661,40 @@ static napi_value AudioSessionManagerMuteSuggestion_005(napi_env env, napi_callb
     return value;
 }
 
+static napi_value AudioSessionManagerIsOtherMediaPlaying_001(napi_env env, napi_callback_info info)
+{
+    napi_value value;
+    OH_AudioCommon_Result result = AUDIOCOMMON_RESULT_SUCCESS;
+    OH_AudioSessionManager *audioSessionManager = nullptr;
+    result = OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS || audioSessionManager == nullptr) {
+        LOG("OH_AudioManager_GetAudioSessionManager fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &value);
+        return value;
+    }
+    OH_AudioSession_Strategy strategy {};
+    result = OH_AudioSessionManager_ActivateAudioSession(audioSessionManager, &strategy);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioSessionManager_ActivateAudioSession fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &value);
+        return value;
+    }
+    bool isOtherMediaPlaying = OH_AudioSessionManager_IsOtherMediaPlaying(audioSessionManager);
+    if (isOtherMediaPlaying) {
+        LOG("OH_AudioSessionManager_IsOtherMediaPlaying fail, result is: %{public}d", isOtherMediaPlaying);
+        napi_create_int32(env, TEST_FAIL, &value);
+        return value;
+    }
+    
+    result = OH_AudioSessionManager_DeactivateAudioSession(audioSessionManager);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioSessionManager_DeactivateAudioSession fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &value);
+        return value;
+    }
+    napi_create_int32(env, TEST_PASS, &value);
+    return value;
+}
 EXTERN_C_START
 napi_property_descriptor desc1[] = {
     {"AudioSuiteRendererGetLatency_0100", nullptr, AudioSuiteRendererGetLatency_0100,
@@ -8915,6 +8949,9 @@ napi_property_descriptor desc1[] = {
         nullptr},
     {"StartAudioRenderer", nullptr, StartAudioRenderer, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"getFileList", nullptr, &FileRecourceManager::GetFileList, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"AudioSessionManagerIsOtherMediaPlaying_001", nullptr, AudioSessionManagerIsOtherMediaPlaying_001,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    
 };
 napi_property_descriptor desc2[] = {
     {"audioManagerGetAudioScene_02", nullptr, AudioManagerGetAudioScene_02, nullptr, nullptr, nullptr, napi_default,

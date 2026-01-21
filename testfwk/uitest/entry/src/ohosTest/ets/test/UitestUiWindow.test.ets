@@ -86,6 +86,23 @@ async function setSplit(driver: Driver) {
     if (scbCom != null) {
       await startAbility('com.uitest.acts', 'EntryAbility')
       await driver.delayMs(waitUiReadyMs * 2)
+      let btn = await driver.findComponent(ON.text('下一步'))
+      if (btn != null) {
+        await btn.click()
+        await driver.delayMs(waitUiReadyMs * 3)
+        let btn1 = await driver.findComponent(ON.text('完成'))
+        await btn1.click()
+        await driver.delayMs(waitUiReadyMs * 7)
+      }
+      let btn1 = await driver.findComponent(ON.text('完成'))
+      if (btn1 != null) {
+        await btn1.click()
+        await driver.delayMs(waitUiReadyMs * 7)
+      }
+      let btn2 = await driver.findComponent(ON.text('点击显示操作按钮'))
+      if (btn2 != null) {
+        await driver.delayMs(waitUiReadyMs * 7)
+      }
       let window1 = await driver.findWindow({bundleName : 'com.uitestScene.acts'})
       let windowmode = await window1.getWindowMode()
       expect(windowmode == WindowMode.PRIMARY).assertTrue()
@@ -518,20 +535,6 @@ export default function uiUiWindowTest() {
       }
       await stopApplication('com.uitestScene.acts')
     })
-
-  })
-  describe('uitestUiWindowTest_new', () => {
-    let driver: Driver
-    beforeAll(async (done: Function) => {
-      driver = Driver.create()
-      await driver.delayMs(1000)
-      done()
-    })
-
-    afterEach(async () => {
-      await stopApplication('com.uitestScene.acts')
-    })
-
     /**
      * @tc.name   testWindowResume_split
      * @tc.number uitestUiWindowTest_new001
@@ -592,6 +595,11 @@ export default function uiUiWindowTest() {
      */
     it('testSplit_split2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      let btn1 = await driver.findComponent(ON.text('完成'))
+      if (btn1 != null) {
+        await btn1.click()
+        await driver.delayMs(waitUiReadyMs * 7)
+      }
       await driver.delayMs(waitUiReadyMs);
       await setFloat(driver)
       let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
@@ -601,7 +609,12 @@ export default function uiUiWindowTest() {
       try {
         let window2 = await driver.findWindow({ bundleName: 'com.uitest.acts' });
         await window2.split();
-        await driver.delayMs(waitUiReadyMs*2);
+        await driver.delayMs(waitUiReadyMs * 3)
+        let btn = await driver.findComponent(ON.text('完成'))
+        if (btn != null) {
+          await btn.click()
+          await driver.delayMs(waitUiReadyMs * 7)
+        }
         let window3 = await driver.findWindow({ bundleName: 'com.uitest.acts' });
         let windowMode = await window3.getWindowMode();
         expect(windowMode == WindowMode.PRIMARY).assertTrue();
@@ -1020,4 +1033,5 @@ export default function uiUiWindowTest() {
     })
 
   })
+  
 }
