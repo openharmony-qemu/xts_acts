@@ -88,6 +88,7 @@ export default function displayTest() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
+    let isSupportRotate = false;
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -116,9 +117,23 @@ export default function displayTest() {
           if(allowed){
             await allowed.click();
           }
-        } catch (err) {
+      } catch (err) {
           console.error('findComponent allowed failed: ' + JSON.stringify(err));
-        }
+      }
+      await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT)
+      await sleep(300);
+      let Orientation1 = display.getDefaultDisplaySync().orientation;
+      await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+      await sleep(300);
+      let Orientation2 = display.getDefaultDisplaySync().orientation;
+      if(Orientation1 != Orientation2){
+        isSupportRotate = true;
+      }else{
+        isSupportRotate = false;
+      }
+      await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+      await sleep(300);
+      console.log(`beforeAll isSupportRotate: ${JSON.stringify(isSupportRotate)},Orientation1: ${JSON.stringify(Orientation1)},Orientation2: ${JSON.stringify(Orientation2)}`)
     });
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -3422,49 +3437,45 @@ export default function displayTest() {
       console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
       let windowClass = windowStage.getMainWindowSync();
       try {
-        let index1 = 0;
-        let index2 = 0;
-        const callback1 = (res: number)=>{
-          console.info(caseName + ' callback1 res: ' + res);
-          index1++;
-          console.info(caseName + ' callback1 index1: ' + index1);
+        if(isSupportRotate == true){
+          let index1 = 0;
+          let index2 = 0;
+          const callback1 = (res: number)=>{
+            console.info(caseName + ' callback1 res: ' + res);
+            index1++;
+            console.info(caseName + ' callback1 index1: ' + index1);
+          }
+          const callback2 = (res: number)=>{
+            console.info(caseName + ' callback2 res: ' + res);
+            index2++;
+            console.info(caseName + ' callback2 index2: ' + index2);
+          }
+          display.onChangeWithAttribute(['width'], callback1);
+          display.onChangeWithAttribute(['height'], callback2);
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(1);
+          display.off('change', callback1);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(3000);
+          console.info(caseName + ' setOrientation index1: ' + index1);
+          console.info(caseName + ' setOrientation index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(2);
+          display.off('change');
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(2);
+          done();
+        }else{
+          done();
         }
-        const callback2 = (res: number)=>{
-          console.info(caseName + ' callback2 res: ' + res);
-          index2++;
-          console.info(caseName + ' callback2 index2: ' + index2);
-        }
-        display.onChangeWithAttribute(['width'], callback1);
-        display.onChangeWithAttribute(['height'], callback2);
-        await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
-        await sleep(3000);
-        console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
-        console.info(caseName + ' setPreferredOrientation LANDSCAPE index2: ' + index2);
-        expect(index1).assertEqual(1);
-        expect(index2).assertEqual(1);
-        display.off('change', callback1);
-        let config: screen.VirtualScreenOption = {
-          name: 'createVirtualScreen3',
-          width: 1080,
-          height: 2720,
-          density: 2,
-          surfaceId: '',
-        }
-        let screenInfo = await screen.createVirtualScreen(config)
-        await screenInfo.setOrientation(screen.Orientation.VERTICAL);
-        await sleep(3000);
-        console.info(caseName + ' setOrientation index1: ' + index1);
-        console.info(caseName + ' setOrientation index2: ' + index2);
-        expect(index1).assertEqual(1);
-        expect(index2).assertEqual(2);
-        display.off('change');
-        await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
-        await sleep(3000);
-        console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
-        console.info(caseName + ' setPreferredOrientation PORTRAIT index2: ' + index2);
-        expect(index1).assertEqual(1);
-        expect(index2).assertEqual(2);
-        done();
+
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
         if (!canIUseRes) {
@@ -3491,50 +3502,47 @@ export default function displayTest() {
       let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
       console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
       let windowClass = windowStage.getMainWindowSync();
+
       try {
-        let index1 = 0;
-        let index2 = 0;
-        const callback1 = (res: number)=>{
-          console.info(caseName + ' callback1 res: ' + res);
-          index1++;
-          console.info(caseName + ' callback1 index1: ' + index1);
+        if(isSupportRotate == true) {
+          let index1 = 0;
+          let index2 = 0;
+          const callback1 = (res: number) => {
+            console.info(caseName + ' callback1 res: ' + res);
+            index1++;
+            console.info(caseName + ' callback1 index1: ' + index1);
+          }
+          const callback2 = (res: number) => {
+            console.info(caseName + ' callback2 res: ' + res);
+            index2++;
+            console.info(caseName + ' callback2 index2: ' + index2);
+          }
+          display.onChangeWithAttribute(['rotation'], callback1);
+          display.onChangeWithAttribute(['orientation'], callback2);
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(1);
+          display.off('change', callback1);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT_INVERTED);
+          await sleep(3000);
+          console.info(caseName + ' setOrientation index1: ' + index1);
+          console.info(caseName + ' setOrientation index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(2);
+          display.off('change');
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(2);
+          done();
+        }else{
+          done();
         }
-        const callback2 = (res: number)=>{
-          console.info(caseName + ' callback2 res: ' + res);
-          index2++;
-          console.info(caseName + ' callback2 index2: ' + index2);
-        }
-        display.onChangeWithAttribute(['rotation'], callback1);
-        display.onChangeWithAttribute(['orientation'], callback2);
-        await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
-        await sleep(3000);
-        console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
-        console.info(caseName + ' setPreferredOrientation LANDSCAPE index2: ' + index2);
-        expect(index1).assertEqual(1);
-        expect(index2).assertEqual(1);
-        display.off('change', callback1);
-        let config: screen.VirtualScreenOption = {
-          name: 'createVirtualScreen3',
-          width: 1080,
-          height: 2720,
-          density: 2,
-          surfaceId: '',
-        }
-        let screenInfo = await screen.createVirtualScreen(config)
-        await screenInfo.setOrientation(screen.Orientation.VERTICAL);
-        await sleep(3000);
-        console.info(caseName + ' setOrientation index1: ' + index1);
-        console.info(caseName + ' setOrientation index2: ' + index2);
-        expect(index1).assertEqual(1);
-        expect(index2).assertEqual(2);
-        display.off('change');
-        await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
-        await sleep(3000);
-        console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
-        console.info(caseName + ' setPreferredOrientation PORTRAIT index2: ' + index2);
-        expect(index1).assertEqual(1);
-        expect(index2).assertEqual(2);
-        done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
         if (!canIUseRes) {
@@ -3561,24 +3569,31 @@ export default function displayTest() {
       let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
       console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
       let windowClass = windowStage.getMainWindowSync();
+      let diaplayId = display.getDefaultDisplaySync().id;
+      console.info(caseName + 'diaplayId: ' + diaplayId);
       try {
-        let index1 = 0;
-        const callback1 = (res: number)=>{
-          console.info(caseName + ' callback1 res: ' + res);
-          index1++;
-          console.info(caseName + ' callback1 index1: ' + index1);
+        if(isSupportRotate == true) {
+          let index1 = 0;
+          const callback1 = (res: number) => {
+            console.info(caseName + ' callback1 res: ' + res);
+            expect(res).assertEqual(diaplayId);
+            index1++;
+            console.info(caseName + ' callback1 index1: ' + index1);
+          }
+          display.onChangeWithAttribute(['rotation', 'densityDPI'], callback1);
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
+          expect(index1).assertEqual(1);
+          display.off('change', callback1);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
+          expect(index1).assertEqual(1);
+          done();
+        }else{
+          done();
         }
-        display.onChangeWithAttribute(['rotation', 'densityDPI'], callback1);
-        await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
-        await sleep(3000);
-        console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
-        expect(index1).assertEqual(1);
-        display.off('change', callback1);
-        await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
-        await sleep(3000);
-        console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
-        expect(index1).assertEqual(1);
-        done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
         if (!canIUseRes) {

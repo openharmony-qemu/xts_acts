@@ -1934,8 +1934,13 @@ export default function windowRotationTest() {
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        expect(err.code).assertEqual(401);
-        done();
+        if (!canIUseRes) {
+          expect(err.code).assertEqual(801);
+          done()
+        } else {
+          expect(err.code).assertEqual(401);
+          done();
+        }
       }
     })
 

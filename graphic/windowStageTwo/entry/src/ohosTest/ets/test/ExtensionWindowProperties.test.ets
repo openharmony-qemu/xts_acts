@@ -817,7 +817,7 @@ export default function extensionWindowPropertiesTest() {
       console.log(caseName + 'start run');
       let isSupport = canIUse('SystemCapability.Window.SessionManager')
       console.log(caseName + ' isSupport: ' + isSupport);
-      if (isSupport) {
+      if (!isSupport) {
         done()
       } else {
         let subWindowClass: window.Window | undefined;
@@ -875,7 +875,7 @@ export default function extensionWindowPropertiesTest() {
       console.log(caseName + 'start run');
       let isSupport = canIUse('SystemCapability.Window.SessionManager')
       console.log(caseName + ' isSupport: ' + isSupport);
-      if (isSupport) {
+      if (!isSupport) {
         done()
       } else {
         let subWindowClass: window.Window | undefined;

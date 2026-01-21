@@ -5094,7 +5094,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           const callback = async (state: pipWindow.PiPState, reason: string) => {
             console.log(caseName + ' callback state: ' + state);
             console.log(caseName + ' callback reason: ' + reason);
-            expect(reason.indexOf('RequestStart')).assertLargerOrEqual(0)
+            expect(reason).assertEqual('requestStart');
             pipController?.off('stateChange')
             await pipController?.stopPiP();
             done();
@@ -5138,7 +5138,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     it('testPiPStateChangeAutoStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testPiPStateChangeAutoStart';
       console.log(tag + caseName +' begin');
-      if(isPipWindowEnabled && isFreeWindowMode) {
+      if(isPipWindowEnabled && isPCStatus != '') {
         let pipController:pipWindow.PiPController| undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -5158,10 +5158,10 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           const callback = async (state: pipWindow.PiPState, reason: string) => {
             console.log(caseName + ' callback state: ' + state);
             console.log(caseName + ' callback reason: ' + reason);
-            expect(reason.indexOf('AutoStart')).assertLargerOrEqual(0)
+            expect(reason).assertEqual('autoStart')
             pipController?.off('stateChange')
-            await windowClass.restore();
             await pipController?.stopPiP();
+            await windowClass.restore();
             done();
           }
           pipWindow.create(config).then(async (data) => {
@@ -5173,7 +5173,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             await windowClass.minimize();
             await sleep(1000);
           }).catch((err:BusinessError) => {
-            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
+            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message)`);
             pipController?.off('stateChange')
             if (err.code == 801) {
               expect(err.message!=null).assertTrue();
@@ -5225,7 +5225,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           const callback = (state: pipWindow.PiPState, reason: string) => {
             console.log(caseName + ' callback state: ' + state);
             console.log(caseName + ' callback reason: ' + reason);
-            expect(reason.indexOf('RequestDelete')).assertLargerOrEqual(0)
+            expect(reason).assertEqual('requestDelete')
             pipController?.off('stateChange')
             done();
           }
@@ -5291,7 +5291,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           const callback = (state: pipWindow.PiPState, reason: string) => {
             console.log(caseName + ' callback state: ' + state);
             console.log(caseName + ' callback reason: ' + reason);
-            expect(reason.indexOf('PanelActionDelete')).assertLargerOrEqual(0)
+            expect(reason).assertEqual('panelActionDelete');
             pipController?.off('stateChange')
             done();
           }
@@ -5303,8 +5303,8 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             pipController.on('stateChange', callback)
             let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
             console.log(`${caseName} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
-            await sleep(1000)
             await pipWindowComponent.click();
+            await sleep(1000)
             let exit = await driver.findComponent(ON.id('control_exit'));
             await sleep(1000)
             await exit.click();
@@ -5364,7 +5364,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           const callback = async (state: pipWindow.PiPState, reason: string) => {
             console.log(caseName + ' callback state: ' + state);
             console.log(caseName + ' callback reason: ' + reason);
-            expect(reason.indexOf('PanelActionRestore')).assertLargerOrEqual(0)
+            expect(reason).assertEqual('panelActionRestore')
             pipController?.off('stateChange')
             done();
           }
@@ -5376,8 +5376,8 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             pipController.on('stateChange', callback)
             let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
             console.log(`${caseName} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
-            await sleep(1000)
             await pipWindowComponent.click();
+            await sleep(1000)
             let restore = await driver.findComponent(ON.id('control_restore'));
             await sleep(1000)
             await restore.click();
@@ -5417,52 +5417,35 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       let caseName = 'testPiPStateChangeOtherwithCloseMainWindow';
       console.log(tag + caseName +' begin');
       if(isPipWindowEnabled) {
+        let driver = Driver.create();
         let windowStageStart = await startAbility(caseName, globalThis.abilityContext);
         let windowClass = windowStageStart.getMainWindowSync();
-        let pipController:pipWindow.PiPController| undefined = undefined;
-        let mXComponentController = new XComponentController();
-        let navId = "";
-        let contentWidth = 400;
-        let contentHeight = 600;
-        let config:pipWindow.PiPConfiguration = {
-          context: context1,
-          componentController: mXComponentController,
-          navigationId: navId,
-          templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
-          contentWidth: contentWidth,
-          contentHeight: contentHeight,
-          cornerAdsorptionEnabled: true
-        };
+        await windowClass.setUIContent('MainAbility/pages/index/index2');
+        await windowClass.showWindow();
+        await sleep(500);
         try {
-          const callback = async (state: pipWindow.PiPState, reason: string) => {
-            console.log(caseName + ' callback state: ' + state);
-            console.log(caseName + ' callback reason: ' + reason);
-            expect(reason.indexOf('Other')).assertLargerOrEqual(0)
-            pipController?.off('stateChange')
+          let btn = await driver.findComponent(ON.id('startPip'))
+          console.log(caseName + ' btn : ' + btn);
+          await btn.click()
+          await sleep(3000);
+          let text = await driver.findComponent(ON.id('getMessage'))
+          let message = await text.getText();
+          if (message == 'success') {
+            await terminateAbility(caseName);
+            await sleep(3000);
+            let callbackRes = AppStorage.get('reason') as string;
+            console.log(caseName + ' callbackRes: ' + callbackRes);
+            expect(callbackRes).assertEqual('Other');
+            done();
+          } else if (message == '801') {
+            await terminateAbility(caseName);
+            expect(true).assertTrue();
+            done()
+          } else {
             await terminateAbility(caseName)
+            expect().assertFail();
             done();
           }
-          pipWindow.create(config).then(async (data) => {
-            pipController = data;
-            console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
-            expect(data != null).assertTrue();
-            await pipController.startPiP()
-            pipController.on('stateChange', callback)
-            await windowClass.destroyWindow();
-            await sleep(3000);
-          }).catch(async (err:BusinessError) => {
-            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
-            await terminateAbility(caseName)
-            if (err.code == 801) {
-              expect(err.message!=null).assertTrue();
-              expect(true).assertTrue();
-              done();
-            }
-            else {
-              expect().assertFail();
-              done();
-            }
-          });
         } catch (error) {
           console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
           await terminateAbility(caseName)
@@ -5486,8 +5469,6 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       let caseName = 'testPiPStateChangeOtherwithTwoPiP';
       console.log(tag + caseName +' begin');
       if(isPipWindowEnabled) {
-        let windowStageStart = await startAbility(caseName, globalThis.abilityContext);
-        let windowClass = windowStageStart.getMainWindowSync();
         let pipController:pipWindow.PiPController| undefined = undefined;
         let pipController2:pipWindow.PiPController| undefined = undefined;
         let mXComponentController = new XComponentController();
@@ -5507,11 +5488,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           const callback = async (state: pipWindow.PiPState, reason: string) => {
             console.log(caseName + ' callback state: ' + state);
             console.log(caseName + ' callback reason: ' + reason);
-            expect(reason.indexOf('Other')).assertLargerOrEqual(0)
+            expect(reason).assertEqual('other')
             pipController?.off('stateChange')
             await pipController2?.stopPiP();
-            await pipController?.stopPiP();
-            await terminateAbility(caseName)
             done();
           }
           pipWindow.create(config).then(async (data) => {
@@ -5525,7 +5504,6 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             await sleep(3000);
           }).catch(async (err:BusinessError) => {
             console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
-            await terminateAbility(caseName)
             if (err.code == 801) {
               expect(err.message!=null).assertTrue();
               expect(true).assertTrue();
@@ -5538,7 +5516,6 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           });
         } catch (error) {
           console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
-          await terminateAbility(caseName)
           expect().assertFail();
           done();
         }
@@ -5581,7 +5558,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             await pipController.startPiP();
             let isPipActive = await pipController.isPiPActive();
             console.log(tag + caseName + ' isPipActive: ' + isPipActive);
-            expect(isPipActive).assertTrue();
+            expect(isPipActive).assertEqual(true);
             await pipController.stopPiP();
             await sleep(5000);
             done();
@@ -5640,7 +5617,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             expect(data != null).assertTrue();
             let isPipActive = await pipController.isPiPActive();
             console.log(tag + caseName + ' isPipActive: ' + isPipActive);
-            expect(isPipActive).assertFalse();
+            expect(isPipActive).assertEqual(false);
             await sleep(5000);
             done();
           }).catch(async (err:BusinessError) => {
@@ -5700,7 +5677,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             await pipController.stopPiP();
             let isPipActive = await pipController.isPiPActive();
             console.log(tag + caseName + ' isPipActive: ' + isPipActive);
-            expect(isPipActive).assertFalse();
+            expect(isPipActive).assertEqual(false);
             await sleep(5000);
             done();
           }).catch(async (err:BusinessError) => {
@@ -5736,7 +5713,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     it('testPiPisPiPActiveSidebar', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testPiPisPiPActiveSidebar';
       console.log(tag + caseName +' begin');
-      if(isPipWindowEnabled) {
+      if(isPipWindowEnabled && isFreeWindowMode == false) {
         let pipController:pipWindow.PiPController| undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -5772,7 +5749,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             await sleep(3000);
             let isPipActive = await pipController.isPiPActive();
             console.log(tag + caseName + ' isPipActive: ' + isPipActive);
-            expect(isPipActive).assertFalse();
+            expect(isPipActive).assertEqual(false);
             await pipController.stopPiP();
             await sleep(5000);
             done();

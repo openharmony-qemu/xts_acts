@@ -1,6 +1,7 @@
 {
     "src": [
         "MainAbility/pages/index/index",
+        "MainAbility/pages/index/index2",
         "MainAbility/pages/index/second"
     ]
 }

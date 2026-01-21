@@ -400,11 +400,7 @@ export default function windowEventTest() {
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (!canIUseRes) {
-          expect(e.code).assertEqual(801);
-        } else {
-          expect(e.code).assertEqual(1300002);
-        }
+        expect(e.code).assertEqual(1300002);
       }
       try {
         let res1 = windowClass.isReceiveDragEventEnabled();
@@ -413,13 +409,8 @@ export default function windowEventTest() {
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (!canIUseRes) {
-          expect(e.code).assertEqual(801);
-          done();
-        } else {
-          expect(e.code).assertEqual(1300002);
-          done()
-        }
+        expect(e.code).assertEqual(1300002);
+        done()
       }
     });
 
@@ -446,11 +437,7 @@ export default function windowEventTest() {
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (!canIUseRes) {
-          expect(e.code).assertEqual(801);
-        } else {
-          expect(e.code).assertEqual(1300002);
-        }
+        expect(e.code).assertEqual(1300002);
       }
       try {
         let res1 = windowClass.isSeparationTouchEnabled();
@@ -459,13 +446,8 @@ export default function windowEventTest() {
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (!canIUseRes) {
-          expect(e.code).assertEqual(801);
-          done();
-        } else {
-          expect(e.code).assertEqual(1300002);
-          done()
-        }
+        expect(e.code).assertEqual(1300002);
+        done();
       }
     });
 

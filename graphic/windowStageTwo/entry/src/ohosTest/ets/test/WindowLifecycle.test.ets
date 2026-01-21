@@ -3229,13 +3229,11 @@ export default function WindowLifecycle() {
           done()
         }).catch(async (err: BusinessError) => {
           console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
-          await subWindowClass?.destroyWindow();
           expect(err.code).assertEqual(1300002);
           done();
         });
       } catch (err) {
         console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
-        await subWindowClass?.destroyWindow();
         expect().assertFail();
         done();
       }
@@ -3277,7 +3275,8 @@ export default function WindowLifecycle() {
           console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
           await subWindowClass?.destroyWindow();
           await terminateAbility3(caseName);
-          if (err.code == 1300002) {
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
             done();
           } else {
             expect(err.code).assertEqual(1300004);
@@ -3328,12 +3327,14 @@ export default function WindowLifecycle() {
           await subWindowClass.setUIContent('testability/pages/First/index2');
           await subWindowClass.showWindow();
           await sleep(500);
-          await mainWindow.minimize();
-          await sleep(500);
-          let text = await driver.findComponent(ON.id('textId'))
-          await sleep(1000);
-          await text.click();
-          await sleep(500);
+          if (canIUseRes) {
+            await mainWindow.minimize();
+            await sleep(500);
+            let text = await driver.findComponent(ON.id('textId'))
+            await sleep(1000);
+            await text.click();
+            await sleep(500);
+          }
           mainWindow.on('windowEvent', callback)
           await subWindowClass.restoreMainWindow();
           await sleep(1000);
@@ -3341,7 +3342,8 @@ export default function WindowLifecycle() {
           console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
           await subWindowClass?.destroyWindow();
           await terminateAbility3(caseName);
-          if (err.code == 1300002) {
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
             done();
           } else {
             expect().assertFail();
@@ -3392,13 +3394,15 @@ export default function WindowLifecycle() {
           await subWindowClass.setUIContent('testability/pages/First/index2');
           await subWindowClass.showWindow();
           await sleep(500);
-          await mainWindow.minimize();
-          await sleep(1000);
-          mainWindow.on('windowEvent', callback)
-          let text = await driver.findComponent(ON.id('textId'))
-          await sleep(1000);
-          await text.click();
-          await sleep(500);
+          if (canIUseRes) {
+            await mainWindow.minimize();
+            await sleep(1000);
+            mainWindow.on('windowEvent', callback)
+            let text = await driver.findComponent(ON.id('textId'))
+            await sleep(1000);
+            await text.click();
+            await sleep(500);
+          }
           let param: Record<string, Object> = {
               'info': 'restoreMainWindow',
           };
@@ -3408,7 +3412,8 @@ export default function WindowLifecycle() {
           console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
           await subWindowClass?.destroyWindow();
           await terminateAbility3(caseName);
-          if (err.code == 1300002) {
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
             done();
           } else {
             expect().assertFail();
