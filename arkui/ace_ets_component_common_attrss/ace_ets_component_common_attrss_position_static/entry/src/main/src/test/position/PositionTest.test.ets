@@ -90,15 +90,13 @@ export default function positionTest() {
     'Path',
     'Rect',
     'Shape',
-    'AlphabetIndexer',//10.22 pass 4
-    'Navigation',//10.22 pass 4
-    'NavRouter',//10.22 pass 4
-    'ListItemGroup',//10.22 pass 4
-    'Navigator', // 10.22  废弃，平替接口Navigation，已有用例覆盖。
-    'Panel', // 10.22 pass 4
-    'Tabs',//10.22 pass 7
-    'Gauge',//  10.22 pass 4
-    'TabContent', //11.28SDK
+    'AlphabetIndexer',
+    'Navigation',
+    'NavRouter',
+    'ListItemGroup',
+    'Tabs',
+    'Gauge',
+    'TabContent',
   )
   // 存在问题的自定义组件 TabsView ListItemGroupView NavigationView NavRouterView  AlphabetIndexerView
   // 存在问题的官方组件 TabContent Column>Text   Navigator Gauge

@@ -98,8 +98,6 @@ export default function marginTest() {
   'List',
   'ListItem',
   'ListItemGroup',
-  'Navigator',
-  'Panel',
   'Refresh',
   'RelativeContainer',
   'Row',

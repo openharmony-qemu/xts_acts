@@ -34,8 +34,8 @@ struct CircleResource {
 
       Circle()
         .id('CircleResource3')
-        // .width($r('app.string.Width_50'))
-        // .height($r('app.string.Height_50'))
+        .width($r('app.string.Width_50'))
+        .height($r('app.string.Height_50'))
       //   .fillOpacity(0)
       //   .strokeWidth(3)
       //   .stroke(Color.Red)

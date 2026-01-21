@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,6 +34,7 @@ import {
   TextAlign
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -77,8 +78,8 @@ struct ColumnExample {
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("[column] page stateChangCallBack");
     if (eventData != null) {
-      const data: Record<String, undefined | null | Object> =
-        eventData.data as Record<String, undefined | null | Object>
+      const data: Record<String,RecordData> =
+        eventData.data as Record<String,RecordData>
       console.info("[column] page state change called:" + JSON.stringify(eventData));
       if (data['alignItems'] != null) {
         this.alignItems = data['alignItems'] as HorizontalAlign;

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,6 +24,7 @@ import {
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter'
 import {ButtonModifier} from "@ohos.arkui.modifier";
+import { RecordData } from '@ohos.base';
 
 class CustomModifier extends ButtonModifier {
   applyNormalAttribute(instance: ButtonAttribute): void {
@@ -59,7 +60,7 @@ struct MotionPath7Example {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.rotatable,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 132,
@@ -83,7 +84,7 @@ struct MotionPath7Example {
               data: {
                 "fromX": this.fromX,
                 "toY": this.toY
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 133,
@@ -106,7 +107,7 @@ struct MotionPath7Example {
     let stateChangeCallBack = (eventData: events_emitter.EventData) => {
         if (eventData != null) {
           console.info('motionPath page state change called:' + JSON.stringify(eventData));
-          const data = eventData.data as Record<String,undefined|null|Object>
+          const data = eventData.data as Record<String,RecordData>
           if (data['fromX'] != null) {
             this.fromX == Number.parseInt(data['toY'] as string);
           }

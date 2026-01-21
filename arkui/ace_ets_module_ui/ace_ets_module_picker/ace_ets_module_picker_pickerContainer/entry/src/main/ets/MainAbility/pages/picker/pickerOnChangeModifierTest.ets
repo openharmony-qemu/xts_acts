@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { PickerModifier } from '@ohos.arkui.modifier'
+import { UIPickerComponentModifier } from '@ohos.arkui.modifier'
 
 @Entry
 @Component
@@ -22,7 +22,7 @@ struct onChangeModifierTest {
   @State selectedIndex: number = 0;
   @State color: string = '#ffff00'
   private monthArray: string[] = [];
-  @State modifier: PickerModifier = new PickerModifier()
+  @State modifier: UIPickerComponentModifier = new UIPickerComponentModifier()
     .onChange((index: number | number[]) => {
       console.info('Picker :onChange, value: ' + ', index: ' + index)
       this.color = '#ff00ff'
@@ -36,7 +36,7 @@ struct onChangeModifierTest {
 
   build() {
     Column({ space: 20 }) {
-      Picker({
+      UIPickerComponent({
         selectedIndex: this.selectedIndex,
       }) {
         ForEach(this.monthArray, (item: string) => {

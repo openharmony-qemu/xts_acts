@@ -76,6 +76,7 @@ class MyAbility extends UIAbility {
       let sketchStatusData: cameraObj.SketchStatusData = {
         status: 1,
         sketchRatio: (1.0) as float,
+        centerPointOffset: { x: (1.0) as float, y: (1.0) as float } as cameraObj.Point,
       }
       console.info('SketchStatusData status:' + sketchStatusData.status + ', sketchRatio: ' + sketchStatusData.sketchRatio);
     } catch (err) {

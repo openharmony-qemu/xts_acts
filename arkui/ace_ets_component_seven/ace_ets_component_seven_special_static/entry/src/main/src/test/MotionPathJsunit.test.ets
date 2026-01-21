@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,6 +22,7 @@ import inspector from '@ohos.arkui.inspector'
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility } from './Util.test'
+import { RecordData } from '@ohos.base';
 
 export default function motionPathJsunit() {
   describe('motionPathTest', () => {
@@ -66,8 +67,8 @@ it('motionPathTest_static_0100', Level.LEVEL0, async (done: () => void): Promise
       console.info('motionPathTest_static_0100 START');
       await Utils.sleep(1500);
       let callback = (indexEvent: events_emitter.EventData) => {
-        console.info("motionPathTest_static_0100 get state result is: " + (indexEvent.data as Record<string,undefined|null|Object>)['ACTION']);
-        expect((indexEvent.data as Record<string,undefined|null|Object>)['ACTION']).assertEqual(true);
+        console.info("motionPathTest_static_0100 get state result is: " + (indexEvent.data as Record<String,RecordData>)['ACTION']);
+        expect((indexEvent.data as Record<String,RecordData>)['ACTION']).assertEqual(true);
 
         done();
       }

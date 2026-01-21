@@ -60,7 +60,12 @@ const fileArr = [
   "ml_face_isface_quant0.output",
   "ml_face_isface_quant.ms",
   "invalid_content.config",
-  "ml_face_isface.config"
+  "ml_face_isface.config",
+  "two_add_operators.ms",
+  "two_add_operators_0.input",
+  "two_add_operators_1.input",
+  "two_add_operators_config.json",
+  "two_add_operators_config_error.json"
 ]
 
 
@@ -4058,6 +4063,116 @@ export default function MindSporeTest() {
      */
     it('OHOS_OfflineModel_0009', Level.LEVEL0, () => {
       expect(libMindSpore.OHOS_OfflineModel(7)).assertEqual(0);
+    })
+    /**
+     * @tc.name   SUB_AI_MindSpore_AIPP_0001
+     * @tc.number SUB_AI_MindSpore_AIPP_0001
+     * @tc.desc   SUB_AI_MindSpore_AIPP_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_AIPP_0001', Level.LEVEL0, () => {
+      expect(libMindSpore.SUB_AI_MindSpore_AIPP(0)).assertEqual(0);
+    })
+    /**
+     * @tc.name   SUB_AI_MindSpore_AIPP_0002
+     * @tc.number SUB_AI_MindSpore_AIPP_0002
+     * @tc.desc   SUB_AI_MindSpore_AIPP_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_AIPP_0002', Level.LEVEL0, () => {
+      expect(libMindSpore.SUB_AI_MindSpore_AIPP(1)).assertEqual(0);
+    })
+    /**
+     * @tc.name   SUB_AI_MindSpore_AIPP_0003
+     * @tc.number SUB_AI_MindSpore_AIPP_0003
+     * @tc.desc   SUB_AI_MindSpore_AIPP_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_AIPP_0003', Level.LEVEL0, () => {
+      expect(libMindSpore.SUB_AI_MindSpore_AIPP(2)).assertEqual(0);
+    })
+    /**
+     * @tc.name   SUB_AI_MindSpore_AIPP_0004
+     * @tc.number SUB_AI_MindSpore_AIPP_0004
+     * @tc.desc   SUB_AI_MindSpore_AIPP_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_AIPP_0004', Level.LEVEL0, () => {
+      expect(libMindSpore.SUB_AI_MindSpore_AIPP(3)).assertEqual(0);
+    })
+    /**
+     * @tc.name   SUB_AI_MindSpore_AIPP_0005
+     * @tc.number SUB_AI_MindSpore_AIPP_0005
+     * @tc.desc   SUB_AI_MindSpore_AIPP_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_AIPP_0005', Level.LEVEL0, () => {
+      expect(libMindSpore.SUB_AI_MindSpore_AIPP(4)).assertEqual(0);
+    })
+    /**
+     * @tc.name   SUB_AI_MindSpore_AIPP_0006
+     * @tc.number SUB_AI_MindSpore_AIPP_0006
+     * @tc.desc   SUB_AI_MindSpore_AIPP_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_AIPP_0006', Level.LEVEL0, () => {
+      expect(libMindSpore.SUB_AI_MindSpore_AIPP(5)).assertEqual(0);
+    })
+    /**
+     * @tc.name   SUB_AI_MindSpore_AIPP_0007
+     * @tc.number SUB_AI_MindSpore_AIPP_0007
+     * @tc.desc   SUB_AI_MindSpore_AIPP_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_AIPP_0007', Level.LEVEL0, () => {
+      expect(libMindSpore.SUB_AI_MindSpore_AIPP(6)).assertEqual(0);
+    })
+    /**
+     * @tc.name   SUB_AI_MindSpore_AIPP_0008
+     * @tc.number SUB_AI_MindSpore_AIPP_0008
+     * @tc.desc   SUB_AI_MindSpore_AIPP_0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_AIPP_0008', Level.LEVEL0, () => {
+      expect(libMindSpore.SUB_AI_MindSpore_AIPP(7)).assertEqual(0);
+    })
+    /**
+     * @tc.name   SUB_AI_MindSpore_AIPP_0009
+     * @tc.number SUB_AI_MindSpore_AIPP_0009
+     * @tc.desc   SUB_AI_MindSpore_AIPP_0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_AIPP_0009', Level.LEVEL0, () => {
+      expect(libMindSpore.SUB_AI_MindSpore_AIPP(8)).assertEqual(0);
+    })
+    /**
+     * @tc.name   SUB_AI_MindSpore_AIPP_0010
+     * @tc.number SUB_AI_MindSpore_AIPP_0010
+     * @tc.desc   SUB_AI_MindSpore_AIPP_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_AIPP_0010', Level.LEVEL0, () => {
+      expect(libMindSpore.SUB_AI_MindSpore_AIPP(9)).assertEqual(0);
     })
 
   })

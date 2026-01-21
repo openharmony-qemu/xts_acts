@@ -238,6 +238,7 @@ export default function abilitystaticTest() {
           expect(`${observer.abilityStateData?.abilityType}`).assertEqual('1');
           expect(observer.abilityStateData?.isAtomicService).assertFalse();
           expect(observer.abilityStateData?.appCloneIndex).assertUndefined();
+          expect(observer.abilityStateData?.callerBundleName).assertEqual(`${BUNDLE_NAME}`);
           hilog.info(domain, tag, `${itName} AbilityStateData assert end`);
 
           hilog.info(domain, tag, `${itName} ProcessData assert start`);
@@ -278,7 +279,7 @@ export default function abilitystaticTest() {
           expect().assertFail();
           done();
         }).catch((err): void => {
-          hilog.info(domain, tag, `SUB_Ability_AbilityRuntime_AppManager_Static_0300 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
+          hilog.info(domain, tag, `SUB_Ability_AbilityRuntime_AppManager_Static_0300 killProcessesByBundleName fail, code is ${err.code}`);
           expect(err.code).assertEqual(16000050);
           done();
         });

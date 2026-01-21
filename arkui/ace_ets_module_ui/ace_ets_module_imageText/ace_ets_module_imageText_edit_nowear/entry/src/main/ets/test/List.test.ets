@@ -37,10 +37,10 @@ export default function testsuite() {
 
   textArea_center()      // Api11
   textAreaBC1Jsunit()
-  textAreaUIJsunit()
   setTextSelectionTest() // Api12
   TextDeleteDirectionTest()
 
   textinputSec()         // Api11
   TextInputPageJsunit()
+  textAreaUIJsunit()
 }

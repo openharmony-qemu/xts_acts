@@ -364,6 +364,15 @@ static napi_value CreateMetadataOutput(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value CreateMetadataOutputWithObjectTypes(napi_env env, napi_callback_info info)
+{
+    size_t argc;
+    napi_value result = nullptr;
+    Camera_ErrorCode ret = ndkCamera_->CreateMetadataOutputWithObjectTypes();
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value IsCameraMuted(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -574,6 +583,22 @@ static napi_value MetadataOutputRelease(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value MetadataOutputRemoveMetadataObjectTypes(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    Camera_ErrorCode code = ndkCamera_->MetadataOutputRemoveMetadataObjectTypes();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+    
+static napi_value MetadataOutputAddMetadataObjectTypes(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    Camera_ErrorCode code = ndkCamera_->MetadataOutputAddMetadataObjectTypes();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+ 	 
 static napi_value SessionAddInput(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -1411,6 +1436,23 @@ static napi_value OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode
     napi_create_int32(env, code, &result);
     return result;
 }
+static napi_value OHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode(napi_env env,
+    napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    Camera_ErrorCode code = ndkCamera_->GetSupportedFullCameraOutputCapabilityWithSceneMode(index);
+
+    napi_create_int32(env, code, &result);
+    return result;
+}
 static napi_value OHCaptureSessionSetSessionMode(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -2073,6 +2115,22 @@ static napi_value OHPhotoNativeGetMainImage(napi_env env, napi_callback_info inf
     napi_create_int32(env, code, &result);
     return result;
 }
+static napi_value OHPhotoNativeGetUncompressedImage(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    Camera_ErrorCode code = ndkCamera_->GetUncompressedImage(index);
+
+    napi_create_int32(env, code, &result);
+    return result;
+}
 static napi_value OHPhotoNativeRelease(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -2101,6 +2159,22 @@ static napi_value OHCameraManagerCreatePhotoOutputWithoutSurface(napi_env env, n
     napi_get_value_int32(env, args[0], &index);
 
     Camera_ErrorCode code = ndkCamera_->CreatePhotoOutputWithoutSurface(index);
+
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value OHCameraManagerCreateYuvPhotoOutputWithoutSurface(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    Camera_ErrorCode code = ndkCamera_->CreateYuvPhotoOutputWithoutSurface(index);
 
     napi_create_int32(env, code, &result);
     return result;
@@ -2923,6 +2997,57 @@ static napi_value OHCameraManagerGetCameraConcurrentInfos(napi_env env, napi_cal
     return result;
 }
 
+static napi_value OHCameraManagerGetCameraDevices(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->GetCameraDevices(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraManagerDeleteCameraDevices(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    Camera_ErrorCode code = ndkCamera_->DeleteCameraDevices(index);
+
+    napi_create_int32(env, code, &result);
+    return result;
+}
+ 
+static napi_value SetInvalidDeviceQueryInfo(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    bool isDeviceQueryInfoInvalid;
+    napi_get_value_bool(env, args[0], &isDeviceQueryInfoInvalid);
+
+    Camera_ErrorCode code = ndkCamera_->SetInvalidDeviceQueryInfo(isDeviceQueryInfoInvalid);
+    napi_create_int32(env, code, &result);
+
+    return result;
+}
+
 static napi_value SessionIsMacroSupported(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -3108,6 +3233,8 @@ static napi_value Init(napi_env env, napi_value exports)
         { "adjustHeifIdx", nullptr, AdjustHeifIdx, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createVideoOutput", nullptr, CreateVideoOutput, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createMetadataOutput", nullptr, CreateMetadataOutput, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "CreateMetadataOutputWithObjectTypes", nullptr, CreateMetadataOutputWithObjectTypes,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createSession", nullptr, CreateSession, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "isCameraMuted", nullptr, IsCameraMuted, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "cameraInputOpen", nullptr, CameraInputOpen, nullptr, nullptr, nullptr, napi_default, nullptr },
@@ -3128,6 +3255,10 @@ static napi_value Init(napi_env env, napi_value exports)
         { "metadataOutputStart", nullptr, MetadataOutputStart, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "metadataOutputStop", nullptr, MetadataOutputStop, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "metadataOutputRelease", nullptr, MetadataOutputRelease, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "MetadataOutputAddMetadataObjectTypes", nullptr, MetadataOutputAddMetadataObjectTypes, nullptr,
+            nullptr, nullptr, napi_default, nullptr },
+ 	    { "MetadataOutputRemoveMetadataObjectTypes", nullptr, MetadataOutputRemoveMetadataObjectTypes,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
         { "previewOutputStop", nullptr, PreviewOutputStop, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionAddInput", nullptr, SessionAddInput, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionRemoveInput", nullptr, SessionRemoveInput, nullptr, nullptr, nullptr, napi_default, nullptr },
@@ -3257,6 +3388,9 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"oHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode", nullptr,
             OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"oHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode", nullptr,
+            OHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode, nullptr, nullptr, nullptr, napi_default,
             nullptr},
         {"oHCaptureSessionSetSessionMode", nullptr, OHCaptureSessionSetSessionMode, nullptr, nullptr, nullptr,
             napi_default, nullptr},
@@ -3404,16 +3538,26 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, napi_default, nullptr},
         {"oHPhotoNativeGetMainImage", nullptr, OHPhotoNativeGetMainImage, nullptr, nullptr, nullptr, napi_default,
             nullptr},
+        {"oHPhotoNativeGetUncompressedImage", nullptr, OHPhotoNativeGetUncompressedImage, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
         {"oHPhotoNativeRelease", nullptr, OHPhotoNativeRelease, nullptr, nullptr, nullptr, napi_default,
             nullptr},
         {"oHCameraManagerCreatePhotoOutputWithoutSurface", nullptr, OHCameraManagerCreatePhotoOutputWithoutSurface,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHCameraManagerCreateYuvPhotoOutputWithoutSurface", nullptr,
+            OHCameraManagerCreateYuvPhotoOutputWithoutSurface, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"releaseCamera", nullptr, ReleaseCamera, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"readyCreatePhotoOutputWithoutSurface", nullptr, ReadyCreatePhotoOutputWithoutSurface, nullptr, nullptr,
             nullptr, napi_default, nullptr},
         {"oHCameraManagerGetCameraDevice", nullptr, OHCameraManagerGetCameraDevice, nullptr,
             nullptr, nullptr, napi_default, nullptr},
         {"oHCameraManagerGetCameraConcurrentInfos", nullptr, OHCameraManagerGetCameraConcurrentInfos, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"oHCameraManagerGetCameraDevices", nullptr, OHCameraManagerGetCameraDevices, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"oHCameraManagerDeleteCameraDevices", nullptr, OHCameraManagerDeleteCameraDevices, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"setInvalidDeviceQueryInfo", nullptr, SetInvalidDeviceQueryInfo, nullptr,
             nullptr, nullptr, napi_default, nullptr},
     };
     size_t mergedLength = sizeof(desc) / sizeof(desc[0]) +

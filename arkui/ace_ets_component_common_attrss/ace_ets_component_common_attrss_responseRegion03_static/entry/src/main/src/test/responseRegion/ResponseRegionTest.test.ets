@@ -83,7 +83,6 @@ async function eventResult(data: BasePageConfig, expectationValue: string) {
 export default function responseRegionTest() {
   let supportView:Array<string> = new Array<string>(
     'Text',
-    'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',

@@ -65,7 +65,7 @@ struct TreeViewDemo {
     this.treeListener.off(TreeListenType.NODE_MODIFY, undefined);
   }
 
-@Builder
+  @Builder
   menuBuilder1() {
     Flex({ direction: FlexDirection.Column, justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
       Text('新增')
@@ -97,18 +97,28 @@ struct TreeViewDemo {
     }.width(100).border({ width: 1, color: 0x80808a, radius: '16dp' })
   }
 
-  onChangedCallback:(callbackParam: CallbackParam)=>void = (callbackParam: CallbackParam) => {
+  onChangedCallback: (callbackParam: CallbackParam) => void = (callbackParam: CallbackParam) => {
     this.clickNodeId = callbackParam.currentNodeId;
     this.clickNodeChildIndex = callbackParam.childIndex;
   }
 
   aboutToAppear(): void {
 
-    this.treeListener.on(TreeListenType.NODE_CLICK, (CallbackParam: CallbackParam) => {this.onChangedCallback})
-    this.treeListener.on(TreeListenType.NODE_ADD, (CallbackParam: CallbackParam) => {this.onChangedCallback})
-    this.treeListener.on(TreeListenType.NODE_DELETE, (CallbackParam: CallbackParam) => {this.onChangedCallback})
-    this.treeListener.once(TreeListenType.NODE_MOVE, (CallbackParam: CallbackParam) => {this.onChangedCallback})
-    this.treeListener.on(TreeListenType.NODE_MODIFY, (CallbackParam: CallbackParam) => {this.onChangedCallback})
+    this.treeListener.on(TreeListenType.NODE_CLICK, (CallbackParam: CallbackParam) => {
+      this.onChangedCallback(CallbackParam)
+    })
+    this.treeListener.on(TreeListenType.NODE_ADD, (CallbackParam: CallbackParam) => {
+      this.onChangedCallback(CallbackParam)
+    })
+    this.treeListener.on(TreeListenType.NODE_DELETE, (CallbackParam: CallbackParam) => {
+      this.onChangedCallback(CallbackParam)
+    })
+    this.treeListener.once(TreeListenType.NODE_MOVE, (CallbackParam: CallbackParam) => {
+      this.onChangedCallback(CallbackParam)
+    })
+    this.treeListener.on(TreeListenType.NODE_MODIFY, (CallbackParam: CallbackParam) => {
+      this.onChangedCallback(CallbackParam)
+    })
 
 
     let normalResource: Resource = $r('app.media.app_icon');
@@ -123,7 +133,9 @@ struct TreeViewDemo {
       editIcon: editResource,
       primaryTitle: '目录1验证悬浮框自适应效果是否OK',
       secondaryTitle: '6',
-      container: this.menuBuilder1 as (() => void),
+      container: () => {
+        this.menuBuilder1
+      } as (() => void),
     };
     this.treeController
       .addNode(nodeParam)
@@ -147,7 +159,9 @@ struct TreeViewDemo {
         selectedIcon: selectedResource,
         editIcon: editResource,
         primaryTitle: '目录3',
-        container: this.menuBuilder1  as (() => void)
+        container: () => {
+          this.menuBuilder1
+        } as (() => void)
       })
       .addNode({
         parentNodeId: -1,
@@ -164,7 +178,9 @@ struct TreeViewDemo {
         editIcon: editResource,
         primaryTitle: '目录5',
         secondaryTitle: '0',
-        container: this.menuBuilder1 as (() => void),
+        container: () => {
+          this.menuBuilder1
+        } as (() => void),
       })
       .addNode({
         parentNodeId: -1,
@@ -175,7 +191,9 @@ struct TreeViewDemo {
         editIcon: editResource,
         primaryTitle: '目录6',
         secondaryTitle: '0',
-        container: this.menuBuilder1 as (() => void),
+        container: () => {
+          this.menuBuilder1
+        } as (() => void),
       })
       .addNode({
         parentNodeId: 32,
@@ -186,7 +204,9 @@ struct TreeViewDemo {
         editIcon: editResource,
         primaryTitle: '目录6-1',
         secondaryTitle: '0',
-        container: this.menuBuilder1 as (() => void),
+        container: () => {
+          this.menuBuilder1
+        } as (() => void),
       })
       .addNode({
         parentNodeId: -1,
@@ -197,7 +217,9 @@ struct TreeViewDemo {
         editIcon: editResource,
         primaryTitle: '目录7',
         secondaryTitle: '0',
-        container: this.menuBuilder1 as (() => void),
+        container: () => {
+          this.menuBuilder1
+        } as (() => void),
       })
       .addNode({
         parentNodeId: 33,

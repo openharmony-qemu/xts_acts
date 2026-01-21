@@ -288,6 +288,24 @@ static napi_value OH_AVMetadataExtractor_SetFDSource0100(napi_env env, napi_call
     return retValue;
 }
 
+static napi_value OH_AVMetadataExtractor_SetFDSource0101(napi_env env, napi_callback_info info)
+{
+    int32_t fd = -1;
+    int32_t fileDescribe = 1;
+    int64_t offset = 0;
+    int64_t size = -1;
+    OH_AVMetadataExtractor *Extractor = OH_AVMetadataExtractor_Create();
+    OH_AVErrCode errcode = OH_AVMetadataExtractor_SetFDSource(Extractor, fd, offset, size);
+    OH_AVErrCode errcode1 = OH_AVMetadataExtractor_SetFDSource(Extractor, fileDescribe, offset, size);
+    int32_t res = 1;
+    if (errcode1 == AV_ERR_OPERATE_NOT_PERMIT) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
 static napi_value OH_AVMetadataExtractor_FetchMetadata0100(napi_env env, napi_callback_info info)
 {
     OH_AVErrCode errcode = OH_AVMetadataExtractor_FetchMetadata(nullptr, nullptr);
@@ -617,6 +635,8 @@ napi_property_descriptor desc[] = {
     {"OH_AVImageGenerator_QueryOptions0103", nullptr, OH_AVImageGenerator_QueryOptions0103, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"OH_AVMetadataExtractor_SetFDSource0100", nullptr, OH_AVMetadataExtractor_SetFDSource0100, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVMetadataExtractor_SetFDSource0101", nullptr, OH_AVMetadataExtractor_SetFDSource0101, nullptr, nullptr,
      nullptr, napi_default, nullptr},
     {"OH_AVMetadataExtractor_FetchMetadata0100", nullptr, OH_AVMetadataExtractor_FetchMetadata0100, nullptr, nullptr,
      nullptr, napi_default, nullptr},

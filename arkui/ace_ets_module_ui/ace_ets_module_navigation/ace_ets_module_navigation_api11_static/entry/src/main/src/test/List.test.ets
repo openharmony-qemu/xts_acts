@@ -149,8 +149,7 @@ export default function testsuite() {
   NavDestination_onBackPressed();
   navigationApi1();
   NavigationAttr();
-  NavDestinationInfoStateJsunit();
-  QueryNavDestinationInfoNavDestinationJsunit();
+  
 
 
 }

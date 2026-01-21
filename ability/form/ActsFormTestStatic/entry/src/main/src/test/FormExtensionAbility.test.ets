@@ -26,7 +26,7 @@ const unsubscribeCallback = (tcNumber: string) => {
 let subscriberForm: CommonEventManager.CommonEventSubscriber;
 
 const DOMAIN: int = 0x0000;
-const TAG: string = 'testTag';
+const TAG: string = 'testTag formExtensionAbilityTest';
 
 export default function formExtensionAbilityTest() {
     describe("formExtensionAbilityTest", (): void => {

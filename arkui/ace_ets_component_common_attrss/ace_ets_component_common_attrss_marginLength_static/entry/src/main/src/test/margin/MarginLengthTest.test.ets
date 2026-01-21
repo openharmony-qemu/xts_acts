@@ -109,8 +109,6 @@ export default function marginLengthTest() {
     //  'List',
     //  'ListItem',
     //  'ListItemGroup',
-    // 'Navigator',
-    // 'Panel',
     //  'Refresh',
     //  'RelativeContainer',
     //  'Row',

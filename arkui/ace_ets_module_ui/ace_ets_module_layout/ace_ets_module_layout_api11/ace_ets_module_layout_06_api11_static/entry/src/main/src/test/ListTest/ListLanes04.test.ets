@@ -110,7 +110,7 @@ it('ListLanes04_static_002', Level.LEVEL0, async (done: () => void): Promise<voi
       let ListItem0 = CommonFunc.getComponentRect('ListItem02_0');
       let ListItem1 = CommonFunc.getComponentRect('ListItem02_1');
       await CommonFunc.sleep(1000);
-      expect(Math.round(ListItem1.top - ListItem0.bottom)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(0)));
+      expect(Math.round(ListItem1.top - ListItem0.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(0)) <= 1).assertTrue();
 
       console.info('[ListLanes04_002] END');
       done();

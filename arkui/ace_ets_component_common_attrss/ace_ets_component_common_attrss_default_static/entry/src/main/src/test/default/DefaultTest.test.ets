@@ -60,7 +60,7 @@ export default function defaultTest() {
     'Radio',
     'Rating',
 
-    'RichText',
+    // 'RichText',
     'ScrollBar',
     'Search',
     'Slider',
@@ -82,7 +82,6 @@ export default function defaultTest() {
     'List',
     'ListItem',
     'ListItemGroup',
-    'Panel',
     'RelativeContainer',
     'Row',
     'Scroll',

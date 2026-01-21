@@ -2043,10 +2043,6 @@ export default function pasteBoardJEtsunitTest() {
             systemPasteboard.getPasteData().then((data) => {
               let pasteData1 = data;
               expect(pasteData1.getRecordCount() == 1).assertTrue();
-
-              console.info('f_test46: Clears the pasteBoard')
-              systemPasteboard.clear()
-
               console.info('SUB_pasteBoard_function_JS_API_4600 end');
               done();
             })
@@ -2255,10 +2251,6 @@ export default function pasteBoardJEtsunitTest() {
             systemPasteboard.getPasteData().then((data) => {
               let pasteData1 = data;
               expect(pasteData1.getRecordCount() == 1).assertTrue();
-
-              console.info('f_test51: Clears the pasteBoard')
-              systemPasteboard.clear()
-
               console.info('SUB_pasteBoard_function_JS_API_5100 end');
               done();
             })

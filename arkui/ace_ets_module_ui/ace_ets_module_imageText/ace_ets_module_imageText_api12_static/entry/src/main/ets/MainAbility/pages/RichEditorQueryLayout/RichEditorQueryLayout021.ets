@@ -66,8 +66,21 @@ build() {
         let selection = this.controller!.getSelection()!;
         selection.spans!.forEach(item => {
 
-              this.paragraphStyle += JSON.stringify((item as RichEditorTextSpanResult).paragraphStyle);
-              console.log('RichEditorController this.paragraphStyle:' + this.paragraphStyle);
+              if (item instanceof RichEditorImageSpanResult) {
+              if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
+                this.layoutStyle =
+                  JSON.stringify(((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)
+                    .layoutStyle);
+                console.log('RichEditorController this.layoutStyle:' + this.layoutStyle);
+              }
+            } else {
+              if ( (item as RichEditorTextSpanResult)?.symbolSpanStyle) {
+                console.log('RichEditorController get content get symbolSpanStyle');
+              } else {
+                this.paragraphStyle += JSON.stringify((item as RichEditorTextSpanResult).paragraphStyle);
+                console.log('RichEditorController this.paragraphStyle:' + this.paragraphStyle);
+              }
+            }
 
         })
       }).id('get_content')

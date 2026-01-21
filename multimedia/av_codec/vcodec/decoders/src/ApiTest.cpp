@@ -727,37 +727,37 @@ HWTEST_F(DecApiNdkTest, VIDEO_VP9DEC_CAP_API_0013, TestSize.Level1)
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         VP9_PROFILE_0, VP9_LEVEL_1));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_0, VP9_LEVEL_1_1));
+        VP9_PROFILE_0, VP9_LEVEL_11));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         VP9_PROFILE_0, VP9_LEVEL_2));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_0, VP9_LEVEL_2_1));
+        VP9_PROFILE_0, VP9_LEVEL_21));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         VP9_PROFILE_0, VP9_LEVEL_3));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_0, VP9_LEVEL_3_1));
+        VP9_PROFILE_0, VP9_LEVEL_31));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         VP9_PROFILE_0, VP9_LEVEL_4));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_0, VP9_LEVEL_4_1));
+        VP9_PROFILE_0, VP9_LEVEL_41));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         VP9_PROFILE_0, VP9_LEVEL_5));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_0, VP9_LEVEL_5_1));
+        VP9_PROFILE_0, VP9_LEVEL_51));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_0, VP9_LEVEL_5_2));
+        VP9_PROFILE_0, VP9_LEVEL_52));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         VP9_PROFILE_0, VP9_LEVEL_6));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_0, VP9_LEVEL_6_1));
+        VP9_PROFILE_0, VP9_LEVEL_61));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_0, VP9_LEVEL_6_2));
+        VP9_PROFILE_0, VP9_LEVEL_62));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_1, VP9_LEVEL_3_1));
+        VP9_PROFILE_1, VP9_LEVEL_31));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         VP9_PROFILE_2, VP9_LEVEL_5));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_3, VP9_LEVEL_6_2));
+        VP9_PROFILE_3, VP9_LEVEL_62));
     }
 }
 

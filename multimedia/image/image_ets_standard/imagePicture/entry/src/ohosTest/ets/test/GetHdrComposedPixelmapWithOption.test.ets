@@ -26,6 +26,8 @@ const YCRCB_P010: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
 const RGBA_8888: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
 const NV21: image.PixelMapFormat = image.PixelMapFormat.NV21;
 const RGB_565: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+let isSupportHEIFDecode: boolean;
+let isSupportVPE: boolean;
 
 export default function getHdrComposedPixelmapWithOption() {
   let filesDir: string|undefined;
@@ -37,7 +39,21 @@ export default function getHdrComposedPixelmapWithOption() {
       testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
       filesDir = AppStorage.get('pathDir')
       cacheDir = AppStorage.get('cacheDir')
+      isSupportHEIFDecode =
+        image.createImageSource(filesDir + '/' + "test.jpg").supportedFormats.includes("image/heic");
       console.info(TAG, 'beforeAll case.');
+      isSupportVPE = await fs.access("/sys_prod/etc/VideoProcessingEngine/Image_SR_Model_576x576_20240402.omc").then((res: boolean) => {
+        if (res) {
+          console.info("file exists");
+          return true;
+        } else {
+          console.info("file not exists");
+          return false;
+        }
+      }).catch((err: BusinessError) => {
+        console.error("access failed with error message: " + err.message + ", error code: " + err.code);
+        return false;
+      });
     });
 
     beforeEach(() => {
@@ -152,8 +168,8 @@ export default function getHdrComposedPixelmapWithOption() {
             await picture.getHdrComposedPixelmapWithOptions(options);
             expect().assertFail();
           } catch(error){
-            console.info(JSON.stringify(error) + ", error code: " + error.code);
-            expect(error.code == exceptErrorCode).assertTrue();
+            console.info(JSON.stringify(error) + ", error code: " + error);
+            expect(error == exceptErrorCode).assertTrue();
           } 
         }
       } catch(error){
@@ -262,18 +278,18 @@ export default function getHdrComposedPixelmapWithOption() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_0100', Level.LEVEL0, async (done: Function) => {
+      let result = true;
       try{
-        if(!fs.accessSync("/sys_prod/etc/VideoProcessingEngine/Image_SR_Model_576x576_20240402.omc")) {
+        if(!isSupportVPE) {
+          expect(result).assertTrue();
           done();
           return
         };
-        await testHdrComposedPixelmapWithOptions("AllAuxiliaryPictures.jpg", "buffer", RGBA_1010102);
-        done();
-      } catch(error){
-        console.info(JSON.stringify(error) + ", testHdrComposedPixelmapWithOptions error, error code: " + error.code);
-        expect().assertFail();
-        done();
+      } catch (error) {
+        console.info('file does not exist');
       }
+      await testHdrComposedPixelmapWithOptions("AllAuxiliaryPictures.jpg", "buffer", RGBA_1010102);
+      done();
     });
 
     /**
@@ -285,16 +301,21 @@ export default function getHdrComposedPixelmapWithOption() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_0200', Level.LEVEL0, async (done: Function) => {
+      let result = true;
       try{
-        if(!fs.accessSync("/sys_prod/etc/VideoProcessingEngine/Image_SR_Model_576x576_20240402.omc")) {
+        if(!isSupportVPE) {
+          expect(result).assertTrue();
           done();
           return
         };
-        await testHdrComposedPixelmapWithOptions("all_auxtype.heic", "fd", YCBCR_P010);
+      } catch (error) {
+        console.info('file does not exist');
+      }
+      if (!isSupportHEIFDecode) {
+        console.info("device is not support heif decode");
         done();
-      } catch(error){
-        console.info(JSON.stringify(error) + ", testHdrComposedPixelmapWithOptions error, error code: " + error.code);
-        expect().assertFail();
+      } else{
+        await testHdrComposedPixelmapWithOptions("all_auxtype.heic", "fd", YCBCR_P010);
         done();
       }
     });
@@ -308,18 +329,18 @@ export default function getHdrComposedPixelmapWithOption() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_0300', Level.LEVEL0, async (done: Function) => {
+      let result = true;
       try{
-        if(!fs.accessSync("/sys_prod/etc/VideoProcessingEngine/Image_SR_Model_576x576_20240402.omc")) {
+        if(!isSupportVPE) {
+          expect(result).assertTrue();
           done();
           return
         };
-        await testHdrComposedPixelmapWithOptions("AllAuxiliaryPictures.jpg", "uri", YCRCB_P010);
-        done();
-      } catch(error){
-        console.info(JSON.stringify(error) + ", testHdrComposedPixelmapWithOptions error, error code: " + error.code);
-        expect().assertFail();
-        done();
+      } catch (error) {
+        console.info('file does not exist');
       }
+      await testHdrComposedPixelmapWithOptions("AllAuxiliaryPictures.jpg", "uri", YCRCB_P010);
+      done();
     });
 
     /**
@@ -331,18 +352,18 @@ export default function getHdrComposedPixelmapWithOption() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_ERROR_0100', Level.LEVEL0, async (done: Function) => {
+      let result = true;
       try{
-        if(!fs.accessSync("/sys_prod/etc/VideoProcessingEngine/Image_SR_Model_576x576_20240402.omc")) {
+        if(!isSupportVPE) {
+          expect(result).assertTrue();
           done();
           return
         };
-        await testHdrComposedPixelmapWithOptionsError("AllAuxiliaryPictures.jpg", "buffer", RGBA_8888, 7600201);
-        done();
-      } catch(error){
-        console.info(JSON.stringify(error) + ", testHdrComposedPixelmapWithOptions error, error code: " + error.code);
-        expect().assertFail();
-        done();
+      } catch (error) {
+        console.info('file does not exist');
       }
+      await testHdrComposedPixelmapWithOptionsError("AllAuxiliaryPictures.jpg", "buffer", RGBA_8888, 7600201);
+      done();
     });
 
     /**
@@ -354,16 +375,21 @@ export default function getHdrComposedPixelmapWithOption() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_ERROR_0200', Level.LEVEL0, async (done: Function) => {
+      let result = true;
       try{
-        if(!fs.accessSync("/sys_prod/etc/VideoProcessingEngine/Image_SR_Model_576x576_20240402.omc")) {
+        if(!isSupportVPE) {
+          expect(result).assertTrue();
           done();
           return
         };
-        await testHdrComposedPixelmapWithOptionsError("all_auxtype.heic", "buffer", NV21, 7600201);
+      } catch (error) {
+        console.info('file does not exist');
+      }
+      if (!isSupportHEIFDecode) {
+        console.info("device is not support heif decode");
         done();
-      } catch(error){
-        console.info(JSON.stringify(error) + ", testHdrComposedPixelmapWithOptions error, error code: " + error.code);
-        expect().assertFail();
+      } else{
+        await testHdrComposedPixelmapWithOptionsError("all_auxtype.heic", "buffer", NV21, 7600201);
         done();
       }
     });
@@ -377,16 +403,21 @@ export default function getHdrComposedPixelmapWithOption() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_ERROR_0300', Level.LEVEL0, async (done: Function) => {
+      let result = true;
       try{
-        if(!fs.accessSync("/sys_prod/etc/VideoProcessingEngine/Image_SR_Model_576x576_20240402.omc")) {
+        if(!isSupportVPE) {
+          expect(result).assertTrue();
           done();
           return
         };
-        await testHdrComposedPixelmapWithOptionsError("all_auxtype.heic", "buffer", RGB_565, 7600201);
+      } catch (error) {
+        console.info('file does not exist');
+      }
+      if (!isSupportHEIFDecode) {
+        console.info("device is not support heif decode");
         done();
-      } catch(error){
-        console.info(JSON.stringify(error) + ", testHdrComposedPixelmapWithOptions error, error code: " + error.code);
-        expect().assertFail();
+      } else{
+        await testHdrComposedPixelmapWithOptionsError("all_auxtype.heic", "buffer", RGB_565, 7600201);
         done();
       }
     });
@@ -400,18 +431,18 @@ export default function getHdrComposedPixelmapWithOption() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_AND_PIXELMAP_TEST_0100', Level.LEVEL0, async (done: Function) => {
+      let result = true;
       try{
-        if(!fs.accessSync("/sys_prod/etc/VideoProcessingEngine/Image_SR_Model_576x576_20240402.omc")) {
+        if(!isSupportVPE) {
+          expect(result).assertTrue();
           done();
           return
         };
-        await pixelmapTestHdrComposedPixelmapWithOptions("AllAuxiliaryPictures.jpg", "buffer", RGBA_1010102, 'scale');
-        done();
-      } catch(error){
-        console.info(JSON.stringify(error) + ", testHdrComposedPixelmapWithOptions error, error code: " + error.code);
-        expect().assertFail();
-        done();
+      } catch (error) {
+        console.info('file does not exist');
       }
+      await pixelmapTestHdrComposedPixelmapWithOptions("AllAuxiliaryPictures.jpg", "buffer", RGBA_1010102, 'scale');
+      done();
     });
 
     /**
@@ -423,16 +454,21 @@ export default function getHdrComposedPixelmapWithOption() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_AND_PIXELMAP_TEST_0200', Level.LEVEL0, async (done: Function) => {
+      let result = true;
       try{
-        if(!fs.accessSync("/sys_prod/etc/VideoProcessingEngine/Image_SR_Model_576x576_20240402.omc")) {
+        if(!isSupportVPE) {
+          expect(result).assertTrue();
           done();
           return
         };
-        await pixelmapTestHdrComposedPixelmapWithOptions("all_auxtype.heic", "buffer", YCBCR_P010, 'rotate');
+      } catch (error) {
+        console.info('file does not exist');
+      }
+      if (!isSupportHEIFDecode) {
+        console.info("device is not support heif decode");
         done();
-      } catch(error){
-        console.info(JSON.stringify(error) + ", testHdrComposedPixelmapWithOptions error, error code: " + error.code);
-        expect().assertFail();
+      } else{
+        await pixelmapTestHdrComposedPixelmapWithOptions("all_auxtype.heic", "buffer", YCBCR_P010, 'rotate');
         done();
       }
     });
@@ -446,18 +482,18 @@ export default function getHdrComposedPixelmapWithOption() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_AND_PIXELMAP_TEST_0300', Level.LEVEL0, async (done: Function) => {
+      let result = true;
       try{
-        if(!fs.accessSync("/sys_prod/etc/VideoProcessingEngine/Image_SR_Model_576x576_20240402.omc")) {
+        if(!isSupportVPE) {
+          expect(result).assertTrue();
           done();
           return
         };
-        await pixelmapTestHdrComposedPixelmapWithOptions("AllAuxiliaryPictures.jpg", "fd", YCRCB_P010, 'flip');
-        done();
-      } catch(error){
-        console.info(JSON.stringify(error) + ", testHdrComposedPixelmapWithOptions error, error code: " + error.code);
-        expect().assertFail();
-        done();
+      } catch (error) {
+        console.info('file does not exist');
       }
+      await pixelmapTestHdrComposedPixelmapWithOptions("AllAuxiliaryPictures.jpg", "fd", YCRCB_P010, 'flip');
+      done();
     });
 
       /**
@@ -469,16 +505,21 @@ export default function getHdrComposedPixelmapWithOption() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_AND_PIXELMAP_TEST_0400', Level.LEVEL0, async (done: Function) => {
+      let result = true;
       try{
-        if(!fs.accessSync("/sys_prod/etc/VideoProcessingEngine/Image_SR_Model_576x576_20240402.omc")) {
+        if(!isSupportVPE) {
+          expect(result).assertTrue();
           done();
           return
         };
-        await pixelmapTestHdrComposedPixelmapWithOptions("all_auxtype.heic", "uri", YCRCB_P010, 'crop');
+      } catch (error) {
+        console.info('file does not exist');
+      }
+      if (!isSupportHEIFDecode) {
+        console.info("device is not support heif decode");
         done();
-      } catch(error){
-        console.info(JSON.stringify(error) + ", testHdrComposedPixelmapWithOptions error, error code: " + error.code);
-        expect().assertFail();
+      } else{
+        await pixelmapTestHdrComposedPixelmapWithOptions("all_auxtype.heic", "uri", YCRCB_P010, 'crop');
         done();
       }
     });

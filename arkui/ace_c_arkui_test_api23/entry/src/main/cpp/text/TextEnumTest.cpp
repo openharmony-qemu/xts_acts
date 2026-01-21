@@ -43,6 +43,8 @@
 #define PARAM_8041 8041
 #define PARAM_8042 8042
 #define PARAM_8045 8045
+#define PARAM_7047 7047
+#define PARAM_8044 8044
 
 namespace ArkUICapiTest {
 
@@ -231,6 +233,23 @@ static napi_value TextEnumTest_021(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "TextEnumTest_018 result=%{public}d", ARKUI_MARQUEEUPDATEPOLICY_PRESERVEPOSITION);
     ASSERT_EQ(ARKUI_MARQUEEUPDATEPOLICY_PRESERVEPOSITION, PARAM_1);
+    NAPI_END;
+}
+
+static napi_value TextEnumTest_022(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "TextEnumTest_022 result=%{public}d", NODE_TEXT_INPUT_DIRECTION);
+    ASSERT_EQ(NODE_TEXT_INPUT_DIRECTION, PARAM_7047);
+    NAPI_END;
+}
+static napi_value TextEnumTest_023(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "TextEnumTest_023 result=%{public}d", NODE_TEXT_AREA_DIRECTION);
+    ASSERT_EQ(NODE_TEXT_AREA_DIRECTION, PARAM_8044);
     NAPI_END;
 }
 }

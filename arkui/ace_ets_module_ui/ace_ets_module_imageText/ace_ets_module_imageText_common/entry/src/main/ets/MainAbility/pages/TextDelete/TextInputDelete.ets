@@ -21,15 +21,16 @@ struct Page {
   build() {
     Column() {
       TextInput({ text: '测试文本⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️', controller: this.controller })
-        .defaultFocus(true)
         .id('miningTimeTextInput')
+        .width('80%')
+        .height('10%')
 
-      Button('Delete backward character')
+      Button('1')
         .onClick(() => {
           this.controller.deleteBackward();
         })
         .id('deleteBackwardBtn')
     }
-    .id('pageRootColumn')
+    .width('100%')
   }
 }

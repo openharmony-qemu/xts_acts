@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -209,7 +210,7 @@ it('flexDirection_static_0700', Level.LEVEL0, async (done: () => void): Promise<
             "width": "40%",
             "height": "70",
             "backgroundColor": 0xF5DEB3,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 97,
@@ -248,7 +249,7 @@ it('flexDirection_static_0800', Level.LEVEL0, async (done: () => void): Promise<
             "width": "45%",
             "height": "60",
             "backgroundColor": 0xF5DEB3,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 98,
@@ -287,7 +288,7 @@ it('flexDirection_static_0900', Level.LEVEL0, async (done: () => void): Promise<
             "width": "60%",
             "height": "55",
             "backgroundColor": "#FF000990",
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 99,

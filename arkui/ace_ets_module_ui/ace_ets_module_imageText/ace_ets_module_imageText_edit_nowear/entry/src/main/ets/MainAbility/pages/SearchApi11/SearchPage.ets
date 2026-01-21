@@ -93,7 +93,7 @@ struct SearchPage {
         Text('onSubmit:' + this.submitValue).fontSize(10).key('submit').textAlign(TextAlign.Center).width('20%')
         Text('onChange:' + this.changeValue).fontSize(10).key('change').textAlign(TextAlign.Center).width('20%')
         Text('onCopy:' + this.copyValue).fontSize(10).key('copy').textAlign(TextAlign.Center).width('20%')
-        Text('onCut:' + this.cutValue).fontSize(10).key('cut').textAlign(TextAlign.Center).width('20%')
+        Text('onCut:' + this.cutValue).fontSize(10).key('cut_SearchPage').textAlign(TextAlign.Center).width('20%')
         Text('onPaste:' + this.pasteValue).fontSize(10).key('paste').textAlign(TextAlign.Center).width('20%')
       }.height('5%')
       Search({ value: this.changeValue, placeholder: this.placeholder, icon: this.icon, controller: this.controller })

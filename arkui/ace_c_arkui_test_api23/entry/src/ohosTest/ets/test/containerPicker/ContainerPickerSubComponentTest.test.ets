@@ -17,6 +17,9 @@ import { expect, describe, it, beforeEach, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
+const ARKUI_ERROR_CODE_NO_ERROR = 0;
+const ARKUI_ERROR_CODE_ERROR = 1;
+
 export default function ContainerPickerSubComponent(){
 
   describe('ContainerPickerSubComponent', () => {
@@ -77,5 +80,25 @@ export default function ContainerPickerSubComponent(){
       done();
     });
 
+    /**
+     * @tc.number      TestContainerPickerSubComponent005
+     * @tc.name        TestContainerPickerSubComponent005
+     * @tc.desc        testing ContainerPicker ARKUI_NODE_PICKER = 1018
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
+     */
+    it('TestContainerPickerSubComponent005', Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>TestContainerPickerSubComponent005 start====");
+        let result: number = nativeFunc.TestContainerPickerSubComponent005()
+        console.info(`====>TestContainerPickerSubComponent005 result====${result}`);
+        expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+        done();
+      } catch (err) {
+        console.error("====>TestContainerPickerSubComponent005 catch err: " + err);
+        expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+      }
+    })
   })
 }

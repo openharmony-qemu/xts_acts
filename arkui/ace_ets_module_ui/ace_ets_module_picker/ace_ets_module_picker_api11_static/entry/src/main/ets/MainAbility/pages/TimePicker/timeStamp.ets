@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,6 +18,7 @@ import { BusinessError } from '@ohos.base';
 import { Entry, Component, Column, Text, Rating, Margin, Row, TimePickerResult, ClickEvent, Alignment, TextAlign, TextOverflow, Button } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base';
 @Entry
 @Component
 struct TimeStampExample {
@@ -34,7 +35,7 @@ struct TimeStampExample {
             let backData: events_emitter.EventData = {
               data: {
                 "Text": this.text,
-              } as Record<string, Object | null | undefined>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 230,

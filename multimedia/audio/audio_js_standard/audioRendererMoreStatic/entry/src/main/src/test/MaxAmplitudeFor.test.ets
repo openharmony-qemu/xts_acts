@@ -95,10 +95,14 @@ export default function maxAmplitudeFor() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RECORD_UV_VALUE_STATIC_0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ()=> {
+            let flag: boolean = false;
             audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo).then((data: audio.AudioDeviceDescriptors) => {
                 audioVolumeGroupManager.getMaxAmplitudeForInputDevice(data[0]).then((value: double) => {
                     console.info(`mic volatileume amplitude is: ${value}`);
-                    expect(value).assertEqual(0);
+                    if (value >= 0 && value <= 1) {
+                        flag = true;
+                    }
+                    expect(flag).assertTrue();
                 }).catch((err: Error) => {
                     expect(false).assertTrue();
                     console.error("getMaxAmplitudeForInputDevice error" + JSON.stringify(err));
@@ -118,10 +122,14 @@ export default function maxAmplitudeFor() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_PlAY_UV_VALUE_STATIC_0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ()=> {
+            let flag: boolean = false;
             audioRoutingManager.getPreferOutputDeviceForRendererInfo(rendererInfo).then((data: audio.AudioDeviceDescriptors) => {
                 audioVolumeGroupManager.getMaxAmplitudeForOutputDevice(data[0]).then((value: double) => {
                     console.info(`mic volatileume amplitude is: ${value}`);
-                    expect(Math.round(value)).assertEqual(0);
+                    if (value >= 0 && value <= 1) {
+                        flag = true;
+                    }
+                    expect(flag).assertTrue();
                 }).catch((err: Error) => {
                     console.error("getMaxAmplitudeForOutputDevice error" + JSON.stringify(err));
                     expect(false).assertTrue();

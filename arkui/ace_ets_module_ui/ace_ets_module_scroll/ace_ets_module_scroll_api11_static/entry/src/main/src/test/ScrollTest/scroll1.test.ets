@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -187,7 +188,7 @@ it('testscrollOnScrollBegin0006_static_06', Level.LEVEL0, async () => {
 
       let callback: (indexEvent: events_emitter.EventData) => void = (indexEvent: events_emitter.EventData) => {
         console.info("scrollOnScrollBegin get state result is: " + JSON.stringify(indexEvent));
-        expect((indexEvent.data as Record<String, undefined | null | Object>)['STATUS']).assertEqual(true);
+        expect((indexEvent.data as Record<String,RecordData>)['STATUS']).assertEqual(true);
       }
       let indexEvent: events_emitter.InnerEvent = {
         eventId: 10086,
@@ -241,7 +242,7 @@ it('testscrollOnScrollBegin0008_static_08', Level.LEVEL0, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "alwaysEnabled": true
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 323,

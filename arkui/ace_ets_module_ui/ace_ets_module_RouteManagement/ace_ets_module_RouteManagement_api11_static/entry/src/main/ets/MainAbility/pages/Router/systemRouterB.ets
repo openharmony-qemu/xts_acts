@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import router from '@system.router';
 import events_emitter from '@ohos.events.emitter';
 import { Entry,Component,FlexDirection,ItemAlign, Button, FlexAlign, ClickEvent, Flex, FontWeight, Text, Margin } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -45,7 +44,7 @@ struct SystemRouterB {
       let paramsData: events_emitter.EventData = {
         data: {
           "params": data,
-        } as Record<String,undefined|null|Object>
+        } as Record<String,RecordData>
       }
       let paramsEvent: events_emitter.InnerEvent = {
         eventId: 211,

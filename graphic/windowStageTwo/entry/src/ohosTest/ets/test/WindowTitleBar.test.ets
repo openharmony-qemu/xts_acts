@@ -21,7 +21,6 @@ import { Driver, ON } from '@kit.TestKit';
 import { ConfigurationConstant, StartOptions, bundleManager } from '@kit.AbilityKit';
 import { ColorMetrics } from '@kit.ArkUI';
 import MyAbilityStage from '../myabilitystage/MyAbilityStage';
-import deviceInfo from '@ohos.deviceInfo';
 import display from '@ohos.display'
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
@@ -80,8 +79,6 @@ export default function windowTitleBarTest() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
-    let deviceType:string = deviceInfo.deviceType;
-    console.log('deviceType : ' + deviceType);
     let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -2200,10 +2197,10 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test1 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test1');
-        if (isFreeWindowMode == true || deviceType == 'tablet' || displaylength.length == 3) {
-          expect(error.code).assertEqual(1300016);
-        } else {
+        if (error.code == 801) {
           expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(1300016);
         }
       }
 
@@ -2219,10 +2216,10 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test2 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test2');
-        if (isFreeWindowMode == true || deviceType == 'tablet' || displaylength.length == 3) {
-          expect(error.code).assertEqual(1300016);
-        } else {
+        if (error.code == 801) {
           expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(1300016);
         }
       }
 
@@ -2238,10 +2235,10 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test3 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test3');
-        if (isFreeWindowMode == true || deviceType == 'tablet' || displaylength.length == 3) {
-          expect(error.code).assertEqual(1300016);
-        } else {
+        if (error.code == 801) {
           expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(1300016);
         }
         done();
       }

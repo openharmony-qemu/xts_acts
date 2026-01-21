@@ -158,7 +158,7 @@ struct List_scrollToIndex2 {
         }
       }
       List({ space: 10, initialIndex: 0, scroller: this.scroller }) {
-        ForEach(this.arr, (item: number, index?: number) => {
+        ForEach(this.arr, (item: number, index?: Int) => {
           ListItem() {
             Text('ListItem' + item)
               .width('90%')

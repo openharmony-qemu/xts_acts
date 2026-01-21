@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,6 +19,7 @@ import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-pl
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
 import events_emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
 @Entry
 @Component
 struct SearchPage {
@@ -39,7 +40,7 @@ struct SearchPage {
   controller: SearchController = new SearchController()
   private stateChangCallBack : (eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     if (eventData != null) {
-      let eventD = eventData.data as Record<String,undefined|null|Object>
+      let eventD = eventData.data as Record<String,RecordData>
       if (eventD!['searchIcon'] != null) {
         console.info("[SearchPage page]" + eventD!['searchIcon']);
         this.searchIcon =  eventD!['searchIcon'] as string;

@@ -14,10 +14,8 @@
  */
 import {
   ComponentAppear,
-  ComponentAttach,
   ComponentBuilt,
   ComponentDisappear,
-  ComponentDetach,
   ComponentInit,
   ComponentRecycle,
   ComponentReuse,
@@ -43,16 +41,6 @@ struct LifeCycle0510ChildV21 {
   @ComponentInit
   componentInit() {
     AppStorageV2.connect(LifeClass)!!.init += 1
-  }
-
-  @ComponentDetach
-  componentDetach() {
-    AppStorageV2.connect(LifeClass)!!.detach += 1
-  }
-
-  @ComponentAttach
-  componentAttach() {
-    AppStorageV2.connect(LifeClass)!!.attach += 1
   }
 
   @ComponentBuilt

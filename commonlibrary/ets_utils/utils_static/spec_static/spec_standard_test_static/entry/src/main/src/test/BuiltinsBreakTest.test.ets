@@ -58,7 +58,6 @@ export default function builtinsBreakTest() {
       done();
     });
 
-
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST0200
      * @tc.name BuiltinsStatementBreakTest0200
@@ -817,58 +816,35 @@ export default function builtinsBreakTest() {
      */
     it('BuiltinsStatementBreakTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let isAllConditionsMet = false;
-      outer: while(!isAllConditionsMet) {
-        let outerCondition1 = Math.random() > 0.5;
-        let outerCondition2 = false;
-        let outerCondition3 = Math.random() < 0.4;
-        if (outerCondition1) {
-          outerCondition2 = true;
-        }
-        console.log(`Outer Condition 1: ${outerCondition1}, Outer Condition 2: ${outerCondition2}, Outer Condition 3: ${outerCondition3}`);
-        if (outerCondition1 && outerCondition2 && outerCondition3) {
-          console.log('All outer conditions are true. Entering middle block.');
-          outer1: while(!isAllConditionsMet) {
-            let middleCondition1 = false;
-            let middleCondition2 = Math.random() < 0.3;
-            let middleCondition3 = Math.random() > 0.6;
-            if (middleCondition2) {
-              middleCondition1 = true;
-            }
-            console.log(`Middle Condition 1: ${middleCondition1}, Middle Condition 2: ${middleCondition2}, Middle Condition 3: ${middleCondition3}`);
+      let outerCounter = 0;
+      let middleCounter = 0;
+      let innerCounter = 0;
 
-            if (middleCondition1 && middleCondition2 && middleCondition3) {
-              console.log('All middle conditions are true. Entering inner block.');
-              outer2: while(!isAllConditionsMet) {
-                let innerCondition1 = true;
-                let innerCondition2 = false;
-                let innerCondition3 = Math.random() < 0.2;
-                if (innerCondition1) {
-                  innerCondition2 = Math.random() > 0.7;
-                }
-                console.log(`Inner Condition 1: ${innerCondition1}, Inner Condition 2: ${innerCondition2}, Inner Condition 3: ${innerCondition3}`);
-                if (innerCondition1 && innerCondition2 && innerCondition3) {
-                  console.log('All inner conditions are true. Breaking inner outer block.');
+      outer: while (!isAllConditionsMet) {
+        outerCounter++;
+        let outerEntry = (outerCounter % 5 === 0);
+        if (outerEntry) {
+          outer1: while (!isAllConditionsMet) {
+            middleCounter++;
+            let middleEntry = (middleCounter % 3 === 0);
+            if (middleEntry) {
+              outer2: while (!isAllConditionsMet) {
+                innerCounter++;
+                if (innerCounter >= 2) {
                   isAllConditionsMet = true;
                   break outer2;
-                } else {
-                  console.log('Not all inner conditions are true. Continuing inner block.');
                 }
               }
-              console.log('After inner outer block.');
-            } else {
-              console.log('Not all middle conditions are true. Continuing middle block.');
             }
+            if (middleCounter > 100) break outer1;
           }
-          console.log('After middle outer block.');
-        } else {
-          console.log('Not all outer conditions are true. Continuing outer block.');
         }
+        if (outerCounter > 100) break outer;
       }
-      console.log(`Final result: All conditions are met? ${isAllConditionsMet}`);
+      console.log(`Final Counter: O:${outerCounter}, M:${middleCounter}, I:${innerCounter}`);
       expect(isAllConditionsMet).assertTrue();
       done();
     });
-
 
     /**
      * @tc.number SUB_BUILTINS_STATEMENT_BREAK_TEST2500
@@ -880,32 +856,28 @@ export default function builtinsBreakTest() {
      */
     it('BuiltinsStatementBreakTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let isAllConditionsPassed = false;
+      let innerBreakCount = 0;
+      let middleBreakCount = 0;
       outerLoop: for (let i = 0; i < 5; i++) {
-        console.log(`Outer loop iteration: ${i}`);
         middleLoop: for (let j = 0; j < 5; j++) {
-          console.log(`  Middle loop iteration: ${j}`);
           innerLoop: for (let k = 0; k < 5; k++) {
-            console.log(`    Inner loop iteration: ${k}`);
-            const condition1 = Math.random() > 0.7;
-            const condition2 = Math.random() < 0.3;
-            const condition3 = Math.random() > 0.5;
-            if (condition1) {
-              console.log('Condition 1 met, breaking inner loop');
+            if (i === 0 && j === 0 && k === 2) {
+              innerBreakCount++;
               break innerLoop;
             }
-            if (condition2) {
-              console.log('Condition 2 met, breaking middle loop');
+            if (i === 0 && j === 2) {
+              middleBreakCount++;
               break middleLoop;
             }
-            if (condition3) {
-              console.log('Condition 3 met, breaking outer loop');
+            if (i === 1) {
               isAllConditionsPassed = true;
               break outerLoop;
             }
           }
         }
       }
-      console.log(`Test result: All conditions passed? ${isAllConditionsPassed}`);
+      expect(innerBreakCount).assertEqual(1);
+      expect(middleBreakCount).assertEqual(1);
       expect(isAllConditionsPassed).assertTrue();
       done();
     })

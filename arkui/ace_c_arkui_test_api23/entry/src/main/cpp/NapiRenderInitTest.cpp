@@ -36,6 +36,12 @@
 #include "node/ConvertPositionToWindowTest.h"
 #include "node/IsInRenderStateTest.h"
 #include "node/ConvertPositionFromWindowTest.h"
+#include "ScrollToVisible/ScrollToVisible.h"
+#include "deleteBackward/DeleteBackwardTest.h"
+#include "deleteBackward/TextAreaDeleteBackwardTest.h"
+#include "textTest/TextTest.h"
+#include "textTest/TextInputTest.h"
+#include "textTest/TextAreaTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -79,6 +85,12 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr}, 
         {"TextInputCompressLeadingPunctuationTest", nullptr, TextInputCompressLeadingPunctuationTest::CreateNativeNode, 
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetTextInputScrollToVisibleTest", nullptr, ScrollToVisibleTest::GetTextInputScrollToVisibleTest, 
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetTextAreaScrollToVisibleTest", nullptr, ScrollToVisibleTest::GetTextAreaScrollToVisibleTest, 
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CreateScrollToVisibleNodeTest", nullptr, ScrollToVisibleTest::CreateScrollToVisibleNode, 
+            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"distanceTest", nullptr, DistanceTest::CreateNativeNode, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"hoverEffectTest", nullptr, HoverEffectTest::CreateNativeNode, nullptr, nullptr, nullptr,
@@ -93,6 +105,13 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestConvertPositionFromWindow001", nullptr, ConvertPositionFromWindowTest::TestConvertPositionFromWindow001,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"DeleteBackwardTest", nullptr, DeleteBackwardTest::CreateNativeNode,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextAreaDeleteBackwardTest", nullptr, TextAreaDeleteBackwardTest::CreateNativeNode,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextTest", nullptr, TextTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextInputTest", nullptr, TextInputTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextAreaTest", nullptr, TextAreaTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

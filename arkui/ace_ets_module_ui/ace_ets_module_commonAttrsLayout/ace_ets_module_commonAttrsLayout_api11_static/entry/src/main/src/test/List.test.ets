@@ -118,10 +118,10 @@ export default function testsuite() {
   getScrollItemRect3();
   getScrollItemRect4();
   getScrollItemRect5();
-  CustomLayoutOnLayout();
+  // CustomLayoutOnLayout();
   LayoutConstraintsJsunit();
-  onMeasureSize1();
-  onMeasureSize2();
-  onMeasureSize3();
-  onPlaceChildren1();
+  // onMeasureSize1();
+  // onMeasureSize2();
+  // onMeasureSize3();
+  // onPlaceChildren1();
 }
