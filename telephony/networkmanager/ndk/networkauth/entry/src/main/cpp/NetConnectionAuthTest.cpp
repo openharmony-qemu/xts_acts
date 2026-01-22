@@ -443,7 +443,7 @@ static napi_value OHQueryTraceRoute(napi_env env, napi_callback_info info)
         OH_LOG_INFO(LOG_APP, "traceRouteInfo %{public}d: jumpNo = %{public}d", i + 1, traceRouteInfo[i].jumpNo);
         OH_LOG_INFO(LOG_APP, "traceRouteInfo %{public}d: address = %{public}s", i + 1, traceRouteInfo[i].address);
         OH_LOG_INFO(LOG_APP, "traceRouteInfo %{public}d: rtt = %{public}u", i + 1,
-         traceRouteInfo[i].rtt[ARRAY_INDEX_0]);
+             traceRouteInfo[i].rtt[ARRAY_INDEX_0]);
     };
     napi_value result = nullptr;
     napi_create_int32(env, res, &result);
