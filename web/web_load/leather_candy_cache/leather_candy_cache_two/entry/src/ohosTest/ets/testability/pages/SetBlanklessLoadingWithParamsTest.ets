@@ -653,7 +653,7 @@ struct setBlanklessLoadingWithParamsTest {
               }
               case 'testSetBlanklessLoadingWithParams015': {
                 let msg = 'testSetBlanklessLoadingWithParams015'
-                let key_length0 = '';
+                let key = '';
                 try {
                   let param: webview.BlanklessLoadingParam = {
                     enable: true,
@@ -666,7 +666,7 @@ struct setBlanklessLoadingWithParamsTest {
                       console.log(msg + `callback 插帧成功`);
                     }
                   }
-                  let result = this.controller.setBlanklessLoadingWithParams(key_length0, param);
+                  let result = this.controller.setBlanklessLoadingWithParams(key, param);
                   console.log(msg + ` 实际值 result: ${result} 预期值 -2`);
                   if (result == webview.WebBlanklessErrorCode.ERR_INVALID_PARAM) {
                     Utils.emitEvent(result, 148650);
