@@ -242,6 +242,19 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_RINGTONE_PUBLIC_PLAY_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        let flag: boolean = false;
+
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        }
+        if (flag){
+          done();
+          return;
+        }
+
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.PHOTO_SHUTTER;
         let data = await systemSoundManager.createSystemSoundPlayer();
@@ -345,6 +358,18 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_RINGTONE_PUBLIC_PLAY_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        let flag: boolean = false;
+
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        }
+        if (flag){
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.PHOTO_SHUTTER;
         let errorType: ESObject = 3;
@@ -397,6 +422,18 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_RINGTONE_PUBLIC_PLAY_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        let flag: boolean = false;
+
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        }
+        if (flag){
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.PHOTO_SHUTTER;
         let errorType: ESObject = 3;
@@ -449,6 +486,18 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_RINGTONE_PUBLIC_PLAY_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        let flag: boolean = false;
+
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        }
+        if (flag){
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_BEGIN;
         let data = await systemSoundManager.createSystemSoundPlayer();
@@ -552,6 +601,18 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_RINGTONE_PUBLIC_PLAY_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        let flag: boolean = false;
+
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        }
+        if (flag){
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_BEGIN;
         let errorType: ESObject = 3;
@@ -604,6 +665,18 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_RINGTONE_PUBLIC_PLAY_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        let flag: boolean = false;
+
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        }
+        if (flag){
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_BEGIN;
         let errorType: ESObject = 3;
@@ -656,6 +729,18 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_RINGTONE_PUBLIC_PLAY_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        let flag: boolean = false;
+
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        }
+        if (flag){
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_END;
         let data = await systemSoundManager.createSystemSoundPlayer();
@@ -759,6 +844,18 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_RINGTONE_PUBLIC_PLAY_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        let flag: boolean = false;
+
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        }
+        if (flag){
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_END;
         let errorType: ESObject = 3;
@@ -811,6 +908,18 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_RINGTONE_PUBLIC_PLAY_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        let flag: boolean = false;
+
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        }
+        if (flag){
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_END;
         let errorType: ESObject = 3;
@@ -974,6 +1083,18 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_RINGTONE_PUBLIC_PLAY_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        let flag: boolean = false;
+
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        }
+        if (flag){
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.PHOTO_SHUTTER;
         let data = await systemSoundManager.createSystemSoundPlayer();
@@ -1018,6 +1139,18 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_RINGTONE_PUBLIC_PLAY_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        let flag: boolean = false;
+
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        }
+        if (flag){
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_BEGIN;
         let data = await systemSoundManager.createSystemSoundPlayer();
@@ -1062,6 +1195,18 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_RINGTONE_PUBLIC_PLAY_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        let flag: boolean = false;
+
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        }
+        if (flag){
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_END;
         let data = await systemSoundManager.createSystemSoundPlayer();
@@ -1106,6 +1251,18 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_RINGTONE_PUBLIC_PLAY_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        let flag: boolean = false;
+
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        }
+        if (flag){
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.PHOTO_SHUTTER;
         let data = await systemSoundManager.createSystemSoundPlayer();
@@ -1157,6 +1314,18 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_RINGTONE_PUBLIC_PLAY_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        let flag: boolean = false;
+
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        }
+        if (flag){
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_BEGIN;
         let data = await systemSoundManager.createSystemSoundPlayer();
@@ -1208,6 +1377,18 @@ export default function AudioHapticTest() {
      */
     it("AUDIO_RINGTONE_PUBLIC_PLAY_0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
+        let audioManager: audio.AudioManager = audio.getAudioManager();
+        let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        let flag: boolean = false;
+
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        }
+        if (flag){
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_END;
         let data = await systemSoundManager.createSystemSoundPlayer();
