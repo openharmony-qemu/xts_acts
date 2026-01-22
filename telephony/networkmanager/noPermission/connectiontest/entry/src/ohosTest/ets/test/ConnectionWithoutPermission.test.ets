@@ -907,5 +907,30 @@ export default function ConnectionWithoutPermissionTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name    testConnectionGetAddressesByNameWithOptions0100
+     * @tc.number  SUB_Connection_GetAddressesByNameWithOptions_0100
+     * @tc.desc    Using the getAddressesByNameWithOptions method without permission
+     * @tc.level   Level 3
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it('testConnectionGetAddressesByNameWithOptions0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
+      const caseName: string = 'testConnectionGetAddressesByNameWithOptions0100';
+      console.info(`${caseName}---Start`);
+      let host = "www.baidu.com";
+      connection.getAddressesByNameWithOptions(host, { family: connection.FamilyType.FAMILY_TYPE_ALL }).then((data: connection.NetAddress[])=>{
+        console.info(`${caseName} data: ${JSON.stringify(data)}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      }).catch((error: BusinessError)=> {
+        console.info(`${caseName} Failed to get addresses. error:${JSON.stringify(error)}`);
+        ExpectTrue(error.code == 201);
+        console.info(`${caseName}---End`);
+        done();
+      });
+    });
   });
 }
