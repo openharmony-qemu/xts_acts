@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -823,5 +823,96 @@ export default function imageNdkTest() {
       expect(result).assertEqual(401);
       done();
     })
+
+    /**
+     * @tc.name   createPixelmapFromSurfaceWithTransformation001
+     * @tc.number SUB_GRAPHIC_IMAGE_PIXELMAP_Native_CreatePixelmapFromSurfaceWithTransformation001
+     * @tc.desc   test createPixelmapFromSurfaceWithTransformation get surface's data fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createPixelmapFromSurfaceWithTransformation001',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.createPixelmapFromSurfaceWithTransformation001('123', true);
+      expect(result).assertEqual(7600104); // IMAGE_GET_IMAGE_DATA_FAILED is 7600104
+      done();
+    })
+
+    /**
+     * @tc.name   createPixelmapFromSurfaceWithTransformation002
+     * @tc.number SUB_GRAPHIC_IMAGE_PIXELMAP_Native_CreatePixelmapFromSurfaceWithTransformation002
+     * @tc.desc   test createPixelmapFromSurfaceWithTransformation surface id nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createPixelmapFromSurfaceWithTransformation002',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.createPixelmapFromSurfaceWithTransformation002('', false);
+      expect(result).assertEqual(7600206); // IMAGE_INVALID_PARAMETER is 7600206
+      done();
+    })
+
+    /**
+     * @tc.name   createPixelmapFromSurfaceWithTransformation003
+     * @tc.number SUB_GRAPHIC_IMAGE_PIXELMAP_Native_CreatePixelmapFromSurfaceWithTransformation003
+     * @tc.desc   test createPixelmapFromSurfaceWithTransformation surface id is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createPixelmapFromSurfaceWithTransformation003',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.createPixelmapFromSurfaceWithTransformation003('', false);
+      expect(result).assertEqual(7600206); // IMAGE_INVALID_PARAMETER is 7600206
+      done();
+    })
+
+    /**
+     * @tc.name   createPixelmapFromSurfaceWithTransformation004
+     * @tc.number SUB_GRAPHIC_IMAGE_PIXELMAP_Native_CreatePixelmapFromSurfaceWithTransformation004
+     * @tc.desc   test createPixelmapFromSurfaceWithTransformation errorcode exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createPixelmapFromSurfaceWithTransformation004',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.createPixelmapFromSurfaceWithTransformation004('', false);
+      expect(result).assertEqual(7600305); // IMAGE_CREATE_PIXELMAP_FAILED is 7600305
+      done();
+    })
+
+    /**
+     * @tc.name   createPixelmapFromSurfaceWithTransformation005
+     * @tc.number SUB_GRAPHIC_IMAGE_PIXELMAP_Native_CreatePixelmapFromSurfaceWithTransformation005
+     * @tc.desc   test createPixelmapFromSurfaceWithTransformation errorcode exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createPixelmapFromSurfaceWithTransformation005',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.createPixelmapFromSurfaceWithTransformation005('', false);
+      expect(result).assertEqual(0); // IMAGE_SUCCESS is 0
+      done();
+    })
+
+    /**
+     * @tc.name   createPixelmapFromSurfaceWithTransformation006
+     * @tc.number SUB_GRAPHIC_IMAGE_PIXELMAP_Native_CreatePixelmapFromSurfaceWithTransformation006
+     * @tc.desc   test createPixelmapFromSurfaceWithTransformation errorcode exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createPixelmapFromSurfaceWithTransformation006',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.createPixelmapFromSurfaceWithTransformation006('', false);
+      expect(result).assertEqual(7600201); // IMAGE_UNSUPPORTED_OPERATION is 7600201
+      done();
+    })
+
   })
 }

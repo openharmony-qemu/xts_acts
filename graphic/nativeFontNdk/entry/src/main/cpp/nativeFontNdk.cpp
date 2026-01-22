@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -325,6 +325,33 @@ napi_property_descriptor desc[] = {
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"ohDrawingGetFontPathsByType003", nullptr, OHDrawingGetFontPathsByType003, 
         nullptr, nullptr, nullptr, napi_default, nullptr}, 
+    {"ohDrawingSetTypographyStyleAttributeBool001", nullptr, OHDrawingSetTypographyStyleAttributeBool001, 
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingSetTypographyStyleAttributeBool002", nullptr, OHDrawingSetTypographyStyleAttributeBool002, 
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingSetTypographyStyleAttributeBool003", nullptr, OHDrawingSetTypographyStyleAttributeBool003, 
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingSetTypographyStyleAttributeBool004", nullptr, OHDrawingSetTypographyStyleAttributeBool004, 
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingSetTypographyStyleAttributeBool005", nullptr, OHDrawingSetTypographyStyleAttributeBool003, 
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingSetTypographyStyleAttributeBool006", nullptr, OHDrawingSetTypographyStyleAttributeBool004, 
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingGetTypographyStyleAttributeBool001", nullptr, OHDrawingGetTypographyStyleAttributeBool001, 
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingGetTypographyStyleAttributeBool002", nullptr, OHDrawingGetTypographyStyleAttributeBool002, 
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingGetTypographyStyleAttributeBool003", nullptr, OHDrawingGetTypographyStyleAttributeBool003, 
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingGetTypographyStyleAttributeBool004", nullptr, OHDrawingGetTypographyStyleAttributeBool004,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingGetTypographyStyleAttributeBool005", nullptr, OHDrawingGetTypographyStyleAttributeBool005,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingDestroyPositionAndAffinity001", nullptr, OHDrawingDestroyPositionAndAffinity001,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ohDrawingDestroyPositionAndAffinity002", nullptr, OHDrawingDestroyPositionAndAffinity002,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+            
 };
 
 EXTERN_C_START
