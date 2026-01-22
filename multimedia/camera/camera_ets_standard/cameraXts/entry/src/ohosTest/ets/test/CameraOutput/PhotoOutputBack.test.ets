@@ -1325,6 +1325,7 @@ export default function PhotoOutputBackTest() {
             let mainImage: image.Image | image.Picture = CapturePhoto.main;
             console.info(TAG, testName + ' succeed to listen photoAvailable on.');
             expect(isEmpty(mainImage)).assertFalse();
+            CapturePhoto.release();
           });
           await mPhotoOutput.capture();
           await releasePhotoSession();
@@ -1379,6 +1380,7 @@ export default function PhotoOutputBackTest() {
             let mainImage: image.Image | image.Picture = CapturePhoto.main;
             console.info(TAG, testName + ' succeed to listen photoAvailable on.');
             expect(isEmpty(mainImage)).assertFalse();
+            CapturePhoto.release();
           });
           await mPhotoOutput.capture();
           mPhotoOutput.offCapturePhotoAvailable();
