@@ -29,7 +29,7 @@ group("relationalStoretest") {
       "relationalStoreStagetest:relationalstore_ets_test",
       "relationalStoreTestApi20:ActsRelationalStoreTest",
       "transactionTestApi20:ActsTransActionTest",
-      "rdbSetDistributedTable:test:ActsSetDistributedTable"
+      "rdbSetDistributedTable:test:ActsSetDistributedTableTest"
     ]
   }
 }
