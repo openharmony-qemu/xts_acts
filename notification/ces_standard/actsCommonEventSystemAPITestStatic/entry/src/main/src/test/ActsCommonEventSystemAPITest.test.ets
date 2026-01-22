@@ -573,7 +573,7 @@ export default function ActsCommonEventSystemAPITest() {
           }
         }
 
-        for (let index: int = 0; index <= 10; index++) {
+        for (let index: int = 11; index <= 21; index++) {
           let notificationRequest: notificationManager.NotificationRequest = {
             id: index,
             content: {
@@ -586,7 +586,7 @@ export default function ActsCommonEventSystemAPITest() {
             } as notificationManager.NotificationContent,
           }
           notificationManager.publish(notificationRequest, publishCallback)
-          await Utils.msSleep(60)
+          //await Utils.msSleep(60)
         }
       })
 
