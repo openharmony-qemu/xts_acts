@@ -40,6 +40,7 @@ import {
 } from '@ohos.UiTest'
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
+import wifiMg from '@ohos.wifiManager';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let testAbilityContext: common.UIAbilityContext;
@@ -55,6 +56,36 @@ export default function ActsCommonEventSystemAPITest() {
 
     beforeAll(() => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
+
+      let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean
+      if(!isWifiActive){
+        console.info(TAG+"======> wifi_test/enable wifi:" );
+        wifiMg.enableWifi();
+        await Utils.msSleep(5000);
+      }
+
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info(TAG+"======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+        console.info(TAG+"======> Internet speed : " + JSON.stringify(data.linkSpeed));
+        console.info(TAG+"======> Internet chload : " + JSON.stringify(data.chload));
+        console.info(TAG+"======> Internet rssi : " + JSON.stringify(data.rssi));
+
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info(TAG+"======> WLAN connection established ");
+        } else {
+          expect().message("======> WLAN Network error").assertFail(); //方式一
+
+        }
+        if (data.chload >= 800 || data.rssi <= -80) {
+          expect().message("======> WLAN Network error").assertFail();//方式一
+        } else if (data.chload >= 500) {
+          console.info(TAG+"======> The internet connection is poor. ");
+        }
+      } catch (err) {
+        console.info(TAG+"======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+        throw (err as Error);
+      }
 
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
