@@ -1490,6 +1490,109 @@ export default function TCPSocketConnectionTest() {
     });
 
     /**
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionGetSocketFd0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_GetSocketFd_0100
+     * @tc.desc   Get TCPSocketConnection FD; promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketConnectionGetSocketFd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionGetSocketFd0100';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14050,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err: BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        tcpServer.on('connect', async (client: socket.TCPSocketConnection) => {
+          await client.getSocketFd().then((fd: number) => {
+            console.info(`${caseName} success fd:${fd}`);
+            expectTrue(fd !== -1);
+            done();
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} fail err:${JSON.stringify(err)}`);
+            expectFail();
+            done();
+          }).finally(() => {
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          });
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        await tcp.connect(tcpConnectOptions).catch((err: BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionGetSocketFd0200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_GetSocketFd_0200
+     * @tc.desc   Get TCPSocketConnection FD; promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketConnectionGetSocketFd0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionGetSocketFd0200';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14051,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err: BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        tcpServer.on('connect', async (client: socket.TCPSocketConnection) => {
+          await client.close().catch(() => {});
+          await client.getSocketFd().then((fd: number) => {
+            console.info(`${caseName} success fd:${fd}`);
+            expectTrue(fd === -1);
+            done();
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} fail err:${JSON.stringify(err)}`);
+            expectFail();
+            done();
+          }).finally(() => {
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          });
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        await tcp.connect(tcpConnectOptions).catch((err: BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrSocketTCPSocketConnectionOffMessage0100
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_OffMessage_0100
      * @tc.desc   UnSubscription to receive message events for TCPSocketConnection connections
