@@ -4,8 +4,8 @@
         "type": "OHJSUnitTest",
         "test-timeout": "4200000",
         "shell-timeout": "4200000",
-        "bundle-name": "com.openharmony.huksapi9",
-        "package-name": "com.openharmony.huksapi9",
+        "bundle-name": "com.acts.huks.jsapi9",
+        "package-name": "com.acts.huks.jsapi9",
         "testcase-timeout": 1500000
     },
     "kits": [
