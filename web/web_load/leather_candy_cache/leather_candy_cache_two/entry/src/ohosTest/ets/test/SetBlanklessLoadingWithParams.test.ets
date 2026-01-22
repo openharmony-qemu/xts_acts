@@ -27,7 +27,7 @@ export default function setBlanklessLoadingWithParamsTest() {
 
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'testability/pages/setBlanklessLoadingWithParamsTest',
+        url: 'testability/pages/SetBlanklessLoadingWithParamsTest',
       }
       try {
         router.clear();
