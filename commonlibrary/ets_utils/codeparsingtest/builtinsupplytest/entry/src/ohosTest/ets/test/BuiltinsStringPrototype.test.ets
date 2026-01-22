@@ -14,6 +14,7 @@
 */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { sleep } from '../testability/pages/Utils';
 
 function getIterator(s: string) {
   return s[Symbol.iterator]();
@@ -22,7 +23,8 @@ function getIterator(s: string) {
 export default function builtinsStringPrototypeTest() {
   describe('builtinsStringPrototypeTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(20);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
