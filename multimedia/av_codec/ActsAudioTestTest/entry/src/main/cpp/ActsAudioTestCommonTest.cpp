@@ -260,7 +260,9 @@ void OHOS::AudioCodeCapiEncoderNdkTest::ChannelCountTest(set<int32_t> &supported
     }
 }
 
-void OHOS::AudioCodeCapiEncoderNdkTest::ChannelLayoutTest(std::map<OH_AudioChannelLayout, int32_t> &supportedLayoutMap, int32_t profile)
+void OHOS::AudioCodeCapiEncoderNdkTest::ChannelLayoutTest(
+    std::map<OH_AudioChannelLayout, int32_t> &supportedLayoutMap,
+    int32_t profile)
 {
     ProceByMimeFunc(OH_AVCODEC_MIMETYPE_AUDIO_AAC, true);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, OH_BitsPerSample::SAMPLE_S16LE);
