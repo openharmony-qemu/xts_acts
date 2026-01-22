@@ -43,9 +43,15 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
   describe('window_animation_test', () => {
     console.log('describe window_animation_test start!!!')
     let subWin: window.Window | void;
+    let isFreeWindowMode = false;
     beforeAll(() => {
       console.info('window_animation_test beforeAll begin');
       console.info(`window_animation_test beforeAll end`);
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     })
     beforeEach(async ()=>{
       let msg = 'window_orientation_test';
@@ -79,7 +85,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
         console.error(msgStr + `success obtain the window transition animation.`);
         expect(transitionAnimationResult).assertEqual(undefined);
       } catch (err) {
-        if (err.code != 801) {
+        if (isFreeWindowMode) {
           console.error(msgStr + `Failed to obtain the window transition animation. Cause code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
         } else {
@@ -126,7 +132,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
           }
         });
       } catch (err) {
-        if (err.code != 801) {
+        if (isFreeWindowMode) {
           console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
         } else {
@@ -174,7 +180,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
           }
         });
       } catch (err) {
-        if (err.code != 801) {
+        if (isFreeWindowMode) {
           console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
         } else {
@@ -222,7 +228,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
           }
         });
       } catch (err) {
-        if (err.code != 801) {
+        if (isFreeWindowMode) {
           console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
         } else {
@@ -270,7 +276,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
           }
         });
       } catch (err) {
-        if (err.code != 801) {
+        if (isFreeWindowMode) {
           console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
         } else {
@@ -318,7 +324,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
           }
         });
       } catch (err) {
-        if (err.code != 801) {
+        if (isFreeWindowMode) {
           console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(1300016);
         } else {
@@ -371,7 +377,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
           }
         });
       } catch (err) {
-        if (err.code != 801) {
+        if (isFreeWindowMode) {
           console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(1300002);
         } else {
@@ -423,7 +429,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
           }
         });
       } catch (err) {
-        if (err.code != 801) {
+        if (isFreeWindowMode) {
           console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(1300004);
         } else {
@@ -468,7 +474,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
           }
         });
       } catch (err) {
-        if (err.code != 801) {
+        if (isFreeWindowMode) {
           console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(401);
         } else {
@@ -509,7 +515,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
             console.error(msgStr + `success obtain the window transition animation.`);
             expect(!!transitionAnimationResult).assertTrue();
           } catch (err) {
-            if (err.code != 801) {
+            if (isFreeWindowMode) {
               console.error(msgStr + `Failed to obtain the window transition animation. Cause code: ${err.code}, message: ${err.message}`);
               expect().assertFail();
             } else {
@@ -519,7 +525,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
             }
           }
         }).catch((err: BusinessError) => {
-          if (err.code != 801) {
+          if (isFreeWindowMode) {
             console.error(msgStr + `Failed to set window transition animation. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
           } else {
@@ -564,7 +570,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
         console.error(msgStr + `success obtain the window transition animation.`);
         expect().assertFail();
       } catch (err) {
-        if (err.code != 801) {
+        if (isFreeWindowMode) {
           console.error(msgStr + `Failed to obtain the window transition animation. Cause code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(1300002);
         } else {
@@ -598,7 +604,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
         console.error(msgStr + `success obtain the window transition animation.`);
         expect().assertFail();
       } catch (err) {
-        if (err.code != 801) {
+        if (isFreeWindowMode) {
           console.error(msgStr + `Failed to obtain the window transition animation. Cause code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(1300004);
         } else {
@@ -640,7 +646,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
             console.error(msgStr + `success obtain the window transition animation.`);
             expect().assertFail();
           } catch (err) {
-            if (err.code != 801) {
+            if (isFreeWindowMode) {
               console.error(msgStr + `Failed to obtain the window transition animation. Cause code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(401);
             } else {
@@ -650,7 +656,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
             }
           }
         }).catch((err: BusinessError) => {
-          if (err.code != 801) {
+          if (isFreeWindowMode) {
             console.error(msgStr + `Failed to set window transition animation. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
           } else {
@@ -709,7 +715,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
           }
         });
       } catch (err) {
-        if (err.code != 801) {
+        if (isFreeWindowMode) {
           console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(1300016);
         } else {
@@ -757,7 +763,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
           }
         });
       } catch (err) {
-        if (err.code != 801) {
+        if (isFreeWindowMode) {
           console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(1300016);
         } else {
