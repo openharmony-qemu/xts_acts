@@ -108,7 +108,7 @@ public:
     int32_t EncoderConfigureHEAAC();
     int32_t EncoderConfigureHEAACv2();
     int32_t EncoderConfigureByCap();
-    int32_t GetSampleRate();
+    int32_t SampleRate();
     int32_t ChannelCountV1();
     int32_t ChannelCountV2();
     int32_t ChannelLayoutV1();

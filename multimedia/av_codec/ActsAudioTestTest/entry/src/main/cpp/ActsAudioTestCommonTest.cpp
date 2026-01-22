@@ -260,7 +260,7 @@ void OHOS::AudioCodeCapiEncoderNdkTest::ChannelCountTest(set<int32_t> &supported
     }
 }
 
-void OHOS::AudioCodeCapiEncoderNdkTest::ChannelLayoutTest(map<OH_AudioChannelLayout, int32_t>LayoutMap, int32_t profile)
+void OHOS::AudioCodeCapiEncoderNdkTest::ChannelLayoutTest(std::map<OH_AudioChannelLayout, int32_t> &supportedLayoutMap, int32_t profile)
 {
     ProceByMimeFunc(OH_AVCODEC_MIMETYPE_AUDIO_AAC, true);
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, OH_BitsPerSample::SAMPLE_S16LE);
@@ -323,7 +323,7 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureLCAAC()
         return OHOS::RESULT_CONFIG_FAIL;
     }
     
-    if (OHCodec_Start(audioEnc_) != AV_ERR_OK) {
+    if (OH_Codec_Start(audioEnc_) != AV_ERR_OK) {
         return OHOS::RESULT_UNDEFINED_ERROR;
     }
     while (isRunning_.load()) {
@@ -664,14 +664,14 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureByCap()
     return ProceByCapabilityFunc(OH_AVCODEC_MIMETYPE_AUDIO_AAC, true);
 }
 /**
- * @tc.name   GetSampleRate
- * @tc.number GetSampleRate
- * @tc.desc   GetSampleRate
+ * @tc.name   SampleRate
+ * @tc.number SampleRate
+ * @tc.desc   SampleRate
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int32_t OHOS::AudioCodeCapiEncoderNdkTest::GetSampleRate()
+int32_t OHOS::AudioCodeCapiEncoderNdkTest::SampleRate()
 {
     if (!IsSupportHeAac()) {
         return AV_ERR_OK;

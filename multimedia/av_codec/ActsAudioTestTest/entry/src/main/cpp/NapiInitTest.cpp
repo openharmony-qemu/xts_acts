@@ -118,7 +118,7 @@ static napi_value Sample_Rate(napi_env env, napi_callback_info info)
         OHOS::AudioCodeCapiEncoderNdkTest encoderTestObj;
         switch (caseNum) {
             case CASE_NUM_0:
-                result = encoderTestObj.sample_rate();
+                result = encoderTestObj.SampleRate();
                 break;
             default:
                 break;
@@ -137,10 +137,10 @@ static napi_value Channel_Count(napi_env env, napi_callback_info info)
         OHOS::AudioCodeCapiEncoderNdkTest encoderTestObj;
         switch (caseNum) {
             case CASE_NUM_0:
-                result = encoderTestObj.channel_count_v1();
+                result = encoderTestObj.ChannelCountV1();
                 break;
             case CASE_NUM_1:
-                result = encoderTestObj.channel_count_v2();
+                result = encoderTestObj.ChannelCountV2();
                 break;
         }
         napi_value resultValue;
@@ -157,10 +157,10 @@ static napi_value Channel_Layout(napi_env env, napi_callback_info info)
         OHOS::AudioCodeCapiEncoderNdkTest encoderTestObj;
         switch (caseNum) {
             case CASE_NUM_0:
-                result = encoderTestObj.channel_layout_v1();
+                result = encoderTestObj.ChannelLayoutV1();
                 break;
             case CASE_NUM_1:
-                result = encoderTestObj.channel_layout_v2();
+                result = encoderTestObj.ChannelLayoutV2();
                 break;
         }
         napi_value resultValue;
@@ -177,7 +177,7 @@ static napi_value Aac_Profile(napi_env env, napi_callback_info info)
         OHOS::AudioCodeCapiEncoderNdkTest encoderTestObj;
         switch (caseNum) {
             case CASE_NUM_0:
-                result = encoderTestObj.aac_profile();
+                result = encoderTestObj.AacProfile();
                 break;
             default:
                 break;
