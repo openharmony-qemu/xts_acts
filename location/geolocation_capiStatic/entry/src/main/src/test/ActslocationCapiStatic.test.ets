@@ -610,7 +610,7 @@ export default function actslocationTest() {
             * @tc.type  Function
             * @tc.size  MEDIUMTEST
             */
-            it('SUB_Location_getActiveGeofences_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            it('SUB_Location_getActiveGeoFences_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
               try{
                 geoLocationManager.getActiveGeoFences().then((res) => {
                   if (res) {
