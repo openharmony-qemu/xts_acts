@@ -1029,6 +1029,7 @@ export default function TransBatchInsertWithReturning() {
         console.error(TAG + `transBatchInsertWithReturningSync019 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800011);
       }
+      await rdbStoreCorrupt?.close();
       await relationalStore.deleteRdbStore(context,STORE_CONFIG1);
       console.log(TAG + "************* transBatchInsertWithReturning019 end *************");
       done();
@@ -1164,6 +1165,7 @@ export default function TransBatchInsertWithReturning() {
       await deferredTrans?.rollback();
       await trans?.rollback();
       await rdb?.close();
+      await relationalStore.deleteRdbStore(context,STORE_CONFIG1);
       console.log(TAG + "************* transBatchInsertWithReturning022 end *************");
       done();
     })

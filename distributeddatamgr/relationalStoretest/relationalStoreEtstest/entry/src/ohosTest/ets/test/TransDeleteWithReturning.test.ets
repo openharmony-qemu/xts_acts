@@ -759,6 +759,7 @@ export default function TransDeleteWithReturning() {
         console.error(TAG + `transDeleteWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800011);
       }
+      await rdbStoreCorrupt?.close();
       await relationalStore.deleteRdbStore(context,STORE_CONFIG1);
       console.log(TAG + "************* transDeleteWithReturning018 end *************");
       done();

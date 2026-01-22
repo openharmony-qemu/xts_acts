@@ -1050,6 +1050,7 @@ export default function TransUpdateWithReturning() {
         console.error(TAG + `updateWithReturningSync018 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800011);
       }
+      await rdbStoreCorrupt?.close();
       await relationalStore.deleteRdbStore(context,STORE_CONFIG1);
       console.log(TAG + "************* updateWithReturning018 end *************");
       done();
