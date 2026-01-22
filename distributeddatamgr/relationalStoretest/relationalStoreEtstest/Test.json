@@ -6,7 +6,7 @@
         "shell-timeout": "600000",
         "bundle-name": "ohos.acts.relationalstorejstest",
         "module-name": "relationalstore",
-        "testcase-timeout": 180000
+        "testcase-timeout": 70000
     },
     "kits": [
         {
