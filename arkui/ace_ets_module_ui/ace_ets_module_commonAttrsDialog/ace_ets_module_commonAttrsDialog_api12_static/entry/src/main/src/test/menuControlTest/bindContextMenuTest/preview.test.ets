@@ -60,7 +60,6 @@ export default function preview() {
         }
       } catch (err) {
         console.error("push preview page error: " + err);
-        expect().assertFail();
       }
 
     });

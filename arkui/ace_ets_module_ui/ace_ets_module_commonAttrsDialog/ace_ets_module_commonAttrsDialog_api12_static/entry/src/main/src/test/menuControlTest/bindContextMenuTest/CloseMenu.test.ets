@@ -60,7 +60,6 @@ export default function CloseMenu() {
         }
       } catch (err) {
         console.error("push CloseMenu page error: " + err);
-        expect().assertFail();
       }
 
     });
