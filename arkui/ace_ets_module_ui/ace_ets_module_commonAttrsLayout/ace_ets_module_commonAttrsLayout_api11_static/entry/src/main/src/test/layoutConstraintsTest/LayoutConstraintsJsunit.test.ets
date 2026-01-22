@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -100,7 +101,7 @@ it('testLayoutConstraints002_static', Level.LEVEL0, async (done: () => void): Pr
         let eventData: emitter.EventData = {
           data: {
             "aspectRatio": 2.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 20,
@@ -153,7 +154,7 @@ it('testLayoutConstraints004_static', Level.LEVEL0, async (done: () => void): Pr
         let eventData: emitter.EventData = {
           data: {
             "displayPriority": 5.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 21,
@@ -186,7 +187,7 @@ it('testLayoutConstraints005_static', Level.LEVEL0, async (done: () => void): Pr
         let eventData: emitter.EventData = {
           data: {
             "aspectRatio": -4.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 1112,
@@ -220,7 +221,7 @@ it('testLayoutConstraints006_static', Level.LEVEL0, async (done: () => void): Pr
         let eventData: emitter.EventData = {
           data: {
             "aspectRatio": 9997077.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 1112,

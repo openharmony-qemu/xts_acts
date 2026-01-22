@@ -7011,8 +7011,9 @@ export default function audioFramework() {
             console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupportAEC}`);
         } catch (err) {
             let error = err as BusinessError;
-            console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+            console.error(`isAcousticEchoCancelerSupported ERROR: ${error}, errorcode: ${error.code}`);
             flag = true;
+            expect(Number(error.code)).assertEqual(6800101);
         }
         expect(flag).assertTrue();
         done();

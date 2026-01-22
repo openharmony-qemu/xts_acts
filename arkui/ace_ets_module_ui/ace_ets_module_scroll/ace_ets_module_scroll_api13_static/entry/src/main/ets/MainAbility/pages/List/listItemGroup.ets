@@ -1,4 +1,3 @@
-
 'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
@@ -19,7 +18,7 @@ import { NodeController,  ComponentContent } from '@ohos.arkui.node';
 import common from '@ohos.app.ability.common';
 import { Entry, Column, Component, Flex, ClickEvent, Scroller, Color,ResourceColor, OnScrollFrameBeginHandlerResult, Row,
   Image, TextAlign, Scroll, ScrollState, ForEach, EdgeEffect, FontWeight, Margin, Length, LocalizedMargin, FontStyle, Builder,
-  Text, Button, ClickEvent, List, ListItem, ListItemGroup, BarState, Padding, TextDecorationType, wrapBuilder} from '@ohos.arkui.component'
+  Text, Button, List, ListItem, ListItemGroup, BarState, Padding, TextDecorationType, wrapBuilder} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 class Params {
@@ -95,12 +94,11 @@ struct Index {
   build() {
     Scroll() {
       Row(undefined) {
-        Text('+++++++++++++++++')
         Column(undefined) {
           List({ space: 5 }) {
             ForEach(this.timeTable, (item: TimeTable) => {
               ListItemGroup(
-                {    //SDK11.14 页面加载失败
+                {
                 headerComponent: this.headerNode1,
                 footerComponent: this.footerNode1
               }
@@ -119,37 +117,37 @@ struct Index {
               .divider({ strokeWidth: 1, color: Color.Blue })
             })
           }
-          // .scrollBar(BarState.Off)
-          // .width('100%')
-          // .height('50%')
-          // .backgroundColor('0xDCDCDC')
-          // .padding({ top: 5 } as Padding)
+          .scrollBar(BarState.Off)
+          .width('100%')
+          .height('50%')
+          .backgroundColor(0xDCDCDC)
+          .padding({ top: 5 } as Padding)
 
-          // List({ space: 5 }) {
-          //   ForEach(this.timeTable, (item: TimeTable) => {
-          //     ListItemGroup({
-          //       headerComponent: this.headerNode2,
-          //       footerComponent: this.footerNode2
-          //     }) {
-          //       ForEach(item.projects, (project: string) => {
-          //         ListItem() {
-          //           Text(project)
-          //             .width("100%")
-          //             .height(100)
-          //             .fontSize(20)
-          //             .textAlign(TextAlign.Center)
-          //             .backgroundColor('0xFFFFFF')
-          //         }
-          //       }, (item: string) => item)
-          //     }
-          //     .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
-          //   })
-          // }
-          // .scrollBar(BarState.Off)
-          // .width('100%')
-          // .height('50%')
-          // .backgroundColor('0xDCDCDC')
-          // .padding({ top: 5 } as Padding)
+          List({ space: 5 }) {
+            ForEach(this.timeTable, (item: TimeTable) => {
+              ListItemGroup({
+                headerComponent: this.headerNode2,
+                footerComponent: this.footerNode2
+              }) {
+                ForEach(item.projects, (project: string) => {
+                  ListItem() {
+                    Text(project)
+                      .width("100%")
+                      .height(100)
+                      .fontSize(20)
+                      .textAlign(TextAlign.Center)
+                      .backgroundColor('0xFFFFFF')
+                  }
+                }, (item: string) => item)
+              }
+              .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
+            })
+          }
+          .scrollBar(BarState.Off)
+          .width('100%')
+          .height('50%')
+          .backgroundColor(0xDCDCDC)
+          .padding({ top: 5 } as Padding)
         }
       }
     }

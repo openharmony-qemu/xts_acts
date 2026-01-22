@@ -52,8 +52,18 @@ struct TextMenuItemIdExample {
         this.flag = true
         extensionMenuItems.push(value)
       }
-      if (value.id.equals(TextMenuItemId.phoneNumber)) {
+      if (value.id.equals(TextMenuItemId.askAI)) {
         value.content = 'askAI'
+        this.flag = true
+        extensionMenuItems.push(value)
+      }
+      if (value.id.equals(TextMenuItemId.autoFill)) {
+        value.content = 'autoFill'
+        this.flag = true
+        extensionMenuItems.push(value)
+      }
+      if (value.id.equals(TextMenuItemId.passwordVault)) {
+        value.content = 'passwordVault'
         this.flag = true
         extensionMenuItems.push(value)
       }

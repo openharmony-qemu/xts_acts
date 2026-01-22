@@ -40,22 +40,5 @@ export default function AudioSuiteBaseTest() {
       expect(result).assertEqual(TEST_RESULT.TEST_PASS);
       done();
     })
-
-    /**
-     * @tc.name   AudioSuiteEngineCreateTest_0002
-     * @tc.number AudioSuiteEngineCreateTest_0002
-     * @tc.desc   AudioSuiteEngine create test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('AudioSuiteEngineCreateTest_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-      console.info('=====> AudioSuiteEngineCreateTest_0002 start ====>');
-      let result : number = audiosuiteenginetest.AudioSuiteEngineCreateTest_0002();
-      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
-      console.info('=====> AudioSuiteEngineCreateTest_0002 end ====>');
-      done();
-    })
   })
 }

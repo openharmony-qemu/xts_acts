@@ -3590,5 +3590,28 @@ export default function applicationManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_isAbilityDisabled_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_IS_ABILITY_DISABLED_005
+     * @tc.desc   test isAbilityDisabled method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_isAbilityDisabled_005", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let bundleName: string = 'com.example.helloworld';
+        let abilityName: string = "EntryAbility";
+        let isDisabled = applicationManager.isAbilityDisabled(SELFWANT, bundleName, INVALID_USER_ID, abilityName);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
   })
 }

@@ -30,19 +30,19 @@ export class SharedCounter {
   }
 
   add(value: number): number {
-    return Atomics.add(this.sharedArray, 0, value);
+    return Atomics.add(this.sharedArray, 0, value.toInt());
   }
 
   subtract(value: number): number {
-    return Atomics.sub(this.sharedArray, 0, value);
+    return Atomics.sub(this.sharedArray, 0, value.toInt());
   }
 
   and(mask: number): number {
-    return Atomics.and(this.sharedArray, 0, mask);
+    return Atomics.and(this.sharedArray, 0, mask.toInt());
   }
 
   exchange(newValue: number): number {
-    return Atomics.exchange(this.sharedArray, 0, newValue);
+    return Atomics.exchange(this.sharedArray, 0, newValue.toInt());
   }
 
   getValue(): number {

@@ -297,5 +297,31 @@ export default function TextEnumTest(){
       expect(nativeFunc.TextEnumTest_021()).assertEqual(0)
       done()
     })
+
+    /**
+     * @tc.name   TextEnumTest_022
+     * @tc.number TextEnumTest_022
+     * @tc.desc   TextEnumTest_022
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextEnumTest_022', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextEnumTest_022()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextEnumTest_023
+     * @tc.number TextEnumTest_023
+     * @tc.desc   TextEnumTest_023
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextEnumTest_023', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextEnumTest_023()).assertEqual(0)
+      done()
+    })
   })
 }

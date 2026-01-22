@@ -157,7 +157,7 @@ it('testListInitialIndexToZeroWithOneLane_static', Level.LEVEL0, async (done: ()
       expect(Math.round(twelfthListItem.bottom - twelfthListItem.top)).assertEqual(UIContext.resolveUIContext()!.vp2px(0));
 
       let driver = Driver.create();
-      driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + fourthListItem.left + ((fourthListItem.right - fourthListItem.left) / 2))).toInt(),
+      await driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + fourthListItem.left + ((fourthListItem.right - fourthListItem.left) / 2))).toInt(),
          (Math.round((AppStorage.get<number>('winTop')) as number +fourthListItem.bottom)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + firstListItem.left + (firstListItem.right - firstListItem.left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + firstListItem.bottom)).toInt());

@@ -222,6 +222,7 @@
 <div class="container">
     <div class="main-content">
         <div class="editor-section">
+            <p>showSaveFilePicker5</p>
             <div class="actions">
                 <button id="saveBtn" class="primary-btn">
                      保存文件
@@ -233,7 +234,7 @@
             <h2>文件内容编辑</h2>
             <div class="form-group">
                 <label for="filename">文件名</label>
-                <input type="text" id="filename" placeholder="输入文件名（如：example.txt）" value="test-file.txt">
+                <input type="text" id="filename" placeholder="输入文件名（如：example.mp4）" value="test-file.mp4">
             </div>
 
             <div class="form-group">
@@ -307,7 +308,7 @@
 
         // 重置按钮点击事件
         resetBtn.addEventListener('click', () => {
-            filenameInput.value = 'test-file.txt';
+            filenameInput.value = 'test-file.mp4';
             filecontentInput.value = `这是一个通过 showSaveFilePicker API 保存的文件示例。
 
 您可以在任何文本编辑器中打开此文件。

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,6 +37,7 @@ import {
 
   AppStorage
 } from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base';
 @Entry
 @Component
 struct PlacementExample {
@@ -80,7 +81,7 @@ struct PlacementExample {
             let backData: events_emitter.EventData = {
               data:{
                 "placement":this.placement
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 157,
@@ -114,7 +115,7 @@ struct PlacementExample {
             let backDataOne: events_emitter.EventData = {
               data:{
                 "placement":this.placementOne
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEventOne: events_emitter.InnerEvent = {
               eventId: 158,
@@ -148,7 +149,7 @@ struct PlacementExample {
             let backDataTwo: events_emitter.EventData = {
               data:{
                 "placement":this.placementTwo
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEventTwo: events_emitter.InnerEvent = {
               eventId: 159,
@@ -182,7 +183,7 @@ struct PlacementExample {
             let backDataThree: events_emitter.EventData = {
               data:{
                 "placement":this.placementThree
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEventThree: events_emitter.InnerEvent = {
               eventId: 160,

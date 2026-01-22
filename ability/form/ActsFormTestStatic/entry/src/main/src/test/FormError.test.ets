@@ -20,7 +20,7 @@ import Utils from './Util.test';
 
 
 const DOMAIN: int = 0x0000;
-const TAG: string = 'testTag';
+const TAG: string = 'testTag formErrorTest';
 
 export default function formErrorTest() {
     describe("formErrorTest", (): void => {

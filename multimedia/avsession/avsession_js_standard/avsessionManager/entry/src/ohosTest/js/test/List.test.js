@@ -17,8 +17,8 @@ import AVSessionManager from './AVSessionManager.test.js';
 import AVSessionCallback from './AVSessionCallback.test.js';
 import AVSessionManagerCallback from './AVSessionManagerCallback.test.js';
 import AVSessionErrorCode from './AVSessionErrorCode.test.js';
-import AVSessionControllerJSTest from './AVSessionControllerJSTest.js';
-import AVSessionJSTest from './AVSessionJSTest.js';
+import AVSessionControllerJSTest from './AVSessionControllerJS.test.js';
+import AVSessionJSTest from './AVSessionJS.test.js';
 import AVSessionEnum from './AVSessionEnum.test.js';
 import AVSessionControllerErrorCode from './AVSessionControllerErrorCode.test.js';
 

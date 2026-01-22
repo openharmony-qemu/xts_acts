@@ -1117,5 +1117,57 @@ export default function abilityTest() {
       };
 
     })
+
+    
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_LaunchUTCTime_0600
+     * @tc.number SUB_Ability_AbilityRuntime_LaunchUTCTime_0600
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/common type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_LaunchUTCTime_0600', Level.LEVEL0, (done: Function) => {
+      let subscriber: commonEvent.CommonEventSubscriber;
+      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+        console.info(`====>SUB_Ability_AbilityRuntime_LaunchUTCTime_0600
+          createSubscriber  ${data}`)
+        subscriber = data
+        commonEvent.subscribe(data, subscribeCallBack)
+        abilityDelegator.startAbility({
+          bundleName: 'com.example.actsuiextensionexitreasontest',
+          abilityName: 'EntryAbility',
+          action: 'StartAbilityForResultAsCaller_0100',
+          parameters: {
+            'UIExtensionType': 'sysDialog/common',
+            'UIExtensionAbilityName': 'UIExtAbility3'
+          }
+        }, (err: BusinessError) => {
+          console.info('====>SUB_Ability_AbilityRuntime_LaunchUTCTime_0600 startAbility err:' + JSON.stringify(err));
+        });
+      });
+
+
+      let subscribeCallBack = (err: BusinessError, data: commonEvent.CommonEventData) => {
+        console.info(`====>SUB_Ability_AbilityRuntime_LaunchUTCTime_0600
+          subscribeCallBack ACTS_CallFunction  ${data}`);
+        if (data.event == '0100') {
+          console.info('====>SUB_Ability_AbilityRuntime_LaunchUTCTime_0600 subscribeCallBack ' + JSON.stringify(data))
+
+          expect(data.code).assertEqual(0);
+          expect(data.parameters?.launchUTCTime).assertEqual(0);
+          expect(data.parameters?.launchUptime).assertEqual(0);
+          commonEvent.unsubscribe(subscriber, unSubscribeCallback);
+        }
+      };
+
+      let unSubscribeCallback = async () => {
+        console.info(`SUB_Ability_AbilityRuntime_LaunchUTCTime_0600
+          unSubscribeCallback`);
+        done();
+      };
+
+    })
+
   })
 }

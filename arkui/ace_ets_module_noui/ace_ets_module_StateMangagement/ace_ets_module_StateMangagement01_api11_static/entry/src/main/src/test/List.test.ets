@@ -44,7 +44,6 @@ import provideParent3 from './ProvideTest/provideParent3.test.ets'
 import provideParent4 from './ProvideTest/provideParent4.test.ets'
 import provideParent5 from './ProvideTest/provideParent5.test.ets'
 import provideParent6 from './ProvideTest/provideParent6.test.ets'
-import StorageDeprecatedTest from './Zhuang/StorageDeprecatedTest.test';
 import PersistentTest0040 from './Zhuang/PersistentTest0040.test';
 
 
@@ -79,6 +78,5 @@ export default function testsuite() {
   provideParent4();
   provideParent5();
   provideParent6();
-  StorageDeprecatedTest();
   PersistentTest0040();
 }

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,6 +44,7 @@ import {
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -113,7 +114,7 @@ struct ImageAnimatorExample {
             let backData: events_emitter.EventData = {
               data: {
                 "string": "Repeat"
-              } as Record<string, undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 114,
@@ -138,7 +139,7 @@ struct ImageAnimatorExample {
             let backData: events_emitter.EventData = {
               data: {
                 "state": this.state
-              } as Record<string, undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 1150,
@@ -157,7 +158,7 @@ struct ImageAnimatorExample {
               data: {
                 "state": this.state,
                 "fixedSize": this.fixedSize
-              } as Record<string, undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 116,
@@ -176,7 +177,7 @@ struct ImageAnimatorExample {
               data: {
                 "state": this.state,
                 "preDecode": this.preDecode
-              } as Record<string, undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 117,
@@ -197,7 +198,7 @@ struct ImageAnimatorExample {
             let backData: events_emitter.EventData = {
               data: {
                 "fillMode": this.fillMode
-              } as Record<string, undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 118,
@@ -215,7 +216,7 @@ struct ImageAnimatorExample {
             let backData: events_emitter.EventData = {
               data: {
                 "iterations": this.iterations
-              } as Record<string, undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 119,
@@ -233,7 +234,7 @@ struct ImageAnimatorExample {
             let backData: events_emitter.EventData = {
               data: {
                 "preDecode": this.preDecode
-              } as Record<string, undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 120,

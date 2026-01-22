@@ -14,7 +14,9 @@
  */
 #include "ListItemGroupAreaTest.h"
 #include "component/Component.h"
-
+#define PARAM_0_POINT_2 0.2
+#define PARAM_0_POINT_8 0.8
+#define PARAM_1_POINT_0 1.0
 
 namespace ListItemGroupAreaTest {
 
@@ -59,7 +61,7 @@ void OnScrollPositionChanged(ArkUI_NodeEvent *event)
 
 void  CreateListComponent(XC list)
 {
-    list.SetPercentHeight(1.0);
+    list.SetPercentHeight(PARAM_0_POINT_8);
     list.SetPercentWidth(1.0);
     ArkUI_NumberValue values[] = {{.i32 = ARKUI_STICKY_STYLE_HEADER}, {.i32 = ARKUI_STICKY_STYLE_FOOTER}};
     ArkUI_AttributeItem item = {.value = values, .size = 2};
@@ -71,7 +73,7 @@ void  CreateListComponent(XC list)
     for (int i = 0; i < PARAM_4; i++) {
         XC item = XC(ARKUI_NODE_LIST_ITEM);
         item.SetPercentWidth(1.0);
-        item.SetHeight(SIZE_120);
+        item.SetPercentHeight(PARAM_0_POINT_2);
         std::shared_ptr<XC> ptr = std::make_shared<XC>(item);
         list.AddChild(ptr);
     }
@@ -80,11 +82,11 @@ void  CreateListComponent(XC list)
 void CreateListGroupComponent(XC group1)
 {
     XC header = XC(ARKUI_NODE_COLUMN);
-    header.SetHeight(SIZE_200);
+    header.SetPercentHeight(PARAM_0_POINT_2);
     header.SetPercentWidth(1.0);
     header.SetBackgroundColor(0xff483D8B);
     XC headerText = XC(ARKUI_NODE_TEXT);
-    headerText.SetHeight(SIZE_120);
+    headerText.SetPercentHeight(PARAM_1_POINT_0);
     headerText.SetPercentWidth(1.0);
     ArkUI_AttributeItem text = {.string = "这是Header区域"};
     headerText.setAttribute(NODE_TEXT_CONTENT, &text);
@@ -94,10 +96,10 @@ void CreateListGroupComponent(XC group1)
     group1.setAttribute(NODE_LIST_ITEM_GROUP_SET_HEADER, &headerAttr);
 
     XC footer = XC(ARKUI_NODE_COLUMN);
-    footer.SetHeight(SIZE_200);
+    footer.SetPercentHeight(PARAM_0_POINT_2);
     footer.SetBackgroundColor(0xffff00ff);
     XC footerText = XC(ARKUI_NODE_TEXT);
-    footerText.SetHeight(SIZE_120);
+    footerText.SetPercentHeight(PARAM_1_POINT_0);
     footerText.SetPercentWidth(1.0);
     ArkUI_AttributeItem text1 = {.string = "这是footer区域"};
     footerText.setAttribute(NODE_TEXT_CONTENT, &text1);
@@ -109,7 +111,7 @@ void CreateListGroupComponent(XC group1)
     for (int i = 0; i < PARAM_3; i++) {
         XC item = XC(ARKUI_NODE_LIST_ITEM);
         item.SetPercentWidth(1.0);
-        item.SetHeight(SIZE_240);
+        item.SetPercentHeight(PARAM_0_POINT_2);
         std::shared_ptr<XC> ptr = std::make_shared<XC>(item);
         group1.AddChild(ptr);
     }
@@ -118,11 +120,11 @@ void CreateListGroupComponent(XC group1)
 void CreateListGroup2Component(XC group2)
 {
     XC header = XC(ARKUI_NODE_COLUMN);
-    header.SetHeight(SIZE_200);
+    header.SetPercentHeight(PARAM_0_POINT_2);
     header.SetPercentWidth(1.0);
     header.SetBackgroundColor(0xff483D8B);
     XC headerText = XC(ARKUI_NODE_TEXT);
-    headerText.SetHeight(SIZE_120);
+    headerText.SetPercentHeight(PARAM_1_POINT_0);
     headerText.SetPercentWidth(1.0);
     ArkUI_AttributeItem text = {.string = "这是Header2区域"};
     headerText.setAttribute(NODE_TEXT_CONTENT, &text);
@@ -132,10 +134,10 @@ void CreateListGroup2Component(XC group2)
     group2.setAttribute(NODE_LIST_ITEM_GROUP_SET_HEADER, &headerAttr);
 
     XC footer = XC(ARKUI_NODE_COLUMN);
-    footer.SetHeight(SIZE_200);
+    footer.SetPercentHeight(PARAM_0_POINT_2);
     footer.SetBackgroundColor(0xffff00ff);
     XC footerText = XC(ARKUI_NODE_TEXT);
-    footerText.SetHeight(SIZE_120);
+    footerText.SetPercentHeight(PARAM_1_POINT_0);
     footerText.SetPercentWidth(1.0);
     ArkUI_AttributeItem text1 = {.string = "这是footer2区域"};
     footerText.setAttribute(NODE_TEXT_CONTENT, &text1);
@@ -147,7 +149,7 @@ void CreateListGroup2Component(XC group2)
     for (int i = 0; i < PARAM_3; i++) {
         XC item = XC(ARKUI_NODE_LIST_ITEM);
         item.SetPercentWidth(1.0);
-        item.SetHeight(SIZE_240);
+        item.SetPercentHeight(PARAM_0_POINT_2);
         std::shared_ptr<XC> ptr = std::make_shared<XC>(item);
         group2.AddChild(ptr);
     }
@@ -156,11 +158,11 @@ void CreateListGroup2Component(XC group2)
 void CreateListGroup3Component(XC group3)
 {
     XC header = XC(ARKUI_NODE_COLUMN);
-    header.SetHeight(SIZE_200);
+    header.SetPercentHeight(PARAM_0_POINT_2);
     header.SetPercentWidth(1.0);
     header.SetBackgroundColor(0xff483D8B);
     XC headerText = XC(ARKUI_NODE_TEXT);
-    headerText.SetHeight(SIZE_120);
+    headerText.SetPercentHeight(PARAM_1_POINT_0);
     headerText.SetPercentWidth(1.0);
     ArkUI_AttributeItem text = {.string = "这是Header3区域"};
     headerText.setAttribute(NODE_TEXT_CONTENT, &text);
@@ -170,10 +172,10 @@ void CreateListGroup3Component(XC group3)
     group3.setAttribute(NODE_LIST_ITEM_GROUP_SET_HEADER, &headerAttr);
 
     XC footer = XC(ARKUI_NODE_COLUMN);
-    footer.SetHeight(SIZE_200);
+    footer.SetPercentHeight(PARAM_0_POINT_2);
     footer.SetBackgroundColor(0xffff00ff);
     XC footerText = XC(ARKUI_NODE_TEXT);
-    footerText.SetHeight(SIZE_120);
+    footerText.SetPercentHeight(PARAM_1_POINT_0);
     footerText.SetPercentWidth(1.0);
     ArkUI_AttributeItem text1 = {.string = "这是footer3区域"};
     footerText.setAttribute(NODE_TEXT_CONTENT, &text1);
@@ -185,7 +187,7 @@ void CreateListGroup3Component(XC group3)
     for (int i = 0; i < PARAM_3; i++) {
         XC item = XC(ARKUI_NODE_LIST_ITEM);
         item.SetPercentWidth(1.0);
-        item.SetHeight(SIZE_240);
+        item.SetPercentHeight(PARAM_0_POINT_2);
         std::shared_ptr<XC> ptr = std::make_shared<XC>(item);
         group3.AddChild(ptr);
     }

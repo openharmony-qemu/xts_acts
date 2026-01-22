@@ -81,7 +81,6 @@ export default function heightTest() {
     //    'ScrollBar',
     'Rating',
     'Search',
-    'RichText',
     'Slider',
     'Text',
     //    'TextArea',
@@ -99,7 +98,6 @@ export default function heightTest() {
     'Grid',
     'List',
     'ListItem',
-    //    'Panel',
     'Refresh',
     'Row',
     //    'Scroll',
@@ -119,7 +117,6 @@ export default function heightTest() {
     //    'GridCol',
     'GridItem',
     'RelativeContainer',
-    // 'Navigator', // Navigation 替换
     'Menu',
     'MenuItem',
     //    'MenuItemGroup'

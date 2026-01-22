@@ -38,6 +38,11 @@ export default function() {
 
         }
 
+        beforeEach(async function() {
+            console.info('aceJsTest main beforeEach start');
+            await sleep(2000)
+        });
+
         /**
          * run after testcase
          */

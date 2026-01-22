@@ -82,7 +82,6 @@ export default function defaultTest() {
     'List',
     'ListItem',
     'ListItemGroup',
-    'Panel',
     'RelativeContainer',
     'Row',
     'Scroll',

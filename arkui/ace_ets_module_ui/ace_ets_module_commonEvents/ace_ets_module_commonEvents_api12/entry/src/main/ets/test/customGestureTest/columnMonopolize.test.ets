@@ -69,34 +69,40 @@ export default function columnMonopolize() {
      */
     it('columnMonopolize_001', Level.LEVEL0, async (done: Function) => {
       console.log('[columnMonopolize_001] START');
-      // get column left and top on screen
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      let column2 = await driver.findComponent(ON.id('column2'));
-      let column1 = await driver.findComponent(ON.id('column1'));
+      await CommonFunc.sleep(1000);
+      let scrollBar = await driver.findComponent(ON.type('Scroll'));
+      let innerColnum = await scrollBar.scrollSearch(ON.id('innerColnum'));
       await CommonFunc.sleep(200);
-      await column1.longClick();
+      await innerColnum.click();
+      await CommonFunc.sleep(500);
+
+      let strJson1 = getInspectorByKey('outer');
+      console.log("[columnMonopolize_001] component outer obj is: " , JSON.stringify(JSON.parse(strJson1)));
+      expect(JSON.parse(strJson1).$attrs.content).assertEqual('outside column touch down');
       await CommonFunc.sleep(1000);
-      await column2.click();
-      let strJson1 = getInspectorByKey('columnText');
-      console.log("[columnMonopolize_001] component obj is: " , JSON.stringify(JSON.parse(strJson1)));
-      expect(JSON.parse(strJson1).$attrs.content).assertEqual('LongPressGesture onAction success;');
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('buttonBoolean'));
-      let button_clean = await driver.findComponent(ON.id('button_clean'));
+      let strJson2 = getInspectorByKey('inner');
+      console.log("[columnMonopolize_001] component inner obj is: " , JSON.stringify(JSON.parse(strJson2)));
+      expect(JSON.parse(strJson2).$attrs.content).assertEqual('inner column touch down');
+
+      let button = await scrollBar.scrollSearch(ON.id('change'));
+      let button_clean = await scrollBar.scrollSearch(ON.id('clean'));
+
       await button_clean.click();
       await CommonFunc.sleep(500);
-      // change the status of monopolize Attribute
+
       await button.click();
       await CommonFunc.sleep(1000);
-      await column1.longClick();
-      await CommonFunc.sleep(1000);
-      await column2.click();
+      await innerColnum.click();
       await CommonFunc.sleep(500);
-      let strJson2 = getInspectorByKey('columnText');
-      console.log("[columnMonopolize_001] component obj is: " , JSON.stringify(JSON.parse(strJson2)));
-      expect(JSON.parse(strJson2).$attrs.content).assertEqual('LongPressGesture onAction success;TapGesture success');
-      await CommonFunc.sleep(3000);
+      let strJson3 = getInspectorByKey('outer');
+      console.log("[columnMonopolize_001] component outer obj2 is: " , JSON.stringify(JSON.parse(strJson3)));
+      expect(JSON.parse(strJson3).$attrs.content).assertEqual(' ');
+      let strJson4 = getInspectorByKey('inner');
+      console.log("[columnMonopolize_001] component inner obj2 is: " , JSON.stringify(JSON.parse(strJson4)));
+      expect(JSON.parse(strJson4).$attrs.content).assertEqual('inner column touch down');
+      await CommonFunc.sleep(500);
       await button_clean.click();
       console.log('[columnMonopolize_001] END');
       done();

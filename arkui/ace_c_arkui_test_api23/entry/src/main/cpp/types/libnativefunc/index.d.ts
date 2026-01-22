@@ -101,6 +101,10 @@ export const TextEnumTest_018: () => number;
 export const TextEnumTest_019: () => number;
 export const TextEnumTest_020: () => number;
 export const TextEnumTest_021: () => number;
+export const TextEnumTest_022: () => number;
+export const TextEnumTest_023: () => number;
+
+export const TextMarqueeOptionsTest: () => number;
 
 export const testMotionPathOptions001: () => number;
 export const testMotionPathOptions002: () => number;
@@ -138,3 +142,13 @@ export const testImageAntialiased003: () => number;
 export const testImageAntialiased004: () => number;
 
 export const testImageAntialiased005: () => number;
+
+export const ListEmptyTest_001: () => number;
+export const ListEmptyTest_002: () => number;
+export const ListEmptyTest_003: () => number;
+export const ListEmptyTest_004: () => number;
+export const GridIndexTest_001: () => number;
+export const GridEmptyTest_001: () => number;
+export const GridEmptyTest_002: () => number;
+export const GridEmptyTest_003: () => number;
+export const GridEmptyTest_004: () => number;

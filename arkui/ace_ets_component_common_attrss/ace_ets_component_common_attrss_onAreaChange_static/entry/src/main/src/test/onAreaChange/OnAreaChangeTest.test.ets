@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,6 +30,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import {UtilsTest} from '../Util.test'
 import { jsonx } from "std/core";
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -80,7 +81,6 @@ export default function onAreaChangeTest() {
     'List',
     'ListItem',
     'ListItemGroup',
-    'Panel',
     'RelativeContainer',
     'Row',
     'RowSplit',
@@ -213,7 +213,7 @@ export default function onAreaChangeTest() {
           data: {
             "_width": testData.testValue.setValue.width as number,
             "_height": testData.testValue.setValue.height as number
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 99,
@@ -227,7 +227,7 @@ export default function onAreaChangeTest() {
           data: {
             "_compareButtonWidth": testData.testValue.setValue.compareButtonWidth as number,
             "_compareButtonHeight": testData.testValue.setValue.compareButtonHeight as number
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 99,
@@ -241,7 +241,7 @@ export default function onAreaChangeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "_offset": testData.testValue.setValue.offset as Position
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 99,

@@ -58,38 +58,29 @@ build() {
     Column() {
 
       Button('get spans').onClick((e: ClickEvent) => {
-        try{
-          this.style = '';
-          this.controller!.getSpans({
-            start: 0,
-            end: 6
-          })!.forEach(item => {
-            console.log('ClickEventClickEventClickEventClickEvent2222',JSON.stringify(item))
-            console.log('ClickEventClickEventClickEventClickEvent2222',(item as RichEditorImageSpanResult)!.imageStyle)
-            if (item instanceof RichEditorImageSpanResult) {
-              this.style += (item as RichEditorImageSpanResult)!.valueResourceStr;
-              if (((item as RichEditorImageSpanResult)!.imageStyle as RichEditorImageSpanStyleResult)!.layoutStyle) {
-            
-                this.style =
-                  JSON.stringify(((item as RichEditorImageSpanResult)!.imageStyle as RichEditorImageSpanStyleResult)!
-                    .layoutStyle);
-              }
+        this.style = '';
+        this.controller!.getSpans({
+          start: 0,
+          end: 6
+        })!.forEach(item => {
+          if (item instanceof RichEditorImageSpanResult) {
+            this.style += (item as RichEditorImageSpanResult).valueResourceStr;
+            if (((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
+              this.style =
+                JSON.stringify(((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)
+                  .layoutStyle);
+            }
+            this.style += '\n'
+          } else {
+            if ((item as RichEditorTextSpanResult)?.symbolSpanStyle) {
+              console.log('get content get symbolSpanStyle');
+              this.style += (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize;
               this.style += '\n'
             } else {
-              if ((item as RichEditorTextSpanResult)!.symbolSpanStyle) {
-                console.log('get content get symbolSpanStyle');
-                this.style += (item as RichEditorTextSpanResult)!.symbolSpanStyle!.fontSize;
-                this.style += '\n'
-              } else {
-                this.style += JSON.stringify((item as RichEditorTextSpanResult)!.paragraphStyle);
-            console.log('ClickEventClickEventClickEventClickEvent333',JSON.stringify(this.style))
-              }
-              console.log('ClickEventClickEventClickEventClickEvent22',this.style);
+              this.style += JSON.stringify((item as RichEditorTextSpanResult).paragraphStyle);
             }
-          })
-        }catch(e){
-          console.log('JSON.stringify',JSON.stringify(e))
-        }
+          }
+        })
       }).id('get_content')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)

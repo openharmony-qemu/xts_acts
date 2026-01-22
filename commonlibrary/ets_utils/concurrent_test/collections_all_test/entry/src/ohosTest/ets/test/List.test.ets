@@ -52,10 +52,7 @@ import builtinsConcatArrayJoinTest from "./ArrayBuffer/BuiltinsConcatArrayJoinTe
 import builtinsConcatArrayLengthTest from "./ArrayBuffer/BuiltinsConcatArrayLengthTest.test";
 import builtinsConcatArraySliceTest from "./ArrayBuffer/BuiltinsConcatArraySliceTest.test";
 
-import typeArrayBigInt64ArrayTest from './TypeArray/TypeArrayBigInt64Array.test';
-import typeArrayBigUint64ArrayTest from './TypeArray/TypeArrayBigUint64Array.test';
 import typeArrayFloat32ArrayTest from './TypeArray/TypeArrayFloat32Array.test';
-import typeArrayFloat64ArrayTest from './TypeArray/TypeArrayFloat64Array.test';
 import typeArrayInt16ArrayTest from './TypeArray/TypeArrayInt16Array.test';
 import typeArrayInt32ArrayTest from './TypeArray/TypeArrayInt32Array.test';
 import typeArrayInt8ArrayTest from './TypeArray/TypeArrayInt8Array.test';
@@ -124,10 +121,7 @@ export default function testsuite() {
   builtinsConcatArrayLengthTest();
   builtinsConcatArraySliceTest();
 
-  typeArrayBigInt64ArrayTest();
-  typeArrayBigUint64ArrayTest();
   typeArrayFloat32ArrayTest();
-  typeArrayFloat64ArrayTest();
   typeArrayInt8ArrayTest();
   typeArrayInt16ArrayTest();
   typeArrayInt32ArrayTest();

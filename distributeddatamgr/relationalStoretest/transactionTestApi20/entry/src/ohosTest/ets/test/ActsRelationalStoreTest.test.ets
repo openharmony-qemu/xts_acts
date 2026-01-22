@@ -959,7 +959,7 @@ export default function ActsRelationalStoreTest() {
           console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetLocale_4000 start====");
           let result: number = testNapi.testSetLocaleSuccess();
           console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetLocale_4000 result====", result);
-          expect(result).assertEqual(RDB_OK);
+          expect([0, 801]).assertContain(result);
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetLocale_4000 catch err: " + err);

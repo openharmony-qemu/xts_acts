@@ -53,8 +53,7 @@ export default function PaddingContainerLengthTest() {
     'Scroll',
     'Stack',
     'Swiper',
-    // 'Navigator',// SDK12.2 appDied
-    'Badge',  //other // 組件問題
+    'Badge',
   )
 
   await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")

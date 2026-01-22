@@ -45,6 +45,7 @@ import TextMenuType from './TextMenuType.test';
 
 import RichEditorDeleteTest from './RichEditorDeleteTest/RichEditorDelete.test';
 import TextDirectionTest from './TextDirectionTest.test';
+import ScrollToVisibleTest from './ScrollToVisibleTest.test';
 import IncludeFontPaddingTest from './RichEditorDisplayOptimizationTest/IncludeFontPadding.test';
 import FallbackLineSpacingTest from './RichEditorDisplayOptimizationTest/FallbackLineSpacing.test';
 import TextTest from './TextTest/TextTest.test';
@@ -56,6 +57,7 @@ import TextAreaDeleteTest from './TextDeleteTest/TextAreaDelete.test';
 import TextInputDelete from './TextDeleteTest/TextInputDelete.test';
 import TextControllerTest from './TextControllerTest/TextControllerTest.test';
 import SelectedDragPreviewStyleTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest.test';
+import SetTextSelectionTest from './SetTextSelectionTest/SetTextSelectionTest.test';
 
 export default function testsuite() {
   TextControllerTest();
@@ -99,5 +101,6 @@ export default function testsuite() {
   SearchDeleteTest();
   TextAreaDeleteTest();
   TextInputDelete();
-  SelectedDragPreviewStyleTest()
+  SelectedDragPreviewStyleTest();
+  SetTextSelectionTest()
 }

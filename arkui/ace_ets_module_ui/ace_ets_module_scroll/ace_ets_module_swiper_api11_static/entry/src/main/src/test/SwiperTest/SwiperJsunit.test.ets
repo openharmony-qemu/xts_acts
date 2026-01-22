@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,6 +49,7 @@ import { $r, Resource, ArrowStyle } from '@ohos.arkui.component';
 import events_emitter from '@ohos.events.emitter';
 
 import { UtilsTest, startAbility } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -201,7 +202,7 @@ it('swiperTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "index": 3
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 207,
@@ -235,7 +236,7 @@ it('swiperTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "autoPlay": true
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 207,
@@ -268,7 +269,7 @@ it('swiperTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<voi
       await CommonFunc.sleep(1500);
       let callback = (InnerEvent: events_emitter.EventData) => {
         console.info("swiperTest_static_0800 get state result is: " + JSON.stringify(InnerEvent));
-        expect(((InnerEvent.data) as Record<string, undefined|null|Object>)?.['ACTION'] ?? true).assertEqual(true);
+        expect(((InnerEvent.data) as Record<String,RecordData>)?.['ACTION'] ?? true).assertEqual(true);
         done()
       }
       let InnerEvent: events_emitter.InnerEvent = {
@@ -298,7 +299,7 @@ it('swiperTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<voi
       await CommonFunc.sleep(1500);
       let callback = (InnerEvent: events_emitter.EventData) => {
         console.info("swiperTest_static_0900 get state result is: " + JSON.stringify(InnerEvent));
-        expect(((InnerEvent.data) as Record<string, undefined|null|Object>)?.['ACTION'] ?? true).assertEqual(true);
+        expect(((InnerEvent.data) as Record<String,RecordData>)?.['ACTION'] ?? true).assertEqual(true);
         done()
       }
       let InnerEvent: events_emitter.InnerEvent = {
@@ -328,7 +329,7 @@ it('swiperTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<voi
       await CommonFunc.sleep(1500);
       let callbackOne = (InnerEventOne: events_emitter.EventData) => {
         console.info("swiperTest_static_1000 get state result is: " + JSON.stringify(InnerEventOne));
-        expect(((InnerEventOne.data) as Record<string, undefined|null|Object>)?.['ACTION'] ?? true).assertEqual(true);
+        expect(((InnerEventOne.data) as Record<String,RecordData>)?.['ACTION'] ?? true).assertEqual(true);
         done()
       }
       let innerEvent: events_emitter.InnerEvent = {
@@ -344,7 +345,7 @@ it('swiperTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<voi
       await CommonFunc.sleep(1500);
       let callback = (InnerEvent: events_emitter.EventData) => {
         console.info("swiperTest_static_1000 get state result is: " + JSON.stringify(InnerEvent));
-        expect(((InnerEvent.data) as Record<string, undefined|null|Object>)?.['ACTION'] ?? true).assertEqual(true);
+        expect(((InnerEvent.data) as Record<String,RecordData>)?.['ACTION'] ?? true).assertEqual(true);
         done()
       }
       let InnerEvent: events_emitter.InnerEvent = {
@@ -373,7 +374,7 @@ it('swiperTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "loop": true
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 208,
@@ -407,7 +408,7 @@ it('swiperTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "vertical": true
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 208,
@@ -441,7 +442,7 @@ it('swiperTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "interval": "3000"
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 209,
@@ -475,7 +476,7 @@ it('swiperTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "indicator": false
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 209,
@@ -508,7 +509,7 @@ it('swiperTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "duration": 500
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 210,
@@ -542,7 +543,7 @@ it('swiperTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "itemSpace": "1"
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 210,
@@ -576,7 +577,7 @@ it('swiperTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "loop": "true123"
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 208,
@@ -611,7 +612,7 @@ it('swiperTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "autoPlay": "false123"
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 207,
@@ -645,7 +646,7 @@ it('swiperTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "duration": 0
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 210,
@@ -679,7 +680,7 @@ it('swiperTest_static_2000', Level.LEVEL0, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "duration": "abc"
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let InnerEvent: events_emitter.InnerEvent = {
           eventId: 210,

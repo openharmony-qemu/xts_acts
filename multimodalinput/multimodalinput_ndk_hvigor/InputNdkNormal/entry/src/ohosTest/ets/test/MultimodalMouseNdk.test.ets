@@ -1376,6 +1376,30 @@ export default function MultimodalMouseNdkTest() {
         done();
       }
       console.info(`${caseName} end to test`);
-    });   
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_GetKeyEventId_0100
+     * @tc.number SUB_MMI_Input_GetKeyEventId_0100
+     * @tc.desc   OH_Input_GetKeyEventId Interface testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_GetKeyEventId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_GetKeyEventId_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = mouse.GetKeyEventId();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
   });
 }

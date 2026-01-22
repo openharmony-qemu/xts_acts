@@ -2066,8 +2066,6 @@ export default function windowZindexTest() {
      */
     it('testSetSubWindowZLevel__10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetSubWindowZLevel__10001';
-      let isSupport = canIUse('SystemCapability.Window.SessionManager')
-      console.info(caseName+ ' isSupport:'+isSupport);
       let subWindow = await windowStage.createSubWindow('testSetSubWindowZLevel__10001')
       try {
         let promise = subWindow.setSubWindowZLevel(-10001);
@@ -2078,7 +2076,7 @@ export default function windowZindexTest() {
         }).catch(async (err: BusinessError) => {
           console.error(`caseName+ Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
-          if(!isSupport){
+          if(err.code ==801){
             expect(err.code).assertEqual(801);
             expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
             done()
@@ -2106,8 +2104,6 @@ export default function windowZindexTest() {
      */
     it('testSetSubWindowZLevel__10000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetSubWindowZLevel__10000';
-      let isSupport = canIUse('SystemCapability.Window.SessionManager')
-      console.info(caseName+ ' isSupport:'+isSupport);
       let subWindow = await windowStage.createSubWindow('testSetSubWindowZLevel__10000')
       try {
         let promise = subWindow.setSubWindowZLevel(-10000);
@@ -2119,7 +2115,7 @@ export default function windowZindexTest() {
         }).catch(async (err: BusinessError) => {
           console.error(caseName+` Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
-          if(!isSupport){
+          if(err.code == 801){
             expect(err.code).assertEqual(801);
             expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
             done()
@@ -2145,8 +2141,6 @@ export default function windowZindexTest() {
      */
     it('testSetSubWindowZLevel_10000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetSubWindowZLevel_10000';
-      let isSupport = canIUse('SystemCapability.Window.SessionManager')
-      console.info(caseName+ ' isSupport:'+isSupport);
       let subWindow = await windowStage.createSubWindow('testSetSubWindowZLevel_10000')
       try {
         let promise = subWindow.setSubWindowZLevel(10000);
@@ -2158,7 +2152,7 @@ export default function windowZindexTest() {
         }).catch(async (err: BusinessError) => {
           console.error(caseName+` Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
-          if(!isSupport){
+          if(err.code == 801){
             expect(err.code).assertEqual(801);
             expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
             done()
@@ -2184,8 +2178,6 @@ export default function windowZindexTest() {
      */
     it('testSetSubWindowZLevel_10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetSubWindowZLevel_10001';
-      let isSupport = canIUse('SystemCapability.Window.SessionManager')
-      console.info(caseName+ ' isSupport:'+isSupport);
       let subWindow = await windowStage.createSubWindow('testSetSubWindowZLevel_10001')
       try {
         let promise = subWindow.setSubWindowZLevel(10001);
@@ -2196,7 +2188,7 @@ export default function windowZindexTest() {
         }).catch(async (err: BusinessError) => {
           console.error(`caseName+ Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
-          if(!isSupport){
+          if(err.code == 801){
             expect(err.code).assertEqual(801);
             expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
             done()

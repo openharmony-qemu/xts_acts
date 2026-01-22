@@ -36,6 +36,7 @@
 #include "node/ConvertPositionToWindowTest.h"
 #include "node/IsInRenderStateTest.h"
 #include "node/ConvertPositionFromWindowTest.h"
+#include "ScrollToVisible/ScrollToVisible.h"
 #include "deleteBackward/DeleteBackwardTest.h"
 #include "deleteBackward/TextAreaDeleteBackwardTest.h"
 #include "textTest/TextTest.h"
@@ -83,6 +84,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TextCompressLeadingPunctuationTest", nullptr, TextCompressLeadingPunctuationTest::CreateNativeNode, 
             nullptr, nullptr, nullptr, napi_default, nullptr}, 
         {"TextInputCompressLeadingPunctuationTest", nullptr, TextInputCompressLeadingPunctuationTest::CreateNativeNode, 
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetTextInputScrollToVisibleTest", nullptr, ScrollToVisibleTest::GetTextInputScrollToVisibleTest, 
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetTextAreaScrollToVisibleTest", nullptr, ScrollToVisibleTest::GetTextAreaScrollToVisibleTest, 
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CreateScrollToVisibleNodeTest", nullptr, ScrollToVisibleTest::CreateScrollToVisibleNode, 
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"distanceTest", nullptr, DistanceTest::CreateNativeNode, nullptr, nullptr, nullptr,
             napi_default, nullptr},

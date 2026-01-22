@@ -57,8 +57,7 @@ export default function segmentbutton() {
       }
     })
     afterEach(async (): Promise<void> => {
-      let driver = Driver.create()
-      await driver.delayMs(2);
+      await CommonFunc.sleep(500);
     })
 
     
@@ -71,10 +70,11 @@ export default function segmentbutton() {
 it('Advanced_ui_SegmentButton_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
   console.log('Advanced_ui_SegmentButton_static_0100', 'singleTextSegmentButton start')
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
   console.log('Advanced_ui_SegmentButton_static_0100', 'singleTextSegmentButton before')
       let singleTextSegmentButton = await driver.findComponent(ON.text('单选文字1'))
       await CommonFunc.sleep(500);
+  console.log('Advanced_ui_SegmentButton_static_0100', 'singleTextSegmentButton before：' + singleTextSegmentButton)
   console.log('Advanced_ui_SegmentButton_static_0100', 'singleTextSegmentButton success')
       let singleTextSegmentButtonIsEnabled = await (singleTextSegmentButton?.isEnabled() as Promise<Boolean>)
   console.log('Advanced_ui_SegmentButton_static_0100', 'isEnabled success')

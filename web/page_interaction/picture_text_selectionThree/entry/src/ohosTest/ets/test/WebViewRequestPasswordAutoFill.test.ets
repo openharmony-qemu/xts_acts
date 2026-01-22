@@ -27,7 +27,7 @@ const driver = Driver.create();
 export default function WebViewRequestPasswordAutoFill() {
   describe('WebViewRequestPasswordAutoFillTest', () => {
 
-    beforeAll(async (done: Function) => {
+    beforeAll(async () => {
       let options: router.RouterOptions = {
         url: 'testability/pages/WebViewRequestPasswordAutoFill',
       }
@@ -44,7 +44,6 @@ export default function WebViewRequestPasswordAutoFill() {
         console.error("push WebViewRequestPasswordAutoFill page error: " + err);
       }
       await driver.waitForComponent(ON.id("RequestPasswordAutoFillButton"),10000);
-      done()
     });
 
     beforeEach(async (done: Function) => {

@@ -48,6 +48,7 @@
         "MainAbility/pages/emptyBranch/listRepeatFalse",
         "MainAbility/pages/emptyBranch/listRepeatUn",
         "MainAbility/pages/emptyBranch/listRepeatNull",
-        "MainAbility/pages/List/editModeList"
+        "MainAbility/pages/List/editModeList",
+        "MainAbility/pages/List/editBadgeList"
     ]
 }

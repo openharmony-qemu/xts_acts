@@ -16,8 +16,6 @@ import {
   ComponentInit,
   ComponentAppear,
   ComponentBuilt,
-  ComponentAttach,
-  ComponentDetach,
   ComponentDisappear,
   ComponentReuse,
   ComponentRecycle,
@@ -73,18 +71,6 @@ struct Child1 {
     AppStorage.setOrCreate<CustomComponentLifecycleState>('Child1ComponentBuilt', leftStyle.getCurrentState())
   }
 
-  @ComponentAttach
-  myAttach() {
-    let leftStyle: CustomComponentLifecycle = UIUtils.getLifecycle(this);
-    AppStorage.setOrCreate<CustomComponentLifecycleState>('Child1ComponentAttach', leftStyle.getCurrentState())
-  }
-
-  @ComponentDetach
-  myDetach() {
-    let leftStyle: CustomComponentLifecycle = UIUtils.getLifecycle(this);
-    AppStorage.setOrCreate<CustomComponentLifecycleState>('Child1ComponentDetach', leftStyle.getCurrentState())
-  }
-
   @ComponentRecycle
   myRecycle() {
     let leftStyle: CustomComponentLifecycle = UIUtils.getLifecycle(this);
@@ -125,18 +111,6 @@ struct Child2 {
   myBuilt() {
     let leftStyle: CustomComponentLifecycle = UIUtils.getLifecycle(this);
     AppStorage.setOrCreate<CustomComponentLifecycleState>('Child2ComponentBuilt', leftStyle.getCurrentState())
-  }
-
-  @ComponentAttach
-  myAttach() {
-    let leftStyle: CustomComponentLifecycle = UIUtils.getLifecycle(this);
-    AppStorage.setOrCreate<CustomComponentLifecycleState>('Child2ComponentAttach', leftStyle.getCurrentState())
-  }
-
-  @ComponentDetach
-  myDetach() {
-    let leftStyle: CustomComponentLifecycle = UIUtils.getLifecycle(this);
-    AppStorage.setOrCreate<CustomComponentLifecycleState>('Child2ComponentDetach', leftStyle.getCurrentState())
   }
 
   @ComponentRecycle

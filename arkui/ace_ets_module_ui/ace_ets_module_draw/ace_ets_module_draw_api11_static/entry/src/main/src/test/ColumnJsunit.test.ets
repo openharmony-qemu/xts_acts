@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import { Callback, MessageManager } from '../../ets/MainAbility/common/MessageMa
 import { startAbility, stopApplication, UtilsTest } from './Util.test'
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { HorizontalAlign } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -99,7 +100,7 @@ it('testColumn_static_02', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: emitter.EventData = {
           data: {
             "alignItems": HorizontalAlign.Center
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 192,

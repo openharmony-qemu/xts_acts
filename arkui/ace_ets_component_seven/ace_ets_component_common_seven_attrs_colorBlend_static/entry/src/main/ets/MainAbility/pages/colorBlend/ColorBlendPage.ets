@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,6 +42,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
 import { State, AppStorage, StoragePropRef,Observed } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
+import { RecordData } from '@ohos.base';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mColorBlend: Color | string = Color.Green
@@ -663,7 +664,7 @@ struct colorBlendPage {
   }
   private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != null) {
-      const data = eventData.data as Record<string, Object | null | undefined>
+      const data = eventData.data as Record<string, RecordData>
       if (data!['colorBlend'] != null) {
         console.log('colorBlendcolorBlendcolorBlendcolorBlendcolorBlend',data!['colorBlend'] as Color|string);
         this._colorBlendButttonMod.mColorBlend = data!['colorBlend'] as Color|string

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -82,10 +83,10 @@ it('testpanelOnHeightChange_static_0002', Level.LEVEL0, async (): Promise<void> 
       }
       let callback1 = (backData: emitter.EventData) => {
         console.info("testpanelOnHeightChange_static_0002 backData.data.result is: " +
-          ((backData.data) as Record<String, undefined|null|Object>)?.['result']);
+          ((backData.data) as Record<String,RecordData>)?.['result']);
         try {
           console.info("testpanelOnHeightChange_static_0002 callback1 success");
-          expect(((backData.data) as Record<String, undefined|null|Object>)?.['result']).assertEqual("success");
+          expect(((backData.data) as Record<String,RecordData>)?.['result']).assertEqual("success");
 
         } catch (err) {
           console.info("testpanelOnHeightChange_static_0002 on emitter err : " + JSON.stringify(err));

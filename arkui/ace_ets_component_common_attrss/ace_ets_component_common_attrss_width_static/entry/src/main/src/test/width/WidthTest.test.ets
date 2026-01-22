@@ -68,7 +68,6 @@ export default function widthTest() {
     'QRCode',
     'Radio',
     'Rating',
-    'RichText',
     'Slider',
     'Text',
     'TextClock',
@@ -97,7 +96,6 @@ export default function widthTest() {
     'Line',
     'GridItem',
     'RelativeContainer',
-    'Navigator',
   )
   //The size of the parent component, when set as a percentage, serves as the calculation.
   let parentWidth = 300;

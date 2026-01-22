@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,6 +51,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -112,7 +113,7 @@ it('bindMenuTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
       await CommonFunc.sleep(1500);
       let callback = (indexEvent: emitter.EventData) => {
         console.info("bindMenuTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['ACTION']).assertEqual(true);
+        expect(((indexEvent.data) as Record<String,RecordData>)?.['ACTION']).assertEqual(true);
         done();
       }
       let indexEvent: emitter.InnerEvent = {

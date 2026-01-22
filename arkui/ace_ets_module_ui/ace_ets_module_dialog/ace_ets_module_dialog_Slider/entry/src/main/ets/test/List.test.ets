@@ -27,6 +27,7 @@ import SliderAttrs2 from './SliderTest/SliderAttrs2.test';
 import XComponentSliderTest from './SliderTest/XcomponentSlider.test';
 import sliderNode from './Slider/sliderNode.test';
 import sliderOnChangeModifierTest from './Slider/sliderOnChangeModifier.test';
+import sliderTrackColorMetricsTest from './SliderTest/sliderTrackColorMetrics.test';
 
 export default function testsuite() {
   SliderOptionValue();
@@ -42,4 +43,5 @@ export default function testsuite() {
   XComponentSliderTest();
   sliderNode();
   sliderOnChangeModifierTest();
+  sliderTrackColorMetricsTest();
 }

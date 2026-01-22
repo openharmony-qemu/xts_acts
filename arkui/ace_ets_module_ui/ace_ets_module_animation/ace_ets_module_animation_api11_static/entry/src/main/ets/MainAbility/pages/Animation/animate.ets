@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,6 +38,7 @@ import {
 import { AppStorage, Link, State, StorageLink, Watch } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
+import { RecordData } from '@ohos.base';
 
 interface ParamName {
   name: string,
@@ -109,7 +110,7 @@ struct Animation3Example {
         .key('button1')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP: Record<String, undefined | null | Object> = {
+            let dataP: Record<String,RecordData> = {
               "duration": this.duration,
             }
             let backData: emitter.EventData = {
@@ -138,7 +139,7 @@ struct Animation3Example {
         .margin({ bottom: 20 } as Margin)
         .key('button11')
         .onClick((e: ClickEvent) => {
-          let dataP1: Record<String, undefined | null | Object> = {
+          let dataP1: Record<String,RecordData> = {
             "duration": this.duration,
           }
           try {
@@ -169,7 +170,7 @@ struct Animation3Example {
         .key('button12')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP2: Record<String, undefined | null | Object> = {
+            let dataP2: Record<String,RecordData> = {
               "curve": this.curve,
             }
             let backData: emitter.EventData = {
@@ -198,7 +199,7 @@ struct Animation3Example {
         .key('button2')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP3: Record<String, undefined | null | Object> = {
+            let dataP3: Record<String,RecordData> = {
               "curve": this.curve,
             }
             let backDataOne: emitter.EventData = {
@@ -227,7 +228,7 @@ struct Animation3Example {
         .key('button3')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP4: Record<String, undefined | null | Object> = {
+            let dataP4: Record<String,RecordData> = {
               "iterations": this.iteration,
             }
             let backDataTwo: emitter.EventData = {
@@ -256,7 +257,7 @@ struct Animation3Example {
         .key('button13')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP5: Record<String, undefined | null | Object> = {
+            let dataP5: Record<String,RecordData> = {
               "iterations": this.iteration,
             }
             let backDataTwo: emitter.EventData = {
@@ -285,7 +286,7 @@ struct Animation3Example {
         .key('button4')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP6: Record<String, undefined | null | Object> = {
+            let dataP6: Record<String,RecordData> = {
               "tempo": this.tempo
             }
             let backDataThree: emitter.EventData = {
@@ -314,7 +315,7 @@ struct Animation3Example {
         .key('button14')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP7: Record<String, undefined | null | Object> = {
+            let dataP7: Record<String,RecordData> = {
               "tempo": this.tempo
             }
             let backDataThree: emitter.EventData = {
@@ -343,7 +344,7 @@ struct Animation3Example {
         .key('button5')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP8: Record<String, undefined | null | Object> = {
+            let dataP8: Record<String,RecordData> = {
               "playmode": this.playmode,
             }
             let backDataFour: emitter.EventData = {
@@ -372,7 +373,7 @@ struct Animation3Example {
         .key('button15')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP9: Record<String, undefined | null | Object> = {
+            let dataP9: Record<String,RecordData> = {
               "playmode": this.playmode,
             }
             let backDataFour: emitter.EventData = {
@@ -401,7 +402,7 @@ struct Animation3Example {
         .key('button6')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP10: Record<String, undefined | null | Object> = {
+            let dataP10: Record<String,RecordData> = {
               "duration": this.duration,
             }
             let backData: emitter.EventData = {
@@ -430,7 +431,7 @@ struct Animation3Example {
         .key('button7')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP11: Record<String, undefined | null | Object> = {
+            let dataP11: Record<String,RecordData> = {
               "duration": this.duration,
             }
             let backData: emitter.EventData = {
@@ -459,7 +460,7 @@ struct Animation3Example {
         .key('button8')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP12: Record<String, undefined | null | Object> = {
+            let dataP12: Record<String,RecordData> = {
               "curve": this.curve,
             }
             let backData: emitter.EventData = {
@@ -488,7 +489,7 @@ struct Animation3Example {
         .key('button9')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP13: Record<String, undefined | null | Object> = {
+            let dataP13: Record<String,RecordData> = {
               "curve": this.curve,
             }
             let backData: emitter.EventData = {
@@ -517,7 +518,7 @@ struct Animation3Example {
         .key('button10')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP14: Record<String, undefined | null | Object> = {
+            let dataP14: Record<String,RecordData> = {
               "iteration": this.iteration,
             }
             let backData: emitter.EventData = {
@@ -546,7 +547,7 @@ struct Animation3Example {
         .key('button111')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP15: Record<String, undefined | null | Object> = {
+            let dataP15: Record<String,RecordData> = {
               "iteration": this.iteration,
             }
             let backData: emitter.EventData = {
@@ -575,7 +576,7 @@ struct Animation3Example {
         .key('button121')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP16: Record<String, undefined | null | Object> = {
+            let dataP16: Record<String,RecordData> = {
               "tempo": this.tempo,
             }
             let backData: emitter.EventData = {
@@ -604,7 +605,7 @@ struct Animation3Example {
         .key('button131')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP17: Record<String, undefined | null | Object> = {
+            let dataP17: Record<String,RecordData> = {
               "tempo": this.tempo,
             }
             let backData: emitter.EventData = {
@@ -633,7 +634,7 @@ struct Animation3Example {
         .key('button141')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP18: Record<String, undefined | null | Object> = {
+            let dataP18: Record<String,RecordData> = {
               "playmode": this.playmode,
             }
             let backData: emitter.EventData = {
@@ -662,7 +663,7 @@ struct Animation3Example {
         .key('button151')
         .onClick((e: ClickEvent) => {
           try {
-            let dataP19: Record<String, undefined | null | Object> = {
+            let dataP19: Record<String,RecordData> = {
               "playmode": this.playmode,
             }
             let backData: emitter.EventData = {

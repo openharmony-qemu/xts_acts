@@ -97,6 +97,7 @@ export default function ArcListDemo() {
       console.info("[ArkUX_Stage_ArcList_ComponentTest_0100] scrollBar: " + JSON.stringify(obj.$attrs.scrollBar));
       console.info("[ArkUX_Stage_ArcList_ComponentTest_0100] scrollBarWidth: " + JSON.stringify(obj.$attrs.scrollBarWidth));
       console.info("[ArkUX_Stage_ArcList_ComponentTest_0100] scrollBarColor: " + JSON.stringify(obj.$attrs.scrollBarColor));
+      console.info("[ArkUX_Stage_ArcList_ComponentTest_0100] scrollBarColor1: " + JSON.stringify(spliceColor($r('sys.color.scrollbar_color_foreground'))));
 	
       console.info("[ArkUX_Stage_ArcList_ComponentTest_0100] cachedCount: " + JSON.stringify(obj.$attrs.cachedCount));
       console.info("[ArkUX_Stage_ArcList_ComponentTest_0100] chainAnimation: " + JSON.stringify(obj.$attrs.chainAnimation));
@@ -109,7 +110,7 @@ export default function ArcListDemo() {
       expect(obj.$attrs.initialIndex).assertEqual('0');
       expect(obj.$attrs.scrollBar).assertEqual('BarState.Auto');
       expect(obj.$attrs.scrollBarWidth).assertEqual('4.00vp');
-	  expect(hexWithNoAlpha(obj.$attrs.scrollBarColor)).assertEqual(hexWithNoAlpha(spliceColor($r('sys.color.ohos_id_color_foreground'))));
+      expect(hexWithNoAlpha(obj.$attrs.scrollBarColor)).assertEqual(hexWithNoAlpha(spliceColor($r('sys.color.scrollbar_color_foreground'))));
       expect(obj.$attrs.cachedCount).assertEqual('0');
       expect(obj.$attrs.chainAnimation).assertEqual(false);
       expect(obj.$attrs.enableScrollInteraction).assertEqual(true);

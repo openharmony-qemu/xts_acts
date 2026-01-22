@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,6 +39,7 @@ import {
   TouchEvent,
   TouchType,HitTestMode
 } from '@ohos.arkui.component'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -73,7 +74,7 @@ struct TouchAbleExample {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.text2
-              } as Record<string, Object | undefined | null>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 237,

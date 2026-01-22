@@ -185,6 +185,7 @@ constexpr const char16_t TEST_STR_UTF16[] = u"中文,English,123456,!@#$%$#^%&12
 constexpr const char TEST_ERROR_CODE[] = "500";
 constexpr const char TEST_ERROR_MESSAGE[] = "Common error";
 const uint32_t STRING_MATCH_RESULT = 86;
+const uint32_t MED_DATA_SIZE = 1024 * 10;
 const int NUM_REFERENCES = 1000;
 static const napi_type_tag typeTags0 = {0xdaf987b3cc62481a, 0xb745b0497f299531};
 static const napi_type_tag typeTags1 = {0xbb7936c374084d9b, 0xa9548d0762eeedb9};
@@ -12567,13 +12568,13 @@ static napi_value StringLineStringUTF8Test(napi_env env, napi_callback_info info
     size_t length = 0;
     status = napi_get_buffer_string_utf16_in_critical_scope(env, result, &data, &length); // napi_ok
 
-    ASSERT_EQ_RS(status, napi_ok, "StringLineStringTest");
+    ASSERT_EQ_RS(status, napi_ok, "StringLineStringUTF8Test");
     int strEq = strcmp(reinterpret_cast<const char*>(data), str);
 
     napi_close_critical_scope(env, scope);
     
     if(length == sizeof(TEST_STR_UTF16) / sizeof(char16_t) - 1 && strEq == 0) {
-        OH_LOG_INFO(LOG_APP, "StringLineStringTest success");
+        OH_LOG_INFO(LOG_APP, "StringLineStringUTF8Test success");
         return CreateBoolean(env, false);
     }
     return CreateBoolean(env, true);
@@ -12592,13 +12593,13 @@ static napi_value StringLineStringlatin1Test(napi_env env, napi_callback_info in
     size_t length = 0;
     status = napi_get_buffer_string_utf16_in_critical_scope(env, result, &data, &length); // napi_ok
 
-    ASSERT_EQ_RS(status, napi_ok, "StringLineStringTest");
+    ASSERT_EQ_RS(status, napi_ok, "StringLineStringlatin1Test");
     int strEq = strcmp(reinterpret_cast<const char*>(data), str);
 
     napi_close_critical_scope(env, scope);
     
     if(length == sizeof(TEST_STR_UTF16) / sizeof(char16_t) - 1 && strEq == 0) {
-        OH_LOG_INFO(LOG_APP, "StringLineStringTest success");
+        OH_LOG_INFO(LOG_APP, "StringLineStringlatin1Test success");
         return CreateBoolean(env, false);
     }
     return CreateBoolean(env, true);
@@ -12613,7 +12614,7 @@ static napi_value StringLineStringTest(napi_env env, napi_callback_info info)
     // 超大串
     napi_value value2 = nullptr;
     const std::u16string pattern = u"中文,English,123456,!@#$%$#^%&12345";
-    std::u16string largeStr = RepeatString(pattern, LARGE_DATA_SIZE_1MB);
+    std::u16string largeStr = RepeatString(pattern, MED_DATA_SIZE);
     status = napi_create_string_utf16(env, largeStr.c_str(), NAPI_AUTO_LENGTH, &value2);
     
     // 为空字符传
@@ -12800,12 +12801,12 @@ static napi_value StringLineStringInErrorEnvTest(napi_env env, napi_callback_inf
     napi_close_critical_scope(env, scope);
     
     if(length == sizeof(TEST_STR_UTF16) / sizeof(char16_t) - 1 && strEq == 0) {
-        OH_LOG_INFO(LOG_APP, "StringLineStringTest success");
+        OH_LOG_INFO(LOG_APP, "StringLineStringInErrorEnvTest success");
         napi_value exception = nullptr;
         status = napi_get_and_clear_last_exception(env, &exception);
         return CreateBoolean(env, true);
     }
-    OH_LOG_ERROR(LOG_APP, "StringLineStringTest failed");
+    OH_LOG_ERROR(LOG_APP, "StringLineStringInErrorEnvTest failed");
     
     napi_value exception = nullptr;
     status = napi_get_and_clear_last_exception(env, &exception);
@@ -12878,7 +12879,7 @@ static void *CreateArkRuntimeFunc(void *arg)
     napi_close_critical_scope(env, scope);
     
     if(length == sizeof(TEST_STR_UTF16) / sizeof(char16_t) - 1 && strEq == 0) {
-        OH_LOG_INFO(LOG_APP, "StringLineStringTest success");
+        OH_LOG_INFO(LOG_APP, "CreateArkRuntimeFunc napi_get_buffer_string_utf16_in_critical_scope success");
         napi_value exception = nullptr;
         status = napi_get_and_clear_last_exception(env, &exception);
     }

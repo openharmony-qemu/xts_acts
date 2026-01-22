@@ -45,7 +45,6 @@ export default function alignSelfTest() {
   let supportView = [
     'Grid',
     'List',
-    'Panel',
     'Refresh',
     'Scroll',
     'Stack',
