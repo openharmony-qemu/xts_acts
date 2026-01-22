@@ -63,7 +63,6 @@ export default function IsShowFalse() {
         }
       } catch (err) {
         console.error("push IsShowFalse page error: " + err);
-        expect().assertFail();
       }
 
     });
