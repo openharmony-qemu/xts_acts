@@ -90,8 +90,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
     })
 
     /**
-     * @tc.name        LiteResultSetErrCode14800012Test0011
-     * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetErrCode14800012Test_1100
+     * @tc.name        LiteResultSetGetAssetTest0001
+     * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetGetAssetTest_0010
      * @tc.desc        getAsset normal test
      * @tc.size        MediumTest
      * @tc.type        Function
@@ -117,7 +117,7 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
     /**
      * @tc.name        LiteResultSetGetAssetTest0002
-     * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetErrCode14800013Test_0600
+     * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetGetAssetTest_0020
      * @tc.desc        getAsset normal test
      * @tc.size        MediumTest
      * @tc.type        Function
@@ -142,8 +142,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
       })
 
     /**
-     * @tc.name        LiteResultSetErrCode14800014Test017
-     * @tc.number      SUB_DistributedData_RelationalStore_LiteResultSetErrCode14800014Test_1700
+     * @tc.name        LiteResultSetGetAssetTest0003
+     * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetGetAssetTest_0030
      * @tc.desc        getAsset normal test
      * @tc.size        MediumTest
      * @tc.type        Function
@@ -170,7 +170,7 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
     /**
      * @tc.name        LiteResultSetGetAssetTest0004
-     * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetErrCode14800041Test_0200
+     * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetGetAssetTest_0040
      * @tc.desc        getAsset normal test
      * @tc.size        MediumTest
      * @tc.type        Function
@@ -196,7 +196,7 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
     /**
      * @tc.name        LiteResultSetgetAssetsTest0001
-     * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetErrCode14800012Test_1000
+     * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetGetAssetsTest_0010
      * @tc.desc        getAssets normal test
      * @tc.size        MediumTest
      * @tc.type        Function
@@ -222,7 +222,7 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
     /**
      * @tc.name        LiteResultSetgetAssetsTest0002
-     * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetErrCode14800013Test_0600
+     * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetGetAssetsTest_0020
      * @tc.desc        getAsset normal test
      * @tc.size        MediumTest
      * @tc.type        Function
@@ -248,7 +248,7 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
     /**
      * @tc.name        LiteResultSetgetAssetsTest0003
-     * @tc.number      SUB_DistributedData_RelationalStore_LiteResultSetErrCode14800014Test_1800
+     * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetGetAssetsTest_0030
      * @tc.desc        getAssets normal test
      * @tc.size        MediumTest
      * @tc.type        Function
@@ -275,7 +275,7 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
     /**
      * @tc.name        LiteResultSetgetAssetsTest0004
-     * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetErrCode14800041Test_0100
+     * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetGetAssetsTest_0040
      * @tc.desc        getAssets normal test
      * @tc.size        MediumTest
      * @tc.type        Function
