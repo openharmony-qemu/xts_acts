@@ -38,7 +38,7 @@ struct Index2 {
                  let caseName = 'testPiPStateChangeOtherwithCloseMainWindow'
                  let pipController:pipWindow.PiPController| undefined = undefined;
                  let mXComponentController = new XComponentController();
-                 let navId = "";
+                 let navId = '';
                  let contentWidth = 400;
                  let contentHeight = 600;
                  let config:pipWindow.PiPConfiguration = {
