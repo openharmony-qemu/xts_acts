@@ -16,17 +16,17 @@ target_link_libraries(corrupted PUBLIC
     libhilog_ndk.z.so
     libnative_rdb_ndk.z.so
 )
-add_library(query SHARED QueryWithoutRowCountTest.cpp)
- 	 target_link_libraries(query PUBLIC
- 	      libace_napi.z.so
- 	      libhilog_ndk.z.so
- 	      libnative_rdb_ndk.z.so
- 	 )
+add_library(rdbQuery SHARED QueryWithoutRowCountTest.cpp)
+target_link_libraries(rdbQuery PUBLIC
+ 	libace_napi.z.so
+ 	libhilog_ndk.z.so
+ 	libnative_rdb_ndk.z.so
+)
  	 
- 	 add_library(tran SHARED TranQueryWithoutRowCountTest.cpp)
- 	 target_link_libraries(tran PUBLIC
- 	      libace_napi.z.so
- 	      libhilog_ndk.z.so
- 	      libnative_rdb_ndk.z.so
- 	 )
+add_library(rdbTran SHARED TranQueryWithoutRowCountTest.cpp)
+target_link_libraries(rdbTran PUBLIC
+ 	libace_napi.z.so
+ 	libhilog_ndk.z.so
+ 	libnative_rdb_ndk.z.so
+)
 
