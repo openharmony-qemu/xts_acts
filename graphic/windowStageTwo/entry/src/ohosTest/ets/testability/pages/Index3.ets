@@ -30,8 +30,10 @@ struct Index3 {
             console.log(this.caseName + ' page Index3 this.windowSizeVP: ' + JSON.stringify(this.windowSizeVP))
             console.log(this.caseName + ' page Index3 this.windowSizePX: ' + JSON.stringify(this.windowSizePX))
             if (this.windowSizeVP && this.windowSizePX) {
-              AppStorage.setOrCreate('windowSizeVP', this.windowSizeVP);
-              AppStorage.setOrCreate('windowSizePX', this.windowSizePX);
+              AppStorage.setOrCreate('windowSizeVP width', this.windowSizeVP.width);
+              AppStorage.setOrCreate('windowSizeVP height', this.windowSizeVP.height);
+              AppStorage.setOrCreate('windowSizePX width', this.windowSizePX.width);
+              AppStorage.setOrCreate('windowSizePX height', this.windowSizePX.height);
             }
           })
       }

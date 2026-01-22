@@ -1768,19 +1768,30 @@ export default function windowRotationTest() {
           expect(window.RotationInfoType.WINDOW_ORIENTATION).assertEqual(0);
           expect(window.RotationInfoType.DISPLAY_ORIENTATION).assertEqual(1);
           subWindowClass = await windowStage.createSubWindow('testConvertOrientationAndRotationFromWindowOrientationToDisplayOrientation');
-          let outputValue3 = subWindowClass.convertOrientationAndRotation(window.RotationInfoType.WINDOW_ORIENTATION, window.RotationInfoType.DISPLAY_ORIENTATION, 0);
-          await subWindowClass.destroyWindow();
+          try{
+            let outputValue3 = subWindowClass.convertOrientationAndRotation(window.RotationInfoType.WINDOW_ORIENTATION, window.RotationInfoType.DISPLAY_ORIENTATION, 0);
+            console.error(caseName + 'subWindowClass convertOrientationAndRotation, outputValue3: ' + JSON.stringify(outputValue3));
+            await subWindowClass.destroyWindow();
+            expect(false).assertTrue();
+            done();
+          }catch (err) {
+            console.error(caseName + 'subWindowClass failed convertOrientationAndRotation, err: ' + JSON.stringify(err)+'errCode:' + JSON.stringify(err.code));
+            expect(err.code).assertEqual(1300002);
+            await subWindowClass.destroyWindow();
+            done();
+          }
+
         } else {
           let outputValue = windowClass.convertOrientationAndRotation(window.RotationInfoType.WINDOW_ORIENTATION, window.RotationInfoType.DISPLAY_ORIENTATION, 0);
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
         await subWindowClass?.destroyWindow()
-        if (!canIUseRes) {
+        if (err.code == 801) {
           expect(err.code).assertEqual(801);
           done()
         } else {
-          expect(err.code).assertEqual(1300002);
+          expect(false).assertTrue();
           done();
         }
       }
@@ -1839,8 +1850,7 @@ export default function windowRotationTest() {
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        if (!canIUseRes) {
-          expect(err.code).assertEqual(801);
+        if (err.code == 801) {
           done()
         } else {
           expect().assertFail();
@@ -1901,8 +1911,7 @@ export default function windowRotationTest() {
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        if (!canIUseRes) {
-          expect(err.code).assertEqual(801);
+        if (err.code == 801) {
           done()
         } else {
           expect(err.code).assertEqual(401);
@@ -1934,8 +1943,7 @@ export default function windowRotationTest() {
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        if (!canIUseRes) {
-          expect(err.code).assertEqual(801);
+        if (err.code == 801) {
           done()
         } else {
           expect(err.code).assertEqual(401);

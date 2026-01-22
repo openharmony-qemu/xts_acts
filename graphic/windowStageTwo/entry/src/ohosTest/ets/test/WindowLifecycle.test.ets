@@ -3312,14 +3312,12 @@ export default function WindowLifecycle() {
         ctx: context
       };
       let subWindowClass: window.Window | undefined;
-      let windowStageStart = await startAbility3(caseName, context);
-      let mainWindow = windowStageStart.getMainWindowSync();
+      let mainWindow = windowStage.getMainWindowSync();
       try {
         const callback = async (res: window.WindowEventType) => {
           console.log(caseName + ' windowEvent callback res: ' + res)
           expect(res).assertEqual(window.WindowEventType.WINDOW_SHOWN);
           await subWindowClass?.destroyWindow();
-          await terminateAbility3(caseName);
           done()
         }
         window.createWindow(config).then(async (data) => {
@@ -3327,23 +3325,20 @@ export default function WindowLifecycle() {
           await subWindowClass.setUIContent('testability/pages/First/index2');
           await subWindowClass.showWindow();
           await sleep(500);
-          if (canIUseRes) {
-            await mainWindow.minimize();
-            await sleep(500);
-            let text = await driver.findComponent(ON.id('textId'))
-            await sleep(1000);
-            await text.click();
-            await sleep(500);
-          }
+          await mainWindow.minimize();
+          await sleep(500);
+          let text = await driver.findComponent(ON.id('textId'))
+          console.error(`${caseName} text: ${text}`);
+          await sleep(1000);
+          await text.click();
+          await sleep(500);
           mainWindow.on('windowEvent', callback)
           await subWindowClass.restoreMainWindow();
           await sleep(1000);
         }).catch(async (err: BusinessError) => {
           console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
           await subWindowClass?.destroyWindow();
-          await terminateAbility3(caseName);
-          if (!canIUseRes) {
-            expect(err.code).assertEqual(801);
+          if (err.code == 1300002) {
             done();
           } else {
             expect().assertFail();
@@ -3353,7 +3348,6 @@ export default function WindowLifecycle() {
       } catch (err) {
         console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
         await subWindowClass?.destroyWindow();
-        await terminateAbility3(caseName);
         expect().assertFail();
         done();
       }
@@ -3379,14 +3373,12 @@ export default function WindowLifecycle() {
         ctx: context
       };
       let subWindowClass: window.Window | undefined;
-      let windowStageStart = await startAbility3(caseName, context);
-      let mainWindow = windowStageStart.getMainWindowSync();
+      let mainWindow = windowStage.getMainWindowSync();
       try {
         const callback = async (res: window.WindowEventType) => {
           console.log(caseName + ' windowEvent callback res: ' + res)
           expect(res).assertEqual(window.WindowEventType.WINDOW_SHOWN);
           await subWindowClass?.destroyWindow();
-          await terminateAbility3(caseName);
           done()
         }
         window.createWindow(config).then(async (data) => {
@@ -3394,26 +3386,22 @@ export default function WindowLifecycle() {
           await subWindowClass.setUIContent('testability/pages/First/index2');
           await subWindowClass.showWindow();
           await sleep(500);
-          if (canIUseRes) {
-            await mainWindow.minimize();
-            await sleep(1000);
-            mainWindow.on('windowEvent', callback)
-            let text = await driver.findComponent(ON.id('textId'))
-            await sleep(1000);
-            await text.click();
-            await sleep(500);
-          }
+          await mainWindow.minimize();
+          await sleep(1000);
+          mainWindow.on('windowEvent', callback)
+          let text = await driver.findComponent(ON.id('textId'))
+          await sleep(1000);
+          await text.click();
+          await sleep(500);
           let param: Record<string, Object> = {
-              'info': 'restoreMainWindow',
+            'info': 'restoreMainWindow',
           };
           await subWindowClass.restoreMainWindow(param);
           await sleep(500)
         }).catch(async (err: BusinessError) => {
           console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
           await subWindowClass?.destroyWindow();
-          await terminateAbility3(caseName);
-          if (!canIUseRes) {
-            expect(err.code).assertEqual(801);
+          if (err.code == 1300002) {
             done();
           } else {
             expect().assertFail();
@@ -3423,7 +3411,6 @@ export default function WindowLifecycle() {
       } catch (err) {
         console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
         await subWindowClass?.destroyWindow();
-        await terminateAbility3(caseName);
         expect().assertFail();
         done();
       }

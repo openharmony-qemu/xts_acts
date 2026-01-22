@@ -273,7 +273,7 @@ export default function windowEventTest() {
         await windowClass.setReceiveDragEventEnabled(true);
         let res2 = windowClass.isReceiveDragEventEnabled();
         console.info(caseName + ' windowClass.isReceiveDragEventEnabled() res2: ' + JSON.stringify(res2));
-        expect(res1).assertEqual(true);
+        expect(res2).assertEqual(true);
         await terminateAbility3(caseName);
         done();
       } catch (e) {
@@ -314,7 +314,7 @@ export default function windowEventTest() {
         await windowClass.setReceiveDragEventEnabled(true);
         let res2 = windowClass.isReceiveDragEventEnabled();
         console.info(caseName + ' windowClass.isReceiveDragEventEnabled() res2: ' + JSON.stringify(res2));
-        expect(res1).assertEqual(true);
+        expect(res2).assertEqual(true);
         await windowClass.destroyWindow();
         done();
       } catch (e) {
@@ -361,7 +361,7 @@ export default function windowEventTest() {
         await windowClass.setReceiveDragEventEnabled(true);
         let res2 = windowClass.isReceiveDragEventEnabled();
         console.info(caseName + ' windowClass.isReceiveDragEventEnabled() res2: ' + JSON.stringify(res2));
-        expect(res1).assertEqual(true);
+        expect(res2).assertEqual(true);
         await windowClass.destroyWindow();
         done();
       } catch (e) {

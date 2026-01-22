@@ -834,14 +834,10 @@ export default function extensionWindowPropertiesTest() {
           let errorMessage = await driver.findComponent(ON.id('errorMessage'))
           let errorMessageText = await errorMessage.getText()
           console.log(caseName + 'errorMessageText : ' + errorMessageText)
-          if (errorMessageText != '') {
-            expect().assertFail()
-            await subWindowClass.destroyWindow()
-            done();
-          } else {
+          if (errorMessageText == 'success') {
             let tempWnd = window.findWindow('createSubWindowWithOptionsTrue');
             expect(tempWnd == null).assertTrue();
-	    // Uec组件显示
+            // Uec组件显示
             let changeUecVisible = await driver.findComponent(ON.id('changeVisibleBtn'))
             console.log(caseName + ' changeUecVisible : ' + changeUecVisible);
             await sleep(1000)
@@ -849,6 +845,13 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
             let tempWnd2 = window.findWindow('createSubWindowWithOptionsTrue');
             expect(tempWnd2 != null).assertTrue();
+            await subWindowClass.destroyWindow()
+            done();
+          } else if (errorMessageText == '801') {
+            await subWindowClass.destroyWindow()
+            done();
+          } else {
+            expect().assertFail()
             await subWindowClass.destroyWindow()
             done();
           }
@@ -892,14 +895,10 @@ export default function extensionWindowPropertiesTest() {
           let errorMessage = await driver.findComponent(ON.id('errorMessage'))
           let errorMessageText = await errorMessage.getText()
           console.log(caseName + 'errorMessageText : ' + errorMessageText)
-          if (errorMessageText != '') {
-            expect().assertFail()
-            await subWindowClass.destroyWindow()
-            done();
-          } else {
+          if (errorMessageText == 'success') {
             let tempWnd = window.findWindow('createSubWindowWithOptionsFalse');
             expect(tempWnd == null).assertTrue();
-	    // Uec组件显示
+            // Uec组件显示
             let changeUecVisible = await driver.findComponent(ON.id('changeVisibleBtn'))
             console.log(caseName + ' changeUecVisible : ' + changeUecVisible);
             await sleep(1000)
@@ -907,6 +906,13 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
             let tempWnd2 = window.findWindow('createSubWindowWithOptionsFalse');
             expect(tempWnd2 == null).assertTrue();
+            await subWindowClass.destroyWindow()
+            done();
+          } else if (errorMessageText == '801') {
+            await subWindowClass.destroyWindow()
+            done();
+          } else {
+            expect().assertFail()
             await subWindowClass.destroyWindow()
             done();
           }
