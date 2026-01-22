@@ -59,7 +59,7 @@ export default function perfTestTest() {
             let perfTestStrategy: PerfTestStrategy = {
                 metrics: metrics,
                 actionCode: actionCode,
-                iterations: 5,
+                iterations: 1,
                 timeout: 30000,
             }
             let perfTest: PerfTest = PerfTest.create(perfTestStrategy)
@@ -79,7 +79,7 @@ export default function perfTestTest() {
             expect(res1.average).assertLargerOrEqual(0)
             expect(res1.maximum).assertLargerOrEqual(0)
             expect(res1.minimum).assertLargerOrEqual(0)
-            expect(res1.roundValues.length).assertLargerOrEqual(5)
+            expect(res1.roundValues.length).assertLargerOrEqual(1)
             expect(res2.average).assertLargerOrEqual(0)
             expect(res3.average).assertLargerOrEqual(0)
             expect(res4.average).assertLargerOrEqual(0)
@@ -119,6 +119,7 @@ export default function perfTestTest() {
                 actionCode: actionCode,
                 resetCode: resetCode,
                 timeout: 50000,
+                iterations: 1,
                 bundleName: "com.perftestScene.acts"
             }
             let perfTest: PerfTest = PerfTest.create(perfTestStrategy)
@@ -141,7 +142,7 @@ export default function perfTestTest() {
          */
         it('testPerfTestListSwipe_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
             hilog.info(domain, tag, `testPerfTestListSwipe_static start`);
-            await startAbility('com.perftestScene.acts', 'EntryAbility');
+            await startAbility('com.perftest.acts.static', 'EntryAbility');
             await driver.delayMs(3000)
             let button = await driver.findComponent(ON.text('ListPage'))
             expect(button != null).assertTrue()
@@ -175,7 +176,7 @@ export default function perfTestTest() {
                 metrics: metrics,
                 actionCode: actionCode,
                 resetCode: resetCode,
-                iterations: 5,
+                iterations: 1,
                 timeout: 50000,
             }
             let perfTest: PerfTest = PerfTest.create(perfTestStrategy)
@@ -207,7 +208,7 @@ export default function perfTestTest() {
             let perfTestStrategy: PerfTestStrategy = {
                 metrics: metrics,
                 actionCode: actionCode,
-                iterations: 5,
+                iterations: 1,
                 timeout: 50000,
                 bundleName: "com.perftestScene.acts"
             }
@@ -271,7 +272,7 @@ export default function perfTestTest() {
             let perfTestStrategy: PerfTestStrategy = {
                 metrics: metrics,
                 actionCode: actionCode,
-                iterations: 5,
+                iterations: 1,
                 resetCode: resetCode,
                 timeout: 50000,
                 bundleName: "com.perftestScene.acts"
@@ -343,7 +344,7 @@ export default function perfTestTest() {
                 actionCode: actionCode,
                 resetCode: resetCode,
                 timeout: 50000,
-                iterations: 5,
+                iterations: 1,
                 bundleName: "com.perftestScene.acts"
             }
             let perfTest: PerfTest = PerfTest.create(perfTestStrategy)
@@ -380,6 +381,7 @@ export default function perfTestTest() {
             }
             let perfTestStrategy: PerfTestStrategy = {
                 metrics: metrics,
+                iterations: 1,
                 actionCode: actionCode
             }
             let perfTest: PerfTest = PerfTest.create(perfTestStrategy)

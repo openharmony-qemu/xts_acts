@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,6 +31,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { $r } from '@ohos.arkui.component';
 import { ArrowPosition, Resource } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -78,7 +79,7 @@ export default function select() {
     //         "spaceValue": 8,
     //         "arrowPosition": ArrowPosition.END,
     //         "spaceValueString": spaceValueString
-    //       } as Record<string, undefined|null|Object>
+    //       } as Record<String,RecordData>
     //     }
     //     let innerEvent: events_emitter.InnerEvent = {
     //       eventId: 181,
@@ -122,7 +123,7 @@ it('ArkUI_Stage_Select2_Layout_static_0200', Level.LEVEL1, async (done: () => vo
         let eventData: events_emitter.EventData = {
           data: {
             "arrowPosition": ArrowPosition.START as ArrowPosition
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -171,7 +172,7 @@ it('ArkUI_Stage_Select2_Space_static_0200', Level.LEVEL1, async (done: () => voi
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValue": 20.00
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -203,7 +204,7 @@ it('ArkUI_Stage_Select2_Space_static_0300', Level.LEVEL1, async (done: () => voi
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValueString": '40.00vp'
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -235,7 +236,7 @@ it('ArkUI_Stage_Select2_Space_static_0300', Level.LEVEL1, async (done: () => voi
 //         let eventData: events_emitter.EventData = {
 //           data: {
 //             "spaceValue": null // 异常值
-//           } as Record<string, undefined|null|Object>
+//           } as Record<string, RecordData>
 //         }
 //         let innerEvent: events_emitter.InnerEvent = {
 //           eventId: 181,
@@ -267,7 +268,7 @@ it('ArkUI_Stage_Select2_Space_static_0300', Level.LEVEL1, async (done: () => voi
 //         let eventData: events_emitter.EventData = {
 //           data: {
 //             "spaceValue": -1 // 异常值
-//           } as Record<string, undefined|null|Object>
+//           } as Record<string, RecordData>
 //         } as events_emitter.EventData
 //         let innerEvent: events_emitter.InnerEvent = {
 //           eventId: 181,
@@ -300,7 +301,7 @@ it('ArkUI_Stage_Select2_Space_static_0600', Level.LEVEL1, async (done: () => voi
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValueResource": $r('app.string.Test_Values') as Resource
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -332,7 +333,7 @@ it('ArkUI_Stage_Select2_Space_static_0700', Level.LEVEL1, async (done: () => voi
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValueString": "40.00px"
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -366,7 +367,7 @@ it('ArkUI_Stage_Select2_Space_static_0800', Level.LEVEL1, async (done: () => voi
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValueString": "40.00lpx"
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -398,7 +399,7 @@ it('ArkUI_Stage_Select2_Space_static_0900', Level.LEVEL1, async (done: () => voi
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValueString": "40.00fp"
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,

@@ -193,6 +193,12 @@ import richEditorSupportSvg2Test from './RichEditorApi22Test/richEditorSupportSv
 import RichEditorEnableSelectedDataDetectorTest from './RichEditorApi22Test/RichEditorEnableSelectedDataDetector.test';
 import RichEditorOnWillAttachIMETest from './RichEditorApi22Test/RichEditorOnWillAttachIME.test';
 
+import RichEditorBuilderSpanTest from './RichEditorApi23Test/RichEditorBuilderSpan.test';
+import RichEditorCompressLeadingPunctuationTest from './RichEditorApi23Test/RichEditorCompressLeadingPunctuation.test';
+import RichEditorParagraphStyleTest from './RichEditorApi23Test/RichEditorParagraphStyle.test';
+import RichEditorSingleLineTest from './RichEditorApi23Test/RichEditorSingleLine.test';
+import RichEditorTextStyleTest from './RichEditorApi23Test/RichEditorTextStyle.test';
+
 
 export default function testsuite() {
   PresetTest();
@@ -375,4 +381,10 @@ export default function testsuite() {
   richEditorSupportSvg2Test()
   RichEditorEnableSelectedDataDetectorTest()
   RichEditorOnWillAttachIMETest()
+
+  RichEditorBuilderSpanTest()         // Api23
+  RichEditorCompressLeadingPunctuationTest()
+  RichEditorParagraphStyleTest()
+  RichEditorSingleLineTest()
+  RichEditorTextStyleTest()
 }

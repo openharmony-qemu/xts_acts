@@ -57,6 +57,7 @@
 #include "ImageResultIRNdkErrCodeTest.h"
 #include "ImageNdkErrCodeTest.h"
 #include "OHImageNdkFrameworkTest.h"
+#include "ImageSourceNativeGetImagePropertyTest.h"
 #include "ImageSourceNativeModifySuppTest.h"
 #include "ImageOHImageSourceInfoCreateTest.h"
 
@@ -225,6 +226,10 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("PixelmapNativeGetNativeBufferNotExist", PixelmapNativeGetNativeBufferNotExist),
     DESCRIPTOR("ImageSourceCreatSuccessTest", ImageSourceCreatSuccessTest),
     DESCRIPTOR("ImageSourceCreate", ImageSourceCreate),
+    DESCRIPTOR("ImageSourceNativeGetImagePropertyLong", ImageSourceNativeGetImagePropertyLong),
+    DESCRIPTOR("ImageSourceNativeGetImagePropertyShort", ImageSourceNativeGetImagePropertyShort),
+    DESCRIPTOR("ImageSourceNativeGetImagePropertyDouble", ImageSourceNativeGetImagePropertyDouble),
+    DESCRIPTOR("ImageSourceGetImagePropertyArraySize", ImageSourceGetImagePropertyArraySize),
     DESCRIPTOR("OHImageSourceNativeModifyImagePropertyDoubleSupp", OHImageSourceNativeModifyImagePropertyDoubleSupp),
     DESCRIPTOR("ImageModifyImagePropertyIntArraySupp", ImageModifyImagePropertyIntArraySupp),
     DESCRIPTOR("ImageModifyImagePropertyDoubleArraySupp", ImageModifyImagePropertyDoubleArraySupp),
@@ -240,6 +245,7 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHPixelmapNativeReadPixelsTest", OHPixelmapNativeReadPixelsTest),
     DESCRIPTOR("OHImageNativeGetBufferDataValueTest", OHImageNativeGetBufferDataValueTest),
     DESCRIPTOR("OHImageNativeGetColorSpaceTest", OHImageNativeGetColorSpaceTest),
+
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

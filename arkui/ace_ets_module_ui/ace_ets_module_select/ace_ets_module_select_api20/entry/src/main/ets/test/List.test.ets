@@ -15,9 +15,11 @@
 import outlineColorTest from './bindmenutest/bindmenu.test';
 import selectModifier from './selecttest/selectModifier.test';
 import selectmenuOutline from './selecttest/select.test';
+import selectKeyboardAvoidMode from './selecttest/selectKeyboardAvoidMode.test';
 
 export default function testsuite() {
     outlineColorTest();
     selectModifier();
     selectmenuOutline();
+    selectKeyboardAvoidMode();
 }

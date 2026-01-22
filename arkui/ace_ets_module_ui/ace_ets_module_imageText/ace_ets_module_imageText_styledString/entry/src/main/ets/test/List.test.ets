@@ -49,10 +49,10 @@ import TextStyleTest from './StyledStringTest/TextStyleTest.test';
 import UnmarshallingErrorCodeTest from './StyledStringTest/UnmarshallingErrorCodeTest.test';
 import VerticalAlignTest from './StyledStringTest/VerticalAlignTest.test';
 import LeadingMarginSpanTest from './StyledStringTest/LeadingMarginSpanTest.test';
+import StyledStringTextDirectionTest from './StyledStringTest/ParagraphStyleTextDirection.test';
 
 export default function testsuite() {
   InputPresetTest()
-
   AboutToAppearTest()
   ClearStylesTest()
   CustomSpanTest()
@@ -88,4 +88,5 @@ export default function testsuite() {
   UnmarshallingErrorCodeTest()
   VerticalAlignTest()
   LeadingMarginSpanTest()
+  StyledStringTextDirectionTest()
 }

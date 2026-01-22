@@ -28,11 +28,12 @@ import SegBtnItemTest0010 from './segmentButton/SegBtnItemTest0010.test';
 import SegmentBtnItemTest0010 from './segmentButton/SegmentBtnItemTest0010.test';
 import maxFontScaleTest from './segmentButton/maxFontScaleTest.test';
 import segmentbuttonTest from './segmentButton/segmentbutton'
-
 import SegmentButtonV2Test from './segmentButtonV2/SegmentButtonV2.test';
 import MultiSegmentButtonV2PageTest from './segmentButtonV2/MultiSegmentButtonV2PageTest.test';
 import SegmentButtonV2Test0010 from './segmentButtonV2/SegmentButtonV2Test0010.test';
 import TabSegmentButtonV2Test from './segmentButtonV2/TabSegmentButtonV2Test.test';
+import SegBtnSelectBackgrountColorTest from './defaultValue/SegBtnSelectBackgrountColorTest.test';
+import SegmentBtnMaterialTest0070 from './segmentButton/SegmentBtnMaterialTest0070.test';
 
 export default function testsuite() {
   SegmentButtonBorderTest();
@@ -50,12 +51,11 @@ export default function testsuite() {
   SegmentBtnItemTest0010();
   maxFontScaleTest();
   segmentbuttonTest();
-
   SegmentButtonV2Test();
   MultiSegmentButtonV2PageTest();
   SegmentButtonV2Test0010();
   TabSegmentButtonV2Test();
-
-
+  SegBtnSelectBackgrountColorTest();
+  SegmentBtnMaterialTest0070();
 
 }

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,6 +47,7 @@ import {
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 uiAppearance.DarkMode.ALWAYS_DARK
@@ -79,7 +80,7 @@ struct UiAppearanceALWAYS_DARK {
         .textOverflow({ overflow: TextOverflow.None })
         .key("ALWAYS_DARKText")
         .onClick((e: ClickEvent) => {
-          uiAppearance.setDarkMode(uiAppearance.DarkMode.ALWAYS_DARK, (err, data) => {
+          uiAppearance.setDarkMode(uiAppearance.DarkMode.ALWAYS_DARK, (err) => {
             console.info(`${err}`);
           })
           let darkMode = uiAppearance.getDarkMode();
@@ -87,7 +88,7 @@ struct UiAppearanceALWAYS_DARK {
             let backData: emitter.EventData = {
               data: {
                 "Mode": darkMode
-              } as Record<String, undefined | null | Object>
+              } as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 60308,
@@ -114,7 +115,7 @@ struct UiAppearanceALWAYS_DARK {
         .textOverflow({ overflow: TextOverflow.None })
         .key("ALWAYS_LIGHTText")
         .onClick((e: ClickEvent) => {
-          uiAppearance.setDarkMode(uiAppearance.DarkMode.ALWAYS_LIGHT, (err, data) => {
+          uiAppearance.setDarkMode(uiAppearance.DarkMode.ALWAYS_LIGHT, (err) => {
             console.info(`${err}`);
           })
           let darkMode = uiAppearance.getDarkMode();
@@ -122,7 +123,7 @@ struct UiAppearanceALWAYS_DARK {
             let backData: emitter.EventData = {
               data: {
                 "Mode": darkMode
-              } as Record<String, undefined | null | Object>
+              } as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 60309,

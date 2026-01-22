@@ -152,7 +152,7 @@ export default function exportArrayTest() {
      * @tc.level Level 1
      */
     it('exportArrayTestTest1008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const target: Array<number> = [4, 5, 6];
+      const target: Array<int> = [4, 5, 6];
       expect(defaultArr).assertDeepEquals(target);
     })
 

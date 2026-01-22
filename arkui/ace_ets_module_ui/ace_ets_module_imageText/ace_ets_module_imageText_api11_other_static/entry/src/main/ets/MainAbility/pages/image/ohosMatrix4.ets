@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,6 +47,7 @@ import {
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -90,7 +91,7 @@ struct ohosMatrix4 {
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("transFormExample page state change called:" + JSON.stringify(eventData));
     if (eventData != null && eventData.data != null) {
-      const data = eventData.data as Record<string, undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       if (data['matrix2'] != null && data['matrix2'] != null) {
         let matrixV = Matrix4.identity().translate(data['matrix2'] as Matrix4.TranslateOption)
         if (matrixV && data['matrix3'] != null && data['matrix3']) {
@@ -178,7 +179,7 @@ struct ohosMatrix4 {
               data: {
                 "matrix1": "[100, 10]",
                 "ACTION": this.onClickValue
-              } as Record<string, undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 141,

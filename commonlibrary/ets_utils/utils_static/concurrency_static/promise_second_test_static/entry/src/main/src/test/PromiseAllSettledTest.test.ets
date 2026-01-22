@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -233,11 +233,11 @@ export default function PromiseAllSettledTest() {
         taskPromises.push(...asyncOperations);
         arr.push(5);
         Promise.allSettled(asyncOperations)
-          .then((results: Array<PromiseSettledResult<Promise<null>>>) => {
+          .then((results: Array<PromiseSettledResult<null>>) => {
             arr.push(6);
             results.forEach((result) => {
               if (result.status === 'fulfilled') {
-                let result1 = result as PromiseFulfilledResult<Promise<null>>;
+                let result1 = result as PromiseFulfilledResult<null>;
                 successMessage += `${result1.value} `;
                 console.log('All promises are settled, fulfilled results:', successMessage);
               } else {
@@ -379,12 +379,12 @@ export default function PromiseAllSettledTest() {
         const asyncOperations = [firstPromise, secondPromise, thirdPromise];
         taskPromises.push(...asyncOperations);
         arr.push(5);
-        Promise.allSettled<Promise<number>>(asyncOperations)
-          .then((results: PromiseSettledResult<Promise<number>>[]) => {
+        Promise.allSettled<number>(asyncOperations)
+          .then((results: PromiseSettledResult<number>[]) => {
             arr.push(6);
             results.forEach((result) => {
               if (result.status === 'fulfilled') {
-                let result1 = result as PromiseFulfilledResult<Promise<number>>;
+                let result1 = result as PromiseFulfilledResult<number>;
                 successMessage += `${result1.value} `;
                 console.log('All promises are settled, fulfilled results:', successMessage);
               } else {
@@ -439,12 +439,12 @@ export default function PromiseAllSettledTest() {
         const asyncOperations = [rejectedPromise];
         taskPromises.push(...asyncOperations);
         arr.push(5);
-        Promise.allSettled<Promise<number>>(asyncOperations)
-          .then((results: PromiseSettledResult<Promise<number>>[]) => {
+        Promise.allSettled<number>(asyncOperations)
+          .then((results: PromiseSettledResult<number>[]) => {
             arr.push(6);
             results.forEach((result) => {
               if (result.status === 'fulfilled') {
-                let result1 = result as PromiseFulfilledResult<Promise<number>>;
+                let result1 = result as PromiseFulfilledResult<number>;
                 successMessage += `${result1.value} `;
                 console.log('All promises are settled, fulfilled results:', successMessage);
               }
@@ -550,7 +550,7 @@ export default function PromiseAllSettledTest() {
         let arr: number[] = [];
         let successMessage: string = '';
         let errorMessage: string = '';
-        let taskPromises: (Promise<string> | Promise<PromiseSettledResult<Promise<string>>[]>)[]= [];
+        let taskPromises: (Promise<string> | Promise<PromiseSettledResult<string>[]>)[]= [];
         arr.push(1);
         const innerSuccessPromise: Promise<string> = new Promise<string>((resolve: (value: string) => void):void => {
           setTimeout(() => {
@@ -568,7 +568,7 @@ export default function PromiseAllSettledTest() {
             resolve('Outer success');
           }, 400);
         });
-        const innerAllSettled: Promise<PromiseSettledResult<Promise<string>>[]> =
+        const innerAllSettled: Promise<PromiseSettledResult<string>[]> =
           Promise.allSettled([innerSuccessPromise, innerFailurePromise]);
         taskPromises.push(innerAllSettled);
         taskPromises.push(outerSuccessPromise);

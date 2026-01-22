@@ -35,7 +35,7 @@ export default function AlignRulesTest() {
   let supportView: Array<string> = new Array<string>('TextPicker',
     'TimePicker', 'Toggle', 'Badge', 'Column', 'Counter', 'Flex', 'Grid', 'GridRow', 'List', 'Row', 'Scroll',
     'Stack', 'Tabs', 'Circle', 'Ellipse', 'Line', 'Polyline', 'Polygon', 'Path',
-    'Rect', 'Shape', 'Panel', 'Refresh', 'RelativeContainer', 'Swiper', 'Navigator',
+    'Rect', 'Shape', 'Refresh', 'RelativeContainer', 'Swiper',
     'TextTimer', 'ScrollBar', 'Menu')
   //The size of the parent component, when set as a percentage, serves as the calculation basis.
   let parentWidth = 300;

@@ -17,6 +17,7 @@ import { AbilityConstant, AtomicServiceOptions, common, UIAbility, Want } from '
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
+import eventBusPlue from '../lib/EventBusPlus';
 
 const DOMAIN = 0x0000;
 let timeout : number = 1000;
@@ -51,8 +52,9 @@ export default class EntryAbility1 extends UIAbility {
     };
   }
 
-  onDestroy(): void {
+  async onDestroy(): Promise<void>{
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'EntryAbility1 onDestroy');
+    await eventBusPlue.emit('EntryAbility1_onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {

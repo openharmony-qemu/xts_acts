@@ -12,10 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import CameraNdkTest from "./camera/CameraNdkTest.test";
 import CameraFunctionErrorTest from "./camera/CameraSessionNdkErrorTest.test";
 import CameraFunctionTest from "./camera/CameraSessionNdkTest.test";
 
 export default function testsuite() {
   CameraFunctionTest();
   CameraFunctionErrorTest();
+  CameraNdkTest();
 }

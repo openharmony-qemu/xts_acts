@@ -58,7 +58,7 @@ function superFancyText2(this: TextAttribute){
 @Component
 struct Index {
   build() {
-    const dialogRouter = AppStorage.get<Router>("router") as Router
+    const dialogRouter = AppStorage.get<Router>('router') as Router
     Column({ space: 5 } as ColumnOptions) {
       Row(){
         Text('返回')

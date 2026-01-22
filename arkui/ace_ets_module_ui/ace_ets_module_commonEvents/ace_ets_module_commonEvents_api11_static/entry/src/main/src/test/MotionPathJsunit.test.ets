@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from './Util.test'
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -101,8 +102,8 @@ it('motionPathTest_static_0100', Level.LEVEL0, async (done: () => void): Promise
 it('motionPathTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('motionPathTest_0200 START');
       let callback = (indexEventOne: emitter.EventData) => {
-        const data: Record<String, undefined | null | Object> =
-          indexEventOne.data as Record<String, undefined | null | Object>
+        const data: Record<String,RecordData> =
+          indexEventOne.data as Record<String,RecordData>
         console.info("motionPathTest_0200 get state result is: " + JSON.stringify(indexEventOne));
         expect(data['fromX']).assertEqual(0);
         expect(data['toY']).assertEqual(1);
@@ -136,8 +137,8 @@ it('motionPathTest_static_0300', Level.LEVEL0, async (done: () => void): Promise
       console.info('motionPathTest_0300 START');
       await CommonFunc.sleep(1500);
       let callback = (indexEvent: emitter.EventData) => {
-        const data: Record<String, undefined | null | Object> =
-          indexEvent.data as Record<String, undefined | null | Object>
+        const data: Record<String,RecordData> =
+          indexEvent.data as Record<String,RecordData>
         console.info("motionPathTest_0300 get state result is: " + JSON.stringify(indexEvent));
         expect(data['ACTION']).assertEqual(true);
         done();

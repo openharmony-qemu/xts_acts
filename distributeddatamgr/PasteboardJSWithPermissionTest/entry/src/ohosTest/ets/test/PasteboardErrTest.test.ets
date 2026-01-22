@@ -21,6 +21,7 @@ import { fileIo as fs, fileUri} from '@kit.CoreFileKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 let TAG = 'ttt';
+let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
 let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
 const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const context = delegator.getAppContext().getApplicationContext();
@@ -74,6 +75,7 @@ export default function PasteboardErrTest() {
       done();
     })
     beforeEach(() => {
+      systemPasteboard.clearDataSync();
     })
     afterEach(() => {
     })
@@ -649,7 +651,7 @@ export default function PasteboardErrTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Pasteboard_getUnifiedDataSync_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('SUB_Pasteboard_getUnifiedDataSync_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_getUnifiedDataSync_ErrTest_0100 start ************')
       let plainTextData = new unifiedDataChannel.UnifiedData();
       let plainText = new unifiedDataChannel.PlainText();
@@ -662,7 +664,7 @@ export default function PasteboardErrTest() {
       plainTextData.addRecord(plainText);
 
       let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-      systemPasteboard.setUnifiedData(plainTextData);
+      await systemPasteboard.setUnifiedData(plainTextData);
       try {
         let result: unifiedDataChannel.UnifiedData = systemPasteboard.getUnifiedDataSync();
         let outputDataType = result.getTypes().toString();

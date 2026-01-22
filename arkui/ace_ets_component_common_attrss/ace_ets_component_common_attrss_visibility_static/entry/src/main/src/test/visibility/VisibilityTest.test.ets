@@ -80,8 +80,6 @@ export default function visibilityTest() {
     'List',
     'ListItem',
     'ListItemGroup',
-    'Navigator',
-    'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',

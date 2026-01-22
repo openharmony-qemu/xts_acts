@@ -11,15 +11,9 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ */ 
 import { AppStorageV2, UIUtils } from '@kit.ArkUI';
 import { ObservedResult } from '@ohos.arkui.StateManagement';
-
-function text(obj: object | undefined) {
-  let res: ObservedResult = UIUtils.canBeObserved(obj)
-  AppStorage.setOrCreate<ObservedResult>('ObservedResultRes', res)
-  console.info(`res: ${JSON.stringify(res)}`)
-}
 
 @ObservedV2
 class BBB {
@@ -63,17 +57,16 @@ struct V2Param {
 
   build() {
     Column() {
-
       Child01()
-
       Button('test1')
         .id('V2test_01')
         .height('5%')
         .onClick(() => {
-          this.resultText = '';
-          this.resultText = this.resultText + text(this.a)
+          const obj = this.a;
+          let res: ObservedResult = UIUtils.canBeObserved(obj);
+          AppStorage.setOrCreate<ObservedResult>('ObservedResultRes', res);
+          console.info(`res: ${JSON.stringify(res)}`);
         })
-
     }
     .width('100%')
     .height('100%')
@@ -87,8 +80,9 @@ export struct Child01 {
   @Local a: AAA = AppStorageV2.connect<AAA>(AAA, () => new AAA())!;
 
   build() {
-    Column({ space: 10 }) {
+    Column() {
       Text('Child01 ' + this.a.bbb?.bbb)
+        .height('5%')
     }
   }
 }

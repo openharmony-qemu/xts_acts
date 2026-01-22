@@ -24,11 +24,13 @@ import HttpRequestGmssl from './HttpRequestGmssl.test.ets';
 import HttpRequestInterceptor from './HttpRequestInterceptor.test';
 import HttpRequestMaxAutoRedirectsTest from './HttpRequestRedirects.test';
 import HttpRequestMaxAutoRedirectsWithInterceptorTest from './HttpRequestRedirectsInterceptor.test';
+import HttpRequestCustomMethodTest from './HttpRequestCustomMethod.test';
 
 export default function testsuite() {
   HttpRequestInterceptor();
   HttpRequestMaxAutoRedirectsTest();
   HttpRequestMaxAutoRedirectsWithInterceptorTest();
+  HttpRequestCustomMethodTest();
   if (sim.getMaxSimCount() > 1) {
     HttpRequestGmssl();
     HttpRequestDataCATest();

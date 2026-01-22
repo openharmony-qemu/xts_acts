@@ -69,7 +69,7 @@ export default function WebViewOnShowFileSelectorType() {
      */
     it('testOnShowFileSelector01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnShowFileSelector01", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testOnShowFileSelector01", 'test-file.txt', 20260105, done);
+      Utils.registerEvent("testOnShowFileSelector01", 'test-file.mp4', 20260105, done);
       await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector01");
     })
 
@@ -97,7 +97,7 @@ export default function WebViewOnShowFileSelectorType() {
      */
     it('testOnShowFileSelector03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnShowFileSelector03", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testOnShowFileSelector03", '["Videos"]', 20260107, done);
+      Utils.registerEvent("testOnShowFileSelector03", 1, 20260107, done);
       await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector03");
     })
 
@@ -111,7 +111,7 @@ export default function WebViewOnShowFileSelectorType() {
      */
     it('testOnShowFileSelector04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnShowFileSelector04", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testOnShowFileSelector04", false, 20260108, done);
+      Utils.registerEvent("testOnShowFileSelector04", true, 20260108, done);
       await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector04");
     })
 
@@ -142,5 +142,61 @@ export default function WebViewOnShowFileSelectorType() {
       Utils.registerEvent("testOnShowFileSelector06", '[".mp4",".ogm",".wmv",".mpg"]', 20260110, done);
       await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector06");
     })
+
+    /**
+     * @tc.name   testOnShowFileSelector07
+     * @tc.number SUB_WEB_TESTONSHOWFILESELECTOR_0700
+     * @tc.desc   test onShowFileSelector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOnShowFileSelector07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitOnShowFileSelector07", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testOnShowFileSelector07", 0, 202601077, done);
+      await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector07");
+    })
+
+
+    /**
+     * @tc.name   testOnShowFileSelector08
+     * @tc.number SUB_WEB_TESTONSHOWFILESELECTOR_0800
+     * @tc.desc   test onShowFileSelector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOnShowFileSelector08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitOnShowFileSelector08", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testOnShowFileSelector08", false, 202601078, done);
+      await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector08");
+    })
+    /**
+     * @tc.name   testOnShowFileSelector09
+     * @tc.number SUB_WEB_TESTONSHOWFILESELECTOR_0900
+     * @tc.desc   test onShowFileSelector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOnShowFileSelector09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitOnShowFileSelector09", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testOnShowFileSelector09", 0, 202601079, done);
+      await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector09");
+    })
+    /**
+     * @tc.name   testOnShowFileSelector10
+     * @tc.number SUB_WEB_TESTONSHOWFILESELECTOR_01000
+     * @tc.desc   test onShowFileSelector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOnShowFileSelector10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitOnShowFileSelector10", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testOnShowFileSelector10", 1, 2026010710, done);
+      await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector10");
+    })
+
   })
 }

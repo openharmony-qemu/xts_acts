@@ -107,5 +107,32 @@ export default function MultimodalInputNoPermissionTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_hasIrEmitter_0200
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_hasIrEmitter_0200
+     * @tc.desc   Test hasIrEmitter interface to set non-permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_InfraredEmitter_hasIrEmitter_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_InfraredEmitter_hasIrEmitter_0200";
+      try {
+        await infraredEmitter.hasIrEmitter().then((result: boolean) => {
+          console.info(`${caseName} hasIrEmitter success`);
+          expect().assertFail();
+          done();
+        }).catch((error: BusinessError) => {
+        console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(201);
+        done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Failed to set capslock state, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+    });    
   });
 }

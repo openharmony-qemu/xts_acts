@@ -900,7 +900,7 @@ export default function windowImmersiveTest() {
           expect(avoidArea.rightRect !== null).assertTrue();
           expect(avoidArea.bottomRect !== null).assertTrue();
           expect(avoidArea.leftRect !== null).assertTrue();
-          if(isFreeWindowMode == true){
+          if(isFreeWindowMode == true || isSupportRotate == false){
             expect(avoidArea.topRect.width).assertEqual(0);
             expect(avoidArea.topRect.height).assertEqual(0);
             expect(avoidArea.rightRect.width).assertEqual(0);
@@ -3896,8 +3896,14 @@ export default function windowImmersiveTest() {
             expect(avoidArea1.rightRect.width).assertEqual(0);
             expect(avoidArea1.rightRect.height).assertEqual(0);
 
-            expect(avoidArea1.topRect.width).assertLarger(0);
-            expect(avoidArea1.topRect.height).assertLarger(0);
+            if(isSupportRotate == true){
+              expect(avoidArea1.topRect.width).assertLarger(0);
+              expect(avoidArea1.topRect.height).assertLarger(0);
+            }else{
+              expect(avoidArea1.topRect.width).assertEqual(0);
+              expect(avoidArea1.topRect.height).assertEqual(0);
+            }
+            
 
             expect(avoidArea1.bottomRect.width).assertEqual(0);
             expect(avoidArea1.bottomRect.height).assertEqual(0);
@@ -3972,8 +3978,14 @@ export default function windowImmersiveTest() {
             expect(avoidArea7.topRect.width).assertEqual(0);
             expect(avoidArea7.topRect.height).assertEqual(0);
 
-            expect(avoidArea7.bottomRect.width).assertLarger(0);
-            expect(avoidArea7.bottomRect.height).assertLarger(0);
+            if(isSupportRotate == true){
+              expect(avoidArea7.bottomRect.width).assertLarger(0);
+              expect(avoidArea7.bottomRect.height).assertLarger(0);
+            }else{
+              expect(avoidArea7.bottomRect.width).assertEqual(0);
+              expect(avoidArea7.bottomRect.height).assertEqual(0);
+            }
+            
             await terminateAbility3(caseName);
             done()
           } catch (error) {

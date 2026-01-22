@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,6 +42,7 @@ import {
   TextOverflow
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = []
@@ -246,7 +247,7 @@ struct LazyForEachOnDataAdd {
                     let backData1: events_emitter.EventData = {
                       data: {
                         "result1": this.result_101,
-                      } as Record<String,undefined|null|Object>
+                      } as Record<String,RecordData>
                     }
                     let backEvent1: events_emitter.InnerEvent = {
                       eventId: 60212,
@@ -298,7 +299,7 @@ struct LazyForEachOnDataAdd {
                     let backData2: events_emitter.EventData = {
                       data: {
                         "result2": this.result_102,
-                      } as Record<String,undefined|null|Object>
+                      } as Record<String,RecordData>
                     }
                     let backEvent2: events_emitter.InnerEvent = {
                       eventId: 60213,
@@ -350,7 +351,7 @@ struct LazyForEachOnDataAdd {
                     let backData3: events_emitter.EventData = {
                       data: {
                         "result3": this.result_103,
-                      } as Record<String,undefined|null|Object>
+                      } as Record<String,RecordData>
                     }
                     let backEvent3: events_emitter.InnerEvent = {
                       eventId: 60214,
@@ -403,7 +404,7 @@ struct LazyForEachOnDataAdd {
                     let backData4: events_emitter.EventData = {
                       data: {
                         "result4": this.result_104,
-                      } as Record<String,undefined|null|Object>
+                      } as Record<String,RecordData>
                     }
                     let backEvent4: events_emitter.InnerEvent = {
                       eventId: 60215,

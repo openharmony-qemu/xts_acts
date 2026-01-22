@@ -116,7 +116,6 @@ export default function testsuite() {
   TextAreaSelectTest();
   APITextBackgroundStyleJsunit();
   SXSymbolGlyphSINGLE01Jsunit();
-  textDataDataDetectorConfig()
   spanApi1()
   symbolGlyphApi1()
   symbolGlyphApi2()
@@ -125,7 +124,6 @@ export default function testsuite() {
   symbolGlyphApi5()
   symbolSpanApi2Test()
   symbolSpanApi1()
-  TextStyle()
   tabsDemo()
   TextSelectionMenu()
   textInputApi1()
@@ -191,4 +189,6 @@ export default function testsuite() {
   SearchModifierTest();
   SymbolGlyphFontWeightTest();
   SpanTextShadowTest();
+  textDataDataDetectorConfig();
+  TextStyle();
 }

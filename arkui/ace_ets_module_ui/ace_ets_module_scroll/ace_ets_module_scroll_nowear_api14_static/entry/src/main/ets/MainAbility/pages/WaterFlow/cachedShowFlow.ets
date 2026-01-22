@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,6 +33,7 @@ import {
 import events_emitter from '@ohos.events.emitter';
 import { WaterFlowDataSource } from './WaterFlowDataSource';
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -58,7 +59,7 @@ struct cachedCountShowFlowExample {
     console.info('[stateChangClipShow] stateChangeEvent');
     if (eventData != null && eventData.data != null) {
       console.info("[stateChangClipShow] state change called: " + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, object|null|undefined>
+      const data = eventData.data as Record<String,RecordData>
       if (data['clip1'] != null) {
         this.clip1 = data['clip1'] as boolean
       }

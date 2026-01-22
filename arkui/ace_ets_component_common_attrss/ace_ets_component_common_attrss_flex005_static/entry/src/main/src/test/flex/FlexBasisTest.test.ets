@@ -48,7 +48,6 @@ export default function flexBasisTest() {
   let supportView = [
     'Grid',
     'List',
-    'Panel',
     'Refresh',
     'Scroll',
     'Stack',

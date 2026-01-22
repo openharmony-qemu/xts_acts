@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,6 +48,7 @@ import {
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -83,7 +84,7 @@ struct GestureSetDirection {
             let backData: emitter.EventData = {
               data: {
                 "STATUS": this.panDirection
-              } as Record<String, undefined | null | Object>
+              } as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 60204,
@@ -127,7 +128,7 @@ struct GestureSetDirection {
             let backData: emitter.EventData = {
               data: {
                 "STATUS": this.numberDistance
-              } as Record<String, undefined | null | Object>
+              } as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 60205,
@@ -171,7 +172,7 @@ struct GestureSetDirection {
             let backData: emitter.EventData = {
               data: {
                 "STATUS": this.numberFingers
-              } as Record<String, undefined | null | Object>
+              } as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 60206,

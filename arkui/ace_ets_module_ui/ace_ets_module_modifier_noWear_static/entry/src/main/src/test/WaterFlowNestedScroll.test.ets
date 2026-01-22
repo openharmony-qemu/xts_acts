@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,6 +45,7 @@ import accessibility from '@ohos.accessibility';
 import Utils from '../../ets/MainAbility/common/Utils'
 import events_emitter from '@ohos.events.emitter';
 import { UIContext } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 export default function waterFlowNestedScrollJsunit() {
   describe('waterFlow_NestedScrollTest', () => {
@@ -93,7 +94,7 @@ it('ArkUI_Stage_waterFlowNestedScroll01_static', Level.LEVEL0, async (done: () =
         let callBack: (backData: events_emitter.EventData) => void = (backData: events_emitter.EventData) => {
           try {
             console.info(`ArkUI_Stage_waterFlowNestedScroll01 get result is:` + JSON.stringify(backData));
-            expect(((backData.data) as Record<String, undefined | null | Object>)?.['ACTION']).assertEqual(true)
+            expect(((backData.data) as Record<String,RecordData>)?.['ACTION']).assertEqual(true)
             console.info(`ArkUI_Stage_waterFlowNestedScroll01 END`);
           } catch (err) {
             console.info(`ArkUI_Stage_waterFlowNestedScroll01 err:` + JSON.stringify(err));

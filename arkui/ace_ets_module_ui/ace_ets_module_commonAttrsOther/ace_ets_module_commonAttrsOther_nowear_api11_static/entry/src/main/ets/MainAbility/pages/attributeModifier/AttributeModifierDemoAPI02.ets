@@ -34,7 +34,8 @@ import {
   TapGesture,
   Text,
   TouchEvent,
-  TouchType
+  TouchType,
+  AttributeModifierState
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -44,7 +45,11 @@ class MyButtonModifier2 implements AttributeModifier<ButtonAttribute> {
   applyFocusedAttribute(instance: ButtonAttribute): void {
     instance.backgroundColor("#FF209B08")
   }
+  monitoredStates():int{
+    return AttributeModifierState.FOCUSED
+  }
 }
+
 
 @Entry
 @Component

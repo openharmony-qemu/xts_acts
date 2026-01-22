@@ -23,6 +23,14 @@
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",
+    "requestPermissions": [
+      {
+          "name": "ohos.permission.INTERNET"
+      },
+      {
+          "name": "ohos.permission.GET_WIFI_INFO"
+      }
+    ],
     "abilities": [
       {
         "name": "TestAbility",

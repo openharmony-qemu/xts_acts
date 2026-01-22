@@ -14,6 +14,7 @@
  */
 
 export const initWithSurface: (faceID : string) => number;
+export const initWithSurfaces: (faceID : string) => number;
 export const captureSessionStart: () => number;
 export const captureSessionIsVideoStabilizationModeSupported: () => number;
 export const captureSessionSetVideoStabilizationMode: () => number;
@@ -38,3 +39,24 @@ export const OHCaptureSessionDeleteSupportedEffectTypes: (a:number) => number;
 export const OHCaptureSessionGetSupportedEffectTypesSupp: () => number;
 export const captureSessionRegisterIsoChangeCallback: (a:number) => number;
 export const captureSessionUnregisterIsoChangeCallback: (a:number) => number;
+export const captureDeleteCameraDevices: (a:number) => number;
+export const captureIsBandwidthCompressionSupported: (a:number) => number;
+export const captureEnableBandwidthCompression: (a:number) => number;
+export const captureGetSupportedFullCameraOutputCapabilityWithSceneMode: (a:number) => number;
+export const captureRegisterOcclusionDetectionCallback: (a:number) => number;
+export const captureUnregisterOcclusionDetectionCallback: (a:number) => number;
+export const captureCameraPreconfigType: () => number;
+export const captureGetCameraDevices: (a:number) => number;
+export const captureGetCameraDevicesError: (a:number) => number;
+export const captureCameraDeviceQueryInfoCameraType: (a:number) => number;
+export const captureSessionIsBandwidthCompressionSupportedTest: () => boolean;
+export const captureCameraDeviceQueryInfoConnectionTypes: (a:number) => number;
+export const captureCameraDeviceQueryInfoConnectionType: (a:number) => number;
+export const captureCameraDeviceQueryInfoCameraPosition: (a:number) => number;
+export const captureCameraDeviceQueryInfoCameraPositions: (a:number) => number;
+export const captureCameraDeviceQueryInfoCameraTypeSize: (a:number) => number;
+export const captureCameraDeviceQueryInfoCameraTypeSizes: (a:number) => number;
+export const captureCameraDeviceQueryInfo: (a:number) => number;
+export const captureEnableBandwidthCompressionError: (a:number) => number;
+export const captureIsGetCameraDevices: () => boolean;
+export const getPreviewRotationWithoutDisplayRotation: (a:number) => number;

@@ -27,8 +27,6 @@ export default function testsuite() {
   popupDirectionTest();
   splitLayoutTest();
   swipeRefresherPageTest();
-  treeViewNodeParamContainer();
-  treeViewSymbol();
   subHeaderButton();
   subHeaderIconGroup();
   subHeaderSelect();

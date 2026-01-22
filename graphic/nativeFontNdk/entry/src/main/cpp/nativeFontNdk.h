@@ -133,4 +133,73 @@ napi_value OHDrawingGetFontFullDescriptorsFromPath001(napi_env env, napi_callbac
 napi_value OHDrawingSetTextStyleAttributeInt004(napi_env env, napi_callback_info info);
 napi_value OHDrawingTypographyDidExceedMaxLines004(napi_env env, napi_callback_info info);
 napi_value OHDrawingTypographyStyleGetEffectiveAlignment003(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTextStyleAttributeDouble005(napi_env env, napi_callback_info info);
+napi_value OHDrawingIsFontSupportedFromPath001(napi_env env, napi_callback_info info);
+napi_value OHDrawingIsFontSupportedFromPath002(napi_env env, napi_callback_info info);
+napi_value OHDrawingIsFontSupportedFromPath003(napi_env env, napi_callback_info info);
+napi_value OHDrawingIsFontSupportedFromPath004(napi_env env, napi_callback_info info);
+napi_value OHDrawingIsFontSupportedFromBuffer001(napi_env env, napi_callback_info info);
+napi_value OHDrawingIsFontSupportedFromBuffer002(napi_env env, napi_callback_info info);
+napi_value OHDrawingIsFontSupportedFromBuffer003(napi_env env, napi_callback_info info);
+napi_value OHDrawingIsFontSupportedFromBuffer004(napi_env env, napi_callback_info info);
+napi_value OHDrawingIsFontSupportedFromBuffer005(napi_env env, napi_callback_info info);
+napi_value OHDrawingIsFontSupportedFromBuffer006(napi_env env, napi_callback_info info);
+napi_value OHDrawingIsFontSupportedFromBuffer007(napi_env env, napi_callback_info info);
+napi_value OHDrawingIsFontSupportedFromBuffer008(napi_env env, napi_callback_info info);
+napi_value OHDrawingErrorFileNotFound001(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontByIndex001(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontByIndex002(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontByIndex003(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontByIndex004(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontByIndex005(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontByIndex006(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontByIndex007(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontByIndex008(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontByIndex009(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontByIndex010(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontBufferByIndex001(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontBufferByIndex002(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontBufferByIndex003(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontBufferByIndex004(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontBufferByIndex005(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontBufferByIndex006(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontBufferByIndex007(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontBufferByIndex008(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontBufferByIndex009(napi_env env, napi_callback_info info);
+napi_value OHDrawingRegisterFontBufferByIndex010(napi_env env, napi_callback_info info);
+// 字符串属性ID测试用例
+napi_value FullDescriptorAttrSLocalPostscriptName001(napi_env env, napi_callback_info info);
+napi_value FullDescriptorAttrSLocalPostscriptName002(napi_env env, napi_callback_info info);
+napi_value FullDescriptorAttrSLocalFullName001(napi_env env, napi_callback_info info);
+napi_value FullDescriptorAttrSLocalFullName002(napi_env env, napi_callback_info info);
+napi_value FullDescriptorAttrSLocalFamilyName001(napi_env env, napi_callback_info info);
+napi_value FullDescriptorAttrSLocalSubFamilyName001(napi_env env, napi_callback_info info);
+napi_value FullDescriptorAttrSVersion001(napi_env env, napi_callback_info info);
+napi_value FullDescriptorAttrSVersion002(napi_env env, napi_callback_info info);
+napi_value FullDescriptorAttrSManufacture001(napi_env env, napi_callback_info info);
+napi_value FullDescriptorAttrSCopyright001(napi_env env, napi_callback_info info);
+napi_value FullDescriptorAttrSTrademark001(napi_env env, napi_callback_info info);
+napi_value FullDescriptorAttrSLicense001(napi_env env, napi_callback_info info);
+// 整数属性ID测试用例
+napi_value FullDescriptorAttrIIndex001(napi_env env, napi_callback_info info);
+// OH_Drawing_GetFontUnicodeArrayFromFile 测试用例
+napi_value OHDrawingGetFontUnicodeArrayFromFile001(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontUnicodeArrayFromFile002(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontUnicodeArrayFromFile003(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontUnicodeArrayFromFile004(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontUnicodeArrayFromFile005(napi_env env, napi_callback_info info);
+// OH_Drawing_GetFontUnicodeArrayFromBuffer 测试用例
+napi_value OHDrawingGetFontUnicodeArrayFromBuffer001(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontUnicodeArrayFromBuffer002(napi_env env, napi_callback_info info);
+// OH_Drawing_GetFontCountFromFile 测试用例
+napi_value OHDrawingGetFontCountFromFile001(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontCountFromFile002(napi_env env, napi_callback_info info);
+// OH_Drawing_GetFontCountFromBuffer 测试用例
+napi_value OHDrawingGetFontCountFromBuffer001(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontCountFromBuffer002(napi_env env, napi_callback_info info);
+// OH_Drawing_GetFontPathsByType 测试用例
+napi_value OHDrawingGetFontPathsByType001(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontPathsByType002(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontPathsByType003(napi_env env, napi_callback_info info);
+
 #endif // NATIVEFONTNDK_USELESS_H

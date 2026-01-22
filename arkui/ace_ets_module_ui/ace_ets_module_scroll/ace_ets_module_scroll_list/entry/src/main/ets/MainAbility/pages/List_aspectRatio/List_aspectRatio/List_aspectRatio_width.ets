@@ -87,5 +87,6 @@ struct List_aspectRatio_width {
     }
     .width(200)
     .height('100%')
+    .id('Column_aspectRatio_width_01')
   }
 }

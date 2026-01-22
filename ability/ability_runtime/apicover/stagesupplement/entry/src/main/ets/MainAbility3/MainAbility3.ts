@@ -30,12 +30,16 @@ export default class MainAbility3 extends Ability {
 
     let launchWant = this.launchWant;
     let lastRequestWant = this.lastRequestWant;
+    let specifiedId = this.specifiedId;
     let CommonEventPublishData = {
       parameters: {
         launchWant: launchWant,
         lastRequestWant: lastRequestWant,
         launchReason: launchParam.launchReason,
-        lastExitReason: launchParam.lastExitReason
+        lastExitReason: launchParam.lastExitReason,
+        launchUTCTime: launchParam.launchUTCTime,
+        launchUptime: launchParam.launchUptime,
+        specifiedId: specifiedId
       }
     }
     commonEvent.publish(listPush3 + "onCreate", CommonEventPublishData, (err) => {
