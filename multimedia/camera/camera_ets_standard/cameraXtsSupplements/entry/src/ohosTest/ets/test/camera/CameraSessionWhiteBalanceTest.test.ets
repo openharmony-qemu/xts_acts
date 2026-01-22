@@ -301,5 +301,31 @@ export default function CameraSessionSuppTest() {
       }
     })
 
+    /**
+     * @tc.number    : CAMERA_SESSION_GET_WHITE_BALANCE_RANGE_0001
+     * @tc.name      : CAMERA_SESSION_GET_WHITE_BALANCE_RANGE_0001
+     * @tc.desc      : getWhiteBalanceRange-success
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('CAMERA_SESSION_GET_WHITE_BALANCE_RANGE_0001', Level.LEVEL0, async (done: Function) => {
+      const testCase = 'liuyiliangCAMERA_SESSION_GET_WHITE_BALANCE_RANGE_0001';
+      try {
+        mPhotoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_PHOTO);
+        mPhotoSession.beginConfig();
+        let range: Array<number> = [];
+        range = mPhotoSession.getWhiteBalanceRange();
+        console.info(`${testCase} succeed: White balance range = ${range}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        const err = error as BusinessError;
+        console.error(`${testCase} failed. error code: ${err.code}, message: ${err.message}`);
+        expect(error.code).assertEqual('7400103');
+        done();
+      }
+    });
+
   })
 }
