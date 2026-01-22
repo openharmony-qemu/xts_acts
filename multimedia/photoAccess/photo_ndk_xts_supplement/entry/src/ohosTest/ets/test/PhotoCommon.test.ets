@@ -117,6 +117,7 @@ export async function getPermission(name = 'ohos.acts.multimedia.camera.supp.xts
           'ohos.permission.MEDIA_LOCATION',
           'ohos.permission.READ_IMAGEVIDEO',
           'ohos.permission.WRITE_IMAGEVIDEO',
+          "ohos.permission.MANAGE_RISK_PHOTOS"
     ], (err: BusinessError, data: PermissionRequestResult) => {
       if (err) {
         console.error(TAG, `requestPermissionsFromUser fail, err->${JSON.stringify(err)}`);
