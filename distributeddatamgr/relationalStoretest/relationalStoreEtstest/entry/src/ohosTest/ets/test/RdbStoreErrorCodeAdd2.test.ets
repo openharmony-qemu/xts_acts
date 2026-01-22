@@ -251,7 +251,7 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
     /**
      * @tc.name   queryGetColumnNames_001
-     * @tc.number SUB_DistributedData_RelationalStore_queryGetColumnNames_0001
+     * @tc.number SUB_DistributedData_RelationalStore_RdbStoreSetgetColumnNames_0001
      * @tc.desc   multi-table for query all column names by getColumnNames
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -275,7 +275,7 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
     /**
      * @tc.name   queryGetRowsData_002
-     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0010
+     * @tc.number SUB_DistributedData_RelationalStore_RdbStoreSetqueryGetRowsData_0002
      * @tc.desc   multi-table querySql with getRowsData and getRows comparison test
      *            1. query all data
      *            2. execute getRowsData and getRows
