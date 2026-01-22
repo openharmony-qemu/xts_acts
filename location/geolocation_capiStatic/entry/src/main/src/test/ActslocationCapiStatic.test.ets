@@ -602,7 +602,31 @@ export default function actslocationTest() {
                     }                    
                 }
             })            
-            
+            /**
+            * @tc.number  SUB_Location_getActiveGeofences_0100
+            * @tc.name  SUB_Location_getActiveGeofences_0100
+            * @tc.desc  getActiveGeofences(fenceRequest: GnssGeofenceRequest): Promise<Map<int, Geofence>>
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
+            */
+            it('SUB_Location_getActiveGeofences_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+              try{
+                geoLocationManager.getActiveGeofences().then((res) => {
+                  if (res) {
+                    console.info("fence num:" + res.size);
+                    for (const item of res){
+                      console.info("data=" + item);
+                    }
+                  }
+                })
+                .catch((error) => {
+                  console.error('promise, getActiveGeofences: error=' + error.code);
+                });
+              } catch (error) {
+                console.error("getActiveGeofences: errCode" + error.code + ", errMessage" + error.message);
+              }
+            })
             /**
             * @tc.number  SUB_Location_addGnssGeofence_0100
             * @tc.name  SUB_Location_addGnssGeofence_0100
