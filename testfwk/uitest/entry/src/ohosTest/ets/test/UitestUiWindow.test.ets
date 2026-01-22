@@ -237,17 +237,17 @@ export default function uiUiWindowTest() {
       await setSplit(driver)
       try {
         let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let isActive1 = await window1.isActive()
+        expect(isActive1).assertFalse();
+        let falseFocused = await window1.isFocused()
+        expect(falseFocused).assertFalse()
+        let falseActived = await window1.isActived()
+        expect(falseActived).assertFalse()
         await window1.resume()
         await driver.delayMs(waitUiReadyMs)
         let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
         let windowmode2 = await window2.getWindowMode()
         expect(windowmode2 == WindowMode.FLOATING).assertTrue()
-        let isActive1 = await window2.isActive()
-        expect(isActive1).assertFalse();
-        let falseFocused = await window2.isFocused()
-        expect(falseFocused).assertFalse()
-        let falseActived = await window2.isActived()
-        expect(falseActived).assertFalse()
       }catch (error) {
         console.log('testWindowResume_split1 error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
