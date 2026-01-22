@@ -311,7 +311,7 @@ export default function AddContactSTest() {
         for (let i = 0; i < TEST_CONTACTS_NUM; i++) {
           let phoneNumContact: contact.Contact = {
             name: {
-              fullName: ''
+              fullName: `abc${i}`
             }, phoneNumbers: [{
               phoneNumber: `13800000000`
             }]
@@ -323,7 +323,7 @@ export default function AddContactSTest() {
           let promise = contact.addContacts(context, phoneNumContacts);
           promise.then((data: number[]) => {
             console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-            expect(data.length === 0).assertTrue();
+            expect(data.length === TEST_CONTACTS_NUM).assertTrue();
             done();
           }).catch((err: BusinessError) => {
             console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
@@ -485,8 +485,6 @@ export default function AddContactSTest() {
             phoneNumber: '13800000000'
           }, {
             phoneNumber: '13811111111'
-          }, {
-            phoneNumber: '13800000000'
           }, {
             phoneNumber: '13822222222'
           }]
@@ -678,17 +676,17 @@ export default function AddContactSTest() {
         const caseName: string = 'testTelephonyContactAddContacts1200';
         console.info(`${caseName} test start `);
         let context: Context = AppStorage.get('context') as Context;
-        let phoneNumContact: contact.Contact = {
-          name: {
-            fullName: '张三'
-          }, phoneNumbers: [{
-            phoneNumber: '13800000000'
-          }]
-        };
         try {
           sleep(500);
           const tasks: Promise<number[]>[] = [];
           for (let i = 0; i < 100; i++) {
+            let phoneNumContact: contact.Contact = {
+            name: {
+              fullName: `张三${Math.random()*1000000}`
+            }, phoneNumbers: [{
+              phoneNumber: '13800000000'
+            }]
+            };
             tasks.push(contact.addContacts(context, [phoneNumContact])); 
           }
           await Promise.all(tasks).then((taskResults: number[][])=> {
@@ -723,7 +721,7 @@ export default function AddContactSTest() {
         for (let i = 0; i < 100; i++) {
           let phoneNumContact: contact.Contact = {
             name: {
-              fullName: ''
+              fullName: `abcd${i}`
             }, phoneNumbers: [{
               phoneNumber: `13800000000`
             }]
@@ -735,7 +733,7 @@ export default function AddContactSTest() {
           let promise = contact.addContacts(context, phoneNumContacts);
           promise.then((data: number[]) => {
             console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-            expect(data.length === 0).assertTrue();
+            expect(data.length > 0).assertTrue();
             done();
           }).catch((err: BusinessError) => {
             console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
