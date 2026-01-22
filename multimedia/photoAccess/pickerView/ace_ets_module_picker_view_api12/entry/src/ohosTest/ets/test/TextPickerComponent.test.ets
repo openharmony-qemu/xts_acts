@@ -3240,26 +3240,28 @@ export default function TextPicker() {
      * @tc.type       Function	 
      * @tc.level      Level 0	 
      */	 
-    it('testPicker63', Level.LEVEL0, async (done: Function) => {	 
-      if (!isExecutePicker) {	 
-        done();	 
-        return;	 
-      }	 
-      const context = getContext();	 
-      const creationSetting: photoAccessHelper.PhotoCreationConfig = {	 
-        title: 'test',	 
-        fileNameExtension: 'jpg',	 
-        photoType: photoAccessHelper.PhotoType.IMAGE,	 
-      };	 
-      const boxPath = fileUri.getUriFromPath(context.filesDir + '/test.jpg').toString();	 
-      const isImageFullyDisplayed = true;	 
+    it('testPicker63', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      const context = getContext();
+      const creationSetting: photoAccessHelper.PhotoCreationConfig = {
+        title: 'test',
+        fileNameExtension: 'jpg',
+        photoType: photoAccessHelper.PhotoType.IMAGE,
+      };
+      const boxPath = fileUri.getUriFromPath(context.filesDir + '/test.jpg').toString();
+      const isImageFullyDisplayed = true;
       try {
         photoAccessHelper
           .getPhotoAccessHelper(context)
           .showAssetsCreationDialogEx([boxPath], [creationSetting])
           .then(testResult => {
             expect(testResult).not().assertUndefined();
-        })
+            expect(testResult.length > 0).assertTrue();
+            expect(testResult[0].endsWith("test.jpg"));
+          })
         await driveFn();
       } catch(error) {
         console.error(" error: " + JSON.stringify(error) + error.code);
@@ -3686,7 +3688,10 @@ export default function TextPicker() {
         let boxPath = fileUri.getUriFromPath(context.filesDir + "/test.jpg").toString();
         photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx([boxPath],
           [CreationSettingDef]).then((result) => {
-          originalUris = result;
+            expect(result).not().assertUndefined();
+            expect(result.length > 0).assertTrue();
+            expect(result[0].endsWith("test.jpg"));
+            originalUris = result;
         });
         pickerController.replacePhotoPickerPreview(originalUris[0], boxPath, () => {
           console.log("testPicker71 replacePhotoPickerPreview callback called");
@@ -3770,56 +3775,46 @@ export default function TextPicker() {
         let boxPath = fileUri.getUriFromPath(context.filesDir + "/test.jpg").toString();
         photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx([boxPath],
           [CreationSettingDef]).then((result) => {
-          originalUris = result;
+            expect(result).not().assertUndefined();
+            expect(result.length > 0).assertTrue();
+            expect(result[0].endsWith("test.jpg"));
+            originalUris = result;
         });
-        pickerController.replacePhotoPickerPreview(originalUris[0], boxPath, async () => {
-          console.log("testPicker71 replacePhotoPickerPreview callback called");
-          const photoResult1 = await pickerController
-            .saveTrustedPhotoAssetsEx([boxPath])
-            .then((val) => {
-              if (!val) {
-                console.log("testPicker73 saveTrustedPhotoAssets (1 param) fail");
-                expect(false).assertTrue();
-              } else {
-                console.log("testPicker73 saveTrustedPhotoAssets (1 param) success, save uris:" + val);
-              }
-              return val;
-            });
-          expect(photoResult1).not().assertUndefined();
+        await driveFn();
+        await CommonFunc.sleep(500);
 
-          const photoResult2 = await pickerController
-            .saveTrustedPhotoAssetsEx([boxPath], [CreationSettingDef])
-            .then((val) => {
-              if (!val) {
-                console.log("testPicker73 saveTrustedPhotoAssets (2 params) fail");
-                expect(false).assertTrue();
-              } else {
-                console.log("testPicker73 saveTrustedPhotoAssets (2 params) success, save uris:" + val);
-              }
-              return val;
-            });
-          expect(photoResult2).not().assertUndefined();
-
-          const photoResult3 = await pickerController
-            .saveTrustedPhotoAssetsEx([boxPath], [CreationSettingDef], SaveMode.SAVE_AS)
-            .then((val) => {
-              if (!val) {
-                console.log("testPicker73 saveTrustedPhotoAssets (3 params) fail");
-                expect(false).assertTrue();
-              } else {
-                console.log("testPicker73 saveTrustedPhotoAssets (3 params) success, save uris:" + val);
-              }
-              return val;
-            });
-          expect(photoResult3).not().assertUndefined();
+        pickerController.replacePhotoPickerPreview(originalUris[0], boxPath, (error) => {
+          console.log("testPicker73 replacePhotoPickerPreview callback called");
+          if (!error) {
+            console.log("testPicker73 replacePhotoPickerPreview fail");
+            expect(false).assertTrue();
+          } else {
+            console.log("testPicker73 replacePhotoPickerPreview success");
+            pickerController.saveTrustedPhotoAssetsEx([boxPath]).then((result1) => {
+              console.log("testPicker73 saveTrustedPhotoAssets (1 param) success, save uris:" + JSON.stringify(result1));
+              expect(result1).not().assertUndefined();
+              expect(result1.length > 0).assertTrue();
+            })
+            pickerController.saveTrustedPhotoAssetsEx([boxPath], [CreationSettingDef]).then((result2)=>{
+              console.log("testPicker73 saveTrustedPhotoAssets (2 param) success, save uris:" + JSON.stringify(result2));
+              expect(result2).not().assertUndefined();
+              expect(result2.length > 0).assertTrue();
+            })
+            pickerController.saveTrustedPhotoAssetsEx([boxPath], [CreationSettingDef], SaveMode.SAVE_AS).then((result3)=> {
+              console.log("testPicker73 saveTrustedPhotoAssets (3 param) success, save uris:" + JSON.stringify(result3));
+              expect(result3).not().assertUndefined();
+              expect(result3.length > 0).assertTrue();
+            })
+          }
         });
       } catch (error) {
         console.log("testPicker73 error:" + JSON.stringify(error));
         expect(false).assertTrue();
+      } finally {
+        await CommonFunc.sleep(1000);
+        console.log("testPicker73 btn click finish");
+        done();
       }
-      await CommonFunc.sleep(1000);
-      console.log("testPicker73 btn click finish");
-      done();
     });
   })
 }
