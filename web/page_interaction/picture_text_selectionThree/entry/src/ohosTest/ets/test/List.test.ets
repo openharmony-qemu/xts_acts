@@ -21,6 +21,7 @@ import WebViewContextMenuMediaType from './WebViewContextMenuMediaType.test'
 import WebViewOnShowFileSelector from './WebViewOnShowFileSelector.test'
 import WebViewRequestPasswordAutoFill from './WebViewRequestPasswordAutoFill.test'
 import WebViewOnTextSelectionChange from './WebViewOnTextSelectionChange.test'
+import WebViewEnableImageAnalyzer from "./WebViewEnableImageAnalyzer.test"
 export default function testsuite() {
   WebViewIsCapture()
   WebViewGetMimeTypes()
@@ -30,4 +31,5 @@ export default function testsuite() {
   WebViewOnShowFileSelector()
   WebViewRequestPasswordAutoFill()
   WebViewOnTextSelectionChange()
+  WebViewEnableImageAnalyzer()
 }
