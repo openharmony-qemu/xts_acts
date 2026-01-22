@@ -713,14 +713,14 @@ export default function ApiCoverTest() {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityBase_wantConstant_1700
-     * @tc.number SUB_Ability_AbilityBase_wantConstant_1700
+     * @tc.name   SUB_Ability_AbilityBase_wantConstant_1800
+     * @tc.number SUB_Ability_AbilityBase_wantConstant_1800
      * @tc.desc   Test wantConstant ShowMode.EMBEDDED_HALF.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_wantConstant_1700', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Ability_AbilityBase_wantConstant_1800', Level.LEVEL0, async (done: Function) => {
       expect('2').assertEqual(wantConstant.ShowMode.EMBEDDED_HALF + '');
       done();
     })
