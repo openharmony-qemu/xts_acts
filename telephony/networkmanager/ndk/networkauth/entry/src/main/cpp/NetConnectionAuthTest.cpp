@@ -31,6 +31,11 @@
 #include <thread>
 using namespace std;
 
+#undef LOG_DOMAIN
+#undef LOG_TAG
+#define LOG_DOMAIN 0x3200
+#define LOG_TAG "WSDEMO"
+
 static const uint32_t MAX_BUFFER_SIZE = 128;
 static const uint32_t MAX_ARG_COUNT = 8;
 static const uint32_t CASE_INDEX_1 = 1;
