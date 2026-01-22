@@ -80,7 +80,7 @@ static napi_value OH_Rdb_BatchInsertWithReturning0100(napi_env env, napi_callbac
     OH_RDB_ReturningContext *returningContext = OH_RDB_CreateReturningContext();
     NAPI_ASSERT(env, returningContext != nullptr, "OH_RDB_CreateReturningContext is fail.");
     const char *fields[] = {"NAME"};
-    int32_t len = sizeof(fields)/sizeof(fields[0]);
+    int32_t len = sizeof(fields) / sizeof(fields[0]);
     errCode = OH_RDB_SetReturningFields(returningContext, fields, len);
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_RDB_SetReturningFields is fail.");
     errCode = OH_RDB_SetMaxReturningCount(returningContext, 1);
@@ -109,14 +109,16 @@ static napi_value OH_Rdb_BatchInsertWithReturning0100(napi_env env, napi_callbac
     errCode = OH_Rdb_BatchInsertWithReturning(store, "store_test", nullptr, Rdb_ConflictResolution::RDB_CONFLICT_FAIL, returningContext);
     NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS, "OH_Rdb_BatchInsertWithReturning is fail3.");
 
-    errCode = OH_Rdb_BatchInsertWithReturning(store, "store_test", nullptr, static_cast<Rdb_ConflictResolution>(0), returningContext);
+    const Rdb_ConflictResolution conflictResolution1 = static_cast<Rdb_ConflictResolution>(0);
+    errCode = OH_Rdb_BatchInsertWithReturning(store, "store_test", nullptr, conflictResolution1, returningContext);
     NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS, "OH_Rdb_BatchInsertWithReturning is fail4.");
 
     OH_Data_VBuckets *rows1 = OH_VBuckets_Create();
     errCode = OH_Rdb_BatchInsertWithReturning(store, "store_test", rows1, Rdb_ConflictResolution::RDB_CONFLICT_IGNORE, returningContext);
     NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS, "OH_Rdb_BatchInsertWithReturning is fail5.");
 
-    errCode = OH_Rdb_BatchInsertWithReturning(store, "store_test", nullptr, static_cast<Rdb_ConflictResolution>(7), returningContext);
+    const Rdb_ConflictResolution conflictResolution2 = static_cast<Rdb_ConflictResolution>(7);
+    errCode = OH_Rdb_BatchInsertWithReturning(store, "store_test", nullptr, conflictResolution2, returningContext);
     NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS, "OH_Rdb_BatchInsertWithReturning is fail6.");
     
     errCode = OH_Rdb_BatchInsertWithReturning(nullptr, "", rows, Rdb_ConflictResolution::RDB_CONFLICT_REPLACE, returningContext);
@@ -164,7 +166,7 @@ static napi_value OH_Rdb_UpdateWithReturning0100(napi_env env, napi_callback_inf
     OH_RDB_ReturningContext *returningContext = OH_RDB_CreateReturningContext();
     NAPI_ASSERT(env, returningContext != nullptr, "OH_RDB_CreateReturningContext is fail.");
     const char *fields[] = {"NAME"};
-    int32_t len = sizeof(fields)/sizeof(fields[0]);
+    int32_t len = sizeof(fields) / sizeof(fields[0]);
     errCode = OH_RDB_SetReturningFields(returningContext, fields, len);
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_RDB_SetReturningFields is fail.");
     errCode = OH_RDB_SetMaxReturningCount(returningContext, 1);
@@ -231,10 +233,12 @@ static napi_value OH_Rdb_UpdateWithReturning0100(napi_env env, napi_callback_inf
     errCode = OH_Rdb_UpdateWithReturning(store, valueBucket1, predicates, Rdb_ConflictResolution::RDB_CONFLICT_ROLLBACK, nullptr);
     NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS, "OH_Rdb_BatchInsertWithReturning is fail4.");
 
-    errCode = OH_Rdb_UpdateWithReturning(store, valueBucket1, predicates, static_cast<Rdb_ConflictResolution>(0), returningContext);
+    const Rdb_ConflictResolution conflictResolution1 = static_cast<Rdb_ConflictResolution>(0);
+    errCode = OH_Rdb_UpdateWithReturning(store, valueBucket1, predicates, conflictResolution1, returningContext);
     NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS, "OH_Rdb_BatchInsertWithReturning is fail5.");
 
-    errCode = OH_Rdb_UpdateWithReturning(store, valueBucket1, predicates, static_cast<Rdb_ConflictResolution>(7), returningContext);
+    const Rdb_ConflictResolution conflictResolution2 = static_cast<Rdb_ConflictResolution>(7);
+    errCode = OH_Rdb_UpdateWithReturning(store, valueBucket1, predicates, conflictResolution2, returningContext);
     NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS, "OH_Rdb_BatchInsertWithReturning is fail6.");
 
 
@@ -283,7 +287,7 @@ static napi_value OH_Rdb_DeleteWithReturning0100(napi_env env, napi_callback_inf
     OH_RDB_ReturningContext *returningContext = OH_RDB_CreateReturningContext();
     NAPI_ASSERT(env, returningContext != nullptr, "OH_RDB_CreateReturningContext is fail.");
     const char *fields[] = {"NAME"};
-    int32_t len = sizeof(fields)/sizeof(fields[0]);
+    int32_t len = sizeof(fields) / sizeof(fields[0]);
     errCode = OH_RDB_SetReturningFields(returningContext, fields, len);
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_RDB_SetReturningFields is fail.");
     errCode = OH_RDB_SetMaxReturningCount(returningContext, 1);
@@ -355,7 +359,7 @@ static napi_value OH_RdbTrans_BatchInsertWithReturning0100(napi_env env, napi_ca
     OH_RDB_ReturningContext *returningContext = OH_RDB_CreateReturningContext();
     NAPI_ASSERT(env, returningContext != nullptr, "OH_RDB_CreateReturningContext is fail.");
     const char *fields[] = {"NAME"};
-    int32_t len = sizeof(fields)/sizeof(fields[0]);
+    int32_t len = sizeof(fields) / sizeof(fields[0]);
     errCode = OH_RDB_SetReturningFields(returningContext, fields, len);
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_RDB_SetReturningFields is fail.");
     errCode = OH_RDB_SetMaxReturningCount(returningContext, 1);
@@ -390,14 +394,16 @@ static napi_value OH_RdbTrans_BatchInsertWithReturning0100(napi_env env, napi_ca
     errCode = OH_RdbTrans_BatchInsertWithReturning(trans, "store_test", nullptr, Rdb_ConflictResolution::RDB_CONFLICT_REPLACE, returningContext);
     NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS, "OH_RdbTrans_BatchInsertWithReturning is fail3.");
 
-    errCode = OH_RdbTrans_BatchInsertWithReturning(trans, "store_test", nullptr, static_cast<Rdb_ConflictResolution>(0), returningContext);
+    const Rdb_ConflictResolution conflictResolution1 = static_cast<Rdb_ConflictResolution>(0);
+    errCode = OH_RdbTrans_BatchInsertWithReturning(trans, "store_test", nullptr, conflictResolution1, returningContext);
     NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS, "OH_RdbTrans_BatchInsertWithReturning is fail4.");
 
     OH_Data_VBuckets *rows1 = OH_VBuckets_Create();
     errCode = OH_RdbTrans_BatchInsertWithReturning(trans, "store_test", rows1, Rdb_ConflictResolution::RDB_CONFLICT_FAIL, returningContext);
     NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS, "OH_RdbTrans_BatchInsertWithReturning is fail5.");
 
-    errCode = OH_RdbTrans_BatchInsertWithReturning(trans, "store_test", nullptr, static_cast<Rdb_ConflictResolution>(7), returningContext);
+    const Rdb_ConflictResolution conflictResolution2 = static_cast<Rdb_ConflictResolution>(7);
+    errCode = OH_RdbTrans_BatchInsertWithReturning(trans, "store_test", nullptr, conflictResolution2, returningContext);
     NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS, "OH_RdbTrans_BatchInsertWithReturning is fail6.");
     
     errCode = OH_RdbTrans_BatchInsertWithReturning(nullptr, "", rows, Rdb_ConflictResolution::RDB_CONFLICT_IGNORE, returningContext);
@@ -450,7 +456,7 @@ static napi_value OH_RdbTrans_UpdateWithReturning0100(napi_env env, napi_callbac
     OH_RDB_ReturningContext *returningContext = OH_RDB_CreateReturningContext();
     NAPI_ASSERT(env, returningContext != nullptr, "OH_RDB_CreateReturningContext is fail.");
     const char *fields[] = {"NAME"};
-    int32_t len = sizeof(fields)/sizeof(fields[0]);
+    int32_t len = sizeof(fields) / sizeof(fields[0]);
     errCode = OH_RDB_SetReturningFields(returningContext, fields, len);
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_RDB_SetReturningFields is fail.");
     errCode = OH_RDB_SetMaxReturningCount(returningContext, 1);
@@ -523,10 +529,12 @@ static napi_value OH_RdbTrans_UpdateWithReturning0100(napi_env env, napi_callbac
     errCode = OH_RdbTrans_UpdateWithReturning(trans, valueBucket1, predicates, Rdb_ConflictResolution::RDB_CONFLICT_ROLLBACK, nullptr);
     NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS, "OH_RdbTrans_UpdateWithReturning is fail4.");
 
-    errCode = OH_RdbTrans_UpdateWithReturning(trans, valueBucket1, predicates, static_cast<Rdb_ConflictResolution>(0), returningContext);
+    const Rdb_ConflictResolution conflictResolution1 = static_cast<Rdb_ConflictResolution>(0);
+    errCode = OH_RdbTrans_UpdateWithReturning(trans, valueBucket1, predicates, conflictResolution1, returningContext);
     NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS, "OH_RdbTrans_UpdateWithReturning is fail5.");
 
-    errCode = OH_RdbTrans_UpdateWithReturning(trans, valueBucket1, predicates, static_cast<Rdb_ConflictResolution>(7), returningContext);
+    const Rdb_ConflictResolution conflictResolution2 = static_cast<Rdb_ConflictResolution>(7);
+    errCode = OH_RdbTrans_UpdateWithReturning(trans, valueBucket1, predicates, conflictResolution2, returningContext);
     NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS, "OH_RdbTrans_UpdateWithReturning is fail6.");
 
     errCode = OH_Rdb_CloseStore(store);
@@ -579,7 +587,7 @@ static napi_value OH_RdbTrans_DeleteWithReturning0100(napi_env env, napi_callbac
     OH_RDB_ReturningContext *returningContext = OH_RDB_CreateReturningContext();
     NAPI_ASSERT(env, returningContext != nullptr, "OH_RDB_CreateReturningContext is fail.");
     const char *fields[] = {"NAME"};
-    int32_t len = sizeof(fields)/sizeof(fields[0]);
+    int32_t len = sizeof(fields) / sizeof(fields[0]);
     errCode = OH_RDB_SetReturningFields(returningContext, fields, len);
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_RDB_SetReturningFields is fail.");
     errCode = OH_RDB_SetMaxReturningCount(returningContext, 1);
