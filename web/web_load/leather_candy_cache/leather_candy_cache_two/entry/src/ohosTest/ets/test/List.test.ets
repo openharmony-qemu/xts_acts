@@ -16,6 +16,7 @@ import precompileJavaScript from './precompileJavaScript.test'
 import injectOfflineResources from './injectOfflineResources.test'
 import clearPrefetchedResource from './clearPrefetchedResource.test'
 import blankLessInfoWithKeyTest from "./BlankLessInfoWithKey.test"
+import setBlanklessLoadingWithParamsTest from "./setBlanklessLoadingWithParams.test"
 import setBlanklessLoadingCacheCapacityTest from "./SetBlanklessLoadingCacheCapacity.test"
 import ndkBlanklessInfoWithKeyTest from "./NdkBlanklessInfoWithKey.test"
 import abilityTest from './Ability.test';
@@ -26,6 +27,7 @@ export default function testsuite() {
   clearPrefetchedResource()
   abilityTest()
   blankLessInfoWithKeyTest()
+  setBlanklessLoadingWithParamsTest()
   setBlanklessLoadingCacheCapacityTest()
   ndkBlanklessInfoWithKeyTest()
 }

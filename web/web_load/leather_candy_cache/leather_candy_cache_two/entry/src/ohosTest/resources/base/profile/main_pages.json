@@ -6,6 +6,7 @@
     "testability/pages/clearPrefetchedResourceTest",
     "testability/pages/BlankLessInfoWithKeyTest",
     "testability/pages/NdkBlanklessInfoWithKeyTest",
-    "testability/pages/SetBlanklessLoadingCacheCapacityTest"
+    "testability/pages/SetBlanklessLoadingCacheCapacityTest",
+    "testability/pages/setBlanklessLoadingWithParamsTest"
   ]
 }
