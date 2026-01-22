@@ -327,5 +327,28 @@ export default function CameraSessionSuppTest() {
       }
     });
 
+    /**
+     * @tc.number    CAMERA_PHOTO_OUTPUT_offCapturePhotoAvailable_001
+     * @tc.name      CAMERA_PHOTO_OUTPUT_offCapturePhotoAvailable_001
+     * @tc.desc      white balance api
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('CAMERA_PHOTO_OUTPUT_offCapturePhotoAvailable_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'CAMERA_PHOTO_OUTPUT_offCapturePhotoAvailable_001';
+      try {
+        createPhotoOutput();
+        mPhotoOutput.offCapturePhotoAvailable((capturePhoto) => {
+          capturePhoto.release();
+        })
+        console.info(TAG, testName + ' offCapturePhotoAvailable success ');
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }
+      done();
+    })    
+
   })
 }
