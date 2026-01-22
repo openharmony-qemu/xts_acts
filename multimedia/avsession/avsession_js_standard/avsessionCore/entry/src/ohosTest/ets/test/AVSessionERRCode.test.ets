@@ -3882,6 +3882,170 @@ export default function abilityTest() {
         done();
       });
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETALLSESSIONDESCRIPTORS_ERRCODE_0201
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETALLSESSIONDESCRIPTORS_ERRCODE_0201
+     * @tc.desc   Testing getAllSessionDescriptors without permission (throw 201)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_GETALLSESSIONDESCRIPTORS_ERRCODE_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AVSESSION_GETALLSESSIONDESCRIPTORS_ERRCODE_0201';
+      try {
+        avSession.getAllSessionDescriptors();
+      } catch (err) {
+        console.info(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(201);
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_CREATECONTROLLER_ERRCODE_0201
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_CREATECONTROLLER_ERRCODE_0201
+     * @tc.desc   Testing createController without permission (throw 201)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_CREATECONTROLLER_ERRCODE_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AVSESSION_CREATECONTROLLER_ERRCODE_0201';
+      try {
+        avSession.createController('sessionid');
+      } catch (err) {
+        console.info(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(201);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSESSIONCREATE_ERRCODE_0201
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSESSIONCREATE_ERRCODE_0201
+     * @tc.desc   Testing onSessionCreate without permission (throw 201)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONSESSIONCREATE_ERRCODE_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AVSESSION_ONSESSIONCREATE_ERRCODE_0201';
+      try {
+        avSession.onSessionCreate(()=>{
+          console.info(`[${TAG}] Testlog: onSessionCreate registered successfully`)
+        });
+      } catch (err) {
+        console.info(`[${TAG}]: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(201);
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSESSIONDESTROY_ERRCODE_0201
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSESSIONDESTROY_ERRCODE_0201
+     * @tc.desc   Testing onSessionDestroy without permission (throw 201)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONSESSIONDESTROY_ERRCODE_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AVSESSION_ONSESSIONDESTROY_ERRCODE_0201';
+      try {
+        avSession.onSessionDestroy(()=>{
+          console.info(`[${TAG}] Testlog: onSessionDestroy registered successfully`)
+        });
+      } catch (err) {
+        console.info(`[${TAG}]: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(201);
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONTOPSESSIONCHANGE_ERRCODE_0201
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONTOPSESSIONCHANGE_ERRCODE_0201
+     * @tc.desc   Testing onTopSessionChange without permission (throw 201)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONTOPSESSIONCHANGE_ERRCODE_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AVSESSION_ONTOPSESSIONCHANGE_ERRCODE_0201';
+      try {
+        avSession.onTopSessionChange(()=>{
+          console.info(`[${TAG}] Testlog: onTopSessionChange registered successfully`)
+        });
+      } catch (err) {
+        console.info(`[${TAG}]: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(201);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFSESSIONCREATE_ERRCODE_0201
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFSESSIONCREATE_ERRCODE_0201
+     * @tc.desc   Testing offSessionCreate without permission (throw 201)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFSESSIONCREATE_ERRCODE_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AVSESSION_OFFSESSIONCREATE_ERRCODE_0201';
+      try {
+        avSession.offSessionCreate();
+      } catch (err) {
+        console.info(`[${TAG}]: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(201);
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFSESSIONDESTROY_ERRCODE_0201
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFSESSIONDESTROY_ERRCODE_0201
+     * @tc.desc   Testing offSessionDestroy without permission (throw 201)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFSESSIONDESTROY_ERRCODE_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AVSESSION_OFFSESSIONDESTROY_ERRCODE_0201';
+      try {
+        avSession.offSessionDestroy();
+      } catch (err) {
+        console.info(`[${TAG}]: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(201);
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFTOPSESSIONCHANGE_ERRCODE_0201
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFTOPSESSIONCHANGE_ERRCODE_0201
+     * @tc.desc   Testing offTopSessionChange without permission (throw 201)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFFTOPSESSIONCHANGE_ERRCODE_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AVSESSION_OFFTOPSESSIONCHANGE_ERRCODE_0201';
+      try {
+        avSession.offTopSessionChange();
+      } catch (err) {
+        console.info(`[${TAG}]: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(201);
+      }
+      done();
+    })
+
+
   })
 }
 
