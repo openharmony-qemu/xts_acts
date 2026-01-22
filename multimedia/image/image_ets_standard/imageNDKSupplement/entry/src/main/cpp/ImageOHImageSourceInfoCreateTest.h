@@ -26,6 +26,7 @@ napi_value OHImageNativeGetBufferDataTest(napi_env env, napi_callback_info info)
 napi_value OHPixelmapNativeWritePixelsTest(napi_env env, napi_callback_info info);
 napi_value OHPixelmapNativeReadPixelsTest(napi_env env, napi_callback_info info);
 napi_value OHImageNativeGetBufferDataValueTest(napi_env env, napi_callback_info info);
+napi_value OHImageNativeGetColorSpaceTest(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif

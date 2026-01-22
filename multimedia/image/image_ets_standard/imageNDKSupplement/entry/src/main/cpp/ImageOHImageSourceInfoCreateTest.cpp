@@ -18,6 +18,7 @@
 #include <js_native_api_types.h>
 #include <cstddef>
 #include <cstdint>
+#include <native_color_space_manager/native_color_space_manager.h>
 #include <ohcamera/camera.h>
 #include <ohcamera/camera_input.h>
 #include <ohcamera/camera_manager.h>
@@ -275,8 +276,6 @@ napi_value OHImageNativeGetFormatTest(napi_env env, napi_callback_info info)
     int32_t index;
     napi_get_value_int32(env, argValue[0], &index);
     LOGI("get argValue %{public}d", index);
-    napi_ref jsCallbackHandler;
-    napi_create_reference(env, argValue[1], 1, &(jsCallbackHandler));
     OH_ImageReceiverOptions *options = nullptr;
     OH_ImageReceiverOptions_Create(&options);
     OH_ImageReceiverNative *receiver = nullptr;
@@ -321,6 +320,12 @@ napi_value OHImageNativeGetFormatTest(napi_env env, napi_callback_info info)
     if (image != nullptr) {
         errCode = OH_ImageNative_Release(image);
     }
+    if (receiver != nullptr) {
+        errCode = OH_ImageReceiverNative_Release(receiver);
+    }
+    if (options != nullptr) {
+        errCode = OH_ImageReceiverOptions_Release(options);
+    }
     napi_value result = nullptr;
     napi_create_int32(env, errorCode, &result);
     LOGI("OH_ImageReceiverNative_On end");
@@ -340,8 +345,6 @@ napi_value OHImageNativeGetBufferDataTest(napi_env env, napi_callback_info info)
     int32_t index;
     napi_get_value_int32(env, argValue[0], &index);
     LOGI("get argValue %{public}d", index);
-    napi_ref jsCallbackHandler;
-    napi_create_reference(env, argValue[1], 1, &(jsCallbackHandler));
     OH_ImageReceiverOptions *options = nullptr;
     OH_ImageReceiverOptions_Create(&options);
     OH_ImageReceiverNative *receiver = nullptr;
@@ -384,6 +387,81 @@ napi_value OHImageNativeGetBufferDataTest(napi_env env, napi_callback_info info)
     }
     if (image != nullptr) {
         errCode = OH_ImageNative_Release(image);
+    }
+    if (receiver != nullptr) {
+        errCode = OH_ImageReceiverNative_Release(receiver);
+    }
+    if (options != nullptr) {
+        errCode = OH_ImageReceiverOptions_Release(options);
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, errorCode, &result);
+    LOGI("OH_ImageReceiverNative_On end");
+    return result;
+}
+napi_value OHImageNativeGetColorSpaceTest(napi_env env, napi_callback_info info)
+{
+    LOGI("OH_ImageReceiverNative_On start");
+    napi_value thisVar = nullptr;
+    napi_value argValue[2] = {0};
+    size_t argCount = 2;
+    if (napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr) != napi_ok || argCount < 1 ||
+        argValue[0] == nullptr) {
+        LOGI("OH_ImageReceiverNative_On error1");
+        return nullptr;
+    }
+    int32_t index;
+    napi_get_value_int32(env, argValue[0], &index);
+    LOGI("get argValue %{public}d", index);
+    OH_ImageReceiverOptions *options = nullptr;
+    OH_ImageReceiverOptions_Create(&options);
+    OH_ImageReceiverNative *receiver = nullptr;
+    OH_ImageReceiverNative_Create(options, &receiver);
+    uint64_t surfaceId = 0;
+    OH_ImageReceiverNative_GetReceivingSurfaceId(receiver, &surfaceId);
+    LOGI("surfaceId is:%{public}d", surfaceId);
+    auto myImageReceiverCallback = [](OH_ImageReceiverNative *receiver) {
+        LOGI("ImageReceiverNativeCTest buffer available.");
+    };
+    Image_ErrorCode errCode = OH_ImageReceiverNative_On(receiver, myImageReceiverCallback);
+    std::string surfaceIDStr = std::to_string(surfaceId);
+    const char *constCharPtr = surfaceIDStr.c_str();
+    CreateAndOpenCamera();
+    CreatePhotoOutput(constCharPtr);
+    CreateCaptureSession();
+    std::this_thread::sleep_for(std::chrono::seconds(NEED_SLEEP_SECONDS));
+    OH_ImageNative *image = nullptr;
+    int32_t colorSpaceName ;
+    errCode = OH_ImageReceiverNative_ReadLatestImage(receiver, &image);
+    if (errCode != IMAGE_SUCCESS) {
+        LOGI("ImageReceiverNativeCTest get image receiver next image failed, errCode: %{public}d.", errCode);
+    }
+    Image_ErrorCode errorCode;
+    switch (index) {
+    case CASE_INDEX_1:
+        LOGI("OH_ImageReceiverNative_ReadLatestImage get image ,  %{public}p.", image);
+        errorCode = OH_ImageNative_GetColorSpace(image, &colorSpaceName);
+        break;
+    case CASE_INDEX_2:
+        errorCode = OH_ImageNative_GetColorSpace(nullptr, &colorSpaceName);
+        break;
+    default:
+        break;
+    }
+    if (captureSession != nullptr) {
+        OH_CaptureSession_Release(captureSession);
+    }
+    if (photoOutput != nullptr) {
+        OH_PhotoOutput_Release(photoOutput);
+    }
+    if (image != nullptr) {
+        errCode = OH_ImageNative_Release(image);
+    }
+    if (receiver != nullptr) {
+        errCode = OH_ImageReceiverNative_Release(receiver);
+    }
+    if (options != nullptr) {
+        errCode = OH_ImageReceiverOptions_Release(options);
     }
     napi_value result = nullptr;
     napi_create_int32(env, errorCode, &result);
@@ -489,8 +567,6 @@ napi_value OHImageNativeGetBufferDataValueTest(napi_env env, napi_callback_info 
     int32_t index;
     napi_get_value_int32(env, argValue[0], &index);
     LOGI("get argValue %{public}d", index);
-    napi_ref jsCallbackHandler;
-    napi_create_reference(env, argValue[1], 1, &(jsCallbackHandler));
     OH_ImageReceiverOptions *options = nullptr;
     OH_ImageReceiverOptions_Create(&options);
     OH_ImageReceiverNative *receiver = nullptr;
@@ -570,6 +646,12 @@ napi_value OHImageNativeGetBufferDataValueTest(napi_env env, napi_callback_info 
     }
     if (image != nullptr) {
         errCode = OH_ImageNative_Release(image);
+    }
+    if (receiver != nullptr) {
+        errCode = OH_ImageReceiverNative_Release(receiver);
+    }
+    if (options != nullptr) {
+        errCode = OH_ImageReceiverOptions_Release(options);
     }
     napi_value result = nullptr;
     napi_create_int32(env, code, &result);

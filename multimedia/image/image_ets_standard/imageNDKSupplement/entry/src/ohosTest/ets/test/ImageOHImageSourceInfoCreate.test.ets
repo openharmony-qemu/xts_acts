@@ -77,7 +77,7 @@ export default function ImageOHImageSourceInfoCreate() {
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_FORMAT_SUPP_002
      * @tc.name    SUB_IMAGE_NATIVE_GET_FORMAT_SUPP_002
-     * @tc.desc    OH_ImageNative_GetFormat-EFFECT_ERROR_PARAM_INVALID
+     * @tc.desc    OH_ImageNative_GetFormat-IMAGE_BAD_PARAMETER
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -109,7 +109,7 @@ export default function ImageOHImageSourceInfoCreate() {
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_SUPP_002
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_SUPP_002
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-EFFECT_ERROR_PARAM_INVALID
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-IMAGE_BAD_PARAMETER
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -118,6 +118,22 @@ export default function ImageOHImageSourceInfoCreate() {
       const testName = "SUB_IMAGE_NATIVE_GET_BUFFER_DATA_SUPP_002"
       console.info(TAG, testName, 'Start',);
       let result: number = testNapi.OHImageNativeGetBufferDataTest(CASE_INDEX_2, (receiver: image.ImageReceiver) => {
+      })
+      console.info(TAG, testName, 'Success', JSON.stringify(result));
+      expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
+    });
+    /**
+     * @tc.number  SUB_IMAGE_NATIVE_GET_COLOR_SPACE_SUPP_002
+     * @tc.name    SUB_IMAGE_NATIVE_GET_COLOR_SPACE_SUPP_002
+     * @tc.desc    OH_IMAGE_NATIVE_GET_COLOR_SPACE-IMAGE_BAD_PARAMETER
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('SUB_IMAGE_NATIVE_GET_COLOR_SPACE_SUPP_002', Level.LEVEL0, async () => {
+      const testName = "SUB_IMAGE_NATIVE_GET_COLOR_SPACE_SUPP_002"
+      console.info(TAG, testName, 'Start',);
+      let result: number = testNapi.OHImageNativeGetColorSpaceTest(CASE_INDEX_2, (receiver: image.ImageReceiver) => {
       })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);

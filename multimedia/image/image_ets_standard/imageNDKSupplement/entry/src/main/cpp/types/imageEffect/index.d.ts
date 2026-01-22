@@ -212,3 +212,4 @@ export const OHImageNativeGetFormatTest:(a: number,b: Callback<image.ImageReceiv
 export const OHPixelmapNativeWritePixelsTest:(a: number) => number;
 export const OHPixelmapNativeReadPixelsTest:(a: number) => number;
 export const OHImageNativeGetBufferDataValueTest:(a: number,b: Callback<image.ImageReceiver>) => number;
+export const OHImageNativeGetColorSpaceTest:(a: number,b: Callback<image.ImageReceiver>) => number;
