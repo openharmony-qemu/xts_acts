@@ -63,7 +63,7 @@ export default function layoutWeightRowTest() {
     },
     expectValue: {
       layoutWeight: 1,
-      //width: UIContext.getFocusedUIContext()!.vp2px(200)
+      //width: UIContext.resolveUIContext()!.vp2px(200)
       width: 200
     }
   }]
