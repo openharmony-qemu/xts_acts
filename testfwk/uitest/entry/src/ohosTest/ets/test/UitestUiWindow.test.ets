@@ -242,6 +242,8 @@ export default function uiUiWindowTest() {
         let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
         let windowmode2 = await window2.getWindowMode()
         expect(windowmode2 == WindowMode.FLOATING).assertTrue()
+        let isActive1 = await windowmode2.isActive()
+      expect(isActive1).assertFalse();
       }catch (error) {
         console.log('testWindowResume_split1 error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
