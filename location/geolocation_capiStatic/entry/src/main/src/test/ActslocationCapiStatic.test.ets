@@ -603,16 +603,16 @@ export default function actslocationTest() {
                 }
             })            
             /**
-            * @tc.number  SUB_Location_getActiveGeofences_0100
-            * @tc.name  SUB_Location_getActiveGeofences_0100
-            * @tc.desc  getActiveGeofences(fenceRequest: GnssGeofenceRequest): Promise<Map<int, Geofence>>
+            * @tc.number  SUB_Location_getActiveGeoFences_0100
+            * @tc.name  SUB_Location_getActiveGeoFences_0100
+            * @tc.desc  getActiveGeoFences(fenceRequest: GnssGeofenceRequest): Promise<Map<int, Geofence>>
             * @tc.level  Level 2
             * @tc.type  Function
             * @tc.size  MEDIUMTEST
             */
             it('SUB_Location_getActiveGeofences_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
               try{
-                geoLocationManager.getActiveGeofences().then((res) => {
+                geoLocationManager.getActiveGeoFences().then((res) => {
                   if (res) {
                     console.info("fence num:" + res.size);
                     expect(res.size != 0).assertTrue();
@@ -622,11 +622,11 @@ export default function actslocationTest() {
                   }
                 })
                 .catch((error) => {
-                  console.error('promise, getActiveGeofences: error=' + error.code);
+                  console.error('promise, getActiveGeoFences: error=' + error.code);
                   expect(error.code).assertEqual(801);
                 });
               } catch (error) {
-                console.error("getActiveGeofences: errCode" + error.code + ", errMessage" + error.message);
+                console.error("getActiveGeoFences: errCode" + error.code + ", errMessage" + error.message);
                 expect().assertFalse();
               }
             })
