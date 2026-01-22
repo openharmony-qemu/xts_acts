@@ -16,11 +16,12 @@
 
 import mediaquery from '@ohos.mediaquery';
 import hilog from '@ohos.hilog';
+import { UIContext } from '@ohos.arkui.UIContext';
 
 export class DeviceListenerManager {
   private static instance: DeviceListenerManager | undefined;
-  private portraitListener = mediaquery.matchMediaSync('(orientation: portrait)');
-  private drawableWidthLargeListener = mediaquery.matchMediaSync('(width >= 600vp)');
+  private portraitListener: mediaquery.MediaQueryListener | undefined = UIContext.resolveUIContext()?.getMediaQuery()?.matchMediaSync('(orientation: portrait)');
+  private drawableWidthLargeListener: mediaquery.MediaQueryListener | undefined = UIContext.resolveUIContext()?.getMediaQuery()?.matchMediaSync('(width >= 600vp)');
   private isPortrait: boolean | undefined = undefined;
   private onOrientationChange: ((isPortrait: boolean | undefined) => void) | undefined = undefined;
   private isLarge: boolean | undefined = undefined;
@@ -111,12 +112,12 @@ export class DeviceListenerManager {
   }
 
   public initListener(): void {
-    this.portraitListener.onChange( (result) => this.onPortraitChange(result));
-    this.drawableWidthLargeListener.onChange((result) => this.onDrawableWidthLargeChange(result));
+    this.portraitListener!.onChange( (result) => this.onPortraitChange(result));
+    this.drawableWidthLargeListener!.onChange((result) => this.onDrawableWidthLargeChange(result));
   }
 
   public finalizeListener() {
-    this.portraitListener.offChange( (result) => this.onPortraitChange(result));
-    this.drawableWidthLargeListener.offChange( (result) => this.onDrawableWidthLargeChange(result));
+    this.portraitListener!.offChange( (result) => this.onPortraitChange(result));
+    this.drawableWidthLargeListener!.offChange( (result) => this.onDrawableWidthLargeChange(result));
   }
 }
