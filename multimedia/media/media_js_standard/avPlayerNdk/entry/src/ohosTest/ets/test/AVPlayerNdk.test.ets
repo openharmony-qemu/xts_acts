@@ -2292,5 +2292,20 @@ export default function AVPlayerNdkTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.number SUB_MULTIMEIDA_AVFORMAT_SETUINT_0001
+     * @tc.name   testOhAvFormatSetUint001
+     * @tc.desc   test OH_AVFormat_SetUintValue
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvFormatSetUint001', Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.avFormatSetUint("test", 123);
+      console.info(`testOhAvFormatSetUint001 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
   })
 }
