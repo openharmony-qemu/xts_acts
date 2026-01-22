@@ -243,7 +243,11 @@ export default function uiUiWindowTest() {
         let windowmode2 = await window2.getWindowMode()
         expect(windowmode2 == WindowMode.FLOATING).assertTrue()
         let isActive1 = await windowmode2.isActive()
-      expect(isActive1).assertFalse();
+        expect(isActive1).assertFalse();
+        let falseFocused = await windowmode2.isFocused()
+        expect(falseFocused).assertFalse()
+        let falseActived = await windowmode2.isActived()
+        expect(falseActived).assertFalse()
       }catch (error) {
         console.log('testWindowResume_split1 error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
