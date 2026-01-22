@@ -10,7 +10,7 @@
     },
     "kits": [{
         "test-file-name": [
-            "ActsSetDistributedTable.hap"
+            "ActsSetDistributedTableTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true
