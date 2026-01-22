@@ -615,6 +615,7 @@ export default function actslocationTest() {
                 geoLocationManager.getActiveGeofences().then((res) => {
                   if (res) {
                     console.info("fence num:" + res.size);
+                    expect(res.size != 0).assertTrue();
                     for (const item of res){
                       console.info("data=" + item);
                     }
@@ -622,9 +623,11 @@ export default function actslocationTest() {
                 })
                 .catch((error) => {
                   console.error('promise, getActiveGeofences: error=' + error.code);
+                  expect(error.code).assertEqual(801);
                 });
               } catch (error) {
                 console.error("getActiveGeofences: errCode" + error.code + ", errMessage" + error.message);
+                expect().assertFalse();
               }
             })
             /**
