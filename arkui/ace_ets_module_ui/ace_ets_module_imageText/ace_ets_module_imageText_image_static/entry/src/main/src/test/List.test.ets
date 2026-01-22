@@ -16,8 +16,20 @@
 
 import blendNodeTest from './BlendModeTest/blendNodeTest.test';
 import getUIContextApiTest from './imageTest/getUIContextApi.test';
+import ImageAlt22Test from './imageTest/ImageAlt22.test';
+import ImageContentTransitionTest from './imageTest/ImageContentTransition.test';
+import ImageSupportSvg2Test from './imageTest/ImageSupportSvg2.test';
+import AnimationControllerTest from './drawableDescriptorTest/AnimationController.test';
+import ImageAnimationControllerERRORTest from './drawableDescriptorTest/AnimationControllerERROR.test';
+import ImageLoaderTest from './ImageLoader/ImageLoader.test';
 
 export default function testsuite() {
   blendNodeTest();
   getUIContextApiTest();
+  ImageAlt22Test();
+  ImageContentTransitionTest();
+  ImageSupportSvg2Test();
+  AnimationControllerTest();
+  ImageAnimationControllerERRORTest();
+  ImageLoaderTest();
 }
