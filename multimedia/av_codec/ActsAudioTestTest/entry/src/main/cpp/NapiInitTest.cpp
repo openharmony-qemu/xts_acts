@@ -16,7 +16,6 @@
 #include <include/ActsAudioTestCommonTest.h>
 #include "napi/native_api.h"
 
-// Common argument and result constants.
 static constexpr int ARG_INDEX = 0;
 static constexpr int DEFAULT_ARG = -1;
 static constexpr int RESULT_ERROR = -1;

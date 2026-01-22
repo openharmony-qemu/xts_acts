@@ -20,10 +20,10 @@ const TAG = 'AudioEncoderTest'
 export default function AudioTest() {
   describe('AcstAudioTest', () => {
     beforeAll(() => {
-      console.info(`${TAG}: beforeAll: 初始化AAC编码器测试环境`)
+      console.info(`${TAG}: beforeAll: Init AAC encoder test env`)
     })
     afterAll(() => {
-      console.info(`${TAG}: afterAll: 清理AAC编码器测试环境`)
+      console.info(`${TAG}: afterAll: Clean AAC encoder test env`)
     })
 
     /**

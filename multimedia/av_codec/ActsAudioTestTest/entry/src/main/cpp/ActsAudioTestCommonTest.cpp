@@ -14,7 +14,6 @@
  */
 
 #include "include/ActsAudioTestCommonTest.h"
-// 以下是补充的必要头文件（标注：仅为编译所需的基础头文件，无业务逻辑）
 #include <iostream>
 #include <unistd.h>
 #include <fstream>
@@ -242,7 +241,7 @@ void OHOS::AudioCodeCapiEncoderNdkTest::HeAACSampleRateTest(int32_t profile)
     };
     for (const uint32_t rate : supportedSampleRateSet) {
         OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, rate);
-        if (OH_AudioCodec_Configure(audioEnc_, format) != AV_ERR_OK) {} //return
+        if (OH_AudioCodec_Configure(audioEnc_, format) != AV_ERR_OK) {}
         if (OH_AudioCodec_Reset(audioEnc_) != AV_ERR_OK) {}
     }
 }
@@ -256,7 +255,7 @@ void OHOS::AudioCodeCapiEncoderNdkTest::ChannelCountTest(set<int32_t> &supported
     OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, profile);
     for (const int32_t cnt : supportedChannelCntSet) {
         OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, cnt);
-        if (OH_AudioCodec_Configure(audioEnc_, format) != AV_ERR_OK) {} //return
+        if (OH_AudioCodec_Configure(audioEnc_, format) != AV_ERR_OK) {}
         if (OH_AudioCodec_Reset(audioEnc_) != AV_ERR_OK) {}
     }
 }
@@ -272,7 +271,7 @@ void OHOS::AudioCodeCapiEncoderNdkTest::ChannelLayoutTest(map<OH_AudioChannelLay
     for (iter = supportedLayoutMap.begin(); iter != supportedLayoutMap.end(); iter++) {
         OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, iter->second);
         OH_AVFormat_SetLongValue(format, OH_MD_KEY_CHANNEL_LAYOUT, iter->first);
-        if (OH_AudioCodec_Configure(audioEnc_, format) != AV_ERR_OK) {} //return
+        if (OH_AudioCodec_Configure(audioEnc_, format) != AV_ERR_OK) {}
         if (OH_AudioCodec_Reset(audioEnc_) != AV_ERR_OK) {}
     }
 }
@@ -354,7 +353,7 @@ int32_t OHOS::AudioCodeCapiEncoderNdkTest::EncoderConfigureLCAAC()
     if (OH_AudioCodec_Destroy(audioEnc_) != AV_ERR_OK) {
         return OHOS::ERROR_DESTROY_FAILED;
     }
-    return AV_ERR_OK; //自加
+    return AV_ERR_OK;
 }
 /**
  * @tc.name   EncoderConfigureHEAAC

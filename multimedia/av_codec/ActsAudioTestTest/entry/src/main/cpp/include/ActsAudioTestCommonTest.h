@@ -15,7 +15,7 @@
 
 #ifndef ACTS_AUDIO_TEST_COMMON_TEST_H
 #define ACTS_AUDIO_TEST_COMMON_TEST_H
-// 以下是补充的必要头文件（标注：仅为编译所需的基础头文件，无业务逻辑）
+
 #include <fstream>
 #include <atomic>
 #include <mutex>
@@ -33,7 +33,6 @@
 #include <thread>
 #include <set>
 #include <cstdint>
-// 系统库头文件
 #include <multimedia/player_framework/native_avcapability.h>
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <multimedia/player_framework/native_avformat.h>
@@ -44,7 +43,6 @@
 #include <multimedia/player_framework/native_avcodec_audiocodec.h>
 
 namespace OHOS {
-// 常量定义（保持和原代码一致）
 constexpr uint32_t CHANNEL_COUNT = 2;
 constexpr uint32_t SAMPLE_RATE = 44100;
 constexpr int64_t BITS_RATE = 261000;
@@ -105,7 +103,7 @@ public:
     void ChannelLayoutTest(std::map<OH_AudioChannelLayout, int32_t> &supportedLayoutMap, int32_t profile);
     void ChannelCountTest(std::set<int32_t> &supportedChannelCntSet, int32_t profile);
     bool IsSupportHeAac();
-    // 声明
+
     int32_t EncoderConfigureLCAAC();
     int32_t EncoderConfigureHEAAC();
     int32_t EncoderConfigureHEAACv2();
