@@ -490,16 +490,16 @@ struct setBlanklessLoadingWithParamsTest {
               }
               case 'testSetBlanklessLoadingWithParams012': {
                 let msg = 'testSetBlanklessLoadingWithParams012'
-                let key_2049 =
-                  'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
+                let key2049 =
+                  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
                 try {
                   this.isPageEnd = -1
                   this.controller.loadUrl($rawfile('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
-                  webView.WebviewController.clearBlanklessLoadingCache([key_2049]);
-                  let infoOne = this.controller.getBlanklessInfoWithKey(key_2049);
-                  console.log(msg, `入参:${key_2049}`, `返回值:${JSON.stringify(infoOne)}`, `预期值：0`,
+                  webView.WebviewController.clearBlanklessLoadingCache([key2049]);
+                  let infoOne = this.controller.getBlanklessInfoWithKey(key2049);
+                  console.log(msg, `入参:${key2049}`, `返回值:${JSON.stringify(infoOne)}`, `预期值：0`,
                     `实际值${infoOne.errCode}`);
                   console.log(msg, 'getBlankless success');
                   let param: webview.BlanklessLoadingParam = {
@@ -512,7 +512,7 @@ struct setBlanklessLoadingWithParamsTest {
                         ` callback key: ${info.key} , state: ${info.state} timestamp: ${info.timestamp} reason: ${info.reason}`)
                     }
                   }
-                  let result = this.newController.setBlanklessLoadingWithParams(key_2049, param);
+                  let result = this.newController.setBlanklessLoadingWithParams(key2049, param);
                   console.log(msg + ` 实际值 result: ${result} 预期值 -2`);
                   if (result == webview.WebBlanklessErrorCode.ERR_INVALID_PARAM) {
                     Utils.emitEvent(result, 148620);
@@ -530,16 +530,16 @@ struct setBlanklessLoadingWithParamsTest {
               }
               case 'testSetBlanklessLoadingWithParams013': {
                 let msg = 'testSetBlanklessLoadingWithParams013'
-                let key_2048 =
+                let key2048 =
                   'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
                 try {
                   this.isPageEnd = -1
                   this.controller.loadUrl($rawfile('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
-                  webView.WebviewController.clearBlanklessLoadingCache([key_2048]);
-                  let infoOne = this.controller.getBlanklessInfoWithKey(key_2048);
-                  console.log(msg, `getBlanklessInfoWithKey 入参:${key_2048}`, `返回值:${JSON.stringify(infoOne)}`,
+                  webView.WebviewController.clearBlanklessLoadingCache([key2048]);
+                  let infoOne = this.controller.getBlanklessInfoWithKey(key2048);
+                  console.log(msg, `getBlanklessInfoWithKey 入参:${key2048}`, `返回值:${JSON.stringify(infoOne)}`,
                     `预期值：0`,
                     `实际值${infoOne.errCode}`);
                   console.log(msg, 'getBlankless infoOne success');
@@ -547,8 +547,8 @@ struct setBlanklessLoadingWithParamsTest {
                   this.controller.refresh();
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'second loadUrl finish');
-                  let infoTwo = this.controller.getBlanklessInfoWithKey(key_2048);
-                  console.log(msg, ` 2 getBlanklessInfoWithKey 入参:${key_2048}`, `返回值:${JSON.stringify(infoTwo)}`,
+                  let infoTwo = this.controller.getBlanklessInfoWithKey(key2048);
+                  console.log(msg, ` 2 getBlanklessInfoWithKey 入参:${key2048}`, `返回值:${JSON.stringify(infoTwo)}`,
                     `预期值：0`,
                     `实际值${infoTwo.errCode}`);
                   console.log(msg, 'getBlankless infoTwo success');
@@ -556,8 +556,8 @@ struct setBlanklessLoadingWithParamsTest {
                   this.controller.refresh();
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'third loadUrl finish');
-                  let infoThree = this.controller.getBlanklessInfoWithKey(key_2048);
-                  console.log(msg, ` 3 getBlanklessInfoWithKey 入参:${key_2048}`, `返回值:${JSON.stringify(infoThree)}`,
+                  let infoThree = this.controller.getBlanklessInfoWithKey(key2048);
+                  console.log(msg, ` 3 getBlanklessInfoWithKey 入参:${key2048}`, `返回值:${JSON.stringify(infoThree)}`,
                     `预期值：0`,
                     `实际值${infoThree.errCode}`);
                   console.log(msg, 'getBlankless infoThree success');
@@ -572,7 +572,7 @@ struct setBlanklessLoadingWithParamsTest {
                       console.log(msg + `callback 插帧成功`);
                     }
                   }
-                  let result = this.controller.setBlanklessLoadingWithParams(key_2048, param);
+                  let result = this.controller.setBlanklessLoadingWithParams(key2048, param);
                   console.log(msg + ` 实际值 result: ${result} 预期值 0`);
                   console.log(msg +
                     ` webview.WebBlanklessErrorCode.SUCCESS:  ${webview.WebBlanklessErrorCode.SUCCESS} `);
@@ -592,15 +592,15 @@ struct setBlanklessLoadingWithParamsTest {
               }
               case 'testSetBlanklessLoadingWithParams014': {
                 let msg = 'testSetBlanklessLoadingWithParams014'
-                let key_1 = 'y';
+                let key1 = 'y';
                 try {
                   this.isPageEnd = -1
                   this.controller.loadUrl($rawfile('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
-                  webView.WebviewController.clearBlanklessLoadingCache([key_1]);
-                  let infoOne = this.controller.getBlanklessInfoWithKey(key_1);
-                  console.log(msg, `getBlanklessInfoWithKey 入参:${key_1}`, `返回值:${JSON.stringify(infoOne)}`,
+                  webView.WebviewController.clearBlanklessLoadingCache([key1]);
+                  let infoOne = this.controller.getBlanklessInfoWithKey(key1);
+                  console.log(msg, `getBlanklessInfoWithKey 入参:${key1}`, `返回值:${JSON.stringify(infoOne)}`,
                     `预期值：0`,
                     `实际值${infoOne.errCode}`);
                   console.log(msg, 'getBlankless infoOne success');
@@ -608,8 +608,8 @@ struct setBlanklessLoadingWithParamsTest {
                   this.controller.refresh();
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'second loadUrl finish');
-                  let infoTwo = this.controller.getBlanklessInfoWithKey(key_1);
-                  console.log(msg, ` 2 getBlanklessInfoWithKey 入参:${key_1}`, `返回值:${JSON.stringify(infoTwo)}`,
+                  let infoTwo = this.controller.getBlanklessInfoWithKey(key1);
+                  console.log(msg, ` 2 getBlanklessInfoWithKey 入参:${key1}`, `返回值:${JSON.stringify(infoTwo)}`,
                     `预期值：0`,
                     `实际值${infoTwo.errCode}`);
                   console.log(msg, 'getBlankless infoTwo success');
@@ -617,8 +617,8 @@ struct setBlanklessLoadingWithParamsTest {
                   this.controller.refresh();
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'third loadUrl finish');
-                  let infoThree = this.controller.getBlanklessInfoWithKey(key_1);
-                  console.log(msg, ` 3 getBlanklessInfoWithKey 入参:${key_1}`, `返回值:${JSON.stringify(infoThree)}`,
+                  let infoThree = this.controller.getBlanklessInfoWithKey(key1);
+                  console.log(msg, ` 3 getBlanklessInfoWithKey 入参:${key1}`, `返回值:${JSON.stringify(infoThree)}`,
                     `预期值：0`,
                     `实际值${infoThree.errCode}`);
                   console.log(msg, 'getBlankless infoThree success');
@@ -633,7 +633,7 @@ struct setBlanklessLoadingWithParamsTest {
                       console.log(msg + `callback 插帧成功`);
                     }
                   }
-                  let result = this.controller.setBlanklessLoadingWithParams(key_1, param);
+                  let result = this.controller.setBlanklessLoadingWithParams(key1, param);
                   console.log(msg + ` 实际值 result: ${result} 预期值 0`);
                   console.log(msg +
                     ` webview.WebBlanklessErrorCode.SUCCESS:  ${webview.WebBlanklessErrorCode.SUCCESS} `);
@@ -653,7 +653,7 @@ struct setBlanklessLoadingWithParamsTest {
               }
               case 'testSetBlanklessLoadingWithParams015': {
                 let msg = 'testSetBlanklessLoadingWithParams015'
-                let key = '';
+                let key0 = '';
                 try {
                   let param: webview.BlanklessLoadingParam = {
                     enable: true,
@@ -666,7 +666,7 @@ struct setBlanklessLoadingWithParamsTest {
                       console.log(msg + `callback 插帧成功`);
                     }
                   }
-                  let result = this.controller.setBlanklessLoadingWithParams(key, param);
+                  let result = this.controller.setBlanklessLoadingWithParams(key0, param);
                   console.log(msg + ` 实际值 result: ${result} 预期值 -2`);
                   if (result == webview.WebBlanklessErrorCode.ERR_INVALID_PARAM) {
                     Utils.emitEvent(result, 148650);
