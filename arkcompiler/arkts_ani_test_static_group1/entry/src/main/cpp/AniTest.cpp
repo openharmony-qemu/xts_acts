@@ -886,7 +886,6 @@ static ani_status bindCase(ani_vm *vm, const char *clsName)
         std::cerr << "Not found '" << clsName << "'" << std::endl;
         return (ani_status)ANI_RES_INVALID_ARGS;
     }
-
     if (ANI_OK != env->Class_BindNativeMethods(cls, methods.data(), methods.size())) {
         std::cerr << "Cannot bind native methods to '" << clsName << "'" << std::endl;
         return (ani_status)ANI_RES_INVALID_TYPE;
