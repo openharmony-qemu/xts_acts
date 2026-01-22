@@ -21,7 +21,7 @@ export default function ActsAceCounterComponentTest() {
   describe('ActsAceCounterComponentTest', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/Counter/ActsAceCounterComponentTest",
+        url: "MainAbility/pages/counter/ActsAceCounterComponentTest",
       }
       try {
         router.clear();

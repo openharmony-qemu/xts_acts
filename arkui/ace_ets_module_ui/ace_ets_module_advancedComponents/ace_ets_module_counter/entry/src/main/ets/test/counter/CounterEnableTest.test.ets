@@ -22,19 +22,16 @@ import CommonFunc from '../../MainAbility/common/Common';
 export default function CounterEnableTest() {
 
   const SUITE: string = 'CounterEnable'
-  const waitUiReadyMs = 500;
-
-
   describe('CounterEnableTest', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/Counter/CounterEnable",
+        url: "MainAbility/pages/counter/CounterEnableTest",
       }
       try {
         router.clear();
         let pages: router.RouterState = router.getState();
         console.info("get CounterEnableTest state pages: " + JSON.stringify(pages));
-        if (pages == null || !("CounterEnable" == pages.name)) {
+        if (pages == null || !("CounterEnableTest" == pages.name)) {
           await router.pushUrl(options).then(() => {
             console.info(`${SUITE} router.pushUrl success`);
           }).catch((err: BusinessError) => {
