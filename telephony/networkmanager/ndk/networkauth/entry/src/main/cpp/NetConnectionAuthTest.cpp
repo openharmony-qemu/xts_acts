@@ -22,6 +22,7 @@
 #include <network/netstack/net_http_type.h>
 #include <network/netstack/net_websocket_type.h>
 #include <network/netstack/net_websocket.h>
+#include <hilog/log.h>
 
 #include "napi/native_api.h"
 #include <js_native_api_types.h>
@@ -428,9 +429,15 @@ static napi_value OHQueryTraceRoute(napi_env env, napi_callback_info info)
     char pacUrl[1024] = {0};
     size_t sizeT1;
     napi_get_value_string_utf8(env, args[0], pacUrl, DEFAULT_HOST_LEN, &sizeT1);
-    NetConn_TraceRouteInfo traceRouteInfo = {1, "WWWW.baidu.com", {1000, 1000, 1000, 1000}};
+    NetConn_TraceRouteInfo traceRouteInfo[30] = {};
     NetConn_TraceRouteOption traceoption = {30, NETCONN_PACKETS_UDP};
-    int res = OH_NetConn_QueryTraceRoute(pacUrl, &traceoption, &traceRouteInfo);
+    int res = OH_NetConn_QueryTraceRoute(pacUrl, &traceoption, traceRouteInfo);
+    for (int i = 0; i < 30; i++) {
+        OH_LOG_INFO(LOG_APP, "traceRouteInfo %{public}d: jumpNo = %{public}d", i + 1, traceRouteInfo[i].jumpNo);
+        OH_LOG_INFO(LOG_APP, "traceRouteInfo %{public}d: address = %{public}s", i + 1, traceRouteInfo[i].address);
+        OH_LOG_INFO(LOG_APP, "traceRouteInfo %{public}d: rtt = [%{public}u, %{public}u, %{public}u, %{public}u]", 
+        i + 1, traceRouteInfo[i].rtt[0], traceRouteInfo[i].rtt[1], traceRouteInfo[i].rtt[2], traceRouteInfo[i].rtt[3]);
+    }
     napi_value result = nullptr;
     napi_create_int32(env, res, &result);
     return result;
