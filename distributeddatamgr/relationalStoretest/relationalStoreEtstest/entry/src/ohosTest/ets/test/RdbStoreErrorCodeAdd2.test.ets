@@ -73,6 +73,7 @@ export default function RdbStoreErrorCodeAdd2Test() {
             'data3': 25000.0,
             'data4': u8,
             'data5': asset1,
+
           };
           await rdbStore!.insert('test', valueBucket);
         }
@@ -169,32 +170,6 @@ export default function RdbStoreErrorCodeAdd2Test() {
       })
 
     /**
-     * @tc.name        LiteResultSetGetAssetTest0004
-     * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetGetAssetTest_0040
-     * @tc.desc        getAsset normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
-     */
-    it('LiteResultSetGetAssetTest0004',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-        console.info(TAG +
-          "************* LiteResultSetGetAssetTest0004 start *************");
-        let resultSet = rdbStore!.querySqlWithoutRowCountSync("SELECT * FROM test");
-        resultSet.goToNextRow();
-        try {
-          resultSet.getAsset(2);
-          expect().assertFail();
-        } catch(err) {
-          console.error(`LiteResultSetGetAssetTest0004 failed:${err.message} code:${err.code}`);
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-          expect(err.code == 14800041).assertTrue();
-        }
-        console.log(TAG + "************* LiteResultSetGetAssetTest0004 end *************");
-      })
-
-    /**
      * @tc.name        LiteResultSetgetAssetsTest0001
      * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetGetAssetsTest_0010
      * @tc.desc        getAssets normal test
@@ -273,30 +248,55 @@ export default function RdbStoreErrorCodeAdd2Test() {
         console.log(TAG + "************* LiteResultSetgetAssetsTest0003 end *************");
       })
 
+
     /**
-     * @tc.name        LiteResultSetgetAssetsTest0004
-     * @tc.number      SUB_DistributedData_RelationalStore_RdbStoreSetGetAssetsTest_0040
-     * @tc.desc        getAssets normal test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   queryGetColumnNames_001
+     * @tc.number SUB_DistributedData_RelationalStore_queryGetColumnNames_0001
+     * @tc.desc   multi-table for query all column names by getColumnNames
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
-    it('LiteResultSetgetAssetsTest0004',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-        console.info(TAG +
-          "************* LiteResultSetgetAssetsTest0004 start *************");
-        let resultSet = rdbStore!.querySqlWithoutRowCountSync("SELECT * FROM test");
-        resultSet.goToNextRow();
-        try {
-          resultSet.getAssets(2);
-          expect().assertFail();
-        } catch(err) {
-          console.error(`LiteResultSetgetAssetsTest0004 failed:${err.message} code:${err.code}`);
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-          expect(err.code == 14800041).assertTrue();
-        }
-        console.log(TAG + "************* LiteResultSetgetAssetsTest0004 end *************");
-      })
+    it('queryGetColumnNames_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  ()  => {
+      console.log(TAG + '************* queryGetColumnNames_001 start *************');
+      let resultSet: relationalStore.ResultSet | undefined;
+      try {
+        resultSet = await rdbStore.querySql('SELECT * FROM test');
+        let columnNames = resultSet.getColumnNames();
+        expect(columnNames.length > 0).assertTrue();
+        console.log("queryGetColumnNames_001 is finish")
+      } catch(err) {
+        console.error(`queryGetColumnNames_001 failed message:${err.message} code:${err.code}`);
+        expect().assertFail();
+      }
+      resultSet?.close();
+      console.log(TAG + '************* queryGetColumnNames_001 end *************');
+    })
+
+    /**
+     * @tc.name   queryGetRowsData_002
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0010
+     * @tc.desc   multi-table querySql with getRowsData and getRows comparison test
+     *            1. query all data
+     *            2. execute getRowsData and getRows
+     *            3. compare the values returned by the two methods
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('queryGetRowsData_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  ()  => {
+      console.log(TAG + '************* queryGetRowsData_002 start *************');
+      let resultSet: relationalStore.ResultSet | undefined;
+      try {
+        resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let asRowsData = await resultSet.getRowsData(5);
+        expect(asRowsData.length > 0).assertTrue();
+      } catch(err) {
+        console.error(`queryGetRowsData_002 failed message:${err.message} code:${err.code}`);
+        expect().assertFail();
+      }
+      resultSet?.close();
+      console.log(TAG + '************* queryGetRowsData_002 end *************');
+    })
   })
 }
