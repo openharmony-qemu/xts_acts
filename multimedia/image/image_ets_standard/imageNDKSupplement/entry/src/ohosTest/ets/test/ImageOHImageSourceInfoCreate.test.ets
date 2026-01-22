@@ -46,7 +46,7 @@ export default function ImageOHImageSourceInfoCreate() {
     /**
      * @tc.number  SUB_IMAGE_SOURCE_INFO_CREATE_SUPP_001
      * @tc.name    SUB_IMAGE_SOURCE_INFO_CREATE_SUPP_001
-     * @tc.desc    OH_ImageSourceInfo_Create-EFFECT_SUCCESS
+     * @tc.desc    OH_ImageSourceInfo_Create-IMAGE_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -61,7 +61,7 @@ export default function ImageOHImageSourceInfoCreate() {
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_FORMAT_SUPP_001
      * @tc.name    SUB_IMAGE_NATIVE_GET_FORMAT_SUPP_001
-     * @tc.desc    OH_ImageNative_GetFormat-EFFECT_SUCCESS
+     * @tc.desc    OH_ImageNative_GetFormat-IMAGE_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -93,7 +93,7 @@ export default function ImageOHImageSourceInfoCreate() {
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_SUPP_001
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_SUPP_001
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-EFFECT_SUCCESS
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-IMAGE_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -121,6 +121,22 @@ export default function ImageOHImageSourceInfoCreate() {
       })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
+    });
+    /**
+     * @tc.number  SUB_IMAGE_NATIVE_GET_COLOR_SPACE_SUPP_001
+     * @tc.name    SUB_IMAGE_NATIVE_GET_COLOR_SPACE_SUPP_001
+     * @tc.desc    OH_IMAGE_NATIVE_GET_COLOR_SPACE-IMAGE_SUCCESS
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('SUB_IMAGE_NATIVE_GET_COLOR_SPACE_SUPP_001', Level.LEVEL0, async () => {
+      const testName = "SUB_IMAGE_NATIVE_GET_COLOR_SPACE_SUPP_001"
+      console.info(TAG, testName, 'Start',);
+      let result: number = testNapi.OHImageNativeGetColorSpaceTest(CASE_INDEX_1, (receiver: image.ImageReceiver) => {
+      })
+      console.info(TAG, testName, 'Success', JSON.stringify(result));
+      expect(result).assertEqual(EFFECT_SUCCESS);
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_COLOR_SPACE_SUPP_002

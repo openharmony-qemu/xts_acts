@@ -89,7 +89,12 @@ static Camera_PreviewOutput *previewOutput = nullptr;
 static Camera_PhotoOutput *photoOutput = nullptr;
 static Camera_CaptureSession *captureSession = nullptr;
 #define NEED_SLEEP_SECONDS 1
-
+#define IMAGE_WIDTH 320
+#define IMAGE_HEIGHT 480
+#define IMAGE_CAPACITY 2
+#define MAX_PATH_SIZE 1024
+#define UNSUPPORTED_CAMERA_FORMAT (-1)
+static constexpr int32_t NUM_0 = 0;
 static void CameraManagerStatusCallback(Camera_Manager *cameraManager, Camera_StatusInfo *status)
 {
     LOGI("CameraManagerStatusCallback is called");
@@ -399,6 +404,68 @@ napi_value OHImageNativeGetBufferDataTest(napi_env env, napi_callback_info info)
     LOGI("OH_ImageReceiverNative_On end");
     return result;
 }
+Image_ErrorCode InitReceiverOptions(OH_ImageReceiverOptions *&options)
+{
+    Image_ErrorCode errCode = OH_ImageReceiverOptions_Create(&options);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "InitReceiverOptions create image receiver options failed, errCode: %{public}d.",
+            errCode);
+        return IMAGE_BAD_PARAMETER;
+    }
+
+    Image_Size imgSize;
+    imgSize.width = IMAGE_WIDTH;
+    imgSize.height = IMAGE_HEIGHT;
+    errCode = OH_ImageReceiverOptions_SetSize(options, imgSize);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "InitReceiverOptions set image receiver options size failed, errCode: %{public}d.",
+            errCode);
+        OH_ImageReceiverOptions_Release(options);
+        return errCode;
+    }
+
+    errCode = OH_ImageReceiverOptions_SetCapacity(options, IMAGE_CAPACITY);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "InitReceiverOptions set image receiver options capacity failed, errCode: %{public}d.",
+            errCode);
+        OH_ImageReceiverOptions_Release(options);
+        return errCode;
+    }
+
+    Image_Size imgSizeRead;
+    errCode = OH_ImageReceiverOptions_GetSize(options, &imgSizeRead);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "InitReceiverOptions get image receiver options size failed, errCode: %{public}d.",
+            errCode);
+        OH_ImageReceiverOptions_Release(options);
+        return errCode;
+    }
+
+    if (imgSizeRead.width != IMAGE_WIDTH || imgSizeRead.height != IMAGE_HEIGHT) {
+        OH_LOG_ERROR(LOG_APP, "InitReceiverOptions get image receiver options size failed, width: %{public}d, height:\
+            %{public}d.", imgSizeRead.width, imgSizeRead.height);
+        OH_ImageReceiverOptions_Release(options);
+        return IMAGE_BAD_PARAMETER;
+    }
+
+    int32_t capacity = NUM_0;
+    errCode = OH_ImageReceiverOptions_GetCapacity(options, &capacity);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "InitReceiverOptions get image receiver options capacity failed, errCode: %{public}d.",
+            errCode);
+        OH_ImageReceiverOptions_Release(options);
+        return errCode;
+    }
+
+    if (capacity != IMAGE_CAPACITY) {
+        OH_LOG_ERROR(LOG_APP, "InitReceiverOptions get image receiver options capacity failed, capacity: %{public}d.",
+            capacity);
+        OH_ImageReceiverOptions_Release(options);
+        return IMAGE_BAD_PARAMETER;
+    }
+
+    return IMAGE_SUCCESS;
+}
 napi_value OHImageNativeGetColorSpaceTest(napi_env env, napi_callback_info info)
 {
     LOGI("OH_ImageReceiverNative_On start");
@@ -414,6 +481,8 @@ napi_value OHImageNativeGetColorSpaceTest(napi_env env, napi_callback_info info)
     napi_get_value_int32(env, argValue[0], &index);
     LOGI("get argValue %{public}d", index);
     OH_ImageReceiverOptions *options = nullptr;
+    Image_ErrorCode errCode = InitReceiverOptions(options);
+    LOGI("InitReceiverOptions is:%{public}d", errCode);
     OH_ImageReceiverOptions_Create(&options);
     OH_ImageReceiverNative *receiver = nullptr;
     OH_ImageReceiverNative_Create(options, &receiver);
@@ -423,7 +492,7 @@ napi_value OHImageNativeGetColorSpaceTest(napi_env env, napi_callback_info info)
     auto myImageReceiverCallback = [](OH_ImageReceiverNative *receiver) {
         LOGI("ImageReceiverNativeCTest buffer available.");
     };
-    Image_ErrorCode errCode = OH_ImageReceiverNative_On(receiver, myImageReceiverCallback);
+    errCode = OH_ImageReceiverNative_On(receiver, myImageReceiverCallback);
     std::string surfaceIDStr = std::to_string(surfaceId);
     const char *constCharPtr = surfaceIDStr.c_str();
     CreateAndOpenCamera();
@@ -432,7 +501,7 @@ napi_value OHImageNativeGetColorSpaceTest(napi_env env, napi_callback_info info)
     std::this_thread::sleep_for(std::chrono::seconds(NEED_SLEEP_SECONDS));
     OH_ImageNative *image = nullptr;
     int32_t colorSpaceName ;
-    errCode = OH_ImageReceiverNative_ReadLatestImage(receiver, &image);
+    errCode = OH_ImageReceiverNative_ReadNextImage(receiver, &image);
     if (errCode != IMAGE_SUCCESS) {
         LOGI("ImageReceiverNativeCTest get image receiver next image failed, errCode: %{public}d.", errCode);
     }
