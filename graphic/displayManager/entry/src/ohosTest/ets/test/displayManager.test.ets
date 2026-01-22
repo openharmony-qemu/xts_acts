@@ -3607,5 +3607,30 @@ export default function displayTest() {
       }
     });
 
+    /**
+     * @tc.name   testEnumCornerType
+     * @tc.number SUB_WMS_DMS_ENUM_CORNER_TYPE_0100
+     * @tc.desc   testEnumCornerType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEnumCornerType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testEnumCornerType ';
+      console.log(caseName + 'begin');
+      try {
+        console.info(caseName + ' display.CornerType: ' + JSON.stringify(display.CornerType));
+        expect(display.CornerType.TOP_LEFT).assertEqual(0);
+        expect(display.CornerType.TOP_RIGHT).assertEqual(1);
+        expect(display.CornerType.BOTTOM_RIGHT).assertEqual(2);
+        expect(display.CornerType.BOTTOM_LEFT).assertEqual(3);
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        expect().assertFail();
+        done()
+      }
+    });
+
   })
 }
