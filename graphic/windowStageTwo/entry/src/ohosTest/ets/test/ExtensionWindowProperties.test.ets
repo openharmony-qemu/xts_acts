@@ -824,6 +824,7 @@ export default function extensionWindowPropertiesTest() {
         try {
           subWindowClass = await windowStage.createSubWindow('testCreateSubWindowWithOptionsFollowTrue');
           await subWindowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentCreateSubWindowOptionsTruePage');
+          await subWindowClass.showWindow();
           await sleep(2000);
           // extensionWindow?.createSubWindowWithOptions
           let btn = await driver.findComponent(ON.id('createSubWindowWithOptionsTrue'))
@@ -890,6 +891,7 @@ export default function extensionWindowPropertiesTest() {
         try {
           subWindowClass = await windowStage.createSubWindow('testCreateSubWindowWithOptionsFollowFalse');
           await subWindowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentCreateSubWindowOptionsFalsePage');
+          await subWindowClass.showWindow();
           await sleep(2000);
           // extensionWindow?.createSubWindowWithOptions
           let btn = await driver.findComponent(ON.id('createSubWindowWithOptionsFalse'))
