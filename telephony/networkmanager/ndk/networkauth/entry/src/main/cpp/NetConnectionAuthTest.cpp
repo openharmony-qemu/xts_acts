@@ -48,6 +48,11 @@ static const uint32_t CASE_INDEX_7 = 7;
 static const uint32_t CASE_INDEX_8 = 8;
 static const uint32_t CLOSE_STATUS_NORMAL = 1000;
 static const uint32_t DEFAULT_HOST_LEN = 20;
+static const uint32_t ARRAY_INDEX_0 = 0;
+static const uint32_t ARRAY_INDEX_1 = 1;
+static const uint32_t ARRAY_INDEX_2 = 2;
+static const uint32_t ARRAY_INDEX_3 = 3;
+static const uint32_t MAX_ARRAY_LENGTH = 30;
 static int32_t g_sleepSecs = 1;
 static int32_t g_maxHeaderLen = 8192;
 static int32_t g_maxDataLength = (4 * 1024 * 1024);
@@ -440,8 +445,8 @@ static napi_value OHQueryTraceRoute(napi_env env, napi_callback_info info)
     for (int i = 0; i < 30; i++) {
         OH_LOG_INFO(LOG_APP, "traceRouteInfo %{public}d: jumpNo = %{public}d", i + 1, traceRouteInfo[i].jumpNo);
         OH_LOG_INFO(LOG_APP, "traceRouteInfo %{public}d: address = %{public}s", i + 1, traceRouteInfo[i].address);
-        OH_LOG_INFO(LOG_APP, "traceRouteInfo %{public}d: rtt = [%{public}u, %{public}u, %{public}u, %{public}u]", 
-        i + 1, traceRouteInfo[i].rtt[0], traceRouteInfo[i].rtt[1], traceRouteInfo[i].rtt[2], traceRouteInfo[i].rtt[3]);
+        OH_LOG_INFO(LOG_APP, "traceRouteInfo %{public}d: rtt = [%{public}u, %{public}u, %{public}u, %{public}u]", i + 1, 
+            traceRouteInfo[i].rtt[ARRAY_INDEX_0], traceRouteInfo[i].rtt[ARRAY_INDEX_1], traceRouteInfo[i].rtt[ARRAY_INDEX_2], traceRouteInfo[i].rtt[ARRAY_INDEX_3]);
     }
     napi_value result = nullptr;
     napi_create_int32(env, res, &result);
