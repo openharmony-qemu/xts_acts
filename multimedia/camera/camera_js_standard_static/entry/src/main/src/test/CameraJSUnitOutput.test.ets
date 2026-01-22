@@ -2238,6 +2238,7 @@ export default function cameraJSUnitOutput() {
           let mainImage: image.Image | image.Picture = CapturePhoto.main;
           console.info(tag + ' succeed to listen photoAvailable on for CapturePhoto.');
           expect(isEmpty25(mainImage)).assertFalse();
+          CapturePhoto.release();
         });
       } catch (err: BusinessError) {
         hilog.error(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_PHOTO_AVAILABLE_STATIC_0200 FAILED! ERRORCODE: " + err.code);
@@ -2401,6 +2402,7 @@ export default function cameraJSUnitOutput() {
           let mainImage: image.Image | image.Picture = CapturePhoto.main;
           console.info(tag + ' succeed to listen photoAvailable off for CapturePhoto.');
           expect(isEmpty25(mainImage)).assertFalse();
+          CapturePhoto.release();
         })
       } catch (err : BusinessError) {
         hilog.error(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_AVAILABLE_STATIC_0200 FAILED! ERRORCODE: " + err.code);
