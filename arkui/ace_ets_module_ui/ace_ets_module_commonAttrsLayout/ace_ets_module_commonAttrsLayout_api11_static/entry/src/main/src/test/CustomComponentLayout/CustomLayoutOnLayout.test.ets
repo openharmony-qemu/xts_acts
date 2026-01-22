@@ -34,17 +34,10 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function CustomLayoutOnLayoutTest() {
 
-
-  await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-
-
-  let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-  const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-
   describe('CustomLayoutOnLayoutTest', () => {
     beforeAll(() => {
       console.info("CustomLayoutOnLayoutTest beforeAll start");
-
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
     beforeEach(() => {
       console.info("CustomLayoutOnLayoutTest beforeEach start");
@@ -80,6 +73,8 @@ export default function CustomLayoutOnLayoutTest() {
      */
 it('CustomLayoutOnLayoutTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[CustomLayoutOnLayoutTest_0010] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
 
       let text_1: RectValue = CommonFunc.getComponentRect('CustomLayoutOnLayoutText_1') as RectValue;

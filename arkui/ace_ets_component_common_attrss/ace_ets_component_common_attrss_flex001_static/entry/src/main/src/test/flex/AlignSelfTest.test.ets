@@ -39,9 +39,8 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 export default function alignSelfTest() {
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.001.test.static", "EntryAbility")
-  
-  const uiContext = AppStorage.get<UIContext>('uiContext')!;
+
+
   let supportView = [
     'AlphabetIndexer',
     'Button',
@@ -180,7 +179,7 @@ export default function alignSelfTest() {
   describe('AlignSelfTest', () => {
     beforeAll(() => {
       console.info("AlignSelfTest beforeEach start");
-
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.001.test.static", "EntryAbility")
     });
     
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues,

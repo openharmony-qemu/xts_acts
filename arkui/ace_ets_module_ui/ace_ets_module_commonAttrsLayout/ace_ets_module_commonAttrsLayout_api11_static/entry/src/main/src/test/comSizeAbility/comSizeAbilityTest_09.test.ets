@@ -37,15 +37,9 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function comSizeAbilityTest_09() {
   describe('comSizeAbilityTest_09', () => {
-
-
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
     beforeAll(() => {
       console.info("comSizeAbilityTest_09 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
     beforeEach(() => {
       console.info("comSizeAbilityTest_09 beforeEach start")
@@ -78,6 +72,8 @@ export default function comSizeAbilityTest_09() {
      */
 it('comSizeAbilityTestJsunit_static_25', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_25 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Panel_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Panel_Father");

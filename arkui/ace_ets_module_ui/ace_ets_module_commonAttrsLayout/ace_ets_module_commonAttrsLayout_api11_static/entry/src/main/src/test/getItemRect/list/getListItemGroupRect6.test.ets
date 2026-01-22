@@ -79,6 +79,7 @@ export default function getListItemGroupRect6() {
 it('getListItemGroupRect6_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect6_static_0100] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Int> = AppStorage.get<MessageManager<Int>>("messageManager")!
       message.notify({ name: 'index', value: 0 });
       message.notify({ name: 'indexInGroup', value: -1 });

@@ -37,15 +37,9 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function comSizeAbilityTest_11() {
   describe('comSizeAbilityTest_11', () => {
-
-
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
     beforeAll(() => {
       console.info("comSizeAbilityTest_11 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
     beforeEach(() => {
       console.info("comSizeAbilityTest_11 beforeEach start")
@@ -78,6 +72,8 @@ export default function comSizeAbilityTest_11() {
      */
 it('comSizeAbilityTestJsunit_static_29', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_29 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("QRCode_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("QRCode_Father");
@@ -138,6 +134,8 @@ it('comSizeAbilityTestJsunit_static_29', Level.LEVEL0, async (done: () => void):
      */
 it('comSizeAbilityTestJsunit_static_30', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_30 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Radio_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Radio_Father");

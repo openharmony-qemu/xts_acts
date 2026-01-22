@@ -39,13 +39,10 @@ export default function getListItemGroupRect1() {
   describe('getListItemGroupRect1', () => {
 
 
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
 
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
     beforeAll(() => {
       console.info("getListItemGroupRect1 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
     beforeEach(() => {
       console.info("getListItemGroupRect1 beforeEach start");
@@ -90,6 +87,7 @@ export default function getListItemGroupRect1() {
 it('getListItemGroupRect1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect1_static_0100] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'indexInGroup', value: 0.0 })
@@ -152,6 +150,7 @@ it('getListItemGroupRect1_static_0100', Level.LEVEL0, async (done: () => void): 
 it('getListItemGroupRect1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect1_static_0200] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'indexInGroup', value: 1.0 })
@@ -215,6 +214,7 @@ it('getListItemGroupRect1_static_0200', Level.LEVEL0, async (done: () => void): 
 it('getListItemGroupRect1_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect1_static_0300] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'indexInGroup', value: -1.0 })
@@ -266,6 +266,7 @@ it('getListItemGroupRect1_static_0300', Level.LEVEL0, async (done: () => void): 
 it('getListItemGroupRect1_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect1_static_0300] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'indexInGroup', value: 0.0 })
@@ -323,6 +324,7 @@ it('getListItemGroupRect1_static_0400', Level.LEVEL0, async (done: () => void): 
 it('getListItemGroupRect1_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect1_static_0500] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'indexInGroup', value: 100.0 })
@@ -375,6 +377,7 @@ it('getListItemGroupRect1_static_0500', Level.LEVEL0, async (done: () => void): 
 it('getListItemGroupRect1_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect1_static_0600] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
       message.notify({ name: 'index', value: 1 })
       message.notify({ name: 'indexInGroup', value: 0.0 })
@@ -427,6 +430,7 @@ it('getListItemGroupRect1_static_0600', Level.LEVEL0, async (done: () => void): 
 it('getListItemGroupRect1_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect1_static_0700] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'indexInGroup', value: 1.0 })
@@ -490,6 +494,7 @@ it('getListItemGroupRect1_static_0700', Level.LEVEL0, async (done: () => void): 
 it('getListItemGroupRect1_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect1_static_0800] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'indexInGroup', value: 0.0 })
@@ -552,6 +557,7 @@ it('getListItemGroupRect1_static_0800', Level.LEVEL0, async (done: () => void): 
 it('getListItemGroupRect1_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect1_static_0900] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'indexInGroup', value: 0.0 })

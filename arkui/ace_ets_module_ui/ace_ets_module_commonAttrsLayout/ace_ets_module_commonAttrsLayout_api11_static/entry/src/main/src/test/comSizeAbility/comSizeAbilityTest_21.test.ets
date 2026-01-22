@@ -39,13 +39,10 @@ export default function comSizeAbilityTest_21() {
   describe('comSizeAbilityTest_21', () => {
 
 
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
 
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
     beforeAll(() => {
       console.info("comSizeAbilityTest_21 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
     beforeEach(() => {
       console.info("comSizeAbilityTest_21 beforeEach start")
@@ -78,6 +75,8 @@ export default function comSizeAbilityTest_21() {
 it('comSizeAbilityTestJsunit_static_54', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_54 START')
       await CommonFunc.sleep(1000);
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("RemoteWindow_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("RemoteWindow_Father");
       let Size = modePosition.size

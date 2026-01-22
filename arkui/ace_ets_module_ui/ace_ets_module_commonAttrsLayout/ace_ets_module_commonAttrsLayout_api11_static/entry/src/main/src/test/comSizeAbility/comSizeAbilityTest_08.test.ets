@@ -37,15 +37,9 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function comSizeAbilityTest_08() {
   describe('comSizeAbilityTest_08', () => {
-
-
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
     beforeAll(() => {
       console.info("comSizeAbilityTest_08 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
     beforeEach(() => {
       console.info("comSizeAbilityTest_08 beforeEach start")
@@ -76,6 +70,8 @@ export default function comSizeAbilityTest_08() {
      */
 it('comSizeAbilityTestJsunit_static_23', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_23 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Navigation_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Navigation_Father");
@@ -136,6 +132,8 @@ it('comSizeAbilityTestJsunit_static_23', Level.LEVEL0, async (done: () => void):
      */
 it('comSizeAbilityTestJsunit_static_24', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_24 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("NavRouter_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("NavRouter_Father");

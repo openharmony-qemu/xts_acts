@@ -37,14 +37,6 @@ interface Attrs{
  * Test of common attribute: width
  */
 export default function widthTest() {
-  console.info("widthTest beforeEach start");
-  await UtilsTest.msSleep(4000)
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
-
-  console.info("WidthTest beforeEach start 111111111111");
-  let uiContext = AppStorage.get<UIContext>('uiContext')!
-  console.info("WidthTest beforeEach start 2222222222");
 
   //A list of components that support width attributes is required.
   let supportView = new Array<string>(
@@ -124,7 +116,7 @@ export default function widthTest() {
     },
     expectValue: {
       widthCompare: '400.00vp',
-      width: uiContext.vp2px(400), ExceedParent: true
+      width: 400, ExceedParent: true
     }
   }, {
     describe: 'StringPercent',
@@ -133,7 +125,7 @@ export default function widthTest() {
     },
     expectValue: {
       widthCompare: '50.00%',
-      width: uiContext.vp2px(parentWidth) * 0.5
+      width: 150
     }
   }, {
     describe: 'Resource',
@@ -142,7 +134,7 @@ export default function widthTest() {
     },
     expectValue: {
       widthCompare: '200.00vp',
-      width: uiContext.vp2px(200)
+      width: 200
     }
   }, {
     describe: 'StringPx',
@@ -161,12 +153,20 @@ export default function widthTest() {
   describe('WidthTest', () => {
     beforeAll(() => {
       console.info("UseSizeTypeTest beforeEach start");
-      
-
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });
 
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+      if(data.testValue.describe == "ExceedParent"){
+        data.testValue.expectValue.width = UIContext.resolveUIContext()!.vp2px(400)
+      }
+      if(data.testValue.describe == "StringPercent"){
+        data.testValue.expectValue.width = UIContext.resolveUIContext()!.vp2px(300) * 0.5
+      }
+      if(data.testValue.describe == "Resource"){
+        data.testValue.expectValue.width = UIContext.resolveUIContext()!.vp2px(200)
+      }
       // AppStorage.setOrCreate<Length>('_width', data.testValue.setValue.width)
       //Obtain dimensional information for reference components.
       let rect: RectValue = Utils.getComponentRect(data.pageConfig.componentKey??'');

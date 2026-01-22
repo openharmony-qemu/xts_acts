@@ -38,13 +38,10 @@ export default function getListItemGroupRect5() {
   describe('getListItemGroupRect5', () => {
 
 
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
 
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
     beforeAll(() => {
       console.info("getListItemGroupRect5 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
     beforeEach(() => {
       console.info("getListItemGroupRect5 beforeEach start");
@@ -81,6 +78,7 @@ export default function getListItemGroupRect5() {
 it('getListItemGroupRect5_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect5_static_0100] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Int> = AppStorage.get<MessageManager<Int>>("messageManagerInt")!
       message.notify({ name: 'index', value: 0 as Int })
       message.notify({ name: 'indexInGroup', value: 0 as Int })
@@ -144,6 +142,7 @@ it('getListItemGroupRect5_static_0100', Level.LEVEL0, async (done: () => void): 
 it('getListItemGroupRect5_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect5_static_0200] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message3: MessageManager<Int> = AppStorage.get<MessageManager<Int>>("messageManagerInt")!
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
       const message1: MessageManager<Axis> = AppStorage.get<MessageManager<Axis>>("messageManagerAxis")!

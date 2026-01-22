@@ -39,13 +39,10 @@ export default function comSizeAbilityTest_26() {
   describe('comSizeAbilityTest_26', () => {
 
 
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
 
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
     beforeAll(() => {
       console.info("comSizeAbilityTest_26 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
     beforeEach(() => {
       console.info("comSizeAbilityTest_26 beforeEach start")
@@ -76,6 +73,8 @@ export default function comSizeAbilityTest_26() {
      */
 it('comSizeAbilityTestJsunit_static_59', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_59 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("RichEditorSpan_localOffset");
       let Size = modePosition.size

@@ -38,13 +38,10 @@ export default function getListItemRect1() {
   describe('getListItemRect1', () => {
 
 
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
 
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
     beforeAll(() => {
       console.info("getListItemRect1 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
     beforeEach(() => {
       console.info("getListItemRect1 beforeEach start");
@@ -89,6 +86,7 @@ export default function getListItemRect1() {
 it('getListItemRect1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect1_static_0100] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
       await CommonFunc.sleep(1000);
@@ -147,6 +145,7 @@ it('getListItemRect1_static_0100', Level.LEVEL0, async (done: () => void): Promi
 it('getListItemRect1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect1_static_0200] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       message.notify({ name: 'index', value: 1 })
       await CommonFunc.sleep(1000);
@@ -206,6 +205,7 @@ it('getListItemRect1_static_0200', Level.LEVEL0, async (done: () => void): Promi
 it('getListItemRect1_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect1_static_0300] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       message.notify({ name: 'index', value: -1 })
       await CommonFunc.sleep(1000);
@@ -258,6 +258,7 @@ it('getListItemRect1_static_0300', Level.LEVEL0, async (done: () => void): Promi
 it('getListItemRect1_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect1_static_0400] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
       await CommonFunc.sleep(1000);
@@ -314,6 +315,7 @@ it('getListItemRect1_static_0400', Level.LEVEL0, async (done: () => void): Promi
 it('getListItemRect1_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect1_static_0500] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       message.notify({ name: 'index', value: 100 })
       await CommonFunc.sleep(1000);
@@ -364,6 +366,7 @@ it('getListItemRect1_static_0500', Level.LEVEL0, async (done: () => void): Promi
      */
 it('getListItemRect1_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[getListItemRect1_static_0600] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'padding1', value: 20.0 })
@@ -420,6 +423,7 @@ it('getListItemRect1_static_0600', Level.LEVEL0, async (done: () => void): Promi
      */
 it('getListItemRect1_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[getListItemRect1_static_0700] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'margin1', value: 20.0 })

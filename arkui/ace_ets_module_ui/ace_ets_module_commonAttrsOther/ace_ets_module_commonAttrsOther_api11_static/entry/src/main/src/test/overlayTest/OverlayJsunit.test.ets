@@ -48,7 +48,6 @@ let domain: number = 0x0000;
 let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-const uiContext = new UIContext();
 
 
 export default function overLayJsunit() {

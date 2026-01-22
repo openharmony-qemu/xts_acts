@@ -44,11 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function marginLengthTest() {
 
-  
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-  
 
-  const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
 
   let childWidth = 100;
   let childHeight = 50;
@@ -139,10 +135,10 @@ export default function marginLengthTest() {
       },
       expectValue: {
         margin: '50.00vp',
-        top: uiContext.vp2px(50),
-        right: uiContext.vp2px(50),
-        bottom: uiContext.vp2px(50),
-        left: uiContext.vp2px(50)
+        top: 50,
+        right: 50,
+        bottom: 50,
+        left: 50
       }
     },
     {
@@ -165,10 +161,10 @@ export default function marginLengthTest() {
       },
       expectValue: {
         margin: '50.00vp',
-        top: uiContext.vp2px(50),
-        right: uiContext.vp2px(50),
-        bottom: uiContext.vp2px(50),
-        left: uiContext.vp2px(50)
+        top: 50,
+        right: 50,
+        bottom: 50,
+        left: 50
       }
     }
   ]
@@ -176,9 +172,23 @@ export default function marginLengthTest() {
   describe('MarginLengthTest', () => {
     beforeAll(() => {
       console.info("marginLengthTest beforeAll start");
-
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+
+      if(data.testValue.describe == "SetNumber"){
+        data.testValue.expectValue.top = UIContext.resolveUIContext()!.vp2px(50)
+        data.testValue.expectValue.right = UIContext.resolveUIContext()!.vp2px(50)
+        data.testValue.expectValue.bottom = UIContext.resolveUIContext()!.vp2px(50)
+        data.testValue.expectValue.left = UIContext.resolveUIContext()!.vp2px(50)
+      }
+      if(data.testValue.describe == "SetResource"){
+        data.testValue.expectValue.top = UIContext.resolveUIContext()!.vp2px(50)
+        data.testValue.expectValue.right = UIContext.resolveUIContext()!.vp2px(50)
+        data.testValue.expectValue.bottom = UIContext.resolveUIContext()!.vp2px(50)
+        data.testValue.expectValue.left = UIContext.resolveUIContext()!.vp2px(50)
+      }
+
       //component
       let rect = Utils.getComponentRect(data.pageConfig.componentKey ?? '');
       console.log('rect========' + JSON.stringify(rect))

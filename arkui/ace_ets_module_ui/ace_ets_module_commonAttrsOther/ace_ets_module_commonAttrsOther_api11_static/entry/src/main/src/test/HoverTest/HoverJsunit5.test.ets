@@ -47,16 +47,12 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function HoverJsunit5() {
 
-  console.info("HoverJsunit5 beforeAll start");
-  
-  await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
-  
 
-  let uiContext = AppStorage.get<UIContext>('uiContent')!;
 
   describe('HoverJsunit5', () => {
     beforeAll(() => {
-
+      console.info("HoverJsunit5 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
     });
 
     beforeEach(async (): Promise<void> => {
@@ -96,6 +92,7 @@ export default function HoverJsunit5() {
 it('HoverJsunit_static_0102', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('HoverJsunit_0200 START');
+      let uiContext = AppStorage.get<UIContext>('uiContent')!;
       let driver = Driver.create()
       await CommonFunc.sleep(500);
       await driver.mouseMoveTo({
@@ -124,6 +121,7 @@ it('HoverJsunit_static_0102', Level.LEVEL0, async (done: () => void): Promise<vo
 it('HoverJsunit_static_0202', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('HoverJsunit_0200 START');
+      let uiContext = AppStorage.get<UIContext>('uiContent')!;
       let driver = Driver.create()
       let buttonCl = await driver.findComponent(ON.id('columnBB'));
       await CommonFunc.sleep(1000);
@@ -155,6 +153,7 @@ it('HoverJsunit_static_0202', Level.LEVEL0, async (done: () => void): Promise<vo
 it('HoverJsunit_static_0302', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('HoverJsunit_0300 START');
+      let uiContext = AppStorage.get<UIContext>('uiContent')!;
       let driver = Driver.create()
       let buttonCl = await driver.findComponent(ON.id('columnBB'));
       await CommonFunc.sleep(1000);

@@ -48,17 +48,10 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 export default function common_ts_ets_apiStaticClearJsunit() {
-
-  console.info("common_ts_ets_apiStaticClearJsunit beforeAll start");
-  
-  await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
-  
-
-  const uiContext = AppStorage.get<UIContext>('uiContent')!;
-
   describe('common_ts_ets_apiStaticClearTest', () => {
     beforeAll(() => {
-
+      console.info("common_ts_ets_apiStaticClearJsunit beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
     });
 
     beforeEach(async (): Promise<void> => {
@@ -159,6 +152,7 @@ it('testcommon_ts_ets_apiEnvProp_static_0001', Level.LEVEL2, async () => {
      */
 it('test_font_registerFont__static_0001', Level.LEVEL2, async () => {
       console.info('test_font_registerFont_0001 Register a customized font in the FontManagerSTART');
+      const uiContext = AppStorage.get<UIContext>('uiContent')!;
       await Utils.sleep(2000);
 
       let fontOptions: font.FontOptions = {

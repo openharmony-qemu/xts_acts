@@ -37,7 +37,8 @@ interface Attrs{
 }
 
 export default function aspectRatioHeightTest() {
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+
+
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
     'AlphabetIndexer',
@@ -78,6 +79,7 @@ export default function aspectRatioHeightTest() {
     'GridItem',
     'List',
     // 'ListItem',
+    'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',
@@ -107,7 +109,6 @@ export default function aspectRatioHeightTest() {
     parentWidth: parentWidth,
     parentHeight: parentHeight
   }
-
   //Test content and expected results
   let testValues: TestValue[] = [
     {
@@ -118,7 +119,7 @@ export default function aspectRatioHeightTest() {
     },
     expectValue: {
       height: '100.00vp',
-      heightValue: AppStorage.get<UIContext>('uiContext')!.vp2px(100),
+      heightValue: 100,
       aspectRatio: 2.0
     }
   },
@@ -130,14 +131,16 @@ export default function aspectRatioHeightTest() {
     },
     expectValue: {
       height: '150.00vp',
-      heightValue: AppStorage.get<UIContext>('uiContext')!.vp2px(150),
+      heightValue: 150,
       aspectRatio: 0.5
     }
   }]
 
+
   describe('AspectRatioHeightTest', () => {
     beforeAll(() => {
       console.info("aspectRatioHeightTest beforeAll start");
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });
 
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
@@ -150,6 +153,13 @@ export default function aspectRatioHeightTest() {
       let targetRectHeight = targetRect.bottom - targetRect.top;
       let targetRectAspectRatio = targetRectWidth / targetRectHeight;
       let attrs = data.viewObj
+      if(data.testValue.describe == "SetNumber"){
+        data.testValue.expectValue.heightValue = UIContext.resolveUIContext()!.vp2px(100)
+      }
+      if(data.testValue.describe == "SetDecimal"){
+        data.testValue.expectValue.heightValue = UIContext.resolveUIContext()!.vp2px(150)
+      }
+      
       console.info('[' + data.caseTag + '] data.viewObj.$attrs.height is:' + attrs?.getElement('$attrs').getString('height'));
       console.info('[' + data.caseTag + '] data.viewObj.$attrs.aspectRatio is:' + attrs?.getElement('$attrs').getDouble('aspectRatio'));
 

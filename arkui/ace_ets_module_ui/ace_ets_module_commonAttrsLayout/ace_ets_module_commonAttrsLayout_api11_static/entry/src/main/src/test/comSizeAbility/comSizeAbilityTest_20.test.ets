@@ -39,13 +39,10 @@ export default function comSizeAbilityTest_20() {
   describe('comSizeAbilityTest_20', () => {
 
 
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
 
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
     beforeAll(() => {
       console.info("comSizeAbilityTest_20 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
     beforeEach(() => {
       console.info("comSizeAbilityTest_20 beforeEach start")
@@ -70,7 +67,7 @@ export default function comSizeAbilityTest_20() {
     })
     // 52 FormComponent
 
-    
+
     /**
      * @tc.number   comSizeAbilityTestJsunit_static_53
      * @tc.name     comSizeAbilityTestJsunit_static_53
@@ -80,6 +77,8 @@ export default function comSizeAbilityTest_20() {
 it('comSizeAbilityTestJsunit_static_53', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_53 START')
       await CommonFunc.sleep(1000);
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("FormLink_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("FormLink_Father");
       let Size = modePosition.size

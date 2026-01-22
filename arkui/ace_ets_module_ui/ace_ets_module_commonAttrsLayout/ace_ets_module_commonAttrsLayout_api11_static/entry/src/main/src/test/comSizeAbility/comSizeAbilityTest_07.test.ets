@@ -40,13 +40,9 @@ export default function comSizeAbilityTest_07() {
 
     console.info("comSizeAbilityTest_07 beforeAll start");
 
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
 
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
     beforeAll(() => {
-
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
     beforeEach(() => {
       console.info("comSizeAbilityTest_07 beforeEach start")
@@ -68,15 +64,17 @@ export default function comSizeAbilityTest_07() {
       }
     })
 
-    
+
     /**
      * @tc.number   comSizeAbilityTestJsunit_static_20
      * @tc.name     comSizeAbilityTestJsunit_static_20
      * @tc.desc     comSizeAbilityTestJsunit_static_20
      * @tc.level    Level.LEVEL0
      */
-it('comSizeAbilityTestJsunit_static_20', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('comSizeAbilityTestJsunit_static_20', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_20 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       if (AppStorage.get<number>("winLeft") == 0) {
         let driver = Driver.create();
@@ -117,15 +115,17 @@ it('comSizeAbilityTestJsunit_static_20', Level.LEVEL0, async (done: () => void):
       done()
     })
 
-    
+
     /**
      * @tc.number   comSizeAbilityTestJsunit_static_21
      * @tc.name     comSizeAbilityTestJsunit_static_21
      * @tc.desc     comSizeAbilityTestJsunit_static_21
      * @tc.level    Level.LEVEL0
      */
-it('comSizeAbilityTestJsunit_static_21', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('comSizeAbilityTestJsunit_static_21', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_21 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       if (AppStorage.get<number>("winLeft") == 0) {
         let driver = Driver.create();
@@ -173,15 +173,17 @@ it('comSizeAbilityTestJsunit_static_21', Level.LEVEL0, async (done: () => void):
       done()
     })
 
-    
+
     /**
      * @tc.number   comSizeAbilityTestJsunit_static_22
      * @tc.name     comSizeAbilityTestJsunit_static_22
      * @tc.desc     comSizeAbilityTestJsunit_static_22
      * @tc.level    Level.LEVEL0
      */
-it('comSizeAbilityTestJsunit_static_22', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('comSizeAbilityTestJsunit_static_22', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_22 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       if (AppStorage.get<number>("winLeft") == 0) {
         let driver = Driver.create();
