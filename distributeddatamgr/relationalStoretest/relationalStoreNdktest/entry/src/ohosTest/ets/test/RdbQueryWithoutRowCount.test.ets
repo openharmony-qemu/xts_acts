@@ -1,4 +1,4 @@
-import testndk from 'libentry.so';
+import testndk from 'librdbQuery.so';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium";
 let TAG = '[testLog-ets]';
 export default function abilityTest() {
