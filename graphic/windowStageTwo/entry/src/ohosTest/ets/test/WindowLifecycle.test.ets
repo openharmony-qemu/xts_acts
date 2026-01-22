@@ -3317,6 +3317,7 @@ export default function WindowLifecycle() {
         const callback = async (res: window.WindowEventType) => {
           console.log(caseName + ' windowEvent callback res: ' + res)
           expect(res).assertEqual(window.WindowEventType.WINDOW_SHOWN);
+          mainWindow.off('windowEvent', callback)
           await subWindowClass?.destroyWindow();
           done()
         }
@@ -3378,6 +3379,7 @@ export default function WindowLifecycle() {
         const callback = async (res: window.WindowEventType) => {
           console.log(caseName + ' windowEvent callback res: ' + res)
           expect(res).assertEqual(window.WindowEventType.WINDOW_SHOWN);
+          mainWindow.off('windowEvent', callback)
           await subWindowClass?.destroyWindow();
           done()
         }

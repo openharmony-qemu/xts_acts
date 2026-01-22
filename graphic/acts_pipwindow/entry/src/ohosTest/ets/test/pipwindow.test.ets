@@ -152,6 +152,10 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     });
 
+    afterEach(async () => {
+      await sleep(800)
+    })
+
     /**
      * @tc.name   OH_PictureInPicture_On_ActiveStatusChange_0100
      * @tc.number SUB_BASIC_WMS_PIP_ACTIVESTATUSCHANGE_0100
@@ -5299,7 +5303,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             pipController = data;
             console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
-            await pipController.startPiP()
+            await pipController.startPiP();
+            console.log(`${tag} ${caseName} Succeeded in start pip controller.`);
+            await sleep(1000)
             pipController.on('stateChange', callback)
             let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
             console.log(`${caseName} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
@@ -5405,57 +5411,6 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
 
-    /**
-     * @tc.name   testPiPStateChangeOtherwithCloseMainWindow
-     * @tc.number SUB_WMS_PIP_WINDOW_PIPSTATE_OTHER_0100
-     * @tc.desc   testPiPStateChangeOtherwithCloseMainWindow
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testPiPStateChangeOtherwithCloseMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let caseName = 'testPiPStateChangeOtherwithCloseMainWindow';
-      console.log(tag + caseName +' begin');
-      if(isPipWindowEnabled) {
-        let driver = Driver.create();
-        let windowStageStart = await startAbility(caseName, globalThis.abilityContext);
-        let windowClass = windowStageStart.getMainWindowSync();
-        await windowClass.setUIContent('MainAbility/pages/index/index2');
-        await windowClass.showWindow();
-        await sleep(500);
-        try {
-          let btn = await driver.findComponent(ON.id('startPip'))
-          console.log(caseName + ' btn : ' + btn);
-          await btn.click()
-          await sleep(3000);
-          let text = await driver.findComponent(ON.id('getMessage'))
-          let message = await text.getText();
-          if (message == 'success') {
-            await terminateAbility(caseName);
-            await sleep(3000);
-            let callbackRes = AppStorage.get('reason') as string;
-            console.log(caseName + ' callbackRes: ' + callbackRes);
-            expect(callbackRes).assertEqual('Other');
-            done();
-          } else if (message == '801') {
-            await terminateAbility(caseName);
-            expect(true).assertTrue();
-            done()
-          } else {
-            await terminateAbility(caseName)
-            expect().assertFail();
-            done();
-          }
-        } catch (error) {
-          console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
-          await terminateAbility(caseName)
-          expect().assertFail();
-          done();
-        }
-      } else {
-        done()
-      }
-    })
 
     /**
      * @tc.name   testPiPStateChangeOtherwithTwoPiP

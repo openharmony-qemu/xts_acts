@@ -3349,6 +3349,7 @@ export default function displayTest() {
           console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
           console.info(caseName + ' roundedCorner length: ' + JSON.stringify(roundedCorner.length));
           expect(roundedCorner.length).assertEqual(0);
+          await display.destroyVirtualScreen(displayId);
           done();
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));

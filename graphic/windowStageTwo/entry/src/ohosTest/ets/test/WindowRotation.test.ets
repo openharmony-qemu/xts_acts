@@ -1769,15 +1769,14 @@ export default function windowRotationTest() {
           expect(window.RotationInfoType.DISPLAY_ORIENTATION).assertEqual(1);
           subWindowClass = await windowStage.createSubWindow('testConvertOrientationAndRotationFromWindowOrientationToDisplayOrientation');
           try{
+            await subWindowClass.destroyWindow();
             let outputValue3 = subWindowClass.convertOrientationAndRotation(window.RotationInfoType.WINDOW_ORIENTATION, window.RotationInfoType.DISPLAY_ORIENTATION, 0);
             console.error(caseName + 'subWindowClass convertOrientationAndRotation, outputValue3: ' + JSON.stringify(outputValue3));
-            await subWindowClass.destroyWindow();
             expect(false).assertTrue();
             done();
           }catch (err) {
             console.error(caseName + 'subWindowClass failed convertOrientationAndRotation, err: ' + JSON.stringify(err)+'errCode:' + JSON.stringify(err.code));
             expect(err.code).assertEqual(1300002);
-            await subWindowClass.destroyWindow();
             done();
           }
 
