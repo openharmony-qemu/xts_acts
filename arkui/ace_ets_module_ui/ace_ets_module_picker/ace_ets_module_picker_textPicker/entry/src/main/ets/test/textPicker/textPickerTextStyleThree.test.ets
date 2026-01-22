@@ -17,6 +17,22 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../MainAbility/common/Utils'
 import router from '@ohos.router';
 
+function spliceColor(sysColor: Resource) {
+  let resourceColor = getContext().resourceManager.getColorSync(sysColor.id)
+  let newArgb: string = resourceColor.toString(16).toUpperCase()
+  while (newArgb.length < 8) {
+    newArgb = '0' + newArgb
+  }
+  newArgb = '#' + newArgb
+  return newArgb;
+}
+
+function LayerParametersNumber(sysWidth: Resource) {
+  let resourceStrokeWidth = getContext().resourceManager.getNumber(sysWidth.id)
+  let newStrokeWidth: string = Math.round(px2vp(resourceStrokeWidth)) + '.00fp'
+  return newStrokeWidth;
+}
+
 interface FontStyleCls {
   size: Length,
   weight: FontWeight | string
@@ -980,8 +996,13 @@ export default function textPickerTextStyleTest() {
       console.info("[ArkUI_Stage_textPicker_selectedTextStyle_0600] selectedTextStyle color:" + obj.$attrs.selectedTextStyle.color);
       console.info("[ArkUI_Stage_textPicker_selectedTextStyle_0600] selectedTextStyle font.size:" + obj.$attrs.selectedTextStyle.font.size);
       console.info("[ArkUI_Stage_textPicker_selectedTextStyle_0600] selectedTextStyle font.weight:" + obj.$attrs.selectedTextStyle.font.weight);
-      expect(obj.$attrs.selectedTextStyle.color).assertContain('#');
-      expect(obj.$attrs.selectedTextStyle.font.size).assertContain('fp');
+
+      //打印分层参数返回值
+      console.info(" selectedTextStyle color sys:" + spliceColor($r('sys.color.ohos_id_color_text_primary_activated')));
+      console.info(" selectedTextStyle font.size sys:" + LayerParametersNumber($r('sys.float.textpicker_selected_text_size')));
+
+      expect(obj.$attrs.selectedTextStyle.color).assertEqual(spliceColor($r('sys.color.ohos_id_color_text_primary_activated')));
+      expect(obj.$attrs.selectedTextStyle.font.size).assertEqual(LayerParametersNumber($r('sys.float.textpicker_selected_text_size')));
       expect(obj.$attrs.selectedTextStyle.font.weight).assertEqual('FontWeight.Normal');
       done();
     });
@@ -1025,8 +1046,13 @@ export default function textPickerTextStyleTest() {
       console.info("[ArkUI_Stage_textPicker_selectedTextStyle_0700] selectedTextStyle color:" + obj.$attrs.selectedTextStyle.color);
       console.info("[ArkUI_Stage_textPicker_selectedTextStyle_0700] selectedTextStyle font.size:" + obj.$attrs.selectedTextStyle.font.size);
       console.info("[ArkUI_Stage_textPicker_selectedTextStyle_0700] selectedTextStyle font.weight:" + obj.$attrs.selectedTextStyle.font.weight);
-      expect(obj.$attrs.selectedTextStyle.color).assertContain('#');
-      expect(obj.$attrs.selectedTextStyle.font.size).assertContain('fp');
+
+      //打印分层参数返回值
+      console.info(" selectedTextStyle color sys:" + spliceColor($r('sys.color.ohos_id_color_text_primary_activated')));
+      console.info(" selectedTextStyle font.size sys:" + LayerParametersNumber($r('sys.float.textpicker_selected_text_size')));
+
+      expect(obj.$attrs.selectedTextStyle.color).assertEqual(spliceColor($r('sys.color.ohos_id_color_text_primary_activated')));
+      expect(obj.$attrs.selectedTextStyle.font.size).assertEqual(LayerParametersNumber($r('sys.float.textpicker_selected_text_size')));
       expect(obj.$attrs.selectedTextStyle.font.weight).assertEqual('FontWeight.Lighter');
       done();
     });
