@@ -55,13 +55,15 @@ async function getInputMethodPermission() {
     let driver = Driver.create()
     await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
     await driver.delayMs(2000)
-    let TextInput = await driver.findComponent(ON.type('TextInput'))
-    if (TextInput == null) {
-      let scorll = await driver.findComponent(ON.type('Scroll'))
-      TextInput = await scorll.scrollSearch(ON.type('TextInput'))
+    let textInput = await driver.findComponent(ON.type('TextInput'))
+    if (textInput == null) {
+        let scroll = await driver.findComponent(ON.type('Scroll'))
+        textInput = await scroll.scrollSearch(ON.type('TextInput'))
     }
-    await TextInput.click()
-    await driver.delayMs(1000)
+    if (textInput != null) {
+        await textInput.click()
+        await driver.delayMs(1000)
+    }
     let permissionBtn1 = await driver.findComponent(ON.text('同意'))
     if (permissionBtn1 != null) {
       await permissionBtn1.click()
