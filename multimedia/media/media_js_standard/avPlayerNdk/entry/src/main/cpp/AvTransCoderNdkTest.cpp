@@ -1171,6 +1171,18 @@ static napi_value OhAvPlayerNdkPlayVideo(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value OhAvTransCoderCreate(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVTranscoder *transcoder = OH_AVTranscoder_Create();
+    int32_t res = 1;
+    if (transcoder != nullptr) {
+        res = 0;
+    }
+    OH_AVTranscoder_Release(transcoder);
+    napi_create_int32(env, res, &result);
+    return result;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1228,7 +1240,9 @@ static napi_value Init(napi_env env, napi_value exports)
     {"AvTransCodeConfigSetDstFileTypeError", nullptr, OhAvTransCodeConfigSetDstFileTypeError, nullptr,
         nullptr, nullptr, napi_default, nullptr},
     {"CheckAvTransCoderCallBackError", nullptr, OhCheckAvTransCoderCallBackError, nullptr,
-        nullptr, nullptr, napi_default, nullptr}
+        nullptr, nullptr, napi_default, nullptr},
+    {"AvTransCoderCreate", nullptr, OhAvTransCoderCreate, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

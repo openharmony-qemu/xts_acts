@@ -1045,6 +1045,38 @@ static napi_value OhAvMetadataExtractorSetMediaSourceError(napi_env env, napi_ca
     napi_create_int32(env, errCode, &result);
     return result;
 }
+
+static napi_value NAPI_OH_AVMetadataExtractorFetchState(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t faile = 0;
+    int32_t succeeded = 1;
+    int32_t canceled = 2;
+    int32_t res = 1;
+    if (OH_AVMetadataExtractor_FetchState::OH_AVMETADATA_EXTRACTOR_FETCH_FAILED == faile &&
+        OH_AVMetadataExtractor_FetchState::OH_AVMETADATA_EXTRACTOR_FETCH_SUCCEEDED == succeeded &&
+        OH_AVMetadataExtractor_FetchState::OH_AVMETADATA_EXTRACTOR_FETCH_CANCELED == canceled) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value NAPI_OH_AVMediaSeekMode(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t previous = 1;
+    int32_t closestsync = 2;
+    int32_t closest = 3;
+    int32_t res = 1;
+    if (OH_AVMedia_SeekMode::OH_AVMEDIA_SEEK_PREVIOUS_SYNC == previous &&
+        OH_AVMedia_SeekMode::OH_AVMEDIA_SEEK_CLOSEST_SYNC == closestsync &&
+        OH_AVMedia_SeekMode::OH_AVMEDIA_SEEK_CLOSEST == closest) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1098,6 +1130,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OhAVMetadataExtractorCancelAllFetchFrames", nullptr, OhAVMetadataExtractorCancelAllFetchFrames, nullptr,
             nullptr, nullptr, napi_default, nullptr},
         {"OhAVMetadataExtractorSetMediaSourceError", nullptr, OhAvMetadataExtractorSetMediaSourceError, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"OhAVMetadataExtractorFetchState", nullptr, NAPI_OH_AVMetadataExtractorFetchState, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"OhAVMediaSeekMode", nullptr, NAPI_OH_AVMediaSeekMode, nullptr,
             nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
