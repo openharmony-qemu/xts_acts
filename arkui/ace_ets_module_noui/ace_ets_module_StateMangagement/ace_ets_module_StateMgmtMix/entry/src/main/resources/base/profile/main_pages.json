@@ -59,6 +59,15 @@
     "MainAbility/pages/Environment/StorageDeprecated",
     "MainAbility/pages/GetSharedLocal/getSharedLocalStorage",
     "MainAbility/pages/GetSharedLocal/useSharedStorage",
-    "MainAbility/pages/GetSharedLocal/persistStorageA"
+    "MainAbility/pages/GetSharedLocal/persistStorageA",
+    "MainAbility/pages/uiutils/LinkObserved",
+    "MainAbility/pages/uiutils/LocalStoageLinkObserved",
+    "MainAbility/pages/uiutils/LocalStoagePropObserved",
+    "MainAbility/pages/uiutils/ObjectLinkObserved",
+    "MainAbility/pages/uiutils/PropObserved",
+    "MainAbility/pages/uiutils/ProvideConsum",
+    "MainAbility/pages/uiutils/StateObserved",
+    "MainAbility/pages/uiutils/V2Observed",
+    "MainAbility/pages/uiutils/DecoratorInfo"
   ]
 }

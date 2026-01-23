@@ -96,7 +96,7 @@ export class PageConfig {
   sharePage?: boolean;
   containerView?: string;
 }
-
+let viewPage:string=''
 export default class Utils {
   public static instance: Utils = new Utils();
 
@@ -125,33 +125,34 @@ export default class Utils {
   }
 
 static async pushPage(obj: PageConfig) {
-  try {
-    const router = AppStorage.get<Router>("router") as Router
-    let pages = router.getState();
-    let pageParams: RouterParams = new RouterParams();
-    console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
-    if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
-      console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
-      console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
-      console.info('targetView: ' + obj.targetView);
-      await Utils.back();
-      pages = router.getState();
-    }
+    try {
+      const router = AppStorage.get<Router>("router") as Router
+      let pages = router.getState();
+      let pageParams = JSON.parseJsonElement(JSON.stringify(router.getParams()));
+      console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
+      if (pageParams && pageParams.tryGetElement('view') && obj.targetView != pageParams.getElement('view').getString('targetView')) {
+        console.info('get ' + obj.pageName + ' params: ' + JSON.stringifyJsonElement(pageParams));
+        console.info('pageParams.view.targetView: ' + pageParams.getElement('view').getString('targetView'));
+        console.info('targetView: ' + obj.targetView);
+        await Utils.back();
+        pages = router.getState();
+      }
 
-    if (!(obj.pageName == pages.name)) {
-      console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
-      router.pushUrl({
-        url: obj.pageUrl,
-        params: {
-          view: obj
-        } as RouterParams
-      });
-      await Utils.sleep(1000);
+      if (obj.pageName != pages.name || obj.targetView != pageParams.getElement('view').getString('targetView')) {
+        console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
+        router.pushUrl({
+          url: obj.pageUrl,
+          params: {
+            view: obj
+          } as RouterParams
+        });
+        await Utils.sleep(2000);
+        console.info('push ' + obj.pageName);
+      }
+    } catch (err) {
+      console.error('push ' + obj.pageName + ' page error:' + err);
     }
-  } catch (err) {
-    console.error('push ' + obj.pageName + ' page error:' + err);
   }
-}
 
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
@@ -191,7 +192,7 @@ static async pushPage(obj: PageConfig) {
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
     // let rectInfo = JSON.parseJsonElement('[' + obj.getElement('$rect') + ']');
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     let rect_value: RectValue = {
       left:Number(rectInfo[0][0] ?? 0),

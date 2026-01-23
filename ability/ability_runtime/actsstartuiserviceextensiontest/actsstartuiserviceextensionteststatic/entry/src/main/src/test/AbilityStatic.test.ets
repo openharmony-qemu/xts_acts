@@ -23,6 +23,7 @@ import Utils from './Util.test';
 import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Want from '@ohos.app.ability.Want';
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -78,6 +79,15 @@ export default function abilitystaticTest() {
     const RELY_BUNDLE_NAME: string = 'com.acts.startuiserviceextensionrely.static';
 
     beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -167,15 +177,19 @@ export default function abilitystaticTest() {
           hilog.info(domain, tag, `isAppRunning success, data: ${data}`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void=>{
-          hilog.info(domain, tag, `isAppRunning error, err: ${err?.code}`);
-          expect(err?.code).assertEqual(16000073);
-          done();
+        }).catch((err): void=>{
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, `isAppRunning error, err: ${err?.code}`);
+            expect(err?.code).assertEqual(16000073);
+            done();
+          }
         });
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, `isAppRunning error, errorCode: ${err?.code}`);
-        expect().assertFail();
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, `isAppRunning error, errorCode: ${err?.code}`);
+          expect().assertFail();
+          done();
+        }
       }
     });
 
@@ -217,13 +231,14 @@ export default function abilitystaticTest() {
           console.log(`${domain} ${tag} ${itName} abilityStateData: `,observer.abilityStateData);
           expect(observer.abilityStateData?.bundleName).assertEqual(`${RELY_BUNDLE_NAME}`);
           expect(observer.abilityStateData?.uid).assertLarger(0);
-          expect(typeof (observer.abilityStateData?.state)).assertEqual('number');
+          expect(typeof (observer.abilityStateData?.state)).assertEqual('int');
           expect(observer.abilityStateData?.abilityName).assertEqual('EntryAbility');
           expect(observer.abilityStateData?.pid).assertEqual(observer.processData?.pid);
           expect(observer.abilityStateData?.moduleName).assertEqual('entry');
           expect(`${observer.abilityStateData?.abilityType}`).assertEqual('1');
           expect(observer.abilityStateData?.isAtomicService).assertFalse();
           expect(observer.abilityStateData?.appCloneIndex).assertUndefined();
+          expect(observer.abilityStateData?.callerBundleName).assertEqual(`${BUNDLE_NAME}`);
           hilog.info(domain, tag, `${itName} AbilityStateData assert end`);
 
           hilog.info(domain, tag, `${itName} ProcessData assert start`);
@@ -233,14 +248,16 @@ export default function abilitystaticTest() {
           expect(observer.processData?.uid).assertLarger(0);
           expect(observer.processData?.isContinuousTask).assertFalse();
           expect(observer.processData?.isKeepAlive).assertFalse();
-          expect(typeof (observer.processData?.state)).assertEqual('number');
+          expect(typeof (observer.processData?.state)).assertEqual('int');
           hilog.info(domain, tag, `${itName} ProcessData assert End`);
 
           hilog.info(domain, tag, `${itName} off applicationState`);
           await appManager.offApplicationStateChange(observerId);
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
-          expect().assertFail();
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
+            expect().assertFail();
+          }
         }
         hilog.info(domain, tag, `${itName} end`);
         done()
@@ -261,17 +278,19 @@ export default function abilitystaticTest() {
           hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_AppManager_Static_0300 killProcessesByBundleName success.');
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
-          hilog.info(domain, tag, `SUB_Ability_AbilityRuntime_AppManager_Static_0300 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
+        }).catch((err): void => {
+          hilog.info(domain, tag, `SUB_Ability_AbilityRuntime_AppManager_Static_0300 killProcessesByBundleName fail, code is ${err.code}`);
           expect(err.code).assertEqual(16000050);
           done();
         });
-      } catch (paramError: BusinessError) {
-        let code = (paramError as BusinessError).code;
-        let message = (paramError as BusinessError).message;
-        hilog.info(domain, tag, `SUB_Ability_AbilityRuntime_AppManager_Static_0300 [appManager] error: ${code}, ${message}`);
-        expect(paramError.code).assertEqual(16000050);
-        done();
+      } catch (paramError) {
+        if (paramError instanceof BusinessError) {
+          let code = paramError.code;
+          let message = paramError.message;
+          hilog.info(domain, tag, `SUB_Ability_AbilityRuntime_AppManager_Static_0300 [appManager] error: ${code}, ${message}`);
+          expect(paramError.code).assertEqual(16000050);
+          done();
+        }
       }
     });
   })

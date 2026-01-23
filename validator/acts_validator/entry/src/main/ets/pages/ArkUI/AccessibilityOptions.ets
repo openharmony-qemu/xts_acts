@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,17 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import { SliderModifier } from '@ohos.arkui.modifier'
+import { ColumnModifier } from '@ohos.arkui.modifier'
 import router from '@ohos.router';
 import promptAction from '@ohos.promptAction';
 import FirstDialog from '../model/FirstDialog';
+import { AttributeUpdater } from '@kit.ArkUI';
 
 const TAG = '[AccessibilityOptions]';
+
+let uiContent: UIContext | undefined = undefined;
 
 @Entry
 @Component
 struct AccessibilityOptions {
-  @State FillColor: string = '#FF000000';
   @State name: string = 'AccessibilityOptions';
   @State StepTips: string = '设备支持屏幕朗读时\n' + '操作步骤:\n' + '1、从上到下依次滑动观察屏幕朗读情况\n' + '\n' +
     '预期结果：1、绿框绘制在组件上，屏幕朗读朗读“有accessibility有text优先读accessibility”\n' +
@@ -31,43 +34,25 @@ struct AccessibilityOptions {
     '4、绿框绘制在组件上，屏幕朗读朗读”有accessibility有text优先读accessibility，accessibility无text 读accessibility，无accessibility有text 读text，有accessibility有text btn123，btn123“\n' +
     '5、绿框绘制在组件上，屏幕朗读朗读“有accessibility有text btn123按钮”\n' +
     '6、绿框绘制在组件上，屏幕朗读朗读“btn123按钮”';
-  @State Vue: boolean = false;
+  @State vueStatus: boolean = false;
   @State active: boolean = false;
   @State intervalNum: number = 0;
   @State yesEnable: boolean = false
   // 默认不支持
   @State onAccessibilityHoverEnable: boolean = false;
-  @State hoverText: string = 'no hover';
   @State color: Color = Color.Blue;
-  @State text1: string = ""
-  @State text2: string = ""
-  @State text3: string = ""
-  @State text4: string = ""
+  @State currentIndex: number = 0
+  @State selectedFontColor: string = '#007DFF'
+  @State fontColor: string = '#182431'
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.Vue == false) {
-      Button({ stateEffect: this.Vue }) {
+    if (this.vueStatus) {
+      Button({ stateEffect: this.vueStatus }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
-      }
-      .margin({ bottom: '20vp' })
-      .width('30%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .opacity(0.4)
-      .onClick(() => {
-
-      })
-    } else {
-      Button({ stateEffect: this.Vue }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }
-      .margin({ bottom: '20vp' })
-      .width('30%')
+      }.width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .onClick(() => {
@@ -81,6 +66,18 @@ struct AccessibilityOptions {
           message: '通过', duration: 1000
         });
       })
+    } else {
+      Button({ stateEffect: this.vueStatus }) {
+        Image($r('app.media.ic_public_pass'))
+          .width('20vp')
+          .height('20vp')
+      }
+      .width('30%')
+      .height('30vp')
+      .backgroundColor(Color.Grey)
+      .opacity(0.4)
+      .onClick(() => {
+      })
     }
   }
 
@@ -91,7 +88,6 @@ struct AccessibilityOptions {
         .width('20vp')
         .height('20vp')
     }
-    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -112,15 +108,6 @@ struct AccessibilityOptions {
     FirstDialog.ChooseDialog(this.StepTips, this.name);
   }
 
-  onPageShow() {
-    this.intervalNum = setInterval(() => {
-      if (this.text1 === 'HOVER_ENTER' && this.text2 === 'HOVER_MOVE' && this.text3 === 'HOVER_EXIT' &&
-        this.text4 === 'HOVER_CANCEL') {
-        this.Vue = true;
-      }
-    }, 500)
-  }
-
   onPageHide() {
     clearInterval(this.intervalNum)
   }
@@ -130,43 +117,42 @@ struct AccessibilityOptions {
   }
 
   build() {
-    Column() {
-      Row() {
-        Button() {
-          Image($r('app.media.ic_public_back'))
-            .width('20vp')
-            .height('18vp')
-            .margin({ left: '20vp' })
+    Column({ space: 10 }) {
+      Column() {
+        Row() {
+          Button() {
+            Image($r('app.media.ic_public_back'))
+              .width('20vp')
+              .height('18vp')
+              .margin({ left: '20vp' })
+          }
+          .backgroundColor(Color.Black)
+          .size({ width: '40vp', height: '30vp' })
+          .onClick(() => {
+            router.back({
+              url: 'pages/ArkUI/ArkUI_index',
+              params: { result: 'None' }
+            })
+          })
+
+          Text(this.name)
+            .fontColor(Color.White)
+            .fontSize('18fp')
+            .margin({ left: '-20vp' })
+          Text('hello')
+            .fontColor(Color.White)
+            .visibility(Visibility.Hidden)
         }
         .backgroundColor(Color.Black)
-        .size({ width: '40vp', height: '30vp' })
-        .onClick(() => {
-          router.back({
-            url: 'pages/ArkUI/ArkUI_index',
-            params: { result: 'None' }
-          })
-        })
+        .width('100%')
+        .height('10%')
+        .justifyContent(FlexAlign.SpaceBetween)
 
-        Text(this.name)
-          .fontColor(Color.White)
-          .fontSize('18fp')
-          .margin({ left: '-20vp' })
-        Text('hello')
-          .fontColor(Color.White)
-          .visibility(Visibility.Hidden)
-      }
-      .backgroundColor(Color.Black)
-      .height('10%')
-      .width('100%')
-      .justifyContent(FlexAlign.SpaceBetween)
-
-      Column({ space: 12 }) {
-        Row() {
-          Text(`是否设备支持屏幕朗读`).fontColor(Color.Green).fontSize('18fp')
-            //.margin({ top: 20 })
+        Row({ space: 10 }) {
+          Text(`是否设备支持屏幕朗读`).fontColor(Color.Green).fontSize('18fp').margin({ top: 20 })
         }
 
-        Row() {
+        Row({ space: 10 }) {
           Column() {
             Button(`不支持`)
               .borderRadius(8)
@@ -175,7 +161,6 @@ struct AccessibilityOptions {
               .enabled(!this.yesEnable)
               .opacity(!this.yesEnable ? 1 : 0.4)
               .onClick(async () => {
-                this.Vue = true
               })
           }
 
@@ -187,10 +172,10 @@ struct AccessibilityOptions {
               .onClick(async () => {
                 this.yesEnable = true
                 this.onAccessibilityHoverEnable = true
-                this.Vue = true
+                this.vueStatus=true
               })
           }
-        }.height('10%')
+        }
 
         Column({ space: 2 }) {
           Text('123456')
@@ -205,7 +190,7 @@ struct AccessibilityOptions {
           Button('btn123').accessibilityLevel("yes").height('9%')
         }
         .accessibilityGroup(true, { accessibilityPreferred: true })
-      }.height('80%')
+      }.height('70%')
       .width('100%')
       .backgroundColor(Color.White)
 
@@ -216,7 +201,6 @@ struct AccessibilityOptions {
             .width('20vp')
             .height('20vp')
         }
-        .margin({ bottom: '20vp' })
         .width('30%')
         .height('30vp')
         .backgroundColor(Color.Grey)
@@ -236,13 +220,12 @@ struct AccessibilityOptions {
 
         this.FailBtn($r('app.string.btn_fullscreen'), true);
       }
+      // .padding(20)
       .height('10%')
       .width('100%')
       .justifyContent(FlexAlign.SpaceEvenly)
       .backgroundColor(Color.Black)
-
     }.width('100%')
     .height('100%')
-    .backgroundColor('#F1F3F5')
   }
 }

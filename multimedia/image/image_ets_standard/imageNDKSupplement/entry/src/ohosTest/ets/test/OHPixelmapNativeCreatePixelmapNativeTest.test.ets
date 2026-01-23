@@ -212,7 +212,7 @@ export default function OHPixelmapNativeCreatePixelmapNativeTest() {
     /**
      * @tc.number  SUB_CREATE_EMPTY_PIXELMAP_USING_ALLOCATOR_SUPP_001
      * @tc.name    SUB_CREATE_EMPTY_PIXELMAP_USING_ALLOCATOR_SUPP_001
-     * @tc.desc    OH_PixelmapNative_CreatePixelmapUsingAllocator-IMAGE_BAD_PARAMETER
+     * @tc.desc    OH_PixelmapNative_CreateEmptyPixelmapUsingAllocator-IMAGE_BAD_PARAMETER
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -227,7 +227,7 @@ export default function OHPixelmapNativeCreatePixelmapNativeTest() {
     /**
      * @tc.number  SUB_CREATE_EMPTY_PIXELMAP_USING_ALLOCATOR_SUPP_002
      * @tc.name    SUB_CREATE_EMPTY_PIXELMAP_USING_ALLOCATOR_SUPP_002
-     * @tc.desc    OH_PixelmapNative_CreatePixelmapUsingAllocator-IMAGE_SUCCESS
+     * @tc.desc    OH_PixelmapNative_CreateEmptyPixelmapUsingAllocator-IMAGE_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0

@@ -78,8 +78,6 @@ export default function arkuiNodeRenderTest() {
 
     
     
-
-
 /**
      * @tc.number   arkuiNodeRenderTest_static_0100
      * @tc.name     arkuiNodeRenderTest_static_0100

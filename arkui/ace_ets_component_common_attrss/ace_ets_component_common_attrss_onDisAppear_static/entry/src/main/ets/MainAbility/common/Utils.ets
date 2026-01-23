@@ -116,17 +116,17 @@ export default class Utils {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
-      let pageParams: RouterParams = new RouterParams();
+      let pageParams = JSON.parseJsonElement(JSON.stringify(router.getParams()));
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
-      if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
-        console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
-        console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
+      if (pageParams && pageParams.tryGetElement('view') && obj.targetView != pageParams.getElement('view').getString('targetView')) {
+        console.info('get ' + obj.pageName + ' params: ' + JSON.stringifyJsonElement(pageParams));
+        console.info('pageParams.view.targetView: ' + pageParams.getElement('view').getString('targetView'));
         console.info('targetView: ' + obj.targetView);
         await Utils.back();
         pages = router.getState();
       }
 
-      if (!(obj.pageName == pages.name)) {
+      if (obj.pageName != pages.name || obj.targetView != pageParams.getElement('view').getString('targetView')) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
         router.pushUrl({
           url: obj.pageUrl,
@@ -134,7 +134,8 @@ export default class Utils {
             view: obj
           } as RouterParams
         });
-        await Utils.sleep(2000);
+        await Utils.sleep(500);
+        console.info('push ' + obj.pageName);
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
@@ -144,6 +145,7 @@ export default class Utils {
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
     if (!('Index' == router.getState().name)) {
+      console.log('++++++++++back')
       router.back()
     }
     await Utils.sleep(1000);
@@ -176,7 +178,7 @@ export default class Utils {
 
 static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     let rect_value: RectValue = {
       left:Number(rectInfo[0][0] ?? 0),

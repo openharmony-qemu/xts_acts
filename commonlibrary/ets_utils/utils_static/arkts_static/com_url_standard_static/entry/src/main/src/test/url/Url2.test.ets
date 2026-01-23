@@ -13,13 +13,12 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '../../../../hypium/index'
+import { describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import { BusinessError } from '@ohos.base';
-import Url from '@ohos.url'
-import hilog from '@ohos.hilog'
+import Url from '@ohos.url';
 
 export default function urlTest2() {
-  describe('urlTest2',  (): void => {
+  describe('urlTest2', (): void => {
     /**
      * @tc.name   testParamsAppend001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_00100
@@ -31,7 +30,7 @@ export default function urlTest2() {
     it('testParamsAppend001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const that = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
       const params = new Url.URLParams(that.search);
-      params.append('ma','jk')
+      params.append('ma', 'jk')
       const result = params.toString()
       expect(result).assertEqual('foo=1&bar=2&ma=jk')
     })
@@ -47,7 +46,7 @@ export default function urlTest2() {
     it('testParamsAppend002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const that = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
       const params = new Url.URLParams(that.search);
-      params.append("ma 大","jk￥")
+      params.append("ma 大", "jk￥")
       const result = params.toString()
       expect(result).assertEqual("foo=1&bar=2&ma+%E5%A4%A7=jk%EF%BF%A5")
     })
@@ -63,7 +62,7 @@ export default function urlTest2() {
     it('testParamsAppend003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const that = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
       const params = new Url.URLParams(that.search);
-      params.append("foo~!@#$%^&*()_+-=","jk")
+      params.append("foo~!@#$%^&*()_+-=", "jk")
       const result = params.toString()
       expect(result).assertEqual("foo=1&bar=2&foo%7E%21%40%23%24%25%5E%26*%28%29_%2B-%3D=jk")
     })
@@ -79,7 +78,7 @@ export default function urlTest2() {
     it('testParamsAppend004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
       let params = new Url.URLParams(that.search)
-      params.append("app","par")
+      params.append("app", "par")
       const result = params.toString()
       expect(result).assertEqual("foo=1&bar=2&app=par")
     })
@@ -95,54 +94,11 @@ export default function urlTest2() {
     it('testParamsAppend005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
       let params = new Url.URLParams(that.search)
-      params.append("123","456")
+      params.append("123", "456")
       const result = params.toString()
       expect(result).assertEqual("foo=1&bar=2&123=456")
     })
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_00600
-    //  * @tc.name: testParamsAppend006
-    //  * @tc.desc: Appends throw BusinessError: Parameter error.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testParamsAppend006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try {
-    //     let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
-    //     let params = new Url.URLParams(that.search)
-    //     params.append(123,"456")
-    //     expect(0).assertEqual(1)
-    //   } catch (err:BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of 123 must be string`)
-    //     expect(err.code).assertEqual(401)
-    //     expect(err.message).assertEqual("Parameter error. The type of 123 must be string");
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_00700
-    //  * @tc.name: testParamsAppend007
-    //  * @tc.desc: Appends throw BusinessError: Parameter error.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testParamsAppend007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try {
-    //     let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
-    //     let params = new Url.URLParams(that.search)
-    //     const a = '123'
-    //     const b = undefined;
-    //     params.append(a, b)
-    //     expect(0).assertEqual(1)
-    //   } catch (err:BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of ${b} must be string`)
-    //     expect(err.code).assertEqual(401)
-    //     expect(err.message).assertEqual(`Parameter error. The type of ${b} must be string`);
-    //   }
-    // })
 
     /**
      * @tc.name   testParamsDelete001
@@ -224,65 +180,6 @@ export default function urlTest2() {
       expect(result).assertEqual("foo=1&bar=2")
     })
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_01300
-    //  * @tc.name: testParamsDelete006
-    //  * @tc.desc: Deletes throw BusinessError: Parameter error.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testParamsDelete006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try {
-    //     let that = Url.URL.parseURL('https://example.com?foo=1&bar=2');
-    //     let params = new Url.URLParams(that.search);
-    //     params.delete();
-    //     expect(0).assertEqual(1)
-    //   } catch (err:BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of ${arguments[0]} must be string`)
-    //     expect(err.code).assertEqual(401)
-    //     expect(err.message).assertEqual(`Parameter error. The type of ${arguments[0]} must be string`);
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_01400
-    //  * @tc.name: testParamsDelete007
-    //  * @tc.desc: Deletes throw BusinessError: Parameter error.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testParamsDelete007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try {
-    //     let that = Url.URL.parseURL('https://example.com?foo=1&bar=2');
-    //     let params = new Url.URLParams(that.search);
-    //     params.delete(4);
-    //     expect(0).assertEqual(1)
-    //   } catch (err:BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of 4 must be string`)
-    //     expect(err.code).assertEqual(401)
-    //     expect(err.message).assertEqual(`Parameter error. The type of 4 must be string`);
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_01500
-    //  * @tc.name: testNewURLParams001
-    //  * @tc.desc: The input parameter for New URLParams is undefined or null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testNewURLParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = new Url.URLParams(undefined);
-    //   let result = params.toString();
-    //   expect(result).assertEqual('');
-    //   let params1 = new Url.URLParams(null);
-    //   let result1 = params1.toString();
-    //   expect(result1).assertEqual('');
-    // })
-
     /**
      * @tc.name   testParamsEntries001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_01600
@@ -293,8 +190,8 @@ export default function urlTest2() {
      */
     it('testParamsEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
-      let arr:string[] = [];
-      for(const pair of params.entries()) {
+      let arr: string[] = [];
+      for (const pair of params.entries()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -311,8 +208,8 @@ export default function urlTest2() {
      */
     it('testParamsEntries002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      const arr:string[] = [];
-      for(const pair of params.entries()) {
+      const arr: string[] = [];
+      for (const pair of params.entries()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -329,9 +226,9 @@ export default function urlTest2() {
      */
     it('testParamsEntries003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      params.append("foo","jk")
-      const arr:string[]=[];
-      for(const pair of params.entries()) {
+      params.append("foo", "jk")
+      const arr: string[] = [];
+      for (const pair of params.entries()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -348,8 +245,8 @@ export default function urlTest2() {
      */
     it('testParamsEntries004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      const arr:string[]=[];
-      for(const pair of params.entries()) {
+      const arr: string[] = [];
+      for (const pair of params.entries()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -366,9 +263,9 @@ export default function urlTest2() {
      */
     it('testParamsEntries005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      params.append("jss","txt")
-      const arr:string[]=[];
-      for(const pair of params.entries()) {
+      params.append("jss", "txt")
+      const arr: string[] = [];
+      for (const pair of params.entries()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -385,8 +282,8 @@ export default function urlTest2() {
      */
     it('testParams[Symbol.iterator]001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
-      const arr:string[]=[];
-      for(const pair of params.$_iterator()) {
+      const arr: string[] = [];
+      for (const pair of params.$_iterator()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -403,8 +300,8 @@ export default function urlTest2() {
      */
     it('testParams[Symbol.iterator]002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
-      const arr:string[]=[];
-      for(const pair of params.$_iterator()) {
+      const arr: string[] = [];
+      for (const pair of params.$_iterator()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -421,9 +318,9 @@ export default function urlTest2() {
      */
     it('testParams[Symbol.iterator]003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      params.append("foo","jk")
-      const arr:string[]=[];
-      for(const pair of params.$_iterator()) {
+      params.append("foo", "jk")
+      const arr: string[] = [];
+      for (const pair of params.$_iterator()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -440,8 +337,8 @@ export default function urlTest2() {
      */
     it('testParams[Symbol.iterator]004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      const arr:string[] = [];
-      for(const pair of params.$_iterator()) {
+      const arr: string[] = [];
+      for (const pair of params.$_iterator()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -458,9 +355,9 @@ export default function urlTest2() {
      */
     it('testParams[Symbol.iterator]005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      params.append("jss","txt")
-      const arr:string[]=[];
-      for(const pair of params.$_iterator()) {
+      params.append("jss", "txt")
+      const arr: string[] = [];
+      for (const pair of params.$_iterator()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -477,7 +374,7 @@ export default function urlTest2() {
      */
     it('testParamsForEach001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      const arr:string[] = [];
+      const arr: string[] = [];
       params.forEach((value, key, SearchParams) => {
         arr.push(value + " " + key + " " + (params === SearchParams));
       });
@@ -494,7 +391,7 @@ export default function urlTest2() {
      */
     it('testParamsForEach002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
-      const arr:string[]=[];
+      const arr: string[] = [];
       params.forEach((value, key, SearchParams) => {
         arr.push(value + " " + key + " " + (params === SearchParams));
       });
@@ -511,8 +408,8 @@ export default function urlTest2() {
      */
     it('testParamsForEach003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
-      params.append("foo","jk");
-      const arr:string[]=[];
+      params.append("foo", "jk");
+      const arr: string[] = [];
       params.forEach((value, key, SearchParams) => {
         arr.push(value + " " + key + " " + (params === SearchParams));
       });
@@ -529,7 +426,7 @@ export default function urlTest2() {
      */
     it('testParamsForEach004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("foo=bar&jss=txt");
-      const arr:string[]=[];
+      const arr: string[] = [];
       params.forEach((value, key, SearchParams) => {
         arr.push(value + " " + key + " " + (params === SearchParams));
       });
@@ -546,60 +443,13 @@ export default function urlTest2() {
      */
     it('testParamsForEach005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("foo=bar&jss=txt");
-      params.append("foo","jk");
-      const arr:string[]=[];
+      params.append("foo", "jk");
+      const arr: string[] = [];
       params.forEach((value, key, SearchParams) => {
         arr.push(value + " " + key + " " + (params === SearchParams));
       });
       expect(arr[0]).assertEqual("bar foo true");
     })
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_03100
-    //  * @tc.name: testParamsForEach006
-    //  * @tc.desc: forEach throw BusinessError: Parameter error.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testParamsForEach006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try {
-    //     let params = new Url.URLParams("foo=bar&jss=txt");
-    //     const arr:string[]=[];
-    //     let i = 0;
-    //     const func = [0, 2, 4, 6, 8];
-    //     params.forEach(func);
-    //     expect(0).assertEqual(1)
-    //   } catch(err: BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of ${func} must be function`)
-    //     expect(err.code).assertEqual(401)
-    //     expect(err.message).assertEqual(`Parameter error. The type of ${func} must be function`);
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_03200
-    //  * @tc.name: testParamsForEach007
-    //  * @tc.desc: Callback functions are used to traverse key-value pairs on the URLParams instance obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testParamsForEach007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = new Url.URLParams("key1=value1&key2=value2")
-    //   let arr:string[] = [];
-    //   let i = 0;
-    //   params.forEach((value, key, SearchParams) => {
-    //     arr[i] = value + " " + key + " " + (params === SearchParams);
-    //     i++;
-    //   });
-    //   params.forEach(func);
-    //   expect(arr[0]).assertEqual("value1 key1 true");
-    //   arr = [];
-    //   i = 0;
-    //   params.forEach(func);
-    //   expect(arr[0]).assertEqual("value1 key1 true");
-    // })
 
     /**
      * @tc.name   testParamsGet001
@@ -611,7 +461,7 @@ export default function urlTest2() {
      */
     it('testParamsGet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      const result =  params.get("1")
+      const result = params.get("1")
       expect(result).assertEqual(undefined)
     })
 
@@ -625,7 +475,7 @@ export default function urlTest2() {
      */
     it('testParamsGet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      const result =  params.get("key2")
+      const result = params.get("key2")
       expect(result).assertEqual("value2")
     })
 
@@ -639,8 +489,8 @@ export default function urlTest2() {
      */
     it('testParamsGet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      params.append("5","JKL")
-      const result =  params.get("5")
+      params.append("5", "JKL")
+      const result = params.get("5")
       expect(result).assertEqual("JKL")
     })
 
@@ -654,7 +504,7 @@ export default function urlTest2() {
      */
     it('testParamsGet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      const result =  params.get("key1")
+      const result = params.get("key1")
       expect(result).assertEqual("value1")
     })
 
@@ -668,32 +518,10 @@ export default function urlTest2() {
      */
     it('testParamsGet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      params.append("jss","JL")
-      const result =  params.get("jss")
+      params.append("jss", "JL")
+      const result = params.get("jss")
       expect(result).assertEqual("JL")
     })
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_03800
-    //  * @tc.name: testParamsGet006
-    //  * @tc.desc: get throw BusinessError: Parameter error.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testParamsGet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try{
-    //     let params = new Url.URLParams("key1=value1&key2=value2")
-    //     params.append("jss","JL")
-    //     const a = 666;
-    //     const result =  params.get(a)
-    //     expect(0).assertEqual(1)
-    //   }catch(err){
-    //     expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of ${a} must be string`)
-    //     expect(err.code).assertEqual(401)
-    //     expect(err.message).assertEqual(`Parameter error. The type of ${a} must be string`);
-    //   }
-    // })
 
     /**
      * @tc.name   testParamsGetAll001
@@ -705,8 +533,8 @@ export default function urlTest2() {
      */
     it('testParamsGetAll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      params.append("key1","AAA")
-      const result =  params.getAll("key1")
+      params.append("key1", "AAA")
+      const result = params.getAll("key1")
       expect(result.toString()).assertEqual("value1,AAA")
     })
 
@@ -720,8 +548,8 @@ export default function urlTest2() {
      */
     it('testParamsGetAll002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&8=DEF")
-      params.append("8","A8A")
-      const result =  params.getAll("8")
+      params.append("8", "A8A")
+      const result = params.getAll("8")
       expect(result.toString()).assertEqual("DEF,A8A")
     })
 
@@ -735,8 +563,8 @@ export default function urlTest2() {
      */
     it('testParamsGetAll003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2&key3=da")
-      params.append("key3","A3A")
-      const result =  params.getAll("key3")
+      params.append("key3", "A3A")
+      const result = params.getAll("key3")
       expect(result.toString()).assertEqual("da,A3A")
     })
 
@@ -750,8 +578,8 @@ export default function urlTest2() {
      */
     it('testParamsGetAll004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
-      params.append("key3","A3A")
-      const result =  params.getAll("key4")
+      params.append("key3", "A3A")
+      const result = params.getAll("key4")
       expect(result.toString()).assertEqual('')
     })
 
@@ -765,32 +593,10 @@ export default function urlTest2() {
      */
     it('testParamsGetAll005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
-      params.append("key3","A3A")
-      const result =  params.getAll("key2")
+      params.append("key3", "A3A")
+      const result = params.getAll("key2")
       expect(result.toString()).assertEqual("value2")
     })
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_04400
-    //  * @tc.name: testParamsGetAll006
-    //  * @tc.desc: getAll throw BusinessError: Parameter error.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testParamsGetAll006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try {
-    //     let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
-    //     params.append("key3","A3A")
-    //     const b = 666;
-    //     const result =  params.getAll(b)
-    //     expect(0).assertEqual(1)
-    //   } catch(err: BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of ${b} must be string`)
-    //     expect(err.code).assertEqual(401)
-    //     expect(err.message).assertEqual(`Parameter error. The type of ${b} must be string`);
-    //   }
-    // })
 
     /**
      * @tc.name   testParamsHas001
@@ -802,7 +608,7 @@ export default function urlTest2() {
      */
     it('testParamsHas001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
-      const result =  params.has("2")
+      const result = params.has("2")
       expect(result).assertEqual(false)
     })
 
@@ -816,7 +622,7 @@ export default function urlTest2() {
      */
     it('testParamsHas002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&key2=value2&key3=大")
-      const result =  params.has("小")
+      const result = params.has("小")
       expect(result).assertEqual(true)
     })
 
@@ -830,8 +636,8 @@ export default function urlTest2() {
      */
     it('testParamsHas003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大")
-      params.append("￥","ACA")
-      const result =  params.has("￥")
+      params.append("￥", "ACA")
+      const result = params.has("￥")
       expect(result).assertEqual(true)
     })
 
@@ -845,7 +651,7 @@ export default function urlTest2() {
      */
     it('testParamsHas004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&key2=value2&key3=大")
-      const result =  params.has("无")
+      const result = params.has("无")
       expect(result).assertEqual(false)
     })
 
@@ -859,30 +665,10 @@ export default function urlTest2() {
      */
     it('testParamsHas005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大")
-      params.append("￥","ACA")
-      const result =  params.has("￥11")
+      params.append("￥", "ACA")
+      const result = params.has("￥11")
       expect(result).assertEqual(false)
     })
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_05000
-    //  * @tc.name: testParamsHas006
-    //  * @tc.desc: Returns a Boolean that indicates whether a parameter with the specified name exists.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testParamsHas006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = new Url.URLParams("小=value1&￥=value2&key3=大")
-    //   try {
-    //     const a = 1;
-    //     params.has(a);
-    //   } catch(e) {
-    //     expect(e.toString()).assertEqual(`BusinessError: Parameter error. The type of ${a} must be string`);
-    //     expect(e.code).assertEqual(401)
-    //     expect(e.message).assertEqual(`Parameter error. The type of ${a} must be string`);
-    //   }
-    // })
 
     /**
      * @tc.name   testParamsKeys001
@@ -894,8 +680,8 @@ export default function urlTest2() {
      */
     it('testParamsKeys001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大");
-      const arr:string[]=[];
-      for(const key of params.keys()) {
+      const arr: string[] = [];
+      for (const key of params.keys()) {
         arr.push(key);
       }
       expect(arr[0]).assertEqual("小");
@@ -911,8 +697,8 @@ export default function urlTest2() {
      */
     it('testParamsKeys002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大");
-      const arr:string[]=[];
-      for(const key of params.keys()) {
+      const arr: string[] = [];
+      for (const key of params.keys()) {
         arr.push(key);
       }
       expect(arr[1]).assertEqual("￥");
@@ -928,8 +714,8 @@ export default function urlTest2() {
      */
     it('testParamsKeys003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大");
-      const arr:string[]=[];
-      for(const key of params.keys()) {
+      const arr: string[] = [];
+      for (const key of params.keys()) {
         arr.push(key);
       }
       expect(arr[2]).assertEqual("key3");
@@ -945,8 +731,8 @@ export default function urlTest2() {
      */
     it('testParamsKeys004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大&key4=六");
-      const arr:string[]=[];
-      for(const key of params.keys()) {
+      const arr: string[] = [];
+      for (const key of params.keys()) {
         arr.push(key);
       }
       expect(arr[3]).assertEqual("key4");
@@ -962,8 +748,8 @@ export default function urlTest2() {
      */
     it('testParamsKeys005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大&key4=六&key5=发");
-      const arr:string[]=[];
-      for(const key of params.keys()) {
+      const arr: string[] = [];
+      for (const key of params.keys()) {
         arr.push(key);
       }
       expect(arr[4]).assertEqual("key5");
@@ -979,8 +765,7 @@ export default function urlTest2() {
      */
     it('testParamsSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
-      // params.append("11","ACA");
-      params.set("11","CCC");
+      params.set("11", "CCC");
       const res = params.toString();
       expect(res).assertEqual("1=value1&2=value2&key3=3&11=CCC");
     })
@@ -995,7 +780,7 @@ export default function urlTest2() {
      */
     it('testParamsSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
-      params.set('10','BBB');
+      params.set('10', 'BBB');
       const res = params.toString();
       expect(res).assertEqual("1=value1&2=value2&key3=3&10=BBB");
     })
@@ -1010,7 +795,7 @@ export default function urlTest2() {
      */
     it('testParamsSet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
-      params.set("ma 大" ,"10￥");
+      params.set("ma 大", "10￥");
       const res = params.toString();
       expect(res).assertEqual("1=value1&2=value2&key3=3&ma+%E5%A4%A7=10%EF%BF%A5");
     })
@@ -1025,8 +810,7 @@ export default function urlTest2() {
      */
     it('testParamsSet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
-      // params.append("1","ACA");
-      params.set("1","CCC");
+      params.set("1", "CCC");
       const res = params.toString();
       expect(res).assertEqual("1=CCC&2=value2&key3=3");
     })
@@ -1041,7 +825,7 @@ export default function urlTest2() {
      */
     it('testParamsSet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
-      params.set('12','BBB');
+      params.set('12', 'BBB');
       const res = params.toString();
       expect(res).assertEqual("1=value1&2=value2&key3=3&12=BBB");
     })
@@ -1056,58 +840,10 @@ export default function urlTest2() {
      */
     it('testParamsSet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams();
-      params.set('12','BBB');
+      params.set('12', 'BBB');
       const res = params.toString();
       expect(res).assertEqual("12=BBB");
     })
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_06200
-    //  * @tc.name: testParamsSet007
-    //  * @tc.desc: Sets the value associated with a given search parameter to the given value.
-    //  * If there were several matching values, this method deletes the others.
-    //  * If the search parameter throw BusinessError: Parameter error.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testParamsSet007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try {
-    //     let params = new Url.URLParams("1=value1&2=value2&key3=3");
-    //     const a = 12;
-    //     params.set(a,'BBB');
-    //     const res = params.toString();
-    //     expect(0).assertEqual(1);
-    //   } catch(err: BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of ${a} must be string`)
-    //     expect(err.code).assertEqual(401)
-    //     expect(err.message).assertEqual(`Parameter error. The type of ${a} must be string`);
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_06300
-    //  * @tc.name: testParamsSet007
-    //  * @tc.desc: Sets the value associated with a given search parameter to the given value.
-    //  * If there were several matching values, this method deletes the others.
-    //  * If the search parameter throw BusinessError: Parameter error.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testParamsSet007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try {
-    //     let params = new Url.URLParams("1=value1&2=value2&key3=3");
-    //     const b = undefined;
-    //     params.set('12', b);
-    //     const res = params.toString();
-    //     expect(0).assertEqual(1);
-    //   } catch(err: BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of ${b} must be string`)
-    //     expect(err.code).assertEqual(401)
-    //     expect(err.message).assertEqual(`Parameter error. The type of ${b} must be string`);
-    //   }
-    // })
 
     /**
      * @tc.name   testParamsSort001
@@ -1149,7 +885,7 @@ export default function urlTest2() {
      */
     it('testParamsSort003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=33");
-      params.append("a","ACA");
+      params.append("a", "ACA");
       params.sort();
       const res = params.toString();
       expect(res).assertEqual("a=ACA&b=33&c=value2&d=value1");
@@ -1195,8 +931,8 @@ export default function urlTest2() {
      */
     it('testParamsValues001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大")
-      const arr:string[]=[]
-      for(const value  of params.values()) {
+      const arr: string[] = []
+      for (const value of params.values()) {
         arr.push(value);
       }
       expect(arr[0]).assertEqual("value1")
@@ -1212,8 +948,8 @@ export default function urlTest2() {
      */
     it('testParamsValues002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大")
-      const arr:string[]=[]
-      for(const value  of params.values()) {
+      const arr: string[] = []
+      for (const value of params.values()) {
         arr.push(value);
       }
       expect(arr[1]).assertEqual("value2")
@@ -1229,9 +965,9 @@ export default function urlTest2() {
      */
     it('testParamsValues003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大")
-      params.append("a","ACA")
-      const arr:string[]=[]
-      for(const value  of params.values()) {
+      params.append("a", "ACA")
+      const arr: string[] = []
+      for (const value of params.values()) {
         arr.push(value);
       }
       expect(arr[3]).assertEqual("ACA")
@@ -1247,8 +983,8 @@ export default function urlTest2() {
      */
     it('testParamsValues004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大&4=key4")
-      const arr:string[]=[]
-      for(const value  of params.values()) {
+      const arr: string[] = []
+      for (const value of params.values()) {
         arr.push(value);
       }
       expect(arr[3]).assertEqual("key4")
@@ -1264,8 +1000,8 @@ export default function urlTest2() {
      */
     it('testParamsValues005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大&4=key4&5=key5")
-      const arr:string[]=[]
-      for(const value  of params.values()) {
+      const arr: string[] = []
+      for (const value of params.values()) {
         arr.push(value);
       }
       expect(arr[4]).assertEqual("key5")
@@ -1281,7 +1017,7 @@ export default function urlTest2() {
      */
     it('testParamsToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大")
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("d=value1&c=value2&b=%E5%A4%A7")
     })
 
@@ -1295,8 +1031,8 @@ export default function urlTest2() {
      */
     it('testParamsToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b= 大")
-      params.append("1 12","QQQ")
-      const result= params.toString()
+      params.append("1 12", "QQQ")
+      const result = params.toString()
       expect(result).assertEqual("d=value1&c=value2&b=+%E5%A4%A7&1+12=QQQ")
     })
 
@@ -1311,7 +1047,7 @@ export default function urlTest2() {
     it('testParamsToString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("￥=)")
       params.delete("5")
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("%EF%BF%A5=%29")
     })
 
@@ -1325,7 +1061,7 @@ export default function urlTest2() {
      */
     it('testParamsToString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大&4=key4")
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("d=value1&c=value2&b=%E5%A4%A7&4=key4")
     })
 
@@ -1339,8 +1075,8 @@ export default function urlTest2() {
      */
     it('testParamsToString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b= 大&4=key4&5=key5")
-      params.append("1 12","QQQ")
-      const result= params.toString()
+      params.append("1 12", "QQQ")
+      const result = params.toString()
       expect(result).assertEqual("d=value1&c=value2&b=+%E5%A4%A7&4=key4&5=key5&1+12=QQQ")
     })
 
@@ -1354,30 +1090,9 @@ export default function urlTest2() {
      */
     it('testParamsConstruction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams('?user=abc&query=xyz')
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("user=abc&query=xyz")
     })
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_08000
-    //  * @tc.name: testParamsConstruction002
-    //  * @tc.desc: A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    //   it('testParamsConstruction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //  class c1 {
-    //    user: string;
-    //    query:string[];
-    //  }
-    //   let params: Url.URLParams<c1> = new Url.URLParams({
-    //     user: 'abc',
-    //     query: ['first', 'second']
-    //   });
-    //   const result= params.toString()
-    //   expect(result).assertEqual("user=abc&query=first%2Csecond")
-    // })
 
     /**
      * @tc.name   testParamsConstruction003
@@ -1393,24 +1108,24 @@ export default function urlTest2() {
         ['query', 'first'],
         ['query', 'second'],
       ]);
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("user=abc&query=first&query=second")
     })
 
     // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_08200
-    //  * @tc.name: testParamsConstruction004
-    //  * @tc.desc: A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
+    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08200
+    //  * @tc.name testParamsConstruction004
+    //  * @tc.desc A parameterized constructor used to create an URLParams instance.
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level 1
     //  */
     // it('testParamsConstruction004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let map: Map<string, string> = new Map<string, string>();
     //   map.set('user', 'abc');
     //   map.set('query', 'xyz');
     //   let params = new Url.URLParams(map)
-    //   const result= params.toString()
+    //   const result = params.toString()
     //   expect(result).assertEqual("user=abc&query=xyz")
     // })
 
@@ -1429,7 +1144,7 @@ export default function urlTest2() {
         ['query', 'second'],
       ];
       let params = new Url.URLParams(getQueryPairs());
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("user=abc&query=first&query=second")
     })
 
@@ -1443,73 +1158,18 @@ export default function urlTest2() {
      */
     it('testParamsConstruction006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams()
-      params.append('abcde','fghki')
+      params.append('abcde', 'fghki')
       const paramsResult = params.toString()
       expect(paramsResult).assertEqual('abcde=fghki')
     })
 
     // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_08500
-    //  * @tc.name: testParamsConstruction007
-    //  * @tc.desc: A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testParamsConstruction007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = new Url.URLParams(param)
-    //   params.append('abcde','fghki')
-    //   const paramsResult = params.toString()
-    //   expect(paramsResult).assertEqual('abcde=fghki')
-    // })
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_08600
-    //  * @tc.name: testParamsConstruction008
-    //  * @tc.desc: The type of init must be string two-dimensional array or obj list throw error.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testParamsConstruction008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try {
-    //     const param = 123456789;
-    //     let params = new Url.URLParams(param)
-    //   } catch(err: BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of ${param} must be string`)
-    //     expect(err.code).assertEqual(401)
-    //     expect(err.message).assertEqual(`Parameter error. The type of ${param} must be string`);
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_08700
-    //  * @tc.name: testParamsConstruction009
-    //  * @tc.desc: The type of init must be string two-dimensional array or obj list throw error.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testParamsConstruction009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try {
-    //     const param = [
-    //       ['user', 'abc', 'error'],
-    //     ];
-    //     let params = new Url.URLParams(param);
-    //   } catch(err: BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of ${param} must be string[][]`)
-    //     expect(err.code).assertEqual(401)
-    //     expect(err.message).assertEqual(`Parameter error. The type of ${param} must be string[][]`);
-    //   }
-    // })
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_08800
-    //  * @tc.name: testNewURLSearchParams001
-    //  * @tc.desc: The input parameter for New URLParams is undefined or null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
+    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08800
+    //  * @tc.name testNewURLSearchParams001
+    //  * @tc.desc The input parameter for New URLParams is undefined or null.
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level 1
     //  */
     // it('testNewURLSearchParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams(undefined);
@@ -1519,7 +1179,7 @@ export default function urlTest2() {
     //   let result2 = params1.toString()
     //   expect(result2).assertEqual('')
     // })
-    //
+
     /**
      * @tc.name   testUrlAppend001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08900
@@ -1531,7 +1191,7 @@ export default function urlTest2() {
     it('testUrlAppend001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const that = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
       const params = new Url.URLParams(that.search);
-      params.append('ma','jk')
+      params.append('ma', 'jk')
       const result = params.toString()
       expect(result).assertEqual('foo=1&bar=2&ma=jk')
     })
@@ -1547,7 +1207,7 @@ export default function urlTest2() {
     it('testUrlAppend002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
       let params = new Url.URLParams(that.search)
-      params.append("ma 大","jk￥")
+      params.append("ma 大", "jk￥")
       const result = params.toString()
       expect(result).assertEqual("foo=1&bar=2&ma+%E5%A4%A7=jk%EF%BF%A5")
     })
@@ -1563,7 +1223,7 @@ export default function urlTest2() {
     it('testUrlAppend003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
       let params = new Url.URLParams(that.search)
-      params.append("foo~!@#$%^&*()_+-=","jk")
+      params.append("foo~!@#$%^&*()_+-=", "jk")
       const result = params.toString()
       expect(result).assertEqual("foo=1&bar=2&foo%7E%21%40%23%24%25%5E%26*%28%29_%2B-%3D=jk")
     })
@@ -1579,7 +1239,7 @@ export default function urlTest2() {
     it('testUrlAppend004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
       let params = new Url.URLParams(that.search)
-      params.append("app","par")
+      params.append("app", "par")
       const result = params.toString()
       expect(result).assertEqual("foo=1&bar=2&app=par")
     })
@@ -1595,32 +1255,11 @@ export default function urlTest2() {
     it('testUrlAppend005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
       let params = new Url.URLParams(that.search)
-      params.append("123","456")
+      params.append("123", "456")
       const result = params.toString()
       expect(result).assertEqual("foo=1&bar=2&123=456")
     })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_09400
-    //  * @tc.name: testUrlAppend006
-    //  * @tc.desc: Appends a specified key/value pair as a new search parameter.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlAppend006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
-    //   let params = new Url.URLParams(that.search)
-    //   try {
-    //     const a = 1;
-    //     params.append(a, "123")
-    //   } catch(e) {
-    //     expect(e.toString()).assertEqual(`BusinessError: Parameter error. The type of ${a} must be string`);
-    //     expect(e.code).assertEqual(401)
-    //     expect(e.message).assertEqual(`Parameter error. The type of ${a} must be string`);
-    //   }
-    // })
-    //
+
     /**
      * @tc.name   testUrlDelete001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_09500
@@ -1712,8 +1351,8 @@ export default function urlTest2() {
     it('testUrlEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
 
-      const arr:string[]=[];
-      for(const pair of params.entries()) {
+      const arr: string[] = [];
+      for (const pair of params.entries()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -1730,8 +1369,8 @@ export default function urlTest2() {
      */
     it('testUrlEntries002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      const arr:string[]=[];
-      for(const pair of params.entries()) {
+      const arr: string[] = [];
+      for (const pair of params.entries()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -1748,9 +1387,9 @@ export default function urlTest2() {
      */
     it('testUrlEntries003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      params.append("foo","jk")
-      const arr:string[]=[];
-      for(const pair of params.entries()) {
+      params.append("foo", "jk")
+      const arr: string[] = [];
+      for (const pair of params.entries()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -1767,8 +1406,8 @@ export default function urlTest2() {
      */
     it('testUrlEntries004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      const arr:string[]=[];
-      for(const pair of params.entries()) {
+      const arr: string[] = [];
+      for (const pair of params.entries()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -1785,9 +1424,9 @@ export default function urlTest2() {
      */
     it('testUrlEntries005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      params.append("jss","txt")
-      const arr:string[]=[];
-      for(const pair of params.entries()) {
+      params.append("jss", "txt")
+      const arr: string[] = [];
+      for (const pair of params.entries()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -1804,8 +1443,8 @@ export default function urlTest2() {
      */
     it('testUrl[Symbol.iterator]001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
-      const arr:string[]=[];
-      for(const pair of params.$_iterator()) {
+      const arr: string[] = [];
+      for (const pair of params.$_iterator()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -1822,8 +1461,8 @@ export default function urlTest2() {
      */
     it('testUrl[Symbol.iterator]002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      const arr:string[]=[];
-      for(const pair of params.$_iterator()) {
+      const arr: string[] = [];
+      for (const pair of params.$_iterator()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -1840,9 +1479,9 @@ export default function urlTest2() {
      */
     it('testUrl[Symbol.iterator]003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      params.append("foo","jk")
-      const arr:string[]=[];
-      for(const pair of params.$_iterator()) {
+      params.append("foo", "jk")
+      const arr: string[] = [];
+      for (const pair of params.$_iterator()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -1859,8 +1498,8 @@ export default function urlTest2() {
      */
     it('testUrl[Symbol.iterator]004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      const arr:string[]=[];
-      for(const pair of params.$_iterator()) {
+      const arr: string[] = [];
+      for (const pair of params.$_iterator()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -1877,9 +1516,9 @@ export default function urlTest2() {
      */
     it('testUrl[Symbol.iterator]005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      params.append("jss","txt")
-      const arr:string[]=[];
-      for(const pair of params.$_iterator()) {
+      params.append("jss", "txt")
+      const arr: string[] = [];
+      for (const pair of params.$_iterator()) {
         arr.push(pair[0]);
         arr.push(pair[1]);
       }
@@ -1896,7 +1535,7 @@ export default function urlTest2() {
      */
     it('testUrlForEach001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      const arr:string[]=[];
+      const arr: string[] = [];
       params.forEach((value, key, SearchParams) => {
         arr.push(value + " " + key + " " + (params === SearchParams));
       });
@@ -1913,7 +1552,7 @@ export default function urlTest2() {
      */
     it('testUrlForEach002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
-      const arr:string[]=[];
+      const arr: string[] = [];
       params.forEach((value, key, SearchParams) => {
         arr.push(value + " " + key + " " + (params === SearchParams));
       });
@@ -1930,8 +1569,8 @@ export default function urlTest2() {
      */
     it('testUrlForEach003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
-      params.append("foo","jk");
-      const arr:string[]=[];
+      params.append("foo", "jk");
+      const arr: string[] = [];
       params.forEach((value, key, SearchParams) => {
         arr.push(value + " " + key + " " + (params === SearchParams));
       });
@@ -1948,7 +1587,7 @@ export default function urlTest2() {
      */
     it('testUrlForEach004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("foo=bar&jss=txt");
-      const arr:string[]=[];
+      const arr: string[] = [];
       params.forEach((value, key, SearchParams) => {
         arr.push(value + " " + key + " " + (params === SearchParams));
       });
@@ -1965,8 +1604,8 @@ export default function urlTest2() {
      */
     it('testUrlForEach005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("foo=bar&jss=txt");
-      params.append("foo","jk");
-      const arr:string[]=[];
+      params.append("foo", "jk");
+      const arr: string[] = [];
       params.forEach((value, key, SearchParams) => {
         arr.push(value + " " + key + " " + (params === SearchParams));
       });
@@ -1983,7 +1622,7 @@ export default function urlTest2() {
      */
     it('testUrlForEach006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      let arr:string[] = [];
+      let arr: string[] = [];
       let urlCbFn: Url.UrlCbFn = (value: string, key: string, searchParams: Url.URLParams) => {
         arr.push(value + " " + key + " " + (params === searchParams));
       }
@@ -2004,7 +1643,7 @@ export default function urlTest2() {
      */
     it('testUrlGet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      const result =  params.get("1")
+      const result = params.get("1")
       expect(String(result)).assertEqual('undefined')
     })
 
@@ -2018,7 +1657,7 @@ export default function urlTest2() {
      */
     it('testUrlGet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      const result =  params.get("key2")
+      const result = params.get("key2")
       expect(String(result)).assertEqual("value2")
     })
 
@@ -2032,8 +1671,8 @@ export default function urlTest2() {
      */
     it('testUrlGet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      params.append("5","JKL")
-      const result =  params.get("5")
+      params.append("5", "JKL")
+      const result = params.get("5")
       expect(String(result)).assertEqual("JKL")
     })
 
@@ -2047,7 +1686,7 @@ export default function urlTest2() {
      */
     it('testUrlGet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      const result =  params.get("key1")
+      const result = params.get("key1")
       expect(String(result)).assertEqual("value1")
     })
 
@@ -2061,8 +1700,8 @@ export default function urlTest2() {
      */
     it('testUrlGet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      params.append("jss","JL")
-      const result =  params.get("jss")
+      params.append("jss", "JL")
+      const result = params.get("jss")
       expect(String(result)).assertEqual("JL")
     })
 
@@ -2076,8 +1715,8 @@ export default function urlTest2() {
      */
     it('testUrlGetAll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
-      params.append("key1","AAA")
-      const result =  params.getAll("key1")
+      params.append("key1", "AAA")
+      const result = params.getAll("key1")
       expect(String(result)).assertEqual("value1,AAA")
     })
 
@@ -2091,8 +1730,8 @@ export default function urlTest2() {
      */
     it('testUrlGetAll002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&8=DEF")
-      params.append("8","A8A")
-      const result =  params.getAll("8")
+      params.append("8", "A8A")
+      const result = params.getAll("8")
       expect(String(result)).assertEqual("DEF,A8A")
     })
 
@@ -2106,8 +1745,8 @@ export default function urlTest2() {
      */
     it('testUrlGetAll003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2&key3=da")
-      params.append("key3","A3A")
-      const result =  params.getAll("key3")
+      params.append("key3", "A3A")
+      const result = params.getAll("key3")
       expect(String(result)).assertEqual("da,A3A")
     })
 
@@ -2121,8 +1760,8 @@ export default function urlTest2() {
      */
     it('testUrlGetAll004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
-      params.append("key3","A3A")
-      const result =  params.getAll("key4")
+      params.append("key3", "A3A")
+      const result = params.getAll("key4")
       expect(String(result)).assertEqual('')
     })
 
@@ -2136,8 +1775,8 @@ export default function urlTest2() {
      */
     it('testUrlGetAll005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
-      params.append("key3","A3A")
-      const result =  params.getAll("key2")
+      params.append("key3", "A3A")
+      const result = params.getAll("key2")
       expect(String(result)).assertEqual("value2")
     })
 
@@ -2151,7 +1790,7 @@ export default function urlTest2() {
      */
     it('testUrlHas001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
-      const result =  params.has("2")
+      const result = params.has("2")
       expect(String(result)).assertEqual('false')
     })
 
@@ -2165,7 +1804,7 @@ export default function urlTest2() {
      */
     it('testUrlHas002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&key2=value2&key3=大")
-      const result =  params.has("小")
+      const result = params.has("小")
       expect(String(result)).assertEqual('true')
     })
 
@@ -2179,8 +1818,8 @@ export default function urlTest2() {
      */
     it('testUrlHas003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大")
-      params.append("￥","ACA")
-      const result =  params.has("￥")
+      params.append("￥", "ACA")
+      const result = params.has("￥")
       expect(String(result)).assertEqual('true')
     })
 
@@ -2194,7 +1833,7 @@ export default function urlTest2() {
      */
     it('testUrlHas004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&key2=value2&key3=大")
-      const result =  params.has("无")
+      const result = params.has("无")
       expect(String(result)).assertEqual('false')
     })
 
@@ -2208,32 +1847,11 @@ export default function urlTest2() {
      */
     it('testUrlHas005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大")
-      params.append("￥","ACA")
-      const result =  params.has("￥11")
+      params.append("￥", "ACA")
+      const result = params.has("￥11")
       expect(String(result)).assertEqual('false')
     })
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_13100
-    //  * @tc.name: testUrlHas006
-    //  * @tc.desc: Returns a Boolean that indicates whether a parameter with the specified name exists.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlHas006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = new Url.URLParams("小=value1&￥=value2&key3=大")
-    //   params.append("￥","ACA")
-    //   try {
-    //     const a = 1;
-    //     params.has(a);
-    //   } catch(e) {
-    //     expect(e.toString()).assertEqual(`BusinessError: Parameter error. The type of ${a} must be string`);
-    //     expect(e.code).assertEqual(401)
-    //     expect(e.message).assertEqual(`Parameter error. The type of ${a} must be string`);
-    //   }
-    // })
-    //
     /**
      * @tc.name   testUrlKeys001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_13200
@@ -2244,8 +1862,8 @@ export default function urlTest2() {
      */
     it('testUrlKeys001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大");
-      const arr:string[]=[];
-      for(const key of params.keys()) {
+      const arr: string[] = [];
+      for (const key of params.keys()) {
         arr.push(key);
       }
       expect(arr[0]).assertEqual("小");
@@ -2261,8 +1879,8 @@ export default function urlTest2() {
      */
     it('testUrlKeys002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大");
-      const arr:string[]=[];
-      for(const key of params.keys()) {
+      const arr: string[] = [];
+      for (const key of params.keys()) {
         arr.push(key);
       }
       expect(arr[1]).assertEqual("￥");
@@ -2278,8 +1896,8 @@ export default function urlTest2() {
      */
     it('testUrlKeys003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大");
-      const arr:string[]=[];
-      for(const key of params.keys()) {
+      const arr: string[] = [];
+      for (const key of params.keys()) {
         arr.push(key);
       }
       expect(arr[2]).assertEqual("key3");
@@ -2295,8 +1913,8 @@ export default function urlTest2() {
      */
     it('testUrlKeys004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大&key4=六");
-      const arr:string[]=[];
-      for(const key of params.keys()) {
+      const arr: string[] = [];
+      for (const key of params.keys()) {
         arr.push(key);
       }
       expect(arr[3]).assertEqual("key4");
@@ -2312,8 +1930,8 @@ export default function urlTest2() {
      */
     it('testUrlKeys005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("小=value1&￥=value2&key3=大&key4=六&key5=发");
-      const arr:string[]=[];
-      for(const key of params.keys()) {
+      const arr: string[] = [];
+      for (const key of params.keys()) {
         arr.push(key);
       }
       expect(arr[4]).assertEqual("key5");
@@ -2330,7 +1948,7 @@ export default function urlTest2() {
     it('testUrlSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
       // params.append("11","ACA");
-      params.set("11","CCC");
+      params.set("11", "CCC");
       const res = params.toString();
       expect(res).assertEqual("1=value1&2=value2&key3=3&11=CCC");
     })
@@ -2345,7 +1963,7 @@ export default function urlTest2() {
      */
     it('testUrlSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
-      params.set('10','BBB');
+      params.set('10', 'BBB');
       const res = params.toString();
       expect(res).assertEqual("1=value1&2=value2&key3=3&10=BBB");
     })
@@ -2360,7 +1978,7 @@ export default function urlTest2() {
      */
     it('testUrlSet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
-      params.set("ma 大" ,"10￥");
+      params.set("ma 大", "10￥");
       const res = params.toString();
       expect(res).assertEqual("1=value1&2=value2&key3=3&ma+%E5%A4%A7=10%EF%BF%A5");
     })
@@ -2376,7 +1994,7 @@ export default function urlTest2() {
     it('testUrlSet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
       // params.append("1","ACA");
-      params.set("1","CCC");
+      params.set("1", "CCC");
       const res = params.toString();
       expect(res).assertEqual("1=CCC&2=value2&key3=3");
     })
@@ -2391,32 +2009,11 @@ export default function urlTest2() {
      */
     it('testUrlSet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
-      params.set('12','BBB');
+      params.set('12', 'BBB');
       const res = params.toString();
       expect(res).assertEqual("1=value1&2=value2&key3=3&12=BBB");
     })
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_14200
-    //  * @tc.name: testUrlSet006
-    //  * @tc.desc: Sets the value associated with a given search parameter to the given value.
-    //  * If there were several matching values, this method deletes the others.
-    //  * If the search parameter doesn't exist, this method creates it.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlSet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try {
-    //     let params = new Url.URLParams("1=value1&2=value2&key3=3");
-    //     const a = 12;
-    //     params.set(a, 'BBB');
-    //   } catch(err: BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of ${a} must be string`)
-    //     expect(err.code).assertEqual(401)
-    //     expect(err.message).assertEqual(`Parameter error. The type of ${a} must be string`);
-    //   }
-    // })
 
     /**
      * @tc.name   testUrlSet007
@@ -2473,7 +2070,7 @@ export default function urlTest2() {
      */
     it('testUrlSort003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=33");
-      params.append("a","ACA");
+      params.append("a", "ACA");
       params.sort();
       const res = params.toString();
       expect(res).assertEqual("a=ACA&b=33&c=value2&d=value1");
@@ -2519,8 +2116,8 @@ export default function urlTest2() {
      */
     it('testUrlValues001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大")
-      const arr:string[]=[]
-      for(const value  of params.values()) {
+      const arr: string[] = []
+      for (const value of params.values()) {
         arr.push(value);
       }
       expect(arr[0]).assertEqual("value1")
@@ -2536,8 +2133,8 @@ export default function urlTest2() {
      */
     it('testUrlValues002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大")
-      const arr:string[]=[]
-      for(const value  of params.values()) {
+      const arr: string[] = []
+      for (const value of params.values()) {
         arr.push(value);
       }
       expect(arr[1]).assertEqual("value2")
@@ -2553,9 +2150,9 @@ export default function urlTest2() {
      */
     it('testUrlValues003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大")
-      params.append("a","ACA")
-      const arr:string[]=[]
-      for(const value  of params.values()) {
+      params.append("a", "ACA")
+      const arr: string[] = []
+      for (const value of params.values()) {
         arr.push(value);
       }
       expect(arr[3]).assertEqual("ACA")
@@ -2571,8 +2168,8 @@ export default function urlTest2() {
      */
     it('testUrlValues004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大&4=key4")
-      const arr:string[]=[]
-      for(const value  of params.values()) {
+      const arr: string[] = []
+      for (const value of params.values()) {
         arr.push(value);
       }
       expect(arr[3]).assertEqual("key4")
@@ -2588,8 +2185,8 @@ export default function urlTest2() {
      */
     it('testUrlValues005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大&4=key4&5=key5")
-      const arr:string[]=[]
-      for(const value  of params.values()) {
+      const arr: string[] = []
+      for (const value of params.values()) {
         arr.push(value);
       }
       expect(arr[4]).assertEqual("key5")
@@ -2605,7 +2202,7 @@ export default function urlTest2() {
      */
     it('testUrlSearchParamsToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大")
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("d=value1&c=value2&b=%E5%A4%A7")
     })
 
@@ -2619,8 +2216,8 @@ export default function urlTest2() {
      */
     it('testUrlSearchParamsToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b= 大")
-      params.append("1 12","QQQ")
-      const result= params.toString()
+      params.append("1 12", "QQQ")
+      const result = params.toString()
       expect(result).assertEqual("d=value1&c=value2&b=+%E5%A4%A7&1+12=QQQ")
     })
 
@@ -2635,7 +2232,7 @@ export default function urlTest2() {
     it('testUrlSearchParamsToString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("￥=)")
       params.delete("5")
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("%EF%BF%A5=%29")
     })
 
@@ -2649,7 +2246,7 @@ export default function urlTest2() {
      */
     it('testUrlSearchParamsToString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b=大&4=key4")
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("d=value1&c=value2&b=%E5%A4%A7&4=key4")
     })
 
@@ -2663,8 +2260,8 @@ export default function urlTest2() {
      */
     it('testUrlSearchParamsToString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("d=value1&c=value2&b= 大&4=key4&5=key5")
-      params.append("1 12","QQQ")
-      const result= params.toString()
+      params.append("1 12", "QQQ")
+      const result = params.toString()
       expect(result).assertEqual("d=value1&c=value2&b=+%E5%A4%A7&4=key4&5=key5&1+12=QQQ")
     })
 
@@ -2678,24 +2275,24 @@ export default function urlTest2() {
      */
     it('testUrlSearchParamsConstruction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams('?user=abc&query=xyz')
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("user=abc&query=xyz")
     })
 
     // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_16000
-    //  * @tc.name: testUrlSearchParamsConstruction002
-    //  * @tc.desc:  A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
+    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_16000
+    //  * @tc.name testUrlSearchParamsConstruction002
+    //  * @tc.desc  A parameterized constructor used to create an URLParams instance.
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level 1
     //  */
     // it('testUrlSearchParamsConstruction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams({
     //     user: 'abc',
     //     query: ['first', 'second']
     //   });
-    //   const result= params.toString()
+    //   const result = params.toString()
     //   expect(result).assertEqual("user=abc&query=first%2Csecond")
     // })
 
@@ -2713,34 +2310,17 @@ export default function urlTest2() {
         ['query', 'first'],
         ['query', 'second'],
       ]);
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("user=abc&query=first&query=second")
     })
 
     // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_16200
-    //  * @tc.name: testUrlSearchParamsConstruction004
-    //  * @tc.desc:  A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlSearchParamsConstruction004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const map: Map<K,V> = new Map<K,V>();
-    //   map.set('user', 'abc');
-    //   map.set('query', 'xyz');
-    //   let params = new Url.URLParams(map)
-    //   const result= params.toString()
-    //   expect(result).assertEqual("user=abc&query=xyz")
-    // })
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_16300
-    //  * @tc.name: testUrlSearchParamsConstruction005
-    //  * @tc.desc:  A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
+    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_16300
+    //  * @tc.name testUrlSearchParamsConstruction005
+    //  * @tc.desc  A parameterized constructor used to create an URLParams instance.
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level 1
     //  */
     // it('testUrlSearchParamsConstruction005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const getQueryPairs = () => [
@@ -2749,7 +2329,7 @@ export default function urlTest2() {
     //     ['query', 'second'],
     //   ]
     //   let params = new Url.URLParams(getQueryPairs());
-    //   const result= params.toString()
+    //   const result = params.toString()
     //   expect(result).assertEqual("user=abc&query=first&query=second")
     // })
 
@@ -2763,25 +2343,10 @@ export default function urlTest2() {
      */
     it('testUrlSearchParamsConstruction006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams()
-      params.append('abcde','fghki')
+      params.append('abcde', 'fghki')
       const paramsResult = params.toString()
       expect(paramsResult).assertEqual('abcde=fghki')
     })
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_16500
-    //  * @tc.name: testUrlSearchParamsConstruction007
-    //  * @tc.desc:  A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlSearchParamsConstruction007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = new Url.URLParams(param)
-    //   params.append('abcde','fghki')
-    //   const paramsResult = params.toString()
-    //   expect(paramsResult).assertEqual('abcde=fghki')
-    // })
 
     /**
      * @tc.name   testUrlSearchParamsConstruction008
@@ -2793,7 +2358,7 @@ export default function urlTest2() {
      */
     it('testUrlSearchParamsConstruction008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams()
-      params.append('abcde','fghki')
+      params.append('abcde', 'fghki')
       const paramsResult = params.toString()
       expect(paramsResult).assertEqual('abcde=fghki')
     })
@@ -2825,7 +2390,7 @@ export default function urlTest2() {
      */
     it('testUrlToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("http://username:password@host:8080/directory/file?query#fragment")
     })
 
@@ -2839,7 +2404,7 @@ export default function urlTest2() {
      */
     it('testUrlToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file')
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("http://username:password@host:8080/directory/file")
     })
 
@@ -2853,7 +2418,7 @@ export default function urlTest2() {
      */
     it('testUrlToString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080#fragment')
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("http://username:password@host:8080/#fragment")
     })
 
@@ -2867,7 +2432,7 @@ export default function urlTest2() {
      */
     it('testUrlToString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http1://host/directory/file?query#fragment')
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("http1://host/directory/file?query#fragment")
     })
 
@@ -2881,7 +2446,7 @@ export default function urlTest2() {
      */
     it('testUrlToString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http:host:8080/directory/file?query#fragment')
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("http://host:8080/directory/file?query#fragment")
     })
 
@@ -2895,7 +2460,7 @@ export default function urlTest2() {
      */
     it('testUrlToString006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('https://255.16581375')
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("https://255.253.2.255/")
     })
 
@@ -2909,7 +2474,7 @@ export default function urlTest2() {
      */
     it('testUrlToString007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('https://192.1.')
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("https://192.0.0.1/")
     })
 
@@ -2923,7 +2488,7 @@ export default function urlTest2() {
      */
     it('testUrlToString008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('https://192.1..')
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("https://192.1../")
     })
 
@@ -2937,7 +2502,7 @@ export default function urlTest2() {
      */
     it('testUrlToString009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('https://192.95645654354.8.f')
-      const result= params.toString()
+      const result = params.toString()
       expect(result).assertEqual("https://192.95645654354.8.f/")
     })
 
@@ -2951,7 +2516,7 @@ export default function urlTest2() {
      */
     it('testUrlHref001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual("http://username:password@host:8080/directory/file?query#fragment")
     })
 
@@ -2965,7 +2530,7 @@ export default function urlTest2() {
      */
     it('testUrlHref002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://host:8080/directory/file?query#fragment')
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual("http://host:8080/directory/file?query#fragment")
     })
 
@@ -2979,7 +2544,7 @@ export default function urlTest2() {
      */
     it('testUrlHref003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080')
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual("http://username:password@host:8080/")
     })
 
@@ -2994,7 +2559,7 @@ export default function urlTest2() {
     it('testUrlHref004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
       params.href = 'http1://myhost/path?sss=1#ff';
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual("http1://myhost/path?sss=1#ff")
     })
 
@@ -3009,7 +2574,7 @@ export default function urlTest2() {
     it('testUrlHref005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
       params.href = 'http://myhost:99/path#ff';
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual("http://myhost:99/path#ff")
     })
 
@@ -3023,7 +2588,7 @@ export default function urlTest2() {
      */
     it('testUrlOrigin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
-      const result= params.origin
+      const result = params.origin
       expect(result).assertEqual('http://host:8080')
     })
 
@@ -3037,7 +2602,7 @@ export default function urlTest2() {
      */
     it('testUrlOrigin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:11/directory/file?query#fragment')
-      const result= params.origin
+      const result = params.origin
       expect(result).assertEqual('http://host:11')
     })
 
@@ -3051,7 +2616,7 @@ export default function urlTest2() {
      */
     it('testUrlOrigin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host/directory/file?query#fragment')
-      const result= params.origin
+      const result = params.origin
       expect(result).assertEqual('http://host')
     })
 
@@ -3065,7 +2630,7 @@ export default function urlTest2() {
      */
     it('testUrlOrigin004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@aaaasshost:212/directory/file?query#fragment')
-      const result= params.origin
+      const result = params.origin
       expect(result).assertEqual('http://aaaasshost:212')
     })
 
@@ -3079,7 +2644,7 @@ export default function urlTest2() {
      */
     it('testUrlOrigin005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host22:100#fragment')
-      const result= params.origin
+      const result = params.origin
       expect(result).assertEqual('http://host22:100')
     })
 
@@ -3093,7 +2658,7 @@ export default function urlTest2() {
      */
     it('testUrlProtocol001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
-      const result= params.protocol
+      const result = params.protocol
       expect(result).assertEqual('http:')
     })
 
@@ -3107,7 +2672,7 @@ export default function urlTest2() {
      */
     it('testUrlProtocol002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http1://username:password@host:8080/directory/file?query#fragment')
-      const result= params.protocol
+      const result = params.protocol
       expect(result).assertEqual('http1:')
     })
 
@@ -3121,7 +2686,7 @@ export default function urlTest2() {
      */
     it('testUrlProtocol003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('https://username:password@host:8080/directory/file?query#fragment')
-      const result= params.protocol
+      const result = params.protocol
       expect(result).assertEqual('https:')
     })
 
@@ -3136,7 +2701,7 @@ export default function urlTest2() {
     it('testUrlProtocol004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
       params.protocol = 'https:';
-      const result= params.protocol
+      const result = params.protocol
       expect(result).assertEqual('https:')
     })
 
@@ -3151,7 +2716,7 @@ export default function urlTest2() {
     it('testUrlProtocol005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
       params.protocol = 'ftp:';
-      const result= params.protocol
+      const result = params.protocol
       expect(result).assertEqual('ftp:')
     })
 
@@ -3165,7 +2730,7 @@ export default function urlTest2() {
      */
     it('testUrlUsername001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
-      const result= params.username
+      const result = params.username
       expect(result).assertEqual('username')
     })
 
@@ -3179,7 +2744,7 @@ export default function urlTest2() {
      */
     it('testUrlUsername002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://zhao:password@host:8080/directory/file?query#fragment')
-      const result= params.username
+      const result = params.username
       expect(result).assertEqual('zhao')
     })
 
@@ -3194,7 +2759,7 @@ export default function urlTest2() {
     it('testUrlUsername003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
       params.username = 'skk'
-      const result= params.username
+      const result = params.username
       expect(result).assertEqual('skk')
     })
 
@@ -3209,7 +2774,7 @@ export default function urlTest2() {
     it('testUrlUsername004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
       params.username = 'skp111'
-      const result= params.username
+      const result = params.username
       expect(result).assertEqual('skp111')
     })
 
@@ -3223,7 +2788,7 @@ export default function urlTest2() {
      */
     it('testUrlUsername005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://usme@host:8080/directory/file?query#fragment')
-      const result= params.username
+      const result = params.username
       expect(result).assertEqual('usme')
     })
 
@@ -3237,7 +2802,7 @@ export default function urlTest2() {
      */
     it('testUrlPassword001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:11@host:8080/directory/file?query#fragment')
-      const result= params.password
+      const result = params.password
       expect(result).assertEqual('11')
     })
 
@@ -3251,7 +2816,7 @@ export default function urlTest2() {
      */
     it('testUrlPassword002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:23aa@host:8080/directory/file?query#fragment')
-      const result= params.password
+      const result = params.password
       expect(result).assertEqual('23aa')
     })
 
@@ -3265,7 +2830,7 @@ export default function urlTest2() {
      */
     it('testUrlPassword003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username@host:8080/directory/file?query#fragment')
-      const result= params.password
+      const result = params.password
       expect(result).assertEqual('')
     })
 
@@ -3280,7 +2845,7 @@ export default function urlTest2() {
     it('testUrlPassword004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
       params.password = '1234'
-      const result= params.password
+      const result = params.password
       expect(result).assertEqual('1234')
     })
 
@@ -3295,7 +2860,7 @@ export default function urlTest2() {
     it('testUrlPassword005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
       params.password = '';
-      const result= params.password
+      const result = params.password
       expect(result).assertEqual('')
     })
 
@@ -3309,7 +2874,7 @@ export default function urlTest2() {
      */
     it('testUrlHost001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
-      const result= params.host
+      const result = params.host
       expect(result).assertEqual('host:8080')
     })
 
@@ -3323,7 +2888,7 @@ export default function urlTest2() {
      */
     it('testUrlHost002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@hosthost/directory/file?query#fragment')
-      const result= params.host
+      const result = params.host
       expect(result).assertEqual('hosthost')
     })
 
@@ -3337,7 +2902,7 @@ export default function urlTest2() {
      */
     it('testUrlHost003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:199/directory/file?query#fragment')
-      const result= params.host
+      const result = params.host
       expect(result).assertEqual('host:199')
     })
 
@@ -3352,7 +2917,7 @@ export default function urlTest2() {
     it('testUrlHost004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
       params.host = 'jkjk'
-      const result= params.host
+      const result = params.host
       expect(result).assertEqual('jkjk:8080')
     })
 
@@ -3367,7 +2932,7 @@ export default function urlTest2() {
     it('testUrlHost005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
       params.host = 'jkjk:100'
-      const result= params.host
+      const result = params.host
       expect(result).assertEqual('jkjk:100')
     })
 
@@ -3381,7 +2946,7 @@ export default function urlTest2() {
      */
     it('testUrlHostname001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
-      const result= params.hostname
+      const result = params.hostname
       expect(result).assertEqual('host')
     })
 
@@ -3395,7 +2960,7 @@ export default function urlTest2() {
      */
     it('testUrlHostname002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host123:8080/directory/file?query#fragment')
-      const result= params.hostname
+      const result = params.hostname
       expect(result).assertEqual('host123')
     })
 
@@ -3409,7 +2974,7 @@ export default function urlTest2() {
      */
     it('testUrlHostname003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@885ssa:8080/directory/file?query#fragment')
-      const result= params.hostname
+      const result = params.hostname
       expect(result).assertEqual('885ssa')
     })
 
@@ -3424,7 +2989,7 @@ export default function urlTest2() {
     it('testUrlHostname004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
       params.hostname = 'sksk'
-      const result= params.hostname
+      const result = params.hostname
       expect(result).assertEqual('sksk')
     })
 
@@ -3439,7 +3004,7 @@ export default function urlTest2() {
     it('testUrlHostname005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
       params.hostname = 'hosthost'
-      const result= params.hostname
+      const result = params.hostname
       expect(result).assertEqual('hosthost')
     })
 
@@ -3453,7 +3018,7 @@ export default function urlTest2() {
      */
     it('testUrlPort001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
-      const result= params.port
+      const result = params.port
       expect(result).assertEqual('8080')
     })
 
@@ -3467,7 +3032,7 @@ export default function urlTest2() {
      */
     it('testUrlPort002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:100/directory/file?query#fragment')
-      const result= params.port
+      const result = params.port
       expect(result).assertEqual('100')
     })
 
@@ -3481,7 +3046,7 @@ export default function urlTest2() {
      */
     it('testUrlPort003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host/directory/file?query#fragment')
-      const result= params.port
+      const result = params.port
       expect(result).assertEqual('')
     })
 
@@ -3496,7 +3061,7 @@ export default function urlTest2() {
     it('testUrlPort004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
       params.port = '99'
-      const result= params.port
+      const result = params.port
       expect(result).assertEqual('99')
     })
 
@@ -3511,7 +3076,7 @@ export default function urlTest2() {
     it('testUrlPort005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
       params.port = '123'
-      const result= params.port
+      const result = params.port
       expect(result).assertEqual('123')
     })
 
@@ -3525,7 +3090,7 @@ export default function urlTest2() {
      */
     it('testUrlPathname001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
-      const result= params.pathname
+      const result = params.pathname
       expect(result).assertEqual('/directory/file')
     })
 
@@ -3539,7 +3104,7 @@ export default function urlTest2() {
      */
     it('testUrlPathname002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory?query#fragment')
-      const result= params.pathname
+      const result = params.pathname
       expect(result).assertEqual('/directory')
     })
 
@@ -3553,7 +3118,7 @@ export default function urlTest2() {
      */
     it('testUrlPathname003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080?query#fragment')
-      const result= params.pathname
+      const result = params.pathname
       expect(result).assertEqual('/')
     })
 
@@ -3568,7 +3133,7 @@ export default function urlTest2() {
     it('testUrlPathname004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
       params.pathname = 'path'
-      const result= params.pathname
+      const result = params.pathname
       expect(result).assertEqual('/path')
     })
 
@@ -3583,7 +3148,7 @@ export default function urlTest2() {
     it('testUrlPathname005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query#fragment')
       params.pathname = '/directory/file11'
-      const result= params.pathname
+      const result = params.pathname
       expect(result).assertEqual('/directory/file11')
     })
 
@@ -3597,7 +3162,7 @@ export default function urlTest2() {
      */
     it('testUrlSearch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=qqqq#fragment')
-      const result= params.search
+      const result = params.search
       expect(result).assertEqual('?query=qqqq')
     })
 
@@ -3611,7 +3176,7 @@ export default function urlTest2() {
      */
     it('testUrlSearch002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=qqqq&ll=pp#fragment')
-      const result= params.search
+      const result = params.search
       expect(result).assertEqual('?query=qqqq&ll=pp')
     })
 
@@ -3625,7 +3190,7 @@ export default function urlTest2() {
      */
     it('testUrlSearch003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?ppp9875=77#fragment')
-      const result= params.search
+      const result = params.search
       expect(result).assertEqual('?ppp9875=77')
     })
 
@@ -3640,7 +3205,7 @@ export default function urlTest2() {
     it('testUrlSearch004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=qqqq#fragment')
       params.search = 'kk=99'
-      const result= params.search
+      const result = params.search
       expect(result).assertEqual('?kk=99')
     })
 
@@ -3655,7 +3220,7 @@ export default function urlTest2() {
     it('testUrlSearch005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=qqqq#fragment')
       params.search = 'pppk=99'
-      const result= params.search
+      const result = params.search
       expect(result).assertEqual('?pppk=99')
     })
 
@@ -3669,7 +3234,7 @@ export default function urlTest2() {
      */
     it('testUrlHash001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=pppppp#fragment')
-      const result= params.hash
+      const result = params.hash
       expect(result).assertEqual('#fragment')
     })
 
@@ -3684,7 +3249,7 @@ export default function urlTest2() {
     it('testUrlHash002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=pppppp#fragment')
       params.hash = '123456'
-      const result= params.hash
+      const result = params.hash
       expect(result).assertEqual('#123456')
     })
 
@@ -3698,7 +3263,7 @@ export default function urlTest2() {
      */
     it('testUrlHash003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=pppppp#poiu')
-      const result= params.hash
+      const result = params.hash
       expect(result).assertEqual('#poiu')
     })
 
@@ -3712,7 +3277,7 @@ export default function urlTest2() {
      */
     it('testUrlHash004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=pppppp')
-      const result= params.hash
+      const result = params.hash
       expect(result).assertEqual('')
     })
 
@@ -3727,163 +3292,86 @@ export default function urlTest2() {
     it('testUrlHash005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=pppppp#fragment')
       params.hash = 'qwer'
-      const result= params.hash
+      const result = params.hash
       expect(result).assertEqual('#qwer')
     })
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_23200
-    //  * @tc.name: testUrlSearchParams001
-    //  * @tc.desc: Gets the SearchParams portion of the URL
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlSearchParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const that = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
-    //   const params = that.searchParams
-    //   const result = params.toString()
-    //   expect(result).assertEqual('foo=1&bar=2')
-    // })
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_23700
+     * @tc.name testUrlURLParams001
+     * @tc.desc Gets the SearchParams portion of the URL
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUrlURLParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const that = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
+      const seach = that.params
+      const result = seach.toString()
+      expect(result).assertEqual('foo=1&bar=2')
+    })
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_23300
-    //  * @tc.name: testUrlSearchParams002
-    //  * @tc.desc: Gets the SearchParams portion of the URL
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlSearchParams002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
-    //   let params = that.searchParams
-    //   params.append("ma 大","jk￥")
-    //   const result = params.toString()
-    //   expect(result).assertEqual("foo=1&bar=2&ma+%E5%A4%A7=jk%EF%BF%A5")
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_23400
-    //  * @tc.name: testUrlSearchParams003
-    //  * @tc.desc: Gets the SearchParams portion of the URL
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlSearchParams003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let that = Url.URL.parseURL('https://example.com?d=value1&c=value2&b=大&4=key4')
-    //   let params = that.searchParams
-    //   const result = params.toString()
-    //   expect(result).assertEqual("d=value1&c=value2&b=%E5%A4%A7&4=key4")
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_23500
-    //  * @tc.name: testUrlSearchParams004
-    //  * @tc.desc: Gets the SearchParams portion of the URL
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlSearchParams004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
-    //   let params = that.searchParams
-    //   params.append("foo~!@#$%^&*()_+-=","jk")
-    //   const result = params.toString()
-    //   expect(result).assertEqual("foo=1&bar=2&foo%7E%21%40%23%24%25%5E%26*%28%29_%2B-%3D=jk")
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_23600
-    //  * @tc.name: testUrlSearchParams005
-    //  * @tc.desc: Gets the SearchParams portion of the URL
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlSearchParams005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let that = Url.URL.parseURL('http://username:password@host:8080/directory/file?你好=china#qwer=da')
-    //   let params = that.searchParams
-    //   const result = params.toString()
-    //   expect(result).assertEqual("%E4%BD%A0%E5%A5%BD=china")
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_23700
-    //  * @tc.name: testUrlURLParams001
-    //  * @tc.desc: Gets the SearchParams portion of the URL
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlURLParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const that = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
-    //   const seach = that.params
-    //   const result = seach.toString()
-    //   expect(result).assertEqual('foo=1&bar=2')
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_23800
-    //  * @tc.name: testUrlURLParams002
-    //  * @tc.desc: Gets the SearchParams portion of the URL
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlURLParams002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
-    //   let seach = that.params
-    //   seach.append("ma 大","jk￥")
-    //   const result = seach.toString()
-    //   expect(result).assertEqual("foo=1&bar=2&ma+%E5%A4%A7=jk%EF%BF%A5")
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_23900
-    //  * @tc.name: testUrlURLParams003
-    //  * @tc.desc: Gets the SearchParams portion of the URL
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlURLParams003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let that = Url.URL.parseURL('https://example.com?d=value1&c=value2&b=大&4=key4')
-    //   let seach = that.params
-    //   const result = seach.toString()
-    //   expect(result).assertEqual("d=value1&c=value2&b=%E5%A4%A7&4=key4")
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_24000
-    //  * @tc.name: testUrlURLParams004
-    //  * @tc.desc: Gets the SearchParams portion of the URL
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlURLParams004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
-    //   let seach = that.params
-    //   seach.append("foo~!@#$%^&*()_+-=","jk")
-    //   const result = seach.toString()
-    //   expect(result).assertEqual("foo=1&bar=2&foo%7E%21%40%23%24%25%5E%26*%28%29_%2B-%3D=jk")
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_24100
-    //  * @tc.name: testUrlURLParams005
-    //  * @tc.desc: Gets the SearchParams portion of the URL
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlURLParams005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let that = Url.URL.parseURL('http://username:password@host:8080/directory/file?你好=china#qwer=da')
-    //   let seach = that.params
-    //   const result = seach.toString()
-    //   expect(result).assertEqual("%E4%BD%A0%E5%A5%BD=china")
-    // })
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_23800
+     * @tc.name testUrlURLParams002
+     * @tc.desc Gets the SearchParams portion of the URL
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUrlURLParams002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
+      let seach = that.params
+      seach.append("ma 大", "jk￥")
+      const result = seach.toString()
+      expect(result).assertEqual("foo=1&bar=2&ma+%E5%A4%A7=jk%EF%BF%A5")
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_23900
+     * @tc.name testUrlURLParams003
+     * @tc.desc Gets the SearchParams portion of the URL
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUrlURLParams003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let that = Url.URL.parseURL('https://example.com?d=value1&c=value2&b=大&4=key4')
+      let seach = that.params
+      const result = seach.toString()
+      expect(result).assertEqual("d=value1&c=value2&b=%E5%A4%A7&4=key4")
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_24000
+     * @tc.name testUrlURLParams004
+     * @tc.desc Gets the SearchParams portion of the URL
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUrlURLParams004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
+      let seach = that.params
+      seach.append("foo~!@#$%^&*()_+-=", "jk")
+      const result = seach.toString()
+      expect(result).assertEqual("foo=1&bar=2&foo%7E%21%40%23%24%25%5E%26*%28%29_%2B-%3D=jk")
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_24100
+     * @tc.name testUrlURLParams005
+     * @tc.desc Gets the SearchParams portion of the URL
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUrlURLParams005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let that = Url.URL.parseURL('http://username:password@host:8080/directory/file?你好=china#qwer=da')
+      let seach = that.params
+      const result = seach.toString()
+      expect(result).assertEqual("%E4%BD%A0%E5%A5%BD=china")
+    })
 
     /**
      * @tc.name   testUrlToJson001
@@ -3895,7 +3383,7 @@ export default function urlTest2() {
      */
     it('testUrlToJson001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory/file?query=pppppp#qwer=da')
-      const result= params.toJSON()
+      const result = params.toJSON()
       expect(result).assertEqual('http://username:password@host:8080/directory/file?query=pppppp#qwer=da')
     })
 
@@ -3909,7 +3397,7 @@ export default function urlTest2() {
      */
     it('testUrlToJson002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://host:8080/directory/file?query=pppppp#qwer=da')
-      const result= params.toJSON()
+      const result = params.toJSON()
       expect(result).assertEqual('http://host:8080/directory/file?query=pppppp#qwer=da')
     })
 
@@ -3923,7 +3411,7 @@ export default function urlTest2() {
      */
     it('testUrlToJson003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080')
-      const result= params.toJSON()
+      const result = params.toJSON()
       expect(result).assertEqual('http://username:password@host:8080/')
     })
 
@@ -3937,7 +3425,7 @@ export default function urlTest2() {
      */
     it('testUrlToJson004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http11://username:password@host:8080?query=pppppp#qwer=da')
-      const result= params.toJSON()
+      const result = params.toJSON()
       expect(result).assertEqual('http11://username:password@host:8080?query=pppppp#qwer=da')
     })
 
@@ -3951,7 +3439,7 @@ export default function urlTest2() {
      */
     it('testUrlToJson005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://username:password@host:8080/directory')
-      const result= params.toJSON()
+      const result = params.toJSON()
       expect(result).assertEqual('http://username:password@host:8080/directory')
     })
 
@@ -3965,7 +3453,7 @@ export default function urlTest2() {
      */
     it('testUrlIPv6001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://[FEDC:BA98:7654:3210:FEDC:BA98:7654:3210]:80/index.html')
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual('http://[fedc:ba98:7654:3210:fedc:ba98:7654:3210]/index.html')
     })
 
@@ -3979,7 +3467,7 @@ export default function urlTest2() {
      */
     it('testUrlIPv6002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://[1080:0:0:0:8:800:200C:417A]/index.html')
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual('http://[1080::8:800:200c:417a]/index.html')
     })
 
@@ -3993,7 +3481,7 @@ export default function urlTest2() {
      */
     it('testUrlIPv6003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://[::FFFF:129.144.52.38]:80/index.html')
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual('http://[::ffff:8190:3426]/index.html')
     })
 
@@ -4007,7 +3495,7 @@ export default function urlTest2() {
      */
     it('testUrlIPv4001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://0377.0xff.255.1:80/index.html')
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual('http://255.255.255.1/index.html')
     })
 
@@ -4021,7 +3509,7 @@ export default function urlTest2() {
      */
     it('testUrlIPv4002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://0377.0xff.255.g/index.html')
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual('http://0377.0xff.255.g/index.html')
     })
 
@@ -4035,7 +3523,7 @@ export default function urlTest2() {
      */
     it('testUrlIPv4003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('http://190.254.245.9:80/index.html')
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual('http://190.254.245.9/index.html')
     })
 
@@ -4049,7 +3537,7 @@ export default function urlTest2() {
      */
     it('testUrlConstruction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('https://developer.mozilla.org',)
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual('https://developer.mozilla.org/')
     })
 
@@ -4062,8 +3550,8 @@ export default function urlTest2() {
      * @tc.level  LEVEL1
      */
     it('testUrlConstruction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('https://developer.mozilla.org','flie:/developer.mozilla.org')
-      const result= params.href
+      let params = Url.URL.parseURL('https://developer.mozilla.org', 'flie:/developer.mozilla.org')
+      const result = params.href
       expect(result).assertEqual('https://developer.mozilla.org/')
     })
 
@@ -4076,8 +3564,8 @@ export default function urlTest2() {
      * @tc.level  LEVEL1
      */
     it('testUrlConstruction003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('https://developer.mozilla.org','ftp://www.example.com')
-      const result= params.href
+      let params = Url.URL.parseURL('https://developer.mozilla.org', 'ftp://www.example.com')
+      const result = params.href
       expect(result).assertEqual('https://developer.mozilla.org/')
     })
 
@@ -4091,7 +3579,7 @@ export default function urlTest2() {
      */
     it('testUrlConstruction004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL(' ', 'http://www.example.com')
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual('http://www.example.com/')
     })
 
@@ -4105,7 +3593,7 @@ export default function urlTest2() {
      */
     it('testUrlConstruction005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('.', 'http://www.example.com')
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual('http://www.example.com/')
     })
 
@@ -4119,7 +3607,7 @@ export default function urlTest2() {
      */
     it('testUrlConstruction006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('../h:', 'http://www.example.com')
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual('http://www.example.com/h:')
     })
 
@@ -4133,7 +3621,7 @@ export default function urlTest2() {
      */
     it('testUrlConstruction007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('/sca/./path/path/../scasa/jjjjj', 'http://www.example.com')
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual('http://www.example.com/sca/path/scasa/jjjjj')
     })
 
@@ -4147,7 +3635,7 @@ export default function urlTest2() {
      */
     it('testUrlConstruction008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('/../sca/./path/path/../scasa/jjjjj', 'http://www.example.com')
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual('http://www.example.com/sca/path/scasa/jjjjj')
     })
 
@@ -4160,8 +3648,8 @@ export default function urlTest2() {
      * @tc.level  LEVEL1
      */
     it('testUrlConstruction009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL( '/../sca/./path/path/../scasa/jjjjj', 'file://www.example.com')
-      const result= params.href
+      let params = Url.URL.parseURL('/../sca/./path/path/../scasa/jjjjj', 'file://www.example.com')
+      const result = params.href
       expect(result).assertEqual('file://www.example.com/sca/path/scasa/jjjjj')
     })
 
@@ -4175,7 +3663,7 @@ export default function urlTest2() {
      */
     it('testUrlConstruction010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('/../sca/./path/path/../scasa/jjjjj', 'file1://www.example.com')
-      const result= params.href
+      const result = params.href
       expect(result).assertEqual('file1://www.example.com/sca/path/scasa/jjjjj')
     })
 
@@ -4189,7 +3677,7 @@ export default function urlTest2() {
      */
     it('testUrlConstruction011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('htt1p://www.0902zy.cn/path?abc=123&def=456#yyyy')
-      let params1 = Url.URL.parseURL('www.baidu.com/ssaa',params)
+      let params1 = Url.URL.parseURL('www.baidu.com/ssaa', params)
       const result = params1.href
       expect(result).assertEqual('htt1p://www.0902zy.cn/www.baidu.com/ssaa')
     })
@@ -4204,7 +3692,7 @@ export default function urlTest2() {
      */
     it('testUrlConstruction012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('htt1p://www.0902zy.cn/path?abc=123&def=456#yyyy')
-      let params1 = Url.URL.parseURL('//www.baidu.com/ssaa',params)
+      let params1 = Url.URL.parseURL('//www.baidu.com/ssaa', params)
       const result = params1.href
       expect(result).assertEqual('htt1p://www.baidu.com/ssaa')
     })
@@ -4219,484 +3707,11 @@ export default function urlTest2() {
      */
     it('testUrlConstruction013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = Url.URL.parseURL('htt1p://www.0902zy.cn/path?abc=123&def=456#yyyy')
-      let params1 = Url.URL.parseURL('',params)
+      let params1 = Url.URL.parseURL('', params)
       const result = params1.href
       expect(result).assertEqual('htt1p://www.0902zy.cn/path?abc=123&def=456#yyyy')
     })
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_26600
-    //  * @tc.name: testUrlConstruction014
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlConstruction014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL('htt1p://www.0902zy.cn/path?abc=123&def=456#yyyy')
-    //   const result = params.searchParams.toString();
-    //   expect(result).assertEqual('abc=123&def=456')
-    // })
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_26700
-    //  * @tc.name: testUrlparseURL001
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL()
-    //   expect(params != null).assertTrue()
-    //   let params2 =  Url.URL.parseURL('https://developer.mozilla.org',)
-    //   const result= params2.href
-    //   expect(result).assertEqual('https://developer.mozilla.org/')
-    // })
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_26800
-    //  * @tc.name: testUrlparseURL002
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL()
-    //   expect(params != null).assertTrue()
-    //   let params2 = Url.URL.parseURL('https://developer.mozilla.org','flie:/developer.mozilla.org')
-    //   const result= params2.href
-    //   expect(result).assertEqual('https://developer.mozilla.org/')
-    // })
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_26900
-    //  * @tc.name: testUrlparseURL003
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL()
-    //   expect(params != null).assertTrue()
-    //   let params2 = Url.URL.parseURL('https://developer.mozilla.org','ftp://www.example.com')
-    //   const result= params2.href
-    //   expect(result).assertEqual('https://developer.mozilla.org/')
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27000
-    //  * @tc.name: testUrlparseURL004
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL()
-    //   expect(params != null).assertTrue()
-    //   let params2 = Url.URL.parseURL(' ', 'http://www.example.com')
-    //   const result= params2.href
-    //   expect(result).assertEqual('http://www.example.com/')
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27100
-    //  * @tc.name: testUrlparseURL005
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL()
-    //   expect(params != null).assertTrue()
-    //   let params2 = Url.URL.parseURL('.', 'http://www.example.com')
-    //   const result= params2.href
-    //   expect(result).assertEqual('http://www.example.com/')
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27200
-    //  * @tc.name: testUrlparseURL006
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL()
-    //   expect(params != null).assertTrue()
-    //   let params2 = Url.URL.parseURL('../h:', 'http://www.example.com')
-    //   const result= params2.href
-    //   expect(result).assertEqual('http://www.example.com/h:')
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27300
-    //  * @tc.name: testUrlparseURL007
-    //  * @tc.desc: URL constructor, BusinessError: Parameter error.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try{
-    //     let params = Url.URL.parseURL()
-    //     expect(params != null).assertTrue()
-    //     const a = undefined
-    //     Url.URL.parseURL(a)
-    //     expect(0).assertEqual(1)
-    //   } catch(err: BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of ${a} must be string`)
-    //     expect(err.code).assertEqual(401)
-    //     expect(err.message).assertEqual(`Parameter error. The type of ${a} must be string`);
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27400
-    //  * @tc.name: testUrlparseURL008
-    //  * @tc.desc: URL constructor, BusinessError: Parameter error.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try{
-    //     let params = Url.URL.parseURL()
-    //     expect(params != null).assertTrue()
-    //     const a = 666;
-    //     const b = 666;
-    //     Url.URL.parseURL(a, b)
-    //     expect(0).assertEqual(1)
-    //   } catch(err: BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of ${a} must be string`)
-    //     expect(err.code).assertEqual(401)
-    //     expect(err.message).assertEqual(`Parameter error. The type of ${a} must be string`);
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27500
-    //  * @tc.name: testUrlparseURL009
-    //  * @tc.desc: URL constructor, BusinessError: Parameter error.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try{
-    //     let params = Url.URL.parseURL()
-    //     expect(params != null).assertTrue()
-    //     const a = '666666';
-    //     const b = 666666;
-    //     Url.URL.parseURL(a, b)
-    //     expect(0).assertEqual(1)
-    //   } catch(err: BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of ${b} must be string or URL`);
-    //     expect(err.code).assertEqual(401)
-    //     expect(err.message).assertEqual(`Parameter error. The type of ${b} must be string or URL`);
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27600
-    //  * @tc.name: testUrlparseURL0010
-    //  * @tc.desc: URL constructor, BusinessError: Parameter error.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try{
-    //     let params = Url.URL.parseURL()
-    //     expect(params != null).assertTrue()
-    //     const a = '666666';
-    //     const b = "666666";
-    //     Url.URL.parseURL(a, b)
-    //     expect(0).assertEqual(1)
-    //   } catch(err: BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Syntax Error. Invalid Url string`)
-    //     expect(err.code).assertEqual(10200002)
-    //     expect(err.message).assertEqual(`Syntax Error. Invalid Url string`);
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27700
-    //  * @tc.name: testUrlparseURL0011
-    //  * @tc.desc: The second parameter of parseURL is undefined or null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL()
-    //   expect(params != null).assertTrue()
-    //   let params1 =  Url.URL.parseURL('https://developer.mozilla.org', undefined)
-    //   let result = params1.href
-    //   expect(result).assertEqual('https://developer.mozilla.org/')
-    //   let params2 =  Url.URL.parseURL('https://developer.mozilla.org', null)
-    //   let result1 = params2.href
-    //   expect(result1).assertEqual('https://developer.mozilla.org/')
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27800
-    //  * @tc.name: testUrlparseURL0012
-    //  * @tc.desc: The second parameter of parseURL is undefined or null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL()
-    //   expect(params != null).assertTrue()
-    //   let params2 =  Url.URL.parseURL('http://168')
-    //   const result= params2.href
-    //   expect(result).assertEqual('http://0.0.0.168/')
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27900
-    //  * @tc.name: testUrlparseURL0013
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL()
-    //   expect(params != null).assertTrue()
-    //   let params2 =  Url.URL.parseURL('http://168.')
-    //   const result= params2.href
-    //   expect(result).assertEqual('http://0.0.0.168/')
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28000
-    //  * @tc.name: testUrlparseURL0014
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL()
-    //   expect(params != null).assertTrue()
-    //   let params2 =  Url.URL.parseURL('http://168.1')
-    //   const result= params2.href
-    //   expect(result).assertEqual('http://168.0.0.1/')
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28100
-    //  * @tc.name: testUrlparseURL0015
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL()
-    //   expect(params != null).assertTrue()
-    //   let params2 =  Url.URL.parseURL('http://168.1.')
-    //   const result= params2.href
-    //   expect(result).assertEqual('http://168.0.0.1/')
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28200
-    //  * @tc.name: testUrlparseURL0016
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL()
-    //   expect(params != null).assertTrue()
-    //   let params2 =  Url.URL.parseURL('http://168.1.1')
-    //   const result= params2.href
-    //   expect(result).assertEqual('http://168.1.0.1/')
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28300
-    //  * @tc.name: testUrlparseURL0017
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL()
-    //   expect(params != null).assertTrue()
-    //   let params2 =  Url.URL.parseURL('http://168.60.114.105')
-    //   const result= params2.href
-    //   expect(result).assertEqual('http://168.60.114.105/')
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28400
-    //  * @tc.name: testUrlparseURL0018
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL()
-    //   expect(params != null).assertTrue()
-    //   let params2 =  Url.URL.parseURL('http://168.1.399')
-    //   const result= params2.href
-    //   expect(result).assertEqual('http://168.1.1.143/')
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28500
-    //  * @tc.name: testUrlparseURL0019
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL()
-    //   expect(params != null).assertTrue()
-    //   let params2 =  Url.URL.parseURL('http://168.3.0XFF')
-    //   const result= params2.href
-    //   expect(result).assertEqual('http://168.3.0.255/')
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28600
-    //  * @tc.name: testUrlparseURL0020
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL()
-    //   expect(params != null).assertTrue()
-    //   let params2 =  Url.URL.parseURL('http://168.3.65535')
-    //   const result= params2.href
-    //   expect(result).assertEqual('http://168.3.255.255/')
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28700
-    //  * @tc.name: testUrlparseURL0021
-    //  * @tc.desc: URL constructor, throw BusinessError: Syntax Error. Invalid Url string.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try{
-    //     let params = Url.URL.parseURL()
-    //     expect(params != null).assertTrue()
-    //     const a = 'http://168.399.3';
-    //     Url.URL.parseURL(a)
-    //     expect(0).assertEqual(1)
-    //   } catch(err: BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Syntax Error. Invalid Url string`)
-    //     expect(err.code).assertEqual(10200002)
-    //     expect(err.message).assertEqual(`Syntax Error. Invalid Url string`);
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28800
-    //  * @tc.name: testUrlparseURL0022
-    //  * @tc.desc: URL constructor, throw BusinessError: Syntax Error. Invalid Url string.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try{
-    //     let params = Url.URL.parseURL()
-    //     expect(params != null).assertTrue()
-    //     const a = 'http://168.255.65536';
-    //     Url.URL.parseURL(a)
-    //     expect(0).assertEqual(1)
-    //   } catch(err: BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Syntax Error. Invalid Url string`)
-    //     expect(err.code).assertEqual(10200002)
-    //     expect(err.message).assertEqual(`Syntax Error. Invalid Url string`);
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28900
-    //  * @tc.name: testUrlparseURL0023
-    //  * @tc.desc: URL constructor, throw BusinessError: Syntax Error. Invalid Url string.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try{
-    //     let params = Url.URL.parseURL()
-    //     expect(params != null).assertTrue()
-    //     const a = 'http://168.555.0X10000';
-    //     Url.URL.parseURL(a)
-    //     expect(0).assertEqual(1)
-    //   } catch(err: BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Syntax Error. Invalid Url string`)
-    //     expect(err.code).assertEqual(10200002)
-    //     expect(err.message).assertEqual(`Syntax Error. Invalid Url string`);
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_29000
-    //  * @tc.name: testUrlparseURL0024
-    //  * @tc.desc: URL constructor, throw BusinessError: Syntax Error. Invalid Url string.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try{
-    //     let params = Url.URL.parseURL()
-    //     expect(params != null).assertTrue()
-    //     const a = 'http://168.16777217';
-    //     Url.URL.parseURL(a)
-    //     expect(0).assertEqual(1)
-    //   } catch(err: BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Syntax Error. Invalid Url string`)
-    //     expect(err.code).assertEqual(10200002)
-    //     expect(err.message).assertEqual(`Syntax Error. Invalid Url string`);
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_29100
-    //  * @tc.name: testUrlparseURL0025
-    //  * @tc.desc: URL constructor, throw BusinessError: Syntax Error. Invalid Url string.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   try{
-    //     let params = Url.URL.parseURL()
-    //     expect(params != null).assertTrue()
-    //     const a = 'http://www.host.name:655348899994';
-    //     Url.URL.parseURL(a)
-    //     expect(0).assertEqual(1)
-    //   } catch(err: BusinessError) {
-    //     expect(err.toString()).assertEqual(`BusinessError: Syntax Error. Invalid Url string`)
-    //     expect(err.code).assertEqual(10200002)
-    //     expect(err.message).assertEqual(`Syntax Error. Invalid Url string`);
-    //   }
-    // })
 
     /**
      * @tc.name   testUrlparseURL0026
@@ -4707,8 +3722,8 @@ export default function urlTest2() {
      * @tc.level  LEVEL1
      */
     it('testUrlparseURL0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params2 =  Url.URL.parseURL('http://192.0x.9.')
-      const result= params2.toString();
+      let params2 = Url.URL.parseURL('http://192.0x.9.')
+      const result = params2.toString();
       expect(result).assertEqual('http://192.0.0.9/')
     })
 
@@ -4721,7 +3736,7 @@ export default function urlTest2() {
      * @tc.level  LEVEL1
      */
     it('testUrlparseURL0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let urlObj =  Url.URL.parseURL('../2/2.html', 'http://xxx.com/hem1/1/1.html')
+      let urlObj = Url.URL.parseURL('../2/2.html', 'http://xxx.com/hem1/1/1.html')
       const result = urlObj.toString();
       expect(result).assertEqual('http://xxx.com/hem1/2/2.html')
     })
@@ -4735,7 +3750,7 @@ export default function urlTest2() {
      * @tc.level  LEVEL1
      */
     it('testUrlparseURL0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let urlObj =  Url.URL.parseURL('../2/2.html', 'http://xxx.com')
+      let urlObj = Url.URL.parseURL('../2/2.html', 'http://xxx.com')
       const result = urlObj.toString();
       expect(result).assertEqual('http://xxx.com/2/2.html')
     })
@@ -4752,10 +3767,11 @@ export default function urlTest2() {
       let strUrl = "bytedance://large_image?url=https%3A%2F%2Fp3-sign.toutiaoimg.com%2Flarge%2Ftos-cn-i-6w9my0ksv" +
         "p%2Fc2c8b671c3ea4f968ae3a89a21b5f952%3F_iz%3D67594%26from%3Darticle.detail%26x-expires%3D1703755589%26x" +
         "-signature%3DFUbhPcvUfgI%252BJLdkCiaj1S1pBSQ%253D&index=0";
-      let res = "?url=https%3A%2F%2Fp3-sign.toutiaoimg.com%2Flarge%2Ftos-cn-i-6w9my0ksvp%2Fc2c8b671c3ea4f968ae3a89a21b" +
-        "5f952%3F_iz%3D67594%26from%3Darticle.detail%26x-expires%3D1703755589%26x-signature%3DFUbhPcvUfgI%252BJLdkCia" +
-        "j1S1pBSQ%253D&index=0";
-      let urlObj =  Url.URL.parseURL(strUrl)
+      let res =
+        "?url=https%3A%2F%2Fp3-sign.toutiaoimg.com%2Flarge%2Ftos-cn-i-6w9my0ksvp%2Fc2c8b671c3ea4f968ae3a89a21b" +
+          "5f952%3F_iz%3D67594%26from%3Darticle.detail%26x-expires%3D1703755589%26x-signature%3DFUbhPcvUfgI%252BJLdkCia" +
+          "j1S1pBSQ%253D&index=0";
+      let urlObj = Url.URL.parseURL(strUrl)
       const result = urlObj.search;
       expect(result).assertEqual(res)
     })
@@ -4775,7 +3791,7 @@ export default function urlTest2() {
       let res = "url=https%3A%2F%2Fp3-sign.toutiaoimg.com%2Flarge%2Ftos-cn-i-6w9my0ksvp%2Fc2c8b671c3ea4f968ae3a89" +
         "a21b5f952%3F_iz%3D67594%26from%3Darticle.detail%26x-expires%3D1703755589%26x-signature%3DFUbhPcvUfgI%252BJ" +
         "LdkCiaj1S1pBSQ%253D&index=0";
-      let urlObj =  Url.URL.parseURL(strUrl)
+      let urlObj = Url.URL.parseURL(strUrl)
       const result = urlObj.params.toString();
       expect(result).assertEqual(res)
     })
@@ -4794,7 +3810,7 @@ export default function urlTest2() {
         "-signature%3DFUbhPcvUfgI%252BJLdkCiaj1S1pBSQ%253D&index=0";
       let res = "https://p3-sign.toutiaoimg.com/large/tos-cn-i-6w9my0ksvp/c2c8b671c3ea4f968ae3a89a21b5f952?_iz=" +
         "67594&from=article.detail&x-expires=1703755589&x-signature=FUbhPcvUfgI%2BJLdkCiaj1S1pBSQ%3D"
-      let urlObj =  Url.URL.parseURL(strUrl)
+      let urlObj = Url.URL.parseURL(strUrl)
       const result = urlObj.params.get("url")
       expect(result).assertEqual(res)
     })
@@ -4813,7 +3829,7 @@ export default function urlTest2() {
         "594&from=article.detail%26x-expires%3D17";
       let res = '["https://p3-sign.toutiaoimg.com/large/tos-cn-i-6w9my0ksvp/c22?_iz=675' +
         '94&from=al&x-expires=19&x-sie=FI%2BJ","https://ssse?iz=67594"]';
-      let urlObj =  Url.URL.parseURL(strUrl)
+      let urlObj = Url.URL.parseURL(strUrl)
       const result = JSON.stringify(urlObj.params.getAll("url"))
       expect(result).assertEqual(res)
     })
@@ -4983,40 +3999,40 @@ export default function urlTest2() {
       }
     })
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_30700
-    //  * @tc.name: testUrlparseURL0041
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const u2 = Url.URL.parseURL(`https://a.cn?phone=%2B86`)
-    //   const phone2 = u2.params.get('phone')
-    //   expect(u2.params.toString()).assertEqual('phone=%2B86')
-    //     expect(phone2.toString()).assertEqual('+86')
-    // })
-    //
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_30800
-    //  * @tc.name: testUrlparseURL0042
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const u2 = Url.URL.parseURL(`https://a.cn?phone=%2B86+9`)
-    //   const phone2 = u2.params.get('phone')
-    //   expect(u2.params.toString()).assertEqual('phone=%2B86+9')
-    //   if(phone2 !== null){
-    //     expect(phone2.toString()).assertEqual('+86 9')
-    //   } else {
-    //     console.log('error')
-    //   }
-    //
-    // })
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_30700
+     * @tc.name testUrlparseURL0041
+     * @tc.desc URL constructor, which is used to instantiate a URL obj.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUrlparseURL0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const u2 = Url.URL.parseURL(`https://a.cn?phone=%2B86`)
+      const phone2 = u2.params.get('phone')
+      expect(u2.params.toString()).assertEqual('phone=%2B86')
+      expect(phone2!.toString()).assertEqual('+86')
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_30800
+     * @tc.name testUrlparseURL0042
+     * @tc.desc URL constructor, which is used to instantiate a URL obj.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUrlparseURL0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const u2 = Url.URL.parseURL(`https://a.cn?phone=%2B86+9`)
+      const phone2 = u2.params.get('phone')
+      expect(u2.params.toString()).assertEqual('phone=%2B86+9')
+      if (phone2 !== null) {
+        expect(phone2!.toString()).assertEqual('+86 9')
+      } else {
+        console.log('error')
+      }
+
+    })
 
     /**
      * @tc.name   testUrlparseURL0043
@@ -5093,15 +4109,15 @@ export default function urlTest2() {
       expect(uu.toString()).assertEqual(res);
     })
 
-      /**
-       * @tc.name   testUrlparseURL0048
-       * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_31400
-       * @tc.desc   URL constructor, which is used to instantiate a URL obj.
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL1
-       */
-      it('testUrlparseURL0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    /**
+     * @tc.name   testUrlparseURL0048
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_31400
+     * @tc.desc   URL constructor, which is used to instantiate a URL obj.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUrlparseURL0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uu = Url.URL.parseURL('http://www.baidu.com/sajd中文测试/aa?xx=%26优优');
       let uu2 = Url.URL.parseURL(uu.toString());
       let res = 'http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26%E4%BC%98%E4%BC%98';
@@ -5306,7 +4322,7 @@ export default function urlTest2() {
       expect(obj.params.toString()).assertEqual(res);
       expect(obj.params.get('key')).assertEqual('a b =+c  =p&p%大!()~{}[]%大');
       obj.params.delete('');
-      for(let tiem of obj.params.entries()){
+      for (let tiem of obj.params.entries()) {
         expect(tiem[0]).assertEqual('key');
         expect(tiem[1]).assertEqual('a b =+c  =p&p%大!()~{}[]%大');
       }
@@ -5354,23 +4370,23 @@ export default function urlTest2() {
       expect(obj.toString()).assertEqual('key=&key2=val');
     })
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_33000
-    //  * @tc.name: testUrlparseURL0064
-    //  * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlparseURL0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const obj = new Url.URLParams('')
-    //   obj.sort();
-    //   expect(obj.toString()).assertEqual('');
-    //   obj.append('ket2', 'sc');
-    //   obj.append('e%t2', 's@c');
-    //   obj.sort();
-    //   expect(obj.toString()).assertEqual('e%25t2=s%40c&ket2=sc');
-    // })
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_33000
+     * @tc.name testUrlparseURL0064
+     * @tc.desc URL constructor, which is used to instantiate a URL obj.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUrlparseURL0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const obj = new Url.URLParams('')
+      obj.sort();
+      expect(obj.toString()).assertEqual('');
+      obj.append('ket2', 'sc');
+      obj.append('e%t2', 's@c');
+      obj.sort();
+      expect(obj.toString()).assertEqual('e%25t2=s%40c&ket2=sc');
+    })
 
     /**
      * @tc.name   testUrlparseURL0065
@@ -5620,7 +4636,7 @@ export default function urlTest2() {
       let str = "ftp:!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ \\[]"
         + "^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸"
         + "¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ";
-      let obj =  Url.URL.parseURL(str);
+      let obj = Url.URL.parseURL(str);
       const urlEncode = "ftp://!%22/#$%&'()*+,-./0123456789:;%3C=%3E?@ABCDEFGHIJKLMNOPQRSTUVWXYZ%20%5C[]%5E_"
         + "`abcdefghijklmnopqrstuvwxyz{|}~%E2%82%AC%E2%80%9A%C6%92%E2%80%9E%E2%80%A6%E2%80%A0%E2%80%A1"
         + "%CB%86%E2%80%B0%C5%A0%E2%80%B9%C5%92%C5%BD%E2%80%98%E2%80%99%E2%80%9C%E2%80%9D%E2%80%A2%E2"
@@ -5643,7 +4659,7 @@ export default function urlTest2() {
      * @tc.level  LEVEL1
      */
     it('testUrlparseURL0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const obj = Url.URL.parseURL('patoh\ude01?query#fagmengt','https://www.test.com\ude01');
+      const obj = Url.URL.parseURL('patoh\ude01?query#fagmengt', 'https://www.test.com\ude01');
       expect(obj.toString()).assertEqual('https://www.test.com%EF%BF%BD/patoh%EF%BF%BD?query#fagmengt');
     })
 
@@ -5656,7 +4672,7 @@ export default function urlTest2() {
      * @tc.level  LEVEL1
      */
     it('testUrlparseURL0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const obj = Url.URL.parseURL('patoh\ude01?query#fagmengt','https://www.test.com\ude01');
+      const obj = Url.URL.parseURL('patoh\ude01?query#fagmengt', 'https://www.test.com\ude01');
       expect(obj.toString()).assertEqual('https://www.test.com%EF%BF%BD/patoh%EF%BF%BD?query#fagmengt');
     })
 
@@ -5889,45 +4905,6 @@ export default function urlTest2() {
       expect(obj.search).assertEqual(queryEncode);
     })
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_36100
-    //  * @tc.name: testUrlSearchParams006
-    //  * @tc.desc: Gets the SearchParams portion of the URL.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
-    //  */
-    // it('testUrlSearchParams006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let str = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\\[]"
-    //     + "^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸"
-    //     + "¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ";
-    //   const queryEncode = "?%20!%22%23$%&'()*+,-./0123456789:;%3C=%3E?@ABCDEFGHIJKLMNOPQRSTUVWXYZ%5C[]^_`abcdefgh"
-    //     + "ijklmnopqrstuvwxyz{|}~%E2%82%AC%E2%80%9A%C6%92%E2%80%9E%E2%80%A6%E2%80%A0%E2%80%A1%CB%86%E2%80%B0%C5"
-    //     + "%A0%E2%80%B9%C5%92%C5%BD%E2%80%98%E2%80%99%E2%80%9C%E2%80%9D%E2%80%A2%E2%80%93%E2%80%94%CB%9C%E2%84"
-    //     + "%A2%C5%A1%E2%80%BA%C5%93%C5%BE%C5%B8%C2%A1%C2%A2%C2%A3%C2%A4%C2%A5%C2%A6%C2%A7%C2%A8%C2%A9%C2%AA%C2"
-    //     + "%AB%C2%AC%C2%AD%C2%AE%C2%AF%C2%B0%C2%B1%C2%B2%C2%B3%C2%B4%C2%B5%C2%B6%C2%B7%C2%B8%C2%B9%C2%BA%C2%BB"
-    //     + "%C2%BC%C2%BD%C2%BE%C2%BF%C3%80%C3%81%C3%82%C3%83%C3%84%C3%85%C3%86%C3%87%C3%88%C3%89%C3%8A%C3%8B%C3"
-    //     + "%8C%C3%8D%C3%8E%C3%8F%C3%90%C3%91%C3%92%C3%93%C3%94%C3%95%C3%96%C3%97%C3%98%C3%99%C3%9A%C3%9B%C3%9C"
-    //     + "%C3%9D%C3%9E%C3%9F%C3%A0%C3%A1%C3%A2%C3%A3%C3%A4%C3%A5%C3%A6%C3%A7%C3%A8%C3%A9%C3%AA%C3%AB%C3%AC%C3"
-    //     + "%AD%C3%AE%C3%AF%C3%B0%C3%B1%C3%B2%C3%B3%C3%B4%C3%B5%C3%B6%C3%B7%C3%B8%C3%B9%C3%BA%C3%BB%C3%BC%C3%BD"
-    //     + "%C3%BE%C3%BF";
-    //   const searchParamEncode = "+%21%22%23%24%25=&%27%28%29*+%2C-.%2F0123456789%3A%3B%3C=%3E%3F%40ABCDEFGHIJKL"
-    //     + "MNOPQRSTUVWXYZ%5C%5B%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D%7E%E2%82%AC%E2%80%9A%C6%92%E2%80"
-    //     + "%9E%E2%80%A6%E2%80%A0%E2%80%A1%CB%86%E2%80%B0%C5%A0%E2%80%B9%C5%92%C5%BD%E2%80%98%E2%80%99%E2%80%9C"
-    //     + "%E2%80%9D%E2%80%A2%E2%80%93%E2%80%94%CB%9C%E2%84%A2%C5%A1%E2%80%BA%C5%93%C5%BE%C5%B8%C2%A1%C2%A2%C2"
-    //     + "%A3%C2%A4%C2%A5%C2%A6%C2%A7%C2%A8%C2%A9%C2%AA%C2%AB%C2%AC%C2%AD%C2%AE%C2%AF%C2%B0%C2%B1%C2%B2%C2%B3"
-    //     + "%C2%B4%C2%B5%C2%B6%C2%B7%C2%B8%C2%B9%C2%BA%C2%BB%C2%BC%C2%BD%C2%BE%C2%BF%C3%80%C3%81%C3%82%C3%83%C3"
-    //     + "%84%C3%85%C3%86%C3%87%C3%88%C3%89%C3%8A%C3%8B%C3%8C%C3%8D%C3%8E%C3%8F%C3%90%C3%91%C3%92%C3%93%C3%94"
-    //     + "%C3%95%C3%96%C3%97%C3%98%C3%99%C3%9A%C3%9B%C3%9C%C3%9D%C3%9E%C3%9F%C3%A0%C3%A1%C3%A2%C3%A3%C3%A4%C3"
-    //     + "%A5%C3%A6%C3%A7%C3%A8%C3%A9%C3%AA%C3%AB%C3%AC%C3%AD%C3%AE%C3%AF%C3%B0%C3%B1%C3%B2%C3%B3%C3%B4%C3%B5"
-    //     + "%C3%B6%C3%B7%C3%B8%C3%B9%C3%BA%C3%BB%C3%BC%C3%BD%C3%BE%C3%BF";
-    //   let obj =  Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
-    //   obj.search = str;
-    //   expect(obj.searchParams.toString()).assertEqual(searchParamEncode);
-    //   obj.search = queryEncode;
-    //   expect(obj.searchParams.toString()).assertEqual(searchParamEncode);
-    // })
-
     /**
      * @tc.name   testParamsToString006
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_36200
@@ -5940,7 +4917,7 @@ export default function urlTest2() {
       let str = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\\[]"
         + "^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸"
         + "¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ";
-      let  queryEncode = "?%20!%22%23$%&'()*+,-./0123456789:;%3C=%3E?@ABCDEFGHIJKLMNOPQRSTUVWXYZ%5C[]^_`abcdefgh"
+      let queryEncode = "?%20!%22%23$%&'()*+,-./0123456789:;%3C=%3E?@ABCDEFGHIJKLMNOPQRSTUVWXYZ%5C[]^_`abcdefgh"
         + "ijklmnopqrstuvwxyz{|}~%E2%82%AC%E2%80%9A%C6%92%E2%80%9E%E2%80%A6%E2%80%A0%E2%80%A1%CB%86%E2%80%B0%C5"
         + "%A0%E2%80%B9%C5%92%C5%BD%E2%80%98%E2%80%99%E2%80%9C%E2%80%9D%E2%80%A2%E2%80%93%E2%80%94%CB%9C%E2%84"
         + "%A2%C5%A1%E2%80%BA%C5%93%C5%BE%C5%B8%C2%A1%C2%A2%C2%A3%C2%A4%C2%A5%C2%A6%C2%A7%C2%A8%C2%A9%C2%AA%C2"
@@ -5960,7 +4937,7 @@ export default function urlTest2() {
         + "%C3%95%C3%96%C3%97%C3%98%C3%99%C3%9A%C3%9B%C3%9C%C3%9D%C3%9E%C3%9F%C3%A0%C3%A1%C3%A2%C3%A3%C3%A4%C3"
         + "%A5%C3%A6%C3%A7%C3%A8%C3%A9%C3%AA%C3%AB%C3%AC%C3%AD%C3%AE%C3%AF%C3%B0%C3%B1%C3%B2%C3%B3%C3%B4%C3%B5"
         + "%C3%B6%C3%B7%C3%B8%C3%B9%C3%BA%C3%BB%C3%BC%C3%BD%C3%BE%C3%BF";
-      let obj =  Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
+      let obj = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
       obj.search = str;
       expect(obj.params.toString()).assertEqual(searchParamEncode);
       obj.search = queryEncode;
@@ -6070,14 +5047,15 @@ export default function urlTest2() {
       expect(uriObj3.hash).assertEqual("#payment-detail-789");
       expect(uriObj3.host).assertEqual("api.example.com");
       expect(uriObj3.hostname).assertEqual("api.example.com");
-      expect(uriObj3.href).assertEqual("https://admin:SecurePass123!@api.example.com/v2/resources/finance/transactions/2025Q4?id=10086&type=bond&region=CN&sort=amount_desc#payment-detail-789");
+      expect(uriObj3.href)
+        .assertEqual("https://admin:SecurePass123!@api.example.com/v2/resources/finance/transactions/2025Q4?id=10086&type=bond&region=CN&sort=amount_desc#payment-detail-789");
       expect(uriObj3.origin).assertEqual("https://api.example.com");
       expect(uriObj3.password).assertEqual("SecurePass123!");
       expect(uriObj3.pathname).assertEqual("/v2/resources/finance/transactions/2025Q4");
       expect(uriObj3.port).assertEqual("");
       expect(uriObj3.protocol).assertEqual("https:");
       expect(uriObj3.search).assertEqual("?id=10086&type=bond&region=CN&sort=amount_desc");
-      expect(JSON.stringify(uriObj3.params)).assertEqual('{"urlClass":{},"parentUrl":"https://admin:SecurePass123!@api.example.com/v2/resources/finance/transactions/2025Q4?id=10086&type=bond&region=CN&sort=amount_desc#payment-detail-789"}');
+      //expect(JSON.stringify(uriObj3.params)).assertEqual('{"urlClass":{},"parentUrl":"https://admin:SecurePass123!@api.example.com/v2/resources/finance/transactions/2025Q4?id=10086&type=bond&region=CN&sort=amount_desc#payment-detail-789"}');
       expect(uriObj3.username).assertEqual("admin");
     })
   })

@@ -432,5 +432,275 @@ export default function GraphicTextAPI23() {
       }
     })
 
+    /**
+     * @tc.name   testIsFontSupported_0100
+     * @tc.number testIsFontSupported_0100
+     * @tc.desc   text isFontSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsFontSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let filePath = "file:///system/fonts/HarmonyOS_Sans.ttf";
+      let isSupported = text.isFontSupported(filePath);
+      console.info("www data is font supported: " + isSupported);
+      expect(isSupported).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   testIsFontSupported_0200
+     * @tc.number testIsFontSupported_0200
+     * @tc.desc   text isFontSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsFontSupported_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let filePath = "file:///system/fonts/HarmonyOS_Sans111.ttf";
+      let isSupported = text.isFontSupported(filePath);
+      console.info("www data is font supported: " + isSupported);
+      expect(isSupported).assertFalse();
+      done();
+    })
+
+    /**
+     * @tc.name   testIsFontSupported_0300
+     * @tc.number testIsFontSupported_0300
+     * @tc.desc   text isFontSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testIsFontSupported_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let isSupported = text.isFontSupported($rawfile('HarmonyOS_Sans.ttf'));
+      console.info("www data is font supported: " + isSupported);
+      expect(isSupported).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   GetFontUnicodeSet_API23_0100
+     * @tc.number GetFontUnicodeSet_API23_0100
+     * @tc.desc   test getFontUnicodeSet
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GetFontUnicodeSet_API23_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      text.getFontUnicodeSet("file:///system/fonts/HarmonyOS_Sans.ttf", 0).then((unicodeSet) => {
+        for (let index = 0; index < unicodeSet.length; index++) {
+          console.info(unicodeSet[index].toString())
+        }
+        expect(unicodeSet.length).assertLarger(0);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   GetFontUnicodeSet_API23_0200
+     * @tc.number GetFontUnicodeSet_API23_0200
+     * @tc.desc   test getFontUnicodeSet
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GetFontUnicodeSet_API23_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      text.getFontUnicodeSet("file:///system/fonts/HarmonyOS_Sans.ttf", 1).then((unicodeSet) => {
+        expect(unicodeSet.length).assertEqual(0);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   GetFontUnicodeSet_API23_0300
+     * @tc.number GetFontUnicodeSet_API23_0300
+     * @tc.desc   test getFontUnicodeSet
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GetFontUnicodeSet_API23_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      text.getFontUnicodeSet("file:///system/fonts/HarmonyOS_Sans123.ttf", 0).then((unicodeSet) => {
+        expect(unicodeSet.length).assertEqual(0);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   GetFontUnicodeSet_API23_0400
+     * @tc.number GetFontUnicodeSet_API23_0400
+     * @tc.desc   test getFontUnicodeSet
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GetFontUnicodeSet_API23_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      text.getFontUnicodeSet("file:///system/fonts/NotoSansCJK-Regular.ttc", 1).then((unicodeSet) => {
+        expect(unicodeSet.length).assertLarger(0);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   GetFontUnicodeSet_API23_0500
+     * @tc.number GetFontUnicodeSet_API23_0500
+     * @tc.desc   test getFontUnicodeSet
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GetFontUnicodeSet_API23_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      text.getFontUnicodeSet("file:///system/fonts/NotoSansCJK-Regular.ttc", 0).then((unicodeSet) => {
+        expect(unicodeSet.length).assertLarger(0);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   GetFontUnicodeSet_API23_0600
+     * @tc.number GetFontUnicodeSet_API23_0600
+     * @tc.desc   test getFontUnicodeSet
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GetFontUnicodeSet_API23_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      text.getFontUnicodeSet($rawfile('HarmonyOS_Sans.ttf'), 0).then((unicodeSet) => {
+        expect(unicodeSet.length).assertLarger(0);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   testLoadFontSyncWithCheck_1700
+     * @tc.number testLoadFontSyncWithCheck_1700
+     * @tc.desc   text loadFontWithCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLoadFontSyncWithCheck_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+      let fontFamily: string = 'family';
+      try {
+        fontCollection.loadFontSyncWithCheck(fontFamily, $rawfile('empty.ttf'), 0);
+        console.info('www data success to do loadFontSyncWithCheck');
+        expect().assertFail();
+      } catch (e) {
+        console.error(`Failed to do loadFontSyncWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
+        expect(Number(e.code) == 25900007).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadFontSyncWithCheck_1800
+     * @tc.number testLoadFontSyncWithCheck_1800
+     * @tc.desc   text loadFontWithCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLoadFontSyncWithCheck_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+      let fontFamily: string = 'family';
+      try {
+        fontCollection.loadFontSyncWithCheck(fontFamily, 'file:///dev/tun', 0);
+        console.info('www data success to do loadFontSyncWithCheck');
+        expect().assertFail();
+      } catch (e) {
+        console.error(`Failed to do loadFontSyncWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
+        expect(Number(e.code) == 25900003).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadFontSyncWithCheck_1900
+     * @tc.number testLoadFontSyncWithCheck_1900
+     * @tc.desc   text loadFontSyncWithCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLoadFontSyncWithCheck_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+      let fontFamily: string = 'family';
+      try {
+        fontCollection.loadFontSyncWithCheck(fontFamily, 'file:///system/fonts/NotoSansCJK-Regular.ttc');
+        console.info('www data success to do loadFontSyncWithCheck');
+      } catch (e) {
+        console.error(`Failed to do loadFontSyncWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadFontSyncWithCheck_2000
+     * @tc.number testLoadFontSyncWithCheck_2000
+     * @tc.desc   text loadFontWithCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLoadFontSyncWithCheck_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+      let fontFamily: string = 'family';
+      await fontCollection.loadFontWithCheck(fontFamily, 'file:///system/fonts/NotoSansCJK-Regular.ttc')
+        .then((data) => {
+          console.info(`Succeeded in doing loadFontWithCheck ${JSON.stringify(data)} `);
+        }).catch((error: BusinessError) => {
+          console.error(`Failed to do loadFontWithCheck, error: ${JSON.stringify(error)} message: ${error.message}`);
+          expect().assertFail();
+        });
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadFontSyncWithCheck_2100
+     * @tc.number testLoadFontSyncWithCheck_2100
+     * @tc.desc   text loadFontWithCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLoadFontSyncWithCheck_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+      let fontFamily: string = 'family';
+      await fontCollection.loadFontWithCheck(fontFamily, 'file:///dev/tun', 0)
+        .then((data) => {
+          console.info(`Succeeded in doing loadFontWithCheck ${JSON.stringify(data)} `);
+          expect().assertFail();
+        }).catch((error: BusinessError) => {
+          console.error(`www data Failed to do loadFontWithCheck, error: ${JSON.stringify(error)} message: ${error.message}`);
+          expect(Number(error.code) == 25900003).assertTrue();
+        });
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadFontSyncWithCheck_2200
+     * @tc.number testLoadFontSyncWithCheck_2200
+     * @tc.desc   text loadFontSyncWithCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLoadFontSyncWithCheck_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+      let fontFamily: string = 'family';
+        await fontCollection.loadFontWithCheck(fontFamily, $rawfile('empty.ttf'), 0)
+        .then((data) => {
+          console.info(`Succeeded in doing loadFontWithCheck ${JSON.stringify(data)} `);
+          expect().assertFail();
+        }).catch((error: BusinessError) => {
+          console.error('www data Failed to do loadFontWithCheck', JSON.stringify(error));
+          expect(Number(error.code) == 25900007).assertTrue();
+        });
+      done();
+    })
+    
   })
 }

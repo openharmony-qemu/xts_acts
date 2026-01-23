@@ -31,6 +31,7 @@ struct webViewController {
   @State flag:number = 1;
   @State str:string = ""
   @State newState:number = 3;
+  @State MicrophoneCaptureStateArr:MicrophoneCaptureState[] = [MicrophoneCaptureState.NONE,MicrophoneCaptureState.PAUSED,MicrophoneCaptureState.ACTIVE]
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -88,14 +89,9 @@ struct webViewController {
                 let buttonTwo = await driver.waitForComponent(ON.text('onConfirm'),10000);
                 await buttonTwo.click();
                 await Utils.sleep(1000)
-                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                  Utils.emitEvent(1, 20251229);
-                } else {
-                  this.controller.pauseMicrophone();
-                  setTimeout(() => {
-                    Utils.emitEvent(this.newState, 20251229);
-                  },1000)
-                }
+                setTimeout(() => {
+                  Utils.emitEvent(true, 20260101);
+                },1000)
 
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -105,13 +101,12 @@ struct webViewController {
             case "emitOnMicrophoneCaptureStateChange002": {
               try {
                 if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                  Utils.emitEvent(2, 20251230);
+                  Utils.emitEvent(this.MicrophoneCaptureStateArr[1], 20251229);
                 } else {
-                  await Utils.sleep(1000);
-                  this.controller.resumeMicrophone();
+                  this.controller.pauseMicrophone();
                   setTimeout(() => {
-                    Utils.emitEvent(this.newState, 20251230);
-                  },500)
+                    Utils.emitEvent(this.MicrophoneCaptureStateArr[this.newState], 20251229);
+                  },1000)
                 }
 
               } catch (error) {
@@ -122,12 +117,29 @@ struct webViewController {
             case "emitOnMicrophoneCaptureStateChange003": {
               try {
                 if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                  Utils.emitEvent(0, 20251231);
+                  Utils.emitEvent(this.MicrophoneCaptureStateArr[2], 20251230);
+                } else {
+                  await Utils.sleep(1000);
+                  this.controller.resumeMicrophone();
+                  setTimeout(() => {
+                    Utils.emitEvent(this.MicrophoneCaptureStateArr[this.newState], 20251230);
+                  },500)
+                }
+
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "emitOnMicrophoneCaptureStateChange004": {
+              try {
+                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                  Utils.emitEvent(this.MicrophoneCaptureStateArr[0], 20251231);
                 } else {
                   await Utils.sleep(1000);
                   this.controller.stopMicrophone();
                   setTimeout(() => {
-                    Utils.emitEvent(this.newState, 20251231);
+                    Utils.emitEvent(this.MicrophoneCaptureStateArr[this.newState], 20251231);
                   },500)
                 }
 

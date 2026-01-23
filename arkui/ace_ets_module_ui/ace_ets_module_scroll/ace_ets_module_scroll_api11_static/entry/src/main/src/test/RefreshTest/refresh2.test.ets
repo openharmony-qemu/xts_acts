@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,6 +39,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 export default function refreshDragJsunit() {
   describe('refreshDragTest', () => {
@@ -76,8 +77,7 @@ export default function refreshDragJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testrefreshDrag0011
      * @tc.name     testrefreshDrag0011
      * @tc.desc     testrefreshDrag0011
@@ -94,7 +94,7 @@ it('testrefreshDrag0011', Level.LEVEL1, async (done: () => void): Promise<void> 
         let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
           console.info("testrefreshDrag0011 get event data is: " + JSON.stringify(eventData));
           if (eventData.data != null) {
-            expect((eventData.data as Record<String, undefined | null | Object>)['Result']).assertEqual(true);
+            expect((eventData.data as Record<String,RecordData>)['Result']).assertEqual(true);
           }
           done();
         }
@@ -110,8 +110,7 @@ it('testrefreshDrag0011', Level.LEVEL1, async (done: () => void): Promise<void> 
 
 
     
-    
-/**
+    /**
      * @tc.number   testrefreshRefresh_static_0001
      * @tc.name     testrefreshRefresh_static_0001
      * @tc.desc     testrefreshRefresh_static_0001
@@ -128,7 +127,7 @@ it('testrefreshRefresh_static_0001', Level.LEVEL1, async (done: () => void): Pro
         let callbackTwo: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
           console.info("testrefreshRefresh_static_0001 get event data is: " + JSON.stringify(eventData));
           if (eventData.data != null) {
-            expect((eventData.data as Record<String, undefined | null | Object>)['Result']).assertEqual(true);
+            expect((eventData.data as Record<String,RecordData>)['Result']).assertEqual(true);
           }
           done();
         }

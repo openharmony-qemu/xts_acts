@@ -22,7 +22,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide,Consume
+  PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -43,7 +43,7 @@ struct Navigation_L0_5_1 {
       Button('pushDestinationByName pageTwo').onClick((event: ClickEvent) => {
         console.log('+++++++++++++++++++++++++++++++++1')
         this.pageInfos.pushDestinationByName('pageTwo','aaaa')
-          .catch((error: BusinessError): void=>{  //11.17SDK catch未执行
+          .catch((error: Error): void=>{  //11.17SDK catch未执行
             console.error(`[pushDestinationByName]failed, error code = ${error.code}, error.message = ${error.message}.`);
             this.text1 = '' + error.code
           })

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,6 +47,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import {UtilsTest} from '../Util.test'
+import { RecordData } from '@ohos.base';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -98,11 +99,16 @@ it('popup_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> =>
       console.info('popup_0100 START');
       await Utils.sleep(1500);
       let callback = (indexEvent: events_emitter.EventData) => {
+        const data = indexEvent.data as Record<String,RecordData>
+        const arrowWidth = data['arrowWidth'] as Record<String,RecordData>
+        const arrowHeight = data['arrowHeight'] as Record<String,RecordData>
+        const arrowPointPosition = data['arrowPointPosition'] as Record<String,RecordData>
+
         console.info("popup_0100 get state result is: " + JSON.stringify(indexEvent));
-        console.info("zxr " + JSON.stringify(((indexEvent.data) as ESObject)?.getProperty('arrowPointPosition')));
-        expect(((indexEvent.data) as ESObject)?.getProperty('arrowWidth')).assertEqual('20px');
-        expect(((indexEvent.data) as ESObject)?.getProperty('arrowHeight')).assertEqual('20px');
-        expect(((indexEvent.data) as ESObject)?.getProperty('arrowPointPosition')).assertEqual('Start');
+        console.info("zxr " + JSON.stringify(arrowPointPosition));
+        expect(arrowWidth).assertEqual('20px');
+        expect(arrowHeight).assertEqual('20px');
+        expect(arrowPointPosition).assertEqual('Start');
       }
       let indexEvent: events_emitter.InnerEvent = {
         eventId: 65,

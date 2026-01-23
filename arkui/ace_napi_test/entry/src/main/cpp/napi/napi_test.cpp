@@ -15,7 +15,6 @@
 
 #include "common/native_common.h"
 #include "napi/native_api.h"
-#include "hilog/log.h"
 #include <securec.h>
 #include <pthread.h>
 #include <stdint.h>
@@ -17966,7 +17965,7 @@ static napi_value NapiThrowBusinessErrorPar(napi_env env, napi_callback_info inf
 // 3. Pending exception test
 static napi_value NapiThrowBusinessErrorPendingError(napi_env env, napi_callback_info info)
 {
-    OH_LOG_INFO(LOG_APP, "first call: %{puiblic}d", napi_throw_business_error(env, INT_ARG_100, "This is a pre-existing exception"));
+    napi_throw_business_error(env, INT_ARG_100, "This is a pre-existing exception");
     napi_status status = napi_throw_business_error(env, INT_ARG_100, "error message");
     NAPI_ASSERT(env, status == napi_pending_exception, "napi_throw_business_error not napi_pending_exception");
 

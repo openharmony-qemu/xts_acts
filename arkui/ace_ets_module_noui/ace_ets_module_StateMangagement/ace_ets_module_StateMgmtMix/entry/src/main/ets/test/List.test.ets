@@ -71,8 +71,25 @@ import getSharedLocalStorageTest from './GetSharedLocalTest/getSharedLocalStorag
 import useSharedStorageTest from './GetSharedLocalTest/useSharedStorage.test';
 import persistStorageATest from './GetSharedLocalTest/persistStorageA.test';
 import Enum001 from './enum/Enum001.test';
+import V1LinkObservedTest from './uiutilsTest/LinkObserved.test';
+import V1LocalStoageLinkObservedTest from './uiutilsTest/LocalStoageLinkObserved.test';
+import V1LocalStoagePropObservedTest from './uiutilsTest/LocalStoagePropObserved.test';
+import V1ObjectLinkObservedTest from './uiutilsTest/ObjectLinkObserved.test';
+import V1PropObservedTest from './uiutilsTest/PropObserved.test';
+import V1ProvideConsumTest from './uiutilsTest/ProvideConsum.test';
+import V1StateObservedTest from './uiutilsTest/StateObserved.test';
+import V2ObservedTest from './uiutilsTest/V2Observed.test';
+import DecoratorInfoTest from './uiutilsTest/DecoratorInfo.test';
 
 export default function testsuite() {
+    V1LinkObservedTest();
+    V1LocalStoageLinkObservedTest();
+    V1LocalStoagePropObservedTest();
+    V1ObjectLinkObservedTest();
+    V1PropObservedTest();
+    V1ProvideConsumTest();
+    V1StateObservedTest();
+    V2ObservedTest();
     ApplySync001();
     FlushUpdates001();
     FlushErrorCode();
@@ -132,4 +149,5 @@ export default function testsuite() {
     useSharedStorageTest();
     persistStorageATest();
     Enum001();
+    DecoratorInfoTest();
 }

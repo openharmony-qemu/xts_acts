@@ -62,8 +62,7 @@ export default function listItemGroupNone() {
 
 
     
-    
-/**
+    /**
      * @tc.number   listItemGroupNone_static_0100
      * @tc.name     listItemGroupNone_static_0100
      * @tc.desc     listItemGroupNone_static_0100

@@ -61,7 +61,7 @@ export default function common1Jsunit() {
     });
 
     
-    
+
     /**
      * @tc.number   Common1Static001
      * @tc.name     Common1Static001
@@ -81,8 +81,8 @@ it('Common1Static001', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static002
      * @tc.name     Common1Static002
@@ -102,8 +102,8 @@ it('Common1Static002', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static003
      * @tc.name     Common1Static003
@@ -123,8 +123,8 @@ it('Common1Static003', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static004
      * @tc.name     Common1Static004
@@ -144,8 +144,8 @@ it('Common1Static004', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static005
      * @tc.name     Common1Static005
@@ -161,8 +161,8 @@ it('Common1Static005', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static006
      * @tc.name     Common1Static006
@@ -178,8 +178,8 @@ it('Common1Static006', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static007
      * @tc.name     Common1Static007
@@ -195,8 +195,8 @@ it('Common1Static007', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static008
      * @tc.name     Common1Static008
@@ -212,8 +212,8 @@ it('Common1Static008', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static009
      * @tc.name     Common1Static009
@@ -229,8 +229,8 @@ it('Common1Static009', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static010
      * @tc.name     Common1Static010
@@ -250,8 +250,8 @@ it('Common1Static010', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static011
      * @tc.name     Common1Static011
@@ -267,7 +267,7 @@ it('Common1Static011', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
+
     // /**
     //  * @tc.number   Common1Static012
     //  * @tc.name     Common1Static012
@@ -284,8 +284,8 @@ it('Common1Static011', Level.LEVEL0, async (done: () => void): Promise<void> => 
     //   done();
     // });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static013
      * @tc.name     Common1Static013
@@ -302,8 +302,8 @@ it('Common1Static013', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static014
      * @tc.name     Common1Static014
@@ -319,8 +319,8 @@ it('Common1Static014', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static015
      * @tc.name     Common1Static015
@@ -336,8 +336,8 @@ it('Common1Static015', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static016
      * @tc.name     Common1Static016
@@ -354,8 +354,8 @@ it('Common1Static016', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static017
      * @tc.name     Common1Static017
@@ -373,8 +373,8 @@ it('Common1Static017', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static018
      * @tc.name     Common1Static018
@@ -385,13 +385,13 @@ it('Common1Static018', Level.LEVEL0, async (done: () => void): Promise<void> => 
       console.info('[Common1Static018] START');
       let strJsonNew = inspector.getInspectorByKey('common3');
       let objNew = JSON.parseJsonElement(strJsonNew);
-      console.info("[Common1Static018] component Common1Static018 is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getElement('mask').getString('shape')).assertEqual("Rect");
+      console.info("[Common1Static018] component Common1Static018 is: " + JSON.stringifyJsonElement(objNew.getElement('$attrs').getElement('mask')));
+      expect(JSON.stringifyJsonElement(objNew.getElement('$attrs').getElement('mask'))).assertEqual("{}");
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static019
      * @tc.name     Common1Static019
@@ -406,8 +406,8 @@ it('Common1Static019', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static020
      * @tc.name     Common1Static020
@@ -421,8 +421,8 @@ it('Common1Static020', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static021
      * @tc.name     Common1Static021
@@ -438,8 +438,8 @@ it('Common1Static021', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static022
      * @tc.name     Common1Static022
@@ -455,8 +455,8 @@ it('Common1Static022', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static023
      * @tc.name     Common1Static023
@@ -472,8 +472,8 @@ it('Common1Static023', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static024
      * @tc.name     Common1Static024
@@ -485,12 +485,12 @@ it('Common1Static024', Level.LEVEL0, async (done: () => void): Promise<void> => 
       let strJsonNew = inspector.getInspectorByKey('common3');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("[Common1Static024] component Common1Static024 is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getString('enabled')).assertEqual(false);
+      expect(objNew.getElement('$attrs').getBoolean('enabled')).assertEqual(false);
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static025
      * @tc.name     Common1Static025
@@ -507,8 +507,8 @@ it('Common1Static025', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static026
      * @tc.name     Common1Static026
@@ -525,8 +525,8 @@ it('Common1Static026', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static027
      * @tc.name     Common1Static027
@@ -543,8 +543,8 @@ it('Common1Static027', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static028
      * @tc.name     Common1Static028
@@ -560,8 +560,8 @@ it('Common1Static028', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static029
      * @tc.name     Common1Static029
@@ -577,8 +577,8 @@ it('Common1Static029', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static030
      * @tc.name     Common1Static030
@@ -594,8 +594,8 @@ it('Common1Static030', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static031
      * @tc.name     Common1Static031
@@ -612,8 +612,8 @@ it('Common1Static031', Level.LEVEL0, async (done: () => void): Promise<void> => 
     });
 
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static032
      * @tc.name     Common1Static032
@@ -629,8 +629,8 @@ it('Common1Static032', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static033
      * @tc.name     Common1Static033
@@ -646,8 +646,8 @@ it('Common1Static033', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static034
      * @tc.name     Common1Static034
@@ -663,8 +663,8 @@ it('Common1Static034', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static035
      * @tc.name     Common1Static035
@@ -680,8 +680,8 @@ it('Common1Static035', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static036
      * @tc.name     Common1Static036
@@ -698,8 +698,8 @@ it('Common1Static036', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static037
      * @tc.name     Common1Static037
@@ -715,8 +715,8 @@ it('Common1Static037', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static038
      * @tc.name     Common1Static038
@@ -733,7 +733,7 @@ it('Common1Static038', Level.LEVEL0, async (done: () => void): Promise<void> => 
     });
 
 
-    
+
     /**
      * @tc.number   Common1Static041
      * @tc.name     Common1Static041
@@ -749,8 +749,8 @@ it('Common1Static041', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static042
      * @tc.name     Common1Static042
@@ -766,8 +766,8 @@ it('Common1Static042', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static043
      * @tc.name     Common1Static043
@@ -784,8 +784,8 @@ it('Common1Static043', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static044
      * @tc.name     Common1Static044
@@ -801,8 +801,8 @@ it('Common1Static044', Level.LEVEL0, async (done: () => void): Promise<void> => 
       done();
     });
 
-    
-    
+
+
     /**
      * @tc.number   Common1Static046
      * @tc.name     Common1Static046

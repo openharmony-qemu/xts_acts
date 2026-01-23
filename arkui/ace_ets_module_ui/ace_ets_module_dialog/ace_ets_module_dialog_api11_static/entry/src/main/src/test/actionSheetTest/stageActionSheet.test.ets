@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,6 +40,7 @@ import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -50,9 +51,9 @@ export default function stageActionSheet() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       console.info("stageActionSheet beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("stageActionSheet  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -108,7 +109,7 @@ it('testShowActionShee001', Level.LEVEL2, async (done: () => void): Promise<void
           }
           let callback1 = (eventData: emitter.EventData) => {
             console.info("testShowActionShee001 get event state result is: " + JSON.stringify(eventData));
-            expect(((eventData.data) as Record<String,undefined|null|Object>)?.['STATUS']).assertEqual(true);
+            expect(((eventData.data) as Record<String,RecordData>)?.['STATUS']).assertEqual(true);
             done();
           }
           try {
@@ -146,7 +147,7 @@ it('testShowActionShee002', Level.LEVEL2, async (done: () => void): Promise<void
           }
           let callback1 = (eventData: emitter.EventData) => {
             console.info("testShowActionShee002 get event state result is: " + JSON.stringify(eventData));
-            expect(((eventData.data) as Record<String,undefined|null|Object>)?.['STATUS']).assertEqual(10);
+            expect(((eventData.data) as Record<String,RecordData>)?.['STATUS']).assertEqual(10);
             done();
           }
           try {
@@ -184,7 +185,7 @@ it('testShowActionShee003_static', Level.LEVEL2, async (done: () => void): Promi
           }
           let callback1 = (eventData: emitter.EventData) => {
             console.info("testShowActionShee003_static get event state result is: " + JSON.stringify(eventData));
-            expect(((eventData.data) as Record<String,undefined|null|Object>)?.['STATUS']).assertEqual("STATUS");
+            expect(((eventData.data) as Record<String,RecordData>)?.['STATUS']).assertEqual("STATUS");
             done();
           }
           try {

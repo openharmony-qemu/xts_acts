@@ -16,5 +16,5 @@
 import WidthTest from './width/WidthTest.test';
 
 export default function testsuite() {
-  WidthTest(); // 旧表 LayoutPolicy FlexLayoutPolicyTest_static_0100
+  WidthTest();
 }

@@ -35,7 +35,7 @@ import {
   Text,
   WithTheme
 } from '@ohos.arkui.component'
-import { Prop, State } from '@ohos.arkui.stateManagement'
+import { PropRef, State } from '@ohos.arkui.stateManagement'
 import { Theme } from '@ohos.arkui.theme';
 import {
   DataClass,
@@ -52,7 +52,7 @@ export const colorTheme: string = 'theme';
 
 @Component
 export struct CustomColorList {
-  @State data: Array<DataClass> = new Array<DataClass>();
+  data: DataClass[] = [] as DataClass[];
 
   onWillApplyTheme(theme: Theme) {
     setBaseTokens(this.data, theme);

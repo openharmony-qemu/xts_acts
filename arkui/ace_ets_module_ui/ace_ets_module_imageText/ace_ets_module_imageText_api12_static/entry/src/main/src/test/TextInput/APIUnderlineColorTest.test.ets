@@ -48,7 +48,7 @@ export default function APIUnderlineColorTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get APIUnderlineColorTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("APIUnderlineColor" == pages.name)) {
           console.info("get APIUnderlineColorTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

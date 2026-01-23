@@ -49,7 +49,7 @@ export default function ActsWebRunJavaScriptOnDocumentEndTest() {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitWebRunJavaScriptOnDocumentEnd001', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('testWebRunJavaScriptOnDocumentEnd001', '"test msg"', 2025022101, done);
+      Utils.registerEvent('testWebRunJavaScriptOnDocumentEnd001', '"runJavaScriptOnDocumentEnd"', 2025022101, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebRunJavaScriptOnDocumentEndTestButton', 10, '');
       await Utils.msSleep(10000);

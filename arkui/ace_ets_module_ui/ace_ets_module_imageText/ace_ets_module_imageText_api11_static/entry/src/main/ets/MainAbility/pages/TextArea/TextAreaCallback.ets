@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,6 +32,7 @@ import {
   State,
 } from '@ohos.arkui.stateManagement'
 import emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -66,7 +67,7 @@ struct TextAreaCallback {
             let eventData: emitter.EventData = {
               data: {
                 "isEditing": isEditing
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let event: emitter.InnerEvent = {
               eventId: event_id,

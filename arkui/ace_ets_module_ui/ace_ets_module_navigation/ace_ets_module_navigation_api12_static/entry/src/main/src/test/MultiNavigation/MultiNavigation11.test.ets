@@ -30,10 +30,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function MultiNavigation11() {
   describe('MultiNavigation11', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {
@@ -70,6 +67,7 @@ export default function MultiNavigation11() {
      * @tc.level    Level.LEVEL0
      */
 it('MultiNavigation11_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('MultiNavigation11_static_0100 START');
       await CommonFunc.sleep(1000);
 

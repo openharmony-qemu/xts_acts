@@ -113,13 +113,14 @@ export default function openDialogTransitionTest() {
       }
     });
 
+    
     /**
      * @tc.number   OpenDialogTransitionTest_static_100
      * @tc.name     OpenDialogTransitionTest_static_100
      * @tc.desc     OpenDialogTransitionTest_static_100
      * @tc.level    Level.LEVEL2
      */
-    it('OpenDialogTransitionTest_static_100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('OpenDialogTransitionTest_static_100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('OpenDialogTransitionTest_static_100 start');
       let driver: Driver = Driver.create();
       let maskTransitionButton = await driver.findComponent(ON.id('EnableMaskTransition'));
@@ -138,13 +139,14 @@ export default function openDialogTransitionTest() {
       done();
     });
 
+    
     /**
      * @tc.number   OpenDialogTransitionTest_static_200
      * @tc.name     OpenDialogTransitionTest_static_200
      * @tc.desc     OpenDialogTransitionTest_static_200
      * @tc.level    Level.LEVEL2
      */
-    it('OpenDialogTransitionTest_static_200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('OpenDialogTransitionTest_static_200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('OpenDialogTransitionTest_static_200 start');
       let driver: Driver = Driver.create();
       let dialogTransitionButton = await driver.findComponent(ON.id('EnableDialogTransition'));
@@ -163,17 +165,18 @@ export default function openDialogTransitionTest() {
       done();
     });
 
+    
     /**
      * @tc.number   OpenDialogTransitionTest_static_300
      * @tc.name     OpenDialogTransitionTest_static_300
      * @tc.desc     OpenDialogTransitionTest_static_300
      * @tc.level    Level.LEVEL2
      */
-    it('OpenDialogTransitionTest_static_300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('OpenDialogTransitionTest_static_300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('OpenDialogTransitionTest_static_300 start');
       let driver: Driver = Driver.create();
       let dialogTransitionButton = await driver.findComponent(ON.id('EnableDialogTransition'));
-      dialogTransitionButton?.click();
+      await (dialogTransitionButton?.click() as Promise<void>);
       await CommonFunc.sleep(200);
       let defaultTransitionButton = await driver.findComponent(ON.id('EnableTransition'));
       await (defaultTransitionButton?.click() as Promise<void>);
@@ -192,13 +195,14 @@ export default function openDialogTransitionTest() {
       done();
     });
 
+    
     /**
      * @tc.number   OpenDialogTransitionTest_static_400
      * @tc.name     OpenDialogTransitionTest_static_400
      * @tc.desc     OpenDialogTransitionTest_static_400
      * @tc.level    Level.LEVEL2
      */
-    it('OpenDialogTransitionTest_static_400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('OpenDialogTransitionTest_static_400', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('OpenDialogTransitionTest_static_400 start');
       let driver: Driver = Driver.create();
       let maskTransitionButton = await driver.findComponent(ON.id('EnableMaskTransition'));
@@ -221,13 +225,14 @@ export default function openDialogTransitionTest() {
       done();
     });
 
+    
     /**
      * @tc.number   OpenDialogTransitionTest_static_500
      * @tc.name     OpenDialogTransitionTest_static_500
      * @tc.desc     OpenDialogTransitionTest_static_500
      * @tc.level    Level.LEVEL2
      */
-    it('OpenDialogTransitionTest_static_500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('OpenDialogTransitionTest_static_500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('OpenDialogTransitionTest_static_500 start');
       let driver: Driver = Driver.create();
       let maskTransitionButton = await driver.findComponent(ON.id('EnableMaskTransition'));
@@ -250,13 +255,14 @@ export default function openDialogTransitionTest() {
       done();
     });
 
+    
     /**
      * @tc.number   OpenDialogTransitionTest_static_600
      * @tc.name     OpenDialogTransitionTest_static_600
      * @tc.desc     OpenDialogTransitionTest_static_600
      * @tc.level    Level.LEVEL2
      */
-    it('OpenDialogTransitionTest_static_600', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('OpenDialogTransitionTest_static_600', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('OpenDialogTransitionTest_static_600 start');
       let driver: Driver = Driver.create();
       let maskTransitionButton = await driver.findComponent(ON.id('EnableMaskTransition'));

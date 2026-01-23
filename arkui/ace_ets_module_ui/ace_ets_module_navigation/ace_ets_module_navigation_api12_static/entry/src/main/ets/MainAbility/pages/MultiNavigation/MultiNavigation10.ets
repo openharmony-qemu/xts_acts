@@ -22,10 +22,10 @@ import {
 import {
   State,
   Link,
-  Prop,Provide,Consume
+  PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { MultiNavigation, MultiNavPathStack, SplitPolicy } from './mainpage/MultiNavigation';
+import {MultiNavigation,MultiNavPathStack, SplitPolicy}  from './mainpage/MultiNavigation';;
 
 @Entry
 @Component
@@ -33,8 +33,8 @@ struct MultiNavigation10 {
   @Provide pageStack: MultiNavPathStack = new MultiNavPathStack();
 
   aboutToAppear(): void {
-// this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
-    // this.pageStack.setKeepBottomPage(true);
+    this.pageStack.pushPath(new NavPathInfo('PageHome1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
+    this.pageStack.setKeepBottomPage(true);
   }
 
   @Builder
@@ -55,21 +55,20 @@ struct MultiNavigation10 {
       MultiNavigation({
         navDestination: this.PageMap,
         multiStack: this.pageStack,
-        // onHomeShowInTop: (name) => {
-        // }
+        onHomeShowInTop: (name: string) => {}
       })
-        // .width(350).height(400).border({width:1})
+        .width(350).height(400).border({width:1})
 
       Button('pushPath PageDetail1').onClick((event: ClickEvent) => {
-        //this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest"), false, SplitPolicy.HOME_PAGE);
+        this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest"), false, SplitPolicy.HOME_PAGE);
       }).id('MultiNavigation10_btn1')
 
       Button('pushPath PageHome2').onClick((event: ClickEvent) => {
-        //this.pageStack.pushPath(new NavPathInfo('PageDetail2',"paramTest"), false, SplitPolicy.HOME_PAGE);
+        this.pageStack.pushPath(new NavPathInfo('PageHome2',"paramTest"), false, SplitPolicy.HOME_PAGE);
       }).id('MultiNavigation10_btn2')
 
       Button('pushPath PageFull1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushPath({ name: 'PageFull1', param: "paramTest"}, false, SplitPolicy.FULL_PAGE);
+        this.pageStack.pushPath(new NavPathInfo('PageFull1',"paramTest"), false, SplitPolicy.FULL_PAGE);
       }).id('MultiNavigation10_btn3')
 
       Button('moveToTop PageHome1').onClick((event: ClickEvent) => {

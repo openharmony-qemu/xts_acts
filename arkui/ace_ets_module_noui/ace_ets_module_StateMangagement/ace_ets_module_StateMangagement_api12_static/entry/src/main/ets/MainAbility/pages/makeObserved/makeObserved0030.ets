@@ -30,7 +30,7 @@ import {
 import {
   State,
   Watch,
-  Link,Local,Trace,Track,Prop,
+  Link,Local,Trace,Track,PropRef,
   StorageLink,LocalStorage,UIUtils,Observed,ObservedV2,Trace
 } from '@ohos.arkui.stateManagement'
 

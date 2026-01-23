@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,6 +42,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -51,9 +52,9 @@ export default function alertDialogCenterStartJsunit() {
   describe('alertDialogCenterStartTest', () => {
     beforeAll(() => {
       console.info("alertDialogCenterStartTest beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("alertDialogCenterStartTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -62,8 +63,6 @@ export default function alertDialogCenterStartJsunit() {
         url: 'MainAbility/pages/AlertDialog/alertDialog2',
       }
       try {
-
-
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages: router.RouterState = routerInstance.getState();
@@ -71,7 +70,7 @@ export default function alertDialogCenterStartJsunit() {
         if (!("alertDialog2" == pages.name)) {
           console.info("get alertDialog state pages.name: " + JSON.stringify(pages.name));
           // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push alertDialog success: " + JSON.stringify(result));
         }
@@ -106,7 +105,7 @@ it('testalertDialogCenterStart0001_static', Level.LEVEL2, async (done: () => voi
         }
         let callback = (eventData: emitter.EventData) => {
           console.info("testalertDialogCenterStart0001_static get event data is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as Record<String,undefined|null|Object>)?.['Result']).assertEqual(true);
+          expect(((eventData.data) as Record<String,RecordData>)?.['Result']).assertEqual(true);
           console.info('testalertDialogCenterStart0001_static END');
           done();
         }
@@ -116,6 +115,7 @@ it('testalertDialogCenterStart0001_static', Level.LEVEL2, async (done: () => voi
       } catch (err) {
         console.info("testalertDialogCenterStart0001_static on emitter err : " + JSON.stringify(err));
       }
+      await Utils.sleep(1000);
       let button = await driver.findComponent(ON.text('button'));
       await (button?.click() as Promise<void>);
       await Utils.sleep(1000);
@@ -150,9 +150,9 @@ it('testMeasureText0001_static', Level.LEVEL2, async (done: () => void): Promise
         expect().assertFail();
         done();
       }
-      // let button = await driver.findComponent(ON.text('button'));
-      // await (button?.click() as Promise<void>);
-      // await Utils.sleep(1000);
+      let button = await driver.findComponent(ON.text('button'));
+      await (button?.click() as Promise<void>);
+      await Utils.sleep(1000);
     });
 
   })

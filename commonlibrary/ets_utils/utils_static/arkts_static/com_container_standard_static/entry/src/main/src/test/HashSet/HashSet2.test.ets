@@ -265,44 +265,6 @@ export default function hasSetTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0200
-    //  * @tc.name      : testHashSetHas0002
-    //  * @tc.desc      : Testing HashSet is empty and check if null has
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashSetHas0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashSetHas0002';
-    //   try {
-    //     const hashSet = new HashSet<string>();
-    //     expect(hashSet.has(null)).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0300
-    //  * @tc.name      : testHashSetHas0003
-    //  * @tc.desc      : Testing HashSet is empty and check if undefined has
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashSetHas0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashSetHas0003';
-    //   try {
-    //     const hashSet = new HashSet<string>();
-    //     expect(hashSet.has(undefined)).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /**
      * @tc.name   testHashSetHas0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_HAS_0400
@@ -432,48 +394,6 @@ export default function hasSetTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0300
-    //  * @tc.name      : testHashSetAdd0003
-    //  * @tc.desc      : Testing HashSet data null check length =1 and has null
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashSetAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashSetAdd0003';
-    //   try {
-    //     const hashSet = new HashSet<string>();
-    //     hashSet.add(null);
-    //     let result = hashSet.length == 1 && hashSet.has(null);
-    //     expect(result).assertEqual(true);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0400
-    //  * @tc.name      : testHashSetAdd0004
-    //  * @tc.desc      : Testing HashSet data undefined check length =1 and has undefined
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashSetAdd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashSetAdd0004';
-    //   try {
-    //     const hashSet = new HashSet<string>();
-    //     hashSet.add(undefined);
-    //     let result = hashSet.length == 1 && hashSet.has(undefined);
-    //     expect(result).assertEqual(true);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /**
      * @tc.name   testHashSetAdd0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_ADD_0500
@@ -567,43 +487,6 @@ export default function hasSetTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_REMOVE_0200
-    //  * @tc.name      : testHashSetRemove0002
-    //  * @tc.desc      : Testing HashSet is empty and remove value is null
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashSetRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashSetRemove0002';
-    //   try {
-    //     const hashSet = new HashSet<string>();
-    //     expect(hashSet.remove(null)).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_REMOVE_0300
-    //  * @tc.name      : testHashSetRemove0003
-    //  * @tc.desc      : Testing HashSet is empty and remove value is undefined
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
-    // it('testHashSetRemove0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashSetRemove0003';
-    //   try {
-    //     const hashSet = new HashSet<string>();
-    //     expect(hashSet.remove(undefined)).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testHashSetRemove0004
@@ -1112,7 +995,6 @@ export default function hasSetTest2() {
         hashSet.add(1)
         hashSet.add(2)
         hashSet.add(3)
-        // let iter = hashSet[Symbol.iterator]();
         let iter = hashSet.$_iterator();
         let temp: IteratorResult<number> = iter.next();
         let index = 1;
@@ -1177,14 +1059,14 @@ export default function hasSetTest2() {
      */
     it('testHashSetLength0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const hashSet = new HashSet<number>();
-      expect(String(hashSet.length)).assertEqual(0);
+      expect(String(hashSet.length)).assertEqual('0');
       hashSet.add(1);
       hashSet.add(1);
       hashSet.add(1);
       hashSet.add(1);
-      expect(String(hashSet.length)).assertEqual(1);
+      expect(String(hashSet.length)).assertEqual('1');
       hashSet.add(2);
-      expect(String(hashSet.length)).assertEqual(2);
+      expect(String(hashSet.length)).assertEqual('2');
     });
 
   })

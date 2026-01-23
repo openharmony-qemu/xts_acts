@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,6 +40,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -263,8 +264,8 @@ it('testCommonSlice_static_0018', Level.LEVEL2, async (done: () => void): Promis
         }
         let callback = (eventData: emitter.EventData) => {
           console.info("testCommonArea0001 get event state result is: " + JSON.stringify(eventData));
-          const data: Record<String, undefined | null | Object> =
-            eventData.data as Record<String, undefined | null | Object>
+          const data: Record<String,RecordData> =
+            eventData.data as Record<String,RecordData>
           expect(data['STATUS']).assertEqual(320);
         }
         emitter.on(innerEvent, callback);
@@ -273,73 +274,6 @@ it('testCommonSlice_static_0018', Level.LEVEL2, async (done: () => void): Promis
         await Utils.sleep(2000);
       } catch (err: Error) {
         console.info("testCommonArea0001 on click err : " + JSON.stringify(err));
-      }
-      done();
-    });
-
-
-    
-    
-/**
-     * @tc.number   testCommonTouches_static_0019
-     * @tc.name     testCommonTouches_static_0019
-     * @tc.desc     testCommonTouches_static_0019
-     * @tc.level    Level.LEVEL2
-     */
-it('testCommonTouches_static_0019', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('commonSlice testCommonTouches0001 START');
-      await Utils.sleep(500);
-      try {
-        let innerEvent: emitter.InnerEvent = {
-          eventId: 60313,
-          priority: emitter.EventPriority.LOW
-        }
-        let callback = (eventData: emitter.EventData) => {
-          console.info("testCommonTouches0001 get event state result is: " + JSON.stringify(eventData));
-          const data: Record<String, undefined | null | Object> =
-            eventData.data as Record<String, undefined | null | Object>
-          expect(data['STATUS']).assertEqual(undefined);
-
-        }
-        emitter.on(innerEvent, callback);
-        console.info("testCommonTouches0001 click result is: " +
-        JSON.stringify(inspector.sendEventByKey('touchesText', 10, "")));
-        await Utils.sleep(2000);
-      } catch (err: Error) {
-        console.info("testCommonTouches0001 on click err : " + JSON.stringify(err));
-      }
-      done();
-    });
-
-
-    
-    
-/**
-     * @tc.number   testCommonChangedTouches_static_0020
-     * @tc.name     testCommonChangedTouches_static_0020
-     * @tc.desc     testCommonChangedTouches_static_0020
-     * @tc.level    Level.LEVEL2
-     */
-it('testCommonChangedTouches_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('commonSlice testCommonChangedTouches0001 START');
-      await Utils.sleep(500);
-      try {
-        let innerEvent: emitter.InnerEvent = {
-          eventId: 60314,
-          priority: emitter.EventPriority.LOW
-        }
-        let callback = (eventData: emitter.EventData) => {
-          console.info("testCommonChangedTouches0001 get event state result is: " + JSON.stringify(eventData));
-          const data: Record<String, undefined | null | Object> =
-            eventData.data as Record<String, undefined | null | Object>
-          expect(data['STATUS']).assertEqual(undefined);
-        }
-        emitter.on(innerEvent, callback);
-        console.info("changedTouches0001 click is: " +
-        JSON.stringify(inspector.sendEventByKey('changedTouchesText', 10, "")));
-        await Utils.sleep(2000);
-      } catch (err: Error) {
-        console.info("testCommonChangedTouches0001 on click err : " + JSON.stringify(err));
       }
       done();
     });

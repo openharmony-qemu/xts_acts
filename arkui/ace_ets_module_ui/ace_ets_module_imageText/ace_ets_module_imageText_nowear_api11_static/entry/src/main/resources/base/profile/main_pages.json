@@ -16,8 +16,6 @@
         "MainAbility/pages/TextInput/TextInputPage",
         "MainAbility/pages/Search/SearchGesture",
         "MainAbility/pages/Search/SearchPage",
-        "MainAbility/pages/RichEditor/RichTextPage",
-        "MainAbility/pages/RichEditor/richText",
         "MainAbility/pages/button/getcomponentadd",
         "MainAbility/pages/SegmentButton/SegmentButtonIndex",
         "MainAbility/pages/select/SelectPage"

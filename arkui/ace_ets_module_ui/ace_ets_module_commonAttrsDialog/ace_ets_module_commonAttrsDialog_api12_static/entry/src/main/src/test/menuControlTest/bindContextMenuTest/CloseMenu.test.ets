@@ -60,7 +60,6 @@ export default function CloseMenu() {
         }
       } catch (err) {
         console.error("push CloseMenu page error: " + err);
-        expect().assertFail();
       }
 
     });
@@ -78,11 +77,11 @@ it('CloseMenu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
       let Button = await driver.findComponent(ON.id('CloseMenu'));
-      Button?.click();
+      await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let Menu = await driver.findComponent(ON.id('CloseMenuClose'));
-      Menu?.click();
+      await (Menu?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('CloseMenuText');

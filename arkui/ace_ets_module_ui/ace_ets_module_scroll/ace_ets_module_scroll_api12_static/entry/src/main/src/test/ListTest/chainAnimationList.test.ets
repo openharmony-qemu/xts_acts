@@ -63,8 +63,7 @@ export default function chainAnimationList() {
 
 
     
-    
-/**
+    /**
      * @tc.number   chainAnimationList_static_0100
      * @tc.name     chainAnimationList_static_0100
      * @tc.desc     chainAnimationList_static_0100

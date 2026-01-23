@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +55,7 @@ class MyRenderNode extends RenderNode {
 
 const renderNode = new MyRenderNode();
 renderNode.frame = { x: 100, y: 100, width: 200, height: 200 };
-renderNode.backgroundColor = 0xff0000ff;
+renderNode.backgroundColor = 0xff0000ff.toInt();
 renderNode.markNodeGroup = true;
 const markNodeGroupFLAG: boolean = renderNode.markNodeGroup
 renderNode.opacity = 0.5;

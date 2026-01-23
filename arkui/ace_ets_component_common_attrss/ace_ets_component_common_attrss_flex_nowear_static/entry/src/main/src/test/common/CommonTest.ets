@@ -18,7 +18,7 @@ import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
-import { AppStorage, Link, Prop, State, StorageProp, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, PropRef, State, StoragePropRef, } from '@ohos.arkui.stateManagement';
 import { HorizontalAlign, ItemAlign, VerticalAlign } from '@ohos.arkui.component';
 
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void>;

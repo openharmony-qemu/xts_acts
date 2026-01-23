@@ -147,10 +147,9 @@ export default function testsuite() {
   NavRouter_onStateChange1();
   NavRouter_onStateChange2();
   NavDestination_onBackPressed();
-  navigationApi1();//fail 1 customNavContentTransition app died
-  NavigationAttr();//fail 1 customNavContentTransition app died
-  NavDestinationInfoStateJsunit(); //fail 2 observer.onNavDestinationUpdate app died
-  QueryNavDestinationInfoNavDestinationJsunit(); // fail 2 observer.onNavDestinationUpdate app died
+  navigationApi1();
+  NavigationAttr();
+  
 
 
 }

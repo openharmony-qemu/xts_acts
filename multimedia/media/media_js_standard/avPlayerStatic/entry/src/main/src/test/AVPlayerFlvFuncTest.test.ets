@@ -32,7 +32,7 @@ let expectType: number = 5;
 let dataCanBeRead = false;
 let avPlayer: media.AVPlayer | undefined;
 
-async function testSeiMessage(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, payloadTypes: Array<int>, done: () => void) {
+async function testSeiMessage(src: string, avPlayer: media.AVPlayer | undefined, payloadTypes: Array<int>, done: () => void) {
   console.info(`case media source: ${src}`);
   media.createAVPlayer((err: BusinessError|null, video: media.AVPlayer | undefined) => {
     console.info(`case media err: ${err}`);
@@ -40,7 +40,8 @@ async function testSeiMessage(src: string | media.AVFileDescriptor, avPlayer: me
       console.info('case createAVPlayer success');
       avPlayer = video;
       setAVPlayerSeiMessageCb(avPlayer!, payloadTypes, done);
-      setSource(avPlayer!, src);
+      console.info('case src test');
+      avPlayer!!.url = src as string;
     } else if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err.message}`);
       expect().assertFail();
@@ -107,7 +108,7 @@ function setAVPlayerSeiMessageCb(avPlayer: media.AVPlayer | null, payloadTypes: 
       expect(messages !== null && messages !== undefined).assertTrue();
       expect(messages.length).assertLarger(0);
       messages.forEach((message) => {
-        expect(typeof message.payload === 'number').assertTrue();
+        expect(typeof message.payload === 'int').assertTrue();
         expect(message.payloadType).assertEqual(expectType);
         expect(message.payload !== null && message.payload !== undefined).assertTrue();
         expect(message.payload.byteLength).assertLarger(0);

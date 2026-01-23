@@ -104,22 +104,22 @@ export struct MyComponent {
 
 @Builder
 function customDialogDemo() {
-
+  const pageRouter = AppStorage.get<Router>('router') as Router
   Column({ space: 5 } as ColumnOptions) {
     Text('自定义弹窗')
     Button(`router`)
       .height('8%')
       .id('router')
       .onClick((event: ClickEvent) => {
-        // router1.pushUrl({
-        //   url: 'MainAbility/pages/UIContext/index'
-        // }, router.RouterMode.Standard)
+        pageRouter.pushUrl({
+          url: 'MainAbility/pages/UIContext/index'
+        }, router.RouterMode.Standard)
       })
     Text('返回')
       .height('8%')
       .superFancyText2()
       .onClick((event: ClickEvent) => {
-        // router1.back(1)
+        pageRouter.back(1)
       })
       .id('back')
   }
@@ -129,13 +129,13 @@ function customDialogDemo() {
 }
 
 
-function superFancyText1(this: TextAttribute) {
+function superFancyText1(this: TextAttribute){
   this.fontSize(9);
   this.width('100%');
   return this;
 }
 
-function superFancyText2(this: TextAttribute) {
+function superFancyText2(this: TextAttribute){
   this.fontSize(15);
   this.backgroundColor(Color.Orange)
   this.width('100%');
@@ -145,7 +145,7 @@ function superFancyText2(this: TextAttribute) {
   return this;
 }
 
-function superFancyColumn(this: ColumnAttribute) {
+function superFancyColumn(this: ColumnAttribute){
   this.backgroundColor(Color.Pink)
   this.width('100%');
   this.padding(10)
@@ -215,7 +215,7 @@ struct openCustomDialogWithCtrMode {
             })
             MyComponent({
               title: 'levelMode: EMBEDDED', func: () :void => {
-                //this.levelMode = 1
+                this.levelMode = LevelMode.EMBEDDED
               }
             })
           }
@@ -261,7 +261,7 @@ struct openCustomDialogWithCtrMode {
             })
           }
         }
-        //.columnStyle()
+        // .columnStyle()
 
         Column({ space: 5 } as ColumnOptions) {
           Text(`uiContext_openCustomDialogWithCtr`)

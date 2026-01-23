@@ -93,8 +93,6 @@ export default function RelativeGuideLine6() {
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine6_static_001
      * @tc.name     RelativeGuideLine6_static_001
@@ -115,9 +113,9 @@ it('RelativeGuideLine6_static_001', Level.LEVEL3, async (done: () => void): Prom
       bt2.top + 'bt3:' + bt3.top);
       console.info("[RelativeGuideLine6_001] RelativeContainer left is: " + rel.left + 'button left:' + bt1.left +
         'bt2:' + bt2.left + 'bt3:' + bt3.left);
-      expect(Math.abs(Math.round(bt1.left - rel.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(bt2.left - rel.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(bt3.left - rel.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt1.left - rel.left) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt2.left - rel.left) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt3.left - rel.left) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
       expect(Math.abs(Math.round(bt1.top - rel.top)) <= 1).assertTrue();
       expect(Math.abs(Math.round(bt2.top - rel.top)) <= 1).assertTrue();
       expect(Math.abs(Math.round(bt3.top - rel.top)) <= 1).assertTrue();
@@ -129,8 +127,6 @@ it('RelativeGuideLine6_static_001', Level.LEVEL3, async (done: () => void): Prom
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine6_static_002
      * @tc.name     RelativeGuideLine6_static_002
@@ -151,9 +147,9 @@ it('RelativeGuideLine6_static_002', Level.LEVEL3, async (done: () => void): Prom
       bt2.top + 'bt3:' + bt3.top);
       console.info("[RelativeGuideLine6_002] RelativeContainer left is: " + rel.left + 'button left:' + bt1.left +
         'bt2:' + bt2.left + 'bt3:' + bt3.left);
-      expect(Math.abs(Math.round(bt1.left - rel.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(bt2.left - rel.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(bt3.left - rel.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt1.left - rel.left) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt2.left - rel.left) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt3.left - rel.left) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
       expect(Math.abs(Math.round(bt1.top - rel.top)) <= 1).assertTrue();
       expect(Math.abs(Math.round(bt2.top - rel.top)) <= 1).assertTrue();
       expect(Math.abs(Math.round(bt3.top - rel.top)) <= 1).assertTrue();

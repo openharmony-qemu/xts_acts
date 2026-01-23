@@ -22,7 +22,7 @@ export default function builtinsRegExpSymbolMatchTest() {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(100);
+      await sleep(20);
     })
     afterEach(() => {
     })

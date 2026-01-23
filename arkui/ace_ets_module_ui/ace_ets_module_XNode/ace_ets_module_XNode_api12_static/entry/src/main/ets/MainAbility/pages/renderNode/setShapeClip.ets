@@ -34,7 +34,7 @@ renderNode.frame = {
   width: 150,
   height: 150
 };
-renderNode.backgroundColor = 0XFF00FF00;
+renderNode.backgroundColor = 0XFF00FF00.toInt();
 renderNode.shapeClip = clip;
 const shapeClip = renderNode.shapeClip;
 

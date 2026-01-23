@@ -26,7 +26,7 @@ export default function ActsFastBuffer3Test() {
     })
 
     beforeEach(async () => {
-      await sleep(200);
+      await sleep(20);
     })
 
     afterAll(() => {

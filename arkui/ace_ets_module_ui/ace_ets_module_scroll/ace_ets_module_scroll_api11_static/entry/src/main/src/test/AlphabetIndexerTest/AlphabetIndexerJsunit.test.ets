@@ -77,8 +77,7 @@ export default function alphabetIndexerJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   alphabetIndexerTest001_static_01
      * @tc.name     alphabetIndexerTest001_static_01
      * @tc.desc     alphabetIndexerTest001_static_01
@@ -96,8 +95,7 @@ it('alphabetIndexerTest001_static_01', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   alphabetIndexerTest002_static_02
      * @tc.name     alphabetIndexerTest002_static_02
      * @tc.desc     alphabetIndexerTest002_static_02

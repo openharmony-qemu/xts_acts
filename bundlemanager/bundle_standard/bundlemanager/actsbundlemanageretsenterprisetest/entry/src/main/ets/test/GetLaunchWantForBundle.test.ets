@@ -18,7 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 const NAME1 = "com.example.third1";
 const NAME2 = "com.example.l3jsdemo";
 const NAME3 = "com.notexist.com";
-const ABILITYNAME1 = "com.example.third1.MainAbility";
+const ABILITYNAME1 = "com.example.third1.entry.MainAbility";
 const ABILITYNAME2 = "com.example.l3jsdemo.MainAbility";
 
 export default function getLaunchWantForBundle() {

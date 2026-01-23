@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
-import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@kit.TestKit'
+import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, UiWindow } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
 import display from '@ohos.display';
 import { Utils, startAbility, stopApplication } from './Util.test';
@@ -21,26 +21,34 @@ import { BusinessError } from '@ohos.base';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 const waitUiReadyMs: int = 1000;
-const DeviceErrorCode: string = "17000005";
 
-async function exitInputMethod() {
-  let driver = Driver.create()
-  let softKeyBoard = await driver.findComponent(ON.type('Canvas'))
-  if (softKeyBoard != null) {
-    await driver.pressBack()
+async function maxUiWindow(driver: Driver, window: UiWindow | null): Promise<boolean> {
+  if (window != null) {
+    try {
+      let windowMode = await window.getWindowMode();
+      if (windowMode == WindowMode.FULLSCREEN) {
+        console.log(`${tag}, maxUiWindow FULLSCREEN`);
+        return true;
+      }
+      await window.maximize();
+      await driver.delayMs(3000);
+      return true;
+    } catch (error) {
+      console.log(`${tag}, maxUiWindow error,${JSON.stringify(error)}`);
+      return false;
+    }
+  } else {
+    console.log(`${tag}, maxUiWindow null`);
+    return false;
   }
-}
-
-function sleep(numberMillis: int) {
-  const exitTime = new Date().getTime() + numberMillis;
-  while (new Date().getTime() < exitTime) { }
-  return
 }
 
 export default function uitestDriverTest() {
   describe('uitestDriverTest', (): void => {
+    let driver: Driver;
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestDriverTest loadup start!!!!!")
+      driver = Driver.create();
       await Utils.msSleep(2000)
       hilog.info(domain, tag, "uitestDriverTest loadup over!!!!!")
     })
@@ -58,7 +66,6 @@ export default function uitestDriverTest() {
      */
     it('testMouseDrag_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testMouseDrag_static start !!!!");
-      let driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver.delayMs(1000);
       try {
@@ -104,22 +111,21 @@ export default function uitestDriverTest() {
      */
     it('testFling_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
-
-      let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'})
-
+      let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
+      await driver.delayMs(waitUiReadyMs);
+      await maxUiWindow(driver, window);
       await driver.fling(UiDirection.DOWN, 39000)
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponents(ON.text('next page'))
       expect (button == null).assertTrue();
       await driver.fling(UiDirection.LEFT, 39000)
       await driver.delayMs(waitUiReadyMs)
-      let text = await driver.findComponents(ON.text('1'))
+      let text = await driver.findComponents(ON.text('1').inWindow('com.uitestScene.acts'))
       expect (text == null).assertTrue();
       await driver.fling(UiDirection.RIGHT, 39000)
       await driver.delayMs(waitUiReadyMs)
-      let text2 = await driver.findComponents(ON.text('1'))
+      let text2 = await driver.findComponents(ON.text('1').inWindow('com.uitestScene.acts'))
       expect (text2 == null).assertTrue();
       await driver.fling(UiDirection.UP, 39000)
       await driver.delayMs(2000)
@@ -139,7 +145,6 @@ export default function uitestDriverTest() {
     it('testTriggerCombineKeys_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testTriggerCombineKeys_static start !!!!")
       try {
-        let driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(1000);
         let text = await driver.findComponent(ON.type('TextInput'));
@@ -200,7 +205,6 @@ export default function uitestDriverTest() {
      */
     it('testDisplayRotation_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs)
       await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
       await driver.delayMs(waitUiReadyMs)
@@ -259,7 +263,6 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, `testSetDisplayRotationEnabled_static start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       try {
-        let driver = Driver.create();
         await driver.delayMs(1000);
         await driver.setDisplayRotationEnabled(true);
         await driver.delayMs(1000);
@@ -293,7 +296,6 @@ export default function uitestDriverTest() {
     it('testPressHome_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testPressHome_static Start!!!");
       try {
-        let driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         await driver.pressHome();
@@ -319,7 +321,6 @@ export default function uitestDriverTest() {
      */
     it('testDrag_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.id('jump'))
       expect(button != null).assertTrue();
@@ -352,7 +353,6 @@ export default function uitestDriverTest() {
      */
     it('testDrag_speed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.id('jump'))
       expect(button != null).assertTrue();
@@ -386,7 +386,6 @@ export default function uitestDriverTest() {
     it('testPressHomeWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testPressHomeWithId_static start`);
       try {
-        let driver: Driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
         await driver.delayMs(waitUiReadyMs)
         let disPlay = display.getDefaultDisplaySync();

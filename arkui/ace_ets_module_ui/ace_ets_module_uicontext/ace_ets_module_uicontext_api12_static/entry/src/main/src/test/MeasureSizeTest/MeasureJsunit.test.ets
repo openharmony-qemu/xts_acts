@@ -57,13 +57,15 @@ export default function MeasureJsunit() {
     }); 
 
     
-    /**
+    
+/**
      * @tc.number   ArkUI_Stage_Measure_static_0100
      * @tc.name     ArkUI_Stage_Measure_static_0100
      * @tc.desc     ArkUI_Stage_Measure_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('ArkUI_Stage_Measure_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('ArkUI_Stage_Measure_static_0100 START');
       await CommonFunc.sleep(2000);
       let strJsonMaxLine2 = inspector.getInspectorByKey('textSizeMaxLine2');
@@ -74,13 +76,15 @@ it('ArkUI_Stage_Measure_static_0100', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
     
-    /**
+    
+/**
      * @tc.number   ArkUI_Stage_Measure_static_0200
      * @tc.name     ArkUI_Stage_Measure_static_0200
      * @tc.desc     ArkUI_Stage_Measure_static_0200
      * @tc.level    Level.LEVEL0
      */
 it('ArkUI_Stage_Measure_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('ArkUI_Stage_Measure_static_0200 START');
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
@@ -98,13 +102,15 @@ it('ArkUI_Stage_Measure_static_0200', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
     
-    /**
+    
+/**
      * @tc.number   ArkUI_Stage_Measure_static_0300
      * @tc.name     ArkUI_Stage_Measure_static_0300
      * @tc.desc     ArkUI_Stage_Measure_static_0300
      * @tc.level    Level.LEVEL0
      */
 it('ArkUI_Stage_Measure_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('ArkUI_Stage_Measure_static_0300 START');
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
@@ -130,13 +136,15 @@ it('ArkUI_Stage_Measure_static_0300', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
     
-    /**
+    
+/**
      * @tc.number   ArkUI_Stage_Measure_static_0400
      * @tc.name     ArkUI_Stage_Measure_static_0400
      * @tc.desc     ArkUI_Stage_Measure_static_0400
      * @tc.level    Level.LEVEL0
      */
 it('ArkUI_Stage_Measure_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('ArkUI_Stage_Measure_static_0400 START');
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
@@ -153,13 +161,15 @@ it('ArkUI_Stage_Measure_static_0400', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
     
-    /**
+    
+/**
      * @tc.number   ArkUI_Stage_Measure_static_0500
      * @tc.name     ArkUI_Stage_Measure_static_0500
      * @tc.desc     ArkUI_Stage_Measure_static_0500
      * @tc.level    Level.LEVEL0
      */
 it('ArkUI_Stage_Measure_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('ArkUI_Stage_Measure_static_0500 START');
       await CommonFunc.sleep(2000);
       let driver = Driver.create();

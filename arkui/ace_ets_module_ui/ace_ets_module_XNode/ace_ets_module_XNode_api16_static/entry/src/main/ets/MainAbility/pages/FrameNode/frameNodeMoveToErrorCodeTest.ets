@@ -61,7 +61,7 @@ class MyNodeController extends NodeController {
     const rootRenderNode = this.rootNode!.getRenderNode();
     if (rootRenderNode !== null) {
       rootRenderNode.size = { width: 200, height: 200 };
-      rootRenderNode.backgroundColor = 0xff00ff00;
+      rootRenderNode.backgroundColor = 0xff00ff00.toInt();
       rootRenderNode?.appendChild(this.builderNode!.getFrameNode()!.getRenderNode()!);
     }
     return this.rootNode;
@@ -88,7 +88,7 @@ struct FrameNodeMoveToErrorCodeTest {
 
   build() {
     Column() {
-      // NodeContainer(this.myNodeController)
+      NodeContainer(this.myNodeController)
       Text(`${this.errorStr}`).id('error_str_id')
       Button('checkError in BuilderNode')
         .id('check_error_id')

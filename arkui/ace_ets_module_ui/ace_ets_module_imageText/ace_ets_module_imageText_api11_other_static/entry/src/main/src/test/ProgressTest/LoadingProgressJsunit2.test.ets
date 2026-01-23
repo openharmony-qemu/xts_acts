@@ -89,8 +89,6 @@ export default function loadingProgressJsunit2() {
     });
 
     
-
-
 /**
      * @tc.number   testLoadingProgress_100
      * @tc.name     testLoadingProgress_100
@@ -109,8 +107,6 @@ it('testLoadingProgress_100', Level.LEVEL1, async (done: () => void): Promise<vo
     });
 
     
-
-
 /**
      * @tc.number   testLoadingProgress_200
      * @tc.name     testLoadingProgress_200
@@ -129,8 +125,6 @@ it('testLoadingProgress_200', Level.LEVEL1, async (done: () => void): Promise<vo
     });
 
     
-
-
 /**
      * @tc.number   testLoadingProgress_300
      * @tc.name     testLoadingProgress_300
@@ -149,8 +143,6 @@ it('testLoadingProgress_300', Level.LEVEL1, async (done: () => void): Promise<vo
     });
 
     
-
-
 /**
      * @tc.number   testLoadingProgress_400
      * @tc.name     testLoadingProgress_400
@@ -169,8 +161,6 @@ it('testLoadingProgress_400', Level.LEVEL1, async (done: () => void): Promise<vo
     });
 
     
-
-
 /**
      * @tc.number   testLoadingProgress_500
      * @tc.name     testLoadingProgress_500
@@ -189,8 +179,6 @@ it('testLoadingProgress_500', Level.LEVEL1, async (done: () => void): Promise<vo
     });
 
     
-
-
 /**
      * @tc.number   testLoadingProgress_600
      * @tc.name     testLoadingProgress_600

@@ -30,7 +30,6 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { canIUse } from "@internal.full.global";
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
@@ -48,7 +47,7 @@ let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegat
 let syncProgressDetail: relationalStore.ProgressDetails;
 
 function Progess(ProgressDetail: relationalStore.ProgressDetails): void {
-  console.log(TAG + ` Progess:` + JSON.stringify(ProgressDetail));
+  console.log(tag + ` Progess:` + JSON.stringify(ProgressDetail));
   syncProgressDetail = ProgressDetail;
 }
 
@@ -170,10 +169,10 @@ export default function relationalStoreCloudSyncTest() {
         try {
           let PRIKey: relationalStore.PRIKeyType[] = ['test_key1', 'test_key2'];
           hilog.info(domain, tag, 'RS0453 PRIKey: ' + JSON.stringify(PRIKey));
-          await rdbStore.getModifyTime('cloud_text', 'num', PRIKey).then((data) => {
-            console.log(tag + `modifyTime:` + JSON.stringify(data));
-            let size = Object.keys(data).length;
-            console.log(tag + 'size=' + size);
+          await rdbStore.getModifyTime('cloud_text', 'num', PRIKey).then((data: relationalStore.ModifyTime) => {
+            console.log(tag + ` modifyTime:` + JSON.stringify(data));
+            let size = data.size;
+            console.log(tag + ' size=' + size);
             expect(size == 2).assertTrue();
             done();
           });
@@ -183,6 +182,206 @@ export default function relationalStoreCloudSyncTest() {
           done();
         }
         console.log(tag + '************* testRdbStoreCloudSync0003 end *************');
+      })
+
+
+    /**
+     * @tc.name   testRdbCloudlockCloudContainer0001
+     * @tc.number testRdbCloudlockCloudContainer0001
+     * @tc.desc   lockCloudContainer with RdbPredicates, SyncMode is relationalStore.RdbPredicates and promise method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbCloudlockCloudContainer0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.log(tag + "************* testRdbCloudlockCloudContainer0001 start *************");
+        try {
+          let time = await rdbStore.lockCloudContainer();
+          console.info("testRdbCloudlockCloudContainer0001 lockCloudContainer succeeded time:" + time);
+          expect(time != null).assertFail();
+        } catch (err) {
+          console.log(tag + `data_relationalStore.RdbPredicates fail, errcode: ` + err.code);
+          expect(202).assertEqual(err.code);
+          done();
+        }
+        console.log(tag + "************* testRdbCloudlockCloudContainer0001 end *************");
+      })
+
+    /**
+     * @tc.name   testRdbCloudUnlockCloudContainer0001
+     * @tc.number testRdbCloudUnlockCloudContainer0001
+     * @tc.desc   unlockCloudContainer RdbPredicates, relationalStore.RdbPredicates and promise method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbCloudUnlockCloudContainer0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.log(tag + "************* testRdbCloudUnlockCloudContainer0001 start *************");
+        try {
+          let time = await rdbStore.unlockCloudContainer();
+          console.info("testRdbCloudUnlockCloudContainer0001 unlockCloudContainer succeeded time:" + time);
+          expect(time != null).assertFail();
+        } catch (err) {
+          console.log(tag + `rdbStore.unlockCloudContainer fail, errcode: ` + err.code);
+          expect(202).assertEqual(err.code);
+          done();
+        }
+        console.log(tag + "************* testRdbCloudUnlockCloudContainer0001 end *************");
+      })
+
+    /**
+     * @tc.name   testRdbQuerySharingResource0001
+     * @tc.number testRdbQuerySharingResource0001
+     * @tc.desc   unlockCloudContainer RdbPredicates, relationalStore.RdbPredicates and promise method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbQuerySharingResource0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.log(tag + "************* testRdbQuerySharingResource0001 start *************");
+        let predicates = new relationalStore.RdbPredicates("cloud_text");
+        try {
+          let resultSet = await rdbStore.querySharingResource(predicates, ['1', '2']);
+          console.info("testRdbQuerySharingResource0001 querySharingResource succeeded");
+          expect().assertFail();
+        } catch (err) {
+          console.log(tag + `rdbStore.querySharingResource fail, errcode: ` + err.code);
+          expect(202).assertEqual(err.code);
+        }
+        console.log(tag + "************* testRdbQuerySharingResource0001 end *************");
+        done();
+      })
+
+    /**
+     * @tc.name   testRdbQuerySharingResource0002
+     * @tc.number testRdbQuerySharingResource0002
+     * @tc.desc   unlockCloudContainer RdbPredicates, relationalStore.RdbPredicates and promise method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbQuerySharingResource0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.log(tag + "************* testRdbQuerySharingResource0002 start *************");
+        let predicates = new relationalStore.RdbPredicates("cloud_text");
+        rdbStore.querySharingResource(predicates, (err: BusinessError<void> | null, resultSet) => {
+          if (err) {
+            console.log(tag + `rdbStore.querySharingResource fail, errcode: ` + err.code);
+            expect(202).assertEqual(err.code);
+          } else {
+            console.info("testRdbQuerySharingResource0002 querySharingResource succeeded");
+            expect().assertFail();
+          }
+        });
+        await Utils.msSleep(1000);
+        console.log(tag + "************* testRdbQuerySharingResource0002 end *************");
+        done();
+      })
+
+    /**
+     * @tc.name   testRdbQuerySharingResource0003
+     * @tc.number testRdbQuerySharingResource0003
+     * @tc.desc   unlockCloudContainer RdbPredicates, relationalStore.RdbPredicates and promise method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbQuerySharingResource0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.log(tag + "************* testRdbQuerySharingResource0003 start *************");
+        let predicates = new relationalStore.RdbPredicates("cloud_text");
+        rdbStore.querySharingResource(predicates, ['1', '2'], (err: BusinessError<void> | null, resultSet) => {
+          if (err) {
+            console.log(tag + `rdbStore.querySharingResource fail, errcode: ` + err.code);
+            expect(202).assertEqual(err.code);
+          } else {
+            console.info("testRdbQuerySharingResource0003 querySharingResource succeeded");
+            expect().assertFail();
+          }
+        });
+        await Utils.msSleep(1000);
+        console.log(tag + "************* testRdbQuerySharingResource0003 end *************");
+        done();
+      })
+
+    /**
+     * @tc.name   testRdbRestore0001
+     * @tc.number testRdbRestore0001
+     * @tc.desc   unlockCloudContainer RdbPredicates, relationalStore.RdbPredicates and promise method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbRestore0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.log(tag + "************* testRdbRestore0001 start *************");
+        try {
+          await rdbStore.restore();
+          console.info("testRdbRestore0001 restore succeeded");
+          expect().assertFail();
+        } catch (err) {
+          console.log(tag + `rdbStore.restore fail, errcode: ` + err.code);
+          expect(202).assertEqual(err.code);
+        }
+        console.log(tag + "************* testRdbRestore0001 end *************");
+        done();
+      })
+
+    /**
+     * @tc.name   testRdbCloudSync0001
+     * @tc.number testRdbCloudSync0001
+     * @tc.desc   unlockCloudContainer RdbPredicates, relationalStore.RdbPredicates and promise method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbCloudSync0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.log(tag + "************* testRdbCloudSync0001 start *************");
+        let predicates = new relationalStore.RdbPredicates("cloud_text");
+        try {
+          await rdbStore.cloudSync(relationalStore.SyncMode.SYNC_MODE_CLOUD_FIRST, predicates, (progressDetail) => {
+              expect().assertFail();
+            });
+          console.info("testRdbCloudSync0001 cloudSync succeeded");
+          expect().assertFail();
+        } catch (err) {
+          console.log(tag + `rdbStore.cloudSync fail, errcode: ` + err.code);
+          expect(202).assertEqual(err.code);
+        }
+        console.log(tag + "************* testRdbCloudSync0001 end *************");
+        done();
+      })
+
+    /**
+     * @tc.name   testRdbCloudSync0002
+     * @tc.number testRdbCloudSync0002
+     * @tc.desc   unlockCloudContainer RdbPredicates, relationalStore.RdbPredicates and promise method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbCloudSync0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.log(tag + "************* testRdbCloudSync0002 start *************");
+        let predicates = new relationalStore.RdbPredicates("cloud_text");
+        rdbStore.cloudSync(relationalStore.SyncMode.SYNC_MODE_CLOUD_FIRST, predicates, (progressDetail) => {
+          expect().assertFail();
+        }, (err: BusinessError<void> | null) => {
+          if (err) {
+            console.log(tag + `rdbStore.cloudSync fail, errcode: ` + err.code);
+            expect(202).assertEqual(err.code);
+          } else {
+            console.info("testRdbCloudSync0002 cloudSync succeeded");
+            expect().assertFail();
+          }
+        });
+        await Utils.msSleep(1000);
+        console.log(tag + "************* testRdbCloudSync0002 end *************");
+        done();
       })
 
     console.log(tag + '*************Unit Test End*************');

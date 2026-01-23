@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,6 +33,7 @@ import { UtilsTest } from '../Util.test';
 import {
   Position
 } from '@ohos.arkui.component'
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -62,7 +63,7 @@ export default function positionSettingJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get positionSettingJsunit state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("positionSetting" == pages.name)) {
           console.info("get positionSettingJsunit pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -129,7 +130,7 @@ it('testPositionSetting_static_003', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textAlign": Alignment.BottomEnd
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 25,
@@ -163,7 +164,7 @@ it('testPositionSetting_static_004', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "directionT": Direction.Ltr
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 25,
@@ -226,7 +227,7 @@ it('testPositionSetting_static_006', Level.LEVEL1, async (done: ()=>void) => {
             "position2": {
               x: '30%', y: '50%'
             } as Position
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
 
         let indexEvent: events_emitter.InnerEvent = {
@@ -295,7 +296,7 @@ it('testPositionSetting_static_008', Level.LEVEL1, async (done: ()=>void) => {
             "anchor": {
               x: 0, y: 0
             } as Position,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
 
         let indexEvent: events_emitter.InnerEvent = {
@@ -356,7 +357,7 @@ it('testPositionSetting_static_010', Level.LEVEL1, async (done: ()=>void) => {
             "offsetT": {
               x: 150, y: 10
             } as Position,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
 
         let indexEvent: events_emitter.InnerEvent = {

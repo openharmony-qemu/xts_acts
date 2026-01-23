@@ -15,9 +15,10 @@
 import WebViewBFCacheResumeAndSuspendPlayer from './WebViewBFCacheResumeAndSuspendPlayer.test'
 import WebViewOnMicrophoneCaptureStateChange from './WebViewOnMicrophoneCaptureStateChange.test'
 import WebViewBFCacheSuspendPlayer from './WebViewBFCacheSuspendPlayer.test'
-
+import WebViewOnCameraCaptureStateChange from './WebViewOnCameraCaptureStateChange.test'
 export default function testsuite() {
   WebViewBFCacheResumeAndSuspendPlayer()
   WebViewOnMicrophoneCaptureStateChange()
   WebViewBFCacheSuspendPlayer()
+  WebViewOnCameraCaptureStateChange()
 }

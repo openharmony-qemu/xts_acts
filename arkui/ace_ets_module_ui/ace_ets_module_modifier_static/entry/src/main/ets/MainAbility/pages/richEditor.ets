@@ -13,23 +13,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Builder,List, RichEditor,RichEditorOptions,TextDataDetectorType,NavDestination,RichEditorController,Polyline,Progress,RowOptions,Navigation,Polygon,ProgressType,Path,NavPathStack,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Builder,List,CopyOptions, AttributeModifier,RichEditor,RichEditorOptions,RichEditorAttribute,TextDataDetectorType,NavDestination,RichEditorController,Polyline,Progress,RowOptions,Navigation,Polygon,ProgressType,Path,NavPathStack,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  Prop,
+  PropRef,
+  Observed
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
- // import { RichEditorModifier } from "@ohos.arkui.modifier";
-//
-//  class CustomModifier extends RichEditorModifier {
+import { RichEditorModifier } from "@ohos.arkui.modifier";
+
+// @Observed
+// class CustomModifier implements AttributeModifier<RichEditorAttribute> {
+//   copyOptions:CopyOptions = CopyOptions.InApp
 //   applyNormalAttribute(instance: RichEditorAttribute): void {
-//     super.applyNormalAttribute?.(instance);
+//     instance.copyOptions(this.copyOptions)
 //   }
+//
 //   onChangeRichEditor() {
-//     this.copyOptions(CopyOptions.None)
+//     this.copyOptions = CopyOptions.None
 //   }
 // }
+
+
+
+ class CustomModifier extends RichEditorModifier {
+  applyNormalAttribute(instance: RichEditorAttribute): void {
+    // super.applyNormalAttribute?.(instance);
+  }
+  onChangeRichEditor() {
+    this.copyOptions(CopyOptions.None)
+  }
+}
 
 
 @Entry
@@ -43,13 +58,13 @@ struct RichEditorPage {
   @State address: string = 'XX省XX市XX区XXXX';
   @State enableDataDetector: boolean = true;
   @State types: TextDataDetectorType[] = new Array<TextDataDetectorType>();
-//   @State customModifier: RichEditorAttribute = new CustomModifier()
-//     .copyOptions(CopyOptions.InApp)
-//
+  @State customModifier: CustomModifier = new CustomModifier()
+    .copyOptions(CopyOptions.InApp)
+
   build() {
     Row(){
       Button("change value").onClick((e: ClickEvent) => {
-//         (this.customModifier as CustomModifier).onChangeRichEditor();
+        (this.customModifier as CustomModifier).onChangeRichEditor();
       }).key("changeButton")
 
     RichEditor(this.options)
@@ -83,7 +98,7 @@ struct RichEditorPage {
             }
           })
       })
-      // .attributeModifier(this.customModifier as CustomModifier)
+      .attributeModifier(this.customModifier as CustomModifier)
       .key('richEditor')
       .enableDataDetector(this.enableDataDetector)
       .dataDetectorConfig({types : this.types, onDetectResultUpdate: (result: string)=>{}})

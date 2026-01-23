@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import events_emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -51,7 +52,7 @@ export default function SearchJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get SearchJsunit state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("SearchPage" == pages.name)) {
           console.info("get SearchJsunit pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -122,7 +123,7 @@ it('SearchJsunit_static_0200', Level.LEVEL0, async (done: () => void) => {
       'textFont':{size:'14.00fp',style:FontStyle.Normal,weight:400,family:"HarmonyOS Sans"} as Font,
         'textAlign':TextAlign.Center,
         'copyOption':CopyOptions.LocalDevice
-    } as Record<String,undefined|null|Object>
+    } as Record<String,RecordData>
   }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,
@@ -170,7 +171,7 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
   let eventData: events_emitter.EventData = {
     data: {
       'changeValue':'',
-      } as Record<String,undefined|null|Object>
+      } as Record<String,RecordData>
     }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,
@@ -284,7 +285,7 @@ it('SearchJsunit_static_0400', Level.LEVEL0, async (done: () => void) => {
       'textFont':{size:"16.00fp",style:FontStyle.Normal,weight:FontWeight.Normal,family:"HarmonyOS Sans"} as Font,
       'textAlign':TextAlign.Start,
       'copyOption':CopyOptions.None
-    } as Record<String,undefined|null|Object>
+    } as Record<String,RecordData>
   }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,

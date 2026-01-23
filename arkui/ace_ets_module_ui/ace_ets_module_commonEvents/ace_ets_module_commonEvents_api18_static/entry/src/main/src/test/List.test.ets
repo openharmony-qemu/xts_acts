@@ -33,23 +33,23 @@ import panGestureDistanceTest from './PanGesture/panGestureDistance.test';
 import panGestureOnOffTest from './PanGesture/panGestureOnOff.test';
 
 export default function testsuite() {
-  // enableEdgeAutoScroll_false(); // 1 pass 1
-  // enableEdgeAutoScroll_true(); // 1 pass 1
-  onVisiable(); // 1 pass 1
+  onVisiable();
+  PreDrag();
+  enableEdgeAutoScroll_false();
+  enableEdgeAutoScroll_true();
 
-  // notifyDragStartRequest(); // 1 pass 1
-  // PreDrag(); // 1 pass 1
-  // enableEdgeAutoScroll(); // 1 pass 1
-  // LongPressRecognizer(); // 1 pass 1
-  // PanRecognizer(); // 1 pass 1
-  // PinchRecognizer(); // 1 pass 1
-  // RotationRecognizer(); // 1 pass 1
-  // SwipeRecognizer(); // 1 pass 1
-  // TapRecognizer(); // 1 pass 1
-  // InteractionEventBindingInfoTest(); // 8 getInteractionEventBindingInfo 接口未交付
-  // UIObserverEventTest(); // 3 observer.offwillClick 未交付
-  // nextFocus(); // 1 pass 1
-  // nextFocus2(); // 1 pass 1
-  // panGestureDistanceTest(); // 3 getDistanceMap 接口未交付
-  // panGestureOnOffTest(); // 1 observer.off
+  notifyDragStartRequest(); 
+  enableEdgeAutoScroll();
+  LongPressRecognizer(); 
+  PanRecognizer();
+  PinchRecognizer();
+  RotationRecognizer();
+  SwipeRecognizer();
+  TapRecognizer();
+  // InteractionEventBindingInfoTest();
+  UIObserverEventTest();
+  nextFocus();
+  nextFocus2(); 
+  // panGestureDistanceTest();
+  panGestureOnOffTest();
 }

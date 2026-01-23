@@ -41,7 +41,6 @@ export default function patternLockThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     });
 
     beforeEach(() => {
@@ -53,11 +52,11 @@ export default function patternLockThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `PatternLockPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(patternLockThemeProperty);
+            localTheme = AppStorage.get<CustomTheme>('PatternLockThemeProperty');
             console.info(`${SUITE} router.pushUrl success`);
           });
         }
-        colorValues = AppStorage.get(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
@@ -65,13 +64,13 @@ export default function patternLockThemeTest() {
       if (!changeTheme) {
         return;
       }
-      if ((AppStorage.get(patternLockThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+      if ((AppStorage.get<CustomTheme>('PatternLockThemeProperty'))?.colors?.fontEmphasize
         == redCustomTheme?.colors?.fontEmphasize) {
-        AppStorage.setOrCreate(patternLockThemeProperty, greenCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>('PatternLockThemeProperty', greenCustomTheme);
       } else {
-        AppStorage.setOrCreate(patternLockThemeProperty, redCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>('PatternLockThemeProperty', redCustomTheme);
       }
-      localTheme = AppStorage.get<CustomTheme>(patternLockThemeProperty);
+      localTheme = AppStorage.get<CustomTheme>('PatternLockThemeProperty');
       changeTheme = false;
     });
 

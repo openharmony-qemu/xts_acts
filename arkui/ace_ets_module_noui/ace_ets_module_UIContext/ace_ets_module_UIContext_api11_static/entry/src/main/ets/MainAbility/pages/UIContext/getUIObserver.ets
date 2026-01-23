@@ -26,12 +26,17 @@ import { State, Consume, Provide } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct NavRouterExample {
-  private stack: NavPathStack = new NavPathStack();
+  @Provide({alias: 'stack' }) stack: NavPathStack = new NavPathStack()
   @State isActiveWLAN: boolean = false
   @State isActiveBluetooth: boolean = false
   @State showFlag: ResourceStr = ''
-  @State showLanYa: boolean = false
 
+  @Builder
+  pageMap(name: string) {
+    if (name == 'pageOne') {
+      PageOne()
+    }
+  }
 
   aboutToAppear() {
     let context:UIContext | undefined = this.getUIContext()
@@ -49,62 +54,32 @@ struct NavRouterExample {
   build() {
     Column() {
       Navigation(this.stack) {
-        if(!this.showLanYa){
-          NavDestination() {
-            Row() {
-              Row().width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin).backgroundColor(Color.Pink)
-              Text(`WLAN`).fontSize(22).fontWeight(500).textAlign(TextAlign.Center)
-            }
-            .width('90%')
-            .height(72)
-            NavDestination() {
-              Flex({ direction: FlexDirection.Row }) {
-                Text('wifi').fontSize(30).padding({ left: 35 } as Padding)
-              }
-            }
-            .hideTitleBar(false)
-            .backgroundColor('#0c182431')
-          }.backgroundColor(this.isActiveWLAN ? '#ccc' : '#fff')
-          .borderRadius(24)
-          .onActive((reason: NavDestinationActiveReason) => {
-            this.isActiveWLAN = true
-          })
-          .onInactive((reason: NavDestinationActiveReason) => {
-            this.isActiveWLAN = false
-          })
-          .onClick((e:ClickEvent) => {
-            this.showLanYa = !this.showLanYa  //自动化点击后，appDied，手动不会
-          })
-          .id("Wlan_Id")
-        }
-        if(this.showLanYa) {
-          NavDestination() {
-            Row() {
-              Row().width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin).backgroundColor(Color.Pink)
-              Text(`蓝牙`)
-                .fontSize(22)
-                .fontWeight(500)
-                .textAlign(TextAlign.Center)
-            }
-            .id('lanYa_id')
-            .width('90%')
-            .height(72)
-            NavDestination() {
-              Flex({ direction: FlexDirection.Row }) {
-                Text(this.showFlag.toString()).fontSize(30).padding({ left: 35 } as Padding).key('showFlag_id')
-              }
-            }.hideTitleBar(false).backgroundColor('#0c182431')
+        NavDestination() {
+          Row() {
+            Row().width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin).backgroundColor(Color.Pink)
+            Text(`WLAN`).fontSize(22).fontWeight(500).textAlign(TextAlign.Center)
           }
-          .backgroundColor(this.isActiveBluetooth ? '#ccc' : '#fff')
-          .borderRadius(24)
-          .onActive((reason: NavDestinationActiveReason) => {
-            this.isActiveBluetooth = true
-          })
-          .onInactive((reason: NavDestinationActiveReason) => {
-            this.isActiveBluetooth = false
-          })
-        }
-
+          .width('90%')
+          .height(72)
+          NavDestination() {
+            Flex({ direction: FlexDirection.Row }) {
+              Text('wifi').fontSize(30).padding({ left: 35 } as Padding)
+            }
+          }
+          .hideTitleBar(false)
+          .backgroundColor('#0c182431')
+        }.backgroundColor(this.isActiveWLAN ? '#ccc' : '#fff')
+        .borderRadius(24)
+        .onActive((reason: NavDestinationActiveReason) => {
+          this.isActiveWLAN = true
+        })
+        .onInactive((reason: NavDestinationActiveReason) => {
+          this.isActiveWLAN = false
+        })
+        .onClick((e:ClickEvent) => {
+          this.stack.pushPath(new NavPathInfo('pageOne',undefined),true ) //点击后页面没跳转
+        })
+        .id("Wlan_Id")
       }
       .title("Navigation")
       .title('设置')
@@ -112,8 +87,53 @@ struct NavRouterExample {
       .mode(NavigationMode.Auto)
       .hideTitleBar(false)
       .hideToolBar(true)
+      .navDestination(this.pageMap)
     }
     .width('100%')
     .height('100%')
   }
+
+
+
 }
+
+@Component
+struct PageOne {
+  @Consume('stack') pageInfos: NavPathStack;
+  @State isActiveWLAN: boolean = false
+  @State isActiveBluetooth: boolean = false
+  @State showFlag: ResourceStr = ''
+
+  build(){
+    NavDestination() {
+      Row() {
+        Row().width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin).backgroundColor(Color.Pink)
+        Text(`蓝牙`)
+          .fontSize(22)
+          .fontWeight(500)
+          .textAlign(TextAlign.Center)
+      }
+      .id('lanYa_id')
+      .width('90%')
+      .height(72)
+      NavDestination() {
+        Flex({ direction: FlexDirection.Row }) {
+          Text(this.showFlag.toString())
+            .fontSize(30)
+            .padding({ left: 35 } as Padding)
+            .key('showFlag_id')
+        }
+      }.hideTitleBar(false).backgroundColor('#0c182431')
+    }
+    .backgroundColor(this.isActiveBluetooth ? '#ccc' : '#fff')
+    .borderRadius(24)
+    .onActive((reason: NavDestinationActiveReason) => {
+      this.isActiveBluetooth = true
+    })
+    .onInactive((reason: NavDestinationActiveReason) => {
+      this.isActiveBluetooth = false
+    })
+
+  }
+}
+

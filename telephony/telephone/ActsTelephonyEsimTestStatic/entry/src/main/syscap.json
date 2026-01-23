@@ -4,7 +4,7 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core"
+                    "SystemCapability.Telephony.CoreService.Esim"
                 ]
             }
         ]

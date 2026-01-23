@@ -25,7 +25,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import  buffer  from '@ohos.buffer'
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 export enum ThreatType {

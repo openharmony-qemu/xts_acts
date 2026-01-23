@@ -40,6 +40,7 @@ import {
 } from '@ohos.UiTest'
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
+import wifiMg from '@ohos.wifiManager';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let testAbilityContext: common.UIAbilityContext;
@@ -55,6 +56,36 @@ export default function ActsCommonEventSystemAPITest() {
 
     beforeAll(() => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
+
+      let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean
+      if(!isWifiActive){
+        console.info(TAG+"======> wifi_test/enable wifi:" );
+        wifiMg.enableWifi();
+        await Utils.msSleep(5000);
+      }
+
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info(TAG+"======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+        console.info(TAG+"======> Internet speed : " + JSON.stringify(data.linkSpeed));
+        console.info(TAG+"======> Internet chload : " + JSON.stringify(data.chload));
+        console.info(TAG+"======> Internet rssi : " + JSON.stringify(data.rssi));
+
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info(TAG+"======> WLAN connection established ");
+        } else {
+          expect().message("======> WLAN Network error").assertFail(); //方式一
+
+        }
+        if (data.chload >= 800 || data.rssi <= -80) {
+          expect().message("======> WLAN Network error").assertFail();//方式一
+        } else if (data.chload >= 500) {
+          console.info(TAG+"======> The internet connection is poor. ");
+        }
+      } catch (err) {
+        console.info(TAG+"======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+        throw (err as Error);
+      }
 
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
@@ -175,7 +206,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info("${TAG} remove sticky event AsyncCallback success");
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${Tag} remove sticky event AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(err?.code).assertEqual(202);
           done()
@@ -226,7 +257,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(Tag + " publish update success");
           expect(false).assertTrue()
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(Tag + ' publish2 fail,result is :', JSON.stringify(err));
           expect(err?.code).assertEqual(1600004);
         });
@@ -290,7 +321,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(Tag + " publish update success");
           expect(false).assertTrue()
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(Tag + ' publish4 fail,result is :', JSON.stringify(err));
           expect(err?.code).assertEqual(1600007);
         });
@@ -354,7 +385,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(Tag + " publish update success");
           expect(false).assertTrue()
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(Tag + ' notificationRequest1600014 promiss fail,result is :', JSON.stringify(err));
           expect(err?.code).assertEqual(1600014);
           done()
@@ -419,7 +450,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(`${Tag} requestEnableNotification1 Promise success!`)
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${Tag} requestEnableNotification1 Promise err: ${err.code}, errMes: ${err.message}`)
           expect(err?.code).assertEqual(1600013)
         })
@@ -441,45 +472,7 @@ export default function ActsCommonEventSystemAPITest() {
         }
         console.info(`${Tag} button is success`)
 
-        let index1: number = 0;
-        let publishCallback = (err: BusinessError|null) => {
-          index1 += 1
-          console.info(`index1:` + index1)
-          if (index1 == 11) {
-            console.info(`${Tag} fail in publishing notification:` + err?.code)
-            expect(err?.code).assertEqual(1600009);
-            done()
-          } else {
-            console.info(`${Tag} publishing notification:` + JSON.stringify(err))
-            expect(err).assertEqual(null);
-          }
-        }
-
-        for (let index: int = 0; index <= 10; index++) {
-          let notificationRequest: notificationManager.NotificationRequest = {
-            id: index,
-            content: {
-              notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-              normal: {
-                title: 'text_title',
-                text: 'text_text',
-                additionalText: 'test_Publish'
-              } as notificationManager.NotificationBasicContent,
-            } as notificationManager.NotificationContent,
-            creatorBundleName: "123",
-            creatorUid: 123,
-            creatorPid: 123,
-            creatorUserId: 123,
-            hashCode: "123",
-            source: 0,
-            deviceId: undefined,
-            notificationFlags: undefined,
-            agentBundle: undefined,
-            appInstanceKey: undefined,
-          }
-          notificationManager.publish(notificationRequest, publishCallback)
-          await Utils.msSleep(60)
-        }
+        
 
         for (let index = 0; index <= 10; index++) {
           count = 0;
@@ -508,7 +501,7 @@ export default function ActsCommonEventSystemAPITest() {
             console.info(`${Tag} publish_${index} Promise success`)
             count++;
             expect(count).assertEqual(1);
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             console.info(`${Tag} publish_${index} Promise err: ${err.code}, errMes: ${err.message}`)
             if (index == 10) {
               expect(err?.code).assertEqual(1600009)
@@ -536,7 +529,7 @@ export default function ActsCommonEventSystemAPITest() {
         let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283'
         notificationManager.openNotificationSettings(testAbilityContext).then(() => {
           console.info(Tag + "Succeed to openNotificationSettings");
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
           if (err.code == 801) {
             done();
@@ -555,20 +548,46 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(Tag + "Succeed to openNotificationSettings");
           expect(false).assertTrue();
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
           if (err.code == 801) {
             expect(err.code == 801).assertTrue();
-            done();
           } else if(err.code == 1011){
             expect(err?.code).assertEqual(1011);
-            done();
           } else {
             expect(err?.code).assertEqual(1600018)
-            done()
           }
         });
         await Utils.msSleep(2000)
+        let index1: number = 0;
+        let publishCallback = (err: BusinessError|null) => {
+          index1 += 1
+          console.info(`index1:` + index1)
+          if (index1 == 11) {
+            console.info(`${Tag} fail in publishing notification:` + err?.code)
+            expect(err?.code).assertEqual(1600009);
+            done()
+          } else {
+            console.info(`${Tag} publishing notification:` + JSON.stringify(err))
+            expect(err).assertEqual(null);
+          }
+        }
+
+        for (let index: int = 11; index <= 21; index++) {
+          let notificationRequest: notificationManager.NotificationRequest = {
+            id: index,
+            content: {
+              notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+              normal: {
+                title: 'text_title',
+                text: 'text_text',
+                additionalText: 'test_Publish'
+              } as notificationManager.NotificationBasicContent,
+            } as notificationManager.NotificationContent,
+          }
+          notificationManager.publish(notificationRequest, publishCallback)
+          //await Utils.msSleep(60)
+        }
       })
 
     /**

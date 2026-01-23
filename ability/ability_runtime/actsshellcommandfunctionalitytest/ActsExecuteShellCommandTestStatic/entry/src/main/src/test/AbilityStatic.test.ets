@@ -17,6 +17,7 @@ import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../..
 import hilog from '@ohos.hilog'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -24,7 +25,18 @@ let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegat
 
 export default function abilityTestStatic() {
   describe('ACTS_ExecuteShellCommandTest_Static', () => {
-
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+    
     /**
      * @tc.name   ACTS_ExecuteShellCommand_Callback_Static_0100
      * @tc.number ACTS_ExecuteShellCommand_Callback_Static_0100

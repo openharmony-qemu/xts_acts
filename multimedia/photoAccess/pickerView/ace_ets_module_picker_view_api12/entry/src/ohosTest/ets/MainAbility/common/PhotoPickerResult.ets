@@ -39,4 +39,8 @@ export class PhotoPickerResult {
   public singleSelectionMode: photoAccessHelper.SingleSelectionMode = 
     photoAccessHelper.SingleSelectionMode.BROWSER_AND_SELECT_MODE;
   public preselectedUris: Array<string> = [];
+  public movingPhotoBadgeStates?: number[];
+  public gridPinchMode?: photoAccessHelper.GridPinchMode;
+  public autoPlayScenes: photoAccessHelper.AutoPlayScene[] = [];
+  public appAlbumFilters: Array<string> = [];
 }

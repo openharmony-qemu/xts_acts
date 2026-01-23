@@ -21,7 +21,7 @@ import { Entry,Component,$r,Column,ColumnOptions,Checkbox,Blank,MarkStyle,Resour
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { ColumnModifier } from "@ohos.arkui.modifier";
 

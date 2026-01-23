@@ -63,7 +63,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { WaterFlowModifier } from "@ohos.arkui.modifier";
 

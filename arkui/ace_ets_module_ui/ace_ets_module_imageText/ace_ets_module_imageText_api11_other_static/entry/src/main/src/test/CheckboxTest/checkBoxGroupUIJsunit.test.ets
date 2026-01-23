@@ -107,8 +107,6 @@ export default function checkBoxGroupUIJsunit() {
     });
 
     
-
-
 /**
      * @tc.number   checkBoxGroupUIJsunit_static_0100
      * @tc.name     checkBoxGroupUIJsunit_static_0100
@@ -134,8 +132,6 @@ it('checkBoxGroupUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): 
     });
 
     
-
-
 /**
      * @tc.number   checkBoxGroupUIJsunit_static_0200
      * @tc.name     checkBoxGroupUIJsunit_static_0200
@@ -163,8 +159,6 @@ it('checkBoxGroupUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): 
     });
 
     
-
-
 /**
      * @tc.number   checkBoxGroupUIJsunit_static_0300
      * @tc.name     checkBoxGroupUIJsunit_static_0300
@@ -186,8 +180,6 @@ it('checkBoxGroupUIJsunit_static_0300', Level.LEVEL1, async (done: () => void): 
     });
 
     
-
-
 /**
      * @tc.number   checkBoxGroupUIJsunit_static_0400
      * @tc.name     checkBoxGroupUIJsunit_static_0400
@@ -209,8 +201,6 @@ it('checkBoxGroupUIJsunit_static_0400', Level.LEVEL1, async (done: () => void): 
     });
 
     
-
-
 /**
      * @tc.number   checkBoxGroupUIJsunit_static_0500
      * @tc.name     checkBoxGroupUIJsunit_static_0500
@@ -232,8 +222,6 @@ it('checkBoxGroupUIJsunit_static_0500', Level.LEVEL1, async (done: () => void): 
     });
 
     
-
-
 /**
      * @tc.number   checkBoxGroupUIJsunit_static_0600
      * @tc.name     checkBoxGroupUIJsunit_static_0600
@@ -247,8 +235,6 @@ it('checkBoxGroupUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): 
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
       let checkGoup = await driver.findComponent(ON.id('allck'));
-      await (checkGoup?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
       await (checkGoup?.click() as Promise<void>);
       await driver.delayMs(waitUiReadyMs);
       // check the isSelect and name
@@ -266,8 +252,6 @@ it('checkBoxGroupUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): 
     });
 
     
-
-
 /**
      * @tc.number   checkBoxGroupUIJsunit_static_0700
      * @tc.name     checkBoxGroupUIJsunit_static_0700

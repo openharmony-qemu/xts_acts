@@ -36,31 +36,31 @@ export default function onVisibleAreaChangeTest() {
   //Component to be tested
   // let supportView: Array<string> = new Array<string>(
   let supportView: string[] = [
-    // 'AlphabetIndexer',
-    // 'Blank',
-    // 'Button',
-    // 'Checkbox',
-    // 'CheckboxGroup',
-    // 'DataPanel',
-    // 'DatePicker',
-    // 'Divider',
-    // 'Image',
-    // 'ImageAnimator',
-    // 'LoadingProgress',
-    // 'Marquee',
-    // 'Menu',
-    // 'MenuItem',
-    // 'MenuItemGroup',
-    // 'Navigation',
-    // 'PatternLock',
-    // 'Progress',
-    // 'QRCode',
-    // 'Radio',
-    // 'Rating',
-    // 'ScrollBar',
-    // 'Search',
-    // 'Gauge', //
-    'RichText',   //
+    'AlphabetIndexer',
+    'Blank',
+    'Button',
+    'Checkbox',
+    'CheckboxGroup',
+    'DataPanel',
+    'DatePicker',
+    'Divider',
+    'Image',
+    'ImageAnimator',
+    'LoadingProgress',
+    'Marquee',
+    'Menu',
+    'MenuItem',
+    'MenuItemGroup',
+    'Navigation',
+    'PatternLock',
+    'Progress',
+    'QRCode',
+    'Radio',
+    'Rating',
+    'ScrollBar',
+    'Search',
+    'Gauge', 
+    'RichText',   
   ]
 
   //Custom params.
@@ -134,9 +134,9 @@ export default function onVisibleAreaChangeTest() {
       AppStorage.setOrCreate<number>('_yOffSetValue', data.testValue.setValue.leave.yOffSetValueLeave!)
       AppStorage.setOrCreate<number>('_ratiosLeft', data.testValue.setValue.leave.ratiosLeft!)
       AppStorage.setOrCreate<number>('_ratiosRight', data.testValue.setValue.leave.ratiosLeft!)
-      await Utils.sleep(500);
+      await Utils.sleep(1000);
       inspector.sendEventByKey('OnVisibleAreaChangeButton', 10, '');
-      await Utils.sleep(500);
+      await Utils.sleep(4000);
 
       //Gets information about where the target component moved out
       let targetRectLeave: RectValue = Utils.getComponentRect(data.pageConfig.componentKey??'');
@@ -146,9 +146,9 @@ export default function onVisibleAreaChangeTest() {
       //Set value
       // AttrsManager.change(data.caseTag, data.testValue.setValue.enter);
       AppStorage.setOrCreate<number>('_yOffSetValue', data.testValue.setValue.enter.yOffSetValueEnter!)
-      await Utils.sleep(500);
+      await Utils.sleep(1000);
       inspector.sendEventByKey('OnVisibleAreaChangeButton', 10, '');
-      await Utils.sleep(500);
+      await Utils.sleep(4000);
 
       //Gets information about where the target component enters
       let targetRectEnter: RectValue = Utils.getComponentRect(data.pageConfig.componentKey??'');
@@ -159,6 +159,7 @@ export default function onVisibleAreaChangeTest() {
       console.info('[' + data.caseTag + '] targetRectBefore.bottom: ' + targetRectBefore.bottom);
       console.info('[' + data.caseTag + '] targetRectLeave.bottom: ' + targetRectLeave.bottom);
       console.info('[' + data.caseTag + '] targetRectEnter.bottom: ' + targetRectEnter.bottom);
+      console.info('[' + data.caseTag + '] targetRectBefore.bottom ' +targetRectBefore.bottom,' - targetRectLeave.bottom'+targetRectLeave.bottom, ' = ','data.testValue.expectValue.yOffSetMoveLength = ',uiContext!.vp2px(data.testValue.expectValue.yOffSetMoveLength));
       console.info('[' + data.caseTag + '] data.testValue.expectValue.yOffSetMoveLength: ' + uiContext!.vp2px(data.testValue.expectValue.yOffSetMoveLength));
       expect(Math.abs((targetRectBefore.bottom - targetRectLeave.bottom) - uiContext!.vp2px(data.testValue.expectValue.yOffSetMoveLength)) <= 1).assertTrue();
       expect(Math.abs(((targetRectEnter.bottom - targetRectLeave.bottom)) - uiContext!.vp2px(data.testValue.expectValue.yOffSetMoveLength)) <= 1).assertTrue();

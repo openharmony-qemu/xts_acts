@@ -114,26 +114,26 @@ it('testListSpaceChangeUnfill_static', Level.LEVEL0, async (done: () => void): P
       expect(Math.abs(Math.round(firstListItem.right - firstListItem.left) - Math.round(listWidth * 0.4)) <= 1).assertTrue();
       expect(Math.abs(Math.round(firstListItem.bottom - firstListItem.top) - Math.round(listHeight * 0.18)) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(secondListItem.top - firstListItem.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(secondListItem.top - firstListItem.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
       expect(secondListItem.left).assertEqual(listContainer.left);
       expect(Math.abs(Math.round(secondListItem.right - secondListItem.left) - Math.round(listWidth * 0.4)) <= 1).assertTrue();
       expect(Math.abs(Math.round(secondListItem.bottom - secondListItem.top) - Math.round(listHeight * 0.18)) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(thirdListItem.top - secondListItem.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(thirdListItem.top - secondListItem.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
       expect(thirdListItem.left).assertEqual(listContainer.left);
       expect(Math.abs(Math.round(thirdListItem.right - thirdListItem.left) - Math.round(listWidth * 0.4)) <= 1).assertTrue();
       expect(Math.abs(Math.round(thirdListItem.bottom - thirdListItem.top) - Math.round(listHeight * 0.18)) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(fourthListItem.top - thirdListItem.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(fourthListItem.top - thirdListItem.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
       expect(fourthListItem.left).assertEqual(listContainer.left);
       expect(Math.abs(Math.round(fourthListItem.right - fourthListItem.left) - Math.round(listWidth * 0.4)) <= 1).assertTrue();
       expect(Math.abs(Math.round(fourthListItem.bottom - fourthListItem.top) - Math.round(listHeight * 0.18)) <= 1).assertTrue();
 
       console.info(`[testListSpaceChangeUnfill](listContainer.bottom - fourthListItem.bottom)=
         ${(listContainer.bottom - fourthListItem.bottom)}`);
-      console.info(`[testListSpaceChangeUnfill](listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.getFocusedUIContext()!.vp2px(60))=
-        ${(listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.getFocusedUIContext()!.vp2px(60))}`);
-      expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.getFocusedUIContext()!.vp2px(60)))) <= 1).assertTrue();
+      console.info(`[testListSpaceChangeUnfill](listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.resolveUIContext()!.vp2px(60))=
+        ${(listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.resolveUIContext()!.vp2px(60))}`);
+      expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.resolveUIContext()!.vp2px(60)))) <= 1).assertTrue();
 
       let driver = Driver.create();
       driver.swipe(
@@ -145,7 +145,7 @@ it('testListSpaceChangeUnfill_static', Level.LEVEL0, async (done: () => void): P
 
       fourthListItem = CommonFunc.getComponentRect('List_SpaceChange04');
       listContainer = CommonFunc.getComponentRect('List_SpaceChange_Container01');
-      expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.getFocusedUIContext()!.vp2px(60)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.resolveUIContext()!.vp2px(60)))) <= 1).assertTrue();
 
       console.info('[testListSpaceChangeUnfill] END');
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
@@ -190,26 +190,26 @@ it('testListSpaceChangeFill_static', Level.LEVEL0, async (done: () => void): Pro
       expect(Math.abs(Math.round(firstListItem.right - firstListItem.left) - Math.round(listWidth * 0.4)) <= 1).assertTrue();
       expect(Math.abs(Math.round(firstListItem.bottom - firstListItem.top) - Math.round(listHeight * 0.18)) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(secondListItem.top - firstListItem.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(secondListItem.top - firstListItem.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(40))) <= 1).assertTrue();
       expect(secondListItem.left).assertEqual(listContainer.left);
       expect(Math.abs(Math.round(secondListItem.right - secondListItem.left) - Math.round(listWidth * 0.4)) <= 1).assertTrue();
       expect(Math.abs(Math.round(secondListItem.bottom - secondListItem.top) - Math.round(listHeight * 0.18)) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(thirdListItem.top - secondListItem.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(thirdListItem.top - secondListItem.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(40))) <= 1).assertTrue();
       expect(thirdListItem.left).assertEqual(listContainer.left);
       expect(Math.abs(Math.round(thirdListItem.right - thirdListItem.left) - Math.round(listWidth * 0.4)) <= 1).assertTrue();
       expect(Math.abs(Math.round(thirdListItem.bottom - thirdListItem.top) - Math.round(listHeight * 0.18)) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(fourthListItem.top - thirdListItem.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(fourthListItem.top - thirdListItem.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(40))) <= 1).assertTrue();
       expect(fourthListItem.left).assertEqual(listContainer.left);
       expect(Math.abs(Math.round(fourthListItem.right - fourthListItem.left) - Math.round(listWidth * 0.4)) <= 1).assertTrue();
       expect(Math.abs(Math.round(fourthListItem.bottom - fourthListItem.top) - Math.round(listHeight * 0.18)) <= 1).assertTrue();
 
       console.info(`[testListSpaceChangeFill](listContainer.bottom - fourthListItem.bottom)=
         ${(listContainer.bottom - fourthListItem.bottom)}`);
-      console.info(`[testListSpaceChangeFill](listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.getFocusedUIContext()!.vp2px(120))=
-        ${(listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.getFocusedUIContext()!.vp2px(120))}`);
-      expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.getFocusedUIContext()!.vp2px(120)))) <= 1).assertTrue();
+      console.info(`[testListSpaceChangeFill](listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.resolveUIContext()!.vp2px(120))=
+        ${(listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.resolveUIContext()!.vp2px(120))}`);
+      expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.resolveUIContext()!.vp2px(120)))) <= 1).assertTrue();
 
       let driver = Driver.create();
       driver.swipe(
@@ -222,7 +222,7 @@ it('testListSpaceChangeFill_static', Level.LEVEL0, async (done: () => void): Pro
       fourthListItem = CommonFunc.getComponentRect('List_SpaceChange04');
       listContainer = CommonFunc.getComponentRect('List_SpaceChange_Container01');
       if (fourthListItem.bottom < listContainer.bottom ){
-       expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.getFocusedUIContext()!.vp2px(120)))) <= 1).assertTrue();
+       expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.resolveUIContext()!.vp2px(120)))) <= 1).assertTrue();
       } else {
        expect(listContainer.bottom <= fourthListItem.bottom).assertTrue();
       }
@@ -272,26 +272,26 @@ it('testListSpaceChangeOverflow_static', Level.LEVEL0, async (done: () => void):
       expect(Math.abs(Math.round(firstListItem.right - firstListItem.left) - Math.round(listWidth * 0.4)) <= 1).assertTrue();
       expect(Math.abs(Math.round(firstListItem.bottom - firstListItem.top) - Math.round(listHeight * 0.18)) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(secondListItem.top - firstListItem.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(secondListItem.top - firstListItem.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(60))) <= 1).assertTrue();
       expect(secondListItem.left).assertEqual(listContainer.left);
       expect(Math.abs(Math.round(secondListItem.right - secondListItem.left) - Math.round(listWidth * 0.4)) <= 1).assertTrue();
       expect(Math.abs(Math.round(secondListItem.bottom - secondListItem.top) - Math.round(listHeight * 0.18)) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(thirdListItem.top - secondListItem.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(thirdListItem.top - secondListItem.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(60))) <= 1).assertTrue();
       expect(thirdListItem.left).assertEqual(listContainer.left);
       expect(Math.abs(Math.round(thirdListItem.right - thirdListItem.left) - Math.round(listWidth * 0.4)) <= 1).assertTrue();
       expect(Math.abs(Math.round(thirdListItem.bottom - thirdListItem.top) - Math.round(listHeight * 0.18)) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(fourthListItem.top - thirdListItem.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(fourthListItem.top - thirdListItem.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(60))) <= 1).assertTrue();
       expect(fourthListItem.left).assertEqual(listContainer.left);
       expect(Math.abs(Math.round(fourthListItem.right - fourthListItem.left) - Math.round(listWidth * 0.4)) <= 1).assertTrue();
       expect(Math.abs(Math.round(fourthListItem.bottom - fourthListItem.top) - Math.round(listHeight * 0.18)) <= 1).assertTrue();
 
       console.info(`[testListSpaceChangeOverflow](listContainer.bottom - fourthListItem.bottom)=
         ${(listContainer.bottom - fourthListItem.bottom)}`);
-      console.info(`[testListSpaceChangeOverflow](listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.getFocusedUIContext()!.vp2px(180))=
-        ${(listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.getFocusedUIContext()!.vp2px(180))}`);
-      expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.getFocusedUIContext()!.vp2px(180)))) <= 1).assertTrue();
+      console.info(`[testListSpaceChangeOverflow](listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.resolveUIContext()!.vp2px(180))=
+        ${(listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.resolveUIContext()!.vp2px(180))}`);
+      expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.resolveUIContext()!.vp2px(180)))) <= 1).assertTrue();
       let driver = Driver.create();
       driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + thirdListItem.left + ((thirdListItem.right - thirdListItem.left) / 2))).toInt(),
@@ -302,7 +302,7 @@ it('testListSpaceChangeOverflow_static', Level.LEVEL0, async (done: () => void):
       fourthListItem = CommonFunc.getComponentRect('List_SpaceChange04');
       listContainer = CommonFunc.getComponentRect('List_SpaceChange_Container01');
       if (fourthListItem.bottom < listContainer.bottom ){
-      expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.getFocusedUIContext()!.vp2px(180)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.resolveUIContext()!.vp2px(180)))) <= 1).assertTrue();
       } else {
        expect(listContainer.bottom <= fourthListItem.bottom).assertTrue();
       }

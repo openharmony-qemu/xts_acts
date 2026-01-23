@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,6 +47,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import events_emitter from '@ohos.events.emitter';
 import {UtilsTest} from '../Util.test'
+import { RecordData } from '@ohos.base';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -99,7 +100,9 @@ it('customPopup_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       await Utils.sleep(1500);
       let callback = (indexEvent:events_emitter.EventData) => {
         console.info("customPopup_0100 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as ESObject)?.getProperty('arrowPointPosition')).assertEqual('Start');
+        const data = indexEvent.data as Record<String,RecordData>
+        const event = data['arrowPointPosition'] as Record<String,RecordData>
+        expect(event).assertEqual('Start');
         done();
       }
       let indexEvent:events_emitter.InnerEvent = {

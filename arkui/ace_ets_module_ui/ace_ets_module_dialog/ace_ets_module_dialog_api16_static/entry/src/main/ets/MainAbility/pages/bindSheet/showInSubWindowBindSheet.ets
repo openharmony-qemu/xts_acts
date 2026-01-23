@@ -73,7 +73,7 @@ import {
   Margin,
   BorderRadiuses
 } from '@ohos.arkui.component'
-import { State, Link, Prop, Observed, ObjectLink, } from '@ohos.arkui.stateManagement'
+import { State, Link, PropRef, Observed, ObjectLink, } from '@ohos.arkui.stateManagement'
 import { UIContext, Router, KeyboardAvoidMode, PromptAction } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
@@ -134,7 +134,7 @@ struct showInSubWindowBindSheet {
           showInSubWindow: this.showInSub,
           placement: Placement.Bottom,
           placementOnTarget: true,
-          onHeightDidChange: ((height: number) => {
+          onHeightDidChange: ((height: int) => {
             console.log('TestTag:: height is' + height)
           }),
           onDetentsDidChange: ((height: int) => {

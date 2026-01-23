@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,5 +16,5 @@
 import APINodeContentTest from './FrameNodeTest/APINodeContentTest.test';
 
 export default function testsuite() {
-  APINodeContentTest(); // SDK11.22 Failure: 1, Error: 0, Pass: 1 execute timeout 1500ms, error in beforeAll function
+  APINodeContentTest();
 }

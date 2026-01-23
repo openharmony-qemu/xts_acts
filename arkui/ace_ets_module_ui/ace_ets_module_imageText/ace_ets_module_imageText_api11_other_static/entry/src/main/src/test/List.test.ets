@@ -123,7 +123,7 @@ export default function testsuite() {
   scale()
   ImageAdvancedTest() //1个断言失败loading failed do not have  success IDE打包相对路径资源打不进去  1 网络加载图片
   ImageAnimatorAdvancedTest()
-  ToggleJsunit(); //ToggleType.Switch equals ToggleType.Checkbox  1
+  ToggleJsunit();
   arkuiNodeTest();
   arkuiNodeEventTest();
   arkuiNodeRenderTest();
@@ -172,7 +172,7 @@ export default function testsuite() {
   imageThreeJsunit();
   buttonJsunit();
   buttonEnabledJsunit();
-  checkBoxGroupUIJsunit();   // 1
+  checkBoxGroupUIJsunit();
   CheckBoxJsunit();
   TextClockJsunit();
   TextClockLongJsunit();

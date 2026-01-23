@@ -79,7 +79,7 @@ export default function Grid_Row_Breakpoints_Default() {
 it('SUB_ACE_GridRowBreakpoints_Default_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowBreakpoints_Default_static_0100 START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'width', value: '300vp'
+        name: 'width', value: '300vp' as String
       })
       await CommonFunc.sleep(2000)
 
@@ -87,7 +87,7 @@ it('SUB_ACE_GridRowBreakpoints_Default_static_0100', Level.LEVEL0, async (done: 
       let secondBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Default1');
       let thirdBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Default2');
 
-      expect(Math.abs(Math.round(secondBreakpoints.top - firstBreakpoints.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(secondBreakpoints.top - firstBreakpoints.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
 
       console.info('SUB_ACE_GridRowBreakpoints_Default_static_0100 END');
@@ -107,7 +107,7 @@ it('SUB_ACE_GridRowBreakpoints_Default_static_0100', Level.LEVEL0, async (done: 
 it('SUB_ACE_GridRowBreakpoints_Default_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowBreakpoints_Default_static_0200 START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'width', value: '350vp'
+        name: 'width', value: '350vp' as String
       })
       await CommonFunc.sleep(2000)
 
@@ -115,8 +115,8 @@ it('SUB_ACE_GridRowBreakpoints_Default_static_0200', Level.LEVEL0, async (done: 
       let secondBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Default1');
       let thirdBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Default2');
 
-      expect(Math.abs(Math.round(secondBreakpoints.left - firstBreakpoints.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(thirdBreakpoints.top - firstBreakpoints.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(secondBreakpoints.left - firstBreakpoints.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(thirdBreakpoints.top - firstBreakpoints.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRowBreakpoints_Default_static_0200 END');
       done();

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,6 +30,7 @@ import Utils  from "../../../ets/MainAbility/common/Utils";
 import events_emitter from '@ohos.events.emitter'
 import Utils from '../../../ets/MainAbility/common/Utils'
 import { Color, FontWeight,PickerTextStyle } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -97,7 +98,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0200', Level.LEVEL1, async 
           let eventData: events_emitter.EventData = {
             data: {
               "disappearTextStyle":value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -134,7 +135,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0300', Level.LEVEL1, async 
           let eventData: events_emitter.EventData = {
             data: {
               "disappearTextStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -171,7 +172,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0400', Level.LEVEL1, async 
           let eventData: events_emitter.EventData = {
             data: {
               "disappearTextStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -208,7 +209,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0500', Level.LEVEL1, async 
           let eventData: events_emitter.EventData = {
             data: {
               "disappearTextStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -245,7 +246,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0600', Level.LEVEL1, async 
           let eventData: events_emitter.EventData = {
             data: {
               "disappearTextStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -286,7 +287,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0700', Level.LEVEL1, async 
           let eventData: events_emitter.EventData = {
             data: {
               "disappearTextStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -327,7 +328,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0800', Level.LEVEL1, async 
           let eventData: events_emitter.EventData = {
             data: {
               "disappearTextStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -363,7 +364,7 @@ it('ArkUI_Stage_datePicker_disappearTextStyle_static_0900', Level.LEVEL1, async 
           let eventData: events_emitter.EventData = {
             data: {
               "disappearTextStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -418,7 +419,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0200', Level.LEVEL1, async (done: ()
           let eventData: events_emitter.EventData = {
             data: {
               "textStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -450,12 +451,12 @@ it('ArkUI_Stage_datePicker_textStyle_static_0200', Level.LEVEL1, async (done: ()
      * @tc.level    Level.LEVEL1
      */
 it('ArkUI_Stage_datePicker_textStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-        let value: PickerTextStyle = {color:0xFF808080,font:{size:'10px',weight:100}}
+        let value: PickerTextStyle = {color:0xFF808080.toInt(),font:{size:'10px',weight:100}}
         try {
           let eventData: events_emitter.EventData = {
             data: {
               "textStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -492,7 +493,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0400', Level.LEVEL1, async (done: ()
           let eventData: events_emitter.EventData = {
             data: {
               "textStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -529,7 +530,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0500', Level.LEVEL1, async (done: ()
           let eventData: events_emitter.EventData = {
             data: {
               "textStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -566,7 +567,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0600', Level.LEVEL1, async (done: ()
           let eventData: events_emitter.EventData = {
             data: {
               "textStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -607,7 +608,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0700', Level.LEVEL1, async (done: ()
           let eventData: events_emitter.EventData = {
             data: {
               "textStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -648,7 +649,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0800', Level.LEVEL1, async (done: ()
           let eventData: events_emitter.EventData = {
             data: {
               "textStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -684,7 +685,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0900', Level.LEVEL1, async (done: ()
           let eventData: events_emitter.EventData = {
             data: {
               "textStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -739,7 +740,7 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0200', Level.LEVEL1, async (
           let eventData: events_emitter.EventData = {
             data: {
               "selectedTextStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -771,12 +772,12 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0200', Level.LEVEL1, async (
      * @tc.level    Level.LEVEL1
      */
 it('ArkUI_Stage_datepicker_selectedTextStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-        let value: PickerTextStyle = {color:0xFF808080,font:{size:'20px',weight:100}}
+        let value: PickerTextStyle = {color:0xFF808080.toInt(),font:{size:'20px',weight:100}}
         try {
           let eventData: events_emitter.EventData = {
             data: {
               "selectedTextStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -813,7 +814,7 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0400', Level.LEVEL1, async (
           let eventData: events_emitter.EventData = {
             data: {
               "selectedTextStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -850,7 +851,7 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0500', Level.LEVEL1, async (
           let eventData: events_emitter.EventData = {
             data: {
               "selectedTextStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -887,7 +888,7 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0600', Level.LEVEL1, async (
           let eventData: events_emitter.EventData = {
             data: {
               "selectedTextStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -928,7 +929,7 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0700', Level.LEVEL1, async (
           let eventData: events_emitter.EventData = {
             data: {
               "selectedTextStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -969,7 +970,7 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0800', Level.LEVEL1, async (
           let eventData: events_emitter.EventData = {
             data: {
               "selectedTextStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,
@@ -1005,7 +1006,7 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0900', Level.LEVEL1, async (
           let eventData: events_emitter.EventData = {
             data: {
               "selectedTextStyle": value
-            } as Record<string, Object | null | undefined>
+            } as Record<String,RecordData>
           }
           let innerEvent: events_emitter.InnerEvent = {
             eventId: 185,

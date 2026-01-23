@@ -64,13 +64,15 @@ export default function GaugeContentModifier() {
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_001
      * @tc.name     GaugeContentModifier_static_001
      * @tc.desc     GaugeContentModifier_static_001
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_001] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier01');
       console.info('[wll]'+strJson)
@@ -86,13 +88,15 @@ it('GaugeContentModifier_static_001', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_002
      * @tc.name     GaugeContentModifier_static_002
      * @tc.desc     GaugeContentModifier_static_002
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_002] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier02');
   await Utils.sleep(1000);
@@ -107,13 +111,15 @@ it('GaugeContentModifier_static_002', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_003
      * @tc.name     GaugeContentModifier_static_003
      * @tc.desc     GaugeContentModifier_static_003
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_003] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier03');
   await Utils.sleep(1000);
@@ -128,13 +134,15 @@ it('GaugeContentModifier_static_003', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_004
      * @tc.name     GaugeContentModifier_static_004
      * @tc.desc     GaugeContentModifier_static_004
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_004] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier04');
   await Utils.sleep(1000);
@@ -149,13 +157,15 @@ it('GaugeContentModifier_static_004', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_005
      * @tc.name     GaugeContentModifier_static_005
      * @tc.desc     GaugeContentModifier_static_005
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_005] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier05');
       await Utils.sleep(1000);
@@ -170,13 +180,15 @@ it('GaugeContentModifier_static_005', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_006
      * @tc.name     GaugeContentModifier_static_006
      * @tc.desc     GaugeContentModifier_static_006
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_006] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier06');
   await Utils.sleep(1000);
@@ -191,13 +203,15 @@ it('GaugeContentModifier_static_006', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_007
      * @tc.name     GaugeContentModifier_static_007
      * @tc.desc     GaugeContentModifier_static_007
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_007] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier07');
   await Utils.sleep(1000);
@@ -212,13 +226,15 @@ it('GaugeContentModifier_static_007', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_008
      * @tc.name     GaugeContentModifier_static_008
      * @tc.desc     GaugeContentModifier_static_008
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_008] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier08');
   await Utils.sleep(1000);
@@ -234,13 +250,15 @@ it('GaugeContentModifier_static_008', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_009
      * @tc.name     GaugeContentModifier_static_009
      * @tc.desc     GaugeContentModifier_static_009
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_009] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier09');
   await Utils.sleep(1000);
@@ -255,13 +273,15 @@ it('GaugeContentModifier_static_009', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_010
      * @tc.name     GaugeContentModifier_static_010
      * @tc.desc     GaugeContentModifier_static_010
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_010] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier10');
   await Utils.sleep(1000);
@@ -277,13 +297,15 @@ it('GaugeContentModifier_static_010', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_011
      * @tc.name     GaugeContentModifier_static_011
      * @tc.desc     GaugeContentModifier_static_011
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_011', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_011] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier11');
   await Utils.sleep(1000);
@@ -299,13 +321,15 @@ it('GaugeContentModifier_static_011', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_012
      * @tc.name     GaugeContentModifier_static_012
      * @tc.desc     GaugeContentModifier_static_012
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_012', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_012] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier12');
   await Utils.sleep(1000);
@@ -321,13 +345,15 @@ it('GaugeContentModifier_static_012', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_013
      * @tc.name     GaugeContentModifier_static_013
      * @tc.desc     GaugeContentModifier_static_013
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_013', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_013] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier13');
   await Utils.sleep(1000);
@@ -343,13 +369,15 @@ it('GaugeContentModifier_static_013', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_014
      * @tc.name     GaugeContentModifier_static_014
      * @tc.desc     GaugeContentModifier_static_014
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_014', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_014] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier14');
   await Utils.sleep(1000);
@@ -365,13 +393,15 @@ it('GaugeContentModifier_static_014', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_015
      * @tc.name     GaugeContentModifier_static_015
      * @tc.desc     GaugeContentModifier_static_015
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_015', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_015] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier15');
   await Utils.sleep(1000);
@@ -386,13 +416,15 @@ it('GaugeContentModifier_static_015', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_016
      * @tc.name     GaugeContentModifier_static_016
      * @tc.desc     GaugeContentModifier_static_016
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_016', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_016] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier16');
   await Utils.sleep(1000);
@@ -407,13 +439,15 @@ it('GaugeContentModifier_static_016', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_017
      * @tc.name     GaugeContentModifier_static_017
      * @tc.desc     GaugeContentModifier_static_017
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_017', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_017] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier17');
       await Utils.sleep(1000);
@@ -428,13 +462,15 @@ it('GaugeContentModifier_static_017', Level.LEVEL0, async (done: () => void): Pr
     
 
 
-/**
+
+    /**
      * @tc.number   GaugeContentModifier_static_018
      * @tc.name     GaugeContentModifier_static_018
      * @tc.desc     GaugeContentModifier_static_018
      * @tc.level    Level.LEVEL0
      */
 it('GaugeContentModifier_static_018', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[GaugeContentModifier_018] START');
       let strJson = inspector.getInspectorByKey('GaugeContentModifier18');
       await Utils.sleep(1000);

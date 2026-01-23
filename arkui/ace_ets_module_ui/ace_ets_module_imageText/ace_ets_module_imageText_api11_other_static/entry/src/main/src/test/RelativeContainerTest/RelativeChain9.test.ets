@@ -92,8 +92,6 @@ export default function RelativeChain9() {
     
 
     
-
-
 /**
      * @tc.number   RelativeChain9_static_001
      * @tc.name     RelativeChain9_static_001
@@ -124,8 +122,6 @@ it('RelativeChain9_static_001', Level.LEVEL3, async (done: () => void): Promise<
     
 
     
-
-
 /**
      * @tc.number   RelativeChain9_static_002
      * @tc.name     RelativeChain9_static_002

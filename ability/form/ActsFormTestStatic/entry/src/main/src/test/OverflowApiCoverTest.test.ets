@@ -33,25 +33,14 @@ export default function OverflowApiCoverTest() {
       let name: string = 'RequestOverflow_Cover_Static_0100';
       console.info(`${name} start`);
       try {
-        let rect: formInfo.Rect = {
-            left: -30,
-            top: -30,
-            width: 200,
-            height: 200
-        };
-        let overflowInfo: formInfo.OverflowInfo = {
-          area: rect,
-          duration: 3500,
-          useDefaultAnimation: false
-        };
-        formProvider.requestOverflow('1', overflowInfo).then(() => {
-          console.info('requestOverflow succeed');
+        formProvider.cancelOverflow('1').then(() => {
+          console.info('cancelOverflow succeed');
           expect().not().assertFail();
-        }).catch((error: BusinessError): void => {
+        }).catch((error: Error): void => {
           console.info(`err: code is ${error.code}, message ${error.message}`);
           expect(error.code).assertEqual(16501001);
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
         if (error.code == 801) {
           done();
         }
@@ -76,24 +65,9 @@ export default function OverflowApiCoverTest() {
       let name: string = 'RequestOverflow_Cover_Static_0200';
       console.info(`${name} start`);
       try {
-        let rect: formInfo.Rect = {
-          left: -30,
-          top: -30,
-          width: 200,
-          height: 200
-        };
-        let overflowInfo: formInfo.OverflowInfo = {
-          area: rect,
-          duration: 3500
-        };
-        formProvider.requestOverflow('1', overflowInfo).then(() => {
-          console.info('requestOverflow succeed');
-          expect().not().assertFail();
-        }).catch((error: BusinessError): void => {
-          console.info(`err: code is ${error.code}, message ${error.message}`);
-          expect(error.code).assertEqual(16501001);
-        })
-      } catch (error: BusinessError) {
+        formProvider.getFormRect('1');
+        expect().not().assertFail();
+      } catch (error) {
         if (error.code == 801) {
           done();
         }
@@ -121,11 +95,11 @@ export default function OverflowApiCoverTest() {
         formProvider.cancelOverflow('1').then(() => {
           console.info('cancelOverflow succeed');
           expect().not().assertFail();
-        }).catch((error: BusinessError): void => {
+        }).catch((error: Error): void => {
           console.info(`err: code is ${error.code}, message ${error.message}`);
           expect(error.code).assertEqual(16501001);
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
         if (error.code == 801) {
           done();
         }
@@ -153,10 +127,10 @@ export default function OverflowApiCoverTest() {
         formProvider.activateSceneAnimation('1').then(() => {
           console.info('activateSceneAnimation succeed');
           expect().not().assertFail();
-        }).catch((error: BusinessError): void => {
+        }).catch((error: Error): void => {
           expect(error.code).assertEqual(16501001);
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
         if (error.code == 801) {
           done();
         }
@@ -184,10 +158,10 @@ export default function OverflowApiCoverTest() {
         formProvider.deactivateSceneAnimation('1').then(() => {
           console.info('deactivateSceneAnimation succeed');
           expect().not().assertFail();
-        }).catch((error: BusinessError): void => {
+        }).catch((error: Error): void => {
           expect(error.code).assertEqual(16501001);
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
         if (error.code == 801) {
           done();
         }
@@ -214,7 +188,7 @@ export default function OverflowApiCoverTest() {
       try {
         formProvider.getFormRect('1');
         expect().not().assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         if (error.code == 801) {
           done();
         }

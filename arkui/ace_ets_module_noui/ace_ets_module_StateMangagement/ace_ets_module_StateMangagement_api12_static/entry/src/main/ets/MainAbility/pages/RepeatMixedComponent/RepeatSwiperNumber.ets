@@ -88,6 +88,7 @@ struct RepeatSwiperNumber {
           .id('Button2_SN')
           .onClick(():void => {
             this.swiperController1.showNext()
+            this.tmp2 = 99
           })
       }
 
@@ -113,7 +114,7 @@ struct RepeatSwiperNumber {
             }
           })
           .template('number', (r) => {
-            Text(r.item.toString() + ' index:' + r.index.toString() + ':' + (this.tmp2 = 99).toString())
+            Text(r.item.toString() + ' index:' + r.index.toString() + ':' + this.tmp2.toString())
               .id('Text2SN' + r.index.toString())
               .fontSize(20)
               .height('30%')

@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,14 +53,12 @@ struct UIContextCreateFromBuilder {
         Column({ space: 5 } as ColumnOptions) {
           Button('新增Builder：Gauge图片')
             .onClick((e:ClickEvent) => {
-              console.log('+++++++++++++++++++++++++++1')
-              this.uiContext.getComponentSnapshot().createFromBuilder(this.GaugeBuilder,  //SDK12.9执行后appDied
-                (err: BusinessError<void>|null, pixmap: image.PixelMap|undefined):void => {
-                console.log('++++++++++++createFromBuilder回调')
+              this.uiContext.getComponentSnapshot().createFromBuilder(this.GaugeBuilder,
+                (err: BusinessError<void>|null|undefined, pixmap: image.PixelMap|undefined):void => {
                 if(pixmap){
                   this.pixmap_2 = pixmap!
                   console.info('UIContextComponentSnapshot pixmap_text_3 start')
-                  this.pixmap_text_3 = 'snapshot'//没触发，断言失败 expect  equals snapshot
+                  this.pixmap_text_3 = 'snapshot'
                   return
                 }
                   hilog.error(0x0000, 'testTag', 'getComponentSnapshot pixmap_text_3 error %{public}s', JSON.stringify(err) ?? '');
@@ -79,7 +78,6 @@ struct UIContextCreateFromBuilder {
             ).width('90%').margin(10).id('getComponentSnapshot_03')
           Button('新增：Gauge图片')
             .onClick((e:ClickEvent) => {
-              console.log("============================================ 1122");
               this.uiContext.getComponentSnapshot().createFromBuilder(this.GaugeBuilder, undefined, false, {
                   scale: 1, waitUntilRenderFinished: true,
                   region: {
@@ -91,7 +89,6 @@ struct UIContextCreateFromBuilder {
               })!
               .then((pixmap: image.PixelMap) => {
                 this.pixmap_2 = pixmap!
-                console.info('UIContextComponentSnapshot pixmap_text_4 start')
                 this.pixmap_text_4 = 'snapshot'
               })
               .catch((err: Error) => {

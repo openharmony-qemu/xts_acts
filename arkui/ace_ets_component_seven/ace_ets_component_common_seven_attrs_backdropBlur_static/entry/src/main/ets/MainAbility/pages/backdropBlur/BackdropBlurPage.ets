@@ -38,7 +38,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, Color,CommonMethod, AlignRuleOption } from '@ohos.arkui.component'
-import { State, StorageProp } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
@@ -1113,10 +1113,10 @@ function commonStyle(this: TabContentAttribute, componentKey: string){
 @Entry
 @Component
 struct BackdropBlurPage {
-  @StorageProp('_backdropBlurButton') _backdropBlurButton: SetValue = {
+  @StoragePropRef('_backdropBlurButton') _backdropBlurButton: SetValue = {
     backdropBlur: 0
   }
-  @StorageProp('_backdropBlur') _backdropBlur: number = 0
+  @StoragePropRef('_backdropBlur') _backdropBlur: number = 0
   @State _backdropBlurAlphabetIndexerModifier: AlphabetIndexerModifier = new AlphabetIndexerModifier()
   @State _backdropBlurBadgeModifier: BadgeModifier = new BadgeModifier()
   @State _backdropBlurButtonModifier: ButtonModifier = new ButtonModifier()

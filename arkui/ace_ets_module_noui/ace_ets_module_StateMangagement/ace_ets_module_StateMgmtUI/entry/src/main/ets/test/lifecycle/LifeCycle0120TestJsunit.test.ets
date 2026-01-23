@@ -81,6 +81,7 @@ export default function LifeCycle0120TestJsunit() {
         }
       }
       observer1.once('toastShow', callback1)
+      await CommonFunc.sleep(3000);
       console.info('[LifeCycle0120TestJsunit_001] END');
       done();
     });

@@ -36,7 +36,7 @@ import {
 } from '@ohos.arkui.component'
 import { redCustomTheme } from '../../themes/CustomTheme1';
 import { CustomTheme } from '@ohos.arkui.theme';
-import { StorageLink, StorageProp } from '@ohos.arkui.stateManagement'
+import { StorageLink, StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const toggleThemeProperty: string = `toggleThemeProperty`;
 
@@ -52,7 +52,7 @@ export class ToggleKeys {
 @Entry
 @Component
 struct TogglePage {
-  @StorageProp(toggleThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(toggleThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
 
   build() {
     Row() {

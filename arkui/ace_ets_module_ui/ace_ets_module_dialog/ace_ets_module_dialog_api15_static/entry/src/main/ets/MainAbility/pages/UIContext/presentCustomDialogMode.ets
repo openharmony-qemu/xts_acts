@@ -58,7 +58,7 @@ import {
 } from '@ohos.arkui.component'
 import { BusinessError } from '@ohos.base';
 import { LevelMode } from '@ohos.promptAction';
-import { State, Link, Prop, Observed, ObjectLink, } from '@ohos.arkui.stateManagement'
+import { State, Link, PropRef, Observed, ObjectLink, } from '@ohos.arkui.stateManagement'
 import { UIContext, Router, KeyboardAvoidMode, PromptAction } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
@@ -99,22 +99,23 @@ export struct MyComponent {
 
 @Builder
 function customDialogDemo() {
-
+  const pageRouter = AppStorage.get<Router>('router') as Router
   Column({ space: 5 } as ColumnOptions) {
     Text('自定义弹窗')
     Button(`router`)
       .height('8%')
       .id('router')
       .onClick((event: ClickEvent) => {
-        // router1.pushUrl({
-        //   url: 'MainAbility/pages/UIContext/index'
-        // }, router.RouterMode.Standard)
+
+        pageRouter.pushUrl({
+          url: 'MainAbility/pages/UIContext/index'
+        }, router.RouterMode.Standard)
       })
     Text('返回')
       .height('8%')
       .superFancyText2()
       .onClick((event: ClickEvent) => {
-        // router1.back(1)
+        pageRouter.back(1)
       })
       .id('back')
   }
@@ -124,13 +125,13 @@ function customDialogDemo() {
 }
 
 
-function superFancyText1(this: TextAttribute) {
+function superFancyText1(this: TextAttribute){
   this.fontSize(9);
   this.width('100%');
   return this;
 }
 
-function superFancyText2(this: TextAttribute) {
+function superFancyText2(this: TextAttribute){
   this.fontSize(15);
   this.backgroundColor(Color.Orange)
   this.width('100%');
@@ -140,7 +141,7 @@ function superFancyText2(this: TextAttribute) {
   return this;
 }
 
-function superFancyColumn(this: ColumnAttribute) {
+function superFancyColumn(this: ColumnAttribute){
   this.backgroundColor(Color.Pink)
   this.width('100%');
   this.padding(10)
@@ -157,8 +158,8 @@ struct presentCustomDialogMode {
   @State levelMode: LevelMode | undefined = undefined
   node: BuilderNode<Object[]> | null = null;
   frameNode: FrameNode | null = null;
-  @State levelUniqueId: int | undefined  = undefined
-  @State immersiveMode: ImmersiveMode | undefined = undefined
+  @State levelUniqueId: int | undefined  = this.getUniqueId().toInt()
+  @State immersiveMode: ImmersiveMode | undefined = ImmersiveMode.EXTEND
   @State isModal: boolean = true
   @State maskRect: Rectangle = {
     x: 0,

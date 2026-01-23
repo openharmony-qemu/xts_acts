@@ -25,7 +25,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function WaterFlowSectionDemo45Jsunit() {
   describe('WaterFlowSectionDemo45Jsunit', () => {
     beforeAll(() => {
-      await startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("WaterFlowSectionDemo45Jsunit beforeEach start");
@@ -70,10 +70,10 @@ it('WaterFlowSectionDemo45Jsunit_static_0100', Level.LEVEL1, async (done: () => 
       console.log('WaterFlowSectionDemo45Jsunit_right',strColumn.right - str2.right)
       await CommonFunc.sleep(1000);
 
-      expect(Math.abs(Math.round(str2.top - strColumn.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(str5.top - str3.bottom) - Math.floor(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(str3.left - strColumn.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(strColumn.right - str2.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(str2.top - strColumn.top) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(str5.top - str3.bottom) - Math.floor(UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(str3.left - strColumn.left) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(strColumn.right - str2.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       await CommonFunc.sleep(1000);
       console.info('WaterFlowSectionDemo45Jsunit_static_0100 END')
       done();

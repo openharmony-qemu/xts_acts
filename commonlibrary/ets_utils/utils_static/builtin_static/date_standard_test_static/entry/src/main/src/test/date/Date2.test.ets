@@ -310,7 +310,7 @@ export default function Date2Test() {
         const timestamp19 = Date.parse('20240520');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -1840,7 +1840,7 @@ export default function Date2Test() {
         const timestamp145 = Date.parse('20240520');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 

@@ -19,13 +19,16 @@ import {
   videoPlayStateChangedCallback,
   VideoPlayerState,
   PreselectedInfo,
-  UpdatablePickerConfigs
+  UpdatablePickerConfigs,
+  MovingPhotoBadgeStateChangedCallback,
+  PickerError
 } from '@ohos.file.PhotoPickerComponent';
 import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo } from '@ohos.file.AlbumPickerComponent';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import { EventType } from '../common/Common';
+import { ClickInfo } from '../common/Common';
 import { PhotoPickerResult } from '../common/PhotoPickerResult';
 
 @Entry
@@ -45,6 +48,7 @@ struct PickerComponent {
   @State isShowAlbum: boolean = false;
   private isBlock: boolean = false;
   private isPickerIndexSet: boolean = false;
+  private isOnItemClickedNotifySet: boolean = false;
   @State isPhotoPickerShow: boolean = true;
   @State fontColor: string = '#182431222';
   @State selectedFontColor: string = '#007DFF';
@@ -62,6 +66,7 @@ struct PickerComponent {
   private currentAlbumDeletedCallback: CurrentAlbumDeletedCallback = () => this.onCurrentAlbumDeleted();
   private videoPlayStateChangedCallback: videoPlayStateChangedCallback =
     (state: VideoPlayerState) => this.onVideoPlayStateChanged(state);
+  private onMovingPhotoBadgeStateChangedCallback: MovingPhotoBadgeStateChangedCallback = () => {};
 
   sendEvent(message: Object, eventId: number) {
     let eventData: events_emitter.EventData = {
@@ -75,6 +80,15 @@ struct PickerComponent {
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.emit(event, eventData)
+  }
+
+  private onItemClickedNotify(itemInfo: ItemInfo, clickType: ClickType): void {
+    if (!itemInfo) {
+      return;
+    }
+  
+    this.sendEvent({ itemInfo, clickType } as ClickInfo, EventType.ITEM_CLICKED_NOTIFY);
+    console.info('onItemClickedNotify' + JSON.stringify(itemInfo));
   }
 
   getPhotoPickerResult(): PhotoPickerResult {
@@ -93,6 +107,10 @@ struct PickerComponent {
     result.preselectedInfos = this.pickerOptions.preselectedInfos ?? [];
     result.isSlidingSupported = this.pickerOptions.isSlidingSupported ?? false;
     result.edgeEffect = this.pickerOptions.edgeEffect ?? EdgeEffect.Spring;
+    result.gridPinchMode = this.pickerOptions.gridPinchMode;
+    result.autoPlayScenes = this.pickerOptions.autoPlayScenes ?? [];
+    result.appAlbumFilters = this.pickerOptions.appAlbumFilters ?? [];
+    result.preselectedUris = this.pickerOptions.preselectedUris ?? [];
     return result;
   }
 
@@ -115,6 +133,8 @@ struct PickerComponent {
     result.selectMode = config.selectMode ?? 0;
     result.singleSelectionMode = config.singleSelectionMode ?? 2;
     result.preselectedUris = config.preselectedUris ?? [];
+    result.autoPlayScenes = config.autoPlayScenes ?? [];
+    result.appAlbumFilters = config.appAlbumFilters ?? [];
     return result;
   }
 
@@ -144,6 +164,11 @@ struct PickerComponent {
   private onSelectedItemsDeleted(baseItemInfos: Array<BaseItemInfo>): void {
     console.info('onSelectedItemsDeleted');
     // 已勾选图片被删除时的回调
+  }
+
+  private onPinchGridSwitched(gridLevel: photoAccessHelper.GridLevel): void {
+    console.info('onSelectedItemsDeleted');
+    // 捏合图片时的回调
   }
 
   private onExceedMaxSelected(exceedMaxCountType: MaxCountType): void {
@@ -212,6 +237,18 @@ struct PickerComponent {
     console.info('onDeselect' + JSON.stringify(this.selectedUris));
   }
 
+  private onPhotoBrowserChangeStart(itemInfo: BaseItemInfo): void {
+ 	  console.info('onPhotoBrowserChangeStart, itemInfo=' + JSON.stringify(itemInfo));
+  }
+
+  private onError(pickerError: PickerError): void {
+    let functionName = pickerError?.functionName;
+    let errorCode = pickerError?.errorCode;
+    let message = pickerError?.message;
+    console.info(`onError, functionName=${functionName}, errorCode=${errorCode}, message=${message}`);
+  }
+ 	 
+
   private onItemClicked(itemInfo: ItemInfo, clickType: ClickType): boolean {
     if (!itemInfo) {
       return false;
@@ -253,6 +290,9 @@ struct PickerComponent {
       this.pickerOptions = parameter['pickerOptions'];
       this.isPickerIndexSet = !!this.pickerOptions.pickerIndex && this.pickerOptions.pickerIndex !== -1;
       this.selectedUrisWithPickerIndex = this.pickerOptions.preselectedInfos ?? [];
+    }
+    if (parameter['isOnItemClickedNotifySet'] != undefined) {
+      this.isOnItemClickedNotifySet = parameter['isOnItemClickedNotifySet'];
     }
     if (parameter['albumOptions'] != undefined) {
       this.albumOptions = parameter['albumOptions'];
@@ -317,6 +357,18 @@ struct PickerComponent {
         updatedOptions.selectMode = 0;
         updatedOptions.singleSelectionMode = 2;
         updatedOptions.preselectedUris = ['file:img//sample'];
+        updatedOptions.autoPlayScenes = [
+          {
+            sceneType: photoAccessHelper.SceneType.GRID_TO_PHOTO_BROWSER,
+            playMode: photoAccessHelper.PlayMode.AUTO_PLAY,
+          },
+          {
+            sceneType: photoAccessHelper.SceneType.PHOTO_BROWSER_SWIPE,
+            playMode: photoAccessHelper.PlayMode.AUTO_PLAY,
+          }
+        ];
+        updatedOptions.appAlbumFilters = 
+ 	  	           ['com.example.sourceapp.album', 'com.example.sourceapp.album1', 'com.example.sourceapp.album2'];        
         this.pickerController.updatePickerOptions(updatedOptions);
 
         let result: PhotoPickerResult = this.getUpdatablePickerResult(updatedOptions);
@@ -343,6 +395,9 @@ struct PickerComponent {
         onDeselect: (uri: string): void => this.onDeselect(uri),
         onItemClicked: (itemInfo: ItemInfo, clickType: ClickType): boolean =>
         this.onItemClicked(itemInfo, clickType),
+        onItemClickedNotify: this.isOnItemClickedNotifySet
+        ? (itemInfo: ItemInfo, clickType: ClickType): void => this.onItemClickedNotify(itemInfo, clickType)
+        : undefined,
         onEnterPhotoBrowser: (photoBrowserInfo: PhotoBrowserInfo): boolean =>
         this.onEnterPhotoBrowser(photoBrowserInfo),
         onExitPhotoBrowser: (photoBrowserInfo: PhotoBrowserInfo): boolean =>
@@ -354,7 +409,11 @@ struct PickerComponent {
         onVideoPlayStateChanged: this.videoPlayStateChangedCallback,
         onScrollStopAtEnd: this.onScrollStopAtEndCallback,
         onScrollStopAtStart: this.onScrollStopAtStartCallback,
+        onMovingPhotoBadgeStateChanged: this.onMovingPhotoBadgeStateChangedCallback,
         pickerController: this.pickerController,
+        onPinchGridSwitched: (gridLevel: photoAccessHelper.GridLevel): void => this.onPinchGridSwitched(gridLevel),
+        onPhotoBrowserChangeStart: (itemInfo: BaseItemInfo): void => this.onPhotoBrowserChangeStart(itemInfo),
+ 	      onError: (pickerError: PickerError): void => this.onError(pickerError),
       })
         .height('70%')
         .width('100%')

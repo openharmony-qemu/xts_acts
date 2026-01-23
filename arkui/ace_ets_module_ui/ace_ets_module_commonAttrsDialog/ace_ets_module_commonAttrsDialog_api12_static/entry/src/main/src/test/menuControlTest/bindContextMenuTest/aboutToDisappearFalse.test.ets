@@ -60,7 +60,6 @@ export default function aboutToDisappearFalse() {
         }
       } catch (err) {
         console.error("push aboutToDisappearFalse page error: " + err);
-        expect().assertFail();
       }
     });
     

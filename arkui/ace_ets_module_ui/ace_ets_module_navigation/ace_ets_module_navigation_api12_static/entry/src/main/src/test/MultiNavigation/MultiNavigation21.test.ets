@@ -30,10 +30,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function MultiNavigation21() {
   describe('MultiNavigation21', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {
@@ -46,7 +43,7 @@ export default function MultiNavigation21() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get MultiNavigation21 state pages:" + JSON.stringify(pages));
-        if (!("List_SpaceChange" == pages.name)) {
+        if (!("MultiNavigation21" == pages.name)) {
           console.info("get MultiNavigation21 pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -70,6 +67,7 @@ export default function MultiNavigation21() {
      * @tc.level    Level.LEVEL0
      */
 it('MultiNavigation21_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('MultiNavigation21_static_0100 START');
       await CommonFunc.sleep(1000);
 

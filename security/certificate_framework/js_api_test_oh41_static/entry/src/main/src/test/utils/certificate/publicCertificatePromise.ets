@@ -488,7 +488,7 @@ async function checkValidateOfCertChainValidatorPromise(algName: string, flag: s
     if (flag == "error") {
       // 解决编译问题
       // uInt8CertLength1 = new Uint8Array([uInt16CertLength1.buffer]);
-      const temp = [123];
+      const temp: number[] = [123];
       uInt8CertLength1 = new Uint8Array(temp);
     } else {
       uInt8CertLength1 = new Uint8Array(uInt16CertLength1.buffer);

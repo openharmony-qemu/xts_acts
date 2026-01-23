@@ -26,13 +26,14 @@
                 "uitest dumpLayout"
             ],
             "teardown-command": [
-                "param set persist.usb.settings.gadget_conn_prompt true"
+                "param set persist.usb.setting.gadget_conn_prompt true"
             ]
         },
         {
             "test-file-name": [
                 "ActsUiTest.hap",
-                "ActsUiTestScene.hap"
+                "ActsUiTestScene.hap",
+                "ActsUiTestEntry.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

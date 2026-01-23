@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -52,6 +52,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Color } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 export default function focusJsunit() {
   describe('appInfoTest_four_2', () => {
@@ -90,9 +91,7 @@ export default function focusJsunit() {
     });
 
     
-    
-
-/**
+    /**
      * @tc.number   focusTest_0100
      * @tc.name     focusTest_0100
      * @tc.desc     focusTest_0100
@@ -105,7 +104,7 @@ it('focusTest_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
           let eventData: events_emitter.EventData = {
             data: {
               "focusable": true
-            } as Record<string, Object | undefined | null>
+            } as Record<String,RecordData>
           }
           let indexEventOne: events_emitter.InnerEvent = {
             eventId: 101,

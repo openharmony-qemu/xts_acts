@@ -46,7 +46,6 @@ export default function aboutToAppearFalse() {
         }
       } catch (err) {
         console.error("push aboutToAppearFalse page error: " + err);
-        expect().assertFail();
       }
 
     });

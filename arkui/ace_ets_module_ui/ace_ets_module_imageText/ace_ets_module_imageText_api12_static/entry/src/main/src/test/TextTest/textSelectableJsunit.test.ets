@@ -48,7 +48,7 @@ export default function textSelectableJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textSelectableJsunit state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textSelectable" == pages.name)) {
           console.info("get textSelectableJsunit pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

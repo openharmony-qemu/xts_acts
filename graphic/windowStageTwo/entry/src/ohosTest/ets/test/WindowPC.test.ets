@@ -14,7 +14,7 @@
  */
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level} from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
@@ -23,7 +23,7 @@ import type Want from '@ohos.app.ability.Want';
 import { StartOptions, bundleManager } from '@kit.AbilityKit';
 import display from '@ohos.display';
 
-let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
+let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
 
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
   let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number
@@ -79,11 +79,11 @@ async function terminateAbility(caseName: string) {
   await sleep(1000)
 }
 
-async function assertMaximizeComponentExist(windowState: number,windowClass?: window.Window) {
+async function assertMaximizeComponentExist(windowState: number, windowClass?: window.Window) {
   let driver = Driver.create()
-  if (windowState == 2||windowState == 1) {
+  if (windowState == 2 || windowState == 1) {
     await driver.mouseMoveTo({ x: 100, y: 0 })
-  } 
+  }
   let test = true
   await driver.assertComponentExist(ON.id('EnhanceMaximizeBtn')).then(() => {
     test = true
@@ -96,13 +96,14 @@ async function assertMaximizeComponentExist(windowState: number,windowClass?: wi
 }
 export default function windowPCTest() {
   describe('windowPCTest', async () => {
-    let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
+    let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
     let context: common.UIAbilityContext;
     let windowStage: window.WindowStage;
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
-    let mainWindowClass:window.Window;
+    let mainWindowClass: window.Window;
     let isFreeWindowMode = false;
+    let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -110,18 +111,19 @@ export default function windowPCTest() {
       //isAutoWindow == '' 非PAD设备
       //isAutoWindow == 'true' PAD设备自由多窗模式
       //isAutoWindow == 'false' PAD设备非自由多窗模式
-      isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.USER_PROPERTY);
+      isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '', settings.domainName.USER_PROPERTY);
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
       isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
       //isPCStatus == '' 非PC设备
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
-      console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      console.info(`beforeAll isPCStatus: ` + isPCStatus);
       mainWindowClass = windowStage.getMainWindowSync();
       isFreeWindowMode = mainWindowClass.isInFreeWindowMode();
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      driver = Driver.create();
     });
     beforeEach(() => {
     });
@@ -140,7 +142,7 @@ export default function windowPCTest() {
           lastID = lastWindow.getWindowProperties().id
         }
       } catch (error) {
-        console.log('afterEach fail cause'+error)
+        console.log('afterEach fail cause' + error)
       }
     });
     afterAll(() => {
@@ -159,10 +161,10 @@ export default function windowPCTest() {
     it('testSetWindowTitleMoveEnabled_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let message = 'setWindowTitleMoveEnabledTest_0100';
       let windowClass = windowStage.getMainWindowSync();
-      let driver =  Driver.create()
+      let driver = Driver.create()
       let windowPoint = windowClass.getWindowProperties().windowRect
       console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
-      if(isFreeWindowMode == true){
+      if (isFreeWindowMode == true) {
         await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
         await sleep(1000)
       }
@@ -209,10 +211,10 @@ export default function windowPCTest() {
     it('testSetWindowTitleMoveEnabled_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'setWindowTitleMoveEnabledTest_0200';
       let windowClass = windowStage.getMainWindowSync();
-      let driver =  Driver.create()
+      let driver = Driver.create()
       let windowPoint = windowClass.getWindowProperties().windowRect
       console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
-      if(isFreeWindowMode == true){
+      if (isFreeWindowMode == true) {
         await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
         await sleep(1000)
       }
@@ -267,7 +269,7 @@ export default function windowPCTest() {
         windowClass.resize(1000, 1200)
         windowClass.showWindow()
         await sleep(1000)
-        let driver =  Driver.create()
+        let driver = Driver.create()
         let windowPoint = windowClass.getWindowProperties().windowRect
         console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
         await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
@@ -319,7 +321,7 @@ export default function windowPCTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testSetWindowTitleMoveEnabled_0400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetWindowTitleMoveEnabled_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'setWindowTitleMoveEnabledTest_0400';
       let windowClass = windowStage.getMainWindowSync();
       let options: window.SubWindowOptions = {
@@ -333,7 +335,7 @@ export default function windowPCTest() {
           windowClass.resize(1000, 1200)
           windowClass.showWindow()
           await sleep(1000)
-          let driver =  Driver.create()
+          let driver = Driver.create()
           let windowPoint = windowClass.getWindowProperties().windowRect
           console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
           await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
@@ -406,7 +408,7 @@ export default function windowPCTest() {
           windowClass.resize(1000, 1200)
           windowClass.showWindow()
           await sleep(1000)
-          let driver =  Driver.create()
+          let driver = Driver.create()
           let windowPoint = windowClass.getWindowProperties().windowRect
           console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
           try {
@@ -519,8 +521,8 @@ export default function windowPCTest() {
         const message = 'test_createSubWindowWithOptions_windowRect_positiveLeftTop_maxWidthHeight';
         let limit = context.windowStage.getMainWindowSync().getWindowLimits();
         let Display = display.getDefaultDisplaySync();
-        console.log('Display.width: '+ Display.width+',Display.height: '+Display.height);
-          let options: window.SubWindowOptions = {
+        console.log('Display.width: ' + Display.width + ',Display.height: ' + Display.height);
+        let options: window.SubWindowOptions = {
           title: 'subwindow0',
           decorEnabled: false,
           windowRect: {
@@ -637,8 +639,8 @@ export default function windowPCTest() {
           windowRect: {
             left: 3.14,
             top: 6.28,
-            width: Number(limit.maxWidth)-0.1,
-            height: Number(limit.maxHeight)-0.1
+            width: Number(limit.maxWidth) - 0.1,
+            height: Number(limit.maxHeight) - 0.1
           }
         };
         let promise = windowStage.createSubWindowWithOptions('subwindow0', options);
@@ -763,8 +765,8 @@ export default function windowPCTest() {
           console.info(`${message} options.windowRect:${JSON.stringify(options.windowRect)},windowRealRect:${JSON.stringify(windowRealRect)}`)
           expect(Number(options.windowRect?.left)).assertEqual(Number(windowRealRect.left));
           expect(Number(options.windowRect?.top)).assertEqual(Number(windowRealRect.top));
-          expect(Number(options.windowRect?.width)-1).assertEqual(Number(windowRealRect.width));
-          expect(Number(options.windowRect?.height)-1).assertEqual(Number(windowRealRect.height));
+          expect(Number(options.windowRect?.width) - 1).assertEqual(Number(windowRealRect.width));
+          expect(Number(options.windowRect?.height) - 1).assertEqual(Number(windowRealRect.height));
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to create the subwindow, promise cause code: ${err.code}, message: ${err.message} `)
@@ -825,8 +827,8 @@ export default function windowPCTest() {
           console.info(`${message} options.windowRect:${JSON.stringify(options.windowRect)},windowRealRect:${JSON.stringify(windowRealRect)}`)
           expect(Number(options.windowRect?.left)).assertEqual(Number(windowRealRect.left));
           expect(Number(options.windowRect?.top)).assertEqual(Number(windowRealRect.top));
-          expect(Number(options.windowRect?.width)+1).assertEqual(Number(windowRealRect.width));
-          expect(Number(options.windowRect?.height)+1).assertEqual(Number(windowRealRect.height));
+          expect(Number(options.windowRect?.width) + 1).assertEqual(Number(windowRealRect.width));
+          expect(Number(options.windowRect?.height) + 1).assertEqual(Number(windowRealRect.height));
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to create the subwindow, promise cause code: ${err.code}, message: ${err.message} `)
@@ -948,7 +950,6 @@ export default function windowPCTest() {
     it('testStartOptionsSupportWindowModes_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0200';
       let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
-      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.SPLIT,
@@ -973,7 +974,7 @@ export default function windowPCTest() {
         let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
         await sleep(1000)
         let titlePoint = await title.getBounds()
-        await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top  + 200, 200)
+        await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 200, 200)
         await sleep(1000)
         // 获取窗口状态 - 分屏
         windowStatus = windowClass.getWindowStatus()
@@ -998,7 +999,6 @@ export default function windowPCTest() {
     it('testStartOptionsSupportWindowModes_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0300';
       let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
-      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.FLOATING
@@ -1048,7 +1048,6 @@ export default function windowPCTest() {
     it('testStartOptionsSupportWindowModes_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0400';
       let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
-      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.FLOATING,
@@ -1075,7 +1074,7 @@ export default function windowPCTest() {
         let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
         await sleep(1000)
         let titlePoint = await title.getBounds()
-        await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top  + 200, 200)
+        await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 200, 200)
         await sleep(1000)
         // 获取窗口状态 - 自由窗口
         windowStatus = windowClass.getWindowStatus()
@@ -1100,7 +1099,6 @@ export default function windowPCTest() {
     it('testStartOptionsSupportWindowModes_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0500';
       let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
-      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.FLOATING,
@@ -1152,7 +1150,6 @@ export default function windowPCTest() {
     it('testStartOptionsSupportWindowModes_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0600';
       let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
-      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.SPLIT,
@@ -1193,7 +1190,6 @@ export default function windowPCTest() {
     it('testStartOptionsSupportWindowModes_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0700';
       let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
-      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.SPLIT,
@@ -1263,7 +1259,7 @@ export default function windowPCTest() {
         const message = 'test_setSupportedWindowModes_threeElement'
         let windowStageStart = await startAbility(message, context)
         let promise = windowStageStart.setSupportedWindowModes([bundleManager.SupportWindowMode.FULL_SCREEN,
-          bundleManager.SupportWindowMode.SPLIT, bundleManager.SupportWindowMode.FLOATING]);
+        bundleManager.SupportWindowMode.SPLIT, bundleManager.SupportWindowMode.FLOATING]);
         promise.then(() => {
           console.info('Succeed in setting window support modes');
           expect(true).assertTrue();
@@ -1300,8 +1296,8 @@ export default function windowPCTest() {
         const message = 'test_setSupportedWindowModes_fourSameElement'
         let windowStageStart = await startAbility(message, context)
         let promise = windowStageStart.setSupportedWindowModes([bundleManager.SupportWindowMode.FULL_SCREEN,
-          bundleManager.SupportWindowMode.FULL_SCREEN, bundleManager.SupportWindowMode.FULL_SCREEN,
-          bundleManager.SupportWindowMode.FULL_SCREEN]);
+        bundleManager.SupportWindowMode.FULL_SCREEN, bundleManager.SupportWindowMode.FULL_SCREEN,
+        bundleManager.SupportWindowMode.FULL_SCREEN]);
         promise.then(() => {
           console.info('Succeed in setting window support modes');
           expect(true).assertTrue();
@@ -1338,8 +1334,8 @@ export default function windowPCTest() {
         const message = 'test_setSupportedWindowModes_fiveElement'
         let windowStageStart = await startAbility(message, context)
         let promise = windowStageStart.setSupportedWindowModes([bundleManager.SupportWindowMode.FULL_SCREEN,
-          bundleManager.SupportWindowMode.SPLIT, bundleManager.SupportWindowMode.FLOATING,
-          bundleManager.SupportWindowMode.FLOATING, bundleManager.SupportWindowMode.FLOATING]);
+        bundleManager.SupportWindowMode.SPLIT, bundleManager.SupportWindowMode.FLOATING,
+        bundleManager.SupportWindowMode.FLOATING, bundleManager.SupportWindowMode.FLOATING]);
         promise.then(() => {
           console.info('Succeed in setting window support modes');
           expect().assertFail()
@@ -1496,9 +1492,9 @@ export default function windowPCTest() {
           expect(status_primary).assertEqual(window.WindowStatusType.FULL_SCREEN)
           let isImmersive_primary = windowStageStart.getMainWindowSync().getImmersiveModeEnabledState();
           console.info(`${message} isImmersive_primary:${isImmersive_primary}`);
-          if(isFreeWindowMode){
+          if (isFreeWindowMode) {
             expect(isImmersive_primary).assertTrue();
-          }else{
+          } else {
             expect(isImmersive_primary).assertEqual(false);
           }
         }).catch((err: BusinessError) => {
@@ -1517,9 +1513,9 @@ export default function windowPCTest() {
           console.info('Succeed in setting window support modes');
           let status_float = windowStageStart.getMainWindowSync().getWindowStatus();
           console.info(`${message} status_float:${status_float}, window.WindowStatusType.FLOATING:${window.WindowStatusType.FLOATING}`);
-          if(isFreeWindowMode){
+          if (isFreeWindowMode) {
             expect(status_float).assertEqual(window.WindowStatusType.FLOATING);
-          }else{
+          } else {
             expect(status_float).assertEqual(window.WindowStatusType.FULL_SCREEN);
           }
         }).catch((err: BusinessError) => {
@@ -1543,10 +1539,10 @@ export default function windowPCTest() {
           expect(status_fullscreen).assertEqual(window.WindowStatusType.FULL_SCREEN);
           let isImmersive_fullscreen = windowStageStart.getMainWindowSync().getImmersiveModeEnabledState();
           console.info(`${message} isImmersive_fullscreen:${isImmersive_fullscreen}`);
-          if(isFreeWindowMode){
+          if (isFreeWindowMode) {
             expect(isImmersive_fullscreen).assertTrue();
             done()
-          }else{
+          } else {
             expect(isImmersive_fullscreen).assertEqual(false);
             done()
           }
@@ -1582,7 +1578,7 @@ export default function windowPCTest() {
       const message = 'test_on_windowWillClose_resolve_true'
       let result: boolean = false;
       const callback = () => {
-        return new Promise<boolean>((resolve, reject) => {
+        return new Promise < boolean > ((resolve, reject) => {
           result = true;
           resolve(result);
         })
@@ -1591,24 +1587,23 @@ export default function windowPCTest() {
         let windowStageStart = await startAbility(message, context);
         let windowClassStart = windowStageStart.getMainWindowSync();
         let windowName = windowClassStart.getUIContext().getWindowName();
-        if(isFreeWindowMode){
+        if (isFreeWindowMode) {
           windowClassStart.on('windowWillClose', callback);
-        let driver: Driver = Driver.create()
-        let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
-        await button.click();
-        await sleep(1000);
-        windowClassStart.off('windowWillClose', callback);
-        if (!result) {
-          expect().assertFail();
-        }
-        ;
-        try {
-          const windowClassFind = window.findWindow(windowName)
-          console.info(`The window ${windowClassFind} still exist`);
-        } catch (err) {
-          console.error(`The window does not exist`);
-          expect().assertFail();
-        }
+          let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
+          await button.click();
+          await sleep(1000);
+          windowClassStart.off('windowWillClose', callback);
+          if (!result) {
+            expect().assertFail();
+          }
+          ;
+          try {
+            const windowClassFind = window.findWindow(windowName)
+            console.info(`The window ${windowClassFind} still exist`);
+          } catch (err) {
+            console.error(`The window does not exist`);
+            expect().assertFail();
+          }
         }
         done();
       } catch (err) {
@@ -1638,7 +1633,7 @@ export default function windowPCTest() {
       let result: boolean = true;
       let windowName: string | undefined;
       const callback = () => {
-        return new Promise<boolean>((resolve, reject) => {
+        return new Promise < boolean > ((resolve, reject) => {
           result = false;
           resolve(result);
         })
@@ -1647,29 +1642,28 @@ export default function windowPCTest() {
         let windowStageStart = await startAbility(message, context);
         let windowClassStart = windowStageStart.getMainWindowSync();
         let windowName = windowClassStart.getUIContext().getWindowName();
-        if(isFreeWindowMode){
+        if (isFreeWindowMode) {
           windowClassStart.on('windowWillClose', callback);
-        let driver: Driver = Driver.create()
-        let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
-        await button.click();
-        await sleep(1000);
-        let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number;
-        AppStorage.setOrCreate('startNum', startNum - 1);
-        if (result) {
-          expect().assertFail();
+          let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
+          await button.click();
+          await sleep(1000);
+          let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number;
+          AppStorage.setOrCreate('startNum', startNum - 1);
+          if (result) {
+            expect().assertFail();
+          }
+          ;
+          try {
+            const windowClassFind = window.findWindow(windowName);
+            console.error(`The window ${windowClassFind} still exist`);
+            windowClassFind.off('windowWillClose');
+            expect().assertFail();
+          } catch (err) {
+            console.info(`The window does not exist`);
+            expect(err.code).assertEqual(1300002);
+          }
         }
-        ;
-        try {
-          const windowClassFind = window.findWindow(windowName);
-          console.error(`The window ${windowClassFind} still exist`);
-          windowClassFind.off('windowWillClose');
-          expect().assertFail();
-        } catch (err) {
-          console.info(`The window does not exist`);
-          expect(err.code).assertEqual(1300002);
-        }
-        }
-        
+
         done();
       } catch (err) {
         console.error(`${message} Failed to register callback, Cause code ${err.code}, message ${err.message}`);
@@ -1706,7 +1700,7 @@ export default function windowPCTest() {
       const callback = async () => {
         console.log(`${message} enter callback`)
         await sleep(3000);
-        return new Promise<boolean>((resolve, reject) => {
+        return new Promise < boolean > ((resolve, reject) => {
           console.log(`${message} callback return`)
           result = false;
           resolve(result);
@@ -1715,22 +1709,21 @@ export default function windowPCTest() {
       try {
         let windowStageStart = await startAbility(message, context);
         let windowClassStart = windowStageStart.getMainWindowSync();
-        if(isFreeWindowMode){
+        if (isFreeWindowMode) {
           windowClassStart.on('windowWillClose', callback);
-        let driver: Driver = Driver.create()
-        let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
-        await button.click();
-        await sleep(1000);
-        let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number;
-        AppStorage.setOrCreate('startNum', startNum - 1);
-        windowClassStart.off('windowWillClose', callback);
-        console.log(`${message} succeed off listen`)
-        expect().assertFail();
-        done();
-        }else{
+          let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
+          await button.click();
+          await sleep(1000);
+          let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number;
+          AppStorage.setOrCreate('startNum', startNum - 1);
+          windowClassStart.off('windowWillClose', callback);
+          console.log(`${message} succeed off listen`)
+          expect().assertFail();
+          done();
+        } else {
           done();
         }
-        
+
       } catch (err) {
         console.error(`${message} Failed to register callback, Cause code ${err.code}, message ${err.message} `);
         if (err.code == 1300002 || err.code == 801) {
@@ -1755,7 +1748,7 @@ export default function windowPCTest() {
      */
     it('test_on_windowWillClose_offWithoutOn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_windowWillClose_offWithoutOn'
-      if (isFreeWindowMode ==false) {
+      if (isFreeWindowMode == false) {
         expect(true).assertTrue();
         done();
       } else {
@@ -1765,7 +1758,6 @@ export default function windowPCTest() {
           let windowClassFind = windowStageStart.getMainWindowSync();
           let windowName = windowClassFind.getUIContext().getWindowName();
           windowClassFind.off('windowWillClose');
-          let driver: Driver = Driver.create();
           let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
           await button.click();
           let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number;
@@ -1808,7 +1800,7 @@ export default function windowPCTest() {
       const message = 'test_on_windowWillClose_reject';
       let windowName: string | undefined;
       const callback = () => {
-        return new Promise<boolean>((resolve, reject) => {
+        return new Promise < boolean > ((resolve, reject) => {
           reject();
         })
       }
@@ -1816,25 +1808,24 @@ export default function windowPCTest() {
         let windowStageStart = await startAbility(message, context);
         let windowClassStart = windowStageStart.getMainWindowSync();
         let windowName = windowClassStart.getUIContext().getWindowName();
-        if(isFreeWindowMode){
+        if (isFreeWindowMode) {
           windowClassStart.on('windowWillClose', callback);
-        let driver: Driver = Driver.create()
-        let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
-        await button.click();
-        await sleep(1000);
-        let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number;
-        AppStorage.setOrCreate('startNum', startNum - 1);
-        try {
-          const windowClassFind = window.findWindow(windowName);
-          console.error(`The window ${windowClassFind} still exist`);
-          windowClassFind.off('windowWillClose');
-          expect().assertFail();
-        } catch (err) {
-          console.info(`The window does not exist`);
-          expect(err.code).assertEqual(1300002)
+          let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
+          await button.click();
+          await sleep(1000);
+          let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number;
+          AppStorage.setOrCreate('startNum', startNum - 1);
+          try {
+            const windowClassFind = window.findWindow(windowName);
+            console.error(`The window ${windowClassFind} still exist`);
+            windowClassFind.off('windowWillClose');
+            expect().assertFail();
+          } catch (err) {
+            console.info(`The window does not exist`);
+            expect(err.code).assertEqual(1300002)
+          }
         }
-        }
-        
+
         done();
       } catch (err) {
         console.error(`${message} Failed to register callback, Cause code ${err.code}, message ${err.message} `);
@@ -1870,13 +1861,13 @@ export default function windowPCTest() {
       let windowName: string | undefined;
       let result: boolean = true;
       const callback1 = () => {
-        return new Promise<boolean>((resolve, reject) => {
+        return new Promise < boolean > ((resolve, reject) => {
           result = false;
           resolve(result);
         })
       }
       const callback2 = () => {
-        return new Promise<boolean>((resolve, reject) => {
+        return new Promise < boolean > ((resolve, reject) => {
           let result: boolean = true;
           resolve(result);
         })
@@ -1885,11 +1876,10 @@ export default function windowPCTest() {
         let windowStageStart = await startAbility(message, context);
         let windowClassStart = windowStageStart.getMainWindowSync()
         let windowName = windowClassStart.getUIContext().getWindowName();
-        if(isFreeWindowMode){
+        if (isFreeWindowMode) {
           windowClassStart.on('windowWillClose', callback1);
           windowClassStart.on('windowWillClose', callback2);
           windowClassStart.off('windowWillClose', callback2);
-          let driver: Driver = Driver.create()
           let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
           await button.click();
           await sleep(1000);
@@ -1909,7 +1899,7 @@ export default function windowPCTest() {
             expect(err.code).assertEqual(1300002);
           }
         }
-        
+
         done();
       } catch (err) {
         console.error(`${message} Failed to register callback, Cause code ${err.code}, message ${err.message} `);
@@ -1945,13 +1935,13 @@ export default function windowPCTest() {
       let windowName: string | undefined;
       let result: boolean = false;
       const callback1 = () => {
-        return new Promise<boolean>((resolve, reject) => {
+        return new Promise < boolean > ((resolve, reject) => {
           result = false;
           resolve(result);
         })
       }
       const callback2 = () => {
-        return new Promise<boolean>((resolve, reject) => {
+        return new Promise < boolean > ((resolve, reject) => {
           result = true;
           resolve(result);
         })
@@ -1960,11 +1950,10 @@ export default function windowPCTest() {
         let windowStageStart = await startAbility(message, context);
         let windowClassStart = windowStageStart.getMainWindowSync();
         let windowName = windowClassStart.getUIContext().getWindowName();
-        if(isFreeWindowMode){
+        if (isFreeWindowMode) {
           windowClassStart.on('windowWillClose', callback1);
           windowClassStart.on('windowWillClose', callback2);
           windowClassStart.off('windowWillClose');
-          let driver: Driver = Driver.create()
           let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
           await button.click();
           await sleep(1000);
@@ -1984,7 +1973,7 @@ export default function windowPCTest() {
             expect(err.code).assertEqual(1300002);
           }
         }
-        
+
         done();
       } catch (err) {
         console.error(`${message} Failed to register callback, Cause code ${err.code}, message ${err.message} `);
@@ -2020,7 +2009,7 @@ export default function windowPCTest() {
       let result: boolean = true;
       const callback = () => {
         console.log(`${message} callback come in... `);
-        return new Promise<boolean>((resolve, reject) => {
+        return new Promise < boolean > ((resolve, reject) => {
           result = false;
           resolve(result);
         })
@@ -2037,12 +2026,11 @@ export default function windowPCTest() {
           console.log(`${message} subwindow0 create `);
           const subWindowClass = data;
           await subWindowClass.setUIContent('testability/pages/WindowTest/StartMoving');
-          subWindowClass.moveWindowToAsync(0,100);
+          subWindowClass.moveWindowToAsync(0, 100);
           await subWindowClass.showWindow();
           await sleep(1000);
-          if(isFreeWindowMode){
+          if (isFreeWindowMode) {
             subWindowClass.on('windowWillClose', callback);
-            let driver: Driver = Driver.create();
             let button = await driver.findComponent(ON.id('EnhanceCloseBtn'))
             await button.click()
             await sleep(1000);
@@ -2055,8 +2043,8 @@ export default function windowPCTest() {
               console.info(`${message} subwindow0 is not existing`);
             }
             expect(result).assertFalse();
-            }
-          
+          }
+
           done();
         }).catch(async (err: BusinessError) => {
           console.error(`${message} Failed to create subwindow, Cause code ${err.code}, message ${err.message} `);
@@ -2096,7 +2084,7 @@ export default function windowPCTest() {
       const message = 'test_on_windowWillClose_subWindow_result_true'
       let result: boolean = false;
       const callback = () => {
-        return new Promise<boolean>((resolve, reject) => {
+        return new Promise < boolean > ((resolve, reject) => {
           result = true;
           resolve(result);
         })
@@ -2110,12 +2098,11 @@ export default function windowPCTest() {
         await promise.then(async (data) => {
           const subWindowClass = data;
           subWindowClass.setUIContent('testability/pages/WindowTest/StartMoving');
-          subWindowClass.moveWindowToAsync(0,200);
+          subWindowClass.moveWindowToAsync(0, 200);
           subWindowClass.showWindow();
           await sleep(1000);
-          if(isFreeWindowMode){
+          if (isFreeWindowMode) {
             subWindowClass.on('windowWillClose', callback);
-            let driver: Driver = Driver.create();
             let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
             await button.click();
             await sleep(1000);
@@ -2168,7 +2155,7 @@ export default function windowPCTest() {
     it('test_on_windowWillClose_subWindow_reject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_windowWillClose_subWindow_reject'
       const callback = () => {
-        return new Promise<boolean>((resolve, reject) => {
+        return new Promise < boolean > ((resolve, reject) => {
           reject();
         })
       };
@@ -2181,12 +2168,11 @@ export default function windowPCTest() {
         await promise.then(async (data) => {
           const subWindowClass = data;
           subWindowClass.setUIContent('testability/pages/WindowTest/StartMoving');
-          subWindowClass.moveWindowToAsync(0,200);
+          subWindowClass.moveWindowToAsync(0, 200);
           subWindowClass.showWindow();
           await sleep(1000);
-          if(isFreeWindowMode){
+          if (isFreeWindowMode) {
             subWindowClass.on('windowWillClose', callback);
-            let driver: Driver = Driver.create();
             let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
             await button.click();
             await sleep(1000);
@@ -2240,7 +2226,7 @@ export default function windowPCTest() {
       let windowName: string | undefined;
       let result: boolean = true;
       const callback = () => {
-        return new Promise<boolean>(async (resolve, reject) => {
+        return new Promise < boolean > (async (resolve, reject) => {
           await sleep(3000);
           result = false;
           console.info(`${message} start resolve`);
@@ -2251,57 +2237,56 @@ export default function windowPCTest() {
         let windowStageStart = await startAbility(message, context);
         let windowClassStart = windowStageStart.getMainWindowSync();
         let windowName = windowClassStart.getUIContext().getWindowName();
-        if(isFreeWindowMode){
+        if (isFreeWindowMode) {
           windowClassStart.on('windowWillClose', callback);
-        let driver: Driver = Driver.create()
-        let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
-        await button.click();
-        let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number;
-        AppStorage.setOrCreate('startNum', startNum - 1);
-        let promise1 = windowClassStart.minimize();
-        await promise1.then(() => {
-          console.info(`${message} succeed minimize window`);
-          expect(true).assertTrue();
-        }).catch((err: BusinessError) => {
-          console.error(`${message} Failed to minimize window, Cause code ${err.code}, message ${err.message} `);
-          expect().assertFail();
-          done();
-        });
-        let promise2 = windowClassStart.maximize();
-        await promise2.then(() => {
-          console.info(`${message} succeed maximize window`);
-          expect(true).assertTrue();
-        }).catch((err: BusinessError) => {
-          console.error(`${message} Failed to maximize window, Cause code ${err.code}, message ${err.message} `);
-          expect().assertFail();
-          done();
-        });
-        let promise3 = windowClassStart.recover();
-        await promise3.then(() => {
-          console.info(`${message} succeed recover window`);
-          expect(true).assertTrue();
-        }).catch((err: BusinessError) => {
-          console.error(`${message} Failed to recover window, Cause code ${err.code}, message ${err.message} `);
-          expect().assertFail();
-          done();
-        });
-        await sleep(4000);
-        console.info(`${message} result: ${result}`)
-        if (result) {
-          expect().assertFail();
+          let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
+          await button.click();
+          let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number;
+          AppStorage.setOrCreate('startNum', startNum - 1);
+          let promise1 = windowClassStart.minimize();
+          await promise1.then(() => {
+            console.info(`${message} succeed minimize window`);
+            expect(true).assertTrue();
+          }).catch((err: BusinessError) => {
+            console.error(`${message} Failed to minimize window, Cause code ${err.code}, message ${err.message} `);
+            expect().assertFail();
+            done();
+          });
+          let promise2 = windowClassStart.maximize();
+          await promise2.then(() => {
+            console.info(`${message} succeed maximize window`);
+            expect(true).assertTrue();
+          }).catch((err: BusinessError) => {
+            console.error(`${message} Failed to maximize window, Cause code ${err.code}, message ${err.message} `);
+            expect().assertFail();
+            done();
+          });
+          let promise3 = windowClassStart.recover();
+          await promise3.then(() => {
+            console.info(`${message} succeed recover window`);
+            expect(true).assertTrue();
+          }).catch((err: BusinessError) => {
+            console.error(`${message} Failed to recover window, Cause code ${err.code}, message ${err.message} `);
+            expect().assertFail();
+            done();
+          });
+          await sleep(4000);
+          console.info(`${message} result: ${result}`)
+          if (result) {
+            expect().assertFail();
+          }
+          ;
+          try {
+            const windowClassFind = window.findWindow(windowName)
+            console.error(`${message} The window ${windowClassFind} still exist`);
+            windowClassFind.off('windowWillClose', callback);
+            expect().assertFail();
+          } catch (err) {
+            console.info(`${message} The window does not exist, Cause code ${err.code}, message ${err.message}`);
+            expect(err.code).assertEqual(1300002)
+          }
         }
-        ;
-        try {
-          const windowClassFind = window.findWindow(windowName)
-          console.error(`${message} The window ${windowClassFind} still exist`);
-          windowClassFind.off('windowWillClose', callback);
-          expect().assertFail();
-        } catch (err) {
-          console.info(`${message} The window does not exist, Cause code ${err.code}, message ${err.message}`);
-          expect(err.code).assertEqual(1300002)
-        }
-        }
-        
+
         done();
       } catch (err) {
         console.error(`${message} Failed to register callback, Cause code ${err.code}, message ${err.message} `);
@@ -2397,11 +2382,10 @@ export default function windowPCTest() {
           promise.then(async (data) => {
             const subWindowClass = data;
             subWindowClass.setUIContent('testability/pages/WindowTest/StartMoving');
-            subWindowClass.moveWindowToAsync(0,200);
+            subWindowClass.moveWindowToAsync(0, 200);
             subWindowClass.showWindow();
             await sleep(1000);
             subWindowClass.on("subWindowClose", callback);
-            let driver: Driver = Driver.create();
             let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
             await button.click();
             await sleep(1000);
@@ -2470,11 +2454,10 @@ export default function windowPCTest() {
           promise.then(async (data) => {
             const subWindowClass = data;
             subWindowClass.setUIContent('testability/pages/WindowTest/StartMoving');
-            subWindowClass.moveWindowToAsync(0,200);
+            subWindowClass.moveWindowToAsync(0, 200);
             subWindowClass.showWindow();
             await sleep(1000);
             subWindowClass.on("subWindowClose", callback);
-            let driver: Driver = Driver.create();
             let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
             await button.click();
             await sleep(1000);
@@ -2530,24 +2513,24 @@ export default function windowPCTest() {
       let windowStageStart = await startAbility(message, context);
       let mainWindow = windowStageStart.getMainWindowSync();
       let windowId = mainWindow.getWindowProperties().id;
-      console.info(msgStr +'windowId :'+windowId)
+      console.info(msgStr + 'windowId :' + windowId)
       try {
         let windowClass = await windowStage.createSubWindow('testgetParentWindow');
-        windowClass.setParentWindow(windowId).then(async() => {
-          console.info(msgStr +'Succeeded in  setParentWindow window.')
+        windowClass.setParentWindow(windowId).then(async () => {
+          console.info(msgStr + 'Succeeded in  setParentWindow window.')
           let parentClass = windowClass.getParentWindow();
           let parentId = parentClass.getWindowProperties().id;
-          console.info(msgStr +'parentId :'+parentId)
+          console.info(msgStr + 'parentId :' + parentId)
           expect(parentId).assertEqual(windowId);
           await windowClass.destroyWindow();
           await terminateAbility(message)
           done()
-        }).catch(async(e: BusinessError) => {
-          console.error(msgStr +`Failed to setParentWindow. Cause code: ${e.code}, message: ${e.message}`);
+        }).catch(async (e: BusinessError) => {
+          console.error(msgStr + `Failed to setParentWindow. Cause code: ${e.code}, message: ${e.message}`);
           await terminateAbility(message)
-          if(e.code == 801){
+          if (e.code == 801) {
             done();
-          }else{
+          } else {
             expect(false).assertFail();
             done()
           }
@@ -2574,7 +2557,7 @@ export default function windowPCTest() {
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       const callback = () => {
-        return new Promise<boolean>((resolve, reject) => {
+        return new Promise < boolean > ((resolve, reject) => {
           // 是否关闭该窗口
           let result: boolean = true;
           resolve(result);
@@ -2583,7 +2566,7 @@ export default function windowPCTest() {
       try {
         let windowClass = windowStage.getMainWindowSync();
         windowClass.on(null, callback);
-        console.log(msgStr  + 'Succeeded on windowWillClose ');
+        console.log(msgStr + 'Succeeded on windowWillClose ');
         expect(false).assertFail();
         done()
       } catch (e) {
@@ -2606,7 +2589,7 @@ export default function windowPCTest() {
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       const callback = () => {
-        return new Promise<boolean>((resolve, reject) => {
+        return new Promise < boolean > ((resolve, reject) => {
           // 是否关闭该窗口
           let result: boolean = true;
           resolve(result);
@@ -2615,7 +2598,7 @@ export default function windowPCTest() {
       try {
         let windowClass = windowStage.getMainWindowSync();
         windowClass.off(null, callback);
-        console.log(msgStr  + 'Succeeded off windowWillClose ');
+        console.log(msgStr + 'Succeeded off windowWillClose ');
         expect(false).assertFail();
         done()
       } catch (e) {
@@ -2644,7 +2627,7 @@ export default function windowPCTest() {
       };
       let windowClass = await window.createWindow(config);
       const callback = () => {
-        return new Promise<boolean>((resolve, reject) => {
+        return new Promise < boolean > ((resolve, reject) => {
           // 是否关闭该窗口
           let result: boolean = true;
           resolve(result);
@@ -2652,15 +2635,15 @@ export default function windowPCTest() {
       }
       try {
         windowClass.on('windowWillClose', callback);
-        console.log(msgStr  + 'Succeeded on windowWillClose ');
+        console.log(msgStr + 'Succeeded on windowWillClose ');
         expect(false).assertFail();
         done()
       } catch (e) {
         console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
         await windowClass.destroyWindow();
-        if(e.code == 801){
+        if (e.code == 801) {
           done();
-        }else {
+        } else {
           expect(e.code).assertEqual(1300004);
           done()
         }
@@ -2688,7 +2671,7 @@ export default function windowPCTest() {
           console.log(`${msgStr} callback data: ${JSON.stringify(data)}`);
         }
         windowClass.on('windowStatusDidChange', callback);
-        console.log(msgStr  + 'Succeeded on windowStatusDidChange ');
+        console.log(msgStr + 'Succeeded on windowStatusDidChange ');
         done()
       } catch (err) {
         console.error(`${caseName} failed, error: ${JSON.stringify(err)}`);
@@ -2721,7 +2704,7 @@ export default function windowPCTest() {
         windowClass.on('windowStatusDidChange', callback);
         await windowClass.destroyWindow();
         windowClass.off('windowStatusDidChange', callback);
-        console.log(msgStr  + 'Succeeded on windowStatusDidChange ');
+        console.log(msgStr + 'Succeeded on windowStatusDidChange ');
         done()
       } catch (err) {
         console.error(`${caseName} failed, error: ${JSON.stringify(err)}`);
@@ -2775,7 +2758,7 @@ export default function windowPCTest() {
             done()
           }
           windowClass.on('windowStatusDidChange', callback);
-          console.log(msgStr  + 'Succeeded on windowStatusDidChange ');
+          console.log(msgStr + 'Succeeded on windowStatusDidChange ');
           await windowClass.recover();
           await sleep(200);
         } catch (err) {
@@ -2829,7 +2812,7 @@ export default function windowPCTest() {
             done()
           }
           windowClass.on('windowStatusDidChange', callback);
-          console.log(msgStr  + 'Succeeded on windowStatusDidChange ');
+          console.log(msgStr + 'Succeeded on windowStatusDidChange ');
           await windowClass.maximize();
           await sleep(200)
         } catch (err) {
@@ -2883,7 +2866,7 @@ export default function windowPCTest() {
             done()
           }
           windowClass.on('windowStatusDidChange', callback);
-          console.log(msgStr  + 'Succeeded on windowStatusDidChange ');
+          console.log(msgStr + 'Succeeded on windowStatusDidChange ');
           await windowClass.maximize(window.MaximizePresentation.EXIT_IMMERSIVE);
           await sleep(200)
         } catch (err) {
@@ -2910,32 +2893,32 @@ export default function windowPCTest() {
       let caseName = "testOnwindowStatusDidChange_mimimize";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-        try {
-          let windowClass = await windowStage.createSubWindow('testOnwindowStatusDidChange_mimimize');
-          await windowClass.setUIContent('testability/pages/First/index2');
-          await windowClass.showWindow();
-          await sleep(300);
-          const callback = async (data: window.WindowStatusType) => {
-            console.log(`${msgStr} callback data: ${JSON.stringify(data)}`);
-            expect(data).assertEqual(window.WindowStatusType.MINIMIZE);
-            windowClass.off('windowStatusDidChange', callback);
-            await windowClass.destroyWindow();
-            await sleep(200);
-            done()
-          }
-          windowClass.on('windowStatusDidChange', callback);
-          console.log(msgStr  + 'Succeeded on windowStatusDidChange ');
-          await windowClass.minimize();
-          await sleep(200)
-        } catch (err) {
-          console.error(`${caseName} failed, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
-            done()
-          } else {
-            expect().assertFail();
-            done()
-          }
+      try {
+        let windowClass = await windowStage.createSubWindow('testOnwindowStatusDidChange_mimimize');
+        await windowClass.setUIContent('testability/pages/First/index2');
+        await windowClass.showWindow();
+        await sleep(300);
+        const callback = async (data: window.WindowStatusType) => {
+          console.log(`${msgStr} callback data: ${JSON.stringify(data)}`);
+          expect(data).assertEqual(window.WindowStatusType.MINIMIZE);
+          windowClass.off('windowStatusDidChange', callback);
+          await windowClass.destroyWindow();
+          await sleep(200);
+          done()
         }
+        windowClass.on('windowStatusDidChange', callback);
+        console.log(msgStr + 'Succeeded on windowStatusDidChange ');
+        await windowClass.minimize();
+        await sleep(200)
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${JSON.stringify(err)}`);
+        if (err.code == 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
       // }
     })
     /**
@@ -2948,7 +2931,6 @@ export default function windowPCTest() {
      */
     it('testOnwindowStatusDidChange_SPLIT_SCREEN', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testOnwindowStatusDidChange_SPLIT_SCREEN';
-      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.SPLIT,
@@ -2964,16 +2946,16 @@ export default function windowPCTest() {
         let windowStatus = windowClass.getWindowStatus()
         console.info(`${message} windowStatus: ${windowStatus}, expect 4`);
         expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
-        
+
         const callback = async (data: window.WindowStatusType) => {
-            console.log(`${message} callback data: ${JSON.stringify(data)}`);
-            expect(data).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
-            windowClass.off('windowStatusDidChange', callback);
-            await sleep(200);
-            done()
-          }
-          windowClass.on('windowStatusDidChange', callback);
-          console.log(message  + 'Succeeded on windowStatusDidChange ');
+          console.log(`${message} callback data: ${JSON.stringify(data)}`);
+          expect(data).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
+          windowClass.off('windowStatusDidChange', callback);
+          await sleep(200);
+          done()
+        }
+        windowClass.on('windowStatusDidChange', callback);
+        console.log(message + 'Succeeded on windowStatusDidChange ');
 
         // 模拟用户移动窗口到左边缘，可触发分屏
         let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
@@ -2986,7 +2968,7 @@ export default function windowPCTest() {
         done()
       }
     })
-    
+
 
     /**
      * @tc.name   testShiftAppWindowTouchEvent_null
@@ -3066,7 +3048,7 @@ export default function windowPCTest() {
       let caseName = "testShiftAppWindowTouchEvent_1300002";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-      if(isFreeWindowMode == true){
+      if (isFreeWindowMode == true) {
         let subWindowClass = await windowStage.createSubWindow('testShiftAppWindowTouchEvent_1300002');
         await sleep(200);
         // let windowLimits = subWindowClass.getWindowLimits();
@@ -3114,7 +3096,7 @@ export default function windowPCTest() {
             done()
           }
         }
-      }else{
+      } else {
         done();
       }
 
@@ -3132,7 +3114,7 @@ export default function windowPCTest() {
       let caseName = "testShiftAppWindowTouchEvent_1300016";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-      if(isFreeWindowMode == true){
+      if (isFreeWindowMode == true) {
         let subWindowClass = await windowStage.createSubWindow('testShiftAppWindowTouchEvent_1300016');
         await sleep(200);
         let windowLimits = subWindowClass.getWindowLimits();
@@ -3182,7 +3164,7 @@ export default function windowPCTest() {
             done()
           }
         }
-      }else{
+      } else {
         done();
       }
 
@@ -3200,7 +3182,7 @@ export default function windowPCTest() {
       let caseName = "testShiftAppWindowTouchEvent_1300004";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-      if(isFreeWindowMode == true){
+      if (isFreeWindowMode == true) {
         let mainWindow = windowStage.getMainWindowSync();
         let mainWindowId = mainWindow.getWindowProperties().id;
         console.log(`${caseName} mainwindowId: ${JSON.stringify(mainWindowId)}`);
@@ -3214,7 +3196,7 @@ export default function windowPCTest() {
         await sleep(200);
         await subWindowClass.setUIContent("testability/pages/WindowTest/StartMoving4");
         await sleep(200);
-        subWindowClass.moveWindowToAsync(0,200);
+        subWindowClass.moveWindowToAsync(0, 200);
         await subWindowClass.showWindow();
         await sleep(1000);
         let subWindowId = subWindowClass.getWindowProperties().id;
@@ -3255,13 +3237,13 @@ export default function windowPCTest() {
             done()
           }
         }
-      }else{
+      } else {
         done();
       }
 
     })
 
-    
+
 
     /**
      * @tc.name   testOutlineEnabled_True
@@ -3273,11 +3255,11 @@ export default function windowPCTest() {
      */
     it('testOutlineEnabled_True', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testOutlineEnabled_True';
-      let windowClass:window.Window;
+      let windowClass: window.Window;
       let options: window.SubWindowOptions = {
         title: 'testOutlineEnabled_True',
         decorEnabled: true,
-        outlineEnabled:true
+        outlineEnabled: true
       };
       windowStage.createSubWindowWithOptions('testOutlineEnabled_True', options).then(async (data) => {
         windowClass = data
@@ -3310,11 +3292,11 @@ export default function windowPCTest() {
      */
     it('testOutlineEnabled_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testOutlineEnabled_False';
-      let windowClass:window.Window;
+      let windowClass: window.Window;
       let options: window.SubWindowOptions = {
         title: 'testOutlineEnabled_False',
         decorEnabled: true,
-        outlineEnabled:false
+        outlineEnabled: false
       };
       windowStage.createSubWindowWithOptions('testOutlineEnabled_False', options).then(async (data) => {
         windowClass = data
@@ -3347,11 +3329,11 @@ export default function windowPCTest() {
      */
     it('testOutlineEnabled_Undifined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testOutlineEnabled_Undifined';
-      let windowClass:window.Window;
+      let windowClass: window.Window;
       let options: window.SubWindowOptions = {
         title: 'testOutlineEnabled_Undifined',
         decorEnabled: true,
-        outlineEnabled:undefined
+        outlineEnabled: undefined
       };
       windowStage.createSubWindowWithOptions('testOutlineEnabled_Undifined', options).then(async (data) => {
         windowClass = data
@@ -3755,13 +3737,12 @@ export default function windowPCTest() {
     it('testWindowStatusChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testWindowStatusChange_0100';
       let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
-      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.SPLIT,
         ]
       };
-      let windowStatusChange:window.WindowStatusType|undefined = undefined;
+      let windowStatusChange: window.WindowStatusType | undefined = undefined;
       if (isPCStatus != '') {
         // startAbility - SupportWindowMode.SPLIT
         let windowStageStart = await startAbility(message, context, options)
@@ -3771,15 +3752,15 @@ export default function windowPCTest() {
         console.info(`${message} windowStatus: ${windowStatus}, expect 4`);
         expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
         windowClass.on('windowStatusChange', (WindowStatusType) => {
-            console.info(message + ' Succeeded in enabling the listener for window status changes. Data: ' + JSON.stringify(WindowStatusType));
-            windowStatusChange = WindowStatusType;
+          console.info(message + ' Succeeded in enabling the listener for window status changes. Data: ' + JSON.stringify(WindowStatusType));
+          windowStatusChange = WindowStatusType;
         });
         await sleep(1000)
         // 模拟用户移动窗口到左边缘，触发分屏
         let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
         await sleep(1000)
         let titlePoint = await title.getBounds()
-        await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top  + 200, 200)
+        await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 200, 200)
         await sleep(1000)
         // 获取窗口状态 - 分屏
         windowStatus = windowClass.getWindowStatus()
@@ -3805,7 +3786,7 @@ export default function windowPCTest() {
      */
     it('testWindowStatusChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testWindowStatusChange_0200';
-      let windowStatusChange:window.WindowStatusType|undefined = undefined;
+      let windowStatusChange: window.WindowStatusType | undefined = undefined;
       if (isPCStatus != '') {
         let windowClass = windowStage.getMainWindowSync()
         // 获取窗口状态 - 自由窗口
@@ -3848,7 +3829,76 @@ export default function windowPCTest() {
       }
     })
 
-   
+    /**
+    * @tc.name    test_getWindowStateSnapshot_1300002
+    * @tc.number  SUB_BASIC_WMS_GET_WINDOW_STATE_SNAPSHOT_0100
+    * @tc.desc    test_sgetWindowStateSnapshot_subWindow_Destroy
+    * @tc.type    FUNCTION
+    * @tc.size    MEDIUMTEST
+    * @tc.level   LEVEL3
+    */
+    it('test_getWindowStateSnapshot_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'test_getWindowStateSnapshot_1300002';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let subWindow = await windowStage.createSubWindow('test_getWindowStateSnapshot_1300002');
+      await subWindow.destroyWindow();
+      try {
+        let promise = subWindow.getWindowStateSnapshot();
+        promise.then((data) => {
+          let jsonObj: object = JSON.parse(data);
+          console.info(`${caseName}: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]}`);
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName}: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+          expect(err.code).assertEqual(1300002);
+          expect(err.message).assertEqual('This window state is abnormal.[window][getWindowStateSnapshot]msg: The window is not created or destroyed');
+          done();
+        });
+      } catch (exception) {
+        console.error(`${caseName}: Failed, Cause code: ${exception.code}, message: ${exception.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+    /**
+     * @tc.name   test_getWindowStateSnapshot_mainWindow
+     * @tc.number SUB_BASIC_WMS_GET_WINDOW_STATE_SNAPSHOT_0200
+     * @tc.desc   test_sgetWindowStateSnapshot_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_getWindowStateSnapshot_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'test_getWindowStateSnapshot_mainWindow';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let mainWindow = windowStage.getMainWindowSync();
+      try {
+        let promise = mainWindow.getWindowStateSnapshot();
+        promise.then((data) => {
+          let jsonObj: object = JSON.parse(data);
+          console.info(`${caseName}: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]}`);
+          expect(data != null).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName}: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+          if (!canIUse('SystemCapability.Window.SessionManager')) {
+            expect(err.code).assertEqual(801);
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][getWindowStateSnapshot]msg: get window state snapshot failed');
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (exception) {
+        console.error(`${caseName}: Failed, Cause code: ${exception.code}, message: ${exception.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
 
 
   })

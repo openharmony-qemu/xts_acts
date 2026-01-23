@@ -78,6 +78,7 @@ export default function RouterRecoverable() {
      * @tc.level    Level.LEVEL0
      */
 it('RouterRecoverable_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('RouterRecoverable_0100 START');
       await CommonFunc.sleep(200);
 

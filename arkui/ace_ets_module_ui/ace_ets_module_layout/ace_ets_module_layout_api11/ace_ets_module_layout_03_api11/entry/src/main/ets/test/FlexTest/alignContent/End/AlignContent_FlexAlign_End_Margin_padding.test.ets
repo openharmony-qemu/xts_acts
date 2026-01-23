@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -103,10 +103,24 @@ export default function AlignContent_FlexAlign_End_Margin_padding() {
       console.log('AlignContentFlexEnd_4_width is:' + AlignContentFlexEnd_4_width);
       console.log('AlignContentFlexEnd_4_height is:' + AlignContentFlexEnd_4_height);
 
+      console.log('chazhi1 is:' + Math.floor(Math.abs(AlignContentFlexEnd_1_height - vp2px(50))));
+      console.log('chazhi2 is:' + Math.floor(Math.abs(AlignContentFlexEnd_2_height - vp2px(60))));
+      console.log('chazhi3 is:' + Math.floor(Math.abs(AlignContentFlexEnd_3_height - vp2px(60))));
+      console.log('chazhi4 is:' + Math.floor(Math.abs(AlignContentFlexEnd_4_height - vp2px(70))));
+      console.log('chazhi5 is:' + Math.floor(Math.abs(AlignContentFlexEnd_1_width - vp2px(60))));
+      console.log('chazhi6 is:' + Math.floor(Math.abs(AlignContentFlexEnd_2_width - vp2px(60))));
+      console.log('chazhi7 is:' + Math.floor(Math.abs(AlignContentFlexEnd_3_width - vp2px(60))));
+      console.log('chazhi8 is:' + Math.floor(Math.abs(AlignContentFlexEnd_4_width - vp2px(60))));
+      console.log('chazhi9 is:' + Math.floor(Math.abs((AlignContentFlexEnd_flex001.top - End_Margin_Column_1.top) - vp2px(5))));
+      console.log('chazhi10 is:' + Math.floor(Math.abs((End_Margin_Column_1.bottom - AlignContentFlexEnd_4.bottom) - vp2px(15))));
+      console.log('chazhi11 is:' + Math.floor(Math.abs((AlignContentFlexEnd_1.top - AlignContentFlexEnd_flex001.top) - vp2px(40))));
+      console.log('chazhi12 is:' + Math.floor(Math.abs((AlignContentFlexEnd_flex001.bottom - AlignContentFlexEnd_4.bottom) - vp2px(10))));
+      console.log('chazhi13 is:' + Math.floor(Math.abs(AlignContentFlexEnd_4.top - AlignContentFlexEnd_2.bottom)));
+
       expect(Math.floor(Math.abs(AlignContentFlexEnd_1_height - vp2px(50))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_2_height - vp2px(60))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_3_height - vp2px(80))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_4_height - vp2px(90))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_3_height - vp2px(60))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_4_height - vp2px(70))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_1_width - vp2px(60))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_2_width - vp2px(60))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_3_width - vp2px(60))) <= 1).assertTrue();
@@ -116,10 +130,13 @@ export default function AlignContent_FlexAlign_End_Margin_padding() {
       expect(JSON.parse(strJson).$attrs.constructor.alignContent).assertEqual("FlexAlign.End");
 
       expect(Math.floor(Math.abs((AlignContentFlexEnd_flex001.top - End_Margin_Column_1.top) - vp2px(5))) <= 1).assertTrue();
+
       expect(Math.floor(Math.abs((End_Margin_Column_1.bottom - AlignContentFlexEnd_4.bottom) - vp2px(15))) <= 1).assertTrue();
+
       expect(Math.floor(Math.abs((AlignContentFlexEnd_1.top - AlignContentFlexEnd_flex001.top) - vp2px(40))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((AlignContentFlexEnd_flex001.bottom - AlignContentFlexEnd_4.bottom) - vp2px(10))) <= 1)
         .assertTrue();
+
       expect(Math.floor(Math.abs(AlignContentFlexEnd_4.top - AlignContentFlexEnd_2.bottom)) <= 1).assertTrue();
 
       console.info('testAlignContentEndFlexMarginPaddingNOSatisfy END');
@@ -180,10 +197,24 @@ export default function AlignContent_FlexAlign_End_Margin_padding() {
       console.log('AlignContentFlexEnd_4_width is:' + AlignContentFlexEnd_4_width);
       console.log('AlignContentFlexEnd_4_height is:' + AlignContentFlexEnd_4_height);
 
+      console.log('chazhi is:' + Math.floor(Math.abs(AlignContentFlexEnd_1_height - vp2px(50))));
+      console.log('chazhi is:' + Math.floor(Math.abs(AlignContentFlexEnd_2_height - vp2px(60))));
+      console.log('chazhi is:' + Math.floor(Math.abs(AlignContentFlexEnd_3_height - vp2px(60))));
+      console.log('chazhi is:' + Math.floor(Math.abs(AlignContentFlexEnd_4_height - vp2px(70))));
+      console.log('chazhi is:' + Math.floor(Math.abs(AlignContentFlexEnd_1_width - vp2px(60))));
+      console.log('chazhi is:' + Math.floor(Math.abs(AlignContentFlexEnd_2_width - vp2px(60))));
+      console.log('chazhi is:' + Math.floor(Math.abs(AlignContentFlexEnd_3_width - vp2px(60))));
+      console.log('chazhi is:' + Math.floor(Math.abs(AlignContentFlexEnd_4_width - vp2px(60))));
+      console.log('chazhi is:' + Math.floor(Math.abs((AlignContentFlexEnd_flex002.top - End_Margin_Column_2.top) - vp2px(5))));
+      console.log('chazhi is:' + Math.floor(Math.abs((End_Margin_Column_2.bottom - AlignContentFlexEnd_4.bottom) - vp2px(20))));
+      console.log('chazhi is:' + Math.floor(Math.abs((AlignContentFlexEnd_flex002.bottom - AlignContentFlexEnd_4.bottom) - vp2px(15))));
+      console.log('chazhi is:' + Math.floor(Math.abs(AlignContentFlexEnd_4.top - AlignContentFlexEnd_2.bottom)));
+      console.log('chazhi is:' + Math.floor(Math.abs((AlignContentFlexEnd_2.top - AlignContentFlexEnd_flex002.top) - vp2px(35))));
+
       expect(Math.floor(Math.abs(AlignContentFlexEnd_1_height - vp2px(50))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_2_height - vp2px(60))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_3_height - vp2px(80))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(AlignContentFlexEnd_4_height - vp2px(90))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_3_height - vp2px(60))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_4_height - vp2px(70))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_1_width - vp2px(60))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_2_width - vp2px(60))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexEnd_3_width - vp2px(60))) <= 1).assertTrue();

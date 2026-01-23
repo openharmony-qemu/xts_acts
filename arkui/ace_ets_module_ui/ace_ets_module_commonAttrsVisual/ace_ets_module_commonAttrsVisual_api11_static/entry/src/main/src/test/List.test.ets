@@ -34,20 +34,20 @@ import transformPointTest from './imageEffectsTest/transformPointTest.test';
 import commonBackgroundBlurStyleJsunit from './imageEffectsTest/common.test3'
 
 export default function testsuite() {
-  // transformPointTest() // 1 pass 1
-  // clickeffectTest(); // 16 pass 16
-  // backgroundEffectJsunit(); // 5 pass 0 backgroundEffect
-  // blendModeTest(); // 30 pass 30
-  // backgroundEffectJsSuit(); // 1 pass 0 backgroundEffect
-  InvertOptionsJsSuit(); // 1 pass 1 // The key 'thresholdRange' was not found in the JSON object
-  // ForegroundColorJsSuit(); // 1 pass 1
-  // sheetSize1Jsunit() // 2 pass 1 shouldDismiss
-  commonColorModeJsunit() // 10 pass 8 emitter 2 // backgroundBlurStyle 2
-  // hoverEffectJsunit() // 2 pass 2
-  // hitTestModeJsunit() // 1 pass 1
-  // common_ts_ets_apiStaticClearJsunit() // 3 pass 3
-  // rotateTest() // 1 pass 1
-  // shapeTest() // 1 pass 1
-  // imageEffectsJsunit(); // 42 pass 42 16进制
-  commonBackgroundBlurStyleJsunit() // 8 pass 8 The key 'backgroundBlurStyle' was not found in the JSON object.
+  transformPointTest()
+  clickeffectTest();
+  backgroundEffectJsunit();
+  blendModeTest();
+  backgroundEffectJsSuit();
+  InvertOptionsJsSuit();
+  ForegroundColorJsSuit();
+  sheetSize1Jsunit()
+  commonColorModeJsunit()
+  hoverEffectJsunit()
+  hitTestModeJsunit()
+  common_ts_ets_apiStaticClearJsunit()
+  rotateTest()
+  shapeTest()
+  imageEffectsJsunit();
+  commonBackgroundBlurStyleJsunit()
 }

@@ -34,6 +34,7 @@
         "MainAbility/pages/EventItem/RotationGesture",
         "MainAbility/pages/startDataLoading/dataLoading",
         "MainAbility/pages/DragPreviewOptions/DragPreviewOptions",
-        "MainAbility/pages/EventTarget_id/EventTarget_id"
+        "MainAbility/pages/EventTarget_id/EventTarget_id",
+        "MainAbility/pages/TextArea/textAreaInputTest"
     ]
 }

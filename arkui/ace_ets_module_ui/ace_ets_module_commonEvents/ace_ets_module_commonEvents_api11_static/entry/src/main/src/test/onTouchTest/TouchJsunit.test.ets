@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test'
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -84,8 +85,8 @@ it('testTouch_static_01', Level.LEVEL0, async (done: () => void): Promise<void> 
       await CommonFunc.sleep(1000);
       try {
         let callBackTouch = (backData: emitter.EventData) => {
-          const data: Record<String, undefined | null | Object> =
-            backData.data as Record<String, undefined | null | Object>
+          const data: Record<String,RecordData> =
+            backData.data as Record<String,RecordData>
           console.info("testTouch01 get backEvent result is: " + JSON.stringify(backData));
           console.info("testTouch01 get flag result is: " + JSON.stringify(data['ACTION']));
           expect(data['ACTION']).assertEqual(true);

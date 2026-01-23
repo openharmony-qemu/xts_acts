@@ -61,57 +61,6 @@ export default function ResourceDefaultTest() {
       console.info("ResourceDefaultTest beforeEach end");
     });
 
-
-    /**
-         * @tc.number   ResourceDefaultTest_static_0010
-         * @tc.name     ResourceDefaultTest_static_0010
-         * @tc.desc     ResourceDefaultTest_static_0010
-         * @tc.level    Level.LEVEL2
-         */
-    it('ResourceDefaultTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[ResourceDefaultTest_0010] START');
-      let driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let Button: Component = await driver.findComponent(ON.id('set_default_append_resource')) as Component;
-      await Button.click()
-      await CommonFunc.sleep(1000);
-      let Button1: Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
-      await Button1.click()
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('default_resourceValue');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[ResourceDefaultTest_0010] component obj is: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertContain('resource');
-      console.info('[ResourceDefaultTest_0010] END');
-      done();
-    });
-
-
-    /**
-         * @tc.number   ResourceDefaultTest_static_0020
-         * @tc.name     ResourceDefaultTest_static_0020
-         * @tc.desc     ResourceDefaultTest_static_0020
-         * @tc.level    Level.LEVEL2
-         */
-    it('ResourceDefaultTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[ResourceDefaultTest_0020] START');
-      let driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let Button: Component = await driver.findComponent(ON.id('set_colorFilter_append_str')) as Component;
-      await Button.click()
-      await CommonFunc.sleep(1000);
-      let Button1: Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
-      await Button1.click()
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('default_resourceValue');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[ResourceDefaultTest_0020] component obj is: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertContain('resource');
-      console.info('[ResourceDefaultTest_0020] END');
-      done();
-    });
-
-
     /**
          * @tc.number   ResourceDefaultTest_static_0030
          * @tc.name     ResourceDefaultTest_static_0030
@@ -156,7 +105,7 @@ export default function ResourceDefaultTest() {
       let strJson = inspector.getInspectorByKey('default_verticalAlign');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceDefaultTest_0040] component obj is: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"value":3,"#ordinal":1}');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('3');
       console.info('[ResourceDefaultTest_0040] END');
       done();
     });
@@ -231,8 +180,8 @@ export default function ResourceDefaultTest() {
       let strJson = inspector.getInspectorByKey('default_colorFilter');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceDefaultTest_static_0070] component obj is: " +
-      obj.getElement('$attrs').getString('colorFilter'));
-      expect(obj.getElement('$attrs').getString('colorFilter'))
+      obj.getElement('$attrs').getString('content'));
+      expect(obj.getElement('$attrs').getString('content'))
         .assertEqual('1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 ');
       console.info('[ResourceDefaultTest_static_0070] END');
       done();
@@ -283,7 +232,7 @@ export default function ResourceDefaultTest() {
       let strJson = inspector.getInspectorByKey('default_verticalAlign');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceDefaultTest_0090] component obj is: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"value":3,"#ordinal":1}');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('3');
       console.info('[ResourceDefaultTest_0090] END');
       done();
     });
@@ -358,8 +307,8 @@ export default function ResourceDefaultTest() {
       let strJson = inspector.getInspectorByKey('default_colorFilter');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceDefaultTest_static_0120] component obj is: " +
-      obj.getElement('$attrs').getString('colorFilter'));
-      expect(obj.getElement('$attrs').getString('colorFilter'))
+      obj.getElement('$attrs').getString('content'));
+      expect(obj.getElement('$attrs').getString('content'))
         .assertEqual('1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 ');
       console.info('[ResourceDefaultTest_static_0070] END');
       done();

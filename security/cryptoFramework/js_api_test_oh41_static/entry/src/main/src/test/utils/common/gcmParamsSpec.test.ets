@@ -45,7 +45,7 @@ function genGcmParamsSpecNullAAD(): crypto.GcmParamsSpec {
   let ivArr: Array<number> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   let dataIv: Uint8Array = new Uint8Array(ivArr);
   let ivBlob: crypto.DataBlob = { data: dataIv };
-  let tagArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let tagArr: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   let dataTag: Uint8Array = new Uint8Array(tagArr);
   let tagBlob: crypto.DataBlob = { data: dataTag };
   let gcmParamsSpec: crypto.GcmParamsSpec = {
@@ -63,7 +63,7 @@ function genGcmParamsSpecEmptyAAD(): crypto.GcmParamsSpec {
   let ivArr: Array<number> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   let dataIv: Uint8Array = new Uint8Array(ivArr);
   let ivBlob: crypto.DataBlob = { data: dataIv };
-  let tagArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let tagArr: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   let dataTag: Uint8Array = new Uint8Array(tagArr);
   let tagBlob: crypto.DataBlob = { data: dataTag };
   let gcmParamsSpec: crypto.GcmParamsSpec = {
@@ -80,7 +80,7 @@ function genGcmParamsSpecAADNullData(): crypto.GcmParamsSpec {
   let ivArr: Array<number> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   let dataIv: Uint8Array = new Uint8Array(ivArr);
   let ivBlob: crypto.DataBlob = { data: dataIv };
-  let tagArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let tagArr: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   let dataTag: Uint8Array = new Uint8Array(tagArr);
   let tagBlob: crypto.DataBlob = { data: dataTag };
   let gcmParamsSpec: crypto.GcmParamsSpec = {
@@ -97,7 +97,7 @@ function genGcmParamsSpecWithoutAADData(): crypto.GcmParamsSpec {
   let ivArr: Array<number> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   let dataIv: Uint8Array = new Uint8Array(ivArr);
   let ivBlob: crypto.DataBlob = { data: dataIv };
-  let tagArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let tagArr: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   let dataTag: Uint8Array = new Uint8Array(tagArr);
   let tagBlob: crypto.DataBlob = { data: dataTag };
   let gcmParamsSpec: crypto.GcmParamsSpec = {
@@ -114,7 +114,7 @@ function genGcmParamsSpecWithoutAAD(): crypto.GcmParamsSpec {
   let ivArr: Array<number> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   let dataIv: Uint8Array = new Uint8Array(ivArr);
   let ivBlob: crypto.DataBlob = { data: dataIv };
-  let tagArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let tagArr: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   let dataTag: Uint8Array = new Uint8Array(tagArr);
   let tagBlob: crypto.DataBlob = { data: dataTag };
   let gcmParamsSpec: crypto.GcmParamsSpec = {

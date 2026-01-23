@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,6 +22,7 @@ import backgroundTaskManager from '@ohos.resourceschedule.backgroundTaskManager'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { BusinessError } from "@ohos.base"
 import Utils from './Util.test';
+import { RecordData } from '@ohos.base';
 let DOMAIN: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let TAG: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -54,7 +55,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       requestCode: 0,
       actionFlags: wantAgentFlags,
       actionType: wantAgent.OperationType.START_ABILITY,
-      extraInfo: { "subMode": key } as Record<String,undefined|null|Object>
+      extraInfo: { "subMode": key } as Record<String,RecordData>
     };
 
     beforeAll(() => {

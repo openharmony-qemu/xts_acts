@@ -17,7 +17,7 @@ import { Entry,Component,Video,Resource,$r,ShadowType,CopyOptions,TextCase,TextD
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { TextModifier } from "@ohos.arkui.modifier";

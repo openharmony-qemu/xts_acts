@@ -60,9 +60,7 @@ struct PostFrameCallbackIndex {
           .height('5%')
           .id('postDelayedFrameCallback_id')
           .onClick((e:ClickEvent) => {
-            console.log('++++++++++++1')
             this.getUIContext().postDelayedFrameCallback(this.myFrameCallback2, 1);
-            console.log('++++++++++++2')
           })
         Button('点击触发postDelayedFrameCallback null')
           .height('5%')

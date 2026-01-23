@@ -17,7 +17,7 @@ import { Entry,NavPathStack,Component,$r,ListItemOptions,List,RowOptions,Resourc
 import {
   State,
   Link,
-  Prop,Provide
+  PropRef,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import observer from '@ohos.arkui.observer'
@@ -59,14 +59,14 @@ struct NavDestinationInfoState {
 
   onPageShow() {
     observer.onNavDestinationUpdate((info) => {
-console.info('infoinfoinfoinfo',info.state)
-      // if (info.state == this.infoStat) {
-      //   this.tState = "ON_SHOWN"
-      // }
-      //
-      // if (info.state == this.infoSta1t) {
-      //   this.tState = "ON_HIDDEN"
-      // }
+      console.info('infoinfoinfoinfo',info.state)
+      if (info.state == this.infoStat) {
+        this.tState = "ON_SHOWN"
+      }
+      
+      if (info.state == this.infoSta1t) {
+        this.tState = "ON_HIDDEN"
+      }
     });
   }
 

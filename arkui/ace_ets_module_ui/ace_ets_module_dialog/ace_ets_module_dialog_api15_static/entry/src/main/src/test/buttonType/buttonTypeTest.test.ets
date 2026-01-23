@@ -71,7 +71,6 @@ export default function buttonTypeTest() {
     
     
 
-
 /**
      * @tc.number   buttonTypeTest_static_0100
      * @tc.name     buttonTypeTest_static_0100

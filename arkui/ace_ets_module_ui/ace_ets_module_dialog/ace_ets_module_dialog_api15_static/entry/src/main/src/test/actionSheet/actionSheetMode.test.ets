@@ -67,7 +67,6 @@ export default function actionSheetMode() {
     
     
 
-
 /**
      * @tc.number   actionSheetMode_static_0100
      * @tc.name     actionSheetMode_static_0100
@@ -111,7 +110,6 @@ it('actionSheetMode_static_0100', Level.LEVEL1, async (done: () => void): Promis
     
     
 
-
 /**
      * @tc.number   actionSheetMode_static_0200
      * @tc.name     actionSheetMode_static_0200
@@ -148,14 +146,12 @@ it('actionSheetMode_static_0200', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
       let btn4 = (await driver.findComponent(ON.text('Confirm button')));
       expect(btn4 != null).assertFalse();
-      // await ( btn4?.click() as Promise<void>);
       console.info('[actionSheetMode_static_0200] END');
       done();
     });
 
     
     
-
 
 /**
      * @tc.number   actionSheetMode_static_0300
@@ -200,7 +196,6 @@ it('actionSheetMode_static_0300', Level.LEVEL1, async (done: () => void): Promis
 
     
     
-
 
 /**
      * @tc.number   actionSheetMode_static_0400
@@ -247,7 +242,6 @@ it('actionSheetMode_static_0400', Level.LEVEL1, async (done: () => void): Promis
      
     
 
-
 /**
      * @tc.number   actionSheetMode_static_0500
      * @tc.name     actionSheetMode_static_0500
@@ -289,7 +283,6 @@ it('actionSheetMode_static_0500', Level.LEVEL1, async (done: () => void): Promis
      
     
 
-
 /**
      * @tc.number   actionSheetMode_static_0600
      * @tc.name     actionSheetMode_static_0600
@@ -328,7 +321,6 @@ it('actionSheetMode_static_0600', Level.LEVEL1, async (done: () => void): Promis
 
     
     
-
 
 /**
      * @tc.number   actionSheetMode_static_0700
@@ -371,7 +363,6 @@ it('actionSheetMode_static_0700', Level.LEVEL1, async (done: () => void): Promis
     });
     
     
-
 
 /**
      * @tc.number   actionSheetMode_static_0800

@@ -80,14 +80,14 @@ export default function showToastOptions() {
     });
 
 
+    
     /**
      * @tc.number   showToastOptions_static_0100
      * @tc.name     showToastOptions_static_0100
      * @tc.desc     showToastOptions_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('showToastOptions_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+it('showToastOptions_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
         console.info('showToastOptions_static_0100 START');
         let driver = Driver.create()
@@ -114,21 +114,23 @@ export default function showToastOptions() {
       });
 
 
+    
     /**
      * @tc.number   showToastOptions_static_0200
      * @tc.name     showToastOptions_static_0200
      * @tc.desc     showToastOptions_static_0200
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('showToastOptions_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+it('showToastOptions_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.info('showToastOptions_static_0200 START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
         let button = await driver.findComponent(ON.id('shadowOption'));
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
+        console.info('showToastOptions_static_0200 getInspectorTree before');
         let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        console.info('showToastOptions_static_0200 START');
         await CommonFunc.sleep(1000);
 
         if (currentDeviceIsPC) {
@@ -157,14 +159,14 @@ export default function showToastOptions() {
       });
 
 
+    
     /**
      * @tc.number   showToastOptions_static_0300
      * @tc.name     showToastOptions_static_0300
      * @tc.desc     showToastOptions_static_0300
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('showToastOptions_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+it('showToastOptions_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.info('showToastOptions_static_0300 START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -188,14 +190,14 @@ export default function showToastOptions() {
       });
 
 
+    
     /**
      * @tc.number   showToastOptions_static_0400
      * @tc.name     showToastOptions_static_0400
      * @tc.desc     showToastOptions_static_0400
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('showToastOptions_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+it('showToastOptions_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.info('showToastOptions_static_0400 START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -221,14 +223,14 @@ export default function showToastOptions() {
       });
 
 
+    
     /**
      * @tc.number   showToastOptions_static_0500
      * @tc.name     showToastOptions_static_0500
      * @tc.desc     showToastOptions_static_0500
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('showToastOptions_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+it('showToastOptions_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.info('showToastOptions_static_0500 START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -255,14 +257,14 @@ export default function showToastOptions() {
       });
 
 
+    
     /**
      * @tc.number   showToastOptions_static_0600
      * @tc.name     showToastOptions_static_0600
      * @tc.desc     showToastOptions_static_0600
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('showToastOptions_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+it('showToastOptions_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.info('showToastOptions_static_0600 START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -290,14 +292,14 @@ export default function showToastOptions() {
       });
 
 
+    
     /**
      * @tc.number   showToastOptions_static_0700
      * @tc.name     showToastOptions_static_0700
      * @tc.desc     showToastOptions_static_0700
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('showToastOptions_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+it('showToastOptions_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.info('showToastOptions_static_0700 START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -325,14 +327,14 @@ export default function showToastOptions() {
       });
 
 
+    
     /**
      * @tc.number   showToastOptions_static_0800
      * @tc.name     showToastOptions_static_0800
      * @tc.desc     showToastOptions_static_0800
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('showToastOptions_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+it('showToastOptions_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.info('showToastOptions_static_0800 START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -357,14 +359,14 @@ export default function showToastOptions() {
       });
 
 
+    
     /**
      * @tc.number   showToastOptions_static_0900
      * @tc.name     showToastOptions_static_0900
      * @tc.desc     showToastOptions_static_0900
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('showToastOptions_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+it('showToastOptions_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.info('showToastOptions_static_0900 START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);

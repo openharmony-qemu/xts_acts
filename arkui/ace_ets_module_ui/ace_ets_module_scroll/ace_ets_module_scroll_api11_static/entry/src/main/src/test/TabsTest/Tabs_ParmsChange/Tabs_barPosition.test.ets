@@ -89,8 +89,7 @@ export default function Tabs_barPosition() {
 
 
     
-    
-/**
+    /**
      * @tc.number   TabsBarPositionStartWithVerticalFalse_static_01
      * @tc.name     TabsBarPositionStartWithVerticalFalse_static_01
      * @tc.desc     TabsBarPositionStartWithVerticalFalse_static_01
@@ -229,8 +228,7 @@ it('TabsBarPositionStartWithVerticalFalse_static_01', Level.LEVEL0, async (done:
 
 
     
-    
-/**
+    /**
      * @tc.number   TabsBarPositionEndWithVerticalFalse_static_02
      * @tc.name     TabsBarPositionEndWithVerticalFalse_static_02
      * @tc.desc     TabsBarPositionEndWithVerticalFalse_static_02
@@ -369,8 +367,7 @@ it('TabsBarPositionEndWithVerticalFalse_static_02', Level.LEVEL0, async (done: (
 
 
     
-    
-/**
+    /**
      * @tc.number   TabsBarPositionStartWithVerticalTrue_static_03
      * @tc.name     TabsBarPositionStartWithVerticalTrue_static_03
      * @tc.desc     TabsBarPositionStartWithVerticalTrue_static_03
@@ -526,8 +523,7 @@ it('TabsBarPositionStartWithVerticalTrue_static_03', Level.LEVEL0, async (done: 
 
 
     
-    
-/**
+    /**
      * @tc.number   TabsBarPositionEndWithVerticalTrue_static_04
      * @tc.name     TabsBarPositionEndWithVerticalTrue_static_04
      * @tc.desc     TabsBarPositionEndWithVerticalTrue_static_04

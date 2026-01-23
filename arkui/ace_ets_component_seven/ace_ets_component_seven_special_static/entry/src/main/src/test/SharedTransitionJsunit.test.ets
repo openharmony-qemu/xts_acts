@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,6 +22,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility } from './Util.test'
 import { SharedTransitionEffectType } from '@ohos.arkui.component'
+import { RecordData } from '@ohos.base';
 
 export default function sharedTransitionJsunit() {
   describe('sharedTransitionTest', () => {
@@ -71,7 +72,7 @@ it('sharedTransitionTest_static_0100', Level.LEVEL0, async (done: () => void): P
             "duration": 2000,
             "delay": 5,
             "type": SharedTransitionEffectType.Exchange
-          } as Record<string,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 194,
@@ -85,9 +86,9 @@ it('sharedTransitionTest_static_0100', Level.LEVEL0, async (done: () => void): P
       let callback = (indexEventOne: events_emitter.EventData) => {
         console.info("sharedTransitionTest_static_0100 get state result is: " + JSON.stringify(indexEventOne));
         try {
-          expect((indexEventOne.data as Record<string,undefined|null|Object>)['duration']).assertEqual(2000);
-          expect((indexEventOne.data as Record<string,undefined|null|Object>)['delay']).assertEqual(5);
-          expect((indexEventOne.data as Record<string,undefined|null|Object>)['type']).assertEqual(SharedTransitionEffectType.Exchange);
+          expect((indexEventOne.data as Record<String,RecordData>)['duration']).assertEqual(2000);
+          expect((indexEventOne.data as Record<String,RecordData>)['delay']).assertEqual(5);
+          expect((indexEventOne.data as Record<String,RecordData>)['type']).assertEqual(SharedTransitionEffectType.Exchange);
         } catch (err) {
           console.info("sharedTransitionTest_static_0100 error: " + (err as Error).message);
         }

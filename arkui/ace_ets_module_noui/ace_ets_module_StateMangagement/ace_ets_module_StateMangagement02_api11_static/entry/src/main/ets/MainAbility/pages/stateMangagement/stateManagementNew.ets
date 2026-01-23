@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,14 +46,14 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Observed,
   Environment,
@@ -63,6 +63,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from "@ohos.hilog";
 import emitter from "@ohos.events.emitter";
+import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -79,7 +80,7 @@ struct StateManagementGetShared {
     let uiContext = this.getUIContext();
     try {
       let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('stateManagementNew', router);
+      AppStorage.setOrCreate<Router>('router', router);
     } catch (error: Error) {
       console.log('error ' + error);
     }
@@ -99,7 +100,7 @@ struct StateManagementGetShared {
             let backDataOne: emitter.EventData = {
               data: {
                 "Result": (this.storage1 != null)
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEventOne: emitter.InnerEvent = {
               eventId: 60223,
@@ -119,7 +120,7 @@ struct StateManagementGetShared {
             let backDataTwo: emitter.EventData = {
               data: {
                 "Result": "callback2"
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEventTwo: emitter.InnerEvent = {
               eventId: 60224,
@@ -141,7 +142,7 @@ struct StateManagementGetShared {
             let backDataThree: emitter.EventData = {
               data: {
                 "Result": "callback3"
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEventThree: emitter.InnerEvent = {
               eventId: 60225,
@@ -152,8 +153,6 @@ struct StateManagementGetShared {
           } catch (err) {
             console.info("setOrCreate emit action state err: " + JSON.stringify((err as Error)?.message))
           }
-          // this.storage1?.setOrCreate("storageSimpleProp",47)
-          // console.log("storageSimpleProp setOrCreate is :  " + this.simpleVarName)
         })
 
       Text(`Parent from LocalStorage ${this.simpleVarName}`).height('5%')
@@ -163,7 +162,7 @@ struct StateManagementGetShared {
             let backDataFour: emitter.EventData = {
               data: {
                 "Result": "callback4"
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEventFour: emitter.InnerEvent = {
               eventId: 60226,

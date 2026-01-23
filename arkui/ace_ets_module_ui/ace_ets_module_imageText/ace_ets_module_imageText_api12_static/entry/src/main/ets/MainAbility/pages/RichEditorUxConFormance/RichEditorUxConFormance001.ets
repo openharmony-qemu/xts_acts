@@ -75,7 +75,7 @@ build() {
           start: 0,
           end: 5
         })!.forEach(item => {
-          if ( (item as RichEditorImageSpanResult)?.imageStyle) {
+          if (item instanceof RichEditorImageSpanResult) {
             this.content += (item as RichEditorImageSpanResult).valueResourceStr;
             if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
               console.log('RichEditorController get imageStyle');
@@ -86,8 +86,8 @@ build() {
               this.content += (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize;
               this.content += '\n'
             } else {
-              console.log('RichEditorController textStyle:' + JSON.stringify((item).textStyle));
-              this.colorInfo = JSON.stringify((item).textStyle);
+              console.log('RichEditorController textStyle:' + JSON.stringify((item as RichEditorTextSpanResult).textStyle));
+              this.colorInfo = JSON.stringify((item as RichEditorTextSpanResult).textStyle);
               this.content += (item as RichEditorTextSpanResult).value;
               this.content += '\n'
             }
@@ -110,7 +110,6 @@ build() {
             })
         })
         .id('RichEditorUxConFormance001')
-
     }
   }
 }

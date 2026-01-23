@@ -17,7 +17,7 @@ import screen from '@ohos.screen';
 import { BusinessError } from '@ohos.base';
 import { RectValue } from './Utils';
 import inspector from '@ohos.arkui.inspector';
-import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
 export default class CommonFunc {
@@ -37,9 +37,9 @@ export default class CommonFunc {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Class.from<String>()) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " + AppStorage.get<number>("winTop") );
     CommonFunc.rect_left = Number(rectInfo[0][0] ?? 0);
@@ -53,9 +53,9 @@ export default class CommonFunc {
 
   static getComponentRectOnScreen(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Class.from<String>()) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " + AppStorage.get<number>("winTop") );
     CommonFunc.rect_left = Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));

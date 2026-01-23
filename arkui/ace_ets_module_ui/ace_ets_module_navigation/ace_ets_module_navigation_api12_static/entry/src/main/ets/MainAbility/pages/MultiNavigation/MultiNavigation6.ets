@@ -22,10 +22,10 @@ import {
 import {
   State,
   Link,
-  Prop,Provide,Consume
+  PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { MultiNavigation, MultiNavPathStack, SplitPolicy } from './mainpage/MultiNavigation';
+import {MultiNavigation,MultiNavPathStack, SplitPolicy}  from './mainpage/MultiNavigation';
 
 @Entry
 @Component
@@ -49,13 +49,12 @@ struct MultiNavigation6 {
       MultiNavigation({
         navDestination: this.PageMap,
         multiStack: this.pageStack,
-        // onHomeShowInTop: (name) => {
-        // }
+        onHomeShowInTop: (name: string) => {}
       })
-        // .width(350).height(400).border({width:1})
+        .width(350).height(400).border({width:1})
 
       Button('pushPath PageDetail1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
+        this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
       }).id('MultiNavigation6_btn1')
 
       Text(this.text).id('MultiNavigation6_text1')
@@ -84,7 +83,7 @@ export struct PageDetail1 {
 
         Button('replacePath pageFull').onClick((e: ClickEvent) => {
           if (this.pageStack !== undefined && this.pageStack !== null){
-            // this.pageStack.replacePath({name:'pageFull'})
+            this.pageStack.replacePath(new NavPathInfo('pageFull', undefined))
           }
         }).id('MultiNavigation6_PageDetail1_btn2')
       }

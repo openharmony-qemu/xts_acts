@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ class NodeContentCtrl {
     let node = typeNode.createTextNode(this.uiContext)
     node.initialize("ContentText:" + this.textNode.length).fontSize(20)
     this.textNode.push(node)
-    this.textNode1 = node
+    // this.textNode1 = node
     storage.set<Int>('NodeContentFlagAPI', this.textNode.length);
     this.content.addFrameNode(node)
   }

@@ -13,22 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-// import router from '@ohos.router';
-// import {
-//   UiComponent,
-//   Driver,
-//   Component,
-//   UiWindow,
-//   ON,
-//   BY,
-//   MatchPattern,
-//   DisplayRotation,
-//   ResizeDirection,
-//   WindowMode,
-//   PointerMatrix
-// } from '@ohos.UiTest';
-// import CommonFunc from '../../MainAbility/common/Common';
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
@@ -69,7 +53,7 @@ export default function showActionMenuMode() {
         if (!("showActionMenuMode" == pages.name)) {
           console.info("get showActionMenuMode state pages.name: " + JSON.stringify(pages.name));
           // let result = await showActionMenuMode.pushUrl(options);
-          showActionMenuMode.pushUrl(options);
+          showActionMenuMode.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push showActionMenuMode success: " + JSON.stringify(result));
         }
@@ -85,7 +69,6 @@ export default function showActionMenuMode() {
 
     
     
-
 
 /**
      * @tc.number   showActionMenuMode_static_0100
@@ -130,7 +113,6 @@ it('showActionMenuMode_static_0100', Level.LEVEL1, async (done: () => void): Pro
     
     
 
-
 /**
      * @tc.number   showActionMenuMode_static_0200
      * @tc.name     showActionMenuMode_static_0200
@@ -165,16 +147,14 @@ it('showActionMenuMode_static_0200', Level.LEVEL1, async (done: () => void): Pro
       console.info('[showActionMenuMode_static_0200] back');
 
       await CommonFunc.sleep(1000);
-      let btn4: Component = ( await driver.findComponent(ON.text('取消')) ) as Component;
+      let btn4 = ( await driver.findComponent(ON.text('取消')) );
       expect(btn4 != null).assertFalse();
-      // await ( btn4?.click() as Promise<void>);
       console.info('[showActionMenuMode_static_0200] END');
       done();
     });
 
     
     
-
 
 /**
      * @tc.number   showActionMenuMode_static_0300
@@ -220,7 +200,6 @@ it('showActionMenuMode_static_0300', Level.LEVEL1, async (done: () => void): Pro
     
     
 
-
 /**
      * @tc.number   showActionMenuMode_static_0400
      * @tc.name     showActionMenuMode_static_0400
@@ -265,7 +244,6 @@ it('showActionMenuMode_static_0400', Level.LEVEL1, async (done: () => void): Pro
     
     
 
-
 /**
      * @tc.number   showActionMenuMode_static_0500
      * @tc.name     showActionMenuMode_static_0500
@@ -307,7 +285,6 @@ it('showActionMenuMode_static_0500', Level.LEVEL1, async (done: () => void): Pro
     });
     
     
-
 
 /**
      * @tc.number   showActionMenuMode_static_0600

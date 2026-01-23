@@ -68,7 +68,8 @@ export default function TextPickerDialog_Cancel_Test() {
 
     
     
-    /**
+    
+/**
      * @tc.number   TextPickerDialog_Cancel_Test_static_001
      * @tc.name     TextPickerDialog_Cancel_Test_static_001
      * @tc.desc     TextPickerDialog_Cancel_Test_static_001

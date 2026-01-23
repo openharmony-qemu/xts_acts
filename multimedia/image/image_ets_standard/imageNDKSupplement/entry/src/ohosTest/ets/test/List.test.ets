@@ -51,6 +51,12 @@ import IRNdkErrCodeSupplementTest from './IRNdkErrCodeSupplement.test';
 import ImageResultIRNdkErrCodeTest from './ImageResultIRNdkErrCodeTest.test';
 import ImageReceiverNativeReadTest from './ImageReceiverNativeReadTest.test';
 import OHImageNdkFrameworkTest from './OHImageNdkFrameworkTest.test';
+import OHImageSourceNativeSupp from './ImageSourceNativeGetImageProperty.test';
+import imageFrameworkImageSourceNativeModifySuppTest from './ImageSourceNativeModify.test';
+import PixelMapNativeCropTest from './PixelmapNativeCropTest.test';
+import ImagePackerNativeTest from './ImagePackerNativeTest.test';
+import ImagePictureNativeTest from './ImagePictureNativeTest.test';
+import OHImageSourceNativeSupplementTest from './OHImageSourceNativeSupplement.test';
 
 
 export default function testsuite() {
@@ -92,4 +98,10 @@ export default function testsuite() {
   ImageResultIRNdkErrCodeTest();
   IRNdkErrCode();
   OHImageNdkFrameworkTest();
+  OHImageSourceNativeSupp();
+  imageFrameworkImageSourceNativeModifySuppTest();
+  PixelMapNativeCropTest();
+  ImagePackerNativeTest();
+  ImagePictureNativeTest();
+  OHImageSourceNativeSupplementTest()
 }

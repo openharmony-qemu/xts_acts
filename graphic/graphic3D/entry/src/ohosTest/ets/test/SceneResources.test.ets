@@ -13,10 +13,11 @@
  * limitations under the License.
  */
 import { Vec4, Aabb, SceneResourceType, SceneResource, Shader, MaterialType, Material, ShaderMaterial, SubMesh, Mesh,
-  Animation, EnvironmentBackgroundType, Environment, Node, Geometry, SceneResourceFactory, Scene, PolygonMode } from '@ohos.graphics.scene'
+  Animation, EnvironmentBackgroundType, Environment, Node, Geometry, SceneResourceFactory, Scene, PolygonMode, 
+  Effect, EffectParameters,SceneNodeParameters } from '@kit.ArkGraphics3D'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import * as scene3d from '@ohos.graphics.scene'
-import { GenRandom, sleep } from '../common/utils';
+import { lookAt, GenRandom, sleep } from '../common/utils';
 
 export default function sceneResourcesTest() {
   describe('sceneResourcesTest', ()=> {
@@ -1575,6 +1576,643 @@ export default function sceneResourcesTest() {
         done();
       } catch (err) {
         console.info(msg + " Failed in testSceneResourcesEnvironmentEnvironmentRotation " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testShaderSetShaderInputs
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1015
+     * @tc.desc   Test setShaderInputs method of Shader to set shader inputs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testShaderSetShaderInputs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testShaderSetShaderInputs";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != undefined).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+        shader = await rf.createShader({ name: "CustomShader", uri: $rawfile("shaders/custom_shader/custom_material_sample.shader")});
+        expect(shader != undefined).assertTrue();
+        console.info(msg + " shader created successfully");
+
+        material = await rf.createMaterial({ name: "CustomMaterial" }, MaterialType.SHADER);
+        expect(material != null).assertTrue();
+        console.info(msg + " material created successfully");
+
+        if (material) {
+          console.info(msg + " material colorShader set start");
+          material.colorShader = shader as Shader;
+        }
+
+        expect(material?.colorShader != null).assertTrue();
+        console.info(msg + " colorShader set successfully");
+
+        // Create a dummy image for testing
+        let testImage: scene3d.Image = await rf.createImage({ name: "testImage", uri: $rawfile("gltf/Cube/glTF/Cube_BaseColor.png")});
+        console.info(msg + " createImage successfully");
+
+        // Test setShaderInputs with various input types
+        if (material && material.colorShader) {
+          console.info(msg + " material && material.colorShader == True");
+          material.colorShader.setShaderInputs({
+            "time": 1.5,
+            "vec_1": {x: 1.0, y: 1.0, z: -1.0, w: -1.0},
+            "vec_2": {x: 0.0, y: 0.0, z: 0.0},
+            "vec_3": {x: 0.0, y: 0.5},
+            "BASE_COLOR_Image": testImage
+          });
+          console.info(msg + " setShaderInputs called successfully");
+
+          // Verify inputs were set
+          expect(typeof material.colorShader.inputs["time"]).assertEqual('number');
+          expect(material.colorShader.inputs["time"]).assertEqual(1.5);
+          console.info(msg + " time input verified");
+
+          expect(material.colorShader.inputs["vec_1"] != null).assertTrue();
+          console.info(msg + " vec_1 input verified");
+
+          expect(material.colorShader.inputs["vec_2"] != null).assertTrue();
+          console.info(msg + " vec_2 input verified");
+
+          expect(material.colorShader.inputs["vec_3"] != null).assertTrue();
+          console.info(msg + " vec_3 input verified");
+
+          expect(material.colorShader.inputs["BASE_COLOR_Image"] != null).assertTrue();
+          console.info(msg + " BASE_COLOR_Image input verified");
+        }
+        else {
+          console.info(msg + " material && material.colorShader == False");
+          expect(material && material.colorShader).assertTrue();
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testShaderSetShaderInputs " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testMaterialTypeOCCLUSION
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1018
+     * @tc.desc   Test MaterialType.OCCLUSION enum value and verify OCCLUSION material can be created
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMaterialTypeOCCLUSION', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testMaterialTypeOCCLUSION";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load();
+        expect(scene != undefined).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory retrieved successfully");
+
+        // Test MaterialType.OCCLUSION enum value
+        expect(MaterialType.OCCLUSION).assertEqual(4);
+        console.info(msg + " MaterialType.OCCLUSION value is 4");
+
+        // Verify OCCLUSION material can be created
+        let occlusionMaterial = await rf.createMaterial({ name: "OcclusionMaterial" }, MaterialType.OCCLUSION);
+        expect(occlusionMaterial != null).assertTrue();
+        console.info(msg + " OCCLUSION material created successfully");
+
+        // Verify material type is OCCLUSION
+        expect(occlusionMaterial?.materialType).assertEqual(MaterialType.OCCLUSION);
+        console.info(msg + " material type verified as OCCLUSION");
+
+        // Test all MaterialType enum values for completeness
+        expect(MaterialType.SHADER).assertEqual(1);
+        console.info(msg + " MaterialType.SHADER value is 1");
+
+        expect(MaterialType.METALLIC_ROUGHNESS).assertEqual(2);
+        console.info(msg + " MaterialType.METALLIC_ROUGHNESS value is 2");
+
+        expect(MaterialType.UNLIT).assertEqual(3);
+        console.info(msg + " MaterialType.UNLIT value is 3");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testMaterialTypeOCCLUSION " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testMat4x4Properties
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1019
+     * @tc.desc   Test Mat4x4 properties: x, y, z, w columns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMat4x4Properties', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testMat4x4Properties";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+        let sceneCameraParameter: SceneNodeParameters = { name: "camera1" };
+        let camera: scene3d.Camera = await rf.createCamera(sceneCameraParameter);
+        expect(camera != null).assertTrue();
+        console.info(msg + " camera created successfully");
+
+        camera.enabled = true;
+        lookAt(camera, { x: 0, y: 0, z: -3 }, { x: 0, y: 0, z: 0 }, { x: 0, y: 1, z: 0 });
+
+        // Get view matrix
+        let viewMatrix: scene3d.Mat4x4 = camera.getViewMatrix();
+        expect(viewMatrix != null).assertTrue();
+        console.info(msg + " viewMatrix retrieved successfully");
+
+        // Test Mat4x4.x property (first column as Vec4)
+        expect(viewMatrix.x != null).assertTrue();
+        expect(typeof viewMatrix.x.x).assertEqual('number');
+        expect(typeof viewMatrix.x.y).assertEqual('number');
+        expect(typeof viewMatrix.x.z).assertEqual('number');
+        expect(typeof viewMatrix.x.w).assertEqual('number');
+        console.info(msg + " Mat4x4.x property verified as Vec4 with x, y, z, w components");
+
+        // Test Mat4x4.y property (second column as Vec4)
+        expect(viewMatrix.y != null).assertTrue();
+        expect(typeof viewMatrix.y.x).assertEqual('number');
+        expect(typeof viewMatrix.y.y).assertEqual('number');
+        expect(typeof viewMatrix.y.z).assertEqual('number');
+        expect(typeof viewMatrix.y.w).assertEqual('number');
+        console.info(msg + " Mat4x4.y property verified as Vec4 with x, y, z, w components");
+
+        // Test Mat4x4.z property (third column as Vec4)
+        expect(viewMatrix.z != null).assertTrue();
+        expect(typeof viewMatrix.z.x).assertEqual('number');
+        expect(typeof viewMatrix.z.y).assertEqual('number');
+        expect(typeof viewMatrix.z.z).assertEqual('number');
+        expect(typeof viewMatrix.z.w).assertEqual('number');
+        console.info(msg + " Mat4x4.z property verified as Vec4 with x, y, z, w components");
+
+        // Test Mat4x4.w property (fourth column as Vec4)
+        expect(viewMatrix.w != null).assertTrue();
+        expect(typeof viewMatrix.w.x).assertEqual('number');
+        expect(typeof viewMatrix.w.y).assertEqual('number');
+        expect(typeof viewMatrix.w.z).assertEqual('number');
+        expect(typeof viewMatrix.w.w).assertEqual('number');
+        console.info(msg + " Mat4x4.w property verified as Vec4 with x, y, z, w components");
+
+        // Verify each column has proper structure
+        expect(viewMatrix.x.x >= 0 || viewMatrix.x.x < 0).assertTrue();
+        expect(viewMatrix.x.y >= 0 || viewMatrix.x.y < 0).assertTrue();
+        expect(viewMatrix.x.z >= 0 || viewMatrix.x.z < 0).assertTrue();
+        expect(viewMatrix.x.w >= 0 || viewMatrix.x.w < 0).assertTrue();
+        console.info(msg + " Mat4x4.x components are valid numbers");
+
+        expect(viewMatrix.y.x >= 0 || viewMatrix.y.x < 0).assertTrue();
+        expect(viewMatrix.y.y >= 0 || viewMatrix.y.y < 0).assertTrue();
+        expect(viewMatrix.y.z >= 0 || viewMatrix.y.z < 0).assertTrue();
+        expect(viewMatrix.y.w >= 0 || viewMatrix.y.w < 0).assertTrue();
+        console.info(msg + " Mat4x4.y components are valid numbers");
+
+        expect(viewMatrix.z.x >= 0 || viewMatrix.z.x < 0).assertTrue();
+        expect(viewMatrix.z.y >= 0 || viewMatrix.z.y < 0).assertTrue();
+        expect(viewMatrix.z.z >= 0 || viewMatrix.z.z < 0).assertTrue();
+        expect(viewMatrix.z.w >= 0 || viewMatrix.z.w < 0).assertTrue();
+        console.info(msg + " Mat4x4.z components are valid numbers");
+
+        expect(viewMatrix.w.x >= 0 || viewMatrix.w.x < 0).assertTrue();
+        expect(viewMatrix.w.y >= 0 || viewMatrix.w.y < 0).assertTrue();
+        expect(viewMatrix.w.z >= 0 || viewMatrix.w.z < 0).assertTrue();
+        expect(viewMatrix.w.w >= 0 || viewMatrix.w.w < 0).assertTrue();
+        console.info(msg + " Mat4x4.w components are valid numbers");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testMat4x4Properties " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testMat4x4PropertiesProjectionMatrix
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1020
+     * @tc.desc   Test Mat4x4 properties with projection matrix
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMat4x4PropertiesProjectionMatrix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testMat4x4PropertiesProjectionMatrix";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+        let sceneCameraParameter: SceneNodeParameters = { name: "camera1" };
+        let camera: scene3d.Camera = await rf.createCamera(sceneCameraParameter);
+        expect(camera != null).assertTrue();
+        console.info(msg + " camera created successfully");
+
+        camera.enabled = true;
+        lookAt(camera, { x: 0, y: 0, z: -3 }, { x: 0, y: 0, z: 0 }, { x: 0, y: 1, z: 0 });
+
+        // Get projection matrix
+        let projectionMatrix: scene3d.Mat4x4 = camera.getProjectionMatrix();
+        expect(projectionMatrix != null).assertTrue();
+        console.info(msg + " projectionMatrix retrieved successfully");
+
+        // Test Mat4x4.x property on projection matrix
+        expect(projectionMatrix.x != null).assertTrue();
+        expect(typeof projectionMatrix.x.x).assertEqual('number');
+        expect(typeof projectionMatrix.x.y).assertEqual('number');
+        expect(typeof projectionMatrix.x.z).assertEqual('number');
+        expect(typeof projectionMatrix.x.w).assertEqual('number');
+        console.info(msg + " projectionMatrix Mat4x4.x property verified");
+
+        // Test Mat4x4.y property on projection matrix
+        expect(projectionMatrix.y != null).assertTrue();
+        expect(typeof projectionMatrix.y.x).assertEqual('number');
+        expect(typeof projectionMatrix.y.y).assertEqual('number');
+        expect(typeof projectionMatrix.y.z).assertEqual('number');
+        expect(typeof projectionMatrix.y.w).assertEqual('number');
+        console.info(msg + " projectionMatrix Mat4x4.y property verified");
+
+        // Test Mat4x4.z property on projection matrix
+        expect(projectionMatrix.z != null).assertTrue();
+        expect(typeof projectionMatrix.z.x).assertEqual('number');
+        expect(typeof projectionMatrix.z.y).assertEqual('number');
+        expect(typeof projectionMatrix.z.z).assertEqual('number');
+        expect(typeof projectionMatrix.z.w).assertEqual('number');
+        console.info(msg + " projectionMatrix Mat4x4.z property verified");
+
+        // Test Mat4x4.w property on projection matrix
+        expect(projectionMatrix.w != null).assertTrue();
+        expect(typeof projectionMatrix.w.x).assertEqual('number');
+        expect(typeof projectionMatrix.w.y).assertEqual('number');
+        expect(typeof projectionMatrix.w.z).assertEqual('number');
+        expect(typeof projectionMatrix.w.w).assertEqual('number');
+        console.info(msg + " projectionMatrix Mat4x4.w property verified");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testMat4x4PropertiesProjectionMatrix " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testMat4x4PropertyComponents
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1021
+     * @tc.desc   Test Mat4x4 property components individually
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMat4x4PropertyComponents', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testMat4x4PropertyComponents";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+        let sceneCameraParameter: SceneNodeParameters = { name: "camera1" };
+        let camera: scene3d.Camera = await rf.createCamera(sceneCameraParameter);
+        expect(camera != null).assertTrue();
+        console.info(msg + " camera created successfully");
+
+        camera.enabled = true;
+        lookAt(camera, { x: 0, y: 0, z: -3 }, { x: 0, y: 0, z: 0 }, { x: 0, y: 1, z: 0 });
+
+        // Get view matrix
+        let viewMatrix: scene3d.Mat4x4 = camera.getViewMatrix();
+        expect(viewMatrix != null).assertTrue();
+
+        // Test individual components of each column
+        // Test x column components
+        let xValue = viewMatrix.x.x;
+        expect(typeof xValue).assertEqual('number');
+        console.info(msg + " viewMatrix.x.x = " + xValue);
+
+        let yValue = viewMatrix.x.y;
+        expect(typeof yValue).assertEqual('number');
+        console.info(msg + " viewMatrix.x.y = " + yValue);
+
+        let zValue = viewMatrix.x.z;
+        expect(typeof zValue).assertEqual('number');
+        console.info(msg + " viewMatrix.x.z = " + zValue);
+
+        let wValue = viewMatrix.x.w;
+        expect(typeof wValue).assertEqual('number');
+        console.info(msg + " viewMatrix.x.w = " + wValue);
+
+        // Test y column components
+        let xValue2 = viewMatrix.y.x;
+        expect(typeof xValue2).assertEqual('number');
+        console.info(msg + " viewMatrix.y.x = " + xValue2);
+
+        let yValue2 = viewMatrix.y.y;
+        expect(typeof yValue2).assertEqual('number');
+        console.info(msg + " viewMatrix.y.y = " + yValue2);
+
+        let zValue2 = viewMatrix.y.z;
+        expect(typeof zValue2).assertEqual('number');
+        console.info(msg + " viewMatrix.y.z = " + zValue2);
+
+        let wValue2 = viewMatrix.y.w;
+        expect(typeof wValue2).assertEqual('number');
+        console.info(msg + " viewMatrix.y.w = " + wValue2);
+
+        // Test z column components
+        let xValue3 = viewMatrix.z.x;
+        expect(typeof xValue3).assertEqual('number');
+        console.info(msg + " viewMatrix.z.x = " + xValue3);
+
+        let yValue3 = viewMatrix.z.y;
+        expect(typeof yValue3).assertEqual('number');
+        console.info(msg + " viewMatrix.z.y = " + yValue3);
+
+        let zValue3 = viewMatrix.z.z;
+        expect(typeof zValue3).assertEqual('number');
+        console.info(msg + " viewMatrix.z.z = " + zValue3);
+
+        let wValue3 = viewMatrix.z.w;
+        expect(typeof wValue3).assertEqual('number');
+        console.info(msg + " viewMatrix.z.w = " + wValue3);
+
+        // Test w column components
+        let xValue4 = viewMatrix.w.x;
+        expect(typeof xValue4).assertEqual('number');
+        console.info(msg + " viewMatrix.w.x = " + xValue4);
+
+        let yValue4 = viewMatrix.w.y;
+        expect(typeof yValue4).assertEqual('number');
+        console.info(msg + " viewMatrix.w.y = " + yValue4);
+
+        let zValue4 = viewMatrix.w.z;
+        expect(typeof zValue4).assertEqual('number');
+        console.info(msg + " viewMatrix.w.z = " + zValue4);
+
+        let wValue4 = viewMatrix.w.w;
+        expect(typeof wValue4).assertEqual('number');
+        console.info(msg + " viewMatrix.w.w = " + wValue4);
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testMat4x4PropertyComponents " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testMat4x4PropertyComponentsProjection
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1022
+     * @tc.desc   Test Mat4x4 property components individually on projection matrix
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMat4x4PropertyComponentsProjection', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testMat4x4PropertyComponentsProjection";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+        let sceneCameraParameter: SceneNodeParameters = { name: "camera1" };
+        let camera: scene3d.Camera = await rf.createCamera(sceneCameraParameter);
+        expect(camera != null).assertTrue();
+        console.info(msg + " camera created successfully");
+
+        camera.enabled = true;
+        lookAt(camera, { x: 0, y: 0, z: -3 }, { x: 0, y: 0, z: 0 }, { x: 0, y: 1, z: 0 });
+
+        // Get projection matrix
+        let projectionMatrix: scene3d.Mat4x4 = camera.getProjectionMatrix();
+        expect(projectionMatrix != null).assertTrue();
+
+        // Test individual components of each column on projection matrix
+        // Test x column components
+        let xValue = projectionMatrix.x.x;
+        expect(typeof xValue).assertEqual('number');
+        console.info(msg + " projectionMatrix.x.x = " + xValue);
+
+        let yValue = projectionMatrix.x.y;
+        expect(typeof yValue).assertEqual('number');
+        console.info(msg + " projectionMatrix.x.y = " + yValue);
+
+        let zValue = projectionMatrix.x.z;
+        expect(typeof zValue).assertEqual('number');
+        console.info(msg + " projectionMatrix.x.z = " + zValue);
+
+        let wValue = projectionMatrix.x.w;
+        expect(typeof wValue).assertEqual('number');
+        console.info(msg + " projectionMatrix.x.w = " + wValue);
+
+        // Test y column components
+        let xValue2 = projectionMatrix.y.x;
+        expect(typeof xValue2).assertEqual('number');
+        console.info(msg + " projectionMatrix.y.x = " + xValue2);
+
+        let yValue2 = projectionMatrix.y.y;
+        expect(typeof yValue2).assertEqual('number');
+        console.info(msg + " projectionMatrix.y.y = " + yValue2);
+
+        let zValue2 = projectionMatrix.y.z;
+        expect(typeof zValue2).assertEqual('number');
+        console.info(msg + " projectionMatrix.y.z = " + zValue2);
+
+        let wValue2 = projectionMatrix.y.w;
+        expect(typeof wValue2).assertEqual('number');
+        console.info(msg + " projectionMatrix.y.w = " + wValue2);
+
+        // Test z column components
+        let xValue3 = projectionMatrix.z.x;
+        expect(typeof xValue3).assertEqual('number');
+        console.info(msg + " projectionMatrix.z.x = " + xValue3);
+
+        let yValue3 = projectionMatrix.z.y;
+        expect(typeof yValue3).assertEqual('number');
+        console.info(msg + " projectionMatrix.z.y = " + yValue3);
+
+        let zValue3 = projectionMatrix.z.z;
+        expect(typeof zValue3).assertEqual('number');
+        console.info(msg + " projectionMatrix.z.z = " + zValue3);
+
+        let wValue3 = projectionMatrix.z.w;
+        expect(typeof wValue3).assertEqual('number');
+        console.info(msg + " projectionMatrix.z.w = " + wValue3);
+
+        // Test w column components
+        let xValue4 = projectionMatrix.w.x;
+        expect(typeof xValue4).assertEqual('number');
+        console.info(msg + " projectionMatrix.w.x = " + xValue4);
+
+        let yValue4 = projectionMatrix.w.y;
+        expect(typeof yValue4).assertEqual('number');
+        console.info(msg + " projectionMatrix.w.y = " + yValue4);
+
+        let zValue4 = projectionMatrix.w.z;
+        expect(typeof zValue4).assertEqual('number');
+        console.info(msg + " projectionMatrix.w.z = " + zValue4);
+
+        let wValue4 = projectionMatrix.w.w;
+        expect(typeof wValue4).assertEqual('number');
+        console.info(msg + " projectionMatrix.w.w = " + wValue4);
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testMat4x4PropertyComponentsProjection " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testEffectGetPropertyValue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1024
+     * @tc.desc   Test getPropertyValue method of Effect to get effect property values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEffectGetPropertyValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testEffectGetPropertyValue";
+      console.info(msg + ' begin ');
+      try {
+        // Load scene and create effect
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        let rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory obtained successfully");
+
+        // Create effect with valid effectId
+        let effectParameters: EffectParameters = {effectId: "89b83608-c910-433e-9fd8-22f3ef64eabd"};
+        let effect: Effect = await rf.createEffect(effectParameters);
+        expect(effect != null).assertTrue();
+        console.info(msg + " effect created successfully");
+
+        // Test 1: Get 'thresholdSoft' property value (should return Object)
+        let thresholdSoftValue = effect.getPropertyValue('thresholdSoft');
+        console.info(msg + " thresholdSoftValue: " + JSON.stringify(thresholdSoftValue));
+        expect(thresholdSoftValue != null).assertTrue();
+        expect(typeof thresholdSoftValue).assertEqual('number');
+        console.info(msg + " thresholdSoft property value retrieved successfully");
+
+        // Test 2: Get 'thresholdHard' property value (should return Object)
+        let thresholdHardValue = effect.getPropertyValue('thresholdHard');
+        console.info(msg + " thresholdHardValue: " + JSON.stringify(thresholdHardValue));
+        expect(thresholdHardValue != null).assertTrue();
+        expect(typeof thresholdHardValue).assertEqual('number');
+        console.info(msg + " thresholdHard property value retrieved successfully");
+
+        // Test 3: Get non-existent property value (should return null)
+        let invalidValue = effect.getPropertyValue('invalidProperty');
+        console.info(msg + " invalidValue: " + JSON.stringify(invalidValue));
+        expect(invalidValue).assertNull();
+        console.info(msg + " non-existent property returns null as expected");
+
+        // Test 4: Get undefined property value (should return undefined)
+        let undefinedValue = effect.getPropertyValue(undefined);
+        console.info(msg + " undefinedValue: " + JSON.stringify(undefinedValue));
+        expect(undefinedValue).assertUndefined();
+        console.info(msg + " undefined property returns undefined as expected");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testEffectGetPropertyValue " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testEffectSetPropertyValue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1025
+     * @tc.desc   Test setPropertyValue method of Effect to set effect property values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEffectSetPropertyValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testEffectSetPropertyValue";
+      console.info(msg + ' begin ');
+      try {
+        // Load scene and create effect
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        let rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory obtained successfully");
+
+        // Create effect with valid effectId
+        let effectParameters: EffectParameters = {effectId: "89b83608-c910-433e-9fd8-22f3ef64eabd"};
+        let effect: Effect = await rf.createEffect(effectParameters);
+        expect(effect != null).assertTrue();
+        console.info(msg + " effect created successfully");
+
+        // Test 1: Set 'thresholdSoft' property value (should return true)
+        let result1 = effect.setPropertyValue('thresholdSoft', 1);
+        console.info(msg + " set thresholdSoft result: " + result1);
+        expect(result1).assertTrue();
+        console.info(msg + " thresholdSoft property set successfully");
+
+        // Verify the value was set
+        let thresholdSoftValue = effect.getPropertyValue('thresholdSoft');
+        console.info(msg + " thresholdSoftValue after set: " + JSON.stringify(thresholdSoftValue));
+        expect(thresholdSoftValue).assertEqual(1);
+
+        // Test 2: Set 'thresholdHard' property value (should return true)
+        let result2 = effect.setPropertyValue('thresholdHard', 1);
+        console.info(msg + " set thresholdHard result: " + result2);
+        expect(result2).assertTrue();
+        console.info(msg + " thresholdHard property set successfully");
+
+        // Verify the value was set
+        let thresholdHardValue = effect.getPropertyValue('thresholdHard');
+        console.info(msg + " thresholdHardValue after set: " + JSON.stringify(thresholdHardValue));
+        expect(thresholdHardValue).assertEqual(1);
+
+        // Test 3: Set 'thresholdSoft' property value with undefined (should return true)
+        let dataUndefined:undefined;
+        let result3 = effect.setPropertyValue('thresholdSoft', dataUndefined);
+        console.info(msg + " set thresholdSoft with undefined result: " + result3);
+        expect(result3).assertFalse();
+        console.info(msg + " thresholdSoft property with undefined set successfully");
+
+        // Verify the value was set
+        let thresholdSoftWithUndefineValue = effect.getPropertyValue('thresholdSoft');
+        console.info(msg + " thresholdSoftValue with undefined after set: " + JSON.stringify(thresholdSoftWithUndefineValue));
+        expect(thresholdSoftWithUndefineValue).assertEqual(1);
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testEffectSetPropertyValue " + JSON.stringify(err));
         expect().assertFail();
         done();
       }

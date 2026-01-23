@@ -287,6 +287,7 @@ export default function SecurityHuksApiTest() {
     it('SUB_Security_HUKS_Api_API20_Interface_0900', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING).assertEqual(1);
       expect(huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING).assertEqual(2);
+      expect(huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_SM2_SM4_ECB_NOPADDING).assertEqual(5);
     })
 
     /**
@@ -573,6 +574,7 @@ export default function SecurityHuksApiTest() {
       expect(huks.HuksTag.HUKS_TAG_KEY_OVERRIDE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 520);
       expect(huks.HuksTag.HUKS_TAG_AE_TAG_LEN).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 521);
       expect(huks.HuksTag.HUKS_TAG_KEY_CLASS).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 522);
+      expect(huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 523);
       expect(huks.HuksTag.HUKS_TAG_IS_KEY_ALIAS).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 1001);
       expect(huks.HuksTag.HUKS_TAG_KEY_STORAGE_FLAG).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 1002);
       expect(huks.HuksTag.HUKS_TAG_IS_ALLOWED_WRAP).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 1003);

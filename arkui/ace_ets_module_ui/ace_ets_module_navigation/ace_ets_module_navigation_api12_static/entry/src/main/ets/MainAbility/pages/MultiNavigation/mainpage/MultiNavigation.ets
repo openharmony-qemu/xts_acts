@@ -22,7 +22,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide,Observed
+  PropRef,Provide,Observed
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from '@ohos.hilog';
@@ -32,7 +32,6 @@ import { SubNavigation } from './SubNavigation';
 import { DeviceListenerManager } from './DeviceListenerManager';
 import { NavWidthRangeAttrModifier } from './NavAttributeModifier';
 import { DeviceHelper } from './DeviceHelper';
-import {MultiNavigation,MultiNavPathStack}  from '@ohos.arkui.advanced.MultiNavigation'
 export enum SplitPolicy {
   HOME_PAGE = 0,
   DETAIL_PAGE = 1,
@@ -61,7 +60,7 @@ export struct MultiNavigation {
     if (name === 'SubNavigation') {
       SubNavigation({
         isPortrait: this.isPortrait,
-        // multiStack: this.multiStack,  // multiStack不存在
+        multiStack: this.multiStack,
         navDestination: this.navDestination,
         primaryStack: (param as SubNavigationStack).primaryStack,
         secondaryStack: (param as SubNavigationStack).secondaryStack,
@@ -89,7 +88,7 @@ export struct MultiNavigation {
     that = this;
     hilog.info(0x0000, 'MultiNavigation', 'MultiNavigation aboutToAppear');
     try {
-      // display.on('foldStatusChange', this.foldStatusCallback);
+      display.onFoldStatusChange(this.foldStatusCallback);
     } catch (exception) {
       console.error('Failed to register callback. Code: ' + JSON.stringify(exception));
     }
@@ -427,17 +426,17 @@ export class MultiNavPathStack extends NavPathStack {
     this.totalStack.pop();
     if (allInfoLength === 1) {
       // pop home
-      this.outerStack.popInner(animated);
+      this.outerStack.popInner(result,animated);
       let subStack = this.subStackList.pop();
       setTimeout(() => {
-        subStack?.pop(false);
+        subStack?.pop(result, false);
         subStack = undefined;
       }, 300);
     } else {
       if (allInfoLength === 2) {
         if (this.placeHolderPolicyInfo !== undefined) {
           if (secondaryStackFirstPolice ===SplitPolicy.PlACE_HOLDER_PAGE) {
-            this.outerStack.popInner(animated);
+            this.outerStack.popInner(result, animated);
             let subStack = this.subStackList.pop();
             setTimeout(() => {
               subStack?.clear(false);
@@ -504,7 +503,7 @@ export class MultiNavPathStack extends NavPathStack {
           this.clearTrashStack(i + 1,result,animated);
           break;
         } else if (index > removeIndex - 1 && index < removeIndex + secondaryStackSize[i]) {
-          this.subStackList[i].secondaryStack.popToIndex(index - removeIndex);
+          this.subStackList[i].secondaryStack.popToIndex((index - removeIndex) as int);
           this.subStackList[i].secondaryStack.policyInfoList.splice(index - removeIndex + 1);
           this.totalStack.splice(index + 1);
           this.clearTrashStack(i + 1,result,animated);
@@ -522,7 +521,7 @@ export class MultiNavPathStack extends NavPathStack {
     }
     this.handleRefreshPlaceHolderIfNeeded();
     this.checkAndNotifyHomeChange();
-    return index;
+    return index as int;
   }
 
   // popToIndex(index: int, animated?: boolean): void;
@@ -541,8 +540,8 @@ export class MultiNavPathStack extends NavPathStack {
     }
     let currentPath = this.totalStack[totalSize - 1].navInfo;
     let secondaryStackSize: number[] = new Array<number>();
-    this.subStackList.forEach((subStack: SubNavigationStack, index: int,p3: Array<SubNavigationStack>) => {
-      let num: number = this.subStackList[index as int].secondaryStack.size()
+    this.subStackList.forEach((subStack: SubNavigationStack, index: int,p3: Array<SubNavigationStack>):void => {
+      let num: number = (this.subStackList[index as int].secondaryStack.size()) as number
       secondaryStackSize.push(num );
     });
     let removeIndex = 0;
@@ -588,7 +587,15 @@ export class MultiNavPathStack extends NavPathStack {
     }
     this.subStackList.splice(index);
     hilog.info(0x0000, 'MultiNavigation', 'MultiNavPathStack popToIndex subStackList.length=' + this.subStackList.length);
-    this.outerStack.popToIndex((index - 1) as int,result as Object,animated as boolean);
+    if (result == undefined && animated == undefined ){
+      this.outerStack.popToIndex((index - 1) as int);
+
+    }else if(animated == undefined){
+      this.outerStack.popToIndex((index - 1) as int, result as Object);
+    }else{
+      this.outerStack.popToIndex((index - 1) as int, result as Object, animated  as boolean);
+    }
+
     hilog.info(0x0000, 'MultiNavigation', 'MultiNavPathStack popToIndex outerStack.size=' + this.outerStack.size());
   }
 
@@ -598,10 +605,10 @@ export class MultiNavPathStack extends NavPathStack {
       return value.navInfo?.name === name;
     });
     if (index !== -1) {
-      this.moveIndexToTop(index, animated);
+      this.moveIndexToTop(index as int, animated);
     }
 
-    return index;
+    return index as int;
   }
 
   moveIndexToTop(index: int, animated?: boolean): void {
@@ -879,17 +886,17 @@ export class MultiNavPathStack extends NavPathStack {
   }
 
   private checkAndNotifyHomeChange(): void {
-    let topPolicyInfo = this.totalStack[this.totalStack.length - 1];
-    if (topPolicyInfo === undefined) {
+    if (this.totalStack.length - 1 < 0) {
       return;
     }
+    let topPolicyInfo = this.totalStack[this.totalStack.length - 1];
     if (topPolicyInfo.policy === SplitPolicy.HOME_PAGE && topPolicyInfo.navInfo !== undefined) {
       this.homeChangeListener && this.homeChangeListener?.onHomeShowInTop?.(topPolicyInfo.navInfo?.name??'');
     }
-    let secondPolicyInfo = this.totalStack[this.totalStack.length - 2];
-    if (secondPolicyInfo === undefined) {
+    if(this.totalStack.length - 2 < 0){
       return;
     }
+    let secondPolicyInfo = this.totalStack[this.totalStack.length - 2];
     if (topPolicyInfo.policy === SplitPolicy.PlACE_HOLDER_PAGE &&
       secondPolicyInfo.policy === SplitPolicy.HOME_PAGE && secondPolicyInfo.navInfo !== undefined) {
       this.homeChangeListener && this.homeChangeListener?.onHomeShowInTop?.(secondPolicyInfo.navInfo?.name??'');
@@ -959,6 +966,9 @@ export class MyNavPathStack extends NavPathStack {
 
   popInner(result?: Object | boolean, animated?: boolean): NavPathInfo|undefined {
     hilog.info(0x0000, 'MultiNavigation', 'MyNavPathStack pop from inner:');
+    if (result === undefined){
+      return super.pop(animated)
+    }
     return super.pop(result as Object, animated);
   }
 

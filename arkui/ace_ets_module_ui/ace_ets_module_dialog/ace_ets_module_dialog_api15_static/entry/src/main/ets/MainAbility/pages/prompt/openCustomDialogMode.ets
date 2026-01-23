@@ -99,13 +99,13 @@ export struct MyComponent {
   }
 }
 
-function superFancyText1(this: TextAttribute) {
+function superFancyText1(this: TextAttribute){
   this.fontSize(9);
   this.width('100%');
   return this;
 }
 
-function superFancyText2(this: TextAttribute) {
+function superFancyText2(this: TextAttribute){
   this.fontSize(15);
   this.backgroundColor(Color.Orange)
   this.width('100%');
@@ -115,7 +115,7 @@ function superFancyText2(this: TextAttribute) {
   return this;
 }
 
-function superFancyColumn(this: ColumnAttribute) {
+function superFancyColumn(this: ColumnAttribute){
   this.backgroundColor(Color.Pink)
   this.width('100%');
   this.padding(10)
@@ -184,9 +184,10 @@ struct openCustomDialogMode {
         Text('返回首页')
           .superFancyText2()
           .onClick((event: ClickEvent) => {
-            // this.getUIContext().getRouter().pushUrl({
-            //   url: 'MainAbility/pages/actionSheet/index'
-            // }, router.RouterMode.Standard)
+            const pageRouter = AppStorage.get<Router>('router') as Router
+            pageRouter.pushUrl({
+              url: 'MainAbility/pages/actionSheet/index'
+            }, router.RouterMode.Standard)
           })
           .id('back')
 
@@ -277,9 +278,9 @@ struct openCustomDialogMode {
                 maskRect: this.maskRect,
                 alignment: DialogAlignment.Bottom
               } as promptAction.CustomDialogOptions)
-                // .then((dialogId: number) => {
-                //   this.customDialogComponentId = dialogId
-                // })
+                .then((dialogId: int) => {
+                  this.customDialogComponentId = dialogId
+                })
             })
 
         }

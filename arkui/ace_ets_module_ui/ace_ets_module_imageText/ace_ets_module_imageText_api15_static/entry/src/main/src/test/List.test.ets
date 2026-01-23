@@ -27,15 +27,17 @@ import RichEditorStopBackPressTest from './RichEditorTest/RichEditorStopBackPres
 import SelectionMenuOptions from './RichEditorTest/SelectionMenuOptions.test';
 
 export default function testsuite() {
-  SearchKeyboardAppearanceTest(); // 6 pass 0 The key 'keyboardAppearance' was not found in the JSON object
-  ResourceDefaultTest(); // 12 pass 8
-  ObjectFitTest(); // 15 pass 10
-  PixelMapColorFilterTest(); // 2 pass
-  VerticalAlignTest(); // 4 pass 4
-  textAreaInputTest(); // 1 pass
-  TextInputKeyboardAppearanceTest(); // 6 pass 0 The key 'keyboardAppearance' was not found in the JSON object
-  TextAreaKeyboardAppearanceTest(); // 6 pass 0 The key 'keyboardAppearance' was not found in the JSON object
-  // RichEditorKeyboardAppearanceTest(); // app died
-  // RichEditorStopBackPressTest();  // app died
-  // SelectionMenuOptions();
+  SearchKeyboardAppearanceTest();
+  ResourceDefaultTest();
+
+  ObjectFitTest();
+  PixelMapColorFilterTest();
+  VerticalAlignTest();
+  textAreaInputTest();
+  TextInputKeyboardAppearanceTest();
+  TextAreaKeyboardAppearanceTest();
+  RichEditorKeyboardAppearanceTest();
+  RichEditorStopBackPressTest();
+
+  SelectionMenuOptions();
 }

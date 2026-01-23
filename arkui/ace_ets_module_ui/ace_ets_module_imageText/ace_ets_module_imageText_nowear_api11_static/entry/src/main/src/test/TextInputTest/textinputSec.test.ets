@@ -91,7 +91,7 @@ export default function textinputSec() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textinputSec state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextinputSec" == pages.name)) {
           console.info("get textinputSec pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

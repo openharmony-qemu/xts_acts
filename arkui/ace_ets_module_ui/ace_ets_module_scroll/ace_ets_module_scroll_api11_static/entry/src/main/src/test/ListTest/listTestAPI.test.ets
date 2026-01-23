@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,6 +39,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -80,8 +81,7 @@ export default function listNewJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testListNew_static_0001
      * @tc.name     testListNew_static_0001
      * @tc.desc     testListNew_static_0001
@@ -102,8 +102,7 @@ it('testListNew_static_0001', Level.LEVEL1, async (done: () => void): Promise<vo
 
 
     
-    
-/**
+    /**
      * @tc.number   testListNe_static_0002
      * @tc.name     testListNe_static_0002
      * @tc.desc     testListNe_static_0002
@@ -124,8 +123,7 @@ it('testListNe_static_0002', Level.LEVEL1, async (done: () => void): Promise<voi
 
 
     
-    
-/**
+    /**
      * @tc.number   testListNe_static_0003
      * @tc.name     testListNe_static_0003
      * @tc.desc     testListNe_static_0003
@@ -147,8 +145,7 @@ it('testListNe_static_0003', Level.LEVEL1, async (done: () => void): Promise<voi
 
 
     
-    
-/**
+    /**
      * @tc.number   testListNe_static_0004
      * @tc.name     testListNe_static_0004
      * @tc.desc     testListNe_static_0004
@@ -170,8 +167,7 @@ it('testListNe_static_0004', Level.LEVEL1, async (done: () => void): Promise<voi
 
 
     
-    
-/**
+    /**
      * @tc.number   testListNe_static_0005
      * @tc.name     testListNe_static_0005
      * @tc.desc     testListNe_static_0005
@@ -192,8 +188,7 @@ it('testListNe_static_0005', Level.LEVEL1, async (done: () => void): Promise<voi
 
 
     
-    
-/**
+    /**
      * @tc.number   testListNe_static_0006
      * @tc.name     testListNe_static_0006
      * @tc.desc     testListNe_static_0006
@@ -214,8 +209,7 @@ it('testListNe_static_0006', Level.LEVEL1, async (done: () => void): Promise<voi
 
 
     
-    
-/**
+    /**
      * @tc.number   testListNe_static_0007
      * @tc.name     testListNe_static_0007
      * @tc.desc     testListNe_static_0007
@@ -229,7 +223,7 @@ it('testListNe_static_0007', Level.LEVEL1, async (done: () => void): Promise<voi
       }
       let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         try {
-          const data = eventData.data as Record<String, undefined | null | Object>
+          const data = eventData.data as Record<String,RecordData>
           console.info("callback success");
           console.info("testListNe_static_0007 eventData.data?.['result'] result is: " + data['result']);
           expect(data['result']).assertEqual("success");

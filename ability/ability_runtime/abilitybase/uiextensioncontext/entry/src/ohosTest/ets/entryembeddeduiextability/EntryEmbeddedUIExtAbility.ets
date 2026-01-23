@@ -19,6 +19,7 @@ import {
 import EmbeddedUIExtensionAbility from '@ohos.app.ability.EmbeddedUIExtensionAbility';
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 import { rpc } from '@kit.IPCKit';
+import eventBusPlue from '../lib/EventBusPlus';
 
 const DOMAIN = 0x0000;
 const TAG: string = '[ExampleEmbeddedAbility]';
@@ -36,8 +37,9 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
     hilog.info(DOMAIN, 'testTag', `onBackground`);
   }
 
-  onDestroy() {
+  async onDestroy(): Promise<void> {
     hilog.info(DOMAIN, 'testTag', `onDestroy`);
+    await eventBusPlue.emit('UIExtension_onDestroy');
   }
 
   onSessionCreate(want: Want, session: UIExtensionContentSession) {

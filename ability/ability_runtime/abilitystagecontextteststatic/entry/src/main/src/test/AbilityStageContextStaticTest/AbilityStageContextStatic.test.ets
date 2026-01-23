@@ -21,6 +21,7 @@ import common from '@ohos.app.ability.common';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { BusinessError } from '@ohos.base';
 import AbilityStage from "@ohos.app.ability.AbilityStage"
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -32,8 +33,17 @@ let AbilityStageContext: common.AbilityStageContext
 export default function AbilityStageContextStatic() {
   describe('AbilityStageContextStatic', () => {
 
-    beforeAll(() => {
+    beforeAll(async() => {
       hilog.info(domain, tag, 'beforeAll start');
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+          console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.stagecontexttest.static")
@@ -64,15 +74,15 @@ export default function AbilityStageContextStatic() {
           hilog.info(domain, tag, `AbilityStageContextStatic001 abilityInfo.icon: ` + abilityInfo.icon);
           expect(abilityInfo.icon == "$media:layered_image").assertTrue();
           hilog.info(domain, tag, `AbilityStageContextStatic001 abilityInfo.iconId: ` + abilityInfo.iconId);
-          expect(typeof (abilityInfo.iconId) == 'number').assertTrue();
+          expect(typeof (abilityInfo.iconId) == 'long').assertTrue();
           hilog.info(domain, tag, `AbilityStageContextStatic001 abilityInfo.label: ` + abilityInfo.label);
           expect(abilityInfo.label == "$string:EntryAbility_label").assertTrue();
           hilog.info(domain, tag, `AbilityStageContextStatic001 abilityInfo.labelId: ` + abilityInfo.labelId);
-          expect(typeof (abilityInfo.labelId) == 'number').assertTrue();
+          expect(typeof (abilityInfo.labelId) == 'long').assertTrue();
           hilog.info(domain, tag, `AbilityStageContextStatic001 abilityInfo.description: ` + abilityInfo.description);
           expect(abilityInfo.description == "$string:module_desc").assertTrue();
           hilog.info(domain, tag, `AbilityStageContextStatic001 abilityInfo.descriptionId: ` + abilityInfo.descriptionId);
-          expect(typeof (abilityInfo.descriptionId) == 'number').assertTrue();
+          expect(typeof (abilityInfo.descriptionId) == 'long').assertTrue();
           hilog.info(domain, tag, `AbilityStageContextStatic001 abilityInfo.mainElementName: ` + abilityInfo.mainElementName);
           expect(abilityInfo.mainElementName == "EntryAbility").assertTrue();
           hilog.info(domain, tag, `AbilityStageContextStatic001 abilityInfo.metadata: ` + abilityInfo.metadata.length);
@@ -188,7 +198,7 @@ export default function AbilityStageContextStatic() {
           hilog.info(domain, tag, `${itName} waitAbilityStageMonitor promise successful`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `${itName} waitAbilityStageMonitor promise` + err?.code);
           expect(err?.code).assertEqual(16000100);
           done()
@@ -219,7 +229,7 @@ export default function AbilityStageContextStatic() {
           hilog.info(domain, tag, `${itName} waitAbilityStageMonitor promise successful`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `${itName} waitAbilityStageMonitor promise` + err?.code);
           expect(err?.code).assertEqual(16000100);
           done()
@@ -249,7 +259,7 @@ export default function AbilityStageContextStatic() {
       await abilityDelegator.addAbilityStageMonitor(stageMonitor).then(() => {
         hilog.info(domain, tag, "stageMonitor addAbilityStageMonitor promise success");
         addMonitor = true;
-      }).catch((err: BusinessError<void>): void => {
+      }).catch((err: Error): void => {
         hilog.info(domain, tag, "SUB_AA_AbilityStageMonitor_Static_0700 addAbilityStageMonitor err: " + JSON.stringify(err));
         expect().assertFail()
         done()
@@ -258,7 +268,7 @@ export default function AbilityStageContextStatic() {
       await abilityDelegator.removeAbilityStageMonitor(stageMonitor).then(() => {
         hilog.info(domain, tag, "stageMonitor addAbilityStageMonitor promise success");
         removeMonitor = true;
-      }).catch((err: BusinessError<void>): void => {
+      }).catch((err: Error): void => {
         hilog.info(domain, tag,
           "SUB_AA_AbilityStageMonitor_Static_0700 removeAbilityStageMonitor err: " + JSON.stringify(err));
         expect().assertFail()

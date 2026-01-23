@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,13 +22,14 @@ import {
 import {
   State,
   Link,
-  Prop,Provide
+  PropRef,Provide
 } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -90,7 +91,7 @@ struct PageRouteExample {
       let eventData: events_emitter.EventData = {
         data: {
           "value": this.state,
-        } as Record<String,undefined|null|Object>
+        } as Record<String,RecordData>
       }
       let eventt: events_emitter.InnerEvent = {
         eventId: 10,

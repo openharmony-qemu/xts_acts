@@ -21,6 +21,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { ProcessInformation } from 'application.ProcessInformation'
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -28,7 +29,16 @@ let abilityContext: common.UIAbilityContext
 
 export default function ApplicationContextStatic() {
   describe("ApplicationContextStatic", () => {
-    beforeAll(() => {
+    beforeAll(async() => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -61,7 +71,7 @@ export default function ApplicationContextStatic() {
           expect(data[0].bundleNames[0] == "com.example.contexttest.static").assertTrue();
           console.log(`testGetRunningProcessInformationPromise001 success`);
           done();
-        }).catch<void>((err: BusinessError): void => {
+        }).catch<void>((err: Error): void => {
           console.log(`testGetRunningProcessInformationPromise001 fail ` + err.message);
           expect().assertFail();
           done();
@@ -98,7 +108,7 @@ export default function ApplicationContextStatic() {
           console.log(`testGetRunningProcessInformationCb001 success`);
           done();
         })
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.log(`testGetRunningProcessInformationCb001 fail ` + err);
         expect().assertFail();
         done();

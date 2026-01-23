@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -53,6 +53,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -63,9 +64,9 @@ export default function promptShowDialogJsunit() {
   describe('promptShowDialogTest', () => {
     beforeAll(() => {
       console.info("promptShowDialogTest beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("promptShowDialogTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -101,12 +102,12 @@ export default function promptShowDialogJsunit() {
     
     
 /**
-     * @tc.number   testpromptShowDialog001
-     * @tc.name     testpromptShowDialog001
-     * @tc.desc     testpromptShowDialog001
+     * @tc.number   testpromptShowDialog_static_001
+     * @tc.name     testpromptShowDialog_static_001
+     * @tc.desc     testpromptShowDialog_static_001
      * @tc.level    Level.LEVEL2
      */
-it('testpromptShowDialog001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testpromptShowDialog_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('promptShowDialog testpromptShowDialog001 START');
       await Utils.sleep(1000);
       try {
@@ -116,7 +117,7 @@ it('testpromptShowDialog001', Level.LEVEL2, async (done: () => void): Promise<vo
         }
         let callback1 = (eventData: emitter.EventData) => {
           console.info("testpromptShowDialog001 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
+          expect(((eventData.data) as Record<String,RecordData>)?.["STATUS"]).assertEqual(true);
           done()
         }
         console.info("onSelect_001 click result is: " +
@@ -132,12 +133,12 @@ it('testpromptShowDialog001', Level.LEVEL2, async (done: () => void): Promise<vo
     
     
 /**
-     * @tc.number   testshowActionMenu0001_static
-     * @tc.name     testshowActionMenu0001_static
-     * @tc.desc     testshowActionMenu0001_static
+     * @tc.number   testpromptShowDialog_static_002
+     * @tc.name     testpromptShowDialog_static_002
+     * @tc.desc     testpromptShowDialog_static_002
      * @tc.level    Level.LEVEL2
      */
-it('testshowActionMenu0001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testpromptShowDialog_static_002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('promptShowDialog testshowActionMenu0001_static START');
       await Utils.sleep(1000);
       try {
@@ -147,7 +148,7 @@ it('testshowActionMenu0001_static', Level.LEVEL2, async (done: () => void): Prom
         }
         let callback2 = (backData1: emitter.EventData) => {
           console.info("onRequestPopupData_0011 get event state result is: " + JSON.stringify(backData1));
-          expect(((backData1.data) as Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
+          expect(((backData1.data) as Record<String,RecordData>)?.["STATUS"]).assertEqual(true);
           done()
         }
         console.info("onSelect_002 click result is: " +

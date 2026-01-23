@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,6 +22,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 export default function gridItemOnSelectJsunit() {
   describe('gridItemOnSelectTest', () => {
@@ -59,8 +60,7 @@ export default function gridItemOnSelectJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testgridItemOnSelect0001_static_01
      * @tc.name     testgridItemOnSelect0001_static_01
      * @tc.desc     testgridItemOnSelect0001_static_01
@@ -72,7 +72,7 @@ it('testgridItemOnSelect0001_static_01', Level.LEVEL0, async () => {
       let callback = (indexEvent: events_emitter.EventData) => {
         console.info("onSelect_0001 get state result is: " + JSON.stringify(indexEvent));
         if (indexEvent.data != null) {
-          const data = indexEvent.data as Record<String, undefined | null | Object>
+          const data = indexEvent.data as Record<String,RecordData>
           expect(data['STATUS']).assertEqual(true);
         }
       }

@@ -93,7 +93,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           })
         }
         hilog.info(0x0000, 'taskPoolTaskGroupExecute1001', '%{public}s', `Count1.count========${Count1.count}`);
-        while (Count1.count < 1) {
+        while (Count1.count < 1 || Count2.count < 1) {
           await sleep(100)
         }
         expect(String(1)).assertEqual(String(Count1.count))
@@ -171,7 +171,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           Count2.count = Count2.count + (num[1] as Number)
           console.info('======', Count1.count, Count2.count)
         })
-        while (Count1.count < 1) {
+        while (Count1.count < 1 || Count2.count < 1) {
           await sleep(100)
         }
         expect(String(1)).assertEqual(String(Count1.count))
@@ -246,7 +246,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           Count2.count = Count2.count + (num[1] as Number)
           console.info('======', Count1.count)
         })
-        while (Count1.count < 1) {
+        while (Count1.count < 1 || Count2.count < 1) {
           await sleep(100)
         }
         expect(String(1)).assertEqual(String(Count1.count))
@@ -390,7 +390,7 @@ export default function taskPoolTaskGroupExecuteTest() {
         });
 
         hilog.info(0x0000, 'taskPoolTaskGroupExecute1009', '%{public}s', `Count1.count========${Count1.count}`);
-        while (Count1.count < 1) {
+        while (Count1.count < 1 || Count2.count < 1) {
           await sleep(100)
         }
 
@@ -494,7 +494,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           console.info("taskpool: execute task success")
         });
 
-        while (Count1.count < 1) {
+        while (count < 1 || Count1.count < 1 || Count2.count < 1 || count2 < 1) {
           await sleep(100)
         }
         expect(String(1)).assertEqual(String(Count1.count))
@@ -538,7 +538,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           console.info("taskpool: execute task success")
         });
 
-        while (count < 1) {
+        while (count < 1 || count2 < 1) {
           await sleep(100)
         }
 
@@ -589,7 +589,7 @@ export default function taskPoolTaskGroupExecuteTest() {
           console.info("taskpool: execute task success")
         });
 
-        while (count < 1) {
+        while (count < 1 || count2 < 1) {
           await sleep(100)
         }
 

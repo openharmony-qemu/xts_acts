@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,6 +39,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
 import events_emitter from '@ohos.events.emitter';
 import { StickyStyle } from '@ohos.arkui.component'
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -80,7 +81,6 @@ export default function listItemJsunit2() {
 
       
   
-
 /**
      * @tc.number   testListItem_static_01
      * @tc.name     testListItem_static_01
@@ -100,7 +100,6 @@ it('testListItem_static_01', Level.LEVEL1, async (done: () => void): Promise<voi
 
       
   
-
 /**
      * @tc.number   testListItem_static_02
      * @tc.name     testListItem_static_02
@@ -113,7 +112,7 @@ it('testListItem_static_02', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "sticky": StickyStyle.None
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 122,
@@ -135,7 +134,6 @@ it('testListItem_static_02', Level.LEVEL1, async (done: () => void): Promise<voi
 
       
   
-
 /**
      * @tc.number   testListItem_static_03
      * @tc.name     testListItem_static_03
@@ -155,7 +153,6 @@ it('testListItem_static_03', Level.LEVEL1, async (done: () => void): Promise<voi
 
       
   
-
 /**
      * @tc.number   testListItem_static_04
      * @tc.name     testListItem_static_04
@@ -168,7 +165,7 @@ it('testListItem_static_04', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "editMode": false
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 123,

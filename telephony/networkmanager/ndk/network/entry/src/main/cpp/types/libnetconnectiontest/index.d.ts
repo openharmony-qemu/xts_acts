@@ -50,3 +50,5 @@ export const NetConn_FreeDnsResult: (a : number) => number;
 export const NetConn_BindSocket: (a : number) => number;
 export const CertVerification: (a : string, b: string) => number;
 export const GetCertificatesHost: (a : string) => number;
+export const Netconn_GetEnum: () => number;
+export const Netconn_GetEnumInternalError: () => number;

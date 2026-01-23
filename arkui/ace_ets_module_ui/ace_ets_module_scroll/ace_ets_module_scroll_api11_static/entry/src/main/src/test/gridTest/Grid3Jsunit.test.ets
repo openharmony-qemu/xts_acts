@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,6 +21,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 export default function gridJsunit() {
   describe('grid3Test', () => {
@@ -59,8 +60,7 @@ export default function gridJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   gridTest01_static_01
      * @tc.name     gridTest01_static_01
      * @tc.desc     gridTest01_static_01
@@ -79,7 +79,7 @@ it('gridTest01_static_01', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "columnsGap": '3px'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 110,
@@ -104,8 +104,7 @@ it('gridTest01_static_01', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   gridTest02_static_02
      * @tc.name     gridTest02_static_02
      * @tc.desc     gridTest02_static_02
@@ -124,7 +123,7 @@ it('gridTest02_static_02', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "rowsGap": '3px'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 111,
@@ -148,8 +147,7 @@ it('gridTest02_static_02', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   gridTest03_static_03
      * @tc.name     gridTest03_static_03
      * @tc.desc     gridTest03_static_03
@@ -170,7 +168,7 @@ it('gridTest03_static_03', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "columnsTemplate": '1fr 1fr 1fr 1fr'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 112,
@@ -195,8 +193,7 @@ it('gridTest03_static_03', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   gridTest04_static_04
      * @tc.name     gridTest04_static_04
      * @tc.desc     gridTest04_static_04
@@ -217,7 +214,7 @@ it('gridTest04_static_04', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "rowsTemplate": '1fr 1fr 1fr 1fr'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 113,

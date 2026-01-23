@@ -491,6 +491,21 @@ export default function fontTest() {
         const font = new drawing.Font();
         let metrics = font.getMetrics();
         console.info(msg + ' getMetrics successed' + JSON.stringify(metrics));
+        let aaa = metrics.flags & drawing.FontMetricsFlags.UNDERLINE_THICKNESS_VALID
+        let aaa1 = metrics.flags & drawing.FontMetricsFlags.UNDERLINE_POSITION_VALID
+        let aaa2 = metrics.flags & drawing.FontMetricsFlags.STRIKETHROUGH_THICKNESS_VALID
+        let aaa3 = metrics.flags & drawing.FontMetricsFlags.STRIKETHROUGH_POSITION_VALID
+        let aaa4 = metrics.flags & drawing.FontMetricsFlags.BOUNDS_INVALID
+        console.log(msg + '1yc '+aaa);
+        console.log(msg + '2yc '+aaa1);
+        console.log(msg + '3yc '+aaa2);
+        console.log(msg + '4yc '+aaa3);
+        console.log(msg + '5yc '+aaa4);
+        expect(metrics.flags & drawing.FontMetricsFlags.UNDERLINE_THICKNESS_VALID).assertEqual(1);
+        expect(metrics.flags & drawing.FontMetricsFlags.UNDERLINE_POSITION_VALID).assertEqual(2);
+        expect(metrics.flags & drawing.FontMetricsFlags.STRIKETHROUGH_THICKNESS_VALID).assertEqual(4);
+        expect(metrics.flags & drawing.FontMetricsFlags.STRIKETHROUGH_POSITION_VALID).assertEqual(8);
+        expect(metrics.flags & drawing.FontMetricsFlags.BOUNDS_INVALID).assertEqual(16);
         expect(metrics.flags !== null).assertTrue();
         expect(metrics.top !== null).assertTrue();
         expect(metrics.ascent !== null).assertTrue();

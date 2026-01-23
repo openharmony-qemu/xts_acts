@@ -30,7 +30,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 const renderNode = new RenderNode();
 renderNode.frame = { x: 0, y: 0, width: 100, height: 50 };
-renderNode.backgroundColor = 0xffff0000;
+renderNode.backgroundColor = 0xffff0000.toInt();
 
 class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
@@ -40,7 +40,7 @@ class MyNodeController extends NodeController {
     let rootRenderNode = this.rootNode!.getRenderNode();
     if (rootRenderNode !== null) {
       rootRenderNode.size = { width: 200, height: 50 };
-      rootRenderNode.backgroundColor = 0xff00ff00;
+      rootRenderNode.backgroundColor = 0xff00ff00.toInt();
       rootRenderNode.appendChild(renderNode);
     }
 

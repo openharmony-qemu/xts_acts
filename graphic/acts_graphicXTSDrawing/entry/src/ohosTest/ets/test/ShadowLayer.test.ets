@@ -82,6 +82,13 @@ export default function shadowLayerTest() {
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
+      try {
+        drawing.ShadowLayer.create(50, -100, -100, 0xff00ff00);
+        console.info(msg + ' 0xff00ff00 create successed');
+      } catch (e) {
+        console.info(msg + ` 0xff00ff00 create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
     });
 
     /**

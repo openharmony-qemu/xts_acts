@@ -74,18 +74,18 @@ it('CalendarPickerDialog_static_0100', Level.LEVEL2, async (done: () => void): P
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('CalendarPickerDialog'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;
-      const abilityContext = AppStorage.get<common.Context>("abilityContext") as common.Context
-      windowClass = await window.getLastWindow(abilityContext);
+      // const abilityContext = AppStorage.get<common.BaseContext>("abilityContext") as common.Context
+      windowClass = await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
       let properties: window.WindowProperties = windowClass.getWindowProperties();
       console.info("[CalendarPickerDialog_static_0100] title: " + JSON.stringify(properties.type));
       expect(properties.type).assertEqual(1)//1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       await CommonFunc.sleep(1000);
-      driver!.click(Math.round(AppStorage.get<number>("winLeft") as number + UIContext.getFocusedUIContext()!.vp2px(100)) as Int,Math.round(AppStorage.get<number>("winTop") as number + UIContext.getFocusedUIContext()!.vp2px(100)) as Int);
+      driver!.click(Math.round(AppStorage.get<number>("winLeft") as number + UIContext.resolveUIContext()!.vp2px(100)) as Int,Math.round(AppStorage.get<number>("winTop") as number + UIContext.resolveUIContext()!.vp2px(100)) as Int);
       await CommonFunc.sleep(1000);
       console.info('[CalendarPickerDialog_static_0100] END');
       done();

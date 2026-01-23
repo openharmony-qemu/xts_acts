@@ -15,7 +15,7 @@
 
 import EnterpriseAdminExtensionAbility from '@ohos.enterprise.EnterpriseAdminExtensionAbility'
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect} from "deccjsunit/index"
-import type systemManager from './@ohos.enterprise.systemManager';
+import { systemManager } from '@kit.MDMKit';
 import common from '@ohos.enterprise.common';
 
 export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbility {
@@ -64,4 +64,18 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
     console.log(`onMarketAppInstallResult bundleName : ${bundleName}, result is FAIL? : ${installResult.result === common.Result.FAIL}`);
     console.log(`onMarketAppInstallResult bundleName : ${bundleName}, result is SUCCESS? : ${installResult.result === common.Result.SUCCESS}`);
   }
+  onKeyEvent(keyEvent: systemManager.KeyEvent): void {
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: keyCode: ${keyEvent.keyCode}`);
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: keyAction: ${keyEvent.keyAction === systemManager.KeyAction.UNKNOWN}`);
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: keyAction: ${keyEvent.keyAction === systemManager.KeyAction.DOWN}`);
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: keyAction: ${keyEvent.keyAction === systemManager.KeyAction.UP}`);
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: actionTime: ${keyEvent.actionTime}`);
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: keyItem.keyCode: ${keyEvent.keyItems[0].keyCode}`);
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: keyItem.pressed: ${keyEvent.keyItems[0].pressed}`);
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: keyItem.downTime: ${keyEvent.keyItems[0].downTime}`);
+  }
+  onLogCollected(result: common.Result): void {
+ 	  console.log(`onLogCollected result is FAIL? : ${result === common.Result.FAIL}`);
+ 	  console.log(`onLogCollected result is SUCCESS? : ${result === common.Result.SUCCESS}`);
+ 	}
 }

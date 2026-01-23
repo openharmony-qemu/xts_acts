@@ -106,7 +106,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0300', Level.LEVEL1, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipe((winLeft + Math.round(btLeft) as Int + Math.round(UIContext.getFocusedUIContext()!.vp2px(27) as Int)) as Int,
+      await driver.swipe((winLeft + Math.round(btLeft) as Int + Math.round(UIContext.resolveUIContext()!.vp2px(27) as Int)) as Int,
         (winTop as Int + Math.round(btBottom / 2)) as Int, (winLeft as Int + Math.round(btRight)) as Int,
         (winTop as Int + Math.round(btBottom / 2)) as Int);
       // await CommonFunc.sleep(3000);

@@ -30,9 +30,9 @@ import {UtilsTest, startAbility, stopApplication} from "../Util.test"
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-export default function abilityTest() {
+export default function segmentbutton() {
   const SUITE = 'SegmentButton'
-  describe('ActsAceSegmentButtonTest', () => {
+  describe('segmentbutton', () => {
     beforeAll(() => {
       console.info("ActsAceSegmentButtonTest beforeEach start");
 
@@ -46,20 +46,18 @@ export default function abilityTest() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        if (pages == null || !("Index" == pages.name)) {
-          let driver = Driver.create()
-          console.log('beforeEach', 'push start')
+        console.info("get SearchJsunit state pages:" + "");
+        if (!("SegmentButtonIndex" == pages.name)) {
+          console.info("get SearchJsunit pages.name:" + "");
           routerInstance.pushUrl(options);
-          console.log('beforeEach', 'push success')
-          await driver.delayMs(2000);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
       }
     })
     afterEach(async (): Promise<void> => {
-      let driver = Driver.create()
-      await driver.delayMs(2);
+      await CommonFunc.sleep(500);
     })
 
     
@@ -72,10 +70,11 @@ export default function abilityTest() {
 it('Advanced_ui_SegmentButton_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
   console.log('Advanced_ui_SegmentButton_static_0100', 'singleTextSegmentButton start')
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
   console.log('Advanced_ui_SegmentButton_static_0100', 'singleTextSegmentButton before')
       let singleTextSegmentButton = await driver.findComponent(ON.text('单选文字1'))
       await CommonFunc.sleep(500);
+  console.log('Advanced_ui_SegmentButton_static_0100', 'singleTextSegmentButton before：' + singleTextSegmentButton)
   console.log('Advanced_ui_SegmentButton_static_0100', 'singleTextSegmentButton success')
       let singleTextSegmentButtonIsEnabled = await (singleTextSegmentButton?.isEnabled() as Promise<Boolean>)
   console.log('Advanced_ui_SegmentButton_static_0100', 'isEnabled success')

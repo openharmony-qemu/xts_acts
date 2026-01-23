@@ -49,6 +49,11 @@ export default function aceJsTest() {
             });
         }
 
+        beforeEach(async function() {
+            console.info('aceJsTest ohosTest beforeEach start');
+            await sleep(2000)
+        });
+
         /**
          * run after testcase
          */

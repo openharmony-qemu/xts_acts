@@ -344,7 +344,6 @@ export default function ArkListTest() {
         let lastIndex = list.getLastIndexOf(5);
         let removeParam = list.removeByIndex(lastIndex);
         if (removeParam !== undefined) {
-          // 确保 removeParam 是 number 类型
           const param: number = removeParam;
           list.add(param);
           expect(String(list.getLastIndexOf(param))).assertEqual(String(lastIndex));
@@ -488,7 +487,6 @@ export default function ArkListTest() {
         list.add(5);
         let removeParam = list.removeByIndex(list.length - 1);
         if (removeParam !== undefined) {
-          // 确保 removeParam 是 number 类型
           const param: number = removeParam;
           list.add(param);
           expect(String(list.getLastIndexOf(param))).assertEqual(String(list.length - 1));
@@ -902,7 +900,6 @@ export default function ArkListTest() {
         list.add(2);
         list.add(3);
         list.add(4);
-        // let iter = list[Symbol.iterator]();
         let iter =list.$_iterator();
           for (let tmp of iter) {
           expect(String(list.has(tmp))).assertEqual('true');
@@ -930,7 +927,6 @@ export default function ArkListTest() {
         list.add(2);
         list.add(3);
         list.add(4);
-        // let iter = list[Symbol.iterator]();
         let iter =list.$_iterator();
         let tmp = iter.next();
         while (!tmp.done) {

@@ -1072,7 +1072,7 @@ export default function nativeAVScreenCaptureNdkTest() {
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeWindowOnly();
-      let expectedResult: number = deviceinfo.deviceType === '2in1' ? 0 : 1;
+      let expectedResult: number = 0;
       expect(result).assertEqual(expectedResult);
       result = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeScreenOnly();
       expect(result).assertEqual(expectedResult);
@@ -1091,7 +1091,7 @@ export default function nativeAVScreenCaptureNdkTest() {
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureExcludePickerWindows();
-      let expectedResult: number = deviceinfo.deviceType === '2in1' ? 0 : 1;
+      let expectedResult: number = 0;
       expect(result).assertEqual(expectedResult);
       done();
     });

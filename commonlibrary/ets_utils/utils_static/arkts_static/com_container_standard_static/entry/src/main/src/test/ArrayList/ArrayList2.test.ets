@@ -168,12 +168,10 @@ export default function ArrayListTest2() {
         arrayList.removeByIndex(endIndex);
         expect(String(arrayList.has("start"))).assertEqual('false');
         expect(String(arrayList.has("end"))).assertEqual('false');
-        // expect(arrayList.has("start")).assertEqual(false);
-        // expect(arrayList.has("end")).assertEqual(false);
       } catch (err){
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
-        expect(false).assertFail();
+        expect().assertFail();
       }
     });
 
@@ -201,9 +199,6 @@ export default function ArrayListTest2() {
         expect(String(arrayList.has("`"))).assertEqual('false');
         expect(String(arrayList.has("%"))).assertEqual('false');
         expect(String(arrayList.has(`"`))).assertEqual('false');
-        // expect(arrayList.has("`")).assertEqual(false);
-        // expect(arrayList.has("%")).assertEqual(false);
-        // expect(arrayList.has(`"`)).assertEqual(false);
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);

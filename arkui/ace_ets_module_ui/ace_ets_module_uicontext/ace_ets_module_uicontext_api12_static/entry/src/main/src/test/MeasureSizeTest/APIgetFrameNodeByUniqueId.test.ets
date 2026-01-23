@@ -64,18 +64,19 @@ export default function APIgetFrameNodeByUniqueId() {
       console.info("APIgetFrameNodeByUniqueId after each called");
     })
     
-    /**
+    
+/**
      * @tc.number   APIgetFrameNodeByUniqueId_static_0100
      * @tc.name     APIgetFrameNodeByUniqueId_static_0100
      * @tc.desc     APIgetFrameNodeByUniqueId_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('APIgetFrameNodeByUniqueId_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('APIgetFrameNodeByUniqueId_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('APIgetFrameNodeByUniqueId_Text01');
-
       console.info("[APIgetFrameNodeByUniqueId_static_0100] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)), JSON.parseJsonElement(strJson)
         .getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('APIgetFrameNodeByUniqueId');

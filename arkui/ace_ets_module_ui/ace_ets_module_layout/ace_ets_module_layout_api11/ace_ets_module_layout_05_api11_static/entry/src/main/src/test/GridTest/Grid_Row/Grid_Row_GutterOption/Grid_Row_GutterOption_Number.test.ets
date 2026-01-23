@@ -79,7 +79,7 @@ export default function Grid_Row_GutterOption_Number() {
      */
 it('SUB_ACE_GridRowGutterOption_NUMBER_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowGutterOption_NUMBER_static_0100 START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({ name:'length', value:-20 })
+      AppStorage.get<MessageManager<number>>('messageManager')?.notify({ name: 'length', value: -20.0 })
       await CommonFunc.sleep(2000)
 
       let LengthNumber_1:RectValue = CommonFunc.getComponentRect('Length_Number001');
@@ -91,8 +91,10 @@ it('SUB_ACE_GridRowGutterOption_NUMBER_static_0100', Level.LEVEL0, async (done: 
      expect(gridRowGutter.getString('$type')).assertEqual('GridRow');
 
 
-      expect(Math.abs(Math.round(secondLengthNumber.left - firstLengthNumber.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(thirdLengthNumber.top - firstLengthNumber.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(secondLengthNumber.left - firstLengthNumber.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(thirdLengthNumber.top - firstLengthNumber.bottom) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRowGutterOption_NUMBER_static_0100 END');
       done();
@@ -110,7 +112,7 @@ it('SUB_ACE_GridRowGutterOption_NUMBER_static_0100', Level.LEVEL0, async (done: 
      */
 it('SUB_ACE_GridRowGutterOption_NUMBER_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowGutterOption_NUMBER_static_0200 START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({ name:'length', value:0 })
+      AppStorage.get<MessageManager<number>>('messageManager')?.notify({ name: 'length', value: 0.0 })
       await CommonFunc.sleep(2000)
 
       let LengthNumber_1:RectValue = CommonFunc.getComponentRect('Length_Number001');
@@ -121,8 +123,10 @@ it('SUB_ACE_GridRowGutterOption_NUMBER_static_0200', Level.LEVEL0, async (done: 
      let gridRowGutter = JSON.parseJsonElement(gridRowGutterLengthNumJson);
      expect(gridRowGutter.getString('$type')).assertEqual('GridRow');
 
-      expect(Math.abs(Math.round(secondLengthNumber.left - firstLengthNumber.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(thirdLengthNumber.top - firstLengthNumber.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(secondLengthNumber.left - firstLengthNumber.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(thirdLengthNumber.top - firstLengthNumber.bottom) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRowGutterOption_NUMBER_static_0200 END');
       done();
@@ -140,7 +144,7 @@ it('SUB_ACE_GridRowGutterOption_NUMBER_static_0200', Level.LEVEL0, async (done: 
      */
 it('SUB_ACE_GridRowGutterOption_NUMBER_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowGutterOption_NUMBER_static_0300 START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({ name:'length', value:10 })
+      AppStorage.get<MessageManager<number>>('messageManager')?.notify({ name: 'length', value: 10.0 })
       await CommonFunc.sleep(2000)
 
       let LengthNumber_1:RectValue = CommonFunc.getComponentRect('Length_Number001');
@@ -152,8 +156,10 @@ it('SUB_ACE_GridRowGutterOption_NUMBER_static_0300', Level.LEVEL0, async (done: 
      expect(gridRowGutter.getString('$type')).assertEqual('GridRow');
 
 
-      expect(Math.abs(Math.round(secondLengthNumber.left - firstLengthNumber.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(thirdLengthNumber.top - firstLengthNumber.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(secondLengthNumber.left - firstLengthNumber.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(thirdLengthNumber.top - firstLengthNumber.bottom) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRowGutterOption_NUMBER_static_0300 END');
       done();

@@ -72,7 +72,7 @@ export default function utilTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(50);
+      await sleep(20);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -3486,5 +3486,34 @@ export default function utilTest() {
       done();
     });
 
+    /**
+     * @tc.name   testSetMultithreadingDetectionEnabled001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_001
+     * @tc.desc   Set multithreading detection to on and off.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetMultithreadingDetectionEnabled001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      util.ArkTSVM.setMultithreadingDetectionEnabled(true);
+      let task = new taskpool.Task(taskpoolFunc);
+      let recursion = (n: number): void => {
+        if (n == 1) {
+          blockSleep(1);
+          return;
+        }
+        return recursion(n - 1);
+      }
+      taskpool.execute(task).then(
+        (value: object) => {
+          expect(value).assertContain('blockSleep');
+        }
+      )
+      recursion(10);
+      let stackTrace = await taskpool.execute(task);
+      expect(stackTrace).assertEqual('');
+      util.ArkTSVM.setMultithreadingDetectionEnabled(false);
+      done();
+    });
   })
 }

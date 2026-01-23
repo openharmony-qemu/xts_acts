@@ -41,6 +41,7 @@ let context: common.UIAbilityContext;
 let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let domain: int = 0x0000;
 let tag: string = "[relationalStoreTest]";
+const dbName = "rdbStoreTest.db";
 const CREATE_TABLE_EMPLOYEE =
   "CREATE TABLE IF NOT EXISTS employee (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " + "name TEXT NOT NULL, " +
     "age INTEGER," + "salary  REAL," + "data BLOB)";
@@ -53,7 +54,7 @@ const valueBucket2m: relationalStore.ValuesBucket = {
   'age': 122341465656 as long,
 };
 const STORE_CONFIG: relationalStore.StoreConfig = {
-  name: "rdbStoreTest.db",
+  name: dbName,
   securityLevel: relationalStore.SecurityLevel.S1,
 }
 let rdbStore: relationalStore.RdbStore;
@@ -321,7 +322,7 @@ export default function relationalStoreTest() {
           expect(true).assertEqual(resultSet.goToFirstRow());
           let res = await resultSet.getColumnType("age") // Error: 14800000
           console.log(tag + "res:" + res + typeof (res))
-          expect(typeof (valueNum)).assertEqual(typeof (res))
+          expect(res).assertEqual(relationalStore.ColumnType.INTEGER);
           let str = resultSet.getString(resultSet.getColumnIndex("age"))
           expect(String(valueNum)).assertEqual(str);
           console.log(tag + "str:" + str);
@@ -356,7 +357,7 @@ export default function relationalStoreTest() {
           expect(true).assertEqual(resultSet.goToFirstRow());
           let res = await resultSet.getColumnType(resultSet.getColumnIndex("age"))
           console.log(tag + "res:" + res + typeof (res))
-          expect(typeof (valueNum)).assertEqual(typeof (res))
+          expect(res).assertEqual(relationalStore.ColumnType.INTEGER);
           let str = resultSet.getString(resultSet.getColumnIndex("age"))
           console.log(tag + "str:" + str);
           console.log(tag + "valueNum:" + valueNum);
@@ -392,7 +393,7 @@ export default function relationalStoreTest() {
           expect(true).assertEqual(resultSet.goToFirstRow());
           let res = await resultSet.getColumnType(resultSet.getColumnIndex("age"))
           console.log(tag + "res:" + res + typeof (res))
-          expect(typeof (valueNum)).assertEqual(typeof (res))
+          expect(res).assertEqual(relationalStore.ColumnType.INTEGER);
           let str = resultSet.getString(resultSet.getColumnIndex("age"))
           expect(String(valueNum)).assertEqual(str);
           console.log(tag + "str:" + str);
@@ -462,7 +463,7 @@ export default function relationalStoreTest() {
           expect(true).assertEqual(resultSet.goToFirstRow());
           let res = await resultSet.getColumnType(resultSet.getColumnIndex("age"))
           console.log(tag + "res:" + res + typeof (res))
-          expect(typeof (valueNum)).assertEqual(typeof (res))
+          expect(res).assertEqual(relationalStore.ColumnType.INTEGER);
           let str = resultSet.getLong(resultSet.getColumnIndex("age"))
           expect(valueNum).assertEqual(str);
           console.log(tag + "str:" + str);
@@ -497,7 +498,7 @@ export default function relationalStoreTest() {
           expect(true).assertEqual(resultSet.goToFirstRow());
           let res = await resultSet.getColumnType(resultSet.getColumnIndex("age"))
           console.log(tag + "res:" + res + typeof (res))
-          expect(typeof (valueNum)).assertEqual(typeof (res))
+          expect(res).assertEqual(relationalStore.ColumnType.INTEGER);
           let str = resultSet.getLong(resultSet.getColumnIndex("age"))
           expect(valueNum).assertEqual(str);
           console.log(tag + "str:" + str);
@@ -1386,6 +1387,93 @@ export default function relationalStoreTest() {
           done();
         }
         console.info(tag + "************* relationalStoreTest060 end *************");
+      })
+
+    /**
+     * @tc.name   deleteRdbStoreWithNamePromise
+     * @tc.number deleteRdbStoreWithNamePromise001
+     * @tc.desc   deleteRdbStoreWithNamePromise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('deleteRdbStoreWithNamePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.info(tag + "************* deleteRdbStoreWithNamePromise start *************");
+        try {
+          await relationalStore.deleteRdbStore(context, dbName);
+        } catch (err) {
+          console.log(tag + "deleteRdbStoreWithNamePromise err" + err.code + err.message);
+          expect().assertFail();
+        }
+        done();
+        console.info(tag + "************* deleteRdbStoreWithNamePromise end *************");
+      })
+
+    /**
+     * @tc.name   deleteRdbStoreWithNameAsyncCallback
+     * @tc.number deleteRdbStoreWithNameAsyncCallback001
+     * @tc.desc   deleteRdbStoreWithNameAsyncCallback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('deleteRdbStoreWithNameAsyncCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.info(tag + "************* deleteRdbStoreWithNameAsyncCallback start *************");
+        relationalStore.deleteRdbStore(context, dbName, (err) => {
+          if (err) {
+            console.log(tag + "deleteRdbStoreWithNameAsyncCallback err" + err.code + err.message);
+            expect().assertFail();
+          }
+          done();
+        });
+        console.info(tag + "************* deleteRdbStoreWithNameAsyncCallback end *************");
+      })
+
+    /**
+     * @tc.name   deleteRdbStoreWithWrongNamePromise
+     * @tc.number deleteRdbStoreWithWrongNamePromise001
+     * @tc.desc   deleteRdbStoreWithWrongNamePromise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('deleteRdbStoreWithWrongNamePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.info(tag + "************* deleteRdbStoreWithWrongNamePromise start *************");
+        try {
+          await relationalStore.deleteRdbStore(context, "/");
+          expect().assertFail();
+        } catch (err) {
+          console.log(tag + "deleteRdbStoreWithWrongNamePromise err" + err.code + err.message);
+          expect(err.code).assertEqual(401);
+        }
+        done();
+        console.info(tag + "************* deleteRdbStoreWithWrongNamePromise end *************");
+      })
+
+    /**
+     * @tc.name   deleteRdbStoreWithWrongNameAsyncCallback
+     * @tc.number deleteRdbStoreWithWrongNameAsyncCallback001
+     * @tc.desc   deleteRdbStoreWithWrongNameAsyncCallback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('deleteRdbStoreWithWrongNameAsyncCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.info(tag + "************* deleteRdbStoreWithWrongNameAsyncCallback start *************");
+        relationalStore.deleteRdbStore(context, "/", (err) => {
+          if (err) {
+            console.log(tag + "deleteRdbStoreWithWrongNameAsyncCallback err" + err.code + err.message);
+            expect(err.code).assertEqual(401);
+          } else {
+            expect().assertFail();
+          }
+          done();
+        });
+        console.info(tag + "************* deleteRdbStoreWithWrongNameAsyncCallback end *************");
       })
   })
 }

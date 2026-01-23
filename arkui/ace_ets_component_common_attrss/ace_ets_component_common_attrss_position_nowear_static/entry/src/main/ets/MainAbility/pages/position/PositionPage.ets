@@ -37,7 +37,7 @@ import {
   RectOptions,CommonMethod,applyStyles,Builder
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State,StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, State,StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { SetValue , TestValue} from '../../common/Utils';
 interface ViewOption {
@@ -57,7 +57,7 @@ interface RouterParamOptions {
 @Entry
 @Component
 struct PositionPage {
-  @StorageProp('_position') _position: Position = { x: 0, y: 0 } as Position;
+  @StoragePropRef('_position') _position: Position = { x: 0, y: 0 } as Position;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentWidth: number = 0

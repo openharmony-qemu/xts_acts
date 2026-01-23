@@ -19,6 +19,7 @@ group("security_component") {
       "save_component_customize:ActsSaveButtonCustomizeTest",
       "security_component_pastebutton:ActsSecPasteButtonTest",
       "security_component_savebutton:ActsSecSaveButtonTest",
+      "static/pasteButtonTestStatic:ActsSecPasteButtonStaticTest",
     ]
   }
 }

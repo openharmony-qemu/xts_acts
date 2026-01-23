@@ -30,7 +30,7 @@ struct progressSecTest {
   @StoragePropRef('progress_capsule_borderWidth_number') progress_capsule_borderWidth_number: number|undefined = 10
   @StoragePropRef('progress_capsule_borderWidth_string') progress_capsule_borderWidth_string: string = '1vp'
   @StoragePropRef('progress_capsule_borderWidth_resource') progress_capsule_borderWidth_resource: Resource = $r('sys.float.ohos_id_text_margin_vertical')
-  @StoragePropRef('progress_capsule_borderColor_number') progress_capsule_borderColor_number: ResourceColor = 0xFF000000
+  @StoragePropRef('progress_capsule_borderColor_number') progress_capsule_borderColor_number: ResourceColor = 0xFF000000.toInt()
   @StoragePropRef('progress_capsule_borderColor_string') progress_capsule_borderColor_string: string|undefined = '#FFFF9535'
   @StoragePropRef('progress_capsule_borderColor_color') progress_capsule_borderColor_color: Color = Color.Red
   @StoragePropRef('progress_capsule_borderColor_resource') progress_capsule_borderColor_resource: Resource = $r('sys.color.ohos_id_color_connected')
@@ -41,22 +41,22 @@ struct progressSecTest {
   @StoragePropRef('progress_capsule_fontWeight_string') progress_capsule_fontWeight_string: string = '400'
   @StoragePropRef('progress_capsule_fontWeight_fontWeight') progress_capsule_fontWeight_fontWeight: FontWeight = FontWeight.Normal
   @StoragePropRef('progress_capsule_fontStyle_fontStyle') progress_capsule_fontStyle_fontStyle: FontStyle|undefined = FontStyle.Normal
-  @StoragePropRef('progress_capsule_fontColor_number') progress_capsule_fontColor_number: ResourceColor = 0xFF000000
+  @StoragePropRef('progress_capsule_fontColor_number') progress_capsule_fontColor_number: ResourceColor = 0xFF000000.toInt()
   @StoragePropRef('progress_capsule_fontColor_string') progress_capsule_fontColor_string: string|undefined = '#FFFF9535'
   @StoragePropRef('progress_capsule_fontColor_color') progress_capsule_fontColor_color: Color = Color.Red
   @StoragePropRef('progress_capsule_fontColor_resource') progress_capsule_fontColor_resource: Resource = $r('sys.color.ohos_id_color_connected')
   @StoragePropRef('progress_capsule_content_string') progress_capsule_content_string: string|undefined = '下载'
   @StoragePropRef('progress_capsule_enableScanEffect_boolean') progress_capsule_enableScanEffect_boolean: boolean|undefined = false
   @StoragePropRef('progress_capsule_showDefaultPercentage_boolean') progress_capsule_showDefaultPercentage_boolean: boolean|undefined = false
-  @StoragePropRef('progress_capsule_enableSmoothEffect_boolean') progress_capsule_enableSmoothEffect_boolean: boolean = false
+  @StoragePropRef('progress_capsule_enableSmoothEffect_boolean') progress_capsule_enableSmoothEffect_boolean: boolean|undefined = false
   @StoragePropRef('progress_ring_strokeWidth_number') progress_ring_strokeWidth_number: number|undefined = 4
   @StoragePropRef('progress_ring_strokeWidth_string') progress_ring_strokeWidth_string: string = '4vp'
   @StoragePropRef('progress_ring_strokeWidth_resource') progress_ring_strokeWidth_resource: Resource = $r('sys.float.ohos_id_text_margin_vertical')
   @StoragePropRef('progress_ring_shadow_bool') progress_ring_shadow_bool: boolean|undefined = false
   @StoragePropRef('progress_ring_status_progressStatus') progress_ring_status_progressStatus: ProgressStatus|undefined = ProgressStatus.PROGRESSING
   @StoragePropRef('progress_ring_color_purity') progress_ring_color_purity: ResourceColor | LinearGradient = 0x000000
-  @StoragePropRef('progress_ring_color_linear_number') progress_ring_color_linear_number: LinearGradient = new LinearGradient([{ color: 0xFFFF0000, offset: 0 }, {
-    color: 0xFFFFFFFF,
+  @StoragePropRef('progress_ring_color_linear_number') progress_ring_color_linear_number: LinearGradient = new LinearGradient([{ color: 0xFFFF0000.toInt(), offset: 0 }, {
+    color: 0xFFFFFFFF.toInt(),
     offset: 1
   }])
   @StoragePropRef('progress_ring_color_linear_string') progress_ring_color_linear_string: LinearGradient = new LinearGradient([{ color: '#FFFF9A35', offset: 0 }, {

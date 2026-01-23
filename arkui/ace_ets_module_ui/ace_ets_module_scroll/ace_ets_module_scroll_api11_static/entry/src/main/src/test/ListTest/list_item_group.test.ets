@@ -80,8 +80,7 @@ export default function list_item_groupJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testlist_item_group_static_0001
      * @tc.name     testlist_item_group_static_0001
      * @tc.desc     testlist_item_group_static_0001
@@ -100,8 +99,7 @@ it('testlist_item_group_static_0001', Level.LEVEL1, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   testlist_item_group_static_0002
      * @tc.name     testlist_item_group_static_0002
      * @tc.desc     testlist_item_group_static_0002
@@ -120,8 +118,7 @@ it('testlist_item_group_static_0002', Level.LEVEL1, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   testlist_item_group_static_0003
      * @tc.name     testlist_item_group_static_0003
      * @tc.desc     testlist_item_group_static_0003
@@ -143,8 +140,7 @@ it('testlist_item_group_static_0003', Level.LEVEL1, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   testlist_item_group_static_0004
      * @tc.name     testlist_item_group_static_0004
      * @tc.desc     testlist_item_group_static_0004

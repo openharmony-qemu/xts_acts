@@ -16,6 +16,7 @@ import hilog from '@ohos.hilog';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium'
 import display from '@ohos.display';
 import window from '@ohos.window';
+import screen from '@ohos.screen';
 import { BusinessError } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
 import { image } from '@kit.ImageKit';
@@ -87,6 +88,7 @@ export default function displayTest() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
+    let isSupportRotate = false;
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -115,9 +117,23 @@ export default function displayTest() {
           if(allowed){
             await allowed.click();
           }
-        } catch (err) {
+      } catch (err) {
           console.error('findComponent allowed failed: ' + JSON.stringify(err));
-        }
+      }
+      await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT)
+      await sleep(300);
+      let Orientation1 = display.getDefaultDisplaySync().orientation;
+      await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+      await sleep(300);
+      let Orientation2 = display.getDefaultDisplaySync().orientation;
+      if(Orientation1 != Orientation2){
+        isSupportRotate = true;
+      }else{
+        isSupportRotate = false;
+      }
+      await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+      await sleep(300);
+      console.log(`beforeAll isSupportRotate: ${JSON.stringify(isSupportRotate)},Orientation1: ${JSON.stringify(Orientation1)},Orientation2: ${JSON.stringify(Orientation2)}`)
     });
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -2918,7 +2934,7 @@ export default function displayTest() {
         subWindowClass = await windowStage.createSubWindow(caseName);
         subWindowClass.setUIContent('testability/pages/getSurfaceId')
         await subWindowClass.resizeAsync(1000, 1200);
-        await subWindowClass.moveWindowToAsync(100, 100)
+        await subWindowClass.moveWindowToAsync(100, 300)
         subWindowClass.showWindow();
 
         let driver = Driver.create();
@@ -3255,6 +3271,364 @@ export default function displayTest() {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(1300002)
         done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetRoundedCorner
+     * @tc.number SUB_DMS_GET_ROUNDED_CORNER_0100
+     * @tc.desc   逻辑屏getRoundedCorner接口查询屏幕圆角信息
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetRoundedCorner', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testGetRoundedCorner ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        let displayInfo = display.getDefaultDisplaySync();
+        console.info(caseName + ' displayInfo: ' + JSON.stringify(displayInfo));
+        let roundedCorner = displayInfo.getRoundedCorner();
+        console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
+        console.info(caseName + ' roundedCorner length: ' + JSON.stringify(roundedCorner.length));
+        if (isPCStatus == '') {
+          expect(roundedCorner[0].type).assertEqual(0)
+          expect(roundedCorner[0].position.x).assertEqual(roundedCorner[0].radius)
+          expect(roundedCorner[0].position.y).assertEqual(roundedCorner[0].radius)
+          expect(roundedCorner[1].type).assertEqual(1)
+          expect(roundedCorner[1].position.x).assertEqual(displayInfo.width - roundedCorner[1].radius)
+          expect(roundedCorner[1].position.y).assertEqual(roundedCorner[1].radius)
+          expect(roundedCorner[2].type).assertEqual(2)
+          expect(roundedCorner[2].position.x).assertEqual(displayInfo.width - roundedCorner[2].radius)
+          expect(roundedCorner[2].position.y).assertEqual(displayInfo.height - roundedCorner[2].radius)
+          expect(roundedCorner[3].type).assertEqual(3)
+          expect(roundedCorner[3].position.x).assertEqual(roundedCorner[3].radius)
+          expect(roundedCorner[3].position.y).assertEqual(displayInfo.height - roundedCorner[3].radius)
+        } else if (isPCStatus == 'true') {
+          expect(roundedCorner.length).assertEqual(0)
+        }
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testGetRoundedCornerwithVirtualDisplay
+     * @tc.number SUB_DMS_GET_ROUNDED_CORNER_0200
+     * @tc.desc   虚拟屏getRoundedCorner接口查询屏幕圆角信息返回空数组
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetRoundedCornerwithVirtualDisplay', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testGetRoundedCornerwithVirtualDisplay ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        display.createVirtualScreen({
+          name: 'createVirtualScreen3',
+          width: 1080,
+          height: 2720,
+          density: 2,
+          surfaceId: '',
+        }).then(async (displayId: number) => {
+          let displayInfo = display.getDisplayByIdSync(displayId);
+          console.info(caseName + ' displayInfo: ' + JSON.stringify(displayInfo));
+          let roundedCorner = displayInfo.getRoundedCorner();
+          console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
+          console.info(caseName + ' roundedCorner length: ' + JSON.stringify(roundedCorner.length));
+          expect(roundedCorner.length).assertEqual(0);
+          await display.destroyVirtualScreen(displayId);
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801)
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        })
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testGetRoundedCorner_RoundedCornerInfo_enum
+     * @tc.number SUB_DMS_GET_ROUNDED_CORNER_0400
+     * @tc.desc   getRoundedCorner接口查询屏幕圆角对象信息的断言
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetRoundedCorner_RoundedCornerInfo_enum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testGetRoundedCorner_RoundedCornerInfo_enum ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        let displayInfo = display.getDefaultDisplaySync();
+        console.info(caseName + ' displayInfo: ' + JSON.stringify(displayInfo));
+        let roundedCorner = displayInfo.getRoundedCorner();
+        console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
+        console.info(caseName + ' roundedCorner length: ' + JSON.stringify(roundedCorner.length));
+        if (isPCStatus == '') {
+          expect(roundedCorner[0].type).assertEqual(0)
+          expect(roundedCorner[0].position.x).assertLarger(0)
+          expect(roundedCorner[0].position.y).assertLarger(0)
+          expect(roundedCorner[0].radius).assertLarger(0)
+          expect(roundedCorner[1].type).assertEqual(1)
+          expect(roundedCorner[1].position.x).assertLarger(0)
+          expect(roundedCorner[1].position.y).assertLarger(0)
+          expect(roundedCorner[1].radius).assertLarger(0)
+          expect(roundedCorner[2].type).assertEqual(2)
+          expect(roundedCorner[2].position.x).assertLarger(0)
+          expect(roundedCorner[2].position.y).assertLarger(0)
+          expect(roundedCorner[2].radius).assertLarger(0)
+          expect(roundedCorner[3].type).assertEqual(3)
+          expect(roundedCorner[3].position.x).assertLarger(0)
+          expect(roundedCorner[3].position.y).assertLarger(0)
+          expect(roundedCorner[3].radius).assertLarger(0)
+        }
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testOnChangeWithAttribute_width_height_setPreferOrientation
+     * @tc.number SUB_WMS_DMS_CHANGE_WITH_ATTRIBUTE_SETPERFERORIENTATION_0100
+     * @tc.desc   testOnChangeWithAttribute_width_height_setPreferOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnChangeWithAttribute_width_height_setPreferOrientation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOnChangeWithAttribute_width_height_setPreferOrientation ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowClass = windowStage.getMainWindowSync();
+      try {
+        if(isSupportRotate == true){
+          let index1 = 0;
+          let index2 = 0;
+          const callback1 = (res: number)=>{
+            console.info(caseName + ' callback1 res: ' + res);
+            index1++;
+            console.info(caseName + ' callback1 index1: ' + index1);
+          }
+          const callback2 = (res: number)=>{
+            console.info(caseName + ' callback2 res: ' + res);
+            index2++;
+            console.info(caseName + ' callback2 index2: ' + index2);
+          }
+          display.onChangeWithAttribute(['width'], callback1);
+          display.onChangeWithAttribute(['height'], callback2);
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(1);
+          display.off('change', callback1);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(3000);
+          console.info(caseName + ' setOrientation index1: ' + index1);
+          console.info(caseName + ' setOrientation index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(2);
+          display.off('change');
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(2);
+          done();
+        }else{
+          done();
+        }
+
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation
+     * @tc.number SUB_WMS_DMS_CHANGE_WITH_ATTRIBUTE_SETPERFERORIENTATION_0200
+     * @tc.desc   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnChangeWithAttribute_rotation_orientation_setPreferOrientation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOnChangeWithAttribute_rotation_orientation_setPreferOrientation ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowClass = windowStage.getMainWindowSync();
+
+      try {
+        if(isSupportRotate == true) {
+          let index1 = 0;
+          let index2 = 0;
+          const callback1 = (res: number) => {
+            console.info(caseName + ' callback1 res: ' + res);
+            index1++;
+            console.info(caseName + ' callback1 index1: ' + index1);
+          }
+          const callback2 = (res: number) => {
+            console.info(caseName + ' callback2 res: ' + res);
+            index2++;
+            console.info(caseName + ' callback2 index2: ' + index2);
+          }
+          display.onChangeWithAttribute(['rotation'], callback1);
+          display.onChangeWithAttribute(['orientation'], callback2);
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(1);
+          display.off('change', callback1);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT_INVERTED);
+          await sleep(3000);
+          console.info(caseName + ' setOrientation index1: ' + index1);
+          console.info(caseName + ' setOrientation index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(2);
+          display.off('change');
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(2);
+          done();
+        }else{
+          done();
+        }
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2
+     * @tc.number SUB_WMS_DMS_CHANGE_WITH_ATTRIBUTE_SETPERFERORIENTATION_0300
+     * @tc.desc   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2 ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowClass = windowStage.getMainWindowSync();
+      let diaplayId = display.getDefaultDisplaySync().id;
+      console.info(caseName + 'diaplayId: ' + diaplayId);
+      try {
+        if(isSupportRotate == true) {
+          let index1 = 0;
+          const callback1 = (res: number) => {
+            console.info(caseName + ' callback1 res: ' + res);
+            expect(res).assertEqual(diaplayId);
+            index1++;
+            console.info(caseName + ' callback1 index1: ' + index1);
+          }
+          display.onChangeWithAttribute(['rotation', 'densityDPI'], callback1);
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
+          expect(index1).assertEqual(1);
+          display.off('change', callback1);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
+          expect(index1).assertEqual(1);
+          done();
+        }else{
+          done();
+        }
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testEnumCornerType
+     * @tc.number SUB_WMS_DMS_ENUM_CORNER_TYPE_0100
+     * @tc.desc   testEnumCornerType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEnumCornerType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testEnumCornerType ';
+      console.log(caseName + 'begin');
+      try {
+        console.info(caseName + ' display.CornerType: ' + JSON.stringify(display.CornerType));
+        expect(display.CornerType.TOP_LEFT).assertEqual(0);
+        expect(display.CornerType.TOP_RIGHT).assertEqual(1);
+        expect(display.CornerType.BOTTOM_RIGHT).assertEqual(2);
+        expect(display.CornerType.BOTTOM_LEFT).assertEqual(3);
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        expect().assertFail();
+        done()
       }
     });
 

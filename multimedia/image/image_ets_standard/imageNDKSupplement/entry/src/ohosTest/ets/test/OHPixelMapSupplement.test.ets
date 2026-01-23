@@ -135,7 +135,7 @@ export default function OHPixelMapSupplementTest() {
     /**
      * @tc.number  SUB_OH_PIXEL_MAP_NATIVE_SET_COLOR_SPACE_NATIVE_001
      * @tc.name    SUB_OH_PIXEL_MAP_NATIVE_SET_COLOR_SPACE_NATIVE_001
-     * @tc.desc    OHPixelmapNativeSetColorSpaceNative EFFECT_SUCCESS
+     * @tc.desc    OHPixelmapNativeSetColorSpaceNative IMAGE_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -144,7 +144,7 @@ export default function OHPixelMapSupplementTest() {
       console.info(TAG,'Start')
       let result: number = testNapi.OHPixelmapNativeSetColorSpaceNativeSuppTest(CASE_INDEX_1);
       console.info(TAG,'Success',JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_SUCCESS);
+      expect(result).assertEqual(IMAGE_SUCCESS);
     });
     /**
      * @tc.number  SUB_OH_PIXEL_MAP_NATIVE_GET_COLOR_SPACE_NATIVE_001
@@ -425,6 +425,20 @@ export default function OHPixelMapSupplementTest() {
       let result: number = testNapi.OHPixelmapNativeIsReleasedSuppTest(CASE_INDEX_1);
       console.info(TAG,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_BAD_PARAMETER);
+    });
+    /**
+     * @tc.number  SUB_OH_PIXEL_MAP_NATIVE_IS_RELEASED_002
+     * @tc.name    SUB_OH_PIXEL_MAP_NATIVE_IS_RELEASED_002
+     * @tc.desc    OHPixelmapNativeIsReleased IMAGE_SUCCESS
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('SUB_OH_PIXEL_MAP_NATIVE_IS_RELEASED_002', Level.LEVEL0, () => {
+      console.info(TAG,'Start')
+      let result: number = testNapi.OHPixelmapNativeIsReleasedSuppTest(CASE_INDEX_2);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_SUCCESS);
     });
     /**
      * @tc.number  SUB_OH_PIXEL_MAP_NATIVE_READ_PIXELS_FROM_AREA_001

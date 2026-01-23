@@ -69,7 +69,8 @@ export default function openCustomDialogLevelOrder() {
     });
 
     
-    /**
+    
+/**
      * @tc.number   openCustomDialogLevelOrder_static_0100
      * @tc.name     openCustomDialogLevelOrder_static_0100
      * @tc.desc     openCustomDialogLevelOrder_static_0100
@@ -96,7 +97,8 @@ it('openCustomDialogLevelOrder_static_0100', TestType.FUNCTION | Size.MEDIUMTEST
     });
 
     
-    /**
+    
+/**
      * @tc.number   openCustomDialogLevelOrder_static_0200
      * @tc.name     openCustomDialogLevelOrder_static_0200
      * @tc.desc     openCustomDialogLevelOrder_static_0200
@@ -123,7 +125,8 @@ it('openCustomDialogLevelOrder_static_0200', TestType.FUNCTION | Size.MEDIUMTEST
     });
 
     
-    /**
+    
+/**
      * @tc.number   openCustomDialogLevelOrder_static_0300
      * @tc.name     openCustomDialogLevelOrder_static_0300
      * @tc.desc     openCustomDialogLevelOrder_static_0300
@@ -149,7 +152,8 @@ it('openCustomDialogLevelOrder_static_0300', TestType.FUNCTION | Size.MEDIUMTEST
       done();
     });
     
-    /**
+    
+/**
      * @tc.number   openCustomDialogLevelOrder_static_0400
      * @tc.name     openCustomDialogLevelOrder_static_0400
      * @tc.desc     openCustomDialogLevelOrder_static_0400

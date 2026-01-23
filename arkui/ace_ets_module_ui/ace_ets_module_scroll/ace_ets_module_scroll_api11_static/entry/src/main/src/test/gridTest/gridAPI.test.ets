@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,6 +22,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 export default function gridMaxCountJsunit() {
   describe('gridMaxCountTest', () => {
@@ -59,8 +60,7 @@ export default function gridMaxCountJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testcheckgridMaxCount0001_static_01
      * @tc.name     testcheckgridMaxCount0001_static_01
      * @tc.desc     testcheckgridMaxCount0001_static_01
@@ -79,8 +79,7 @@ it('testcheckgridMaxCount0001_static_01', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testEdgeEffectOptions0002_static_02
      * @tc.name     testEdgeEffectOptions0002_static_02
      * @tc.desc     testEdgeEffectOptions0002_static_02
@@ -101,8 +100,7 @@ it('testEdgeEffectOptions0002_static_02', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testEdgeEffectOptions0003_static_03
      * @tc.name     testEdgeEffectOptions0003_static_03
      * @tc.desc     testEdgeEffectOptions0003_static_03
@@ -115,7 +113,7 @@ it('testEdgeEffectOptions0003_static_03', Level.LEVEL0, async () => {
         let eventData: events_emitter.EventData = {
           data: {
             "alwaysEnabled": false
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 321,

@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,13 +58,14 @@ export default function setMarkNodeGroupTest() {
 
 
 
-/**
+    /**
      * @tc.number   setMarkNodeGroupTest_static_0010
      * @tc.name     setMarkNodeGroupTest_static_0010
      * @tc.desc     setMarkNodeGroupTest_static_0010
      * @tc.level    Level.LEVEL0
      */
 it('setMarkNodeGroupTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('setMarkNodeGroupTest_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);

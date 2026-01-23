@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import {loadAndSetUpUiTest } from '@ohos.UiTest'
+
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import  hilog  from '@ohos.hilog'
 
@@ -24,6 +24,23 @@ let tag: string = 'ActsAceEtsModuleImageTextNowearApi18StaticTest';
 class UtilsTest{
   static isloadAndSetUpUiTest = false;
   static isStartedAbility = false;
+
+  static async loadAndSetUpUiTest() : Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      hilog.info(domain, tag, `loadAndSetUpUiTest, isloadAndSetUpUiTest`);
+      try {
+        if (!UtilsTest.isloadAndSetUpUiTest) {
+          
+          hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
+          UtilsTest.isloadAndSetUpUiTest = true;
+        }
+        resolve(true)
+      } catch(error: Error) {
+        hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${String(error)}`);
+        reject(error)
+      }
+    })
+  }
 
   static async msSleep(count:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
@@ -54,6 +71,7 @@ async function startAbility(bundleName: string, abilityName: string): Promise<bo
     await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
     console.info(`UiTestCase, start abilityFinished`);
     hilog.info(domain, tag, `UiTestCase, start abilityFinished`);
+    await UtilsTest.msSleep(4000)
     return true;
   } catch(error) {
     console.error(`UiTestCase, start abilityFailed: ${error}`);

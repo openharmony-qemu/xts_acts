@@ -132,8 +132,7 @@ export default function RichEditorSetStyledString015() {
       await CommonFunc.sleep(500);
       expect(textStyleText).assertContain('"fontColor":"#FF0000FF"');
       expect(textStyleText).assertContain('"fontFamily":"MiSans-Bold"');
-      expect(textStyleText).assertContain('"fontFeature":""');
-      expect(textStyleText).assertContain('"fontSize":50');
+      expect(textStyleText).assertContain('"fontSize":"50.00vp"');
       expect(textStyleText).assertContain('"fontStyle":1');
       expect(textStyleText).assertContain('"fontWeight":13');
       expect(textStyleText).assertContain('"decoration":{"type":1,"color":"#FF008000"}');
@@ -162,8 +161,7 @@ export default function RichEditorSetStyledString015() {
       await CommonFunc.sleep(500);
       expect(textStyleText).assertContain('"fontColor":"#FF0000FF"');
       expect(textStyleText).assertContain('"fontFamily":"MiSans-Bold"');
-      expect(textStyleText).assertContain('"fontFeature":""');
-      expect(textStyleText).assertContain('"fontSize":50');
+      expect(textStyleText).assertContain('"fontSize":"50.00vp"');
       expect(textStyleText).assertContain('"fontStyle":1');
       expect(textStyleText).assertContain('"fontWeight":13');
       expect(textStyleText).assertContain('"decoration":{"type":1,"color":"#FF008000"}');

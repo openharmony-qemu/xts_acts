@@ -43,11 +43,11 @@ export default function themePageToggleTest() {
         console.info("get themePageToggleTest state pages:" + JSON.stringify(pages));
         if (!("themePageMgmtColorsTest" == pages.name)) {
           console.info("get themePageToggleTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push themePageToggleTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push themePageToggleTest page error:" + err);
@@ -58,6 +58,7 @@ export default function themePageToggleTest() {
     
     
 
+
 /**
      * @tc.number   themeInterfaceIsValidTest_static_0100
      * @tc.name     themeInterfaceIsValidTest_static_0100
@@ -65,6 +66,7 @@ export default function themePageToggleTest() {
      * @tc.level    Level.LEVEL0
      */
 it('themeInterfaceIsValidTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('themeInterfaceIsValidTest_0100 START');
       let driver = Driver.create()
       await Utils.sleep(1000);

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,9 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter'
+import events_emitter from '@ohos.events.emitter';
 import { RouterParams } from '../../common/Utils';
-import Router from '@system.router'
 import {
   DataReloadOperation,Flex,GridRow,Grid,List,Polyline,Badge,GridRowDirection,GridCol,GridItem,ListItem,ListItemGroup,DataOperationType,Ellipse,Line,Polygon,Path,Rect,Shape,Shape,ColumnSplit,Counter,Refresh,RelativeContainer,AlignRuleOption,Entry,Select,Select,Stepper,TextArea,TextClock,TextInput,TextPicker,
   Toggle,
@@ -169,9 +168,10 @@ import {
   CommonMethod,
   applyStyles
 } from '@ohos.arkui.component'
-import { State, Link, Prop,StorageProp,AppStorage,Observed } from '@ohos.arkui.stateManagement'
+import { State, Link, PropRef,StoragePropRef,AppStorage,Observed } from '@ohos.arkui.stateManagement'
 import webview from '@ohos.web.webview';
 import { ItemState } from '@ohos.arkui.advanced.ToolBar'
+import { RecordData } from '@ohos.base';
 
 
 let navPathStack = new NavPathStack()
@@ -917,7 +917,7 @@ struct ZIndexPage {
   }
   private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != null) {
-      const data = eventData.data as Record<string, Object | null | undefined>                        //��Ҫ�Ȼ�ȡ����������֮��  �ٷ��ʳ�Ա����
+      const data = eventData.data as Record<string, RecordData>                        //��Ҫ�Ȼ�ȡ����������֮��  �ٷ��ʳ�Ա����
       if (data!['mZIndex'] != null) {
         console.log('colorBlendcolorBlendcolorBlendcolorBlendcolorBlend',data!['mZIndex']);
         this._zIndexButtonModifier.mZIndex = data!['mZIndex'] as int

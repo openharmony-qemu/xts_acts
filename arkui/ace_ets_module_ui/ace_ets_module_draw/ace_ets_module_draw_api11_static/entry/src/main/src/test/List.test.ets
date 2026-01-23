@@ -50,11 +50,13 @@ import panelBackgroundMaskJsunit from './panelTest/panel.test';
 import ParticleJsunit from './ParticleTest/ParticlePropertyJsunit.test';
 
 export default function testsuite() {
-  // CanvasAPIUnitTest() // 1 pass 1
-  ellipseJsunit(); // 7 pass 7
-
-  // shapeJsunit(); // 33 pass 32 shapeTest_static_0100vppx
-  lineJsunit(); // 8 pass 8
+  circleNewJsunit()
+  columnJsunit()
+  Matrix2DTest()
+  CanvasAPIUnitTest()
+  ellipseJsunit();
+  shapeJsunit();
+  lineJsunit();
   polygonJsunit()
   polylineJsunit()
   ellipseNeJsunit()
@@ -63,23 +65,19 @@ export default function testsuite() {
   polygonNewJsunit()
   polyLineNeJsunit()
   rectNeJsunit()
-  // RectRadiusTest()
-  // RectCommonShapeMethodTest()
-  circleNewJsunit()
-  // 22 pass 22
-  CanvasAPITest() // 1 pass 1
-  // CanvasAPICanvasRenderTest() // 1 pass 1
-  CanvasShaderTest() //2 pass 2
-  curvesStepsJsunit() // 1 pass 1
-  OffScreenCanvasTest() // 1 pass 1
-  CanvasColorTest() // 1 pass 1
-  panelBackgroundMaskJsunit() // 1 pass 1
-  drawCanvas() // 1 pass 1
-  columnJsunit() //1 pass 1
-  // ParticleJsunit() // 18 Particle
-  Matrix2DTest() // 1 pass 1
-  // circleJsunit(); // 3 pass 3
-  pathJsunit() // 2 pass 2
-  // canvasActualBoundingBoxAscentJsunit() // 5 pass 5
+  RectRadiusTest()
+  RectCommonShapeMethodTest()
+  CanvasAPITest()
+  CanvasAPICanvasRenderTest()
+  CanvasShaderTest()
+  curvesStepsJsunit()
+  OffScreenCanvasTest()
+  CanvasColorTest()
+  panelBackgroundMaskJsunit()
+  drawCanvas()
+  ParticleJsunit()
+  circleJsunit();
+  pathJsunit()
+  canvasActualBoundingBoxAscentJsunit()
 
 }

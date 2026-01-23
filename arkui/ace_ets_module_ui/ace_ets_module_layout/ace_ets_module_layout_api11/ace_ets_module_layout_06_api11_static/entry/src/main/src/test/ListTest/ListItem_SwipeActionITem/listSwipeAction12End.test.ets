@@ -36,12 +36,13 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function listSwipeAction12EndJsunit() {
   describe('listSwipeAction12EndTest', () => {
+
+    await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
+    await UtilsTest.msSleep(4000)
+
+    const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!;
     beforeAll(async (): Promise<void> => {
       console.info("listSwipeAction12EndTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-
       let options: router.RouterOptions = {
         url: "MainAbility/pages/List/ListItem_SwipeActionItem/listTest12"
       }
@@ -92,24 +93,27 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0120', Level.LEVEL0,
       let strJson = inspector.getInspectorByKey('lSwipeAction12End0');
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0120] current component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
 
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipeAction12End0');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom -top;
-      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0120 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      
-      driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(150))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(50))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
-      );
-      await CommonFunc.sleep(4000);
-      
-      let textSwipeState = inspector.getInspectorByKey('swipeState12End');
+        let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipeAction12End0');
+        let right: number = ListItem_00.right;
+        let left: number = ListItem_00.left;
+        let top: number = ListItem_00.top;
+        let bottom: number = ListItem_00.bottom;
+        let width = right - left;
+        let height = bottom - top;
+        console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0120 value is" + left + " --" + right +
+          "--" + top + "--" + bottom);
+
+
+        driver.swipe(
+          (Math.round((AppStorage.get<number>('winLeft') ?? 0 + left + uiContext.vp2px(150)) as number)).toInt(),
+          (Math.round((AppStorage.get<number>('winLeft') ?? 0 + top + height / 2) as number)).toInt(),
+          (Math.round((AppStorage.get<number>('winLeft') ?? 0 + left + uiContext.vp2px(50)) as number)).toInt(),
+          (Math.round((AppStorage.get<number>('winLeft') ?? 0 + top + height / 2) as number)).toInt()
+        );
+
+        await CommonFunc.sleep(4000);
+
+        let textSwipeState = inspector.getInspectorByKey('swipeState12End');
 
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0120 json is ' + JSON.stringify(JSON.parseJsonElement(textSwipeState).getElement('$attrs')));
       expect(JSON.parseJsonElement(textSwipeState).getElement('$attrs').getString('content')).assertEqual('1');

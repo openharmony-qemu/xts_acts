@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,24 +36,23 @@ import datePickerOnChangeModifierTest from './datePicker/datePickerOnChangeModif
 import selectNodeTest from './select/selectNode.test'
 
 export default function testsuite() {
-  // enableCascadeTest(); //SDK12.9 问题表格60行 4个用例
-  // CheckboxNodeTest(); ////SDK12.9 Pass: 1
-  // checkboxGroupNodeTest(); // SDK12.9 Pass: 1
-  // radioNodeTest(); // SDK12.9 Pass: 1
-  // ratingNodeTest(); /// SDK12.9 Pass: 1
-  // sliderNodeTest(); // SDK12.9 Pass: 1
-  // toggleNodeTest(); // SDK12.9 Pass: 1
-  // Picker(); //手表端，不用管
-  // TimePicker();//SDK12.9 问题表格63行 4个用例
-  // TextPicker(); //SDK12.9 问题表格63行 7
-  // CheckboxOnChangeModifierTest(); //SDK12.9 问题表格63行 2
-  // radioOnChangeModifierTest(); //SDK12.9 问题表格63行 2
-  // CheckboxGroupOnChangeModifierTest(); //SDK12.9 问题表格63行 1
-  // ratingOnChangeModifierTest(); ///SDK12.9 问题表格63行 1
-  // sliderOnChangeModifierTest(); //SDK12.9 问题表格63行 3
-  // toggleOnChangeModifierTest(); //SDK12.9 问题表格63行 2
-  // textPickerOnChangeModifierTest(); //SDK12.9 问题表格64行 2
-  // timePickerOnChangeModifierTest(); //SDK12.9 问题表格64行 2
-  // datePickerOnChangeModifierTest(); //SDK12.9 问题表格68行 1
-  // selectNodeTest(); // 不存在page页面 1.1也没有
+  enableCascadeTest();
+  CheckboxNodeTest();
+  checkboxGroupNodeTest();
+  radioNodeTest();
+  ratingNodeTest();
+  sliderNodeTest();
+  toggleNodeTest();
+  Picker();
+  TimePicker();
+  TextPicker();
+  CheckboxOnChangeModifierTest();
+  radioOnChangeModifierTest();
+  CheckboxGroupOnChangeModifierTest();
+  ratingOnChangeModifierTest();
+  // sliderOnChangeModifierTest();
+  // toggleOnChangeModifierTest();
+  // textPickerOnChangeModifierTest();
+  // timePickerOnChangeModifierTest();
+  // datePickerOnChangeModifierTest();
 }

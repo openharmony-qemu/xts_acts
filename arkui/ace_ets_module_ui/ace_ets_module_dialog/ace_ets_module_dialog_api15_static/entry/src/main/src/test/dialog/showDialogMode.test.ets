@@ -70,7 +70,6 @@ export default function showDialogMode() {
     
     
 
-
 /**
      * @tc.number   showDialogMode_static_0100
      * @tc.name     showDialogMode_static_0100
@@ -114,7 +113,6 @@ it('showDialogMode_static_0100', Level.LEVEL1, async (done: () => void): Promise
     
     
 
-
 /**
      * @tc.number   showDialogMode_static_0200
      * @tc.name     showDialogMode_static_0200
@@ -151,14 +149,12 @@ it('showDialogMode_static_0200', Level.LEVEL1, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       let btn4 = await driver.findComponent(ON.text('button1'));
       expect(btn4 != null).assertFalse();
-      // await ( btn4?.click() as Promise<void>);
       console.info('[showDialogMode_static_0200] END');
       done();
     });
 
     
     
-
 
 /**
      * @tc.number   showDialogMode_static_0300
@@ -203,7 +199,6 @@ it('showDialogMode_static_0300', Level.LEVEL1, async (done: () => void): Promise
 
     
     
-
 
 /**
      * @tc.number   showDialogMode_static_0400
@@ -250,7 +245,6 @@ it('showDialogMode_static_0400', Level.LEVEL1, async (done: () => void): Promise
      
     
 
-
 /**
      * @tc.number   showDialogMode_static_0500
      * @tc.name     showDialogMode_static_0500
@@ -292,7 +286,6 @@ it('showDialogMode_static_0500', Level.LEVEL1, async (done: () => void): Promise
      
     
 
-
 /**
      * @tc.number   showDialogMode_static_0600
      * @tc.name     showDialogMode_static_0600
@@ -331,7 +324,6 @@ it('showDialogMode_static_0600', Level.LEVEL1, async (done: () => void): Promise
 
     
     
-
 
 /**
      * @tc.number   showDialogMode_static_0700
@@ -375,7 +367,6 @@ it('showDialogMode_static_0700', Level.LEVEL1, async (done: () => void): Promise
 
     
     
-
 
 /**
      * @tc.number   showDialogMode_static_0800

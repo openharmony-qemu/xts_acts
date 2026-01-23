@@ -79,6 +79,7 @@ export default function NavigationCustomTitlePage() {
      * @tc.level    Level.LEVEL0
      */
 it('NavigationCustomTitlePage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('NavigationCustomTitlePage_0100 START');
       await CommonFunc.sleep(1000);
 
@@ -86,11 +87,12 @@ it('NavigationCustomTitlePage_static_0100', Level.LEVEL0, async (done: () => voi
       await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('customTitleId'));
-      await (btn1?.click() as Promise<void>)
+      console.log('+++++++++++++btn1',btn1)
+      await (btn1?.click() as Promise<void>) //master22 undefined cannot be cast to Promise<void>
       console.info('[NavigationCustomTitlePage_0100] btn1 click');
       await CommonFunc.sleep(3000);
 
-      let customTitle:number = AppStorage.get('customTitle')! as number
+      let customTitle:Double = AppStorage.get<Double>('customTitle')! as Double
       expect(customTitle).assertEqual(14);
       AppStorage.delete('customTitle');
 
@@ -108,6 +110,7 @@ it('NavigationCustomTitlePage_static_0100', Level.LEVEL0, async (done: () => voi
      * @tc.level    Level.LEVEL0
      */
 it('NavigationCustomTitlePage_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('NavigationCustomTitlePage_0200 START');
       await CommonFunc.sleep(1000);
 
@@ -119,11 +122,11 @@ it('NavigationCustomTitlePage_static_0200', Level.LEVEL0, async (done: () => voi
       console.info('[NavigationCustomTitlePage_0200] push click');
 
       let btn1 = await driver.findComponent(ON.id('customNavTitleId'));
-      await (btn1?.click() as Promise<void>)
+      await (btn1?.click() as Promise<void>) //master22 undefined cannot be cast to Promise<void>
       console.info('[NavigationCustomTitlePage_0200] btn1 click');
       await CommonFunc.sleep(5000);
 
-      let customNavTitle:number = AppStorage.get('customNavTitle')! as number;
+      let customNavTitle:Double = AppStorage.get<Double>('customNavTitle')! as Double;
       expect(customNavTitle).assertEqual(15);
       AppStorage.delete('customNavTitle');
 

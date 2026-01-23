@@ -67,7 +67,6 @@ export default function overlayManager() {
     
     
 
-
 /**
      * @tc.number   overlayManager_static_0100
      * @tc.name     overlayManager_static_0100
@@ -94,7 +93,6 @@ it('overlayManager_static_0100', Level.LEVEL1, async (done: () => void): Promise
 
     
     
-
 
 /**
      * @tc.number   overlayManager_static_0200

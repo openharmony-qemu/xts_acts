@@ -24,7 +24,8 @@ import { Entry, Component, Column, Button, ColumnOptions, ClickEvent, Text, Colo
 @Entry
 @Component
 struct MultiNavigationEntry {
-  @Provide({alias: 'pageStack' })pageStack: MultiNavPathStack = new MultiNavPathStack();
+  @Provide({alias: 'pageStack' })
+  pageStack: MultiNavPathStack = new MultiNavPathStack();
 
   @Builder
   PageMap(name: string) {

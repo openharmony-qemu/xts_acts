@@ -75,7 +75,6 @@ export default function refreshResource() {
 
       
   
-
 /**
      * @tc.number   refreshResource_static_0100
      * @tc.name     refreshResource_static_0100
@@ -97,7 +96,6 @@ it('refreshResource_static_0100', Level.LEVEL0, async (done: () => void): Promis
 
       
   
-
 /**
      * @tc.number   refreshResource_static_0200
      * @tc.name     refreshResource_static_0200
@@ -135,7 +133,6 @@ it('refreshResource_static_0200', Level.LEVEL0, async (done: () => void): Promis
 
       
   
-
 /**
      * @tc.number   refreshResource_static_0300
      * @tc.name     refreshResource_static_0300
@@ -173,7 +170,6 @@ it('refreshResource_static_0300', Level.LEVEL0, async (done: () => void): Promis
 
       
   
-
 /**
      * @tc.number   refreshResource_static_0400
      * @tc.name     refreshResource_static_0400
@@ -211,7 +207,6 @@ it('refreshResource_static_0400', Level.LEVEL0, async (done: () => void): Promis
 
       
   
-
 /**
      * @tc.number   refreshResource_static_0500
      * @tc.name     refreshResource_static_0500
@@ -250,7 +245,6 @@ it('refreshResource_static_0500', Level.LEVEL0, async (done: () => void): Promis
 
       
   
-
 /**
      * @tc.number   refreshResource_static_0600
      * @tc.name     refreshResource_static_0600
@@ -288,7 +282,6 @@ it('refreshResource_static_0600', Level.LEVEL0, async (done: () => void): Promis
 
       
   
-
 /**
      * @tc.number   refreshResource_static_0700
      * @tc.name     refreshResource_static_0700

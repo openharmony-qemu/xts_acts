@@ -122,11 +122,11 @@ it('GridJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[GridJsunit_static_0200] START');
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'columnsGap', value: 15
+        name: 'columnsGap', value: 15.0
       })
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'rowsGap', value: 20
+        name: 'rowsGap', value: 20.0
       })
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<BarState>>('messageManager')?.notify({
@@ -138,7 +138,7 @@ it('GridJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
       })
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'scrollBarWidth', value: 30
+        name: 'scrollBarWidth', value: 30.0
       })
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<int>>('messageManager')?.notify({
@@ -178,16 +178,16 @@ it('GridJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       
       console.info('[GridJsunit_static_0300] START');
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'columnsGap', value: 'a'
+      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+        name: 'columnsGap', value: 0.0
       })
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'rowsGap', value: -10
+        name: 'rowsGap', value: -10.0
       })
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'scrollBar', value: '123'
+      AppStorage.get<MessageManager<BarState>>('messageManager')?.notify({
+        name: 'scrollBar', value: BarState.Auto
       })
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
@@ -195,11 +195,11 @@ it('GridJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       })
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'scrollBarWidth', value: -10
+        name: 'scrollBarWidth', value: -10.0
       })
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'cachedCount', value: 'a'
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
+        name: 'cachedCount', value: 1
       })
       await CommonFunc.sleep(200);
 
@@ -245,20 +245,28 @@ it('GridJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
       let right = grid2.right
       let driver = Driver.create()
 
-      driver.swipe((Math.round((right - left) / 2)).toInt(), (Math.round(bottom - UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
-        (Math.round((right - left) / 2)).toInt(), (Math.round(top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt());
-      driver.swipe((Math.round((right - left) / 2)).toInt(), (Math.round(bottom - UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
-        (Math.round((right - left) / 2)).toInt(), (Math.round(top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt());
+      await driver.swipe((Math.round((right - left) / 2)).toInt(),
+        (Math.round(bottom - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+        (Math.round((right - left) / 2)).toInt(),
+        (Math.round(top + UIContext.resolveUIContext()!.vp2px(10))).toInt());
+      await driver.swipe((Math.round((right - left) / 2)).toInt(),
+        (Math.round(bottom - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+        (Math.round((right - left) / 2)).toInt(),
+        (Math.round(top + UIContext.resolveUIContext()!.vp2px(10))).toInt());
       await CommonFunc.sleep(2000);
       let onScrollIndex1:Component = await driver.findComponent(ON.id('onScrollIndex')) as Component;
       let text1 = await (onScrollIndex1?.getText() as Promise<string>);
       expect(text1).assertEqual('onScrollIndex:2');
       await CommonFunc.sleep(1000);
 
-      driver.swipe((Math.round((right - left) / 2)).toInt(), (Math.round(bottom - UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
-        (Math.round((right - left) / 2)).toInt(), (Math.round(top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt());
-      driver.swipe((Math.round((right - left) / 2)).toInt(), (Math.round(bottom - UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
-        (Math.round((right - left) / 2)).toInt(), (Math.round(top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt());
+      await driver.swipe((Math.round((right - left) / 2)).toInt(),
+        (Math.round(bottom - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+        (Math.round((right - left) / 2)).toInt(),
+        (Math.round(top + UIContext.resolveUIContext()!.vp2px(10))).toInt());
+      await driver.swipe((Math.round((right - left) / 2)).toInt(),
+        (Math.round(bottom - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+        (Math.round((right - left) / 2)).toInt(),
+        (Math.round(top + UIContext.resolveUIContext()!.vp2px(10))).toInt());
       await CommonFunc.sleep(1000);
       let onScrollIndex2:Component = await driver.findComponent(ON.id('onScrollIndex')) as Component;
       let text2 = await (onScrollIndex2?.getText() as Promise<string>);
@@ -270,7 +278,6 @@ it('GridJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('button');
       let obj = JSON.parseJsonElement(strJson);
-      // console.info('[GridJsunit_static_0400] component obj is: ' + obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('label')).assertEqual('clicked');
       console.info('[GridJsunit_static_0400] END');
       done();

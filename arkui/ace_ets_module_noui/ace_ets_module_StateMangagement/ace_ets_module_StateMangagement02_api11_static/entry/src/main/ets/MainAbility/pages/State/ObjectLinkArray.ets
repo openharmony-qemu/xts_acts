@@ -39,14 +39,14 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -67,7 +67,7 @@ class ClassA {
 
 @Component
 struct arrViewA {
-  @ObjectLink data: ClassA = new ClassA(5)
+  @ObjectLink data: ClassA
 
   build() {
     Row() {

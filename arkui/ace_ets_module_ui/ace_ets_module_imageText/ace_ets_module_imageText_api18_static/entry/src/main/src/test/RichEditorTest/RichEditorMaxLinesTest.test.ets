@@ -54,7 +54,7 @@ export default function RichEditorMaxLinesTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get RichEditorMaxLinesTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("RichEditorMaxLinesTest" == pages.name)) {
           console.info("get RichEditorMaxLinesTest pages.name:" + JSON.stringify(pages.name));
           
           
@@ -87,7 +87,7 @@ it('RichEditorMaxLinesTest_static_0001', Level.LEVEL1, async (done: () => void) 
       let strJson: string = inspector.getInspectorByKey('RichEditorMaxLines');
       let obj = JSON.parseJsonElement(strJson);
       console.log('RichEditorMaxLinesTest-----' + obj.getElement('$attrs').getString('maxLines'));
-      expect(obj.getElement('$attrs').getString('maxLines')).assertEqual('1000000');
+      expect(obj.getElement('$attrs').getString('maxLines')).assertEqual('4294967295');
       console.info("[RichEditorMaxLinesTest0001] end");
       done();
     });
@@ -159,7 +159,7 @@ it('RichEditorMaxLinesTest_static_0004', Level.LEVEL1, async (done: () => void) 
       let strJson = inspector.getInspectorByKey('RichEditorMaxLines');
       let obj = JSON.parseJsonElement(strJson);
       console.log('RichEditorMaxLinesTest-----' + obj.getElement('$attrs').getString('maxLines'));
-      expect(obj.getElement('$attrs').getString('maxLines')).assertEqual('1000000');
+      expect(obj.getElement('$attrs').getString('maxLines')).assertEqual('4294967295');
       console.info("[RichEditorMaxLinesTest0004] end");
       done();
     });

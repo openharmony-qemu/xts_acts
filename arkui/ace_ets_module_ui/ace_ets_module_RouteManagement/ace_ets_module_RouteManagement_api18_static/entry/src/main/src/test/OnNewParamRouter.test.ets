@@ -41,9 +41,9 @@ export default function OnNewParamRouter() {
   describe('OnNewParamRouter', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("OnNewParamRouter beforeEach start");
@@ -81,6 +81,7 @@ export default function OnNewParamRouter() {
      * @tc.level    Level.LEVEL2
      */
 it('OnNewParamRouter_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+
       console.info('OnNewParamRouter_0100 START');
       let indexEvent: events_emitter.InnerEvent = {
         eventId: 51,
@@ -126,6 +127,7 @@ it('OnNewParamRouter_static_0100', Level.LEVEL2, async (done: () => void): Promi
      * @tc.level    Level.LEVEL2
      */
 it('OnNewParamRouter_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+
       console.info('OnNewParamRouter_0200 START');
       let indexEvent: events_emitter.InnerEvent = {
         eventId: 52,
@@ -171,6 +173,7 @@ it('OnNewParamRouter_static_0200', Level.LEVEL2, async (done: () => void): Promi
      * @tc.level    Level.LEVEL2
      */
 it('OnNewParamRouter_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+
       console.info('OnNewParamRouter_0300 START');
       let indexEvent: events_emitter.InnerEvent = {
         eventId: 53,

@@ -131,15 +131,15 @@ export default function settingUiJsunit() {
     it('settings_get_value_static_119',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let name = 'settings.screen.brightness119';//关键字
       let defaultValue = '323445.00';//值
-      let domainName = 'secure';
+      let domainName = 'system';
       try{
         let value = settings.getValueSync(abilityContext, name, defaultValue, domainName);
         console.info("[settings_set_value_119] value is: " + value);
-        expect().assertFail();
+        expect(value).assertEqual(defaultValue);
         done();
       } catch (err: Error) {
         console.error("[settings_set_value_119] error = " + err);
-        expect(err.message).assertEqual("Permission denied");
+        expect().assertFail();
         done();
       }
     });

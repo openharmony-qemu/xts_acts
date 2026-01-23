@@ -78,8 +78,7 @@ export default function listtestIdleJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testlisttestIdle_static_0001
      * @tc.name     testlisttestIdle_static_0001
      * @tc.desc     testlisttestIdle_static_0001

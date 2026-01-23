@@ -61,7 +61,7 @@ import {
   Scroller,
   Text,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
 import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import matrix4 from '@ohos.matrix4'

@@ -20,7 +20,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import common2D from '@ohos.graphics.displaySync'
 import common from '@ohos.app.ability.common';
 
-
 @Entry
 @Component
 struct Index {

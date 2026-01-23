@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,6 +38,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -84,8 +85,7 @@ export default function ListScrollTest() {
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Scroll_static_0100
      * @tc.name     ArkUI_List_Scroll_static_0100
      * @tc.desc     ArkUI_List_Scroll_static_0100
@@ -96,7 +96,7 @@ it('ArkUI_List_Scroll_static_0100', Level.LEVEL1, async (done: () => void): Prom
       console.info(`${SUITE} ${CASE} START`)
       let callback: (event: events_emitter.EventData) => void = (event: events_emitter.EventData) => {
         if (event.data != null) {
-          expect((event.data as Record<String, undefined | null | Object>)['start']).assertEqual(14);
+          expect((event.data as Record<String,RecordData>)['start']).assertEqual(14);
         }
         done();
       }
@@ -118,8 +118,7 @@ it('ArkUI_List_Scroll_static_0100', Level.LEVEL1, async (done: () => void): Prom
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Scroll_static_0200
      * @tc.name     ArkUI_List_Scroll_static_0200
      * @tc.desc     ArkUI_List_Scroll_static_0200
@@ -130,7 +129,7 @@ it('ArkUI_List_Scroll_static_0200', Level.LEVEL1, async (done: () => void): Prom
       console.info(`${SUITE} ${CASE} START`)
       let callback: (event: events_emitter.EventData) => void = (event: events_emitter.EventData) => {
         if (event.data != null) {
-          expect((event.data as Record<String, undefined | null | Object>)['start']).assertEqual(15);
+          expect((event.data as Record<String,RecordData>)['start']).assertEqual(15);
         }
         done();
       }
@@ -152,8 +151,7 @@ it('ArkUI_List_Scroll_static_0200', Level.LEVEL1, async (done: () => void): Prom
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Scroll_static_0300
      * @tc.name     ArkUI_List_Scroll_static_0300
      * @tc.desc     ArkUI_List_Scroll_static_0300
@@ -164,7 +162,7 @@ it('ArkUI_List_Scroll_static_0300', Level.LEVEL1, async (done: () => void): Prom
       console.info(`${SUITE} ${CASE} START`)
       let callback: (event: events_emitter.EventData) => void = (event: events_emitter.EventData) => {
         if (event.data != null) {
-          expect((event.data as Record<String, undefined | null | Object>)['start']).assertEqual(0);
+          expect((event.data as Record<String,RecordData>)['start']).assertEqual(0);
         }
         done();
       }
@@ -186,8 +184,7 @@ it('ArkUI_List_Scroll_static_0300', Level.LEVEL1, async (done: () => void): Prom
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Scroll_static_0400
      * @tc.name     ArkUI_List_Scroll_static_0400
      * @tc.desc     ArkUI_List_Scroll_static_0400
@@ -198,7 +195,7 @@ it('ArkUI_List_Scroll_static_0400', Level.LEVEL1, async (done: () => void): Prom
       console.info(`${SUITE} ${CASE} START`)
       let callback: (event: events_emitter.EventData) => void = (event: events_emitter.EventData) => {
         if (event.data != null) {
-          expect((event.data as Record<String, undefined | null | Object>)['end']).assertEqual(59);
+          expect((event.data as Record<String,RecordData>)['end']).assertEqual(59);
         }
         done();
       }

@@ -111,8 +111,6 @@ export default function ButtonHoverTest() {
     })
 
     
-
-
 /**
      * @tc.number   ArkUX_Hover_stoppropagation_static_0100
      * @tc.name     ArkUX_Hover_stoppropagation_static_0100

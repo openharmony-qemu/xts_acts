@@ -59,7 +59,8 @@ export default function bindTips1Test() {
     });
 
     
-    /**
+    
+/**
      * @tc.number   bindTips1_static_0100
      * @tc.name     bindTips1_static_0100
      * @tc.desc     bindTips1_static_0100

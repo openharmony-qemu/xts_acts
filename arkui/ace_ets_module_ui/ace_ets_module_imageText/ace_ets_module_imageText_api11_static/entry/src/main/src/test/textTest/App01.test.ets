@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,6 +27,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -52,7 +53,7 @@ export default function appVersionCodeJsunit() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get appVersionCodeTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("app" == pages.name)) {
           console.info("get appVersionCodeTest pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
@@ -89,7 +90,7 @@ export default function appVersionCodeJsunit() {
         }
         let callback = (eventData: emitter.EventData) => {
           console.info("testappVersionCode_0011 get event state result is: " + JSON.stringify(eventData));
-          const data = eventData.data as Record<String,undefined|null|Object>
+          const data = eventData.data as Record<String,RecordData>
           expect(data['Code'] as int).assertEqual(1000000);
         }
         const result = inspector.sendEventByKey('versionCodeText', 10, "")

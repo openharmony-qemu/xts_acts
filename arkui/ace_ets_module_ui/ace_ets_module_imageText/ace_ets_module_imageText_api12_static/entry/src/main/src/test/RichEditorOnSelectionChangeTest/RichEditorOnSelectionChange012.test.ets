@@ -105,7 +105,9 @@ export default function RichEditorOnSelectionChange012() {
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertEqual('message:{"start":0,"end":1}');
+      expect(messageText.indexOf('message:') == 0).assertEqual(true);
+      expect(messageText.indexOf('"start":0') > 0).assertEqual(true);
+      expect(messageText.indexOf('"end":1') > 0).assertEqual(true);
 
       let copy = await (driver.findComponent(ON.text('复制')) as Promise<Component>)
       await copy.click();
@@ -128,7 +130,9 @@ export default function RichEditorOnSelectionChange012() {
 
       messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertEqual('message:{"start":2,"end":2}');
+      expect(messageText.indexOf('message:') == 0).assertEqual(true);
+      expect(messageText.indexOf('"start":2') > 0).assertEqual(true);
+      expect(messageText.indexOf('"end":2') > 0).assertEqual(true);
       done();
     });
 

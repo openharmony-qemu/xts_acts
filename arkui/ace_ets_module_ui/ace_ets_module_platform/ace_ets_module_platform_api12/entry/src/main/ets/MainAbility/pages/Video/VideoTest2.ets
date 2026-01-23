@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,8 +30,8 @@ struct VideoTest2 {
           types: [ImageAnalyzerType.SUBJECT, ImageAnalyzerType.TEXT],
         }
       })
-        .width('300vp')
-        .height('200vp')
+        .width('200vp')
+        .height('100vp')
         .enableAnalyzer(true)
         .onStart(() => {
           console.info('onStart')
@@ -41,19 +41,19 @@ struct VideoTest2 {
           console.info('onPause')
         })
 
-      Text(this.text).id('VideoTest2_text')
+      Text(this.text).id('VideoTest2_text').height(25)
 
       Row() {
         Button('start').onClick(() => {
           this.controller.start()
-        }).margin(5).id('VideoTest2_start')
+        }).margin(5).id('VideoTest2_start').height(25)
 
         Button('pause').onClick(() => {
           this.controller.pause()
-        }).margin(5)
-
-
+        }).margin(5).height(25)
       }
-    }.width('100%')
+    }
+    .width('100%')
+    .height('100%')
   }
 }

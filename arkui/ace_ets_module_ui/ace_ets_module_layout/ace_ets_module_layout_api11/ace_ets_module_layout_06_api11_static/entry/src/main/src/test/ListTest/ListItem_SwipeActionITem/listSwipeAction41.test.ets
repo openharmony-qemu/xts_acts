@@ -107,9 +107,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0410', Level.LEVEL0,
 
       driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(100))).toInt()
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(100))).toInt()
       );
       await CommonFunc.sleep(1000);
       
@@ -118,18 +118,18 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0410', Level.LEVEL0,
       JSON.parseJsonElement(textSwipeOffset).getElement('$attrs').getString('content'));
       let Swipe41Action_swipe: RectValue = CommonFunc.getComponentRect('lSwipe41Row');
       let swipe_height = Swipe41Action_swipe.bottom - Swipe41Action_swipe.top;
-      console.info('41 0410 json' + Math.round(UIContext.getFocusedUIContext()!.px2vp(swipe_height)));
+      console.info('41 0410 json' + Math.round(UIContext.resolveUIContext()!.px2vp(swipe_height)));
       
       expect(Math.abs(Math.round(Number(JSON.parseJsonElement(textSwipeOffset)
         .getElement('$attrs')
         .getString('content'))) -
-      Math.round(UIContext.getFocusedUIContext()!.px2vp(swipe_height))) <= 1).assertTrue();
+      Math.round(UIContext.resolveUIContext()!.px2vp(swipe_height))) <= 1).assertTrue();
       
       driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(100))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt()
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(10))).toInt()
       );
       await CommonFunc.sleep(1000);
       let buttonReset2 = await driver.findComponent(ON.id('btreset41'));
@@ -139,9 +139,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0410', Level.LEVEL0,
       
       driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(100))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt()
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(10))).toInt()
       );
       await CommonFunc.sleep(1000);
       let textSwipeOffset2 = inspector.getInspectorByKey('swipe41Offset');
@@ -149,18 +149,18 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0410', Level.LEVEL0,
       JSON.parseJsonElement(textSwipeOffset2).getElement('$attrs').getString('content'));
       let Swipe41Action_swipe2: RectValue = CommonFunc.getComponentRect('lSwipe41Row2');
       let swipe_height2 = Swipe41Action_swipe2.bottom - Swipe41Action_swipe2.top;
-      console.info('41 0410 json' + Math.round(UIContext.getFocusedUIContext()!.px2vp(swipe_height2)));
+      console.info('41 0410 json' + Math.round(UIContext.resolveUIContext()!.px2vp(swipe_height2)));
       expect(Math.abs(Math.round(Number(JSON.parseJsonElement(textSwipeOffset2)
         .getElement('$attrs')
         .getString('content'))) -
-        (-Math.round(UIContext.getFocusedUIContext()!.px2vp(swipe_height2)))) <= 1).assertTrue();
+        (-Math.round(UIContext.resolveUIContext()!.px2vp(swipe_height2)))) <= 1).assertTrue();
       
       
       driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(230))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(230))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(2))).toInt()
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(2))).toInt()
       );
       await CommonFunc.sleep(1000);
       done();

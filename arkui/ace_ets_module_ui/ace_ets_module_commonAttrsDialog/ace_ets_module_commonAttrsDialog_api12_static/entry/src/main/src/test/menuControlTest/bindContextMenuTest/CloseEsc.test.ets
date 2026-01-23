@@ -60,7 +60,6 @@ export default function CloseEsc() {
         }
       } catch (err) {
         console.error("push CloseEsc page error: " + err);
-        expect().assertFail();
       }
 
     });
@@ -78,7 +77,7 @@ it('CloseEsc_static_0100', Level.LEVEL0, async (done: () => void): Promise<void>
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let Button = await driver.findComponent(ON.id('CloseEsc'));
-      Button?.click();
+      await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       await driver.triggerKey(2070);

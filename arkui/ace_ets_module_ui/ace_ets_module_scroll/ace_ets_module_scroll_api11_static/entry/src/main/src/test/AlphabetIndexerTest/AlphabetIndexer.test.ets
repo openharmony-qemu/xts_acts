@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { GlobalContext } from '../../../ets/MainAbility/common/GlobalContext.ets'
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -107,7 +108,7 @@ export default function ActsAlphabetIndexerUxTest() {
             "nullFlag3": false,
             "nullFlag4": false,
             "nullFlag5": false
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -123,8 +124,7 @@ export default function ActsAlphabetIndexerUxTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_0100
      * @tc.name     ArkUI_AlphabetIndexer_static_0100
      * @tc.desc     ArkUI_AlphabetIndexer_static_0100
@@ -148,8 +148,7 @@ it('ArkUI_AlphabetIndexer_static_0100', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_0600
      * @tc.name     ArkUI_AlphabetIndexer_static_0600
      * @tc.desc     ArkUI_AlphabetIndexer_static_0600
@@ -166,8 +165,7 @@ it('ArkUI_AlphabetIndexer_static_0600', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_0700
      * @tc.name     ArkUI_AlphabetIndexer_static_0700
      * @tc.desc     ArkUI_AlphabetIndexer_static_0700
@@ -183,8 +181,7 @@ it('ArkUI_AlphabetIndexer_static_0700', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_0800
      * @tc.name     ArkUI_AlphabetIndexer_static_0800
      * @tc.desc     ArkUI_AlphabetIndexer_static_0800
@@ -197,7 +194,7 @@ it('ArkUI_AlphabetIndexer_static_0800', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag1": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -218,8 +215,7 @@ it('ArkUI_AlphabetIndexer_static_0800', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_0900
      * @tc.name     ArkUI_AlphabetIndexer_static_0900
      * @tc.desc     ArkUI_AlphabetIndexer_static_0900
@@ -232,7 +228,7 @@ it('ArkUI_AlphabetIndexer_static_0900', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag2": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -253,8 +249,7 @@ it('ArkUI_AlphabetIndexer_static_0900', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1000
      * @tc.name     ArkUI_AlphabetIndexer_static_1000
      * @tc.desc     ArkUI_AlphabetIndexer_static_1000
@@ -267,7 +262,7 @@ it('ArkUI_AlphabetIndexer_static_1000', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag3": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -287,8 +282,7 @@ it('ArkUI_AlphabetIndexer_static_1000', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1100
      * @tc.name     ArkUI_AlphabetIndexer_static_1100
      * @tc.desc     ArkUI_AlphabetIndexer_static_1100
@@ -301,7 +295,7 @@ it('ArkUI_AlphabetIndexer_static_1100', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -322,8 +316,7 @@ it('ArkUI_AlphabetIndexer_static_1100', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1200
      * @tc.name     ArkUI_AlphabetIndexer_static_1200
      * @tc.desc     ArkUI_AlphabetIndexer_static_1200
@@ -336,7 +329,7 @@ it('ArkUI_AlphabetIndexer_static_1200', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -356,8 +349,7 @@ it('ArkUI_AlphabetIndexer_static_1200', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1300
      * @tc.name     ArkUI_AlphabetIndexer_static_1300
      * @tc.desc     ArkUI_AlphabetIndexer_static_1300
@@ -370,7 +362,7 @@ it('ArkUI_AlphabetIndexer_static_1300', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag5": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -390,8 +382,7 @@ it('ArkUI_AlphabetIndexer_static_1300', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1400
      * @tc.name     ArkUI_AlphabetIndexer_static_1400
      * @tc.desc     ArkUI_AlphabetIndexer_static_1400
@@ -404,7 +395,7 @@ it('ArkUI_AlphabetIndexer_static_1400', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag1": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -425,8 +416,7 @@ it('ArkUI_AlphabetIndexer_static_1400', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1500
      * @tc.name     ArkUI_AlphabetIndexer_static_1500
      * @tc.desc     ArkUI_AlphabetIndexer_static_1500
@@ -439,7 +429,7 @@ it('ArkUI_AlphabetIndexer_static_1500', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag2": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -460,8 +450,7 @@ it('ArkUI_AlphabetIndexer_static_1500', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1600
      * @tc.name     ArkUI_AlphabetIndexer_static_1600
      * @tc.desc     ArkUI_AlphabetIndexer_static_1600
@@ -474,7 +463,7 @@ it('ArkUI_AlphabetIndexer_static_1600', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag3": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -494,8 +483,7 @@ it('ArkUI_AlphabetIndexer_static_1600', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1700
      * @tc.name     ArkUI_AlphabetIndexer_static_1700
      * @tc.desc     ArkUI_AlphabetIndexer_static_1700
@@ -508,7 +496,7 @@ it('ArkUI_AlphabetIndexer_static_1700', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -529,8 +517,7 @@ it('ArkUI_AlphabetIndexer_static_1700', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1800
      * @tc.name     ArkUI_AlphabetIndexer_static_1800
      * @tc.desc     ArkUI_AlphabetIndexer_static_1800
@@ -543,7 +530,7 @@ it('ArkUI_AlphabetIndexer_static_1800', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -563,8 +550,7 @@ it('ArkUI_AlphabetIndexer_static_1800', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1900
      * @tc.name     ArkUI_AlphabetIndexer_static_1900
      * @tc.desc     ArkUI_AlphabetIndexer_static_1900
@@ -577,7 +563,7 @@ it('ArkUI_AlphabetIndexer_static_1900', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag5": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -597,8 +583,7 @@ it('ArkUI_AlphabetIndexer_static_1900', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_2600
      * @tc.name     ArkUI_AlphabetIndexer_static_2600
      * @tc.desc     ArkUI_AlphabetIndexer_static_2600
@@ -611,7 +596,7 @@ it('ArkUI_AlphabetIndexer_static_2600', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag1": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -632,8 +617,7 @@ it('ArkUI_AlphabetIndexer_static_2600', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_2700
      * @tc.name     ArkUI_AlphabetIndexer_static_2700
      * @tc.desc     ArkUI_AlphabetIndexer_static_2700
@@ -646,7 +630,7 @@ it('ArkUI_AlphabetIndexer_static_2700', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag2": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -667,8 +651,7 @@ it('ArkUI_AlphabetIndexer_static_2700', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_2800
      * @tc.name     ArkUI_AlphabetIndexer_static_2800
      * @tc.desc     ArkUI_AlphabetIndexer_static_2800
@@ -681,7 +664,7 @@ it('ArkUI_AlphabetIndexer_static_2800', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag3": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -701,8 +684,7 @@ it('ArkUI_AlphabetIndexer_static_2800', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_2900
      * @tc.name     ArkUI_AlphabetIndexer_static_2900
      * @tc.desc     ArkUI_AlphabetIndexer_static_2900
@@ -715,7 +697,7 @@ it('ArkUI_AlphabetIndexer_static_2900', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -736,8 +718,7 @@ it('ArkUI_AlphabetIndexer_static_2900', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_3000
      * @tc.name     ArkUI_AlphabetIndexer_static_3000
      * @tc.desc     ArkUI_AlphabetIndexer_static_3000
@@ -750,7 +731,7 @@ it('ArkUI_AlphabetIndexer_static_3000', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -770,8 +751,7 @@ it('ArkUI_AlphabetIndexer_static_3000', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_3100
      * @tc.name     ArkUI_AlphabetIndexer_static_3100
      * @tc.desc     ArkUI_AlphabetIndexer_static_3100
@@ -784,7 +764,7 @@ it('ArkUI_AlphabetIndexer_static_3100', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag5": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,

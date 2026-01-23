@@ -64,13 +64,14 @@ export default function postFrameCallbackTest() {
 
 
 
-/**
+    /**
      * @tc.number   postFrameCallbackTest_static_0100
      * @tc.name     postFrameCallbackTest_static_0100
      * @tc.desc     postFrameCallbackTest_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('postFrameCallbackTest_static_0100', Level.LEVEL0, async (done: () => void) => {
+
       console.info('postFrameCallbackTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

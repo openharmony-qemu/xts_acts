@@ -53,6 +53,10 @@ export default function toolTest() {
         let color1: common2D.Color = drawing.Tool.makeColorFromResourceColor(Color.Orange);
         console.info(msg + ' makeColorFromResourceColor Color.Orange successed');
         expect(color1 != null).assertTrue();
+        expect(color1.alpha != null).assertTrue();
+        expect(color1.red != null).assertTrue();
+        expect(color1.green != null).assertTrue();
+        expect(color1.blue != null).assertTrue();
       } catch (e) {
         console.info(msg + ` makeColorFromResourceColor Color.Orange errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -152,6 +156,10 @@ export default function toolTest() {
         let color1: common2D.Color = drawing.Tool.makeColorFromResourceColor(0x5500ff005500ff005500ff005500ff005500ff005500ff005500ff005500ff00);
         console.info(msg + ' makeColorFromResourceColor long string successed');
         expect(color1 != null).assertTrue();
+        expect(color1.alpha != null).assertTrue();
+        expect(color1.red != null).assertTrue();
+        expect(color1.green != null).assertTrue();
+        expect(color1.blue != null).assertTrue();
       } catch (e) {
         console.info(msg + ` makeColorFromResourceColor long string errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();

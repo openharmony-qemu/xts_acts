@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,6 +48,7 @@ import { AppStorage, Link, State, StorageLink, Watch } from '@ohos.arkui.stateMa
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import curves from '@ohos.curves';
 import common from '@ohos.app.ability.common';
+import { RecordData } from '@ohos.base';
 
 interface ParamName {
   name: string,
@@ -137,11 +138,11 @@ struct animateto {
         .key('button1')
         .onClick((e: ClickEvent) => {
           try {
-            let data1: Record<String, undefined | null | Object> = {
+            let data1: Record<String,RecordData> = {
               "duration": this.duration,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backData: emitter.EventData = {
-              data: data1 as Record<String, undefined | null | Object>
+              data: data1 as Record<String,RecordData>
             } as emitter.EventData
             let backEvent: emitter.InnerEvent = {
               eventId: 51,
@@ -167,11 +168,11 @@ struct animateto {
         .key('button11')
         .onClick((e: ClickEvent) => {
           try {
-            let data2: Record<String, undefined | null | Object> = {
+            let data2: Record<String,RecordData> = {
               "duration": this.duration,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backData: emitter.EventData = {
-              data: data2 as Record<String, undefined | null | Object>
+              data: data2 as Record<String,RecordData>
             } as emitter.EventData
             let backEvent: emitter.InnerEvent = {
               eventId: 151,
@@ -197,11 +198,11 @@ struct animateto {
         .key('button12')
         .onClick((e: ClickEvent) => {
           try {
-            let data3: Record<String, undefined | null | Object> = {
+            let data3: Record<String,RecordData> = {
               "curve": this.curve,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backData: emitter.EventData = {
-              data: data3 as Record<String, undefined | null | Object>
+              data: data3 as Record<String,RecordData>
             } as emitter.EventData
             let backEvent: emitter.InnerEvent = {
               eventId: 152,
@@ -229,7 +230,7 @@ struct animateto {
             let backDataOne: emitter.EventData = {
               data: {
                 "curve": this.curve,
-              } as Record<String, undefined | null | Object>
+              } as Record<String,RecordData>
             } as emitter.EventData
             let backEventOne: emitter.InnerEvent = {
               eventId: 52,
@@ -254,11 +255,11 @@ struct animateto {
         .key('button3')
         .onClick((e: ClickEvent) => {
           try {
-            let data5: Record<String, undefined | null | Object> = {
+            let data5: Record<String,RecordData> = {
               "iterations": this.iteration,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backDataTwo: emitter.EventData = {
-              data: data5 as Record<String, undefined | null | Object>
+              data: data5 as Record<String,RecordData>
             }
             let backEventTwo: emitter.InnerEvent = {
               eventId: 53,
@@ -283,11 +284,11 @@ struct animateto {
         .key('button13')
         .onClick((e: ClickEvent) => {
           try {
-            let data6: Record<String, undefined | null | Object> = {
+            let data6: Record<String,RecordData> = {
               "iterations": this.iteration,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backDataTwo: emitter.EventData = {
-              data: data6 as Record<String, undefined | null | Object>
+              data: data6 as Record<String,RecordData>
             }
             let backEventTwo: emitter.InnerEvent = {
               eventId: 153,
@@ -312,11 +313,11 @@ struct animateto {
         .key('button4')
         .onClick((e: ClickEvent) => {
           try {
-            let data7: Record<String, undefined | null | Object> = {
+            let data7: Record<String,RecordData> = {
               "tempo": this.tempo
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backDataThree: emitter.EventData = {
-              data: data7 as Record<String, undefined | null | Object>
+              data: data7 as Record<String,RecordData>
             }
             let backEventThree: emitter.InnerEvent = {
               eventId: 54,
@@ -341,11 +342,11 @@ struct animateto {
         .key('button14')
         .onClick((e: ClickEvent) => {
           try {
-            let data8: Record<String, undefined | null | Object> = {
+            let data8: Record<String,RecordData> = {
               "tempo": this.tempo
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backDataThree: emitter.EventData = {
-              data: data8 as Record<String, undefined | null | Object>
+              data: data8 as Record<String,RecordData>
             }
             let backEventThree: emitter.InnerEvent = {
               eventId: 154,
@@ -370,11 +371,11 @@ struct animateto {
         .key('button5')
         .onClick((e: ClickEvent) => {
           try {
-            let data9: Record<String, undefined | null | Object> = {
+            let data9: Record<String,RecordData> = {
               "playmode": this.playmode,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backDataFour: emitter.EventData = {
-              data: data9 as Record<String, undefined | null | Object>
+              data: data9 as Record<String,RecordData>
             }
             let backEventFour: emitter.InnerEvent = {
               eventId: 55,
@@ -399,11 +400,11 @@ struct animateto {
         .key('button15')
         .onClick((e: ClickEvent) => {
           try {
-            let data10: Record<String, undefined | null | Object> = {
+            let data10: Record<String,RecordData> = {
               "playmode": this.playmode,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backDataFour: emitter.EventData = {
-              data: data10 as Record<String, undefined | null | Object>
+              data: data10 as Record<String,RecordData>
             }
             let backEventFour: emitter.InnerEvent = {
               eventId: 155,
@@ -428,11 +429,11 @@ struct animateto {
         .key('button6')
         .onClick((e: ClickEvent) => {
           try {
-            let data11: Record<String, undefined | null | Object> = {
+            let data11: Record<String,RecordData> = {
               "duration": this.duration,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backData: emitter.EventData = {
-              data: data11 as Record<String, undefined | null | Object>
+              data: data11 as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 1001,
@@ -457,11 +458,11 @@ struct animateto {
         .key('button7')
         .onClick((e: ClickEvent) => {
           try {
-            let data12: Record<String, undefined | null | Object> = {
+            let data12: Record<String,RecordData> = {
               "duration": this.duration,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backData: emitter.EventData = {
-              data: data12 as Record<String, undefined | null | Object>
+              data: data12 as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 1002,
@@ -486,11 +487,11 @@ struct animateto {
         .key('button8')
         .onClick((e: ClickEvent) => {
           try {
-            let data13: Record<String, undefined | null | Object> = {
+            let data13: Record<String,RecordData> = {
               "curve": this.curve,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backData: emitter.EventData = {
-              data: data13 as Record<String, undefined | null | Object>
+              data: data13 as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 1003,
@@ -515,11 +516,11 @@ struct animateto {
         .key('button9')
         .onClick((e: ClickEvent) => {
           try {
-            let data14: Record<String, undefined | null | Object> = {
+            let data14: Record<String,RecordData> = {
               "curve": this.curve,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backData: emitter.EventData = {
-              data: data14 as Record<String, undefined | null | Object>
+              data: data14 as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 1004,
@@ -544,11 +545,11 @@ struct animateto {
         .key('button10')
         .onClick((e: ClickEvent) => {
           try {
-            let data15: Record<String, undefined | null | Object> = {
+            let data15: Record<String,RecordData> = {
               "iteration": this.iteration,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backData: emitter.EventData = {
-              data: data15 as Record<String, undefined | null | Object>
+              data: data15 as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 1005,
@@ -573,11 +574,11 @@ struct animateto {
         .key('button111')
         .onClick((e: ClickEvent) => {
           try {
-            let data16: Record<String, undefined | null | Object> = {
+            let data16: Record<String,RecordData> = {
               "iteration": this.iteration,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backData: emitter.EventData = {
-              data: data16 as Record<String, undefined | null | Object>
+              data: data16 as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 1006,
@@ -602,11 +603,11 @@ struct animateto {
         .key('button121')
         .onClick((e: ClickEvent) => {
           try {
-            let data17: Record<String, undefined | null | Object> = {
+            let data17: Record<String,RecordData> = {
               "tempo": this.tempo,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backData: emitter.EventData = {
-              data: data17 as Record<String, undefined | null | Object>
+              data: data17 as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 1007,
@@ -631,11 +632,11 @@ struct animateto {
         .key('button131')
         .onClick((e: ClickEvent) => {
           try {
-            let data18: Record<String, undefined | null | Object> = {
+            let data18: Record<String,RecordData> = {
               "tempo": this.tempo,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backData: emitter.EventData = {
-              data: data18 as Record<String, undefined | null | Object>
+              data: data18 as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 1008,
@@ -660,11 +661,11 @@ struct animateto {
         .key('button141')
         .onClick((e: ClickEvent) => {
           try {
-            let data19: Record<String, undefined | null | Object> = {
+            let data19: Record<String,RecordData> = {
               "playmode": this.playmode,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backData: emitter.EventData = {
-              data: data19 as Record<String, undefined | null | Object>
+              data: data19 as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 1009,
@@ -689,11 +690,11 @@ struct animateto {
         .key('button151')
         .onClick((e: ClickEvent) => {
           try {
-            let data20: Record<String, undefined | null | Object> = {
+            let data20: Record<String,RecordData> = {
               "playmode": this.playmode,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backData: emitter.EventData = {
-              data: data20 as Record<String, undefined | null | Object>
+              data: data20 as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 1010,
@@ -719,11 +720,11 @@ struct animateto {
         .key('button161')
         .onClick((e: ClickEvent) => {
           try {
-            let data21: Record<String, undefined | null | Object> = {
+            let data21: Record<String,RecordData> = {
               "finishCallbackType": this.finishCallbackType,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backData: emitter.EventData = {
-              data: data21 as Record<String, undefined | null | Object>
+              data: data21 as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 1011,
@@ -749,11 +750,11 @@ struct animateto {
         .key('button171')
         .onClick((e: ClickEvent) => {
           try {
-            let data22: Record<String, undefined | null | Object> = {
+            let data22: Record<String,RecordData> = {
               "finishCallbackType": this.finishCallbackType,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backData: emitter.EventData = {
-              data: data22 as Record<String, undefined | null | Object>
+              data: data22 as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 1012,
@@ -779,11 +780,11 @@ struct animateto {
         .key('button181')
         .onClick((e: ClickEvent) => {
           try {
-            let data23: Record<String, undefined | null | Object> = {
+            let data23: Record<String,RecordData> = {
               "finishCallbackType": this.finishCallbackType,
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
             let backData: emitter.EventData = {
-              data: data23 as Record<String, undefined | null | Object>
+              data: data23 as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 1013,

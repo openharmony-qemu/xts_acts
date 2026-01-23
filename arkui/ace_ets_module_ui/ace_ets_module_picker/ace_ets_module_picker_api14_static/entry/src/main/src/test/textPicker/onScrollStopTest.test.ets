@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -47,12 +47,11 @@ export default function onScrollStopTest(){
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info('get onScrollStopTest state pages: ' + JSON.stringify(pages));
-        if (!('MainAbility/pages/textPicker/onScrollStopTest' == pages.name)) {     //   'onScrollStopTest' == pages.name
+        if (!('onScrollStopTest' == pages.name)) {
           console.info('get onScrollStopTest state pages.name: ' + JSON.stringify(pages.name));
           routerInstance.replaceUrl(options);
           // let result = await routerInstance.replace(options);
           await CommonFunc.sleep(2000);
-          // console.info('push onScrollStopTest success: ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push onScrollStopTest page error: ' + err);
@@ -60,6 +59,15 @@ export default function onScrollStopTest(){
       }
     });
 
+    afterEach(async () => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.clear();
+      let options:router.RouterOptions = {
+        url: 'MainAbility/pages/index/index',
+      }
+      routerInstance.replaceUrl(options);
+    });
+    
     
     
     
@@ -70,6 +78,7 @@ export default function onScrollStopTest(){
      * @tc.level    Level.LEVEL3
      */
 it('onScrollStopTest_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+
       console.info('onScrollStopTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -92,6 +101,7 @@ it('onScrollStopTest_static_0100', Level.LEVEL3, async (done: () => void): Promi
     
     
     
+    
     /**
      * @tc.number   onScrollStopTest_static_0200
      * @tc.name     onScrollStopTest_static_0200
@@ -99,6 +109,7 @@ it('onScrollStopTest_static_0100', Level.LEVEL3, async (done: () => void): Promi
      * @tc.level    Level.LEVEL3
      */
 it('onScrollStopTest_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+
       console.info('onScrollStopTest_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

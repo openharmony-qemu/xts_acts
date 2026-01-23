@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -55,11 +55,11 @@ export default function enableCascadeTest() {
         console.info("get TimePickerApienableCascade state pages:" + JSON.stringify(pages));
         if (!("enableCascadeTest" == pages.name)) {
           console.info("get TimePickerApienableCascade pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push TimePickerApienableCascade page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push TimePickerApienableCascade page error:" + err);
@@ -78,11 +78,12 @@ export default function enableCascadeTest() {
      * @tc.level    Level.LEVEL1
      */
 it('TimePickerApienableCascade_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('[TimePickerApienableCascade_static_001] START');
       let driver: Driver = Driver.create();
       await Utils.sleep(1000);
       let clock24Button = await driver.findComponent(ON.id('24hour'));
-      clock24Button?.click();
+      await (clock24Button?.click() as Promise<void>);
       await Utils.sleep(1000);
       let clock12Button = await driver.findComponent(ON.id('12hour'));
       await (clock12Button?.click() as Promise<void>);
@@ -110,6 +111,7 @@ it('TimePickerApienableCascade_static_001', Level.LEVEL1, async (done: () => voi
      * @tc.level    Level.LEVEL1
      */
 it('TimePickerApienableCascade_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('[TimePickerApienableCascade_static_002] START');
       let driver: Driver = Driver.create();
       await Utils.sleep(1000);
@@ -142,6 +144,7 @@ it('TimePickerApienableCascade_static_002', Level.LEVEL1, async (done: () => voi
      * @tc.level    Level.LEVEL1
      */
 it('TimePickerApienableCascade_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('[TimePickerApienableCascade_static_003] START');
       let driver: Driver = Driver.create();
       await Utils.sleep(1000);
@@ -174,6 +177,7 @@ it('TimePickerApienableCascade_static_003', Level.LEVEL1, async (done: () => voi
      * @tc.level    Level.LEVEL1
      */
 it('TimePickerApienableCascade_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('[TimePickerApienableCascade_static_004] START');
       let driver: Driver = Driver.create();
       await Utils.sleep(1000);

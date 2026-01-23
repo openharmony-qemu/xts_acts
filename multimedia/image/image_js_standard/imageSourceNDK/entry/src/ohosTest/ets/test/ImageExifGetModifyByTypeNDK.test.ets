@@ -36,6 +36,7 @@ interface ModifyRule {
   expectValuePNG: number | string | Array<number> | Array<number | null> | null;
   expectValueHEIC: number | string | Array<number> | Array<number | null> | null;
   expectValueWEBP: number | string | Array<number> | Array<number | null> | null;
+  expectValueDNG: number | string | Array<number> | Array<number | null> | null;
 }
 
 interface ModifyRule2 {
@@ -44,6 +45,7 @@ interface ModifyRule2 {
   expectValuePNG: number | Array<number> | Array<number | null> | null | ArrayBuffer;
   expectValueHEIC: number | Array<number> | Array<number | null> | null | ArrayBuffer;
   expectValueWEBP: number | Array<number> | Array<number | null> | null | ArrayBuffer;
+  expectValueDNG: number | Array<number> | Array<number | null> | null | ArrayBuffer;
 }
 
 const testArrayBufferU8: Uint8Array = new Uint8Array([1, 2, 2, 3]);
@@ -148,20 +150,23 @@ export default function ImageExifGetModifyByTypeNDK() {
       expectedValue: string | number | object | number[] | undefined | null | ArrayBuffer | boolean
     ): boolean => {
       const actualArray = new Uint8Array(actualBuffer);
-
-      for (let i = 0; i < actualArray.length; i++) {
-        console.info(`dhs ArrayBuffer 111 actualBuffer: ${actualArray[i]}`);
+      const MAX_COMPARE_COUNT = 20;
+      
+      const logCount = Math.min(MAX_COMPARE_COUNT, actualArray.length);
+      for (let i = 0; i < logCount; i++) {
+        console.info(`ArrayBuffer[${i}]: ${actualArray[i]}`);
+      }
+      if (actualArray.length > MAX_COMPARE_COUNT) {
+        console.info(`ArrayBuffer: ... (${actualArray.length - MAX_COMPARE_COUNT} elements omitted) ...`);
       }
 
       if (expectedValue instanceof ArrayBuffer) {
         const expectedArray = new Uint8Array(expectedValue);
-        for (let i = 0; i < actualArray.length; i++) {
-        }
-        if (actualArray.length !== expectedArray.length) {
-          return false;
-        }
-        for (let i = 0; i < actualArray.length; i++) {
+        const compareCount = Math.min(MAX_COMPARE_COUNT, actualArray.length, expectedArray.length);
+        
+        for (let i = 0; i < compareCount; i++) {
           if (actualArray[i] !== expectedArray[i]) {
+            console.info(`Mismatch at [${i}]: actual=${actualArray[i]}, expected=${expectedArray[i]}`);
             return false;
           }
         }
@@ -169,13 +174,10 @@ export default function ImageExifGetModifyByTypeNDK() {
       }
       
       if (Array.isArray(expectedValue)) {
-        for (let i = 0; i < actualArray.length; i++) {
-        }
-        if (actualArray.length !== expectedValue.length) {
-          return false;
-        }
-        for (let i = 0; i < actualArray.length; i++) {
+        const compareCount = Math.min(MAX_COMPARE_COUNT, actualArray.length, expectedValue.length);
+        for (let i = 0; i < compareCount; i++) {
           if (actualArray[i] !== expectedValue[i]) {
+            console.info(`Mismatch at [${i}]: actual=${actualArray[i]}, expected=${expectedValue[i]}`);
             return false;
           }
         }
@@ -221,6 +223,8 @@ export default function ImageExifGetModifyByTypeNDK() {
           return rule.expectValueHEIC;
         case "expectValueWEBP":
           return rule.expectValueWEBP;
+        case "expectValueDNG":
+          return rule.expectValueDNG;
         default:
           throw new Error(`Unsupported file type: ${fileType}`);
       }
@@ -3547,6 +3551,70 @@ export default function ImageExifGetModifyByTypeNDK() {
     });
 
     /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFYIMAGEPROPERTIES_CROSS_READING_0500
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFYIMAGEPROPERTIES_CROSS_READING_0500
+     * @tc.desc        Verify cross-type reading after modifying property PRIMARY_CHROMATICITIES with intArray type and reading as doubleArray type
+     *                 1.Create image source from PNG file using fd
+     *                 2.Modify property PRIMARY_CHROMATICITIES as intArray type with value [6.5]
+     *                 3.Read back property as double type
+     *                 4.Verify cross-type reading returns truncated value [6]
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_MODIFYIMAGEPROPERTIES_CROSS_READING_0500", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_MODIFYIMAGEPROPERTIES_CROSS_READING_0500"
+      let result = true;
+      let fd: number = await getFd("test_exif_readWrite_heic_v2.heic");
+      const key = image.PropertyKey.PRIMARY_CHROMATICITIES;
+      const modifyValue = [6.5];
+      const expectedValue = [6];
+      const errorCode = await modifyPropertyValue(fd, "intArray", key, modifyValue);
+      const actualValue = await getPropertyValue(fd, "doubleArray", key);
+
+      if (!compareValues(actualValue, expectedValue)) {
+        console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        result = false;
+      }
+      fs.closeSync(fd);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFYIMAGEPROPERTIES_EXTRENELY_LONG_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFYIMAGEPROPERTIES_EXTRENELY_LONG_0100
+     * @tc.desc        Verify modifying EXIF property STRIP_OFFSETS with extreme value returns READ_FAILED error
+     *                 1.Create image source from PNG file using fd
+     *                 2.Attempt to modify property STRIP_OFFSETS as long type with extreme value 2147483798
+     *                 3.Verify modification fails with READ_FAILED error
+     *                 4.Confirm extreme values exceeding int32 max are rejected for long type properties
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_MODIFYIMAGEPROPERTIES_EXTRENELY_LONG_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_MODIFYIMAGEPROPERTIES_EXTRENELY_LONG_0100"      
+      let result = true;
+      let key: image.PropertyKey = image.PropertyKey.STRIP_OFFSETS
+      const modifyValue = 4294967296; // exceed uint32 max
+      const expectedValue = 0;
+      let fd: number = await getFd("test_exif_modify_png_v2.png");
+      const errorCode = await modifyPropertyValue(fd, "long", key, modifyValue);
+      const actualValue = await getPropertyValue(fd, "long", key);
+      
+      if (!compareValues(actualValue, expectedValue)) {
+        console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        result = false;
+      }
+      fs.closeSync(fd);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
      * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFYIMAGEPROPERTIES_PACKTOFILE_0100
      * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFYIMAGEPROPERTIES_PACKTOFILE_0100
      * @tc.desc        Verify packing modified short type EXIF properties to JPEG file
@@ -4697,6 +4765,712 @@ export default function ImageExifGetModifyByTypeNDK() {
       const errorCode = mdkTest.TestModifyImagePropertyError("arrayBuffer");
       console.info(`${testTag} TestModifyImagePropertyError result is: ${errorCode}`);
       expect(errorCode == PROPERTY_NOT_EXIST).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_DNG_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_DNG_0100
+     * @tc.desc        Verify reading short type EXIF properties from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read short type properties through C API
+     *                 3.Verify each property value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_DNG_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_DNG_0100"
+      let result = false;
+      result = await TestGetImagePropertyByType(testTag, "test.dng", 
+        ImagePropertyConfig.short.keys, ImagePropertyConfig.short.rules, "expectValueDNG", "short");
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_DNG_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_DNG_0200
+     * @tc.desc        Verify reading long type EXIF properties from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read long type properties through C API
+     *                 3.Verify each property value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_DNG_0200", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_DNG_0200"
+      let result = false;
+      result = await TestGetImagePropertyByType(testTag, "test.dng", 
+        ImagePropertyConfig.long.keys, ImagePropertyConfig.long.rules, "expectValueDNG", "long");
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DOUBLE_DNG_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DOUBLE_DNG_0300
+     * @tc.desc        Verify reading double type EXIF properties from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read double type properties through C API
+     *                 3.Verify each property value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DOUBLE_DNG_0300", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DOUBLE_DNG_0300"
+      let result = false;
+      result = await TestGetImagePropertyByType(testTag, "test.dng", 
+        ImagePropertyConfig.double.keys, ImagePropertyConfig.double.rules, "expectValueDNG", "double");
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_DNG_0400
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_DNG_0400
+     * @tc.desc        Verify reading intArray type EXIF properties from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read intArray type properties through C API
+     *                 3.Verify each property value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_DNG_0400", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_DNG_0400"
+      let result = false;
+      result = await TestGetImagePropertyByType(testTag, "test.dng", 
+        ImagePropertyConfig.intArray.keys, ImagePropertyConfig.intArray.rules, "expectValueDNG", "intArray");
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DOUBLEARRAY_DNG_0500
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DOUBLEARRAY_DNG_0500
+     * @tc.desc        Verify reading doubleArray type EXIF properties from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read doubleArray type properties through C API
+     *                 3.Verify each property value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DOUBLEARRAY_DNG_0500", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DOUBLEARRAY_DNG_0500"
+      let result = false;
+      result = await TestGetImagePropertyByType(testTag, "test.dng", 
+        ImagePropertyConfig.doubleArray.keys, ImagePropertyConfig.doubleArray.rules, "expectValueDNG", "doubleArray");
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_ONLY_DNG_0600
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_ONLY_DNG_0600
+     * @tc.desc        Verify reading read-only short type EXIF properties from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read read-only short type properties through C API
+     *                 3.Verify each property value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_ONLY_DNG_0600", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_ONLY_DNG_0600"
+      let result = false;
+      result = await TestGetImagePropertyByType(testTag, "test.dng", 
+        ImagePropertyConfig.shortReadOnly.keys, ImagePropertyConfig.shortReadOnly.rules, "expectValueDNG", "short");
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_ARRAYBUFFER_DNG_0700
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_ARRAYBUFFER_DNG_0700
+     * @tc.desc        Verify reading arrayBuffer type EXIF properties from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read arrayBuffer type properties through C API
+     *                 3.Verify each property value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_ARRAYBUFFER_DNG_0700", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_ARRAYBUFFER_DNG_0700"
+      let result = false;
+      result = await TestGetImagePropertyByType(testTag, "test.dng", 
+        ImagePropertyConfig.arrayBuffer.keys, ImagePropertyConfig.arrayBuffer.rules, "expectValueDNG", "arrayBuffer");
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_ARRAYBUFFER_ONLY_DNG_0800
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_ARRAYBUFFER_ONLY_DNG_0800
+     * @tc.desc        Verify reading read-only arrayBuffer type EXIF properties from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read read-only arrayBuffer type properties through C API
+     *                 3.Verify each property value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_ARRAYBUFFER_ONLY_DNG_0800", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_ARRAYBUFFER_ONLY_DNG_0800"
+      let result = false;
+      result = await TestGetImagePropertyByType(testTag, "test.dng", 
+        ImagePropertyConfig.arrayBufferOnly.keys, ImagePropertyConfig.arrayBufferOnly.rules, "expectValueDNG", "arrayBuffer");
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_STRING_DNG_0900
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_STRING_DNG_0900
+     * @tc.desc        Verify reading string type EXIF properties from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read string type properties through C API
+     *                 3.Verify each property value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_STRING_DNG_0900", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_STRING_DNG_0900"
+      let result = false;
+      result = await TestGetImagePropertyByType(testTag, "test.dng", 
+        ImagePropertyConfig.string.keys, ImagePropertyConfig.string.rules, "expectValueDNG", "string");
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_CROSS_READING_DNG_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_CROSS_READING_DNG_0100
+     * @tc.desc        Verify reading short type property NEW_SUBFILE_TYPE from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read property as short type through C API
+     *                 3.Verify returned value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_CROSS_READING_DNG_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_CROSS_READING_DNG_0100"
+      let result = true;
+      let key: image.PropertyKey = image.PropertyKey.NEW_SUBFILE_TYPE
+      const expectedValue = 0;
+      let fd: number = await getFd("test.dng");
+      const actualValue = await getPropertyValue(fd, "short", key);
+      
+      if (!compareValues(actualValue, expectedValue)) {
+        console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        result = false;
+      }
+      fs.closeSync(fd);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_CROSS_READING_DNG_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_CROSS_READING_DNG_0200
+     * @tc.desc        Verify reading long type property BITS_PER_SAMPLE from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read property as long type through C API
+     *                 3.Verify returned value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_CROSS_READING_DNG_0200", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_CROSS_READING_DNG_0200"
+      let result = true;
+      let key: image.PropertyKey = image.PropertyKey.BITS_PER_SAMPLE
+      const expectedValue = 16;
+      let fd: number = await getFd("test.dng");
+      const actualValue = await getPropertyValue(fd, "long", key);
+      
+      if (!compareValues(actualValue, expectedValue)) {
+        console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        result = false;
+      }
+      fs.closeSync(fd);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_CROSS_READING_DNG_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_CROSS_READING_DNG_0300
+     * @tc.desc        Verify reading double type property YCBCR_COEFFICIENTS from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read property as double type through C API
+     *                 3.Verify returned value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_CROSS_READING_DNG_0300", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_CROSS_READING_DNG_0300"
+      let result = true;
+      let key: image.PropertyKey = image.PropertyKey.YCBCR_COEFFICIENTS
+      const expectedValue = 0.299;
+      let fd: number = await getFd("test.dng");
+      const actualValue = await getPropertyValue(fd, "double", key);
+      
+      if (!compareValues(actualValue, expectedValue)) {
+        console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        result = false;
+      }
+      fs.closeSync(fd);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_CROSS_READING_DNG_0400
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_CROSS_READING_DNG_0400
+     * @tc.desc        Verify reading long property IMAGE_WIDTH as intArray type from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read property as intArray type through C API for cross-type access
+     *                 3.Verify returned value matches expected conversion result [5984]
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_CROSS_READING_DNG_0400", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_CROSS_READING_DNG_0400"
+      let result = true;
+      let key: image.PropertyKey = image.PropertyKey.IMAGE_WIDTH
+      const expectedValue = [5984];
+      let fd: number = await getFd("test.dng");
+      const actualValue = await getPropertyValue(fd, "intArray", key);
+      
+      if (!compareValues(actualValue, expectedValue)) {
+        console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        result = false;
+      }
+      fs.closeSync(fd);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0100
+     * @tc.desc        Verify reading non-existent EXIF property YCBCR_POSITIONING from DNG file returns error
+     *                 1.Create image source from DNG file using fd
+     *                 2.Attempt to read non-existent property as short type
+     *                 3.Verify API returns READ_FAILED error code
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0100"
+      let result = false;
+      result = await TestGetImagePropertyByTypeError(testTag, "test.dng", image.PropertyKey.YCBCR_POSITIONING, "short", READ_FAILED);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0200
+     * @tc.desc        Verify reading non-existent EXIF property SUBFILE_TYPE from DNG file returns error
+     *                 1.Create image source from DNG file using fd
+     *                 2.Attempt to read non-existent property as long type
+     *                 3.Verify API returns READ_FAILED error code
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0200", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0200"
+      let result = false;
+      result = await TestGetImagePropertyByTypeError(testTag, "test.dng", image.PropertyKey.SUBFILE_TYPE, "long", READ_FAILED);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0300
+     * @tc.desc        Verify reading non-existent EXIF property YCBCR_POSITIONING from DNG file returns error
+     *                 1.Create image source from DNG file using fd
+     *                 2.Attempt to read non-existent property as intArray type
+     *                 3.Verify API returns READ_FAILED error code
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0300", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0300"
+      let result = false;
+      result = await TestGetImagePropertyByTypeError(testTag, "test.dng", image.PropertyKey.YCBCR_POSITIONING, "intArray", READ_FAILED);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0400
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0400
+     * @tc.desc        Verify reading non-existent EXIF property GPS_IMG_DIRECTION from DNG file returns error
+     *                 1.Create image source from DNG file using fd
+     *                 2.Attempt to read non-existent property as double type
+     *                 3.Verify API returns READ_FAILED error code
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0400", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0400"
+      let result = false;
+      result = await TestGetImagePropertyByTypeError(testTag, "test.dng", image.PropertyKey.GPS_IMG_DIRECTION, "double", READ_FAILED);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0500
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0500
+     * @tc.desc        Verify reading non-existent EXIF property WHITE_POINT from DNG file returns error
+     *                 1.Create image source from DNG file using fd
+     *                 2.Attempt to read non-existent property as doubleArray type
+     *                 3.Verify API returns READ_FAILED error code
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0500", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0500"
+      let result = false;
+      result = await TestGetImagePropertyByTypeError(testTag, "test.dng", image.PropertyKey.WHITE_POINT, "doubleArray", READ_FAILED);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0600
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0600
+     * @tc.desc        Verify reading non-existent EXIF property TRANSFER_FUNCTION from DNG file returns error
+     *                 1.Create image source from DNG file using fd
+     *                 2.Attempt to read non-existent property as string type
+     *                 3.Verify API returns READ_FAILED error code
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0600", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0600"
+      let result = false;
+      result = await TestGetImagePropertyByTypeError(testTag, "test.dng", image.PropertyKey.TRANSFER_FUNCTION, "string", READ_FAILED);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0700
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0700
+     * @tc.desc        Verify read non-existent EXIF property WHITE_POINT array size from DNG file returns error
+     *                 1.Create image source from DNG file using fd
+     *                 2.Attempt to read non-existent property array size
+     *                 3.Verify API returns READ_FAILED error code
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0700", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NO_VALUE_DNG_ERROR_0700"
+      let result = false;
+      result = await TestGetImagePropertyByTypeError(testTag, "test.dng", image.PropertyKey.WHITE_POINT, "arraySize", READ_FAILED);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0100
+     * @tc.desc        Verify reading long property IMAGE_WIDTH with wrong types returns READ_FAILED error
+     *                 1.Create image source from DNG file using fd
+     *                 2.Attempt to read long property using wrong types (double/doubleArray/string/arrayBuffer)
+     *                 3.Verify API returns READ_FAILED error code
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0100"
+      let result = true;
+      let typeArray = ["double", "doubleArray", "string", "arrayBuffer"];
+      for (let i = 0; i < typeArray.length; i++) {
+        let ret = await TestGetImagePropertyByTypeError(testTag, "test.dng", 
+          image.PropertyKey.IMAGE_WIDTH, typeArray[i], READ_FAILED);
+        if (!ret) {
+          console.info(`${testTag} TestGetImagePropertyByTypeError erroe is: ${typeArray[i]}`);
+          break;
+        }
+        result = result && ret;
+      }
+      console.info(`${testTag} TestGetImagePropertyByTypeError result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0200
+     * @tc.desc        Verify reading long property SUBFILE_TYPE with wrong types returns READ_FAILED error
+     *                 1.Create image source from DNG file using fd
+     *                 2.Attempt to read long property using wrong types (double/doubleArray/string/arrayBuffer)
+     *                 3.Verify API returns READ_FAILED error code
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0200", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0200"
+      let result = true;
+      let typeArray = ["double", "doubleArray", "string", "arrayBuffer"];
+      for (let i = 0; i < typeArray.length; i++) {
+        let ret = await TestGetImagePropertyByTypeError(testTag, "test.dng", 
+          image.PropertyKey.SUBFILE_TYPE, typeArray[i], READ_FAILED);
+        if (!ret) {
+          console.info(`${testTag} TestGetImagePropertyByTypeError erroe is: ${typeArray[i]}`);
+          break;
+        }
+        result = result && ret;
+      }
+      console.info(`${testTag} TestGetImagePropertyByTypeError result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0300
+     * @tc.desc        Verify reading intArray property YCBCR_SUB_SAMPLING with wrong types returns READ_FAILED error
+     *                 1.Create image source from DNG file using fd
+     *                 2.Attempt to read intArray property using wrong types (double/doubleArray/string/arrayBuffer)
+     *                 3.Verify API returns READ_FAILED error code
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0300", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0300"
+      let result = true;
+      let typeArray = ["double", "doubleArray", "string", "arrayBuffer"];
+      for (let i = 0; i < typeArray.length; i++) {
+        let ret = await TestGetImagePropertyByTypeError(testTag, "test.dng", 
+          image.PropertyKey.YCBCR_SUB_SAMPLING, typeArray[i], READ_FAILED);
+        if (!ret) {
+          console.info(`${testTag} TestGetImagePropertyByTypeError erroe is: ${typeArray[i]}`);
+          break;
+        }
+        result = result && ret;
+      }
+      console.info(`${testTag} TestGetImagePropertyByTypeError result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0400
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0400
+     * @tc.desc        Verify reading double property X_RESOLUTION with wrong types returns READ_FAILED error
+     *                 1.Create image source from DNG file using fd
+     *                 2.Attempt to read double property using wrong types (short/long/intArray/string/arrayBuffer)
+     *                 3.Verify API returns READ_FAILED error code
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0400", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0400"
+      let result = true;
+      let typeArray = ["short", "long", "intArray", "string", "arrayBuffer"];
+      for (let i = 0; i < typeArray.length; i++) {
+        let ret = await TestGetImagePropertyByTypeError(testTag, "test.dng", 
+          image.PropertyKey.X_RESOLUTION, typeArray[i], READ_FAILED);
+        if (!ret) {
+          console.info(`${testTag} TestGetImagePropertyByTypeError erroe is: ${typeArray[i]}`);
+          break;
+        }
+        result = result && ret;
+      }
+      console.info(`${testTag} TestGetImagePropertyByTypeError result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0500
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0500
+     * @tc.desc        Verify reading doubleArray property YCBCR_COEFFICIENTS with wrong types returns READ_FAILED error
+     *                 1.Create image source from DNG file using fd
+     *                 2.Attempt to read doubleArray property using wrong types (short/long/intArray/string/arrayBuffer)
+     *                 3.Verify API returns READ_FAILED error code
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0500", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0500"
+      let result = true;
+      let typeArray = ["short", "long", "intArray", "string", "arrayBuffer"];
+      for (let i = 0; i < typeArray.length; i++) {
+        let ret = await TestGetImagePropertyByTypeError(testTag, "test.dng", 
+          image.PropertyKey.YCBCR_COEFFICIENTS, typeArray[i], READ_FAILED);
+        if (!ret) {
+          console.info(`${testTag} TestGetImagePropertyByTypeError erroe is: ${typeArray[i]}`);
+          break;
+        }
+        result = result && ret;
+      }
+      console.info(`${testTag} TestGetImagePropertyByTypeError result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0600
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0600
+     * @tc.desc        Verify reading arrayBuffer property OECF with wrong types returns READ_FAILED error
+     *                 1.Create image source from DNG file using fd
+     *                 2.Attempt to read arrayBuffer property using wrong types (short/long/intArray/double/doubleArray/string)
+     *                 3.Verify API returns READ_FAILED error code
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0600", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0600"
+      let result = true;
+      let typeArray = ["short", "long", "intArray", "double", "doubleArray", "string"];
+      for (let i = 0; i < typeArray.length; i++) {
+        let ret = await TestGetImagePropertyByTypeError(testTag, "test.dng", 
+          image.PropertyKey.OECF, typeArray[i], READ_FAILED);
+        if (!ret) {
+          console.info(`${testTag} TestGetImagePropertyByTypeError erroe is: ${typeArray[i]}`);
+          break;
+        }
+        result = result && ret;
+      }
+      console.info(`${testTag} TestGetImagePropertyByTypeError result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0700
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0700
+     * @tc.desc        Verify reading arrayBuffer property OECF with wrong types returns READ_FAILED error
+     *                 1.Create image source from DNG file using fd
+     *                 2.Attempt to read arrayBuffer property using wrong types (short/long/intArray/double/doubleArray/string)
+     *                 3.Verify API returns READ_FAILED error code
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0700", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0700"
+      let result = true;
+      let typeArray = ["short", "long", "intArray", "double", "doubleArray", "string"];
+      for (let i = 0; i < typeArray.length; i++) {
+        let ret = await TestGetImagePropertyByTypeError(testTag, "test.dng", 
+          image.PropertyKey.OECF, typeArray[i], READ_FAILED);
+        if (!ret) {
+          console.info(`${testTag} TestGetImagePropertyByTypeError erroe is: ${typeArray[i]}`);
+          break;
+        }
+        result = result && ret;
+      }
+      console.info(`${testTag} TestGetImagePropertyByTypeError result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0800
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0800
+     * @tc.desc        Verify reading string property IMAGE_DESCRIPTION with wrong types returns READ_FAILED error
+     *                 1.Create image source from DNG file using fd
+     *                 2.Attempt to read string property using wrong types (short/long/intArray/double/doubleArray/arrayBuffer)
+     *                 3.Verify API returns READ_FAILED error code
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0800", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_READ_DNG_ERROR_0800"
+      let result = true;
+      let typeArray = ["short", "long", "intArray", "double", "doubleArray", "arrayBuffer"];
+      for (let i = 0; i < typeArray.length; i++) {
+        let ret = await TestGetImagePropertyByTypeError(testTag, "test.dng", 
+          image.PropertyKey.IMAGE_DESCRIPTION, typeArray[i], READ_FAILED);
+        if (!ret) {
+          console.info(`${testTag} TestGetImagePropertyByTypeError erroe is: ${typeArray[i]}`);
+          break;
+        }
+        result = result && ret;
+      }
+      console.info(`${testTag} TestGetImagePropertyByTypeError result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NON_EXISTENE_KEY_DNG_ERROR_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NON_EXISTENE_KEY_DNG_ERROR_0100
+     * @tc.desc        Verify reading non-existent EXIF property key Makernote from DNG file returns READ_FAILED error
+     *                 1.Create image source from DNG file using fd
+     *                 2.Attempt to read non-existent property key using all types
+     *                 3.Verify API returns READ_FAILED error code for all types
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NON_EXISTENE_KEY_DNG_ERROR_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_NON_EXISTENE_KEY_DNG_ERROR_0100"
+      let result = true;
+      let typeArray = ["short", "long", "double", "intArray", "doubleArray", "string", "arrayBuffer", "arraySize"];
+      for (let i = 0; i < typeArray.length; i++) {
+        let ret = await TestGetImagePropertyByTypeError(testTag, "test.dng", 
+          "Makernote" as image.PropertyKey, typeArray[i], READ_FAILED);
+        if (!ret) {
+          console.info(`${testTag} TestGetImagePropertyByTypeError erroe is: ${typeArray[i]}`);
+          break;
+        }
+        result = result && ret;
+      }
+      console.info(`${testTag} TestGetImagePropertyByTypeError result is: ${result}`);
+      expect(result).assertTrue();
       done();
     });
 

@@ -51,7 +51,6 @@ export default function toggleThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     });
     beforeEach(() => {
       try {
@@ -62,11 +61,12 @@ export default function toggleThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `TogglePage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(toggleThemeProperty);
             console.info(`${SUITE} router.pushUrl success`);
           })
+          await UtilsTest.msSleep(1000)
+          localTheme = AppStorage.get<CustomTheme>(`toggleThemeProperty`);
         }
-        colorValues = AppStorage.get(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
@@ -74,13 +74,13 @@ export default function toggleThemeTest() {
       if (!changeTheme) {
         return;
       }
-      if ((AppStorage.get(toggleThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+      if ((AppStorage.get<CustomTheme>(`toggleThemeProperty`))?.colors?.fontEmphasize
         == redCustomTheme?.colors?.fontEmphasize) {
-        AppStorage.setOrCreate(toggleThemeProperty, greenCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>(`toggleThemeProperty`, greenCustomTheme);
       } else {
-        AppStorage.setOrCreate(toggleThemeProperty, redCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>(`toggleThemeProperty`, redCustomTheme);
       }
-      localTheme = AppStorage.get<CustomTheme>(toggleThemeProperty);
+      localTheme = AppStorage.get<CustomTheme>(`toggleThemeProperty`);
       changeTheme = false;
     })
 

@@ -49,7 +49,7 @@ export default function RichEditorApi222() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get RichEditorApi222 state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("RichEditorApi2" == pages.name)) {
           console.info("get RichEditorApi222 pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -60,7 +60,9 @@ export default function RichEditorApi222() {
       console.info("RichEditorApi222 beforeEach end");
     });
 
-    afterEach(async () => {
+afterEach(async () => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.replaceUrl({url:'MainAbility/pages/index/index'});
       await CommonFunc.sleep(1000);
       console.info("RichEditorApi2 after each called");
     });

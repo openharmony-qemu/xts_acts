@@ -41,7 +41,7 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
@@ -57,7 +57,9 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage,Environment } from '@ohos.arkui.stateManagement';
 import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
+const router = AppStorage.get<Router>("router") as Router
 AppStorage.clear()
+AppStorage.setOrCreate<Router>('router', router);
 enum KFC19{K = 1,F,L}
 Environment.envProp('stringCode', 'en');
 Environment.envProp('numberCode', 2);

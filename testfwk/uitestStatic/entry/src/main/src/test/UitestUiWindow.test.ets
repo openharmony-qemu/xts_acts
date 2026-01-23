@@ -25,7 +25,8 @@ import {
   UiDirection,
   PointerMatrix,
   DisplayRotation,
-  ResizeDirection
+  ResizeDirection,
+  UiWindow
 } from '@kit.TestKit'
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
@@ -52,11 +53,58 @@ function sleep(numberMillis: int) {
   return
 }
 
+async function initSpite(driver: Driver, window: UiWindow | null) {
+  if (window != null) {
+    try {
+      let windowMode = await window.getWindowMode();
+      if (windowMode != WindowMode.FLOATING) {
+        await window.resume();
+        await driver.delayMs(8000);
+      }
+      await window.maximize();
+    } catch (error) {
+      console.log(`${tag}, initSpite error,${JSON.stringify(error)}`);
+    }
+  } else {
+    console.log(`${tag}, initSpite null`);
+  }
+  await driver.delayMs(3000);
+}
+
+async function maxUiWindow(driver: Driver, window: UiWindow | null): Promise<boolean> {
+  if (window != null) {
+    try {
+      let windowMode = await window.getWindowMode();
+      if (windowMode == WindowMode.FULLSCREEN) {
+        console.log(`${tag}, maxUiWindow FULLSCREEN`);
+        return true;
+      }
+      await window.maximize();
+      await driver.delayMs(3000);
+      return true;
+    } catch (error) {
+      console.log(`${tag}, maxUiWindow error,${JSON.stringify(error)}`);
+      return false;
+    }
+  } else {
+    console.log(`${tag}, maxUiWindow null`);
+    return false;
+  }
+}
+
 export default function uitestUiWindowTest() {
   describe('uitestUiWindowTest', (): void => {
+    let driver: Driver;
     beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, "uitestUiWindowTest loadup start!!!!!")
-      await Utils.msSleep(2000)
+      driver = Driver.create();
+      await Utils.msSleep(1000);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver.delayMs(waitUiReadyMs);
+      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+      await driver.delayMs(waitUiReadyMs);
+      await initSpite(driver, window);
+      await stopApplication('com.uitestScene.acts');
       hilog.info(domain, tag, "uitestUiWindowTest loadup over!!!!!")
     })
     beforeEach(async () => {
@@ -67,13 +115,8 @@ export default function uitestUiWindowTest() {
       const driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
       let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
-      if (window != null) {
-        try {
-          await window.maximize();
-        } catch (error: BusinessError) {
-          hilog.info(domain, tag, `afterAll maximize error, ${JSON.stringify(error)}`);
-        }
-      }
+      await driver.delayMs(waitUiReadyMs);
+      await maxUiWindow(driver, window);
       await driver.delayMs(waitUiReadyMs);
       await stopApplication('com.uitestScene.acts');
     })
@@ -91,7 +134,6 @@ export default function uitestUiWindowTest() {
       try {
         let disPlay = display.getDefaultDisplaySync();
         hilog.info(domain, tag, `testFindWindowWithId_static id, ${JSON.stringify(disPlay)}`);
-        let driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disPlay.id.toInt() });
@@ -123,17 +165,39 @@ export default function uitestUiWindowTest() {
      */
     it('testSplit_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      const driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
       let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
       expect(window1 != null).assertTrue();
       try {
         if (window1 != null) {
           await window1.split();
+          await driver.delayMs(waitUiReadyMs * 2)
         }
-        await driver.delayMs(waitUiReadyMs);
-        let bar = await driver.findComponent(ON.type('DecorBar'));
-        expect(bar == null).assertTrue();
+        let scbCom = await driver.findComponent(ON.id('scb_block_cover'));
+        hilog.info(domain, tag, `testSplit_static scbCom, ${JSON.stringify(scbCom)}`);
+        if (scbCom != null) {
+          expect(scbCom != null).assertTrue();
+        } else {
+          let testLabel = await driver.findComponent(ON.text('test label'));
+          hilog.info(domain, tag, `testSplit_static testLabel, ${JSON.stringify(testLabel)}`);
+          if (testLabel != null) {
+            await testLabel.click();
+            await driver.delayMs(waitUiReadyMs);
+            let window2 = await driver.findWindow({bundleName:'com.uitestScene.acts'});
+            await driver.delayMs(waitUiReadyMs);
+            expect(window2 != null).assertTrue();
+            if (window2 != null) {
+              let window2Mode = await window2.getWindowMode();
+              expect(window2Mode == WindowMode.PRIMARY).assertTrue();
+            }
+            let testWindow = await driver.findWindow({bundleName:'com.uitest.acts.static'});
+            expect(testWindow != null).assertTrue();
+            if (testWindow != null) {
+              let testWindowMode = await testWindow.getWindowMode();
+              expect(testWindowMode == WindowMode.SECONDARY).assertTrue();
+            }
+          }
+        }
       } catch (err: BusinessError) {
         if (err.message == 'this device can not support this action') {
           expect(window1 != null).assertTrue();

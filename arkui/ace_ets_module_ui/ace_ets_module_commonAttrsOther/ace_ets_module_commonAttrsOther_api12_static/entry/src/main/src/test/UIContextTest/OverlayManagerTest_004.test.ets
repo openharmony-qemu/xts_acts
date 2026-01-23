@@ -66,7 +66,7 @@ export default function OverlayManagerTest_004() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get OverlayManagerTest_004 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("OverlayManager_004" == pages.name)) {
           console.info("get OverlayManagerTest_004 pages.name:" + JSON.stringify(pages.name));
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

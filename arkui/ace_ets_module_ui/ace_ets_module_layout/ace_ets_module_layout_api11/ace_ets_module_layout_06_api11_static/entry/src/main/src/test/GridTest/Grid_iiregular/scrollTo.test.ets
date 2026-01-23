@@ -67,7 +67,7 @@ export default function scrollByJsunit() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.clear()
+      // routerInstance.clear()
       console.info("Grid_scrollToIndex1 after each called");
     });
     

@@ -102,6 +102,9 @@ import ImagePixelMapConvertPixelFormatTest from './image/ImagePixelMapConvertPix
 import ImagePixelMapCropSyncTest from './image/ImagePixelMapCropSync.Test.test';
 import ImagePixelMapMarshallingTest from './image/ImagePixelMapMarshalling.Test.test';
 import ImagePixelMapUnmarshallingTest from './image/ImagePixelMapUnMarshalling.Test.test';
+import ImageGPSMeasureMode from './image/ImageGPSMeasureMode.test';
+import ImageGPSDOP from './image/ImageGPSDOP.test';
+import ImageGPSSpeedRef from './image/ImageGPSSpeedRef.test';
 import ImageAuxiliaryPictureSetMetadataTest from './image/ImageAuxiliaryPictureSetMetadata.Test.test';
 import imagePackerPackingTest from './image/ImagePackerPacking.Test.test';
 import SendableImagePixelMapApplyColorSpaceTest from './sendableImage/SendableImagePixelMapApplyColorSpace.Test.test';
@@ -109,7 +112,6 @@ import SendableImagePixelMapCropTest from './sendableImage/SendableImagePixelMap
 import SendableImagePixelMapCropSyncTest from './sendableImage/SendableImagePixelMapCropSync.Test.test';
 import SendableImagePixelMapSetColorSpaceTest from './sendableImage/SendableImagePixelMapSetColorSpace.Test.test';
 import SendableImagePixelMapUnMarshallingTest from './sendableImage/SendableImagePixelMapUnMarshalling.Test.test';
-
 import ImageCreateImageReceiverCreator from './image/ImageCreateImageReceiverCreator.test';
 import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirParameters.test';
 import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
@@ -162,6 +164,7 @@ import ImageNewSubFileTypeSupp from './image/ImageExifNewSubfileType.test';
 import ImageMakeModelCompressionSupp from './image/ImageMakeModelCompressionSupp.test';
 import ImageRowsPerStripSamplesPerPixelSupp from './image/ImageRowsPerStripSamplesPerPixel.test';
 import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
+import ImageExifSuppTest from './image/ImageExifSupp.Test.test';
 import ImageFlashEnergySupp from './image/ImageFlashEnergySupp.test';
 import ImageSourceMeteringModeSupp from './image/ImageSourceMeteringMode.test';
 import ImageSourceLightSourceSupp from './image/ImageSourceLightSource.test';
@@ -180,6 +183,32 @@ import ImageSourcePixelYDimensionSupp from './image/ImageSourcePixelYDimension.t
 import ImageSourceRelatedSoundFileSupp from './image/ImageSourceRelatedSoundFile.test';
 import ImageWidthLengthSupp from './image/ImageExifWidthLength.test';
 import ImageDescriptionSupp from './image/ImageDescriptionPhotometricInterpretation.test';
+import ImageGPSSpeed from './image/ImageGPSSpeed.test';
+import ImageGPSTrackRef from './image/ImageGPSTrackRef.test';
+import ImageGPSTrack from './image/ImageGPSTrack.test';
+import ImageGPSImgDirectionRef from './image/ImageGPSImgDirectionRef.test';
+import ImageGPSIMGDirection from './image/ImageGPSImgDirection.test';
+import ImageGPSMapDatum from './image/ImageGPSMapDatum.test';
+import ImageGPSDestLatitudeRef from './image/ImageGPSDestLatitudeRef.test';
+import ImageGPSDestLongitudeRef from './image/ImageGPSDestLongitudeRef.test';
+import ImageGPSDestBearingRef from './image/ImageGPSDestBearingRef.test';
+import ImageGPSDestBearing from './image/ImageGPSDestBearing.test';
+import ImageExifDateTimeSupp from './image/ImageExifDateTime.test';
+import ImageExifVersionSupp from './image/ImageExifVersion.test';
+import ImageExifComponentsConfiguration from './image/ImageExifComponentsConfiguration.test';
+import ImageExifShutterSpeedValue from './image/ImageExifShutterSpeedValue.test';
+import ImageSourceLensModelSupp from './image/ImageSourceLensModel.test';
+import ImageSourceLensMakeSupp from './image/ImageSourceLensMake.test';
+import ImageLensSerialNumberSupp from './image/ImageExifLensSerialNumber.test';
+import ImageLensSpecificationSupp from './image/ImageExifLensSpecification.test';
+import ImageExifOECFSupp from './image/ImageExifOECF.test';
+import ImageBitsPerSampleStripOffsetsSupp from './image/ImageBitsPerSampleStripOffsets.test';
+import ImageSourceMetadataSupp from './image/ImageSourceMetadata.test';
+import ImageGetImagePropertyOptionsSupp from './image/ImageGetImagePropertyOptions.test';
+import ImageGammaSupp from './image/ImageGammaSupp.test';
+import ImagePictureMetadataTest from './image/ImagePictureMetadata.Test.test';
+import MultimediaImageTest from './image/MultimediaImage.test';
+import ImageExifMetadataTestSupp from './image/ImageExifMetadata.test';
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -267,6 +296,9 @@ export default function testsuite() {
   ImagePixelMapCropSyncTest();
   ImagePixelMapMarshallingTest();
   ImagePixelMapUnmarshallingTest();
+  ImageGPSMeasureMode();
+  ImageGPSDOP();
+  ImageGPSSpeedRef();
   ImageAuxiliaryPictureSetMetadataTest();
   imagePackerPackingTest();
   SendableImagePixelMapApplyColorSpaceTest();
@@ -318,6 +350,16 @@ export default function testsuite() {
   ImageISOSpeedLatitudeSupp();
   UpdateDataTest();
   SendableImageTest();
+  ImageGPSSpeed();
+  ImageGPSTrackRef();
+  ImageGPSTrack();
+  ImageGPSImgDirectionRef();
+  ImageGPSIMGDirection();
+  ImageGPSMapDatum();
+  ImageGPSDestLatitudeRef();
+  ImageGPSDestLongitudeRef();
+  ImageGPSDestBearingRef();
+  ImageGPSDestBearing();
   ImageSourceCreatePixelMapUsingAllocatorTest();
   ImagePixmapSetColorSpaceTest();
   ImageSourcePropertyKeyTest();
@@ -327,6 +369,11 @@ export default function testsuite() {
   ImageNewSubFileTypeSupp();
   ImageMakeModelCompressionSupp();
   ImageRowsPerStripSamplesPerPixelSupp();
+  ImageExifDateTimeSupp();
+  ImageExifVersionSupp();
+  ImageExifComponentsConfiguration();
+  ImageExifShutterSpeedValue();
+  ImageExifSuppTest();
   ImageFlashEnergySupp();
   ImageSourceMeteringModeSupp();
   ImageSourceLightSourceSupp();
@@ -345,4 +392,16 @@ export default function testsuite() {
   ImageSourceRelatedSoundFileSupp();
   ImageWidthLengthSupp();
   ImageDescriptionSupp();
+  ImageSourceLensMakeSupp();
+  ImageSourceLensModelSupp()
+  ImageLensSpecificationSupp();
+  ImageLensSerialNumberSupp();
+  ImageExifOECFSupp();
+  ImageBitsPerSampleStripOffsetsSupp();
+  ImageSourceMetadataSupp();
+  ImageGetImagePropertyOptionsSupp();
+  ImageGammaSupp()
+  ImagePictureMetadataTest()
+  MultimediaImageTest()
+  ImageExifMetadataTestSupp()
 }

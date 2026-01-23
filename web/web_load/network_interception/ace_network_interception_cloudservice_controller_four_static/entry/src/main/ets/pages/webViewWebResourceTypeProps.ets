@@ -18,7 +18,7 @@ import web_webview from '@ohos.web.webview';
 import webview from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
-import { State,Prop } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins
+import { State } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins
 import deviceInfo from '@ohos.deviceInfo';
 import { canIUse } from '@internal.full.global'
 import { BusinessError } from '@ohos.base'
@@ -42,7 +42,7 @@ import emitter from '@ohos.events.emitter';
 import { Callback, RecordData } from '@ohos.base'
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 @Entry
 @Component

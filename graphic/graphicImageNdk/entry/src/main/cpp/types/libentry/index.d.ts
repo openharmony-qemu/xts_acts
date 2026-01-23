@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,6 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import image from '@ohos.multimedia.image';
 
 export const testInitializationOptionsSetRowStrideNormal: (rowStride: number) => number;
 export const testCreatePixelMapWithStrideAbnormal: () => number;
@@ -27,3 +29,28 @@ export const testNativeSetColorSpaceNative: () => number;
 export const testNativeSetGetSrcPixelFormat: () => number;
 export const testNativeCreateEmptyPixelmap: () => number;
 export const testNativeConvertAlphaFormat: () => number;
+export const testNativeReadPixelsFromArea: (pixelMap: image.PixelMap, x: number, y: number, width: number,
+  height: number, useNull: boolean) => number;
+export const testNativeWritePixelsToArea: (pixelMap: image.PixelMap, x: number, y: number, width: number,
+  height: number, pixels: ArrayBuffer, useNull: boolean) => number;
+export const testNativeCreateAlphaPixelmap: (pixelMap: image.PixelMap, useNull: boolean) => number;
+export const testNativeClone: (pixelMap: image.PixelMap, useNull: boolean) => number;
+export const testNativeCreateCroppedAndScaledPixelMap: (pixelMap: image.PixelMap, x: number, y: number, width: number,
+  height: number, scaleX: number, scaleY: number, level: number, useNull: boolean) => number;
+export const testNativeCreatePixelmapFromNativeBuffer: (pixelMap: image.PixelMap, useNull: boolean) => number;
+export const testNativeCreatePixelmapFromSurface: (surfaceId: string, useNull: boolean) => number;
+export const testNativeGetUniqueId: (pixelMap: image.PixelMap, useNull: boolean) => number;
+export const testNativeIsReleased: (pixelMap: image.PixelMap, callAfterRelease: boolean, useNull: boolean) => number;
+export const createPixelmapFromSurfaceWithTransformation001: (
+  surfaceId: string, transformEnabled: boolean) => number;
+export const createPixelmapFromSurfaceWithTransformation002: (
+  surfaceId: string, transformEnabled: boolean) => number;
+export const createPixelmapFromSurfaceWithTransformation003: (
+  surfaceId: string, transformEnabled: boolean) => number;
+export const createPixelmapFromSurfaceWithTransformation004: (
+  surfaceId: string, transformEnabled: boolean) => number;
+export const createPixelmapFromSurfaceWithTransformation005: (
+  surfaceId: string, transformEnabled: boolean) => number;
+export const createPixelmapFromSurfaceWithTransformation006: (
+  surfaceId: string, transformEnabled: boolean) => number;
+  

@@ -80,13 +80,14 @@ export default function resourceColorErrorCodeTest() {
 
 
 
-/**
+    /**
      * @tc.number   resourceColorErrorCodeTest_static_0100
      * @tc.name     resourceColorErrorCodeTest_static_0100
      * @tc.desc     resourceColorErrorCodeTest_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('resourceColorErrorCodeTest_static_0100', Level.LEVEL0, async (done: () => void) => {
+
       console.info('resourceColorErrorCodeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

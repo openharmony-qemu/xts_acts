@@ -197,7 +197,7 @@ function setPlaybackInfoCb(avPlayer: media.AVPlayer | null, descriptionKey: Arra
   })
 }
 
-async function testCheckPlaybackInfo(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+async function testCheckPlaybackInfo(src: media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
   descriptionKey: Array<string>, descriptionValue: Array<string>, done: () => void) {
 
   console.info(`case media source: ${src}`)
@@ -213,7 +213,8 @@ async function testCheckPlaybackInfo(src: string | media.AVFileDescriptor, avPla
         console.info('case createAVPlayer success');
         avPlayer = video;
         setPlaybackInfoCb(avPlayer!, descriptionKey, descriptionValue, done)
-        setSource(avPlayer!, src);
+        console.info('case fdsrc test');
+        avPlayer!!.fdSrc = src;
       } else {
         console.error(`case createAVPlayer failed`);
         expect().assertFail();
@@ -309,7 +310,7 @@ async function setAVPlayerScaleCb(avPlayer: media.AVPlayer | null, done: () => v
   })
 }
 
-async function testVideoScaleType(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+async function testVideoScaleType(src: media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
   done: () => void) {
   console.info(`case media source: ${src}`)
   media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
@@ -318,7 +319,8 @@ async function testVideoScaleType(src: string | media.AVFileDescriptor, avPlayer
       console.info('case createAVPlayer success');
       avPlayer = video;
       setAVPlayerScaleCb(avPlayer!, done)
-      setSource(avPlayer!, src);
+      console.info('case fdsrc test');
+      avPlayer!!.fdSrc = src;
     }
     if(err != null){
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -450,7 +452,7 @@ function setPlaybackStrategyDASH(avPlayer: media.AVPlayer | null, done: () => vo
         }
         avPlayer!!.surfaceId = surfaceID;
         setPlayerPlaybackStrategy(avPlayer!, playbackStrategy)
-        avPlayer!!.prepare()
+        done();
         break;
       case PREPARED:
         avPlayer?.play()
@@ -496,7 +498,7 @@ function setPlaybackStrategy(avPlayer: media.AVPlayer | null, done: () => void,
         }
         avPlayer!!.surfaceId = surfaceID;
         setPlayerPlaybackStrategy(avPlayer!, playbackStrategy)
-        avPlayer!!.prepare()
+        done();
         break;
       case PREPARED:
         avPlayer?.play()
@@ -566,6 +568,7 @@ function setMediaMuted(avPlayer: media.AVPlayer | null, done: () => void) {
         break;
       case COMPLETED:
         setPlayerMediaMuted(avPlayer!)
+        await mediaTestBase.msleepAsync(1000);
         avPlayer?.release()
         break;
       case RELEASED:
@@ -585,7 +588,7 @@ function setMediaMuted(avPlayer: media.AVPlayer | null, done: () => void) {
   avPlayer?.onStateChange(stateChangeCallback)
 }
 
-async function testOffCallback(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, done: () => void) {
+async function testOffCallback(src: media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, done: () => void) {
   console.info(`case media source: ${src}`)
   media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
     console.info(`case media err: ${err}`)
@@ -593,7 +596,8 @@ async function testOffCallback(src: string | media.AVFileDescriptor, avPlayer: m
       console.info('case createAVPlayer success');
       avPlayer = video;
       setOnCallback(avPlayer!, done)
-      setSource(avPlayer!, src);
+      console.info('case fdsrc test');
+      avPlayer!!.fdSrc = src;
     }
     if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -603,7 +607,7 @@ async function testOffCallback(src: string | media.AVFileDescriptor, avPlayer: m
   });
 }
 
-async function testSubtitle(src: string | media.AVFileDescriptor, subtitleSrc: string | media.AVFileDescriptor,
+async function testSubtitle(src: media.AVFileDescriptor, subtitleSrc: string | media.AVFileDescriptor,
   avPlayer: media.AVPlayer | undefined, done: () => void) {
   console.info(`case media source: ${src}`)
   media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
@@ -612,8 +616,9 @@ async function testSubtitle(src: string | media.AVFileDescriptor, subtitleSrc: s
       console.info('case createAVPlayer success');
       avPlayer = video;
       setOnCallback(avPlayer!, done)
-      setSource(avPlayer!, src);
-      setSubtitle(avPlayer!, subtitleSrc)
+      console.info('case fdsrc test');
+      avPlayer!!.fdSrc = src;
+      setSubtitle(avPlayer!, subtitleSrc);
     }
     if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -623,7 +628,7 @@ async function testSubtitle(src: string | media.AVFileDescriptor, subtitleSrc: s
   });
 }
 
-async function testSetPlaybackStrategy(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+async function testSetPlaybackStrategy(src: media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
   done: () => void, playbackStrategy: media.PlaybackStrategy) {
   console.info(`case media source: ${src}`)
   media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer |undefined) => {
@@ -632,7 +637,8 @@ async function testSetPlaybackStrategy(src: string | media.AVFileDescriptor, avP
       console.info('case createAVPlayer success');
       avPlayer = video;
       setPlaybackStrategy(avPlayer!, done, playbackStrategy)
-      setSource(avPlayer!, src);
+      console.info('case fdsrc test');
+      avPlayer!!.fdSrc = src;
     }
     if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -641,7 +647,7 @@ async function testSetPlaybackStrategy(src: string | media.AVFileDescriptor, avP
     }
   });
 }
-async function testSetPlaybackStrategyDASH(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+async function testSetPlaybackStrategyDASH(src: media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
   done: () => void) {
   console.info(`case media source: ${src}`)
   media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
@@ -650,7 +656,8 @@ async function testSetPlaybackStrategyDASH(src: string | media.AVFileDescriptor,
       console.info('case createAVPlayer success');
       avPlayer = video;
       setPlaybackStrategyDASH(avPlayer!, done)
-      setSource(avPlayer!, src);
+      console.info('case fdsrc test');
+      avPlayer!!.fdSrc = src;
     }
     if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -660,7 +667,7 @@ async function testSetPlaybackStrategyDASH(src: string | media.AVFileDescriptor,
   });
 }
 
-async function testSetMediaMuted(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+async function testSetMediaMuted(src: media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
   done: () => void) {
   console.info(`case media source: ${src}`)
   media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
@@ -669,7 +676,8 @@ async function testSetMediaMuted(src: string | media.AVFileDescriptor, avPlayer:
       console.info('case createAVPlayer success');
       avPlayer = video;
       setMediaMuted(avPlayer!, done)
-      setSource(avPlayer!, src);
+      console.info('case fdsrc test');
+      avPlayer!!.fdSrc = src;
     }
     if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -726,7 +734,7 @@ function getPlaybackPosition(avPlayer: media.AVPlayer | null, done: () => void) 
   avPlayer?.onStateChange(stateChangeCallback)
 }
 
-async function testGetPlaybackPosition(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+async function testGetPlaybackPosition(src: media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
   done: () => void) {
   console.info(`case media source: ${src}`)
   media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
@@ -735,7 +743,8 @@ async function testGetPlaybackPosition(src: string | media.AVFileDescriptor, avP
       console.info('case createAVPlayer success');
       avPlayer = video;
       getPlaybackPosition(avPlayer!, done);
-      setSource(avPlayer!, src);
+      console.info('case fdsrc test');
+      avPlayer!!.fdSrc = src;
     }
     if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -903,7 +912,7 @@ function setPlaybackRange(avPlayer: media.AVPlayer | null, done: () => void) {
   avPlayer?.onStateChange(stateChangeCallback)
 }
 
-async function testSetPlaybackRange(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+async function testSetPlaybackRange(src: media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
   done: () => void) {
   console.info(`case media source: ${src}`)
   media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
@@ -912,7 +921,8 @@ async function testSetPlaybackRange(src: string | media.AVFileDescriptor, avPlay
       console.info('case createAVPlayer success');
       avPlayer = video;
       setPlaybackRange(avPlayer!, done)
-      setSource(avPlayer!, src);
+      console.info('case fdsrc test');
+      avPlayer!!.fdSrc = src;
     }
     if (err!!.code != 0) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -975,7 +985,7 @@ function OnOffSubtitleUpdate(avPlayer: media.AVPlayer | null, done: () => void) 
   }
   avPlayer?.onStateChange(stateChangeCallback)
 }
-async function testOnOffSubtitleUpdate(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+async function testOnOffSubtitleUpdate(src: media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
   done: () => void) {
   console.info(`case media source: ${src}`)
   media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
@@ -984,7 +994,8 @@ async function testOnOffSubtitleUpdate(src: string | media.AVFileDescriptor, avP
       console.info('case createAVPlayer success');
       avPlayer = video;
       OnOffSubtitleUpdate(avPlayer!, done)
-      setSource(avPlayer!, src);
+      console.info('case fdsrc test');
+      avPlayer!!.fdSrc = src;
     }
     if (err!!.code != 0) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -1247,7 +1258,7 @@ function OnOffTrackInfoUpdate(avPlayer: media.AVPlayer | null, done: () => void)
   avPlayer?.onStateChange(stateChangeCallback)
 }
 
-async function testOnOffTrackInfoUpdate(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+async function testOnOffTrackInfoUpdate(src: media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
   done: () => void) {
   console.info(`case media source: ${src}`)
   media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
@@ -1256,7 +1267,8 @@ async function testOnOffTrackInfoUpdate(src: string | media.AVFileDescriptor, av
       console.info('case createAVPlayer success');
       avPlayer = video;
       OnOffTrackInfoUpdate(avPlayer!, done)
-      setSource(avPlayer!, src);
+      console.info('case fdsrc test');
+      avPlayer!!.fdSrc = src;
     }
     if (err!!.code != 0) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);

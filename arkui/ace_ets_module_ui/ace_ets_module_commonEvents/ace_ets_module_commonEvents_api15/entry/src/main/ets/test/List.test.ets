@@ -47,8 +47,10 @@ import rotationGestureEventTest from './EventItem/RotationGesture.test';
 import dataLoadingTest from './startDataLoading/dataLoadingTest.test';
 import DragPreviewOptions from './DragPreviewOptions/DragPreviewOptions.test';
 import EventTarget_id from './EventTarget_id/EventTarget_id.test';
+import textAreaInputTest from './TextAreaTest/textAreaInputTest.test';
 
 export default function testsuite() {
+  textAreaInputTest()
   getWithUniqueId();
   keyEventDispatchTest();
   keyEventDispatchTest2();

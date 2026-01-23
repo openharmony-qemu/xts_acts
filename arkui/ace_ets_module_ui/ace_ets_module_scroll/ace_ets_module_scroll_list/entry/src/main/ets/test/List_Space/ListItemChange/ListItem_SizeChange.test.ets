@@ -159,6 +159,7 @@ export default function listItem_SizeChange() {
       expect(Math.abs(Math.round(locationText4.left - locationList.left)) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText1.top - locationList.top)) <= 1).assertTrue();
 
+      console.info('testListItemSizeChangeHeight160Width300 111');
       expect(Math.abs(Math.round(locationText1.right - locationText1.left) - Math.round(vp2px(300))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText1.bottom - locationText1.top) - Math.round(vp2px(160))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText2.right - locationText2.left) - Math.round(vp2px(300))) <= 1).assertTrue();
@@ -168,15 +169,18 @@ export default function listItem_SizeChange() {
       expect(Math.abs(Math.round(locationText4.right - locationText4.left) - Math.round(vp2px(300))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText4.bottom - locationText4.top) - Math.round(vp2px(100))) <= 1).assertTrue();
 
+      console.info('testListItemSizeChangeHeight160Width300 222');
       expect(Math.abs(Math.round(locationText2.top - locationText1.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText3.top - locationText2.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText4.top - locationText3.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText4.bottom - locationList.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
 
+      console.info('testListItemSizeChangeHeight160Width300 333');
       expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
+      console.info('testListItemSizeChangeHeight160Width300 444');
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop));
+      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)*0.4 + top + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop));
       await CommonFunc.sleep(3000);
       let locationText4Again = CommonFunc.getComponentRect('ListItemTest4');
       expect(Math.floor(Math.abs(locationText4Again.bottom - locationList.bottom)) <= 1).assertTrue();
@@ -340,6 +344,7 @@ export default function listItem_SizeChange() {
       expect(Math.abs(Math.round(locationText4.left - locationList.left)) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText1.top - locationList.top)) <= 1).assertTrue();
 
+      console.info('testListItemSizeChangeHeight160Width380 111');
       expect(Math.abs(Math.round(locationText1.right - locationText1.left) - Math.round(vp2px(380))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText1.bottom - locationText1.top) - Math.round(vp2px(160))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText2.right - locationText2.left) - Math.round(vp2px(300))) <= 1).assertTrue();
@@ -349,15 +354,18 @@ export default function listItem_SizeChange() {
       expect(Math.abs(Math.round(locationText4.right - locationText4.left) - Math.round(vp2px(300))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText4.bottom - locationText4.top) - Math.round(vp2px(100))) <= 1).assertTrue();
 
+      console.info('testListItemSizeChangeHeight160Width380 222');
       expect(Math.abs(Math.round(locationText2.top - locationText1.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText3.top - locationText2.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText4.top - locationText3.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText4.bottom - locationList.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
 
+      console.info('testListItemSizeChangeHeight160Width380 333');
       expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
+      console.info('testListItemSizeChangeHeight160Width380 444');
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop), Math.round( globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop ));
+      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)*0.4 + top + globalThis.winTop), Math.round( globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop ));
       await CommonFunc.sleep(3000);
       let locationText4Again = CommonFunc.getComponentRect('ListItemTest4');
       expect(Math.floor(Math.abs(locationText4Again.bottom - locationList.bottom)) <= 1).assertTrue();

@@ -15,7 +15,7 @@
 import avSession from './AVsession.test'
 import AVSessionManager from './AVSessionManager.test';
 import AVSessionCallback from './AVSessionCallback.test';
-import ManagerCallback from './AVSessionManagerCallback.test';
+import AVSessionManagerCallback from './AVSessionManagerCallback.test';
 import AVSessionErrorCode from './AVSessionErrorCode.test';
 import AVSessionControllerJSTest from './AVSessionControllerJSTest.test';
 import AVSessionJSTest from './AVSessionJSTest.test';
@@ -23,7 +23,7 @@ import AVSessionEnum from './AVSessionEnum.test';
 import AVSessionControllerErrorCode from './AVSessionControllerErrorCode.test';
 
 export default function testsuite() {
-    ManagerCallback();
+    AVSessionManagerCallback();
     avSession();
     AVSessionManager();
     AVSessionCallback();

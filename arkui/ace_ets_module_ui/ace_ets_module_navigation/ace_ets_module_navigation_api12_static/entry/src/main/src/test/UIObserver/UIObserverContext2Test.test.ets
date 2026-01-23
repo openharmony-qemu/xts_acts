@@ -70,6 +70,7 @@ export default function UIObserverContext2Test() {
      * @tc.level    Level.LEVEL2
      */
 it('UIObserverContext2Test_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+
       console.info('UIObserverContext2Test_static_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -89,9 +90,9 @@ it('UIObserverContext2Test_static_0100', Level.LEVEL2, async (done: () => void):
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      console.info('UIObserverUpdateContextTest_0100 UIObserverContext2Page_callBackFuncOnCount is: ' + AppStorage.get('UIObserverContext2Page_callBackFuncOnCount'));
-      console.info('UIObserverUpdateContextTest_0100 UIObserverContext2Page_callBackFuncOnCount_2 is: ' + AppStorage.get('UIObserverContext2Page_callBackFuncOnCount_2'));
-      expect(AppStorage.get('UIObserverContext2Page_callBackFuncOnCount')).assertEqual(AppStorage.get('UIObserverContext2Page_callBackFuncOnCount_2'));
+      console.info('UIObserverUpdateContextTest_0100 UIObserverContext2Page_callBackFuncOnCount is: ' + AppStorage.get<int>('UIObserverContext2Page_callBackFuncOnCount'));
+      console.info('UIObserverUpdateContextTest_0100 UIObserverContext2Page_callBackFuncOnCount_2 is: ' + AppStorage.get<int>('UIObserverContext2Page_callBackFuncOnCount_2'));
+      expect(AppStorage.get<int>('UIObserverContext2Page_callBackFuncOnCount')).assertEqual(AppStorage.get<int>('UIObserverContext2Page_callBackFuncOnCount_2'));
       AppStorage.delete('UIObserverContext2Page_callBackFuncOnCount')
       AppStorage.delete('UIObserverContext2Page_callBackFuncOnCount_2')
 

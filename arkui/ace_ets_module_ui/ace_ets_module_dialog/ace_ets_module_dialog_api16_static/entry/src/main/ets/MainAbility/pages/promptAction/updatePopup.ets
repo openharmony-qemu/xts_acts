@@ -29,7 +29,7 @@ import { LevelMode } from '@ohos.promptAction';
 import {
   State,
   Link,
-  Prop,
+  PropRef,
   Observed,
   ObjectLink,
 } from '@ohos.arkui.stateManagement'
@@ -77,16 +77,18 @@ struct Index {
           let targetId = frameNode?.getFirstChild()?.getUniqueId().toInt();
           promptAction.openPopup(contentNode, { id: targetId! })
 
-          // setTimeout(() => {
-          //   promptAction.updatePopup(contentNode, { radius: 0 })
-          //     .then(() => {
-          //       this.updatePopup = 'updatePopup'
-          //       console.info('updatePopup success');
-          //     })
-          // }, 2000);  //2秒后自动更新弹窗位置
-          // setTimeout(() => {
-          //   promptAction.closePopup(contentNode)
-          // }, 4000); //4秒后自动关闭
+          setTimeout(() => {
+            console.log('updatePopup setTimeout before');
+            promptAction.updatePopup(contentNode, { radius: 0 })
+              .then(() => {
+                console.log('updatePopup setTimeout after');
+                this.updatePopup = 'updatePopup'
+                console.info('updatePopup success');
+              })
+          }, 2000);  //2秒后自动更新弹窗位置
+          setTimeout(() => {
+            promptAction.closePopup(contentNode)
+          }, 4000); //4秒后自动关闭
         })
     }
   }

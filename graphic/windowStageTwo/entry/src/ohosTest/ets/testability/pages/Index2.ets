@@ -16,7 +16,7 @@ import router from '@ohos.router';
 
 @Entry
 @Component
-struct Index {
+struct Index2 {
   aboutToAppear() {
     console.info('TestAbility2 index aboutToAppear')
   }

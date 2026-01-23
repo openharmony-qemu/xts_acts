@@ -56,3 +56,4 @@ export const CheckAvTransCoderComplete: (user: AvTransCoderNdkUser) => number;
 export const AvTransCodeConfigSetDstFileTypeError: (srcFd: number, srcOffset: number, srcLength: number, dstFd: number,
     mimeType: number) => AvTransCoderResult;
 export const CheckAvTransCoderCallBackError: (user: AvTransCoderNdkUser) => number;
+export const AvTransCoderCreate: () => number;

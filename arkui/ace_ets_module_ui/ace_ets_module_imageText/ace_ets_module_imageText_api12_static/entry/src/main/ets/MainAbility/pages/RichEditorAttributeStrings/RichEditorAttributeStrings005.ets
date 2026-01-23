@@ -123,8 +123,6 @@ build() {
         this.spans = JSON.stringify(array);
       }).id('cusFromStyledString')
 
-      Button('undefined fromStyledString').onClick((e: ClickEvent) => {
-      }).id('undefinedFromStyledString')
 
       Text('spans:' + this.spans).id('spans')
       Text('' + this.imageSpan).id('imageSpan')

@@ -83,8 +83,6 @@ export default function getColorTest() {
 
     
     
-
-
 /**
      * @tc.number   getColorTest_static_0100
      * @tc.name     getColorTest_static_0100
@@ -108,8 +106,6 @@ it('getColorTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
 
     
     
-
-
 /**
      * @tc.number   getColorTest_static_0200
      * @tc.name     getColorTest_static_0200

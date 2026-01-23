@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import measure from '@ohos.measure'
 
 @Entry
@@ -39,17 +40,21 @@ struct Index {
 
   build() {
     Row() {
-      Column() {
+      Column({space:2}) {
         Text(this.message)
+          .height(40)
           .width('220vp')
           .maxFontSize('20vp')
           .minFontSize('15vp')
           .maxLines(2)
           .textIndent(this.textIndent)
           .wordBreak(this.textWordBreak)
-        Text("" + this.textSizeMaxLine2.height).key('textSizeMaxLine2')
-        Text("" + this.textSizeMaxLine3.height).key('textSizeMaxLine3')
+        Row({space:3}){
+          Text("" + this.textSizeMaxLine2.height).key('textSizeMaxLine2').height(20)
+          Text("" + this.textSizeMaxLine3.height).key('textSizeMaxLine3').height(20)
+        }
         Button('testForTextIndent')
+          .height(20)
           .id('testForTextIndent')
           .onClick(() => {
             this.textIndent = 40;
@@ -73,6 +78,7 @@ struct Index {
           })
 
         Button('reset')
+          .height(20)
           .id('reset')
           .onClick(() => {
             this.textIndent = 10;
@@ -99,6 +105,7 @@ struct Index {
           })
 
         Button('testForWordBreak')
+          .height(20)
           .id('testForWordBreak')
           .onClick(() => {
             this.textIndent = 10;
@@ -123,6 +130,7 @@ struct Index {
           })
 
         Button('resetInChinese')
+          .height(20)
           .id('resetInChinese')
           .onClick(() => {
             this.textIndent = 10;
@@ -149,6 +157,7 @@ struct Index {
           })
 
         Button('testForTextIndentInChinese')
+          .height(20)
           .id('testForTextIndentInChinese')
           .onClick(() => {
             this.textIndent = 40;
@@ -173,6 +182,7 @@ struct Index {
           })
       }
       .width('100%')
+      .height('100%')
     }
     .height('100%')
   }

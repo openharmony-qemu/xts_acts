@@ -88,7 +88,7 @@ function itemFoot(params: FootBuilderParams) {
 
 @Component
 struct MyItemGroup {
-  item: TimeTable = { title: '', projects: [] } as TimeTable
+  @State item: TimeTable = { title: '', projects: [] } as TimeTable
   header ?: ComponentContent<HeadBuilderParams> = undefined
   footer ?: ComponentContent<FootBuilderParams> = undefined
   headerParam:HeadBuilderParams = new HeadBuilderParams(this.item.title)
@@ -113,7 +113,7 @@ struct MyItemGroup {
       headerComponent: this.GetHeader(),
       footerComponent: this.GetFooter()
     }) {
-      ForEach(this.item.projects, (project: string) => { //数据刷新后，页面没更新
+      ForEach(this.item.projects, (project: string) => {
         ListItem() {
           Text(project)
             .width('100%')
@@ -147,7 +147,7 @@ struct ListItemGroupExample {
 
   build() {
     Column(undefined) {
-      Text('title: '+ this.timeTable[0].title) //这里刷新了
+      Text('title: '+ this.timeTable[0].title)
         .id('list_title')
       Button('update')
         .id('list_header')
@@ -160,12 +160,12 @@ struct ListItemGroupExample {
           }
         })
       List({ space: 5 }) {
-        ForEach(this.timeTable, (item: TimeTable) => { //页面未刷新
+        ForEach(this.timeTable, (item: TimeTable) => {
           MyItemGroup({ item: item })
-        })
+        }, (item: TimeTable) => item.title )
       }
       .width('90%')
-      //.sticky(StickyStyle.Header | StickyStyle.Footer)
+      .sticky(StickyStyle.BOTH)
       .scrollBar(BarState.Off)
     }
     .width('100%')

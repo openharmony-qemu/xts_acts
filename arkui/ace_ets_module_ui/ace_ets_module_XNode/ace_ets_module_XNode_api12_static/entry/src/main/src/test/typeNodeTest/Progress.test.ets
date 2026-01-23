@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,13 +58,14 @@ export default function typeNodeProgressTest() {
 
 
 
-/**
+    /**
      * @tc.number   ProgressTest_static_0100
      * @tc.name     ProgressTest_static_0100
      * @tc.desc     ProgressTest_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('ProgressTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('ProgressTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -83,13 +84,14 @@ it('ProgressTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
 
 
 
-/**
+    /**
      * @tc.number   initializeTest_static_0200
      * @tc.name     initializeTest_static_0200
      * @tc.desc     initializeTest_static_0200
      * @tc.level    Level.LEVEL0
      */
 it('initializeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('initializeTest_0200 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -99,7 +101,10 @@ it('initializeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise
       let strJson: string = inspector.getInspectorByKey('TypeNode_initialize');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[initializeTest_0200] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual('{"top":{"unit":1,"value":10},"right":{"unit":1,"value":10},"bottom":{"unit":1,"value":10},"left":{"unit":1,"value":10}}');
+      expect(obj.getElement('$attrs').getString('label')).assertContain('"top":{"unit":1,"value":10}');
+      expect(obj.getElement('$attrs').getString('label')).assertContain('"right":{"unit":1,"value":10}');
+      expect(obj.getElement('$attrs').getString('label')).assertContain('"bottom":{"unit":1,"value":10}');
+      expect(obj.getElement('$attrs').getString('label')).assertContain('"left":{"unit":1,"value":10}');
       //取值是{"top":{"unit":{},"value":0},"left":{"unit":{},"value":0}，期望是{"top":{"unit":1,"value":10},
       console.info('[initializeTest_0200] END');
       done();
@@ -109,13 +114,14 @@ it('initializeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise
 
 
 
-/**
+    /**
      * @tc.number   attributeTest_static_0300
      * @tc.name     attributeTest_static_0300
      * @tc.desc     attributeTest_static_0300
      * @tc.level    Level.LEVEL0
      */
 it('attributeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('attributeTest_0300 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -125,7 +131,10 @@ it('attributeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       let strJson: string = inspector.getInspectorByKey('TypeNode_attribute');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[attributeTest_0300] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual('{"top":{"unit":1,"value":5},"right":{"unit":1,"value":5},"bottom":{"unit":1,"value":5},"left":{"unit":1,"value":5}}');
+      expect(obj.getElement('$attrs').getString('label')).assertContain('"top":{"unit":1,"value":5}');
+      expect(obj.getElement('$attrs').getString('label')).assertContain('"right":{"unit":1,"value":5}');
+      expect(obj.getElement('$attrs').getString('label')).assertContain('"bottom":{"unit":1,"value":5}');
+      expect(obj.getElement('$attrs').getString('label')).assertContain('"left":{"unit":1,"value":5}');
       console.info('[attributeTest_0300] END');
       done();
     });

@@ -99,7 +99,7 @@ it('SwiperMinSize_static_001', Level.LEVEL0, async (done: () => void): Promise<v
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(160)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(160)));
 
       console.info('[SwiperMinSize_static_001] END');
       done();
@@ -121,7 +121,7 @@ it('SwiperMinSize_static_101', Level.LEVEL0, async (done: () => void): Promise<v
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(160)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(160)));
 
       console.info('[SwiperMinSize_static_101] END');
       done();
@@ -151,7 +151,7 @@ it('SwiperMinSize_static_002', Level.LEVEL0, async (done: () => void): Promise<v
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(40)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(40)));
 
       console.info('[SwiperMinSize_static_002] END');
       done();
@@ -181,7 +181,7 @@ it('SwiperMinSize_static_102', Level.LEVEL0, async (done: () => void): Promise<v
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(40)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(40)));
 
       console.info('[SwiperMinSize_static_102] END');
       done();
@@ -211,7 +211,7 @@ it('SwiperMinSize_static_202', Level.LEVEL0, async (done: () => void): Promise<v
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(40)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(40)));
 
       console.info('[SwiperMinSize_static_202] END');
       done();
@@ -241,7 +241,7 @@ it('SwiperMinSize_static_302', Level.LEVEL0, async (done: () => void): Promise<v
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(40)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(40)));
 
       console.info('[SwiperMinSize_static_302] END');
       done();
@@ -271,7 +271,7 @@ it('SwiperMinSize_static_402', Level.LEVEL0, async (done: () => void): Promise<v
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(40)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(40)));
 
       console.info('[SwiperMinSize_static_402] END');
       done();
@@ -304,7 +304,7 @@ it('SwiperMinSize_static_003', Level.LEVEL0, async (done: () => void): Promise<v
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(40)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(40)));
 
       console.info('[SwiperMinSize_static_003] END');
       done();
@@ -337,7 +337,7 @@ it('SwiperMinSize_static_004', Level.LEVEL0, async (done: () => void): Promise<v
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(40)));
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(40)));
 
       console.info('[SwiperMinSize_static_004] END');
       done();
@@ -371,7 +371,7 @@ it('SwiperMinSize_static_005', Level.LEVEL0, async (done: () => void): Promise<v
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(swiperText1.top - swiper.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(swiperText1.top - swiper.top) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[SwiperMinSize_static_005] END');
       done();
@@ -408,7 +408,7 @@ it('SwiperMinSize_static_006', Level.LEVEL0, async (done: () => void): Promise<v
       let swiperText2 = CommonFunc.getComponentRect('swiperText2');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(swiperText2.left - swiperText1.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(swiperText2.left - swiperText1.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
       console.info('[SwiperMinSize_static_006] END');
@@ -443,7 +443,7 @@ it('SwiperMinSize_static_007', Level.LEVEL0, async (done: () => void): Promise<v
       let swiperText2 = CommonFunc.getComponentRect('swiperText2');
       await CommonFunc.sleep(1000);
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(swiperText2.left - swiperText1.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(swiperText2.left - swiperText1.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
       console.info('[SwiperMinSize_static_007] END');

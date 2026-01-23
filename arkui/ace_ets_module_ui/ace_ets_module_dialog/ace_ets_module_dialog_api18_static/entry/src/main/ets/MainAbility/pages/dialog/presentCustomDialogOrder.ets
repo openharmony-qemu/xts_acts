@@ -42,7 +42,7 @@ import {
 import {
   State,
   Link,
-  Prop,AppStorage,Local
+  PropRef,AppStorage,Local
 } from '@ohos.arkui.stateManagement';
 let promptAction = new PromptAction()
 @Entry
@@ -88,7 +88,7 @@ struct presentCustomDialogOrder {
               .then((dialogId: int) => {
                 this.customDialogComponentId = dialogId
               })
-              .catch((err: BusinessError): void => {
+              .catch((err: Error): void => {
                 console.error('presentCustomDialog error: ' + err.code + '' + err.message)
               })
           })
@@ -107,7 +107,7 @@ struct presentCustomDialogOrder {
               .then((dialogId: int) => {
                 this.customDialogComponentId = dialogId
               })
-              .catch((err: BusinessError): void => {
+              .catch((err: Error): void => {
                 console.error('presentCustomDialog error: ' + err.code + '' + err.message)
               })
           })
@@ -128,7 +128,7 @@ struct presentCustomDialogOrder {
               .then((dialogId: int) => {
                 this.customDialogComponentId = dialogId
               })
-              .catch((err: BusinessError): void => {
+              .catch((err: Error): void => {
                 console.error('presentCustomDialog error: ' + err.code + '' + err.message)
               })
           })
@@ -147,7 +147,7 @@ struct presentCustomDialogOrder {
               .then((dialogId: int) => {
                 this.customDialogComponentId = dialogId
               })
-              .catch((err: BusinessError): void => {
+              .catch((err: Error): void => {
                 console.error('presentCustomDialog error: ' + err.code + '' + err.message)
               })
           })

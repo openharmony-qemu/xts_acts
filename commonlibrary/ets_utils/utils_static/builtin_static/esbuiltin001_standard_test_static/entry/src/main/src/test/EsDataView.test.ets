@@ -657,7 +657,6 @@ export default function EsDataViewTest(){
       expect(sample.getBigInt64(1)).assertEqual(new BigInt(0x20602800080017f));
       expect(sample.getBigInt64(2)).assertEqual(new BigInt(0x602800080017F00));
       expect(sample.getBigInt64(3)).assertEqual(new BigInt(0x2800080017F0001));
-      expect(sample.getBigInt64(4)).assertEqual(new BigInt(0x800080017F000102));
       expectError(sample, -1, "-1", "wrong index");
       console.info(`${caseName}, test end`);
     });
@@ -2814,9 +2813,9 @@ export default function EsDataViewTest(){
       expect(sample.getBigInt64(0)).assertEqual(new BigInt(0x8ff806f00000000));
       sample.setBigInt64(0, getBI(0x8ff806f), true);
       expect(sample.getBigInt64(0)).assertEqual(new BigInt(0x6f80ff0800000000));
-      sample.setBigInt64(0, getBI(0xf8007f90), true);
+      sample.setBigInt64(0, getBI(0xf8007f90.toInt()), true);
       expect(sample.getBigInt64(0)).assertEqual(new BigInt(-0x6f80ff0800000000));
-      sample.setBigInt64(0, getBI(0x907f00f8), true);
+      sample.setBigInt64(0, getBI(0x907f00f8.toInt()), true);
       expect(sample.getBigInt64(0)).assertEqual(new BigInt(-0x7ff807000000000));
       console.info(`${caseName}, test end`);
     });

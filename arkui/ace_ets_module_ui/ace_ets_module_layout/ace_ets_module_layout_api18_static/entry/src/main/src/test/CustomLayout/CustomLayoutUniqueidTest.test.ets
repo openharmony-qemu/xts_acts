@@ -90,25 +90,25 @@ it('CustomLayoutUniqueidTest_static_0100', Level.LEVEL1, async (done: () => void
       await CommonFunc.sleep(2000);
 
       console.log('[CustomLayoutUniqueidTest_static_0100] onPlaceChildren_UniqueId_0 is:' +
-      AppStorage.get<number>('CustomLayoutUniqueid_onPlaceChildren_UniqueId_0'));
+      AppStorage.get<Int>('CustomLayoutUniqueid_onPlaceChildren_UniqueId_0'));
       console.log('[CustomLayoutUniqueidTest_static_0100] onPlaceChildren_UniqueId_1 is:' +
-      AppStorage.get<number>('CustomLayoutUniqueid_onPlaceChildren_UniqueId_1'));
+      AppStorage.get<Int>('CustomLayoutUniqueid_onPlaceChildren_UniqueId_1'));
       console.log('[CustomLayoutUniqueidTest_static_0100] onMeasureSize_UniqueId_0 is:' +
-      AppStorage.get<Long>('CustomLayoutUniqueid_onMeasureSize_UniqueId_0'));
+      AppStorage.get<Int>('CustomLayoutUniqueid_onMeasureSize_UniqueId_0'));
       console.log('[CustomLayoutUniqueidTest_static_0100] onMeasureSize_UniqueId_1 is:' +
-      AppStorage.get<Long>('CustomLayoutUniqueid_onMeasureSize_UniqueId_1'));
+      AppStorage.get<Int>('CustomLayoutUniqueid_onMeasureSize_UniqueId_1'));
       console.log('[CustomLayoutUniqueidTest_static_0100] onMeasureSize_FrameNode_UniqueId_0 is:' +
-      AppStorage.get<Long>('CustomLayoutUniqueid_onMeasureSize_FrameNode_UniqueId_0'));
+      AppStorage.get<Int>('CustomLayoutUniqueid_onMeasureSize_FrameNode_UniqueId_0'));
       console.log('[CustomLayoutUniqueidTest_static_0100] onMeasureSize_FrameNode_UniqueId_1 is:' +
-      AppStorage.get<Long>('CustomLayoutUniqueid_onMeasureSize_FrameNode_UniqueId_1'));
-      expect(AppStorage.get<number>('CustomLayoutUniqueid_onPlaceChildren_UniqueId_0'))
-        .assertEqual(AppStorage.get<Long>('CustomLayoutUniqueid_onMeasureSize_UniqueId_0'));
-      expect(AppStorage.get<Long>('CustomLayoutUniqueid_onMeasureSize_UniqueId_0'))
-        .assertEqual(AppStorage.get<Long>('CustomLayoutUniqueid_onMeasureSize_FrameNode_UniqueId_0'));
-      expect(AppStorage.get<number>('CustomLayoutUniqueid_onPlaceChildren_UniqueId_1'))
-        .assertEqual(AppStorage.get<Long>('CustomLayoutUniqueid_onMeasureSize_UniqueId_1'));
-      expect(AppStorage.get<Long>('CustomLayoutUniqueid_onMeasureSize_UniqueId_1'))
-        .assertEqual(AppStorage.get<Long>('CustomLayoutUniqueid_onMeasureSize_FrameNode_UniqueId_1'));
+      AppStorage.get<Int>('CustomLayoutUniqueid_onMeasureSize_FrameNode_UniqueId_1'));
+      expect(AppStorage.get<Int>('CustomLayoutUniqueid_onPlaceChildren_UniqueId_0'))
+        .assertEqual(AppStorage.get<Int>('CustomLayoutUniqueid_onMeasureSize_UniqueId_0'));
+      expect(AppStorage.get<Int>('CustomLayoutUniqueid_onMeasureSize_UniqueId_0'))
+        .assertEqual(AppStorage.get<Int>('CustomLayoutUniqueid_onMeasureSize_FrameNode_UniqueId_0'));
+      expect(AppStorage.get<Int>('CustomLayoutUniqueid_onPlaceChildren_UniqueId_1'))
+        .assertEqual(AppStorage.get<Int>('CustomLayoutUniqueid_onMeasureSize_UniqueId_1'));
+      expect(AppStorage.get<Int>('CustomLayoutUniqueid_onMeasureSize_UniqueId_1'))
+        .assertEqual(AppStorage.get<Int>('CustomLayoutUniqueid_onMeasureSize_FrameNode_UniqueId_1'));
       AppStorage.delete('CustomLayoutUniqueid_onPlaceChildren_UniqueId_0');
       AppStorage.delete('CustomLayoutUniqueid_onPlaceChildren_UniqueId_1');
       AppStorage.delete('CustomLayoutUniqueid_onMeasureSize_UniqueId_0');
@@ -146,10 +146,10 @@ it('CustomLayoutUniqueidTest_static_0200', Level.LEVEL1, async (done: () => void
       console.log('[CustomLayoutUniqueidTest_static_0200] Child_0_height is:' + Child_0_height);
       console.log('[CustomLayoutUniqueidTest_static_0200] Child_1_width is:' + Child_1_width);
       console.log('[CustomLayoutUniqueidTest_static_0200] Child_1_height is:' + Child_1_height);
-      expect(Math.floor(Math.abs(Child_0_width - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Child_0_height - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Child_1_width - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Child_1_height - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Child_0_width - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Child_0_height - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Child_1_width - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Child_1_height - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       console.info('[CustomLayoutUniqueidTest_static_0200] END');
       done();

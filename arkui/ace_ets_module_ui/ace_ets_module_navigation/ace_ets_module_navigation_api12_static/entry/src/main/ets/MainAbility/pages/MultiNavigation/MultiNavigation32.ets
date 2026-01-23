@@ -22,10 +22,10 @@ import {
 import {
   State,
   Link,
-  Prop,Provide,Consume
+  PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { MultiNavigation, MultiNavPathStack, SplitPolicy } from './mainpage/MultiNavigation';
+import {MultiNavigation,MultiNavPathStack, SplitPolicy}  from './mainpage/MultiNavigation';;
 
 @Entry
 @Component
@@ -36,13 +36,8 @@ struct MultiNavigation32 {
   @State text3:string = ''
 
   aboutToAppear(): void {
-    // this.pageStack.pushPath({
-    //   name: 'PageHome1',
-    //   param: "PageHome1",
-    //   onPop: (popInfo) => {
-    //   }
-    // }, false, SplitPolicy.HOME_PAGE);
-    // this.pageStack.setKeepBottomPage(true);
+    this.pageStack.pushPath(new NavPathInfo('PageHome1',"PageHome1",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
+    this.pageStack.setKeepBottomPage(true);
   }
 
   @Builder
@@ -65,22 +60,21 @@ struct MultiNavigation32 {
       MultiNavigation({
         navDestination: this.PageMap,
         multiStack: this.pageStack,
-        // onHomeShowInTop: (name) => {
-        // }
+        onHomeShowInTop: (name: string) => {}
       })
-        // .width(350).height(250).border({width:1})
+        .width(350).height(250).border({width:1})
 
 
       Button('pushPath PageDetail1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushPath({ name:'PageDetail1', param: "PageDetail1" }, false, SplitPolicy.DETAIL_PAGE);
+        this.pageStack.pushPath(new NavPathInfo('PageDetail1',"PageDetail1" ), false, SplitPolicy.DETAIL_PAGE);
       }).id('MultiNavigation32_btn1')
 
       Button('pushPath PageDetail2').onClick((event: ClickEvent) => {
-        // this.pageStack.pushPath({ name:'PageDetail2', param: "PageDetail2" }, false, SplitPolicy.DETAIL_PAGE);
+        this.pageStack.pushPath(new NavPathInfo('PageDetail2', "PageDetail2" ), false, SplitPolicy.DETAIL_PAGE);
       }).id('MultiNavigation32_btn2')
 
       Button('pushPath PageHome2').onClick((event: ClickEvent) => {
-        // this.pageStack.pushPath( {name:'PageHome2', param:"PageHome2"}, false, SplitPolicy.HOME_PAGE);
+        this.pageStack.pushPath(new NavPathInfo('PageHome2', "PageHome2"), false, SplitPolicy.HOME_PAGE);
       }).id('MultiNavigation32_btn3')
 
       Button('moveIndexToTop 10000000000000').onClick((e: ClickEvent) => {

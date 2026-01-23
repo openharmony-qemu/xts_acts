@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,6 +27,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -98,7 +99,7 @@ it('testEnable_static_03', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "enabled": -3
-          } as Record<string, Object | undefined | null>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 1111,
@@ -130,7 +131,7 @@ it('testEnable_static_04', Level.LEVEL0, async (done: () => void): Promise<void>
         let eventData: events_emitter.EventData = {
           data: {
             "enabled": 33567444
-          } as Record<string, Object | undefined | null>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 1111,
@@ -162,7 +163,7 @@ it('testEnable_static_02', Level.LEVEL0, async (done: () => void): Promise<void>
           data: {
             "enabled": false,
             "text": "disable"
-          } as Record<string, Object | undefined | null>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 93,

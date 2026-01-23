@@ -18,14 +18,14 @@ import {
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavPathInfo,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
-,NavPathStack} from '@ohos.arkui.component';
+,NavPathStack,PopInfo} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  Prop,Provide,Consume
+  PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { MultiNavigation, MultiNavPathStack, SplitPolicy } from './mainpage/MultiNavigation';
+import {MultiNavigation,MultiNavPathStack, SplitPolicy}  from './mainpage/MultiNavigation';
 
 @Entry
 @Component
@@ -34,8 +34,8 @@ struct MultiNavigation25 {
   @State text:string = ''
 
   aboutToAppear(): void {
-// this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
-    // this.pageStack.setKeepBottomPage(true);
+    this.pageStack.pushPath(new NavPathInfo('PageHome1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
+    this.pageStack.setKeepBottomPage(true);
   }
 
   @Builder
@@ -58,16 +58,18 @@ struct MultiNavigation25 {
       MultiNavigation({
         navDestination: this.PageMap,
         multiStack: this.pageStack,
-        // onHomeShowInTop: (name) => {
+        // onHomeShowInTop: (name:string) => {
         // }
       })
-        // .width(350).height(250).border({width:1})
+        .width(350).height(250).border({width:1})
 
 
       Button('pushPathByName PageDetail1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushPathByName( 'PageDetail1', "paramTest" ,(popInfo) => {
-        //   this.text = String(popInfo.result)
-        // }, false, SplitPolicy.DETAIL_PAGE);
+
+        this.pageStack.pushPathByName( 'PageDetail1', "paramTest" ,(popInfo:PopInfo) => {
+          console.log("============================================ 111" + String(popInfo.result));
+          this.text = String(popInfo.result)
+        }, false, SplitPolicy.DETAIL_PAGE);
       }).id('MultiNavigation25_btn1')
 
       Text(this.text).id('MultiNavigation25_text1')

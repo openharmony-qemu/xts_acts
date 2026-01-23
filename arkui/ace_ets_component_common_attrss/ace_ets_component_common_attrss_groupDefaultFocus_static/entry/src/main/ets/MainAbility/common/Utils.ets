@@ -16,7 +16,7 @@
 
 import router from '@ohos.router';
 import { AttrsManager } from './AttrsManager';
-import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { TouchType, KeyType, MouseButton, MouseAction, AlignRuleOption, focusControl, KeySource, SourceTool, SourceType, MouseEvent} from '@ohos.arkui.component';
 import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -141,9 +141,9 @@ export default class Utils {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Class.from<String>()) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " + AppStorage.get<number>("winTop") );
     return {
@@ -157,7 +157,7 @@ export default class Utils {
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
     // let rectInfo = JSON.parseJsonElement('[' + obj.getElement('$rect') + ']');
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     let rect_value: RectValue = {
       left:Number(rectInfo[0][0] ?? 0),

@@ -15,14 +15,13 @@
  */
 
 import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON, Rect } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { startAbility, UtilsTest } from '../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Rect } from '@ohos.arkui.node';
 
 
 export default function counterDirectionTest() {
@@ -72,7 +71,7 @@ it('testCounterDirection_static_0100', Level.LEVEL0, async (done: () => void): P
       const driver = Driver.create();
       let buttonAuto = await driver.findComponent(ON.id("Auto"));
       await (buttonAuto?.click() as Promise<void>);
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       console.log("[testCounterDirection_static_0100] click Auto");
       const lable = await driver.findComponent(ON.text("价格"));
       const rect1 = await (lable!.getBounds() as Promise<Rect>);
@@ -80,7 +79,7 @@ it('testCounterDirection_static_0100', Level.LEVEL0, async (done: () => void): P
       let buttonRtl = await driver.findComponent(ON.id("Rtl"));
       await (buttonRtl?.click() as Promise<void>);
       console.log("[counterDirectionTest_0100] ", "click Rtl");
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let lable2 = await driver.findComponent(ON.text("价格"));
       const rect2 = await (lable2!.getBounds() as Promise<Rect>);
       console.log("[testCounterDirection_static_0100] ", " rect:" + JSON.stringify(rect2));

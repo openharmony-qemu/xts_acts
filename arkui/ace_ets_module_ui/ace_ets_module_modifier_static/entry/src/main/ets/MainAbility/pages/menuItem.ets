@@ -17,7 +17,7 @@ import { Entry,Component,$r,Builder,List, ListItem,Marquee,Menu,MenuItemAttribut
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MenuItemModifier } from "@ohos.arkui.modifier";

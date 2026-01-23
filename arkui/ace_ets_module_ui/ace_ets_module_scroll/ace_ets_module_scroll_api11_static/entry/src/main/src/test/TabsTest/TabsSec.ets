@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -71,7 +72,7 @@ export default function tabsSec() {
             "barBackgroundColorNumber": 0 as number,
             "barBackgroundColorString": "#00000000",
             "barBackgroundColorResource": $r("sys.color.ohos_toggle_bg"),
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -87,8 +88,7 @@ export default function tabsSec() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarOverlap_static_0100
      * @tc.name     ArkUI_Tabs_BarOverlap_static_0100
      * @tc.desc     ArkUI_Tabs_BarOverlap_static_0100
@@ -106,8 +106,7 @@ it('ArkUI_Tabs_BarOverlap_static_0100', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarOverlap_static_0200
      * @tc.name     ArkUI_Tabs_BarOverlap_static_0200
      * @tc.desc     ArkUI_Tabs_BarOverlap_static_0200
@@ -121,7 +120,7 @@ it('ArkUI_Tabs_BarOverlap_static_0200', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -144,8 +143,7 @@ it('ArkUI_Tabs_BarOverlap_static_0200', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarOverlap_static_0300
      * @tc.name     ArkUI_Tabs_BarOverlap_static_0300
      * @tc.desc     ArkUI_Tabs_BarOverlap_static_0300
@@ -159,7 +157,7 @@ it('ArkUI_Tabs_BarOverlap_static_0300', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": false,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -183,8 +181,7 @@ it('ArkUI_Tabs_BarOverlap_static_0300', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarOverlap_static_0400
      * @tc.name     ArkUI_Tabs_BarOverlap_static_0400
      * @tc.desc     ArkUI_Tabs_BarOverlap_static_0400
@@ -198,7 +195,7 @@ it('ArkUI_Tabs_BarOverlap_static_0400', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": null,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -221,8 +218,7 @@ it('ArkUI_Tabs_BarOverlap_static_0400', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarOverlap_static_0500
      * @tc.name     ArkUI_Tabs_BarOverlap_static_0500
      * @tc.desc     ArkUI_Tabs_BarOverlap_static_0500
@@ -236,7 +232,7 @@ it('ArkUI_Tabs_BarOverlap_static_0500', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": undefined,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -259,8 +255,7 @@ it('ArkUI_Tabs_BarOverlap_static_0500', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarOverlap_static_0600
      * @tc.name     ArkUI_Tabs_BarOverlap_static_0600
      * @tc.desc     ArkUI_Tabs_BarOverlap_static_0600
@@ -274,7 +269,7 @@ it('ArkUI_Tabs_BarOverlap_static_0600', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -297,7 +292,7 @@ it('ArkUI_Tabs_BarOverlap_static_0600', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": false,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -320,8 +315,7 @@ it('ArkUI_Tabs_BarOverlap_static_0600', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarOverlap_static_0700
      * @tc.name     ArkUI_Tabs_BarOverlap_static_0700
      * @tc.desc     ArkUI_Tabs_BarOverlap_static_0700
@@ -335,7 +329,7 @@ it('ArkUI_Tabs_BarOverlap_static_0700', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -358,7 +352,7 @@ it('ArkUI_Tabs_BarOverlap_static_0700', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": null,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -381,8 +375,7 @@ it('ArkUI_Tabs_BarOverlap_static_0700', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarOverlap_static_0800
      * @tc.name     ArkUI_Tabs_BarOverlap_static_0800
      * @tc.desc     ArkUI_Tabs_BarOverlap_static_0800
@@ -396,7 +389,7 @@ it('ArkUI_Tabs_BarOverlap_static_0800', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -419,7 +412,7 @@ it('ArkUI_Tabs_BarOverlap_static_0800', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "barOverlap": undefined,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -442,8 +435,7 @@ it('ArkUI_Tabs_BarOverlap_static_0800', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarBackgroundColor_static_0100
      * @tc.name     ArkUI_Tabs_BarBackgroundColor_static_0100
      * @tc.desc     ArkUI_Tabs_BarBackgroundColor_static_0100
@@ -463,8 +455,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0100', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarBackgroundColor_static_0200
      * @tc.name     ArkUI_Tabs_BarBackgroundColor_static_0200
      * @tc.desc     ArkUI_Tabs_BarBackgroundColor_static_0200
@@ -478,7 +469,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0200', Level.LEVEL0, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "barBackgroundColorColor": Color.Blue,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -501,8 +492,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0200', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarBackgroundColor_static_0300
      * @tc.name     ArkUI_Tabs_BarBackgroundColor_static_0300
      * @tc.desc     ArkUI_Tabs_BarBackgroundColor_static_0300
@@ -516,7 +506,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0300', Level.LEVEL0, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "barBackgroundColorNumber": 123 as number,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -539,8 +529,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0300', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarBackgroundColor_static_0400
      * @tc.name     ArkUI_Tabs_BarBackgroundColor_static_0400
      * @tc.desc     ArkUI_Tabs_BarBackgroundColor_static_0400
@@ -554,7 +543,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0400', Level.LEVEL0, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "barBackgroundColorString": "#0000FF",
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -577,8 +566,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0400', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarBackgroundColor_static_0500
      * @tc.name     ArkUI_Tabs_BarBackgroundColor_static_0500
      * @tc.desc     ArkUI_Tabs_BarBackgroundColor_static_0500
@@ -592,7 +580,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0500', Level.LEVEL0, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "barBackgroundColorResource": $r("sys.color.ohos_toggle_bg"),
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -619,8 +607,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0500', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarBackgroundColor_static_0600
      * @tc.name     ArkUI_Tabs_BarBackgroundColor_static_0600
      * @tc.desc     ArkUI_Tabs_BarBackgroundColor_static_0600
@@ -634,7 +621,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0600', Level.LEVEL0, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "barBackgroundColorColor": null,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -657,8 +644,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0600', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarBackgroundColor_static_0700
      * @tc.name     ArkUI_Tabs_BarBackgroundColor_static_0700
      * @tc.desc     ArkUI_Tabs_BarBackgroundColor_static_0700
@@ -672,7 +658,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0700', Level.LEVEL0, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "barBackgroundColorColor": undefined,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,

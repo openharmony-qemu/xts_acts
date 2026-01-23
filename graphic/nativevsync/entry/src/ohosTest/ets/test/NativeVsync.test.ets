@@ -37,7 +37,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testNativeVSyncCreateNotEq
-     * @tc.number testNativeVSyncCreateNotEq
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0200
      * @tc.desc   testNativeVSyncCreateNotEq
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -53,7 +53,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testNativeVSyncCreateNormal
-     * @tc.number testNativeVSyncCreateNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0300
      * @tc.desc   testNativeVSyncCreateNormal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -71,7 +71,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testNativeVSyncCreateAbnormal
-     * @tc.number testNativeVSyncCreateAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0400
      * @tc.desc   testNativeVSyncCreateAbnormal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -87,7 +87,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testNativeVSyncCreateDifLenth
-     * @tc.number testNativeVSyncCreateDifLenth
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0500
      * @tc.desc   testNativeVSyncCreateDifLenth
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -103,7 +103,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testNativeVSyncCreateMuch
-     * @tc.number testNativeVSyncCreateMuch
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0600
      * @tc.desc   testNativeVSyncCreateMuch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -119,7 +119,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testNativeVSyncGetPeriodNullptr
-     * @tc.number testNativeVSyncGetPeriodNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0700
      * @tc.desc   testNativeVSyncGetPeriodNullptr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -136,7 +136,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testNativeVSyncRequestFrameNullptr
-     * @tc.number testNativeVSyncRequestFrameNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0800
      * @tc.desc   testNativeVSyncRequestFrameNullptr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -153,7 +153,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testNativeVSyncRequestFrameNormal
-     * @tc.number testNativeVSyncRequestFrameNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0900
      * @tc.desc   testNativeVSyncRequestFrameNormal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -170,7 +170,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testNativeVSyncRequestFrameParamErr
-     * @tc.number testNativeVSyncRequestFrameParamErr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_1000
      * @tc.desc   testNativeVSyncRequestFrameParamErr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -186,7 +186,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncCreate001
-     * @tc.number testOHNativeVSyncCreate001
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_1100
      * @tc.desc   testOHNativeVSyncCreate001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -200,7 +200,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncCreate002
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_CREATE_0200
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_1200
      * @tc.desc   test OH_NativeVSync_Create
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -214,7 +214,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncRequestFrame001
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_REQUESTFRAME_0100
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_1300
      * @tc.desc   test OH_NativeVSync_RequestFrame
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -229,7 +229,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncRequestFrame002
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_REQUESTFRAME_0200
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_1400
      * @tc.desc   test OH_NativeVSync_RequestFrame
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -244,7 +244,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncRequestFrame003
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_REQUESTFRAME_0300
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_1500
      * @tc.desc   test OH_NativeVSync_RequestFrame
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -259,7 +259,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncGetPeriod001
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_GETPERIOD_0100
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_1600
      * @tc.desc   test OH_NativeVSync_GetPeriod
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -273,7 +273,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncGetPeriod002
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_NATIVEVSYNC_GETPERIOD_0100
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_1700
      * @tc.desc   test OH_NativeVSync_GetPeriod
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -288,7 +288,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncCreateForAssociatedWindowNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_CREATE_ASSOCIATEDWINDOW_0100
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_1800
      * @tc.desc   test OH_NativeVSync_Create_ForAssociatedWindow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -303,7 +303,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncCreateForAssociatedWindowAbNormal01
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_CREATE_ASSOCIATEDWINDOW_0200
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_1900
      * @tc.desc   test OH_NativeVSync_Create_ForAssociatedWindow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -320,7 +320,7 @@ export default function nativeVsyncTest() {
     });
     /**
      * @tc.name   testOHNativeVSyncCreateForAssociatedWindowAbNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_CREATE_ASSOCIATEDWINDOW_0300
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_2000
      * @tc.desc   test OH_NativeVSync_Create_ForAssociatedWindow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -338,7 +338,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncCreateForAssociatedWindowAbNormal03
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OH_CREATE_ASSOCIATEDWINDOW_0400
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_2100
      * @tc.desc   test OH_NativeVSync_Create_ForAssociatedWindow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -354,7 +354,7 @@ export default function nativeVsyncTest() {
 	
     /**
      * @tc.name   testOHNativeVSyncDVSyncSwitch
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OHNativeVSyncDVSyncSwitch
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_2200
      * @tc.desc   test OHNativeVSyncDVSyncSwitch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -368,7 +368,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncDVSyncSwitchNullptr
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_OHNativeVSyncDVSyncSwitchNullptr
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_2300
      * @tc.desc   test OHNativeVSyncDVSyncSwitchNullptr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -383,7 +383,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncRequestFrameWithMultiCallbackNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_MultiCallbackNormal_0100
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_2400
      * @tc.desc   test OHNativeVSyncMultiCallbackNormal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -401,7 +401,7 @@ export default function nativeVsyncTest() {
     
     /**
      * @tc.name   testOHNativeVSyncRequestFrameWithMultiCallbackNormal01
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_MultiCallbackNormal_0200
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_2500
      * @tc.desc   test OHNativeVSyncMultiCallbackNormal01
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -418,7 +418,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncRequestFrameWithMultiCallbackAbNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_MultiCallbackAbNormal_0100
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_2600
      * @tc.desc   test testOHNativeVSyncMultiCallbackAbNormal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -436,7 +436,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncRequestFrameWithMultiCallbackAbNormal01
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_MultiCallbackAbNormal_0200
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_2700
      * @tc.desc   test testOHNativeVSyncMultiCallbackAbNormal01
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -454,7 +454,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncSetExpectedFrameRateRange001
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_SetExpectedFrameRateRange001
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_2800
      * @tc.desc   test OHNativeVSyncSetExpectedFrameRateRange001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -469,7 +469,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncSetExpectedFrameRateRange002
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_SetExpectedFrameRateRange002
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_2900
      * @tc.desc   test OHNativeVSyncSetExpectedFrameRateRange002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -484,7 +484,7 @@ export default function nativeVsyncTest() {
 
     /**
      * @tc.name   testOHNativeVSyncSetExpectedFrameRateRange003
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_VSYNC_SetExpectedFrameRateRange003
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_3000
      * @tc.desc   test OHNativeVSyncSetExpectedFrameRateRange003
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -499,5 +499,20 @@ export default function nativeVsyncTest() {
       expect(result[3]).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   testNativeErrorCodeCover
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_3100
+     * @tc.desc   test ErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeErrorCodeCover', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = vsync.oHNativeErrorCodeCover();
+        expect(result).assertEqual(0);
+        done();
+      });
   })
 }

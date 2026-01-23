@@ -23,7 +23,7 @@ import { EventIdMap, FormHostTestController } from '../../ets/testform/controlle
 import Utils from './Util.test';
 
 const DOMAIN: int = 0x0000;
-const TAG: string = 'testTag';
+const TAG: string = 'testTag formHostTest';
 const EXPECTED_FALSE = '{"isSuccess":false}';
 const EXPECTED_TRUE = '{"isSuccess":true}';
 const BOOL_TRUE = true;
@@ -72,7 +72,7 @@ export default function formHostTest() {
         hilog.info(0x0000, 'testTag EntryFormAbility', 'formOverflow success');
         expect().assertFail();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.error(0x0000, 'testTag EntryFormAbility', 'formOverflow catch error');
         expect(error?.code).assertEqual(202);
         done();
@@ -103,7 +103,7 @@ export default function formHostTest() {
         hilog.info(0x0000, 'testTag EntryFormAbility', 'formOverflow success');
         expect().assertFail();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.error(0x0000, 'testTag EntryFormAbility', 'formOverflow catch error');
         expect(error?.code).assertEqual(202);
         done();
@@ -136,7 +136,7 @@ export default function formHostTest() {
         hilog.info(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState success');
         expect().assertFail();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.error(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState catch error');
         expect(error?.code).assertEqual(202);
         done();
@@ -169,7 +169,7 @@ export default function formHostTest() {
         hilog.info(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState success');
         expect().assertFail();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.error(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState catch error');
         expect(error?.code).assertEqual(202);
         done();
@@ -188,33 +188,18 @@ export default function formHostTest() {
      */
     it("FormHostStaticTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'FormHostStaticTest005 start');
-
-      let callGetFormRect: formInfo.GetFormRectInfoCallback = (formId: string): Promise<formInfo.Rect> => {
-        hilog.info(0x0000, 'testTag', `cbGetFormRect a new form`);
-        return new Promise<formInfo.Rect>((resolve: (rect: formInfo.Rect) => void, reject: (rect: formInfo.Rect) => void): void => {
-          hilog.info(0x0000, 'testTag', `cbGetFormRect Promise called`);
-          let rect1: formInfo.Rect = {
-            left: 1.0,
-            top: 1.2,
-            width: 1.3,
-            height: 1.4
-          }
-        });
-      }
-
       try {
-        formHost.onGetFormRect(callGetFormRect);
+        formHost.offGetFormRect();
         hilog.info(0x0000, 'testTag EntryFormAbility', 'getFormRect success');
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
         hilog.error(0x0000, 'testTag EntryFormAbility', 'getFormRect catch error');
         expect(code).assertEqual(202);
         done();
       }
-
       hilog.info(DOMAIN, TAG, 'FormHostStaticTest005 end');
     })
 
@@ -233,7 +218,7 @@ export default function formHostTest() {
         hilog.info(0x0000, 'testTag EntryFormAbility', 'getFormRect success');
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
         hilog.error(0x0000, 'testTag EntryFormAbility', 'getFormRect catch error');

@@ -77,7 +77,8 @@ it('GridColOffsetJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
       let strJson = inspector.getInspectorByKey('keykey2');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('GridCol');
-      console.info("[GridColOffsetJsunit_static_0100] component  strJson:" + JSON.stringify(obj.getElement('$attrs').getString('gridColOffset')));
+      console.info("[GridColOffsetJsunit_static_0100] component  strJson:" +
+      JSON.stringify(obj.getElement('$attrs').getString('gridColOffset')));
       expect(obj.getElement('$attrs').getString('gridColOffset')).assertEqual("0");
       done();
     });
@@ -95,12 +96,13 @@ it('GridColOffsetJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
       
       console.info('[GridColOffsetJsunit_static_0200] START');
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({name:'gridColoffset',value:2});
+      AppStorage.get<MessageManager<Int>>('messageManager')?.notify({ name: 'gridColoffset', value: 2 });
       await CommonFunc.sleep(200);
       let strJson = inspector.getInspectorByKey('keykey2');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('GridCol');
-      console.info("[GridColOffsetJsunit_static_0200] component  strJson:" + JSON.stringify(obj.getElement('$attrs').getString('gridColOffset')));
+      console.info("[GridColOffsetJsunit_static_0200] component  strJson:" +
+      JSON.stringify(obj.getElement('$attrs').getString('gridColOffset')));
       expect(obj.getElement('$attrs').getString('gridColOffset')).assertEqual("2");
       done();
     });

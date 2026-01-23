@@ -21,6 +21,7 @@ import fs from '@ohos.file.fs';
 import hilog from '@ohos.hilog';
 import display from '@ohos.display';
 import hdrCapability from '@ohos.graphics.hdrCapability';
+import taskpool from '@ohos.taskpool';
 
 const domain = 0x0000;
 const testTag = 'PixelmapNdkTest';
@@ -46,14 +47,77 @@ const NV12 = image.PixelMapFormat.NV12;
 const RGBA_1010102 = image.PixelMapFormat.RGBA_1010102;
 const YCBCR_P010 = image.PixelMapFormat.YCBCR_P010;
 const YCRCB_P010 = image.PixelMapFormat.YCRCB_P010;
+
+const SCALE_FIRST = image.CropAndScaleStrategy.SCALE_FIRST;
+const CROP_FIRST = image.CropAndScaleStrategy.CROP_FIRST;
 let isSupportHdr: boolean = false;
 let isSupportHEIFDecode: boolean = false;
 let testContext: common.UIAbilityContext;
 let filesDir: string|undefined;
 let cacheDir: string|undefined;
 
+class Logger {
+  testNum: string;
+
+  constructor(testNum: string) {
+    this.testNum = testNum;
+  }
+
+  log(msg: string) {
+    hilog.info(0x0000, "imagePixelmapNdk", 'case: %{public}s msg:%{public}s', this.testNum, msg);
+  }
+}
+
+async function decodeTiffTestInTaskPool(
+  logger: Logger,
+  filePath: string,
+  desiredInfo: ndkTest.decodeOptions,
+  allocatorType: image.AllocatorType = AUTO
+): Promise<boolean> {
+  logger.log("taskpool start");
+  try {
+      let task = new taskpool.Task(testDecodeTiff, filePath, desiredInfo, allocatorType);
+      let ret = (await taskpool.execute(task)) as boolean;
+      logger.log("taskpool ret: " + ret);
+      return ret;
+  } catch (error) {
+      logger.log("taskpool: taskpool execute error is " + error);
+      return false;
+  }
+}
+
+@Concurrent
+function testDecodeTiff(
+  filePath: string,
+  desiredInfo: ndkTest.decodeOptions,
+  allocatorType: image.AllocatorType = AUTO
+): boolean {
+  let imageInfo = ndkTest.CreatePixelMapForDMAAndGetInfo(filePath, allocatorType, desiredInfo);
+  if (typeof imageInfo == 'object') {
+      let expectedWidth = desiredInfo.width;
+      let expectedHeight = desiredInfo.height;
+      let expectedPixelFormat = desiredInfo.pixelFormat;
+      if (desiredInfo.cropAndScaleStrategy == image.CropAndScaleStrategy.SCALE_FIRST && desiredInfo.desiredRegion) {
+        expectedWidth = desiredInfo.desiredRegion.width;
+        expectedHeight = desiredInfo.desiredRegion.height;
+        expectedPixelFormat = image.PixelMapFormat.RGBA_8888; // SCALE_FIRST模式下，像素格式为RGBA_8888
+      }
+      let ret = (imageInfo.width == expectedWidth) &&
+                (imageInfo.height == expectedHeight) &&
+                (imageInfo.pixelFormat == expectedPixelFormat) &&
+                (imageInfo.mimeType == desiredInfo.mimeType);
+      console.log("testDecodeTiff expected result = " + JSON.stringify(desiredInfo));
+      console.log("testDecodeTiff CreatePixelMapForDMAAndGetInfo result = " + JSON.stringify(imageInfo));
+      return ret;
+  } else {
+      console.log("testDecodeTiff CreatePixelMapForDMAAndGetInfo result is not object!");
+      return false;
+  }
+}
+
 export default function pixelmapNdkForDMATest() {
   describe('pixelMapNdkForDMATest', () => {
+    let isSupportTiff: Boolean;
     beforeAll(() => {
       testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
       filesDir = AppStorage.get('pathDir');
@@ -62,19 +126,9 @@ export default function pixelmapNdkForDMATest() {
         display.getDefaultDisplaySync().hdrFormats.length != 0;
       isSupportHEIFDecode =
         image.createImageSource(filesDir + '/' + "test.jpg").supportedFormats.includes("image/heic");
+      isSupportTiff =
+        image.getImageSourceSupportedFormats().includes("image/tiff");
     })
-
-    class Logger {
-      testNum: string;
-  
-      constructor(testNum: string) {
-        this.testNum = testNum;
-      }
-  
-      log(msg: string) {
-        hilog.info(0x0000, "imagePixelmapNdk", 'case: %{public}s msg:%{public}s', this.testNum, msg);
-      }
-    }
 
     const getBuffer = (filePath: string) => {
       let file = fs.openSync(filePath);
@@ -1269,6 +1323,329 @@ export default function pixelmapNdkForDMATest() {
         mimeType: "image/wbmp"
       };
       let ret = DecodeWbmpImageTest(logger, test_wbmp, expectInfo, DMA);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0100
+     * @tc.desc        1.create pixelmap object by imageSource
+     *                 2.set DecodingOptions
+     *                 3.verify pixelmap info
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0100', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0100");
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      let filePath = filesDir + "/" + "1920x1080_Deflate.tiff";
+      let desiredInfo: ndkTest.decodeOptions = {
+        width: 2048,
+        height: 2048,
+        pixelFormat: RGB_565,
+        mimeType: "image/tiff"
+      };
+      let ret = await decodeTiffTestInTaskPool(logger, filePath, desiredInfo);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0200
+     * @tc.desc        1.create pixelmap object by imageSource
+     *                 2.set DecodingOptions
+     *                 3.verify pixelmap info
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0200', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0200");
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      let filePath = filesDir + "/" + "1920x1080_G3.tiff";
+      let desiredInfo: ndkTest.decodeOptions = {
+        width: 2048,
+        height: 2048,
+        pixelFormat: RGB_565,
+        mimeType: "image/tiff"
+      };
+      let ret = await decodeTiffTestInTaskPool(logger, filePath, desiredInfo);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0300
+     * @tc.desc        1.create pixelmap object by imageSource
+     *                 2.set DecodingOptions
+     *                 3.verify pixelmap info
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0300', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0300");
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      let filePath = filesDir + "/" + "1920x1080_G4.tiff";
+      let desiredInfo: ndkTest.decodeOptions = {
+        width: 2048,
+        height: 2048,
+        pixelFormat: RGB_565,
+        mimeType: "image/tiff"
+      };
+      let ret = await decodeTiffTestInTaskPool(logger, filePath, desiredInfo);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0400
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0400
+     * @tc.desc        1.create pixelmap object by imageSource
+     *                 2.set DecodingOptions
+     *                 3.verify pixelmap info
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0400', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0400");
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      let filePath = filesDir + "/" + "1920x1080_Jpeg.tiff";
+      let desiredInfo: ndkTest.decodeOptions = {
+        width: 2048,
+        height: 2048,
+        pixelFormat: RGB_565,
+        mimeType: "image/tiff"
+      };
+      let ret = await decodeTiffTestInTaskPool(logger, filePath, desiredInfo, SHARE_MEMORY);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0500
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0500
+     * @tc.desc        1.create pixelmap object by imageSource
+     *                 2.set DecodingOptions
+     *                 3.verify pixelmap info
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0500', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0500");
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      let filePath = filesDir + "/" + "1920x1080_Lzw.tiff";
+      let desiredInfo: ndkTest.decodeOptions = {
+        width: 4096,
+        height: 4096,
+        pixelFormat: RGBA_8888,
+        mimeType: "image/tiff"
+      };
+      let ret = await decodeTiffTestInTaskPool(logger, filePath, desiredInfo, SHARE_MEMORY);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0600
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0600
+     * @tc.desc        1.create pixelmap object by imageSource
+     *                 2.set DecodingOptions
+     *                 3.verify pixelmap info
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0600', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0600");
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      let filePath = filesDir + "/" + "1920x1080_Next.tiff";
+      let desiredInfo: ndkTest.decodeOptions = {
+        width: 4096,
+        height: 4096,
+        pixelFormat: RGBA_8888,
+        mimeType: "image/tiff"
+      };
+      let ret = await decodeTiffTestInTaskPool(logger, filePath, desiredInfo, SHARE_MEMORY);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0700
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0700
+     * @tc.desc        1.create pixelmap object by imageSource
+     *                 2.set DecodingOptions
+     *                 3.verify pixelmap info
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0700', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0700");
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      let filePath = filesDir + "/" + "1920x1080_none.tiff";
+      let desiredInfo: ndkTest.decodeOptions = {
+        width: 4096,
+        height: 4096,
+        pixelFormat: RGBA_8888,
+        mimeType: "image/tiff"
+      };
+      let ret = await decodeTiffTestInTaskPool(logger, filePath, desiredInfo, SHARE_MEMORY);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0800
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0800
+     * @tc.desc        1.create pixelmap object by imageSource
+     *                 2.set DecodingOptions
+     *                 3.verify pixelmap info
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0800', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0800");
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      let filePath = filesDir + "/" + "1920x1080_Packbits.tiff";
+      let desiredInfo: ndkTest.decodeOptions = {
+        width: 4096,
+        height: 4096,
+        pixelFormat: RGBA_8888,
+        mimeType: "image/tiff"
+      };
+      let ret = await decodeTiffTestInTaskPool(logger, filePath, desiredInfo, DMA);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0900
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0900
+     * @tc.desc        1.create pixelmap object by imageSource
+     *                 2.set DecodingOptions
+     *                 3.verify pixelmap info
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0900', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_0900");
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      let filePath = filesDir + "/" + "1920x1080_PixarLog_RGB.tiff";
+      let desiredInfo: ndkTest.decodeOptions = {
+        width: 4096,
+        height: 4096,
+        pixelFormat: BGRA_8888,
+        mimeType: "image/tiff"
+      };
+      let ret = await decodeTiffTestInTaskPool(logger, filePath, desiredInfo, DMA);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_1000
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_1000
+     * @tc.desc        1.create pixelmap object by imageSource
+     *                 2.set DecodingOptions
+     *                 3.verify pixelmap info
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_1000', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_1000");
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      let filePath = filesDir + "/" + "1920x1080_SGILOG_gray16.tiff";
+      let desiredInfo: ndkTest.decodeOptions = {
+        width: 4096,
+        height: 4096,
+        pixelFormat: BGRA_8888,
+        mimeType: "image/tiff",
+        desiredRegion: { x: 0, y: 0, width: 150, height: 150 },
+        cropAndScaleStrategy: CROP_FIRST
+      };
+      let ret = await decodeTiffTestInTaskPool(logger, filePath, desiredInfo, DMA);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_1100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_1100
+     * @tc.desc        1.create pixelmap object by imageSource
+     *                 2.set DecodingOptions
+     *                 3.verify pixelmap info
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_1100', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_NATIVE_1100");
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      let filePath = filesDir + "/" + "thunderscan-1920x1080.tiff";
+      let desiredInfo: ndkTest.decodeOptions = {
+        width: 4096,
+        height: 4096,
+        pixelFormat: BGRA_8888,
+        mimeType: "image/tiff",
+        desiredRegion: { x: 0, y: 0, width: 150, height: 150 },
+        cropAndScaleStrategy: SCALE_FIRST
+      };
+      let ret = await decodeTiffTestInTaskPool(logger, filePath, desiredInfo, DMA);
       expect(ret).assertTrue();
       done();
     })

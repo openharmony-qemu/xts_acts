@@ -37,24 +37,24 @@ import ParagraphStyle3 from './StyledString/ParagraphStyle3.test'
 
 
 export default function testsuite() {
-  ImageLoadResultTest();//11.17SDK pass:2
-  SearchTypeTest();//11.17SDK pass:4
-  BounceSymbolEffectTest();//11.17SDK pass:5
-  ContentTypeTest();//11.17SDK pass:2
-  fontFeatureTest();//11.17SDK pass:4
-  textAreaInputTest();//11.17SDK pass:1
-  TextDecorationStyleTest();//11.17SDK pass:8
-  textShadowTest();//11.17SDK pass：6
-  RichEditorEKeyboardTest();//11.17SDK pass:4
-  RichEditorSymbolSpanStyleTest();//11.17SDK pass:3
-  ImageSpanModifierTest()//11.17SDK pass:2
-  MarqueeModifierTest()//11.17SDK pass:2
-  RichEditorModifierTest()//11.17SDK pass:2
-  // RichTextModifierTest()//11.17SDK pass:1 failed:1  RichText默认width480，断言200 外领域
-  SymbolSpanModifierTest()//11.17SDK pass:2
-  TextInputModifierTest()//11.17SDK pass:2
-  ImageAttachment()//11.17SDK pass:1 failed:5  003,006异常值
-  ParagraphStyle1()//11.17SDK failed:1 expect ["15.00vp","15.00vp"] equals [15,15]
-  ParagraphStyle2()//11.17SDK failed:1   expect undefined equals 0
-  ParagraphStyle3()//11.17SDK failed:1 expect undefined equals 0
+  ImageLoadResultTest();
+  SearchTypeTest();
+  BounceSymbolEffectTest();
+  ContentTypeTest();
+  fontFeatureTest();
+  textAreaInputTest();
+  TextDecorationStyleTest();
+  textShadowTest();
+  RichEditorEKeyboardTest();
+  RichEditorSymbolSpanStyleTest();
+  ImageSpanModifierTest();
+  MarqueeModifierTest();
+  RichEditorModifierTest();
+  // RichTextModifierTest();
+  SymbolSpanModifierTest();
+  TextInputModifierTest();
+  ImageAttachment();
+  ParagraphStyle1();
+  ParagraphStyle2();
+  ParagraphStyle3();
 }

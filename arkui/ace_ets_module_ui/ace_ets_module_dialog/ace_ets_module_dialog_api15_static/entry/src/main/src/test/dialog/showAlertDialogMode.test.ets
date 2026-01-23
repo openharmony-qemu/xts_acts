@@ -69,7 +69,6 @@ export default function showAlertDialogMode() {
     
     
 
-
 /**
      * @tc.number   showAlertDialogMode_static_0100
      * @tc.name     showAlertDialogMode_static_0100
@@ -113,7 +112,6 @@ it('showAlertDialogMode_static_0100', Level.LEVEL1, async (done: () => void): Pr
     
     
 
-
 /**
      * @tc.number   showAlertDialogMode_static_0200
      * @tc.name     showAlertDialogMode_static_0200
@@ -150,14 +148,12 @@ it('showAlertDialogMode_static_0200', Level.LEVEL1, async (done: () => void): Pr
       await CommonFunc.sleep(1000);
       let btn4 = await driver.findComponent(ON.text('ok'));
       expect(btn4 != null).assertFalse();
-      // await ( btn4?.click() as Promise<void>);
       console.info('[showAlertDialogMode_static_0200] END');
       done();
     });
 
     
     
-
 
 /**
      * @tc.number   showAlertDialogMode_static_0300
@@ -200,8 +196,7 @@ it('showAlertDialogMode_static_0300', Level.LEVEL1, async (done: () => void): Pr
       done();
     });
 
-    
-    
+
 
 
 /**
@@ -246,8 +241,7 @@ it('showAlertDialogMode_static_0400', Level.LEVEL1, async (done: () => void): Pr
     });
 
 
-     
-    
+
 
 
 /**
@@ -288,8 +282,7 @@ it('showAlertDialogMode_static_0500', Level.LEVEL1, async (done: () => void): Pr
     });
 
 
-     
-    
+
 
 
 /**
@@ -328,8 +321,7 @@ it('showAlertDialogMode_static_0600', Level.LEVEL1, async (done: () => void): Pr
       done();
     });
 
-    
-    
+
 
 
 /**
@@ -373,7 +365,6 @@ it('showAlertDialogMode_static_0700', Level.LEVEL1, async (done: () => void): Pr
     });
 
 
-    
 
 
 /**

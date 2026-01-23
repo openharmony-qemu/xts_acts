@@ -79,8 +79,7 @@ export default function listJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testList_static_01
      * @tc.name     testList_static_01
      * @tc.desc     testList_static_01
@@ -113,8 +112,7 @@ it('testList_static_01', Level.LEVEL1, async (done: () => void): Promise<void> =
 
 
     
-    
-/**
+    /**
      * @tc.number   testList_static_02
      * @tc.name     testList_static_02
      * @tc.desc     testList_static_02
@@ -135,8 +133,7 @@ it('testList_static_02', Level.LEVEL1, async (done: () => void): Promise<void> =
     });
 
     // editMode
-    // 
-/**
+    /**
      * @tc.number   testList_static_03
      * @tc.name     testList_static_03
      * @tc.desc     testList_static_03
@@ -156,8 +153,7 @@ it('testList_static_02', Level.LEVEL1, async (done: () => void): Promise<void> =
 
 
     
-    
-/**
+    /**
      * @tc.number   testList_static_04
      * @tc.name     testList_static_04
      * @tc.desc     testList_static_04
@@ -179,8 +175,7 @@ it('testList_static_04', Level.LEVEL1, async (done: () => void): Promise<void> =
 
 
     
-    
-/**
+    /**
      * @tc.number   testList_static_05
      * @tc.name     testList_static_05
      * @tc.desc     testList_static_05
@@ -201,8 +196,7 @@ it('testList_static_05', Level.LEVEL1, async (done: () => void): Promise<void> =
 
 
     
-    
-/**
+    /**
      * @tc.number   testList_static_06
      * @tc.name     testList_static_06
      * @tc.desc     testList_static_06
@@ -224,8 +218,7 @@ it('testList_static_06', Level.LEVEL1, async (done: () => void): Promise<void> =
 
 
     
-    
-/**
+    /**
      * @tc.number   testList_static_07
      * @tc.name     testList_static_07
      * @tc.desc     testList_static_07
@@ -247,8 +240,7 @@ it('testList_static_07', Level.LEVEL1, async (done: () => void): Promise<void> =
 
 
     
-    
-/**
+    /**
      * @tc.number   testList_static_08
      * @tc.name     testList_static_08
      * @tc.desc     testList_static_08
@@ -270,8 +262,7 @@ it('testList_static_08', Level.LEVEL1, async (done: () => void): Promise<void> =
 
 
     
-    
-/**
+    /**
      * @tc.number   testList_static_09
      * @tc.name     testList_static_09
      * @tc.desc     testList_static_09
@@ -292,8 +283,7 @@ it('testList_static_09', Level.LEVEL1, async (done: () => void): Promise<void> =
     });
 
     // editMode
-    // 
-/**
+    /**
      * @tc.number   testList_static_10
      * @tc.name     testList_static_10
      * @tc.desc     testList_static_10
@@ -312,8 +302,7 @@ it('testList_static_09', Level.LEVEL1, async (done: () => void): Promise<void> =
     // });
 
     // editMode
-    // 
-/**
+    /**
      * @tc.number   testList_static_11
      * @tc.name     testList_static_11
      * @tc.desc     testList_static_11
@@ -333,8 +322,7 @@ it('testList_static_09', Level.LEVEL1, async (done: () => void): Promise<void> =
 
 
     
-    
-/**
+    /**
      * @tc.number   testList_static_12
      * @tc.name     testList_static_12
      * @tc.desc     testList_static_12

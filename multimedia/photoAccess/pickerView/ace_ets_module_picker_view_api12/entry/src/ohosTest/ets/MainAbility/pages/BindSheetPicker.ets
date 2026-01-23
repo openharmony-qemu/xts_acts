@@ -2,6 +2,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { BusinessError } from '@ohos.base';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
+import { EventType } from '../common/Common';
 
 const topMargin: number = 20;
 
@@ -9,7 +10,7 @@ const topMargin: number = 20;
 @Component
 struct BindSheetPicker {
   private photoSelectOptions: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-  private eventId: number = 0;
+  private eventId: number = EventType.PHOTO_PICKER_INFO;
 
   sendEvent(message: Object, eventId: number) {
     let eventData: events_emitter.EventData = {
@@ -36,10 +37,6 @@ struct BindSheetPicker {
     }
   }
 
-  aboutToDisappear(): void {
-    this.sendEvent(this.photoSelectOptions as photoAccessHelper.PhotoViewPicker, this.eventId);
-  }
-
   build() {
     Column() {
       Button('TEXT_DONE')
@@ -64,10 +61,12 @@ struct BindSheetPicker {
         .margin({ top: topMargin })
         .onClick(() => {
           let photoPicker = new photoAccessHelper.PhotoViewPicker();
+          console.log('btnSelectPhoto onclick')
           photoPicker.select(this.photoSelectOptions)
             .then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
               console.info('PhotoViewPicker.select success, PhotoPickerResult uri: ' +
                 JSON.stringify(photoSelectResult));
+              this.sendEvent(photoSelectResult, this.eventId);
             }).catch((err: BusinessError) => {
               console.error('PhotoViewPicker.select failed with err: ' + JSON.stringify(err));
             });

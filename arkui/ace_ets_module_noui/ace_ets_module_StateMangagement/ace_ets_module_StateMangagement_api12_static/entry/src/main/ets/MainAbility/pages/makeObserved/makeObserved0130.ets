@@ -32,7 +32,7 @@ import {
 import {
   State,
   Watch,
-  Link,Local,Trace,Track,Prop,Monitor,Computed,Param,Require,IMonitor,
+  Link,Local,Trace,Track,PropRef,Monitor,Computed,Param,Require,IMonitor,
   StorageLink,LocalStorage,UIUtils,Observed,ObservedV2
 } from '@ohos.arkui.stateManagement'
 import { TextModifier } from '@ohos.arkui.modifier'

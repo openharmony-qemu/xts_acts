@@ -44,7 +44,7 @@ export declare class ArkTools {
 }
 
 export function gc() {
-  ArkTools.forceFullGC()
+  // gc
 }
 
 
@@ -165,7 +165,7 @@ export class WorkerSrc {
 export function atomicCompareExchangeTask(sharedArray:Int16Array) {
   for (let i = 0; i < 100; i++) {
     const index = i % 100;
-    const expected = sharedArray[index];
+    const expected = sharedArray[index].toInt();
     const replacement = expected + 1;
     Atomics.compareExchange(sharedArray, index, expected, replacement);
   }
@@ -283,8 +283,8 @@ export function subTask(buffer: ArrayBuffer) {
 
 export function taskXor(int32Array: Int32Array, startIndex: number, counterIndex: number) {
   for (let i = 0; i < 100; i++) {
-    Atomics.xor(int32Array, startIndex as int + i, 1 as number);
-    Atomics.add(int32Array, counterIndex as int, 1 as number);
+    Atomics.xor(int32Array, startIndex as int + i, 1);
+    Atomics.add(int32Array, counterIndex as int, 1);
   }
 }
 

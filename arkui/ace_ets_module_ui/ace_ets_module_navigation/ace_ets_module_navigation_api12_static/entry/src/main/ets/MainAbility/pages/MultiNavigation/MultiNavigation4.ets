@@ -22,11 +22,10 @@ import {
 import {
   State,
   Link,
-  Prop,Provide,Consume
+  PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { MultiNavigation, MultiNavPathStack, SplitPolicy } from './mainpage/MultiNavigation';
-
+import {MultiNavigation,MultiNavPathStack, SplitPolicy}  from './mainpage/MultiNavigation';
 @Entry
 @Component
 struct MultiNavigation4 {
@@ -49,13 +48,12 @@ struct MultiNavigation4 {
       MultiNavigation({
         navDestination: this.PageMap,
         multiStack: this.pageStack,
-        // onHomeShowInTop: (name) => {
-        // }
+        onHomeShowInTop: (name: string) => {}
       })
-        // .width(350).height(400).border({width:1})
+        .width(350).height(400).border({width:1})
 
       Button('pushPath PageDetail1').onClick((event: ClickEvent) => {
-        //this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
+        this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
       }).id('MultiNavigation4_btn1')
 
       Text(this.text).id('MultiNavigation4_text1')
@@ -78,13 +76,13 @@ export struct PageDetail1 {
         Text('PageDetail1').id('MultiNavigation4_PageDetail1_text1')
         Button('replacePath pageHome1').onClick((e: ClickEvent) => {
           if (this.pageStack !== undefined && this.pageStack !== null){
-            // this.pageStack.replacePath({name:'pageHome1'})
+            this.pageStack.replacePath(new NavPathInfo('pageHome1',null))
           }
         }).id('MultiNavigation4_PageDetail1_btn1')
 
         Button('replacePath pageFull').onClick((e: ClickEvent) => {
           if (this.pageStack !== undefined && this.pageStack !== null){
-            // this.pageStack.replacePath({name:'pageFull'})
+            this.pageStack.replacePath(new NavPathInfo('pageFull', undefined))
           }
         }).id('MultiNavigation4_PageDetail1_btn2')
       }
@@ -104,7 +102,7 @@ export struct pageHome1 {
 
         Button('replacePath PageDetail1').onClick((e: ClickEvent) => {
           if (this.pageStack !== undefined && this.pageStack !== null){
-            // this.pageStack.replacePath({name:'PageDetail1'})
+            this.pageStack.replacePath(new NavPathInfo('PageDetail1', undefined))
           }
         }).id('MultiNavigation4_pageHome1_btn1')
 

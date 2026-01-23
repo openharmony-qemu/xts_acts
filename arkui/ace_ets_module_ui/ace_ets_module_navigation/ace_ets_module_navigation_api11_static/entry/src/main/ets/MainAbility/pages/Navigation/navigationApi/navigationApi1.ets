@@ -22,7 +22,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide,Consume
+  PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import {MessageManager,Callback,Message} from '../../../common/MessageManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -36,10 +36,10 @@ struct navigationApi1{
   @State durationOne: number = 1000
   @State text: string = ''
 
-  pageInfos:NavPathStack = new  NavPathStack()
+  @Provide({alias:"pageInfo"}) pageInfos:NavPathStack = new  NavPathStack()
 
   @Builder PageMap(name: string, param: Object|null|undefined) {
-    if (name == 'page1'){
+    if (name == 'pageOne'){
       pageOne()
     }
   }
@@ -67,17 +67,12 @@ struct navigationApi1{
 
   build(){
     Navigation(this.pageInfos){
-      List({ space: 12, initialIndex: 0 }) {
-        ForEach(['1','2'], (item: string, index: int) => {
-          ListItem() {
-            Column(){
-              Text(this.text).width('80%').fontSize(12).key('navigationApi1_text1')
-              Button('pushPath' + item)
-            }.opacity(this.opacity1).onClick((e: ClickEvent) => {
-              let pageName = 'page' + item
-              this.pageInfos.pushPathByName(pageName,null)
-            }).id('navigationApi1_btn' + item)
-          }})}
+      Column(){
+        Text(this.text).width('80%').fontSize(12).key('navigationApi1_text1')
+        Button('pushPath').onClick((e:ClickEvent) => {
+          this.pageInfos.pushPathByName('pageOne',null)
+        }).id('navigationApi1_btn1')
+      }.opacity(this.opacity1)
     }
     .mode(NavigationMode.Split)
     .navBarWidth('30%')
@@ -123,7 +118,7 @@ struct navigationApi1{
 
 @Component
 export  struct  pageOne{
- pageInfos:NavPathStack = new  NavPathStack()
+  @Consume('pageInfo') pageInfos:NavPathStack = new  NavPathStack()
   @State opacity1: number = 1
   @State duration: int = durationOne
 
@@ -156,7 +151,7 @@ export  struct  pageOne{
     NavDestination(){
       Column(){
         Button('pop').onClick((e: ClickEvent) => {
-          this.pageInfos.popToName('page1')
+          this.pageInfos.pop()
         }).id('navigationApi1_btn2')
       }.width('100%').height('100%')
     }.title('pageOne').opacity(this.opacity1)

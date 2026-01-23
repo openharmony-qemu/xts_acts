@@ -120,27 +120,29 @@ struct setMeasuredSize1 {
           .width('100%')
           .height(100)
           .backgroundColor('#FFF0F0F0')
-        Button('OnDraw')
-          .onClick(() => {
-            this.nodeController?.rootNode?.addWidth();
-            this.nodeController?.rootNode?.invalidate();
-          })
-        Button('UpdateLayout')
-          .onClick(() => {
-            this.nodeController?.rootNode?.setNeedsLayout();
-          })
-        Button(this.myMeasuredSize).id("getMeasuredSize_id")
-          .onClick(() => {
-            this.myMeasuredSize = "" + this.nodeController?.rootNode?.getMeasuredSize().height;
-          })
+        Row() {
+          Button('OnDraw').width('25%')
+            .onClick(() => {
+              this.nodeController?.rootNode?.addWidth();
+              this.nodeController?.rootNode?.invalidate();
+            })
+          Button('UpdateLayout').width('25%')
+            .onClick(() => {
+              this.nodeController?.rootNode?.setNeedsLayout();
+            })
+          Button(this.myMeasuredSize).id("getMeasuredSize_id").width('25%')
+            .onClick(() => {
+              this.myMeasuredSize = "" + this.nodeController?.rootNode?.getMeasuredSize().height;
+            })
 
-        Button(this.text1).id('APIsetOnDraw')
-          .onClick(() => {
-            if(this.drawContext){
-              this.nodeController?.rootNode?.onDraw(this.drawContext);
-            }
-            this.text1 = storage.get('PropAPIonDrow') as string
-          })
+          Button(this.text1).id('APIsetOnDraw').width('25%')
+            .onClick(() => {
+              if(this.drawContext){
+                this.nodeController?.rootNode?.onDraw(this.drawContext);
+              }
+              this.text1 = storage.get('PropAPIonDrow') as string
+            })
+        }
       }
       .width('100%')
       .height('100%')

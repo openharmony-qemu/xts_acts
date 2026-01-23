@@ -21,7 +21,7 @@ export default function builtinsBooleanConstructorTest() {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(100);
+      await sleep(20);
     })
     afterEach(() => {
     })

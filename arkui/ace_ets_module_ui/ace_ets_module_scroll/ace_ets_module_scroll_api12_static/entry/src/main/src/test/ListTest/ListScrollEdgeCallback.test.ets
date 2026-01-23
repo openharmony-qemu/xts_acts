@@ -69,8 +69,7 @@ export default function ListScrollEdgeCallbackJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ListScrollEdgeCallbackTest_static_0100
      * @tc.name     ListScrollEdgeCallbackTest_static_0100
      * @tc.desc     ListScrollEdgeCallbackTest_static_0100

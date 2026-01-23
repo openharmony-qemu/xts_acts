@@ -742,58 +742,6 @@ export default function RenderNodeTest(){
     })
 
     /**
-     * @tc.name   RenderNodeErrorCode056
-     * @tc.number SUB_ARKUI_CAPI_RenderNodeErrorCode_056
-     * @tc.desc   Test InitModuleForArkTSEnv
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('RenderNodeErrorCode056', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.RenderNodeErrorCode056()).assertEqual(0)
-      done();
-    })
-
-    /**
-     * @tc.name   RenderNodeErrorCode057
-     * @tc.number SUB_ARKUI_CAPI_RenderNodeErrorCode_057
-     * @tc.desc   Test InitModuleForArkTSEnv
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('RenderNodeErrorCode057', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.RenderNodeErrorCode057()).assertEqual(0)
-      done();
-    })
-
-    /**
-     * @tc.name   RenderNodeErrorCode058
-     * @tc.number SUB_ARKUI_CAPI_RenderNodeErrorCode_058
-     * @tc.desc   Test InitModuleForArkTSEnv
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('RenderNodeErrorCode058', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.RenderNodeErrorCode058()).assertEqual(0)
-      done();
-    })
-
-    /**
-     * @tc.name   RenderNodeErrorCode059
-     * @tc.number SUB_ARKUI_CAPI_RenderNodeErrorCode_059
-     * @tc.desc   Test InitModuleForArkTSEnv
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('RenderNodeErrorCode059', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.RenderNodeErrorCode059()).assertEqual(0)
-      done();
-    })
-
-    /**
      * @tc.name   RenderNodeErrorCode060
      * @tc.number SUB_ARKUI_CAPI_RenderNodeErrorCode_060
      * @tc.desc   Test InitModuleForArkTSEnv

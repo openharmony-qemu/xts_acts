@@ -15,32 +15,32 @@
 @Entry
 @Component
 struct dragAdaptation{
-    @State text:string = ''
-    
-    build(){
-        Column(){
-            Column(){
-                Text('这是一段测试拖拽事件的测试文本')
-            .id('textArea1')
-            .draggable(true)
-            .width('90%')
-            .margin(20)
-            .copyOption(CopyOptions.LocalDevice)
-            .onDragStart(()=>{
-                 this.text = 'Text--onDragStart'
-            })
-            .onDragEnd(()=>{
+  @State text:string = ''
+
+  build() {
+    Column({ space: 20 }) {
+      Column(){
+        Text('这是一段测试文本这是一段测试文本')
+          .id('textArea1')
+          .draggable(true)
+          .width('90%')
+          .margin(20)
+          .textAlign(TextAlign.Center)
+          .copyOption(CopyOptions.LocalDevice)
+          .onDragStart(() => {
+            this.text = 'Text--onDragStart'
+          })
+          .onDragEnd(()=>{
             this.text = 'Text--onDragEnd'
           })
-          TextArea({ placeholder: this.text })
+
+        TextArea({ placeholder: this.text })
           .id('textArea2')
           .width(336)
           .height(56)
           .margin(20)
           .copyOption(CopyOptions.LocalDevice)
-        }
-
-        }.width('100%')
-        .height('100%')
+      }.width('100%').height('100%')
     }
+  }
 }

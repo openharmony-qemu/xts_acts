@@ -97,8 +97,6 @@ export default function playModeJsunit() {
     });
 
     
-
-
 /**
      * @tc.number   playModeTest_static_0100
      * @tc.name     playModeTest_static_0100

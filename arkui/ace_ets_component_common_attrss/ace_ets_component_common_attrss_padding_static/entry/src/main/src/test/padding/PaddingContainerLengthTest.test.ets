@@ -48,13 +48,12 @@ export default function PaddingContainerLengthTest() {
     'Column',
     'Grid',
     'GridItem',
-    'Navigator',
     'Refresh',
     'Row',
     'Scroll',
     'Stack',
     'Swiper',
-    'Badge',  //other // 組件問題
+    'Badge',
   )
 
   await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")

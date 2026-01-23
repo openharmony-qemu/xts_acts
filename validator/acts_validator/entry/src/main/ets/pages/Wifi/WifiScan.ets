@@ -172,7 +172,7 @@ struct WifiScan {
           .width('20vp')
           .height('20vp')
       }
-      .width('30%')
+      .width('20%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .opacity(0.4)
@@ -185,7 +185,7 @@ struct WifiScan {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
-      }.width('30%')
+      }.width('20%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .onClick(() => {
@@ -209,7 +209,7 @@ struct WifiScan {
         .width('20vp')
         .height('20vp')
     }
-    .width('30%')
+    .width('20%')
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
@@ -228,34 +228,37 @@ struct WifiScan {
   build() {
     Column() {
       Column() {
-        Row() {
-          Button() {
-            Image($r('app.media.ic_public_back'))
-              .width('20vp')
-              .height('18vp')
-              .margin({ left: '20vp' })
+        Scroll(){
+          Row({space:20}) {
+            Button() {
+              Image($r('app.media.ic_public_back'))
+                .width('20vp')
+                .height('18vp')
+                .margin({ left: '20vp' })
+            }
+            .backgroundColor(Color.Black)
+            .size({ width: '40vp', height: '30vp' })
+            .onClick(() => {
+              router.back({
+                url: 'pages/Wifi/Wifi_index',
+                params: { result: 'None', }
+              })
+            })
+
+            Text(this.name)
+              .fontColor(Color.White)
+              .fontSize('18fp')
+              .margin({ left: '-20vp' })
+            Text('hello')
+              .fontColor(Color.White)
+              .visibility(Visibility.Hidden)
           }
           .backgroundColor(Color.Black)
-          .size({ width: '40vp', height: '30vp' })
-          .onClick(() => {
-            router.back({
-              url: 'pages/Wifi/Wifi_index',
-              params: { result: 'None', }
-            })
-          })
+          .height('20%')
+          .width('130%')
+          .justifyContent(FlexAlign.Center)
+        }.scrollable(ScrollDirection.Horizontal).scrollBarColor(Color.Orange)
 
-          Text(this.name)
-            .fontColor(Color.White)
-            .fontSize('18fp')
-            .margin({ left: '-20vp' })
-          Text('hello')
-            .fontColor(Color.White)
-            .visibility(Visibility.Hidden)
-        }
-        .backgroundColor(Color.Black)
-        .height('10%')
-        .width('100%')
-        .justifyContent(FlexAlign.SpaceBetween)
 
         Column() {
           Row() {
@@ -358,38 +361,41 @@ struct WifiScan {
           }
         }
         .width('100%')
-        .height('80%')
+        .height('65%')
 
-        Row() {
-          this.PassBtn($r('app.string.btn_fullscreen'), true);
-          Button() {
-            Image($r('app.media.ic_public_help'))
-              .width('20vp')
-              .height('20vp')
-          }
-          .width('30%')
-          .height('30vp')
-          .backgroundColor(Color.Grey)
-          .onClick(() => {
-            AlertDialog.show(
-              {
-                title: '操作提示',
-                message: this.StepTips,
-                confirm: {
-                  value: 'OK',
-                  action: () => {
+        Scroll(){
+          Row({space:12}) {
+            this.PassBtn($r('app.string.btn_fullscreen'), true);
+            Button() {
+              Image($r('app.media.ic_public_help'))
+                .width('20vp')
+                .height('20vp')
+            }
+            .width('20%')
+            .height('30vp')
+            .backgroundColor(Color.Grey)
+            .onClick(() => {
+              AlertDialog.show(
+                {
+                  title: '操作提示',
+                  message: this.StepTips,
+                  confirm: {
+                    value: 'OK',
+                    action: () => {
+                    }
                   }
                 }
-              }
-            )
-          })
+              )
+            })
 
-          this.FailBtn($r('app.string.btn_fullscreen'), true);
-        }
-        .height('10%')
-        .width('100%')
-        .justifyContent(FlexAlign.SpaceEvenly)
-        .backgroundColor(Color.Black)
+            this.FailBtn($r('app.string.btn_fullscreen'), true);
+          }
+          .height('15%')
+          .width('130%')
+          .justifyContent(FlexAlign.Center)
+          .backgroundColor(Color.Black)
+        }.scrollable(ScrollDirection.Horizontal).scrollBarColor(Color.Orange)
+
       }.margin({ bottom: '20vp' })
     }
     .width('100%')

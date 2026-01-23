@@ -60,8 +60,7 @@ export default function alphabetAlignStyleTest() {
     });
 
     
-    
-/**
+    /**
      * @tc.number   testAlphabetAlignStyle_static_001
      * @tc.name     testAlphabetAlignStyle_static_001
      * @tc.desc     testAlphabetAlignStyle_static_001
@@ -108,8 +107,7 @@ it('testAlphabetAlignStyle_static_001', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   testAlphabetAlignStyle_static_002
      * @tc.name     testAlphabetAlignStyle_static_002
      * @tc.desc     testAlphabetAlignStyle_static_002

@@ -292,7 +292,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -316,7 +316,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -340,7 +340,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -364,7 +364,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -388,7 +388,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -412,7 +412,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -436,7 +436,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -460,7 +460,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -484,7 +484,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -508,7 +508,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -532,7 +532,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -556,7 +556,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -580,7 +580,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -604,7 +604,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -628,7 +628,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -652,7 +652,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -676,7 +676,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -700,7 +700,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -724,7 +724,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -748,7 +748,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -772,7 +772,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -796,7 +796,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -820,7 +820,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -844,7 +844,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -868,7 +868,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -892,7 +892,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -916,7 +916,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -940,7 +940,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -964,7 +964,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -988,7 +988,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -1012,7 +1012,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -1036,7 +1036,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -1060,7 +1060,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -1084,7 +1084,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -1108,7 +1108,7 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);
@@ -1132,7 +1132,271 @@ export default function MultimodalMouseNdkTest() {
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_CustomCursorNdk_1400
+     * @tc.number SUB_MMI_Input_Api_CustomCursorNdk_1400
+     * @tc.desc   OH_Input_SetCustomCursor Interface testing to set windowId as 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_CustomCursorNdk_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_CustomCursorNdk_1400';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = mouse.CustomCursor14();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_CustomCursorNdk_1500
+     * @tc.number SUB_MMI_Input_Api_CustomCursorNdk_1500
+     * @tc.desc   OH_Input_SetCustomCursor Interface testing INPUT_SERVICE_EXCEPTION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_CustomCursorNdk_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_CustomCursorNdk_1500';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = mouse.CustomCursor15();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_CustomCursorNdk_1600
+     * @tc.number SUB_MMI_Input_Api_CustomCursorNdk_1600
+     * @tc.desc   OH_Input_CursorConfig_Create Interface testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_CustomCursorNdk_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_CustomCursorNdk_1600';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = mouse.CustomCursor16();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_CustomCursorNdk_1700
+     * @tc.number SUB_MMI_Input_Api_CustomCursorNdk_1700
+     * @tc.desc   OH_Input_CustomCursor_GetAnchor Interface testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_CustomCursorNdk_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_CustomCursorNdk_1700';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = mouse.CustomCursor17();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_CustomCursorNdk_1800
+     * @tc.number SUB_MMI_Input_Api_CustomCursorNdk_1800
+     * @tc.desc   OH_Input_CustomCursor_GetPixelMap Interface testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_CustomCursorNdk_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_CustomCursorNdk_1800';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = mouse.CustomCursor18();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_CreateDeviceInfoNdk_0100
+     * @tc.number SUB_MMI_Input_Api_CreateDeviceInfoNdk_0100
+     * @tc.desc   OH_Input_CreateDeviceInfo Interface testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_CreateDeviceInfoNdk_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_CreateDeviceInfoNdk_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = mouse.CreateDeviceInfo1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_CreateHotkeyNdk_0100
+     * @tc.number SUB_MMI_Input_Api_CreateHotkeyNdk_0100
+     * @tc.desc   OH_Input_CreateHotkey Interface testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_CreateHotkeyNdk_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_CreateHotkeyNdk_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = mouse.CreateHotkey1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_GetIntervalSinceLastInput_0100
+     * @tc.number SUB_MMI_Input_GetIntervalSinceLastInput_0100
+     * @tc.desc   OH_Input_GetIntervalSinceLastInput Interface testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_GetIntervalSinceLastInput_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_GetIntervalSinceLastInput_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = mouse.GetInterSinceLastInput1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_RemoveKeyEventHook_0100
+     * @tc.number SUB_MMI_Input_RemoveKeyEventHook_0100
+     * @tc.desc   OH_Input_RemoveKeyEventHook Interface testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_RemoveKeyEventHook_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_RemoveKeyEventHook_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = mouse.RemoveKeyEventHook1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_DispatchToNextHandler_0100
+     * @tc.number SUB_MMI_Input_DispatchToNextHandler_0100
+     * @tc.desc   OH_Input_DispatchToNextHandler Interface testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_DispatchToNextHandler_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_DispatchToNextHandler_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = mouse.DispatchToNextHandler1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_GetKeyEventId_0100
+     * @tc.number SUB_MMI_Input_GetKeyEventId_0100
+     * @tc.desc   OH_Input_GetKeyEventId Interface testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_GetKeyEventId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_GetKeyEventId_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = mouse.GetKeyEventId();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);

@@ -102,7 +102,7 @@ struct progressTest {
                 .key("ArkUX_Stage_Progress_updateColor_Button_0600")
                 .onClick((event: ClickEvent) => {
                   console.info('ArkUX_Stage_Progress_updateColor_Button_0600 onClick');
-                  this.progress.updateColor(0xff006cde);
+                  this.progress.updateColor(0xff006cde.toInt());
                 })
                 .fontSize(6).height('6%').padding(2)
             }

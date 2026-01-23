@@ -74,13 +74,14 @@ export default function ActionSheetLifeTest() {
     });
 
 
+    
     /**
      * @tc.number   ActionSheetLife_static_0001
      * @tc.name     ActionSheetLife_static_0001
      * @tc.desc     ActionSheetLife_static_0001
      * @tc.level    Level.LEVEL2
      */
-    it('ActionSheetLife_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('ActionSheetLife_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ActionSheetLife_static_0001 START');
       await CommonFunc.sleep(1000);
       inspector.sendEventByKey('ActionSheet', 10, "")

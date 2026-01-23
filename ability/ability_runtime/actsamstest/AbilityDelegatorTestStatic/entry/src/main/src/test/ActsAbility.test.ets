@@ -18,12 +18,22 @@ import { BusinessError } from '@ohos.base';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Utils from './Util.test';
 import Want from '@ohos.app.ability.Want';
+import { Driver, ON } from '@ohos.UiTest';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
 let tag = "testTag"
 export default function abilityDelegatorStage() {
   describe('abilityDelegatorStage', () => {
     beforeAll(async() => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start');
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start1');
@@ -93,7 +103,7 @@ export default function abilityDelegatorStage() {
           hilog.info(0x0000, 'testTag EntryAbility', 'startAbility promise');
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
             'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800 failed');
             expect(err.code).assertEqual(16000001);
@@ -128,7 +138,7 @@ export default function abilityDelegatorStage() {
           hilog.info(0x0000, 'testTag EntryAbility', 'startAbility promise');
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
             'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800 failed');
           expect(err.code).assertEqual(16000004);
@@ -197,7 +207,7 @@ export default function abilityDelegatorStage() {
           hilog.info(0x0000, 'testTag EntryAbility', 'startAbility promise');
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
             'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800 failed');
           expect(err.code).assertEqual(16000005);
@@ -264,7 +274,7 @@ export default function abilityDelegatorStage() {
           hilog.info(0x0000, 'testTag EntryAbility', 'startAbility promise');
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
             'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800 failed');
           expect(err.code).assertEqual(16000019);

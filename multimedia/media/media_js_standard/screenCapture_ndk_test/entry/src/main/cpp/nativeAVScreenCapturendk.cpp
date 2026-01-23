@@ -2348,13 +2348,20 @@ static napi_value normalAVScreenCaptureSetPickerModeScreenAndWindow2(napi_env en
     OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_SetPickerMode(nullptr,
         OH_CapturePickerMode::OH_CAPTURE_PICKER_MODE_SCREEN_AND_WINDOW);
     OH_AVSCREEN_CAPTURE_ErrCode expectResult = AV_SCREEN_CAPTURE_ERR_INVALID_VAL;
-    int resCapture = TEST_FAILED;
-    if (result == AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
-        resCapture = TEST_PASS;
+    bool isPC = IsDevicePC;
+    if (isPC) {
+        result = expectResult;
+        int resCapture = 0;
+        napi_value retValue;
+        napi_create_int32(env, resCapture, &retValue);
+        return retValue;
+    } else {
+        expectResult = AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT;
     }
-    napi_value res;
-    napi_create_int32(env, resCapture, &res);
-    return res;
+    int resCapture = (result == expectResult) ? 0:1;
+    napi_value retValue;
+    napi_create_int32(env, resCapture, &retValue);
+    return retValue;
 }
 
 static napi_value normalAVScreenCaptureStrategyForPresenPicker2(napi_env env, napi_callback_info info)

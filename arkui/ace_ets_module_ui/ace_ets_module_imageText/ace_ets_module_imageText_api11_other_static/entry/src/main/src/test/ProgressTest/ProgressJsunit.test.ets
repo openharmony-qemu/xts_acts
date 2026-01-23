@@ -106,8 +106,6 @@ export default function ProgressJsunit() {
     });
 
     
-
-
 /**
      * @tc.number   ProgressJsunit_static_0100
      * @tc.name     ProgressJsunit_static_0100
@@ -139,8 +137,6 @@ it('ProgressJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-
-
 /**
      * @tc.number   ProgressJsunit_static_0200
      * @tc.name     ProgressJsunit_static_0200
@@ -164,8 +160,6 @@ it('ProgressJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise
 
 
     
-
-
 /**
      * @tc.number   ProgressJsunit_static_0300
      * @tc.name     ProgressJsunit_static_0300
@@ -187,8 +181,6 @@ it('ProgressJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-
-
 /**
      * @tc.number   ProgressJsunit_static_0400
      * @tc.name     ProgressJsunit_static_0400
@@ -212,8 +204,6 @@ it('ProgressJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-
-
 /**
      * @tc.number   ProgressJsunit_static_0500
      * @tc.name     ProgressJsunit_static_0500
@@ -235,8 +225,6 @@ it('ProgressJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-
-
 /**
      * @tc.number   ProgressJsunit_static_0600
      * @tc.name     ProgressJsunit_static_0600
@@ -259,8 +247,6 @@ it('ProgressJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-
-
 /**
      * @tc.number   ProgressJsunit_static_0700
      * @tc.name     ProgressJsunit_static_0700
@@ -282,8 +268,6 @@ it('ProgressJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-
-
 /**
      * @tc.number   ProgressJsunit_static_0800
      * @tc.name     ProgressJsunit_static_0800
@@ -312,8 +296,6 @@ it('ProgressJsunit_static_0800', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-
-
 /**
      * @tc.number   ProgressJsunit_static_0900
      * @tc.name     ProgressJsunit_static_0900

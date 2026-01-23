@@ -85,7 +85,7 @@ it('TextPickerDialog_static_0100', Level.LEVEL2, async (done: () => void): Promi
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('TextPickerDialog'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;
@@ -95,7 +95,7 @@ it('TextPickerDialog_static_0100', Level.LEVEL2, async (done: () => void): Promi
       expect(properties.type).assertEqual(1)//1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       // await CommonFunc.sleep(1000);
-      // await (driver?.click(Math.round(AppStorage.get<number>("winLeft") + UIContext.getFocusedUIContext()!.vp2px(100)) as Int,Math.round(AppStorage.get<number>("winTop") + UIContext.getFocusedUIContext()!.vp2px(100)) as Int) as Promise<void>);
+      // await (driver?.click(Math.round(AppStorage.get<number>("winLeft") + UIContext.resolveUIContext()!.vp2px(100)) as Int,Math.round(AppStorage.get<number>("winTop") + UIContext.resolveUIContext()!.vp2px(100)) as Int) as Promise<void>);
       // await CommonFunc.sleep(1000);
       console.info('[TextPickerDialog_static_0100] END');
       done();

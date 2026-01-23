@@ -6165,6 +6165,22 @@ export default function audioFramework() {
       done();
     })
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_0200
+     * @tc.desc   DeviceRole - ALL Device Role
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      expect(audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_MUTE_SUGGESTION).assertEqual(6);
+      console.info("audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_MUTE_SUGGESTION :" + audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_MUTE_SUGGESTION);
+      expect(audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_UNMUTE_SUGGESTION).assertEqual(7);
+      console.info("audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_UNMUTE_SUGGESTION :" + audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_UNMUTE_SUGGESTION);
+      await sleep(50);
+      done();
+    })
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_DEVICE_RECOMMENDEDACTION_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_RECOMMENDEDACTION_0100
      * @tc.desc   DeviceRole - ALL Device Role
@@ -6995,8 +7011,9 @@ export default function audioFramework() {
             console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupportAEC}`);
         } catch (err) {
             let error = err as BusinessError;
-            console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+            console.error(`isAcousticEchoCancelerSupported ERROR: ${error}, errorcode: ${error.code}`);
             flag = true;
+            expect(Number(error.code)).assertEqual(6800101);
         }
         expect(flag).assertTrue();
         done();

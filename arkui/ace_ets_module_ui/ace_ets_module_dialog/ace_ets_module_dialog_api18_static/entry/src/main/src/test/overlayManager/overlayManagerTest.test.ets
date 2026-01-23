@@ -74,7 +74,8 @@ export default function overlayManagerTest() {
     });
 
     
-    /**
+    
+/**
      * @tc.number   overlayManagerTest_static_0100
      * @tc.name     overlayManagerTest_static_0100
      * @tc.desc     overlayManagerTest_static_0100
@@ -121,7 +122,7 @@ it('overlayManagerTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level
       await CommonFunc.sleep(500);
 
       await ( button4?.click() as Promise<void>);
-      // await CommonFunc.sleep(500);
+      await CommonFunc.sleep(500);
       await ( button5?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       top = AppStorage.get<number>('myTop')

@@ -26,7 +26,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function WaterFlowFlingCallbackJsunit() {
   describe('WaterFlowFlingCallbackTest', () => {
     beforeAll(() => {
-      await startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info('text beforeEach start');

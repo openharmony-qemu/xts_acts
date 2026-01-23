@@ -31,20 +31,20 @@ import HoverJsunit25 from './HoverTest/HoverJsunit25.test';
 import OverlayUIJsunit from './overlayTest/OverlayUIJsunit.test';
 
 export default function testsuite() {
-  noBarrierComponentsTest(); // 27 pass 27
-  noBarriersGroupTest(); // 12 pass 12
-  overLayJsunit(); // 8 pass 8
-  zIndexJsunit(); // 4 pass 4
-  visibilityJsunit(); // 5 pass 5
-  AttributeModifierDemoAPI01(); // 1 pass 1
-  AttributeModifierDemoAPI03(); // 1 pass 1
-  accessVNTest(); // 1 pass 1
-  dymaticTest(); // 1 pass 1
-  // outlineTest(); // 3 pass 3
-  HoverJsunit11(); // 3 pass 3
-  HoverJsunit17(); // 3 pass 3
-  HoverJsunit23(); // 3 pass 3
-  HoverJsunit25(); // 2 pass 2
-  OverlayUIJsunit(); // 14 pass 14
-  HoverJsunit5(); // 3 pass 3
+  noBarrierComponentsTest();
+  noBarriersGroupTest();
+  overLayJsunit();
+  zIndexJsunit();
+  visibilityJsunit();
+  // AttributeModifierDemoAPI01();
+  // AttributeModifierDemoAPI03();
+  accessVNTest();
+  dymaticTest();
+  outlineTest();
+  HoverJsunit11();
+  HoverJsunit17();
+  HoverJsunit23();
+  HoverJsunit25();
+  OverlayUIJsunit();
+  HoverJsunit5();
 }

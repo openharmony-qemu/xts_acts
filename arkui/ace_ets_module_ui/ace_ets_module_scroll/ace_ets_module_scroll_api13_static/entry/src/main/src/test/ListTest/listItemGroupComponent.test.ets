@@ -80,6 +80,7 @@ export default function listItemGroupComponent() {
      * @tc.level    Level.LEVEL1
      */
 it('listItemGroupComponent_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> =>{
+
       let driver = Driver.create();
       await driver.delayMs(2000);
       let com1 = (JSON.parseJsonElement(inspector.getInspectorByKey("buildTest1"))).getElement('$attrs').getString('content');
@@ -98,6 +99,7 @@ it('listItemGroupComponent_static_0100', Level.LEVEL1, async (done: () => void):
      * @tc.level    Level.LEVEL1
      */
 it('listItemGroupComponent_static_0101', Level.LEVEL1, async (done: () => void): Promise<void> =>{
+
     let driver = Driver.create();
     await driver.delayMs(2000);
     let com2 = (JSON.parseJsonElement(inspector.getInspectorByKey("buildTest2"))).getElement('$attrs').getString('content');

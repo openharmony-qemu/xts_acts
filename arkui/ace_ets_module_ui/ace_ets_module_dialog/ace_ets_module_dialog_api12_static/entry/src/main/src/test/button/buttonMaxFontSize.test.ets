@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -33,7 +33,6 @@ let testAbilityContext:common.UIAbilityContext;
 export default function buttonMaxFontSize() {
   describe('buttonMaxFontSize', () => {
     beforeAll(() => {
-
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
     })
     
@@ -49,10 +48,8 @@ export default function buttonMaxFontSize() {
         console.info("get buttonMaxFontSize state pages: " + JSON.stringify(pages));
         if (!("buttonMaxFontSize" == pages.name)) {
           console.info("get buttonMaxFontSize state pages.name: " + JSON.stringify(pages.name));
-          // let result = await buttonMaxFontSize.pushUrl(options);
           buttonMaxFontSize.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push buttonMaxFontSize success: " + JSON.stringify(result));
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);

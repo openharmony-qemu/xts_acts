@@ -12,12 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterEach} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import {vibrator} from '@kit.SensorServiceKit';
 import deviceInfo from '@ohos.deviceInfo';
 import { BusinessError } from '@ohos.base';
+import vibrator from '@ohos.vibrator';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -44,20 +45,34 @@ export default function VibratorJsTest_misc_9() {
       hilog.info(domain, tag, 'VibratorJsTest_misc_9 Device type ' + deviceInfo.deviceType);
       hilog.info(domain, tag, 'VibratorJsTest_misc_9 isAvailable ' + isAvailable);
       try {
-        if (deviceInfo.deviceType == '2in1') {
+        const vibratorsList = vibrator.getVibratorInfoSync();
+        if (vibratorsList.length === 0 || (vibratorsList.length !== 0 && vibratorsList.every(vibrator => !vibrator.isLocalVibrator))) {
           isAvailable = false;
           hilog.info(domain, tag, 'VibratorJsTest_misc_9 isAvailable ' + isAvailable);
           done();
-        } else {
+        }else {
           isAvailable = true;
           hilog.info(domain, tag, 'VibratorJsTest_misc_9 isAvailable ' + isAvailable);
           done();
         }
-      } catch (error: BusinessError) {
-          hilog.info(domain, tag, 'VibratorJsTest_misc_9 exception: ' + JSON.stringify(error));
-          done();
+      } catch(error) {
+        hilog.info(domain, tag, 'VibratorJsTest_misc_9 exception :' + JSON.stringify(error));
+        done();
       }
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
+    })
+
+    afterEach(async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, 'afterEach called');
+      try{
+        await vibrator.stopVibration();
+        hilog.info(domain, tag, 'afterEach: Success in stopping vibration. ');
+        done();
+      } catch(error){
+        hilog.info(domain, tag, 'afterEach error: ' + JSON.stringify(error));
+        done();
+      }
+      console.info('afterEach end');
     })
 
     /**
@@ -163,7 +178,7 @@ export default function VibratorJsTest_misc_9() {
           done();
         }
       })
-    
+
     /**
      * @tc.name   VibratorProgramticHapticTestStatic004
      * @tc.number SUB_SensorsSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0400
@@ -217,28 +232,28 @@ export default function VibratorJsTest_misc_9() {
       async (done: () => void): Promise<void> => {
         TAG = 'VibratorProgramticHapticTestStatic048';
         try {
-            let effect: vibrator.HapticFileDescriptor = {
-              fd: 1,
-              offset: 0,
-              length: 1000
-            }
-            let startVibrationData1: vibrator.VibrateFromFile = {
-              type: "file",
-              hapticFd: effect,
-            }
-            let startVibrationData2: vibrator.VibrateAttribute = {
-              usage: "unknown"
-            }
-            vibrator.startVibration(startVibrationData1, startVibrationData2, (error: BusinessError<void> | null): void =>{
-              hilog.info(domain, tag, TAG + ' VibratorProgramticHapticTestStatic048 should not in this method ');
-              expect(error !== null).assertTrue();
-              done();
-            });
-          } catch (error: BusinessError) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
-            expect(false).assertTrue();
-            done();
+          let effect: vibrator.HapticFileDescriptor = {
+            fd: 1,
+            offset: 0,
+            length: 1000
           }
+          let startVibrationData1: vibrator.VibrateFromFile = {
+            type: "file",
+            hapticFd: effect,
+          }
+          let startVibrationData2: vibrator.VibrateAttribute = {
+            usage: "unknown"
+          }
+          vibrator.startVibration(startVibrationData1, startVibrationData2, (error: BusinessError<void> | null): void =>{
+            hilog.info(domain, tag, TAG + ' VibratorProgramticHapticTestStatic048 should not in this method ');
+            expect(error !== null).assertTrue();
+            done();
+          });
+        } catch (error: BusinessError) {
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          expect(false).assertTrue();
+          done();
+        }
       })
 
     /**
@@ -318,29 +333,41 @@ export default function VibratorJsTest_misc_9() {
       async (done: () => void): Promise<void> => {
         TAG = 'VibratorProgramticHapticTestStatic023';
         try {
-            let effect: vibrator.VibratePreset = {
-              type: "preset",
-              effectId: "haptic.clock.timer",
-              count: 1,
-              intensity: 5,
-            }
-            let attribute: vibrator.VibrateAttribute = {
-              id: 0,
-              usage: "unknown"
-            }
-            vibrator.startVibration(effect, attribute, (error: BusinessError<void> | null): void =>{
-              hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
-              if (error) {
-                expect(false).assertTrue();
-              } 
-              done();
-            });
-          } catch (error: BusinessError) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
-            expect(error.code == 401).assertTrue();
-            expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
-            done();
+          let effect: vibrator.VibratePreset = {
+            type: "preset",
+            effectId: "haptic.clock.timer",
+            count: 1,
+            intensity: 5,
           }
+          let attribute: vibrator.VibrateAttribute = {
+            id: 0,
+            usage: "unknown"
+          }
+          vibrator.startVibration(effect, attribute, (error: BusinessError<void> | null): void =>{
+            hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
+            if (error && !isAvailable) {
+              hilog.info(domain, tag, TAG + ` isAvailable is false error: error.code: ${error.code},error.message: ${error.message}`);
+              expect(error.code).assertEqual(14600101);
+              done();
+            } else if (error && isAvailable) {
+              hilog.info(domain, tag, TAG + ` startVibration error: error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+              done();
+            } else if (error == undefined && !isAvailable) {
+              hilog.info(domain, tag, TAG + `isAvailable is false but startVibration success`);
+              expect(false).assertTrue();
+              done();
+            } else {
+              hilog.info(domain, tag, TAG + ' startVibration success' );
+              done();
+            }
+          });
+        } catch (error: BusinessError) {
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          expect(error.code == 401).assertTrue();
+          expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
+          done();
+        }
       })
 
     /**
@@ -355,24 +382,24 @@ export default function VibratorJsTest_misc_9() {
       async (done: () => void): Promise<void> => {
         TAG = 'VibratorProgramticHapticTestStatic032';
         try {
-            let effect: vibrator.VibratePreset = {
-              type: "preset",
-              effectId: "haptic.clock.timer",
-              count: 1,
-            }
-            let attribute: vibrator.VibrateAttribute = {
-              id: 0,
-              usage: "unknown"
-            }
-            vibrator.startVibration(effect, attribute);
-            expect(attribute !== null).assertTrue();
-            done();
-          } catch (error: BusinessError) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
-            expect(error.code == 401).assertTrue();
-            expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
-            done();
+          let effect: vibrator.VibratePreset = {
+            type: "preset",
+            effectId: "haptic.clock.timer",
+            count: 1,
           }
+          let attribute: vibrator.VibrateAttribute = {
+            id: 0,
+            usage: "unknown"
+          }
+          vibrator.startVibration(effect, attribute);
+          expect(attribute !== null).assertTrue();
+          done();
+        } catch (error: BusinessError) {
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          expect(error.code == 401).assertTrue();
+          expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
+          done();
+        }
       })
 
     /**
@@ -387,26 +414,26 @@ export default function VibratorJsTest_misc_9() {
       async (done: () => void): Promise<void> => {
         TAG = 'VibratorProgramticHapticTestStatic024';
         try {
-            let effect: vibrator.VibrateTime = {
-              type: "time",
-              duration: 1000,
-            }
-            let attribute: vibrator.VibrateAttribute = {
-              id: 0,
-              usage: "unknown"
-            }
-            vibrator.startVibration(effect, attribute);
-            expect(attribute !== null).assertTrue();
-            done();
-          } catch (error: BusinessError) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
-            if (error.code == 801) {
-              expect(error.code == 801).assertTrue();
-            } else {
-              expect(false).assertTrue();
-            }
-            done();
+          let effect: vibrator.VibrateTime = {
+            type: "time",
+            duration: 1000,
           }
+          let attribute: vibrator.VibrateAttribute = {
+            id: 0,
+            usage: "unknown"
+          }
+          vibrator.startVibration(effect, attribute);
+          expect(attribute !== null).assertTrue();
+          done();
+        } catch (error: BusinessError) {
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          if (error.code == 801) {
+            expect(error.code == 801).assertTrue();
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
       })
 
     /**
@@ -421,71 +448,71 @@ export default function VibratorJsTest_misc_9() {
       async (done: () => void): Promise<void> => {
         TAG = 'VibratorProgramticHapticTestStatic025';
         try {
-           let points: Array<vibrator.VibratorCurvePoint> = [
-              {
-                time: 0,
-                intensity: 0.95,
-                frequency: 50,
-              }
-            ];
-            let vibratorEvent1: vibrator.VibratorEvent = {
-              eventType: vibrator.VibratorEventType.CONTINUOUS,
-              time: 20,
-              duration: 50,
-              intensity: 60,
-              frequency: 75,
-              index: 1,
-              points: points,
+          let points: Array<vibrator.VibratorCurvePoint> = [
+            {
+              time: 0,
+              intensity: 0.95,
+              frequency: 50,
             }
-            let vibratorEvent2: vibrator.VibratorEvent = {
-              eventType: vibrator.VibratorEventType.CONTINUOUS,
-              time: 30,
-              duration: 60,
-              intensity: 75,
-              frequency: 95,
-              index: 2,
-              points: points,
-            }
-            let vibratorEvent3: vibrator.VibratorEvent = {
-              eventType: vibrator.VibratorEventType.CONTINUOUS,
-              time: 10,
-              duration: 70,
-              intensity: 65,
-              frequency: 55,
-              index: 3,
-              points: points,
-            }
-            let myevents:  Array<vibrator.VibratorEvent> = [vibratorEvent1,vibratorEvent2,vibratorEvent3];
-            let vibratorPattern: vibrator.VibratorPattern = {
-              time: 5,
-              events: myevents,
-            }
-            let effect: vibrator.VibrateFromPattern = {
-              type: "pattern",
-              pattern: vibratorPattern,
-            }
-            let attribute: vibrator.VibrateAttribute = {
-              id: 0,
-              usage: "unknown"
-            }
-            vibrator.startVibration(effect, attribute, (error: BusinessError<void> | null): void =>{
-              hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
-              if (error) {
-                expect(error !== null).assertTrue();
-              } else {
-                expect(false).assertTrue();
-              }
-              done();
-            });
-          } catch (error: BusinessError) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
-            if (error.code == 801) {
-              expect(error.code == 801).assertTrue();
+          ];
+          let vibratorEvent1: vibrator.VibratorEvent = {
+            eventType: vibrator.VibratorEventType.CONTINUOUS,
+            time: 20,
+            duration: 50,
+            intensity: 60,
+            frequency: 75,
+            index: 1,
+            points: points,
+          }
+          let vibratorEvent2: vibrator.VibratorEvent = {
+            eventType: vibrator.VibratorEventType.CONTINUOUS,
+            time: 30,
+            duration: 60,
+            intensity: 75,
+            frequency: 95,
+            index: 2,
+            points: points,
+          }
+          let vibratorEvent3: vibrator.VibratorEvent = {
+            eventType: vibrator.VibratorEventType.CONTINUOUS,
+            time: 10,
+            duration: 70,
+            intensity: 65,
+            frequency: 55,
+            index: 3,
+            points: points,
+          }
+          let myevents:  Array<vibrator.VibratorEvent> = [vibratorEvent1,vibratorEvent2,vibratorEvent3];
+          let vibratorPattern: vibrator.VibratorPattern = {
+            time: 5,
+            events: myevents,
+          }
+          let effect: vibrator.VibrateFromPattern = {
+            type: "pattern",
+            pattern: vibratorPattern,
+          }
+          let attribute: vibrator.VibrateAttribute = {
+            id: 0,
+            usage: "unknown"
+          }
+          vibrator.startVibration(effect, attribute, (error: BusinessError<void> | null): void =>{
+            hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
+            if (error) {
+              expect(error !== null).assertTrue();
             } else {
               expect(false).assertTrue();
             }
             done();
+          });
+        } catch (error: BusinessError) {
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          if (error.code == 801) {
+            expect(error.code == 801).assertTrue();
+          } else {
+            expect(false).assertTrue();
           }
+          done();
+        }
       })
 
     /**
@@ -497,36 +524,49 @@ export default function VibratorJsTest_misc_9() {
      * @tc.level  LEVEL0
      */
     it("UniversalVibratorJsTest01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
-      TAG = "UniversalVibratorJsTest01"
-      let ret = await vibrator.isSupportEffect(EFFECT_IDSUCCESS);
-      hilog.info(0x0000, 'testTag', TAG + "ret:" + JSON.stringify(ret));
-      if (ret) {
-        let effect1: vibrator.VibratePreset = {
-          type: "preset",
-          effectId: EFFECT_IDSUCCESS,
-          count: 1,
-          intensity: 50,
-        }
-        let attr: vibrator.VibrateAttribute = {
-          usage: 'unknown',
-        }
-        vibrator.startVibration(effect1, attr, (error: BusinessError<void> | null): void => {
-          if (error != null) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
-            expect(false).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDSUCCESS error:' + JSON.stringify(error));
-          } else {
-            expect(error == null).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDSUCCESS success');
+      TAG = "UniversalVibratorJsTest01";
+      try {
+        let ret = await vibrator.isSupportEffect(EFFECT_IDSUCCESS);
+        hilog.info(0x0000, 'testTag', TAG + "ret:" + JSON.stringify(ret));
+        if (ret) {
+          let effect1: vibrator.VibratePreset = {
+            type: "preset",
+            effectId: EFFECT_IDSUCCESS,
+            count: 1,
+            intensity: 50,
           }
-          vibrator.stopVibration(vibrator.VibratorStopMode.VIBRATOR_STOP_MODE_TIME, (error: BusinessError<void> | null): void => {
-            hilog.info(domain, tag, TAG + `stopVibration , error.code: ${error?.code} , error.message: ${error?.message}`);
-          })
+          let attr: vibrator.VibrateAttribute = {
+            usage: 'unknown',
+          }
+          vibrator.startVibration(effect1, attr, (error: BusinessError<void> | null): void => {
+            if (error != null) {
+              hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
+              expect(false).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDSUCCESS error:' + JSON.stringify(error));
+            } else {
+              expect(error == null).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDSUCCESS success');
+            }
+            vibrator.stopVibration(vibrator.VibratorStopMode.VIBRATOR_STOP_MODE_TIME, (error: BusinessError<void> | null): void => {
+              hilog.info(domain, tag, TAG + `stopVibration , error.code: ${error?.code} , error.message: ${error?.message}`);
+            })
+            done();
+          });
+        } else {
+          console.log(TAG + ' is not supported.');
           done();
-        });
-      } else {
-        console.log(TAG + ' is not supported.');
-        done();
+        }
+      } catch (err) {
+        let error = err as BusinessError;
+        if (isAvailable) {
+          hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
+          expect(false).assertTrue();
+          done();
+        } else {
+          hilog.info(domain, tag, TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+          expect(error.code).assertEqual(14600101);
+          done();
+        }
       }
     })
 
@@ -539,38 +579,50 @@ export default function VibratorJsTest_misc_9() {
      * @tc.level  LEVEL3
      */
     it("UniversalVibratorJsTest02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
-      TAG = "UniversalVibratorJsTest02"
-      let ret1 = await vibrator.isSupportEffect(EFFECT_IDFAIL);
-      hilog.info(0x0000, 'testTag', TAG + "ret1:" + JSON.stringify(ret1));
-      if (ret1) {
-        let effect2: vibrator.VibratePreset = {
-          type: "preset",
-          effectId: EFFECT_IDFAIL,
-          count: 1,
-          intensity: 50,
-        }
-        let attr2: vibrator.VibrateAttribute = {
-          usage: 'unknown',
-        }
-        vibrator.startVibration(effect2, attr2, (error: BusinessError<void> | null): void => {
-          if (error != null) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
-            expect(false).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDFAIL error:' + JSON.stringify(error));
-          } else {
-            expect(error == null).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDFAIL success');
+      TAG = "UniversalVibratorJsTest02";
+      try {
+        let ret1 = await vibrator.isSupportEffect(EFFECT_IDFAIL);
+        hilog.info(0x0000, 'testTag', TAG + "ret1:" + JSON.stringify(ret1));
+        if (ret1) {
+          let effect2: vibrator.VibratePreset = {
+            type: "preset",
+            effectId: EFFECT_IDFAIL,
+            count: 1,
+            intensity: 50,
           }
-          vibrator.stopVibration((error: BusinessError<void> | null): void => {
-            hilog.info(domain, tag, TAG + `stopVibration , error.code: ${error?.code} , error.message: ${error?.message}`);
-          })
+          let attr2: vibrator.VibrateAttribute = {
+            usage: 'unknown',
+          }
+          vibrator.startVibration(effect2, attr2, (error: BusinessError<void> | null): void => {
+            if (error != null) {
+              hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
+              expect(false).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDFAIL error:' + JSON.stringify(error));
+            } else {
+              expect(error == null).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDFAIL success');
+            }
+            vibrator.stopVibration((error: BusinessError<void> | null): void => {
+              hilog.info(domain, tag, TAG + `stopVibration , error.code: ${error?.code} , error.message: ${error?.message}`);
+            })
+            done();
+          });
+        } else {
+          console.log(TAG + ' is not supported.');
           done();
-        });
-      } else {
-        console.log(TAG + ' is not supported.');
-        done();
+        }
+      } catch (err) {
+        let error = err as BusinessError;
+        if (isAvailable) {
+          hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
+          expect(false).assertTrue();
+          done();
+        } else {
+          hilog.info(domain, tag, TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+          expect(error.code).assertEqual(14600101);
+          done();
+        }
       }
-      
     })
 
     /**
@@ -583,34 +635,47 @@ export default function VibratorJsTest_misc_9() {
      */
     it("UniversalVibratorJsTest03", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       TAG = "UniversalVibratorJsTest03"
-      let ret2 = await vibrator.isSupportEffect(EFFECT_IDWARNING);
-      hilog.info(0x0000, 'testTag', TAG + "ret2:" + JSON.stringify(ret2));
-      if (ret2) {
-        let effect3: vibrator.VibratePreset = {
-          type: "preset",
-          effectId: EFFECT_IDWARNING,
-          count: 1,
-          intensity: 50,
-        }
-        let attr3: vibrator.VibrateAttribute = {
-          usage: 'unknown',
-        }
-        vibrator.startVibration(effect3, attr3, (error: BusinessError<void> | null): void => {
-          if (error != null) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
-            expect(false).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDWARNING error:' + JSON.stringify(error));
-          } else {
-            expect(error == null).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDWARNING success');
+      try {
+        let ret2 = await vibrator.isSupportEffect(EFFECT_IDWARNING);
+        hilog.info(0x0000, 'testTag', TAG + "ret2:" + JSON.stringify(ret2));
+        if (ret2) {
+          let effect3: vibrator.VibratePreset = {
+            type: "preset",
+            effectId: EFFECT_IDWARNING,
+            count: 1,
+            intensity: 50,
           }
-          vibrator.stopVibration(vibrator.VibratorStopMode.VIBRATOR_STOP_MODE_PRESET)
+          let attr3: vibrator.VibrateAttribute = {
+            usage: 'unknown',
+          }
+          vibrator.startVibration(effect3, attr3, (error: BusinessError<void> | null): void => {
+            if (error != null) {
+              hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
+              expect(false).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDWARNING error:' + JSON.stringify(error));
+            } else {
+              expect(error == null).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDWARNING success');
+            }
+            vibrator.stopVibration(vibrator.VibratorStopMode.VIBRATOR_STOP_MODE_PRESET)
+            done();
+          });
+        } else {
+          console.log(TAG + ' is not supported.');
           done();
-        });
-      } else {
-        console.log(TAG + ' is not supported.');
-        done();
-      }   
+        }
+      } catch (err) {
+        let error = err as BusinessError;
+        if (isAvailable) {
+          hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
+          expect(false).assertTrue();
+          done();
+        } else {
+          hilog.info(domain, tag, TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+          expect(error.code).assertEqual(14600101);
+          done();
+        }
+      }
     })
 
     /**
@@ -622,52 +687,65 @@ export default function VibratorJsTest_misc_9() {
      * @tc.level  LEVEL3
      */
     it("UniversalVibratorJsTest04", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
-      TAG = "UniversalVibratorJsTest04"
-      let ret2 = await vibrator.isSupportEffect(EFFECT_IDWARNING);
-      let ret1 = await vibrator.isSupportEffect(EFFECT_IDFAIL);
-      hilog.info(0x0000, 'testTag', TAG + "ret1:" + JSON.stringify(ret1) + "ret2:" + JSON.stringify(ret2));
-      if (ret1 && ret2) {
-        let effect4: vibrator.VibratePreset = {
-          type: "preset",
-          effectId: EFFECT_IDFAIL,
-          count: 1,
-          intensity: 50,
-        }
-        let effect41: vibrator.VibratePreset = {
-          type: "preset",
-          effectId: EFFECT_IDWARNING,
-          count: 1,
-          intensity: 50,
-        }
-        let attr4: vibrator.VibrateAttribute = {
-          usage: 'unknown',
-        }
-        vibrator.startVibration(effect4, attr4, (error: BusinessError<void> | null): void => {
-          if (error != null) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
-            expect(false).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDFAIL error:' + JSON.stringify(error));
-          } else {
-            expect(error == null).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDFAIL success');
+      TAG = "UniversalVibratorJsTest04";
+      try {
+        let ret2 = await vibrator.isSupportEffect(EFFECT_IDWARNING);
+        let ret1 = await vibrator.isSupportEffect(EFFECT_IDFAIL);
+        hilog.info(0x0000, 'testTag', TAG + "ret1:" + JSON.stringify(ret1) + "ret2:" + JSON.stringify(ret2));
+        if (ret1 && ret2) {
+          let effect4: vibrator.VibratePreset = {
+            type: "preset",
+            effectId: EFFECT_IDFAIL,
+            count: 1,
+            intensity: 50,
           }
-        });
-        vibrator.startVibration(effect41, attr4, (error: BusinessError<void> | null): void => {
-          if (error != null) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
-            expect(false).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDWARNING error:' + JSON.stringify(error));
-          } else {
-            expect(error == null).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDWARNING success');
+          let effect41: vibrator.VibratePreset = {
+            type: "preset",
+            effectId: EFFECT_IDWARNING,
+            count: 1,
+            intensity: 50,
           }
-          setTimeout(() => {
-            done();
-          }, 500);
-        });
-      } else {
-        console.log(TAG + ' is not supported.');
-        done();
+          let attr4: vibrator.VibrateAttribute = {
+            usage: 'unknown',
+          }
+          vibrator.startVibration(effect4, attr4, (error: BusinessError<void> | null): void => {
+            if (error != null) {
+              hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
+              expect(false).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDFAIL error:' + JSON.stringify(error));
+            } else {
+              expect(error == null).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDFAIL success');
+            }
+          });
+          vibrator.startVibration(effect41, attr4, (error: BusinessError<void> | null): void => {
+            if (error != null) {
+              hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
+              expect(false).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDWARNING error:' + JSON.stringify(error));
+            } else {
+              expect(error == null).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDWARNING success');
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+        } else {
+          console.log(TAG + ' is not supported.');
+          done();
+        }
+      } catch (err) {
+        let error = err as BusinessError;
+        if (isAvailable) {
+          hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
+          expect(false).assertTrue();
+          done();
+        } else {
+          hilog.info(domain, tag, TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+          expect(error.code).assertEqual(14600101);
+          done();
+        }
       }
     })
 
@@ -681,50 +759,63 @@ export default function VibratorJsTest_misc_9() {
      */
     it("UniversalVibratorJsTest05", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       TAG = "UniversalVibratorJsTest05"
-      let ret2 = await vibrator.isSupportEffect(EFFECT_IDWARNING);
-      let ret = await vibrator.isSupportEffect(EFFECT_IDSUCCESS);
-      hilog.info(0x0000, 'testTag', TAG + "ret:" + JSON.stringify(ret) + "ret2:" + JSON.stringify(ret2));
-      if (ret && ret2) {
-        let effect5: vibrator.VibratePreset = {
-          type: "preset",
-          effectId: EFFECT_IDSUCCESS,
-          count: 1,
-          intensity: 50,
-        }
-        let effect51: vibrator.VibratePreset = {
-          type: "preset",
-          effectId: EFFECT_IDWARNING,
-          count: 1,
-          intensity: 50,
-        }
-        let attr5: vibrator.VibrateAttribute = {
-          usage: 'unknown',
-        }
-        vibrator.startVibration(effect5, attr5, (error: BusinessError<void> | null): void => {
-          if (error != null) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
-            expect(false).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDSUCCESS error:' + JSON.stringify(error));
-          } else {
-            expect(error == null).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDSUCCESS success');
+      try {
+        let ret2 = await vibrator.isSupportEffect(EFFECT_IDWARNING);
+        let ret = await vibrator.isSupportEffect(EFFECT_IDSUCCESS);
+        hilog.info(0x0000, 'testTag', TAG + "ret:" + JSON.stringify(ret) + "ret2:" + JSON.stringify(ret2));
+        if (ret && ret2) {
+          let effect5: vibrator.VibratePreset = {
+            type: "preset",
+            effectId: EFFECT_IDSUCCESS,
+            count: 1,
+            intensity: 50,
           }
-        });
-        vibrator.startVibration(effect51, attr5, (error: BusinessError<void> | null): void => {
-          if (error != null) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
-            expect(false).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDWARNING error:' + JSON.stringify(error));
-          } else {
-            expect(error == null).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDWARNING success');
+          let effect51: vibrator.VibratePreset = {
+            type: "preset",
+            effectId: EFFECT_IDWARNING,
+            count: 1,
+            intensity: 50,
           }
-          vibrator.stopVibration()
+          let attr5: vibrator.VibrateAttribute = {
+            usage: 'unknown',
+          }
+          vibrator.startVibration(effect5, attr5, (error: BusinessError<void> | null): void => {
+            if (error != null) {
+              hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
+              expect(false).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDSUCCESS error:' + JSON.stringify(error));
+            } else {
+              expect(error == null).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDSUCCESS success');
+            }
+          });
+          vibrator.startVibration(effect51, attr5, (error: BusinessError<void> | null): void => {
+            if (error != null) {
+              hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
+              expect(false).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDWARNING error:' + JSON.stringify(error));
+            } else {
+              expect(error == null).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDWARNING success');
+            }
+            vibrator.stopVibration()
+            done();
+          });
+        } else {
+          console.log(TAG + ' is not supported.');
           done();
-        });
-      } else {
-        console.log(TAG + ' is not supported.');
-        done();
+        }
+      } catch (err) {
+        let error = err as BusinessError;
+        if (isAvailable) {
+          hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
+          expect(false).assertTrue();
+          done();
+        } else {
+          hilog.info(domain, tag, TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+          expect(error.code).assertEqual(14600101);
+          done();
+        }
       }
     })
 
@@ -737,52 +828,65 @@ export default function VibratorJsTest_misc_9() {
      * @tc.level  LEVEL3
      */
     it("UniversalVibratorJsTest06", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
-      TAG = "UniversalVibratorJsTest06"
-      let ret2 = await vibrator.isSupportEffect(EFFECT_IDWARNING);
-      let ret1 = await vibrator.isSupportEffect(EFFECT_IDFAIL);
-      hilog.info(0x0000, 'testTag', TAG + "ret1:" + JSON.stringify(ret1) + "ret2:" + JSON.stringify(ret2));
-      if (ret1 && ret2) {
-        let effect6: vibrator.VibratePreset = {
-          type: "preset",
-          effectId: EFFECT_IDWARNING,
-          count: 1,
-          intensity: 50,
-        }
-        let effect61: vibrator.VibratePreset = {
-          type: "preset",
-          effectId: EFFECT_IDFAIL,
-          count: 1,
-          intensity: 50,
-        }
-        let attr6: vibrator.VibrateAttribute = {
-          usage: 'unknown',
-        }
-        vibrator.startVibration(effect6, attr6, (error: BusinessError<void> | null): void => {
-          if (error != null) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
-            expect(false).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDWARNING error:' + JSON.stringify(error));
-          } else {
-            expect(error == null).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDWARNING success');
+      TAG = "UniversalVibratorJsTest06";
+      try {
+        let ret2 = await vibrator.isSupportEffect(EFFECT_IDWARNING);
+        let ret1 = await vibrator.isSupportEffect(EFFECT_IDFAIL);
+        hilog.info(0x0000, 'testTag', TAG + "ret1:" + JSON.stringify(ret1) + "ret2:" + JSON.stringify(ret2));
+        if (ret1 && ret2) {
+          let effect6: vibrator.VibratePreset = {
+            type: "preset",
+            effectId: EFFECT_IDWARNING,
+            count: 1,
+            intensity: 50,
           }
-        });
-        vibrator.startVibration(effect61, attr6, (error: BusinessError<void> | null): void => {
-          if (error != null) {
-            hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
-            expect(false).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDFAIL error:' + JSON.stringify(error));
-          } else {
-            expect(error == null).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDFAIL success');
+          let effect61: vibrator.VibratePreset = {
+            type: "preset",
+            effectId: EFFECT_IDFAIL,
+            count: 1,
+            intensity: 50,
           }
-          setTimeout(() => {
-            done();
-          }, 500);
-        });
-      } else {
-        console.log(TAG + ' is not supported.');
-        done();
+          let attr6: vibrator.VibrateAttribute = {
+            usage: 'unknown',
+          }
+          vibrator.startVibration(effect6, attr6, (error: BusinessError<void> | null): void => {
+            if (error != null) {
+              hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
+              expect(false).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDWARNING error:' + JSON.stringify(error));
+            } else {
+              expect(error == null).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDWARNING success');
+            }
+          });
+          vibrator.startVibration(effect61, attr6, (error: BusinessError<void> | null): void => {
+            if (error != null) {
+              hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
+              expect(false).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDFAIL error:' + JSON.stringify(error));
+            } else {
+              expect(error == null).assertTrue();
+              hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDFAIL success');
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+        } else {
+          console.log(TAG + ' is not supported.');
+          done();
+        }
+      } catch (err) {
+        let error = err as BusinessError;
+        if (isAvailable) {
+          hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
+          expect(false).assertTrue();
+          done();
+        } else {
+          hilog.info(domain, tag, TAG + ` isAvailable is false error: ${JSON.stringify(error.code)}`);
+          expect(error.code).assertEqual(14600101);
+          done();
+        }
       }
     })
 
@@ -805,7 +909,7 @@ export default function VibratorJsTest_misc_9() {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         expect(false).assertTrue();
         done();
-      }  
+      }
     })
 
     /**
@@ -828,15 +932,23 @@ export default function VibratorJsTest_misc_9() {
       }
       try {
         vibrator.startVibration(effect1, attr, (error: BusinessError<void> | null): void => {
-          if (error != null) {
+          if (error != null && !isAvailable) {
+            hilog.info(0x0000, 'testTag', TAG + ` isAvailable is false error: error.code: ${error?.code},error.message: ${error?.message}`);
+            expect(error?.code).assertEqual(14600101);
+            done();
+          } else if (error && isAvailable) {
+            hilog.info(0x0000, 'testTag', TAG + ` startVibration error: error.code: ${error?.code},error.message: ${error?.message}`);
             expect(false).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDSUCCESS error:' + JSON.stringify(error));
+            done();
+          } else if (error == undefined && !isAvailable) {
+            hilog.info(0x0000, 'testTag', TAG + `isAvailable is false but startVibration success`);
+            expect(false).assertTrue();
+            done();
           } else {
-            expect(error == null).assertTrue();
-            hilog.info(0x0000, 'testTag', TAG + ' vibrator EFFECT_IDSUCCESS success');
+            hilog.info(0x0000, 'testTag', TAG + ' startVibration success');
+            vibrator.stopVibrationSync();
+            done();
           }
-          vibrator.stopVibrationSync();
-          done();
         });
       } catch (error: BusinessError) {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
@@ -905,19 +1017,19 @@ export default function VibratorJsTest_misc_9() {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         expect(false).assertTrue();
         done();
-      } 
+      }
     })
 
     /**
-     * @tc.name   UniversalVibratorJsTest12
-     * @tc.number UniversalVibratorJsTest12
+     * @tc.name   UniversalVibratorJsTest_12
+     * @tc.number UniversalVibratorJsTest_12
      * @tc.desc   test VibratorEvent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("UniversalVibratorJsTest12", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
-      TAG = "UniversalVibratorJsTest12"
+    it("UniversalVibratorJsTest_12", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+      TAG = "UniversalVibratorJsTest_12"
       try {
         let eventType = vibrator.VibratorEventType.CONTINUOUS;
         let points: Array<vibrator.VibratorCurvePoint> = [
@@ -953,19 +1065,19 @@ export default function VibratorJsTest_misc_9() {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         expect(false).assertTrue();
         done();
-      } 
+      }
     })
 
     /**
-     * @tc.name   UniversalVibratorJsTest13
-     * @tc.number UniversalVibratorJsTest13
+     * @tc.name   UniversalVibratorJsTest_13
+     * @tc.number UniversalVibratorJsTest_13
      * @tc.desc   test vibrateFromFile
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("UniversalVibratorJsTest13", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
-      TAG = "UniversalVibratorJsTest13"
+    it("UniversalVibratorJsTest_13", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+      TAG = "UniversalVibratorJsTest_13"
       try {
         let hapticFileDescriptor: vibrator.HapticFileDescriptor = {
           fd: 0,
@@ -987,7 +1099,7 @@ export default function VibratorJsTest_misc_9() {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         expect(false).assertTrue();
         done();
-      } 
+      }
     })
 
     /**
@@ -1018,15 +1130,818 @@ export default function VibratorJsTest_misc_9() {
     })
 
     /**
-     * @tc.name   UniversalVibratorJsTest15
-     * @tc.number UniversalVibratorJsTest15
+     * @tc.name   UniversalVibratorJsTest_01
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_01
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("UniversalVibratorJsTest_01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      TAG = "====>UniversalVibratorJsTest_01"
+      try {
+        let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
+        console.info(TAG + "ret:" + ret);
+        if(ret){
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDSUCCESS,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDSUCCESS  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' startVibration success' );
+              expect(error == undefined).assertTrue();
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+        } else{
+          console.log(TAG + ' is not supported.');
+          done();
+        }
+      } catch (error) {
+        if (isAvailable) {
+          console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+          expect(error.code).assertEqual(14600101);
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   UniversalVibratorJsTest_02
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0200
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("UniversalVibratorJsTest_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      TAG = "====>UniversalVibratorJsTest_02"
+      try {
+        let ret1 = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
+        console.info(TAG + "ret1:" + ret1);
+        if(ret1){
+          expect(ret1).assertTrue();
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDFAIL,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDFAIL  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDFAIL success');
+              expect(error == undefined).assertTrue();
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+        } else{
+          console.log(TAG + ' is not supported.');
+          expect(ret1 == false).assertTrue();
+          done();
+        }
+      } catch (error) {
+        if (isAvailable) {
+          console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+          expect(error.code).assertEqual(14600101);
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   UniversalVibratorJsTest_03
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0300
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("UniversalVibratorJsTest_03", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      TAG = "====>UniversalVibratorJsTest_03"
+      try {
+        let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
+        console.info(TAG + "ret2:" + ret2);
+        if(ret2){
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDWARNING,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDWARNING  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+              expect(error == undefined).assertTrue();
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+        } else{
+          console.log(TAG + ' is not supported.');
+          done();
+        }
+      } catch (error) {
+        if (isAvailable) {
+          console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+          expect(error.code).assertEqual(14600101);
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   UniversalVibratorJsTest_04
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0400
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("UniversalVibratorJsTest_04", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      TAG = "====>UniversalVibratorJsTest_04"
+      try {
+        let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
+        let ret1 = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
+        console.info(TAG + "ret1:" + ret1 + "ret2:" + ret2);
+        if(ret1 && ret2){
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDFAIL,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDFAIL  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDFAIL success');
+              expect(error == undefined).assertTrue();
+            }
+          });
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDWARNING,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDWARNING  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+              expect(error == undefined).assertTrue();
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+        } else{
+          console.log(TAG + ' is not supported.');
+          done();
+        }
+      } catch (error) {
+        if (isAvailable) {
+          console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+          expect(error.code).assertEqual(14600101);
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   UniversalVibratorJsTest_05
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0500
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("UniversalVibratorJsTest_05", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      TAG = "====>UniversalVibratorJsTest_05"
+      try {
+        let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
+        let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
+        console.info(TAG + "ret:" + ret + "ret2:" + ret2);
+        if(ret && ret2){
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDSUCCESS,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDSUCCESS  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDSUCCESS success');
+              expect(error == undefined).assertTrue();
+            }
+          });
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDWARNING,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDWARNING  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+              expect(error == undefined).assertTrue();
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+        } else{
+          console.log(TAG + ' is not supported.');
+          done();
+        }
+      } catch (error) {
+        if (isAvailable) {
+          console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+          expect(error.code).assertEqual(14600101);
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   UniversalVibratorJsTest_06
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0600
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("UniversalVibratorJsTest_06", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      TAG = "====>UniversalVibratorJsTest_06"
+      try {
+        let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
+        let ret1 = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
+        console.info(TAG + "ret1:" + ret1 + "ret2:" + ret2);
+        if(ret1 && ret2){
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDWARNING,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDWARNING  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+              expect(error == undefined).assertTrue();
+            }
+          });
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDFAIL,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDFAIL  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDFAIL success');
+              expect(error == undefined).assertTrue();
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+        } else{
+          console.log(TAG + ' is not supported.');
+          done();
+        }
+      } catch (error) {
+        if (isAvailable) {
+          console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+          expect(error.code).assertEqual(14600101);
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   UniversalVibratorJsTest_07
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0700
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("UniversalVibratorJsTest_07", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void) => {
+      TAG = "====>UniversalVibratorJsTest_07"
+      try {
+        let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
+        let ret1 = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
+        console.info(TAG + "ret:" + ret + "ret1:" + ret1);
+        if(ret && ret1){
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDSUCCESS,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDSUCCESS  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDSUCCESS success');
+              expect(error == undefined).assertTrue();
+            }
+          });
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDFAIL,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDFAIL  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDFAIL success');
+              expect(error == undefined).assertTrue();
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+        } else{
+          console.log(TAG + ' is not supported.');
+          done();
+        }
+      } catch (error) {
+        if (isAvailable) {
+          console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+          expect(error.code).assertEqual(14600101);
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   UniversalVibratorJsTest_08
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0800
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("UniversalVibratorJsTest_08", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      TAG = "====>UniversalVibratorJsTest_08"
+      try {
+        let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
+        let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
+        console.info(TAG + "ret:" + ret + "ret2:" + ret2);
+        if(ret && ret2){
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDWARNING,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDWARNING  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+              expect(error == undefined).assertTrue();
+            }
+          });
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDSUCCESS,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDSUCCESS  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDSUCCESS success');
+              expect(error == undefined).assertTrue();
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+        } else{
+          console.log(TAG + ' is not supported.');
+          done();
+        }
+      } catch (error) {
+        if (isAvailable) {
+          console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+          expect(error.code).assertEqual(14600101);
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   UniversalVibratorJsTest_09
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0900
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("UniversalVibratorJsTest_09", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      TAG = "====>UniversalVibratorJsTest_09"
+      try {
+        let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
+        let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
+        console.info(TAG + "ret:" + ret + "ret2:" + ret2);
+        if(ret && ret2){
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDSUCCESS,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDSUCCESS  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator success');
+              expect(error == undefined).assertTrue();
+            }
+          });
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDWARNING,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ' vibrator EFFECT_IDWARNING error:' + error);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+              expect(error == undefined).assertTrue();
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+        } else{
+          console.log(TAG + ' is not supported.');
+          done();
+        }
+      } catch (error) {
+        if (isAvailable) {
+          console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+          expect(error.code).assertEqual(14600101);
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   UniversalVibratorJsTest_10
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_1000
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("UniversalVibratorJsTest_10", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      TAG = "====>UniversalVibratorJsTest_10"
+      try {
+        let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
+        let ret1 = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
+        let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
+        console.info(TAG + "ret:" + ret + "ret1:" + ret1 + "ret2:" + ret2);
+        if(ret && ret1 && ret2){
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDWARNING,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDWARNING  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+              expect(error == undefined).assertTrue();
+            }
+          });
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDFAIL,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDFAIL  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDFAIL success');
+              expect(error == undefined).assertTrue();
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDSUCCESS,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDSUCCESS  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDSUCCESS success');
+              expect(error == undefined).assertTrue();
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+        } else{
+          console.log(TAG + ' is not supported.');
+          done();
+        }
+      } catch (error) {
+        if (isAvailable) {
+          console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+          expect(error.code).assertEqual(14600101);
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   UniversalVibratorJsTest11
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_1100
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("UniversalVibratorJsTest11", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      TAG = "====>UniversalVibratorJsTest11"
+      try {
+        let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
+        let ret1 = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
+        let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
+        console.info(TAG + "ret:" + ret + "ret1:" + ret1 + "ret2:" + ret2);
+        if(ret && ret1 && ret2){
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDWARNING,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDWARNING  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+              expect(error == undefined).assertTrue();
+            }
+          });
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDSUCCESS,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDSUCCESS  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDSUCCESS success');
+              expect(error == undefined).assertTrue();
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDFAIL,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDFAIL  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDFAIL success');
+              expect(error == undefined).assertTrue();
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+        } else{
+          console.log(TAG + ' is not supported.');
+          done();
+        }
+      } catch (error) {
+        if (isAvailable) {
+          console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+          expect(error.code).assertEqual(14600101);
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   UniversalVibratorJsTest12
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_1200
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("UniversalVibratorJsTest12", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      TAG = "====>UniversalVibratorJsTest12"
+      try {
+        let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
+        let ret1 = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
+        let ret2 = vibrator.isSupportEffectSync(EFFECT_IDWARNING);
+        console.info(TAG + "ret:" + ret + "ret1:" + ret1 + "ret2:" + ret2);
+        if(ret && ret1 && ret2){
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDSUCCESS,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDSUCCESS  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDSUCCESS success');
+              expect(error == undefined).assertTrue();
+            }
+          });
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDFAIL,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDFAIL  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDFAIL success');
+              expect(error == undefined).assertTrue();
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+          vibrator.startVibration({
+            type: "preset",
+            effectId: EFFECT_IDWARNING,
+            count: 1,
+            intensity: 50,
+          }, {
+            usage: "unknown"
+          }, (error) => {
+            if (error) {
+              console.info(TAG + ` vibrator EFFECT_IDFAIL  error ,error.code: ${error.code},error.message: ${error.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(TAG + ' vibrator EFFECT_IDWARNING success');
+              expect(error == undefined).assertTrue();
+            }
+            setTimeout(() => {
+              done();
+            }, 500);
+          });
+        } else{
+          console.log(TAG + ' is not supported.');
+          done();
+        }
+      } catch (error) {
+        if (isAvailable) {
+          console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(TAG + ` isAvailable1 is false rror.code: ${error.code},error.message: ${error.message}`);
+          expect(error.code).assertEqual(14600101);
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   UniversalVibratorJsTest13
+     * @tc.number UniversalVibratorJsTest13
      * @tc.desc   test addContinuousEvent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("UniversalVibratorJsTest15", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      TAG = "UniversalVibratorJsTest15";
+    it("UniversalVibratorJsTest13", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "UniversalVibratorJsTest13";
       hilog.info(domain, tag, TAG + "----------start----------");
       let builder = new vibrator.VibratorPatternBuilder();
       let pointsMe: vibrator.VibratorCurvePoint[] = [
@@ -1069,6 +1984,182 @@ export default function VibratorJsTest_misc_9() {
         done();
       }
       hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     * @tc.name   VibratorJsTest112
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1120
+     * @tc.desc   Test the on function for VIBRATOR_DEVICE_STATE_CHANGE with valid and invalid parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("VibratorJsTest112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "VibratorJsTest112"
+      console.info(TAG + ' isAvailable ' + isAvailable);
+      if (isAvailable) {
+        try {
+          const validCallback = (statusEvent: vibrator.VibratorStatusEvent) => {
+            console.info(TAG + " statusEvent.timestamp:" + statusEvent.timestamp);
+            console.info(TAG + " statusEvent.deviceId:" + statusEvent.deviceId);
+            console.info(TAG + " statusEvent.vibratorCount:" + statusEvent.vibratorCount);
+            console.info(TAG + " statusEvent.isVibratorOnline:" + statusEvent.isVibratorOnline);
+          };
+          vibrator.onVibratorStateChange(validCallback);
+          console.info(TAG + " on ");
+          setTimeout(() => {
+            vibrator.offVibratorStateChange(validCallback);
+          }, 500);
+          done();
+        } catch (error) {
+          console.info(TAG + " on error: " + JSON.stringify(error));
+          expect(false).assertEqual(true);
+          done();
+        }
+        console.info(TAG + " end");
+      } else {
+        console.log(TAG + ' is not supported on this device.');
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   VibratorJsTest115
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1150
+     * @tc.desc   Test the function of obtaining the effect information through the device ID and vibratorId.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("VibratorJsTest115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "VibratorJsTest115"
+      console.info(TAG + ' isAvailable ' + isAvailable);
+      if (isAvailable) {
+        try {
+          const effectId:string = "haptic.clock.timer";
+          const vibrators = vibrator.getVibratorInfoSync();
+          const vibratorInfoParam:vibrator.VibratorInfoParam = {
+            deviceId: vibrators[0].deviceId,
+            vibratorId: vibrators[0].vibratorId
+          };
+          const jsEffectInfo = vibrator.getEffectInfoSync(effectId, vibratorInfoParam);
+          console.info(TAG + " jsEffectInfo.isEffectSupported:" + jsEffectInfo.isEffectSupported);
+          if (!jsEffectInfo.isEffectSupported) {
+            console.info(TAG + 'is not supported on this device.');
+            done();
+            return;
+          }
+          expect(jsEffectInfo.isEffectSupported).assertTrue();
+          done();
+        } catch (error) {
+          console.info(TAG + " getEffectInfoSync error: " + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        console.info(TAG + " end");
+      } else {
+        console.log(TAG + ' is not supported on this device.');
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   VibratorJsTest116
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1160
+     * @tc.desc   Test the function of obtaining the effect information through the vibratorId.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("VibratorJsTest116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "VibratorJsTest116"
+      console.info(TAG + ' isAvailable ' + isAvailable);
+      if (isAvailable) {
+        try {
+          const effectId:string = "haptic.clock.timer";
+          const jsEffectInfo = vibrator.getEffectInfoSync(effectId);
+          console.info(TAG + " jsEffectInfo.isEffectSupported:" + jsEffectInfo.isEffectSupported);
+          if (!jsEffectInfo.isEffectSupported) {
+            console.info(TAG + 'is not supported on this device.');
+            done();
+            return;
+          }
+          expect(jsEffectInfo.isEffectSupported).assertTrue();
+          done();
+        } catch (error) {
+          console.info(TAG + " getEffectInfoSync error: " + JSON.stringify(error));
+          expect(false).assertEqual(true);
+          done();
+        }
+      } else {
+        console.log(TAG + ' is not supported on this device.');
+        done();
+      }
+    })
+    /**
+     * @tc.name   VibratorJsTest101
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1110
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("VibratorJsTest101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "VibratorJsTest101"
+      console.info(TAG + ' isAvailable ' + isAvailable);
+      try {
+        vibrator.stopVibrationSync();
+        console.info(TAG + " stopVibrationSync success");
+        done()
+      } catch (error) {
+        console.info(TAG + " stopVibrationSync error: " + JSON.stringify(error));
+        expect(false).assertTrue();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   IsSupportEffectSyncTest01
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("IsSupportEffectSyncTest01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "====>IsSupportEffectSyncTest01"
+      try {
+        let ret = vibrator.isSupportEffectSync(EFFECT_IDSUCCESS);
+        console.log(TAG + "ret:" + ret);
+        expect(typeof ret === 'boolean').assertTrue();
+        done();
+      } catch (error:Error) {
+        console.log(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   IsSupportEffectSyncTest02
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0100
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("IsSupportEffectSyncTest02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "====>IsSupportEffectSyncTest02"
+      try {
+        let ret = vibrator.isSupportEffectSync(EFFECT_IDFAIL);
+        console.log(TAG + "ret:" + ret);
+        expect(typeof ret === 'boolean').assertTrue();
+        done();
+      } catch (error:Error) {
+        console.log(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
     })
 
     /**
@@ -1312,11 +2403,11 @@ export default function VibratorJsTest_misc_9() {
             // 添加对deviceId的断言
             expect(vibrators[0].deviceId >= -1).assertEqual(true);
             hilog.info(domain, tag, TAG + " getVibratorInfoSync deviceId:" + vibrators[0].deviceId);
-            expect(typeof vibrators[0].deviceId === 'number').assertEqual(true);
+            expect(typeof vibrators[0].deviceId === 'int').assertEqual(true);
             // 添加对vibratorId的断言
             hilog.info(domain, tag, TAG + " getVibratorInfoSync vibratorId:" + vibrators[0].vibratorId);
             expect(vibrators[0].vibratorId >= 0).assertEqual(true);
-            expect(typeof vibrators[0].vibratorId === 'number').assertEqual(true);
+            expect(typeof vibrators[0].vibratorId === 'int').assertEqual(true);
             // 添加对deviceName的断言
             hilog.info(domain, tag, TAG + " getVibratorInfoSync deviceName:" + vibrators[0].deviceName);
             expect(typeof vibrators[0].deviceName === 'string').assertEqual(true);
@@ -1349,7 +2440,6 @@ export default function VibratorJsTest_misc_9() {
           hilog.info(domain, tag, TAG + " end");
         } else {
           hilog.info(domain, tag, TAG + ' is not supported on this device.');
-          expect(false).assertTrue();
           done();
         }
       })
@@ -1378,11 +2468,11 @@ export default function VibratorJsTest_misc_9() {
           // 添加对deviceId的断言
           expect(vibrators[0].deviceId >= -1).assertEqual(true);
           hilog.info(domain, tag, TAG + " getVibratorInfoSync deviceId:" + vibrators[0].deviceId);
-          expect(typeof vibrators[0].deviceId === 'number').assertEqual(true);
+          expect(typeof vibrators[0].deviceId === 'int').assertEqual(true);
           // 添加对vibratorId的断言
           hilog.info(domain, tag, TAG + " getVibratorInfoSync vibratorId:" + vibrators[0].vibratorId);
           expect(vibrators[0].vibratorId >= 0).assertEqual(true);
-          expect(typeof vibrators[0].vibratorId === 'number').assertEqual(true);
+          expect(typeof vibrators[0].vibratorId === 'int').assertEqual(true);
           // 添加对deviceName的断言
           hilog.info(domain, tag, TAG + " getVibratorInfoSync deviceName:" + vibrators[0].deviceName);
           expect(typeof vibrators[0].deviceName === 'string').assertEqual(true);
@@ -1415,7 +2505,6 @@ export default function VibratorJsTest_misc_9() {
         hilog.info(domain, tag, TAG + " end");
       } else {
         hilog.info(domain, tag, TAG + ' is not supported on this device.');
-        expect(false).assertTrue();
         done();
       }
     })
@@ -1431,32 +2520,25 @@ export default function VibratorJsTest_misc_9() {
     it("UniversalVibratorJsTest23", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "UniversalVibratorJsTest23"
       hilog.info(domain, tag, TAG + ' isAvailable ' + isAvailable);
-      let vibrators = vibrator.getVibratorInfoSync();
-      if (vibrators && vibrators.length > 0) {
-        try {
-          const effect: vibrator.VibrateEffect = {
-            type: "time",
-            duration: 1800001
-          };
-          const attribute: vibrator.VibrateAttribute = {
-            usage: "alarm"
-          };
-          await vibrator.startVibration(effect, attribute);
-          expect(false).assertTrue();
-          done();
-        } catch (error) {
-          error = error as BusinessError;
-          hilog.info(domain, tag, TAG + " startVibration error: " + JSON.stringify(error));
-          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
-          expect(error.message).assertEqual("start vibrator failed");
-          done();
-        }
-        hilog.info(domain, tag, TAG + " end");
-      } else {
-        hilog.info(domain, tag, TAG + ' is not supported on this device.');
+      try {
+        const effect: vibrator.VibrateEffect = {
+          type: "time",
+          duration: 1800001
+        };
+        const attribute: vibrator.VibrateAttribute = {
+          usage: "alarm"
+        };
+        await vibrator.startVibration(effect, attribute);
         expect(false).assertTrue();
         done();
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + " startVibration error: " + JSON.stringify(error));
+        hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+        expect(error.message).assertEqual("start vibrator failed");
+        done();
       }
+      hilog.info(domain, tag, TAG + " end");
     })
 
     /**
@@ -1469,23 +2551,17 @@ export default function VibratorJsTest_misc_9() {
      */
     it("UniversalVibratorJsTest24", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "UniversalVibratorJsTest24";
-      if (isAvailable) {
+      try {
         let builder = new vibrator.VibratorPatternBuilder();
-        try {
-          expect(builder !== null).assertEqual(true);
-          expect(builder !== undefined).assertEqual(true);
-          builder.addContinuousEvent(0, 272);
-          hilog.info(domain, tag, TAG + " addContinuousEvent success");
-          expect(builder !== null).assertEqual(true);
-          done();
-        } catch (error) {
-          error = error as BusinessError;
-          hilog.info(domain, tag, TAG + " addContinuousEvent error: " + JSON.stringify(error));
-          expect(false).assertTrue();
-          done();
-        }
-      } else {
-        hilog.info(domain, tag, TAG + ' is not supported on this device.');
+        expect(builder !== null).assertEqual(true);
+        expect(builder !== undefined).assertEqual(true);
+        builder.addContinuousEvent(0, 272);
+        hilog.info(domain, tag, TAG + " addContinuousEvent success");
+        expect(builder !== null).assertEqual(true);
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + " addContinuousEvent error: " + JSON.stringify(error));
         expect(false).assertTrue();
         done();
       }
@@ -1501,23 +2577,17 @@ export default function VibratorJsTest_misc_9() {
      */
     it("UniversalVibratorJsTest25", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "UniversalVibratorJsTest25";
-      if (isAvailable) {
+      try {
         let builder = new vibrator.VibratorPatternBuilder();
-        try {
-          expect(builder !== null).assertEqual(true);
-          expect(builder !== undefined).assertEqual(true);
-          builder.addTransientEvent(0);
-          hilog.info(domain, tag, TAG + " addTransientEvent success");
-          expect(builder !== null).assertEqual(true);
-          done();
-        } catch (error) {
-          error = error as BusinessError;
-          hilog.info(domain, tag, TAG + " addTransientEvent error: " + JSON.stringify(error));
-          expect(false).assertTrue();
-          done();
-        }
-      } else {
-        hilog.info(domain, tag, TAG + ' is not supported on this device.');
+        expect(builder !== null).assertEqual(true);
+        expect(builder !== undefined).assertEqual(true);
+        builder.addTransientEvent(0);
+        hilog.info(domain, tag, TAG + " addTransientEvent success");
+        expect(builder !== null).assertEqual(true);
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + " addTransientEvent error: " + JSON.stringify(error));
         expect(false).assertTrue();
         done();
       }

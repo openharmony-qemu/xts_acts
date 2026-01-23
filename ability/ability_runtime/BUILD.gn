@@ -72,6 +72,7 @@ group("ability_runtime") {
       "actsfaabilitydisplayorientationtest:ActsFAAbilityDisplayOrientationTest",
       "actsfwkdataaccessortest:dataability",
       "actsgetapplicationnewtest:ActsGetApplicationNewTest",
+      "actsgetwantagentwithuseridtest:ActsGetwantagentWithUseridTest",
       "actsintent:actsintent",
       "actsjsdataabilitytest:ActsJsDataAbilityTest",
       "actskioskmanagertest:ActsKioskManagerTest",
@@ -151,6 +152,7 @@ group("ability_runtime") {
       "want:want",
       "wantagent:wantagent",
       "workercontextcover:workercontextcover",
+      "actsGetAllWindowStagesTest:ActsGetAllWindowStagesTest",
     ]
   }
 }

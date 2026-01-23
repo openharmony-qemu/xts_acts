@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import events_emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -49,7 +50,7 @@ export default function textAreaBC1Jsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textAreaBC1Jsunit state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaBC1" == pages.name)) {
           console.info("get textAreaBC1Jsunit pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -149,7 +150,7 @@ it('textAreaBC1Jsunit_static_0300', Level.LEVEL3, async (done: ()=>void) => {
       "placeholderColor":  '#FFFFFFFF',
       'textColor': '#FF66DD00',
       'testFontSize':12 as int,
-    } as Record<String,undefined|null|Object>
+    } as Record<String,RecordData>
   }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,

@@ -28,7 +28,7 @@ struct onChangeTest {
 
   build() {
     Row({ space: 20 }) {
-      Picker({
+      UIPickerComponent({
         selectedIndex: this.selectedIndex,
       }) {
         ForEach(this.monthArray, (item: string) => {

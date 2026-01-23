@@ -570,15 +570,19 @@ export default function audioManagerApi9() {
             console.error(`audioManagerApi9Test: failed to getRingerMode : Callback:  ${err?.message}`);
             expect(false).assertTrue();
           } else {
-            if (data == audio.AudioRingMode.RINGER_MODE_SILENT ||
-              data == audio.AudioRingMode.RINGER_MODE_VIBRATE ||
-              data == audio.AudioRingMode.RINGER_MODE_NORMAL) {
-              console.info(`${TagFrmwk}: audioManagerApi9Test: Promise:
-                    getRingerMode : PASS:` + data);
-              expect(true).assertTrue();
+            if (data == audio.AudioRingMode.RINGER_MODE_SILENT){
+              console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + data);
+              expect(data).assertEqual(audio.AudioRingMode.RINGER_MODE_SILENT);
+            }
+            else if (data == audio.AudioRingMode.RINGER_MODE_VIBRATE){
+              console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + data);
+              expect(data).assertEqual(audio.AudioRingMode.RINGER_MODE_VIBRATE);
+            }
+            else if (data == audio.AudioRingMode.RINGER_MODE_NORMAL) {
+              console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + data);
+              expect(data).assertEqual(audio.AudioRingMode.RINGER_MODE_NORMAL);
             } else {
-              console.info(`${TagFrmwk}: audioManagerApi9Test: Promise:
-                    getRingerMode : FAIL: ` + data);
+              console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : FAIL: ` + data);
               expect(false).assertTrue();
             }
           }
@@ -595,7 +599,7 @@ export default function audioManagerApi9() {
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETRINGERMODE_STATIC_0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETRINGERMODE_STATIC_0200
-     * @tc.desc   setRingerMode - Set Ring more to Normal Mode
+     * @tc.desc   setRingerMode - Get Ring more to Normal Mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -605,13 +609,19 @@ export default function audioManagerApi9() {
         let audioVolumeManager = audioManager.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         let value = await groupManager.getRingerMode();
-        if (value == audio.AudioRingMode.RINGER_MODE_SILENT ||
-          value == audio.AudioRingMode.RINGER_MODE_VIBRATE ||
-          value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
-          console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
-          expect(true).assertTrue();
+        if (value == audio.AudioRingMode.RINGER_MODE_SILENT){
+          console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + value);
+          expect(value).assertEqual(audio.AudioRingMode.RINGER_MODE_SILENT);
+        }
+        else if (value == audio.AudioRingMode.RINGER_MODE_VIBRATE){
+          console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + value);
+          expect(value).assertEqual(audio.AudioRingMode.RINGER_MODE_VIBRATE);
+        }
+        else if (value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
+          console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + value);
+          expect(value).assertEqual(audio.AudioRingMode.RINGER_MODE_NORMAL);
         } else {
-          console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_NORMAL: FAIL :${value}`);
+          console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : FAIL: ` + value);
           expect(false).assertTrue();
         }
       } catch (err: BusinessError) {
@@ -633,8 +643,25 @@ export default function audioManagerApi9() {
       try {
         let audioVolumeManager = audioManager.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
-        groupManager.onRingerModeChange((AudioRingMode) => {
-        });
+        let ringerModeChangeCallback = (ringerMode: audio.AudioRingMode) => {
+          console.info(`Updated ringermode: ${ringerMode}`);
+          if (ringerMode == audio.AudioRingMode.RINGER_MODE_SILENT){
+          console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + ringerMode);
+          expect(ringerMode).assertEqual(audio.AudioRingMode.RINGER_MODE_SILENT);
+          }
+          else if (ringerMode == audio.AudioRingMode.RINGER_MODE_VIBRATE){
+            console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + ringerMode);
+            expect(ringerMode).assertEqual(audio.AudioRingMode.RINGER_MODE_VIBRATE);
+          }
+          else if (ringerMode == audio.AudioRingMode.RINGER_MODE_NORMAL) {
+            console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + ringerMode);
+            expect(ringerMode).assertEqual(audio.AudioRingMode.RINGER_MODE_NORMAL);
+          } else {
+            console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : FAIL: ` + ringerMode);
+            expect(false).assertTrue();
+          }
+        };
+        groupManager.onRingerModeChange(ringerModeChangeCallback);
         expect(true).assertTrue();
         done();
       } catch (err: BusinessError) {

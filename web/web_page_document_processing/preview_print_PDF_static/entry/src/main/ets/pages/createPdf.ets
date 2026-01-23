@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,8 +25,8 @@ import {
 import { State } from '@ohos.arkui.stateManagement'
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
-import { Callback } from '@ohos.base'
-import { BusinessError, RecordData } from '@ohos.arkui.component';
+import { Callback, RecordData } from '@ohos.base'
+import { BusinessError } from '@ohos.arkui.component';
 import webview from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';
 import { AppStorage } from '@ohos.arkui.stateManagement'
@@ -95,7 +95,7 @@ struct WebComponent {
                           Utils.emitEvent(true, 20241127);
                           console.info('suceess emit')
                         }
-                      }).catch((err: BusinessError): void => {
+                      }).catch((err: Error): void => {
                       console.error('createPDF write data to file failed with error message: ' + err.message +
                         ', error code: ' + err.code);
                     }).finally(() => {
@@ -124,7 +124,7 @@ struct WebComponent {
                       if(writeLen > 0) {
                         Utils.emitEvent(true, 20241128);
                       }
-                        }).catch((err: BusinessError): void => {
+                        }).catch((err: Error): void => {
                       console.error("createPDF write data to file failed with error message: " + err.message +
                         ", error code: " + err.code);
                     }).finally(() => {

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -53,10 +54,8 @@ export default function panelBackgroundMaskJsunit() {
         console.info("get panel state pages:" + JSON.stringify(pages));
         if (!("panel" == pages.name)) {
           console.info("get panel pages.name:" + JSON.stringify(pages.name));
-          //let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          //console.info("push panel page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push panel page error: " + err);
@@ -66,28 +65,6 @@ export default function panelBackgroundMaskJsunit() {
     afterEach(async () => {
       await Utils.sleep(1000);
       console.info("panelBackgroundMask after each called");
-    });
-
-
-    // 接口未交付 页面注释导致用例失败
-    /**
-     * @tc.number   testpanelBackgroundMask_static_0001
-     * @tc.name     testpanelBackgroundMask_static_0001
-     * @tc.desc     testpanelBackgroundMask_static_0001
-     * @tc.level    Level.LEVEL0
-     */
-it('testpanelBackgroundMask_static_0001', Level.LEVEL0, async (): Promise<void> => {
-      console.info('panelBackgroundMask testpanelBackgroundMask_static_0001 START');
-      await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('panel');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("get inspector value is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.log(JSON.stringify(JSON.parseJsonElement(strJson).getString("$type")))
-      expect(JSON.parseJsonElement(strJson).getString("$type")).assertEqual('Panel')
-      console.log('Panel‘s backgroundMask is ' +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundMask')))
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundMask')).assertEqual('#FF00FF00');
-
     });
 
 
@@ -106,10 +83,10 @@ it('testpanelOnHeightChange_static_0002', Level.LEVEL0, async (): Promise<void> 
       }
       let callback1 = (backData: emitter.EventData) => {
         console.info("testpanelOnHeightChange_static_0002 backData.data.result is: " +
-          ((backData.data) as Record<String, undefined|null|Object>)?.['result']);
+          ((backData.data) as Record<String,RecordData>)?.['result']);
         try {
           console.info("testpanelOnHeightChange_static_0002 callback1 success");
-          expect(((backData.data) as Record<String, undefined|null|Object>)?.['result']).assertEqual("success");
+          expect(((backData.data) as Record<String,RecordData>)?.['result']).assertEqual("success");
 
         } catch (err) {
           console.info("testpanelOnHeightChange_static_0002 on emitter err : " + JSON.stringify(err));

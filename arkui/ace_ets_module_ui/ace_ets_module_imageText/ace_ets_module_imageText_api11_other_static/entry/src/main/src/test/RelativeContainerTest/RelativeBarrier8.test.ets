@@ -92,8 +92,6 @@ export default function RelativeBarrier8() {
 
     
     
-
-
 /**
      * @tc.number   RelativeBarrier8_static_001
      * @tc.name     RelativeBarrier8_static_001
@@ -112,7 +110,7 @@ it('RelativeBarrier8_static_001', Level.LEVEL3, async (done: () => void): Promis
 
       console.info("[RelativeBarrier8_001] RelativeContainer is: " + JSON.stringify(rel) + 'row1:' +
       JSON.stringify(row1) + 'row2:' + JSON.stringify(row2) + 'row3:' + JSON.stringify(row3));
-      expect(Math.abs(Math.round(row3.left - rel.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(row3.left - rel.left) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       console.info('[RelativeBarrier8_001] END');
       done();

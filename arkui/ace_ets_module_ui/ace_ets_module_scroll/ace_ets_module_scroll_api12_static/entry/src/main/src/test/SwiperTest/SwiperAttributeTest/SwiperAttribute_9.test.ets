@@ -75,7 +75,6 @@ export default function SwiperAttribute_9() {
     
       
   
-
 /**
      * @tc.number   SwiperAttribute_static_0110
      * @tc.name     SwiperAttribute_static_0110

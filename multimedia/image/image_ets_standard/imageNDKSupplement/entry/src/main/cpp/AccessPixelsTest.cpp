@@ -274,39 +274,39 @@ Image_PositionArea* ImagePositionArea_Create(uint32_t regionX, uint32_t regionY,
     return area;
 }
 
-void ImagePositionArea_Destroy(Image_PositionArea* area)
-{
-    if (area == nullptr) {
-        return;
-    }
-    if (area->pixels != nullptr) {
-        free(area->pixels);
-        area->pixels = nullptr;
-    }
-    free(area);
-}
 OH_PixelmapNative* OH_PixelmapNative_CreateBGRA(uint32_t width, uint32_t height)
 {
     if (width == 0 || height == 0) {
-        std::cerr << "OH_PixelmapNative_CreateBGRA: width/height is zero" << std::endl;
+        LOGE("OH_PixelmapNative_CreateBGRA: width/height is zero (w=%u, h=%u)", width, height);
         return nullptr;
     }
-    uint8_t data[96];
-    size_t dataSize = 96;
-    for (int i = 0; i < dataSize; i++) {
-        data[i] = i + 1;
+    
+    size_t dataSize = width * height * 4;
+    uint8_t* data = static_cast<uint8_t*>(malloc(dataSize));
+    if (data == nullptr) {
+        LOGE("OH_PixelmapNative_CreateBGRA: malloc data failed (size=%zu)", dataSize);
+        return nullptr;
+    }
+    for (size_t i = 0; i < dataSize; i++) {
+        data[i] = static_cast<uint8_t>((i + 1) % 256);
     }
     
-    OH_Pixelmap_InitializationOptions *createOpts;
-    OH_PixelmapInitializationOptions_Create(&createOpts);
-
-    OH_PixelmapInitializationOptions_SetWidth(createOpts, OPTION_SET_WIDTH);
-    OH_PixelmapInitializationOptions_SetHeight(createOpts, OPTION_SET_HEIGHT);
+    OH_Pixelmap_InitializationOptions *createOpts = nullptr;
+    Image_ErrorCode err = OH_PixelmapInitializationOptions_Create(&createOpts);
+    if (err != IMAGE_SUCCESS || createOpts == nullptr) {
+        LOGE("OH_PixelmapInitializationOptions_Create failed (err=%d)", err);
+        free(data);
+        return nullptr;
+    }
+    
+    OH_PixelmapInitializationOptions_SetWidth(createOpts, width);
+    OH_PixelmapInitializationOptions_SetHeight(createOpts, height);
     OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_BGRA_8888);
     OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
     OH_PixelmapNative *pixelmap = nullptr;
-    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &pixelmap);
-    
+    err = OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &pixelmap);
+
+    LOGI("OH_PixelmapNative_CreateBGRA success (w=%u, h=%u)", width, height);
     return pixelmap;
 }
 Image_ErrorCode PixelmapNativeWritePixelsToArea()
@@ -314,27 +314,19 @@ Image_ErrorCode PixelmapNativeWritePixelsToArea()
     OH_PixelmapNative *pixelmap = OH_PixelmapNative_CreateBGRA(1080, 1920);
     Image_PositionArea *area = ImagePositionArea_Create(10, 10, 100, 200, 1080, 1920);
     Image_ErrorCode result = OH_PixelmapNative_WritePixelsToArea(pixelmap, area);
-    
-    ImagePositionArea_Destroy(area);
-    result = IMAGE_SUCCESS;
     return result;
-}
-int main()
-{
-    Image_ErrorCode result = PixelmapNativeWritePixelsToArea();
-    if (result == IMAGE_SUCCESS) {
-        std::cout << "OH_PixelmapNative_WritePixelsToArea: success (return IMAGE_SUCCESS)" << std::endl;
-    } else {
-        std::cerr << "OH_PixelmapNative_WritePixelsToArea: failed, error code: " << result << std::endl;
-    }
-    return 0;
 }
 
 napi_value PixelmapNativeWritePixelsToArea(napi_env env, napi_callback_info info)
 {
-    Image_ErrorCode result = PixelmapNativeWritePixelsToArea();
-    napi_value jsResult;
-    napi_get_boolean(env, (result == IMAGE_SUCCESS), &jsResult);
+    Image_ErrorCode result = ::PixelmapNativeWritePixelsToArea();
+    
+    napi_value jsResult = nullptr;
+    if (result == IMAGE_SUCCESS) {
+        napi_get_boolean(env, true, &jsResult);
+    } else {
+        napi_get_boolean(env, false, &jsResult);
+    }
 
     return jsResult;
 }

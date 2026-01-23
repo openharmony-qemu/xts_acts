@@ -34,7 +34,7 @@ import {
 import {
   State,
   AppStorage,
-  StorageProp
+  StoragePropRef
 } from '@ohos.arkui.stateManagement'
 import { State, AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'

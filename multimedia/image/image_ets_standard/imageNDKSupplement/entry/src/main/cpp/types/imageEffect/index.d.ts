@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 import { image } from '@kit.ImageKit';
+import { resourceManager } from '@kit.LocalizationKit';
+import { Callback } from '@kit.BasicServicesKit';
+
 interface PackingOption_format {
   format: string;
 }
@@ -107,8 +110,8 @@ export const OHPackingOptionsCreateSupp: (a: number) => number;
 export const OHPixelmapNativeGetMetadataSupp: (a: number) => number;
 export const OHPixelmapNativeSetMetadataSupp: (a: number) => number;
 export const OHConvertPixelmapNativeFromNapiSupp: (a: number) => number;
-export const OHPictureNativeGetMetadataSupp: (a: number) => number;
-export const OHPictureNativeSetMetadataSupp: (a: number) => number;
+export const OHPictureNativeGetMetadataSupp: (a: number,b: string) => number;
+export const OHPictureNativeSetMetadataSupp: (a: number,b:string) => number;
 export const OHAuxiliaryPictureNativeSetMetadataSupp: (a: number) => number;
 export const ImageReceiverNativeReadLatestImageTest:(a: number) => number;
 export const InitImageReceiverNativeTest:(a: number) => number;
@@ -146,8 +149,6 @@ export const PixelmapNativeWritePixelsToArea: (a: number) => number;
 export const OHImageEffectErrorCodeSupp: (a: number) => number;
 export const OHIRNdkErrorCodeTestSupp: (a: number) => number;
 export const MediaLibraryErrorCode: (a: number) => number;
-export const ImageProcessingErrorCode: (a: number) => number;
-export const ImageDetailEnhancerQualityLevel: (a: number) => number;
 export const OHPixelMapTranslateSupplementTest: (a: number) => number;
 export const OHPixelMapRotateSupplementTest: (a: number) => number;
 export const OHPixelmapNativeSetColorSpaceNativeSuppTest: (a: number) => number;
@@ -197,3 +198,30 @@ export const OH_PixelmapNative_GetImageInfoTest:(a: number) => number;
 export const OH_PixelmapNative_ConvertAlphaFormatTest:(a: number) => number;
 export const ImageSourceCreatSuccessTest:(a: number) => number;
 export const PixelmapNativeGetNativeBufferNotExist:(a: number) => number;
+export const ImageSourceCreate:(a: number, b:string) => number;
+export const ImageSourceNativeGetImagePropertyLong:(a: number,b: number,c:string) => number;
+export const ImageSourceNativeGetImagePropertyShort:(a: number,b: number,c:string) => number;
+export const ImageSourceNativeGetImagePropertyDouble:(a: number,b: number,c:string) => number;
+export const ImageSourceGetImagePropertyArraySize:(a: number,b: number,c:string) => number;
+export const OHImageSourceNativeModifyImagePropertyDoubleSupp:(a: number,b:number,c:string) => number;
+export const ImageModifyImagePropertyIntArraySupp:(a: number,b:number,c:string,d:number[]) => number;
+export const ImageModifyImagePropertyDoubleArraySupp:(a: number,b:number,c:string,d:number[]) => number;
+export const OHImageSourceNativeModifyImagePropertyBlobSupp:(a: number,b:number,c:string,d:ArrayBufferLike) => number;
+export const PixelmapNativeCropTest:(a: number) => number;
+export const ConvertAlphaFormatTest:(a: number) => number;
+export const DecodingOptionsReleaseTest:(a: number) => number;
+export const CreatePixelmapFromSurfaceWithTransformationTest:(a: number,b: string) => number;
+export const ImageModifyImagePropertyShortSupp:(a: number,b:number,c:string,d:number) => number;
+export const OHImageNativeGetColorSpaceSupp:(a: number,b:Callback<image.ImageReceiver>) => number;
+export const OHImageSourceNativeGetImagePropertyBlobSupp:(a: number,b:number,c:string,d:ArrayBufferLike) => number;
+export const OHImageSourceNativeGetImagePropertyStringSupp:(a: number,b:number,c:string,d:number) => number;
+
+export const SetDesiredPixelFormatTest:(a: number) => number;
+export const GetDesiredPixelFormatTest:(a: number) => number;
+export const ComposeOptionsReleaseTest:(a: number) => number;
+export const GetHdrComposedPixelmapWithOptionsTest:(a: number) => number;
+export const ComposeOptionsCreateTest:(a: number) => number;
+export const OHImageSourceNativeGetImagePropertyIntArraySupp:(a: number, b:number, c:string, d:number[]) => number;
+export const OHImageSourceNativeModifyImagePropertyLongSupp:(a: number, b:number,c:string, d:number) => number;
+export const ImageSourceNativeGetImagePropertyDoubleArraySupp:(a: number, b:number, c:string, d:number) => number;
+export const ImageErrCodeSupp:(a: number) => number;

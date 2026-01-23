@@ -66,7 +66,8 @@ export default function CalendarPickerDialog() {
     });
     
     
-    /**
+    
+/**
      * @tc.number   CalendarPickerDialog_static_001
      * @tc.name     CalendarPickerDialog_static_001
      * @tc.desc     CalendarPickerDialog_static_001

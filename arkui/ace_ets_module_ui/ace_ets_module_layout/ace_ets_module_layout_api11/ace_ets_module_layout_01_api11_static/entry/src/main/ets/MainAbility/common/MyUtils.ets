@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,6 +15,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 export default class Utils {
   static sleep(count:int) : Promise<int> {
@@ -28,7 +29,7 @@ export default class Utils {
     let eventData: events_emitter.EventData = {
       data: {
         "msg": message
-      } as Record<String,undefined|null|Object>
+      } as Record<String,RecordData>
     }
     let event: events_emitter.InnerEvent = {
       eventId: eventId,

@@ -33,7 +33,7 @@ static napi_value TestContainerPickerSelectedIndex001(napi_env env, napi_callbac
     ArkUI_AttributeItem selectedIndexItem = { selectedIndexValue,
         sizeof(selectedIndexValue) / sizeof(ArkUI_NumberValue) };
     auto ret = nodeAPI->setAttribute(containerPicker, NODE_PICKER_OPTION_SELECTED_INDEX, &selectedIndexItem);
-    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_OPTION_SELECTED_INDEX)
               ->value[PARAM_0].i32, selectedIndex);
     NAPI_END;
@@ -48,7 +48,7 @@ static napi_value TestContainerPickerSelectedIndex002(napi_env env, napi_callbac
     ArkUI_AttributeItem selectedIndexItem = { selectedIndexValue,
         sizeof(selectedIndexValue) / sizeof(ArkUI_NumberValue) };
     auto ret = nodeAPI->setAttribute(containerPicker, NODE_PICKER_OPTION_SELECTED_INDEX, &selectedIndexItem);
-    ASSERT_EQ(ret, INVALID_PARAM);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     if (nodeAPI->getAttribute(containerPicker, NODE_PICKER_OPTION_SELECTED_INDEX) != nullptr) {
         ASSERT_NE(nodeAPI->getAttribute(containerPicker, NODE_PICKER_OPTION_SELECTED_INDEX)
                   ->value[PARAM_0].i32, selectedIndex);
@@ -65,7 +65,7 @@ static napi_value TestContainerPickerSelectedIndex003(napi_env env, napi_callbac
     ArkUI_AttributeItem selectedIndexItem = { selectedIndexValue,
         sizeof(selectedIndexValue) / sizeof(ArkUI_NumberValue) };
     auto ret = nodeAPI->setAttribute(containerPicker, NODE_PICKER_OPTION_SELECTED_INDEX, &selectedIndexItem);
-    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_OPTION_SELECTED_INDEX)
               ->value[PARAM_0].i32, selectedIndex);
     NAPI_END;

@@ -142,7 +142,7 @@ export default class Utils {
 
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
-    if (!('MainAbility/pages/index/Index' == router.getState().name)) {//正确写法'Index' == router.getState().name
+    if (!('Index' == router.getState().name)) {//正确写法'Index' == router.getState().name
       router.back()
     }
     await Utils.sleep(1000);
@@ -175,7 +175,7 @@ export default class Utils {
 
 static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     let rect_value: RectValue = {
       left:Number(rectInfo[0][0] ?? 0),

@@ -29,6 +29,10 @@ import media from '@ohos.multimedia.media';
 
 let mImageGenerator: media.AVImageGenerator | undefined;
 
+let isSupportHdr: boolean;
+
+let isSupportedFetchFrameByTime: boolean = true;
+
 let sleep = async (delay: number): Promise<void> => {
   return new Promise((resolve, _) => {
     setTimeout(async () => {
@@ -43,11 +47,50 @@ export default function pixelMapSupportYuvFetchFrame() {
   describe('pixelMapSupportYuvFetchFrame', () => {
     beforeAll(async () => {
       testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
+      isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so').then((res: boolean) => {
+        if (res) {
+          console.info("file exists");
+          return true;
+        } else {
+          console.info("file not exists");
+          return false;
+        }
+      }).catch((err: BusinessError) => {
+        console.error("access failed with error message: " + err.message + ", error code: " + err.code);
+        return false;
+      })
+      await checkIsSupportedFetchFrameByTime();
     })
 
     afterEach(() => {
       hilog.info(0x0000, '10bitPixelMap', '%{public}s', 'after each case');
     })
+
+    const checkIsSupportedFetchFrameByTime  = async() => {
+      let TAG = 'check device:: '
+      console.info(TAG + ' begin.');
+      mImageGenerator = await media.createAVImageGenerator();
+      if (mImageGenerator == undefined) {
+          console.info(TAG + ' failed createAVImageGenerator');
+          expect().assertFail();
+      }
+      const resourceMgr: resourceManager.ResourceManager = testContext.createModuleContext("entry_test").resourceManager
+      mImageGenerator.fdSrc = await resourceMgr.getRawFd('test.mp4');
+      let timeUs: number = 0;
+      let options: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width: 1920,
+        height: 1440
+      }
+      mImageGenerator.fetchFrameByTime(timeUs, options, param, async (error: BusinessError) => {
+        if (error) {
+          console.info(TAG + ' Failed to fetch FrameByTime, code: ' + error.code + ', msg: ' + error.message);
+          expect(error.code == 5400106).assertTrue();
+          isSupportedFetchFrameByTime = false;
+        }
+      });
+      await mImageGenerator.release();
+    }
 
     class Logger {
       testNum: string;
@@ -134,9 +177,9 @@ export default function pixelMapSupportYuvFetchFrame() {
       }
       newImageInfo = pixelMap.getImageInfoSync()
       hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}: compareImageInfo${JSON.stringify(newImageInfo)}`)
-      const widthCheck = oldMapImageInfo.size.width * scaleX === newImageInfo.size.width
-      const heightCheck = oldMapImageInfo.size.height * scaleY === newImageInfo.size.height
-      expect(widthCheck && heightCheck)
+      const widthCheck = Math.round(oldMapImageInfo.size.width * scaleX) === newImageInfo.size.width
+      const heightCheck = Math.round(oldMapImageInfo.size.height * scaleY) === newImageInfo.size.height
+      expect(widthCheck && heightCheck).assertTrue();
       done()
     }
 
@@ -179,6 +222,11 @@ export default function pixelMapSupportYuvFetchFrame() {
      */
      it('SUB_MULTIMEDIA_IMAGE_SCALE_USE_FETCHFRAME_0100', Level.LEVEL0, async(done: Function) => {
         const testTag = 'SUB_MULTIMEDIA_IMAGE_SCALE_USE_FETCHFRAME_0100'
+        if (!isSupportedFetchFrameByTime) {
+          console.info(testTag + " The device does not support");
+          done();
+          return
+        }
         try{
           let timeUs: number = 0;
           let queryOption: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
@@ -205,6 +253,11 @@ export default function pixelMapSupportYuvFetchFrame() {
      */
      it('SUB_MULTIMEDIA_IMAGE_ROTATE_USE_FETCHFRAME_0100', Level.LEVEL0, async(done: Function) => {
         const testTag = 'SUB_MULTIMEDIA_IMAGE_ROTATE_USE_FETCHFRAME_0100'
+        if (!isSupportedFetchFrameByTime) {
+          console.info(testTag + " The device does not support");
+          done();
+          return
+        }
         try{
           let timeUs: number = 0;
           let queryOption: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
@@ -231,6 +284,11 @@ export default function pixelMapSupportYuvFetchFrame() {
      */
      it('SUB_MULTIMEDIA_IMAGE_FLIP_USE_FETCHFRAME_0100', Level.LEVEL0, async(done: Function) => {
         const testTag = 'SUB_MULTIMEDIA_IMAGE_FLIP_USE_FETCHFRAME_0100'
+        if (!isSupportedFetchFrameByTime) {
+          console.info(testTag + " The device does not support");
+          done();
+          return
+        }
         try{
           let timeUs: number = 0;
           let queryOption: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
@@ -239,7 +297,7 @@ export default function pixelMapSupportYuvFetchFrame() {
             height: 1440
           }
           let pixelMap_NV21 = await fetchFrameByTimeFromVideo(testTag, 'test.mp4', timeUs, queryOption, param);
-          const result = await testPixelMapFlip(testTag, pixelMap_NV21, 'promise', true, true, 1920, 1440)
+          const result = await testPixelMapFlip(testTag, pixelMap_NV21, 'promise', true, true, 1080, 1920)
           expect(result).assertTrue()
           done()
         }catch(error){
@@ -258,23 +316,35 @@ export default function pixelMapSupportYuvFetchFrame() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CONVERT_PIXEL_USE_FETCHFRAME_0100', Level.LEVEL0, async(done: Function) => {
-      const testTag = 'SUB_MULTIMEDIA_IMAGE_CONVERT_PIXEL_USE_FETCHFRAME_0100'
-      try{
-          let timeUs: number = 0;
-          let queryOption: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
-          let param: media.PixelMapParams = {
-          width: 1920,
-          height: 1440
-          }
-          let pixelMap = await fetchFrameByTimeFromVideo(testTag, 'test.mp4', timeUs, queryOption, param);
-          console.info(testTag,' pixelMap')
-          pixelMap.convertPixelFormat(image.PixelMapFormat.RGBA_1010102)
-          console.info(testTag, ' Success convertPixelFormat')
-          done()
-      }catch(error){
-          console.error(testTag, ' failed; error:', JSON.stringify(error), error.code);
-          expect().assertFail();
-          done();
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_CONVERT_PIXEL_USE_FETCHFRAME_0100';
+      if (!isSupportedFetchFrameByTime) {
+        console.info(testTag + " The device does not support");
+        done();
+        return
+      }
+      if (!isSupportHdr) {
+        hilog.info(0x0000, "imagesupportYUV", 'case: %{public}s msg:%{public}s', testTag, 'device is not support hdr');
+        done();
+      } else {
+        try{
+            let timeUs: number = 0;
+            let queryOption: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+            let param: media.PixelMapParams = {
+            width: 1920,
+            height: 1440
+            }
+            let pixelMap = await fetchFrameByTimeFromVideo(testTag, 'test.mp4', timeUs, queryOption, param);
+            console.info(testTag,' pixelMap')
+            pixelMap.convertPixelFormat(image.PixelMapFormat.RGBA_1010102)
+            let newImageInfo = await pixelMap.getImageInfo();
+            console.info(testTag, ' Success convertPixelFormat:' + newImageInfo.pixelFormat)
+            expect(newImageInfo.pixelFormat == image.PixelMapFormat.RGBA_1010102).assertTrue();
+            done()
+        }catch(error){
+            console.error(testTag, ' failed; error:', JSON.stringify(error), error.code);
+            expect().assertFail();
+            done();
+        }
       }
     })
     

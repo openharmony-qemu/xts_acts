@@ -23,6 +23,7 @@ import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement'
+import image from '@ohos.multimedia.image';
 
 let testAbilityContext: common.UIAbilityContext
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -85,7 +86,10 @@ export default function ActsNotificationRequestTest() {
         } else {
           console.info(`${TEST_CASE_NAME} null button`)
         }
-
+      const color: ArrayBuffer = new ArrayBuffer(212992); // 96为需要创建的像素buffer大小，取值为：height * width *4
+      let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 6656, width: 8 } }
+      image.createPixelMap(color, opts).then((pixelMap: image.PixelMap) => {
+        console.info(TEST_CASE_NAME+'Succeeded in creating pixelmap.');
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 1,
           content: {
@@ -95,16 +99,7 @@ export default function ActsNotificationRequestTest() {
               text: 'text_text',
             } as notificationManager.NotificationBasicContent
           } as notificationManager.NotificationContent,
-          creatorBundleName: "creatorBundleName",
-          creatorUid: 100,
-          creatorPid: 101,
-          creatorUserId: 100,
-          hashCode: "hashCode",
-          source: 0,
-          deviceId: undefined,
-          notificationFlags: undefined,
-          agentBundle: undefined,
-          appInstanceKey: undefined,
+          overlayIcon : pixelMap
         }
         hilog.info(0x000, `${TEST_CASE_NAME}`, `${TEST_CASE_NAME} test case start`);
         await Utils.msSleep(3000)
@@ -132,7 +127,10 @@ export default function ActsNotificationRequestTest() {
           hilog.info(0x000, `${TEST_CASE_NAME}`, `${TEST_CASE_NAME} test case end`);
           done();
         }
+      }).catch((error: Error):void => {
+        console.error(TEST_CASE_NAME+'Failed to create pixelmap.');
       })
+    })
 
   })
 }

@@ -70,6 +70,7 @@ export default function UIObserverObserver4Test() {
      * @tc.level    Level.LEVEL2
      */
 it('UIObserverObserver4Test_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+
       console.info('UIObserverObserver4Test_static_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -89,7 +90,7 @@ it('UIObserverObserver4Test_static_0100', Level.LEVEL2, async (done: () => void)
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      expect(AppStorage.get('UIObserverObserver4Page_callBackFuncOnCount')).assertEqual(2);
+      expect(AppStorage.get<int>('UIObserverObserver4Page_callBackFuncOnCount')).assertEqual(2);
       AppStorage.delete('UIObserverObserver4Page_callBackFuncOnCount')
 
       console.info('UIObserverObserver4Test_static_0100 END');

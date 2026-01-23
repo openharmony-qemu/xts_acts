@@ -77,8 +77,6 @@ export default function getPosition() {
 
     
     
-
-
 /**
      * @tc.number   getPosition_static_0100
      * @tc.name     getPosition_static_0100

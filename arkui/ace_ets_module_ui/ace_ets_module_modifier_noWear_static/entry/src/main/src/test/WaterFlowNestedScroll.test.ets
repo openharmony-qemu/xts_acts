@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,6 +45,7 @@ import accessibility from '@ohos.accessibility';
 import Utils from '../../ets/MainAbility/common/Utils'
 import events_emitter from '@ohos.events.emitter';
 import { UIContext } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 export default function waterFlowNestedScrollJsunit() {
   describe('waterFlow_NestedScrollTest', () => {
@@ -73,8 +74,7 @@ export default function waterFlowNestedScrollJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_waterFlowNestedScroll01_static
      * @tc.name     ArkUI_Stage_waterFlowNestedScroll01_static
      * @tc.desc     ArkUI_Stage_waterFlowNestedScroll01_static
@@ -88,13 +88,13 @@ it('ArkUI_Stage_waterFlowNestedScroll01_static', Level.LEVEL0, async (done: () =
       let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
       let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
       let driver = Driver.create();
-      await driver.swipe(Math.round(x).toInt(), Math.round(y + UIContext.getFocusedUIContext()!.vp2px(60)).toInt(), Math.round(x).toInt(), Math.round(y - UIContext.getFocusedUIContext()!.vp2px(60)).toInt());
+      await driver.swipe(Math.round(x).toInt(), Math.round(y + UIContext.resolveUIContext()!.vp2px(60)).toInt(), Math.round(x).toInt(), Math.round(y - UIContext.resolveUIContext()!.vp2px(60)).toInt());
       console.info('[ArkUI_Stage_waterFlowNestedScroll01] driver.swipe end');
       try {
         let callBack: (backData: events_emitter.EventData) => void = (backData: events_emitter.EventData) => {
           try {
             console.info(`ArkUI_Stage_waterFlowNestedScroll01 get result is:` + JSON.stringify(backData));
-            expect(((backData.data) as Record<String, undefined | null | Object>)?.['ACTION']).assertEqual(true)
+            expect(((backData.data) as Record<String,RecordData>)?.['ACTION']).assertEqual(true)
             console.info(`ArkUI_Stage_waterFlowNestedScroll01 END`);
           } catch (err) {
             console.info(`ArkUI_Stage_waterFlowNestedScroll01 err:` + JSON.stringify(err));

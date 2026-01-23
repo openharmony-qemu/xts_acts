@@ -59,7 +59,7 @@ export default function ModalBlurStyle() {
     beforeEach(async (): Promise<void> => {
       console.info("ModalBlurStyle beforeEach start");
       let options: router.RouterOptions = {
-        url:'MainAbility/pages/text/ModalBlurStyle',
+        url:'MainAbility/pages/menu/ModalBlurStyle',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -85,7 +85,7 @@ export default function ModalBlurStyle() {
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('blurStyle_init'));
-       button?.click();
+       await (button?.click() as Promise<void>);
       console.log('reset button click succ')
       await CommonFunc.sleep(1000);
     });
@@ -103,12 +103,11 @@ it('ModalBlurStyle_static_0100', Level.LEVEL0, async (done: () => void): Promise
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('blurStyle_1'));
-       button?.click();
+       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('blurStyle_1');
 
       console.info("[ModalBlurStyle_0100] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[ModalBlurStyle_0100] bindSheet: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('bindSheet')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('BlurStyle 1');
       console.info('[ModalBlurStyle_0100] END');
       done();
@@ -127,11 +126,10 @@ it('ModalBlurStyle_static_0200', Level.LEVEL0, async (done: () => void): Promise
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('blurStyle_2'));
-       button?.click();
+       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('blurStyle_2');
       console.info("[ModalBlurStyle_0200] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[ModalBlurStyle_0200] bindSheet: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('bindSheet')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('BlurStyle 2');
       console.info('[ModalBlurStyle_0200] END');
       done();
@@ -150,11 +148,10 @@ it('ModalBlurStyle_static_0300', Level.LEVEL0, async (done: () => void): Promise
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('blurStyle_3'));
-       button?.click();
+       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('blurStyle_3');
       console.info("[ModalBlurStyle_0300] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[ModalBlurStyle_0300] bindSheet: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('bindSheet')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('BlurStyle 3');
       console.info('[ModalBlurStyle_0300] END');
       done();
@@ -174,11 +171,10 @@ it('ModalBlurStyle_static_0400', Level.LEVEL0, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       let scrollBar: Component = (await driver.findComponent(ON.type('Scroll'))) as Component;
       let button = await scrollBar.scrollSearch(ON.id('blurStyle_4'));
-       button?.click();
+       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('blurStyle_4');
       console.info("[ModalBlurStyle_0400] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[ModalBlurStyle_0400] bindSheet: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('bindSheet')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('BlurStyle 4');
       console.info('[ModalBlurStyle_0400] END');
       done();
@@ -198,11 +194,10 @@ it('ModalBlurStyle_static_0500', Level.LEVEL0, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       let scrollBar: Component = (await driver.findComponent(ON.type('Scroll'))) as Component;
       let button = await scrollBar.scrollSearch(ON.id('blurStyle_5'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('blurStyle_5');
       console.info("[ModalBlurStyle_0500] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[ModalBlurStyle_0500] bindSheet: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('bindSheet')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('BlurStyle 5');
       console.info('[ModalBlurStyle_0500] END');
       done();

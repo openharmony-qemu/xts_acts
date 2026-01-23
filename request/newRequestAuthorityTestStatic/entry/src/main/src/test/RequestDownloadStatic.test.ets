@@ -258,7 +258,7 @@ export default function RequestDownloadStaticTest() {
             done();
           }
         }
-        task.on('completed', on_completedCallback);
+        task.onCompleted(on_completedCallback);
         await task.start();
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Completed_Static_0040 task.start");
       } catch (err) {
@@ -298,7 +298,7 @@ export default function RequestDownloadStaticTest() {
             done();
           }
         }
-        task.on('response', responseCallback_1);
+        task.onResponse(responseCallback_1);
         await task.start();
         hilog.info(domain, tag, "====>SUB_Request_Agent_onResponse_Static_0100 task.start");
       } catch (err) {
@@ -485,7 +485,7 @@ export default function RequestDownloadStaticTest() {
             done();
           }
         }
-        task.on('progress', on_progressCallback);
+        task.onProgress(on_progressCallback);
         await task.start();
         hilog.info(domain, tag, '====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 start success');
       } catch (err: BusinessError) {
@@ -529,8 +529,8 @@ export default function RequestDownloadStaticTest() {
             done();
           }
         }
-        task.on('progress', on_progressCallback);
-        task.on('progress', on_progressCallback1);
+        task.onProgress(on_progressCallback);
+        task.onProgress(on_progressCallback1);
         await task.start();
         hilog.info(domain, tag, '====>SUB_Misc_REQUEST_On_Download_Progress_Static_0030 start success');
       } catch (err: BusinessError) {
@@ -572,7 +572,7 @@ export default function RequestDownloadStaticTest() {
             done();
           }
         }
-        task.on('completed', on_completedCallback);
+        task.onCompleted(on_completedCallback);
         await task.start();
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 task.start");
       } catch (err: BusinessError) {
@@ -620,7 +620,7 @@ export default function RequestDownloadStaticTest() {
             }
           }
         }
-        task.on('completed', on_completedCallback);
+        task.onCompleted(on_completedCallback);
         await task.start();
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 task.start");
       } catch (err: BusinessError) {
@@ -667,7 +667,7 @@ export default function RequestDownloadStaticTest() {
             }
           }
         }
-        task.on('completed', on_completedCallback);
+        task.onCompleted(on_completedCallback);
         await task.start();
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0300 task.start");
       } catch (err: BusinessError) {

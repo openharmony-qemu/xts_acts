@@ -30,7 +30,7 @@ static napi_value TestContainerPickerSubComponent001(napi_env env, napi_callback
     auto containerPicker = nodeAPI->createNode(ARKUI_NODE_PICKER);
     auto text = nodeAPI->createNode(ARKUI_NODE_TEXT);
     auto ret = nodeAPI->addChild(containerPicker, text);
-    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
 static napi_value TestContainerPickerSubComponent002(napi_env env, napi_callback_info info)
@@ -40,7 +40,7 @@ static napi_value TestContainerPickerSubComponent002(napi_env env, napi_callback
     auto containerPicker = nodeAPI->createNode(ARKUI_NODE_PICKER);
     auto image = nodeAPI->createNode(ARKUI_NODE_IMAGE);
     auto ret = nodeAPI->addChild(containerPicker, image);
-    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
 static napi_value TestContainerPickerSubComponent003(napi_env env, napi_callback_info info)
@@ -54,7 +54,7 @@ static napi_value TestContainerPickerSubComponent003(napi_env env, napi_callback
     nodeAPI->addChild(row, text);
     nodeAPI->addChild(row, image);
     auto ret = nodeAPI->addChild(containerPicker, row);
-    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
 static napi_value TestContainerPickerSubComponent004(napi_env env, napi_callback_info info)
@@ -63,7 +63,19 @@ static napi_value TestContainerPickerSubComponent004(napi_env env, napi_callback
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
     auto containerPicker = nodeAPI->createNode(ARKUI_NODE_PICKER);
     auto ret = nodeAPI->addChild(containerPicker, nullptr);
-    ASSERT_EQ(ret, INVALID_PARAM);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
+}
+static napi_value TestContainerPickerSubComponent005(napi_env env, napi_callback_info info)
+{
+    napi_value retValue;
+    ArkUI_NativeNodeAPI_1* nodeAPI = nullptr;
+    // 获取ArkUI Native Node API接口
+    OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
+    // 创建指定类型的节点
+    auto g_handle = nodeAPI->createNode(ARKUI_NODE_PICKER);
+    int result = OH_ArkUI_NodeUtils_GetNodeType(g_handle);
+    napi_create_int32(env, result == ARKUI_NODE_PICKER ? 0 : 1, &retValue);
+    return retValue;
 }
 } // namespace ArkUICapiTest

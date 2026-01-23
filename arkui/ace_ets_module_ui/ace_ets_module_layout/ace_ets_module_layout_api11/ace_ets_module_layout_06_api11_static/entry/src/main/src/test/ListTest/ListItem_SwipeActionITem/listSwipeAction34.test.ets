@@ -103,9 +103,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0340', Level.LEVEL0,
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0340 value is" + left + " --" + right + "--" + top + "--" + bottom);
       
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(50))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(150))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(150))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
       await CommonFunc.sleep(4000);
@@ -115,9 +115,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0340', Level.LEVEL0,
       expect(JSON.parseJsonElement(textSwipeOffset).getElement('$attrs').getString('content')).assertEqual('160')
       
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(20))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(20))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
       await CommonFunc.sleep(6500);
@@ -128,9 +128,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0340', Level.LEVEL0,
 
       
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(150))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(150))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(100))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
       await CommonFunc.sleep(5000);
@@ -139,9 +139,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0340', Level.LEVEL0,
       expect(JSON.parseJsonElement(textSwipeOffset2).getElement('$attrs').getString('content')).assertEqual('-160')
       
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(20))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(20))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
       await CommonFunc.sleep(5000);
@@ -175,9 +175,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0350', Level.LEVEL0,
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0350 value is" + left + " --" + right + "--" + top + "--" + bottom);
       
       await driver35.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
       await CommonFunc.sleep(5000);
@@ -194,9 +194,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0350', Level.LEVEL0,
       await CommonFunc.sleep(3000);
       
       await driver35.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
       await CommonFunc.sleep(8000);

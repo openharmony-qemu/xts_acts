@@ -91,8 +91,10 @@ it('SUB_ACE_GridRowGutterOption_Default_static_0100', Level.LEVEL0, async (done:
       expect(Math.abs(firstGutterOption.top - GutterOption_1.top) <= 1).assertTrue();
       expect(Math.abs(firstGutterOption.left - GutterOption_1.left) <= 1).assertTrue();
 
-      expect(Math.abs(secondGutterOption.left - firstGutterOption.right - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
-      expect(Math.abs(thirdGutterOption.top - firstGutterOption.bottom - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(secondGutterOption.left - firstGutterOption.right - UIContext.resolveUIContext()!.vp2px(0)) <=
+        1).assertTrue();
+      expect(Math.abs(thirdGutterOption.top - firstGutterOption.bottom - UIContext.resolveUIContext()!.vp2px(0)) <=
+        1).assertTrue();
 
 
       console.info('SUB_ACE_GridRowGutterOption_Default_static_0100 END');
@@ -112,7 +114,7 @@ it('SUB_ACE_GridRowGutterOption_Default_static_0100', Level.LEVEL0, async (done:
 it('SUB_ACE_GridRowGutterOption_Default_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowGutterOption_Default_static_0200 START');
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'optionX', value: 10
+        name: 'optionX', value: 10.0
       })
       await CommonFunc.sleep(2000)
 
@@ -126,8 +128,10 @@ it('SUB_ACE_GridRowGutterOption_Default_static_0200', Level.LEVEL0, async (done:
       expect(Math.abs(firstGutterOption.top - GutterOption_1.top) <= 1).assertTrue();
       expect(Math.abs(firstGutterOption.left - GutterOption_1.left) <= 1).assertTrue();
 
-      expect(Math.abs(secondGutterOption.left - firstGutterOption.right - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(thirdGutterOption.top - firstGutterOption.bottom - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(secondGutterOption.left - firstGutterOption.right - UIContext.resolveUIContext()!.vp2px(10)) <=
+        1).assertTrue();
+      expect(Math.abs(thirdGutterOption.top - firstGutterOption.bottom - UIContext.resolveUIContext()!.vp2px(0)) <=
+        1).assertTrue();
 
 
       console.info('SUB_ACE_GridRowGutterOption_Default_static_0200 END');
@@ -147,10 +151,10 @@ it('SUB_ACE_GridRowGutterOption_Default_static_0200', Level.LEVEL0, async (done:
 it('SUB_ACE_GridRowGutterOption_Default_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowGutterOption_Default_static_0300 START');
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'optionX', value: 0
+        name: 'optionX', value: 0.0
       })
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'optionY', value: 10
+        name: 'optionY', value: 10.0
       })
       await CommonFunc.sleep(2000)
 
@@ -164,8 +168,10 @@ it('SUB_ACE_GridRowGutterOption_Default_static_0300', Level.LEVEL0, async (done:
       expect(Math.abs(firstGutterOption.top - GutterOption_1.top) <= 1).assertTrue();
       expect(Math.abs(firstGutterOption.left - GutterOption_1.left) <= 1).assertTrue();
 
-      expect(Math.abs(Math.abs(secondGutterOption.left - firstGutterOption.right) - Math.abs(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1).assertTrue();
-      expect(Math.abs(Math.abs(thirdGutterOption.top - firstGutterOption.bottom) - Math.abs(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.abs(secondGutterOption.left - firstGutterOption.right) -
+      Math.abs(UIContext.resolveUIContext()!.vp2px(0))) <= 1).assertTrue();
+      expect(Math.abs(Math.abs(thirdGutterOption.top - firstGutterOption.bottom) -
+      Math.abs(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
 
       console.info('SUB_ACE_GridRowGutterOption_Default_static_0300 END');

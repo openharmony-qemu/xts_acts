@@ -376,7 +376,178 @@ export default function ReminderAgentManagerErrorCodeTest() {
                 expect(error.code == 1700007).assertTrue();
                 done();
             }
-        })     
+        })
+
+        /**
+         * @tc.name   reminderErrorCode_1000
+         * @tc.number reminderErrorCode_1000
+         * @tc.desc   test cancelReminderOnDisplay promise function with reminderId is -1 and errCode is 1700007
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("reminderErrorCode_1000", Level.LEVEL3, async function (done) {
+            console.info('----------------------reminderErrorCode_1000---------------------------');
+            reminderAgent.cancelAllReminders().then((err, data) => {
+                console.info('reminderErrorCode_1000 cancelAllReminders success');
+
+                const reminderId = -1;
+                try {
+                    reminderAgent.cancelReminderOnDisplay(reminderId).then(() => {
+                        console.log("reminderErrorCode_1000 update reminder succeed");
+                    }).catch((err) => {
+                        console.error("reminderErrorCode_1000 promise err code:" + err.code + " message:" + err.message);
+                    });
+                } catch (error) {
+                    console.log("reminderErrorCode_1000 cancelReminderOnDisplay error.code:" + error.code);
+                    expect(error.code == 1700007).assertTrue();
+                    done();
+                }
+            });
+        })
+        
+        /**
+         * @tc.name   reminderErrorCode_1100
+         * @tc.number reminderErrorCode_1100
+         * @tc.desc   test cancelReminderOnDisplay promise function with reminderId is 1221 and errCode is 1700003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("reminderErrorCode_1100", Level.LEVEL3, async function (done) {
+            console.info('----------------------reminderErrorCode_1100---------------------------');
+            reminderAgent.cancelAllReminders().then((err, data) => {
+                console.info('reminderErrorCode_1100 cancelAllReminders success');
+
+                const reminderId = 1221;
+                try {
+                    reminderAgent.cancelReminderOnDisplay(reminderId).then(() => {
+                        console.log("reminderErrorCode_1100 update reminder succeed");
+                    }).catch((err) => {
+                        console.error("reminderErrorCode_1100 cancelReminderOnDisplay promise err code:" + err.code + " message:" + err.message);
+                        expect(err.code == 1700003).assertTrue();
+                        done();
+                    });
+                } catch (error) {
+                    console.error("reminderErrorCode_1100 promise err code:" + error.code + " message:" + error.message);
+                }
+            });
+        })
+
+        /**
+         * @tc.name   reminderErrorCode_1200
+         * @tc.number reminderErrorCode_1200
+         * @tc.desc   test api23 subscribeReminderState promise function with input is empty and errCode is 1700007
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("reminderErrorCode_1200", Level.LEVEL3, async function (done) {
+            console.info('----------------------reminderErrorCode_1200---------------------------');
+
+            try {
+                await reminderAgent.subscribeReminderState();
+                console.info('reminderErrorCode_1200 subscribe succeed');
+            } catch (error) {
+                console.error("reminderErrorCode_1200 subscribeReminderState promise err code:" + error.code + " message:" + error.message);
+                expect(error.code == 1700007).assertTrue();
+                done();
+            }
+
+            console.info('----------------------reminderErrorCode_1200 after---------------------------');
+        })
+
+        /**
+         * @tc.name   reminderErrorCode_1300
+         * @tc.number reminderErrorCode_1300
+         * @tc.desc   test api23 subscribeReminderState promise function with input is null and errCode is 1700007
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("reminderErrorCode_1300", Level.LEVEL3, async function (done) {
+            console.info('----------------------reminderErrorCode_1300 before---------------------------');
+
+            try {
+                await reminderAgent.subscribeReminderState(null);
+                console.info('reminderErrorCode_1300 subscribe succeed');
+            } catch (error) {
+                console.error("reminderErrorCode_1300 subscribeReminderState promise err code:" + error.code + " message:" + error.message);
+                expect(error.code == 1700007).assertTrue();
+                done();
+            }
+
+            console.info('----------------------reminderErrorCode_1300 after---------------------------');
+        })
+
+        /**
+         * @tc.name   reminderErrorCode_1400
+         * @tc.number reminderErrorCode_1400
+         * @tc.desc   test api23 subscribeReminderState promise function with input is undefined and errCode is 1700007
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("reminderErrorCode_1400", Level.LEVEL3, async function (done) {
+            console.info('----------------------reminderErrorCode_1400 before---------------------------');
+
+            try {
+                await reminderAgent.subscribeReminderState(undefined);
+                console.info('reminderErrorCode_1400 subscribe succeed');
+            } catch (error) {
+                console.error("reminderErrorCode_1400 subscribeReminderState promise err code:" + error.code + " message:" + error.message);
+                expect(error.code == 1700007).assertTrue();
+                done();
+            }
+
+            console.info('----------------------reminderErrorCode_1400 after---------------------------');
+        })
+
+        /**
+         * @tc.name   reminderErrorCode_1500
+         * @tc.number reminderErrorCode_1500
+         * @tc.desc   test api23 unsubscribeReminderState promise function with input is null and errCode is 1700007
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("reminderErrorCode_1500", Level.LEVEL3, async function (done) {
+            console.info('----------------------reminderErrorCode_1500 before---------------------------');
+
+            try {
+                await reminderAgent.unsubscribeReminderState(null);
+                console.info('reminderErrorCode_1500 unsubscribeReminderState succeed');
+            } catch (error) {
+                console.error("reminderErrorCode_1500 unsubscribeReminderState promise err code:" + error.code + " message:" + error.message);
+                expect(error.code == 1700007).assertTrue();
+                done();
+            }
+
+            console.info('----------------------reminderErrorCode_1500 after---------------------------');
+        })
+
+        /**
+         * @tc.name   reminderErrorCode_1600
+         * @tc.number reminderErrorCode_1600
+         * @tc.desc   test api23 unsubscribeReminderState promise function with input is undefined and errCode is 1700007
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("reminderErrorCode_1600", Level.LEVEL3, async function (done) {
+            console.info('----------------------reminderErrorCode_1600 before---------------------------');
+
+            try {
+                await reminderAgent.unsubscribeReminderState(undefined);
+                console.info('reminderErrorCode_1600 unsubscribeReminderState succeed');
+            } catch (error) {
+                console.error("reminderErrorCode_1600 unsubscribeReminderState promise err code:" + error.code + " message:" + error.message);
+                expect(error.code == 1700007).assertTrue();
+                done();
+            }
+
+            console.info('----------------------reminderErrorCode_1600 after---------------------------');
+        })
 
     })
 }

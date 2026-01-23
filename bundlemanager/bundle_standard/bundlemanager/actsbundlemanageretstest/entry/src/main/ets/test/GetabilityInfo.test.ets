@@ -25,7 +25,7 @@ const BUNDLE_NAME4 = 'com.example.third1';
 const ABILITY_NAME1 = 'com.open.harmony.packagemag.MainAbility';
 const ABILITY_NAME_OTHER = 'com.ohos.acecollaboration.MainAbility';
 const ABILITY_NAME2 = 'com.harmony.packagemag1.MainAbility';
-const ABILITY_NAME3 = 'com.example.third1.MainAbility';
+const ABILITY_NAME3 = 'com.example.third1.entry.MainAbility';
 
 export default function GetabilityInfo() {
 
@@ -292,7 +292,7 @@ export default function GetabilityInfo() {
 
         async function checkAbilityInfo_other(data) {
             expect(data.bundleName).assertEqual("com.example.third1");
-            expect(data.name).assertEqual("com.example.third1.MainAbility");
+            expect(data.name).assertEqual("com.example.third1.entry.MainAbility");
             expect(data.label).assertEqual("$string:app_name");
             expect(data.description).assertEqual("$string:mainability_description");
             expect(data.icon).assertEqual("$media:icon");

@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -156,7 +156,7 @@ class MyNodeControllerGet extends NodeController {
   }
 
   getUserConfigBorderWidth(){
-    let userConfigBorderWidth = this.frameNode?.getUserConfigBorderWidth();
+    let userConfigBorderWidth = this.frameNode?.getUserConfigBorderWidth();//SDK12.11 获取的值和预期不符期望20 实际是0
     console.log(TEST_TAG + JSON.stringify(userConfigBorderWidth));
     return "" + JSON.stringify(userConfigBorderWidth)
   }
@@ -298,7 +298,7 @@ struct GetAttrsFrameNode {
         .width(300)
         .onClick((e:ClickEvent)=>{
           if(this.uiContext && this.node){
-            this.getData = "" + JSON.stringify(this.node?.getUserConfigBorderWidth())
+            this.getData = "" + JSON.stringify(this.node?.getUserConfigBorderWidth()) //取值不对
           }
         })
       Button("getUserConfigPadding").id("getUserConfigPadding").height('5%')

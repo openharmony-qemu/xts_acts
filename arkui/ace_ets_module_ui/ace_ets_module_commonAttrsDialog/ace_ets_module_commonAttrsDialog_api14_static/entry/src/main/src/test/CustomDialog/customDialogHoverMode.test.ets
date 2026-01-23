@@ -96,17 +96,17 @@ it('customDialogHoverMode_static_0100', Level.LEVEL0, async (done: () => void): 
         let height = await (col?.getBoundsCenter() as Promise<Point>)
         console.info('col is' + height.y)
         let btn1 = await driver.findComponent(ON.id('btn1'));
-        btn1?.click()
+        await (btn1?.click() as Promise<void>)
         await CommonFunc.sleep(1000);
         let btn2 = await driver.findComponent(ON.id('customDialog'));
-        btn2?.click()
+        await (btn2?.click() as Promise<void>)
         await CommonFunc.sleep(1000);
         let btn4 = await driver.findComponent(ON.id('confirm'))
         let rect = await (btn4?.getBounds() as Promise<Rect>)
         console.info(`rect is: ` + JSON.stringify(rect))
         expect(rect.top - height.y < 0).assertTrue();
         await CommonFunc.sleep(1000);
-        btn4?.click()
+        await (btn4?.click() as Promise<void>)
         await CommonFunc.sleep(1000);
       }
       console.info('[customDialogHoverMode_0100] END');
@@ -130,20 +130,20 @@ it('customDialogHoverMode_static_0200', Level.LEVEL0, async (done: () => void): 
         let height = await (col?.getBoundsCenter() as Promise<Point>)
         console.info('col is' + height.y)
         let btn1 = await driver.findComponent(ON.id('btn1'));
-        btn1?.click()
+        await (btn1?.click() as Promise<void>)
         await CommonFunc.sleep(1000);
         let btn2 = await driver.findComponent(ON.id('btn2'));
-        btn2?.click()
+        await (btn2?.click() as Promise<void>)
         await CommonFunc.sleep(1000);
         let btn3 = await driver.findComponent(ON.id('customDialog'))
-        btn3?.click()
+        await (btn3?.click() as Promise<void>)
         await CommonFunc.sleep(1000);
         let btn4 = await driver.findComponent(ON.id('confirm'))
         let rect = await (btn4?.getBounds() as Promise<Rect>)
         console.info(`rect is: ` + JSON.stringify(rect))
         expect(rect.top - height.y > 0).assertTrue();
         await CommonFunc.sleep(1000);
-        btn4?.click()
+        await (btn4?.click() as Promise<void>)
         await CommonFunc.sleep(1000);
       }
       console.info('[customDialogHoverMode_0200] END');

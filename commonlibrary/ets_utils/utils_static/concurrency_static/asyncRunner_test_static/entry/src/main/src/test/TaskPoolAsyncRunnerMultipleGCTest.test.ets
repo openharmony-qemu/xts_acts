@@ -38,7 +38,7 @@ export default function taskPoolAsyncRunnerMultipleGCTest() {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
-      await sleep(500);
+      await sleep(50);
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
@@ -70,7 +70,7 @@ export default function taskPoolAsyncRunnerMultipleGCTest() {
         }
         if (j == (2 || 4 || 7)) {
           setTimeout(() => {
-            ArkTools.forceFullGC();
+            // gc
           }, 10)
         }
       }

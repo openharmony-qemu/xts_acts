@@ -25,7 +25,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 let domain: int = 0x0000;
@@ -79,7 +79,7 @@ export default function heightTest() {
     },
     expectValue: {
       heightCompare: '550.00vp',
-      height: UIContext.getFocusedUIContext()!.vp2px(550), ExceedParent: true
+      height: UIContext.resolveUIContext()!.vp2px(550), ExceedParent: true
     }
   },
     {
@@ -89,7 +89,7 @@ export default function heightTest() {
       },
       expectValue: {
         heightCompare: '50.00%',
-        height: UIContext.getFocusedUIContext()!.vp2px(parentHeight) * 0.5
+        height: UIContext.resolveUIContext()!.vp2px(parentHeight) * 0.5
       }
     }, {
       describe: 'Resource',
@@ -98,7 +98,7 @@ export default function heightTest() {
       },
       expectValue: {
         heightCompare: '200.00vp',
-        height: UIContext.getFocusedUIContext()!.vp2px(200)
+        height: UIContext.resolveUIContext()!.vp2px(200)
       }
     }, {
       describe: 'StringPx',

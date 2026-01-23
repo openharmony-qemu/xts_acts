@@ -30,7 +30,6 @@ import TextStyleSuperscriptTest from './StyledStringTest/TextStyleSuperscript.te
 import ImageOnErrorTest from './ImageErrorTest/ImageOnError.test';
 
 export default function testsuite() {
-  // 基础框架 attributeModifier 失败80个用例
   ResourceModifierTest();
   TextLineSpacingTest();
   TextShaderStyleTest();

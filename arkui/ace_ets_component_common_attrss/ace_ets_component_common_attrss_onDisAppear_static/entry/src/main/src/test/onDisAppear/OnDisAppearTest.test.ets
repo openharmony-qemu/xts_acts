@@ -83,8 +83,7 @@ export default function onDisAppearTest() {
    'Rect',
    'Shape',
     'Counter',
-  'Navigator',  // 引入失敗  推荐使用 Navigation  ——————已有Navigation，删除处理
-  'Gauge', // died
+    'Gauge',
   )
 
   //Custom params.

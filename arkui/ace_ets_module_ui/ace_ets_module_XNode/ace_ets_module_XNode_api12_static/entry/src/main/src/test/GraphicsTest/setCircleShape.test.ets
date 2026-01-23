@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,13 +58,14 @@ export default function setCircleShapeTest() {
 
 
 
-/**
+    /**
      * @tc.number   setCircleShapeTest_static_0010
      * @tc.name     setCircleShapeTest_static_0010
      * @tc.desc     setCircleShapeTest_static_0010
      * @tc.level    Level.LEVEL0
      */
 it('setCircleShapeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('setCircleShapeTest_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);

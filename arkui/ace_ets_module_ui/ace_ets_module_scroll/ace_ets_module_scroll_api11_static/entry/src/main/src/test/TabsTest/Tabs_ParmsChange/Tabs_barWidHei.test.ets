@@ -85,8 +85,7 @@ export default function Tabs_barWidHei() {
     });
 
     
-    
-/**
+    /**
      * @tc.number   testTabsBarWidToNegative_static_01
      * @tc.name     testTabsBarWidToNegative_static_01
      * @tc.desc     testTabsBarWidToNegative_static_01
@@ -205,8 +204,7 @@ it('testTabsBarWidToNegative_static_01', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabsBarWidExceedTabsWid_static_02
      * @tc.name     testTabsBarWidExceedTabsWid_static_02
      * @tc.desc     testTabsBarWidExceedTabsWid_static_02
@@ -334,8 +332,7 @@ it('testTabsBarWidExceedTabsWid_static_02', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabsBarWidWithinTabsWid_static_03
      * @tc.name     testTabsBarWidWithinTabsWid_static_03
      * @tc.desc     testTabsBarWidWithinTabsWid_static_03
@@ -461,8 +458,7 @@ it('testTabsBarWidWithinTabsWid_static_03', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabsBarHeiExceedTabsHei_static_04
      * @tc.name     testTabsBarHeiExceedTabsHei_static_04
      * @tc.desc     testTabsBarHeiExceedTabsHei_static_04
@@ -591,8 +587,7 @@ it('testTabsBarHeiExceedTabsHei_static_04', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabsBarHeiWithinTabsHei_static_05
      * @tc.name     testTabsBarHeiWithinTabsHei_static_05
      * @tc.desc     testTabsBarHeiWithinTabsHei_static_05
@@ -717,8 +712,7 @@ it('testTabsBarHeiWithinTabsHei_static_05', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabsBarHeiToNegative_static_06
      * @tc.name     testTabsBarHeiToNegative_static_06
      * @tc.desc     testTabsBarHeiToNegative_static_06

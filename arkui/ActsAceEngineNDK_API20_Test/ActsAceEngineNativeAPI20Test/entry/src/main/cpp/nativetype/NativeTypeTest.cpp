@@ -233,6 +233,9 @@ napi_value CreateGestureNode2(napi_env env, napi_callback_info info)
     ArkUI_NativeGestureAPI_1 *gestureApi = nullptr;
     gestureApi = reinterpret_cast<ArkUI_NativeGestureAPI_1 *>(
         OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_GESTURE, "ArkUI_NativeGestureAPI_1"));
+    if (gestureApi == nullptr) {
+    return nullptr;
+    }
     g_SwipeGesture = gestureApi->createSwipeGesture(1, GESTURE_DIRECTION_LEFT, PARAM_100);
     auto onInterruptCallback = [](ArkUI_GestureInterruptInfo *info) -> ArkUI_GestureInterruptResult {
         g_recognizer = OH_ArkUI_GestureInterruptInfo_GetRecognizer(info);

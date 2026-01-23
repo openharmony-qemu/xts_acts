@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,8 +33,9 @@ import {
   Video,
   VideoController
 } from '@ohos.arkui.component';
-import { Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Link, PropRef, State, } from '@ohos.arkui.stateManagement';
 import { AsyncCallback, Callback } from '@ohos.base';
+import { RecordData } from '@ohos.base';
 
 
 @Entry
@@ -63,7 +64,7 @@ struct videoCallbackTest {
           let eventData: emitter.EventData = {
             data: {
               "action": 'onStart'
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
           } as emitter.EventData
           let event: emitter.InnerEvent = {
             eventId: 50101,
@@ -81,7 +82,7 @@ struct videoCallbackTest {
           let eventData2: emitter.EventData = {
             data: {
               "action": 'onStop'
-            } as Record<String, undefined | null | Object>
+            } as Record<String,RecordData>
           } as emitter.EventData
           let event2: emitter.InnerEvent = {
             eventId: 50102,

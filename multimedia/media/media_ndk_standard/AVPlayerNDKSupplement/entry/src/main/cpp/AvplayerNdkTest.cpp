@@ -2484,6 +2484,110 @@ static napi_value NAPI_AVPlayerSetAmplitudeUpdateCallbackError(napi_env env, nap
     napi_create_int32(env, errCode, &result);
     return result;
 }
+
+static napi_value NAPI_AVLoadingRequestError(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t resource = 2;
+    int32_t handle = 3;
+    int32_t denied = 4;
+    int32_t timeout = 5;
+    int32_t failed = 6;
+    int32_t res = 1;
+    if (AVLoadingRequestError::AV_LOADING_ERROR_NO_RESOURCE == resource &&
+        AVLoadingRequestError::AV_LOADING_ERROR_INVALID_HANDLE == handle &&
+        AVLoadingRequestError::AV_LOADING_ERROR_ACCESS_DENIED == denied &&
+        AVLoadingRequestError::AV_LOADING_ERROR_ACCESS_TIMEOUT == timeout &&
+        AVLoadingRequestError::AV_LOADING_ERROR_AUTHORIZE_FAILED == failed) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value NAPI_AVHttpHeaderDestroy(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AVHttpHeader* header = OH_AVHttpHeader_Create();
+    OH_AVErrCode errorCode = OH_AVHttpHeader_Destroy(header);
+    int32_t res = 1;
+    if (errorCode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_AVHttpHeader_Destroy(header);
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value NAPI_AVHttpHeaderDestroyError(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AVHttpHeader* header = nullptr;
+    OH_AVErrCode errorCode = OH_AVHttpHeader_Destroy(header);
+    int32_t res = 1;
+    if (errorCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value NAPI_AVHttpHeaderCreate(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AVHttpHeader* header = OH_AVHttpHeader_Create();
+    int32_t res = 1;
+    if (header != nullptr) {
+        res = 0;
+    }
+    OH_AVHttpHeader_Destroy(header);
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value NAPI_AVPlayerTrackSwitchMode(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t smooth = 0;
+    int32_t segment = 1;
+    int32_t closest = 2;
+    int32_t res = 1;
+    if (AVPlayerTrackSwitchMode::AV_TRACK_SWITCH_MODE_SMOOTH == smooth &&
+        AVPlayerTrackSwitchMode::AV_TRACK_SWITCH_MODE_SEGMENT == segment &&
+        AVPlayerTrackSwitchMode::AV_TRACK_SWITCH_MODE_CLOSEST == closest) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value NAPI_AVPlayerSeekMode(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t continuous = 3;
+    int32_t res = 1;
+    if (AVPlayerSeekMode::AV_SEEK_CONTINUOUS == continuous) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value NAPI_AVErrCode(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int64_t unsupported = 5410003;
+    int64_t permitted = 5411012;
+    int64_t enabled = 5410004;
+    int32_t res = 1;
+    if (OH_AVErrCode::AV_ERR_SUPER_RESOLUTION_UNSUPPORTED == unsupported &&
+        OH_AVErrCode::AV_ERR_IO_CLEARTEXT_NOT_PERMITTED == permitted &&
+        OH_AVErrCode::AV_ERR_SUPER_RESOLUTION_NOT_ENABLED == enabled) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -2619,6 +2723,16 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr},
         {"AVPlayerSetAmplitudeUpdateCallbackError", nullptr, NAPI_AVPlayerSetAmplitudeUpdateCallbackError, nullptr,
             nullptr, nullptr, napi_default, nullptr},
+        {"AVLoadingRequestError", nullptr, NAPI_AVLoadingRequestError, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"AVHttpHeaderDestroy", nullptr, NAPI_AVHttpHeaderDestroy, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AVHttpHeaderDestroyError", nullptr, NAPI_AVHttpHeaderDestroyError, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"AVHttpHeaderCreate", nullptr, NAPI_AVHttpHeaderCreate, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AVPlayerTrackSwitchMode", nullptr, NAPI_AVPlayerTrackSwitchMode, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"AVPlayerSeekMode", nullptr, NAPI_AVPlayerSeekMode, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AVErrCode", nullptr, NAPI_AVErrCode, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     SampleManager::GetInstance()->Export(env, exports);

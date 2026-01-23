@@ -42,30 +42,30 @@ import getVisibleListError from './ListTest/getVisibleListError.test';
 import itemInGroupError from './ListTest/itemInGroupError.test';
 
 export default function testsuite() {
-  enableScrollJsunit()
-  getListVisible()  // VisibleListContentInfo取值itemIndexInGroup错误  1
-  itemIndexList()
-  groupAnimation()
-  animationCallback()
-  listAniAdd()
-  listAniDel()
-  listAnVisible()
-  listHeight()
-  groupAnVisible()
-  groupHeight()
-  scrollAniFalse()
-  scrollAniUn()
-  scrollAniTrue()
-  gridAniTrue()
-  irregularAniGrid()
-  repeatAniGrid()
+  enableScrollJsunit();
+  getListVisible();
+  itemIndexList();
+  groupAnimation();
+  animationCallback();
+  listAniAdd();
+  listAniDel();
+  listAnVisible();
+  listHeight();
+  groupAnVisible();
+  groupHeight();
+  scrollAniFalse();
+  scrollAniUn();
+  scrollAniTrue();
+  gridAniTrue();
+  irregularAniGrid();
+  repeatAniGrid();
   gridNode();
   griditemNode();
-  nodeTypeGrid()
-  listScrollerBar() // 1
-  getItemError()  // 异常值用例注释 2
-  getVisibleListError() // 异常值用例注释 1
-  itemInGroupError()  //异常值用例注释 2
-  cachedShowList()
-  cachedShowGrid()
+  nodeTypeGrid();
+  listScrollerBar();
+  getItemError();
+  getVisibleListError();
+  itemInGroupError();
+  cachedShowList();
+  cachedShowGrid();
 }

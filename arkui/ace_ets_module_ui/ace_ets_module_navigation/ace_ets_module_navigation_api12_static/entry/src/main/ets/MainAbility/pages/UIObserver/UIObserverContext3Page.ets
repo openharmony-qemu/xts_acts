@@ -22,7 +22,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide
+  PropRef,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router,UIContext,UIObserver } from '@ohos.arkui.UIContext';
@@ -43,9 +43,9 @@ struct PageOne {
 
 function callBackFunc(info: uiObserver.NavDestinationSwitchInfo) {
   console.info(`testTag navDestinationSwitch from: ${JSON.stringify(info.from)} to: ${JSON.stringify(info.to)}`)
-  let count: number = AppStorage.get('UIObserverContext3Page_callBackFuncOnCount') ?? 0;
-  count = Number(count) + 1;
-  AppStorage.setOrCreate<number>('UIObserverContext3Page_callBackFuncOnCount', count)
+  let count: int = AppStorage.get<int>('UIObserverContext3Page_callBackFuncOnCount') ?? 0;
+  count = count + 1;
+  AppStorage.setOrCreate<int>('UIObserverContext3Page_callBackFuncOnCount', count)
 }
 
 
@@ -75,10 +75,10 @@ struct UIObserverContext3Page {
           let obs = this.getUIContext().getUIObserver();
           obs.offNavDestinationSwitch( { navigationId: 'myNavId' }, callBackFunc)
 
-          console.info(`get UIObserverContext3Page_callBackFuncOnCount is: ${AppStorage.get('UIObserverContext3Page_callBackFuncOnCount')}`)
-          console.info(`get UIObserverContext3Page_callBackFuncOnCount_2 is: ${AppStorage.get('UIObserverContext3Page_callBackFuncOnCount_2')}`)
-          AppStorage.setOrCreate<number>('UIObserverContext3Page_callBackFuncOnCount_2', AppStorage.get('UIObserverContext3Page_callBackFuncOnCount') ?? 0)
-          console.info(`set UIObserverContext3Page_callBackFuncOnCount_2 is: ${AppStorage.get('UIObserverContext3Page_callBackFuncOnCount')}`)
+          console.info(`get UIObserverContext3Page_callBackFuncOnCount is: ${AppStorage.get<int>('UIObserverContext3Page_callBackFuncOnCount')}`)
+          console.info(`get UIObserverContext3Page_callBackFuncOnCount_2 is: ${AppStorage.get<int>('UIObserverContext3Page_callBackFuncOnCount_2')}`)
+          AppStorage.setOrCreate<int>('UIObserverContext3Page_callBackFuncOnCount_2', AppStorage.get<int>('UIObserverContext3Page_callBackFuncOnCount') ?? 0)
+          console.info(`set UIObserverContext3Page_callBackFuncOnCount_2 is: ${AppStorage.get<int>('UIObserverContext3Page_callBackFuncOnCount')}`)
         })
           .id('UIObserverContext3_btn_off')
       }

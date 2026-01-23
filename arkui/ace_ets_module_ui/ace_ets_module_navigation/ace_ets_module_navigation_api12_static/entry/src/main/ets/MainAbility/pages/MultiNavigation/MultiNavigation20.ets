@@ -18,14 +18,14 @@ import {
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavPathInfo,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
-,NavPathStack} from '@ohos.arkui.component';
+,NavPathStack, PopInfo} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  Prop,Provide,Consume
+  PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { MultiNavigation, MultiNavPathStack, SplitPolicy } from './mainpage/MultiNavigation';
+import {MultiNavigation,MultiNavPathStack, SplitPolicy}  from './mainpage/MultiNavigation';
 
 @Entry
 @Component
@@ -34,8 +34,8 @@ struct MultiNavigation20 {
   @State text:string = ''
 
   aboutToAppear(): void {
-//this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
-    // this.pageStack.setKeepBottomPage(true);
+    this.pageStack.pushPath(new NavPathInfo('PageHome1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
+    this.pageStack.setKeepBottomPage(true);
   }
 
   @Builder
@@ -58,53 +58,52 @@ struct MultiNavigation20 {
       MultiNavigation({
         navDestination: this.PageMap,
         multiStack: this.pageStack,
-        // onHomeShowInTop: (name) => {
-        // }
+        onHomeShowInTop: (name: string) => {}
       })
-        // .width(350).height(250).border({width:1})
+        .width(350).height(250).border({width:1})
 
       Button('pushDestination PageHome1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushDestination({ name: 'PageHome1', param: "paramTest"}, false, SplitPolicy.HOME_PAGE);
+        this.pageStack.pushDestination(new NavPathInfo('PageHome1',"paramTest"), false, SplitPolicy.HOME_PAGE);
         this.text =  JSON.stringify(this.pageStack.getAllPathName())
       }).id('MultiNavigation20_btn1')
 
       Button('pushDestination PageDetail1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushDestination({ name: 'PageDetail1', param: "paramTest"}, false, SplitPolicy.DETAIL_PAGE);
+        this.pageStack.pushDestination(new NavPathInfo('PageDetail1',"paramTest"), false, SplitPolicy.DETAIL_PAGE);
         this.text =  JSON.stringify(this.pageStack.getAllPathName())
       }).id('MultiNavigation20_btn2')
 
       Button('pushDestination PageFull1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushDestination({ name: 'PageDetail2', param: "paramTest"}, false, SplitPolicy.FULL_PAGE);
+        this.pageStack.pushDestination(new NavPathInfo('PageDetail2',"paramTest"), false, SplitPolicy.FULL_PAGE);
         this.text =  JSON.stringify(this.pageStack.getAllPathName())
       }).id('MultiNavigation20_btn3')
 
       Button('pushDestinationByName PageHome1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushDestinationByName( 'PageHome1', "paramTest", false, SplitPolicy.HOME_PAGE);
+        this.pageStack.pushDestinationByName('PageHome1',"paramTest", false, SplitPolicy.HOME_PAGE);
         this.text =  JSON.stringify(this.pageStack.getAllPathName())
       }).id('MultiNavigation20_btn4')
 
       Button('pushDestinationByName PageDetail1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushDestinationByName( 'PageDetail1', "paramTest", false, SplitPolicy.DETAIL_PAGE);
+        this.pageStack.pushDestinationByName('PageDetail1',"paramTest", false, SplitPolicy.DETAIL_PAGE);
         this.text =  JSON.stringify(this.pageStack.getAllPathName())
       }).id('MultiNavigation20_btn5')
 
       Button('pushDestinationByName PageFull1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushDestinationByName( 'PageFull1', "paramTest", false, SplitPolicy.FULL_PAGE);
+        this.pageStack.pushDestinationByName('PageFull1',"paramTest", false, SplitPolicy.FULL_PAGE);
         this.text =  JSON.stringify(this.pageStack.getAllPathName())
       }).id('MultiNavigation20_btn6')
 
       Button('pushDestinationByName PageHome1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushDestinationByName( 'PageHome1', "paramTest",(popInfo) => {}, false, SplitPolicy.HOME_PAGE);
+        this.pageStack.pushDestinationByName('PageHome1',"paramTest",(popInfo:PopInfo) => {}, false, SplitPolicy.HOME_PAGE);
         this.text =  JSON.stringify(this.pageStack.getAllPathName())
       }).id('MultiNavigation20_btn7')
 
       Button('pushDestinationByName PageDetail1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushDestinationByName( 'PageDetail1', "paramTest",(popInfo) => {}, false, SplitPolicy.DETAIL_PAGE);
+        this.pageStack.pushDestinationByName('PageDetail1',"paramTest",(popInfo:PopInfo) => {},false, SplitPolicy.DETAIL_PAGE);
         this.text =  JSON.stringify(this.pageStack.getAllPathName())
       }).id('MultiNavigation20_btn8')
 
       Button('pushDestinationByName PageFull1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushDestinationByName( 'PageFull1', "paramTest",(popInfo) => {}, false, SplitPolicy.FULL_PAGE);
+        this.pageStack.pushDestinationByName('PageFull1',"paramTest",(popInfo:PopInfo) => {}, false, SplitPolicy.FULL_PAGE);
         this.text =  JSON.stringify(this.pageStack.getAllPathName())
       }).id('MultiNavigation20_btn9')
 

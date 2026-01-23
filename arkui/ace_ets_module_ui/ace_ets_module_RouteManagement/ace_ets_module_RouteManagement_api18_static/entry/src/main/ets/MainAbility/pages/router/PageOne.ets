@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,6 +19,7 @@ import { Entry, Column, Component, Text, Button, Navigation, NavigationTitleMode
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 let router1 = new Router()
 class RouteParam {
   constructor(msg: string) {
@@ -47,7 +48,7 @@ struct PageOne {
     let backData: events_emitter.EventData = {
       data: {
         'paramString': JSON.stringify(param)
-      } as Record<string, undefined|null|Object>
+      } as Record<String,RecordData>
     }
 
     let eventIdNum = 51;
@@ -69,11 +70,7 @@ struct PageOne {
       Column() {
         Button('pushUrl PageOne Single')
           .onClick((e:ClickEvent) => {
-            try{
-              AppStorage.get<Router>("router")?.pushUrl({ url: 'MainAbility/pages/router/PageOne', params: new RouteParam('pushUrl One Single') },router.RouterMode.Single)
-            }catch(err){
-              console.log('+++++++++++++++err',err)
-            }
+            AppStorage.get<Router>("router")?.pushUrl({ url: 'MainAbility/pages/router/PageOne', params: new RouteParam('pushUrl One Single') },router.RouterMode.Single)
           })
           .id('pushUrlId')
           .height('10%')

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test'
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -91,7 +92,7 @@ it('dragEventTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       await Utils.drag(downX, downY, upX, upY, 10)
       let callback: (indexEvent: emitter.EventData) => void = (indexEvent: emitter.EventData) => {
         if (indexEvent != null) {
-          const data = indexEvent.data as Record<String, undefined | null | Object>
+          const data = indexEvent.data as Record<String,RecordData>
           console.info("dragEventTest_0100 get state result is: " + JSON.stringify(indexEvent));
           expect(data['ACTION'] as string).assertEqual('onDragStart onAction');
         }
@@ -130,7 +131,7 @@ it('dragEventTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       await Utils.drag(downX, downY, upX, upY, 10)
       let callback: (indexEvent: emitter.EventData) => void = (indexEvent: emitter.EventData) => {
         if (indexEvent != null) {
-          const data = indexEvent.data as Record<String, undefined | null | Object>
+          const data = indexEvent.data as Record<String,RecordData>
           console.info("dragEventTest_0200 get state result is: " + JSON.stringify(indexEvent));
           expect(Number.isNaN(data['pointX'] as number)).assertFalse();
           expect(Number.isNaN(data['pointY'] as number)).assertFalse();
@@ -170,7 +171,7 @@ it('dragEventTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       await Utils.drag(downX, downY, upX, upY, 10)
       let callback: (indexEvent: emitter.EventData) => void = (indexEvent: emitter.EventData) => {
         if (indexEvent != null) {
-          const data = indexEvent.data as Record<String, undefined | null | Object>
+          const data = indexEvent.data as Record<String,RecordData>
           console.info("dragEventTest_0300 get state result is: " + JSON.stringify(indexEvent));
           expect(data['ACTION'] as string).assertEqual("onDragMove onAction");
         }
@@ -208,7 +209,7 @@ it('dragEventTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<
       let upY = rectOne.bottom + (rect.bottom - rect.top);
       await Utils.drag(downX, downY, upX, upY, 10)
       let callback: (indexEvent: emitter.EventData) => void = (indexEvent: emitter.EventData) => {
-        const data = indexEvent.data as Record<String, undefined | null | Object>
+        const data = indexEvent.data as Record<String,RecordData>
         console.info("dragEventTest_0400 get state result is: " + JSON.stringify(indexEvent));
         expect(data['ACTION'] as string).assertEqual("onDragLeave onAction");
       }
@@ -246,7 +247,7 @@ it('dragEventTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<
       await Utils.drag(downX, downY, upX, upY, 10)
       let callback: (indexEvent: emitter.EventData) => void = (indexEvent: emitter.EventData) => {
         if (indexEvent != null) {
-          const data = indexEvent.data as Record<String, undefined | null | Object>
+          const data = indexEvent.data as Record<String,RecordData>
           console.info("dragEventTest_0500 get state result is: " + JSON.stringify(indexEvent));
           expect(data['ACTION'] as string).assertEqual("onDrop onAction");
         }

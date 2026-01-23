@@ -187,7 +187,7 @@ void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler, ArkWeb_Resourc
     OH_LOG_INFO(LOG_APP, "testRequest->setHeaderByName() %{public}d", testResponseSetHost);
 
     void* userdata = OH_ArkWebSchemeHandler_GetUserData(schemeHandler);
-    int* getValue = static_cast<int*>(userdata);
+    int32_t* getValue = static_cast<int32_t*>(userdata);
     if (userdata) {
         testSchemeHandlerGetUserData = true;
     }

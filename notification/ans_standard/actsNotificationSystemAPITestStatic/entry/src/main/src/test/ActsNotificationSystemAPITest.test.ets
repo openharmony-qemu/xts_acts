@@ -214,7 +214,7 @@ export default function ActsNotificationSystemAPITest() {
           console.info(`${TAG} publishAsBundle AsyncCallback success`)
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} publishAsBundle AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(err?.code).assertEqual(202);
           done()
@@ -273,7 +273,7 @@ export default function ActsNotificationSystemAPITest() {
           console.info(`${TAG} cancelAsBundle AsyncCallback success`)
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} cancelAsBundle AsyncCallback errCode: ${err.code}, errMes: ${err}`)
           expect(err?.code).assertEqual(202);
           done()
@@ -1226,7 +1226,7 @@ export default function ActsNotificationSystemAPITest() {
           console.info(`${TAG} subscribe AsyncCallback success`)
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} subscribe AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(err?.code).assertEqual(202);
           done()
@@ -1431,7 +1431,7 @@ export default function ActsNotificationSystemAPITest() {
           console.info("getDoNotDisturbDate success, data: " + JSON.stringify(data));
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           if (err.code == 801) {
             expect(err?.code).assertEqual(801)
             done();
@@ -1465,7 +1465,7 @@ export default function ActsNotificationSystemAPITest() {
           console.info("getDoNotDisturbDate success, data: " + JSON.stringify(data));
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error(`getDoNotDisturbDate failed, code is ${err.code}, message is ${err.message}`);
           if (err.code == 801) {
             expect(err?.code).assertEqual(801)
@@ -1501,7 +1501,7 @@ export default function ActsNotificationSystemAPITest() {
           console.info("getSlotNumByBundle success, data: " + JSON.stringify(data));
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`getSlotNumByBundle failed, code is ${err.code}, message is ${err.message}`);
           if (err.code == 801) {
             expect(err?.code).assertEqual(801)
@@ -1536,7 +1536,7 @@ export default function ActsNotificationSystemAPITest() {
           console.info(`${TAG} isBadgeDisplayed success, data: ` + JSON.stringify(data));
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error(`${TAG} isBadgeDisplayed failed, code is ${err.code}, message is ${err.message}`);
           if (err.code == 801) {
             expect(err?.code).assertEqual(801)
@@ -1573,7 +1573,7 @@ export default function ActsNotificationSystemAPITest() {
           console.info("isNotificationSlotEnabled success, data: " + JSON.stringify(data));
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error(`isNotificationSlotEnabled failed, code is ${err.code}, message is ${err.message}`);
           if (err.code == 801) {
             expect(err?.code).assertEqual(801)
@@ -1606,7 +1606,7 @@ export default function ActsNotificationSystemAPITest() {
           console.info(`${TAG}  setDistributedEnable success`);
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(`${TAG} setDistributedEnable failed, code is ${err.code}, message is ${err.message}`);
           if (err.code == 801) {
             expect(err?.code).assertEqual(801)
@@ -1643,7 +1643,7 @@ export default function ActsNotificationSystemAPITest() {
           console.info(`${TAG}  setDistributedEnableByBundle success`);
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(`${TAG} setDistributedEnableByBundle failed, code is ${err.code}, message is ${err.message}`);
           if (err.code == 801) {
             expect(err?.code).assertEqual(801)
@@ -1681,7 +1681,7 @@ export default function ActsNotificationSystemAPITest() {
           console.info("setDoNotDisturbDate success");
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error(`setDoNotDisturbDate failed, code is ${err.code}, message is ${err.message}`);
           if (err.code == 801) {
             expect(err?.code).assertEqual(801)
@@ -1719,7 +1719,7 @@ export default function ActsNotificationSystemAPITest() {
           console.info(`${TAG} setNotificationEnableSlot success`);
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error(`${TAG} setNotificationEnableSlot failed, code is ${err.code}, message is ${err.message}`);
           if (err.code == 801) {
             expect(err?.code).assertEqual(801)
@@ -1750,7 +1750,7 @@ export default function ActsNotificationSystemAPITest() {
           console.info("isSupportDoNotDisturbMode success, data: " + JSON.stringify(data));
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error(`isSupportDoNotDisturbMode failed, code is ${err.code}, message is ${err.message}`);
           if (err.code == 801) {
             expect(err?.code).assertEqual(801)

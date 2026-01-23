@@ -18,7 +18,10 @@
 
 #include "napi/native_api.h"
 #include <native_buffer/native_buffer.h>
-#include <native_window/graphic_error_code.h>
+#include <native_buffer/graphic_error_code.h>
+#include <common/log_common.h>
+#include <common/native_common.h>
+
 #define FAIL (-1)
 #define NUMBER_MINUS_1 (-1)
 #define NUMBER_0 0
@@ -47,6 +50,7 @@
 #define NUMBER_60 60
 #define NUMBER_100 100
 #define NUMBER_200 200
+#define NUMBER_256 256
 #define NUMBER_500 500
 #define NUMBER_1000 1000
 #define NUMBER_1001 1001
@@ -74,8 +78,30 @@
 #define NUMBER_8002 8002
 #define NUMBER_8003 8003
 #define NUMBER_10000 10000
+#define NUMBER_65536 65536
+#define NUMBER_65537 65537
 #define NUMBER_100000000 100000000
 #define NUMBER_0X001 0x001
+#define ERRORCODE_0 0
+#define ERRORCODE_30001000 30001000
+#define ERRORCODE_40001000 40001000
+#define ERRORCODE_40301000 40301000
+#define ERRORCODE_40601000 40601000
+#define ERRORCODE_41202000 41202000
+#define ERRORCODE_41203000 41203000
+#define ERRORCODE_41206000 41206000
+#define ERRORCODE_41207000 41207000
+#define ERRORCODE_41208000 41208000
+#define ERRORCODE_41209000 41209000
+#define ERRORCODE_41210000 41210000
+#define ERRORCODE_41211000 41211000
+#define ERRORCODE_41212000 41212000
+#define ERRORCODE_50102000 50102000
+#define ERRORCODE_50002000 50002000
+#define ERRORCODE_50007000 50007000
+#define ERRORCODE_50401000 50401000
+#define ERRORCODE_60001000 60001000
+#define ERRORCODE_60002000 60002000
 
 napi_value OHNativeBufferAlloc(napi_env env, napi_callback_info info);
 napi_value OHNativeBufferAllocAbnormal(napi_env env, napi_callback_info info);
@@ -163,4 +189,5 @@ napi_value OHNativeBufferReadFromParcelNull(napi_env env, napi_callback_info inf
 napi_value OHNativeBufferReadFromParcelAbnnormal(napi_env env, napi_callback_info info);
 napi_value OHNativeBufferWriteAndReadParcelMultipleCalls(napi_env env, napi_callback_info info);
 napi_value OHNativeBufferMapPlanesNormal1(napi_env env, napi_callback_info info);
+napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info);
 #endif //NATIVEBUFFER_NATIVEBUFFER_H

@@ -35,7 +35,7 @@ import common from '@ohos.app.ability.common'
 import { AppStorage } from 'arkui.stateManagement.storage.appStorage'
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 @Entry

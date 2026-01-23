@@ -37,7 +37,16 @@ group("ActsAceEtsModuleImageTextTest") {
       "ace_ets_module_imageText_styledString:ActsAceEtsModuleImageTextStyledStringTest",
       "ace_ets_module_imageText_text:ActsAceEtsModuleImageTextTextTest",
       "ace_ets_module_richEditor:ActsAceEtsModuleRichEditorTest",
+      "ace_ets_module_imageText_api11_other_static:ActsAceEtsModuleImageTextApi11OtherStaticTest",
       "ace_ets_module_imageText_api12_other_static:ActsAceEtsModuleImageTextApi12OtherStaticTest",
+      "ace_ets_module_imageText_api11_static:ActsAceEtsModuleImageTextApi11StaticTest",
+      "ace_ets_module_imageText_api12_static:ActsAceEtsModuleImageTextApi12StaticTest",
+      "ace_ets_module_imageText_api13_static:ActsAceEtsModuleImageTextApi13StaticTest",
+      "ace_ets_module_imageText_api14_static:ActsAceEtsModuleImageTextApi14StaticTest",
+      "ace_ets_module_imageText_api15_static:ActsAceEtsModuleImageTextApi15StaticTest",
+      "ace_ets_module_imageText_api16_static:ActsAceEtsModuleImageTextApi16StaticTest",
+      "ace_ets_module_imageText_api18_static:ActsAceEtsModuleImageTextApi18StaticTest",
+      "ace_ets_module_imageText_api19_static:ActsAceEtsModuleImageTextApi19StaticTest",
     ]
   } else {
     deps = [
@@ -72,7 +81,23 @@ group("ActsAceEtsModuleImageTextTest") {
       "ace_ets_module_imageText_text:ActsAceEtsModuleImageTextTextTest",
       "ace_ets_module_richEditor:ActsAceEtsModuleRichEditorTest",
       "ace_ets_module_richEditor_nowear:ActsAceEtsModuleRichEditorNowearTest",
+      "ace_ets_module_imageText_nowear_api12_static:ActsAceEtsModuleImageTextNowearApi12StaticTest",
+      "ace_ets_module_imageText_nowear_api11_static:ActsAceEtsModuleImageTextNowearApi11StaticTest",
+      "ace_ets_module_imageText_nowear_api13_static:ActsAceEtsModuleImageTextNowearApi13StaticTest",
+      "ace_ets_module_imageText_nowear_api15_static:ActsAceEtsModuleImageTextNowearApi15StaticTest",
+      "ace_ets_module_imageText_nowear_api16_static:ActsAceEtsModuleImageTextNowearApi16StaticTest",
+      "ace_ets_module_imageText_nowear_api18_static:ActsAceEtsModuleImageTextNowearApi18StaticTest",
+      "ace_ets_module_imageText_api11_other_static:ActsAceEtsModuleImageTextApi11OtherStaticTest",
       "ace_ets_module_imageText_api12_other_static:ActsAceEtsModuleImageTextApi12OtherStaticTest",
+      "ace_ets_module_imageText_api11_static:ActsAceEtsModuleImageTextApi11StaticTest",
+      "ace_ets_module_imageText_api12_static:ActsAceEtsModuleImageTextApi12StaticTest",
+      "ace_ets_module_imageText_api13_static:ActsAceEtsModuleImageTextApi13StaticTest",
+      "ace_ets_module_imageText_api14_static:ActsAceEtsModuleImageTextApi14StaticTest",
+      "ace_ets_module_imageText_api15_static:ActsAceEtsModuleImageTextApi15StaticTest",
+      "ace_ets_module_imageText_api16_static:ActsAceEtsModuleImageTextApi16StaticTest",
+      "ace_ets_module_imageText_api18_static:ActsAceEtsModuleImageTextApi18StaticTest",
+      "ace_ets_module_imageText_api19_static:ActsAceEtsModuleImageTextApi19StaticTest",
+      "ace_ets_module_imageText_image_static:ActsAceEtsModuleImageTextImageStaticTest",
     ]
   }
 }

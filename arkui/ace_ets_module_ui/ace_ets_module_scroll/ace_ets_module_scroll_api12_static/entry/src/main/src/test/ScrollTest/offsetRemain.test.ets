@@ -74,7 +74,6 @@ export default function offsetRemain() {
     
       
   
-
 /**
      * @tc.number   offsetRemain_0100
      * @tc.name     offsetRemain_0100

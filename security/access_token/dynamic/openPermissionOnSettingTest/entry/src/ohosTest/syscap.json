@@ -5,9 +5,6 @@
             {
                 "xts": [
                     "SystemCapability.Security.AccessToken",
-                    "SystemCapability.Security.ScreenLockFileManager",
-                    "SystemCapability.FileManagement.AppFileService",
-                    "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
                     "SystemCapability.Ability.AbilityRuntime.Core"
                 ]
             }

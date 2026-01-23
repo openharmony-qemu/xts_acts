@@ -160,18 +160,7 @@ export default class Utils {
         console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
         console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
         console.info('targetView: ' + obj.targetView);
-        console.info('viewPage: ' + viewPage);
-        if(viewPage == ""){
-          viewPage = obj.targetView
-        } else if(viewPage !== "" && viewPage !== obj.targetView){
-          viewPage = obj.targetView
-          router.pushUrl({
-            url: 'MainAbility/pages/index/index',
-          });
-          await Utils.sleep(500);
-        }else{
-          router.clear()
-        }
+        await Utils.back();
         pages = router.getState();
       }
 
@@ -183,8 +172,8 @@ export default class Utils {
             view: obj
           } as RouterParams
         });
-        await Utils.sleep(500);
-        console.info('push ' + obj.pageName);
+        await Utils.sleep(2000);
+        console.info('push ' + obj.pageName );
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
@@ -228,7 +217,7 @@ export default class Utils {
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
     // let rectInfo = JSON.parseJsonElement('[' + obj.getElement('$rect') + ']');
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     let rect_value: RectValue = {
       left:Number(rectInfo[0][0] ?? 0),

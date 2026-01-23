@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,78 +89,77 @@ import getAttachedFrameNodeById from './FrameNodeTest/getAttachedFrameNodeById.t
 import getAfterRemove from './FrameNodeTest/getAfterRemove.test';
 
 export default function testsuite() {
-  // getNumeric();// SDK12.9 问题表格84行
-  // getAlpha();// SDK12.9 问题表格84行
-  // getBlue();// SDK12.9 问题表格84行
-  // getGreen();// SSDK12.9 问题表格84行
-  // getRed();// SDK12.9 问题表格84行
-  // LengthMetricsUnitTest();// SDK12.9 pass 1
-  // typeNodechildrenMainSizeTest(); //SDK12.9 pass 2
-  // APIdisposeTreeTest();   //SDK12.9 0702表格18 1
-  // RELOAD(); // SDK12.9 pass 1
-  // ComponentContentAPIRecycleTest();// SDK12.9 pass 1
-  // APIPanGestureisisBeginTest();// // SDK12.9 pass 2
-  // LengthUnitTest(); // SDK12.9 表格94行
-  // getBlendColor();  // SDK12.9 表格84行
-  // RenderNodeDemo02Test();   // SDK12.9 表格104行
-  // RenderNodeDemo01Test();   // SDK12.9 表格104行
-  // RenderNodeDemo03Test();   // SDK12.9 表格104行
-  // RenderNodeDemo04Test();   // SDK12.9 表格104行
-  // RenderNodeDemo05Test();   // SDK12.9 表格104行
-  // RenderNodeDemo06Test();   // SDK12.9 表格104行
-  // updateConfigurationTest1(); // SDK12.9 表格104行
-  // updateConfigurationTest2(); // SDK12.9 pass 1
-  // setLabelTest();   // SDK12.9 表格104行
-  // setMarkNodeGroupTest(); // SDK12.9 表格104行
-  // setShapeClipTest(); // SDK12.9 表格104行
-  // typeNodeSwiperTest();  //SDK12.9 pass 1
-  // typeNodeRelativeContainerTest(); //SDK12.9 pass 1
-  // typeNodeProgressTest(); //0702问题 吴金辉DTS2512020009099
-  // typeNodeLoadingProgressTest();  //SDK12.9 pass 1
-  // typeNodeListTest(); //SDK12.9 pass 1
-  // typeNodeGridColTest();//SDK12.9 pass 1
-  // typeNodeDividerTest();//SDK12.9 pass 1
-  // typeNodeBlankTest();///SDK12.9 pass 1
-  // BuilderNodeApiRecycleTest();//SDK12.9 pass 1
-  // BuilderNodeApiReuseTest();//SDK12.9 pass 1
-  // ComponentContentAPIReuseTest(); //SDK12.9 pass 1
-  // APImarkNodeGroupTest();  // SDK12.9 表格104行
-  // borderRadiuses();  // SDK12.9 表格104行
-  // borderStyles();  // SDK12.9 表格104行 后面问题也类似，不测了
-  // edgeColors();  //11.22 16进制转10进制不对edgeColorsValue:-16776961 equals edgeColorsValue:4278190335
-  // edgeWidths();  // pass1
-  // renderNodeGetInterfaceTest();  //11.22 16进制转10进制不对 Failure: 1, Error: 0, Pass: 3 expect bColor:-16711698 equals bColor:4278255598
-  // disposeTest();  // pass
-  // getAttrsTest();  //Failure: 6, Error: 0, Pass: 5 getAttrs.test.ets:173:0     expect {} equals {"top":{"unit":1,"value":3},"right":{"unit":1,"value":3},"bottom":{"unit":1,"value":3},"left":{"unit":1,"value":3}}
-  // getPosition();  // pass
-  // setLayout();  //11.22  expect 310 equals 0
-  // RenderNodeAttributeTest();  // pass
-  // setRectShape();  // pass
-  // resourceColor();  // pass
-  // onAppear();  // pass2
-  // createNodeBlank();  // pass
-  // createNodeColumn();  // pass
-  // createNodeDivider();  // pass
-  // createNodeFlex();  // pass
-  // createNodeGrid();  // pass
-  // createNodeImage();  // pass
-  // createNodeList();  // pass
-  // createNodeLoad();  // pass
-  // createNodeScroll();  // pass
-  // createNodeSearch();  // pass
-  // createNodeStack();  // pass
-  // createNodeText();  // pass
-  // commonEventTest1();  // pass2
-  // expectedUpdateInterval();  // pass
-  // CornerTest();  //pass1
-  // setCircleShapeTest();  // pass
-  // typeNodeTextInputTest();  // pass
-  // typeNodeListItemTest();  // pass
-  // attachNodeAdapterTest();  //11.22. RangeError message: Out of bounds
-  // getAttachedFrameNodeById();  // pass
-  // getAfterRemove();  // pass
-  // PercentReferenceTest();  // pass
-  // graphicGetInterfaceTest();  //12.2 DTS2025101419802
-  // setMeasureSizeTest();  // SDK11.19 setMeasureSize.test.ets:81:0 expect 0 equals 105
-  // SDK11.19 run: 119, Failure: 31, Error: 16, Pass: 72, Ignore: 0 appDied 2
+  getNumeric();
+  getAlpha();
+  getBlue();
+  getGreen();
+  getRed();
+  LengthMetricsUnitTest();
+  typeNodechildrenMainSizeTest();
+  APIdisposeTreeTest();
+  RELOAD();
+  ComponentContentAPIRecycleTest();
+  APIPanGestureisisBeginTest();
+  LengthUnitTest();
+  getBlendColor();
+  RenderNodeDemo02Test();
+  RenderNodeDemo01Test();
+  RenderNodeDemo03Test();
+  RenderNodeDemo04Test();
+  RenderNodeDemo05Test();
+  RenderNodeDemo06Test();
+  updateConfigurationTest1();
+  updateConfigurationTest2();
+  setLabelTest();
+  setMarkNodeGroupTest();
+  setShapeClipTest();
+  typeNodeSwiperTest();
+  typeNodeRelativeContainerTest();
+  typeNodeProgressTest();
+  typeNodeLoadingProgressTest();
+  typeNodeListTest();
+  typeNodeGridColTest();
+  typeNodeDividerTest();
+  typeNodeBlankTest();
+  BuilderNodeApiRecycleTest();
+  BuilderNodeApiReuseTest();
+  ComponentContentAPIReuseTest();
+  APImarkNodeGroupTest();
+  borderRadiuses();
+  borderStyles();
+  edgeColors();
+  edgeWidths();
+  renderNodeGetInterfaceTest();
+  disposeTest();
+  getAttrsTest();
+  getPosition();
+  setLayout();
+  RenderNodeAttributeTest();
+  setRectShape();
+  resourceColor();
+  onAppear();
+  createNodeBlank();
+  createNodeColumn();
+  createNodeDivider();
+  createNodeFlex();
+  createNodeGrid();
+  createNodeImage();
+  createNodeList();
+  createNodeLoad();
+  createNodeScroll();
+  createNodeSearch();
+  createNodeStack();
+  createNodeText();
+  commonEventTest1();
+  expectedUpdateInterval();
+  CornerTest();
+  setCircleShapeTest();
+  typeNodeTextInputTest();
+  typeNodeListItemTest();
+  attachNodeAdapterTest();
+  getAttachedFrameNodeById();
+  getAfterRemove();
+  PercentReferenceTest();
+  graphicGetInterfaceTest();
+  setMeasureSizeTest();
 }

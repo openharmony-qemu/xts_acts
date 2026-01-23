@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -34,7 +34,6 @@ let testAbilityContext:common.UIAbilityContext;
 export default function MenuApi1() {
   describe('MenuApi1', () => {
     beforeAll(() => {
-
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
     })
 
@@ -50,10 +49,8 @@ export default function MenuApi1() {
         console.info("get MenuApi1 state pages: " + JSON.stringify(pages));
         if (!("MenuApi1" == pages.name)) {
           console.info("get MenuApi1 state pages.name: " + JSON.stringify(pages.name));
-          // let result = await MenuApi1.pushUrl(options);
           MenuApi1.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push MenuApi1 success: " + JSON.stringify(result));
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -80,14 +77,12 @@ it('MenuApi1_static_0100', Level.LEVEL2, async (done: () => void): Promise<void>
       await CommonFunc.sleep(1000);
 
       if (AppStorage.get<number>("winLeft") == 0) {
-        inspector.sendEventByKey('MenuApi1_static_btn1',10,"")
+        inspector.sendEventByKey('MenuApi1_btn1',10,"")
         await CommonFunc.sleep(1000);
-
-        inspector.sendEventByKey('MenuApi1_static_btn2',10,"")
+        inspector.sendEventByKey('MenuApi1_btn2',10,"")
         await CommonFunc.sleep(1000);
-
-        let text1 = inspector.getInspectorByKey('MenuApi1_static_text1');
-        expect(String(JSON.parseJsonElement(text1).getElement('$attrs').getString('content'))).assertEqual('undefined')
+        let text1 = inspector.getInspectorByKey('MenuApi1_text1');
+        expect(JSON.parseJsonElement(text1).getElement('$attrs').getString('content')).assertEqual('undefined')
         await CommonFunc.sleep(1000);
       }
 

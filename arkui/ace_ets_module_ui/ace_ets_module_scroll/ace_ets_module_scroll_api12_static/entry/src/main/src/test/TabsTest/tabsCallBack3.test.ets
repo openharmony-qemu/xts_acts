@@ -70,7 +70,6 @@ export default function tabsCallBack3() {
     
       
   
-
 /**
      * @tc.number   tabsCallBack3_static_0100
      * @tc.name     tabsCallBack3_static_0100

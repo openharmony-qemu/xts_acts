@@ -77,7 +77,7 @@ export default function List_aspectRatio_neither() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.clear()
+      // routerInstance.clear()
       console.info("List_aspectRatio_neither after each called");
     });
 
@@ -108,7 +108,7 @@ it('SUB_ACE_List_aspectRatio_neither_static_0100', Level.LEVEL0, async (done: ()
       let itemheight: number = item01.bottom - item01.top;
 
       expect(Math.abs(Math.round(width * 0.8) - Math.round(itemwidth)) <= 1).assertTrue();
-      expect(Math.abs(Math.round((List01.bottom - List01.top) - (itemheight*4 + 3*UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round((List01.bottom - List01.top) - (itemheight*4 + 3*UIContext.resolveUIContext()!.vp2px(10)))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_List_aspectRatio_neither_0100] END');
       done();
@@ -204,7 +204,7 @@ it('SUB_ACE_List_aspectRatio_neither_static_0400', Level.LEVEL0, async (done: ()
       let itemheight: number = item01.bottom - item01.top;
 
       expect(Math.abs(Math.round(width * 0.8) - Math.round(itemwidth)) <= 1).assertTrue();
-      expect(Math.abs(Math.round((List01.bottom - List01.top) - (itemheight*4 + 3*UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round((List01.bottom - List01.top) - (itemheight*4 + 3*UIContext.resolveUIContext()!.vp2px(10)))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_List_aspectRatio_neither_0400] END');
       done();

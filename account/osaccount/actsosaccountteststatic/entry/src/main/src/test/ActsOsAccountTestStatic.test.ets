@@ -50,12 +50,27 @@ export default function ActsOsAccountTestStatic() {
     let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
     hilog.info(0x0000, tag, "====>get os AccountManager finish====");
     
-    beforeAll(() => {
+    beforeAll(async (done: () => void): Promise<void> => {
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.osaccounttest.static");
       await Utils.msSleep(2000);
-      hilog.info(0x0000, tag, '%{public}s', 'beforeAll end');
+      try {
+        let configArray = await osAccount.DomainServerConfigManager.getAllServerConfigs();
+        hilog.info(0x0000, tag, "getAllServerConfigs configArray: " + JSON.stringify(configArray));
+        for (let i = 0; i < configArray.length; i++) {
+          hilog.info(0x0000, tag, "start configArray: " + JSON.stringify(configArray[i].id));
+          await osAccount.DomainServerConfigManager.removeServerConfig(configArray[i].id);
+        }
+        hilog.info(0x0000, tag, '%{public}s', 'beforeAll end');
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(0x0000, tag, "catch err: " + JSON.stringify(err));
+        if (err.code == 801) {
+          hilog.info(0x0000, tag, "Current device not support API: getAllServerConfigs");
+        }
+      }
+      done();
     });
 
     /**
@@ -587,12 +602,12 @@ export default function ActsOsAccountTestStatic() {
     /**
     * @tc.number     OsAccountParamCheck_2000
     * @tc.name       OsAccountParamCheck_2000
-    * @tc.desc       check 12300211 Server unreachable
+    * @tc.desc       DomainServerConfigManager api test
     * @tc.type       FUNCTION
     * @tc.size       MEDIUMTEST
-    * @tc.level      LEVEL3
+    * @tc.level      LEVEL0
     */
-    it('OsAccountParamCheck_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('OsAccountParamCheck_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let logTag: string = "====>OsAccountParamCheck_2000 ";
         hilog.info(0x0000, tag, logTag + "start====");
@@ -621,11 +636,91 @@ export default function ActsOsAccountTestStatic() {
           'authServerName': 'CHINA',
           'parameters': map
         };
+        let fakeConfigParams: Record<string, RecordData> = {
+          'uri': 'test.example.com',
+          'port': 100
+        };
+        let adConfigData: Record<string, RecordData> = {
+          'adDomain': 'www.test.com'
+        }
+        let pJson: Record<string, RecordData> = {
+          'adConfig': adConfigData
+        }
+        let configParams1: Record<string, RecordData> = {
+          'accountName': '123456',
+          'authServerName': 'CHINA',
+          'parameters': pJson
+        };
         try {
           hilog.info(0x0000, tag, logTag + "start addServerConfig");
-          await osAccount.DomainServerConfigManager.addServerConfig(configParams);
-          hilog.info(0x0000, tag, "====>run err");
-          expect().assertFail();
+          let configInfo1 = await osAccount.DomainServerConfigManager.addServerConfig(configParams);
+          hilog.info(0x0000, tag, logTag + "addServerConfig config: " + JSON.stringify(configInfo1));
+          let configArrays = await osAccount.DomainServerConfigManager.getAllServerConfigs();
+          hilog.info(0x0000, tag, logTag + "getAllServerConfigs Array length: " + JSON.stringify(configArrays.length));
+          hilog.info(0x0000, tag, logTag + "getAllServerConfigs id0 is: " + JSON.stringify(configArrays[0].id));
+          let configInfo12 = await osAccount.DomainServerConfigManager.addServerConfig(configParams1);
+          hilog.info(0x0000, tag, logTag + "addServerConfig config: " + JSON.stringify(configInfo12));
+          let configInfo2 = await osAccount.DomainServerConfigManager.getServerConfig(configArrays[0].id);
+          hilog.info(0x0000, tag, logTag + "getServerConfig config: " + JSON.stringify(configInfo2));
+          try {
+            hilog.info(0x0000, tag, logTag + "start addServerConfig again");
+            await osAccount.DomainServerConfigManager.addServerConfig(configParams);
+            hilog.info(0x0000, tag, logTag + "addServerConfig success, but should not succeed");
+            expect().assertFail();
+          } catch (err) {
+            err = err as BusinessError;
+            hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
+            expect(err.code).assertEqual(12300213);
+          }
+          try {
+            hilog.info(0x0000, tag, logTag + "start updateServerConfig fake params");
+            await osAccount.DomainServerConfigManager.updateServerConfig(configArrays[0].id, fakeConfigParams);
+            hilog.info(0x0000, tag, logTag + "updateServerConfig success, but should not succeed");
+            expect().assertFail();
+          } catch (err) {
+            err = err as BusinessError;
+            hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
+            expect(err.code).assertEqual(12300002);
+          }
+          adConfigData['adDomain'] = 'test.example.com';
+          hilog.info(0x0000, tag, logTag + "adConfigData1: " + JSON.stringify(adConfigData));
+          try {
+            hilog.info(0x0000, tag, logTag + "start updateServerConfig unreachable");
+            await osAccount.DomainServerConfigManager.updateServerConfig(configArrays[0].id, configParams1);
+            hilog.info(0x0000, tag, logTag + "updateServerConfig success, but should not succeed");
+            expect().assertFail();
+          } catch (err) {
+            err = err as BusinessError;
+            hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
+            expect(err.code).assertEqual(12300211);
+          }
+          try {
+            hilog.info(0x0000, tag, logTag + "start updateServerConfig success");
+            await osAccount.DomainServerConfigManager.updateServerConfig(configArrays[0].id, configParams);
+            hilog.info(0x0000, tag, logTag + "updateServerConfig success");
+          } catch (err) {
+            err = err as BusinessError;
+            hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
+            expect().assertFail();
+          }
+          adConfigData['adDomain'] = 'www.test.com';
+          hilog.info(0x0000, tag, logTag + "adConfigData2: " + JSON.stringify(adConfigData));
+          try {
+            hilog.info(0x0000, tag, logTag + "start updateServerConfig already exist");
+            await osAccount.DomainServerConfigManager.updateServerConfig(configArrays[0].id, configParams1);
+            hilog.info(0x0000, tag, logTag + "updateServerConfig success, but should not succeed");
+            expect().assertFail();
+          } catch (err) {
+            err = err as BusinessError;
+            hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
+            expect(err.code).assertEqual(12300213);
+          }
+          let configArray = await osAccount.DomainServerConfigManager.getAllServerConfigs();
+          hilog.info(0x0000, tag, logTag + "getAllServerConfigs configArray: " + JSON.stringify(configArray));
+          for (let i = 0; i < configArray.length; i++) {
+            hilog.info(0x0000, tag, logTag + "start configArray: " + JSON.stringify(configArray));
+            await osAccount.DomainServerConfigManager.removeServerConfig(configArray[i].id);
+          }
           done();
         } catch (err) {
           err = err as BusinessError;

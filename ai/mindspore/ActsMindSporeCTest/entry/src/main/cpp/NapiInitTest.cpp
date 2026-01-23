@@ -17,7 +17,6 @@
 #include "include/OhosCommonTest.h"
 #include "napi/native_api.h"
 
-
 // Common argument and result constants.
 static constexpr int ARG_INDEX = 0;
 static constexpr int DEFAULT_ARG = -1;
@@ -1043,6 +1042,52 @@ static napi_value OHOS_NNRT_QUANT(napi_env env, napi_callback_info info)
     });
 }
 
+static napi_value SUB_AI_MindSpore_AIPP(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                result = Acts::MindSpore::SUBAIMindSporeAIPP0001();
+                break;
+            case CASE_NUM_1:
+                result = Acts::MindSpore::SUBAIMindSporeAIPP0002();
+                break;
+            case CASE_NUM_2:
+                result = Acts::MindSpore::SUBAIMindSporeAIPP0003();
+                break;
+            case CASE_NUM_3:
+                result = Acts::MindSpore::SUBAIMindSporeAIPP0004();
+                break;
+            case CASE_NUM_4:
+                result = Acts::MindSpore::SUBAIMindSporeAIPP0005();
+                break;
+            case CASE_NUM_5:
+                result = Acts::MindSpore::SUBAIMindSporeAIPP0006();
+                break;
+            case CASE_NUM_6:
+                result = Acts::MindSpore::SUBAIMindSporeAIPP0007();
+                break;
+            case CASE_NUM_7:
+                result = Acts::MindSpore::SUBAIMindSporeAIPP0008();
+                break;
+            case CASE_NUM_8:
+                result = Acts::MindSpore::SUBAIMindSporeAIPP0009();
+                break;
+            case CASE_NUM_9:
+                result = Acts::MindSpore::SUBAIMindSporeAIPP0010();
+                break;
+            default:
+                result = RESULT_ERROR;
+                break;
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
 inline napi_property_descriptor MakeNapiDesc(const char* name, napi_callback cb)
 {
     return { name, nullptr, cb, nullptr, nullptr, nullptr, napi_default, nullptr };
@@ -1084,6 +1129,7 @@ static const napi_property_descriptor g_mindsporeDescriptors[] = {
     DECL_NAPI_DESC(OHOS_OfflineModel),
     DECL_NAPI_DESC(OHOS_NNRT),
     DECL_NAPI_DESC(OHOS_NNRT_QUANT),
+    DECL_NAPI_DESC(SUB_AI_MindSpore_AIPP),
 };
 
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)

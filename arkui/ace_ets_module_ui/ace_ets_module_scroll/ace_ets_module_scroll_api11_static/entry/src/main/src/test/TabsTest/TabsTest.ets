@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -88,11 +89,11 @@ export default function tabs() {
 
             "overflowFlag": false,
             "selfIndicatorColor": Color.Red,
-            "selfIndicatorHeight": 10,
-            "selfIndicatorWidth": 30,
-            "selfIndicatorBorderRadius": 5,
-            "selfMarginTop": 10,
-            "selfSubTabBorderRadius": 20,
+            "selfIndicatorHeight": 10.0,
+            "selfIndicatorWidth": 30.0,
+            "selfIndicatorBorderRadius": 5.0,
+            "selfMarginTop": 10.0,
+            "selfSubTabBorderRadius": 20.0,
             "selfSelectedMode": SelectedMode.INDICATOR,
 
             "selfIndicatorColorStr": "#FFFF0000",
@@ -101,7 +102,7 @@ export default function tabs() {
             "selfIndicatorBorderRadiusStr": "5vp",
             "selfSubTabBorderRadiusStr": "20vp",
             "selfMarginTopStr": "10vp",
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -117,8 +118,7 @@ export default function tabs() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0100
      * @tc.name     ArkUI_Tabs_Divider_static_0100
      * @tc.desc     ArkUI_Tabs_Divider_static_0100
@@ -139,8 +139,7 @@ it('ArkUI_Tabs_Divider_static_0100', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0200
      * @tc.name     ArkUI_Tabs_Divider_static_0200
      * @tc.desc     ArkUI_Tabs_Divider_static_0200
@@ -163,8 +162,7 @@ it('ArkUI_Tabs_Divider_static_0200', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0300
      * @tc.name     ArkUI_Tabs_Divider_static_0300
      * @tc.desc     ArkUI_Tabs_Divider_static_0300
@@ -186,8 +184,7 @@ it('ArkUI_Tabs_Divider_static_0300', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0400
      * @tc.name     ArkUI_Tabs_Divider_static_0400
      * @tc.desc     ArkUI_Tabs_Divider_static_0400
@@ -210,8 +207,7 @@ it('ArkUI_Tabs_Divider_static_0400', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0500
      * @tc.name     ArkUI_Tabs_Divider_static_0500
      * @tc.desc     ArkUI_Tabs_Divider_static_0500
@@ -234,8 +230,7 @@ it('ArkUI_Tabs_Divider_static_0500', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0600
      * @tc.name     ArkUI_Tabs_Divider_static_0600
      * @tc.desc     ArkUI_Tabs_Divider_static_0600
@@ -248,7 +243,7 @@ it('ArkUI_Tabs_Divider_static_0600', Level.LEVEL0, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -281,8 +276,7 @@ it('ArkUI_Tabs_Divider_static_0600', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0700
      * @tc.name     ArkUI_Tabs_Divider_static_0700
      * @tc.desc     ArkUI_Tabs_Divider_static_0700
@@ -298,7 +292,7 @@ it('ArkUI_Tabs_Divider_static_0700', Level.LEVEL0, async (done: () => void): Pro
             "dividerColorStr": 'xxxxxxxx',
             "startMarginStr": '5px',
             "endMarginStr": '5px',
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -331,8 +325,7 @@ it('ArkUI_Tabs_Divider_static_0700', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0800
      * @tc.name     ArkUI_Tabs_Divider_static_0800
      * @tc.desc     ArkUI_Tabs_Divider_static_0800
@@ -348,7 +341,7 @@ it('ArkUI_Tabs_Divider_static_0800', Level.LEVEL0, async (done: () => void): Pro
             "dividerColorStr": 'red',
             "startMarginStr": '5px',
             "endMarginStr": '5px',
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -371,8 +364,7 @@ it('ArkUI_Tabs_Divider_static_0800', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0900
      * @tc.name     ArkUI_Tabs_Divider_static_0900
      * @tc.desc     ArkUI_Tabs_Divider_static_0900
@@ -388,7 +380,7 @@ it('ArkUI_Tabs_Divider_static_0900', Level.LEVEL0, async (done: () => void): Pro
             "dividerColorStr": 'red',
             "startMarginStr": 'xxxxxxxx',
             "endMarginStr": '5px',
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -411,8 +403,7 @@ it('ArkUI_Tabs_Divider_static_0900', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_1000
      * @tc.name     ArkUI_Tabs_Divider_static_1000
      * @tc.desc     ArkUI_Tabs_Divider_static_1000
@@ -428,7 +419,7 @@ it('ArkUI_Tabs_Divider_static_1000', Level.LEVEL0, async (done: () => void): Pro
             "dividerColorStr": 'red',
             "startMarginStr": '5px',
             "endMarginStr": 'xxxxxxxx',
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -451,8 +442,7 @@ it('ArkUI_Tabs_Divider_static_1000', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_1100
      * @tc.name     ArkUI_Tabs_Divider_static_1100
      * @tc.desc     ArkUI_Tabs_Divider_static_1100
@@ -469,7 +459,7 @@ it('ArkUI_Tabs_Divider_static_1100', Level.LEVEL0, async (done: () => void): Pro
             "startMarginStr": '5px',
             "endMarginStr": '5px',
             "selfSelectedMode": SelectedMode.BOARD,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -501,8 +491,7 @@ it('ArkUI_Tabs_Divider_static_1100', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_1200
      * @tc.name     ArkUI_Tabs_Divider_static_1200
      * @tc.desc     ArkUI_Tabs_Divider_static_1200
@@ -517,7 +506,7 @@ it('ArkUI_Tabs_Divider_static_1200', Level.LEVEL0, async (done: () => void): Pro
             "strokeWidthStr": '10vp',
             "startMarginStr": '10vp',
             "endMarginStr": '10vp',
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -544,7 +533,7 @@ it('ArkUI_Tabs_Divider_static_1200', Level.LEVEL0, async (done: () => void): Pro
             "strokeWidthStr": '10px',
             "startMarginStr": '10px',
             "endMarginStr": '10px',
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -571,7 +560,7 @@ it('ArkUI_Tabs_Divider_static_1200', Level.LEVEL0, async (done: () => void): Pro
             "strokeWidthStr": '10fp',
             "startMarginStr": '10fp',
             "endMarginStr": '10fp',
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -598,7 +587,7 @@ it('ArkUI_Tabs_Divider_static_1200', Level.LEVEL0, async (done: () => void): Pro
             "strokeWidthStr": '10lpx',
             "startMarginStr": '10lpx',
             "endMarginStr": '10lpx',
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -623,8 +612,7 @@ it('ArkUI_Tabs_Divider_static_1200', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0100
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0100
      * @tc.desc     ArkUI_Tabs_LabelStyle_static_0100
@@ -680,8 +668,7 @@ it('ArkUI_Tabs_LabelStyle_static_0100', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0200
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0200
      * @tc.desc     ArkUI_Tabs_LabelStyle_static_0200
@@ -712,8 +699,7 @@ it('ArkUI_Tabs_LabelStyle_static_0200', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0300
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0300
      * @tc.desc     ArkUI_Tabs_LabelStyle_static_0300
@@ -746,8 +732,7 @@ it('ArkUI_Tabs_LabelStyle_static_0300', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0400
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0400
      * @tc.desc     ArkUI_Tabs_LabelStyle_static_0400
@@ -780,8 +765,7 @@ it('ArkUI_Tabs_LabelStyle_static_0400', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0500
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0500
      * @tc.desc     ArkUI_Tabs_LabelStyle_static_0500
@@ -814,8 +798,7 @@ it('ArkUI_Tabs_LabelStyle_static_0500', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0600
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0600
      * @tc.desc     ArkUI_Tabs_LabelStyle_static_0600
@@ -870,8 +853,7 @@ it('ArkUI_Tabs_LabelStyle_static_0600', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_FadingEdge_static_0100
      * @tc.name     ArkUI_Tabs_FadingEdge_static_0100
      * @tc.desc     ArkUI_Tabs_FadingEdge_static_0100
@@ -889,8 +871,7 @@ it('ArkUI_Tabs_FadingEdge_static_0100', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_FadingEdge_static_0200
      * @tc.name     ArkUI_Tabs_FadingEdge_static_0200
      * @tc.desc     ArkUI_Tabs_FadingEdge_static_0200
@@ -903,7 +884,7 @@ it('ArkUI_Tabs_FadingEdge_static_0200', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "overflowFlag": true
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -925,8 +906,7 @@ it('ArkUI_Tabs_FadingEdge_static_0200', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_FadingEdge_static_0300
      * @tc.name     ArkUI_Tabs_FadingEdge_static_0300
      * @tc.desc     ArkUI_Tabs_FadingEdge_static_0300
@@ -939,7 +919,7 @@ it('ArkUI_Tabs_FadingEdge_static_0300', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "overflowFlag": false
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -961,8 +941,7 @@ it('ArkUI_Tabs_FadingEdge_static_0300', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0100
      * @tc.name     ArkUI_Tabs_IndicatorColor_0100
      * @tc.desc     ArkUI_Tabs_IndicatorColor_0100
@@ -991,8 +970,7 @@ it('ArkUI_Tabs_IndicatorColor_0100', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0200
      * @tc.name     ArkUI_Tabs_IndicatorColor_0200
      * @tc.desc     ArkUI_Tabs_IndicatorColor_0200
@@ -1012,8 +990,7 @@ it('ArkUI_Tabs_IndicatorColor_0200', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0300
      * @tc.name     ArkUI_Tabs_IndicatorColor_0300
      * @tc.desc     ArkUI_Tabs_IndicatorColor_0300
@@ -1033,8 +1010,7 @@ it('ArkUI_Tabs_IndicatorColor_0300', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0400
      * @tc.name     ArkUI_Tabs_IndicatorColor_0400
      * @tc.desc     ArkUI_Tabs_IndicatorColor_0400
@@ -1054,8 +1030,7 @@ it('ArkUI_Tabs_IndicatorColor_0400', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0500
      * @tc.name     ArkUI_Tabs_IndicatorColor_0500
      * @tc.desc     ArkUI_Tabs_IndicatorColor_0500
@@ -1075,8 +1050,7 @@ it('ArkUI_Tabs_IndicatorColor_0500', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0600
      * @tc.name     ArkUI_Tabs_IndicatorColor_0600
      * @tc.desc     ArkUI_Tabs_IndicatorColor_0600
@@ -1089,7 +1063,7 @@ it('ArkUI_Tabs_IndicatorColor_0600', Level.LEVEL0, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorColor": "xxxxxxxx"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1120,8 +1094,7 @@ it('ArkUI_Tabs_IndicatorColor_0600', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0700
      * @tc.name     ArkUI_Tabs_IndicatorColor_0700
      * @tc.desc     ArkUI_Tabs_IndicatorColor_0700
@@ -1134,11 +1107,11 @@ it('ArkUI_Tabs_IndicatorColor_0700', Level.LEVEL0, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorColor": Color.Red,
-            "selfIndicatorHeight": 5,
-            "selfIndicatorWidth": 20,
-            "selfIndicatorBorderRadius": 5,
-            "selfMarginTop": 10
-          } as Record<String, undefined | null | Object>
+            "selfIndicatorHeight": 5.0,
+            "selfIndicatorWidth": 20.0,
+            "selfIndicatorBorderRadius": 5.0,
+            "selfMarginTop": 10.0
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1174,8 +1147,7 @@ it('ArkUI_Tabs_IndicatorColor_0700', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorHeight_0100
      * @tc.name     ArkUI_Tabs_IndicatorHeight_0100
      * @tc.desc     ArkUI_Tabs_IndicatorHeight_0100
@@ -1202,8 +1174,7 @@ it('ArkUI_Tabs_IndicatorHeight_0100', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorHeight_0200
      * @tc.name     ArkUI_Tabs_IndicatorHeight_0200
      * @tc.desc     ArkUI_Tabs_IndicatorHeight_0200
@@ -1223,8 +1194,7 @@ it('ArkUI_Tabs_IndicatorHeight_0200', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorHeight_0300
      * @tc.name     ArkUI_Tabs_IndicatorHeight_0300
      * @tc.desc     ArkUI_Tabs_IndicatorHeight_0300
@@ -1244,8 +1214,7 @@ it('ArkUI_Tabs_IndicatorHeight_0300', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorHeight_0400
      * @tc.name     ArkUI_Tabs_IndicatorHeight_0400
      * @tc.desc     ArkUI_Tabs_IndicatorHeight_0400
@@ -1265,8 +1234,7 @@ it('ArkUI_Tabs_IndicatorHeight_0400', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorHeight_0500
      * @tc.name     ArkUI_Tabs_IndicatorHeight_0500
      * @tc.desc     ArkUI_Tabs_IndicatorHeight_0500
@@ -1278,8 +1246,8 @@ it('ArkUI_Tabs_IndicatorHeight_0500', Level.LEVEL0, async (done: () => void): Pr
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selfIndicatorHeight": -1
-          } as Record<String, undefined | null | Object>
+            "selfIndicatorHeight": -1.0
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1310,8 +1278,7 @@ it('ArkUI_Tabs_IndicatorHeight_0500', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorHeight_0600
      * @tc.name     ArkUI_Tabs_IndicatorHeight_0600
      * @tc.desc     ArkUI_Tabs_IndicatorHeight_0600
@@ -1324,7 +1291,7 @@ it('ArkUI_Tabs_IndicatorHeight_0600', Level.LEVEL0, async (done: () => void): Pr
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorHeightStr": "10px"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1348,7 +1315,7 @@ it('ArkUI_Tabs_IndicatorHeight_0600', Level.LEVEL0, async (done: () => void): Pr
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorHeightStr": "10fp"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1371,7 +1338,7 @@ it('ArkUI_Tabs_IndicatorHeight_0600', Level.LEVEL0, async (done: () => void): Pr
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorHeightStr": "10lpx"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1394,8 +1361,7 @@ it('ArkUI_Tabs_IndicatorHeight_0600', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorWidth_0100
      * @tc.name     ArkUI_Tabs_IndicatorWidth_0100
      * @tc.desc     ArkUI_Tabs_IndicatorWidth_0100
@@ -1415,8 +1381,7 @@ it('ArkUI_Tabs_IndicatorWidth_0100', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorWidth_0200
      * @tc.name     ArkUI_Tabs_IndicatorWidth_0200
      * @tc.desc     ArkUI_Tabs_IndicatorWidth_0200
@@ -1436,8 +1401,7 @@ it('ArkUI_Tabs_IndicatorWidth_0200', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorWidth_0300
      * @tc.name     ArkUI_Tabs_IndicatorWidth_0300
      * @tc.desc     ArkUI_Tabs_IndicatorWidth_0300
@@ -1457,8 +1421,7 @@ it('ArkUI_Tabs_IndicatorWidth_0300', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorWidth_0400
      * @tc.name     ArkUI_Tabs_IndicatorWidth_0400
      * @tc.desc     ArkUI_Tabs_IndicatorWidth_0400
@@ -1478,8 +1441,7 @@ it('ArkUI_Tabs_IndicatorWidth_0400', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorWidth_0500
      * @tc.name     ArkUI_Tabs_IndicatorWidth_0500
      * @tc.desc     ArkUI_Tabs_IndicatorWidth_0500
@@ -1491,8 +1453,8 @@ it('ArkUI_Tabs_IndicatorWidth_0500', Level.LEVEL0, async (done: () => void): Pro
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selfIndicatorWidth": -1
-          } as Record<String, undefined | null | Object>
+            "selfIndicatorWidth": -1.0
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1516,8 +1478,7 @@ it('ArkUI_Tabs_IndicatorWidth_0500', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorWidth_0600
      * @tc.name     ArkUI_Tabs_IndicatorWidth_0600
      * @tc.desc     ArkUI_Tabs_IndicatorWidth_0600
@@ -1530,7 +1491,7 @@ it('ArkUI_Tabs_IndicatorWidth_0600', Level.LEVEL0, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorWidthStr": "10px"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1554,7 +1515,7 @@ it('ArkUI_Tabs_IndicatorWidth_0600', Level.LEVEL0, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorWidthStr": "10fp"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1577,7 +1538,7 @@ it('ArkUI_Tabs_IndicatorWidth_0600', Level.LEVEL0, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorWidthStr": "10lpx"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1600,8 +1561,7 @@ it('ArkUI_Tabs_IndicatorWidth_0600', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0100
      * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0100
      * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0100
@@ -1621,8 +1581,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0100', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0200
      * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0200
      * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0200
@@ -1642,8 +1601,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0200', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0300
      * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0300
      * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0300
@@ -1663,8 +1621,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0300', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0400
      * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0400
      * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0400
@@ -1684,8 +1641,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0400', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0500
      * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0500
      * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0500
@@ -1697,8 +1653,8 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0500', Level.LEVEL0, async (done: () => voi
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selfIndicatorBorderRadius": -1
-          } as Record<String, undefined | null | Object>
+            "selfIndicatorBorderRadius": -1.0
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1722,8 +1678,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0500', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0600
      * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0600
      * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0600
@@ -1736,7 +1691,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0600', Level.LEVEL0, async (done: () => voi
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorBorderRadiusStr": "10px"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1760,7 +1715,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0600', Level.LEVEL0, async (done: () => voi
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorBorderRadiusStr": "10fp"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1784,7 +1739,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0600', Level.LEVEL0, async (done: () => voi
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorBorderRadiusStr": "10lpx"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1808,8 +1763,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0600', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0100
      * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0100
      * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0100
@@ -1835,8 +1789,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0100', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0200
      * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0200
      * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0200
@@ -1855,8 +1808,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0200', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0300
      * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0300
      * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0300
@@ -1875,8 +1827,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0300', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0400
      * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0400
      * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0400
@@ -1895,8 +1846,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0400', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0500
      * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0500
      * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0500
@@ -1908,8 +1858,8 @@ it('ArkUI_Tabs_SubTabBorderRadius_0500', Level.LEVEL0, async (done: () => void):
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selfSubTabBorderRadius": -1
-          } as Record<String, undefined | null | Object>
+            "selfSubTabBorderRadius": -1.0
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1939,8 +1889,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0500', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0600
      * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0600
      * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0600
@@ -1953,7 +1902,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0600', Level.LEVEL0, async (done: () => void):
         let eventData: events_emitter.EventData = {
           data: {
             "selfSubTabBorderRadiusStr": "10px"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1976,7 +1925,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0600', Level.LEVEL0, async (done: () => void):
         let eventData: events_emitter.EventData = {
           data: {
             "selfSubTabBorderRadiusStr": "10fp"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -1999,7 +1948,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0600', Level.LEVEL0, async (done: () => void):
         let eventData: events_emitter.EventData = {
           data: {
             "selfSubTabBorderRadiusStr": "10lpx"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2022,8 +1971,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0600', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0700
      * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0700
      * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0700
@@ -2036,7 +1984,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0700', Level.LEVEL0, async (done: () => void):
           data: {
             "selfSubTabBorderRadius": 20,
             "selfSelectedMode": SelectedMode.BOARD
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2060,8 +2008,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0700', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SelectedMode_static_0100
      * @tc.name     ArkUI_Tabs_SelectedMode_static_0100
      * @tc.desc     ArkUI_Tabs_SelectedMode_static_0100
@@ -2080,8 +2027,7 @@ it('ArkUI_Tabs_SelectedMode_static_0100', Level.LEVEL0, async (done: () => void)
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SelectedMode_static_0200
      * @tc.name     ArkUI_Tabs_SelectedMode_static_0200
      * @tc.desc     ArkUI_Tabs_SelectedMode_static_0200
@@ -2101,8 +2047,7 @@ it('ArkUI_Tabs_SelectedMode_static_0200', Level.LEVEL0, async (done: () => void)
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SelectedMode_static_0300
      * @tc.name     ArkUI_Tabs_SelectedMode_static_0300
      * @tc.desc     ArkUI_Tabs_SelectedMode_static_0300
@@ -2116,7 +2061,7 @@ it('ArkUI_Tabs_SelectedMode_static_0300', Level.LEVEL0, async (done: () => void)
           data: {
             "selfIndicatorHeight": 10,
             "selfSelectedMode": SelectedMode.BOARD
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2138,8 +2083,7 @@ it('ArkUI_Tabs_SelectedMode_static_0300', Level.LEVEL0, async (done: () => void)
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0100
      * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0100
      * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0100
@@ -2166,8 +2110,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0100', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0200
      * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0200
      * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0200
@@ -2187,8 +2130,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0200', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0300
      * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0300
      * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0300
@@ -2208,8 +2150,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0300', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0400
      * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0400
      * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0400
@@ -2229,8 +2170,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0400', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0500
      * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0500
      * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0500
@@ -2242,9 +2182,9 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0500', Level.LEVEL0, async (done: () =>
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selfIndicatorHeight": 10,
-            "selfMarginTop": -1
-          } as Record<String, undefined | null | Object>
+            "selfIndicatorHeight": 10.0,
+            "selfMarginTop": -1.0
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2275,8 +2215,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0500', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0600
      * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0600
      * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0600
@@ -2289,7 +2228,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0600', Level.LEVEL0, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "selfMarginTopStr": "10px"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2313,7 +2252,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0600', Level.LEVEL0, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "selfMarginTopStr": "10fp"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -2336,7 +2275,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0600', Level.LEVEL0, async (done: () =>
         let eventData: events_emitter.EventData = {
           data: {
             "selfMarginTopStr": "10lpx"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,

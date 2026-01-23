@@ -27,7 +27,7 @@ import {
 import {
   State,
   Watch,
-  Link,LocalStorageProp,LocalStorageLink,Consume,Provide,
+  Link,LocalStoragePropRef,LocalStorageLink,Consume,Provide,
   StorageLink,Observed,Track,LocalStorage,SubscribedAbstractProperty,AbstractProperty
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';

@@ -17,7 +17,7 @@
 import {
   Entry, Component,Builder, Position,BuilderParam,
   Column, SizeResult,MeasureResult, GeometryInfo,Measurable,
-  Layoutable, Text,ConstraintSizeOptions, ForEach
+  Layoutable, Text,ConstraintSizeOptions, ForEach, CustomLayout
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
@@ -26,7 +26,7 @@ import { State } from '@ohos.arkui.stateManagement'
 struct getLayout {
   build() {
     Column() {
-      CustomLayout()
+      CustomLayout1()
     }
   }
 }
@@ -43,8 +43,9 @@ function ColumnChildren() {
   })
 }
 
+@CustomLayout
 @Component
-struct CustomLayout {
+struct CustomLayout1 {
   @State getMargin: string = ''
   @State getMargin2: string = ''
   @State getPadding: string = ''

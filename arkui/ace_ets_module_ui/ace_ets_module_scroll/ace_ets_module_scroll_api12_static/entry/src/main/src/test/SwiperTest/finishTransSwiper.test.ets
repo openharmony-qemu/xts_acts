@@ -65,7 +65,6 @@ export default function finishTransSwiper() {
     
       
   
-
 /**
      * @tc.number   finishTransSwiper_static_0100
      * @tc.name     finishTransSwiper_static_0100

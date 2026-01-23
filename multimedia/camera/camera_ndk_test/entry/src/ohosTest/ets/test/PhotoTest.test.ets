@@ -301,6 +301,27 @@ function getSupportedCameraOutputCapability() {
   return true;
 }
 
+function getSupportedFullCameraOutputCapability() {
+  let ret = cameraObj.oHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode(
+    Parameter_Setting.ALL_PARAMETER_OK);
+  if (ret != 0) {
+    console.error(TAG + "getSupportedFullCameraOutputCapability FAILED");
+    expect().assertFail();
+  }
+}
+
+function getSupportedCameraFullOutputCapability() {
+  let cameraOutputCapability = cameraObj.getSupportedFullOutputCapability();
+  console.info(TAG + 'cameraOutputCapability[0] = ' + cameraOutputCapability.previewProfilesSize);
+  console.info(TAG + 'cameraOutputCapability[1] = ' + cameraOutputCapability.photoProfilesSize);
+  console.info(TAG + 'cameraOutputCapability[2] = ' + cameraOutputCapability.videoProfilesSize);
+  console.info(TAG + 'cameraOutputCapability[3] = ' + cameraOutputCapability.metadataProfilesSize);
+  return true;
+}
+function adjustHeifIdx(idx: number) {
+  return cameraObj.adjustHeifIdx(idx);
+}
+
 function setSessionMode() {
   let ret = cameraObj.oHCaptureSessionSetSessionMode(Parameter_Setting.ALL_PARAMETER_OK);
   if (ret != 0) {
@@ -370,6 +391,14 @@ function createPhotoOutputWithoutSurface() {
   }
 }
 
+function createYuvPhotoOutputWithoutSurface() {
+  let ret = cameraObj.oHCameraManagerCreateYuvPhotoOutputWithoutSurface(Parameter_Setting.ALL_PARAMETER_OK);
+  if (ret != 0) {
+    console.error(TAG + "createPhotoOutputWithoutSurface FAILED");
+    expect().assertFail();
+  }
+}
+
 function sessionCommitConfig() {
   let commitConfig = cameraObj.sessionCommitConfig();
   if (commitConfig != 0) {
@@ -425,6 +454,31 @@ function captureSessionstart() {
   sessionFlow();
 }
 
+async function yuvCaptureSessionstart() {
+  createPreviewOutput();
+  createCameraInput();
+  sessionFlow();
+  getSupportedFullCameraOutputCapability();
+  createYuvPhotoOutputWithoutSurface();
+  addPhotoOutput();
+  sessionStart();
+  cameraObj.photoOutputCapture();
+  await sleep(5000);
+}
+
+function heifCaptureSessionstart(i: number) {
+  getSupportedSceneModes(Parameter_Setting.ALL_PARAMETER_OK);
+  setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
+  setSessionMode();
+  createHeifPreviewOutput();
+  createCameraInput();
+  sessionFlow();
+  let ret = createHeifPhotoOutput(i);
+  addPhotoOutput();
+  sessionCommitConfig();
+  return ret;
+}
+
 function nativeBufferColorSpace() {
   let ret = cameraObj.oHNativeBufferColorSpace();
   console.info(TAG + "oHNativeBufferColorSpace.colorSpaceSupportSize: " + ret.colorSpaceSupportSize);
@@ -457,12 +511,38 @@ function createPreviewOutput() {
   }
 }
 
+function createHeifPreviewOutput() {
+  let previewProfiles = cameraObj.getPreviewProfiles();
+  console.info("previewProfiles is "+ JSON.stringify(previewProfiles));
+  let previewProfileIndex = 0;
+  let previewProfileHeigth = 1080;
+  let previewProfileWidth = 1920;
+  //View the previewprofile with an aspect ratio of 4:3
+  for (let i = 0; i < previewProfiles.length; i++) {
+    if (Math.abs((previewProfiles[i].width / previewProfiles[i].height) - (4 / 3)) < 0.1) {
+      previewProfileWidth = previewProfiles[i].width;
+      previewProfileHeigth = previewProfiles[i].height;
+      previewProfileIndex = i;
+      break;
+    }
+  }
+  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex)) {
+    console.info(TAG + "createPreviewOutput FAILED");
+    expect().assertFail();
+  }
+}
+
 function createPhotoOutput() {
   let mPhotoOutput = cameraObj.createPhotoOutput(mPhotoSurface);
   if (mPhotoOutput != 0) {
     console.info(TAG + "mPhotoOutput FAILED");
     expect().assertFail();
   }
+}
+
+function createHeifPhotoOutput(i: number) {
+  let mPhotoOutput = cameraObj.createHeifPhotoOutput(mPhotoSurface, i);
+  return mPhotoOutput;
 }
 
 let getPermissions1 = () => {
@@ -1403,6 +1483,46 @@ export default function PhotoTest() {
     it('testOHPhotoNativeGetMain0200', Level.LEVEL0, () => {
       let ret = cameraObj.oHPhotoNativeGetMainImage(Parameter_Setting.FIRST_PARAMETER_ERROR);
       console.info(TAG+"testOHPhotoNativeGetMain0200:"+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.name   testOHPhotoNativeGetUncompressedImage0100
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoNativeGetUncompressedImage0100
+     * @tc.desc   Test OH_PhotoNative_GetUncompressedImage in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHPhotoNativeGetUncompressedImage0100', Level.LEVEL0, async () => {
+      await yuvCaptureSessionstart();
+      let ret = cameraObj.oHPhotoNativeGetUncompressedImage(Parameter_Setting.ALL_PARAMETER_OK);
+      console.info(TAG + "testOHPhotoNativeGetUncompressedImage0100:" + ret);
+      expect(ret).assertEqual(CAMERA_OK);
+    })
+    /**
+     * @tc.name   testOHPhotoNativeGetUncompressedImage0200
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoNativeGetUncompressedImage0200
+     * @tc.desc   Test OH_PhotoNative_GetUncompressedImage in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHPhotoNativeGetUncompressedImage0200', Level.LEVEL0, () => {
+      let ret = cameraObj.oHPhotoNativeGetUncompressedImage(Parameter_Setting.FIRST_PARAMETER_ERROR);
+      console.info(TAG + "testOHPhotoNativeGetUncompressedImage0200:" + ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.name   testOHPhotoNativeGetUncompressedImage0300
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoNativeGetUncompressedImage0300
+     * @tc.desc   Test OH_PhotoNative_GetUncompressedImage in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHPhotoNativeGetUncompressedImage0300', Level.LEVEL0, () => {
+      let ret = cameraObj.oHPhotoNativeGetUncompressedImage(Parameter_Setting.SECOND_PARAMETER_ERROR);
+      console.info(TAG + "testOHPhotoNativeGetUncompressedImage0300:" + ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
@@ -2642,6 +2762,34 @@ export default function PhotoTest() {
         }
       } else {
         console.info(TAG+"ColorSpace not supported!");
+      }
+    })
+    /**
+     * @tc.name   testOHHeifPhotoOutput0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100
+     * @tc.desc   Test OH_CameraManager_CreatePhotoOutput in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHHeifPhotoOutput0100', Level.LEVEL0, () => {
+      let i = 0;
+      while(i != -1){
+        getCameraManagerInstance();
+        createCaptureSession();
+        getSupportedCamerasInstance();
+        getSupportedCameraFullOutputCapability();
+        i = adjustHeifIdx(i);
+        if(i != -1){
+          let ret = heifCaptureSessionstart(i);
+          if (ret != 0) {
+            expect().assertFail();
+          }
+          i++;
+          i = adjustHeifIdx(i);
+        }       
+        if(i == -1) break;
+        releaseCamera();
       }
     })
   })

@@ -72,9 +72,9 @@ export default function tabsFirstJsunit() {
 it('ArkUI_Tabs_Divider_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_Divider_static_0300 start");
       let strJson = inspector.getInspectorByKey('tabsTest');
-      console.info("[ArkUI_Tabs_Divider_static_0300]:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(JSON.stringify(obj.getElement('$attrs').getString('divider')))
+      console.info("[ArkUI_Tabs_Divider_static_0300]:" + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('divider')));
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('divider')))
         .assertEqual('{"strokeWidth":"2.00vp","startMargin":"0.00vp","endMargin":"0.00vp","color":"#FFFF0000"}');
       done();
     });
@@ -178,7 +178,7 @@ it('ArkUI_Tabs_Attrs_static_0300', Level.LEVEL0, async (done: () => void): Promi
       let strJson = inspector.getInspectorByKey('tabsTest');
       console.info("[ArkUI_Tabs_Attrs_static_0300]: " + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('scrollable')).assertEqual(true);
+      expect(obj.getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
       done();
     });
 
@@ -195,8 +195,8 @@ it('ArkUI_Tabs_Attrs_static_0400', Level.LEVEL0, async (done: () => void): Promi
       let strJson = inspector.getInspectorByKey('tabsTest');
       console.info("[ArkUI_Tabs_Attrs_static_0400]: " + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      console.info("barWidth: "+ obj.getElement('$attrs').getDouble('barWidth'));
-	    let barWidth1: number = Math.round(obj.getElement('$attrs').getDouble('barWidth'))
+      console.info("barWidth: "+ obj.getElement('$attrs').getString('barWidth'));
+	    let barWidth1: number = Math.round(Number(obj.getElement('$attrs').getString('barWidth')))
       console.info("barWidth1: "+ barWidth1);
       expect(Math.abs(barWidth1 -156) <= 0.001).assertTrue();
 
@@ -216,7 +216,7 @@ it('ArkUI_Tabs_Attrs_static_0500', Level.LEVEL0, async (done: () => void): Promi
       let strJson = inspector.getInspectorByKey('tabsTest');
       console.info("[ArkUI_Tabs_Attrs_static_0500]: " + strJson);
       let obj = JSON.parseJsonElement(strJson);
-	    let barHeight1: number = Math.round(obj.getElement('$attrs').getDouble('barHeight'))
+	    let barHeight1: number = Math.round(Number(obj.getElement('$attrs').getString('barHeight')))
       console.info("barHeight1: "+ barHeight1);
       expect(Math.abs(barHeight1 -100) <= 0.001).assertTrue();
       done();

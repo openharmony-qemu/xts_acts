@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,6 +44,7 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -73,7 +74,7 @@ struct PopupExample {
             let backData: emitter.EventData = {
               data: {
                 "placementOnTop": this.placementOnTop,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 65,
@@ -105,7 +106,7 @@ struct PopupExample {
               data: {
                 "maskColor": this.maskColor,
                 "enableArrow": this.enableArrow
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 66,
@@ -128,7 +129,7 @@ struct PopupExample {
               data: {
                 "maskColor": this.maskColor,
                 "enableArrow": this.enableArrow
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 67,
@@ -166,14 +167,11 @@ struct PopupExample {
   }
 
   private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
-    if (eventData != null) {
-      console.info("customPopupOption page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as  ESObject)?.getProperty('enableArrow') != null) {
-        this.enableArrow = ((eventData.data) as  ESObject)!.getProperty('enableArrow').toBoolean() as boolean;
-      }
-      if (((eventData.data) as  ESObject)?.getProperty('maskColor') != null) {
-        this.maskColor = ((eventData.data) as  ESObject)!.getProperty('maskColor').toStaticObject() as ResourceColor;
-      }
+ 	     console.info('hzj_popup: stateChangCallBack')
+ 	     if (eventData != null) {
+ 	       console.info("hzj_popup: customPopupOption page state change called:" + JSON.stringify(eventData.data));
+ 	       this.maskColor = ((eventData.data) as Record<String,RecordData>)?.['maskColor'] as ResourceColor;
+ 	       this.enableArrow = ((eventData.data) as Record<String,RecordData>)?.['enableArrow'] as boolean;
     }
   }
 }

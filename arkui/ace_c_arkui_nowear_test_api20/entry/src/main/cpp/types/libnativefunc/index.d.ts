@@ -14,6 +14,78 @@
  */
 export const TestBackgroundColor: () => number;
 
+export  const  dragEventFuncTest001: () => number;
+
+export  const  dragEventFuncTest002: () => number;
+
+export  const  dragEventFuncTest003: () => number;
+
+export  const  dragEventFuncTest004: () => number;
+
+export  const  dragEventFuncTest005: () => number;
+
+export  const  dragEventFuncTest006: () => number;
+
+export  const  dragEventFuncTest007: () => number;
+
+export  const  dragEventFuncTest008: () => number;
+
+export  const  dragEventFuncTest009: () => number;
+
+export  const  dragEventFuncTest010: () => number;
+
+export  const  dragEventFuncTest011: () => number;
+
+export  const  dragEventFuncTest012: () => number;
+
+export  const  dragEventFuncTest013: () => number;
+
+export  const  dragEventFuncTest015: () => number;
+
+export  const  dragEventFuncTest016: () => number;
+
+export  const  dragEventFuncTest017: () => number;
+
+export  const  dragEventFuncTest018: () => number;
+
+export  const  dragEventFuncTest019: () => number;
+
+export  const  dragEventFuncTest020: () => number;
+
+export  const  dragEventFuncTest021: () => number;
+
+export  const  dragEventFuncTest022: () => number;
+
+export  const  dragEventFuncTest023: () => number;
+
+export  const  dragEventFuncTest024: () => number;
+
+export  const  dragEventFuncTest026: () => number;
+
+export  const  dragEventFuncTest027: () => number;
+
+export  const  dragEventFuncTest028: () => number;
+
+export  const  dragEventFuncTest029: () => number;
+
+export  const  dragEventFuncTest030: () => number;
+
+export  const  dragEventFuncTest031: () => number;
+
+export  const  dragEventFuncTest032: () => number;
+
+export  const  dragEventFuncTest033: () => number;
+
+export  const  dragEventFuncTest034: () => number;
+
+export  const  dragEventFuncTest035: () => number;
+
+export  const  dragEventFuncTest036: () => number;
+
+export  const  dragEventFuncTest038: () => number;
+
+export  const  dragEventFuncTest040: () => number;
+
 export const TestBorderColor: () => number;
 
 export const TestBorderRadius: () => number;
@@ -128,10 +200,6 @@ export const RenderNodeErrorCode052: () => number;
 export const RenderNodeErrorCode053: () => number;
 export const RenderNodeErrorCode054: () => number;
 export const RenderNodeErrorCode055: () => number;
-export const RenderNodeErrorCode056: () => number;
-export const RenderNodeErrorCode057: () => number;
-export const RenderNodeErrorCode058: () => number;
-export const RenderNodeErrorCode059: () => number;
 export const RenderNodeErrorCode060: () => number;
 
 export const RenderNodeNullTest001: () => number;

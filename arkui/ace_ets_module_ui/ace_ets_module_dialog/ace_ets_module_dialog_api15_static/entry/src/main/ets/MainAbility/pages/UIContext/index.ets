@@ -45,7 +45,7 @@ import promptAction from '@ohos.promptAction';
 let promptAction = new PromptAction()
 let router1 =new Router()
 
-function superFancyText2(this: TextAttribute) {
+function superFancyText2(this: TextAttribute){
   this.fontSize(15);
   this.backgroundColor(Color.Orange)
   this.margin(3)
@@ -58,7 +58,7 @@ function superFancyText2(this: TextAttribute) {
 @Component
 struct Index {
   build() {
-    const dialogRouter = AppStorage.get<Router>("router") as Router
+    const dialogRouter = AppStorage.get<Router>('router') as Router
     Column({ space: 5 } as ColumnOptions) {
       Row(){
         Text('返回')

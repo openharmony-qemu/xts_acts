@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,7 @@ import {
   Text,
   TextAlign,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
 import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { Callback, RecordData } from '@ohos.base';
@@ -173,8 +173,8 @@ struct LayoutConstraints {
   stateChangCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
     console.info("LayoutConstraints page stateChangCallBack" + JSON.stringify(eventData));
     if (eventData && eventData.data != undefined) {
-      const event: Record<string, undefined | null | Object> =
-        eventData.data as Record<string, undefined | null | Object>
+      const event: Record<String,RecordData> =
+        eventData.data as Record<String,RecordData>
       if (event['aspectRatio'] != null) {
         this.aspectRatioValue = event['aspectRatio'] as number;
       } else if (event['displayPriority'] != null) {

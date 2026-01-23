@@ -110,8 +110,6 @@ export default function shadowColorJsunit() {
 
     
     
-
-
 /**
      * @tc.number   shadowColorJsunit_static_0100
      * @tc.name     shadowColorJsunit_static_0100

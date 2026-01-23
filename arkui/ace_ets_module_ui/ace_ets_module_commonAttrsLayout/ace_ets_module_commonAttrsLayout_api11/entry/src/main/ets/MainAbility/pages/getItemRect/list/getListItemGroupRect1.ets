@@ -45,7 +45,7 @@ struct getListItemGroupRect1 {
       .fontSize(20)
       .backgroundColor(0xAABBCC)
       .width('100%')
-      .height(50)
+      .height('5%')
   }
 
   messageManager: MessageManager = new MessageManager()
@@ -80,10 +80,14 @@ struct getListItemGroupRect1 {
         this.width1 = this.listScroller.getItemRectInGroup(this.index, this.indexInGroup).width
         this.height1 = this.listScroller.getItemRectInGroup(this.index, this.indexInGroup).height
       }).id('getListItemGroupRect1_button')
-      Text('' + this.x).key('getListItemGroupRect1_text1')
-      Text('' + this.y).key('getListItemGroupRect1_text2')
-      Text('' + this.width1).key('getListItemGroupRect1_text3')
-      Text('' + this.height1).key('getListItemGroupRect1_text4')
+      Row(){
+        Text('' + this.x).key('getListItemGroupRect1_text1').margin({right:10})
+        Text('' + this.y).key('getListItemGroupRect1_text2')
+      }
+      Row(){
+        Text('' + this.width1).key('getListItemGroupRect1_text3').margin({right:10})
+        Text('' + this.height1).key('getListItemGroupRect1_text4')
+      }
       Button('点击滚动到底部').onClick((event: ClickEvent) => {
         this.listScroller.scrollEdge(Edge.End)
       }).id('getListItemGroupRect1_button2')

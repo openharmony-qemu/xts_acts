@@ -26,7 +26,8 @@
 
 const int GLOBAL_RESMGR = 0xFF00;
 const char *TAG = "[SensorCapiSample]";
-const int LENGTH = 128;
+const uint32_t LENGTH = 128;
+const int FOCUS = 129;
 
 static napi_value GetPointerLocation1(napi_env env, napi_callback_info info)
 {
@@ -279,11 +280,16 @@ static napi_value CustomCursor1(napi_env env, napi_callback_info info)
 static napi_value CustomCursor2(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    OH_PixelmapNative *pixelmap1;
+    OH_PixelmapNative *pixelmap1 = nullptr;
+    OH_Pixelmap_InitializationOptions *options = nullptr;
+    OH_PixelmapInitializationOptions_Create(&options);
+    OH_PixelmapInitializationOptions_SetWidth(options, LENGTH);
+    OH_PixelmapInitializationOptions_SetHeight(options, LENGTH);
+    OH_PixelmapNative_CreateEmptyPixelmap(options, &pixelmap1);
     Input_CustomCursor *customCursor = OH_Input_CustomCursor_Create(pixelmap1, 0, 0);
-    int result1 = customCursor != nullptr ? 1 : 0;
+    int32_t result1 = customCursor != nullptr ? 1 : 0;
     OH_Input_CustomCursor_Destroy(&customCursor);
-    int result2 = customCursor == nullptr ? 1 : 0;
+    int32_t result2 = customCursor == nullptr ? 1 : 0;
     napi_create_int32(env, (result1 == 1 && result2 == 1) ? 1 : 0, &result);
     return result;
 }
@@ -412,7 +418,8 @@ static napi_value CustomCursor12(napi_env env, napi_callback_info info)
     Input_CursorConfig *cursorConfig = OH_Input_CursorConfig_Create(isfollowSystem);
     int32_t windowId = -1;
     Input_Result retResult = OH_Input_SetCustomCursor(windowId, customCursor, cursorConfig);
-    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ||
+    retResult == INPUT_DEVICE_NOT_SUPPORTED ? 1 : 0, &result);
     OH_Input_CustomCursor_Destroy(&customCursor);
     OH_Input_CursorConfig_Destroy(&cursorConfig);
     return result;
@@ -434,8 +441,8 @@ static napi_value CustomCursor13(napi_env env, napi_callback_info info)
     Input_Result retResult1 = OH_Input_SetCustomCursor(windowId, customCursor, cursorConfig);
     int32_t pointerStyle = -1;
     Input_Result retResult2 = OH_Input_GetPointerStyle(windowId, &pointerStyle);
-    napi_create_int32(env, (retResult1 == INPUT_INVALID_WINDOWID && retResult2 == INPUT_SUCCESS &&
-                      pointerStyle == 0) ? 1 : 0, &result);
+    napi_create_int32(env, ((retResult1 == INPUT_INVALID_WINDOWID || retResult1 == INPUT_DEVICE_NOT_SUPPORTED) &&
+        retResult2 == INPUT_SUCCESS && pointerStyle == 0) ? 1 : 0, &result);
     OH_Input_CustomCursor_Destroy(&customCursor);
     OH_Input_CursorConfig_Destroy(&cursorConfig);
     return result;
@@ -612,12 +619,167 @@ static napi_value CursorInfo13(napi_env env, napi_callback_info info)
     Input_Result retResult2 = OH_Input_CursorInfo_GetStyle(cursorInfo, &pointerStyle);
     Input_Result retResult3 = OH_Input_CursorInfo_GetSizeLevel(cursorInfo, &sizeLevel);
     Input_Result retResult4 = OH_Input_CursorInfo_GetColor(cursorInfo, &color);
-    napi_create_int32(env, retResult1 == INPUT_SUCCESS && retResult2 == INPUT_PARAMETER_ERROR &&
+    if (visible == false) {
+        napi_create_int32(env, retResult1 == INPUT_SUCCESS && retResult2 == INPUT_PARAMETER_ERROR &&
                       retResult3 == INPUT_PARAMETER_ERROR && retResult4 == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    } else {
+        napi_create_int32(env, retResult1 == INPUT_SUCCESS && retResult2 == INPUT_SUCCESS &&
+                      retResult3 == INPUT_SUCCESS && retResult4 == INPUT_SUCCESS ? 1 : 0, &result);
+    }
     OH_PixelmapInitializationOptions_Release(options);
     OH_PixelmapNative_Release(pixelmap1);
     OH_PixelmapNative_Destroy(&pixelmap1);
     OH_Input_CursorInfo_Destroy(&cursorInfo);
+    return result;
+}
+
+static napi_value CustomCursor14(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_PixelmapNative *pixelmap1 = nullptr;
+    OH_Pixelmap_InitializationOptions *options = nullptr;
+    OH_PixelmapInitializationOptions_Create(&options);
+    OH_PixelmapInitializationOptions_SetWidth(options, LENGTH);
+    OH_PixelmapInitializationOptions_SetHeight(options, LENGTH);
+    OH_PixelmapNative_CreateEmptyPixelmap(options, &pixelmap1);
+    Input_CustomCursor *customCursor = OH_Input_CustomCursor_Create(pixelmap1, 0, 0);
+    bool isfollowSystem = true;
+    Input_CursorConfig *cursorConfig = OH_Input_CursorConfig_Create(isfollowSystem);
+    int32_t windowId = 0;
+    Input_Result retResult = OH_Input_SetCustomCursor(windowId, customCursor, cursorConfig);
+    napi_create_int32(env, retResult == INPUT_SUCCESS ||
+    retResult == INPUT_DEVICE_NOT_SUPPORTED ? 1 : 0, &result);
+    OH_Input_CustomCursor_Destroy(&customCursor);
+    OH_Input_CursorConfig_Destroy(&cursorConfig);
+    return result;
+}
+
+static napi_value CustomCursor15(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_PixelmapNative *pixelmap1 = nullptr;
+    OH_Pixelmap_InitializationOptions *options = nullptr;
+    OH_PixelmapInitializationOptions_Create(&options);
+    OH_PixelmapInitializationOptions_SetWidth(options, LENGTH);
+    OH_PixelmapInitializationOptions_SetHeight(options, LENGTH);
+    OH_PixelmapNative_CreateEmptyPixelmap(options, &pixelmap1);
+    Input_CustomCursor *customCursor = OH_Input_CustomCursor_Create(pixelmap1, FOCUS, FOCUS);
+    bool isfollowSystem = true;
+    Input_CursorConfig *cursorConfig = OH_Input_CursorConfig_Create(isfollowSystem);
+    int32_t windowId = 0;
+    Input_Result retResult = OH_Input_SetCustomCursor(windowId, customCursor, cursorConfig);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ||
+    retResult == INPUT_SERVICE_EXCEPTION ? 1 : 0, &result);
+    OH_Input_CustomCursor_Destroy(&customCursor);
+    OH_Input_CursorConfig_Destroy(&cursorConfig);
+    return result;
+}
+
+static napi_value CustomCursor16(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Input_CursorConfig *cursorConfig = OH_Input_CursorConfig_Create(false);
+    napi_create_int32(env, cursorConfig != nullptr ? 1 : 0, &result);
+    OH_Input_CursorConfig_Destroy(&cursorConfig);
+    return result;
+}
+
+static napi_value CustomCursor17(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_PixelmapNative *pixelmap1 = nullptr;
+    OH_Pixelmap_InitializationOptions *options = nullptr;
+    OH_PixelmapInitializationOptions_Create(&options);
+    OH_PixelmapInitializationOptions_SetWidth(options, LENGTH);
+    OH_PixelmapInitializationOptions_SetHeight(options, LENGTH);
+    OH_PixelmapNative_CreateEmptyPixelmap(options, &pixelmap1);
+    Input_CustomCursor *customCursor = OH_Input_CustomCursor_Create(pixelmap1, 0, 0);
+    int32_t anchorX;
+    int32_t anchorY;
+    Input_Result retResult = OH_Input_CustomCursor_GetAnchor(customCursor, &anchorX, &anchorY);
+    napi_create_int32(env, retResult == INPUT_SUCCESS ? 1 : 0, &result);
+    OH_Input_CustomCursor_Destroy(&customCursor);
+    return result;
+}
+
+static napi_value CustomCursor18(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_PixelmapNative *pixelmap1 = nullptr;
+    OH_Pixelmap_InitializationOptions *options = nullptr;
+    OH_PixelmapInitializationOptions_Create(&options);
+    OH_PixelmapInitializationOptions_SetWidth(options, LENGTH);
+    OH_PixelmapInitializationOptions_SetHeight(options, LENGTH);
+    OH_PixelmapNative_CreateEmptyPixelmap(options, &pixelmap1);
+    Input_CustomCursor *customCursor = OH_Input_CustomCursor_Create(pixelmap1, 0, 0);
+    Input_Result retResult = OH_Input_CustomCursor_GetPixelMap(customCursor, &pixelmap1);
+    napi_create_int32(env, retResult == INPUT_SUCCESS ? 1 : 0, &result);
+    OH_Input_CustomCursor_Destroy(&customCursor);
+    return result;
+}
+
+static napi_value CreateDeviceInfo1(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Input_DeviceInfo *deviceInfo = OH_Input_CreateDeviceInfo();
+    napi_create_int32(env, (deviceInfo != nullptr) ? 1 : 0, &result);
+    OH_Input_DestroyDeviceInfo(&deviceInfo);
+    return result;
+}
+
+static napi_value CreateHotkey1(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Input_Hotkey *hotkey = OH_Input_CreateHotkey();
+    napi_create_int32(env, (hotkey != nullptr) ? 1 : 0, &result);
+    OH_Input_DestroyHotkey(&hotkey);
+    return result;
+}
+
+static napi_value GetInterSinceLastInput1(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int64_t retResult = OH_Input_GetIntervalSinceLastInput(nullptr);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ||
+    retResult == INPUT_SERVICE_EXCEPTION ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value RemoveKeyEventHook1(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Input_Result retResult = OH_Input_RemoveKeyEventHook(nullptr);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR) ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value DispatchToNextHandler1(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+
+    int32_t eventId1 = -1;
+    int32_t eventId2 = 0;
+    int32_t eventId3 = 1;
+    int32_t eventId4 = 2147483647;
+    Input_Result retResult1 = OH_Input_DispatchToNextHandler(eventId1);
+    Input_Result retResult2 = OH_Input_DispatchToNextHandler(eventId2);
+    Input_Result retResult3 = OH_Input_DispatchToNextHandler(eventId3);
+    Input_Result retResult4 = OH_Input_DispatchToNextHandler(eventId4);
+    napi_create_int32(env,
+        (retResult1 == INPUT_PARAMETER_ERROR || retResult1 == INPUT_SERVICE_EXCEPTION) &&
+        (retResult2 == INPUT_PARAMETER_ERROR || retResult2 == INPUT_SERVICE_EXCEPTION) &&
+        (retResult3 == INPUT_PARAMETER_ERROR || retResult3 == INPUT_SERVICE_EXCEPTION) &&
+        (retResult4 == INPUT_PARAMETER_ERROR || retResult4 == INPUT_SERVICE_EXCEPTION)
+         ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value GetKeyEventId(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t eventId;
+    Input_Result retResult = OH_Input_GetKeyEventId(nullptr, &eventId);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR) ? 1 : 0, &result);
     return result;
 }
 
@@ -674,10 +836,25 @@ static napi_property_descriptor desc_part2[] = {
     {"CursorInfo13", nullptr, CursorInfo13, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
+static napi_property_descriptor desc_part3[] = {
+    {"CustomCursor14", nullptr, CustomCursor14, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CustomCursor15", nullptr, CustomCursor15, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CustomCursor16", nullptr, CustomCursor16, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CustomCursor17", nullptr, CustomCursor17, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CustomCursor18", nullptr, CustomCursor18, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CreateDeviceInfo1", nullptr, CreateDeviceInfo1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CreateHotkey1", nullptr, CreateHotkey1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"GetInterSinceLastInput1", nullptr, GetInterSinceLastInput1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"RemoveKeyEventHook1", nullptr, RemoveKeyEventHook1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"DispatchToNextHandler1", nullptr, DispatchToNextHandler1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"GetKeyEventId", nullptr, GetKeyEventId, nullptr, nullptr, nullptr, napi_default, nullptr},
+};
+
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_define_properties(env, exports, sizeof(desc_part1) / sizeof(desc_part1[0]), desc_part1);
     napi_define_properties(env, exports, sizeof(desc_part2) / sizeof(desc_part2[0]), desc_part2);
+    napi_define_properties(env, exports, sizeof(desc_part3) / sizeof(desc_part3[0]), desc_part3);
     return exports;
 }
 EXTERN_C_END

@@ -38,8 +38,8 @@ static napi_value TestContainerPickerSelectionIndicator001(napi_env env, napi_ca
     ArkUI_ErrorCode ret = OH_ArkUI_PickerIndicatorStyle_ConfigureBackground(Style, &background);
     ArkUI_AttributeItem selectionIndicatorItem = { .object = Style };
     auto ret1 = nodeAPI->setAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR, &selectionIndicatorItem);
-    ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_0].i32, PARAM_0);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_1].u32, COLOR_RED);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_2].f32, PARAM_5);
@@ -65,8 +65,8 @@ static napi_value TestContainerPickerSelectionIndicator002(napi_env env, napi_ca
     ArkUI_ErrorCode ret = OH_ArkUI_PickerIndicatorStyle_ConfigureBackground(Style, &background);
     ArkUI_AttributeItem selectionIndicatorItem = { .object = Style };
     auto ret1 = nodeAPI->setAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR, &selectionIndicatorItem);
-    ASSERT_EQ(ret, INVALID_PARAM);
-    ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     if (nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR) != nullptr) {
         ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_0].i32, PARAM_1);
         ASSERT_NE(
@@ -90,8 +90,8 @@ static napi_value TestContainerPickerSelectionIndicator003(napi_env env, napi_ca
     ArkUI_ErrorCode ret = OH_ArkUI_PickerIndicatorStyle_ConfigureDivider(Style, nullptr);
     ArkUI_AttributeItem selectionIndicatorItem = { .object = Style };
     auto ret1 = nodeAPI->setAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR, &selectionIndicatorItem);
-    ASSERT_EQ(ret, INVALID_PARAM);
-    ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
 
@@ -109,8 +109,8 @@ static napi_value TestContainerPickerSelectionIndicator004(napi_env env, napi_ca
     ArkUI_ErrorCode ret = OH_ArkUI_PickerIndicatorStyle_ConfigureBackground(Style, &background);
     ArkUI_AttributeItem selectionIndicatorItem = { .object = Style };
     auto ret1 = nodeAPI->setAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR, &selectionIndicatorItem);
-    ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_0].i32, 0);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_1].u32, 0x00000000);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_2].f32, PARAM_5);
@@ -135,8 +135,8 @@ static napi_value TestContainerPickerSelectionIndicator005(napi_env env, napi_ca
     ArkUI_ErrorCode ret = OH_ArkUI_PickerIndicatorStyle_ConfigureBackground(Style, &background);
     ArkUI_AttributeItem selectionIndicatorItem = { .object = Style };
     auto ret1 = nodeAPI->setAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR, &selectionIndicatorItem);
-    ASSERT_EQ(ret, INVALID_PARAM);
-    ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     if (nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR) != nullptr) {
         ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_0].i32, PARAM_0);
         ASSERT_NE(
@@ -166,8 +166,8 @@ static napi_value TestContainerPickerSelectionIndicator006(napi_env env, napi_ca
     ArkUI_ErrorCode ret = OH_ArkUI_PickerIndicatorStyle_ConfigureBackground(Style, &background);
     ArkUI_AttributeItem selectionIndicatorItem = { .object = Style };
     auto ret1 = nodeAPI->setAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR, &selectionIndicatorItem);
-    ASSERT_EQ(ret, INVALID_PARAM);
-    ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     if (nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR) != nullptr) {
         ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_0].i32, PARAM_0);
         ASSERT_NE(
@@ -196,8 +196,8 @@ static napi_value TestContainerPickerSelectionIndicator007(napi_env env, napi_ca
     ArkUI_ErrorCode ret = OH_ArkUI_PickerIndicatorStyle_ConfigureBackground(Style, &background);
     ArkUI_AttributeItem selectionIndicatorItem = { .object = Style };
     auto ret1 = nodeAPI->setAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR, &selectionIndicatorItem);
-    ASSERT_EQ(ret, INVALID_PARAM);
-    ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     if (nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR) != nullptr) {
         ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_0].i32, PARAM_0);
         ASSERT_NE(
@@ -227,8 +227,8 @@ static napi_value TestContainerPickerSelectionIndicator008(napi_env env, napi_ca
     ArkUI_ErrorCode ret = OH_ArkUI_PickerIndicatorStyle_ConfigureBackground(Style, &background);
     ArkUI_AttributeItem selectionIndicatorItem = { .object = Style };
     auto ret1 = nodeAPI->setAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR, &selectionIndicatorItem);
-    ASSERT_EQ(ret, INVALID_PARAM);
-    ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     if (nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR) != nullptr) {
         ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_0].i32, PARAM_0);
         ASSERT_NE(
@@ -258,8 +258,8 @@ static napi_value TestContainerPickerSelectionIndicator009(napi_env env, napi_ca
     ArkUI_ErrorCode ret = OH_ArkUI_PickerIndicatorStyle_ConfigureDivider(Style, &divider);
     ArkUI_AttributeItem selectionIndicatorItem = { .object = Style };
     auto ret1 = nodeAPI->setAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR, &selectionIndicatorItem);
-    ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_0].i32, 1);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_1].f32, PARAM_10);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_2].u32, COLOR_BLUE);
@@ -284,8 +284,8 @@ static napi_value TestContainerPickerSelectionIndicator010(napi_env env, napi_ca
     ArkUI_ErrorCode ret = OH_ArkUI_PickerIndicatorStyle_ConfigureDivider(Style, &divider);
     ArkUI_AttributeItem selectionIndicatorItem = { .object = Style };
     auto ret1 = nodeAPI->setAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR, &selectionIndicatorItem);
-    ASSERT_EQ(ret, INVALID_PARAM);
-    ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     if (nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR) != nullptr) {
         ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_0].i32, PARAM_0);
         ASSERT_NE(
@@ -308,8 +308,8 @@ static napi_value TestContainerPickerSelectionIndicator011(napi_env env, napi_ca
     ArkUI_ErrorCode ret = OH_ArkUI_PickerIndicatorStyle_ConfigureDivider(Style, nullptr);
     ArkUI_AttributeItem selectionIndicatorItem = { .object = Style };
     auto ret1 = nodeAPI->setAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR, &selectionIndicatorItem);
-    ASSERT_EQ(ret, INVALID_PARAM);
-    ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
 
@@ -328,8 +328,8 @@ static napi_value TestContainerPickerSelectionIndicator012(napi_env env, napi_ca
     ArkUI_ErrorCode ret = OH_ArkUI_PickerIndicatorStyle_ConfigureDivider(Style, &divider);
     ArkUI_AttributeItem selectionIndicatorItem = { .object = Style };
     auto ret1 = nodeAPI->setAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR, &selectionIndicatorItem);
-    ASSERT_EQ(ret, INVALID_PARAM);
-    ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     if (nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR) != nullptr) {
         ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_0].i32, PARAM_1);
         ASSERT_NE(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_1].f32,
@@ -358,8 +358,8 @@ static napi_value TestContainerPickerSelectionIndicator013(napi_env env, napi_ca
     ArkUI_ErrorCode ret = OH_ArkUI_PickerIndicatorStyle_ConfigureDivider(Style, &divider);
     ArkUI_AttributeItem selectionIndicatorItem = { .object = Style };
     auto ret1 = nodeAPI->setAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR, &selectionIndicatorItem);
-    ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_0].i32, 1);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_1].f32, PARAM_10);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_2].u32, 0x00000000);
@@ -383,8 +383,8 @@ static napi_value TestContainerPickerSelectionIndicator014(napi_env env, napi_ca
     ArkUI_ErrorCode ret = OH_ArkUI_PickerIndicatorStyle_ConfigureDivider(Style, &divider);
     ArkUI_AttributeItem selectionIndicatorItem = { .object = Style };
     auto ret1 = nodeAPI->setAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR, &selectionIndicatorItem);
-    ASSERT_EQ(ret, INVALID_PARAM);
-    ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     if (nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR) != nullptr) {
         ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_0].i32, PARAM_1);
         ASSERT_NE(
@@ -413,8 +413,8 @@ static napi_value TestContainerPickerSelectionIndicator015(napi_env env, napi_ca
     ArkUI_ErrorCode ret = OH_ArkUI_PickerIndicatorStyle_ConfigureDivider(Style, &divider);
     ArkUI_AttributeItem selectionIndicatorItem = { .object = Style };
     auto ret1 = nodeAPI->setAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR, &selectionIndicatorItem);
-    ASSERT_EQ(ret, INVALID_PARAM);
-    ASSERT_EQ(ret1, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     if (nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR) != nullptr) {
         ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR)->value[PARAM_0].i32, PARAM_1);
         ASSERT_NE(
@@ -436,7 +436,16 @@ static napi_value TestContainerPickerSelectionIndicator016(napi_env env, napi_ca
     auto containerPicker = nodeAPI->createNode(ARKUI_NODE_PICKER);
     ArkUI_AttributeItem selectionIndicatorItem = { .object = nullptr };
     auto ret = nodeAPI->setAttribute(containerPicker, NODE_PICKER_SELECTION_INDICATOR, &selectionIndicatorItem);
-    ASSERT_EQ(ret, INVALID_PARAM);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+static napi_value TestContainerPickerSelectionIndicator017(napi_env env, napi_callback_info info)
+{
+    ArkUI_NativeNodeAPI_1* nodeAPI = nullptr;
+    OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
+    ArkUI_PickerIndicatorStyle* Style = OH_ArkUI_PickerIndicatorStyle_Create(static_cast<ArkUI_PickerIndicatorType>(5));
+    ASSERT_EQ((uint64_t)Style, 0);
     NAPI_END;
 }
 } // namespace ArkUICapiTest

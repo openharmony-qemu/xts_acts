@@ -46,7 +46,7 @@ import { RenderNode, FrameNode, NodeController } from "@ohos.arkui.node"
 
 let renderNode = new RenderNode();
 renderNode.size = { width: 300, height: 300 };
-renderNode.backgroundColor = 0XFF00FF00
+renderNode.backgroundColor = 0XFF00FF00.toInt()
 let clipToFrame = renderNode.clipToFrame
 
 class MyNodeController extends NodeController {

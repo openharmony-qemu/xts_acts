@@ -124,28 +124,17 @@ export default class Utils {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
-      let pageParams: RouterParams = new RouterParams();
+      let pageParams = JSON.parseJsonElement(JSON.stringify(router.getParams()));
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
-      if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
-        console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
-        console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
+      if (pageParams && pageParams.tryGetElement('view') && obj.targetView != pageParams.getElement('view').getString('targetView')) {
+        console.info('get ' + obj.pageName + ' params: ' + JSON.stringifyJsonElement(pageParams));
+        console.info('pageParams.view.targetView: ' + pageParams.getElement('view').getString('targetView'));
         console.info('targetView: ' + obj.targetView);
-        console.info('viewPage: ' + viewPage);
-        if(viewPage == ""){
-          viewPage = obj.targetView
-        } else if(viewPage !== "" && viewPage !== obj.targetView){
-          viewPage = obj.targetView
-          router.pushUrl({
-            url: 'MainAbility/pages/index/index',
-          });
-          await Utils.sleep(500);
-        }else{
-          router.clear()
-        }
+        await Utils.back();
         pages = router.getState();
       }
 
-      if (!(obj.pageName == pages.name)) {
+      if (obj.pageName != pages.name || obj.targetView != pageParams.getElement('view').getString('targetView')) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
         router.pushUrl({
           url: obj.pageUrl,
@@ -198,7 +187,7 @@ export default class Utils {
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
     // let rectInfo = JSON.parseJsonElement('[' + obj.getElement('$rect') + ']');
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     let rect_value: RectValue = {
       left:Number(rectInfo[0][0] ?? 0),

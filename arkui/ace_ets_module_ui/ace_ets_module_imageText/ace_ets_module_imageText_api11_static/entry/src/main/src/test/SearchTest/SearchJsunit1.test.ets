@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,6 +32,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -88,7 +89,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 2,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1501,
@@ -129,14 +130,14 @@ export default function searchTest() {
       expect(obj.getString('$type')).assertEqual('Search');
       const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
       let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_size_body1').id) as double
-      expect(obj.getElement('$attrs').getElement('placeholderFont'))
+      expect(obj.getElement('$attrs').getString('placeholderFont'))
         .assertEqual('{"style":"FontStyle.Normal","size":"' + uiContext!.px2fp(resourceSize) +
           '.00fp","weight":"400","fontFamily":"sans-serif"}');
       try {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 4,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1701,
@@ -172,7 +173,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 5,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1801,
@@ -217,7 +218,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 6,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1901,
@@ -252,7 +253,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 7,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 2001,
@@ -294,7 +295,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 8,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 2101,
@@ -339,7 +340,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 9,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 2201,
@@ -375,7 +376,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 10,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 2301,
@@ -410,7 +411,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 11,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 2401,
@@ -455,7 +456,7 @@ export default function searchTest() {
         let eventData: emitter.EventData = {
           data: {
             "typeValue": 12,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 2501,

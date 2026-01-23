@@ -19,11 +19,9 @@ import confirmDialogTest from './dialog/confirmDialogTest.test';
 import customContentDialogTest from './dialog/customContentDialogTest.test';
 import selectDialogTest from './dialog/selectDialogTest.test';
 import tipsDialogTest from './dialog/tipsDialogTest.test';
-import counterDirectionTest from './counter/counterDirection.test';
 import loadingDialogTest from './dialog/loadingDialogTest.test';
 
 export default function testsuite() {
-  counterDirectionTest();
   alertDialogTest();
   confirmDialogTest();
   customContentDialogTest();

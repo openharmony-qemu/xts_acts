@@ -99,8 +99,6 @@ export default function ImageAdvancedTest() {
 
     
     
-
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0050
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0050
@@ -123,8 +121,6 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0050', Level.LEVEL3, async (don
 
     
     
-
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280
@@ -140,7 +136,7 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280', Level.LEVEL3, async (don
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280] component obj1 is: " + JSON.stringify(obj1));
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280] obj1.getElement('$attrs').getString('content') is: " + obj1.getElement('$attrs').getString('content'));
-      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280] UIContext.getFocusedUIContext()!.vp2px(1): " + UIContext.getFocusedUIContext()!.vp2px(1));
+      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280] UIContext.resolveUIContext()!.vp2px(1): " + UIContext.resolveUIContext()!.vp2px(1));
       let strJson2 = inspector.getInspectorByKey('contentOffsetY01');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280] component obj2 is: " + JSON.stringify(obj2));
@@ -149,8 +145,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280', Level.LEVEL3, async (don
       let obj3 = JSON.parseJsonElement(strJson3);
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280] component obj3 is: " + JSON.stringify(obj3));
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280] obj3.getElement('$attrs').getString('content') is: " + obj3.getElement('$attrs').getString('content'));
-      expect(Math.abs(Number(obj1.getElement('$attrs').getString('content')) - UIContext.getFocusedUIContext()!.vp2px(1)) <= 1).assertTrue();
-      expect(Math.abs(Number(obj2.getElement('$attrs').getString('content')) - UIContext.getFocusedUIContext()!.vp2px(1)) <= 1).assertTrue();
+      expect(Math.abs(Number(obj1.getElement('$attrs').getString('content')) - UIContext.resolveUIContext()!.vp2px(1)) <= 1).assertTrue();
+      expect(Math.abs(Number(obj2.getElement('$attrs').getString('content')) - UIContext.resolveUIContext()!.vp2px(1)) <= 1).assertTrue();
       expect(Math.abs(Number(obj3.getElement('$attrs').getString('content'))) >= 97).assertTrue();
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280] END');
       done();
@@ -158,8 +154,6 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280', Level.LEVEL3, async (don
 
     
     
-
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0290
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0290
@@ -181,8 +175,6 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0290', Level.LEVEL3, async (don
 
     
     
-
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0300
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0300
@@ -198,25 +190,23 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0300', Level.LEVEL3, async (don
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0300] component obj1 is: " + JSON.stringify(obj1));
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0300] obj1.getElement('$attrs').getString('content') is: " + obj1.getElement('$attrs').getString('content'));
-      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0300] UIContext.getFocusedUIContext()!.vp2px(80): " + UIContext.getFocusedUIContext()!.vp2px(80));
+      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0300] UIContext.resolveUIContext()!.vp2px(80): " + UIContext.resolveUIContext()!.vp2px(80));
       let strJson2 = inspector.getInspectorByKey('contentOffsetX03');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0300] component obj2 is: " + JSON.stringify(obj2));
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0300] obj2.getElement('$attrs').getString('content') is: " + obj2.getElement('$attrs').getString('content'));
-      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0300] UIContext.getFocusedUIContext()!.vp2px(10): " + UIContext.getFocusedUIContext()!.vp2px(10));
-      let round = Math.round(UIContext.getFocusedUIContext()!.vp2px(10))
-      let vp2px10 = Math.abs(UIContext.getFocusedUIContext()!.vp2px(10) - round) < 0.001 ? round : Math.floor(UIContext.getFocusedUIContext()!.vp2px(10))
+      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0300] UIContext.resolveUIContext()!.vp2px(10): " + UIContext.resolveUIContext()!.vp2px(10));
+      let round = Math.round(UIContext.resolveUIContext()!.vp2px(10))
+      let vp2px10 = Math.abs(UIContext.resolveUIContext()!.vp2px(10) - round) < 0.001 ? round : Math.floor(UIContext.resolveUIContext()!.vp2px(10))
       let contentHeigt = Number(obj1.getElement('$attrs').getString('content'))
-      let imageContentHeight = UIContext.getFocusedUIContext()!.vp2px(100) - vp2px10 * 2
+      let imageContentHeight = UIContext.resolveUIContext()!.vp2px(100) - vp2px10 * 2
       expect(Math.abs(contentHeigt - imageContentHeight) <= 1).assertTrue();
-      expect(Math.abs(Number(obj2.getElement('$attrs').getString('content')) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(Number(obj2.getElement('$attrs').getString('content')) - UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();
       done();
     });
 
     
     
-
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0310
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0310
@@ -232,21 +222,19 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0310', Level.LEVEL3, async (don
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0310] component obj1 is: " + JSON.stringify(obj1));
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0310] obj1.getElement('$attrs').getString('content') is: " + obj1.getElement('$attrs').getString('content'));
-      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0310] UIContext.getFocusedUIContext()!.vp2px(60): " + UIContext.getFocusedUIContext()!.vp2px(60));
+      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0310] UIContext.resolveUIContext()!.vp2px(60): " + UIContext.resolveUIContext()!.vp2px(60));
       let strJson2 = inspector.getInspectorByKey('contentOffsetX04');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0310] component obj2 is: " + JSON.stringify(obj2));
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0310] obj2.getElement('$attrs').getString('content') is: " + obj2.getElement('$attrs').getString('content'));
-      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0310] UIContext.getFocusedUIContext()!.vp2px(20): " + UIContext.getFocusedUIContext()!.vp2px(20));
-      expect(Math.abs(Number(obj1.getElement('$attrs').getString('content')) - UIContext.getFocusedUIContext()!.vp2px(60)) <= 1).assertTrue();
-      expect(Math.abs(Number(obj2.getElement('$attrs').getString('content')) - UIContext.getFocusedUIContext()!.vp2px(20)) <= 1).assertTrue();
+      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0310] UIContext.resolveUIContext()!.vp2px(20): " + UIContext.resolveUIContext()!.vp2px(20));
+      expect(Math.abs(Number(obj1.getElement('$attrs').getString('content')) - UIContext.resolveUIContext()!.vp2px(60)) <= 1).assertTrue();
+      expect(Math.abs(Number(obj2.getElement('$attrs').getString('content')) - UIContext.resolveUIContext()!.vp2px(20)) <= 1).assertTrue();
       done();
     });
 
     
     
-
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0320
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0320
@@ -262,25 +250,23 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0320', Level.LEVEL3, async (don
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0320] component obj1 is: " + JSON.stringify(obj1));
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0320] obj1.getElement('$attrs').getString('content') is: " + obj1.getElement('$attrs').getString('content'));
-      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0320] UIContext.getFocusedUIContext()!.vp2px(80): " + UIContext.getFocusedUIContext()!.vp2px(80));
+      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0320] UIContext.resolveUIContext()!.vp2px(80): " + UIContext.resolveUIContext()!.vp2px(80));
       let strJson2 = inspector.getInspectorByKey('contentOffsetX05');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0320] component obj2 is: " + JSON.stringify(obj2));
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0320] obj2.getElement('$attrs').getString('content') is: " + obj2.getElement('$attrs').getString('content'));
-      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0320] UIContext.getFocusedUIContext()!.vp2px(10): " + UIContext.getFocusedUIContext()!.vp2px(10));
-      let round = Math.round(UIContext.getFocusedUIContext()!.vp2px(10))
-      let vp2px10 = Math.abs(UIContext.getFocusedUIContext()!.vp2px(10) - round) < 0.001 ? round : Math.floor(UIContext.getFocusedUIContext()!.vp2px(10))
+      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0320] UIContext.resolveUIContext()!.vp2px(10): " + UIContext.resolveUIContext()!.vp2px(10));
+      let round = Math.round(UIContext.resolveUIContext()!.vp2px(10))
+      let vp2px10 = Math.abs(UIContext.resolveUIContext()!.vp2px(10) - round) < 0.001 ? round : Math.floor(UIContext.resolveUIContext()!.vp2px(10))
       let contentHeigt = Number(obj1.getElement('$attrs').getString('content'))
-      let imageContentHeight = UIContext.getFocusedUIContext()!.vp2px(100) - vp2px10 * 2
+      let imageContentHeight = UIContext.resolveUIContext()!.vp2px(100) - vp2px10 * 2
       expect(Math.abs(contentHeigt - imageContentHeight) <= 1).assertTrue();
-      expect(Math.abs(Number(obj2.getElement('$attrs').getString('content')) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(Number(obj2.getElement('$attrs').getString('content')) - UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();
       done();
     });
 
     
     
-
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0330
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0330
@@ -296,21 +282,19 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0330', Level.LEVEL3, async (don
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0330] component obj1 is: " + JSON.stringify(obj1));
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0330] obj1.getElement('$attrs').getString('content') is: " + obj1.getElement('$attrs').getString('content'));
-      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0330] UIContext.getFocusedUIContext()!.vp2px(60): " + UIContext.getFocusedUIContext()!.vp2px(60));
+      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0330] UIContext.resolveUIContext()!.vp2px(60): " + UIContext.resolveUIContext()!.vp2px(60));
       let strJson2 = inspector.getInspectorByKey('contentOffsetX06');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0330] component obj2 is: " + JSON.stringify(obj2));
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0330] obj2.getElement('$attrs').getString('content') is: " + obj2.getElement('$attrs').getString('content'));
-      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0330] UIContext.getFocusedUIContext()!.vp2px(20): " + UIContext.getFocusedUIContext()!.vp2px(20));
-      expect(Math.abs(Number(obj1.getElement('$attrs').getString('content')) - UIContext.getFocusedUIContext()!.vp2px(60)) <= 1).assertTrue();
-      expect(Math.abs(Number(obj2.getElement('$attrs').getString('content')) - UIContext.getFocusedUIContext()!.vp2px(20)) <= 1).assertTrue();
+      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0330] UIContext.resolveUIContext()!.vp2px(20): " + UIContext.resolveUIContext()!.vp2px(20));
+      expect(Math.abs(Number(obj1.getElement('$attrs').getString('content')) - UIContext.resolveUIContext()!.vp2px(60)) <= 1).assertTrue();
+      expect(Math.abs(Number(obj2.getElement('$attrs').getString('content')) - UIContext.resolveUIContext()!.vp2px(20)) <= 1).assertTrue();
       done();
     });
 
     
     
-
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0340
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0340
@@ -326,20 +310,18 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0340', Level.LEVEL3, async (don
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0340] component obj1 is: " + JSON.stringify(obj1));
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0340] obj1.getElement('$attrs').getString('content') is: " + obj1.getElement('$attrs').getString('content'));
-      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0340] UIContext.getFocusedUIContext()!.vp2px(100): " + UIContext.getFocusedUIContext()!.vp2px(100));
+      console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0340] UIContext.resolveUIContext()!.vp2px(100): " + UIContext.resolveUIContext()!.vp2px(100));
       let strJson2 = inspector.getInspectorByKey('contentOffsetX07');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0340] component obj2 is: " + JSON.stringify(obj2));
       console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0340] obj2.getElement('$attrs').getString('content') is: " + obj2.getElement('$attrs').getString('content'));
-      expect(Math.abs(Number(obj1.getElement('$attrs').getString('content')) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Number(obj2.getElement('$attrs').getString('content')) - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Number(obj1.getElement('$attrs').getString('content')) - UIContext.resolveUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Number(obj2.getElement('$attrs').getString('content')) - UIContext.resolveUIContext()!.vp2px(0)) <= 1).assertTrue();
       done();
     });
 
     
     
-
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0350
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0350
@@ -366,8 +348,6 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0350', Level.LEVEL3, async (don
 
     
     
-
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0360
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0360
@@ -389,8 +369,6 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0360', Level.LEVEL3, async (don
 
     
     
-
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0370
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0370
@@ -412,8 +390,6 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0370', Level.LEVEL3, async (don
 
     
     
-
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0380
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0380
@@ -435,8 +411,6 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0380', Level.LEVEL3, async (don
 
     
     
-
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0420
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0420
@@ -478,8 +452,6 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0420', Level.LEVEL3, async (don
 
     
     
-
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0430
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0430
@@ -501,8 +473,6 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0430', Level.LEVEL3, async (don
 
     
     
-
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0440
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0440

@@ -92,8 +92,6 @@ export default function RelativeGuideLine5() {
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine5_static_001
      * @tc.name     RelativeGuideLine5_static_001

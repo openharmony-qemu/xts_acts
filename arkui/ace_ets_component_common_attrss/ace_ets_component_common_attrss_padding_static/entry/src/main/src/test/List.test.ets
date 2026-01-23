@@ -16,8 +16,6 @@
 import PaddingBaseLengthTest from './padding/PaddingBaseLengthTest.test';
 import PaddingContainerLengthTest from './padding/PaddingContainerLengthTest.test';
 export default function testsuite() {
-  console.log("================================ start PaddingContainerLengthTest");
-  PaddingContainerLengthTest(); // Padding(Badge)
-  console.log("================================ start PaddingBaseLengthTest");
-  PaddingBaseLengthTest(); // Padding(Marquee，NavRouter，TextArea)
+  PaddingContainerLengthTest();
+  PaddingBaseLengthTest();
 }

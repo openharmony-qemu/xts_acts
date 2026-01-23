@@ -1414,5 +1414,6 @@ export default function fontTest() {
       expect(result).assertEqual(0);
       done();
     });
+
   })
 }

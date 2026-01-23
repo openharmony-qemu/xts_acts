@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,6 +51,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { ScaleOptions } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 
 let domain: Int = 0x0000;
@@ -104,8 +105,6 @@ export default function ohosMatrix4Jsunit() {
     });
 
     
-
-
 /**
      * @tc.number   test_OhosMatrix4_static_001
      * @tc.name     test_OhosMatrix4_static_001
@@ -126,8 +125,6 @@ it('test_OhosMatrix4_static_001', Level.LEVEL1, async (done: () => void): Promis
     });
 
     
-
-
 /**
      * @tc.number   test_OhosMatrix4_static_002
      * @tc.name     test_OhosMatrix4_static_002
@@ -148,8 +145,6 @@ it('test_OhosMatrix4_static_002', Level.LEVEL1, async (done: () => void): Promis
     });
 
     
-
-
 /**
      * @tc.number   test_OhosMatrix4_static_003
      * @tc.name     test_OhosMatrix4_static_003
@@ -170,8 +165,6 @@ it('test_OhosMatrix4_static_003', Level.LEVEL1, async (done: () => void): Promis
     });
 
     
-
-
 /**
      * @tc.number   test_OhosMatrix4_static_004
      * @tc.name     test_OhosMatrix4_static_004
@@ -187,7 +180,7 @@ it('test_OhosMatrix4_static_004', Level.LEVEL1, async (done: () => void): Promis
             "scaleValue": {
               x: 1, y: 1
             } as ScaleOptions
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 140,
@@ -208,8 +201,6 @@ it('test_OhosMatrix4_static_004', Level.LEVEL1, async (done: () => void): Promis
     });
 
     
-
-
 /**
      * @tc.number   test_OhosMatrix4_static_005
      * @tc.name     test_OhosMatrix4_static_005
@@ -220,7 +211,7 @@ it('test_OhosMatrix4_static_005', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(1000)
       let callback:(eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         console.info("[test_OhosMatrix4_005] get event state result is: " + JSON.stringify(eventData));
-        const data = eventData.data as Record<string, undefined|null|Object>
+        const data = eventData.data as Record<String,RecordData>
         expect(data['matrix1']).assertEqual("[100, 10]")
       }
       let innerEvent: events_emitter.InnerEvent = {
@@ -239,8 +230,6 @@ it('test_OhosMatrix4_static_005', Level.LEVEL1, async (done: () => void): Promis
     });
 
     
-
-
 /**
      * @tc.number   test_OhosMatrix4_static_006
      * @tc.name     test_OhosMatrix4_static_006
@@ -259,7 +248,7 @@ it('test_OhosMatrix4_static_006', Level.LEVEL1, async (done: () => void): Promis
             "matrix3": {
               x: 2
             } as Matrix
-          }as Record<string, undefined|null|Object>
+          }as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 140,

@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,13 +58,14 @@ export default function RenderNodeDemo01Test() {
 
 
 
-/**
+    /**
      * @tc.number   RenderNodeDemo01Test_static_0100
      * @tc.name     RenderNodeDemo01Test_static_0100
      * @tc.desc     RenderNodeDemo01Test_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('RenderNodeDemo01Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('RenderNodeDemo01Test_0100 START');
       await CommonFunc.sleep(1000);
       let driver =  Driver.create()

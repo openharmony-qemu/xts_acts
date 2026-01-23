@@ -32,7 +32,6 @@ import showToastOptions from './promptActionTest/showToastOptions.test'
 export default function testsuite() {
     blurStyleOptions();
     effectOptions();
-    // maxWidth();  //组件未交付
     openPopup();
     updatePopup();
     closePopup();
@@ -43,7 +42,8 @@ export default function testsuite() {
     ActionSheetLifeTest();
     AlertDialogLifeTest();
     CustomDialogLifeTest();
-    showInSubWindowBindSheet() //
+    showInSubWindowBindSheet()
+    menuBindMenuModifierTest();
     showToastOptions()
-    menuBindMenuModifierTest(); // 1
+    maxWidth();
 }

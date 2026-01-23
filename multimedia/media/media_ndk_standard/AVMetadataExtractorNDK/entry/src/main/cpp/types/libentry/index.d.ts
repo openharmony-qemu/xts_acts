@@ -43,6 +43,8 @@ export const OhAVMetadataExtractorFetchFramesByTimes: (a:number,b:number,c:numbe
 export const OHAVMetadataExtractorUserDataGetTestResult: (a: CustomUserData) => boolean;
 export const OhAVMetadataExtractorCancelAllFetchFrames: () => number;
 export const OhAVMetadataExtractorSetMediaSourceError: (params: number) => number;
+export const OhAVMetadataExtractorFetchState: () => number;
+export const OhAVMediaSeekMode: () => number;
 export enum OH_AVErrCode {
   /**
    * @error the operation completed successfully.

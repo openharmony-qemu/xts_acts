@@ -16,5 +16,5 @@
 import ParticleEmitter from './ParticleEmitter.test';
 
 export default function testsuite() {
-  ParticleEmitter(); // particle导致页面不跳转
+  ParticleEmitter();
 }

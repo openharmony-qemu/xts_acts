@@ -19,6 +19,7 @@ import imagePixelMapTest from './pixelMap'
 import imagePixelMapTestErrorCode from './pixelMapErrorCode'
 import pixelMapNewAPI from './PixelMapNewAPI.test'
 import graphicImagePixelMapAPI22 from './GraphicImagePixelMapAPI22.test'
+import graphicImagePixelMapAPI23 from './GraphicImagePixelMapAPI23.test'
 
 export default function testsuite() {
   imagePixelMapTest()
@@ -28,4 +29,5 @@ export default function testsuite() {
   imagePixelMapTestErrorCode()
   pixelMapNewAPI()
   graphicImagePixelMapAPI22();
+  graphicImagePixelMapAPI23();
 }

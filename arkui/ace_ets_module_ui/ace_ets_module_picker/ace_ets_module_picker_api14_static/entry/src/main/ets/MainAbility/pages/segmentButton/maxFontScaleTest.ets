@@ -17,7 +17,7 @@
 
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
   Row, ClickEvent, Margin, ButtonType, ColumnOptions, $r,BlurStyle
-  } from '@ohos.arkui.component'
+} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { SegmentButtonItemOptions,SegmentButtonTextItem,SegmentButton,
   SegmentButtonOptions,SegmentButtonItemTuple,TabSegmentButtonConstructionOptions,

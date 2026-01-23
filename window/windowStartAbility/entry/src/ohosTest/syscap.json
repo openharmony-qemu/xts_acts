@@ -7,8 +7,7 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.WindowManager.WindowManager.Core",
-                    "SystemCapability.Window.SessionManager"
+                    "SystemCapability.WindowManager.WindowManager.Core"
                 ]
             }
         ]

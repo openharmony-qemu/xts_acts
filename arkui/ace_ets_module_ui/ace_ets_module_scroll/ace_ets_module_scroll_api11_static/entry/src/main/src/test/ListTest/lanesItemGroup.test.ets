@@ -81,8 +81,7 @@ export default function lanesItemGroup() {
 
 
     
-    
-/**
+    /**
      * @tc.number   lanesItemGroup_static_0100
      * @tc.name     lanesItemGroup_static_0100
      * @tc.desc     lanesItemGroup_static_0100

@@ -73,6 +73,9 @@
       },
       {
         "name": "ohos.permission.MICROPHONE"
+      },
+	  {
+        "name": "ohos.permission.CAMERA"
       }
     ]
   }

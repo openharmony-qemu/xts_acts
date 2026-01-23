@@ -185,6 +185,8 @@ let on_message_callback = (value: SocketInfo) => {
           messageView = buffView.buffer;
         } else if (contentInfo.includes('test5::"!@#$%^&*`<>(){}[]')){
           console.info(TAG + `====>cacheDownloadHttpHeaders0100 start: ${contentInfo}` );
+        } else if (contentInfo.includes('test6:cacheDownloadMaintenance1500')){
+          console.info(TAG + `====>cacheDownloadMaintenance1500 start: ${contentInfo}` );
         } else {
           messageView = 'HTTP/1.1 400 Bad Request\r\ncontent-length:21\r\n\r\ncacheDownload failed!';
         }

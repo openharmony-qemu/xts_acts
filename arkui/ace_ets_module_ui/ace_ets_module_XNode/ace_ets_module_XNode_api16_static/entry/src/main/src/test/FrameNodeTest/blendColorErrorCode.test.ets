@@ -80,13 +80,14 @@ export default function blendColorErrorCodeTest() {
 
 
 
-/**
+    /**
      * @tc.number   blendColorErrorCodeTest_static_0100
      * @tc.name     blendColorErrorCodeTest_static_0100
      * @tc.desc     blendColorErrorCodeTest_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('blendColorErrorCodeTest_static_0100', Level.LEVEL0, async (done: () => void) => {
+
       console.info('blendColorErrorCodeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

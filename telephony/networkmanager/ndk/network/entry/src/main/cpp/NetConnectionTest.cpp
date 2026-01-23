@@ -105,6 +105,23 @@ napi_value NetConn_HasDefaultNet(napi_env env, napi_callback_info info)
     return result;
 }
 
+napi_value Netconn_GetEnum(napi_env env, napi_callback_info info)
+{
+    int32_t errorCode = NetConn_ErrorCode::NETCONN_OPERATION_FAILED;
+    napi_value result = nullptr;
+    napi_create_int32(env, errorCode, &result);
+    return result;
+}
+
+napi_value Netconn_GetEnumInternalError(napi_env env, napi_callback_info info)
+{
+    int32_t errorCode = NetConn_ErrorCode::NETCONN_INTERNAL_ERROR;
+    napi_value result = nullptr;
+    napi_create_int32(env, errorCode, &result);
+    return result;
+}
+
+
 napi_value NetConn_GetDefaultNet(napi_env env, napi_callback_info info)
 {
     NetConn_NetHandle netHandle;
@@ -1122,7 +1139,10 @@ static void RegisterRemainingProperties(napi_env env, napi_value exports)
         {"NetConn_FreeDnsResult", nullptr, NetConn_FreeDnsResult, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"NetConn_BindSocket", nullptr, NetConn_BindSocket, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CertVerification", nullptr, CertVerification, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetCertificatesHost", nullptr, GetCertificatesHost, nullptr, nullptr, nullptr, napi_default, nullptr}
+        {"GetCertificatesHost", nullptr, GetCertificatesHost, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Netconn_GetEnum", nullptr, Netconn_GetEnum, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Netconn_GetEnumInternalError", nullptr, Netconn_GetEnumInternalError, nullptr, nullptr, nullptr,
+         napi_default, nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
 }

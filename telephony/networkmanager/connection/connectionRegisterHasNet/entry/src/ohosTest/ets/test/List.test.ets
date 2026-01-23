@@ -19,13 +19,14 @@ import ConnectionBasicTest from './ConnectionBasic.test';
 import ConnectionGetNetCapabilitiesWithWifiTest from './ConnectionGetNetCapabilitiesWithWifi.test';
 import ConnectionEnhancedTestCellular from './ConnectionEnhancedTestCellular.test';
 import ConnectionEnhancedTestWifi from './ConnectionEnhancedTestWifi.test'
+import GetAddressesByNameWithOptionsTest from './ConnectionGetAddressesByNameWithOptions.test';
 import EmptyTest from './Empty.test';
 import { describe, expect, it , TestType, Size, Level, beforeEach } from '@ohos/hypium';
 
 let netHandle = connection.getDefaultNetSync();
 
 export default function testsuite() {
-      if(netHandle.netId != 0) {
+      if(netHandle.netId != 0){
         NetExtAttributeHasNetTest();
         ConnectionRegisterTest();
         ConnectionBasicTest();
@@ -38,6 +39,7 @@ export default function testsuite() {
         // cellular test
         else if (NetCapabilities.bearerTypes[0] === connection.NetBearType.BEARER_CELLULAR) {
           ConnectionEnhancedTestCellular();
+          GetAddressesByNameWithOptionsTest();
         }
       } else {
 	      EmptyTest();

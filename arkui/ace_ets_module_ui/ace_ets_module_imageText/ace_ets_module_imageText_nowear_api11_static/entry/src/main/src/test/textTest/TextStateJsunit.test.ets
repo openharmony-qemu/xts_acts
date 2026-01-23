@@ -46,7 +46,7 @@ export default function TextStateJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextStateJsunit state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextState" == pages.name)) {
           console.info("get TextStateJsunit pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

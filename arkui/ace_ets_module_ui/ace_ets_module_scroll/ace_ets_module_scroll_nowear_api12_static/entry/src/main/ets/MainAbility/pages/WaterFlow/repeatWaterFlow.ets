@@ -132,11 +132,11 @@ struct repeatWaterFlow {
         this.onReachText = 'success'
         console.info('waterFlow reach end')
       })
-      // .onWillScroll((scrollOffset: number, scrollState: ScrollState, scrollSource: ScrollSource): undefined => {
-      //   this.onText1 = 'success'
-      //   console.info(`onWillScroll scrollState = ${scrollState[scrollState]}, offset = ${scrollOffset}`)
-      //   return undefined
-      // })
+      .onWillScroll((scrollOffset: number, scrollState: ScrollState, scrollSource: ScrollSource): undefined => {
+        this.onText1 = 'success'
+        console.info(`onWillScroll scrollState = ${scrollState[scrollState]}, offset = ${scrollOffset}`)
+        return undefined
+      })
       .onDidScroll((scrollOffset: number, scrollState: ScrollState) => {
         this.onText2 = 'success'
         console.info(`onWillScroll scrollState = ${scrollState[scrollState]}, offset = ${scrollOffset}`)

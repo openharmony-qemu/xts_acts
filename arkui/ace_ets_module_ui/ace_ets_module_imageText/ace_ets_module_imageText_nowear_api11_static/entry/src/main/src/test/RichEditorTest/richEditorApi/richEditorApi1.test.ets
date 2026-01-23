@@ -50,7 +50,7 @@ export default function richEditorApi1() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get richEditorApi1 state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("richEditorApi1" == pages.name)) {
           console.info("get richEditorApi1 pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -88,14 +88,14 @@ it('richEditorApi1_static_0100', Level.LEVEL2, async (done: () => void) => {
       await CommonFunc.sleep(2000);
 
       let button1: Component|null = await driver.findComponent(ON.text('复制'));
-      button1?.click()
+      await (button1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
 
       await driver.click(centerPoint.x, centerPoint.y);
       await CommonFunc.sleep(2000);
 
       let button2: Component|null = await driver.findComponent(ON.text('粘贴'));
-      button2?.click()
+      await (button2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
 
       let text1 = inspector.getInspectorByKey('richEditorApi1_text1');

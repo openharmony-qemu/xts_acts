@@ -116,13 +116,13 @@ it('CombinationState7Jsunit_static_0200', Level.LEVEL0, async (done: () => void)
       let obj = JSON.parseJsonElement(strJson);
       console.info("[CombinationState7Jsunit_static_0200] component obj is: " + JSON.stringify(obj));
       console.info("[CombinationState7Jsunit_static_0200] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("@Prop:1");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("@PropRef:1");
 
       let strJson1 = inspector.getInspectorByKey('SubProp_text2');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[CombinationState7Jsunit_static_0200] component obj is: " + JSON.stringify(obj1));
       console.info("[CombinationState7Jsunit_static_0200] text: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual("@Prop:2");
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual("@PropRef:2");
       console.info('[CombinationState7Jsunit_static_0200] END');
       done();
     });

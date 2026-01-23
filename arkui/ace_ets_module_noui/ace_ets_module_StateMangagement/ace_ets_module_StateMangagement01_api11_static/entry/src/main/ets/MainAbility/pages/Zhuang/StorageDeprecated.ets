@@ -40,7 +40,7 @@ import {
 import {
   State,
   Link,StorageLink,
-  Prop,Provide,Consume,AppStorage,Environment,PersistentStorage,AbstractProperty
+  PropRef,Provide,Consume,AppStorage,Environment,PersistentStorage,SubscribedAbstractProperty
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -49,46 +49,36 @@ import CommonFunc from '../../../MainAbility/common/Common';
 import common from '@ohos.app.ability.common';
 import resourceManager from '@ohos.resourceManager';
 
-AppStorage.setOrCreate<string>('ADKey', 'HelloArkUI')
-AppStorage.setOrCreate<string>('ADKey1', 'HelloArkUI')
-Environment.envProps([{key: 'languageCode', defaultValue: 'en'}])
-Environment.envProps([{key: 'languageCodeA', defaultValue: 'en'}])
 
-PersistentStorage.persistProp<string>('ADPersistPropsA','HelloPersistPropsA')
-PersistentStorage.persistProp<string>('ADPersistPropsAa','HelloPersistPropsAa')
-PersistentStorage.persistProp<string>('ADPersistPropsAb','HelloPersistPropsAb')
-PersistentStorage.persistProp<string>('ADPersistPropsB','HelloPersistPropsB')
-PersistentStorage.persistProp<string>('ADPersistPropsBa','HelloPersistPropsBa')
-PersistentStorage.persistProp<string>('ADPersistPropsBb','HelloPersistPropsBb')
-
-PersistentStorage.persistProp<string>('ADPersistentStorageA', 'HelloPersistPropA')
-PersistentStorage.persistProp<string>('ADPersistentStorageB', 'HelloPersistPropB')
 
 @Entry
 @Component
 struct StorageDeprecated {
-  private deprecatedKey: AbstractProperty<string> | undefined = AppStorage.ref<string>('ADKey')
-  private environmentKey: AbstractProperty<string> | undefined = AppStorage.ref<string>('languageCode')
+  static {
+    AppStorage.setOrCreate<string>('ADKey', 'HelloArkUI')
+    AppStorage.setOrCreate<string>('ADKey1', 'HelloArkUI')
+    Environment.envProps([{key: 'languageCode', defaultValue: 'en'}])
+    Environment.envProps([{key: 'languageCodeA', defaultValue: 'en'}])
+
+    PersistentStorage.persistProp<string>('ADPersistPropsA','HelloPersistPropsA')
+    PersistentStorage.persistProp<string>('ADPersistPropsAa','HelloPersistPropsAa')
+    PersistentStorage.persistProp<string>('ADPersistPropsAb','HelloPersistPropsAb')
+    PersistentStorage.persistProp<string>('ADPersistPropsB','HelloPersistPropsB')
+    PersistentStorage.persistProp<string>('ADPersistPropsBa','HelloPersistPropsBa')
+    PersistentStorage.persistProp<string>('ADPersistPropsBb','HelloPersistPropsBb')
+
+    PersistentStorage.persistProp<string>('ADPersistentStorageA', 'HelloPersistPropA')
+    PersistentStorage.persistProp<string>('ADPersistentStorageB', 'HelloPersistPropB')
+  }
+  private deprecatedKey: SubscribedAbstractProperty<string> | undefined = AppStorage.ref<string>('ADKey') as SubscribedAbstractProperty<string>
+  private environmentKey: SubscribedAbstractProperty<string> | undefined = AppStorage.ref<string>('languageCode') as SubscribedAbstractProperty<string>
   @State private isDelete: boolean = false
   @State private isDelKey: boolean = false
   @StorageLink('ADPersistPropsA') aPerA: string = ''
   @StorageLink('ADPersistPropsAb') aPerAb: string = ''
   @StorageLink('ADPersistentStorageA') aPerC: string = ''
-  // aboutToAppear(){
-  //   try {
-  //     AppStorage.setOrCreate<string>('ADKey', 'HelloArkUI')
-  //     AppStorage.setOrCreate<string>('ADKey1', 'HelloArkUI')
-  //     Environment.envProps([{key: 'languageCode', defaultValue: 'en'}])
-  //     Environment.envProps([{key: 'languageCodeA', defaultValue: 'en'}])
-  //
-  //
-  //     this.deprecatedKey = AppStorage.ref<string>('ADKey')
-  //     this.environmentKey = AppStorage.ref<string>('languageCode')
-  //
-  //   } catch (error: Error) {
-  //     console.log('error ' + error);
-  //   }
-  // }
+
+
   build() {
     Column() {
       if (AppStorage.has('ADKey')) {

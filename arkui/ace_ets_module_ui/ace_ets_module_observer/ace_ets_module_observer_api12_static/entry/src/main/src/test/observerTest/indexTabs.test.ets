@@ -72,6 +72,7 @@ export default function indexTabs() {
      * @tc.level    Level.LEVEL0
      */
 it('indexTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[indexTabs_0100] START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

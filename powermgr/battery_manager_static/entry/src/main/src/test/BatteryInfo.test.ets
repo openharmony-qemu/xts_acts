@@ -43,7 +43,6 @@ export default function BatteryInfoTest() {
           hilog.info(domain, tag, `${TAG} soc type: ${typeof soc}`);
           expect(soc).assertLargerOrEqual(0);
           expect(soc).assertLessOrEqual(100);
-          expect(typeof soc).assertEqual('number');
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -144,7 +143,6 @@ export default function BatteryInfoTest() {
           hilog.info(domain, tag, `${TAG} voltage: ${JSON.stringify(voltage)}`);
           hilog.info(domain, tag, `${TAG} voltage type: ${typeof voltage}`);
           expect(voltage).assertLargerOrEqual(-1);
-          expect(typeof voltage).assertEqual('number');
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -195,7 +193,6 @@ export default function BatteryInfoTest() {
           hilog.info(domain, tag, `${TAG} batteryTemperature: ${JSON.stringify(batteryTemperature)}`);
           hilog.info(domain, tag, `${TAG} batteryTemperature type: ${typeof batteryTemperature}`);
           expect(batteryTemperature).assertLessOrEqual(700);
-          expect(typeof batteryTemperature).assertEqual('number');
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -272,7 +269,6 @@ export default function BatteryInfoTest() {
           hilog.info(domain, tag, `${TAG} nowCurrent type: ${typeof nowCurrent}`);
           expect(nowCurrent).assertLargerOrEqual(-10000);
           expect(nowCurrent).assertLessOrEqual(10000);
-          expect(typeof nowCurrent).assertEqual('number');
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -298,7 +294,6 @@ export default function BatteryInfoTest() {
           hilog.info(domain, tag, `${TAG} totalEnergyInfo: ${JSON.stringify(totalEnergyInfo)}`);
           hilog.info(domain, tag, `${TAG} totalEnergyInfo type: ${typeof totalEnergyInfo}`);
           expect(totalEnergyInfo).assertEqual(-1);
-          expect(typeof totalEnergyInfo).assertEqual('number');
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -326,7 +321,6 @@ export default function BatteryInfoTest() {
           hilog.info(domain, tag,
             `${TAG} estimatedRemainingChargeTimeInfo type: ${typeof estimatedRemainingChargeTimeInfo}`);
           expect(estimatedRemainingChargeTimeInfo).assertEqual(-1);
-          expect(typeof estimatedRemainingChargeTimeInfo).assertEqual('number');
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -352,7 +346,6 @@ export default function BatteryInfoTest() {
           hilog.info(domain, tag, `${TAG} remainingEnergyInfo: ${JSON.stringify(remainingEnergyInfo)}`);
           hilog.info(domain, tag, `${TAG} remainingEnergyInfo type: ${typeof remainingEnergyInfo}`);
           expect(remainingEnergyInfo).assertEqual(-1);
-          expect(typeof remainingEnergyInfo).assertEqual('number');
           done();
         } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);

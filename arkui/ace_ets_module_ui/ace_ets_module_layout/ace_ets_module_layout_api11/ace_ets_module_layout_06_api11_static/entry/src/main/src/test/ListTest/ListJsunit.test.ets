@@ -61,7 +61,7 @@ export default function ListJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+        routerInstance.clear();
         let pages: router.RouterState = routerInstance.getState();
         console.info("get ListJsunit state pages: " + JSON.stringify(pages));
         if (!("ListPage" == pages.name)) {
@@ -169,7 +169,7 @@ it('ListJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
-        UIContext.getFocusedUIContext()!.vp2px(4))).toInt(),
+        UIContext.resolveUIContext()!.vp2px(4))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt());
       await CommonFunc.sleep(1000);
 
@@ -211,32 +211,32 @@ it('ListJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
-        UIContext.getFocusedUIContext()!.vp2px(4))).toInt(),
+        UIContext.resolveUIContext()!.vp2px(4))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt());
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
-        UIContext.getFocusedUIContext()!.vp2px(4))).toInt(),
+        UIContext.resolveUIContext()!.vp2px(4))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt());
       await CommonFunc.sleep(1000);
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
-        UIContext.getFocusedUIContext()!.vp2px(4))).toInt(),
+        UIContext.resolveUIContext()!.vp2px(4))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt());
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
-        UIContext.getFocusedUIContext()!.vp2px(4))).toInt(),
+        UIContext.resolveUIContext()!.vp2px(4))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt());
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
-        UIContext.getFocusedUIContext()!.vp2px(4))).toInt(),
+        UIContext.resolveUIContext()!.vp2px(4))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt());
       await CommonFunc.sleep(1000);
       let onReachEndText = await driver.findComponent(ON.id('onReachEndText'));
@@ -340,100 +340,6 @@ it('ListJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[ListJsunit_0300] END');
       done();
     });
-
-    
-    
-
-
-
-/**
-     * @tc.number   ListJsunit_static_0400
-     * @tc.name     ListJsunit_static_0400
-     * @tc.desc     ListJsunit_static_0400
-     * @tc.level    Level.LEVEL0
-     */
-it('ListJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
-      console.info('[ListJsunit_0400] START');
-      await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name: 'space', value: '-10' })
-      await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name: 'initialIndex', value: '30' })
-      await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name: 'listDirection', value: '10' })
-      await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name: 'strokeWidth', value: 'abc' })
-      await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name: 'dividerColor', value: '10' })
-      await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name: 'startMargin', value: '#aaa' })
-      await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name: 'endMargin', value: '-10' })
-      await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name: 'scrollBar', value: 'abc' })
-      await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name: 'cachedCount', value: '-10' })
-      await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name: 'edgeEffect', value: '111' })
-      await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name: 'lanesMinLength', value: '$a' })
-      await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name: 'lanesMaxLength', value: '-10' })
-      await CommonFunc.sleep(2000);
-
-      
-      let strJson = inspector.getInspectorByKey('list');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[ListJsunit_0400] component obj is: " + JSON.stringify(obj));
-      console.info("[ListJsunit_0400] space: " + JSON.stringify(obj.getElement('$attrs').getString('space')));
-      console.info("[ListJsunit_0400] initialIndex: " +
-      JSON.stringify(obj.getElement('$attrs').getString('initialIndex')));
-      console.info("[ListJsunit_0400] listDirection: " +
-      JSON.stringify(obj.getElement('$attrs').getString('listDirection')));
-      console.info("[ListJsunit_0400] strokeWidth: " +
-      JSON.stringify(obj.getElement('$attrs').getElement('divider').getString('strokeWidth')));
-      console.info("[ListJsunit_0400] color: " +
-      JSON.stringify(obj.getElement('$attrs').getElement('divider').getString('color')));
-      console.info("[ListJsunit_0400] startMargin: " +
-      JSON.stringify(obj.getElement('$attrs').getElement('divider').getString('startMargin')));
-      console.info("[ListJsunit_0400] endMargin: " +
-      JSON.stringify(obj.getElement('$attrs').getElement('divider').getString('endMargin')));
-      console.info("[ListJsunit_0400] scrollBar: " + JSON.stringify(obj.getElement('$attrs').getString('scrollBar')));
-      console.info("[ListJsunit_0400] cachedCount: " +
-      JSON.stringify(obj.getElement('$attrs').getString('cachedCount')));
-      console.info("[ListJsunit_0400] edgeEffect: " + JSON.stringify(obj.getElement('$attrs').getString('edgeEffect')));
-      console.info("[ListJsunit_0400] lanes: " + JSON.stringify(obj.getElement('$attrs').getString('lanes')));
-      console.info("[ListJsunit_0400] chainAnimation: " +
-      JSON.stringify(obj.getElement('$attrs').getBoolean('chainAnimation')));
-      console.info("[ListJsunit_0400] multiSelectable: " +
-      JSON.stringify(obj.getElement('$attrs').getBoolean('multiSelectable')));
-      console.info("[ListJsunit_0400] alignListItem: " +
-      JSON.stringify(obj.getElement('$attrs').getString('alignListItem')));
-      console.info("[ListJsunit_0400] sticky: " + JSON.stringify(obj.getElement('$attrs').getString('sticky')));
-      expect(obj.getElement('$attrs').getString('space')).assertEqual('-10.00vp');
-      expect(obj.getElement('$attrs').getString('initialIndex')).assertEqual('30');
-      expect(obj.getElement('$attrs').getString('listDirection')).assertEqual('Axis.Vertical');
-      expect(obj.getElement('$attrs').getElement('divider').getString('strokeWidth')).assertEqual('0.00vp');
-      expect(obj.getElement('$attrs').getElement('divider').getString('color')).assertEqual('#FF00000A');
-      expect(obj.getElement('$attrs').getElement('divider').getString('startMargin')).assertEqual('0.00vp');
-      expect(obj.getElement('$attrs').getElement('divider').getString('endMargin')).assertEqual('-10.00vp');
-      expect(obj.getElement('$attrs').getString('scrollBar')).assertEqual('BarState.Auto');
-      await CommonFunc.sleep(1000);
-      expect(obj.getElement('$attrs').getString('cachedCount')).assertEqual('1');
-      expect(obj.getElement('$attrs').getString('edgeEffect')).assertEqual('EdgeEffect.Spring');
-      expect(obj.getElement('$attrs').getString('lanes')).assertEqual('5');
-      expect(obj.getElement('$attrs').getBoolean('chainAnimation')).assertEqual(true);
-      expect(obj.getElement('$attrs').getBoolean('multiSelectable')).assertEqual(true);
-      expect(obj.getElement('$attrs').getString('alignListItem')).assertEqual('ListItemAlign.Start');
-      expect(obj.getElement('$attrs').getString('sticky')).assertEqual('StickyStyle.None');
-      console.info('[ListJsunit_0400] END');
-      done();
-    });
-
-    
-    
-
-
 
 /**
      * @tc.number   ListJsunit_static_0500

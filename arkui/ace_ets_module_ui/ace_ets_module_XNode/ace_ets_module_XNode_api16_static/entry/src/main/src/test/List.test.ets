@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,16 +27,16 @@ import setCrossLanguageOptionsErrorCodeTest from './FrameNodeTest/setCrossLangua
 import postFrameCallbackTest from './PostFrameTest/postFrameCallback.test';
 
 export default function testsuite() {
-  // blendColorErrorCodeTest(); // Failure: 1  sourceColor.blendColor(null)编译不过 用例注释掉
-  // resourceColorErrorCodeTest(); // Failure: 1  sourceColor.blendColor(null)编译不过 用例注释掉
-  // postFrameCallbackTest(); //SDK12.9 表格120行1
-  // frameNodeIsVisibleTest(); //SDK12.9 pass 1
-  // frameNodeMoveOneTest(); //SDK12.9 表格122行2
-  // frameNodeMoveTwoTest(); //SDK12.9 表格122行1
-  // frameNodeMoveToErrorCodeTest(); //SDK12.9 表格104行1
-  // AddComponentContentErrorCodeTest(); ////SDK12.9 表格104行1
-  // BindControllerErrorCodeTest();//SDK12.9 表格104行11
-  // RenderNodeDisposeTest();//SDK12.9 表格104行11
-  // componentContentDisposeTest();//SDK12.9 表格104行11
-  setCrossLanguageOptionsErrorCodeTest();//SDK12.9 表格104行11
+  frameNodeIsVisibleTest();
+  frameNodeMoveOneTest();
+  frameNodeMoveTwoTest();
+  frameNodeMoveToErrorCodeTest();
+  AddComponentContentErrorCodeTest();
+  RenderNodeDisposeTest();
+  componentContentDisposeTest();
+  postFrameCallbackTest();
+  setCrossLanguageOptionsErrorCodeTest();
+  blendColorErrorCodeTest();
+  resourceColorErrorCodeTest();
+  BindControllerErrorCodeTest();
 }

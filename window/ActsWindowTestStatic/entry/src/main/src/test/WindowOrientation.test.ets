@@ -154,7 +154,7 @@ export default function WindowOrientationTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in setting the window orientation.');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the window orientation. Cause: ' + JSON.stringify(err));
                     expect(err!.code).assertEqual(1300002);
                     done();
@@ -430,6 +430,34 @@ export default function WindowOrientationTest() {
                 hilog.error(domain, tag,`Failed to get window orientation. Cause code: ${exception.code}, message: ${exception.message}`);
                 expect(exception.code).assertEqual(1300002);
                 done()
+            }
+        })
+        /**
+         * @tc.name   testconvertOrientationAndRotationDestoryedWindow_static
+         * @tc.number SUB_BASIC_WMS_FUNCTION_convertOrientationAndRotation_static_0200
+         * @tc.desc   验证convertOrientationAndRotation接口窗口状态异常调用
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testconvertOrientationAndRotationDestoryedWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            const caseName:string = 'testconvertOrientationAndRotationDestoryedWindow_static';
+            console.log(caseName + 'begin.');
+            let originalValue: int = 0;
+            let fromType: window.RotationInfoType = window.RotationInfoType.WINDOW_ORIENTATION;
+            let toType: window.RotationInfoType = window.RotationInfoType.DISPLAY_ORIENTATION;
+            let windowClass:window.Window = await windowStage.createSubWindow('testconvertOrientationAndRotationDestoryedWindow_static');
+            await windowClass.destroyWindow();
+            try {
+                windowClass.convertOrientationAndRotation(fromType, toType, originalValue);
+                await Utils.msSleep(200);
+                expect(true).assertFail();
+                done();
+            } catch (err: BusinessError) {
+                console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+                expect(err.code).assertEqual(1300002)
+                expect(err.message != null).assertTrue();
+                done();
             }
         })
 

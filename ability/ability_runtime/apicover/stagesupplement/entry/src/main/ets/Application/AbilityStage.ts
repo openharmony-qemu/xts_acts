@@ -15,6 +15,7 @@
 
 import AbilityStage from "@ohos.app.ability.AbilityStage";
 import commonEvent from '@ohos.commonEvent';
+import Want from '@ohos.app.ability.Want';
 
 export default class MyAbilityStage extends AbilityStage {
   onCreate() {
@@ -28,5 +29,10 @@ export default class MyAbilityStage extends AbilityStage {
     commonEvent.publish("AbilityStage_StartAbility", CommonEventPublishData, (err) => {
       console.info("AbilityStage_StartAbility onCreate");
     });
+  }
+  
+  onAcceptWant(want: Want) {
+    console.log("onAcceptWant called want:" + JSON.stringify(want));
+    return "onAcceptWant";
   }
 }

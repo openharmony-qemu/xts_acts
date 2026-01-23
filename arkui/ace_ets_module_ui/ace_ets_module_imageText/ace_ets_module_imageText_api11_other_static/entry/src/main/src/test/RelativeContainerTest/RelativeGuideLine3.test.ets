@@ -92,8 +92,6 @@ export default function RelativeGuideLine3() {
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine3_static_001
      * @tc.name     RelativeGuideLine3_static_001
@@ -111,7 +109,7 @@ it('RelativeGuideLine3_static_001', Level.LEVEL3, async (done: () => void): Prom
       console.info("[RelativeGuideLine3_001] RelativeContainerTop is: " + rel.top + 'buttonTop:' + bt.top);
       console.info("[RelativeGuideLine3_001] RelativeContainer left is: " + rel.left + 'button left:' + bt.left);
       expect(Math.abs(Math.round(bt.left - rel.left)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(bt.top - rel.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt.top - rel.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[RelativeGuideLine3_001] END');
       done();
@@ -120,8 +118,6 @@ it('RelativeGuideLine3_static_001', Level.LEVEL3, async (done: () => void): Prom
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine3_static_002
      * @tc.name     RelativeGuideLine3_static_002
@@ -141,7 +137,7 @@ it('RelativeGuideLine3_static_002', Level.LEVEL3, async (done: () => void): Prom
       let bt = CommonFunc.getComponentRect('RelButton3');
       await CommonFunc.sleep(2000);
       console.info("[RelativeGuideLine3_002] RelativeContainer left is: " + rel.left + 'buttonLeft:' + bt.left);
-      expect(Math.abs(Math.round(bt.left - rel.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt.left - rel.left) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[RelativeGuideLine3_002] END');
       done();
@@ -150,8 +146,6 @@ it('RelativeGuideLine3_static_002', Level.LEVEL3, async (done: () => void): Prom
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine3_static_003
      * @tc.name     RelativeGuideLine3_static_003
@@ -180,8 +174,6 @@ it('RelativeGuideLine3_static_003', Level.LEVEL3, async (done: () => void): Prom
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine3_static_004
      * @tc.name     RelativeGuideLine3_static_004

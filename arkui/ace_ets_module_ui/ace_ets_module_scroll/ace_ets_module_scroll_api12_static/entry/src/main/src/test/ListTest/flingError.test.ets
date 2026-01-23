@@ -62,8 +62,7 @@ export default function flingError() {
 
 
     
-    // 
-/**
+    /**
      * @tc.number   flingError_0100
      * @tc.name     flingError_0100
      * @tc.desc     flingError_0100
@@ -86,8 +85,7 @@ export default function flingError() {
 
 
     
-    
-/**
+    /**
      * @tc.number   flingError_0200
      * @tc.name     flingError_0200
      * @tc.desc     flingError_0200

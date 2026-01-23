@@ -68,6 +68,7 @@ import textAreaObserverTest from './TextAreaApi22Test/textAreaObserver.test';
 import TextAreaEnableSelectedDataDetectorTest from './TextAreaApi22Test/TextAreaEnableSelectedDataDetector.test';
 import TextAreaSetStyledPlaceholderTest from './TextAreaApi22Test/TextAreaSetStyledPlaceholder.test';
 import TextAreaOnWillAttachIMETest from './TextAreaApi22Test/TextAreaOnWillAttachIME.test';
+import TextAreaTextDirectionTest from './TextAreaApi23Test/TextAreaTextDirection.test';
 
 import TextInputOnEditChangeJsunitTest from './TextInputTest/TextInputOnEditChangeJsunitTest.test';
 import textInputApi11 from './TextInputApi11Test/textInputApi11.test'
@@ -119,6 +120,7 @@ import textInputObserverTest from './TextInputApi22Test/textInputObserver.test';
 import TextInputEnableSelectedDataDetectorTest from './TextInputApi22Test/TextInputEnableSelectedDataDetector.test';
 import TextInputSetStyledPlaceholderTest from './TextInputApi22Test/TextInputSetStyledPlaceholder.test';
 import TextInputOnWillAttachIMETest from './TextInputApi22Test/TextInputOnWillAttachIME.test';
+import TextInputTextDirectionTest from './TextInputApi23Test/TextInputTextDirection.test';
 
 import TextAreaCompressLeadingPunctuation from './TextAreaTest/TextAreaCompressLeadingPunctuation.test';
 import TextAreaCompressLeadingPunctuationModifier from './TextAreaTest/TextAreaCompressLeadingPunctuationModifier.test';
@@ -184,6 +186,7 @@ export default function testsuite() {
   TextAreaEnableSelectedDataDetectorTest()
   TextAreaSetStyledPlaceholderTest()
   TextAreaOnWillAttachIMETest()
+  TextAreaTextDirectionTest()     // Api23
 
   // TextInputTest
   TextInputOnEditChangeJsunitTest()
@@ -236,6 +239,7 @@ export default function testsuite() {
   TextInputEnableSelectedDataDetectorTest()
   TextInputSetStyledPlaceholderTest()
   TextInputOnWillAttachIMETest()
+  TextInputTextDirectionTest()        // Api23
   TextAreaCompressLeadingPunctuation()
   TextAreaCompressLeadingPunctuationModifier()
   TextInputCompressLeadingPunctuation()

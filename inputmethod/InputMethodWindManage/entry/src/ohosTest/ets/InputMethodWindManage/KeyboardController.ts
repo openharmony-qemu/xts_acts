@@ -558,6 +558,18 @@ export class KeyboardController {
           console.debug(TAG + '====>Sub_InputMethod_IME_setSystemPanelButtonColor_0600 event:' + data.event);
           that.Sub_InputMethod_IME_setSystemPanelButtonColor_0600();
           break;
+        case 560:
+          console.debug(TAG + '====>Sub_InputMethod_IME_Streamer_0300 event:' + data.event);
+          that.Sub_InputMethod_IME_Streamer_0300();
+          break;
+        case 561:
+          console.debug(TAG + '====>Sub_InputMethod_IME_Streamer_0500 event:' + data.event);
+          that.Sub_InputMethod_IME_Streamer_0500();
+          break;
+        case 562:
+          console.debug(TAG + '====>Sub_InputMethod_IME_Streamer_1000 event:' + data.event);
+          that.Sub_InputMethod_IME_Streamer_1000();
+          break;
       }
     }
 
@@ -1891,13 +1903,13 @@ export class KeyboardController {
             that.GetArrayBufferString(msgParam)?.length + ', ArrayBufferSize' + msgParam?.byteLength);
           if (msgId.length === 256 && msgParam?.byteLength === 131072) {
             console.info(TAG + '====>Sub_InputMethod_IME_Custom_0200 start sendMessage');
-            that.InputClient.sendMessage('Sub_InputMethod_IME_Custom_0200', that.newArrayBuffer('SUCCESS'))
+            that.InputClient.sendMessage('Sub_InputMethod_IME_Custom_0200', that.newArrayBuffer('SUCCESS'));
           } else {
-            that.InputClient.sendMessage('Sub_InputMethod_IME_Custom_0200', that.newArrayBuffer('FAILED'))
+            that.InputClient.sendMessage('Sub_InputMethod_IME_Custom_0200', that.newArrayBuffer('FAILED'));
           }
-          that.InputClient.recvMessage()
+          that.InputClient.recvMessage();
         }
-      }
+      };
       this.InputClient.recvMessage(msgHandler);
       commonEventPublishData = {
         data: 'SUCCESS'
@@ -3592,6 +3604,94 @@ export class KeyboardController {
       console.info(TAG + '====>Sub_InputMethod_IME_setImmersiveEffect_0500 cathch err: ' + JSON.stringify(err));
     };
     commoneventmanager.publish('Sub_InputMethod_IME_setImmersiveEffect_0500', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_Streamer_0300(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_Streamer_0300 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    try {
+      this.softKeyboardPanel.setImmersiveMode(inputMethodEngine.ImmersiveMode.LIGHT_IMMERSIVE);
+      let effect: inputMethodEngine.ImmersiveEffect = {
+        gradientHeight: 0,
+        gradientMode: inputMethodEngine.GradientMode.NONE,
+        fluidLightMode: inputMethodEngine.FluidLightMode.BACKGROUND_FLUID_LIGHT
+      };
+      this.softKeyboardPanel.setImmersiveEffect(effect);
+      console.info(TAG + '====>Sub_InputMethod_IME_Streamer_0300 effect :' + JSON.stringify(effect));
+    } catch (err) {
+      if (err.code === 801) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      };
+      if (err.code === 12800020) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      };
+      console.info(TAG + '====>Sub_InputMethod_IME_Streamer_0300 cathch err: ' + JSON.stringify(err));
+    };
+    commoneventmanager.publish('Sub_InputMethod_IME_Streamer_0300', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_Streamer_0500(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_Streamer_0500 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    try {
+      this.softKeyboardPanel.setImmersiveMode(inputMethodEngine.ImmersiveMode.LIGHT_IMMERSIVE);
+      let effect: inputMethodEngine.ImmersiveEffect = {
+        gradientHeight: 0,
+        gradientMode: 1
+      };
+      this.softKeyboardPanel.setImmersiveEffect(effect);
+      console.info(TAG + '====>Sub_InputMethod_IME_Streamer_0500 ImmersiveMode :' + JSON.stringify(effect));
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+      console.info(TAG + '====>Sub_InputMethod_IME_Streamer_0500 success ');
+    } catch (err) {
+      if (err.code === 801) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      };
+      console.info(TAG + '====>Sub_InputMethod_IME_Streamer_0500 cathch err: ' + JSON.stringify(err));
+    };
+    commoneventmanager.publish('Sub_InputMethod_IME_Streamer_0500', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_Streamer_1000(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_Streamer_1000 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    try {
+      let Height = this.display_info.height * 0.15;
+      this.softKeyboardPanel.setImmersiveMode(inputMethodEngine.ImmersiveMode.LIGHT_IMMERSIVE);
+      let effect: inputMethodEngine.ImmersiveEffect = {
+        gradientHeight: Height,
+        gradientMode: 1
+      };
+      this.softKeyboardPanel.setImmersiveEffect(effect);
+      console.info(TAG + '====>Sub_InputMethod_IME_Streamer_1000 effect :' + JSON.stringify(effect));
+    } catch (err) {
+      if (err.code === 801) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      };
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      };
+      console.info(TAG + '====>Sub_InputMethod_IME_Streamer_1000 cathch err: ' + JSON.stringify(err));
+    };
+    commoneventmanager.publish('Sub_InputMethod_IME_Streamer_1000', commonEventPublishData, this.publishCallback);
   }
 
   private async Sub_InputMethod_IME_isSimpleKeyboardEnabled_0100(): Promise<void> {
