@@ -1043,16 +1043,16 @@ export default function nfcTagABFVTest() {
             try {
                 tag.on('readerModeWithInterval', elementName, discTech, recvNfcTagFunc, interval);
             } catch (err) {
-                if (err.code == 201) {
+                if (err.code === 201) {
                     expect(201).assertEqual(err.code);
                     console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 ERROR :  " + err + " - " + err.code);
-                } else if (err.code == 801) {
+                } else if (err.code === 801) {
                     expect(801).assertEqual(err.code);
                     console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 ERROR :  " + err + " - " + err.code);
-                } else if (err.code == 3100201) {
+                } else if (err.code === 3100201) {
                     expect(3100201).assertEqual(err.code);
                     console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 ERROR :  " + err + " - " + err.code);
-                } else if (err.code == 3100202) {
+                } else if (err.code === 3100202) {
                     expect(3100202).assertEqual(err.code);
                     console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 ERROR :  " + err + " - " + err.code);
                 } else {
@@ -1064,16 +1064,16 @@ export default function nfcTagABFVTest() {
             try {
                 tag.off('readerModeWithInterval', elementName, recvNfcTagFunc);
             } catch (err) {
-                if (err.code == 201) {
+                if (err.code === 201) {
                     expect(201).assertEqual(err.code);
                     console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 ERROR :  " + err + " - " + err.code);
-                } else if (err.code == 801) {
+                } else if (err.code === 801) {
                     expect(801).assertEqual(err.code);
                     console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 ERROR :  " + err + " - " + err.code);
-                } else if (err.code == 3100201) {
+                } else if (err.code === 3100201) {
                     expect(3100201).assertEqual(err.code);
                     console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 ERROR :  " + err + " - " + err.code);
-                } else if (err.code == 3100203) {
+                } else if (err.code === 3100203) {
                     expect(3100203).assertEqual(err.code);
                     console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 ERROR :  " + err + " - " + err.code);
                 } else {
@@ -1106,7 +1106,7 @@ export default function nfcTagABFVTest() {
             try {
                 tag.off('readerModeWithInterval', elementName, recvNfcTagFunc);
             } catch (err) {
-                if (err.code == 3100203) {
+                if (err.code === 3100203) {
                     expect(3100203).assertEqual(err.code);
                     console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2800 ERROR :  " + err + " - " + err.code);
                 } else {
