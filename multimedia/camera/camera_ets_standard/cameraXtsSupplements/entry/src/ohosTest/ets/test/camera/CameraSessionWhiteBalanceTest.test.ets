@@ -302,12 +302,12 @@ export default function CameraSessionSuppTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_SESSION_GET_WHITE_BALANCE_RANGE_0001
-     * @tc.name      : CAMERA_SESSION_GET_WHITE_BALANCE_RANGE_0001
-     * @tc.desc      : getWhiteBalanceRange-success
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number    CAMERA_SESSION_GET_WHITE_BALANCE_RANGE_0001
+     * @tc.name      CAMERA_SESSION_GET_WHITE_BALANCE_RANGE_0001
+     * @tc.desc      getWhiteBalanceRange-success
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it('CAMERA_SESSION_GET_WHITE_BALANCE_RANGE_0001', Level.LEVEL0, async (done: Function) => {
       const testCase = 'liuyiliangCAMERA_SESSION_GET_WHITE_BALANCE_RANGE_0001';
