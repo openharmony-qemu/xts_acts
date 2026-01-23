@@ -10,8 +10,7 @@
 #include <multimedia/player_framework/native_cencinfo.h>
 using namespace OHOS::CencInfoUT;
 
-namespace
-{
+namespace {
     static constexpr int ARG_INDEX = 0;
     static constexpr int DEFAULT_ARG = -1;
     static constexpr int RESULT_ERROR = -1;
@@ -27,7 +26,7 @@ int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int
     napi_value args[index + 1];
 
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    if(status != napi_ok || argc <= index)
+    if (status != napi_ok || argc <= index)
     {
         napi_throw_type_error(env, nullptr, "Argument missing");
         return defaultValue;
@@ -35,7 +34,7 @@ int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int
 
     napi_valuetype valuetype;
     napi_typeof(env, args[index], &valuetype);
-    if(valuetype != napi_number)
+    if (valuetype != napi_number)
     {
         napi_throw_type_error(env, nullptr, "Argument must be a number");
         return defaultValue;
@@ -43,8 +42,7 @@ int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int
 
     int32_t result = defaultValue;
     status = napi_get_value_int32(env, args[index], &result);
-    if (status != napi_ok)
-    {
+    if (status != napi_ok) {
         napi_throw_type_error(env, nullptr, "Value is not int32");
         return defaultValue;
     }
@@ -61,8 +59,7 @@ inline int32_t GetInt32Arg(napi_env env, napi_callback_info info,
 template <typename Func>
 napi_value NapiTry(napi_env env, Func &&func)
 {
-    try
-    {
+    try {
         return func();
     }
     catch(const std::exception &e) {
@@ -113,18 +110,27 @@ static const CencTestFunc CENCINFO_SETAVBUFFER_FUNCS[] = {
     &CencInfoCapiTestCase::TestCencInfo_SetAVBuffer_002,
     &CencInfoCapiTestCase::TestCencInfo_SetAVBuffer_003,
 };
+napi_value CencInfoNapiImpl(
+    napi_env env,
+    napi_callback_info info,
+    const FuncTable& funcTable)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result = RESULT_ERROR;
 
-#define DEFINE_CENCINFO_NAPI(funcName, funcTable)              \
-    napi_value funcName(napi_env env, napi_callback_info info) \
-    {                                                          \
-        return NapiTry(env, [&]() -> napi_value {              \
-        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG); int result = RESULT_ERROR;
-            CencInfoCapiTestCase testObj; \
-        constexpr size_t FUNC_COUNT = sizeof(funcTable) / sizeof(funcTable[0]); \
-        if(caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) { result = (testObj.*funcTable[caseNum])(); } \
-        napi_value resultValue; napi_create_int32(env, result, &resultValue); \
-        return resultValue; });          \
-    }
+        TestCase testObj;
+        constexpr size_t FUNC_COUNT = sizeof(funcTable) / sizeof(funcTable[0]);
+
+        if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
+            result = (testObj.*funcTable[caseNum])();
+        }
+
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
 DEFINE_CENCINFO_NAPI(CencInfo_Create, CENCINFO_CREATE_FUNCS)
 DEFINE_CENCINFO_NAPI(CencInfo_Destroy, CENCINFO_DESTROY_FUNCS)
 DEFINE_CENCINFO_NAPI(CencInfo_SetAlgorithm, CENCINFO_SETALGORITHM_FUNCS)
@@ -141,7 +147,7 @@ napi_value Init(napi_env env, napi_value exports)
         {"cencInfoDestroy", nullptr, CencInfo_Destroy, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"cencInfoSetAlgorithm", nullptr, CencInfo_SetAlgorithm, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"cencInfoSetKeyIdAndIv", nullptr, CencInfo_SetKeyIdAndIv, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"cencInfoSetSubsampleInfo", nullptr, CencInfo_SetSubsampleInfo, nullptr, nullptr, 
+        {"cencInfoSetSubsampleInfo", nullptr, CencInfo_SetSubsampleInfo, nullptr, nullptr,
         nullptr, napi_default, nullptr},
         {"cencInfoSetMode", nullptr, CencInfo_SetMode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"cencInfoSetAVBuffer", nullptr, CencInfo_SetAVBuffer, nullptr, nullptr, nullptr, napi_default, nullptr},

@@ -8,11 +8,9 @@
 #ifndef CENC_INFO_TEST_CASE_H
 #define CENC_INFO_TEST_CASE_H
 
-namespace OHOS
-{
-    namespace CencInfoUT
-    {
-        class CencInfoCapiTestCase{
+namespace OHOS {
+    namespace CencInfoUT {
+        class CencInfoCapiTestCase {
         public:
             CencInfoCapiTestCase() = default;
             ~CencInfoCapiTestCase() = default;
