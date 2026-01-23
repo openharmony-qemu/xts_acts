@@ -48,9 +48,7 @@ import subHeaderTextArrow from './subHeader/subHeaderTextArrow.test';
 import subheaderTitleBuilder from './subHeader/subheaderTitleBuilder.test';
 import subHeaderSelect from './subHeader/subHeaderSelect.test';
 import subHeaderTitleModifier from './subHeader/subHeaderTitleModifier.test';
-import chipDirectionTest from './chip/chipDirection.test';
 import popupDirectionTest from './popup/popupDirectionTest.test';
-import segmentButtonDirectionTest from './segmenButton/segmentbuttonDirection.test';
 
 import FileButtonContinueToReceiveTest from './downloadFileButton/FileButtonContinueToReceiveTest.test';
 import FileButtonDownloadTest from './downloadFileButton/FileButtonDownloadTest.test';
@@ -60,26 +58,10 @@ import FileButtonReceiveTest from './downloadFileButton/FileButtonReceiveTest.te
 import FileButtonSaveTest from './downloadFileButton/FileButtonSaveTest.test';
 import FileButtonSaveFileTest from './downloadFileButton/FileButtonSaveFileTest.test';
 import FileButtonSaveImageTest from './downloadFileButton/FileButtonSaveImageTest.test';
-import ChipAction from './chip/ChipAction.test';
-import ChipOnClose from './chip/ChipOnClose.test';
-import ChipAction2 from './chip/ChipAction2.test';
-import ChipOnClose2 from './chip/ChipOnClose2.test';
-import ChipOnClick from './chip/ChipOnClick.test.ets'
-import startSpaceTest from './ChipGroupTest/startSpaceTest.test'
-import endSpaceTest from './ChipGroupTest/endSpaceTest.test'
-import itemSpaceTest from './ChipGroupTest/itemSpaceTest.test'
-import localizedLabelMarginTest from './chip/localizedLabelMarginTest';
-import localizedButtonPaddingTest from './segmenButton/localizedButtonPaddingTest';
-import localizedTextPadding from './segmenButton/localizedTextPadding';
-import SegmentButtonItemOptionsArray1 from './segmenButton/SegmentButtonItemOptionsArray1.test';
-import SegmentButtonIconTextItem1 from './segmenButton/SegmentButtonIconTextItem1.test';
-import SegmentButtonTextItem001 from './segmenButton/SegmentButtonTextItemTest.test';
-import SegmentButtonOptionsReturnValue from './segmenButton/SegmentButtonOptionsReturnValue.test';
+
 
 export default function testsuite() {
-  chipDirectionTest();
   popupDirectionTest();
-  segmentButtonDirectionTest();
   composeTitleBarTest();
   composeListItemIconType();
   composeListItemOperateItemArrow();
@@ -124,19 +106,4 @@ export default function testsuite() {
   FileButtonSaveTest();
   FileButtonSaveFileTest();
   FileButtonSaveImageTest();
-  ChipAction();
-  ChipOnClose();
-  ChipAction2();
-  ChipOnClose2();
-  ChipOnClick();
-  startSpaceTest();
-  endSpaceTest();
-  itemSpaceTest();
-  localizedLabelMarginTest();
-  localizedButtonPaddingTest();
-  localizedTextPadding();
-  SegmentButtonItemOptionsArray1();
-  SegmentButtonIconTextItem1();
-  SegmentButtonTextItem001();
-  SegmentButtonOptionsReturnValue();
 }

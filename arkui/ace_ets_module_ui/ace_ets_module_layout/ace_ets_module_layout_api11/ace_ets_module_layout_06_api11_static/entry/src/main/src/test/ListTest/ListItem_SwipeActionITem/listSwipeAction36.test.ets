@@ -176,9 +176,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0380', Level.LEVEL0,
 
    await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + height*0.2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(50))).toInt()
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + height*0.4)).toInt()
       );
       await CommonFunc.sleep(5000);
       
@@ -195,9 +195,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0380', Level.LEVEL0,
 
    await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + height*0.4)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(10))).toInt()
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + height*0.2)).toInt()
       );
       await CommonFunc.sleep(5000);
       let buttonReset2 = await driver.findComponent(ON.id('btreset36'));
@@ -207,9 +207,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0380', Level.LEVEL0,
 
    await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + height*0.4)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(10))).toInt()
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + height*0.2)).toInt()
       );
       await CommonFunc.sleep(4000);
       let textSwipeOffset2 = inspector.getInspectorByKey('swipe36Offset');
@@ -225,9 +225,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0380', Level.LEVEL0,
 
    await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + height*0.2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(50))).toInt()
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + height*0.4)).toInt()
       );
       await CommonFunc.sleep(2000);
       done();
