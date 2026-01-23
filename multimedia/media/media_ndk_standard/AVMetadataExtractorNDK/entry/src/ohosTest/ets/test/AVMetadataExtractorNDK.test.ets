@@ -1510,5 +1510,49 @@ export default function OhAVMetadataExtractorNDKTest() {
       console.info(`${tag} test end`);
       done();
     });
+
+    /**
+     * @tc.number SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_FETCHSTATE_0001
+     * @tc.name   OhAVMetadataExtractorFetchState0001
+     * @tc.desc   OH_AVMetadataExtractor_FetchState
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('OhAVMetadataExtractorFetchState0001', Level.LEVEL0, async (done: Function) => {
+      let tag = "OhAVMetadataExtractorFetchState0001"
+      console.info(`${tag} test start`);
+      try {
+        let result = avmetadataextractor.OhAVMetadataExtractorFetchState();
+        expect(result).assertEqual(0);
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `${tag}:${error}`);
+        expect().assertFail();
+      }
+      console.info(`${tag} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEIDA_SEEKMODE_0001
+     * @tc.name   OhAVMediaSeekMode0001
+     * @tc.desc   OH_AVMedia_SeekMode
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('OhAVMediaSeekMode0001', Level.LEVEL0, async (done: Function) => {
+      let tag = "OhAVMediaSeekMode0001"
+      console.info(`${tag} test start`);
+      try {
+        let result = avmetadataextractor.OhAVMediaSeekMode();
+        expect(result).assertEqual(0);
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `${tag}:${error}`);
+        expect().assertFail();
+      }
+      console.info(`${tag} test end`);
+      done();
+    });
   });
 }
