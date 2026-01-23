@@ -42,7 +42,7 @@ class MyPointModifier implements AttributeModifier<RichEditorAttribute> {
   isOnWillChange: boolean = false;
   placeholderStyleIndex: int = 0;
   startMessage: string = 'Hello World';
-  placeholderStyleList: Array<ResourceColor | undefined> = [Color.Yellow, undefined];
+  public placeholderStyleList: Array<ResourceColor | undefined> = [Color.Yellow, undefined];
 
   applyNormalAttribute(instance: RichEditorAttribute): void {
     instance
