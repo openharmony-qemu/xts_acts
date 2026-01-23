@@ -1062,7 +1062,7 @@ export default function nfcTagABFVTest() {
             }
 
             try {
-                tag.off('readerModeWithInterval', elementName);
+                tag.off('readerModeWithInterval', elementName, recvNfcTagFunc);
             } catch (err) {
                 if (err.code == 201) {
                     expect(201).assertEqual(err.code);
@@ -1081,8 +1081,10 @@ export default function nfcTagABFVTest() {
                     console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 Fail :  ");
                 }
             }
+            done();
+        })
 
-            /**
+        /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_2800
          * @tc.number SUB_Communication_NFC_nfctage_js_2800
          * @tc.desc   This interface getBarcode
