@@ -219,8 +219,8 @@ group("multimedia") {
       "av_codec/ActsAudioEncoderTest:ActsAudioEncoderTest",
       "audio_ndk/ActsOhAudioRenderTest:ActsOhAudioRenderHapTest",
       "av_codec/ActsAudioDecoderTest:ActsAudioDecoderHapTest",
-      "av_codec/ActsAudioTestTest:ActsAudioTestTest",
       "av_codec/ActsCapabilityTest:ActsCapabilityHapTest",
+      "av_codec/ActsAudioTestTest:ActsAudioTestTest",
     ]
   } else {
     deps += [
