@@ -43,12 +43,6 @@ let testAbilityContext: common.UIAbilityContext;
 
 
 export default function marginLengthTest() {
-
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.marginLength.nowear.test.static", "EntryAbility");
-  await UtilsTest.msSleep(4000);
-
-  const uiContext: UIContext = AppStorage.get<UIContext>('uiContext') as UIContext;
-
   let childWidth = 100;
   let childHeight = 50;
   let parentWidth = 400;
@@ -81,10 +75,10 @@ export default function marginLengthTest() {
     expectValue: {
       margin: '50.00vp',
       //uicontext.vp2px()接口不通，暂用数字平替
-      top: uiContext!.vp2px(50),
-      right: uiContext!.vp2px(50),
-      bottom: uiContext!.vp2px(50),
-      left: uiContext!.vp2px(50)
+      top: 50,
+      right: 50,
+      bottom: 50,
+      left: 50
     }
   }, {
     describe: 'SetStringPx',
@@ -106,19 +100,33 @@ export default function marginLengthTest() {
     expectValue: {
       margin: '50.00vp',
       //uicontext.vp2px()接口不通，暂用数字平替
-      top: uiContext!.vp2px(50),
-      right: uiContext!.vp2px(50),
-      bottom: uiContext!.vp2px(50),
-      left: uiContext!.vp2px(50)
+      top: 50,
+      right: 50,
+      bottom: 50,
+      left: 50
     }
   }]
 
   describe('MarginLengthTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("marginLengthTest beforeAll start");
-
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.marginLength.nowear.test.static", "EntryAbility");
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+
+      if(data.testValue.describe == "SetNumber"){
+        data.testValue.expectValue.top = UIContext.resolveUIContext()!.vp2px(50)
+        data.testValue.expectValue.right = UIContext.resolveUIContext()!.vp2px(50)
+        data.testValue.expectValue.bottom = UIContext.resolveUIContext()!.vp2px(50)
+        data.testValue.expectValue.left = UIContext.resolveUIContext()!.vp2px(50)
+      }
+      if(data.testValue.describe == "SetResource"){
+        data.testValue.expectValue.top = UIContext.resolveUIContext()!.vp2px(50)
+        data.testValue.expectValue.right = UIContext.resolveUIContext()!.vp2px(50)
+        data.testValue.expectValue.bottom = UIContext.resolveUIContext()!.vp2px(50)
+        data.testValue.expectValue.left = UIContext.resolveUIContext()!.vp2px(50)
+      }
+
       //component
       let rect = Utils.getComponentRect(data.pageConfig.componentKey ?? '');
       //parentComponent

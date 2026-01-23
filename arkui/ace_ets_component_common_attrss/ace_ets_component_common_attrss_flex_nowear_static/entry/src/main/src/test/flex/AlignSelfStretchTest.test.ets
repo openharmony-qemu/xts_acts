@@ -251,7 +251,7 @@ export default function alignSelfStretchTest() {
   }]
 
   describe('AlignSelfStretchTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("alignSelfStretchTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.nowear.test.static", "EntryAbility")
       

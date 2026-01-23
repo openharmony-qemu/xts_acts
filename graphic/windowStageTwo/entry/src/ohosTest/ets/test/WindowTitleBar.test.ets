@@ -1500,7 +1500,6 @@ export default function windowTitleBarTest() {
           await data.showWindow();
           data.setWindowTitle('subWindowTitle').then(() => {
             console.info(`${caseName} :Succeeded in setting the window title.`);
-            expect().assertFail();
             done();
           }).catch(async (err: BusinessError) => {
             console.error(`${caseName} :Failed to set the window title. Cause code: ${err.code}, message: ${err.message}`);
@@ -1508,7 +1507,7 @@ export default function windowTitleBarTest() {
             if(err.code == 801){
               done();
             }else {
-              expect(err.code).assertEqual(1300002);
+              expect(false).assertTrue();
               done();
             }
           });

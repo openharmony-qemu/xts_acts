@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function HoverScale_APITest() {
   describe('HoverScale_APITest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
     });

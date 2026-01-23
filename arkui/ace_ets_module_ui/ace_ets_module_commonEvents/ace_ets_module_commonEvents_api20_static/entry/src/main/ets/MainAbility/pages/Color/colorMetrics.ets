@@ -36,16 +36,17 @@ import {
   Text,
   TextAlign,
   TouchEvent,
-  TouchType
+  TouchType,
+  ColorSpace,
+  ColorMetrics
 } from '@ohos.arkui.component'
 import { AppStorage, LocalStorage, State } from '@ohos.arkui.stateManagement'
 
-// import { ColorMetrics } from '@ohos.arkui.Graphics';
 
 @Entry
 @Component
 struct Index {
-  // @State p3Green: ColorMetrics = ColorMetrics.colorWithSpace(ColorSpace.DISPLAY_P3, 0, 1, 0);
+  @State p3Green: ColorMetrics = ColorMetrics.colorWithSpace(ColorSpace.DISPLAY_P3, 0, 1, 0);
 
   build() {
     Column() {
@@ -77,13 +78,13 @@ struct Index {
         Column() {
           Row() {
             Text('bgColor').id('P3backgroundColor').width('20%').aspectRatio(1)
-            // .backgroundColor(this.p3Green)
+            .backgroundColor(this.p3Green)
             Text('SweepGradient').id('P3SweepGradient').width('20%').aspectRatio(1)
               .sweepGradient({
                 center: [50, 50],
                 start: 0,
                 end: 359,
-                // metricsColors: [[this.p3Green, 0.0], [this.p3Green, 0.5], [this.p3Green, 1.0]],
+                metricsColors: [[this.p3Green, 0.0], [this.p3Green, 0.5], [this.p3Green, 1.0]],
                 colors: []
               })
           }

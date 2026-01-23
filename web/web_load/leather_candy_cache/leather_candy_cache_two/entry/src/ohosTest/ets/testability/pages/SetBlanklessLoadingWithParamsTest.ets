@@ -350,10 +350,15 @@ struct setBlanklessLoadingWithParamsTest {
                       if (info.state == 0) {
                         console.log(msg + webview.BlanklessFrameInterpolationState.FRAME_INTERPOLATION_SUCCEEDED + ` 插帧成功 `);
                       }
-                      // 后插帧移除
-                      if (info.state) {
+                      // 插帧失败
+                      if (info.state == 1) {
+                        let result = info.state == webview.BlanklessFrameInterpolationState.FRAME_INTERPOLATION_FAILED;
+                        console.log(msg + ' 插帧失败 result： ' + result)
+                      }
+                      // 插帧移除
+                      if (info.state == 2) {
                         let result = info.state == webview.BlanklessFrameInterpolationState.FRAME_INTERPOLATION_REMOVED;
-                        console.log(msg + ' 插帧移除' + result)
+                        console.log(msg + ' 插帧移除 result： ' + result)
                       }
                     }
                   }

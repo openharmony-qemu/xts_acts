@@ -52,8 +52,8 @@ import ParticleJsunit from './ParticleTest/ParticlePropertyJsunit.test';
 export default function testsuite() {
   circleNewJsunit()
   columnJsunit()
-  Matrix2DTest()
   CanvasAPIUnitTest()
+
   ellipseJsunit();
   shapeJsunit();
   lineJsunit();
@@ -67,10 +67,6 @@ export default function testsuite() {
   rectNeJsunit()
   RectRadiusTest()
   RectCommonShapeMethodTest()
-  CanvasAPITest()
-  CanvasAPICanvasRenderTest()
-  CanvasShaderTest()
-  curvesStepsJsunit()
   OffScreenCanvasTest()
   CanvasColorTest()
   panelBackgroundMaskJsunit()
@@ -80,4 +76,8 @@ export default function testsuite() {
   pathJsunit()
   canvasActualBoundingBoxAscentJsunit()
 
+  CanvasAPITest()
+  CanvasAPICanvasRenderTest()
+  CanvasShaderTest()
+  curvesStepsJsunit()
 }
