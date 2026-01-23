@@ -30,6 +30,25 @@ const driver = Driver.create();
 export default function webOnAudioStateChanged() {
   describe('WebOnAudioStateChangedTest', () => {
     beforeAll(async (done: Function) => {
+      let options: router.RouterOptions = {
+        url: 'testability/pages/WebOnAudioStateChanged',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get WebOnAudioStateChanged state success " + JSON.stringify(pages));
+        if (!("WebOnAudioStateChanged" == pages.name)) {
+          console.info("get WebOnAudioStateChanged state success " + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options);
+          console.info("push WebOnAudioStateChanged page success " + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error("push WebOnAudioStateChanged page error: " + err);
+      }
+      await waitForComponents('WebOnAudioStateChangedTestButton');
+      done()
+    });
+    beforeEach(async (done: Function) => {
       if(!wifiMg.isWifiActive()){
         console.info("======> wifi_test/enable wifi:" + wifiMg.enableWifi());
         await Utils.sleep(5000);
@@ -62,26 +81,6 @@ export default function webOnAudioStateChanged() {
         throw (err as Error);
         done();
       }
-      let options: router.RouterOptions = {
-        url: 'testability/pages/WebOnAudioStateChanged',
-      }
-      try {
-        router.clear();
-        let pages = router.getState();
-        console.info("get WebOnAudioStateChanged state success " + JSON.stringify(pages));
-        if (!("WebOnAudioStateChanged" == pages.name)) {
-          console.info("get WebOnAudioStateChanged state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          console.info("push WebOnAudioStateChanged page success " + JSON.stringify(result));
-        }
-      } catch (err) {
-        console.error("push WebOnAudioStateChanged page error: " + err);
-      }
-      await waitForComponents('WebOnAudioStateChangedTestButton');
-      done()
-    });
-    beforeEach(async (done: Function) => {
-
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
