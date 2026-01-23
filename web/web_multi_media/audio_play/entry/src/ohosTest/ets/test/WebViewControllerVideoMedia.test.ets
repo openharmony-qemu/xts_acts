@@ -32,7 +32,7 @@ export default function webViewControllerVideoMedia() {
     beforeAll(async (done: Function) => {
       if(!wifiMg.isWifiActive()){
         console.info("======> wifi_test/enable wifi:" + wifiMg.enableWifi());
-        await sleep(5000);
+        await Utils.sleep(5000);
       }
 
       try {
