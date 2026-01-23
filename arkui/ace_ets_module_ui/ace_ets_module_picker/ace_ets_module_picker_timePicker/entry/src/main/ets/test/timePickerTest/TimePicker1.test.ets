@@ -333,8 +333,13 @@ export default function TimePicker1Test() {
       obj.$attrs.disappearTextStyle.font.size);
       console.info("[ArkUI_Stage_timepicker_disappearTextStyle_0600] disappearTextStyle font.weight:" +
       obj.$attrs.disappearTextStyle.font.weight);
-      expect(obj.$attrs.disappearTextStyle.color).assertContain('#');
-      expect(obj.$attrs.disappearTextStyle.font.size).assertContain('fp');
+
+      //打印分层参数返回值
+      console.info(" disappearTextStyle color sys:" + spliceColor($r('sys.color.textpicker_disappear_text_color')));
+      console.info(" disappearTextStyle font.size sys:" + LayerParametersNumber($r('sys.float.textpicker_disappear_text_size')));
+
+      expect(obj.$attrs.disappearTextStyle.color).assertEqual(spliceColor($r('sys.color.textpicker_disappear_text_color')));
+      expect(obj.$attrs.disappearTextStyle.font.size).assertEqual(LayerParametersNumber($r('sys.float.textpicker_disappear_text_size')));
       expect(obj.$attrs.disappearTextStyle.font.weight).assertEqual('FontWeight.Normal');
       done();
     });
@@ -382,8 +387,13 @@ export default function TimePicker1Test() {
       obj.$attrs.disappearTextStyle.font.size);
       console.info("[ArkUI_Stage_timepicker_disappearTextStyle_0700] disappearTextStyle font.weight:" +
       obj.$attrs.disappearTextStyle.font.weight);
-      expect(obj.$attrs.disappearTextStyle.color).assertContain('#');
-      expect(obj.$attrs.disappearTextStyle.font.size).assertContain('fp');
+
+      //打印分层参数返回值
+      console.info(" disappearTextStyle color sys:" + spliceColor($r('sys.color.textpicker_disappear_text_color')));
+      console.info(" disappearTextStyle font.size sys:" + LayerParametersNumber($r('sys.float.textpicker_disappear_text_size')));
+
+      expect(obj.$attrs.disappearTextStyle.color).assertEqual(spliceColor($r('sys.color.textpicker_disappear_text_color')));
+      expect(obj.$attrs.disappearTextStyle.font.size).assertEqual(LayerParametersNumber($r('sys.float.textpicker_disappear_text_size')));
       expect(obj.$attrs.disappearTextStyle.font.weight).assertEqual('FontWeight.Bold');
       done();
     });
