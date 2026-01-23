@@ -41,9 +41,8 @@ class MyPointModifier implements AttributeModifier<RichEditorAttribute> {
   isOnSelectionChange: boolean = false;
   isOnWillChange: boolean = false;
   placeholderStyleIndex: int = 0;
-  start_message: string = 'Hello World';
-  placeholderStyleList: Array<ResourceColor | undefined> =
-    new Array<ResourceColor | undefined>(Color.Yellow, undefined)
+  startMessage: string = 'Hello World';
+  placeholderStyleList: Array<ResourceColor | undefined> = [Color.Yellow, undefined];
 
   applyNormalAttribute(instance: RichEditorAttribute): void {
     instance
@@ -54,7 +53,7 @@ class MyPointModifier implements AttributeModifier<RichEditorAttribute> {
       .onSubmit(this.isOnSubmit ? (enterKey: EnterKeyType, event: SubmitEvent) => {
         this.message = 'onSubmit'
       } : undefined)
-      .placeholder(this.start_message, { fontColor: this.placeholderStyleList[this.placeholderStyleIndex] })
+      .placeholder(this.startMessage, { fontColor: this.placeholderStyleList[this.placeholderStyleIndex] })
       .onPaste(this.isOnPaste ? () => {
         this.message = 'onPaste'
       } : undefined)
@@ -77,7 +76,7 @@ struct SoftKeyboardEnterTypeExample {
   build() {
     Column() {
       RichEditor({ controller: this.controller } as RichEditorOptions)
-        .id("RichEditorM_2")
+        .id('RichEditorM_2')
         .onReady(() => {
           this.controller.addTextSpan('0123456789')
         })

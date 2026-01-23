@@ -40,9 +40,8 @@ struct SoftKeyboardEnterTypeExample {
   @State isOnSelectionChange: boolean = false;
   @State isOnWillChange: boolean = false;
   @State placeholderStyleIndex: int = 0;
-  @State start_message: string = 'Hello World';
-  private placeholderStyleList: Array<ResourceColor | undefined> =
-    new Array<ResourceColor | undefined>(Color.Yellow, undefined)
+  @State startMessage: string = 'Hello World';
+  private placeholderStyleList: Array<ResourceColor | undefined> = [Color.Yellow, undefined];
 
   build() {
     Column() {
@@ -58,7 +57,7 @@ struct SoftKeyboardEnterTypeExample {
         .onSubmit(this.isOnSubmit ? (enterKey: EnterKeyType, event: SubmitEvent) => {
           this.message = 'onSubmit'
         } : undefined)
-        .placeholder(this.start_message, { fontColor: this.placeholderStyleList[this.placeholderStyleIndex] })
+        .placeholder(this.startMessage, { fontColor: this.placeholderStyleList[this.placeholderStyleIndex] })
         .onPaste(this.isOnPaste ? () => {
           this.message = 'onPaste'
         } : undefined)
@@ -72,7 +71,7 @@ struct SoftKeyboardEnterTypeExample {
         .height('20%')
         .border({ width: 1 })
         .borderColor(Color.Red)
-        .width("100%")
+        .width('100%')
 
       Text(this.message)
         .id('RichEditor_text')
