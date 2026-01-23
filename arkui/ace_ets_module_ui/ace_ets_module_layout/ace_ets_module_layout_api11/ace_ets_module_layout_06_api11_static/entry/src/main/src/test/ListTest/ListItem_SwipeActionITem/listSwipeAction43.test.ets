@@ -53,7 +53,7 @@ export default function listSwipeAction43Jsunit() {
         let pages:router.RouterState = routerInstance.getState();
         console.info("listSwipeAction43Test  success pages " + JSON.stringify(pages));
         routerInstance.pushUrl(options)
-        await CommonFunc.sleep(1000);
+        await CommonFunc.sleep(3000);
       } catch (err) {
         console.error("push listTest15 page error: " + err);
       }
@@ -110,14 +110,14 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0430', Level.LEVEL0,
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width*0.7)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(5000);
       
       let driver2 = Driver.create();
       await CommonFunc.sleep(500);
       let button2 = await driver2.findComponent(ON.id('bt43'));
       await CommonFunc.sleep(300);
       button2!.click();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(1500);
 
       
       let textSwipeState = inspector.getInspectorByKey('swipe43Finish');
