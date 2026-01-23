@@ -13,17 +13,12 @@
  * limitations under the License.
  */
 
-import { afterEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium'
+import { describe, expect, it, TestType, Size, Level } from '@ohos/hypium'
 import huksndk from 'libhuksndk.so'
-import Utils from './Utils'
 import { CheckWifiInfo } from './utils/common/NetworkUtils';
 
 export default function huksNdkTest() {
   describe('SecurityHuksTest', () => {
-
-    afterEach(async () => {
-      await Utils.sleep(1000)
-    })
 
     /**
      * @tc.name   testOHHuksGetSdkVersion001
@@ -33,10 +28,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOHHuksGetSdkVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testOHHuksGetSdkVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = huksndk.oHHuksGetSdkVersion();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -47,10 +41,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testOHHuksGetSdkVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testOHHuksGetSdkVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let result: number = huksndk.oHHuksGetSdkVersionErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -61,10 +54,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksGenerateKeyItem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksGenerateKeyItem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksGenerateKeyItem();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -75,10 +67,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksGenerateKeyItem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksGenerateKeyItem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksGenerateKeyItemErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -89,10 +80,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksExportPublicKeyItem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksExportPublicKeyItem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksExportPublicKeyItemErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -103,10 +93,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksImportKeyItem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksImportKeyItem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksImportKeyItemErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -117,10 +106,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksDeleteKeyItem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksDeleteKeyItem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksDeleteKeyItem();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -131,10 +119,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksDeleteKeyItem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksDeleteKeyItem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksDeleteKeyItemErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -145,10 +132,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksIsKeyItemExist001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksIsKeyItemExist001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksIsKeyItemExist();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -159,10 +145,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksIsKeyItemExist002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksIsKeyItemExist002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksIsKeyItemExistErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -173,10 +158,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksInitSession001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksInitSession001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksInitSession();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -187,10 +171,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksInitSession002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksInitSession002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksInitSessionErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -201,10 +184,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksAttestOHHuksKeyItem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksAttestOHHuksKeyItem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksAttestKeyItem();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -215,10 +197,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksAttestOHHuksKeyItem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksAttestOHHuksKeyItem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksAttestKeyItemErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -229,10 +210,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksInitParamSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksInitParamSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksInitParamSet();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -243,10 +223,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksInitParamSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksInitParamSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksInitParamSetErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -257,10 +236,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksAddParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksAddParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksAddParams();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -271,10 +249,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksAddParams002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksAddParams002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksAddParamsErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -285,10 +262,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksBuildParamSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksBuildParamSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksBuildParamSet();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -299,10 +275,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksBuildParamSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksBuildParamSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksBuildParamSetErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -313,10 +288,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksFreeParamSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksFreeParamSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksFreeParamSet();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -327,10 +301,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksIsParamSetValid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksIsParamSetValid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksIsParamSetValid();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -341,10 +314,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksIsParamSetValid002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksIsParamSetValid002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksIsParamSetValidErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -355,10 +327,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksIsParamSetTagValid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksIsParamSetTagValid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksIsParamSetTagValid();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -369,10 +340,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksIsParamSetTagValid002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksIsParamSetTagValid002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksIsParamSetTagValidErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -383,10 +353,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksCheckParamMatch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksCheckParamMatch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksCheckParamMatch();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -397,10 +366,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksCheckParamMatch002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksCheckParamMatch002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksCheckParamMatchErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -411,10 +379,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksFreshParamSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksFreshParamSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksFreshParamSet();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -425,10 +392,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksFreshParamSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksFreshParamSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksFreshParamSetErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -439,10 +405,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksGetParam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksGetParam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksGetParam();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -453,10 +418,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksGetParam002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksGetParam002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksGetParamErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -467,10 +431,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksCopyParamSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksCopyParamSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksCopyParamSet();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -481,10 +444,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksCopyParamSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksCopyParamSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksCopyParamSetErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -495,10 +457,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksUpdateSession001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksUpdateSession001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksUpdateSession();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -509,10 +470,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksUpdateSession002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksUpdateSession002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksUpdateSessionErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -523,10 +483,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksFinishSession001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksFinishSession001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksFinishSession();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -537,10 +496,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksFinishSession002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksFinishSession002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksFinishSessionErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -551,10 +509,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksAbortSession001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksAbortSession001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksAbortSession();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -565,10 +522,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksAbortSession002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksAbortSession002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksAbortSessionErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -579,10 +535,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksGetKeyItemParamSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksGetKeyItemParamSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksGetKeyItemParamSet();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -593,10 +548,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksGetKeyItemParamSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksGetKeyItemParamSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksGetKeyItemParamSetErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -607,10 +561,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksImportWrappedKeyItem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksImportWrappedKeyItem002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksImportWrappedKeyItemErr();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -621,10 +574,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksImportWrappedKeyItem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksImportWrappedKeyItem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksImportWrappedKeyItem();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -635,11 +587,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksImportKeyItem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      huksndk.oHHuksImportKeyItem().then((result: number) => {
-        expect(result).assertEqual(0);
-        done();
-      });
+    it('testOHHuksImportKeyItem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let result: number = await huksndk.oHHuksImportKeyItem();
+      expect(result).assertEqual(0);
     });
 
     /**
@@ -650,11 +600,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksExportPublicKeyItem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      huksndk.oHHuksExportPublicKeyItem().then((result: number) => {
-        expect(result).assertEqual(0);
-        done();
-      });
+    it('testOHHuksExportPublicKeyItem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let result: number = await huksndk.oHHuksExportPublicKeyItem();
+      expect(result).assertEqual(0);
     });
 
     /**
@@ -665,11 +613,10 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testOHHuksAnonAttestKeyItem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOHHuksAnonAttestKeyItem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await CheckWifiInfo();
       let result: number = huksndk.oHHuksAnonAttestKeyItem();
       expect(result).assertEqual(0);
-      done();
     });
 
     /**
@@ -680,10 +627,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_ListAliases_Native_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_Security_HUKS_ListAliases_Native_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksListAliases();
       expect(result).assertEqual(0);
-      done();
     });
     /**
      * @tc.name   SUB_Security_HUKS_ListAliases_Native_Func_0200
@@ -693,10 +639,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_ListAliases_Native_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_Security_HUKS_ListAliases_Native_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksFreeKeyAliasSet();
       expect(result).assertEqual(0);
-      done();
     });
     /**
      * @tc.name   SUB_Security_HUKS_WrapKey_Native_Func_0100
@@ -706,10 +651,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_WrapKey_Native_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_Security_HUKS_WrapKey_Native_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksWrapKey();
       expect(result).assertEqual(0);
-      done();
     });
     /**
      * @tc.name   SUB_Security_HUKS_UnwrapKey_Native_Func_0100
@@ -719,10 +663,9 @@ export default function huksNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_HUKS_UnwrapKey_Native_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_Security_HUKS_UnwrapKey_Native_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksUnwrapKey();
       expect(result).assertEqual(0);
-      done();
     });
   })
 }
