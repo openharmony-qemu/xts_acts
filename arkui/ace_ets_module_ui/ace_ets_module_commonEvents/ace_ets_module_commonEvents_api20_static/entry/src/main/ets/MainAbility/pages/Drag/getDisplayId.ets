@@ -42,9 +42,10 @@ struct getDisplayId {
           .height('50%')
           .id('drag')
           .draggable(true)
-        // .onDragStart((event: DragEvent) => {
-        //   this.flag = event.getDisplayId() // Property 'getDisplayId' does not exist on type 'DragEvent'
-        // })
+          .onDragStart((event: DragEvent) => {
+            this.flag = event.getDisplayId() 
+            return {} as DragItemInfo
+          })
         Button('' + this.flag)
           .id('button')
       }.width('100%')
