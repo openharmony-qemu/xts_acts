@@ -66,6 +66,7 @@ export default function List_scrollToIndex2() {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
       routerInstance.back()
+      await CommonFunc.sleep(1000);
       console.info("List_scrollToIndex2 after each called");
     });
 

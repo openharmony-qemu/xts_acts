@@ -16,9 +16,11 @@
 import NetworkManagerWebsocketTest from './NetworkManagerWebsocketTest.test'
 import NetworkManagerSocketTest from './NetworkManagerSocketTest.test'
 import NetworkManagerVpnTest from './NetworkManagerVpnTest.test'
+import NetWorkManagerGetConnectOwnerUid from './NetWorkManagerGetConnectOwnerUid.test'
 
 export default function testsuite() {
     NetworkManagerWebsocketTest();
 	NetworkManagerSocketTest();
 	NetworkManagerVpnTest();
+	NetWorkManagerGetConnectOwnerUid();
 }

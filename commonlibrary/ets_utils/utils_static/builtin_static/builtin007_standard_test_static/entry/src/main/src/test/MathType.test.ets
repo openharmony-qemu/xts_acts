@@ -1243,7 +1243,8 @@ export default function mathTypeTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         console.log(domain, tag, '%{public}s', 'testmathlog0003 start');
-        const result: number = Math.log(10);
+        const num: double = 10.0;
+        const result: number = Math.log(num);
         const expected: number = 2.302585092994046;
         expect(Math.abs(result - expected) < 1e-15).assertTrue();
         done();
@@ -1348,7 +1349,8 @@ export default function mathTypeTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         console.log(domain, tag, '%{public}s', 'testmathlog0009 start');
-        const result: number = Math.log(0.5);
+        const num: double = 0.5;
+        const result: number = Math.log(num);
         const expected: number = -0.6931471805599453;
         expect(Math.abs(result - expected) < 1e-15).assertTrue();
         done();
@@ -1367,7 +1369,8 @@ export default function mathTypeTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         console.log(domain, tag, '%{public}s', 'testmathlog0010 start');
-        const result: number = Math.log(100);
+        const num: double = 100.0;
+        const result: number = Math.log(num);
         const expected: number = 4.605170185988092;
         expect(Math.abs(result - expected) < 1e-15).assertTrue();
         done();
@@ -1583,7 +1586,7 @@ export default function mathTypeTest() {
       console.log(domain, tag, '%{public}s', 'testmathexpm10011 start');
       const result: number = expm1(1);
       const expected: number = Math.exp(1) - 1;
-      expect(Math.abs(result - expected) < 1e-10).assertFalse();
+      expect(Math.abs(result - expected) < 1e-10).assertTrue();
       done();
       console.log(domain, tag, '%{public}s', 'testmathexpm10011 end');
     });
@@ -1660,7 +1663,7 @@ export default function mathTypeTest() {
       console.log(domain, tag, '%{public}s', 'testmathlog1p0005 start');
       const result: double = log1p(1.0);
       const expected: double = Math.log(2.0);
-      expect(Math.abs(result - expected) < 1e-9).assertFalse();
+      expect(Math.abs(result - expected) < 1e-9).assertTrue();
       console.log(domain, tag, '%{public}s', 'testmathlog1p0005 end');
     });
 
@@ -1674,8 +1677,10 @@ export default function mathTypeTest() {
      */
     it("testmathlog1p0006", TestType.FUNCTION | Size. MEDIUMTEST | Level.LEVEL1, (): void => {
       console.log(domain, tag, '%{public}s', 'testmathlog1p0006 start');
-      const result: double = log1p(-0.5);
-      const expected: double = Math.log(0.5);
+      const num1: double = -0.5;
+      const result: double = log1p(num1);
+      const num2: double = 0.5;
+      const expected: double = Math.log(num2);
       expect(Math.abs(result - expected) < 1e-9).assertTrue();
       console.log(domain, tag, '%{public}s', 'testmathlog1p0006 end');
     });
@@ -1773,7 +1778,7 @@ export default function mathTypeTest() {
       console.log(domain, tag, '%{public}s', 'testmathexpm10012 start');
       const result: number = expm1(-1);
       const expected: number = Math.exp(-1) - 1;
-      expect(Math.abs(result - expected) < 1e-10).assertFalse();
+      expect(Math.abs(result - expected) < 1e-10).assertTrue();
       done();
       console.log(domain, tag, '%{public}s', 'testmathexpm10012 end');
     });
@@ -1791,7 +1796,7 @@ export default function mathTypeTest() {
       console.log(domain, tag, '%{public}s', 'testmathexpm10013 start');
       const result: number = expm1(10);
       const expected: number = Math.exp(10) - 1;
-      expect(Math.abs(result - expected) < 1e-6).assertFalse();
+      expect(Math.abs(result - expected) < 1e-6).assertTrue();
       done();
       console.log(domain, tag, '%{public}s', 'testmathexpm10013 end');
     });

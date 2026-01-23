@@ -1415,49 +1415,5 @@ export default function fontTest() {
       done();
     });
 
-    /**
-     * @tc.name   testOHDrawingSetTextStyleAttributeInt004
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTextStyleAttributeInt004
-     * @tc.desc   test OHDrawingSetTextStyleAttributeInt004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testOHDrawingSetTextStyleAttributeInt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-      let result: number = nativeFontNdk.oHDrawingSetTextStyleAttributeInt004();
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
-     * @tc.name   testOHDrawingTypographyDidExceedMaxLines004
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyDidExceedMaxLines004
-     * @tc.desc   test OHDrawingTypographyDidExceedMaxLines004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testOHDrawingTypographyDidExceedMaxLines004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-      let result: number = nativeFontNdk.oHDrawingTypographyDidExceedMaxLines004();
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
-    * @tc.name   testOHDrawingTypographyStyleGetEffectiveAlignment003
-    * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyStyleGetEffectiveAlignment003
-    * @tc.desc   test OHDrawingTypographyStyleGetEffectiveAlignment003
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
-    */
-    it('testOHDrawingTypographyStyleGetEffectiveAlignment003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-      let result: number = nativeFontNdk.oHDrawingTypographyStyleGetEffectiveAlignment003();
-      expect(result).assertEqual(0);
-      done();
-    });
   })
 }

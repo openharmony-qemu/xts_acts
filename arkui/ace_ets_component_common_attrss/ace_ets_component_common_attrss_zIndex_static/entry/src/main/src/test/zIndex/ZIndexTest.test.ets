@@ -77,8 +77,6 @@ export default function zIndexTest() {
     'List',
     'ListItem',
     'ListItemGroup',
-    'Navigator',
-    'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',

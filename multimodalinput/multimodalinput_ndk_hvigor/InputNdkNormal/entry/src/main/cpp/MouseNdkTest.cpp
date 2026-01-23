@@ -774,6 +774,15 @@ static napi_value DispatchToNextHandler1(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value GetKeyEventId(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t eventId;
+    Input_Result retResult = OH_Input_GetKeyEventId(nullptr, &eventId);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR) ? 1 : 0, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_property_descriptor desc_part1[] = {
     {"GetPointerLocation1", nullptr, GetPointerLocation1, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -838,6 +847,7 @@ static napi_property_descriptor desc_part3[] = {
     {"GetInterSinceLastInput1", nullptr, GetInterSinceLastInput1, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"RemoveKeyEventHook1", nullptr, RemoveKeyEventHook1, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"DispatchToNextHandler1", nullptr, DispatchToNextHandler1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"GetKeyEventId", nullptr, GetKeyEventId, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 static napi_value Init(napi_env env, napi_value exports)

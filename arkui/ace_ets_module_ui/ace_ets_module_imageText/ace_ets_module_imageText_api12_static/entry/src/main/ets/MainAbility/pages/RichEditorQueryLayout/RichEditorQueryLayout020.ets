@@ -90,7 +90,7 @@ build() {
         })
         .aboutToDelete((value: RichEditorDeleteValue): boolean => {
           value.richEditorDeleteSpans!.forEach(item => {
-            if ( (item as RichEditorImageSpanResult)?.imageStyle) {
+            if (item instanceof RichEditorImageSpanResult) {
               this.delLayoutStyle = JSON.stringify(((item as RichEditorImageSpanResult).imageStyle))
               console.log('RichEditorController image:' + (item as RichEditorImageSpanResult).valueResourceStr)
             } else {
@@ -98,6 +98,7 @@ build() {
               this.paragraphStyle = JSON.stringify(((item as RichEditorTextSpanResult).paragraphStyle));
               console.log('RichEditorController text:' + (item as RichEditorTextSpanResult).value)
             }
+
           })
           return true;
         })

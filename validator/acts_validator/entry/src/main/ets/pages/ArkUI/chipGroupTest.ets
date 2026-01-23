@@ -520,7 +520,7 @@ struct chipGroupTest {
             }
           }
         }
-      }.height('70%')
+      }.height('90%')
       .width('100%')
       .backgroundColor(Color.White)
 

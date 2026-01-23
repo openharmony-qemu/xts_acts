@@ -1739,5 +1739,218 @@ export default function windowRotationTest() {
     })
 
 
+    /**
+     * @tc.name   testConvertOrientationAndRotationFromWindowOrientationToDisplayOrientation
+     * @tc.number SUB_WMS_CONVERT_ORIENTATION_AND_ROTATION_0100
+     * @tc.desc   testConvertOrientationAndRotationFromWindowOrientationToDisplayOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testConvertOrientationAndRotationFromWindowOrientationToDisplayOrientation', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testConvertOrientationAndRotationFromWindowOrientationToDisplayOrientation';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let subWindowClass: window.Window | undefined;
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        if (canIUseRes) {
+          for (let inputValue = 0; inputValue < 4; inputValue++) {
+            let outputValue = windowClass.convertOrientationAndRotation(window.RotationInfoType.WINDOW_ORIENTATION, window.RotationInfoType.DISPLAY_ORIENTATION, inputValue);
+            console.info(caseName + 'from-to outputValue ' + inputValue + ' : ' + JSON.stringify(outputValue));
+            expect(outputValue).assertEqual(inputValue);
+            let outputValue2 = windowClass.convertOrientationAndRotation(window.RotationInfoType.DISPLAY_ORIENTATION, window.RotationInfoType.WINDOW_ORIENTATION, inputValue);
+            console.info(caseName + 'to-from outputValue2 ' + inputValue + ' : ' + JSON.stringify(outputValue2));
+            expect(outputValue2).assertEqual(inputValue);
+          }
+          expect(window.RotationInfoType.WINDOW_ORIENTATION).assertEqual(0);
+          expect(window.RotationInfoType.DISPLAY_ORIENTATION).assertEqual(1);
+          subWindowClass = await windowStage.createSubWindow('testConvertOrientationAndRotationFromWindowOrientationToDisplayOrientation');
+          try{
+            await subWindowClass.destroyWindow();
+            let outputValue3 = subWindowClass.convertOrientationAndRotation(window.RotationInfoType.WINDOW_ORIENTATION, window.RotationInfoType.DISPLAY_ORIENTATION, 0);
+            console.error(caseName + 'subWindowClass convertOrientationAndRotation, outputValue3: ' + JSON.stringify(outputValue3));
+            expect(false).assertTrue();
+            done();
+          }catch (err) {
+            console.error(caseName + 'subWindowClass failed convertOrientationAndRotation, err: ' + JSON.stringify(err)+'errCode:' + JSON.stringify(err.code));
+            expect(err.code).assertEqual(1300002);
+            done();
+          }
+
+        } else {
+          let outputValue = windowClass.convertOrientationAndRotation(window.RotationInfoType.WINDOW_ORIENTATION, window.RotationInfoType.DISPLAY_ORIENTATION, 0);
+        }
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        await subWindowClass?.destroyWindow()
+        if (err.code == 801) {
+          expect(err.code).assertEqual(801);
+          done()
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+
+    /**
+     * @tc.name   testConvertOrientationAndRotationFromWindowOrientationToDisplayRotation
+     * @tc.number SUB_WMS_CONVERT_ORIENTATION_AND_ROTATION_0200
+     * @tc.desc   testConvertOrientationAndRotationFromWindowOrientationToDisplayRotation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testConvertOrientationAndRotationFromWindowOrientationToDisplayRotation', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testConvertOrientationAndRotationFromWindowOrientationToDisplayRotation';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        if (canIUseRes) {
+          for (let inputValue = 0; inputValue < 4; inputValue++) {
+            let outputValue = windowClass.convertOrientationAndRotation(window.RotationInfoType.WINDOW_ORIENTATION, window.RotationInfoType.DISPLAY_ROTATION, inputValue);
+            console.info(caseName + 'from-to outputValue ' + inputValue + ' : ' + JSON.stringify(outputValue));
+            // 如果是 GRL-G态 ，0转化为1,1转化为2,2转化为3,3转化为0
+            let displayInfo = await display.getAllDisplayPhysicalResolution();
+            if (displayInfo.length == 3) {
+              if (inputValue != 3) {
+                expect(outputValue).assertEqual(inputValue + 1);
+              } else {
+                expect(outputValue).assertEqual(0);
+              }
+            } else {
+              expect(outputValue).assertEqual(inputValue);
+            }
+            let outputValue2 = windowClass.convertOrientationAndRotation(window.RotationInfoType.DISPLAY_ROTATION, window.RotationInfoType.WINDOW_ORIENTATION, inputValue);
+            console.info(caseName + 'to-from outputValue2 ' + inputValue + ' : ' + JSON.stringify(outputValue2));
+            // 如果是 GRL-G态 ，0转化为3,1转化为0,2转化为1,3转化为2
+            if (displayInfo.length == 3) {
+              if (inputValue != 0) {
+                expect(outputValue).assertEqual(3);
+              } else {
+                expect(outputValue).assertEqual(inputValue - 1);
+              }
+            } else {
+              expect(outputValue2).assertEqual(inputValue);
+            }
+          }
+          expect(window.RotationInfoType.WINDOW_ORIENTATION).assertEqual(0);
+          expect(window.RotationInfoType.DISPLAY_ROTATION).assertEqual(2);
+          done()
+        } else {
+          let outputValue3 = windowClass.convertOrientationAndRotation(window.RotationInfoType.WINDOW_ORIENTATION, window.RotationInfoType.DISPLAY_ROTATION, 0);
+        }
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        if (err.code == 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   testConvertOrientationAndRotationFromDisplayOrientationToDisplayRotation
+     * @tc.number SUB_WMS_CONVERT_ORIENTATION_AND_ROTATION_0300
+     * @tc.desc   testConvertOrientationAndRotationFromDisplayOrientationToDisplayRotation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testConvertOrientationAndRotationFromDisplayOrientationToDisplayRotation', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testConvertOrientationAndRotationFromDisplayOrientationToDisplayRotation';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        if (canIUseRes) {
+          for (let inputValue = 0; inputValue < 4; inputValue++) {
+            let outputValue = windowClass.convertOrientationAndRotation(window.RotationInfoType.DISPLAY_ORIENTATION, window.RotationInfoType.DISPLAY_ROTATION, inputValue);
+            console.info(caseName + 'from-to outputValue ' + inputValue + ' : ' + JSON.stringify(outputValue));
+            // 如果是 GRL-G态 ，0转化为1,1转化为2,2转化为3,3转化为0
+            let displayInfo = await display.getAllDisplayPhysicalResolution();
+            if (displayInfo.length == 3) {
+              if (inputValue != 3) {
+                expect(outputValue).assertEqual(inputValue + 1);
+              } else {
+                expect(outputValue).assertEqual(0);
+              }
+            } else {
+              expect(outputValue).assertEqual(inputValue);
+            }
+            let outputValue2 = windowClass.convertOrientationAndRotation(window.RotationInfoType.DISPLAY_ROTATION, window.RotationInfoType.DISPLAY_ORIENTATION, inputValue);
+            console.info(caseName + 'to-from outputValue2 ' + inputValue + ' : ' + JSON.stringify(outputValue2));
+            // 如果是 GRL-G态 ，0转化为3,1转化为0,2转化为1,3转化为2
+            if (displayInfo.length == 3) {
+              if (inputValue != 0) {
+                expect(outputValue).assertEqual(3);
+              } else {
+                expect(outputValue).assertEqual(inputValue - 1);
+              }
+            } else {
+              expect(outputValue2).assertEqual(inputValue);
+            }
+          }
+          expect(window.RotationInfoType.DISPLAY_ORIENTATION).assertEqual(1);
+          expect(window.RotationInfoType.DISPLAY_ROTATION).assertEqual(2);
+          done()
+        } else {
+          let outputValue3 = windowClass.convertOrientationAndRotation(window.RotationInfoType.WINDOW_ORIENTATION, window.RotationInfoType.DISPLAY_ROTATION, 0);
+        }
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        if (err.code == 801) {
+          done()
+        } else {
+          expect(err.code).assertEqual(401);
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   testConvertOrientationAndRotationwithInvaidParams
+     * @tc.number SUB_WMS_CONVERT_ORIENTATION_AND_ROTATION_0400
+     * @tc.desc   testConvertOrientationAndRotationwithInvaidParams
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testConvertOrientationAndRotationwithInvaidParams', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testConvertOrientationAndRotationwithInvaidParams';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        let inputValues = [3.1, 3.6, 4, -1];
+        for (let i = 0; i < inputValues.length; i++) {
+          let outputValue = windowClass.convertOrientationAndRotation(window.RotationInfoType.WINDOW_ORIENTATION, window.RotationInfoType.DISPLAY_ORIENTATION, inputValues[i]);
+          console.info(caseName + 'from-to outputValue ' + i + ' : ' + JSON.stringify(outputValue));
+        }
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        if (err.code == 801) {
+          done()
+        } else {
+          expect(err.code).assertEqual(401);
+          done();
+        }
+      }
+    })
+
+
   })
 }

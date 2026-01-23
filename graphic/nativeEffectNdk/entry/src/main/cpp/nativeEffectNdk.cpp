@@ -621,6 +621,17 @@ static napi_value OHPixelmapNativeCreateEmptyPixelmapUsingAllocator001(napi_env 
     return result;
 }
 
+static napi_value OHEffectUnsupportedOperation001(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    if ((EFFECT_UNSUPPORTED_OPERATION == 7600201) && (EFFECT_UNKNOWN_ERROR == 7600901)) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -678,6 +689,8 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHPixelmapNativeCreateEmptyPixelmapUsingAllocator001", nullptr,
          OHPixelmapNativeCreateEmptyPixelmapUsingAllocator001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHEffectUnsupportedOperation001", nullptr, OHEffectUnsupportedOperation001,
          nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

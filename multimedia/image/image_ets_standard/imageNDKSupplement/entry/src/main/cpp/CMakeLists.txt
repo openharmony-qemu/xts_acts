@@ -61,7 +61,9 @@ add_library(imageEffect SHARED
     ImageSourceNativeGetImagePropertyTest.cpp
     ImageSourceNativeModifySuppTest.cpp
     PixelmapNativeCropTest.cpp
-    ImagePackerNativeTest.cpp)
+    ImagePackerNativeTest.cpp
+    ImagePictureNativeTest.cpp
+    OHImageSourceNativeSupplementTest.cpp)
 
 
 find_library(

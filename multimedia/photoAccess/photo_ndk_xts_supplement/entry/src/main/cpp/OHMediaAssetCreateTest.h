@@ -24,6 +24,7 @@ napi_value OHMediaAssetChangeRequestAddResourceWithUriTest(napi_env env, napi_ca
 napi_value TestOhMediaAsset(napi_env env, napi_callback_info info);
 napi_value OHMediaAccessHelperApplyChangesTest(napi_env env, napi_callback_info info);
 napi_value OHMediaAssetChangeRequestReleaseTest(napi_env env, napi_callback_info info);
+napi_value OHMediaAssetManagerQuickRequestImageTest(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif

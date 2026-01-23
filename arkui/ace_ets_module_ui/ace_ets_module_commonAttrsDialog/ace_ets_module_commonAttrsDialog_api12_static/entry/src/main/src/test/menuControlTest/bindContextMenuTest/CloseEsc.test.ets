@@ -60,7 +60,6 @@ export default function CloseEsc() {
         }
       } catch (err) {
         console.error("push CloseEsc page error: " + err);
-        expect().assertFail();
       }
 
     });

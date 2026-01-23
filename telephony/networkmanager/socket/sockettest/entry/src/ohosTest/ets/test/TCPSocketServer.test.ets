@@ -3489,6 +3489,81 @@ export default function TCPSocketServerTest() {
     });
 
     /**
+     * @tc.name   testNetworkMgrSocketTCPSocketServerGetSocketFd0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_GetSocketFd_0100
+     * @tc.desc   Obtain TCPSocketServer FD after listening
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketServerGetSocketFd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketServerGetSocketFd0100';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        expect(tcpServer).assertInstanceOf('Object');
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 11110,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+
+        await tcpServer.getSocketFd().then((data: number) => {
+          console.info(`${caseName} success data:${JSON.stringify(data)}`);
+          expectTrue(data !== -1);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} fail err:${JSON.stringify(err)}`);
+          expectFail();
+          console.info(`${caseName}---End`);
+          done();
+        })
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_GetSocketFd_0200
+     * @tc.name   testNetworkMgrSocketTCPSocketServerGetSocketFd0200
+     * @tc.desc   Obtain TCPSocketServer FD without listening
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketServerGetSocketFd0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketServerGetSocketFd0200';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        expect(tcpServer).assertInstanceOf('Object');
+        await tcpServer.getSocketFd().then((data: number) => {
+          console.info(`${caseName} success data:${JSON.stringify(data)}`);
+          expectTrue(data === -1);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} fail err:${JSON.stringify(err)}`);
+          expectFail();
+          console.info(`${caseName}---End`);
+          done();
+        })
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrSocketTCPSocketServerOnConnect0100
      * @tc.number SUB_NetworkMgr_Socket_TCPSocketServer_OnConnect_0100
      * @tc.desc   Subscription to TCP Socket Server connection events;

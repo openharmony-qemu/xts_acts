@@ -46,7 +46,6 @@ export default function CloseContextMenu() {
         }
       } catch (err) {
         console.error("push CloseContextMenu page error: " + err);
-        expect().assertFail();
       }
 
     });

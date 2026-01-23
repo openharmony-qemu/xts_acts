@@ -51,7 +51,7 @@ struct ScrollBarExampler {
       const data = eventData.data as Record<String,RecordData>
       if (data['directionValue'] != null) {
         let directionObject: Record<string, Object> =
-          JSON.parse<Object>(JSON.stringify(data['directionObject']), Type.of(new String() as Object)) as Record<string,Object>;
+          JSON.parse<Object>(JSON.stringify(data['directionObject']), Class.from<String>()) as Record<string,Object>;
         this.directionValue = directionObject['directionValue'] as ScrollBarDirection;
       }
       if (data['stateValue'] != null) {

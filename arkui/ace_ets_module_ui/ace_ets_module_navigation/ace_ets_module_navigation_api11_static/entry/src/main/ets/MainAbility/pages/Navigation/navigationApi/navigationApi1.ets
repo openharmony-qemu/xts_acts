@@ -36,7 +36,7 @@ struct navigationApi1{
   @State durationOne: number = 1000
   @State text: string = ''
 
-  pageInfos:NavPathStack = new  NavPathStack()
+  @Provide({alias:"pageInfo"}) pageInfos:NavPathStack = new  NavPathStack()
 
   @Builder PageMap(name: string, param: Object|null|undefined) {
     if (name == 'pageOne'){
@@ -118,7 +118,7 @@ struct navigationApi1{
 
 @Component
 export  struct  pageOne{
- pageInfos:NavPathStack = new  NavPathStack()
+  @Consume('pageInfo') pageInfos:NavPathStack = new  NavPathStack()
   @State opacity1: number = 1
   @State duration: int = durationOne
 
@@ -151,7 +151,7 @@ export  struct  pageOne{
     NavDestination(){
       Column(){
         Button('pop').onClick((e: ClickEvent) => {
-          this.pageInfos.popToName('page1')
+          this.pageInfos.pop()
         }).id('navigationApi1_btn2')
       }.width('100%').height('100%')
     }.title('pageOne').opacity(this.opacity1)

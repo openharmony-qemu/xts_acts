@@ -1881,4 +1881,327 @@ ani_boolean test_String_New_UTF16_09([[maybe_unused]] ani_env *env, [[maybe_unus
 
     return ANI_TRUE;
 }
+
+/*
+    基本规则如下：
+        对于单字节的字符，字节的第一位设为0，后面7位为这个字符的Unicode码。因此，对于0x00-0x7F之间的字符，UTF-8编码与ASCII完全相同。
+        对于多字节的字符，第一个字节的前几位设为1，第n个字节的前两位设为10，其余位用来存储字符的Unicode码。
+    具体规则：
+        1字节：0xxxxxxx
+        2字节：110xxxxx 10xxxxxx
+        3字节：1110xxxx 10xxxxxx 10xxxxxx
+        4字节：11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+        其中，x部分就是实际存储的Unicode码的二进制位。
+        另外，UTF-8编码还有以下规定：
+        每个字符的编码中，第一个字节称为首字节，后续字节称为后续字节。
+        首字节的前导1的个数表示这个字符编码的总字节数（例如，2字节字符的首字节前导为110，即两个1；3字节为1110，即三个1；4字节为11110，即四个1）。
+        后续字节的前两位必须是10。
+*/
+ani_boolean CheckUtf8String(ani_env *env, const std::string example)
+{
+    // 创建ani字符串
+    ani_string utf8String = nullptr;
+    ani_status status = env->String_NewUTF8(example.c_str(), example.size(), &utf8String);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(utf8String, nullptr);
+    // 从ani字符串提取回C字符串
+    const uint32_t bufferSize = example.size() + 1;
+    char utfBuffer[bufferSize];
+    ani_size resultSize = 0U;
+    auto status1 = env->String_GetUTF8(utf8String, utfBuffer, bufferSize, &resultSize);
+    if (status1 != ANI_OK) {
+        return ANI_FALSE;
+    }
+    if (resultSize != example.size()) {
+        return ANI_FALSE;
+    }
+    // 逐个字符比较
+    for (size_t i = 0; i < example.size(); ++i) {
+        if (example[i] != utfBuffer[i]) {
+            return ANI_FALSE;
+        }
+    }
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_New_UTF8_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 原始C字符串
+    const std::string example {"Hello, OpenHarmony!"};
+    return CheckUtf8String(env, example.c_str());
+}
+
+ani_boolean test_String_New_UTF8_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 特殊转移字符
+    const std::string example {"Hello, OpenHarmony!\a\b\f\n\r\t\v\\\'\"\0\177\x5c"};
+    return CheckUtf8String(env, example.c_str());
+}
+
+ani_boolean test_String_New_UTF8_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // ASCII码全量覆盖
+    const std::string example {"Hello, OpenHarmony!!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQ \
+                                                     RSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"};
+    return CheckUtf8String(env, example.c_str());
+}
+
+ani_boolean test_String_New_UTF8_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+    const std::string example {"Hello, OpenHarmony!!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"};
+    return CheckUtf8String(env, example.c_str());
+}
+
+ani_boolean test_String_New_UTF8_13([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 表情符号以及其Unicode编码
+    const std::string example {"Hello, OpenHarmony!\\ud83d\\udc46\\ud83d\\udc7f\\ud83d\\udc40\\ud83d\\udcaf\\ud83c \
+                         \\udf85\\ud83d\\ude3c\\ud83d\\udd27\\ud83d\\udc87\\ud83e\\udd3c\\u200d\\u2642 \
+                          \\ufe0f\\ud83d\\udee2\\ud83c\\udc04\\ud83c\\udff4"};
+    return CheckUtf8String(env, example.c_str());
+}
+
+ani_boolean test_String_New_UTF8_14([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    //非法unicode编码
+    const std::string example {"Hello, OpenHarmony!\\udc04\\ud83d\\udff4"};
+    return CheckUtf8String(env, example.c_str());
+}
+
+ani_boolean test_String_New_UTF8_15([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 单个字节 0x41 (代表'A') -> 符合
+    const std::string example {"Hello, OpenHarmony!\x41"};
+    return CheckUtf8String(env, example.c_str());
+}
+
+ani_boolean test_String_New_UTF8_16([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 0x80 -> 二进制为10000000，最高位为1，不符合单字节字符规范
+    const std::string example {"Hello, OpenHarmony!\x80"};
+    return CheckUtf8String(env, example.c_str());
+}
+
+ani_boolean test_String_New_UTF8_17([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 双字节
+    const std::string example {"Hello, OpenHarmony!\xC2\x80"};
+    return CheckUtf8String(env, example.c_str());
+}
+
+ani_boolean test_String_New_UTF8_18([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"Hello, OpenHarmony!\xCC\x5C"};
+    return CheckUtf8String(env, example.c_str());
+}
+
+ani_boolean test_String_New_UTF8_19([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 3字节
+    const std::string example {"Hello, OpenHarmony!\xE0\xA0\x80"};
+    return CheckUtf8String(env, example.c_str());
+}
+
+ani_boolean test_String_New_UTF8_20([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"Hello, OpenHarmony!\xE0\x7F\x80"};
+    return CheckUtf8String(env, example.c_str());
+}
+
+ani_boolean test_String_New_UTF8_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 4字节
+    const std::string example {"Hello, OpenHarmony!\xF0\x90\x80\x80"};
+    return CheckUtf8String(env, example.c_str());
+}
+
+ani_boolean test_String_New_UTF8_22([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const std::string example {"Hello, OpenHarmony!\xF0\x7F\x80\x80"};
+    return CheckUtf8String(env, example.c_str());
+}
+
+/*
+    UTF-16编码规则：
+    Unicode码点小于0x10000的，使用一个16位码元（即两个字节）表示，与UCS-2编码相同。
+    Unicode码点大于等于0x10000的，使用两个16位码元（即四个字节）表示，这被称为代理对（Surrogate Pair）。
+    具体规则：将码点减去0x10000，得到20位的值。
+    高10位（范围0x000-0x3FF）加上0xD800得到高位代理（High Surrogate），范围0xD800-0xDBFF。
+    低10位（范围0x000-0x3FF）加上0xDC00得到低位代理（Low Surrogate），范围0xDC00-0xDFFF。
+*/
+ani_boolean CheckUtf16String(ani_env *env, const std::u16string example)
+{
+    // 创建ani字符串
+    ani_string utf16String = nullptr;
+    ani_status status = env->String_NewUTF16(reinterpret_cast<const uint16_t*>(example.c_str()),
+                                             example.size(), &utf16String);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(utf16String, nullptr);
+    // 从ani字符串提取回C字符串
+    const uint32_t bufferSize = example.size() + 1;
+    uint16_t utfBuffer[bufferSize];
+    ani_size resultSize = 0U;
+    auto status1 = env->String_GetUTF16(utf16String, utfBuffer, bufferSize, &resultSize);
+    if (status1 != ANI_OK) {
+        return ANI_FALSE;
+    }
+    if (resultSize != example.size()) {
+        return ANI_FALSE;
+    }
+    // 逐个字符比较
+    for (size_t i = 0; i < example.size(); ++i) {
+        if (example[i] != utfBuffer[i]) {
+            return ANI_FALSE;
+        }
+    }
+    return ANI_TRUE;
+}
+
+ani_boolean test_String_UTF16_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 输入原始C字符串
+    std::u16string input = u"Hello, OpenHarmony!";       // true
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_22([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 特殊转移字符
+    std::u16string input = u"Hello, OpenHarmony!\a\b\f\n\r\t\v\\\'\"\0\177\x5c";
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_23([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // ASCII码全量覆盖
+    std::u16string input = u"Hello, OpenHarmony!!\"#$%&'()*+,-./0123456789:;\
+        <=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_24([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+    std::u16string input = u"Hello, OpenHarmony!!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_25([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 表情符号以及其Unicode编码
+    std::u16string input = u"Hello, OpenHarmony!\\ud83d\\udc46\\ud83d\\udc7f\\ud83d\\udc40\\ud83d\\udcaf\\ud83c\\udf85 \
+                         \\ud83d\\ude3c\\ud83d\\udd27\\ud83d\\udc87\\ud83e\\udd3c\\u200d\\u2642 \
+                          \\ufe0f\\ud83d\\udee2\\ud83c\\udc04\\ud83c\\udff4";
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_26([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 非法unicode编码
+    std::u16string input = u"Hello, OpenHarmony!\\udc04\\ud83d\\udff4";
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_27([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 单个字节
+    // 0x41 (代表'A') -> 符合
+    std::u16string input = u"Hello, OpenHarmony!\x41";
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_28([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 0x80 -> 二进制为10000000，最高位为1，不符合单字节字符规范
+    std::u16string input = u"Hello, OpenHarmony!\x80";
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_29([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 双字节
+    std::u16string input = u"Hello, OpenHarmony!\xC2\x80";
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_30([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    std::u16string input = u"Hello, OpenHarmony!\xCC\x5C";
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_31([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 3字节
+    std::u16string input = u"Hello, OpenHarmony!\xE0\xA0\x80";
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_32([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    std::u16string input = u"Hello, OpenHarmony!\xE0\x7F\x80";
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_33([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    // 4字节
+    std::u16string input = u"Hello, OpenHarmony!\xF0\x90\x80\x80";
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_34([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    std::u16string input = u"Hello, OpenHarmony!\xF0\x7F\x80\x80";
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_35([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    std::u16string input = u"A";  // 符合UTF-16的示例 英文字母
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_36([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    std::u16string input = u"中"; // 符合UTF-16的示例 中文字符
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_37([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    std::u16string input = u"😀"; // 符合UTF-16的示例 表情符号（代理对）
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_38([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    std::u16string input =  u"Hello 世界🎉"; // 符合UTF-16的示例 混合字符
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_39([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    std::u16string input = {0xD800};  // 不符合UTF-16的示例 孤立的高位代理
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_40([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    std::u16string input = {0xDC00, 0xD800};   // 不符合UTF-16的示例 顺序错误的代理对
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_41([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    std::u16string input = {0x0041, 0xD800};   // 不符合UTF-16的示例 不完整的代理对
+    return CheckUtf16String(env, input);
+}
+
+ani_boolean test_String_UTF16_42([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    std::u16string input = {0xDFFF, 0xDFFF};  // 不符合UTF-16的示例 无效的代理组合
+    return CheckUtf16String(env, input);
+}
 #endif // ARKTS_ANI_TEST_STRING_OPERATIONS_H

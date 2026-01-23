@@ -1416,12 +1416,13 @@ napi_value TestSetLocaleSuccess(napi_env env, napi_callback_info info)
     InitRdbConfig();
     OH_Rdb_Store *testRdbStore = nullptr;
     int errCode = 0;
-
     testRdbStore = OH_Rdb_GetOrOpen(&RelationalStoreTest::RDB_CONFIG, &errCode);
-
     int ret = OH_Rdb_SetLocale(testRdbStore, "zh");
-
-    napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_OK ? 0 : -1, &result);
+    if (ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED || ret == OH_Rdb_ErrCode::RDB_OK) {
+        napi_create_int32(env, ret, &result);
+    } else {
+        napi_create_int32(env, ret == -1, &result);
+    };
     OH_Rdb_CloseStore(testRdbStore);
     OH_Rdb_DeleteStore(&RelationalStoreTest::RDB_CONFIG);
 

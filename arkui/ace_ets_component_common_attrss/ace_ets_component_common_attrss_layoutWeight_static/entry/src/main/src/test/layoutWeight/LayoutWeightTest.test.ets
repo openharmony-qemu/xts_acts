@@ -74,8 +74,6 @@ export default function layoutWeightTest() {
     //'GridRow',
     'Grid',
     'List',
-    'Navigator',
-    'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',

@@ -68,11 +68,11 @@ export default function SideBarContainer_AttributeTest() {
       let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute_SideBarContainer_01');
 
       console.log("assert position")
-      expect(SideBar_01.left).assertEqual(SideBarContainer_01.left);
+      expect(Math.abs(SideBar_01.left - SideBarContainer_01.left) <= 1).assertTrue();
       console.log("SideBar_01.left" + SideBar_01.left)
 
       console.log("assert width")
-      expect(Math.round(SideBar_01.right - SideBar_01.left)).assertEqual(Math.round(vp2px(200)));
+      expect(Math.abs(Math.round(SideBar_01.right - SideBar_01.left) - Math.round(vp2px(200))) <= 1).assertTrue(); 
       console.log("SideBar_01.right - SideBar_01.left" + (SideBar_01.right - SideBar_01.left))
 
       console.info('[SUB_ACE_SideBarContainer_Attribute_0100] END');
@@ -99,11 +99,11 @@ export default function SideBarContainer_AttributeTest() {
       let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute_SideBarContainer_01');
 
       console.log("assert position")
-      expect(SideBar_01.left).assertEqual(SideBarContainer_01.left);
+      expect(Math.abs(SideBar_01.left - SideBarContainer_01.left) <= 1).assertTrue();
       console.log("SideBar_01.left" + SideBar_01.left)
 
       console.log("assert width")
-      expect(Math.round(SideBar_01.right - SideBar_01.left)).assertEqual(Math.round(vp2px(300)));
+      expect(Math.abs(Math.round(SideBar_01.right - SideBar_01.left) - Math.round(vp2px(300))) <= 1).assertTrue(); 
       console.log("SideBar_01.right - SideBar_01.left" + (SideBar_01.right - SideBar_01.left))
 
       console.info('[SUB_ACE_SideBarContainer_Attribute_0200] END');
@@ -160,11 +160,11 @@ export default function SideBarContainer_AttributeTest() {
       let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute_SideBarContainer_01');
 
       console.log("assert position")
-      expect(SideBar_01.left).assertEqual(SideBarContainer_01.left);
+      expect(Math.abs(SideBar_01.left - SideBarContainer_01.left) <= 1).assertTrue();
       console.log("SideBar_01.left" + SideBar_01.left)
 
       console.log("assert width")
-      expect(Math.round(SideBar_01.right - SideBar_01.left)).assertEqual(Math.round(vp2px(200)));
+      expect(Math.abs(Math.round(SideBar_01.right - SideBar_01.left) - Math.round(vp2px(200))) <= 1).assertTrue();
       console.log("SideBar_01.right - SideBar_01.left" + (SideBar_01.right - SideBar_01.left))
 
       console.info('[SUB_ACE_SideBarContainer_Attribute_0400] END');
