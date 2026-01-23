@@ -73,13 +73,13 @@ namespace OHOS {
             if (cencInfo == nullptr)
                 return -1;
             errNo = OH_AVCencInfo_SetAlgorithm(cencInfo, DRM_ALG_CENC_UNENCRYPTED);
-            if(errNo != AV_ERR_OK)
+            if (errNo != AV_ERR_OK)
             {
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
             errNo = OH_AVCencInfo_SetAlgorithm(cencInfo, DRM_ALG_CENC_AES_CTR);
-            if(errNo != AV_ERR_OK)
+            if (errNo != AV_ERR_OK)
             {
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
@@ -91,8 +91,7 @@ namespace OHOS {
                 return -1;
             }
             errNo = OH_AVCencInfo_SetAlgorithm(cencInfo, DRM_ALG_CENC_AES_CBC);
-            if (errNo != AV_ERR_OK)
-            {
+            if (errNo != AV_ERR_OK) {
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
@@ -471,14 +470,18 @@ namespace OHOS {
          * @tc.level  LEVEL0
          */
         static int InitCencInfoForSetAVBuffer(OH_AVCencInfo *cencInfo)
-        {
+        {   
+            constexpr uint32_t ENCRYPTED_BLOCK_COUNT = 2;
+            constexpr uint32_t SKIPPED_BLOCK_COUNT = 1;
+            constexpr uint32_t FIRST_ENCRYPTED_OFFSET = 0x08;
+            constexpr uint32_t SUBSAMPLE_COUNT = 2;
             uint8_t keyId[DRM_KEY_ID_SIZE] = {
                 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,
                 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10
             };
             uint8_t iv[DRM_KEY_IV_SIZE] = {
                 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18,
-                0x19, 0x1A, 0x1B, 0x1C, 0x1D,0x1E, 0x1F, 0x20
+                0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F, 0x20
             };
             DrmSubsample subsamples[2] = {{0x10, 0x16}, {0x20, 0x26}};
 
@@ -490,7 +493,12 @@ namespace OHOS {
                 return -1;
             }
             if (OH_AVCencInfo_SetSubsampleInfo(
-                cencInfo, 2, 1, 0x08, 2, subsamples) != AV_ERR_OK) {
+                cencInfo,
+                ENCRYPTED_BLOCK_COUNT,
+                SKIPPED_BLOCK_COUNT,
+                FIRST_ENCRYPTED_OFFSET,
+                SUBSAMPLE_COUNT,
+                subsamples) != AV_ERR_OK) {
                 return -1;
             }
             if (OH_AVCencInfo_SetMode(

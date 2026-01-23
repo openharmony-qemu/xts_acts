@@ -26,8 +26,7 @@ int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int
     napi_value args[index + 1];
 
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    if (status != napi_ok || argc <= index)
-    {
+    if (status != napi_ok || argc <= index) {
         napi_throw_type_error(env, nullptr, "Argument missing");
         return defaultValue;
     }
