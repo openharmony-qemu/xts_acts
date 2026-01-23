@@ -65,10 +65,10 @@ napi_value NapiTry(napi_env env, Func &&func)
     {
         return func();
     }
-    catch (const std::exception &e){
+    catch(const std::exception &e) {
         napi_throw_error(env, nullptr, e.what());
     }
-    catch (...){
+    catch(...) {
         napi_throw_error(env, nullptr, "Unknown native error");
     }
     return nullptr;

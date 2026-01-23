@@ -41,7 +41,7 @@ namespace OHOS
         {
             OH_AVErrCode errNo = AV_ERR_OK;
             OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
-            if (cencInfo == nullptr)
+            if(cencInfo == nullptr)
                 return -1;
             errNo = OH_AVCencInfo_Destroy(cencInfo);
             return (errNo != AV_ERR_OK) ? -1 : 0;
@@ -72,40 +72,40 @@ namespace OHOS
         {
             OH_AVErrCode errNo = AV_ERR_OK;
             OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
-            if (cencInfo == nullptr)
+            if(cencInfo == nullptr)
                 return -1;
             errNo = OH_AVCencInfo_SetAlgorithm(cencInfo, DRM_ALG_CENC_UNENCRYPTED);
-            if (errNo != AV_ERR_OK)
+            if(errNo != AV_ERR_OK)
             {
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
             errNo = OH_AVCencInfo_SetAlgorithm(cencInfo, DRM_ALG_CENC_AES_CTR);
-            if (errNo != AV_ERR_OK)
+            if(errNo != AV_ERR_OK)
             {
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
             errNo = OH_AVCencInfo_SetAlgorithm(cencInfo, DRM_ALG_CENC_AES_WV);
-            if (errNo != AV_ERR_OK)
+            if(errNo != AV_ERR_OK)
             {
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
             errNo = OH_AVCencInfo_SetAlgorithm(cencInfo, DRM_ALG_CENC_AES_CBC);
-            if (errNo != AV_ERR_OK)
+            if(errNo != AV_ERR_OK)
             {
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
             errNo = OH_AVCencInfo_SetAlgorithm(cencInfo, DRM_ALG_CENC_SM4_CBC);
-            if (errNo != AV_ERR_OK)
+            if(errNo != AV_ERR_OK)
             {
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
             errNo = OH_AVCencInfo_SetAlgorithm(cencInfo, DRM_ALG_CENC_SM4_CTR);
-            if (errNo != AV_ERR_OK){
+            if(errNo != AV_ERR_OK){
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
@@ -148,11 +148,11 @@ namespace OHOS
                 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
 
             OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
-            if (cencInfo == nullptr)
+            if(cencInfo == nullptr)
                 return -1;
 
             errNo = OH_AVCencInfo_SetKeyIdAndIv(cencInfo, keyId, keyIdLen, iv, ivLen);
-            if (errNo != AV_ERR_OK)
+            if(errNo != AV_ERR_OK)
                 return -1;
 
             errNo = OH_AVCencInfo_Destroy(cencInfo);
@@ -198,11 +198,11 @@ namespace OHOS
                 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
 
             OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
-            if (cencInfo == nullptr)
+            if(cencInfo == nullptr)
                 return -1;
 
             errNo = OH_AVCencInfo_SetKeyIdAndIv(cencInfo, nullptr, keyIdLen, iv, ivLen);
-            if (errNo == AV_ERR_OK){
+            if(errNo == AV_ERR_OK){
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
@@ -231,11 +231,11 @@ namespace OHOS
                 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
 
             OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
-            if (cencInfo == nullptr)
+            if(cencInfo == nullptr)
                 return -1;
 
             errNo = OH_AVCencInfo_SetKeyIdAndIv(cencInfo, keyId, keyIdLen + 1, iv, ivLen);
-            if (errNo == AV_ERR_OK){
+            if(errNo == AV_ERR_OK){
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
@@ -261,11 +261,11 @@ namespace OHOS
             uint32_t ivLen = DRM_KEY_IV_SIZE;
 
             OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
-            if (cencInfo == nullptr)
+            if(cencInfo == nullptr)
                 return -1;
 
             errNo = OH_AVCencInfo_SetKeyIdAndIv(cencInfo, keyId, keyIdLen, nullptr, ivLen);
-            if (errNo == AV_ERR_OK){
+            if(errNo == AV_ERR_OK){
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
@@ -294,11 +294,11 @@ namespace OHOS
                 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
 
             OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
-            if (cencInfo == nullptr)
+            if(cencInfo == nullptr)
                 return -1;
 
             errNo = OH_AVCencInfo_SetKeyIdAndIv(cencInfo, keyId, keyIdLen, iv, ivLen + 1);
-            if (errNo == AV_ERR_OK){
+            if(errNo == AV_ERR_OK){
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
@@ -324,13 +324,13 @@ namespace OHOS
             DrmSubsample subsamples[1] = {{0x10, 0x16}};
 
             OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
-            if (cencInfo == nullptr)
+            if(cencInfo == nullptr)
                 return -1;
 
             errNo = OH_AVCencInfo_SetSubsampleInfo(cencInfo, encryptedBlockCount, 
                 skippedBlockCount, firstEncryptedOffset,
                                                    subsampleCount, subsamples);
-            if (errNo != AV_ERR_OK)
+            if(errNo != AV_ERR_OK)
                 return -1;
 
             errNo = OH_AVCencInfo_Destroy(cencInfo);
@@ -375,13 +375,13 @@ namespace OHOS
             DrmSubsample subsamples[1] = {{0x10, 0x16}};
 
             OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
-            if (cencInfo == nullptr)
+            if(cencInfo == nullptr)
                 return -1;
 
             errNo = OH_AVCencInfo_SetSubsampleInfo(cencInfo, encryptedBlockCount, 
                 skippedBlockCount, firstEncryptedOffset,
                                                    subsampleCount + 1, subsamples);
-            if (errNo == AV_ERR_OK){
+            if(errNo == AV_ERR_OK){
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
@@ -406,12 +406,12 @@ namespace OHOS
             uint32_t subsampleCount = 1;
 
             OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
-            if (cencInfo == nullptr)
+            if(cencInfo == nullptr)
                 return -1;
 
             errNo = OH_AVCencInfo_SetSubsampleInfo(cencInfo, encryptedBlockCount, skippedBlockCount, firstEncryptedOffset,
                                                    subsampleCount, nullptr);
-            if (errNo == AV_ERR_OK){
+            if(errNo == AV_ERR_OK){
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
@@ -432,20 +432,20 @@ namespace OHOS
             OH_AVErrCode errNo = AV_ERR_OK;
 
             OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
-            if (cencInfo == nullptr)
+            if(cencInfo == nullptr)
                 return -1;
 
             errNo = OH_AVCencInfo_SetMode(cencInfo, DRM_CENC_INFO_KEY_IV_SUBSAMPLES_SET);
-            if (errNo != AV_ERR_OK)
+            if(errNo != AV_ERR_OK)
                 return -1;
 
             errNo = OH_AVCencInfo_SetMode(cencInfo, DRM_CENC_INFO_KEY_IV_SUBSAMPLES_NOT_SET);
-            if (errNo != AV_ERR_OK)
+            if(errNo != AV_ERR_OK)
                 return -1;
 
             errNo = OH_AVCencInfo_SetMode(cencInfo,
                                           static_cast<enum DrmCencInfoMode>(DRM_CENC_INFO_KEY_IV_SUBSAMPLES_NOT_SET + 1));
-            if (errNo != AV_ERR_OK)
+            if(errNo != AV_ERR_OK)
                 return -1;
 
             errNo = OH_AVCencInfo_Destroy(cencInfo);
@@ -486,37 +486,37 @@ namespace OHOS
             DrmSubsample subsamples[2] = {{0x10, 0x16}, {0x20, 0x26}};
             OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
             OH_AVBuffer *buffer = nullptr;
-            if (cencInfo == nullptr){
+            if(cencInfo == nullptr){
                 return -1;
             }
             errNo = OH_AVCencInfo_SetAlgorithm(cencInfo, DRM_ALG_CENC_AES_CTR);
-            if (errNo != AV_ERR_OK){
+            if(errNo != AV_ERR_OK){
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
             errNo = OH_AVCencInfo_SetKeyIdAndIv(cencInfo, keyId, keyIdLen, iv, ivLen);
-            if (errNo != AV_ERR_OK){
+            if(errNo != AV_ERR_OK){
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
             errNo = OH_AVCencInfo_SetSubsampleInfo(cencInfo, encryptedBlockCount, skippedBlockCount, 
                 firstEncryptedOffset, subsampleCount, subsamples);
-            if (errNo != AV_ERR_OK){
+            if(errNo != AV_ERR_OK){
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
             errNo = OH_AVCencInfo_SetMode(cencInfo, DRM_CENC_INFO_KEY_IV_SUBSAMPLES_SET);
-            if (errNo != AV_ERR_OK){
+            if(errNo != AV_ERR_OK){
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
             buffer = OH_AVBuffer_Create(DRM_KEY_ID_SIZE);
-            if (buffer == nullptr){
+            if(buffer == nullptr){
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
             errNo = OH_AVCencInfo_SetAVBuffer(cencInfo, buffer);
-            if (errNo != AV_ERR_OK){
+            if(errNo != AV_ERR_OK){
                 OH_AVBuffer_Destroy(buffer);
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
@@ -542,7 +542,7 @@ namespace OHOS
             OH_AVBuffer *buffer = nullptr;
             OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
             buffer = OH_AVBuffer_Create(DRM_KEY_ID_SIZE);
-            if (cencInfo == nullptr || buffer == nullptr)
+            if(cencInfo == nullptr || buffer == nullptr)
             {
                 OH_AVBuffer_Destroy(buffer);
                 return -1;
@@ -568,17 +568,17 @@ namespace OHOS
         {
             OH_AVErrCode errNo = AV_ERR_OK;
             OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
-            if (cencInfo == nullptr)
+            if(cencInfo == nullptr)
                 return -1;
 
             errNo = OH_AVCencInfo_SetAlgorithm(cencInfo, DRM_ALG_CENC_AES_CTR);
-            if (errNo != AV_ERR_OK)
+            if(errNo != AV_ERR_OK)
             {
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
             errNo = OH_AVCencInfo_SetAlgorithm(cencInfo, DRM_ALG_CENC_SM4_CTR);
-            if (errNo != AV_ERR_OK)
+            if(errNo != AV_ERR_OK)
             {
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
