@@ -673,8 +673,13 @@ export default function datepicker() {
       console.info("[ArkUI_Stage_datePicker_textStyle_0600] textStyle color:" + obj.$attrs.textStyle.color);
       console.info("[ArkUI_Stage_datePicker_textStyle_0600] textStyle font.size:" + obj.$attrs.textStyle.font.size);
       console.info("[ArkUI_Stage_datePicker_textStyle_0600] textStyle font.weight:" + obj.$attrs.textStyle.font.weight);
-      expect(obj.$attrs.textStyle.color).assertContain('#');
-      expect(obj.$attrs.textStyle.font.size).assertContain('fp');
+
+      //打印分层参数返回值
+      console.info(" textStyle color sys:" + spliceColor($r('sys.color.textpicker_text_color')));
+      console.info(" textStyle font.size sys:" + LayerParametersNumber($r('sys.float.textpicker_text_size')));
+
+      expect(obj.$attrs.textStyle.color).assertEqual(spliceColor($r('sys.color.textpicker_text_color')));
+      expect(obj.$attrs.textStyle.font.size).assertEqual(LayerParametersNumber($r('sys.float.textpicker_text_size')));
       expect(obj.$attrs.textStyle.font.weight).assertEqual('FontWeight.Normal');
       done();
     });
@@ -718,8 +723,13 @@ export default function datepicker() {
       console.info("[ArkUI_Stage_datePicker_textStyle_0700] textStyle color:" + obj.$attrs.textStyle.color);
       console.info("[ArkUI_Stage_datePicker_textStyle_0700] textStyle font.size:" + obj.$attrs.textStyle.font.size);
       console.info("[ArkUI_Stage_datePicker_textStyle_0700] textStyle font.weight:" + obj.$attrs.textStyle.font.weight);
-      expect(obj.$attrs.textStyle.color).assertContain('#');
-      expect(obj.$attrs.textStyle.font.size).assertContain('fp');
+
+      //打印分层参数返回值
+      console.info(" textStyle color sys:" + spliceColor($r('sys.color.textpicker_text_color')));
+      console.info(" textStyle font.size sys:" + LayerParametersNumber($r('sys.float.textpicker_text_size')));
+
+      expect(obj.$attrs.textStyle.color).assertEqual(spliceColor($r('sys.color.textpicker_text_color')));
+      expect(obj.$attrs.textStyle.font.size).assertEqual(LayerParametersNumber($r('sys.float.textpicker_text_size')));
       expect(obj.$attrs.textStyle.font.weight).assertEqual('FontWeight.Lighter');
       done();
     });
