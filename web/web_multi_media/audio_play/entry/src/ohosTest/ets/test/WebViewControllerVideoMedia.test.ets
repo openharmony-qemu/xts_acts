@@ -30,6 +30,25 @@ export default function webViewControllerVideoMedia() {
 
   describe('webViewControllerVideoMedia', () => {
     beforeAll(async (done: Function) => {
+      let options: router.RouterOptions = {
+        url: 'testability/pages/WebViewControllerVideoMedia',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get WebViewControllerVideoMedia state success " + JSON.stringify(pages));
+        if (!("WebViewControllerVideoMedia" == pages.name)) {
+          console.info("get WebViewControllerVideoMedia state success " + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options);
+          console.info("push WebViewControllerVideoMedia page success " + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error("push WebViewControllerVideoMedia page error: " + err);
+      }
+      await waitForComponents('WebViewControllerVideoMedia');
+      done()
+    });
+    beforeEach(async (done: Function) => {
       if(!wifiMg.isWifiActive()){
         console.info("======> wifi_test/enable wifi:" + wifiMg.enableWifi());
         await Utils.sleep(5000);
@@ -62,25 +81,6 @@ export default function webViewControllerVideoMedia() {
         throw (err as Error);
         done();
       }
-      let options: router.RouterOptions = {
-        url: 'testability/pages/WebViewControllerVideoMedia',
-      }
-      try {
-        router.clear();
-        let pages = router.getState();
-        console.info("get WebViewControllerVideoMedia state success " + JSON.stringify(pages));
-        if (!("WebViewControllerVideoMedia" == pages.name)) {
-          console.info("get WebViewControllerVideoMedia state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          console.info("push WebViewControllerVideoMedia page success " + JSON.stringify(result));
-        }
-      } catch (err) {
-        console.error("push WebViewControllerVideoMedia page error: " + err);
-      }
-      await waitForComponents('WebViewControllerVideoMedia');
-      done()
-    });
-    beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
       }).catch((err: object) => {
