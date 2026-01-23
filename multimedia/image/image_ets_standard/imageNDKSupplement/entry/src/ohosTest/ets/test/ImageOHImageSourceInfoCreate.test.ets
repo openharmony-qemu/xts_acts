@@ -20,8 +20,8 @@ import { common } from "@kit.AbilityKit";
 import { JSON } from '@kit.ArkTS';
 import { driveFn, getPermission, sleep } from "./common";
 
-const EFFECT_SUCCESS = 0;
-const EFFECT_ERROR_PARAM_INVALID = 401;
+const IMAGE_SUCCESS = 0;
+const IMAGE_BAD_PARAMETER = 401;
 const CASE_INDEX_1 = 1;
 const CASE_INDEX_2 = 2;
 const CASE_INDEX_3 = 3;
@@ -56,7 +56,7 @@ export default function ImageOHImageSourceInfoCreate() {
       console.info(TAG, testName, 'Start',);
       let result: number = testNapi.OHImageSourceInfoCreateTest(CASE_INDEX_1);
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_SUCCESS);
+      expect(result).assertEqual(IMAGE_SUCCESS);
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_FORMAT_SUPP_001
@@ -72,7 +72,7 @@ export default function ImageOHImageSourceInfoCreate() {
       let result: number = testNapi.OHImageNativeGetFormatTest(CASE_INDEX_1, (receiver: image.ImageReceiver) => {
       })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_SUCCESS);
+      expect(result).assertEqual(IMAGE_SUCCESS);
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_FORMAT_SUPP_002
@@ -88,7 +88,7 @@ export default function ImageOHImageSourceInfoCreate() {
       let result: number = testNapi.OHImageNativeGetFormatTest(CASE_INDEX_2, (receiver: image.ImageReceiver) => {
       })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
+      expect(result).assertEqual(IMAGE_BAD_PARAMETER);
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_SUPP_001
@@ -104,7 +104,7 @@ export default function ImageOHImageSourceInfoCreate() {
       let result: number = testNapi.OHImageNativeGetBufferDataTest(CASE_INDEX_1, (receiver: image.ImageReceiver) => {
       })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_SUCCESS);
+      expect(result).assertEqual(IMAGE_SUCCESS);
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_SUPP_002
@@ -120,7 +120,7 @@ export default function ImageOHImageSourceInfoCreate() {
       let result: number = testNapi.OHImageNativeGetBufferDataTest(CASE_INDEX_2, (receiver: image.ImageReceiver) => {
       })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
+      expect(result).assertEqual(IMAGE_BAD_PARAMETER);
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_COLOR_SPACE_SUPP_002
@@ -136,12 +136,12 @@ export default function ImageOHImageSourceInfoCreate() {
       let result: number = testNapi.OHImageNativeGetColorSpaceTest(CASE_INDEX_2, (receiver: image.ImageReceiver) => {
       })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
+      expect(result).assertEqual(IMAGE_BAD_PARAMETER);
     });
     /**
      * @tc.number  SUB_OH_PIXELMAP_NATIVE_READ_PIXELS_SUPP_001
      * @tc.name    SUB_OH_PIXELMAP_NATIVE_READ_PIXELS_SUPP_001
-     * @tc.desc    SUB_OH_PIXELMAP_NATIVE_READ_PIXELS-EFFECT_SUCCESS
+     * @tc.desc    SUB_OH_PIXELMAP_NATIVE_READ_PIXELS-IMAGE_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -151,12 +151,12 @@ export default function ImageOHImageSourceInfoCreate() {
       console.info(TAG, testName, 'Start',);
       let result: number = testNapi.OHPixelmapNativeReadPixelsTest(CASE_INDEX_1);
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_SUCCESS);
+      expect(result).assertEqual(IMAGE_SUCCESS);
     });
     /**
      * @tc.number  SUB_OH_PIXELMAP_NATIVE_WRITE_PIXELS_SUPP_001
      * @tc.name    SUB_OH_PIXELMAP_NATIVE_WRITE_PIXELS_SUPP_001
-     * @tc.desc    SUB_OH_PIXELMAP_NATIVE_WRITE_PIXELS-EFFECT_SUCCESS
+     * @tc.desc    SUB_OH_PIXELMAP_NATIVE_WRITE_PIXELS-IMAGE_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -166,12 +166,12 @@ export default function ImageOHImageSourceInfoCreate() {
       console.info(TAG, testName, 'Start',);
       let result: number = testNapi.OHPixelmapNativeWritePixelsTest(CASE_INDEX_1);
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_SUCCESS);
+      expect(result).assertEqual(IMAGE_SUCCESS);
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_001
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_001
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-EFFECT_SUCCESS
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-IMAGE_SUCCESS
      * @tc.size    MediumTest0
      * @tc.type    Function
      * @tc.level   Level 0
@@ -183,12 +183,12 @@ export default function ImageOHImageSourceInfoCreate() {
         testNapi.OHImageNativeGetBufferDataValueTest(CASE_INDEX_1, (receiver: image.ImageReceiver) => {
         })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_SUCCESS);
+      expect(result).assertEqual(IMAGE_SUCCESS);
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_002
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_002
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-BUFFER_SIZE-EFFECT_SUCCESS
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-BUFFER_SIZE-IMAGE_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -200,12 +200,12 @@ export default function ImageOHImageSourceInfoCreate() {
         testNapi.OHImageNativeGetBufferDataValueTest(CASE_INDEX_2, (receiver: image.ImageReceiver) => {
         })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_SUCCESS);
+      expect(result).assertEqual(IMAGE_SUCCESS);
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_003
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_003
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-PIXEL_STRIDE-EFFECT_SUCCESS
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-PIXEL_STRIDE-IMAGE_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -217,12 +217,12 @@ export default function ImageOHImageSourceInfoCreate() {
         testNapi.OHImageNativeGetBufferDataValueTest(CASE_INDEX_3, (receiver: image.ImageReceiver) => {
         })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_SUCCESS);
+      expect(result).assertEqual(IMAGE_SUCCESS);
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_004
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_004
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-NUM_STRIDE-EFFECT_SUCCESS
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-NUM_STRIDE-IMAGE_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -234,12 +234,12 @@ export default function ImageOHImageSourceInfoCreate() {
         testNapi.OHImageNativeGetBufferDataValueTest(CASE_INDEX_4, (receiver: image.ImageReceiver) => {
         })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_SUCCESS);
+      expect(result).assertEqual(IMAGE_SUCCESS);
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_005
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_005
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-ROW_STRIDE-EFFECT_SUCCESS
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-ROW_STRIDE-IMAGE_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -251,12 +251,12 @@ export default function ImageOHImageSourceInfoCreate() {
         testNapi.OHImageNativeGetBufferDataValueTest(CASE_INDEX_5, (receiver: image.ImageReceiver) => {
         })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_SUCCESS);
+      expect(result).assertEqual(IMAGE_SUCCESS);
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_006
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_006
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-NATIVE_BUFFER-EFFECT_SUCCESS
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-NATIVE_BUFFER-IMAGE_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -268,7 +268,7 @@ export default function ImageOHImageSourceInfoCreate() {
         testNapi.OHImageNativeGetBufferDataValueTest(CASE_INDEX_6, (receiver: image.ImageReceiver) => {
         })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_SUCCESS);
+      expect(result).assertEqual(IMAGE_SUCCESS);
     });
   })
 }
