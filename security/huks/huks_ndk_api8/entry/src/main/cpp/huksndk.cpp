@@ -17,7 +17,6 @@
 #include <huks/native_huks_param.h>
 
 #include <cstring>
-#include <string>
 
 #include "napi/native_api.h"
 #include "utils.cpp"
@@ -98,13 +97,11 @@ static napi_value OHHuksGetSdkVersionErr(napi_env env, napi_callback_info info)
 
 struct OH_Huks_Param tmpParams[] = {
     {.tag = OH_HUKS_TAG_KEY_STORAGE_FLAG, .uint32Param = OH_HUKS_STORAGE_PERSISTENT},
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_RSA},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_RSA_KEY_SIZE_2048},
+    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_ECC},
+    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_ECC_KEY_SIZE_256},
     {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_VERIFY},
     {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256},
-    {.tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_PSS},
     {.tag = OH_HUKS_TAG_KEY_GENERATE_TYPE, .uint32Param = OH_HUKS_KEY_GENERATE_TYPE_DEFAULT},
-    {.tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_ECB},
     {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE},
 };
 
@@ -159,12 +156,10 @@ static napi_value OHHuksGenerateKeyItemErr(napi_env env, napi_callback_info info
 }
 
 static struct OH_Huks_Param g_genParams041[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_RSA},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT | OH_HUKS_KEY_PURPOSE_DECRYPT},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_RSA_KEY_SIZE_4096},
-    {.tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_OAEP},
+    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_ECC},
+    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN | OH_HUKS_KEY_PURPOSE_VERIFY},
+    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_ECC_KEY_SIZE_256},
     {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA384},
-    {.tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_ECB},
     {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
 
 static void doOHHuksExportPublicKeyItem(napi_env env, void *data)
@@ -172,9 +167,9 @@ static void doOHHuksExportPublicKeyItem(napi_env env, void *data)
     AddonData *addonData = static_cast<AddonData *>(data);
 
     int returnValue = FAIL;
-    uint8_t tmpPublicKey[OH_HUKS_RSA_KEY_SIZE_1024] = {PARAM_0};
-    struct OH_Huks_Blob publicKey = {OH_HUKS_RSA_KEY_SIZE_1024, static_cast<unsigned char *>(tmpPublicKey)};
-    char tmpKeyAlias[] = "HksRSACipherKeyAliasTest041";
+    uint8_t tmpPublicKey[OH_HUKS_ECC_KEY_SIZE_256] = {PARAM_0};
+    struct OH_Huks_Blob publicKey = {OH_HUKS_ECC_KEY_SIZE_256, static_cast<unsigned char *>(tmpPublicKey)};
+    char tmpKeyAlias[] = "HksEccSignVerifyKeyAliasTest041";
     struct OH_Huks_Blob keyAlias = {sizeof(tmpKeyAlias), reinterpret_cast<uint8_t *>(static_cast<char *>(tmpKeyAlias))};
     struct OH_Huks_ParamSet *genParamSet = nullptr;
     InitParamSet(&genParamSet, g_genParams041, sizeof(g_genParams041) / sizeof(OH_Huks_Param));
@@ -224,28 +219,26 @@ static napi_value OHHuksExportPublicKeyItemErr(napi_env env, napi_callback_info 
 }
 
 static struct OH_Huks_Param g_encryptParams041[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_RSA},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_RSA_KEY_SIZE_4096},
-    {.tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_OAEP},
-    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA384},
-    {.tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_ECB},
+    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_ECC},
+    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_VERIFY},
+    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_ECC_KEY_SIZE_256},
+    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256},
     {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
 
 static void doOHHuksImportKeyItem(napi_env env, void *data)
 {
     AddonData *addonData = static_cast<AddonData *>(data);
     int returnValue = FAIL;
-    uint8_t tmpPublicKey[OH_HUKS_RSA_KEY_SIZE_1024] = {PARAM_0};
-    struct OH_Huks_Blob publicKey = {OH_HUKS_RSA_KEY_SIZE_1024, static_cast<uint8_t *>(tmpPublicKey)};
-    char tmpKeyAlias[] = "HksRSACipherKeyAliasTest041";
+    uint8_t tmpPublicKey[OH_HUKS_ECC_KEY_SIZE_256] = {PARAM_0};
+    struct OH_Huks_Blob publicKey = {OH_HUKS_ECC_KEY_SIZE_256, static_cast<uint8_t *>(tmpPublicKey)};
+    char tmpKeyAlias[] = "HksEccSignVerifyKeyAliasTest041";
     struct OH_Huks_Blob keyAlias = {sizeof(tmpKeyAlias), reinterpret_cast<uint8_t *>(static_cast<char *>(tmpKeyAlias))};
     struct OH_Huks_ParamSet *genParamSet = nullptr;
     InitParamSet(&genParamSet, g_genParams041, sizeof(g_genParams041) / sizeof(OH_Huks_Param));
     OH_Huks_GenerateKeyItem(&keyAlias, genParamSet, nullptr);
 
     OH_Huks_ExportPublicKeyItem(&keyAlias, genParamSet, &publicKey);
-    char tmpKey[] = "RSA_Encrypt_Decrypt_KeyAlias";
+    char tmpKey[] = "HksEccVerifyPubKeyAliasTest041";
     struct OH_Huks_Blob newKeyAlias = {.size = sizeof(tmpKey),
                                        .data = reinterpret_cast<uint8_t *>(static_cast<char *>(tmpKey))};
     struct OH_Huks_ParamSet *encryptParamSet = nullptr;
@@ -957,8 +950,8 @@ static napi_value OHHuksAbortSessionErr(napi_env env, napi_callback_info info)
     return result;
 }
 
-static uint8_t g_saltgen[16] = {0x14, 0x10, 0x11, 0x3a, 0x27, 0x9e, 0xc8, 0x5f,
-                                0xe0, 0xf3, 0x36, 0x17, 0x57, 0x42, 0x8e, 0xff};
+static uint8_t g_salt[16] = {0x14, 0x10, 0x11, 0x3a, 0x27, 0x9e, 0xc8, 0x5f,
+                             0xe0, 0xf3, 0x36, 0x17, 0x57, 0x42, 0x8e, 0xff};
 static const uint32_t DERIVE_ITERATION = 1000;
 static const uint32_t COMMON_SIZE = 2048;
 
@@ -968,7 +961,7 @@ static struct OH_Huks_Param g_genParams001[] = {
     {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256},
     {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256},
     {.tag = OH_HUKS_TAG_ITERATION, .uint32Param = 1000},
-    {.tag = OH_HUKS_TAG_SALT, .blob = {sizeof(g_saltgen), (uint8_t *)g_saltgen}},
+    {.tag = OH_HUKS_TAG_SALT, .blob = {sizeof(g_salt), (uint8_t *)g_salt}},
     {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
 
 static struct OH_Huks_Param g_pbkdf2Params001[] = {
@@ -977,7 +970,7 @@ static struct OH_Huks_Param g_pbkdf2Params001[] = {
     {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256},
     {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = 256},
     {.tag = OH_HUKS_TAG_ITERATION, .int32Param = DERIVE_ITERATION},
-    {.tag = OH_HUKS_TAG_SALT, .blob = {sizeof(g_saltgen), (uint8_t *)g_saltgen}},
+    {.tag = OH_HUKS_TAG_SALT, .blob = {sizeof(g_salt), (uint8_t *)g_salt}},
     {.tag = OH_HUKS_TAG_DERIVE_KEY_SIZE, .uint32Param = DERIVE_KEY_SIZE_32},
     {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
 
@@ -1176,8 +1169,8 @@ static napi_value OHHuksImportWrappedKeyItemErr(napi_env env, napi_callback_info
     return result;
 }
 static struct OH_Huks_Param g_genAnonAttestParams[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_RSA},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_RSA_KEY_SIZE_2048},
+    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_ECC},
+    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_ECC_KEY_SIZE_256},
     {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_VERIFY},
     {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256},
     {.tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_PSS},
@@ -1279,20 +1272,21 @@ static napi_value OHHuksFreeKeyAliasSet(napi_env env, napi_callback_info info)
 
 static napi_value OHHuksWrapKey(napi_env env, napi_callback_info info)
 {
+    const uint32_t wrapKeyDataSize = 2048;
     char alias[64] = {0};
     strcpy(alias, ALIAS);
     static const struct OH_Huks_Blob gkeyAlias = {sizeof(ALIAS),
                                                   reinterpret_cast<uint8_t *>(static_cast<char *>(alias))};
     static struct OH_Huks_Param g_wrapKeyParams[] = {
         {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_AES},
-        {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256},
+        {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_128},
         {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT},
         {.tag = OH_HUKS_TAG_KEY_WRAP_TYPE, .uint32Param = OH_HUKS_KEY_WRAP_TYPE_HUK_BASED},
     };
     struct OH_Huks_ParamSet *wrapKeyParamSet = nullptr;
     GenerateParamSet(&wrapKeyParamSet, g_wrapKeyParams, sizeof(g_wrapKeyParams) / sizeof(OH_Huks_Param));
-    uint8_t tmpPublicKey[OH_HUKS_RSA_KEY_SIZE_1024] = {PARAM_0};
-    struct OH_Huks_Blob outData = {OH_HUKS_RSA_KEY_SIZE_1024, static_cast<unsigned char *>(tmpPublicKey)};
+    uint8_t tmpPublicKey[wrapKeyDataSize] = {PARAM_0};
+    struct OH_Huks_Blob outData = {wrapKeyDataSize, static_cast<unsigned char *>(tmpPublicKey)};
     struct OH_Huks_Result resultSt = OH_Huks_WrapKey(&gkeyAlias, wrapKeyParamSet, &outData);
     int returnValue = SUCCESS;
     if (resultSt.errorCode != (int32_t)OH_HUKS_ERR_CODE_INSUFFICIENT_MEMORY &&
@@ -1306,6 +1300,7 @@ static napi_value OHHuksWrapKey(napi_env env, napi_callback_info info)
 
 static napi_value OHHuksUnwrapKey(napi_env env, napi_callback_info info)
 {
+    const uint32_t wrapKeyDataSize = 2048;
     char alias[64] = {0};
     strcpy(alias, ALIAS);
     static const struct OH_Huks_Blob gkeyAlias = {sizeof(ALIAS),
@@ -1319,8 +1314,8 @@ static napi_value OHHuksUnwrapKey(napi_env env, napi_callback_info info)
     struct OH_Huks_ParamSet *paramSet = nullptr;
     struct OH_Huks_ParamSet *wrapKeyParamSet = nullptr;
     GenerateParamSet(&wrapKeyParamSet, g_wrapKeyParams, sizeof(g_wrapKeyParams) / sizeof(OH_Huks_Param));
-    uint8_t tmpPublicKey[OH_HUKS_RSA_KEY_SIZE_1024] = {PARAM_0};
-    struct OH_Huks_Blob outData = {OH_HUKS_RSA_KEY_SIZE_1024, static_cast<unsigned char *>(tmpPublicKey)};
+    uint8_t tmpPublicKey[wrapKeyDataSize] = {PARAM_0};
+    struct OH_Huks_Blob outData = {wrapKeyDataSize, static_cast<unsigned char *>(tmpPublicKey)};
     struct OH_Huks_Result resultSt = OH_Huks_UnwrapKey(&gkeyAlias, wrapKeyParamSet, &outData);
     int returnValue = SUCCESS;
     if (resultSt.errorCode != (int32_t)OH_HUKS_ERR_CODE_INSUFFICIENT_MEMORY &&
