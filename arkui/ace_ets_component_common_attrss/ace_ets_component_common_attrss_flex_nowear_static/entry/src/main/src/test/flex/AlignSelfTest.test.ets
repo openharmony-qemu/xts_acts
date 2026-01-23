@@ -42,11 +42,6 @@ class SetValue {
 
 export default function alignSelfTest() {
 
-  console.info("alignSelfTest beforeAll start");
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.nowear.test.static", "EntryAbility")
-  
-
-  let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
 
   let supportView: Array<string> = new Array<string>(
     'SideBarContainer',
@@ -154,13 +149,14 @@ export default function alignSelfTest() {
   ]
 
   describe('AlignSelfTest', () => {
-    beforeAll(() => {
-
+    beforeAll(async (): Promise<void> => {
+      console.info("alignSelfTest beforeAll start");
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.nowear.test.static", "EntryAbility")
     });
 
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues,
       async (data: BasePageConfig): Promise<void> => {
-
+        const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
         console.info('alignSelfPage', data.testValue.setValue)
         AppStorage.setOrCreate<ItemAlign>('_alignSelf', data.testValue.setValue.alignSelf)
         AppStorage.setOrCreate<ItemAlign>('_alignItemsForFlex', data.testValue.setValue.defaultAlignItems.Flex)

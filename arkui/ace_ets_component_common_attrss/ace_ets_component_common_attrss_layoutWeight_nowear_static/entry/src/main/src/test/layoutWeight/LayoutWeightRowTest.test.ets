@@ -32,14 +32,6 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function layoutWeightRowTest() {
-  console.info("layoutWeightRowTest beforeAll start 11111111111");
-  await UtilsTest.msSleep(4000)
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.layoutWeight.nowear.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
-
-  console.info("layoutWeightRowTest beforeAll start 222222222222222");
-  let uiContext = AppStorage.get<UIContext>('uiContext')!
-  console.info("layoutWeightRowTest beforeAll start 33333333333333");
 
   let supportView: Array<string> = new Array<string>(
     'Select',
@@ -72,17 +64,17 @@ export default function layoutWeightRowTest() {
     expectValue: {
       layoutWeight: 1,
       //width: UIContext.getFocusedUIContext()!.vp2px(200)
-      width: uiContext.vp2px(200)
+      width: 200
     }
   }]
 
   describe('LayoutWeightRowTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("layoutWeightRowTest beforeAll start");
-
-
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.layoutWeight.nowear.test.static", "EntryAbility")
     });
     CommonTest.initTest(pageConfig, supportView, testValues,async (data: BasePageConfig): Promise<void>=> {
+      data.testValue.expectValue.width = UIContext.resolveUIContext()!.vp2px(200)
       let rect = Utils.getComponentRect(data.pageConfig.componentKey??'');
       //Component width and height calculation
       let width = rect.right - rect.left;

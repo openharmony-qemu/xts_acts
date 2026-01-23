@@ -33,14 +33,6 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function layoutWeightFlexTest() {
-  console.info("layoutWeightFlexTest beforeAll start1111");
-  await UtilsTest.msSleep(4000)
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.layoutWeight.nowear.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
-
-  console.info("layoutWeightFlexTest beforeAll start 111111111111");
-  let uiContext = AppStorage.get<UIContext>('uiContext')!
-  console.info("layoutWeightFlexTest beforeAll start 222222222222");
   let supportView: Array<string> = new Array<string>(
     'Select',
     'Stepper',
@@ -71,15 +63,16 @@ export default function layoutWeightFlexTest() {
     },
     expectValue: {
       layoutWeight: 1,
-      width: uiContext.vp2px(200)
+      width: 200
     }
   }]
   describe('LayoutWeightFlexTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("layoutWeightFlexTest beforeAll start");
-
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.layoutWeight.nowear.test.static", "EntryAbility")
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+      data.testValue.expectValue.width = UIContext.resolveUIContext()!.vp2px(200)
       let rect = Utils.getComponentRect(data.pageConfig.componentKey??'');
       // //Component width and height calculation
       let width = rect.right - rect.left;

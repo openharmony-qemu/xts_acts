@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function enumsCancelJsunit() {
   describe('enumsCancelTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("enumsCancelJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
