@@ -15,7 +15,7 @@ export default function abilityTest() {
          * @tc.level: LEVEL1
          * @tc.size: MEDIUMTEST
          * @tc.type: FUNCTION
-        */
+         */
         it("SUB_Ability_Ability_Static_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000)
             hilog.info(domain, tag, '%{public}s', 'abilityTest001 start');
