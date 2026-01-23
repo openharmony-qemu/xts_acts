@@ -27,7 +27,7 @@ int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int
     napi_value args[index + 1];
 
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    if (status != napi_ok || argc <= index)
+    if(status != napi_ok || argc <= index)
     {
         napi_throw_type_error(env, nullptr, "Argument missing");
         return defaultValue;
@@ -35,7 +35,7 @@ int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int
 
     napi_valuetype valuetype;
     napi_typeof(env, args[index], &valuetype);
-    if (valuetype != napi_number)
+    if(valuetype != napi_number)
     {
         napi_throw_type_error(env, nullptr, "Argument must be a number");
         return defaultValue;
@@ -43,7 +43,7 @@ int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int
 
     int32_t result = defaultValue;
     status = napi_get_value_int32(env, args[index], &result);
-    if (status != napi_ok)
+    if(status != napi_ok)
     {
         napi_throw_type_error(env, nullptr, "Value is not int32");
         return defaultValue;
@@ -121,7 +121,7 @@ static const CencTestFunc CENCINFO_SETAVBUFFER_FUNCS[] = {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG); int result = RESULT_ERROR;
             CencInfoCapiTestCase testObj; \
         constexpr size_t FUNC_COUNT = sizeof(funcTable) / sizeof(funcTable[0]); \
-        if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) { result = (testObj.*funcTable[caseNum])(); } \
+        if(caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) { result = (testObj.*funcTable[caseNum])(); } \
         napi_value resultValue; napi_create_int32(env, result, &resultValue); \
         return resultValue; });          \
     }
