@@ -165,7 +165,6 @@ export default function richEditorUndefined() {
       let text = await driver.findComponent(ON.id('RichEditor_text_OnCut'));
 
       let strJson = inspector.getInspectorByKey('RichEditor_text_OnCut');
-      console.info('[richEditorUndefined_static_3003] is 1: ' + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
       expect(await (text?.getText() as Promise<string>)).assertEqual('cut:0');
 
       let changeBtn = await driver.findComponent(ON.id('RichEditor_btn_OnCut'));
@@ -175,7 +174,6 @@ export default function richEditorUndefined() {
       await CommonFunc.sleep(3000);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X);
       await CommonFunc.sleep(1000);
-      console.info('[richEditorUndefined_static_3003] is 2: ' + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
       expect(await (text?.getText() as Promise<string>)).assertEqual('cut:1');
 
       await (changeBtn?.click() as Promise<void>);
@@ -184,7 +182,6 @@ export default function richEditorUndefined() {
       await CommonFunc.sleep(3000);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X);
       await CommonFunc.sleep(1000);
-      console.info('[richEditorUndefined_static_3003] is 3: ' + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
       expect(await (text?.getText() as Promise<string>)).assertEqual('cut:1');
       console.info('[richEditorUndefined_static_3003] END');
       done();
@@ -227,7 +224,6 @@ export default function richEditorUndefined() {
         text = await driver.findComponent(ON.id('Text_CustomKeyboard'));
         expect(await (text?.getText() as Promise<string>)).assertEqual('hello');
       }
-
       console.info('[richEditorUndefined_static_3004] END');
       done();
     });

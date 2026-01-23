@@ -96,8 +96,8 @@ struct Index {
           })
       }
       Row() {
-        Button("setCaretOffset")
-          .id("RichEditor_setCaretOffset")
+        Button('setCaretOffset')
+          .id('RichEditor_setCaretOffset')
           .onClick((e: ClickEvent) => {
             this.controller.setCaretOffset(3);
           })

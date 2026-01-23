@@ -17,7 +17,7 @@ import {
   RichEditorTextSpanResult,
   CutEvent
 } from '@ohos.arkui.component'
-import { State } from "@ohos.arkui.stateManagement"
+import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -39,12 +39,12 @@ struct richEditorExample {
           .height(100)
           .borderWidth(1)
           .borderColor(Color.Red)
-          .width("90%")
+          .width('90%')
           .enterKeyType(EnterKeyType.Search)
           .onReady(this.isOnReady ? undefined : () => {
             this.count++;
           })
-      }.height("100%")
+      }.height('100%')
     }
   }
 }

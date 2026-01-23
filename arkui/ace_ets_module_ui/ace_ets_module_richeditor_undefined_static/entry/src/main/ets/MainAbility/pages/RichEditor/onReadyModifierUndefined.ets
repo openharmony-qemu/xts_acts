@@ -2,7 +2,7 @@
 
 import { Entry,Text,Column,Row,Component,Button,ClickEvent,Scroll,RichEditor,RichEditorController,CutEvent,FlexAlign,
   RichEditorOptions,Color,EnterKeyType,AttributeModifier,RichEditorAttribute,TextRange,RichEditorTextSpanResult} from '@ohos.arkui.component'
-import { State,Observed } from "@ohos.arkui.stateManagement"
+import { State,Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
 class MyOnReadyModifier implements AttributeModifier<RichEditorAttribute> {
@@ -33,10 +33,10 @@ struct SoftKeyboardEnterTypeExample {
         .height(200)
         .borderWidth(1)
         .borderColor(Color.Red)
-        .width("100%")
+        .width('100%')
         .enterKeyType(EnterKeyType.Search)
         .attributeModifier(this.myModifier)
 
-    }.height("100%").justifyContent(FlexAlign.Center)
+    }.height('100%').justifyContent(FlexAlign.Center)
   }
 }

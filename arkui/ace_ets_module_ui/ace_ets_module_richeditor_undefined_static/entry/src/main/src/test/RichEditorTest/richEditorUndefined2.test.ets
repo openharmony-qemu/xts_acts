@@ -111,20 +111,14 @@ export default function RichEditorUndefinedTest() {
       console.info('[richEditorUndefined_static_2002] START');
       let driver: Driver = Driver.create()
       let strJson = inspector.getInspectorByKey('RichEditor');
-
-      console.info("[richEditorUndefined_static_2002] stopBackPress 1: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('stopBackPress')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('stopBackPress'))
         .assertEqual('false');
 
       let changeBtn = await driver.findComponent(ON.id('RichEditor_stopBackPress'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      console.info("[richEditorUndefined_static_2002] click RichEditor_stopBackPress");
       let strJson2 = inspector.getInspectorByKey('RichEditor');
 
-      console.info("[richEditorUndefined_static_2002] stopBackPress 2: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('stopBackPress')));
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('stopBackPress'))
         .assertEqual('true');
       console.info('[richEditorUndefined_static_2002] END');
@@ -221,7 +215,6 @@ export default function RichEditorUndefinedTest() {
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('RichEditor_text');
-      console.info("[richEditorUndefined_static_2005] text 1: " +  JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
       expect(await (text?.getText() as Promise<String>)).assertEqual('onPaste');
       await (resetTextBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
@@ -233,9 +226,7 @@ export default function RichEditorUndefinedTest() {
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2622);
       await CommonFunc.sleep(1000);
-
       strJson = inspector.getInspectorByKey('RichEditor_text');
-      console.info("[richEditorUndefined_static_2005] text 2: " +  JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
       expect(await (text?.getText() as Promise<String>)).assertEqual('hello');
       console.info('[richEditorUndefined_static_2005] END');
       done();

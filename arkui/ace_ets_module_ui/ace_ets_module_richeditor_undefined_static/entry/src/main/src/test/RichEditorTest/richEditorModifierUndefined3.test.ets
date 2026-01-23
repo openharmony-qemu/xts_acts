@@ -147,13 +147,13 @@ export default function richEditorModifierUndefined3() {
     });
 
     /**
-     * @tc.number   richEditorUndefined_static_3003
-     * @tc.name     richEditorUndefined_static_3003
+     * @tc.number   richEditorModifierUndefined_static_3003
+     * @tc.name     richEditorModifierUndefined_static_3003
      * @tc.desc     test onCut
      * @tc.level    Level.LEVEL1
      */
-    it('richEditorUndefined_static_3003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[richEditorUndefined_static_3003] START');
+    it('richEditorModifierUndefined_static_3003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[richEditorModifierUndefined_static_3003] START');
       let driver: Driver = Driver.create();
       let richEditor = await driver.findComponent(ON.id('RichEditorM_3'));
       let changeBtnOffset = await driver.findComponent(ON.id('RichEditor_setCaretOffset'));
@@ -163,9 +163,7 @@ export default function richEditorModifierUndefined3() {
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X);
       await CommonFunc.sleep(1000);
       let text = await driver.findComponent(ON.id('RichEditor_text_OnCut'));
-
       let strJson = inspector.getInspectorByKey('RichEditor_text_OnCut');
-      console.info('[richEditorUndefined_static_3003] is 1: ' + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
       expect(await (text?.getText() as Promise<string>)).assertEqual('cut:0');
 
       let changeBtn = await driver.findComponent(ON.id('RichEditor_btn_OnCut'));
@@ -175,7 +173,6 @@ export default function richEditorModifierUndefined3() {
       await CommonFunc.sleep(3000);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X);
       await CommonFunc.sleep(1000);
-      console.info('[richEditorUndefined_static_3003] is 2: ' + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
       expect(await (text?.getText() as Promise<string>)).assertEqual('cut:1');
 
       await (changeBtn?.click() as Promise<void>);
@@ -184,9 +181,8 @@ export default function richEditorModifierUndefined3() {
       await CommonFunc.sleep(3000);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X);
       await CommonFunc.sleep(1000);
-      console.info('[richEditorUndefined_static_3003] is 3: ' + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
       expect(await (text?.getText() as Promise<string>)).assertEqual('cut:1');
-      console.info('[richEditorUndefined_static_3003] END');
+      console.info('[richEditorModifierUndefined_static_3003] END');
       done();
     });
   })
