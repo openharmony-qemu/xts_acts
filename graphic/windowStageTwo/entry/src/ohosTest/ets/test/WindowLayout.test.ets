@@ -14,7 +14,7 @@
  */
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level} from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
@@ -22,7 +22,7 @@ import settings from '@ohos.settings';
 import * as LoadContentByName from '../testability/pages/WindowTest/LoadContentByName';
 import { StartOptions } from '@kit.AbilityKit';
 
-let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
+let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
 
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
   let want: Want = {
@@ -126,7 +126,7 @@ async function terminateAbility5(caseName: string) {
 
 export default function windowLayoutTest() {
   describe('windowLayoutTest', async () => {
-    let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
+    let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
     let context: common.UIAbilityContext;
     let windowStage: window.WindowStage;
     let isAutoWindow: string = '';
@@ -140,13 +140,13 @@ export default function windowLayoutTest() {
       //isAutoWindow == '' 非PAD设备
       //isAutoWindow == 'true' PAD设备自由多窗模式
       //isAutoWindow == 'false' PAD设备非自由多窗模式
-      isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.USER_PROPERTY);
+      isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '', settings.domainName.USER_PROPERTY);
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
       isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
       //isPCStatus == '' 非PC设备
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
-      console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      console.info(`beforeAll isPCStatus: ` + isPCStatus);
       let windowClass = windowStage.getMainWindowSync();
       isFreeWindowMode = windowClass.isInFreeWindowMode();
       //isFreeWindowMode == true 自由窗口模式
@@ -156,7 +156,7 @@ export default function windowLayoutTest() {
     });
     beforeEach(() => {
     });
-    afterEach(async ()=>{
+    afterEach(async () => {
       try {
         await sleep(1000)
         let mainWindowClass = windowStage.getMainWindowSync()
@@ -168,9 +168,9 @@ export default function windowLayoutTest() {
           await sleep(1000)
           lastWindow = await window.getLastWindow(context)
           lastID = lastWindow.getWindowProperties().id
-      }
+        }
       } catch (error) {
-        console.log('afterEach fail cause'+error)
+        console.log('afterEach fail cause' + error)
       }
     })
     afterAll(() => {
@@ -216,7 +216,7 @@ export default function windowLayoutTest() {
         await windowClass.setUIContent("testability/pages/Index");
         expect(true).assertTrue();
         done()
-      }else {
+      } else {
         await windowClass.setUIContent("testability/pages/Index");
         console.error(`${message} Error`);
         expect(true).assertFalse()
@@ -233,7 +233,7 @@ export default function windowLayoutTest() {
      */
     it('testStartMoving_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startMovingTest_0200';
-      let windowClass:window.Window;
+      let windowClass: window.Window;
       let options: window.SubWindowOptions = {
         title: 'testStartMoving_0200',
         decorEnabled: true
@@ -242,7 +242,7 @@ export default function windowLayoutTest() {
         windowClass = data
         await windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
         windowClass.resize(1000, 1200);
-        windowClass.moveWindowToAsync(200,300);
+        windowClass.moveWindowToAsync(200, 300);
         await windowClass.showWindow();
         await sleep(1000)
         let windowPoint = windowClass.getWindowProperties().windowRect
@@ -291,7 +291,7 @@ export default function windowLayoutTest() {
     it('testStartMoving_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startMovingTest_0300';
       let mainwindowClass = windowStage.getMainWindowSync();
-      let windowClass:window.Window;
+      let windowClass: window.Window;
       let options: window.SubWindowOptions = {
         title: 'subWindow',
         decorEnabled: true
@@ -301,7 +301,7 @@ export default function windowLayoutTest() {
           windowClass = data
           await windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
           windowClass.resize(1000, 1200);
-          windowClass.moveWindowToAsync(200,300);
+          windowClass.moveWindowToAsync(200, 300);
           await windowClass.showWindow()
           await sleep(1000)
           let windowPoint = windowClass.getWindowProperties().windowRect
@@ -348,54 +348,54 @@ export default function windowLayoutTest() {
       }
 
     })
-/**
- * @tc.name   testSetResizeByDragEnabledTrue_0100
- * @tc.number testSetResizeByDragEnabledTrue_0100
- * @tc.desc   testSetResizeByDragEnabledTrue_0100
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL3
- */
-it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-  const message = 'testSetResizeByDragEnabledTrueTest_0100';
-  let windowClass = windowStage.getMainWindowSync()
-  let enabled = true;
-  let driver = await Driver.create();
-  if (isPCStatus != '') {
-    try {
-      windowClass.setResizeByDragEnabled(enabled, async (err) => {
-        if (err.code == 801) {
-          console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
-          expect(false).assertFalse();
-          done();
-        } else if (err.code && err.code != 801) {
-          console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`)
+    /**
+     * @tc.name   testSetResizeByDragEnabledTrue_0100
+     * @tc.number testSetResizeByDragEnabledTrue_0100
+     * @tc.desc   testSetResizeByDragEnabledTrue_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'testSetResizeByDragEnabledTrueTest_0100';
+      let windowClass = windowStage.getMainWindowSync()
+      let enabled = true;
+      let driver = await Driver.create();
+      if (isPCStatus != '') {
+        try {
+          windowClass.setResizeByDragEnabled(enabled, async (err) => {
+            if (err.code == 801) {
+              console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
+              expect(false).assertFalse();
+              done();
+            } else if (err.code && err.code != 801) {
+              console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`)
+              expect().assertFail();
+              done();
+            }
+            console.info(`${message} Succeeded in setting the function of disabling the resize by drag window.`);
+            let windowPoint = await windowClass.getWindowProperties().windowRect
+            console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
+            await driver.mouseMoveTo({ x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top })
+            await sleep(2000)
+            await driver.mouseDrag({ x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top }, { x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100 }, 2000)
+            await sleep(1000)
+            let windowPointDragged = await windowClass.getWindowProperties().windowRect
+            console.info(`${message} windowPointDraged = ${JSON.stringify(windowPointDragged)}`)
+            expect(windowPointDragged.width).assertEqual(windowPoint.width)
+            expect(windowPointDragged.height).assertEqual(windowPoint.height - 100)
+            done()
+          });
+        } catch (exception) {
+          console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${exception.code}, message: ${exception.message}`)
           expect().assertFail();
           done();
         }
-        console.info(`${message} Succeeded in setting the function of disabling the resize by drag window.`);
-        let windowPoint = await windowClass.getWindowProperties().windowRect
-        console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
-        await driver.mouseMoveTo({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top})
-        await sleep(2000)
-        await driver.mouseDrag({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top}, {x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100},2000)
-        await sleep(1000)
-        let windowPointDragged = await windowClass.getWindowProperties().windowRect
-        console.info(`${message} windowPointDraged = ${JSON.stringify(windowPointDragged)}`)
-        expect(windowPointDragged.width).assertEqual(windowPoint.width)
-        expect(windowPointDragged.height).assertEqual(windowPoint.height - 100)
+      } else {
+        console.info(`${message} not support`);
         done()
-      });
-    } catch (exception) {
-      console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${exception.code}, message: ${exception.message}`)
-      expect().assertFail();
-      done();
-    }
-  } else {
-    console.info(`${message} not support`);
-    done()
-  }
-})
+      }
+    })
 
     /**
      * @tc.name   test_setFollowParentMultiScreenPolicy_401
@@ -415,15 +415,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       try {
         let promise = subWindow.setFollowParentMultiScreenPolicy(null);
         promise.then(() => {
-          console.info(msgStr +'Succeeded  setFollowParentMultiScreenPolicy.');
+          console.info(msgStr + 'Succeeded  setFollowParentMultiScreenPolicy.');
           expect(true).assertFail();
           done()
         }).catch(async (err: BusinessError) => {
-          console.error(msgStr +`Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
+          console.error(msgStr + `Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
-          if(err.code == 801){
+          if (err.code == 801) {
             done()
-          }else{
+          } else {
             expect(true).assertFail();
             done()
           }
@@ -456,14 +456,14 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         await subWindow.destroyWindow();
         let promise = subWindow.setFollowParentMultiScreenPolicy(true);
         promise.then(() => {
-          console.info(msgStr +'Succeeded  setFollowParentMultiScreenPolicy.');
+          console.info(msgStr + 'Succeeded  setFollowParentMultiScreenPolicy.');
           expect(true).assertFail();
           done()
         }).catch(async (err: BusinessError) => {
-          console.error(msgStr +`Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
-          if(err.code == 801){
+          console.error(msgStr + `Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code == 801) {
             done()
-          }else{
+          } else {
             expect(err.code).assertEqual(1300002);
             done()
           }
@@ -492,18 +492,18 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       try {
         let promise = mainWindow.setFollowParentMultiScreenPolicy(true);
         promise.then(() => {
-          console.info(msgStr +'Succeeded  setFollowParentMultiScreenPolicy.');
+          console.info(msgStr + 'Succeeded  setFollowParentMultiScreenPolicy.');
           expect(true).assertFail();
           done()
         }).catch(async (err: BusinessError) => {
-          console.error(msgStr +`Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
-          if(err.code == 801){
+          console.error(msgStr + `Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code == 801) {
             done()
-          }else{
+          } else {
             expect(err.code).assertEqual(1300004);
             done()
           }
-          
+
         });
       } catch (e) {
         console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
@@ -535,15 +535,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       try {
         let promise = windowClass.setFollowParentMultiScreenPolicy(true);
         promise.then(() => {
-          console.info(msgStr +'Succeeded  setFollowParentMultiScreenPolicy.');
+          console.info(msgStr + 'Succeeded  setFollowParentMultiScreenPolicy.');
           expect(true).assertFail();
           done()
         }).catch(async (err: BusinessError) => {
-          console.error(msgStr +`Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
+          console.error(msgStr + `Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
           await windowClass.destroyWindow();
-          if(err.code == 801){
+          if (err.code == 801) {
             done()
-          }else{
+          } else {
             expect(err.code).assertEqual(1300004);
             done()
           }
@@ -576,26 +576,26 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       try {
         let promise = subWindow.setFollowParentMultiScreenPolicy(true);
         promise.then(async () => {
-          console.info(msgStr +'Succeeded  setFollowParentMultiScreenPolicy.');
+          console.info(msgStr + 'Succeeded  setFollowParentMultiScreenPolicy.');
           await subWindow.destroyWindow();
           expect(true).assertTrue();
           done()
         }).catch(async (err: BusinessError) => {
-          console.error(msgStr +`Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
+          console.error(msgStr + `Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
-          if(err.code == 801){
+          if (err.code == 801) {
             done()
-          }else{
+          } else {
             expect(true).assertFail();
             done()
           }
-          
+
         });
       } catch (e) {
         console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
         await subWindow.destroyWindow();
-          expect(true).assertFail();
-          done()
+        expect(true).assertFail();
+        done()
 
       }
 
@@ -618,16 +618,16 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       try {
         let promise = subWindow.setFollowParentMultiScreenPolicy(false);
         promise.then(async () => {
-          console.info(msgStr +'Succeeded  setFollowParentMultiScreenPolicy.');
+          console.info(msgStr + 'Succeeded  setFollowParentMultiScreenPolicy.');
           await subWindow.destroyWindow();
           expect(true).assertTrue();
           done()
         }).catch(async (err: BusinessError) => {
-          console.error(msgStr +`Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
+          console.error(msgStr + `Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
-          if(err.code == 801){
+          if (err.code == 801) {
             done()
-          }else{
+          } else {
             expect(true).assertFail();
             done()
           }
@@ -682,7 +682,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} promise Failed to test MoveConfiguration, Cause code ${err.code}, message ${err.message} `);
-          if (err.code == 1300002 || err.code == 801){
+          if (err.code == 1300002 || err.code == 801) {
             expect(true).assertTrue();
           } else {
             expect().assertFail();
@@ -1161,7 +1161,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
           let promise2 = subWindowClass.setFollowParentWindowLayoutEnabled(null);
           promise2.then(async () => {
-            console.info(msgStr + 'Succeeded in setFollowParentWindowLayoutEnabled ' );
+            console.info(msgStr + 'Succeeded in setFollowParentWindowLayoutEnabled ');
             expect(false).assertTrue();
             done();
           }).catch((err: BusinessError) => {
@@ -1177,10 +1177,10 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           if (err.code == 801) {
             console.log(msgStr + '此设备不支持');
             done();
-          } else if(err.code == 401){
+          } else if (err.code == 401) {
             expect(true).assertTrue();
             done();
-          }else {
+          } else {
             console.log(msgStr + 'Failed to setWindowMask');
             expect(false).assertTrue();
             done();
@@ -1213,7 +1213,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await subWindowClass.destroyWindow();
           let promise2 = subWindowClass.setFollowParentWindowLayoutEnabled(true);
           promise2.then(async () => {
-            console.info(msgStr + 'Succeeded in setFollowParentWindowLayoutEnabled ' );
+            console.info(msgStr + 'Succeeded in setFollowParentWindowLayoutEnabled ');
             expect(false).assertTrue();
             done();
           }).catch((err: BusinessError) => {
@@ -1254,17 +1254,17 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       console.log(msgStr + "begin");
       let windowClass = await windowStage.getMainWindow();
       try {
-          let promise2 = windowClass.setFollowParentWindowLayoutEnabled(true);
-          promise2.then(async () => {
-            console.info(msgStr + 'Succeeded in setFollowParentWindowLayoutEnabled ' );
-            expect(false).assertTrue();
-            done();
-          }).catch((err: BusinessError) => {
-            console.error(msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-            expect(err.code).assertEqual(1300004);
-            done();
+        let promise2 = windowClass.setFollowParentWindowLayoutEnabled(true);
+        promise2.then(async () => {
+          console.info(msgStr + 'Succeeded in setFollowParentWindowLayoutEnabled ');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(1300004);
+          done();
 
-          });
+        });
       } catch (error) {
         console.error(msgStr + `Failed to create the subwindow. Cause code: ${error.code}, message: ${error.message}`);
         if (error.code == 801) {
@@ -1302,20 +1302,20 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await subWindowClass.showWindow();
           let minWidth = Number(subWindowClass.getWindowLimits().minWidth);
           let minHeight = Number(subWindowClass.getWindowLimits().minHeight);
-          console.log('Window WindowLimits:' + minWidth +' '+ minHeight);
-          await subWindowClass.resizeAsync(minWidth,minHeight);
+          console.log('Window WindowLimits:' + minWidth + ' ' + minHeight);
+          await subWindowClass.resizeAsync(minWidth, minHeight);
           await sleep(300);
           subWindowClass.on('windowSizeChange', async (data) => {
             console.info('Succeeded in enabling the listener for window size changes. Data: ' + JSON.stringify(data));
             let subWindowRect = data;
-            expect(Math.abs(subWindowRect.width-mainWindowProwindowRect.width)).assertLessOrEqual(1);
-            expect(Math.abs(subWindowRect.height-mainWindowProwindowRect.height)).assertLessOrEqual(1);
+            expect(Math.abs(subWindowRect.width - mainWindowProwindowRect.width)).assertLessOrEqual(1);
+            expect(Math.abs(subWindowRect.height - mainWindowProwindowRect.height)).assertLessOrEqual(1);
             await subWindowClass.destroyWindow();
             done();
           });
           let promise2 = subWindowClass.setFollowParentWindowLayoutEnabled(true);
           promise2.then(async () => {
-            console.info(msgStr + 'Succeeded in setFollowParentWindowLayoutEnabled ' );
+            console.info(msgStr + 'Succeeded in setFollowParentWindowLayoutEnabled ');
           }).catch(async (err: BusinessError) => {
             console.error(msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
             await subWindowClass.destroyWindow();
@@ -1370,20 +1370,20 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(300);
           let minWidth = Number(subWindowClass.getWindowLimits().minWidth);
           let minHeight = Number(subWindowClass.getWindowLimits().minHeight);
-          console.log('Window WindowLimits:' + minWidth +' '+ minHeight);
-          subWindowClass.resizeAsync(minWidth,minHeight);
+          console.log('Window WindowLimits:' + minWidth + ' ' + minHeight);
+          subWindowClass.resizeAsync(minWidth, minHeight);
           await sleep(100);
           let subWindowRect1 = subWindowClass.getWindowProperties().windowRect;
           console.info(msgStr + 'Succeeded in get  subWindowRect1. Data: ' + JSON.stringify(subWindowRect1));
           let promise2 = subWindowClass.setFollowParentWindowLayoutEnabled(false);
           promise2.then(async () => {
-            console.info(msgStr + 'Succeeded in setFollowParentWindowLayoutEnabled ' );
+            console.info(msgStr + 'Succeeded in setFollowParentWindowLayoutEnabled ');
             let subWindowRect2 = subWindowClass.getWindowProperties().windowRect;
             console.info(msgStr + 'Succeeded in get  subWindowRect2. Data: ' + JSON.stringify(subWindowRect2));
-            expect(Math.abs(subWindowRect1.width-subWindowRect2.width)).assertLessOrEqual(1);
-            expect(Math.abs(subWindowRect1.height-subWindowRect2.height)).assertLessOrEqual(1);
-            expect(Math.abs(subWindowRect1.left-subWindowRect2.left)).assertLessOrEqual(1);
-            expect(Math.abs(subWindowRect1.top-subWindowRect2.top)).assertLessOrEqual(1);
+            expect(Math.abs(subWindowRect1.width - subWindowRect2.width)).assertLessOrEqual(1);
+            expect(Math.abs(subWindowRect1.height - subWindowRect2.height)).assertLessOrEqual(1);
+            expect(Math.abs(subWindowRect1.left - subWindowRect2.left)).assertLessOrEqual(1);
+            expect(Math.abs(subWindowRect1.top - subWindowRect2.top)).assertLessOrEqual(1);
             await subWindowClass.destroyWindow();
             done();
           }).catch(async (err: BusinessError) => {
@@ -1433,7 +1433,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       console.log(msgStr + 'begin.');
       let windowClass = windowStage.getMainWindowSync();
       try {
-        let promise = windowClass.startMoving(null,null);
+        let promise = windowClass.startMoving(null, null);
         promise.then(() => {
           console.info('Succeeded startMoving.');
           expect(false).assertFail();
@@ -1467,23 +1467,23 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         let windowClass = await windowStage.createSubWindow('teststopMoving1300002');
         await windowClass.destroyWindow();
         windowClass.stopMoving().then(() => {
-          console.info(msgStr +'Succeeded in stopping moving window.')
+          console.info(msgStr + 'Succeeded in stopping moving window.')
           expect(false).assertFail();
           done();
         }).catch((e: BusinessError) => {
-          console.error(msgStr +`Failed to stop moving. Cause code: ${e.code}, message: ${e.message}`);
-          if(e.code == 801){
+          console.error(msgStr + `Failed to stop moving. Cause code: ${e.code}, message: ${e.message}`);
+          if (e.code == 801) {
             done();
-          }else{
+          } else {
             expect(e.code).assertEqual(1300002);
             done()
           }
         });
       } catch (e) {
         console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
-        if(e.code == 801){
+        if (e.code == 801) {
           done();
-        }else{
+        } else {
           expect(e.code).assertEqual(1300002);
           done()
         }
@@ -1498,45 +1498,45 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testmoveWindowToAsync_3_parameters',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testmoveWindowToAsync_3_parameters', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testmoveWindowToAsync_3_parameters";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       let mainWindow = windowStage.getMainWindowSync();
       let displayId = mainWindow.getWindowProperties().displayId;
-      console.info(msgStr +'windowId :'+displayId)
+      console.info(msgStr + 'windowId :' + displayId)
       let moveConfiguration: window.MoveConfiguration = {
         displayId: displayId
       };
       let subWindow = await windowStage.createSubWindow('testmoveWindowToAsync_3_parameters');
       await subWindow.loadContentByName(LoadContentByName.entryName);
-      await  subWindow.showWindow();
+      await subWindow.showWindow();
       try {
-      let promise = subWindow.moveWindowToAsync(300, 300, moveConfiguration);
-      promise.then(async () => {
-        console.info(msgStr +'Succeeded in moving the window.');
-        let rect = subWindow.getWindowProperties().windowRect;
-        console.info(msgStr +`Get window rect: ` + JSON.stringify(rect));
-        expect(true).assertTrue();
-        await subWindow.destroyWindow();
-        done()
-      }).catch(async (err: BusinessError) => {
-        console.error(msgStr +`Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
-        await subWindow.destroyWindow();
-        if (err.code == 801) {
+        let promise = subWindow.moveWindowToAsync(300, 300, moveConfiguration);
+        promise.then(async () => {
+          console.info(msgStr + 'Succeeded in moving the window.');
+          let rect = subWindow.getWindowProperties().windowRect;
+          console.info(msgStr + `Get window rect: ` + JSON.stringify(rect));
+          expect(true).assertTrue();
+          await subWindow.destroyWindow();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(msgStr + `Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindow.destroyWindow();
+          if (err.code == 801) {
             console.error(`${caseName}  Capability not supported. Failed to call the API due to limited device capabilities`);
             expect(false).assertFalse();
             done();
-        } else {
+          } else {
             expect().assertFail();
             done();
           }
-      });
+        });
       } catch (exception) {
-      console.error(msgStr +`Failed. Cause code: ${exception.code}, message: ${exception.message}`);
-      await subWindow.destroyWindow();
-      expect(false).assertFail();
-      done();
+        console.error(msgStr + `Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+        await subWindow.destroyWindow();
+        expect(false).assertFail();
+        done();
       }
 
     })
@@ -1688,7 +1688,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
                 let pointHeight = windowRect.top + windowRect.height / 2;
                 console.log(caseName +
                   `pointWidth:${JSON.stringify(pointWidth)}, pointHeight: ${JSON.stringify(pointHeight)}`)
-                await driver.mouseDrag({x: pointWidth, y: pointHeight}, {x: pointWidth + 50, y: pointHeight}, 200);
+                await driver.mouseDrag({ x: pointWidth, y: pointHeight }, { x: pointWidth + 50, y: pointHeight }, 200);
                 await sleep(300);
                 let windowRect2 = windowClass.getWindowProperties().windowRect;
                 console.log(caseName + `windowRect2:${JSON.stringify(windowRect2)}`);
@@ -1752,7 +1752,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
                 let pointWidth = windowRect.left;
                 let pointHeight = windowRect.top + windowRect.height / 2;
                 console.log(caseName + `pointWidth:${JSON.stringify(pointWidth)}, pointHeight: ${JSON.stringify(pointHeight)}`)
-                await driver.mouseDrag({x: pointWidth, y: pointHeight}, {x: pointWidth + 50, y: pointHeight}, 200);
+                await driver.mouseDrag({ x: pointWidth, y: pointHeight }, { x: pointWidth + 50, y: pointHeight }, 200);
                 await sleep(300);
                 let windowRect2 = windowClass.getWindowProperties().windowRect;
                 console.log(caseName + `windowRect2:${JSON.stringify(windowRect2)}`);
@@ -1822,7 +1822,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
                 let pointWidth = windowRect.left;
                 let pointHeight = windowRect.top + windowRect.height / 2;
                 console.log(caseName + `pointWidth:${JSON.stringify(pointWidth)}, pointHeight: ${JSON.stringify(pointHeight)}`)
-                await driver.mouseDrag({x: pointWidth, y: pointHeight}, {x: pointWidth - 50, y: pointHeight}, 200);
+                await driver.mouseDrag({ x: pointWidth, y: pointHeight }, { x: pointWidth - 50, y: pointHeight }, 200);
                 await sleep(300);
                 let windowRect2 = windowClass.getWindowProperties().windowRect;
                 console.log(caseName + `windowRect2:${JSON.stringify(windowRect2)}`);
@@ -1888,7 +1888,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
                 let pointWidth = windowRect.left;
                 let pointHeight = windowRect.top + windowRect.height / 2;
                 console.log(caseName + `pointWidth:${JSON.stringify(pointWidth)}, pointHeight: ${JSON.stringify(pointHeight)}`)
-                await driver.mouseDrag({x: pointWidth, y: pointHeight}, {x: pointWidth - 50, y: pointHeight}, 200);
+                await driver.mouseDrag({ x: pointWidth, y: pointHeight }, { x: pointWidth - 50, y: pointHeight }, 200);
                 await sleep(300);
                 let windowRect2 = windowClass.getWindowProperties().windowRect;
                 console.log(caseName + `windowRect2:${JSON.stringify(windowRect2)}`);
@@ -1930,67 +1930,67 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
      * @tc.level  LEVEL3
      */
     it('testStartMoving_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            const caseName = 'testStartMoving_0400';
-            console.log(caseName + 'begin.');
-            let config: window.Configuration = {
-                name: "testStartMoving_0400",
-                windowType: window.WindowType.TYPE_DIALOG,
-                ctx: context
-            };
-            let windowClass = await window.createWindow(config);
-            AppStorage.setOrCreate('windowClass', windowClass);
-            try {
-                let windowLimits = await windowClass.getWindowLimits();
-                console.info(`${caseName} windowLimits = ${JSON.stringify(windowLimits)}`);
-                let width = windowLimits.minWidth;
-                let height = windowLimits.maxHeight;
-                await windowClass.resize(width!+100, height!+150);
-                await sleep(200);
-                await windowClass.setUIContent("testability/pages/WindowTest/StartMoving7");
-                await sleep(200);
-                await windowClass.showWindow();
-                await sleep(200);
-                await windowClass.moveWindowTo(100, 100);
-                await sleep(200);
-                let windowPoint = await windowClass.getWindowProperties().windowRect;
-                console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint)}`);
-                let driver = await Driver.create();
-                await sleep(1000);
-                let blank = await driver.findComponent(ON.id('startMoving'))
-                await sleep(1000)
-                console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
-                let point = await blank.getBoundsCenter();
-                console.info(`${caseName} point = ${JSON.stringify(point)}`);
-                await driver.drag(point.x, point.y, point.x + 50, point.y + 50, 200);
-                await sleep(1000);
-                let text = await driver.findComponent(ON.id('startMovingText'));
-                await sleep(1000)
-                console.info(`${caseName} text = ${JSON.stringify(text)}`);
-                let textDragged = await text.getText();
-                if (textDragged == 'startMoving success') {
-                    let windowPointDragged = windowClass.getWindowProperties().windowRect
-                    console.info(`${caseName} sstartMoving success, windowPoint = ${JSON.stringify(windowPointDragged)}`)
-                    expect(windowPointDragged.left).assertEqual(windowPoint.left + 50)
-                    expect(windowPointDragged.top).assertEqual(windowPoint.top + 50)
-                } else if (textDragged == 'startMoving 801') {
-                    expect(true).assertTrue();
-                } else {
-                    console.error(`${caseName} Error.`);
-                    expect(true).assertFalse()
-                }
-                await windowClass.destroyWindow();
-                done();
-            } catch (err) {
-                console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
-                await windowClass.destroyWindow();
-                if (err.code === 801) {
-                    done();
-                } else {
-                    expect().assertFail();
-                    done();
-                }
-            }
-        })
+      const caseName = 'testStartMoving_0400';
+      console.log(caseName + 'begin.');
+      let config: window.Configuration = {
+        name: "testStartMoving_0400",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      };
+      let windowClass = await window.createWindow(config);
+      AppStorage.setOrCreate('windowClass', windowClass);
+      try {
+        let windowLimits = await windowClass.getWindowLimits();
+        console.info(`${caseName} windowLimits = ${JSON.stringify(windowLimits)}`);
+        let width = windowLimits.minWidth;
+        let height = windowLimits.maxHeight;
+        await windowClass.resize(width! + 100, height! + 150);
+        await sleep(200);
+        await windowClass.setUIContent("testability/pages/WindowTest/StartMoving7");
+        await sleep(200);
+        await windowClass.showWindow();
+        await sleep(200);
+        await windowClass.moveWindowTo(100, 100);
+        await sleep(200);
+        let windowPoint = await windowClass.getWindowProperties().windowRect;
+        console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint)}`);
+        let driver = await Driver.create();
+        await sleep(1000);
+        let blank = await driver.findComponent(ON.id('startMoving'))
+        await sleep(1000)
+        console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
+        let point = await blank.getBoundsCenter();
+        console.info(`${caseName} point = ${JSON.stringify(point)}`);
+        await driver.drag(point.x, point.y, point.x + 50, point.y + 50, 200);
+        await sleep(1000);
+        let text = await driver.findComponent(ON.id('startMovingText'));
+        await sleep(1000)
+        console.info(`${caseName} text = ${JSON.stringify(text)}`);
+        let textDragged = await text.getText();
+        if (textDragged == 'startMoving success') {
+          let windowPointDragged = windowClass.getWindowProperties().windowRect
+          console.info(`${caseName} sstartMoving success, windowPoint = ${JSON.stringify(windowPointDragged)}`)
+          expect(windowPointDragged.left).assertEqual(windowPoint.left + 50)
+          expect(windowPointDragged.top).assertEqual(windowPoint.top + 50)
+        } else if (textDragged == 'startMoving 801') {
+          expect(true).assertTrue();
+        } else {
+          console.error(`${caseName} Error.`);
+          expect(true).assertFalse()
+        }
+        await windowClass.destroyWindow();
+        done();
+      } catch (err) {
+        console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+        await windowClass.destroyWindow();
+        if (err.code === 801) {
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    })
 
     /**
      * @tc.name   testWindowEnableDragTruewithFullScreenMainWindow
@@ -2004,9 +2004,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       const caseName = 'testWindowEnableDragTruewithFullScreenMainWindow';
       console.log(caseName + 'begin.');
       try {
-      let windowClass =  windowStage.getMainWindowSync();
-      let windowStatusType = windowClass.getWindowStatus();
-      console.info(caseName + ' windowClass.getWindowStatus(). windowStatusType: ' + JSON.stringify(windowStatusType));
+        let windowClass = windowStage.getMainWindowSync();
+        let windowStatusType = windowClass.getWindowStatus();
+        console.info(caseName + ' windowClass.getWindowStatus(). windowStatusType: ' + JSON.stringify(windowStatusType));
 
         await windowClass.enableDrag(true);
         await sleep(200);
@@ -2016,9 +2016,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        }else{
+        } else {
           expect(err.code).assertEqual(1300004);
           done();
         }
@@ -2039,7 +2039,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithDestoryedSubWindow');
       await windowClass.destroyWindow();
       try {
-        if( isFreeWindowMode == true) {
+        if (isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             expect().assertFail();
@@ -2054,9 +2054,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         }
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        } else{
+        } else {
           expect(err.code).assertEqual(1300002);
           done();
         }
@@ -2107,9 +2107,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         } catch (err) {
           console.error(`${caseName} failed dialog window, err: ${JSON.stringify(err)}`);
           await windowClass2.destroyWindow();
-          if(err.code == 801){
+          if (err.code == 801) {
             done();
-          } else{
+          } else {
             expect(err.code).assertEqual(1300004);
           }
         }
@@ -2172,10 +2172,10 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         let subWindowClass2: window.Window | undefined;
         console.info(`${caseName} Succeeded in creating the float window.`);
         try {
-          windowStage.createSubWindowWithOptions('subWindow1',options).then(async (data) => {
+          windowStage.createSubWindowWithOptions('subWindow1', options).then(async (data) => {
             console.info(caseName + 'sub window 1 create success');
             subWindowClass = data;
-            data.createSubWindowWithOptions('subWindow2',options).then(async (data) => {
+            data.createSubWindowWithOptions('subWindow2', options).then(async (data) => {
               console.info(caseName + 'sub window 2 create success');
               subWindowClass2 = data;
               await subWindowClass2.setRelativePositionToParentWindowEnabled(true);
@@ -2191,11 +2191,11 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
               if (error.code == 1300002) {
                 console.log(caseName + 'device not support')
                 done();
-              } else if(error.code == 1300004){
+              } else if (error.code == 1300004) {
 
                 expect(true).assertTrue();
                 done();
-              }else if(error.code == 801){
+              } else if (error.code == 801) {
                 done();
               }
               else {
@@ -2241,15 +2241,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabled');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
-      windowClass.resizeAsync(1000,1000)
+      windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
       try {
-        if(isFreeWindowMode == true) {
+        if (isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
             console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
-            windowClass.moveWindowToAsync(windowRect.left+20,windowRect.top-20)
+            windowClass.moveWindowToAsync(windowRect.left + 20, windowRect.top - 20)
             await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
@@ -2270,9 +2270,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            if(err.code == 801){
+            if (err.code == 801) {
               done();
-            }else{
+            } else {
               expect().assertFail();
               done();
             }
@@ -2284,9 +2284,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        } else{
+        } else {
           expect().assertFail();
           done();
         }
@@ -2308,30 +2308,30 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowUnEnabled');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
-      windowClass.resizeAsync(1000,1000)
+      windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
       try {
-        if(isFreeWindowMode == true) {
+        if (isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(false).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
             console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
-            windowClass.moveWindowToAsync(windowRect.left+20,windowRect.top-20)
+            windowClass.moveWindowToAsync(windowRect.left + 20, windowRect.top - 20)
             await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
             let subWindowProperties = windowClass.getWindowProperties();
             console.info(`${caseName} subWindowProperties: ${JSON.stringify(subWindowProperties)}`);
-            expect(Math.abs(mainWindowProperties.windowRect.left-subWindowProperties.windowRect.left)).assertLarger(0);
-            expect(Math.abs(mainWindowProperties.windowRect.top-subWindowProperties.windowRect.top)).assertLarger(0);
+            expect(Math.abs(mainWindowProperties.windowRect.left - subWindowProperties.windowRect.left)).assertLarger(0);
+            expect(Math.abs(mainWindowProperties.windowRect.top - subWindowProperties.windowRect.top)).assertLarger(0);
             await windowClass.destroyWindow();
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            if(err.code == 801){
+            if (err.code == 801) {
               done();
-            }else{
+            } else {
               expect().assertFail();
               done();
             }
@@ -2343,9 +2343,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        } else{
+        } else {
           expect().assertFail();
           done();
         }
@@ -2367,15 +2367,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorTopStart');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
-      windowClass.resizeAsync(1000,1000)
+      windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
       try {
-        if(isFreeWindowMode == true) {
+        if (isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
             console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
-            windowClass.moveWindowToAsync(windowRect.left+20,windowRect.top-20)
+            windowClass.moveWindowToAsync(windowRect.left + 20, windowRect.top - 20)
             await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
@@ -2396,9 +2396,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            if(err.code == 801){
+            if (err.code == 801) {
               done();
-            }else{
+            } else {
               expect().assertFail();
               done();
             }
@@ -2410,9 +2410,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        } else{
+        } else {
           expect().assertFail();
           done();
         }
@@ -2434,15 +2434,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorTop');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
-      windowClass.resizeAsync(1000,1000)
+      windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
       try {
-        if(isFreeWindowMode == true) {
+        if (isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
             console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
-            windowClass.moveWindowToAsync(windowRect.left-20,windowRect.top+20)
+            windowClass.moveWindowToAsync(windowRect.left - 20, windowRect.top + 20)
             await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
@@ -2457,15 +2457,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
             let subWidth = subWindowProperties.windowRect.width;
             let subHeight = subWindowProperties.windowRect.height;
             expect(mainTop).assertEqual(subTop);
-            expect(Math.abs(mainLeft - subLeft)).assertEqual(Math.abs((mainWidth + mainLeft)-(subWidth + subLeft)));
+            expect(Math.abs(mainLeft - subLeft)).assertEqual(Math.abs((mainWidth + mainLeft) - (subWidth + subLeft)));
             await windowClass.destroyWindow();
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            if(err.code == 801){
+            if (err.code == 801) {
               done();
-            }else{
+            } else {
               expect().assertFail();
               done();
             }
@@ -2477,9 +2477,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        } else{
+        } else {
           expect().assertFail();
           done();
         }
@@ -2501,15 +2501,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorTopEnd');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
-      windowClass.resizeAsync(1000,1000)
+      windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
       try {
-        if(isFreeWindowMode == true) {
+        if (isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_END).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
             console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
-            windowClass.moveWindowToAsync(windowRect.left+20,windowRect.top-20)
+            windowClass.moveWindowToAsync(windowRect.left + 20, windowRect.top - 20)
             await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
@@ -2524,15 +2524,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
             let subWidth = subWindowProperties.windowRect.width;
             let subHeight = subWindowProperties.windowRect.height;
             expect(mainTop).assertEqual(subTop);
-            expect(Math.abs((mainLeft + mainWidth)-(subLeft + subWidth))).assertLessOrEqual(1);
+            expect(Math.abs((mainLeft + mainWidth) - (subLeft + subWidth))).assertLessOrEqual(1);
             await windowClass.destroyWindow();
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            if(err.code == 801){
+            if (err.code == 801) {
               done();
-            }else{
+            } else {
               expect().assertFail();
               done();
             }
@@ -2544,9 +2544,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        } else{
+        } else {
           expect().assertFail();
           done();
         }
@@ -2568,15 +2568,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorStart');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
-      windowClass.resizeAsync(1000,1000)
+      windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
       try {
-        if(isFreeWindowMode == true) {
+        if (isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.START).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
             console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
-            windowClass.moveWindowToAsync(windowRect.left+20,windowRect.top-20)
+            windowClass.moveWindowToAsync(windowRect.left + 20, windowRect.top - 20)
             await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
@@ -2591,15 +2591,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
             let subWidth = subWindowProperties.windowRect.width;
             let subHeight = subWindowProperties.windowRect.height;
             expect(mainLeft).assertEqual(subLeft);
-            expect(Math.abs((subTop+subHeight/2)-(mainTop+mainHeight/2))).assertLessOrEqual(1);
+            expect(Math.abs((subTop + subHeight / 2) - (mainTop + mainHeight / 2))).assertLessOrEqual(1);
             await windowClass.destroyWindow();
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            if(err.code == 801){
+            if (err.code == 801) {
               done();
-            }else{
+            } else {
               expect().assertFail();
               done();
             }
@@ -2611,9 +2611,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        } else{
+        } else {
           expect().assertFail();
           done();
         }
@@ -2635,15 +2635,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorCenter');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
-      windowClass.resizeAsync(1000,1000)
+      windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
       try {
-        if(isFreeWindowMode == true) {
+        if (isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.CENTER).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
             console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
-            windowClass.moveWindowToAsync(windowRect.left-20,windowRect.top+20)
+            windowClass.moveWindowToAsync(windowRect.left - 20, windowRect.top + 20)
             await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
@@ -2657,16 +2657,16 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
             let subTop = subWindowProperties.windowRect.top;
             let subWidth = subWindowProperties.windowRect.width;
             let subHeight = subWindowProperties.windowRect.height;
-            expect(Math.abs((mainLeft + mainWidth/2))-(subLeft+subWidth/2)).assertLessOrEqual(1)
-            expect(Math.abs((subTop+subHeight/2)-(mainTop+mainHeight/2))).assertLessOrEqual(1);
+            expect(Math.abs((mainLeft + mainWidth / 2)) - (subLeft + subWidth / 2)).assertLessOrEqual(1)
+            expect(Math.abs((subTop + subHeight / 2) - (mainTop + mainHeight / 2))).assertLessOrEqual(1);
             await windowClass.destroyWindow();
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            if(err.code == 801){
+            if (err.code == 801) {
               done();
-            }else{
+            } else {
               expect().assertFail();
               done();
             }
@@ -2678,9 +2678,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        } else{
+        } else {
           expect().assertFail();
           done();
         }
@@ -2702,15 +2702,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorEnd');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
-      windowClass.resizeAsync(1000,1000)
+      windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
       try {
-        if(isFreeWindowMode == true) {
+        if (isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.END).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
             console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
-            mainWindow.moveWindowToAsync(windowRect.left-20,windowRect.top+20)
+            mainWindow.moveWindowToAsync(windowRect.left - 20, windowRect.top + 20)
             await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
@@ -2724,16 +2724,16 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
             let subTop = subWindowProperties.windowRect.top;
             let subWidth = subWindowProperties.windowRect.width;
             let subHeight = subWindowProperties.windowRect.height;
-            expect(Math.abs((mainLeft + mainWidth)-(subLeft + subWidth))).assertLessOrEqual(1);
-            expect(Math.abs((mainTop + mainHeight/2)-(subTop+subHeight/2))).assertLessOrEqual(1);
+            expect(Math.abs((mainLeft + mainWidth) - (subLeft + subWidth))).assertLessOrEqual(1);
+            expect(Math.abs((mainTop + mainHeight / 2) - (subTop + subHeight / 2))).assertLessOrEqual(1);
             await windowClass.destroyWindow();
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            if(err.code == 801){
+            if (err.code == 801) {
               done();
-            }else{
+            } else {
               expect().assertFail();
               done();
             }
@@ -2745,9 +2745,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        } else{
+        } else {
           expect().assertFail();
           done();
         }
@@ -2769,15 +2769,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorBottomStart');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
-      windowClass.resizeAsync(1000,1000)
+      windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
       try {
-        if(isFreeWindowMode == true) {
+        if (isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.BOTTOM_START).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
             console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
-            mainWindow.moveWindowToAsync(windowRect.left-20,windowRect.top+20)
+            mainWindow.moveWindowToAsync(windowRect.left - 20, windowRect.top + 20)
             await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
@@ -2792,15 +2792,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
             let subWidth = subWindowProperties.windowRect.width;
             let subHeight = subWindowProperties.windowRect.height;
             expect(mainLeft).assertEqual(subLeft);
-            expect( Math.abs((mainHeight + mainTop)-(subHeight + subTop))).assertLessOrEqual(1);
+            expect(Math.abs((mainHeight + mainTop) - (subHeight + subTop))).assertLessOrEqual(1);
             await windowClass.destroyWindow();
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            if(err.code == 801){
+            if (err.code == 801) {
               done();
-            }else{
+            } else {
               expect().assertFail();
               done();
             }
@@ -2812,9 +2812,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        } else{
+        } else {
           expect().assertFail();
           done();
         }
@@ -2836,15 +2836,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorBottom');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
-      windowClass.resizeAsync(1000,1000)
+      windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
       try {
-        if(isFreeWindowMode == true) {
+        if (isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.BOTTOM).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
             console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
-            mainWindow.moveWindowToAsync(windowRect.left+20,windowRect.top-20)
+            mainWindow.moveWindowToAsync(windowRect.left + 20, windowRect.top - 20)
             await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
@@ -2858,16 +2858,16 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
             let subTop = subWindowProperties.windowRect.top;
             let subWidth = subWindowProperties.windowRect.width;
             let subHeight = subWindowProperties.windowRect.height;
-            expect(Math.abs((mainLeft + mainWidth/2)-(subLeft+subWidth/2))).assertLessOrEqual(1);
-            expect(Math.abs((mainHeight + mainTop)-(subHeight + subTop))).assertLessOrEqual(1);
+            expect(Math.abs((mainLeft + mainWidth / 2) - (subLeft + subWidth / 2))).assertLessOrEqual(1);
+            expect(Math.abs((mainHeight + mainTop) - (subHeight + subTop))).assertLessOrEqual(1);
             await windowClass.destroyWindow();
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            if(err.code == 801){
+            if (err.code == 801) {
               done();
-            }else{
+            } else {
               expect().assertFail();
               done();
             }
@@ -2879,9 +2879,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        } else{
+        } else {
           expect().assertFail();
           done();
         }
@@ -2903,15 +2903,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithAnchorBottomEnd');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
-      windowClass.resizeAsync(1000,1000)
+      windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
       try {
-        if(isFreeWindowMode == true) {
+        if (isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.BOTTOM_END).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
             console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
-            mainWindow.moveWindowToAsync(windowRect.left+20,windowRect.top-20)
+            mainWindow.moveWindowToAsync(windowRect.left + 20, windowRect.top - 20)
             await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
@@ -2925,16 +2925,16 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
             let subTop = subWindowProperties.windowRect.top;
             let subWidth = subWindowProperties.windowRect.width;
             let subHeight = subWindowProperties.windowRect.height;
-            expect(Math.abs((mainWidth + mainLeft)-(subWidth + subLeft))).assertLessOrEqual(1);
-            expect(Math.abs((mainHeight + mainTop)-(subHeight + subTop))).assertLessOrEqual(1);
+            expect(Math.abs((mainWidth + mainLeft) - (subWidth + subLeft))).assertLessOrEqual(1);
+            expect(Math.abs((mainHeight + mainTop) - (subHeight + subTop))).assertLessOrEqual(1);
             await windowClass.destroyWindow();
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            if(err.code == 801){
+            if (err.code == 801) {
               done();
-            }else{
+            } else {
               expect().assertFail();
               done();
             }
@@ -2946,9 +2946,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        } else{
+        } else {
           expect().assertFail();
           done();
         }
@@ -2970,15 +2970,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithOffsetXOffSetY');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
-      windowClass.resizeAsync(1000,1000)
+      windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
       try {
-        if(isFreeWindowMode == true) {
+        if (isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, 100, 100).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
             console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
-            mainWindow.moveWindowToAsync(windowRect.left+20,windowRect.top-20)
+            mainWindow.moveWindowToAsync(windowRect.left + 20, windowRect.top - 20)
             await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
@@ -2999,9 +2999,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            if(err.code == 801){
+            if (err.code == 801) {
               done();
-            }else{
+            } else {
               expect().assertFail();
               done();
             }
@@ -3013,9 +3013,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        } else{
+        } else {
           expect().assertFail();
           done();
         }
@@ -3037,15 +3037,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetY');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
-      windowClass.resizeAsync(1000,1000)
+      windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
       try {
-        if(isFreeWindowMode == true) {
+        if (isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, 100, -100).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
             console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
-            mainWindow.moveWindowToAsync(windowRect.left-20,windowRect.top+20)
+            mainWindow.moveWindowToAsync(windowRect.left - 20, windowRect.top + 20)
             await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
@@ -3066,9 +3066,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            if(err.code == 801){
+            if (err.code == 801) {
               done();
-            }else{
+            } else {
               expect().assertFail();
               done();
             }
@@ -3080,9 +3080,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        } else{
+        } else {
           expect().assertFail();
           done();
         }
@@ -3104,15 +3104,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetX');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
-      windowClass.resizeAsync(1000,1000)
+      windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
       try {
-        if(isFreeWindowMode == true) {
+        if (isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, -100, 100).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
             console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
-            mainWindow.moveWindowToAsync(windowRect.left-20,windowRect.top+20)
+            mainWindow.moveWindowToAsync(windowRect.left - 20, windowRect.top + 20)
             await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
@@ -3133,9 +3133,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            if(err.code == 801){
+            if (err.code == 801) {
               done();
-            }else{
+            } else {
               expect().assertFail();
               done();
             }
@@ -3147,9 +3147,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        } else{
+        } else {
           expect().assertFail();
           done();
         }
@@ -3171,15 +3171,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetXOffsetY');
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
-      windowClass.resizeAsync(1000,1000)
+      windowClass.resizeAsync(1000, 1000)
       await sleep(1000);
       try {
-        if(isFreeWindowMode == true) {
+        if (isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, -100, -100).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
             console.info(`${caseName} mainWindowProperties1: ${JSON.stringify(windowRect)}`);
-            mainWindow.moveWindowToAsync(windowRect.left-20,windowRect.top+20)
+            mainWindow.moveWindowToAsync(windowRect.left - 20, windowRect.top + 20)
             await sleep(1000)
             let mainWindowProperties = mainWindow.getWindowProperties();
             console.info(`${caseName} mainWindowProperties: ${JSON.stringify(mainWindowProperties)}`);
@@ -3200,9 +3200,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            if(err.code == 801){
+            if (err.code == 801) {
               done();
-            }else{
+            } else {
               expect().assertFail();
               done();
             }
@@ -3214,9 +3214,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await windowClass.destroyWindow();
-        if(err.code == 801){
+        if (err.code == 801) {
           done();
-        } else{
+        } else {
           expect().assertFail();
           done();
         }
@@ -3829,7 +3829,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowStageStart = await startAbility(caseName, context);
       let windowClass = windowStageStart.getMainWindowSync();
       try {
-        const maxInt = 2**31 -1;
+        const maxInt = 2 ** 31 - 1;
         await windowClass.moveWindowToGlobalDisplay(maxInt, maxInt);
         await sleep(200);
         await terminateAbility(caseName);
@@ -3925,10 +3925,10 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testClientToGlobalDisplaywithPositionOutofRange')
       await windowClass.setUIContent('testability/pages/First/index2');
       await windowClass.showWindow();
-      windowClass.moveWindowToAsync(50,50);
+      windowClass.moveWindowToAsync(50, 50);
       await sleep(1000);
       try {
-        const maxInt = 2**31 -1;
+        const maxInt = 2 ** 31 - 1;
         let position = windowClass.clientToGlobalDisplay(maxInt, maxInt);
         console.log(caseName + ' position: ' + JSON.stringify(position));
         await windowClass.destroyWindow();
@@ -4014,7 +4014,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       await windowClass.moveWindowTo(-50, -50);
       await sleep(200);
       try {
-        const maxInt = 2**31 -1;
+        const maxInt = 2 ** 31 - 1;
         windowClass.globalDisplayToClient(maxInt, maxInt);
         await windowClass.destroyWindow()
         expect().assertFail();
@@ -4047,7 +4047,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         let windowClass = windowStageStart.getMainWindowSync();
         let windowStatus = windowClass.getWindowStatus();
         console.log(caseName + ' windowStatus: ' + JSON.stringify(windowStatus));
-        if(windowStatus != window.WindowStatusType.FLOATING){
+        if (windowStatus != window.WindowStatusType.FLOATING) {
           await windowClass.recover();
         }
         await windowClass.setContentAspectRatio(1.0, false, true);
@@ -4103,7 +4103,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           console.log(caseName + ' drawableRect1: ' + JSON.stringify(drawableRect1));
           let height1 = Math.round(drawableRect1.width / 1.2);
           console.log(caseName + ' height1: ' + height1);
-          expect(Math.abs(height1-drawableRect1.height)).assertLessOrEqual(3);
+          expect(Math.abs(height1 - drawableRect1.height)).assertLessOrEqual(3);
           await windowClass.minimize();
           await sleep(200);
           await windowClass.setContentAspectRatio(1.5, true, false);
@@ -4116,20 +4116,20 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           console.log(caseName + ' drawableRect3: ' + JSON.stringify(drawableRect3));
           let height3 = Math.round(drawableRect3.width / 1.2);
           console.log(caseName + ' height3: ' + height3);
-          expect(Math.abs(height3-drawableRect3.height)).assertLessOrEqual(3);
+          expect(Math.abs(height3 - drawableRect3.height)).assertLessOrEqual(3);
           let driver = await Driver.create();
           await sleep(200)
           let windowPoint = await windowClass.getWindowProperties().windowRect
           console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint)}`)
-          await driver.mouseMoveTo({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top})
+          await driver.mouseMoveTo({ x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top })
           await sleep(2000)
-          await driver.mouseDrag({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top}, {x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100},2000)
+          await driver.mouseDrag({ x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top }, { x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100 }, 2000)
           await sleep(1000)
           let drawableRect4 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect4: ' + JSON.stringify(drawableRect4));
           let height4 = Math.round(drawableRect4.width / 1.5);
           console.log(caseName + ' height4: ' + height4);
-          expect(Math.abs(height4-drawableRect4.height)).assertLessOrEqual(3);
+          expect(Math.abs(height4 - drawableRect4.height)).assertLessOrEqual(3);
           await windowClass.resetAspectRatio();
           await sleep(200)
           await terminateAbility(caseName);
@@ -4166,16 +4166,16 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(200)
           let windowPoint = await windowClass.getWindowProperties().windowRect
           console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint)}`)
-          await driver.mouseMoveTo({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top})
+          await driver.mouseMoveTo({ x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top })
           await sleep(2000)
-          await driver.mouseDrag({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top},
-            {x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100},2000)
+          await driver.mouseDrag({ x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top },
+            { x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100 }, 2000)
           await sleep(1000)
           let drawableRect1 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect1: ' + JSON.stringify(drawableRect1));
           let height1 = Math.round(drawableRect1.width / 1.2);
           console.log(caseName + ' height1: ' + height1);
-          expect(Math.abs(height1-drawableRect1.height)).assertLessOrEqual(3);
+          expect(Math.abs(height1 - drawableRect1.height)).assertLessOrEqual(3);
           await windowClass.minimize();
           await sleep(200);
           await windowClass.setContentAspectRatio(1.5, true, false);
@@ -4188,20 +4188,20 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           console.log(caseName + ' drawableRect3: ' + JSON.stringify(drawableRect3));
           let height3 = Math.round(drawableRect3.width / 1.2);
           console.log(caseName + ' height3: ' + height3);
-          expect(Math.abs(height3-drawableRect3.height)).assertLessOrEqual(3);
+          expect(Math.abs(height3 - drawableRect3.height)).assertLessOrEqual(3);
           let windowPoint2 = await windowClass.getWindowProperties().windowRect
           console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint2)}`)
-          await driver.mouseMoveTo({x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top})
+          await driver.mouseMoveTo({ x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top })
           await sleep(2000)
-          await driver.mouseDrag({x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top},
-            {x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top + 100},2000)
+          await driver.mouseDrag({ x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top },
+            { x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top + 100 }, 2000)
           await sleep(1000)
 
           let drawableRect4 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect4: ' + JSON.stringify(drawableRect4));
           let height4 = Math.round(drawableRect4.width / 1.5);
           console.log(caseName + ' height4: ' + height4);
-          expect(Math.abs(height4-drawableRect4.height)).assertLessOrEqual(3);
+          expect(Math.abs(height4 - drawableRect4.height)).assertLessOrEqual(3);
           await windowClass.resetAspectRatio();
           await sleep(200)
           await terminateAbility(caseName);
@@ -4295,9 +4295,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         console.log(caseName + ' windowLimits: ' + JSON.stringify(windowLimits));
         let decorHeight = windowClass.getWindowDecorHeight();
         console.log(caseName + ' decorHeight: ' + JSON.stringify(decorHeight));
-        let minRatio = windowLimits.minWidth as number  / (windowLimits.maxHeight as number - decorHeight);
+        let minRatio = windowLimits.minWidth as number / (windowLimits.maxHeight as number - decorHeight);
         console.log(caseName + ' minRatio: ' + JSON.stringify(minRatio));
-        let maxRatio = windowLimits.maxWidth as number  / (windowLimits.minWidth as number - decorHeight);
+        let maxRatio = windowLimits.maxWidth as number / (windowLimits.minWidth as number - decorHeight);
         console.log(caseName + ' maxRatio: ' + JSON.stringify(maxRatio));
         await windowClass.setContentAspectRatio(maxRatio + 0.1);
         await windowClass.setContentAspectRatio(-1);
@@ -4621,10 +4621,10 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         console.log(`${caseName} windowLimits2: ${JSON.stringify(windowLimits2)}`);
 
         if (canIUseRes) {
-          expect(Math.abs(windowLimits2.minWidth as number -(windowLimits.minWidth as number + 10))).assertLessOrEqual(2);
-          expect(Math.abs(windowLimits2.minHeight as number -(windowLimits.minHeight as number + 10))).assertLessOrEqual(2);
-          expect(Math.abs(windowLimits2.maxWidth as number -(windowLimits.maxWidth as number - 10))).assertLessOrEqual(2);
-          expect(Math.abs(windowLimits2.maxHeight as number -(windowLimits.maxHeight as number - 10))).assertLessOrEqual(2);
+          expect(Math.abs(windowLimits2.minWidth as number - (windowLimits.minWidth as number + 10))).assertLessOrEqual(2);
+          expect(Math.abs(windowLimits2.minHeight as number - (windowLimits.minHeight as number + 10))).assertLessOrEqual(2);
+          expect(Math.abs(windowLimits2.maxWidth as number - (windowLimits.maxWidth as number - 10))).assertLessOrEqual(2);
+          expect(Math.abs(windowLimits2.maxHeight as number - (windowLimits.maxHeight as number - 10))).assertLessOrEqual(2);
         }
         await terminateAbility5(caseName)
         done()
@@ -4641,7 +4641,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       }
     });
 
- 
+
     /**
      * @tc.number     SUB_WMS_SYSTEM_PROPERTIES_WINDOW_SIZE_0100
      * @tc.name       testEnvSystemPropertiesWindowSizewithMainwindow
@@ -4672,7 +4672,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           done();
         } else {
           let windowLimits = windowClass.getWindowLimits()
-          console.log(caseName + ' windowLimits: ' +JSON.stringify(windowLimits));
+          console.log(caseName + ' windowLimits: ' + JSON.stringify(windowLimits));
           const callback = async (size: window.Size) => {
             console.log(caseName + ' callback size: ' + JSON.stringify(size));
             windowSizeWidth = size.width;
@@ -4680,7 +4680,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
 
           }
           windowClass.on('windowSizeChange', callback);
-          await windowClass.resize(windowLimits.minWidth as number +1000 , windowLimits.minHeight as number+1000);
+          await windowClass.resize(windowLimits.minWidth as number + 1000, windowLimits.minHeight as number + 1000);
           await sleep(1000)
 
           let btnClick = await driver.findComponent(ON.id('index3Btn'))
@@ -4691,8 +4691,8 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           let windowSizeVPHeight = AppStorage.get('windowSizeVP height') as number;
           let windowSizePXWidth = AppStorage.get('windowSizePX width') as number;
           let windowSizePXHeight = AppStorage.get('windowSizePX height') as number;
-          console.log(caseName + ' windowSizeVP width: ' + windowSizeVPWidth +',height , '+windowSizeVPHeight)
-          console.log(caseName + ' windowSizePX width:: ' + windowSizePXWidth+',height , '+windowSizePXHeight)
+          console.log(caseName + ' windowSizeVP width: ' + windowSizeVPWidth + ',height , ' + windowSizeVPHeight)
+          console.log(caseName + ' windowSizePX width:: ' + windowSizePXWidth + ',height , ' + windowSizePXHeight)
           let widthPx2Vp = px2vp(windowSizeWidth);
           let heightPx2Vp = px2vp(windowSizeheight);
           console.log(caseName + ' widthPx2Vp: ' + widthPx2Vp)
@@ -4740,7 +4740,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           done();
         } else {
           let windowLimits = windowClass.getWindowLimits()
-          console.log(caseName + ' windowLimits: ' +JSON.stringify(windowLimits));
+          console.log(caseName + ' windowLimits: ' + JSON.stringify(windowLimits));
           const callback = async (size: window.Size) => {
             console.log(caseName + ' callback size: ' + JSON.stringify(size));
             windowSizeWidth = size.width;
@@ -4748,7 +4748,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
 
           }
           windowClass.on('windowSizeChange', callback);
-          await windowClass.resize(windowLimits.minWidth as number +1000 , windowLimits.minHeight as number+1000);
+          await windowClass.resize(windowLimits.minWidth as number + 1000, windowLimits.minHeight as number + 1000);
           await sleep(1000)
 
           let btnClick = await driver.findComponent(ON.id('index3Btn'))
@@ -4759,8 +4759,8 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           let windowSizeVPHeight = AppStorage.get('windowSizeVP height') as number;
           let windowSizePXWidth = AppStorage.get('windowSizePX width') as number;
           let windowSizePXHeight = AppStorage.get('windowSizePX height') as number;
-          console.log(caseName + ' windowSizeVP width: ' + windowSizeVPWidth +',height , '+windowSizeVPHeight)
-          console.log(caseName + ' windowSizePX width:: ' + windowSizePXWidth+',height , '+windowSizePXHeight)
+          console.log(caseName + ' windowSizeVP width: ' + windowSizeVPWidth + ',height , ' + windowSizeVPHeight)
+          console.log(caseName + ' windowSizePX width:: ' + windowSizePXWidth + ',height , ' + windowSizePXHeight)
           let widthPx2Vp = px2vp(windowSizeWidth);
           let heightPx2Vp = px2vp(windowSizeheight);
           console.log(caseName + ' widthPx2Vp: ' + widthPx2Vp)
@@ -4780,22 +4780,22 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       }
     });
     /**
-     * @tc.name   testEnumCornerType
-     * @tc.number SUB_WMS_DMS_ENUM_CORNER_TYPE_0100
-     * @tc.desc   testEnumCornerType
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testEnumCornerType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testEnumCornerType ';
+      * @tc.name testSystemProperties
+      * @tc.number SUB_WMS_testSystemProperties_0100
+      * @tc.desc testSystemProperties
+      * @tc.type FUNCTION
+      * @tc.size MEDIUMTEST
+      * @tc.level LEVEL0
+      */
+    it('testSystemProperties', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testSystemProperties ';
       console.log(caseName + 'begin');
       try {
-        console.info(caseName + ' display.CornerType: ' + JSON.stringify(display.CornerType));
-        expect(display.CornerType.TOP_LEFT).assertEqual(0);
-        expect(display.CornerType.TOP_RIGHT).assertEqual(1);
-        expect(display.CornerType.BOTTOM_RIGHT).assertEqual(2);
-        expect(display.CornerType.BOTTOM_LEFT).assertEqual(3);
+        console.info(caseName + ' SystemProperties: ' + JSON.stringify(SystemProperties));
+        expect(SystemProperties.WINDOW_AVOID_AREA).assertEqual('system.window.avoidarea');
+        expect(SystemProperties.WINDOW_AVOID_AREA_PX).assertEqual('system.window.avoidarea.px');
+        expect(SystemProperties.WINDOW_SIZE).assertEqual('system.window.size');
+        expect(SystemProperties.WINDOW_SIZE_PX).assertEqual('system.window.size.px');
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
