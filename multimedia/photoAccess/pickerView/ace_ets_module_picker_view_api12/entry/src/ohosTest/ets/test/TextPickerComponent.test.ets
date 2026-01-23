@@ -3404,7 +3404,7 @@ export default function TextPicker() {
         })
       } catch(error) {
         console.error("testPicker67 error: " + JSON.stringify(error));
-        expect(error.code).assertEqual(23800151);
+        expect(error.code).assertEqual(23800301);
       }
       console.info("testPicker67 finish");
       done();
