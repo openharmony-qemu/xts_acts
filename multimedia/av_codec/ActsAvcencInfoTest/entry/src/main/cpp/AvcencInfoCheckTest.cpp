@@ -73,14 +73,12 @@ namespace OHOS {
             if (cencInfo == nullptr)
                 return -1;
             errNo = OH_AVCencInfo_SetAlgorithm(cencInfo, DRM_ALG_CENC_UNENCRYPTED);
-            if (errNo != AV_ERR_OK)
-            {
+            if (errNo != AV_ERR_OK) {
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
             errNo = OH_AVCencInfo_SetAlgorithm(cencInfo, DRM_ALG_CENC_AES_CTR);
-            if (errNo != AV_ERR_OK)
-            {
+            if (errNo != AV_ERR_OK) {
                 OH_AVCencInfo_Destroy(cencInfo);
                 return -1;
             }
@@ -468,7 +466,8 @@ namespace OHOS {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        static int InitCencInfoForSetAVBuffer(OH_AVCencInfo *cencInfo) {   
+        static int InitCencInfoForSetAVBuffer(OH_AVCencInfo *cencInfo)
+        {
             constexpr uint32_t ENCRYPTED_BLOCK_COUNT = 2;
             constexpr uint32_t SKIPPED_BLOCK_COUNT = 1;
             constexpr uint32_t FIRST_ENCRYPTED_OFFSET = 0x08;
