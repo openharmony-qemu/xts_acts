@@ -82,7 +82,6 @@ export default function nfcMifareClassicTagTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-
     it('SUB_COMMUNICATION_NFC_MifareClassicTag_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
         if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
           let sectorIndex: int = 1;
@@ -638,8 +637,8 @@ export default function nfcMifareClassicTagTest() {
     })
 
     /**
-     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1600
-     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1600
+     * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_1600
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_1600
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function

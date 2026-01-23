@@ -95,7 +95,6 @@ export default function nfcATagSessionTest() {
        * @tc.type Function
        * @tc.level Level 1
        */
-
       it('SUB_COMMUNICATION_NFC_TagSession_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
         if ((nfcAtag != null) && (nfcAtag != undefined)) {
           try {
@@ -161,7 +160,6 @@ export default function nfcATagSessionTest() {
        * @tc.type Function
        * @tc.level Level 1
        */
-
       it('SUB_COMMUNICATION_NFC_TagSession_static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
         if (nfcAtag != null && nfcAtag != undefined) {
           try {
@@ -190,7 +188,6 @@ export default function nfcATagSessionTest() {
        * @tc.type Function
        * @tc.level Level 1
        */
-
       it('SUB_COMMUNICATION_NFC_TagSession_static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
         if (nfcAtag != null && nfcAtag != undefined) {
           try {
