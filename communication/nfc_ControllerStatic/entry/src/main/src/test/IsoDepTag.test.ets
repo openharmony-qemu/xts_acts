@@ -97,7 +97,7 @@ export default function nfcIsoDepTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_IsoDepTag_static_0100
-     * @tc.name getHistoricalBytes
+     * @tc.name SUB_COMMUNICATION_NFC_IsoDepTag_static_0100
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -120,7 +120,7 @@ export default function nfcIsoDepTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_IsoDepTag_static_0200
-     * @tc.name getHiLayerResponse
+     * @tc.name SUB_COMMUNICATION_NFC_IsoDepTag_static_0200
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -143,7 +143,7 @@ export default function nfcIsoDepTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_IsoDepTag_static_0300
-     * @tc.name isExtendedApduSupported
+     * @tc.name SUB_COMMUNICATION_NFC_IsoDepTag_static_0300
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -183,7 +183,7 @@ export default function nfcIsoDepTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_IsoDepTag_static_0400
-     * @tc.name isExtendedApduSupported
+     * @tc.name SUB_COMMUNICATION_NFC_IsoDepTag_static_0400
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function

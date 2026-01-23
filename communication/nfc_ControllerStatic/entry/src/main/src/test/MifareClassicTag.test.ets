@@ -76,7 +76,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0100
-     * @tc.name authenticateSector
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0100
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -116,7 +116,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0200
-     * @tc.name authenticateSector
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0200
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -157,7 +157,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0300
-     * @tc.name readSingleBlock
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0300
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -194,7 +194,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0400
-     * @tc.name readSingleBlock
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0400
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -233,7 +233,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0500
-     * @tc.name writeSingleBlock
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0500
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -271,7 +271,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0600
-     * @tc.name writeSingleBlock
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0600
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -310,7 +310,7 @@ export default function nfcMifareClassicTagTest() {
 
       /**
        * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0700
-       * @tc.name incrementBlock
+       * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0700
        * @tc.desc Check whether the NFC function is enabled.
        * @tc.size since 7
        * @tc.type Function
@@ -348,7 +348,7 @@ export default function nfcMifareClassicTagTest() {
 
       /**
        * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0800
-       * @tc.name incrementBlock
+       * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0800
        * @tc.desc Check whether the NFC function is enabled.
        * @tc.size since 7
        * @tc.type Function
@@ -388,7 +388,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0900
-     * @tc.name decrementBlock
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_0900
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -426,7 +426,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_1000
-     * @tc.name decrementBlock
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_1000
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -466,7 +466,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_1100
-     * @tc.name transferToBlock
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_1100
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -503,7 +503,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_1200
-     * @tc.name transferToBlock
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_1200
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -541,7 +541,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_1300
-     * @tc.name restoreFromBlock
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_1300
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -578,7 +578,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_1400
-     * @tc.name restoreFromBlock
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_1400
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -616,7 +616,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_1500
-     * @tc.name getSectorCount
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_1500
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -639,7 +639,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1600
-     * @tc.name getBlockCountInSector
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1600
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -663,7 +663,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_1700
-     * @tc.name getType
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_1700
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -686,7 +686,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_1800
-     * @tc.name getTagSize
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_1800
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -709,7 +709,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_1900
-     * @tc.name isEmulatedTag
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_1900
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -732,7 +732,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_2000
-     * @tc.name getBlockIndex
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_2000
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -756,7 +756,7 @@ export default function nfcMifareClassicTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_2100
-     * @tc.name getSectorIndex
+     * @tc.name SUB_COMMUNICATION_NFC_MifareClassicTag_static_2100
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function

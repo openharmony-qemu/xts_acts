@@ -89,7 +89,7 @@ export default function nfcATagSessionTest() {
 
       /**
        * @tc.number SUB_COMMUNICATION_NFC_TagSession_static_0100
-       * @tc.name connect
+       * @tc.name SUB_COMMUNICATION_NFC_TagSession_static_0100
        * @tc.desc Check whether the NFC function is enabled.
        * @tc.size since 7
        * @tc.type Function
@@ -125,7 +125,7 @@ export default function nfcATagSessionTest() {
 
       /**
        * @tc.number SUB_COMMUNICATION_NFC_TagSession_static_0200
-       * @tc.name resetConnection
+       * @tc.name SUB_COMMUNICATION_NFC_TagSession_static_0200
        * @tc.desc Check whether the NFC function is enabled.
        * @tc.size since 7
        * @tc.type Function
@@ -155,7 +155,7 @@ export default function nfcATagSessionTest() {
 
       /**
        * @tc.number SUB_COMMUNICATION_NFC_TagSession_static_0300
-       * @tc.name isConnected
+       * @tc.name SUB_COMMUNICATION_NFC_TagSession_static_0300
        * @tc.desc Check whether the NFC function is enabled.
        * @tc.size since 7
        * @tc.type Function
@@ -184,7 +184,7 @@ export default function nfcATagSessionTest() {
 
       /**
        * @tc.number SUB_COMMUNICATION_NFC_TagSession_static_0400
-       * @tc.name setTimeout
+       * @tc.name SUB_COMMUNICATION_NFC_TagSession_static_0400
        * @tc.desc Check whether the NFC function is enabled.
        * @tc.size since 7
        * @tc.type Function
@@ -220,7 +220,7 @@ export default function nfcATagSessionTest() {
 
       /**
        * @tc.number SUB_COMMUNICATION_NFC_TagSession_static_0500
-       * @tc.name getTimeout
+       * @tc.name SUB_COMMUNICATION_NFC_TagSession_static_0500
        * @tc.desc Check whether the NFC function is enabled.
        * @tc.size since 7
        * @tc.type Function
@@ -250,7 +250,7 @@ export default function nfcATagSessionTest() {
 
       /**
        * @tc.number SUB_COMMUNICATION_NFC_TagSession_static_0600
-       * @tc.name transmit
+       * @tc.name SUB_COMMUNICATION_NFC_TagSession_static_0600
        * @tc.desc Check whether the NFC function is enabled.
        * @tc.size since 7
        * @tc.type Function
@@ -289,7 +289,7 @@ export default function nfcATagSessionTest() {
 
       /**
        * @tc.number SUB_COMMUNICATION_NFC_TagSession_static_0700
-       * @tc.name transmit
+       * @tc.name SUB_COMMUNICATION_NFC_TagSession_static_0700
        * @tc.desc Check whether the NFC function is enabled.
        * @tc.size since 7
        * @tc.type Function
@@ -330,7 +330,7 @@ export default function nfcATagSessionTest() {
 
       /**
        * @tc.number SUB_COMMUNICATION_NFC_TagSession_static_0800
-       * @tc.name getMaxTransmitSize
+       * @tc.name SUB_COMMUNICATION_NFC_TagSession_static_0800
        * @tc.desc Check whether the NFC function is enabled.
        * @tc.size since 7
        * @tc.type Function

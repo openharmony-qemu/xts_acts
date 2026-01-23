@@ -146,7 +146,7 @@ export default function TagABFVTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_TagABFV_static_0100
-         * @tc.name getSak
+         * @tc.name SUB_COMMUNICATION_NFC_TagABFV_static_0100
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function
@@ -170,7 +170,7 @@ export default function TagABFVTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_TagABFV_static_0200
-         * @tc.name getAtqa
+         * @tc.name SUB_COMMUNICATION_NFC_TagABFV_static_0200
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function
@@ -193,7 +193,7 @@ export default function TagABFVTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_TagABFV_static_0300
-         * @tc.name getRespAppData
+         * @tc.name SUB_COMMUNICATION_NFC_TagABFV_static_0300
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function
@@ -216,7 +216,7 @@ export default function TagABFVTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_TagABFV_static_0400
-         * @tc.name getRespProtocol
+         * @tc.name SUB_COMMUNICATION_NFC_TagABFV_static_0400
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function
@@ -239,7 +239,7 @@ export default function TagABFVTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_TagABFV_static_0500
-         * @tc.name getSystemCode
+         * @tc.name SUB_COMMUNICATION_NFC_TagABFV_static_0500
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function
@@ -262,7 +262,7 @@ export default function TagABFVTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_TagABFV_static_0600
-         * @tc.name getPmm
+         * @tc.name SUB_COMMUNICATION_NFC_TagABFV_static_0600
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function
@@ -285,7 +285,7 @@ export default function TagABFVTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_TagABFV_static_0700
-         * @tc.name getResponseFlags
+         * @tc.name SUB_COMMUNICATION_NFC_TagABFV_static_0700
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function
@@ -308,7 +308,7 @@ export default function TagABFVTest() {
 
         /**
          * @tc.number SUB_COMMUNICATION_NFC_TagABFV_static_0800
-         * @tc.name getDsfId
+         * @tc.name SUB_COMMUNICATION_NFC_TagABFV_static_0800
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7
          * @tc.type Function

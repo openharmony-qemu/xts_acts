@@ -149,7 +149,7 @@ export default function nfcTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0200
-     * @tc.name getNfcA
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0200
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -185,7 +185,7 @@ export default function nfcTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0300
-     * @tc.name getNfcB
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0300
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -221,7 +221,7 @@ export default function nfcTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0400
-     * @tc.name getNfcF
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0400
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -257,7 +257,7 @@ export default function nfcTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0500
-     * @tc.name getNfcV
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0500
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -293,7 +293,7 @@ export default function nfcTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0600
-     * @tc.name getIsoDep
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0600
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -331,7 +331,7 @@ export default function nfcTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0700
-     * @tc.name getNdef
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0700
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -372,7 +372,7 @@ export default function nfcTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0800
-     * @tc.name getMifareClassic
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0800
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -410,7 +410,7 @@ export default function nfcTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0900
-     * @tc.name getMifareUltralight
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0900
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -448,7 +448,7 @@ export default function nfcTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1000
-     * @tc.name getNdefFormatable
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1000
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -486,7 +486,7 @@ export default function nfcTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1100
-     * @tc.name getBarcodeTag
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1100
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -526,7 +526,7 @@ export default function nfcTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1200
-     * @tc.name getTagInfo
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1200
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -553,7 +553,7 @@ export default function nfcTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1300
-     * @tc.name registerForegroundDispatch
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1300
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -606,7 +606,7 @@ export default function nfcTagTest() {
 
     /**
      * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1400
-     * @tc.name onReaderMode
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1400
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -659,7 +659,7 @@ export default function nfcTagTest() {
 
     /**
        * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1500
-       * @tc.name Test getBarcode
+       * @tc.name SUB_COMMUNICATION_NFC_Tag_static_1500
        * @tc.desc This interface getBarcode
        * @tc.size since 16
        * @tc.type Function
