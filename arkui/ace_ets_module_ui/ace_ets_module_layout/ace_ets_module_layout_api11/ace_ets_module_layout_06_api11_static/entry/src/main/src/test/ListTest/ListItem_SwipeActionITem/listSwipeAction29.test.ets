@@ -165,13 +165,13 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0310', Level.LEVEL0,
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0310R] current component obj is: " + JSON.parseJsonElement(strJsonR).getElement('$attrs').getString('width'));
 
       
-      driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(5))).toInt(),
+      await driver.swipe(
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(120))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(5000);
       
       let textSwipeOffset = inspector.getInspectorByKey('swipe29Offset');
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0310 json is ' + JSON.parseJsonElement(textSwipeOffset).getElement('$attrs').getString('content'));
@@ -181,14 +181,20 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0310', Level.LEVEL0,
       
       expect(Math.abs(Math.round(Number(JSON.parseJsonElement(textSwipeOffset).getElement('$attrs').getString('content')))-Math.round(UIContext.resolveUIContext()!.px2vp(swipe_width)))<=1).assertTrue();
 
-      await CommonFunc.sleep(1000);
+      // reset
+      await driver.swipe(
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
+      );
+      await CommonFunc.sleep(5000);
       let buttonReset2 = await driver.findComponent(ON.id('btreset29'));
       await driver.delayMs(300);
       buttonReset2!.click();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(4000);
 
-      
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(5))).toInt(),
@@ -199,13 +205,13 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0310', Level.LEVEL0,
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0310 json is ' + JSON.parseJsonElement(textSwipeOffset2).getElement('$attrs').getString('content'));
       expect(Math.abs(Math.round(Number(JSON.parseJsonElement(textSwipeOffset2).getElement('$attrs').getString('content')))-(-Math.round(UIContext.resolveUIContext()!.px2vp(swipe_width))))<=1).assertTrue();
       
-      driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(230))).toInt(),
+      await driver.swipe(
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(20))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(2))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(5000);
       done();
     });
 
