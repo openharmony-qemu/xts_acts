@@ -3858,11 +3858,10 @@ export default function abilityTest() {
     })
 
 
-
     /**
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2800
      * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2800
-     * @tc.desc   SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2800
+     * @tc.desc   test too long singleLyricText(length =40959 which is the permitted max length)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -3871,7 +3870,7 @@ export default function abilityTest() {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
         assetId: '121278',
-        singleLyricText:str.substring(0,40959)
+        singleLyricText:str.substring(1,40960)
       };
       await session.setAVMetadata(metadata).then(() => {
         console.info('TestLog: Set singleLyricText successfully');
@@ -3881,6 +3880,8 @@ export default function abilityTest() {
       });
 
       await controller.getAVMetadata().then((data:avSession.AVMetadata) => {
+        console.info(`TestLog: data.singleLyricText is ${data.singleLyricText}`);
+        console.info(`TestLog: input singleLyricText is ${metadata.singleLyricText}`);
         expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
       }).catch((err:BusinessError) => {
         console.error(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
@@ -3890,11 +3891,10 @@ export default function abilityTest() {
     })
 
 
-
     /**
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2900
      * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2900
-     * @tc.desc   SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2900
+     * @tc.desc   test too long singleLyricText(length =40960 while the permitted max length is 40959)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -3914,7 +3914,9 @@ export default function abilityTest() {
       });
 
       await controller.getAVMetadata().then((data:avSession.AVMetadata) => {
-        expect(data.singleLyricText).not().assertEqual(metadata.singleLyricText);
+        console.info(`TestLog: data.singleLyricText is ${data.singleLyricText}`);
+        console.info(`TestLog: input singleLyricText is ${metadata.singleLyricText}`);
+        expect(data.singleLyricText).assertEqual(undefined);
       }).catch((err:BusinessError) => {
         console.error(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
