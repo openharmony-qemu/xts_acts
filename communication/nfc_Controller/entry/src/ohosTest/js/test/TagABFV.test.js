@@ -1038,7 +1038,7 @@ export default function nfcTagABFVTest() {
                 expect(tagInfo != null).assertTrue();
             }
             let discTech = [1, 2, 4];
-            let interval 200;
+            let interval = 200;
 
             try {
                 tag.on('readerModeWithInterval', elementName, discTech, recvNfcTagFunc, interval);
