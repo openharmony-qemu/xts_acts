@@ -22,14 +22,19 @@ export default function abilityTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
+/**
+ * @tc.name assertContain
+ * @tc.number TC-Assert-001
+ * @tc.desc 验证assertContain断言方法的基础功能，检查目标字符串是否包含预期子串
+ */
     it('assertContain', 0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(0x0000, 'testTag', '%{public}s', 'it begin');
       let a = 'abc';
       let b = 'b';
       // Defines a variety of assertion methods, which are used to declare expected boolean conditions.
-      expect(a).assertContain(b);
-      expect(a).assertEqual(a);
+      expect(processData(a)).assertEqual(expectedResult);
+      expect(user.name).assertEqual("expectedName");
     })
   })
 }

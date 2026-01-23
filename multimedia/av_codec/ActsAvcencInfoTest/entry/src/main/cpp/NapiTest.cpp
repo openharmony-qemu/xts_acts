@@ -65,12 +65,10 @@ napi_value NapiTry(napi_env env, Func &&func)
     {
         return func();
     }
-    catch (const std::exception &e)
-    {
+    catch (const std::exception &e){
         napi_throw_error(env, nullptr, e.what());
     }
-    catch (...)
-    {
+    catch (...){
         napi_throw_error(env, nullptr, "Unknown native error");
     }
     return nullptr;
@@ -119,17 +117,12 @@ static const CencTestFunc CENCINFO_SETAVBUFFER_FUNCS[] = {
 #define DEFINE_CENCINFO_NAPI(funcName, funcTable)              \
     napi_value funcName(napi_env env, napi_callback_info info) \
     {                                                          \
-        return NapiTry(env, [&]() -> napi_value {                          \
-        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG); \
-        int result = RESULT_ERROR;                                     \
-        CencInfoCapiTestCase testObj;                                  \
-        constexpr size_t FUNC_COUNT =                                  \
-            sizeof(funcTable) / sizeof(funcTable[0]);                 \
-        if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) { \
-            result = (testObj.*funcTable[caseNum])();                 \
-        }                                                              \
-        napi_value resultValue;                                        \
-        napi_create_int32(env, result, &resultValue);                 \
+        return NapiTry(env, [&]() -> napi_value {              \
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG); int result = RESULT_ERROR;
+            CencInfoCapiTestCase testObj; \
+        constexpr size_t FUNC_COUNT = sizeof(funcTable) / sizeof(funcTable[0]); \
+        if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) { result = (testObj.*funcTable[caseNum])(); } \
+        napi_value resultValue; napi_create_int32(env, result, &resultValue); \
         return resultValue; });          \
     }
 DEFINE_CENCINFO_NAPI(CencInfo_Create, CENCINFO_CREATE_FUNCS)
@@ -148,7 +141,8 @@ napi_value Init(napi_env env, napi_value exports)
         {"cencInfoDestroy", nullptr, CencInfo_Destroy, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"cencInfoSetAlgorithm", nullptr, CencInfo_SetAlgorithm, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"cencInfoSetKeyIdAndIv", nullptr, CencInfo_SetKeyIdAndIv, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"cencInfoSetSubsampleInfo", nullptr, CencInfo_SetSubsampleInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"cencInfoSetSubsampleInfo", nullptr, CencInfo_SetSubsampleInfo, nullptr, nullptr, 
+        nullptr, napi_default, nullptr},
         {"cencInfoSetMode", nullptr, CencInfo_SetMode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"cencInfoSetAVBuffer", nullptr, CencInfo_SetAVBuffer, nullptr, nullptr, nullptr, napi_default, nullptr},
     };

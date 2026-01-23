@@ -2,8 +2,7 @@
 # You can include the obfuscation configuration files in the current module's build-profile.json5.
 #
 # For more details, see
-#   https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/source-obfuscation-V5
-
+# For source code obfuscation guide, refer to the official open-source documentation.
 # Obfuscation options:
 # -disable-obfuscation: disable all obfuscations
 # -enable-property-obfuscation: obfuscate the property names

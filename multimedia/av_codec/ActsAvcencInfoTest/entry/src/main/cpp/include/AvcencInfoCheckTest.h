@@ -12,8 +12,7 @@ namespace OHOS
 {
     namespace CencInfoUT
     {
-        class CencInfoCapiTestCase
-        {
+        class CencInfoCapiTestCase{
         public:
             CencInfoCapiTestCase() = default;
             ~CencInfoCapiTestCase() = default;
