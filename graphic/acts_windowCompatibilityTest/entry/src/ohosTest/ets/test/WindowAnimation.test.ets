@@ -377,7 +377,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
           }
         });
       } catch (err) {
-        if (isFreeWindowMode) {
+        if (err.code != 801) {
           console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(1300002);
         } else {
@@ -570,7 +570,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
         console.error(msgStr + `success obtain the window transition animation.`);
         expect().assertFail();
       } catch (err) {
-        if (isFreeWindowMode) {
+        if (err.code != 801) {
           console.error(msgStr + `Failed to obtain the window transition animation. Cause code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(1300002);
         } else {
