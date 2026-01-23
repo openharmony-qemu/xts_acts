@@ -24,12 +24,29 @@ import wifiMg from '@ohos.wifiManager';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 // @ts-nocheck
-
 const driver = Driver.create();
-
 export default function webViewSetAudioMuted() {
   describe('ActsAceWebDevWebViewSetAudioMutedTest',  () => {
     beforeAll(async  (done: Function) =>{
+      let options: router.RouterOptions = {
+        url: 'testability/pages/webViewSetAudioMuted',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get webViewSetAudioMuted state success " + JSON.stringify(pages));
+        if (!("webViewSetAudioMuted" == pages.name)) {
+          console.info("get webViewSetAudioMuted state success " + JSON.stringify(pages.name));
+          let result = await router.push(options);
+          console.info("push webViewSetAudioMuted page success " + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error("push webViewSetAudioMuted page error: " + err);
+      }
+      await waitForComponents('webViewSetAudioMuted');
+      done()
+    });
+    beforeEach(async  (done: Function) =>{
       if(!wifiMg.isWifiActive()){
         console.info("======> wifi_test/enable wifi:" + wifiMg.enableWifi());
         await Utils.sleep(5000);
@@ -62,25 +79,6 @@ export default function webViewSetAudioMuted() {
         throw (err as Error);
         done();
       }
-      let options: router.RouterOptions = {
-        url: 'testability/pages/webViewSetAudioMuted',
-      }
-      try {
-        router.clear();
-        let pages = router.getState();
-        console.info("get webViewSetAudioMuted state success " + JSON.stringify(pages));
-        if (!("webViewSetAudioMuted" == pages.name)) {
-          console.info("get webViewSetAudioMuted state success " + JSON.stringify(pages.name));
-          let result = await router.push(options);
-          console.info("push webViewSetAudioMuted page success " + JSON.stringify(result));
-        }
-      } catch (err) {
-        console.error("push webViewSetAudioMuted page error: " + err);
-      }
-      await waitForComponents('webViewSetAudioMuted');
-      done()
-    });
-    beforeEach(async  (done: Function) =>{
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
