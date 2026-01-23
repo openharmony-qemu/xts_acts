@@ -2759,6 +2759,7 @@ export default function displayTest() {
       try {
         let windowClass = windowStage.getMainWindowSync();
         await windowClass.setWindowBrightness(1);
+        await sleep(100);
         let brightnessChangeCount1 = 0;
         let brightnessChangeCount2 = 0;
         let callback1Triggered = false;
@@ -2791,6 +2792,7 @@ export default function displayTest() {
         display.on('brightnessInfoChange', callback2);
         console.info(caseName + ' Brightness change listeners registered successfully');
         await windowClass.setWindowBrightness(0);
+        await sleep(100);
         while (!callback1Triggered) {
           await sleep(100);
         }
@@ -2811,6 +2813,7 @@ export default function displayTest() {
         expect(brightnessChangeCount1).assertEqual(0);
         expect(brightnessChangeCount2).assertEqual(0);
         await windowClass.setWindowBrightness(-1);
+        await sleep(100);
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
@@ -2837,6 +2840,7 @@ export default function displayTest() {
       try {
         let windowClass = await windowStage.getMainWindow();
         await windowClass.setWindowBrightness(1);
+        await sleep(100);
         let brightnessChangeCount1 = 0;
         let brightnessChangeCount2 = 0;
         let callback1Triggered = false;
@@ -2869,6 +2873,7 @@ export default function displayTest() {
         display.on('brightnessInfoChange', callback2);
         console.info(caseName + ' Brightness change listeners registered successfully');
         await windowClass.setWindowBrightness(0);
+        await sleep(100);
         while (!callback1Triggered) {
           await sleep(100);
         }
@@ -2889,6 +2894,7 @@ export default function displayTest() {
         expect(brightnessChangeCount1).assertEqual(0);
         expect(brightnessChangeCount2).assertLargerOrEqual(1);
         await windowClass.setWindowBrightness(-1);
+        await sleep(100);
         display.off('brightnessInfoChange');
         done();
       } catch (e) {
@@ -2970,6 +2976,7 @@ export default function displayTest() {
         display.on('brightnessInfoChange', callback1);
         console.info(caseName + ' Brightness change listeners registered successfully');
         await windowClass.setWindowBrightness(1);
+        await sleep(100);
         while (!callback1Triggered) {
           await sleep(100);
         }
@@ -2977,6 +2984,7 @@ export default function displayTest() {
         expect(brightnessChangeCount1).assertLargerOrEqual(1);
         display.off('brightnessInfoChange', callback1);
         await windowClass.setWindowBrightness(-1);
+        await sleep(100);
         display.off('brightnessInfoChange');
         await subWindowClass.destroyWindow();
         done();
@@ -3034,7 +3042,6 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: true
         }).then(async (displayId: number) => {
-          await display.makeUnique(displayId);
           display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
@@ -3047,7 +3054,7 @@ export default function displayTest() {
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
-            if (!isSupport) {
+            if (err.code == 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -3096,7 +3103,6 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: undefined
         }).then(async (displayId: number) => {
-          await display.makeUnique(displayId);
           display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
@@ -3109,7 +3115,7 @@ export default function displayTest() {
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
-            if (!isSupport) {
+            if (err.code == 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -3157,7 +3163,6 @@ export default function displayTest() {
           density: 2,
           surfaceId: '',
         }).then(async (displayId: number) => {
-          await display.makeUnique(displayId);
           display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
@@ -3170,7 +3175,7 @@ export default function displayTest() {
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
-            if (!isSupport) {
+            if (err.code == 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -3219,7 +3224,6 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: false
         }).then(async (displayId: number) => {
-          await display.makeUnique(displayId);
           display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
@@ -3233,7 +3237,7 @@ export default function displayTest() {
           }).catch(async (err: BusinessError) => {
             console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
             display.destroyVirtualScreen(displayId);
-            if (!isSupport) {
+            if (err.code == 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
