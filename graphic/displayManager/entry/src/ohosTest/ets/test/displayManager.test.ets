@@ -3294,6 +3294,7 @@ export default function displayTest() {
         console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
         console.info(caseName + ' roundedCorner length: ' + JSON.stringify(roundedCorner.length));
         if (isPCStatus == '') {
+          expect(roundedCorner.length).assertLarger(0)
           expect(roundedCorner[0].type).assertEqual(0)
           expect(roundedCorner[0].position.x).assertEqual(roundedCorner[0].radius)
           expect(roundedCorner[0].position.y).assertEqual(roundedCorner[0].radius)
