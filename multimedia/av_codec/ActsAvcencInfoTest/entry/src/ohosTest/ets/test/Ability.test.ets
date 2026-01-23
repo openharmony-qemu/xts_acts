@@ -1,5 +1,5 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
@@ -27,7 +27,7 @@ export default function abilityTest() {
  * @tc.number TC-Assert-001
  * @tc.desc 验证assertContain断言方法的基础功能，检查目标字符串是否包含预期子串
  */
-    it('assertContain', 0, () => {
+    it('assertContain', Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(0x0000, 'testTag', '%{public}s', 'it begin');
       let a = 'abc';

@@ -43,7 +43,7 @@ int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int
 
     int32_t result = defaultValue;
     status = napi_get_value_int32(env, args[index], &result);
-    if(status != napi_ok)
+    if (status != napi_ok)
     {
         napi_throw_type_error(env, nullptr, "Value is not int32");
         return defaultValue;
