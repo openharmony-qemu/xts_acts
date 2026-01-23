@@ -39,7 +39,7 @@ export default function getListItemGroupRect5() {
 
 
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getListItemGroupRect5 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });

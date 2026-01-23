@@ -149,7 +149,7 @@ export default function alignSelfTest() {
   ]
 
   describe('AlignSelfTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("alignSelfTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.nowear.test.static", "EntryAbility")
     });

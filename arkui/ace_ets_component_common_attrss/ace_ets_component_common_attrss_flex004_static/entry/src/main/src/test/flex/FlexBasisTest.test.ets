@@ -99,7 +99,7 @@ export default function flexBasisTest() {
   }]
 
   describe('FlexBasisTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FlexBasisTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.004.test.static", "EntryAbility")
     });

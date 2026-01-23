@@ -51,7 +51,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function visibilityJsunit() {
   describe('visibilityTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("visibilityJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")

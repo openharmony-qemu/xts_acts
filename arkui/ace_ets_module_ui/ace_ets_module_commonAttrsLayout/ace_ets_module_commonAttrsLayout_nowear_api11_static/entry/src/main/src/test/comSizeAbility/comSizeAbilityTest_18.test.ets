@@ -38,16 +38,11 @@ let testAbilityContext: common.UIAbilityContext;
 export default function comSizeAbilityTest_18() {
   describe('comSizeAbilityTest_18', () => {
 
-
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
-
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("comSizeAbilityTest_18 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
     });
+
     beforeEach(() => {
       console.info("comSizeAbilityTest_18 beforeEach start")
       let options: router.RouterOptions = {
@@ -84,6 +79,8 @@ export default function comSizeAbilityTest_18() {
      */
 it('comSizeAbilityTestJsunit_static_47', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_47 START')
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("TimePicker_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("TimePicker_Father");
@@ -148,6 +145,8 @@ it('comSizeAbilityTestJsunit_static_47', Level.LEVEL0, async (done: () => void):
      */
 it('comSizeAbilityTestJsunit_static_48', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_48 START')
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Toggle_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Toggle_Father");
@@ -208,6 +207,8 @@ it('comSizeAbilityTestJsunit_static_48', Level.LEVEL0, async (done: () => void):
      */
 it('comSizeAbilityTestJsunit_static_49', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_49 START')
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Video_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Video_Father");
@@ -268,6 +269,8 @@ it('comSizeAbilityTestJsunit_static_49', Level.LEVEL0, async (done: () => void):
      */
 it('comSizeAbilityTestJsunit_static_50', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_50 START')
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("WaterFlow_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("WaterFlow_Father");

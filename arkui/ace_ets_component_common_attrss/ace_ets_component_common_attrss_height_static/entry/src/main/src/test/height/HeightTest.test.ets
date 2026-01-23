@@ -184,7 +184,7 @@ export default function heightTest() {
    * Create test suite.
    */
   describe('HeightTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log('test heightTest is start')
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });

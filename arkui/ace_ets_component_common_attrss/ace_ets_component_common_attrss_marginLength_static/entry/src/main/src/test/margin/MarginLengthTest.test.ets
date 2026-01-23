@@ -170,7 +170,7 @@ export default function marginLengthTest() {
   ]
 
   describe('MarginLengthTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("marginLengthTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });

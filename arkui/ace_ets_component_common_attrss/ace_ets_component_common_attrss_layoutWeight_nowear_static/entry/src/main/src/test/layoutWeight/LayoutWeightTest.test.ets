@@ -87,7 +87,7 @@ export default function layoutWeightTest() {
   }]
 
   describe('LayoutWeightTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("layoutWeightTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.layoutWeight.nowear.test.static", "EntryAbility")
     });

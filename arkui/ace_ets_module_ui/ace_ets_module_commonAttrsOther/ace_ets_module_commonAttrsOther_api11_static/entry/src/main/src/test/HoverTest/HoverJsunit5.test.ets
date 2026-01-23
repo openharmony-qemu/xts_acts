@@ -50,7 +50,7 @@ export default function HoverJsunit5() {
 
 
   describe('HoverJsunit5', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("HoverJsunit5 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
     });

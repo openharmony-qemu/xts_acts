@@ -138,7 +138,7 @@ export default function PaddingContainerLengthTest() {
    * Create test suite.
    */
   describe('PaddingContainerLengthTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });
 

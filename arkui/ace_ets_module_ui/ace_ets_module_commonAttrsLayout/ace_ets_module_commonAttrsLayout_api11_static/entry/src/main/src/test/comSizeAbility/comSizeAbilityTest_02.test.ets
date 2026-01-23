@@ -40,7 +40,7 @@ export default function comSizeAbilityTest_02() {
 
     console.info("comSizeAbilityTest_02 beforeAll start");
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("comSizeAbilityTest_01 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });

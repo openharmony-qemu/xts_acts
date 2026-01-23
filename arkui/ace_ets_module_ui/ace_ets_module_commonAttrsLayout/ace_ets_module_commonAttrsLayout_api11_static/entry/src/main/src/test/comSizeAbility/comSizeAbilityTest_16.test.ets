@@ -37,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function comSizeAbilityTest_16() {
   describe('comSizeAbilityTest_16', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("comSizeAbilityTest_16 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });

@@ -151,7 +151,7 @@ export default function widthTest() {
    * Create test suite.
    */
   describe('WidthTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("UseSizeTypeTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });

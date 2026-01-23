@@ -133,7 +133,7 @@ export default function alignSelfTest() {
   }]
 
   describe('AlignSelfTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignSelfTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.006.test.static", "EntryAbility")
     });

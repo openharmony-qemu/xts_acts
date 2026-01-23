@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function sliderInteractionModeTest() {
   describe('sliderInteractionModeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
     });

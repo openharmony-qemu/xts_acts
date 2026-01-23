@@ -116,7 +116,7 @@ export default function heightTest() {
    * Create test suite.
    */
   describe('HeightTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.height.nowear.test.static", "EntryAbility")
     });
     //Generate test cases (it) through a loop based on the support view * test values.

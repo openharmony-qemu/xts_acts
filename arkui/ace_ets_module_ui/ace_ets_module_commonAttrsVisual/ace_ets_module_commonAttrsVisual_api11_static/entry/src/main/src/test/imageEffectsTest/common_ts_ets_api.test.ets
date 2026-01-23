@@ -49,7 +49,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function common_ts_ets_apiStaticClearJsunit() {
   describe('common_ts_ets_apiStaticClearTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("common_ts_ets_apiStaticClearJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
     });

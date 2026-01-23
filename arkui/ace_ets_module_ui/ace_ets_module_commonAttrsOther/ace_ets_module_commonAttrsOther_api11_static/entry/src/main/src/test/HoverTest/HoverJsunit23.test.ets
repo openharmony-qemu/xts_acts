@@ -48,7 +48,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function HoverJsunit23() {
 
   describe('HoverJsunit23', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("HoverJsunit5 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
     });

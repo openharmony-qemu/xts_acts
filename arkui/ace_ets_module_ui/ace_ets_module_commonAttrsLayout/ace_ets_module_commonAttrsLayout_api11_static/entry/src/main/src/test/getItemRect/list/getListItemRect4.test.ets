@@ -37,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function getListItemRect4() {
   describe('getListItemRect4', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getListItemRect4 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });

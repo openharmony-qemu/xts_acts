@@ -48,7 +48,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function commonColorModeJsunit() {
   describe('commonColorModeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("commonColorModeJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")

@@ -51,7 +51,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function OverlayUIJsunit() {
   describe('OverlayUIJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("overLayJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
