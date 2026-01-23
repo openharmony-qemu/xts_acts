@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,6 +18,7 @@ import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry
 import commonEvent from "@ohos.commonEvent"
 import CommonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
+import { Driver, ON } from '@ohos.UiTest';
 
 let subscriberInfo_MainAbility2: CommonEventManager.CommonEventSubscribeInfo = {
     events: ["GetCurrentTopAbilityB"],
@@ -26,7 +27,17 @@ const START_ABILITY_TIMEOUT = 4000;
 
 export default function abilityTest() {
     describe('ActsParticleAbilityTest', () => {
-
+        beforeAll(async () => {
+            let driver = Driver.create();	
+            try {
+                let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+                if (allowed) {
+                    await allowed.click();
+                }
+            } catch (err) {
+                console.error('findComponent failed: ' + JSON.stringify(err));
+            }
+        })
         /**
          * @tc.name   ACTS_GetCurrentTopAbility_0100
          * @tc.number ACTS_GetCurrentTopAbility_0100

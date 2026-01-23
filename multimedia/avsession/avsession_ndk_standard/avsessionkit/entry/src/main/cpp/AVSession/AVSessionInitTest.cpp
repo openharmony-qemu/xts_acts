@@ -62,6 +62,8 @@ static void InitPush1(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("AVMetadataBuilderSetSkipIntervalsInvalidParam", AVMetadataBuilderSetSkipIntervalsInvalidParam));
     desc.push_back(XL("AVMetadataBuilderSetDisplayTagsSuccess", AVMetadataBuilderSetDisplayTagsSuccess));
     desc.push_back(XL("AVMetadataBuilderSetDisplayTagsInvalidParam", AVMetadataBuilderSetDisplayTagsInvalidParam));
+    desc.push_back(XL("AVMetadataBuilderSetFilterSuccess", AVMetadataBuilderSetFilterSuccess));
+    desc.push_back(XL("AVMetadataBuilderSetFilterInvalidParam", AVMetadataBuilderSetFilterInvalidParam));
     desc.push_back(XL("AVMetadataBuilderGenerateAVMetadataSuccess", AVMetadataBuilderGenerateAVMetadataSuccess));
     desc.push_back(
         XL("AVMetadataBuilderGenerateAVMetadataInvalidParam", AVMetadataBuilderGenerateAVMetadataInvalidParam));
@@ -70,6 +72,7 @@ static void InitPush1(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("AVMetadataAVSessionType", AVMetadataAVSessionType));
     desc.push_back(XL("AVMetadataAVSetPlaybackState", AVMetadataAVSetPlaybackState));
     desc.push_back(XL("AVMetadataAVSessionLoopMode", AVMetadataAVSessionLoopMode));
+    desc.push_back(XL("AVMetadataAVSessionRemoteCastEnabled", AVMetadataAVSessionRemoteCastEnabled));
     desc.push_back(XL("AVMetadataAVSessionControlCommand", AVMetadataAVSessionControlCommand));
     desc.push_back(XL("AVSessionCallbackResultFailure", AVSessionCallbackResultFailure));
 }
@@ -96,6 +99,8 @@ static void InitPush2(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("AVSessionSetFavoriteInvalidParam", AVSessionSetFavoriteInvalidParam));
     desc.push_back(XL("AVSessionSetLoopModeSuccess", AVSessionSetLoopModeSuccess));
     desc.push_back(XL("AVSessionSetLoopModeInvalidParam", AVSessionSetLoopModeInvalidParam));
+    desc.push_back(XL("AVSessionSetRemoteCastEnabledSuccess", AVSessionSetRemoteCastEnabledSuccess));
+    desc.push_back(XL("AVSessionSetRemoteCastEnabledInvalidParam", AVSessionSetRemoteCastEnabledInvalidParam));
     desc.push_back(XL("AVSessionRegisterCommandCallbackSuccess", AVSessionRegisterCommandCallbackSuccess));
     desc.push_back(XL("AVSessionRegisterCommandCallbackInvalidParam", AVSessionRegisterCommandCallbackInvalidParam));
     desc.push_back(XL("AVSessionUnregisterCommandCallbackSuccess", AVSessionUnregisterCommandCallbackSuccess));
@@ -121,14 +126,22 @@ static void InitPush3(std::vector<napi_property_descriptor> &desc)
         XL("AVSessionUnregisterSetLoopModeCallbackInvalidParam", AVSessionUnregisterSetLoopModeCallbackInvalidParam));
     desc.push_back(
         XL("AVSessionRegisterToggleFavoriteCallbackSuccess", AVSessionRegisterToggleFavoriteCallbackSuccess));
-    desc.push_back(
-        XL("AVSessionRegisterToggleFavoriteCallbackInvalidParam", AVSessionRegisterToggleFavoriteCallbackInvalidParam));
-    desc.push_back(
-        XL("AVSessionUnregisterToggleFavoriteCallbackSuccess", AVSessionUnregisterToggleFavoriteCallbackSuccess));
+    desc.push_back(XL("AVSessionRegisterToggleFavoriteCallbackInvalidParam",
+        AVSessionRegisterToggleFavoriteCallbackInvalidParam));
+    desc.push_back(XL("AVSessionUnregisterToggleFavoriteCallbackSuccess",
+        AVSessionUnregisterToggleFavoriteCallbackSuccess));
     desc.push_back(XL("AVSessionUnregisterToggleFavoriteCallbackInvalidParam",
                       AVSessionUnregisterToggleFavoriteCallbackInvalidParam));
     desc.push_back(
         XL("AVSessionUnregisterCommandCallbackCommandInvalid", AVSessionUnregisterCommandCallbackCommandInvalid));
+    desc.push_back(
+        XL("AVSessionRegisterOutputDeviceChangeCallbackSuccess", AVSessionRegisterOutputDeviceChangeCallbackSuccess));
+    desc.push_back(XL("AVSessionRegisterOutputDeviceChangeCallbackInvalidParam",
+                      AVSessionRegisterOutputDeviceChangeCallbackInvalidParam));
+    desc.push_back(XL("AVSessionUnregisterOutputDeviceChangeCallbackSuccess",
+        AVSessionUnregisterOutputDeviceChangeCallbackSuccess));
+    desc.push_back(XL("AVSessionUnregisterOutputDeviceChangeCallbackInvalidParam",
+        AVSessionUnregisterOutputDeviceChangeCallbackInvalidParam));
     desc.push_back(
         XL("AVSessionRegisterCommandCallbackCommandInvalid", AVSessionRegisterCommandCallbackCommandInvalid));
     desc.push_back(XL("AVSessionRegisterForwardCallbackSuccess", AVSessionRegisterForwardCallbackSuccess));
@@ -142,6 +155,190 @@ static void InitPush3(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("AVSessionCreateSuccess", AVSessionCreateSuccess));
     desc.push_back(XL("AVSessionCreateInvalidParam", AVSessionCreateInvalidParam));
     desc.push_back(XL("AVSessionDestroySuccess", AVSessionDestroySuccess));
+    desc.push_back(XL("AVSessionAcquireSessionSuccess", AVSessionAcquireSessionSuccess));
+    desc.push_back(XL("AVSessionAcquireSessionInvalidParam", AVSessionAcquireSessionInvalidParam));
+    desc.push_back(XL("AVSessionCreateAVCastControllerInvalidParam", AVSessionCreateAVCastControllerInvalidParam));
+    desc.push_back(XL("AVSessionStopCastingSuccess", AVSessionStopCastingSuccess));
+    desc.push_back(XL("AVSessionStopCastingInvalidParam", AVSessionStopCastingInvalidParam));
+    desc.push_back(XL("AVSessionAcquireOutputDeviceSuccess", AVSessionAcquireOutputDeviceSuccess));
+    desc.push_back(XL("AVSessionAcquireOutputDeviceInvalidParam", AVSessionAcquireOutputDeviceInvalidParam));
+    desc.push_back(XL("AVSessionReleaseOutputDeviceSuccess", AVSessionReleaseOutputDeviceSuccess));
+    desc.push_back(XL("AVSessionReleaseOutputDeviceInvalidParam", AVSessionReleaseOutputDeviceInvalidParam));
+    desc.push_back(XL("AVSessionGetAVCastCategorySuccess", AVSessionGetAVCastCategorySuccess));
+    desc.push_back(XL("AVSessionGetAVCastCategoryInvalidParam", AVSessionGetAVCastCategoryInvalidParam));
+}
+
+static void InitPush4(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("AVSessionGetDeviceIdSuccess", AVSessionGetDeviceIdSuccess));
+    desc.push_back(XL("AVSessionGetDeviceIdInvalidParam", AVSessionGetDeviceIdInvalidParam));
+    desc.push_back(XL("AVSessionGetDeviceNameSuccess", AVSessionGetDeviceNameSuccess));
+    desc.push_back(XL("AVSessionGetDeviceNameInvalidParam", AVSessionGetDeviceNameInvalidParam));
+    desc.push_back(XL("AVSessionGetDeviceTypeSuccess", AVSessionGetDeviceTypeSuccess));
+    desc.push_back(XL("AVSessionGetDeviceTypeInvalidParam", AVSessionGetDeviceTypeInvalidParam));
+    desc.push_back(XL("AVSessionGetSupportedProtocolsSuccess", AVSessionGetSupportedProtocolsSuccess));
+    desc.push_back(XL("AVSessionGetSupportedProtocolsInvalidParam", AVSessionGetSupportedProtocolsInvalidParam));
+    desc.push_back(XL("AVSessionPlaybackFilterSTATE", AVSessionPlaybackFilterSTATE));
+    desc.push_back(XL("AVSessionPlaybackFilterPOSITION", AVSessionPlaybackFilterPOSITION));
+    desc.push_back(XL("AVSessionPlaybackFilterSPEED", AVSessionPlaybackFilterSPEED));
+    desc.push_back(XL("AVSessionPlaybackFilterVOLUME", AVSessionPlaybackFilterVOLUME));
+    desc.push_back(XL("AVSessionOutputDeviceInfo", AVSessionOutputDeviceInfo));
+    desc.push_back(XL("AVMediaDescriptionBuilderCreateSuccess", AVMediaDescriptionBuilderCreateSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderCreateInvalidParam", AVMediaDescriptionBuilderCreateInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderDestroySuccess", AVMediaDescriptionBuilderDestroySuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderDestroyInvalidParam", AVMediaDescriptionBuilderDestroyInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetAssetIdSuccess", AVMediaDescriptionBuilderSetAssetIdSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetAssetIdInvalidParam",
+        AVMediaDescriptionBuilderSetAssetIdInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetTitleSuccess", AVMediaDescriptionBuilderSetTitleSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetTitleInvalidParam", AVMediaDescriptionBuilderSetTitleInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetSubTitleSuccess", AVMediaDescriptionBuilderSetSubTitleSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetSubTitleInvalidParam",
+        AVMediaDescriptionBuilderSetSubTitleInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetArtistSuccess", AVMediaDescriptionBuilderSetArtistSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetArtistInvalidParam",
+        AVMediaDescriptionBuilderSetArtistInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetAlbumCoverUriSuccess",
+        AVMediaDescriptionBuilderSetAlbumCoverUriSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam",
+        AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeSuccess", AVMediaDescriptionBuilderSetMediaTypeSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeInvalidParam",
+        AVMediaDescriptionBuilderSetMediaTypeInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetLyricContentSuccess",
+        AVMediaDescriptionBuilderSetLyricContentSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetLyricContentInvalidParam",
+        AVMediaDescriptionBuilderSetLyricContentInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetDurationSuccess", AVMediaDescriptionBuilderSetDurationSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetDurationInvalidParam",
+        AVMediaDescriptionBuilderSetDurationInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaUriSuccess", AVMediaDescriptionBuilderSetMediaUriSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaUriInvalidParam",
+        AVMediaDescriptionBuilderSetMediaUriInvalidParam));
+}
+
+static void InitPush5(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("AVMediaDescriptionBuilderSetStartPositionSuccess",
+        AVMediaDescriptionBuilderSetStartPositionSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetStartPositionInvalidParam",
+        AVMediaDescriptionBuilderSetStartPositionInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaSizeSuccess", AVMediaDescriptionBuilderSetMediaSizeSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaSizeInvalidParam",
+        AVMediaDescriptionBuilderSetMediaSizeInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetAlbumTitleSuccess", AVMediaDescriptionBuilderSetAlbumTitleSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetAlbumTitleInvalidParam",
+        AVMediaDescriptionBuilderSetAlbumTitleInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetAppNameSuccess", AVMediaDescriptionBuilderSetAppNameSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetAppNameInvalidParam",
+        AVMediaDescriptionBuilderSetAppNameInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderGenerateAVMediaDescriptionSuccess",
+        AVMediaDescriptionBuilderGenerateAVMediaDescriptionSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderGenerateAVMediaDescriptionInvalidParam",
+        AVMediaDescriptionBuilderGenerateAVMediaDescriptionInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetAssetIdSuccess", AVMediaDescriptionGetAssetIdSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetAssetIdInvalidParam",
+        AVMediaDescriptionGetAssetIdInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetTitleSuccess", AVMediaDescriptionGetTitleSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetTitleInvalidParam",
+        AVMediaDescriptionGetTitleInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetSubTitleSuccess", AVMediaDescriptionGetSubTitleSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetSubTitleInvalidParam",
+        AVMediaDescriptionGetSubTitleInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetArtistSuccess", AVMediaDescriptionGetArtistSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetArtistInvalidParam", AVMediaDescriptionGetArtistInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetAlbumCoverUriSuccess", AVMediaDescriptionGetAlbumCoverUriSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetAlbumCoverUriInvalidParam",
+        AVMediaDescriptionGetAlbumCoverUriInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetMediaTypeSuccess", AVMediaDescriptionGetMediaTypeSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetMediaTypeInvalidParam", AVMediaDescriptionGetMediaTypeInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetLyricContentSuccess", AVMediaDescriptionGetLyricContentSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetLyricContentInvalidParam",
+        AVMediaDescriptionGetLyricContentInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetDurationSuccess", AVMediaDescriptionGetDurationSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetDurationInvalidParam", AVMediaDescriptionGetDurationInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetMediaUriSuccess", AVMediaDescriptionGetMediaUriSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetMediaUriInvalidParam", AVMediaDescriptionGetMediaUriInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetStartPositionSuccess", AVMediaDescriptionGetStartPositionSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetStartPositionInvalidParam",
+        AVMediaDescriptionGetStartPositionInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetMediaSizeSuccess", AVMediaDescriptionGetMediaSizeSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetMediaSizeInvalidParam", AVMediaDescriptionGetMediaSizeInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetAlbumTitleSuccess", AVMediaDescriptionGetAlbumTitleSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetAlbumTitleInvalidParam", AVMediaDescriptionGetAlbumTitleInvalidParam));
+}
+
+static void InitPush6(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("AVMediaDescriptionGetAppNameSuccess", AVMediaDescriptionGetAppNameSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetAppNameInvalidParam", AVMediaDescriptionGetAppNameInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionDestroySuccess", AVMediaDescriptionDestroySuccess));
+    desc.push_back(XL("AVMediaDescriptionDestroyInvalidParam", AVMediaDescriptionDestroyInvalidParam));
+    desc.push_back(XL("AVCastControllerDestroyInvalidParam", AVCastControllerDestroyInvalidParam));
+    desc.push_back(XL("AVCastControllerGetPlaybackStateInvalidParam", AVCastControllerGetPlaybackStateInvalidParam));
+    desc.push_back(XL("AVCastControllerRegisterPlaybackStateChangedCallbackInvalidParam",
+        AVCastControllerRegisterPlaybackStateChangedCallbackInvalidParam));
+    desc.push_back(XL("AVCastControllerUnregisterPlaybackStateChangedCallbackInvalidParam",
+        AVCastControllerUnregisterPlaybackStateChangedCallbackInvalidParam));
+    desc.push_back(XL("AVCastControllerRegisterMediaItemChangedCallbackInvalidParam",
+        AVCastControllerRegisterMediaItemChangedCallbackInvalidParam));
+    desc.push_back(XL("AVCastControllerUnregisterMediaItemChangedCallbackInvalidParam",
+        AVCastControllerUnregisterMediaItemChangedCallbackInvalidParam));
+    desc.push_back(XL("AVCastControllerRegisterPlayNextCallbackInvalidParam",
+        AVCastControllerRegisterPlayNextCallbackInvalidParam));
+    desc.push_back(XL("AVCastControllerUnregisterPlayNextCallbackInvalidParam",
+        AVCastControllerUnregisterPlayNextCallbackInvalidParam));
+    desc.push_back(XL("AVCastControllerRegisterPlayPreviousCallbackInvalidParam",
+        AVCastControllerRegisterPlayPreviousCallbackInvalidParam));
+    desc.push_back(XL("AVCastControllerUnregisterPlayPreviousCallbackInvalidParam",
+        AVCastControllerUnregisterPlayPreviousCallbackInvalidParam));
+    desc.push_back(XL("AVCastControllerRegisterSeekDoneCallbackInvalidParam",
+        AVCastControllerRegisterSeekDoneCallbackInvalidParam));
+    desc.push_back(XL("AVCastControllerUnregisterSeekDoneCallbackInvalidParam",
+        AVCastControllerUnregisterSeekDoneCallbackInvalidParam));
+    desc.push_back(XL("AVCastControllerRegisterEndOfStreamCallbackInvalidParam",
+        AVCastControllerRegisterEndOfStreamCallbackInvalidParam));
+    desc.push_back(XL("AVCastControllerUnregisterEndOfStreamCallbackInvalidParam",
+        AVCastControllerUnregisterEndOfStreamCallbackInvalidParam));
+    desc.push_back(XL("AVCastControllerRegisterErrorCallbackInvalidParam",
+        AVCastControllerRegisterErrorCallbackInvalidParam));
+    desc.push_back(XL("AVCastControllerUnregisterErrorCallbackInvalidParam",
+        AVCastControllerUnregisterErrorCallbackInvalidParam));
+    desc.push_back(XL("AVCastControllerSendCommonCommandInvalidParam", AVCastControllerSendCommonCommandInvalidParam));
+    desc.push_back(XL("AVCastControllerSendSeekCommandInvalidParam", AVCastControllerSendSeekCommandInvalidParam));
+    desc.push_back(XL("AVCastControllerSendFastForwardCommandInvalidParam",
+        AVCastControllerSendFastForwardCommandInvalidParam));
+    desc.push_back(XL("AVCastControllerSendRewindCommandInvalidParam", AVCastControllerSendRewindCommandInvalidParam));
+    desc.push_back(XL("AVCastControllerSendSetSpeedCommandInvalidParam",
+        AVCastControllerSendSetSpeedCommandInvalidParam));
+    desc.push_back(XL("AVCastControllerSendVolumeCommandInvalidParam", AVCastControllerSendVolumeCommandInvalidParam));
+    desc.push_back(XL("AVCastControllerPrepareInvalidParam", AVCastControllerPrepareInvalidParam));
+    desc.push_back(XL("AVCastControllerStartInvalidParam", AVCastControllerStartInvalidParam));
+}
+
+static void InitPush7(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("AVSessionGetPlaybackStateInvalidParam", AVSessionGetPlaybackStateInvalidParam));
+    desc.push_back(XL("AVSessionGetPlaybackPositionInvalidParam", AVSessionGetPlaybackPositionInvalidParam));
+    desc.push_back(XL("AVSessionGetPlaybackSpeedInvalidParam", AVSessionGetPlaybackSpeedInvalidParam));
+    desc.push_back(XL("AVSessionGetPlaybackVolumeInvalidParam", AVSessionGetPlaybackVolumeInvalidParam));
+    desc.push_back(XL("AVCastControlCommandTypePlay", AVCastControlCommandTypePlay));
+    desc.push_back(XL("AVCastControlCommandTypePause", AVCastControlCommandTypePause));
+    desc.push_back(XL("AVCastControlCommandTypeStop", AVCastControlCommandTypeStop));
+    desc.push_back(XL("AVCastControlCommandTypePlayNext", AVCastControlCommandTypePlayNext));
+    desc.push_back(XL("AVCastControlCommandTypePlayPrevious", AVCastControlCommandTypePlayPrevious));
+    desc.push_back(XL("AVCastControlCommandTypeFastForward", AVCastControlCommandTypeFastForward));
+    desc.push_back(XL("AVCastControlCommandTypeRewind", AVCastControlCommandTypeRewind));
+    desc.push_back(XL("AVCastControlCommandTypeSeek", AVCastControlCommandTypeSeek));
+    desc.push_back(XL("AVCastControlCommandTypeSetVolume", AVCastControlCommandTypeSetVolume));
+    desc.push_back(XL("AVCastControlCommandTypeSetSpeed", AVCastControlCommandTypeSetSpeed));
+    desc.push_back(XL("AVSessionPlaybackSpeed0_75X", AVSessionPlaybackSpeed0_75X));
+    desc.push_back(XL("AVSessionPlaybackSpeed1_00X", AVSessionPlaybackSpeed1_00X));
+    desc.push_back(XL("AVSessionPlaybackSpeed1_25X", AVSessionPlaybackSpeed1_25X));
+    desc.push_back(XL("AVSessionPlaybackSpeed1_75X", AVSessionPlaybackSpeed1_75X));
+    desc.push_back(XL("AVSessionPlaybackSpeed2_00X", AVSessionPlaybackSpeed2_00X));
+    desc.push_back(XL("AVSessionPlaybackSpeed0_50X", AVSessionPlaybackSpeed0_50X));
+    desc.push_back(XL("AVSessionPlaybackSpeed1_50X", AVSessionPlaybackSpeed1_50X));
 }
 
 static napi_value Init(napi_env env, napi_value exports)
@@ -150,6 +347,10 @@ static napi_value Init(napi_env env, napi_value exports)
     InitPush1(desc);
     InitPush2(desc);
     InitPush3(desc);
+    InitPush4(desc);
+    InitPush5(desc);
+    InitPush6(desc);
+    InitPush7(desc);
     napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }

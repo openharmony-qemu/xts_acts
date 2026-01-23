@@ -55,7 +55,7 @@ export default function taskPoolAsyncRunnerExecute() {
       // This API supports only one parameter: preset action function.
     })
     afterEach(async () => {
-      await sleep(200);
+      await sleep(50);
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
@@ -578,15 +578,21 @@ export default function taskPoolAsyncRunnerExecute() {
         let count2: number = 0;
         let count3: number = 0;
         let count4: number = 0;
+        let lock1 = new Mutex();
+        let lock2 = new Mutex();
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1.0);
           let task2: taskpool.Task = new taskpool.Task(printArgs2, 1.0, 50.0);
           task.onStartExecution(() => {
+            lock1.lock();
             count++;
+            lock1.unlock();
           });
           task2.onStartExecution(() => {
+            lock2.lock();
             count2++;
+            lock2.unlock();
           });
           runner.execute(task).then(() => {
             count3++;
@@ -623,6 +629,8 @@ export default function taskPoolAsyncRunnerExecute() {
         let count2: number = 0;
         let count3: number = 0;
         let count4: number = 0;
+        let lock1 = new Mutex();
+        let lock2 = new Mutex();
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1.0);
@@ -632,7 +640,9 @@ export default function taskPoolAsyncRunnerExecute() {
               let s: string[] = [];
               s[0].split('')[1].toString();
             } catch (e) {
+              lock1.lock();
               count++;
+              lock1.unlock();
             }
           });
           task2.onStartExecution(() => {
@@ -640,7 +650,9 @@ export default function taskPoolAsyncRunnerExecute() {
               let s: string[] = [];
               s[0].split('')[1].toString();
             } catch (e) {
+              lock2.lock();
               count2++;
+              lock2.unlock();
             }
           });
           runner.execute(task).then(() => {
@@ -675,15 +687,21 @@ export default function taskPoolAsyncRunnerExecute() {
       async (done: () => void): Promise<void> => { //async (Done: Function) => {
         let count: number = 0;
         let count2: number = 0;
+        let lock1 = new Mutex();
+        let lock2 = new Mutex();
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs3, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs4, 1, 50);
           task.onExecutionFailed(() => {
+            lock1.lock();
             count++;
+            lock1.unlock();
           });
           task2.onExecutionFailed((e: Error) => {
+            lock2.lock();
             count2++;
+            lock2.unlock();
           })
           runner.execute(task).then(() => {
             console.info('taskpool: execute task success');
@@ -712,6 +730,8 @@ export default function taskPoolAsyncRunnerExecute() {
       async (done: () => void): Promise<void> => { //async (Done: Function) => {
         let count: number = 0;
         let count2: number = 0;
+        let lock1 = new Mutex();
+        let lock2 = new Mutex();
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           const task: taskpool.Task = new taskpool.Task(printArgs3, 1.0);
@@ -721,7 +741,9 @@ export default function taskPoolAsyncRunnerExecute() {
               let s: string[] = [];
               s[0].split('')[1].toString();
             } catch (e) {
+              lock1.lock();
               count++;
+              lock1.unlock();
             }
           });
           task2.onExecutionFailed(() => {
@@ -729,7 +751,9 @@ export default function taskPoolAsyncRunnerExecute() {
               let s: string[] = [];
               s[0].split('')[1].toString();
             } catch (e) {
+              lock2.lock();
               count2++;
+              lock2.unlock();
             }
           });
           try {
@@ -761,15 +785,21 @@ export default function taskPoolAsyncRunnerExecute() {
       async (done: () => void): Promise<void> => { //async (Done: Function) => {
         let count: number = 0;
         let count2: number = 0;
+        let lock1 = new Mutex();
+        let lock2 = new Mutex();
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1.0);
           let task2: taskpool.Task = new taskpool.Task(printArgs2, 1.0, 50.0);
           task.onExecutionSucceeded(() => {
+            lock1.lock();
             count++;
+            lock1.unlock();
           });
           task2.onExecutionSucceeded(() => {
+            lock2.lock();
             count2++;
+            lock2.unlock();
           })
           runner.execute(task).then(() => {
             count++;
@@ -800,6 +830,8 @@ export default function taskPoolAsyncRunnerExecute() {
       async (done: () => void): Promise<void> => { //async (Done: Function) => {
         let count: number = 0;
         let count2: number = 0;
+        let lock1 = new Mutex();
+        let lock2 = new Mutex();
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1.0);
@@ -809,7 +841,9 @@ export default function taskPoolAsyncRunnerExecute() {
               let s: string[] = [];
               s[0].split('')[1].toString();
             } catch (e) {
+              lock1.lock();
               count++;
+              lock1.unlock();
             }
           })
           task2.onExecutionSucceeded(() => {
@@ -817,7 +851,9 @@ export default function taskPoolAsyncRunnerExecute() {
               let s: string[] = [];
               s[0].split('')[1].toString();
             } catch (e) {
+              lock2.lock();
               count2++;
+              lock2.unlock();
             }
           })
           // runner.execute(task).then(() => {

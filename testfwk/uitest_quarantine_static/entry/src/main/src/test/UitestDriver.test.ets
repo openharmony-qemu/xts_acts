@@ -22,21 +22,25 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 const waitUiReadyMs: int = 1000;
 
-async function maxUiWindow(driver: Driver, window: UiWindow | null) {
+async function maxUiWindow(driver: Driver, window: UiWindow | null): Promise<boolean> {
   if (window != null) {
     try {
       let windowMode = await window.getWindowMode();
-      if (windowMode != WindowMode.FLOATING) {
-        await window.resume();
+      if (windowMode == WindowMode.FULLSCREEN) {
+        console.log(`${tag}, maxUiWindow FULLSCREEN`);
+        return true;
       }
       await window.maximize();
+      await driver.delayMs(3000);
+      return true;
     } catch (error) {
       console.log(`${tag}, maxUiWindow error,${JSON.stringify(error)}`);
+      return false;
     }
   } else {
     console.log(`${tag}, maxUiWindow null`);
+    return false;
   }
-  await driver.delayMs(3000);
 }
 
 export default function uitestDriverTest() {

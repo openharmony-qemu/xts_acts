@@ -74,7 +74,7 @@ struct WebComponent {
                   Utils.emitEvent(true, 20241133)
                   break;
                 }
-                if (this.text == 'focu') {
+                if (this.text == 'focus') {
                   Utils.emitEvent(true, 20241133)
                 }
                 this.blurMode = BlurOnKeyboardHideMode.BLUR;
@@ -88,7 +88,7 @@ struct WebComponent {
                   if ((this.userAgentPC).includes("PC")) {
                     Utils.emitEvent(true, 20241134)
                   } else {
-                    if (this.text == 'blu') {
+                    if (this.text == 'blur') {
                       Utils.emitEvent(true, 20241134)
                     } else {
                       Utils.emitEvent(false, 20241134)

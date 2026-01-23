@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -124,7 +125,7 @@ it('testGridSettings002_static', Level.LEVEL0, async (done: () => void): Promise
           data: {
             "span": 1,
             "offset": 2
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 9,
@@ -169,7 +170,7 @@ it('testGridSettings003_static', Level.LEVEL0, async (done: () => void): Promise
           data: {
             "span": 0x80000000,
             "offset": 0x80000000
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 9,
@@ -213,7 +214,7 @@ it('testGridSettings004_static', Level.LEVEL0, async (done: () => void): Promise
           data: {
             "span": 0x7FFFFFFF,
             "offset": 0x7FFFFFFF
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 9,
@@ -257,7 +258,7 @@ it('testGridSettings005_static', Level.LEVEL0, async (done: () => void): Promise
           data: {
             "span": 'error',
             "offset": 'error'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 9,
@@ -319,7 +320,7 @@ it('testGridSettings007_static', Level.LEVEL0, async (done: () => void): Promise
         let eventData: emitter.EventData = {
           data: {
             "gridOffset": 1
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 10,
@@ -353,7 +354,7 @@ it('testGridSettings008_static', Level.LEVEL0, async (done: () => void): Promise
         let eventData: emitter.EventData = {
           data: {
             "gridOffset": 0x80000000
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 10,
@@ -387,7 +388,7 @@ it('testGridSettings009_static', Level.LEVEL0, async (done: () => void): Promise
         let eventData: emitter.EventData = {
           data: {
             "gridOffset": 0x7FFFFFFF
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 10,
@@ -421,7 +422,7 @@ it('testGridSettings010_static', Level.LEVEL0, async (done: () => void): Promise
         let eventData: emitter.EventData = {
           data: {
             "gridOffset": 'error'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 10,
@@ -472,7 +473,7 @@ it('testGridSettings012_static', Level.LEVEL0, async (done: () => void): Promise
         let eventData: emitter.EventData = {
           data: {
             "gridSpan": 2
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 11,
@@ -505,7 +506,7 @@ it('testGridSettings013_static', Level.LEVEL0, async (done: () => void): Promise
         let eventData: emitter.EventData = {
           data: {
             "gridSpan": 0x80000000
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 11,
@@ -538,7 +539,7 @@ it('testGridSettings014_static', Level.LEVEL0, async (done: () => void): Promise
         let eventData: emitter.EventData = {
           data: {
             "gridSpan": 0x7FFFFFFF
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 11,
@@ -571,7 +572,7 @@ it('testGridSettings015_static', Level.LEVEL0, async (done: () => void): Promise
         let eventData: emitter.EventData = {
           data: {
             "gridSpan": 'error'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 11,

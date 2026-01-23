@@ -25,7 +25,7 @@ import {
   PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { MultiNavigation, MultiNavPathStack, SplitPolicy } from './mainpage/MultiNavigation';
+import {MultiNavigation,MultiNavPathStack, SplitPolicy}  from './mainpage/MultiNavigation';;
 
 @Entry
 @Component
@@ -35,8 +35,8 @@ struct MultiNavigation26 {
   @State text2:string = ''
 
   aboutToAppear(): void {
-//this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
-    // this.pageStack.setKeepBottomPage(true);
+    this.pageStack.pushPath(new NavPathInfo('PageHome1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
+    this.pageStack.setKeepBottomPage(true);
   }
 
   @Builder
@@ -59,22 +59,21 @@ struct MultiNavigation26 {
       MultiNavigation({
         navDestination: this.PageMap,
         multiStack: this.pageStack,
-        // onHomeShowInTop: (name) => {
-        // }
+        onHomeShowInTop: (name: string) => {}
       })
-        // .width(350).height(250).border({width:1})
+        .width(350).height(250).border({width:1})
 
 
       Button('pushPathByName PageDetail1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushPathByName('PageDetail1',"paramTest", false, SplitPolicy.DETAIL_PAGE);
+        this.pageStack.pushPathByName('PageDetail1',"paramTest", false, SplitPolicy.DETAIL_PAGE);
       }).id('MultiNavigation26_btn1')
 
       Button('pushPathByName PageFull1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushPathByName( 'PageFull1',"paramTest", false, SplitPolicy.FULL_PAGE);
+       this.pageStack.pushPathByName('PageFull1',"paramTest", false, SplitPolicy.FULL_PAGE);
       }).id('MultiNavigation26_btn2')
 
       Button('pushPathByName PageHome1').onClick((event: ClickEvent) => {
-        // this.pageStack.pushPathByName( 'PageHome1', "paramTest", false, SplitPolicy.HOME_PAGE);
+        this.pageStack.pushPathByName('PageHome1', "paramTest", false, SplitPolicy.HOME_PAGE);
       }).id('MultiNavigation26_btn3')
 
       Button('getAllPathName').onClick((e: ClickEvent) => {

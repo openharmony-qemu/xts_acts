@@ -256,6 +256,7 @@ export default class Utils {
           return;
         }
         await buttonComponent.click();
+        console.log(componentId + ' click==>');
       } catch (e) {
         const error = e as BusinessError;
         console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);

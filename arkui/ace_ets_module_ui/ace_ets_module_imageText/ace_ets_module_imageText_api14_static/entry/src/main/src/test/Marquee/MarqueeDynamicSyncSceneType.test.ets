@@ -77,7 +77,7 @@ it('MarqueeDynamicSyncSceneTest_static_0010', Level.LEVEL0, async (done: () => v
       await CommonFunc.sleep(500);
       let Button = await driver.findComponent(ON.type('Button'));
       if (Button != null) {
-        Button?.click();
+        await (Button?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
         console.info("[MarqueeDynamicSyncSceneTest_0010] MarqueeDynamicSyncSceneType:"
           + String(AppStorage.get<string>('MarqueeDynamicSyncSceneType')));

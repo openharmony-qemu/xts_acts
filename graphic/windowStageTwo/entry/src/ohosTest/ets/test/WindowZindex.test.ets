@@ -29,6 +29,7 @@ export default function windowZindexTest() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
+    let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -48,6 +49,7 @@ export default function windowZindexTest() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      driver = Driver.create();
     });
     beforeEach(() => {
     });
@@ -354,7 +356,6 @@ export default function windowZindexTest() {
       console.log(msgStr + 'begin');
       let minWidth = 0;
       let minHeight = 0;
-      let driver: Driver = Driver.create();
       let windowClass = windowStage.getMainWindowSync();
       let storage: LocalStorage = new LocalStorage();
       try {
@@ -446,7 +447,6 @@ export default function windowZindexTest() {
       console.log(msgStr + 'begin');
       let minWidth = 0;
       let minHeight = 0;
-      let driver: Driver = Driver.create();
       let windowClass = windowStage.getMainWindowSync();
       let storage: LocalStorage = new LocalStorage();
       try {
@@ -537,7 +537,6 @@ export default function windowZindexTest() {
       let caseName: string = 'test_setRaiseByClickEnabled_Two_subWindow_RaiseBy_raiseToAppTop';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      let driver: Driver = Driver.create();
       let windowClass = windowStage.getMainWindowSync();
       let storage: LocalStorage = new LocalStorage();
       try {
@@ -974,7 +973,6 @@ export default function windowZindexTest() {
       console.log(caseName + 'begin');
       if(isFreeWindowMode == true){
         let mainWindow = windowStage.getMainWindowSync();
-      let driver = Driver.create();
       try{
         let options : window.SubWindowOptions = {
           title: 'test_shiftAppWindowPointerEvent_subWindow_to_mainwindow',
@@ -1046,7 +1044,6 @@ export default function windowZindexTest() {
       console.log(caseName + 'begin');
       if(isFreeWindowMode == true){
         let mainWindow = windowStage.getMainWindowSync();
-      let driver = Driver.create();
       try{
         let options : window.SubWindowOptions = {
           title: 'test_shiftAppWindowPointerEvent_mainwindow_to_subWindow',
@@ -1266,7 +1263,6 @@ export default function windowZindexTest() {
       console.log(caseName + 'begin');
       let minWidth = 0;
       let minHeight = 0;
-      let driver: Driver = Driver.create();
       try{
         let windowClass1 = await windowStage.createSubWindow('test_SubWindowZLevel_0100_1');
         await windowClass1.setSubWindowZLevel(10);
@@ -1804,7 +1800,6 @@ export default function windowZindexTest() {
               console.info(`${message} Succeeded in setting the function of disabling the resize by drag window.`);
               let windowPoint = subWindowClass.getWindowProperties().windowRect
               console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
-              let driver = Driver.create()
               await driver.mouseMoveTo({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 5})
               await sleep(1000)
               await driver.mouseDrag({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 5}, {x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100})
@@ -2071,8 +2066,6 @@ export default function windowZindexTest() {
      */
     it('testSetSubWindowZLevel__10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetSubWindowZLevel__10001';
-      let isSupport = canIUse('SystemCapability.Window.SessionManager')
-      console.info(caseName+ ' isSupport:'+isSupport);
       let subWindow = await windowStage.createSubWindow('testSetSubWindowZLevel__10001')
       try {
         let promise = subWindow.setSubWindowZLevel(-10001);
@@ -2083,7 +2076,7 @@ export default function windowZindexTest() {
         }).catch(async (err: BusinessError) => {
           console.error(`caseName+ Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
-          if(!isSupport){
+          if(err.code ==801){
             expect(err.code).assertEqual(801);
             expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
             done()
@@ -2111,8 +2104,6 @@ export default function windowZindexTest() {
      */
     it('testSetSubWindowZLevel__10000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetSubWindowZLevel__10000';
-      let isSupport = canIUse('SystemCapability.Window.SessionManager')
-      console.info(caseName+ ' isSupport:'+isSupport);
       let subWindow = await windowStage.createSubWindow('testSetSubWindowZLevel__10000')
       try {
         let promise = subWindow.setSubWindowZLevel(-10000);
@@ -2124,7 +2115,7 @@ export default function windowZindexTest() {
         }).catch(async (err: BusinessError) => {
           console.error(caseName+` Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
-          if(!isSupport){
+          if(err.code == 801){
             expect(err.code).assertEqual(801);
             expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
             done()
@@ -2150,8 +2141,6 @@ export default function windowZindexTest() {
      */
     it('testSetSubWindowZLevel_10000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetSubWindowZLevel_10000';
-      let isSupport = canIUse('SystemCapability.Window.SessionManager')
-      console.info(caseName+ ' isSupport:'+isSupport);
       let subWindow = await windowStage.createSubWindow('testSetSubWindowZLevel_10000')
       try {
         let promise = subWindow.setSubWindowZLevel(10000);
@@ -2163,7 +2152,7 @@ export default function windowZindexTest() {
         }).catch(async (err: BusinessError) => {
           console.error(caseName+` Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
-          if(!isSupport){
+          if(err.code == 801){
             expect(err.code).assertEqual(801);
             expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
             done()
@@ -2189,8 +2178,6 @@ export default function windowZindexTest() {
      */
     it('testSetSubWindowZLevel_10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetSubWindowZLevel_10001';
-      let isSupport = canIUse('SystemCapability.Window.SessionManager')
-      console.info(caseName+ ' isSupport:'+isSupport);
       let subWindow = await windowStage.createSubWindow('testSetSubWindowZLevel_10001')
       try {
         let promise = subWindow.setSubWindowZLevel(10001);
@@ -2201,7 +2188,7 @@ export default function windowZindexTest() {
         }).catch(async (err: BusinessError) => {
           console.error(`caseName+ Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
-          if(!isSupport){
+          if(err.code == 801){
             expect(err.code).assertEqual(801);
             expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
             done()

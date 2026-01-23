@@ -21,6 +21,7 @@ import configurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -29,7 +30,16 @@ let context: common.UIAbilityContext
 export default function ConfigurationStatic() {
   describe('ConfigurationStatic', () => {
 
-    beforeAll(() => {
+    beforeAll(async() => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');

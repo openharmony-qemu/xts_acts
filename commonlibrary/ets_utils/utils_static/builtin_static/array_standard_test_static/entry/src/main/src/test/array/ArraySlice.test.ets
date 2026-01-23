@@ -48,7 +48,7 @@ interface Opt72 { vals?: number[] }
 
 interface Obj73 { a: number };
 
-type Fn83 = (x: number) => number;
+type Fn83 = (x: int) => int;
 
 interface Opt83 { fn?: Fn83 }
 
@@ -64,7 +64,7 @@ interface Opt98 { n?: number }
 
 interface Opt101 { n?: number }
 
-interface Opt107 { fn?: (x: number) => number }
+interface Opt107 { fn?: (x: int) => int }
 
 interface Opt108 { val?: number }
 
@@ -80,7 +80,7 @@ interface Opt130 { n?: number }
 
 interface Opt134 { vals?: number[] }
 
-interface Opt137 { fn?: (x: number) => number }
+interface Opt137 { fn?: (x: int) => int }
 
 interface Opt141 { n?: number }
 
@@ -99,7 +99,7 @@ interface Opt166 { fn?: () => number }
 
 interface Opt174 { n?: number }
 
-interface Opt176 { fn?: (x: number) => number }
+interface Opt176 { fn?: (x: int) => int }
 
 interface Obj178 {
   a: number;
@@ -1519,7 +1519,7 @@ export default function ArraySliceTest() {
      * @tc.level Level 1
      */
     it('testArraySlice083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: Opt83[] = [{ fn: (x: number) => x + 1 }, {}, { fn: (x: number) => x * 2 }];
+      const arr: Opt83[] = [{ fn: (x: int) => x + 1 }, {}, { fn: (x: int) => x * 2 }];
       const sliced: Opt83[] = arr.slice(0, 2);
       expect(sliced.length).assertEqual(2);
       expect(sliced[1].fn === undefined).assertEqual(true);
@@ -1867,7 +1867,7 @@ export default function ArraySliceTest() {
      * @tc.level Level 1
      */
     it('testArraySlice107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: Opt107[] = [{ fn: (x: number) => x + 1 }, {}, { fn: (x: number) => x * 2 }];
+      const arr: Opt107[] = [{ fn: (x: int) => x + 1 }, {}, { fn: (x: int) => x * 2 }];
       const sliced: Opt107[] = arr.slice(0, 2);
       expect(sliced.length).assertEqual(2);
       expect(sliced[1].fn === undefined).assertEqual(true);
@@ -2320,7 +2320,7 @@ export default function ArraySliceTest() {
      */
     it('testArraySlice137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let state = 1;
-      const arr: Opt137[] = [{ fn: (x: number) => x + state }, { fn: (x: number) => x * state }];
+      const arr: Opt137[] = [{ fn: (x: int) => x + state }, { fn: (x: int) => x * state }];
       state = 5;
       const sliced: Opt137[] = arr.slice();
       expect(sliced[0].fn!(2)).assertEqual(7);
@@ -2918,7 +2918,7 @@ export default function ArraySliceTest() {
      * @tc.level Level 1
      */
     it('testArraySlice176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: Opt176[] = [{ fn: (x: number) => x + 1 }, {}, {}];
+      const arr: Opt176[] = [{ fn: (x: int) => x + 1 }, {}, {}];
       const sliced: Opt176[] = arr.slice(0, 2);
       expect(sliced[1].fn === undefined).assertEqual(true);
       expect(sliced[0].fn!(2)).assertEqual(3);

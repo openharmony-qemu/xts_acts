@@ -40,7 +40,7 @@ export default function testsuite() {
   animateToTest();
   ParticleAttributeTest();
   Blur();
-  APIParticleEmitter(); // 1 Particle
+  APIParticleEmitter();
   ParticlePage();
   CurvePage();
 }

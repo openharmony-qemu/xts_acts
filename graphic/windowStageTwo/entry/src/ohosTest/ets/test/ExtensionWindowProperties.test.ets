@@ -27,6 +27,7 @@ export default function extensionWindowPropertiesTest() {
     let windowStage:ohosWindow.WindowStage;
     let isPCStatus:string = '';
     let isAutoWindow:string = '';
+    let driver: Driver;
 
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -35,6 +36,7 @@ export default function extensionWindowPropertiesTest() {
       let mainWindow = windowStage.getMainWindowSync();
       mainWindow.resizeAsync(1500,1000);
       mainWindow.moveWindowToAsync(1200,200);
+      driver = Driver.create();
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -64,7 +66,6 @@ export default function extensionWindowPropertiesTest() {
       let windowClass = windowStage.getMainWindowSync();
       await windowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentPage');
       await sleep(2000);
-      let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('Button'));
       console.log(caseName + ' btn1 : ' + btn);
 
@@ -110,7 +111,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           let btn = await driver.findComponent(ON.id('button'))
           console.log(caseName + ' btn : ' + btn);
           if (btn == undefined) {
@@ -175,7 +175,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           let btn = await driver.findComponent(ON.id('off_single'))
           console.log(caseName + ' btn : ' + btn);
           if (btn == undefined) {
@@ -240,7 +239,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           let btn = await driver.findComponent(ON.id('off_all'))
           console.log(caseName + ' btn : ' + btn);
           if (btn == undefined) {
@@ -305,7 +303,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           let btn = await driver.findComponent(ON.id('button401'))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设别
@@ -371,7 +368,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           // UEC独占事件按钮
           let btn = await driver.findComponent(ON.id('button'))
           console.log(caseName + ' btn : ' + btn);
@@ -466,7 +462,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           // 设置独占事件
           let btn = await driver.findComponent(ON.id('button401'))
           console.log(caseName + ' btn : ' + btn);
@@ -530,7 +525,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           // 设置独占事件
           let btn = await driver.findComponent(ON.id('getWindowAvoidArea401'))
           console.log(caseName + ' btn : ' + btn);
@@ -593,7 +587,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           // 设置独占事件
           let btn = await driver.findComponent(ON.id('onAvoidAreaChange401'))
           console.log(caseName + ' btn : ' + btn);
@@ -656,7 +649,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           // 设置独占事件
           let btn = await driver.findComponent(ON.id('onWindowSizeChange401'))
           console.log(caseName + ' btn : ' + btn);
@@ -719,7 +711,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           // extensionWindow?.createSubWindowWithOptions('createSubWindowWithOptions401', null)
           let btn = await driver.findComponent(ON.id('createSubWindowWithOptions401'))
           console.log(caseName + ' btn : ' + btn);
@@ -813,9 +804,139 @@ export default function extensionWindowPropertiesTest() {
     })
 
 
+    /**
+     * @tc.name   testCreateSubWindowWithOptionsFollowTrue
+     * @tc.number SUB_WMS_UEC_CREATE_SUBWINDOW_FOLLOW_0100
+     * @tc.desc   验证UEC创建的子窗生命周期跟随UEC组件
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateSubWindowWithOptionsFollowTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testCreateSubWindowWithOptionsFollowTrue ';
+      console.log(caseName + 'start run');
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      if (!isSupport) {
+        done()
+      } else {
+        let subWindowClass: window.Window | undefined;
+        try {
+          subWindowClass = await windowStage.createSubWindow('testCreateSubWindowWithOptionsFollowTrue');
+          await subWindowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentCreateSubWindowOptionsTruePage');
+          await subWindowClass.showWindow();
+          await sleep(2000);
+          // extensionWindow?.createSubWindowWithOptions
+          let btn = await driver.findComponent(ON.id('createSubWindowWithOptionsTrue'))
+          console.log(caseName + ' btn : ' + btn);
+          if (btn != null) {
+            await btn.click()
+            await sleep(1000)
+            // 获取接口返回信息
+            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessageText = await errorMessage.getText()
+            console.log(caseName + 'errorMessageText : ' + errorMessageText)
+            if (errorMessageText == 'success') {
+              let tempWnd = window.findWindow('createSubWindowWithOptionsTrue');
+              expect(tempWnd == null).assertTrue();
+              // Uec组件显示
+              let changeUecVisible = await driver.findComponent(ON.id('changeVisibleBtn'))
+              console.log(caseName + ' changeUecVisible : ' + changeUecVisible);
+              await sleep(1000)
+              await changeUecVisible.click()
+              await sleep(1000)
+              let tempWnd2 = window.findWindow('createSubWindowWithOptionsTrue');
+              expect(tempWnd2 != null).assertTrue();
+              await subWindowClass.destroyWindow()
+              done();
+            } else if (errorMessageText == '801') {
+              await subWindowClass.destroyWindow()
+              done();
+            } else {
+              expect().assertFail()
+              await subWindowClass.destroyWindow()
+              done();
+            }
+           } else {
+              await subWindowClass.destroyWindow()
+              done();
+           }
+        } catch (exception) {
+          console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+          await subWindowClass?.destroyWindow()
+          expect().assertFail()
+          done()
+        }
+      }
 
+    })
 
+    /**
+     * @tc.name   testCreateSubWindowWithOptionsFollowFalse
+     * @tc.number SUB_WMS_UEC_CREATE_SUBWINDOW_FOLLOW_0200
+     * @tc.desc   testCreateSubWindowWithOptionsFollowFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateSubWindowWithOptionsFollowFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testCreateSubWindowWithOptionsFollowFalse';
+      console.log(caseName + 'start run');
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      if (!isSupport) {
+        done()
+      } else {
+        let subWindowClass: window.Window | undefined;
+        try {
+          subWindowClass = await windowStage.createSubWindow('testCreateSubWindowWithOptionsFollowFalse');
+          await subWindowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentCreateSubWindowOptionsFalsePage');
+          await subWindowClass.showWindow();
+          await sleep(2000);
+          // extensionWindow?.createSubWindowWithOptions
+          let btn = await driver.findComponent(ON.id('createSubWindowWithOptionsFalse'))
+          console.log(caseName + ' btn : ' + btn);
+          if (btn != null) {
+            await btn.click()
+            await sleep(1000)
+            // 获取接口返回信息
+            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessageText = await errorMessage.getText()
+            console.log(caseName + 'errorMessageText : ' + errorMessageText)
+            if (errorMessageText == 'success') {
+              let tempWnd = window.findWindow('createSubWindowWithOptionsFalse');
+              expect(tempWnd == null).assertTrue();
+              // Uec组件显示
+              let changeUecVisible = await driver.findComponent(ON.id('changeVisibleBtn'))
+              console.log(caseName + ' changeUecVisible : ' + changeUecVisible);
+              await sleep(1000)
+              await changeUecVisible.click()
+              await sleep(1000)
+              let tempWnd2 = window.findWindow('createSubWindowWithOptionsFalse');
+              expect(tempWnd2 == null).assertTrue();
+              await subWindowClass.destroyWindow()
+              done();
+            } else if (errorMessageText == '801') {
+              await subWindowClass.destroyWindow()
+              done();
+            } else {
+              expect().assertFail()
+              await subWindowClass.destroyWindow()
+              done();
+            }
+          } else {
+            await subWindowClass.destroyWindow()
+            done();
+          }
+        } catch (exception) {
+          console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+          await subWindowClass?.destroyWindow()
+          expect().assertFail()
+          done()
+        }
+      }
 
+    })
 
   })
 }

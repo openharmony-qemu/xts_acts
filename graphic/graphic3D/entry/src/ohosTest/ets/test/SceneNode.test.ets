@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { ToneMappingType, ToneMappingSettings, PostProcessSettings, Vec3, Vec4, Color, Quaternion, Position3,  Scale3, NodeType, Container, Node, Geometry, LightType, Light, SpotLight, DirectionalLight,
-  SceneResourceFactory, Scene, CameraParameters } from '@ohos.graphics.scene'
+  SceneResourceFactory, Scene, CameraParameters, SceneNodeParameters, Camera } from '@ohos.graphics.scene'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import * as scene3d from '@ohos.graphics.scene'
 import { lookAt } from '../common/utils';
@@ -1133,6 +1133,110 @@ export default function sceneNodeTest() {
         done();
       } catch (err) {
         console.info(msg + " Failed in testSceneNodesCameraMSAA " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testCameraGetViewMatrix
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1013
+     * @tc.desc   Test getViewMatrix method of Camera to get view matrix
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCameraGetViewMatrix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testCameraGetViewMatrix";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+        let sceneCameraParameter: SceneNodeParameters = { name: "camera1" };
+        let camera: Camera = await rf.createCamera(sceneCameraParameter);
+        expect(camera != null).assertTrue();
+        console.info(msg + " camera created successfully");
+
+        camera.enabled = true;
+        lookAt(camera, { x: 0, y: 0, z: -3 }, { x: 0, y: 0, z: 0 }, { x: 0, y: 1, z: 0 });
+
+        // Get view matrix
+        let viewMatrix: scene3d.Mat4x4 = camera.getViewMatrix();
+        expect(viewMatrix != null).assertTrue();
+        console.info(msg + " viewMatrix retrieved successfully");
+
+        // Verify viewMatrix has all four columns (x, y, z, w)
+        expect(viewMatrix.x != null).assertTrue();
+        expect(viewMatrix.y != null).assertTrue();
+        expect(viewMatrix.z != null).assertTrue();
+        expect(viewMatrix.w != null).assertTrue();
+        console.info(msg + " viewMatrix has all four columns");
+
+        // Verify each column is a Vec4 with x, y, z, w components
+        expect(typeof viewMatrix.x.x).assertEqual('number');
+        expect(typeof viewMatrix.x.y).assertEqual('number');
+        expect(typeof viewMatrix.x.z).assertEqual('number');
+        expect(typeof viewMatrix.x.w).assertEqual('number');
+        console.info(msg + " viewMatrix columns have proper Vec4 structure");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCameraGetViewMatrix " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testCameraGetProjectionMatrix
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1014
+     * @tc.desc   Test getProjectionMatrix method of Camera to get projection matrix
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCameraGetProjectionMatrix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testCameraGetProjectionMatrix";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+        let sceneCameraParameter: SceneNodeParameters = { name: "camera1" };
+        let camera: Camera = await rf.createCamera(sceneCameraParameter);
+        expect(camera != null).assertTrue();
+        console.info(msg + " camera created successfully");
+
+        camera.enabled = true;
+        lookAt(camera, { x: 0, y: 0, z: -3 }, { x: 0, y: 0, z: 0 }, { x: 0, y: 1, z: 0 });
+
+        // Get projection matrix
+        let projectionMatrix: scene3d.Mat4x4 = camera.getProjectionMatrix();
+        expect(projectionMatrix != null).assertTrue();
+        console.info(msg + " projectionMatrix retrieved successfully");
+
+        // Verify projectionMatrix has all four columns (x, y, z, w)
+        expect(projectionMatrix.x != null).assertTrue();
+        expect(projectionMatrix.y != null).assertTrue();
+        expect(projectionMatrix.z != null).assertTrue();
+        expect(projectionMatrix.w != null).assertTrue();
+        console.info(msg + " projectionMatrix has all four columns");
+
+        // Verify each column is a Vec4 with x, y, z, w components
+        expect(typeof projectionMatrix.x.x).assertEqual('number');
+        expect(typeof projectionMatrix.x.y).assertEqual('number');
+        expect(typeof projectionMatrix.x.z).assertEqual('number');
+        expect(typeof projectionMatrix.x.w).assertEqual('number');
+        console.info(msg + " projectionMatrix columns have proper Vec4 structure");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCameraGetProjectionMatrix " + JSON.stringify(err));
         expect().assertFail();
         done();
       }

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,6 +22,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { AnimationStatus } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 export default function animationStatusJsunit() {
   describe('animationStatusJsunit', () => {
@@ -104,8 +105,8 @@ it('animationStatus_static_03', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(1500);
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animationStatus_static_03 get state result is: " + JSON.stringify(indexEvent));
-        const data: Record<String, undefined | null | Object> =
-          indexEvent.data as Record<String, undefined | null | Object>
+        const data: Record<String,RecordData> =
+          indexEvent.data as Record<String,RecordData>
         expect(data['animationStatus']).assertEqual(AnimationStatus.Paused);
         done();
       }
@@ -135,8 +136,8 @@ it('animationStatus_static_04', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(1500);
       let callback = (indexEvent: emitter.EventData) => {
         console.info("animationStatus_static_04 get state result is: " + JSON.stringify(indexEvent));
-        const data: Record<String, undefined | null | Object> =
-          indexEvent.data as Record<String, undefined | null | Object>
+        const data: Record<String,RecordData> =
+          indexEvent.data as Record<String,RecordData>
         expect(data['animationStatus']).assertEqual(AnimationStatus.Stopped);
         done();
       }

@@ -105,7 +105,8 @@ build() {
         .onSelectionChange((value: RichEditorRange): void => {
           this.onSelectCallBack = true;
           console.log('RichEditorController value:' + JSON.stringify(value));
-          if('{"start":8,"end":8}' !== JSON.stringify(value)){
+          const valueObj = JSON.parseJsonElement(JSON.stringify(value))
+          if('{"start":8,"end":8}' !== `{"start":${valueObj.getDouble('start')},"end":${valueObj.getDouble('end')}}`){
             this.setCaretOffset += this.offsets + ',';
           }
         })

@@ -51,7 +51,7 @@ export default function getWantAgentWithUserIdTest() {
     /**
      * @tc.number    SUB_Ability_GetWantAgent_Test_0100
      * @tc.name      SUB_Ability_GetWantAgent_Test_0100
-     * @tc.desc      test GetWantAgent promise success with userID 100 
+     * @tc.desc      test GetWantAgent promise with userID 100 success
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -60,9 +60,43 @@ export default function getWantAgentWithUserIdTest() {
       const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0100';
       hilog.info(0x0000, testTag, `${TEST_CASE_NAME} Start`);
       wantAgent.getWantAgent(wantAgentInfo1).then((data) => {
+        wantAgentData = data;
         hilog.info(0x0000, testTag, `${TEST_CASE_NAME} getWantAgentPromise success, data ${JSON.stringify(data)}`);
-        expect(data !== null).assertTrue();
-        done();
+        if (wantAgentData) {
+          wantAgent.getBundleName(wantAgentData).then((bundleNameData) => {
+            hilog.info(0x0000, testTag,
+              `${TEST_CASE_NAME} getBundleName success, data ${JSON.stringify(bundleNameData)}`);
+            expect(bundleNameData).assertEqual('com.example.getwantagentwithuserid');
+          }).catch((err: BusinessError) => {
+            hilog.error(0x0000, testTag,
+              `${TEST_CASE_NAME} getBundleName failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+            expect().assertFail();
+          });
+          wantAgent.getUid(wantAgentData).then((uidData) => {
+            hilog.info(0x0000, testTag, `${TEST_CASE_NAME} getUid success, data ${JSON.stringify(uidData)}`);
+            expect(uidData).assertLarger(0);
+          }).catch((err: BusinessError) => {
+            hilog.error(0x0000, testTag,
+              `${TEST_CASE_NAME} getUid failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+            expect().assertFail();
+          });
+          wantAgent.getOperationType(wantAgentData).then((operationTypeData) => {
+            expect(operationTypeData).assertEqual(1);
+            hilog.info(0x0000, testTag,
+              `${TEST_CASE_NAME} getOperationType success, data ${JSON.stringify(operationTypeData)}`);
+            done();
+          }).catch((err: BusinessError) => {
+            hilog.error(0x0000, testTag,
+              `${TEST_CASE_NAME} getOperationType failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+            expect().assertFail();
+            done();
+          });
+        } else {
+          hilog.error(0x0000, testTag,
+            `${TEST_CASE_NAME} getWant is null`);
+          expect().assertFail();
+          done();
+        }
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, testTag,
           `${TEST_CASE_NAME} getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
@@ -75,7 +109,7 @@ export default function getWantAgentWithUserIdTest() {
     /**
      * @tc.number SUB_Ability_GetWantAgent_Test_0200
      * @tc.name SUB_Ability_GetWantAgent_Test_0200
-     * @tc.desc test GetWantAgent CallBack success with userID 100
+     * @tc.desc test GetWantAgent CallBack with userID success
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
@@ -88,16 +122,52 @@ export default function getWantAgentWithUserIdTest() {
           expect().assertFail();
           done();
         } else {
-          hilog.info(0x0000, TEST_CASE_NAME, `getWantAgentPromise success, data ${JSON.stringify(wantAgentData)}`);
-          expect(wantAgentData !== null).assertTrue();
-          done()
+          wantAgentData = data;
+          hilog.info(0x0000, testTag, `${TEST_CASE_NAME} getWantAgentPromise success, data ${JSON.stringify(data)}`);
+          if (wantAgentData) {
+            wantAgent.getBundleName(wantAgentData).then((bundleNameData) => {
+              hilog.info(0x0000, testTag,
+                `${TEST_CASE_NAME} getBundleName success, data ${JSON.stringify(bundleNameData)}`);
+              expect(bundleNameData).assertEqual('com.example.getwantagentwithuserid');
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.error(0x0000, testTag,
+                `${TEST_CASE_NAME} getBundleName failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+              expect().assertFail();
+              done();
+            });
+            wantAgent.getUid(wantAgentData).then((uidData) => {
+              hilog.info(0x0000, testTag, `${TEST_CASE_NAME} getUid success, data ${JSON.stringify(uidData)}`);
+              expect(uidData).assertLarger(0);
+            }).catch((err: BusinessError) => {
+              hilog.error(0x0000, testTag,
+                `${TEST_CASE_NAME} getUid failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+              expect().assertFail();
+            });
+            wantAgent.getOperationType(wantAgentData).then((operationTypeData) => {
+              hilog.info(0x0000, testTag,
+                `${TEST_CASE_NAME} getOperationType success, data ${JSON.stringify(operationTypeData)}`);
+              expect(operationTypeData).assertEqual(1);
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.error(0x0000, testTag,
+                `${TEST_CASE_NAME} getOperationType failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+              expect().assertFail();
+              done();
+            });
+          } else {
+            hilog.error(0x0000, testTag,
+              `${TEST_CASE_NAME} getWant is null`);
+            expect().assertFail();
+            done();
+          }
         }
       })
     })
     /**
      * @tc.number    SUB_Ability_GetWantAgent_Test_0300
      * @tc.name      SUB_Ability_GetWantAgent_Test_0300
-     * @tc.desc      test GetWantAgent promise success with not contain userID 
+     * @tc.desc      test GetWantAgent promise  with not contain userID
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -107,8 +177,43 @@ export default function getWantAgentWithUserIdTest() {
       hilog.info(0x0000, testTag, `${TEST_CASE_NAME} Start`);
       wantAgent.getWantAgent(wantAgentInfo1).then((data) => {
         hilog.info(0x0000, testTag, `${TEST_CASE_NAME} getWantAgentPromise success, data ${JSON.stringify(data)}`);
-        expect(data !== null).assertTrue();
-        done();
+        if (wantAgentData) {
+          wantAgent.getBundleName(wantAgentData).then((bundleNameData) => {
+            hilog.info(0x0000, testTag,
+              `${TEST_CASE_NAME} getBundleName success, data ${JSON.stringify(bundleNameData)}`);
+            expect(bundleNameData).assertEqual('com.example.getwantagentwithuserid');
+            done();
+          }).catch((err: BusinessError) => {
+            hilog.error(0x0000, testTag,
+              `${TEST_CASE_NAME} getBundleName failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+            expect().assertFail();
+            done();
+          });
+          wantAgent.getUid(wantAgentData).then((uidData) => {
+            hilog.info(0x0000, testTag, `${TEST_CASE_NAME} getUid success, data ${JSON.stringify(uidData)}`);
+            expect(uidData).assertLarger(0);
+          }).catch((err: BusinessError) => {
+            hilog.error(0x0000, testTag,
+              `${TEST_CASE_NAME} getUid failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+            expect().assertFail();
+          });
+          wantAgent.getOperationType(wantAgentData).then((operationTypeData) => {
+            hilog.info(0x0000, testTag,
+              `${TEST_CASE_NAME} getOperationType success, data ${JSON.stringify(operationTypeData)}`);
+            expect(operationTypeData).assertEqual(1);
+            done();
+          }).catch((err: BusinessError) => {
+            hilog.error(0x0000, testTag,
+              `${TEST_CASE_NAME} getOperationType failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+            expect().assertFail();
+            done();
+          });
+        } else {
+          hilog.error(0x0000, testTag,
+            `${TEST_CASE_NAME} getWant is null`);
+          expect().assertFail();
+          done();
+        }
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, testTag,
           `${TEST_CASE_NAME} getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
@@ -136,155 +241,109 @@ export default function getWantAgentWithUserIdTest() {
           done();
         } else {
           hilog.info(0x0000, testTag, `${TEST_CASE_NAME} getWantAgentPromise success, data ${JSON.stringify(data)}`);
-          expect(data !== null).assertTrue();
-          done();
+          if (wantAgentData) {
+            wantAgent.getBundleName(wantAgentData).then((bundleNameData) => {
+              hilog.info(0x0000, testTag,
+                `${TEST_CASE_NAME} getBundleName success, data ${JSON.stringify(bundleNameData)}`);
+              expect(bundleNameData).assertEqual('com.example.getwantagentwithuserid');
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.error(0x0000, testTag,
+                `${TEST_CASE_NAME} getBundleName failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+              expect().assertFail();
+              done();
+            });
+            wantAgent.getUid(wantAgentData).then((uidData) => {
+              hilog.info(0x0000, testTag, `${TEST_CASE_NAME} getUid success, data ${JSON.stringify(uidData)}`);
+              expect(uidData).assertLarger(0);
+            }).catch((err: BusinessError) => {
+              hilog.error(0x0000, testTag,
+                `${TEST_CASE_NAME} getUid failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+              expect().assertFail();
+            });
+            wantAgent.getOperationType(wantAgentData).then((operationTypeData) => {
+              hilog.info(0x0000, testTag,
+                `${TEST_CASE_NAME} getOperationType success, data ${JSON.stringify(operationTypeData)}`);
+              expect(operationTypeData).assertEqual(1);
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.error(0x0000, testTag,
+                `${TEST_CASE_NAME} getOperationType failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+              expect().assertFail();
+              done();
+            });
+          } else {
+            hilog.error(0x0000, testTag,
+              `${TEST_CASE_NAME} getWant is null`);
+            expect().assertFail();
+            done();
+          }
         }
       })
       hilog.info(0x0000, testTag, `${TEST_CASE_NAME} End`);
     })
+
     /**
      * @tc.number    SUB_Ability_GetWantAgent_Test_0500
      * @tc.name      SUB_Ability_GetWantAgent_Test_0500
-     * @tc.desc      test GetWantAgent promise parameter null errcode 401 
+     * @tc.desc      test GetWantAgent promise with userID -1
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
     it("SUB_Ability_GetWantAgent_Test_0500", Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0500';
-      hilog.info(0x0000, testTag, `${TEST_CASE_NAME} Start`);
-      try {
-        wantAgent.getWantAgent(null).then((data) => {
-          hilog.info(0x0000, testTag, `${TEST_CASE_NAME} getWantAgentPromise success, data ${JSON.stringify(data)}`);
-          expect().assertFail();
-          done();
-        }).catch((err: BusinessError) => {
-          hilog.error(0x0000, testTag,
-            `${TEST_CASE_NAME} getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
-          expect(err.code).assertEqual(401);
-          expect(err.message).assertEqual("Parameter error! Info must be a WantAgentInfo.");
-          done();
-        });
-      } catch (err) {
-        hilog.error(0x0000, testTag,
-          `${TEST_CASE_NAME} getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
-        expect(err.code).assertEqual(401);
-        expect(err.message).assertEqual("Parameter error! Info must be a WantAgentInfo.");
-        done();
-      }
-      hilog.info(0x0000, testTag, `${TEST_CASE_NAME} End`);
-    })
-    /**
-     * @tc.number    SUB_Ability_GetWantAgent_Test_0600
-     * @tc.name      SUB_Ability_GetWantAgent_Test_0600
-     * @tc.desc      test GetWantAgent promise parameter undefined errcode 401 
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("SUB_Ability_GetWantAgent_Test_0600", Level.LEVEL0, async (done: Function) => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0600';
-      hilog.info(0x0000, testTag, `${TEST_CASE_NAME} Start`);
-      try {
-        wantAgent.getWantAgent(undefined).then((data) => {
-          hilog.info(0x0000, testTag, `${TEST_CASE_NAME} getWantAgentPromise success, data ${JSON.stringify(data)}`);
-          expect().assertFail();
-          done();
-        }).catch((err: BusinessError) => {
-          hilog.error(0x0000, testTag,
-            `${TEST_CASE_NAME} getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
-          expect(err.code).assertEqual(401);
-          expect(err.message).assertEqual("Parameter error! Info must be a WantAgentInfo.");
-          done();
-        });
-      } catch (err) {
-        hilog.error(0x0000, testTag,
-          `${TEST_CASE_NAME} getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
-        expect(err.code).assertEqual(401);
-        expect(err.message).assertEqual("Parameter error! Info must be a WantAgentInfo.");
-        done();
-      }
-      hilog.info(0x0000, testTag, `${TEST_CASE_NAME} Start`);
-    })
-    /**
-     * @tc.number    SUB_Ability_GetWantAgent_Test_0700
-     * @tc.name      SUB_Ability_GetWantAgent_Test_0700
-     * @tc.desc      test GetWantAgent CallBack parameter null errcode 401 
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("SUB_Ability_GetWantAgent_Test_0700", Level.LEVEL0, async (done: Function) => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0700';
-      try {
-        wantAgent.getWantAgent(null, (err: BusinessError, data: WantAgent) => {
-          if (err) {
-            hilog.error(0x0000, testTag,
-              `${TEST_CASE_NAME} getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
-            expect(err.code).assertEqual(401);
-            expect(err.message).assertEqual("Parameter error! Info must be a WantAgentInfo.");
-            done();
-          } else {
-            hilog.info(0x0000, testTag, `${TEST_CASE_NAME} getWantAgentPromise success, data ${JSON.stringify(data)}`);
-            expect().assertFail();
-            done();
-          }
-        })
-      } catch (err) {
-        hilog.error(0x0000, testTag,
-          `${TEST_CASE_NAME} getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
-        expect(err.code).assertEqual(401);
-        expect(err.message).assertEqual("Parameter error! Info must be a WantAgentInfo.");
-        done();
-      }
-    })
-    /**
-     * @tc.number    SUB_Ability_GetWantAgent_Test_0800
-     * @tc.name      SUB_Ability_GetWantAgent_Test_0800
-     * @tc.desc      test GetWantAgent CallBack parameter undefined errcode 401 
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("SUB_Ability_GetWantAgent_Test_0800", Level.LEVEL0, async (done: Function) => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0800';
-      try {
-        wantAgent.getWantAgent(undefined, (err: BusinessError, data: WantAgent) => {
-          if (err) {
-            hilog.error(0x0000, testTag,
-              `${TEST_CASE_NAME} getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
-            expect(err.code).assertEqual(401);
-            expect(err.message).assertEqual("Parameter error! Info must be a WantAgentInfo.");
-            done();
-          } else {
-            hilog.info(0x0000, testTag, `${TEST_CASE_NAME} getWantAgentPromise success, data ${JSON.stringify(data)}`);
-            expect().assertFail();
-            done();
-          }
-        })
-      } catch (err) {
-        hilog.error(0x0000, testTag,
-          `${TEST_CASE_NAME} getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
-        expect(err.code).assertEqual(401);
-        expect(err.message).assertEqual("Parameter error! Info must be a WantAgentInfo.");
-        done();
-      }
-    })
-
-    /**
-     * @tc.number    SUB_Ability_GetWantAgent_Test_0900
-     * @tc.name      SUB_Ability_GetWantAgent_Test_0900
-     * @tc.desc      test GetWantAgent promise parameter with userID -1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("SUB_Ability_GetWantAgent_Test_0900", Level.LEVEL0, async (done: Function) => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0900';
+      let wantAgentInfo1: wantAgent.WantAgentInfo = {
+        wants: [
+          {
+            bundleName: 'com.example.getwantagentwithuserid',
+            abilityName: 'EntryAbility',
+          } as Want
+        ],
+        actionType: wantAgent.OperationType.START_ABILITY,
+        requestCode: 0,
+        wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG],
+        userId: -1
+      };
       wantAgent.getWantAgent(wantAgentInfo1).then((data) => {
         hilog.info(0x0000, testTag, `${TEST_CASE_NAME} getWantAgentPromise success, data ${JSON.stringify(data)}`);
-        expect(data !== null).assertTrue();
-        done();
+        if (wantAgentData) {
+          wantAgent.getBundleName(wantAgentData).then((bundleNameData) => {
+            hilog.info(0x0000, testTag,
+              `${TEST_CASE_NAME} getBundleName success, data ${JSON.stringify(bundleNameData)}`);
+            expect(bundleNameData).assertEqual('com.example.getwantagentwithuserid');
+            done();
+          }).catch((err: BusinessError) => {
+            hilog.error(0x0000, testTag,
+              `${TEST_CASE_NAME} getBundleName failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+            expect().assertFail();
+            done();
+          });
+          wantAgent.getUid(wantAgentData).then((uidData) => {
+            hilog.info(0x0000, testTag, `${TEST_CASE_NAME} getUid success, data ${JSON.stringify(uidData)}`);
+            expect(uidData).assertLarger(0);
+          }).catch((err: BusinessError) => {
+            hilog.error(0x0000, testTag,
+              `${TEST_CASE_NAME} getUid failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+            expect().assertFail();
+          });
+          wantAgent.getOperationType(wantAgentData).then((operationTypeData) => {
+            hilog.info(0x0000, testTag,
+              `${TEST_CASE_NAME} getOperationType success, data ${JSON.stringify(operationTypeData)}`);
+            expect(operationTypeData).assertEqual(1);
+            done();
+          }).catch((err: BusinessError) => {
+            hilog.error(0x0000, testTag,
+              `${TEST_CASE_NAME} getOperationType failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+            expect().assertFail();
+            done();
+          });
+        } else {
+          hilog.error(0x0000, testTag,
+            `${TEST_CASE_NAME} getWant is null`);
+          expect().assertFail();
+          done();
+        }
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, testTag,
           `${TEST_CASE_NAME} getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
@@ -294,15 +353,16 @@ export default function getWantAgentWithUserIdTest() {
     })
 
     /**
-     * @tc.number    SUB_Ability_GetWantAgent_Test_1000
-     * @tc.name      SUB_Ability_GetWantAgent_Test_1000
-     * @tc.desc      test GetWantAgent promise errcode 16000151
+     * @tc.number    SUB_Ability_GetWantAgent_Test_0600
+     * @tc.name      SUB_Ability_GetWantAgent_Test_0600
+     * @tc.desc      test GetWantAgent promise with third-party applications use the package names
+     * of other applications return errcode 16000151
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("SUB_Ability_GetWantAgent_Test_1000", Level.LEVEL0, async (done: Function) => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_1000';
+    it("SUB_Ability_GetWantAgent_Test_0600", Level.LEVEL0, async (done: Function) => {
+      const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0600';
       hilog.info(0x0000, testTag, `${TEST_CASE_NAME} Start`);
       wantAgent.getWantAgent(wantAgentInfo2).then((data) => {
         hilog.info(0x0000, testTag, `${TEST_CASE_NAME} getWantAgentPromise success, data ${JSON.stringify(data)}`);
@@ -318,15 +378,16 @@ export default function getWantAgentWithUserIdTest() {
       hilog.info(0x0000, testTag, `${TEST_CASE_NAME} End`);
     })
     /**
-     * @tc.number    SUB_Ability_GetWantAgent_Test_1100
-     * @tc.name      SUB_Ability_GetWantAgent_Test_1100
-     * @tc.desc      test GetWantAgent CallBack errcode 16000151
+     * @tc.number    SUB_Ability_GetWantAgent_Test_0700
+     * @tc.name      SUB_Ability_GetWantAgent_Test_0700
+     * @tc.desc      test GetWantAgent CallBack with third-party applications use the package names
+     * of other applications return errcode 16000151
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("SUB_Ability_GetWantAgent_Test_1100", Level.LEVEL0, async (done: Function) => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_1100';
+    it("SUB_Ability_GetWantAgent_Test_0700", Level.LEVEL0, async (done: Function) => {
+      const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0700';
       hilog.info(0x0000, testTag, `${TEST_CASE_NAME} Start`);
       wantAgent.getWantAgent(wantAgentInfo2, (err: BusinessError, data: WantAgent) => {
         if (err) {
@@ -343,6 +404,49 @@ export default function getWantAgentWithUserIdTest() {
         }
       })
       hilog.info(0x0000, testTag, `${TEST_CASE_NAME} End`);
+    })
+    /**
+     * @tc.number    SUB_Ability_GetWantAgent_Test_0800
+     * @tc.name      SUB_Ability_GetWantAgent_Test_0800
+     * @tc.desc      test GetWantAgent promise with userID undefined
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("SUB_Ability_GetWantAgent_Test_0800", Level.LEVEL0, async (done: Function) => {
+      const TEST_CASE_NAME: string = 'SUB_Ability_GetWantAgent_Test_0800';
+      let wantAgentInfo1: wantAgent.WantAgentInfo = {
+        wants: [
+          {
+            bundleName: 'com.example.getwantagentwithuserid',
+            abilityName: 'EntryAbility',
+          } as Want
+        ],
+        actionType: wantAgent.OperationType.START_ABILITY,
+        requestCode: 0,
+        wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG],
+        userId: undefined
+      };
+      hilog.info(0x0000, testTag, `${TEST_CASE_NAME}  wantAgentInfo1 ${JSON.stringify(wantAgentInfo1)}`);
+      try {
+        wantAgent.getWantAgent(wantAgentInfo1).then((data) => {
+          hilog.info(0x0000, testTag, `${TEST_CASE_NAME} getWantAgentPromise success, data ${JSON.stringify(data)}`);
+          wantAgentData = data;
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          hilog.error(0x0000, testTag,
+            `${TEST_CASE_NAME} getWantAgent failed, code: ${JSON.stringify(err.code)}, message: ${JSON.stringify(err.message)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (e) {
+        hilog.error(0x0000, testTag,
+          `${TEST_CASE_NAME}  catch, code: ${JSON.stringify(e.code)}, message: ${JSON.stringify(e.message)}`);
+        expect(e.code).assertEqual(401);
+        expect(e.message).assertEqual('Parameter error! Info must be a WantAgentInfo.');
+        done();
+      }
     })
   })
 }

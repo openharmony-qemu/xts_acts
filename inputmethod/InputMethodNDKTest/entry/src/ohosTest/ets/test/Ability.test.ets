@@ -76,6 +76,38 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0100
+     * @tc.number SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0100
+     * @tc.desc   SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0100', Level.LEVEL2, (done: Function) => {
+      let uiContext = AppStorage.get<UIContext>("uiContext") as UIContext;
+      console.info(`====>SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0100 uiContext: ${uiContext}`)
+      let result = testNapi.SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0100(uiContext);
+      console.info(`====>SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0100 result: ${result}`)
+      expect(expResult).assertEqual(result)
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0200
+     * @tc.number SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0200
+     * @tc.desc   SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0200', Level.LEVEL3, (done: Function) => {
+      let result = testNapi.SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0200();
+      console.info(`====>SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0200 result: ${result}`)
+      expect(expResult).assertEqual(result)
+      done();
+    })
+
+    /**
      * @tc.name   SUB_IMF_NDK_InputMethodController_Detach_0100
      * @tc.number SUB_IMF_NDK_InputMethodController_Detach_0100
      * @tc.desc   SUB_IMF_NDK_InputMethodController_Detach_0100

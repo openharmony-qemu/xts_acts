@@ -123,8 +123,11 @@ export default function RichEditorOnWillChange006() {
       let rangeText = await range_text.getText();
       await CommonFunc.sleep(500);
       // rangeBefore rangeAfter
-      expect(rangeText).assertEqual('range_text:{"start":0,"end":2}{"start":0,"end":1}');
-
+      expect(rangeText.indexOf('range_text') == 0).assertEqual(true);
+      expect(rangeText.indexOf('"start":0') > 0).assertEqual(true);
+      expect(rangeText.indexOf('"end":2') > 0).assertEqual(true);
+      expect(rangeText.indexOf('"start":0') > 0).assertEqual(true);
+      expect(rangeText.indexOf('"end":1') > 0).assertEqual(true);
       let replace_text = await (driver.findComponent(ON.id('replace_text')) as Promise<Component>);
       let replaceSpanText = await replace_text.getText();
       await CommonFunc.sleep(500);

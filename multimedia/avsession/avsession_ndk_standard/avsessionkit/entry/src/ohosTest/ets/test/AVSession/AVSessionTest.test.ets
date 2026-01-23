@@ -1919,5 +1919,605 @@ export default function AVSessionTest() {
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });
+
+    /**
+     * @tc.name   testAVSessionAVMetadataBuilderSetFilter001
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetFilter_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionAVMetadataBuilderSetFilter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVMetadataBuilderSetFilterSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionAVMetadataBuilderSetFilter001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionAVMetadataBuilderSetFilter002
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetFilter_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionAVMetadataBuilderSetFilter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVMetadataBuilderSetFilterInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionAVMetadataBuilderSetFilter002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionRemoteCastEnabled001
+     * @tc.number SUB_AVSession_RemoteCastEnabled_001
+     * @tc.desc   testing RemoteCastEnabled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionRemoteCastEnabled001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVMetadataAVSessionRemoteCastEnabled(0);
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionRemoteCastEnabled001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionRemoteCastEnabled002
+     * @tc.number SUB_AVSession_RemoteCastEnabled_002
+     * @tc.desc   testing RemoteCastEnabled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionRemoteCastEnabled002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVMetadataAVSessionRemoteCastEnabled(1);
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionRemoteCastEnabled002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionAcquireSession001
+     * @tc.number SUB_AVSession_AcquireSession_001
+     * @tc.desc   testing OH_AVSession_AcquireSession interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionAcquireSession001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionAcquireSessionSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionAcquireSession001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionAcquireSession002
+     * @tc.number SUB_AVSession_AcquireSession_002
+     * @tc.desc   testing OH_AVSession_AcquireSession interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionAcquireSession002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionAcquireSessionInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionAcquireSession002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionCreateAVCastController002
+     * @tc.number SUB_AVSession_CreateAVCastController_002
+     * @tc.desc   testing OH_AVSession_CreateAVCastController interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionCreateAVCastController002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionCreateAVCastControllerInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionCreateAVCastController002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionStopCasting001
+     * @tc.number SUB_AVSession_AVSessionStopCasting_001
+     * @tc.desc   testing OH_AVSession_AVSessionStopCasting interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionStopCasting001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionStopCastingSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionStopCasting001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionStopCasting002
+     * @tc.number SUB_AVSession_AVSessionStopCasting_002
+     * @tc.desc   testing OH_AVSession_AVSessionStopCasting interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionStopCasting002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionStopCastingInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionStopCasting002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionAcquireOutputDevice001
+     * @tc.number SUB_AVSession_AVSessionAcquireOutputDevice_001
+     * @tc.desc   testing OH_AVSession_AVSessionAcquireOutputDevice interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionAcquireOutputDevice001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionAcquireOutputDeviceSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionAcquireOutputDevice001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionAcquireOutputDevice002
+     * @tc.number SUB_AVSession_AVSessionAcquireOutputDevice_002
+     * @tc.desc   testing OH_AVSession_AVSessionAcquireOutputDevice interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionAcquireOutputDevice002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionAcquireOutputDeviceInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionAcquireOutputDevice002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionReleaseOutputDevice001
+     * @tc.number SUB_AVSession_AVSessionReleaseOutputDevice_001
+     * @tc.desc   testing OH_AVSession_AVSessionReleaseOutputDevice interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionReleaseOutputDevice001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionReleaseOutputDeviceSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionReleaseOutputDevice001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionReleaseOutputDevice002
+     * @tc.number SUB_AVSession_AVSessionReleaseOutputDevice_002
+     * @tc.desc   testing OH_AVSession_AVSessionReleaseOutputDevice interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionReleaseOutputDevice002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionReleaseOutputDeviceInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionReleaseOutputDevice002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionSetRemoteCastEnabled001
+     * @tc.number SUB_AVSession_SetRemoteCastEnabled_001
+     * @tc.desc   testing SetRemoteCastEnabled interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionSetRemoteCastEnabled001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionSetRemoteCastEnabledSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionSetRemoteCastEnabled001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionSetRemoteCastEnabled002
+     * @tc.number SUB_AVSession_SetRemoteCastEnabled_002
+     * @tc.desc   testing SetRemoteCastEnabled interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVSessionSetRemoteCastEnabled002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionSetRemoteCastEnabledInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionSetRemoteCastEnabled002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionGetAVCastCategory001
+     * @tc.number SUB_AVSession_GetAVCastCategory_001
+     * @tc.desc   testing OH_DeviceInfo_GetAVCastCategory interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionGetAVCastCategory001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionGetAVCastCategorySuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionGetAVCastCategory001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionGetAVCastCategory002
+     * @tc.number SUB_AVSession_GetAVCastCategory_002
+     * @tc.desc   testing OH_DeviceInfo_GetAVCastCategory interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionGetAVCastCategory002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionGetAVCastCategoryInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionGetAVCastCategory002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionGetDeviceId001
+     * @tc.number SUB_AVSession_GetDeviceId_001
+     * @tc.desc   testing OH_DeviceInfo_GetDeviceId interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionGetDeviceId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionGetDeviceIdSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionGetDeviceId001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionGetDeviceId002
+     * @tc.number SUB_AVSession_GetDeviceId_002
+     * @tc.desc   testing OH_DeviceInfo_GetDeviceId interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionGetDeviceId002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionGetDeviceIdInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionGetDeviceId002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionGetDeviceName001
+     * @tc.number SUB_AVSession_GetDeviceName_001
+     * @tc.desc   testing OH_DeviceInfo_GetDeviceName interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionGetDeviceName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionGetDeviceNameSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionGetDeviceName001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionGetDeviceName002
+     * @tc.number SUB_AVSession_GetDeviceName_002
+     * @tc.desc   testing OH_DeviceInfo_GetDeviceName interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionGetDeviceName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionGetDeviceNameInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionGetDeviceName002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionGetDeviceType001
+     * @tc.number SUB_AVSession_GetDeviceType_001
+     * @tc.desc   testing OH_DeviceInfo_GetDeviceType interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionGetDeviceType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionGetDeviceTypeSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionGetDeviceType001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionGetDeviceType002
+     * @tc.number SUB_AVSession_GetDeviceType_002
+     * @tc.desc   testing OH_DeviceInfo_GetDeviceType interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionGetDeviceType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionGetDeviceTypeInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionGetDeviceType002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+      * @tc.name   testAVSessionGetSupportedProtocols001
+      * @tc.number SUB_AVSession_GetSupportedProtocols_001
+      * @tc.desc   testing OH_DeviceInfo_GetSupportedProtocols interface.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
+    it('testAVSessionGetSupportedProtocols001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionGetSupportedProtocolsSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionGetSupportedProtocols001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+      * @tc.name   testAVSessionGetSupportedProtocols002
+      * @tc.number SUB_AVSession_GetSupportedProtocols_002
+      * @tc.desc   testing OH_DeviceInfo_GetSupportedProtocols interface.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
+    it('testAVSessionGetSupportedProtocols002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionGetSupportedProtocolsInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionGetSupportedProtocols002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+      * @tc.name   testAVSessionOutputDeviceInfo001
+      * @tc.number SUB_AVSession_OutputDeviceInfo_001
+      * @tc.desc   testing AVSession_OutputDeviceInfo.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
+      it('testAVSessionOutputDeviceInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionOutputDeviceInfo();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionOutputDeviceInfo001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionGetPlaybackFilter001
+     * @tc.number SUB_AVSession_GetPlaybackFilter_001
+     * @tc.desc   testing AVSession_PlaybackFilter FILTER_STATE interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionGetPlaybackFilter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionPlaybackFilterSTATE();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionGetPlaybackFilter001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionGetPlaybackFilter002
+     * @tc.number SUB_AVSession_GetPlaybackFilter_002
+     * @tc.desc   testing AVSession_PlaybackFilter FILTER_POSITION interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionGetPlaybackFilter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionPlaybackFilterPOSITION();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionGetPlaybackFilter002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionGetPlaybackFilter003
+     * @tc.number SUB_AVSession_GetPlaybackFilter_003
+     * @tc.desc   testing AVSession_PlaybackFilter FILTER_SPEED interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionGetPlaybackFilter003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionPlaybackFilterSPEED();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionGetPlaybackFilter003 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionGetPlaybackFilter004
+     * @tc.number SUB_AVSession_GetPlaybackFilter_004
+     * @tc.desc   testing AVSession_PlaybackFilter FILTER_VOLUME interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionGetPlaybackFilter004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionPlaybackFilterVOLUME();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionGetPlaybackFilter004 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
   })
 }

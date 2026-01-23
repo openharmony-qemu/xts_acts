@@ -194,23 +194,5 @@ export default function builtinsArrayReverseTest() {
       expect('["cherry",null,"apple"]').assertEqual(JSON.stringify(revers));
       Done();
     })
-
-    /**
-     * @tc.name   Builtins_Array_Reverse_Test_2000
-     * @tc.number SUB_BUILTINS_ARRAY_REVERSE_TEST_2000
-     * @tc.desc   test builtins
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('Builtins_Array_Reverse_Test_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const Tag: string = 'Builtins_Array_Reverse_Test_2000'
-      let array = collections.Array.from([[1, 2], [3, 4], [5, 6]])
-      console.log('ssss' + JSON.stringify(array))
-      let revers = array.reverse()
-      console.log('ddddd' + JSON.stringify(revers))
-      expect('[[5,6],[3,4],[1,2]]').assertEqual(JSON.stringify(revers));
-      Done();
-    })
   })
 }

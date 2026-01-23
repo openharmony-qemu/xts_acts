@@ -11,7 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsNotificationClassEmitterTestStatic.hap"
+                "ActsNotificationClassEmitterStaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

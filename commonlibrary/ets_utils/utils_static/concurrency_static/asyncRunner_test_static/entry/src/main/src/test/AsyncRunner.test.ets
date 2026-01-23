@@ -882,10 +882,10 @@ export default function asyncRunnerTest() {
         let code: number = 0;
         let result: object | undefined = undefined;
         let task = new taskpool.Task(loop);
-        let runner = new taskpool.SequenceRunner();
+        let runner = new taskpool.AsyncRunner(1, 1);
         runner.execute(task).catch((e: Error) => {
 
-          expect(e.message).assertContain("sequenceRunner task has been canceled");
+          expect(e.message).assertContain("asyncRunner task has been canceled");
           terminate = true;
         })
         setTimeout(() => {

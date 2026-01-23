@@ -2,7 +2,7 @@
     "src": [
         "MainAbility/pages/index/index",
 		"MainAbility/pages/Preset/InputPreset",
-
+        "MainAbility/pages/TextControllerTest/TextControllerTest",
         "MainAbility/pages/Font/APIgetUIFontConfig",
         "MainAbility/pages/Font/Font",
         "MainAbility/pages/Font/FontJsunit",
@@ -36,8 +36,18 @@
         "MainAbility/pages/TextMenuItemIdEqualsTest",
         "MainAbility/pages/TextMenuType",
         "MainAbility/pages/RichEditorDelete/RichEditorDelete",
+        "MainAbility/pages/ScrollToVisibleTest",
         "MainAbility/pages/TextDirectionTest",
         "MainAbility/pages/RichEditorDisplayOptimization/IncludeFontPadding",
-        "MainAbility/pages/RichEditorDisplayOptimization/FallbackLineSpacing"
+        "MainAbility/pages/RichEditorDisplayOptimization/FallbackLineSpacing",
+        "MainAbility/pages/Text/TextTest",
+        "MainAbility/pages/Text/TextInput",
+        "MainAbility/pages/Text/TextArea",
+        "MainAbility/pages/Text/Search",
+        "MainAbility/pages/TextDelete/SearchDelete",
+        "MainAbility/pages/TextDelete/TextInputDelete",
+        "MainAbility/pages/TextDelete/TextAreaDelete",
+        "MainAbility/pages/SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest",
+        "MainAbility/pages/SetTextSelectionTest/SetTextSelectionTest"
     ]
 }

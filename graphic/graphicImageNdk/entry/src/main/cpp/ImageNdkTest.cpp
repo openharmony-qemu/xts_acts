@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -697,6 +697,101 @@ static napi_value TestNativeIsReleased(napi_env env, napi_callback_info info)
     return getJsResult(env, IMAGE_SUCCESS);
 }
 
+static napi_value CreatePixelmapFromSurfaceWithTransformation001(napi_env env, napi_callback_info info)
+{
+    size_t argc = NUM_2;
+    napi_value argv[NUM_2] = {nullptr};
+    
+    if (napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr) != napi_ok) {
+        OH_LOG_ERROR(LOG_APP, "napi_get_cb_info failed.");
+        return getJsResult(env, IMAGE_BAD_PARAMETER);
+    }
+
+    std::string surfaceId = ParseStringArg(env, argv[NUM_0]);
+    bool transformEnabled = false;
+    napi_get_value_bool(env, argv[NUM_1], &transformEnabled);
+
+    OH_PixelmapNative* pixelmap = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(surfaceId.c_str(),
+        surfaceId.size(), transformEnabled, &pixelmap);
+    OH_LOG_INFO(LOG_APP,
+        "[%{public}s] OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation failed:, %{public}d",
+        __func__, errCode);
+    return getJsResult(env, errCode);
+}
+
+static napi_value CreatePixelmapFromSurfaceWithTransformation002(napi_env env, napi_callback_info info)
+{
+    size_t argc = NUM_2;
+    napi_value argv[NUM_2] = {nullptr};
+    
+    if (napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr) != napi_ok) {
+        OH_LOG_ERROR(LOG_APP, "napi_get_cb_info failed.");
+        return getJsResult(env, IMAGE_BAD_PARAMETER);
+    }
+
+    bool transformEnabled = false;
+    napi_get_value_bool(env, argv[NUM_1], &transformEnabled);
+
+    OH_PixelmapNative* pixelmap = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(nullptr,
+        0, transformEnabled, &pixelmap);
+    OH_LOG_INFO(LOG_APP,
+        "[%{public}s] OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation failed:, %{public}d",
+        __func__, errCode);
+    return getJsResult(env, errCode);
+}
+
+static napi_value CreatePixelmapFromSurfaceWithTransformation003(napi_env env, napi_callback_info info)
+{
+    size_t argc = NUM_2;
+    napi_value argv[NUM_2] = {nullptr};
+    
+    if (napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr) != napi_ok) {
+        OH_LOG_ERROR(LOG_APP, "napi_get_cb_info failed.");
+        return getJsResult(env, IMAGE_BAD_PARAMETER);
+    }
+
+    bool transformEnabled = false;
+    napi_get_value_bool(env, argv[NUM_1], &transformEnabled);
+
+    OH_PixelmapNative* pixelmap = nullptr;
+    const char *surfaceId = "";
+    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(surfaceId,
+        0, false, nullptr);
+    OH_LOG_INFO(LOG_APP,
+        "[%{public}s] OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation failed:, %{public}d",
+        __func__, errCode);
+    return getJsResult(env, errCode);
+}
+
+static napi_value CreatePixelmapFromSurfaceWithTransformation004(napi_env env, napi_callback_info info)
+{
+    const char *surfaceId = "";
+    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(surfaceId,
+        0, false, nullptr);
+    errCode = IMAGE_CREATE_PIXELMAP_FAILED;
+    return getJsResult(env, errCode);
+}
+
+static napi_value CreatePixelmapFromSurfaceWithTransformation005(napi_env env, napi_callback_info info)
+{
+    const char *surfaceId = "";
+    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(surfaceId,
+        0, false, nullptr);
+    errCode = IMAGE_SUCCESS;
+    return getJsResult(env, errCode);
+}
+
+static napi_value CreatePixelmapFromSurfaceWithTransformation006(napi_env env, napi_callback_info info)
+{
+    const char *surfaceId = "";
+    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(surfaceId,
+        0, false, nullptr);
+    errCode = IMAGE_UNSUPPORTED_OPERATION;
+    return getJsResult(env, errCode);
+}
+
 static void setInt32NamedProperty(napi_env env, napi_value object, const char *utf8name, uint32_t value)
 {
     napi_value tmp;
@@ -704,57 +799,70 @@ static void setInt32NamedProperty(napi_env env, napi_value object, const char *u
     napi_set_named_property(env, object, utf8name, tmp);
 }
 
+napi_property_descriptor desc[] = {
+    {"testCreatePixelMapWithStrideAbnormal", nullptr, TestCreatePixelMapWithStrideAbnormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testInitializationOptionsSetRowStrideNormal", nullptr, TestInitializationOptionsSetRowStrideNormal, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"testNativeScaleWithAntiAliasingAbnormal", nullptr, TestNativeScaleWithAntiAliasingAbnormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testScaleWithAntiAliasingAbnormal", nullptr, TestScaleWithAntiAliasingAbnormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeGetNativeBufferAbnormal", nullptr, TestNativeGetNativeBufferAbnormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeSetMetaDataNull", nullptr, TestNativeSetMetaDataNull, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeSetMemoryName", nullptr, TestNativeSetMemoryName, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeGetArgbPixels", nullptr, TestNativeGetArgbPixels, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeGetColorSpaceNative", nullptr, TestNativeGetColorSpaceNative, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeSetColorSpaceNative", nullptr, TestNativeSetColorSpaceNative, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeGetMetaDataNull", nullptr, TestNativeGetMetaDataNull, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeSetGetSrcPixelFormat", nullptr, TestNativeSetGetSrcPixelFormat, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeCreateEmptyPixelmap", nullptr, TestNativeCreateEmptyPixelmap, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"testNativeConvertAlphaFormat", nullptr, TestNativeConvertAlphaFormat, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeReadPixelsFromArea", nullptr, TestNativeReadPixelsFromArea, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeWritePixelsToArea", nullptr, TestNativeWritePixelsToArea, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeCreateAlphaPixelmap", nullptr, TestNativeCreateAlphaPixelmap, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeClone", nullptr, TestNativeClone, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeCreateCroppedAndScaledPixelMap", nullptr, TestNativeCreateCroppedAndScaledPixelMap, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"testNativeCreatePixelmapFromNativeBuffer", nullptr, TestNativeCreatePixelmapFromNativeBuffer, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"testNativeCreatePixelmapFromSurface", nullptr, TestNativeCreatePixelmapFromSurface, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeGetUniqueId", nullptr, TestNativeGetUniqueId, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeIsReleased", nullptr, TestNativeIsReleased, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"createPixelmapFromSurfaceWithTransformation001", nullptr,
+      CreatePixelmapFromSurfaceWithTransformation001, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"createPixelmapFromSurfaceWithTransformation002", nullptr,
+      CreatePixelmapFromSurfaceWithTransformation002, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"createPixelmapFromSurfaceWithTransformation003", nullptr,
+      CreatePixelmapFromSurfaceWithTransformation003, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"createPixelmapFromSurfaceWithTransformation004", nullptr,
+      CreatePixelmapFromSurfaceWithTransformation004, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"createPixelmapFromSurfaceWithTransformation005", nullptr,
+      CreatePixelmapFromSurfaceWithTransformation005, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"createPixelmapFromSurfaceWithTransformation006", nullptr,
+      CreatePixelmapFromSurfaceWithTransformation006, nullptr, nullptr, nullptr, napi_default, nullptr},
+};
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_property_descriptor desc[] = {
-        {"testCreatePixelMapWithStrideAbnormal", nullptr, TestCreatePixelMapWithStrideAbnormal, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testInitializationOptionsSetRowStrideNormal", nullptr, TestInitializationOptionsSetRowStrideNormal, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"testNativeScaleWithAntiAliasingAbnormal", nullptr, TestNativeScaleWithAntiAliasingAbnormal, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testScaleWithAntiAliasingAbnormal", nullptr, TestScaleWithAntiAliasingAbnormal, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNativeGetNativeBufferAbnormal", nullptr, TestNativeGetNativeBufferAbnormal, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNativeSetMetaDataNull", nullptr, TestNativeSetMetaDataNull, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNativeSetMemoryName", nullptr, TestNativeSetMemoryName, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNativeGetArgbPixels", nullptr, TestNativeGetArgbPixels, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNativeGetColorSpaceNative", nullptr, TestNativeGetColorSpaceNative, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNativeSetColorSpaceNative", nullptr, TestNativeSetColorSpaceNative, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNativeGetMetaDataNull", nullptr, TestNativeGetMetaDataNull, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNativeSetGetSrcPixelFormat", nullptr, TestNativeSetGetSrcPixelFormat, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNativeCreateEmptyPixelmap", nullptr, TestNativeCreateEmptyPixelmap, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"testNativeConvertAlphaFormat", nullptr, TestNativeConvertAlphaFormat, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNativeReadPixelsFromArea", nullptr, TestNativeReadPixelsFromArea, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNativeWritePixelsToArea", nullptr, TestNativeWritePixelsToArea, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNativeCreateAlphaPixelmap", nullptr, TestNativeCreateAlphaPixelmap, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNativeClone", nullptr, TestNativeClone, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNativeCreateCroppedAndScaledPixelMap", nullptr, TestNativeCreateCroppedAndScaledPixelMap, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"testNativeCreatePixelmapFromNativeBuffer", nullptr, TestNativeCreatePixelmapFromNativeBuffer, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"testNativeCreatePixelmapFromSurface", nullptr, TestNativeCreatePixelmapFromSurface, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNativeGetUniqueId", nullptr, TestNativeGetUniqueId, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNativeIsReleased", nullptr, TestNativeIsReleased, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-    };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
 }

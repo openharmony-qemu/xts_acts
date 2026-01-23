@@ -114,7 +114,10 @@ export default function RichEditorOnWillChange015() {
       let onDidChange_rangeBefore = await (driver.findComponent(ON.id('onDidChange_rangeBefore')) as Promise<Component>);
       let onDidBefore = await onDidChange_rangeBefore.getText();
       await CommonFunc.sleep(500);
-      expect(onDidBefore).assertEqual('onDidChange rangeBefore:{"start":2,"end":2}');
+      expect(onDidBefore.indexOf('onDidChange rangeBefore:') == 0).assertEqual(true);
+      expect(onDidBefore.indexOf('"start":2') > 0).assertEqual(true);
+      expect(onDidBefore.indexOf('"end":2') > 0).assertEqual(true);
+
       let replacedSpansCallback = await (driver.findComponent(ON.id('replacedSpansCallback')) as Promise<Component>);
       let replaceCall = await replacedSpansCallback.getText();
       await CommonFunc.sleep(500);
@@ -122,7 +125,9 @@ export default function RichEditorOnWillChange015() {
       let ondid_rangeAfter = await (driver.findComponent(ON.id('ondid_rangeAfter')) as Promise<Component>);
       let ondidRangeAfter = await ondid_rangeAfter.getText();
       await CommonFunc.sleep(500);
-      expect(ondidRangeAfter).assertEqual('ondid rangeAfter:{"start":2,"end":4}');
+      expect(ondidRangeAfter.indexOf('ondid rangeAfter:') == 0).assertEqual(true);
+      expect(ondidRangeAfter.indexOf('"start":2') > 0).assertEqual(true);
+      expect(ondidRangeAfter.indexOf('"end":4') > 0).assertEqual(true);
 
       //撤销粘贴
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z);
@@ -134,11 +139,15 @@ export default function RichEditorOnWillChange015() {
 
       onDidBefore = await onDidChange_rangeBefore.getText();
       await CommonFunc.sleep(500);
-      expect(onDidBefore).assertEqual('onDidChange rangeBefore:{"start":2,"end":4}');
+      expect(onDidBefore.indexOf('onDidChange rangeBefore:') == 0).assertEqual(true);
+      expect(onDidBefore.indexOf('"start":2') > 0).assertEqual(true);
+      expect(onDidBefore.indexOf('"end":4') > 0).assertEqual(true);
 
       ondidRangeAfter = await ondid_rangeAfter.getText();
       await CommonFunc.sleep(500);
-      expect(ondidRangeAfter).assertEqual('ondid rangeAfter:{"start":2,"end":2}');
+      expect(ondidRangeAfter.indexOf('ondid rangeAfter:') == 0).assertEqual(true);
+      expect(ondidRangeAfter.indexOf('"start":2') > 0).assertEqual(true);
+      expect(ondidRangeAfter.indexOf('"end":2') > 0).assertEqual(true);
 
       done();
     });

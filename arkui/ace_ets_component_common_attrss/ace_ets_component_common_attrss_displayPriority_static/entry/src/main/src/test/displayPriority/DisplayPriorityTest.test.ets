@@ -87,8 +87,6 @@ export default function displayPriorityTest() {
     'GridRow',
     'Grid',
     'List',
-    // 'Navigator',
-    //'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',

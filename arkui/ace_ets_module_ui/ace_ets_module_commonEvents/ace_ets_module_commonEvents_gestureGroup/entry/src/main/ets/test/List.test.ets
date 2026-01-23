@@ -15,8 +15,12 @@
 
 import gestureParallelJsunit from './GestureGroupTest/gesture.test';
 import addGestureApplyGesture from './AddGestureApplyGesture.test';
+import BoxSelectTest from "./GestureType/BoxSelect.test";
+import WebTextMenuGestureTest from "./GestureType/WebTextMenuGesture.test";
 
 export default function testsuite() {
   gestureParallelJsunit()
   addGestureApplyGesture();
+  BoxSelectTest();
+  WebTextMenuGestureTest();
 }

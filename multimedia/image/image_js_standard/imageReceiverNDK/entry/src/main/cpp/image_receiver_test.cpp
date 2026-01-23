@@ -20,6 +20,7 @@
 #include "node_api.h"
 #include "hilog/log.h"
 #include "multimedia/image_framework/image/image_receiver_native.h"
+#include "multimedia/image_framework/image/image_native.h"
 #include "image_receiver_test.h"
 
 namespace OHOS {

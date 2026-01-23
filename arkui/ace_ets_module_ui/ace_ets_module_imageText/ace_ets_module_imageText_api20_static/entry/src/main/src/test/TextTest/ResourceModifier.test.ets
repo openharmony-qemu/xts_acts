@@ -79,7 +79,7 @@ export default function ResourceModifierTest() {
       console.info('ResourceModifierTest_static_0010 START');
       let getObj = await driver.findComponent(ON.id('getObj_Modifier'))
       await CommonFunc.sleep(500);
-      getObj?.click();
+      await (getObj?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       expect(''+AppStorage.get<string>('TextLetterSpacing')).assertEqual('0.00vp');
       expect(''+AppStorage.get<string>('TextBaselineOffset')).assertEqual('0');
@@ -113,11 +113,11 @@ export default function ResourceModifierTest() {
       console.info('ResourceModifierTest_static_0020 START');
       let change = await driver.findComponent(ON.id('change_Modifier'))
       await CommonFunc.sleep(500);
-      change?.click();
+      await (change?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       let getObj = await driver.findComponent(ON.id('getObj_Modifier'))
       await CommonFunc.sleep(500);
-      getObj?.click();
+      await (getObj?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       expect(''+AppStorage.get<string>('TextLetterSpacing')).assertEqual('0.00px');
       expect(''+AppStorage.get<string>('TextBaselineOffset')).assertEqual('0');
@@ -151,13 +151,13 @@ export default function ResourceModifierTest() {
       console.info('ResourceModifierTest_static_0030 START');
       let change = await driver.findComponent(ON.id('change_Modifier'))
       await CommonFunc.sleep(500);
-      change?.click();
+      await (change?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      change?.click();
+      await (change?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       let getObj = await driver.findComponent(ON.id('getObj_Modifier'))
       await CommonFunc.sleep(500);
-      getObj?.click();
+      await (getObj?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       expect(''+AppStorage.get<string>('TextLetterSpacing')).assertEqual('20.00vp');
       expect(''+AppStorage.get<string>('TextBaselineOffset')).assertEqual('50');

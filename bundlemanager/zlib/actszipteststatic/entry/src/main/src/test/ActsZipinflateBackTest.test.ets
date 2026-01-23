@@ -91,7 +91,7 @@ export default function ActsZipInflateBackTest() {
             await zip.inflateBackInit({}, 15, buffer).then((data: zlib.ReturnStatus) => {
               hilog.info(domain, tag, 'actsZipTest_static_100 inflateBackInit success. data: ' + JSON.stringify(data));
               expect(data).assertEqual(zlib.ReturnStatus.OK);
-            }).catch((errData: BusinessError): void => {
+            }).catch((errData: Error): void => {
               hilog.error(domain, tag,
                 `actsZipTest_static_100 inflateBackInit errData is errCode:${errData.code}  message:${errData.message}`);
               expect(errData).assertFail();
@@ -170,7 +170,7 @@ export default function ActsZipInflateBackTest() {
                 hilog.info(domain, tag,
                   'actsZipTest_static_100 inflateBack success. data: ' + JSON.stringify(data));
                 expect(data).assertEqual(zlib.ReturnStatus.OK);
-              }).catch((errData: BusinessError): void => {
+              }).catch((errData: Error): void => {
                 hilog.error(domain, tag,
                   `actsZipTest_static_100 inflateBack errData is errCode:${errData.code}  message:${errData.message}`);
                 expect(errData).assertFail();
@@ -210,7 +210,7 @@ export default function ActsZipInflateBackTest() {
             await zip.inflateBackEnd({}).then((data: zlib.ReturnStatus) => {
               hilog.info(domain, tag, 'actsZipTest_static_100 inflateBackEnd success. data: ' + JSON.stringify(data));
               expect(data).assertEqual(zlib.ReturnStatus.OK);
-            }).catch((errData: BusinessError): void => {
+            }).catch((errData: Error): void => {
               hilog.error(domain, tag,
                 `actsZipTest_static_100 inflateBackEnd errData is errCode:${errData.code}  message:${errData.message}`);
               expect(errData).assertFail();

@@ -51,15 +51,15 @@ struct RelativeGuideLine3 {
 
         Button('delPos').onClick(() => {
           this.linePosition = {}
-        }).key('delPos')
+        }).key('delPos').width('30%')
 
         Button('changeVer').onClick(() => {
           this.guideLineDir1 = Axis.Vertical
-        }).key('changeVer')
+        }).key('changeVer').width('30%')
 
         Button('changeHor').onClick(() => {
           this.guideLineDir1 = Axis.Horizontal
-        }).key('changeHor')
+        }).key('changeHor').width('30%')
 
       }.height('10%')
     }

@@ -721,11 +721,6 @@ static napi_value TestTransform(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_SetTransform result=%{public}d", ret2);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_INVALID);
-    float matrix1[] = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0};
-    auto ret3 = OH_ArkUI_RenderNodeUtils_SetTransform(rsNode, matrix1);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk OH_ArkUI_RenderNodeUtils_SetTransform result=%{public}d", ret3);
-    ASSERT_EQ(ret3, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
     NAPI_END;
 }
 

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -52,6 +52,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -99,8 +100,8 @@ export default function KeyboardShortcutJsunit() {
       console.info(`${SUITE} ${CASE} START`);
 
       let callback = (event: events_emitter.EventData) => {
-        expect(((event.data) as Record<String,undefined|null|Object>)?.['msg']).assertEqual('Ctrl_TAB');
-        console.info(`${SUITE} ${CASE} event.data.msg:` + ((event.data) as Record<String,undefined|null|Object>)?.['msg']);
+        expect(((event.data) as Record<String,RecordData>)?.['msg']).assertEqual('Ctrl_TAB');
+        console.info(`${SUITE} ${CASE} event.data.msg:` + ((event.data) as Record<String,RecordData>)?.['msg']);
         done();
       }
       let event: events_emitter.InnerEvent = {
@@ -125,9 +126,9 @@ export default function KeyboardShortcutJsunit() {
       console.info(`${SUITE} ${CASE} START`);
 
       let callback = (event: events_emitter.EventData) => {
-        expect(((event.data) as Record<String,undefined|null|Object>)?.['msg']).assertEqual('Shift_left');
-        console.info(`${SUITE} ${CASE} ((eventData.data) as  Record<String,undefined|null|Object>).msg:` +
-          ((event.data) as Record<String,undefined|null|Object>)?.['msg']);
+        expect(((event.data) as Record<String,RecordData>)?.['msg']).assertEqual('Shift_left');
+        console.info(`${SUITE} ${CASE} ((eventData.data) as  Record<String,RecordData>).msg:` +
+          ((event.data) as Record<String,RecordData>)?.['msg']);
         done();
       }
       let event: events_emitter.InnerEvent = {

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,6 +34,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {UtilsTest} from '../Util.test'
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
+import { RecordData } from '@ohos.base';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -76,7 +77,7 @@ it('ShortcutKeyDPADLEFTTest_static_0100', Level.LEVEL0, async () => {
       let CASE = 'ShortcutKeyDPADLEFTTest_0100'
       console.info(`ShortcutKeyDPADLEFTTest_0100 START`);
       let callback = (event: events_emitter.EventData) => {
-        const data: Record<string, undefined | null | Object> = event.data as Record<string, undefined | null | Object>
+        const data: Record<String,RecordData> = event.data as Record<String,RecordData>
         expect(data['msg']).assertEqual('CTRL+DPAD_LEFT');
         // console.info(`ShortcutKeyDPADLEFTTest_0100 event.data?.msg:` + event.data?.['msg']);
       }

@@ -469,6 +469,45 @@ export default function albumCommitModifyTest () {
       }
     });
 
+    /**
+     * @tc.name   album_commitModify_callback_013
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_1300
+     * @tc.desc   album commitModify with max length albumName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('album_commitModify_callback_013', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'album_commitModify_callback_013';
+      try {
+        const album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+        const newName: string = genRadomStr(255);
+        album.albumName = newName;
+        album.commitModify(async (err:BusinessError) => {
+          try {
+            if (err) {
+              console.info(`${testNum} err: ${err}`);
+              expect(false).assertTrue();
+            } else {
+              const fetchOps = fetchOption(testNum, albumKeys.ALBUM_NAME, newName);
+              const fetchResult:ESObject = await helper.getAlbums(albumType.USER, albumSubtype.USER_GENERIC, fetchOps);
+              console.info(`${testNum} fetchResult: ${fetchResult.getCount()}`);
+              const album:ESObject = await fetchResult.getFirstObject();
+              expect(album.albumName).assertEqual(newName);
+              fetchResult.close();
+            }
+          } catch (error) {
+            console.info(`${testNum} error: ${error}`);
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
     //promise
     /**
      * @tc.name   album_commitModify_promise_000
@@ -574,6 +613,35 @@ export default function albumCommitModifyTest () {
         await sleep(50);
       } catch (error) {
         console.info(`${testNum} failed; error: ${error}`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   album_commitModify_promise_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0400
+     * @tc.desc   album commitModify with max length albumName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('album_commitModify_promise_004', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'album_commitModify_promise_004';
+      try {
+        const album: ESObject = await helper.createAlbum(testNum);
+        const newName: ESObject = genRadomStr(255);
+        album.albumName = newName;
+        await album.commitModify();
+        const fetchOps = fetchOption(testNum, albumKeys.ALBUM_NAME, newName);
+        const fetchResult: ESObject = await helper.getAlbums(albumType.USER, albumSubtype.USER_GENERIC, fetchOps);
+        console.info(`${testNum} fetchResult: ${fetchResult.getCount()}`);
+        const curAlbum: ESObject = await fetchResult.getFirstObject();
+        expect(curAlbum.albumName).assertEqual(newName);
+        fetchResult.close();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error}`);
+        expect(false).assertTrue();
         done();
       }
     })

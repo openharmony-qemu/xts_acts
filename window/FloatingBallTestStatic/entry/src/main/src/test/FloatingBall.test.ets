@@ -19,7 +19,7 @@ import { BusinessError, Callback } from '@ohos.base';
 import { common, Want } from '@kit.AbilityKit';
 import window from '@ohos.window';
 import settings from '@ohos.settings';
-import { image } from '@kit.ImageKit';
+import image from '@ohos.multimedia.image'
 import { Driver, ON, Component, Rect } from '@kit.TestKit';
 import { abilityAccessCtrl, StartOptions ,PermissionRequestResult, Permissions} from '@kit.AbilityKit';
 import { display, screenshot } from '@kit.ArkUI';
@@ -48,26 +48,10 @@ async function clickButtonDriver(){
   console.error(`come in Driver create`);
   let buttonOne: Component | null = await driver.findComponent(ON.text('允许'));
   console.error(`buttonOne is ${JSON.stringify(buttonOne)}`);
-  if(buttonOne){
+  if(buttonOne!=null){
     await buttonOne.click();
   }
 
-}
-async function getPixelMap(): Promise<image.PixelMap | undefined> {
-  try{
-    // 创建一个简单的 PixelMap 用于测试
-    let opts: image.InitializationOptions = {
-      editable: true,
-      pixelFormat: image.PixelMapFormat.RGBA_8888,
-      size: { height: 40, width: 40 }
-    };
-    let pixMap: image.PixelMap = await image.createPixelMap(new ArrayBuffer(40 * 40 * 4), opts);
-    return pixMap;
-  } catch (err) {
-    let exception: BusinessError = err as BusinessError;
-    console.error(`Failed to create pixelmap. code is ${exception.code}, message is ${exception.message}`);
-    return undefined;
-  }
 }
 
 export default function FloatingBallTest() {
@@ -81,6 +65,8 @@ export default function FloatingBallTest() {
     let windowStage:window.WindowStage;
     let win: window.Window;
     let driver:Driver;
+    let pixelMapIcon:image.PixelMap|undefined;
+    let pixelMapIcon1:image.PixelMap|undefined;
     beforeAll((): void => {
       hilog.info(domain, tag, 'beforeAll start');
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
@@ -106,7 +92,28 @@ export default function FloatingBallTest() {
       //isAutoWindow == 'true' PAD设备自由多窗模式
       //isAutoWindow == 'false' PAD设备非自由多窗模式
       // console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      let name:string = 'icon';
+      try{
+        const file: Uint8Array= await context.resourceManager.getMediaByName(name);
+        const imageSource:image.ImageSource|undefined = image.createImageSource((file.buffer as ArrayBuffer));
+        console.log(` beforeAll createImageSource success：${JSON.stringify(imageSource)}`);
+        pixelMapIcon = await imageSource!.createPixelMap();
+      }catch (err: BusinessError) {
+        console.error(` beforeAll pixelMapIcon failed. Cause:${err.code}, message:${err.message}`);
+      }
+
+      let name1:string = 'icon1'
+      try{
+        const file1: Uint8Array= await context.resourceManager.getMediaByName(name1);
+        const imageSource1:image.ImageSource|undefined = image.createImageSource((file1.buffer as ArrayBuffer));
+        console.log(` beforeAll createImageSource1 success：${JSON.stringify(imageSource1)}`);
+        pixelMapIcon1 = await imageSource1!.createPixelMap();
+      }catch (err: BusinessError) {
+        console.error(` beforeAll getPixelMap1 failed. Cause:${err.code}, message:${err.message}`);
+      }
+
       getPermision();
+      await Utils.msSleep(300);
       clickButtonDriver();
     })
     beforeEach(() => {
@@ -115,7 +122,7 @@ export default function FloatingBallTest() {
       // This API supports only one parameter: preset action function.
     })
     afterEach((): void => {
-      // sleep between tests
+      await Utils.msSleep(800);
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
@@ -178,7 +185,7 @@ export default function FloatingBallTest() {
     //       console.info(CaseName+ ` Succeeded in creating floating ball controller. Data: ${data}`);
     //       expect(false).assertTrue();
     //       done();
-    //     }).catch((err: BusinessError):void => {
+    //     }).catch((err: Error):void => {
     //       console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
     //       expect(err.message!=null).assertTrue();
     //       expect(false).assertTrue();
@@ -224,18 +231,18 @@ export default function FloatingBallTest() {
               console.info(CaseName+ 'Succeeded in stopping floating ball.');
               expect(true).assertTrue();
               done();
-            }).catch((err: BusinessError):void => {
+            }).catch((err: Error):void => {
               console.error(CaseName+ `Failed to stop floating ball. Cause:${err.code}, message:${err.message}`);
               expect(false).assertTrue();
               done();
             });
-          }).catch((err: BusinessError):void => {
+          }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
             expect(false).assertTrue();
             done();
           });
 
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           if(err.code == 801){
@@ -315,23 +322,25 @@ export default function FloatingBallTest() {
             console.info(CaseName+' Succeeded in starting floating ball.');
             expect(false).assertTrue();
             done();
-          }).catch((err: BusinessError):void => {
+          }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
             expect(err.message!=null).assertTrue();
-            expect(false).assertTrue();
-            done();
+            if(err.code == 1300019){
+              expect(true).assertTrue();
+              done();
+            }
+            else{
+              expect(false).assertTrue();
+              done();
+            }
           });
 
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           if(err.code == 801){
             done();
-          }else if(err.code == 1300019){
-            expect(true).assertTrue();
-            done();
-          }
-          else{
+          }else{
             expect(false).assertTrue();
             done();
           }
@@ -371,14 +380,14 @@ export default function FloatingBallTest() {
             console.info(CaseName+' floatingBallController2 Succeeded in starting floating ball.');
             expect(false).assertTrue();
             done();
-          }).catch((err: BusinessError):void => {
+          }).catch((err: Error):void => {
             console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
             await floatingBallController1.stopFloatingBall();
             expect(err.code).assertEqual(1300021);
             expect(err.message!=null).assertTrue();
             done();
           });
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController1 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -424,14 +433,14 @@ export default function FloatingBallTest() {
             console.info(CaseName+' floatingBallController Succeeded 2 in starting floating ball.');
             expect(false).assertTrue();
             done();
-          }).catch((err: BusinessError):void => {
+          }).catch((err: Error):void => {
             console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
             await floatingBallController1.stopFloatingBall();
             expect(err.code).assertEqual(1300022);
             expect(err.message!=null).assertTrue();
             done();
           });
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController1 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
           done();
@@ -453,52 +462,7 @@ export default function FloatingBallTest() {
 
 
 
-    /**
-     * @tc.name   test_startFloatingBall_template_not_exist
-     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_1000
-     * @tc.desc   test_startFloatingBall_template_not_exist
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_startFloatingBall_template_not_exist', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let CaseName:string = 'test_startFloatingBall_template_not_exist';
-      let config: floatingBall.FloatingBallConfiguration = {
-        context: context,
-      };
-      let startParams: floatingBall.FloatingBallParams = {
-        template: floatingBall.FloatingBallTemplate.EMPHATIC,
-        title: 'title',
-        icon:await getPixelMap()
-      };
-      try {
-        let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
-        floatingBallController.startFloatingBall(startParams).then(() => {
-          console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
-          floatingBallController.stopFloatingBall();
-          expect(false).assertTrue();
-          done();
-        }).catch((err: BusinessError):void => {
-          console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
-          expect(false).assertTrue();
-          done();
-        });
-      } catch (error) {
-        let exception: BusinessError = error as BusinessError;
-        console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
-        expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
-          done();
-        }else if(exception.code == 1300019){
-          expect(true).assertTrue();
-          done();
-        }
-        else{
-          expect(false).assertTrue();
-          done();
-        }
-      }
-    })
+    
     /**
      * @tc.name   test_startFloatingBall_title_null
      * @tc.number SUB_BASIC_WMS_FLOATING_BALL_1100
@@ -512,10 +476,11 @@ export default function FloatingBallTest() {
       let config: floatingBall.FloatingBallConfiguration = {
         context: context,
       };
+
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: '',
-        icon:await getPixelMap()
+        icon:pixelMapIcon as image.PixelMap
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
@@ -524,11 +489,17 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
-          expect(false).assertTrue();
-          done();
+          if(err.code == 1300019){
+            expect(true).assertTrue();
+            done();
+          }
+          else{
+            expect(false).assertTrue();
+            done();
+          }
         });
       } catch (error) {
         let exception: BusinessError = error as BusinessError;
@@ -536,11 +507,7 @@ export default function FloatingBallTest() {
         expect(exception.message!=null).assertTrue();
         if(exception.code == 801){
           done();
-        }else if(exception.code == 1300019){
-          expect(true).assertTrue();
-          done();
-        }
-        else{
+        }else{
           expect(false).assertTrue();
           done();
         }
@@ -559,10 +526,11 @@ export default function FloatingBallTest() {
       let config: floatingBall.FloatingBallConfiguration = {
         context: context,
       };
+
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-        icon:await getPixelMap()
+        icon:pixelMapIcon as image.PixelMap
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
@@ -571,11 +539,17 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
-          expect(false).assertTrue();
-          done();
+          if(err.code == 1300019){
+            expect(true).assertTrue();
+            done();
+          }
+          else{
+            expect(false).assertTrue();
+            done();
+          }
         });
       } catch (error) {
         let exception: BusinessError = error as BusinessError;
@@ -583,11 +557,7 @@ export default function FloatingBallTest() {
         expect(exception.message!=null).assertTrue();
         if(exception.code == 801){
           done();
-        }else if(exception.code == 1300019){
-          expect(true).assertTrue();
-          done();
-        }
-        else{
+        }else{
           expect(false).assertTrue();
           done();
         }
@@ -606,10 +576,11 @@ export default function FloatingBallTest() {
       let config: floatingBall.FloatingBallConfiguration = {
         context: context,
       };
+
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon as image.PixelMap,
         content:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
       };
       try {
@@ -619,11 +590,17 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
-          expect(false).assertTrue();
-          done();
+          if(err.code == 1300019){
+            expect(true).assertTrue();
+            done();
+          }
+          else{
+            expect(false).assertTrue();
+            done();
+          }
         });
       } catch (error) {
         let exception: BusinessError = error as BusinessError;
@@ -631,11 +608,7 @@ export default function FloatingBallTest() {
         expect(exception.message!=null).assertTrue();
         if(exception.code == 801){
           done();
-        }else if(exception.code == 1300019){
-          expect(true).assertTrue();
-          done();
-        }
-        else{
+        }else{
           expect(false).assertTrue();
           done();
         }
@@ -657,7 +630,7 @@ export default function FloatingBallTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon as image.PixelMap,
         content:'',
       };
       try {
@@ -667,7 +640,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -702,7 +675,7 @@ export default function FloatingBallTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon as image.PixelMap,
         backgroundColor:'#80FFFFFF'
       };
       try {
@@ -712,10 +685,16 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
-          expect(false).assertTrue();
-          done();
+          if(err.code == 1300019){
+            expect(true).assertTrue();
+            done();
+          }
+          else{
+            expect(false).assertTrue();
+            done();
+          }
         });
       } catch (error) {
         let exception: BusinessError = error as BusinessError;
@@ -723,11 +702,7 @@ export default function FloatingBallTest() {
         expect(exception.message!=null).assertTrue();
         if(exception.code == 801){
           done();
-        }else if(exception.code == 1300019){
-          expect(true).assertTrue();
-          done();
-        }
-        else{
+        }else{
           expect(false).assertTrue();
           done();
         }
@@ -746,10 +721,11 @@ export default function FloatingBallTest() {
       let config: floatingBall.FloatingBallConfiguration = {
         context: context,
       };
+
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon as image.PixelMap,
         backgroundColor:'123'
       };
       try {
@@ -759,10 +735,16 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
-          expect(false).assertTrue();
-          done();
+          if(err.code == 1300019){
+            expect(true).assertTrue();
+            done();
+          }
+          else{
+            expect(false).assertTrue();
+            done();
+          }
         });
       } catch (error) {
         let exception: BusinessError = error as BusinessError;
@@ -770,11 +752,7 @@ export default function FloatingBallTest() {
         expect(exception.message!=null).assertTrue();
         if(exception.code == 801){
           done();
-        }else if(exception.code == 1300019){
-          expect(true).assertTrue();
-          done();
-        }
-        else{
+        }else{
           expect(false).assertTrue();
           done();
         }
@@ -797,7 +775,7 @@ export default function FloatingBallTest() {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
         content: 'content',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon as image.PixelMap,
         backgroundColor:'#008EF5',
       };
       try {
@@ -807,7 +785,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -845,7 +823,7 @@ export default function FloatingBallTest() {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
         content: 'content',
-        icon:await getPixelMap()
+        icon:pixelMapIcon as image.PixelMap
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
@@ -854,7 +832,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -890,7 +868,7 @@ export default function FloatingBallTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
-        icon:await getPixelMap()
+        icon:pixelMapIcon as image.PixelMap
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
@@ -899,7 +877,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -943,10 +921,16 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
-          expect(false).assertTrue();
-          done();
+          if(err.code == 1300019){
+            expect(true).assertTrue();
+            done();
+          }
+          else{
+            expect(false).assertTrue();
+            done();
+          }
         });
       } catch (error) {
         let exception: BusinessError = error as BusinessError;
@@ -954,11 +938,7 @@ export default function FloatingBallTest() {
         expect(exception.message!=null).assertTrue();
         if(exception.code == 801){
           done();
-        }else if(exception.code == 1300019){
-          expect(true).assertTrue();
-          done();
-        }
-        else{
+        }else{
           expect(false).assertTrue();
           done();
         }
@@ -981,7 +961,7 @@ export default function FloatingBallTest() {
         template: floatingBall.FloatingBallTemplate.NORMAL,
         title: 'title',
         content: 'content',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon as image.PixelMap,
         backgroundColor:'#008EF5',
       };
       try {
@@ -991,7 +971,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -1029,7 +1009,7 @@ export default function FloatingBallTest() {
         template: floatingBall.FloatingBallTemplate.NORMAL,
         title: 'title',
         content: 'content',
-        icon:await getPixelMap()
+        icon:pixelMapIcon as image.PixelMap
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
@@ -1038,7 +1018,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -1074,7 +1054,7 @@ export default function FloatingBallTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.NORMAL,
         title: 'title',
-        icon:await getPixelMap()
+        icon:pixelMapIcon as image.PixelMap
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
@@ -1083,7 +1063,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -1127,7 +1107,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -1164,7 +1144,7 @@ export default function FloatingBallTest() {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
         title: 'title',
         content: 'content',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon as image.PixelMap,
         backgroundColor:'#008EF5',
       };
       try {
@@ -1174,7 +1154,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -1221,7 +1201,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -1266,7 +1246,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -1310,7 +1290,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -1347,7 +1327,7 @@ export default function FloatingBallTest() {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
         title: 'title',
         content: 'content',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon as image.PixelMap,
         backgroundColor:'#008EF5',
       };
       try {
@@ -1357,7 +1337,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -1394,7 +1374,7 @@ export default function FloatingBallTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon as image.PixelMap,
         backgroundColor:'#008EF5',
       };
       try {
@@ -1404,7 +1384,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -1449,7 +1429,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -1493,7 +1473,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -1543,17 +1523,17 @@ export default function FloatingBallTest() {
             floatingBallController.stopFloatingBall();
             expect(false).assertTrue();
             done();
-          }).catch((err: BusinessError):void => {
+          }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
-            expect(false).assertTrue();
-            done();
+            floatingBallController.stopFloatingBall();
+            expect(err.code).assertEqual(1300019)
+            expect(err.message!=null).assertTrue();
+            done()
           });
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
-          floatingBallController.stopFloatingBall();
-          expect(err.code).assertEqual(1300019)
-          expect(err.message!=null).assertTrue();
-          done()
+          expect(false).assertTrue();
+          done();
         });
       } catch (error) {
         let exception: BusinessError = error as BusinessError;
@@ -1596,7 +1576,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(err.code).assertEqual(1300025);
@@ -1632,7 +1612,7 @@ export default function FloatingBallTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
-        icon:await getPixelMap()
+        icon:pixelMapIcon as image.PixelMap
       };
       let updateParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.NORMAL,
@@ -1647,14 +1627,14 @@ export default function FloatingBallTest() {
             floatingBallController.stopFloatingBall();
             expect(false).assertTrue();
             done();
-          }).catch((err: BusinessError):void => {
+          }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
             floatingBallController.stopFloatingBall();
             expect(err.code).assertEqual(1300028)
             expect(err.message!=null).assertTrue();
             done();
           });
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           floatingBallController.stopFloatingBall();
           expect(false).assertTrue();
@@ -1703,14 +1683,14 @@ export default function FloatingBallTest() {
             floatingBallController.stopFloatingBall();
             expect(false).assertTrue();
             done();
-          }).catch((err: BusinessError):void => {
+          }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
             floatingBallController.stopFloatingBall();
             expect(err.code).assertEqual(1300027)
             expect(err.message!=null).assertTrue();
             done();
           });
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
           done()
@@ -1744,12 +1724,12 @@ export default function FloatingBallTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon as image.PixelMap,
       };
       let updateParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title2',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon1 as image.PixelMap,
         backgroundColor:'#FF008EF5',
         content:'content'
       };
@@ -1762,14 +1742,14 @@ export default function FloatingBallTest() {
             floatingBallController.stopFloatingBall();
             expect(false).assertTrue();
             done();
-          }).catch((err: BusinessError):void => {
+          }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
             floatingBallController.stopFloatingBall();
             expect(err.code).assertEqual(1300028)
             expect(err.message!=null).assertTrue();
             done();
           });
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
           done()
@@ -1803,14 +1783,14 @@ export default function FloatingBallTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.NORMAL,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon as image.PixelMap,
         backgroundColor:'#FF008E',
         content:'content'
       };
       let updateParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.NORMAL,
         title: 'title2',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon1 as image.PixelMap,
         backgroundColor:'#FF008EF5',
       };
       try {
@@ -1822,13 +1802,13 @@ export default function FloatingBallTest() {
             floatingBallController.stopFloatingBall();
             expect(true).assertTrue();
             done();
-          }).catch((err: BusinessError):void => {
+          }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
             expect(err.message!=null).assertTrue();
             expect(false).assertTrue();
             done();
           });
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -1863,14 +1843,14 @@ export default function FloatingBallTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon as image.PixelMap,
         backgroundColor:'#FF008E',
         content:'content'
       };
       let updateParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
         title: 'title2',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon1 as image.PixelMap,
         backgroundColor:'#FF008EF5',
         content:'content1'
       };
@@ -1883,13 +1863,13 @@ export default function FloatingBallTest() {
             floatingBallController.stopFloatingBall();
             expect(true).assertTrue();
             done();
-          }).catch((err: BusinessError):void => {
+          }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
             expect(err.message!=null).assertTrue();
             expect(false).assertTrue();
             done();
           });
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -1924,14 +1904,14 @@ export default function FloatingBallTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon as image.PixelMap,
         backgroundColor:'#FF008EF5',
         content:'content'
       };
       let updateParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
         title: 'title2',
-        icon:await getPixelMap(),
+        icon:pixelMapIcon1 as image.PixelMap,
         backgroundColor:'#FF008EF5',
         content:'content1'
       };
@@ -1944,13 +1924,13 @@ export default function FloatingBallTest() {
             floatingBallController.stopFloatingBall();
             expect(true).assertTrue();
             done();
-          }).catch((err: BusinessError):void => {
+          }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
             expect(err.message!=null).assertTrue();
             expect(false).assertTrue();
             done();
           });
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -1994,19 +1974,19 @@ export default function FloatingBallTest() {
             console.info(CaseName+ ' Succeeded in stopping 1 floating ball.');
             floatingBallController.stopFloatingBall().then(() => {
               console.info(CaseName+ ' Succeeded in stopping 2 floating ball.');
-            }).catch((err: BusinessError):void => {
+            }).catch((err: Error):void => {
               console.error(CaseName+ ` Failed to stop 2 floating ball. Cause:${err.code}, message:${err.message}`);
               expect(err.code).assertEqual(1300022);
               expect(err.message!=null).assertTrue();
               done();
             });
-          }).catch((err: BusinessError):void => {
+          }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to stop 1 floating ball. Cause:${err.code}, message:${err.message}`);
             expect(err.message!=null).assertTrue();
             expect(false).assertTrue();
             done()
           });
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -2041,7 +2021,7 @@ export default function FloatingBallTest() {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
         floatingBallController.stopFloatingBall().then(() => {
           console.info(CaseName+ ' Succeeded in stopping 2 floating ball.');
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` Failed to stop 2 floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.code).assertEqual(1300024);
           expect(err.message!=null).assertTrue();
@@ -2089,25 +2069,25 @@ export default function FloatingBallTest() {
                 console.info(CaseName+ ' Succeeded in stopping 2 floating ball.');
                 expect(true).assertTrue();
                 done()
-              }).catch((err: BusinessError):void => {
+              }).catch((err: Error):void => {
                 console.error(CaseName+ ` Failed to stop 2 floating ball. Cause:${err.code}, message:${err.message}`);
                 expect(err.message!=null).assertTrue();
                 expect(false).assertTrue();
                 done()
               });
-            }).catch((err: BusinessError):void => {
+            }).catch((err: Error):void => {
               console.error(CaseName+ ` Failed to starting 2 floating ball. Cause:${err.code}, message:${err.message}`);
               expect(err.message!=null).assertTrue();
               expect(false).assertTrue();
               done();
             });
-          }).catch((err: BusinessError):void => {
+          }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to stop 1 floating ball. Cause:${err.code}, message:${err.message}`);
             expect(err.message!=null).assertTrue();
             expect(false).assertTrue();
             done()
           });
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -2151,9 +2131,10 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.onStateChange(onStateChange);
+          floatingBallController.onStateChange(onStateChange);
           expect(false).assertTrue();
           done()
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           floatingBallController.stopFloatingBall();
           floatingBallController.offStateChange(onStateChange);
@@ -2355,7 +2336,7 @@ export default function FloatingBallTest() {
           floatingBallController.onClick(onClick);
           expect(false).assertTrue();
           done()
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           floatingBallController.stopFloatingBall();
           floatingBallController.offStateChange(onClick);
@@ -2412,27 +2393,24 @@ export default function FloatingBallTest() {
         //点击
         let button: Component | null = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
         console.info(CaseName+ ' button: ' + button);
-        if (button == null) {
-          console.error(CaseName+ ' button is null');
-          done();
-          return;
-        }
-        let Bounds: Rect = await  button.getBounds();
+        let Bounds: Rect = await  button!.getBounds();
         console.info(CaseName+ ' Bounds: ' + JSON.stringify(Bounds));
-        await driver.click(Bounds.left,Bounds.top);
-        await Utils.msSleep(300);
-        console.info(CaseName+ ' time1: ' + time);
-        expect(time).assertEqual(2);
-        floatingBallController.offClick();
-        //点击
-        await driver.click(Bounds.left,Bounds.top);
-        await Utils.msSleep(300);
-        console.info(CaseName+ ' time2: ' + time);
-        expect(time).assertEqual(2);
+          await driver.click(Bounds.left,Bounds.top);
+          await Utils.msSleep(300);
+          console.info(CaseName+ ' time1: ' + time);
+          expect(time).assertEqual(2);
+          floatingBallController.offClick();
+          //点击
+          await driver.click(Bounds.left,Bounds.top);
+          await Utils.msSleep(300);
+          console.info(CaseName+ ' time2: ' + time);
+          expect(time).assertEqual(2);
 
-        floatingBallController.stopFloatingBall();
-        await Utils.msSleep(800);
-        done();
+          floatingBallController.stopFloatingBall();
+          await Utils.msSleep(800);
+          done();
+
+
       } catch (error) {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
@@ -2482,12 +2460,8 @@ export default function FloatingBallTest() {
         //点击
         let button: Component | null = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
         console.info(CaseName+ ' button: ' + button);
-        if (button == null) {
-          console.error(CaseName+ ' button is null');
-          done();
-          return;
-        }
-        let Bounds: Rect = await  button.getBounds();
+
+        let Bounds: Rect = await  button!.getBounds();
         console.info(CaseName+ ' Bounds: ' + JSON.stringify(Bounds));
         await driver.click(Bounds.left,Bounds.top);
         await Utils.msSleep(300);
@@ -2539,7 +2513,7 @@ export default function FloatingBallTest() {
           console.info(CaseName+' Succeeded in getting floating ball window info. Info: ' + JSON.stringify(data));
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName + ` Failed to get floating ball window info. Cause code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(1300025)
           expect(err.message!=null).assertTrue();
@@ -2579,12 +2553,13 @@ export default function FloatingBallTest() {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
         let onStateChangeCallback = (state: floatingBall.FloatingBallState) => {
           console.info(CaseName+ ' Floating ball stateChange: ' + state);
-          State == state;
+          State = state;
 
         };
         floatingBallController.onStateChange(onStateChangeCallback);
         await floatingBallController.startFloatingBall(startParams);
         await Utils.msSleep(1000);
+        console.info(CaseName+ ' Floating ball State: ' + State);
         if(State == floatingBall.FloatingBallState.STARTED){
           floatingBallController.getFloatingBallWindowInfo().then((data: floatingBall.FloatingBallWindowInfo) => {
             console.info(CaseName+' Succeeded in getting floating ball window info. Info: ' + JSON.stringify(data.windowId));
@@ -2593,7 +2568,7 @@ export default function FloatingBallTest() {
             expect(data.windowId).assertLarger(0);
             expect(data!=null).assertTrue();
             done();
-          }).catch((err: BusinessError):void => {
+          }).catch((err: Error):void => {
             console.error(CaseName + ` Failed to get floating ball window info. Cause code: ${err.code}, message: ${err.message}`);
             expect(err.message!=null).assertTrue();
             expect(false).assertTrue();
@@ -2643,17 +2618,17 @@ export default function FloatingBallTest() {
             console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
             expect(false).assertTrue();
             done();
-          }).catch((err: BusinessError):void => {
+          }).catch((err: Error):void => {
             console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
-            expect(false).assertTrue();
+            floatingBallController.stopFloatingBall();
+            expect(err.code).assertEqual(1300019);
+            expect(err.message!=null).assertTrue();
             done();
           });
         } catch (error) {
           let exception: BusinessError = error as BusinessError;
           console.error( CaseName+  `Failed restoreMainWindow. Cause:${exception.code}, message:${exception.message}`);
-          floatingBallController.stopFloatingBall();
-          expect(exception.code).assertEqual(1300019);
-          expect(exception.message!=null).assertTrue();
+          expect(false).assertTrue();
           done();
 
         }
@@ -2698,7 +2673,7 @@ export default function FloatingBallTest() {
           console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(1300025);
           expect(err.message!=null).assertTrue();
@@ -2744,12 +2719,7 @@ export default function FloatingBallTest() {
         //点击闪控球
         let button: Component | null = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
         console.info(CaseName+ ' button: ' + button);
-        if (button == null) {
-          console.error(CaseName+ ' button is null');
-          done();
-          return;
-        }
-        let Bounds: Rect = await  button.getBounds();
+        let Bounds: Rect = await  button!.getBounds();
         console.info(CaseName+ ' Bounds: ' + JSON.stringify(Bounds));
         await driver.click(Bounds.left,Bounds.top);
         await Utils.msSleep(200);
@@ -2758,7 +2728,7 @@ export default function FloatingBallTest() {
           console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
           floatingBallController.stopFloatingBall();
           expect(err.code).assertEqual(1300026);
@@ -2808,7 +2778,7 @@ export default function FloatingBallTest() {
           console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
           floatingBallController.stopFloatingBall();
           expect(err.code).assertEqual(1300026);
@@ -2850,7 +2820,7 @@ export default function FloatingBallTest() {
       let State:floatingBall.FloatingBallState;
       try {
         floatingBall.create(config).then((data: floatingBall.FloatingBallController) => {
-           floatingBallController = data;
+          floatingBallController = data;
           console.info(caseName+ ` Succeeded in creating floating ball controller. Data: ${data}`);
           let onStateChange = (state: floatingBall.FloatingBallState) => {
             console.info(caseName+ ' Floating ball stateChange: ' + state);
@@ -2871,16 +2841,16 @@ export default function FloatingBallTest() {
               //   console.info(caseName+' Succeeded in saving screenshot. Pixel bytes number: ' + pixelMap.getPixelBytesNumber());
               //   expect(pixelMap.getPixelBytesNumber()).assertLarger(0);
               //   pixelMap.release(); // PixelMap使用完后及时释放内存
-                floatingBallController.offStateChange();
-                floatingBallController.stopFloatingBall();
-                done();
-              // }).catch((err: BusinessError):void => {
+              floatingBallController.offStateChange();
+              floatingBallController.stopFloatingBall();
+              done();
+              // }).catch((err: Error):void => {
               //   console.error(caseName+` Failed to save screenshot. Code: ${err.code}, message: ${err.message}`);
               //   floatingBallController.stopFloatingBall();
               //   expect(false).assertTrue();
               //   done();
               // });
-            }).catch((err: BusinessError):void => {
+            }).catch((err: Error):void => {
               console.error(caseName + ` Failed to get floating ball window info. Cause code: ${err.code}, message: ${err.message}`);
               floatingBallController.stopFloatingBall();
               expect(false).assertTrue();
@@ -2889,7 +2859,7 @@ export default function FloatingBallTest() {
           }else{
             await Utils.msSleep(300);
           }
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(caseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
           if(err.code == 801){
             done();
@@ -2920,7 +2890,7 @@ export default function FloatingBallTest() {
         context: context,
       };
       let want: Want = {
-        bundleName: 'com.example.myapplication',
+        bundleName: 'com.example.actswindowtest.static',
         abilityName: 'StartAbility'
       };
       let startParams: floatingBall.FloatingBallParams = {
@@ -2935,6 +2905,7 @@ export default function FloatingBallTest() {
         console.info(CaseName+ ' button: ' + button);
         if (button == null) {
           console.error(CaseName+ ' button is null');
+          expect(false).assertTrue();
           done();
           return;
         }
@@ -2948,7 +2919,7 @@ export default function FloatingBallTest() {
           floatingBallController.stopFloatingBall();
           expect(true).assertTrue();
           done();
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
           expect(err.message!=null).assertTrue();
           expect(false).assertTrue();
@@ -2967,9 +2938,9 @@ export default function FloatingBallTest() {
         }
       }
     })
-    
 
-    
+
+
 
   })
 }

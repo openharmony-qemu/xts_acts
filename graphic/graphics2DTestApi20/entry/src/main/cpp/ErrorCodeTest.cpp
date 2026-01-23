@@ -43,6 +43,7 @@
 
 #include <native_image/native_image.h>
 #include <native_drawing/drawing_matrix.h>
+#include <common/native_common.h>
 
 void addErrorCodeTest(std::vector<napi_property_descriptor>& descData)
 {
@@ -178,8 +179,8 @@ napi_value OH_OHNativeErrorCodeImageSupport(napi_env env, napi_callback_info inf
 {
     napi_value result;
     OH_NativeImage* pimg = OH_ConsumerSurface_Create();
+    NAPI_ASSERT(env, pimg != nullptr, "");
     int32_t res =  OH_ConsumerSurface_SetDefaultUsage(pimg, 800000000000);
-
     napi_create_int32(env, res == NATIVE_ERROR_OK, &result);
     return result;
 }
@@ -281,6 +282,7 @@ napi_value OH_OHNativeErrorCodeVSyncOk(napi_env env, napi_callback_info info)
 {
     napi_value result;
     OH_NativeVSync* nativeVsync = OH_NativeVSync_Create("Test", 4);
+    NAPI_ASSERT(env, nativeVsync != nullptr, "");
     OH_NativeVSync_FrameCallback callback = [](long long timestamp, void *data) {};
     void* data = nullptr;
     int32_t res = OH_NativeVSync_RequestFrame(nativeVsync, callback, data);

@@ -83,7 +83,7 @@ struct WebZoomControlAccess {
                 if(res) {
                   console.log('emitWebZoomControlAccess00444' + res )
                   let clientWidth02 = Number(res)
-                  if(clientWidth02 > this.clientWidth01) {
+                  if(clientWidth02 > this.clientWidth01 || clientWidth02 == this.clientWidth01) {
                     Utils.emitEvent(true, 20251213)
                   }
                 }

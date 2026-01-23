@@ -50,19 +50,18 @@ export const defaultThemeProperty = 'DefaultThemeProperty';
 struct SetDefaultThemePage {
   @State message: string = 'Custom Theme Test';
 
-  @StorageLink(defaultThemeProperty) localTheme: CustomTheme | undefined
+  @StorageLink(defaultThemeProperty) localTheme: CustomTheme | undefined = systemDefaultTheme;
 
   aboutToAppear() {
-    // ThemeControl.setDefaultTheme(redCustomTheme);
+    ThemeControl.setDefaultTheme(redCustomTheme);
   }
 
   onPageHide() {
-    // ThemeControl.setDefaultTheme({colors: undefined});
+    ThemeControl.setDefaultTheme(undefined);
   }
 
-  onWillApplyTheme(theme: CustomTheme | undefined) {
+  onWillApplyTheme(theme: CustomTheme) {
     this.localTheme = theme;
-    console.info('xyb: before push ' + JSON.stringify(theme));
   }
 
   build() {

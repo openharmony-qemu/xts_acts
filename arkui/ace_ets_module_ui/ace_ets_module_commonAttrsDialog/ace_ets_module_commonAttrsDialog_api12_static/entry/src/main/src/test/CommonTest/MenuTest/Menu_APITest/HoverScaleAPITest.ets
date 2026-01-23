@@ -81,7 +81,7 @@ it('HoverScale_APITest_static_0100', Level.LEVEL0, async (done: () => void): Pro
 
       let point =  await row.getBoundsCenter();
 
-       btn?.click();
+       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(5000);
        driver?.click(Math.round(point.x/2) as int, Math.round(point.y/4) as int);
       await CommonFunc.sleep(1000);

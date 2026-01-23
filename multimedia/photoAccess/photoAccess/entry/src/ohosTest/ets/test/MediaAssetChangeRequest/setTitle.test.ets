@@ -105,5 +105,71 @@ export default function setTitleChangeRequestTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   set_title_change_request_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_SET_TITLE_CHANGE_REQUEST_0300
+     * @tc.desc   change asset title, title is ('aaa...aaa'(255))
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('set_title_change_request_003', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'set_title_change_request_003';
+      try {
+        let asset: ESObject = await helper.createAsset('title255.jpg');
+        let fd: ESObject = await asset.open('rw');
+        await asset.close(fd);
+
+        let assetTitle = '';
+        for (let i = 0; i < 251; i++) {
+          assetTitle += 'a';
+        }
+        let assetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset);
+        assetChangeRequest.setTitle(assetTitle);
+        await helper.applyChanges(assetChangeRequest);
+
+        let fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetTitle + '.jpg');
+        let fetchResult = await helper.getAssets(fetchOps);
+        expect(fetchResult.getCount()).assertEqual(1);
+        fetchResult.close();
+        done();
+      } catch (error) {
+        console.error(`${testNum} failed; error: ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   set_title_change_request_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_SET_TITLE_CHANGE_REQUEST_0400
+     * @tc.desc   change asset title, title is ('aaa...aaa'(256))
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('set_title_change_request_004', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'set_title_change_request_004';
+      try {
+        let asset: ESObject = await helper.createAsset('title256.jpg');
+        let fd: ESObject = await asset.open('rw');
+        await asset.close(fd);
+
+        let assetTitle = '';
+        for (let i = 0; i < 252; i++) {
+          assetTitle += 'a';
+        }
+        let assetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset);
+        assetChangeRequest.setTitle(assetTitle);
+        await helper.applyChanges(assetChangeRequest);
+
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} failed; error: ${error}`);
+        done();
+      }
+    })
   })
 }

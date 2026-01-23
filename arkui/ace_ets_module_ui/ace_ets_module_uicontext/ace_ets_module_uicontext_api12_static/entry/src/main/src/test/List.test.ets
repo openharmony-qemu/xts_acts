@@ -23,11 +23,11 @@ import APIUIContextGetSync from './componentSnapshot/APIUIContextGetSync.test';
 import UIContextOnIdle from './OnIdle/UIContextOnIdle.test';
 
 export default function testsuite() {
-  // APIcomponentSnapshotGetSync();//SDK12.6 pass1
-  // APIUIContextGetSync();//SDK12.6 pass1
-  // MeasureJsunit(); //SDK12.2 pass5
-  // APIsetDragEventStrictReportingEnabled();//SDK12.6 pass1
-  // APIgetFrameNodeByUniqueId(); // SDK10.22 pass 1
-  // PageInfo1();//SDK12.6 pass1
-  UIContextOnIdle();//master22 pass1
+  APIcomponentSnapshotGetSync();
+  APIUIContextGetSync();
+  MeasureJsunit();
+  APIsetDragEventStrictReportingEnabled();
+  APIgetFrameNodeByUniqueId();
+  PageInfo1();
+  UIContextOnIdle();
 }

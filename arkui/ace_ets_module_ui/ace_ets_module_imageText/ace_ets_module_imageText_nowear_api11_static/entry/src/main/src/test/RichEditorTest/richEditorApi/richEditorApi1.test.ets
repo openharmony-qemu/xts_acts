@@ -88,14 +88,14 @@ it('richEditorApi1_static_0100', Level.LEVEL2, async (done: () => void) => {
       await CommonFunc.sleep(2000);
 
       let button1: Component|null = await driver.findComponent(ON.text('复制'));
-      button1?.click()
+      await (button1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
 
       await driver.click(centerPoint.x, centerPoint.y);
       await CommonFunc.sleep(2000);
 
       let button2: Component|null = await driver.findComponent(ON.text('粘贴'));
-      button2?.click()
+      await (button2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
 
       let text1 = inspector.getInspectorByKey('richEditorApi1_text1');

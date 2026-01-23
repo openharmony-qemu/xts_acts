@@ -29,6 +29,7 @@
 #include "Text/EnumTest.cpp"
 #include "BindSelectionMenu/BindSelectionMenuTest.cpp"
 #include "TextEditMenuOptions/TextEditMenuOptionsTest.cpp"
+#include "grid/GridAbilityTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -372,6 +373,20 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Test_OH_ArkUI_TextEditMenuOptions07", nullptr, Test_OH_ArkUI_TextEditMenuOptions07,
          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testGridEditMode001", nullptr, TestGridEditMode001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridEditMode002", nullptr, TestGridEditMode002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridMultiSel001", nullptr, TestGridMultiSel001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridMultiSel002", nullptr, TestGridMultiSel002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridDragAnimation001", nullptr, TestGridDragAnimation001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridDragAnimation002", nullptr, TestGridDragAnimation002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridItemSelectable001", nullptr, TestGridItemSelectable001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

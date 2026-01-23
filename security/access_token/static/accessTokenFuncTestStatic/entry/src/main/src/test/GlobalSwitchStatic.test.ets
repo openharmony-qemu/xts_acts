@@ -88,7 +88,7 @@ export default function GlobalSwitchStaticTest() {
         let flag = false;
         atManager.requestGlobalSwitch(testAbilityContext, type).then((data: Boolean): void => {
           hilog.info(domain, tag, "Test_requestGlobalSwitch_001 data");
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, "Test_requestGlobalSwitch_001 err.code:" + JSON.stringify(err));
           if (flag = err.code == ERR_SWITCH_OPEN || err.code == ERR_PARAM_INVALID) {
             expect(flag).assertTrue();
@@ -122,7 +122,7 @@ export default function GlobalSwitchStaticTest() {
         atManager.requestGlobalSwitch(testAbilityContext, type).then((data: Boolean): void => {
           hilog.info(domain, tag, "Test_requestGlobalSwitch_002 data");
           expect(data).assertFalse();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, "Test_requestGlobalSwitch_002 err.code:" + JSON.stringify(err));
           if (flag = err.code == ERR_SWITCH_OPEN || err.code == ERR_PARAM_INVALID) {
             expect(flag).assertTrue();
@@ -157,7 +157,7 @@ export default function GlobalSwitchStaticTest() {
           hilog.info(domain, tag, "Test_requestGlobalSwitch_003 data");
           expect(data).assertTrue();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, "Test_requestGlobalSwitch_003 err.code:" + JSON.stringify(err));
           if (flag = err.code == ERR_SWITCH_OPEN || err.code == ERR_PARAM_INVALID) {
             expect(flag).assertTrue();

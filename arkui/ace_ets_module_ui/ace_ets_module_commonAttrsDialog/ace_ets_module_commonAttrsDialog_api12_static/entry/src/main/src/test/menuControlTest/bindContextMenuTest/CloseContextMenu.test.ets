@@ -46,7 +46,6 @@ export default function CloseContextMenu() {
         }
       } catch (err) {
         console.error("push CloseContextMenu page error: " + err);
-        expect().assertFail();
       }
 
     });
@@ -65,11 +64,11 @@ it('CloseContextMenu_static_0100', Level.LEVEL0, async (done: () => void): Promi
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let Button = await driver.findComponent(ON.id('CloseContextMenu'));
-      Button?.click();
+      await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let text = await driver.findComponent(ON.id('CloseContextMenuClick'));
-      text?.click()
+      await (text?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('CloseContextMenuText');

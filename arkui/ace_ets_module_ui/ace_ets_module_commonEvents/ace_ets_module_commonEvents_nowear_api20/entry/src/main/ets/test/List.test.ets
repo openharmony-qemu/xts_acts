@@ -29,8 +29,10 @@ import PinchRecognizerTest from "./GestureRecognizer/PinchRecognizer.test";
 import rotationGestureTest from "./GestureRecognizer/RotationRecognizer.test";
 import SwipeRecognizerTest from "./GestureRecognizer/SwipeRecognizer.test";
 import TapRecognizerTest from "./GestureRecognizer/TapRecognizer.test";
+import textAreaInputTest from './TextTest/textAreaInputTest.test';
 
 export default function testsuite() {
+  textAreaInputTest();
   FrameNodeTest();
   DragModifier();
   normalDrag();

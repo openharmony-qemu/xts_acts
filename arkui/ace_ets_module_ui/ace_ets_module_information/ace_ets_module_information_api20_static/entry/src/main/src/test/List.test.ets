@@ -20,7 +20,6 @@ import TextClockFormat from './textClockTest/TextClockFormat.test'
 import TextPickerValue from './textPicker/TextPickerValue.test'
 import TextTimerFontWeight from './textTimerTest/TextTimerFontWeight.test'
 export default function testsuite() {
-  badgeResource()
   ProgressContent()
   QRCodeResourceStr()
   TextClockFormat()

@@ -100,7 +100,9 @@ export default function RichEditorOnSelectionChange011() {
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertEqual('message:{"start":0,"end":1}');
+      expect(messageText.indexOf('message:') == 0).assertEqual(true);
+      expect(messageText.indexOf('"start":0') > 0).assertEqual(true);
+      expect(messageText.indexOf('"end":1') > 0).assertEqual(true);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C);
       await CommonFunc.sleep(1000);
       await driver.longClick(pointCenter.x, pointCenter.y);

@@ -463,6 +463,10 @@ export const AudioSessionStateChangeHintDuckCode: () => number;
 
 export const AudioSessionStateChangeHintUnduckCode: () => number;
 
+export const audioSessionStateChangeHintMuteSuggestionCode: () => number;
+
+export const audioSessionStateChangeHintUnmuteSuggestionCode: () => number;
+
 export const DeviceChangeRecommendToContinueCode: () => number;
 
 export const DeviceChangeRecommendToStopCode: () => number;

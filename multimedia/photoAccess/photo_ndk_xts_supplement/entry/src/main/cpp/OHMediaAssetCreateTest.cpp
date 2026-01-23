@@ -124,26 +124,31 @@ int g_mediaSubTypeCheck = -1;
 int g_applyChanges = -1;
 const char *GLOBAL_MEDIA_ASSET_URI = nullptr;
 OH_MediaAsset *photoAsset;
-void PreviewOutputOnFrameStart(Camera_PreviewOutput *previewOutput) {
+void PreviewOutputOnFrameStart(Camera_PreviewOutput *previewOutput)
+{
     OH_LOG_INFO(LOG_APP, "PreviewOutputOnFrameStart");
 }
-void PreviewOutputOnFrameEnd(Camera_PreviewOutput *previewOutput, int32_t frameCount) {
+void PreviewOutputOnFrameEnd(Camera_PreviewOutput *previewOutput, int32_t frameCount)
+{
     OH_LOG_INFO(LOG_APP, "PreviewOutput frameCount = %{public}d", frameCount);
 }
-void PreviewOutputOnError(Camera_PreviewOutput *previewOutput, Camera_ErrorCode errorCode) {
+void PreviewOutputOnError(Camera_PreviewOutput *previewOutput, Camera_ErrorCode errorCode)
+{
     OH_LOG_INFO(LOG_APP, "PreviewOutput errorCode = %{public}d", errorCode);
 }
 void OnCameraInputError(const Camera_Input *cameraInput, Camera_ErrorCode errorCode)
 {
     OH_LOG_INFO(LOG_APP, "OnCameraInput errorCode = %{public}d", errorCode);
 }
-PreviewOutput_Callbacks *GetPreviewOutputListener(void) {
+PreviewOutput_Callbacks *GetPreviewOutputListener(void)
+{
     static PreviewOutput_Callbacks previewOutputListener = {.onFrameStart = PreviewOutputOnFrameStart,
                                                             .onFrameEnd = PreviewOutputOnFrameEnd,
                                                             .onError = PreviewOutputOnError};
     return &previewOutputListener;
 }
-CameraInput_Callbacks *GetCameraInputListener(void) {
+CameraInput_Callbacks *GetCameraInputListener(void)
+{
     static CameraInput_Callbacks cameraInputCallbacks = {.onError = OnCameraInputError};
     return &cameraInputCallbacks;
 }
@@ -154,7 +159,8 @@ void PhotoAssetAvailable(Camera_PhotoOutput *photoOutput, OH_MediaAsset *backPho
     photoAsset = backPhotoAsset;
     LOGI("get photoAssetAvailable %{public}p", photoAsset);
 }
-napi_value TestOhMediaAsset(napi_env env, napi_callback_info info) {
+napi_value TestOhMediaAsset(napi_env env, napi_callback_info info)
+{
     LOGI("OH_PixelmapNative_CreateCroppedAndScaledPixelMap start");
     napi_value thisVar = nullptr;
     napi_value argValue[2] = {0};
@@ -338,5 +344,42 @@ napi_value OHMediaAssetChangeRequestReleaseTest(napi_env env, napi_callback_info
     }
     napi_value result;
     napi_create_int32(env, code, &result);
+    return result;
+}
+void OnQuickImageDataPrepared(MediaLibrary_ErrorCode result, MediaLibrary_RequestId requestId,
+                              MediaLibrary_MediaQuality mediaQuality, MediaLibrary_MediaContentType type,
+                              OH_ImageSourceNative *imageSourceNative, OH_PictureNative *pictureNative)
+{
+    LOGI(" prepare success");
+};
+napi_value OHMediaAssetManagerQuickRequestImageTest(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    LOGI("get index %{public}d", index);
+    napi_get_value_int32(env, args[0], &index);
+    OH_MediaAssetManager *manager = OH_MediaAssetManager_Create();
+    MediaLibrary_RequestOptions requestOptions;
+    MediaLibrary_RequestId requestId;
+    MediaLibrary_ErrorCode errCode;
+    switch (index) {
+    case CASE_INDEX_1:
+        requestOptions.deliveryMode = MEDIA_LIBRARY_BALANCED_MODE;
+        errCode = OH_MediaAssetManager_QuickRequestImage(manager, photoAsset, requestOptions, &requestId,
+                                                         OnQuickImageDataPrepared);
+        break;
+    case CASE_INDEX_2:
+        requestOptions.deliveryMode = MEDIA_LIBRARY_BALANCED_MODE;
+        photoAsset =nullptr;
+        errCode = OH_MediaAssetManager_QuickRequestImage(manager, photoAsset, requestOptions, &requestId,
+                                                         OnQuickImageDataPrepared);
+        break;   
+    default:
+        break;
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
     return result;
 }

@@ -168,6 +168,13 @@ export default function latticeTest() {
         console.info(msg + ` createImageLattice12 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
+      try {
+        drawing.Lattice.createImageLattice([ 80, 150 ], [ 80, 150 ], 2, 2);
+        console.info(msg + ' 11 createImageLattice successed');
+      } catch( e ) {
+        console.info(msg + ` 11 createImageLattice1 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
     });
 
     /**
@@ -406,6 +413,264 @@ export default function latticeTest() {
           console.info(msg + ` createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
           expect(e.code).assertEqual(401);
         }
+      }
+    });
+    /**
+     * @tc.name   testLatticeCreateImageLatticeNull2
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_0104
+     * @tc.desc   Test for testLatticeCreateImageLatticeNull2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testLatticeCreateImageLatticeNull2', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testLatticeCreateImageLatticeNull2';
+      const fBounds: common2D.Rect = {
+        left : 200, right : 200, top : 200, bottom : 200
+      }
+      const color: common2D.Color = {
+        alpha : 255,
+        red : 0,
+        green : 0,
+        blue : 255
+      }
+
+      try {
+        drawing.Lattice.createImageLattice(null, [ 1, 2, 4 ], 3, 3, fBounds, [ drawing.RectType.TRANSPARENT ], [ color ]);
+        console.info(msg + ' 1 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 1 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice(undefined, [ 1, 2, 4 ], 3, 3, fBounds, [ drawing.RectType.TRANSPARENT ], [ color ]);
+        console.info(msg + ' 2 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 2 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], null, 3, 3, fBounds, [ drawing.RectType.TRANSPARENT ], [ color ]);
+        console.info(msg + ' 3 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 3 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], undefined, 3, 3, fBounds, [ drawing.RectType.TRANSPARENT ], [ color ]);
+        console.info(msg + ' 4 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 4 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], null, 3, fBounds, [ drawing.RectType.TRANSPARENT ], [ color ]);
+        console.info(msg + ' 5 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 5 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], undefined, 3, fBounds, [ drawing.RectType.TRANSPARENT ], [ color ]);
+        console.info(msg + ' 6 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 6 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, null, fBounds, [ drawing.RectType.TRANSPARENT ], [ color ]);
+        console.info(msg + ' 7 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 7 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, undefined, fBounds, [ drawing.RectType.TRANSPARENT ], [ color ]);
+        console.info(msg + ' 8 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 8 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, null, [ drawing.RectType.TRANSPARENT ], [ color ]);
+        console.info(msg + ' 9 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 9 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, undefined, [ drawing.RectType.TRANSPARENT ], [ color ]);
+        console.info(msg + ' 10 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 10 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, fBounds, null, [ color ]);
+        console.info(msg + ' 11 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 11 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, fBounds, undefined, [ color ]);
+        console.info(msg + ' 12 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 12 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, fBounds, [ drawing.RectType.TRANSPARENT ], null);
+        console.info(msg + ' 13 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 13 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, fBounds, [ drawing.RectType.TRANSPARENT ], undefined);
+        console.info(msg + ' 14 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 14 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+    });
+    /**
+     * @tc.name   testLatticeCreateImageLattice2Null
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_0105
+     * @tc.desc   Test for testLatticeCreateImageLattice2Null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testLatticeCreateImageLattice2Null', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testLatticeCreateImageLattice2Null';
+      const fBounds: common2D.Rect = {
+        left : 200, right : 200, top : 200, bottom : 200
+      }
+      let colorArray :Array<number>=[0xffffffff,0x44444444,0x99999999,0xffffffff,0x44444444,0x99999999,0xffffffff,0x44444444,0x99999999,0x44444444,0x99999999,0xffffffff,0x44444444,0x99999999,0xffffffff,0x44444444];
+      try {
+        drawing.Lattice.createImageLattice(null, [ 1, 2, 4 ], 3, 3, fBounds, [ drawing.RectType.TRANSPARENT ], colorArray);
+        console.info(msg + ' 1 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 1 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice(undefined, [ 1, 2, 4 ], 3, 3, fBounds, [ drawing.RectType.TRANSPARENT ], colorArray);
+        console.info(msg + ' 2 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 2 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], null, 3, 3, fBounds, [ drawing.RectType.TRANSPARENT ], colorArray);
+        console.info(msg + ' 3 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 3 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], undefined, 3, 3, fBounds, [ drawing.RectType.TRANSPARENT ], colorArray);
+        console.info(msg + ' 4 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 4 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], null, 3, fBounds, [ drawing.RectType.TRANSPARENT ], colorArray);
+        console.info(msg + ' 5 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 5 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], undefined, 3, fBounds, [ drawing.RectType.TRANSPARENT ], colorArray);
+        console.info(msg + ' 6 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 6 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, null, fBounds, [ drawing.RectType.TRANSPARENT ], colorArray);
+        console.info(msg + ' 7 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 7 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, undefined, fBounds, [ drawing.RectType.TRANSPARENT ], colorArray);
+        console.info(msg + ' 8 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 8 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, null, [ drawing.RectType.TRANSPARENT ], colorArray);
+        console.info(msg + ' 9 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 9 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, undefined, [ drawing.RectType.TRANSPARENT ], colorArray);
+        console.info(msg + ' 10 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 10 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, fBounds, null, colorArray);
+        console.info(msg + ' 11 createImageLattice succeeded');
+      } catch( e ) {
+        console.info(msg + ` 11 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, fBounds, undefined, colorArray);
+        console.info(msg + ' 12 createImageLattice succeeded');
+      } catch( e ) {
+        console.info(msg + ` 12 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, fBounds, [ drawing.RectType.TRANSPARENT ], null);
+        console.info(msg + ' 13 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 13 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, fBounds, [ drawing.RectType.TRANSPARENT ], undefined);
+        console.info(msg + ' 14 createImageLattice succeeded');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` 14 createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
       }
     });
   });

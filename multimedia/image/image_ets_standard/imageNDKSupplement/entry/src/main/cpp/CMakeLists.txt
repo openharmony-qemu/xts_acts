@@ -57,7 +57,13 @@ add_library(imageEffect SHARED
     ImageResultIRNdkErrCodeTest.cpp
     ImageNdkErrCodeTest.cpp
     ImageReceiverNativeReadTest.cpp
-    OHImageNdkFrameworkTest.cpp)
+    OHImageNdkFrameworkTest.cpp
+    ImageSourceNativeGetImagePropertyTest.cpp
+    ImageSourceNativeModifySuppTest.cpp
+    PixelmapNativeCropTest.cpp
+    ImagePackerNativeTest.cpp
+    ImagePictureNativeTest.cpp
+    OHImageSourceNativeSupplementTest.cpp)
 
 
 find_library(
@@ -78,10 +84,9 @@ find_library(
 
 
 target_link_libraries(imageEffect PUBLIC
-    libimage_processing.so
+    libnative_color_space_manager.so
     libimage_ndk.z.so
     libimage_receiver_ndk.z.so
-    libace_napi.z.so
     libhilog_ndk.z.so
     libimage_effect.so
     libpixelmap.so
@@ -101,4 +106,6 @@ target_link_libraries(imageEffect PUBLIC
     libmedia_asset_manager.so
     libohcamera.so
     libohimage.so
+    librawfile.z.so
+    libace_napi.z.so
 )

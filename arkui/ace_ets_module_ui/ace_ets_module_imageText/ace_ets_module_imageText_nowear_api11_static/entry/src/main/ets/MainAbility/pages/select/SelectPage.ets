@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,6 +17,7 @@ import { Entry, Text, Column, Component, Select, Font, Color,ResourceColor } fro
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -35,7 +36,7 @@ struct SelectPage {
   @State optionFontColor: ResourceColor = Color.Green
   @State indexValue: string = ''
   stateChangCallBack:(eventData: events_emitter.EventData) => void =  (eventData: events_emitter.EventData) =>  {
-    let eventD = eventData.data as Record<String,undefined|null|Object>
+    let eventD = eventData.data as Record<String,RecordData>
     if (eventData != null && eventD != null) {
       if (eventD!['selected']) {
         this.selected = eventD!['selected'] as int

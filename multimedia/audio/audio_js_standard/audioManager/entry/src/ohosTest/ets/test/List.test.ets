@@ -16,6 +16,7 @@
 import audioFramework from './AudioFramework.test';
 import AudioManagerApi9 from './AudioManagerApi9.test';
 import audioRoutingManager from './AudioRoutingManager.test';
+import audioSessionManagerTest from './AudioSessionManager.test';
 import getAudioSceneApi12 from './GetAudioScene.test';
 import audioSpatializationManager from './AudioSpatializationManager.test';
 import audioLoopBack from './AudioLoopBack.test';
@@ -62,6 +63,7 @@ async function driveFn() {
 export default function testsuite() {
   getPermission();
   driveFn();
+  audioSessionManagerTest();
   audioFramework();
   AudioManagerApi9();
   audioRoutingManager();

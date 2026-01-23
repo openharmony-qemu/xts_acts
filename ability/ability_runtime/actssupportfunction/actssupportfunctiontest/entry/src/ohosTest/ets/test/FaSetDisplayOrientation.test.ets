@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,12 +21,24 @@ import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import { BusinessError } from '@ohos.base';
 import commonEventManager from '@ohos.commonEventManager';
+import { Driver, ON } from '@ohos.UiTest';
 
 export default function FaSetDisplayOrientationTest() {
   describe('FaSetDisplayOrientationTest', () => {
     let TAG = "";
     let TAG1 = "SUB_AA_OpenHarmony == FaSetDisplayOrientationTest : ";
     let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
 
     afterEach(async (done: Function) => {
       console.log(TAG1 + "afterEach called");

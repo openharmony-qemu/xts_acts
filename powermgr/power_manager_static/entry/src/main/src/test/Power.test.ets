@@ -368,7 +368,7 @@ export default function PowerTest() {
               expect().assertFail();
               done();
             })
-            .catch((error: BusinessError): void => {
+            .catch((error: Error): void => {
               hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
               expect(error.code).assertEqual(202);
               done();

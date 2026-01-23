@@ -68,3 +68,4 @@ export const CreateHotkey1: () => number;
 export const GetInterSinceLastInput1: () => number;
 export const RemoveKeyEventHook1: () => number;
 export const DispatchToNextHandler1: () => number;
+export const GetKeyEventId: () => number;

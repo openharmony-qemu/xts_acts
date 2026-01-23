@@ -405,5 +405,21 @@ export default function preferencesNdkTest() {
       done();
     });
 
+
+    /**
+     * @tc.name   OH_PreferencesValue_GetValueType0100
+     * @tc.number SUB_DistributedData_Preferences_SDK_NdkAPITest_2800
+     * @tc.desc   OH_PreferencesValue_GetValueType0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_PreferencesValue_GetValueType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let res = testndk.OH_PreferencesValue_GetValueType0100();
+      console.info(TAG + "OH_PreferencesValue_GetValueType0100 res=" + res );
+      expect(res).assertEqual(0);
+      done();
+    });
+
   })
 }

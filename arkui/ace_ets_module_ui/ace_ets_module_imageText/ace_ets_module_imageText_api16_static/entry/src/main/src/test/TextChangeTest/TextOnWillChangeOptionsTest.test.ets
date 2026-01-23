@@ -163,7 +163,7 @@ it('TextOnWillChangeOptionsTest_static_0002', Level.LEVEL1, async (done: () => v
       await CommonFunc.sleep(1000);
       let search = await driver.findComponent(ON.id('search'));
       await CommonFunc.sleep(500);
-      search?.click();
+      await (search?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       await driver.triggerKey(2055);
       await CommonFunc.sleep(500);
@@ -301,7 +301,7 @@ it('TextOnWillChangeOptionsTest_static_0004', Level.LEVEL1, async (done: () => v
       await CommonFunc.sleep(1000);
       let textArea = await driver.findComponent(ON.id('textArea'));
       await CommonFunc.sleep(500);
-      textArea?.click();
+      await (textArea?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       await driver.triggerKey(2055);
       await CommonFunc.sleep(500);
@@ -439,7 +439,7 @@ it('TextOnWillChangeOptionsTest_static_0006', Level.LEVEL1, async (done: () => v
       await CommonFunc.sleep(1000);
       let textInput = await driver.findComponent(ON.id('textInput'));
       await CommonFunc.sleep(500);
-      textInput?.click();
+      await (textInput?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       await driver.triggerKey(2055);
       await CommonFunc.sleep(500);

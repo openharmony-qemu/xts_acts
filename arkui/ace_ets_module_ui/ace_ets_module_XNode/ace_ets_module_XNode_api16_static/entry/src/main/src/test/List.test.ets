@@ -27,16 +27,16 @@ import setCrossLanguageOptionsErrorCodeTest from './FrameNodeTest/setCrossLangua
 import postFrameCallbackTest from './PostFrameTest/postFrameCallback.test';
 
 export default function testsuite() {
-  // frameNodeIsVisibleTest(); // pass1
-  // frameNodeMoveOneTest(); //  Pass: 2
-  // frameNodeMoveTwoTest(); // pass 1
-  // frameNodeMoveToErrorCodeTest(); // SDK12.9 Pass: 1 一起跑失败
-  // AddComponentContentErrorCodeTest(); // SDK12.9 Pass: 1 一起跑失败
-  // RenderNodeDisposeTest();// SDK12.9 Pass: 1 一起跑失败
-  // componentContentDisposeTest();// SDK12.9 Pass: 1 一起跑失败
-  // postFrameCallbackTest(); //11.22.记录到表格第8行，基础框架 postFrameCallback回调未执行 1个
-  setCrossLanguageOptionsErrorCodeTest();// master22 pass1
-  // blendColorErrorCodeTest(); // Failure: 1  sourceColor.blendColor(null)编译不过 用例注释掉
-  // resourceColorErrorCodeTest(); // Failure: 1  sourceColor.blendColor(null)编译不过 用例注释掉
-  // BindControllerErrorCodeTest();// API20 暂不支持 2ge
+  frameNodeIsVisibleTest();
+  frameNodeMoveOneTest();
+  frameNodeMoveTwoTest();
+  frameNodeMoveToErrorCodeTest();
+  AddComponentContentErrorCodeTest();
+  RenderNodeDisposeTest();
+  componentContentDisposeTest();
+  postFrameCallbackTest();
+  setCrossLanguageOptionsErrorCodeTest();
+  blendColorErrorCodeTest();
+  resourceColorErrorCodeTest();
+  BindControllerErrorCodeTest();
 }

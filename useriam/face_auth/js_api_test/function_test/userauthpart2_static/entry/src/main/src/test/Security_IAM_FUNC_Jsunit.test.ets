@@ -77,7 +77,7 @@ export default function userauthTest_API9() {
             try {
               hilog.info(domain, tag, format,'Security_IAM_Func_Static_0102 authtype:' + authType[idx0] + 'trustlevel:' + level[idx1])
               userAuth.getAvailableStatus(authType[idx0], level[idx1]);
-            } catch (e:BusinessError) {
+            } catch (e) {
               hilog.info(domain, tag, format,"Security_IAM_Func_Static_0102 fail " + 'authType:' + authType[idx0] + 'trustlevel:' + level[idx1] + 'e.code:' + e.code);
               expect((e.code == userAuth.UserAuthResultCode.NOT_ENROLLED) || (e.code == userAuth.UserAuthResultCode.TYPE_NOT_SUPPORT)).assertTrue();
               done();
@@ -93,7 +93,7 @@ export default function userauthTest_API9() {
           try {
             hilog.info(domain, tag, format,'Security_IAM_Func_Static_0102 authtype:' + authType1[idx2] + 'trustlevel:' + level1)
             userAuth.getAvailableStatus(authType1[idx2], level1);
-          } catch (e:BusinessError) {
+          } catch (e) {
             hilog.info(domain, tag, format,"Security_IAM_Func_Static_0102 fail " + 'authType:' + authType1[idx2] + 'trustlevel:' + level1 + 'e.code:' + e.code);
             expect((e.code == userAuth.UserAuthResultCode.NOT_ENROLLED) || (e.code == userAuth.UserAuthResultCode.TRUST_LEVEL_NOT_SUPPORT)).assertTrue();
             done();
@@ -107,7 +107,7 @@ export default function userauthTest_API9() {
         try {
           hilog.info(domain, tag, format,'Security_IAM_Func_Static_0102 authtype:' + authType2 + 'trustlevel:' + level1)
           userAuth.getAvailableStatus(authType2, level1);
-        } catch (e:BusinessError) {
+        } catch (e) {
           hilog.info(domain, tag, format,"Security_IAM_Func_Static_0102 fail " + 'authType:' + authType2 + 'trustlevel:' + level1 + 'e.code:' + e.code);
           expect((e.code == userAuth.UserAuthResultCode.TYPE_NOT_SUPPORT) ||
             (e.code == userAuth.UserAuthResultCode.NOT_ENROLLED) || (e.code == userAuth.UserAuthResultCode.TRUST_LEVEL_NOT_SUPPORT)).assertTrue();
@@ -215,7 +215,7 @@ export default function userauthTest_API9() {
         userAuth.getUserAuthInstance(authParam1,widgetParam);
         userAuth.getUserAuthInstance(authParam2,widgetParam);
       }
-      catch (err:BusinessError){
+      catch (err){
         hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_skip_Static_0190 fail CODE:" + err.code);
         expect(null).assertFail();
       }
@@ -279,7 +279,7 @@ export default function userauthTest_API9() {
         });
         userAuthInstance.offAuthTip();
       }
-      catch (err:BusinessError){
+      catch (err) {
         hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032  err.code "+err.code);
         expect(null).assertFail();
       }
@@ -289,7 +289,7 @@ export default function userauthTest_API9() {
         userAuthInstance.offAuthTip((authTipInfo:userAuth.AuthTipInfo)=>{});
         expect(null).assertFail();
       }
-      catch (err:BusinessError) {
+      catch (err) {
         hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032  err1.code "+err.code);
         expect(''+12500002).assertEqual(''+err.code);
       }
@@ -321,11 +321,11 @@ export default function userauthTest_API9() {
               hilog.info(domain, tag, format,`SUB_Security_IAM_UserAuth_FUNC_Static_0110 AuthLockState.remainingAuthAttempts : ${AuthLockState.remainingAuthAttempts}`);
               hilog.info(domain, tag, format,`SUB_Security_IAM_UserAuth_FUNC_Static_0110 AuthLockState.lockoutDuration : ${AuthLockState.lockoutDuration}`);
             })
-            .catch ((err:BusinessError): void => {
+            .catch((err:Error): void => {
               hilog.error(domain, tag, format,`SUB_Security_IAM_UserAuth_FUNC_Static_0110 fail1 code: ${err.code} authType: ${authType[idx0]}`);
               expect(err.code).assertEqual(userAuth.UserAuthResultCode.NOT_ENROLLED);
             }) 
-          } catch (error:BusinessError) {
+          } catch (error) {
             hilog.error(domain, tag, format,`SUB_Security_IAM_UserAuth_FUNC_Static_0110 fail2 code: ${error.code} authType: ${authType[idx0]}`);
             expect(error.code).assertEqual(userAuth.UserAuthResultCode.NOT_ENROLLED);
           }

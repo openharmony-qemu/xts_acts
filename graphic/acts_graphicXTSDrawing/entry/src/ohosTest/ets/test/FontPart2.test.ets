@@ -1416,9 +1416,9 @@ export default function fontPart2Test() {
     it('testFontGetTextPathForCharacterNormal4' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testFontGetTextPathForCharacterNormal4';
       let font = new drawing.Font();
-      let flag = false
+      let flag = false;
+      let myString: string = "Hello, TypeScript!";
       try {
-        let myString: string = "Hello, TypeScript!";
         let path = font.getTextPath(myString, buffer.from(myString).length, 0, 200);
         if(path.getLength(false) >= 0){
           flag = true
@@ -1428,6 +1428,13 @@ export default function fontPart2Test() {
         console.info(msg + ' GetTextPath successed');
       } catch( e ) {
         console.info(msg + ` GetTextPath errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
+        font.getTextPath('', buffer.from(myString).length, -1, -1);
+        console.info(msg + ` 2 GetTextPath success`);
+      } catch( e ) {
+        console.info(msg + ` 2 GetTextPath errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
     });
@@ -1448,16 +1455,16 @@ export default function fontPart2Test() {
         font.getTextPath(null, buffer.from(myString).length, -1, -1);
         expect().assertFail();
       } catch( e ) {
-        console.info(msg + ` GetTextPath errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
-        expect().not().assertFail();
+        console.info(msg + ` 1 GetTextPath errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
       }
 
       try {
         font.getTextPath(undefined, buffer.from(myString).length, -1, -1);
         expect().assertFail();
       } catch( e ) {
-        console.info(msg + ` GetTextPath errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
-        expect().not().assertFail();
+        console.info(msg + ` 2 GetTextPath errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
       }
     });
 

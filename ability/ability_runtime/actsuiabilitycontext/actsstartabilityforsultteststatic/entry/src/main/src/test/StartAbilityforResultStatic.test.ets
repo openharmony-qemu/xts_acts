@@ -22,6 +22,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import StartOptions from '@ohos.app.ability.StartOptions'
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -30,7 +31,16 @@ let context: common.UIAbilityContext
 export default function startAbilityForResultTestStatic() {
   describe('ActsstartAbilityForResultTestStatic', () => {
 
-    beforeAll(() => {
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       hilog.info(domain, tag, 'getAbilityDelegator success');
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.startabilityforresulttest.static")
@@ -60,7 +70,7 @@ export default function startAbilityForResultTestStatic() {
           hilog.info(domain, tag, `startAbilityForResult success`);
           expect(true).assertTrue()
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbilityForResult error: ${JSON.stringify(err)}.`)
           expect().assertFail();
           done();
@@ -92,7 +102,7 @@ export default function startAbilityForResultTestStatic() {
           hilog.info(domain, tag, `startAbilityForResult success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbilityForResult error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000001);
           done();
@@ -127,7 +137,7 @@ export default function startAbilityForResultTestStatic() {
           hilog.info(domain, tag, `startAbilityForResult success`);
           expect(true).assertTrue()
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbilityForResult error: ${JSON.stringify(err)}.`)
           expect().assertFail();
           done();
@@ -162,7 +172,7 @@ export default function startAbilityForResultTestStatic() {
           hilog.info(domain, tag, `startAbilityForResult success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbilityForResult error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000001);
           done();
@@ -201,7 +211,7 @@ export default function startAbilityForResultTestStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, `startAbilityForResult fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -235,7 +245,7 @@ export default function startAbilityForResultTestStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, `startAbilityForResult fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -262,6 +272,7 @@ export default function startAbilityForResultTestStatic() {
       };
       try {
         context.startAbilityForResult(want, options, (err: BusinessError<void> | null) => {
+        hilog.info(domain, tag,`startAbilityForResult start`);
           if (err && err.code !== 0) {
             hilog.info(domain, tag,`startAbilityForResult failed, code is ${err?.code}, message is ${err?.message}`);
             expect().assertFail();
@@ -272,11 +283,12 @@ export default function startAbilityForResultTestStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, `startAbilityForResult fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
       }
+      hilog.info(domain, tag,`startAbilityForResult end`);
     })
 
     /**
@@ -309,7 +321,7 @@ export default function startAbilityForResultTestStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, `startAbilityForResult fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();

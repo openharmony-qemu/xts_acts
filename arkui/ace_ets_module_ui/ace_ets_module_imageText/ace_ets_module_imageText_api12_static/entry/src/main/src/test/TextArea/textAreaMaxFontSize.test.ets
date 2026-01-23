@@ -46,7 +46,7 @@ export default function textAreaMaxFontSize() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textAreaMaxFontSize state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaMaxFontSize" == pages.name)) {
           console.info("get textAreaMaxFontSize pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

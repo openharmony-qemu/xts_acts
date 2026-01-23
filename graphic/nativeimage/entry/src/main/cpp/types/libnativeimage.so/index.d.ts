@@ -111,3 +111,4 @@ export const oHNativeImageReleasedNormal1: () => Array<number>;
 export const oHNativeImageIsReleasedCalls: () => number;
 export const oHNativeImageReleasedCalls: () => number;
 export const oHNativeImageReleaseAbnormal: () => number;
+export const oHNativeErrorCodeCover: () => number;

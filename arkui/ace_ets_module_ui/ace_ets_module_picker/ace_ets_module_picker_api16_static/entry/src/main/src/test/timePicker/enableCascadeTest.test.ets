@@ -83,7 +83,7 @@ it('TimePickerApienableCascade_static_001', Level.LEVEL1, async (done: () => voi
       let driver: Driver = Driver.create();
       await Utils.sleep(1000);
       let clock24Button = await driver.findComponent(ON.id('24hour'));
-      clock24Button?.click();
+      await (clock24Button?.click() as Promise<void>);
       await Utils.sleep(1000);
       let clock12Button = await driver.findComponent(ON.id('12hour'));
       await (clock12Button?.click() as Promise<void>);

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import {
   Color
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -56,7 +57,7 @@ struct Tabs3Example {
             let backData: events_emitter.EventData = {
               data: {
                 "ACTION": this.onActionCalled,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 212,
@@ -123,7 +124,7 @@ struct Tabs3Example {
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null && eventData.data != null) {
       console.info("tabs page state change called:" + JSON.stringify(eventData));
-      const data = eventData.data as Record<String,undefined|null|Object>;
+      const data = eventData.data as Record<String,RecordData>;
       if (data['index'] != null) {
         this.index = parseInt(data['index'] as string).toInt();
       }

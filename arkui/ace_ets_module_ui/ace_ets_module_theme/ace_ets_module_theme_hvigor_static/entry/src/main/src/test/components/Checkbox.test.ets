@@ -42,7 +42,6 @@ export default function checkboxThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     });
 
     beforeEach(() => {
@@ -54,25 +53,25 @@ export default function checkboxThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `CheckboxPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(checkBoxThemeProperty);
             console.info(`${SUITE} router.pushUrl success`);
           });
         }
-        colorValues = AppStorage.get(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
 
       if (changeTheme) {
-        if ((AppStorage.get(checkBoxThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+        if ((AppStorage.get<CustomTheme>('CheckBoxThemeProperty'))?.colors?.fontEmphasize
           == redCustomTheme?.colors?.fontEmphasize) {
-          AppStorage.setOrCreate(checkBoxThemeProperty, greenCustomTheme);
+          AppStorage.setOrCreate<CustomTheme>('CheckBoxThemeProperty', greenCustomTheme);
         } else {
-          AppStorage.setOrCreate(checkBoxThemeProperty, redCustomTheme);
+          AppStorage.setOrCreate<CustomTheme>('CheckBoxThemeProperty', redCustomTheme);
         }
-        localTheme = AppStorage.get<CustomTheme>(checkBoxThemeProperty);
+        localTheme = AppStorage.get<CustomTheme>('CheckBoxThemeProperty');
         changeTheme = false;
       }
+      localTheme = AppStorage.get<CustomTheme>('CheckBoxThemeProperty');
     });
 
 
@@ -94,8 +93,8 @@ it('ActsCheckBoxThemeColors_static_0100', Level.LEVEL2, async (done: () => void)
       const unselectedColor = attrsCheckBox.getString('unselectedColor').toString().toUpperCase();
       const checkUnselectedColor = colorValues?.get(`iconFourth`);
       expect(unselectedColor).assertEqual(checkUnselectedColor);
-      const markObject = attrsCheckBox.getElement('mark');
-      const strokeColor: string = markObject.getString('strokeColor').toString().toUpperCase() ?? emptyAttr;
+      const markObject = attrsCheckBox.getString('mark');
+      const strokeColor: string = JSON.parseJsonElement(markObject).getString('strokeColor').toString().toUpperCase() ?? emptyAttr;
       const checkStrokeColor: string = colorValues?.get(`iconOnPrimary`) ?? emptyCheck;
       expect(strokeColor).assertEqual(checkStrokeColor);
       console.info(`${SUITE} ${CASE} END`);
@@ -112,15 +111,17 @@ it('ActsCheckBoxThemeColors_static_0200', Level.LEVEL2, async (done: () => void)
       const CASE: string = `ActsCheckBoxThemeColors_static_0200`;
       console.info(`${SUITE} ${CASE} START`);
       const checkboxJSON = inspector.getInspectorByKey(CheckBoxKeys.checkboxWithTheme);
+      console.log('ActsCheckBoxThemeColors_static_0200 checkboxJSON: ' + checkboxJSON);
       const attrsCheckBox = JSON.parseJsonElement(checkboxJSON).getElement('$attrs');
       const selectedColor = attrsCheckBox.getString('selectedColor').toString().toUpperCase();
+      console.log('ActsCheckBoxThemeColors_static_0200 selectedColor: ' + selectedColor)
       const checkSelectedColor = localTheme?.colors?.compBackgroundEmphasize;
       expect(selectedColor).assertEqual(checkSelectedColor);
       const unselectedColor: string = attrsCheckBox.getString('unselectedColor').toString().toUpperCase() ?? emptyAttr;
       const checkUnselectedColor: string = localTheme?.colors?.iconFourth?.toString().toUpperCase() ?? emptyCheck;
       expect(unselectedColor).assertEqual(checkUnselectedColor);
-      const markObject = attrsCheckBox.getElement('mark');
-      const strokeColor: string = markObject.getString('strokeColor').toString().toUpperCase() ?? emptyAttr;
+      const markObject = attrsCheckBox.getString('mark');
+      const strokeColor: string = JSON.parseJsonElement(markObject).getString('strokeColor').toString().toUpperCase() ?? emptyAttr;
       const checkStrokeColor: string = localTheme?.colors?.iconOnPrimary?.toString().toUpperCase() ?? emptyCheck;
       expect(strokeColor).assertEqual(checkStrokeColor);
       changeTheme = true;
@@ -146,8 +147,8 @@ it('ActsCheckBoxThemeColors_static_0300', Level.LEVEL0, async (done: () => void)
       const unselectedColor: string = attrsCheckBox.getString('unselectedColor').toString().toUpperCase() ?? emptyAttr;
       const checkUnselectedColor: string = localTheme?.colors?.iconFourth?.toString().toUpperCase() ?? emptyCheck;
       expect(unselectedColor).assertEqual(checkUnselectedColor);
-      const markObject = attrsCheckBox.getElement('mark');
-      const strokeColor: string = markObject.getString('strokeColor').toString().toUpperCase() ?? emptyAttr;
+      const markObject = attrsCheckBox.getString('mark');
+      const strokeColor: string = JSON.parseJsonElement(markObject).getString('strokeColor').toString().toUpperCase() ?? emptyAttr;
       const checkStrokeColor: string = localTheme?.colors?.iconOnPrimary?.toString().toUpperCase() ?? emptyCheck;
       expect(strokeColor).assertEqual(checkStrokeColor);
       changeTheme = true;

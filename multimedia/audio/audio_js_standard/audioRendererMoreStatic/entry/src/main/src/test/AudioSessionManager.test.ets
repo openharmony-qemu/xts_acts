@@ -518,6 +518,38 @@ export default function audioSessionManagerTest() {
     })
 
     /**
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_19
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_19
+     * @tc.desc   test AudioSessionManager operation: currentOutputDeviceChanged register with no param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        sessionManager.onAudioSessionDeactivated((audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
+          if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_LOWER_PRIORITY){
+            console.info(`reason of audioSessionDeactivated: ${audioSessionDeactivatedEvent.reason} `);
+          }else if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_TIMEOUT){
+            console.info(`reason of audioSessionDeactivated: ${audioSessionDeactivatedEvent.reason} `);
+          }
+        });
+        let strategy: audio.AudioSessionStrategy = {
+          concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
+        }
+        await activateAudioSession(strategy, done, !isDone);
+        sessionManager.offAudioSessionDeactivated();
+        isAudioSessionActivatedTrue(done, isDone);
+        done();
+      } catch (err: BusinessError) {
+        expect(false).assertTrue();
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0100
      * @tc.desc   setDefaultOutputDevice -6800101
@@ -537,6 +569,84 @@ export default function audioSessionManagerTest() {
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
       }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETDEFAULTOUTPUTDEVICE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETDEFAULTOUTPUTDEVICE_STATIC_0100
+     * @tc.desc   inputAudioDevice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETDEFAULTOUTPUTDEVICE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager: audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+      try{
+        let deviceType: audio.DeviceType = audioSessionManager.getDefaultOutputDevice();
+        if(deviceType == audio.DeviceType.DEFAULT) {
+          expect(deviceType).assertEqual(1000);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType == audio.DeviceType.EARPIECE){
+          expect(deviceType).assertEqual(1);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.SPEAKER){
+          expect(deviceType).assertEqual(2);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.INVALID){
+          expect(deviceType).assertEqual(0);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.WIRED_HEADSET){
+          expect(deviceType).assertEqual(3);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.WIRED_HEADPHONES){
+          expect(deviceType).assertEqual(4);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.BLUETOOTH_SCO){
+          expect(deviceType).assertEqual(7);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.BLUETOOTH_A2DP){
+          expect(deviceType).assertEqual(8);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.MIC){
+          expect(deviceType).assertEqual(15);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.USB_HEADSET){
+          expect(deviceType).assertEqual(22);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.DISPLAY_PORT){
+          expect(deviceType).assertEqual(23);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.REMOTE_CAST){
+          expect(deviceType).assertEqual(24);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.USB_DEVICE){
+          expect(deviceType).assertEqual(25);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.ACCESSORY){
+          expect(deviceType).assertEqual(26);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.HDMI){
+          expect(deviceType).assertEqual(27);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.LINE_DIGITAL){
+          expect(deviceType).assertEqual(28);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.REMOTE_DAUDIO){
+          expect(deviceType).assertEqual(29);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.HEARING_AID){
+          expect(deviceType).assertEqual(30);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.NEARLINK){
+          expect(deviceType).assertEqual(31);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        }
+      }catch (err: BusinessError){
+        console.log('getDefaultOutputDevice failed, err :' + err.message)
+        expect(false).assertTrue();
+      }
+      done();
     })
   })
 }

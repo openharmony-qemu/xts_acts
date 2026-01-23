@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,6 +39,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import {UtilsTest} from "../Util.test"
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -205,7 +206,7 @@ export default function inspectorJsunit() {
     it('testInspectorTestAdd_static_0005', Level.LEVEL0, async (): Promise<void> => {
       console.info('testInspectorTestAdd0005 START');
       try {
-        let data: Record<String,undefined|null|Object> = {
+        let data: Record<String,RecordData> = {
           "setColor": 'red'
         }
         let eventData: events_emitter.EventData = {

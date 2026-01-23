@@ -72,3 +72,4 @@ export const OHOS_OfflineModel: (caseName: number) => number;
 // OHOS NNRT
 export const OHOS_NNRT: (caseName: number) => number;
 export const OHOS_NNRT_QUANT: (caseName: number) => number;
+export const SUB_AI_MindSpore_AIPP: (caseName: number) => number;

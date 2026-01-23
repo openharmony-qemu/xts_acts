@@ -1185,6 +1185,201 @@ export default function MulticastSocket() {
     });
 
     /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetMulticastTTL1100
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetMulticastTTL_1100
+     * @tc.desc   Set the maximum number of hops for the router
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketSetMulticastTTL1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetMulticastTTL1100';
+      console.info(`${caseName} test start`);
+      try {
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        let ttl: number = 0;
+        multicast.setMulticastTTL(ttl).then(() => {
+          expectFail();
+          console.info(`${caseName} test end`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} err: ${JSON.stringify(err)}`);
+          expectEqual(err.code, 2301009);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetMulticastTTL1200
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetMulticastTTL_1200
+     * @tc.desc   Set the maximum number of hops for the router
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketSetMulticastTTL1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetMulticastTTL1200';
+      console.info(`${caseName} test start`);
+      try {
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        let ttl: number = 255;
+        multicast.setMulticastTTL(ttl).then(() => {
+          expectFail();
+          console.info(`${caseName} test end`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} err: ${JSON.stringify(err)}`);
+          expectEqual(err.code, 2301009);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetMulticastTTL1300
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetMulticastTTL_1300
+     * @tc.desc   Set the maximum number of hops for the router
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketSetMulticastTTL1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetMulticastTTL1300';
+      console.info(`${caseName} test start`);
+      try {
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        let ttl: number = 0;
+        multicast.setMulticastTTL(ttl, async (err: BusinessError) => {
+          if (err) {
+            console.info(`${caseName} err: ${JSON.stringify(err)}`);
+            expectEqual(err.code, 2301009);
+          } else {
+            expectFail();
+          }
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetMulticastTTL1400
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetMulticastTTL_1400
+     * @tc.desc   Set the maximum number of hops for the router
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketSetMulticastTTL1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetMulticastTTL1400';
+      console.info(`${caseName} test start`);
+      try {
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        let ttl: number = 255;
+        multicast.setMulticastTTL(ttl, async (err: BusinessError) => {
+          if (err) {
+            console.info(`${caseName} err: ${JSON.stringify(err)}`);
+            expectEqual(err.code, 2301009);
+          } else {
+            expectFail();
+          }
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketGetSocketFd0100
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_GetSocketFd_0100
+     * @tc.desc   Get Socket FD after successful addMembership
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketGetSocketFd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketGetSocketFd0100';
+      console.info(`${caseName} test start`);
+      try {
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        await multicast.addMembership(addr).catch((err: BusinessError) => {
+          console.info('fail to addMembership' + err.code.toString());
+        });
+        await multicast.getSocketFd().then((data: number) => {
+          console.info(`${caseName} success data:${JSON.stringify(data)}`);
+          expectTrue(data !== -1);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} fail err:${JSON.stringify(err)}`);
+          expectFail();
+          console.info(`${caseName}---End`);
+          done();
+        })
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketGetSocketFd0200
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_GetSocketFd_0200
+     * @tc.desc   Get Socket FD after without addMembership
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketGetSocketFd0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketGetSocketFd0200';
+      console.info(`${caseName} test start`);
+      try {
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        await multicast.getSocketFd().then((data: number) => {
+          console.info(`${caseName} success data:${JSON.stringify(data)}`);
+          expectTrue(data === -1);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} fail err:${JSON.stringify(err)}`);
+          expectFail();
+          console.info(`${caseName}---End`);
+          done();
+        })
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrSocketMulticastSocketGetMulticastTTL0100
      * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_GetMulticastTTL_0100
      * @tc.desc   Get the maximum number of hops for the router

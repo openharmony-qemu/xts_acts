@@ -88,6 +88,7 @@ struct MyNavigationTestStack {
             })
         }
       }.title('NavIndex')
+      .hideTitleBar(true)
       .navDestination(this.PageMap)
       .mode(NavigationMode.Stack)
     }.width('100%').height('50%')

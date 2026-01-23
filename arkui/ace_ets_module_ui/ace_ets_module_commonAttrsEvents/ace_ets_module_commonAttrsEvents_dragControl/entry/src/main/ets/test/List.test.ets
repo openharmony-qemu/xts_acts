@@ -31,6 +31,7 @@ import enableEdgeAutoScroll_false from './DragInteractionOptions/enableEdgeAutoS
 import enableEdgeAutoScroll_true from './DragInteractionOptions/enableEdgeAutoScroll_true.test';
 import enableEdgeAutoScroll from './DragInteractionOptions/enableEdgeAutoScroll.test';
 import notifyDragStartRequest from './Drag/notifyDragStartRequest.test';
+import DragEventUITest from "./DragController/DragEventUI.test";
 
 
 export default function testsuite() {
@@ -51,4 +52,5 @@ export default function testsuite() {
     APIPreDragStatusTest();
     DragInteractionOptionsTest();
     DragPreviewOptions();
+    DragEventUITest();
 }

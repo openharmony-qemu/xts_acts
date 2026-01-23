@@ -48,7 +48,7 @@ export default function AttributeUpdaterTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get AttributeUpdaterTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("AttributeUpdater" == pages.name)) {
           console.info("get AttributeUpdaterTest pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

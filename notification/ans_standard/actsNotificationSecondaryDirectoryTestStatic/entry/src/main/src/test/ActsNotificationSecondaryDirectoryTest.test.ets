@@ -125,7 +125,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
             done()
           }
           ;
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           expect(false).assertTrue();
           done();
         });
@@ -688,7 +688,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
                   }
                 }
                 done()
-              }).catch((err: BusinessError): void => {
+              }).catch((err: Error): void => {
                 console.info(`${TAG} getSlots failed err: + ${err.code}`)
                 expect(false).assertTrue()
                 done()

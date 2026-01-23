@@ -2414,6 +2414,30 @@ export default function SessionTest() {
       }
     })
     /**
+     * @tc.name   testOHCaptureSessionPreconfig0700
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfig0700
+     * @tc.desc   Test OH_CaptureSession_Preconfig in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCaptureSessionPreconfig0700', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      createCaptureSession();
+      setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
+      setSessionMode();
+      let ret = cameraObj.oHCaptureSessionCanPreconfig(Camera_PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
+        Parameter_Setting.ALL_PARAMETER_OK);
+      console.info(TAG+"testOHCaptureSessionPreconfig0700 canPreconfig: " + ret.canPreconfig);
+      if (ret.canPreconfig) {
+        let preconfig = cameraObj.oHCaptureSessionPreconfig(Camera_PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
+          Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG+"testOHCaptureSessionPreconfig0700:"+preconfig)
+        expect(preconfig).assertEqual(CAMERA_OK);
+      }
+    })
+    /**
      * @tc.name   testOHCaptureSessionPreconfigWithRatio0100
      * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0100
      * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
@@ -2730,6 +2754,78 @@ export default function SessionTest() {
             Camera_PreconfigRatio.EXCEPTION_ENUMERATION_VALUE, Parameter_Setting.ALL_PARAMETER_OK);
         console.info(TAG+"testOHCaptureSessionPreconfigWithRatio1500:"+preconfigWithRatio);
         expect(preconfigWithRatio).assertEqual(CAMERA_INVALID_ARGUMENT);
+      }
+    })
+    /**
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio1600
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1600
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCaptureSessionPreconfigWithRatio1600', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      createCaptureSession();
+      setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
+      setSessionMode();
+      let ret = cameraObj.oHCaptureSessionCanPreconfigWithRatio(Camera_PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
+        Camera_PreconfigRatio.PRECONFIG_RATIO_1, Parameter_Setting.ALL_PARAMETER_OK);
+      if (ret.canPreconfig) {
+        let preconfigWithRatio =
+          cameraObj.oHCaptureSessionPreconfigWithRatio(Camera_PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
+            Camera_PreconfigRatio.PRECONFIG_RATIO_1, Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG+"testOHCaptureSessionPreconfigWithRatio1600:"+preconfigWithRatio);
+        expect(preconfigWithRatio).assertEqual(CAMERA_OK);
+      }
+    })
+    /**
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio1700
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1700
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCaptureSessionPreconfigWithRatio1700', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      createCaptureSession();
+      setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
+      setSessionMode();
+      let ret = cameraObj.oHCaptureSessionCanPreconfigWithRatio(Camera_PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
+        Camera_PreconfigRatio.PRECONFIG_RATIO_4, Parameter_Setting.ALL_PARAMETER_OK);
+      if (ret.canPreconfig) {
+        let preconfigWithRatio =
+          cameraObj.oHCaptureSessionPreconfigWithRatio(Camera_PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
+            Camera_PreconfigRatio.PRECONFIG_RATIO_4, Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG+"testOHCaptureSessionPreconfigWithRatio1700:"+preconfigWithRatio);
+        expect(preconfigWithRatio).assertEqual(CAMERA_OK);
+      }
+    })
+    /**
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio1800
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1800
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCaptureSessionPreconfigWithRatio1800', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      createCaptureSession();
+      setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
+      setSessionMode();
+      let ret = cameraObj.oHCaptureSessionCanPreconfigWithRatio(Camera_PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
+        Camera_PreconfigRatio.PRECONFIG_RATIO_16, Parameter_Setting.ALL_PARAMETER_OK);
+      if (ret.canPreconfig) {
+        let preconfigWithRatio =
+          cameraObj.oHCaptureSessionPreconfigWithRatio(Camera_PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
+            Camera_PreconfigRatio.PRECONFIG_RATIO_16, Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG+"testOHCaptureSessionPreconfigWithRatio1800:"+preconfigWithRatio);
+        expect(preconfigWithRatio).assertEqual(CAMERA_OK);
       }
     })
     /**

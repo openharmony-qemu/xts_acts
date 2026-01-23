@@ -16,6 +16,6 @@
 import PaddingBaseLengthTest from './padding/PaddingBaseLengthTest.test';
 import PaddingContainerLengthTest from './padding/PaddingContainerLengthTest.test';
 export default function testsuite() {
-  PaddingContainerLengthTest(); // SDK12.2 pass 60
-  PaddingBaseLengthTest(); // Padding(Marquee，NavRouter，TextArea)
+  PaddingContainerLengthTest();
+  PaddingBaseLengthTest();
 }

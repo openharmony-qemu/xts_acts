@@ -74,4 +74,8 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
     console.log(`EnterpriseAdminExtensionAbility onKeyEvent: keyItem.pressed: ${keyEvent.keyItems[0].pressed}`);
     console.log(`EnterpriseAdminExtensionAbility onKeyEvent: keyItem.downTime: ${keyEvent.keyItems[0].downTime}`);
   }
+  onLogCollected(result: common.Result): void {
+ 	  console.log(`onLogCollected result is FAIL? : ${result === common.Result.FAIL}`);
+ 	  console.log(`onLogCollected result is SUCCESS? : ${result === common.Result.SUCCESS}`);
+ 	}
 }

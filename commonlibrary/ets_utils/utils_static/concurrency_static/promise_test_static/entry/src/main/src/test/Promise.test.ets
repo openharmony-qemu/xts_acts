@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -852,8 +852,8 @@ export default function PromiseTest() {
           const promise3 = Promise.resolve<Promise<number>>(promiseTest);
           const promise4 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           let results =
-            await Promise.all<Any | () => number | Promise<number> | [number, string]>([promise1, promise2,
-              promise3, promise4]) as Array<Any | () => number | Promise<number> | [number, string]>
+            await Promise.all<Any | (() => number) | Promise<number> | [number, string]>([promise1, promise2,
+              promise3, promise4]) as Array<Any | (() => number) | number | [number, string]>
           let resultNullish = results[0] as null;
           const resultFun: () => number = results[1] as () => number;
           const tuple = results[3] as [number, string];
@@ -892,7 +892,7 @@ export default function PromiseTest() {
           // const promise4 = Promise.resolve<void>();
           const promise5 = Promise.reject(new Error('Error occurred'));
           let results = await Promise.all<Any | short | char | [number, string]>([promise1, promise2, promise3,
-            promise5]) as Array<Any | short | [number, string]>
+            promise5]) as Array<Any | short | char | [number, string]>
           let resultNullish = results[0] as undefined;
           let tuple = results[1] as [number, string];
           let resultNum = results[2] as number;
@@ -1016,7 +1016,7 @@ export default function PromiseTest() {
               promise2,
               promise3,
               promise4]) as Array<PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>> | PromiseRejectedResult>;
-          const result1 = results[0] as PromiseFulfilledResult<Any | Person | [number, string]>;
+          const result1 = results[0] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>;
           const result2 = result1.value as null;
           const result3 =
             results[2] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>;
@@ -1057,13 +1057,13 @@ export default function PromiseTest() {
           const promise3 = Promise.resolve<int>(1);
           const promise4 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           const promise5 = Promise.reject(new Error('Error occurred'));
-          let results = await Promise.allSettled<Any | int>([promise1, promise2, promise3, promise4,
+          let results = await Promise.allSettled<Any | Byte | int | [number, string]>([promise1, promise2, promise3, promise4,
             promise5]) as Array<PromiseFulfilledResult<Any | Byte | int | [number, string]> | PromiseRejectedResult>;
           let result1 = results[1] as PromiseFulfilledResult<Any | Byte | int | [number, string]>;
           let result2 = result1.value as Byte;
           let result3 = results[2] as PromiseFulfilledResult<Any | Byte | int | [number, string]>;
           let result4 = result3.value as int;
-          let result5 = results[0] as PromiseFulfilledResult<Any>;
+          let result5 = results[0] as PromiseFulfilledResult<Any | Byte | int | [number, string]>;
           let result6 = result5.value as null;
           expect(result6).assertEqual(null);
           expect(result2).assertEqual(1);
@@ -1109,7 +1109,7 @@ export default function PromiseTest() {
               promise3,
               promise4,
               promise5]) as Array<PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>> | PromiseRejectedResult>;
-          const result1 = results[0] as PromiseFulfilledResult<Any>;
+          const result1 = results[0] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>;
           const result2 = result1.value as null;
           const result3 =
             results[2] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>;

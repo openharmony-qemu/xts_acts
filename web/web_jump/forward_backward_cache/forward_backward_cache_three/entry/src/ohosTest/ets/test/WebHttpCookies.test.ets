@@ -60,6 +60,87 @@ export default function WebHttpCookies() {
     })
 
     /**
+     * @tc.name   testWebFetchAllCookiesReturnEmpty0001
+     * @tc.number SUB_WEB_FetchAllCookies_empty_0001
+     * @tc.desc   test fetchAllCookies false return empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWebFetchAllCookiesReturnEmpty0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      await webview.WebCookieManager.clearAllCookies();
+      let isExistCookies = webview.WebCookieManager.existCookie();
+      if (isExistCookies) {
+        await webview.WebCookieManager.clearAllCookies();
+      }
+      await webview.WebCookieManager.fetchAllCookies(false).then((cookies) => {
+        console.log('fetchAllCookies cookies length==>' + cookies.length);
+        expect(cookies.length).assertEqual(0);
+      })
+      done();
+    })
+    /**
+     * @tc.name   testWebFetchAllCookiesReturnEmpty0002
+     * @tc.number SUB_WEB_FetchAllCookies_empty_0002
+     * @tc.desc   test fetchAllCookies true return empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWebFetchAllCookiesReturnEmpty0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      await webview.WebCookieManager.clearAllCookies();
+      let isExistCookies = webview.WebCookieManager.existCookie(true);
+      if (isExistCookies) {
+        await webview.WebCookieManager.clearAllCookies();
+      }
+      await webview.WebCookieManager.fetchAllCookies(true).then((cookies) => {
+        console.log('fetchAllCookies cookies length==>' + cookies.length);
+        expect(cookies.length).assertEqual(0);
+      })
+      done();
+    })
+    /**
+     * @tc.name   testWebFetchAllCookiesNotReturnEmpty0001
+     * @tc.number SUB_WEB_FetchAllCookies_not_empty_0001
+     * @tc.desc   test fetchAllCookies false not return empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWebFetchAllCookiesNotReturnEmpty0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      await webview.WebCookieManager.configCookieSync(URL, 'a=b');
+      let isExistCookies = webview.WebCookieManager.existCookie();
+      if (!isExistCookies) {
+        await webview.WebCookieManager.configCookieSync(URL, 'a=b');
+      }
+      await webview.WebCookieManager.fetchAllCookies(false).then((cookies) => {
+        console.log('fetchAllCookies cookies length==>' + cookies.length);
+        expect(cookies.length).assertLarger(0);
+      })
+      done();
+    })
+    /**
+     * @tc.name   testWebFetchAllCookiesNotReturnEmpty0002
+     * @tc.number SUB_WEB_FetchAllCookies_not_empty_0002
+     * @tc.desc   test fetchAllCookies true not return empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWebFetchAllCookiesNotReturnEmpty0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      await webview.WebCookieManager.configCookieSync(URL, 'a=b', true);
+      let isExistCookies = webview.WebCookieManager.existCookie(true);
+      if (!isExistCookies) {
+        await webview.WebCookieManager.configCookieSync(URL, 'a=b', true);
+      }
+      await webview.WebCookieManager.fetchAllCookies(true).then((cookies) => {
+        console.log('fetchAllCookies cookies length==>' + cookies.length);
+        expect(cookies.length).assertLarger(0);
+      })
+      done();
+    })
+
+    /**
      * @tc.name   testWebSameSitePolicy0001
      * @tc.number SUB_WEB_SameSitePolicy_0001
      * @tc.desc   test SameSitePolicy

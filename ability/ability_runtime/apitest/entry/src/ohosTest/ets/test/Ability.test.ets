@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,6 +20,7 @@ import Want from '@ohos.app.ability.Want';
 import CommonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
+import { Driver, ON } from '@ohos.UiTest';
 
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
 let subscriberInfo_MainAbility:CommonEventManager.CommonEventSubscribeInfo = {
@@ -38,6 +39,15 @@ export default function abilityTest() {
   describe('ActsChangeAbilityStagetest', () => {
     beforeAll(async (done:Function) => {
       console.info('beforeAll called');
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       let delay = 3000;
       let start = new Date().getTime();
       while (true) {

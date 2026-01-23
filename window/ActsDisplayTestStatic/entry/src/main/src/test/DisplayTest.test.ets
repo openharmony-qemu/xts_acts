@@ -31,6 +31,9 @@ import { Permissions }  from 'permissions';
 import abilityContext from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import type { AsyncCallback, Callback} from '@ohos.base'
+import Want from '@ohos.app.ability.Want';
+import bundleManager from '@ohos.bundle.bundleManager';
+import StartOptions from '@ohos.app.ability.StartOptions'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -66,6 +69,47 @@ async function clickButtonDriver(){
         buttonOne.click();
     }
 
+}
+async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
+  return new Promise<window.WindowStage>((resolve, reject) => {
+    let want: Want = {
+      bundleName: "com.example.actswindowtest.static",
+      abilityName: 'StartAbility'
+    };
+    if (options) {
+      context.startAbility(want, options).then(() => {
+        hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
+      }).catch((err: Error):PromiseLike<void>|undefined => {
+        hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+      });
+    } else {
+      context.startAbility(want).then(() => {
+        hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
+      }).catch((err: Error):PromiseLike<void>|undefined => {
+        hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+      });
+    }
+    await Utils.msSleep(1000)
+    let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
+    resolve(windowStageStart);
+  })
+}
+
+async function terminateAbility(caseName: string) {
+  let pageContext:common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('pageContext') as common.UIAbilityContext
+  try {
+    if (pageContext !== null && pageContext !== undefined) {
+      hilog.info(domain, tag,`${caseName} terminateSelf begin`);
+    }
+    pageContext.terminateSelf().then(() => {
+      hilog.info(domain, tag,`${caseName} terminateSelf success`);
+    }).catch((err: Error):PromiseLike<void>|undefined => {
+      hilog.error(domain, tag,`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+    });
+  } catch (e: BusinessError) {
+    hilog.error(domain, tag,`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
+  }
+  await Utils.msSleep(1000)
 }
 export default function DisplayTest() {
 
@@ -176,7 +220,7 @@ export default function DisplayTest() {
                 expect(data[0].xDPI != null).assertTrue();
                 expect(data[0].yDPI != null).assertTrue();
                 done();
-            }).catch((err:BusinessError) :PromiseLike<void>|undefined => {
+            }).catch((err:Error) :PromiseLike<void>|undefined => {
                  hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain all the display objects. Code: ' + JSON.stringify(err));
                 expect().assertFail();
                 done();
@@ -540,7 +584,7 @@ export default function DisplayTest() {
                     expect(resolutionObject.physicalHeight).assertLarger(0);
                     done();
                 }
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 if (err.code == 801) {
                     hilog.error(0x0000, '[ANI]',`${caseName}: The current device type does not support to setWindowSystemBarEnable`);
                     expect(true).assertTrue();
@@ -1014,7 +1058,7 @@ export default function DisplayTest() {
                         expect(data.height).assertEqual(displayClass?.availableHeight);
                     }
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1077,7 +1121,7 @@ export default function DisplayTest() {
                                 }
                                 subWindow.destroyWindow();
                                 done();
-                            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                            }).catch((err: Error):PromiseLike<void>|undefined => {
                                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                                 if (err.code == 801) {
                                     hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1097,13 +1141,13 @@ export default function DisplayTest() {
                             expect().assertFail();
                             done();
                         }
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.error(0x0000, '[ANI]',msgStr + `Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
                         subWindow.destroyWindow();
                         expect(false).assertTrue();
                         done();
                     });
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done();
@@ -1147,7 +1191,7 @@ export default function DisplayTest() {
                         await mainWindowClass.setWindowSystemBarEnable(['status', 'navigation']);
                         hilog.info(0x0000, '[ANI]',msgStr + ' setWindowSystemBarEnable success');
                         done();
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                         if (err.code == 801) {
                             hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1158,7 +1202,7 @@ export default function DisplayTest() {
                             done();
                         }
                     });
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1216,7 +1260,7 @@ export default function DisplayTest() {
                                 expect(false).assertTrue();
                                 done();
                             }
-                        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                        }).catch((err: Error):PromiseLike<void>|undefined => {
                             hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                             if (err.code == 801) {
                                 hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1227,13 +1271,13 @@ export default function DisplayTest() {
                                 done();
                             }
                         });
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.error(0x0000, '[ANI]',msgStr + `Failed to set setWindowLayoutFullScreen. Code: ${err.code}, message: ${err.message}`);
                         expect().assertFail();
                         done();
                     })
 
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1326,7 +1370,7 @@ export default function DisplayTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1391,7 +1435,7 @@ export default function DisplayTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1457,7 +1501,7 @@ export default function DisplayTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1522,7 +1566,7 @@ export default function DisplayTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1754,7 +1798,7 @@ export default function DisplayTest() {
                     hilog.info(domain, tag,caseName + 'succeeded in create virtual screen, data : ' + JSON.stringify(screenId));
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError) :PromiseLike<void>|undefined=> {
+                }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.info(domain, tag,caseName + 'failed to create the virtual screen, err : ' + JSON.stringify(err));
                     expect(err.code == 1400001).assertTrue();
                     done();
@@ -1791,7 +1835,7 @@ export default function DisplayTest() {
                      display.destroyVirtualScreen(screenId).then(() => {
                         hilog.info(domain, tag,caseName + 'succeeded in destroyVirtualScreen');
                         done();
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
                         expect(false).assertTrue();
                         done();
@@ -1819,7 +1863,7 @@ export default function DisplayTest() {
                     hilog.info(domain, tag,caseName + 'succeeded in destroy virtual screen, data : ');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
                      expect(err.code).assertTrue();
                     done();
@@ -1857,18 +1901,18 @@ export default function DisplayTest() {
                         hilog.info(domain, tag,caseName + 'Succeeded in destroyVirtualScreen2');
                         expect(false).assertTrue();
                         done();
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.info(domain, tag,caseName + 'Failed in destroyVirtualScreen2');
                         expect(err.code == 401);
                         done();
                     })
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.info(domain, tag,caseName + 'Failed in destroyVirtualScreen1');
                         expect(false).assertTrue();
                         done();
                     })
                     
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,caseName + 'failed to createVirtualScreen, err : ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done();
@@ -1896,7 +1940,7 @@ export default function DisplayTest() {
                     hilog.info(domain, tag,caseName + 'success in setVirtualScreenSurface');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                      hilog.info(domain, tag,caseName + 'failed to setVirtualScreenSurface, err : ' + JSON.stringify(err));
                      expect(false).assertTrue();
                      done();
@@ -1932,16 +1976,22 @@ export default function DisplayTest() {
                     hilog.info(domain, tag,caseName + 'success in setVirtualScreenSurface');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                      hilog.info(domain, tag,caseName + 'failed to setVirtualScreenSurface, err : ' + JSON.stringify(err));
-                     expect(false).assertTrue();
+                     expect(err.code == 401).assertTrue();
                      done();
                  })
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
-                expect(err.code == 401 || err.code == 801).assertTrue();
-                done();
+                if(err.code == 801){
+                    expect(err.code == 801).assertTrue();
+                    done();
+                }else{
+                    expect(false).assertTrue();
+                    done();
+                }
+                
             }
         });
         /**
@@ -1959,7 +2009,7 @@ export default function DisplayTest() {
                     hilog.info(domain, tag,caseName + 'Succeeded in makeUnique');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
+                }).catch((err: Error) :PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,caseName + 'Error in makeUnique, err: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done();
@@ -1998,7 +2048,7 @@ export default function DisplayTest() {
                     hilog.info(domain, tag,caseName + 'Success in make unique screen');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError) :PromiseLike<void>|undefined=> {
+                }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.info(domain, tag,caseName + 'Failed to makeUnique, err: ' + JSON.stringify(err));
 
                     done();
@@ -2046,7 +2096,7 @@ export default function DisplayTest() {
                             PixelMap.release(); // PixelMap使用完后及时释放内存
                             done();
                         })
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.info(domain, tag,caseName +'Failed to save screenshot. Code: ' + JSON.stringify(err));
                         if(err.code == 801){
                             windowClass.setWindowPrivacyMode(false);
@@ -2259,6 +2309,202 @@ export default function DisplayTest() {
                 }
             }
         })
+        /**
+     * @tc.name   testConvertRelativeToGlobalCoordinatewithPositionOutofRange_static
+     * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_static_0100
+     * @tc.desc   验证convertRelativeToGlobalCoordinate接口position超出int32报1400004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testConvertRelativeToGlobalCoordinatewithPositionOutofRange_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName:string = "testConvertRelativeToGlobalCoordinatewithPositionOutofRange_static";
+        let msgStr:string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin.');
+        try {
+            let displayClass:display.Display = display.getDefaultDisplaySync();
+            console.log(`${caseName} displayClass.id: ${displayClass.id}`);
+            const exceedMax:Long = 2147483648;
+            let position: display.Position = {
+                x: exceedMax,
+                y: exceedMax
+            };
+            let param: display.RelativePosition = {
+                displayId: displayClass.id,
+                position: position
+            }
+            display.convertRelativeToGlobalCoordinate(param);
+            expect(false).assertTrue();
+            done();
+        } catch (e: BusinessError) {
+            console.error(`${caseName} Failed. err: ${JSON.stringify(e)}`);
+            expect(e.code).assertEqual(1400004)
+            done()
+        }
+    })
+    /**
+     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_static_0100
+     * @tc.name       testGetBrightnessInfowithMainDisplayid_static
+     * @tc.desc       查询主屏亮度信息
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('testGetBrightnessInfowithMainDisplayid_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName:string =  'testGetBrightnessInfowithMainDisplayid_static';
+        try {
+            let brightnessInfo = display.getBrightnessInfo(0);
+            console.log(`${caseName} brightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+            expect(brightnessInfo.sdrNits).assertLarger(0);
+            expect(brightnessInfo.currentHeadroom).assertLarger(0);
+            expect(brightnessInfo.maxHeadroom).assertLarger(0);
+            done();
+        } catch (e: BusinessError) {
+            console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+            if (e.code == 801) {
+                done()
+            } else {
+                expect(false).assertTrue();
+                done();
+            }
+        }
+    });
+    /**
+     * @tc.number     SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_static_0100
+     * @tc.name       testOnBrightnessInfoChange_static_0100
+     * @tc.desc       主屏通过调节窗口亮度触发屏幕亮度信息变化，取消全部监听
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('testOnBrightnessInfoChange_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName:string =  'testOnBrightnessInfoChange_static_0100';
+        try {
+            let windowClass:window.Window = windowStage.getMainWindowSync();
+            await windowClass.setWindowBrightness(1);
+            let brightnessChangeCount1:number = 0;
+            let brightnessChangeCount2:number = 0;
+            let callback1Triggered:boolean = false;
+            let callback2Triggered:boolean = false;
+
+            const callback1 = (displayId: Long, brightnessInfo: display.BrightnessInfo) => {
+                console.info(caseName + ' Callback1 triggered');
+                console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+                brightnessChangeCount1 = brightnessChangeCount1 + 1;
+                callback1Triggered = true;
+                expect(displayId).assertEqual(0);
+                expect(brightnessInfo.sdrNits).assertLarger(0);
+                expect(brightnessInfo.currentHeadroom).assertLarger(0);
+                expect(brightnessInfo.maxHeadroom).assertLarger(0);
+                console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
+            };
+
+            const callback2 = (displayId: Long, brightnessInfo: display.BrightnessInfo) => {
+                console.info(caseName + ' Callback2 triggered');
+                console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+                brightnessChangeCount2 = brightnessChangeCount2 + 1;
+                callback2Triggered = true;
+                expect(displayId).assertEqual(0);
+                expect(brightnessInfo.sdrNits).assertLarger(0);
+                expect(brightnessInfo.currentHeadroom).assertLarger(0);
+                expect(brightnessInfo.maxHeadroom).assertLarger(0);
+                console.info(`${caseName} Callback2: brightnessChangeCount2 = ${brightnessChangeCount2}`);
+            };
+            display.onBrightnessInfoChange(callback1);
+            display.onBrightnessInfoChange(callback2);
+            console.info(caseName + ' Brightness change listeners registered successfully');
+            await windowClass.setWindowBrightness(0);
+            while (!callback1Triggered) {
+                await Utils.msSleep(100);
+            }
+            console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
+            while (!callback2Triggered) {
+                await Utils.msSleep(100);
+            }
+            console.info(`${caseName} brightnessChangeCount2 = ${brightnessChangeCount2}`);
+            expect(brightnessChangeCount1).assertLarger(0);
+            expect(brightnessChangeCount2).assertLarger(0);
+            display.offBrightnessInfoChange();
+            brightnessChangeCount1 = 0;
+            brightnessChangeCount2 = 0;
+            await windowClass.setWindowBrightness(1);
+            await Utils.msSleep(3000);
+            console.info(`${caseName} after off brightnessChangeCount1 = ${brightnessChangeCount1}`);
+            console.info(`${caseName} after off brightnessChangeCount2 = ${brightnessChangeCount2}`);
+            expect(brightnessChangeCount1).assertEqual(0);
+            expect(brightnessChangeCount2).assertEqual(0);
+            await windowClass.setWindowBrightness(-1);
+            done();
+        } catch (e: BusinessError) {
+            console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+            if (e.code == 801) {
+                done()
+            } else {
+                display.offBrightnessInfoChange();
+                expect(false).assertTrue();
+                done();
+            }
+        }
+    });
+    /**
+     * @tc.number     SUB_BASIC_DMS_VIRTUAL_SCREEN_SUPPORT_FOCUS_static_0100
+     * @tc.name       testCreateVirtualScreenwithSupportsFocusIsTrue_static
+     * @tc.desc       testCreateVirtualScreenwithSupportsFocusIsTrue
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('testCreateVirtualScreenwithSupportsFocusIsTrue_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName:string =  'testCreateVirtualScreenwithSupportsFocusIsTrue_static';
+        try {
+            display.createVirtualScreen({
+                name: 'createVirtualScreen1',
+                width: 1080,
+                height: 2720,
+                density: 2,
+                surfaceId: '',
+                supportsFocus: true
+            }).then(async (displayId: Long) => {
+                await display.makeUnique(displayId);
+                display.makeUnique(displayId).then(() => {
+                    console.log(caseName + 'succeeded in makeUnique');
+                    let options: StartOptions = {
+                        displayId: displayId
+                    }
+                    let windowStageStart = await startAbility(caseName, context, options);
+                    let windowClass:window.Window = windowStageStart.getMainWindowSync();
+                    await windowClass.setWindowFocusable(true);
+                    await terminateAbility(caseName);
+                    done();
+                }).catch(async (err: Error) => {
+                    console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+                    if (err.code == 801) {
+                        expect(err.code).assertEqual(801)
+                        done();
+                    } else {
+                        await terminateAbility(caseName);
+                        expect(false).assertTrue();
+                        done();
+                    }
+                })
+            }).catch(async (err: Error) => {
+                console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+                if (err.code == 801) {
+                    expect(err.code).assertEqual(801)
+                    done();
+                } else {
+                    await terminateAbility(caseName);
+                    expect(false).assertTrue();
+                    done();
+                }
+            })
+        } catch (e: BusinessError) {
+            console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+            await terminateAbility(caseName);
+            expect(false).assertTrue();
+            done();
+        }
+    });
 
 
 

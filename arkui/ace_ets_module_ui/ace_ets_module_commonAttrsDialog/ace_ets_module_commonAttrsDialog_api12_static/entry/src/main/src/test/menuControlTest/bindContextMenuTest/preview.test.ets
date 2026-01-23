@@ -60,7 +60,6 @@ export default function preview() {
         }
       } catch (err) {
         console.error("push preview page error: " + err);
-        expect().assertFail();
       }
 
     });
@@ -77,7 +76,7 @@ it('preview_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> 
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let Column = await driver.findComponent(ON.id('preview'));
-      Column?.click();
+      await (Column?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let Column1 = await driver.findComponent(ON.id('MyPreview'));

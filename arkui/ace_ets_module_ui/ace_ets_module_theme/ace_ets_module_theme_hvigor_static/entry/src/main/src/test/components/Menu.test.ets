@@ -52,11 +52,11 @@ export default function menuThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `MenuPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(menuThemeProperty);
+            localTheme = AppStorage.get<CustomTheme>(`MenuThemeProperty`);
             console.info(`${SUITE} router.pushUrl success`);
           });
         }
-        colorValues = AppStorage.get(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
@@ -64,13 +64,13 @@ export default function menuThemeTest() {
       if (!changeTheme) {
         return;
       }
-      if ((AppStorage.get(menuThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+      if ((AppStorage.get<CustomTheme>(`MenuThemeProperty`))?.colors?.fontEmphasize
         == redCustomTheme?.colors?.fontEmphasize) {
-        AppStorage.setOrCreate(menuThemeProperty, greenCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>(`MenuThemeProperty`, greenCustomTheme);
       } else {
-        AppStorage.setOrCreate(menuThemeProperty, redCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>(`MenuThemeProperty`, redCustomTheme);
       }
-      localTheme = AppStorage.get<CustomTheme>(menuThemeProperty);
+      localTheme = AppStorage.get<CustomTheme>(`MenuThemeProperty`);
       changeTheme = false;
     });
 

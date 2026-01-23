@@ -46,16 +46,14 @@ struct V1ObjectLink {
   @State resultText: string | undefined = 'this is null'
 
   build() {
-    Column({ space: 20 }) {
+    Column() {
       Text(this.resultText)
         .id('PropText')
-        .fontSize(16)
-        .textAlign(TextAlign.Center)
-        .width('80%')
+        .height('5%')
+        .textAlign(TextAlign.Center)        
       Button('testV1')
+        .height('5%')
         .id('PropTest')
-        .fontSize(20)
-        .margin(10)
         .onClick(() => {
           this.resultText = '';
           this.resultText = this.resultText + text(this.a2)

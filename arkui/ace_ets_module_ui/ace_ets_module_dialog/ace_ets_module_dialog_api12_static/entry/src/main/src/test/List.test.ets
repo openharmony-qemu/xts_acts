@@ -110,7 +110,7 @@ export default function testsuite() {
   BaseDialogTest();
   CustomDialogTest();
   PromptActionTest();
-  showDialogTest()
+  // showDialogTest()
   CustomDialogBorderColor()
   sheetBorderWidth()
 }

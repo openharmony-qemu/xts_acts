@@ -345,7 +345,7 @@ export default function AVSessionErrorCode() {
                 await session!.setLaunchAbility(agent).then(() => {
                     console.info('TestLog: AVSessionTest : Set LaunchAbility');
                     expect().assertFail();
-                }).catch(async(err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.info(`TestLog: Set LaunchAbility error: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
                 });

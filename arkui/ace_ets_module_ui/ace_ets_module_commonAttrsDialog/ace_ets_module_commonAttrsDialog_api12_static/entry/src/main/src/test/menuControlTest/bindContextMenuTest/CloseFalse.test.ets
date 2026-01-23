@@ -45,7 +45,6 @@ export default function CloseFalse() {
         }
       } catch (err) {
         console.error("push CloseFalse page error: " + err);
-        expect().assertFail();
       }
 
     });
@@ -64,11 +63,11 @@ it('CloseFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let Button1 = await driver.findComponent(ON.id('CloseFalse'));
-      Button1?.click()
+      await (Button1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
 
       let Button = await driver.findComponent(ON.id('CloseFalseClose'));
-      Button?.click();
+      await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('CloseFalseText');

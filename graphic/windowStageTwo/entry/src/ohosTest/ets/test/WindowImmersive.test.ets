@@ -20,6 +20,7 @@ import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
 import { display } from '@kit.ArkUI';
 import { StartOptions } from '@kit.AbilityKit';
+import { Driver, ON} from '@kit.TestKit';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -81,6 +82,39 @@ async function startAbility3(caseName: string, context: common.UIAbilityContext,
 
 async function terminateAbility3(caseName: string) {
   let pageContext = AppStorage.get('contextTest3') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
+async function startAbility4(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility4',
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest4') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility4(caseName: string) {
+  let pageContext = AppStorage.get('contextTest4') as common.UIAbilityContext
   await pageContext.terminateSelf().then(() => {
     console.log(`${caseName} terminateSelf success`);
   }).catch((err: BusinessError) => {
@@ -171,7 +205,55 @@ export default function windowImmersiveTest() {
       await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
       await sleep(300);
       console.log(`beforeAll isSupportRotate: ${JSON.stringify(isSupportRotate)},Orientation1: ${JSON.stringify(Orientation1)},Orientation2: ${JSON.stringify(Orientation2)}`)
+      // 拉起键盘赋权限
+      if (isFreeWindowMode==false) {
+        let windowStageStart = await startAbility4('beforeAll', context);
+        let mainWindow = windowStageStart.getMainWindowSync();
+        await mainWindow.setUIContent('testability/pages/Index4');
+        await mainWindow.showWindow();
+        await sleep(1000);
+        let driver: Driver = Driver.create();
+        await sleep(1000);
+        let input = await driver.findComponent(ON.id('textInput'));
+        console.info('beforeAll input: ' + JSON.stringify(input));
+        await sleep(1000);
+        await input.click();
+        await sleep(1000);
+        let text1 = await driver.findComponent(ON.text('同意'));
+        console.info('beforeAll text1: ' + JSON.stringify(text1));
+        let text2 = await driver.findComponent(ON.text('下一步'));
+        console.info('beforeAll text1: ' + JSON.stringify(text1));
+        await sleep(1000);
+        if (text1) {
+          await text1.click();
+          console.info('beforeAll 同意 click success');
+          await sleep(1000);
+          let text = await driver.findComponent(ON.text('下一步'));
+          console.info('beforeAll text2: ' + JSON.stringify(text));
+          await text.click();
+          console.info('beforeAll 下一步 click success');
+          await sleep(1000);
 
+          let text3 = await driver.findComponent(ON.text('完成'));
+          console.info('beforeAll text3: ' + JSON.stringify(text3));
+          await text3.click();
+          console.info('beforeAll 完成 click success');
+
+        }else if(text2){
+          await text2.click();
+          console.info('beforeAll 下一步 click success');
+          await sleep(1000);
+          let text3 = await driver.findComponent(ON.text('完成'));
+          console.info('beforeAll text3: ' + JSON.stringify(text3));
+          await text3.click();
+          console.info('beforeAll 完成 click success');
+        }else{
+          await driver.pressBack();
+          console.info('beforeAll pressBack success');
+        }
+        await sleep(2000);
+        await terminateAbility4('beforeAll');
+      }
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -900,7 +982,7 @@ export default function windowImmersiveTest() {
           expect(avoidArea.rightRect !== null).assertTrue();
           expect(avoidArea.bottomRect !== null).assertTrue();
           expect(avoidArea.leftRect !== null).assertTrue();
-          if(isFreeWindowMode == true){
+          if(isFreeWindowMode == true || isSupportRotate == false){
             expect(avoidArea.topRect.width).assertEqual(0);
             expect(avoidArea.topRect.height).assertEqual(0);
             expect(avoidArea.rightRect.width).assertEqual(0);
@@ -3896,8 +3978,14 @@ export default function windowImmersiveTest() {
             expect(avoidArea1.rightRect.width).assertEqual(0);
             expect(avoidArea1.rightRect.height).assertEqual(0);
 
-            expect(avoidArea1.topRect.width).assertLarger(0);
-            expect(avoidArea1.topRect.height).assertLarger(0);
+            if(isSupportRotate == true){
+              expect(avoidArea1.topRect.width).assertLarger(0);
+              expect(avoidArea1.topRect.height).assertLarger(0);
+            }else{
+              expect(avoidArea1.topRect.width).assertEqual(0);
+              expect(avoidArea1.topRect.height).assertEqual(0);
+            }
+            
 
             expect(avoidArea1.bottomRect.width).assertEqual(0);
             expect(avoidArea1.bottomRect.height).assertEqual(0);
@@ -3972,8 +4060,14 @@ export default function windowImmersiveTest() {
             expect(avoidArea7.topRect.width).assertEqual(0);
             expect(avoidArea7.topRect.height).assertEqual(0);
 
-            expect(avoidArea7.bottomRect.width).assertLarger(0);
-            expect(avoidArea7.bottomRect.height).assertLarger(0);
+            if(isSupportRotate == true){
+              expect(avoidArea7.bottomRect.width).assertLarger(0);
+              expect(avoidArea7.bottomRect.height).assertLarger(0);
+            }else{
+              expect(avoidArea7.bottomRect.width).assertEqual(0);
+              expect(avoidArea7.bottomRect.height).assertEqual(0);
+            }
+            
             await terminateAbility3(caseName);
             done()
           } catch (error) {

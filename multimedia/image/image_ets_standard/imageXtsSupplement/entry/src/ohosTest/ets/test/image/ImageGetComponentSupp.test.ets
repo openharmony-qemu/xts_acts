@@ -264,7 +264,6 @@ async function ImageGetComponent(done: Function, testName: string, callback: (re
       mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
       console.info(TAG,testName,"get receiver SurfaceId success");
       callback(receiver);
-      await sleep(1000);
       await releasePhotoSession();
       done();
     }
@@ -288,7 +287,6 @@ async function sendableGetComponent(done: Function, testName: string, callback: 
       mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
       console.info(TAG,testName,"get receiver SurfaceId success");
       callback(receiver);
-      await sleep(1000);
       await releasePhotoSession();
       done();
     }
@@ -311,12 +309,10 @@ export default function ImageGetComponentSupp() {
       await getVideoSurfaceId();
     });
     beforeEach(async () => {
-      await sleep(500);
       console.info('beforeEach case');
     });
     afterEach(async () => {
       console.info('afterEach case');
-      await sleep(500)
     });
     afterAll(async () => {
       console.info('afterAll case');

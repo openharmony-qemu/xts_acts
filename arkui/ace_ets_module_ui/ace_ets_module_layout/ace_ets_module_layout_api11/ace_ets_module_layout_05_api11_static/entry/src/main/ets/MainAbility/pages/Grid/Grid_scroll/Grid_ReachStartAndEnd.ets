@@ -136,7 +136,7 @@ struct Grid_ReachStartAndEnd {
         }.width(20).backgroundColor('#ededed')
         .id('Grid_ReachStartAndEnd_scrollBar')
 
-      }.height(300)
+      }.height('50%')
 
     }.width('100%').margin({ top: 5 } as Margin)
   }

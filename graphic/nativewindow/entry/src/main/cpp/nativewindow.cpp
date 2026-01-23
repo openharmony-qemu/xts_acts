@@ -299,6 +299,8 @@ napi_property_descriptor desc[] = {
      nullptr, nullptr, nullptr, napi_default, nullptr},
     {"testNativeWindowLockAndUnLockAndRequest", nullptr, testNativeWindowLockAndUnLockAndRequest, nullptr, nullptr,
      nullptr, napi_default, nullptr},
+    {"OHNativeErrorCodeCover", nullptr, OHNativeErrorCodeCover, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

@@ -39,6 +39,7 @@ static napi_value TextMenuItemId_001(napi_env env, napi_callback_info info)
 {
     NAPI_START(Text, ARKUI_NODE_TEXT);
     auto newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    ASSERT_EQ(newMenuItem == nullptr, false);
     auto result1_1 = OH_ArkUI_TextMenuItem_SetId(newMenuItem, ARKUI_TEXT_MENU_ITEM_ID_CUT);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "TextMenuItemId_001 result=%{public}d", result1_1);

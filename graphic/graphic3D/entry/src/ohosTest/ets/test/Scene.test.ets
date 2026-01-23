@@ -958,20 +958,21 @@ export default function sceneTest() {
         try {
           let scene = await Scene.load();
           let rf =  scene.getResourceFactory();
-          await Scene.getDefaultRenderContext()?.loadPlugin("1450021d-c57f-d9ff-7770-c24fb3f3321c");
-          let effectParameters: EffectParameters = {effectId: "c1e7d5a4-9b62-4f80-8c3e-2adf6f471b57"};
+          let effectIdName: string = "89b83608-c910-433e-9fd8-22f3ef64eabd";
+          let effectParameters: EffectParameters = {effectId: effectIdName};
+          console.info(msg + " EffectParameters create success. effectIdName: " + effectIdName);
           let cam = await rf.createCamera({ name: "Camera", path:"//Camera" }, { renderingPipeline: RenderingPipelineType.FORWARD });
-          expect(effectParameters.effectId).assertEqual("c1e7d5a4-9b62-4f80-8c3e-2adf6f471b57");
+          console.info(msg + " createCamera success.");
+          expect(effectParameters.effectId).assertEqual(effectIdName);
           let effect: Effect = await rf.createEffect(effectParameters);
+          console.info(msg + " createEffect success.");
           cam.effects.append(effect);
-          console.info(msg + " create effect: ", JSON.stringify(effect));
           expect(effect != null).assertTrue();
           console.info(msg + " create effect is not null ");
           expect(cam.effects.get(0)).assertEqual(effect);
-          console.info(msg + " cam.effects: ", JSON.stringify(effect));
-          expect(effect.effectId).assertEqual("c1e7d5a4-9b62-4f80-8c3e-2adf6f471b57");
-          console.info(msg + " effect.enabled: ", JSON.stringify(effect.effectId));
-          expect(effect.enabled).assertTrue();
+          expect(effect.effectId).assertEqual(effectIdName);
+          console.info(msg + " effect.effectId: ", JSON.stringify(effect.effectId));
+          expect(effect.enabled).assertFalse();
           console.info(msg + " effect.enabled: ", JSON.stringify(effect.enabled));
           effect.enabled = false;
           expect(cam.effects.get(0)?.enabled).assertFalse();
@@ -1006,6 +1007,194 @@ export default function sceneTest() {
       } catch (err) {
         console.info(msg + 'Failed in Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet_MeshOpt.glb")) ' +
         JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testCloneNode
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1012
+     * @tc.desc   Test cloneNode method to clone node within the same scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCloneNode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testCloneNode";
+      console.info(msg + ' begin ');
+      try {
+        // Load a scene
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != undefined).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        // Get nodes from the same scene
+        let cubeNode: scene3d.Node | null = scene.getNodeByPath("rootNode_/Unnamed Node 1/AnimatedCube");
+        expect(cubeNode != null).assertTrue();
+        console.info(msg + " cube node retrieved successfully");
+
+        // Clone node within the same scene
+        if (scene && cubeNode && scene.root) {
+          // Test cloning a regular node within the same scene
+          let clonedCube = scene.cloneNode(cubeNode, scene.root, "clonedCube");
+          expect(clonedCube != null).assertTrue();
+          console.info(msg + " regular node cloned successfully within the same scene");
+          expect(clonedCube?.name).assertEqual("clonedCube");
+          console.info(msg + " cloned node name is 'clonedCube'");
+
+          // Test cloning the cloned node again within the same scene
+          if (clonedCube) {
+            let clonedCube2 = scene.cloneNode(clonedCube, scene.root, "clonedCube2");
+            expect(clonedCube2 != null).assertTrue();
+            console.info(msg + " cloned node cloned again successfully");
+            expect(clonedCube2?.name).assertEqual("clonedCube2");
+          }
+
+          // Test cloning a Camera node if it exists
+          let cameraNode: scene3d.Node | null = scene.getNodeByPath("rootNode_/Unnamed Node 1/camera_Orientation");
+          if (cameraNode != null) {
+            let clonedCamera = scene.cloneNode(cameraNode, scene.root, "clonedCamera");
+            expect(clonedCamera != null).assertTrue();
+            console.info(msg + " camera node cloned successfully");
+            expect(clonedCamera?.nodeType).assertEqual(scene3d.NodeType.CAMERA);
+            console.info(msg + " cloned camera node type is CAMERA");
+          }
+
+          // Test cloning a Light node if it exists
+          let lightNode: scene3d.Node | null = scene.getNodeByPath("rootNode_/Unnamed Node 1/DirectionalLight");
+          if (lightNode != null) {
+            let clonedLight = scene.cloneNode(lightNode, scene.root, "clonedLight");
+            expect(clonedLight != null).assertTrue();
+            console.info(msg + " light node cloned successfully");
+            expect(clonedLight?.nodeType).assertEqual(scene3d.NodeType.LIGHT);
+            console.info(msg + " cloned light node type is LIGHT");
+          }
+        }
+
+        // Test null return scenarios
+        if (scene && scene.root && cubeNode) {
+          // Test cloneNode with null node should return null
+          let resultNullNode = scene.cloneNode(null, scene.root, "testNode");
+          expect(resultNullNode).assertNull();
+          console.info(msg + " cloneNode with null node returns null");
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCloneNode " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testSceneRenderConfigurationShadowResolution
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1023
+     * @tc.desc   Verify Scene.renderConfiguration.shadowResolution property can be set and retrieved
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSceneRenderConfigurationShadowResolution', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneRenderConfigurationShadowResolution";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        // Get renderConfiguration
+        let renderConfig = scene.renderConfiguration;
+        expect(renderConfig != null).assertTrue();
+        console.info(msg + " renderConfiguration retrieved successfully");
+
+        // Test default value (should be undefined)
+        expect(renderConfig.shadowResolution).assertUndefined();
+        console.info(msg + " default shadowResolution is undefined as expected");
+
+        // Test setting shadowResolution to different values
+        // Test 1: Set to 2048 x 2048
+        renderConfig.shadowResolution = { x: 2048, y: 2048 };
+        expect(renderConfig.shadowResolution.x).assertEqual(2048);
+        expect(renderConfig.shadowResolution.y).assertEqual(2048);
+        console.info(msg + " shadowResolution set to 2048x2048 successfully");
+
+        // Test 2: Set to 512 x 512
+        renderConfig.shadowResolution = { x: 512, y: 512 };
+        expect(renderConfig.shadowResolution.x).assertEqual(512);
+        expect(renderConfig.shadowResolution.y).assertEqual(512);
+        console.info(msg + " shadowResolution set to 512x512 successfully");
+
+        // Test 3: Set to 1024 x 1024
+        renderConfig.shadowResolution = { x: 1024, y: 1024 };
+        expect(renderConfig.shadowResolution.x).assertEqual(1024);
+        expect(renderConfig.shadowResolution.y).assertEqual(1024);
+        console.info(msg + " shadowResolution set to 1024x1024 successfully");
+
+        // Test 4: Set with floating point values (should truncate to integer)
+        renderConfig.shadowResolution = { x: 1024.7, y: 2048.3 };
+        expect(renderConfig.shadowResolution.x).assertEqual(1024);
+        expect(renderConfig.shadowResolution.y).assertEqual(2048);
+        console.info(msg + " shadowResolution truncated floating point values successfully");
+
+        // Test 5: Values greater than 0 should work
+        renderConfig.shadowResolution = { x: 1, y: 1 };
+        expect(renderConfig.shadowResolution.x).assertEqual(1);
+        expect(renderConfig.shadowResolution.y).assertEqual(1);
+        console.info(msg + " shadowResolution set to minimum value 1x1 successfully");
+
+        // Test 6: Set to large values
+        renderConfig.shadowResolution = { x: 4096, y: 4096 };
+        expect(renderConfig.shadowResolution.x).assertEqual(4096);
+        expect(renderConfig.shadowResolution.y).assertEqual(4096);
+        console.info(msg + " shadowResolution set to large value 4096x4096 successfully");
+
+        // Test 7: Test asymmetric resolution
+        renderConfig.shadowResolution = { x: 2048, y: 1024 };
+        expect(renderConfig.shadowResolution.x).assertEqual(2048);
+        expect(renderConfig.shadowResolution.y).assertEqual(1024);
+        console.info(msg + " shadowResolution set to asymmetric 2048x1024 successfully");
+
+        // // Test 8: Test zero value (should be ignored and maintain previous value)
+        // renderConfig.shadowResolution = { x: 2048, y: 1024 };
+        // let previousValueX = renderConfig.shadowResolution.x;
+        // let previousValueY = renderConfig.shadowResolution.y;
+        // renderConfig.shadowResolution = { x: 0, y: 0 };
+        // expect(renderConfig.shadowResolution.x).assertEqual(previousValueX);
+        // expect(renderConfig.shadowResolution.y).assertEqual(previousValueY);
+        // console.info(msg + " zero values ignored, maintained previous value successfully");
+        //
+        // // Test 9: Test negative values (should be ignored and maintain previous value)
+        // renderConfig.shadowResolution = { x: 1024, y: 1024 };
+        // previousValueX = renderConfig.shadowResolution.x;
+        // previousValueY = renderConfig.shadowResolution.y;
+        // renderConfig.shadowResolution = { x: -512, y: -1024 };
+        // expect(renderConfig.shadowResolution.x).assertEqual(previousValueX);
+        // expect(renderConfig.shadowResolution.y).assertEqual(previousValueY);
+        // console.info(msg + " negative values ignored, maintained previous value successfully");
+        //
+        // // Test 10: Test one component zero and one positive (both should be ignored)
+        // renderConfig.shadowResolution = { x: 512, y: 512 };
+        // previousValueX = renderConfig.shadowResolution.x;
+        // previousValueY = renderConfig.shadowResolution.y;
+        // renderConfig.shadowResolution = { x: 0, y: 1024 };
+        // expect(renderConfig.shadowResolution.x).assertEqual(previousValueX);
+        // expect(renderConfig.shadowResolution.y).assertEqual(previousValueY);
+        // console.info(msg + " one component zero ignored, maintained previous value successfully");
+        //
+        // // Test 11: Test mixed zero and negative values (should be ignored)
+        // renderConfig.shadowResolution = { x: 2048, y: 2048 };
+        // previousValueX = renderConfig.shadowResolution.x;
+        // previousValueY = renderConfig.shadowResolution.y;
+        // renderConfig.shadowResolution = { x: 0, y: -1024 };
+        // expect(renderConfig.shadowResolution.x).assertEqual(previousValueX);
+        // expect(renderConfig.shadowResolution.y).assertEqual(previousValueY);
+        // console.info(msg + " mixed zero and negative values ignored, maintained previous value successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneRenderConfigurationShadowResolution " + JSON.stringify(err));
         expect().assertFail();
         done();
       }

@@ -62,6 +62,17 @@ import rdbQueryWithoutRowCount from './RdbQueryWithoutRowCount.test'
 import rdbQueryWithoutRowCountSync from './RdbQueryWithoutRowCountSync.test'
 import transQueryWithoutRowCount from './TranQueryWithoutRowCount.test'
 import transQuerySqlWithoutRowCountSync from  './TranQueryWithoutRowCountSync.test'
+import ReturningLiteResultSetTest from './ReturningLiteResultSet.test';
+import RdbStoreBatchInsertWithReturning from './RdbStoreBatchInsertWithReturning.test';
+import RdbStoreDeleteWithReturning from './RdbStoreDeleteWithReturning.test';
+import RdbStoreUpdateWithReturning from './RdbStoreUpdateWithReturning.test';
+import TransBatchInsertWithReturning from './TransBatchInsertWithReturning.test';
+import TransDeleteWithReturning from './TransDeleteWithReturning.test';
+import TransUpdateWithReturning from './TransUpdateWithReturning.test';
+import ReturningMultiThread from './ReturningMultiThread.test';
+import RdbStoreErrorCodeAdd1Test from './RdbStoreErrorCodeAdd1.test';
+import RdbStoreErrorCodeAdd2Test from './RdbStoreErrorCodeAdd2.test';
+
 
 export default function testsuite() {
   relationalStoreEncryptTest()
@@ -114,5 +125,16 @@ export default function testsuite() {
   rdbQueryWithoutRowCountSync()
   transQueryWithoutRowCount()
   transQuerySqlWithoutRowCountSync()
+  ReturningLiteResultSetTest()
+  RdbStoreBatchInsertWithReturning()
+  RdbStoreDeleteWithReturning()
+  RdbStoreUpdateWithReturning()
+  TransBatchInsertWithReturning()
+  TransDeleteWithReturning()
+  TransUpdateWithReturning()
+  ReturningMultiThread()
+  RdbStoreErrorCodeAdd1Test()
+  RdbStoreErrorCodeAdd2Test()
 }
+
 

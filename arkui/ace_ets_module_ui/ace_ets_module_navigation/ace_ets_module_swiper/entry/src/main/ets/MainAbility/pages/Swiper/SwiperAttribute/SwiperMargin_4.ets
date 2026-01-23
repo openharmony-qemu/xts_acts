@@ -34,7 +34,7 @@ struct Index {
             .onClick(() => {
               this.swiperController.showPrevious()
             })
-        }.margin({ top: 15 })
+        }
         Row() {
           Button('后边距+')
             .id('nextMarginAdd')
@@ -46,7 +46,7 @@ struct Index {
             .onClick(() => {
               this.nextMargin = this.nextMargin - 5
             })
-        }.margin({ top: 15 })
+        }
         Row() {
           Button('前边距+')
             .id('prevMarginAdd')
@@ -58,35 +58,35 @@ struct Index {
             .onClick(() => {
               this.prevMargin =  this.prevMargin - 5
             })
-        }.margin({ top: 15 })
+        }
         Swiper(this.swiperController) {
           Column() {
             Text('1').width('100%').height('100%').backgroundColor(Color.Green).id('swiperText_1')
           }
           .width(50)
-          .height(50)
+          .height('10%')
           .backgroundColor(0xF5DEB3)
           .id('swiperAttribute_801')
           .padding(20)
           Column() {
             Text('2').width('100%').height('100%').id('swiperText_2')
-          }.width(50).height(50).backgroundColor(0xD2B48C).id('swiperAttribute_802')
+          }.width(50).height('10%').backgroundColor(0xD2B48C).id('swiperAttribute_802')
 
           Column() {
             Text('3').width('100%').height('100%').id('swiperText_3')
-          }.width(50).height(50).backgroundColor(0xF5DEB3).id('swiperAttribute_803')
+          }.width(50).height('10%').backgroundColor(0xF5DEB3).id('swiperAttribute_803')
 
           Column() {
             Text('4').width('100%').height('100%').id('swiperText_4')
-          }.width(50).height(50).backgroundColor(0xD2B48C).id('swiperAttribute_804')
+          }.width(50).height('10%').backgroundColor(0xD2B48C).id('swiperAttribute_804')
 
           Column() {
             Text('5').width('100%').height('100%').id('swiperText_5')
-          }.width(50).height(50).backgroundColor(0xF5DEB3).id('swiperAttribute_805')
+          }.width(50).height('10%').backgroundColor(0xF5DEB3).id('swiperAttribute_805')
 
           Column() {
             Text('6').width('100%').height('100%').id('swiperText_6')
-          }.width(50).height(50).backgroundColor(0xD2B48C).id('swiperAttribute_806')
+          }.width(50).height('10%').backgroundColor(0xD2B48C).id('swiperAttribute_806')
         }
         .cachedCount(2)
         .id('swiper')
@@ -103,7 +103,7 @@ struct Index {
         .onChange((index: number) => {
           this.curIndex = index + 1
         })
-      }.margin({ top: 50 }).width('100%')
+      }.margin({ top:10 }).width('100%')
     }
   }
 }

@@ -62,8 +62,8 @@ export default function builtinsArrayToSortedTest() {
      */
     it('builtinsArrayToSortedTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = collections.Array.from([3, 1, 2]);
-      const result: number[] = toSortedRes(input, (a: number, b: number) => b - a);
-      expect(result).assertDeepEquals([3, 2, 1]);
+
+      expect(toSortedRes(Array.from(input), (a: number, b: number) => b - a)).assertDeepEquals([3, 2, 1]);
     });
 
     /**
@@ -76,7 +76,7 @@ export default function builtinsArrayToSortedTest() {
      */
     it('builtinsArrayToSortedTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const emptyArr = collections.Array.from([]);
-      expect(toSortedRes(emptyArr)).assertDeepEquals([]);
+      expect(toSortedRes(Array.from(emptyArr))).assertDeepEquals([]);
     });
 
     /**
@@ -101,7 +101,7 @@ export default function builtinsArrayToSortedTest() {
      */
     it('builtinsArrayToSortedTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sparseArr = collections.Array.from([1, , 3]);
-      expect(toSortedRes(sparseArr)).assertDeepEquals([1, 3, undefined]);
+      expect(toSortedRes(Array.from(sparseArr))).assertDeepEquals([1, 3, undefined]);
     });
 
     /**
@@ -114,7 +114,7 @@ export default function builtinsArrayToSortedTest() {
      */
     it('builtinsArrayToSortedTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = collections.Array.from([1, null, undefined, 3]);
-      expect(toSortedRes(arr)).assertDeepEquals([1, 3, null, undefined]);
+      expect(toSortedRes(Array.from(arr))).assertDeepEquals([1, 3, null, undefined]);
     });
 
     /**
@@ -127,7 +127,7 @@ export default function builtinsArrayToSortedTest() {
      */
     it('builtinsArrayToSortedTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const months = collections.Array.from(["Mar", "Jan", "Feb", "Dec"]);
-      expect(toSortedRes(months)).assertDeepEquals(['Dec', 'Feb', 'Jan', 'Mar']);
+      expect(toSortedRes(Array.from(months))).assertDeepEquals(['Dec', 'Feb', 'Jan', 'Mar']);
     });
 
     /**
@@ -139,9 +139,9 @@ export default function builtinsArrayToSortedTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayToSortedTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = collections.Array.from([[3], [1], [2]]);
-      expect(toSortedRes(arr, (a: number[], b: number[]) => a[0] - b[0]))
-        .assertDeepEquals([[1], [2], [3]]);
+      const arr = collections.Array.from([3, 1, 2]);
+      expect(toSortedRes(Array.from(arr), (a: number, b: number) => a - b))
+        .assertDeepEquals([1, 2, 3]);
     });
 
     /**
@@ -154,8 +154,8 @@ export default function builtinsArrayToSortedTest() {
      */
     it('builtinsArrayToSortedTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const original = collections.Array.from([3, 1, 2]);
-      const sorted= toSortedRes(original) as  collections.Array<number>;
-      expect(sorted === original).assertFalse();
+
+      expect(toSortedRes(Array.from(original)) === Array.from(original)).assertFalse();
     });
 
   });

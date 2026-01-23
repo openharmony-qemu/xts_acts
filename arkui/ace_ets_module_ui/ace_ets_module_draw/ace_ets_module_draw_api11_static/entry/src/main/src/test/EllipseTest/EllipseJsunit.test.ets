@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,6 +37,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { startAbility, stopApplication, UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -108,7 +109,7 @@ export default function ellipseJsunit() {
         let eventData: emitter.EventData = {
           data: {
             "width": '100px'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 92,
@@ -140,7 +141,7 @@ export default function ellipseJsunit() {
         let eventData: emitter.EventData = {
           data: {
             "height": '500px'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 92,
@@ -172,7 +173,7 @@ export default function ellipseJsunit() {
         let eventData: emitter.EventData = {
           data: {
             "width": '1111111111111.00px'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 907,
@@ -204,7 +205,7 @@ export default function ellipseJsunit() {
         let eventData: emitter.EventData = {
           data: {
             "height": '12111111111111.00px'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 907,
@@ -237,7 +238,7 @@ export default function ellipseJsunit() {
         let eventData: emitter.EventData = {
           data: {
             "height": '-40.00px'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 908,
@@ -269,7 +270,7 @@ export default function ellipseJsunit() {
         let eventData: emitter.EventData = {
           data: {
             "width": '-10.00px'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 908,

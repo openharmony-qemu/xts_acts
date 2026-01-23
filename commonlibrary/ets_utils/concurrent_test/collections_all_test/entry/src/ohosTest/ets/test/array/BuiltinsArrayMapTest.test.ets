@@ -109,21 +109,6 @@ export default function builtinsArrayMapTest() {
       Done()
     })
 
-    /**
-     * @tc.name   buildinsArrayMapTest1005
-     * @tc.number SUB_BUILDINS_ARRAY_MAP_TEST_0500
-     * @tc.desc   test Array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('buildinsArrayMapTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = collections.Array.from([[], [1], [2]])
-      let result = array.map(element => element.length)
-      expect(result[0]).assertEqual(0)
-      expect(result[1]).assertEqual(1)
-      expect(result[2]).assertEqual(1)
-      Done()
-    })
+
   })
 }

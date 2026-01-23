@@ -117,7 +117,7 @@ it('EnableHapticFeedbackTest_static_0030', Level.LEVEL0, async (done: () => void
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let Button = await driver.findComponent(ON.id('enableHapticFeedback_false'));
-      Button?.click();
+      await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[EnableHapticFeedbackTest_static_0030] click succ');
       let strJson = inspector.getInspectorByKey('Text_enableHapticFeedback');
@@ -143,7 +143,7 @@ it('EnableHapticFeedbackTest_static_0040', Level.LEVEL0, async (done: () => void
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let Button = await driver.findComponent(ON.id('enableHapticFeedback_undefined'));
-      Button?.click();
+      await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[EnableHapticFeedbackTest_static_0040] click succ');
       let strJson = inspector.getInspectorByKey('Text_enableHapticFeedback');
@@ -209,7 +209,7 @@ it('EnableHapticFeedbackTest_static_0070', Level.LEVEL0, async (done: () => void
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let Button = await driver.findComponent(ON.id('enableHapticFeedback_false'));
-      Button?.click();
+      await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[EnableHapticFeedbackTest_static_0070] click succ');
       let strJson = inspector.getInspectorByKey('TextInput_enableHapticFeedback');
@@ -235,7 +235,7 @@ it('EnableHapticFeedbackTest_static_0080', Level.LEVEL0, async (done: () => void
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let Button = await driver.findComponent(ON.id('enableHapticFeedback_undefined'));
-      Button?.click();
+      await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[EnableHapticFeedbackTest_static_0080] click succ');
       let strJson = inspector.getInspectorByKey('TextInput_enableHapticFeedback');
@@ -301,7 +301,7 @@ it('EnableHapticFeedbackTest_static_0110', Level.LEVEL0, async (done: () => void
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let Button = await driver.findComponent(ON.id('enableHapticFeedback_false'));
-      Button?.click();
+      await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[EnableHapticFeedbackTest_static_0110] click succ');
       let strJson = inspector.getInspectorByKey('TextArea_enableHapticFeedback');
@@ -327,7 +327,7 @@ it('EnableHapticFeedbackTest_static_0120', Level.LEVEL0, async (done: () => void
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let Button = await driver.findComponent(ON.id('enableHapticFeedback_undefined'));
-      Button?.click();
+      await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[EnableHapticFeedbackTest_static_0120] click succ');
       let strJson = inspector.getInspectorByKey('TextArea_enableHapticFeedback');
@@ -393,7 +393,7 @@ it('EnableHapticFeedbackTest_static_0150', Level.LEVEL0, async (done: () => void
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let Button = await driver.findComponent(ON.id('enableHapticFeedback_false'));
-      Button?.click();
+      await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[EnableHapticFeedbackTest_static_0150] click succ');
       let strJson = inspector.getInspectorByKey('Search_enableHapticFeedback');
@@ -419,7 +419,7 @@ it('EnableHapticFeedbackTest_static_0160', Level.LEVEL0, async (done: () => void
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let Button = await driver.findComponent(ON.id('enableHapticFeedback_undefined'));
-      Button?.click();
+      await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[EnableHapticFeedbackTest_static_0160] click succ');
       let strJson = inspector.getInspectorByKey('Search_enableHapticFeedback');
@@ -485,7 +485,7 @@ it('EnableHapticFeedbackTest_static_0190', Level.LEVEL0, async (done: () => void
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let Button = await driver.findComponent(ON.id('enableHapticFeedback_false'));
-      Button?.click();
+      await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[EnableHapticFeedbackTest_static_0190] click succ');
       let strJson = inspector.getInspectorByKey('RichEditor_enableHapticFeedback');
@@ -511,7 +511,7 @@ it('EnableHapticFeedbackTest_static_0200', Level.LEVEL0, async (done: () => void
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let Button = await driver.findComponent(ON.id('enableHapticFeedback_undefined'));
-      Button?.click();
+      await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[EnableHapticFeedbackTest_static_0200] click succ');
       let strJson = inspector.getInspectorByKey('RichEditor_enableHapticFeedback');

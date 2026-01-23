@@ -239,41 +239,42 @@ struct VirtualScreen {
 
   build() {
     Column() {
-      Row() {
-        Button() {
-          Image($r('app.media.ic_public_back'))
-            .width('20vp')
-            .height('18vp')
-            .margin({ left: '20vp' })
+      Scroll(){
+        Row({space:20}) {
+          Button() {
+            Image($r('app.media.ic_public_back'))
+              .width('20vp')
+              .height('18vp')
+              .margin({ left: '20vp' })
+          }
+          .backgroundColor(Color.Black)
+          .size({ width: '40vp', height: '30vp' })
+          .onClick(() => {
+            router.back({
+              url: 'pages/Screen/Screen_index',
+              params: { result: 'None' }
+            })
+          })
+
+          Text(this.name)
+            .fontColor(Color.White)
+            .fontSize('18fp')
+            .margin({ left: '-20vp' })
+          Text('hello')
+            .fontColor(Color.White)
+            .visibility(Visibility.Hidden)
         }
         .backgroundColor(Color.Black)
-        .size({ width: '40vp', height: '30vp' })
-        .onClick(() => {
-          router.back({
-            url: 'pages/Screen/Screen_index',
-            params: { result: 'None' }
-          })
-        })
-
-        Text(this.name)
-          .fontColor(Color.White)
-          .fontSize('18fp')
-          .margin({ left: '-20vp' })
-        Text('hello')
-          .fontColor(Color.White)
-          .visibility(Visibility.Hidden)
-      }
-      .backgroundColor(Color.Black)
-      .height('10%')
-      .width('100%')
-      .justifyContent(FlexAlign.SpaceBetween)
-
+        .height('20%')
+        .width('130%')
+        .justifyContent(FlexAlign.Center)
+      }.scrollable(ScrollDirection.Horizontal).scrollBarColor(Color.Orange)
       Row() {
         Text('测试步骤：\n1.点击添加虚拟屏按钮,能够添加一块虚拟屏\n2.点击新增的绿色虚拟屏可以查看信息\n3.点击移除虚拟屏按钮，能成功移除')
-          .fontSize('24fp')
+          .fontSize('15fp')
           .fontColor(Color.White)
       }
-      .height('30%')
+      .height('15%')
       .margin({ bottom: '-10vp' })
       DisplayDevice({ isPass: $isPass })
 
@@ -285,9 +286,7 @@ struct VirtualScreen {
         name: $name,
         Vue: $Vue,
         isFlash: $isFlush
-      })
-        .height('10%')
-        .width('100%')
+      }).margin({ bottom: '20vp' })
     }
     .width('100%')
     .height('100%')

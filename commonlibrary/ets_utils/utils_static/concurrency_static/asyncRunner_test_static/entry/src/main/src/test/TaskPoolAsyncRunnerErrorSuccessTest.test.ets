@@ -64,7 +64,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
-      await sleep(100);
+      await sleep(50);
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
@@ -162,6 +162,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let Count1: number = 0;
         let Count2: number = 0;
+        let lock = new Mutex();
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs2, 1, 50);
@@ -174,7 +175,9 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
               let s: string[] = [];
               s[0].split('')[1].toString();
             } catch (e) {
+              lock.lock();
               Count2++;
+              lock.unlock();
               console.info('====taskPoolAsyncRunnerErrorSuccessTest1003:1');
             }
           })
@@ -218,12 +221,16 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count: number = 0;
         let count2: number = 0;
+        let lock1 = new Mutex();
+        let lock2 = new Mutex();
         for (let i = 0; i < 20; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs2, 1, 50);
           task.onExecutionSucceeded(() => {
             console.info('====onExecutionSucceeded: execute task success');
+            lock1.lock();
             count++;
+            lock1.unlock();
           });
           task2.onExecutionSucceeded(() => {
             console.info('====onExecutionSucceeded2: execute task success');
@@ -231,7 +238,9 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
               let s: string[] = [];
               s[0].split('')[1].toString();
             } catch (e) {
+              lock2.lock();
               count2++;
+              lock2.unlock();
             }
           })
           asyncRunner.execute(task).then(() => {
@@ -540,18 +549,24 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count: number = 0;
         let count2: number = 0;
+        let lock1 = new Mutex();
+        let lock2 = new Mutex();
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs3, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs4, 1);
           task.onExecutionFailed(() => {
+            lock1.lock();
             count++;
+            lock1.unlock();
           });
           task2.onExecutionFailed((e: Error) => {
             try {
               let s: string[] = [];
               s[0].split('')[1].toString();
             } catch (e) {
+              lock2.lock();
               count2++;
+              lock2.unlock();
             }
           })
           asyncRunner.execute(task).catch(() => {
@@ -844,7 +859,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs9, 1);
           asyncRunner.execute(task).then((num) => {
-            count += Number(num);
+            count++;
           }).catch(() => {
             count++;
           });

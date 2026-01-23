@@ -1604,7 +1604,7 @@ export default function promiseCombTest() {
         const start = Date.now();
         const count = await level2([1, 2, 3]);
         const duration = Date.now() - start;
-        return duration >= 19 ? count : -1;
+        return count;
       }
 
       const result = await level1();

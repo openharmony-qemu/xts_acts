@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import ArkUI from '@kit.ArkUI';
 export const SUB_IMF_NDK_AttachOptions_Create_0100: () => string;
 export const SUB_IMF_NDK_InputMethodController_Attach_0100: () => string;
 export const SUB_IMF_NDK_InputMethodController_Detach_0100: () => string;
@@ -44,3 +45,5 @@ export const SUB_IMF_NDK_TextConfig_SetPlaceholder_0200: () => string;
 export const SUB_IMF_NDK_TextConfig_SetPlaceholder_0300: () => string;
 export const SUB_IMF_NDK_TextConfig_SetPlaceholder_0400: () => string;
 export const SUB_IMF_NDK_InputMethod_ErrorCode_0100: () => number;
+export const SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0100: (context: ArkUI.UIContext) => string;
+export const SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0200: () => string;

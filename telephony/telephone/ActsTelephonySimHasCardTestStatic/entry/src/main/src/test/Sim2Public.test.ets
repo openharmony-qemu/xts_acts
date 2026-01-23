@@ -307,7 +307,7 @@ export default function Sim2Public() {
             ExpectTrue(simStateAry.includes(data));
             console.info(`${caseName} test end `);
             done();
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             console.info(`${caseName}getSimState failed, promise: err->${JSON.stringify(err)}`);
             ExpectFail();
             console.info(`${caseName} test end `);
@@ -340,7 +340,7 @@ export default function Sim2Public() {
             ExpectFail();
             console.info(`${caseName} test end `);
             done();
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             if (err.code === 8300001) {
               console.info(`${caseName} getSimState failed Invalid parameter value, promise: err->${JSON.stringify(err)}`);
               ExpectTrue(true);
@@ -409,7 +409,7 @@ export default function Sim2Public() {
           console.info(`${caseName} test end `);
           done();
         }
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         console.info(`hasSimCard failed, promise: err->${JSON.stringify(err)}`);
         ExpectFail();
         console.info(`${caseName} test end `);
@@ -511,7 +511,7 @@ export default function Sim2Public() {
               console.info(`${caseName} test end `);
               done();
             }
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
             ExpectFail();
             console.info(`${caseName} test end `);
@@ -544,7 +544,7 @@ export default function Sim2Public() {
             ExpectFail();
             console.info(`${caseName} test end `);
             done();
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             if (err?.code === 8300001) {
               console.info(`${caseName} Parameter error, promise: err->${JSON.stringify(err)}`);
               ExpectTrue(true);
@@ -626,7 +626,7 @@ export default function Sim2Public() {
               console.info(`${caseName} test end `);
               done();
             }
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
             ExpectFail();
             console.info(`${caseName} test end `);

@@ -76,7 +76,7 @@ it('DrawChildrenTest_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
       expect(obj.getElement('$attrs').getString('content')).assertEqual('text1尺寸ok');
       let driver = Driver.create();
       let btn1 = await driver.findComponent(ON.id('Button1'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       await Utils.sleep(SLEEP_TIME_1000);
       strJson = inspector.getInspectorByKey('Button1');
       obj = JSON.parseJsonElement(strJson);
@@ -104,7 +104,7 @@ it('DrawChildrenTest_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
       await Utils.sleep(SLEEP_TIME_1000);
       let driver = Driver.create();
       let btn1 = await driver.findComponent(ON.id('Button2'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       await Utils.sleep(SLEEP_TIME_1000);
       strJson = inspector.getInspectorByKey('Button2');
       obj = JSON.parseJsonElement(strJson);
@@ -131,7 +131,7 @@ it('DrawChildrenTest_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
       expect(obj.getElement('$attrs').getString('content')).assertEqual('text1offokok');
       let driver = Driver.create();
       let btn1 = await driver.findComponent(ON.id('Button3'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       await Utils.sleep(SLEEP_TIME_1000);
       strJson = inspector.getInspectorByKey('Button3');
       obj = JSON.parseJsonElement(strJson);

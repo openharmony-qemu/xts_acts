@@ -66,7 +66,6 @@ export default function flexShrinkTest() {
     'Counter',
     'Grid',
     'List',
-    'Panel',
     'Refresh',
     'Scroll',
     'Stack',

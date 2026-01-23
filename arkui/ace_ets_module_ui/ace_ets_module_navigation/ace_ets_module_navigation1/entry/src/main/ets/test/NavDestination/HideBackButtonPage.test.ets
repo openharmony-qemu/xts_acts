@@ -88,7 +88,7 @@ export default function HideBackButtonPage() {
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(500);
 
       let btnPop = await driver.findComponent(ON.id('popId'));
       await btnPop.click()
@@ -122,7 +122,7 @@ export default function HideBackButtonPage() {
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(500);
 
       let btnPop = await driver.findComponent(ON.id('popId'));
       await btnPop.click()
@@ -155,7 +155,7 @@ export default function HideBackButtonPage() {
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(500);
 
       let btnPop = await driver.findComponent(ON.id('popId'));
       await btnPop.click()

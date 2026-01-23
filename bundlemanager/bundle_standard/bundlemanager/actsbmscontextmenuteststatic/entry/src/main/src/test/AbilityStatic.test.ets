@@ -60,7 +60,7 @@ export default function abilityTest() {
           console.info("getBundleNameByUidUnPermissionApi14 promise success " + data);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info("getBundleNameByUidUnPermissionApi14 promise error " + JSON.stringify(err));
           expect(err.code).assertEqual(201);
         })
@@ -98,7 +98,7 @@ export default function abilityTest() {
           console.info("getAppCloneIdentityUnPermissionApi14 success " + data);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info("getAppCloneIdentityUnPermissionApi14 promise " + JSON.stringify(err));
           expect(err.code).assertEqual(201);
           done();
@@ -144,7 +144,7 @@ export default function abilityTest() {
       bundle.getAbilityInfo(uri, abilityFlags).then((data: Array<bundle.AbilityInfo>) => {
         expect().assertFail();
         done();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, `Sub_Bms_Framework_getAbilityInfo_static_01 catch failed errCode:${err.code} message:${err.message}`);
         expect(err.code).assertEqual(201);
         done();

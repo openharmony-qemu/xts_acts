@@ -62,7 +62,7 @@ export default function RichEditorWordBreakJsunitTest() {
         defaultRouter.clear();
         let pages:router.RouterState = defaultRouter.getState();
         console.info("get RichEditorWordBreakJsunitTest state pages:" + JSON.stringify(pages));
-        if (!("RichEditorWordBreakJsunitTest" == pages.name)) {
+        if (!("RichEditorWordBreak" == pages.name)) {
           console.info("get RichEditorWordBreakJsunitTest pages.name:" + JSON.stringify(pages.name));
           defaultRouter.pushUrl(options);
           let driver = Driver.create();

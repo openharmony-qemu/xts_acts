@@ -12,25 +12,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 import callJsunit from "./CallJsunit.test";
 import telSyncTest from "./TelSyncTest.test";
 import radioJsunit from './RadioJsunit.test';
 import radioSecondJsunit from './RadioSecondJsunit.test';
 import sim from '@ohos.telephony.sim';
+import EmptyTest from './Empty.test';
 
 export default function testsuite() {
   let simState: sim.SimState = sim.getSimStateSync(0);
-  if (sim.getMaxSimCount() != 0 && simState != sim.SimState.SIM_STATE_UNKNOWN) {
-    radioJsunit();
-    radioSecondJsunit();
-    callJsunit();
-    telSyncTest();
-  }else{
-    radioJsunit();
-    radioSecondJsunit();
-    callJsunit();
-    telSyncTest();
-  }
 
+  if (sim.getMaxSimCount() != 0 && simState != sim.SimState.SIM_STATE_UNKNOWN) {
+    if (sim.hasSimCardSync(0)) {
+      radioJsunit();
+      radioSecondJsunit();
+      callJsunit();
+      telSyncTest();
+    } else {
+      EmptyTest();
+    }
+  } else {
+    EmptyTest();
+  }
 }
