@@ -70,6 +70,9 @@ import TransBatchInsertWithReturning from './TransBatchInsertWithReturning.test'
 import TransDeleteWithReturning from './TransDeleteWithReturning.test';
 import TransUpdateWithReturning from './TransUpdateWithReturning.test';
 import ReturningMultiThread from './ReturningMultiThread.test';
+import RdbStoreErrorCodeAdd1Test from './RdbStoreErrorCodeAdd1.test';
+import RdbStoreErrorCodeAdd2Test from './RdbStoreErrorCodeAdd2.test';
+
 
 export default function testsuite() {
   relationalStoreEncryptTest()
@@ -130,5 +133,8 @@ export default function testsuite() {
   TransDeleteWithReturning()
   TransUpdateWithReturning()
   ReturningMultiThread()
+  RdbStoreErrorCodeAdd1Test()
+  RdbStoreErrorCodeAdd2Test()
 }
+
 

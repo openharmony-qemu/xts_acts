@@ -26,5 +26,6 @@ export default function testsuite() {
   transactionNdktest();
   rdbCryptoParamNdkTest();
   rdbInterfaceNdkTest();
+  rdbRekeyExNdkTest();
   rdbReturningNdkTest();
 }

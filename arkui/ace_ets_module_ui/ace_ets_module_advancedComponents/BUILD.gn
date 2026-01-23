@@ -19,6 +19,7 @@ group("ActsAceEtsModuleAdvancedComponentsTest") {
       "ace_ets_module_advancedComponents_api12:ActsAceEtsModuleAdvancedComponentsApi12Test",
       "ace_ets_module_advanceDialog:ActsAceEtsModuleAdvancedDialogTest",
       "ace_ets_module_advancedComponents_api12_static:ActsAceEtsModuleAdvancedComponentsApi12StaticTest",
+      "ace_ets_module_counter:ActsAceEtsModuleCounterTest",
     ]
   } else {
     deps = [

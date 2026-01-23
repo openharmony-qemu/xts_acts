@@ -14,7 +14,9 @@
  */
 
 import onHoverStatusChange from './onHoverStatusChange/onHoverStatusChange.test'
+import MouseEventWindowTest from "./MouseEvent/MouseEventWindow.test";
 
 export default function testsuite() {
   onHoverStatusChange();
+  MouseEventWindowTest();
 }

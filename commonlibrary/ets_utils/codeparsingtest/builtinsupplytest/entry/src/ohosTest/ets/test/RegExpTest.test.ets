@@ -21,6 +21,7 @@ export default function builtinsRegExpTestTest() {
     beforeAll(() => {
     })
     beforeEach(async () => {
+      await sleep(20);
     })
     afterEach(() => {
     })

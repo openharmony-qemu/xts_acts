@@ -35,9 +35,7 @@
     "MainAbility/pages/subHeader/subHeaderTextArrow",
     "MainAbility/pages/subHeader/subHeaderTitleBuilder",
     "MainAbility/pages/subHeader/subHeaderTitleModifier",
-    "MainAbility/pages/chip/ChipDirection",
     "MainAbility/pages/popup/PopupDirection",
-    "MainAbility/pages/segmentButton/SegmentButtonDirection",
     "MainAbility/pages/downloadFileButton/FileButtonContinueToReceive",
     "MainAbility/pages/downloadFileButton/FileButtonDownload",
     "MainAbility/pages/downloadFileButton/FileButtonDownloadAndShare",
@@ -45,21 +43,6 @@
     "MainAbility/pages/downloadFileButton/FileButtonReceive",
     "MainAbility/pages/downloadFileButton/FileButtonSave",
     "MainAbility/pages/downloadFileButton/FileButtonSaveFile",
-    "MainAbility/pages/downloadFileButton/FileButtonSaveImage",
-    "MainAbility/pages/chip/ChipOnClick",
-    "MainAbility/pages/chip/ChipAction",
-    "MainAbility/pages/chip/ChipOnClose",
-    "MainAbility/pages/chip/ChipAction2",
-    "MainAbility/pages/chip/ChipOnClose2",
-    "MainAbility/pages/ChipGroup/startSpace",
-    "MainAbility/pages/ChipGroup/endSpace",
-    "MainAbility/pages/ChipGroup/itemSpace",
-    "MainAbility/pages/chip/localizedLabelMargin",
-    "MainAbility/pages/segmentButton/localizedButtonPadding",
-    "MainAbility/pages/segmentButton/localizedTextPadding",
-    "MainAbility/pages/segmentButton/SegmentButtonItemOptionsArray1",
-    "MainAbility/pages/segmentButton/SegmentButtonIconTextItem1",
-    "MainAbility/pages/segmentButton/SegmentButtonOptionsReturnValue",
-	"MainAbility/pages/segmentButton/SegmentButtonTextItem001"
+    "MainAbility/pages/downloadFileButton/FileButtonSaveImage"
   ]
 }

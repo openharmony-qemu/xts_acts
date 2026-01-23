@@ -62,6 +62,7 @@ import CustomDialogBorderColor from './CustomDialogTest/CustomDialogBorderColor.
 import dialogButtonStyle from './Dialog/dialogButtonStyle.test';
 import arrowOffset from './popup/arrowOffset.test';
 import showDialogTest from './promptActionTest/showDialogTest.test';
+import showDialogTest_01 from './promptActionTest/showDialogTest_01.test';
 import dialogTransitionTest from './CustomDialogTest/dialogTransitionTest.test';
 import menuTransition from './Menu/menuTransition.test';
 export default function testsuite() {
@@ -110,7 +111,8 @@ export default function testsuite() {
   BaseDialogTest();
   CustomDialogTest();
   PromptActionTest();
-  // showDialogTest()
+  showDialogTest()
+  showDialogTest_01()
   CustomDialogBorderColor()
   sheetBorderWidth()
 }
