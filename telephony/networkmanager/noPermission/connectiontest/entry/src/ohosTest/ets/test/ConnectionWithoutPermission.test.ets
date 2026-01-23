@@ -859,5 +859,78 @@ export default function ConnectionWithoutPermissionTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetConnectOwnerUidPromiseNop100
+     * @tc.number SUB_NetworkMgr_Connection_GetConnectOwnerUid_Promise_Nop_100
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetConnectOwnerUidPromiseNop100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      hilog.info(0x0000, 'ConnectionTag', '%{public}s', 'testNetworkMgrConnectionGetConnectOwnerUidPromiseNop100 begin');
+      try {
+        let uid = await connection.getConnectOwnerUid(
+          connection.ProtocolType.PROTO_TYPE_TCP,
+          { address: "192.168.1.100", family: 1, port: 12345 },
+          { address: "192.168.1.101", family: 1, port: 8888 });
+        expect().assertFail();
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'ConnectionTag', '%{public}s', 'testNetworkMgrConnectionGetConnectOwnerUidPromiseNop100 failed ' + JSON.stringify(error));
+        expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetConnectOwnerUidSyncNop100
+     * @tc.number SUB_NetworkMgr_Connection_GetConnectOwnerUidSync_Nop_100
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetConnectOwnerUidSyncNop100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      hilog.info(0x0000, 'ConnectionTag', '%{public}s', 'testNetworkMgrConnectionGetConnectOwnerUidSyncNop100 begin');
+      try {
+        let uid = connection.getConnectOwnerUidSync(
+          connection.ProtocolType.PROTO_TYPE_TCP,
+          { address: "192.168.1.100", family: 1, port: 12345 },
+          { address: "192.168.1.101", family: 1, port: 8888 });
+        expect().assertFail();
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'ConnectionTag', '%{public}s', 'testNetworkMgrConnectionGetConnectOwnerUidSyncNop100 failed ' + JSON.stringify(error));
+        expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testConnectionGetAddressesByNameWithOptions0100
+     * @tc.number  SUB_Connection_GetAddressesByNameWithOptions_0100
+     * @tc.desc    Using the getAddressesByNameWithOptions method without permission
+     * @tc.level   Level 3
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it('testConnectionGetAddressesByNameWithOptions0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
+      const caseName: string = 'testConnectionGetAddressesByNameWithOptions0100';
+      console.info(`${caseName}---Start`);
+      let host = "www.baidu.com";
+      connection.getAddressesByNameWithOptions(host, { family: connection.FamilyType.FAMILY_TYPE_ALL }).then((data: connection.NetAddress[])=>{
+        console.info(`${caseName} data: ${JSON.stringify(data)}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      }).catch((error: BusinessError)=> {
+        console.info(`${caseName} Failed to get addresses. error:${JSON.stringify(error)}`);
+        ExpectTrue(error.code == 201);
+        console.info(`${caseName}---End`);
+        done();
+      });
+    });
   });
 }

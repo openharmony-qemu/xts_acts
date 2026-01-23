@@ -34,6 +34,7 @@ import { BuildSignVerifyData, GetSha256SignOptions, SignVerify } from './utils/h
 import { BuildCipherData, Cipher, GetCbcPkcs7Options } from './utils/huks/CipherUtils';
 import { GetAttestKeyOptions } from './utils/huks/AttestKeyUtils';
 import { HuksMaxGroupId, HuksMinGroupId } from './utils/huks/HuksCommonUtils';
+import { CheckWifiInfo } from './utils/common/NetworkUtils';
 
 export default function abilityTest() {
   describe('SecurityHuksGroupTest', () => {
@@ -396,6 +397,7 @@ export default function abilityTest() {
      */
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
+        await CheckWifiInfo();
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_1700";
         let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
           StringToUint8Array(HuksMinGroupId));
@@ -714,6 +716,7 @@ export default function abilityTest() {
      */
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
+        await CheckWifiInfo();
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3300";
         let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
           StringToUint8Array(HuksMaxGroupId));
@@ -1035,6 +1038,7 @@ export default function abilityTest() {
      */
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
+        await CheckWifiInfo();
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_4800";
         let attestOptions =
           SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
@@ -1350,6 +1354,7 @@ export default function abilityTest() {
      */
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
+        await CheckWifiInfo();
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6300";
         let attestOptions = SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
           StringToUint8Array("group_not_exist"));

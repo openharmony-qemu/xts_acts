@@ -88,9 +88,42 @@ async function terminateAbility1(caseName: string) {
   await sleep(1000)
 }
 
-function getPermision() {
-  let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-  let context: common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
+async function startAbility3(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility3'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest3') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility3(caseName: string) {
+  let pageContext = AppStorage.get('contextTest3') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
+function getPermision(){
+  let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+  let context : common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
   let permissions: Permissions[] = ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
   atManager.requestPermissionsFromUser(context, permissions, (err: BusinessError, data: PermissionRequestResult) => {
     if (err) {
@@ -3100,6 +3133,290 @@ export default function WindowLifecycle() {
 
 
 
+    /**
+     * @tc.name   testRestoreMainWindow_0100
+     * @tc.number SUB_WMS_RESTORE_MAIN_WINDOW_0100
+     * @tc.desc   验证非float窗口调用restoreMainWindow返回1300004错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testRestoreMainWindow_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName = "testRestoreMainWindow_0100";
+      console.log(caseName + " begin");
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let windowClass = windowStage.getMainWindowSync();
+      let subWindowClass: window.Window | undefined;
+      let dialogWindowClass: window.Window | undefined;
+      try {
+        await windowClass.restoreMainWindow();
+        expect().assertFail();
+        done()
+      } catch (err) {
+        console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+        if (canIUseRes) {
+          expect(err.code).assertEqual(1300004)
+        } else {
+          expect(err.code).assertEqual(801)
+        }
+      }
+      try {
+        subWindowClass = await windowStage.createSubWindow('sub_testRestoreMainWindow_0100')
+        await subWindowClass.restoreMainWindow();
+        expect().assertFail();
+        await subWindowClass.destroyWindow();
+        done()
+      } catch (err) {
+        console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+        await subWindowClass?.destroyWindow();
+        if (canIUseRes) {
+          expect(err.code).assertEqual(1300004)
+        } else {
+          expect(err.code).assertEqual(801)
+        }
+      }
+      try {
+        let config: window.Configuration = {
+          name: "dialog_testRestoreMainWindow_0100",
+          windowType: window.WindowType.TYPE_DIALOG,
+          ctx: context
+        };
+        dialogWindowClass = await window.createWindow(config);
+        await dialogWindowClass.restoreMainWindow();
+        expect().assertFail();
+        await dialogWindowClass.destroyWindow();
+        done()
+      } catch (err) {
+        console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+        await dialogWindowClass?.destroyWindow();
+        if (canIUseRes) {
+          expect(err.code).assertEqual(1300004)
+        } else {
+          expect(err.code).assertEqual(801)
+        }
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   testRestoreMainWindow_0200
+     * @tc.number SUB_WMS_RESTORE_MAIN_WINDOW_0200
+     * @tc.desc   验证float窗口销毁后调用restoreMainWindow返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testRestoreMainWindow_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      let caseName = "testRestoreMainWindow_0200";
+      console.log(caseName + " begin");
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let config: window.Configuration = {
+        name: "testRestoreMainWindow_0200",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context
+      };
+      let subWindowClass: window.Window | undefined;
+      try {
+        window.createWindow(config).then(async (data) => {
+          subWindowClass = data;
+          await subWindowClass.setUIContent('testability/pages/First/index2');
+          await subWindowClass.destroyWindow();
+          await subWindowClass.restoreMainWindow();
+          expect().assertFail();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(1300002);
+          done();
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   testRestoreMainWindow_0300
+     * @tc.number SUB_WMS_RESTORE_MAIN_WINDOW_0300
+     * @tc.desc   验证float窗口restoreMainWindow拉起已销毁的主窗返回1300004错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testRestoreMainWindow_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName = "testRestoreMainWindow_0300";
+      console.log(caseName + " begin");
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let config: window.Configuration = {
+        name: "testRestoreMainWindow_0300",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context
+      };
+      let subWindowClass: window.Window | undefined;
+      let windowStageStart = await startAbility3(caseName, context);
+      let mainWindow = windowStageStart.getMainWindowSync();
+      try {
+        window.createWindow(config).then(async (data) => {
+          subWindowClass = data;
+          await subWindowClass.setUIContent('testability/pages/First/index2');
+          await mainWindow.destroyWindow();
+          await subWindowClass.restoreMainWindow();
+          expect().assertFail();
+          await subWindowClass?.destroyWindow();
+          await terminateAbility3(caseName);
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindowClass?.destroyWindow();
+          await terminateAbility3(caseName);
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+            done();
+          } else {
+            expect(err.code).assertEqual(1300004);
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+        await subWindowClass?.destroyWindow();
+        await terminateAbility3(caseName);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testRestoreMainWindow_0500
+     * @tc.number SUB_WMS_RESTORE_MAIN_WINDOW_0500
+     * @tc.desc   验证float窗口在前台且有down时间时调用restoreMainWindow拉起主窗到前台，未传入wantparameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testRestoreMainWindow_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testRestoreMainWindow_0500";
+      console.log(caseName + " begin");
+      let driver = Driver.create()
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let config: window.Configuration = {
+        name: "testRestoreMainWindow_0500",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context
+      };
+      let subWindowClass: window.Window | undefined;
+      let mainWindow = windowStage.getMainWindowSync();
+      try {
+        const callback = async (res: window.WindowEventType) => {
+          console.log(caseName + ' windowEvent callback res: ' + res)
+          expect(res).assertEqual(window.WindowEventType.WINDOW_SHOWN);
+          mainWindow.off('windowEvent', callback)
+          await subWindowClass?.destroyWindow();
+          done()
+        }
+        window.createWindow(config).then(async (data) => {
+          subWindowClass = data;
+          await subWindowClass.setUIContent('testability/pages/First/index2');
+          await subWindowClass.showWindow();
+          await sleep(500);
+          await mainWindow.minimize();
+          await sleep(500);
+          let text = await driver.findComponent(ON.id('textId'))
+          console.error(`${caseName} text: ${text}`);
+          await sleep(1000);
+          await text.click();
+          await sleep(500);
+          mainWindow.on('windowEvent', callback)
+          await subWindowClass.restoreMainWindow();
+          await sleep(1000);
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindowClass?.destroyWindow();
+          if (err.code == 1300002) {
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+        await subWindowClass?.destroyWindow();
+        expect().assertFail();
+        done();
+      }
+    });
+    
+    /**
+     * @tc.name   testRestoreMainWindow_0600
+     * @tc.number SUB_WMS_RESTORE_MAIN_WINDOW_0600
+     * @tc.desc   验证float窗口在前台且有down时间时调用restoreMainWindow拉起主窗到前台，传入wantparameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testRestoreMainWindow_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testRestoreMainWindow_0600";
+      console.log(caseName + " begin");
+      let driver = Driver.create()
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let config: window.Configuration = {
+        name: "testRestoreMainWindow_0600",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context
+      };
+      let subWindowClass: window.Window | undefined;
+      let mainWindow = windowStage.getMainWindowSync();
+      try {
+        const callback = async (res: window.WindowEventType) => {
+          console.log(caseName + ' windowEvent callback res: ' + res)
+          expect(res).assertEqual(window.WindowEventType.WINDOW_SHOWN);
+          mainWindow.off('windowEvent', callback)
+          await subWindowClass?.destroyWindow();
+          done()
+        }
+        window.createWindow(config).then(async (data) => {
+          subWindowClass = data;
+          await subWindowClass.setUIContent('testability/pages/First/index2');
+          await subWindowClass.showWindow();
+          await sleep(500);
+          await mainWindow.minimize();
+          await sleep(1000);
+          mainWindow.on('windowEvent', callback)
+          let text = await driver.findComponent(ON.id('textId'))
+          await sleep(1000);
+          await text.click();
+          await sleep(500);
+          let param: Record<string, Object> = {
+            'info': 'restoreMainWindow',
+          };
+          await subWindowClass.restoreMainWindow(param);
+          await sleep(500)
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindowClass?.destroyWindow();
+          if (err.code == 1300002) {
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+        await subWindowClass?.destroyWindow();
+        expect().assertFail();
+        done();
+      }
+    });
 
   })
 

@@ -89,10 +89,10 @@ it('columnMonopolizeFalse_static_001', Level.LEVEL0, async (done: () => void): P
       // get column left and top on screen
       let str1 = inspector.getInspectorByKey("columnLongPress1");
       let obj: Record<string, Object> =
-        JSON.parse<Object>(str1, Type.of(new String() as Object)) as Record<string, Object>;
+        JSON.parse<Object>(str1, Class.from<String>()) as Record<string, Object>;
       console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
       let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["getElement('$rect')"]! + ']',
-        Type.of(new String() as Object)) as Array<Array<number>>;
+        Class.from<String>()) as Array<Array<number>>;
       CommonFunc.rect_left =
         Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
       CommonFunc.rect_top =

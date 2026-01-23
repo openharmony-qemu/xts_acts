@@ -75,6 +75,7 @@ group("multimedia") {
       "av_codec/avcencInfo:ActsAvcencInfoTest",
       "av_codec/capability:ActsCapabilityTest",
       "av_codec/demuxer:ActsDemuxerTest",
+      "av_codec/ActsDemuxerTest:ActsDemuxerHapTest",
       "av_codec/vcodec/encoder:ActsEncoderTest",
       "av_codec/vcodec/hdrcodec:ActsHdrcodecTest",
       "av_codec/vcodec/hevchwhdrcodec:ActsHevcHdrcodecTest",
@@ -218,6 +219,7 @@ group("multimedia") {
       "av_codec/ActsAudioEncoderTest:ActsAudioEncoderTest",
       "audio_ndk/ActsOhAudioRenderTest:ActsOhAudioRenderHapTest",
       "av_codec/ActsAudioDecoderTest:ActsAudioDecoderHapTest",
+      "av_codec/ActsCapabilityTest:ActsCapabilityHapTest",
     ]
   } else {
     deps += [

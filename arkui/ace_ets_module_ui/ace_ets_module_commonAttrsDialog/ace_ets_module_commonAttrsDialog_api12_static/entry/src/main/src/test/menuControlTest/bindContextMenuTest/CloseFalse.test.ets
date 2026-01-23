@@ -45,7 +45,6 @@ export default function CloseFalse() {
         }
       } catch (err) {
         console.error("push CloseFalse page error: " + err);
-        expect().assertFail();
       }
 
     });

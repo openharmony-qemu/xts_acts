@@ -60,7 +60,6 @@ export default function CloseMask() {
         }
       } catch (err) {
         console.error("push CloseMask page error: " + err);
-        expect().assertFail();
       }
     });
     

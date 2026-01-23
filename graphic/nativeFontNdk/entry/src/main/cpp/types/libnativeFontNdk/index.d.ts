@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -166,3 +166,16 @@ export const ohDrawingGetFontCountFromBuffer002: () => number;
 export const ohDrawingGetFontPathsByType001: () => number;
 export const ohDrawingGetFontPathsByType002: () => number;
 export const ohDrawingGetFontPathsByType003: () => number;
+export const ohDrawingSetTypographyStyleAttributeBool001: () => number;
+export const ohDrawingSetTypographyStyleAttributeBool002: () => number;
+export const ohDrawingSetTypographyStyleAttributeBool003: () => number;
+export const ohDrawingSetTypographyStyleAttributeBool004: () => number;
+export const ohDrawingSetTypographyStyleAttributeBool005: () => number;
+export const ohDrawingSetTypographyStyleAttributeBool006: () => number;
+export const ohDrawingGetTypographyStyleAttributeBool001: () => number;
+export const ohDrawingGetTypographyStyleAttributeBool002: () => number;
+export const ohDrawingGetTypographyStyleAttributeBool003: () => number;
+export const ohDrawingGetTypographyStyleAttributeBool004: () => number;
+export const ohDrawingGetTypographyStyleAttributeBool005: () => number;
+export const ohDrawingDestroyPositionAndAffinity001: () => number;
+export const ohDrawingDestroyPositionAndAffinity002: () => number;

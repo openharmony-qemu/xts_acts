@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.openharmony.huksapi9",
+    "bundleName": "com.acts.huks.jsapi9",
     "vendor": "acts",
     "version": {
       "code": 1000000,
@@ -9,7 +9,7 @@
   },
   "deviceConfig": {},
   "module": {
-    "package": "com.openharmony.huksapi9",
+    "package": "com.acts.huks.jsapi9",
     "name": ".entry_test",
     "mainAbility": ".TestAbility",
     "deviceType": [],
@@ -30,6 +30,9 @@
       {
         "name": "ohos.permission.DISTRIBUTED_DATASYNC",
         "reason": "ceshi"
+      },
+      {
+        "name": "ohos.permission.GET_WIFI_INFO"
       }
     ],
     "abilities": [

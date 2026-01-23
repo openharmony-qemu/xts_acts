@@ -32,6 +32,8 @@ import cameraCanPreconfigTest from "./camera/CameraPreconfigFIR.test";
 import cameraCanPreconfigSecTest from "./camera/CameraPreconfigSec.test";
 import cameraEnumTestSupp from './camera/CameraEnum.test';
 import CameraAPIEnumSupplementTest from "./camera/CameraAPIEnumSupplement.test";
+import cameraAddMetadataObjectSuppTest from './camera/CameraMetadataOutputErrCode.test';
+import CameraSessionSuppTest from './camera/CameraSessionWhiteBalanceTest.test';
 
 export default function testsuite() {
   CameraSessionFlashSuppTest();
@@ -67,4 +69,6 @@ export default function testsuite() {
   cameraCanPreconfigSecTest();
   cameraEnumTestSupp();
   CameraAPIEnumSupplementTest();
+  cameraAddMetadataObjectSuppTest();
+  CameraSessionSuppTest();
 }

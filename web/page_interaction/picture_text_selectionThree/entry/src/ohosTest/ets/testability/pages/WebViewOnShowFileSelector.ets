@@ -76,9 +76,7 @@ struct webViewController {
           await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "emitOnShowFileSelector01": {
-                this.isPageEnd = -1
-                this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.sleep(1000);
                 let buttonOne = await driver.findComponent(ON.text('保存文件'));
                 await buttonOne.click()
                 await Utils.waitForReleaseDriver(this.str, driver)

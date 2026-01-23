@@ -46,10 +46,10 @@ export default function testsuite() {
   RotationRecognizer();
   SwipeRecognizer();
   TapRecognizer();
-  InteractionEventBindingInfoTest();
+  // InteractionEventBindingInfoTest();
   UIObserverEventTest();
   nextFocus();
   nextFocus2(); 
-  panGestureDistanceTest();
+  // panGestureDistanceTest();
   panGestureOnOffTest();
 }

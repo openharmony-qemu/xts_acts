@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -202,4 +202,32 @@ napi_value OHDrawingGetFontPathsByType001(napi_env env, napi_callback_info info)
 napi_value OHDrawingGetFontPathsByType002(napi_env env, napi_callback_info info);
 napi_value OHDrawingGetFontPathsByType003(napi_env env, napi_callback_info info);
 
+napi_value OHDrawingGetFontUnicodeArrayFromBuffer001(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontUnicodeArrayFromBuffer002(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontUnicodeArrayFromBuffer003(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontUnicodeArrayFromBuffer004(napi_env env, napi_callback_info info);
+
+napi_value OHDrawingGetFontCountFromFile001(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontCountFromFile002(napi_env env, napi_callback_info info);
+
+napi_value OHDrawingGetFontCountFromBuffer001(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontCountFromBuffer002(napi_env env, napi_callback_info info);
+
+napi_value OHDrawingGetFontPathsByType002(napi_env env, napi_callback_info info);
+
+napi_value OHDrawingSetTypographyStyleAttributeBool001(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTypographyStyleAttributeBool002(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTypographyStyleAttributeBool003(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTypographyStyleAttributeBool004(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTypographyStyleAttributeBool005(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTypographyStyleAttributeBool006(napi_env env, napi_callback_info info);
+
+napi_value OHDrawingGetTypographyStyleAttributeBool001(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetTypographyStyleAttributeBool002(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetTypographyStyleAttributeBool003(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetTypographyStyleAttributeBool004(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetTypographyStyleAttributeBool005(napi_env env, napi_callback_info info);
+
+napi_value OHDrawingDestroyPositionAndAffinity001(napi_env env, napi_callback_info info);
+napi_value OHDrawingDestroyPositionAndAffinity002(napi_env env, napi_callback_info info);
 #endif // NATIVEFONTNDK_USELESS_H
