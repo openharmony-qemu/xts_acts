@@ -59,7 +59,6 @@ export default function visibilityTest() {
     'Search',
     'Select',
     'Slider',
-    'Stepper',
     'Text',
     'TextArea',
     'TextClock',

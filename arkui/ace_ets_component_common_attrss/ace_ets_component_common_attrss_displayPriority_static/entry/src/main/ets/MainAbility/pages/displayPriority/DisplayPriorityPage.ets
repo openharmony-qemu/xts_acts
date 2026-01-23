@@ -98,8 +98,6 @@ import {
   Slider,
   SliderStyle,
   Stack,
-  Stepper,
-  StepperItem,
   Swiper,
   TabContent,
   Tabs,
@@ -314,10 +312,6 @@ struct DisplayPriorityPage {
       Slider()
         .backgroundColor(Color.Pink)
         .applyStyles(this.commonStyle)
-    } else if (this.targetView == 'Stepper') {
-      Stepper() {
-        StepperItem()
-      }.backgroundColor(Color.Pink).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Text') {
       Text('text')
         .fontSize(15)

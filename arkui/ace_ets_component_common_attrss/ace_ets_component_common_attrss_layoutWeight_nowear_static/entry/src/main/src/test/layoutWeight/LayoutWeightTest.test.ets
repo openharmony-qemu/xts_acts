@@ -43,7 +43,6 @@ export default function layoutWeightTest() {
   console.info("layoutWeightTest beforeAll start 33333333333333");
   let supportView: Array<string> = new Array<string>(
     'Select',
-    'Stepper',
     'ColumnSplit',
     'RowSplit',
     'SideBarContainer',

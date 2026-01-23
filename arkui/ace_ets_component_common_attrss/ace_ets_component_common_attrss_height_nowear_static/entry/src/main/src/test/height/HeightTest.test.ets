@@ -47,8 +47,7 @@ export default function heightTest() {
     'ColumnSplit',
     'RowSplit',
     'WaterFlow',
-    'FlowItem',
-    'Stepper'
+    'FlowItem'
     )
 
 

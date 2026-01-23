@@ -43,7 +43,6 @@ export default function layoutWeightFlexTest() {
   console.info("layoutWeightFlexTest beforeAll start 222222222222");
   let supportView: Array<string> = new Array<string>(
     'Select',
-    'Stepper',
     'ColumnSplit',
     'RowSplit',
     'SideBarContainer',

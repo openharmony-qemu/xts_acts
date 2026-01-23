@@ -166,10 +166,6 @@ import {
   SpanAttribute,
   Stack,
   StackAttribute,
-  Stepper,
-  StepperAttribute,
-  StepperItem,
-  StepperItemAttribute,
   Swiper,
   SwiperAttribute,
   TabContent,
@@ -657,22 +653,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mRestoreId: int = 2;
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    instance.restoreId(this.mRestoreId)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mRestoreId: int = 2;
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    instance.restoreId(this.mRestoreId)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mRestoreId: int = 2;
 
@@ -1141,18 +1121,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-  this.restoreId(2)
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-  this.restoreId(2)
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.restoreId(2)
   this.key(componentKey)
@@ -1344,8 +1312,6 @@ struct restoreIdPage {
   @State _restoreIdSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _restoreIdSliderMod: SliderModifier = new SliderModifier()
   @State _restoreIdStackMod: StackModifier = new StackModifier()
-  @State _restoreIdStepperMod: StepperModifier = new StepperModifier()
-  @State _restoreIdStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _restoreIdSwiperMod: SwiperModifier = new SwiperModifier()
   @State _restoreIdTabContentMod: TabContentModifier = new TabContentModifier()
   @State _restoreIdTabsMod: TabsModifier = new TabsModifier()
@@ -1475,14 +1441,6 @@ struct restoreIdPage {
           })
             .showTips(true)
             .commonStyle(this.componentKey)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }.commonStyle(this.componentKey)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -1702,19 +1660,6 @@ struct restoreIdPage {
               }
             }, (item: int) => item.toString())
           }.commonStyle(this.componentKey)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            .commonStyle(this.componentKey)
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

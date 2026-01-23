@@ -66,7 +66,6 @@ export default function alignSelfStretchNoSizeTest() {
     // 'RelativeContainer',
     // 'ColumnSplit',
     // 'TextTimer',
-    // 'Stepper',
     // 'Flex',
     // 'Progress',
     // 'QRCode',

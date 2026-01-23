@@ -36,9 +36,7 @@ export default function MarkAnchorTest() {
   //A list of components that support the position attribute, which is required.
   let supportView: Array<string> = new Array<string>(
     'Select',
-    'SideBarContainer', 'WaterFlow', 'RowSplit', 'ColumnSplit', 'FlowItem',
-    'Stepper'
-    , 'StepperItem'
+    'SideBarContainer', 'WaterFlow', 'RowSplit', 'ColumnSplit', 'FlowItem'
   )
 
 

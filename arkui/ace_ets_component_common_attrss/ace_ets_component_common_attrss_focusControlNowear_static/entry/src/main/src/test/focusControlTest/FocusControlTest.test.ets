@@ -52,8 +52,6 @@ export default function FocusControlTest() {
     'Rating',
     'Select',
     'Slider',
-    'Stepper',
-    'StepperItem',
     'TextPicker',
     'TimePicker',
     'Toggle',

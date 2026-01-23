@@ -15,8 +15,6 @@
  */
 
 import { ListItemGroupView } from "../../view/offset/ListItemGroupView";
-import { StepperView } from '../../view/offset/StepperView';
-import { StepperItemView } from '../../view/offset/StepperItemView';
 import { RouterParams } from '../../common/Utils';
 import router from '@ohos.router'
 import {
@@ -163,15 +161,6 @@ struct Offset {
               Text('text').fontSize(12).height('16')
             }.width(this.subassemblyWidth).height(this.subassemblyHeight).key(this.referenceComponentKey)
           }.width(this.parentWidth).height(this.parentHeight).key(this.parentComponentKey)
-        } else if (this.targetView == 'StepperItem') {
-          StepperItemView({
-            _offset: this._offset,
-            componentKey: this.componentKey,
-            parentWidth: this.parentWidth,
-            parentHeight: this.parentHeight,
-            parentComponentKey: this.parentComponentKey,
-            referenceComponentKey: this.referenceComponentKey
-          })
         } else if (this.targetView == 'GridItem') {
           Grid() {
             GridItem() {
@@ -498,8 +487,6 @@ struct Offset {
             } else if (this.targetView == 'TextTimer') {
               TextTimer({ isCountDown: true, count: 30000 })
                 .width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
-            } else if (this.targetView == 'Stepper') {
-              StepperView({ _offset: this._offset, componentKey: this.componentKey });
             } else if (this.targetView == 'ScrollBar') {
               ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
                 Text().width(20).height(100).borderRadius(10)
