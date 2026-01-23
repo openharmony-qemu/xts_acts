@@ -423,7 +423,6 @@ export default function collectionsAddTest1() {
         bitVector.push(0);
 
         for (let item of bitVector) {
-          console.info("value: " + item);
           count++;
         }
         expect(count).assertEqual(5)
