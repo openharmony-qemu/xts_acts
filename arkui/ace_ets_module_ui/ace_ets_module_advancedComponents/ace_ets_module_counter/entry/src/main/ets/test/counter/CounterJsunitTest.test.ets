@@ -33,7 +33,7 @@ export default function CounterJsunitTest() {
   describe('CounterJsunitTest', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Counter/CounterJsunitTest',
+        url: 'MainAbility/pages/counter/CounterJsunitTest',
       }
       try {
         router.clear();

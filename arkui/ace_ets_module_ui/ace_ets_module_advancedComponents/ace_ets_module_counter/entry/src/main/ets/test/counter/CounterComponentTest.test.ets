@@ -23,7 +23,7 @@ export default function CounterComponentTest() {
     beforeEach(async (done: Function) => {
       console.info("CounterComponentTest beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/Counter/CounterComponentTest",
+        url: "MainAbility/pages/counter/CounterComponentTest",
       }
       try {
         router.clear();
