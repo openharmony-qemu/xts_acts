@@ -1887,8 +1887,8 @@ export default function actslocationTest() {
                 expect(location!=null).assertTrue();
               } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
-                if (err.code == 3301200){
-                  expect(err.code == 3301200).assertTrue(); 
+                if (err.code === 3301200){
+                  expect(err.code === 3301200).assertTrue(); 
                  } else {
                 expect(err.code).assertEqual(3301100);
                  }
