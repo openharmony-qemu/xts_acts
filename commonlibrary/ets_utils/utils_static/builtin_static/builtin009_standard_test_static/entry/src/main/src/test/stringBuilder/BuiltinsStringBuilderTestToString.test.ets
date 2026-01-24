@@ -1824,6 +1824,1322 @@ export default function builtinsStringBuilderTestToString() {
       expect(result5).assertEqual('-Infinity');
     });
 
+    /**
+     * @tc.name: builtinsStringBuilderTestToString8200
+     * @tc.number: BUILTINS_BYTE_TOSTRING_TEST7200
+     * @tc.desc: Test toString for floating point values
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString8200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result1: string = (1.5).toString();
+      const result2: string = (2.99).toString();
+      const result3: string = (-1.5).toString();
+      const result4: string = (-2.99).toString();
+      const result5: string = (0.999).toString();
+
+      expect(result1).assertEqual('1.5');
+      expect(result2).assertEqual('2.99');
+      expect(result3).assertEqual('-1.5');
+      expect(result4).assertEqual('-2.99');
+      expect(result5).assertEqual('0.999');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString8300
+     * @tc.number: BUILTINS_BYTE_TOSTRING_TEST7300
+     * @tc.desc: Test toString for hex, octal and scientific notation
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString8300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result1: string = (0x10).toString();
+      const result2: string = (0xFF).toString();
+      const result3: string = (0o10).toString();
+      const result4: string = (0b1010).toString();
+      const result5: string = (1e2).toString();
+
+      expect(result1).assertEqual('16');
+      expect(result2).assertEqual('255');
+      expect(result3).assertEqual('8');
+      expect(result4).assertEqual('10');
+      expect(result5).assertEqual('100');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString8400
+     * @tc.number: BUILTINS_BYTE_TOSTRING_TEST7400
+     * @tc.desc: Test toString for typical byte values
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString8400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result1: string = (72).toString();
+      const result2: string = (101).toString();
+      const result3: string = (108).toString();
+      const result4: string = (111).toString();
+      const result5: string = (87).toString();
+
+      expect(result1).assertEqual('72');
+      expect(result2).assertEqual('101');
+      expect(result3).assertEqual('108');
+      expect(result4).assertEqual('111');
+      expect(result5).assertEqual('87');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString8500
+     * @tc.number: BUILTINS_BYTE_TOSTRING_TEST7500
+     * @tc.desc: Test toString for negative byte values
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString8500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result1: string = (-72).toString();
+      const result2: string = (-101).toString();
+      const result3: string = (-108).toString();
+      const result4: string = (-111).toString();
+      const result5: string = (-87).toString();
+
+      expect(result1).assertEqual('-72');
+      expect(result2).assertEqual('-101');
+      expect(result3).assertEqual('-108');
+      expect(result4).assertEqual('-111');
+      expect(result5).assertEqual('-87');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString8600
+     * @tc.number: BUILTINS_BYTE_TOSTRING_TEST7600
+     * @tc.desc: Test toString for extreme values
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString8600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const maxSafeInt: number = Number.MAX_SAFE_INTEGER;
+      const minSafeInt: number = Number.MIN_SAFE_INTEGER;
+      const maxValue: number = Number.MAX_VALUE;
+      const minValue: number = Number.MIN_VALUE;
+      const epsilon: number = Number.EPSILON;
+
+      const result1: string = maxSafeInt.toString();
+      const result2: string = minSafeInt.toString();
+      const result3: string = maxValue.toString();
+      const result4: string = minValue.toString();
+      const result5: string = epsilon.toString();
+
+      expect(typeof result1).assertEqual('string');
+      expect(typeof result2).assertEqual('string');
+      expect(typeof result3).assertEqual('string');
+      expect(typeof result4).assertEqual('string');
+      expect(typeof result5).assertEqual('string');
+
+      expect(result1).assertEqual('9007199254740991');
+      expect(result2).assertEqual('-9007199254740991');
+      expect(result3).assertEqual('1.7976931348623157e+308');
+      expect(result5).assertEqual('2.220446049250313e-16');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString8700
+     * @tc.number: BUILTINS_BYTE_TOSTRING_TEST7700
+     * @tc.desc: Test toString for sequence of values
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString8700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const testValues: number[] = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5];
+      const results: string[] = testValues.map(value => value.toString());
+
+      expect(results[0]).assertEqual('-5');
+      expect(results[1]).assertEqual('-4');
+      expect(results[2]).assertEqual('-3');
+      expect(results[3]).assertEqual('-2');
+      expect(results[4]).assertEqual('-1');
+      expect(results[5]).assertEqual('0');
+      expect(results[6]).assertEqual('1');
+      expect(results[7]).assertEqual('2');
+      expect(results[8]).assertEqual('3');
+      expect(results[9]).assertEqual('4');
+      expect(results[10]).assertEqual('5');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString8800
+     * @tc.number: BUILTINS_BYTE_TOSTRING_TEST7800
+     * @tc.desc: Test toString with different radix
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString8800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const num: number = 255;
+
+      const result1: string = num.toString();
+      const result2: string = num.toString(10);
+      const result3: string = num.toString(2);
+      const result4: string = num.toString(8);
+      const result5: string = num.toString(16);
+
+      expect(result1).assertEqual('255');
+      expect(result2).assertEqual('255');
+      expect(result3).assertEqual('11111111');
+      expect(result4).assertEqual('377');
+      expect(result5).assertEqual('ff');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString8900
+     * @tc.number: BUILTINS_BYTE_TOSTRING_TEST7900
+     * @tc.desc: Test toString for Number object
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString8900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result1: string = Number(123).toString();
+      const result2: string = Number(-123).toString();
+      const result3: string = Number(0).toString();
+      const result4: string = Number(12.34).toString();
+
+      expect(result1).assertEqual('123');
+      expect(result2).assertEqual('-123');
+      expect(result3).assertEqual('0');
+      expect(result4).assertEqual('12.34');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString9000
+     * @tc.number: BUILTINS_BYTE_TOSTRING_TEST8000
+     * @tc.desc: Test toString for mathematical operations
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString9000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result1: string = (10 + 20).toString();
+      const result2: string = (100 - 50).toString();
+      const result3: string = (25 * 4).toString();
+      const result4: string = (100 / 4).toString();
+      const result5: string = (2 ** 8).toString();
+
+      expect(result1).assertEqual('30');
+      expect(result2).assertEqual('50');
+      expect(result3).assertEqual('100');
+      expect(result4).assertEqual('25');
+      expect(result5).assertEqual('256');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString9100
+     * @tc.number: BUILTINS_BOOLEAN_TOSTRING_TEST8100
+     * @tc.desc: Test toString for boolean with true and false values
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString9100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result1: string = Boolean(true).toString();
+      const result2: string = Boolean(false).toString();
+      const result3: string = true.toString();
+      const result4: string = false.toString();
+
+      expect(result1).assertEqual('true');
+      expect(result2).assertEqual('false');
+      expect(result3).assertEqual('true');
+      expect(result4).assertEqual('false');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString9200
+     * @tc.number: BUILTINS_BOOLEAN_TOSTRING_TEST8200
+     * @tc.desc: Test toString for boolean with Boolean object
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString9200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const boolObj1: Boolean = new Boolean(true);
+      const boolObj2: Boolean = new Boolean(false);
+      const boolObj3: Boolean = new Boolean(1);
+      const boolObj4: Boolean = new Boolean(0);
+
+      const result1: string = boolObj1.toString();
+      const result2: string = boolObj2.toString();
+      const result3: string = boolObj3.toString();
+      const result4: string = boolObj4.toString();
+
+      expect(result1).assertEqual('true');
+      expect(result2).assertEqual('false');
+      expect(result3).assertEqual('true');
+      expect(result4).assertEqual('false');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString9300
+     * @tc.number: BUILTINS_BOOLEAN_TOSTRING_TEST8300
+     * @tc.desc: Test toString for boolean with values that convert to false
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString9300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result1: string = Boolean(0).toString();
+      const result2: string = Boolean(NaN).toString();
+      const result3: string = Boolean("").toString();
+      const result4: string = Boolean(null).toString();
+      const result5: string = Boolean(undefined).toString();
+
+      expect(result1).assertEqual('false');
+      expect(result2).assertEqual('false');
+      expect(result3).assertEqual('false');
+      expect(result4).assertEqual('false');
+      expect(result5).assertEqual('false');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString9400
+     * @tc.number: BUILTINS_BOOLEAN_TOSTRING_TEST8400
+     * @tc.desc: Test toString for boolean with values that convert to true
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString9400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result1: string = Boolean(1).toString();
+      const result2: string = Boolean(-1).toString();
+      const result3: string = Boolean("hello").toString();
+      const result4: string = Boolean(Infinity).toString();
+
+      expect(result1).assertEqual('true');
+      expect(result2).assertEqual('true');
+      expect(result3).assertEqual('true');
+      expect(result4).assertEqual('true');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString9500
+     * @tc.number: BUILTINS_BOOLEAN_TOSTRING_TEST8500
+     * @tc.desc: Test toString for boolean with logical NOT operator
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString9500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result1: string = Boolean(!"s").toString();
+      const result2: string = Boolean(!0).toString();
+
+      const result3: string = (!"s").toString();
+      const result4: string = (!0).toString();
+
+      expect(result1).assertEqual('false');
+      expect(result2).assertEqual('true');
+      expect(result3).assertEqual('false');
+      expect(result4).assertEqual('true');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString9600
+     * @tc.number: BUILTINS_BOOLEAN_TOSTRING_TEST8600
+     * @tc.desc: Test toString for boolean with comparison operations
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString9600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result1: string = (10 > 5).toString();
+      const result2: string = (10 < 5).toString();
+      const result3: string = (10 === 10).toString();
+      const result4: string = (10 !== 10).toString();
+      const result5: string = ("abc" === "abc").toString();
+
+
+      expect(result1).assertEqual('true');
+      expect(result2).assertEqual('false');
+      expect(result3).assertEqual('true');
+      expect(result4).assertEqual('false');
+      expect(result5).assertEqual('true');
+
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString9700
+     * @tc.number: BUILTINS_BOOLEAN_TOSTRING_TEST8700
+     * @tc.desc: Test toString for boolean with logical operations
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString9700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result1: string = (true && true).toString();
+      const result2: string = (true && false).toString();
+      const result3: string = (false && true).toString();
+      const result4: string = (false && false).toString();
+
+      const result5: string = (true || true).toString();
+      const result6: string = (true || false).toString();
+      const result7: string = (false || true).toString();
+      const result8: string = (false || false).toString();
+
+      expect(result1).assertEqual('true');
+      expect(result2).assertEqual('false');
+      expect(result3).assertEqual('false');
+      expect(result4).assertEqual('false');
+      expect(result5).assertEqual('true');
+      expect(result6).assertEqual('true');
+      expect(result7).assertEqual('true');
+      expect(result8).assertEqual('false');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString9800
+     * @tc.number: BUILTINS_BOOLEAN_TOSTRING_TEST8800
+     * @tc.desc: Test toString for boolean with double logical NOT
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString9800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result1: string = (!!true).toString();
+      const result2: string = (!!false).toString();
+      const result3: string = (!!0).toString();
+      const result4: string = (!!1).toString();
+      const result5: string = (!!"").toString();
+      const result6: string = (!!"hello").toString();
+      const result7: string = (!!null).toString();
+      const result8: string = (!!undefined).toString();
+      const result9: string = (!!NaN).toString();
+      const result10: string = (!!Infinity).toString();
+
+      expect(result1).assertEqual('true');
+      expect(result2).assertEqual('false');
+      expect(result3).assertEqual('false');
+      expect(result4).assertEqual('true');
+      expect(result5).assertEqual('false');
+      expect(result6).assertEqual('true');
+      expect(result7).assertEqual('false');
+      expect(result8).assertEqual('false');
+      expect(result9).assertEqual('false');
+      expect(result10).assertEqual('true');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString9900
+     * @tc.number: BUILTINS_BOOLEAN_TOSTRING_TEST8900
+     * @tc.desc: Test toString for boolean with conditional (ternary) operator
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString9900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result1: string = (true ? "yes" : "no").toString();
+      const result2: string = (false ? "yes" : "no").toString();
+      const result3: string = (10 > 5 ? "greater" : "less").toString();
+      const result4: string = (10 < 5 ? "greater" : "less").toString();
+
+      expect(result1).assertEqual('yes');
+      expect(result2).assertEqual('no');
+      expect(result3).assertEqual('greater');
+      expect(result4).assertEqual('less');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString10000
+     * @tc.number: BUILTINS_BOOLEAN_TOSTRING_TEST9000
+     * @tc.desc: Test toString for boolean with equality operators
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString10000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+
+      const result1: string = (true == true).toString();
+      const result3: string = (false == false).toString();
+
+
+      expect(result1).assertEqual('true');
+      expect(result3).assertEqual('true');
+
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString10100
+     * @tc.number: BUILTINS_BOOLEAN_TOSTRING_TEST9100
+     * @tc.desc: Test toString for boolean with strict equality operators
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString10100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result1: string = (true === true).toString();
+      const result3: string = (false === false).toString();
+
+      expect(result1).assertEqual('true');
+      expect(result3).assertEqual('true');
+
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString10200
+     * @tc.number: BUILTINS_BOOLEAN_TOSTRING_TEST9200
+     * @tc.desc: Test toString for boolean with Boolean() function
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString10200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const result1: string = Boolean(true).toString();
+      const result2: string = Boolean(false).toString();
+      const result3: string = Boolean(Boolean(true)).toString();
+      const result4: string = Boolean(Boolean(false)).toString();
+
+      const bool1: boolean = Boolean("hello");
+      const bool2: boolean = Boolean("");
+      const bool3: boolean = Boolean(0);
+      const bool4: boolean = Boolean(1);
+
+      const result5: string = bool1.toString();
+      const result6: string = bool2.toString();
+      const result7: string = bool3.toString();
+      const result8: string = bool4.toString();
+
+      expect(result1).assertEqual('true');
+      expect(result2).assertEqual('false');
+      expect(result3).assertEqual('true');
+      expect(result4).assertEqual('false');
+      expect(result5).assertEqual('true');
+      expect(result6).assertEqual('false');
+      expect(result7).assertEqual('false');
+      expect(result8).assertEqual('true');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString10300
+     * @tc.number: BUILTINS_BOOLEAN_TOSTRING_TEST9300
+     * @tc.desc: Test toString for boolean with complex expressions
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString10300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const a: number = 10;
+      const b: number = 20;
+      const c: string = "hello";
+      const d: string = "world";
+
+      const result1: string = (a < b && c !== d).toString();
+      const result2: string = (a > b || c === d).toString();
+      const result3: string = (!(a > b) && !(c === d)).toString();
+      const result4: string = ((a + b) > 25 && (c + d).length > 5).toString();
+
+      expect(result1).assertEqual('true');
+      expect(result2).assertEqual('false');
+      expect(result3).assertEqual('true');
+      expect(result4).assertEqual('true');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString10400
+     * @tc.number: BUILTINS_BOOLEAN_TOSTRING_TEST9400
+     * @tc.desc: Test toString for boolean in conditional statements
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString10400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+
+      const testBoolean = (condition: boolean): string => {
+        if (condition) {
+          return "true branch";
+        } else {
+          return "false branch";
+        }
+      };
+
+      const result1: string = testBoolean(true);
+      const result2: string = testBoolean(false);
+      const result3: string = testBoolean(!!"hello");
+      const result4: string = testBoolean(!!"");
+
+      expect(result1).assertEqual('true branch');
+      expect(result2).assertEqual('false branch');
+      expect(result3).assertEqual('true branch');
+      expect(result4).assertEqual('false branch');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString10500
+     * @tc.number: BUILTINS_STRING_BUILDER_TOSTRING_TEST9500
+     * @tc.desc: Test StringBuilder toString with empty builder
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString10500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+      const result: string = builder.toString();
+
+      expect(result).assertEqual('');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString10600
+     * @tc.number: BUILTINS_STRING_BUILDER_TOSTRING_TEST9600
+     * @tc.desc: Test StringBuilder toString with basic strings
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString10600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+      builder.append('Hello');
+      builder.append(' ');
+      builder.append('World');
+
+      const result: string = builder.toString();
+      expect(result).assertEqual('Hello World');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString10700
+     * @tc.number: BUILTINS_STRING_BUILDER_TOSTRING_TEST9700
+     * @tc.desc: Test StringBuilder toString with special characters
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString10700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+      const specialChars: string = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
+      builder.append(specialChars);
+
+      const result: string = builder.toString();
+      expect(result).assertEqual(specialChars);
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString10800
+     * @tc.number: BUILTINS_STRING_BUILDER_TOSTRING_TEST9800
+     * @tc.desc: Test StringBuilder toString with ASCII characters
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString10800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+      const asciiChars: string = '!"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
+
+      for (let i = 0; i < asciiChars.length; i++) {
+        builder.append(asciiChars.charAt(i));
+      }
+
+      const result: string = builder.toString();
+      expect(result).assertEqual(asciiChars);
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString10900
+     * @tc.number: BUILTINS_STRING_BUILDER_TOSTRING_TEST9900
+     * @tc.desc: Test StringBuilder toString with repeated special characters
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString10900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+      const repeatedChars: string = '!!""##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~';
+      builder.append(repeatedChars);
+
+      const result: string = builder.toString();
+      expect(result).assertEqual(repeatedChars);
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString11000
+     * @tc.number: BUILTINS_STRING_BUILDER_TOSTRING_TEST10000
+     * @tc.desc: Test StringBuilder toString with escape sequences
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString11000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append('\\a');
+      builder.append('\\b');
+      builder.append('\\f');
+      builder.append('\\n');
+      builder.append('\\r');
+      builder.append('\\t');
+      builder.append('\\v');
+      builder.append('\\\\');
+      builder.append('\\\'');
+      builder.append('\\"');
+      builder.append('\\?');
+      builder.append('\\0');
+
+      const result: string = builder.toString();
+      expect(result).assertEqual('\\a\\b\\f\\n\\r\\t\\v\\\\\\\'\\"\\?\\0');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString11100
+     * @tc.number: BUILTINS_STRING_BUILDER_TOSTRING_TEST10100
+     * @tc.desc: Test StringBuilder toString with emoji and Unicode characters
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString11100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append('👆');
+      builder.append('👿');
+      builder.append('👀');
+      builder.append('💯');
+      builder.append('🎅');
+      builder.append('😼');
+      builder.append('🔧');
+      builder.append('💇');
+      builder.append('🤼‍♂️');
+      builder.append('🛢');
+      builder.append('🀄');
+      builder.append('🏴');
+
+      const result: string = builder.toString();
+      expect(result.length).assertLarger(0);
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString11200
+     * @tc.number: BUILTINS_STRING_BUILDER_TOSTRING_TEST10200
+     * @tc.desc: Test StringBuilder toString with Unicode escape sequences
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString11200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append('\ud83d\udc46');
+      builder.append('\ud83d\udc7f');
+      builder.append('\ud83d\udc40');
+      builder.append('\ud83d\udcaf');
+      builder.append('\ud83c\udf85');
+      builder.append('\ud83d\ude3c');
+      builder.append('\ud83d\udd27');
+      builder.append('\ud83d\udc87');
+      builder.append('\ud83e\udd3c\u200d\u2642\ufe0f');
+      builder.append('\ud83d\udee2');
+      builder.append('\ud83c\udc04');
+      builder.append('\ud83c\udff4');
+
+      const result: string = builder.toString();
+      expect(result.length).assertLarger(0);
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString11300
+     * @tc.number: BUILTINS_STRING_BUILDER_TOSTRING_TEST10300
+     * @tc.desc: Test StringBuilder toString with number conversions
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString11300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append(0);
+      builder.append(' ');
+      builder.append(NaN);
+      builder.append(' ');
+      builder.append(-0);
+      builder.append(' ');
+      builder.append(Infinity);
+      builder.append(' ');
+      builder.append(-Infinity);
+      builder.append(' ');
+      builder.append(1.7976931348623157e+308);
+      builder.append(' ');
+      builder.append(5e-324);
+
+      const result: string = builder.toString();
+      expect(result).assertEqual('0 NaN 0 Infinity -Infinity 1.7976931348623157e+308 5e-324');
+    });
+
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString11400
+     * @tc.number: BUILTINS_STRING_BUILDER_TOSTRING_TEST10500
+     * @tc.desc: Test StringBuilder toString with large string
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString11400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+      const count: number = 1000;
+      const text: string = 'Hello World! ';
+
+      for (let i = 0; i < count; i++) {
+        builder.append(text);
+      }
+
+      const result: string = builder.toString();
+      expect(result.length).assertEqual(text.length * count);
+      expect(result.startsWith('Hello')).assertTrue();
+      expect(result.endsWith('World! ')).assertTrue();
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString11500
+     * @tc.number: BUILTINS_STRING_BUILDER_TOSTRING_TEST10600
+     * @tc.desc: Test StringBuilder toString with clear and reuse
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString11500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append('First string');
+      const result1: string = builder.toString();
+      expect(result1).assertEqual('First string');
+
+      const builder2: StringBuilder = new StringBuilder();
+      builder2.append('Second string');
+      const result2: string = builder2.toString();
+      expect(result2).assertEqual('Second string');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString11600
+     * @tc.number: BUILTINS_STRING_BUILDER_TOSTRING_TEST10700
+     * @tc.desc: Test StringBuilder toString with chaining append calls
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString11600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append('Hello')
+        .append(' ')
+        .append('World')
+        .append('!')
+        .append(123)
+        .append(' ')
+        .append(true);
+
+      const result: string = builder.toString();
+      expect(result).assertEqual('Hello World!123 true');
+    });
+
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString11700
+     * @tc.number: BUILTINS_STRING_BUILDER_TOSTRING_TEST10700
+     * @tc.desc: Test StringBuilder toString with edge cases
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString11700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder1: StringBuilder = new StringBuilder();
+      builder1.append('');
+      const result1: string = builder1.toString();
+      expect(result1).assertEqual('');
+
+      const builder2: StringBuilder = new StringBuilder();
+      builder2.append(' ');
+      const result2: string = builder2.toString();
+      expect(result2).assertEqual(' ');
+
+      const builder3: StringBuilder = new StringBuilder();
+      builder3.append('\n');
+      const result3: string = builder3.toString();
+      expect(result3).assertEqual('\n');
+
+      const builder4: StringBuilder = new StringBuilder();
+      builder4.append('\t');
+      const result4: string = builder4.toString();
+      expect(result4).assertEqual('\t');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString11800
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_DOUBLE_TEST10900
+     * @tc.desc: Test StringBuilder append with basic double values
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString11800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+      builder.append(0.0);
+      builder.append(1.0);
+      builder.append(-1.0);
+      builder.append(123.456);
+      builder.append(-123.456);
+
+      const result: string = builder.toString();
+      expect(result).assertEqual('01-1123.456-123.456');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString11900
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_DOUBLE_TEST11000
+     * @tc.desc: Test StringBuilder append with integer double values
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString11900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+      builder.append(0);
+      builder.append(1);
+      builder.append(-1);
+      builder.append(100);
+      builder.append(-100);
+
+      const result: string = builder.toString();
+      expect(result).assertEqual('01-1100-100');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString12000
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_DOUBLE_TEST11100
+     * @tc.desc: Test StringBuilder append with special double values
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString12000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append(0);
+      builder.append(' ');
+      builder.append(NaN);
+      builder.append(' ');
+      builder.append(-0);
+      builder.append(' ');
+      builder.append(Infinity);
+      builder.append(' ');
+      builder.append(-Infinity);
+
+      const result: string = builder.toString();
+      expect(result).assertEqual('0 NaN 0 Infinity -Infinity');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString12100
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_DOUBLE_TEST11200
+     * @tc.desc: Test StringBuilder append with extreme double values
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString12100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append(Number.MAX_VALUE);
+      builder.append(' ');
+      builder.append(Number.MIN_VALUE);
+      builder.append(' ');
+      builder.append(Number.EPSILON);
+      builder.append(' ');
+      builder.append(Number.MAX_SAFE_INTEGER);
+
+      const result: string = builder.toString();
+      expect(result.includes('1.7976931348623157e+308')).assertTrue();
+      expect(result.includes('5e-324')).assertTrue();
+      expect(result.includes('2.220446049250313e-16')).assertTrue();
+      expect(result.includes('9007199254740991')).assertTrue();
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString12200
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_DOUBLE_TEST11300
+     * @tc.desc: Test StringBuilder append with byte range values
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString12200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append(-128);
+      builder.append(' ');
+      builder.append(-127);
+      builder.append(' ');
+      builder.append(0);
+      builder.append(' ');
+      builder.append(126);
+      builder.append(' ');
+      builder.append(127);
+
+      const result: string = builder.toString();
+      expect(result).assertEqual('-128 -127 0 126 127');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString12300
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_DOUBLE_TEST11400
+     * @tc.desc: Test StringBuilder append with short range values
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString12300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append(-32768);
+      builder.append(' ');
+      builder.append(-32767);
+      builder.append(' ');
+      builder.append(32766);
+      builder.append(' ');
+      builder.append(32767);
+
+      const result: string = builder.toString();
+      expect(result).assertEqual('-32768 -32767 32766 32767');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString12400
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_DOUBLE_TEST11500
+     * @tc.desc: Test StringBuilder append with int range values
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString12400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append(-2147483648);
+      builder.append(' ');
+      builder.append(-2147483647);
+      builder.append(' ');
+      builder.append(2147483646);
+      builder.append(' ');
+      builder.append(2147483647);
+
+      const result: string = builder.toString();
+      expect(result).assertEqual('-2147483648 -2147483647 2147483646 2147483647');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString12500
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_DOUBLE_TEST11600
+     * @tc.desc: Test StringBuilder append with long range values
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString12500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append(-9223372036854775808);
+      builder.append(' ');
+      builder.append(9223372036854775807);
+
+      const result: string = builder.toString();
+      expect(result).assertEqual('-9223372036854775808 9223372036854775807');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString12600
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_DOUBLE_TEST11700
+     * @tc.desc: Test StringBuilder append with different number representations
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString12600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append(0x0102);
+      builder.append(' ');
+
+      builder.append(0x01020304);
+      builder.append(' ');
+
+      builder.append(0o3);
+      builder.append(' ');
+
+      builder.append(2 ** 3);
+      builder.append(' ');
+
+      builder.append(1e3);
+      builder.append(' ');
+      builder.append(2.5e-2);
+
+      const result: string = builder.toString();
+      expect(result).assertEqual('258 16909060 3 8 1000 0.025');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString12700
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_DOUBLE_TEST11800
+     * @tc.desc: Test StringBuilder append with precision and rounding
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString12700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append(1.23456789);
+      builder.append(' ');
+      builder.append(0.000000001);
+      builder.append(' ');
+      builder.append(999.999999);
+      builder.append(' ');
+      builder.append(0.3333333333333333);
+      builder.append(' ');
+      builder.append(0.6666666666666666);
+
+      const result: string = builder.toString();
+      expect(result.includes('1.23456789')).assertTrue();
+      expect(result.includes('1e-9')).assertTrue();
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString12800
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_DOUBLE_TEST11900
+     * @tc.desc: Test StringBuilder append with mathematical operations
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString12800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append(10.5 + 20.5);
+      builder.append(' ');
+      builder.append(100.5 - 50.25);
+      builder.append(' ');
+      builder.append(25.5 * 4.0);
+      builder.append(' ');
+      builder.append(100.0 / 4.0);
+      builder.append(' ');
+      builder.append(Math.PI);
+      builder.append(' ');
+      builder.append(Math.E);
+
+      const result: string = builder.toString();
+      expect(result.includes('31')).assertTrue();
+      expect(result.includes('50.25')).assertTrue();
+      expect(result.includes('102')).assertTrue();
+      expect(result.includes('25')).assertTrue();
+      expect(result.includes('3.141592653589793')).assertTrue();
+      expect(result.includes('2.718281828459045')).assertTrue();
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString12900
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_DOUBLE_TEST12000
+     * @tc.desc: Test StringBuilder append with overflow values
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString12900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append(128);
+      builder.append(' ');
+      builder.append(-129);
+
+      builder.append(' ');
+
+      builder.append(32768);
+      builder.append(' ');
+      builder.append(-32769);
+
+      builder.append(' ');
+
+      builder.append(2147483648);
+      builder.append(' ');
+      builder.append(-2147483649);
+
+      const result: string = builder.toString();
+      expect(result).assertEqual('128 -129 32768 -32769 2147483648 -2147483649');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString13000
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_DOUBLE_TEST12100
+     * @tc.desc: Test StringBuilder append with chaining calls
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString13000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      const resultBuilder: StringBuilder = builder.append(1.0)
+        .append(2.0)
+        .append(3.0)
+        .append(4.0)
+        .append(5.0);
+
+      const result: string = resultBuilder.toString();
+      expect(result).assertEqual('12345');
+
+      expect(resultBuilder === builder).assertTrue();
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString13100
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_DOUBLE_TEST12200
+     * @tc.desc: Test StringBuilder append with mixed types
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString13100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append('Value: ');
+      builder.append(123.456);
+      builder.append(', Count: ');
+      builder.append(100);
+      builder.append(', Result: ');
+      builder.append(-99.99);
+
+      const result: string = builder.toString();
+      expect(result).assertEqual('Value: 123.456, Count: 100, Result: -99.99');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString13200
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_DOUBLE_TEST12300
+     * @tc.desc: Test StringBuilder append with boundary edge cases
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString13200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder1: StringBuilder = new StringBuilder();
+      builder1.append(0.0);
+      expect(builder1.toString()).assertEqual('0');
+
+      const builder2: StringBuilder = new StringBuilder();
+      builder2.append(-0.0);
+      expect(builder2.toString()).assertEqual('0');
+
+      const builder3: StringBuilder = new StringBuilder();
+      builder3.append(0.0000000000000001);
+      expect(builder3.toString().includes('1e-16')).assertTrue();
+
+      const builder4: StringBuilder = new StringBuilder();
+      builder4.append(999999999999999.0);
+      expect(builder4.toString()).assertEqual('999999999999999');
+    });
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString13300
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_DOUBLE_TEST12400
+     * @tc.desc: Test StringBuilder append with array of double values
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString13300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+      const values: number[] = [1.1, 2.2, 3.3, 4.4, 5.5];
+
+      for (const value of values) {
+        builder.append(value).append(' ');
+      }
+
+      const result: string = builder.toString().trim();
+      expect(result).assertEqual('1.1 2.2 3.3 4.4 5.5');
+    });
+
+
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString13400
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_OBJECT_TEST12500
+     * @tc.desc: Test StringBuilder append with special array objects
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString13400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      builder.append([72, 101, NaN, Infinity, 108, 111]);
+      builder.append(' ');
+
+      builder.append([72, "abc", true, null, undefined, 108]);
+      builder.append(' ');
+      builder.append([256, 65536, 32768]);
+
+      const result: string = builder.toString();
+      expect(result.includes('NaN')).assertTrue();
+      expect(result.includes('Infinity')).assertTrue();
+      expect(result.includes('256')).assertTrue();
+    });
+
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString13500
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_OBJECT_TEST12600
+     * @tc.desc: Test StringBuilder append with primitive wrappers
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString13500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      const strObj = new String("Hello");
+      const numObj = new Number(123.456);
+      const boolObj = new Boolean(true);
+
+      builder.append(strObj).append(' ');
+      builder.append(numObj).append(' ');
+      builder.append(boolObj);
+
+      const result: string = builder.toString();
+      expect(result).assertEqual('Hello 123.456 true');
+    });
+
+
+
+    /**
+     * @tc.name: builtinsStringBuilderTestToString13600
+     * @tc.number: BUILTINS_STRING_BUILDER_APPEND_OBJECT_TEST12700
+     * @tc.desc: Test StringBuilder append with array objects
+     * @tc.type: FUNCTION
+     * @tc.size: SMALLTEST
+     * @tc.level: LEVEL0
+     */
+    it('builtinsStringBuilderTestToString13600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const builder: StringBuilder = new StringBuilder();
+
+      const arr1 = [72, 101, 108, 108, 111];
+      const arr2 = [72, 101, 108, 108, 111, 87, 111, 114, 108, 100, 49, 50, 51, 63];
+      const arr3 = [72, 101, 108, 108, 111, 87, 111, 114, 108, 0, 0, 0, 0, 0, 100, 49, 50, 51, 63];
+      const arr4 = [72, 101, 108, 108, 111, 87, -111, 114, 108, 100, -49, 50, 51, -63];
+
+      builder.append(arr1).append(' ');
+      builder.append(arr2).append(' ');
+      builder.append(arr3).append(' ');
+      builder.append(arr4);
+
+      const result: string = builder.toString();
+      expect(result.includes('72,101,108,108,111')).assertTrue();
+    });
 
   })
 }
