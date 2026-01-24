@@ -20,6 +20,7 @@ import bundle from '@ohos.bundle'
 import osaccount from '@ohos.account.osAccount'
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
 
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -187,8 +188,7 @@ export default function geolocationTest_GeoErr(){
               await sleep(1000);
               done();
         })
-    
-    
+        
         /**
          * @tc.name   SUB_HSS_Addbeaconfence_0100
          * @tc.number SUB_HSS_Addbeaconfence_0100
@@ -362,6 +362,8 @@ export default function geolocationTest_GeoErr(){
             await sleep(1000);
             done();
         });
+
+
 
         /**
          * @tc.name   SUB_HSS_getSupportedCoordTypes_0400
@@ -909,6 +911,7 @@ export default function geolocationTest_GeoErr(){
                       };
                     
                       for(let identifier = 20; identifier < 1020; identifier++){
+
                       let beacon = {
                         identifier: JSON.stringify(identifier),
                         beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
@@ -1587,7 +1590,13 @@ export default function geolocationTest_GeoErr(){
                 await sleep(1000);
                 done();
             }            
-        });   
+        });
+        
+        
+        
+
+
+ 
     })
 }
 
