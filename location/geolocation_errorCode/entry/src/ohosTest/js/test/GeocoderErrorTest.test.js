@@ -910,7 +910,7 @@ export default function geolocationTest_GeoErr(){
                     
                       for(let identifier = 20; identifier < 1020; identifier++){
                       let beacon = {
-                        identifier: "JSON.stringify(identifier)",
+                        identifier: JSON.stringify(identifier),
                         beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
                         manufactureData:manufactureData
                       };
@@ -1100,7 +1100,7 @@ export default function geolocationTest_GeoErr(){
          */
          it('SUB_HSS_getAddressesFromLocationName_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
-            console.info("SUB_geolocation_getAddressesFromLocationName_0005: " + isAcessToken);
+            console.info("SUB_HSS_getAddressesFromLocationName_0005: " + isAcessToken);
             if (!isAcessToken) {
                 console.info("The device does not support Gnss");
                 expect(isAcessToken).assertFalse();
@@ -1434,8 +1434,8 @@ export default function geolocationTest_GeoErr(){
                
 
          /**
-         * @tc.name   SUB_geolocation_getAddressesFromLocation_0005
-         * @tc.number SUB_geolocation_getAddressesFromLocation_0005
+         * @tc.name   SUB_geolocation_getAddressesFromLocationName_0005
+         * @tc.number SUB_geolocation_getAddressesFromLocationName_0005
          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1443,7 +1443,7 @@ export default function geolocationTest_GeoErr(){
          */
          it('SUB_geolocation_getAddressesFromLocationName_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
-            console.info("SUB_HSS_getAddressesFromLocationName_0005: " + isAcessToken);
+            console.info("SUB_geolocation_getAddressesFromLocationName_0005: " + isAcessToken);
             if (!isAcessToken) {
                 console.info("The device does not support Gnss");
                 expect(isAcessToken).assertFalse();
