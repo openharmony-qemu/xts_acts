@@ -41,12 +41,12 @@ export default function builtinsLinkerTypeCircularityErrorTest() {
     })
 
     /**
-     * @tc.name: builtinsLinkerTypeCircularityErrorTest0100
-     * @tc.number: BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0100
-     * @tc.desc: Test constructor with no arguments
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerTypeCircularityErrorTest0100
+     * @tc.number  BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0100
+     * @tc.desc    Test constructor with no arguments
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerTypeCircularityErrorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerTypeCircularityError();
@@ -55,12 +55,12 @@ export default function builtinsLinkerTypeCircularityErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerTypeCircularityErrorTest0200
-     * @tc.number: BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0200
-     * @tc.desc: Test constructor with simple circular dependency message
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerTypeCircularityErrorTest0200
+     * @tc.number  BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0200
+     * @tc.desc    Test constructor with simple circular dependency message
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerTypeCircularityErrorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerTypeCircularityError('Circular type dependency detected');
@@ -69,12 +69,12 @@ export default function builtinsLinkerTypeCircularityErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerTypeCircularityErrorTest0300
-     * @tc.number: BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0300
-     * @tc.desc: Test constructor with empty message string
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerTypeCircularityErrorTest0300
+     * @tc.number  BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0300
+     * @tc.desc    Test constructor with empty message string
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerTypeCircularityErrorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerTypeCircularityError('');
@@ -83,12 +83,12 @@ export default function builtinsLinkerTypeCircularityErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerTypeCircularityErrorTest0400
-     * @tc.number: BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0400
-     * @tc.desc: Test constructor with message containing special characters and type names
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerTypeCircularityErrorTest0400
+     * @tc.number  BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0400
+     * @tc.desc    Test constructor with message containing special characters and type names
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerTypeCircularityErrorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialMsg = 'Type "Node<T>" circularly references itself through "Edge<Node<T>>"';
@@ -98,12 +98,12 @@ export default function builtinsLinkerTypeCircularityErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerTypeCircularityErrorTest0500
-     * @tc.number: BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0500
-     * @tc.desc: Test constructor with options (cause) parameter
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerTypeCircularityErrorTest0500
+     * @tc.number  BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0500
+     * @tc.desc    Test constructor with options (cause) parameter
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerTypeCircularityErrorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const cause = new Error('Previous type resolution failed');
@@ -114,12 +114,12 @@ export default function builtinsLinkerTypeCircularityErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerTypeCircularityErrorTest0600
-     * @tc.number: BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0600
-     * @tc.desc: Test constructor with both message and empty options
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerTypeCircularityErrorTest0600
+     * @tc.number  BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0600
+     * @tc.desc    Test constructor with both message and empty options
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerTypeCircularityErrorTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerTypeCircularityError('Type circular reference detected', {});
@@ -129,12 +129,12 @@ export default function builtinsLinkerTypeCircularityErrorTest() {
     });
     
     /**
-     * @tc.name: builtinsLinkerTypeCircularityErrorTest0700
-     * @tc.number: BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0700
-     * @tc.desc: Test constructor with long circular dependency chain description
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerTypeCircularityErrorTest0700
+     * @tc.number  BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0700
+     * @tc.desc    Test constructor with long circular dependency chain description
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerTypeCircularityErrorTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const longMsg = 'Circular dependency chain detected: TypeA depends on TypeB, ' +
@@ -146,12 +146,12 @@ export default function builtinsLinkerTypeCircularityErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerTypeCircularityErrorTest0800
-     * @tc.number: BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0800
-     * @tc.desc: Test that error instance is throwable and catchable
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerTypeCircularityErrorTest0800
+     * @tc.number  BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0800
+     * @tc.desc    Test that error instance is throwable and catchable
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerTypeCircularityErrorTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       try {
@@ -165,12 +165,12 @@ export default function builtinsLinkerTypeCircularityErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerTypeCircularityErrorTest0900
-     * @tc.number: BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0900
-     * @tc.desc: Test error stack trace property
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerTypeCircularityErrorTest0900
+     * @tc.number  BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST0900
+     * @tc.desc    Test error stack trace property
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerTypeCircularityErrorTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerTypeCircularityError('Circular type reference in linking phase');
@@ -179,12 +179,12 @@ export default function builtinsLinkerTypeCircularityErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerTypeCircularityErrorTest1000
-     * @tc.number: BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST1000
-     * @tc.desc: Test error with nested cause chain for circular dependencies
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerTypeCircularityErrorTest1000
+     * @tc.number  BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST1000
+     * @tc.desc    Test error with nested cause chain for circular dependencies
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerTypeCircularityErrorTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const rootCause = new Error('Initial type resolution failure');
@@ -196,12 +196,12 @@ export default function builtinsLinkerTypeCircularityErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerTypeCircularityErrorTest1100
-     * @tc.number: BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST1100
-     * @tc.desc: Test error with specific type names in circular dependency message
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerTypeCircularityErrorTest1100
+     * @tc.number  BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST1100
+     * @tc.desc    Test error with specific type names in circular dependency message
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerTypeCircularityErrorTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const typeName1 = 'LinkedListNode';
@@ -217,12 +217,12 @@ export default function builtinsLinkerTypeCircularityErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerTypeCircularityErrorTest1200
-     * @tc.number: BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST1200
-     * @tc.desc: Test error toString() method for circular dependencies
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerTypeCircularityErrorTest1200
+     * @tc.number  BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST1200
+     * @tc.desc    Test error toString() method for circular dependencies
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerTypeCircularityErrorTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerTypeCircularityError('Circular reference: A -> B -> A');
@@ -233,12 +233,12 @@ export default function builtinsLinkerTypeCircularityErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerTypeCircularityErrorTest1300
-     * @tc.number: BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST1300
-     * @tc.desc: Test error with generic type circularity
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerTypeCircularityErrorTest1300
+     * @tc.number  BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST1300
+     * @tc.desc    Test error with generic type circularity
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerTypeCircularityErrorTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const genericMsg = 'Generic type circularity: Container<T> where T = Container<T>';
@@ -250,12 +250,12 @@ export default function builtinsLinkerTypeCircularityErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerTypeCircularityErrorTest1400
-     * @tc.number: BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST1400
-     * @tc.desc: Test error with interface implementation circularity
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerTypeCircularityErrorTest1400
+     * @tc.number  BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST1400
+     * @tc.desc    Test error with interface implementation circularity
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerTypeCircularityErrorTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const interfaceMsg = 'Interface circularity: InterfaceA extends InterfaceB, InterfaceB extends InterfaceA';
@@ -268,12 +268,12 @@ export default function builtinsLinkerTypeCircularityErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerTypeCircularityErrorTest1500
-     * @tc.number: BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST1500
-     * @tc.desc: Test error with complex multi-type circular dependency
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerTypeCircularityErrorTest1500
+     * @tc.number  BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST1500
+     * @tc.desc    Test error with complex multi-type circular dependency
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerTypeCircularityErrorTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const complexMsg = 'Multi-type circular dependency: Graph -> Node -> Edge -> Graph';
@@ -287,12 +287,12 @@ export default function builtinsLinkerTypeCircularityErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerTypeCircularityErrorTest1600
-     * @tc.number: BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST1600
-     * @tc.desc: Test error with template/metaprogramming circularity
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerTypeCircularityErrorTest1600
+     * @tc.number  BUILTINS_LINKER_TYPE_CIRCULARITY_ERROR_TEST1600
+     * @tc.desc    Test error with template/metaprogramming circularity
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerTypeCircularityErrorTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const templateMsg = 'Template circularity: TypeList<Head, Tail> where Tail = TypeList<Head, Tail>';

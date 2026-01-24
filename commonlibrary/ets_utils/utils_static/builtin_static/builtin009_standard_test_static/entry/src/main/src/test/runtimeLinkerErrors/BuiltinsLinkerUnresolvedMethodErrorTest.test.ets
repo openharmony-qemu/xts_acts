@@ -41,12 +41,12 @@ export default function builtinsLinkerUnresolvedMethodErrorTest() {
     })
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedMethodErrorTest0100
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0100
-     * @tc.desc: Test basic constructor with default parameters
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedMethodErrorTest0100
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0100
+     * @tc.desc    Test basic constructor with default parameters
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedMethodErrorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error1 = new LinkerUnresolvedMethodError();
@@ -59,12 +59,12 @@ export default function builtinsLinkerUnresolvedMethodErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedMethodErrorTest0200
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0200
-     * @tc.desc: Test constructor with String type boundary values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedMethodErrorTest0200
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0200
+     * @tc.desc    Test constructor with String type boundary values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedMethodErrorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error1 = new LinkerUnresolvedMethodError('');
@@ -75,12 +75,12 @@ export default function builtinsLinkerUnresolvedMethodErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedMethodErrorTest0300
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0300
-     * @tc.desc: Test constructor with special characters in message
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedMethodErrorTest0300
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0300
+     * @tc.desc    Test constructor with special characters in message
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedMethodErrorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialChars = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
@@ -97,12 +97,12 @@ export default function builtinsLinkerUnresolvedMethodErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedMethodErrorTest0400
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0400
-     * @tc.desc: Test constructor with escape sequences in message
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedMethodErrorTest0400
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0400
+     * @tc.desc    Test constructor with escape sequences in message
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedMethodErrorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const escapeTests = [
@@ -129,12 +129,12 @@ export default function builtinsLinkerUnresolvedMethodErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedMethodErrorTest0500
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0500
-     * @tc.desc: Test constructor with Unicode and emoji in message
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedMethodErrorTest0500
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0500
+     * @tc.desc    Test constructor with Unicode and emoji in message
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedMethodErrorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const emojis = [
@@ -167,12 +167,12 @@ export default function builtinsLinkerUnresolvedMethodErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedMethodErrorTest0600
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0600
-     * @tc.desc: Test constructor with invalid Unicode and keywords
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedMethodErrorTest0600
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0600
+     * @tc.desc    Test constructor with invalid Unicode and keywords
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedMethodErrorTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const invalidUnicode = ['\\udc04', '\\ud83d', '\\udff4'];
@@ -191,12 +191,12 @@ export default function builtinsLinkerUnresolvedMethodErrorTest() {
 
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedMethodErrorTest0700
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0700
-     * @tc.desc: Test constructor with options parameter
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedMethodErrorTest0700
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0700
+     * @tc.desc    Test constructor with options parameter
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedMethodErrorTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const rootError = new Error('Root cause error');
@@ -222,12 +222,12 @@ export default function builtinsLinkerUnresolvedMethodErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedMethodErrorTest0800
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0800
-     * @tc.desc: Test constructor with numeric string values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedMethodErrorTest0800
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0800
+     * @tc.desc    Test constructor with numeric string values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedMethodErrorTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const numberTests = [
@@ -268,12 +268,12 @@ export default function builtinsLinkerUnresolvedMethodErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedMethodErrorTest0900
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0900
-     * @tc.desc: Test constructor with TypedArray string representations
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedMethodErrorTest0900
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST0900
+     * @tc.desc    Test constructor with TypedArray string representations
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedMethodErrorTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const typedArrayTests = [
@@ -311,12 +311,12 @@ export default function builtinsLinkerUnresolvedMethodErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedMethodErrorTest1000
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST1000
-     * @tc.desc: Test constructor with array string representations
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedMethodErrorTest1000
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST1000
+     * @tc.desc    Test constructor with array string representations
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedMethodErrorTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arrayTests = [
@@ -344,12 +344,12 @@ export default function builtinsLinkerUnresolvedMethodErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedMethodErrorTest1100
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST1100
-     * @tc.desc: Test constructor with boolean and falsy values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedMethodErrorTest1100
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST1100
+     * @tc.desc    Test constructor with boolean and falsy values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedMethodErrorTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const booleanTests = [
@@ -382,12 +382,12 @@ export default function builtinsLinkerUnresolvedMethodErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedMethodErrorTest1200
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST1200
-     * @tc.desc: Test constructor with object string representations
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedMethodErrorTest1200
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST1200
+     * @tc.desc    Test constructor with object string representations
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedMethodErrorTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const objectTests = [
@@ -416,12 +416,12 @@ export default function builtinsLinkerUnresolvedMethodErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedMethodErrorTest1300
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST1300
-     * @tc.desc: Test constructor with various string formats and edge cases
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedMethodErrorTest1300
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST1300
+     * @tc.desc    Test constructor with various string formats and edge cases
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedMethodErrorTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const stringTests = [
@@ -450,12 +450,12 @@ export default function builtinsLinkerUnresolvedMethodErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedMethodErrorTest1400
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST1400
-     * @tc.desc: Test error properties and inheritance
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedMethodErrorTest1400
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_METHOD_ERROR_TEST1400
+     * @tc.desc    Test error properties and inheritance
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedMethodErrorTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerUnresolvedMethodError('Test method error');

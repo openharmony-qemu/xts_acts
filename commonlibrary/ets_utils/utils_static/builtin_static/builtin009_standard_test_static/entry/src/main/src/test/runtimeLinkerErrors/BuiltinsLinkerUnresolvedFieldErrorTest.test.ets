@@ -42,12 +42,12 @@ export default function builtinsLinkerUnresolvedFieldErrorTest() {
 
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedFieldErrorTest0100
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0100
-     * @tc.desc: Test basic constructor with default parameters
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedFieldErrorTest0100
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0100
+     * @tc.desc    Test basic constructor with default parameters
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedFieldErrorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error1 = new LinkerUnresolvedFieldError();
@@ -60,12 +60,12 @@ export default function builtinsLinkerUnresolvedFieldErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedFieldErrorTest0200
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0200
-     * @tc.desc: Test constructor with String type boundary values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedFieldErrorTest0200
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0200
+     * @tc.desc    Test constructor with String type boundary values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedFieldErrorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error1 = new LinkerUnresolvedFieldError('');
@@ -76,12 +76,12 @@ export default function builtinsLinkerUnresolvedFieldErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedFieldErrorTest0300
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0300
-     * @tc.desc: Test constructor with special characters in message
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedFieldErrorTest0300
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0300
+     * @tc.desc    Test constructor with special characters in message
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedFieldErrorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialChars = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
@@ -98,12 +98,12 @@ export default function builtinsLinkerUnresolvedFieldErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedFieldErrorTest0400
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0400
-     * @tc.desc: Test constructor with Unicode and emoji in message
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedFieldErrorTest0400
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0400
+     * @tc.desc    Test constructor with Unicode and emoji in message
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedFieldErrorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const emojis = [
@@ -132,12 +132,12 @@ export default function builtinsLinkerUnresolvedFieldErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedFieldErrorTest0500
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0500
-     * @tc.desc: Test constructor with invalid Unicode and edge cases
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedFieldErrorTest0500
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0500
+     * @tc.desc    Test constructor with invalid Unicode and edge cases
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedFieldErrorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const invalidUnicode = [
@@ -160,12 +160,12 @@ export default function builtinsLinkerUnresolvedFieldErrorTest() {
 
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedFieldErrorTest0600
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0600
-     * @tc.desc: Test constructor with options parameter
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedFieldErrorTest0600
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0600
+     * @tc.desc    Test constructor with options parameter
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedFieldErrorTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const options1: ErrorOptions = {
@@ -185,12 +185,12 @@ export default function builtinsLinkerUnresolvedFieldErrorTest() {
 
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedFieldErrorTest0700
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0700
-     * @tc.desc: Test constructor with various string formats
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedFieldErrorTest0700
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0700
+     * @tc.desc    Test constructor with various string formats
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedFieldErrorTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const stringTests = [
@@ -210,12 +210,12 @@ export default function builtinsLinkerUnresolvedFieldErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedFieldErrorTest0800
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0800
-     * @tc.desc: Test constructor with special number formats as strings
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedFieldErrorTest0800
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0800
+     * @tc.desc    Test constructor with special number formats as strings
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedFieldErrorTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialNumbers = [
@@ -238,12 +238,12 @@ export default function builtinsLinkerUnresolvedFieldErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedFieldErrorTest0900
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0900
-     * @tc.desc: Test constructor with complex options
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedFieldErrorTest0900
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST0900
+     * @tc.desc    Test constructor with complex options
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedFieldErrorTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const options1: ErrorOptions = {
@@ -268,12 +268,12 @@ export default function builtinsLinkerUnresolvedFieldErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedFieldErrorTest1000
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST1000
-     * @tc.desc: Test constructor with TypedArray string representations
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedFieldErrorTest1000
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST1000
+     * @tc.desc    Test constructor with TypedArray string representations
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedFieldErrorTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const typedArrayStrings = [
@@ -295,12 +295,12 @@ export default function builtinsLinkerUnresolvedFieldErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedFieldErrorTest1100
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST1100
-     * @tc.desc: Test constructor with boolean and falsy string values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedFieldErrorTest1100
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST1100
+     * @tc.desc    Test constructor with boolean and falsy string values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedFieldErrorTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const falsyValues = ['true', 'false', '0', 'NaN', '', 'null', 'undefined',];
@@ -319,12 +319,12 @@ export default function builtinsLinkerUnresolvedFieldErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedFieldErrorTest1200
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST1200
-     * @tc.desc: Test error properties and basic inheritance
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedFieldErrorTest1200
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST1200
+     * @tc.desc    Test error properties and basic inheritance
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedFieldErrorTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerUnresolvedFieldError('Test error');
@@ -342,12 +342,12 @@ export default function builtinsLinkerUnresolvedFieldErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerUnresolvedFieldErrorTest1300
-     * @tc.number: BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST1300
-     * @tc.desc: Test multiple error instances
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerUnresolvedFieldErrorTest1300
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_FIELD_ERROR_TEST1300
+     * @tc.desc    Test multiple error instances
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerUnresolvedFieldErrorTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const errors = [
