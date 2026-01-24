@@ -44,12 +44,12 @@ export default function builtinsCharIsUpperCaseTest() {
     })
 
     /**
-     * @tc.name: builtinsCharIsUpperCaseTest0001
-     * @tc.number: BUILTINS_CHAR_TEST0001
-     * @tc.desc: Test uppercase letter recognition with 16-bit character constraint
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharIsUpperCaseTest0001
+     * @tc.number  BUILTINS_CHAR_TEST0001
+     * @tc.desc    Test uppercase letter recognition with 16-bit character constraint
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharIsUpperCaseTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.CHAR_BIT_SIZE).assertEqual(16);
@@ -74,12 +74,12 @@ export default function builtinsCharIsUpperCaseTest() {
     });
 
     /**
-     * @tc.name: builtinsCharIsUpperCaseTest0002
-     * @tc.number: BUILTINS_CHAR_TEST0002
-     * @tc.desc: Test uppercase recognition with max code point characters
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharIsUpperCaseTest0002
+     * @tc.number  BUILTINS_CHAR_TEST0002
+     * @tc.desc    Test uppercase recognition with max code point characters
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharIsUpperCaseTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.MAX_CODE_POINT).assertEqual(0x10FFFF);
@@ -94,12 +94,12 @@ export default function builtinsCharIsUpperCaseTest() {
     });
 
     /**
-     * @tc.name: builtinsCharIsUpperCaseTest0003
-     * @tc.number: BUILTINS_CHAR_TEST0003
-     * @tc.desc: Test high surrogate range with uppercase check
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharIsUpperCaseTest0003
+     * @tc.number  BUILTINS_CHAR_TEST0003
+     * @tc.desc    Test high surrogate range with uppercase check
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharIsUpperCaseTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isUpperCase(Char.HIGH_SURROGATE_MIN)).assertFalse();
@@ -116,12 +116,12 @@ export default function builtinsCharIsUpperCaseTest() {
     });
 
     /**
-     * @tc.name: builtinsCharIsUpperCaseTest0004
-     * @tc.number: BUILTINS_CHAR_TEST0004
-     * @tc.desc: Test low surrogate range with uppercase check
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharIsUpperCaseTest0004
+     * @tc.number  BUILTINS_CHAR_TEST0004
+     * @tc.desc    Test low surrogate range with uppercase check
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharIsUpperCaseTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isUpperCase(Char.LOW_SURROGATE_MIN)).assertFalse();
@@ -139,12 +139,12 @@ export default function builtinsCharIsUpperCaseTest() {
     });
 
     /**
-     * @tc.name: builtinsCharIsUpperCaseTest0005
-     * @tc.number: BUILTINS_CHAR_TEST0005
-     * @tc.desc: Test BMP border characters with uppercase check
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharIsUpperCaseTest0005
+     * @tc.number  BUILTINS_CHAR_TEST0005
+     * @tc.desc    Test BMP border characters with uppercase check
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharIsUpperCaseTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const BMP_BORDER: number = 0x10000;
@@ -162,12 +162,12 @@ export default function builtinsCharIsUpperCaseTest() {
     });
 
     /**
-     * @tc.name: builtinsCharIsUpperCaseTest0006
-     * @tc.number: BUILTINS_CHAR_TEST0006
-     * @tc.desc: Test character min and max values with uppercase check
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharIsUpperCaseTest0006
+     * @tc.number  BUILTINS_CHAR_TEST0006
+     * @tc.desc    Test character min and max values with uppercase check
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharIsUpperCaseTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isUpperCase(Char.MIN_VALUE)).assertFalse();

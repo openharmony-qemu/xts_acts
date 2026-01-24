@@ -43,12 +43,12 @@ export default function builtinsCharIsBinDigitTest() {
     })
 
     /**
-     * @tc.name: builtinsCharIsBinDigitTest0001
-     * @tc.number: BUILTINS_CHAR_TEST0001
-     * @tc.desc: Test binary digit recognition with 16-bit character constraint
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharIsBinDigitTest0001
+     * @tc.number  BUILTINS_CHAR_TEST0001
+     * @tc.desc    Test binary digit recognition with 16-bit character constraint
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharIsBinDigitTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isBinDigit(c'0')).assertTrue();
@@ -64,12 +64,12 @@ export default function builtinsCharIsBinDigitTest() {
     });
 
     /**
-     * @tc.name: builtinsCharIsBinDigitTest0002
-     * @tc.number: BUILTINS_CHAR_TEST0002
-     * @tc.desc: Test max code point as character parameter for binary digit check
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharIsBinDigitTest0002
+     * @tc.number  BUILTINS_CHAR_TEST0002
+     * @tc.desc    Test max code point as character parameter for binary digit check
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharIsBinDigitTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bmpMaxChar: char = c'\uFFFF';
@@ -87,12 +87,12 @@ export default function builtinsCharIsBinDigitTest() {
     });
 
     /**
-     * @tc.name: builtinsCharIsBinDigitTest0003
-     * @tc.number: BUILTINS_CHAR_TEST0003
-     * @tc.desc: Test high surrogate boundary values with binary digit check
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharIsBinDigitTest0003
+     * @tc.number  BUILTINS_CHAR_TEST0003
+     * @tc.desc    Test high surrogate boundary values with binary digit check
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharIsBinDigitTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isBinDigit(Char.HIGH_SURROGATE_MIN)).assertFalse();
@@ -102,12 +102,12 @@ export default function builtinsCharIsBinDigitTest() {
     });
 
     /**
-     * @tc.name: builtinsCharIsBinDigitTest0004
-     * @tc.number: BUILTINS_CHAR_TEST0004
-     * @tc.desc: Test low surrogate boundary values with binary digit check
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharIsBinDigitTest0004
+     * @tc.number  BUILTINS_CHAR_TEST0004
+     * @tc.desc    Test low surrogate boundary values with binary digit check
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharIsBinDigitTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isBinDigit(Char.LOW_SURROGATE_MIN)).assertFalse();
@@ -117,12 +117,12 @@ export default function builtinsCharIsBinDigitTest() {
     });
 
     /**
-     * @tc.name: builtinsCharIsBinDigitTest0005
-     * @tc.number: BUILTINS_CHAR_TEST0005
-     * @tc.desc: Test BMP border character with binary digit check
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharIsBinDigitTest0005
+     * @tc.number  BUILTINS_CHAR_TEST0005
+     * @tc.desc    Test BMP border character with binary digit check
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharIsBinDigitTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const BMP_BORDER = 0x10000;
@@ -139,12 +139,12 @@ export default function builtinsCharIsBinDigitTest() {
     });
 
     /**
-     * @tc.name: builtinsCharIsBinDigitTest0006
-     * @tc.number: BUILTINS_CHAR_TEST0006
-     * @tc.desc: Test character min and max values with binary digit check
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharIsBinDigitTest0006
+     * @tc.number  BUILTINS_CHAR_TEST0006
+     * @tc.desc    Test character min and max values with binary digit check
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharIsBinDigitTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isBinDigit(Char.MIN_VALUE)).assertFalse();

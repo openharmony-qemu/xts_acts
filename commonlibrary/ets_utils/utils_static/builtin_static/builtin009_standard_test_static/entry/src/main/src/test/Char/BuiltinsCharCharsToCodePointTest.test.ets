@@ -51,12 +51,12 @@ export default function builtinsCharCharsToCodePointTest() {
     })
 
     /**
-     * @tc.name: builtinsCharCharsToCodePointTest0001
-     * @tc.number: BUILTINS_CHAR_TEST0001
-     * @tc.desc: Test conversion of two 16-bit surrogate chars to code point
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharCharsToCodePointTest0001
+     * @tc.number  BUILTINS_CHAR_TEST0001
+     * @tc.desc    Test conversion of two 16-bit surrogate chars to code point
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharCharsToCodePointTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.CHAR_BIT_SIZE).assertEqual(16);
@@ -72,12 +72,12 @@ export default function builtinsCharCharsToCodePointTest() {
     });
 
     /**
-     * @tc.name: builtinsCharCharsToCodePointTest0002
-     * @tc.number: BUILTINS_CHAR_TEST0002
-     * @tc.desc: Test maximum code point conversion using surrogate pair
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharCharsToCodePointTest0002
+     * @tc.number  BUILTINS_CHAR_TEST0002
+     * @tc.desc    Test maximum code point conversion using surrogate pair
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharCharsToCodePointTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const maxCodePoint = Char.MAX_CODE_POINT;
@@ -92,12 +92,12 @@ export default function builtinsCharCharsToCodePointTest() {
     });
 
     /**
-     * @tc.name: builtinsCharCharsToCodePointTest0003
-     * @tc.number: BUILTINS_CHAR_TEST0003
-     * @tc.desc: Test high surrogate boundary values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharCharsToCodePointTest0003
+     * @tc.number  BUILTINS_CHAR_TEST0003
+     * @tc.desc    Test high surrogate boundary values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharCharsToCodePointTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const minResult = Char.charsToCodePoint(
@@ -113,12 +113,12 @@ export default function builtinsCharCharsToCodePointTest() {
     });
 
     /**
-     * @tc.name: builtinsCharCharsToCodePointTest0004
-     * @tc.number: BUILTINS_CHAR_TEST0004
-     * @tc.desc: Test low surrogate boundary values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharCharsToCodePointTest0004
+     * @tc.number  BUILTINS_CHAR_TEST0004
+     * @tc.desc    Test low surrogate boundary values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharCharsToCodePointTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const minLowResult = Char.charsToCodePoint(
@@ -139,12 +139,12 @@ export default function builtinsCharCharsToCodePointTest() {
     });
 
     /**
-     * @tc.name: builtinsCharCharsToCodePointTest0005
-     * @tc.number: BUILTINS_CHAR_TEST0005
-     * @tc.desc: Test BMP border distinction and supplementary plane minimum
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharCharsToCodePointTest0005
+     * @tc.number  BUILTINS_CHAR_TEST0005
+     * @tc.desc    Test BMP border distinction and supplementary plane minimum
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharCharsToCodePointTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const minSupplHigh: char = c'\uD800';
@@ -156,12 +156,12 @@ export default function builtinsCharCharsToCodePointTest() {
     });
 
     /**
-     * @tc.name: builtinsCharCharsToCodePointTest0006
-     * @tc.number: BUILTINS_CHAR_TEST0006
-     * @tc.desc: Test char min and max values with surrogate conversion
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharCharsToCodePointTest0006
+     * @tc.number  BUILTINS_CHAR_TEST0006
+     * @tc.desc    Test char min and max values with surrogate conversion
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharCharsToCodePointTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.MIN_VALUE).assertEqual(c'\u0000');
