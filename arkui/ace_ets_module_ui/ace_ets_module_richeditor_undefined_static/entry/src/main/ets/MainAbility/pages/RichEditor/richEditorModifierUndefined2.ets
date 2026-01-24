@@ -32,16 +32,16 @@ import hilog from '@ohos.hilog'
 
 @Observed
 class MyPointModifier implements AttributeModifier<RichEditorAttribute> {
-  message: string = 'hello';
-  isStopBackPress: boolean = true;
-  isOnSelect: boolean = true;
-  isOnSubmit: boolean = true;
-  isPlaceholder: boolean = true;
-  isOnPaste: boolean = true;
-  isOnSelectionChange: boolean = false;
-  isOnWillChange: boolean = false;
-  placeholderStyleIndex: int = 0;
-  startMessage: string = 'Hello World';
+  public message: string = 'hello';
+  public isStopBackPress: boolean = true;
+  public isOnSelect: boolean = true;
+  public isOnSubmit: boolean = true;
+  public isPlaceholder: boolean = true;
+  public isOnPaste: boolean = true;
+  public isOnSelectionChange: boolean = false;
+  public isOnWillChange: boolean = false;
+  public placeholderStyleIndex: int = 0;
+  public startMessage: string = 'Hello World';
   public placeholderStyleList: Array<ResourceColor | undefined> = [Color.Yellow, undefined];
 
   applyNormalAttribute(instance: RichEditorAttribute): void {
