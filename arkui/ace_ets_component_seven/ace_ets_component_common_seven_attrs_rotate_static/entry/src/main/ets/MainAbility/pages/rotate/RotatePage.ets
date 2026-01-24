@@ -160,10 +160,6 @@ import {
   SpanAttribute,
   Stack,
   StackAttribute,
-  Stepper,
-  StepperAttribute,
-  StepperItem,
-  StepperItemAttribute,
   Swiper,
   SwiperAttribute,
   TabContent,
@@ -1193,38 +1189,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mRotate: RotateOptions = {
-    x: 13,
-    y: 17,
-    z: 31,
-    centerX: 37,
-    centerY: 41,
-    angle: 3,
-    perspective: 11
-  }
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    instance.rotate(this.mRotate)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mRotate: RotateOptions = {
-    x: 13,
-    y: 17,
-    z: 31,
-    centerX: 37,
-    centerY: 41,
-    angle: 3,
-    perspective: 11
-  }
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    instance.rotate(this.mRotate)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mRotate: RotateOptions = {
     x: 13,
@@ -1763,16 +1727,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.key(componentKey)
   return this
@@ -1949,8 +1903,6 @@ struct RotatePage {
   @State _rotateSliderModifier: SliderModifier = new SliderModifier()
   @State _rotateSpanModifier: SpanModifier = new SpanModifier()
   @State _rotateStackModifier: StackModifier = new StackModifier()
-  @State _rotateStepperModifier: StepperModifier = new StepperModifier()
-  @State _rotateStepperItemModifier: StepperItemModifier = new StepperItemModifier()
   @State _rotateSwiperModifier: SwiperModifier = new SwiperModifier()
   @State _rotateTabContentModifier: TabContentModifier = new TabContentModifier()
   @State _rotateTabsModifier: TabsModifier = new TabsModifier()
@@ -2145,34 +2097,6 @@ struct RotatePage {
           .showTips(true)
           .commonStyle(this.componentKey)
           .attributeModifier(this._rotateSliderModifier)
-      }
-      if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-        }
-        .commonStyle(this.componentKey)
-
-  
-      }
-      if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-          .backgroundColor(Color.Red)
-          .commonStyle(this.componentKey)
-
-
-        }
-        .backgroundColor(Color.Yellow)
-        .width('100%')
-        .height('100%')
       }
       if (this.targetView == 'Text') {
         Text('text1')

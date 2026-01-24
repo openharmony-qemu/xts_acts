@@ -161,10 +161,6 @@ import {
   SpanAttribute,
   Stack,
   StackAttribute,
-  Stepper,
-  StepperAttribute,
-  StepperItem,
-  StepperItemAttribute,
   Swiper,
   SwiperAttribute,
   TabContent,
@@ -1132,36 +1128,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mShadow: ShadowOptions = {
-    radius: 35,
-    type: ShadowType.COLOR,
-    color: '#FF0011FF',
-    offsetX: 37,
-    offsetY: 41,
-    fill: false
-  }
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    instance.shadow(this.mShadow)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mShadow: ShadowOptions = {
-    radius: 35,
-    type: ShadowType.COLOR,
-    color: '#FF0011FF',
-    offsetX: 37,
-    offsetY: 41,
-    fill: false
-  }
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    instance.shadow(this.mShadow)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
@@ -1684,16 +1650,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.key(componentKey)
   return this
@@ -1870,8 +1826,6 @@ struct ShadowPage {
   @State _shadowSliderModifier: SliderModifier = new SliderModifier()
   @State _shadowSpanModifier: SpanModifier = new SpanModifier()
   @State _shadowStackModifier: StackModifier = new StackModifier()
-  @State _shadowStepperModifier: StepperModifier = new StepperModifier()
-  @State _shadowStepperItemModifier: StepperItemModifier = new StepperItemModifier()
   @State _shadowSwiperModifier: SwiperModifier = new SwiperModifier()
   @State _shadowTabContentModifier: TabContentModifier = new TabContentModifier()
   @State _shadowTabsModifier: TabsModifier = new TabsModifier()
@@ -2064,32 +2018,6 @@ struct ShadowPage {
           .showTips(true)
           .commonStyle(this.componentKey)
           .attributeModifier(this._shadowSliderModifier)
-      }
-      if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-        }
-        .commonStyle(this.componentKey)
-        .attributeModifier(this._shadowStepperModifier)
-      }
-      if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-          .backgroundColor(Color.Red)
-          .commonStyle(this.componentKey)
-          .attributeModifier(this._shadowStepperItemModifier)
-        }
-        .backgroundColor(Color.Yellow)
-        .width('100%')
-        .height('100%')
       }
       if (this.targetView == 'Text') {
         Text('text1')

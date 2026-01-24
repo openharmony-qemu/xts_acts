@@ -36,7 +36,6 @@ export default function layoutWeightTest() {
 
   let supportView: Array<string> = new Array<string>(
     'Select',
-    'Stepper',
     'ColumnSplit',
     'RowSplit',
     'SideBarContainer',

@@ -58,7 +58,6 @@ export default function alignSelfStretchTest() {
     'RelativeContainer',
     'ColumnSplit',
     'TextTimer',
-    'Stepper',
     'Flex',
     'Progress',
     'QRCode',

@@ -33,7 +33,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function AlignRulesTest() {
   //A list of components that support the position attribute, which is required.
-  let supportView = ['Select', 'SideBarContainer', 'WaterFlow', 'RowSplit', 'ColumnSplit', 'Stepper']
+  let supportView = ['Select', 'SideBarContainer', 'WaterFlow', 'RowSplit', 'ColumnSplit']
 
   //The size of the parent component, when set as a percentage, serves as the calculation basis.
   let parentWidth = 300;

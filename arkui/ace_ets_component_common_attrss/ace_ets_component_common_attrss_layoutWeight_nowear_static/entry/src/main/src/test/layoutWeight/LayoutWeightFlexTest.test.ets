@@ -35,7 +35,6 @@ let testAbilityContext:common.UIAbilityContext;
 export default function layoutWeightFlexTest() {
   let supportView: Array<string> = new Array<string>(
     'Select',
-    'Stepper',
     'ColumnSplit',
     'RowSplit',
     'SideBarContainer',

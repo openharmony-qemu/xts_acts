@@ -16,7 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import { RouterParams } from '../../common/Utils';
 import {
-  DataReloadOperation,Flex,GridRow,Grid,List,Polyline,Badge,GridRowDirection,GridCol,GridItem,ListItem,ListItemGroup,DataOperationType,Ellipse,Line,Polygon,Path,Rect,Shape,Shape,ColumnSplit,Counter,Refresh,RelativeContainer,AlignRuleOption,Entry,Select,Select,Stepper,TextArea,TextClock,TextInput,TextPicker,
+  DataReloadOperation,Flex,GridRow,Grid,List,Polyline,Badge,GridRowDirection,GridCol,GridItem,ListItem,ListItemGroup,DataOperationType,Ellipse,Line,Polygon,Path,Rect,Shape,Shape,ColumnSplit,Counter,Refresh,RelativeContainer,AlignRuleOption,Entry,Select,Select,TextArea,TextClock,TextInput,TextPicker,
   Toggle,
   Web,Circle,Text,ImageAnimator,ImageAnimator,Marquee,Navigation,Menu,Radio,Rating,ScrollBar,ImageFit,MenuItemGroup,TextAttribute,Blank,Checkbox,CheckboxGroup,CheckboxGroup,DataPanel,DatePicker,Divider,Gauge,
   $r,WebviewController,
@@ -49,8 +49,6 @@ import {
   WaterFlow,
   SpanAttribute,
   StackAttribute,
-  StepperAttribute,
-  StepperItemAttribute,
   SwiperAttribute,
   TabContentAttribute,
   TabsAttribute,
@@ -91,7 +89,6 @@ import {
   PolygonAttribute,
   PolylineAttribute,
   ScrollAttribute,
-  StepperItem,
   TextTimer,
   TimePicker,
   ToggleType,
@@ -157,7 +154,6 @@ import {
   WaterFlowSections,
   Scroller,
   SectionOptions,
-  Stepper,
   MenuItemOptions,
   Navigation,
   NavPathStack,
@@ -673,22 +669,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mZIndex: int = 7
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    instance.zIndex(this.mZIndex)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mZIndex: int = 7
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    instance.zIndex(this.mZIndex)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mZIndex: int = 7
 
@@ -884,8 +864,6 @@ struct ZIndexPage {
   @State _zIndexSideBarContainerModifier: SideBarContainerModifier = new SideBarContainerModifier()
   @State _zIndexSliderModifier: SliderModifier = new SliderModifier()
   @State _zIndexStackModifier: StackModifier = new StackModifier()
-  @State _zIndexStepperModifier: StepperModifier = new StepperModifier()
-  @State _zIndexStepperItemModifier: StepperItemModifier = new StepperItemModifier()
   @State _zIndexSwiperModifier: SwiperModifier = new SwiperModifier()
   @State _zIndexTabContentModifier: TabContentModifier = new TabContentModifier()
   @State _zIndexTabsModifier: TabsModifier = new TabsModifier()
@@ -1108,36 +1086,6 @@ struct ZIndexPage {
           .showTips(true)
           .applyStyles(this.fancy)
           .attributeModifier(this._zIndexSliderModifier)
-      }
-      if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-        }
-
-        .applyStyles(this.fancy)
-
-        .attributeModifier(this._zIndexStepperModifier)
-      }
-      if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-          .backgroundColor(Color.Red)
-
-          .applyStyles(this.fancy)
-
-          .attributeModifier(this._zIndexStepperItemModifier)
-        }
-        .backgroundColor(Color.Yellow)
-        .width('100%')
-        .height('100%')
       }
       if (this.targetView == 'Text') {
         Text('text1')

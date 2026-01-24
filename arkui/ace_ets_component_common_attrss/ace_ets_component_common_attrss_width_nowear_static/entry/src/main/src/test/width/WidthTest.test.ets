@@ -43,7 +43,6 @@ export default function widthTest() {
     'ColumnSplit',
     'RowSplit',
     'WaterFlow',
-    'Stepper',
     'FlowItem'
   )
   //The size of the parent component, when set as a percentage, serves as the calculation.

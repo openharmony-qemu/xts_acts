@@ -72,8 +72,6 @@ export default function marginTest() {
   let parentHeight = 600;
   let supportView: Array<string> = new Array<string>(
     'Select',
-    'Stepper',
-    'StepperItem',
     'ColumnSplit',
     'RowSplit',
     'SideBarContainer',
@@ -256,17 +254,6 @@ export default function marginTest() {
         let referenceRect = Utils.getComponentRect(data.pageConfig.buttonComponentKey);
         //Component to reference component and parent component margin calculation
         top = rect.top - referenceRect.top;
-        left = rect.left - rectParent.left;
-        right = rectParent.right - rect.right;
-        bottom = rectParent.bottom - rect.bottom;
-      } else if (data.pageConfig.componentKey == 'StepperItem') {
-        //parentComponent
-        let rectParent = Utils.getComponentRectByObj(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]);
-        //Component to  parent component margin calculation
-        top = rect.top - rectParent.top;
         left = rect.left - rectParent.left;
         right = rectParent.right - rect.right;
         bottom = rectParent.bottom - rect.bottom;

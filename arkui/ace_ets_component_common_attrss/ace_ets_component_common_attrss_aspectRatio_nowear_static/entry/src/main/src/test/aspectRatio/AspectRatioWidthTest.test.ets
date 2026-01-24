@@ -41,7 +41,6 @@ export default function aspectRatioWidthTest() {
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
     'Select',
-    'Stepper',
     'ColumnSplit',
     'FlowItem',
     'RowSplit',

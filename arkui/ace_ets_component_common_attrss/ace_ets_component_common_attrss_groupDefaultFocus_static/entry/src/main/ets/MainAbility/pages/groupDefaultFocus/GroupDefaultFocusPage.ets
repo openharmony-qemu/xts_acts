@@ -51,8 +51,6 @@ import {
   Toggle,
   TimePicker,
   TextPicker,
-  StepperItem,
-  Stepper,
   Slider,
   Select,
   Swiper,
@@ -257,26 +255,6 @@ struct GroupDefaultFocusPage {
             .width(200)
             .height(300)
             .applyStyles(this.commonStyle)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One').focusable(true)
-              }
-            }
-          }.applyStyles(this.commonStyle)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One').focusable(true)
-              }
-            }
-            .applyStyles(this.commonStyle)
-            .backgroundColor(Color.Red)
-            .width('100%')
-            .height('100%')
-          }.backgroundColor(Color.Yellow).width(200).height(100)
         } else if (this.targetView == 'TextPicker') {
           TextPicker({ range: ['apple1', 'orange2', 'peach3', 'grape4'] })
             .width(200)

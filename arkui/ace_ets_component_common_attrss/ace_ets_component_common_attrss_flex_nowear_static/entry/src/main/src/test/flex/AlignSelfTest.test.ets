@@ -46,7 +46,6 @@ export default function alignSelfTest() {
   let supportView: Array<string> = new Array<string>(
     'SideBarContainer',
     'WaterFlow',
-    'Stepper',
     'Select',
     'RowSplit',
     'ColumnSplit'

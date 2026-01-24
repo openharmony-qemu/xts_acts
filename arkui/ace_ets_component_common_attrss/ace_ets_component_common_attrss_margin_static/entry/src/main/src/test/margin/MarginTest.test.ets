@@ -299,17 +299,6 @@ export default function marginTest() {
         left = rect.left - rectParent.left;
         right = rectParent.right - rect.right;
         bottom = rectParent.bottom - rect.bottom;
-      } else if (data.pageConfig.componentKey == 'StepperItem') {
-        //parentComponent
-        let rectParent = Utils.getComponentRectByObj(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]);
-        //Component to  parent component margin calculation
-        top = rect.top - rectParent.top;
-        left = rect.left - rectParent.left;
-        right = rectParent.right - rect.right;
-        bottom = rectParent.bottom - rect.bottom;
       } else if ((data.pageConfig.componentKey == 'GridCol')
         || (data.pageConfig.componentKey == 'FlowItem')
         || (data.pageConfig.componentKey == 'GridItem')

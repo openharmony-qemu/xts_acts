@@ -38,7 +38,6 @@ export default function flexBasisTest() {
   let supportView: Array<string> = new Array<string>(
     'RowSplit',
     'ColumnSplit',
-    'Stepper',
     'Select',
     'SideBarContainer',
     'WaterFlow'

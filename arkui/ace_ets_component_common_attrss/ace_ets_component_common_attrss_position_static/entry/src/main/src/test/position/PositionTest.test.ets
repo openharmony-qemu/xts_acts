@@ -223,11 +223,11 @@ export default function positionTest() {
       console.info('[' + data.caseTag + '] check actual position.');
       let rect: RectValue = Utils.getComponentRect(data.pageConfig.componentKey ?? '');
 
-      //When the target component is TabContent or StepperItem,
-      //the parent component is the Swiper on the outer layer of Tabs or Stepper.
+      //When the target component is TabContent,
+      //the parent component is the Swiper on the outer layer of Tabs.
       let rectParent = parentRectAfter;
       let benchmarkChanged = false;
-      if ('TabContent' == data.pageConfig.targetView || 'StepperItem' == data.pageConfig.targetView) {
+      if ('TabContent' == data.pageConfig.targetView) {
         console.info('[wll210]'+JSON.stringify(inspector.getInspectorTree()))
         let parentComponent = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         parentComponent?.getArray('$children')?.forEach((element: jsonx.JsonElement) => {

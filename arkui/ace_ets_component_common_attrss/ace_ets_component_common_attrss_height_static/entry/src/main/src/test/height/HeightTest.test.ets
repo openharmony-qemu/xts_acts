@@ -106,7 +106,6 @@ export default function heightTest() {
     'Rect',
     'Shape',
     'Line',
-    //    'StepperItem',
     //    'GridCol',
     'GridItem',
     'RelativeContainer',
