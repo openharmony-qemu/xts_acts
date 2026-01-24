@@ -264,7 +264,7 @@ export default function RdbStoreErrorCodeAdd3Test() {
     })
 
     /**
-     * @tc.name   LiteResultSetgetColumnNamesTest0008
+     * @tc.name   LiteResultSetgetColumnIndexTrueTest0008
      * @tc.number SUB_DistributedData_RelationalStore_RdbStoreSetSetgetColumnNamesTest0008
      * @tc.desc   getDouble normal test
      * @tc.size   getColumnNames
