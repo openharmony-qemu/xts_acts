@@ -25,12 +25,12 @@ export default function builtinsIsBinDigitTest() {
     })
 
     /**
-     * @tc.name: charIsBinDigitTestCharBitSize0100
-     * @tc.number: CHAR_IS_BIN_DIGIT_TEST_CHAR_BIT_SIZE_0100
-     * @tc.desc: Test isBinDigit with CHAR_BIT_SIZE valid range (binary '0' in 16-bit range)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    charIsBinDigitTestCharBitSize0100
+     * @tc.number  CHAR_IS_BIN_DIGIT_TEST_CHAR_BIT_SIZE_0100
+     * @tc.desc    Test isBinDigit with CHAR_BIT_SIZE valid range (binary '0' in 16-bit range)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('charIsBinDigitTestCharBitSize0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const validBinary0 = new Char(c'0');
@@ -38,12 +38,12 @@ export default function builtinsIsBinDigitTest() {
     });
 
     /**
-     * @tc.name: charIsBinDigitTestMaxCodePoint0200
-     * @tc.number: CHAR_IS_BIN_DIGIT_TEST_MAX_CODE_POINT_0200
-     * @tc.desc: Test isBinDigit with MAX_CODE_POINT valid mapped char (non-binary char)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    charIsBinDigitTestMaxCodePoint0200
+     * @tc.number  CHAR_IS_BIN_DIGIT_TEST_MAX_CODE_POINT_0200
+     * @tc.desc    Test isBinDigit with MAX_CODE_POINT valid mapped char (non-binary char)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('charIsBinDigitTestMaxCodePoint0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const nonBinaryChar = new Char(c'\uFFFF');
@@ -51,12 +51,12 @@ export default function builtinsIsBinDigitTest() {
     });
 
     /**
-     * @tc.name: charIsBinDigitTestHighSurrogateMin0300
-     * @tc.number: CHAR_IS_BIN_DIGIT_TEST_HIGH_SURROGATE_MIN_0300
-     * @tc.desc: Test isBinDigit with HIGH_SURROGATE_MIN (\uD800)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    charIsBinDigitTestHighSurrogateMin0300
+     * @tc.number  CHAR_IS_BIN_DIGIT_TEST_HIGH_SURROGATE_MIN_0300
+     * @tc.desc    Test isBinDigit with HIGH_SURROGATE_MIN (\uD800)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('charIsBinDigitTestHighSurrogateMin0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const highSurrogateMinChar = new Char(Char.HIGH_SURROGATE_MIN);
@@ -64,12 +64,12 @@ export default function builtinsIsBinDigitTest() {
     });
 
     /**
-     * @tc.name: charIsBinDigitTestHighSurrogateMax0400
-     * @tc.number: CHAR_IS_BIN_DIGIT_TEST_HIGH_SURROGATE_MAX_0400
-     * @tc.desc: Test isBinDigit with HIGH_SURROGATE_MAX (\uDBFF)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    charIsBinDigitTestHighSurrogateMax0400
+     * @tc.number  CHAR_IS_BIN_DIGIT_TEST_HIGH_SURROGATE_MAX_0400
+     * @tc.desc    Test isBinDigit with HIGH_SURROGATE_MAX (\uDBFF)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('charIsBinDigitTestHighSurrogateMax0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const highSurrogateMaxChar = new Char(Char.HIGH_SURROGATE_MAX);
@@ -77,12 +77,12 @@ export default function builtinsIsBinDigitTest() {
     });
 
     /**
-     * @tc.name: charIsBinDigitTestLowSurrogateMin0500
-     * @tc.number: CHAR_IS_BIN_DIGIT_TEST_LOW_SURROGATE_MIN_0500
-     * @tc.desc: Test isBinDigit with LOW_SURROGATE_MIN (\uDC00)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    charIsBinDigitTestLowSurrogateMin0500
+     * @tc.number  CHAR_IS_BIN_DIGIT_TEST_LOW_SURROGATE_MIN_0500
+     * @tc.desc    Test isBinDigit with LOW_SURROGATE_MIN (\uDC00)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('charIsBinDigitTestLowSurrogateMin0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const lowSurrogateMinChar = new Char(Char.LOW_SURROGATE_MIN);
@@ -90,12 +90,12 @@ export default function builtinsIsBinDigitTest() {
     });
 
     /**
-     * @tc.name: charIsBinDigitTestLowSurrogateMax0600
-     * @tc.number: CHAR_IS_BIN_DIGIT_TEST_LOW_SURROGATE_MAX_0600
-     * @tc.desc: Test isBinDigit with LOW_SURROGATE_MAX (\uDFFF)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    charIsBinDigitTestLowSurrogateMax0600
+     * @tc.number  CHAR_IS_BIN_DIGIT_TEST_LOW_SURROGATE_MAX_0600
+     * @tc.desc    Test isBinDigit with LOW_SURROGATE_MAX (\uDFFF)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('charIsBinDigitTestLowSurrogateMax0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const lowSurrogateMaxChar = new Char(Char.LOW_SURROGATE_MAX);
@@ -103,12 +103,12 @@ export default function builtinsIsBinDigitTest() {
     });
 
     /**
-     * @tc.name: charIsBinDigitTestBmpBorderBelow0700
-     * @tc.number: CHAR_IS_BIN_DIGIT_TEST_BMP_BORDER_BELOW_0700
-     * @tc.desc: Test isBinDigit with BMP_BORDER below (0xFFFE, valid BMP char)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    charIsBinDigitTestBmpBorderBelow0700
+     * @tc.number  CHAR_IS_BIN_DIGIT_TEST_BMP_BORDER_BELOW_0700
+     * @tc.desc    Test isBinDigit with BMP_BORDER below (0xFFFE, valid BMP char)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('charIsBinDigitTestBmpBorderBelow0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const bmpBelowChar = new Char(c'\uFFFE');
@@ -116,12 +116,12 @@ export default function builtinsIsBinDigitTest() {
     });
 
     /**
-     * @tc.name: charIsBinDigitTestBmpBorderAbove0800
-     * @tc.number: CHAR_IS_BIN_DIGIT_TEST_BMP_BORDER_ABOVE_0800
-     * @tc.desc: Test isBinDigit with BMP_BORDER mapped valid char (binary '1')
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    charIsBinDigitTestBmpBorderAbove0800
+     * @tc.number  CHAR_IS_BIN_DIGIT_TEST_BMP_BORDER_ABOVE_0800
+     * @tc.desc    Test isBinDigit with BMP_BORDER mapped valid char (binary '1')
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('charIsBinDigitTestBmpBorderAbove0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bmpAboveBinary1 = new Char(c'1');
@@ -129,12 +129,12 @@ export default function builtinsIsBinDigitTest() {
     });
 
     /**
-     * @tc.name: charIsBinDigitTestMinValue0900
-     * @tc.number: CHAR_IS_BIN_DIGIT_TEST_MIN_VALUE_0900
-     * @tc.desc: Test isBinDigit with MIN_VALUE (\u0000)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    charIsBinDigitTestMinValue0900
+     * @tc.number  CHAR_IS_BIN_DIGIT_TEST_MIN_VALUE_0900
+     * @tc.desc    Test isBinDigit with MIN_VALUE (\u0000)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('charIsBinDigitTestMinValue0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const minValueChar = new Char(Char.MIN_VALUE);
@@ -142,12 +142,12 @@ export default function builtinsIsBinDigitTest() {
     });
 
     /**
-     * @tc.name: charIsBinDigitTestMaxValue1000
-     * @tc.number: CHAR_IS_BIN_DIGIT_TEST_MAX_VALUE_1000
-     * @tc.desc: Test isBinDigit with MAX_VALUE (\uFFFF)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    charIsBinDigitTestMaxValue1000
+     * @tc.number  CHAR_IS_BIN_DIGIT_TEST_MAX_VALUE_1000
+     * @tc.desc    Test isBinDigit with MAX_VALUE (\uFFFF)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('charIsBinDigitTestMaxValue1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const maxValueChar = new Char(Char.MAX_VALUE);

@@ -43,12 +43,12 @@ export default function builtinsDigitTest() {
     })
 
     /**
-     * @tc.name: builtinsCharTest0001
-     * @tc.number: BUILTINS_CHAR_TEST0001
-     * @tc.desc: Test charsToCodePoint method with valid surrogate pairs
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0001
+     * @tc.number  BUILTINS_CHAR_TEST0001
+     * @tc.desc    Test charsToCodePoint method with valid surrogate pairs
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let highSurrogate: char = c'\uD83D';
@@ -63,12 +63,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0002
-     * @tc.number: BUILTINS_CHAR_TEST0002
-     * @tc.desc: Test isBinDigit static method with binary and non-binary values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0002
+     * @tc.number  BUILTINS_CHAR_TEST0002
+     * @tc.desc    Test isBinDigit static method with binary and non-binary values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isBinDigit(c'0')).assertTrue();
@@ -81,12 +81,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0003
-     * @tc.number: BUILTINS_CHAR_TEST0003
-     * @tc.desc: Test isBinDigit instance method with binary and non-binary values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0003
+     * @tc.number  BUILTINS_CHAR_TEST0003
+     * @tc.desc    Test isBinDigit instance method with binary and non-binary values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let char0: Char = new Char(c'0');
@@ -101,12 +101,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0004
-     * @tc.number: BUILTINS_CHAR_TEST0004
-     * @tc.desc: Test isDecDigit static method with decimal and non-decimal values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0004
+     * @tc.number  BUILTINS_CHAR_TEST0004
+     * @tc.desc    Test isDecDigit static method with decimal and non-decimal values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isDecDigit(c'0')).assertTrue();
@@ -120,12 +120,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0005
-     * @tc.number: BUILTINS_CHAR_TEST0005
-     * @tc.desc: Test isDecDigit instance method with decimal and non-decimal values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0005
+     * @tc.number  BUILTINS_CHAR_TEST0005
+     * @tc.desc    Test isDecDigit instance method with decimal and non-decimal values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let char0: Char = new Char(c'0');
@@ -142,12 +142,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0006
-     * @tc.number: BUILTINS_CHAR_TEST0006
-     * @tc.desc: Test isHexDigit static method with hexadecimal and non-hexadecimal values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0006
+     * @tc.number  BUILTINS_CHAR_TEST0006
+     * @tc.desc    Test isHexDigit static method with hexadecimal and non-hexadecimal values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isHexDigit(c'0')).assertTrue();
@@ -163,12 +163,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0007
-     * @tc.number: BUILTINS_CHAR_TEST0007
-     * @tc.desc: Test isHexDigit instance method with hexadecimal and non-hexadecimal values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0007
+     * @tc.number  BUILTINS_CHAR_TEST0007
+     * @tc.desc    Test isHexDigit instance method with hexadecimal and non-hexadecimal values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let char0: Char = new Char(c'0');
@@ -187,12 +187,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0008
-     * @tc.number: BUILTINS_CHAR_TEST0008
-     * @tc.desc: Test isLetter static method with alphabetic and non-alphabetic values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0008
+     * @tc.number  BUILTINS_CHAR_TEST0008
+     * @tc.desc    Test isLetter static method with alphabetic and non-alphabetic values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isLetter(c'a')).assertTrue();
@@ -209,12 +209,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0009
-     * @tc.number: BUILTINS_CHAR_TEST0009
-     * @tc.desc: Test isLetter instance method with alphabetic and non-alphabetic values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0009
+     * @tc.number  BUILTINS_CHAR_TEST0009
+     * @tc.desc    Test isLetter instance method with alphabetic and non-alphabetic values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let charA: Char = new Char(c'A');
@@ -233,12 +233,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0010
-     * @tc.number: BUILTINS_CHAR_TEST0010
-     * @tc.desc: Test isUpperCase static method with uppercase and non-uppercase values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0010
+     * @tc.number  BUILTINS_CHAR_TEST0010
+     * @tc.desc    Test isUpperCase static method with uppercase and non-uppercase values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isUpperCase(c'A')).assertTrue();
@@ -254,12 +254,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0011
-     * @tc.number: BUILTINS_CHAR_TEST0011
-     * @tc.desc: Test isUpperCase instance method with uppercase and non-uppercase values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0011
+     * @tc.number  BUILTINS_CHAR_TEST0011
+     * @tc.desc    Test isUpperCase instance method with uppercase and non-uppercase values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let charA: Char = new Char(c'A');
@@ -280,12 +280,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0012
-     * @tc.number: BUILTINS_CHAR_TEST0012
-     * @tc.desc: Test isLowerCase static method with lowercase and non-lowercase values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0012
+     * @tc.number  BUILTINS_CHAR_TEST0012
+     * @tc.desc    Test isLowerCase static method with lowercase and non-lowercase values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isLowerCase(c'a')).assertTrue();
@@ -301,12 +301,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0013
-     * @tc.number: BUILTINS_CHAR_TEST0013
-     * @tc.desc: Test isLowerCase instance method with lowercase and non-lowercase values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0013
+     * @tc.number  BUILTINS_CHAR_TEST0013
+     * @tc.desc    Test isLowerCase instance method with lowercase and non-lowercase values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let charA: Char = new Char(c'a');
@@ -327,12 +327,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0014
-     * @tc.number: BUILTINS_CHAR_TEST0014
-     * @tc.desc: Test toUpperCase static method converting lowercase to uppercase
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0014
+     * @tc.number  BUILTINS_CHAR_TEST0014
+     * @tc.desc    Test toUpperCase static method converting lowercase to uppercase
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.toUpperCase(c'a')).assertEqual(c'A');
@@ -349,12 +349,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0015
-     * @tc.number: BUILTINS_CHAR_TEST0015
-     * @tc.desc: Test toUpperCase instance method converting lowercase instances to uppercase
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0015
+     * @tc.number  BUILTINS_CHAR_TEST0015
+     * @tc.desc    Test toUpperCase instance method converting lowercase instances to uppercase
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let charLowerA: Char = new Char(c'a');
@@ -373,12 +373,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0016
-     * @tc.number: BUILTINS_CHAR_TEST0016
-     * @tc.desc: Test toLowerCase static method converting uppercase to lowercase
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0016
+     * @tc.number  BUILTINS_CHAR_TEST0016
+     * @tc.desc    Test toLowerCase static method converting uppercase to lowercase
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.toLowerCase(c'A')).assertEqual(c'a');
@@ -395,12 +395,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0017
-     * @tc.number: BUILTINS_CHAR_TEST0017
-     * @tc.desc: Test toLowerCase instance method converting uppercase instances to lowercase
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0017
+     * @tc.number  BUILTINS_CHAR_TEST0017
+     * @tc.desc    Test toLowerCase instance method converting uppercase instances to lowercase
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let charUpperA: Char = new Char(c'A');
@@ -419,12 +419,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0018
-     * @tc.number: BUILTINS_CHAR_TEST0018
-     * @tc.desc: Test isWhiteSpace static method with whitespace and non-whitespace values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0018
+     * @tc.number  BUILTINS_CHAR_TEST0018
+     * @tc.desc    Test isWhiteSpace static method with whitespace and non-whitespace values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isWhiteSpace(c' ')).assertTrue();
@@ -439,12 +439,12 @@ export default function builtinsDigitTest() {
     });
     
     /**
-     * @tc.name: builtinsCharTest0019
-     * @tc.number: BUILTINS_CHAR_TEST0019
-     * @tc.desc: Test isWhiteSpace instance method with whitespace and non-whitespace instances
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsCharTest0019
+     * @tc.number  BUILTINS_CHAR_TEST0019
+     * @tc.desc    Test isWhiteSpace instance method with whitespace and non-whitespace instances
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsCharTest0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let charSpace: Char = new Char(c' ');
