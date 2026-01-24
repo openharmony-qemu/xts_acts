@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -173,6 +173,40 @@ export default function FileShareTest() {
         let value = fileShare.OperationMode.RENAME_MODE;
         console.info('SUB_Security_FileShare_OperationMode_0300 value is: ' + value);
         expect(value).assertEqual(0b10000);
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Security_FileShare_OperationMode_0400
+     * @tc.number SUB_Security_FileShare_OperationMode_0400
+     * @tc.desc   Test fileShare OperationMode READ_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_FileShare_OperationMode_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        console.info('----------------------SUB_Security_FileShare_OperationMode_0400---------------------------');
+        let value = fileShare.OperationMode.READ_MODE;
+        console.info('SUB_Security_FileShare_OperationMode_0400 value is: ' + value);
+        expect(value).assertEqual(0b1);
+        done();
+      })
+    
+    /**
+     * @tc.name   SUB_Security_FileShare_OperationMode_0500
+     * @tc.number SUB_Security_FileShare_OperationMode_0500
+     * @tc.desc   Test fileShare OperationMode WRITE_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_FileShare_OperationMode_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        console.info('----------------------SUB_Security_FileShare_OperationMode_0500---------------------------');
+        let value = fileShare.OperationMode.WRITE_MODE;
+        console.info('SUB_Security_FileShare_OperationMode_0500 value is: ' + value);
+        expect(value).assertEqual(0b10);
         done();
       })
   })
