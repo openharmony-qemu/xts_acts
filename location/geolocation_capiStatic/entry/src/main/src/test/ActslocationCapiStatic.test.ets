@@ -616,7 +616,6 @@ export default function actslocationTest() {
                   if (res) {
                     console.info("fence num:" + res.size);
                     expect(res.size != 0).assertTrue();
-                    }
                   }
                 })
                 .catch((error) => {
