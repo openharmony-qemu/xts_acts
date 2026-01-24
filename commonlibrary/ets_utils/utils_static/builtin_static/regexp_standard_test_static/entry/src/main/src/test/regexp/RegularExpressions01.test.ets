@@ -1246,14 +1246,13 @@ export default function RegularExpressions01Test() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_7000
-     * @tc.name      testGroupingModuleCase0070
-     * @tc.desc      Verify overlapping matches by manually adjusting lastIndex after each exec.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.number SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_7000
+     * @tc.name testGroupingModuleCase0070
+     * @tc.desc Verify overlapping matches by manually adjusting lastIndex after each exec.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
-
     it("testGroupingModuleCase0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const re70: RegExp = new RegExp('(a.)', 'g');
       const str: string = "aaa";
