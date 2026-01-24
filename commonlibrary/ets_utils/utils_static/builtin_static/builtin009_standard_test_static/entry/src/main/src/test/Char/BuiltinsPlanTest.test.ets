@@ -38,12 +38,12 @@ export default function builtinsPlanTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-    * @tc.name: builtinsPlanTest0001
-    * @tc.number: BUILTINS_PLAN_TEST0001
-    * @tc.desc: Test isInBasicMultilingualPlane(char) returns true for regular BMP values
-    * @tc.type: FUNCTION
-    * @tc.size: SMALLTEST
-    * @tc.level: LEVEL0
+    * @tc.name    builtinsPlanTest0001
+    * @tc.number  BUILTINS_PLAN_TEST0001
+    * @tc.desc    Test isInBasicMultilingualPlane(char) returns true for regular BMP values
+    * @tc.type    FUNCTION
+    * @tc.size    SMALLTEST
+    * @tc.level   LEVEL0
     */
     it('builtinsPlanTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isInBasicMultilingualPlane(c'A')).assertTrue();
@@ -52,12 +52,12 @@ export default function builtinsPlanTest() {
       expect(Char.isInBasicMultilingualPlane(Char.MAX_VALUE)).assertTrue();
     });
         /**
-     * @tc.name: builtinsPlanTest0002
-     * @tc.number: BUILTINS_PLAN_TEST0002
-     * @tc.desc: Test isInBasicMultilingualPlane returns true for basic ASCII letters
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0002
+     * @tc.number  BUILTINS_PLAN_TEST0002
+     * @tc.desc    Test isInBasicMultilingualPlane returns true for basic ASCII letters
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(c'A');
@@ -69,12 +69,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0003
-     * @tc.number: BUILTINS_PLAN_TEST0003
-     * @tc.desc: Test isInBasicMultilingualPlane returns true for ASCII digits and symbols
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0003
+     * @tc.number  BUILTINS_PLAN_TEST0003
+     * @tc.desc    Test isInBasicMultilingualPlane returns true for ASCII digits and symbols
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(c'0');
@@ -86,12 +86,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0004
-     * @tc.number: BUILTINS_PLAN_TEST0004
-     * @tc.desc: Test isInBasicMultilingualPlane returns false for all values in high surrogate range
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0004
+     * @tc.number  BUILTINS_PLAN_TEST0004
+     * @tc.desc    Test isInBasicMultilingualPlane returns false for all values in high surrogate range
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(Char.HIGH_SURROGATE_MIN);
@@ -103,12 +103,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0005
-     * @tc.number: BUILTINS_PLAN_TEST0005
-     * @tc.desc: Test isInBasicMultilingualPlane returns false for all values in low surrogate range
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0005
+     * @tc.number  BUILTINS_PLAN_TEST0005
+     * @tc.desc    Test isInBasicMultilingualPlane returns false for all values in low surrogate range
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(Char.LOW_SURROGATE_MIN);
@@ -119,12 +119,12 @@ export default function builtinsPlanTest() {
       expect(result3).assertFalse();
     });
     /**
-     * @tc.name: builtinsPlanTest0006
-     * @tc.number: BUILTINS_PLAN_TEST0006
-     * @tc.desc: Test instance isInBasicMultilingualPlane method returns correct results for MIN_VALUE, Chinese ideograph, HIGH_SURROGATE_MIN and MAX_VALUE
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0006
+     * @tc.number  BUILTINS_PLAN_TEST0006
+     * @tc.desc    Test instance isInBasicMultilingualPlane method returns correct results for MIN_VALUE, Chinese ideograph, HIGH_SURROGATE_MIN and MAX_VALUE
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let instance1 = new Char(Char.MIN_VALUE);
@@ -142,12 +142,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0007
-     * @tc.number: BUILTINS_PLAN_TEST0007
-     * @tc.desc: Test isInBasicMultilingualPlane for values immediately before and after surrogate ranges
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0007
+     * @tc.number  BUILTINS_PLAN_TEST0007
+     * @tc.desc    Test isInBasicMultilingualPlane for values immediately before and after surrogate ranges
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(c'\uD7FF');
@@ -159,12 +159,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0008
-     * @tc.number: BUILTINS_PLAN_TEST0008
-     * @tc.desc: Test static isInBasicMultilingualPlane with code point parameters for zero and maximum value
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0008
+     * @tc.number  BUILTINS_PLAN_TEST0008
+     * @tc.desc    Test static isInBasicMultilingualPlane with code point parameters for zero and maximum value
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(0);
@@ -174,12 +174,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0009
-     * @tc.number: BUILTINS_PLAN_TEST0009
-     * @tc.desc: Test static isInBasicMultilingualPlane with code point parameters at surrogate boundaries
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0009
+     * @tc.number  BUILTINS_PLAN_TEST0009
+     * @tc.desc    Test static isInBasicMultilingualPlane with code point parameters at surrogate boundaries
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(0xD7FF);
@@ -191,12 +191,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0010
-     * @tc.number: BUILTINS_PLAN_TEST0010
-     * @tc.desc: Test static isInBasicMultilingualPlane with code point parameters beyond basic multilingual plane
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0010
+     * @tc.number  BUILTINS_PLAN_TEST0010
+     * @tc.desc    Test static isInBasicMultilingualPlane with code point parameters beyond basic multilingual plane
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(0x10000);
@@ -208,12 +208,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0011
-     * @tc.number: BUILTINS_PLAN_TEST0011
-     * @tc.desc: Test isInBasicMultilingualPlane returns true for various writing system values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0011
+     * @tc.number  BUILTINS_PLAN_TEST0011
+     * @tc.desc    Test isInBasicMultilingualPlane returns true for various writing system values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(c'\u30A2');
@@ -225,12 +225,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0012
-     * @tc.number: BUILTINS_PLAN_TEST0012
-     * @tc.desc: Test isInBasicMultilingualPlane returns true for private use area values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0012
+     * @tc.number  BUILTINS_PLAN_TEST0012
+     * @tc.desc    Test isInBasicMultilingualPlane returns true for private use area values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(c'\uE000');
@@ -242,12 +242,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0013
-     * @tc.number: BUILTINS_PLAN_TEST0013
-     * @tc.desc: Comprehensive test covering high and low surrogate range values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0013
+     * @tc.number  BUILTINS_PLAN_TEST0013
+     * @tc.desc    Comprehensive test covering high and low surrogate range values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(c'\uD800');
@@ -259,12 +259,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0014
-     * @tc.number: BUILTINS_PLAN_TEST0014
-     * @tc.desc: Test isInBasicMultilingualPlane with code point parameters for basic BMP values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0014
+     * @tc.number  BUILTINS_PLAN_TEST0014
+     * @tc.desc    Test isInBasicMultilingualPlane with code point parameters for basic BMP values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(0);
@@ -276,12 +276,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0015
-     * @tc.number: BUILTINS_PLAN_TEST0015
-     * @tc.desc: Test isInBasicMultilingualPlane with code point parameters at surrogate range boundaries
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0015
+     * @tc.number  BUILTINS_PLAN_TEST0015
+     * @tc.desc    Test isInBasicMultilingualPlane with code point parameters at surrogate range boundaries
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(0xD7FF);
@@ -293,12 +293,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0016
-     * @tc.number: BUILTINS_PLAN_TEST0016
-     * @tc.desc: Test isInBasicMultilingualPlane with code point parameters after surrogate range
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0016
+     * @tc.number  BUILTINS_PLAN_TEST0016
+     * @tc.desc    Test isInBasicMultilingualPlane with code point parameters after surrogate range
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(0xE000);
@@ -310,12 +310,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0017
-     * @tc.number: BUILTINS_PLAN_TEST0017
-     * @tc.desc: Test isInBasicMultilingualPlane with code point parameters beyond BMP range
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0017
+     * @tc.number  BUILTINS_PLAN_TEST0017
+     * @tc.desc    Test isInBasicMultilingualPlane with code point parameters beyond BMP range
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(0x10000);
@@ -327,12 +327,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0018
-     * @tc.number: BUILTINS_PLAN_TEST0018
-     * @tc.desc: Test isInBasicMultilingualPlane with code point parameters inside high surrogate range
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0018
+     * @tc.number  BUILTINS_PLAN_TEST0018
+     * @tc.desc    Test isInBasicMultilingualPlane with code point parameters inside high surrogate range
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(0xD850);
@@ -344,12 +344,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0019
-     * @tc.number: BUILTINS_PLAN_TEST0019
-     * @tc.desc: Test isInBasicMultilingualPlane with code point parameters inside low surrogate range
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0019
+     * @tc.number  BUILTINS_PLAN_TEST0019
+     * @tc.desc    Test isInBasicMultilingualPlane with code point parameters inside low surrogate range
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(0xDC00);
@@ -361,12 +361,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0020
-     * @tc.number: BUILTINS_PLAN_TEST0020
-     * @tc.desc: Test isInBasicMultilingualPlane with code point parameters for common symbols
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0020
+     * @tc.number  BUILTINS_PLAN_TEST0020
+     * @tc.desc    Test isInBasicMultilingualPlane with code point parameters for common symbols
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(0x00A5);
@@ -378,12 +378,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0021
-     * @tc.number: BUILTINS_PLAN_TEST0021
-     * @tc.desc: Test isInBasicMultilingualPlane with code point parameters at critical boundary values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0021
+     * @tc.number  BUILTINS_PLAN_TEST0021
+     * @tc.desc    Test isInBasicMultilingualPlane with code point parameters at critical boundary values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let result1 = Char.isInBasicMultilingualPlane(1);
@@ -394,12 +394,12 @@ export default function builtinsPlanTest() {
       expect(result3).assertTrue();
     });
     /**
-     * @tc.name: builtinsPlanTest0022
-     * @tc.number: BUILTINS_PLAN_TEST0022
-     * @tc.desc: Test instance isInBasicMultilingualPlane returns true for MIN_VALUE
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0022
+     * @tc.number  BUILTINS_PLAN_TEST0022
+     * @tc.desc    Test instance isInBasicMultilingualPlane returns true for MIN_VALUE
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let instance = new Char(Char.MIN_VALUE);
@@ -408,12 +408,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0023
-     * @tc.number: BUILTINS_PLAN_TEST0023
-     * @tc.desc: Test instance isInBasicMultilingualPlane returns true for MAX_VALUE
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0023
+     * @tc.number  BUILTINS_PLAN_TEST0023
+     * @tc.desc    Test instance isInBasicMultilingualPlane returns true for MAX_VALUE
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let instance = new Char(Char.MAX_VALUE);
@@ -422,12 +422,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0024
-     * @tc.number: BUILTINS_PLAN_TEST0024
-     * @tc.desc: Test instance isInBasicMultilingualPlane returns true for basic English letters
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0024
+     * @tc.number  BUILTINS_PLAN_TEST0024
+     * @tc.desc    Test instance isInBasicMultilingualPlane returns true for basic English letters
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let instance1 = new Char(c'A');
@@ -439,12 +439,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0025
-     * @tc.number: BUILTINS_PLAN_TEST0025
-     * @tc.desc: Test instance isInBasicMultilingualPlane returns true for ASCII digits and common symbols
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0025
+     * @tc.number  BUILTINS_PLAN_TEST0025
+     * @tc.desc    Test instance isInBasicMultilingualPlane returns true for ASCII digits and common symbols
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let instance1 = new Char(c'7');
@@ -456,12 +456,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0026
-     * @tc.number: BUILTINS_PLAN_TEST0026
-     * @tc.desc: Test instance isInBasicMultilingualPlane returns false for high surrogate range values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0026
+     * @tc.number  BUILTINS_PLAN_TEST0026
+     * @tc.desc    Test instance isInBasicMultilingualPlane returns false for high surrogate range values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let instance1 = new Char(Char.HIGH_SURROGATE_MIN);
@@ -476,12 +476,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0027
-     * @tc.number: BUILTINS_PLAN_TEST0027
-     * @tc.desc: Test instance isInBasicMultilingualPlane returns false for low surrogate range values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0027
+     * @tc.number  BUILTINS_PLAN_TEST0027
+     * @tc.desc    Test instance isInBasicMultilingualPlane returns false for low surrogate range values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let instance1 = new Char(Char.LOW_SURROGATE_MIN);
@@ -496,12 +496,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0028
-     * @tc.number: BUILTINS_PLAN_TEST0028
-     * @tc.desc: Test instance isInBasicMultilingualPlane for values immediately before and after surrogate ranges
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0028
+     * @tc.number  BUILTINS_PLAN_TEST0028
+     * @tc.desc    Test instance isInBasicMultilingualPlane for values immediately before and after surrogate ranges
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let instance1 = new Char(c'\uD7FF');
@@ -513,12 +513,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0029
-     * @tc.number: BUILTINS_PLAN_TEST0029
-     * @tc.desc: Test instance isInBasicMultilingualPlane returns true for common Chinese ideographs
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0029
+     * @tc.number  BUILTINS_PLAN_TEST0029
+     * @tc.desc    Test instance isInBasicMultilingualPlane returns true for common Chinese ideographs
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let instance1 = new Char(c'\u4E2D');
@@ -530,12 +530,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0030
-     * @tc.number: BUILTINS_PLAN_TEST0030
-     * @tc.desc: Test instance isInBasicMultilingualPlane returns true for Japanese Katakana
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0030
+     * @tc.number  BUILTINS_PLAN_TEST0030
+     * @tc.desc    Test instance isInBasicMultilingualPlane returns true for Japanese Katakana
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let instance1 = new Char(c'\u30A2');
@@ -547,12 +547,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0031
-     * @tc.number: BUILTINS_PLAN_TEST0031
-     * @tc.desc: Test instance isInBasicMultilingualPlane returns true for Korean syllables
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0031
+     * @tc.number  BUILTINS_PLAN_TEST0031
+     * @tc.desc    Test instance isInBasicMultilingualPlane returns true for Korean syllables
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let instance1 = new Char(c'\uAC00');
@@ -564,12 +564,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0032
-     * @tc.number: BUILTINS_PLAN_TEST0032
-     * @tc.desc: Test instance isInBasicMultilingualPlane returns true for Arabic letters
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0032
+     * @tc.number  BUILTINS_PLAN_TEST0032
+     * @tc.desc    Test instance isInBasicMultilingualPlane returns true for Arabic letters
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let instance1 = new Char(c'\u0645');
@@ -581,12 +581,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0033
-     * @tc.number: BUILTINS_PLAN_TEST0033
-     * @tc.desc: Test instance isInBasicMultilingualPlane returns true for private use area values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0033
+     * @tc.number  BUILTINS_PLAN_TEST0033
+     * @tc.desc    Test instance isInBasicMultilingualPlane returns true for private use area values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let instance1 = new Char(c'\uE000');
@@ -601,12 +601,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0034
-     * @tc.number: BUILTINS_PLAN_TEST0034
-     * @tc.desc: Test instance isInBasicMultilingualPlane returns true for common symbols and punctuation
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0034
+     * @tc.number  BUILTINS_PLAN_TEST0034
+     * @tc.desc    Test instance isInBasicMultilingualPlane returns true for common symbols and punctuation
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let instance1 = new Char(c'\u00A5');
@@ -621,12 +621,12 @@ export default function builtinsPlanTest() {
     });
 
     /**
-     * @tc.name: builtinsPlanTest0035
-     * @tc.number: BUILTINS_PLAN_TEST0035
-     * @tc.desc: Test instance isInBasicMultilingualPlane returns true for whitespace values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsPlanTest0035
+     * @tc.number  BUILTINS_PLAN_TEST0035
+     * @tc.desc    Test instance isInBasicMultilingualPlane returns true for whitespace values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsPlanTest0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let instance1 = new Char(c' ');
