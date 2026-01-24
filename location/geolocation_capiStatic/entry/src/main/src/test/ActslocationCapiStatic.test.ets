@@ -144,8 +144,8 @@ export default function actslocationTest() {
                     (err:BusinessError<void>|null,result:geoLocationManager.Location|undefined)=>{
                         if(err!=null){
                           console.info("GetCurrentLocation_0100_err_info", JSON.stringify(err))
-                          if (err.code == 3301200){
-                            expect(err.code == 3301200).assertTrue(); 
+                          if (err.code === 3301200){
+                            expect(err.code === 3301200).assertTrue(); 
                           } else {
                             expect().assertFail();
                           }
@@ -1228,8 +1228,8 @@ export default function actslocationTest() {
               let locationChange = (err:BusinessError<void>|null,location:geoLocationManager.Location|undefined): void => {
                 if (err) {
                   console.error('locationChange: err=' + JSON.stringify(err));
-                  if (err.code == 3301200){
-                    expect(err.code == 3301200).assertTrue(); 
+                  if (err.code === 3301200){
+                    expect(err.code === 3301200).assertTrue(); 
                   }
                 }
                 if (location) {
@@ -1292,8 +1292,8 @@ export default function actslocationTest() {
                       }
                       if (err) {
                         console.error('locationChange: err=' + JSON.stringify(err));
-                        if (err.code == 3301200){
-                          expect(err.code == 3301200).assertTrue(); 
+                        if (err.code === 3301200){
+                          expect(err.code === 3301200).assertTrue(); 
                         } else {
                         expect(err.code).assertEqual(401);
                         }
@@ -1327,8 +1327,8 @@ export default function actslocationTest() {
                       }
                       if (err) {
                         console.error('locationChange: err=' + JSON.stringify(err));
-                        if (err.code == 3301200){
-                          expect(err.code == 3301200).assertTrue(); 
+                        if (err.code === 3301200){
+                          expect(err.code === 3301200).assertTrue(); 
                         } else {
                         expect(err.code).assertEqual(3301100);
                         }
@@ -1389,8 +1389,8 @@ export default function actslocationTest() {
                       }
                       if (err) {
                         console.error('locationChange: err=' + JSON.stringify(err));
-                        if (err.code == 3301200){
-                          expect(err.code == 3301200).assertTrue(); 
+                        if (err.code === 3301200){
+                          expect(err.code === 3301200).assertTrue(); 
                         } else {
                         expect(err.code).assertEqual(401);
                         }
@@ -1419,8 +1419,8 @@ export default function actslocationTest() {
                     }
                     if (err) {
                       console.error('locationChange: err=' + JSON.stringify(err));
-                      if (err.code == 3301200){
-                        expect(err.code == 3301200).assertTrue(); 
+                      if (err.code === 3301200){
+                        expect(err.code === 3301200).assertTrue(); 
                        } else {
                       expect(err.code).assertEqual(3301100);
                       }
@@ -1479,8 +1479,8 @@ export default function actslocationTest() {
                 }).catch((err) => {
                   if (err instanceof BusinessError) {
                     console.error('promise, getCurrentLocation: error=' + err.code + err.message);
-                    if (err.code == 3301200){
-                      expect(err.code == 3301200).assertTrue(); 
+                    if (err.code === 3301200){
+                      expect(err.code === 3301200).assertTrue(); 
                      } else {
                     expect(err.code).assertEqual(401);
                      }
@@ -1512,8 +1512,8 @@ export default function actslocationTest() {
                 }).catch((err) => {
                   if (err instanceof BusinessError) {
                     console.error('promise, getCurrentLocation: error=' + err.code + err.message);
-                    if (err.code == 3301200){
-                      expect(err.code == 3301200).assertTrue(); 
+                    if (err.code === 3301200){
+                      expect(err.code === 3301200).assertTrue(); 
                      } else {
                     expect(err.code).assertEqual(3301100);
                     }
@@ -1546,8 +1546,8 @@ export default function actslocationTest() {
                   if (err instanceof BusinessError) {
                     console.error('promise, getCurrentLocation: error=' + err.code + err.message);
                   }
-                    if(err.code == 3301200){
-                      expect(err.code == 3301200).assertTrue();
+                    if(err.code === 3301200){
+                      expect(err.code === 3301200).assertTrue();
                     }
                   });
               } catch (err) {
@@ -1730,8 +1730,8 @@ export default function actslocationTest() {
                   }
                 if (err) {
                   console.error('getAddressesFromLocationName: err=' + JSON.stringify(err));
-                  if (err.code == 3301200){
-                    expect(err.code == 3301200).assertTrue();
+                  if (err.code === 3301200){
+                    expect(err.code === 3301200).assertTrue();
                    } else {
                   expect(err.code).assertEqual(401);
                    }
@@ -1787,8 +1787,8 @@ export default function actslocationTest() {
                 }                    
                 if(err){
                     console.error('getCountryCode: err=' + JSON.stringify(err));
-                    if (err.code == 3301200){
-                      expect(err.code == 3301200).assertTrue(); 
+                    if (err.code === 3301200){
+                      expect(err.code === 3301200).assertTrue(); 
                      } else {
                     expect(err.code).assertEqual(3301500);
                      }
@@ -1817,8 +1817,8 @@ export default function actslocationTest() {
                     if (err instanceof BusinessError) {
                     console.error('promise, getCountryCode: error=' + err.code + err.message);
                     }
-                    if (err.code == 3301200){
-                      expect(err.code == 3301200).assertTrue(); 
+                    if (err.code === 3301200){
+                      expect(err.code === 3301200).assertTrue(); 
                      } else {
                     expect(err.code).assertEqual(3301500);
                      }
@@ -1843,8 +1843,8 @@ export default function actslocationTest() {
                 expect(location!=null).assertTrue();
               } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
-                if (err.code == 3301200){
-                  expect(err.code == 3301200).assertTrue(); 
+                if (err.code === 3301200){
+                  expect(err.code === 3301200).assertTrue(); 
                  } else {
                 expect(err.code).assertEqual(201);
                  }
@@ -1865,8 +1865,8 @@ export default function actslocationTest() {
                 expect(location!=null).assertTrue();
               } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
-                if (err.code == 3301200){
-                  expect(err.code == 3301200).assertTrue(); 
+                if (err.code === 3301200){
+                  expect(err.code === 3301200).assertTrue(); 
                  } else {
                 expect(err.code).assertEqual(801);
                  }
