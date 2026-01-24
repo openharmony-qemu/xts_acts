@@ -40,12 +40,12 @@ export default function builtinsBootRuntimeLinkerTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest0100
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_0100
-     * @tc.desc: Test getBootRuntimeLinker returns non-null instance
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsBootRuntimeLinkerTest0100
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_0100
+     * @tc.desc    Test getBootRuntimeLinker returns non-null instance
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsBootRuntimeLinkerTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = getBootRuntimeLinker();
@@ -54,12 +54,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest0200
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_0200
-     * @tc.desc: Test getBootRuntimeLinker returns BootRuntimeLinker instance
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsBootRuntimeLinkerTest0200
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_0200
+     * @tc.desc    Test getBootRuntimeLinker returns BootRuntimeLinker instance
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsBootRuntimeLinkerTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = getBootRuntimeLinker();
@@ -68,12 +68,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest0300
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_0300
-     * @tc.desc: Test getBootRuntimeLinker singleton property
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest0300
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_0300
+     * @tc.desc    Test getBootRuntimeLinker singleton property
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const linker1 = getBootRuntimeLinker();
@@ -86,12 +86,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest0400
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_0400
-     * @tc.desc: Test BootRuntimeLinker instance static property
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest0400
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_0400
+     * @tc.desc    Test BootRuntimeLinker instance static property
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const linker = getBootRuntimeLinker();
@@ -102,12 +102,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest0500
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_0500
-     * @tc.desc: Test getBootRuntimeLinker with various call contexts
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest0500
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_0500
+     * @tc.desc    Test getBootRuntimeLinker with various call contexts
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const testFunction = () => {
@@ -121,12 +121,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest0600
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_0600
-     * @tc.desc: Test getBootRuntimeLinker memory reference stability
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest0600
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_0600
+     * @tc.desc    Test getBootRuntimeLinker memory reference stability
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const linker1 = getBootRuntimeLinker();
@@ -139,12 +139,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest0700
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_0700
-     * @tc.desc: Test getBootRuntimeLinker in concurrent scenarios simulation
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest0700
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_0700
+     * @tc.desc    Test getBootRuntimeLinker in concurrent scenarios simulation
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const linkers: BootRuntimeLinker[] = [];
@@ -160,12 +160,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest0800
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_0800
-     * @tc.desc: Test getBootRuntimeLinker with stress test
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest0800
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_0800
+     * @tc.desc    Test getBootRuntimeLinker with stress test
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const startTime = Date.now();
@@ -183,12 +183,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest0900
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_0900
-     * @tc.desc: Test getBootRuntimeLinker return value type and properties
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest0900
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_0900
+     * @tc.desc    Test getBootRuntimeLinker return value type and properties
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const linker = getBootRuntimeLinker();
@@ -200,12 +200,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest1000
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_1000
-     * @tc.desc: Test getBootRuntimeLinker in different scope contexts
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest1000
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_1000
+     * @tc.desc    Test getBootRuntimeLinker in different scope contexts
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       {
@@ -224,12 +224,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest1100
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_1100
-     * @tc.desc: Test getBootRuntimeLinker with try-catch error handling
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest1100
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_1100
+     * @tc.desc    Test getBootRuntimeLinker with try-catch error handling
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       try {
@@ -244,12 +244,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest1200
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_1200
-     * @tc.desc: Test getBootRuntimeLinker property descriptors
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest1200
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_1200
+     * @tc.desc    Test getBootRuntimeLinker property descriptors
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const func = getBootRuntimeLinker;
@@ -262,12 +262,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest1300
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_1300
-     * @tc.desc: Test getBootRuntimeLinker with various data types in environment (simulating checklist coverage)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest1300
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_1300
+     * @tc.desc    Test getBootRuntimeLinker with various data types in environment (simulating checklist coverage)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const specialChars = '!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
@@ -296,12 +296,12 @@ export default function builtinsBootRuntimeLinkerTest() {
 
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest1400
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_1400
-     * @tc.desc: Test getBootRuntimeLinker GC behavior and memory management
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL3
+     * @tc.name    builtinsBootRuntimeLinkerTest1400
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_1400
+     * @tc.desc    Test getBootRuntimeLinker GC behavior and memory management
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL3
      */
     it('builtinsBootRuntimeLinkerTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const linkers: BootRuntimeLinker[] = [];
@@ -330,12 +330,12 @@ export default function builtinsBootRuntimeLinkerTest() {
 
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest1500
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_1500
-     * @tc.desc: Test getBootRuntimeLinker thread safety simulation
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL3
+     * @tc.name    builtinsBootRuntimeLinkerTest1500
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_1500
+     * @tc.desc    Test getBootRuntimeLinker thread safety simulation
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL3
      */
     it('builtinsBootRuntimeLinkerTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const results: BootRuntimeLinker[] = [];
@@ -357,12 +357,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest1600
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_1600
-     * @tc.desc: Test getBootRuntimeLinker with bootstrap initialization scenarios
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL3
+     * @tc.name    builtinsBootRuntimeLinkerTest1600
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_1600
+     * @tc.desc    Test getBootRuntimeLinker with bootstrap initialization scenarios
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL3
      */
     it('builtinsBootRuntimeLinkerTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const earlyLinker = getBootRuntimeLinker();
@@ -381,12 +381,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest1700
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_1700
-     * @tc.desc: Test getBootRuntimeLinker comprehensive coverage
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL3
+     * @tc.name    builtinsBootRuntimeLinkerTest1700
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_1700
+     * @tc.desc    Test getBootRuntimeLinker comprehensive coverage
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL3
      */
     it('builtinsBootRuntimeLinkerTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const linker1 = getBootRuntimeLinker();
@@ -399,12 +399,12 @@ export default function builtinsBootRuntimeLinkerTest() {
       console.log('Comprehensive test completed for getBootRuntimeLinker');
     });
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest1800
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_1800
-     * @tc.desc: Test getNearestNonBootRuntimeLinker basic call
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsBootRuntimeLinkerTest1800
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_1800
+     * @tc.desc    Test getNearestNonBootRuntimeLinker basic call
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsBootRuntimeLinkerTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const result = getNearestNonBootRuntimeLinker();
@@ -415,12 +415,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest1900
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_1900
-     * @tc.desc: Test getNearestNonBootRuntimeLinker return type
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsBootRuntimeLinkerTest1900
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_1900
+     * @tc.desc    Test getNearestNonBootRuntimeLinker return type
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsBootRuntimeLinkerTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const result = getNearestNonBootRuntimeLinker();
@@ -430,12 +430,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest2000
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_2000
-     * @tc.desc: Test getNearestNonBootRuntimeLinker multiple calls
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest2000
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_2000
+     * @tc.desc    Test getNearestNonBootRuntimeLinker multiple calls
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const result1 = getNearestNonBootRuntimeLinker();
@@ -459,12 +459,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest2100
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_2100
-     * @tc.desc: Test getNearestNonBootRuntimeLinker with different contexts
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest2100
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_2100
+     * @tc.desc    Test getNearestNonBootRuntimeLinker with different contexts
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const globalResult = getNearestNonBootRuntimeLinker();
@@ -485,34 +485,32 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest2200
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_2200
-     * @tc.desc: Test getNearestNonBootRuntimeLinker with error handling
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest2200
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_2200
+     * @tc.desc    Test getNearestNonBootRuntimeLinker with error handling
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       try {
         const result = getNearestNonBootRuntimeLinker();
 
-        expect(true).assertTrue();
+      expect(result !== undefined).assertTrue();
 
-        if (result !== undefined) {
-          expect(result instanceof RuntimeLinker).assertTrue();
-        }
+      expect(result instanceof RuntimeLinker).assertTrue();
       } catch (error) {
-        expect(false).assertTrue();
+        expect().assertFail(`Unexpected error: ${error.message}`);
       }
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest2300
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_2300
-     * @tc.desc: Test getNearestNonBootRuntimeLinker property descriptors
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest2300
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_2300
+     * @tc.desc    Test getNearestNonBootRuntimeLinker property descriptors
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const func = getNearestNonBootRuntimeLinker;
@@ -533,12 +531,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest2400
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_2400
-     * @tc.desc: Test getNearestNonBootRuntimeLinker with various data type environments
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest2400
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_2400
+     * @tc.desc    Test getNearestNonBootRuntimeLinker with various data type environments
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const specialChars = '!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
@@ -568,12 +566,12 @@ export default function builtinsBootRuntimeLinkerTest() {
 
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest2500
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_2500
-     * @tc.desc: Test getNearestNonBootRuntimeLinker with typed array environments
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest2500
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_2500
+     * @tc.desc    Test getNearestNonBootRuntimeLinker with typed array environments
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const int8Array = new Int8Array([-128, 127, -129, 128]);
@@ -605,12 +603,12 @@ export default function builtinsBootRuntimeLinkerTest() {
 
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest2600
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_2600
-     * @tc.desc: Test getNearestNonBootRuntimeLinker stress test
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL3
+     * @tc.name    builtinsBootRuntimeLinkerTest2600
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_2600
+     * @tc.desc    Test getNearestNonBootRuntimeLinker stress test
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL3
      */
     it('builtinsBootRuntimeLinkerTest2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const startTime = Date.now();
@@ -650,12 +648,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest2700
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_2700
-     * @tc.desc: Test getNearestNonBootRuntimeLinker with large string environments
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL3
+     * @tc.name    builtinsBootRuntimeLinkerTest2700
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_2700
+     * @tc.desc    Test getNearestNonBootRuntimeLinker with large string environments
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL3
      */
     it('builtinsBootRuntimeLinkerTest2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const createLargeString = (size: number): string => {
@@ -696,12 +694,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest2800
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_2800
-     * @tc.desc: Test getNearestNonBootRuntimeLinker comparison with getBootRuntimeLinker
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL3
+     * @tc.name    builtinsBootRuntimeLinkerTest2800
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_2800
+     * @tc.desc    Test getNearestNonBootRuntimeLinker comparison with getBootRuntimeLinker
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL3
      */
     it('builtinsBootRuntimeLinkerTest2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const nonBootLinker = getNearestNonBootRuntimeLinker();
@@ -714,12 +712,12 @@ export default function builtinsBootRuntimeLinkerTest() {
       }
     });
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest2900
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_2900
-     * @tc.desc: Test findAndLoadClass with valid class name and init=true
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsBootRuntimeLinkerTest2900
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_2900
+     * @tc.desc    Test findAndLoadClass with valid class name and init=true
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsBootRuntimeLinkerTest2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = getBootRuntimeLinker();
@@ -731,12 +729,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest3000
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_3000
-     * @tc.desc: Test findAndLoadClass with valid class name and init=false
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsBootRuntimeLinkerTest3000
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_3000
+     * @tc.desc    Test findAndLoadClass with valid class name and init=false
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsBootRuntimeLinkerTest3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = getBootRuntimeLinker();
@@ -748,12 +746,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest3100
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_3100
-     * @tc.desc: Test findAndLoadClass with empty string class name
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest3100
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_3100
+     * @tc.desc    Test findAndLoadClass with empty string class name
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const linker = getBootRuntimeLinker();
@@ -765,12 +763,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest3200
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_3200
-     * @tc.desc: Test findAndLoadClass with special characters in class name
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest3200
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_3200
+     * @tc.desc    Test findAndLoadClass with special characters in class name
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const linker = getBootRuntimeLinker();
@@ -791,12 +789,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest3300
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_3300
-     * @tc.desc: Test findAndLoadClass with ASCII characters in class name
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest3300
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_3300
+     * @tc.desc    Test findAndLoadClass with ASCII characters in class name
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const linker = getBootRuntimeLinker();
@@ -813,12 +811,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest3400
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_3400
-     * @tc.desc: Test findAndLoadClass with escape characters in class name
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest3400
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_3400
+     * @tc.desc    Test findAndLoadClass with escape characters in class name
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest3400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const linker = getBootRuntimeLinker();
@@ -831,12 +829,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest3500
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_3500
-     * @tc.desc: Test findAndLoadClass with emoji and Unicode in class name
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest3500
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_3500
+     * @tc.desc    Test findAndLoadClass with emoji and Unicode in class name
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest3500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const linker = getBootRuntimeLinker();
@@ -853,12 +851,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest3600
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_3600
-     * @tc.desc: Test findAndLoadClass with numeric class names
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest3600
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_3600
+     * @tc.desc    Test findAndLoadClass with numeric class names
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest3600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const linker = getBootRuntimeLinker();
@@ -881,12 +879,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest3700
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_3700
-     * @tc.desc: Test findAndLoadClass with boolean-like class names
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest3700
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_3700
+     * @tc.desc    Test findAndLoadClass with boolean-like class names
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest3700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const linker = getBootRuntimeLinker();
@@ -901,12 +899,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest3800
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_3800
-     * @tc.desc: Test findAndLoadClass with very long class names
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest3800
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_3800
+     * @tc.desc    Test findAndLoadClass with very long class names
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest3800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const linker = getBootRuntimeLinker();
@@ -921,12 +919,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest3900
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_3900
-     * @tc.desc: Test findAndLoadClass with sliceString type class names
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest3900
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_3900
+     * @tc.desc    Test findAndLoadClass with sliceString type class names
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest3900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const linker = getBootRuntimeLinker();
@@ -941,12 +939,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest4000
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_4000
-     * @tc.desc: Test findAndLoadClass with non-existent class names
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest4000
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_4000
+     * @tc.desc    Test findAndLoadClass with non-existent class names
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest4000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const linker = getBootRuntimeLinker();
@@ -964,12 +962,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest4100
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_4100
-     * @tc.desc: Test findAndLoadClass with init parameter edge cases
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest4100
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_4100
+     * @tc.desc    Test findAndLoadClass with init parameter edge cases
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest4100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const linker = getBootRuntimeLinker();
@@ -995,12 +993,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest4200
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_4200
-     * @tc.desc: Test findAndLoadClass with class names containing TypedArray values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest4200
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_4200
+     * @tc.desc    Test findAndLoadClass with class names containing TypedArray values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest4200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const linker = getBootRuntimeLinker();
@@ -1023,12 +1021,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest4300
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_4300
-     * @tc.desc: Test findAndLoadClass with class names containing float values
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest4300
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_4300
+     * @tc.desc    Test findAndLoadClass with class names containing float values
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest4300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const linker = getBootRuntimeLinker();
@@ -1052,12 +1050,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest4400
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_4400
-     * @tc.desc: Test findAndLoadClass with repeated special characters
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest4400
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_4400
+     * @tc.desc    Test findAndLoadClass with repeated special characters
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest4400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const linker = getBootRuntimeLinker();
@@ -1074,12 +1072,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest4500
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_4500
-     * @tc.desc: Test findAndLoadClass with hex and octal values in class names
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest4500
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_4500
+     * @tc.desc    Test findAndLoadClass with hex and octal values in class names
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest4500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const linker = getBootRuntimeLinker();
@@ -1100,12 +1098,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest4600
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_4600
-     * @tc.desc: Test findAndLoadClass with scientific notation in class names
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsBootRuntimeLinkerTest4600
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_4600
+     * @tc.desc    Test findAndLoadClass with scientific notation in class names
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsBootRuntimeLinkerTest4600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const linker = getBootRuntimeLinker();
@@ -1124,12 +1122,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest4700
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_4700
-     * @tc.desc: Test findAndLoadClass with bigint representation in class names
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest4700
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_4700
+     * @tc.desc    Test findAndLoadClass with bigint representation in class names
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest4700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const linker = getBootRuntimeLinker();
@@ -1149,12 +1147,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest4800
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_4800
-     * @tc.desc: Test findAndLoadClass memory and GC behavior
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL3
+     * @tc.name    builtinsBootRuntimeLinkerTest4800
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_4800
+     * @tc.desc    Test findAndLoadClass memory and GC behavior
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL3
      */
     it('builtinsBootRuntimeLinkerTest4800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const linker = getBootRuntimeLinker();
@@ -1176,12 +1174,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest4900
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_4900
-     * @tc.desc: Test findAndLoadClass with concurrent access simulation
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL3
+     * @tc.name    builtinsBootRuntimeLinkerTest4900
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_4900
+     * @tc.desc    Test findAndLoadClass with concurrent access simulation
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL3
      */
     it('builtinsBootRuntimeLinkerTest4900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const linker = getBootRuntimeLinker();
@@ -1201,12 +1199,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest5000
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_5000
-     * @tc.desc: Test findAndLoadClass with stress test
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL3
+     * @tc.name    builtinsBootRuntimeLinkerTest5000
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_5000
+     * @tc.desc    Test findAndLoadClass with stress test
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL3
      */
     it('builtinsBootRuntimeLinkerTest5000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const linker = getBootRuntimeLinker();
@@ -1232,12 +1230,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest5100
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_5100
-     * @tc.desc: Test findAndLoadClass with different init parameter combinations
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest5100
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_5100
+     * @tc.desc    Test findAndLoadClass with different init parameter combinations
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest5100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const linker = getBootRuntimeLinker();
@@ -1257,12 +1255,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest5200
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_5200
-     * @tc.desc: Test findAndLoadClass with class names containing JSON-like strings
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest5200
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_5200
+     * @tc.desc    Test findAndLoadClass with class names containing JSON-like strings
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest5200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const linker = getBootRuntimeLinker();
@@ -1277,12 +1275,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest5300
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_5300
-     * @tc.desc: Test findAndLoadClass with multiline class names
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest5300
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_5300
+     * @tc.desc    Test findAndLoadClass with multiline class names
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest5300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const linker = getBootRuntimeLinker();
@@ -1297,12 +1295,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest5400
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_5400
-     * @tc.desc: Test findAndLoadClass with class names from array data
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest5400
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_5400
+     * @tc.desc    Test findAndLoadClass with class names from array data
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest5400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const linker = getBootRuntimeLinker();
@@ -1327,12 +1325,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest5500
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_5500
-     * @tc.desc: Test findAndLoadClass with invalid unicode in class names
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL3
+     * @tc.name    builtinsBootRuntimeLinkerTest5500
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_5500
+     * @tc.desc    Test findAndLoadClass with invalid unicode in class names
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL3
      */
     it('builtinsBootRuntimeLinkerTest5500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const linker = getBootRuntimeLinker();
@@ -1353,12 +1351,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest5600
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_5600
-     * @tc.desc: Test findAndLoadClass return value type checking
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest5600
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_5600
+     * @tc.desc    Test findAndLoadClass return value type checking
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest5600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const linker = getBootRuntimeLinker();
@@ -1377,12 +1375,12 @@ export default function builtinsBootRuntimeLinkerTest() {
     });
 
     /**
-     * @tc.name: builtinsBootRuntimeLinkerTest5700
-     * @tc.number: BUILTINS_BOOT_RUNTIME_LINKER_TEST_5700
-     * @tc.desc: Test findAndLoadClass with same class name multiple times
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsBootRuntimeLinkerTest5700
+     * @tc.number  BUILTINS_BOOT_RUNTIME_LINKER_TEST_5700
+     * @tc.desc    Test findAndLoadClass with same class name multiple times
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsBootRuntimeLinkerTest5700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const linker = getBootRuntimeLinker();
