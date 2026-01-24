@@ -72,7 +72,7 @@ import TransUpdateWithReturning from './TransUpdateWithReturning.test';
 import ReturningMultiThread from './ReturningMultiThread.test';
 import RdbStoreErrorCodeAdd1Test from './RdbStoreErrorCodeAdd1.test';
 import RdbStoreErrorCodeAdd2Test from './RdbStoreErrorCodeAdd2.test';
-
+import RdbStoreErrorCodeAdd3Test from './RdbStoreErrorCodeAdd3.test';
 
 export default function testsuite() {
   relationalStoreEncryptTest()
@@ -135,6 +135,5 @@ export default function testsuite() {
   ReturningMultiThread()
   RdbStoreErrorCodeAdd1Test()
   RdbStoreErrorCodeAdd2Test()
+  RdbStoreErrorCodeAdd3Test()
 }
-
-
