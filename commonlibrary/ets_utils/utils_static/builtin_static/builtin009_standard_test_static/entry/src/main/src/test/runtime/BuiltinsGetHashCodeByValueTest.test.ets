@@ -50,12 +50,12 @@ export default function builtinsGetHashCodeByValueTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest0100
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0100
-     * @tc.desc: Test getHashCodeByValue with integer input
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest0100
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0100
+     * @tc.desc    Test getHashCodeByValue with integer input
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testObject: NormalTestObject = {
@@ -81,12 +81,12 @@ export default function builtinsGetHashCodeByValueTest() {
       expect(isValidObject).assertTrue();
     })
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest0200
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0200
-     * @tc.desc: Test getHashCodeByValue by nested object
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest0200
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0200
+     * @tc.desc    Test getHashCodeByValue by nested object
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testObject: NestedTestObject = {
@@ -112,12 +112,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest0300
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0300
-     * @tc.desc: Test getHashCodeByValue by functional object
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest0300
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0300
+     * @tc.desc    Test getHashCodeByValue by functional object
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let isValidObject = false;
@@ -137,12 +137,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest0400
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0400
-     * @tc.desc: Test getHashCodeByValue by object with extended chain
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest0400
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0400
+     * @tc.desc    Test getHashCodeByValue by object with extended chain
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let isValidObject = false;
@@ -159,12 +159,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest0500
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0500
-     * @tc.desc: Test getHashCodeByValue with null input
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest0500
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0500
+     * @tc.desc    Test getHashCodeByValue with null input
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testObject: Object = new Object();
@@ -182,12 +182,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest0600
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0600
-     * @tc.desc: Test getHashCodeByValue with non-enumerable property object
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest0600
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0600
+     * @tc.desc    Test getHashCodeByValue with non-enumerable property object
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let isValidObject = false;
@@ -204,12 +204,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest0700
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0700
-     * @tc.desc: Test getHashCodeByValue with arraybuffer object
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest0700
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0700
+     * @tc.desc    Test getHashCodeByValue with arraybuffer object
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let isValidObject = false;
@@ -229,12 +229,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest0800
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0800
-     * @tc.desc: Test getHashCodeByValue with dataview object
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest0800
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0800
+     * @tc.desc    Test getHashCodeByValue with dataview object
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let isValidObject = false;
@@ -254,12 +254,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest0900
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0900
-     * @tc.desc: Test getHashCodeByValue with null object
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest0900
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST0900
+     * @tc.desc    Test getHashCodeByValue with null object
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let isValidObject = false;
@@ -277,12 +277,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest1000
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1000
-     * @tc.desc: Test getHashCodeByValue with large object
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest1000
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1000
+     * @tc.desc    Test getHashCodeByValue with large object
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let isValidObject = false;
@@ -304,12 +304,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest1100
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1100
-     * @tc.desc: Test getHashCodeByValue with contaminated chain object
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest1100
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1100
+     * @tc.desc    Test getHashCodeByValue with contaminated chain object
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testObject: PrototypePollutionTestClass = new PrototypePollutionTestClass();
@@ -327,12 +327,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest1200
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1200
-     * @tc.desc: Test getHashCodeByValue with non-extension object
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest1200
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1200
+     * @tc.desc    Test getHashCodeByValue with non-extension object
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let isNonExtensible = false;
@@ -357,12 +357,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest1300
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1300
-     * @tc.desc: Test getHashCodeByValue with frozen object
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest1300
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1300
+     * @tc.desc    Test getHashCodeByValue with frozen object
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testObject: TestClass = new TestClass();
@@ -386,12 +386,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest1400
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1400
-     * @tc.desc: Test getHashCodeByValue with sealed object
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest1400
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1400
+     * @tc.desc    Test getHashCodeByValue with sealed object
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testObject: TestClass = new TestClass();
@@ -419,12 +419,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest1500
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1500
-     * @tc.desc: Test getHashCodeByValue by object with undefined value
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest1500
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1500
+     * @tc.desc    Test getHashCodeByValue by object with undefined value
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testObject: UndefinedPropertyTestClass = new UndefinedPropertyTestClass();
@@ -448,12 +448,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest1600
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1600
-     * @tc.desc: Test getHashCodeByValue by object with null value
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest1600
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1600
+     * @tc.desc    Test getHashCodeByValue by object with null value
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testObject: NullPropertyTestClass = new NullPropertyTestClass();
@@ -477,12 +477,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest1700
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1700
-     * @tc.desc: Test getHashCodeByValue by object with nan value
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest1700
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1700
+     * @tc.desc    Test getHashCodeByValue by object with nan value
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testObject: NaNPropertyTestClass = new NaNPropertyTestClass();
@@ -506,12 +506,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest1800
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1800
-     * @tc.desc: Test getHashCodeByValue by object with infinity value
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest1800
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1800
+     * @tc.desc    Test getHashCodeByValue by object with infinity value
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testObject: InfinityPropertyTestClass = new InfinityPropertyTestClass();
@@ -535,12 +535,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest1900
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1900
-     * @tc.desc: Test getHashCodeByValue by object with typearray value
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest1900
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST1900
+     * @tc.desc    Test getHashCodeByValue by object with typearray value
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testObject: TypedArrayTestClass = new TypedArrayTestClass();
@@ -575,12 +575,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest2000
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST2000
-     * @tc.desc: Test getHashCodeByValue by object with map value
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest2000
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST2000
+     * @tc.desc    Test getHashCodeByValue by object with map value
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testObject: MapTestClass = new MapTestClass();
@@ -611,12 +611,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest2100
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST2100
-     * @tc.desc: Test getHashCodeByValue by object with set value
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest2100
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST2100
+     * @tc.desc    Test getHashCodeByValue by object with set value
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testObject: SetTestClass = new SetTestClass();
@@ -651,12 +651,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest2200
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST2200
-     * @tc.desc: Test getHashCodeByValue by object with promise value
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest2200
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST2200
+     * @tc.desc    Test getHashCodeByValue by object with promise value
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const testObject: PromiseTestClass = new PromiseTestClass();
@@ -681,12 +681,12 @@ export default function builtinsGetHashCodeByValueTest() {
     });
 
     /**
-     * @tc.name: builtinsGetHashCodeByValueTest2300
-     * @tc.number: BUILTINS_GET_HASH_CODE_BY_VALUE_TEST2300
-     * @tc.desc: Test getHashCodeByValue by object with regular expression value
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsGetHashCodeByValueTest2300
+     * @tc.number  BUILTINS_GET_HASH_CODE_BY_VALUE_TEST2300
+     * @tc.desc    Test getHashCodeByValue by object with regular expression value
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsGetHashCodeByValueTest2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testObject: RegExpTestClass = new RegExpTestClass();

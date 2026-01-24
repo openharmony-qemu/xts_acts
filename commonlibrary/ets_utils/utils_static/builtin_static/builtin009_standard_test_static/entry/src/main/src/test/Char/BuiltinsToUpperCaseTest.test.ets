@@ -25,12 +25,12 @@ export default function builtinsToUpperCaseTest() {
     })
 
     /**
-     * @tc.name: charToUpperCaseTestCharBitSize0100
-     * @tc.number: CHAR_TO_UPPER_CASE_TEST_CHAR_BIT_SIZE_0100
-     * @tc.desc: Test toUpperCase with CHAR_BIT_SIZE valid range (lowercase 'a' to 'A' in 16-bit range)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    charToUpperCaseTestCharBitSize0100
+     * @tc.number  CHAR_TO_UPPER_CASE_TEST_CHAR_BIT_SIZE_0100
+     * @tc.desc    Test toUpperCase with CHAR_BIT_SIZE valid range (lowercase 'a' to 'A' in 16-bit range)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('charToUpperCaseTestCharBitSize0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const lowercaseA = new Char(c'a');
@@ -39,12 +39,12 @@ export default function builtinsToUpperCaseTest() {
     });
 
     /**
-     * @tc.name: charToUpperCaseTestMaxCodePoint0200
-     * @tc.number: CHAR_TO_UPPER_CASE_TEST_MAX_CODE_POINT_0200
-     * @tc.desc: Test toUpperCase with MAX_CODE_POINT valid mapped char (non-letter char, no change)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    charToUpperCaseTestMaxCodePoint0200
+     * @tc.number  CHAR_TO_UPPER_CASE_TEST_MAX_CODE_POINT_0200
+     * @tc.desc    Test toUpperCase with MAX_CODE_POINT valid mapped char (non-letter char, no change)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('charToUpperCaseTestMaxCodePoint0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const nonLetterChar = new Char(c'\uFFFF');
@@ -53,12 +53,12 @@ export default function builtinsToUpperCaseTest() {
     });
 
     /**
-     * @tc.name: charToUpperCaseTestHighSurrogateMin0300
-     * @tc.number: CHAR_TO_UPPER_CASE_TEST_HIGH_SURROGATE_MIN_0300
-     * @tc.desc: Test toUpperCase with HIGH_SURROGATE_MIN (\uD800, no case change)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    charToUpperCaseTestHighSurrogateMin0300
+     * @tc.number  CHAR_TO_UPPER_CASE_TEST_HIGH_SURROGATE_MIN_0300
+     * @tc.desc    Test toUpperCase with HIGH_SURROGATE_MIN (\uD800, no case change)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('charToUpperCaseTestHighSurrogateMin0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const highSurrogateMinChar = new Char(Char.HIGH_SURROGATE_MIN);
@@ -67,12 +67,12 @@ export default function builtinsToUpperCaseTest() {
     });
 
     /**
-     * @tc.name: charToUpperCaseTestHighSurrogateMax0400
-     * @tc.number: CHAR_TO_UPPER_CASE_TEST_HIGH_SURROGATE_MAX_0400
-     * @tc.desc: Test toUpperCase with HIGH_SURROGATE_MAX (\uDBFF, no case change)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    charToUpperCaseTestHighSurrogateMax0400
+     * @tc.number  CHAR_TO_UPPER_CASE_TEST_HIGH_SURROGATE_MAX_0400
+     * @tc.desc    Test toUpperCase with HIGH_SURROGATE_MAX (\uDBFF, no case change)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('charToUpperCaseTestHighSurrogateMax0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const highSurrogateMaxChar = new Char(Char.HIGH_SURROGATE_MAX);
@@ -81,12 +81,12 @@ export default function builtinsToUpperCaseTest() {
     });
 
     /**
-     * @tc.name: charToUpperCaseTestLowSurrogateMin0500
-     * @tc.number: CHAR_TO_UPPER_CASE_TEST_LOW_SURROGATE_MIN_0500
-     * @tc.desc: Test toUpperCase with LOW_SURROGATE_MIN (\uDC00, no case change)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    charToUpperCaseTestLowSurrogateMin0500
+     * @tc.number  CHAR_TO_UPPER_CASE_TEST_LOW_SURROGATE_MIN_0500
+     * @tc.desc    Test toUpperCase with LOW_SURROGATE_MIN (\uDC00, no case change)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('charToUpperCaseTestLowSurrogateMin0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const lowSurrogateMinChar = new Char(Char.LOW_SURROGATE_MIN);
@@ -95,12 +95,12 @@ export default function builtinsToUpperCaseTest() {
     });
 
     /**
-     * @tc.name: charToUpperCaseTestLowSurrogateMax0600
-     * @tc.number: CHAR_TO_UPPER_CASE_TEST_LOW_SURROGATE_MAX_0600
-     * @tc.desc: Test toUpperCase with LOW_SURROGATE_MAX (\uDFFF, no case change)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    charToUpperCaseTestLowSurrogateMax0600
+     * @tc.number  CHAR_TO_UPPER_CASE_TEST_LOW_SURROGATE_MAX_0600
+     * @tc.desc    Test toUpperCase with LOW_SURROGATE_MAX (\uDFFF, no case change)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('charToUpperCaseTestLowSurrogateMax0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const lowSurrogateMaxChar = new Char(Char.LOW_SURROGATE_MAX);
@@ -109,12 +109,12 @@ export default function builtinsToUpperCaseTest() {
     });
 
     /**
-     * @tc.name: charToUpperCaseTestBmpBorderBelow0700
-     * @tc.number: CHAR_TO_UPPER_CASE_TEST_BMP_BORDER_BELOW_0700
-     * @tc.desc: Test toUpperCase with BMP_BORDER below (0xFFFE, valid BMP char, no case change)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    charToUpperCaseTestBmpBorderBelow0700
+     * @tc.number  CHAR_TO_UPPER_CASE_TEST_BMP_BORDER_BELOW_0700
+     * @tc.desc    Test toUpperCase with BMP_BORDER below (0xFFFE, valid BMP char, no case change)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('charToUpperCaseTestBmpBorderBelow0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const bmpBelowChar = new Char(c'\uFFFE');
@@ -123,12 +123,12 @@ export default function builtinsToUpperCaseTest() {
     });
 
     /**
-     * @tc.name: charToUpperCaseTestBmpBorderAbove0800
-     * @tc.number: CHAR_TO_UPPER_CASE_TEST_BMP_BORDER_ABOVE_0800
-     * @tc.desc: Test toUpperCase with BMP_BORDER mapped valid char (lowercase 'z' to 'Z')
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    charToUpperCaseTestBmpBorderAbove0800
+     * @tc.number  CHAR_TO_UPPER_CASE_TEST_BMP_BORDER_ABOVE_0800
+     * @tc.desc    Test toUpperCase with BMP_BORDER mapped valid char (lowercase 'z' to 'Z')
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('charToUpperCaseTestBmpBorderAbove0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const lowercaseZ = new Char(c'z');
@@ -137,12 +137,12 @@ export default function builtinsToUpperCaseTest() {
     });
 
     /**
-     * @tc.name: charToUpperCaseTestMinValue0900
-     * @tc.number: CHAR_TO_UPPER_CASE_TEST_MIN_VALUE_0900
-     * @tc.desc: Test toUpperCase with MIN_VALUE (\u0000, no case change)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    charToUpperCaseTestMinValue0900
+     * @tc.number  CHAR_TO_UPPER_CASE_TEST_MIN_VALUE_0900
+     * @tc.desc    Test toUpperCase with MIN_VALUE (\u0000, no case change)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('charToUpperCaseTestMinValue0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const minValueChar = new Char(Char.MIN_VALUE);
@@ -151,12 +151,12 @@ export default function builtinsToUpperCaseTest() {
     });
 
     /**
-     * @tc.name: charToUpperCaseTestMaxValue1000
-     * @tc.number: CHAR_TO_UPPER_CASE_TEST_MAX_VALUE_1000
-     * @tc.desc: Test toUpperCase with MAX_VALUE (\uFFFF, no case change)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    charToUpperCaseTestMaxValue1000
+     * @tc.number  CHAR_TO_UPPER_CASE_TEST_MAX_VALUE_1000
+     * @tc.desc    Test toUpperCase with MAX_VALUE (\uFFFF, no case change)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('charToUpperCaseTestMaxValue1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const maxValueChar = new Char(Char.MAX_VALUE);
