@@ -109,7 +109,7 @@ export default function RdbStoreErrorCodeAdd3Test() {
           console.error(`LiteResultSetErroeCode14800041Test0001 failed:${err.message} code:${err.code}`);
           await rdbStore!.close();
           await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-          expect(err.code == 14800041).assertTrue();
+          expect(err.code === 14800041).assertTrue();
         }
         console.log(TAG + "************* LiteResultSetErroeCode14800041Test0001 end *************");
       })
@@ -134,7 +134,7 @@ export default function RdbStoreErrorCodeAdd3Test() {
           console.error(`LiteResultSetErroeCode14800041Test0002 failed:${err.message} code:${err.code}`);
           await rdbStore!.close();
           await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-          expect(err.code == 14800041).assertTrue();
+          expect(err.code === 14800041).assertTrue();
         }
         console.log(TAG + "************* LiteResultSetErroeCode14800041Test0002 end *************");
       })
@@ -159,7 +159,7 @@ export default function RdbStoreErrorCodeAdd3Test() {
           console.error(`LiteResultSetErroeCode14800041Test0003 failed:${err.message} code:${err.code}`);
           await rdbStore!.close();
           await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-          expect(err.code == 14800041).assertTrue();
+          expect(err.code === 14800041).assertTrue();
         }
         console.log(TAG + "************* LiteResultSetErroeCode14800041Test0003 end *************");
       })
@@ -183,7 +183,7 @@ export default function RdbStoreErrorCodeAdd3Test() {
           console.error(`LiteResultSetErroeCode14800041Test0004 failed:${err.message} code:${err.code}`);
           await rdbStore!.close();
           await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-          expect(err.code == 14800041).assertTrue();
+          expect(err.code === 14800041).assertTrue();
         }
         console.log(TAG + "************* LiteResultSetErroeCode14800041Test0004 end *************");
       })
@@ -207,7 +207,7 @@ export default function RdbStoreErrorCodeAdd3Test() {
           console.error(`LiteResultSetErroeCode14800041Test0005 failed:${err.message} code:${err.code}`);
           await rdbStore!.close();
           await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-          expect(err.code == 14800041).assertTrue();
+          expect(err.code === 14800041).assertTrue();
         }
         console.log(TAG + "************* LiteResultSetErroeCode14800041Test0005 end *************");
       })
@@ -232,7 +232,7 @@ export default function RdbStoreErrorCodeAdd3Test() {
           console.error(`LiteResultSetErroeCode14800041Test0006 failed:${err.message} code:${err.code}`);
           await rdbStore!.close();
           await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-          expect(err.code == 14800041).assertTrue();
+          expect(err.code === 14800041).assertTrue();
         }
         console.log(TAG + "************* LiteResultSetErroeCode14800041Test0006 end *************");
       })
@@ -245,7 +245,7 @@ export default function RdbStoreErrorCodeAdd3Test() {
      * @tc.type   Function
      * @tc.level  Level 2
      */
-    it('LiteResultSetgetColumnIndexTrueTest0007',  0, async  () => {
+    it('LiteResultSetgetColumnIndexTrueTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* LiteResultSetgetColumnIndexTrueTest0007 start *************");
       let resultSet : relationalStore.LiteResultSet | undefined = undefined;
       let predicates = new relationalStore.RdbPredicates('test');
