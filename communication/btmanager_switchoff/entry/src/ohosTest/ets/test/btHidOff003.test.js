@@ -240,7 +240,7 @@ export default function btHidoff003Test() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-         it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+         it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_OFF_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             if (!closeUnsupport) {
                 await sleep(3000);
                 try {
