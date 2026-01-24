@@ -25,10 +25,10 @@ const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIM
   "data1 text," + "data2 long, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
   "data7 floatvector(128)," + "data8 UNLIMITED INT" + "data9 text" + ")";
 
-const CREATE_ASSERT_TABLE_TEST = "CREATE TABLE IF NOT EXISTS asset_table (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-  "data1 asset," + "data2 assets)";
+const CREATE_ASSERT_TABLE_TEST1 = "CREATE TABLE test1 ('' TEXT);"
 
 const DROP_TEST = "DROP TABLE IF EXISTS test";
+const DROP_TEST1 = "DROP TABLE IF EXISTS test1";
 
 const asset1 : relationalStore.Asset = {
   name: "name1",
@@ -98,21 +98,21 @@ export default function RdbStoreErrorCodeAdd3Test() {
      * @tc.level       Level 2
      */
     it('LiteResultSetErroeCode14800041Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-        console.info(TAG +
-          "************* LiteResultSetGetAssetTest0004 start *************");
-        let resultSet = rdbStore!.querySqlWithoutRowCountSync("SELECT * FROM test");
-        resultSet.goToNextRow();
-        try {
-          resultSet.getAsset(2);
-          expect().assertFail();
-        } catch(err) {
-          console.error(`LiteResultSetErroeCode14800041Test0001 failed:${err.message} code:${err.code}`);
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-          expect(err.code === 14800041).assertTrue();
-        }
-        console.log(TAG + "************* LiteResultSetErroeCode14800041Test0001 end *************");
-      })
+      console.info(TAG +
+        "************* LiteResultSetGetAssetTest0004 start *************");
+      let resultSet = rdbStore!.querySqlWithoutRowCountSync("SELECT * FROM test");
+      resultSet.goToNextRow();
+      try {
+        resultSet.getAsset(2);
+        expect().assertFail();
+      } catch(err) {
+        console.error(`LiteResultSetErroeCode14800041Test0001 failed:${err.message} code:${err.code}`);
+        await rdbStore!.close();
+        await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        expect(err.code === 14800041).assertTrue();
+      }
+      console.log(TAG + "************* LiteResultSetErroeCode14800041Test0001 end *************");
+    })
 
     /**
      * @tc.name        LiteResultSetErroeCode14800041Test0002
@@ -123,21 +123,21 @@ export default function RdbStoreErrorCodeAdd3Test() {
      * @tc.level       Level 2
      */
     it('LiteResultSetErroeCode14800041Test0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-        console.info(TAG +
-          "************* LiteResultSetErroeCode14800041Test0002 start *************");
-        let resultSet = rdbStore!.querySqlWithoutRowCountSync("SELECT * FROM test");
-        resultSet.goToNextRow();
-        try {
-          resultSet.getAssets(2);
-          expect().assertFail();
-        } catch(err) {
-          console.error(`LiteResultSetErroeCode14800041Test0002 failed:${err.message} code:${err.code}`);
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-          expect(err.code === 14800041).assertTrue();
-        }
-        console.log(TAG + "************* LiteResultSetErroeCode14800041Test0002 end *************");
-      })
+      console.info(TAG +
+        "************* LiteResultSetErroeCode14800041Test0002 start *************");
+      let resultSet = rdbStore!.querySqlWithoutRowCountSync("SELECT * FROM test");
+      resultSet.goToNextRow();
+      try {
+        resultSet.getAssets(2);
+        expect().assertFail();
+      } catch(err) {
+        console.error(`LiteResultSetErroeCode14800041Test0002 failed:${err.message} code:${err.code}`);
+        await rdbStore!.close();
+        await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        expect(err.code === 14800041).assertTrue();
+      }
+      console.log(TAG + "************* LiteResultSetErroeCode14800041Test0002 end *************");
+    })
 
     /**
      * @tc.name        LiteResultSetErroeCode14800041Test0003
@@ -148,21 +148,21 @@ export default function RdbStoreErrorCodeAdd3Test() {
      * @tc.level       Level 2
      */
     it('LiteResultSetErroeCode14800041Test0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-        console.info(TAG +
-          "************* LiteResultSetErroeCode14800041Test0003 start *************");
-        let resultSet = rdbStore!.querySqlWithoutRowCountSync("SELECT * FROM test");
-        resultSet.goToNextRow();
-        try {
-          resultSet.getBlob(5);
-          expect().assertFail();
-        } catch(err) {
-          console.error(`LiteResultSetErroeCode14800041Test0003 failed:${err.message} code:${err.code}`);
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-          expect(err.code === 14800041).assertTrue();
-        }
-        console.log(TAG + "************* LiteResultSetErroeCode14800041Test0003 end *************");
-      })
+      console.info(TAG +
+        "************* LiteResultSetErroeCode14800041Test0003 start *************");
+      let resultSet = rdbStore!.querySqlWithoutRowCountSync("SELECT * FROM test");
+      resultSet.goToNextRow();
+      try {
+        resultSet.getBlob(5);
+        expect().assertFail();
+      } catch(err) {
+        console.error(`LiteResultSetErroeCode14800041Test0003 failed:${err.message} code:${err.code}`);
+        await rdbStore!.close();
+        await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        expect(err.code === 14800041).assertTrue();
+      }
+      console.log(TAG + "************* LiteResultSetErroeCode14800041Test0003 end *************");
+    })
     /**
      * @tc.name   LiteResultSetErroeCode14800041Test0004
      * @tc.number SUB_DistributedData_RelationalStore_RdbStoreErroeCode14800041Test0004
@@ -172,21 +172,21 @@ export default function RdbStoreErrorCodeAdd3Test() {
      * @tc.level  Level 2
      */
     it('LiteResultSetErroeCode14800041Test0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-        console.info(TAG +
-          "************* LiteResultSetErroeCode14800041Test0004 start *************");
-        let resultSet = rdbStore!.querySqlWithoutRowCountSync("SELECT * FROM test");
-        resultSet.goToNextRow();
-        try {
-          resultSet.getString(5);
-          expect().assertFail();
-        } catch(err) {
-          console.error(`LiteResultSetErroeCode14800041Test0004 failed:${err.message} code:${err.code}`);
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-          expect(err.code === 14800041).assertTrue();
-        }
-        console.log(TAG + "************* LiteResultSetErroeCode14800041Test0004 end *************");
-      })
+      console.info(TAG +
+        "************* LiteResultSetErroeCode14800041Test0004 start *************");
+      let resultSet = rdbStore!.querySqlWithoutRowCountSync("SELECT * FROM test");
+      resultSet.goToNextRow();
+      try {
+        resultSet.getString(5);
+        expect().assertFail();
+      } catch(err) {
+        console.error(`LiteResultSetErroeCode14800041Test0004 failed:${err.message} code:${err.code}`);
+        await rdbStore!.close();
+        await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        expect(err.code === 14800041).assertTrue();
+      }
+      console.log(TAG + "************* LiteResultSetErroeCode14800041Test0004 end *************");
+    })
     /**
      * @tc.name   LiteResultSetErroeCode14800041Test0005
      * @tc.number SUB_DistributedData_RelationalStore_RdbStoreErroeCode14800041Test0005
@@ -196,21 +196,21 @@ export default function RdbStoreErrorCodeAdd3Test() {
      * @tc.level  Level 2
      */
     it('LiteResultSetErroeCode14800041Test0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-        console.info(TAG +
-          "************* LiteResultSetErroeCode14800041Test0005 start *************");
-        let resultSet = rdbStore!.querySqlWithoutRowCountSync("SELECT * FROM test");
-        resultSet.goToNextRow();
-        try {
-          resultSet.getLong(5);
-          expect().assertFail();
-        } catch(err) {
-          console.error(`LiteResultSetErroeCode14800041Test0005 failed:${err.message} code:${err.code}`);
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-          expect(err.code === 14800041).assertTrue();
-        }
-        console.log(TAG + "************* LiteResultSetErroeCode14800041Test0005 end *************");
-      })
+      console.info(TAG +
+        "************* LiteResultSetErroeCode14800041Test0005 start *************");
+      let resultSet = rdbStore!.querySqlWithoutRowCountSync("SELECT * FROM test");
+      resultSet.goToNextRow();
+      try {
+        resultSet.getLong(5);
+        expect().assertFail();
+      } catch(err) {
+        console.error(`LiteResultSetErroeCode14800041Test0005 failed:${err.message} code:${err.code}`);
+        await rdbStore!.close();
+        await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        expect(err.code === 14800041).assertTrue();
+      }
+      console.log(TAG + "************* LiteResultSetErroeCode14800041Test0005 end *************");
+    })
 
     /**
      * @tc.name   LiteResultSetErroeCode14800041Test0006
@@ -221,21 +221,21 @@ export default function RdbStoreErrorCodeAdd3Test() {
      * @tc.level  Level 2
      */
     it('LiteResultSetErroeCode14800041Test0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-        console.info(TAG +
-          "************* LiteResultSetErroeCode14800041Test0006 start *************");
-        let resultSet = rdbStore!.querySqlWithoutRowCountSync("SELECT * FROM test");
-        resultSet.goToNextRow();
-        try {
-          resultSet.getDouble(5);
-          expect().assertFail();
-        } catch(err) {
-          console.error(`LiteResultSetErroeCode14800041Test0006 failed:${err.message} code:${err.code}`);
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-          expect(err.code === 14800041).assertTrue();
-        }
-        console.log(TAG + "************* LiteResultSetErroeCode14800041Test0006 end *************");
-      })
+      console.info(TAG +
+        "************* LiteResultSetErroeCode14800041Test0006 start *************");
+      let resultSet = rdbStore!.querySqlWithoutRowCountSync("SELECT * FROM test");
+      resultSet.goToNextRow();
+      try {
+        resultSet.getDouble(5);
+        expect().assertFail();
+      } catch(err) {
+        console.error(`LiteResultSetErroeCode14800041Test0006 failed:${err.message} code:${err.code}`);
+        await rdbStore!.close();
+        await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        expect(err.code === 14800041).assertTrue();
+      }
+      console.log(TAG + "************* LiteResultSetErroeCode14800041Test0006 end *************");
+    })
 
     /**
      * @tc.name   LiteResultSetgetColumnIndexTrueTest0007
@@ -261,6 +261,41 @@ export default function RdbStoreErrorCodeAdd3Test() {
         expect().assertTrue()
       }
       console.log(TAG + "************* LiteResultSetgetColumnIndexTrueTest0007 end *************");
+    })
+
+    /**
+     * @tc.name   LiteResultSetgetColumnNamesTest0008
+     * @tc.number SUB_DistributedData_RelationalStore_RdbStoreSetSetgetColumnNamesTest0008
+     * @tc.desc   getDouble normal test
+     * @tc.size   getColumnNames
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('LiteResultSetgetColumnIndexTrueTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* LiteResultSetgetColumnIndexTrueTest0008 start *************");
+      try{
+        rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        expect(rdbStore != undefined).assertTrue();
+        if (rdbStore != undefined){
+          await rdbStore!.executeSql(DROP_TEST1);
+          await rdbStore!.executeSql(CREATE_ASSERT_TABLE_TEST1);
+        };
+      } catch (e) {
+        console.error(`failed message:${e.message} code:${e.code}`);
+        expect().assertFail();
+      }
+      let resultSet = rdbStore!.querySqlWithoutRowCountSync("SELECT * FROM test1");
+      try {
+        let name = resultSet?.getColumnNames()
+        expect(name.length).assertEqual(1);
+        expect(name[0]).assertEqual('');
+        await rdbStore!.executeSql(DROP_TEST1);
+      }catch (e){
+        console.error(`LiteResultSetgetColumnIndexTrueTest0008 failed message:${e.message} code:${e.code}`);
+        resultSet?.close();
+        expect().assertFalse()
+      }
+      console.log(TAG + "************* LiteResultSetgetColumnIndexTrueTest0008 end *************");
     })
 
   })
