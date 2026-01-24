@@ -42,12 +42,12 @@ export default function builtinsLinkerMethodConflictErrorTest() {
 
 
     /**
-     * @tc.name: builtinsLinkerMethodConflictErrorTest0100
-     * @tc.number: BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0100
-     * @tc.desc: Test constructor with no arguments
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerMethodConflictErrorTest0100
+     * @tc.number  BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0100
+     * @tc.desc    Test constructor with no arguments
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerMethodConflictErrorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerMethodConflictError();
@@ -56,12 +56,12 @@ export default function builtinsLinkerMethodConflictErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerMethodConflictErrorTest0200
-     * @tc.number: BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0200
-     * @tc.desc: Test constructor with simple conflict message
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerMethodConflictErrorTest0200
+     * @tc.number  BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0200
+     * @tc.desc    Test constructor with simple conflict message
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerMethodConflictErrorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerMethodConflictError('Method signature conflict detected');
@@ -70,12 +70,12 @@ export default function builtinsLinkerMethodConflictErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerMethodConflictErrorTest0300
-     * @tc.number: BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0300
-     * @tc.desc: Test constructor with empty message string
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerMethodConflictErrorTest0300
+     * @tc.number  BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0300
+     * @tc.desc    Test constructor with empty message string
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerMethodConflictErrorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerMethodConflictError('');
@@ -84,12 +84,12 @@ export default function builtinsLinkerMethodConflictErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerMethodConflictErrorTest0400
-     * @tc.number: BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0400
-     * @tc.desc: Test constructor with message containing special characters and method names
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerMethodConflictErrorTest0400
+     * @tc.number  BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0400
+     * @tc.desc    Test constructor with message containing special characters and method names
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerMethodConflictErrorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialMsg = 'Method "calculate()" conflicts with "calculate(int)" in class <Processor>';
@@ -99,12 +99,12 @@ export default function builtinsLinkerMethodConflictErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerMethodConflictErrorTest0500
-     * @tc.number: BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0500
-     * @tc.desc: Test constructor with options (cause) parameter
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerMethodConflictErrorTest0500
+     * @tc.number  BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0500
+     * @tc.desc    Test constructor with options (cause) parameter
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerMethodConflictErrorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const cause = new Error('Duplicate method definition found');
@@ -115,12 +115,12 @@ export default function builtinsLinkerMethodConflictErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerMethodConflictErrorTest0600
-     * @tc.number: BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0600
-     * @tc.desc: Test constructor with both message and empty options
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerMethodConflictErrorTest0600
+     * @tc.number  BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0600
+     * @tc.desc    Test constructor with both message and empty options
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerMethodConflictErrorTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerMethodConflictError('Method signature mismatch', {});
@@ -130,12 +130,12 @@ export default function builtinsLinkerMethodConflictErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerMethodConflictErrorTest0700
-     * @tc.number: BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0700
-     * @tc.desc: Test constructor with long conflict description message
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerMethodConflictErrorTest0700
+     * @tc.number  BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0700
+     * @tc.desc    Test constructor with long conflict description message
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerMethodConflictErrorTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const longMsg = 'Method calculateTotalPriceWithTaxAndDiscountAndShippingFeeAndHandlingCharge' +
@@ -148,12 +148,12 @@ export default function builtinsLinkerMethodConflictErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerMethodConflictErrorTest0800
-     * @tc.number: BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0800
-     * @tc.desc: Test that error instance is throwable and catchable
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerMethodConflictErrorTest0800
+     * @tc.number  BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0800
+     * @tc.desc    Test that error instance is throwable and catchable
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerMethodConflictErrorTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       try {
@@ -169,12 +169,12 @@ export default function builtinsLinkerMethodConflictErrorTest() {
 
 
     /**
-     * @tc.name: builtinsLinkerMethodConflictErrorTest0900
-     * @tc.number: BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0900
-     * @tc.desc: Test error stack trace property
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerMethodConflictErrorTest0900
+     * @tc.number  BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST0900
+     * @tc.desc    Test error stack trace property
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerMethodConflictErrorTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerMethodConflictError('Method conflict in linking phase');
@@ -183,12 +183,12 @@ export default function builtinsLinkerMethodConflictErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerMethodConflictErrorTest1000
-     * @tc.number: BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST1000
-     * @tc.desc: Test error with nested cause chain for method conflicts
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerMethodConflictErrorTest1000
+     * @tc.number  BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST1000
+     * @tc.desc    Test error with nested cause chain for method conflicts
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerMethodConflictErrorTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const rootCause = new Error('Duplicate method signature found');
@@ -200,12 +200,12 @@ export default function builtinsLinkerMethodConflictErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerMethodConflictErrorTest1100
-     * @tc.number: BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST1100
-     * @tc.desc: Test error with specific method and class names in message
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerMethodConflictErrorTest1100
+     * @tc.number  BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST1100
+     * @tc.desc    Test error with specific method and class names in message
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerMethodConflictErrorTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const methodName1 = 'processPayment';
@@ -224,12 +224,12 @@ export default function builtinsLinkerMethodConflictErrorTest() {
 
 
     /**
-     * @tc.name: builtinsLinkerMethodConflictErrorTest1200
-     * @tc.number: BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST1200
-     * @tc.desc: Test error toString() method for method conflicts
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerMethodConflictErrorTest1200
+     * @tc.number  BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST1200
+     * @tc.desc    Test error toString() method for method conflicts
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerMethodConflictErrorTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerMethodConflictError('Method calculate() signature conflict');
@@ -240,12 +240,12 @@ export default function builtinsLinkerMethodConflictErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerMethodConflictErrorTest1300
-     * @tc.number: BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST1300
-     * @tc.desc: Test error with parameter type conflict message
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerMethodConflictErrorTest1300
+     * @tc.number  BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST1300
+     * @tc.desc    Test error with parameter type conflict message
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerMethodConflictErrorTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const paramConflictMsg = 'Method process(String, int) conflicts with process(String, Integer) - parameter type mismatch';
@@ -259,12 +259,12 @@ export default function builtinsLinkerMethodConflictErrorTest() {
 
 
     /**
-     * @tc.name: builtinsLinkerMethodConflictErrorTest1400
-     * @tc.number: BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST1400
-     * @tc.desc: Test error with multiple conflicting methods
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerMethodConflictErrorTest1400
+     * @tc.number  BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST1400
+     * @tc.desc    Test error with multiple conflicting methods
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerMethodConflictErrorTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const multiConflictMsg = 'Methods: calculate(), calculate(int), calculate(double) have conflicting signatures in inheritance hierarchy';
@@ -277,12 +277,12 @@ export default function builtinsLinkerMethodConflictErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerMethodConflictErrorTest1500
-     * @tc.number: BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST1500
-     * @tc.desc: Test error with access modifier conflict
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerMethodConflictErrorTest1500
+     * @tc.number  BUILTINS_LINKER_METHOD_CONFLICT_ERROR_TEST1500
+     * @tc.desc    Test error with access modifier conflict
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerMethodConflictErrorTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const accessConflictMsg = 'Method validate() access modifier conflict: public vs protected';

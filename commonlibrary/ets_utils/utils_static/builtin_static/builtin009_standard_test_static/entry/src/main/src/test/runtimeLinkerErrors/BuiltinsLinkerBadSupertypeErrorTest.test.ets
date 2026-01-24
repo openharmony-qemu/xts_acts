@@ -41,12 +41,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     })
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest0100
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST0100
-     * @tc.desc: Test constructor with no arguments
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest0100
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST0100
+     * @tc.desc    Test constructor with no arguments
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerBadSupertypeError();
@@ -55,12 +55,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest0200
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST0200
-     * @tc.desc: Test constructor with simple bad supertype message
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest0200
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST0200
+     * @tc.desc    Test constructor with simple bad supertype message
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerBadSupertypeError('Invalid supertype relationship detected');
@@ -69,12 +69,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest0300
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST0300
-     * @tc.desc: Test constructor with empty message string
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest0300
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST0300
+     * @tc.desc    Test constructor with empty message string
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerBadSupertypeError('');
@@ -83,12 +83,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest0400
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST0400
-     * @tc.desc: Test constructor with message containing special characters and type names
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest0400
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST0400
+     * @tc.desc    Test constructor with message containing special characters and type names
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialMsg = 'Type "Employee" cannot extend final class "Person<Final>"';
@@ -99,12 +99,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
 
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest0500
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST0500
-     * @tc.desc: Test constructor with options (cause) parameter
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest0500
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST0500
+     * @tc.desc    Test constructor with options (cause) parameter
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const cause = new Error('Type resolution inconsistency found');
@@ -115,12 +115,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest0600
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST0600
-     * @tc.desc: Test constructor with both message and empty options
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest0600
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST0600
+     * @tc.desc    Test constructor with both message and empty options
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerBadSupertypeError('Invalid inheritance hierarchy detected', {});
@@ -130,12 +130,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest0700
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST0700
-     * @tc.desc: Test constructor with long inheritance error description
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest0700
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST0700
+     * @tc.desc    Test constructor with long inheritance error description
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const longMsg = 'Invalid supertype relationship: ' +
@@ -147,12 +147,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest0800
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST0800
-     * @tc.desc: Test that error instance is throwable and catchable
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest0800
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST0800
+     * @tc.desc    Test that error instance is throwable and catchable
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       try {
@@ -168,12 +168,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
 
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest900
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST900
-     * @tc.desc: Test error stack trace property
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest900
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST900
+     * @tc.desc    Test error stack trace property
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerBadSupertypeError('Invalid supertype in linking phase');
@@ -182,12 +182,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest1000
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1000
-     * @tc.desc: Test error with nested cause chain for inheritance errors
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest1000
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1000
+     * @tc.desc    Test error with nested cause chain for inheritance errors
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const rootCause = new Error('Initial type hierarchy analysis failed');
@@ -199,12 +199,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest1100
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1100
-     * @tc.desc: Test error with specific class names in supertype error message
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest1100
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1100
+     * @tc.desc    Test error with specific class names in supertype error message
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const subclass = 'Circle';
@@ -220,12 +220,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest1200
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1200
-     * @tc.desc: Test error toString() method for supertype errors
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest1200
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1200
+     * @tc.desc    Test error toString() method for supertype errors
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerBadSupertypeError('Class Employee cannot extend final class Person');
@@ -236,12 +236,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest1300
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1300
-     * @tc.desc: Test error with final class inheritance violation
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest1300
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1300
+     * @tc.desc    Test error with final class inheritance violation
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const finalClassMsg = 'Cannot extend final class String';
@@ -253,12 +253,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest1400
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1400
-     * @tc.desc: Test error with cyclic inheritance detection
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest1400
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1400
+     * @tc.desc    Test error with cyclic inheritance detection
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const cyclicMsg = 'Cyclic inheritance: ClassA extends ClassB, ClassB extends ClassA';
@@ -271,12 +271,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest1500
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1500
-     * @tc.desc: Test error with access modifier violation in inheritance
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest1500
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1500
+     * @tc.desc    Test error with access modifier violation in inheritance
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const accessMsg = 'Cannot reduce visibility: public method in superclass cannot be overridden as private';
@@ -288,12 +288,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest1600
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1600
-     * @tc.desc: Test error with generic type constraint violation
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest1600
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1600
+     * @tc.desc    Test error with generic type constraint violation
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const genericMsg = 'Generic constraint violation: List<T> cannot extend Collection<String> when T is not String';
@@ -306,12 +306,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest1700
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1700
-     * @tc.desc: Test error with multiple inheritance violation (for non-multiple inheritance languages)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest1700
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1700
+     * @tc.desc    Test error with multiple inheritance violation (for non-multiple inheritance languages)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const multiMsg = 'Multiple inheritance not supported: Class cannot extend both Vehicle and Asset';
@@ -325,12 +325,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest1800
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1800
-     * @tc.desc: Test error with covariant/contravariant type mismatch
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest1800
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1800
+     * @tc.desc    Test error with covariant/contravariant type mismatch
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const varianceMsg = 'Contravariant type mismatch: Function<Animal> cannot be supertype of Function<Cat>';
@@ -343,12 +343,12 @@ export default function builtinsLinkerBadSupertypeErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerBadSupertypeErrorTest1900
-     * @tc.number: BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1900
-     * @tc.desc: Test error with primitive type inheritance attempt
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerBadSupertypeErrorTest1900
+     * @tc.number  BUILTINS_LINKER_BAD_SUPERTYPE_ERROR_TEST1900
+     * @tc.desc    Test error with primitive type inheritance attempt
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerBadSupertypeErrorTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const primitiveMsg = 'Cannot extend primitive type int';

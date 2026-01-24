@@ -45,12 +45,12 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     })
 
     /*
-    * @tc.name: builtinsRuntimeLinkerGetTypeTest0100
-    * @tc.number: BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0100
-    * @tc.desc: Test getType method with undefined parameter
-    * @tc.type: FUNCTION
-    * @tc.size: SMALLTEST
-    * @tc.level: LEVEL0
+    * @tc.name    builtinsRuntimeLinkerGetTypeTest0100
+    * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0100
+    * @tc.desc    Test getType method with undefined parameter
+    * @tc.type    FUNCTION
+    * @tc.size    SMALLTEST
+    * @tc.level   LEVEL0
     */
     it('builtinsRuntimeLinkerGetTypeTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
@@ -66,12 +66,12 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /*
-     * @tc.name: builtinsRuntimeLinkerGetTypeTest0200
-     * @tc.number: BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0200
-     * @tc.desc: Test getType method with null parameter
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0200
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0200
+     * @tc.desc    Test getType method with null parameter
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsRuntimeLinkerGetTypeTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
@@ -87,12 +87,12 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /*
-     * @tc.name: builtinsRuntimeLinkerGetTypeTest0300
-     * @tc.number: BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0300
-     * @tc.desc: Test getType method with empty string
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0300
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0300
+     * @tc.desc    Test getType method with empty string
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsRuntimeLinkerGetTypeTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
@@ -102,12 +102,12 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /*
-     * @tc.name: builtinsRuntimeLinkerGetTypeTest0400
-     * @tc.number: BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0400
-     * @tc.desc: Test getType method with special characters
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0400
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0400
+     * @tc.desc    Test getType method with special characters
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsRuntimeLinkerGetTypeTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
@@ -121,12 +121,12 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /*
-     * @tc.name: builtinsRuntimeLinkerGetTypeTest0500
-     * @tc.number: BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0500
-     * @tc.desc: Test getType method with full ASCII range
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0500
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0500
+     * @tc.desc    Test getType method with full ASCII range
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsRuntimeLinkerGetTypeTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
@@ -139,12 +139,12 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /*
-     * @tc.name: builtinsRuntimeLinkerGetTypeTest0600
-     * @tc.number: BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0600
-     * @tc.desc: Test getType method with duplicated special characters
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0600
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0600
+     * @tc.desc    Test getType method with duplicated special characters
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsRuntimeLinkerGetTypeTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
@@ -154,12 +154,12 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /*
-     * @tc.name: builtinsRuntimeLinkerGetTypeTest0700
-     * @tc.number: BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0700
-     * @tc.desc: Test getType method with escape characters
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0700
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0700
+     * @tc.desc    Test getType method with escape characters
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsRuntimeLinkerGetTypeTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
@@ -169,12 +169,12 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /*
-     * @tc.name: builtinsRuntimeLinkerGetTypeTest0800
-     * @tc.number: BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0800
-     * @tc.desc: Test getType method with emoji and Unicode characters
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0800
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0800
+     * @tc.desc    Test getType method with emoji and Unicode characters
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsRuntimeLinkerGetTypeTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
@@ -201,12 +201,12 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /*
-     * @tc.name: builtinsRuntimeLinkerGetTypeTest0900
-     * @tc.number: BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0900
-     * @tc.desc: Test getType method with invalid Unicode sequences
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0900
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0900
+     * @tc.desc    Test getType method with invalid Unicode sequences
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsRuntimeLinkerGetTypeTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
@@ -224,12 +224,12 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /*
-     * @tc.name: builtinsRuntimeLinkerGetTypeTest1000
-     * @tc.number: BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1000
-     * @tc.desc: Test getType method with keyword strings
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest1000
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1000
+     * @tc.desc    Test getType method with keyword strings
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsRuntimeLinkerGetTypeTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
@@ -246,12 +246,12 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /*
-     * @tc.name: builtinsRuntimeLinkerGetTypeTest1100
-     * @tc.number: BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1100
-     * @tc.desc: Test getType method with treeString type
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest1100
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1100
+     * @tc.desc    Test getType method with treeString type
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
      */
     it('builtinsRuntimeLinkerGetTypeTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
@@ -269,12 +269,12 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /*
-     * @tc.name: builtinsRuntimeLinkerGetTypeTest1200
-     * @tc.number: BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1200
-     * @tc.desc: Test getType method with sliceString type
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL1
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest1200
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1200
+     * @tc.desc    Test getType method with sliceString type
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsRuntimeLinkerGetTypeTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
@@ -290,12 +290,12 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /*
-     * @tc.name: builtinsRuntimeLinkerGetTypeTest1300
-     * @tc.number: BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1300
-     * @tc.desc: Test getType method memory usage with large string
-     * @tc.type: FUNCTION
-     * @tc.size: LARGETEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest1300
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1300
+     * @tc.desc    Test getType method memory usage with large string
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL2
      */
     it('builtinsRuntimeLinkerGetTypeTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
@@ -320,12 +320,12 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /*
-     * @tc.name: builtinsRuntimeLinkerGetTypeTest1400
-     * @tc.number: BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1400
-     * @tc.desc: Test getType method GC behavior
-     * @tc.type: FUNCTION
-     * @tc.size: LARGETEST
-     * @tc.level: LEVEL2
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest1400
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1400
+     * @tc.desc    Test getType method GC behavior
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL2
      */
     it('builtinsRuntimeLinkerGetTypeTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();

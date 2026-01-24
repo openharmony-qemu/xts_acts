@@ -41,12 +41,12 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     })
 
     /**
-     * @tc.name: builtinsLinkerClassNotFoundErrorTest0100
-     * @tc.number: BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0100
-     * @tc.desc: Test constructor with no arguments
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0100
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0100
+     * @tc.desc    Test constructor with no arguments
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerClassNotFoundErrorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerClassNotFoundError();
@@ -55,12 +55,12 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerClassNotFoundErrorTest0200
-     * @tc.number: BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0200
-     * @tc.desc: Test constructor with a simple message string
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0200
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0200
+     * @tc.desc    Test constructor with a simple message string
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerClassNotFoundErrorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerClassNotFoundError('Class com.example.MyClass not found');
@@ -69,12 +69,12 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerClassNotFoundErrorTest0300
-     * @tc.number: BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0300
-     * @tc.desc: Test constructor with an empty message string
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0300
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0300
+     * @tc.desc    Test constructor with an empty message string
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerClassNotFoundErrorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerClassNotFoundError('');
@@ -83,12 +83,12 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerClassNotFoundErrorTest0400
-     * @tc.number: BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0400
-     * @tc.desc: Test constructor with a message containing special characters
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0400
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0400
+     * @tc.desc    Test constructor with a message containing special characters
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerClassNotFoundErrorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialMsg = 'Class "com.example.MyClass<Test>" not found!';
@@ -99,12 +99,12 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
 
 
     /**
-     * @tc.name: builtinsLinkerClassNotFoundErrorTest0500
-     * @tc.number: BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0500
-     * @tc.desc: Test constructor with options (cause) parameter
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0500
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0500
+     * @tc.desc    Test constructor with options (cause) parameter
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerClassNotFoundErrorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const cause = new Error('Underlying cause');
@@ -115,12 +115,12 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerClassNotFoundErrorTest0600
-     * @tc.number: BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0600
-     * @tc.desc: Test constructor with both message and empty options
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0600
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0600
+     * @tc.desc    Test constructor with both message and empty options
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerClassNotFoundErrorTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerClassNotFoundError('Class not found', {});
@@ -130,12 +130,12 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerClassNotFoundErrorTest0700
-     * @tc.number: BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0700
-     * @tc.desc: Test constructor with options only (no message)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0700
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0700
+     * @tc.desc    Test constructor with options only (no message)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerClassNotFoundErrorTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const cause = new Error('Root cause');
@@ -146,12 +146,12 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerClassNotFoundErrorTest0800
-     * @tc.number: BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0800
-     * @tc.desc: Test constructor with long message string
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0800
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0800
+     * @tc.desc    Test constructor with long message string
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerClassNotFoundErrorTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const longMsg = 'Class ' + 'com.example.' + 'a'.repeat(100) + ' not found due to linker resolution failure';
@@ -161,12 +161,12 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerClassNotFoundErrorTest0900
-     * @tc.number: BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0900
-     * @tc.desc: Test that error instance is throwable and catchable
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0900
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0900
+     * @tc.desc    Test that error instance is throwable and catchable
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerClassNotFoundErrorTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       try {
@@ -180,12 +180,12 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerClassNotFoundErrorTest1000
-     * @tc.number: BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST1000
-     * @tc.desc: Test error inheritance chain
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest1000
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST1000
+     * @tc.desc    Test error inheritance chain
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerClassNotFoundErrorTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerClassNotFoundError();
@@ -195,12 +195,12 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerClassNotFoundErrorTest1100
-     * @tc.number: BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST1100
-     * @tc.desc: Test error properties (stack trace)
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest1100
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST1100
+     * @tc.desc    Test error properties (stack trace)
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerClassNotFoundErrorTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerClassNotFoundError('Test');
@@ -209,12 +209,12 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     });
 
     /**
-     * @tc.name: builtinsLinkerClassNotFoundErrorTest1200
-     * @tc.number: BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST1200
-     * @tc.desc: Test error with nested cause chain
-     * @tc.type: FUNCTION
-     * @tc.size: SMALLTEST
-     * @tc.level: LEVEL0
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest1200
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST1200
+     * @tc.desc    Test error with nested cause chain
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
      */
     it('builtinsLinkerClassNotFoundErrorTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const rootCause = new Error('Root error');
