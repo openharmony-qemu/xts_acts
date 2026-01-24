@@ -35,7 +35,7 @@ export default function RegularExpressions13Test() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(() => {
-      await Utils.msSleep(50);
+      await Utils.msSleep(20);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -762,7 +762,6 @@ export default function RegularExpressions13Test() {
     });
 
 
-
     /**
      * @tc.number STRING_REPLACE_GROUP_SWAP_0300
      * @tc.name testStringReplaceGroupSwap0003
@@ -1210,6 +1209,14 @@ export default function RegularExpressions13Test() {
       expect(result85).assertDeepEquals(["a", "b", "c", "d"]);
     });
 
+    /**
+     * @tc.number STRING_SPLIT_NON_CAPTURE_0200
+     * @tc.name testRegexExecSticky0002
+     * @tc.desc Verify String.split() with non-capture group.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
     it("testRegexExecSticky0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const re86: RegExp = new RegExp('abc', 'y');
       const str86: string = "xyzabcabc";

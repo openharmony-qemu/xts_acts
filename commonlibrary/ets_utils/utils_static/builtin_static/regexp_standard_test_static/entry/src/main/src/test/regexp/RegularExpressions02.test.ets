@@ -35,7 +35,7 @@ export default function RegularExpressions02Test() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(() => {
-      await Utils.msSleep(50);
+      await Utils.msSleep(20);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -67,57 +67,6 @@ export default function RegularExpressions02Test() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_8500
-     * @tc.name      testGroupingModuleCase0085
-     * @tc.desc      Verify the source property of a RegExp object containing multiple capturing groups.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testGroupingModuleCase0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const re85: RegExp = new RegExp('(a)(b)');
-      const result85: string = re85.source;
-      const expected: string = "(a)(b)";
-      const testPassed: boolean = result85 === expected;
-      expect(testPassed).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_8600
-     * @tc.name      testGroupingModuleCase0086
-     * @tc.desc      Verify dynamically created RegExp with capturing groups using the RegExp constructor.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testGroupingModuleCase0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const groupPattern: string = "(\\w+)";
-      const re86: RegExp = new RegExp(groupPattern);
-      const result86: RegExpExecArray | null = re86.exec("test");
-      const group1: String = result86?.[1] ?? "";
-      const expected: string = "test";
-      const testPassed: boolean = group1 === expected;
-      expect(testPassed).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_8700
-     * @tc.name      testGroupingModuleCase0087
-     * @tc.desc      Verify dynamically created RegExp with backreference using the RegExp constructor.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testGroupingModuleCase0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const refPattern: string = "(\\w)\\1";
-      const re87: RegExp = new RegExp(refPattern);
-      const result87: boolean = re87.test("aa");
-      const expected: boolean = true;
-      const testPassed: boolean = result87 === expected;
-      expect(testPassed).assertTrue();
-    });
-
-    /**
      * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_9000
      * @tc.name      testGroupingModuleCase0090
      * @tc.desc      Verify capturing group extraction without destructuring (ArkTS-compatible).
@@ -130,25 +79,6 @@ export default function RegularExpressions02Test() {
       const execResult: RegExpExecArray | null = re90.exec("John Doe");
       const first: String = execResult?.[1] ?? "";
       const last: String = execResult?.[2] ?? "";
-      const expectedFirst: string = "John";
-      const expectedLast: string = "Doe";
-      const testPassed: boolean = first === expectedFirst && last === expectedLast;
-      expect(testPassed).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_9100
-     * @tc.name      testGroupingModuleCase0091
-     * @tc.desc      Verify named capturing group extraction without destructuring (ArkTS-compatible).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testGroupingModuleCase0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const re91: RegExp = new RegExp('(?<first>\\w+)\\s(?<last>\\w+)');
-      const execResult: RegExpExecArray | null = re91.exec("John Doe");
-      const first: String = execResult?.groups?.['first'] ?? "";
-      const last: String = execResult?.groups?.['last'] ?? "";
       const expectedFirst: string = "John";
       const expectedLast: string = "Doe";
       const testPassed: boolean = first === expectedFirst && last === expectedLast;
@@ -180,32 +110,6 @@ export default function RegularExpressions02Test() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_9300
-     * @tc.name      testGroupingModuleCase0093
-     * @tc.desc      Verify parsing query string parameters using capturing groups.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testGroupingModuleCase0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const re93: RegExp = new RegExp('([^?&=]+)=([^&]+)', 'g');
-      const queryString: string = "name=test&age=30";
-      const result93: Record<string, string> = {};
-      const matches = queryString.matchAll(re93);
-      for (const match of matches) {
-        const key = match[1];
-        const value = match[2];
-        if (key !== undefined && value !== undefined) {
-          result93[key] = value;
-        }
-      }
-      const name: String = result93["name"] ?? "";
-      const age: String = result93["age"] ?? "";
-      const testPassed: boolean = name === "test" && age === "30";
-      expect(testPassed).assertTrue();
-    });
-
-    /**
      * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_9400
      * @tc.name      testGroupingModuleCase0094
      * @tc.desc      Verify parsing CSS style string using capturing groups.
@@ -229,26 +133,6 @@ export default function RegularExpressions02Test() {
       const fontSize: String = result94["font-size"] ?? "";
       expect(color).assertEqual("red");
       expect(fontSize).assertEqual("12px");
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_9500
-     * @tc.name      testGroupingModuleCase0095
-     * @tc.desc      Verify parsing Markdown link syntax using capturing groups.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testGroupingModuleCase0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const re95: RegExp = new RegExp('\\[([^\\]]+)\\]\\(([^)]+)\\)');
-      const markdownLink: string = "[MDN](https://developer.mozilla.org  )";
-      const result95: RegExpExecArray | null = re95.exec(markdownLink);
-      const text: String = result95?.[1] ?? "";
-      const url: String = result95?.[2] ?? "";
-      const expectedText: string = "MDN";
-      const expectedUrl: string = "https://developer.mozilla.org  ";
-      const testPassed: boolean = text === expectedText && url === expectedUrl;
-      expect(testPassed).assertTrue();
     });
 
     /**
@@ -310,24 +194,6 @@ export default function RegularExpressions02Test() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_9900
-     * @tc.name      testGroupingModuleCase0099
-     * @tc.desc      Verify matching UUID using a capturing group with standard 8-4-4-4-12 hex format.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testGroupingModuleCase0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const re99: RegExp = new RegExp('([0-9a-fA-F-]{36})');
-      const uuid: string = "550e8400-e29b-41d4-a716-446655440000";
-      const result99: RegExpExecArray | null = re99.exec(uuid);
-      const matchedUUID: String = result99?.[1] ?? "";
-      const expected: string = "550e8400-e29b-41d4-a716-446655440000";
-      const testPassed: boolean = matchedUUID === expected;
-      expect(testPassed).assertTrue();
-    });
-
-    /**
      * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_0010
      * @tc.name      testGroupingModuleCase0100
      * @tc.desc      Verify complex nested capturing groups in regular expressions.
@@ -352,23 +218,6 @@ export default function RegularExpressions02Test() {
           g3 === "b" &&
           g4 === "cd" &&
           g5 === "d";
-      expect(testPassed).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATA_STRING_REGULAR_METHOD_MODULE_TEST_CASE_0100
-     * @tc.name      testStringRegularMethodModuleTestCase0001
-     * @tc.desc      Verify basic string matching using String.prototype.match() with a simple regular expression.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testStringRegularMethodModuleTestCase0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const str1: string = "Hello, JavaScript!";
-      const re1: RegExp = new RegExp('Java');
-      const result1: String = str1.match(re1)?.[0] ?? "";
-      const expected: string = "Java";
-      const testPassed: boolean = result1 === expected;
       expect(testPassed).assertTrue();
     });
 
@@ -429,25 +278,6 @@ export default function RegularExpressions02Test() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATA_STRING_REGULAR_METHOD_MODULE_TEST_CASE_0500
-     * @tc.name      testStringRegularMethodModuleTestCase0005
-     * @tc.desc      Verify String.prototype.match() with case-insensitive and global flags.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testStringRegularMethodModuleTestCase0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const str5: string = "JavaScript is fun. javascript is powerful.";
-      const re5: RegExp = new RegExp('javascript', 'gi');
-      const result5: RegExpMatchArray | null = str5.match(re5);
-      const expected: string[] = ["JavaScript", "javascript"];
-      const testPassed: boolean = result5 !== null &&
-        result5.length === expected.length &&
-      result5.every((v, i) => v === expected[i]);
-      expect(testPassed).assertTrue();
-    });
-
-    /**
      * @tc.number    SUB_BASEDATA_STRING_REGULAR_METHOD_MODULE_TEST_CASE_0600
      * @tc.name      testStringRegularMethodModuleTestCase0006
      * @tc.desc      Verify String.prototype.match() with multiline and global flags to match line starts.
@@ -482,44 +312,6 @@ export default function RegularExpressions02Test() {
       const testPassed: boolean = result7 !== null &&
         result7.length === expected.length &&
       result7.every((v, i) => v === expected[i]);
-      expect(testPassed).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATA_STRING_REGULAR_METHOD_MODULE_TEST_CASE_0800
-     * @tc.name      testStringRegularMethodModuleTestCase0008
-     * @tc.desc      Verify basic usage of String.prototype.matchAll() with global regular expression.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testStringRegularMethodModuleTestCase0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const str8: string = "apple, banana, cherry";
-      const re8: RegExp = new RegExp('(\\w+)', 'g');
-      const matches = str8.matchAll(re8);
-      const result8: string[] = [];
-      for (const match of matches) {
-        result8.push(match?.[0] ?? "");
-      }
-      const expected: string[] = ["apple", "banana", "cherry"];
-      const testPassed: boolean = result8.length === expected.length &&
-      result8.every((v, i) => v === expected[i]);
-      expect(testPassed).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_8400
-     * @tc.name      testGroupingModuleCase0084
-     * @tc.desc      Verify the flags property of a RegExp object that includes a named capturing group.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testGroupingModuleCase0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const re84: RegExp = new RegExp('(?<name>\\d+)', 'gi');
-      const result84: string = re84.flags;
-      const expected: string = "gi";
-      const testPassed: boolean = result84 === expected;
       expect(testPassed).assertTrue();
     });
 
@@ -575,25 +367,6 @@ export default function RegularExpressions02Test() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_9000
-     * @tc.name      testGroupingModuleCase0090
-     * @tc.desc      Verify capturing group extraction without destructuring (ArkTS-compatible).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testGroupingModuleCase0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const re90: RegExp = new RegExp('(\\w+)\\s(\\w+)');
-      const execResult: RegExpExecArray | null = re90.exec("John Doe");
-      const first: String = execResult?.[1] ?? "";
-      const last: String = execResult?.[2] ?? "";
-      const expectedFirst: string = "John";
-      const expectedLast: string = "Doe";
-      const testPassed: boolean = first === expectedFirst && last === expectedLast;
-      expect(testPassed).assertTrue();
-    });
-
-    /**
      * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_9100
      * @tc.name      testGroupingModuleCase0091
      * @tc.desc      Verify named capturing group extraction without destructuring (ArkTS-compatible).
@@ -609,30 +382,6 @@ export default function RegularExpressions02Test() {
       const expectedFirst: string = "John";
       const expectedLast: string = "Doe";
       const testPassed: boolean = first === expectedFirst && last === expectedLast;
-      expect(testPassed).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_9200
-     * @tc.name      testGroupingModuleCase0092
-     * @tc.desc      Verify extracting URL path segments using capturing groups with matchAll.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testGroupingModuleCase0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const re92: RegExp = new RegExp('/([^/]+)', 'g');
-      const input: string = "/path/to/file";
-      const matches = input.matchAll(re92);
-      const result92: string[] = [];
-      for (const match of matches) {
-        if (match[1] !== undefined) {
-          result92.push(match?.[1] ?? "");
-        }
-      }
-      const output: string = result92.join(",");
-      const expected: string = "path,to,file";
-      const testPassed: boolean = output === expected;
       expect(testPassed).assertTrue();
     });
 
@@ -663,32 +412,6 @@ export default function RegularExpressions02Test() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_9400
-     * @tc.name      testGroupingModuleCase0094
-     * @tc.desc      Verify parsing CSS style string using capturing groups.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testGroupingModuleCase0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const re94: RegExp = new RegExp('([a-zA-Z-]+):\\s*([^;]+)', 'g');
-      const cssString: string = "color: red; font-size: 12px";
-      const result94: Record<string, string> = {};
-      const matches = cssString.matchAll(re94);
-      for (const match of matches) {
-        const property = match[1];
-        const value = match[2];
-        if (property !== undefined && value !== undefined) {
-          result94[property] = value;
-        }
-      }
-      const color: String = result94["color"] ?? "";
-      const fontSize: String = result94["font-size"] ?? "";
-      expect(color).assertEqual("red");
-      expect(fontSize).assertEqual("12px");
-    });
-
-    /**
      * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_9500
      * @tc.name      testGroupingModuleCase0095
      * @tc.desc      Verify parsing Markdown link syntax using capturing groups.
@@ -705,64 +428,6 @@ export default function RegularExpressions02Test() {
       const expectedText: string = "MDN";
       const expectedUrl: string = "https://developer.mozilla.org  ";
       const testPassed: boolean = text === expectedText && url === expectedUrl;
-      expect(testPassed).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_9600
-     * @tc.name      testGroupingModuleCase0096
-     * @tc.desc      Verify parsing credit card number with space-separated groups using capturing groups.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testGroupingModuleCase0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const re96: RegExp = new RegExp('(\\d{4})\\s(\\d{4})\\s(\\d{4})\\s(\\d{4})');
-      const cardNumber: string = "1234 5678 9012 3456";
-      const result96: RegExpExecArray | null = re96.exec(cardNumber);
-      const g1: String = result96?.[1] ?? "";
-      const g2: String = result96?.[2] ?? "";
-      const g3: String = result96?.[3] ?? "";
-      const g4: String = result96?.[4] ?? "";
-      const formatted: string = `${g1}-${g2}-${g3}-${g4}`;
-      const expected: string = "1234-5678-9012-3456";
-      const testPassed: boolean = formatted === expected;
-      expect(testPassed).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_9700
-     * @tc.name      testGroupingModuleCase0097
-     * @tc.desc      Verify matching IPv6 address using a capturing group.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testGroupingModuleCase0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const re97: RegExp = new RegExp('([0-9a-fA-F:]+)');
-      const ipv6Address: string = "2001:0db8:85a3:0000:0000:8a2e:0370:7334";
-      const result97: RegExpExecArray | null = re97.exec(ipv6Address);
-      const matchedAddress: String = result97?.[1] ?? "";
-      const expected: string = "2001:0db8:85a3:0000:0000:8a2e:0370:7334";
-      const testPassed: boolean = matchedAddress === expected;
-      expect(testPassed).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_CASE_9800
-     * @tc.name      testGroupingModuleCase0098
-     * @tc.desc      Verify matching MAC address using a capturing group with colon-separated hex format.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testGroupingModuleCase0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const re98: RegExp = new RegExp('([0-9a-fA-F:]{17})');
-      const macAddress: string = "00:1B:44:11:3A:B7";
-      const result98: RegExpExecArray | null = re98.exec(macAddress);
-      const matchedMAC: String = result98?.[1] ?? "";
-      const expected: string = "00:1B:44:11:3A:B7";
-      const testPassed: boolean = matchedMAC === expected;
       expect(testPassed).assertTrue();
     });
 
@@ -785,34 +450,6 @@ export default function RegularExpressions02Test() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATA_GROUPING_MODULE_TEST_0010
-     * @tc.name      testGroupingModuleCase0100
-     * @tc.desc      Verify complex nested capturing groups in regular expressions.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testGroupingModuleCase0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const re100: RegExp = new RegExp('((a(b))(c(d)))');
-      const input: string = "abcde";
-      const result100: RegExpExecArray | null = re100.exec(input);
-      const g0: String = result100?.[0] ?? "";
-      const g1: String = result100?.[1] ?? "";
-      const g2: String = result100?.[2] ?? "";
-      const g3: String = result100?.[3] ?? "";
-      const g4: String = result100?.[4] ?? "";
-      const g5: String = result100?.[5] ?? "";
-      const testPassed: boolean =
-        g0 === "abcd" &&
-          g1 === "abcd" &&
-          g2 === "ab" &&
-          g3 === "b" &&
-          g4 === "cd" &&
-          g5 === "d";
-      expect(testPassed).assertTrue();
-    });
-
-    /**
      * @tc.number    SUB_BASEDATA_STRING_REGULAR_METHOD_MODULE_TEST_CASE_0100
      * @tc.name      testStringRegularMethodModuleTestCase0001
      * @tc.desc      Verify basic string matching using String.prototype.match() with a simple regular expression.
@@ -826,62 +463,6 @@ export default function RegularExpressions02Test() {
       const result1: String = str1.match(re1)?.[0] ?? "";
       const expected: string = "Java";
       const testPassed: boolean = result1 === expected;
-      expect(testPassed).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATA_STRING_REGULAR_METHOD_MODULE_TEST_CASE_0200
-     * @tc.name      testStringRegularMethodModuleTestCase0002
-     * @tc.desc      Verify String.prototype.match() returns null when no match is found.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testStringRegularMethodModuleTestCase0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const str2: string = "Hello, World!";
-      const re2: RegExp = new RegExp('Java');
-      const result2: RegExpMatchArray | null = str2.match(re2);
-      const testPassed: boolean = result2 === null;
-      expect(testPassed).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATA_STRING_REGULAR_METHOD_MODULE_TEST_CASE_0300
-     * @tc.name      testStringRegularMethodModuleTestCase0003
-     * @tc.desc      Verify String.prototype.match() with global flag returns all matches as an array.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testStringRegularMethodModuleTestCase0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const str3: string = "cat bat sat";
-      const re3: RegExp = new RegExp('at', 'g');
-      const result3: RegExpMatchArray | null = str3.match(re3);
-      const expected: string[] = ["at", "at", "at"];
-      const testPassed: boolean = result3 !== null &&
-        result3.length === expected.length &&
-      result3.every((v, i) => v === expected[i]);
-      expect(testPassed).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATA_STRING_REGULAR_METHOD_MODULE_TEST_CASE_0400
-     * @tc.name      testStringRegularMethodModuleTestCase0004
-     * @tc.desc      Verify String.prototype.match() with capturing groups returns full match and group contents.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testStringRegularMethodModuleTestCase0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const str4: string = "Name: John, Age: 30";
-      const re4: RegExp = new RegExp('Name: (\\w+), Age: (\\d+)');
-      const result4: RegExpMatchArray | null = str4.match(re4);
-      const fullMatch: String = result4?.[0] ?? "";
-      const name: String = result4?.[1] ?? "";
-      const age: String = result4?.[2] ?? "";
-      const testPassed: boolean = fullMatch === "Name: John, Age: 30" &&
-        name === "John" &&
-        age === "30";
       expect(testPassed).assertTrue();
     });
 
@@ -901,44 +482,6 @@ export default function RegularExpressions02Test() {
       const testPassed: boolean = result5 !== null &&
         result5.length === expected.length &&
       result5.every((v, i) => v === expected[i]);
-      expect(testPassed).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATA_STRING_REGULAR_METHOD_MODULE_TEST_CASE_0600
-     * @tc.name      testStringRegularMethodModuleTestCase0006
-     * @tc.desc      Verify String.prototype.match() with multiline and global flags to match line starts.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testStringRegularMethodModuleTestCase0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const str6: string = "line1\nline2\nline3";
-      const re6: RegExp = new RegExp('^line\\d', 'mg');
-      const result6: RegExpMatchArray | null = str6.match(re6);
-      const expected: string[] = ["line1", "line2", "line3"];
-      const testPassed: boolean = result6 !== null &&
-        result6.length === expected.length &&
-      result6.every((v, i) => v === expected[i]);
-      expect(testPassed).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATA_STRING_REGULAR_METHOD_MODULE_TEST_CASE_0700
-     * @tc.name      testStringRegularMethodModuleTestCase0007
-     * @tc.desc      Verify String.prototype.match() with Unicode property escapes in regular expressions.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testStringRegularMethodModuleTestCase0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const str7: string = "Emojis: 😀👍😢";
-      const re7: RegExp = new RegExp('\\p{Emoji}', 'gu');
-      const result7: RegExpMatchArray | null = str7.match(re7);
-      const expected: string[] = ["😀", "👍", "😢"];
-      const testPassed: boolean = result7 !== null &&
-        result7.length === expected.length &&
-      result7.every((v, i) => v === expected[i]);
       expect(testPassed).assertTrue();
     });
 

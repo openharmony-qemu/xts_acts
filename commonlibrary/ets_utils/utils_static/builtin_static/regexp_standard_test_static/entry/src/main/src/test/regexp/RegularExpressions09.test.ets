@@ -35,7 +35,7 @@ export default function RegularExpressions09Test() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(() => {
-      await Utils.msSleep(50);
+      await Utils.msSleep(20);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
