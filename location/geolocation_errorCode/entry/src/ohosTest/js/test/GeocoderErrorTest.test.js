@@ -910,23 +910,23 @@ export default function geolocationTest_GeoErr(){
                         manufactureDataMask: manufactureDataMaskBuffer.buffer
                       };
                     
-                      for(let identifier = 20; identifier < 1020; identifier++){
+                      for (let identifier = 20; identifier < 1020; identifier++) {
 
-                      let beacon = {
-                        identifier: JSON.stringify(identifier),
-                        beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
-                        manufactureData:manufactureData
-                      };
-                    
-                      let fenceRequest = {
-                        beacon: beacon,
-                        transitionCallback: (transition) => {
-                          if (transition) {
-                            console.info("SUB_HSS_addBeaconFence_0600:" + JSON.stringify(transition));
-                          }
-                        },
-                        fenceExtensionAbilityName: "MyFenceExtensionAbility",
-                      };
+                        let beacon = {
+                            identifier:JSON.stringify(identifier),
+                            beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
+                            manufactureData:manufactureData
+                          };
+
+                          let fenceRequest = {
+                            beacon: beacon,
+                            transitionCallback: (transition) => {
+                              if (transition) {
+                                console.info("SUB_HSS_addBeaconFence_0600:" + JSON.stringify(transition));
+                              }
+                            },
+                            fenceExtensionAbilityName: "MyFenceExtensionAbility",
+                          };
 
                         try {
                            await geolocationm.addBeaconFence(fenceRequest)
