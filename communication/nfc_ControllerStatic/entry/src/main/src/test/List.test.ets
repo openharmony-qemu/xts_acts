@@ -1,4 +1,3 @@
-import abilityTest from "./Ability.test"
 import nfcControllerTest from "./NfcController.test"
 import nfcCardEmulationTest from "./NfcCardEmulation.test"
 import nfcTagTest from "./NfcTag.test"
