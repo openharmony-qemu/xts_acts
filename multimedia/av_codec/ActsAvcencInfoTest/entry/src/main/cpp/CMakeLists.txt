@@ -9,6 +9,7 @@ set(CURRENT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(
     ${OHOS_SYSROOT}/usr/include/multimedia/player_framework
     ${OHOS_SYSROOT}/usr/include/multimedia/drm_framework
+    ${CMAKE_SYSROOT}/usr/include/multimedia
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CURRENT_DIR}/include
 )
