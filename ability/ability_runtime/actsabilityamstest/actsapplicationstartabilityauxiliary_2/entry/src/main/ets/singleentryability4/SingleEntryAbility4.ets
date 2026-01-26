@@ -17,6 +17,7 @@ import { AbilityConstant, common, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import commonEventManager from '@ohos.commonEventManager';
+import eventBusPlus from '../lib/EventBusPlus';
 
 export default class EntryAbility extends UIAbility {
   private onCreateFlag = false;
@@ -51,7 +52,7 @@ export default class EntryAbility extends UIAbility {
     commonEventManager.publish(`${this.TEST_CASE_NAME}_onDestroyHap_1`, commonEventData, (result) => {
       hilog.info(0x0000, 'testTag', '%{public}s', `onConnect, 50==: ${JSON.stringify(result)}`);
     });
-    await this.sleep(1000);
+    eventBusPlus.emit('Auxiliary_2_SingleEntryAbility4_onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -79,7 +80,7 @@ export default class EntryAbility extends UIAbility {
 
   }
 
-  onForeground(): void {
+  async onForeground(): Promise<void> {
     // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
     this.onForegroundFlag = true;
@@ -98,10 +99,8 @@ export default class EntryAbility extends UIAbility {
         hilog.info(0x0000, 'testTag', '%{public}s',
           `onConnect SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_2200, 50==: ${JSON.stringify(result)}`);
       });
-
-    setTimeout(() => {
-      this.context.terminateSelf()
-    }, 1000)
+    await eventBusPlus.onWait('Auxiliary_2_SingleEntryAbility4_onForegroundHap_1');
+    this.context.terminateSelf();
   }
 
   onBackground(): void {

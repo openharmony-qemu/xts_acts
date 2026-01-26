@@ -17,6 +17,7 @@ import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import commonEventManager from '@ohos.commonEventManager';
+import eventBusPlus from '../lib/EventBusPlus';
 
 export default class EntryAbility extends UIAbility {
   private onCreateFlag = false;
@@ -35,8 +36,9 @@ export default class EntryAbility extends UIAbility {
     this.onCreateFlag = true;
   }
 
-  onDestroy(): void {
+  async onDestroy(): Promise<void> {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
+    eventBusPlus.emit('Auxiliary_SingleEntryAbility6_onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -94,16 +96,19 @@ export default class EntryAbility extends UIAbility {
         this.onCreateFlag = false;
         this.onWindowStageCreateFlag = false;
         this.onForegroundFlag = false;
-        this.context.moveAbilityToBackground()
+        setTimeout(() => {
+          this.context.moveAbilityToBackground()
+        }, 100)
+
       })
     } else if (this.onForegroundFlagNumber == 2) {
+      let onForegroundHapPromise = eventBusPlus.onWait('Auxiliary_SingleEntryAbility6_onForegroundHap');
       commonEventManager.publish('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1400_1', commonEventData,
-        (result) => {
+        async (result) => {
           hilog.info(0x0000, 'testTag', '%{public}s',
             `onConnect SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1400_1, 50==: ${JSON.stringify(result)}`);
-          setTimeout(() => {
-            this.context.terminateSelf();
-          }, 1000)
+          await onForegroundHapPromise;
+          this.context.terminateSelf();
         });
     }
   }
@@ -112,6 +117,7 @@ export default class EntryAbility extends UIAbility {
     // Ability has back to background
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
     this.onBackgroundFlag = true;
+    eventBusPlus.emit('Auxiliary_SingleEntryAbility6_onBackground');
   }
 
   sleep(ms: number): Promise<void> {
