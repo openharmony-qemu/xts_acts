@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { GlobalContext } from '../../../ets/MainAbility/common/GlobalContext.ets'
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -107,7 +108,7 @@ export default function ActsAlphabetIndexerUxTest() {
             "nullFlag3": false,
             "nullFlag4": false,
             "nullFlag5": false
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -193,7 +194,7 @@ it('ArkUI_AlphabetIndexer_static_0800', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag1": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -227,7 +228,7 @@ it('ArkUI_AlphabetIndexer_static_0900', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag2": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -261,7 +262,7 @@ it('ArkUI_AlphabetIndexer_static_1000', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag3": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -294,7 +295,7 @@ it('ArkUI_AlphabetIndexer_static_1100', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -328,7 +329,7 @@ it('ArkUI_AlphabetIndexer_static_1200', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -361,7 +362,7 @@ it('ArkUI_AlphabetIndexer_static_1300', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag5": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -394,7 +395,7 @@ it('ArkUI_AlphabetIndexer_static_1400', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag1": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -428,7 +429,7 @@ it('ArkUI_AlphabetIndexer_static_1500', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag2": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -462,7 +463,7 @@ it('ArkUI_AlphabetIndexer_static_1600', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag3": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -495,7 +496,7 @@ it('ArkUI_AlphabetIndexer_static_1700', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -529,7 +530,7 @@ it('ArkUI_AlphabetIndexer_static_1800', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -562,7 +563,7 @@ it('ArkUI_AlphabetIndexer_static_1900', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag5": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -595,7 +596,7 @@ it('ArkUI_AlphabetIndexer_static_2600', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag1": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -629,7 +630,7 @@ it('ArkUI_AlphabetIndexer_static_2700', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag2": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -663,7 +664,7 @@ it('ArkUI_AlphabetIndexer_static_2800', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag3": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -696,7 +697,7 @@ it('ArkUI_AlphabetIndexer_static_2900', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -730,7 +731,7 @@ it('ArkUI_AlphabetIndexer_static_3000', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -763,7 +764,7 @@ it('ArkUI_AlphabetIndexer_static_3100', Level.LEVEL0, async (done: () => void): 
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag5": true,
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,

@@ -23,6 +23,7 @@ import { indexSurfaceId } from '../../testability/pages/Index';
 const IMAGE_RESULT_BAD_PARAMETER = -1
 const IMAGE_RESULT_JNI_ENV_ABNORMAL = 62980250
 const IMAGE_UNSUPPORTED_OPERATION = 7600201
+const MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED = 23800201;
 const MEDIA_LIBRARY_NO_SUCH_FILE = 23800101
 const EFFECT_SUCCESS = 0;
 const EFFECT_ERROR_PARAM_INVALID = 401;
@@ -129,6 +130,36 @@ export default function OHMediaAssetCreateTest() {
       let result: number = testNapi.OHMediaAssetChangeRequestReleaseTest(CASE_INDEX_2);
       console.info(TAG, testName, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_SUCCESS);
+    });
+    /**
+     * @tc.number  SUB_MEDIA_ASSET_MANAGER_QUICK_REQUEST_IMAGE_001
+     * @tc.name    SUB_MEDIA_ASSET_MANAGER_QUICK_REQUEST_IMAGE_001
+     * @tc.desc    OHMediaAssetManagerQuickRequestImageTest-MEDIA_LIBRARY_OK
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('SUB_MEDIA_ASSET_MANAGER_QUICK_REQUEST_IMAGE_001', Level.LEVEL0, async () => {
+      const testName = "SUB_MEDIA_ASSET_MANAGER_QUICK_REQUEST_IMAGE_001"
+      console.info(TAG, testName, 'Start',);
+      let result: number = testNapi.OHMediaAssetManagerQuickRequestImageTest(CASE_INDEX_1);
+      console.info(TAG, testName, 'Success', JSON.stringify(result));
+      expect(result).assertEqual(EFFECT_SUCCESS);
+    });
+    /**
+     * @tc.number  SUB_MEDIA_ASSET_MANAGER_QUICK_REQUEST_IMAGE_002
+     * @tc.name    SUB_MEDIA_ASSET_MANAGER_QUICK_REQUEST_IMAGE_002
+     * @tc.desc    OHMediaAssetManagerQuickRequestImageTest-MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('SUB_MEDIA_ASSET_MANAGER_QUICK_REQUEST_IMAGE_002', Level.LEVEL0, async () => {
+      const testName = "SUB_MEDIA_ASSET_MANAGER_QUICK_REQUEST_IMAGE_002"
+      console.info(TAG, testName, 'Start',);
+      let result: number = testNapi.OHMediaAssetManagerQuickRequestImageTest(CASE_INDEX_2);
+      console.info(TAG, testName, 'Success', JSON.stringify(result));
+      expect(result).assertEqual(MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED);
     });
   })
 }

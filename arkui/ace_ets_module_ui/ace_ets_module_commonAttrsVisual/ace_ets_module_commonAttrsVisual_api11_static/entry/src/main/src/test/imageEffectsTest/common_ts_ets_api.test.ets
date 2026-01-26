@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,23 +41,17 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 export default function common_ts_ets_apiStaticClearJsunit() {
-
-  console.info("common_ts_ets_apiStaticClearJsunit beforeAll start");
-  
-  await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
-  
-
-  const uiContext = AppStorage.get<UIContext>('uiContent')!;
-
   describe('common_ts_ets_apiStaticClearTest', () => {
-    beforeAll(() => {
-
+    beforeAll(async (): Promise<void> => {
+      console.info("common_ts_ets_apiStaticClearJsunit beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
     });
 
     beforeEach(async (): Promise<void> => {
@@ -105,8 +99,8 @@ it('testcommon_ts_ets_apiPersistProp_static__static_0001', Level.LEVEL2, async (
         }
         let callback = (eventData: emitter.EventData) => {
           console.info("common_ts_ets_apiPersistProp0001 get event state result is: " + JSON.stringify(eventData));
-          const data: Record<String, undefined | null | Object> =
-            eventData.data as Record<String, undefined | null | Object>
+          const data: Record<String,RecordData> =
+            eventData.data as Record<String,RecordData>
           expect(data['Score']).assertEqual("Score");
         }
         console.info("PersistProp0001 click result is: " +
@@ -136,8 +130,8 @@ it('testcommon_ts_ets_apiEnvProp_static_0001', Level.LEVEL2, async () => {
         }
         let callback = (eventData: emitter.EventData) => {
           console.info("common_ts_ets_apiEnvProp0001 get event state result is: " + JSON.stringify(eventData));
-          const data: Record<String, undefined | null | Object> =
-            eventData.data as Record<String, undefined | null | Object>
+          const data: Record<String,RecordData> =
+            eventData.data as Record<String,RecordData>
           expect(data['Result']).assertEqual(false);
         }
         console.info("EnvProp0001 click result is: " + JSON.stringify(inspector.sendEventByKey('EnvPropText', 10, "")));
@@ -158,6 +152,7 @@ it('testcommon_ts_ets_apiEnvProp_static_0001', Level.LEVEL2, async () => {
      */
 it('test_font_registerFont__static_0001', Level.LEVEL2, async () => {
       console.info('test_font_registerFont_0001 Register a customized font in the FontManagerSTART');
+      const uiContext = AppStorage.get<UIContext>('uiContent')!;
       await Utils.sleep(2000);
 
       let fontOptions: font.FontOptions = {

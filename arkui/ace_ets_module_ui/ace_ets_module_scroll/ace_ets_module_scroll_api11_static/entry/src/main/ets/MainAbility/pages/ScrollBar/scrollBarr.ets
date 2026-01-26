@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,6 +36,7 @@ import {
   ScrollBar
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Component
 @Entry
@@ -47,10 +48,10 @@ struct ScrollBarExampler {
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("scrollBar page state change called:" + JSON.stringify(eventData));
     if (eventData != null && eventData.data != null) {
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       if (data['directionValue'] != null) {
         let directionObject: Record<string, Object> =
-          JSON.parse<Object>(JSON.stringify(data['directionObject']), Type.of(new String() as Object)) as Record<string,Object>;
+          JSON.parse<Object>(JSON.stringify(data['directionObject']), Class.from<String>()) as Record<string,Object>;
         this.directionValue = directionObject['directionValue'] as ScrollBarDirection;
       }
       if (data['stateValue'] != null) {

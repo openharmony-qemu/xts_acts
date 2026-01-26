@@ -47,16 +47,10 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function HoverJsunit17() {
 
-  console.info("HoverJsunit5 beforeAll start");
-  
-  await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
-  
-
-  let uiContext = AppStorage.get<UIContext>('uiContent')!;
-
   describe('HoverJsunit17', () => {
-    beforeAll(() => {
-
+    beforeAll(async (): Promise<void> => {
+      console.info("HoverJsunit5 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
     });
 
     beforeEach(async (): Promise<void> => {
@@ -91,6 +85,7 @@ export default function HoverJsunit17() {
 it('HoverJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('HoverJsunit_0200 START');
       let driver = Driver.create()
+      let uiContext = AppStorage.get<UIContext>('uiContent')!;
       await driver.mouseMoveTo({
         x: Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100)) as int,
         y: Math.round((AppStorage.get<number>("winTop") ?? 0) + uiContext.vp2px(100)) as int
@@ -124,6 +119,7 @@ it('HoverJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
 it('HoverJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('HoverJsunit_0200 START');
       let driver = Driver.create()
+      let uiContext = AppStorage.get<UIContext>('uiContent')!;
       let buttonCl = await driver.findComponent(ON.id('hoverBColumn'));
       await CommonFunc.sleep(500);
       let point = await (buttonCl?.getBoundsCenter() as Promise<Point>);
@@ -160,6 +156,7 @@ it('HoverJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
      */
 it('HoverJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('HoverJsunit_0300 START');
+      let uiContext = AppStorage.get<UIContext>('uiContent')!;
       let driver = Driver.create()
       let buttonCl = await driver.findComponent(ON.id('hoverBColumn'));
       await CommonFunc.sleep(500);

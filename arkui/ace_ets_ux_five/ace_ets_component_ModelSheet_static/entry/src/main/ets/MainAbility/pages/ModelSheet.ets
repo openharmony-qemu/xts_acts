@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,6 +36,7 @@ import {
   SheetDismiss
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 interface Title1 {
   title: string,
@@ -134,7 +135,7 @@ struct Index {
                 "preferType": this.preferType1,
                 "shouldDismiss": this.shouldDismiss,
                 "enableOutsideInteractive": this.enableOutsideInteractive,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             };
             let backEvent: emitter.InnerEvent = {
               eventId: 10150,
@@ -175,7 +176,7 @@ struct Index {
                 "preferType": this.preferType2,
                 "shouldDismiss": this.shouldDismiss,
                 "enableOutsideInteractive": this.enableOutsideInteractive1,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             };
             let backEvent: emitter.InnerEvent = {
               eventId: 10160,
@@ -215,7 +216,7 @@ struct Index {
                 "preferType": this.preferType3,
                 "shouldDismiss": this.shouldDismiss,
                 "enableOutsideInteractive": this.enableOutsideInteractive,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             };
             let backEvent: emitter.InnerEvent = {
               eventId: 10170,
@@ -255,7 +256,7 @@ struct Index {
                 "title": this.title4,
                 "preferType": this.preferType4,
                 "shouldDismiss": this.shouldDismiss,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             };
             let backEvent: emitter.InnerEvent = {
               eventId: 10180,
@@ -294,7 +295,7 @@ struct Index {
                 "title": this.title5,
                 "preferType": this.preferType5,
                 "shouldDismiss": this.shouldDismiss,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             };
             let backEvent: emitter.InnerEvent = {
               eventId: 10190,
@@ -330,7 +331,7 @@ struct Index {
                 "title": this.title6,
                 "preferType": this.preferType6,
                 "shouldDismiss": this.shouldDismiss,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             };
             let backEvent: emitter.InnerEvent = {
               eventId: 10200,
@@ -369,7 +370,7 @@ struct Index {
                 "title": this.title7,
                 "preferType": this.preferType7,
                 "shouldDismiss": this.shouldDismiss,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             };
             let backEvent: emitter.InnerEvent = {
               eventId: 10210,
@@ -408,7 +409,7 @@ struct Index {
                 "title": this.title8,
                 "preferType": this.preferType8,
                 "shouldDismiss": this.shouldDismiss,
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             };
             let backEvent: emitter.InnerEvent = {
               eventId: 10220,

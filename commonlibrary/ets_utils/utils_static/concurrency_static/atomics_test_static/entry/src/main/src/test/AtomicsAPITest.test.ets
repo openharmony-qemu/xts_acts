@@ -609,10 +609,10 @@ export default function AtomicsAPITest() {
         const oldValue3 = Atomics.exchange(typedArray, 2, 30);
         expect(oldValue3).assertEqual(30);
         expect(typedArray[2]).assertEqual(30);
-        
+
         const previousValue = typedArray[0];
         const newValue = previousValue + 5;
-        const oldValue4 = Atomics.exchange(typedArray, 0, newValue);
+        const oldValue4 = Atomics.exchange(typedArray, 0, newValue as int);
         expect(oldValue4).assertEqual(previousValue);
         expect(typedArray[0]).assertEqual(newValue);
         
@@ -1085,19 +1085,19 @@ export default function AtomicsAPITest() {
         const returnValue2 = Atomics.store(typedArray, 1, 21);
         expect(returnValue2).assertEqual(21);
         expect(typedArray[1]).assertEqual(21);
-        
-        const oldValue = typedArray[2];
+
+        const oldValue = typedArray[2].toInt();
         const newValue = oldValue + 5;
         const returnValue3 = Atomics.store(typedArray, 2, newValue);
         expect(returnValue3).assertEqual(newValue);
         
         const loadedValue = Atomics.load(typedArray, 2);
         expect(loadedValue).assertEqual(newValue);
-        
+
         const anotherValue = newValue * 2;
         Atomics.store(typedArray, 2, anotherValue);
-        expect(typedArray[2]).assertEqual(anotherValue);
-        
+        expect(typedArray[2].toInt()).assertEqual(anotherValue);
+
       } catch (error) {
         console.error(`${caseName} Test failed: ${error}`);
 

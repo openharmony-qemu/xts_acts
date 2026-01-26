@@ -1802,6 +1802,115 @@ static napi_value NdkKillSelfChildProcess_2600(napi_env env, napi_callback_info 
     return result;
 }
 
+static napi_value NotifyPageChanged_0400(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0400 begins");
+    int32_t testPageNameLen = 32;
+    int32_t testWindowId = 12; 
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(nullptr, testPageNameLen, testWindowId);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0400 errCode=%{public}d", errCode);
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0400 errCode=%{public}d", errCode);
+    }
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0400 errCode=%{public}d", errCode);
+    }
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0400 errCode=%{public}d", errCode);
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NotifyPageChanged_0500(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0500 begins");
+    const char* testPageName = "testhomepage";
+    int32_t testPageNameLen = -1;
+    int32_t testWindowId = 12; 
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(testPageName, testPageNameLen, testWindowId);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0500 errCode=%{public}d", errCode);
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0500 errCode=%{public}d", errCode);
+    }
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0500 errCode=%{public}d", errCode);
+    }
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0500 errCode=%{public}d", errCode);
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NotifyPageChanged_0600(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0600 begins");
+    const char* testPageName = "testhomepage";
+    int32_t testPageNameLen = 32;
+    int32_t testWindowId = 0; 
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(testPageName, testPageNameLen, testWindowId);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0600 errCode=%{public}d", errCode);
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0600 errCode=%{public}d", errCode);
+    }
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0600 errCode=%{public}d", errCode);
+    }
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0600 errCode=%{public}d", errCode);
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NotifyPageChanged_0700(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0700 begins");
+    const char* testPageName = "testhomepage";
+    int32_t testPageNameLen = 32;
+    int32_t testWindowId = -1; 
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(testPageName, testPageNameLen, testWindowId);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0700 errCode=%{public}d", errCode);
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0700 errCode=%{public}d", errCode);
+    }
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0700 errCode=%{public}d", errCode);
+    }
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0700 errCode=%{public}d", errCode);
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+
+static napi_value NotifyPageChanged_0800(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0800 begins");
+    const char* testPageName = "testhomepage";
+    int32_t testPageNameLen = 0;
+    int32_t testWindowId = -1; 
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextNotifyPageChanged(testPageName, testPageNameLen, testWindowId);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0800 errCode=%{public}d", errCode);
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_INTERNAL){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0800 errCode=%{public}d", errCode);
+    }
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0800 errCode=%{public}d", errCode);
+    }
+    if(errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID){
+        OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_NotifyPageChanged_0800 errCode=%{public}d", errCode);
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -1923,6 +2032,11 @@ static napi_value Init(napi_env env, napi_value exports)
         { "contextGetLogPath_1600", nullptr, ContextGetLogPath_1600, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkKillSelfChildProcess_0100", nullptr, NdkKillSelfChildProcess_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkKillSelfChildProcess_2600", nullptr, NdkKillSelfChildProcess_2600, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "notifyPageChanged_0400", nullptr, NotifyPageChanged_0400, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "notifyPageChanged_0500", nullptr, NotifyPageChanged_0500, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "notifyPageChanged_0600", nullptr, NotifyPageChanged_0600, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "notifyPageChanged_0700", nullptr, NotifyPageChanged_0700, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "notifyPageChanged_0800", nullptr, NotifyPageChanged_0800, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,6 +30,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { Color, FontWeight, CalendarAlign, PickerTextStyle } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -106,7 +107,7 @@ export default function calendarpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": value as PickerTextStyle
-          } as Record<string, undefined | null | Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -151,7 +152,7 @@ export default function calendarpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": value as PickerTextStyle
-          } as Record<string, undefined | null | Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -195,7 +196,7 @@ export default function calendarpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": value as PickerTextStyle
-          } as Record<string, undefined | null | Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -242,7 +243,7 @@ export default function calendarpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": value as PickerTextStyle
-          } as Record<string, undefined | null | Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -289,7 +290,7 @@ export default function calendarpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": value as PickerTextStyle
-          } as Record<string, undefined | null | Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -329,7 +330,7 @@ export default function calendarpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "textStyle": value as PickerTextStyle
-          } as Record<string, undefined | null | Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -383,7 +384,7 @@ export default function calendarpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "edgeAlign": CalendarAlign.CENTER as CalendarAlign
-          } as Record<string, undefined | null | Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -420,7 +421,7 @@ export default function calendarpicker() {
         let eventData: events_emitter.EventData = {
           data: {
             "edgeAlign": CalendarAlign.START as CalendarAlign
-          } as Record<string, undefined | null | Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -455,7 +456,7 @@ export default function calendarpicker() {
     //     let eventData: events_emitter.EventData = {
     //       data: {
     //         "edgeAlign": "edgeAlign" // 异常值
-    //       } as Record<string, undefined | null | Object>
+    //       } as Record<string, RecordData>
     //     } as events_emitter.EventData
     //     let innerEvent: events_emitter.InnerEvent = {
     //       eventId: 185,
@@ -491,7 +492,7 @@ export default function calendarpicker() {
     //     let eventData: events_emitter.EventData = {
     //       data: {
     //         "edgeAlign": null  // 异常值
-    //       } as Record<String, undefined|null|Object>
+    //       } as Record<String, RecordData>
     //     }
     //     let innerEvent: events_emitter.InnerEvent = {
     //       eventId: 185,

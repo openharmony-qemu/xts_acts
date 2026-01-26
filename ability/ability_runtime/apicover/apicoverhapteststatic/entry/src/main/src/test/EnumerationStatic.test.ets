@@ -951,6 +951,19 @@ export default function EnumerationStaticTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityBase_wantConstant_Static_3000
+     * @tc.number SUB_Ability_AbilityBase_wantConstant_Static_3000
+     * @tc.desc   Test wantConstant ShowMode.EMBEDDED_HALF.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityBase_wantConstant_Static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect('2').assertEqual(wantConstant.ShowMode.EMBEDDED_HALF + '');
+      done();
+    })
+  
+    /**
      * @tc.name   SUB_Ability_AbilityBase_WantAgent_Static_0100
      * @tc.number SUB_Ability_AbilityBase_WantAgent_Static_0100
      * @tc.desc   Test wantAgent OperationType.UNKNOWN_TYPE.

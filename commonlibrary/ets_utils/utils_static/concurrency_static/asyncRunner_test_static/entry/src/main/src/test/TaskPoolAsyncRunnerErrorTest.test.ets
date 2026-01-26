@@ -242,6 +242,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0400: start`);
         let Count1: number = 0;
         let Count2: number = 0;
+        let lock1 = new Mutex();
+        let lock2 = new Mutex();
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs1, 1);
@@ -255,7 +257,9 @@ export default function taskPoolAsyncRunnerErrorTest() {
               let err = e as Error;
               console.info(`${tag} execute error:${err.message}`);
               expect(err.message).assertContain('Out of bounds');
+              lock1.lock();
               Count1++;
+              lock1.unlock();
             }
           });
           task2.onStartExecution(() => {
@@ -267,7 +271,9 @@ export default function taskPoolAsyncRunnerErrorTest() {
               let err = e as Error;
               console.info(`${tag} execute error:${err.message}`);
               expect(err.message).assertContain('Out of bounds');
+              lock2.lock();
               Count2++;
+              lock2.unlock();
             }
           });
           try {
@@ -306,6 +312,8 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0500: start`);
         let Count1: number = 0;
         let Count2: number = 0;
+        let lock1 = new Mutex();
+        let lock2 = new Mutex();
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs3, 1);
@@ -319,7 +327,9 @@ export default function taskPoolAsyncRunnerErrorTest() {
               let err = e as Error;
               console.info(`${tag} execute error:${err.message}`);
               expect(err.message).assertContain('Out of bounds');
+              lock1.lock();
               Count1++;
+              lock1.unlock();
             }
           });
           task2.onExecutionFailed((e: Error) => {
@@ -331,7 +341,9 @@ export default function taskPoolAsyncRunnerErrorTest() {
               let err = e as Error;
               console.info(`${tag} execute error:${err.message}`);
               expect(err.message).assertContain('Out of bounds');
+              lock2.lock();
               Count2++;
+              lock2.unlock();
             }
           });
           try {
@@ -370,6 +382,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0600: start`);
         let Count1: number = 0;
         let Count2: number = 0;
+        let lock = new Mutex();
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs1, 1);
@@ -388,7 +401,9 @@ export default function taskPoolAsyncRunnerErrorTest() {
               let err = e as Error;
               console.info(`${tag} execute errorRCJ:${err.message}`);
               expect(err.message).assertContain('Out of bounds');
+              lock.lock();
               Count1++;
+              lock.unlock();
             }
           });
           task2.onExecutionSucceeded(() => {

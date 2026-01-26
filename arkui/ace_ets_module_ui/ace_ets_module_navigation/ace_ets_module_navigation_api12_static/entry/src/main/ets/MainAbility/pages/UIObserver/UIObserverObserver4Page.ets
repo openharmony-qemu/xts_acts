@@ -42,9 +42,9 @@ struct PageOne {
 
 export function callBackFuncOn(info: uiObserver.NavDestinationSwitchInfo) {
   console.info(`testTag navDestinationSwitchOn from: ${JSON.stringify(info.from)} to: ${JSON.stringify(info.to)}`)
-  let count: number | undefined = AppStorage.get('UIObserverObserver4Page_callBackFuncOnCount');
-  count = Number(count) + 1;
-  AppStorage.setOrCreate<number>('UIObserverObserver4Page_callBackFuncOnCount', count)
+  let count: int = AppStorage.get<int>('UIObserverObserver4Page_callBackFuncOnCount') ?? 0;
+  count = count + 1;
+  AppStorage.setOrCreate<int>('UIObserverObserver4Page_callBackFuncOnCount', count)
 }
 
 @Entry
@@ -52,6 +52,7 @@ export function callBackFuncOn(info: uiObserver.NavDestinationSwitchInfo) {
 struct UIObserverObserver4Page {
   private stack: NavPathStack = new NavPathStack();
   @State firstTime:boolean = false
+
   @Builder
   PageBuilder(name: string) {
     PageOne()
@@ -59,8 +60,8 @@ struct UIObserverObserver4Page {
 
   aboutToAppear() {
     if (this.firstTime == false) {
-        uiObserver.onNavDestinationSwitch( this.getUIContext(), { navigationId: 'myNavId' }, callBackFuncOn) //页面加载失败 sdk11.5
-        this.firstTime = true
+      uiObserver.onNavDestinationSwitch( this.getUIContext(), { navigationId: 'myNavId' }, callBackFuncOn) //页面加载失败 sdk11.5
+      this.firstTime = true
     }
   }
 
@@ -82,9 +83,7 @@ struct UIObserverObserver4Page {
       }
       .id('myNavId')
       .title('Navigation')
-      .navDestination(()=>{
-        this.PageBuilder('')
-      })
+      .navDestination(this.PageBuilder)
       .mode(NavigationMode.Stack)
     }
     .width('100%')

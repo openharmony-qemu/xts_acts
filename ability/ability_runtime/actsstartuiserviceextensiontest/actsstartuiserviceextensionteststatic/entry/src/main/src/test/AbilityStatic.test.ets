@@ -238,6 +238,7 @@ export default function abilitystaticTest() {
           expect(`${observer.abilityStateData?.abilityType}`).assertEqual('1');
           expect(observer.abilityStateData?.isAtomicService).assertFalse();
           expect(observer.abilityStateData?.appCloneIndex).assertUndefined();
+          expect(observer.abilityStateData?.callerBundleName).assertEqual(`${BUNDLE_NAME}`);
           hilog.info(domain, tag, `${itName} AbilityStateData assert end`);
 
           hilog.info(domain, tag, `${itName} ProcessData assert start`);

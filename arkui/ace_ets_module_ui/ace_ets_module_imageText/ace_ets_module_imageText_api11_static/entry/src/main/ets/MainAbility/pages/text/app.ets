@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,6 +33,7 @@ import appS from '@system.app';
 import emitter from '@ohos.events.emitter';
 
 import Log from '../../common/Log.ets';
+import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -71,7 +72,7 @@ struct AppVersionCode {
             let backData: emitter.EventData = {
               data: {
                 "Code": versionCode
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             } as emitter.EventData
             let backEvent: emitter.InnerEvent = {
               eventId: 60302,

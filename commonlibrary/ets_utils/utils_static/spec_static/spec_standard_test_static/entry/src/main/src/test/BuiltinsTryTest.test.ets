@@ -24,7 +24,7 @@ import {
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "../../../hypium/index";
 import Utils from './Util.test';
 
-let flag: number = 0
+// let flag: number = 0
 
 export default function builtinsTryTest() {
   describe('builtinsStatementTry', (): void => {
@@ -57,6 +57,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         testTryCatch();
         throw new Error('Simulated error');
@@ -79,6 +80,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         Input('@');
       } catch (error) {
@@ -110,6 +112,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         Input('ab');
       } catch (error) {
@@ -135,7 +138,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      ;
+      let flag: number = 0;
       try {
         Input('ab');
       } catch (error) {
@@ -158,7 +161,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      ;
+      let flag: number = 0;
       try {
       } catch (error) {
         error = error as Error;
@@ -181,6 +184,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         Input('@');
       } catch (error) {
@@ -212,6 +216,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       asyncInput('###').then(() => {
         console.info('builtinsStatementTry0700 is executed');
       })
@@ -286,6 +291,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         if (Math.random() < 1) {
           throw new Error('Simulated error in try1 execution.');
@@ -319,6 +325,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         if (Math.random() < 1) {
           throw new Error('Simulated error in try1 execution.');
@@ -355,6 +362,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
@@ -389,6 +397,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       let result: string = ''
       try {
         result = nestedTryFinally('');
@@ -427,6 +436,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         throwDivisor(4, 2);
       } finally {
@@ -446,6 +456,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         throwDivisor(4, 0);
       } catch (e) {
@@ -468,6 +479,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
       } finally {
         flag = 16;
@@ -486,6 +498,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         if (Math.random() < 1) {
           throw new Error('Simulated error in try execution.');
@@ -510,6 +523,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         if (Math.random() < 1) {
           throw new Error('Simulated error in try execution.');
@@ -542,6 +556,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       asyncInput('###').then(() => {
         console.info('builtinsStatementTry01900 is executed')
       })
@@ -566,6 +581,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
@@ -593,6 +609,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
@@ -676,6 +693,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
@@ -709,6 +727,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
@@ -737,6 +756,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         if (Math.random() < 1) {
           throw new Error('Cache read error');
@@ -772,6 +792,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       let result: string = '';
       try {
         result += 'Outside try';
@@ -819,6 +840,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
       } finally {
         flag = 28;
@@ -837,6 +859,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         flag = 28;
         if (Math.random() < 1) {
@@ -862,6 +885,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       let num: number = Math.random();
       try {
         if (num < 0.3) {
@@ -891,6 +915,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       let arr = [1, 2, 3, 4, 5];
       try {
         flag = 30;
@@ -918,6 +943,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         flag = 31;
         let resultArray = new Array<number>(64, 34, 25, 12, 22, 11, 90);
@@ -990,6 +1016,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry3500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         flag = 34;
         try {
@@ -1021,6 +1048,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry3600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         try {
           flag = 35;
@@ -1047,6 +1075,7 @@ export default function builtinsTryTest() {
      * @tc.level Level 1
      */
     it('builtinsStatementTry3700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let flag: number = 0;
       try {
         flag = 35;
         try {

@@ -16,8 +16,6 @@
 
 import { ListItemGroupView } from '../view/position/ListItemGroupView';
 import { FlowItemView } from '../view/position/FlowItemView';
-import { StepperItemView } from '../view/position/StepperItemView';
-import { StepperView } from '../view/position/StepperView';
 import { NavRouterView } from '../view/position/NavRouterView';
 import { WaterFlowView } from '../view/position/WaterFlowView';
 import { TabsView } from '../view/position/TabsView';
@@ -304,15 +302,6 @@ struct PositionPage {
           .height(this.parentHeight)
           .key(this.parentComponentKey)
           .padding(0)
-        } else if (this.targetView == 'StepperItem') {
-          StepperItemView({
-            _position: this._position as Position,
-            componentKey: this.componentKey,
-            parentWidth: this.parentWidth,
-            parentHeight: this.parentHeight,
-            parentComponentKey: this.parentComponentKey,
-            referenceComponentKey: this.referenceComponentKey
-          })
         } else if (this.targetView == 'FlowItem') {
           FlowItemView({
             _position: this._position as Position,
@@ -403,9 +392,6 @@ struct PositionPage {
               .width(20)
               .backgroundColor('#ededed')
               .applyStyles(this.commonStyle)
-            } else if (this.targetView == 'Stepper') {
-              console.info('wj=============22 '+ this.componentKey)
-              StepperView({ _position: this._position as Position, componentKey: this.componentKey });
             } else if (this.targetView == 'Search') {
               Search({ placeholder: 'Type to search...' })
                 .backgroundColor(Color.White)

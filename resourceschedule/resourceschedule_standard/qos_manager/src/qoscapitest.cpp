@@ -270,6 +270,7 @@ HWTEST_F(QoSTestSuite, GewuSubmitRequestTest, Function | MediumTest | Level1)
 
         requestResult = OH_QoS_GewuSubmitRequest(0, nullptr, cb, fakeContext);
         EXPECT_EQ(requestResult.error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_FAULT);
+        EXPECT_NE(requestResult.error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOMEM);
     }
 }
 
@@ -292,6 +293,7 @@ HWTEST_F(QoSTestSuite, GewuAbortRequestTest, Function | MediumTest | Level1)
     {
         OH_QoS_GewuErrorCode error = OH_QoS_GewuAbortRequest(sessionResult.session, 0);
         EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOENT);
+        EXPECT_NE(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK);
     }
 }
 

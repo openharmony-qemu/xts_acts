@@ -18,7 +18,7 @@ import router from '@ohos.router'
 import {
   Entry,Text,Column,Button,Component,FlexDirection,ItemAlign,ImageFit,FlexAlign,FontWeight,$r,TextInput,TextArea,List,ListItem,Search,WebviewController,Rectangle,Builder,
   Image,Grid,GridItem,Rating,MenuItemGroup,MenuItem,Menu,ImageAnimator,DatePicker,CheckboxGroup,Checkbox,Search,Counter,ColumnSplit,AlphabetIndexer,Web,Toggle,TimePicker,
-  TextPicker,StepperItem,Stepper,Slider,Select,Swiper,Tabs,TabContent,SideBarContainer,Scroll,RowSplit,GridCol,ForEach,Row,GridRow,Flex,Color,FlexAlign,applyStyles,CommonMethod,
+  TextPicker,Slider,Select,Swiper,Tabs,TabContent,SideBarContainer,Scroll,RowSplit,GridCol,ForEach,Row,GridRow,Flex,Color,FlexAlign,applyStyles,CommonMethod,
   ColumnOptions,Scroller,Margin,TextAlign,MenuItemOptions,Radio,ToggleType,GridRowDirection,Axis,ListItemGroup,SideBarContainerType,Stack,BreakPoints,GridRowOptions,GutterOption,BreakpointsReference,GridColColumnOption,Blank,
   DataPanel,Divider,Gauge,LoadingProgress,Marquee,Navigation,Progress,QRCode,ScrollBar,SliderStyle,TextClock,TextTimer,Circle,Ellipse,Line,Polyline,Polygon,Path,ClickEvent,
   Rect,Shape,Badge,Refresh,RelativeContainer,BarState,WaterFlow,ProgressType,FlowItem,BadgeParamWithNumber,HorizontalAlign,VerticalAlign,GridColOptions,CommonMethod,AlignRuleOption
@@ -198,15 +198,6 @@ struct ResponseRegionPage {
           })
             .showTips(true)
             .applyStyles(this.commonStyle)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-			.nextLabel('')
-          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -467,19 +458,6 @@ struct ResponseRegionPage {
               }
             }
           }.applyStyles(this.commonStyle)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            .applyStyles(this.commonStyle)
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

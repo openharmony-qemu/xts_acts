@@ -51,7 +51,7 @@ AppStorage.setOrCreate<number>("winLeft", winTop);
 
 export default function sheetSize1Jsunit() {
   describe('sheetSize1Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("sheetSize1Jsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")

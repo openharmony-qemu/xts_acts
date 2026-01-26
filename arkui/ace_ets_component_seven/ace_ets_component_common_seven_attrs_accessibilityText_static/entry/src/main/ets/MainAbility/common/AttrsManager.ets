@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,6 +18,7 @@ import { Constants } from '../../constants/Constants';
 import events_emitter from '@ohos.events.emitter';
 import { TextCase, TextDecorationType, Resource, AlignRuleOption, Position } from '@ohos.arkui.component';
 import {SetV} from './Utils'
+import { RecordData } from '@ohos.base';
 export interface Message {
   value: SetV
 }
@@ -37,7 +38,7 @@ export class AttrsManager {
     const eventData: events_emitter.EventData = {
       data: {
         'src': message
-      } as Record<String, Object | undefined | null>
+      } as Record<String, RecordData>
     };
     AttrsManager.emitEvent(caseName, Constants.EVENT_ID_CHANGE_DATA, eventData);
   }

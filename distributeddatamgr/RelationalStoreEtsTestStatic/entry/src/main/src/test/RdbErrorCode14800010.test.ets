@@ -20,6 +20,7 @@ const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIM
 const CREATE_TABLE_TEST2 = "CREATE TABLE IF NOT EXISTS employee (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " + "name TEXT, " + "age INTEGER, " + "dec TEXT)";
 const DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
 const DATABASE_BACKUP_NAME = "Backup.db"
+const DATABASE_BACKUP_NAME1 = "Backup1.db"
 
 const STORE_CONFIG:data_relationalStore.StoreConfig = {
   name: "rdbstore.db",
@@ -125,7 +126,7 @@ export default function RdbErrorCode1480011() {
       await attachBatchInsert(store, "test");
       try {
         await store.backup(DATABASE_BACKUP_NAME);
-        await store.restore();
+        await store.restore(DATABASE_BACKUP_NAME1);
         expect().assertFail();
       } catch(e: BusinessError) {
         hilog.info(domain, tag, '%{public}s', `RdbBackupRestoreTest_0110 + ${e.code} + ${e.message}`);

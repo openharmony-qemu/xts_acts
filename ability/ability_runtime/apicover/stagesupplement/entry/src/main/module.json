@@ -71,6 +71,17 @@
         "launchType": "singleton"
       },
       {
+        "name": "MainAbility6",
+        "srcEntrance": "./ets/MainAbility6/MainAbility6.ts",
+        "description": "$string:MainAbility5_desc",
+        "icon": "$media:icon",
+        "label": "$string:MainAbility5_label",
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:white",
+        "visible": true,
+        "launchType": "specified"
+      },
+      {
         "name": "MainAbility9",
         "srcEntrance": "./ets/MainAbility9/MainAbility9.ts",
         "description": "$string:MainAbility9_desc",

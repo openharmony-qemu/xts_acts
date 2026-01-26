@@ -131,6 +131,7 @@ struct WebComponent {
       })
 
       Web({ src:  'https://13842654826.github.io/demo/editor.html', controller: this.controller })
+	    .enableAutoFill(true)
       // 触发自定义弹窗
         .onContextMenuShow((event) => {
           if (event) {

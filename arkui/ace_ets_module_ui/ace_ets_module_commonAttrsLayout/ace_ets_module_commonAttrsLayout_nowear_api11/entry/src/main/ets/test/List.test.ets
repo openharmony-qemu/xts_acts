@@ -22,10 +22,6 @@ import getWaterFlowItemRect2 from './getItemRect/waterFlow/getWaterFlowItemRect2
 import getWaterFlowItemRect3 from './getItemRect/waterFlow/getWaterFlowItemRect3.test';
 import getWaterFlowItemRect4 from './getItemRect/waterFlow/getWaterFlowItemRect4.test';
 import getWaterFlowItemRect5 from './getItemRect/waterFlow/getWaterFlowItemRect5.test';
-import ChipAction from './Chip/ChipAction.test';
-import ChipOnClose from './Chip/ChipOnClose.test';
-import ChipAction2 from './Chip/ChipAction2.test';
-import ChipOnClose2 from './Chip/ChipOnClose2.test';
 
 export default function testsuite() {
   comSizeAbilityTest_14();
@@ -37,8 +33,4 @@ export default function testsuite() {
   getWaterFlowItemRect3();
   getWaterFlowItemRect4();
   getWaterFlowItemRect5();
-  ChipAction();
-  ChipOnClose();
-  ChipAction2();
-  ChipOnClose2();
 }

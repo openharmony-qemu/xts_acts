@@ -478,5 +478,85 @@ export default function AVSessionTest2() {
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });
+
+    /**
+     * @tc.name   testAVSessionRegisterOutputDeviceChangeCallback001
+     * @tc.number SUB_AVSession_RegisterOutputDeviceChangeCallback_001
+     * @tc.desc   testing OH_AVSession_RegisterOutputDeviceChangeCallback interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionRegisterOutputDeviceChangeCallback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionRegisterOutputDeviceChangeCallbackSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionRegisterOutputDeviceChangeCallback001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionRegisterOutputDeviceChangeCallback002
+     * @tc.number SUB_AVSession_RegisterOutputDeviceChangeCallback_002
+     * @tc.desc   testing OH_AVSession_RegisterOutputDeviceChangeCallback interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionRegisterOutputDeviceChangeCallback002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionRegisterOutputDeviceChangeCallbackInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionRegisterOutputDeviceChangeCallback002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionUnregisterOutputDeviceChangeCallback001
+     * @tc.number SUB_AVSession_UnregisterOutputDeviceChangeCallback_001
+     * @tc.desc   testing OH_AVSession_UnregisterOutputDeviceChangeCallback interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionUnregisterOutputDeviceChangeCallback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionUnregisterOutputDeviceChangeCallbackSuccess();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionUnregisterOutputDeviceChangeCallback001 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
+
+    /**
+     * @tc.name   testAVSessionUnregisterOutputDeviceChangeCallback002
+     * @tc.number SUB_AVSession_UnregisterOutputDeviceChangeCallback_002
+     * @tc.desc   testing OH_AVSession_UnregisterOutputDeviceChangeCallback interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('testAVSessionUnregisterOutputDeviceChangeCallback002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavsession.AVSessionUnregisterOutputDeviceChangeCallbackInvalidParam();
+          expect(result).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error("====>testAVSessionUnregisterOutputDeviceChangeCallback002 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
   })
 }

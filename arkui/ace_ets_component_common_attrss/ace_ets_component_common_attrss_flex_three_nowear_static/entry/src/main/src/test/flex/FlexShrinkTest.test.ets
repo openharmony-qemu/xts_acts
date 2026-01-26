@@ -63,7 +63,6 @@ export default function flexShrinkTest() {
   let supportView = [
     'RowSplit',
     'ColumnSplit',
-    'Stepper',
     'Select',
     'SideBarContainer',
     'WaterFlow'

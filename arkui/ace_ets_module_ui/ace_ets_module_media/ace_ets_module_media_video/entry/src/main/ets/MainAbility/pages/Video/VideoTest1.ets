@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 @Entry
 @Component
 struct VideoTest1 {
@@ -31,8 +32,8 @@ struct VideoTest1 {
         src: this.videoSrc,
         controller: this.controller
       })
-        .width('300vp')
-        .height('200vp')
+        .width('200vp')
+        .height('100vp')
         .enableAnalyzer(true)
         .analyzerConfig(this.config)
         .onStart(() => {
@@ -45,14 +46,20 @@ struct VideoTest1 {
       Row() {
         Button('start').onClick(() => {
           this.controller.start()
-        }).margin(5)
+        })
+          .height(25)
+          .margin(5)
           .id('VideoTest1_start')
 
         Button('stop').onClick(() => {
           this.controller.stop()
-        }).margin(5)
+        })
+          .height(25)
+          .margin(5)
           .id('VideoTest1_stop')
       }
-    }.width('100%')
+    }
+    .height('100%')
+    .width('100%')
   }
 }

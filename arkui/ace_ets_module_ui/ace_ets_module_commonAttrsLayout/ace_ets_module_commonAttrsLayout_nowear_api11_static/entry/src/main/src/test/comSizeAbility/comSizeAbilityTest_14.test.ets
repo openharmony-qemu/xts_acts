@@ -38,16 +38,11 @@ let testAbilityContext: common.UIAbilityContext;
 export default function comSizeAbilityTest_14() {
   describe('comSizeAbilityTest_14', () => {
 
-
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
-
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("comSizeAbilityTest_14 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
     });
+
     beforeEach(() => {
       console.info("comSizeAbilityTest_14 beforeEach start")
       let options: router.RouterOptions = {
@@ -76,6 +71,8 @@ export default function comSizeAbilityTest_14() {
      * @tc.level    Level.LEVEL0
      */
 it('comSizeAbilityTestJsunit_static_37', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       console.info('comSizeAbilityTestJsunit_static_37 START')
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("SideBarContainer_Size");
@@ -138,6 +135,8 @@ it('comSizeAbilityTestJsunit_static_37', Level.LEVEL0, async (done: () => void):
      */
 it('comSizeAbilityTestJsunit_static_38', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_38 START')
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Slider_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Slider_Father");
@@ -198,6 +197,8 @@ it('comSizeAbilityTestJsunit_static_38', Level.LEVEL0, async (done: () => void):
      */
 it('comSizeAbilityTestJsunit_static_39', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_39 START')
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Stack_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Stack_Father");

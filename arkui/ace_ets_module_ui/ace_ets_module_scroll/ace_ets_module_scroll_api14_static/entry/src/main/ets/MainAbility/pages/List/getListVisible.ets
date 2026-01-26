@@ -105,8 +105,8 @@ struct getVisibleContentInfo {
                   .height(50)
                   .fontSize(20)
                   .textAlign(TextAlign.Center)
-                  .backgroundColor(this.itemBackgroundColorArr[(index * 3 + subIndex).toInt()] ? '0x68B4FF' :
-                    '0xFFFFFF')
+                  .backgroundColor(this.itemBackgroundColorArr[(index * 3 + subIndex).toInt()] ? 0x68B4FF :
+                    0xFFFFFF)
               }
             }, (item: string) => item)
           }
@@ -114,7 +114,7 @@ struct getVisibleContentInfo {
         }, (item: TimeTable) => item.title)
       }
       .width('90%')
-      .sticky(StickyStyle.Footer)
+      .sticky(StickyStyle.BOTH)
       .scrollBar(BarState.Off)
       .gesture(
         TapGesture({ count: 1 })
@@ -143,7 +143,7 @@ struct getVisibleContentInfo {
 
     }.width('100%')
     .height('60%')
-    .backgroundColor('0xDCDCDC')
+    .backgroundColor(0xDCDCDC)
     .padding({ top: 5 } as Padding)
   }
 }

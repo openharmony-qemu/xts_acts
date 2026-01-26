@@ -42,9 +42,9 @@ export default class Utils {
 
   static getComponentRect(key: string) {
     // let strJson: string = inspector.getInspectorByKey(key);
-    // let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    // let obj: Record<string, Object> = JSON.parse<Object>(strJson, Class.from<String>()) as Record<string, Object>;
     // console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    // let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    // let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     let strJson = inspector.getInspectorByKey(key);
     let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,6 +51,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -109,8 +110,8 @@ it('bindPopupTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<
       await CommonFunc.sleep(1500);
       let callback = (indexEvent: emitter.EventData) => {
         console.info("bindPopupTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['enableArrow']).assertEqual(true);
-        expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['maskColor']).assertEqual(0x33000000);
+        expect(((indexEvent.data) as Record<String,RecordData>)?.['enableArrow']).assertEqual(true);
+        expect(((indexEvent.data) as Record<String,RecordData>)?.['maskColor']).assertEqual(0x33000000);
         done();
       }
       let indexEvent: emitter.InnerEvent = {
@@ -150,7 +151,7 @@ it('bindPopupTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<
           data: {
             "enableArrow": false,
             "maskColor": 0x33000009
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: emitter.InnerEvent = {
           eventId: 68,
@@ -164,8 +165,8 @@ it('bindPopupTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<
       await CommonFunc.sleep(1500);
       let callbackOne = (indexEventOne: emitter.EventData) => {
         console.info("bindPopupTest_static_0200 get state result is: " + JSON.stringify(indexEventOne));
-        expect(((indexEventOne.data) as Record<String,undefined|null|Object>)?.['enableArrow']).assertEqual(false);
-        expect(((indexEventOne.data) as Record<String,undefined|null|Object>)?.['maskColor']).assertEqual(0x33000009);
+        expect(((indexEventOne.data) as Record<String,RecordData>)?.['enableArrow']).assertEqual(false);
+        expect(((indexEventOne.data) as Record<String,RecordData>)?.['maskColor']).assertEqual(0x33000009);
       }
       let indexEventOne: emitter.InnerEvent = {
         eventId: 66,
@@ -200,7 +201,7 @@ it('bindPopupTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<
       await CommonFunc.sleep(1500);
       let callback = (indexEvent: emitter.EventData) => {
         console.info("bindPopupTest_static_0300 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['placementOnTop']).assertEqual(false);
+        expect(((indexEvent.data) as Record<String,RecordData>)?.['placementOnTop']).assertEqual(false);
       }
       let indexEvent: emitter.InnerEvent = {
         eventId: 65,

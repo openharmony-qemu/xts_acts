@@ -77,8 +77,6 @@ import {
   SideBarContainerType,
   Slider,
   Stack,
-  Stepper,
-  StepperItem,
   Swiper,
   Tabs,
   Text,
@@ -192,10 +190,6 @@ struct DefaultFlexPage {
       Select([{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }]).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Slider') {
       Slider().applyStyles(this.commonStyle)
-    } else if (this.targetView == 'Stepper') {
-      Stepper() {
-        StepperItem()
-      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Text') {
       Text('text').applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextArea') {

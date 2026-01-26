@@ -506,6 +506,203 @@ export default function LocalSocketTest() {
     });
 
     /**
+     * @tc.name   testLocalSocketServerGetSocketFd0100
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocketServer_GetSocketFd_0100
+     * @tc.desc   test LocalSocketServer getSocketFd function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testLocalSocketServerGetSocketFd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testLocalSocketServerGetSocketFd0100';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        await server.listen(localAddr).then(() => {
+          console.log('listen success')
+        }).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        })
+        await server.getSocketFd().then((serverFd: number) => {
+          console.info(`${caseName} success fd:${JSON.stringify(serverFd)}`);
+          expectTrue(serverFd !== -1);
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} listen or getSocketFd err: ${JSON.stringify(err)}`);
+          expectFail();
+        });
+        await server.close().catch((err: BusinessError) => {
+          console.info(`${caseName} close server err: ${err.message}`);
+        });
+        console.info(`${caseName} test end`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testLocalSocketServerGetSocketFd0200
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocketServer_GetSocketFd_0200
+     * @tc.desc   test LocalSocketServer getSocketFd function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testLocalSocketServerGetSocketFd0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testLocalSocketServerGetSocketFd0200';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        await server.getSocketFd().then((serverFd: number) => {
+          console.info(`${caseName} success fd:${JSON.stringify(serverFd)}`);
+          expectTrue(serverFd === -1);
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} listen or getSocketFd err: ${JSON.stringify(err)}`);
+          expectFail();
+        });
+        await server.close().catch((err: BusinessError) => {
+          console.info(`${caseName} close server err: ${err.message}`);
+        });
+        console.info(`${caseName} test end`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testLocalSocketConnectionGetSocketFd0100
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocketConnection_GetSocketFd_0100
+     * @tc.desc   test LocalSocketConnection getSocketFd function (Promise style)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testLocalSocketConnectionGetSocketFd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testLocalSocketConnectionGetSocketFd0100';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        };
+        await server.listen(localAddr).then(() => {
+          console.log(`${caseName} listen success`);
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} fail to listen: ${err.code.toString()}`);
+        });
+        server.on('connect', async (connection: socket.LocalSocketConnection) => {
+          console.info(`${caseName} server accept connection success`);
+          await connection.getSocketFd().then((fd: number) => {
+            console.info(`${caseName} get Connection FD success: ${fd}`);
+            expectTrue(fd !== -1);
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} getSocketFd err: ${JSON.stringify(err)}`);
+            expectFail();
+          }).finally(() => {
+            server.off('connect');
+            connection.close().catch(() => {});
+            client.close();
+            server.close().catch(() => {});
+            console.info(`${caseName} test end`);
+            done();
+          });
+        });
+
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        };
+        await client.connect(connectOpt).then(() => {
+          console.log('connect success')
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} err: ${JSON.stringify(err)}`)
+          expectFail()
+        })
+        done()
+        console.info(`${caseName} test end`);
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testLocalSocketConnectionGetSocketFd0200
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocketConnection_GetSocketFd_0200
+     * @tc.desc   test LocalSocketConnection getSocketFd function (Promise style)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testLocalSocketConnectionGetSocketFd0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testLocalSocketConnectionGetSocketFd0200';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        };
+        await server.listen(localAddr).then(() => {
+          console.log(`${caseName} listen success`);
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} fail to listen: ${err.code.toString()}`);
+        });
+        server.on('connect', async (connection: socket.LocalSocketConnection) => {
+          console.info(`${caseName} server accept connection success`);
+          connection.close().catch(() => {});
+          await connection.getSocketFd().then((fd: number) => {
+            console.info(`${caseName} get Connection FD success: ${fd}`);
+            expectTrue(fd === -1);
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} getSocketFd err: ${JSON.stringify(err)}`);
+            expectFail();
+          }).finally(() => {
+            server.off('connect');
+            client.close();
+            server.close().catch(() => {});
+            console.info(`${caseName} test end`);
+            done();
+          });
+        });
+
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        };
+        await client.connect(connectOpt).then(() => {
+          console.log('connect success')
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} err: ${JSON.stringify(err)}`)
+          expectFail()
+        })
+        done()
+        console.info(`${caseName} test end`);
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectFail();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testLocalSocketOn0100
      * @tc.number SUB_NetworkMgr_Socket_LocalSocket_On_Message_0100
      * @tc.desc   test LocalSocket On message function.

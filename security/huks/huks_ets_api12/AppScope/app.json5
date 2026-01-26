@@ -15,7 +15,7 @@
 
 {
   "app": {
-    "bundleName": "com.openharmony.huksapi12",
+    "bundleName": "com.acts.huks.etsapi12",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",

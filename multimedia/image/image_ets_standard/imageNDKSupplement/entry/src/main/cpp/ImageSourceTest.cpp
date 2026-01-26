@@ -60,7 +60,7 @@ napi_value ImageSourceCreatTest(napi_env env, napi_callback_info info)
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-    struct OhosImageSource *src;
+    struct OhosImageSource *src = nullptr;
     struct OhosImageSourceOps ops;
     napi_value imageSource = nullptr;
     ops.pixelFormat = 0;

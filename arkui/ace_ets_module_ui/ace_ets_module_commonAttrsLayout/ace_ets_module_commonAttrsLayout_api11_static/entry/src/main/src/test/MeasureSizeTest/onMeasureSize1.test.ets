@@ -43,7 +43,7 @@ export default function onMeasureSize1() {
   const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
 
   describe('onMeasureSize1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onMeasureSize1 beforeAll start");
     });
     beforeEach(() => {

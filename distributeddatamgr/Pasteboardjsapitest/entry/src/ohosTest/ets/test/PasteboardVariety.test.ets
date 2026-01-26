@@ -235,7 +235,7 @@ export default function PasteboardVarietyTest() {
       record['app/xml'] = new ArrayBuffer(256);
       try {
         let pasteData:pasteboard.PasteData = pasteboard.createData(record);
-        let pasteDataType: Array<String> = pasteData.getMimeTypes();
+        let pasteDataType: Array<String> = await pasteData.getMimeTypes();
         expect(pasteDataType.length).assertEqual(1);
         expect(pasteDataType).assertDeepEquals(["app/xml"]);
       } catch (error) {
@@ -529,7 +529,7 @@ export default function PasteboardVarietyTest() {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1700 start ************')
       try {
         let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-        systemPasteboard.hasData((err: BusinessError, data: boolean) => {
+        await systemPasteboard.hasData((err: BusinessError, data: boolean) => {
           if (err) {
             console.error(`Failed to check the PasteData. Cause: ${err.message}`);
             return;
@@ -556,7 +556,7 @@ export default function PasteboardVarietyTest() {
       console.info(TAG + '************ SUB_Pasteboard_Local_SDK_PasteboardVariety_1800 start ************')
       try {
         let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();        
-        systemPasteboard.hasData().then((data: boolean) => {
+        await systemPasteboard.hasData().then((data: boolean) => {
           expect(data).assertFalse();
           console.info(`Succeeded in checking the PasteData. Data: ${data}`);
         }).catch((err: BusinessError) => {

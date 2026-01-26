@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test'
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -83,8 +84,8 @@ it('areaChangeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise
       console.info('areaChangeTest_0300 START');
       await CommonFunc.sleep(1000);
       let callback = (backData: emitter.EventData) => {
-        const data: Record<String, undefined | null | Object> =
-          backData.data as Record<String, undefined | null | Object>
+        const data: Record<String,RecordData> =
+          backData.data as Record<String,RecordData>
         console.info("areaChangeTest_0300 get state result is: " + JSON.stringify(backData));
         expect(data['value']).assertEqual('TextText');
         done()
@@ -102,8 +103,8 @@ it('areaChangeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise
       console.info('areaChangeTest_0400 START');
       await CommonFunc.sleep(1000);
       let callback1 = (eventData: emitter.EventData) => {
-        const data: Record<String, undefined | null | Object> =
-          eventData.data as Record<String, undefined | null | Object>
+        const data: Record<String,RecordData> =
+          eventData.data as Record<String,RecordData>
         console.info("areaChangeTest_0400 get state result is: " + JSON.stringify(eventData));
         expect(data['ACTION']).assertEqual(true);
       }

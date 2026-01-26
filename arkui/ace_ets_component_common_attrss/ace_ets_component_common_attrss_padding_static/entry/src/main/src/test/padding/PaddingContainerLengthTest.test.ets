@@ -53,12 +53,10 @@ export default function PaddingContainerLengthTest() {
     'Scroll',
     'Stack',
     'Swiper',
-    // 'Navigator',// SDK12.2 appDied
-    'Badge',  //other // 組件問題
+    'Badge',
   )
 
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
+
 
   //The size of the parent component, when set as a percentage, serves as the calculation.
   let parentWidth = 400;
@@ -131,8 +129,7 @@ export default function PaddingContainerLengthTest() {
       right: 0,
       bottom: 0,
       left: 0,
-      parentWidthAfter: Number(UIContext.getFocusedUIContext()!.vp2px(parentWidth)) * 0.1,
-      // parentWidthAfter: 0
+      parentWidthAfter: 0,
     }
   }
   ] as TestValue[]
@@ -141,14 +138,13 @@ export default function PaddingContainerLengthTest() {
    * Create test suite.
    */
   describe('PaddingContainerLengthTest', () => {
-    beforeAll(() => {
-
-      // await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      // await UtilsTest.msSleep(4000)
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });
 
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+
       //Modify the reference component properties.
       // AttrsManager.change(data.caseTag, {
       //   padding: 0
@@ -165,7 +161,9 @@ export default function PaddingContainerLengthTest() {
         data.testValue.expectValue.left = Number(uiContext!.vp2px(10))
 
       }
-
+      if (data.testValue.describe == "SetStringPercent"){
+        data.testValue.expectValue.parentWidthAfter = UIContext.resolveUIContext()!.vp2px(400) * 0.1
+      }
 
       let targetRectBefore: RectValue = Utils.getComponentRect(data.pageConfig.componentKey);
       console.info('[' + data.caseTag + '] targetRectBefore:' + targetRectBefore);

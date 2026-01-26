@@ -99,8 +99,6 @@ import {
   Slider,
   SliderStyle,
   Stack,
-  Stepper,
-  StepperItem,
   Swiper,
   TabContent,
   Tabs,
@@ -240,14 +238,6 @@ struct EnabledPage {
         .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
         .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
         .backgroundColor(Color.Black)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Button('StepperItem')
-          }.backgroundColor(Color.Green).applyStyles(this.commonStyle)
-        }
-        .width('100%')
-        .height('70%')
       } else if (this.targetView == 'FlowItem') {
         WaterFlow() {
           FlowItem() {
@@ -310,14 +300,6 @@ struct EnabledPage {
               Text().width(20).height(100).borderRadius(10)
                 .backgroundColor('#C0C0C0')
             }.width(20).backgroundColor('#ededed').applyStyles(this.commonStyle)
-          } else if (this.targetView == 'Stepper') {
-            Stepper() {
-              StepperItem() {
-                Column() {
-                  Text('Page One')
-                }
-              }
-            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Search') {
             Search({ placeholder: 'Type to search...' })
               .backgroundColor(Color.White)

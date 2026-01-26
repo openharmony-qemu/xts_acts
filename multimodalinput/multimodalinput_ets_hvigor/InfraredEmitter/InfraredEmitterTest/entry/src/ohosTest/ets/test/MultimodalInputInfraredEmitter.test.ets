@@ -266,5 +266,38 @@ export default function MultimodalInputInfraredEmitterTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_hasIrEmitter_0100
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_hasIrEmitter_0100
+     * @tc.desc   Test hasIrEmitter interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_InfraredEmitter_hasIrEmitter_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_InfraredEmitter_hasIrEmitter_0100";
+      try {
+        infraredEmitter.hasIrEmitter().then((result: boolean) => {
+          console.info(`${caseName} hasIrEmitter success, result: ${result}`);
+          let frequencies = infraredEmitter.getInfraredFrequencies();
+          console.info(`${caseName} getInfraredFrequencies success, frequencies: ${JSON.stringify(frequencies)}`);
+          if (result) {
+            expect(result).assertEqual(true);
+            expect(frequencies.length > 0).assertTrue();
+            expect(frequencies[0].max > 0).assertTrue();
+          } else {
+            expect(result).assertEqual(false);
+            expect(frequencies[0].max).assertEqual(0);
+            expect(frequencies[0].min).assertEqual(0);
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${caseName} Failed to set capslock state, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(3800001);
+        done();
+      }
+    });   
   });
 }

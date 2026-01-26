@@ -24,6 +24,9 @@ napi_value OHImageSourceNativeModifyImagePropertyDoubleSupp(napi_env env, napi_c
 napi_value ImageModifyImagePropertyIntArraySupp(napi_env env, napi_callback_info info);
 napi_value ImageModifyImagePropertyDoubleArraySupp(napi_env env, napi_callback_info info);
 napi_value OHImageSourceNativeModifyImagePropertyBlobSupp(napi_env env, napi_callback_info info);
+napi_value ImageModifyImagePropertyShortSupp(napi_env env, napi_callback_info info);
+napi_value OHImageSourceNativeGetImagePropertyBlobSupp(napi_env env, napi_callback_info info);
+napi_value OHImageSourceNativeGetImagePropertyStringSupp(napi_env env, napi_callback_info info);
 
 
 #ifdef __cplusplus

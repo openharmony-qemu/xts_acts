@@ -44,7 +44,7 @@ export default function LazyForEachInterface() {
         console.info("get LazyForEachInterface state success " + JSON.stringify(pages));
         if (!("LazyForEachInterface" == pages.name)) {
           console.info("get LazyForEachInterface state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options)
+          let result = await router.replaceUrl(options)
           console.info("push LazyForEachInterface page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -67,13 +67,23 @@ export default function LazyForEachInterface() {
      * @tc.level  LEVEL1
      */
     it('LazyForEachInterface_001', Level.LEVEL1, async (done: Function) => {
-      console.info('[LazyForEachInterface_001] START');      
+      console.info('[LazyForEachInterface_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
-      let switch_btn = await driver.findComponent(ON.id('switch'))
+      let switch_btn = await driver.findComponent(ON.id('LazyForEachInterface_switch'))
       await switch_btn.click();
-      let info = await driver.findComponent(ON.id('interfaceInfo'));
+      console.info('[LazyForEachInterface_001] click LazyForEachInterface_switch 1');
+      await CommonFunc.sleep(1000);
+      let info = await driver.findComponent(ON.id('LazyForEachInterface_interfaceInfo'));
       expect(await info.getText()).assertEqual('aboutToRecycle');
+
+      switch_btn = await driver.findComponent(ON.id('LazyForEachInterface_switch'))
+      await switch_btn.click();
+      console.info('[LazyForEachInterface_001] click LazyForEachInterface_switch 2');
+      await CommonFunc.sleep(1000);
+      info = await driver.findComponent(ON.id('LazyForEachInterface_interfaceInfo'));
+      expect(await info.getText()).assertEqual('aboutToReuse');
+
       console.info('[LazyForEachInterface_001] END');
       done();
     });
@@ -87,36 +97,19 @@ export default function LazyForEachInterface() {
      * @tc.level  LEVEL1
      */
     it('LazyForEachInterface_002', Level.LEVEL1, async (done: Function) => {
-      console.info('[LazyForEachInterface_002] START');      
+      console.info('[LazyForEachInterface_002] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
-      let switch_btn = await driver.findComponent(ON.id('switch'))
-      await switch_btn.click();
-      let info = await driver.findComponent(ON.id('interfaceInfo'));
-      expect(await info.getText()).assertEqual('aboutToReuse');
-      console.info('[LazyForEachInterface_002] END');
-      done();
-    });
-
-    /**
-     * @tc.name   LazyForEachInterface_003
-     * @tc.number LazyForEachInterface_003
-     * @tc.desc   Test LazyForEachInterface
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('LazyForEachInterface_003', Level.LEVEL1, async (done: Function) => {
-      console.info('[LazyForEachInterface_003] START');      
-      await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
-      let delete_btn = await driver.findComponent(ON.id('deleteData'))
+      let delete_btn = await driver.findComponent(ON.id('LazyForEachInterface_deleteData'))
       await delete_btn.click();
+      console.info('[LazyForEachInterface_002] click LazyForEachInterface_deleteData 1');
       await CommonFunc.sleep(1000);
       await delete_btn.click();
+      console.info('[LazyForEachInterface_002] click LazyForEachInterface_deleteData 2');
+      await CommonFunc.sleep(1000);
       let info = await driver.findComponent(ON.id('10'));
       expect(await info.getText()).assertEqual('10');
-      console.info('[LazyForEachInterface_003] END');
+      console.info('[LazyForEachInterface_002] END');
       done();
     });
   })

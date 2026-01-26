@@ -37,7 +37,8 @@
         "MainAbility/pages/Canvas/AddColorStopErrorCode",
         "MainAbility/pages/Canvas/CanvasParamsUnitPage",
         "MainAbility/pages/Canvas/CanvasParamsImageAnalyzerPage",
-        "MainAbility/pages/Canvas/CanvasParamsVisibilityPage"
+        "MainAbility/pages/Canvas/CanvasParamsVisibilityPage",
+        "MainAbility/pages/Canvas/CanvasParamsAntialiasPage"
         
     ]
 }

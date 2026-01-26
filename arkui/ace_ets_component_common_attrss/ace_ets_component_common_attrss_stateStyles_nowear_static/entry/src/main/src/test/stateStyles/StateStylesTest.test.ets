@@ -35,8 +35,6 @@ let testAbilityContext:common.UIAbilityContext;
 export default function stateStylesTest() {
   let supportView:Array<string> = new Array<string>(
     'Select',
-    'Stepper',
-    'StepperItem',
     'ColumnSplit',//fail
     'FlowItem',
     'RowSplit',//fail

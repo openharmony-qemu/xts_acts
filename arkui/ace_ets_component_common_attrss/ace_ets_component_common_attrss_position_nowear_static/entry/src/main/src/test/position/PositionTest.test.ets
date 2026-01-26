@@ -49,13 +49,11 @@ export default function positionTest() {
     'ColumnSplit',
     'Select',
     'SideBarContainer',
-    'Stepper',
-    'StepperItem',
     'FlowItem',
     'WaterFlow'
   )
 
-  // 存在问题的自定义组件 StepperView StepperItemView FlowItemView WaterFlowView
+  // 存在问题的自定义组件 FlowItemView WaterFlowView
   // 总共4个导致16个报错， 报错原因inspector.getInspectorByKey()取不到值
 
   //Page related configuration, this parameter is required.
@@ -168,11 +166,11 @@ export default function positionTest() {
       console.info('[' + data.caseTag + '] check actual position.');
       let rect: RectValue = Utils.getComponentRect(data.pageConfig.componentKey ?? '');
 
-      //When the target component is TabContent or StepperItem,
-      //the parent component is the Swiper on the outer layer of Tabs or Stepper.
+      //When the target component is TabContent,
+      //the parent component is the Swiper on the outer layer of Tabs.
       let rectParent = parentRectAfter;
       let benchmarkChanged = false;
-      if ('TabContent' == data.pageConfig.targetView || 'StepperItem' == data.pageConfig.targetView) {
+      if ('TabContent' == data.pageConfig.targetView) {
         let parentComponent = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray('$children')[0]
           .getArray('$children')[0]

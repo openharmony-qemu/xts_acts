@@ -11,7 +11,7 @@
   "kits": [
     {
       "test-file-name": [
-        "ActsSecurityHuksGroupTest.hap"
+        "ActsHuksGroupFuncTest.hap"
       ],
       "type": "AppInstallKit",
       "cleanup-apps": true

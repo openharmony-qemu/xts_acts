@@ -16,7 +16,9 @@
 #include "AccessPixelsTest.h"
 #include "ImagePackerCreateTest.h"
 #include "ImagePackerNativeTest.h"
+#include "ImagePictureNativeTest.h"
 #include "ImagePixelMapTest.h"
+#include "OHImageSourceNativeSupplementTest.h"
 #include "PixelmapNativeCropTest.h"
 #include "napi/native_api.h"
 #include "ImageReceiverNativeReadTest.h"
@@ -57,7 +59,9 @@
 #include "ImageResultIRNdkErrCodeTest.h"
 #include "ImageNdkErrCodeTest.h"
 #include "OHImageNdkFrameworkTest.h"
+#include "ImageSourceNativeGetImagePropertyTest.h"
 #include "ImageSourceNativeModifySuppTest.h"
+#include "ImageOHImageSourceInfoCreateTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -224,6 +228,10 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("PixelmapNativeGetNativeBufferNotExist", PixelmapNativeGetNativeBufferNotExist),
     DESCRIPTOR("ImageSourceCreatSuccessTest", ImageSourceCreatSuccessTest),
     DESCRIPTOR("ImageSourceCreate", ImageSourceCreate),
+    DESCRIPTOR("ImageSourceNativeGetImagePropertyLong", ImageSourceNativeGetImagePropertyLong),
+    DESCRIPTOR("ImageSourceNativeGetImagePropertyShort", ImageSourceNativeGetImagePropertyShort),
+    DESCRIPTOR("ImageSourceNativeGetImagePropertyDouble", ImageSourceNativeGetImagePropertyDouble),
+    DESCRIPTOR("ImageSourceGetImagePropertyArraySize", ImageSourceGetImagePropertyArraySize),
     DESCRIPTOR("OHImageSourceNativeModifyImagePropertyDoubleSupp", OHImageSourceNativeModifyImagePropertyDoubleSupp),
     DESCRIPTOR("ImageModifyImagePropertyIntArraySupp", ImageModifyImagePropertyIntArraySupp),
     DESCRIPTOR("ImageModifyImagePropertyDoubleArraySupp", ImageModifyImagePropertyDoubleArraySupp),
@@ -232,6 +240,26 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("ConvertAlphaFormatTest", ConvertAlphaFormatTest),
     DESCRIPTOR("DecodingOptionsReleaseTest", DecodingOptionsReleaseTest),
     DESCRIPTOR("CreatePixelmapFromSurfaceWithTransformationTest", CreatePixelmapFromSurfaceWithTransformationTest),
+    DESCRIPTOR("SetDesiredPixelFormatTest", SetDesiredPixelFormatTest),
+    DESCRIPTOR("GetDesiredPixelFormatTest", GetDesiredPixelFormatTest),
+    DESCRIPTOR("ComposeOptionsReleaseTest", ComposeOptionsReleaseTest),
+    DESCRIPTOR("GetHdrComposedPixelmapWithOptionsTest", GetHdrComposedPixelmapWithOptionsTest),
+    DESCRIPTOR("ComposeOptionsCreateTest", ComposeOptionsCreateTest),
+    DESCRIPTOR("OHImageSourceNativeGetImagePropertyIntArraySupp", OHImageSourceNativeGetImagePropertyIntArraySupp),
+    DESCRIPTOR("OHImageSourceNativeModifyImagePropertyLongSupp", OHImageSourceNativeModifyImagePropertyLongSupp),
+    DESCRIPTOR("ImageSourceNativeGetImagePropertyDoubleArraySupp", ImageSourceNativeGetImagePropertyDoubleArraySupp),
+    DESCRIPTOR("ImageErrCodeSupp", ImageErrCodeSupp),
+    DESCRIPTOR("ImageModifyImagePropertyShortSupp", ImageModifyImagePropertyShortSupp),
+    DESCRIPTOR("OHImageSourceNativeGetImagePropertyBlobSupp", OHImageSourceNativeGetImagePropertyBlobSupp),
+    DESCRIPTOR("OHImageSourceNativeGetImagePropertyStringSupp", OHImageSourceNativeGetImagePropertyStringSupp),
+    DESCRIPTOR("OHImageSourceInfoCreateTest", OHImageSourceInfoCreateTest),
+    DESCRIPTOR("OHImageNativeGetFormatTest", OHImageNativeGetFormatTest),
+    DESCRIPTOR("OHImageNativeGetBufferDataTest", OHImageNativeGetBufferDataTest),
+    DESCRIPTOR("OHPixelmapNativeWritePixelsTest", OHPixelmapNativeWritePixelsTest),
+    DESCRIPTOR("OHPixelmapNativeReadPixelsTest", OHPixelmapNativeReadPixelsTest),
+    DESCRIPTOR("OHImageNativeGetBufferDataValueTest", OHImageNativeGetBufferDataValueTest),
+    DESCRIPTOR("OHImageNativeGetColorSpaceTest", OHImageNativeGetColorSpaceTest),
+
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

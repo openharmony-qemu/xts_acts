@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,11 +19,11 @@ import { State,StoragePropRef } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 import { Entry, Component, ItemAlign, Position, Builder, AlphabetIndexer, Button, Checkbox,CommonMethod,applyStyles,
   CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator, LoadingProgress, Marquee, Menu,
-  Navigation, Progress, QRCode, Radio, Rating, ScrollBar, Scroller, Stepper, Search, Select, Slider,
+  Navigation, Progress, QRCode, Radio, Rating, ScrollBar, Scroller, Search, Select, Slider,
   Text, TextArea, TextClock, TextInput, TextPicker, TextTimer, TimePicker, Toggle, Badge, Column, Counter, Flex,
   GridRow, Grid, List, RelativeContainer, Row, Refresh, Scroll, SideBarContainer, Stack, Swiper,
   Tabs, WaterFlow, Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape, ColumnSplit, RowSplit, Blank,
-  DataPanelType, Color, $r, MenuItem, ProgressType, BarState, StepperItem, SliderStyle, Axis, ToggleType,
+  DataPanelType, Color, $r, MenuItem, ProgressType, BarState, SliderStyle, Axis, ToggleType,
   GridRowDirection, GridCol, GridItem, ListItem, SideBarContainerType, FlexDirection, BadgeStyle,LinearGradient,
   BadgeParamWithString, TextAlign, FlexAlign, TabContent, FlowItem, ColumnOptions, PolylineOptions,Area,
   RectOptions, GridColColumnOption, FlexWrap, GutterOption, NavPathStack, BreakPoints, ForEach,NavDestination,AlignRuleOption,
@@ -31,6 +31,7 @@ import { Entry, Component, ItemAlign, Position, Builder, AlphabetIndexer, Button
   RichText, VerticalAlign, HorizontalAlign } from '@ohos.arkui.component'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 @Entry
 @Component
 struct OnAreaChangePage {
@@ -93,7 +94,7 @@ struct OnAreaChangePage {
 
   private stateChangCallBack:(eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       console.info("swiper page state change called:" + JSON.stringify(eventData));
       if (data['_width'] != null && data['_height'] != null) {
         this._width = data['_width'] as number;
@@ -176,21 +177,6 @@ struct OnAreaChangePage {
         Navigation({}).applyStyles(this.commonStyle)
       } else if (this.targetView == 'NavRouter') {
         Navigation({}).applyStyles(this.commonStyle)
-      } else if (this.targetView == 'StepperItem') {
-        Button('Button')
-          .width(this._compareButtonWidth)
-          .height(this._compareButtonHeight)
-          .key(this.compareButtonKey)
-        Stepper() {
-          StepperItem()
-            .backgroundColor(Color.Pink)
-            .applyStyles(this.commonStyle)
-        }
-        .width(this._width)
-        .height(this._height)
-        .backgroundColor(Color.Green)
-        .margin(this.parentMargin)
-        .key(this.parentKey)
       } else if (this.targetView == 'FlowItem') {
         Button('Button')
           .width(this._compareButtonWidth)
@@ -408,10 +394,6 @@ struct OnAreaChangePage {
             Slider()
               .backgroundColor(Color.Pink)
               .applyStyles(this.commonStyle)
-          } else if (this.targetView == 'Stepper') {
-            Stepper() {
-              StepperItem()
-            }.backgroundColor(Color.Pink).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Text') {
             Text('text')
               .fontSize(15)

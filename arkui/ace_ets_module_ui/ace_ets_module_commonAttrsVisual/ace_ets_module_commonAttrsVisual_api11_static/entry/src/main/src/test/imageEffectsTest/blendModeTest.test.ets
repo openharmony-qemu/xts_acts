@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function blendModeTest() {
   describe('blendModeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("blendModeTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")

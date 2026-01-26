@@ -36,8 +36,6 @@ export default function DefaultFocusTest() {
   //A list of components that support the position attribute, which is required.
   let supportView: Array<string> = new Array<string>(
     'Select',
-    'Stepper',
-    'StepperItem',
     // 'Web',
     'SideBarContainer'
   )

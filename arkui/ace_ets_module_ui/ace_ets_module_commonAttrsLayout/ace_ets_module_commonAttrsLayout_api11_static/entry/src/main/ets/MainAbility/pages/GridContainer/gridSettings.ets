@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -105,8 +105,8 @@ struct GridSetting {
   stateChangCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
     console.info("GridSetting page stateChangCallBack" + JSON.stringify(eventData));
     if (eventData && eventData.data) {
-      const data: Record<string, undefined | null | Object> =
-        eventData.data as Record<string, undefined | null | Object>
+      const data: Record<String,RecordData> =
+        eventData.data as Record<String,RecordData>
       if (data['span'] != null) {
         this.smSpan = data['span'] as number;
         this.smOffset = data['offset'] as number;
