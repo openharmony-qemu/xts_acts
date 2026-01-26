@@ -89,7 +89,7 @@ export default function nfcNDEFTagTest() {
       try {
         ndefTag = tag.getNdef(ndefTagInfo);
       } catch (error: BusinessError) {
-        if (error.code == 801) {
+        if (error.code === 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0700 error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code);
         } else {
@@ -100,7 +100,7 @@ export default function nfcNDEFTagTest() {
       try {
         ndefFormatable = tag.getNdefFormatable(NdefFormatableTag);
       } catch (error: BusinessError) {
-        if (error.code == 801) {
+        if (error.code === 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] beforeAll error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code)
         } else {
@@ -456,13 +456,13 @@ export default function nfcNDEFTagTest() {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1300 readNdef:');
           });
         } catch (error: BusinessError) {
-          if (error.code == 201) {
+          if (error.code === 201) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1300 readNdef error is ' + error.code + " - " + error);
             expect(201).assertEqual(error.code);
-          } else if (error.code == 3100201) {
+          } else if (error.code === 3100201) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1300 readNdef error is ' + error.code + " - " + error);
             expect(3100201).assertEqual(error.code);
-          } else if (error.code == 3100204) {
+          } else if (error.code === 3100204) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1300 readNdef error is ' + error.code + " - " + error);
             expect(3100204).assertEqual(error.code);
           } else {
@@ -494,13 +494,13 @@ export default function nfcNDEFTagTest() {
         try {
           ndefTag.readNdef(AsyncCallback);
         } catch (error: BusinessError) {
-          if (error.code == 201) {
+          if (error.code === 201) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1400 readNdef error is ' + error.code + " - " + error);
             expect(201).assertEqual(error.code);
-          } else if (error.code == 3100201) {
+          } else if (error.code === 3100201) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1400 readNdef error is ' + error.code + " - " + error);
             expect(3100201).assertEqual(error.code);
-          } else if (error.code == 3100204) {
+          } else if (error.code === 3100204) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1400 readNdef error is ' + error.code + " - " + error);
             expect(3100204).assertEqual(error.code);
           } else {
@@ -531,13 +531,13 @@ export default function nfcNDEFTagTest() {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1500 writeNdef finish:');
           });
         } catch (error: BusinessError) {
-          if (error.code == 201) {
+          if (error.code === 201) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1500 writeNdef error is ' + error.code + " - " + error);
             expect(201).assertEqual(error.code);
-          }  else if (error.code == 3100201) {
+          }  else if (error.code === 3100201) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1500 writeNdef error is ' + error.code + " - " + error);
             expect(3100201).assertEqual(error.code);
-          } else if (error.code == 3100204) {
+          } else if (error.code === 3100204) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1500 writeNdef error is ' + error.code + " - " + error);
             expect(3100204).assertEqual(error.code);
           } else {
@@ -570,13 +570,13 @@ export default function nfcNDEFTagTest() {
         try {
           ndefTag.writeNdef(ndefMessage,AsyncCallback);
         } catch (error: BusinessError) {
-          if (error.code == 201) {
+          if (error.code === 201) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1600 writeNdef error is ' + error.code + " - " + error);
             expect(201).assertEqual(error.code);
-          } else if (error.code == 3100201) {
+          } else if (error.code === 3100201) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1600 writeNdef error is ' + error.code + " - " + error);
             expect(3100201).assertEqual(error.code);
-          } else if (error.code == 3100204) {
+          } else if (error.code === 3100204) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1600 writeNdef error is ' + error.code + " - " + error);
             expect(3100204).assertEqual(error.code);
           } else {
@@ -611,10 +611,10 @@ export default function nfcNDEFTagTest() {
             expect(canSetReadOnly).assertFalse();
           }
         } catch (error: BusinessError) {
-          if (error.code == 201) {
+          if (error.code === 201) {
             hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1700 canSetReadOnly error is ' + error + " - " + error.code);
             expect(201).assertEqual(error.code);
-          } else if (error.code == 3100201) {
+          } else if (error.code === 3100201) {
             hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1700 canSetReadOnly error is ' + error + " - " + error.code);
             expect(3100201).assertEqual(error.code);
           } else {
@@ -645,13 +645,13 @@ export default function nfcNDEFTagTest() {
             hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1800 :');
           });
         } catch (error: BusinessError) {
-          if (error.code == 201) {
+          if (error.code === 201) {
             hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1800  error is ' + error + " - " + error.code);
             expect(201).assertEqual(error.code);
-          } else if (error.code == 3100201) {
+          } else if (error.code === 3100201) {
             hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1800 error is ' + error + " - " + error.code);
             expect(3100201).assertEqual(error.code);
-          } else if (error.code == 3100204) {
+          } else if (error.code === 3100204) {
             hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1800 error is ' + error + " - " + error.code);
             expect(3100204).assertEqual(error.code);
           } else {
@@ -683,13 +683,13 @@ export default function nfcNDEFTagTest() {
         try {
           ndefTag.setReadOnly(AsyncCallback);
         }catch (error: BusinessError) {
-          if (error.code == 201) {
+          if (error.code === 201) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1900  error is ' + error + " - " + error.code);
             expect(201).assertEqual(error.code);
-          } else if (error.code == 3100201) {
+          } else if (error.code === 3100201) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1900 error is ' + error + " - " + error.code);
             expect(3100201).assertEqual(error.code);
-          } else if (error.code == 3100204) {
+          } else if (error.code === 3100204) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1900 error is ' + error + " - " + error.code);
             expect(3100204).assertEqual(error.code);
           } else {
@@ -740,13 +740,13 @@ export default function nfcNDEFTagTest() {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2100 format finish:');
           });
         } catch (error: BusinessError) {
-          if (error.code == 201) {
+          if (error.code === 201) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2100 format error is ' + error.code + " - " + error);
             expect(201).assertEqual(error.code);
-          }  else if (error.code == 3100201) {
+          }  else if (error.code === 3100201) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2100 format error is ' + error.code + " - " + error);
             expect(3100201).assertEqual(error.code);
-          } else if (error.code == 3100204) {
+          } else if (error.code === 3100204) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2100 format error is ' + error.code + " - " + error);
             expect(3100204).assertEqual(error.code);
           } else {
@@ -779,13 +779,13 @@ export default function nfcNDEFTagTest() {
         try {
           ndefFormatable.format(ndefMessage, AsyncCallback);
         } catch (error: BusinessError) {
-          if (error.code == 201) {
+          if (error.code === 201) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2200 format error is ' + error.code + " - " + error);
             expect(201).assertEqual(error.code);
-          } else if (error.code == 3100201) {
+          } else if (error.code === 3100201) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2200 format error is ' + error.code + " - " + error);
             expect(3100201).assertEqual(error.code);
-          } else if (error.code == 3100204) {
+          } else if (error.code === 3100204) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2200 format error is ' + error.code + " - " + error);
             expect(3100204).assertEqual(error.code);
           } else {
@@ -816,13 +816,13 @@ export default function nfcNDEFTagTest() {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2300 formatReadOnly finish:');
           });
         } catch (error: BusinessError) {
-          if (error.code == 201) {
+          if (error.code === 201) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2300 formatReadOnly error is ' + error.code + " - " + error);
             expect(201).assertEqual(error.code);
-          }  else if (error.code == 3100201) {
+          }  else if (error.code === 3100201) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2300 formatReadOnly error is ' + error.code + " - " + error);
             expect(3100201).assertEqual(error.code);
-          } else if (error.code == 3100204) {
+          } else if (error.code === 3100204) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2300 formatReadOnly error is ' + error.code + " - " + error);
             expect(3100204).assertEqual(error.code);
           } else {
@@ -855,13 +855,13 @@ export default function nfcNDEFTagTest() {
         try {
           ndefFormatable.formatReadOnly(ndefMessage, AsyncCallback);
         } catch (error: BusinessError) {
-          if (error.code == 201) {
+          if (error.code === 201) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2400 formatReadOnly error is ' + error.code + " - " + error);
             expect(201).assertEqual(error.code);
-          } else if (error.code == 3100201) {
+          } else if (error.code === 3100201) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2400 formatReadOnly error is ' + error.code + " - " + error);
             expect(3100201).assertEqual(error.code);
-          } else if (error.code == 3100204) {
+          } else if (error.code === 3100204) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2400 formatReadOnly error is ' + error.code + " - " + error);
             expect(3100204).assertEqual(error.code);
           } else {

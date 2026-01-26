@@ -125,13 +125,13 @@ export default function nfcControllerTest() {
                 controller.disableNfc();
                 hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0700 nfc state receive state success');
             } catch(err:BusinessError) {
-                if (err.code == 201) {
+                if (err.code === 201) {
                     hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0700 nfc state receive state err  ->' + err.message);
                     expect(201).assertEqual(err.code);
-                } else if (err.code == 801) {
+                } else if (err.code === 801) {
                     hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0700 nfc state receive state err  ->' + err.message);
                     expect(801).assertEqual(err.code);
-                } else if (err.code == 3100101) {
+                } else if (err.code === 3100101) {
                     hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0700 nfc state receive state err  ->' + err.message);
                     expect(3100101).assertEqual(err.code);
                 } else {
@@ -155,13 +155,13 @@ export default function nfcControllerTest() {
                 controller.enableNfc();
                 hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0800 nfc state receive state success');
             } catch(err:BusinessError) {
-                if (err.code == 201) {
+                if (err.code === 201) {
                     hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0800 nfc state receive state err  ->' + err.message);
                     expect(201).assertEqual(err.code);
-                } else if (err.code == 801) {
+                } else if (err.code === 801) {
                     hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0800 nfc state receive state err  ->' + err.message);
                     expect(801).assertEqual(err.code);
-                } else if (err.code == 3100101) {
+                } else if (err.code === 3100101) {
                     hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0800 nfc state receive state err  ->' + err.message);
                     expect(3100101).assertEqual(err.code);
                 } else {

@@ -87,7 +87,7 @@ export default function TagABFVTest() {
             try {
                 nfcAtag = tag.getNfcA(aTag);
             }catch(error: BusinessError){
-                if (error.code == 801) {
+                if (error.code === 801) {
                     hilog.info(domain,tag1,'%{public}s','[NFC_test] beforeAll getNfcA error is :  ' + error + " - " + error.code);
                     expect(801).assertEqual(error.code);
                 } else {
@@ -99,7 +99,7 @@ export default function TagABFVTest() {
             try {
                 nfcBTag = tag.getNfcB(bTag);
             }catch(error: BusinessError){
-                if (error.code == 801) {
+                if (error.code === 801) {
                     hilog.info(domain,tag1,'%{public}s','[NFC_test] beforeAll getNfcA error is :  ' + error + " - " + error.code);
                     expect(801).assertEqual(error.code);
                 } else {
@@ -111,7 +111,7 @@ export default function TagABFVTest() {
             try {
                 nfcFTag = tag.getNfcF(fTag);
             } catch (error: BusinessError) {
-                if (error.code == 801) {
+                if (error.code === 801) {
                     hilog.info(domain, tag1,'%{public}s','[NFC_test] beforeAll getNfcF error is ' + error.code + " - " + error);
                     expect(801).assertEqual(error.code)
                 } else {
@@ -123,7 +123,7 @@ export default function TagABFVTest() {
             try {
                 nfcVTag = tag.getNfcV(vTag);
             } catch (error: BusinessError) {
-                if (error.code == 801) {
+                if (error.code === 801) {
                     hilog.info(domain, tag1,'{public}s','[NFC_test] beforeAll getNfcV error is ' + error.code + " - " + error);
                     expect(801).assertEqual(error.code)
                 } else {
