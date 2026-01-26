@@ -372,8 +372,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        let errCode:string = error.code;
-        expect(errCode).assertEqual('7600204');
+        expect(error.code).assertEqual(7600204);
       }
       done();
     });
@@ -741,8 +740,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG, testName, error, error.code);
-        let errCode:number = Number(error.code);
-        expect(errCode).assertEqual(401);
+        expect(Number(error.code)).assertEqual(401);
       }
       done();
     });
