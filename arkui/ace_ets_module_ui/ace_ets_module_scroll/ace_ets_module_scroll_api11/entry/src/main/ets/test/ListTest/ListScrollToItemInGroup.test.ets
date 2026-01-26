@@ -59,11 +59,11 @@ export default function ListScrollToItemInGroup() {
      */
     it('ArkUI_List_Scroll_To_Item_In_Group_0001', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_0001] START');
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       let driver: Driver = Driver.create();
       let btn: Component = await driver.findComponent(ON.id('Btn_0_0'));
       await btn.click();
-      await CommonFunc.sleep(1500);
+      await Utils.sleep(1500);
       let List: Rect = Utils.getComponentRect('MyList1');
       let ListItem: Rect = Utils.getComponentRect('ListItem_Group0_Index0');
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_0001] List' + JSON.stringify(List));
