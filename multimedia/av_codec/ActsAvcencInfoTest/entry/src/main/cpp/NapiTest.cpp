@@ -131,8 +131,16 @@ napi_value CencInfoNapiImpl(
     });
 }
 
-#define MAKE_FUNC_TABLE(array) \
-    { array, sizeof(array) / sizeof(array[0]) }
+template <typename T>
+    struct FuncTable {
+        const T* arr;
+        size_t len;
+    };
+
+template <typename T, size_t N>
+    constexpr FuncTable<T> MakeFuncTable(const T (&array)[N]) {
+        return {array, N};
+    }
 
 DEFINE_CENCINFO_NAPI(OH_CencInfo_Create, CENCINFO_CREATE_FUNCS)
 DEFINE_CENCINFO_NAPI(OH_CencInfo_Destroy, CENCINFO_DESTROY_FUNCS)
@@ -150,7 +158,8 @@ napi_value Init(napi_env env, napi_value exports)
         {"cencInfoDestroy", nullptr, OH_CencInfo_Destroy, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"cencInfoSetAlgorithm", nullptr, OH_CencInfo_SetAlgorithm, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"cencInfoSetKeyIdAndIv", nullptr, OH_CencInfo_SetKeyIdAndIv, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"cencInfoSetSubsampleInfo", nullptr, OH_CencInfo_SetSubsampleInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"cencInfoSetSubsampleInfo", nullptr, OH_CencInfo_SetSubsampleInfo,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"cencInfoSetMode", nullptr, OH_CencInfo_SetMode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"cencInfoSetAVBuffer", nullptr, OH_CencInfo_SetAVBuffer, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
