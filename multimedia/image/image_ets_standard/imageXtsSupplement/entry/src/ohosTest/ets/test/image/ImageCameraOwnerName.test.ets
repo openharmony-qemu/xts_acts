@@ -80,7 +80,7 @@ export default function ImageCameraOwnerName() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -105,7 +105,7 @@ export default function ImageCameraOwnerName() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -130,7 +130,7 @@ export default function ImageCameraOwnerName() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -155,7 +155,7 @@ export default function ImageCameraOwnerName() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -180,7 +180,7 @@ export default function ImageCameraOwnerName() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -205,7 +205,7 @@ export default function ImageCameraOwnerName() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -282,7 +282,7 @@ export default function ImageCameraOwnerName() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -307,7 +307,7 @@ export default function ImageCameraOwnerName() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -332,7 +332,7 @@ export default function ImageCameraOwnerName() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -357,7 +357,7 @@ export default function ImageCameraOwnerName() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -382,7 +382,7 @@ export default function ImageCameraOwnerName() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -407,7 +407,7 @@ export default function ImageCameraOwnerName() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -432,7 +432,7 @@ export default function ImageCameraOwnerName() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -457,8 +457,7 @@ export default function ImageCameraOwnerName() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        let errCode:string = err.code;
-        expect(errCode).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
