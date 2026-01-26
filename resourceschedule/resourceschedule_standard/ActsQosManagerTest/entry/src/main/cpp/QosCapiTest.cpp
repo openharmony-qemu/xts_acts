@@ -15,7 +15,6 @@
 
 #include "include/QosCapiTest.h"
 #include <cerrno>
-#include <hilog/log.h>
 #include <qos/qos.h>
 #include <thread>
 #include <unistd.h>
@@ -40,7 +39,7 @@ namespace QosManager {
 static int TestSingleQoSLevel(QoS_Level level, const char* levelName, const char* prefix)
 {
     int ret = OH_QoS_SetThreadQoS(level);
-            if (ret != 0) {
+    if (ret != 0) {
         return -1;
     }
     return 0;
@@ -54,23 +53,23 @@ static int TestSingleQoSLevel(QoS_Level level, const char* levelName, const char
 static int TestAllValidQoSLevels(const char* prefix)
 {
     if (TestSingleQoSLevel(QoS_Level::QOS_BACKGROUND, "QOS_BACKGROUND", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestSingleQoSLevel(QoS_Level::QOS_UTILITY, "QOS_UTILITY", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestSingleQoSLevel(QoS_Level::QOS_DEFAULT, "QOS_DEFAULT", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestSingleQoSLevel(QoS_Level::QOS_USER_INITIATED, "QOS_USER_INITIATED", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestSingleQoSLevel(QoS_Level::QOS_DEADLINE_REQUEST, "QOS_DEADLINE_REQUEST", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestSingleQoSLevel(QoS_Level::QOS_USER_INTERACTIVE, "QOS_USER_INTERACTIVE", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     return 0;
 }
 
@@ -82,19 +81,19 @@ static int TestAllValidQoSLevels(const char* prefix)
 static int TestInvalidQoSLevels(const char* prefix)
 {
     int ret = OH_QoS_SetThreadQoS(QoS_Level(-1));
-        if (ret != -1) {
-            return -1;
-        }
+    if (ret != -1) {
+        return -1;
+    }
 
     ret = OH_QoS_SetThreadQoS(QoS_Level(INVALID_QOS_VALUE));
-            if (ret != -1) {
-            return -1;
-        }
+    if (ret != -1) {
+        return -1;
+    }
 
     ret = OH_QoS_SetThreadQoS(QoS_Level(QOS_LEVEL_TEST));
-            if (ret != -1) {
-            return -1;
-        }
+    if (ret != -1) {
+        return -1;
+    }
     return 0;
 }
 
@@ -104,23 +103,23 @@ static int TestInvalidQoSLevels(const char* prefix)
  */
 static int RunQoSFullTestInWorkerThread()
 {
-        bool testPassed = true;
+    bool testPassed = true;
     std::thread fullTest([&testPassed]() {
         if (TestAllValidQoSLevels("Worker: ") != 0) {
-                testPassed = false;
-                return;
-            }
-        if (TestInvalidQoSLevels("Worker: ") != 0) {
-                testPassed = false;
-                return;
-            }
-        });
-        fullTest.join();
-        if (testPassed) {
-            return OH_NN_SUCCESS;
-        } else {
-            return -1;
+            testPassed = false;
+            return;
         }
+        if (TestInvalidQoSLevels("Worker: ") != 0) {
+            testPassed = false;
+            return;
+        }
+    });
+    fullTest.join();
+    if (testPassed) {
+        return OH_NN_SUCCESS;
+    } else {
+        return -1;
+    }
 }
 
 /**
@@ -130,12 +129,12 @@ static int RunQoSFullTestInWorkerThread()
 static int RunQoSFullTestInMainThread()
 {
     if (TestAllValidQoSLevels("") != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestInvalidQoSLevels("") != 0) {
-            return -1;
-        }
-        return OH_NN_SUCCESS;
+        return -1;
+    }
+    return OH_NN_SUCCESS;
 }
 
 /**
@@ -145,9 +144,7 @@ static int RunQoSFullTestInMainThread()
  * @param mainTestFunc: Function to run if only main thread supports QoS
  * @return 0 on success, -1 on failure
  */
-static int RunQoSTestWithThreadStrategy(const char* testName,
-                                        int (*workerTestFunc)(),
-                                        int (*mainTestFunc)())
+static int RunQoSTestWithThreadStrategy(const char* testName, int (*workerTestFunc)(), int (*mainTestFunc)())
 {
     int mainThreadResult = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
     std::mutex mtx;
@@ -185,9 +182,8 @@ static int RunQoSTestWithThreadStrategy(const char* testName,
  */
 int SetThreadQoSNdkTest()
 {
-    return RunQoSTestWithThreadStrategy("SetThreadQoSNdkTest",
-                                        RunQoSFullTestInWorkerThread,
-                                        RunQoSFullTestInMainThread);
+    return RunQoSTestWithThreadStrategy(
+        "SetThreadQoSNdkTest", RunQoSFullTestInWorkerThread, RunQoSFullTestInMainThread);
 }
 
 /**
@@ -200,11 +196,11 @@ int SetThreadQoSNdkTest()
 static int TestSingleQoSLevelWithReset(QoS_Level level, const char* levelName, const char* prefix)
 {
     int ret = OH_QoS_SetThreadQoS(level);
-            if (ret != 0) {
+    if (ret != 0) {
         return -1;
-            }
-            ret = OH_QoS_ResetThreadQoS();
-            if (ret != 0) {
+    }
+    ret = OH_QoS_ResetThreadQoS();
+    if (ret != 0) {
         return -1;
     }
     return 0;
@@ -218,23 +214,23 @@ static int TestSingleQoSLevelWithReset(QoS_Level level, const char* levelName, c
 static int TestAllQoSLevelsWithReset(const char* prefix)
 {
     if (TestSingleQoSLevelWithReset(QoS_Level::QOS_BACKGROUND, "QOS_BACKGROUND", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestSingleQoSLevelWithReset(QoS_Level::QOS_UTILITY, "QOS_UTILITY", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestSingleQoSLevelWithReset(QoS_Level::QOS_DEFAULT, "QOS_DEFAULT", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestSingleQoSLevelWithReset(QoS_Level::QOS_USER_INITIATED, "QOS_USER_INITIATED", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestSingleQoSLevelWithReset(QoS_Level::QOS_DEADLINE_REQUEST, "QOS_DEADLINE_REQUEST", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestSingleQoSLevelWithReset(QoS_Level::QOS_USER_INTERACTIVE, "QOS_USER_INTERACTIVE", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     return 0;
 }
 
@@ -247,16 +243,16 @@ static int RunResetQoSFullTestInWorkerThread()
     bool testPassed = true;
     std::thread fullTest([&testPassed]() {
         if (TestAllQoSLevelsWithReset("Worker: ") != 0) {
-                testPassed = false;
-                return;
-            }
-    });
-        fullTest.join();
-        if (testPassed) {
-            return OH_NN_SUCCESS;
-        } else {
-            return -1;
+            testPassed = false;
+            return;
         }
+    });
+    fullTest.join();
+    if (testPassed) {
+        return OH_NN_SUCCESS;
+    } else {
+        return -1;
+    }
 }
 
 /**
@@ -266,9 +262,9 @@ static int RunResetQoSFullTestInWorkerThread()
 static int RunResetQoSFullTestInMainThread()
 {
     if (TestAllQoSLevelsWithReset("") != 0) {
-            return -1;
-        }
-        return OH_NN_SUCCESS;
+        return -1;
+    }
+    return OH_NN_SUCCESS;
 }
 
 /**
@@ -281,9 +277,8 @@ static int RunResetQoSFullTestInMainThread()
  */
 int ResetThreadQoSNdkTest()
 {
-    return RunQoSTestWithThreadStrategy("ResetThreadQoSNdkTest",
-                                        RunResetQoSFullTestInWorkerThread,
-                                        RunResetQoSFullTestInMainThread);
+    return RunQoSTestWithThreadStrategy(
+        "ResetThreadQoSNdkTest", RunResetQoSFullTestInWorkerThread, RunResetQoSFullTestInMainThread);
 }
 
 /**
@@ -296,17 +291,17 @@ int ResetThreadQoSNdkTest()
 static int TestSingleQoSLevelWithGet(QoS_Level level, const char* levelName, const char* prefix)
 {
     int ret = OH_QoS_SetThreadQoS(level);
-            if (ret != 0) {
-            return -1;
-        }
+    if (ret != 0) {
+        return -1;
+    }
     enum QoS_Level getLevel_;
     ret = OH_QoS_GetThreadQoS(&getLevel_);
-            if (ret != 0) {
-            return -1;
-        }
+    if (ret != 0) {
+        return -1;
+    }
     if (getLevel_ != level) {
-            return -1;
-        }
+        return -1;
+    }
     return 0;
 }
 
@@ -319,18 +314,18 @@ static int TestGetQoSWithNullAndReset(const char* prefix)
 {
     int ret = OH_QoS_GetThreadQoS(nullptr);
     if (ret != -1) {
-            return -1;
-        }
+        return -1;
+    }
 
     ret = OH_QoS_ResetThreadQoS();
-            if (ret != 0) {
-            return -1;
-        }
+    if (ret != 0) {
+        return -1;
+    }
     enum QoS_Level level;
-            ret = OH_QoS_GetThreadQoS(&level);
+    ret = OH_QoS_GetThreadQoS(&level);
     if (ret != -1) {
-            return -1;
-        }
+        return -1;
+    }
     return 0;
 }
 
@@ -342,26 +337,26 @@ static int TestGetQoSWithNullAndReset(const char* prefix)
 static int TestAllQoSLevelsWithGet(const char* prefix)
 {
     if (TestGetQoSWithNullAndReset(prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestSingleQoSLevelWithGet(QoS_Level::QOS_BACKGROUND, "QOS_BACKGROUND", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestSingleQoSLevelWithGet(QoS_Level::QOS_UTILITY, "QOS_UTILITY", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestSingleQoSLevelWithGet(QoS_Level::QOS_DEFAULT, "QOS_DEFAULT", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestSingleQoSLevelWithGet(QoS_Level::QOS_USER_INITIATED, "QOS_USER_INITIATED", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestSingleQoSLevelWithGet(QoS_Level::QOS_DEADLINE_REQUEST, "QOS_DEADLINE_REQUEST", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     if (TestSingleQoSLevelWithGet(QoS_Level::QOS_USER_INTERACTIVE, "QOS_USER_INTERACTIVE", prefix) != 0) {
-            return -1;
-        }
+        return -1;
+    }
     return 0;
 }
 
@@ -374,16 +369,16 @@ static int RunGetQoSFullTestInWorkerThread()
     bool testPassed = true;
     std::thread fullTest([&testPassed]() {
         if (TestAllQoSLevelsWithGet("Worker: ") != 0) {
-                testPassed = false;
-                return;
-            }
-    });
-        fullTest.join();
-        if (testPassed) {
-            return OH_NN_SUCCESS;
-        } else {
-            return -1;
+            testPassed = false;
+            return;
         }
+    });
+    fullTest.join();
+    if (testPassed) {
+        return OH_NN_SUCCESS;
+    } else {
+        return -1;
+    }
 }
 
 /**
@@ -393,8 +388,8 @@ static int RunGetQoSFullTestInWorkerThread()
 static int RunGetQoSFullTestInMainThread()
 {
     if (TestAllQoSLevelsWithGet("") != 0) {
-            return -1;
-        }
+        return -1;
+    }
     return OH_NN_SUCCESS;
 }
 
@@ -408,9 +403,8 @@ static int RunGetQoSFullTestInMainThread()
  */
 int GetThreadQoSNdkTest()
 {
-    return RunQoSTestWithThreadStrategy("GetThreadQoSNdkTest",
-                                        RunGetQoSFullTestInWorkerThread,
-                                        RunGetQoSFullTestInMainThread);
+    return RunQoSTestWithThreadStrategy(
+        "GetThreadQoSNdkTest", RunGetQoSFullTestInWorkerThread, RunGetQoSFullTestInMainThread);
 }
 
 /**
@@ -420,38 +414,38 @@ int GetThreadQoSNdkTest()
 static int RunDoubleQoSOperationsTest()
 {
     int ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
-        if (ret != 0) {
-            return -1;
-        }
+    if (ret != 0) {
+        return -1;
+    }
     ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
-        if (ret != 0) {
-            return -1;
-        }
+    if (ret != 0) {
+        return -1;
+    }
 
     enum QoS_Level level;
-        ret = OH_QoS_GetThreadQoS(&level);
-        if (ret != 0) {
-            return -1;
-        }
+    ret = OH_QoS_GetThreadQoS(&level);
+    if (ret != 0) {
+        return -1;
+    }
     if (level != QoS_Level::QOS_BACKGROUND) {
-            return -1;
-        }
-        ret = OH_QoS_GetThreadQoS(&level);
-        if (ret != 0) {
-            return -1;
-        }
+        return -1;
+    }
+    ret = OH_QoS_GetThreadQoS(&level);
+    if (ret != 0) {
+        return -1;
+    }
     if (level != QoS_Level::QOS_BACKGROUND) {
-            return -1;
-        }
+        return -1;
+    }
 
     ret = OH_QoS_ResetThreadQoS();
-        if (ret != 0) {
-            return -1;
-        }
+    if (ret != 0) {
+        return -1;
+    }
     ret = OH_QoS_ResetThreadQoS();
     if (ret != -1) {
-            return -1;
-        }
+        return -1;
+    }
 
     return 0;
 }
@@ -479,9 +473,9 @@ static int RunDoubleTestInWorkerThread()
 static int RunDoubleTestInMainThread()
 {
     if (RunDoubleQoSOperationsTest() != 0) {
-            return -1;
-        }
-        return OH_NN_SUCCESS;
+        return -1;
+    }
+    return OH_NN_SUCCESS;
 }
 
 /**
@@ -586,7 +580,8 @@ int GewuSubmitRequestTest()
     if (sessionResult.error != OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK) {
         return -1;
     }
-    OH_QoS_GewuSubmitRequestResult requestResult = OH_QoS_GewuSubmitRequest(sessionResult.session, request, cb, fakeContext);
+    OH_QoS_GewuSubmitRequestResult requestResult =
+        OH_QoS_GewuSubmitRequest(sessionResult.session, request, cb, fakeContext);
     if (requestResult.error != OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK) {
         return -1;
     }

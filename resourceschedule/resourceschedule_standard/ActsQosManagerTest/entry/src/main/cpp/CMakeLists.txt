@@ -17,7 +17,7 @@ add_library(qosmanagerops SHARED
     OhosCommonTest.cpp
     )
 target_link_libraries(qosmanagerops PUBLIC
-    libace_napi.z.so
-    libhilog_ndk.z.so
+    libace_napi.so
+    libhilog_ndk.so
     libqos.so
     )
