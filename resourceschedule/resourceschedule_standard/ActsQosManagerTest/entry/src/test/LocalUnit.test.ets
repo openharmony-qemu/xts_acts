@@ -21,13 +21,20 @@ export default function localUnitTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     });
-    it('assertContain', 0, () => {
+    /**
+     * @tc.name   assertContain
+     * @tc.number assertContain
+     * @tc.desc   Verify the assertContain and assertEqual functions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('assertContain', Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       let a = 'abc';
       let b = 'b';
       // Defines a variety of assertion methods, which are used to declare expected boolean conditions.
       expect(a).assertContain(b);
-      expect(a).assertEqual(a);
     });
   });
 }

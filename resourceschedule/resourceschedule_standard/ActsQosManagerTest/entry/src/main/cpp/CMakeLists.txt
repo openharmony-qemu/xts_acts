@@ -18,7 +18,7 @@ add_library(qosmanagerops SHARED
     )
 target_link_libraries(qosmanagerops PUBLIC
     libace_napi.z.so
-    libhilog_ndk.z.so
+    libhilog_ndk.so
     libqos.so
 
     )

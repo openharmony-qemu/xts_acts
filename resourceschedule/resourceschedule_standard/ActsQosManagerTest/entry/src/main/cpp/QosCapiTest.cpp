@@ -14,7 +14,7 @@
  */
 
 #include "include/QosCapiTest.h"
-#include <errno.h>
+#include <cerrno>
 #include <hilog/log.h>
 #include <qos/qos.h>
 #include <thread>
@@ -24,9 +24,237 @@
 #define OH_NN_SUCCESS 0
 #define LOG_DOMAIN 0xD003900
 #define LOG_TAG "QosCapiTest"
+#define INVALID_QOS_VALUE 6
+#define QOS_LEVEL_TEST 1024
 
 namespace Acts {
 namespace QosManager {
+
+/**
+ * Helper function: Test all valid QoS levels
+ * @param prefix: Log prefix for distinguishing test context (e.g., "Worker: ")
+ * @return 0 on success, -1 on failure
+ */
+static int TestAllValidQoSLevels(const char* prefix)
+{
+            int ret;
+            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
+            if (ret != 0) {
+        OH_LOG_ERROR(LOG_APP,
+                     "[SetThreadQoSNdkTest] %sSet QOS_BACKGROUND failed, ret=%{public}d, errno=%{public}d",
+                     prefix,
+                    ret,
+                    errno);
+        return -1;
+            }
+    OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] %sSet QOS_BACKGROUND success", prefix);
+
+            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_UTILITY);
+            if (ret != 0) {
+                OH_LOG_ERROR(LOG_APP,
+                     "[SetThreadQoSNdkTest] %sSet QOS_UTILITY failed, ret=%{public}d, errno=%{public}d",
+                     prefix,
+                             ret,
+                             errno);
+        return -1;
+            }
+    OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] %sSet QOS_UTILITY success", prefix);
+
+            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_DEFAULT);
+            if (ret != 0) {
+                OH_LOG_ERROR(LOG_APP,
+                     "[SetThreadQoSNdkTest] %sSet QOS_DEFAULT failed, ret=%{public}d, errno=%{public}d",
+                     prefix,
+                             ret,
+                             errno);
+        return -1;
+            }
+    OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] %sSet QOS_DEFAULT success", prefix);
+
+            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_USER_INITIATED);
+            if (ret != 0) {
+        OH_LOG_ERROR(LOG_APP,
+                     "[SetThreadQoSNdkTest] %sSet QOS_USER_INITIATED failed, ret=%{public}d, errno=%{public}d",
+                     prefix,
+                    ret,
+                    errno);
+        return -1;
+            }
+    OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] %sSet QOS_USER_INITIATED success", prefix);
+
+            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_DEADLINE_REQUEST);
+            if (ret != 0) {
+        OH_LOG_ERROR(LOG_APP,
+                     "[SetThreadQoSNdkTest] %sSet QOS_DEADLINE_REQUEST failed, ret=%{public}d, errno=%{public}d",
+                     prefix,
+                    ret,
+                    errno);
+        return -1;
+            }
+    OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] %sSet QOS_DEADLINE_REQUEST success", prefix);
+
+            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_USER_INTERACTIVE);
+            if (ret != 0) {
+        OH_LOG_ERROR(LOG_APP,
+                     "[SetThreadQoSNdkTest] %sSet QOS_USER_INTERACTIVE failed, ret=%{public}d, errno=%{public}d",
+                     prefix,
+                    ret,
+                    errno);
+        return -1;
+    }
+    OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] %sSet QOS_USER_INTERACTIVE success", prefix);
+
+    return 0;
+}
+
+/**
+ * Helper function: Test all invalid QoS levels
+ * @param prefix: Log prefix for distinguishing test context (e.g., "Worker: ")
+ * @return 0 on success, -1 on failure
+ */
+static int TestInvalidQoSLevels(const char* prefix)
+{
+    int ret;
+            ret = OH_QoS_SetThreadQoS(QoS_Level(-1));
+            if (ret != -1) {
+                OH_LOG_ERROR(LOG_APP,
+                     "[SetThreadQoSNdkTest] %sSet invalid QoS(-1) should fail but got ret=%{public}d",
+                     prefix,
+                             ret);
+        return -1;
+            }
+    OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] %sSet invalid QoS(-1) correctly failed", prefix);
+
+    ret = OH_QoS_SetThreadQoS(QoS_Level(INVALID_QOS_VALUE));
+            if (ret != -1) {
+                OH_LOG_ERROR(LOG_APP,
+                     "[SetThreadQoSNdkTest] %sSet invalid QoS(%{public}d) should fail but got ret=%{public}d",
+                     prefix,
+                     INVALID_QOS_VALUE,
+                             ret);
+        return -1;
+            }
+    OH_LOG_INFO(LOG_APP,
+                "[SetThreadQoSNdkTest] %sSet invalid QoS(%{public}d) correctly failed",
+                prefix,
+                INVALID_QOS_VALUE);
+
+    ret = OH_QoS_SetThreadQoS(QoS_Level(QOS_LEVEL_TEST));
+            if (ret != -1) {
+                OH_LOG_ERROR(LOG_APP,
+                     "[SetThreadQoSNdkTest] %sSet invalid QoS(%{public}d) should fail but got ret=%{public}d",
+                     prefix,
+                     QOS_LEVEL_TEST,
+                             ret);
+        return -1;
+    }
+    OH_LOG_INFO(LOG_APP,
+                "[SetThreadQoSNdkTest] %sSet invalid QoS(%{public}d) correctly failed",
+                prefix,
+                QOS_LEVEL_TEST);
+    return 0;
+}
+
+/**
+ * Helper function: Run full QoS test in worker thread
+ * @return 0 on success, -1 on failure
+ */
+static int RunQoSFullTestInWorkerThread()
+{
+    OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Running full test in worker thread...");
+    bool testPassed = true;
+    std::thread fullTest([&testPassed]() {
+        if (TestAllValidQoSLevels("Worker: ") != 0) {
+                testPassed = false;
+                return;
+            }
+        if (TestInvalidQoSLevels("Worker: ") != 0) {
+            testPassed = false;
+            return;
+        }
+            OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Worker: All tests passed!");
+        });
+        fullTest.join();
+        if (testPassed) {
+            OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Test PASSED (worker thread strategy)");
+            return OH_NN_SUCCESS;
+        } else {
+            OH_LOG_ERROR(LOG_APP, "[SetThreadQoSNdkTest] Test FAILED in worker thread");
+            return -1;
+    }
+}
+
+/**
+ * Helper function: Run full QoS test in main thread
+ * @return 0 on success, -1 on failure
+ */
+static int RunQoSFullTestInMainThread()
+{
+        OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Main thread can set QoS, continuing original test...");
+    if (TestAllValidQoSLevels("") != 0) {
+            return -1;
+        }
+    if (TestInvalidQoSLevels("") != 0) {
+            return -1;
+        }
+        OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Test passed");
+        return OH_NN_SUCCESS;
+}
+
+/**
+ * Helper function: Test QoS capability and run test in appropriate thread
+ * @param testName: Name of the test for logging
+ * @param workerTestFunc: Function to run if worker thread supports QoS
+ * @param mainTestFunc: Function to run if only main thread supports QoS
+ * @return 0 on success, -1 on failure
+ */
+static int RunQoSTestWithThreadStrategy(const char* testName,
+                                        int (*workerTestFunc)(),
+                                        int (*mainTestFunc)())
+{
+    OH_LOG_INFO(LOG_APP, "[%s] Test started", testName);
+    OH_LOG_INFO(LOG_APP, "[%s] Main thread tid=%{public}d, pid=%{public}d", testName, gettid(), getpid());
+    int mainThreadResult = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
+    int mainThreadErrno = errno;
+    OH_LOG_INFO(LOG_APP,
+                "[%s] Main thread SetQoS result: ret=%{public}d, errno=%{public}d",
+                testName,
+                mainThreadResult,
+                mainThreadErrno);
+    std::mutex mtx;
+    std::condition_variable cv;
+    int workerThreadResult = -999;
+    bool workerDone = false;
+    std::thread worker([&mtx, &workerThreadResult, &workerDone, &cv, testName]() {
+        pid_t worker_tid = gettid();
+        pid_t worker_pid = getpid();
+        OH_LOG_INFO(LOG_APP,
+                    "[%s] Worker thread started: tid=%{public}d, pid=%{public}d",
+                    testName,
+                    worker_tid,
+                    worker_pid);
+        int ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
+        std::lock_guard<std::mutex> lock(mtx);
+        workerThreadResult = ret;
+        workerDone = true;
+        cv.notify_one();
+    });
+    {
+        std::unique_lock<std::mutex> lock(mtx);
+        cv.wait(lock, [&] { return workerDone; });
+    }
+    worker.join();
+    OH_LOG_INFO(LOG_APP, "[%s] Worker thread result: ret=%{public}d", testName, workerThreadResult);
+    if (workerThreadResult == 0) {
+        return workerTestFunc();
+    } else if (mainThreadResult == 0) {
+        return mainTestFunc();
+    } else {
+        OH_LOG_ERROR(LOG_APP, "[%s] BOTH main and worker threads failed!", testName);
+        OH_LOG_WARN(LOG_APP, "[%s] Test skipped due to system limitations", testName);
+        return OH_NN_SUCCESS;
+    }
+}
 
 /**
  * @tc.name   SetThreadQoSNdkTest
@@ -38,258 +266,109 @@ namespace QosManager {
  */
 int SetThreadQoSNdkTest()
 {
-    OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Test started");
-    OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Main thread tid=%{public}d, pid=%{public}d", gettid(), getpid());
+    return RunQoSTestWithThreadStrategy("SetThreadQoSNdkTest",
+                                        RunQoSFullTestInWorkerThread,
+                                        RunQoSFullTestInMainThread);
+}
 
-    // Test on main thread first
-    int mainThreadResult = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
-    int mainThreadErrno = errno;
-    OH_LOG_INFO(LOG_APP,
-                "[SetThreadQoSNdkTest] Main thread SetQoS result: ret=%{public}d, errno=%{public}d",
-                mainThreadResult,
-                mainThreadErrno);
-
-    // Test on worker thread
-    std::mutex mtx;
-    std::condition_variable cv;
-    int workerThreadResult = -999;
-    bool workerDone = false;
-
-    std::thread worker([&]() {
-        pid_t worker_tid = gettid();
-        pid_t worker_pid = getpid();
-        OH_LOG_INFO(LOG_APP,
-                    "[SetThreadQoSNdkTest] Worker thread started: tid=%{public}d, pid=%{public}d",
-                    worker_tid,
-                    worker_pid);
-
-        int ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
-
-        std::lock_guard<std::mutex> lock(mtx);
-        workerThreadResult = ret;
-        workerDone = true;
-        cv.notify_one();
-    });
-
-    {
-        std::unique_lock<std::mutex> lock(mtx);
-        cv.wait(lock, [&] { return workerDone; });
+/**
+ * Helper function: Test single QoS level with reset operation
+ * @param level: QoS level to test
+ * @param levelName: Name of the QoS level for logging
+ * @param prefix: Log prefix for distinguishing test context (e.g., "Worker: ")
+ * @return 0 on success, -1 on failure
+ */
+static int TestSingleQoSLevelWithReset(QoS_Level level, const char* levelName, const char* prefix)
+{
+    int ret = OH_QoS_SetThreadQoS(level);
+            if (ret != 0) {
+                OH_LOG_ERROR(LOG_APP,
+                     "[ResetThreadQoSNdkTest] %sSet %s failed, ret=%{public}d, errno=%{public}d",
+                     prefix,
+                     levelName,
+                             ret,
+                             errno);
+        return -1;
+            }
+            ret = OH_QoS_ResetThreadQoS();
+            if (ret != 0) {
+                OH_LOG_ERROR(LOG_APP,
+                     "[ResetThreadQoSNdkTest] %sReset after %s failed, ret=%{public}d, errno=%{public}d",
+                     prefix,
+                     levelName,
+                             ret,
+                             errno);
+        return -1;
     }
-    worker.join();
+    OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] %s%s set and reset success", prefix, levelName);
+    return 0;
+}
 
-    OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Worker thread result: ret=%{public}d", workerThreadResult);
+/**
+ * Helper function: Test all QoS levels with reset operation
+ * @param prefix: Log prefix for distinguishing test context (e.g., "Worker: ")
+ * @return 0 on success, -1 on failure
+ */
+static int TestAllQoSLevelsWithReset(const char* prefix)
+{
+    if (TestSingleQoSLevelWithReset(QoS_Level::QOS_BACKGROUND, "QOS_BACKGROUND", prefix) != 0) {
+            return -1;
+        }
+    if (TestSingleQoSLevelWithReset(QoS_Level::QOS_UTILITY, "QOS_UTILITY", prefix) != 0) {
+            return -1;
+        }
+    if (TestSingleQoSLevelWithReset(QoS_Level::QOS_DEFAULT, "QOS_DEFAULT", prefix) != 0) {
+            return -1;
+        }
+    if (TestSingleQoSLevelWithReset(QoS_Level::QOS_USER_INITIATED, "QOS_USER_INITIATED", prefix) != 0) {
+            return -1;
+        }
+    if (TestSingleQoSLevelWithReset(QoS_Level::QOS_DEADLINE_REQUEST, "QOS_DEADLINE_REQUEST", prefix) != 0) {
+            return -1;
+        }
+    if (TestSingleQoSLevelWithReset(QoS_Level::QOS_USER_INTERACTIVE, "QOS_USER_INTERACTIVE", prefix) != 0) {
+            return -1;
+        }
+    return 0;
+}
 
-    if (workerThreadResult == 0) {
-        OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Running full test in worker thread...");
-
-        bool testPassed = true;
-        std::thread fullTest([&]() {
-            int ret;
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[SetThreadQoSNdkTest] Worker: Set QOS_BACKGROUND failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
+/**
+ * Helper function: Run full QoS reset test in worker thread
+ * @return 0 on success, -1 on failure
+ */
+static int RunResetQoSFullTestInWorkerThread()
+{
+    OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Running full test in worker thread...");
+    bool testPassed = true;
+    std::thread fullTest([&testPassed]() {
+        if (TestAllQoSLevelsWithReset("Worker: ") != 0) {
                 testPassed = false;
                 return;
             }
-            OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Worker: Set QOS_BACKGROUND success");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_UTILITY);
-            if (ret != 0) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[SetThreadQoSNdkTest] Worker: Set QOS_UTILITY failed, ret=%{public}d, errno=%{public}d",
-                             ret,
-                             errno);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Worker: Set QOS_UTILITY success");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_DEFAULT);
-            if (ret != 0) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[SetThreadQoSNdkTest] Worker: Set QOS_DEFAULT failed, ret=%{public}d, errno=%{public}d",
-                             ret,
-                             errno);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Worker: Set QOS_DEFAULT success");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_USER_INITIATED);
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[SetThreadQoSNdkTest] Worker: Set QOS_USER_INITIATED failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Worker: Set QOS_USER_INITIATED success");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_DEADLINE_REQUEST);
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[SetThreadQoSNdkTest] Worker: Set QOS_DEADLINE_REQUEST failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Worker: Set QOS_DEADLINE_REQUEST success");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_USER_INTERACTIVE);
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[SetThreadQoSNdkTest] Worker: Set QOS_USER_INTERACTIVE failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Worker: Set QOS_USER_INTERACTIVE success");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level(-1));
-            if (ret != -1) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[SetThreadQoSNdkTest] Worker: Set invalid QoS(-1) should fail but got ret=%{public}d",
-                             ret);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Worker: Set invalid QoS(-1) correctly failed");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level(6));
-            if (ret != -1) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[SetThreadQoSNdkTest] Worker: Set invalid QoS(6) should fail but got ret=%{public}d",
-                             ret);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Worker: Set invalid QoS(6) correctly failed");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level(1024));
-            if (ret != -1) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[SetThreadQoSNdkTest] Worker: Set invalid QoS(1024) should fail but got ret=%{public}d",
-                             ret);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Worker: Set invalid QoS(1024) correctly failed");
-
-            OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Worker: All tests passed!");
+            OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Worker: All tests passed!");
         });
-
         fullTest.join();
-
         if (testPassed) {
-            OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Test PASSED (worker thread strategy)");
+            OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Test PASSED (worker thread strategy)");
             return OH_NN_SUCCESS;
         } else {
-            OH_LOG_ERROR(LOG_APP, "[SetThreadQoSNdkTest] Test FAILED in worker thread");
+            OH_LOG_ERROR(LOG_APP, "[ResetThreadQoSNdkTest] Test FAILED in worker thread");
             return -1;
         }
+}
 
-    } else if (mainThreadResult == 0) {
-        OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Main thread can set QoS, continuing original test...");
-
-        int ret;
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[SetThreadQoSNdkTest] Set QOS_BACKGROUND failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
+/**
+ * Helper function: Run full QoS reset test in main thread
+ * @return 0 on success, -1 on failure
+ */
+static int RunResetQoSFullTestInMainThread()
+{
+        OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Main thread can set QoS, continuing original test...");
+    if (TestAllQoSLevelsWithReset("") != 0) {
             return -1;
         }
-        OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Set QOS_BACKGROUND success");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_UTILITY);
-        if (ret != 0) {
-            OH_LOG_ERROR(
-                LOG_APP, "[SetThreadQoSNdkTest] Set QOS_UTILITY failed, ret=%{public}d, errno=%{public}d", ret, errno);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Set QOS_UTILITY success");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_DEFAULT);
-        if (ret != 0) {
-            OH_LOG_ERROR(
-                LOG_APP, "[SetThreadQoSNdkTest] Set QOS_DEFAULT failed, ret=%{public}d, errno=%{public}d", ret, errno);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Set QOS_DEFAULT success");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_USER_INITIATED);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[SetThreadQoSNdkTest] Set QOS_USER_INITIATED failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Set QOS_USER_INITIATED success");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_DEADLINE_REQUEST);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[SetThreadQoSNdkTest] Set QOS_DEADLINE_REQUEST failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Set QOS_DEADLINE_REQUEST success");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_USER_INTERACTIVE);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[SetThreadQoSNdkTest] Set QOS_USER_INTERACTIVE failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Set QOS_USER_INTERACTIVE success");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level(-1));
-        if (ret != -1) {
-            OH_LOG_ERROR(LOG_APP, "[SetThreadQoSNdkTest] Set invalid QoS(-1) should fail but got ret=%{public}d", ret);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Set invalid QoS(-1) correctly failed");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level(6));
-        if (ret != -1) {
-            OH_LOG_ERROR(LOG_APP, "[SetThreadQoSNdkTest] Set invalid QoS(6) should fail but got ret=%{public}d", ret);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Set invalid QoS(6) correctly failed");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level(1024));
-        if (ret != -1) {
-            OH_LOG_ERROR(
-                LOG_APP, "[SetThreadQoSNdkTest] Set invalid QoS(1024) should fail but got ret=%{public}d", ret);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Set invalid QoS(1024) correctly failed");
-
-        OH_LOG_INFO(LOG_APP, "[SetThreadQoSNdkTest] Test passed");
+        OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Test passed");
         return OH_NN_SUCCESS;
-
-    } else {
-        OH_LOG_ERROR(LOG_APP, "[SetThreadQoSNdkTest] BOTH main and worker threads failed!");
-        OH_LOG_WARN(LOG_APP, "[SetThreadQoSNdkTest] Test skipped due to system limitations");
-        return OH_NN_SUCCESS; // Skip test
-    }
 }
 
 /**
@@ -302,321 +381,161 @@ int SetThreadQoSNdkTest()
  */
 int ResetThreadQoSNdkTest()
 {
-    OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Test started");
-    OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Main thread tid=%{public}d, pid=%{public}d", gettid(), getpid());
+    return RunQoSTestWithThreadStrategy("ResetThreadQoSNdkTest",
+                                        RunResetQoSFullTestInWorkerThread,
+                                        RunResetQoSFullTestInMainThread);
+}
 
-    // Test on main thread first
-    int mainThreadResult = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
-    int mainThreadErrno = errno;
-    OH_LOG_INFO(LOG_APP,
-                "[ResetThreadQoSNdkTest] Main thread SetQoS result: ret=%{public}d, errno=%{public}d",
-                mainThreadResult,
-                mainThreadErrno);
+/**
+ * Helper function: Test single QoS level with get operation
+ * @param level: QoS level to test
+ * @param levelName: Name of the QoS level for logging
+ * @param prefix: Log prefix for distinguishing test context (e.g., "Worker: ")
+ * @return 0 on success, -1 on failure
+ */
+static int TestSingleQoSLevelWithGet(QoS_Level level, const char* levelName, const char* prefix)
+{
+    int ret = OH_QoS_SetThreadQoS(level);
+            if (ret != 0) {
+                OH_LOG_ERROR(LOG_APP,
+                     "[GetThreadQoSNdkTest] %sSet %s failed, ret=%{public}d, errno=%{public}d",
+                     prefix,
+                     levelName,
+                             ret,
+                             errno);
+            return -1;
+            }
+    enum QoS_Level getLevel;
+    ret = OH_QoS_GetThreadQoS(&getLevel);
+            if (ret != 0) {
+                OH_LOG_ERROR(LOG_APP,
+                     "[GetThreadQoSNdkTest] %sGet %s failed, ret=%{public}d, errno=%{public}d",
+                     prefix,
+                     levelName,
+                             ret,
+                             errno);
+            return -1;
+        }
+    if (getLevel != level) {
+                OH_LOG_ERROR(LOG_APP,
+                     "[GetThreadQoSNdkTest] %sExpected %s but got level=%{public}d",
+                     prefix,
+                     levelName,
+                     getLevel);
+            return -1;
+        }
+    OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] %s%s verified", prefix, levelName);
+    return 0;
+}
 
-    // Test on worker thread
-    std::mutex mtx;
-    std::condition_variable cv;
-    int workerThreadResult = -999;
-    bool workerDone = false;
+/**
+ * Helper function: Test Get QoS with nullptr and after reset
+ * @param prefix: Log prefix for distinguishing test context (e.g., "Worker: ")
+ * @return 0 on success, -1 on failure
+ */
+static int TestGetQoSWithNullAndReset(const char* prefix)
+{
+    int ret = OH_QoS_GetThreadQoS(nullptr);
+            if (ret != -1) {
+                OH_LOG_ERROR(LOG_APP,
+                     "[GetThreadQoSNdkTest] %sGet with nullptr should fail but got ret=%{public}d",
+                     prefix,
+                     ret);
+            return -1;
+        }
+    OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] %sGet with nullptr correctly failed", prefix);
 
-    std::thread worker([&]() {
-        pid_t worker_tid = gettid();
-        pid_t worker_pid = getpid();
-        OH_LOG_INFO(LOG_APP,
-                    "[ResetThreadQoSNdkTest] Worker thread started: tid=%{public}d, pid=%{public}d",
-                    worker_tid,
-                    worker_pid);
+    ret = OH_QoS_ResetThreadQoS();
+        if (ret != 0) {
+            OH_LOG_ERROR(LOG_APP,
+                     "[GetThreadQoSNdkTest] %sReset failed, ret=%{public}d, errno=%{public}d",
+                     prefix,
+                         ret,
+                         errno);
+            return -1;
+        }
+        enum QoS_Level level;
+        ret = OH_QoS_GetThreadQoS(&level);
+    if (ret != -1) {
+            OH_LOG_ERROR(LOG_APP,
+                     "[GetThreadQoSNdkTest] %sGet after reset should fail but got ret=%{public}d, level=%{public}d",
+                     prefix,
+                         ret,
+                     level);
+            return -1;
+        }
+    OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] %sGet after reset correctly failed", prefix);
+    return 0;
+}
 
-        int ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
+/**
+ * Helper function: Test all QoS levels with get operation
+ * @param prefix: Log prefix for distinguishing test context (e.g., "Worker: ")
+ * @return 0 on success, -1 on failure
+ */
+static int TestAllQoSLevelsWithGet(const char* prefix)
+{
+    if (TestGetQoSWithNullAndReset(prefix) != 0) {
+            return -1;
+        }
+    if (TestSingleQoSLevelWithGet(QoS_Level::QOS_BACKGROUND, "QOS_BACKGROUND", prefix) != 0) {
+            return -1;
+        }
+    if (TestSingleQoSLevelWithGet(QoS_Level::QOS_UTILITY, "QOS_UTILITY", prefix) != 0) {
+            return -1;
+        }
+    if (TestSingleQoSLevelWithGet(QoS_Level::QOS_DEFAULT, "QOS_DEFAULT", prefix) != 0) {
+            return -1;
+        }
+    if (TestSingleQoSLevelWithGet(QoS_Level::QOS_USER_INITIATED, "QOS_USER_INITIATED", prefix) != 0) {
+            return -1;
+        }
+    if (TestSingleQoSLevelWithGet(QoS_Level::QOS_DEADLINE_REQUEST, "QOS_DEADLINE_REQUEST", prefix) != 0) {
+            return -1;
+        }
+    if (TestSingleQoSLevelWithGet(QoS_Level::QOS_USER_INTERACTIVE, "QOS_USER_INTERACTIVE", prefix) != 0) {
+            return -1;
+        }
+    return 0;
+}
 
-        std::lock_guard<std::mutex> lock(mtx);
-        workerThreadResult = ret;
-        workerDone = true;
-        cv.notify_one();
+/**
+ * Helper function: Run full QoS get test in worker thread
+ * @return 0 on success, -1 on failure
+ */
+static int RunGetQoSFullTestInWorkerThread()
+{
+    OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Running full test in worker thread...");
+    bool testPassed = true;
+    std::thread fullTest([&testPassed]() {
+        if (TestAllQoSLevelsWithGet("Worker: ") != 0) {
+            testPassed = false;
+            return;
+        }
+        OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Worker: All tests passed!");
     });
-
-    {
-        std::unique_lock<std::mutex> lock(mtx);
-        cv.wait(lock, [&] { return workerDone; });
-    }
-    worker.join();
-
-    OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Worker thread result: ret=%{public}d", workerThreadResult);
-
-    if (workerThreadResult == 0) {
-        OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Running full test in worker thread...");
-
-        bool testPassed = true;
-        std::thread fullTest([&]() {
-            int ret;
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[ResetThreadQoSNdkTest] Worker: Set QOS_BACKGROUND failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            ret = OH_QoS_ResetThreadQoS();
-            if (ret != 0) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[ResetThreadQoSNdkTest] Worker: Reset after QOS_BACKGROUND failed, ret=%{public}d, "
-                             "errno=%{public}d",
-                             ret,
-                             errno);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Worker: QOS_BACKGROUND set and reset success");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_UTILITY);
-            if (ret != 0) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[ResetThreadQoSNdkTest] Worker: Set QOS_UTILITY failed, ret=%{public}d, errno=%{public}d",
-                             ret,
-                             errno);
-                testPassed = false;
-                return;
-            }
-            ret = OH_QoS_ResetThreadQoS();
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[ResetThreadQoSNdkTest] Worker: Reset after QOS_UTILITY failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Worker: QOS_UTILITY set and reset success");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_DEFAULT);
-            if (ret != 0) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[ResetThreadQoSNdkTest] Worker: Set QOS_DEFAULT failed, ret=%{public}d, errno=%{public}d",
-                             ret,
-                             errno);
-                testPassed = false;
-                return;
-            }
-            ret = OH_QoS_ResetThreadQoS();
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[ResetThreadQoSNdkTest] Worker: Reset after QOS_DEFAULT failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Worker: QOS_DEFAULT set and reset success");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_USER_INITIATED);
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[ResetThreadQoSNdkTest] Worker: Set QOS_USER_INITIATED failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            ret = OH_QoS_ResetThreadQoS();
-            if (ret != 0) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[ResetThreadQoSNdkTest] Worker: Reset after QOS_USER_INITIATED failed, ret=%{public}d, "
-                             "errno=%{public}d",
-                             ret,
-                             errno);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Worker: QOS_USER_INITIATED set and reset success");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_DEADLINE_REQUEST);
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[ResetThreadQoSNdkTest] Worker: Set QOS_DEADLINE_REQUEST failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            ret = OH_QoS_ResetThreadQoS();
-            if (ret != 0) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[ResetThreadQoSNdkTest] Worker: Reset after QOS_DEADLINE_REQUEST failed, ret=%{public}d, "
-                             "errno=%{public}d",
-                             ret,
-                             errno);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Worker: QOS_DEADLINE_REQUEST set and reset success");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_USER_INTERACTIVE);
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[ResetThreadQoSNdkTest] Worker: Set QOS_USER_INTERACTIVE failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            ret = OH_QoS_ResetThreadQoS();
-            if (ret != 0) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[ResetThreadQoSNdkTest] Worker: Reset after QOS_USER_INTERACTIVE failed, ret=%{public}d, "
-                             "errno=%{public}d",
-                             ret,
-                             errno);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Worker: QOS_USER_INTERACTIVE set and reset success");
-
-            OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Worker: All tests passed!");
-        });
-
-        fullTest.join();
-
-        if (testPassed) {
-            OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Test PASSED (worker thread strategy)");
-            return OH_NN_SUCCESS;
-        } else {
-            OH_LOG_ERROR(LOG_APP, "[ResetThreadQoSNdkTest] Test FAILED in worker thread");
-            return -1;
-        }
-
-    } else if (mainThreadResult == 0) {
-        OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Main thread can set QoS, continuing original test...");
-
-        int ret;
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[ResetThreadQoSNdkTest] Set QOS_BACKGROUND failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        ret = OH_QoS_ResetThreadQoS();
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[ResetThreadQoSNdkTest] Reset after QOS_BACKGROUND failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] QOS_BACKGROUND set and reset success");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_UTILITY);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[ResetThreadQoSNdkTest] Set QOS_UTILITY failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        ret = OH_QoS_ResetThreadQoS();
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[ResetThreadQoSNdkTest] Reset after QOS_UTILITY failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] QOS_UTILITY set and reset success");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_DEFAULT);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[ResetThreadQoSNdkTest] Set QOS_DEFAULT failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        ret = OH_QoS_ResetThreadQoS();
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[ResetThreadQoSNdkTest] Reset after QOS_DEFAULT failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] QOS_DEFAULT set and reset success");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_USER_INITIATED);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[ResetThreadQoSNdkTest] Set QOS_USER_INITIATED failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        ret = OH_QoS_ResetThreadQoS();
-        if (ret != 0) {
-            OH_LOG_ERROR(
-                LOG_APP,
-                "[ResetThreadQoSNdkTest] Reset after QOS_USER_INITIATED failed, ret=%{public}d, errno=%{public}d",
-                ret,
-                errno);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] QOS_USER_INITIATED set and reset success");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_DEADLINE_REQUEST);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[ResetThreadQoSNdkTest] Set QOS_DEADLINE_REQUEST failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        ret = OH_QoS_ResetThreadQoS();
-        if (ret != 0) {
-            OH_LOG_ERROR(
-                LOG_APP,
-                "[ResetThreadQoSNdkTest] Reset after QOS_DEADLINE_REQUEST failed, ret=%{public}d, errno=%{public}d",
-                ret,
-                errno);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] QOS_DEADLINE_REQUEST set and reset success");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_USER_INTERACTIVE);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[ResetThreadQoSNdkTest] Set QOS_USER_INTERACTIVE failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        ret = OH_QoS_ResetThreadQoS();
-        if (ret != 0) {
-            OH_LOG_ERROR(
-                LOG_APP,
-                "[ResetThreadQoSNdkTest] Reset after QOS_USER_INTERACTIVE failed, ret=%{public}d, errno=%{public}d",
-                ret,
-                errno);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] QOS_USER_INTERACTIVE set and reset success");
-
-        OH_LOG_INFO(LOG_APP, "[ResetThreadQoSNdkTest] Test passed");
+    fullTest.join();
+    if (testPassed) {
+        OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Test PASSED (worker thread strategy)");
         return OH_NN_SUCCESS;
-
     } else {
-        OH_LOG_ERROR(LOG_APP, "[ResetThreadQoSNdkTest] BOTH main and worker threads failed!");
-        OH_LOG_WARN(LOG_APP, "[ResetThreadQoSNdkTest] Test skipped due to system limitations");
-        return OH_NN_SUCCESS; // Skip test
-    }
+        OH_LOG_ERROR(LOG_APP, "[GetThreadQoSNdkTest] Test FAILED in worker thread");
+            return -1;
+        }
+}
+
+/**
+ * Helper function: Run full QoS get test in main thread
+ * @return 0 on success, -1 on failure
+ */
+static int RunGetQoSFullTestInMainThread()
+{
+    OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Main thread can set QoS, continuing original test...");
+    if (TestAllQoSLevelsWithGet("") != 0) {
+            return -1;
+        }
+        OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Test passed");
+        return OH_NN_SUCCESS;
 }
 
 /**
@@ -629,429 +548,9 @@ int ResetThreadQoSNdkTest()
  */
 int GetThreadQoSNdkTest()
 {
-    OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Test started");
-    OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Main thread tid=%{public}d, pid=%{public}d", gettid(), getpid());
-
-    // Test on main thread first
-    int mainThreadResult = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
-    int mainThreadErrno = errno;
-    OH_LOG_INFO(LOG_APP,
-                "[GetThreadQoSNdkTest] Main thread SetQoS result: ret=%{public}d, errno=%{public}d",
-                mainThreadResult,
-                mainThreadErrno);
-
-    // Test on worker thread
-    std::mutex mtx;
-    std::condition_variable cv;
-    int workerThreadResult = -999;
-    bool workerDone = false;
-
-    std::thread worker([&]() {
-        pid_t worker_tid = gettid();
-        pid_t worker_pid = getpid();
-        OH_LOG_INFO(LOG_APP,
-                    "[GetThreadQoSNdkTest] Worker thread started: tid=%{public}d, pid=%{public}d",
-                    worker_tid,
-                    worker_pid);
-
-        int ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
-
-        std::lock_guard<std::mutex> lock(mtx);
-        workerThreadResult = ret;
-        workerDone = true;
-        cv.notify_one();
-    });
-
-    {
-        std::unique_lock<std::mutex> lock(mtx);
-        cv.wait(lock, [&] { return workerDone; });
-    }
-    worker.join();
-
-    OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Worker thread result: ret=%{public}d", workerThreadResult);
-
-    if (workerThreadResult == 0) {
-        OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Running full test in worker thread...");
-
-        bool testPassed = true;
-        std::thread fullTest([&]() {
-            int ret;
-
-            ret = OH_QoS_GetThreadQoS(nullptr);
-            if (ret != -1) {
-                OH_LOG_ERROR(
-                    LOG_APP, "[GetThreadQoSNdkTest] Worker: Get with nullptr should fail but got ret=%{public}d", ret);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Worker: Get with nullptr correctly failed");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[GetThreadQoSNdkTest] Worker: Set QOS_BACKGROUND failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            enum QoS_Level level;
-            ret = OH_QoS_GetThreadQoS(&level);
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[GetThreadQoSNdkTest] Worker: Get QOS_BACKGROUND failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            if (level != QoS_Level::QOS_BACKGROUND) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[GetThreadQoSNdkTest] Worker: Expected QOS_BACKGROUND(0) but got level=%{public}d",
-                             level);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Worker: QOS_BACKGROUND verified");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_UTILITY);
-            if (ret != 0) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[GetThreadQoSNdkTest] Worker: Set QOS_UTILITY failed, ret=%{public}d, errno=%{public}d",
-                             ret,
-                             errno);
-                testPassed = false;
-                return;
-            }
-            ret = OH_QoS_GetThreadQoS(&level);
-            if (ret != 0) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[GetThreadQoSNdkTest] Worker: Get QOS_UTILITY failed, ret=%{public}d, errno=%{public}d",
-                             ret,
-                             errno);
-                testPassed = false;
-                return;
-            }
-            if (level != QoS_Level::QOS_UTILITY) {
-                OH_LOG_ERROR(
-                    LOG_APP, "[GetThreadQoSNdkTest] Worker: Expected QOS_UTILITY(1) but got level=%{public}d", level);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Worker: QOS_UTILITY verified");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_DEFAULT);
-            if (ret != 0) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[GetThreadQoSNdkTest] Worker: Set QOS_DEFAULT failed, ret=%{public}d, errno=%{public}d",
-                             ret,
-                             errno);
-                testPassed = false;
-                return;
-            }
-            ret = OH_QoS_GetThreadQoS(&level);
-            if (ret != 0) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[GetThreadQoSNdkTest] Worker: Get QOS_DEFAULT failed, ret=%{public}d, errno=%{public}d",
-                             ret,
-                             errno);
-                testPassed = false;
-                return;
-            }
-            if (level != QoS_Level::QOS_DEFAULT) {
-                OH_LOG_ERROR(
-                    LOG_APP, "[GetThreadQoSNdkTest] Worker: Expected QOS_DEFAULT(2) but got level=%{public}d", level);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Worker: QOS_DEFAULT verified");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_USER_INITIATED);
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[GetThreadQoSNdkTest] Worker: Set QOS_USER_INITIATED failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            ret = OH_QoS_GetThreadQoS(&level);
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[GetThreadQoSNdkTest] Worker: Get QOS_USER_INITIATED failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            if (level != QoS_Level::QOS_USER_INITIATED) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[GetThreadQoSNdkTest] Worker: Expected QOS_USER_INITIATED(3) but got level=%{public}d",
-                             level);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Worker: QOS_USER_INITIATED verified");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_DEADLINE_REQUEST);
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[GetThreadQoSNdkTest] Worker: Set QOS_DEADLINE_REQUEST failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            ret = OH_QoS_GetThreadQoS(&level);
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[GetThreadQoSNdkTest] Worker: Get QOS_DEADLINE_REQUEST failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            if (level != QoS_Level::QOS_DEADLINE_REQUEST) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[GetThreadQoSNdkTest] Worker: Expected QOS_DEADLINE_REQUEST(4) but got level=%{public}d",
-                             level);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Worker: QOS_DEADLINE_REQUEST verified");
-
-            ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_USER_INTERACTIVE);
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[GetThreadQoSNdkTest] Worker: Set QOS_USER_INTERACTIVE failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            ret = OH_QoS_GetThreadQoS(&level);
-            if (ret != 0) {
-                OH_LOG_ERROR(
-                    LOG_APP,
-                    "[GetThreadQoSNdkTest] Worker: Get QOS_USER_INTERACTIVE failed, ret=%{public}d, errno=%{public}d",
-                    ret,
-                    errno);
-                testPassed = false;
-                return;
-            }
-            if (level != QoS_Level::QOS_USER_INTERACTIVE) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[GetThreadQoSNdkTest] Worker: Expected QOS_USER_INTERACTIVE(5) but got level=%{public}d",
-                             level);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Worker: QOS_USER_INTERACTIVE verified");
-
-            ret = OH_QoS_ResetThreadQoS();
-            if (ret != 0) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[GetThreadQoSNdkTest] Worker: Reset failed, ret=%{public}d, errno=%{public}d",
-                             ret,
-                             errno);
-                testPassed = false;
-                return;
-            }
-            ret = OH_QoS_GetThreadQoS(&level);
-            if (ret != -1) {
-                OH_LOG_ERROR(LOG_APP,
-                             "[GetThreadQoSNdkTest] Worker: Get after reset should fail but got ret=%{public}d, "
-                             "level=%{public}d",
-                             ret,
-                             level);
-                testPassed = false;
-                return;
-            }
-            OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Worker: Get after reset correctly failed");
-
-            OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Worker: All tests passed!");
-        });
-
-        fullTest.join();
-
-        if (testPassed) {
-            OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Test PASSED (worker thread strategy)");
-            return OH_NN_SUCCESS;
-        } else {
-            OH_LOG_ERROR(LOG_APP, "[GetThreadQoSNdkTest] Test FAILED in worker thread");
-            return -1;
-        }
-
-    } else if (mainThreadResult == 0) {
-        OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Main thread can set QoS, continuing original test...");
-
-        int ret;
-
-        ret = OH_QoS_GetThreadQoS(nullptr);
-        if (ret != -1) {
-            OH_LOG_ERROR(LOG_APP, "[GetThreadQoSNdkTest] Get with nullptr should fail but got ret=%{public}d", ret);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Get with nullptr correctly failed");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[GetThreadQoSNdkTest] Set QOS_BACKGROUND failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        enum QoS_Level level;
-        ret = OH_QoS_GetThreadQoS(&level);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[GetThreadQoSNdkTest] Get QOS_BACKGROUND failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        if (level != QoS_Level::QOS_BACKGROUND) {
-            OH_LOG_ERROR(LOG_APP, "[GetThreadQoSNdkTest] Expected QOS_BACKGROUND(0) but got level=%{public}d", level);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] QOS_BACKGROUND verified");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_UTILITY);
-        if (ret != 0) {
-            OH_LOG_ERROR(
-                LOG_APP, "[GetThreadQoSNdkTest] Set QOS_UTILITY failed, ret=%{public}d, errno=%{public}d", ret, errno);
-            return -1;
-        }
-        ret = OH_QoS_GetThreadQoS(&level);
-        if (ret != 0) {
-            OH_LOG_ERROR(
-                LOG_APP, "[GetThreadQoSNdkTest] Get QOS_UTILITY failed, ret=%{public}d, errno=%{public}d", ret, errno);
-            return -1;
-        }
-        if (level != QoS_Level::QOS_UTILITY) {
-            OH_LOG_ERROR(LOG_APP, "[GetThreadQoSNdkTest] Expected QOS_UTILITY(1) but got level=%{public}d", level);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] QOS_UTILITY verified");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_DEFAULT);
-        if (ret != 0) {
-            OH_LOG_ERROR(
-                LOG_APP, "[GetThreadQoSNdkTest] Set QOS_DEFAULT failed, ret=%{public}d, errno=%{public}d", ret, errno);
-            return -1;
-        }
-        ret = OH_QoS_GetThreadQoS(&level);
-        if (ret != 0) {
-            OH_LOG_ERROR(
-                LOG_APP, "[GetThreadQoSNdkTest] Get QOS_DEFAULT failed, ret=%{public}d, errno=%{public}d", ret, errno);
-            return -1;
-        }
-        if (level != QoS_Level::QOS_DEFAULT) {
-            OH_LOG_ERROR(LOG_APP, "[GetThreadQoSNdkTest] Expected QOS_DEFAULT(2) but got level=%{public}d", level);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] QOS_DEFAULT verified");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_USER_INITIATED);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[GetThreadQoSNdkTest] Set QOS_USER_INITIATED failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        ret = OH_QoS_GetThreadQoS(&level);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[GetThreadQoSNdkTest] Get QOS_USER_INITIATED failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        if (level != QoS_Level::QOS_USER_INITIATED) {
-            OH_LOG_ERROR(
-                LOG_APP, "[GetThreadQoSNdkTest] Expected QOS_USER_INITIATED(3) but got level=%{public}d", level);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] QOS_USER_INITIATED verified");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_DEADLINE_REQUEST);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[GetThreadQoSNdkTest] Set QOS_DEADLINE_REQUEST failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        ret = OH_QoS_GetThreadQoS(&level);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[GetThreadQoSNdkTest] Get QOS_DEADLINE_REQUEST failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        if (level != QoS_Level::QOS_DEADLINE_REQUEST) {
-            OH_LOG_ERROR(
-                LOG_APP, "[GetThreadQoSNdkTest] Expected QOS_DEADLINE_REQUEST(4) but got level=%{public}d", level);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] QOS_DEADLINE_REQUEST verified");
-
-        ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_USER_INTERACTIVE);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[GetThreadQoSNdkTest] Set QOS_USER_INTERACTIVE failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        ret = OH_QoS_GetThreadQoS(&level);
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[GetThreadQoSNdkTest] Get QOS_USER_INTERACTIVE failed, ret=%{public}d, errno=%{public}d",
-                         ret,
-                         errno);
-            return -1;
-        }
-        if (level != QoS_Level::QOS_USER_INTERACTIVE) {
-            OH_LOG_ERROR(
-                LOG_APP, "[GetThreadQoSNdkTest] Expected QOS_USER_INTERACTIVE(5) but got level=%{public}d", level);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] QOS_USER_INTERACTIVE verified");
-
-        ret = OH_QoS_ResetThreadQoS();
-        if (ret != 0) {
-            OH_LOG_ERROR(LOG_APP, "[GetThreadQoSNdkTest] Reset failed, ret=%{public}d, errno=%{public}d", ret, errno);
-            return -1;
-        }
-        ret = OH_QoS_GetThreadQoS(&level);
-        if (ret != -1) {
-            OH_LOG_ERROR(LOG_APP,
-                         "[GetThreadQoSNdkTest] Get after reset should fail but got ret=%{public}d, level=%{public}d",
-                         ret,
-                         level);
-            return -1;
-        }
-        OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Get after reset correctly failed");
-
-        OH_LOG_INFO(LOG_APP, "[GetThreadQoSNdkTest] Test passed");
-        return OH_NN_SUCCESS;
-
-    } else {
-        OH_LOG_ERROR(LOG_APP, "[GetThreadQoSNdkTest] BOTH main and worker threads failed!");
-        OH_LOG_WARN(LOG_APP, "[GetThreadQoSNdkTest] Test skipped due to system limitations");
-        return OH_NN_SUCCESS; // Skip test
-    }
+    return RunQoSTestWithThreadStrategy("GetThreadQoSNdkTest",
+                                        RunGetQoSFullTestInWorkerThread,
+                                        RunGetQoSFullTestInMainThread);
 }
 
 /**
@@ -1066,31 +565,24 @@ int ThreadQoSNdkTest()
 {
     OH_LOG_INFO(LOG_APP, "[ThreadQoSNdkTest] Test started");
     OH_LOG_INFO(LOG_APP, "[ThreadQoSNdkTest] Main thread tid=%{public}d, pid=%{public}d", gettid(), getpid());
-
-    // Test on main thread first
     int mainThreadResult = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
     int mainThreadErrno = errno;
     OH_LOG_INFO(LOG_APP,
                 "[ThreadQoSNdkTest] Main thread SetQoS result: ret=%{public}d, errno=%{public}d",
                 mainThreadResult,
                 mainThreadErrno);
-
-    // Test on worker thread
     std::mutex mtx;
     std::condition_variable cv;
     int workerThreadResult = -999;
     bool workerDone = false;
-
-    std::thread worker([&]() {
+    std::thread worker([&mtx, &workerThreadResult, &workerDone, &cv]() {
         pid_t worker_tid = gettid();
         pid_t worker_pid = getpid();
         OH_LOG_INFO(LOG_APP,
                     "[ThreadQoSNdkTest] Worker thread started: tid=%{public}d, pid=%{public}d",
                     worker_tid,
                     worker_pid);
-
         int ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
-
         std::lock_guard<std::mutex> lock(mtx);
         workerThreadResult = ret;
         workerDone = true;
@@ -1107,11 +599,9 @@ int ThreadQoSNdkTest()
 
     if (workerThreadResult == 0) {
         OH_LOG_INFO(LOG_APP, "[ThreadQoSNdkTest] Running full test in worker thread...");
-
         bool testPassed = true;
-        std::thread fullTest([&]() {
+        std::thread fullTest([&testPassed]() {
             int ret;
-
             ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
             if (ret != 0) {
                 OH_LOG_ERROR(
@@ -1197,9 +687,7 @@ int ThreadQoSNdkTest()
 
             OH_LOG_INFO(LOG_APP, "[ThreadQoSNdkTest] Worker: All tests passed!");
         });
-
         fullTest.join();
-
         if (testPassed) {
             OH_LOG_INFO(LOG_APP, "[ThreadQoSNdkTest] Test PASSED (worker thread strategy)");
             return OH_NN_SUCCESS;
@@ -1210,9 +698,7 @@ int ThreadQoSNdkTest()
 
     } else if (mainThreadResult == 0) {
         OH_LOG_INFO(LOG_APP, "[ThreadQoSNdkTest] Main thread can set QoS, continuing original test...");
-
         int ret;
-
         ret = OH_QoS_SetThreadQoS(QoS_Level::QOS_BACKGROUND);
         if (ret != 0) {
             OH_LOG_ERROR(LOG_APP,
@@ -1232,7 +718,6 @@ int ThreadQoSNdkTest()
             return -1;
         }
         OH_LOG_INFO(LOG_APP, "[ThreadQoSNdkTest] Second set QOS_BACKGROUND success (double set test)");
-
         enum QoS_Level level;
         ret = OH_QoS_GetThreadQoS(&level);
         if (ret != 0) {
@@ -1305,9 +790,7 @@ int GewuCreateSessionTest()
     const char* attributes = attributesStr.c_str();
     OH_LOG_INFO(LOG_APP, "[GewuCreateSessionTest] Attributes JSON: %{public}s", attributes);
     OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession(attributes);
-
     OH_LOG_INFO(LOG_APP, "[GewuCreateSessionTest] CreateSession returned error code: %{public}d", sessionResult.error);
-
     if (sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOSYS) {
         OH_LOG_WARN(LOG_APP, "[GewuCreateSessionTest] System does not support Gewu, test skipped");
         return OH_NN_SUCCESS;
@@ -1323,14 +806,12 @@ int GewuCreateSessionTest()
     OH_LOG_INFO(LOG_APP,
                 "[GewuCreateSessionTest] CreateSession success, session=%{public}llu",
                 (unsigned long long)sessionResult.session);
-
     OH_QoS_GewuErrorCode error = OH_QoS_GewuDestroySession(sessionResult.session);
     if (error != OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK) {
         OH_LOG_ERROR(LOG_APP, "[GewuCreateSessionTest] DestroySession failed, error=%{public}d", error);
         return -1;
     }
     OH_LOG_INFO(LOG_APP, "[GewuCreateSessionTest] DestroySession success");
-
     sessionResult = OH_QoS_GewuCreateSession("");
     if (sessionResult.error != OH_QoS_GewuErrorCode::OH_QOS_GEWU_INVAL) {
         OH_LOG_ERROR(
@@ -1356,7 +837,6 @@ int GewuCreateSessionTest()
 int GewuSubmitRequestTest()
 {
     OH_LOG_INFO(LOG_APP, "[GewuSubmitRequestTest] Test started");
-
     std::string modelPath = std::string(ActsMindSporeConstants::FILES_DIR) + "Qwen2.5-0.5B-CPU-Q4";
     std::string attributesStr = "{\"model\":\"" + modelPath + "\"}";
     const char* attributes = attributesStr.c_str();
@@ -1368,9 +848,7 @@ int GewuSubmitRequestTest()
     OH_LOG_INFO(LOG_APP, "[GewuSubmitRequestTest] Attributes JSON: %{public}s", attributes);
     OH_LOG_INFO(LOG_APP, "[GewuSubmitRequestTest] Request JSON: %{public}s", request);
     OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession(attributes);
-
     OH_LOG_INFO(LOG_APP, "[GewuSubmitRequestTest] CreateSession returned error code: %{public}d", sessionResult.error);
-
     if (sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOSYS) {
         OH_LOG_WARN(LOG_APP, "[GewuSubmitRequestTest] System does not support Gewu, test skipped");
         return OH_NN_SUCCESS;
@@ -1383,11 +861,8 @@ int GewuSubmitRequestTest()
     OH_LOG_INFO(LOG_APP,
                 "[GewuSubmitRequestTest] CreateSession success, session=%{public}llu",
                 (unsigned long long)sessionResult.session);
-
-    OH_QoS_GewuSubmitRequestResult requestResult;
-    requestResult = OH_QoS_GewuSubmitRequest(sessionResult.session, request, cb, fakeContext);
+     OH_QoS_GewuSubmitRequestResult requestResult = OH_QoS_GewuSubmitRequest(sessionResult.session, request, cb, fakeContext);
     if (requestResult.error != OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK) {
-
         return -1;
     }
     OH_QoS_GewuErrorCode error = OH_QoS_GewuDestroySession(sessionResult.session);
@@ -1396,7 +871,6 @@ int GewuSubmitRequestTest()
         return -1;
     }
     OH_LOG_INFO(LOG_APP, "[GewuSubmitRequestTest] DestroySession success");
-
     requestResult = OH_QoS_GewuSubmitRequest(0, "", cb, fakeContext);
     if (requestResult.error != OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOENT) {
         OH_LOG_ERROR(
@@ -1406,7 +880,6 @@ int GewuSubmitRequestTest()
         return -1;
     }
     OH_LOG_INFO(LOG_APP, "[GewuSubmitRequestTest] SubmitRequest with invalid session correctly failed with NOENT");
-
     OH_LOG_INFO(LOG_APP, "[GewuSubmitRequestTest] Test passed");
     return OH_NN_SUCCESS;
 }
@@ -1422,20 +895,16 @@ int GewuSubmitRequestTest()
 int GewuAbortRequestTest()
 {
     OH_LOG_INFO(LOG_APP, "[GewuAbortRequestTest] Test started");
-
     std::string modelPath = std::string(ActsMindSporeConstants::FILES_DIR) + "Qwen2.5-0.5B-CPU-Q4";
     std::string attributesStr = "{\"model\":\"" + modelPath + "\"}";
     const char* attributes = attributesStr.c_str();
     OH_LOG_INFO(LOG_APP, "[GewuAbortRequestTest] Attributes JSON: %{public}s", attributes);
     OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession(attributes);
-
     OH_LOG_INFO(LOG_APP, "[GewuAbortRequestTest] CreateSession returned error code: %{public}d", sessionResult.error);
-
     if (sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOSYS) {
         OH_LOG_WARN(LOG_APP, "[GewuAbortRequestTest] System does not support Gewu, test skipped");
         return OH_NN_SUCCESS;
     }
-
     if (sessionResult.error != OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK) {
         OH_LOG_ERROR(LOG_APP, "[GewuAbortRequestTest] CreateSession failed, error=%{public}d", sessionResult.error);
         return -1;
@@ -1450,7 +919,6 @@ int GewuAbortRequestTest()
         return -1;
     }
     OH_LOG_INFO(LOG_APP, "[GewuAbortRequestTest] AbortRequest success");
-
     error = OH_QoS_GewuDestroySession(sessionResult.session);
     if (error != OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK) {
         OH_LOG_ERROR(LOG_APP, "[GewuAbortRequestTest] DestroySession failed, error=%{public}d", error);
@@ -1467,7 +935,6 @@ int GewuAbortRequestTest()
         return -1;
     }
     OH_LOG_INFO(LOG_APP, "[GewuAbortRequestTest] AbortRequest with invalid session correctly failed with NOENT");
-
     OH_LOG_INFO(LOG_APP, "[GewuAbortRequestTest] Test passed");
     return OH_NN_SUCCESS;
 }
@@ -1483,15 +950,12 @@ int GewuAbortRequestTest()
 int GewuDestroySessionTest()
 {
     OH_LOG_INFO(LOG_APP, "[GewuDestroySessionTest] Test started");
-
     std::string modelPath = std::string(ActsMindSporeConstants::FILES_DIR) + "Qwen2.5-0.5B-CPU-Q4";
     std::string attributesStr = "{\"model\":\"" + modelPath + "\"}";
     const char* attributes = attributesStr.c_str();
     OH_LOG_INFO(LOG_APP, "[GewuDestroySessionTest] Attributes JSON: %{public}s", attributes);
     OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession(attributes);
-
     OH_LOG_INFO(LOG_APP, "[GewuDestroySessionTest] CreateSession returned error code: %{public}d", sessionResult.error);
-
     if (sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOSYS) {
         OH_LOG_WARN(LOG_APP, "[GewuDestroySessionTest] System does not support Gewu, test skipped");
         return OH_NN_SUCCESS;
@@ -1521,7 +985,6 @@ int GewuDestroySessionTest()
         return -1;
     }
     OH_LOG_INFO(LOG_APP, "[GewuDestroySessionTest] DestroySession with invalid session correctly failed with NOENT");
-
     OH_LOG_INFO(LOG_APP, "[GewuDestroySessionTest] Test passed");
     return OH_NN_SUCCESS;
 }
