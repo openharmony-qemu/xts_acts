@@ -23,7 +23,6 @@ import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
 import webview from '@ohos.web.webview'
 
-
 let testAbilityContext:common.UIAbilityContext;
 
 export default function webDownloadEnumTest() {
@@ -51,10 +50,6 @@ export default function webDownloadEnumTest() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
-    beforeEach(async () => {
-      await Utils.msSleep(2000);
-      console.info('webOnFirstContFour beforeEach start');
-    })
 
     /*
     * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_0100
