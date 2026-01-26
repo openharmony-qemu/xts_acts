@@ -80,4 +80,5 @@ multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/wav_alaw_76
 multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/zero_track.mp4 filter=lfs diff=lfs merge=lfs -text
 /Users/tanliang/Documents/xts_7/xts_acts_8338/resourceschedule/resourceschedule_standard/ActsQosManagerTest/entry/src/main/resources/rawfile/Qwen2.5-0.5B-CPU-Q4/params filter=lfs diff=lfs merge=lfs -text
 /Users/tanliang/Documents/xts_7/xts_acts_8338/resourceschedule/resourceschedule_standard/ActsQosManagerTest/entry/src/main/resources/rawfile/Qwen2.5-0.5B-CPU-Q4/tokenizer.json filter=lfs diff=lfs merge=lfs -text
+resourceschedule/resourceschedule_standard/ActsQosManagerTest/entry/src/main/resources/rawfile/Qwen2.5-0.5B-CPU-Q4/* filter=lfs diff=lfs merge=lfs -text
 /customization/enterprise_device_management/edm_xts_stage/entry/src/ohosTest/resources/resfile/101mb.bmp filter=lfs diff=lfs merge=lfs -text
