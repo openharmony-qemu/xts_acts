@@ -88,7 +88,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         await pixelMapObj.createCroppedAndScaledPixelMap(null, scaleX, scaleY, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
+        console.error(TAG,testName,error,error.code);
         expect(error.code).assertEqual('7600204');
       }
       done();
@@ -111,7 +111,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         await pixelMapObj.createCroppedAndScaledPixelMap(undefined, scaleX, scaleY, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
+        console.error(TAG,testName,error,error.code);
         expect(error.code).assertEqual('7600204');
       }
       done();
@@ -134,7 +134,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         await pixelMapObj.createCroppedAndScaledPixelMap(AppStorage.get('emptyString'), scaleX, scaleY, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
+        console.error(TAG,testName,error,error.code);
         expect(error.code).assertEqual('7600204');
       }
       done();
@@ -162,7 +162,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         await pixelMapObj.createCroppedAndScaledPixelMap(region, null, scaleY, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
+        console.error(TAG,testName,error,error.code);
         expect(error.code).assertEqual('7600201');
       }
       done();
@@ -190,7 +190,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         await pixelMapObj.createCroppedAndScaledPixelMap(region, undefined, scaleY, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
+        console.error(TAG,testName,error,error.code);
         expect(error.code).assertEqual('7600201');
       }
       done();
@@ -218,7 +218,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         await pixelMapObj.createCroppedAndScaledPixelMap(region, AppStorage.get('emptyString'), scaleY, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
+        console.error(TAG,testName,error,error.code);
         expect(error.code).assertEqual('7600201');
       }
       done();
@@ -246,7 +246,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         await pixelMapObj.createCroppedAndScaledPixelMap(region, scaleX, null, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
+        console.error(TAG,testName,error,error.code);
         expect(error.code).assertEqual('7600201');
       }
       done();
@@ -274,7 +274,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         await pixelMapObj.createCroppedAndScaledPixelMap(region, scaleX, undefined, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
+        console.error(TAG,testName,error,error.code);
         expect(error.code).assertEqual('7600201');
       }
       done();
@@ -302,7 +302,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         await pixelMapObj.createCroppedAndScaledPixelMap(region, scaleX, AppStorage.get('emptyString'), image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
+        console.error(TAG,testName,error,error.code);
         expect(error.code).assertEqual('7600201');
       }
       done();
@@ -325,7 +325,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         pixelMapObj.createCroppedAndScaledPixelMapSync(null, scaleX, scaleY, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
+        console.error(TAG,testName,error,error.code);
         expect(error.code).assertEqual('7600204');
       }
       done();
@@ -348,7 +348,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         pixelMapObj.createCroppedAndScaledPixelMapSync(undefined, scaleX, scaleY, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
+        console.error(TAG,testName,error,error.code);
         expect(error.code).assertEqual('7600204');
       }
       done();
@@ -371,8 +371,9 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         pixelMapObj.createCroppedAndScaledPixelMapSync(AppStorage.get('emptyString'), scaleX, scaleY, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
-        expect(error.code).assertEqual('7600204');
+        console.error(TAG,testName,error,error.code);
+        let errCode:string = error.code;
+        expect(errCode).assertEqual('7600204');
       }
       done();
     });
@@ -399,7 +400,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         pixelMapObj.createCroppedAndScaledPixelMapSync(region, null, scaleY, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
+        console.error(TAG,testName,error,error.code);
         expect(error.code).assertEqual('7600201');
       }
       done();
@@ -427,7 +428,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         pixelMapObj.createCroppedAndScaledPixelMapSync(region, undefined, scaleY, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
+        console.error(TAG,testName,error,error.code);
         expect(error.code).assertEqual('7600201');
       }
       done();
@@ -455,7 +456,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         pixelMapObj.createCroppedAndScaledPixelMapSync(region, AppStorage.get('emptyString'), scaleY, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
+        console.error(TAG,testName,error,error.code);
         expect(error.code).assertEqual('7600201');
       }
       done();
@@ -483,7 +484,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         pixelMapObj.createCroppedAndScaledPixelMapSync(region, scaleX, null, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
+        console.error(TAG,testName,error,error.code);
         expect(error.code).assertEqual('7600201');
       }
       done();
@@ -511,7 +512,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         pixelMapObj.createCroppedAndScaledPixelMapSync(region, scaleX, undefined, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
+        console.error(TAG,testName,error,error.code);
         expect(error.code).assertEqual('7600201');
       }
       done();
@@ -539,8 +540,9 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         pixelMapObj.createCroppedAndScaledPixelMapSync(region, scaleX, AppStorage.get('emptyString'), image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG,testName,error,error.code)
-        expect(error.code).assertEqual('7600201');
+        console.error(TAG,testName,error,error.code);
+        let errCode:string = error.code;
+        expect(errCode).assertEqual('7600201');
       }
       done();
     });
@@ -559,9 +561,9 @@ export default function imageCreateCroppedAndScaledPixelMap() {
       try {
         let newPixelMap = await PixelMap.clone();
         console.info('Succeeded clone pixelmap.');
-        expect(newPixelMap.isEditable).assertEqual(PixelMap.isEditable)
+        expect(newPixelMap.isEditable).assertEqual(PixelMap.isEditable);
       } catch (error) {
-        console.error(TAG, testName, error, error.code)
+        console.error(TAG, testName, error, error.code);
         expect().assertFail();
       }
       done();
@@ -581,9 +583,9 @@ export default function imageCreateCroppedAndScaledPixelMap() {
       try {
         let newPixelMap =  PixelMap.cloneSync();
         console.info('Succeeded clone pixelmap.');
-        expect(newPixelMap.isEditable).assertEqual(PixelMap.isEditable)
+        expect(newPixelMap.isEditable).assertEqual(PixelMap.isEditable);
       } catch (error) {
-        console.error(TAG, testName, error, error.code)
+        console.error(TAG, testName, error, error.code);
         expect().assertFail();
       }
       done();
@@ -606,7 +608,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         await pixelMapObj.flip(horizontal,vertical);
         expect(pixelMapObj != undefined).assertTrue();
       } catch (error) {
-        console.error(TAG, testName, error, error.code)
+        console.error(TAG, testName, error, error.code);
         expect().assertFail();
       }
       done();
@@ -629,7 +631,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         await pixelMapObj.flip(horizontal,vertical);
         expect(pixelMapObj != undefined).assertTrue();
       } catch (error) {
-        console.error(TAG, testName, error, error.code)
+        console.error(TAG, testName, error, error.code);
         expect().assertFail();
       }
       done();
@@ -652,7 +654,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         await pixelMapObj.flip(horizontal,vertical);
         expect(pixelMapObj != undefined).assertTrue();
       } catch (error) {
-        console.error(TAG, testName, error, error.code)
+        console.error(TAG, testName, error, error.code);
         expect().assertFail();
       }
       done();
@@ -676,7 +678,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         console.info('Succeeded clone pixelmap.');
         expect(pixelMapObj != undefined).assertTrue();
       } catch (error) {
-        console.error(TAG, testName, error, error.code)
+        console.error(TAG, testName, error, error.code);
         expect().assertFail();
       }
       done();
@@ -697,7 +699,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         pixelMapObj.setMemoryNameSync("");
         expect().assertFail();
       } catch (error) {
-        console.error(TAG, testName, error, error.code)
+        console.error(TAG, testName, error, error.code);
         expect(error.code).assertEqual('401');
       }
       done();
@@ -718,7 +720,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         pixelMapObj.setMemoryNameSync(null);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG, testName, error, error.code)
+        console.error(TAG, testName, error, error.code);
         expect(error.code).assertEqual('401');
       }
       done();
@@ -739,8 +741,9 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         pixelMapObj.setMemoryNameSync(undefined);
         expect().assertFail();
       } catch (error) {
-        console.error(TAG, testName, error, error.code)
-        expect(error.code).assertEqual('401');
+        console.error(TAG, testName, error, error.code);
+        let errCode:string = error.code;
+        expect(errCode).assertEqual('401');
       }
       done();
     });
