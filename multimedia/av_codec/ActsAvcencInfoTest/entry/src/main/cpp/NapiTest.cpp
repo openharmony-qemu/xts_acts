@@ -21,11 +21,11 @@ namespace {
         const T* arr;
         size_t count;
     };
-    #define DEFINE_CENCINFO_NAPI(funcName, funcArray) \
-    napi_value funcName(napi_env env, napi_callback_info info) \
-    { \
-        auto funcTable = MakeFuncTable(funcArray); \
-        return CencInfoNapiImpl(env, info, funcTable); \
+    template <typename T>
+    napi_value CencInfoNapiHelper(napi_env env, napi_callback_info info, const T (&funcArray)[], size_t arraySize)
+    {
+        FuncTable<T> funcTable = {funcArray, arraySize};
+        return CencInfoNapiImpl(env, info, funcTable);
     }
 }
 
