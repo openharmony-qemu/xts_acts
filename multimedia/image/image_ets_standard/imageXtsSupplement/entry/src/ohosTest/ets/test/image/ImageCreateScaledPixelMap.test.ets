@@ -187,7 +187,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
       };
       const scaleY: number = 2.0;
       try {
-        await pixelMapObj.createCroppedAndScaledPixelMap(region, null, scaleY, image.AntiAliasingLevel.HIGH);
+        await pixelMapObj.createCroppedAndScaledPixelMap(region, undefined, scaleY, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code)
@@ -226,7 +226,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
     /**
      * @tc.number    SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_007
      * @tc.name      SUB_IMAGE_CREATE_CROPPED_AND_SCALED_PIXEL_MAP_007
-     * @tc.desc      createCroppedAndScaledPixelMap Y cover undefined
+     * @tc.desc      createCroppedAndScaledPixelMap Y cover null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 1
@@ -271,7 +271,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
       };
       const scaleX: number = 2.0;
       try {
-        await pixelMapObj.createCroppedAndScaledPixelMap(region, scaleX, null, image.AntiAliasingLevel.HIGH);
+        await pixelMapObj.createCroppedAndScaledPixelMap(region, scaleX, undefined, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code)
@@ -424,7 +424,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
       };
       const scaleY: number = 2.0;
       try {
-        pixelMapObj.createCroppedAndScaledPixelMapSync(region, null, scaleY, image.AntiAliasingLevel.HIGH);
+        pixelMapObj.createCroppedAndScaledPixelMapSync(region, undefined, scaleY, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code)
@@ -508,7 +508,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
       };
       const scaleX: number = 2.0;
       try {
-        pixelMapObj.createCroppedAndScaledPixelMapSync(region, scaleX, null, image.AntiAliasingLevel.HIGH);
+        pixelMapObj.createCroppedAndScaledPixelMapSync(region, scaleX, undefined, image.AntiAliasingLevel.HIGH);
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code)
