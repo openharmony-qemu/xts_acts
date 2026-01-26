@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach, expect } from '../../../hypium/index';
+import { Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach } from '../../../hypium/index';
 import router from '@ohos.router';
 import Utils from './Utils.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -22,7 +22,7 @@ import{BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
 import webview from '@ohos.web.webview'
-import wifiMg from '@ohos.wifiManager';
+
 
 let testAbilityContext:common.UIAbilityContext;
 
@@ -52,38 +52,6 @@ export default function webDownloadEnumTest() {
     });
 
     beforeEach(async () => {
-      if(!wifiMg.isWifiActive()){
-        console.info("======> wifi_test/enable wifi:" + wifiMg.enableWifi());
-        await Utils.msSleep(5000);
-      }
-
-      try {
-        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
-        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
-        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
-        console.info("======> Internet chload : " + JSON.stringify(data.chload));
-        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
-
-        if (data.connState == wifiMg.ConnState.CONNECTED) {
-          console.info("======> WLAN connection established ");
-        } else {
-          expect().message("======> WLAN Network error").assertFail(); //方式一
-          //throw new Error("======> WLAN Network error");//方式二
-          done();
-        }
-        if (data.chload >= 800 || data.rssi <= -80) {
-          expect().message("======> WLAN Network error").assertFail();//方式一
-          //throw new Error("======> WLAN Network error");//方式二
-          done();
-        } else if (data.chload >= 500) {
-          console.info("======> The internet connection is poor. ");
-        }
-
-      } catch (err) {
-        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
-        throw (err as Error);
-        done();
-      }
       await Utils.msSleep(2000);
       console.info('webOnFirstContFour beforeEach start');
     })
