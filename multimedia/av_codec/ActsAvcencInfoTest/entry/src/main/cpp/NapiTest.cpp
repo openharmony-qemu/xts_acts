@@ -3,7 +3,6 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  */
-#include "xts_common.h"
 #include <exception>
 #include "napi/native_api.h"
 #include "AvcencInfoCheckTest.h"
