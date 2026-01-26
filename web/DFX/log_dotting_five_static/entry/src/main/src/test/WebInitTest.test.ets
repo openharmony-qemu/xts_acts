@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, TestType,afterEach, describe, it, TestType, expect, Size, Level } from '../../../hypium/index';
+import { beforeAll, beforeEach, TestType,afterEach, describe, it, TestType,  Size, Level } from '../../../hypium/index';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import Utils from '../../src/test/Utils.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -21,7 +21,7 @@ import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
-import wifiMg from '@ohos.wifiManager';
+
 
 let testAbilityContext: common.UIAbilityContext;
 
@@ -32,42 +32,7 @@ export default function WebInitTest() {
       console.log('App start')
     });
 
-    beforeEach(async () => {
-      if(!wifiMg.isWifiActive()){
-        console.info("======> wifi_test/enable wifi:" + wifiMg.enableWifi());
-        await Utils.msSleep(5000);
-      }
 
-      try {
-        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
-        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
-        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
-        console.info("======> Internet chload : " + JSON.stringify(data.chload));
-        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
-
-        if (data.connState == wifiMg.ConnState.CONNECTED) {
-          console.info("======> WLAN connection established ");
-        } else {
-          expect().message("======> WLAN Network error").assertFail(); //方式一
-          //throw new Error("======> WLAN Network error");//方式二
-          done();
-        }
-        if (data.chload >= 800 || data.rssi <= -80) {
-          expect().message("======> WLAN Network error").assertFail();//方式一
-          //throw new Error("======> WLAN Network error");//方式二
-          done();
-        } else if (data.chload >= 500) {
-          console.info("======> The internet connection is poor. ");
-        }
-
-      } catch (err) {
-        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
-        throw (err as Error);
-        done();
-      }
-      await Utils.msSleep(2000);
-      console.info('webOnFirstContFour beforeEach start');
-    })
 
     /*
         * @tc.number     SUB_WEB_WEBCUSTOMIZESCHEMES_0100
