@@ -82,11 +82,10 @@ struct Navigation_SingleInstanceJump2{
       .navDestination(this.PageMap)
 
       Button('push page1').onClick((event: ClickEvent) => {
-        console.log('1111111111111',new NavPathInfo('page1',this.count++))
         this.pathInfos.pushPath(new NavPathInfo('page1',this.count++),{animated:true} as NavigationOptions)
       }).id('Navigation_SingleInstanceJump2_btn1')
       Button('push page2').onClick((event: ClickEvent) => {
-        this.pathInfos.pushPath(new NavPathInfo('page1',this.count++),{animated:true} as NavigationOptions)
+        this.pathInfos.pushPath(new NavPathInfo('page2',this.count++),{animated:true} as NavigationOptions)
       }).id('Navigation_SingleInstanceJump2_btn2')
       Text(this.text).id('Navigation_SingleInstanceJump2_text1')
       Button('getAll').onClick((e: ClickEvent) => {

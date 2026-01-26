@@ -94,6 +94,10 @@ export default function progressJsunit() {
       console.info("progress after each called");
     });
 
+    afterAll(async () => {
+      AppStorage.setOrCreate<number>('value', 20);
+    })
+
     
 /**
      * @tc.number   testProgress_static_100
