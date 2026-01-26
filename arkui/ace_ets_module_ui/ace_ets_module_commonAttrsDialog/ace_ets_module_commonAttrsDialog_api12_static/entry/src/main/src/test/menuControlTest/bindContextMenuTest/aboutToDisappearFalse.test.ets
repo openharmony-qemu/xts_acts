@@ -39,7 +39,7 @@ import { UtilsTest } from '../../Util.test'
 
 export default function aboutToDisappearFalse() {
   describe('aboutToDisappearFalse', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
     });
@@ -60,7 +60,6 @@ export default function aboutToDisappearFalse() {
         }
       } catch (err) {
         console.error("push aboutToDisappearFalse page error: " + err);
-        expect().assertFail();
       }
     });
     

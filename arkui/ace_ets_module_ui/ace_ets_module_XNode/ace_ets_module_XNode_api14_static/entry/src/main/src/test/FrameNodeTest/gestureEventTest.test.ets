@@ -90,7 +90,7 @@ it('gestureEventTest_static_0100', Level.LEVEL0, async (done: () => void): Promi
       let node: Component = await driver.findComponent(ON.id('gestureEventTest_node')) as Component;
       let point = await node.getBoundsCenter();
       console.info("[gestureEventTest_static_0100] getBoundsCenter point.x: " + point.x + ", point.y: " + point.y);
-      await driver.swipe((Math.round(point.x - UIContext.getFocusedUIContext()!.vp2px(50))).toInt(), (Math.round(point.y)).toInt(), (Math.round(point.x + UIContext.getFocusedUIContext()!.vp2px(50))).toInt(), (Math.round(point.y)).toInt());
+      await driver.swipe((Math.round(point.x - UIContext.resolveUIContext()!.vp2px(50))).toInt(), (Math.round(point.y)).toInt(), (Math.round(point.x + UIContext.resolveUIContext()!.vp2px(50))).toInt(), (Math.round(point.y)).toInt());
       await CommonFunc.sleep(2000);
       let btn = await driver.findComponent(ON.id('getpanGestureInfo')) as Component;
       await btn.click()

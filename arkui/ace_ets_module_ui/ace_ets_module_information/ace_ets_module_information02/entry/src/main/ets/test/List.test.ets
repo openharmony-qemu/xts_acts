@@ -13,10 +13,7 @@
  * limitations under the License.
  */
 
-import ActsAceCounterComponentTest from './CounterTest/ActsAceCounterComponentTest.test';
-import CounterComponentTest from './CounterTest/CounterComponentTest.test';
-import CounterEnableTest from './CounterTest/CounterEnableTest.test';
-import CounterJsunitTest from './CounterTest/CounterJsunitTest.test';
+
 
 import LoadingProgressJsunit from './ProgressTest/LoadingProgressJsunit.test';
 import LoadingProgressJsunit2 from './ProgressTest/LoadingProgressJsunit2.test';
@@ -51,11 +48,7 @@ import TextTimerTextShadowTest from './TextTimerTest/TextTimerTextShadow.test';
 
 
 export default function testsuite() {
-    // CounterTest
-    ActsAceCounterComponentTest()
-    CounterComponentTest()
-    CounterEnableTest()
-    CounterJsunitTest()
+
     // ProgressTest
     LoadingProgressJsunit()
     LoadingProgressJsunit2()

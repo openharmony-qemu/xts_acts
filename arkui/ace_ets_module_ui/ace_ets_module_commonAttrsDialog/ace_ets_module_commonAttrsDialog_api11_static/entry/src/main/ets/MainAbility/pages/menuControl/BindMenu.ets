@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,6 +46,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
+import { RecordData } from '@ohos.base';
 
 
 @Entry
@@ -104,7 +105,7 @@ struct BindMenu {
               let eventData: events_emitter.EventData = {
                 data: {
                   "action": 'onAppear'
-                } as Record<string, Object | undefined | null>
+                } as Record<String,RecordData>
               }
               let event: events_emitter.InnerEvent = {
                 eventId: 50000,
@@ -116,7 +117,7 @@ struct BindMenu {
               let eventData: events_emitter.EventData = {
                 data: {
                   "action": 'onDisappear'
-                } as Record<string, Object | undefined | null>
+                } as Record<String,RecordData>
               }
               let event: events_emitter.InnerEvent = {
                 eventId: 50001,
@@ -148,7 +149,7 @@ struct BindMenu {
               let eventData: events_emitter.EventData = {
                 data: {
                   "action": 'onAppear'
-                } as Record<string, Object | undefined | null>
+                } as Record<String,RecordData>
               }
               let event: events_emitter.InnerEvent = {
                 eventId: 60002,
@@ -160,7 +161,7 @@ struct BindMenu {
               let eventData: events_emitter.EventData = {
                 data: {
                   "action": 'onDisappear'
-                } as Record<string, Object | undefined | null>
+                } as Record<String,RecordData>
               }
               let event: events_emitter.InnerEvent = {
                 eventId: 60003,

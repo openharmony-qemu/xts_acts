@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import Utils  from "../../../ets/MainAbility/common/Utils";
+import { RecordData } from '@ohos.base';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -86,7 +87,7 @@ it('testRating_static_100', Level.LEVEL1, async (done: () => void): Promise<void
         let eventData: events_emitter.EventData = {
           data: {
             "rating": 2 as double
-          } as Record<string, Object | null | undefined>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 173,
@@ -138,7 +139,7 @@ it('testRating_static_300', Level.LEVEL1, async (done: () => void): Promise<void
         let eventData: events_emitter.EventData = {
           data: {
             "rating": 3 as double
-          } as Record<string, Object | null | undefined>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 173,
@@ -172,7 +173,7 @@ it('testRating_static_400', Level.LEVEL1, async (done: () => void): Promise<void
         let eventData: events_emitter.EventData = {
           data: {
             "rating": 4 as double
-          } as Record<string, Object | null | undefined>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 173,
@@ -206,7 +207,7 @@ it('testRating_static_500', Level.LEVEL1, async (done: () => void): Promise<void
         let eventData: events_emitter.EventData = {
           data: {
             "rating": 5 as double
-          } as Record<string, Object | null | undefined>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 173,
@@ -240,7 +241,7 @@ it('testRating_static_600', Level.LEVEL1, async (done: () => void): Promise<void
         let eventData: events_emitter.EventData = {
           data: {
             "rating": 0 as double
-          } as Record<string, Object | null | undefined>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 173,
@@ -275,7 +276,7 @@ it('testRating_static_700', Level.LEVEL1, async (done: () => void): Promise<void
         let eventData: events_emitter.EventData = {
           data: {
             "rating": 1 as double
-          } as Record<string, Object | null | undefined>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 173,
@@ -311,7 +312,7 @@ it('testRating_static_800', Level.LEVEL1, async (done: () => void): Promise<void
         let eventData: events_emitter.EventData = {
           data: {
             "rating": -1 as double
-          } as Record<string, Object | null | undefined>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 173,
@@ -347,7 +348,7 @@ it('testRating_static_900', Level.LEVEL1, async (done: () => void): Promise<void
         let eventData: events_emitter.EventData = {
           data: {
             "rating": 0 as double
-          } as Record<string, Object | null | undefined>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 173,

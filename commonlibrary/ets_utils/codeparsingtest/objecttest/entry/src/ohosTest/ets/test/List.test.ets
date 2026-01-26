@@ -32,6 +32,8 @@ import Object15Test from './object/Object15.test';
 import Object16Test from './object/Object16.test';
 import Object17Test from './object/Object17.test';
 import Object18Test from './object/Object18.test';
+import Object19Test from './object/Object19.test';
+import Object20Test from './object/Object20.test';
 import Object23Test from './objectplus/Object23.test';
 import Object24Test from './objectplus/Object24.test';
 import Object25Test from './objectplus/Object25.test';
@@ -76,6 +78,8 @@ export default function testsuite() {
   Object16Test();
   Object17Test();
   Object18Test();
+  Object19Test();
+  Object20Test();
   Object23Test();
   Object24Test();
   Object25Test();

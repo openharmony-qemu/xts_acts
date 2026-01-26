@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import {
   Row
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -116,7 +117,7 @@ struct ImageAnimatorExampleu {
               let backData: emitter.EventData = {
                 data: {
                   "animationStatus": this.state,
-                } as Record<string, undefined | null | Object>
+                } as Record<String,RecordData>
               } as emitter.EventData
               let backEvent: emitter.InnerEvent = {
                 eventId: 56,
@@ -139,7 +140,7 @@ struct ImageAnimatorExampleu {
               let backData: emitter.EventData = {
                 data: {
                   "animationStatus": this.state,
-                } as Record<string, undefined | null | Object>
+                } as Record<String,RecordData>
               } as emitter.EventData
               let backEvent: emitter.InnerEvent = {
                 eventId: 57,

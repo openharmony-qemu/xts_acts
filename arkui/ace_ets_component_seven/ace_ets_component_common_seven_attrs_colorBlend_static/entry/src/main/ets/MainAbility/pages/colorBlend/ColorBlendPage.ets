@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,10 +19,10 @@ import events_emitter from '@ohos.events.emitter'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,Builder,ResourceColor,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
   LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
-  Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
+  Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,Resource,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
+  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
@@ -33,8 +33,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
   ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
   RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
-  StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
+  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute,
+  SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,Navigation,NavDestination,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, BorderImageOption, EffectComponentAttribute,CommonMethod,applyStyles,
@@ -42,6 +42,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
 import { State, AppStorage, StoragePropRef,Observed } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
+import { RecordData } from '@ohos.base';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mColorBlend: Color | string = Color.Green
@@ -450,20 +451,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
     instance.colorBlend(this.mColorBlend)
   }
 }
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mColorBlend: Color = Color.Green
-  applyNormalAttribute(instance: StepperAttribute): void {
-    console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
-    instance.colorBlend(this.mColorBlend)
-  }
-}
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mColorBlend: Color = Color.Green
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
-    instance.colorBlend(this.mColorBlend)
-  }
-}
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: SwiperAttribute): void {
@@ -631,8 +618,6 @@ struct colorBlendPage {
   @State _colorBlendSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _colorBlendSliderMod: SliderModifier = new SliderModifier()
   @State _colorBlendStackMod: StackModifier = new StackModifier()
-  @State _colorBlendStepperMod: StepperModifier = new StepperModifier()
-  @State _colorBlendStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _colorBlendSwiperMod: SwiperModifier = new SwiperModifier()
   @State _colorBlendTabContentMod: TabContentModifier = new TabContentModifier()
   @State _colorBlendTabsMod: TabsModifier = new TabsModifier()
@@ -663,7 +648,7 @@ struct colorBlendPage {
   }
   private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != null) {
-      const data = eventData.data as Record<string, Object | null | undefined>
+      const data = eventData.data as Record<string, RecordData>
       if (data!['colorBlend'] != null) {
         console.log('colorBlendcolorBlendcolorBlendcolorBlendcolorBlend',data!['colorBlend'] as Color|string);
         this._colorBlendButttonMod.mColorBlend = data!['colorBlend'] as Color|string
@@ -789,14 +774,6 @@ commonStyle(instance: CommonMethod){
           })
             .showTips(true)
             .applyStyles(this.commonStyle).attributeModifier(this._colorBlendSliderMod)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }.applyStyles(this.commonStyle).attributeModifier(this._colorBlendStepperMod)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -1012,19 +989,6 @@ commonStyle(instance: CommonMethod){
               }
             }, (item: int, index: int) => item.toString())
           }.applyStyles(this.commonStyle).attributeModifier(this._colorBlendWaterFlowMod)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            .applyStyles(this.commonStyle).attributeModifier(this._colorBlendStepperItemMod)
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

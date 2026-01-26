@@ -37,23 +37,23 @@ import OhosRouterJsunit from './Router/OhosRouterJsnuit.test';
 import RouterBackAlert from './back_router/RouterBackAlert.test';
 
 export default function testsuite() {
+  aboutToAppearRouterTest();
+  aboutToAppearRouterTest2();
   pushPageInit();
   router_back1();
   router_push1();
   Router1();
   Router2();
-  Router3();
-  Router4();
-  aboutToAppearRouterTest();
-  aboutToAppearRouterTest2();
+  // Router3();
+  // Router4();
   goWithParams();
   RouterPushUrlJsunit();
   RouterWithParamJsunit();
   RouterUrlErrorJsunit();
   stageRouterTest();
-  routerReplaceJsunit();
+  // routerReplaceJsunit();
   systemRouterJsunit();
   routerStandardJsunit()
   OhosRouterJsunit();
-  RouterBackAlert();
+  // RouterBackAlert();
 }

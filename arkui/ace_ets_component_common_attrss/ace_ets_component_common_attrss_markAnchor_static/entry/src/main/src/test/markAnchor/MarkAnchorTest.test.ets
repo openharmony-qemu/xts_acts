@@ -45,7 +45,7 @@ export default function MarkAnchorTest() {
     'List', 'Row', 'Scroll', 'Stack', 'Tabs', 'Circle', 'Ellipse', 'Line',
     'Polyline', 'Polygon', 'Path', 'Rect', 'Shape',
     'Refresh', 'TabContent', 'ListItem',
-    'RelativeContainer', 'Swiper', 'Navigator', 'TextTimer', 'GridCol',
+    'RelativeContainer', 'Swiper', 'TextTimer', 'GridCol',
     'GridItem', 'ScrollBar', 'Menu', 'MenuItem', 'MenuItemGroup',
     'ListItemGroup'
   )

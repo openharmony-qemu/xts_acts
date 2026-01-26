@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,6 +38,7 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -58,7 +59,7 @@ struct ResponseRegionExample {
     console.info("[ResponseRegion] ChangCallBack stateChangCallBack");
     if (eventData != null) {
       console.info("[ResponseRegion] ChangCallBack state change called:" + JSON.stringify(eventData));
-      const data = eventData.data as Record<String,undefined|null|Object>;
+      const data = eventData.data as Record<String,RecordData>;
       if (data['touchable'] != null) {
         this.touchableValue = data['touchable'] as boolean;
       }
@@ -102,7 +103,7 @@ struct ResponseRegionExample {
           data: {
             "ACTION": this.isTouched,
             "EVENT_TYPE": this.eventType
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let backEvent: emitter.InnerEvent = {
           eventId: 31,

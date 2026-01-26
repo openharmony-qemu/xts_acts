@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,16 +42,16 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test';
 import { Alignment } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
 
 
 export default function OverlayUIJsunit() {
   describe('OverlayUIJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("overLayJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
@@ -122,7 +122,7 @@ it('overLayJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<
         let eventData: emitter.EventData = {
           data: {
             "title": "new title"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 143,
@@ -158,7 +158,7 @@ it('overLayJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<
             "align": Alignment.TopStart,
             "x": 30.0,
             "y": -30.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 143,
@@ -204,7 +204,7 @@ it('overLayJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<
         let eventData: emitter.EventData = {
           data: {
             "align": "Alignment.Center"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 143,
@@ -239,7 +239,7 @@ it('overLayJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<
         let eventData: emitter.EventData = {
           data: {
             "align": '-1'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1110,
@@ -275,7 +275,7 @@ it('overLayJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<
           data: {
             "x": -30.0,
             "y": 30.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1110,
@@ -318,7 +318,7 @@ it('overLayJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<
         let eventData: emitter.EventData = {
           data: {
             "x": 1111111111.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1110,
@@ -356,7 +356,7 @@ it('overLayJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<
         let eventData: emitter.EventData = {
           data: {
             "y": 1111111111.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1110,
@@ -395,7 +395,7 @@ it('overLayJsunit_static_0900', Level.LEVEL0, async (done: () => void): Promise<
         let eventData: emitter.EventData = {
           data: {
             "align": "Alignment.Top"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1110,
@@ -431,7 +431,7 @@ it('overLayJsunit_static_1000', Level.LEVEL0, async (done: () => void): Promise<
         let eventData: emitter.EventData = {
           data: {
             "align": "Alignment.TopEnd"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 143,
@@ -467,7 +467,7 @@ it('overLayJsunit_static_1100', Level.LEVEL0, async (done: () => void): Promise<
         let eventData: emitter.EventData = {
           data: {
             "align": "Alignment.Start"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 143,
@@ -503,7 +503,7 @@ it('overLayJsunit_static_1200', Level.LEVEL0, async (done: () => void): Promise<
         let eventData: emitter.EventData = {
           data: {
             "align": "Alignment.End"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 143,
@@ -539,7 +539,7 @@ it('overLayJsunit_static_1300', Level.LEVEL0, async (done: () => void): Promise<
         let eventData: emitter.EventData = {
           data: {
             "align": "Alignment.BottomEnd"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 143,
@@ -575,7 +575,7 @@ it('overLayJsunit_static_1400', Level.LEVEL0, async (done: () => void): Promise<
         let eventData: emitter.EventData = {
           data: {
             "align": "Alignment.BottomStart"
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 143,

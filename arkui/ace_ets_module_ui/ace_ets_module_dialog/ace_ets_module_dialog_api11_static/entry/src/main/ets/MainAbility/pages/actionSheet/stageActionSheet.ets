@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,6 +41,7 @@ import {
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -103,7 +104,7 @@ struct stageActionSheet {
               let backData: emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let backEvent: emitter.InnerEvent = {
                 eventId: 60220,
@@ -172,7 +173,7 @@ struct stageActionSheet {
               let backData1: emitter.EventData = {
                 data: {
                   "STATUS": 10
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let backEvent1: emitter.InnerEvent = {
                 eventId: 60221,
@@ -241,7 +242,7 @@ struct stageActionSheet {
               let backData2: emitter.EventData = {
                 data: {
                   "STATUS": "STATUS"
-                } as Record<String,undefined|null|Object>
+                } as Record<String,RecordData>
               }
               let backEvent2: emitter.InnerEvent = {
                 eventId: 60222,

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,6 +40,7 @@ import {
     Font
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base';
 @Entry
 @Component
 struct DatePickerExample {
@@ -57,7 +58,7 @@ struct DatePickerExample {
     private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
         console.info("select page state change called:" + JSON.stringify(eventData));
         if (eventData != null && eventData.data != null) {
-            const data = eventData.data as Record<string, Object | null | undefined>
+            const data = eventData.data as Record<String,RecordData>
             if (data!['disappearTextStyle'] != null) {
                 console.log('disappearTextStyledisappearTextStyle',data!['disappearTextStyle'] as PickerTextStyle)
                 this.disappearTextStyle = data!['disappearTextStyle'] as PickerTextStyle

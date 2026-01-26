@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,6 +27,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 export default function DatePickerDialogCallback() {
   describe('DatePickerDialogCallback', () => {
@@ -73,7 +74,7 @@ it('DatePickerDialogCallback_static_0100', Level.LEVEL0, async (done: () => void
       try {
         let driver1 = Driver.create();
         let callback = (event: events_emitter.EventData) => {
-          const data = event.data as Record<String,undefined|null|Object>
+          const data = event.data as Record<String,RecordData>
           expect(data['action']).assertEqual('onWillAppear');
           console.info('DatePickerDialogCallback_static_0100 event01: ' + data['action']);
         }
@@ -88,7 +89,7 @@ it('DatePickerDialogCallback_static_0100', Level.LEVEL0, async (done: () => void
         await CommonFunc.sleep(3000)
 
         let callback1 = (event: events_emitter.EventData) => {
-          const data = event.data as Record<String,undefined|null|Object>
+          const data = event.data as Record<String,RecordData>
           expect(data['action']).assertEqual('onDidAppear');
           console.info('DatePickerDialogCallback_static_0100 event02: ' + data['action']);
         }
@@ -99,7 +100,7 @@ it('DatePickerDialogCallback_static_0100', Level.LEVEL0, async (done: () => void
         events_emitter.on(event1, callback1);
 
         let callback2 = (event: events_emitter.EventData) => {
-          const data = event.data as Record<String,undefined|null|Object>
+          const data = event.data as Record<String,RecordData>
           expect(data['action']).assertEqual('onWillDisappear');
           console.info('DatePickerDialogCallback_static_0100 event03: ' + data['action']);
         }
@@ -110,7 +111,7 @@ it('DatePickerDialogCallback_static_0100', Level.LEVEL0, async (done: () => void
         events_emitter.on(event2, callback2);
 
         let callback3 = (event: events_emitter.EventData) => {
-          const data = event.data as Record<String,undefined|null|Object>
+          const data = event.data as Record<String,RecordData>
           expect(data['action']).assertEqual('onDidDisappear');
           console.info('DatePickerDialogCallback_static_0100 event04: ' + data['action']);
           done();

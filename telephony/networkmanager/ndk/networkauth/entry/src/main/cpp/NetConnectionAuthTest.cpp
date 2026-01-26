@@ -22,6 +22,7 @@
 #include <network/netstack/net_http_type.h>
 #include <network/netstack/net_websocket_type.h>
 #include <network/netstack/net_websocket.h>
+#include <hilog/log.h>
 
 #include "napi/native_api.h"
 #include <js_native_api_types.h>
@@ -29,6 +30,11 @@
 #include <string>
 #include <thread>
 using namespace std;
+
+#undef LOG_DOMAIN
+#undef LOG_TAG
+#define LOG_DOMAIN 0x3200
+#define LOG_TAG "WSDEMO"
 
 static const uint32_t MAX_BUFFER_SIZE = 128;
 static const uint32_t MAX_ARG_COUNT = 8;
@@ -42,6 +48,8 @@ static const uint32_t CASE_INDEX_7 = 7;
 static const uint32_t CASE_INDEX_8 = 8;
 static const uint32_t CLOSE_STATUS_NORMAL = 1000;
 static const uint32_t DEFAULT_HOST_LEN = 20;
+static const uint32_t ARRAY_INDEX_0 = 0;
+static const uint32_t MAX_ARRAY_LENGTH = 30;
 static int32_t g_sleepSecs = 1;
 static int32_t g_maxHeaderLen = 8192;
 static int32_t g_maxDataLength = (4 * 1024 * 1024);
@@ -428,9 +436,15 @@ static napi_value OHQueryTraceRoute(napi_env env, napi_callback_info info)
     char pacUrl[1024] = {0};
     size_t sizeT1;
     napi_get_value_string_utf8(env, args[0], pacUrl, DEFAULT_HOST_LEN, &sizeT1);
-    NetConn_TraceRouteInfo traceRouteInfo = {1, "WWWW.baidu.com", {1000, 1000, 1000, 1000}};
+    NetConn_TraceRouteInfo traceRouteInfo[30] = {};
     NetConn_TraceRouteOption traceoption = {30, NETCONN_PACKETS_UDP};
-    int res = OH_NetConn_QueryTraceRoute(pacUrl, &traceoption, &traceRouteInfo);
+    int res = OH_NetConn_QueryTraceRoute(pacUrl, &traceoption, traceRouteInfo);
+    for (int i = 0; i < MAX_ARRAY_LENGTH; i++) {
+        OH_LOG_INFO(LOG_APP, "traceRouteInfo %{public}d: jumpNo = %{public}d", i + 1, traceRouteInfo[i].jumpNo);
+        OH_LOG_INFO(LOG_APP, "traceRouteInfo %{public}d: address = %{public}s", i + 1, traceRouteInfo[i].address);
+        OH_LOG_INFO(LOG_APP, "traceRouteInfo %{public}d: rtt = %{public}u", i + 1,
+            traceRouteInfo[i].rtt[ARRAY_INDEX_0]);
+    };
     napi_value result = nullptr;
     napi_create_int32(env, res, &result);
     return result;

@@ -163,10 +163,6 @@ import {
   SpanAttribute,
   Stack,
   StackAttribute,
-  Stepper,
-  StepperAttribute,
-  StepperItem,
-  StepperItemAttribute,
   Swiper,
   SwiperAttribute,
   TabContent,
@@ -762,24 +758,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mValue: string = 'Test Title'
-  options: OverlayOptions = { align: Alignment.Bottom, offset: { x: 1, y: 2 } }
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    instance.overlay(this.mValue, this.options)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mValue: string = 'Test Title'
-  options: OverlayOptions = { align: Alignment.Bottom, offset: { x: 1, y: 2 } }
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    instance.overlay(this.mValue, this.options)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mValue: string = 'Test Title'
   options: OverlayOptions = { align: Alignment.Bottom, offset: { x: 1, y: 2 } }
@@ -1205,16 +1183,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.key(componentKey)
   return this
@@ -1391,8 +1359,6 @@ struct OverlayPage {
   @State _overlaySliderModifier: SliderModifier = new SliderModifier()
   @State _overlaySpanModifier: SpanModifier = new SpanModifier()
   @State _overlayStackModifier: StackModifier = new StackModifier()
-  @State _overlayStepperModifier: StepperModifier = new StepperModifier()
-  @State _overlayStepperItemModifier: StepperItemModifier = new StepperItemModifier()
   @State _overlaySwiperModifier: SwiperModifier = new SwiperModifier()
   @State _overlayTabContentModifier: TabContentModifier = new TabContentModifier()
   @State _overlayTabsModifier: TabsModifier = new TabsModifier()
@@ -1582,32 +1548,6 @@ struct OverlayPage {
           .showTips(true)
           .commonStyle(this.componentKey)
           .attributeModifier(this._overlaySliderModifier)
-      }
-      if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-        }
-        .commonStyle(this.componentKey)
-        .attributeModifier(this._overlayStepperModifier)
-      }
-      if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-          .backgroundColor(Color.Red)
-          .commonStyle(this.componentKey)
-          .attributeModifier(this._overlayStepperItemModifier)
-        }
-        .backgroundColor(Color.Yellow)
-        .width('100%')
-        .height('100%')
       }
       if (this.targetView == 'Text') {
         Text('text1')

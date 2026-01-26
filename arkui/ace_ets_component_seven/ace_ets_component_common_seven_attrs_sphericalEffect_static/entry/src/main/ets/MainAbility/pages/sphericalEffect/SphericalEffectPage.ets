@@ -164,10 +164,6 @@ import {
   SpanAttribute,
   Stack,
   StackAttribute,
-  Stepper,
-  StepperAttribute,
-  StepperItem,
-  StepperItemAttribute,
   Swiper,
   SwiperAttribute,
   TabContent,
@@ -710,24 +706,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mSphericalEffect: number = 1
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    console.info(`sphericalEffect page show ${JSON.stringify(this.mSphericalEffect)}`)
-    instance.sphericalEffect(this.mSphericalEffect)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mSphericalEffect: number = 1
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    console.info(`sphericalEffect page show ${JSON.stringify(this.mSphericalEffect)}`)
-    instance.sphericalEffect(this.mSphericalEffect)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mSphericalEffect: number = 1
 
@@ -1213,18 +1191,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
@@ -1416,8 +1382,6 @@ struct sphericalEffectPage {
   @State _sphericalEffectSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _sphericalEffectSliderMod: SliderModifier = new SliderModifier()
   @State _sphericalEffectStackMod: StackModifier = new StackModifier()
-  @State _sphericalEffectStepperMod: StepperModifier = new StepperModifier()
-  @State _sphericalEffectStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _sphericalEffectSwiperMod: SwiperModifier = new SwiperModifier()
   @State _sphericalEffectTabContentMod: TabContentModifier = new TabContentModifier()
   @State _sphericalEffectTabsMod: TabsModifier = new TabsModifier()
@@ -1557,14 +1521,6 @@ struct sphericalEffectPage {
           })
             .showTips(true)
             .commonStyle(this.componentKey).attributeModifier(this._sphericalEffectSliderMod)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }.commonStyle(this.componentKey).attributeModifier(this._sphericalEffectStepperMod)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -1786,19 +1742,6 @@ struct sphericalEffectPage {
               }
             }, (item: int) => item.toString())
           }.commonStyle(this.componentKey).attributeModifier(this._sphericalEffectWaterFlowMod)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            .commonStyle(this.componentKey).attributeModifier(this._sphericalEffectStepperItemMod)
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

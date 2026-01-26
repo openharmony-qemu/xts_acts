@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function transformPointTest() {
   describe('transformPointTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("transformPointTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")

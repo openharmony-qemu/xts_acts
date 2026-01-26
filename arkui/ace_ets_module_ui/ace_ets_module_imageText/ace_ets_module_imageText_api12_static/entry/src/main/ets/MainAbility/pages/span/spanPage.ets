@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,6 +23,7 @@ import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { AppStorage,StoragePropRef,Observed } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
+import { RecordData } from '@ohos.base';
 @Observed
 class MySpanComponentModifier implements AttributeModifier<SpanAttribute> {
   mFontSize: number | string | Resource = 16;
@@ -66,7 +67,7 @@ struct VideoExample {
   private stateChangCallBack: (eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     if (eventData != null) {
       console.info("Span page state change called:" + JSON.stringify(eventData));
-      let eventDa = eventData.data as Record<String,undefined|null|Object>
+      let eventDa = eventData.data as Record<String,RecordData>
       if (eventDa!['mFontSize'] != null) {
         this.mod1.mFontSize = eventDa!['mFontSize']  as number | string | Resource;
       } else if (eventDa!['mFontFamily'] != null) {

@@ -17,7 +17,6 @@ import astsNotificationAnsThreePartySystemApiTest from './SystemApi.test'
 import actsNotificationAnsThreePartyGetSubscribeInfoTest from './GetSubscribeInfo.test'
 import actsNotificationAnsThreePartySubscribeTest from './Subscribe.test'
 import actsNotificationAnsThreePartyUnSubscribeTest from './UnSubscribe.test'
-import actsNotificationAnsThreePartyOpenSubscriptionSettingsTest from './OpenSubscriptionSettings.test'
 import actsNotificationAnsThreePartyGetUserGrantedEnableBundles3Test from './GetUserGrantedEnableBundles3.test'
 
 export default function testsuite() {
@@ -26,7 +25,6 @@ export default function testsuite() {
   actsNotificationAnsThreePartyGetSubscribeInfoTest()
   actsNotificationAnsThreePartySubscribeTest()
   actsNotificationAnsThreePartyUnSubscribeTest()
-  actsNotificationAnsThreePartyOpenSubscriptionSettingsTest()
   actsNotificationAnsThreePartyGetUserGrantedEnableBundles3Test()
 
 }

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,6 +33,7 @@ import emitter from '@ohos.events.emitter';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import mediaquery from '@ohos.mediaquery'
 import MediaQueryResult from '@ohos.mediaquery'
+import { RecordData } from '@ohos.base';
 @Entry
 @Component
 struct stageMediaquery {
@@ -78,7 +79,7 @@ struct stageMediaquery {
           //     let backData: emitter.EventData = {
           //       data: {
           //         "STATUS": result
-          //       } as Record<String,undefined|null|Object>
+          //       } as Record<String,RecordData>
           //     } as emitter.EventData
           //     let backEvent: emitter.InnerEvent = {
           //       eventId: 60218,
@@ -111,7 +112,7 @@ struct stageMediaquery {
             let backData: emitter.EventData = {
               data: {
                 "STATUS": result
-              } as Record<String,undefined|null|Object>
+              } as Record<String,RecordData>
             } as emitter.EventData
             let backEvent: emitter.InnerEvent = {
               eventId: 60219,

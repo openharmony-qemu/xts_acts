@@ -86,7 +86,7 @@ it('listScrollerBar_static_0100', Level.LEVEL0, async (done: () => void): Promis
       const uiContext = AppStorage.get<UIContext>('uiContext')!;
       await (driver.swipe((Math.round(left + widthBar / 2)).toInt(), (Math.round(top + uiContext.vp2px(10))).toInt(),
         (Math.round(left + widthBar / 2)).toInt(),
-        (Math.round(bottom - uiContext.vp2px(10))).toInt()) as Promise<void>);
+        (Math.round(bottom - uiContext.vp2px(10))).toInt(),1000) as Promise<void>);
       await CommonFunc.sleep(8000);
       let strJson = inspector.getInspectorByKey('list_scrollBar_onText');
       console.info("[listScrollerBar_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));

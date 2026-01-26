@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,6 +35,7 @@ import {
   DatePickerResult
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -57,7 +58,7 @@ struct DatePickerExample01 {
             let backData: events_emitter.EventData = {
               data: {
                 "useMilitaryTime" : this.useMilitaryTime,
-              } as Record<string,Object | null | undefined>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 80,

@@ -125,7 +125,7 @@ export default function alignSelfGridRowTest() {
   }]
 
   describe('AlignSelfGridRowTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignSelfGridRowTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.002.test.static", "EntryAbility")
       

@@ -19,6 +19,10 @@
 #include <multimedia/av_session/native_avmetadata.h>
 #include <multimedia/av_session/native_avsession.h>
 #include <multimedia/av_session/native_avsession_errors.h>
+#include <multimedia/av_session/native_avcastcontroller.h>
+#include <multimedia/av_session/native_avplaybackstate.h>
+#include <multimedia/av_session/native_deviceinfo.h>
+#include <multimedia/av_session/native_avqueueitem.h>
 
 static int32_t g_trueValue = PARAM_1;
 static int32_t g_falseValue = PARAM_0;
@@ -669,6 +673,35 @@ napi_value AVMetadataBuilderSetDisplayTagsInvalidParam(napi_env env, napi_callba
     return retValue;
 }
 
+napi_value AVMetadataBuilderSetFilterSuccess(napi_env env, napi_callback_info info)
+{
+    OH_AVMetadataBuilder *builder = nullptr;
+    OH_AVMetadataBuilder_Create(&builder);
+    uint32_t filter = 2;
+    int32_t result = OH_AVMetadataBuilder_SetFilter(builder, filter);
+    napi_value retValue;
+    if (result == AVMETADATA_SUCCESS) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVMetadataBuilderSetFilterInvalidParam(napi_env env, napi_callback_info info)
+{
+    OH_AVMetadataBuilder *builder = nullptr;
+    uint32_t filter = 2;
+    int32_t result = OH_AVMetadataBuilder_SetFilter(builder, filter);
+    napi_value retValue;
+    if (result == AVMETADATA_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
 napi_value AVMetadataBuilderGenerateAVMetadataSuccess(napi_env env, napi_callback_info info)
 {
     OH_AVMetadataBuilder *builder = nullptr;
@@ -808,6 +841,37 @@ napi_value AVMetadataAVSessionLoopMode(napi_env env, napi_callback_info info)
     AVSession_Type sessionType = SESSION_TYPE_AUDIO;
     OH_AVSession_Create(sessionType, sessionTag, bundleName, abilityName, &avsession);
     int32_t setResult = OH_AVSession_SetLoopMode(avsession, CheckLoopMode(intervalValue));
+    OH_AVSession_Destroy(avsession);
+    napi_value retValue;
+    if (setResult == AV_SESSION_ERR_SUCCESS) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else if (setResult == g_errorCode401) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVMetadataAVSessionRemoteCastEnabled(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    napi_value result = nullptr;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t intervalValue;
+    if (napi_get_value_int32(env, args[0], &intervalValue) != napi_ok) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Marshall", "获取参数失败");
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    const char *sessionTag = "MyTag";
+    const char *bundleName = "MyBundleName";
+    const char *abilityName = "MyAbilityName";
+    OH_AVSession *avsession = nullptr;
+    AVSession_Type sessionType = SESSION_TYPE_AUDIO;
+    OH_AVSession_Create(sessionType, sessionTag, bundleName, abilityName, &avsession);
+    int32_t setResult = OH_AVSession_SetRemoteCastEnabled(avsession, intervalValue);
     OH_AVSession_Destroy(avsession);
     napi_value retValue;
     if (setResult == AV_SESSION_ERR_SUCCESS) {
@@ -1368,6 +1432,47 @@ napi_value AVSessionSetLoopModeInvalidParam(napi_env env, napi_callback_info inf
     return retValue;
 }
 
+napi_value AVSessionSetRemoteCastEnabledSuccess(napi_env env, napi_callback_info info)
+{
+    const char *sessionTag = "MyTag";
+    const char *bundleName = "MyBundleName";
+    const char *abilityName = "MyAbilityName";
+    OH_AVSession *avsession = nullptr;
+    AVSession_Type sessionType = SESSION_TYPE_AUDIO;
+    OH_AVSession_Create(sessionType, sessionTag, bundleName, abilityName, &avsession);
+    bool remoteCastEnabled = true;
+    int32_t setResult = OH_AVSession_SetRemoteCastEnabled(avsession, remoteCastEnabled);
+    OH_AVSession_Destroy(avsession);
+    napi_value retValue;
+    if (setResult == AV_SESSION_ERR_SUCCESS) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionSetRemoteCastEnabledInvalidParam(napi_env env, napi_callback_info info)
+{
+    const char *sessionTag = nullptr;
+    const char *bundleName = nullptr;
+    const char *abilityName = nullptr;
+    OH_AVSession *avsession = nullptr;
+    OH_AVSession **avsessionptr = nullptr;
+    AVSession_Type sessionType = SESSION_TYPE_AUDIO;
+    OH_AVSession_Create(sessionType, sessionTag, bundleName, abilityName, avsessionptr);
+    bool remoteCastEnabled = true;
+    int32_t setResult = OH_AVSession_SetRemoteCastEnabled(avsession, remoteCastEnabled);
+    OH_AVSession_Destroy(avsession);
+    napi_value retValue;
+    if (setResult == AV_SESSION_ERR_INVALID_PARAMETER) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
 napi_value AVSessionRegisterCommandCallbackSuccess(napi_env env, napi_callback_info info)
 {
     const char *sessionTag = "MyTag";
@@ -1860,57 +1965,6 @@ napi_value AVSessionRegisterSetLoopModeCallbackInvalidParam(napi_env env, napi_c
     };
     char *userData;
     int32_t callbackResult = OH_AVSession_RegisterSetLoopModeCallback(avsession, setLoopModeback, &userData);
-    OH_AVSession_Destroy(avsession);
-    napi_value retValue;
-    if (callbackResult == AV_SESSION_ERR_INVALID_PARAMETER) {
-        napi_create_int32(env, g_trueValue, &retValue);
-    } else {
-        napi_create_int32(env, g_falseValue, &retValue);
-    }
-    return retValue;
-}
-
-napi_value AVSessionUnregisterSetLoopModeCallbackSuccess(napi_env env, napi_callback_info info)
-{
-    const char *sessionTag = "MyTag";
-    const char *bundleName = "MyBundleName";
-    const char *abilityName = "MyAbilityName";
-    OH_AVSession *avsession = nullptr;
-    AVSession_Type sessionType = SESSION_TYPE_AUDIO;
-    OH_AVSession_Create(sessionType, sessionTag, bundleName, abilityName, &avsession);
-    OH_AVSessionCallback_OnSetLoopMode setLoopModeback = [](OH_AVSession *session, AVSession_LoopMode curLoopMode,
-                                                            void *userData) -> AVSessionCallback_Result {
-        return AVSESSION_CALLBACK_RESULT_SUCCESS;
-    };
-    char *userData = "应用数据";
-    OH_AVSession_RegisterSetLoopModeCallback(avsession, setLoopModeback, &userData);
-    int32_t callbackResult = OH_AVSession_UnregisterSetLoopModeCallback(avsession, setLoopModeback);
-    OH_AVSession_Destroy(avsession);
-    napi_value retValue;
-    if (callbackResult == AV_SESSION_ERR_SUCCESS) {
-        napi_create_int32(env, g_trueValue, &retValue);
-    } else {
-        napi_create_int32(env, g_falseValue, &retValue);
-    }
-    return retValue;
-}
-
-napi_value AVSessionUnregisterSetLoopModeCallbackInvalidParam(napi_env env, napi_callback_info info)
-{
-    const char *sessionTag = nullptr;
-    const char *bundleName = nullptr;
-    const char *abilityName = nullptr;
-    OH_AVSession *avsession = nullptr;
-    OH_AVSession **avsessionptr = nullptr;
-    AVSession_Type sessionType;
-    OH_AVSession_Create(sessionType, sessionTag, bundleName, abilityName, avsessionptr);
-    OH_AVSessionCallback_OnSetLoopMode setLoopModeback = [](OH_AVSession *session, AVSession_LoopMode curLoopMode,
-                                                            void *userData) -> AVSessionCallback_Result {
-        return AVSESSION_CALLBACK_RESULT_SUCCESS;
-    };
-    char *userData;
-    OH_AVSession_RegisterSetLoopModeCallback(avsession, setLoopModeback, &userData);
-    int32_t callbackResult = OH_AVSession_UnregisterSetLoopModeCallback(avsession, setLoopModeback);
     OH_AVSession_Destroy(avsession);
     napi_value retValue;
     if (callbackResult == AV_SESSION_ERR_INVALID_PARAMETER) {

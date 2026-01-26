@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -57,7 +57,7 @@ interface Num{
 @Entry
 @Component
 struct MyComponent_AW {
-  @State Array1: Date | Array<Length> | Array<Object>| Array<Int> | Array<Number> | Array<String> | Array<Resource>|Array<Num> = [1.0];
+  @State Array1: Date | Array<Length> | Array<Object>| Array<Int> | Array<Number> | Array<String> | Array<Resource>|Array<Num> = [1.0] as Array<Double>;
   aboutToAppear(){
     let uiContext = this.getUIContext();
     let StateArray1 = uiContext.getRouter();
@@ -73,7 +73,7 @@ struct MyComponent_AW {
       Text("设置变量Array<Number>类型[1]-->[10]").height('5%')
       Button('change')
         .onClick((e: ClickEvent) => {
-          this.Array1 = [10.0];
+          this.Array1 = [10.0] as Array<Number>;
         })
         .key('state5')
         .height('5%')
@@ -89,7 +89,7 @@ struct MyComponent_AW {
       Text("切换变量Array<String>类型[1]-->['20']").height('5%')
       Button('change')
         .onClick((e: ClickEvent) => {
-          this.Array1 = ['20'];
+          this.Array1 = ['20'] as Array<String>;
         })
         .key('state7')
         .height('5%')
@@ -105,7 +105,7 @@ struct MyComponent_AW {
       Text("切换变量Array<Resource>类型[1]-->Array<Resource>").height('5%')
       Button('change')
         .onClick((e: ClickEvent) => {
-          this.Array1 = [$r('app.string.number')];
+          this.Array1 = [$r('app.string.number')] as Array<Resource>;
         })
         .key('state9')
         .height('5%')

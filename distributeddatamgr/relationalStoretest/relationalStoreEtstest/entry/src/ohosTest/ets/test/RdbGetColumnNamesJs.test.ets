@@ -196,7 +196,7 @@ export default function RdbGetColumnNames() {
         expect().assertFail();
       } catch(err) {
         console.error(`queryGetColumnNames_002 failed message:${err.message} code:${err.code}`);
-        expect('14800014').assertEqual(err.code);
+        expect(14800014).assertEqual(err.code);
       }
       resultSet?.close();
       console.log(TAG + '************* queryGetColumnNames_002 end *************');
@@ -221,7 +221,7 @@ export default function RdbGetColumnNames() {
         expect().assertFail();
       } catch(err) {
         console.error(`queryGetColumnNames_003 failed message:${err.message} code:${err.code}`);
-        expect('14800021').assertEqual(err.code);
+        expect(14800021).assertEqual(err.code);
       }
       resultSet?.close();
       console.log(TAG + '************* queryGetColumnNames_003 end *************');
@@ -246,7 +246,7 @@ export default function RdbGetColumnNames() {
         expect().assertFail();
       } catch(err) {
         console.error(`queryGetColumnNames_004 failed message:${err.message} code:${err.code}`);
-        expect('14800019').assertEqual(err.code);
+        expect(14800019).assertEqual(err.code);
       }
       resultSet?.close();
       console.log(TAG + '************* queryGetColumnNames_004 end *************');
@@ -271,7 +271,7 @@ export default function RdbGetColumnNames() {
         expect().assertFail();
       } catch(err) {
         console.error(`queryGetColumnNames_005 failed message:${err.message} code:${err.code}`);
-        expect('14800001').assertEqual(err.code);
+        expect(14800001).assertEqual(err.code);
       }
       resultSet?.close();
       console.log(TAG + '************* queryGetColumnNames_005 end *************');
@@ -371,7 +371,7 @@ export default function RdbGetColumnNames() {
         expect().assertFail();
       } catch(err) {
         console.error(`lite_queryGetColumnNames_002 failed message:${err.message} code:${err.code}`);
-        expect('14800014').assertEqual(err.code);
+        expect(14800014).assertEqual(err.code);
       }
       liteResultSet?.close();
       console.log(TAG + '************* lite_queryGetColumnNames_002 end *************');
@@ -396,7 +396,7 @@ export default function RdbGetColumnNames() {
         expect().assertFail();
       } catch(err) {
         console.error(`lite_queryGetColumnNames_003 failed message:${err.message} code:${err.code}`);
-        expect('14800021').assertEqual(err.code);
+        expect(14800021).assertEqual(err.code);
       }
       liteResultSet?.close();
       console.log(TAG + '************* lite_queryGetColumnNames_003 end *************');
@@ -421,7 +421,7 @@ export default function RdbGetColumnNames() {
         expect().assertFail();
       } catch(err) {
         console.error(`lite_queryGetColumnNames_004 failed message:${err.message} code:${err.code}`);
-        expect('14800019').assertEqual(err.code);
+        expect(14800019).assertEqual(err.code);
       }
       liteResultSet?.close();
       console.log(TAG + '************* lite_queryGetColumnNames_004 end *************');
@@ -446,7 +446,7 @@ export default function RdbGetColumnNames() {
         expect().assertFail();
       } catch(err) {
         console.error(`lite_queryGetColumnNames_005 failed message:${err.message} code:${err.code}`);
-        expect('14800001').assertEqual(err.code);
+        expect(14800001).assertEqual(err.code);
       }
       liteResultSet?.close();
       console.log(TAG + '************* lite_queryGetColumnNames_005 end *************');

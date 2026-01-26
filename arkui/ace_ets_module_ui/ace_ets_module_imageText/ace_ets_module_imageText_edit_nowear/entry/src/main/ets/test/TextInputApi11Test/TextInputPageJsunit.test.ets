@@ -254,7 +254,7 @@ export default function TextInputPageJsunit() {
       let textComponent6 = await driver.findComponent(BY.text('剪切'));
       await textComponent6.click()
       await CommonFunc.sleep(3000);
-      let strJson1 = getInspectorByKey('cut');
+      let strJson1 = getInspectorByKey('cut_TextInputPage');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info("[TextInputPageJsunit_0400] component obj1 is: " + JSON.stringify(obj1));
       expect(obj1.$attrs.content).assertEqual('onCut:hello');

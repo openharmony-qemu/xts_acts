@@ -28,5 +28,6 @@
 #include "ActsMindSporeOHOSTest.h"
 #include "ActsMindSporeTensorTest.h"
 #include "ActsMindSporeTrainTest.h"
+#include "ActsMindSporeAIPPTest.h"
 
 #endif // ACTSMINDSPORECTEST_ACTS_MINDSPORE_H

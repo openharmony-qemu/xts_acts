@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,6 +30,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -106,7 +107,7 @@ export default function textAreaJsunit3() {
         let eventData: emitter.EventData = {
           data: {
             "fontSize": 50 as double,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 215,
@@ -160,7 +161,7 @@ export default function textAreaJsunit3() {
         let eventData: emitter.EventData = {
           data: {
             "fontColor": '#FFFF0000',
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 216,
@@ -214,7 +215,7 @@ export default function textAreaJsunit3() {
         let eventData: emitter.EventData = {
           data: {
             "textAlign": TextAlign.Start,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 217,
@@ -271,7 +272,7 @@ export default function textAreaJsunit3() {
         let eventData: emitter.EventData = {
           data: {
             "text": 'TextArea_1',
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 218,
@@ -327,7 +328,7 @@ export default function textAreaJsunit3() {
         let eventData: emitter.EventData = {
           data: {
             "textAlign": TextAlign.Start,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 218,
@@ -383,7 +384,7 @@ export default function textAreaJsunit3() {
         let eventData: emitter.EventData = {
           data: {
             "text2": '123456789'
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 218,
@@ -420,7 +421,7 @@ export default function textAreaJsunit3() {
         let eventData: emitter.EventData = {
           data: {
             "text2": '1234567890abc'
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         let innerEvent: emitter.InnerEvent = {
           eventId: 218,

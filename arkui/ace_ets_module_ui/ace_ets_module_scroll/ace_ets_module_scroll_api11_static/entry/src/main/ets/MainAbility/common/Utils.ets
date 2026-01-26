@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,6 +21,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { TouchObject, TouchType } from '@ohos.arkui.component';
 import { sendTouchEvent } from "@ohos.arkui.Test";
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 export default class Utils {
   static rect_left: number;
@@ -32,10 +33,10 @@ export default class Utils {
   static getComponentRect(key: string) {
     let strJson = inspector.getInspectorByKey(key);
     let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string,Object>;
+      JSON.parse<Object>(strJson, Class.from<String>()) as Record<string,Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
     let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+      JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " +
     AppStorage.get<number>("winTop"));
@@ -134,7 +135,7 @@ export default class Utils {
     let eventData: events_emitter.EventData = {
       data: {
         "msg": message
-      } as Record<String,undefined|null|Object>
+      } as Record<String,RecordData>
     }
     let event: events_emitter.InnerEvent = {
       eventId: eventId.toLong(),

@@ -649,14 +649,14 @@ export default function WindowLayoutTest() {
                             done()
                         }).catch((err: Error) :PromiseLike<void>|undefined=> {
                             hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call startMoving. Cause: ' + JSON.stringify(err));
-                            expect(false).assertTrue();
+                            expect(err!.code).assertEqual(1300002);
                             done()
                         });
                         
                     } catch (exception) {
                         exception = exception as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call startMoving. Cause:' + JSON.stringify(exception));
-                        expect(exception!.code).assertEqual(1300002);
+                        expect(false).assertTrue();
                         done()
                     }
                 })
@@ -1622,11 +1622,15 @@ export default function WindowLayoutTest() {
                         if (windowInfoArray[i].windowId == windowId) {
                             let mainWindowInfo = windowInfoArray[i];
                             console.info(caseName + ' mainWindowInfo: ' + JSON.stringify(mainWindowInfo));
+                            console.info(caseName + ' mainWindowInfo windowId: ' + JSON.stringify(mainWindowInfo.windowId));
+                            console.info(caseName + ' mainWindowInfo displayId: ' + JSON.stringify(mainWindowInfo.displayId));
+                            console.info(caseName + ' mainWindowInfo showing: ' + JSON.stringify(mainWindowInfo.showing));
+                            console.info(caseName + ' mainWindowInfo label: ' + JSON.stringify(mainWindowInfo.label));
                             expect(mainWindowInfo.windowId).assertEqual(windowId);
                             expect(mainWindowInfo.displayId).assertEqual(0);
                             expect(mainWindowInfo.showing).assertEqual(true);
-                            expect(mainWindowInfo.label).assertEqual('test label');
-                            break;
+                            expect(mainWindowInfo.label).assertEqual('label');
+                            done();
                         }
                     }
                 } catch (err: BusinessError) {

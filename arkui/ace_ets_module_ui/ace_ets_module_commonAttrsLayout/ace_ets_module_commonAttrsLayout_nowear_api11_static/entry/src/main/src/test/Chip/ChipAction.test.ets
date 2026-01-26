@@ -34,16 +34,11 @@ let testAbilityContext: common.UIAbilityContext;
 export default function ChipAction() {
   describe('ChipAction', () => {
 
-
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
-
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ChipAction beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
     });
+
     beforeEach(() => {
       console.info("ChipAction beforeEach start");
       let options: router.RouterOptions = {
@@ -73,7 +68,7 @@ export default function ChipAction() {
      * @tc.level    Level.LEVEL0
      */
 it('ChipAction_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       console.info('ChipAction_static_001 START');
       let ChipActionCol = CommonFunc.getComponentRect('ChipActionCol');
       await CommonFunc.sleep(200);

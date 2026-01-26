@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,6 +39,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -54,7 +55,7 @@ interface ShadowValueInter {
 
 export default function imageEffectsJsunit() {
   describe('imageEffectsJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("hoverEffectJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
@@ -122,7 +123,7 @@ it('testImageEffects_static_002', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "blurValue": 10 as Long
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 12,
@@ -194,7 +195,7 @@ it('testImageEffects_static_004', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "blurValue": 10000 as Long
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 12,
@@ -230,7 +231,7 @@ it('testImageEffects_static_005', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "blurValue": 0 as Long
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 12,
@@ -298,7 +299,7 @@ it('testImageEffects_static_007', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "shadowValue": shadowValue as ShadowOptions
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 13,
@@ -397,7 +398,7 @@ it('testImageEffects_static_009', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "shadowValue": shadowValue as ShadowOptions
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 13,
@@ -446,7 +447,7 @@ it('testImageEffects_static_010', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "shadowValue": shadowValue as ShadowValueInter
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 13,
@@ -514,7 +515,7 @@ it('testImageEffects_static_012', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "brightnessValue": 15 as Long
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 15,
@@ -587,7 +588,7 @@ it('testImageEffects_static_014', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "brightnessValue": 0x7FFFFFFF as Long
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 15,
@@ -623,7 +624,7 @@ it('testImageEffects_static_015', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "brightnessValue": 'error'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 15,
@@ -679,7 +680,7 @@ it('testImageEffects_static_017', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "saturateValue": 40 as Long
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 16,
@@ -714,7 +715,7 @@ it('testImageEffects_static_018', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "saturateValue": -2147483648
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 16,
@@ -750,7 +751,7 @@ it('testImageEffects_static_019', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "saturateValue": 0x7FFFFFFF as Long
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 16,
@@ -785,7 +786,7 @@ it('testImageEffects_static_020', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "saturateValue": 'error'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 16,
@@ -838,7 +839,7 @@ it('testImageEffects_static_022', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "contrastValue": 10 as Long
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 17,
@@ -873,7 +874,7 @@ it('testImageEffects_static_023', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "contrastValue": -2147483648
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 17,
@@ -908,7 +909,7 @@ it('testImageEffects_static_024', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "contrastValue": 0x7FFFFFFF as Long
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 17,
@@ -943,7 +944,7 @@ it('testImageEffects_static_025', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "contrastValue": 'error'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 17,
@@ -996,7 +997,7 @@ it('testImageEffects_static_027', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "invertValue": 20.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 18,
@@ -1031,7 +1032,7 @@ it('testImageEffects_static_028', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "invertValue": 0.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 18,
@@ -1066,7 +1067,7 @@ it('testImageEffects_static_029', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "invertValue": 10000.0
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 18,
@@ -1101,7 +1102,7 @@ it('testImageEffects_static_030', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "invertValue": 'error'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 18,
@@ -1155,7 +1156,7 @@ it('testImageEffects_static_032', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "hueRotateValue": 20 as Long
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 19,
@@ -1223,7 +1224,7 @@ it('testImageEffects_static_034', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "hueRotateValue": 0x7FFFFFFF as Long
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 19,
@@ -1257,7 +1258,7 @@ it('testImageEffects_static_035', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "hueRotateValue": 'error'
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 19,
@@ -1292,7 +1293,7 @@ it('testImageEffects_static_036', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "shadowStyleValue": ShadowStyle.OUTER_DEFAULT_XS
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 20,
@@ -1328,7 +1329,7 @@ it('testImageEffects_static_037', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "shadowStyleValue": ShadowStyle.OUTER_DEFAULT_SM
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 20,
@@ -1365,7 +1366,7 @@ it('testImageEffects_static_038', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "shadowStyleValue": ShadowStyle.OUTER_DEFAULT_MD
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 20,
@@ -1402,7 +1403,7 @@ it('testImageEffects_static_039', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "shadowStyleValue": ShadowStyle.OUTER_DEFAULT_LG
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 20,
@@ -1439,7 +1440,7 @@ it('testImageEffects_static_040', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "shadowStyleValue": ShadowStyle.OUTER_FLOATING_SM
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 20,
@@ -1476,7 +1477,7 @@ it('testImageEffects_static_041', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "shadowStyleValue": ShadowStyle.OUTER_FLOATING_MD
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 20,
@@ -1519,7 +1520,7 @@ it('testImageEffects_static_042', Level.LEVEL2, async (done: () => void): Promis
         let eventData: events_emitter.EventData = {
           data: {
             "shadowValue": shadowValue as ShadowOptions
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 21,

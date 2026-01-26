@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,6 +30,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import {UtilsTest} from '../Util.test'
 import { jsonx } from "std/core";
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -59,8 +60,6 @@ export default function onAreaChangeTest() {
     'ScrollBar',
     'Search',
     'Slider',
-    'Stepper',
-    // 'StepperItem',
     'Text',
     'TextArea',
     'TextClock',
@@ -80,7 +79,6 @@ export default function onAreaChangeTest() {
     'List',
     'ListItem',
     'ListItemGroup',
-    'Panel',
     'RelativeContainer',
     'Row',
     'RowSplit',
@@ -192,7 +190,7 @@ export default function onAreaChangeTest() {
       //Get Information about the location of the target component before the change
       let parentRectBefore: RectValue = Utils.getComponentRect(testData.pageConfig.parentKey);
       let targetRectBefore: RectValue = Utils.getComponentRect(testData.pageConfig.componentKey);
-      if ((testData.pageConfig.componentKey == 'TabContent') || (testData.pageConfig.componentKey == 'StepperItem')) {
+      if ((testData.pageConfig.componentKey == 'TabContent')) {
         console.info('[' + testData.caseTag + '] Find Parent Component Before');
         let parentComponent = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray('$children')[0]
@@ -213,7 +211,7 @@ export default function onAreaChangeTest() {
           data: {
             "_width": testData.testValue.setValue.width as number,
             "_height": testData.testValue.setValue.height as number
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 99,
@@ -227,7 +225,7 @@ export default function onAreaChangeTest() {
           data: {
             "_compareButtonWidth": testData.testValue.setValue.compareButtonWidth as number,
             "_compareButtonHeight": testData.testValue.setValue.compareButtonHeight as number
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 99,
@@ -241,7 +239,7 @@ export default function onAreaChangeTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "_offset": testData.testValue.setValue.offset as Position
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 99,
@@ -259,7 +257,7 @@ export default function onAreaChangeTest() {
       let RectAfter = parentRectAfter
       let compareOldTextComponent = Utils.getComponentByKey(testData.pageConfig.compareOldTextKey);
       let compareNewTextComponent = Utils.getComponentByKey(testData.pageConfig.compareNewTextKey);
-      if ((testData.pageConfig.componentKey == 'TabContent') || (testData.pageConfig.componentKey == 'StepperItem')) {
+      if ((testData.pageConfig.componentKey == 'TabContent')) {
         console.info('[' + testData.caseTag + '] Find Parent Component After');
         let parentComponent = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray('$children')[0]
@@ -295,7 +293,7 @@ export default function onAreaChangeTest() {
           testData.testValue.expectValue.height!) <= 1).assertTrue();
           await checkResults(testData, compareOldTextComponent, compareNewTextComponent, targetRectBefore,
             targetRectAfter, parentRectBefore, parentRectAfter);
-        } else if ((testData.pageConfig.componentKey == 'TabContent') || (testData.pageConfig.componentKey == 'StepperItem')) {
+        } else if ((testData.pageConfig.componentKey == 'TabContent')) {
           expect(Math.abs(Number(AppStorage.get<UIContext>('uiContext')?.px2vp(RectAfter.right - RectAfter.left)) - testData.testValue.expectValue.width!) <= 2)
             .assertTrue();
           expect(Math.abs(Number(AppStorage.get<UIContext>('uiContext')?.px2vp(RectAfter.bottom - RectAfter.top)) - testData.testValue.expectValue.height!) <= 2)

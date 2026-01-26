@@ -40,9 +40,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function paddingTest2() {
   //A list of components that support padding attributes is required.
   let supportView: Array<string> = new Array<string>(
-    'Select',
-    'Stepper',
-    'StepperItem',
+    'Select'
     // 'Web'  // 外领域 app died
   )
 

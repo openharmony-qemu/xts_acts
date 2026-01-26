@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+* Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,18 +51,18 @@ struct AlignContent_FlexAlign_End_Margin_padding {
             .key('AlignContentFlexEndMargin&padding_flex001_1')
           Text('2').width(60).height(60).backgroundColor(0xD2B48C)
             .key('AlignContentFlexEndMargin&padding_flex001_2')
-          Text('3').width(60).height(80).backgroundColor(0xD2B48C)
+          Text('3').width(60).height(60).backgroundColor(0xD2B48C)
             .key('AlignContentFlexEndMargin&padding_flex001_3')
-          Text('4').width(60).height(90).backgroundColor(0xF5DEB3)
+          Text('4').width(60).height(70).backgroundColor(0xF5DEB3)
             .key('AlignContentFlexEndMargin&padding_flex001_4')
         }
         .key('AlignContentFlexEndMargin&padding_flex001')
         .width(200)
-        .height(200)
+        .height(180)
         .backgroundColor(0xAFEEEE)
         .margin(5)
         .padding(this.flexPadding)
-      }.key('AlignContentFlexEndMargin&padding_Column_1')
+      }.key('AlignContentFlexEndMargin&padding_Column_1').background(Color.Blue)
     }
     .width('100%')
     .alignItems(HorizontalAlign.Start)

@@ -135,7 +135,6 @@ struct LazyForEachAboutToReuseNull {
     Column() {
       Flex({ direction: FlexDirection.Row, wrap: FlexWrap.Wrap }) {
         Button('switch')
-          .id('switch')
           .height('5%')
           .padding(5)
           .fontSize(12)
@@ -143,7 +142,6 @@ struct LazyForEachAboutToReuseNull {
             this.switch = !this.switch
           })
         Button('pushData')
-          .id('pushData')
           .height('5%')
           .padding(5)
           .fontSize(12)
@@ -153,7 +151,6 @@ struct LazyForEachAboutToReuseNull {
             }
           })
         Button('deleteData')
-          .id('deleteData')
           .height('5%')
           .padding(5)
           .fontSize(12)
@@ -161,7 +158,6 @@ struct LazyForEachAboutToReuseNull {
             this.data.deleteData(2)
           })
         Button('moveData')
-          .id('moveData')
           .height('5%')
           .padding(5)
           .fontSize(12)
@@ -169,7 +165,7 @@ struct LazyForEachAboutToReuseNull {
             this.data.moveData(2, 0)
           })
         Button('operateData')
-          .id('operateData')
+          .id('LazyForEachAboutToReuseNull_operateData')
           .height('5%')
           .padding(5)
           .fontSize(12)
@@ -178,7 +174,7 @@ struct LazyForEachAboutToReuseNull {
           })
 
       }
-      Text(this.parentInfo).id('interfaceInfo')
+      Text(this.parentInfo)
       if(this.switch){
         List({ space: 3, initialIndex: 0 ,scroller:this.scroller}) {
           LazyForEach(this.data, (item: string, idex: number) => {

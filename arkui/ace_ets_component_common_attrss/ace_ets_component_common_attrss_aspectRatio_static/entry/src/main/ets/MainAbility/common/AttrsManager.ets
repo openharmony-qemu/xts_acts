@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,42 +14,52 @@
  * limitations under the License.
  */
 
+
 import { Constants } from '../../constants/Constants';
 import events_emitter from '@ohos.events.emitter';
 import { TextCase, TextDecorationType, Resource, AlignRuleOption } from '@ohos.arkui.component';
 import {SetValue} from './Utils'
+import { RecordData } from '@ohos.base';
 export interface Message {
   value: SetValue
 }
+
 
 interface EventMessage {
   src: Message
 }
 
+
 export type Callback = (message: SetValue) => void;
+
 
 export class AttrsManager {
   callBack?: Callback = undefined;
 
+
   static change(caseName: string, setValue: SetValue) {
     const message: Message = { value: setValue };
+
 
     const eventData: events_emitter.EventData = {
       data: {
         'src': message
-      } as Record<String,undefined|null|Object>
+      } as Record<String,RecordData>
     };
     AttrsManager.emitEvent(caseName, Constants.EVENT_ID_CHANGE_DATA, eventData);
   }
+
 
   registerDataChange(callBack: Callback) {
     this.callBack = callBack
     this.onEvent(Constants.EVENT_ID_CHANGE_DATA);
   }
 
+
   static unRegisterDataChange() {
     events_emitter.off(Constants.EVENT_ID_CHANGE_DATA);
   }
+
 
   private onEvent(eventId: long) {
     let stateChangeEvent: events_emitter.InnerEvent = {
@@ -60,6 +70,7 @@ export class AttrsManager {
     events_emitter.on(stateChangeEvent, this.stateChangCallBack);
   }
 
+
   private static emitEvent(tag: string, eventId: long, eventData: events_emitter.EventData) {
     let innerEvent: events_emitter.InnerEvent = {
       eventId: eventId,
@@ -68,6 +79,7 @@ export class AttrsManager {
     console.info(tag + ' start to publish emit');
     events_emitter.emit(innerEvent, eventData);
   }
+
 
   private stateChangCallBack = (eventData: events_emitter.EventData) => {
     console.info('[stateChangCallBack] stateChangCallBack ');
@@ -87,5 +99,6 @@ export class AttrsManager {
     }
   }
 }
+
 
 export let attrsManager = new AttrsManager();

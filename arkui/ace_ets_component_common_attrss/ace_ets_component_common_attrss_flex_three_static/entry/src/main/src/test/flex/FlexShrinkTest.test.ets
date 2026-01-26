@@ -70,7 +70,6 @@ export default function flexShrinkTest() {
     'ScrollBar',
     'Row',
     'RelativeContainer',
-    'Navigator',
     'TextTimer',
     'Progress',
     'QRCode',

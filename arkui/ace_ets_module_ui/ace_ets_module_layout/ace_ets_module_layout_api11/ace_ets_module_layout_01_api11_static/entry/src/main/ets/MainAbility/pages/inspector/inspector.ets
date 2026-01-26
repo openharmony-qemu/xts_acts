@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,6 +45,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import inspector from '@ohos.arkui.inspector';
 import common from '@ohos.app.ability.common';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -101,7 +102,7 @@ struct Inspector {
             .onClick((e: ClickEvent) => {
               // let getInspectorNodesObj = JSON.stringify(getInspectorNodes())
               // try {
-              //   let data: Record<String,undefined|null|Object> = {
+              //   let data: Record<String,RecordData> = {
               //     "getInspectorNodes": getInspectorNodesObj,
               //     "result": "success"
               //   }
@@ -127,7 +128,7 @@ struct Inspector {
                 // let i: string = JSON.parse(JSON.stringify(getInspectorNodes()))["inspectors"][0]["id"]
                 // let getInspectorNodeByIdObj = JSON.stringify(getInspectorNodeById(parseInt(i)))
                 // console.info("getInspectorNodeByIdObj is " + 'getInspectorNodeByIdObj')
-                // let data: Record<String,undefined|null|Object> = {
+                // let data: Record<String,RecordData> = {
                 //   "result": "success",
                 // }
                 // let backData1: events_emitter.EventData = {
@@ -168,7 +169,7 @@ struct Inspector {
                 this.catchStatus = "callBackFail"
               }
               try {
-                let data: Record<String,undefined|null|Object> = {
+                let data: Record<String,RecordData> = {
                   "catchStatus": this.catchStatus,
                 }
                 let backData2: events_emitter.EventData = {

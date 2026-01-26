@@ -78,6 +78,9 @@
       },
       {
         "name": "ohos.permission.LOCATION"
+      },
+      {
+        "name": "ohos.permission.GET_TELEPHONY_STATE"
       }
     ]
   }

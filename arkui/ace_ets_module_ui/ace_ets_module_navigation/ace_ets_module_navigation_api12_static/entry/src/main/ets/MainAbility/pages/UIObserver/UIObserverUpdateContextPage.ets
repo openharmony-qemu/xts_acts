@@ -40,11 +40,12 @@ struct PageOne {
     }.title('pageOne')
   }
 }
+
 function callBackFunc(info: uiObserver.NavDestinationInfo) {
   console.info(`testTag navDestinationUpdate : ${JSON.stringify(info)}`)
-  let count: number = AppStorage.get('UIObserverUpdateContextPage_callBackFuncOnCount') ?? 0;
-  count = Number(count) + 1;
-  AppStorage.setOrCreate<number>('UIObserverUpdateContextPage_callBackFuncOnCount', count)
+  let count: int = AppStorage.get<int>('UIObserverUpdateContextPage_callBackFuncOnCount') ?? 0;
+  count = count + 1;
+  AppStorage.setOrCreate<int>('UIObserverUpdateContextPage_callBackFuncOnCount', count)
 }
 
 @Entry
@@ -72,10 +73,10 @@ struct UIObserverUpdateContextPage {
           let obs = this.getUIContext().getUIObserver();
           obs.offNavDestinationUpdate( { navigationId: 'testId' }, callBackFunc)
 
-          console.info(`get UIObserverUpdateContextPage_callBackFuncOnCount is: ${AppStorage.get('UIObserverUpdateContextPage_callBackFuncOnCount')}`)
-          console.info(`get UIObserverUpdateContextPage_callBackFuncOnCount_2 is: ${AppStorage.get('UIObserverUpdateContextPage_callBackFuncOnCount_2')}`)
-          AppStorage.setOrCreate<number>('UIObserverUpdateContextPage_callBackFuncOnCount_2', AppStorage.get('UIObserverUpdateContextPage_callBackFuncOnCount') ?? 0)
-          console.info(`set UIObserverUpdateContextPage_callBackFuncOnCount_2 is: ${AppStorage.get('UIObserverUpdateContextPage_callBackFuncOnCount')}`)
+          console.info(`get UIObserverUpdateContextPage_callBackFuncOnCount is: ${AppStorage.get<int>('UIObserverUpdateContextPage_callBackFuncOnCount')}`)
+          console.info(`get UIObserverUpdateContextPage_callBackFuncOnCount_2 is: ${AppStorage.get<int>('UIObserverUpdateContextPage_callBackFuncOnCount_2')}`)
+          AppStorage.setOrCreate<int>('UIObserverUpdateContextPage_callBackFuncOnCount_2', AppStorage.get<int>('UIObserverUpdateContextPage_callBackFuncOnCount') ?? 0)
+          console.info(`set UIObserverUpdateContextPage_callBackFuncOnCount_2 is: ${AppStorage.get<int>('UIObserverUpdateContextPage_callBackFuncOnCount')}`)
         })
           .id('UIObserverUpdateContext_btn_off')
       }

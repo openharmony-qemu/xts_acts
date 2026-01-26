@@ -22,14 +22,11 @@ import {
   Column,
   List,
   ListItemGroup,
-  Stepper,
-  StepperItem,
   ListItem,
   StickyStyle,ForEach,
   Position,
   TextAlign,
   Color,
-  ItemState,
   Builder,
   ListItemGroupOptions
 } from '@ohos.arkui.component';

@@ -28,6 +28,8 @@ export default class UIExtAbility3 extends UIExtensionAbility {
         launchReason: launchParam.launchReason,
         lastExitReason: launchParam.lastExitReason,
         lastExitMessage: launchParam.lastExitMessage,
+        launchUTCTime: launchParam.launchUTCTime,
+        launchUptime: launchParam.launchUptime,
       }
     };
     commonEvent.publish('0100', commonEventData, (err) => {

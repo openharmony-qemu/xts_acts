@@ -43,9 +43,9 @@ struct PageOne {
 
 function callBackFunc(info: uiObserver.NavDestinationSwitchInfo) {
   console.info(`testTag navDestinationSwitch from: ${JSON.stringify(info.from)} to: ${JSON.stringify(info.to)}`)
-  let count: number = AppStorage.get('UIObserverContext2Page_callBackFuncOnCount') ?? 0;
-  count = Number(count) + 1;
-  AppStorage.setOrCreate<number>('UIObserverContext2Page_callBackFuncOnCount', count)
+  let count: int = AppStorage.get<int>('UIObserverContext2Page_callBackFuncOnCount') ?? 0;
+  count = count + 1;
+  AppStorage.setOrCreate<int>('UIObserverContext2Page_callBackFuncOnCount', count)
 }
 
 @Entry
@@ -74,10 +74,10 @@ struct UIObserverContext2Page {
           let obs = this.getUIContext().getUIObserver();
           obs.offNavDestinationSwitch( callBackFunc)
 
-          console.info(`get UIObserverContext2Page_callBackFuncOnCount is: ${AppStorage.get('UIObserverContext2Page_callBackFuncOnCount')}`)
-          console.info(`get UIObserverContext2Page_callBackFuncOnCount_2 is: ${AppStorage.get('UIObserverContext2Page_callBackFuncOnCount_2')}`)
-          AppStorage.setOrCreate<number>('UIObserverContext2Page_callBackFuncOnCount_2', AppStorage.get('UIObserverContext2Page_callBackFuncOnCount') ?? 0)
-          console.info(`set UIObserverContext2Page_callBackFuncOnCount_2 is: ${AppStorage.get('UIObserverContext2Page_callBackFuncOnCount')}`)
+          console.info(`get UIObserverContext2Page_callBackFuncOnCount is: ${AppStorage.get<int>('UIObserverContext2Page_callBackFuncOnCount')}`)
+          console.info(`get UIObserverContext2Page_callBackFuncOnCount_2 is: ${AppStorage.get<int>('UIObserverContext2Page_callBackFuncOnCount_2')}`)
+          AppStorage.setOrCreate<int>('UIObserverContext2Page_callBackFuncOnCount_2', AppStorage.get<int>('UIObserverContext2Page_callBackFuncOnCount') ?? 0)
+          console.info(`set UIObserverContext2Page_callBackFuncOnCount_2 is: ${AppStorage.get<int>('UIObserverContext2Page_callBackFuncOnCount')}`)
         })
           .id('UIObserverContext2_btn_off')
       }

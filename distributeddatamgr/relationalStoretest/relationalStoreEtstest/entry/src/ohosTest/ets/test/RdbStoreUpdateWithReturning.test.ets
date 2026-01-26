@@ -104,6 +104,7 @@ export default function RdbStoreUpdateWithReturning() {
     })
     afterEach(async () => {
       console.info(TAG + 'afterEach');
+      await rdbStore?.close();
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
     })
     afterAll(async () => {
@@ -366,14 +367,14 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning004 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync004 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       console.log(TAG + "************* updateWithReturning004 end *************");
       done();
@@ -440,14 +441,14 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning007 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync007 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       console.log(TAG + "************* updateWithReturning007 end *************");
       done();
@@ -496,14 +497,14 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning008 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync008 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       console.log(TAG + "************* updateWithReturning008 end *************");
       done();
@@ -597,14 +598,14 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning010 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync010 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       console.log(TAG + "************* updateWithReturning010 end *************");
       done();
@@ -644,14 +645,14 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning011 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync011 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       console.log(TAG + "************* updateWithReturning011 end *************");
       done();
@@ -679,14 +680,14 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning012 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync012 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       config.columns = ['a b'];
       try {
@@ -694,14 +695,14 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning012 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync012 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       config.columns = ['a,b'];
       try {
@@ -709,14 +710,14 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning012 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync012 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       console.log(TAG + "************* updateWithReturning012 end *************");
       done();
@@ -942,14 +943,14 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning017 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800014");
+        expect(e.code).assertEqual(14800014);
       }
       try {
         rdbStore1?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync017 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800014");
+        expect(e.code).assertEqual(14800014);
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.log(TAG + "************* updateWithReturning017 end *************");
@@ -987,14 +988,14 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning018 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800014");
+        expect(e.code).assertEqual(14800014);
       }
       try {
         rdbStore1?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync018 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800014");
+        expect(e.code).assertEqual(14800014);
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.log(TAG + "************* updateWithReturning018 end *************");
@@ -1217,7 +1218,7 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning023 1 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         let predicates2 = new relationalStore.RdbPredicates("345test");
@@ -1225,7 +1226,7 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning023 2 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       let predicates3 = new relationalStore.RdbPredicates("te.s.t");
       try {
@@ -1233,14 +1234,14 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning023 3 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, predicates3, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning023 4 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       let predicates5 = new relationalStore.RdbPredicates(".test");
       try {
@@ -1248,14 +1249,14 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning023 5 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, predicates5, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning023 6 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       let predicates7 = new relationalStore.RdbPredicates("test..");
       try {
@@ -1263,14 +1264,14 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning023 7 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, predicates7, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning023 8 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       console.log(TAG + "************* updateWithReturning023 end *************");
       done();
@@ -1298,14 +1299,14 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning024 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync024 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       config.maxReturningCount = 0;
       try {
@@ -1313,14 +1314,14 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning024 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning024 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       config.maxReturningCount = 0x7fff;
       try {
@@ -1328,14 +1329,14 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning024 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning024 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       console.log(TAG + "************* updateWithReturning024 end *************");
       done();
@@ -1518,28 +1519,28 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning029 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         await rdbStore?.updateWithReturning(valueBucket, null, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning029 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, undefined, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning029 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, null, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning029 failed4. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       console.log(TAG + "************* updateWithReturning029 end *************");
       done();
@@ -1564,28 +1565,28 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning031 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         await rdbStore?.updateWithReturning(valueBucket, predicates, undefined);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning031 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, predicates, null);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning031 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         rdbStore?.updateWithReturningSync(valueBucket, predicates, undefined);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning031 failed4. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       console.log(TAG + "************* updateWithReturning031 end *************");
       done();
@@ -1611,28 +1612,28 @@ export default function RdbStoreUpdateWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning032 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         rdbStore?.updateWithReturningSync(undefined, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning032 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         await rdbStore?.updateWithReturning(null, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning032 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         await rdbStore?.updateWithReturning(undefined, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning032 failed4. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       console.log(TAG + "************* updateWithReturning032 end *************");
       done();

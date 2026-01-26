@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Font, FontStyle,ResourceColor } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -100,7 +101,7 @@ it('selectTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "value": "5"
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 191,
@@ -165,7 +166,7 @@ it('selectTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "font": font as Font
-          } as Record<string, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 191,
@@ -223,7 +224,7 @@ it('selectTest_static_0600', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "fontColor": '#FF000990' as ResourceColor
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 191,
@@ -257,7 +258,7 @@ it('selectTest_static_0700', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "value": "-10"
-          } as Record<string, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 191,
@@ -290,7 +291,7 @@ it('selectTest_static_0800', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "value": '1111111111'
-          } as Record<string, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 191,
@@ -323,7 +324,7 @@ it('selectTest_static_0900', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "value": '1111111111aaa'
-          } as Record<string, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 191,
@@ -355,7 +356,7 @@ it('selectTest_static_1000', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "fontColor": 121111
-          } as Record<string, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 191,

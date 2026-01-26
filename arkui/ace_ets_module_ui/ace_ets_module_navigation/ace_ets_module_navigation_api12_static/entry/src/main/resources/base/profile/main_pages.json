@@ -85,7 +85,8 @@
 
     "MainAbility/pages/Navigation/NavigationLaunchMode",
     "MainAbility/pages/Navigation/removeByNavDestinationIdTest",
-
+    "MainAbility/pages/MultiNavigation/MultiNavigation25",
+    "MainAbility/pages/MultiNavigation/MultiNavigation3",
     "MainAbility/pages/Navigation/navigation_add/navigation_add1_1",
     "MainAbility/pages/Navigation/navigation_add/navigation_add1_2",
     "MainAbility/pages/Navigation/navigation_add/navigation_add2_1",

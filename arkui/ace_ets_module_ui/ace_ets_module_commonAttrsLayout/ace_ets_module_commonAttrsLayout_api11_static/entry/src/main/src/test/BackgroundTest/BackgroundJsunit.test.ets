@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -35,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function backgroundJsunit() {
   describe('backgroundTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("backgroundTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
@@ -100,7 +101,7 @@ it('testBackground_static_0200', Level.LEVEL0, async (done: () => void): Promise
         let eventData: emitter.EventData = {
           data: {
             "color": '0xFF0000'
-          } as Record<string, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 2,
