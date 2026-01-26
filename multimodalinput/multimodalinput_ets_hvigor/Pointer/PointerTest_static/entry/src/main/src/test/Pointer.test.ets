@@ -58,18 +58,21 @@ export default function MultimodalInputPointerTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0100";
         hilog.info(domain, tag, `${caseName} enter`);
-        let ifSetPointerStyleSuccess = 0;
         try {
-          pointer.setPointerStyle(100000, pointer.PointerStyle.CROSS, err => {
-            hilog.info(domain, tag, `${caseName} Set pointer style success`);
-            ifSetPointerStyleSuccess++;
-            ExpectTrue(ifSetPointerStyleSuccess == 1);
+          pointer.setPointerStyle(-2, pointer.PointerStyle.CROSS, error => {
+            if (error) {
+              hilog.info(domain, tag, `${caseName} Set pointer style failed`);
+              expect(error.code).assertEqual(401);
+            } else {
+              hilog.info(domain, tag, `${caseName} Set pointer style success`);
+              expect().assertFail();
+            }
             done();
           });
         } catch (error: BusinessError) {
           hilog.info(domain, tag,
             `${caseName} Set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(error.code == 401 || true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -86,22 +89,21 @@ export default function MultimodalInputPointerTest() {
     it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0200";
-        hilog.info(domain, tag, `${caseName} enter`);
-        let ifSetPointerStyleSuccess = 0;
+        console.info(domain, tag, `${caseName} enter`);
         try {
-          pointer.setPointerStyle(100000, pointer.PointerStyle.CROSS).then(() => {
-            hilog.info(domain, tag, `${caseName} Set pointer style success`);
-            ifSetPointerStyleSuccess++;
-            ExpectTrue(ifSetPointerStyleSuccess == 1);
+          await pointer.setPointerStyle(-2, pointer.PointerStyle.CROSS).then(() => {
+            console.info(domain, tag, `${caseName} Set pointer style success`);
+            expect().assertFail();
             done();
           });
         } catch (error: BusinessError) {
-          hilog.info(domain, tag,
+          error = error as BusinessError;
+          console.info(domain, tag,
             `${caseName} Set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(error.code == 401 || true);
+          expect(error.code).assertEqual(401);
           done();
         }
-        hilog.info(domain, tag, `${caseName} leave`);
+        console.info(domain, tag, `${caseName} leave`);
       });
 
     /**
@@ -115,17 +117,16 @@ export default function MultimodalInputPointerTest() {
     it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0300";
-        hilog.info(domain, tag, `${caseName} enter`);
-        let ifSetPointerStyleSyncSuccess = 0;
+        console.info(domain, tag, `${caseName} enter`);
         try {
-          pointer.setPointerStyleSync(10000, pointer.PointerStyle.CROSS);
+          pointer.setPointerStyleSync(-2, pointer.PointerStyle.CROSS);
           console.info(`${caseName} Set pointer style success`);
-          ifSetPointerStyleSyncSuccess++;
-          ExpectTrue(ifSetPointerStyleSyncSuccess == 1);
+          expect().assertFail();
           done();
         } catch (error: BusinessError) {
+          error = error as BusinessError;
           console.info(`${caseName} set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(error.code == 401 || true);
+          expect(error.code).assertEqual(401);
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
