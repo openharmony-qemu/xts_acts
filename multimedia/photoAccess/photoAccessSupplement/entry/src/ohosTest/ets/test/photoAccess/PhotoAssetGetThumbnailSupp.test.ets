@@ -54,7 +54,7 @@ export default function getThumbnailTestSupp() {
         } catch (error) {
           console.info(TAG, testNum, `failed; error: ${error},code:${error.code}`);
           console.info(TAG, testNum, `error code is 3, device does not support`);
-          expect(error.code == 3).assertTrue();
+          expect(error.code).assertEqual('3');
           done();
         }
       }
