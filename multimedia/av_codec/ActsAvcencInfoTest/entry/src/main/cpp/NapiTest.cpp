@@ -138,7 +138,8 @@ template <typename T>
     };
 
 template <typename T, size_t N>
-    constexpr FuncTable<T> MakeFuncTable(const T (&array)[N]) {
+    constexpr FuncTable<T> MakeFuncTable(const T (&array)[N])
+    {
         return {array, N};
     }
 
