@@ -15,7 +15,21 @@ namespace {
     static constexpr int ARG_INDEX = 0;
     static constexpr int DEFAULT_ARG = -1;
     static constexpr int RESULT_ERROR = -1;
+    using CencTestFunc = int (CencInfoCapiTestCase::*)();
+    template <typename T>
+    struct FuncTable {
+        const T* arr;
+        size_t count;
+    };
+    #define DEFINE_CENCINFO_NAPI(funcName, funcArray) \
+    napi_value funcName(napi_env env, napi_callback_info info) \
+    { \
+        auto funcTable = MakeFuncTable(funcArray); \
+        return CencInfoNapiImpl(env, info, funcTable); \
+    }
 }
+
+
 template <typename Func>
 napi_value NapiTry(napi_env env, Func &&func);
 
@@ -110,7 +124,7 @@ static const CencTestFunc CENCINFO_SETAVBUFFER_FUNCS[] = {
 napi_value CencInfoNapiImpl(
     napi_env env,
     napi_callback_info info,
-    const FuncTable& funcTable)
+    const FuncTable<CencTestFunc>& funcTable)
 {
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
@@ -120,7 +134,7 @@ napi_value CencInfoNapiImpl(
         const size_t FUNC_COUNT = funcTable.count;
 
         if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
-            result = (testObj.*funcTable[caseNum])();
+            result = (testObj.*funcTable.arr[caseNum])();
         }
 
         napi_value resultValue;
