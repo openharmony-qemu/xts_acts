@@ -50,6 +50,7 @@ export default function webDownloadEnumTest() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
+
     /*
     * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_0100
     * @tc.name        testWebDownloadEnumStatic001
