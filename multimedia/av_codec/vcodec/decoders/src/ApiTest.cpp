@@ -873,4 +873,70 @@ HWTEST_F(DecApiNdkTest, VIDEO_WVC1DEC_CAP_API_0016, TestSize.Level1)
         WVC1_PROFILE_ADVANCED, WVC1_LEVEL_L4));
     }
 }
+
+/**
+ * @tc.name   VIDEO_VP9DEC_CAP_API_0017
+ * @tc.number VIDEO_VP9DEC_CAP_API_0017
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_VP9DEC_CAP_API_0017, TestSize.Level1)
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t *levels = nullptr;
+    uint32_t levelNum = 0;
+    const int32_t *profiles = nullptr;
+    uint32_t profileNum = 0;
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(
+        OH_AVCODEC_MIMETYPE_VIDEO_VP9, false, SOFTWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
+    ASSERT_EQ(AV_ERR_OK, ret);
+    ASSERT_NE(nullptr, profiles);
+    for (int i = 0; i < profileNum; i++) {
+        ASSERT_EQ(profiles[i], i);
+        ret = OH_AVCapability_GetSupportedLevelsForProfile(
+            capability, profiles[i], &levels, &levelNum);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        ASSERT_NE(nullptr, levels);
+        for (int j = 0; j < levelNum; j++) {
+            ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability, profiles[i], levels[j]));
+        }
+    }
+}
+
+/**
+ * @tc.name   VIDEO_VP9DEC_CAP_API_0018
+ * @tc.number VIDEO_VP9DEC_CAP_API_0018
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_VP9DEC_CAP_API_0018, TestSize.Level1)
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t *levels = nullptr;
+    uint32_t levelNum = 0;
+    const int32_t *profiles = nullptr;
+    uint32_t profileNum = 0;
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(
+        OH_AVCODEC_MIMETYPE_VIDEO_AV1, false, SOFTWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
+    ASSERT_EQ(AV_ERR_OK, ret);
+    ASSERT_NE(nullptr, profiles);
+    for (int i = 0; i < profileNum; i++) {
+        ASSERT_EQ(profiles[i], i);
+        ret = OH_AVCapability_GetSupportedLevelsForProfile(
+            capability, profiles[i], &levels, &levelNum);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        ASSERT_NE(nullptr, levels);
+        for (int j = 0; j < levelNum; j++) {
+            ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability, profiles[i], levels[j]));
+        }
+    }
+}
 } // namespace
