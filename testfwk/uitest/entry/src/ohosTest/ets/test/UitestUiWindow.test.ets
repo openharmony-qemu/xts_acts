@@ -403,10 +403,6 @@ export default function uiUiWindowTest() {
 
         let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
         await window1.moveTo(100, 100)
-        console.log(`${TestTag}, testWindowMoveTo_full failed`);
-        expect(() => {
-          throw new Error('test')
-        }).assertThrowError('test');
       } catch (error) {
         console.log('testWindowMoveTo_full error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
@@ -470,10 +466,6 @@ export default function uiUiWindowTest() {
 
         let bounds1 = await windowSplit.getBounds()
         await windowSplit.moveTo(100, 100)
-        console.log(`${TestTag}, testWindowMoveTo_split failed`);
-        expect(() => {
-          throw new Error('test')
-        }).assertThrowError('test');
       } catch (error) {
         console.log('testWindowMoveTo_split1 error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
@@ -502,10 +494,6 @@ export default function uiUiWindowTest() {
         expect(fullMode == WindowMode.FULLSCREEN).assertTrue()
 
         await windowFull.resize(600, 600, ResizeDirection.RIGHT_DOWN)
-        console.log(`${TestTag}, testWindowResize_full failed`);
-        expect(() => {
-          throw new Error('test')
-        }).assertThrowError('test');
       } catch (error) {
         console.log('testWindowResize_full error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
@@ -983,11 +971,6 @@ export default function uiUiWindowTest() {
         expect(fullMode == WindowMode.FULLSCREEN).assertTrue()
 
         await windowFull.maximize()
-        await driver.delayMs(waitUiReadyMs)
-        console.log(`${TestTag}, testWindowMaximize_full windowFull.maximize failed`);
-        expect(() => {
-          throw new Error('test')
-        }).assertThrowError('test');
       } catch (error) {
         console.log('testWindowMaximize_full error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
