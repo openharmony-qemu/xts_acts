@@ -89,7 +89,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        expect(error.code).assertEqual('7600204');
+        expect(Number(error.code)).assertEqual(7600204);
       }
       done();
     });
@@ -112,7 +112,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        expect(error.code).assertEqual('7600204');
+        expect(Number(error.code)).assertEqual(7600204);
       }
       done();
     });
@@ -135,7 +135,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        expect(error.code).assertEqual('7600204');
+        expect(Number(error.code)).assertEqual(7600204);
       }
       done();
     });
@@ -163,7 +163,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        expect(error.code).assertEqual('7600201');
+        expect(Number(error.code)).assertEqual(7600201);
       }
       done();
     });
@@ -191,7 +191,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        expect(error.code).assertEqual('7600201');
+        expect(Number(error.code)).assertEqual(7600201);
       }
       done();
     });
@@ -219,7 +219,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        expect(error.code).assertEqual('7600201');
+        expect(Number(error.code)).assertEqual(7600201);
       }
       done();
     });
@@ -247,7 +247,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        expect(error.code).assertEqual('7600201');
+        expect(Number(error.code)).assertEqual(7600201);
       }
       done();
     });
@@ -275,7 +275,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        expect(error.code).assertEqual('7600201');
+        expect(Number(error.code)).assertEqual(7600201);
       }
       done();
     });
@@ -303,7 +303,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        expect(error.code).assertEqual('7600201');
+        expect(Number(error.code)).assertEqual(7600201);
       }
       done();
     });
@@ -326,7 +326,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        expect(error.code).assertEqual('7600204');
+        expect(Number(error.code)).assertEqual(7600204);
       }
       done();
     });
@@ -349,7 +349,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        expect(error.code).assertEqual('7600204');
+        expect(Number(error.code)).assertEqual(7600204);
       }
       done();
     });
@@ -401,7 +401,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        expect(error.code).assertEqual('7600201');
+        expect(Number(error.code)).assertEqual(7600201);
       }
       done();
     });
@@ -429,7 +429,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        expect(error.code).assertEqual('7600201');
+        expect(Number(error.code)).assertEqual(7600201);
       }
       done();
     });
@@ -457,7 +457,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        expect(error.code).assertEqual('7600201');
+        expect(Number(error.code)).assertEqual(7600201);
       }
       done();
     });
@@ -485,7 +485,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        expect(error.code).assertEqual('7600201');
+        expect(Number(error.code)).assertEqual(7600201);
       }
       done();
     });
@@ -513,7 +513,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        expect(error.code).assertEqual('7600201');
+        expect(Number(error.code)).assertEqual(7600201);
       }
       done();
     });
@@ -541,8 +541,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG,testName,error,error.code);
-        let errCode:string = error.code;
-        expect(errCode).assertEqual('7600201');
+        expect(Number(error.code)).assertEqual(7600201);
       }
       done();
     });
@@ -700,7 +699,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG, testName, error, error.code);
-        expect(error.code).assertEqual('401');
+        expect(Number(error.code)).assertEqual(401);
       }
       done();
     });
@@ -721,7 +720,7 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG, testName, error, error.code);
-        expect(error.code).assertEqual('401');
+        expect(Number(error.code)).assertEqual(401);
       }
       done();
     });
@@ -742,8 +741,8 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG, testName, error, error.code);
-        let errCode:string = error.code;
-        expect(errCode).assertEqual('401');
+        let errCode:number = Number(error.code);
+        expect(errCode).assertEqual(401);
       }
       done();
     });
