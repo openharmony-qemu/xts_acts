@@ -106,6 +106,8 @@ export const TextEnumTest_023: () => number;
 
 export const TextMarqueeOptionsTest: () => number;
 
+export const ControllerBaseCreatTest: () => number;
+ 
 export const testMotionPathOptions001: () => number;
 export const testMotionPathOptions002: () => number;
 export const testMotionPathOptions003: () => number;
