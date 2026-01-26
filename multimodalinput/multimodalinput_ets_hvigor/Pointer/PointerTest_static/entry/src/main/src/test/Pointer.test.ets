@@ -89,21 +89,21 @@ export default function MultimodalInputPointerTest() {
     it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0200";
-        console.info(domain, tag, `${caseName} enter`);
+        hilog.info(domain, tag, `${caseName} enter`);
         try {
           await pointer.setPointerStyle(-2, pointer.PointerStyle.CROSS).then(() => {
-            console.info(domain, tag, `${caseName} Set pointer style success`);
+            hilog.info(domain, tag, `${caseName} Set pointer style success`);
             expect().assertFail();
             done();
           });
         } catch (error: BusinessError) {
           error = error as BusinessError;
-          console.info(domain, tag,
+          hilog.info(domain, tag,
             `${caseName} Set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           expect(error.code).assertEqual(401);
           done();
         }
-        console.info(domain, tag, `${caseName} leave`);
+        hilog.info(domain, tag, `${caseName} leave`);
       });
 
     /**
@@ -117,7 +117,7 @@ export default function MultimodalInputPointerTest() {
     it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0300";
-        console.info(domain, tag, `${caseName} enter`);
+        hilog.info(domain, tag, `${caseName} enter`);
         try {
           pointer.setPointerStyleSync(-2, pointer.PointerStyle.CROSS);
           console.info(`${caseName} Set pointer style success`);
