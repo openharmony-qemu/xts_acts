@@ -23,24 +23,24 @@
 namespace ArkUICapiTest {
 static napi_value ControllerBaseCreatTest(napi_env env, napi_callback_info info)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, 
-                    "ControllerBaseCreatTest", "ControllerBaseCreatTest start");
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
+                 "ControllerBaseCreatTest", "ControllerBaseCreatTest start");
  
     auto TextSelectionOptions = OH_ArkUI_SelectionOptions_Create();
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, 
-                    "Manager", "TextSelectionOptions  Create success ");
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
+                 "Manager", "TextSelectionOptions  Create success ");
     ASSERT_NOTNULL(TextSelectionOptions);
     OH_ArkUI_SelectionOptions_Dispose(TextSelectionOptions);
  
     auto TextContentBaseController = OH_ArkUI_TextContentBaseController_Create();
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, 
-                    "Manager", "TextContentBaseController  Create success ");
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
+                 "Manager", "TextContentBaseController  Create success ");
     ASSERT_NOTNULL(TextContentBaseController);
     OH_ArkUI_TextContentBaseController_Dispose(TextContentBaseController);
  
     auto TextSelectionDragPreviewStyle = OH_ArkUI_SelectedDragPreviewStyle_Create();
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, 
-                    "Manager", "TextSelectionDragPreviewStyle  Create success ");
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
+                 "Manager", "TextSelectionDragPreviewStyle  Create success ");
     ASSERT_NOTNULL(TextSelectionDragPreviewStyle);
     OH_ArkUI_SelectedDragPreviewStyle_Dispose(TextSelectionDragPreviewStyle);
     

@@ -27,7 +27,7 @@ export default function ControllerBaseCreatTest(){
  
     /**
      * @tc.number      SUB_ARKUI_CAPI_ControllerBaseCreatTest
-     * @tc.name        ControllerBaseCreatTest
+     * @tc.name        ControllerBaseCreatTest01
      * @tc.desc        testing TextContentBaseController_Create 
      * @tc.size        MediumTest
      * @tc.type        Function
