@@ -234,15 +234,56 @@ export default function uiUiWindowTest() {
     it('testWindowResume_split', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
-      await setSplit(driver)
       try {
+        let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        await window.split()
+        await driver.delayMs(waitUiReadyMs * 2)
+        let scbCom = await driver.findComponent(ON.id('scb_block_cover'))
+        if (scbCom != null) {
+          await startAbility('com.uitest.acts', 'EntryAbility')
+          await driver.delayMs(waitUiReadyMs * 2)
+          let btn = await driver.findComponent(ON.text('下一步'))
+          if (btn != null) {
+            await btn.click()
+            await driver.delayMs(waitUiReadyMs * 3)
+            let btn1 = await driver.findComponent(ON.text('完成'))
+            await btn1.click()
+            await driver.delayMs(waitUiReadyMs * 7)
+          }
+          let btn1 = await driver.findComponent(ON.text('完成'))
+          if (btn1 != null) {
+            await btn1.click()
+            await driver.delayMs(waitUiReadyMs * 7)
+          }
+          let btn2 = await driver.findComponent(ON.text('点击显示操作按钮'))
+          if (btn2 != null) {
+            await driver.delayMs(waitUiReadyMs * 7)
+          }
+          let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+          let windowmode = await window1.getWindowMode()
+          expect(windowmode == WindowMode.PRIMARY).assertTrue()
+        } else {
+          let testLabel = await driver.findComponent(ON.text('test label'));
+          await driver.delayMs(waitUiReadyMs * 2)
+          await testLabel.click()
+          await driver.delayMs(waitUiReadyMs * 2)
+          let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+          let windowmode = await window1.getWindowMode()
+          expect(windowmode == WindowMode.PRIMARY).assertTrue()
+        }
         let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let isActive1 = await window1.isActive()
+        expect(isActive1).assertFalse();
+        let falseFocused = await window1.isFocused()
+        expect(falseFocused).assertFalse()
+        let falseActived = await window1.isActived()
+        expect(falseActived).assertFalse()
         await window1.resume()
         await driver.delayMs(waitUiReadyMs)
         let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
         let windowmode2 = await window2.getWindowMode()
         expect(windowmode2 == WindowMode.FLOATING).assertTrue()
-      }catch (error) {
+      } catch (error) {
         console.log('testWindowResume_split1 error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }

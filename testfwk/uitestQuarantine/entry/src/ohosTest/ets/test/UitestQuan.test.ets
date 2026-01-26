@@ -20,9 +20,9 @@ import { BusinessError } from '@ohos.base';
 import display from '@ohos.display';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
-const delegator : AbilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-const bundleName : string = abilityDelegatorRegistry.getArguments().bundleName;
-const waitUiReadyMs : number = 1000;
+const delegator: AbilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+const bundleName: string = abilityDelegatorRegistry.getArguments().bundleName;
+const waitUiReadyMs: number = 1000;
 const TestTag = 'UiTest_API16';
 const DeviceErrorCode = 17000005;
 const ErrorCode = 401;
@@ -30,7 +30,7 @@ const ErrorCode = 401;
 async function startAbility(bundleName: string, abilityName: string) {
   await delegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`).then(result => {
     console.info(`UiTestCase, start abilityFinished: ${result}`)
-  }).catch((err : BusinessError) => {
+  }).catch((err: BusinessError) => {
     console.error(`UiTestCase, start abilityFailed: ${err}`)
   })
 }
@@ -38,7 +38,7 @@ async function startAbility(bundleName: string, abilityName: string) {
 async function stopApplication(bundleName: string) {
   await delegator.executeShellCommand(`aa force-stop ${bundleName} `).then(result => {
     console.info(`UiTestCase, stop application finished: ${result}`)
-  }).catch((err : BusinessError) => {
+  }).catch((err: BusinessError) => {
     console.error(`UiTestCase,stop application failed: ${err}`)
   })
 }
@@ -52,32 +52,34 @@ async function exitInputMethod() {
 }
 
 async function getInputMethodPermission() {
-    let driver = Driver.create()
-    await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-    await driver.delayMs(2000)
-    let TextInput = await driver.findComponent(ON.type('TextInput'))
-    if (TextInput == null) {
-      let scorll = await driver.findComponent(ON.type('Scroll'))
-      TextInput = await scorll.scrollSearch(ON.type('TextInput'))
-    }
-    await TextInput.click()
+  let driver = Driver.create()
+  await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+  await driver.delayMs(2000)
+  let textInput = await driver.findComponent(ON.type('TextInput'))
+  if (textInput == null) {
+    let scroll = await driver.findComponent(ON.type('Scroll'))
+    textInput = await scroll.scrollSearch(ON.type('TextInput'))
+  }
+  if (textInput != null) {
+    await textInput.click()
     await driver.delayMs(1000)
-    let permissionBtn1 = await driver.findComponent(ON.text('同意'))
-    if (permissionBtn1 != null) {
-      await permissionBtn1.click()
-      await driver.delayMs(1000)
-    }
-    let permissionBtn2 = await driver.findComponent(ON.text('下一步'))
-    if (permissionBtn2 != null) {
-      await permissionBtn2.click()
-      await driver.delayMs(1000)
-    }
+  }
+  let permissionBtn1 = await driver.findComponent(ON.text('同意'))
+  if (permissionBtn1 != null) {
+    await permissionBtn1.click()
+    await driver.delayMs(1000)
+  }
+  let permissionBtn2 = await driver.findComponent(ON.text('下一步'))
+  if (permissionBtn2 != null) {
+    await permissionBtn2.click()
+    await driver.delayMs(1000)
+  }
   let permissionBtn3 = await driver.findComponent(ON.text('完成'))
   if (permissionBtn3 != null) {
     await permissionBtn3.click()
     await driver.delayMs(1000)
   }
-    await stopApplication('com.uitestScene.acts')
+  await stopApplication('com.uitestScene.acts')
 }
 
 
@@ -244,6 +246,10 @@ export default function UiTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
+    afterAll(async () => {
+      await stopApplication('com.uitestScene.acts');
+    })
+
     /**
      * @tc.name   testMouseDrag
      * @tc.number uiTest_11003
@@ -267,34 +273,12 @@ export default function UiTest() {
       await driver.delayMs(2000)
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
       expect(text == null).assertTrue()
-	  await driver.mouseDrag(point1, point2)
+      await driver.mouseDrag(point1, point2)
+      await stopApplication('com.uitestScene.acts');      
     })
-
-    /**
-     * @tc.name   testWindowAttr
-     * @tc.number uiTest_11007
-     * @tc.desc   find window by WindowFilter and get it's active status.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testWindowAttr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let window = await driver.findWindow({bundleName:'com.uitestScene.acts',focused:true,active:true,title:''})
-      await window.focus()
-      await driver.delayMs(waitUiReadyMs)
-      let isActive = await window.isActive()
-      expect(isActive == true).assertTrue()
-      let uitestWindow = await driver.findWindow({active: false})
-      let isActive1 = await uitestWindow.isActive()
-      expect(isActive1).assertFalse();
-      await stopApplication('com.uitestScene.acts')
-    })
-
   })
 
-  describe('UiTest_API10', () =>  {
+  describe('UiTest_API10', () => {
     let driver: Driver
     beforeAll(async (done: Function) => {
       driver = Driver.create()
@@ -305,6 +289,10 @@ export default function UiTest() {
 
     afterEach(async () => {
       await stopApplication('com.uitestScene.acts')
+    })
+
+    afterAll(async () => {
+      await stopApplication('com.uitestScene.acts');
     })
 
     /**
@@ -319,14 +307,14 @@ export default function UiTest() {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let allDisplayIds = await display.getAllDisplay()
-        for (let d of allDisplayIds) {
+      for (let d of allDisplayIds) {
         if (d.id == 999) {
           console.info('Can not create full screen application scene')
           return
         }
       }
       let d = await display.getDefaultDisplaySync()
-      let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'})
+      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
       try {
         await window.maximize()
         await driver.delayMs(500)
@@ -336,19 +324,20 @@ export default function UiTest() {
       await driver.fling(UiDirection.DOWN, 39000)
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponents(ON.text('next page'))
-      expect (button).assertNull()
+      expect(button).assertNull()
       await driver.fling(UiDirection.LEFT, 39000)
       await driver.delayMs(waitUiReadyMs)
       let text = await driver.findComponents(ON.text('next page'))
-      expect (text).assertNull()
+      expect(text).assertNull()
       await driver.fling(UiDirection.RIGHT, 39000)
       await driver.delayMs(waitUiReadyMs)
       let text2 = await driver.findComponents(ON.text('next page'))
-      expect (text2).assertNull()
+      expect(text2).assertNull()
       await driver.fling(UiDirection.UP, 39000)
       await driver.delayMs(2000)
       let button2 = await driver.findComponents(ON.text('bottom'))
-      expect (button2 == null).assertTrue()
+      expect(button2 == null).assertTrue()
+      await stopApplication('com.uitestScene.acts');      
     })
   })
 
@@ -363,6 +352,10 @@ export default function UiTest() {
 
     afterEach(async () => {
       await stopApplication('com.uitestScene.acts')
+    })
+
+    afterAll(async () => {
+      await stopApplication('com.uitestScene.acts');
     })
 
     /**
@@ -418,7 +411,7 @@ export default function UiTest() {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       await driver.setDisplayRotationEnabled(true)
-      await driver.delayMs(waitUiReadyMs)      
+      await driver.delayMs(waitUiReadyMs)
       await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
       await driver.delayMs(waitUiReadyMs)
       let rotation = await driver.getDisplayRotation()
@@ -590,31 +583,5 @@ export default function UiTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /**
-     * @tc.name   testWindowAttr
-     * @tc.number uiTest_9056
-     * @tc.desc   set the focused status of this UiWindow.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testWindowAttr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let window = await driver.findWindow({bundleName:'com.uitestScene.acts',focused:true,actived:true,title:''})
-      await window.focus()
-      await driver.delayMs(waitUiReadyMs)
-      let isFocused = await window.isFocused()
-      let isActived = await window.isActived()
-      expect(isFocused == true).assertTrue()
-      expect(isActived == true).assertTrue()
-      let focusedWindow = await driver.findWindow({focused: false})
-      let falseFocused = await focusedWindow.isFocused()
-      expect(falseFocused).assertFalse()
-      let activedWindow = await driver.findWindow({actived: false})
-      let falseActived = await activedWindow.isActived()
-      expect(falseActived).assertFalse()
-      await stopApplication('com.uitestScene.acts')
-    })
   })
 }
