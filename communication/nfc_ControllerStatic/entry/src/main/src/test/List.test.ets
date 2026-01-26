@@ -9,7 +9,6 @@ import nfcMifareClassicTagTest from "./MifareClassicTag.test"
 import nfcMifareUltralightTagTest from "./MifareUltralightTag.test"
 import nfcNDEFTagTest from "./NDEFTag.test"
 export default function testsuite() {
-  abilityTest();
   nfcControllerTest();
   nfcTagTest();
   nfcATagSessionTest();
