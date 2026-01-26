@@ -157,6 +157,14 @@ public:
     void StopOutloop();
     bool IsRender();
     bool MdCompare(unsigned char *buffer, int len, const char *source[]);
+    int32_t StartVideoDecoderForAV1();
+    int32_t InputOutputLoopForAv1();
+    void InputForAV1FuncTest();
+    int32_t PushDataForAV1(uint32_t index, OH_AVBuffer *buffer);
+    int32_t StartVideoDecoderReadStream();
+    int32_t inputoutputloop();
+    int32_t PushDataReadStream(uint32_t index, OH_AVBuffer *buffer);
+    void InputReadStreamFuncTest();
     VDecAPI11Signal *signal_;
     uint32_t errCount = 0;
     uint32_t outCount = 0;
