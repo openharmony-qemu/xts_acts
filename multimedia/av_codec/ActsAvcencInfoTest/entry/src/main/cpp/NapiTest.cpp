@@ -3,12 +3,15 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  */
+#include "multimedia/av_codec.h"
+#include "xts_common.h"
 #include <exception>
 #include "napi/native_api.h"
 #include "AvcencInfoCheckTest.h"
 #include <cstdint>
 #include <multimedia/player_framework/native_cencinfo.h>
 using namespace OHOS::CencInfoUT;
+using TestCase = OHOS::CencInfoUT::CencInfoCapiTestCase;
 
 namespace {
     static constexpr int ARG_INDEX = 0;
@@ -17,8 +20,6 @@ namespace {
 }
 template <typename Func>
 napi_value NapiTry(napi_env env, Func &&func);
-
-using CencTestFunc = int (OHOS::CencInfoUT::CencInfoCapiTestCase::*)();
 
 int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int32_t defaultValue)
 {
@@ -117,8 +118,8 @@ napi_value CencInfoNapiImpl(
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         int result = RESULT_ERROR;
 
-        TestCase testObj;
-        constexpr size_t FUNC_COUNT = sizeof(funcTable) / sizeof(funcTable[0]);
+        OHOS::CencInfoUT::CencInfoCapiTestCase testObj;
+        const size_t FUNC_COUNT = funcTable.count;
 
         if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
             result = (testObj.*funcTable[caseNum])();
@@ -129,26 +130,29 @@ napi_value CencInfoNapiImpl(
         return resultValue;
     });
 }
-DEFINE_CENCINFO_NAPI(CencInfo_Create, CENCINFO_CREATE_FUNCS)
-DEFINE_CENCINFO_NAPI(CencInfo_Destroy, CENCINFO_DESTROY_FUNCS)
-DEFINE_CENCINFO_NAPI(CencInfo_SetAlgorithm, CENCINFO_SETALGORITHM_FUNCS)
-DEFINE_CENCINFO_NAPI(CencInfo_SetKeyIdAndIv, CENCINFO_SETKEYIDANDIV_FUNCS)
-DEFINE_CENCINFO_NAPI(CencInfo_SetSubsampleInfo, CENCINFO_SETSUBSAMPLEINFO_FUNCS)
-DEFINE_CENCINFO_NAPI(CencInfo_SetMode, CENCINFO_SETMODE_FUNCS)
-DEFINE_CENCINFO_NAPI(CencInfo_SetAVBuffer, CENCINFO_SETAVBUFFER_FUNCS)
+
+#define MAKE_FUNC_TABLE(array) \
+    { array, sizeof(array) / sizeof(array[0]) }
+
+DEFINE_CENCINFO_NAPI(OH_CencInfo_Create, CENCINFO_CREATE_FUNCS)
+DEFINE_CENCINFO_NAPI(OH_CencInfo_Destroy, CENCINFO_DESTROY_FUNCS)
+DEFINE_CENCINFO_NAPI(OH_CencInfo_SetAlgorithm, CENCINFO_SETALGORITHM_FUNCS)
+DEFINE_CENCINFO_NAPI(OH_CencInfo_SetKeyIdAndIv, CENCINFO_SETKEYIDANDIV_FUNCS)
+DEFINE_CENCINFO_NAPI(OH_CencInfo_SetSubsampleInfo, CENCINFO_SETSUBSAMPLEINFO_FUNCS)
+DEFINE_CENCINFO_NAPI(OH_CencInfo_SetMode, CENCINFO_SETMODE_FUNCS)
+DEFINE_CENCINFO_NAPI(OH_CencInfo_SetAVBuffer, CENCINFO_SETAVBUFFER_FUNCS)
 
 EXTERN_C_START
 napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"cencInfoCreate", nullptr, CencInfo_Create, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"cencInfoDestroy", nullptr, CencInfo_Destroy, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"cencInfoSetAlgorithm", nullptr, CencInfo_SetAlgorithm, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"cencInfoSetKeyIdAndIv", nullptr, CencInfo_SetKeyIdAndIv, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"cencInfoSetSubsampleInfo", nullptr, CencInfo_SetSubsampleInfo, nullptr, nullptr,
-        nullptr, napi_default, nullptr},
-        {"cencInfoSetMode", nullptr, CencInfo_SetMode, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"cencInfoSetAVBuffer", nullptr, CencInfo_SetAVBuffer, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"cencInfoCreate", nullptr, OH_CencInfo_Create, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"cencInfoDestroy", nullptr, OH_CencInfo_Destroy, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"cencInfoSetAlgorithm", nullptr, OH_CencInfo_SetAlgorithm, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"cencInfoSetKeyIdAndIv", nullptr, OH_CencInfo_SetKeyIdAndIv, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"cencInfoSetSubsampleInfo", nullptr, OH_CencInfo_SetSubsampleInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"cencInfoSetMode", nullptr, OH_CencInfo_SetMode, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"cencInfoSetAVBuffer", nullptr, OH_CencInfo_SetAVBuffer, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
 
     napi_define_properties(env, exports,
