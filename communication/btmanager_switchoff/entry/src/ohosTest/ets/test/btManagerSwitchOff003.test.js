@@ -2688,5 +2688,48 @@ export default function btManagerError003Test() {
             }
             done();
         })
-})
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLE_S_OFF_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLE_S_OFF_0200
+         * @tc.desc   Test setLocalName api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLE_S_OFF_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let deviceId = "00:11:22:33:44:55";
+                    await gattServer.readPhy(deviceId);
+                    expect().assertFail();
+                } catch (err) {
+                    console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                    expect(Number(err.code)).assertEqual(2900003);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLE_C_OFF_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLE_C_OFF_0200
+         * @tc.desc   Test setLocalName api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLE_C_OFF_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    await gattClient.readPhy();
+                    expect().assertFail();
+                } catch (err) {
+                    console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                    expect(Number(err.code)).assertEqual(2900003);
+                }
+            }
+            done();
+        })
+
+    })
 }
