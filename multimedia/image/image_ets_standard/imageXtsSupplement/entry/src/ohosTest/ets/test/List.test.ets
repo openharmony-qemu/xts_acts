@@ -209,6 +209,10 @@ import ImageGammaSupp from './image/ImageGammaSupp.test';
 import ImagePictureMetadataTest from './image/ImagePictureMetadata.Test.test';
 import MultimediaImageTest from './image/MultimediaImage.test';
 import ImageExifMetadataTestSupp from './image/ImageExifMetadata.test';
+import CreatePixelMapSupp from './image/CreatePixelMap.test';
+import GetImageInfoSupp from './image/GetImageInfoTest.test';
+import ReadPixelsToBufferSupp from './image/ReadPixelsToBufferTest.test';
+
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -404,4 +408,7 @@ export default function testsuite() {
   ImagePictureMetadataTest()
   MultimediaImageTest()
   ImageExifMetadataTestSupp()
+  CreatePixelMapSupp();
+  GetImageInfoSupp();
+  ReadPixelsToBufferSupp();
 }
