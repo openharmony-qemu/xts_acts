@@ -78,7 +78,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -109,7 +109,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -140,7 +140,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -205,7 +205,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -236,7 +236,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -267,7 +267,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -298,7 +298,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -319,7 +319,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -340,7 +340,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -361,7 +361,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -385,7 +385,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -406,7 +406,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -437,7 +437,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -468,7 +468,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -499,7 +499,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -564,7 +564,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -595,7 +595,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -626,7 +626,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -657,7 +657,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -678,7 +678,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -699,7 +699,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -720,7 +720,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -744,7 +744,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -765,7 +765,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -796,7 +796,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -827,7 +827,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -858,7 +858,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -923,7 +923,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -954,7 +954,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -985,7 +985,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -1016,7 +1016,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -1037,7 +1037,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -1058,7 +1058,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -1079,7 +1079,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -1103,7 +1103,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })
@@ -1124,7 +1124,7 @@ export default function CreatePixelMapSupp() {
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG,testName,`Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect(error.code).assertFail();
+        expect().assertFail();
         done();
       })
     })

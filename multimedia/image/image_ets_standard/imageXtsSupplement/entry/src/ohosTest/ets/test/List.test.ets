@@ -210,6 +210,8 @@ import ImagePictureMetadataTest from './image/ImagePictureMetadata.Test.test';
 import MultimediaImageTest from './image/MultimediaImage.test';
 import ImageExifMetadataTestSupp from './image/ImageExifMetadata.test';
 import CreatePixelMapSupp from './image/CreatePixelMap.test';
+import GetImageInfoSupp from './image/GetImageInfoTest.test';
+import ReadPixelsToBufferSupp from './image/ReadPixelsToBufferTest.test';
 
 
 export default function testsuite() {
@@ -407,4 +409,6 @@ export default function testsuite() {
   MultimediaImageTest()
   ImageExifMetadataTestSupp()
   CreatePixelMapSupp();
+  GetImageInfoSupp();
+  ReadPixelsToBufferSupp();
 }
