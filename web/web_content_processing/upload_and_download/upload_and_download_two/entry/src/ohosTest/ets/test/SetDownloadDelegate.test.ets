@@ -41,7 +41,7 @@ export default function SetDownloadDelegate() {
       await waitForComponents('001');
       done();
     })
-    beforeEach(() => {
+    beforeEach(async (done: Function) => {
       try {
         console.info('======> wifi_test/isWifiActive :' + wifiMg.isWifiActive());
         let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
