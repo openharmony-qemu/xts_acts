@@ -32,7 +32,10 @@ export default function WebInitTest() {
       console.log('App start')
     });
 
-
+    beforeEach(async () => {	 
+      await Utils.msSleep(2000); 
+      console.info('webOnFirstContFour beforeEach start'); 
+    })
 
     /*
         * @tc.number     SUB_WEB_WEBCUSTOMIZESCHEMES_0100
