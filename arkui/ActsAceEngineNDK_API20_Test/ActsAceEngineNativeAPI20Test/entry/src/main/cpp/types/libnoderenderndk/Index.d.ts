@@ -325,8 +325,6 @@ export const GetNodeTypeTest_015: () => number;
 
 export const GetNodeTypeTest_016: () => number;
 
-export const GetNodeTypeTest_017: () => number;
-
 export const GetNodeTypeTest_018: () => number;
 
 export const GetNodeTypeTest_019: () => number;

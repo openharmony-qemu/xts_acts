@@ -415,8 +415,6 @@ static void RenderInitPush8(napi_property_descriptor* desc)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetNodeTypeTest_016", nullptr, NodeUtilsTest::GetNodeTypeTest_016,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetNodeTypeTest_017", nullptr, NodeUtilsTest::GetNodeTypeTest_017,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetNodeTypeTest_018", nullptr, NodeUtilsTest::GetNodeTypeTest_018,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetNodeTypeTest_019", nullptr, NodeUtilsTest::GetNodeTypeTest_019,
