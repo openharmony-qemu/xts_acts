@@ -15,18 +15,6 @@ namespace {
     static constexpr int ARG_INDEX = 0;
     static constexpr int DEFAULT_ARG = -1;
     static constexpr int RESULT_ERROR = -1;
-    using CencTestFunc = int (CencInfoCapiTestCase::*)();
-    template <typename T>
-    struct FuncTable {
-        const T* arr;
-        size_t count;
-    };
-    template <typename T>
-    napi_value CencInfoNapiHelper(napi_env env, napi_callback_info info, const T (&funcArray)[], size_t arraySize)
-    {
-        FuncTable<T> funcTable = {funcArray, arraySize};
-        return CencInfoNapiImpl(env, info, funcTable);
-    }
 }
 
 
@@ -124,7 +112,6 @@ static const CencTestFunc CENCINFO_SETAVBUFFER_FUNCS[] = {
 napi_value CencInfoNapiImpl(
     napi_env env,
     napi_callback_info info,
-    const FuncTable<CencTestFunc>& funcTable)
 {
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
@@ -143,19 +130,7 @@ napi_value CencInfoNapiImpl(
     });
 }
 
-template <typename T>
-    struct FuncTable {
-        const T* arr;
-        size_t len;
-    };
-
-template <typename T, size_t N>
-    constexpr FuncTable<T> MakeFuncTable(const T (&array)[N])
-    {
-        return {array, N};
-    }
-
-DEFINE_CENCINFO_NAPI(CencInfo_Create, CENCINFO_CREATE_FUNCS)
+DEFINE_CENCINFO_NAPI(CencInfo_Creater, CENCINFO_CREATE_FUNCS)
 DEFINE_CENCINFO_NAPI(CencInfo_Destroy, CENCINFO_DESTROY_FUNCS)
 DEFINE_CENCINFO_NAPI(CencInfo_SetAlgorithm, CENCINFO_SETALGORITHM_FUNCS)
 DEFINE_CENCINFO_NAPI(CencInfo_SetKeyIdAndIv, CENCINFO_SETKEYIDANDIV_FUNCS)
@@ -167,7 +142,7 @@ EXTERN_C_START
 napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"cencInfoCreate", nullptr, CencInfo_Create, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"cencInfoCreate", nullptr, CencInfo_Creater, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"cencInfoDestroy", nullptr, CencInfo_Destroy, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"cencInfoSetAlgorithm", nullptr, CencInfo_SetAlgorithm, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"cencInfoSetKeyIdAndIv", nullptr, CencInfo_SetKeyIdAndIv, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -184,7 +159,7 @@ napi_value Init(napi_env env, napi_value exports)
 }
 EXTERN_C_END
 
-static napi_module g_cencinfotestModule = {
+static napi_module demoModule = {
     .nm_version = 1,
     .nm_flags = 0,
     .nm_filename = nullptr,
@@ -193,7 +168,7 @@ static napi_module g_cencinfotestModule = {
     .nm_priv = ((void *)0),
     .reserved = {0}};
 
-extern "C" __attribute__((constructor)) void RegistercencinfotestModule(void)
+extern "C" __attribute__((constructor)) void RegisterCencinfotestModule(void)
 {
-    napi_module_register(&g_cencinfotestModule);
+    napi_module_register(&demoModule);
 }
