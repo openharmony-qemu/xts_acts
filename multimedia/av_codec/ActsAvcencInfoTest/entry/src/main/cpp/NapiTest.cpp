@@ -155,26 +155,26 @@ template <typename T, size_t N>
         return {array, N};
     }
 
-DEFINE_CENCINFO_NAPI(OH_CencInfo_Create, CENCINFO_CREATE_FUNCS)
-DEFINE_CENCINFO_NAPI(OH_CencInfo_Destroy, CENCINFO_DESTROY_FUNCS)
-DEFINE_CENCINFO_NAPI(OH_CencInfo_SetAlgorithm, CENCINFO_SETALGORITHM_FUNCS)
-DEFINE_CENCINFO_NAPI(OH_CencInfo_SetKeyIdAndIv, CENCINFO_SETKEYIDANDIV_FUNCS)
-DEFINE_CENCINFO_NAPI(OH_CencInfo_SetSubsampleInfo, CENCINFO_SETSUBSAMPLEINFO_FUNCS)
-DEFINE_CENCINFO_NAPI(OH_CencInfo_SetMode, CENCINFO_SETMODE_FUNCS)
-DEFINE_CENCINFO_NAPI(OH_CencInfo_SetAVBuffer, CENCINFO_SETAVBUFFER_FUNCS)
+DEFINE_CENCINFO_NAPI(CencInfo_Create, CENCINFO_CREATE_FUNCS)
+DEFINE_CENCINFO_NAPI(CencInfo_Destroy, CENCINFO_DESTROY_FUNCS)
+DEFINE_CENCINFO_NAPI(CencInfo_SetAlgorithm, CENCINFO_SETALGORITHM_FUNCS)
+DEFINE_CENCINFO_NAPI(CencInfo_SetKeyIdAndIv, CENCINFO_SETKEYIDANDIV_FUNCS)
+DEFINE_CENCINFO_NAPI(CencInfo_SetSubsampleInfo, CENCINFO_SETSUBSAMPLEINFO_FUNCS)
+DEFINE_CENCINFO_NAPI(CencInfo_SetMode, CENCINFO_SETMODE_FUNCS)
+DEFINE_CENCINFO_NAPI(CencInfo_SetAVBuffer, CENCINFO_SETAVBUFFER_FUNCS)
 
 EXTERN_C_START
 napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"cencInfoCreate", nullptr, OH_CencInfo_Create, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"cencInfoDestroy", nullptr, OH_CencInfo_Destroy, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"cencInfoSetAlgorithm", nullptr, OH_CencInfo_SetAlgorithm, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"cencInfoSetKeyIdAndIv", nullptr, OH_CencInfo_SetKeyIdAndIv, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"cencInfoSetSubsampleInfo", nullptr, OH_CencInfo_SetSubsampleInfo,
+        {"cencInfoCreate", nullptr, CencInfo_Create, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"cencInfoDestroy", nullptr, CencInfo_Destroy, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"cencInfoSetAlgorithm", nullptr, CencInfo_SetAlgorithm, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"cencInfoSetKeyIdAndIv", nullptr, CencInfo_SetKeyIdAndIv, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"cencInfoSetSubsampleInfo", nullptr, CencInfo_SetSubsampleInfo,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"cencInfoSetMode", nullptr, OH_CencInfo_SetMode, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"cencInfoSetAVBuffer", nullptr, OH_CencInfo_SetAVBuffer, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"cencInfoSetMode", nullptr, CencInfo_SetMode, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"cencInfoSetAVBuffer", nullptr, CencInfo_SetAVBuffer, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
 
     napi_define_properties(env, exports,
