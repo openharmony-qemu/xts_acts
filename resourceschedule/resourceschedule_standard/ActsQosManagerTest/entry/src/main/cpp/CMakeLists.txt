@@ -1,4 +1,4 @@
-# the minimum version of CMake.
+resourceschedule/resourceschedule_standard/ActsQosManagerTest/entry/src/main/cpp/CMakeLists.txt# the minimum version of CMake.
 cmake_minimum_required(VERSION 3.5.0)
 project(ActsQosManagerTest)
 
@@ -17,7 +17,7 @@ add_library(qosmanagerops SHARED
     OhosCommonTest.cpp
     )
 target_link_libraries(qosmanagerops PUBLIC
-    libace_napi.so
-    libhilog_ndk.so
+    libace_napi.z.so
+    libhilog_ndk.z.so
     libqos.so
     )
