@@ -21,7 +21,7 @@ export default function SelectedDragPreviewStyleTextAreaTest() {
 
   describe('SelectedDragPreviewStyleTextAreaTest', () => {
 
-    let PAGE_TAG = 'SelectedDragPreviewStyleTextAreaTest';
+    let PAGE_TAG = 'SelectedDragPreviewStyleTest';
 
     beforeAll(async (done: Function) => {
       await Utils.pushPage(`SelectedDragPreviewStyleTest/${PAGE_TAG}`, done);
@@ -30,7 +30,7 @@ export default function SelectedDragPreviewStyleTextAreaTest() {
     /**
      * @tc.name   SelectedDragPreviewStyleTextAreaTest0737
      * @tc.number SUB_ARKUI_CAPI_TEXTAREA_METHOD_0100
-     * @tc.desc   test onCut event callback
+     * @tc.desc   test OH_ArkUI_SelectedDragPreviewStyle_SetColor on TextArea
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

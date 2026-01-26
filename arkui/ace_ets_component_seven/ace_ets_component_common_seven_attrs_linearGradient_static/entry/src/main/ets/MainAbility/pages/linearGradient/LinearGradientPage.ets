@@ -19,10 +19,10 @@ import router from '@ohos.router'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
   LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
-  Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
+  Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
+  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
@@ -33,8 +33,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
   ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
   RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
-  StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
+  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute,
+  SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute, AlignRuleOption,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, LinearGradientOptions, GradientDirection } from '@ohos.arkui.component'
@@ -887,32 +887,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
 	}
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-	mLinearGradient: LinearGradientOptions = {
-	direction: GradientDirection.Left,
-	repeating: true,
-	colors: [['FFFF0000', 0.0], ['#FF0000FF', 0.3], ['#FFFFFF00', 0.5]],
-	angle: 10
-}
-
-	applyNormalAttribute(instance: StepperAttribute): void {
-		instance.linearGradient(this.mLinearGradient)
-	}
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-	mLinearGradient: LinearGradientOptions = {
-	direction: GradientDirection.Left,
-	repeating: true,
-	colors: [['FFFF0000', 0.0], ['#FF0000FF', 0.3], ['#FFFFFF00', 0.5]],
-	angle: 10
-}
-
-	applyNormalAttribute(instance: StepperItemAttribute): void {
-		instance.linearGradient(this.mLinearGradient)
-	}
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	mLinearGradient: LinearGradientOptions = {
 	direction: GradientDirection.Left,
@@ -1402,16 +1376,6 @@ function commonStyle(this: StackAttribute, componentKey: string){
 	return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string){
-	this.key(componentKey)
-	return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string){
-	this.key(componentKey)
-	return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string){
 	this.key(componentKey)
 	return this
@@ -1591,8 +1555,6 @@ struct LinearGradientPage {
 	@State _linearGradientSliderModifier: SliderModifier = new SliderModifier()
 	@State _linearGradientSpanModifier: SpanModifier = new SpanModifier()
 	@State _linearGradientStackModifier: StackModifier = new StackModifier()
-	@State _linearGradientStepperModifier: StepperModifier = new StepperModifier()
-	@State _linearGradientStepperItemModifier: StepperItemModifier = new StepperItemModifier()
 	@State _linearGradientSwiperModifier: SwiperModifier = new SwiperModifier()
 	@State _linearGradientTabContentModifier: TabContentModifier = new TabContentModifier()
 	@State _linearGradientTabsModifier: TabsModifier = new TabsModifier()
@@ -1697,8 +1659,6 @@ struct LinearGradientPage {
 			this._linearGradientSliderModifier.mLinearGradient = value.linearGradient
 			this._linearGradientSpanModifier.mLinearGradient = value.linearGradient
 			this._linearGradientStackModifier.mLinearGradient = value.linearGradient
-			this._linearGradientStepperModifier.mLinearGradient = value.linearGradient
-			this._linearGradientStepperItemModifier.mLinearGradient = value.linearGradient
 			this._linearGradientSwiperModifier.mLinearGradient = value.linearGradient
 			this._linearGradientTabContentModifier.mLinearGradient = value.linearGradient
 			this._linearGradientTabsModifier.mLinearGradient = value.linearGradient
@@ -1868,32 +1828,6 @@ struct LinearGradientPage {
 					.showTips(true)
 					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientSliderModifier)
-			}
-			if (this.targetView == 'Stepper') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._linearGradientStepperModifier)
-			}
-			if (this.targetView == 'StepperItem') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-						.backgroundColor(Color.Red)
-						.commonStyle(this.componentKey)
-						.attributeModifier(this._linearGradientStepperItemModifier)
-				}
-					.backgroundColor(Color.Yellow)
-					.width('100%')
-					.height('100%')
 			}
 			if (this.targetView == 'Text') {
 				Text('text1')

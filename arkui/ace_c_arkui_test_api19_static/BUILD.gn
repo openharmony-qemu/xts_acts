@@ -18,7 +18,7 @@ ohos_js_app_static_suite("ActsAceCArkUI19StaticTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsAceCArkUI19StaticTest"
-  part_name = "ets_runtime"
-  subsystem_name = "arkcompiler"
+  part_name = "ace_engine"
+  subsystem_name = "arkui"
 }
 

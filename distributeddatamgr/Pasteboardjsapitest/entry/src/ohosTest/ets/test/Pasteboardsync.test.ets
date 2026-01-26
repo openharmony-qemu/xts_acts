@@ -72,7 +72,8 @@ export default function pasteboardSyncTest() {
       done();
     })
     beforeEach(() => {
-      error = undefined
+      error = undefined;
+      systemPasteboard.clearDataSync();
     })
 
     /**
@@ -176,7 +177,6 @@ export default function pasteboardSyncTest() {
       console.info(tag + "SUB_Pasteboard_Local_SDK_PasteboardSync_0400 ---------end")
     })
 
-
     /**
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardSync_0500
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardSync_0500
@@ -185,12 +185,12 @@ export default function pasteboardSyncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_Pasteboard_Local_SDK_PasteboardSync_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("SUB_Pasteboard_Local_SDK_PasteboardSync_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(tag + "SUB_Pasteboard_Local_SDK_PasteboardSync_0500 ---------start")
       let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "pasteboard");
       let systemPasteBoard = pasteboard.getSystemPasteboard();
 
-      systemPasteBoard.setData(pasteData);
+      await systemPasteBoard.setData(pasteData);
       console.info(tag + "Succeeded in setting PasteData");
 
       let resultFlg = systemPasteBoard.hasDataSync();

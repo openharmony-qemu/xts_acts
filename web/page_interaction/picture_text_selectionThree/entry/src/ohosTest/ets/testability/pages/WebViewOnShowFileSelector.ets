@@ -35,10 +35,11 @@ struct webViewController {
   @State isPageEnd: number = -1;
   @State getSuggestedName:string = ''
   @State getDefaultPath:string = ''
-  @State getDescriptions:string = ''
+  @State getDescriptions:number = 90
   @State isAcceptAllOptionExcluded:boolean = true;
   @State mimeType:string = ''
   @State acceptableType:string = ''
+  @State getAcceptableFileTypesArr:number = 70
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -79,7 +80,7 @@ struct webViewController {
                 let buttonOne = await driver.findComponent(ON.text('保存文件'));
                 await buttonOne.click()
                 await Utils.waitForReleaseDriver(this.str, driver)
-                Utils.emitEvent(this.getSuggestedName, 20260105);
+                let  getSuggestedName = this.getSuggestedName
                 let buttonTwo = await driver.findComponent(ON.text('重置内容'));
                 if(buttonTwo) {
                   await buttonTwo.click()
@@ -87,7 +88,9 @@ struct webViewController {
                   let buttonThree = await driver.findComponent(ON.text('取消'));
                   await buttonThree.click()
                 }
-                
+                setTimeout(() => {
+                  Utils.emitEvent(getSuggestedName, 20260105);
+                },1000)
                 break;
             }
 
@@ -95,11 +98,10 @@ struct webViewController {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-                // await Utils.sleep(1000);
                 let buttonOne = await driver.findComponent(ON.text('保存文件'));
                 await buttonOne.click()
                 await Utils.waitForReleaseDriver(this.str, driver)
-                Utils.emitEvent(this.getDefaultPath, 20260106);
+                let getDefaultPath = this.getDefaultPath;
                 let buttonTwo = await driver.findComponent(ON.text('重置内容'));
                 if(buttonTwo) {
                   await buttonTwo.click()
@@ -107,6 +109,9 @@ struct webViewController {
                   let buttonThree = await driver.findComponent(ON.text('取消'));
                   await buttonThree.click()
                 }
+                setTimeout(() => {
+                  Utils.emitEvent(getDefaultPath, 20260106);
+                },1000)
                 break;
             }
 
@@ -114,11 +119,10 @@ struct webViewController {
               this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-              await Utils.sleep(1000);
               let buttonOne = await driver.findComponent(ON.text('保存文件'));
               await buttonOne.click()
               await Utils.waitForReleaseDriver(this.str, driver)
-              Utils.emitEvent(this.getDescriptions, 20260107);
+              let getDescriptions = this.getDescriptions;
               let buttonTwo = await driver.findComponent(ON.text('重置内容'));
               if(buttonTwo) {
                 await buttonTwo.click()
@@ -126,13 +130,15 @@ struct webViewController {
                 let buttonThree = await driver.findComponent(ON.text('取消'));
                 await buttonThree.click()
               }
+              setTimeout(() => {
+                Utils.emitEvent(getDescriptions, 20260107);
+              },1000)
               break;
             }
             case "emitOnShowFileSelector04": {
               this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-              await Utils.sleep(1000);
               let buttonOne = await driver.findComponent(ON.text('保存文件'));
               await buttonOne.click()
               await Utils.waitForReleaseDriver(this.str, driver)
@@ -151,11 +157,10 @@ struct webViewController {
               this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-              await Utils.sleep(1000);
               let buttonOne = await driver.findComponent(ON.text('保存文件'));
               await buttonOne.click()
               await Utils.waitForReleaseDriver(this.str, driver)
-              Utils.emitEvent(this.mimeType, 20260109);
+              let mimeType = this.mimeType;
               let buttonTwo = await driver.findComponent(ON.text('重置内容'));
               if(buttonTwo) {
                 await buttonTwo.click()
@@ -163,6 +168,9 @@ struct webViewController {
                 let buttonThree = await driver.findComponent(ON.text('取消'));
                 await buttonThree.click()
               }
+              setTimeout(() => {
+                Utils.emitEvent(mimeType, 20260109);
+              },1000)
               break;
             }
 
@@ -170,11 +178,10 @@ struct webViewController {
               this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-              await Utils.sleep(500);
               let buttonOne = await driver.findComponent(ON.text('保存文件'));
               await buttonOne.click()
               await Utils.waitForReleaseDriver(this.str, driver)
-              Utils.emitEvent(this.acceptableType, 20260110);
+              let acceptableType = this.acceptableType
               let buttonTwo = await driver.findComponent(ON.text('重置内容'));
               if(buttonTwo) {
                 await buttonTwo.click()
@@ -182,6 +189,83 @@ struct webViewController {
                 let buttonThree = await driver.findComponent(ON.text('取消'));
                 await buttonThree.click()
               }
+              setTimeout(() => {
+              Utils.emitEvent(acceptableType, 20260110);
+              },1000)
+              break;
+            }
+
+            case "emitOnShowFileSelector07": {
+                this.isPageEnd = -1
+                this.controller.loadUrl("resource://rawfile/showSaveFilePicker1.html")
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+
+                let buttonOne = await driver.findComponent(ON.text('保存文件'));
+                await buttonOne.click()
+                await Utils.waitForReleaseDriver(this.str, driver)
+                Utils.emitEvent(this.getDescriptions, 202601077);
+                let buttonTwo = await driver.findComponent(ON.text('重置内容'));
+                if(buttonTwo) {
+                  await buttonTwo.click()
+                } else {
+                  let buttonThree = await driver.findComponent(ON.text('取消'));
+                  await buttonThree.click()
+                }
+              break;
+            }
+
+            case "emitOnShowFileSelector08": {
+                this.isPageEnd = -1
+                this.controller.loadUrl("resource://rawfile/showSaveFilePicker1.html")
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('保存文件'));
+                await buttonOne.click()
+                await Utils.waitForReleaseDriver(this.str, driver)
+                Utils.emitEvent(this.isAcceptAllOptionExcluded, 202601078);
+                let buttonTwo = await driver.findComponent(ON.text('重置内容'));
+                if (buttonTwo) {
+                  await buttonTwo.click()
+                } else {
+                  let buttonThree = await driver.findComponent(ON.text('取消'));
+                  await buttonThree.click()
+                }
+              break;
+            }
+
+            case "emitOnShowFileSelector09": {
+                this.isPageEnd = -1
+                this.controller.loadUrl("resource://rawfile/showSaveFilePicker1.html")
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('保存文件'));
+                await buttonOne.click()
+                await Utils.waitForReleaseDriver(this.str, driver)
+                Utils.emitEvent(this.getAcceptableFileTypesArr, 202601079);
+                let buttonTwo = await driver.findComponent(ON.text('重置内容'));
+                if (buttonTwo) {
+                  await buttonTwo.click()
+                } else {
+                  let buttonThree = await driver.findComponent(ON.text('取消'));
+                  await buttonThree.click()
+                }
+              break;
+            }
+
+            case "emitOnShowFileSelector10": {
+              this.isPageEnd = -1
+              this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              let buttonOne = await driver.findComponent(ON.text('保存文件'));
+              await buttonOne.click()
+              await Utils.waitForReleaseDriver(this.str, driver)
+              let getAcceptableFileTypesArr = this.getAcceptableFileTypesArr
+              let buttonTwo = await driver.findComponent(ON.text('重置内容'));
+              if(buttonTwo) {
+                await buttonTwo.click()
+              } else {
+                let buttonThree = await driver.findComponent(ON.text('取消'));
+                await buttonThree.click()
+              }
+              Utils.emitEvent(getAcceptableFileTypesArr, 2026010710);
               break;
             }
 
@@ -200,13 +284,14 @@ struct webViewController {
 
           this.getSuggestedName = event.fileSelector.getSuggestedName();
           this.getDefaultPath = event.fileSelector.getDefaultPath();
-          this.getDescriptions = JSON.stringify(event.fileSelector.getDescriptions());
+          this.getDescriptions = event.fileSelector.getDescriptions().length;
           this.isAcceptAllOptionExcluded = event.fileSelector.isAcceptAllOptionExcluded();
           console.log('tian Suggested name are ' + event.fileSelector.getSuggestedName());
           console.log('tian Default Path are ' + event.fileSelector.getDefaultPath());
           console.log('tian Descriptions are ' + event.fileSelector.getDescriptions());
           console.log('tian Exclude accept all options are ' + event.fileSelector.isAcceptAllOptionExcluded());
           let accepts = event.fileSelector.getAcceptableFileTypes();
+          this.getAcceptableFileTypesArr = event.fileSelector.getAcceptableFileTypes().length;
           for (let i = 0; i < accepts.length; i++) {
             for (let j = 0; j < accepts[i].length; j++) {
               this.mimeType = accepts[i][j].mimeType;

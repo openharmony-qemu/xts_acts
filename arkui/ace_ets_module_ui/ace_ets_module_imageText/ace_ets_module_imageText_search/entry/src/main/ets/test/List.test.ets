@@ -56,6 +56,7 @@ import SearchSetStyledPlaceholderTest from './SearchApi22Test/SearchSetStyledPla
 import SearchOnWillAttachIMETest from './SearchApi22Test/SearchOnWillAttachIME.test';
 import SearchCompressLeadingPunctuation from './SearchTest/SearchCompressLeadingPunctuation.test';
 import SearchCompressLeadingPunctuationModifier from './SearchTest/SearchCompressLeadingPunctuationModifier.test';
+import SearchTextDirectionTest from './SearchApi23Test/SearchTextDirection.test';
 
 
 export default function testsuite() {
@@ -101,4 +102,5 @@ export default function testsuite() {
   SearchOnWillAttachIMETest()
   SearchCompressLeadingPunctuation()
   SearchCompressLeadingPunctuationModifier()
+  SearchTextDirectionTest()      // Api23
 }

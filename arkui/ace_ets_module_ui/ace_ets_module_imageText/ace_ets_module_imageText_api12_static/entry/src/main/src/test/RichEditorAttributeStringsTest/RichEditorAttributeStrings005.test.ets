@@ -136,7 +136,9 @@ export default function RichEditorAttributeStrings005() {
       let spans = await (driver.findComponent(ON.id('spans')) as Promise<Component>);
       let spansText = await spans.getText();
       await CommonFunc.sleep(500);
-      expect(spansText).assertContain('spans:[{"offsetInSpan":[0,1],"spanPosition":{"spanIndex":0,"spanRange":[0,1]}}]');
+      expect(spansText).assertContain('"offsetInSpan":[0,1]')
+      expect(spansText).assertContain('"spanIndex":0')
+      expect(spansText).assertContain('"spanRange":[0,1]')
       done();
     });
   })

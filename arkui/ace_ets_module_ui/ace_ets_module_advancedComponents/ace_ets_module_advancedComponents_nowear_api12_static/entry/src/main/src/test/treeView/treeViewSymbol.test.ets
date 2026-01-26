@@ -47,7 +47,7 @@ export default function treeViewSymbol() {
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(4000);
           // console.info("push treeViewSymbol page result:" + JSON.stringify(result));
         }
       } catch (err) {

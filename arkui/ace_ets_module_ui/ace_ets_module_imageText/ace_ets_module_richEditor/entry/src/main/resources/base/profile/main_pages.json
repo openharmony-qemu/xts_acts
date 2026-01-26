@@ -172,6 +172,11 @@
   "MainAbility/pages/RichEditorApi22/richEditorObserver",
   "MainAbility/pages/RichEditorApi22/richEditorSupportSvg2",
   "MainAbility/pages/RichEditorApi22/RichEditorEnableSelectedDataDetector",
-  "MainAbility/pages/RichEditorApi22/RichEditorOnWillAttachIME"
+  "MainAbility/pages/RichEditorApi22/RichEditorOnWillAttachIME",
+  "MainAbility/pages/RichEditorApi23/RichEditorBuilderSpan",
+  "MainAbility/pages/RichEditorApi23/RichEditorCompressLeadingPunctuation",
+  "MainAbility/pages/RichEditorApi23/RichEditorParagraphStyle",
+  "MainAbility/pages/RichEditorApi23/RichEditorSingleLine",
+  "MainAbility/pages/RichEditorApi23/RichEditorTextStyle"
   ]
 }

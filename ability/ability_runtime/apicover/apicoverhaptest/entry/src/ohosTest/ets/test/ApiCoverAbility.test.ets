@@ -30,7 +30,7 @@ import Want from '@ohos.app.ability.Want';
 import { BusinessError } from '@ohos.base';
 import commonEventManager from '@ohos.commonEventManager';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
-import { AbilityLifecycleCallback } from '@kit.AbilityKit';
+import { AbilityLifecycleCallback, InteropAbilityLifecycleCallback } from '@kit.AbilityKit';
 import { Driver } from '@ohos.UiTest';
 import DemoProcess from '../process/AProcess';
 import { window } from '@kit.ArkUI';
@@ -912,6 +912,7 @@ export default function ApiCoverTest() {
       expect(wantConstant.Flags.FLAG_AUTH_PERSISTABLE_URI_PERMISSION).assertEqual(0x00000040);
       done();
     });
+    
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContext_0100
      * @tc.number SUB_Ability_AbilityRuntime_ApplicationContext_0100
@@ -1013,10 +1014,38 @@ export default function ApiCoverTest() {
            try{expect().assertFail()}catch{}
         }
       }
+      let lifeCallback2:InteropAbilityLifecycleCallback = {
+        onAbilityCreate:(ability: object)=>{
+         console.log(`${tag} onAbilityCreate success, ability: ${JSON.stringify(ability)}`);
+         try{expect().assertFail()}catch{}
+        },
+        onWindowStageCreate:(ability: object, window: window.WindowStage)=>{
+           console.log(`${tag} onWindowStageCreate success, ability: ${JSON.stringify(ability)}`);
+           try{expect().assertFail()}catch{}
+        },
+        onWindowStageDestroy:(ability: object, window: window.WindowStage)=>{
+           console.log(`${tag} onWindowStageDestroy success, ability: ${JSON.stringify(ability)}`);
+           try{expect().assertFail()}catch{}
+        },
+        onAbilityDestroy:(ability: object)=>{
+           console.log(`${tag} onAbilityDestroy success, ability: ${JSON.stringify(ability)}`);
+           try{expect().assertFail()}catch{}
+        },
+        onAbilityForeground:(ability: object)=>{
+           console.log(`${tag} onAbilityForeground success, ability: ${JSON.stringify(ability)}`);
+           try{expect().assertFail()}catch{}
+        },
+        onAbilityBackground:(ability: object)=>{
+           console.log(`${tag} onAbilityBackground success, ability: ${JSON.stringify(ability)}`);
+           try{expect().assertFail()}catch{}
+        }
+      }
+      console.log(`${tag}, it end ` + JSON.stringify(lifeCallback2));
       let application:common.ApplicationContext = AppStorage.get<common.ApplicationContext>("applicationContext") as common.ApplicationContext
       let id: number =application.on('abilityLifecycle', lifeCallback);
       AppStorage.get<common.ApplicationContext>("applicationContext")?.off("abilityLifecycle", id, (err,data)=>{
         expect(err?.code == undefined).assertTrue();
+        expect(lifeCallback2 != undefined).assertTrue();
         console.log(`${tag}, it end`);
         done();
       })

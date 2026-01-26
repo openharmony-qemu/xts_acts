@@ -37,6 +37,7 @@ group("builtin_static") {
       "dataview_standard_test_static:ActsDataviewStaticTest",
       "builtinsupply_standard_test_static:ActsBuiltinsupplyStaticTest",
       "map_standard_test_static:ActsMapStaticTest",
+      "set_standard_test_static:ActsSetStaticTest",
     ]
   }
 }

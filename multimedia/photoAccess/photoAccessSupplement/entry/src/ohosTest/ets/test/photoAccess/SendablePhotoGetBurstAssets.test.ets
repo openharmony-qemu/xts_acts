@@ -294,6 +294,100 @@ export default function sendablePhotoAccessHelperSuppAllTest() {
       done();
     })
 
+    /**
+     * @tc.number    MEDIA_LIBRARY_KIT_SENDABLEPHOTO_GET_BURST_001
+     * @tc.name      MEDIA_LIBRARY_KIT_SENDABLEPHOTO_GET_BURST_001
+     * @tc.desc      Testing GetBurstAssets
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("MEDIA_LIBRARY_KIT_SENDABLEPHOTO_GET_BURST_001", Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_LIBRARY_KIT_SENDABLEPHOTO_GET_BURST_001';
+      try {
+        let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(context);
+        await phAccessHelper.getBurstAssets('e719d696-09fa-44f8-8e9e-ec3f215aa62a', null as ESObject);
+        console.info(TAG, testName, 'getBurstAssets success');
+        expect().assertFail();
+      }
+      catch (error){
+        console.error(TAG, testName, error.message, error.code);
+        expect(error.code).assertEqual('14000011');
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    MEDIA_LIBRARY_KIT_SENDABLEPHOTO_GET_BURST_002
+     * @tc.name      MEDIA_LIBRARY_KIT_SENDABLEPHOTO_GET_BURST_002
+     * @tc.desc      Testing GetBurstAssets
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("MEDIA_LIBRARY_KIT_SENDABLEPHOTO_GET_BURST_002", Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_LIBRARY_KIT_SENDABLEPHOTO_GET_BURST_002';
+      try {
+        let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(context);
+        let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+        let fetchOptions: photoAccessHelper.FetchOptions = {
+          fetchColumns: [],
+          predicates: predicates
+        };
+
+        let result = await phAccessHelper.getBurstAssets(null as ESObject,fetchOptions);
+        console.info(TAG, testName, 'getBurstAssets success', result);
+        expect().assertFail();
+      }
+      catch (error){
+        console.error(TAG, testName, error.message, error.code);
+        expect(error.code).assertEqual('401');
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.number    MEDIA_LIBRARY_KIT_SENDABLEPHOTO_ALBUM_GETASSETS_001
+     * @tc.name      MEDIA_LIBRARY_KIT_SENDABLEPHOTO_ALBUM_GETASSETS_001
+     * @tc.desc      Testing AbsAlbum getAssets 14000011
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("MEDIA_LIBRARY_KIT_SENDABLEPHOTO_ALBUM_GETASSETS_001", Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_LIBRARY_KIT_SENDABLEPHOTO_ALBUM_GETASSETS_001';
+      let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(context);
+      console.info('getAlbumsDemo');
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOptions: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        phAccessHelper.getAlbums(sendablePhotoAccessHelper.AlbumType.SYSTEM, sendablePhotoAccessHelper.AlbumSubtype.CAMERA, fetchOptions).then( async (fetchResult) => {
+          if (fetchResult === undefined) {
+            console.error(TAG,testName,'getAlbumsPromise fetchResult is undefined');
+            return;
+          }
+          let album: sendablePhotoAccessHelper.Album = await fetchResult.getFirstObject();
+          console.info(TAG,testName,'getAlbumsPromise successfully, albumName: ' + album.albumName);
+          album.getAssets(undefined as ESObject);
+          fetchResult.close();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(TAG,testName,`getAlbumsPromise failed with err: ${err.code}, ${err.message}`);
+          expect(err.code).assertEqual('14000011');
+          done();
+        });
+      } catch (err) {
+        console.error(TAG,testName,`try getAlbumsPromise failed with err: ${err.code}, ${err.message}`);
+        done();
+      }
+    })
 
   })
 }

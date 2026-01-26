@@ -55,7 +55,6 @@ export default function flexGrowTest() {
   let supportView = [
     'RowSplit',
     'ColumnSplit',
-    'Stepper',
     'Select',
     'SideBarContainer',
     'WaterFlow'

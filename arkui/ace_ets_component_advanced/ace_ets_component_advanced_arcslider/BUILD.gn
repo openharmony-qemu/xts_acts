@@ -19,7 +19,8 @@ group("componentArcSliderTest") {
       deps = [ "ace_ets_component_advanced_arcslider_api16:ActsAceEtscomponentArcSliderTest",
                "ace_ets_component_advanced_arcslider_no_wear_api16:ActsAceEtscomponentArcSliderNoWearTest" ]
     } else {
-      deps = [ "ace_ets_component_advanced_arcslider_no_wear_api16:ActsAceEtscomponentArcSliderNoWearTest" ]
+      deps = [ "ace_ets_component_advanced_arcslider_no_wear_api16:ActsAceEtscomponentArcSliderNoWearTest",
+               "ace_ets_component_advanced_arcslider_api23_static:ActsAceEtsComponentArcSliderApi23StaticTest" ]
     }
   }
 }

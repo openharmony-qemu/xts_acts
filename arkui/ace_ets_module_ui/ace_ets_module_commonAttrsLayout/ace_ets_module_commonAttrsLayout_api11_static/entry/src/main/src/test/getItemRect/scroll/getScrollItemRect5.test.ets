@@ -44,7 +44,7 @@ interface MyParams {
 
 export default function getScrollItemRect5() {
   describe('getScrollItemRect5', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getScrollItemRect5 beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")

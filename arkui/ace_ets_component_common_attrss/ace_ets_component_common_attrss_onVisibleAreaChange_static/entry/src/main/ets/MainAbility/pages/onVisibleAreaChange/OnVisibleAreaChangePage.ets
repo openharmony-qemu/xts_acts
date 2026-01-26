@@ -20,11 +20,11 @@ import { MessageManager, Callback, Message } from '../../common/MessageManager';
 import  { AnimatorResult, AnimatorOptions, PlayMode } from '@ohos.animator';
 import {BadgeParamWithNumber,Divider,ColumnOptions,ListItemGroup,Axis,MenuItemGroup,TabContent,FlowItem,GridRowOptions,BreakpointsReference,GridColOptions,ColumnOptions,SideBarContainerType,HorizontalAlign,VerticalAlign,AlignRuleOption,
 GutterOption,BreakPoints,BadgeParam,BadgeStyle,GridColColumnOption,GridColOptions,GridItem,GridCol,GridColColumnOption,GridRowDirection,
-ToggleType,TimePicker,StepperItem,SliderStyle,FlexDirection,ProgressType,TextTimerController,PatternLock,ScrollBar,applyStyles,
+ToggleType,TimePicker,SliderStyle,FlexDirection,ProgressType,TextTimerController,PatternLock,ScrollBar,applyStyles,
 MenuItemOptions,MenuItem,$r,Entry,Column,Component,Button,ClickEvent,ForEach,Text,Row,List,ListItem,Color,FlexAlign,ExpectedFrameRateRange,Scroll,Margin,
 CommonMethod,Curve,AlphabetIndexer,ScrollAnimationOptions,Blank,Checkbox,CheckboxGroup,DataPanel,DatePicker,Gauge,Image,NavDestination,
   ImageAnimator,LoadingProgress,Marquee,Menu,Navigation,Progress,QRCode,Radio,Rating,RichText,Scroller,Flex,BarState,
-  ScrollDirection,Search,Select,Slider,Stepper,TextArea,TextClock,ImageFit,TextInput,TextPicker,TextTimer,Toggle,Web,Circle,Ellipse,Line,Polyline,Polygon,Path,Rect,Shape,Badge
+  ScrollDirection,Search,Select,Slider,TextArea,TextClock,ImageFit,TextInput,TextPicker,TextTimer,Toggle,Web,Circle,Ellipse,Line,Polyline,Polygon,Path,Rect,Shape,Badge
 ,ColumnSplit,Counter,GridRow,Grid,Refresh,RelativeContainer,RowSplit,TextAlign,SideBarContainer,Stack,Swiper,Tabs,WaterFlow,DataPanelType,
   Builder
 } from '@ohos.arkui.component'
@@ -272,15 +272,6 @@ commonStyle(instance: CommonMethod) {
             Slider()
               .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
-          } else if (this.targetView == 'Stepper') {
-            Stepper() {
-              StepperItem()
-            }.backgroundColor(Color.Pink).applyStyles(this.commonStyle)
-
-          } else if (this.targetView == 'StepperItem') {
-            Stepper() {
-              StepperItem().backgroundColor(Color.Pink).applyStyles(this.commonStyle)
-            }
           } else if (this.targetView == 'Text') {
             Text('text')
               .fontSize(15)

@@ -38,16 +38,11 @@ let testAbilityContext: common.UIAbilityContext;
 export default function comSizeAbilityTest_29() {
   describe('comSizeAbilityTest_29', () => {
 
-
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
-
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("comSizeAbilityTest_29 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
     });
+
     beforeEach(() => {
       console.info("comSizeAbilityTest_29 beforeEach start")
       const comSizeAbilityTest_29 = AppStorage.get<Router>("router") as Router;
@@ -78,6 +73,8 @@ export default function comSizeAbilityTest_29() {
      */
 it('comSizeAbilityTestJsunit_static_63', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_63 START')
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Line_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Line_Father");
@@ -138,6 +135,8 @@ it('comSizeAbilityTestJsunit_static_63', Level.LEVEL0, async (done: () => void):
      */
 it('comSizeAbilityTestJsunit_static_64', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_64 START')
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Select_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Select_Father");
@@ -198,6 +197,8 @@ it('comSizeAbilityTestJsunit_static_64', Level.LEVEL0, async (done: () => void):
      */
 it('comSizeAbilityTestJsunit_static_65', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_65 START')
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Image_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Image_Father");

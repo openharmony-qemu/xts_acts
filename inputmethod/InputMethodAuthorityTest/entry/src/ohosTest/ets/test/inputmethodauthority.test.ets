@@ -651,6 +651,7 @@ export default function inputMethodAuthorityJSUnit() {
           };
         inputMethod.onAttachmentDidFail(attachmentDidFailCallback);
         console.info(`====>Sub_InputMethod_IMF_EasyConn_0900 onAttachmentDidFail success`);
+        inputMethod.offAttachmentDidFail();
         inputMethod.offAttachmentDidFail(attachmentDidFailCallback);
         console.info(`====>Sub_InputMethod_IMF_EasyConn_0900 offAttachmentDidFail success`);
         let t = setTimeout(() => {

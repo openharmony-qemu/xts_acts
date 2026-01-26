@@ -68,6 +68,10 @@ import RdbstoreRekeyEts from "./RdbStoreRekeyEts.test";
 import RelationalStoreRekeyExEtsTest from "./RelationalStoreRekeyExEtsTest.test";
 import RdbStoreGetSqlInfoTest from "./RdbStoreGetSqlInfoEts.test";
 import RdbStoreSetLocaleTest from "./RdbStoreSetLocaleEts.test"
+import CloudDataErrorCode from "./CloudDataErrorCode.test"
+import RelationalStoreBatchInsert from "./RelationalStoreBatchInsert.test"
+import RdbBatchInsertTransaction from "./RdbBatchInsertTransaction.test"
+import RdbLockRow from "./RdbLockRow.test"
 
 export default function testsuite() {
   RelationStoreRdbStoreTest();
@@ -134,4 +138,10 @@ export default function testsuite() {
 
   RdbStoreGetSqlInfoTest();
   RdbStoreSetLocaleTest();
+
+  CloudDataErrorCode();
+
+  RelationalStoreBatchInsert();
+  RdbBatchInsertTransaction();
+  RdbLockRow();
 }

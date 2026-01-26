@@ -44,9 +44,6 @@ export default function FocusableTest() {
   
   let supportView = [
     'Select',
-
-    'Stepper',
-    'StepperItem',
     'TextPicker',
     'TimePicker',
 

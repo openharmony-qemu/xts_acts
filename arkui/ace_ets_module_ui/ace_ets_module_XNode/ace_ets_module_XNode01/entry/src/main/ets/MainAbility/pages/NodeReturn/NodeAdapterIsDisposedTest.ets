@@ -89,6 +89,10 @@ class MyNodeAdapterController extends NodeController {
 struct ListNodeTest {
   adapterController: MyNodeAdapterController = new MyNodeAdapterController();
 
+  aboutToAppear(){
+    this.adapterController.nodeAdapter?.dispose();
+  }
+
   build() {
     Column() {
       NodeContainer(this.adapterController).height('30%')

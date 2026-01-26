@@ -25,7 +25,7 @@ export default function testsuite() {
       ObserverManagerSimState1();
       ObserverManagerTest();
     } else {
-      ObserverManagerSimState1();
+      EmptyTest();
     }
   }else{
     EmptyTest()

@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function getWaterFlowItemRect2() {
   describe('getWaterFlowItemRect2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getWaterFlowItemRect2 beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")

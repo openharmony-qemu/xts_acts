@@ -580,7 +580,6 @@ export default function urlTest1() {
       const TAG = "testParseAndIterateParams0001";
       try {
         let searchParamsObject = new Url.URLParams("");
-        // let newArrayValue: Array<[String, String]> = Array.from<[string, string]>(searchParamsObject.entries());//TypeError: No matching call signature for from(EntryIterator) [Url.test.ets:543:54]
         let newArrayValue: [string, string][] = Array.from(searchParamsObject.entries());
         expect(newArrayValue.toString()).assertEqual('');
       } catch (err: BusinessError) {

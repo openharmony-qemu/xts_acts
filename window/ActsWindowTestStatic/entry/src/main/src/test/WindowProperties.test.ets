@@ -3204,7 +3204,7 @@ export default function WindowPropertiesTest() {
                     let windowClass :window.Window= windowStage.getMainWindowSync();
                     let windowId:int = windowClass.getWindowProperties().id;
                     console.info(caseName + ' windowId: ' + windowId);
-                    let windowIdArray:Array<Double> = [0, windowId];
+                    let windowIdArray:Array<int> = [0, windowId];
                     let configs: window.WindowSnapshotConfiguration = {
                         useCache: false
                     }

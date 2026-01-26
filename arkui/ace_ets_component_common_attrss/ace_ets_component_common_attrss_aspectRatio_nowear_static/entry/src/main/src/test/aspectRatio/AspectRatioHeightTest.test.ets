@@ -37,9 +37,6 @@ interface Attrs{
 }
 
 export default function aspectRatioHeightTest() {
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.aspectRatio.nowear.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
-
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
     'Select',
@@ -62,7 +59,6 @@ export default function aspectRatioHeightTest() {
     parentWidth: parentWidth,
     parentHeight: parentHeight
   }
-
   //Test content and expected results
   let testValues: TestValue[] = [{
     describe: 'SetNumber',
@@ -72,7 +68,7 @@ export default function aspectRatioHeightTest() {
     },
     expectValue: {
       height: '100.00vp',
-      heightValue:  AppStorage.get<UIContext>('uiContext')!.vp2px(100),
+      heightValue: 100,
       aspectRatio: 2.0
     }
   }, {
@@ -83,14 +79,15 @@ export default function aspectRatioHeightTest() {
     },
     expectValue: {
       height: '100.00vp',
-      heightValue: AppStorage.get<UIContext>('uiContext')!.vp2px(100),
+      heightValue: 100,
       aspectRatio: 0.5
     }
   }]
 
   describe('AspectRatioHeightTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("aspectRatioHeightTest beforeAll start");
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.aspectRatio.nowear.test.static", "EntryAbility")
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Gets Rect information for the target component
@@ -101,9 +98,10 @@ export default function aspectRatioHeightTest() {
       let targetRectHeight = targetRect.bottom - targetRect.top;
       let targetRectAspectRatio = targetRectWidth / targetRectHeight;
       let attrs = data.viewObj
+      data.testValue.expectValue.heightValue =  UIContext.resolveUIContext()!.vp2px(100)
+
       console.info('[' + data.caseTag + '] data.viewObj.$attrs.height is:' + attrs?.getElement('$attrs').getString('height'));
       console.info('[' + data.caseTag + '] data.viewObj.$attrs.aspectRatio is:' + attrs?.getElement('$attrs').getDouble('aspectRatio'));
-
       //Check height and aspectRatio are set successfully
       expect(attrs?.getElement('$attrs').getString('height')).assertEqual(data.testValue.expectValue.height);
       expect(attrs?.getElement('$attrs').getDouble('aspectRatio')).assertEqual(data.testValue.expectValue.aspectRatio);

@@ -7,6 +7,7 @@
     "MainAbility/pages/layoutInspector/layoutInspector",
     "MainAbility/pages/pluginComponent",
     "MainAbility/pages/assemblyCallback",
-    "MainAbility/pages/enumTest/enumTest"
+    "MainAbility/pages/enumTest/enumTest",
+    "MainAbility/pages/LayoutChildren"
   ]
 }

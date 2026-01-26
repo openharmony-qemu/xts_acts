@@ -25,7 +25,7 @@ import {
   PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { MultiNavigation, MultiNavPathStack, SplitPolicy } from './mainpage/MultiNavigation';
+import {MultiNavigation,MultiNavPathStack, SplitPolicy}  from './mainpage/MultiNavigation';;
 
 @Entry
 @Component
@@ -34,8 +34,8 @@ struct MultiNavigation18 {
   @State text:string = ''
 
   aboutToAppear(): void {
-// this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
-    // this.pageStack.setKeepBottomPage(true);
+this.pageStack.pushPath(new NavPathInfo('PageHome1',"paramTest",(popInfo) => {}), false, SplitPolicy.HOME_PAGE);
+    this.pageStack.setKeepBottomPage(true);
   }
 
   @Builder
@@ -58,17 +58,16 @@ struct MultiNavigation18 {
       MultiNavigation({
         navDestination: this.PageMap,
         multiStack: this.pageStack,
-        // onHomeShowInTop: (name) => {
-        // }
+        onHomeShowInTop: (name: string) => {}
       })
-        // .width(350).height(400).border({width:1})
+        .width(350).height(400).border({width:1})
 
       Button('pushPath PageDetail1').onClick((event: ClickEvent) => {
-        //this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest"), false, SplitPolicy.HOME_PAGE);
+        this.pageStack.pushPath(new NavPathInfo('PageDetail1',"paramTest"), false, SplitPolicy.HOME_PAGE);
       }).id('MultiNavigation18_btn1')
 
       Button('pushPath PageDetail2').onClick((event: ClickEvent) => {
-        //this.pageStack.pushPath(new NavPathInfo('PageDetail2',"paramTest"), false, SplitPolicy.HOME_PAGE);
+        this.pageStack.pushPath(new NavPathInfo('PageDetail2',"paramTest"), false, SplitPolicy.HOME_PAGE);
       }).id('MultiNavigation18_btn2')
 
       Text(this.text).id('MultiNavigation18_text1')

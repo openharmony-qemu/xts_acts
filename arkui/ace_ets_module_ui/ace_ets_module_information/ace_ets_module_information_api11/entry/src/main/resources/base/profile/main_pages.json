@@ -3,14 +3,11 @@
         "MainAbility/pages/index/index",
         "MainAbility/pages/gauge/gauge",
         "MainAbility/pages/gauge/gaugeUx",
-        "MainAbility/pages/Counter/CounterEnable",
         "MainAbility/pages/Badge/Badge",
-        "MainAbility/pages/Counter/Counter",
         "MainAbility/pages/DataPanel/DataPanel",
         "MainAbility/pages/Qrcode/Qrcode",
         "MainAbility/pages/Badge/BadgeIndex",
         "MainAbility/pages/DataPanel/DataPanel_001",
-        "MainAbility/pages/advancedCounter/advancedCounterIndex",
         "MainAbility/pages/Qrcode/QRCodePage",
 	"MainAbility/pages/patternLock/patternLock",
         "MainAbility/pages/LoadingProgress/loadingProgress",
@@ -19,7 +16,6 @@
         "MainAbility/pages/Qrcode/QrCode3",
 	"MainAbility/pages/Search/search",
         "MainAbility/pages/gauge/gauge3",
-        "MainAbility/pages/DataPanel/DatalPanelUI",
-        "MainAbility/pages/Counter/CounterApi/CounterApi"
+        "MainAbility/pages/DataPanel/DatalPanelUI"
     ]
 }

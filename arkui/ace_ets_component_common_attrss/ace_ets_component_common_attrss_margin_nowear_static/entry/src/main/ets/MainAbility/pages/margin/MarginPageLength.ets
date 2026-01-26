@@ -119,8 +119,6 @@ import {
   Padding,
   Blank,
   RichText,
-  Stepper,
-  StepperItem,
   MenuItemGroup,
   ListItem,
   Axis,
@@ -255,21 +253,6 @@ struct MarginPageLength {
           }.tabBar('Tabs1').key(this.referenceComponentKey)
         }
         .width(this.parentWidth).height(this.parentHeight).key(this.parentComponentKey)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-          .backgroundColor(Color.Red)
-          .margin(this._margin)
-          .key(this.componentKey)
-          .width('100%')
-          .height('100%')
-        }
-        .backgroundColor(Color.Yellow).width(this.parentWidth).height(this.parentHeight)
-        .key(this.parentComponentKey)
       } else if (this.targetView == 'GridCol') {
         GridRow({
           columns: 1,
@@ -398,14 +381,6 @@ struct MarginPageLength {
               max: 100,
               style: SliderStyle.OutSet
             }).showTips(true).applyStyles(this.commonStyle)
-          } else if (this.targetView == 'Stepper') {
-            Stepper() {
-              StepperItem() {
-                Column() {
-                  Text('Page One')
-                }
-              }
-            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'TextArea') {
             TextArea({
               placeholder: 'The text area can hold an unlimited amount of text. input your word...'

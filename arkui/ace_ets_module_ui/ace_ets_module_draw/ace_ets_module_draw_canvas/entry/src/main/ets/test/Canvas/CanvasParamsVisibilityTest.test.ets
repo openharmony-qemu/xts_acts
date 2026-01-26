@@ -92,7 +92,7 @@ export default function CanvasParamsVisibilityTest() {
       await CommonFunc.sleep(500);
       console.info('CanvasParamsVisibilityTest_0100 click CanvasParamsVisibilityPage_btn_error');
       console.info('CanvasParamsVisibilityTest_0100 errorcode: ' + AppStorage.get('CanvasParamsVisibilityPage_errorcode'));
-      expect(AppStorage.get('CanvasParamsVisibilityPage_errorcode')).assertEqual('103702');
+      expect(AppStorage.get('CanvasParamsVisibilityPage_errorcode')).assertEqual(103702);
       AppStorage.delete('CanvasParamsVisibilityPage_errorcode')
 
       console.info('[CanvasParamsVisibilityTest_0100] END');

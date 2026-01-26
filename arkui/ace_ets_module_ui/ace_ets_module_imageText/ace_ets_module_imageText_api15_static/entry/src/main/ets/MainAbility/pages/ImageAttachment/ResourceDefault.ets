@@ -122,7 +122,13 @@ struct ResourceDefault {
         Text(this.objectFit).id('default_objectFit').height('5%')
         Text(this.layoutStyle).id('default_layoutStyle').height('5%')
       }
-      Text(this.colorFilter).id('default_colorFilter').height('5%')
+      Text() {
+        ImageSpan($r('app.media.startIcon'))
+          .width(50)
+          .height(50)
+          .supportSvg2(true)
+          .colorFilter(this.DrawingColorFilterFirst)
+      }.id('default_colorFilter').height('5%')
     }.width('100%')
   }
 }

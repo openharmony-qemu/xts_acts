@@ -152,6 +152,10 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     });
 
+    afterEach(async () => {
+      await sleep(800)
+    })
+
     /**
      * @tc.name   OH_PictureInPicture_On_ActiveStatusChange_0100
      * @tc.number SUB_BASIC_WMS_PIP_ACTIVESTATUSCHANGE_0100
@@ -5059,6 +5063,670 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           expect().assertFail();
           done();
         }
+      }
+    })
+
+    /**
+     * @tc.name   testPiPStateChangeRequestStart
+     * @tc.number SUB_WMS_PIP_WINDOW_PIPSTATE_REQUESTSTART_0100
+     * @tc.desc   testPiPStateChangeRequestStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPiPStateChangeRequestStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'testPiPStateChangeRequestStart';
+      console.log(tag + caseName +' begin');
+      if(!isPipWindowEnabled) {
+        done()
+      } else {
+        let pipController:pipWindow.PiPController| undefined = undefined;
+        let mXComponentController = new XComponentController();
+        let navId = "";
+        let contentWidth = 400;
+        let contentHeight = 600;
+        let config:pipWindow.PiPConfiguration = {
+          context: context1,
+          componentController: mXComponentController,
+          navigationId: navId,
+          templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+          contentWidth: contentWidth,
+          contentHeight: contentHeight,
+          cornerAdsorptionEnabled: true
+        };
+        try {
+          const callback = async (state: pipWindow.PiPState, reason: string) => {
+            console.log(caseName + ' callback state: ' + state);
+            console.log(caseName + ' callback reason: ' + reason);
+            expect(reason).assertEqual('requestStart');
+            pipController?.off('stateChange')
+            await pipController?.stopPiP();
+            done();
+          }
+          pipWindow.create(config).then(async (data) => {
+            pipController = data;
+            pipController.on('stateChange', callback)
+            console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
+            expect(data != null).assertTrue();
+            await pipController.startPiP();
+            await sleep(3000);
+          }).catch((err:BusinessError) => {
+            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
+            pipController?.off('stateChange')
+            if (err.code == 801) {
+              expect(err.message!=null).assertTrue();
+              expect(true).assertTrue();
+              done();
+            }
+            else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
+          expect().assertFail();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   testPiPStateChangeAutoStart
+     * @tc.number SUB_WMS_PIP_WINDOW_PIPSTATE_AUTOSTART_0100
+     * @tc.desc   testPiPStateChangeAutoStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPiPStateChangeAutoStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'testPiPStateChangeAutoStart';
+      console.log(tag + caseName +' begin');
+      if(isPipWindowEnabled && isPCStatus != '') {
+        let pipController:pipWindow.PiPController| undefined = undefined;
+        let mXComponentController = new XComponentController();
+        let navId = "";
+        let contentWidth = 400;
+        let contentHeight = 600;
+        let config:pipWindow.PiPConfiguration = {
+          context: context1,
+          componentController: mXComponentController,
+          navigationId: navId,
+          templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+          contentWidth: contentWidth,
+          contentHeight: contentHeight,
+          cornerAdsorptionEnabled: true
+        };
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          const callback = async (state: pipWindow.PiPState, reason: string) => {
+            console.log(caseName + ' callback state: ' + state);
+            console.log(caseName + ' callback reason: ' + reason);
+            expect(reason).assertEqual('autoStart')
+            pipController?.off('stateChange')
+            await pipController?.stopPiP();
+            await windowClass.restore();
+            done();
+          }
+          pipWindow.create(config).then(async (data) => {
+            pipController = data;
+            pipController.on('stateChange', callback)
+            console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
+            expect(data != null).assertTrue();
+            pipController.setAutoStartEnabled(true)
+            await windowClass.minimize();
+            await sleep(1000);
+          }).catch((err:BusinessError) => {
+            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message)`);
+            pipController?.off('stateChange')
+            if (err.code == 801) {
+              expect(err.message!=null).assertTrue();
+              expect(true).assertTrue();
+              done();
+            }
+            else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testPiPStateChangeRequestDelete
+     * @tc.number SUB_WMS_PIP_WINDOW_PIPSTATE_REQUESTDELETE_0100
+     * @tc.desc   testPiPStateChangeRequestDelete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPiPStateChangeRequestDelete', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'testPiPStateChangeRequestDelete';
+      console.log(tag + caseName +' begin');
+      if(isPipWindowEnabled) {
+        let pipController:pipWindow.PiPController| undefined = undefined;
+        let mXComponentController = new XComponentController();
+        let navId = "";
+        let contentWidth = 400;
+        let contentHeight = 600;
+        let config:pipWindow.PiPConfiguration = {
+          context: context1,
+          componentController: mXComponentController,
+          navigationId: navId,
+          templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+          contentWidth: contentWidth,
+          contentHeight: contentHeight,
+          cornerAdsorptionEnabled: true
+        };
+        try {
+          const callback = (state: pipWindow.PiPState, reason: string) => {
+            console.log(caseName + ' callback state: ' + state);
+            console.log(caseName + ' callback reason: ' + reason);
+            expect(reason).assertEqual('requestDelete')
+            pipController?.off('stateChange')
+            done();
+          }
+          pipWindow.create(config).then(async (data) => {
+            pipController = data;
+            console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
+            expect(data != null).assertTrue();
+            await pipController.startPiP()
+            pipController.on('stateChange', callback)
+            await pipController.stopPiP();
+            await sleep(3000);
+          }).catch((err:BusinessError) => {
+            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
+            pipController?.off('stateChange')
+            if (err.code == 801) {
+              expect(err.message!=null).assertTrue();
+              expect(true).assertTrue();
+              done();
+            }
+            else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testPiPStateChangePanelActionDelete
+     * @tc.number SUB_WMS_PIP_WINDOW_PIPSTATE_PANELACTIONDELETE_0100
+     * @tc.desc   testPiPStateChangePanelActionDelete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPiPStateChangePanelActionDelete', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'testPiPStateChangePanelActionDelete';
+      console.log(tag + caseName +' begin');
+      if(isPipWindowEnabled) {
+        let pipController:pipWindow.PiPController| undefined = undefined;
+        let mXComponentController = new XComponentController();
+        let navId = "";
+        let contentWidth = 400;
+        let contentHeight = 600;
+        let config:pipWindow.PiPConfiguration = {
+          context: context1,
+          componentController: mXComponentController,
+          navigationId: navId,
+          templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+          contentWidth: contentWidth,
+          contentHeight: contentHeight,
+          cornerAdsorptionEnabled: true
+        };
+        let driver = Driver.create();
+        try {
+          const callback = (state: pipWindow.PiPState, reason: string) => {
+            console.log(caseName + ' callback state: ' + state);
+            console.log(caseName + ' callback reason: ' + reason);
+            expect(reason).assertEqual('panelActionDelete');
+            pipController?.off('stateChange')
+            done();
+          }
+          pipWindow.create(config).then(async (data) => {
+            pipController = data;
+            console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
+            expect(data != null).assertTrue();
+            await pipController.startPiP();
+            console.log(`${tag} ${caseName} Succeeded in start pip controller.`);
+            await sleep(1000)
+            pipController.on('stateChange', callback)
+            let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
+            console.log(`${caseName} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
+            await pipWindowComponent.click();
+            await sleep(1000)
+            let exit = await driver.findComponent(ON.id('control_exit'));
+            await sleep(1000)
+            await exit.click();
+            await sleep(1000);
+          }).catch((err:BusinessError) => {
+            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
+            pipController?.off('stateChange')
+            if (err.code == 801) {
+              expect(err.message!=null).assertTrue();
+              expect(true).assertTrue();
+              done();
+            }
+            else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done()
+      }
+    })
+
+
+    /**
+     * @tc.name   testPiPStateChangePanelActionRestore
+     * @tc.number SUB_WMS_PIP_WINDOW_PIPSTATE_PANELACTIONRESTORE_0100
+     * @tc.desc   testPiPStateChangePanelActionRestore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPiPStateChangePanelActionRestore', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'testPiPStateChangePanelActionRestore';
+      console.log(tag + caseName +' begin');
+      if(isPipWindowEnabled) {
+        let pipController:pipWindow.PiPController| undefined = undefined;
+        let mXComponentController = new XComponentController();
+        let navId = "";
+        let contentWidth = 400;
+        let contentHeight = 600;
+        let config:pipWindow.PiPConfiguration = {
+          context: context1,
+          componentController: mXComponentController,
+          navigationId: navId,
+          templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+          contentWidth: contentWidth,
+          contentHeight: contentHeight,
+          cornerAdsorptionEnabled: true
+        };
+        let driver = Driver.create();
+        try {
+          const callback = async (state: pipWindow.PiPState, reason: string) => {
+            console.log(caseName + ' callback state: ' + state);
+            console.log(caseName + ' callback reason: ' + reason);
+            expect(reason).assertEqual('panelActionRestore')
+            pipController?.off('stateChange')
+            done();
+          }
+          pipWindow.create(config).then(async (data) => {
+            pipController = data;
+            console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
+            expect(data != null).assertTrue();
+            await pipController.startPiP()
+            pipController.on('stateChange', callback)
+            let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
+            console.log(`${caseName} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
+            await pipWindowComponent.click();
+            await sleep(1000)
+            let restore = await driver.findComponent(ON.id('control_restore'));
+            await sleep(1000)
+            await restore.click();
+            await sleep(1000);
+          }).catch((err:BusinessError) => {
+            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
+            pipController?.off('stateChange')
+            if (err.code == 801) {
+              expect(err.message!=null).assertTrue();
+              expect(true).assertTrue();
+              done();
+            }
+            else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done()
+      }
+    })
+
+
+    /**
+     * @tc.name   testPiPStateChangeOtherwithTwoPiP
+     * @tc.number SUB_WMS_PIP_WINDOW_PIPSTATE_OTHER_0200
+     * @tc.desc   testPiPStateChangeOtherwithTwoPiP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPiPStateChangeOtherwithTwoPiP', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'testPiPStateChangeOtherwithTwoPiP';
+      console.log(tag + caseName +' begin');
+      if(isPipWindowEnabled) {
+        let pipController:pipWindow.PiPController| undefined = undefined;
+        let pipController2:pipWindow.PiPController| undefined = undefined;
+        let mXComponentController = new XComponentController();
+        let navId = "";
+        let contentWidth = 400;
+        let contentHeight = 600;
+        let config:pipWindow.PiPConfiguration = {
+          context: context1,
+          componentController: mXComponentController,
+          navigationId: navId,
+          templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+          contentWidth: contentWidth,
+          contentHeight: contentHeight,
+          cornerAdsorptionEnabled: true
+        };
+        try {
+          const callback = async (state: pipWindow.PiPState, reason: string) => {
+            console.log(caseName + ' callback state: ' + state);
+            console.log(caseName + ' callback reason: ' + reason);
+            expect(reason).assertEqual('other')
+            pipController?.off('stateChange')
+            await pipController2?.stopPiP();
+            done();
+          }
+          pipWindow.create(config).then(async (data) => {
+            pipController = data;
+            console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
+            expect(data != null).assertTrue();
+            await pipController.startPiP()
+            pipController.on('stateChange', callback)
+            pipController2 = await pipWindow.create(config);
+            await pipController2.startPiP()
+            await sleep(3000);
+          }).catch(async (err:BusinessError) => {
+            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
+            if (err.code == 801) {
+              expect(err.message!=null).assertTrue();
+              expect(true).assertTrue();
+              done();
+            }
+            else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testPiPisPiPActiveStarted
+     * @tc.number SUB_WMS_PIP_WINDOW_ISPIPACTIVE_0100
+     * @tc.desc   testPiPisPiPActiveStarted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPiPisPiPActiveStarted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'testPiPisPiPActiveStarted';
+      console.log(tag + caseName +' begin');
+      if(isPipWindowEnabled) {
+        let pipController:pipWindow.PiPController| undefined = undefined;
+        let mXComponentController = new XComponentController();
+        let navId = "";
+        let contentWidth = 400;
+        let contentHeight = 600;
+        let config:pipWindow.PiPConfiguration = {
+          context: context1,
+          componentController: mXComponentController,
+          navigationId: navId,
+          templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+          contentWidth: contentWidth,
+          contentHeight: contentHeight,
+          cornerAdsorptionEnabled: true
+        };
+        try {
+          pipWindow.create(config).then(async (data) => {
+            pipController = data;
+            console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
+            expect(data != null).assertTrue();
+            await pipController.startPiP();
+            let isPipActive = await pipController.isPiPActive();
+            console.log(tag + caseName + ' isPipActive: ' + isPipActive);
+            expect(isPipActive).assertEqual(true);
+            await pipController.stopPiP();
+            await sleep(5000);
+            done();
+          }).catch(async (err:BusinessError) => {
+            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
+            if (err.code == 801) {
+              expect(err.message!=null).assertTrue();
+              expect(true).assertTrue();
+              done();
+            }
+            else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done()
+      }
+    })
+    
+    /**
+     * @tc.name   testPiPisPiPActiveBeforeStart
+     * @tc.number SUB_WMS_PIP_WINDOW_ISPIPACTIVE_0200
+     * @tc.desc   testPiPisPiPActiveBeforeStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPiPisPiPActiveBeforeStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'testPiPisPiPActiveBeforeStart';
+      console.log(tag + caseName +' begin');
+      if(isPipWindowEnabled) {
+        let pipController:pipWindow.PiPController| undefined = undefined;
+        let mXComponentController = new XComponentController();
+        let navId = "";
+        let contentWidth = 400;
+        let contentHeight = 600;
+        let config:pipWindow.PiPConfiguration = {
+          context: context1,
+          componentController: mXComponentController,
+          navigationId: navId,
+          templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+          contentWidth: contentWidth,
+          contentHeight: contentHeight,
+          cornerAdsorptionEnabled: true
+        };
+        try {
+          pipWindow.create(config).then(async (data) => {
+            pipController = data;
+            console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
+            expect(data != null).assertTrue();
+            let isPipActive = await pipController.isPiPActive();
+            console.log(tag + caseName + ' isPipActive: ' + isPipActive);
+            expect(isPipActive).assertEqual(false);
+            await sleep(5000);
+            done();
+          }).catch(async (err:BusinessError) => {
+            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
+            if (err.code == 801) {
+              expect(err.message!=null).assertTrue();
+              expect(true).assertTrue();
+              done();
+            }
+            else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testPiPisPiPActiveStoped
+     * @tc.number SUB_WMS_PIP_WINDOW_ISPIPACTIVE_0300
+     * @tc.desc   testPiPisPiPActiveStoped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPiPisPiPActiveStoped', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'testPiPisPiPActiveStoped';
+      console.log(tag + caseName +' begin');
+      if(isPipWindowEnabled) {
+        let pipController:pipWindow.PiPController| undefined = undefined;
+        let mXComponentController = new XComponentController();
+        let navId = "";
+        let contentWidth = 400;
+        let contentHeight = 600;
+        let config:pipWindow.PiPConfiguration = {
+          context: context1,
+          componentController: mXComponentController,
+          navigationId: navId,
+          templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+          contentWidth: contentWidth,
+          contentHeight: contentHeight,
+          cornerAdsorptionEnabled: true
+        };
+        try {
+          pipWindow.create(config).then(async (data) => {
+            pipController = data;
+            console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
+            expect(data != null).assertTrue();
+            await pipController.startPiP();
+            await pipController.stopPiP();
+            let isPipActive = await pipController.isPiPActive();
+            console.log(tag + caseName + ' isPipActive: ' + isPipActive);
+            expect(isPipActive).assertEqual(false);
+            await sleep(5000);
+            done();
+          }).catch(async (err:BusinessError) => {
+            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
+            if (err.code == 801) {
+              expect(err.message!=null).assertTrue();
+              expect(true).assertTrue();
+              done();
+            }
+            else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testPiPisPiPActiveSidebar
+     * @tc.number SUB_WMS_PIP_WINDOW_ISPIPACTIVE_0400
+     * @tc.desc   testPiPisPiPActiveSidebar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPiPisPiPActiveSidebar', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'testPiPisPiPActiveSidebar';
+      console.log(tag + caseName +' begin');
+      if(isPipWindowEnabled && isFreeWindowMode == false) {
+        let pipController:pipWindow.PiPController| undefined = undefined;
+        let mXComponentController = new XComponentController();
+        let navId = "";
+        let contentWidth = 400;
+        let contentHeight = 600;
+        let config:pipWindow.PiPConfiguration = {
+          context: context1,
+          componentController: mXComponentController,
+          navigationId: navId,
+          templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+          contentWidth: contentWidth,
+          contentHeight: contentHeight,
+          cornerAdsorptionEnabled: true
+        };
+        let driver = Driver.create();
+        try {
+          pipWindow.create(config).then(async (data) => {
+            pipController = data;
+            console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
+            expect(data != null).assertTrue();
+            await pipController.startPiP();
+            // 3、画中画拉到侧边条
+            let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
+            console.log(`${caseName} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
+            await sleep(1000)
+            let pipWindowCenter = await pipWindowComponent.getBoundsCenter();
+            console.log(`${caseName} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
+            let displayInfo = display.getDefaultDisplaySync();
+            console.log(`${caseName} displayInfo: ${JSON.stringify(displayInfo)}`);
+            let dragToX = pipWindowCenter.x + displayInfo.width;
+            let dragToY = pipWindowCenter.y;
+            await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
+            await sleep(3000);
+            let isPipActive = await pipController.isPiPActive();
+            console.log(tag + caseName + ' isPipActive: ' + isPipActive);
+            expect(isPipActive).assertEqual(false);
+            await pipController.stopPiP();
+            await sleep(5000);
+            done();
+          }).catch(async (err:BusinessError) => {
+            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
+            if (err.code == 801) {
+              expect(err.message!=null).assertTrue();
+              expect(true).assertTrue();
+              done();
+            }
+            else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done()
       }
     })
 

@@ -161,7 +161,7 @@ struct TextInputPage {
       Text('onSubmit:' + this.onSubmit).fontSize(10).margin(1).key('submit').height('5%')
       Text('onEditChange:' + this.onEditChange).fontSize(10).margin(1).key('editChange').height('5%')
       Text('onCopy:' + this.onCopy).fontSize(10).margin(1).key('copy').height('5%')
-      Text('onCut:' + this.onCut).fontSize(10).margin(1).key('cut').height('5%')
+      Text('onCut:' + this.onCut).fontSize(10).margin(1).key('cut_TextInputPage').height('5%')
       Text('onPaste:' + this.onPaste).fontSize(10).margin(1).key('paste').height('5%')
     }.width('100%')
   }
