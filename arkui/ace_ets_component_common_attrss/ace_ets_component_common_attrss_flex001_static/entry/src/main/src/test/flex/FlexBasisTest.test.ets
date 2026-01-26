@@ -137,7 +137,7 @@ export default function flexBasisTest() {
       flexBasis: '50%'
     },
     expectValue: {
-      expectSize: 100
+      expectSize: 120
     }
   }]
 
@@ -159,9 +159,8 @@ export default function flexBasisTest() {
           data.testValue.expectValue.expectSize = UIContext.resolveUIContext()!.vp2px(100.00)
 
         }
-        if (data.testValue.describe == 'SetStringPx') {
-          data.testValue.expectValue.expectSize = UIContext.resolveUIContext()!.vp2px(100.00)
-
+        if (data.testValue.describe == 'SetStringPercent') {
+          data.testValue.expectValue.expectSize = UIContext.resolveUIContext()!.vp2px(120)
         }
 
         if (data.testValue.describe == 'SetNumber' || data.testValue.describe == 'SetStringPx') {

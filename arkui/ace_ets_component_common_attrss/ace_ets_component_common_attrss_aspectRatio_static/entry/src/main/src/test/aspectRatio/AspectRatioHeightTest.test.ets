@@ -79,7 +79,6 @@ export default function aspectRatioHeightTest() {
     'GridItem',
     'List',
     // 'ListItem',
-    'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',
