@@ -46,7 +46,6 @@ struct Page {
         Text('@Observed/@Trace')
           .width('100%')
           .height('5%')
-          .fontSize(25)
           .textAlign(TextAlign.Center)
           .backgroundColor(Color.Pink)
         //监听Date
