@@ -1594,7 +1594,7 @@ export default function ConnectionWithoutNetTest() {
         done();
       }).catch((error: BusinessError)=> {
         console.info(`${caseName} Failed to get addresses. error:${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 2100002);
+        ExpectTrue(caseName, error.code == 2100002);
         console.info(`${caseName}---End`);
         done();
       });
