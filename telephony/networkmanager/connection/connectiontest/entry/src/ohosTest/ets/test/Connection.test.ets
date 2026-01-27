@@ -541,6 +541,7 @@ export default function ConnectionTest() {
       const caseName: string = 'testConnectionFindProxyForUrl0100';
       console.info(`${caseName}---Start`);
       try {
+        connection.setPacFileUrl('');
         let urlNoExit: string = "https://www.zhuhu.com";
         const result = connection.findProxyForUrl(urlNoExit); 
         console.info(`${caseName} findProxyForUrl success, result: ${JSON.stringify(result)}`);
