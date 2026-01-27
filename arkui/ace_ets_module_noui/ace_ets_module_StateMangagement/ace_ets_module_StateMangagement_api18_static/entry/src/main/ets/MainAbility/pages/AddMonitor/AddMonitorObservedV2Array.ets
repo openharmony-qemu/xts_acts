@@ -50,7 +50,6 @@ struct Page {
         Text('@Observed/@Trace')
           .width('100%')
           .height('5%')
-          .fontSize(25)
           .textAlign(TextAlign.Center)
           .backgroundColor(Color.Pink)
         //监听array数组
@@ -67,7 +66,6 @@ struct Page {
             .id('ObservedArray1')
             .width('30%')
             .height('5%')
-            .fontSize(20)
             .onClick(() => {
               for (let index = 0; index < 5; index++) {
                 this.info.arrayValue[index]++;
