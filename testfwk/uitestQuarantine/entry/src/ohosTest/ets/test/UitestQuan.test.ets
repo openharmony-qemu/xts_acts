@@ -14,7 +14,24 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
+import {
+  UiComponent,
+  UiDriver,
+  BY,
+  Component,
+  Driver,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  UiDirection,
+  MouseButton,
+  WindowMode,
+  PointerMatrix,
+  UIElementInfo,
+  UIEventObserver
+} from '@ohos.UiTest'
 import ability_featureAbility from '@ohos.ability.featureAbility';
 import { BusinessError } from '@ohos.base';
 import display from '@ohos.display';
@@ -274,7 +291,7 @@ export default function UiTest() {
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
       expect(text == null).assertTrue()
       await driver.mouseDrag(point1, point2)
-      await stopApplication('com.uitestScene.acts');      
+      await stopApplication('com.uitestScene.acts');
     })
   })
 
@@ -337,7 +354,7 @@ export default function UiTest() {
       await driver.delayMs(2000)
       let button2 = await driver.findComponents(ON.text('bottom'))
       expect(button2 == null).assertTrue()
-      await stopApplication('com.uitestScene.acts');      
+      await stopApplication('com.uitestScene.acts');
     })
   })
 
