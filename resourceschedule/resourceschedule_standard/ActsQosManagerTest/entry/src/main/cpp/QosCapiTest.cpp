@@ -294,7 +294,7 @@ static int TestSingleQoSLevelWithGet(QoS_Level level, const char* levelName, con
     if (ret != 0) {
         return -1;
     }
-    enum QoS_Level getLevel_;
+     QoS_Level getLevel_;
     ret = OH_QoS_GetThreadQoS(&getLevel_);
     if (ret != 0) {
         return -1;
@@ -321,7 +321,7 @@ static int TestGetQoSWithNullAndReset(const char* prefix)
     if (ret != 0) {
         return -1;
     }
-    enum QoS_Level level;
+     QoS_Level level;
     ret = OH_QoS_GetThreadQoS(&level);
     if (ret != -1) {
         return -1;
