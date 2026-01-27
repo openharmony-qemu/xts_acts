@@ -109,36 +109,120 @@ static const CencTestFunc CENCINFO_SETAVBUFFER_FUNCS[] = {
     &CencInfoCapiTestCase::TestCencInfo_SetAVBuffer_002,
     &CencInfoCapiTestCase::TestCencInfo_SetAVBuffer_003,
 };
-napi_value CencInfoNapiImpl(
-    napi_env env,
-    napi_callback_info info,
+
+napi_value CencInfo_Create(napi_env env, napi_callback_info info)
 {
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         int result = RESULT_ERROR;
-
-        OHOS::CencInfoUT::CencInfoCapiTestCase testObj;
-        const size_t FUNC_COUNT = funcTable.count;
-
+        CencInfoCapiTestCase testObj;
+        constexpr size_t FUNC_COUNT = sizeof(CENCINFO_CREATE_FUNCS) / sizeof(CENCINFO_CREATE_FUNCS[0]);
         if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
-            result = (testObj.*funcTable.arr[caseNum])();
+            result = (testObj.*CENCINFO_CREATE_FUNCS[caseNum])();
         }
-
         napi_value resultValue;
         napi_create_int32(env, result, &resultValue);
         return resultValue;
     });
 }
 
-DEFINE_CENCINFO_NAPI(CencInfo_Creater, CENCINFO_CREATE_FUNCS)
-DEFINE_CENCINFO_NAPI(CencInfo_Destroy, CENCINFO_DESTROY_FUNCS)
-DEFINE_CENCINFO_NAPI(CencInfo_SetAlgorithm, CENCINFO_SETALGORITHM_FUNCS)
-DEFINE_CENCINFO_NAPI(CencInfo_SetKeyIdAndIv, CENCINFO_SETKEYIDANDIV_FUNCS)
-DEFINE_CENCINFO_NAPI(CencInfo_SetSubsampleInfo, CENCINFO_SETSUBSAMPLEINFO_FUNCS)
-DEFINE_CENCINFO_NAPI(CencInfo_SetMode, CENCINFO_SETMODE_FUNCS)
-DEFINE_CENCINFO_NAPI(CencInfo_SetAVBuffer, CENCINFO_SETAVBUFFER_FUNCS)
+napi_value CencInfo_Destroy(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result = RESULT_ERROR;
+        CencInfoCapiTestCase testObj;
+        constexpr size_t FUNC_COUNT = sizeof(CENCINFO_DESTROY_FUNCS) / sizeof(CENCINFO_DESTROY_FUNCS[0]);
+        if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
+            result = (testObj.*CENCINFO_DESTROY_FUNCS[caseNum])();
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
 
+napi_value CencInfo_SetAlgorithm(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result = RESULT_ERROR;
+        CencInfoCapiTestCase testObj;
+        constexpr size_t FUNC_COUNT = sizeof(CENCINFO_SETALGORITHM_FUNCS) / sizeof(CENCINFO_SETALGORITHM_FUNCS[0]);
+        if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
+            result = (testObj.*CENCINFO_SETALGORITHM_FUNCS[caseNum])();
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+napi_value CencInfo_SetKeyIdAndIv(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result = RESULT_ERROR;
+        CencInfoCapiTestCase testObj;
+        constexpr size_t FUNC_COUNT = sizeof(CENCINFO_SETKEYIDANDIV_FUNCS) / sizeof(CENCINFO_SETKEYIDANDIV_FUNCS[0]);
+        if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
+            result = (testObj.*CENCINFO_SETKEYIDANDIV_FUNCS[caseNum])();
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+napi_value CencInfo_SetSubsampleInfo(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result = RESULT_ERROR;
+        CencInfoCapiTestCase testObj;
+        constexpr size_t FUNC_COUNT = sizeof(CENCINFO_SETSUBSAMPLEINFO_FUNCS) / sizeof(CENCINFO_SETSUBSAMPLEINFO_FUNCS[0]);
+        if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
+            result = (testObj.*CENCINFO_SETSUBSAMPLEINFO_FUNCS[caseNum])();
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+napi_value CencInfo_SetMode(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result = RESULT_ERROR;
+        CencInfoCapiTestCase testObj;
+        constexpr size_t FUNC_COUNT = sizeof(CENCINFO_SETMODE_FUNCS) / sizeof(CENCINFO_SETMODE_FUNCS[0]);
+        if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
+            result = (testObj.*CENCINFO_SETMODE_FUNCS[caseNum])();
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+napi_value CencInfo_SetAVBuffer(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result = RESULT_ERROR;
+        CencInfoCapiTestCase testObj;
+        constexpr size_t FUNC_COUNT = sizeof(CENCINFO_SETAVBUFFER_FUNCS) / sizeof(CENCINFO_SETAVBUFFER_FUNCS[0]);
+        if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
+            result = (testObj.*CENCINFO_SETAVBUFFER_FUNCS[caseNum])();
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
 EXTERN_C_START
+
 napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
