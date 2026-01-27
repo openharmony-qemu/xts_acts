@@ -106,6 +106,12 @@
       },
       {
         "name": "ohos.permission.CONTROL_LOCATION_SWITCH"
+      },
+      {
+        "name": "ohos.permission.GET_WIFI_INFO"
+      },
+      {
+        "name": "ohos.permission.SET_WIFI_INFO"
       }
     ],
     "js": [
