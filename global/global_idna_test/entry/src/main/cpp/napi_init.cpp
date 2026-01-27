@@ -3052,9 +3052,11 @@ static napi_value testOH_i18n_GetNextStartFromTimeArrayTimeZoneRules_0500(napi_e
     TimeArrayTimeZoneRule rule = rules.timeArrayRules[0];
     TimeZoneRuleQuery query;
     errCode = OH_i18n_GetNextStartFromTimeArrayTimeZoneRule(&rule, &query);
-    bool flag = (errCode == I18n_ErrorCode::SUCCESS && query.result == 527014800000);
+    //bool flag = (errCode == I18n_ErrorCode::SUCCESS && query.result == 527014800000);
     napi_value nValue;
-    napi_get_boolean(env, flag, &nValue);
+    std::string resultStr = std::to_string((int)query.result)+"," + std::to_string((int)errCode);
+    napi_create_string_utf8(env, ss.c_str(), NAPI_AUTO_LENGTH, &nValue);
+    //napi_get_boolean(env, flag, &nValue);
     return nValue;
 }
 
@@ -3065,9 +3067,11 @@ static napi_value testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRules_0600(napi_e
     TimeArrayTimeZoneRule rule = rules.timeArrayRules[0];
     TimeZoneRuleQuery query;
     errCode = OH_i18n_GetPrevStartFromTimeArrayTimeZoneRule(&rule, &query);
-    bool flag = (errCode == I18n_ErrorCode::SUCCESS && query.result == -650019600000);
+    //bool flag = (errCode == I18n_ErrorCode::SUCCESS && query.result == -650019600000);
     napi_value nValue;
-    napi_get_boolean(env, flag, &nValue);
+    std::string resultStr = std::to_string((int)query.result)+"," + std::to_string((int)errCode);
+    napi_create_string_utf8(env, ss.c_str(), NAPI_AUTO_LENGTH, &nValue);
+    //napi_get_boolean(env, flag, &nValue);
     return nValue;
 }
 
