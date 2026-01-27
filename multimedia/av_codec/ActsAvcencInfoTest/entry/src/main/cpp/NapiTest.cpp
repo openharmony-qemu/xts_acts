@@ -110,7 +110,7 @@ static const CencTestFunc CENCINFO_SETAVBUFFER_FUNCS[] = {
     &CencInfoCapiTestCase::TestCencInfo_SetAVBuffer_003,
 };
 
-napi_value CencInfo_Create(napi_env env, napi_callback_info info)
+napi_value CencInfo_Creater(napi_env env, napi_callback_info info)
 {
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
