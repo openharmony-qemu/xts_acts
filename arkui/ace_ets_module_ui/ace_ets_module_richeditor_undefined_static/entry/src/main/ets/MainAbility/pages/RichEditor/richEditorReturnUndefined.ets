@@ -22,7 +22,7 @@ import {
   MutableStyledString,
   TextStyle
 } from '@ohos.arkui.component'
-import { State } from "@ohos.arkui.stateManagement"
+import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -53,7 +53,7 @@ struct RichEditorExample {
   @Builder
   spanBuilder() {
     Row() {
-      Text("0123456789")
+      Text('0123456789')
         .fontSize(14)
         .fontColor(Color.Red)
         .margin(4)
@@ -281,7 +281,7 @@ struct RichEditorExample {
       }
       .borderWidth(1)
       .borderColor(Color.Red)
-      .width("100%")
+      .width('100%')
       .height("70%")
     }
   }
