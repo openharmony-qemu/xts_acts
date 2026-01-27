@@ -206,6 +206,11 @@ import ImageBitsPerSampleStripOffsetsSupp from './image/ImageBitsPerSampleStripO
 import ImageSourceMetadataSupp from './image/ImageSourceMetadata.test';
 import ImageGetImagePropertyOptionsSupp from './image/ImageGetImagePropertyOptions.test';
 import ImageGammaSupp from './image/ImageGammaSupp.test';
+import PicturePackDataFirTestSupp from './Picture/PicturePacDataSuppFir.test';
+import PicturePackDataThrTestSupp from './Picture/PicturePacDataSuppThr.test';
+import PicturePackingPictureTestSupp from './Picture/PicturePackingSuppFir.test';
+import PicturePackingPictureSecTestSupp from './Picture/PicturePackingSuppSec.test';
+import ImageSourceModifyImagePropertySupp from './image/ImageModifyImagePropertySupp.test';
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -397,5 +402,10 @@ export default function testsuite() {
   ImageBitsPerSampleStripOffsetsSupp();
   ImageSourceMetadataSupp();
   ImageGetImagePropertyOptionsSupp();
-  ImageGammaSupp()
+  ImageGammaSupp();
+  PicturePackDataFirTestSupp();
+  PicturePackDataThrTestSupp();
+  PicturePackingPictureTestSupp();
+  PicturePackingPictureSecTestSupp();
+  ImageSourceModifyImagePropertySupp();
 }
