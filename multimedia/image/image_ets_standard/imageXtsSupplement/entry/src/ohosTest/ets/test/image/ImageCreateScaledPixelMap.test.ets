@@ -567,6 +567,28 @@ export default function imageCreateCroppedAndScaledPixelMap() {
       done();
     });
     /**
+     * @tc.number    SUB_IMAGE_PIXEL_MAP_CLONE_002
+     * @tc.name      SUB_IMAGE_PIXEL_MAP_CLONE_002
+     * @tc.desc      clone isStrideAlignment
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PIXEL_MAP_CLONE_002', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PIXEL_MAP_CLONE_002";
+      console.info(TAG, `start：${testName}`);
+      let PixelMap = await createPixelMapTest(context);
+      try {
+        let newPixelMap = await PixelMap.clone();
+        console.info('Succeeded clone pixelmap.');
+        expect(newPixelMap.isStrideAlignment).assertEqual(PixelMap.isStrideAlignment);
+      } catch (error) {
+        console.error(TAG, testName, error, error.code);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
      * @tc.number    SUB_IMAGE_PIXEL_MAP_CLONE_SYNC_001
      * @tc.name      SUB_IMAGE_PIXEL_MAP_CLONE_SYNC_001
      * @tc.desc      clone isEditable
@@ -582,6 +604,28 @@ export default function imageCreateCroppedAndScaledPixelMap() {
         let newPixelMap =  PixelMap.cloneSync();
         console.info('Succeeded clone pixelmap.');
         expect(newPixelMap.isEditable).assertEqual(PixelMap.isEditable);
+      } catch (error) {
+        console.error(TAG, testName, error, error.code);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PIXEL_MAP_CLONE_SYNC_002
+     * @tc.name      SUB_IMAGE_PIXEL_MAP_CLONE_SYNC_002
+     * @tc.desc      clone isStrideAlignment
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PIXEL_MAP_CLONE_SYNC_002', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PIXEL_MAP_CLONE_SYNC_002";
+      console.info(TAG, `start：${testName}`);
+      let PixelMap = createPixelMapSUPP(context);
+      try {
+        let newPixelMap =  PixelMap.cloneSync();
+        console.info('Succeeded clone pixelmap.');
+        expect(newPixelMap.isStrideAlignment).assertEqual(PixelMap.isStrideAlignment);
       } catch (error) {
         console.error(TAG, testName, error, error.code);
         expect().assertFail();
