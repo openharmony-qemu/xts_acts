@@ -85,7 +85,7 @@ struct Navigation_SingleInstanceJump4{
         this.pathInfos.pushPath(new NavPathInfo('page1',this.count++),{animated:true})
       }).id('Navigation_SingleInstanceJump4_btn1')
       Button('push page2').onClick((event: ClickEvent) => {
-        this.pathInfos.pushPath(new NavPathInfo('page1',this.count++),{animated:true})
+        this.pathInfos.pushPath(new NavPathInfo('page2',this.count++),{animated:true})
       }).id('Navigation_SingleInstanceJump4_btn2')
       Text(this.text).id('Navigation_SingleInstanceJump4_text1')
       Button('getAll').onClick((e: ClickEvent) => {

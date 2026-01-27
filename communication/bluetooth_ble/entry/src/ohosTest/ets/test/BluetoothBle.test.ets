@@ -98,12 +98,13 @@ function onReceiveEvent(data : Array<bluetooth.ScanResult>)
 {
     console.info('bluetooth device find = '+ JSON.stringify(data));
     try{
-        console.info('[bluetooth_js]ScanResult Property advertiseFlags is :' + JSON.stringify(data[0].advertiseFlags))
-        console.info('[bluetooth_js]ScanResult Property manufacturerDataMap is :' + JSON.stringify(data[0].manufacturerDataMap))
-        console.info('[bluetooth_js]ScanResult Property serviceDataMap is :' + JSON.stringify(data[0].serviceDataMap))
-        console.info('[bluetooth_js]ScanResult Property serviceUuids is :' + JSON.stringify(data[0].serviceUuids))
-        console.info('[bluetooth_js]ScanResult Property txPowerLevel is :' + JSON.stringify(data[0].txPowerLevel))
-        console.info('[bluetooth_js]ScanResult Property advertisingDataMap is :' + JSON.stringify(data[0].advertisingDataMap))
+        console.info('[bluetooth_js]ScanResult Property advertiseFlags is :' + JSON.stringify(data[0].advertiseFlags));
+        console.info('[bluetooth_js]ScanResult Property manufacturerDataMap is :' + JSON.stringify(data[0].manufacturerDataMap));
+        console.info('[bluetooth_js]ScanResult Property serviceDataMap is :' + JSON.stringify(data[0].serviceDataMap));
+        console.info('[bluetooth_js]ScanResult Property serviceUuids is :' + JSON.stringify(data[0].serviceUuids));
+        console.info('[bluetooth_js]ScanResult Property txPowerLevel is :' + JSON.stringify(data[0].txPowerLevel));
+        console.info('[bluetooth_js]ScanResult Property advertisingDataMap is :' + JSON.stringify(data[0].advertisingDataMap));
+        console.info('[bluetooth_js]ScanResult Property address is :' + JSON.stringify(data[0].address));
     } catch(error){
         console.error("[bt_arkts]ScanResult Property is Optional");
     }
@@ -125,7 +126,15 @@ function onReceiveEvents(data : bluetooth.ScanReport)
     console.info('[bluetooth_js] deviceName result: ' + JSON.stringify(data[0].scanResult[0].deviceName));
     console.info('[bluetooth_js] connectable result: ' + JSON.stringify(data[0].scanResult[0].connectable));
 }
-
+function onReceiveEvent_value(data : bluetooth.PhyValue)
+{
+    console.info('bluetooth PhyValue txPhy = ' + JSON.stringify(data.txPhy));
+    console.info('bluetooth PhyValue rxPhy = ' + JSON.stringify(data.rxPhy));
+    console.info('bluetooth PhyValue phyMode = ' + JSON.stringify(data.phyMode));
+    expect(data.txPhy).not().assertUndefined();
+    expect(data.rxPhy).not().assertUndefined();
+    console.info('bluetooth onBlePhyUpdate success');
+}
 export default function bluetoothBleTest() {
     describe('bluetoothBleTest', () => {
 
@@ -892,6 +901,7 @@ export default function bluetoothBleTest() {
                 expect(value3).assertEqual(3);
             } catch (err) {
                 console.error(`[bt_arkts]get ConnectionParam enumvalue ,code is ${err.code},message is ${err.message}`);
+                expect().assertFail();
             }
             done();
         })
@@ -1128,7 +1138,6 @@ export default function bluetoothBleTest() {
             done();
         })
 
-
         /**
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_0100
          * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_0100
@@ -1154,6 +1163,126 @@ export default function bluetoothBleTest() {
             }
             done();
         })
+         /**
+ 	          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_OBPU_0100
+ 	          * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_OBPU_0100
+ 	          * @tc.desc API23 on/offBlePhyUpdate(callback: Callback<PhyValue>): void;test normal
+ 	          * @tc.type Method
+ 	          * @tc.size MEDIUMTEST
+ 	          * @tc.level Level 0
+ 	          */
+         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_OBPU_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                gattServer.onBlePhyUpdate(onReceiveEvent_value);
+                gattServer.offBlePhyUpdate(onReceiveEvent_value);
+            } catch (error) {
+                console.error(`[bt_arkts] server onBlePhyUpdate is failed, code is ${error.code},message is ${error.message}`);
+                console.info('[bt_arkts]getConnectedState is not support');
+                expect(Number(error.code) == 801).assertTrue();
+            }
+            done();
+        })
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_OBPU_0200
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_OBPU_0200
+         * @tc.desc API23 on/offBlePhyUpdate(callback: Callback<PhyValue>): void;test normal
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_OBPU_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                await gattServer.onBlePhyUpdate(onReceiveEvent_value);
+                await gattServer.offBlePhyUpdate();
+            } catch (error) {
+                console.error(`[bt_arkts] server onBlePhyUpdate is failed, code is ${error.code},message is ${error.message}`);
+                console.info('[bt_arkts]getConnectedState is not support');
+                expect(Number(error.code) == 801).assertTrue();
+            }
+            done();
+        })
 
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_OBPU_0100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_OBPU_0100
+         * @tc.desc API23 client on/off BlePhyUpdate(callback: Callback<PhyValue>): void;normal
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_OBPU_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                await device.onBlePhyUpdate(onReceiveEvent_value);
+                await device.offBlePhyUpdate(onReceiveEvent_value);
+            } catch (error) {
+                console.error(`[bt_arkts] client onBlePhyUpdate is failed, code is ${error.code},message is ${error.message}`);
+                console.info('[bt_arkts] BlePhyUpdate is not support');
+                expect(Number(error.code) == 801).assertTrue();
+            }
+            done();
+        })
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_OBPU_0200
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_OBPU_0200
+         * @tc.desc API23 client on/off BlePhyUpdate(callback: Callback<PhyValue>): void;normal
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_OBPU_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                await device.onBlePhyUpdate(onReceiveEvent_value);
+                await device.offBlePhyUpdate();
+            } catch (error) {
+                console.error(`[bt_arkts] client onBlePhyUpdate is failed, code is ${error.code},message is ${error.message}`);
+                console.info('[bt_arkts] BlePhyUpdate is not support');
+                expect(Number(error.code) == 801).assertTrue();
+            }
+            done();
+        })       
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_READPHY_0100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_READPHY_0100
+         * @tc.desc API23 set/readPhy(deviceId: string): Promise<PhyValue>; test normal
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_READPHY_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                let deviceId = "00:11:22:33:44:55";
+                await gattServer.readPhy(deviceId);
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts] server set/readPhy is failed, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801) {
+                    console.info('[bt_arkts]getConnectedState is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] server The connection is not established.');
+                    expect(Number(error.code)).assertEqual(2901003);
+                }
+            }
+            done();
+        })  
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_READPHY_0100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_READPHY_0100
+         * @tc.desc API23 client setPhy readPhytest normal
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_READPHY_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+            try {
+                await device.readPhy();
+                console.info('[bt_arkts] client readPhy success');
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts] client readPhy is failed, code is ${error.code},message is ${error.message}`);
+                expect(Number(error.code)).assertEqual(2901003);
+            }
+            done();
+        })
     })
 }

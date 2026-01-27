@@ -407,7 +407,7 @@ export default function textStyleJsunit() {
       console.info('[testTextStyle_static_019] START');
       try {
         AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")?.notify({
-          name: 'fontWeight', value: 0x80000000
+          name: 'fontWeight', value: 0x80000000 as int
         });
         await CommonFunc.sleep(2000);
       } catch (err:Error) {

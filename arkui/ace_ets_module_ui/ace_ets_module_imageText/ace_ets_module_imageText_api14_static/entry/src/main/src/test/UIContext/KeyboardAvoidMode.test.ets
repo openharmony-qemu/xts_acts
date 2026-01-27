@@ -50,7 +50,7 @@ export default function KeyboardAvoidModeTest() {
         console.info("get KeyboardAvoidModeTest state pages: " + JSON.stringify(pages));
         if (!("KeyboardAvoidMode" == pages.name)) {
           console.info("get KeyboardAvoidModeTest state pages.name: " + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
