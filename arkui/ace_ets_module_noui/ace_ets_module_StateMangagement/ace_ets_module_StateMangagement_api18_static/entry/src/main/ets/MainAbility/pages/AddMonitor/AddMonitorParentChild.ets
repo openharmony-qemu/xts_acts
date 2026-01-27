@@ -38,7 +38,7 @@ struct ParentComponent {
   build() {
     Column() {
       Text(this.parentText)
-        .id('parentText')
+        .id('ParentText')
         .height('5%')
       Text(this.message)
         .fontSize(30)
@@ -106,7 +106,7 @@ struct ChildComponent {
 
   build() {
     Column() {
-      Text(`${this.childText}`).id('childText').height('5%')
+      Text(`${this.childText}`).id('ChildText').height('5%')
       Text(`Child Value: ${this.childValue}`)
         .fontSize(50)
         .height('5%')
