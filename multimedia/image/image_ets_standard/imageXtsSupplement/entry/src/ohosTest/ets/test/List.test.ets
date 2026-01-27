@@ -198,7 +198,6 @@ import ImageExifVersionSupp from './image/ImageExifVersion.test';
 import ImageExifComponentsConfiguration from './image/ImageExifComponentsConfiguration.test';
 import ImageExifShutterSpeedValue from './image/ImageExifShutterSpeedValue.test';
 import imageCreateCroppedAndScaledPixelMap from './image/ImageCreateScaledPixelMap.test';
-import ImagePixelMapGetMetadata from './image/ImagePixelMapGetMetadata.test';
 
 import ImageBodySerialNumber from './image/ImageBodySerialNumber.test';
 import ImageCameraOwnerName from './image/ImageCameraOwnerName.test';
