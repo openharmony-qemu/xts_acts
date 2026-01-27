@@ -27,14 +27,6 @@ const ExpectTrue: (n: boolean) => void = (n: boolean) => {
   }
 }
 
-const ExpectTrue: (n: boolean) => void = (n: boolean) => {
-  try {
-    expect(n).assertTrue();
-  } catch (err) {
-    console.info("expectInfo", `test failed`);
-  }
-}
-
 function sleep(time: number): Promise<string> {
   return new Promise<string>((resolve) => {
     setTimeout(() => {
