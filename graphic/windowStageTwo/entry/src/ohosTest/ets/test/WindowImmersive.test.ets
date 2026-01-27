@@ -4063,7 +4063,7 @@ export default function windowImmersiveTest() {
             expect(avoidArea7.topRect.width).assertEqual(0);
             expect(avoidArea7.topRect.height).assertEqual(0);
 
-            if(deviceType != 'wearable'){
+            if(deviceType != 'wearable' && deviceType != 'tv'){
               expect(avoidArea7.bottomRect.width).assertLarger(0);
               expect(avoidArea7.bottomRect.height).assertLarger(0);
             }else{
