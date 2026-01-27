@@ -1,5 +1,6 @@
 # Define project specific obfuscation rules here.
-# You can include the obfuscation configuration files in the current module's build-profile.json5.LinkerLoadLibraryWithPermissionCheckTest0100
+# You can include the obfuscation configuration files in the current module's build-profile.json5.
+#
 
 # Obfuscation options:
 # -disable-obfuscation: disable all obfuscations

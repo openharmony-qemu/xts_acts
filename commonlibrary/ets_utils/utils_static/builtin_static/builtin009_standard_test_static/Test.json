@@ -3,14 +3,14 @@
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
-        "bundle-name": "builtin008.standard.test.static",
+        "bundle-name": "builtin009.standard.test.static",
         "module-name": "entry",
         "shell-timeout": "600000",
         "testcase-timeout": "180000"
     },
     "kits": [{
         "test-file-name": [
-            "ActsBuiltin8StaticTest.hap"
+            "ActsBuiltin9StaticTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true

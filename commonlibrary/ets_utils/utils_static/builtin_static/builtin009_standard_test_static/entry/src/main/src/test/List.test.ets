@@ -47,7 +47,8 @@ import builtinsRuntimeLinkerLoadClassTest from './runtimeLinker/BuiltinsRuntimeL
 
 
 
-export default function testsuite() {builtinsStringBuilderTestToString();
+export default function testsuite() {
+  builtinsStringBuilderTestToString();
   builtinsStringBuilderTestAppend();
   builtinsStringBuilderTestConstructor();
   
