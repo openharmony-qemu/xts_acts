@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import EnterpriseAdminExtensionAbility from '@ohos.enterprise.EnterpriseAdminExtensionAbility'
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect} from "deccjsunit/index"
+import EnterpriseAdminExtensionAbility from '@ohos.enterprise.EnterpriseAdminExtensionAbility';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect} from 'deccjsunit/index';
 import type systemManager from './@ohos.enterprise.systemManager';
 
 export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbility {
