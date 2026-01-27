@@ -113,11 +113,7 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
       const linker = new TestRuntimeLinker();
       const td: string = '!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
       const type = linker.getType(td);
-      if (type === undefined) {
-        expect(true).assertTrue();
-      } else {
-        expect(type !== null).assertTrue();
-      }
+      expect(type === undefined || type !== null).assertTrue();
     });
 
     /*

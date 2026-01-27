@@ -500,7 +500,7 @@ export default function builtinsBootRuntimeLinkerTest() {
 
       expect(result instanceof RuntimeLinker).assertTrue();
       } catch (error) {
-        expect().assertFail(`Unexpected error: ${error.message}`);
+        expect().assertFail();
       }
     });
 

@@ -39,21 +39,23 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
     })
 
     /*
-    * @tc.name    builtinsRuntimeLinkerLoadLibraryTest0100
-    * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_TEST0100
-    * @tc.desc    Test loadLibrary with undefined parameter
-    * @tc.type    FUNCTION
-    * @tc.size    SMALLTEST
-    * @tc.level   LEVEL0
-    */
+     * @tc.name    builtinsRuntimeLinkerLoadLibraryTest0100
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_TEST0100
+     * @tc.desc    Test loadLibrary with undefined parameter
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
+     */
     it('builtinsRuntimeLinkerLoadLibraryTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const strObj = new String(undefined);
+      let hasError = false;
       try {
-        const strObj = new String(undefined);
         loadLibrary(strObj);
       } catch (error) {
+        hasError = true;
         expect(error instanceof Error).assertTrue();
-        console.log('Undefined parameter handled');
       }
+      expect(hasError).assertTrue();
     });
 
     /*
@@ -65,13 +67,15 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsRuntimeLinkerLoadLibraryTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const strObj = new String(null);
+      let hasError = false;
       try {
-        const strObj = new String(null);
         loadLibrary(strObj);
-        expect(true).assertTrue();
       } catch (error) {
-        console.log('Null parameter handled');
+        hasError = true;
+        expect(error instanceof Error).assertTrue();
       }
+      expect(hasError).assertTrue();
     });
 
     /*
@@ -82,16 +86,15 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadLibraryTest0300', TestType.FUNCTION + Size.SMALLTEST + Level.LEVEL0, () => {
-      let testCompleted = false;
+    it('builtinsRuntimeLinkerLoadLibraryTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      let hasError = false;
       try {
         loadLibrary('');
-        testCompleted = true;
       } catch (error) {
-        testCompleted = true;
+        hasError = true;
         expect(error instanceof Error).assertTrue();
       }
-      expect(testCompleted).assertTrue();
+      expect(hasError).assertTrue();
     });
 
     /*
@@ -100,24 +103,25 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
      * @tc.desc    Test loadLibrary with full range of special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
+     * @tc.level   LEVEL0
      */
     it('builtinsRuntimeLinkerLoadLibraryTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialChars = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
       expect(specialChars.length).assertEqual(32);
+
+      let allRejected = true;
       for (let i = 0; i < specialChars.length; i++) {
         const singleChar = specialChars.charAt(i);
         try {
           const testPath = '/lib/test' + singleChar + 'file.so';
           loadLibrary(testPath);
+          allRejected = false;
         } catch (error) {
           expect(error instanceof Error).assertTrue();
-          const errorMsg = error.message || '';
         }
       }
-      expect(true).assertTrue();
+      expect(allRejected).assertTrue();
     });
-
 
     /*
      * @tc.name    builtinsRuntimeLinkerLoadLibraryTest0500
@@ -125,7 +129,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
      * @tc.desc    Test loadLibrary with full range of ASCII characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
+     * @tc.level   LEVEL0
      */
     it('builtinsRuntimeLinkerLoadLibraryTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let asciiStr = '';
@@ -133,15 +137,22 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
         asciiStr += String.fromCharCode(i);
       }
       expect(asciiStr.length).assertEqual(95);
+
+      const illegalChars = String.fromCharCode(0) + '\n\r\t';
+      let controlCharsRejected = true;
+
       for (let i = 0; i < asciiStr.length; i++) {
         const charStr = String(asciiStr.charAt(i));
         try {
           loadLibrary(charStr);
+          if (illegalChars.includes(charStr)) {
+            controlCharsRejected = false;
+          }
         } catch (error) {
           expect(error instanceof Error).assertTrue();
         }
       }
-      expect(true).assertTrue();
+      expect(controlCharsRejected).assertTrue();
     });
 
     /*
@@ -150,17 +161,18 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
      * @tc.desc    Test loadLibrary with duplicated special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
+     * @tc.level   LEVEL0
      */
     it('builtinsRuntimeLinkerLoadLibraryTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const specialChars = '!!""##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~';
+      let hasError = false;
       try {
-        const specialChars = '!!""##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~';
         loadLibrary(specialChars);
-        expect(true).assertTrue();
       } catch (error) {
-        console.log('Duplicated special characters handled');
+        hasError = true;
         expect(error instanceof Error).assertTrue();
       }
+      expect(hasError).assertTrue();
     });
 
     /*
@@ -169,48 +181,18 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
      * @tc.desc    Test loadLibrary with escape characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
+     * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadLibraryTest0700', TestType.FUNCTION + Size.SMALLTEST + Level.LEVEL0, () => {
-      const actualEscapeChars =
-        '\u0007' +
-          '\b' +
-          '\f' +
-          '\n' +
-          '\r' +
-          '\t' +
-          '\u000B' +
-          '\\' +
-          '\'' +
-          '\"' +
-          '?' +
-          '\0' +
-          'A' +
-          'A';
-      expect(actualEscapeChars.charCodeAt(0)).assertEqual(7);
-      expect(actualEscapeChars.charCodeAt(1)).assertEqual(8);
-      expect(actualEscapeChars.charCodeAt(2)).assertEqual(12);
-      expect(actualEscapeChars.charCodeAt(3)).assertEqual(10);
-      expect(actualEscapeChars.charCodeAt(4)).assertEqual(13);
-      expect(actualEscapeChars.charCodeAt(5)).assertEqual(9);
-      expect(actualEscapeChars.charCodeAt(6)).assertEqual(11);
-      expect(actualEscapeChars.charCodeAt(7)).assertEqual(92);
-      expect(actualEscapeChars.charCodeAt(8)).assertEqual(39);
-      expect(actualEscapeChars.charCodeAt(9)).assertEqual(34);
-      expect(actualEscapeChars.charCodeAt(10)).assertEqual(63);
-      expect(actualEscapeChars.charCodeAt(11)).assertEqual(0);
-      expect(actualEscapeChars.charCodeAt(12)).assertEqual(65);
-      expect(actualEscapeChars.charCodeAt(13)).assertEqual(65);
-
+    it('builtinsRuntimeLinkerLoadLibraryTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const escapeChars = '\\a\\b\\f\\n\\r\\t\\v\\\\\\\'\\"\\?\\0\\101\\x41';
-
+      let hasError = false;
       try {
         loadLibrary(escapeChars);
-        expect(true).assertTrue();
       } catch (error) {
-        console.log('Escape characters handled');
+        hasError = true;
         expect(error instanceof Error).assertTrue();
       }
+      expect(hasError).assertTrue();
     });
 
     /*
@@ -219,7 +201,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
      * @tc.desc    Test loadLibrary with emoji and Unicode characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
+     * @tc.level   LEVEL0
      */
     it('builtinsRuntimeLinkerLoadLibraryTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testPaths = [
@@ -240,16 +222,16 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
         'test\\ud83c\\udff4.so',
       ];
 
-      let testsExecuted = 0;
+      let allHandled = true;
       for (let i = 0; i < testPaths.length; i++) {
         try {
           loadLibrary(testPaths[i]);
-          testsExecuted++;
+          allHandled = false;
         } catch (e) {
-          testsExecuted++;
+          expect(e instanceof Error).assertTrue();
         }
       }
-      expect(testsExecuted).assertEqual(testPaths.length);
+      expect(allHandled).assertTrue();
     });
 
     /*
@@ -260,20 +242,23 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsRuntimeLinkerLoadLibraryTest0900', TestType.FUNCTION + Size.SMALLTEST + Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadLibraryTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const safeTests = [
         'test\\udc04.so',
         'lib\\ud83d.so',
         'path\\udff4.so'
       ];
+
+      let allRejected = true;
       for (let i = 0; i < safeTests.length; i++) {
         try {
           loadLibrary(safeTests[i]);
+          allRejected = false;
         } catch (error) {
           expect(error instanceof Error).assertTrue();
         }
       }
-      expect(true).assertTrue();
+      expect(allRejected).assertTrue();
     });
 
     /*
@@ -285,16 +270,23 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsRuntimeLinkerLoadLibraryTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      try {
-        const keywords = ['0', 'NaN', ''];
+      const keywords = ['0', 'NaN', ''];
 
-        for (const keyword of keywords) {
+      let emptyStringRejected = false;
+      for (const keyword of keywords) {
+        try {
           loadLibrary(keyword);
+          if (keyword === '') {
+            console.warn('An empty string is accepted, which may be a problem.');
+          }
+        } catch (error) {
+          if (keyword === '') {
+            emptyStringRejected = true;
+          }
+          expect(error instanceof Error).assertTrue();
         }
-        expect(true).assertTrue();
-      } catch (error) {
-        console.log('Keyword strings handled');
       }
+      expect(emptyStringRejected).assertTrue();
     });
 
     /*
@@ -315,33 +307,26 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
         return ans;
       };
       const size = 10000;
-      const treeStart = Date.now();
       const treeString = initTreeString(size);
-      const treeTime = Date.now() - treeStart;
-      const normalStart = Date.now();
       const normalString = 'x'.repeat(size);
-      const normalTime = Date.now() - normalStart;
-      console.log(`treeString length: ${treeString.length}, expected: ${size}`);
-      console.log(`normalString length: ${normalString.length}, expected: ${size}`);
       expect(treeString.length >= size).assertTrue();
-
-      let treeExceptionCaught = false;
+      expect(normalString.length).assertEqual(size);
+      let treeError = false;
       try {
         loadLibrary(treeString);
       } catch (error) {
-        treeExceptionCaught = true;
-        console.log("loadLibrary(treeString) error:", error);
+        treeError = true;
+        expect(error instanceof Error).assertTrue();
       }
-      expect(treeExceptionCaught).assertTrue();
-
-      let normalExceptionCaught = false;
+      expect(treeError).assertTrue();
+      let normalError = false;
       try {
         loadLibrary(normalString);
       } catch (error) {
-        normalExceptionCaught = true;
-        console.log("loadLibrary(normalString) error:", error);
+        normalError = true;
+        expect(error instanceof Error).assertTrue();
       }
-      expect(normalExceptionCaught).assertTrue();
+      expect(normalError).assertTrue();
     });
 
     /*
@@ -354,16 +339,16 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
      */
     it('builtinsRuntimeLinkerLoadLibraryTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const str = "{k1:value1,k2:value2}";
-      for (let i = 0; i < 1000; i++) {
-        const result = str.substring(0, str.length - 2);
-        expect(result).assertEqual("{k1:value1,k2:value");
-      }
-      const finalResult = str.substring(0, str.length - 2);
+      const sliced = str.substring(0, str.length - 2);
+      expect(sliced).assertEqual("{k1:value1,k2:value");
+      let hasError = false;
       try {
-        loadLibrary(finalResult);
+        loadLibrary(sliced);
       } catch (error) {
+        hasError = true;
         expect(error instanceof Error).assertTrue();
       }
+      expect(hasError).assertTrue();
     });
 
     /*
@@ -380,14 +365,11 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
         const largeString = 'a'.repeat(stringSize);
         expect(largeString.length).assertEqual(stringSize);
         loadLibrary(largeString);
-        expect(true).assertTrue();
       } catch (error) {
         const errorMsg = error.message || error.toString();
-        if (errorMsg.includes('memory') || errorMsg.includes('out of')) {
-          expect(false).assertTrue();
-        } else {
-          expect(error instanceof Error).assertTrue();
-        }
+        expect(error instanceof Error).assertTrue();
+        expect(errorMsg.includes('memory')).assertFalse();
+        expect(errorMsg.includes('out of')).assertFalse();
       }
     });
 
@@ -397,7 +379,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
      * @tc.desc    Test loadLibrary GC behavior
      * @tc.type    FUNCTION
      * @tc.size    LARGETEST
-     * @tc.level   LEVEL2
+     * @tc.level   LEVEL0
      */
     it('builtinsRuntimeLinkerLoadLibraryTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const iterations = 100;
@@ -410,9 +392,14 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
           const errorMsg = error.message || '';
           expect(errorMsg.includes('memory')).assertFalse();
           expect(errorMsg.includes('out of')).assertFalse();
+          expect(error instanceof Error).assertTrue();
         }
       }
-      expect(true).assertTrue();
+      try {
+        loadLibrary('test.so');
+      } catch (error) {
+        expect(error instanceof Error).assertTrue();
+      }
     });
 
   })
