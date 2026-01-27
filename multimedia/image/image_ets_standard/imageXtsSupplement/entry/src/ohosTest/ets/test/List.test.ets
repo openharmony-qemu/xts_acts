@@ -406,6 +406,10 @@ export default function testsuite() {
   ImageBitsPerSampleStripOffsetsSupp();
   ImageSourceMetadataSupp();
   ImageGetImagePropertyOptionsSupp();
+  ImageGammaSupp();
+  ImagePictureMetadataTest();
+  MultimediaImageTest();
+  ImageExifMetadataTestSupp();
   ImageGammaSupp()
   ImagePictureMetadataTest()
   MultimediaImageTest()
@@ -417,5 +421,6 @@ export default function testsuite() {
   ImagePictureMetadataTest();
   MultimediaImageTest();
   ImageExifMetadataTestSupp();
+
 
 }
