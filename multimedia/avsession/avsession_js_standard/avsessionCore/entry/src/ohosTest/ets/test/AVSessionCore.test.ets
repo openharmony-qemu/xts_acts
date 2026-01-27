@@ -1649,7 +1649,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_0100
      * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_0100
-     * @tc.desc   Testing onDesktopLyricVisibilityChanged
+     * @tc.desc   Testing onDesktopLyricVisibilityChanged - callback equals true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1663,22 +1663,65 @@ export default function abilityTest() {
             done();
             return;
           }
+          let callbackData: boolean = false;
           let callbackTriggered: boolean = false;
           let callback = (data: boolean) => {
-            callbackTriggered = data;
-            console.info(`${TAG}: boolean: callback triggered (visible=${data})`);
+            callbackData = data;
+            callbackTriggered = true;
+            console.info(`${TAG}: onDesktopLyricVisibilityChanged callback triggered , data = ${data})`);
           }
           await session.enableDesktopLyric(true);
           session.onDesktopLyricVisibilityChanged(callback);
           await session.setDesktopLyricVisible(true);
           await sleep(200);
           expect(callbackTriggered).assertTrue();
+          expect(callbackData).assertTrue();
         } catch (err) {
           console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
         }
         done();
       });
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_2200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_2200
+     * @tc.desc   Testing onDesktopLyricVisibilityChanged - callback equals false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_2200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_2200';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          let callbackData: boolean = true;
+          let callbackTriggered: boolean = false;
+          let callback = (data: boolean) => {
+            callbackData = data;
+            callbackTriggered = true;
+            console.info(`${TAG}: onDesktopLyricVisibilityChanged callback triggered , data = ${data})`);
+          }
+          await session.enableDesktopLyric(true);
+          await session.setDesktopLyricVisible(true);
+          session.onDesktopLyricVisibilityChanged(callback);
+          await session.setDesktopLyricVisible(false);
+          await sleep(200);
+          expect(callbackTriggered).assertTrue();
+          expect(callbackData).assertFalse();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
 
     /**
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICVISIBLITYCHANGED_0100
