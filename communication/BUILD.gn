@@ -35,6 +35,7 @@ group("communication") {
       "dsoftbus/ipc_stage/ipc_stageserver:ActsIPCEtsServer",
       "dsoftbus/ipc_stage/ipc_stagetest:ActsIPCEtsTest",
       "dsoftbus/linkEnhance:ActslinkEnhanceTest",
+      "dsoftbus/linkEnhanceStatic:ActslinkEnhanceStaticTest",
       "dsoftbus/linkEnhanceNoPermission:ActslinkEnhanceNoPermissionTest",
       "dsoftbus/proxyChannelManager:ActsProxyChannelMgrTest",
       "dsoftbus/proxyChannelManagerStatic:ActsProxyChannelManagerStaticTest",
