@@ -35,6 +35,14 @@ const ExpectTrue: (n: boolean) => void = (n: boolean) => {
   }
 }
 
+function sleep(time: number): Promise<string> {
+  return new Promise<string>((resolve) => {
+    setTimeout(() => {
+      resolve('ok')
+    }, time)
+  });
+}
+
 export default function observerManagerCallStateTest() {
   describe('ObserverManagerCallStateTest', () => {
 
