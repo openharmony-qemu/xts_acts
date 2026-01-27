@@ -26,6 +26,7 @@ import notificationManager from '@ohos.notificationManager';
 import { canIUse } from '@internal.full.global';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import wifiMg from '@ohos.wifiManager';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag:string='location'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -37,6 +38,35 @@ export default function actslocationTest() {
     describe("actslocationTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         beforeAll(async() => {
+          let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean
+          if(!isWifiActive){
+            console.info("======> wifi_test/enable wifi:" );
+            wifiMg.enableWifi();
+            await Utils.msSleep(5000);
+          }
+
+          try {
+            let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+            console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+            console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+            console.info("======> Internet chload : " + JSON.stringify(data.chload));
+            console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+
+            if (data.connState == wifiMg.ConnState.CONNECTED) {
+              console.info("======> WLAN connection established ");
+            } else {
+              expect().message("======> WLAN Network error").assertFail(); //方式一
+
+            }
+            if (data.chload >= 800 || data.rssi <= -80) {
+              expect().message("======> WLAN Network error").assertFail();//方式一
+            } else if (data.chload >= 500) {
+              console.info("======> The internet connection is poor. ");
+            }
+          } catch (err) {
+            console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+            throw (err as Error);
+          }
           hilog.info(domain, tag, 'beforeAll start');
           let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
           hilog.info(domain, tag, 'beforeAll AbilityDelegator');
