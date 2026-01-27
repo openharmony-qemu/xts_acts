@@ -25,6 +25,7 @@
 #include "Promise.h"
 #include "WeakGlobalReferences.h"
 
+
 namespace {
     std::array methods = {
         ani_native_function{"test_ExistUnhandledError", ":z",
