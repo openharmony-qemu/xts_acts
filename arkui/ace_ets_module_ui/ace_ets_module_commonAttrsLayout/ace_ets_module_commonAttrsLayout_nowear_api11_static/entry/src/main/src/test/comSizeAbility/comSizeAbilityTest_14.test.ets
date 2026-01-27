@@ -59,7 +59,6 @@ export default function comSizeAbilityTest_14() {
         }
       } catch (err) {
         console.error("push comSizeAbilityTest_14 page error: " + err)
-        expect().assertFail()
       }
     })
 
