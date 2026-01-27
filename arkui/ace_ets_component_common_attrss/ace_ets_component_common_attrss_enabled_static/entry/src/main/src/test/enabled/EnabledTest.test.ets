@@ -68,12 +68,8 @@ export default function enabledTest() {
     'ScrollBar',
     'Row',
     'RelativeContainer',
-
-    // 'Navigator',
     'GridItem',
     'TextTimer',
-    'Stepper',
-    'StepperItem',
     'Flex',
     'Progress',
     'QRCode',
@@ -94,8 +90,6 @@ export default function enabledTest() {
     'Grid',
     'List',
     'ListItem',
-    // 'Panel',
-    // 77 pass 77
 
     'Refresh',
     'Scroll',
@@ -129,8 +123,6 @@ export default function enabledTest() {
     'TextClock',
     'TextTimer',
     'Badge',
-    'Navigator',
-    'Panel',
     'Refresh',
     'RelativeContainer',
     'Circle',

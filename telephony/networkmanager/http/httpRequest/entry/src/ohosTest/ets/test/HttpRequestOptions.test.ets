@@ -2581,7 +2581,8 @@ export default function HttpRequestOptionsTest() {
               method: http.RequestMethod.GET,
               resumeFrom: 9999,
               resumeTo: 333,
-              addressFamily: http.AddressFamily.DEFAULT
+              addressFamily: http.AddressFamily.DEFAULT,
+              pathPreference: 'auto'
             }
             let httpRequest: http.HttpRequest = http.createHttp();
             httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {

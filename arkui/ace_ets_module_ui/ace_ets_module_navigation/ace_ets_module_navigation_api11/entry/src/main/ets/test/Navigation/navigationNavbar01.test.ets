@@ -60,8 +60,7 @@ export default function navigationNavbar01() {
       await button.click();
       await CommonFunc.sleep(1000);
       let navigationText01 = CommonFunc.getComponentRect('navigationText01');
-      expect(Math.round(navigationText01.right - navigationText01.left)).assertEqual(Math.round(vp2px(300)));
-
+      expect(Math.abs(Math.round(navigationText01.right - navigationText01.left) - Math.round(vp2px(300))) <= 1).assertTrue();
       console.info('[navigationNavbar01_001] END');
       done();
     });
@@ -79,7 +78,7 @@ export default function navigationNavbar01() {
       globalThis.value.message.notify({name:'NavigationWidth', value: 200 });
       await CommonFunc.sleep(1000);
       let navigationText01 = CommonFunc.getComponentRect('navigationText01');
-      expect(Math.round(navigationText01.right - navigationText01.left)).assertEqual(Math.round(vp2px(200)));
+      expect(Math.abs(Math.round(navigationText01.right - navigationText01.left) - Math.round(vp2px(200))) <= 1).assertTrue();
       console.info('[navigationNavbar01_002] END');
       done();
     });

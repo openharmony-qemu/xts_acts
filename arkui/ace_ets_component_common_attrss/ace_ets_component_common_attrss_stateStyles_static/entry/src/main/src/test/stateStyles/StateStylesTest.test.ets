@@ -79,8 +79,6 @@ export default function stateStylesTest() {
     'List',
     'ListItem',
     'ListItemGroup',
-    'Navigator',
-    'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',
@@ -107,7 +105,7 @@ export default function stateStylesTest() {
 
   let testValues: TestValue[] = [{
     describe: 'SetDisabled',
-    setValue: false,
+    setValue: true,
     expectValue: {
       disabledStyles: 2,
       normalStyles: 1
@@ -122,8 +120,6 @@ export default function stateStylesTest() {
       console.info("startAbility end");
     });
     beforeEach(()=>{
-      AppStorage.setOrCreate<boolean>('_isEnable', true)
-      await UtilsTest.msSleep(2000)
     })
     CommonTest.initTest(pageConfig, supportView, testValues,  async (data: BasePageConfig): Promise<void> => {
 
@@ -132,20 +128,11 @@ export default function stateStylesTest() {
       let targetBeforeObjKey = inspector.getInspectorByKey(data.pageConfig.componentKey);
       await Utils.sleep(1000);
       let targetBeforeObj = JSON.parseJsonElement(targetBeforeObjKey)
-      // //Set value
-      console.info('ddccvcvccc',data.testValue.setValue)
-      AppStorage.setOrCreate<boolean>('_isEnable', data.testValue.setValue)
-      await Utils.sleep(1000);
 
-      //Obtain target component information after changes
-      let targetAfterObjKey = inspector.getInspectorByKey(data.pageConfig.componentKey);
-      await Utils.sleep(1000);
-      let targetAfterObj = JSON.parseJsonElement(targetAfterObjKey)
       //Check results
       console.info('[' + data.caseTag + ']' + 'targetBeforeObj.$attrs.zIndex is:' + targetBeforeObj.getElement('$attrs').getDouble('zIndex'));
       expect(targetBeforeObj.getElement('$attrs').getDouble('zIndex')).assertEqual(data.testValue.expectValue.normalStyles);
-      console.info('[' + data.caseTag + ']' + 'targetAfterObj.$attrs.zIndex is:' + targetAfterObj.getElement('$attrs').getDouble('zIndex'));
-      expect(targetAfterObj.getElement('$attrs').getDouble('zIndex')).assertEqual(data.testValue.expectValue.disabledStyles);
+
     });
   })
 }

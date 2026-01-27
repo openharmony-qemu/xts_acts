@@ -296,7 +296,7 @@ export default function textAreaBC1Jsunit() {
         await cutComponent.click();
         await CommonFunc.sleep(1000);
       }
-      let textCut = await driver.findComponent(BY.key('cut'));
+      let textCut = await driver.findComponent(BY.key('cut_textAreaBC1'));
       let text = await textCut.getText();
       console.info('textAreaBC1Jsunit_0700 component obj is: ' + text);
       expect(text).assertEqual('cut');

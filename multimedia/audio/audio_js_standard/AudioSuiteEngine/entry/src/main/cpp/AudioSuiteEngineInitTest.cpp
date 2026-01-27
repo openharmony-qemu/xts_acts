@@ -5043,6 +5043,38 @@ static napi_value OH_AudioSuiteEngine_AudioNodeType_003(napi_env env, napi_callb
     napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
     return result;
 }
+
+static napi_value OH_AudioSuiteEngine_AudioNodeType_004(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AudioNode_Type spacerender =
+        static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST);
+    OH_AudioSuite_SurroundDirection spaceccw =
+        static_cast<OH_AudioSuite_SurroundDirection>(AudioSuiteSurroundDirectionTest::SPACE_RENDER_CCW_TEST);
+    OH_AudioSuite_SurroundDirection spacecw =
+        static_cast<OH_AudioSuite_SurroundDirection>(AudioSuiteSurroundDirectionTest::SPACE_RENDER_CW_TEST);
+
+    if (spacerender != EFFECT_NODE_TYPE_SPACE_RENDER) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_004 fail, EFFECT_NODE_TYPE_SPACE_RENDER is: %{public}d",
+            EFFECT_NODE_TYPE_SPACE_RENDER);
+        return result;
+    }
+    if (spaceccw != SPACE_RENDER_CCW) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_004 fail, SPACE_RENDER_CCW is: %{public}d",
+            SPACE_RENDER_CCW);
+        return result;
+    }
+    if (spacecw != SPACE_RENDER_CW) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+        LOG("AudioNodeType_004 fail, SPACE_RENDER_CW is: %{public}d",
+            SPACE_RENDER_CW);
+        return result;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
+    return result;
+}
 static napi_value OH_AudioSuiteEngine_PipelineWorkMode_001(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -7292,6 +7324,1115 @@ static napi_value AudioSuiteEngine_GetGeneralVoiceChangeType_008(napi_env env, n
     LOG("AudioSuiteEngine_GetGeneralVoiceChangeType_008 fail, result is: %{public}d", result);
     return res;
 }
+
+static napi_value AudioSuiteEngine_SetSpaceRenderPositionParams_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioSuite_Result result;
+    bool isSupported =
+        IsNodeTypeSupported(static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, static_cast<OH_AudioNode_Type>
+                                        (AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    bool testPassed = true;
+    OH_AudioSuite_SpaceRenderPositionParams positionNormalCases[] = {
+        {1, 2, 3},
+        {5, 5, 5},
+        {1, 1, 1},
+        {0, 0, 0},
+        {-1, -1, -1},
+        {-5, -5, -5}
+    };
+    for (size_t i = 0; i < sizeof(positionNormalCases)/sizeof(positionNormalCases[0]); ++i) {
+        OH_AudioSuite_SpaceRenderPositionParams position = positionNormalCases[i];
+        result = OH_AudioSuiteEngine_SetSpaceRenderPositionParams(audioNode, position);
+        if (result != AUDIOSUITE_SUCCESS) {
+            LOG("Test case %zu failed with param:{%f, %f, %f}, result: %d",
+                i, position.x, position.y, position.z, result);
+            testPassed = false;
+        }
+    }
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (!isSupported || testPassed) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_SetSpaceRenderPositionParams_001 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetSpaceRenderPositionParams_001 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetSpaceRenderPositionParams_002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+
+    OH_AudioSuite_SpaceRenderPositionParams position = {1, 2, 3};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetSpaceRenderPositionParams(audioNode, position);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_SetSpaceRenderPositionParams_002 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetSpaceRenderPositionParams_002 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetSpaceRenderPositionParams_003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_AUDIO_MIXER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_SpaceRenderPositionParams position = {1, 2, 3};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetSpaceRenderPositionParams(audioNode, position);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_SetSpaceRenderPositionParams_003 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetSpaceRenderPositionParams_003 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetSpaceRenderPositionParams_004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_SpaceRenderPositionParams position = {1, 2, 3};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetSpaceRenderPositionParams(nullptr, position);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_SetSpaceRenderPositionParams_004 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetSpaceRenderPositionParams_004 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetSpaceRenderPositionParams_005(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioSuite_Result result;
+    bool isSupported =
+        IsNodeTypeSupported(static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, static_cast<OH_AudioNode_Type>
+                                        (AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    bool testPassed = true;
+    OH_AudioSuite_SpaceRenderPositionParams positionAbnormalCases[] = {
+        {6, 0, 0},
+        {-6, 0, 0},
+        {0, 6, 0},
+        {0, -6, 0},
+        {0, 0, 6},
+        {0, 0, -6}
+    };
+    for (size_t i = 0; i < sizeof(positionAbnormalCases)/sizeof(positionAbnormalCases[0]); ++i) {
+        OH_AudioSuite_SpaceRenderPositionParams position = positionAbnormalCases[i];
+        result = OH_AudioSuiteEngine_SetSpaceRenderPositionParams(audioNode, position);
+        if (result != AUDIOSUITE_ERROR_INVALID_PARAM) {
+            LOG("Test case %zu failed with param:{%f, %f, %f}, result: %d",
+                i, position.x, position.y, position.z, result);
+            testPassed = false;
+        }
+    }
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (!isSupported || testPassed) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_SetSpaceRenderPositionParams_005 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetSpaceRenderPositionParams_005 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderPositionParams_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_SpaceRenderPositionParams position = {1, 2, 3};
+    OH_AudioSuiteEngine_SetSpaceRenderPositionParams(audioNode, position);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderPositionParams(audioNode, &position);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderPositionParams_001 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderPositionParams_001 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderPositionParams_002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+
+    OH_AudioSuite_SpaceRenderPositionParams position;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderPositionParams(audioNode, &position);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderPositionParams_002 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderPositionParams_002 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderPositionParams_003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_AUDIO_MIXER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_SpaceRenderPositionParams position;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderPositionParams(audioNode, &position);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderPositionParams_003 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderPositionParams_003 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderPositionParams_004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderPositionParams(audioNode, nullptr);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderPositionParams_004 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderPositionParams_004 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderPositionParams_005(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_SpaceRenderPositionParams position = {1, 2, 3};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderPositionParams(nullptr, &position);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderPositionParams_005 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderPositionParams_005 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderPositionParams_006(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderPositionParams(nullptr, nullptr);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderPositionParams_006 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderPositionParams_006 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetSpaceRenderRotationParams_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioSuite_Result result;
+    bool isSupported =
+        IsNodeTypeSupported(static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, static_cast<OH_AudioNode_Type>
+                                        (AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    bool testPassed = true;
+    OH_AudioSuite_SpaceRenderRotationParams rotationNormalCases[] = {
+        {1, 2, 3, 5, SPACE_RENDER_CW},
+        {5, 5, 5, 2, SPACE_RENDER_CW},
+        {1, 1, 1, 2, SPACE_RENDER_CW},
+        {0, 0, 0, 20, SPACE_RENDER_CW},
+        {-1, -1, -1, 40, SPACE_RENDER_CCW},
+        {-5, -5, -5, 40, SPACE_RENDER_CCW}
+    };
+    for (size_t i = 0; i < sizeof(rotationNormalCases)/sizeof(rotationNormalCases[0]); ++i) {
+        OH_AudioSuite_SpaceRenderRotationParams rotation = rotationNormalCases[i];
+        result = OH_AudioSuiteEngine_SetSpaceRenderRotationParams(audioNode, rotation);
+        if (result != AUDIOSUITE_SUCCESS) {
+            LOG("Test case %zu failed with param:{%f, %f, %f, %d, %d}, result: %d",
+                i, rotation.x, rotation.y, rotation.z, rotation.surroundTime, rotation.surroundDirection, result);
+            testPassed = false;
+        }
+    }
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (!isSupported || testPassed) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_SetSpaceRenderRotationParams_001 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetSpaceRenderRotationParams_001 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetSpaceRenderRotationParams_002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+
+    OH_AudioSuite_SpaceRenderRotationParams rotation = {1, 2, 3, 5, SPACE_RENDER_CW};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetSpaceRenderRotationParams(audioNode, rotation);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_SetSpaceRenderRotationParams_002 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetSpaceRenderRotationParams_002 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetSpaceRenderRotationParams_003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_AUDIO_MIXER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_SpaceRenderRotationParams rotation = {1, 2, 3, 5, SPACE_RENDER_CW};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetSpaceRenderRotationParams(audioNode, rotation);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_SetSpaceRenderRotationParams_003 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetSpaceRenderRotationParams_003 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetSpaceRenderRotationParams_004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_SpaceRenderRotationParams rotation = {1, 2, 3, 5, SPACE_RENDER_CW};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetSpaceRenderRotationParams(nullptr, rotation);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_SetSpaceRenderRotationParams_004 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetSpaceRenderRotationParams_004 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetSpaceRenderRotationParams_005(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioSuite_Result result;
+    bool isSupported =
+        IsNodeTypeSupported(static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, static_cast<OH_AudioNode_Type>
+                                        (AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    bool testPassed = true;
+    OH_AudioSuite_SpaceRenderRotationParams rotationAbnormalCases[] = {
+        {-6, 0, 0, 21, SPACE_RENDER_CW},
+        {6, 0, 0, 21, SPACE_RENDER_CW},
+        {0, -6, 0, 21, SPACE_RENDER_CW},
+        {0, 6, 0, 21, SPACE_RENDER_CW},
+        {0, 0, -6, 21, SPACE_RENDER_CCW},
+        {0, 0, 6, 21, SPACE_RENDER_CCW},
+        {0, 0, 0, 41, SPACE_RENDER_CCW},
+        {0, 0, 0, 1, SPACE_RENDER_CCW}
+    };
+    for (size_t i = 0; i < sizeof(rotationAbnormalCases)/sizeof(rotationAbnormalCases[0]); ++i) {
+        OH_AudioSuite_SpaceRenderRotationParams rotation = rotationAbnormalCases[i];
+        result = OH_AudioSuiteEngine_SetSpaceRenderRotationParams(audioNode, rotation);
+        if (result != AUDIOSUITE_ERROR_INVALID_PARAM) {
+            LOG("Test case %zu failed with param:{%f, %f, %f, %d, %d}, result: %d",
+                i, rotation.x, rotation.y, rotation.z, rotation.surroundTime, rotation.surroundDirection, result);
+            testPassed = false;
+        }
+    }
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (!isSupported || testPassed) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_SetSpaceRenderRotationParams_005 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetSpaceRenderRotationParams_005 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderRotationParams_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_SpaceRenderRotationParams rotation = {1, 2, 3, 5, SPACE_RENDER_CW};
+    OH_AudioSuiteEngine_SetSpaceRenderRotationParams(audioNode, rotation);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderRotationParams(audioNode, &rotation);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderRotationParams_001 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderRotationParams_001 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderRotationParams_002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+
+    OH_AudioSuite_SpaceRenderRotationParams rotation;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderRotationParams(audioNode, &rotation);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderRotationParams_002 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderRotationParams_002 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderRotationParams_003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_AUDIO_MIXER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_SpaceRenderRotationParams rotation;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderRotationParams(audioNode, &rotation);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderRotationParams_003 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderRotationParams_003 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderRotationParams_004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderRotationParams(audioNode, nullptr);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderRotationParams_004 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderRotationParams_004 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderRotationParams_005(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_SpaceRenderRotationParams rotation = {1, 2, 3, 5, SPACE_RENDER_CW};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderRotationParams(nullptr, &rotation);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderRotationParams_005 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderRotationParams_005 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderRotationParams_006(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderRotationParams(nullptr, nullptr);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderRotationParams_006 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderRotationParams_006 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetSpaceRenderExtensionParams_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioSuite_Result result;
+    bool isSupported =
+        IsNodeTypeSupported(static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, static_cast<OH_AudioNode_Type>
+                                        (AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    bool testPassed = true;
+    OH_AudioSuite_SpaceRenderExtensionParams extensionNormalCases[] = {
+        {1, 1},
+        {2, 90},
+        {3, 180},
+        {5, 359}
+    };
+    for (size_t i = 0; i < sizeof(extensionNormalCases)/sizeof(extensionNormalCases[0]); ++i) {
+        OH_AudioSuite_SpaceRenderExtensionParams extension = extensionNormalCases[i];
+        result = OH_AudioSuiteEngine_SetSpaceRenderExtensionParams(audioNode, extension);
+        if (result != AUDIOSUITE_SUCCESS) {
+            LOG("Test case %zu failed with param:{%f, %d}, result: %d",
+                i, extension.extRadius, extension.extAngle, result);
+            testPassed = false;
+        }
+    }
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (!isSupported || testPassed) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_SetSpaceRenderExtensionParams_001 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetSpaceRenderExtensionParams_001 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetSpaceRenderExtensionParams_002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+
+    OH_AudioSuite_SpaceRenderExtensionParams extension = {1, 1};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetSpaceRenderExtensionParams(audioNode, extension);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_SetSpaceRenderExtensionParams_002 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetSpaceRenderExtensionParams_002 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetSpaceRenderExtensionParams_003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_AUDIO_MIXER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_SpaceRenderExtensionParams extension = {1, 1};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetSpaceRenderExtensionParams(audioNode, extension);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_SetSpaceRenderExtensionParams_003 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetSpaceRenderExtensionParams_003 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetSpaceRenderExtensionParams_004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+
+    OH_AudioSuite_SpaceRenderExtensionParams extension = {1, 1};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetSpaceRenderExtensionParams(nullptr, extension);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_SetSpaceRenderExtensionParams_004 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetSpaceRenderExtensionParams_004 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_SetSpaceRenderExtensionParams_005(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioSuite_Result result;
+    bool isSupported =
+        IsNodeTypeSupported(static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, static_cast<OH_AudioNode_Type>
+                                        (AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    bool testPassed = true;
+    OH_AudioSuite_SpaceRenderExtensionParams extensionAbnormalCases[] = {
+        {0, 1},
+        {1, 360},
+        {6, 1},
+        {1, 0}
+    };
+    for (size_t i = 0; i < sizeof(extensionAbnormalCases)/sizeof(extensionAbnormalCases[0]); ++i) {
+        OH_AudioSuite_SpaceRenderExtensionParams extension = extensionAbnormalCases[i];
+        result = OH_AudioSuiteEngine_SetSpaceRenderExtensionParams(audioNode, extension);
+        if (result != AUDIOSUITE_ERROR_INVALID_PARAM) {
+            LOG("Test case %zu failed with param:{%f, %d}, result: %d",
+                i, extension.extRadius, extension.extAngle, result);
+            testPassed = false;
+        }
+    }
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (!isSupported || testPassed) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_SetSpaceRenderExtensionParams_005 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_SetSpaceRenderExtensionParams_005 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderExtensionParams_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_SpaceRenderExtensionParams extension = {1, 1};
+    OH_AudioSuiteEngine_SetSpaceRenderExtensionParams(audioNode, extension);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderExtensionParams(audioNode, &extension);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderExtensionParams_001 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderExtensionParams_001 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderExtensionParams_002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+
+    OH_AudioSuite_SpaceRenderExtensionParams extension;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderExtensionParams(audioNode, &extension);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_NODE_NOT_EXIST) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderExtensionParams_002 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderExtensionParams_002 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderExtensionParams_003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_AUDIO_MIXER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+
+    OH_AudioSuite_SpaceRenderExtensionParams extension;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderExtensionParams(audioNode, &extension);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderExtensionParams_003 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderExtensionParams_003 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderExtensionParams_004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    
+    bool bypassStatus = false;
+    OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST);
+
+    bool isSupported = IsNodeTypeSupported(type);
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderExtensionParams(audioNode, nullptr);
+
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+
+    if (!isSupported || result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderExtensionParams_004 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderExtensionParams_004 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderExtensionParams_005(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_SpaceRenderExtensionParams extension = {1, 1};
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderExtensionParams(nullptr, &extension);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderExtensionParams_005 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderExtensionParams_005 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSuiteEngine_GetSpaceRenderExtensionParams_006(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderExtensionParams(nullptr, nullptr);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_GetSpaceRenderExtensionParams_006 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_GetSpaceRenderExtensionParams_006 fail, result is: %{public}d", result);
+    return res;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -7736,6 +8877,74 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "AudioSuiteEngine_GetGeneralVoiceChangeType_008", nullptr, AudioSuiteEngine_GetGeneralVoiceChangeType_008,
             nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_AudioSuiteEngine_AudioNodeType_004", nullptr, OH_AudioSuiteEngine_AudioNodeType_004,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetSpaceRenderPositionParams_001", nullptr,
+            AudioSuiteEngine_SetSpaceRenderPositionParams_001, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetSpaceRenderPositionParams_002", nullptr,
+            AudioSuiteEngine_SetSpaceRenderPositionParams_002, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetSpaceRenderPositionParams_003", nullptr,
+            AudioSuiteEngine_SetSpaceRenderPositionParams_003, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetSpaceRenderPositionParams_004", nullptr,
+            AudioSuiteEngine_SetSpaceRenderPositionParams_004, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetSpaceRenderPositionParams_005", nullptr,
+            AudioSuiteEngine_SetSpaceRenderPositionParams_005, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderPositionParams_001", nullptr,
+            AudioSuiteEngine_GetSpaceRenderPositionParams_001, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderPositionParams_002", nullptr,
+            AudioSuiteEngine_GetSpaceRenderPositionParams_002, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderPositionParams_003", nullptr,
+            AudioSuiteEngine_GetSpaceRenderPositionParams_003, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderPositionParams_004", nullptr,
+            AudioSuiteEngine_GetSpaceRenderPositionParams_004, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderPositionParams_005", nullptr,
+            AudioSuiteEngine_GetSpaceRenderPositionParams_005, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderPositionParams_006", nullptr,
+            AudioSuiteEngine_GetSpaceRenderPositionParams_006, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetSpaceRenderRotationParams_001", nullptr,
+            AudioSuiteEngine_SetSpaceRenderRotationParams_001, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetSpaceRenderRotationParams_002", nullptr,
+            AudioSuiteEngine_SetSpaceRenderRotationParams_002, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetSpaceRenderRotationParams_003", nullptr,
+            AudioSuiteEngine_SetSpaceRenderRotationParams_003, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetSpaceRenderRotationParams_004", nullptr,
+            AudioSuiteEngine_SetSpaceRenderRotationParams_004, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetSpaceRenderRotationParams_005", nullptr,
+            AudioSuiteEngine_SetSpaceRenderRotationParams_005, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderRotationParams_001", nullptr,
+            AudioSuiteEngine_GetSpaceRenderRotationParams_001, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderRotationParams_002", nullptr,
+            AudioSuiteEngine_GetSpaceRenderRotationParams_002, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderRotationParams_003", nullptr,
+            AudioSuiteEngine_GetSpaceRenderRotationParams_003, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderRotationParams_004", nullptr,
+            AudioSuiteEngine_GetSpaceRenderRotationParams_004, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderRotationParams_005", nullptr,
+            AudioSuiteEngine_GetSpaceRenderRotationParams_005, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderRotationParams_006", nullptr,
+            AudioSuiteEngine_GetSpaceRenderRotationParams_006, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetSpaceRenderExtensionParams_001", nullptr,
+            AudioSuiteEngine_SetSpaceRenderExtensionParams_001, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetSpaceRenderExtensionParams_002", nullptr,
+            AudioSuiteEngine_SetSpaceRenderExtensionParams_002, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetSpaceRenderExtensionParams_003", nullptr,
+            AudioSuiteEngine_SetSpaceRenderExtensionParams_003, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetSpaceRenderExtensionParams_004", nullptr,
+            AudioSuiteEngine_SetSpaceRenderExtensionParams_004, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_SetSpaceRenderExtensionParams_005", nullptr,
+            AudioSuiteEngine_SetSpaceRenderExtensionParams_005, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderExtensionParams_001", nullptr,
+            AudioSuiteEngine_GetSpaceRenderExtensionParams_001, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderExtensionParams_002", nullptr,
+            AudioSuiteEngine_GetSpaceRenderExtensionParams_002, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderExtensionParams_003", nullptr,
+            AudioSuiteEngine_GetSpaceRenderExtensionParams_003, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderExtensionParams_004", nullptr,
+            AudioSuiteEngine_GetSpaceRenderExtensionParams_004, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderExtensionParams_005", nullptr,
+            AudioSuiteEngine_GetSpaceRenderExtensionParams_005, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AudioSuiteEngine_GetSpaceRenderExtensionParams_006", nullptr,
+            AudioSuiteEngine_GetSpaceRenderExtensionParams_006, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

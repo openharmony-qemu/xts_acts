@@ -75,6 +75,7 @@ group("multimedia") {
       "av_codec/avcencInfo:ActsAvcencInfoTest",
       "av_codec/capability:ActsCapabilityTest",
       "av_codec/demuxer:ActsDemuxerTest",
+      "av_codec/ActsDemuxerTest:ActsDemuxerHapTest",
       "av_codec/vcodec/encoder:ActsEncoderTest",
       "av_codec/vcodec/hdrcodec:ActsHdrcodecTest",
       "av_codec/vcodec/hevchwhdrcodec:ActsHevcHdrcodecTest",
@@ -199,7 +200,6 @@ group("multimedia") {
       "media/media_ndk_standard/AVMetadataExtractorNDK:OhAVMetadataExtractorNDK",
       "media/media_ndk_standard/AVPlayerNDK:OhAVPlayerNDK",
       "media/media_ndk_standard/AVPlayerNDKSupplement:OhAVPlayersupNDK",
-      "media/media_ndk_standard/LowPowerPlayerNDK:LowPower_Player_hap",
       "media/media_js_standard/soundPoolStatic:soundpool_js_static_hap",
       "media/media_js_standard/avRecorderStatic:av_recorder_js_static_hap",
       "media/media_js_standard/avPlayerStatic:avplayer_js_static_hap",
@@ -216,7 +216,9 @@ group("multimedia") {
       "videoProcess/moduletest/image:ActsVpeImageNativModuleTest",
       "videoProcess/moduletest/video:ActsVpeVideoNativModuleTest",
       "av_codec/ActsAudioEncoderTest:ActsAudioEncoderTest",
+      "audio_ndk/ActsOhAudioRenderTest:ActsOhAudioRenderHapTest",
       "av_codec/ActsAudioDecoderTest:ActsAudioDecoderHapTest",
+      "av_codec/ActsCapabilityTest:ActsCapabilityHapTest",
     ]
   } else {
     deps += [

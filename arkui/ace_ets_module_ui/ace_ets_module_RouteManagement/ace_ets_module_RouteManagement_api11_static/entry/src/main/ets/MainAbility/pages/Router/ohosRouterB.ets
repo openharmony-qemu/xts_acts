@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import router from '@system.router';
 import events_emitter from '@ohos.events.emitter';
 import { Entry,Component,FlexDirection,ItemAlign, FlexAlign, Flex, FontWeight, Text } from '@ohos.arkui.component';
 import { RecordData } from '@ohos.base';

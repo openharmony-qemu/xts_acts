@@ -57,3 +57,6 @@ export const captureCameraDeviceQueryInfoCameraPositions: (a:number) => number;
 export const captureCameraDeviceQueryInfoCameraTypeSize: (a:number) => number;
 export const captureCameraDeviceQueryInfoCameraTypeSizes: (a:number) => number;
 export const captureCameraDeviceQueryInfo: (a:number) => number;
+export const captureEnableBandwidthCompressionError: (a:number) => number;
+export const captureIsGetCameraDevices: () => boolean;
+export const getPreviewRotationWithoutDisplayRotation: (a:number) => number;

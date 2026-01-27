@@ -2489,6 +2489,77 @@ export default function UDPSocketTest() {
     });
 
     /**
+     * @tc.name   testNetworkMgrSocketUDPSocketGetSocketFd0100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_GetSocketFd_0100
+     * @tc.desc   Get Socket FD after successful bind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketUDPSocketGetSocketFd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketUDPSocketGetSocketFd0100';
+      console.info(`${caseName} test start`);
+      try {
+        let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+        await udp.bind(UDPAddr1).catch((err: BusinessError) => {
+          console.info('fail to bind' + err.code.toString());
+        });
+        await udp.getSocketFd().then((fd: number) => {
+          console.info(`${caseName} get Socket FD: ${fd}`);
+          expectTrue(fd !== -1);
+          udp.close();
+          console.info(`${caseName} test end`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} getSocketFd err: ${JSON.stringify(err)}`);
+          udp.close();
+          expectFail();
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketGetSocketFd0200
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_GetSocketFd_0200
+     * @tc.desc   Get Socket FD after without bind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketUDPSocketGetSocketFd0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketUDPSocketGetSocketFd0200';
+      console.info(`${caseName} test start`);
+      try {
+        let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+        await udp.getSocketFd().then((fd: number) => {
+          console.info(`${caseName} get Socket FD: ${fd}`);
+          expectTrue(fd === -1);
+          udp.close();
+          console.info(`${caseName} test end`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} getSocketFd err: ${JSON.stringify(err)}`);
+          udp.close();
+          expectFail();
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectFail();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrSocketUDPSocketOnMessage0100
      * @tc.number SUB_NetworkMgr_Socket_UDPSocket_On_Message_0100
      * @tc.desc   Subscription to receive message events for UDPSocket connections

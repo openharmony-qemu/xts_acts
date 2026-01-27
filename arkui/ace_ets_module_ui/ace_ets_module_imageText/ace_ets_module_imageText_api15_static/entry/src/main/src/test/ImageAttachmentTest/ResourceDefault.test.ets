@@ -180,7 +180,7 @@ export default function ResourceDefaultTest() {
       let strJson = inspector.getInspectorByKey('default_colorFilter');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceDefaultTest_static_0070] component obj is: " +
-      obj.getElement('$attrs').getString('content'));
+      obj.getElement('$attrs').getString('imageNodes'));
       expect(obj.getElement('$attrs').getString('content'))
         .assertEqual('1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 ');
       console.info('[ResourceDefaultTest_static_0070] END');
@@ -307,8 +307,8 @@ export default function ResourceDefaultTest() {
       let strJson = inspector.getInspectorByKey('default_colorFilter');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceDefaultTest_static_0120] component obj is: " +
-      obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content'))
+      obj.getElement('$attrs').getString('imageNodes'));
+      expect(obj.getElement('$attrs').getString('imageNodes'))
         .assertEqual('1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 ');
       console.info('[ResourceDefaultTest_static_0070] END');
       done();

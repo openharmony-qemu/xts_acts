@@ -22,3 +22,4 @@ export const captureSessionStart: (index: number) => number;
 export const TestOhMediaAsset: (index: number, b: string) => number;
 export const MediaAssetManagerCancelRequestTest:(a: number,srcUri:string,c:ESObject,destUri:string, callback?: (err: BusinessError, data: ESObject) => void ) => boolean;
 export const TestRequestImageForPath: (a: number,srcUri:string,c:ESObject,destUri:string, callback?: (err: BusinessError, data: ESObject) => void ) => string;
+export const OHMediaAssetManagerQuickRequestImageTest: (a: number) => number;

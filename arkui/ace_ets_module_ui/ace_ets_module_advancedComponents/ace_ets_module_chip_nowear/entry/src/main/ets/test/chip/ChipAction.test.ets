@@ -69,8 +69,8 @@ export default function ChipAction() {
       console.info('ChipAction_001 START');
       let ChipActionCol = CommonFunc.getComponentRect('ChipActionCol');
       await CommonFunc.sleep(200);
-      let right: number = ChipActionCol.right - vp2px(22) + globalThis.winLeft;
-      let top: number = ChipActionCol.top + vp2px(18) + globalThis.winTop;
+      let right: number = ChipActionCol.right - vp2px(22);
+      let top: number = ChipActionCol.top + vp2px(18);
       await CommonFunc.sleep(200);
       console.info('ChipAction_001 right：' + right + 'top:' + top);
       let driver = Driver.create();

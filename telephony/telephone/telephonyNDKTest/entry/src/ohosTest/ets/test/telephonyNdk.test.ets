@@ -29,6 +29,10 @@ const CASE_INDEX_7 = 7;
 const TELEPHONY_OK = 0;
 // 参数错误。
 const ERROR_CODE_401 = 401;
+// 枚举值。
+const ERROR_CODE_8300001 = 8300001;
+const ERROR_CODE_8300002 = 8300002;
+const ERROR_CODE_8300003 = 8300003;
 
 export default function telephonyNdkTest() {
   describe('telephonyNdkTestSuit', () => {
@@ -197,6 +201,66 @@ export default function telephonyNdkTest() {
     });
 
     /**
+    * @tc.name   testGetNetworkState_0601
+    * @tc.number SUB_TELEPHONY_CORE_SERVICE_GetNetworkState_0601.
+    * @tc.desc   Obtains the radio network state for given slot id.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('testGetNetworkState_0601', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let stateNdk = telAPI.GetNetworkState0601();
+        console.info('====>testGetNetworkState_0601 stateNdk: ', JSON.stringify(stateNdk));
+        expect(stateNdk).assertEqual(ERROR_CODE_8300001);
+      } catch(e) {
+        console.info('====>testGetNetworkState_0601 error: ', JSON.stringify(e));
+      }
+
+      done();
+    });
+    
+    /**
+    * @tc.name   testGetNetworkState_0701
+    * @tc.number SUB_TELEPHONY_CORE_SERVICE_GetNetworkState_0701.
+    * @tc.desc   Obtains the radio network state for given slot id.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('testGetNetworkState_0701', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let stateNdk = telAPI.GetNetworkState0701();
+        console.info('====>testGetNetworkState_0701 stateNdk: ', JSON.stringify(stateNdk));
+        expect(stateNdk).assertEqual(ERROR_CODE_8300002);
+      } catch(e) {
+        console.info('====>testGetNetworkState_0701 error: ', JSON.stringify(e));
+      }
+
+      done();
+    });
+    
+    /**
+    * @tc.name   testGetNetworkState_0801
+    * @tc.number SUB_TELEPHONY_CORE_SERVICE_GetNetworkState_0801.
+    * @tc.desc   Obtains the radio network state for given slot id.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('testGetNetworkState_0801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let stateNdk = telAPI.GetNetworkState0801();
+        console.info('====>testGetNetworkState_0801 stateNdk: ', JSON.stringify(stateNdk));
+        expect(stateNdk).assertEqual(ERROR_CODE_8300003);
+      } catch(e) {
+        console.info('====>testGetNetworkState_0801 error: ', JSON.stringify(e));
+      }
+
+      done();
+    });
+    
+    /**
      * @tc.name   testOHTelephonyGetNetworkState_0100
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_OHTELEPHONYGETNETWORKSTATE_0100.
      * @tc.desc   Obtains the radio network state.
@@ -223,6 +287,26 @@ export default function telephonyNdkTest() {
       let result = telAPI.OHTelephonyGetNetworkStateParam(CASE_INDEX_2);
       console.info('====>testOHTelephonyGetNetworkState_0200 result: ' + result);
       expect(result).assertEqual(TELEPHONY_OK);
+      done();
+    });
+
+    /**
+    * @tc.name   testOHTelephonyGetNetworkStateForSlot0100
+    * @tc.number SUB_TELEPHONY_CORE_SERVICE_GetNetworkStateForSlot_0100.
+    * @tc.desc   Obtains the radio network state for given slot id.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('testOHTelephonyGetNetworkStateForSlot0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let stateNdk = telAPI.OH_Telephony_GetNetworkStateForSlot0100();
+        console.info('====>testOHTelephonyGetNetworkStateForSlot0100 stateNdk: ', JSON.stringify(stateNdk));
+        expect(stateNdk).assertEqual(TELEPHONY_OK);
+      } catch(e) {
+        console.info('====>testOHTelephonyGetNetworkStateForSlot0100 error: ', JSON.stringify(e));
+      }
+
       done();
     });
 

@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function hitTestModeJsunit() {
   describe('hitTestModeJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("hitTestModeJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")

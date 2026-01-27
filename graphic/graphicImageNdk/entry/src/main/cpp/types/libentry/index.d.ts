@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,3 +41,16 @@ export const testNativeCreatePixelmapFromNativeBuffer: (pixelMap: image.PixelMap
 export const testNativeCreatePixelmapFromSurface: (surfaceId: string, useNull: boolean) => number;
 export const testNativeGetUniqueId: (pixelMap: image.PixelMap, useNull: boolean) => number;
 export const testNativeIsReleased: (pixelMap: image.PixelMap, callAfterRelease: boolean, useNull: boolean) => number;
+export const createPixelmapFromSurfaceWithTransformation001: (
+  surfaceId: string, transformEnabled: boolean) => number;
+export const createPixelmapFromSurfaceWithTransformation002: (
+  surfaceId: string, transformEnabled: boolean) => number;
+export const createPixelmapFromSurfaceWithTransformation003: (
+  surfaceId: string, transformEnabled: boolean) => number;
+export const createPixelmapFromSurfaceWithTransformation004: (
+  surfaceId: string, transformEnabled: boolean) => number;
+export const createPixelmapFromSurfaceWithTransformation005: (
+  surfaceId: string, transformEnabled: boolean) => number;
+export const createPixelmapFromSurfaceWithTransformation006: (
+  surfaceId: string, transformEnabled: boolean) => number;
+  

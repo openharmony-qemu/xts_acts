@@ -59,7 +59,7 @@ struct SwipeGestureExample03 {
       Text('SwipeGesture03').fontSize(20).width(160).height(80).margin({left:0,top:0}).padding({left:0,top:0}).backgroundColor(Color.Yellow).key('SwipeGestureExample03_Click')
         .translate({ x: this.offsetX, y: this.offsetY, z: 0 })
         .gesture(
-          SwipeGesture({ direction: SwipeDirection.All | SwipeDirection.Vertical | SwipeDirection.Horizontal })
+          SwipeGesture({fingers:2, direction: SwipeDirection.All | SwipeDirection.Vertical | SwipeDirection.Horizontal })
             .onAction((event: GestureEvent) => {
               if (event) {
                 this.time = Date.now()

@@ -44,7 +44,6 @@ export default function sizeTest() {
     'RowSplit',
     'SideBarContainer',
     'WaterFlow',
-    'Stepper',
     'FlowItem',
   )
 

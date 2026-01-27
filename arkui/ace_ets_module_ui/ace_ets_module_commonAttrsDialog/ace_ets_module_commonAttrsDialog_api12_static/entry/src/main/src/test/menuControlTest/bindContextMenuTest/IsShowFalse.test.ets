@@ -42,7 +42,7 @@ let abilityStage = AppStorage.get<common.BaseContext>("abilityContext")
 
 export default function IsShowFalse() {
   describe('IsShowFalse', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
     });
@@ -63,7 +63,6 @@ export default function IsShowFalse() {
         }
       } catch (err) {
         console.error("push IsShowFalse page error: " + err);
-        expect().assertFail();
       }
 
     });

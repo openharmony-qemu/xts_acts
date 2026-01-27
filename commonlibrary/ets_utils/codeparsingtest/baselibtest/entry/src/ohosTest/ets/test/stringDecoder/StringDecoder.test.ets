@@ -26,6 +26,7 @@ export default function stringDecoderTest() {
     })
 
     beforeEach(async () => {
+      await sleep(20);
     })
 
     afterAll(() => {

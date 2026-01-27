@@ -68,6 +68,8 @@ DrawingNativePathPart4Test.cpp
 DrawingNativeRegionPart2Test.cpp
 DrawingNativeRectPart2Test.cpp
 DrawingNativeTypeFacePart2Test.cpp
+DrawingNativeLatticeTest.cpp
+DrawingNativePathIteratorTest.cpp
 )
 
 target_link_libraries(drawingnative PUBLIC 

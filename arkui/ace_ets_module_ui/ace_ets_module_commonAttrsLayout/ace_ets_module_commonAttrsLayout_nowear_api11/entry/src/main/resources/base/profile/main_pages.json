@@ -9,10 +9,6 @@
         "MainAbility/pages/getItemRect/waterFlow/getWaterFlowItemRect2",
         "MainAbility/pages/getItemRect/waterFlow/getWaterFlowItemRect3",
         "MainAbility/pages/getItemRect/waterFlow/getWaterFlowItemRect4",
-        "MainAbility/pages/getItemRect/waterFlow/getWaterFlowItemRect5",
-        "MainAbility/pages/Chip/ChipAction",
-        "MainAbility/pages/Chip/ChipOnClose",
-        "MainAbility/pages/Chip/ChipAction2",
-        "MainAbility/pages/Chip/ChipOnClose2"
+        "MainAbility/pages/getItemRect/waterFlow/getWaterFlowItemRect5"
     ]
 }

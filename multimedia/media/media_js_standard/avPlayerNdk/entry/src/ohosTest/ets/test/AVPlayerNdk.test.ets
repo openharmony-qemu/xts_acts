@@ -2269,9 +2269,9 @@ export default function AVPlayerNdkTest() {
       expect(parseInt(result["resource_connection_duration"].toString())).assertLargerOrEqual(0);
       expect(parseInt(result["first_frame_decapsulation_duration"].toString())).assertLargerOrEqual(0);
       expect(parseInt(result["total_playback_time"].toString())).assertLargerOrEqual(0);
-      expect(parseInt(result["loading_count"].toString())).assertLargerOrEqual(0);
+      expect(parseInt(result["loading_requests_count"].toString())).assertLargerOrEqual(0);
       expect(parseInt(result["total_loading_time"].toString())).assertLargerOrEqual(0);
-      expect(parseInt(result["total_loading_Bytes"].toString())).assertLargerOrEqual(0);
+      expect(parseInt(result["total_loading_bytes"].toString())).assertLargerOrEqual(0);
       expect(parseInt(result["stalling_count"].toString())).assertLargerOrEqual(0);
       expect(parseInt(result["total_stalling_time"].toString())).assertLargerOrEqual(0);
       await context.resourceManager.closeRawFd("H264_AAC.mp4");

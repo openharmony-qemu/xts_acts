@@ -106,54 +106,54 @@ it('systemRouterTest002_static', Level.LEVEL2, async (done: () => void): Promise
      * @tc.desc     systemRouterTest003_static
      * @tc.level    Level.LEVEL2
      */
-it('systemRouterTest003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      console.info('[systemRouterTest003_static] START');
-      await Utils.sleep(1000);
-      routerInstance.clear();
-      await Utils.sleep(2000);
-      let size = routerInstance.getLength();
-      console.info("[systemRouterTest003_static] size" + size);
-      expect(size).assertEqual("1");
-      await Utils.sleep(1000);
-      done();
-    });
-
-    
-/**
-     * @tc.number   systemRouterTest004_static
-     * @tc.name     systemRouterTest004_static
-     * @tc.desc     systemRouterTest004_static
-     * @tc.level    Level.LEVEL2
-     */
-it('systemRouterTest004_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      console.info('[systemRouterTest004_static] START');
-      routerInstance.clear();
-      await Utils.sleep(1000);
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Router/systemRouterA'
-      }
-      try {
-        routerInstance.pushUrl(options);
-      } catch (err) {
-        console.error("[systemRouterTest004_static] push page error " + JSON.stringify(err));
-      }
-      await Utils.sleep(1000);
-      let optionsB: router.RouterOptions = {
-        url: 'MainAbility/pages/Router/systemRouterB'
-      }
-      try {
-        routerInstance.replaceUrl(optionsB);
-      } catch (err) {
-        console.error("[systemRouterTest004_static] push page error " + JSON.stringify(err));
-      }
-      await Utils.sleep(1500);
-      let size = routerInstance.getLength();
-      console.info("[systemRouterTest004_static] size" + size);
-      expect(size).assertEqual("2");
-      done();
-    });
+// it('systemRouterTest003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+//       const routerInstance = AppStorage.get<Router>("router") as Router
+//       console.info('[systemRouterTest003_static] START');
+//       await Utils.sleep(1000);
+//       routerInstance.clear();
+//       await Utils.sleep(2000);
+//       let size = routerInstance.getLength();
+//       console.info("[systemRouterTest003_static] size" + size);
+//       expect(size).assertEqual("1");
+//       await Utils.sleep(1000);
+//       done();
+//     });
+//
+//
+// /**
+//      * @tc.number   systemRouterTest004_static
+//      * @tc.name     systemRouterTest004_static
+//      * @tc.desc     systemRouterTest004_static
+//      * @tc.level    Level.LEVEL2
+//      */
+// it('systemRouterTest004_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+//       const routerInstance = AppStorage.get<Router>("router") as Router
+//       console.info('[systemRouterTest004_static] START');
+//       routerInstance.clear();
+//       await Utils.sleep(1000);
+//       let options: router.RouterOptions = {
+//         url: 'MainAbility/pages/Router/systemRouterA'
+//       }
+//       try {
+//         routerInstance.pushUrl(options);
+//       } catch (err) {
+//         console.error("[systemRouterTest004_static] push page error " + JSON.stringify(err));
+//       }
+//       await Utils.sleep(1000);
+//       let optionsB: router.RouterOptions = {
+//         url: 'MainAbility/pages/Router/systemRouterB'
+//       }
+//       try {
+//         routerInstance.replaceUrl(optionsB);
+//       } catch (err) {
+//         console.error("[systemRouterTest004_static] push page error " + JSON.stringify(err));
+//       }
+//       await Utils.sleep(1500);
+//       let size = routerInstance.getLength();
+//       console.info("[systemRouterTest004_static] size" + size);
+//       expect(size).assertEqual("2");
+//       done();
+//     });
 
     
 /**

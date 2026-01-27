@@ -13,8 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { StepperView } from '../../view/markAnchor/StepperView';
-import { StepperItemView } from '../../view/markAnchor/StepperItemView';
 import { ListItemGroupView } from '../../view/markAnchor/ListItemGroupView';
 import { NavRouterView } from '../../view/markAnchor/NavRouterView';
 import { RouterParams } from '../../common/Utils';
@@ -455,17 +453,6 @@ struct Index {
             Text('text').fontSize(12).height('16')
           }.width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
         }.width(this.parentWidth).height(this.parentHeight)
-      } else if (this.targetView == 'Stepper') {
-        StepperView({ _markAnchor: this._markAnchor, componentKey: this.componentKey });
-      } else if (this.targetView == 'StepperItem') {
-        StepperItemView({
-          _markAnchor: this._markAnchor,
-          componentKey: this.componentKey,
-          parentWidth: this.parentWidth,
-          subassemblyWidth: this.subassemblyWidth,
-          subassemblyHeight: this.subassemblyHeight,
-          parentHeight: this.parentHeight,
-        })
       } else if (this.targetView == 'GridItem') {
         Grid() {
           GridItem() {

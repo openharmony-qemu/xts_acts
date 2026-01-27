@@ -48,9 +48,9 @@ export default function OnTextSelectionChangeTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get OnTextSelectionChangeTest state pages:" + "");
-        if (!("onTextSelectionChange" == pages.name)) {
+        if (!("onTextSelectionChange1" == pages.name)) {
           console.info("get OnTextSelectionChangeTest pages.name:" + "");
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {

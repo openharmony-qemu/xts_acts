@@ -790,7 +790,7 @@ int SUBAIMindSporeContextCreate0032()
 {
     if (!IsNPU()) {
         OHPrintf("NNRt is not NPU, skip this test");
-        return -1;
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
     }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context = OH_AI_ContextCreate();
@@ -832,7 +832,7 @@ int SUBAIMindSporeContextCreate0033()
 {
     if (!IsNPU()) {
         OHPrintf("NNRt is not NPU, skip this test");
-        return -1;
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
     }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context = OH_AI_ContextCreate();
@@ -876,7 +876,7 @@ int SUBAIMindSporeContextCreate0034()
 {
     if (!IsNPU()) {
         OHPrintf("NNRt is not NPU, skip this test");
-        return -1;
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
     }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     auto nnrtDeviceInfo = OH_AI_CreateNNRTDeviceInfoByName("aaa");
@@ -897,7 +897,7 @@ int SUBAIMindSporeContextCreate0035()
 {
     if (!IsNPU()) {
         OHPrintf("NNRt is not NPU, skip this test");
-        return -1;
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
     }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     auto nnrtDeviceInfo = OH_AI_CreateNNRTDeviceInfoByName(nullptr);
@@ -918,7 +918,7 @@ int SUBAIMindSporeContextCreate0036()
 {
     if (!IsNPU()) {
         OHPrintf("NNRt is not NPU, skip this test");
-        return -1;
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
     }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context = OH_AI_ContextCreate();
@@ -988,7 +988,7 @@ int SUBAIMindSporeContextCreate0038()
 {
     if (!IsNPU()) {
         OHPrintf("NNRt is not NPU, skip this test");
-        return -1;
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
     }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     auto nnrtDeviceInfo = OH_AI_CreateNNRTDeviceInfoByType(OH_AI_NNRTDEVICE_OTHERS);
@@ -1009,7 +1009,7 @@ int SUBAIMindSporeContextCreate0039()
 {
     if (!IsNPU()) {
         OHPrintf("NNRt is not NPU, skip this test");
-        return -1;
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
     }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_GetAllNNRTDeviceDescs(nullptr);
@@ -1029,7 +1029,7 @@ int SUBAIMindSporeContextCreate0040()
 {
     if (!IsNPU()) {
         OHPrintf("NNRt is not NPU, skip this test");
-        return -1;
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
     }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_GetElementOfNNRTDeviceDescs(nullptr, 0);
@@ -1665,7 +1665,7 @@ int SUBAIMindSporeContextCreate0065()
 {
     if (!IsNPU()) {
         OHPrintf("NNRt is not NPU, skip this test");
-        return -1;
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
     }
     OHPrintf("==========OH_AI_ContextCreate==========\n");
     OH_AI_DeviceInfoHandle nnrtDeviceInfo = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_NNRT);

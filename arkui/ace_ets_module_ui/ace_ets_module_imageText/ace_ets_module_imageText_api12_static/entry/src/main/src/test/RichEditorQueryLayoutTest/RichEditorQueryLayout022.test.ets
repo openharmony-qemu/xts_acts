@@ -95,13 +95,14 @@ export default function RichEditorQueryLayout022() {
       let layoutStyle = await (driver.findComponent(ON.id('layoutStyle')) as Promise<Component>);
       let layoutStyleText = await layoutStyle.getText();
       await CommonFunc.sleep(500);
-      expect(layoutStyleText).assertEqual('layoutStyle:{"borderRadius":"25.00px","margin":"[20.00px,20.00px,20.00px,20.00px]"}');
+      expect(layoutStyleText).assertContain('"margin":{"top":"20.00px","left":"20.00px","right":"20.00px","bottom":"20.00px"}');
+      expect(layoutStyleText).assertContain('"borderRadius":"25.00px"');
 
       let paragraphStyle = await (driver.findComponent(ON.id('paragraphStyle')) as Promise<Component>);
       let paragraphStyleText = await paragraphStyle.getText();
       await CommonFunc.sleep(500);
       expect(paragraphStyleText).assertContain('"textAlign":1');
-      expect(paragraphStyleText).assertContain('"leadingMargin":["16.00vp","0.00vp"]');
+      expect(paragraphStyleText).assertContain('"leadingMargin":{"size":["16.00vp","0.00vp"]}');
       expect(paragraphStyleText).assertContain('"wordBreak":2');
       expect(paragraphStyleText).assertContain('"lineBreakStrategy":0');
       done();

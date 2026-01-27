@@ -97,15 +97,23 @@ struct TreeViewDemo {
     }.width(100).border({ width: 1, color: 0x80808a, radius: '16dp' })
   }
 
-  onChangedCallback :(callbackParam: CallbackParam)=>void= (callbackParam: CallbackParam) => {
+  onChangedCallback: (callbackParam: CallbackParam) => void = (callbackParam: CallbackParam) => {
     this.clickNodeId = callbackParam.currentNodeId;
   }
 
   aboutToAppear(): void {
-    this.treeListener.on(TreeListenType.NODE_CLICK, (CallbackParam: CallbackParam) => {this.onChangedCallback})
-    this.treeListener.on(TreeListenType.NODE_ADD, (CallbackParam: CallbackParam)  => {this.onChangedCallback})
-    this.treeListener.on(TreeListenType.NODE_DELETE, (CallbackParam: CallbackParam)  => {this.onChangedCallback})
-    this.treeListener.once(TreeListenType.NODE_MOVE, (CallbackParam: CallbackParam)  => {this.onChangedCallback})
+    this.treeListener.on(TreeListenType.NODE_CLICK, (CallbackParam: CallbackParam) => {
+      this.clickNodeId = CallbackParam.currentNodeId;
+    })
+    this.treeListener.on(TreeListenType.NODE_ADD, (CallbackParam: CallbackParam) => {
+      this.clickNodeId = CallbackParam.currentNodeId;
+    })
+    this.treeListener.on(TreeListenType.NODE_DELETE, (CallbackParam: CallbackParam) => {
+      this.clickNodeId = CallbackParam.currentNodeId;
+    })
+    this.treeListener.once(TreeListenType.NODE_MOVE, (CallbackParam: CallbackParam) => {
+      this.clickNodeId = CallbackParam.currentNodeId;
+    })
 
     let normalResource: Resource = $r('sys.symbol.house');
     let selectedResource: Resource = $r('sys.symbol.car');

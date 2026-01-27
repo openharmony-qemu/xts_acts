@@ -97,7 +97,7 @@ struct SwiperExampleT7 {
       .autoPlay(false, undefined)
       .interval(4000)
       .key('swiperTestWidth7')
-      .loop(false)
+      .loop(true)
       .indicator(
         new DotIndicator()
           .itemWidth(15)

@@ -150,6 +150,7 @@ export default function TransDeleteWithReturning() {
     })
     afterEach(async () => {
       console.info(TAG + 'afterEach');
+      await rdbStore?.close();
       await relationalStore.deleteRdbStore(context, dbName);
     })
     afterAll(async () => {
@@ -273,14 +274,14 @@ export default function TransDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       await trans?.rollback();
       console.log(TAG + "************* transDeleteWithReturning005 end *************");
@@ -522,14 +523,14 @@ export default function TransDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       await trans?.rollback();
       console.log(TAG + "************* transDeleteWithReturning009 end *************");
@@ -556,14 +557,14 @@ export default function TransDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       await trans?.rollback();
       console.log(TAG + "************* transDeleteWithReturning010 end *************");
@@ -590,14 +591,14 @@ export default function TransDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning011 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturningSync011 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       config.columns = ['a b'];
       try {
@@ -605,14 +606,14 @@ export default function TransDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning011 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturningSync011 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       config.columns = ['a,b'];
       try {
@@ -620,14 +621,14 @@ export default function TransDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning011 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturningSync011 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       await trans?.rollback();
       console.log(TAG + "************* transDeleteWithReturning011 end *************");
@@ -689,14 +690,14 @@ export default function TransDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning017 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturningSync017 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       console.log(TAG + "************* transDeleteWithReturning017 end *************");
       done();
@@ -758,6 +759,7 @@ export default function TransDeleteWithReturning() {
         console.error(TAG + `transDeleteWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800011);
       }
+      await rdbStoreCorrupt?.close();
       await relationalStore.deleteRdbStore(context,STORE_CONFIG1);
       console.log(TAG + "************* transDeleteWithReturning018 end *************");
       done();
@@ -828,7 +830,7 @@ export default function TransDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning028 1 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         let predicates2 = new relationalStore.RdbPredicates("345test");
@@ -836,7 +838,7 @@ export default function TransDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning028 2 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       let predicates3 = new relationalStore.RdbPredicates("te.s.t");
       try {
@@ -844,14 +846,14 @@ export default function TransDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning028 3 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.deleteWithReturningSync(predicates3, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning028 4 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       let predicates5 = new relationalStore.RdbPredicates(".test");
       try {
@@ -859,14 +861,14 @@ export default function TransDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning028 5 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.deleteWithReturningSync(predicates5, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning028 6 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       let predicates7 = new relationalStore.RdbPredicates("test..");
       try {
@@ -874,14 +876,14 @@ export default function TransDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning028 7 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.deleteWithReturningSync(predicates7, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning028 8 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       await trans?.rollback();
       console.log(TAG + "************* transDeleteWithReturning028 end *************");
@@ -908,14 +910,14 @@ export default function TransDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning029 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync029 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       config.maxReturningCount = 0;
       try {
@@ -923,14 +925,14 @@ export default function TransDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning029 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync029 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       config.maxReturningCount = 0x7fff;
       try {
@@ -938,14 +940,14 @@ export default function TransDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning029 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturningSync029 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       await trans?.rollback();
       console.log(TAG + "************* transDeleteWithReturning029 end *************");
@@ -1124,56 +1126,56 @@ export default function TransDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning033 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         trans?.deleteWithReturningSync(undefined, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning033 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         await trans?.deleteWithReturning(undefined, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning033 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         await trans?.deleteWithReturning(null, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning033 failed4. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         trans?.deleteWithReturningSync(predicates, null);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning033 failed5. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         trans?.deleteWithReturningSync(predicates, undefined);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning033 failed6. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         await trans?.deleteWithReturning(predicates, null);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning033 failed7. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         await trans?.deleteWithReturning(predicates, undefined);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning033 failed8. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturningSync032 end *************");

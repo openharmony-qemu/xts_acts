@@ -17,6 +17,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <ohcamera/camera_manager.h>
+#include <ohcamera/metadata_output.h>
 
 #define LOG_DOMAIN 0x0000
 #define LOG_TAG "CameraSessionNDKLOGTAG"
@@ -358,6 +359,70 @@ napi_value captureEnableBandwidthCompression(napi_env env, napi_callback_info in
     return ret;
 }
 
+napi_value captureEnableBandwidthCompressionError(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    CreateAndOpenCamera();
+    createPhotoOutput(g_faceId);
+    if (cameraManager == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "cameraManager is nullptr.");
+    }
+    Camera_ErrorCode ret = OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
+    if (captureSession == nullptr || ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreateCaptureSession failed.");
+    }
+    ret = OH_CaptureSession_SetSessionMode(captureSession, NORMAL_PHOTO);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetSessionMode failed.");
+    }
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    Camera_ErrorCode result;
+    switch (index) {
+    case CASE_INDEX_1:
+        result = OH_PreviewOutput_EnableBandwidthCompression(previewOutput, true);
+        break;
+    case CASE_INDEX_2:
+        result = OH_PreviewOutput_EnableBandwidthCompression(previewOutput, false);
+        break;
+    default:
+        break;
+    }
+    ReleasePhotoSession();
+    napi_value ret1;
+    napi_create_int32(env, result, &ret1);
+    return ret1;
+}
+
+napi_value captureIsGetCameraDevices(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    CreatePhotoSession();
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    Camera_ErrorCode cameraCode;
+    uint32_t cameraSize = 0;
+    Camera_Type type = CAMERA_TYPE_DEFAULT;
+    Camera_Device *cameras = nullptr;
+    Camera_DeviceQueryInfo queryInfo = {.cameraType = &type,
+                                        .cameraTypeSize = cameraSize,
+                                        .cameraPosition = CAMERA_POSITION_UNSPECIFIED,
+                                        .connectionType = CAMERA_CONNECTION_BUILT_IN};
+    cameraCode = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo, &cameraSize, &cameras);
+    int32_t enable = false;
+    if (cameraCode == 0 && cameraSize >= 0) {
+        enable = true;
+    }
+    ReleasePhotoSession();
+    napi_value result;
+    napi_get_boolean(env, enable, &result);
+    return result;
+};
+
 napi_value captureGetSupportedFullCameraOutputCapabilityWithSceneMode(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -374,15 +439,15 @@ napi_value captureGetSupportedFullCameraOutputCapabilityWithSceneMode(napi_env e
     Camera_DeviceQueryInfo queryInfo = {.cameraType = &type,
                                         .cameraTypeSize = cameraSize,
                                         .cameraPosition = CAMERA_POSITION_UNSPECIFIED,
-                                        .connectionType = CAMERA_CONNECTION_USB_PLUGIN};
+                                        .connectionType = CAMERA_CONNECTION_BUILT_IN};
     result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo, &cameraSize, &cameras);
     OH_LOG_INFO(
         LOG_APP,
-        "lsl --OH_CameraManager_GetCameraDevices, cameraManager=%{public}p, cameras=%{public}p,cameras=%{public}d",
+        "OH_CameraManager_GetCameraDevices, cameraManager=%{public}p, cameras=%{public}p,cameras=%{public}d",
         cameraManager, cameras, cameraSize);
     switch (index) {
     case CASE_INDEX_1:
-        OH_LOG_INFO(LOG_APP, "lsl --Normal case, cameraManager=%{public}p, cameras=%{public}p", cameraManager, cameras);
+        OH_LOG_INFO(LOG_APP, "Normal case, cameraManager=%{public}p, cameras=%{public}p", cameraManager, cameras);
         if (cameraManager == nullptr || cameras == nullptr) {
             OH_LOG_ERROR(LOG_APP, "cameraManager or cameras is null!");
             break;
@@ -1032,6 +1097,38 @@ napi_value captureCameraDeviceQueryInfo(napi_env env, napi_callback_info info)
         break;
     case CASE_INDEX_5:
         result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo4, &cameraSize, &cameras);
+    default:
+        break;
+    }
+    ReleasePhotoSession();
+    napi_value ret;
+    napi_create_int32(env, result, &ret);
+    return ret;
+}
+
+napi_value getPreviewRotationWithoutDisplayRotation(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    CreatePhotoSession();
+    Camera_ErrorCode result;
+    Camera_ImageRotation *imageRotation;
+    switch (index) {
+    case CASE_INDEX_1:
+        result = OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation(previewOutput, nullptr);
+        break;
+    case CASE_INDEX_2:
+        result = OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation(nullptr, imageRotation);
+        break;
+    case CASE_INDEX_3:
+        result = OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation(previewOutput, NULL);
+        break;
+    case CASE_INDEX_4:
+        result = OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation(NULL, imageRotation);
+        break;
     default:
         break;
     }

@@ -17,7 +17,7 @@ import MediaTestBase from './MediaTestBase';
 import media from '@ohos.multimedia.media';
 import { idle, offCallback, PlayTest, setSource, setSubtitle, testAVPlayerFun, } from './AVPlayerTestBase';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
-import { BusinessError } from '@kit.BasicServicesKit';
+import { BusinessError, Callback } from '@kit.BasicServicesKit';
 import {
   LOG_TAG,
   SLEEP_TIME_500,
@@ -1511,6 +1511,7 @@ async function testCheckPlaybackStatisticMetrics(src: string | media.AVFileDescr
 async function metricsON(avPlayer: media.AVPlayer, done: Function) {
   avPlayer.onMetricsEvent((eventArray: Array<media.AVMetricsEvent>) => {
     if (eventArray) {
+      expect(eventArray.length).assertLarger(0);
       for (let i = 0; i < eventArray.length; i++) {
         console.info('onMetricsEvent info: AVMetricsEvent=' + JSON.stringify(eventArray[i]));
         expect(eventArray[i].event).assertLargerOrEqual(0);
@@ -1528,7 +1529,7 @@ async function metricsON(avPlayer: media.AVPlayer, done: Function) {
   })
 }
 
-function metricsOFF(avPlayer: media.AVPlayer | null, done: Function) {
+function metricsOFF(avPlayer: media.AVPlayer | null, done: Function, offFunc?: Callback<media.AVMetricsEvent[]>) {
   avPlayer?.on('stateChange', async (state, reason) =>{
     switch (state) {
       case INITIALIZED:
@@ -1553,7 +1554,11 @@ function metricsOFF(avPlayer: media.AVPlayer | null, done: Function) {
         avPlayer?.play();
         break;
       case COMPLETED:
-        avPlayer?.offMetricsEvent();
+        if (offFunc) {
+          avPlayer?.offMetricsEvent(offFunc);
+        } else {
+          avPlayer?.offMetricsEvent();
+        }
         avPlayer?.release()
         break;
       case RELEASED:
@@ -1581,6 +1586,37 @@ async function testMetricsListening(src: string | media.AVFileDescriptor, testNa
       console.info('case createAVPlayer success');
       avPlayer = video;
       metricsOFF(avPlayer, done);
+      metricsListening(avPlayer,done);
+      setSource(avPlayer, src, testName);
+    }
+    if (err != null) {
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
+
+async function testMetricsListening01(src: string | media.AVFileDescriptor, testName: string,
+  avPlayer: media.AVPlayer | null, metricsListening:Function, done: Function) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err, video) => {
+    console.info(`case media err: ${err}`)
+    if (typeof (video) !== 'undefined') {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      metricsOFF(avPlayer, done, (eventArray: Array<media.AVMetricsEvent>) => {
+        if (eventArray) {
+          for (let i = 0; i < eventArray.length; i++) {
+            console.info('offMetricsEvent info: AVMetricsEvent=' + JSON.stringify(eventArray[i]));
+            expect(eventArray[i].event).assertLargerOrEqual(0);
+            expect(eventArray[i].timeStamp).assertLargerOrEqual(0);
+            expect(eventArray[i].playbackPosition).assertLargerOrEqual(0);
+            expect(eventArray[i].details['mediaType']).assertLargerOrEqual(0);
+            expect(eventArray[i].details['duration']).assertLargerOrEqual(0);
+          }
+        }
+      });
       metricsListening(avPlayer,done);
       setSource(avPlayer, src, testName);
     }
@@ -2442,7 +2478,7 @@ export default function AVPlayerTest() {
       const testName = 'getPlaybackStatisticMetrics_001';
       let playBackMetricsKey =
         new Array('prepare_duration', 'resource_connection_duration', 'first_frame_decapsulation_duration', 
-          'total_playback_time', 'loading_count', 'total_loading_time', 'total_loading_Bytes', 
+          'total_playback_time', 'loading_requests_count', 'total_loading_time', 'total_loading_bytes',
           'stalling_count', 'total_stalling_time');
       expect(fileDescriptor.fd).assertLarger(0);
       if (fileDescriptor) {
@@ -2463,6 +2499,43 @@ export default function AVPlayerTest() {
       if (fileDescriptor && subtitleFdSrc) {
         testMetricsListening(fileDescriptor, "SUB_MULTIMEDIA_MEDIA_VIDEO_METRICS_ON_0100", avPlayer, metricsON, done);
       }
+    });
+
+    /**
+     * @tc.name   metricsControl_002
+     * @tc.number AVPLAYER_LOCAL_TEST_050
+     * @tc.desc   Local Video metrics control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('metricsControl_002', Level.LEVEL0,async (done: Function) => {
+      expect(fileDescriptor.fd).assertLarger(0);
+      if (fileDescriptor && subtitleFdSrc) {
+        testMetricsListening01(fileDescriptor, "metricsControl_002", avPlayer, metricsON, done);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_METRICS_ENUM_0100
+     * @tc.number AVPLAYER_LOCAL_TEST_051
+     * @tc.desc   Local Video metrics enum test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_METRICS_ENUM_0100', Level.LEVEL0,async (done: Function) => {
+      expect(media.AVMetricsEventType.AV_METRICS_EVENT_STALLING).assertEqual(1);
+      expect(media.PlaybackMetricsKey.PREPARE_DURATION).assertEqual("prepare_duration");
+      expect(media.PlaybackMetricsKey.RESOURCE_CONNECTION_DURATION).assertEqual("resource_connection_duration");
+      expect(media.PlaybackMetricsKey.FIRST_FRAME_DECAPSULATION_DURATION).assertEqual("first_frame_decapsulation_duration");
+      expect(media.PlaybackMetricsKey.TOTAL_PLAYING_TIME).assertEqual("total_playback_time");
+      expect(media.PlaybackMetricsKey.DOWNLOAD_REQUESTS_COUNT).assertEqual("loading_requests_count");
+      expect(media.PlaybackMetricsKey.TOTAL_DOWNLOAD_TIME).assertEqual("total_loading_time");
+      expect(media.PlaybackMetricsKey.TOTAL_DOWNLOAD_SIZE).assertEqual("total_loading_bytes");
+      expect(media.PlaybackMetricsKey.STALLING_COUNT).assertEqual("stalling_count");
+      expect(media.PlaybackMetricsKey.TOTAL_STALLING_TIME).assertEqual("total_stalling_time");
+      done();
     });
   })
 }

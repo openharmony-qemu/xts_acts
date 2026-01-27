@@ -727,37 +727,37 @@ HWTEST_F(DecApiNdkTest, VIDEO_VP9DEC_CAP_API_0013, TestSize.Level1)
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         VP9_PROFILE_0, VP9_LEVEL_1));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_0, VP9_LEVEL_1_1));
+        VP9_PROFILE_0, VP9_LEVEL_11));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         VP9_PROFILE_0, VP9_LEVEL_2));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_0, VP9_LEVEL_2_1));
+        VP9_PROFILE_0, VP9_LEVEL_21));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         VP9_PROFILE_0, VP9_LEVEL_3));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_0, VP9_LEVEL_3_1));
+        VP9_PROFILE_0, VP9_LEVEL_31));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         VP9_PROFILE_0, VP9_LEVEL_4));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_0, VP9_LEVEL_4_1));
+        VP9_PROFILE_0, VP9_LEVEL_41));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         VP9_PROFILE_0, VP9_LEVEL_5));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_0, VP9_LEVEL_5_1));
+        VP9_PROFILE_0, VP9_LEVEL_51));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_0, VP9_LEVEL_5_2));
+        VP9_PROFILE_0, VP9_LEVEL_52));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         VP9_PROFILE_0, VP9_LEVEL_6));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_0, VP9_LEVEL_6_1));
+        VP9_PROFILE_0, VP9_LEVEL_61));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_0, VP9_LEVEL_6_2));
+        VP9_PROFILE_0, VP9_LEVEL_62));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_1, VP9_LEVEL_3_1));
+        VP9_PROFILE_1, VP9_LEVEL_31));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         VP9_PROFILE_2, VP9_LEVEL_5));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_3, VP9_LEVEL_6_2));
+        VP9_PROFILE_3, VP9_LEVEL_62));
     }
 }
 
@@ -871,6 +871,72 @@ HWTEST_F(DecApiNdkTest, VIDEO_WVC1DEC_CAP_API_0016, TestSize.Level1)
         WVC1_PROFILE_ADVANCED, WVC1_LEVEL_L3));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         WVC1_PROFILE_ADVANCED, WVC1_LEVEL_L4));
+    }
+}
+
+/**
+ * @tc.name   VIDEO_VP9DEC_CAP_API_0017
+ * @tc.number VIDEO_VP9DEC_CAP_API_0017
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_VP9DEC_CAP_API_0017, TestSize.Level1)
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t *levels = nullptr;
+    uint32_t levelNum = 0;
+    const int32_t *profiles = nullptr;
+    uint32_t profileNum = 0;
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(
+        OH_AVCODEC_MIMETYPE_VIDEO_VP9, false, SOFTWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
+    ASSERT_EQ(AV_ERR_OK, ret);
+    ASSERT_NE(nullptr, profiles);
+    for (int i = 0; i < profileNum; i++) {
+        ASSERT_EQ(profiles[i], i);
+        ret = OH_AVCapability_GetSupportedLevelsForProfile(
+            capability, profiles[i], &levels, &levelNum);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        ASSERT_NE(nullptr, levels);
+        for (int j = 0; j < levelNum; j++) {
+            ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability, profiles[i], levels[j]));
+        }
+    }
+}
+
+/**
+ * @tc.name   VIDEO_VP9DEC_CAP_API_0018
+ * @tc.number VIDEO_VP9DEC_CAP_API_0018
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_VP9DEC_CAP_API_0018, TestSize.Level1)
+{
+    OH_AVErrCode ret = AV_ERR_OK;
+    const int32_t *levels = nullptr;
+    uint32_t levelNum = 0;
+    const int32_t *profiles = nullptr;
+    uint32_t profileNum = 0;
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(
+        OH_AVCODEC_MIMETYPE_VIDEO_AV1, false, SOFTWARE);
+    ASSERT_NE(nullptr, capability);
+    ret = OH_AVCapability_GetSupportedProfiles(capability, &profiles, &profileNum);
+    ASSERT_EQ(AV_ERR_OK, ret);
+    ASSERT_NE(nullptr, profiles);
+    for (int i = 0; i < profileNum; i++) {
+        ASSERT_EQ(profiles[i], i);
+        ret = OH_AVCapability_GetSupportedLevelsForProfile(
+            capability, profiles[i], &levels, &levelNum);
+        ASSERT_EQ(AV_ERR_OK, ret);
+        ASSERT_NE(nullptr, levels);
+        for (int j = 0; j < levelNum; j++) {
+            ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability, profiles[i], levels[j]));
+        }
     }
 }
 } // namespace

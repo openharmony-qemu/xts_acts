@@ -14,14 +14,11 @@
  */
 import gaugeJsunit from './gaugeTest/GaugeJsunit.test';
 import GaugeUxTest from './gaugeTest/gaugeux.test';
-import CounterEnableTest from './CounterTest/CounterEnable.test'
 import badgeJsunit from './BadgeTest/BadgeJsunit.test';
-import counterJsunit from './CounterTest/CounterJsunit.test';
 import datapanelJsunit from './DataPanelTest/DataPanelJsunit.test';
 import qrcodeJsunit from './QrcodeTest/QrcodeJsunit.test';
 import badgeTest from './BadgeTest/badge'
 import datapanelTest from './DataPanelTest/datapanel'
-import advancedCounter from './advancedCounterTest/advancedCounter'
 import QRCodeUIJsunit from './QrcodeTest/QRCodeUIJsunit.test';
 import patternLockJsunit from './patternLockTest/PatternLockJsunit.test';
 import loadingProgressCircularJsunit from './LoadingProgressTest/loadingProgress.test';
@@ -31,20 +28,16 @@ import qrCode3Jsunit from './QrcodeTest/QrCode3Jsunit.test';
 import searchJsunit from './SearchTest/SearchJsunit.test';
 import gauge3Jsunit from './gaugeTest/gauge3Jsunit.test';
 import datalPanelUIJsunit from './DataPanelTest/datalPanelUIJsunit.test';
-import CounterComponentTest from './CounterTest/CounterApiTest/CounterComponentTest.test';
 
 
 export default function testsuite() {
   gaugeJsunit();
-  CounterEnableTest();
   badgeJsunit()
-  counterJsunit()
   datapanelJsunit()
   qrcodeJsunit()
   badgeTest();
   datapanelTest();
   GaugeUxTest();
-  advancedCounter()
   QRCodeUIJsunit();
   patternLockJsunit()
   loadingProgressCircularJsunit()
@@ -54,5 +47,4 @@ export default function testsuite() {
   searchJsunit();
   gauge3Jsunit();
   datalPanelUIJsunit();
-  CounterComponentTest();
 }

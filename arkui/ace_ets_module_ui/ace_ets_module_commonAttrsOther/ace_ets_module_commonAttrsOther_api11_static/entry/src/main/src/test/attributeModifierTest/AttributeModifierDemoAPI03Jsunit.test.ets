@@ -47,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function AttributeModifierDemoAPI03Jsunit() {
   describe('AttributeModifierDemoAPI03Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AttributeModifierDemoAPI03Jsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")

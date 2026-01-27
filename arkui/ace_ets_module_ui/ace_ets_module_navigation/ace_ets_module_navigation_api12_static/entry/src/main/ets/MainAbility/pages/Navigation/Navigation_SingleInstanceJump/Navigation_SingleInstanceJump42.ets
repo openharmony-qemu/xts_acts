@@ -57,9 +57,9 @@ struct Navigation_SingleInstanceJump42{
   @Builder Page2(){
     NavDestination(){
       Column(){
-        Text('page1')
+        Text('page2')
       }
-    }.title('page1')
+    }.title('page2')
   }
 
   @Builder PageMap(name:string){

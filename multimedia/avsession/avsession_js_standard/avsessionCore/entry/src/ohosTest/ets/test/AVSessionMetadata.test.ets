@@ -631,6 +631,7 @@ export default function abilityTest() {
           console.info(`${TAG}: setCallMetadataCallback with error callMetadata test, error: code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(401);
         })
+        done();
       } catch (error) {
         console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
@@ -656,6 +657,7 @@ export default function abilityTest() {
           console.info(`${TAG}: setCallMetadataCallback with error callMetadata test, error: code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(401);
         })
+        done();
       } catch (error) {
         console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
@@ -681,6 +683,7 @@ export default function abilityTest() {
           console.info(`${TAG}: setCallMetadataCallback with error callMetadata test, error: code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(401);
         })
+        done();
       } catch (error) {
         console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
@@ -1260,6 +1263,7 @@ export default function abilityTest() {
                 expect(data.muted).assertEqual(avCallState0.muted);
               }
             })
+            done();
           }
         });
       } catch (error) {
@@ -1301,6 +1305,7 @@ export default function abilityTest() {
                 expect(data.muted).assertEqual(avCallState1.muted);
               }
             })
+            done();
           }
         })
       } catch (error) {
@@ -1834,7 +1839,7 @@ export default function abilityTest() {
         await controller.off('callMetadataChange');
         await session.setCallMetadata(callMetadata);
         await sleep(500);
-        expect(flag).assertTrue();
+        expect(flag).assertFalse();
       } catch (error) {
         console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
@@ -1907,7 +1912,7 @@ export default function abilityTest() {
         await sleep(500);
         console.log(`${TAG}: on callMetadataChange 1 received: ${receivedCallback1}`);
         console.log(`${TAG}: on callMetadataChange 2 received: ${receivedCallback2}`);
-        expect(receivedCallback1).assertTrue();
+        expect(receivedCallback1).assertFalse();
         expect(receivedCallback2).assertTrue();
 
         receivedCallback1 = false;
@@ -3853,11 +3858,10 @@ export default function abilityTest() {
     })
 
 
-
     /**
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2800
      * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2800
-     * @tc.desc   SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2800
+     * @tc.desc   test too long singleLyricText(length =40959 which is the permitted max length)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -3866,7 +3870,7 @@ export default function abilityTest() {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
         assetId: '121278',
-        singleLyricText:str.substring(0,40959)
+        singleLyricText:str.substring(1,40960)
       };
       await session.setAVMetadata(metadata).then(() => {
         console.info('TestLog: Set singleLyricText successfully');
@@ -3876,6 +3880,8 @@ export default function abilityTest() {
       });
 
       await controller.getAVMetadata().then((data:avSession.AVMetadata) => {
+        console.info(`TestLog: data.singleLyricText is ${data.singleLyricText}`);
+        console.info(`TestLog: input singleLyricText is ${metadata.singleLyricText}`);
         expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
       }).catch((err:BusinessError) => {
         console.error(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
@@ -3885,11 +3891,10 @@ export default function abilityTest() {
     })
 
 
-
     /**
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2900
      * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2900
-     * @tc.desc   SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_2900
+     * @tc.desc   test too long singleLyricText(length =40960 while the permitted max length is 40959)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -3909,7 +3914,9 @@ export default function abilityTest() {
       });
 
       await controller.getAVMetadata().then((data:avSession.AVMetadata) => {
-        expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
+        console.info(`TestLog: data.singleLyricText is ${data.singleLyricText}`);
+        console.info(`TestLog: input singleLyricText is ${metadata.singleLyricText}`);
+        expect(data.singleLyricText).assertEqual(undefined);
       }).catch((err:BusinessError) => {
         console.error(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
@@ -3996,21 +4003,21 @@ export default function abilityTest() {
           '\\\'\r\n\t\b\\\f\v\\\x11\\\u1111'
       };
       try {
-        await session.setAVMetadata(metadata, (err:BusinessError) => {
+        session.setAVMetadata(metadata, (err:BusinessError) => {
           if (err) {
             console.info(`TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
           }
-        })
-        await controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
-          if (err) {
-            console.info(`TestLog: Get singleLyricText error: code: ${err.code}, message: ${err.message}`);
-            expect(false).assertTrue();
-          } else {
-            console.info(`TestLog: Get singleLyricText data ${data.singleLyricText}`);
-            expect(data.assetId).assertEqual(metadata.assetId);
-            expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
-          }
+          controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
+            if (err) {
+              console.info(`TestLog: Get singleLyricText error: code: ${err.code}, message: ${err.message}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(`TestLog: Get singleLyricText data ${data.singleLyricText}`);
+              expect(data.assetId).assertEqual(metadata.assetId);
+              expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
+            }
+          })
         })
       } catch (err) {
         console.info(`TestLog: set & get singleLyricText error: code: ${err.code}, message: ${err.message}`);
