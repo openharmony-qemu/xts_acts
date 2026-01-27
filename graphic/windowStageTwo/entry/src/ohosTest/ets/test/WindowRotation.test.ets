@@ -1788,7 +1788,7 @@ export default function windowRotationTest() {
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
         await subWindowClass?.destroyWindow()
-        if (deviceType != 'phone' && deviceType != 'tablet') {
+        if (!canIUseRes||(deviceType != 'phone' && deviceType != 'tablet')) {
           expect(err.code).assertEqual(801);
           done()
         } else {
@@ -1851,7 +1851,7 @@ export default function windowRotationTest() {
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        if (deviceType != 'phone' && deviceType != 'tablet') {
+        if (!canIUseRes||(deviceType != 'phone' && deviceType != 'tablet')) {
           expect(err.code).assertEqual(801);
           done()
         } else {
@@ -1913,7 +1913,7 @@ export default function windowRotationTest() {
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        if (deviceType != 'phone' && deviceType != 'tablet') {
+        if (!canIUseRes||(deviceType != 'phone' && deviceType != 'tablet')) {
           expect(err.code).assertEqual(801);
           done()
         } else {
@@ -1946,7 +1946,7 @@ export default function windowRotationTest() {
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        if (deviceType != 'phone' && deviceType != 'tablet') {
+        if (!canIUseRes||(deviceType != 'phone' && deviceType != 'tablet')) {
           expect(err.code).assertEqual(801);
           done()
         } else {
