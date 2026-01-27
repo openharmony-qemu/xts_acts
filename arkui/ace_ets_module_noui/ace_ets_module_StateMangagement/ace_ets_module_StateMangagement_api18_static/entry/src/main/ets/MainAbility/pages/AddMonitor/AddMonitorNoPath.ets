@@ -50,17 +50,16 @@ struct Page {
   build() {
     Column() {
       Text('开发者不指定path，监听path系统赋默认值')
-        .fontSize(30).width('100%').height('5%')
+        .width('100%').height('5%')
         .backgroundColor(Color.Pink)
         .textAlign(TextAlign.Center)
       Text(`${this.obj.text}`)
         .id('text').height('5%')
       Text(`Current array is ${this.obj.value} `)
-        .fontSize(20).height('5%')
+        .height('5%')
       Button('addMonitor')
         .id('NoPathButton')
         .height('5%')
-        .fontSize(20)
         .onClick(() => {
           this.obj.value++;
         })
