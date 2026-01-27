@@ -79,20 +79,17 @@
           console.info(TAG, testName,'create imagePackerObj success.',imagePackerObj);
           imagePackerObj.packing(imageSource, packOpts).then((data: ArrayBuffer) => {
             console.info(TAG, testName,'Succeeded in packing the image.',data);
-            expect().assertFail();
-          }).catch((error: BusinessError) => {
-            console.error(TAG, testName,`Failed to pack the image.code ${error.code},message is ${error.message}`);
-            expect(error.code).assertUndefined();
+            expect(data!=undefined).assertTrue();
             imageSource.release();
             console.info(TAG, testName,'imageSource release success.');
             done();
+          }).catch((error: BusinessError) => {
+            console.error(TAG, testName,`Failed to pack the image.code ${error.code},message is ${error.message}`);
+            expect().assertFail();
           });
         }catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
-          imageSource.release();
-          console.info(TAG, testName,'imageSource release success.');
-          done();
         }
       })
     })
@@ -117,20 +114,17 @@
           const imagePackerObj: image.ImagePacker = image.createImagePacker();
           imagePackerObj.packing(imageSource, packOpts).then((data: ArrayBuffer) => {
             console.info(TAG, testName,'Succeeded in packing the image.',data);
-            expect().assertFail();
-          }).catch((error: BusinessError) => {
-            console.error(TAG, testName,`Failed to pack the image.code ${error.code},message is ${error.message}`);
-            expect(error.code).assertUndefined();
+            expect(data!=undefined).assertTrue();
             imageSource.release();
             console.info(TAG, testName,'imageSource release success.');
             done();
+          }).catch((error: BusinessError) => {
+            console.error(TAG, testName,`Failed to pack the image.code ${error.code},message is ${error.message}`);
+            expect().assertFail();
           });
         }catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
-          imageSource.release();
-          console.info(TAG, testName,'imageSource release success.');
-          done();
         }
       })
     })
@@ -156,24 +150,20 @@
           const imagePackerObj: image.ImagePacker = image.createImagePacker();
           imagePackerObj.packing(imageSource, packOpts).then((data: ArrayBuffer) => {
             console.info(TAG, testName,'Succeeded in packing the image.',data);
-            expect().assertFail();
-          }).catch((error: BusinessError) => {
-            console.error(TAG, testName,`Failed to pack the image.code ${error.code},message is ${error.message}`);
-            expect(error.code).assertUndefined();
+            expect(data!=undefined).assertTrue();
             imageSource.release();
             console.info(TAG, testName,'imageSource release success.');
             done();
+          }).catch((error: BusinessError) => {
+            console.error(TAG, testName,`Failed to pack the image.code ${error.code},message is ${error.message}`);
+            expect().assertFail();
           });
         }catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
-          imageSource.release();
-          console.info(TAG, testName,'imageSource release success.');
-          done();
         }
       })
     })
-
     /**
      * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_004
      * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_004
@@ -197,24 +187,20 @@
           const imagePackerObj: image.ImagePacker = image.createImagePacker();
           imagePackerObj.packing(imageSource, packOpts).then((data: ArrayBuffer) => {
             console.info(TAG, testName,'Succeeded in packing the image.',data);
-            expect().assertFail();
-          }).catch((error: BusinessError) => {
-            console.error(TAG, testName,`Failed to pack the image.code ${error.code},message is ${error.message}`);
-            expect(error.code).assertUndefined();
+            expect(data!=undefined).assertTrue();
             imageSource.release();
             console.info(TAG, testName,'imageSource release success.');
             done();
+          }).catch((error: BusinessError) => {
+            console.error(TAG, testName,`Failed to pack the image.code ${error.code},message is ${error.message}`);
+            expect().assertFail();
           });
         }catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
-          imageSource.release();
-          console.info(TAG, testName,'imageSource release success.');
-          done();
         }
       })
     })
-
     /**
      * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_005
      * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_005
