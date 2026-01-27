@@ -95,7 +95,7 @@ export default function RdbStoreErrorCodeAdd4Test() {
      * @tc.type        Function
      * @tc.level       Level 2
      */
-    it('LiteResultSet_001_normal_getColumnType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LiteResultSet_traverse_normal_getColumnType_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
@@ -142,7 +142,7 @@ export default function RdbStoreErrorCodeAdd4Test() {
      * @tc.type   Function
      * @tc.level  Level 2
      */
-    it('LiteResultSet_002_normal_getColumnType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('LiteResultSet_traverse_normal_getColumnTypeSync_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
       try {
