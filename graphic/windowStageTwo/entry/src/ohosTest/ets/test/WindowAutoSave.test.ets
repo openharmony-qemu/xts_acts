@@ -1842,8 +1842,8 @@ export default function windowAutoSaveTest() {
       try {
         windowStage.isWindowRectAutoSave().then((result) => {
           console.info(`${message} isWindowRectAutoSave = ${result}, expect true.`)
-          if(isSupportFreeWindowMode){
-            expect(result).assertLessOrEqual(true);
+          if(isFreeWindowMode || isSupportFreeWindowMode){
+            expect(result).assertEqual(true);
           }else{
             expect(result).assertEqual(false);
           }

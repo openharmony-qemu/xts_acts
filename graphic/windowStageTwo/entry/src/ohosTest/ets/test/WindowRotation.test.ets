@@ -22,7 +22,6 @@ import { display } from '@kit.ArkUI';
 import { StartOptions,Want } from '@kit.AbilityKit';
 import { BusinessError } from '@ohos.base';
 import { Driver, ON } from '@kit.TestKit';
-import deviceInfo from '@ohos.deviceInfo';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -1789,7 +1788,7 @@ export default function windowRotationTest() {
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
         await subWindowClass?.destroyWindow()
-        if (deviceType != 'phone' || deviceType != 'tablet') {
+        if (deviceType != 'phone' && deviceType != 'tablet') {
           expect(err.code).assertEqual(801);
           done()
         } else {
@@ -1852,7 +1851,7 @@ export default function windowRotationTest() {
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        if (deviceType != 'phone' || deviceType != 'tablet') {
+        if (deviceType != 'phone' && deviceType != 'tablet') {
           done()
         } else {
           expect().assertFail();
@@ -1913,7 +1912,7 @@ export default function windowRotationTest() {
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        if (deviceType != 'phone' || deviceType != 'tablet') {
+        if (deviceType != 'phone' && deviceType != 'tablet') {
           done()
         } else {
           expect(err.code).assertEqual(401);
@@ -1945,7 +1944,7 @@ export default function windowRotationTest() {
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        if (deviceType != 'phone' || deviceType != 'tablet') {
+        if (deviceType != 'phone' && deviceType != 'tablet') {
           done()
         } else {
           expect(err.code).assertEqual(401);
