@@ -198,6 +198,9 @@ import ImageExifVersionSupp from './image/ImageExifVersion.test';
 import ImageExifComponentsConfiguration from './image/ImageExifComponentsConfiguration.test';
 import ImageExifShutterSpeedValue from './image/ImageExifShutterSpeedValue.test';
 import imageCreateCroppedAndScaledPixelMap from './image/ImageCreateScaledPixelMap.test';
+import ImagePixelMapGetMetadata from './image/ImagePixelMapGetMetadata.test';
+import ImagePixelMapClone from './image/ImagePixelMapClone.test';
+import ImagePictureTest from './image/ImagePictureTest.test';
 import ImageSourceLensModelSupp from './image/ImageSourceLensModel.test';
 import ImageSourceLensMakeSupp from './image/ImageSourceLensMake.test';
 import ImageLensSerialNumberSupp from './image/ImageExifLensSerialNumber.test';
@@ -398,6 +401,9 @@ export default function testsuite() {
   ImageWidthLengthSupp();
   ImageDescriptionSupp();
   imageCreateCroppedAndScaledPixelMap();
+  ImagePixelMapGetMetadata();
+  ImagePixelMapClone();
+  ImagePictureTest();
   ImageSourceLensMakeSupp();
   ImageSourceLensModelSupp();
   ImageLensSpecificationSupp();
@@ -410,17 +416,9 @@ export default function testsuite() {
   ImagePictureMetadataTest();
   MultimediaImageTest();
   ImageExifMetadataTestSupp();
-  ImageGammaSupp()
-  ImagePictureMetadataTest()
-  MultimediaImageTest()
-  ImageExifMetadataTestSupp()
   CreatePixelMapSupp();
   GetImageInfoSupp();
   ReadPixelsToBufferSupp();
-  ImageGammaSupp();
-  ImagePictureMetadataTest();
-  MultimediaImageTest();
-  ImageExifMetadataTestSupp();
 
 
 }
