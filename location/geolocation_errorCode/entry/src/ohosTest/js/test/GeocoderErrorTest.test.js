@@ -12,13 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import geolocations from '@system.geolocation';
 import geolocation from '@ohos.geolocation';
 import geolocationm from '@ohos.geoLocationManager';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl'
 import bundle from '@ohos.bundle'
 import osaccount from '@ohos.account.osAccount'
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
+
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -36,7 +37,7 @@ async function changedLocationMode(){
         });
     }
     let result2 = geolocationm.isLocationEnabled();
-    console.info('[lbs_js] check LocationSwitchState result: ' + JSON.stringify(result2));
+    console.info('====>[lbs_js] check LocationSwitchState result: ' + JSON.stringify(result2));
 }
 
 
@@ -85,7 +86,6 @@ export default function geolocationTest_GeoErr(){
     
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_GeoErr_0400
          * @tc.number SUB_HSS_LocationSystem_GeoErr_0400
          * @tc.desc   Incorrect input parameters are used to invoke the reverse geocoding service.
@@ -115,7 +115,6 @@ export default function geolocationTest_GeoErr(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_GeoErr_0500
          * @tc.number SUB_HSS_LocationSystem_GeoErr_0500
          * @tc.desc   Incorrect input parameters are used to invoke the reverse geocoding service.
@@ -139,7 +138,6 @@ export default function geolocationTest_GeoErr(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_GeoErr_0600
          * @tc.number SUB_HSS_LocationSystem_GeoErr_0600
          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
@@ -169,7 +167,6 @@ export default function geolocationTest_GeoErr(){
         })
     
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_GeoErr_0700
          * @tc.number SUB_HSS_LocationSystem_GeoErr_0700
          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
@@ -191,10 +188,8 @@ export default function geolocationTest_GeoErr(){
               await sleep(1000);
               done();
         })
-    
-    
+        
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_Addbeaconfence_0100
          * @tc.number SUB_HSS_Addbeaconfence_0100
          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
@@ -217,7 +212,7 @@ export default function geolocationTest_GeoErr(){
                 };
 
                 let beacon = {
-                    identifier: "11",
+                    identifier: "1",
                     beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
                     manufactureData: manufactureData
                 };
@@ -247,7 +242,6 @@ export default function geolocationTest_GeoErr(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_Addbeaconfence_0200
          * @tc.number SUB_HSS_Addbeaconfence_0200
          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
@@ -257,7 +251,7 @@ export default function geolocationTest_GeoErr(){
          */
         it('SUB_HSS_Addbeaconfence_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
-                let manufactureDataBuffer = new Uint8Array([0X02, 0X15, 0X00, 0X00, 0X18, 0X12, 0X00, 0X00,
+                let manufactureDataBuffer = new Uint8Array([0X02, 0X15, 0X01, 0X00, 0X18, 0X12, 0X00, 0X00,
                     0X10, 0X00, 0X80, 0X00, 0X00, 0X80, 0X5F, 0X9B, 0X34, 0XFB]);
 
                 let manufactureDataMaskBuffer = new Uint8Array([0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF,
@@ -270,7 +264,7 @@ export default function geolocationTest_GeoErr(){
                 };
 
                 let beacon = {
-                    identifier: "11",
+                    identifier: "2",
                     beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
                     manufactureData: manufactureData
                 };
@@ -306,7 +300,6 @@ export default function geolocationTest_GeoErr(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_Removebeaconfence_0100
          * @tc.number SUB_HSS_Removebeaconfence_0100
          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
@@ -351,7 +344,6 @@ export default function geolocationTest_GeoErr(){
         
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_isBeaconFenceSupported_0100
          * @tc.number SUB_HSS_isBeaconFenceSupported_0100
          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
@@ -370,6 +362,8 @@ export default function geolocationTest_GeoErr(){
             await sleep(1000);
             done();
         });
+
+
 
         /**
          * @tc.name   SUB_HSS_getSupportedCoordTypes_0400
@@ -784,7 +778,7 @@ export default function geolocationTest_GeoErr(){
                 done();
             } else {
                 try {
-                    let manufactureDataBuffer = new Uint8Array([0X02, 0X15, 0X00, 0X11, 0X22, 0X33, 0X44, 0X55,
+                    let manufactureDataBuffer = new Uint8Array([0X02, 0X15, 0X00, 0X11, 0X12, 0X33, 0X44, 0X55,
                         0X66, 0X77, 0X88, 0X99, 0XAA, 0XBB, 0XCC, 0XDD, 0XEE, 0XFF, 0X11, 0X22, 0X33, 0X44, 0X55]);
                       let manufactureDataMaskBuffer = new Uint8Array([0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF,
                         0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF]);
@@ -796,7 +790,7 @@ export default function geolocationTest_GeoErr(){
                       };
                     
                       let beacon = {
-                        identifier: "11",
+                        identifier: "3",
                         beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
                         manufactureData:manufactureData
                       };
@@ -843,7 +837,7 @@ export default function geolocationTest_GeoErr(){
             } else {
                 try {
                     let manufactureDataBuffer = new Uint8Array([0X02, 0X15, 0X00, 0X11, 0X22, 0X33, 0X44, 0X55,
-                        0X66, 0X77, 0X88, 0X99, 0XAA, 0XBB, 0XCC, 0XDD, 0XEE, 0XFF, 0X11, 0X22, 0X33, 0X44, 0X55]);
+                        0X66, 0X77, 0X88, 0X99, 0XAA, 0XBB, 0XCC, 0XDD, 0XEE, 0XFF, 0X11, 0X12, 0X33, 0X44, 0X55]);
                       let manufactureDataMaskBuffer = new Uint8Array([0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF,
                         0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF]);
                     
@@ -854,7 +848,7 @@ export default function geolocationTest_GeoErr(){
                       };
                     
                       let beacon = {
-                        identifier: "11",
+                        identifier: "4",
                         beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
                         manufactureData:manufactureData
                       };
@@ -906,7 +900,7 @@ export default function geolocationTest_GeoErr(){
             } else {
                 try {
                     let manufactureDataBuffer = new Uint8Array([0X02, 0X15, 0X00, 0X11, 0X22, 0X33, 0X44, 0X55,
-                        0X66, 0X77, 0X88, 0X99, 0XAA, 0XBB, 0XCC, 0XDD, 0XEE, 0XFF, 0X11, 0X22, 0X33, 0X44, 0X55]);
+                        0X66, 0X77, 0X88, 0X99, 0XAA, 0XBB, 0XCC, 0XDD, 0XEE, 0XFF, 0X11, 0X22, 0X33, 0X44, 0X51]);
                       let manufactureDataMaskBuffer = new Uint8Array([0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF,
                         0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF]);
                     
@@ -916,32 +910,49 @@ export default function geolocationTest_GeoErr(){
                         manufactureDataMask: manufactureDataMaskBuffer.buffer
                       };
                     
-                      let beacon = {
-                        identifier: "11",
-                        beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
-                        manufactureData:manufactureData
-                      };
-                    
-                      let fenceRequest = {
-                        beacon: beacon,
-                        transitionCallback: (transition) => {
-                          if (transition) {
-                            console.info("SUB_HSS_addBeaconFence_0600:" + JSON.stringify(transition));
-                          }
-                        },
-                        fenceExtensionAbilityName: "MyFenceExtensionAbility",
-                      };
+                      for (let identifier = 20; identifier < 1020; identifier++) {
 
-                      for (let i = 0; i < 1000; i++) {
+                        let beacon = {
+                            identifier:JSON.stringify(identifier),
+                            beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
+                            manufactureData:manufactureData
+                          };
+
+                          let fenceRequest = {
+                            beacon: beacon,
+                            transitionCallback: (transition) => {
+                              if (transition) {
+                                console.info("SUB_HSS_addBeaconFence_0600:" + JSON.stringify(transition));
+                              }
+                            },
+                            fenceExtensionAbilityName: "MyFenceExtensionAbility",
+                          };
+
                         try {
                            await geolocationm.addBeaconFence(fenceRequest)
                         } catch (error) {
                             console.info("SUB_HSS_addBeaconFence_0600:catch (error)" + JSON.stringify(error));
                         }
                       }
-                      geolocationm.addBeaconFence(fenceRequest).then((id) => {
+
+                      let beacon = {
+                        identifier:1021,
+                        beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
+                        manufactureData:manufactureData
+                      };
+                      let fenceRequest1 = {
+                        beacon: beacon,
+                        transitionCallback: (transition) => {
+                            if (transition) {
+                                console.info("SUB_HSS_addBeaconFence_0600:" + JSON.stringify(transition));
+                            }
+                        },
+                        fenceExtensionAbilityName: "MyFenceExtensionAbility",
+                      };
+
+                      geolocationm.addBeaconFence(fenceRequest1).then((id) => {
                         console.info("addBeaconFence0600 success, fence id:" + id);
-                        expect(true).assertEqual(JSON.stringify(id)!=null);
+                        expect(true).assertEqual(id!=null);
                       }).catch((err) => {
                         console.error('promise, addBeaconFence0500: error=' + JSON.stringify(err));
                         expect(err.code).assertEqual(3501601);
@@ -971,7 +982,7 @@ export default function geolocationTest_GeoErr(){
                 done();
             } else {
                 try {
-                    let manufactureDataBuffer = new Uint8Array([0X02, 0X15, 0X00, 0X11, 0X22, 0X33, 0X44, 0X55,
+                    let manufactureDataBuffer = new Uint8Array([0X02, 0X15, 0X00, 0X11, 0X22, 0X33, 0X44, 0X15,
                         0X66, 0X77, 0X88, 0X99, 0XAA, 0XBB, 0XCC, 0XDD, 0XEE, 0XFF, 0X11, 0X22, 0X33, 0X44, 0X55]);
                       let manufactureDataMaskBuffer = new Uint8Array([0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF,
                         0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF]);
@@ -983,7 +994,7 @@ export default function geolocationTest_GeoErr(){
                       };
                     
                       let beacon = {
-                        identifier: "11",
+                        identifier: "5",
                         beaconFenceInfoType: geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
                         manufactureData:manufactureData
                       };
@@ -1255,7 +1266,36 @@ export default function geolocationTest_GeoErr(){
             }            
         });   
         
-                  
+         /**
+         * @tc.name   SUB_HSS_getAddressesFromLocation_0300
+         * @tc.number SUB_HSS_getAddressesFromLocation_0300
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_HSS_getAddressesFromLocation_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_getAddressesFromLocation_0300: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let reverseGeocodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
+                try {
+                    geolocationm.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
+                        console.info('getAddressesFromLocation0300: data=' + JSON.stringify(data));
+                        expect(data.length>0).assertTrue();
+                    });
+                } catch (err) {
+                    console.error("getAddressesFromLocation0300:errCode:" + err.code + ", message:"  + err.message);
+                }
+                await sleep(1000);
+                done();
+            }            
+        });   
+                          
          /**
          * @tc.name   SUB_HSS_locationEnabledChange_0300
          * @tc.number SUB_HSS_locationEnabledChange_0300
@@ -1395,6 +1435,33 @@ export default function geolocationTest_GeoErr(){
             }            
         });   
                
+
+         /**
+         * @tc.name   SUB_geolocation_getAddressesFromLocationName_0005
+         * @tc.number SUB_geolocation_getAddressesFromLocationName_0005
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_geolocation_getAddressesFromLocationName_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_geolocation_getAddressesFromLocationName_0005: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let geocodeRequest = {"description": "111", "maxItems": 1,"minLatitude":0,"minLongitude":0};
+                geolocation.getAddressesFromLocationName(geocodeRequest, (err, data) => {
+                    console.info('geolocationgetAddressesFromLocationName0005: data=' + JSON.stringify(data));
+                    expect(data).assertEqual(undefined);
+                });
+                await sleep(1000);
+                done();
+            }            
+        });
+        
         
          /**
          * @tc.name   SUB_geolocation_getAddressesFromLocation_0006
@@ -1523,7 +1590,13 @@ export default function geolocationTest_GeoErr(){
                 await sleep(1000);
                 done();
             }            
-        });   
+        });
+        
+        
+        
+
+
+ 
     })
 }
 

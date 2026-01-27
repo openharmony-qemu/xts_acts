@@ -21,6 +21,7 @@ import settings from '@ohos.settings';
 import { display } from '@kit.ArkUI';
 import { StartOptions } from '@kit.AbilityKit';
 import { Driver, ON} from '@kit.TestKit';
+import deviceInfo from '@ohos.deviceInfo';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -166,6 +167,8 @@ export default function windowImmersiveTest() {
     let avoidArea1: window.AvoidArea;
     let isSupportRotate = false;
     let isFreeWindowMode = false;
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
@@ -982,7 +985,7 @@ export default function windowImmersiveTest() {
           expect(avoidArea.rightRect !== null).assertTrue();
           expect(avoidArea.bottomRect !== null).assertTrue();
           expect(avoidArea.leftRect !== null).assertTrue();
-          if(isFreeWindowMode == true || isSupportRotate == false){
+          if(isFreeWindowMode == true || deviceType == 'wearable'){
             expect(avoidArea.topRect.width).assertEqual(0);
             expect(avoidArea.topRect.height).assertEqual(0);
             expect(avoidArea.rightRect.width).assertEqual(0);
@@ -3978,7 +3981,7 @@ export default function windowImmersiveTest() {
             expect(avoidArea1.rightRect.width).assertEqual(0);
             expect(avoidArea1.rightRect.height).assertEqual(0);
 
-            if(isSupportRotate == true){
+            if(deviceType != 'wearable'){
               expect(avoidArea1.topRect.width).assertLarger(0);
               expect(avoidArea1.topRect.height).assertLarger(0);
             }else{
@@ -4060,7 +4063,7 @@ export default function windowImmersiveTest() {
             expect(avoidArea7.topRect.width).assertEqual(0);
             expect(avoidArea7.topRect.height).assertEqual(0);
 
-            if(isSupportRotate == true){
+            if(deviceType != 'wearable' && deviceType != 'tv'){
               expect(avoidArea7.bottomRect.width).assertLarger(0);
               expect(avoidArea7.bottomRect.height).assertLarger(0);
             }else{
