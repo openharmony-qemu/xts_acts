@@ -45,7 +45,7 @@ export default function builtinsCharIsWhiteSpaceTest() {
 
     /**
      * @tc.name    builtinsCharIsWhiteSpaceTest0001
-     * @tc.number  BUILTINS_CHAR_TEST0001
+     * @tc.number  BUILTINS_CHAR_IS_WHITE_SPACE_TEST_0001
      * @tc.desc    Test whitespace character recognition with 16-bit character constraint
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -71,7 +71,7 @@ export default function builtinsCharIsWhiteSpaceTest() {
 
     /**
      * @tc.name    builtinsCharIsWhiteSpaceTest0002
-     * @tc.number  BUILTINS_CHAR_TEST0002
+     * @tc.number  BUILTINS_CHAR_IS_WHITE_SPACE_TEST_0002
      * @tc.desc    Test whitespace recognition with max code point characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -91,7 +91,7 @@ export default function builtinsCharIsWhiteSpaceTest() {
 
     /**
      * @tc.name    builtinsCharIsWhiteSpaceTest0003
-     * @tc.number  BUILTINS_CHAR_TEST0003
+     * @tc.number  BUILTINS_CHAR_IS_WHITE_SPACE_TEST_0003
      * @tc.desc    Test high surrogate range with whitespace check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -111,7 +111,7 @@ export default function builtinsCharIsWhiteSpaceTest() {
 
     /**
      * @tc.name    builtinsCharIsWhiteSpaceTest0004
-     * @tc.number  BUILTINS_CHAR_TEST0004
+     * @tc.number  BUILTINS_CHAR_IS_WHITE_SPACE_TEST_0004
      * @tc.desc    Test low surrogate range with whitespace check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -131,7 +131,7 @@ export default function builtinsCharIsWhiteSpaceTest() {
 
     /**
      * @tc.name    builtinsCharIsWhiteSpaceTest0005
-     * @tc.number  BUILTINS_CHAR_TEST0005
+     * @tc.number  BUILTINS_CHAR_IS_WHITE_SPACE_TEST_0005
      * @tc.desc    Test BMP border characters with whitespace check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -155,7 +155,7 @@ export default function builtinsCharIsWhiteSpaceTest() {
 
     /**
      * @tc.name    builtinsCharIsWhiteSpaceTest0006
-     * @tc.number  BUILTINS_CHAR_TEST0006
+     * @tc.number  BUILTINS_CHAR_IS_WHITE_SPACE_TEST_0006
      * @tc.desc    Test character min and max values with whitespace check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST

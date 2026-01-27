@@ -45,7 +45,7 @@ export default function builtinsCharIsUpperCaseTest() {
 
     /**
      * @tc.name    builtinsCharIsUpperCaseTest0001
-     * @tc.number  BUILTINS_CHAR_TEST0001
+     * @tc.number  BUILTINS_CHAR_IS_UPPER_CASE_TEST_0001
      * @tc.desc    Test uppercase letter recognition with 16-bit character constraint
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -75,7 +75,7 @@ export default function builtinsCharIsUpperCaseTest() {
 
     /**
      * @tc.name    builtinsCharIsUpperCaseTest0002
-     * @tc.number  BUILTINS_CHAR_TEST0002
+     * @tc.number  BUILTINS_CHAR_IS_UPPER_CASE_TEST_0002
      * @tc.desc    Test uppercase recognition with max code point characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -95,7 +95,7 @@ export default function builtinsCharIsUpperCaseTest() {
 
     /**
      * @tc.name    builtinsCharIsUpperCaseTest0003
-     * @tc.number  BUILTINS_CHAR_TEST0003
+     * @tc.number  BUILTINS_CHAR_IS_UPPER_CASE_TEST_0003
      * @tc.desc    Test high surrogate range with uppercase check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -117,7 +117,7 @@ export default function builtinsCharIsUpperCaseTest() {
 
     /**
      * @tc.name    builtinsCharIsUpperCaseTest0004
-     * @tc.number  BUILTINS_CHAR_TEST0004
+     * @tc.number  BUILTINS_CHAR_IS_UPPER_CASE_TEST_0004
      * @tc.desc    Test low surrogate range with uppercase check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -140,7 +140,7 @@ export default function builtinsCharIsUpperCaseTest() {
 
     /**
      * @tc.name    builtinsCharIsUpperCaseTest0005
-     * @tc.number  BUILTINS_CHAR_TEST0005
+     * @tc.number  BUILTINS_CHAR_IS_UPPER_CASE_TEST_0005
      * @tc.desc    Test BMP border characters with uppercase check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -163,7 +163,7 @@ export default function builtinsCharIsUpperCaseTest() {
 
     /**
      * @tc.name    builtinsCharIsUpperCaseTest0006
-     * @tc.number  BUILTINS_CHAR_TEST0006
+     * @tc.number  BUILTINS_CHAR_IS_UPPER_CASE_TEST_0006
      * @tc.desc    Test character min and max values with uppercase check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST

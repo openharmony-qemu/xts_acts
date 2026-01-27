@@ -44,7 +44,7 @@ export default function builtinsCharIsBinDigitTest() {
 
     /**
      * @tc.name    builtinsCharIsBinDigitTest0001
-     * @tc.number  BUILTINS_CHAR_TEST0001
+     * @tc.number  BUILTINS_CHAR_IS_BIN_DIGIT_TEST_0001
      * @tc.desc    Test binary digit recognition with 16-bit character constraint
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -65,7 +65,7 @@ export default function builtinsCharIsBinDigitTest() {
 
     /**
      * @tc.name    builtinsCharIsBinDigitTest0002
-     * @tc.number  BUILTINS_CHAR_TEST0002
+     * @tc.number  BUILTINS_CHAR_IS_BIN_DIGIT_TEST_0002
      * @tc.desc    Test max code point as character parameter for binary digit check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -88,7 +88,7 @@ export default function builtinsCharIsBinDigitTest() {
 
     /**
      * @tc.name    builtinsCharIsBinDigitTest0003
-     * @tc.number  BUILTINS_CHAR_TEST0003
+     * @tc.number  BUILTINS_CHAR_IS_BIN_DIGIT_TEST_0003
      * @tc.desc    Test high surrogate boundary values with binary digit check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -103,7 +103,7 @@ export default function builtinsCharIsBinDigitTest() {
 
     /**
      * @tc.name    builtinsCharIsBinDigitTest0004
-     * @tc.number  BUILTINS_CHAR_TEST0004
+     * @tc.number  BUILTINS_CHAR_IS_BIN_DIGIT_TEST_0004
      * @tc.desc    Test low surrogate boundary values with binary digit check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -118,7 +118,7 @@ export default function builtinsCharIsBinDigitTest() {
 
     /**
      * @tc.name    builtinsCharIsBinDigitTest0005
-     * @tc.number  BUILTINS_CHAR_TEST0005
+     * @tc.number  BUILTINS_CHAR_IS_BIN_DIGIT_TEST_0005
      * @tc.desc    Test BMP border character with binary digit check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -140,7 +140,7 @@ export default function builtinsCharIsBinDigitTest() {
 
     /**
      * @tc.name    builtinsCharIsBinDigitTest0006
-     * @tc.number  BUILTINS_CHAR_TEST0006
+     * @tc.number  BUILTINS_CHAR_IS_BIN_DIGIT_TEST_0006
      * @tc.desc    Test character min and max values with binary digit check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST

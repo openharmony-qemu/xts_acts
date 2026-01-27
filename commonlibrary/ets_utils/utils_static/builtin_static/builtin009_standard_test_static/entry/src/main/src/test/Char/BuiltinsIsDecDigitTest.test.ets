@@ -25,131 +25,131 @@ export default function builtinsIsDecDigitTest() {
     })
 
     /**
-     * @tc.name    charIsDecDigitTestCharBitSize0100
-     * @tc.number  CHAR_IS_DEC_DIGIT_TEST_CHAR_BIT_SIZE_0100
+     * @tc.name    builtinsIsDecDigitTest0001
+     * @tc.number  BUILTINS_IS_DEC_DIGIT_TEST_0001
      * @tc.desc    Test isDecDigit with CHAR_BIT_SIZE valid range (decimal '0' in 16-bit range)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('charIsDecDigitTestCharBitSize0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsDecDigitTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const validDecimal0 = new Char(c'0');
       expect(validDecimal0.isDecDigit()).assertTrue();
     });
 
     /**
-     * @tc.name    charIsDecDigitTestMaxCodePoint0200
-     * @tc.number  CHAR_IS_DEC_DIGIT_TEST_MAX_CODE_POINT_0200
+     * @tc.name    builtinsIsDecDigitTest0002
+     * @tc.number  BUILTINS_IS_DEC_DIGIT_TEST_0002
      * @tc.desc    Test isDecDigit with MAX_CODE_POINT valid mapped char (non-decimal char)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('charIsDecDigitTestMaxCodePoint0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsIsDecDigitTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const nonDecimalChar = new Char(c'\uFFFF');
       expect(nonDecimalChar.isDecDigit()).assertFalse();
     });
 
     /**
-     * @tc.name    charIsDecDigitTestHighSurrogateMin0300
-     * @tc.number  CHAR_IS_DEC_DIGIT_TEST_HIGH_SURROGATE_MIN_0300
+     * @tc.name    builtinsIsDecDigitTest0003
+     * @tc.number  BUILTINS_IS_DEC_DIGIT_TEST_0003
      * @tc.desc    Test isDecDigit with HIGH_SURROGATE_MIN (\uD800)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('charIsDecDigitTestHighSurrogateMin0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsIsDecDigitTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const highSurrogateMinChar = new Char(Char.HIGH_SURROGATE_MIN);
       expect(highSurrogateMinChar.isDecDigit()).assertFalse();
     });
 
     /**
-     * @tc.name    charIsDecDigitTestHighSurrogateMax0400
-     * @tc.number  CHAR_IS_DEC_DIGIT_TEST_HIGH_SURROGATE_MAX_0400
+     * @tc.name    builtinsIsDecDigitTest0004
+     * @tc.number  BUILTINS_IS_DEC_DIGIT_TEST_0004
      * @tc.desc    Test isDecDigit with HIGH_SURROGATE_MAX (\uDBFF)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('charIsDecDigitTestHighSurrogateMax0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsIsDecDigitTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const highSurrogateMaxChar = new Char(Char.HIGH_SURROGATE_MAX);
       expect(highSurrogateMaxChar.isDecDigit()).assertFalse();
     });
 
     /**
-     * @tc.name    charIsDecDigitTestLowSurrogateMin0500
-     * @tc.number  CHAR_IS_DEC_DIGIT_TEST_LOW_SURROGATE_MIN_0500
+     * @tc.name    builtinsIsDecDigitTest0005
+     * @tc.number  BUILTINS_IS_DEC_DIGIT_TEST_0005
      * @tc.desc    Test isDecDigit with LOW_SURROGATE_MIN (\uDC00)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('charIsDecDigitTestLowSurrogateMin0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsIsDecDigitTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const lowSurrogateMinChar = new Char(Char.LOW_SURROGATE_MIN);
       expect(lowSurrogateMinChar.isDecDigit()).assertFalse();
     });
 
     /**
-     * @tc.name    charIsDecDigitTestLowSurrogateMax0600
-     * @tc.number  CHAR_IS_DEC_DIGIT_TEST_LOW_SURROGATE_MAX_0600
+     * @tc.name    builtinsIsDecDigitTest0006
+     * @tc.number  BUILTINS_IS_DEC_DIGIT_TEST_0006
      * @tc.desc    Test isDecDigit with LOW_SURROGATE_MAX (\uDFFF)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('charIsDecDigitTestLowSurrogateMax0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsIsDecDigitTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const lowSurrogateMaxChar = new Char(Char.LOW_SURROGATE_MAX);
       expect(lowSurrogateMaxChar.isDecDigit()).assertFalse();
     });
 
     /**
-     * @tc.name    charIsDecDigitTestBmpBorderBelow0700
-     * @tc.number  CHAR_IS_DEC_DIGIT_TEST_BMP_BORDER_BELOW_0700
+     * @tc.name    builtinsIsDecDigitTest0007
+     * @tc.number  BUILTINS_IS_DEC_DIGIT_TEST_0007
      * @tc.desc    Test isDecDigit with BMP_BORDER below (0xFFFE, valid BMP char)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('charIsDecDigitTestBmpBorderBelow0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsIsDecDigitTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const bmpBelowChar = new Char(c'\uFFFE');
       expect(bmpBelowChar.isDecDigit()).assertFalse();
     });
 
     /**
-     * @tc.name    charIsDecDigitTestBmpBorderAbove0800
-     * @tc.number  CHAR_IS_DEC_DIGIT_TEST_BMP_BORDER_ABOVE_0800
+     * @tc.name    builtinsIsDecDigitTest0008
+     * @tc.number  BUILTINS_IS_DEC_DIGIT_TEST_0008
      * @tc.desc    Test isDecDigit with BMP_BORDER mapped valid char (decimal '9')
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('charIsDecDigitTestBmpBorderAbove0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsDecDigitTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bmpAboveDecimal9 = new Char(c'9');
       expect(bmpAboveDecimal9.isDecDigit()).assertTrue();
     });
 
     /**
-     * @tc.name    charIsDecDigitTestMinValue0900
-     * @tc.number  CHAR_IS_DEC_DIGIT_TEST_MIN_VALUE_0900
+     * @tc.name    builtinsIsDecDigitTest0009
+     * @tc.number  BUILTINS_IS_DEC_DIGIT_TEST_0009
      * @tc.desc    Test isDecDigit with MIN_VALUE (\u0000)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('charIsDecDigitTestMinValue0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsIsDecDigitTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const minValueChar = new Char(Char.MIN_VALUE);
       expect(minValueChar.isDecDigit()).assertFalse();
     });
 
     /**
-     * @tc.name    charIsDecDigitTestMaxValue1000
-     * @tc.number  CHAR_IS_DEC_DIGIT_TEST_MAX_VALUE_1000
+     * @tc.name    builtinsIsDecDigitTest0010
+     * @tc.number  BUILTINS_IS_DEC_DIGIT_TEST_0010
      * @tc.desc    Test isDecDigit with MAX_VALUE (\uFFFF)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('charIsDecDigitTestMaxValue1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsIsDecDigitTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const maxValueChar = new Char(Char.MAX_VALUE);
       expect(maxValueChar.isDecDigit()).assertFalse();
     });

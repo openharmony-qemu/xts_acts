@@ -45,7 +45,7 @@ export default function builtinsCharIsLowerCaseTest() {
 
     /**
      * @tc.name    builtinsCharIsLowerCaseTest0001
-     * @tc.number  BUILTINS_CHAR_TEST0001
+     * @tc.number  BUILTINS_CHAR_IS_LOWER_CASE_TEST_0001
      * @tc.desc    Test lowercase letter recognition with 16-bit character constraint
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -58,7 +58,7 @@ export default function builtinsCharIsLowerCaseTest() {
 
     /**
      * @tc.name    builtinsCharIsLowerCaseTest0002
-     * @tc.number  BUILTINS_CHAR_TEST0002
+     * @tc.number  BUILTINS_CHAR_IS_LOWER_CASE_TEST_0002
      * @tc.desc    Test lowercase recognition with max code point characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -78,7 +78,7 @@ export default function builtinsCharIsLowerCaseTest() {
 
     /**
      * @tc.name    builtinsCharIsLowerCaseTest0003
-     * @tc.number  BUILTINS_CHAR_TEST0003
+     * @tc.number  BUILTINS_CHAR_IS_LOWER_CASE_TEST_0003
      * @tc.desc    Test high surrogate range with lowercase check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -100,7 +100,7 @@ export default function builtinsCharIsLowerCaseTest() {
 
     /**
      * @tc.name    builtinsCharIsLowerCaseTest0004
-     * @tc.number  BUILTINS_CHAR_TEST0004
+     * @tc.number  BUILTINS_CHAR_IS_LOWER_CASE_TEST_0004
      * @tc.desc    Test low surrogate range with lowercase check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -123,7 +123,7 @@ export default function builtinsCharIsLowerCaseTest() {
 
     /**
      * @tc.name    builtinsCharIsLowerCaseTest0005
-     * @tc.number  BUILTINS_CHAR_TEST0005
+     * @tc.number  BUILTINS_CHAR_IS_LOWER_CASE_TEST_0005
      * @tc.desc    Test BMP border characters with lowercase check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -146,7 +146,7 @@ export default function builtinsCharIsLowerCaseTest() {
 
     /**
      * @tc.name    builtinsCharIsLowerCaseTest0006
-     * @tc.number  BUILTINS_CHAR_TEST0006
+     * @tc.number  BUILTINS_CHAR_IS_LOWER_CASE_TEST_0006
      * @tc.desc    Test character min and max values with lowercase check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST

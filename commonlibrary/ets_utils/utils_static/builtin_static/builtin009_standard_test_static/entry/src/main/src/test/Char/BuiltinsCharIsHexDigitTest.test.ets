@@ -45,7 +45,7 @@ export default function builtinsCharIsHexDigitTest() {
 
     /**
      * @tc.name    builtinsCharIsHexDigitTest0001
-     * @tc.number  BUILTINS_CHAR_TEST0001
+     * @tc.number  BUILTINS_CHAR_IS_HEX_DIGIT_TEST_0001
      * @tc.desc    Test hexadecimal digit recognition with 16-bit character constraint
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -67,7 +67,7 @@ export default function builtinsCharIsHexDigitTest() {
 
     /**
      * @tc.name    builtinsCharIsHexDigitTest0002
-     * @tc.number  BUILTINS_CHAR_TEST0002
+     * @tc.number  BUILTINS_CHAR_IS_HEX_DIGIT_TEST_0002
      * @tc.desc    Test hexadecimal digit recognition with max code point characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -84,7 +84,7 @@ export default function builtinsCharIsHexDigitTest() {
 
     /**
      * @tc.name    builtinsCharIsHexDigitTest0003
-     * @tc.number  BUILTINS_CHAR_TEST0003
+     * @tc.number  BUILTINS_CHAR_IS_HEX_DIGIT_TEST_0003
      * @tc.desc    Test high surrogate range with hexadecimal digit check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -106,7 +106,7 @@ export default function builtinsCharIsHexDigitTest() {
 
     /**
      * @tc.name    builtinsCharIsHexDigitTest0004
-     * @tc.number  BUILTINS_CHAR_TEST0004
+     * @tc.number  BUILTINS_CHAR_IS_HEX_DIGIT_TEST_0004
      * @tc.desc    Test low surrogate range with hexadecimal digit check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -130,7 +130,7 @@ export default function builtinsCharIsHexDigitTest() {
 
     /**
      * @tc.name    builtinsCharIsHexDigitTest0005
-     * @tc.number  BUILTINS_CHAR_TEST0005
+     * @tc.number  BUILTINS_CHAR_IS_HEX_DIGIT_TEST_0005
      * @tc.desc    Test BMP border characters with hexadecimal digit check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -147,7 +147,7 @@ export default function builtinsCharIsHexDigitTest() {
 
     /**
      * @tc.name    builtinsCharIsHexDigitTest0006
-     * @tc.number  BUILTINS_CHAR_TEST0006
+     * @tc.number  BUILTINS_CHAR_IS_HEX_DIGIT_TEST_0006
      * @tc.desc    Test character min and max values with hexadecimal digit check
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST

@@ -25,14 +25,14 @@ export default function builtinsIsLowerConversionTest() {
     })
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest100
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST100
+     * @tc.name    builtinsIsLowerConversionTest0001
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0001
      * @tc.desc    Test isLowerCase for basic lowercase letters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const charA: Char = c'a';
       const charM: Char = c'm';
       const charZ: Char = c'z';
@@ -43,14 +43,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest200
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST200
+     * @tc.name    builtinsIsLowerConversionTest0002
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0002
      * @tc.desc    Test isLowerCase for uppercase letters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const charA: Char = c'A';
       const charM: Char = c'M';
       const charZ: Char = c'Z';
@@ -61,14 +61,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest300
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST300
+     * @tc.name    builtinsIsLowerConversionTest0003
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0003
      * @tc.desc    Test isLowerCase for digit characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const char0: Char = c'0';
       const char5: Char = c'5';
       const char9: Char = c'9';
@@ -79,14 +79,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest400
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST400
+     * @tc.name    builtinsIsLowerConversionTest0004
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0004
      * @tc.desc    Test isLowerCase for special symbols
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const atSymbol: Char = c'@';
       const hash: Char = c'#';
       const dollar: Char = c'$';
@@ -101,14 +101,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest500
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST500
+     * @tc.name    builtinsIsLowerConversionTest0005
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0005
      * @tc.desc    Test isLowerCase for punctuation characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const period: Char = c'.';
       const comma: Char = c',';
       const exclamation: Char = c'!';
@@ -123,14 +123,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest600
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST600
+     * @tc.name    builtinsIsLowerConversionTest0006
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0006
      * @tc.desc    Test isLowerCase for whitespace characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const space: Char = c' ';
       const newline: Char = c'\n';
       const tab: Char = c'\t';
@@ -149,14 +149,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest700
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST700
+     * @tc.name    builtinsIsLowerConversionTest0007
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0007
      * @tc.desc    Test isLowerCase for boundary characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const beforeLowerA: Char = c'`';
       const afterLowerZ: Char = c'{';
       const beforeUpperA: Char = c'@';
@@ -169,14 +169,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest800
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST800
+     * @tc.name    builtinsIsLowerConversionTest0008
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0008
      * @tc.desc    Test isLowerCase for mathematical operators
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const plus: Char = c'+';
       const minus: Char = c'-';
       const multiply: Char = c'*';
@@ -191,14 +191,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest900
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST900
+     * @tc.name    builtinsIsLowerConversionTest0009
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0009
      * @tc.desc    Test isLowerCase for bracket characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const parenOpen: Char = c'(';
       const parenClose: Char = c')';
       const bracketOpen: Char = c'[';
@@ -215,14 +215,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest1000
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST1000
+     * @tc.name    builtinsIsLowerConversionTest0010
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0010
      * @tc.desc    Test isLowerCase for Unicode surrogate pairs
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const highSurrogateMin: Char = c'\uD800';
       const highSurrogateMax: Char = c'\uDBFF';
       const lowSurrogateMin: Char = c'\uDC00';
@@ -235,14 +235,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest1100
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST1100
+     * @tc.name    builtinsIsLowerConversionTest0011
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0011
      * @tc.desc    Test isLowerCase for char boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const minValue: Char = c'\u0000';
       const maxValue: Char = c'\uFFFF';
 
@@ -251,14 +251,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest1200
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST1200
+     * @tc.name    builtinsIsLowerConversionTest0012
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0012
      * @tc.desc    Test isLowerCase for BMP border characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const beforeBMPBorder: Char = c'\uFFFE';
       const atBMPBorder: Char = c'\uFFFF';
 
@@ -267,14 +267,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest1300
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST1300
+     * @tc.name    builtinsIsLowerConversionTest0013
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0013
      * @tc.desc    Test isLowerCase for character set performance
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testChars: Char[] = [
         c'a', c'b', c'c', c'd', c'e', c'f', c'g', c'h', c'i', c'j',
       c'A', c'B', c'C', c'D', c'E', c'F', c'G', c'H', c'I', c'J',
@@ -295,14 +295,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest1400
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST1400
+     * @tc.name    builtinsIsLowerConversionTest0014
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0014
      * @tc.desc    Test isLowerCase for additional symbols
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const tilde: Char = c'~';
       const caret: Char = c'^';
       const pipe: Char = c'|';
@@ -330,14 +330,14 @@ export default function builtinsIsLowerConversionTest() {
       expect(backslash.isLowerCase()).assertFalse();
     });
     /**
-     * @tc.name    builtinsIsLowerConversionTest1500
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST1500
+     * @tc.name    builtinsIsLowerConversionTest0015
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0015
      * @tc.desc    Test isLowerCase for extended ASCII characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const extendedChar1: Char = c'\u0080';
       const extendedChar2: Char = c'\u00FF';
       const extendedChar3: Char = c'\u0100';
@@ -348,14 +348,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest1600
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST1600
+     * @tc.name    builtinsIsLowerConversionTest0016
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0016
      * @tc.desc    Test isLowerCase for char bit size compatibility
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const charSizeBoundary1: Char = c'\u7FFF';
       const charSizeBoundary2: Char = c'\u8000';
 
@@ -364,14 +364,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest1700
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST1700
+     * @tc.name    builtinsIsLowerConversionTest0017
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0017
      * @tc.desc    Test isLowerCase for escape characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bell: Char = c'\u0007';
       const backspace: Char = c'\u0008';
       const formFeed: Char = c'\u000C';
@@ -398,14 +398,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest1800
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST1800
+     * @tc.name    builtinsIsLowerConversionTest0018
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0018
      * @tc.desc    Test isLowerCase for emoji Unicode characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const emojiChars: Char[] = [
         c'\uD83D', c'\uDC46',
       c'\uD83D', c'\uDC7F',
@@ -430,32 +430,30 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest1900
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST1900
+     * @tc.name    builtinsIsLowerConversionTest0019
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0019
      * @tc.desc    Test isLowerCase for illegal Unicode encodings
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const illegalUnicode1: Char = c'\uDC04';
       const illegalUnicode2: Char = c'\uD83D';
-
 
       expect(illegalUnicode1.isLowerCase()).assertFalse();
       expect(illegalUnicode2.isLowerCase()).assertFalse();
     });
 
-
     /**
-     * @tc.name    builtinsIsLowerConversionTest2000
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST2000
+     * @tc.name    builtinsIsLowerConversionTest0020
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0020
      * @tc.desc    Test isLowerCase for special character sequences
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialSequences: Char[] = [
         c'$', c'!', c'"', c'#', c'\\', c'(', c')', c'%', c'&',
       c'"', c'(', c')', c'^', c'*', c'+', c',', c'$', c'-',
@@ -469,14 +467,14 @@ export default function builtinsIsLowerConversionTest() {
     });
 
     /**
-     * @tc.name    builtinsIsLowerConversionTest2100
-     * @tc.number  BUILTINS_ISLOWER_CONVERSION_TEST2100
+     * @tc.name    builtinsIsLowerConversionTest0021
+     * @tc.number  BUILTINS_IS_LOWER_CONVERSION_TEST_0021
      * @tc.desc    Test isLowerCase for keyword characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsIsLowerConversionTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsIsLowerConversionTest0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const zeroChar: Char = c'0';
       const nChar: Char = c'N';
       const aChar: Char = c'a';

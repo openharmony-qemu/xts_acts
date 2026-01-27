@@ -39,7 +39,7 @@ export default function builtinsComparisonAndEqualityTest() {
     })
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0001
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0001
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0001
      * @tc.desc    Test static compare method with same object instance
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -52,7 +52,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0002
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0002
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0002
      * @tc.desc    Test static compare method with different objects but identical primitive value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -66,7 +66,7 @@ export default function builtinsComparisonAndEqualityTest() {
     });
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0003
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0003
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0003
      * @tc.desc    Test valueOf with char out of grammar range, value > 0xFFFF such as 0x10000,0x10FFFF
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -83,7 +83,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0004
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0004
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0004
      * @tc.desc    Test valueOf with char out of grammar range, value < 0x0000 such as -1,-0x80,-0xFF
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -100,7 +100,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0005
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0005
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0005
      * @tc.desc    Test valueOf with invalid surrogate char range 0xD800-0xDFFF, assert code point invalid
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -119,7 +119,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0006
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0006
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0006
      * @tc.desc    Test valueOf valid char vs invalid char, include ASCII A->65,0->48 and boundary value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -140,7 +140,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0007
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0007
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0007
      * @tc.desc    Test static compare method with different primitive values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -154,7 +154,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0008
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0008
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0008
      * @tc.desc    Test static compare method with boundary values MIN_VALUE and MAX_VALUE
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -169,7 +169,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0009
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0009
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0009
      * @tc.desc    Test static compare method inequality across extreme boundaries
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -184,7 +184,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0010
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0010
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0010
      * @tc.desc    Test static compare method surrogate range boundaries self-equality
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -203,7 +203,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0011
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0011
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0011
      * @tc.desc    Test static compare method inequality within surrogate ranges
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -220,7 +220,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0012
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0012
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0012
      * @tc.desc    Test static compare method Unicode range coverage self-equality
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -241,7 +241,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0013
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0013
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0013
      * @tc.desc    Test static compare method cross-range inequality verification
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -260,7 +260,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0014
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0014
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0014
      * @tc.desc    Test instance compareTo method basic ASCII ordering
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -283,7 +283,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0015
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0015
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0015
      * @tc.desc    Test instance compareTo method self-comparison returns zero
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -300,7 +300,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0016
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0016
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0016
      * @tc.desc    Test instance compareTo method extreme boundary ordering
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -317,7 +317,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0017
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0017
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0017
      * @tc.desc    Test instance compareTo method surrogate range internal ordering
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -336,7 +336,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0018
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0018
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0018
      * @tc.desc    Test instance compareTo method cross-surrogate range ordering
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -351,7 +351,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0019
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0019
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0019
      * @tc.desc    Test instance compareTo method Unicode range transition ordering
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -376,7 +376,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0020
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0020
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0020
      * @tc.desc    Test instance compareTo method consecutive code point ordering
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -391,7 +391,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0021
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0021
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0021
      * @tc.desc    Test instance compareTo method surrogate range edge transitions
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -409,7 +409,7 @@ export default function builtinsComparisonAndEqualityTest() {
     });
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0022
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0022
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0022
      * @tc.desc    Test equals method with same object reference identity
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -422,7 +422,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0023
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0023
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0023
      * @tc.desc    Test equals method with different objects sharing identical primitive value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -437,7 +437,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0024
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0024
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0024
      * @tc.desc    Test equals method with different primitive values returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -451,7 +451,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0025
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0025
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0025
      * @tc.desc    Test equals method with null argument returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -464,7 +464,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0026
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0026
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0026
      * @tc.desc    Test equals method with undefined argument returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -477,7 +477,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0027
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0027
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0027
      * @tc.desc    Test equals method with number primitive type returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -493,7 +493,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0028
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0028
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0028
      * @tc.desc    Test equals method with string primitive type returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -507,7 +507,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0029
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0029
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0029
      * @tc.desc    Test equals method with boolean primitive type returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -520,7 +520,7 @@ export default function builtinsComparisonAndEqualityTest() {
     });
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0030
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0030
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0030
      * @tc.desc    Test equals method with array type argument returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -536,7 +536,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0031
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0031
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0031
      * @tc.desc    Test equals method with MIN_VALUE boundary self-equality
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -549,7 +549,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0032
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0032
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0032
      * @tc.desc    Test equals method with MAX_VALUE boundary self-equality
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -562,7 +562,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0033
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0033
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0033
      * @tc.desc    Test equals method with different objects holding MIN_VALUE and MAX_VALUE
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -581,7 +581,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0034
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0034
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0034
      * @tc.desc    Test equals method with surrogate range characters self-equality
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -602,7 +602,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0035
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0035
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0035
      * @tc.desc    Test equals method with Unicode control characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -618,7 +618,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0036
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0036
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0036
      * @tc.desc    Test equals method with Latin-1 supplement characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -634,7 +634,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0037
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0037
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0037
      * @tc.desc    Test equals method with CJK Unified Ideographs
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -650,7 +650,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0038
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0038
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0038
      * @tc.desc    Test equals method symmetry property
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -664,7 +664,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0039
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0039
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0039
      * @tc.desc    Test equals method with Emoji characters (surrogate plane)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -680,7 +680,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0040
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0040
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0040
      * @tc.desc    Test equals method with private use area characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -695,7 +695,7 @@ export default function builtinsComparisonAndEqualityTest() {
     });
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0041
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0041
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0041
      * @tc.desc    Test equals method with Char having different value returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -709,7 +709,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0042
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0042
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0042
      * @tc.desc    Test equals method with Int8Array instance returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -723,7 +723,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0043
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0043
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0043
      * @tc.desc    Test equals method with Uint8Array instance returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -737,7 +737,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0044
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0044
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0044
      * @tc.desc    Test equals method with Uint8ClampedArray instance returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -751,7 +751,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0045
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0045
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0045
      * @tc.desc    Test equals method with Int16Array instance returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -765,7 +765,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0046
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0046
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0046
      * @tc.desc    Test equals method with Uint16Array instance returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -779,7 +779,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0047
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0047
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0047
      * @tc.desc    Test equals method with Int32Array instance returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -793,7 +793,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0048
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0048
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0048
      * @tc.desc    Test equals method with Uint32Array instance returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -807,7 +807,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0049
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0049
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0049
      * @tc.desc    Test equals method with Float32Array instance returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -821,7 +821,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0050
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0050
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0050
      * @tc.desc    Test equals method with Float64Array instance returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -835,7 +835,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0051
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0051
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0051
      * @tc.desc    Test equals method with BigInt64Array instance returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -849,7 +849,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0052
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0052
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0052
      * @tc.desc    Test equals method with BigUint64Array instance returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -863,7 +863,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0053
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0053
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0053
      * @tc.desc    Test equals method with undefined returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -876,7 +876,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0054
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0054
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0054
      * @tc.desc    Test equals method with null returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -889,7 +889,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0055
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0055
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0055
      * @tc.desc    Test equals method with empty string returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -902,7 +902,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0056
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0056
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0056
      * @tc.desc    Test equals method with special characters returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -915,7 +915,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0057
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0057
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0057
      * @tc.desc    Test equals method with ASCII string returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -928,7 +928,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0058
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0058
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0058
      * @tc.desc    Test equals method with emoji character returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -941,7 +941,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0059
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0059
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0059
      * @tc.desc    Test equals method with illegal Unicode returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -955,7 +955,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0060
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0060
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0060
      * @tc.desc    Test equals method with keyword strings returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -969,7 +969,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0061
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0061
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0061
      * @tc.desc    Test equals method with number 0 returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -982,7 +982,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0062
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0062
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0062
      * @tc.desc    Test equals method with number -0 returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -995,7 +995,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0063
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0063
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0063
      * @tc.desc    Test equals method with NaN returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1008,7 +1008,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0064
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0064
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0064
      * @tc.desc    Test equals method with Infinity returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1021,7 +1021,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0065
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0065
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0065
      * @tc.desc    Test equals method with -Infinity returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1034,7 +1034,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0066
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0066
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0066
      * @tc.desc    Test equals method with Number.MAX_VALUE returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1047,7 +1047,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0067
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0067
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0067
      * @tc.desc    Test equals method with Number.MIN_VALUE returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1060,7 +1060,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0068
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0068
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0068
      * @tc.desc    Test equals method with Number.EPSILON returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1073,7 +1073,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0069
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0069
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0069
      * @tc.desc    Test equals method with Number.MAX_SAFE_INTEGER returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1086,7 +1086,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0070
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0070
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0070
      * @tc.desc    Test equals method with byte out of range returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1100,7 +1100,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0071
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0071
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0071
      * @tc.desc    Test equals method with short out of range returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1114,7 +1114,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0072
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0072
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0072
      * @tc.desc    Test equals method with int out of range returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1128,7 +1128,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0073
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0073
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0073
      * @tc.desc    Test equals method with hexadecimal number returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1143,7 +1143,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0074
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0074
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0074
      * @tc.desc    Test equals method with scientific notation returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1157,7 +1157,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0075
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0075
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0075
      * @tc.desc    Test equals method with boolean true returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1170,7 +1170,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0076
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0076
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0076
      * @tc.desc    Test equals method with boolean false returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1183,7 +1183,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0077
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0077
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0077
      * @tc.desc    Test equals method with normal array returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1197,7 +1197,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0078
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0078
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0078
      * @tc.desc    Test equals method with array containing zeros returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1211,7 +1211,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0079
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0079
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0079
      * @tc.desc    Test equals method with array containing negative numbers returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1225,7 +1225,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0080
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0080
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0080
      * @tc.desc    Test equals method with array containing mixed types returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1239,7 +1239,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0081
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0081
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0081
      * @tc.desc    Test equals method with array containing overflow values returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1253,7 +1253,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0082
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0082
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0082
      * @tc.desc    Test equals method with Date object returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1267,7 +1267,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0083
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0083
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0083
      * @tc.desc    Test equals method with TreeString-like object returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1285,7 +1285,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0084
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0084
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0084
      * @tc.desc    Test equals method with SliceString-like object returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1300,7 +1300,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0085
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0085
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0085
      * @tc.desc    Test equals method with escaped string returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1326,7 +1326,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0086
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0086
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0086
      * @tc.desc    Test equals method with large Uint8Array returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1340,7 +1340,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0087
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0087
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0087
      * @tc.desc    Test equals method with ArrayBuffer returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1354,7 +1354,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0088
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0088
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0088
      * @tc.desc    Test equals method with DataView returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1368,7 +1368,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0089
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0089
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0089
      * @tc.desc    Test equals method with multiple consecutive Char objects returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1385,7 +1385,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0090
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0090
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0090
      * @tc.desc    Test equals method comparison with MAX_CODE_POINT boundary returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1398,7 +1398,7 @@ export default function builtinsComparisonAndEqualityTest() {
 
     /**
      * @tc.name    builtinsComparisonAndEqualityTest0091
-     * @tc.number  BUILTINS_COMPARISON_EQUALITY_TEST0091
+     * @tc.number  BUILTINS_COMPARISON_AND_EQUALITY_TEST_0091
      * @tc.desc    Test equals method comparison beyond MAX_CODE_POINT returns false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
