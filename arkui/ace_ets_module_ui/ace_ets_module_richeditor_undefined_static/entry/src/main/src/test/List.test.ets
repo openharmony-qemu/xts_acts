@@ -21,6 +21,7 @@ import richEditorUndefined3 from './RichEditorTest/richEditorUndefined3.test';
 import richEditorModifierUndefined3 from './RichEditorTest/richEditorModifierUndefined3.test';
 import onReadyUndefined from './RichEditorTest/onReadyUndefined.test';
 import onReadyModifierUndefined from './RichEditorTest/onReadyModifierUndefined.test';
+import richEditorReturnUndefined from './RichEditorTest/richEditorReturnUndefined.test';
 
 export default function testsuite() {
     richEditorUndefined();
@@ -31,4 +32,5 @@ export default function testsuite() {
     richEditorModifierUndefined3();
     onReadyUndefined();
     onReadyModifierUndefined();
+    richEditorReturnUndefined();
 }
