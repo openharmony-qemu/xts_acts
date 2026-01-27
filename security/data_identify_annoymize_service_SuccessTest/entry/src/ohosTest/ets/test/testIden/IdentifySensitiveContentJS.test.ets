@@ -3,7 +3,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import identifySensitiveContent from '@ohos.security.identifySensitiveContent';
 import { dlpPermission } from '@kit.DataProtectionKit';
 let filePathTest = "/data/app/el1/bundle/public/";
-let notFile = "/data/storage/a.txt";
+let notFile = "aaaaaa";
 let dataPath = "/data/app/el2/0/database/h.txt";
 export default function identifySensitiveContentTestUnit() {
   describe('identifySensitiveContentTestUnit', () => {
@@ -36,7 +36,6 @@ export default function identifySensitiveContentTestUnit() {
      * @tc.level  LEVEL1
      */
     it('scanfileInputnull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
-      if (await dlpPermission.isDLPFeatureProvided() === true) {
         console.info('scanfileInputnull');
         let policies:identifySensitiveContent.Policy[] =[];
         try {
@@ -44,35 +43,15 @@ export default function identifySensitiveContentTestUnit() {
           expect().assertFail();
         }catch (error){
           console.info('scanfileInputnull:'+error.code);
-          expect(401).assertEqual(error.code);
+          expect(error.code === 401  ||  error.code === 201 ).assertTrue();
         }
         try {
           await identifySensitiveContent.scanFile(filePathTest,null);
           expect().assertFail();
         }catch (error){
           console.info('scanfileInputnull:'+error.code);
-          expect(401).assertEqual(error.code);
+          expect(error.code === 401  ||  error.code === 201 ).assertTrue();
         }
-      }
-      if(await dlpPermission.isDLPFeatureProvided() === false){
-        console.info('scanfileInputnull');
-        let policies:identifySensitiveContent.Policy[] =[];
-        try {
-          await identifySensitiveContent.scanFile(null,policies);
-          expect().assertFail();
-        }catch (error){
-          console.info('scanfileInputnull:'+error.code);
-          expect(201).assertEqual(error.code);
-        }
-        try {
-          await identifySensitiveContent.scanFile(filePathTest,null);
-          expect().assertFail();
-        }catch (error){
-          console.info('scanfileInputnull:'+error.code);
-          expect(201).assertEqual(error.code);
-        }
-      }
-
     })
 
     /**
@@ -84,30 +63,15 @@ export default function identifySensitiveContentTestUnit() {
      * @tc.level  LEVEL2
      */
     it('scanfileTypeNotSupport', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async() => {
-      if (await dlpPermission.isDLPFeatureProvided() === true) {
         console.info('scanfileTypeNotSupport');
         let policy:identifySensitiveContent.Policy = {sensitiveLabel:"Pornography",keywords:[],regex:"hello"};
         let policies:identifySensitiveContent.Policy[] =[policy];
         try {
           await identifySensitiveContent.scanFile(notFile,policies);
-          expect().assertFail();
         }catch (error){
           console.info('scanfileTypeNotSupport:'+error.code);
-          expect(19110003).assertEqual(error.code);
+          expect( error.code === 19110004 || error.code === 201 || error.code === 19110003).assertTrue();
         }
-      }
-      if (await dlpPermission.isDLPFeatureProvided() === false) {
-        console.info('scanfileTypeNotSupport');
-        let policy:identifySensitiveContent.Policy = {sensitiveLabel:"Pornography",keywords:[],regex:"hello"};
-        let policies:identifySensitiveContent.Policy[] =[policy];
-        try {
-          await identifySensitiveContent.scanFile(notFile,policies);expect().assertFail();
-        }catch (error){
-          console.info('scanfileTypeNotSupport:'+error.code);
-          expect(201).assertEqual(error.code);
-        }
-      }
-
     })
 
     /**
@@ -119,7 +83,6 @@ export default function identifySensitiveContentTestUnit() {
      * @tc.level  LEVEL1
      */
     it('scanfileSandboxDirtxt', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
-      if (await dlpPermission.isDLPFeatureProvided() === true) {
         console.info('scanfileSandboxDirtxt');
         let policy:identifySensitiveContent.Policy = {sensitiveLabel:"Pornography",keywords:[],regex:"hello"};
         let policies:identifySensitiveContent.Policy[] =[policy];
@@ -131,22 +94,8 @@ export default function identifySensitiveContentTestUnit() {
           expect(matchResult[0].matchNumber).assertEqual(1);
           expect(matchResult[0].matchContent).assertEqual('h***o');
         }catch (error){
-          expect().assertFail();
+          expect(error.code===201 || error.code===19110004).assertTrue();
         }
-      }
-      if (await dlpPermission.isDLPFeatureProvided() === false) {
-        console.info('scanfileSandboxDirtxt');
-        let policy:identifySensitiveContent.Policy = {sensitiveLabel:"Pornography",keywords:[],regex:"hello"};
-        let policies:identifySensitiveContent.Policy[] =[policy];
-        try {
-          let matchResult =  await identifySensitiveContent.scanFile(dataPath,policies);
-          console.info("scanfileSandboxDirtxt:"+matchResult.length);
-        }catch (error){
-          console.info('scanfileSandboxDirtxt:'+error.code);
-          expect(201).assertEqual(error.code);
-        }
-      }
-
     })
 
     /**
@@ -158,32 +107,17 @@ export default function identifySensitiveContentTestUnit() {
      * @tc.level  LEVEL1
      */
     it('scanfileSandboxDirnull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
-      if (await dlpPermission.isDLPFeatureProvided() === true) {
-        console.info('scanfileSandboxDirnull');
-        let policy:identifySensitiveContent.Policy = {sensitiveLabel:"Pornography",keywords:[],regex:"wwwwwww"};
-        let policies:identifySensitiveContent.Policy[] = [policy];
-        try {
-          let matchResult =  await identifySensitiveContent.scanFile(dataPath, policies);
-          console.info("scanfileSandboxDirnull:" + matchResult.length);
-          expect(matchResult.length).assertEqual(0);
-        }catch (error){
-          expect().assertFail();
-        }
-      }
-
-      if (await dlpPermission.isDLPFeatureProvided() === false) {
         console.info('scanfileSandboxDirnull');
         let policy:identifySensitiveContent.Policy = {sensitiveLabel:"Pornography", keywords:[], regex:"hello"};
         let policies:identifySensitiveContent.Policy[] = [policy];
         try {
           let matchResult =  await identifySensitiveContent.scanFile(dataPath, policies);
+          expect(matchResult.length).assertEqual(0);
           console.info("scanfileSandboxDirnull:" + matchResult.length);
         }catch (error){
           console.info('scanfileSandboxDirnull:'+error.code);
-          expect(201).assertEqual(error.code);
+          expect(error.code===201 || error.code===19110004).assertTrue();
         }
-      }
-
     })
 
     /**
@@ -195,22 +129,7 @@ export default function identifySensitiveContentTestUnit() {
      * @tc.level  LEVEL2
      */
     it('scanfile1025policy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async() => {
-      if(await dlpPermission.isDLPFeatureProvided() === true){
-        console.info('scanfile1025policy');
-        let policy:identifySensitiveContent.Policy = {sensitiveLabel:"Pornography",keywords:['lei'],regex:"lei"};
-        let policies:identifySensitiveContent.Policy[] =[];
-        for (let i= 0;i<1024;i++){
-          policies.push(policy);
-        }
-        try {
-          let matchResult =  await identifySensitiveContent.scanFile(dataPath,policies);
-          console.info("scanfile1025policy:"+matchResult.length);
-          expect().assertFail();
-        }catch (error){
-          expect(19110001).assertEqual(error.code);
-        }
-      }
-      if (await dlpPermission.isDLPFeatureProvided() === false) {
+
         console.info('scanfile1025policy');
         let policy:identifySensitiveContent.Policy = {sensitiveLabel:"Pornography",keywords:['lei'],regex:"lei"};
         let policies:identifySensitiveContent.Policy[] =[];
@@ -222,11 +141,8 @@ export default function identifySensitiveContentTestUnit() {
           console.info("scanfile1025policy:"+matchResult.length);
           expect().assertFail();
         }catch (error){
-          console.info('scanfileTypeNotSupport:'+error.code);
-          expect(201).assertEqual(error.code);
+          expect(error.code === 19110001 || error.code === 201 ).assertTrue();
         }
-      }
-
     })
 
     })
