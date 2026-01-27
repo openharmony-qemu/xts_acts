@@ -14,20 +14,37 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
+import {
+  UiComponent,
+  UiDriver,
+  BY,
+  Component,
+  Driver,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  UiDirection,
+  MouseButton,
+  WindowMode,
+  PointerMatrix,
+  UIElementInfo,
+  UIEventObserver
+} from '@ohos.UiTest'
 import { BusinessError } from '@ohos.base';
 import display from '@ohos.display';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
-const delegator : AbilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-const waitUiReadyMs : number = 1000;
+const delegator: AbilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+const waitUiReadyMs: number = 1000;
 const TestTag = 'uitestUiWindowTest';
 const WindowsErrorCode = 17000005;
 
 async function startAbility(bundleName: string, abilityName: string) {
   await delegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`).then(result => {
     console.info(`${TestTag}, start abilityFinished: ${result}`)
-  }).catch((err : BusinessError) => {
+  }).catch((err: BusinessError) => {
     console.error(`${TestTag}, start abilityFailed: ${err}`)
   })
 }
@@ -35,7 +52,7 @@ async function startAbility(bundleName: string, abilityName: string) {
 async function stopApplication(bundleName: string) {
   await delegator.executeShellCommand(`aa force-stop ${bundleName} `).then(result => {
     console.info(`${TestTag}, stop application finished: ${result}`)
-  }).catch((err : BusinessError) => {
+  }).catch((err: BusinessError) => {
     console.error(`${TestTag},stop application failed: ${err}`)
   })
 }
@@ -138,14 +155,13 @@ async function envRecovery(driver: Driver) {
     let scbCom = await driver.findComponent(ON.id('scb_block_cover'))
     if (scbCom != null) {
       await driver.pressBack()
-      await driver.delayMs(waitUiReadyMs*3)
+      await driver.delayMs(waitUiReadyMs * 3)
     }
     let resumeWindow = await driver.findWindow({ bundleName: 'com.uitest.acts' })
     if (resumeWindow != null) {
       await resumeWindow.resume()
     }
-  }
-  catch (error) {
+  } catch (error) {
     console.log('envRecovery error is ' + error)
     expect(error.code == WindowsErrorCode).assertTrue()
   }
@@ -197,7 +213,7 @@ export default function uiUiWindowTest() {
     it('testApi9_UiWindow_getBundleName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
-      let window = await driver.findWindow({bundleName:'com.uitestScene.acts'})
+      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
       let name = await window.getBundleName()
       expect(name == 'com.uitestScene.acts').assertTrue()
       await stopApplication('com.uitestScene.acts')
@@ -214,7 +230,7 @@ export default function uiUiWindowTest() {
     it('testApi9_UiWindow_getTitle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
-      let window = await driver.findWindow({bundleName:'com.uitestScene.acts'})
+      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
       let title = await window.getTitle()
       expect(title == '').assertTrue()
       await stopApplication('com.uitestScene.acts')
@@ -231,7 +247,12 @@ export default function uiUiWindowTest() {
     it('testApi9_UiWindow_Attr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
-      let window = await driver.findWindow({bundleName:'com.uitestScene.acts',focused:true,actived:true,title:''})
+      let window = await driver.findWindow({
+        bundleName: 'com.uitestScene.acts',
+        focused: true,
+        actived: true,
+        title: ''
+      })
       await window.focus()
       await driver.delayMs(waitUiReadyMs)
       let isFocused = await window.isFocused()
@@ -277,7 +298,7 @@ export default function uiUiWindowTest() {
         let windowmode2 = await window2.getWindowMode()
         console.log(`${TestTag}, testWindowResume_split getWindowMode2 success,${JSON.stringify(windowmode2)}`);
         expect(windowmode2 == WindowMode.FLOATING).assertTrue()
-      }catch (error) {
+      } catch (error) {
         console.log('testWindowResume_split1 error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
@@ -415,7 +436,7 @@ export default function uiUiWindowTest() {
         let bounds2 = await window2.getBounds()
         console.log(`${TestTag}, testWindowMoveTo_float getBounds2 success, ${JSON.stringify(bounds2)}`);
         expect(bounds1.left != bounds2.left).assertTrue()
-        await window2.moveTo(bounds1.left,bounds1.top)
+        await window2.moveTo(bounds1.left, bounds1.top)
       } catch (error) {
         console.log('testWindowMoveTo_float error is' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
@@ -483,10 +504,10 @@ export default function uiUiWindowTest() {
         await driver.delayMs(waitUiReadyMs)
         let windowFloat = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
         let bounds1 = await windowFloat.getBounds()
-        let bounds1x = Math.floor( bounds1.right - bounds1.left )
-        let bounds1y = Math.floor( bounds1.bottom - bounds1.top )
-        let resizex = Math.floor( bounds1x / 2 )
-        let resizey = Math.floor( bounds1y / 2 )
+        let bounds1x = Math.floor(bounds1.right - bounds1.left)
+        let bounds1y = Math.floor(bounds1.bottom - bounds1.top)
+        let resizex = Math.floor(bounds1x / 2)
+        let resizey = Math.floor(bounds1y / 2)
         await windowFloat.resize(resizex, resizey, ResizeDirection.RIGHT_DOWN)
         console.log(`${TestTag}, testWindowResizeA_float windowFloat.resize success `);
         await driver.delayMs(waitUiReadyMs)
@@ -531,10 +552,10 @@ export default function uiUiWindowTest() {
         if (floatbtn == null) {
           let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
           let bounds1 = await window1.getBounds()
-          let bounds1x = Math.floor( bounds1.right - bounds1.left )
-          let bounds1y = Math.floor( bounds1.bottom - bounds1.top )
-          let resizex = Math.floor( bounds1x / 2 )
-          let resizey = Math.floor( bounds1y / 2 )
+          let bounds1x = Math.floor(bounds1.right - bounds1.left)
+          let bounds1y = Math.floor(bounds1.bottom - bounds1.top)
+          let resizex = Math.floor(bounds1x / 2)
+          let resizey = Math.floor(bounds1y / 2)
           await window1.resize(resizex, resizey, ResizeDirection.RIGHT_UP)
           await driver.delayMs(waitUiReadyMs)
           let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
@@ -577,10 +598,10 @@ export default function uiUiWindowTest() {
         await driver.delayMs(waitUiReadyMs)
         let windowFloat = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
         let bounds1 = await windowFloat.getBounds()
-        let bounds1x = Math.floor( bounds1.right - bounds1.left )
-        let bounds1y = Math.floor( bounds1.bottom - bounds1.top )
-        let resizex = Math.floor( bounds1x / 2 )
-        let resizey = Math.floor( bounds1y / 2 )
+        let bounds1x = Math.floor(bounds1.right - bounds1.left)
+        let bounds1y = Math.floor(bounds1.bottom - bounds1.top)
+        let resizex = Math.floor(bounds1x / 2)
+        let resizey = Math.floor(bounds1y / 2)
         await windowFloat.resize(bounds1x, resizey, ResizeDirection.DOWN)
         await driver.delayMs(waitUiReadyMs)
         let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
@@ -635,9 +656,9 @@ export default function uiUiWindowTest() {
         if (floatbtn == null) {
           let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
           let bounds1 = await window1.getBounds()
-          let bounds1x = Math.floor( bounds1.right - bounds1.left )
-          let bounds1y = Math.floor( bounds1.bottom - bounds1.top )
-          let resizey = Math.floor( bounds1y / 2 )
+          let bounds1x = Math.floor(bounds1.right - bounds1.left)
+          let bounds1y = Math.floor(bounds1.bottom - bounds1.top)
+          let resizey = Math.floor(bounds1y / 2)
           await window1.resize(bounds1x, resizey, ResizeDirection.UP)
           await driver.delayMs(waitUiReadyMs)
           let window6 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
@@ -678,15 +699,15 @@ export default function uiUiWindowTest() {
           let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
           let bounds1 = await window2.getBounds()
           await window2.resize(0, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
-          await driver.delayMs(waitUiReadyMs*5)
+          await driver.delayMs(waitUiReadyMs * 5)
           let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
           console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
           expect(window3 == null).assertTrue()
-        }else {
+        } else {
           let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
           let bounds1 = await window2.getBounds()
           await window2.resize(500, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
-          await driver.delayMs(waitUiReadyMs*5)
+          await driver.delayMs(waitUiReadyMs * 5)
           let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
           console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
           let bounds2 = await window3.getBounds()
