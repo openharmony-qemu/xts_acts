@@ -12,11 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export default {
-    onCreate() {
-        console.info('AceApplication onCreate');
-    },
-    onDestroy() {
-        console.info('AceApplication onDestroy');
-    }
-};
+
+import ActsBmsAccessTokenTest from './ActsBmsAccessTokenTest.test.js'
+
+export default function testsuite() {
+    ActsBmsAccessTokenTest()
+}

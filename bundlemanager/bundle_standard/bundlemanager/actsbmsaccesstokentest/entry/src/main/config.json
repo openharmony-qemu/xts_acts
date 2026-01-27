@@ -3,30 +3,21 @@
         "bundleName": "com.example.actsbmsaccesstokentest",
         "vendor": "example",
         "version": {
-            "code": 1,
-            "name": "1.0"
-        },
-        "apiVersion": {
-            "compatible": 8,
-            "target": 8,
-            "releaseType": "Beta1"
+            "code": 1000000,
+            "name": "1.0.0"
         }
     },
     "deviceConfig": {},
     "module": {
         "package": "com.example.actsbmsaccesstokentest",
         "name": ".entry",
-        "deviceType": [
-            "default",
-            "tablet",
-            "2in1",
-            "wearable",
-            "car"
-        ],
+        "mainAbility": ".MainAbility",
+        "deviceType": [],
         "distro": {
             "deliveryWithInstall": true,
             "moduleName": "entry",
-            "moduleType": "entry"
+            "moduleType": "entry",
+            "installationFree": false
         },
         "abilities": [
             {
@@ -77,7 +68,7 @@
                 "pages": [
                     "pages/index/index"
                 ],
-                "name": "default",
+                "name": ".MainAbility",
                 "window": {
                     "designWidth": 720,
                     "autoDesignWidth": false
@@ -98,7 +89,6 @@
             "name": "OpenHarmonyTestRunner",
             "srcPath": "TestRunner"
         },
-        "mainAbility": ".MainAbility",
         "srcPath": ""
     }
 }
