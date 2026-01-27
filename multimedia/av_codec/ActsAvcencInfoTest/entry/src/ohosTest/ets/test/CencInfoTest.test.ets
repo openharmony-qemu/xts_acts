@@ -127,8 +127,48 @@ it('CencInfo_SetKeyIdAndIv_006', Level.LEVEL0, () => {
 });
 
 /**
- * @tc.name CencInfo_SetMode_001
+ * @tc.name CencInfo_SetSubsampleInfo_001
  * @tc.number TC-CencInfo-012
+ * @tc.desc
+ */
+it('CencInfo_SetSubsampleInfo_001', Level.LEVEL0, () => {
+  let ret: number = cencTest.cencInfoSetSubsampleInfo(0);
+  expect(ret).assertEqual(0);
+});
+
+/**
+ * @tc.name CencInfo_SetSubsampleInfo_002
+ * @tc.number TC-CencInfo-013
+ * @tc.desc
+ */
+it('CencInfo_SetSubsampleInfo_002', Level.LEVEL0, () => {
+  let ret: number = cencTest.cencInfoSetSubsampleInfo(1);
+  expect(ret).assertEqual(0);
+});
+
+/**
+ * @tc.name CencInfo_SetSubsampleInfo_003
+ * @tc.number TC-CencInfo-014
+ * @tc.desc
+ */
+it('CencInfo_SetSubsampleInfo_003', Level.LEVEL0, () => {
+  let ret: number = cencTest.cencInfoSetSubsampleInfo(2);
+  expect(ret).assertEqual(0);
+});
+
+/**
+ * @tc.name CencInfo_SetSubsampleInfo_004
+ * @tc.number TC-CencInfo-015
+ * @tc.desc
+ */
+it('CencInfo_SetSubsampleInfo_004', Level.LEVEL0, () => {
+  let ret: number = cencTest.cencInfoSetSubsampleInfo(3);
+  expect(ret).assertEqual(0);
+});
+
+/**
+ * @tc.name CencInfo_SetMode_001
+ * @tc.number TC-CencInfo-016
  * @tc.desc
  */
 it('CencInfo_SetMode_001', Level.LEVEL0, () => {
@@ -138,7 +178,7 @@ it('CencInfo_SetMode_001', Level.LEVEL0, () => {
 
 /**
  * @tc.name CencInfo_SetMode_002
- * @tc.number TC-CencInfo-013
+ * @tc.number TC-CencInfo-017
  * @tc.desc
  */
 it('CencInfo_SetMode_002', Level.LEVEL0, () => {
@@ -148,7 +188,7 @@ it('CencInfo_SetMode_002', Level.LEVEL0, () => {
 
 /**
  * @tc.name CencInfo_SetAVBuffer_001
- * @tc.number TC-CencInfo-014
+ * @tc.number TC-CencInfo-018
  * @tc.desc
  */
 it('CencInfo_SetAVBuffer_001', Level.LEVEL0, () => {
@@ -158,7 +198,7 @@ it('CencInfo_SetAVBuffer_001', Level.LEVEL0, () => {
 
 /**
  * @tc.name CencInfo_SetAVBuffer_002
- * @tc.number TC-CencInfo-015
+ * @tc.number TC-CencInfo-019
  * @tc.desc
  */
 it('CencInfo_SetAVBuffer_002', Level.LEVEL0, () => {
@@ -168,7 +208,7 @@ it('CencInfo_SetAVBuffer_002', Level.LEVEL0, () => {
 
 /**
  * @tc.name CencInfo_SetAVBuffer_003
- * @tc.number TC-CencInfo-016
+ * @tc.number TC-CencInfo-020
  * @tc.desc
  */
 it('CencInfo_SetAVBuffer_003', Level.LEVEL0, () => {
