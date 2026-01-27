@@ -57,9 +57,9 @@ struct Navigation_SingleInstanceJump42{
   @Builder Page2(){
     NavDestination(){
       Column(){
-        Text('page2')
+        Text('page1')
       }
-    }.title('page2')
+    }.title('page1')
   }
 
   @Builder PageMap(name:string){
@@ -82,7 +82,7 @@ struct Navigation_SingleInstanceJump42{
       .navDestination(this.PageMap)
 
       Button('push page1').onClick((event: ClickEvent) => {
-        this.pathInfos.pushPath(new NavPathInfo('page1',this.count++),{launchMode:LaunchMode.MOVE_TO_TOP_SINGLETON})
+        this.pathInfos.pushPath(new NavPathInfo('page1',this.count++),{launchMode:LaunchMode.STANDARD})
       }).id('Navigation_SingleInstanceJump42_btn1')
       Button('push page2').onClick((event: ClickEvent) => {
         this.pathInfos.pushPath(new NavPathInfo('page2',this.count++),{launchMode:LaunchMode.MOVE_TO_TOP_SINGLETON})

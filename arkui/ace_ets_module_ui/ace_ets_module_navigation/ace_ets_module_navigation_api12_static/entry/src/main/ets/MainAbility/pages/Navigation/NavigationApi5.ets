@@ -27,6 +27,7 @@ import {
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { CustomTransition } from './CustomNavigationUtils';
 import observer from '@ohos.arkui.observer'
+
 @Entry
 @Component
 struct NavigationApi5{
@@ -38,9 +39,7 @@ struct NavigationApi5{
     console.log(`info,${JSON.stringify(info)}`)
   }
   observerOn(){
-    observer.onScrollEvent( (info) => {
-      console.info('scrollEventInfo', JSON.stringify(info.uniqueId));
-    });
+
   }
   observerOff(){
     observer.offNavDestinationUpdate(this.navDesUpdateCallback)
