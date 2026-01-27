@@ -184,11 +184,11 @@ it('TextPickerJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promi
 it('TextPickerJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Illegal modification of properties of TextPicker component
       console.info('[TextPickerJsunit_static_0400] START');
-  AppStorage.setOrCreate<string[]>('fruits',new Array<string>('abc'))
+  AppStorage.setOrCreate<string>('fruits','abc')
       await CommonFunc.sleep(1000);
-  AppStorage.setOrCreate<int>('select',1)
+  AppStorage.setOrCreate<string>('select','test')
       await CommonFunc.sleep(1000);
-  AppStorage.setOrCreate<number>('parameterValue',123)
+  AppStorage.setOrCreate<int>('parameterValue',123)
       await CommonFunc.sleep(1000);
   AppStorage.setOrCreate<string>('defaultPickerItemHeight','abc')
       await CommonFunc.sleep(1000);
@@ -204,7 +204,7 @@ it('TextPickerJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
       expect(obj.getElement('$attrs').getString('range')).assertEqual('["icon:,text:banana1","icon:,text:orange2","icon:,text:peach3","icon:,text:grape4"]');
       expect(obj.getElement('$attrs').getString('selected')).assertEqual('1');
-      expect(obj.getElement('$attrs').getString('value')).assertEqual('');
+      expect(obj.getElement('$attrs').getString('value')).assertEqual('peach3');
       expect(obj.getElement('$attrs').getString('defaultPickerItemHeight')).assertEqual('25.00vp');
       console.info('[TextPickerJsunit_static_0400] END');
       done();

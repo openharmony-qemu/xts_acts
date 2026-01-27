@@ -198,6 +198,10 @@ import ImageExifVersionSupp from './image/ImageExifVersion.test';
 import ImageExifComponentsConfiguration from './image/ImageExifComponentsConfiguration.test';
 import ImageExifShutterSpeedValue from './image/ImageExifShutterSpeedValue.test';
 import imageCreateCroppedAndScaledPixelMap from './image/ImageCreateScaledPixelMap.test';
+import ImageBodySerialNumber from './image/ImageBodySerialNumber.test';
+import ImageCameraOwnerName from './image/ImageCameraOwnerName.test';
+import ImageGPSDest from './image/ImageGPSDest.test';
+>>>>>>> master
 import ImageSourceLensModelSupp from './image/ImageSourceLensModel.test';
 import ImageSourceLensMakeSupp from './image/ImageSourceLensMake.test';
 import ImageLensSerialNumberSupp from './image/ImageExifLensSerialNumber.test';
@@ -398,6 +402,10 @@ export default function testsuite() {
   ImageWidthLengthSupp();
   ImageDescriptionSupp();
   imageCreateCroppedAndScaledPixelMap();
+  ImageBodySerialNumber();
+  ImageCameraOwnerName();
+  ImageGPSDest();
+>>>>>>> master
   ImageSourceLensMakeSupp();
   ImageSourceLensModelSupp();
   ImageLensSpecificationSupp();

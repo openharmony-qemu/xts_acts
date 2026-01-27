@@ -33,16 +33,16 @@ struct RichEditor_TextStyle {
             Button("行高+50")
               .id("addLineHeightBut")
               .onClick(()=>{
-              this.LH = this.LH + 50
-              this.controller.updateSpanStyle({
-                start: this.start,
-                end: this.end,
-                textStyle:
-                {
-                  lineHeight: this.LH
-                }
-              })
-            })
+                this.LH = this.LH + 50
+                this.controller.updateSpanStyle({
+                  start: this.start,
+                  end: this.end,
+                  textStyle:
+                  {
+                    lineHeight: this.LH
+                  }
+                })
+              }).width('25%')
             Button("行高-50").onClick(()=>{
               this.LH = this.LH - 50
               this.controller.updateSpanStyle({
@@ -53,20 +53,20 @@ struct RichEditor_TextStyle {
                   lineHeight: this.LH
                 }
               })
-            })
+            }).width('25%')
             Button("字符间距+20")
               .id("addLetterSpacing")
               .onClick(()=>{
-              this.LS = this.LS + 20
-              this.controller.updateSpanStyle({
-                start: this.start,
-                end: this.end,
-                textStyle:
-                {
-                  letterSpacing: this.LS
-                }
-              })
-            })
+                this.LS = this.LS + 20
+                this.controller.updateSpanStyle({
+                  start: this.start,
+                  end: this.end,
+                  textStyle:
+                  {
+                    letterSpacing: this.LS
+                  }
+                })
+              }).width('25%')
             Button("字符间距-20").onClick(()=>{
               this.LS = this.LS - 20
               this.controller.updateSpanStyle({
@@ -77,31 +77,30 @@ struct RichEditor_TextStyle {
                   letterSpacing: this.LS
                 }
               })
-            })
-          }
+            }).width('25%')
+          }.height('50%')
           Row(){
             Button("getSpans")
               .id("RichEditorTextStyle_GetSpansBtn")
               .onClick(() => {
-              this.controller.getSpans({
-                start: this.start,
-                end: this.end
-              }).forEach(item => {
-                if(typeof(item as RichEditorImageSpanResult)['textStyle'] != 'undefined'){
-                  this.content_H=""
-                  this.content_L=""
-                  this.content_H = "LineHeight_" +(item as RichEditorTextSpanResult).textStyle.lineHeight;
-                  this.content_L = "LetterSpacing_" +(item as RichEditorTextSpanResult).textStyle.letterSpacing;
-                }
+                this.controller.getSpans({
+                  start: this.start,
+                  end: this.end
+                }).forEach(item => {
+                  if(typeof(item as RichEditorImageSpanResult)['textStyle'] != 'undefined'){
+                    this.content_H=""
+                    this.content_L=""
+                    this.content_H = "LineHeight_" +(item as RichEditorTextSpanResult).textStyle.lineHeight;
+                    this.content_L = "LetterSpacing_" +(item as RichEditorTextSpanResult).textStyle.letterSpacing;
+                  }
+                })
               })
-            })
-          }
+          }.height('50%')
         }
       }.borderWidth(1)
       .borderColor(Color.Red)
       .width("100%")
       .height("20%")
-      .margin({top: 20})
 
       Scroll(){
         Column({space: 10}) {
@@ -125,7 +124,6 @@ struct RichEditor_TextStyle {
       .borderColor(Color.Red)
       .width("100%")
       .height("20%")
-      .margin({bottom: 20})
 
       Column() {
         RichEditor(this.options).clip(true).padding(10)

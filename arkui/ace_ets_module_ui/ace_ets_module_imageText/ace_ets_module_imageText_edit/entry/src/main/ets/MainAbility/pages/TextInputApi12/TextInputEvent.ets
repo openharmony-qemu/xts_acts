@@ -24,15 +24,18 @@ struct TextInputEvent {
 
   build() {
     Column() {
-      Text(this.insertValue).key('TextInputEventText')
-      Text(this.insertValue2).key('TextInputEventText2')
-      Text(this.insertValue3).key('TextInputEventText3')
-      Text(this.insertValue4).key('TextInputEventText4')
-      Text(this.insertValue5).key('TextInputEventText5')
-      Text(this.insertValue6).key('TextInputEventText6')
-
+      Row(){
+        Text(this.insertValue).key('TextInputEventText').width('33%')
+        Text(this.insertValue2).key('TextInputEventText2').width('33%')
+        Text(this.insertValue3).key('TextInputEventText3').width('33%')
+      }.height('5%')
+      Row(){
+        Text(this.insertValue4).key('TextInputEventText4').width('33%')
+        Text(this.insertValue5).key('TextInputEventText5').width('33%')
+        Text(this.insertValue6).key('TextInputEventText6').width('33%')
+      }.height('5%')
       TextInput({ text: 'TextInput' })
-        .height(60)
+        .height('10%')
         .onWillInsert((info: InsertValue) => {
           this.insertValue = info.insertOffset + ''
           this.insertValue2 = info.insertValue
@@ -50,7 +53,7 @@ struct TextInputEvent {
         .key('TextInputEvent')
 
       TextInput({ text: '0' })
-        .height(60)
+        .height('10%')
         .onWillInsert((info: InsertValue) => {
           this.insertValue = info.insertOffset + ''
           this.insertValue2 = info.insertValue
@@ -63,7 +66,7 @@ struct TextInputEvent {
         .key('TextInputEvent2')
 
       TextInput({ text: '0' })
-        .height(60)
+        .height('10%')
         .onWillDelete((info: DeleteValue) => {
           this.insertValue5 = info.deleteOffset + ''
           this.insertValue6 = info.deleteValue

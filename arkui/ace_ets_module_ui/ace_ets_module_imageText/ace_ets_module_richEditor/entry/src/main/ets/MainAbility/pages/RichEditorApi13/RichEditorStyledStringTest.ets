@@ -85,12 +85,18 @@ struct RichEditorStyledStringTest {
   build(){
     Column() {
       Column({ space: 10 }) {
-        Text(this.styledKey1 + '').fontSize(12).id('gestureId')
-        Text(this.styledKey2 + '').fontSize(12).id('decorationId')
-        Text(this.styledKey3 + '').fontSize(12).id('textShadowId')
-        Text(this.styledKey4 + '').fontSize(12).id('baselineOffsetId')
-        Text(this.styledKey5 + '').fontSize(12).id('letterSpacingId')
-        Text(this.styledKey6 + '').fontSize(12).id('urlId')
+        Row(){
+          Text(this.styledKey1 + '').fontSize(12).id('gestureId').width('33%')
+          Text(this.styledKey2 + '').fontSize(12).id('decorationId').width('33%')
+          Text(this.styledKey3 + '').fontSize(12).id('textShadowId').width('33%')
+        }.height('5%')
+        Row(){
+          Text(this.styledKey4 + '').fontSize(12).id('baselineOffsetId').width('33%')
+          Text(this.styledKey5 + '').fontSize(12).id('letterSpacingId').width('33%')
+          Text(this.styledKey6 + '').fontSize(12).id('urlId').width('33%')
+        }.height('5%')
+
+
         RichEditor(this.options).onReady(() => {
           this.controller.setStyledString(this.mutableStyledString2);
         }).padding(0)

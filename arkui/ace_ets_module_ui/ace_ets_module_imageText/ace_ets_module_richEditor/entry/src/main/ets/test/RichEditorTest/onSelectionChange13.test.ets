@@ -64,7 +64,7 @@ export default function onSelectionChange13() {
       await CommonFunc.sleep(1000);
 
       let Select  = await driver.findComponent(ON.text('全选'))
-      await Select .click()
+      await Select?.click()
       await CommonFunc.sleep(1000);
       let text1_1 = getInspectorByKey('onSelectionChange13_text1');
       let Obj1_1: ESObject = JSON.parse(text1_1);
