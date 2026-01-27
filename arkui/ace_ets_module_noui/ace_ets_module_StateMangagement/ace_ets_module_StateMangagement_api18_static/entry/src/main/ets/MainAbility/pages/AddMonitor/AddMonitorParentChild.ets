@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { UIUtils, Local, Trace, ObservedV2, IMonitor, IMonitorDecoratedVariable, Param, Event, Prop, Link, Require } from '@ohos.arkui.stateManagement';
+import { UIUtils, Local, Trace, ObservedV2, IMonitor, IMonitorDecoratedVariable, Param, Event, Link, Require } from '@ohos.arkui.stateManagement';
 import { ComponentV2, Entry, Column, Row, Button, Scroll, ForEach, Text, Divider, Set, DatePicker, TextAlign, Margin, Color } from '@ohos.arkui.component';
 
 @Entry
