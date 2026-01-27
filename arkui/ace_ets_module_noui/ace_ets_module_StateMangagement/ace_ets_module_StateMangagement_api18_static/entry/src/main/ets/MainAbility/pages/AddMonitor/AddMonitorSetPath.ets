@@ -49,7 +49,6 @@ struct Page {
   build() {
     Column() {
       Text('开发者指定path')
-        .fontSize(30)
         .height('5%')
         .width('100%')
         .backgroundColor(Color.Pink)
@@ -58,11 +57,9 @@ struct Page {
         .id('AddPathText')
         .height('5%')
       Text(`Current array is ${this.obj.value} `)
-        .fontSize(20)
         .height('5%')
       Button('addMonitor')
         .id('AddPathButton')
-        .fontSize(20)
         .height('5%')
         .onClick(() => {
           this.obj.value++;
