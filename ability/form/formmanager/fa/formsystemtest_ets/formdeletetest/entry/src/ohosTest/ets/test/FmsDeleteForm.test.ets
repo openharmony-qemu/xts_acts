@@ -1147,3 +1147,14 @@ const unsubscribeSupplyCallback = (tcNumber: string) => {
 const unsubscribeOnReleasedCallback = (tcNumber: string) => {
     console.info(`${tcNumber} Unsubscribe OnReleased Callback`);
 };
+
+function sleepTime(time: number): Promise<void> {
+    return new Promise((resolve, reject) => {
+        try{
+            setTimeout(resolve,time);
+        } catch(e) {
+            console.error(`sleepTime error: ${JSON.stringify(e)}`);
+			reject();
+        }
+    });
+}
