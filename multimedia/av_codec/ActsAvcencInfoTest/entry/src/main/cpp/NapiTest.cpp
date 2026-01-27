@@ -180,7 +180,8 @@ napi_value CencInfo_SetSubsampleInfo(napi_env env, napi_callback_info info)
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         int result = RESULT_ERROR;
         CencInfoCapiTestCase testObj;
-        constexpr size_t FUNC_COUNT = sizeof(CENCINFO_SETSUBSAMPLEINFO_FUNCS) / sizeof(CENCINFO_SETSUBSAMPLEINFO_FUNCS[0]);
+        constexpr size_t FUNC_COUNT =
+            sizeof(CENCINFO_SETSUBSAMPLEINFO_FUNCS) / sizeof(CENCINFO_SETSUBSAMPLEINFO_FUNCS[0]);
         if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
             result = (testObj.*CENCINFO_SETSUBSAMPLEINFO_FUNCS[caseNum])();
         }
