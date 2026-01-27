@@ -213,16 +213,16 @@ napi_value GetNodeTypeTest_016(napi_env env, napi_callback_info info)
     return retValue;
 }
 
-napi_value GetNodeTypeTest_017(napi_env env, napi_callback_info info) 
-{ 
-    napi_value retValue; 
-    // 获取ArkUI Native Node API接口 
-    OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, g_nodeAPI); 
-    // 创建指定类型的节点 
-    auto g_handle = g_nodeAPI->createNode(ARKUI_NODE_CALENDAR_PICKER); 
-    int result = OH_ArkUI_NodeUtils_GetNodeType(g_handle); 
-    napi_create_int32(env, result == ARKUI_NODE_CALENDAR_PICKER ? 0 : 1, &retValue); 
-    return retValue; 
+napi_value GetNodeTypeTest_017(napi_env env, napi_callback_info info)
+{
+    napi_value retValue;
+     // 获取ArkUI Native Node API接口
+    OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, g_nodeAPI);
+    // 创建指定类型的节点
+    auto g_handle = g_nodeAPI->createNode(ARKUI_NODE_CALENDAR_PICKER);
+    int result = OH_ArkUI_NodeUtils_GetNodeType(g_handle);
+    napi_create_int32(env, result == ARKUI_NODE_CALENDAR_PICKER ? 0 : 1, &retValue);
+    return retValue;
 }
 
 napi_value GetNodeTypeTest_018(napi_env env, napi_callback_info info)
