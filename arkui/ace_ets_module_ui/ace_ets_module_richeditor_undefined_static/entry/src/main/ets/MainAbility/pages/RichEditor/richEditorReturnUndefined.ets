@@ -70,8 +70,8 @@ struct RichEditorExample {
         RichEditor(this.options)
           .borderWidth(1)
           .borderColor(Color.Green)
-          .width("100%")
-          .height("30%")
+          .width('100%')
+          .height('30%')
         Row() {
           Button('addBuilderSpan_not_bind')
             .id('Btn_addBuilderSpan')
@@ -102,7 +102,7 @@ struct RichEditorExample {
           Button('addTextSpan_not_bind')
             .id('Btn_addTextSpan')
             .onClick((e: ClickEvent) => {
-              let ret = this.controllerNotBind.addTextSpan("0123456789",
+              let ret = this.controllerNotBind.addTextSpan('0123456789',
                 {
                   style:
                   {
@@ -282,7 +282,7 @@ struct RichEditorExample {
       .borderWidth(1)
       .borderColor(Color.Red)
       .width('100%')
-      .height("70%")
+      .height('70%')
     }
   }
 }
