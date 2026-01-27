@@ -712,7 +712,7 @@ export default function observerManagerCallStateTest() {
         done();
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
-        ExpectTrue(err.code == 8800001);
+        ExpectTrue(err.code === 8800001);
         done();
       }
       console.log("************* Telephony_observer_on_cCallStateInfo_0400 Test end *************");
@@ -768,7 +768,7 @@ export default function observerManagerCallStateTest() {
         done();
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
-        ExpectTrue(err.code == 8800001);
+        ExpectTrue(err.code === 8800001);
         done();
       }
       console.log("************* Telephony_observer_on_cCallStateInfo_0600 Test end *************");
