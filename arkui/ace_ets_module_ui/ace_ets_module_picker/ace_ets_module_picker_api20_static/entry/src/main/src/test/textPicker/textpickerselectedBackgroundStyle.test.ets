@@ -75,7 +75,7 @@ it('textPickerselectedBackgroundStyle_static_001', Level.LEVEL0, async (done: ()
       let obj = JSON.parseJsonElement(strJson);
       await Utils.sleep(1000);
       let obj1 :string = obj.getElement('$attrs').getElement('selectedBackgroundStyle').getString('color');
-      expect(obj1.toLowerCase()).assertEqual(Color.Red);
+      expect(obj1).assertEqual(Color.Red);
       done();
     });
   })

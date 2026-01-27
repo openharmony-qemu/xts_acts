@@ -201,6 +201,9 @@ import imageCreateCroppedAndScaledPixelMap from './image/ImageCreateScaledPixelM
 import ImagePixelMapGetMetadata from './image/ImagePixelMapGetMetadata.test';
 import ImagePixelMapClone from './image/ImagePixelMapClone.test';
 import ImagePictureTest from './image/ImagePictureTest.test';
+import ImageBodySerialNumber from './image/ImageBodySerialNumber.test';
+import ImageCameraOwnerName from './image/ImageCameraOwnerName.test';
+import ImageGPSDest from './image/ImageGPSDest.test';
 import ImageSourceLensModelSupp from './image/ImageSourceLensModel.test';
 import ImageSourceLensMakeSupp from './image/ImageSourceLensMake.test';
 import ImageLensSerialNumberSupp from './image/ImageExifLensSerialNumber.test';
@@ -404,6 +407,9 @@ export default function testsuite() {
   ImagePixelMapGetMetadata();
   ImagePixelMapClone();
   ImagePictureTest();
+  ImageBodySerialNumber();
+  ImageCameraOwnerName();
+  ImageGPSDest();
   ImageSourceLensMakeSupp();
   ImageSourceLensModelSupp();
   ImageLensSpecificationSupp();
