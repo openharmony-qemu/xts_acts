@@ -48,8 +48,8 @@ export default function abilityTest() {
                 arr.push('ohos.permission.GRANT_SENSITIVE_PERMISSIONS')
                 arr.push('ohos.permission.MICROPHONE')
                 arr.push('ohos.permission.MEDIA_LOCATION')
-                arr.push('ohos.permission.READ_MEDIA')
-                arr.push('ohos.permission.WRITE_MEDIA')
+                arr.push('ohos.permission.READ_IMAGEVIDEO')
+                arr.push('ohos.permission.WRITE_IMAGEVIDEO')
                 hilog.info(domain, tag, '%{public}s', '  beforeAll requestPermissionsFromUser');
                 atManager.requestPermissionsFromUser(g_context, arr,
                     (err: BusinessError | null, data: PermissionRequestResult | undefined) => {
