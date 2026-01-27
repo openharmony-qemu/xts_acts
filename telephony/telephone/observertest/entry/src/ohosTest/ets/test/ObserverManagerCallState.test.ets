@@ -719,8 +719,8 @@ export default function observerManagerCallStateTest() {
     })
 
     /**
-     * @tc.name   Telephony_observer_on_cCallStateInfo_0400
-     * @tc.number Telephony_observer_on_cCallStateInfo_0400
+     * @tc.name   Telephony_observer_on_cCallStateInfo_0500
+     * @tc.number Telephony_observer_on_cCallStateInfo_0500
      * @tc.desc   call the on method of cCallStateInfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
