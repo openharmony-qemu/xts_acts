@@ -4614,8 +4614,10 @@ export default function UtdfMimeTypeTest() {
       console.log('SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3510 start');
       let result = UTD.getUniformDataTypesByMIMEType("video/mpeg");
       console.log("typeId:" + result);
-      expect(result).assertContain('general.mpeg,general.vob,general.mpeg-2');
+      expect(result).assertContain('general.mpeg');
       expect(result).assertContain('general.mpeg-1');
+      expect(result).assertContain('general.mpeg-2');
+      expect(result).assertContain('general.vob');
     });
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3520
