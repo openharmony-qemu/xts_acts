@@ -9,7 +9,6 @@
 #include <cstdint>
 #include <multimedia/player_framework/native_cencinfo.h>
 using namespace OHOS::CencInfoUT;
-using TestCase = OHOS::CencInfoUT::CencInfoCapiTestCase;
 
 namespace {
     static constexpr int ARG_INDEX = 0;
@@ -20,6 +19,7 @@ namespace {
 
 template <typename Func>
 napi_value NapiTry(napi_env env, Func &&func);
+using CencTestFunc = int (OHOS::CencInfoUT::CencInfoCapiTestCase::*)();
 
 int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int32_t defaultValue)
 {
@@ -159,7 +159,7 @@ napi_value Init(napi_env env, napi_value exports)
 }
 EXTERN_C_END
 
-static napi_module demoModule = {
+static napi_module g_cencinfotestModule = {
     .nm_version = 1,
     .nm_flags = 0,
     .nm_filename = nullptr,
@@ -170,5 +170,5 @@ static napi_module demoModule = {
 
 extern "C" __attribute__((constructor)) void RegisterCencinfotestModule(void)
 {
-    napi_module_register(&demoModule);
+    napi_module_register(&g_cencinfotestModule);
 }

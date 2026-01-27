@@ -19,7 +19,7 @@ describe('CencInfoCapiUnitTest', () => {
 /**
  * @tc.name CencInfo_Create_001
  * @tc.number TC-CencInfo-001
- * @tc.desc 验证CencInfo模块cencInfoCreate方法在传入参数0时的返回值正确性，预期返回值为0
+ * @tc.desc
  */
 it('CencInfo_Create_001', Level.LEVEL0, () => {
   let ret: number = cencTest.cencInfoCreate(0);
@@ -29,7 +29,7 @@ it('CencInfo_Create_001', Level.LEVEL0, () => {
 /**
  * @tc.name CencInfo_Destroy_001
  * @tc.number TC-CencInfo-002
- * @tc.desc 验证CencInfo模块cencInfoDestroy方法在传入参数0时的返回值正确性，预期返回值为0
+ * @tc.desc
  */
 it('CencInfo_Destroy_001', Level.LEVEL0, () => {
   let ret: number = cencTest.cencInfoDestroy(0);
@@ -39,7 +39,7 @@ it('CencInfo_Destroy_001', Level.LEVEL0, () => {
 /**
  * @tc.name CencInfo_Destroy_002
  * @tc.number TC-CencInfo-003
- * @tc.desc 验证CencInfo模块cencInfoDestroy方法在传入参数1时的返回值正确性，预期返回值为0
+ * @tc.desc
  */
 it('CencInfo_Destroy_002', Level.LEVEL0, () => {
   let ret: number = cencTest.cencInfoDestroy(1);
@@ -49,7 +49,7 @@ it('CencInfo_Destroy_002', Level.LEVEL0, () => {
 /**
  * @tc.name CencInfo_SetAlgorithm_001
  * @tc.number TC-CencInfo-004
- * @tc.desc 验证CencInfo模块cencInfoSetAlgorithm方法在传入参数0时的返回值正确性，预期返回值为0
+ * @tc.desc
  */
 it('CencInfo_SetAlgorithm_001', Level.LEVEL0, () => {
   let ret: number = cencTest.cencInfoSetAlgorithm(0);
@@ -59,7 +59,7 @@ it('CencInfo_SetAlgorithm_001', Level.LEVEL0, () => {
 /**
  * @tc.name CencInfo_SetAlgorithm_002
  * @tc.number TC-CencInfo-005
- * @tc.desc 验证CencInfo模块cencInfoSetAlgorithm方法在传入参数1时的返回值正确性，预期返回值为0
+ * @tc.desc
  */
 it('CencInfo_SetAlgorithm_002', Level.LEVEL0, () => {
   let ret: number = cencTest.cencInfoSetAlgorithm(1);
@@ -69,7 +69,7 @@ it('CencInfo_SetAlgorithm_002', Level.LEVEL0, () => {
 /**
  * @tc.name CencInfo_SetKeyIdAndIv_001
  * @tc.number TC-CencInfo-006
- * @tc.desc 验证CencInfo模块cencInfoSetKeyIdAndIv方法在传入参数0时的返回值正确性，预期返回值为0
+ * @tc.desc
  */
 it('CencInfo_SetKeyIdAndIv_001', Level.LEVEL0, () => {
   let ret: number = cencTest.cencInfoSetKeyIdAndIv(0);
@@ -79,7 +79,7 @@ it('CencInfo_SetKeyIdAndIv_001', Level.LEVEL0, () => {
 /**
  * @tc.name CencInfo_SetKeyIdAndIv_002
  * @tc.number TC-CencInfo-007
- * @tc.desc 验证CencInfo模块cencInfoSetKeyIdAndIv方法在传入参数1时的返回值正确性，预期返回值为0
+ * @tc.desc
  */
 it('CencInfo_SetKeyIdAndIv_002', Level.LEVEL0, () => {
   let ret: number = cencTest.cencInfoSetKeyIdAndIv(1);
@@ -89,7 +89,7 @@ it('CencInfo_SetKeyIdAndIv_002', Level.LEVEL0, () => {
 /**
  * @tc.name CencInfo_SetKeyIdAndIv_003
  * @tc.number TC-CencInfo-008
- * @tc.desc 验证CencInfo模块cencInfoSetKeyIdAndIv方法在传入参数2时的返回值正确性，预期返回值为0
+ * @tc.desc
  */
 it('CencInfo_SetKeyIdAndIv_003', Level.LEVEL0, () => {
   let ret: number = cencTest.cencInfoSetKeyIdAndIv(2);
@@ -99,7 +99,7 @@ it('CencInfo_SetKeyIdAndIv_003', Level.LEVEL0, () => {
 /**
  * @tc.name CencInfo_SetKeyIdAndIv_004
  * @tc.number TC-CencInfo-009
- * @tc.desc 验证CencInfo模块cencInfoSetKeyIdAndIv方法在传入参数3时的返回值正确性，预期返回值为0
+ * @tc.desc
  */
 it('CencInfo_SetKeyIdAndIv_004', Level.LEVEL0, () => {
   let ret: number = cencTest.cencInfoSetKeyIdAndIv(3);
@@ -109,7 +109,7 @@ it('CencInfo_SetKeyIdAndIv_004', Level.LEVEL0, () => {
 /**
  * @tc.name CencInfo_SetKeyIdAndIv_005
  * @tc.number TC-CencInfo-010
- * @tc.desc 验证CencInfo模块cencInfoSetKeyIdAndIv方法在传入参数4时的返回值正确性，预期返回值为0
+ * @tc.desc
  */
 it('CencInfo_SetKeyIdAndIv_005', Level.LEVEL0, () => {
   let ret: number = cencTest.cencInfoSetKeyIdAndIv(4);
@@ -119,7 +119,7 @@ it('CencInfo_SetKeyIdAndIv_005', Level.LEVEL0, () => {
 /**
  * @tc.name CencInfo_SetKeyIdAndIv_006
  * @tc.number TC-CencInfo-011
- * @tc.desc 验证CencInfo模块cencInfoSetKeyIdAndIv方法在传入参数5时的返回值正确性，预期返回值为0
+ * @tc.desc
  */
 it('CencInfo_SetKeyIdAndIv_006', Level.LEVEL0, () => {
   let ret: number = cencTest.cencInfoSetKeyIdAndIv(5);
@@ -129,7 +129,7 @@ it('CencInfo_SetKeyIdAndIv_006', Level.LEVEL0, () => {
 /**
  * @tc.name CencInfo_SetMode_001
  * @tc.number TC-CencInfo-012
- * @tc.desc 验证CencInfo模块cencInfoSetMode方法在传入参数0时的返回值正确性，预期返回值为0
+ * @tc.desc
  */
 it('CencInfo_SetMode_001', Level.LEVEL0, () => {
   let ret: number = cencTest.cencInfoSetMode(0);
@@ -139,7 +139,7 @@ it('CencInfo_SetMode_001', Level.LEVEL0, () => {
 /**
  * @tc.name CencInfo_SetMode_002
  * @tc.number TC-CencInfo-013
- * @tc.desc 验证CencInfo模块cencInfoSetMode方法在传入参数1时的返回值正确性，预期返回值为0
+ * @tc.desc
  */
 it('CencInfo_SetMode_002', Level.LEVEL0, () => {
   let ret: number = cencTest.cencInfoSetMode(1);
@@ -149,7 +149,7 @@ it('CencInfo_SetMode_002', Level.LEVEL0, () => {
 /**
  * @tc.name CencInfo_SetAVBuffer_001
  * @tc.number TC-CencInfo-014
- * @tc.desc 验证CencInfo模块cencInfoSetAVBuffer方法在传入参数0时的返回值正确性，预期返回值为0
+ * @tc.desc
  */
 it('CencInfo_SetAVBuffer_001', Level.LEVEL0, () => {
   let ret: number = cencTest.cencInfoSetAVBuffer(0);
@@ -159,7 +159,7 @@ it('CencInfo_SetAVBuffer_001', Level.LEVEL0, () => {
 /**
  * @tc.name CencInfo_SetAVBuffer_002
  * @tc.number TC-CencInfo-015
- * @tc.desc 验证CencInfo模块cencInfoSetAVBuffer方法在传入参数1时的返回值正确性，预期返回值为0
+ * @tc.desc
  */
 it('CencInfo_SetAVBuffer_002', Level.LEVEL0, () => {
   let ret: number = cencTest.cencInfoSetAVBuffer(1);
@@ -169,7 +169,7 @@ it('CencInfo_SetAVBuffer_002', Level.LEVEL0, () => {
 /**
  * @tc.name CencInfo_SetAVBuffer_003
  * @tc.number TC-CencInfo-016
- * @tc.desc 验证CencInfo模块cencInfoSetAVBuffer方法在传入参数2时的返回值正确性，预期返回值为0
+ * @tc.desc
  */
 it('CencInfo_SetAVBuffer_003', Level.LEVEL0, () => {
   let ret: number = cencTest.cencInfoSetAVBuffer(2);
