@@ -1068,7 +1068,7 @@ export default function BuiltinArrayindexOfTest() {
     it('testBuiltinArrayFilter20004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBuiltinArrayFilter20004";
       try {
-        const empty: FixedArray<char> = new char[0];
+        const empty: FixedArray<char> = new FixedArray<char>(0);
         const filtered = filter(empty, (v: char, _k: number, _arr: FixedArray<char>) =>
         v > 'a'.charCodeAt(0)
         );
