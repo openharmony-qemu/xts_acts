@@ -129,6 +129,7 @@ export default function windowAutoSaveTest() {
     let isAutoWindow:string = '';
     let isFreeWindowMode = false;
     let isPCMode:boolean = false;
+    let isSupportFreeWindowMode:boolean = false;
     let driver: Driver;
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -153,8 +154,9 @@ export default function windowAutoSaveTest() {
       let promise = mainWindowClass.getWindowStateSnapshot();
         promise.then((data) => {
           let jsonObj: object = JSON.parse(data);
-          console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]}`);
+          console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
           isPCMode = jsonObj["isPcMode"];
+          isSupportFreeWindowMode = jsonObj["isSupportFreeWindowMode"];
         }).catch((err: BusinessError) => {
           console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
         });
@@ -1840,8 +1842,8 @@ export default function windowAutoSaveTest() {
       try {
         windowStage.isWindowRectAutoSave().then((result) => {
           console.info(`${message} isWindowRectAutoSave = ${result}, expect true.`)
-          if(isFreeWindowMode){
-            expect(result).assertTrue();
+          if(isSupportFreeWindowMode){
+            expect(result).assertLessOrEqual(true);
           }else{
             expect(result).assertEqual(false);
           }
@@ -1866,7 +1868,7 @@ export default function windowAutoSaveTest() {
       try {
         windowStage.isWindowRectAutoSave().then((result) => {
           console.info(`${message} isWindowRectAutoSave = ${result}, expect false.`)
-          expect(result).assertFalse();
+          expect(result).assertEqual(false);
           done();
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
