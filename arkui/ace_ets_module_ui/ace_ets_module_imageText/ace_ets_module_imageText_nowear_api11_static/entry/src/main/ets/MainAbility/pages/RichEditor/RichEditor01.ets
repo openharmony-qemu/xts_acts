@@ -61,7 +61,7 @@ struct RichEditor01 {
             start: this.start,
             end: this.end
           })!.forEach(item => {
-            if((item as RichEditorImageSpanResult).imageStyle){
+            if(item instanceof RichEditorImageSpanResult){
               this.content += (item as RichEditorImageSpanResult).valueResourceStr;
               this.content += "\n"
             } else {
@@ -152,7 +152,7 @@ struct RichEditor01 {
               console.log("spanIndex:" + item.spanPosition.spanIndex)
               console.log("spanRange:[" + item.spanPosition.spanRange[0] + "," + item.spanPosition.spanRange[1] + "]")
               console.log("offsetInSpan:[" + item.offsetInSpan[0] + "," + item.offsetInSpan[1] + "]")
-              if ((item as RichEditorImageSpanResult).imageStyle) {
+              if (item instanceof RichEditorImageSpanResult) {
                 console.log("image:" + (item as RichEditorImageSpanResult).valueResourceStr)
               } else {
                 console.log("text:" + (item as RichEditorTextSpanResult).value)
