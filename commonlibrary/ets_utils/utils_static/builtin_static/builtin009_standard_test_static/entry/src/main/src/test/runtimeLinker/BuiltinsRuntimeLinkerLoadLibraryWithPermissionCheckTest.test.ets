@@ -39,7 +39,7 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
     })
 
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0100
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0100
      * @tc.desc    Test loadLibraryWithPermissionCheck with normal path and filename
@@ -60,7 +60,7 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
       expect(exceptionThrown).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0200
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0200
      * @tc.desc    Test loadLibraryWithPermissionCheck with normal path and filename
@@ -81,7 +81,7 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
       expect(exceptionThrown).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0300
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0300
      * @tc.desc    Test loadLibraryWithPermissionCheck with empty path and filename
@@ -100,7 +100,7 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
       expect(hasError).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0400
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0400
      * @tc.desc    Test loadLibraryWithPermissionCheck with special characters in path
@@ -123,7 +123,7 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
       });
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0500
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0500
      * @tc.desc    Test loadLibraryWithPermissionCheck with ASCII characters in both parameters
@@ -149,7 +149,7 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
       }
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0600
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0600
      * @tc.desc    Test loadLibraryWithPermissionCheck with duplicated special characters
@@ -171,7 +171,7 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
       });
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0700
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0700
      * @tc.desc    Test loadLibraryWithPermissionCheck with escape characters
@@ -191,7 +191,7 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
       expect(hasError).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0800
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0800
      * @tc.desc    Test loadLibraryWithPermissionCheck with invalid Unicode sequences
@@ -217,7 +217,7 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
       }
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0900
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0900
      * @tc.desc    Test loadLibraryWithPermissionCheck with keywords to verify recognition and stability
@@ -254,7 +254,7 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
       });
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest1000
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST1000
      * @tc.desc    Test loadLibraryWithPermissionCheck with treeString type
@@ -301,7 +301,7 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
       expect(normalHasError).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest1100
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST1100
      * @tc.desc    Test loadLibraryWithPermissionCheck with sliced string to verify value stability
@@ -347,7 +347,7 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
       }
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest1200
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST1200
      * @tc.desc    Test loadLibraryWithPermissionCheck with huge string to verify memory usage
@@ -374,7 +374,7 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
       expect(hugeCallSuccess).assertFalse();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest1300
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST1300
      * @tc.desc    Test GC with huge string after reference release

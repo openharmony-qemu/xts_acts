@@ -53,14 +53,14 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
     })
 
     /**
-    * @tc.name    builtinsRuntimeLinkerLoadClassTest0100
-    * @tc.number  BUILTINS_RUNTIME_LINKER_TEST0100
+    * @tc.name    builtinsRuntimeLinkerLoadClassTest0001
+    * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0001
     * @tc.desc    Test loadClass method with "undefined" string parameter
     * @tc.type    FUNCTION
     * @tc.size    SMALLTEST
     * @tc.level   LEVEL0
     */
-    it('builtinsRuntimeLinkerLoadClassTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadClassTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       try {
         linker.loadClass('undefined');
@@ -71,14 +71,14 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadClassTest0200
-     * @tc.number  BUILTINS_RUNTIME_LINKER_TEST0200
+     * @tc.name    builtinsRuntimeLinkerLoadClassTest0002
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0002
      * @tc.desc    Test loadClass method with "null" string parameter
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadClassTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadClassTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       try {
         linker.loadClass('null');
@@ -89,14 +89,14 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadClassTest0300
-     * @tc.number  BUILTINS_RUNTIME_LINKER_TEST0300
+     * @tc.name    builtinsRuntimeLinkerLoadClassTest0003
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0003
      * @tc.desc    Test loadClass method with empty string parameter
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadClassTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadClassTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       try {
         linker.loadClass('');
@@ -107,14 +107,14 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadClassTest0400
-     * @tc.number  BUILTINS_RUNTIME_LINKER_TEST0400
+     * @tc.name    builtinsRuntimeLinkerLoadClassTest0004
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0004
      * @tc.desc    Test loadClass method with full range of special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadClassTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadClassTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       try {
         linker.loadClass('!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~');
@@ -125,14 +125,14 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadClassTest0500
-     * @tc.number  BUILTINS_RUNTIME_LINKER_TEST0500
+     * @tc.name    builtinsRuntimeLinkerLoadClassTest0005
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0005
      * @tc.desc    Test loadClass method with full range of ASCII characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadClassTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadClassTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       try {
         linker.loadClass('!\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~');
@@ -143,14 +143,14 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadClassTest0600
-     * @tc.number  BUILTINS_RUNTIME_LINKER_TEST0600
+     * @tc.name    builtinsRuntimeLinkerLoadClassTest0006
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0006
      * @tc.desc    Test loadClass method with special characters repeated twice
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadClassTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadClassTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       try {
         linker.loadClass('!!""##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~');
@@ -161,14 +161,14 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadClassTest0700
-     * @tc.number  BUILTINS_RUNTIME_LINKER_TEST0700
+     * @tc.name    builtinsRuntimeLinkerLoadClassTest0007
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0007
      * @tc.desc    Test loadClass method with all escape characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadClassTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadClassTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       const escapeChars = ['\\a', '\\b', '\\f', '\\n', '\\r', '\\t', '\\v', '\\\\', "\\'", '\\"', '\\?', '\\0'];
       for (let i = 0; i < escapeChars.length; i++) {
@@ -208,14 +208,14 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadClassTest0800
-     * @tc.number  BUILTINS_RUNTIME_LINKER_TEST0800
+     * @tc.name    builtinsRuntimeLinkerLoadClassTest0008
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0008
      * @tc.desc    Test loadClass method with emojis and Unicode characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadClassTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadClassTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       const emojis = ['👆', '👿', '👀', '💯', '🎅', '😼', '🔧', '💇', '🤼‍♂️', '🛢', '🀄', '🏴'];
       const unicodeEncodings = [
@@ -258,14 +258,14 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadClassTest0900
-     * @tc.number  BUILTINS_RUNTIME_LINKER_TEST0900
+     * @tc.name    builtinsRuntimeLinkerLoadClassTest0009
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0009
      * @tc.desc    Test loadClass method with invalid Unicode encoding
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadClassTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadClassTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       const invalidUnicode = ['\\udc04', '\\ud83d', '\\udff4'];
       for (const unicode of invalidUnicode) {
@@ -281,14 +281,14 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadClassTest1000
-     * @tc.number  BUILTINS_RUNTIME_LINKER_TEST1000
+     * @tc.name    builtinsRuntimeLinkerLoadClassTest0010
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0010
      * @tc.desc    Test loadClass method with keywords
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadClassTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadClassTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       const keywords = ['0', 'NaN', ''];
       for (const keyword of keywords) {
@@ -315,14 +315,14 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
     });
 
     /**
-   * @tc.name    builtinsRuntimeLinkerLoadClassTest1100
-   * @tc.number  BUILTINS_RUNTIME_LINKER_TEST1100
+   * @tc.name    builtinsRuntimeLinkerLoadClassTest0011
+   * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0011
    * @tc.desc    Test loadClass method with treeString type
    * @tc.type    FUNCTION
    * @tc.size    SMALLTEST
    * @tc.level   LEVEL0
    */
-    it('builtinsRuntimeLinkerLoadClassTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadClassTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       const testSize = 1000;
       const normalString = "a".repeat(testSize);
@@ -366,16 +366,15 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
       }
     });
 
-
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadClassTest1200
-     * @tc.number  BUILTINS_RUNTIME_LINKER_TEST1200
+     * @tc.name    builtinsRuntimeLinkerLoadClassTest0012
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0012
      * @tc.desc    Test loadClass method with sliceString type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadClassTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadClassTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
 
       const str = "{k1:value1,k2:value2}";
@@ -399,14 +398,14 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadClassTest1300
-     * @tc.number  BUILTINS_RUNTIME_LINKER_TEST1300
+     * @tc.name    builtinsRuntimeLinkerLoadClassTest0013
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0013
      * @tc.desc    Test loadClass method with huge string memory usage
      * @tc.type    FUNCTION
      * @tc.size    LARGETEST
      * @tc.level   LEVEL1
      */
-    it('builtinsRuntimeLinkerLoadClassTest1300', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, () => {
+    it('builtinsRuntimeLinkerLoadClassTest0013', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, () => {
       const linker = new TestRuntimeLinker();
       const hugeString = "a".repeat(100000000);
       try {
@@ -418,14 +417,14 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadClassTest1400
-     * @tc.number  BUILTINS_RUNTIME_LINKER_TEST1400
+     * @tc.name    builtinsRuntimeLinkerLoadClassTest0014
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0014
      * @tc.desc    Test GC behavior with large string
      * @tc.type    FUNCTION
      * @tc.size    LARGETEST
      * @tc.level   LEVEL2
      */
-    it('builtinsRuntimeLinkerLoadClassTest1400', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, () => {
+    it('builtinsRuntimeLinkerLoadClassTest0014', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, () => {
       const linker = new TestRuntimeLinker();
       let hugeString1 = "x".repeat(50000);
       try {

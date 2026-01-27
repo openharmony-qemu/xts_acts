@@ -38,7 +38,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryTest0100
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_TEST0100
      * @tc.desc    Test loadLibrary with undefined parameter
@@ -58,7 +58,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
       expect(hasError).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryTest0200
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_TEST0200
      * @tc.desc    Test loadLibrary with null parameter
@@ -78,7 +78,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
       expect(hasError).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryTest0300
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_TEST0300
      * @tc.desc    Test loadLibrary with empty string
@@ -97,7 +97,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
       expect(hasError).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryTest0400
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_TEST0400
      * @tc.desc    Test loadLibrary with full range of special characters
@@ -123,7 +123,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
       expect(allRejected).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryTest0500
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_TEST0500
      * @tc.desc    Test loadLibrary with full range of ASCII characters
@@ -155,7 +155,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
       expect(controlCharsRejected).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryTest0600
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_TEST0600
      * @tc.desc    Test loadLibrary with duplicated special characters
@@ -175,7 +175,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
       expect(hasError).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryTest0700
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_TEST0700
      * @tc.desc    Test loadLibrary with escape characters
@@ -195,7 +195,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
       expect(hasError).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryTest0800
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_TEST0800
      * @tc.desc    Test loadLibrary with emoji and Unicode characters
@@ -234,7 +234,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
       expect(allHandled).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryTest0900
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_TEST0900
      * @tc.desc    Test loadLibrary with invalid Unicode sequences
@@ -261,7 +261,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
       expect(allRejected).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryTest1000
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_TEST1000
      * @tc.desc    Test loadLibrary with keyword strings
@@ -289,7 +289,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
       expect(emptyStringRejected).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryTest1100
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_TEST1100
      * @tc.desc    Test loadLibrary with treeString type
@@ -329,7 +329,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
       expect(normalError).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryTest1200
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_TEST1200
      * @tc.desc    Test loadLibrary with sliceString type
@@ -351,7 +351,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
       expect(hasError).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryTest1300
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_TEST1300
      * @tc.desc    Test loadLibrary memory usage with large string
@@ -373,7 +373,7 @@ export default function builtinsRuntimeLinkerLoadLibraryTest() {
       }
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerLoadLibraryTest1400
      * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_TEST1400
      * @tc.desc    Test loadLibrary GC behavior

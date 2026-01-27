@@ -15,8 +15,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-
-
 export default function builtinsRuntimeTest() {
   describe('builtinsRuntimeTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -40,14 +38,14 @@ export default function builtinsRuntimeTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name    builtinsRuntimeTest0100
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_TEST0100
+     * @tc.name    builtinsRuntimeTest0001
+     * @tc.number  BUILTINS_RUNTIME_TEST0001
      * @tc.desc    Test sameValue with null and undefined values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Runtime.sameValue(null, null)).assertTrue();
       expect(Runtime.sameValue(null, undefined)).assertFalse();
       expect(Runtime.sameValue(undefined, null)).assertFalse();
@@ -58,14 +56,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest0200
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_TEST0200
+     * @tc.name    builtinsRuntimeTest0002
+     * @tc.number  BUILTINS_RUNTIME_TEST0002
      * @tc.desc    Test sameValue with Number type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Runtime.sameValue(new Number(0), new Number(0))).assertTrue();
       expect(Runtime.sameValue(new Number(42), new Number(42))).assertTrue();
       expect(Runtime.sameValue(new Number(-42), new Number(-42))).assertTrue();
@@ -84,14 +82,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest0300
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_TEST0300
+     * @tc.name    builtinsRuntimeTest0003
+     * @tc.number  BUILTINS_RUNTIME_TEST0003
      * @tc.desc    Test sameValue with String type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Runtime.sameValue(new String(''), new String(''))).assertTrue();
       expect(Runtime.sameValue(new String('hello'), new String('hello'))).assertTrue();
       expect(Runtime.sameValue(new String('hello'), new String('world'))).assertFalse();
@@ -111,14 +109,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest0400
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_TEST0400
+     * @tc.name    builtinsRuntimeTest0004
+     * @tc.number  BUILTINS_RUNTIME_TEST0004
      * @tc.desc    Test sameValue with Float type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Runtime.sameValue(new Float(0.0), new Float(0.0))).assertTrue();
       expect(Runtime.sameValue(new Float(3.14), new Float(3.14))).assertTrue();
       expect(Runtime.sameValue(new Float(-3.14), new Float(-3.14))).assertTrue();
@@ -135,14 +133,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest0500
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_TEST0500
+     * @tc.name    builtinsRuntimeTest0005
+     * @tc.number  BUILTINS_RUNTIME_TEST0005
      * @tc.desc    Test sameValue with boolean type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Runtime.sameValue(true, true)).assertTrue();
       expect(Runtime.sameValue(false, false)).assertTrue();
       expect(Runtime.sameValue(true, false)).assertFalse();
@@ -154,14 +152,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest0600
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_TEST0600
+     * @tc.name    builtinsRuntimeTest0006
+     * @tc.number  BUILTINS_RUNTIME_TEST0006
      * @tc.desc    Test sameValue with array type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr1 = [72, 101, 108, 108, 111];
       const arr2 = [72, 101, 108, 108, 111];
       const arr3 = [87, 111, 114, 108, 100];
@@ -176,17 +174,15 @@ export default function builtinsRuntimeTest() {
       expect(Runtime.sameValue(arrWithNegatives, arrWithNegatives)).assertTrue();
     });
 
-
-
     /**
-     * @tc.name    builtinsRuntimeTest0700
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_TEST0700
+     * @tc.name    builtinsRuntimeTest0007
+     * @tc.number  BUILTINS_RUNTIME_TEST0007
      * @tc.desc    Test sameValue with TypedArray types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const int8Arr1 = new Int8Array([-128, 0, 127]);
       const int8Arr2 = new Int8Array([-128, 0, 127]);
       expect(Runtime.sameValue(int8Arr1, int8Arr1)).assertTrue();
@@ -202,14 +198,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest0800
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_TEST0800
+     * @tc.name    builtinsRuntimeTest0008
+     * @tc.number  BUILTINS_RUNTIME_TEST0008
      * @tc.desc    Test sameValue with edge cases and special values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Runtime.sameValue(0, false)).assertFalse();
       expect(Runtime.sameValue(1, true)).assertFalse();
       expect(Runtime.sameValue('0', 0)).assertFalse();
@@ -225,14 +221,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest0900
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_TEST0900
+     * @tc.name    builtinsRuntimeTest0009
+     * @tc.number  BUILTINS_RUNTIME_TEST0009
      * @tc.desc    Test sameValue with function and Symbol types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const func1 = () => { return 42; };
       const func2 = () => { return 42; };
       expect(Runtime.sameValue(func1, func1)).assertTrue();
@@ -240,14 +236,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest1000
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_TEST1000
+     * @tc.name    builtinsRuntimeTest0010
+     * @tc.number  BUILTINS_RUNTIME_TEST0010
      * @tc.desc    Test sameValue with Date and RegExp types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const date1 = new Date('2024-01-01');
       const date2 = new Date('2024-01-01');
       const date3 = new Date('2024-12-31');
@@ -257,14 +253,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest1100
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1100
+     * @tc.name    builtinsRuntimeTest0011
+     * @tc.number  BUILTINS_RUNTIME_TEST0011
      * @tc.desc    Test sameValueZero with null and undefined values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Runtime.sameValueZero(null, null)).assertTrue();
       expect(Runtime.sameValueZero(null, undefined)).assertFalse();
       expect(Runtime.sameValueZero(undefined, null)).assertFalse();
@@ -275,14 +271,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest1200
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1200
+     * @tc.name    builtinsRuntimeTest0012
+     * @tc.number  BUILTINS_RUNTIME_TEST0012
      * @tc.desc    Test sameValueZero with Number type and NaN
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Runtime.sameValueZero(0, 0)).assertTrue();
       expect(Runtime.sameValueZero(42, 42)).assertTrue();
       expect(Runtime.sameValueZero(-42, -42)).assertTrue();
@@ -302,14 +298,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest1300
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1300
+     * @tc.name    builtinsRuntimeTest0013
+     * @tc.number  BUILTINS_RUNTIME_TEST0013
      * @tc.desc    Test sameValueZero with number boundaries and special values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Runtime.sameValueZero(Number.MAX_VALUE, Number.MAX_VALUE)).assertTrue();
       expect(Runtime.sameValueZero(Number.MIN_VALUE, Number.MIN_VALUE)).assertTrue();
       expect(Runtime.sameValueZero(Number.EPSILON, Number.EPSILON)).assertTrue();
@@ -329,14 +325,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest1400
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1400
+     * @tc.name    builtinsRuntimeTest0014
+     * @tc.number  BUILTINS_RUNTIME_TEST0014
      * @tc.desc    Test sameValueZero with String type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Runtime.sameValueZero('', '')).assertTrue();
       expect(Runtime.sameValueZero('hello', 'hello')).assertTrue();
       expect(Runtime.sameValueZero('hello', 'world')).assertFalse();
@@ -349,14 +345,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest1500
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1500
+     * @tc.name    builtinsRuntimeTest0015
+     * @tc.number  BUILTINS_RUNTIME_TEST0015
      * @tc.desc    Test sameValueZero with String escape sequences and Unicode
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const escapeStr1: string = '\n\r\t\\\'\"\?';
       const escapeStr2: string = '\n\r\t\\\'\"\?';
       expect(Runtime.sameValueZero(escapeStr1, escapeStr2)).assertTrue();
@@ -373,14 +369,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest1600
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1600
+     * @tc.name    builtinsRuntimeTest0016
+     * @tc.number  BUILTINS_RUNTIME_TEST0016
      * @tc.desc    Test sameValueZero with boolean type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Runtime.sameValueZero(true, true)).assertTrue();
       expect(Runtime.sameValueZero(false, false)).assertTrue();
       expect(Runtime.sameValueZero(true, false)).assertFalse();
@@ -393,14 +389,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest1700
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1700
+     * @tc.name    builtinsRuntimeTest0017
+     * @tc.number  BUILTINS_RUNTIME_TEST0017
      * @tc.desc    Test sameValueZero with array type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr1: number[] = [72, 101, 108, 108, 111];
       const arr2: number[] = [72, 101, 108, 108, 111];
       const arr3: number[] = [87, 111, 114, 108, 100];
@@ -423,14 +419,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest1800
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1800
+     * @tc.name    builtinsRuntimeTest0018
+     * @tc.number  BUILTINS_RUNTIME_TEST0018
      * @tc.desc    Test sameValueZero with TypedArray types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const int8Arr1 = new Int8Array([-128, 0, 127]);
       const int8Arr2 = new Int8Array([-128, 0, 127]);
 
@@ -452,14 +448,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest1900
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1900
+     * @tc.name    builtinsRuntimeTest0019
+     * @tc.number  BUILTINS_RUNTIME_TEST0019
      * @tc.desc    Test sameValueZero with all TypedArray types and boundaries
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const int16Arr1 = new Int16Array([-32768, 0, 32767]);
       const int16Arr2 = new Int16Array([-32768, 0, 32767]);
       expect(Runtime.sameValueZero(int16Arr1, int16Arr1)).assertTrue();
@@ -493,16 +489,15 @@ export default function builtinsRuntimeTest() {
       expect(Runtime.sameValueZero(float64Arr1, float64Arr2)).assertFalse();
     });
 
-
     /**
-     * @tc.name    builtinsRuntimeTest2000
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST2000
+     * @tc.name    builtinsRuntimeTest0020
+     * @tc.number  BUILTINS_RUNTIME_TEST0020
      * @tc.desc    Test sameValueZero with type coercion and edge cases
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Runtime.sameValueZero(0, false)).assertFalse();
       expect(Runtime.sameValueZero(1, true)).assertFalse();
       expect(Runtime.sameValueZero('0', 0)).assertFalse();
@@ -520,14 +515,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest2100
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST2100
+     * @tc.name    builtinsRuntimeTest0021
+     * @tc.number  BUILTINS_RUNTIME_TEST0021
      * @tc.desc    Test sameValueZero with Date and RegExp types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const date1 = new Date('2024-01-01');
       const date2 = new Date('2024-01-01');
       const date3 = new Date('2024-12-31');
@@ -538,14 +533,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest2200
-     * @tc.number  BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST2200
+     * @tc.name    builtinsRuntimeTest0022
+     * @tc.number  BUILTINS_RUNTIME_TEST0022
      * @tc.desc    Test sameValueZero with large strings
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_SAME_VALUE_ZERO_TEST2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const largeString1: string = 'a'.repeat(1000);
       const largeString2: string = 'a'.repeat(1000);
       const largeString3: string = 'b'.repeat(1000);
@@ -559,14 +554,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest2300
-     * @tc.number  BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST2300
+     * @tc.name    builtinsRuntimeTest0023
+     * @tc.number  BUILTINS_RUNTIME_TEST0023
      * @tc.desc    Test basic functionality of isLittleEndianPlatform API
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const result: boolean = Runtime.isLittleEndianPlatform();
 
       expect(typeof result).assertEqual('boolean');
@@ -581,14 +576,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest2400
-     * @tc.number  BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST2400
+     * @tc.name    builtinsRuntimeTest0024
+     * @tc.number  BUILTINS_RUNTIME_TEST0024
      * @tc.desc    Test isLittleEndianPlatform with different data types to verify endianness
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const isLittleEndian: boolean = Runtime.isLittleEndianPlatform();
 
       const singleByteArray: Uint8Array = new Uint8Array([0x01]);
@@ -607,14 +602,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest2500
-     * @tc.number  BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST2500
+     * @tc.name    builtinsRuntimeTest0025
+     * @tc.number  BUILTINS_RUNTIME_TEST0025
      * @tc.desc    Test isLittleEndianPlatform with Int32Array boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const isLittleEndian: boolean = Runtime.isLittleEndianPlatform();
 
       const int32MinArray: Int32Array = new Int32Array([-2147483648]);
@@ -634,14 +629,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest2600
-     * @tc.number  BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST2600
+     * @tc.name    builtinsRuntimeTest0026
+     * @tc.number  BUILTINS_RUNTIME_TEST0026
      * @tc.desc    Test isLittleEndianPlatform with Uint32Array boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const isLittleEndian: boolean = Runtime.isLittleEndianPlatform();
 
       const uint32MaxArray: Uint32Array = new Uint32Array([4294967295]);
@@ -661,14 +656,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest2700
-     * @tc.number  BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST2700
+     * @tc.name    builtinsRuntimeTest0027
+     * @tc.number  BUILTINS_RUNTIME_TEST0027
      * @tc.desc    Test isLittleEndianPlatform with Float32Array special values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const isLittleEndian: boolean = Runtime.isLittleEndianPlatform();
 
       const floatArray: Float32Array = new Float32Array([1.0]);
@@ -688,14 +683,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest2800
-     * @tc.number  BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST2800
+     * @tc.name    builtinsRuntimeTest0028
+     * @tc.number  BUILTINS_RUNTIME_TEST0028
      * @tc.desc    Test isLittleEndianPlatform with Float64Array special values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const isLittleEndian: boolean = Runtime.isLittleEndianPlatform();
 
       const doubleArray: Float64Array = new Float64Array([1.0]);
@@ -723,14 +718,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest2900
-     * @tc.number  BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST2900
+     * @tc.name    builtinsRuntimeTest0029
+     * @tc.number  BUILTINS_RUNTIME_TEST0029
      * @tc.desc    Test isLittleEndianPlatform with ArrayBuffer operations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const isLittleEndian: boolean = Runtime.isLittleEndianPlatform();
 
       const buffer: ArrayBuffer = new ArrayBuffer(4);
@@ -753,14 +748,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest3000
-     * @tc.number  BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST3000
+     * @tc.name    builtinsRuntimeTest0030
+     * @tc.number  BUILTINS_RUNTIME_TEST0030
      * @tc.desc    Test isLittleEndianPlatform with DataView operations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const isLittleEndian: boolean = Runtime.isLittleEndianPlatform();
 
       const buffer: ArrayBuffer = new ArrayBuffer(8);
@@ -785,14 +780,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest3100
-     * @tc.number  BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST3100
+     * @tc.name    builtinsRuntimeTest0031
+     * @tc.number  BUILTINS_RUNTIME_TEST0031
      * @tc.desc    Test isLittleEndianPlatform with multiple data types consistency
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const isLittleEndian: boolean = Runtime.isLittleEndianPlatform();
 
       const buffer: ArrayBuffer = new ArrayBuffer(8);
@@ -827,14 +822,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest3200
-     * @tc.number  BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST3200
+     * @tc.name    builtinsRuntimeTest0032
+     * @tc.number  BUILTINS_RUNTIME_TEST0032
      * @tc.desc    Test isLittleEndianPlatform with boundary cases and performance
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_LITTLE_ENDIAN_PLATFORM_TEST3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const zeroBuffer: ArrayBuffer = new ArrayBuffer(4);
       const zeroView32: Uint32Array = new Uint32Array(zeroBuffer);
       const zeroView8: Uint8Array = new Uint8Array(zeroBuffer);
@@ -870,14 +865,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest3300
-     * @tc.number  BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST3300
+     * @tc.name    builtinsRuntimeTest0033
+     * @tc.number  BUILTINS_RUNTIME_TEST0033
      * @tc.desc    Test isSameReference with primitive values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Runtime.isSameReference(null, null)).assertTrue();
       expect(Runtime.isSameReference(null, undefined)).assertFalse();
 
@@ -900,14 +895,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest3400
-     * @tc.number  BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST3400
+     * @tc.name    builtinsRuntimeTest0034
+     * @tc.number  BUILTINS_RUNTIME_TEST0034
      * @tc.desc    Test isSameReference with Number objects
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST3400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const num1: Number = new Number(42);
       const num2: Number = new Number(42);
       const num3: Number = num1;
@@ -933,14 +928,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest3500
-     * @tc.number  BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST3500
+     * @tc.name    builtinsRuntimeTest0035
+     * @tc.number  BUILTINS_RUNTIME_TEST0035
      * @tc.desc    Test isSameReference with String objects
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST3500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const str1: String = new String('hello');
       const str2: String = new String('hello');
       const str3: String = str1;
@@ -966,14 +961,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest3600
-     * @tc.number  BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST3600
+     * @tc.name    builtinsRuntimeTest0036
+     * @tc.number  BUILTINS_RUNTIME_TEST0036
      * @tc.desc    Test isSameReference with array objects
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST3600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr1: number[] = [72, 101, 108, 108, 111];
       const arr2: number[] = [72, 101, 108, 108, 111];
       const arr3: number[] = arr1;
@@ -1004,14 +999,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest3700
-     * @tc.number  BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST3700
+     * @tc.name    builtinsRuntimeTest0037
+     * @tc.number  BUILTINS_RUNTIME_TEST0037
      * @tc.desc    Test isSameReference with TypedArray objects
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST3700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const int8Arr1: Int8Array = new Int8Array([-128, 0, 127]);
       const int8Arr2: Int8Array = new Int8Array([-128, 0, 127]);
       const int8Arr3: Int8Array = int8Arr1;
@@ -1037,14 +1032,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest3800
-     * @tc.number  BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST3800
+     * @tc.name    builtinsRuntimeTest0038
+     * @tc.number  BUILTINS_RUNTIME_TEST0038
      * @tc.desc    Test isSameReference with function references
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST3800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const func1: () => number = () => 42;
       const func2: () => number = () => 42;
       const func3: () => number = func1;
@@ -1059,17 +1054,15 @@ export default function builtinsRuntimeTest() {
       expect(Runtime.isSameReference(add1, add2)).assertFalse();
     });
 
-
-
     /**
-     * @tc.name    builtinsRuntimeTest3900
-     * @tc.number  BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST3900
+     * @tc.name    builtinsRuntimeTest0039
+     * @tc.number  BUILTINS_RUNTIME_TEST0039
      * @tc.desc    Test isSameReference with ArrayBuffer and DataView
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST3900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const buffer1: ArrayBuffer = new ArrayBuffer(16);
       const buffer2: ArrayBuffer = new ArrayBuffer(16);
       const buffer3: ArrayBuffer = buffer1;
@@ -1092,17 +1085,15 @@ export default function builtinsRuntimeTest() {
       expect(Runtime.isSameReference(uint8View1, uint8View2)).assertFalse();
     });
 
-
-
     /**
-     * @tc.name    builtinsRuntimeTest4000
-     * @tc.number  BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST4000
+     * @tc.name    builtinsRuntimeTest0040
+     * @tc.number  BUILTINS_RUNTIME_TEST0040
      * @tc.desc    Test isSameReference with Promise objects
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST4000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
         const promise1: Promise<string> = new Promise<string>((resolve: (value: string) => void) => {
           setTimeout(() => resolve('done'), 100);
         });
@@ -1119,14 +1110,14 @@ export default function builtinsRuntimeTest() {
       });
 
     /**
-     * @tc.name    builtinsRuntimeTest4100
-     * @tc.number  BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST4100
+     * @tc.name    builtinsRuntimeTest0041
+     * @tc.number  BUILTINS_RUNTIME_TEST0041
      * @tc.desc    Test isSameReference with edge cases and mixed types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST4100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const num: number = 42;
       const str: string = '42';
       const bool: boolean = true;
@@ -1153,14 +1144,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest4200
-     * @tc.number  BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST4200
+     * @tc.name    builtinsRuntimeTest0042
+     * @tc.number  BUILTINS_RUNTIME_TEST0042
      * @tc.desc    Test isSameReference performance and consistency
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_IS_SAME_REFERENCE_TEST4200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const largeObj1: Record<string, number> = {};
       const largeObj2: Record<string, number> = {};
 
@@ -1183,14 +1174,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest4300
-     * @tc.number  BUILTINS_RUNTIME_NARROW_ANY_TEST4300
+     * @tc.name    builtinsRuntimeTest0043
+     * @tc.number  BUILTINS_RUNTIME_TEST0043
      * @tc.desc    Test __narrowAny with null and undefined values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_NARROW_ANY_TEST4300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const nullResult: (object | null | undefined) = __narrowAny(null);
       expect(nullResult === null).assertTrue();
 
@@ -1205,14 +1196,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest4400
-     * @tc.number  BUILTINS_RUNTIME_NARROW_ANY_TEST4400
+     * @tc.name    builtinsRuntimeTest0044
+     * @tc.number  BUILTINS_RUNTIME_TEST0044
      * @tc.desc    Test __narrowAny with primitive types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_NARROW_ANY_TEST4400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const numberValue: number = 42;
       const numberResult: (object | null | undefined) = __narrowAny(numberValue);
       expect(typeof numberResult).assertEqual('number');
@@ -1238,14 +1229,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest4500
-     * @tc.number  BUILTINS_RUNTIME_NARROW_ANY_TEST4500
+     * @tc.name    builtinsRuntimeTest0045
+     * @tc.number  BUILTINS_RUNTIME_TEST0045
      * @tc.desc    Test __narrowAny with number boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_NARROW_ANY_TEST4500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const maxValueResult: (object | null | undefined) = __narrowAny(Number.MAX_VALUE);
       expect(typeof maxValueResult).assertEqual('number');
       expect((maxValueResult as number) === Number.MAX_VALUE).assertTrue();
@@ -1272,14 +1263,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest4600
-     * @tc.number  BUILTINS_RUNTIME_NARROW_ANY_TEST4600
+     * @tc.name    builtinsRuntimeTest0046
+     * @tc.number  BUILTINS_RUNTIME_TEST0046
      * @tc.desc    Test __narrowAny with string types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_NARROW_ANY_TEST4600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const emptyStringResult: (object | null | undefined) = __narrowAny('');
       expect(typeof emptyStringResult).assertEqual('string');
       expect((emptyStringResult as string) === '').assertTrue();
@@ -1313,14 +1304,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest4700
-     * @tc.number  BUILTINS_RUNTIME_NARROW_ANY_TEST4700
+     * @tc.name    builtinsRuntimeTest0047
+     * @tc.number  BUILTINS_RUNTIME_TEST0047
      * @tc.desc    Test __narrowAny with array types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_NARROW_ANY_TEST4700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const normalArray: number[] = [72, 101, 108, 108, 111];
       const arrayResult: (object | null | undefined) = __narrowAny(normalArray);
       expect(Array.isArray(arrayResult)).assertTrue();
@@ -1355,14 +1346,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest4800
-     * @tc.number  BUILTINS_RUNTIME_NARROW_ANY_TEST4800
+     * @tc.name    builtinsRuntimeTest0048
+     * @tc.number  BUILTINS_RUNTIME_TEST0048
      * @tc.desc    Test __narrowAny with TypedArray types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_NARROW_ANY_TEST4800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const int8Array: Int8Array = new Int8Array([-128, 0, 127]);
       const int8Result: (object | null | undefined) = __narrowAny(int8Array);
       expect(int8Result instanceof Int8Array).assertTrue();
@@ -1395,14 +1386,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest4900
-     * @tc.number  BUILTINS_RUNTIME_NARROW_ANY_TEST4900
+     * @tc.name    builtinsRuntimeTest0049
+     * @tc.number  BUILTINS_RUNTIME_TEST0049
      * @tc.desc    Test __narrowAny with complex object types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_NARROW_ANY_TEST4900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const buffer: ArrayBuffer = new ArrayBuffer(16);
       const bufferResult: (object | null | undefined) = __narrowAny(buffer);
       expect(bufferResult instanceof ArrayBuffer).assertTrue();
@@ -1436,14 +1427,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest5000
-     * @tc.number  BUILTINS_RUNTIME_NARROW_ANY_TEST5000
+     * @tc.name    builtinsRuntimeTest0050
+     * @tc.number  BUILTINS_RUNTIME_TEST0050
      * @tc.desc    Test __narrowAny with type narrowing
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_NARROW_ANY_TEST5000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const stringValue: string = 'test';
 
       const narrowedString: string = __narrowAny<string>(stringValue);
@@ -1467,14 +1458,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest5100
-     * @tc.number  BUILTINS_RUNTIME_NARROW_ANY_TEST5100
+     * @tc.name    builtinsRuntimeTest0051
+     * @tc.number  BUILTINS_RUNTIME_TEST0051
      * @tc.desc    Test __narrowAny with edge cases and performance
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BUILTINS_RUNTIME_NARROW_ANY_TEST5100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const funcValue: () => void = () => {};
       const funcResult: (object | null | undefined) = __narrowAny(funcValue);
       expect(typeof funcResult).assertEqual('function');

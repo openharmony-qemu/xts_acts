@@ -65,7 +65,7 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
       }
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerGetTypeTest0200
      * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0200
      * @tc.desc    Test getType method with null parameter
@@ -86,7 +86,7 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
       }
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerGetTypeTest0300
      * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0300
      * @tc.desc    Test getType method with empty string
@@ -101,7 +101,7 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
       expect(type).assertUndefined();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerGetTypeTest0400
      * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0400
      * @tc.desc    Test getType method with special characters
@@ -116,7 +116,7 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
       expect(type === undefined || type !== null).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerGetTypeTest0500
      * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0500
      * @tc.desc    Test getType method with full ASCII range
@@ -134,7 +134,7 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
       expect(type === undefined || type !== null).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerGetTypeTest0600
      * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0600
      * @tc.desc    Test getType method with duplicated special characters
@@ -149,7 +149,7 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
       expect(type === undefined || type !== null).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerGetTypeTest0700
      * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0700
      * @tc.desc    Test getType method with escape characters
@@ -164,7 +164,7 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
       expect(type === undefined || type !== null).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerGetTypeTest0800
      * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0800
      * @tc.desc    Test getType method with emoji and Unicode characters
@@ -196,7 +196,7 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
       }
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerGetTypeTest0900
      * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0900
      * @tc.desc    Test getType method with invalid Unicode sequences
@@ -219,7 +219,7 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
       }
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerGetTypeTest1000
      * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1000
      * @tc.desc    Test getType method with keyword strings
@@ -241,7 +241,7 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
       }
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerGetTypeTest1100
      * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1100
      * @tc.desc    Test getType method with treeString type
@@ -264,7 +264,7 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
       expect(type === undefined || type !== null).assertTrue();
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerGetTypeTest1200
      * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1200
      * @tc.desc    Test getType method with sliceString type
@@ -285,7 +285,7 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
       }
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerGetTypeTest1300
      * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1300
      * @tc.desc    Test getType method memory usage with large string
@@ -315,7 +315,7 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
       }
     });
 
-    /*
+    /**
      * @tc.name    builtinsRuntimeLinkerGetTypeTest1400
      * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1400
      * @tc.desc    Test getType method GC behavior
