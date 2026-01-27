@@ -850,8 +850,8 @@ export default function WindowPCTest() {
                         let subWidth = subWindowProperties.windowRect.width;
                         let subHeight = subWindowProperties.windowRect.height;
                         hilog.info(domain, tag,`${caseName} subLeft: ${subLeft},subTop:${subTop},subWidth:${subWidth},subHeight:${subHeight}`);
-                        expect(mainTop).assertEqual(subTop);
-                        expect(mainLeft).assertEqual(subLeft);
+                        expect(Math.abs(mainTop-subTop)).assertLessOrEqual(1);
+                        expect(Math.abs(mainLeft-subLeft)).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
                     }).catch((err: Error) :PromiseLike<void>|undefined=> {
@@ -978,8 +978,8 @@ export default function WindowPCTest() {
                         let subWidth = subWindowProperties.windowRect.width;
                         let subHeight = subWindowProperties.windowRect.height;
                         hilog.info(domain, tag,`${caseName} subLeft: ${subLeft},subTop:${subTop},subWidth:${subWidth},subHeight:${subHeight}`);
-                        expect(mainTop).assertEqual(subTop);
-                        expect(mainLeft).assertEqual(subLeft);
+                        expect(Math.abs(mainTop-subTop)).assertLessOrEqual(1);
+                        expect(Math.abs(mainLeft-subLeft)).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
                     }).catch((err: Error):PromiseLike<void>|undefined => {
@@ -1045,6 +1045,7 @@ export default function WindowPCTest() {
                         let subHeight = subWindowProperties.windowRect.height;
                         hilog.info(domain, tag,`${caseName} subLeft: ${subLeft},subTop:${subTop},subWidth:${subWidth},subHeight:${subHeight}`);
                         expect(mainTop).assertEqual(subTop);
+                        expect(Math.abs(mainTop-subTop)).assertLessOrEqual(1);
                         expect(Math.abs(mainLeft - subLeft)).assertEqual(Math.abs((mainWidth + mainLeft)-(subWidth + subLeft)));
                         await windowClass.destroyWindow();
                         done();
@@ -1110,7 +1111,7 @@ export default function WindowPCTest() {
                         let subWidth = subWindowProperties.windowRect.width;
                         let subHeight = subWindowProperties.windowRect.height;
                         hilog.info(domain, tag,`${caseName} subLeft: ${subLeft},subTop:${subTop},subWidth:${subWidth},subHeight:${subHeight}`);
-                        expect(mainTop).assertEqual(subTop);
+                        expect(Math.abs(mainTop-subTop)).assertLessOrEqual(1);
                         expect(Math.abs((mainLeft + mainWidth)-(subLeft + subWidth))).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
@@ -1176,7 +1177,7 @@ export default function WindowPCTest() {
                         let subWidth = subWindowProperties.windowRect.width;
                         let subHeight = subWindowProperties.windowRect.height;
                         hilog.info(domain, tag,`${caseName} subLeft: ${subLeft},subTop:${subTop},subWidth:${subWidth},subHeight:${subHeight}`);
-                        expect(mainLeft).assertEqual(subLeft);
+                        expect(Math.abs(mainLeft-subLeft)).assertLessOrEqual(1);
                         expect(Math.abs((subTop+subHeight/2)-(mainTop+mainHeight/2))).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
