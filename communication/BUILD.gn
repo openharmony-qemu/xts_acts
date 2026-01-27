@@ -37,6 +37,7 @@ group("communication") {
       "dsoftbus/linkEnhance:ActslinkEnhanceTest",
       "dsoftbus/linkEnhanceNoPermission:ActslinkEnhanceNoPermissionTest",
       "dsoftbus/proxyChannelManager:ActsProxyChannelMgrTest",
+      "dsoftbus/proxyChannelManagerStatic:ActsProxyChannelManagerStaticTest",
       "dsoftbus/rpc:ActsRpcJsTest",
       "dsoftbus/rpc_request:ActsRpcRequestJsTest",
       "netmanager_base/wifi_eap:ActsWifiEapTest",
