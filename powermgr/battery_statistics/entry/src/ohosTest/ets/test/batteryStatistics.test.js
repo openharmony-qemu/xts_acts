@@ -40,7 +40,7 @@ export default function BatteryStatisticsTest() {
 
     /**
      * @tc.name   System_API_Test_batteryStats_Manager_0100
-     * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0040
+     * @tc.number System_API_Test_batteryStats_Manager_0100
      * @tc.desc   Test the third-party application call getBatteryStats will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -75,7 +75,7 @@ export default function BatteryStatisticsTest() {
 
     /**
      * @tc.name   System_API_Test_batteryStats_Manager_0200
-     * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
+     * @tc.number System_API_Test_batteryStats_Manager_0200
      * @tc.desc   Test the third-party application call getBatteryStats will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -106,7 +106,7 @@ export default function BatteryStatisticsTest() {
 
     /**
      * @tc.name   System_API_Test_batteryStats_Manager_0300
-     * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
+     * @tc.number System_API_Test_batteryStats_Manager_0300
      * @tc.desc   Test the third-party application call getAppPowerValue will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -134,7 +134,7 @@ export default function BatteryStatisticsTest() {
 
     /**
      * @tc.name   System_API_Test_batteryStats_Manager_0400
-     * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
+     * @tc.number System_API_Test_batteryStats_Manager_0400
      * @tc.desc   Test the third-party application call getAppPowerPercent will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -162,7 +162,7 @@ export default function BatteryStatisticsTest() {
 
     /**
      * @tc.name   System_API_Test_batteryStats_Manager_0500
-     * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
+     * @tc.number System_API_Test_batteryStats_Manager_0500
      * @tc.desc   Test the third-party application call getHardwareUnitPowerValue will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -190,7 +190,7 @@ export default function BatteryStatisticsTest() {
 
     /**
      * @tc.name   System_API_Test_batteryStats_Manager_0600
-     * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
+     * @tc.number System_API_Test_batteryStats_Manager_0600
      * @tc.desc   Test the third-party application call getHardwareUnitPowerPercent will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
