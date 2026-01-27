@@ -156,6 +156,7 @@ struct IndexPage {
     { title: 'RadiusRenderStrategy', uri: 'pages/ArkUI/RadiusRenderStrategy' },
     { title: 'ImageDownloadInfo', uri: 'pages/ArkUI/ImageDownloadInfo' },
     { title: 'GameAddTest', uri: 'pages/ArkUI/GameAddTest' },
+    { title: 'AdvancedBlendMode', uri: 'pages/ArkUI/AdvancedBlendMode' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];
