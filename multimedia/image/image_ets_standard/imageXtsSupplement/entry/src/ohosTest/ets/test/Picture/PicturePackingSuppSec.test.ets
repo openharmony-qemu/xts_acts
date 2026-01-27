@@ -68,7 +68,7 @@
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_001', Level.LEVEL0, (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_001';
-      creatImageSource(done,testName ,'AllAuxiliaryPictures_exclude_fragment.jpg', async (imageSource) => {
+      creatImageSource(done,testName ,'AllAuxiliaryPictures.jpg', async (imageSource) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
@@ -107,7 +107,7 @@
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_002';
-      creatImageSource(done,testName ,'AllAuxiliaryPictures_exclude_fragment.jpg', async (imageSource) => {
+      creatImageSource(done,testName ,'AllAuxiliaryPictures.jpg', async (imageSource) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
@@ -145,7 +145,7 @@
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_003';
-      creatImageSource(done,testName ,'AllAuxiliaryPictures_exclude_fragment.jpg', async (imageSource) => {
+      creatImageSource(done,testName ,'AllAuxiliaryPictures.jpg', async (imageSource) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
@@ -184,7 +184,7 @@
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_004', Level.LEVEL0, (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_004';
-      creatImageSource(done,testName ,'AllAuxiliaryPictures_exclude_fragment.jpg', async (imageSource) => {
+      creatImageSource(done,testName ,'AllAuxiliaryPictures.jpg', async (imageSource) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
