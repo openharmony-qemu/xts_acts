@@ -40,7 +40,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0001
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0001
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0001
      * @tc.desc    Test toString with integer 0
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -56,7 +56,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0002
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0002
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0002
      * @tc.desc    Test toString with undefined (should convert to NaN)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -70,7 +70,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0003
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0003
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0003
      * @tc.desc    Test toString with NaN
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -83,7 +83,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0004
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0004
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0004
      * @tc.desc    Test toString with positive infinity
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -96,7 +96,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0005
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0005
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0005
      * @tc.desc    Test toString with negative infinity
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -109,7 +109,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0006
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0006
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0006
      * @tc.desc    Test toString with double type values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -125,7 +125,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0007
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0007
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0007
      * @tc.desc    Test toString with Number.MAX_VALUE
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -138,7 +138,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0008
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0008
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0008
      * @tc.desc    Test toString with Number.MIN_VALUE
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -151,7 +151,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0009
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0009
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0009
      * @tc.desc    Test toString with Number.EPSILON
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -164,7 +164,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0010
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0010
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0010
      * @tc.desc    Test toString with Number.MAX_SAFE_INTEGER
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -177,7 +177,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0011
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0011
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0011
      * @tc.desc    Test toString with byte range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -199,7 +199,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0012
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0012
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0012
      * @tc.desc    Test toString with short range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -221,7 +221,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0013
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0013
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0013
      * @tc.desc    Test toString with int range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -243,7 +243,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0014
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0014
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0014
      * @tc.desc    Test toString with long range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -260,7 +260,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0015
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0015
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0015
      * @tc.desc    Test toString with float range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -284,7 +284,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0016
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0016
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0016
      * @tc.desc    Test toString with double range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -308,7 +308,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0017
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0017
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0017
      * @tc.desc    Test toString with char range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -330,7 +330,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0018
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0018
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0018
      * @tc.desc    Test toString with hex values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -353,7 +353,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0019
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0019
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0019
      * @tc.desc    Test toString with octal values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -371,7 +371,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0020
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0020
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0020
      * @tc.desc    Test toString with exponentiation
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -389,7 +389,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0021
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0021
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0021
      * @tc.desc    Test toString with scientific notation
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -415,7 +415,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0022
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0022
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0022
      * @tc.desc    Test toString with bigint values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -436,7 +436,7 @@ export default function builtinsStringBuilderTestToString() {
     });
     /**
      * @tc.name    builtinsStringBuilderTestToString0023
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0023
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0023
      * @tc.desc    Test toString for float with typical float range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -458,7 +458,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0024
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0024
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0024
      * @tc.desc    Test toString for float with hex representation values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -473,7 +473,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0025
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0025
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0025
      * @tc.desc    Test toString for float with scientific notation
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -495,7 +495,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0026
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0026
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0026
      * @tc.desc    Test toString for float with precision edge cases
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -517,7 +517,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0027
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0027
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0027
      * @tc.desc    Test toString for float with negative float range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -536,7 +536,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0028
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0028
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0028
      * @tc.desc    Test toString for float with overflow simulation (Value outside float range)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -555,7 +555,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0029
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0029
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0029
      * @tc.desc    Test toString for float with integer types that fit in float
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -580,7 +580,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0030
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0030
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0030
      * @tc.desc    Test toString for float with different radix/format values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -604,7 +604,7 @@ export default function builtinsStringBuilderTestToString() {
     });
     /**
      * @tc.name    builtinsStringBuilderTestToString0031
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0031
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0031
      * @tc.desc    Test toString for long with basic integer values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -624,7 +624,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0032
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0032
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0032
      * @tc.desc    Test toString for long with long range boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -643,7 +643,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0033
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0033
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0033
      * @tc.desc    Test toString for long with overflow values (beyond long range)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -662,7 +662,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0034
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0034
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0034
      * @tc.desc    Test toString for long with different radix representations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -684,7 +684,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0035
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0035
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0035
      * @tc.desc    Test toString for long with large bigint values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -706,7 +706,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0036
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0036
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0036
      * @tc.desc    Test toString for long with integer types that fit in long
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -731,7 +731,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0037
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0037
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0037
      * @tc.desc    Test toString for long with scientific notation like values (as number)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -750,7 +750,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0038
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0038
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0038
      * @tc.desc    Test toString for long with zero and negative zero edge cases
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -769,7 +769,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0039
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0039
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0039
      * @tc.desc    Test toString for long with very large numbers (beyond 64-bit)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -788,7 +788,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0040
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0040
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0040
      * @tc.desc    Test toString for long with mixed operations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -813,7 +813,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0041
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0041
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0041
      * @tc.desc    Test toString for int with basic integer values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -833,7 +833,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0042
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0042
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0042
      * @tc.desc    Test toString for int with int range boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -852,7 +852,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0043
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0043
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0043
      * @tc.desc    Test toString for int with overflow values (beyond int range)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -871,7 +871,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0044
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0044
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0044
      * @tc.desc    Test toString for int with different radix representations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -896,7 +896,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0045
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0045
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0045
      * @tc.desc    Test toString for int with byte and short range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -921,7 +921,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0046
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0046
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0046
      * @tc.desc    Test toString for int with zero and negative zero
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -940,7 +940,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0047
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0047
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0047
      * @tc.desc    Test toString for int with scientific notation input
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -962,7 +962,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0048
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0048
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0048
      * @tc.desc    Test toString for int with exponent operator
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -984,7 +984,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0049
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0049
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0049
      * @tc.desc    Test toString for int with char range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1015,7 +1015,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0050
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0050
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0050
      * @tc.desc    Test toString for int with large number that fits in int
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1037,7 +1037,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0051
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0051
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0051
      * @tc.desc    Test toString for int with mixed arithmetic operations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1065,7 +1065,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0052
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0052
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0052
      * @tc.desc    Test toString for int with Math function results
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1096,7 +1096,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0053
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0053
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0053
      * @tc.desc    Test toString for int with special numeric values (should handle gracefully)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1118,7 +1118,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0054
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0054
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0054
      * @tc.desc    Test toString for short with basic short range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1138,7 +1138,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0055
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0055
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0055
      * @tc.desc    Test toString for short with short range boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1157,7 +1157,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0056
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0056
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0056
      * @tc.desc    Test toString for short with overflow values (beyond short range)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1176,7 +1176,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0057
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0057
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0057
      * @tc.desc    Test toString for short with byte range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1198,7 +1198,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0058
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0058
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0058
      * @tc.desc    Test toString for short with different radix representations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1223,7 +1223,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0059
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0059
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0059
      * @tc.desc    Test toString for short with positive and negative edge values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1254,7 +1254,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0060
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0060
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0060
      * @tc.desc    Test toString for short with arithmetic operations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1282,7 +1282,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0061
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0061
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0061
      * @tc.desc    Test toString for short with Math function results
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1310,7 +1310,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0062
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0062
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0062
      * @tc.desc    Test toString for short with char range values that fit in short
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1334,7 +1334,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0063
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0063
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0063
      * @tc.desc    Test toString for short with typical usage values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1362,7 +1362,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0064
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0064
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0064
      * @tc.desc    Test toString for short with boundary adjacent values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1390,7 +1390,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0065
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0065
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0065
      * @tc.desc    Test toString for short with scientific notation (should convert to integer)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1415,7 +1415,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0066
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0066
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0066
      * @tc.desc    Test toString for char with basic ASCII characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1440,7 +1440,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0067
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0067
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0067
      * @tc.desc    Test toString for char with char range boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1462,7 +1462,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0068
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0068
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0068
      * @tc.desc    Test toString for char with special control characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1496,7 +1496,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0069
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0069
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0069
      * @tc.desc    Test toString for char with escape sequence characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1524,7 +1524,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0070
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0070
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0070
      * @tc.desc    Test toString for char with full special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1562,7 +1562,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0071
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0071
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0071
      * @tc.desc    Test toString for char with number characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1582,7 +1582,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0072
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0072
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0072
      * @tc.desc    Test toString for char with uppercase letters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1602,7 +1602,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0073
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0073
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0073
      * @tc.desc    Test toString for char with lowercase letters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1622,7 +1622,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0074
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0074
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0074
      * @tc.desc    Test toString for char with Unicode characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1653,7 +1653,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0075
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0075
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0075
      * @tc.desc    Test toString for char with Unicode escape sequences
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1681,7 +1681,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0076
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0076
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0076
      * @tc.desc    Test toString for char with mixed character types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1708,7 +1708,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0077
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0077
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0077
      * @tc.desc    Test toString for char with repeated special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1732,7 +1732,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0078
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0078
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0078
      * @tc.desc    Test toString for byte with basic values within range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1754,7 +1754,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0079
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0079
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0079
      * @tc.desc    Test toString for byte with boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1772,7 +1772,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0080
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0080
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0080
      * @tc.desc    Test toString for byte with overflow values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1792,7 +1792,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0081
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0081
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0081
      * @tc.desc    Test toString for special number values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1820,7 +1820,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0082
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0082
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0082
      * @tc.desc    Test toString for floating point values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1842,7 +1842,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0083
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0083
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0083
      * @tc.desc    Test toString for hex, octal and scientific notation
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1864,7 +1864,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0084
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0084
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0084
      * @tc.desc    Test toString for typical byte values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1886,7 +1886,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0085
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0085
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0085
      * @tc.desc    Test toString for negative byte values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1908,7 +1908,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0086
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0086
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0086
      * @tc.desc    Test toString for extreme values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1941,7 +1941,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0087
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0087
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0087
      * @tc.desc    Test toString for sequence of values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1966,7 +1966,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0088
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0088
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0088
      * @tc.desc    Test toString with different radix
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1990,7 +1990,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0089
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0089
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0089
      * @tc.desc    Test toString for Number object
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2010,7 +2010,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0090
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0090
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0090
      * @tc.desc    Test toString for mathematical operations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2032,7 +2032,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0091
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0091
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0091
      * @tc.desc    Test toString for boolean with true and false values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2052,7 +2052,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0092
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0092
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0092
      * @tc.desc    Test toString for boolean with Boolean object
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2077,7 +2077,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0093
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0093
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0093
      * @tc.desc    Test toString for boolean with values that convert to false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2099,7 +2099,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0094
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0094
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0094
      * @tc.desc    Test toString for boolean with values that convert to true
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2119,7 +2119,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0095
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0095
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0095
      * @tc.desc    Test toString for boolean with logical NOT operator
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2140,7 +2140,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0096
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0096
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0096
      * @tc.desc    Test toString for boolean with comparison operations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2163,7 +2163,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0097
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0097
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0097
      * @tc.desc    Test toString for boolean with logical operations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2192,7 +2192,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0098
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0098
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0098
      * @tc.desc    Test toString for boolean with double logical NOT
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2224,7 +2224,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0099
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0099
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0099
      * @tc.desc    Test toString for boolean with conditional (ternary) operator
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2244,7 +2244,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0100
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0100
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0100
      * @tc.desc    Test toString for boolean with equality operators
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2262,7 +2262,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0101
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0101
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0101
      * @tc.desc    Test toString for boolean with strict equality operators
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2279,7 +2279,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0102
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0102
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0102
      * @tc.desc    Test toString for boolean with Boolean() function
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2313,7 +2313,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0103
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0103
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0103
      * @tc.desc    Test toString for boolean with complex expressions
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2338,7 +2338,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0104
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0104
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0104
      * @tc.desc    Test toString for boolean in conditional statements
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2367,7 +2367,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0105
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0105
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0105
      * @tc.desc    Test StringBuilder toString with empty builder
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2382,7 +2382,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0106
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0106
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0106
      * @tc.desc    Test StringBuilder toString with basic strings
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2400,7 +2400,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0107
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0107
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0107
      * @tc.desc    Test StringBuilder toString with special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2417,7 +2417,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0108
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0108
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0108
      * @tc.desc    Test StringBuilder toString with ASCII characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2437,7 +2437,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0109
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0109
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0109
      * @tc.desc    Test StringBuilder toString with repeated special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2454,7 +2454,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0110
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0110
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0110
      * @tc.desc    Test StringBuilder toString with escape sequences
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2482,7 +2482,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0111
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0111
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0111
      * @tc.desc    Test StringBuilder toString with emoji and Unicode characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2510,7 +2510,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0112
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0112
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0112
      * @tc.desc    Test StringBuilder toString with Unicode escape sequences
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2538,7 +2538,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0113
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0113
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0113
      * @tc.desc    Test StringBuilder toString with number conversions
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2567,7 +2567,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0114
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0114
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0114
      * @tc.desc    Test StringBuilder toString with large string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2590,7 +2590,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0115
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0115
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0115
      * @tc.desc    Test StringBuilder toString with clear and reuse
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2611,7 +2611,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0116
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0116
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0116
      * @tc.desc    Test StringBuilder toString with chaining append calls
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2634,7 +2634,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0117
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0117
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0117
      * @tc.desc    Test StringBuilder toString with edge cases
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2664,7 +2664,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0118
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0118
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0118
      * @tc.desc    Test StringBuilder append with basic double values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2684,7 +2684,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0119
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0119
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0119
      * @tc.desc    Test StringBuilder append with integer double values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2704,7 +2704,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0120
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0120
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0120
      * @tc.desc    Test StringBuilder append with special double values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2729,7 +2729,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0121
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0121
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0121
      * @tc.desc    Test StringBuilder append with extreme double values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2755,7 +2755,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0122
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0122
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0122
      * @tc.desc    Test StringBuilder append with byte range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2780,7 +2780,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0123
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0123
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0123
      * @tc.desc    Test StringBuilder append with short range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2803,7 +2803,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0124
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0124
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0124
      * @tc.desc    Test StringBuilder append with int range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2826,7 +2826,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0125
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0125
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0125
      * @tc.desc    Test StringBuilder append with long range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2845,7 +2845,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0126
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0126
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0126
      * @tc.desc    Test StringBuilder append with different number representations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2876,7 +2876,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0127
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0127
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0127
      * @tc.desc    Test StringBuilder append with precision and rounding
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2902,7 +2902,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0128
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0128
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0128
      * @tc.desc    Test StringBuilder append with mathematical operations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2934,7 +2934,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0129
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0129
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0129
      * @tc.desc    Test StringBuilder append with overflow values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2965,7 +2965,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0130
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0130
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0130
      * @tc.desc    Test StringBuilder append with chaining calls
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -2988,7 +2988,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0131
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0131
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0131
      * @tc.desc    Test StringBuilder append with mixed types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -3010,7 +3010,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0132
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0132
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0132
      * @tc.desc    Test StringBuilder append with boundary edge cases
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -3036,7 +3036,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0133
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0133
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0133
      * @tc.desc    Test StringBuilder append with array of double values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -3056,7 +3056,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0134
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0134
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0134
      * @tc.desc    Test StringBuilder append with special array objects
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -3080,7 +3080,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0135
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0135
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0135
      * @tc.desc    Test StringBuilder append with primitive wrappers
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -3103,7 +3103,7 @@ export default function builtinsStringBuilderTestToString() {
 
     /**
      * @tc.name    builtinsStringBuilderTestToString0136
-     * @tc.number  BUILTINS_STRING_BUILDER_TO_STRING_TEST_0136
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_TO_STRING_0136
      * @tc.desc    Test StringBuilder append with array objects
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST

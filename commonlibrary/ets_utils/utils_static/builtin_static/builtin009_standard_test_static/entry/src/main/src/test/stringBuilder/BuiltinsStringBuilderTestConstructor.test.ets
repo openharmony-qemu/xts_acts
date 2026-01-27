@@ -15,8 +15,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-
-
 export default function builtinsStringBuilderTestConstructor() {
   describe('BuiltinsStringBuilderTestConstructor', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -40,16 +38,15 @@ export default function builtinsStringBuilderTestConstructor() {
       // This API supports only one parameter: clear action function.
     })
 
-
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor0100
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_STRING_EMPTY_TEST0100
+     * @tc.name    builtinsStringBuilderTestConstructor0001
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0001
      * @tc.desc    Test StringBuilder append(String) with empty string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append("");
       const result: string = resultBuilder.toString();
@@ -57,14 +54,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor0200
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_STRING_SPECIAL_CHARS_TEST0200
+     * @tc.name    builtinsStringBuilderTestConstructor0002
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0002
      * @tc.desc    Test StringBuilder append(String) with special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialChars: string = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(specialChars);
@@ -73,14 +70,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor0300
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_STRING_ASCII_TEST0300
+     * @tc.name    builtinsStringBuilderTestConstructor0003
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0003
      * @tc.desc    Test StringBuilder append(String) with full ASCII range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const asciiString: string = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(asciiString);
@@ -89,14 +86,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor0400
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_STRING_DOUBLE_SPECIAL_TEST0400
+     * @tc.name    builtinsStringBuilderTestConstructor0004
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0004
      * @tc.desc    Test StringBuilder append(String) with double special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const doubleSpecial: string = "!!\"\"##$$%%&&''(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~";
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(doubleSpecial);
@@ -105,14 +102,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor0500
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_STRING_ESCAPE_CHARS_TEST0500
+     * @tc.name    builtinsStringBuilderTestConstructor0005
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0005
      * @tc.desc    Test StringBuilder append(String) with escape characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const escapeString: string = "\\a\\b\\f\\n\\r\\t\\v\\\\\\'\\\"\\?\\0\\101\\x42";
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(escapeString);
@@ -121,14 +118,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor0600
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_STRING_EMOJI_TEST0600
+     * @tc.name    builtinsStringBuilderTestConstructor0006
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0006
      * @tc.desc    Test StringBuilder append(String) with emoji characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const emojiString: string = "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴";
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(emojiString);
@@ -137,14 +134,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor0700
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_STRING_EMOJI_UNICODE_TEST0700
+     * @tc.name    builtinsStringBuilderTestConstructor0007
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0007
      * @tc.desc    Test StringBuilder append(String) with emoji Unicode codes
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const unicodeEmoji: string = "\ud83d\udc46\ud83d\udc7f\ud83d\udc40\ud83d\udcaf\ud83c\udf85\ud83d\ude3c\ud83d\udd27\ud83d\udc87\ud83e\udd3c\u200d\u2642\ufe0f\ud83d\udee2\ud83c\udc04\ud83c\udff4";
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(unicodeEmoji);
@@ -153,14 +150,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor0800
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_STRING_INVALID_UNICODE_TEST0800
+     * @tc.name    builtinsStringBuilderTestConstructor0008
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0008
      * @tc.desc    Test StringBuilder append(String) with invalid Unicode codes
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const invalidUnicode: string = "\udc04\ud83d\udff4";
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(invalidUnicode);
@@ -169,14 +166,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor0900
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_STRING_KEYWORDS_TEST0900
+     * @tc.name    builtinsStringBuilderTestConstructor0009
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0009
      * @tc.desc    Test StringBuilder append(String) with keyword strings
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append("0")
         .append("NaN")
@@ -186,14 +183,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor1000
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_STRING_MIXED_TEST1000
+     * @tc.name    builtinsStringBuilderTestConstructor0010
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0010
      * @tc.desc    Test StringBuilder append(String) with mixed content
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append("Hello")
         .append(" ")
@@ -204,14 +201,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor1100
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_STRING_LONG_TEST1100
+     * @tc.name    builtinsStringBuilderTestConstructor0011
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0011
      * @tc.desc    Test StringBuilder append(String) with long string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const longString: string = "a".repeat(1000);
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(longString);
@@ -220,14 +217,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor1200
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_STRING_SLICE_TEST1200
+     * @tc.name    builtinsStringBuilderTestConstructor0012
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0012
      * @tc.desc    Test StringBuilder append(String) with sliced string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const str: string = "{k1:value1,k2:value2}";
       const slicedStr: string = str.substring(0, str.length - 2);
       const builder: StringBuilder = new StringBuilder();
@@ -237,14 +234,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor1300
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_STRING_CHAINED_TEST1300
+     * @tc.name    builtinsStringBuilderTestConstructor0013
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0013
      * @tc.desc    Test StringBuilder append(String) with chained calls
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append("First")
         .append("Second")
@@ -256,14 +253,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor1400
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_STRING_WITH_OTHER_TYPES_TEST1400
+     * @tc.name    builtinsStringBuilderTestConstructor0014
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0014
      * @tc.desc    Test StringBuilder append(String) mixed with other types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append("Count: ")
         .append(100 as byte)
@@ -278,14 +275,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor1500
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_STRING_EMPTY_CHAIN_TEST1500
+     * @tc.name    builtinsStringBuilderTestConstructor0015
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0015
      * @tc.desc    Test StringBuilder append(String) with empty strings in chain
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append("")
         .append("Hello")
@@ -297,57 +294,56 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor1600
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_STRING_ONLY_TEST1600
+     * @tc.name    builtinsStringBuilderTestConstructor0016
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0016
      * @tc.desc    Test StringBuilder append(String) only
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append("SingleString");
       const result: string = resultBuilder.toString();
       expect(result).assertEqual('SingleString');
     });/**
 
-
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor1700
-     * @tc.number  BUILTINS_STRING_BUILDER_CONCAT_STRINGS_EMPTY_TEST1700
+     * @tc.name    builtinsStringBuilderTestConstructor0017
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0017
      * @tc.desc    Test StringBuilder concatStrings with empty strings
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const result: string = StringBuilder.concatStrings("", "");
       expect(result).assertEqual('');
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor1800
-     * @tc.number  BUILTINS_STRING_BUILDER_CONCAT_STRINGS_SPECIAL_CHARS_TEST1800
+     * @tc.name    builtinsStringBuilderTestConstructor0018
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0018
      * @tc.desc    Test StringBuilder concatStrings with special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialChars: string = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
       const result: string = StringBuilder.concatStrings(specialChars, specialChars);
       expect(result).assertEqual(specialChars + specialChars);
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor1900
-     * @tc.number  BUILTINS_STRING_BUILDER_CONCAT_STRINGS_ASCII_TEST1900
+     * @tc.name    builtinsStringBuilderTestConstructor0019
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0019
      * @tc.desc    Test StringBuilder concatStrings with full ASCII range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const asciiPart1: string = "!\"#$%&'()*+,-./0123456789:;<=>?@";
       const asciiPart2: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
       const result: string = StringBuilder.concatStrings(asciiPart1, asciiPart2);
@@ -355,14 +351,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor2000
-     * @tc.number  BUILTINS_STRING_BUILDER_CONCAT_STRINGS_ESCAPE_CHARS_TEST2000
+     * @tc.name    builtinsStringBuilderTestConstructor0020
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0020
      * @tc.desc    Test StringBuilder concatStrings with escape characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const escapeString1: string = "\\a\\b\\f\\n\\r\\t\\v";
       const escapeString2: string = "\\\\\\'\\\"\\?\\0\\101\\x42";
       const result: string = StringBuilder.concatStrings(escapeString1, escapeString2);
@@ -370,14 +366,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor2100
-     * @tc.number  BUILTINS_STRING_BUILDER_CONCAT_STRINGS_EMOJI_TEST2100
+     * @tc.name    builtinsStringBuilderTestConstructor0021
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0021
      * @tc.desc    Test StringBuilder concatStrings with emoji characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const emoji1: string = "👆👿👀💯🎅😼";
       const emoji2: string = "🔧💇🤼‍♂️🛢🀄🏴";
       const result: string = StringBuilder.concatStrings(emoji1, emoji2);
@@ -385,14 +381,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor2200
-     * @tc.number  BUILTINS_STRING_BUILDER_CONCAT_STRINGS_UNICODE_TEST2200
+     * @tc.name    builtinsStringBuilderTestConstructor0022
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0022
      * @tc.desc    Test StringBuilder concatStrings with Unicode codes
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const unicode1: string = "\ud83d\udc46\ud83d\udc7f\ud83d\udc40\ud83d\udcaf";
       const unicode2: string = "\ud83c\udf85\ud83d\ude3c\ud83d\udd27\ud83d\udc87";
       const result: string = StringBuilder.concatStrings(unicode1, unicode2);
@@ -400,14 +396,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor2300
-     * @tc.number  BUILTINS_STRING_BUILDER_CONCAT_STRINGS_INVALID_UNICODE_TEST2300
+     * @tc.name    builtinsStringBuilderTestConstructor0023
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0023
      * @tc.desc    Test StringBuilder concatStrings with invalid Unicode codes
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const invalidUnicode: string = "\udc04\ud83d\udff4";
       const normalString: string = "Hello";
       const result: string = StringBuilder.concatStrings(normalString, invalidUnicode);
@@ -415,14 +411,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor2400
-     * @tc.number  BUILTINS_STRING_BUILDER_CONCAT_STRINGS_KEYWORDS_TEST2400
+     * @tc.name    builtinsStringBuilderTestConstructor0024
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0024
      * @tc.desc    Test StringBuilder concatStrings with keyword strings
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const result1: string = StringBuilder.concatStrings("0", "NaN");
       expect(result1).assertEqual('0NaN');
 
@@ -431,27 +427,27 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor2500
-     * @tc.number  BUILTINS_STRING_BUILDER_CONCAT_STRINGS_NORMAL_TEST2500
+     * @tc.name    builtinsStringBuilderTestConstructor0025
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0025
      * @tc.desc    Test StringBuilder concatStrings with normal strings
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const result: string = StringBuilder.concatStrings("Hello ", "World!");
       expect(result).assertEqual('Hello World!');
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor2600
-     * @tc.number  BUILTINS_STRING_BUILDER_CONCAT_STRINGS_LONG_TEST2600
+     * @tc.name    builtinsStringBuilderTestConstructor0026
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0026
      * @tc.desc    Test StringBuilder concatStrings with long strings
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const longString1: string = "a".repeat(500);
       const longString2: string = "b".repeat(500);
       const result: string = StringBuilder.concatStrings(longString1, longString2);
@@ -459,14 +455,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor2700
-     * @tc.number  BUILTINS_STRING_BUILDER_CONCAT_STRINGS_SLICE_TEST2700
+     * @tc.name    builtinsStringBuilderTestConstructor0027
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0027
      * @tc.desc    Test StringBuilder concatStrings with sliced strings
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const str: string = "{k1:value1,k2:value2}";
       const slicedStr1: string = str.substring(0, 10);
       const slicedStr2: string = str.substring(10);
@@ -475,27 +471,27 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor2800
-     * @tc.number  BUILTINS_STRING_BUILDER_CONCAT_STRINGS_MIXED_TEST2800
+     * @tc.name    builtinsStringBuilderTestConstructor0028
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0028
      * @tc.desc    Test StringBuilder concatStrings with mixed content
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const result: string = StringBuilder.concatStrings("Prefix: ", "123abc👆");
       expect(result).assertEqual('Prefix: 123abc👆');
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor2900
-     * @tc.number  BUILTINS_STRING_BUILDER_CONCAT_STRINGS_REVERSE_TEST2900
+     * @tc.name    builtinsStringBuilderTestConstructor0029
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0029
      * @tc.desc    Test StringBuilder concatStrings with reversed order
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const result1: string = StringBuilder.concatStrings("Hello", "World");
       const result2: string = StringBuilder.concatStrings("World", "Hello");
       expect(result1).assertEqual('HelloWorld');
@@ -503,14 +499,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor3000
-     * @tc.number  BUILTINS_STRING_BUILDER_CONCAT_STRINGS_COMPLEX_TEST3000
+     * @tc.name    builtinsStringBuilderTestConstructor0030
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0030
      * @tc.desc    Test StringBuilder concatStrings with complex combination
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const result1: string = StringBuilder.concatStrings("", "NotEmpty");
       expect(result1).assertEqual('NotEmpty');
 
@@ -522,27 +518,27 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor3100
-     * @tc.number  BUILTINS_STRING_BUILDER_CONCAT_STRINGS_WHITESPACE_TEST3100
+     * @tc.name    builtinsStringBuilderTestConstructor0031
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0031
      * @tc.desc    Test StringBuilder concatStrings with whitespace characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const result: string = StringBuilder.concatStrings("Hello\t", "\nWorld");
       expect(result).assertEqual('Hello\t\nWorld');
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor3200
-     * @tc.number  BUILTINS_STRING_BUILDER_CONCAT_STRINGS_NUMBERS_TEST3200
+     * @tc.name    builtinsStringBuilderTestConstructor0032
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0032
      * @tc.desc    Test StringBuilder concatStrings with number strings
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const result: string = StringBuilder.concatStrings("123", "456");
       expect(result).assertEqual('123456');
 
@@ -551,28 +547,28 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor3300
-     * @tc.number  BUILTINS_STRING_BUILDER_STRING_LENGTH_EMPTY_TEST3300
+     * @tc.name    builtinsStringBuilderTestConstructor0033
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0033
      * @tc.desc    Test StringBuilder stringLength with empty builder
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const length: int = builder.stringLength;
       expect(length).assertEqual(0);
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor3400
-     * @tc.number  BUILTINS_STRING_BUILDER_STRING_LENGTH_SIMPLE_TEST3400
+     * @tc.name    builtinsStringBuilderTestConstructor0034
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0034
      * @tc.desc    Test StringBuilder stringLength with simple string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor3400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       builder.append("Hello");
       const length: int = builder.stringLength;
@@ -580,14 +576,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor3500
-     * @tc.number  BUILTINS_STRING_BUILDER_STRING_LENGTH_SPECIAL_CHARS_TEST3500
+     * @tc.name    builtinsStringBuilderTestConstructor0035
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0035
      * @tc.desc    Test StringBuilder stringLength with special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor3500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const specialChars: string = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
       builder.append(specialChars);
@@ -596,14 +592,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor3600
-     * @tc.number  BUILTINS_STRING_BUILDER_STRING_LENGTH_EMOJI_TEST3600
+     * @tc.name    builtinsStringBuilderTestConstructor0036
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0036
      * @tc.desc    Test StringBuilder stringLength with emoji characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor3600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const emojiString: string = "👆👿👀💯🎅😼";
       builder.append(emojiString);
@@ -612,14 +608,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor3700
-     * @tc.number  BUILTINS_STRING_BUILDER_STRING_LENGTH_ESCAPE_CHARS_TEST3700
+     * @tc.name    builtinsStringBuilderTestConstructor0037
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0037
      * @tc.desc    Test StringBuilder stringLength with escape characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor3700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const escapeString: string = "\\n\\t\\r\\\\";
       builder.append(escapeString);
@@ -628,14 +624,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor3800
-     * @tc.number  BUILTINS_STRING_BUILDER_STRING_LENGTH_INCREMENTAL_TEST3800
+     * @tc.name    builtinsStringBuilderTestConstructor0038
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0038
      * @tc.desc    Test StringBuilder stringLength with incremental appends
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor3800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
 
       expect(builder.stringLength).assertEqual(0);
@@ -654,14 +650,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor3900
-     * @tc.number  BUILTINS_STRING_BUILDER_STRING_LENGTH_MIXED_TYPES_TEST3900
+     * @tc.name    builtinsStringBuilderTestConstructor0039
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0039
      * @tc.desc    Test StringBuilder stringLength with mixed type appends
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor3900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
 
       builder.append("Count: ");
@@ -677,14 +673,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor4000
-     * @tc.number  BUILTINS_STRING_BUILDER_STRING_LENGTH_LONG_STRING_TEST4000
+     * @tc.name    builtinsStringBuilderTestConstructor0040
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0040
      * @tc.desc    Test StringBuilder stringLength with long string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor4000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const longString: string = "a".repeat(1000);
       builder.append(longString);
@@ -693,14 +689,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor4100
-     * @tc.number  BUILTINS_STRING_BUILDER_STRING_LENGTH_UNICODE_TEST4100
+     * @tc.name    builtinsStringBuilderTestConstructor0041
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0041
      * @tc.desc    Test StringBuilder stringLength with Unicode characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor4100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const unicodeString: string = "\ud83d\udc46\ud83d\udc7f\ud83d\udc40\ud83d\udcaf";
       builder.append(unicodeString);
@@ -708,16 +704,15 @@ export default function builtinsStringBuilderTestConstructor() {
       expect(length).assertEqual(unicodeString.length);
     });
 
-
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor4200
-     * @tc.number  BUILTINS_STRING_BUILDER_STRING_LENGTH_ASCII_TEST4200
+     * @tc.name    builtinsStringBuilderTestConstructor0042
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0042
      * @tc.desc    Test StringBuilder stringLength with full ASCII range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor4200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const asciiString: string = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
       builder.append(asciiString);
@@ -726,14 +721,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor4300
-     * @tc.number  BUILTINS_STRING_BUILDER_STRING_LENGTH_CLEAR_TEST4300
+     * @tc.name    builtinsStringBuilderTestConstructor0043
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0043
      * @tc.desc    Test StringBuilder stringLength after multiple operations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor4300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
 
       builder.append("Hello");
@@ -747,14 +742,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor4400
-     * @tc.number  BUILTINS_STRING_BUILDER_STRING_LENGTH_NUMBERS_ONLY_TEST4400
+     * @tc.name    builtinsStringBuilderTestConstructor0044
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0044
      * @tc.desc    Test StringBuilder stringLength with number strings only
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor4400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
 
       builder.append("123");
@@ -766,14 +761,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor4500
-     * @tc.number  BUILTINS_STRING_BUILDER_STRING_LENGTH_MULTIPLE_BUILDERS_TEST4500
+     * @tc.name    builtinsStringBuilderTestConstructor0045
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0045
      * @tc.desc    Test StringBuilder stringLength with multiple builders
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor4500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder1: StringBuilder = new StringBuilder();
       builder1.append("First");
       expect(builder1.stringLength).assertEqual(5);
@@ -786,14 +781,14 @@ export default function builtinsStringBuilderTestConstructor() {
       expect(builder3.stringLength).assertEqual(0);
     });
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor4600
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_EMPTY_TEST4600
+     * @tc.name    builtinsStringBuilderTestConstructor0046
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0046
      * @tc.desc    Test StringBuilder constructor with empty string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor4600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder("");
       const result: string = builder.toString();
       const length: int = builder.stringLength;
@@ -802,14 +797,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor4700
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_NORMAL_TEST4700
+     * @tc.name    builtinsStringBuilderTestConstructor0047
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0047
      * @tc.desc    Test StringBuilder constructor with normal string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor4700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder("Hello World");
       const result: string = builder.toString();
       const length: int = builder.stringLength;
@@ -818,14 +813,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor4800
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_SPECIAL_CHARS_TEST4800
+     * @tc.name    builtinsStringBuilderTestConstructor0048
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0048
      * @tc.desc    Test StringBuilder constructor with special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor4800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialChars: string = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
       const builder: StringBuilder = new StringBuilder(specialChars);
       const result: string = builder.toString();
@@ -834,16 +829,15 @@ export default function builtinsStringBuilderTestConstructor() {
       expect(length).assertEqual(specialChars.length);
     });
 
-
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor4900
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_EMOJI_TEST4900
+     * @tc.name    builtinsStringBuilderTestConstructor0049
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0049
      * @tc.desc    Test StringBuilder constructor with emoji characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor4900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const emojiString: string = "👆👿👀💯🎅😼";
       const builder: StringBuilder = new StringBuilder(emojiString);
       const result: string = builder.toString();
@@ -853,14 +847,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor5000
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_UNICODE_TEST5000
+     * @tc.name    builtinsStringBuilderTestConstructor0050
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0050
      * @tc.desc    Test StringBuilder constructor with Unicode codes
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor5000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const unicodeString: string = "\ud83d\udc46\ud83d\udc7f\ud83d\udc40\ud83d\udcaf";
       const builder: StringBuilder = new StringBuilder(unicodeString);
       const result: string = builder.toString();
@@ -870,14 +864,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor5100
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_ESCAPE_CHARS_TEST5100
+     * @tc.name    builtinsStringBuilderTestConstructor0051
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0051
      * @tc.desc    Test StringBuilder constructor with escape characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor5100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const escapeString: string = "\\n\\t\\r\\\\\\\"\\'";
       const builder: StringBuilder = new StringBuilder(escapeString);
       const result: string = builder.toString();
@@ -887,14 +881,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor5200
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_ASCII_TEST5200
+     * @tc.name    builtinsStringBuilderTestConstructor0052
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0052
      * @tc.desc    Test StringBuilder constructor with full ASCII range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor5200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const asciiString: string = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
       const builder: StringBuilder = new StringBuilder(asciiString);
       const result: string = builder.toString();
@@ -904,14 +898,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor5300
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_KEYWORDS_TEST5300
+     * @tc.name    builtinsStringBuilderTestConstructor0053
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0053
      * @tc.desc    Test StringBuilder constructor with keyword strings
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor5300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder("0");
       const result: string = builder.toString();
       const length: int = builder.stringLength;
@@ -926,14 +920,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor5400
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_LONG_STRING_TEST5400
+     * @tc.name    builtinsStringBuilderTestConstructor0054
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0054
      * @tc.desc    Test StringBuilder constructor with long string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor5400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const longString: string = "a".repeat(1000);
       const builder: StringBuilder = new StringBuilder(longString);
       const result: string = builder.toString();
@@ -943,14 +937,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor5500
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_SLICE_STRING_TEST5500
+     * @tc.name    builtinsStringBuilderTestConstructor0055
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0055
      * @tc.desc    Test StringBuilder constructor with sliced string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor5500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const originalString: string = "{k1:value1,k2:value2}";
       const slicedString: string = originalString.substring(0, originalString.length - 2);
       const builder: StringBuilder = new StringBuilder(slicedString);
@@ -961,14 +955,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor5600
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_INVALID_UNICODE_TEST5600
+     * @tc.name    builtinsStringBuilderTestConstructor0056
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0056
      * @tc.desc    Test StringBuilder constructor with invalid Unicode codes
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor5600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const invalidUnicode: string = "\udc04\ud83d\udff4";
       const builder: StringBuilder = new StringBuilder(invalidUnicode);
       const result: string = builder.toString();
@@ -978,14 +972,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor5700
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_APPEND_AFTER_TEST5700
+     * @tc.name    builtinsStringBuilderTestConstructor0057
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0057
      * @tc.desc    Test StringBuilder constructor then append more content
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor5700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder("Initial: ");
       builder.append("More Content");
       builder.append(123 as byte);
@@ -998,14 +992,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor5800
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_WHITESPACE_TEST5800
+     * @tc.name    builtinsStringBuilderTestConstructor0058
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0058
      * @tc.desc    Test StringBuilder constructor with whitespace characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor5800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const whitespaceString: string = "  \t\n\r  ";
       const builder: StringBuilder = new StringBuilder(whitespaceString);
       const result: string = builder.toString();
@@ -1015,14 +1009,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor5900
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_NUMBERS_TEST5900
+     * @tc.name    builtinsStringBuilderTestConstructor0059
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0059
      * @tc.desc    Test StringBuilder constructor with number strings
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor5900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const numberString: string = "123.456-789";
       const builder: StringBuilder = new StringBuilder(numberString);
       const result: string = builder.toString();
@@ -1032,14 +1026,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor6000
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_CHARS_EMPTY_TEST6000
+     * @tc.name    builtinsStringBuilderTestConstructor0060
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0060
      * @tc.desc    Test StringBuilder constructor with empty char array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor6000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const charArray: char[] = [];
       const builder: StringBuilder = new StringBuilder(charArray);
       const result: string = builder.toString();
@@ -1048,14 +1042,14 @@ export default function builtinsStringBuilderTestConstructor() {
       expect(length).assertEqual(0);
     });
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor6100
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_FIXED_CHARS_EMPTY_TEST6100
+     * @tc.name    builtinsStringBuilderTestConstructor0061
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0061
      * @tc.desc    Test StringBuilder constructor with empty FixedArray<char>
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor6100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder("");
       const result: string = builder.toString();
       const length: int = result.length;
@@ -1064,14 +1058,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor6200
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_FIXED_CHARS_SIMPLE_TEST6200
+     * @tc.name    builtinsStringBuilderTestConstructor0062
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0062
      * @tc.desc    Test StringBuilder constructor with simple FixedArray<char>
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor6200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder("Hello");
       const result: string = builder.toString();
       const length: int = result.length;
@@ -1080,14 +1074,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor6300
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_FIXED_CHARS_HELLO_WORLD_TEST6300
+     * @tc.name    builtinsStringBuilderTestConstructor0063
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0063
      * @tc.desc    Test StringBuilder constructor with HelloWorld FixedArray<char>
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor6300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const helloWorldStr: string = "HelloWorld123?";
       const builder: StringBuilder = new StringBuilder(helloWorldStr);
       const result: string = builder.toString();
@@ -1097,14 +1091,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor6400
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_FIXED_CHARS_WITH_ZEROS_TEST6400
+     * @tc.name    builtinsStringBuilderTestConstructor0064
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0064
      * @tc.desc    Test StringBuilder constructor with FixedArray<char> containing zeros
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor6400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let testString: string = "HelloWorld";
       for (let i = 0; i < 5; i++) {
         testString += String.fromCharCode(0);
@@ -1125,14 +1119,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor6500
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_FIXED_CHARS_FULL_RANGE_TEST6500
+     * @tc.name    builtinsStringBuilderTestConstructor0065
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0065
      * @tc.desc    Test StringBuilder constructor with full char range in FixedArray<char>
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor6500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const charCodes: number[] = [0, 1, 127, 255, 1000, 32767, 65535];
       let testString: string = "";
       for (const code of charCodes) {
@@ -1149,14 +1143,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor6600
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_FIXED_CHARS_SPECIAL_CHARS_TEST6600
+     * @tc.name    builtinsStringBuilderTestConstructor0066
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0066
      * @tc.desc    Test StringBuilder constructor with special characters in FixedArray<char>
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor6600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0066', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialStr: string = "!\"#$%&'()*+,-./";
       const builder: StringBuilder = new StringBuilder(specialStr);
       const result: string = builder.toString();
@@ -1166,14 +1160,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor6700
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_FIXED_CHARS_ASCII_TEST6700
+     * @tc.name    builtinsStringBuilderTestConstructor0067
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0067
      * @tc.desc    Test StringBuilder constructor with ASCII characters in FixedArray<char>
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor6700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const asciiStr: string = "0123456789ABCDEFGHIJabcdefghij";
       const builder: StringBuilder = new StringBuilder(asciiStr);
       const result: string = builder.toString();
@@ -1182,17 +1176,15 @@ export default function builtinsStringBuilderTestConstructor() {
       expect(length).assertEqual(30);
     });
 
-
-
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor6800
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_FIXED_CHARS_APPEND_AFTER_TEST6800
+     * @tc.name    builtinsStringBuilderTestConstructor0068
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0068
      * @tc.desc    Test StringBuilder constructor with FixedArray<char> then append more content
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor6800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder("Start: ");
       builder.append(" Additional Text ");
       builder.append("123");
@@ -1205,14 +1197,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor6900
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_FIXED_CHARS_MIXED_VALUES_TEST6900
+     * @tc.name    builtinsStringBuilderTestConstructor0069
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0069
      * @tc.desc    Test StringBuilder constructor with mixed char values in FixedArray<char>
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor6900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const charCodes: number[] = [10, 32, 65, 97, 255, 1000, 2000, 65535];
       let testString: string = "";
       for (const code of charCodes) {
@@ -1230,14 +1222,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor7000
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_FIXED_CHARS_REPEATED_TEST7000
+     * @tc.name    builtinsStringBuilderTestConstructor0070
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0070
      * @tc.desc    Test StringBuilder constructor with repeated char values in FixedArray<char>
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor7000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const repeatedStr: string = "aaaaabbbcc";
       const builder: StringBuilder = new StringBuilder(repeatedStr);
       const result: string = builder.toString();
@@ -1247,14 +1239,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor7100
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_FIXED_CHARS_SINGLE_CHAR_TEST7100
+     * @tc.name    builtinsStringBuilderTestConstructor0071
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0071
      * @tc.desc    Test StringBuilder constructor with single char in FixedArray<char>
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor7100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder("X");
       const result: string = builder.toString();
       const length: int = result.length;
@@ -1263,14 +1255,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor7200
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_FIXED_CHARS_CONTROL_CHARS_TEST7200
+     * @tc.name    builtinsStringBuilderTestConstructor0072
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0072
      * @tc.desc    Test StringBuilder constructor with control characters in FixedArray<char>
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor7200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const controlCodes: number[] = [7, 8, 9, 10, 11, 12, 13, 27];
       let testString: string = "";
       for (const code of controlCodes) {
@@ -1287,14 +1279,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor7300
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_FIXED_CHARS_NUMERIC_TEST7300
+     * @tc.name    builtinsStringBuilderTestConstructor0073
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0073
      * @tc.desc    Test StringBuilder constructor with numeric char values in FixedArray<char>
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor7300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const numericStr: string = "01234";
       const builder: StringBuilder = new StringBuilder(numericStr);
       const result: string = builder.toString();
@@ -1304,14 +1296,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor7400
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_EMPTY_TEST7400
+     * @tc.name    builtinsStringBuilderTestConstructor0074
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0074
      * @tc.desc    Test StringBuilder default constructor (empty)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor7400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const result: string = builder.toString();
       const length: int = result.length;
@@ -1321,14 +1313,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor7500
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_STRING_TEST7500
+     * @tc.name    builtinsStringBuilderTestConstructor0075
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0075
      * @tc.desc    Test StringBuilder constructor with string parameter
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor7500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testString: string = "Hello World";
       const builder: StringBuilder = new StringBuilder(testString);
       const result: string = builder.toString();
@@ -1338,16 +1330,15 @@ export default function builtinsStringBuilderTestConstructor() {
       expect(length).assertEqual(11);
     });
 
-
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor7600
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_BOOLEAN_TEST7600
+     * @tc.name    builtinsStringBuilderTestConstructor0076
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0076
      * @tc.desc    Test StringBuilder constructor with boolean parameters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor7600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder1: StringBuilder = new StringBuilder(true.toString());
       const result1: string = builder1.toString();
       expect(result1).assertEqual("true");
@@ -1358,14 +1349,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor7700
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_EMPTY_STRING_TEST7700
+     * @tc.name    builtinsStringBuilderTestConstructor0077
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0077
      * @tc.desc    Test StringBuilder constructor with empty string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor7700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder1: StringBuilder = new StringBuilder("");
       const result1: string = builder1.toString();
       expect(result1).assertEqual("");
@@ -1379,14 +1370,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor7800
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_SPECIAL_CHARS_TEST7800
+     * @tc.name    builtinsStringBuilderTestConstructor0078
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0078
      * @tc.desc    Test StringBuilder constructor with special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor7800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialChars: string = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
       const builder: StringBuilder = new StringBuilder(specialChars);
       const result: string = builder.toString();
@@ -1399,17 +1390,15 @@ export default function builtinsStringBuilderTestConstructor() {
       }
     });
 
-
-
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor7900
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_ARRAY_TEST7900
+     * @tc.name    builtinsStringBuilderTestConstructor0079
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0079
      * @tc.desc    Test StringBuilder constructor with array-like inputs
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor7900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const array1: number[] = [72, 101, 108, 108, 111];
       const arrayStr1: string = String.fromCharCode(...array1);
       const builder1: StringBuilder = new StringBuilder(arrayStr1);
@@ -1446,18 +1435,16 @@ export default function builtinsStringBuilderTestConstructor() {
       expect(result4.length).assertEqual(0);
     });
 
-
-
     /**
      *
-     * @tc.name    BuiltinsStringBuilderTestConstructor8000
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_TYPEDARRAY_TEST8000
+     * @tc.name    builtinsStringBuilderTestConstructor0080
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0080
      * @tc.desc    Test StringBuilder constructor with TypedArray inputs
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor8000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const int8Array = new Int8Array([-128, -1, 0, 127, 128]);
       let int8Str: string = "";
       for (let i = 0; i < int8Array.length; i++) {
@@ -1477,18 +1464,17 @@ export default function builtinsStringBuilderTestConstructor() {
       expect(result2.length).assertEqual(4);
       expect(result2.charCodeAt(1)).assertEqual(255);
 
-
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor8100
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_BOUNDARY_TEST8100
+     * @tc.name    builtinsStringBuilderTestConstructor0081
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0081
      * @tc.desc    Test StringBuilder constructor boundary cases
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor8100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const boundaryChars: number[] = [
         0,
         1,
@@ -1514,14 +1500,14 @@ export default function builtinsStringBuilderTestConstructor() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestConstructor8200
-     * @tc.number  BUILTINS_STRING_BUILDER_CONSTRUCTOR_CHAIN_TEST8200
+     * @tc.name    builtinsStringBuilderTestConstructor0082
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_CONSTRUCTOR_0082
      * @tc.desc    Test StringBuilder constructor chaining operations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestConstructor8200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestConstructor0082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder("Start");
       builder.append(" Middle");
       builder.append(" End");

@@ -15,8 +15,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-
-
 export default function builtinsStringBuilderTestAppend() {
   describe('BuiltinsStringBuilderTestAppend', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -41,14 +39,14 @@ export default function builtinsStringBuilderTestAppend() {
     })
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend0100
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_FLOAT_NORMAL_TEST0100
+     * @tc.name    builtinsStringBuilderTestAppend0001
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0001
      * @tc.desc    Test StringBuilder append(float) with normal float values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(0.0);
       const result: string = resultBuilder.toString();
@@ -56,14 +54,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend0200
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_FLOAT_NEGATIVE_TEST0200
+     * @tc.name    builtinsStringBuilderTestAppend0002
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0002
      * @tc.desc    Test StringBuilder append(float) with negative zero
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-0.0);
       const result: string = resultBuilder.toString();
@@ -71,14 +69,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend0300
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_FLOAT_NAN_TEST0300
+     * @tc.name    builtinsStringBuilderTestAppend0003
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0003
      * @tc.desc    Test StringBuilder append(float) with NaN
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(NaN);
       const result: string = resultBuilder.toString();
@@ -86,14 +84,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend0400
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_FLOAT_INFINITY_TEST0400
+     * @tc.name    builtinsStringBuilderTestAppend0004
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0004
      * @tc.desc    Test StringBuilder append(float) with Infinity
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(Infinity);
       const result: string = resultBuilder.toString();
@@ -101,14 +99,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend0500
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_FLOAT_NEG_INFINITY_TEST0500
+     * @tc.name    builtinsStringBuilderTestAppend0005
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0005
      * @tc.desc    Test StringBuilder append(float) with -Infinity
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-Infinity);
       const result: string = resultBuilder.toString();
@@ -116,14 +114,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend0600
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_FLOAT_MAX_TEST0600
+     * @tc.name    builtinsStringBuilderTestAppend0006
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0006
      * @tc.desc    Test StringBuilder append(float) with Number.MAX_VALUE
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(Number.MAX_VALUE);
       const result: string = resultBuilder.toString();
@@ -131,14 +129,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend0700
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_FLOAT_MIN_TEST0700
+     * @tc.name    builtinsStringBuilderTestAppend0007
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0007
      * @tc.desc    Test StringBuilder append(float) with Number.MIN_VALUE
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(Number.MIN_VALUE);
       const result: string = resultBuilder.toString();
@@ -146,14 +144,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend0800
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_FLOAT_EPSILON_TEST0800
+     * @tc.name    builtinsStringBuilderTestAppend0008
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0008
      * @tc.desc    Test StringBuilder append(float) with Number.EPSILON
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(Number.EPSILON);
       const result: string = resultBuilder.toString();
@@ -161,14 +159,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend0900
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_FLOAT_INT_BOUNDARY_TEST0900
+     * @tc.name    builtinsStringBuilderTestAppend0009
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0009
      * @tc.desc    Test StringBuilder append(float) with integer boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-2147483648.0)
         .append(2147483647.0)
@@ -181,14 +179,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend1000
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_FLOAT_PRECISION_TEST1000
+     * @tc.name    builtinsStringBuilderTestAppend0010
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0010
      * @tc.desc    Test StringBuilder append(float) with precision handling
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(3.141592653589793)
         .append(2.718281828459045)
@@ -198,14 +196,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend1100
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_FLOAT_CHAIN_TEST1100
+     * @tc.name    builtinsStringBuilderTestAppend0011
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0011
      * @tc.desc    Test StringBuilder append(float) with chaining calls
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(1.0)
         .append(2.0)
@@ -218,14 +216,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend1200
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_FLOAT_SPECIAL_CHARS_TEST1200
+     * @tc.name    builtinsStringBuilderTestAppend0012
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0012
      * @tc.desc    Test StringBuilder append(float) mixed with string appends
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       builder.append("Value: ");
       const resultBuilder: StringBuilder = builder.append(123.456);
@@ -235,14 +233,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend1300
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_FLOAT_EMPTY_TEST1300
+     * @tc.name    builtinsStringBuilderTestAppend0013
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0013
      * @tc.desc    Test StringBuilder append(float) on empty builder
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(999.999);
       const result: string = resultBuilder.toString();
@@ -251,14 +249,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend1400
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_ZERO_TEST1400
+     * @tc.name    builtinsStringBuilderTestAppend0014
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0014
      * @tc.desc    Test StringBuilder append(int) with zero value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(0);
       const result: string = resultBuilder.toString();
@@ -266,14 +264,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend1500
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_POSITIVE_TEST1500
+     * @tc.name    builtinsStringBuilderTestAppend0015
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0015
      * @tc.desc    Test StringBuilder append(int) with positive value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(123456);
       const result: string = resultBuilder.toString();
@@ -281,14 +279,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend1600
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_NEGATIVE_TEST1600
+     * @tc.name    builtinsStringBuilderTestAppend0016
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0016
      * @tc.desc    Test StringBuilder append(int) with negative value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-987654);
       const result: string = resultBuilder.toString();
@@ -296,14 +294,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend1700
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_MAX_TEST1700
+     * @tc.name    builtinsStringBuilderTestAppend0017
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0017
      * @tc.desc    Test StringBuilder append(int) with int max value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(2147483647);
       const result: string = resultBuilder.toString();
@@ -311,14 +309,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend1800
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_MIN_TEST1800
+     * @tc.name    builtinsStringBuilderTestAppend0018
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0018
      * @tc.desc    Test StringBuilder append(int) with int min value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-2147483648);
       const result: string = resultBuilder.toString();
@@ -326,14 +324,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend1900
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_SHORT_MAX_TEST1900
+     * @tc.name    builtinsStringBuilderTestAppend0019
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0019
      * @tc.desc    Test StringBuilder append(int) with short max value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(32767);
       const result: string = resultBuilder.toString();
@@ -341,14 +339,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend2000
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_SHORT_MIN_TEST2000
+     * @tc.name    builtinsStringBuilderTestAppend0020
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0020
      * @tc.desc    Test StringBuilder append(int) with short min value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-32768);
       const result: string = resultBuilder.toString();
@@ -356,14 +354,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend2100
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_BYTE_MAX_TEST2100
+     * @tc.name    builtinsStringBuilderTestAppend0021
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0021
      * @tc.desc    Test StringBuilder append(int) with byte max value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(127);
       const result: string = resultBuilder.toString();
@@ -371,14 +369,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend2200
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_BYTE_MIN_TEST2200
+     * @tc.name    builtinsStringBuilderTestAppend0022
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0022
      * @tc.desc    Test StringBuilder append(int) with byte min value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-128);
       const result: string = resultBuilder.toString();
@@ -386,14 +384,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend2300
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_BOUNDARY_TEST2300
+     * @tc.name    builtinsStringBuilderTestAppend0023
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0023
      * @tc.desc    Test StringBuilder append(int) with boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-1)
         .append(0)
@@ -405,14 +403,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend2400
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_HEX_TEST2400
+     * @tc.name    builtinsStringBuilderTestAppend0024
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0024
      * @tc.desc    Test StringBuilder append(int) with hex value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(0xCAFEBABE);
       const result: string = resultBuilder.toString();
@@ -420,14 +418,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend2500
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_OCTAL_TEST2500
+     * @tc.name    builtinsStringBuilderTestAppend0025
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0025
      * @tc.desc    Test StringBuilder append(int) with octal value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(0o377);
       const result: string = resultBuilder.toString();
@@ -435,14 +433,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend2600
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_BINARY_TEST2600
+     * @tc.name    builtinsStringBuilderTestAppend0026
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0026
      * @tc.desc    Test StringBuilder append(int) with binary value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(0b11111111);
       const result: string = resultBuilder.toString();
@@ -450,14 +448,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend2700
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_CHAIN_TEST2700
+     * @tc.name    builtinsStringBuilderTestAppend0027
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0027
      * @tc.desc    Test StringBuilder append(int) with chaining calls
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(1)
         .append(2)
@@ -470,14 +468,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend2800
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_MIXED_TEST2800
+     * @tc.name    builtinsStringBuilderTestAppend0028
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0028
      * @tc.desc    Test StringBuilder append(int) mixed with other types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       builder.append("Value: ");
       const resultBuilder: StringBuilder = builder.append(100);
@@ -487,14 +485,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend2900
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_LARGE_TEST2900
+     * @tc.name    builtinsStringBuilderTestAppend0029
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0029
      * @tc.desc    Test StringBuilder append(int) with large values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(990000000)
         .append(2000000000)
@@ -505,14 +503,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend3000
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_MID_VALUES_TEST3000
+     * @tc.name    builtinsStringBuilderTestAppend0030
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0030
      * @tc.desc    Test StringBuilder append(int) with middle range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(50000)
         .append(-50000)
@@ -525,14 +523,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend3100
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_NEGATIVE_CHAIN_TEST3100
+     * @tc.name    builtinsStringBuilderTestAppend0031
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0031
      * @tc.desc    Test StringBuilder append(int) with negative chaining calls
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-10)
         .append(-20)
@@ -545,14 +543,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend3200
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_EMPTY_BUILDER_TEST3200
+     * @tc.name    builtinsStringBuilderTestAppend0032
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0032
      * @tc.desc    Test StringBuilder append(int) on empty builder
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(999999);
       const result: string = resultBuilder.toString();
@@ -561,14 +559,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend3300
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_INT_UNIT_TEST3300
+     * @tc.name    builtinsStringBuilderTestAppend0033
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0033
      * @tc.desc    Test StringBuilder append(int) with unit test values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(42)
         .append(0)
@@ -580,14 +578,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend3400
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_ZERO_TEST3400
+     * @tc.name    builtinsStringBuilderTestAppend0034
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0034
      * @tc.desc    Test StringBuilder append(short) with zero value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend3400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(0 as short);
       const result: string = resultBuilder.toString();
@@ -595,14 +593,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend3500
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_POSITIVE_TEST3500
+     * @tc.name    builtinsStringBuilderTestAppend0035
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0035
      * @tc.desc    Test StringBuilder append(short) with positive value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend3500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(12345 as short);
       const result: string = resultBuilder.toString();
@@ -610,14 +608,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend3600
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_NEGATIVE_TEST3600
+     * @tc.name    builtinsStringBuilderTestAppend0036
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0036
      * @tc.desc    Test StringBuilder append(short) with negative value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend3600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-9876 as short);
       const result: string = resultBuilder.toString();
@@ -625,14 +623,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend3700
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_MAX_TEST3700
+     * @tc.name    builtinsStringBuilderTestAppend0037
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0037
      * @tc.desc    Test StringBuilder append(short) with short max value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend3700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(32767 as short);
       const result: string = resultBuilder.toString();
@@ -640,14 +638,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend3800
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_MIN_TEST3800
+     * @tc.name    builtinsStringBuilderTestAppend0038
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0038
      * @tc.desc    Test StringBuilder append(short) with short min value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend3800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-32768 as short);
       const result: string = resultBuilder.toString();
@@ -655,14 +653,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend3900
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_BYTE_MAX_TEST3900
+     * @tc.name    builtinsStringBuilderTestAppend0039
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0039
      * @tc.desc    Test StringBuilder append(short) with byte max value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend3900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(127 as short);
       const result: string = resultBuilder.toString();
@@ -670,14 +668,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend4000
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_BYTE_MIN_TEST4000
+     * @tc.name    builtinsStringBuilderTestAppend0040
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0040
      * @tc.desc    Test StringBuilder append(short) with byte min value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend4000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-128 as short);
       const result: string = resultBuilder.toString();
@@ -685,14 +683,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend4100
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_BOUNDARY_TEST4100
+     * @tc.name    builtinsStringBuilderTestAppend0041
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0041
      * @tc.desc    Test StringBuilder append(short) with boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend4100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-1 as short)
         .append(0 as short)
@@ -704,14 +702,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend4200
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_CHAIN_TEST4200
+     * @tc.name    builtinsStringBuilderTestAppend0042
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0042
      * @tc.desc    Test StringBuilder append(short) with chaining calls
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend4200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(1 as short)
         .append(2 as short)
@@ -724,14 +722,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend4300
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_MIXED_TEST4300
+     * @tc.name    builtinsStringBuilderTestAppend0043
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0043
      * @tc.desc    Test StringBuilder append(short) mixed with other types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend4300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       builder.append("Score: ");
       const resultBuilder: StringBuilder = builder.append(100 as short);
@@ -741,14 +739,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend4400
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_MID_VALUES_TEST4400
+     * @tc.name    builtinsStringBuilderTestAppend0044
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0044
      * @tc.desc    Test StringBuilder append(short) with middle range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend4400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(500 as short)
         .append(-500 as short)
@@ -761,14 +759,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend4500
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_NEGATIVE_CHAIN_TEST4500
+     * @tc.name    builtinsStringBuilderTestAppend0045
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0045
      * @tc.desc    Test StringBuilder append(short) with negative chaining calls
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend4500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-10 as short)
         .append(-20 as short)
@@ -781,14 +779,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend4600
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_UNIT_TEST4600
+     * @tc.name    builtinsStringBuilderTestAppend0046
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0046
      * @tc.desc    Test StringBuilder append(short) with unit test values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend4600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(42 as short)
         .append(0 as short)
@@ -800,14 +798,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend4700
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_HEX_TEST4700
+     * @tc.name    builtinsStringBuilderTestAppend0047
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0047
      * @tc.desc    Test StringBuilder append(short) with hex value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend4700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(0x7FFF as short);
       const result: string = resultBuilder.toString();
@@ -815,14 +813,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend4800
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_OCTAL_TEST4800
+     * @tc.name    builtinsStringBuilderTestAppend0048
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0048
      * @tc.desc    Test StringBuilder append(short) with octal value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend4800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(0o377 as short);
       const result: string = resultBuilder.toString();
@@ -830,14 +828,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend4900
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_BINARY_TEST4900
+     * @tc.name    builtinsStringBuilderTestAppend0049
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0049
      * @tc.desc    Test StringBuilder append(short) with binary value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend4900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(0b11111111 as short);
       const result: string = resultBuilder.toString();
@@ -845,14 +843,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend5000
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_EMPTY_BUILDER_TEST5000
+     * @tc.name    builtinsStringBuilderTestAppend0050
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0050
      * @tc.desc    Test StringBuilder append(short) on empty builder
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend5000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(9999 as short);
       const result: string = resultBuilder.toString();
@@ -861,14 +859,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend5100
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_POSITIVE_RANGE_TEST5100
+     * @tc.name    builtinsStringBuilderTestAppend0051
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0051
      * @tc.desc    Test StringBuilder append(short) with positive range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend5100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(1000 as short)
         .append(2000 as short)
@@ -880,14 +878,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend5200
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_NEGATIVE_RANGE_TEST5200
+     * @tc.name    builtinsStringBuilderTestAppend0052
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0052
      * @tc.desc    Test StringBuilder append(short) with negative range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend5200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-1000 as short)
         .append(-2000 as short)
@@ -899,14 +897,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend5300
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_SHORT_MIXED_SIGN_TEST5300
+     * @tc.name    builtinsStringBuilderTestAppend0053
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0053
      * @tc.desc    Test StringBuilder append(short) with mixed positive and negative values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend5300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(10 as short)
         .append(-20 as short)
@@ -917,14 +915,14 @@ export default function builtinsStringBuilderTestAppend() {
       expect(result).assertEqual('10-2030-4050');
     });
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend5400
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_ZERO_TEST5400
+     * @tc.name    builtinsStringBuilderTestAppend0054
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0054
      * @tc.desc    Test StringBuilder append(char) with zero char
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend5400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('\u0000');
       const result: string = resultBuilder.toString();
@@ -932,14 +930,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend5500
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_ASCII_TEST5500
+     * @tc.name    builtinsStringBuilderTestAppend0055
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0055
      * @tc.desc    Test StringBuilder append(char) with ASCII characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend5500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('A')
         .append('B')
@@ -952,14 +950,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend5600
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_SPECIAL_TEST5600
+     * @tc.name    builtinsStringBuilderTestAppend0056
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0056
      * @tc.desc    Test StringBuilder append(char) with special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend5600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('!')
         .append('@')
@@ -971,14 +969,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend5700
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_ESCAPE_TEST5700
+     * @tc.name    builtinsStringBuilderTestAppend0057
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0057
      * @tc.desc    Test StringBuilder append(char) with escape characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend5700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('\n')
         .append('\t')
@@ -991,14 +989,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend5800
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_MAX_TEST5800
+     * @tc.name    builtinsStringBuilderTestAppend0058
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0058
      * @tc.desc    Test StringBuilder append(char) with char max value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend5800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('\uFFFF');
       const result: string = resultBuilder.toString();
@@ -1006,14 +1004,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend5900
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_MID_RANGE_TEST5900
+     * @tc.name    builtinsStringBuilderTestAppend0059
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0059
      * @tc.desc    Test StringBuilder append(char) with middle range characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend5900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('\u0080')
         .append('\u00FF')
@@ -1026,14 +1024,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend6000
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_CHAIN_TEST6000
+     * @tc.name    builtinsStringBuilderTestAppend0060
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0060
      * @tc.desc    Test StringBuilder append(char) with chaining calls
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend6000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('H')
         .append('e')
@@ -1046,14 +1044,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend6100
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_MIXED_TEST6100
+     * @tc.name    builtinsStringBuilderTestAppend0061
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0061
      * @tc.desc    Test StringBuilder append(char) mixed with other types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend6100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       builder.append("Prefix: ");
       const resultBuilder: StringBuilder = builder.append('X');
@@ -1063,14 +1061,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend6200
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_EMOJI_TEST6200
+     * @tc.name    builtinsStringBuilderTestAppend0062
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0062
      * @tc.desc    Test StringBuilder append(char) with emoji characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend6200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('😊')
         .append('🌟')
@@ -1082,14 +1080,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend6300
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_SPACE_TEST6300
+     * @tc.name    builtinsStringBuilderTestAppend0063
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0063
      * @tc.desc    Test StringBuilder append(char) with space characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend6300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(' ')
         .append('\t')
@@ -1101,14 +1099,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend6400
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_DIGITS_TEST6400
+     * @tc.name    builtinsStringBuilderTestAppend0064
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0064
      * @tc.desc    Test StringBuilder append(char) with digit characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend6400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('0')
         .append('1')
@@ -1125,14 +1123,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend6500
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_LETTERS_TEST6500
+     * @tc.name    builtinsStringBuilderTestAppend0065
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0065
      * @tc.desc    Test StringBuilder append(char) with letter characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend6500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('a')
         .append('b')
@@ -1149,14 +1147,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend6600
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_UNICODE_TEST6600
+     * @tc.name    builtinsStringBuilderTestAppend0066
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0066
      * @tc.desc    Test StringBuilder append(char) with Unicode escape sequences
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend6600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0066', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('\u0041')
         .append('\u0042')
@@ -1168,14 +1166,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend6700
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_HEX_TEST6700
+     * @tc.name    builtinsStringBuilderTestAppend0067
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0067
      * @tc.desc    Test StringBuilder append(char) with hex escape characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend6700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('\x41')
         .append('\x42')
@@ -1187,17 +1185,15 @@ export default function builtinsStringBuilderTestAppend() {
       expect(result).assertEqual('ABCabc');
     });
 
-
-
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend6800
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_BOUNDARY_TEST6800
+     * @tc.name    builtinsStringBuilderTestAppend0068
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0068
      * @tc.desc    Test StringBuilder append(char) with boundary characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend6800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('\u0000')
         .append('\u0020')
@@ -1211,14 +1207,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend6900
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_SYMBOLS_TEST6900
+     * @tc.name    builtinsStringBuilderTestAppend0069
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0069
      * @tc.desc    Test StringBuilder append(char) with symbol characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend6900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('+')
         .append('-')
@@ -1236,14 +1232,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend7000
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_CONTROL_TEST7000
+     * @tc.name    builtinsStringBuilderTestAppend0070
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0070
      * @tc.desc    Test StringBuilder append(char) with control characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend7000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('\u0001')
         .append('\u0002')
@@ -1255,14 +1251,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend7100
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_ARABIC_TEST7100
+     * @tc.name    builtinsStringBuilderTestAppend0071
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0071
      * @tc.desc    Test StringBuilder append(char) with Arabic characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend7100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('ا')
         .append('ب')
@@ -1274,14 +1270,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend7200
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_CHAR_EMPTY_BUILDER_TEST7200
+     * @tc.name    builtinsStringBuilderTestAppend0072
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0072
      * @tc.desc    Test StringBuilder append(char) on empty builder
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend7200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('Z');
       const result: string = resultBuilder.toString();
@@ -1289,14 +1285,14 @@ export default function builtinsStringBuilderTestAppend() {
       expect(builder.toString()).assertEqual('Z');
     });
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend7300
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_ZERO_TEST7300
+     * @tc.name    builtinsStringBuilderTestAppend0073
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0073
      * @tc.desc    Test StringBuilder append(byte) with zero value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend7300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(0 as byte);
       const result: string = resultBuilder.toString();
@@ -1304,14 +1300,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend7400
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_POSITIVE_TEST7400
+     * @tc.name    builtinsStringBuilderTestAppend0074
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0074
      * @tc.desc    Test StringBuilder append(byte) with positive value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend7400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(100 as byte);
       const result: string = resultBuilder.toString();
@@ -1319,14 +1315,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend7500
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_NEGATIVE_TEST7500
+     * @tc.name    builtinsStringBuilderTestAppend0075
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0075
      * @tc.desc    Test StringBuilder append(byte) with negative value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend7500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-50 as byte);
       const result: string = resultBuilder.toString();
@@ -1334,14 +1330,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend7600
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_MAX_TEST7600
+     * @tc.name    builtinsStringBuilderTestAppend0076
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0076
      * @tc.desc    Test StringBuilder append(byte) with byte max value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend7600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(127 as byte);
       const result: string = resultBuilder.toString();
@@ -1349,14 +1345,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend7700
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_MIN_TEST7700
+     * @tc.name    builtinsStringBuilderTestAppend0077
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0077
      * @tc.desc    Test StringBuilder append(byte) with byte min value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend7700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-128 as byte);
       const result: string = resultBuilder.toString();
@@ -1364,14 +1360,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend7800
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_BOUNDARY_TEST7800
+     * @tc.name    builtinsStringBuilderTestAppend0078
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0078
      * @tc.desc    Test StringBuilder append(byte) with boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend7800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-1 as byte)
         .append(0 as byte)
@@ -1383,14 +1379,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend7900
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_CHAIN_TEST7900
+     * @tc.name    builtinsStringBuilderTestAppend0079
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0079
      * @tc.desc    Test StringBuilder append(byte) with chaining calls
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend7900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(1 as byte)
         .append(2 as byte)
@@ -1403,14 +1399,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend8000
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_MIXED_TEST8000
+     * @tc.name    builtinsStringBuilderTestAppend0080
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0080
      * @tc.desc    Test StringBuilder append(byte) mixed with other types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend8000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       builder.append("Value: ");
       const resultBuilder: StringBuilder = builder.append(99 as byte);
@@ -1420,14 +1416,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend8100
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_MID_VALUES_TEST8100
+     * @tc.name    builtinsStringBuilderTestAppend0081
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0081
      * @tc.desc    Test StringBuilder append(byte) with middle range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend8100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(50 as byte)
         .append(-50 as byte)
@@ -1440,14 +1436,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend8200
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_NEGATIVE_CHAIN_TEST8200
+     * @tc.name    builtinsStringBuilderTestAppend0082
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0082
      * @tc.desc    Test StringBuilder append(byte) with negative chaining calls
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend8200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-10 as byte)
         .append(-20 as byte)
@@ -1460,14 +1456,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend8300
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_UNIT_TEST8300
+     * @tc.name    builtinsStringBuilderTestAppend0083
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0083
      * @tc.desc    Test StringBuilder append(byte) with unit test values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend8300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(42 as byte)
         .append(0 as byte)
@@ -1479,14 +1475,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend8400
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_HEX_TEST8400
+     * @tc.name    builtinsStringBuilderTestAppend0084
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0084
      * @tc.desc    Test StringBuilder append(byte) with hex value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend8400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(0x7F as byte);
       const result: string = resultBuilder.toString();
@@ -1494,14 +1490,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend8500
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_OCTAL_TEST8500
+     * @tc.name    builtinsStringBuilderTestAppend0085
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0085
      * @tc.desc    Test StringBuilder append(byte) with octal value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend8500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(0o177 as byte);
       const result: string = resultBuilder.toString();
@@ -1509,14 +1505,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend8600
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_BINARY_TEST8600
+     * @tc.name    builtinsStringBuilderTestAppend0086
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0086
      * @tc.desc    Test StringBuilder append(byte) with binary value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend8600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(0b01111111 as byte);
       const result: string = resultBuilder.toString();
@@ -1524,14 +1520,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend8700
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_EMPTY_BUILDER_TEST8700
+     * @tc.name    builtinsStringBuilderTestAppend0087
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0087
      * @tc.desc    Test StringBuilder append(byte) on empty builder
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend8700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(99 as byte);
       const result: string = resultBuilder.toString();
@@ -1540,14 +1536,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend8800
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_POSITIVE_RANGE_TEST8800
+     * @tc.name    builtinsStringBuilderTestAppend0088
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0088
      * @tc.desc    Test StringBuilder append(byte) with positive range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend8800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(10 as byte)
         .append(20 as byte)
@@ -1564,14 +1560,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend8900
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_NEGATIVE_RANGE_TEST8900
+     * @tc.name    builtinsStringBuilderTestAppend0089
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0089
      * @tc.desc    Test StringBuilder append(byte) with negative range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend8900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-10 as byte)
         .append(-20 as byte)
@@ -1588,14 +1584,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend9000
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_MIXED_SIGN_TEST9000
+     * @tc.name    builtinsStringBuilderTestAppend0090
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0090
      * @tc.desc    Test StringBuilder append(byte) with mixed positive and negative values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend9000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(10 as byte)
         .append(-20 as byte)
@@ -1612,14 +1608,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend9100
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_ASCII_VALUES_TEST9100
+     * @tc.name    builtinsStringBuilderTestAppend0091
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0091
      * @tc.desc    Test StringBuilder append(byte) with ASCII character values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend9100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0091', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(65 as byte)   // 'A'
         .append(66 as byte)
@@ -1632,14 +1628,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend9200
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_EDGE_CASES_TEST9200
+     * @tc.name    builtinsStringBuilderTestAppend0092
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0092
      * @tc.desc    Test StringBuilder append(byte) with edge case values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend9200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0092', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(0 as byte)
         .append(1 as byte)
@@ -1653,14 +1649,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend9300
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BYTE_SMALL_VALUES_TEST9300
+     * @tc.name    builtinsStringBuilderTestAppend0093
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0093
      * @tc.desc    Test StringBuilder append(byte) with small values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend9300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0093', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(-5 as byte)
         .append(-4 as byte)
@@ -1678,14 +1674,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend9400
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BOOLEAN_TRUE_TEST9400
+     * @tc.name    builtinsStringBuilderTestAppend0094
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0094
      * @tc.desc    Test StringBuilder append(boolean) with true
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend9400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(true);
       const result: string = resultBuilder.toString();
@@ -1693,14 +1689,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend9500
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BOOLEAN_FALSE_TEST9500
+     * @tc.name    builtinsStringBuilderTestAppend0095
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0095
      * @tc.desc    Test StringBuilder append(boolean) with false
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend9500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(false);
       const result: string = resultBuilder.toString();
@@ -1708,14 +1704,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend9600
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BOOLEAN_MIXED_TEST9600
+     * @tc.name    builtinsStringBuilderTestAppend0096
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0096
      * @tc.desc    Test StringBuilder append(boolean) with mixed true/false values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend9600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0096', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(true)
         .append(false)
@@ -1727,14 +1723,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend9700
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BOOLEAN_CHAIN_TEST9700
+     * @tc.name    builtinsStringBuilderTestAppend0097
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0097
      * @tc.desc    Test StringBuilder append(boolean) with multiple chained calls
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend9700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(true)
         .append(false)
@@ -1744,14 +1740,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend9800
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BOOLEAN_WITH_PREFIX_TEST9800
+     * @tc.name    builtinsStringBuilderTestAppend0098
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0098
      * @tc.desc    Test StringBuilder append(boolean) after appending other types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend9800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0098', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append("Result: ")
         .append(true)
@@ -1762,14 +1758,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend9900
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BOOLEAN_EMPTY_BUILDER_TEST9900
+     * @tc.name    builtinsStringBuilderTestAppend0099
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0099
      * @tc.desc    Test StringBuilder append(boolean) on empty builder
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend9900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0099', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(false);
       const result: string = resultBuilder.toString();
@@ -1777,14 +1773,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend10000
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BOOLEAN_REPEATED_TRUE_TEST10000
+     * @tc.name    builtinsStringBuilderTestAppend0100
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0100
      * @tc.desc    Test StringBuilder append(boolean) with repeated true values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend10000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(true)
         .append(true)
@@ -1796,14 +1792,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend10100
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BOOLEAN_REPEATED_FALSE_TEST10100
+     * @tc.name    builtinsStringBuilderTestAppend0101
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0101
      * @tc.desc    Test StringBuilder append(boolean) with repeated false values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend10100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(false)
         .append(false)
@@ -1815,14 +1811,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend10200
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BOOLEAN_ALTERNATING_TEST10200
+     * @tc.name    builtinsStringBuilderTestAppend0102
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0102
      * @tc.desc    Test StringBuilder append(boolean) with alternating true/false pattern
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend10200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(true)
         .append(false)
@@ -1835,14 +1831,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend10300
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BOOLEAN_WITH_NUMBERS_TEST10300
+     * @tc.name    builtinsStringBuilderTestAppend0103
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0103
      * @tc.desc    Test StringBuilder append(boolean) mixed with number values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend10300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0103', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append("Flag1: ")
         .append(true)
@@ -1855,14 +1851,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend10400
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BOOLEAN_COMPLEX_PATTERN_TEST10400
+     * @tc.name    builtinsStringBuilderTestAppend0104
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0104
      * @tc.desc    Test StringBuilder append(boolean) with complex pattern
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend10400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0104', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append("Start-")
         .append(true)
@@ -1876,14 +1872,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend10500
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BOOLEAN_SINGLE_CHAR_TEST10500
+     * @tc.name    builtinsStringBuilderTestAppend0105
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0105
      * @tc.desc    Test StringBuilder append(boolean) with single character before/after
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend10500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0105', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append('T')
         .append(true)
@@ -1895,14 +1891,14 @@ export default function builtinsStringBuilderTestAppend() {
     });
 
     /**
-     * @tc.name    BuiltinsStringBuilderTestAppend10600
-     * @tc.number  BUILTINS_STRING_BUILDER_APPEND_BOOLEAN_ONLY_TEST10600
+     * @tc.name    builtinsStringBuilderTestAppend0106
+     * @tc.number  BUILTINS_STRING_BUILDER_TEST_APPEND_0106
      * @tc.desc    Test StringBuilder append(boolean) only (no other content)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsStringBuilderTestAppend10600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsStringBuilderTestAppend0106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const builder: StringBuilder = new StringBuilder();
       const resultBuilder: StringBuilder = builder.append(true);
       const result: string = resultBuilder.toString();
@@ -1913,7 +1909,6 @@ export default function builtinsStringBuilderTestAppend() {
       const result2: string = resultBuilder2.toString();
       expect(result2).assertEqual('false');
     });
-
 
   })
 }
