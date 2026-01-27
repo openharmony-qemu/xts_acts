@@ -88,7 +88,7 @@ struct ChildComponent {
   @Local public childText: string = '';
 
   aboutToAppear(): void {
-    this.childValueMonitor = UIUtils.addMonitor(() => this.childValue, this.childValue, { path: ['ChildComponent'] });
+    this.childValueMonitor = UIUtils.addMonitor(() => this.childValue, this.childValueChange, { path: ['ChildComponent'] });
     this.childMsgMonitor = UIUtils.addMonitor(() => this.childMsg, this.childMsgChange, { path: ['ChildComponent'] });
   }
   childValueChange(m: IMonitor) {
