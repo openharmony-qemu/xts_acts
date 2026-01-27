@@ -25,140 +25,140 @@ export default function builtinsToLowerCaseTest() {
     })
 
     /**
-     * @tc.name    charToLowerCaseTestCharBitSize0100
-     * @tc.number  CHAR_TO_LOWER_CASE_TEST_CHAR_BIT_SIZE_0100
+     * @tc.name    builtinsToLowerCaseTest0001
+     * @tc.number  BUILTINS_TO_LOWER_CASE_TEST_0001
      * @tc.desc    Test toLowerCase with CHAR_BIT_SIZE valid range (uppercase 'A' to 'a' in 16-bit range)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('charToLowerCaseTestCharBitSize0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsToLowerCaseTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const uppercaseA = new Char(c'A');
       const lowercaseA = uppercaseA.toLowerCase();
       expect(lowercaseA).assertEqual(new Char(c'a'));
     });
 
     /**
-     * @tc.name    charToLowerCaseTestMaxCodePoint0200
-     * @tc.number  CHAR_TO_LOWER_CASE_TEST_MAX_CODE_POINT_0200
+     * @tc.name    builtinsToLowerCaseTest0002
+     * @tc.number  BUILTINS_TO_LOWER_CASE_TEST_0002
      * @tc.desc    Test toLowerCase with MAX_CODE_POINT valid mapped char (non-letter char, no change)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('charToLowerCaseTestMaxCodePoint0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsToLowerCaseTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const nonLetterChar = new Char(c'\uFFFF');
       const convertedChar = nonLetterChar.toLowerCase();
       expect(convertedChar).assertEqual(nonLetterChar);
     });
 
     /**
-     * @tc.name    charToLowerCaseTestHighSurrogateMin0300
-     * @tc.number  CHAR_TO_LOWER_CASE_TEST_HIGH_SURROGATE_MIN_0300
+     * @tc.name    builtinsToLowerCaseTest0003
+     * @tc.number  BUILTINS_TO_LOWER_CASE_TEST_0003
      * @tc.desc    Test toLowerCase with HIGH_SURROGATE_MIN (\uD800, no case change)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('charToLowerCaseTestHighSurrogateMin0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsToLowerCaseTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const highSurrogateMinChar = new Char(Char.HIGH_SURROGATE_MIN);
       const convertedChar = highSurrogateMinChar.toLowerCase();
       expect(convertedChar).assertEqual(highSurrogateMinChar);
     });
 
     /**
-     * @tc.name    charToLowerCaseTestHighSurrogateMax0400
-     * @tc.number  CHAR_TO_LOWER_CASE_TEST_HIGH_SURROGATE_MAX_0400
+     * @tc.name    builtinsToLowerCaseTest0004
+     * @tc.number  BUILTINS_TO_LOWER_CASE_TEST_0004
      * @tc.desc    Test toLowerCase with HIGH_SURROGATE_MAX (\uDBFF, no case change)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('charToLowerCaseTestHighSurrogateMax0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsToLowerCaseTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const highSurrogateMaxChar = new Char(Char.HIGH_SURROGATE_MAX);
       const convertedChar = highSurrogateMaxChar.toLowerCase();
       expect(convertedChar).assertEqual(highSurrogateMaxChar);
     });
 
     /**
-     * @tc.name    charToLowerCaseTestLowSurrogateMin0500
-     * @tc.number  CHAR_TO_LOWER_CASE_TEST_LOW_SURROGATE_MIN_0500
+     * @tc.name    builtinsToLowerCaseTest0005
+     * @tc.number  BUILTINS_TO_LOWER_CASE_TEST_0005
      * @tc.desc    Test toLowerCase with LOW_SURROGATE_MIN (\uDC00, no case change)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('charToLowerCaseTestLowSurrogateMin0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsToLowerCaseTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const lowSurrogateMinChar = new Char(Char.LOW_SURROGATE_MIN);
       const convertedChar = lowSurrogateMinChar.toLowerCase();
       expect(convertedChar).assertEqual(lowSurrogateMinChar);
     });
 
     /**
-     * @tc.name    charToLowerCaseTestLowSurrogateMax0600
-     * @tc.number  CHAR_TO_LOWER_CASE_TEST_LOW_SURROGATE_MAX_0600
+     * @tc.name    builtinsToLowerCaseTest0006
+     * @tc.number  BUILTINS_TO_LOWER_CASE_TEST_0006
      * @tc.desc    Test toLowerCase with LOW_SURROGATE_MAX (\uDFFF, no case change)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('charToLowerCaseTestLowSurrogateMax0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsToLowerCaseTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const lowSurrogateMaxChar = new Char(Char.LOW_SURROGATE_MAX);
       const convertedChar = lowSurrogateMaxChar.toLowerCase();
       expect(convertedChar).assertEqual(lowSurrogateMaxChar);
     });
 
     /**
-     * @tc.name    charToLowerCaseTestBmpBorderBelow0700
-     * @tc.number  CHAR_TO_LOWER_CASE_TEST_BMP_BORDER_BELOW_0700
+     * @tc.name    builtinsToLowerCaseTest0007
+     * @tc.number  BUILTINS_TO_LOWER_CASE_TEST_0007
      * @tc.desc    Test toLowerCase with BMP_BORDER below (0xFFFE, valid BMP char, no case change)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('charToLowerCaseTestBmpBorderBelow0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsToLowerCaseTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const bmpBelowChar = new Char(c'\uFFFE');
       const convertedChar = bmpBelowChar.toLowerCase();
       expect(convertedChar).assertEqual(bmpBelowChar);
     });
 
     /**
-     * @tc.name    charToLowerCaseTestBmpBorderAbove0800
-     * @tc.number  CHAR_TO_LOWER_CASE_TEST_BMP_BORDER_ABOVE_0800
+     * @tc.name    builtinsToLowerCaseTest0008
+     * @tc.number  BUILTINS_TO_LOWER_CASE_TEST_0008
      * @tc.desc    Test toLowerCase with BMP_BORDER mapped valid char (uppercase 'Z' to 'z')
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('charToLowerCaseTestBmpBorderAbove0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsToLowerCaseTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const uppercaseZ = new Char(c'Z');
       const lowercaseZ = uppercaseZ.toLowerCase();
       expect(lowercaseZ).assertEqual(new Char(c'z'));
     });
 
     /**
-     * @tc.name    charToLowerCaseTestMinValue0900
-     * @tc.number  CHAR_TO_LOWER_CASE_TEST_MIN_VALUE_0900
+     * @tc.name    builtinsToLowerCaseTest0009
+     * @tc.number  BUILTINS_TO_LOWER_CASE_TEST_0009
      * @tc.desc    Test toLowerCase with MIN_VALUE (\u0000, no case change)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('charToLowerCaseTestMinValue0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsToLowerCaseTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const minValueChar = new Char(Char.MIN_VALUE);
       const convertedChar = minValueChar.toLowerCase();
       expect(convertedChar).assertEqual(minValueChar);
     });
 
     /**
-     * @tc.name    charToLowerCaseTestMaxValue1000
-     * @tc.number  CHAR_TO_LOWER_CASE_TEST_MAX_VALUE_1000
+     * @tc.name    builtinsToLowerCaseTest0010
+     * @tc.number  BUILTINS_TO_LOWER_CASE_TEST_0010
      * @tc.desc    Test toLowerCase with MAX_VALUE (\uFFFF, no case change)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('charToLowerCaseTestMaxValue1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsToLowerCaseTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const maxValueChar = new Char(Char.MAX_VALUE);
       const convertedChar = maxValueChar.toLowerCase();
       expect(convertedChar).assertEqual(maxValueChar);

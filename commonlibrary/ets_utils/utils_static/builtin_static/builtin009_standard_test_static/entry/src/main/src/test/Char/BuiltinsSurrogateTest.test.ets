@@ -44,7 +44,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0001
-     * @tc.number  BUILTINS_SURROGATE_TEST0001
+     * @tc.number  BUILTINS_SURROGATE_TEST_0001
      * @tc.desc    Test isValidCodePoint returns true for valid minimum values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -61,7 +61,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0002
-     * @tc.number  BUILTINS_SURROGATE_TEST0002
+     * @tc.number  BUILTINS_SURROGATE_TEST_0002
      * @tc.desc    Test isValidCodePoint returns true for values immediately before surrogate range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -76,7 +76,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0003
-     * @tc.number  BUILTINS_SURROGATE_TEST0003
+     * @tc.number  BUILTINS_SURROGATE_TEST_0003
      * @tc.desc    Test isValidCodePoint returns false for surrogate range start values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -91,7 +91,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0004
-     * @tc.number  BUILTINS_SURROGATE_TEST0004
+     * @tc.number  BUILTINS_SURROGATE_TEST_0004
      * @tc.desc    Test isValidCodePoint returns false for middle and end of surrogate range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -106,7 +106,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0005
-     * @tc.number  BUILTINS_SURROGATE_TEST0005
+     * @tc.number  BUILTINS_SURROGATE_TEST_0005
      * @tc.desc    Test isValidCodePoint returns true for values immediately after surrogate range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -121,7 +121,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0006
-     * @tc.number  BUILTINS_SURROGATE_TEST0006
+     * @tc.number  BUILTINS_SURROGATE_TEST_0006
      * @tc.desc    Test isValidCodePoint returns true for common BMP values including Chinese and symbols
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -138,7 +138,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0007
-     * @tc.number  BUILTINS_SURROGATE_TEST0007
+     * @tc.number  BUILTINS_SURROGATE_TEST_0007
      * @tc.desc    Test isValidCodePoint returns true for maximum BMP value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -151,7 +151,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0008
-     * @tc.number  BUILTINS_SURROGATE_TEST0008
+     * @tc.number  BUILTINS_SURROGATE_TEST_0008
      * @tc.desc    Test isValidCodePoint returns true for supplementary plane values including emoji
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -168,7 +168,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0009
-     * @tc.number  BUILTINS_SURROGATE_TEST0009
+     * @tc.number  BUILTINS_SURROGATE_TEST_0009
      * @tc.desc    Test isValidCodePoint returns true for maximum valid Unicode code point
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -181,7 +181,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0010
-     * @tc.number  BUILTINS_SURROGATE_TEST0010
+     * @tc.number  BUILTINS_SURROGATE_TEST_0010
      * @tc.desc    Test isValidCodePoint returns false for negative values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -196,7 +196,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0011
-     * @tc.number  BUILTINS_SURROGATE_TEST0011
+     * @tc.number  BUILTINS_SURROGATE_TEST_0011
      * @tc.desc    Test isValidCodePoint returns false for values above maximum valid code point
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -213,7 +213,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0012
-     * @tc.number  BUILTINS_SURROGATE_TEST0012
+     * @tc.number  BUILTINS_SURROGATE_TEST_0012
      * @tc.desc    Test isValidCodePoint at critical surrogate range boundary edges
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -230,7 +230,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0013
-     * @tc.number  BUILTINS_SURROGATE_TEST0013
+     * @tc.number  BUILTINS_SURROGATE_TEST_0013
      * @tc.desc    Test isValidCodePoint returns false for various mid surrogate range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -245,7 +245,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0014
-     * @tc.number  BUILTINS_SURROGATE_TEST0014
+     * @tc.number  BUILTINS_SURROGATE_TEST_0014
      * @tc.desc    Test codeUnitsToEncode returns 1 for basic multilingual plane values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -262,7 +262,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0015
-     * @tc.number  BUILTINS_SURROGATE_TEST0015
+     * @tc.number  BUILTINS_SURROGATE_TEST_0015
      * @tc.desc    Test codeUnitsToEncode returns 2 for supplementary plane values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -279,7 +279,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0016
-     * @tc.number  BUILTINS_SURROGATE_TEST0016
+     * @tc.number  BUILTINS_SURROGATE_TEST_0016
      * @tc.desc    Test codeUnitsToEncode at the boundary between BMP and supplementary plane
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -296,7 +296,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0017
-     * @tc.number  BUILTINS_SURROGATE_TEST0017
+     * @tc.number  BUILTINS_SURROGATE_TEST_0017
      * @tc.desc    Test codeUnitsToEncode for common ASCII and Latin values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -313,7 +313,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0018
-     * @tc.number  BUILTINS_SURROGATE_TEST0018
+     * @tc.number  BUILTINS_SURROGATE_TEST_0018
      * @tc.desc    Test codeUnitsToEncode for CJK unified ideographs
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -330,7 +330,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0019
-     * @tc.number  BUILTINS_SURROGATE_TEST0019
+     * @tc.number  BUILTINS_SURROGATE_TEST_0019
      * @tc.desc    Test codeUnitsToEncode for emoji characters in supplementary plane
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -347,7 +347,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0020
-     * @tc.number  BUILTINS_SURROGATE_TEST0020
+     * @tc.number  BUILTINS_SURROGATE_TEST_0020
      * @tc.desc    Test codeUnitsToEncode for historic scripts in BMP
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -364,7 +364,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0021
-     * @tc.number  BUILTINS_SURROGATE_TEST0021
+     * @tc.number  BUILTINS_SURROGATE_TEST_0021
      * @tc.desc    Test codeUnitsToEncode for mathematical alphanumeric symbols in supplementary plane
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -381,7 +381,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0022
-     * @tc.number  BUILTINS_SURROGATE_TEST0022
+     * @tc.number  BUILTINS_SURROGATE_TEST_0022
      * @tc.desc    Test codeUnitsToEncode for very small and very large valid code points
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -398,7 +398,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0023
-     * @tc.number  BUILTINS_SURROGATE_TEST0023
+     * @tc.number  BUILTINS_SURROGATE_TEST_0023
      * @tc.desc    Test codeUnitsToEncode for Korean syllables and symbols
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -415,7 +415,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0024
-     * @tc.number  BUILTINS_SURROGATE_TEST0024
+     * @tc.number  BUILTINS_SURROGATE_TEST_0024
      * @tc.desc    Test isHighSurrogate returns false for values below high surrogate range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -432,7 +432,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0025
-     * @tc.number  BUILTINS_SURROGATE_TEST0025
+     * @tc.number  BUILTINS_SURROGATE_TEST_0025
      * @tc.desc    Test isHighSurrogate returns true for minimum high surrogate value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -445,7 +445,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0026
-     * @tc.number  BUILTINS_SURROGATE_TEST0026
+     * @tc.number  BUILTINS_SURROGATE_TEST_0026
      * @tc.desc    Test isHighSurrogate returns true for middle values in high surrogate range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -462,7 +462,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0027
-     * @tc.number  BUILTINS_SURROGATE_TEST0027
+     * @tc.number  BUILTINS_SURROGATE_TEST_0027
      * @tc.desc    Test isHighSurrogate returns true for maximum high surrogate value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -475,7 +475,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0028
-     * @tc.number  BUILTINS_SURROGATE_TEST0028
+     * @tc.number  BUILTINS_SURROGATE_TEST_0028
      * @tc.desc    Test isHighSurrogate returns false for values above high surrogate range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -492,7 +492,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0029
-     * @tc.number  BUILTINS_SURROGATE_TEST0029
+     * @tc.number  BUILTINS_SURROGATE_TEST_0029
      * @tc.desc    Test isHighSurrogate returns false for low surrogate range values and edge cases
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -509,7 +509,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0030
-     * @tc.number  BUILTINS_SURROGATE_TEST0030
+     * @tc.number  BUILTINS_SURROGATE_TEST_0030
      * @tc.desc    Test isHighSurrogate returns false for common values in basic multilingual plane
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -526,7 +526,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0031
-     * @tc.number  BUILTINS_SURROGATE_TEST0031
+     * @tc.number  BUILTINS_SURROGATE_TEST_0031
      * @tc.desc    Test isHighSurrogate at critical surrogate range boundaries
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -543,7 +543,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0032
-     * @tc.number  BUILTINS_SURROGATE_TEST0032
+     * @tc.number  BUILTINS_SURROGATE_TEST_0032
      * @tc.desc    Test isLowSurrogate returns false for values below low surrogate range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -560,7 +560,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0033
-     * @tc.number  BUILTINS_SURROGATE_TEST0033
+     * @tc.number  BUILTINS_SURROGATE_TEST_0033
      * @tc.desc    Test isLowSurrogate returns true for minimum low surrogate value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -573,7 +573,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0034
-     * @tc.number  BUILTINS_SURROGATE_TEST0034
+     * @tc.number  BUILTINS_SURROGATE_TEST_0034
      * @tc.desc    Test isLowSurrogate returns true for middle values in low surrogate range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -590,7 +590,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0035
-     * @tc.number  BUILTINS_SURROGATE_TEST0035
+     * @tc.number  BUILTINS_SURROGATE_TEST_0035
      * @tc.desc    Test isLowSurrogate returns true for maximum low surrogate value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -603,7 +603,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0036
-     * @tc.number  BUILTINS_SURROGATE_TEST0036
+     * @tc.number  BUILTINS_SURROGATE_TEST_0036
      * @tc.desc    Test isLowSurrogate returns false for values above low surrogate range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -620,7 +620,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0037
-     * @tc.number  BUILTINS_SURROGATE_TEST0037
+     * @tc.number  BUILTINS_SURROGATE_TEST_0037
      * @tc.desc    Test isLowSurrogate returns false for high surrogate range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -637,7 +637,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0038
-     * @tc.number  BUILTINS_SURROGATE_TEST0038
+     * @tc.number  BUILTINS_SURROGATE_TEST_0038
      * @tc.desc    Test isLowSurrogate returns false for common values in basic multilingual plane
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -654,7 +654,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0039
-     * @tc.number  BUILTINS_SURROGATE_TEST0039
+     * @tc.number  BUILTINS_SURROGATE_TEST_0039
      * @tc.desc    Test isLowSurrogate at critical surrogate range boundaries
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -673,7 +673,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0040
-     * @tc.number  BUILTINS_SURROGATE_TEST0040
+     * @tc.number  BUILTINS_SURROGATE_TEST_0040
      * @tc.desc    Test getHighSurrogate returns correct high surrogate for minimum supplementary plane value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -686,7 +686,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0041
-     * @tc.number  BUILTINS_SURROGATE_TEST0041
+     * @tc.number  BUILTINS_SURROGATE_TEST_0041
      * @tc.desc    Test getHighSurrogate returns correct high surrogate for common emoji
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -701,7 +701,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0042
-     * @tc.number  BUILTINS_SURROGATE_TEST0042
+     * @tc.number  BUILTINS_SURROGATE_TEST_0042
      * @tc.desc    Test getHighSurrogate returns correct high surrogate for maximum valid code point
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -716,7 +716,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0043
-     * @tc.number  BUILTINS_SURROGATE_TEST0043
+     * @tc.number  BUILTINS_SURROGATE_TEST_0043
      * @tc.desc    Test getHighSurrogate produces values for BMP inputs which may be malformed
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -733,7 +733,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0044
-     * @tc.number  BUILTINS_SURROGATE_TEST0044
+     * @tc.number  BUILTINS_SURROGATE_TEST_0044
      * @tc.desc    Test getHighSurrogate for surrogate code point inputs
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -750,7 +750,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0045
-     * @tc.number  BUILTINS_SURROGATE_TEST0045
+     * @tc.number  BUILTINS_SURROGATE_TEST_0045
      * @tc.desc    Test getHighSurrogate for various supplementary plane range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -767,7 +767,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0046
-     * @tc.number  BUILTINS_SURROGATE_TEST0046
+     * @tc.number  BUILTINS_SURROGATE_TEST_0046
      * @tc.desc    Test getHighSurrogate returns correct high surrogate for historic script supplementary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -784,7 +784,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0047
-     * @tc.number  BUILTINS_SURROGATE_TEST0047
+     * @tc.number  BUILTINS_SURROGATE_TEST_0047
      * @tc.desc    Test getHighSurrogate returns correct high surrogate for mathematical symbol supplementary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -799,7 +799,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0048
-     * @tc.number  BUILTINS_SURROGATE_TEST0048
+     * @tc.number  BUILTINS_SURROGATE_TEST_0048
      * @tc.desc    Test getHighSurrogate returns correct high surrogate for diverse emoji values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -816,7 +816,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0049
-     * @tc.number  BUILTINS_SURROGATE_TEST0049
+     * @tc.number  BUILTINS_SURROGATE_TEST_0049
      * @tc.desc    Test getHighSurrogate for boundary values around supplementary plane start
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -833,7 +833,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0050
-     * @tc.number  BUILTINS_SURROGATE_TEST0050
+     * @tc.number  BUILTINS_SURROGATE_TEST_0050
      * @tc.desc    Test getLowSurrogate returns LOW_SURROGATE_MIN for minimum supplementary value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -847,7 +847,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0051
-     * @tc.number  BUILTINS_SURROGATE_TEST0051
+     * @tc.number  BUILTINS_SURROGATE_TEST_0051
      * @tc.desc    Test getLowSurrogate returns LOW_SURROGATE_MAX for maximum valid code point
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -861,7 +861,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0052
-     * @tc.number  BUILTINS_SURROGATE_TEST0052
+     * @tc.number  BUILTINS_SURROGATE_TEST_0052
      * @tc.desc    Test getLowSurrogate returns valid low surrogates for common emoji
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -876,7 +876,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0053
-     * @tc.number  BUILTINS_SURROGATE_TEST0053
+     * @tc.number  BUILTINS_SURROGATE_TEST_0053
      * @tc.desc    Test getLowSurrogate returns valid low surrogates for various supplementary plane values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -893,7 +893,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0054
-     * @tc.number  BUILTINS_SURROGATE_TEST0054
+     * @tc.number  BUILTINS_SURROGATE_TEST_0054
      * @tc.desc    Test getLowSurrogate for historic script supplementary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -910,7 +910,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0055
-     * @tc.number  BUILTINS_SURROGATE_TEST0055
+     * @tc.number  BUILTINS_SURROGATE_TEST_0055
      * @tc.desc    Test getLowSurrogate for mathematical symbol supplementary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -925,7 +925,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0056
-     * @tc.number  BUILTINS_SURROGATE_TEST0056
+     * @tc.number  BUILTINS_SURROGATE_TEST_0056
      * @tc.desc    Test getLowSurrogate produces malformed results for BMP inputs
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -934,12 +934,12 @@ export default function builtinsSurrogateTest() {
     it('builtinsSurrogateTest0056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isValidCodePoint(0)).assertTrue();
       expect(Char.isValidCodePoint(0x4E2D)).assertTrue();
-      expect(Char.isValidCodePoint(0xFFFF)).assertTrue(); 
+      expect(Char.isValidCodePoint(0xFFFF)).assertTrue();
     });
 
     /**
      * @tc.name    builtinsSurrogateTest0057
-     * @tc.number  BUILTINS_SURROGATE_TEST0057
+     * @tc.number  BUILTINS_SURROGATE_TEST_0057
      * @tc.desc    Test getLowSurrogate produces malformed results for surrogate code point inputs
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -953,7 +953,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0058
-     * @tc.number  BUILTINS_SURROGATE_TEST0058
+     * @tc.number  BUILTINS_SURROGATE_TEST_0058
      * @tc.desc    Test getLowSurrogate for boundary values around supplementary plane
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -967,7 +967,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0059
-     * @tc.number  BUILTINS_SURROGATE_TEST0059
+     * @tc.number  BUILTINS_SURROGATE_TEST_0059
      * @tc.desc    Test getLowSurrogate produces malformed results for Korean BMP values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -975,12 +975,12 @@ export default function builtinsSurrogateTest() {
      */
     it('builtinsSurrogateTest0059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(Char.isValidCodePoint(0xAC00)).assertTrue();
-      expect(Char.isValidCodePoint(0xD7A3)).assertTrue(); 
+      expect(Char.isValidCodePoint(0xD7A3)).assertTrue();
     });
 
     /**
      * @tc.name    builtinsSurrogateTest0060
-     * @tc.number  BUILTINS_SURROGATE_TEST0060
+     * @tc.number  BUILTINS_SURROGATE_TEST_0060
      * @tc.desc    Test isPartOfSurrogatePair returns false for values below surrogate range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -997,7 +997,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0061
-     * @tc.number  BUILTINS_SURROGATE_TEST0061
+     * @tc.number  BUILTINS_SURROGATE_TEST_0061
      * @tc.desc    Test isPartOfSurrogatePair returns true for all high surrogate range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1014,7 +1014,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0062
-     * @tc.number  BUILTINS_SURROGATE_TEST0062
+     * @tc.number  BUILTINS_SURROGATE_TEST_0062
      * @tc.desc    Test isPartOfSurrogatePair returns true for all low surrogate range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1031,7 +1031,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0063
-     * @tc.number  BUILTINS_SURROGATE_TEST0063
+     * @tc.number  BUILTINS_SURROGATE_TEST_0063
      * @tc.desc    Test isPartOfSurrogatePair returns false for values above surrogate range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1048,7 +1048,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0064
-     * @tc.number  BUILTINS_SURROGATE_TEST0064
+     * @tc.number  BUILTINS_SURROGATE_TEST_0064
      * @tc.desc    Test isPartOfSurrogatePair returns false for common characters in basic multilingual plane
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1065,7 +1065,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0065
-     * @tc.number  BUILTINS_SURROGATE_TEST0065
+     * @tc.number  BUILTINS_SURROGATE_TEST_0065
      * @tc.desc    Test isPartOfSurrogatePair at critical surrogate range boundaries
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1087,7 +1087,7 @@ export default function builtinsSurrogateTest() {
     });
     /**
      * @tc.name    builtinsSurrogateTest0066
-     * @tc.number  BUILTINS_SURROGATE_TEST0066
+     * @tc.number  BUILTINS_SURROGATE_TEST_0066
      * @tc.desc    Test isPartOfSurrogatePair at boundary just before high surrogate range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1102,7 +1102,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0067
-     * @tc.number  BUILTINS_SURROGATE_TEST0067
+     * @tc.number  BUILTINS_SURROGATE_TEST_0067
      * @tc.desc    Test isPartOfSurrogatePair at boundary just after low surrogate range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1116,7 +1116,7 @@ export default function builtinsSurrogateTest() {
     });
     /**
      * @tc.name    builtinsSurrogateTest0068
-     * @tc.number  BUILTINS_SURROGATE_TEST0068
+     * @tc.number  BUILTINS_SURROGATE_TEST_0068
      * @tc.desc    Test instance isPartOfSurrogatePair returns false for MIN_VALUE
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1130,7 +1130,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0069
-     * @tc.number  BUILTINS_SURROGATE_TEST0069
+     * @tc.number  BUILTINS_SURROGATE_TEST_0069
      * @tc.desc    Test instance isPartOfSurrogatePair returns false for MAX_VALUE
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1144,7 +1144,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0070
-     * @tc.number  BUILTINS_SURROGATE_TEST0070
+     * @tc.number  BUILTINS_SURROGATE_TEST_0070
      * @tc.desc    Test instance isPartOfSurrogatePair returns false for basic English letters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1164,7 +1164,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0071
-     * @tc.number  BUILTINS_SURROGATE_TEST0071
+     * @tc.number  BUILTINS_SURROGATE_TEST_0071
      * @tc.desc    Test instance isPartOfSurrogatePair returns false for ASCII digits and symbols
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1184,7 +1184,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0072
-     * @tc.number  BUILTINS_SURROGATE_TEST0072
+     * @tc.number  BUILTINS_SURROGATE_TEST_0072
      * @tc.desc    Test instance isPartOfSurrogatePair returns true for high surrogate range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1204,7 +1204,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0073
-     * @tc.number  BUILTINS_SURROGATE_TEST0073
+     * @tc.number  BUILTINS_SURROGATE_TEST_0073
      * @tc.desc    Test instance isPartOfSurrogatePair returns true for low surrogate range values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1224,7 +1224,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0074
-     * @tc.number  BUILTINS_SURROGATE_TEST0074
+     * @tc.number  BUILTINS_SURROGATE_TEST_0074
      * @tc.desc    Test instance isPartOfSurrogatePair returns false for common values outside surrogate ranges
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1244,7 +1244,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0075
-     * @tc.number  BUILTINS_SURROGATE_TEST0075
+     * @tc.number  BUILTINS_SURROGATE_TEST_0075
      * @tc.desc    Test instance isPartOfSurrogatePair at critical surrogate range boundaries
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1264,7 +1264,7 @@ export default function builtinsSurrogateTest() {
 
     /**
      * @tc.name    builtinsSurrogateTest0076
-     * @tc.number  BUILTINS_SURROGATE_TEST0076
+     * @tc.number  BUILTINS_SURROGATE_TEST_0076
      * @tc.desc    Test instance isPartOfSurrogatePair returns false for whitespace and punctuation
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
