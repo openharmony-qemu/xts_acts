@@ -16,6 +16,7 @@ group("powermgr") {
   deps = [
     # xts1.1
     "battery_manager:powermgr_battery_test",
+    "battery_statistics:powermgr_battery_statistics_test",
     "display_manager:powermgr_display_test",
     "ndk:powermgr_ndk_test",
     "permission:powermgr_permission_test",
