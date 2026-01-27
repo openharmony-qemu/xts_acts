@@ -60,7 +60,6 @@ struct ParentComponent {
           console.info('[addMonitorTest]:clearMonitor success')
         })
       Text(`Parent Value: ${this.value}`)
-        .fontSize(30)
         .height('5%')
       Divider()
       // 子组件实例
@@ -108,10 +107,8 @@ struct ChildComponent {
     Column() {
       Text(`${this.childText}`).id('ChildText').height('5%')
       Text(`Child Value: ${this.childValue}`)
-        .fontSize(50)
         .height('5%')
       Text(this.childMsg)
-        .fontSize(50)
         .height('5%')
       Button('Child Button').id('ChildButton')
         .margin({ bottom: 10 } as Margin)
