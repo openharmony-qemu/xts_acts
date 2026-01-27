@@ -15,8 +15,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-
-
 export default function builtinsLinkerClassNotFoundErrorTest() {
   describe('builtinsLinkerClassNotFoundErrorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -41,72 +39,71 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     })
 
     /**
-     * @tc.name    builtinsLinkerClassNotFoundErrorTest0100
-     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0100
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0001
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST_0001
      * @tc.desc    Test constructor with no arguments
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerClassNotFoundErrorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerClassNotFoundErrorTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerClassNotFoundError();
       expect(error.name).assertEqual('LinkerClassNotFoundError');
       expect(error.message).assertEqual('');
     });
 
     /**
-     * @tc.name    builtinsLinkerClassNotFoundErrorTest0200
-     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0200
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0002
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST_0002
      * @tc.desc    Test constructor with a simple message string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerClassNotFoundErrorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerClassNotFoundErrorTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerClassNotFoundError('Class com.example.MyClass not found');
       expect(error.name).assertEqual('LinkerClassNotFoundError');
       expect(error.message).assertEqual('Class com.example.MyClass not found');
     });
 
     /**
-     * @tc.name    builtinsLinkerClassNotFoundErrorTest0300
-     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0300
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0003
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST_0003
      * @tc.desc    Test constructor with an empty message string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerClassNotFoundErrorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerClassNotFoundErrorTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerClassNotFoundError('');
       expect(error.name).assertEqual('LinkerClassNotFoundError');
       expect(error.message).assertEqual('');
     });
 
     /**
-     * @tc.name    builtinsLinkerClassNotFoundErrorTest0400
-     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0400
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0004
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST_0004
      * @tc.desc    Test constructor with a message containing special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerClassNotFoundErrorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerClassNotFoundErrorTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialMsg = 'Class "com.example.MyClass<Test>" not found!';
       const error = new LinkerClassNotFoundError(specialMsg);
       expect(error.name).assertEqual('LinkerClassNotFoundError');
       expect(error.message).assertEqual(specialMsg);
     });
 
-
     /**
-     * @tc.name    builtinsLinkerClassNotFoundErrorTest0500
-     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0500
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0005
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST_0005
      * @tc.desc    Test constructor with options (cause) parameter
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerClassNotFoundErrorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerClassNotFoundErrorTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const cause = new Error('Underlying cause');
       const error = new LinkerClassNotFoundError('Class not found', { cause });
       expect(error.name).assertEqual('LinkerClassNotFoundError');
@@ -115,14 +112,14 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerClassNotFoundErrorTest0600
-     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0600
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0006
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST_0006
      * @tc.desc    Test constructor with both message and empty options
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerClassNotFoundErrorTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerClassNotFoundErrorTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerClassNotFoundError('Class not found', {});
       expect(error.name).assertEqual('LinkerClassNotFoundError');
       expect(error.message).assertEqual('Class not found');
@@ -130,14 +127,14 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerClassNotFoundErrorTest0700
-     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0700
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0007
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST_0007
      * @tc.desc    Test constructor with options only (no message)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerClassNotFoundErrorTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerClassNotFoundErrorTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const cause = new Error('Root cause');
       const error = new LinkerClassNotFoundError(undefined, { cause });
       expect(error.name).assertEqual('LinkerClassNotFoundError');
@@ -146,14 +143,14 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerClassNotFoundErrorTest0800
-     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0800
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0008
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST_0008
      * @tc.desc    Test constructor with long message string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerClassNotFoundErrorTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerClassNotFoundErrorTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const longMsg = 'Class ' + 'com.example.' + 'a'.repeat(100) + ' not found due to linker resolution failure';
       const error = new LinkerClassNotFoundError(longMsg);
       expect(error.name).assertEqual('LinkerClassNotFoundError');
@@ -161,14 +158,14 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerClassNotFoundErrorTest0900
-     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST0900
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0009
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST_0009
      * @tc.desc    Test that error instance is throwable and catchable
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerClassNotFoundErrorTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerClassNotFoundErrorTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       try {
         throw new LinkerClassNotFoundError('Test error');
         expect(true).assertFalse();
@@ -180,14 +177,14 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerClassNotFoundErrorTest1000
-     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST1000
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0010
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST_0010
      * @tc.desc    Test error inheritance chain
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerClassNotFoundErrorTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerClassNotFoundErrorTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerClassNotFoundError();
       expect(error instanceof LinkerClassNotFoundError).assertTrue();
 
@@ -195,28 +192,28 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerClassNotFoundErrorTest1100
-     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST1100
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0011
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST_0011
      * @tc.desc    Test error properties (stack trace)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerClassNotFoundErrorTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerClassNotFoundErrorTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerClassNotFoundError('Test');
       expect(typeof error.stack).assertEqual('string');
       expect(error.stack?.includes('LinkerClassNotFoundError')).assertTrue();
     });
 
     /**
-     * @tc.name    builtinsLinkerClassNotFoundErrorTest1200
-     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST1200
+     * @tc.name    builtinsLinkerClassNotFoundErrorTest0012
+     * @tc.number  BUILTINS_LINKER_CLASS_NOT_FOUND_ERROR_TEST_0012
      * @tc.desc    Test error with nested cause chain
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerClassNotFoundErrorTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerClassNotFoundErrorTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const rootCause = new Error('Root error');
       const middleError = new LinkerClassNotFoundError('Middle error', { cause: rootCause });
       const topError = new LinkerClassNotFoundError('Top error', { cause: middleError });
@@ -224,7 +221,6 @@ export default function builtinsLinkerClassNotFoundErrorTest() {
       expect(topError.cause).assertEqual(middleError);
       expect(middleError.cause).assertEqual(rootCause);
     });
-
 
   })
 }

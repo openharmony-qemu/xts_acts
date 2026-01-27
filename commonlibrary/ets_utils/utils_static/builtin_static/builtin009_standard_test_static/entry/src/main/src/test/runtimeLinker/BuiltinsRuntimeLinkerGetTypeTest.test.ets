@@ -44,15 +44,15 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-    * @tc.name    builtinsRuntimeLinkerGetTypeTest0100
-    * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0100
-    * @tc.desc    Test getType method with undefined parameter
-    * @tc.type    FUNCTION
-    * @tc.size    SMALLTEST
-    * @tc.level   LEVEL0
-    */
-    it('builtinsRuntimeLinkerGetTypeTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    /**
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0001
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST_0001
+     * @tc.desc    Test getType method with undefined parameter
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
+     */
+    it('builtinsRuntimeLinkerGetTypeTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       try {
         const undefinedStr: string = String(undefined);
@@ -66,14 +66,14 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerGetTypeTest0200
-     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0200
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0002
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST_0002
      * @tc.desc    Test getType method with null parameter
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerGetTypeTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerGetTypeTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       try {
         const nullStr: string = String(null);
@@ -87,14 +87,14 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerGetTypeTest0300
-     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0300
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0003
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST_0003
      * @tc.desc    Test getType method with empty string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerGetTypeTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerGetTypeTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       const td: string = '';
       const type = linker.getType(td);
@@ -102,14 +102,14 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerGetTypeTest0400
-     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0400
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0004
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST_0004
      * @tc.desc    Test getType method with special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsRuntimeLinkerGetTypeTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerGetTypeTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       const td: string = '!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
       const type = linker.getType(td);
@@ -117,14 +117,14 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerGetTypeTest0500
-     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0500
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0005
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST_0005
      * @tc.desc    Test getType method with full ASCII range
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsRuntimeLinkerGetTypeTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerGetTypeTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       let td: string = '';
       for (let i = 32; i <= 126; i++) {
@@ -135,14 +135,14 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerGetTypeTest0600
-     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0600
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0006
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST_0006
      * @tc.desc    Test getType method with duplicated special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsRuntimeLinkerGetTypeTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerGetTypeTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       const td: string = '!!""##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~';
       const type = linker.getType(td);
@@ -150,14 +150,14 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerGetTypeTest0700
-     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0700
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0007
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST_0007
      * @tc.desc    Test getType method with escape characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsRuntimeLinkerGetTypeTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerGetTypeTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       const td: string = '\\a\\b\\f\\n\\r\\t\\v\\\\\\\'\\"\\?\\0\\101\\x41';
       const type = linker.getType(td);
@@ -165,14 +165,14 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerGetTypeTest0800
-     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0800
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0008
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST_0008
      * @tc.desc    Test getType method with emoji and Unicode characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsRuntimeLinkerGetTypeTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerGetTypeTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       const emojiUnicodes: string[] = [
         '\ud83d\udc46',
@@ -197,14 +197,14 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerGetTypeTest0900
-     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST0900
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0009
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST_0009
      * @tc.desc    Test getType method with invalid Unicode sequences
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsRuntimeLinkerGetTypeTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerGetTypeTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       const testStrings: string[] = [
         '\udc04',
@@ -220,14 +220,14 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerGetTypeTest1000
-     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1000
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0010
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST_0010
      * @tc.desc    Test getType method with keyword strings
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerGetTypeTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerGetTypeTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       const testStrings: string[] = [
         '\udc04',
@@ -242,14 +242,14 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerGetTypeTest1100
-     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1100
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0011
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST_0011
      * @tc.desc    Test getType method with treeString type
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsRuntimeLinkerGetTypeTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerGetTypeTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       const createTreeString = (size: number): string => {
         let ans = '[';
@@ -265,14 +265,14 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerGetTypeTest1200
-     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1200
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0012
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST_0012
      * @tc.desc    Test getType method with sliceString type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsRuntimeLinkerGetTypeTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerGetTypeTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       const str: string = "{k1:value1,k2:value2}";
       const sliced: string = str.substring(0, str.length - 2);
@@ -286,14 +286,14 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerGetTypeTest1300
-     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1300
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0013
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST_0013
      * @tc.desc    Test getType method memory usage with large string
      * @tc.type    FUNCTION
      * @tc.size    LARGETEST
      * @tc.level   LEVEL2
      */
-    it('builtinsRuntimeLinkerGetTypeTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerGetTypeTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       const td: string = 'a'.repeat(1000000);
       console.log(`String length: ${td.length.toLocaleString()} Character`);
@@ -316,14 +316,14 @@ export default function builtinsRuntimeLinkerGetTypeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerGetTypeTest1400
-     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST1400
+     * @tc.name    builtinsRuntimeLinkerGetTypeTest0014
+     * @tc.number  BUILTINS_RUNTIME_LINKER_GET_TYPE_TEST_0014
      * @tc.desc    Test getType method GC behavior
      * @tc.type    FUNCTION
      * @tc.size    LARGETEST
      * @tc.level   LEVEL2
      */
-    it('builtinsRuntimeLinkerGetTypeTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerGetTypeTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const linker = new TestRuntimeLinker();
       const iterations = 5;
       const stringSize = 500000;

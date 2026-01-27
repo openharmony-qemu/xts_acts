@@ -38,16 +38,15 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
       // This API supports only one parameter: clear action function.
     })
 
-
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0100
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0100
+     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0001
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST_0001
      * @tc.desc    Test loadLibraryWithPermissionCheck with normal path and filename
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testPath: string = "undefined";
       const testFileName: string = "@ohos.bundle.d.ts";
       let exceptionThrown: boolean = false;
@@ -61,14 +60,14 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0200
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0200
+     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0002
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST_0002
      * @tc.desc    Test loadLibraryWithPermissionCheck with normal path and filename
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testPath: string = "null";
       const testFileName: string = "@ohos.bundle.d.ts";
       let exceptionThrown: boolean = false;
@@ -82,14 +81,14 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0300
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0300
+     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0003
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST_0003
      * @tc.desc    Test loadLibraryWithPermissionCheck with empty path and filename
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let hasError = false;
       try {
         loadLibraryWithPermissionCheck('', "@ohos.bundle.d.ts");
@@ -101,14 +100,14 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0400
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0400
+     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0004
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST_0004
      * @tc.desc    Test loadLibraryWithPermissionCheck with special characters in path
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialPath = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'.split('');
       const normalFile = '@ohos.bundle.d.ts';
       specialPath.forEach(spe => {
@@ -124,14 +123,14 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0500
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0500
+     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0005
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST_0005
      * @tc.desc    Test loadLibraryWithPermissionCheck with ASCII characters in both parameters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let asciiStr = '';
       for (let i = 32; i <= 126; i++) {
         asciiStr += String.fromCharCode(i);
@@ -150,14 +149,14 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0600
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0600
+     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0006
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST_0006
      * @tc.desc    Test loadLibraryWithPermissionCheck with duplicated special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialChars = '!!""##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~';
       specialChars.split('').forEach(spc => {
         let hasErr = false;
@@ -172,14 +171,14 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0700
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0700
+     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0007
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST_0007
      * @tc.desc    Test loadLibraryWithPermissionCheck with escape characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const escapeChars = '\\a\\b\\f\\n\\r\\t\\v\\\\\\\'\\"\\?\\0\\101\\x41';
       let hasError = false;
       try {
@@ -192,14 +191,14 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0800
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0800
+     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0008
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST_0008
      * @tc.desc    Test loadLibraryWithPermissionCheck with invalid Unicode sequences
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const invalidUnicodes = ['\udc04', '\ud83d', '\udff4'];
       for (let i = 0; i < invalidUnicodes.length; i++) {
         const rawCode = invalidUnicodes[i];
@@ -218,14 +217,14 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0900
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST0900
+     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0009
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST_0009
      * @tc.desc    Test loadLibraryWithPermissionCheck with keywords to verify recognition and stability
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const keywords = ['0', 'NaN', ''];
       keywords.forEach(keyword => {
         let firstResult: boolean;
@@ -255,14 +254,14 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest1000
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST1000
+     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0010
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST_0010
      * @tc.desc    Test loadLibraryWithPermissionCheck with treeString type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const initTreeString = (size: number): string => {
         let ans = '[';
         while (ans.length < size) {
@@ -302,14 +301,14 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest1100
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST1100
+     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0011
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST_0011
      * @tc.desc    Test loadLibraryWithPermissionCheck with sliced string to verify value stability
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const originalStr = "{k1:value1,k2:value2}";
       const sliced = originalStr.substring(0, originalStr.length - 2);
       let valueChanged = false;
@@ -348,14 +347,14 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest1200
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST1200
+     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0012
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST_0012
      * @tc.desc    Test loadLibraryWithPermissionCheck with huge string to verify memory usage
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const hugeSize = 10000000;
       let hugeString: string;
       try {
@@ -375,14 +374,14 @@ export default function builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest(
     });
 
     /**
-     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest1300
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST1300
+     * @tc.name    builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0013
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_LIBRARY_WITH_PERMISSION_CHECK_TEST_0013
      * @tc.desc    Test GC with huge string after reference release
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeLinkerLoadLibraryWithPermissionCheckTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const size = 10000000;
       let str1 = "a".repeat(size);
       let isErr = false

@@ -54,7 +54,7 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
 
     /**
     * @tc.name    builtinsRuntimeLinkerLoadClassTest0001
-    * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0001
+    * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST_0001
     * @tc.desc    Test loadClass method with "undefined" string parameter
     * @tc.type    FUNCTION
     * @tc.size    SMALLTEST
@@ -72,7 +72,7 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
 
     /**
      * @tc.name    builtinsRuntimeLinkerLoadClassTest0002
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0002
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST_0002
      * @tc.desc    Test loadClass method with "null" string parameter
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -90,7 +90,7 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
 
     /**
      * @tc.name    builtinsRuntimeLinkerLoadClassTest0003
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0003
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST_0003
      * @tc.desc    Test loadClass method with empty string parameter
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -108,7 +108,7 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
 
     /**
      * @tc.name    builtinsRuntimeLinkerLoadClassTest0004
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0004
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST_0004
      * @tc.desc    Test loadClass method with full range of special characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -126,7 +126,7 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
 
     /**
      * @tc.name    builtinsRuntimeLinkerLoadClassTest0005
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0005
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST_0005
      * @tc.desc    Test loadClass method with full range of ASCII characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -144,7 +144,7 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
 
     /**
      * @tc.name    builtinsRuntimeLinkerLoadClassTest0006
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0006
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST_0006
      * @tc.desc    Test loadClass method with special characters repeated twice
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -162,7 +162,7 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
 
     /**
      * @tc.name    builtinsRuntimeLinkerLoadClassTest0007
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0007
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST_0007
      * @tc.desc    Test loadClass method with all escape characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -209,7 +209,7 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
 
     /**
      * @tc.name    builtinsRuntimeLinkerLoadClassTest0008
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0008
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST_0008
      * @tc.desc    Test loadClass method with emojis and Unicode characters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -259,7 +259,7 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
 
     /**
      * @tc.name    builtinsRuntimeLinkerLoadClassTest0009
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0009
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST_0009
      * @tc.desc    Test loadClass method with invalid Unicode encoding
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -282,7 +282,7 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
 
     /**
      * @tc.name    builtinsRuntimeLinkerLoadClassTest0010
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0010
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST_0010
      * @tc.desc    Test loadClass method with keywords
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -316,7 +316,7 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
 
     /**
    * @tc.name    builtinsRuntimeLinkerLoadClassTest0011
-   * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0011
+   * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST_0011
    * @tc.desc    Test loadClass method with treeString type
    * @tc.type    FUNCTION
    * @tc.size    SMALLTEST
@@ -368,7 +368,7 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
 
     /**
      * @tc.name    builtinsRuntimeLinkerLoadClassTest0012
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0012
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST_0012
      * @tc.desc    Test loadClass method with sliceString type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -399,7 +399,7 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
 
     /**
      * @tc.name    builtinsRuntimeLinkerLoadClassTest0013
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0013
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST_0013
      * @tc.desc    Test loadClass method with huge string memory usage
      * @tc.type    FUNCTION
      * @tc.size    LARGETEST
@@ -418,7 +418,7 @@ export default function builtinsRuntimeLinkerLoadClassTest() {
 
     /**
      * @tc.name    builtinsRuntimeLinkerLoadClassTest0014
-     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST0014
+     * @tc.number  BUILTINS_RUNTIME_LINKER_LOAD_CLASS_TEST_0014
      * @tc.desc    Test GC behavior with large string
      * @tc.type    FUNCTION
      * @tc.size    LARGETEST

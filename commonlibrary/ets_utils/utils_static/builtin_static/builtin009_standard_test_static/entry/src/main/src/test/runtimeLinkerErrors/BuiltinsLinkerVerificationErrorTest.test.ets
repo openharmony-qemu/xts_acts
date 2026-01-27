@@ -15,8 +15,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-
-
 export default function builtinsLinkerVerificationErrorTest() {
   describe('builtinsLinkerVerificationErrorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -40,14 +38,14 @@ export default function builtinsLinkerVerificationErrorTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0100
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0100
+     * @tc.name    builtinsLinkerVerificationErrorTest0001
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0001
      * @tc.desc    Test constructor with default parameters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerVerificationErrorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerVerificationErrorTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error1 = new LinkerVerificationError();
       expect(error1.name).assertEqual('LinkerVerificationError');
       expect(error1.message).assertEqual('');
@@ -58,14 +56,14 @@ export default function builtinsLinkerVerificationErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0101
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0101
+     * @tc.name    builtinsLinkerVerificationErrorTest0002
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0002
      * @tc.desc    Test constructor with normal message string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerVerificationErrorTest0101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerVerificationErrorTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const message = 'Verification failed: Module signature is invalid';
       const error = new LinkerVerificationError(message);
       expect(error.name).assertEqual('LinkerVerificationError');
@@ -73,14 +71,14 @@ export default function builtinsLinkerVerificationErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0102
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0102
+     * @tc.name    builtinsLinkerVerificationErrorTest0003
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0003
      * @tc.desc    Test constructor with special characters in message
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsLinkerVerificationErrorTest0102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsLinkerVerificationErrorTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const specialChars = '!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
       const error = new LinkerVerificationError(specialChars);
       expect(error.name).assertEqual('LinkerVerificationError');
@@ -88,14 +86,14 @@ export default function builtinsLinkerVerificationErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0103
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0103
+     * @tc.name    builtinsLinkerVerificationErrorTest0004
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0004
      * @tc.desc    Test constructor with escape characters in message
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsLinkerVerificationErrorTest0103', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsLinkerVerificationErrorTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const escapeMessage = 'Error: \\a\\b\\f\\n\\r\\t\\v\\\\\\\'\\"\\?\\0';
       const error = new LinkerVerificationError(escapeMessage);
       expect(error.name).assertEqual('LinkerVerificationError');
@@ -103,14 +101,14 @@ export default function builtinsLinkerVerificationErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0104
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0104
+     * @tc.name    builtinsLinkerVerificationErrorTest0005
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0005
      * @tc.desc    Test constructor with emoji and Unicode in message
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsLinkerVerificationErrorTest0104', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsLinkerVerificationErrorTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const emojiMessage = '👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴';
       const error = new LinkerVerificationError(emojiMessage);
       expect(error.name).assertEqual('LinkerVerificationError');
@@ -118,14 +116,14 @@ export default function builtinsLinkerVerificationErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0105
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0105
+     * @tc.name    builtinsLinkerVerificationErrorTest0006
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0006
      * @tc.desc    Test constructor with very long message string
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsLinkerVerificationErrorTest0105', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+    it('builtinsLinkerVerificationErrorTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const longMessage = 'A'.repeat(10000) + 'VerificationFailed' + 'B'.repeat(10000);
       const error = new LinkerVerificationError(longMessage);
       expect(error.name).assertEqual('LinkerVerificationError');
@@ -133,14 +131,14 @@ export default function builtinsLinkerVerificationErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0106
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0106
+     * @tc.name    builtinsLinkerVerificationErrorTest0007
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0007
      * @tc.desc    Test constructor with options parameter (cause)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsLinkerVerificationErrorTest0106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsLinkerVerificationErrorTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const cause = new Error('Root cause error');
       const error = new LinkerVerificationError('Verification failed with cause', { cause: cause });
 
@@ -150,14 +148,14 @@ export default function builtinsLinkerVerificationErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0107
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0107
+     * @tc.name    builtinsLinkerVerificationErrorTest0008
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0008
      * @tc.desc    Test constructor with empty options object
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerVerificationErrorTest0107', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerVerificationErrorTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerVerificationError('Test error', {});
 
       expect(error.name).assertEqual('LinkerVerificationError');
@@ -166,14 +164,14 @@ export default function builtinsLinkerVerificationErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0108
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0108
+     * @tc.name    builtinsLinkerVerificationErrorTest0009
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0009
      * @tc.desc    Test constructor with numeric string message
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerVerificationErrorTest0108', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerVerificationErrorTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const messages = ['0', '123', '-1', '3.14', 'NaN', 'Infinity'];
 
       messages.forEach((msg) => {
@@ -184,14 +182,14 @@ export default function builtinsLinkerVerificationErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0109
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0109
+     * @tc.name    builtinsLinkerVerificationErrorTest0010
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0010
      * @tc.desc    Test constructor with boolean-like string message
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerVerificationErrorTest0109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerVerificationErrorTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const messages = ['true', 'false', 'TRUE', 'FALSE'];
 
       messages.forEach((msg) => {
@@ -202,14 +200,14 @@ export default function builtinsLinkerVerificationErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0110
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0110
+     * @tc.name    builtinsLinkerVerificationErrorTest0011
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0011
      * @tc.desc    Test constructor with JSON string message
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsLinkerVerificationErrorTest0110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsLinkerVerificationErrorTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const jsonMessage = '{"error": "verification_failed", "code": 1001, "details": {"module": "test.abc"}}';
       const error = new LinkerVerificationError(jsonMessage);
 
@@ -218,14 +216,14 @@ export default function builtinsLinkerVerificationErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0111
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0111
+     * @tc.name    builtinsLinkerVerificationErrorTest0012
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0012
      * @tc.desc    Test constructor with multiline message
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsLinkerVerificationErrorTest0111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsLinkerVerificationErrorTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const multilineMessage = `Line 1: Verification failed
           Line 2: Module signature mismatch
           Line 3: Expected: 0xCAFEBABE
@@ -237,31 +235,29 @@ export default function builtinsLinkerVerificationErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0112
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0112
+     * @tc.name    builtinsLinkerVerificationErrorTest0013
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0013
      * @tc.desc    Test constructor with custom fields in options
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsLinkerVerificationErrorTest0112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsLinkerVerificationErrorTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const error = new LinkerVerificationError('Error message');
 
       expect(error.name).assertEqual('LinkerVerificationError');
       expect(error.message).assertEqual('Error message');
     });
 
-
-
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0113
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0113
+     * @tc.name    builtinsLinkerVerificationErrorTest0014
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0014
      * @tc.desc    Test constructor with null/undefined in options
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsLinkerVerificationErrorTest0113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('builtinsLinkerVerificationErrorTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const error1 = new LinkerVerificationError('Error message');
 
       expect(error1.name).assertEqual('LinkerVerificationError');
@@ -273,14 +269,14 @@ export default function builtinsLinkerVerificationErrorTest() {
       expect(error2.message).assertEqual('Another error');
     });
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0114
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0114
+     * @tc.name    builtinsLinkerVerificationErrorTest0015
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0015
      * @tc.desc    Test constructor with various error types as cause
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsLinkerVerificationErrorTest0114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+    it('builtinsLinkerVerificationErrorTest0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const causes = [
         new Error('Standard Error'),
         new TypeError('Type Error'),
@@ -301,14 +297,14 @@ export default function builtinsLinkerVerificationErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0115
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0115
+     * @tc.name    builtinsLinkerVerificationErrorTest0016
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0016
      * @tc.desc    Test stack trace preservation
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsLinkerVerificationErrorTest0115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+    it('builtinsLinkerVerificationErrorTest0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const error = new LinkerVerificationError('Stack trace test');
 
       expect(error.name).assertEqual('LinkerVerificationError');
@@ -318,21 +314,19 @@ export default function builtinsLinkerVerificationErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerVerificationErrorTest0116
-     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST0116
+     * @tc.name    builtinsLinkerVerificationErrorTest0017
+     * @tc.number  BUILTINS_LINKER_VERIFICATION_ERROR_TEST_0017
      * @tc.desc    Test toString method
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerVerificationErrorTest0116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerVerificationErrorTest0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerVerificationError('Test message');
       const str = error.toString();
 
       expect(str).assertEqual('LinkerVerificationError: Test message');
     });
-
-
 
   })
 }

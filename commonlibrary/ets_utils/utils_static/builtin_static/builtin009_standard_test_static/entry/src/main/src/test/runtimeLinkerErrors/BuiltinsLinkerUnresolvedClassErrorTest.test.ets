@@ -15,8 +15,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-
-
 export default function builtinsLinkerUnresolvedClassErrorTest() {
   describe('builtinsLinkerUnresolvedClassErrorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -41,14 +39,14 @@ export default function builtinsLinkerUnresolvedClassErrorTest() {
     })
 
     /**
-     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0100
-     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST0100
+     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0001
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST_0001
      * @tc.desc    Test basic constructor with default parameters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerUnresolvedClassErrorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerUnresolvedClassErrorTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error1 = new LinkerUnresolvedClassError();
       expect(error1.name).assertEqual('LinkerUnresolvedClassError');
       expect(error1.message).assertEqual('');
@@ -59,14 +57,14 @@ export default function builtinsLinkerUnresolvedClassErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0200
-     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST0200
+     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0002
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST_0002
      * @tc.desc    Test constructor with String type boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerUnresolvedClassErrorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerUnresolvedClassErrorTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error1 = new LinkerUnresolvedClassError('');
       expect(error1.message).assertEqual('');
 
@@ -81,14 +79,14 @@ export default function builtinsLinkerUnresolvedClassErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0300
-     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST0300
+     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0003
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST_0003
      * @tc.desc    Test constructor with special characters in message
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerUnresolvedClassErrorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerUnresolvedClassErrorTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialChars = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
       const error1 = new LinkerUnresolvedClassError(specialChars);
       expect(error1.message).assertEqual(specialChars);
@@ -103,14 +101,14 @@ export default function builtinsLinkerUnresolvedClassErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0400
-     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST0400
+     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0004
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST_0004
      * @tc.desc    Test constructor with escape sequences in message
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerUnresolvedClassErrorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerUnresolvedClassErrorTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const escapeTests = [
         '\\a',
         '\\b',
@@ -137,14 +135,14 @@ export default function builtinsLinkerUnresolvedClassErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0500
-     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST0500
+     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0005
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST_0005
      * @tc.desc    Test constructor with Unicode and emoji in message
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerUnresolvedClassErrorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerUnresolvedClassErrorTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const emojis = [
         '👆', '👿', '👀', '💯', '🎅', '😼', '🔧', '💇', '🤼‍♂️', '🛢', '🀄', '🏴'
       ];
@@ -175,14 +173,14 @@ export default function builtinsLinkerUnresolvedClassErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0600
-     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST0600
+     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0006
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST_0006
      * @tc.desc    Test constructor with invalid Unicode, keywords and edge cases
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerUnresolvedClassErrorTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerUnresolvedClassErrorTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const invalidUnicode = ['\\udc04', '\\ud83d', '\\udff4'];
 
       for (let i = 0; i < invalidUnicode.length; i++) {
@@ -226,14 +224,14 @@ export default function builtinsLinkerUnresolvedClassErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0800
-     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST0800
+     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0007
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST_0007
      * @tc.desc    Test constructor with options parameter
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerUnresolvedClassErrorTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerUnresolvedClassErrorTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const rootError = new Error('Root class resolution error');
       const options1: ErrorOptions = {
         cause: rootError
@@ -272,14 +270,14 @@ export default function builtinsLinkerUnresolvedClassErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0900
-     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST0900
+     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0008
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST_0008
      * @tc.desc    Test constructor with numeric string values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerUnresolvedClassErrorTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerUnresolvedClassErrorTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const numberTests = [
         '0',
         '-0',
@@ -333,14 +331,14 @@ export default function builtinsLinkerUnresolvedClassErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerUnresolvedClassErrorTest1000
-     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST1000
+     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0009
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST_0009
      * @tc.desc    Test constructor with TypedArray string representations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerUnresolvedClassErrorTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerUnresolvedClassErrorTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const typedArrayTests = [
         'Int8Array[-128,-127,0,126,127]',
         'Int8Array[-129,128]',
@@ -385,14 +383,14 @@ export default function builtinsLinkerUnresolvedClassErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerUnresolvedClassErrorTest1100
-     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST1100
+     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0010
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST_0010
      * @tc.desc    Test constructor with array string representations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerUnresolvedClassErrorTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerUnresolvedClassErrorTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arrayTests = [
         '[72,101,108,108,111,87,111,114,108,100,49,50,51,63]',
 
@@ -424,14 +422,14 @@ export default function builtinsLinkerUnresolvedClassErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerUnresolvedClassErrorTest1200
-     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST1200
+     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0011
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST_0011
      * @tc.desc    Test constructor with boolean and falsy values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerUnresolvedClassErrorTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerUnresolvedClassErrorTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const booleanTests = [
         'true',
         'false',
@@ -476,14 +474,14 @@ export default function builtinsLinkerUnresolvedClassErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerUnresolvedClassErrorTest1300
-     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST1300
+     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0012
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST_0012
      * @tc.desc    Test constructor with object string representations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerUnresolvedClassErrorTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerUnresolvedClassErrorTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const objectTests = [
         '{className: "MyClass", resolved: false}',
 
@@ -514,14 +512,14 @@ export default function builtinsLinkerUnresolvedClassErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerUnresolvedClassErrorTest1400
-     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST1400
+     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0013
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST_0013
      * @tc.desc    Test constructor with various string formats and patterns
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerUnresolvedClassErrorTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerUnresolvedClassErrorTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const stringTests = [
         'Class'.repeat(50),
         'ClassName'.repeat(30),
@@ -567,16 +565,15 @@ export default function builtinsLinkerUnresolvedClassErrorTest() {
       }
     });
 
-
     /**
-     * @tc.name    builtinsLinkerUnresolvedClassErrorTest1600
-     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST1600
+     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0014
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST_0014
      * @tc.desc    Test constructor with complex error chains and patterns
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerUnresolvedClassErrorTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerUnresolvedClassErrorTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const level1Error = new Error('Level 1: Missing module');
       const level2Error = new LinkerUnresolvedClassError('Level 2: Class not found', { cause: level1Error });
       const level3Error = new LinkerUnresolvedClassError('Level 3: Import failed', { cause: level2Error });
@@ -619,14 +616,14 @@ export default function builtinsLinkerUnresolvedClassErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerUnresolvedClassErrorTest1700
-     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST1700
+     * @tc.name    builtinsLinkerUnresolvedClassErrorTest0015
+     * @tc.number  BUILTINS_LINKER_UNRESOLVED_CLASS_ERROR_TEST_0015
      * @tc.desc    Test constructor performance, batch creation and edge cases
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerUnresolvedClassErrorTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerUnresolvedClassErrorTest0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
 
       const batchSize = 100;
       const batchErrors: LinkerUnresolvedClassError[] = [];
@@ -677,7 +674,6 @@ export default function builtinsLinkerUnresolvedClassErrorTest() {
       expect(error1 !== error2).assertTrue();
       expect(error2 !== error3).assertTrue();
     });
-
 
   })
 }

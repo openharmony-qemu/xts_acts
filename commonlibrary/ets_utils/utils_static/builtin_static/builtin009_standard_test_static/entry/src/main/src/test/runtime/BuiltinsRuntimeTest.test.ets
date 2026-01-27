@@ -39,7 +39,7 @@ export default function builtinsRuntimeTest() {
     })
     /**
      * @tc.name    builtinsRuntimeTest0001
-     * @tc.number  BUILTINS_RUNTIME_TEST0001
+     * @tc.number  BUILTINS_RUNTIME_TEST_0001
      * @tc.desc    Test sameValue with null and undefined values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -57,7 +57,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0002
-     * @tc.number  BUILTINS_RUNTIME_TEST0002
+     * @tc.number  BUILTINS_RUNTIME_TEST_0002
      * @tc.desc    Test sameValue with Number type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -83,7 +83,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0003
-     * @tc.number  BUILTINS_RUNTIME_TEST0003
+     * @tc.number  BUILTINS_RUNTIME_TEST_0003
      * @tc.desc    Test sameValue with String type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -110,7 +110,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0004
-     * @tc.number  BUILTINS_RUNTIME_TEST0004
+     * @tc.number  BUILTINS_RUNTIME_TEST_0004
      * @tc.desc    Test sameValue with Float type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -134,7 +134,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0005
-     * @tc.number  BUILTINS_RUNTIME_TEST0005
+     * @tc.number  BUILTINS_RUNTIME_TEST_0005
      * @tc.desc    Test sameValue with boolean type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -153,7 +153,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0006
-     * @tc.number  BUILTINS_RUNTIME_TEST0006
+     * @tc.number  BUILTINS_RUNTIME_TEST_0006
      * @tc.desc    Test sameValue with array type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -176,7 +176,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0007
-     * @tc.number  BUILTINS_RUNTIME_TEST0007
+     * @tc.number  BUILTINS_RUNTIME_TEST_0007
      * @tc.desc    Test sameValue with TypedArray types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -199,7 +199,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0008
-     * @tc.number  BUILTINS_RUNTIME_TEST0008
+     * @tc.number  BUILTINS_RUNTIME_TEST_0008
      * @tc.desc    Test sameValue with edge cases and special values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -222,7 +222,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0009
-     * @tc.number  BUILTINS_RUNTIME_TEST0009
+     * @tc.number  BUILTINS_RUNTIME_TEST_0009
      * @tc.desc    Test sameValue with function and Symbol types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -237,7 +237,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0010
-     * @tc.number  BUILTINS_RUNTIME_TEST0010
+     * @tc.number  BUILTINS_RUNTIME_TEST_0010
      * @tc.desc    Test sameValue with Date and RegExp types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -254,7 +254,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0011
-     * @tc.number  BUILTINS_RUNTIME_TEST0011
+     * @tc.number  BUILTINS_RUNTIME_TEST_0011
      * @tc.desc    Test sameValueZero with null and undefined values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -272,7 +272,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0012
-     * @tc.number  BUILTINS_RUNTIME_TEST0012
+     * @tc.number  BUILTINS_RUNTIME_TEST_0012
      * @tc.desc    Test sameValueZero with Number type and NaN
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -299,7 +299,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0013
-     * @tc.number  BUILTINS_RUNTIME_TEST0013
+     * @tc.number  BUILTINS_RUNTIME_TEST_0013
      * @tc.desc    Test sameValueZero with number boundaries and special values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -326,7 +326,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0014
-     * @tc.number  BUILTINS_RUNTIME_TEST0014
+     * @tc.number  BUILTINS_RUNTIME_TEST_0014
      * @tc.desc    Test sameValueZero with String type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -346,7 +346,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0015
-     * @tc.number  BUILTINS_RUNTIME_TEST0015
+     * @tc.number  BUILTINS_RUNTIME_TEST_0015
      * @tc.desc    Test sameValueZero with String escape sequences and Unicode
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -370,7 +370,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0016
-     * @tc.number  BUILTINS_RUNTIME_TEST0016
+     * @tc.number  BUILTINS_RUNTIME_TEST_0016
      * @tc.desc    Test sameValueZero with boolean type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -390,7 +390,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0017
-     * @tc.number  BUILTINS_RUNTIME_TEST0017
+     * @tc.number  BUILTINS_RUNTIME_TEST_0017
      * @tc.desc    Test sameValueZero with array type
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -420,7 +420,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0018
-     * @tc.number  BUILTINS_RUNTIME_TEST0018
+     * @tc.number  BUILTINS_RUNTIME_TEST_0018
      * @tc.desc    Test sameValueZero with TypedArray types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -449,7 +449,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0019
-     * @tc.number  BUILTINS_RUNTIME_TEST0019
+     * @tc.number  BUILTINS_RUNTIME_TEST_0019
      * @tc.desc    Test sameValueZero with all TypedArray types and boundaries
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -491,7 +491,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0020
-     * @tc.number  BUILTINS_RUNTIME_TEST0020
+     * @tc.number  BUILTINS_RUNTIME_TEST_0020
      * @tc.desc    Test sameValueZero with type coercion and edge cases
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -516,7 +516,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0021
-     * @tc.number  BUILTINS_RUNTIME_TEST0021
+     * @tc.number  BUILTINS_RUNTIME_TEST_0021
      * @tc.desc    Test sameValueZero with Date and RegExp types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -534,7 +534,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0022
-     * @tc.number  BUILTINS_RUNTIME_TEST0022
+     * @tc.number  BUILTINS_RUNTIME_TEST_0022
      * @tc.desc    Test sameValueZero with large strings
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -555,7 +555,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0023
-     * @tc.number  BUILTINS_RUNTIME_TEST0023
+     * @tc.number  BUILTINS_RUNTIME_TEST_0023
      * @tc.desc    Test basic functionality of isLittleEndianPlatform API
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -577,7 +577,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0024
-     * @tc.number  BUILTINS_RUNTIME_TEST0024
+     * @tc.number  BUILTINS_RUNTIME_TEST_0024
      * @tc.desc    Test isLittleEndianPlatform with different data types to verify endianness
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -603,7 +603,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0025
-     * @tc.number  BUILTINS_RUNTIME_TEST0025
+     * @tc.number  BUILTINS_RUNTIME_TEST_0025
      * @tc.desc    Test isLittleEndianPlatform with Int32Array boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -630,7 +630,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0026
-     * @tc.number  BUILTINS_RUNTIME_TEST0026
+     * @tc.number  BUILTINS_RUNTIME_TEST_0026
      * @tc.desc    Test isLittleEndianPlatform with Uint32Array boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -657,7 +657,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0027
-     * @tc.number  BUILTINS_RUNTIME_TEST0027
+     * @tc.number  BUILTINS_RUNTIME_TEST_0027
      * @tc.desc    Test isLittleEndianPlatform with Float32Array special values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -684,7 +684,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0028
-     * @tc.number  BUILTINS_RUNTIME_TEST0028
+     * @tc.number  BUILTINS_RUNTIME_TEST_0028
      * @tc.desc    Test isLittleEndianPlatform with Float64Array special values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -719,7 +719,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0029
-     * @tc.number  BUILTINS_RUNTIME_TEST0029
+     * @tc.number  BUILTINS_RUNTIME_TEST_0029
      * @tc.desc    Test isLittleEndianPlatform with ArrayBuffer operations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -749,7 +749,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0030
-     * @tc.number  BUILTINS_RUNTIME_TEST0030
+     * @tc.number  BUILTINS_RUNTIME_TEST_0030
      * @tc.desc    Test isLittleEndianPlatform with DataView operations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -781,7 +781,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0031
-     * @tc.number  BUILTINS_RUNTIME_TEST0031
+     * @tc.number  BUILTINS_RUNTIME_TEST_0031
      * @tc.desc    Test isLittleEndianPlatform with multiple data types consistency
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -823,7 +823,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0032
-     * @tc.number  BUILTINS_RUNTIME_TEST0032
+     * @tc.number  BUILTINS_RUNTIME_TEST_0032
      * @tc.desc    Test isLittleEndianPlatform with boundary cases and performance
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -866,7 +866,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0033
-     * @tc.number  BUILTINS_RUNTIME_TEST0033
+     * @tc.number  BUILTINS_RUNTIME_TEST_0033
      * @tc.desc    Test isSameReference with primitive values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -896,7 +896,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0034
-     * @tc.number  BUILTINS_RUNTIME_TEST0034
+     * @tc.number  BUILTINS_RUNTIME_TEST_0034
      * @tc.desc    Test isSameReference with Number objects
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -929,7 +929,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0035
-     * @tc.number  BUILTINS_RUNTIME_TEST0035
+     * @tc.number  BUILTINS_RUNTIME_TEST_0035
      * @tc.desc    Test isSameReference with String objects
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -962,7 +962,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0036
-     * @tc.number  BUILTINS_RUNTIME_TEST0036
+     * @tc.number  BUILTINS_RUNTIME_TEST_0036
      * @tc.desc    Test isSameReference with array objects
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1000,7 +1000,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0037
-     * @tc.number  BUILTINS_RUNTIME_TEST0037
+     * @tc.number  BUILTINS_RUNTIME_TEST_0037
      * @tc.desc    Test isSameReference with TypedArray objects
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1033,7 +1033,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0038
-     * @tc.number  BUILTINS_RUNTIME_TEST0038
+     * @tc.number  BUILTINS_RUNTIME_TEST_0038
      * @tc.desc    Test isSameReference with function references
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1056,7 +1056,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0039
-     * @tc.number  BUILTINS_RUNTIME_TEST0039
+     * @tc.number  BUILTINS_RUNTIME_TEST_0039
      * @tc.desc    Test isSameReference with ArrayBuffer and DataView
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1087,7 +1087,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0040
-     * @tc.number  BUILTINS_RUNTIME_TEST0040
+     * @tc.number  BUILTINS_RUNTIME_TEST_0040
      * @tc.desc    Test isSameReference with Promise objects
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1111,7 +1111,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0041
-     * @tc.number  BUILTINS_RUNTIME_TEST0041
+     * @tc.number  BUILTINS_RUNTIME_TEST_0041
      * @tc.desc    Test isSameReference with edge cases and mixed types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1145,7 +1145,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0042
-     * @tc.number  BUILTINS_RUNTIME_TEST0042
+     * @tc.number  BUILTINS_RUNTIME_TEST_0042
      * @tc.desc    Test isSameReference performance and consistency
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1175,7 +1175,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0043
-     * @tc.number  BUILTINS_RUNTIME_TEST0043
+     * @tc.number  BUILTINS_RUNTIME_TEST_0043
      * @tc.desc    Test __narrowAny with null and undefined values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1197,7 +1197,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0044
-     * @tc.number  BUILTINS_RUNTIME_TEST0044
+     * @tc.number  BUILTINS_RUNTIME_TEST_0044
      * @tc.desc    Test __narrowAny with primitive types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1230,7 +1230,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0045
-     * @tc.number  BUILTINS_RUNTIME_TEST0045
+     * @tc.number  BUILTINS_RUNTIME_TEST_0045
      * @tc.desc    Test __narrowAny with number boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1264,7 +1264,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0046
-     * @tc.number  BUILTINS_RUNTIME_TEST0046
+     * @tc.number  BUILTINS_RUNTIME_TEST_0046
      * @tc.desc    Test __narrowAny with string types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1305,7 +1305,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0047
-     * @tc.number  BUILTINS_RUNTIME_TEST0047
+     * @tc.number  BUILTINS_RUNTIME_TEST_0047
      * @tc.desc    Test __narrowAny with array types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1347,7 +1347,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0048
-     * @tc.number  BUILTINS_RUNTIME_TEST0048
+     * @tc.number  BUILTINS_RUNTIME_TEST_0048
      * @tc.desc    Test __narrowAny with TypedArray types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1387,7 +1387,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0049
-     * @tc.number  BUILTINS_RUNTIME_TEST0049
+     * @tc.number  BUILTINS_RUNTIME_TEST_0049
      * @tc.desc    Test __narrowAny with complex object types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1428,7 +1428,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0050
-     * @tc.number  BUILTINS_RUNTIME_TEST0050
+     * @tc.number  BUILTINS_RUNTIME_TEST_0050
      * @tc.desc    Test __narrowAny with type narrowing
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
@@ -1459,7 +1459,7 @@ export default function builtinsRuntimeTest() {
 
     /**
      * @tc.name    builtinsRuntimeTest0051
-     * @tc.number  BUILTINS_RUNTIME_TEST0051
+     * @tc.number  BUILTINS_RUNTIME_TEST_0051
      * @tc.desc    Test __narrowAny with edge cases and performance
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST

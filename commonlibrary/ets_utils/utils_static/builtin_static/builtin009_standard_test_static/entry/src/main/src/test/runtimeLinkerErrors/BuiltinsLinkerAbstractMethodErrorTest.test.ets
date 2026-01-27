@@ -15,8 +15,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-
-
 export default function builtinsLinkerAbstractMethodErrorTest() {
   describe('builtinsLinkerAbstractMethodErrorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -41,14 +39,14 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
     })
 
     /**
-     * @tc.name    builtinsLinkerAbstractMethodErrorTest0100
-     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST0100
+     * @tc.name    builtinsLinkerAbstractMethodErrorTest0001
+     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST_0001
      * @tc.desc    Test basic constructor with default parameters
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerAbstractMethodErrorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerAbstractMethodErrorTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error1 = new LinkerAbstractMethodError();
       expect(error1.name).assertEqual('LinkerAbstractMethodError');
       expect(error1.message).assertEqual('');
@@ -59,14 +57,14 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerAbstractMethodErrorTest0200
-     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST0200
+     * @tc.name    builtinsLinkerAbstractMethodErrorTest0002
+     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST_0002
      * @tc.desc    Test constructor with String type boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerAbstractMethodErrorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerAbstractMethodErrorTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error1 = new LinkerAbstractMethodError('');
       expect(error1.message).assertEqual('');
 
@@ -75,14 +73,14 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerAbstractMethodErrorTest0300
-     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST0300
+     * @tc.name    builtinsLinkerAbstractMethodErrorTest0003
+     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST_0003
      * @tc.desc    Test constructor with special characters in message
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerAbstractMethodErrorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerAbstractMethodErrorTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const specialChars = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
       const error1 = new LinkerAbstractMethodError(specialChars);
       expect(error1.message).assertEqual(specialChars);
@@ -97,14 +95,14 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerAbstractMethodErrorTest0400
-     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST0400
+     * @tc.name    builtinsLinkerAbstractMethodErrorTest0004
+     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST_0004
      * @tc.desc    Test constructor with escape sequences in message
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerAbstractMethodErrorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerAbstractMethodErrorTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const escapeTests = [
         '\\a',
         '\\b',
@@ -131,14 +129,14 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerAbstractMethodErrorTest0500
-     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST0500
+     * @tc.name    builtinsLinkerAbstractMethodErrorTest0005
+     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST_0005
      * @tc.desc    Test constructor with Unicode and emoji in message
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerAbstractMethodErrorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerAbstractMethodErrorTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const emojis = [
         '👆', '👿', '👀', '💯', '🎅', '😼', '🔧', '💇', '🤼‍♂️', '🛢', '🀄', '🏴'
       ];
@@ -169,14 +167,14 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerAbstractMethodErrorTest0600
-     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST0600
+     * @tc.name    builtinsLinkerAbstractMethodErrorTest0006
+     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST_0006
      * @tc.desc    Test constructor with invalid Unicode, keywords and edge cases
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerAbstractMethodErrorTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerAbstractMethodErrorTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const invalidUnicode = ['\\udc04', '\\ud83d', '\\udff4'];
 
       for (let i = 0; i < invalidUnicode.length; i++) {
@@ -208,14 +206,14 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerAbstractMethodErrorTest0700
-     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST0700
+     * @tc.name    builtinsLinkerAbstractMethodErrorTest0007
+     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST_0007
      * @tc.desc    Test constructor with options parameter
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerAbstractMethodErrorTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerAbstractMethodErrorTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const rootError = new Error('Root abstract method error');
       const options1: ErrorOptions = {
         cause: rootError
@@ -248,14 +246,14 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerAbstractMethodErrorTest0800
-     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST0800
+     * @tc.name    builtinsLinkerAbstractMethodErrorTest0008
+     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST_0008
      * @tc.desc    Test constructor with numeric string values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerAbstractMethodErrorTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerAbstractMethodErrorTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const numberTests = [
         '0',
         '-0',
@@ -296,14 +294,14 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerAbstractMethodErrorTest0900
-     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST0900
+     * @tc.name    builtinsLinkerAbstractMethodErrorTest0009
+     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST_0009
      * @tc.desc    Test constructor with TypedArray string representations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerAbstractMethodErrorTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerAbstractMethodErrorTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const typedArrayTests = [
         'Int8Array[-128,127,-129,128]',
 
@@ -338,14 +336,14 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerAbstractMethodErrorTest1000
-     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST1000
+     * @tc.name    builtinsLinkerAbstractMethodErrorTest0010
+     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST_0010
      * @tc.desc    Test constructor with array string representations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerAbstractMethodErrorTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerAbstractMethodErrorTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arrayTests = [
         '[72,101,108,108,111,87,111,114,108,100,49,50,51,63]',
 
@@ -375,14 +373,14 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerAbstractMethodErrorTest1100
-     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST1100
+     * @tc.name    builtinsLinkerAbstractMethodErrorTest0011
+     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST_0011
      * @tc.desc    Test constructor with boolean and falsy values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerAbstractMethodErrorTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerAbstractMethodErrorTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const booleanTests = [
         'true',
         'false',
@@ -426,14 +424,14 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerAbstractMethodErrorTest1200
-     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST1200
+     * @tc.name    builtinsLinkerAbstractMethodErrorTest0012
+     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST_0012
      * @tc.desc    Test constructor with object string representations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerAbstractMethodErrorTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerAbstractMethodErrorTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const objectTests = [
 
         '{name: "abstractMethod", implemented: false}',
@@ -463,14 +461,14 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerAbstractMethodErrorTest1300
-     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST1300
+     * @tc.name    builtinsLinkerAbstractMethodErrorTest0013
+     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST_0013
      * @tc.desc    Test constructor with various string formats and patterns
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerAbstractMethodErrorTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerAbstractMethodErrorTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const stringTests = [
         'abstract'.repeat(30),
 
@@ -485,7 +483,7 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
         'abstract\r\nmethod\r\nwith\r\nCRLF',
         'abstract\n\nmethod\n\nwith\n\nmultiple\n\nnewlines',
 
-        'a',                      
+        'a',
         'ab',
         'abc',
         ' ',
@@ -511,14 +509,14 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerAbstractMethodErrorTest1400
-     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST1400
+     * @tc.name    builtinsLinkerAbstractMethodErrorTest0014
+     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST_0014
      * @tc.desc    Test error properties, inheritance and methods
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerAbstractMethodErrorTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerAbstractMethodErrorTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const error = new LinkerAbstractMethodError('Abstract method must be implemented');
 
       expect(error.name).assertEqual('LinkerAbstractMethodError');
@@ -537,7 +535,6 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
       expect(error2.name).assertEqual('LinkerAbstractMethodError');
       expect(error2.message).assertEqual('Another abstract error');
 
-
       const innerError = new Error('Inner error');
       const options: ErrorOptions = { cause: innerError };
       const chainedError = new LinkerAbstractMethodError('Chained abstract error', options);
@@ -547,14 +544,14 @@ export default function builtinsLinkerAbstractMethodErrorTest() {
     });
 
     /**
-     * @tc.name    builtinsLinkerAbstractMethodErrorTest1500
-     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST1500
+     * @tc.name    builtinsLinkerAbstractMethodErrorTest0015
+     * @tc.number  BUILTINS_LINKER_ABSTRACT_METHOD_ERROR_TEST_0015
      * @tc.desc    Test constructor with complex error chains and edge cases
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsLinkerAbstractMethodErrorTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsLinkerAbstractMethodErrorTest0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const level1Error = new Error('Level 1: Base error');
       const level2Error = new LinkerAbstractMethodError('Level 2: Abstract error', { cause: level1Error });
       const level3Error = new LinkerAbstractMethodError('Level 3: Outer abstract error', { cause: level2Error });
