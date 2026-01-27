@@ -25,6 +25,7 @@ import common from '@ohos.app.ability.common';
 import { StartOptions } from '@kit.AbilityKit';
 import floatingBall from '@ohos.window.floatingBall';
 import settings from '@ohos.settings';
+import deviceInfo from '@ohos.deviceInfo';
 
 function checkIsCaptured() {
   let status = false;
@@ -89,6 +90,8 @@ export default function displayTest() {
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
     let isSupportRotate = false;
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -3297,7 +3300,7 @@ export default function displayTest() {
         let roundedCorner = displayInfo.getRoundedCorner();
         console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
         console.info(caseName + ' roundedCorner length: ' + JSON.stringify(roundedCorner.length));
-        if (isPCStatus == '') {
+        if (deviceType == 'phone'||deviceType == 'tablet') {
           expect(roundedCorner.length).assertLarger(0)
           expect(roundedCorner[0].type).assertEqual(0)
           expect(roundedCorner[0].position.x).assertEqual(roundedCorner[0].radius)
@@ -3311,7 +3314,7 @@ export default function displayTest() {
           expect(roundedCorner[3].type).assertEqual(3)
           expect(roundedCorner[3].position.x).assertEqual(roundedCorner[3].radius)
           expect(roundedCorner[3].position.y).assertEqual(displayInfo.height - roundedCorner[3].radius)
-        } else if (isPCStatus == 'true') {
+        } else {
           expect(roundedCorner.length).assertEqual(0)
         }
         done();
@@ -3397,7 +3400,7 @@ export default function displayTest() {
         let roundedCorner = displayInfo.getRoundedCorner();
         console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
         console.info(caseName + ' roundedCorner length: ' + JSON.stringify(roundedCorner.length));
-        if (isPCStatus == '') {
+        if (deviceType == 'phone'||deviceType == 'tablet') {
           expect(roundedCorner[0].type).assertEqual(0)
           expect(roundedCorner[0].position.x).assertLarger(0)
           expect(roundedCorner[0].position.y).assertLarger(0)

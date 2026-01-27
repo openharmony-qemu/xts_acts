@@ -37,7 +37,6 @@ struct NavigationLevelTest9 {
       Column({ space: 10 } as ColumnOptions) {
         Button('pushPath pageTwo')
           .onClick((e: ClickEvent) => {
- this.pageInfos.pushPath(new NavPathInfo('pageTwo','mes'))
             this.pageInfos.pushPath(new NavPathInfo('pageTwo','mes'))
           })
           .id('NavigationLevelTest9_btn2')
@@ -75,8 +74,7 @@ struct NavigationLevelTest9 {
         Column({ space: 10 } as ColumnOptions) {
           Button('pushPath pageOne')
             .onClick((e: ClickEvent) => {
-this.pageInfos.pushPath(new NavPathInfo('pageOne','mes'))
-              this.pageInfos.pushPath(new NavPathInfo('pageTwo','mes'))
+              this.pageInfos.pushPath(new NavPathInfo('pageOne','mes'))
             })
             .id('NavigationLevelTest9_btn1')
         }
