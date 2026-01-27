@@ -57,14 +57,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage,Environment } from '@ohos.arkui.stateManagement';
 import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
-const router = AppStorage.get<Router>("router") as Router
-AppStorage.clear()
-AppStorage.setOrCreate<Router>('router', router);
-enum KFC19{K = 1,F,L}
-Environment.envProp('stringCode', 'en');
-Environment.envProp('numberCode', 2);
-Environment.envProp('booleanCode', true);
-Environment.envProp('enumCode', KFC19.K);
+
 
 
 @Entry
@@ -74,7 +67,16 @@ struct StorageProp19 {
   @StoragePropRef('numberCode') numberCode: number = 2;
   @StoragePropRef('booleanCode') booleanCode: boolean = true;
   @StoragePropRef('enumCode') enumCode: KFC19 = KFC19.K;
-
+  static {
+    const router = AppStorage.get<Router>("router") as Router
+    AppStorage.clear()
+    AppStorage.setOrCreate<Router>('router', router);
+    enum KFC19{K = 1,F,L}
+    Environment.envProp('stringCode', 'en');
+    Environment.envProp('numberCode', 2);
+    Environment.envProp('booleanCode', true);
+    Environment.envProp('enumCode', KFC19.K);
+  }
   build() {
     Column() {
       Button(`button1: ${this.stringCode}`).width("100%").height('5%')
