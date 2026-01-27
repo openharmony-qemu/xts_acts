@@ -76,13 +76,17 @@ struct webViewController {
           await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "emitOnShowFileSelector01": {
+              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                console.log('pbbbnetment');
+                Utils.emitEvent('test-file.mp4', 20260105)
+              } else {
                 await Utils.sleep(1000);
                 let buttonOne = await driver.findComponent(ON.text('保存文件'));
                 await buttonOne.click()
                 await Utils.waitForReleaseDriver(this.str, driver)
-                let  getSuggestedName = this.getSuggestedName
+                let getSuggestedName = this.getSuggestedName
                 let buttonTwo = await driver.findComponent(ON.text('重置内容'));
-                if(buttonTwo) {
+                if (buttonTwo) {
                   await buttonTwo.click()
                 } else {
                   let buttonThree = await driver.findComponent(ON.text('取消'));
@@ -90,20 +94,25 @@ struct webViewController {
                 }
                 setTimeout(() => {
                   Utils.emitEvent(getSuggestedName, 20260105);
-                },1000)
+                }, 1000)
+              }
                 break;
             }
 
             case "emitOnShowFileSelector02": {
+              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                console.log('pbbbnetment');
+                Utils.emitEvent('downloads', 20260106)
+              } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                 let buttonOne = await driver.findComponent(ON.text('保存文件'));
                 await buttonOne.click()
                 await Utils.waitForReleaseDriver(this.str, driver)
                 let getDefaultPath = this.getDefaultPath;
                 let buttonTwo = await driver.findComponent(ON.text('重置内容'));
-                if(buttonTwo) {
+                if (buttonTwo) {
                   await buttonTwo.click()
                 } else {
                   let buttonThree = await driver.findComponent(ON.text('取消'));
@@ -111,113 +120,146 @@ struct webViewController {
                 }
                 setTimeout(() => {
                   Utils.emitEvent(getDefaultPath, 20260106);
-                },1000)
+                }, 1000)
+              }
                 break;
             }
 
             case "emitOnShowFileSelector03": {
-              this.isPageEnd = -1
-              this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-              let buttonOne = await driver.findComponent(ON.text('保存文件'));
-              await buttonOne.click()
-              await Utils.waitForReleaseDriver(this.str, driver)
-              let getDescriptions = this.getDescriptions;
-              let buttonTwo = await driver.findComponent(ON.text('重置内容'));
-              if(buttonTwo) {
-                await buttonTwo.click()
+              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                console.log('pbbbnetment');
+                Utils.emitEvent(1, 20260107)
               } else {
-                let buttonThree = await driver.findComponent(ON.text('取消'));
-                await buttonThree.click()
-              }
-              setTimeout(() => {
-                Utils.emitEvent(getDescriptions, 20260107);
-              },1000)
-              break;
-            }
-            case "emitOnShowFileSelector04": {
-              this.isPageEnd = -1
-              this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-              let buttonOne = await driver.findComponent(ON.text('保存文件'));
-              await buttonOne.click()
-              await Utils.waitForReleaseDriver(this.str, driver)
-              Utils.emitEvent(this.isAcceptAllOptionExcluded, 20260108);
-              let buttonTwo = await driver.findComponent(ON.text('重置内容'));
-              if(buttonTwo) {
-                await buttonTwo.click()
-              } else {
-                let buttonThree = await driver.findComponent(ON.text('取消'));
-                await buttonThree.click()
-              }
-              break;
-            }
-
-            case "emitOnShowFileSelector05": {
-              this.isPageEnd = -1
-              this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-              let buttonOne = await driver.findComponent(ON.text('保存文件'));
-              await buttonOne.click()
-              await Utils.waitForReleaseDriver(this.str, driver)
-              let mimeType = this.mimeType;
-              let buttonTwo = await driver.findComponent(ON.text('重置内容'));
-              if(buttonTwo) {
-                await buttonTwo.click()
-              } else {
-                let buttonThree = await driver.findComponent(ON.text('取消'));
-                await buttonThree.click()
-              }
-              setTimeout(() => {
-                Utils.emitEvent(mimeType, 20260109);
-              },1000)
-              break;
-            }
-
-            case "emitOnShowFileSelector06": {
-              this.isPageEnd = -1
-              this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-              let buttonOne = await driver.findComponent(ON.text('保存文件'));
-              await buttonOne.click()
-              await Utils.waitForReleaseDriver(this.str, driver)
-              let acceptableType = this.acceptableType
-              let buttonTwo = await driver.findComponent(ON.text('重置内容'));
-              if(buttonTwo) {
-                await buttonTwo.click()
-              } else {
-                let buttonThree = await driver.findComponent(ON.text('取消'));
-                await buttonThree.click()
-              }
-              setTimeout(() => {
-              Utils.emitEvent(acceptableType, 20260110);
-              },1000)
-              break;
-            }
-
-            case "emitOnShowFileSelector07": {
                 this.isPageEnd = -1
-                this.controller.loadUrl("resource://rawfile/showSaveFilePicker1.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-
+                this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                 let buttonOne = await driver.findComponent(ON.text('保存文件'));
                 await buttonOne.click()
                 await Utils.waitForReleaseDriver(this.str, driver)
-                let getDescriptions = this.getDescriptions
+                let getDescriptions = this.getDescriptions;
                 let buttonTwo = await driver.findComponent(ON.text('重置内容'));
-                if(buttonTwo) {
+                if (buttonTwo) {
                   await buttonTwo.click()
                 } else {
                   let buttonThree = await driver.findComponent(ON.text('取消'));
                   await buttonThree.click()
                 }
-              setTimeout(() => {
-               Utils.emitEvent(getDescriptions, 202601077);
-              },1000)
+                setTimeout(() => {
+                  Utils.emitEvent(getDescriptions, 20260107);
+                }, 1000)
+              }
+              break;
+            }
+            case "emitOnShowFileSelector04": {
+              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                console.log('pbbbnetment');
+                Utils.emitEvent(true, 20260108)
+              } else {
+                this.isPageEnd = -1
+                this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('保存文件'));
+                await buttonOne.click()
+                await Utils.waitForReleaseDriver(this.str, driver)
+                let isAcceptAllOptionExcluded = this.isAcceptAllOptionExcluded
+                let buttonTwo = await driver.findComponent(ON.text('重置内容'));
+                if (buttonTwo) {
+                  await buttonTwo.click()
+                } else {
+                  let buttonThree = await driver.findComponent(ON.text('取消'));
+                  await buttonThree.click()
+                }
+                setTimeout(() => {
+                  Utils.emitEvent(isAcceptAllOptionExcluded, 20260108);
+                }, 1000)
+              }
+              break;
+            }
+
+            case "emitOnShowFileSelector05": {
+              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                console.log('pbbbnetment');
+                Utils.emitEvent('video/*', 20260109)
+              } else {
+                this.isPageEnd = -1
+                this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('保存文件'));
+                await buttonOne.click()
+                await Utils.waitForReleaseDriver(this.str, driver)
+                let mimeType = this.mimeType;
+                let buttonTwo = await driver.findComponent(ON.text('重置内容'));
+                if (buttonTwo) {
+                  await buttonTwo.click()
+                } else {
+                  let buttonThree = await driver.findComponent(ON.text('取消'));
+                  await buttonThree.click()
+                }
+                setTimeout(() => {
+                  Utils.emitEvent(mimeType, 20260109);
+                }, 1000)
+              }
+              break;
+            }
+
+            case "emitOnShowFileSelector06": {
+              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                console.log('pbbbnetment');
+                Utils.emitEvent('[".mp4",".ogm",".wmv",".mpg"]', 20260110)
+              } else {
+                this.isPageEnd = -1
+                this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('保存文件'));
+                await buttonOne.click()
+                await Utils.waitForReleaseDriver(this.str, driver)
+                let acceptableType = this.acceptableType
+                let buttonTwo = await driver.findComponent(ON.text('重置内容'));
+                if (buttonTwo) {
+                  await buttonTwo.click()
+                } else {
+                  let buttonThree = await driver.findComponent(ON.text('取消'));
+                  await buttonThree.click()
+                }
+                setTimeout(() => {
+                  Utils.emitEvent(acceptableType, 20260110);
+                }, 1000)
+              }
+              break;
+            }
+
+            case "emitOnShowFileSelector07": {
+              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                console.log('pbbbnetment');
+                Utils.emitEvent(0, 202601077)
+              } else {
+                this.isPageEnd = -1
+                this.controller.loadUrl("resource://rawfile/showSaveFilePicker1.html")
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('保存文件'));
+                await buttonOne.click()
+                await Utils.waitForReleaseDriver(this.str, driver)
+                let getDescriptions = this.getDescriptions
+                let buttonTwo = await driver.findComponent(ON.text('重置内容'));
+                if (buttonTwo) {
+                  await buttonTwo.click()
+                } else {
+                  let buttonThree = await driver.findComponent(ON.text('取消'));
+                  await buttonThree.click()
+                }
+                setTimeout(() => {
+                  Utils.emitEvent(getDescriptions, 202601077);
+                }, 1000)
+
+              }
               break;
             }
 
             case "emitOnShowFileSelector08": {
+              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                console.log('pbbbnetment');
+                Utils.emitEvent(false, 202601078)
+              } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/showSaveFilePicker1.html")
                 await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
@@ -234,13 +276,44 @@ struct webViewController {
                 }
                 setTimeout(() => {
                   Utils.emitEvent(isAcceptAllOptionExcluded, 202601078);
-                },1000)
+                }, 1000)
+              }
               break;
             }
 
             case "emitOnShowFileSelector09": {
+              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                console.log('pbbbnetment');
+                Utils.emitEvent(0, 202601079)
+              } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/showSaveFilePicker1.html")
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                let buttonOne = await driver.findComponent(ON.text('保存文件'));
+                await buttonOne.click()
+                await Utils.waitForReleaseDriver(this.str, driver)
+                let getAcceptableFileTypesArr = this.getAcceptableFileTypesArr;
+                let buttonTwo = await driver.findComponent(ON.text('重置内容'));
+                if (buttonTwo) {
+                  await buttonTwo.click()
+                } else {
+                  let buttonThree = await driver.findComponent(ON.text('取消'));
+                  await buttonThree.click()
+                }
+                setTimeout(() => {
+                  Utils.emitEvent(getAcceptableFileTypesArr, 202601079);
+                }, 1000)
+              }
+              break;
+            }
+
+            case "emitOnShowFileSelector10": {
+              if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                console.log('pbbbnetment');
+                Utils.emitEvent(1, 2026010710)
+              } else {
+                this.isPageEnd = -1
+                this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
                 await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                 let buttonOne = await driver.findComponent(ON.text('保存文件'));
                 await buttonOne.click()
@@ -254,29 +327,9 @@ struct webViewController {
                   await buttonThree.click()
                 }
                 setTimeout(() => {
-                 Utils.emitEvent(getAcceptableFileTypesArr, 202601079);
-                },1000)
-               break;
-            }
-
-            case "emitOnShowFileSelector10": {
-              this.isPageEnd = -1
-              this.controller.loadUrl("resource://rawfile/showSaveFilePicker5.html")
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-              let buttonOne = await driver.findComponent(ON.text('保存文件'));
-              await buttonOne.click()
-              await Utils.waitForReleaseDriver(this.str, driver)
-              let getAcceptableFileTypesArr = this.getAcceptableFileTypesArr
-              let buttonTwo = await driver.findComponent(ON.text('重置内容'));
-              if(buttonTwo) {
-                await buttonTwo.click()
-              } else {
-                let buttonThree = await driver.findComponent(ON.text('取消'));
-                await buttonThree.click()
+                  Utils.emitEvent(getAcceptableFileTypesArr, 2026010710);
+                }, 1000)
               }
-              setTimeout(() => {
-               Utils.emitEvent(getAcceptableFileTypesArr, 2026010710);
-              },1000)
               break;
             }
 
@@ -288,11 +341,6 @@ struct webViewController {
         .onShowFileSelector((event) => {
           // event.fileSelector = event.fileSelector.getMode();
           console.log('MyFileUploader onShowFileSelector invoked');
-          const documentSelectOptions = new picker.DocumentSaveOptions();
-          // documentSelectOptions.newFileNames = ['默认1.txt','默认2.txt'];
-          let uri: string | null = null;
-          const documentViewPicker = new picker.DocumentViewPicker();
-
           this.getSuggestedName = event.fileSelector.getSuggestedName();
           this.getDefaultPath = event.fileSelector.getDefaultPath();
           this.getDescriptions = event.fileSelector.getDescriptions().length;
@@ -317,6 +365,8 @@ struct webViewController {
           console.log('pbbonPageEnd')
           this.isPageEnd = 1
         })
+
+
     }
     .key('RowSize')
 
