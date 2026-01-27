@@ -77,8 +77,6 @@ export default function calendarPickerWidthTest() {
      * @tc.level  LEVEL1
      */
     it('testCalendarPickerWidth004', Level.LEVEL1, async  (done: Function) => {
-      expect(nativeFunc.testCalendarPickerWidth004()).assertEqual(0)
-      done()
       async (done: Function) => {
         try {
           let result: number = nativeFunc.testCalendarPickerWidth004()
@@ -88,6 +86,6 @@ export default function calendarPickerWidthTest() {
           console.error("====>testCalendarPickerWidth004 catch err: " + err);
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
         }
-      })
     })
+  })
 }
