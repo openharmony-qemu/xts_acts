@@ -60,6 +60,7 @@ namespace NodeUtilsTest {
     napi_value GetNodeTypeTest_014(napi_env env, napi_callback_info info);
     napi_value GetNodeTypeTest_015(napi_env env, napi_callback_info info);
     napi_value GetNodeTypeTest_016(napi_env env, napi_callback_info info);
+    napi_value GetNodeTypeTest_017(napi_env env, napi_callback_info info);
     napi_value GetNodeTypeTest_018(napi_env env, napi_callback_info info);
     napi_value GetNodeTypeTest_019(napi_env env, napi_callback_info info);
     napi_value GetNodeTypeTest_020(napi_env env, napi_callback_info info);
