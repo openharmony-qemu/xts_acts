@@ -5,7 +5,7 @@ import { BusinessError } from '@ohos.base';
 
 @Component
 struct Test {
-  public a: number = 130000;
+  public a: number = 0;
   array: int[] = UIUtils.makeObserved([1, 2, 3, 4, 5]);
   arrayMonitor?: IMonitorDecoratedVariable;
   aboutToAppear() {
@@ -27,9 +27,11 @@ struct Test {
   }
   build() {
     Column() {
-      Text(`Current array is: ${this.array}`)
+      Text(`${this.a}`)
+        .id('ErrorCodeText')
         .height('5%')
       Button('Increase value in array')
+        .id('ErrorCodeButton')
         .height('5%')
         .onClick((event: ClickEvent) => {
           for (let index: int = 0; index < this.array.length; index++) {
