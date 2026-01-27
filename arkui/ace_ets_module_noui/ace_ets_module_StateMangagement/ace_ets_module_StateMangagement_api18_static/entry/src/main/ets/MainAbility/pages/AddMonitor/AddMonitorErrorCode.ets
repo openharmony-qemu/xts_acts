@@ -1,5 +1,5 @@
 'use static'
-import { UIUtils, Local, Trace, ObservedV2, IMonitor, IMonitorDecoratedVariable, Param, Event, Prop, Computed, Monitor } from '@ohos.arkui.stateManagement';
+import { UIUtils, Local, Trace, ObservedV2, IMonitor, IMonitorDecoratedVariable, Param, Event, Computed, Monitor } from '@ohos.arkui.stateManagement';
 import { ComponentV2, Component, ClickEvent, Entry, Column, Row, Button, Scroll, ForEach, Text, Divider, Set, DatePicker, TextAlign, Margin, Color } from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 
