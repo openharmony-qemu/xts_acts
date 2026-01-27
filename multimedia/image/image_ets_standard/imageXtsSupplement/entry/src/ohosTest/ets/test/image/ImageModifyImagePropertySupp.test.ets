@@ -117,7 +117,7 @@ export default function ImageSourceModifyImagePropertySupp() {
         })
       }catch (err) {
         console.error(TAG,testName,`Failed to all function, error.code ${err.code}, error.message ${err.message}`);
-        expect(err.code).assertEqual('401');
+        expect(Number(err.code)).assertEqual(401);
       }
       done();
     })
@@ -147,7 +147,7 @@ export default function ImageSourceModifyImagePropertySupp() {
         })
       }catch (err) {
         console.error(TAG,testName,`Failed to all function, error.code ${err.code}, error.message ${err.message}`);
-        expect(err.code).assertEqual('401');
+        expect(Number(err.code)).assertEqual(401);
       }
       done();
     })
@@ -237,7 +237,7 @@ export default function ImageSourceModifyImagePropertySupp() {
         })
       }catch (err) {
         console.error(TAG,testName,`Failed to all function, error.code ${err.code}, error.message ${err.message}`);
-        expect(err.code).assertEqual('401');
+        expect(Number(err.code)).assertEqual(401);
       }
       done()
     })
@@ -267,7 +267,7 @@ export default function ImageSourceModifyImagePropertySupp() {
         })
       }catch (err) {
         console.error(TAG,testName,`Failed to all function, error.code ${err.code}, error.message ${err.message}`);
-        expect(err.code).assertEqual('401');
+        expect(Number(err.code)).assertEqual(401);
       }
       done()
     })
@@ -322,7 +322,7 @@ export default function ImageSourceModifyImagePropertySupp() {
           })
       }catch (err) {
         console.error(TAG,testName,`Failed to all function, error.code ${err.code}, error.message ${err.message}`);
-        expect(err.code).assertEqual('401');
+        expect(Number(err.code)).assertEqual(401);
       }
       done();
     })
@@ -349,7 +349,7 @@ export default function ImageSourceModifyImagePropertySupp() {
         })
       }catch (err) {
         console.error(TAG,testName,`Failed to all function, error.code ${err.code}, error.message ${err.message}`);
-        expect(err.code).assertEqual('401');
+        expect(Number(err.code)).assertEqual(401);
       }
       done();
     })
@@ -430,7 +430,7 @@ export default function ImageSourceModifyImagePropertySupp() {
         })
       }catch (err) {
         console.error(TAG,testName,`Failed to all function, error.code ${err.code}, error.message ${err.message}`);
-        expect(err.code).assertEqual('401');
+        expect(Number(err.code)).assertEqual(401);
       }
       done()
     })
@@ -457,7 +457,7 @@ export default function ImageSourceModifyImagePropertySupp() {
       })
       }catch (err) {
         console.error(TAG,testName,`Failed to all function, error.code ${err.code}, error.message ${err.message}`);
-        expect(err.code).assertEqual('401');
+        expect(Number(err.code)).assertEqual(401);
       }
       done()
     })
@@ -523,7 +523,7 @@ export default function ImageSourceModifyImagePropertySupp() {
         });
       }catch (err) {
         console.error(TAG,testName,`Failed to all function, error.code ${err.code}, error.message ${err.message}`);
-        expect(err.code).assertEqual('401');
+        expect(Number(err.code)).assertEqual(401);
       }
       done()
     })
@@ -553,7 +553,7 @@ export default function ImageSourceModifyImagePropertySupp() {
         });
       }catch (err) {
         console.error(TAG,testName,`Failed to all function, error.code ${err.code}, error.message ${err.message}`);
-        expect(err.code).assertEqual('401');
+        expect(Number(err.code)).assertEqual(401);
       }
       done()
     })
