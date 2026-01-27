@@ -760,6 +760,7 @@ export default function observerManagerCallStateTest() {
       try {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
+          expect(false).assertTrue();
         }
         let options: observer.ObserverOptions = {
           slotId: -2
