@@ -55,11 +55,11 @@ export default function actslocationTest() {
             if (data.connState == wifiMg.ConnState.CONNECTED) {
               console.info("======> WLAN connection established ");
             } else {
-              expect().message("======> WLAN Network error").assertFail(); //方式一
+              expect().message("======> WLAN Network error").assertFail();
 
             }
             if (data.chload >= 800 || data.rssi <= -80) {
-              expect().message("======> WLAN Network error").assertFail();//方式一
+              expect().message("======> WLAN Network error").assertFail();
             } else if (data.chload >= 500) {
               console.info("======> The internet connection is poor. ");
             }
