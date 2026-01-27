@@ -427,7 +427,7 @@ static int RunDoubleQoSOperationsTest()
         return -1;
     }
 
-    enum QoS_Level level;
+    QoS_Level level;
     ret = OH_QoS_GetThreadQoS(&level);
     if (ret != 0) {
         return -1;
