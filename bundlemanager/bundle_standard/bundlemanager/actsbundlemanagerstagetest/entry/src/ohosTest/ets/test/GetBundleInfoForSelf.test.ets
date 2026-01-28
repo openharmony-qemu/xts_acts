@@ -554,7 +554,7 @@ export default function getBundleInfoForSelf() {
         expect(data.appInfo).assertEqual(null);
         expect(data.hapModulesInfo[0].abilitiesInfo.length).assertEqual(0);
         let extensionList = data.hapModulesInfo[0].extensionAbilitiesInfo
-        expect(extensionList.length).assertEqual(30);
+        expect(extensionList.length).assertEqual(31);
         let count = 0;
         for (let i = 0;i < extensionList.length; i++) {
           switch (extensionList[i].name) {
@@ -730,10 +730,15 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.CRYPTO)
               count = count + 35
               break;
+            case 'partnerAgent':
+              console.info("partnerAgent" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.PARTNER_AGENT)
+              count = count + 36
+              break;
           }
           console.info("count" + JSON.stringify(count));
         }
-        expect(count).assertEqual(465);
+        expect(count).assertEqual(501);
         expect(data.hapModulesInfo[0].metadata.length).assertEqual(0);
         expect(data.reqPermissionDetails.length).assertEqual(0);
         expect(data.permissionGrantStates.length).assertEqual(0);
@@ -764,7 +769,7 @@ export default function getBundleInfoForSelf() {
           expect(data.appInfo).assertEqual(null);
           expect(data.hapModulesInfo[0].abilitiesInfo.length).assertEqual(0);
           let extensionList = data.hapModulesInfo[0].extensionAbilitiesInfo
-          expect(extensionList.length).assertEqual(30);
+          expect(extensionList.length).assertEqual(31);
           let count = 0;
           for (let i = 0;i < extensionList.length; i++) {
             switch (extensionList[i].name) {
@@ -940,10 +945,15 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.CRYPTO)
               count = count + 35
               break;
+            case 'partnerAgent':
+              console.info("partnerAgent" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.PARTNER_AGENT)
+              count = count + 36
+              break;
             }
             console.info("count" + JSON.stringify(count));
           }
-          expect(count).assertEqual(465);
+          expect(count).assertEqual(501);
           expect(data.hapModulesInfo[0].metadata.length).assertEqual(0);
           expect(data.reqPermissionDetails.length).assertEqual(0);
           expect(data.permissionGrantStates.length).assertEqual(0);
@@ -1538,7 +1548,7 @@ export default function getBundleInfoForSelf() {
       expect(data.appInfo).assertEqual(null);
       expect(data.hapModulesInfo[0].abilitiesInfo.length).assertEqual(0);
       let extensionList = data.hapModulesInfo[0].extensionAbilitiesInfo
-      expect(extensionList.length).assertEqual(30);
+      expect(extensionList.length).assertEqual(31);
       let count = 0;
       for (let i = 0;i < extensionList.length; i++) {
         switch (extensionList[i].name) {
@@ -1716,10 +1726,15 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.CRYPTO)
               count = count + 35
               break;
+          case 'partnerAgent':
+              console.info("partnerAgent" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.PARTNER_AGENT)
+              count = count + 36
+              break;
         }
         console.info("count" + JSON.stringify(count));
       }
-      expect(count).assertEqual(465);
+      expect(count).assertEqual(501);
       expect(data.hapModulesInfo[0].metadata.length).assertEqual(0);
       expect(data.reqPermissionDetails.length).assertEqual(0);
       expect(data.permissionGrantStates.length).assertEqual(0);

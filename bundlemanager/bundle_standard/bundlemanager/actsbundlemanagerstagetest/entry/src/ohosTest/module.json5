@@ -485,6 +485,15 @@
         "srcEntrance": "./ets/FormAbility/FormAbility.ts",
         "type": "crypto",
         "visible": true
+    },
+    {
+        "description": "$string:form_description",
+        "icon": "$media:icon",
+        "label": "$string:entry_label",
+        "name": "partnerAgent",
+        "srcEntrance": "./ets/FormAbility/FormAbility.ts",
+        "type": "partnerAgent",
+        "visible": true
     }
   ],
   "requestPermissions": [
