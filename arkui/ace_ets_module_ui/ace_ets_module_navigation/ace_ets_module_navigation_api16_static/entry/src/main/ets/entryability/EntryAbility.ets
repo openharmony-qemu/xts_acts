@@ -31,7 +31,7 @@ class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
     try {
-      windowStage.loadContent('MainAbility/pages/Navigation/ReplaceDestination1', (err: BusinessError<void> | null): void => {
+      windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
         MyCallback.runCasesOfCallback();
         if (err?.code) {
