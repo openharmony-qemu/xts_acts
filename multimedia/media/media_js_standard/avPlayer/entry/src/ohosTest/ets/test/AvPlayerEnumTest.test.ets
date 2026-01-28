@@ -292,14 +292,14 @@ export default function AvPlayerEnumTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1300', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1400', Level.LEVEL0, async (done: Function) => {
       expect(media.PlaybackMetricsKey.PREPARE_DURATION).assertEqual('prepare_duration');
       expect(media.PlaybackMetricsKey.RESOURCE_CONNECTION_DURATION).assertEqual('resource_connection_duration');
       expect(media.PlaybackMetricsKey.FIRST_FRAME_DECAPSULATION_DURATION).assertEqual('first_frame_decapsulation_duration');
       expect(media.PlaybackMetricsKey.TOTAL_PLAYING_TIME).assertEqual('total_playback_time');
-      expect(media.PlaybackMetricsKey.DOWNLOAD_REQUESTS_COUNT).assertEqual(''loading_count);
+      expect(media.PlaybackMetricsKey.DOWNLOAD_REQUESTS_COUNT).assertEqual('loading_requests_count');
       expect(media.PlaybackMetricsKey.TOTAL_DOWNLOAD_TIME).assertEqual('total_loading_time');
-      expect(media.PlaybackMetricsKey.TOTAL_DOWNLOAD_SIZE).assertEqual('total_loading_Bytes');
+      expect(media.PlaybackMetricsKey.TOTAL_DOWNLOAD_SIZE).assertEqual('total_loading_bytes');
       expect(media.PlaybackMetricsKey.STALLING_COUNT).assertEqual('stalling_count');
       expect(media.PlaybackMetricsKey.TOTAL_STALLING_TIME).assertEqual('total_stalling_time');
       done();
