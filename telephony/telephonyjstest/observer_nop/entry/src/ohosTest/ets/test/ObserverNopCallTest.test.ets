@@ -50,17 +50,16 @@ export default function observerNopCallTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Telephony_observer_on_noPermission_cCallStateInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('Telephony_observer_on_noPermission_cCallStateInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
         let caseName: string = 'Telephony_observer_on_noPermission_cCallStateInfo_0100';
         console.log("************* Telephony_observer_on_noPermission_cCallStateInfo_0100 Test start *************");
         try {
           let callback = (value: observer.CCallStateInfo) => {
             console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
             ExpectFail();
+            done();
           }
           observer.onCCallStateChange(callback);
-          await sleep(50)
-          done();
         } catch (err) {
           console.info(`${caseName} catchError: ${JSON.stringify(err)}}`+err);
           ExpectTrue(err.code === 201);
@@ -77,18 +76,16 @@ export default function observerNopCallTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Telephony_observer_off_noPermission_cCallStateInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('Telephony_observer_off_noPermission_cCallStateInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = 'Telephony_observer_off_noPermission_cCallStateInfo_0100';
       console.log("************* Telephony_observer_off_noPermission_cCallStateInfo_0100 Test start *************");
       try {
         let callback: (value: observer.CCallStateInfo) => void = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, value:` + JSON.stringify(value));
           ExpectFail();
+          done();
         }
-        observer.onCCallStateChange(callback);
-        await sleep(50)
         observer.offCCallStateChange(callback);
-        done();
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
         ExpectTrue(err.code === 201);
