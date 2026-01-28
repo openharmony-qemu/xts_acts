@@ -275,7 +275,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_001
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_001
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -302,7 +302,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_002
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_002
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -329,7 +329,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_003
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_003
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -356,7 +356,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_004
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_004
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -383,7 +383,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_005
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_005
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -410,7 +410,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_006
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_006
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -437,7 +437,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_007
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_007
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -464,7 +464,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_008
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_008
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -491,7 +491,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_009
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_009
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -518,7 +518,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0010
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0010
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -545,7 +545,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0011
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0011
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -572,7 +572,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0012
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0012
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -599,7 +599,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0013
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0013
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -626,7 +626,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0014
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0014
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -653,7 +653,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0015
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0015
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -680,7 +680,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0016
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0016
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -707,7 +707,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0017
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0017
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -734,7 +734,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0018
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0018
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -761,7 +761,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0019
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0019
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -788,7 +788,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0020
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0020
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -815,7 +815,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0021
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0021
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -842,7 +842,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0022
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0022
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -869,7 +869,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0023
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0023
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -896,7 +896,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0024
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICE_0024
-     * @tc.desc   getCameraDevice
+     * @tc.desc   getCameraDevice Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -923,7 +923,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_001
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_001
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -953,7 +953,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_002
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_002
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -983,7 +983,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_003
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_003
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1013,7 +1013,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_004
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_004
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1043,7 +1043,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_005
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_005
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1073,7 +1073,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_006
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_006
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1103,7 +1103,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_007
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_007
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1133,7 +1133,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_008
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_008
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1163,7 +1163,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_009
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_009
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1193,7 +1193,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0010
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0010
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1223,7 +1223,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0011
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0011
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1253,7 +1253,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0012
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0012
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1283,7 +1283,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0013
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0013
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1313,7 +1313,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0014
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0014
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1343,7 +1343,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0015
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0015
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1373,7 +1373,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0016
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0016
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1403,7 +1403,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0017
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0017
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1433,7 +1433,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0018
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0018
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1463,7 +1463,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0019
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0019
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1493,7 +1493,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0020
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0020
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1523,7 +1523,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0021
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0021
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1553,7 +1553,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0022
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0022
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1583,7 +1583,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0023
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0023
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1613,7 +1613,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0024
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0024
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1643,7 +1643,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0025
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0025
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Camera service fatal error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1673,7 +1673,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0026
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0026
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Parameter error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1700,7 +1700,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0027
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0027
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Parameter error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1727,7 +1727,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0028
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0028
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Parameter error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1754,7 +1754,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0029
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0029
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Parameter error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1781,7 +1781,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0030
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0030
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1808,7 +1808,7 @@ export default function CameraManagerGetCameraDevicesTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0031
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_0031
-     * @tc.desc   getCameraDevices
+     * @tc.desc   getCameraDevices Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
