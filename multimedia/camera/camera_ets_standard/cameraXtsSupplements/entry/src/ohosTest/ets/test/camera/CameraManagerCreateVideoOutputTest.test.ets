@@ -275,7 +275,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_001
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_001
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -296,7 +296,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_002
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_002
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -317,7 +317,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_003
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_003
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -337,7 +337,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0001
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0001
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -363,7 +363,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0002
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0002
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -389,7 +389,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0003
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0003
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -415,7 +415,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0004
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0004
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -441,7 +441,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0005
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0005
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -467,7 +467,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0006
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0006
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -493,7 +493,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0007
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0007
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -519,7 +519,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0008
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0008
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -545,7 +545,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0009
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_0009
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -571,7 +571,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00010
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00010
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -597,7 +597,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00011
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00011
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -623,7 +623,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00012
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00012
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -649,7 +649,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00013
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00013
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -675,7 +675,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00014
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00014
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -701,7 +701,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00015
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00015
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -727,7 +727,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00016
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00016
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -749,7 +749,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00017
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00017
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -771,7 +771,7 @@ export default function CameraManagerCreateVideoOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00018
      * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00018
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createVideoOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
