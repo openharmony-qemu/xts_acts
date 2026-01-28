@@ -74,7 +74,7 @@ export default function ActsWebViewTest3() {
         done();
       }
       done();
-    })
+    });
 
 
 
