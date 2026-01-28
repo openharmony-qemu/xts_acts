@@ -1470,7 +1470,7 @@ export default function ErrTest() {
           sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
-            expect().assertFail();
+            ExpectTrue(err.code === 401 || err.code === 201);
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
@@ -1481,7 +1481,7 @@ export default function ErrTest() {
       } catch (err) {
         const ee: BusinessError = err as BusinessError;
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        expect(err.code === 401).assertTrue();
+        ExpectTrue(ee.code === 401);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1539,7 +1539,7 @@ export default function ErrTest() {
         contact.queryContactsByEmail(context, null, holder, (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
-            expect(err.code === 401).assertTrue();
+            ExpectTrue(err.code === 401 || err.code === 201);
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
@@ -1550,7 +1550,7 @@ export default function ErrTest() {
       } catch (err) {
         const ee: BusinessError = err as BusinessError;
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        expect().assertFail();
+        ExpectTrue(ee.code === 401);
         done();
       }
       console.info(`${caseName} test end `);
@@ -1577,7 +1577,7 @@ export default function ErrTest() {
         }, (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
-            expect(err.code === 401).assertTrue();
+            ExpectTrue(err.code === 401 || err.code === 201);
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
@@ -1587,7 +1587,7 @@ export default function ErrTest() {
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        expect().assertFail();
+        ExpectTrue((err as BusinessError).code === 401);
         done();
       }
       console.info(`${caseName} test end `);

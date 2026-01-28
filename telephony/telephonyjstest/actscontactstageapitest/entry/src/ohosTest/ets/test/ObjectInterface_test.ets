@@ -873,7 +873,7 @@ export default function ObjectInterfaceTest() {
                 return;
               }
               console.log('deleteContact success');
-              expect().assertTrue();
+              expect(keyData != undefined).assertTrue();
               done();
             });
           }else {done()}
@@ -910,7 +910,7 @@ export default function ObjectInterfaceTest() {
             let promise = contact.deleteContact(context,keyData);
             promise.then(() => {
               console.log(`deleteContact success`);
-              expect().assertTrue();
+              expect(keyData != undefined).assertTrue();
               done();
             }).catch((err:BusinessError) => {
               console.info("contactsApi_addContact_test_200  err = " + JSON.stringify(err));
@@ -1032,7 +1032,11 @@ export default function ObjectInterfaceTest() {
               expect(data != null).assertTrue();
               done();
             });
-          }else {done()}
+          }else {
+            console.error("contactsApi_queryContact_test_200 failed keyData = " + JSON.stringify(keyData));
+            expect().assertFail();
+            done()
+          }
         });
       });
       sleep(500);
