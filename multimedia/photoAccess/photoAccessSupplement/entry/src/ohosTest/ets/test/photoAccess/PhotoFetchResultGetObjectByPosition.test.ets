@@ -543,7 +543,7 @@ export default function photoFetchResultGetObjectByPositionTestSupp() {
     /**
      * @tc.name   PHOTO_ACCESS_HELPER_GET_OBJECTS_BY_INDEX_SET_004
      * @tc.number PHOTO_ACCESS_HELPER_GET_OBJECTS_BY_INDEX_SET_004
-     * @tc.desc   getObjectsByIndexSet-越界-23800151
+     * @tc.desc   getObjectsByIndexSet-负数-23800151
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -552,7 +552,7 @@ export default function photoFetchResultGetObjectByPositionTestSupp() {
       const testName = 'PHOTO_ACCESS_HELPER_GET_OBJECTS_BY_INDEX_SET_004';
       let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await PhAccessHelper.getAssets(fetchOption);
       try {
-        await fetchResult.getObjectsByIndexSet([0,5]);
+        await fetchResult.getObjectsByIndexSet([1,-2]);
         expect().assertFail();
         done();
       } catch (error) {
