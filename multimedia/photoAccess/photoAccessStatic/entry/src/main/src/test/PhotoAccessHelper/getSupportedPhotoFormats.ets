@@ -53,7 +53,7 @@ export default function getSupportedPhotoFormatsTest() {
       async (done: () => void): Promise<void> => {
         const testNum = 'get_supported_photo_formats_static_000';
         try {
-          let result: Array<string> = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.IMAGE);
+          let result: Array<string> = await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getSupportedPhotoFormats(photoAccessHelper.PhotoType.IMAGE);
           for (let i = 0; i < result.length; i++) {
             expect(result[i].length >= 1).assertTrue();
           }
@@ -78,7 +78,7 @@ export default function getSupportedPhotoFormatsTest() {
       async (done: () => void): Promise<void> => {
         let testNum = 'get_supported_photo_formats_static_001';
         try {
-          let result: Array<string> = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.VIDEO);
+          let result: Array<string> = await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getSupportedPhotoFormats(photoAccessHelper.PhotoType.VIDEO);
           for (let i = 0; i < result.length; i++) {
             expect(result[i].length >= 1).assertTrue();
           }
@@ -104,7 +104,7 @@ export default function getSupportedPhotoFormatsTest() {
         let testNum = 'get_supported_photo_formats_static_002';
         try {
           let result: Array<string> =
-            await phAccessHelper.getSupportedPhotoFormats(1000 as photoAccessHelper.PhotoType);
+          await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getSupportedPhotoFormats(1000 as photoAccessHelper.PhotoType);
           for (let i = 0; i < result.length; i++) {
             expect(videoArray).assertContain(result[i]);
             expect(imageArray).assertContain(result[i]);

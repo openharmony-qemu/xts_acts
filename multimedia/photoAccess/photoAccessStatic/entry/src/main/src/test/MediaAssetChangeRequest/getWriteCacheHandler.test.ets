@@ -45,20 +45,20 @@ export default function getWriteCacheHandlerTest() {
         try {
           let fetchOps =
             fetchOption(testNum, photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.IMAGE);
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           let count = fetchResult.getCount();
 
           let photoType = photoAccessHelper.PhotoType.IMAGE;
           let extension = 'jpg';
           let assetChangeRequest =
             photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
-          let fd = await assetChangeRequest.getWriteCacheHandler() as int;
+          let fd = await (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).getWriteCacheHandler() as int;
           console.info('getWriteCacheHandler successfully');
           await fs.write(fd, "test image content");
           await fs.close(fd);
-          await helper.applyChanges(assetChangeRequest);
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest));
 
-          fetchResult = await helper.getAssets(fetchOps);
+          fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           expect(fetchResult.getCount()).assertEqual(count + 1);
           console.info(`${testNum} succeed to write image with getWriteCacheHandler`);
           done();
@@ -83,20 +83,20 @@ export default function getWriteCacheHandlerTest() {
         try {
           let fetchOps =
             fetchOption(testNum, photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.VIDEO);
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           let count = fetchResult.getCount();
 
           let photoType = photoAccessHelper.PhotoType.VIDEO;
           let extension = 'mp4';
           let assetChangeRequest =
             photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
-          let fd = await assetChangeRequest.getWriteCacheHandler() as int;
+          let fd = await (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).getWriteCacheHandler() as int;
           console.info('getWriteCacheHandler successfully');
           await fs.write(fd, "test video content");
           await fs.close(fd);
-          await helper.applyChanges(assetChangeRequest);
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest));
 
-          fetchResult = await helper.getAssets(fetchOps);
+          fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           expect(fetchResult.getCount()).assertEqual(count + 1);
           console.info(`${testNum} succeed to write video with getWriteCacheHandler`);
           done();
