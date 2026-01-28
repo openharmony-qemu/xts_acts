@@ -286,7 +286,7 @@ export default function ContactsTest() {
                     done();
                   } else {
                     console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
-                    ExpectTrue(true);
+                    expect(queryContact !== null).assertTrue();
                     done();
                   }
                 });
@@ -338,7 +338,7 @@ export default function ContactsTest() {
                     done();
                   } else {
                     console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
-                    ExpectTrue(true);
+                    expect().assertFail();
                     done();
                   }
                 });
@@ -369,7 +369,7 @@ export default function ContactsTest() {
         // 获取context
         let context: Context = AppStorage.get('context') as Context;
         await sleep()
-        contact.addContact(context, {
+        await contact.addContact(context, {
           name: {
             fullName: 'LiSi'
           }, phoneNumbers: [{
@@ -391,7 +391,7 @@ export default function ContactsTest() {
                   done();
                 } else {
                   console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
-                  ExpectTrue(true);
+                  expect(queryContact !== null).assertTrue();
                   done();
                 }
               });
@@ -441,7 +441,7 @@ export default function ContactsTest() {
                   done();
                 } else {
                   console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
-                  ExpectTrue(true);
+                  expect(queryContact !== null).assertTrue();
                   done();
                 }
               });
@@ -492,7 +492,7 @@ export default function ContactsTest() {
                   done();
                 } else {
                   console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
-                  ExpectTrue(true);
+                  expect().assertFail();
                   done();
                 }
               });

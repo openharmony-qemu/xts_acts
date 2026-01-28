@@ -299,7 +299,7 @@ export default function AddContactViaUITest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.addContactViaUI(context, contactDataNull);
-        promise.then((data: number) => {
+        await promise.then((data: number) => {
             console.log(`${caseName} addContactViaUI: data>${JSON.stringify(data)}`);
             ExpectTrue(data != 0);
             done();

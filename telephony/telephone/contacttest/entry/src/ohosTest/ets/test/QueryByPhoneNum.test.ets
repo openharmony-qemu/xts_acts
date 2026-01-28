@@ -268,7 +268,7 @@ export default function QueryByEmailPhoneNumTest() {
             done();
           } else {
             console.info(`${caseName} queryContacts:success->${JSON.stringify(data)}`);
-            ExpectTrue(data.length == 0);
+            expect().assertFail();
             done();
           }
         });
@@ -364,7 +364,7 @@ export default function QueryByEmailPhoneNumTest() {
                 done();
               } else {
                 console.info(`${caseName} queryContacts:success->${JSON.stringify(data)}`);
-                ExpectTrue(data.length == 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -805,7 +805,7 @@ export default function QueryByEmailPhoneNumTest() {
                 done();
               } else {
                 console.info(`${caseName} queryContacts:success->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -1074,7 +1074,7 @@ export default function QueryByEmailPhoneNumTest() {
             done();
           } else {
             console.info(`${caseName} queryContacts:success->${JSON.stringify(data)}`);
-            ExpectTrue(data.length === 0);
+            expect().assertFail();
             done();
           }
         });
@@ -1171,7 +1171,7 @@ export default function QueryByEmailPhoneNumTest() {
                 done();
               } else {
                 console.info(`${caseName} queryContacts:success->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -1283,7 +1283,7 @@ export default function QueryByEmailPhoneNumTest() {
                 done();
               } else {
                 console.info(`${caseName} queryContacts:success->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -1334,7 +1334,7 @@ export default function QueryByEmailPhoneNumTest() {
             contact.queryContactsByPhoneNumber(context, "null", holder, attrs, (err: BusinessError, data: contact.Contact[]) => {
               if (err) {
                 console.info(`${caseName} queryContacts:err->${JSON.stringify(err)}`);
-                ExpectTrue(err.code === 401);
+                expect().assertFail();
                 done();
               } else {
                 console.info(`${caseName} queryContacts:success->${JSON.stringify(data)}`);
@@ -1428,7 +1428,7 @@ export default function QueryByEmailPhoneNumTest() {
             let promise = contact.queryContactsByPhoneNumber(context, '13800000000', holders, attr);
             promise.then((data: contact.Contact[]) => {
               console.log(`${caseName} queryContacts:success-> ${data.length}--${JSON.stringify(data)}`);
-              ExpectTrue(data.length === 0);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
@@ -1475,7 +1475,7 @@ export default function QueryByEmailPhoneNumTest() {
           let promise = contact.queryContactsByPhoneNumber(context, '13800000000', holders, attr);
           promise.then((data: contact.Contact[]) => {
             console.log(`${caseName} queryContacts:success->${JSON.stringify(data)}`);
-            ExpectTrue(data.length === 0);
+            expect().assertFail();
             done();
           }).catch((err: BusinessError) => {
             console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
@@ -1517,7 +1517,7 @@ export default function QueryByEmailPhoneNumTest() {
           let promise = contact.queryContactsByPhoneNumber(context, '13800000000', holders, attr);
           promise.then((data: contact.Contact[]) => {
             console.log(`${caseName} queryContacts:success->${JSON.stringify(data)}`);
-            ExpectTrue(data.length === 0);
+            expect().assertFail();
             done();
           }).catch((err: BusinessError) => {
             console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
