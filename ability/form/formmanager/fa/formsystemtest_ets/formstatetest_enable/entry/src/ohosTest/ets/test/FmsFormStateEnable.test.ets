@@ -191,6 +191,7 @@ export default function test() {
 
             commonEvent.subscribe(subscriberOnState, onStateCallBack);
             console.log(`FMS_enableFormsUpdate_0300 featureAbility.startAbility start`);
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostg",
@@ -241,6 +242,7 @@ export default function test() {
 
             commonEvent.subscribe(subscriberOnState, onStateCallBack);
             console.log(`FMS_enableFormsUpdate_0400 featureAbility.startAbility start`);
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostg",
@@ -291,6 +293,7 @@ export default function test() {
 
             commonEvent.subscribe(subscriberOnState, onStateCallBack);
             console.log(`FMS_enableFormsUpdate_0500 featureAbility.startAbility start`);
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostg",
@@ -352,6 +355,7 @@ export default function test() {
                     console.info(`FMS_enableFormsUpdate_0600 hostFormId: ${hostFormId}`);
                 }
 
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostg",
@@ -382,6 +386,7 @@ export default function test() {
             commonEvent.subscribe(subscriberOnAcquired, onAcquiredCallBack);
             commonEvent.subscribe(subscriberOnState, onStateCallBack);
             console.info(`FMS_enableFormsUpdate_0600 featureAbility.startAbility start`);
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostf",
@@ -432,6 +437,7 @@ export default function test() {
                 console.info("====>FMS_enableFormsUpdate_0700 onDeleteCallback data:====>" + JSON.stringify(data));
                 hostFormId = data.parameters?.formId;
 
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostg",
@@ -467,6 +473,7 @@ export default function test() {
             commonEvent.subscribe(subscriberOnState, onStateCallback);
             console.info(`FMS_enableFormsUpdate_0700 featureAbility.startAbility start`);
             try {
+                await sleepTime(3000);
                 let res =  await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostg",
@@ -547,6 +554,7 @@ export default function test() {
 
                 setTimeout(async () => {
                     console.log(`FMS_enableFormsUpdate_0900 featureAbility.startAbility notifyVisible start`);
+                    await sleepTime(3000);
                     await featureAbility.startAbility({
                         want: {
                             bundleName: "com.ohos.st.formsystemhostg",
@@ -584,6 +592,7 @@ export default function test() {
                 }
                 commonEvent.subscribe(subscriberOnState, onFormOnStateCallBack);
                 console.log(`FMS_enableFormsUpdate_0900 featureAbility.startAbility notify disable start`);
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostg",
@@ -613,6 +622,7 @@ export default function test() {
 
             commonEvent.subscribe(subscriberOnAcquired, onAcquiredCallBack);
             console.log(`FMS_enableFormsUpdate_0900 featureAbility.startAbility servicea start`);
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostg",
@@ -697,6 +707,7 @@ export default function test() {
 
                 console.log(`FMS_enableFormsUpdate_1000 featureAbility.startAbility notifyVisible start`);
                 formIds.push("0");
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostg",
@@ -762,6 +773,7 @@ export default function test() {
 
             commonEvent.subscribe(subscriberOnAcquired, onAcquiredCallBack);
             console.log(`FMS_enableFormsUpdate_1000 featureAbility.startAbility servicea start`);
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostg",
@@ -859,6 +871,7 @@ export default function test() {
                 setTimeout(async () => {
                     console.log(`FMS_enableFormsUpdate_1200 featureAbility.startAbility notifyVisible start`);
                     formIds.push("0");
+                    await sleepTime(3000);
                     await featureAbility.startAbility({
                         want: {
                             bundleName: "com.ohos.st.formsystemhostg",
@@ -896,6 +909,7 @@ export default function test() {
                 commonEvent.subscribe(subscriberDel, onFormDisableCallBack);
 
                 console.log(`FMS_enableFormsUpdate_1200 featureAbility.startAbility notify disable start`);
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostg",
@@ -935,6 +949,7 @@ export default function test() {
                 commonEvent.subscribe(subscriberOnAcquired, onSecondAcquiredCallBack);
 
                 console.log(`FMS_enableFormsUpdate_1200 featureAbility.startAbility serviceb start`);
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostg",
@@ -963,6 +978,7 @@ export default function test() {
 
             commonEvent.subscribe(subscriberOnAcquired, onFirstAcquiredCallBack);
             console.log(`FMS_enableFormsUpdate_1200 featureAbility.startAbility servicea start`);
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostg",
@@ -1014,4 +1030,15 @@ const unsubscribeOnAcquiredCallback = (tcNumber: string) => {
 
 const unsubscribeSupplyCallback = (tcNumber: string) => {
     console.info(`====>${tcNumber} unSubscribeSupplyCallback====>`);
+}
+
+function sleepTime(time: number): Promise<void> {
+    return new Promise((resolve, reject) => {
+        try{
+            setTimeout(resolve,time);
+        } catch(e) {
+            console.error(`sleepTime error: ${JSON.stringify(e)}`);
+			reject();
+        }
+    });
 }
