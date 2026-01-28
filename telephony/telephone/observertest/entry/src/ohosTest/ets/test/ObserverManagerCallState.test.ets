@@ -616,6 +616,7 @@ export default function observerManagerCallStateTest() {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           ExpectTrue(value !== null);
+          observer.offCCallStateChange();
           done();
         }
         observer.onCCallStateChange(callback);
@@ -642,6 +643,7 @@ export default function observerManagerCallStateTest() {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           ExpectTrue(value !== null);
+          observer.offCCallStateChange();
           done();
         }
         let options: observer.ObserverOptions = {
@@ -671,6 +673,7 @@ export default function observerManagerCallStateTest() {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           ExpectTrue(value !== null);
+          observer.offCCallStateChange();
           done();
         }
         let options: observer.ObserverOptions = {
@@ -701,6 +704,7 @@ export default function observerManagerCallStateTest() {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' +
           JSON.stringify(value.teleNumber));
           expect(false).assertTrue();
+          observer.offCCallStateChange();
           done();
         }
         let options: observer.ObserverOptions = {
@@ -730,6 +734,7 @@ export default function observerManagerCallStateTest() {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           ExpectTrue(value !== null);
+          observer.offCCallStateChange();
           done();
         }
         let options: observer.ObserverOptions = {
@@ -758,6 +763,7 @@ export default function observerManagerCallStateTest() {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           expect(false).assertTrue();
+          observer.offCCallStateChange();
           done();
         }
         let options: observer.ObserverOptions = {
@@ -812,6 +818,7 @@ export default function observerManagerCallStateTest() {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           ExpectTrue(cCallStateAry.includes(value.state));
+          observer.offCCallStateChange();
           done();
         }
         observer.onCCallStateChange(callback);
@@ -838,6 +845,7 @@ export default function observerManagerCallStateTest() {
         let callback: (value: observer.CCallStateInfo) => void = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, value:` + JSON.stringify(value));
           ExpectTrue(value !== null);
+          observer.offCCallStateChange();
           done();
         }
         observer.onCCallStateChange(callback);
@@ -865,6 +873,7 @@ export default function observerManagerCallStateTest() {
         let callback: (value: observer.CCallStateInfo) => void = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, value:` + JSON.stringify(value));
           ExpectTrue(value !== null);
+          observer.offCCallStateChange();
           done();
         }
         observer.onCCallStateChange(callback);
