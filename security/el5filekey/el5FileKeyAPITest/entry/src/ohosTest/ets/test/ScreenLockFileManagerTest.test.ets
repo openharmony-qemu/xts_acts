@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except compliance with the License.
  * You may obtain a copy of the License at
@@ -65,7 +65,7 @@ export default function ScreenLockFileManagerTest() {
                 expect(AccessStatus).assertEqual(screenLockFileManager.AccessStatus.ACCESS_GRANTED);
                 done();
             } catch (err) {
-                if (err.code == 801) {
+                if (err.code === 801) {
                     done();
                 } else {
                     console.info('AcquireAccessJsTest001 err.code is: ' + err.code)
@@ -120,7 +120,7 @@ export default function ScreenLockFileManagerTest() {
                 expect(ReleaseStatus).assertEqual(screenLockFileManager.ReleaseStatus.RELEASE_GRANTED);
                 done();
             } catch (err) {
-                if (err.code == 801) {
+                if (err.code === 801) {
                     done();
                 } else {
                     console.info('ReleaseAccessJsTest001 err.code is: ' + err.code)
@@ -207,7 +207,7 @@ export default function ScreenLockFileManagerTest() {
                 expect(keyStatus).assertEqual(-2);
                 done();
             } catch (err) {
-                if (err.code == 801) {
+                if (err.code === 801) {
                     done();
                 }
                 console.error('SUB_Security_EL5_QueryAppKeyState_0100 err.code is: ' + err.code);

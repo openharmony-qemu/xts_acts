@@ -15,12 +15,10 @@
 
 import AccessTokenApiTest from './AccessTokenApiTest.test'
 import AccessTokenTest from './AccessTokenTest.test'
-import ScreenLockFileManagerTest from './ScreenLockFileManagerTest.test'
 import RequestPermissionOnSettingTest from './RequestPermissionOnSettingTest.test'
 
 export default function testsuite() {
 	RequestPermissionOnSettingTest()
-	ScreenLockFileManagerTest()
 	AccessTokenTest()
 	AccessTokenApiTest()
 }
