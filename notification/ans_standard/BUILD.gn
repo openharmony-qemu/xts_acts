@@ -60,7 +60,7 @@ group("ans_standard") {
       "actsNotificationWantUriTestStatic:ActsNotificationWantUriStaticTest",
       "notificationManager:notificationManager",
       "notificationManagerStatic:NotificationManagerStaticTest",
-	  "actsAnsNotificationBadgeNoSystemTest:ActsNotificationAnsBadgeNoSystemTest",
+	    "actsAnsNotificationBadgeNoSystemTest:ActsNotificationAnsBadgeNoSystemTest",
       "actsAnsNotificationBadgeNoSystemTestStatic:ActsNotificationAnsBadgeNoSystemStaticTest"
     ]
   }
