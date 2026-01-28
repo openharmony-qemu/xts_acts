@@ -2977,6 +2977,7 @@ export default function displayTest() {
         let windowClass = windowStageStart.getMainWindowSync();
 
         await windowClass.setWindowBrightness(0);
+        await sleep(100);
         let brightnessChangeCount1 = 0;
         let callback1Triggered = false;
 
