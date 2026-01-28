@@ -36,9 +36,9 @@ export default function testsuite() {
     AddContactTest();
     if (deviceInfo.deviceType !== 'wearable') {
       SelectContactsTest();
+      AddContactViaUITest();
+      SaveToExistingContactViaUITest();
     } 
-    AddContactViaUITest();
-    SaveToExistingContactViaUITest();
     QueryKeyTest();
     QueryByEmailTest();
     QueryByEmailPhoneNumTest();
