@@ -842,6 +842,10 @@ export default function observerManagerCallStateTest() {
       let caseName: string = 'Telephony_observer_off_cCallStateInfo_0100';
       console.log("************* Telephony_observer_off_cCallStateInfo_0100 Test start *************");
       try {
+        let callback: (value: observer.CCallStateInfo) => void = (value: observer.CCallStateInfo) => {
+          console.log(`${caseName} on cCallStateChange, value:` + JSON.stringify(value));
+          ExpectTrue(value !== null);
+        }
         observer.offCCallStateChange(callback);
         done();
       } catch (err) {
@@ -860,7 +864,7 @@ export default function observerManagerCallStateTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Telephony_observer_off_cCallStateInfo_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('Telephony_observer_off_cCallStateInfo_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = 'Telephony_observer_off_cCallStateInfo_0200';
       console.log("************* Telephony_observer_off_cCallStateInfo_0200 Test start *************");
       try {
