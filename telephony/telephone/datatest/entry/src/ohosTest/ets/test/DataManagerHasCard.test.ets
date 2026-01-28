@@ -101,7 +101,7 @@ export default function dataManagerTest() {
       try {
         let cardSlot: number = data.getDefaultCellularDataSlotIdSync();
         console.info(`${caseName} cardSlot->${JSON.stringify(cardSlot)}`);
-        ExpectTrue(data == 0 || data == 1 || data == 2);
+        ExpectTrue(cardSlot == 0 || cardSlot == 1 || cardSlot == 2);
         done();
       } catch (error) {
         console.info(`${caseName} catchError->${JSON.stringify(error)}`);
