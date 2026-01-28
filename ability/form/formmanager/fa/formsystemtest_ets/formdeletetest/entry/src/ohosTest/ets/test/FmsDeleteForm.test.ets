@@ -113,7 +113,7 @@ export default function test() {
                 }
 
                 console.info(`${tcNumber} featureAbility.startAbility again start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostnoperm",
@@ -145,7 +145,7 @@ export default function test() {
             commonEvent.subscribe(subscriberOnAcquired, onAcquiredCallback);
 
             console.info(`${tcNumber} featureAbility.startAbility start`);
-            await sleepTime(3000)
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostc",
@@ -196,7 +196,7 @@ export default function test() {
             commonEvent.subscribe(subscriberOnDeleted, onDeletedCallback);
 
             console.info(`${tcNumber} featureAbility.startAbility start`);
-            await sleepTime(3000)
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostc",
@@ -250,7 +250,7 @@ export default function test() {
             commonEvent.subscribe(subscriberOnDeleted, onDeletedCallback);
 
             console.info(`${tcNumber} featureAbility.startAbility start`);
-            await sleepTime(3000)
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostc",
@@ -308,7 +308,7 @@ export default function test() {
                 formId = data.data;
 
                 console.info(`${tcNumber} featureAbility.startAbility again start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostd",
@@ -340,7 +340,7 @@ export default function test() {
             commonEvent.subscribe(subscriberOnAcquired, onAcquiredCallback);
 
             console.info(`${tcNumber} featureAbility.startAbility start`);
-            await sleepTime(3000)
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostc",
@@ -423,7 +423,7 @@ export default function test() {
                 commonEvent.subscribe(subscriberOnAcquired, onAcquiredCallbackB);
 
                 console.info(`${tcNumber} featureAbility.startAbility again start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostd",
@@ -464,7 +464,7 @@ export default function test() {
             commonEvent.subscribe(subscriberSupply, onSupplyCallback);
 
             console.info(`${tcNumber} featureAbility.startAbility start`);
-            await sleepTime(3000)
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostc",
@@ -550,7 +550,7 @@ export default function test() {
                 commonEvent.subscribe(subscriberOnAcquired, onAcquiredCallbackB);
 
                 console.info(`${tcNumber} featureAbility.startAbility again start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostd",
@@ -589,7 +589,7 @@ export default function test() {
             commonEvent.subscribe(subscriberSupply, onSupplyCallback);
 
             console.info(`${tcNumber} featureAbility.startAbility start`);
-            await sleepTime(3000)
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostc",
@@ -707,7 +707,7 @@ export default function test() {
                     commonEvent.subscribe(subscriberOnAcquired, onAcquiredCallbackB);
 
                     console.info(`${tcNumber} featureAbility.startAbility again start`);
-                    await sleepTime(3000)
+                    await sleepTime(3000);
                     await featureAbility.startAbility({
                         want: {
                             bundleName: "com.ohos.st.formsystemhostc",
@@ -753,7 +753,7 @@ export default function test() {
                 commonEvent.subscribe(subscriberSupply, onSupplyCallback);
 
                 console.info(`${tcNumber} featureAbility.startAbility start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostd",
@@ -812,7 +812,7 @@ export default function test() {
                 commonEvent.unsubscribe(subscriberOnReleased, () => unsubscribeOnReleasedCallback(tcNumber));
 
                 console.info(`${tcNumber} featureAbility.startAbility again start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostc",
@@ -844,7 +844,7 @@ export default function test() {
             commonEvent.subscribe(subscriberSupply, onSupplyCallback);
 
             console.info(`${tcNumber} featureAbility.startAbility start`);
-            await sleepTime(3000)
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostc",
@@ -931,7 +931,7 @@ export default function test() {
                 commonEvent.subscribe(subscriberOnAcquired, onAcquiredCallbackB);
 
                 console.info(`${tcNumber} featureAbility.startAbility again start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostd",
@@ -972,7 +972,7 @@ export default function test() {
             commonEvent.subscribe(subscriberSupply, onSupplyCallback);
 
             console.info(`${tcNumber} featureAbility.startAbility start`);
-            await sleepTime(3000)
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostc",
@@ -1033,7 +1033,7 @@ export default function test() {
                 commonEvent.subscribe(subscriberOnDeleted, onDeletedCallback2);
 
                 console.info(`${tcNumber} featureAbility.startAbility again start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostc",
@@ -1064,7 +1064,7 @@ export default function test() {
             commonEvent.subscribe(subscriberOnDeleted, onDeletedCallback);
 
             console.info(`${tcNumber} featureAbility.startAbility start`);
-            await sleepTime(3000)
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostc",

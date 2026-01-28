@@ -84,7 +84,7 @@ export default function test() {
 
             let FMS_acquireForm_1600_Temp2 = async () => {
                 console.info(`FMS_acquireForm_1600_Temp2 start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhost",
@@ -121,7 +121,7 @@ export default function test() {
 
             let FMS_acquireForm_1600_Temp1 = async () => {
                 console.info(`FMS_acquireForm_1600_Temp1 start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhost",
@@ -157,7 +157,7 @@ export default function test() {
 
             let FMS_acquireForm_1600_normal2 = async () => {
                 console.info(`FMS_acquireForm_1600_normal2 start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhost",
@@ -192,7 +192,7 @@ export default function test() {
 
             let FMS_acquireForm_1600_normal1 = async () => {
                 console.info(`FMS_acquireForm_1600_normal1 start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhost",
@@ -232,7 +232,7 @@ export default function test() {
             console.info(`FMS_acquireForm_1800 start`);
             let FMS_acquireForm_1800_Temp2 = async () => {
                 console.info(`FMS_acquireForm_1800_Temp2 start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostb",
@@ -269,7 +269,7 @@ export default function test() {
 
             let FMS_acquireForm_1800_Temp1 = async () => {
                 console.info(`FMS_acquireForm_1800_Temp1 start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhost",
@@ -306,7 +306,7 @@ export default function test() {
 
             let FMS_acquireForm_1800_normal2 = async () => {
                 console.info(`FMS_acquireForm_1800_normal2 start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostb",
@@ -341,7 +341,7 @@ export default function test() {
 
             let FMS_acquireForm_1800_normal1 = async() => {
                 console.info(`FMS_acquireForm_1800_normal1 start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhost",
@@ -379,7 +379,7 @@ export default function test() {
          */
         it(`FMS_acquireForm_1900`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_1900 start`);
-            await sleepTime(3000)
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhost",
@@ -425,7 +425,7 @@ export default function test() {
             let formId: string = 'FMS_FormOnAcquired_commonEvent';
             let onAcquiredCallBack = async () => {
                 console.info(`FMS_acquireForm_2100_CallBack startAbilityhost`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhost",
@@ -453,7 +453,7 @@ export default function test() {
             }
 
             console.info(`FMS_acquireForm_2100 startAbilityhost`);
-            await sleepTime(3000)
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhost",
@@ -488,7 +488,7 @@ export default function test() {
          */
         it(`FMS_acquireForm_2200`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_2200 start`);
-            await sleepTime(3000)
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhost",
@@ -531,7 +531,7 @@ export default function test() {
          */
         it(`FMS_acquireForm_2300`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_2300 start`);
-            await sleepTime(3000)
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhost",
@@ -573,7 +573,7 @@ export default function test() {
             console.info(`FMS_acquireForm_2400 start`);
             let onAcquiredCallBack = async () => {
                 console.info(`FMS_acquireForm_2400_callback start`);
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostb",
@@ -603,7 +603,7 @@ export default function test() {
                 console.info(`FMS_acquireForm_2400_callback end`);
             };
             console.info(`FMS_acquireForm_2400 startAbilityhost`);
-            await sleepTime(3000)
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhost",
@@ -638,7 +638,7 @@ export default function test() {
          */
         it(`FMS_acquireForm_2500`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_2500 start`);
-            await sleepTime(3000)
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhost",
@@ -680,7 +680,7 @@ export default function test() {
             console.info(`FMS_acquireForm_2600 start`);
             let onAcquiredCallBack = async () => {
                 console.info("FMS_acquireForm_2600_callback startAbilityhost");
-                await sleepTime(3000)
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhost",
@@ -711,7 +711,7 @@ export default function test() {
             }
 
             console.info(`FMS_acquireForm_2600 startAbilityhost`);
-            await sleepTime(3000)
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhost",
