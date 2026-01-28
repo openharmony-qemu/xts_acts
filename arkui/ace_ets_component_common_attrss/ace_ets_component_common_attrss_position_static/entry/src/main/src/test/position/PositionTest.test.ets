@@ -92,7 +92,6 @@ export default function positionTest() {
     'Shape',
     'AlphabetIndexer',
     'Navigation',
-    'NavRouter',
     'ListItemGroup',
     'Tabs',
     'Gauge',
