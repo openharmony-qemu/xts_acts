@@ -197,6 +197,8 @@ import ImageExifDateTimeSupp from './image/ImageExifDateTime.test';
 import ImageExifVersionSupp from './image/ImageExifVersion.test';
 import ImageExifComponentsConfiguration from './image/ImageExifComponentsConfiguration.test';
 import ImageExifShutterSpeedValue from './image/ImageExifShutterSpeedValue.test';
+import imageCreateCroppedAndScaledPixelMap from './image/ImageCreateScaledPixelMap.test';
+
 import ImageBodySerialNumber from './image/ImageBodySerialNumber.test';
 import ImageCameraOwnerName from './image/ImageCameraOwnerName.test';
 import ImageGPSDest from './image/ImageGPSDest.test';
@@ -405,11 +407,13 @@ export default function testsuite() {
   ImageSourceRelatedSoundFileSupp();
   ImageWidthLengthSupp();
   ImageDescriptionSupp();
+  imageCreateCroppedAndScaledPixelMap();
+
   ImageBodySerialNumber();
   ImageCameraOwnerName();
   ImageGPSDest();
   ImageSourceLensMakeSupp();
-  ImageSourceLensModelSupp()
+  ImageSourceLensModelSupp();
   ImageLensSpecificationSupp();
   ImageLensSerialNumberSupp();
   ImageExifOECFSupp();
@@ -417,6 +421,9 @@ export default function testsuite() {
   ImageSourceMetadataSupp();
   ImageGetImagePropertyOptionsSupp();
   ImageGammaSupp();
+  ImagePictureMetadataTest();
+  MultimediaImageTest();
+  ImageExifMetadataTestSupp();
   PicturePackDataFirTestSupp();
   PicturePackDataThrTestSupp();
   PicturePackingPictureTestSupp();
@@ -429,4 +436,6 @@ export default function testsuite() {
   CreatePixelMapSupp();
   GetImageInfoSupp();
   ReadPixelsToBufferSupp();
+
+
 }
