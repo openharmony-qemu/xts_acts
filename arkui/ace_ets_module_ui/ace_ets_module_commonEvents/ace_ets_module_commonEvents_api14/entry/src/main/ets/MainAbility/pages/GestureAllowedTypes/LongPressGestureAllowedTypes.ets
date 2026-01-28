@@ -17,10 +17,16 @@
 struct LongPressGestureAllowedTypes {
   @State types: Array<SourceTool | undefined | null> = [];
   @State result: string = 'allowed types default';
+
   build() {
-    Column(){
-      Column({space: 10}) {
-        Text('LongPress').fontSize(20).width(240).height(80).margin({left:0,top:0}).padding({left:0,top:0}).backgroundColor(Color.Yellow).id('LongPressGestureAllowedTypes_Text')
+    Column() {
+      Column() {
+        Text('LongPress')
+          .fontSize(20)
+          .width('90%')
+          .height('55%')
+          .backgroundColor(Color.Yellow)
+          .id('LongPressGestureAllowedTypes_Text')
           .gesture(
             LongPressGesture({ fingers: 1 })
               .allowedTypes(this.types)
@@ -29,28 +35,29 @@ struct LongPressGestureAllowedTypes {
               })
           )
 
-        Text(this.result).id('LongPressGestureAllowedTypes_result')
+        Text(this.result).id('LongPressGestureAllowedTypes_result').height('10%')
 
         Button('Mouse').id('Mouse_Type')
           .onClick(() => {
             this.result = 'allowed types default';
             this.types = [SourceTool.MOUSE];
-          })
+          }).height('10%')
         Button('Finger').id('Finger_Type')
           .onClick(() => {
             this.result = 'allowed types default';
             this.types = [SourceTool.Finger];
-          })
+          }).height('10%')
         Button('Invalid').id('Invalid_type')
           .onClick(() => {
             this.result = 'allowed types default';
             this.types = [null, undefined];
-          })  
-      }.alignItems(HorizontalAlign.Center)
-     .id('longpress_id')
-     .width('90%')
-     .height('60%')
-     .border({width:1})
+          }).height('10%')
+      }
+      .alignItems(HorizontalAlign.Center)
+      .id('longpress_id')
+      .width('90%')
+      .height('60%')
+      .border({ width: 1 })
     }
     .width('100%')
     .height('100%')
