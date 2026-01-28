@@ -831,7 +831,7 @@ export default function ArrayFlatTest() {
      */
     it("testArrayFlat0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | number[])[] = [5, [1, 3, 2]];
-      const result = (arr.flat<number>()).sort((a: number, b: number) => a - b);
+      const result = (arr.flat<number>()).sort((a: number, b: number) => (a - b).toInt());
       expect(JSON.stringify(result)).assertDeepEquals(JSON.stringify([1, 2, 3, 5]));
     });
 
