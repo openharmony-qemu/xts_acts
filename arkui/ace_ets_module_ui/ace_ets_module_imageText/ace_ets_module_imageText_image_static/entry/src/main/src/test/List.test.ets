@@ -22,7 +22,8 @@ import ImageSupportSvg2Test from './imageTest/ImageSupportSvg2.test';
 import AnimationControllerTest from './drawableDescriptorTest/AnimationController.test';
 import ImageAnimationControllerERRORTest from './drawableDescriptorTest/AnimationControllerERROR.test';
 import ImageLoaderTest from './ImageLoader/ImageLoader.test';
-
+import ImageOrientationTest from './imageTest/ImageOrientationTest.test';
+import ImageHdrBrightnessTest from './imageTest/ImageHdrBrightness.test';
 export default function testsuite() {
   blendNodeTest();
   getUIContextApiTest();
@@ -32,4 +33,6 @@ export default function testsuite() {
   AnimationControllerTest();
   ImageAnimationControllerERRORTest();
   ImageLoaderTest();
+  ImageOrientationTest();
+  ImageHdrBrightnessTest();
 }
