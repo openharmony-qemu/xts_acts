@@ -609,17 +609,16 @@ export default function observerManagerCallStateTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Telephony_observer_on_cCallStateInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('Telephony_observer_on_cCallStateInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = 'Telephony_observer_on_cCallStateInfo_0100';
       console.log("************* Telephony_observer_on_cCallStateInfo_0100 Test start *************");
       try {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           ExpectTrue(value !== null);
+          done();
         }
         observer.onCCallStateChange(callback);
-        await sleep(50)
-        done();
       } catch (err) {
         console.info(`${caseName} catchError: ${JSON.stringify(err)}}` + err);
         expect(false).assertTrue();
@@ -636,20 +635,19 @@ export default function observerManagerCallStateTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Telephony_observer_on_cCallStateInfo_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('Telephony_observer_on_cCallStateInfo_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = 'Telephony_observer_on_cCallStateInfo_0200';
       console.log("************* Telephony_observer_on_cCallStateInfo_0200 Test start *************");
       try {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           ExpectTrue(value !== null);
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: 0
         }
         observer.onCCallStateChange(callback, options);
-        await sleep(50)
-        done();
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
         expect(false).assertTrue();
@@ -666,20 +664,19 @@ export default function observerManagerCallStateTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Telephony_observer_on_cCallStateInfo_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('Telephony_observer_on_cCallStateInfo_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = 'Telephony_observer_on_cCallStateInfo_0300';
       console.log("************* Telephony_observer_on_cCallStateInfo_0300 Test start *************");
       try {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           ExpectTrue(value !== null);
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: 1
         }
         observer.onCCallStateChange(callback, options);
-        await sleep(50)
-        done();
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
         expect(false).assertTrue();
@@ -704,12 +701,12 @@ export default function observerManagerCallStateTest() {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' +
           JSON.stringify(value.teleNumber));
           expect(false).assertTrue();
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: 3
         }
         observer.onCCallStateChange(callback, options);
-        done();
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
         ExpectTrue(err.code === 8800001);
@@ -726,19 +723,19 @@ export default function observerManagerCallStateTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Telephony_observer_on_cCallStateInfo_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('Telephony_observer_on_cCallStateInfo_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = 'Telephony_observer_on_cCallStateInfo_0500';
       console.log("************* Telephony_observer_on_cCallStateInfo_0500 Test start *************");
       try {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
+          ExpectTrue(value !== null);
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: -1
         }
         observer.onCCallStateChange(callback, options);
-        await sleep(50)
-        done();
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}}` + err);
         expect(false).assertTrue();
@@ -761,12 +758,12 @@ export default function observerManagerCallStateTest() {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           expect(false).assertTrue();
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: -2
         }
         observer.onCCallStateChange(callback, options);
-        done();
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
         ExpectTrue(err.code === 8800001);
@@ -783,7 +780,7 @@ export default function observerManagerCallStateTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Telephony_observer_on_cCallStateInfo_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('Telephony_observer_on_cCallStateInfo_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = 'Telephony_observer_on_cCallStateInfo_0700';
       console.log("************* Telephony_observer_on_cCallStateInfo_0700 Test start *************");
       try {
@@ -815,10 +812,9 @@ export default function observerManagerCallStateTest() {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           ExpectTrue(cCallStateAry.includes(value.state));
+          done();
         }
         observer.onCCallStateChange(callback);
-        await sleep(50)
-        done();
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}}`+err);
         expect(false).assertTrue();
@@ -835,17 +831,17 @@ export default function observerManagerCallStateTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Telephony_observer_off_cCallStateInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('Telephony_observer_off_cCallStateInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = 'Telephony_observer_off_cCallStateInfo_0100';
       console.log("************* Telephony_observer_off_cCallStateInfo_0100 Test start *************");
       try {
         let callback: (value: observer.CCallStateInfo) => void = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, value:` + JSON.stringify(value));
+          ExpectTrue(value !== null);
+          done();
         }
         observer.onCCallStateChange(callback);
-        await sleep(50)
         observer.offCCallStateChange(callback);
-        done();
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
         expect(false).assertTrue();
@@ -868,11 +864,11 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (value: observer.CCallStateInfo) => void = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, value:` + JSON.stringify(value));
+          ExpectTrue(value !== null);
+          done();
         }
         observer.onCCallStateChange(callback);
-        await sleep(50)
         observer.offCCallStateChange();
-        done();
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}}` + err);
         expect(false).assertTrue();
