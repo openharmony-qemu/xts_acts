@@ -286,7 +286,7 @@ export default function ContactsTest() {
                     done();
                   } else {
                     console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
-                    expect(queryContact !== null).assertTrue();
+                    expect(queryData !== null).assertTrue();
                     done();
                   }
                 });
@@ -391,7 +391,7 @@ export default function ContactsTest() {
                   done();
                 } else {
                   console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
-                  expect(queryContact !== null).assertTrue();
+                  expect(queryData !== null).assertTrue();
                   done();
                 }
               });
@@ -441,7 +441,7 @@ export default function ContactsTest() {
                   done();
                 } else {
                   console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
-                  expect(queryContact !== null).assertTrue();
+                  expect(queryData !== null).assertTrue();
                   done();
                 }
               });
