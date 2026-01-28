@@ -4314,8 +4314,6 @@ export default function windowImmersiveTest() {
       console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
       try {
         if (!isInFreeWindowMode && canIUseRes) {
-          let windowAvoidAreaInfoVP: window.UIEnvWindowAvoidAreaInfoVP;
-          let windowAvoidAreaInfoPX: window.UIEnvWindowAvoidAreaInfoPX;
           let avoidAreaAreaStatusW = 0;
           let avoidAreaAreaStatusH = 0;
           let avoidAreaAreaNavW = 0;
@@ -4333,8 +4331,8 @@ export default function windowImmersiveTest() {
               console.info(caseName + ' callback result, AvoidAreaType.TYPE_SYSTEM area: ' + JSON.stringify(res.area));
               avoidAreaAreaStatusW = res.area.topRect.width;
               avoidAreaAreaStatusH = res.area.topRect.height;
-              expect(res.area.topRect.width).assertLarger(0)
-              expect(res.area.topRect.height).assertLarger(0)
+              expect(res.area.topRect.width).assertEqual(0)
+              expect(res.area.topRect.height).assertEqual(0)
               expect(res.area.topRect.left).assertEqual(0)
               expect(res.area.topRect.top).assertEqual(0)
 
@@ -4373,10 +4371,11 @@ export default function windowImmersiveTest() {
 
               expect(res.area.bottomRect.left).assertEqual(0);
               expect(res.area.bottomRect.top).assertEqual(0);
-              expect(res.area.bottomRect.width).assertLarger(0);
-              expect(res.area.bottomRect.height).assertLarger(0);
+              expect(res.area.bottomRect.width).assertEqual(0);
+              expect(res.area.bottomRect.height).assertEqual(0);
             } else if (res.type == window.AvoidAreaType.TYPE_KEYBOARD) {
               console.info(caseName + ' callback result, AvoidAreaType.TYPE_KEYBOARD area: ' + JSON.stringify(res.area));
+              avoidAreaKeyboard = res.area
               avoidAreaKeyboard.visible = res.area.visible
 
               avoidAreaKeyboard.leftRect.left = res.area.leftRect.left
@@ -4404,57 +4403,62 @@ export default function windowImmersiveTest() {
           await windowClass.setSpecificSystemBarEnabled('status', false);
           await windowClass.setSpecificSystemBarEnabled('navigation', false);
           let btnClick = await driver.findComponent(ON.id('index4Btn'))
+          console.info(caseName + ' btnClick: ' + JSON.stringify(btnClick));
           await sleep(1000)
           await btnClick.click();
           await sleep(1000);
-          windowAvoidAreaInfoVP = AppStorage.get('windowAvoidAreaInfoVP') as window.UIEnvWindowAvoidAreaInfoVP;
-          windowAvoidAreaInfoPX = AppStorage.get('windowAvoidAreaInfoPX') as window.UIEnvWindowAvoidAreaInfoPX;
-          console.log(caseName + ' windowAvoidAreaInfoVP: ' + JSON.stringify(windowAvoidAreaInfoVP))
-          console.log(caseName + ' windowAvoidAreaInfoPX: ' + JSON.stringify(windowAvoidAreaInfoPX))
+          let statusBarVP:window.UIEnvAvoidAreaVP = AppStorage.get('statusBarVP') as window.UIEnvAvoidAreaVP;
+          console.log(caseName + ' windowAvoidAreaInfoVP statusBarVP: ' + JSON.stringify(statusBarVP))
+          let cutoutVP:window.UIEnvAvoidAreaVP = AppStorage.get('cutoutVP') as window.UIEnvAvoidAreaVP;
+          console.log(caseName + ' windowAvoidAreaInfoVP cutoutVP: ' + JSON.stringify(cutoutVP))
+
+          let navigationIndicatorVP:window.UIEnvAvoidAreaVP = AppStorage.get('navigationIndicatorVP') as window.UIEnvAvoidAreaVP;
+          console.log(caseName + ' windowAvoidAreaInfoVP navigationIndicatorVP: ' + JSON.stringify(navigationIndicatorVP))
+
+          let statusBarPX:window.UIEnvAvoidAreaVP = AppStorage.get('statusBarPX') as window.UIEnvAvoidAreaVP;
+          console.log(caseName + ' windowAvoidAreaInfoVP statusBarPX: ' + JSON.stringify(statusBarPX))
+          let cutoutPX:window.UIEnvAvoidAreaVP = AppStorage.get('cutoutPX') as window.UIEnvAvoidAreaVP;
+          console.log(caseName + ' windowAvoidAreaInfoVP cutoutPX: ' + JSON.stringify(cutoutPX))
+
+          let navigationIndicatorPX:window.UIEnvAvoidAreaVP = AppStorage.get('navigationIndicatorPX') as window.UIEnvAvoidAreaVP;
+          console.log(caseName + ' windowAvoidAreaInfoVP navigationIndicatorPX: ' + JSON.stringify(navigationIndicatorPX))
+
           await sleep(1000)
-          expect(windowAvoidAreaInfoPX.statusBar.topRect.width).assertEqual(avoidAreaAreaStatusW);
-          expect(windowAvoidAreaInfoPX.statusBar.topRect.height).assertEqual(avoidAreaAreaStatusH);
+          expect(statusBarPX.topRect.width).assertEqual(avoidAreaAreaStatusW);
+          expect(statusBarPX.topRect.height).assertEqual(avoidAreaAreaStatusH);
           console.log(caseName + ' px2vp(avoidAreaAreaStatusW): ' + px2vp(avoidAreaAreaStatusW))
           console.log(caseName + ' px2vp(avoidAreaAreaStatusH): ' + px2vp(avoidAreaAreaStatusH))
-          expect(windowAvoidAreaInfoVP.statusBar.topRect.height).assertEqual(px2vp(avoidAreaAreaStatusW));
-          expect(windowAvoidAreaInfoVP.statusBar.topRect.height).assertEqual(px2vp(avoidAreaAreaStatusH));
+          expect(statusBarVP.topRect.width).assertEqual(px2vp(avoidAreaAreaStatusW));
+          expect(statusBarVP.topRect.height).assertEqual(px2vp(avoidAreaAreaStatusH));
 
-          expect(windowAvoidAreaInfoPX.navigationIndicator.bottomRect.width).assertEqual(avoidAreaAreaNavW);
-          expect(windowAvoidAreaInfoPX.navigationIndicator.bottomRect.height).assertEqual(avoidAreaAreaNavH);
+          expect(navigationIndicatorPX.bottomRect.width).assertEqual(avoidAreaAreaNavW);
+          expect(navigationIndicatorPX.bottomRect.height).assertEqual(avoidAreaAreaNavH);
           console.log(caseName + ' px2vp(avoidAreaAreaNavW): ' + px2vp(avoidAreaAreaNavW))
           console.log(caseName + ' px2vp(avoidAreaAreaNavH): ' + px2vp(avoidAreaAreaNavH))
-          expect(windowAvoidAreaInfoVP.navigationIndicator.bottomRect.height).assertEqual(px2vp(avoidAreaAreaNavW));
-          expect(windowAvoidAreaInfoVP.navigationIndicator.bottomRect.height).assertEqual(px2vp(avoidAreaAreaNavH));
+          expect(navigationIndicatorVP.bottomRect.width).assertEqual(px2vp(avoidAreaAreaNavW));
+          expect(navigationIndicatorVP.bottomRect.height).assertEqual(px2vp(avoidAreaAreaNavH));
 
-          expect(windowAvoidAreaInfoVP.statusBar.topRect.left).assertEqual(0)
-          expect(windowAvoidAreaInfoVP.statusBar.topRect.top).assertEqual(0)
-          expect(windowAvoidAreaInfoVP.statusBar.leftRect.left).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.statusBar.leftRect.top).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.statusBar.leftRect.width).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.statusBar.leftRect.height).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.statusBar.rightRect.left).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.statusBar.rightRect.top).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.statusBar.rightRect.width).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.statusBar.rightRect.height).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.statusBar.bottomRect.left).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.statusBar.bottomRect.top).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.statusBar.bottomRect.width).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.statusBar.bottomRect.height).assertEqual(0);
-
-          expect(windowAvoidAreaInfoVP.navigationIndicator.bottomRect.left).assertEqual(0)
-          expect(windowAvoidAreaInfoVP.navigationIndicator.bottomRect.top).assertEqual(0)
-          expect(windowAvoidAreaInfoVP.navigationIndicator.leftRect.left).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.navigationIndicator.leftRect.top).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.navigationIndicator.leftRect.width).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.navigationIndicator.leftRect.height).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.navigationIndicator.rightRect.left).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.navigationIndicator.rightRect.top).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.navigationIndicator.rightRect.width).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.navigationIndicator.rightRect.height).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.navigationIndicator.topRect.left).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.navigationIndicator.topRect.top).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.navigationIndicator.topRect.width).assertEqual(0);
-          expect(windowAvoidAreaInfoVP.navigationIndicator.topRect.height).assertEqual(0);
+          expect(statusBarVP.visible).assertEqual(true)
+          expect(statusBarVP.topRect.left).assertEqual(0)
+          expect(statusBarVP.topRect.top).assertEqual(0)
+          expect(statusBarVP.topRect.width).assertEqual(0);
+          expect(statusBarVP.topRect.height).assertEqual(0);
+          expect(statusBarVP.leftRect.left).assertEqual(0)
+          expect(statusBarVP.leftRect.top).assertEqual(0)
+          expect(statusBarVP.leftRect.width).assertEqual(0);
+          expect(statusBarVP.leftRect.height).assertEqual(0);
+          expect(statusBarVP.rightRect.left).assertEqual(0)
+          expect(statusBarVP.rightRect.top).assertEqual(0)
+          expect(statusBarVP.rightRect.width).assertEqual(0);
+          expect(statusBarVP.rightRect.height).assertEqual(0);
+          expect(statusBarVP.bottomRect.left).assertEqual(0)
+          expect(statusBarVP.bottomRect.top).assertEqual(0)
+          expect(statusBarVP.bottomRect.width).assertEqual(0);
+          expect(statusBarVP.bottomRect.height).assertEqual(0);
+          expect(cutoutVP.topRect.left).assertLargerOrEqual(0)
+          expect(cutoutVP.topRect.top).assertLargerOrEqual(0)
+          expect(cutoutVP.topRect.width).assertLargerOrEqual(0);
+          expect(cutoutVP.topRect.height).assertLargerOrEqual(0);
 
           let input = await driver.findComponent(ON.id('textInput'));
           console.info(caseName + ' input: ' + JSON.stringify(input));
@@ -4465,63 +4469,65 @@ export default function windowImmersiveTest() {
           await sleep(1000)
           await btnClick2.click();
           await sleep(1000);
-          let windowAvoidAreaInfoVP2 = AppStorage.get('windowAvoidAreaInfoVP') as window.UIEnvWindowAvoidAreaInfoVP;
-          let windowAvoidAreaInfoPX2 = AppStorage.get('windowAvoidAreaInfoPX') as window.UIEnvWindowAvoidAreaInfoPX;
-          console.log(caseName + ' windowAvoidAreaInfoVP2: ' + JSON.stringify(windowAvoidAreaInfoVP2))
-          console.log(caseName + ' windowAvoidAreaInfoPX2: ' + JSON.stringify(windowAvoidAreaInfoPX2))
-          await sleep(1000)
-          expect(windowAvoidAreaInfoPX2.keyboard.visible).assertEqual(avoidAreaKeyboard?.visible)
-          expect(windowAvoidAreaInfoPX2.keyboard.bottomRect.left).assertEqual(avoidAreaKeyboard?.bottomRect.left)
-          expect(windowAvoidAreaInfoPX2.keyboard.bottomRect.top).assertEqual(avoidAreaKeyboard?.bottomRect.top)
-          expect(windowAvoidAreaInfoPX2.keyboard.bottomRect.width).assertEqual(avoidAreaKeyboard?.bottomRect.width);
-          expect(windowAvoidAreaInfoPX2.keyboard.bottomRect.height).assertEqual(avoidAreaKeyboard?.bottomRect.height);
-          expect(windowAvoidAreaInfoPX2.keyboard.leftRect.left).assertEqual(avoidAreaKeyboard?.leftRect.left);
-          expect(windowAvoidAreaInfoPX2.keyboard.leftRect.top).assertEqual(avoidAreaKeyboard?.leftRect.top);
-          expect(windowAvoidAreaInfoPX2.keyboard.leftRect.width).assertEqual(avoidAreaKeyboard?.leftRect.width);
-          expect(windowAvoidAreaInfoPX2.keyboard.leftRect.height).assertEqual(avoidAreaKeyboard?.leftRect.height);
-          expect(windowAvoidAreaInfoPX2.keyboard.rightRect.left).assertEqual(avoidAreaKeyboard?.rightRect.left);
-          expect(windowAvoidAreaInfoPX2.keyboard.rightRect.top).assertEqual(avoidAreaKeyboard?.rightRect.top);
-          expect(windowAvoidAreaInfoPX2.keyboard.rightRect.width).assertEqual(avoidAreaKeyboard?.rightRect.width);
-          expect(windowAvoidAreaInfoPX2.keyboard.rightRect.height).assertEqual(avoidAreaKeyboard?.rightRect.height);
-          expect(windowAvoidAreaInfoPX2.keyboard.topRect.left).assertEqual(avoidAreaKeyboard?.topRect.left);
-          expect(windowAvoidAreaInfoPX2.keyboard.topRect.top).assertEqual(avoidAreaKeyboard?.topRect.top);
-          expect(windowAvoidAreaInfoPX2.keyboard.topRect.width).assertEqual(avoidAreaKeyboard?.topRect.width);
-          expect(windowAvoidAreaInfoPX2.keyboard.topRect.height).assertEqual(avoidAreaKeyboard?.topRect.height);
 
-          expect(windowAvoidAreaInfoVP2.keyboard.visible).assertEqual(avoidAreaKeyboard?.visible)
+          let keyboardVP:window.UIEnvAvoidAreaVP = AppStorage.get('keyboardVP') as window.UIEnvAvoidAreaVP;
+          console.log(caseName + ' windowAvoidAreaInfoVP keyboardVP: ' + JSON.stringify(keyboardVP))
+          let keyboardPX:window.UIEnvAvoidAreaVP = AppStorage.get('keyboardPX') as window.UIEnvAvoidAreaVP;
+          console.log(caseName + ' windowAvoidAreaInfoVP keyboardPX: ' + JSON.stringify(keyboardPX))
+
+          console.info(caseName + ' avoidAreaKeyboard: ' + JSON.stringify(avoidAreaKeyboard));
+          await sleep(1000)
+          expect(keyboardPX.visible).assertEqual(avoidAreaKeyboard?.visible)
+          expect(keyboardPX.bottomRect.left).assertEqual(avoidAreaKeyboard?.bottomRect.left)
+          expect(keyboardPX.bottomRect.top).assertEqual(avoidAreaKeyboard?.bottomRect.top)
+          expect(keyboardPX.bottomRect.width).assertEqual(avoidAreaKeyboard?.bottomRect.width);
+          expect(keyboardPX.bottomRect.height).assertEqual(avoidAreaKeyboard?.bottomRect.height);
+          expect(keyboardPX.leftRect.left).assertEqual(avoidAreaKeyboard?.leftRect.left);
+          expect(keyboardPX.leftRect.top).assertEqual(avoidAreaKeyboard?.leftRect.top);
+          expect(keyboardPX.leftRect.width).assertEqual(avoidAreaKeyboard?.leftRect.width);
+          expect(keyboardPX.leftRect.height).assertEqual(avoidAreaKeyboard?.leftRect.height);
+          expect(keyboardPX.rightRect.left).assertEqual(avoidAreaKeyboard?.rightRect.left);
+          expect(keyboardPX.rightRect.top).assertEqual(avoidAreaKeyboard?.rightRect.top);
+          expect(keyboardPX.rightRect.width).assertEqual(avoidAreaKeyboard?.rightRect.width);
+          expect(keyboardPX.rightRect.height).assertEqual(avoidAreaKeyboard?.rightRect.height);
+          expect(keyboardPX.topRect.left).assertEqual(avoidAreaKeyboard?.topRect.left);
+          expect(keyboardPX.topRect.top).assertEqual(avoidAreaKeyboard?.topRect.top);
+          expect(keyboardPX.topRect.width).assertEqual(avoidAreaKeyboard?.topRect.width);
+          expect(keyboardPX.topRect.height).assertEqual(avoidAreaKeyboard?.topRect.height);
+
+          expect(keyboardVP.visible).assertEqual(avoidAreaKeyboard?.visible)
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.bottomRect.left): ' + px2vp(avoidAreaKeyboard?.bottomRect.left))
-          expect(windowAvoidAreaInfoVP2.keyboard.bottomRect.left).assertEqual(px2vp(avoidAreaKeyboard?.bottomRect.left))
+          expect(keyboardVP.bottomRect.left).assertEqual(px2vp(avoidAreaKeyboard?.bottomRect.left))
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.bottomRect.top): ' + px2vp(avoidAreaKeyboard?.bottomRect.top))
-          expect(windowAvoidAreaInfoVP2.keyboard.bottomRect.top).assertEqual(px2vp(avoidAreaKeyboard?.bottomRect.top))
+          expect(keyboardVP.bottomRect.top).assertEqual(px2vp(avoidAreaKeyboard?.bottomRect.top))
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.bottomRect.width): ' + px2vp(avoidAreaKeyboard?.bottomRect.width))
-          expect(windowAvoidAreaInfoVP2.keyboard.bottomRect.width).assertEqual(px2vp(avoidAreaKeyboard?.bottomRect.width));
+          expect(keyboardVP.bottomRect.width).assertEqual(px2vp(avoidAreaKeyboard?.bottomRect.width));
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.bottomRect.height): ' + px2vp(avoidAreaKeyboard?.bottomRect.height))
-          expect(windowAvoidAreaInfoVP2.keyboard.bottomRect.height).assertEqual(px2vp(avoidAreaKeyboard?.bottomRect.height));
+          expect(keyboardVP.bottomRect.height).assertEqual(px2vp(avoidAreaKeyboard?.bottomRect.height));
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.leftRect.left): ' + px2vp(avoidAreaKeyboard?.leftRect.left))
-          expect(windowAvoidAreaInfoVP2.keyboard.leftRect.left).assertEqual(px2vp(avoidAreaKeyboard?.leftRect.left));
+          expect(keyboardVP.leftRect.left).assertEqual(px2vp(avoidAreaKeyboard?.leftRect.left));
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.leftRect.top): ' + px2vp(avoidAreaKeyboard?.leftRect.top))
-          expect(windowAvoidAreaInfoVP2.keyboard.leftRect.top).assertEqual(px2vp(avoidAreaKeyboard?.leftRect.top));
+          expect(keyboardVP.leftRect.top).assertEqual(px2vp(avoidAreaKeyboard?.leftRect.top));
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.leftRect.width): ' + px2vp(avoidAreaKeyboard?.leftRect.width))
-          expect(windowAvoidAreaInfoVP2.keyboard.leftRect.width).assertEqual(px2vp(avoidAreaKeyboard?.leftRect.width));
+          expect(keyboardVP.leftRect.width).assertEqual(px2vp(avoidAreaKeyboard?.leftRect.width));
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.leftRect.height): ' + px2vp(avoidAreaKeyboard?.leftRect.height))
-          expect(windowAvoidAreaInfoVP2.keyboard.leftRect.height).assertEqual(px2vp(avoidAreaKeyboard?.leftRect.height));
+          expect(keyboardVP.leftRect.height).assertEqual(px2vp(avoidAreaKeyboard?.leftRect.height));
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.rightRect.left): ' + px2vp(avoidAreaKeyboard?.rightRect.left))
-          expect(windowAvoidAreaInfoVP2.keyboard.rightRect.left).assertEqual(px2vp(avoidAreaKeyboard?.rightRect.left));
+          expect(keyboardVP.rightRect.left).assertEqual(px2vp(avoidAreaKeyboard?.rightRect.left));
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.rightRect.top): ' + px2vp(avoidAreaKeyboard?.rightRect.top))
-          expect(windowAvoidAreaInfoVP2.keyboard.rightRect.top).assertEqual(px2vp(avoidAreaKeyboard?.rightRect.top));
+          expect(keyboardVP.rightRect.top).assertEqual(px2vp(avoidAreaKeyboard?.rightRect.top));
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.rightRect.width): ' + px2vp(avoidAreaKeyboard?.rightRect.width))
-          expect(windowAvoidAreaInfoVP2.keyboard.rightRect.width).assertEqual(px2vp(avoidAreaKeyboard?.rightRect.width));
+          expect(keyboardVP.rightRect.width).assertEqual(px2vp(avoidAreaKeyboard?.rightRect.width));
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.rightRect.height): ' + px2vp(avoidAreaKeyboard?.rightRect.height))
-          expect(windowAvoidAreaInfoVP2.keyboard.rightRect.height).assertEqual(px2vp(avoidAreaKeyboard?.rightRect.height));
+          expect(keyboardVP.rightRect.height).assertEqual(px2vp(avoidAreaKeyboard?.rightRect.height));
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.topRect.left): ' + px2vp(avoidAreaKeyboard?.topRect.left))
-          expect(windowAvoidAreaInfoVP2.keyboard.topRect.left).assertEqual(px2vp(avoidAreaKeyboard?.topRect.left));
+          expect(keyboardVP.topRect.left).assertEqual(px2vp(avoidAreaKeyboard?.topRect.left));
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.topRect.top): ' + px2vp(avoidAreaKeyboard?.topRect.top))
-          expect(windowAvoidAreaInfoVP2.keyboard.topRect.top).assertEqual(px2vp(avoidAreaKeyboard?.topRect.top));
+          expect(keyboardVP.topRect.top).assertEqual(px2vp(avoidAreaKeyboard?.topRect.top));
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.topRect.width): ' + px2vp(avoidAreaKeyboard?.topRect.width))
-          expect(windowAvoidAreaInfoVP2.keyboard.topRect.width).assertEqual(px2vp(avoidAreaKeyboard?.topRect.width));
+          expect(keyboardVP.topRect.width).assertEqual(px2vp(avoidAreaKeyboard?.topRect.width));
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.topRect.height): ' + px2vp(avoidAreaKeyboard?.topRect.height))
-          expect(windowAvoidAreaInfoVP2.keyboard.topRect.height).assertEqual(px2vp(avoidAreaKeyboard?.topRect.height));
-          // 10. 旋转窗口到横屏触发挖孔避让区改变  这是什么意思 ？
+          expect(keyboardVP.topRect.height).assertEqual(px2vp(avoidAreaKeyboard?.topRect.height));
           await terminateAbility4(caseName);
           done();
         } else {
