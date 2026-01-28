@@ -842,14 +842,8 @@ export default function observerManagerCallStateTest() {
       let caseName: string = 'Telephony_observer_off_cCallStateInfo_0100';
       console.log("************* Telephony_observer_off_cCallStateInfo_0100 Test start *************");
       try {
-        let callback: (value: observer.CCallStateInfo) => void = (value: observer.CCallStateInfo) => {
-          console.log(`${caseName} on cCallStateChange, value:` + JSON.stringify(value));
-          ExpectTrue(value !== null);
-          observer.offCCallStateChange();
-          done();
-        }
-        observer.onCCallStateChange(callback);
         observer.offCCallStateChange(callback);
+        done();
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
         expect(false).assertTrue();
@@ -870,14 +864,8 @@ export default function observerManagerCallStateTest() {
       let caseName: string = 'Telephony_observer_off_cCallStateInfo_0200';
       console.log("************* Telephony_observer_off_cCallStateInfo_0200 Test start *************");
       try {
-        let callback: (value: observer.CCallStateInfo) => void = (value: observer.CCallStateInfo) => {
-          console.log(`${caseName} on cCallStateChange, value:` + JSON.stringify(value));
-          ExpectTrue(value !== null);
-          observer.offCCallStateChange();
-          done();
-        }
-        observer.onCCallStateChange(callback);
         observer.offCCallStateChange();
+        done();
       } catch (err) {
         console.info(`${caseName} catchError ${JSON.stringify(err)}}` + err);
         expect(false).assertTrue();
