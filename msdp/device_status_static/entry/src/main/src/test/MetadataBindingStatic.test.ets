@@ -38,10 +38,10 @@ export default function metadataBindingTest() {
         let caseName = "SUB_MSDP_Api_metadataBinding_static_0100";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          metadataBinding.on('operationSubmitMetadata', 'com.example.mydevicestatusappStatic', (data) => {
+          metadataBinding.onOperationSubmitMetadata('com.example.mydevicestatusappStatic', (data) => {
             hilog.info(domain, tag, `${caseName} onOperatingHandChanged success` + data);  
           });
-          hilog.info(domain, tag, `${caseName} metadataBinding.on success`);
+          hilog.info(domain, tag, `${caseName} onOperationSubmitMetadata success`);
           done();
         } catch (error: BusinessError) {
           let e: BusinessError = error as BusinessError;
@@ -49,7 +49,7 @@ export default function metadataBindingTest() {
           if(error.code == 32100004) {
             hilog.info(domain, tag, `${caseName} The device does not support this API.`);
           } else {
-            hilog.info(domain, tag, `${caseName} metadataBinding.on fail`);
+            hilog.info(domain, tag, `${caseName} onOperationSubmitMetadata fail`);
             expect().assertFail();
           }
           done();
@@ -71,8 +71,8 @@ export default function metadataBindingTest() {
         hilog.info(domain, tag, `${caseName} enter`);
         let bundleName: string = '';
         try {
-          metadataBinding.on('operationSubmitMetadata', bundleName, (data) => {});
-          hilog.info(domain, tag, `${caseName} metadataBinding.on success`);
+          metadataBinding.onOperationSubmitMetadata(bundleName, (data) => {});
+          hilog.info(domain, tag, `${caseName} onOperationSubmitMetadata success`);
           expect().assertFail();
           done();
         } catch (error: BusinessError) {
@@ -125,10 +125,10 @@ export default function metadataBindingTest() {
         hilog.info(domain, tag, `${caseName} enter`);
         let bundleName: string = 'com.example.mydevicestatusappStatic';
         try {
-          metadataBinding.off('operationSubmitMetadata', bundleName, (data) => {
+          metadataBinding.offOperationSubmitMetadata(bundleName, (data) => {
             hilog.info(domain, tag, `${caseName} metadataBinding.off success` + data);  
           });
-          hilog.info(domain, tag, `${caseName} metadataBinding.off success`);
+          hilog.info(domain, tag, `${caseName} offOperationSubmitMetadata success`);
           done();
         } catch (error: BusinessError) {
           let e: BusinessError = error as BusinessError;
@@ -152,8 +152,8 @@ export default function metadataBindingTest() {
         let caseName = "SUB_MSDP_Api_metadataBinding_static_0500";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          metadataBinding.off('operationSubmitMetadata', 'com.example.mydevicestatusappStatic');
-          hilog.info(domain, tag, `${caseName} metadataBinding.off success`);
+          metadataBinding.offOperationSubmitMetadata('com.example.mydevicestatusappStatic');
+          hilog.info(domain, tag, `${caseName} offOperationSubmitMetadata success`);
           done();
         } catch (error: BusinessError) {
           let e: BusinessError = error as BusinessError;
@@ -177,8 +177,8 @@ export default function metadataBindingTest() {
         let caseName = "SUB_MSDP_Api_metadataBinding_static_0600";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          metadataBinding.off('operationSubmitMetadata', '');
-          hilog.info(domain, tag, `${caseName} metadataBinding.off success`);
+          metadataBinding.offOperationSubmitMetadata('');
+          hilog.info(domain, tag, `${caseName} offOperationSubmitMetadata success`);
           expect().assertFail();
           done();
         } catch (error: BusinessError) {
