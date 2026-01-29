@@ -162,18 +162,20 @@ struct Index {
           .onClick((e: ClickEvent) => {
             this.isOnDeleteComplete = !this.isOnDeleteComplete
           })
+      }
+      Row() {
         Button('btnOnDidChange : ' + this.isOnDidChange)
           .id('Btn_OnDidChange')
           .onClick((e: ClickEvent) => {
             this.isOnDidChange = !this.isOnDidChange
           })
-      }
-      Row() {
         Button('btnOnDidIMEInput : ' + this.isOnDidIMEInput)
           .id('Btn_OnDidIMEInput')
           .onClick((e: ClickEvent) => {
             this.isOnDidIMEInput = !this.isOnDidIMEInput
           })
+      }
+      Row() {
         Button('btnOnIMEInputComplete : ' + this.isOnIMEInputComplete)
           .id('Btn_OnIMEInputComplete')
           .onClick((e: ClickEvent) => {
@@ -196,6 +198,8 @@ struct Index {
           .onClick((e: ClickEvent) => {
             this.isBarState = !this.isBarState
           })
+      }
+      Row() {
         Button('btnEnablePreviewText : ' + this.isEnablePreviewText)
           .id('Btn_EnablePreviewText')
           .onClick((e: ClickEvent) => {

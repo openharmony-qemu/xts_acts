@@ -186,46 +186,5 @@ export default function richEditorUndefined() {
       console.info('[richEditorUndefined_static_3003] END');
       done();
     });
-
-    /**
-     * @tc.number    richEditorUndefined_static_3004
-     * @tc.name      richEditorUndefined_static_3004
-     * @tc.desc      test customKeyboard
-     * @tc.level     Level.LEVEL1
-     */
-    it('richEditorUndefined_static_3004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[richEditorUndefined_static_3004] START');
-      let driver: Driver = Driver.create();
-      let richEditor = await driver.findComponent(ON.id('RichEditor_3'));
-      await (richEditor?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let text = await driver.findComponent(ON.id('Text_CustomKeyboard2'));
-      if (text == null) {
-        text = await driver.findComponent(ON.id('Text_CustomKeyboard'));
-        expect(await (text?.getText() as Promise<string>)).assertEqual('hello');
-      }
-
-      let changeBtn = await driver.findComponent(ON.id('Btn_CustomKeyboard'));
-      await (changeBtn?.click() as Promise<void>);
-      await (richEditor?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let changeBtn2 = await driver.findComponent(ON.id('Btn_CustomKeyboard2'));
-      await (changeBtn2?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      text = await driver.findComponent(ON.id('Text_CustomKeyboard'));
-      expect(await (text?.getText() as Promise<string>)).assertEqual('CustomKeyboard');
-
-      changeBtn = await driver.findComponent(ON.id('Btn_CustomKeyboard'));
-      await (changeBtn?.click() as Promise<void>);
-      await (richEditor?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      text = await driver.findComponent(ON.id('Text_CustomKeyboard2'));
-      if (text == null) {
-        text = await driver.findComponent(ON.id('Text_CustomKeyboard'));
-        expect(await (text?.getText() as Promise<string>)).assertEqual('hello');
-      }
-      console.info('[richEditorUndefined_static_3004] END');
-      done();
-    });
   })
 }

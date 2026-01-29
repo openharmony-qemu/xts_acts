@@ -89,6 +89,8 @@ struct RichEditorExample {
                 this.messageAddBuilderSpan = 'undefined'
               }
             })
+        }
+        Row() {
           Button('addSymbolSpan_not_bind')
             .id('Btn_addSymbolSpan')
             .onClick((e: ClickEvent) => {
@@ -97,8 +99,6 @@ struct RichEditorExample {
                 this.messageAddSymbolSpan = 'undefined'
               }
             })
-        }
-        Row() {
           Button('addTextSpan_not_bind')
             .id('Btn_addTextSpan')
             .onClick((e: ClickEvent) => {
@@ -120,6 +120,8 @@ struct RichEditorExample {
                 this.messageAddTextSpan = 'undefined'
               }
             })
+        }
+        Row() {
           Button('getCaretOffset_not_bind')
             .id('Btn_getCaretOffset')
             .onClick((e: ClickEvent) => {
@@ -154,6 +156,8 @@ struct RichEditorExample {
                 this.messageGetParagraphs = 'undefined'
               }
             })
+        }
+        Row() {
           Button('getPreviewText_not_bind')
             .id('Btn_getPreviewText')
             .onClick((e: ClickEvent) => {
@@ -162,8 +166,6 @@ struct RichEditorExample {
                 this.messageGetPreviewText = 'undefined'
               }
             })
-        }
-        Row() {
           Button('getSelection_not_bind')
             .id('Btn_getSelection')
             .onClick((e: ClickEvent) => {
@@ -172,6 +174,8 @@ struct RichEditorExample {
                 this.messageGetSelection = 'undefined'
               }
             })
+        }
+        Row() {
           Button('getSelection2_not_bind')
             .id('Btn_getSelection2')
             .onClick((e: ClickEvent) => {
@@ -206,6 +210,8 @@ struct RichEditorExample {
                 this.messageSetCaretOffset = 'undefined'
               }
             })
+        }
+        Row() {
           Button('fromStyledString_not_bind')
             .id('Btn_fromStyledString')
             .onClick((e: ClickEvent) => {
@@ -214,16 +220,16 @@ struct RichEditorExample {
                 this.messageFromStyledString = 'undefined'
               }
             })
-        }
-        Row() {
           Button('toStyledString_not_bind')
             .id('Btn_toStyledString')
             .onClick((e: ClickEvent) => {
-              let ret = this.controllerNotBind.toStyledString({start:0,end:1})
+              let ret = this.controllerNotBind.toStyledString({ start: 0, end: 1 })
               if (ret == undefined) {
                 this.messageToStyledString = 'undefined'
               }
             })
+        }
+        Row() {
           Button('isEditing_not_bind')
             .id('Btn_isEditing')
             .onClick((e: ClickEvent) => {

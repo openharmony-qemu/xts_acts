@@ -83,20 +83,22 @@ export default function RichEditorModifierUndefinedTest() {
       console.info('[richEditorModifierUndefined_static_2001] START');
       let driver: Driver = Driver.create()
       let strJson = inspector.getInspectorByKey('RichEditorM_2');
-
-      console.info("[richEditorModifierUndefined_static_2001] placeholder: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('placeholder')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('placeholder'))
-        .assertContain('#FFFFFF00');
+        .assertEqual('');
 
-      let changeBtn = await driver.findComponent(ON.id('RichEditorM_placeholder'));
+      let changeBtn = await driver.findComponent(ON.id('RichEditor_placeholder'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      console.info("[richEditorModifierUndefined_static_2001] click RichEditorM_placeholder");
       strJson = inspector.getInspectorByKey('RichEditorM_2');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('placeholder'))
-        .assertContain('#99182431');
+        .assertContain('hello');
+
+      changeBtn = await driver.findComponent(ON.id('RichEditor_placeholder'));
+      await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
+      strJson = inspector.getInspectorByKey('RichEditorM_2');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('placeholder'))
+        .assertContain('');
       console.info('[richEditorModifierUndefined_static_2001] END');
       done();
     });

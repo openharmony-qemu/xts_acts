@@ -40,9 +40,7 @@ class MyPointModifier implements AttributeModifier<RichEditorAttribute> {
   public isOnPaste: boolean = true;
   public isOnSelectionChange: boolean = false;
   public isOnWillChange: boolean = false;
-  public placeholderStyleIndex: int = 0;
   public startMessage: string = 'Hello World';
-  public placeholderStyleList: Array<ResourceColor | undefined> = [Color.Yellow, undefined];
 
   applyNormalAttribute(instance: RichEditorAttribute): void {
     instance
@@ -53,7 +51,7 @@ class MyPointModifier implements AttributeModifier<RichEditorAttribute> {
       .onSubmit(this.isOnSubmit ? (enterKey: EnterKeyType, event: SubmitEvent) => {
         this.message = 'onSubmit'
       } : undefined)
-      .placeholder(this.startMessage, { fontColor: this.placeholderStyleList[this.placeholderStyleIndex] })
+      .placeholder(this.isPlaceholder ? undefined : 'hello')
       .onPaste(this.isOnPaste ? () => {
         this.message = 'onPaste'
       } : undefined)
@@ -105,7 +103,6 @@ struct SoftKeyboardEnterTypeExample {
             this.modifier.isStopBackPress = !this.modifier.isStopBackPress
           })
       }
-
       Row() {
         Button('isOnSelect: ' + this.modifier.isOnSelect)
           .id('RichEditorM_onSelect')
@@ -123,7 +120,6 @@ struct SoftKeyboardEnterTypeExample {
             this.modifier.isOnPaste = !this.modifier.isOnPaste
           })
       }
-
       Row() {
         Button('isOnSelectionChange: ' + this.modifier.isOnSelectionChange)
           .id('RichEditorM_onSelectionChange')
@@ -136,14 +132,11 @@ struct SoftKeyboardEnterTypeExample {
             this.modifier.isOnWillChange = !this.modifier.isOnWillChange
           })
       }
-
       Row() {
-        Button('改变提示文本' + this.modifier.placeholderStyleList[this.modifier.placeholderStyleIndex])
-          .id('RichEditorM_placeholder')
+        Button('isPlaceholder: ' + this.modifier.isPlaceholder)
+          .id('RichEditor_placeholder')
           .onClick((e: ClickEvent) => {
-            this.modifier.placeholderStyleIndex =
-              (this.modifier.placeholderStyleIndex + 1) % this.modifier.placeholderStyleList.length;
-            this.modifier.isPlaceholder = !this.modifier.isPlaceholder;
+            this.modifier.isPlaceholder = !this.modifier.isPlaceholder
           })
       }
     }.height('60%').justifyContent(FlexAlign.Center)

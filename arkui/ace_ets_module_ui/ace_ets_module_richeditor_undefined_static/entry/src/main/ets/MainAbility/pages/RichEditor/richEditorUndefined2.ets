@@ -37,11 +37,10 @@ struct SoftKeyboardEnterTypeExample {
   @State isOnSelect: boolean = true;
   @State isOnSubmit: boolean = true;
   @State isOnPaste: boolean = true;
+  @State isPlaceholder: boolean = true;
   @State isOnSelectionChange: boolean = false;
   @State isOnWillChange: boolean = false;
-  @State placeholderStyleIndex: int = 0;
   @State startMessage: string = 'Hello World';
-  private placeholderStyleList: Array<ResourceColor | undefined> = [Color.Yellow, undefined];
 
   build() {
     Column() {
@@ -57,7 +56,7 @@ struct SoftKeyboardEnterTypeExample {
         .onSubmit(this.isOnSubmit ? (enterKey: EnterKeyType, event: SubmitEvent) => {
           this.message = 'onSubmit'
         } : undefined)
-        .placeholder(this.startMessage, { fontColor: this.placeholderStyleList[this.placeholderStyleIndex] })
+        .placeholder(this.isPlaceholder ? undefined : 'hello')
         .onPaste(this.isOnPaste ? () => {
           this.message = 'onPaste'
         } : undefined)
@@ -110,7 +109,6 @@ struct SoftKeyboardEnterTypeExample {
             this.isOnPaste = !this.isOnPaste
           })
       }
-
       Row() {
         Button('isOnSelectionChange: ' + this.isOnSelectionChange)
           .id('RichEditor_onSelectionChange')
@@ -123,12 +121,11 @@ struct SoftKeyboardEnterTypeExample {
             this.isOnWillChange = !this.isOnWillChange
           })
       }
-
       Row() {
-        Button('改变提示文本' + this.placeholderStyleList[this.placeholderStyleIndex])
+        Button('isPlaceholder: ' + this.isPlaceholder)
           .id('RichEditor_placeholder')
           .onClick((e: ClickEvent) => {
-            this.placeholderStyleIndex = (this.placeholderStyleIndex + 1) % this.placeholderStyleList.length;
+            this.isPlaceholder = !this.isPlaceholder
           })
       }
     }.height('60%').justifyContent(FlexAlign.Center)

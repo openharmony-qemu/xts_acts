@@ -78,7 +78,7 @@ struct Index {
         Text(`cut:${this.myModifier.cntCut}`)
           .id('RichEditor_text_OnCut')
       }
-      Row() {
+      Column() {
         Button('btnAboutToDelete : ' + this.myModifier.isAboutToDelete)
           .id('Btn_AboutToDelete')
           .onClick((e: ClickEvent) => {

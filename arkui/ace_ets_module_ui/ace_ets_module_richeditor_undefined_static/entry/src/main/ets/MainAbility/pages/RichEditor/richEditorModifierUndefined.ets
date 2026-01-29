@@ -185,18 +185,20 @@ struct Index {
           .onClick((e: ClickEvent) => {
             this.myModifier.isOnIMEInputComplete = !this.myModifier.isOnIMEInputComplete
           })
+      }
+      Row() {
         Button('btnOnEditingChange : ' + this.myModifier.isOnEditingChange)
           .id('Btn_OnEditingChange')
           .onClick((e: ClickEvent) => {
             this.myModifier.isOnEditingChange = !this.myModifier.isOnEditingChange
           })
-      }
-      Row() {
         Button('btnCopyOptions : ' + this.myModifier.isCopyOptions)
           .id('Btn_CopyOptions')
           .onClick((e: ClickEvent) => {
             this.myModifier.isCopyOptions = !this.myModifier.isCopyOptions
           })
+      }
+      Row() {
         Button('btnBarState : ' + this.myModifier.isBarState)
           .id('Btn_BarState')
           .onClick((e: ClickEvent) => {
