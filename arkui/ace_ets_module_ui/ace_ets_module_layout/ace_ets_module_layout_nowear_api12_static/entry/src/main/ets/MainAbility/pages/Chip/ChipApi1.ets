@@ -44,14 +44,14 @@ struct ChipApi1 {
           fillColor: Color.Blue,
           activatedFillColor: Color.Blue
         }  as PrefixIconOptions,
-        prefixSymbol: {
-          normal: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
-          activated: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
-        } as ChipSymbolGlyphOptions,
-        suffixSymbol: {
-          normal: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
-          activated: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
-        } as ChipSymbolGlyphOptions,
+        // prefixSymbol: {
+        //   normal: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
+        //   activated: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
+        // } as ChipSymbolGlyphOptions,
+        // suffixSymbol: {
+        //   normal: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
+        //   activated: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
+        // } as ChipSymbolGlyphOptions,
         label: {
           text: "操作块",
           fontSize: 12,
