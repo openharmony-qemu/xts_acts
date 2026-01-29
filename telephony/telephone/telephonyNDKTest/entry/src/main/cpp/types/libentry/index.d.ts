@@ -35,8 +35,6 @@ export const OHTelephonyGetNetworkStateForSlot: (soltId: number) => XTSNetworkSt
 
 export const OHTelephonyGetNetworkState: () => XTSNetworkStateObj;
 
-export const OH_Telephony_GetNetworkStateForSlot0100: () => number;
-
 export const GetNetworkState0601: () => number;
       
 export const GetNetworkState0701: () => number;
