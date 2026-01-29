@@ -74,4 +74,5 @@ export const OH_LowPowerAVSink_GetCapability0100: () => number;
 export const OH_LowPowerVideoSink_CreateByMime0100: () => number;
 export const OH_LowPowerVideoSinkCallback_Create0100: () => number;
 export const OH_LowPowerAudioSink_CreateByMime0100: () => number;
+export const OH_LowPowerAudioSink_SetLoudnessGain0200: () => number;
 
