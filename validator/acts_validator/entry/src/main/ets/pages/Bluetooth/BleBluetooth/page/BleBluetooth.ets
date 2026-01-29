@@ -27,7 +27,6 @@ import { BusinessError } from '@ohos.base';
 
 const TAG = '[Screenshot]';
 const isCore = canIUse('SystemCapability.Communication.Bluetooth.Core');
-const isLite = canIUse('SystemCapability.Communication.Bluetooth.Lite');
 
 @Entry
 @Component
@@ -65,7 +64,7 @@ struct Ble {
   scroller: Scroller = new Scroller();
 
   async aboutToAppear() {
-    if (isLite && isCore) {
+    if (isCore) {
       await FirstDialog.ChooseDialog(this.StepTips, this.name);
     } else {
       setTimeout(() => {
