@@ -261,8 +261,10 @@ it('listLevel1Test_static_static_0800', Level.LEVEL1, async (done: () => void): 
 
       console.info("[listLevel1Test_static_static_0800] JSON.parseJsonElement(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
+      console.info("[listLevel1Test_static_static_0800] startMargin is: " +
+      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('startMargin')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('startMargin'))
-        .assertEqual("30%");
+        .assertEqual("30.00%");
       console.info('listLevel1Test_static_static_0800 END');
       done()
     });
