@@ -30,7 +30,7 @@ import {
   Position,
   BarPosition
 } from '@ohos.arkui.component';
-import { Link, State } from '@ohos.arkui.stateManagement';
+import { Link, State, PropRef} from '@ohos.arkui.stateManagement';
 
 @Component
 export struct TabsView {
@@ -38,7 +38,7 @@ export struct TabsView {
   @State selectedFontColor: string = '#007DFF'
   @State currentIndex: number = 0
   private controller: TabsController = new TabsController()
-  private _position: Position = { x:0, y:0} as Position;
+  @PropRef _position!: Position;
   private componentKey: string = '';
 
   @Builder
