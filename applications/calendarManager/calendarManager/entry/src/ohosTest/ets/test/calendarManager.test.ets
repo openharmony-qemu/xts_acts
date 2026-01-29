@@ -3807,4 +3807,5 @@ export default function CalendarManagerTest() {
           });
         });
       });
-    }
+    });
+  }
