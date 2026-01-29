@@ -187,9 +187,7 @@ struct WebComponent {
                 //放大
                 await Utils.waitForExist(()=>this.isWebFocus, this.str+' isWebFocus', true, 1000);
                 Utils.emitEvent(true, 178030)
-              } else if(this.flagType == 'webOnscroll' ) {
-                Utils.emitEvent(true, 178040)
-              }
+              } 
             })
             .onBlur(() => {
               this.webborderColor1 = Color.Pink;
