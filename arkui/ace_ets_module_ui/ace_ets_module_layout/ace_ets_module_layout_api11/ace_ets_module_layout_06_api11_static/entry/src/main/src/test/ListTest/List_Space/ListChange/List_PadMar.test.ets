@@ -139,7 +139,7 @@ it('testListPadMar_static', Level.LEVEL0, async (done: () => void): Promise<void
       expect(Math.abs(Math.round(List_PadMar_01.right - List_PadMar_01.left) - Math.round(UIContext.resolveUIContext()!.vp2px(350))) <= 1)
         .assertTrue();
       let driver = Driver.create();
-      driver.swipe(360, 690, 360, 30);
+      await driver.swipe(360, 690, 360, 30);
       let List_PadMar_014Again: RectValue = CommonFunc.getComponentRect('List_PadMar_014');
       expect(Math.abs(List_PadMar_014.top - List_PadMar_014Again.top) <= 1).assertTrue();
       console.info('testListPadMar END');

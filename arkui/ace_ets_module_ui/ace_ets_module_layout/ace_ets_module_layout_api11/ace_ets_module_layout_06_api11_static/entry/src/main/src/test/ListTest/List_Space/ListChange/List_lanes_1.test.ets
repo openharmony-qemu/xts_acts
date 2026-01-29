@@ -114,7 +114,7 @@ it('testListLanesToOne_static', Level.LEVEL0, async (done: () => void): Promise<
       expect(Math.abs(Math.round(List_lanes_014.bottom - List_lanes_014.top) - Math.round(height*0.15)) <= 1).assertTrue();
 
       let driver = Driver.create();
-      driver.swipe(
+      await driver.swipe(
         (Math.round(List_lanes_013.left + ((List_lanes_013.right - List_lanes_013.left) / 2))).toInt(),
         (Math.round(List_lanes_013.bottom)).toInt(),
         (Math.round(List_lanes_012.left + ((List_lanes_012.right - List_lanes_012.left) / 2))).toInt(),

@@ -173,7 +173,7 @@ it('testListInitialIndexToTwelveWithTwoLane_static', Level.LEVEL0, async (done: 
 
 
       let driver = Driver.create();
-      driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + listContainer.left + listContainer_width / 2)).toInt(),
+      await driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + listContainer.left + listContainer_width / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + listContainer.bottom - listContainer_height / 6)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + listContainer.left + listContainer_width / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + listContainer.top + listContainer_height / 6)).toInt());
