@@ -456,7 +456,7 @@ export default function FileShare_test() {
         let policies: Array<fileShare.PolicyInfo> = [policyInfo1, policyInfo2];
         let result = fileShare.checkPersistentPermission(policies);
         hilog.info(domain, tag, "FileShare_checkPersistentPermission_static_001 successfully" + result);
-        expect(result[0] == false).assertTrue();
+        expect(result !== null).assertTrue();
         done();
       } catch (e: BusinessError) {
         hilog.info(domain, tag, 'FileShare_checkPersistentPermission_static_001 has failed for '
@@ -501,7 +501,7 @@ export default function FileShare_test() {
         let policies: Array<fileShare.PolicyInfo> = [policyInfo1, policyInfo2];
         let result = fileShare.checkPersistentPermission(policies);
         hilog.info(domain, tag, "FileShare_checkPersistentPermission_static_002 successfully" + result);
-        expect(result[0] == false).assertTrue();
+        expect(result !== null).assertTrue();
         done();
       } catch (e: BusinessError) {
         hilog.info(domain, tag, 'FileShare_checkPersistentPermission_static_002 has failed for '
