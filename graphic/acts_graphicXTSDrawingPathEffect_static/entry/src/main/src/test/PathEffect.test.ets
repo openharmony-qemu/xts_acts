@@ -165,7 +165,7 @@ export default function pathEffectTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testreateCornerPathEffectNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testcreateCornerPathEffectNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testcreateCornerPathEffectNormalStatic';
       try {
         let effect = drawing.PathEffect.createCornerPathEffect(1);
