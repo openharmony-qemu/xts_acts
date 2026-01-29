@@ -121,7 +121,7 @@ it('NavDestinationStateActive_static_0200', Level.LEVEL0, async (done: () => voi
       console.info('[NavDestinationStateActive_static_0200] btn1 click');
       await driver.delayMs(3000);
 
-      let testVal2 = AppStorage.get('ON_INACTIVE')
+      let testVal2 = AppStorage.get<int>('ON_INACTIVE')
       console.log('NavDestinationStateActive_static_0200 on ON_INACTIVE value : ' + testVal2)
       expect(testVal2).assertEqual(9);
       AppStorage.delete('ON_INACTIVE');

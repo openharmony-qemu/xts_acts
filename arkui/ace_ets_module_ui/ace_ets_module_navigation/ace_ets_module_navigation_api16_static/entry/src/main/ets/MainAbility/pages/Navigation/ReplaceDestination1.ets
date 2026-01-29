@@ -158,11 +158,11 @@ struct PageFour {
       Column({space: '5vp'} as ColumnOptions) {
         Button('LaunchModeMoveTOTopSingleton').id('moveId').onClick((e: ClickEvent) => {
           console.log("============================================ moveId ");
-          this.pageInfos.pushPath(new NavPathInfo('pageOne',null),{ launchMode: LaunchMode.MOVE_TO_TOP_SINGLETON, animated: true } )
+          this.pageInfos.replaceDestination(new NavPathInfo('pageOne',null),{ launchMode: LaunchMode.MOVE_TO_TOP_SINGLETON, animated: true } )
         }).height('10%')
         Button('LaunchModePopToSingleton').id('popId').onClick((e: ClickEvent) => {
           console.log("============================================ popId ");
-          this.pageInfos.pushPath(new NavPathInfo('pageOne',null),{ launchMode: LaunchMode.POP_TO_SINGLETON, animated: undefined } )
+          this.pageInfos.replaceDestination(new NavPathInfo('pageOne',null),{ launchMode: LaunchMode.POP_TO_SINGLETON, animated: undefined } )
         }).height('10%')
       }
     }
