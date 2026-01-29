@@ -1347,7 +1347,7 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0570, TestSize.Level0)
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0580, TestSize.Level0)
 {
-    if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)){
+    if (OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO)) {
         OH_VideoProcessing *videoProcessor = nullptr;
         VideoProcessing_ErrorCode ret = OH_VideoProcessing_Create(&videoProcessor,
             VIDEO_PROCESSING_TYPE_METADATA_GENERATION);

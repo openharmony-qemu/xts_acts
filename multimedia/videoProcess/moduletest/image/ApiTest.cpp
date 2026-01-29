@@ -106,7 +106,8 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0020, TestSize.Level0)
         OH_ImageProcessing *instance = nullptr;
         OH_PixelmapNative *srcImg = nullptr;
         OH_PixelmapNative *dstImg = nullptr;
-        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
+            IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
         ASSERT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
         ret = OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
         OH_ImageProcessing_Destroy(instance);
@@ -130,7 +131,8 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0030, TestSize.Level0)
         OH_PixelmapNative *dstImg = nullptr;
         CreateEmptyPixelmap(&srcImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
         CreateEmptyPixelmap(&dstImg, 720, 960, PIXEL_FORMAT_BGRA_8888);
-        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
+            IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
         ASSERT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
         ret = OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
         OH_ImageProcessing_Destroy(instance);
@@ -210,7 +212,8 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0060, TestSize.Level0)
         CreateEmptyPixelmap(&dstImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
         OH_NativeColorSpaceManager *dstColorspace = OH_NativeColorSpaceManager_CreateFromName(BT709);
         OH_PixelmapNative_SetColorSpaceNative(dstImg, dstColorspace);
-        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_COMPOSITION);
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
+            IMAGE_PROCESSING_TYPE_COMPOSITION);
         ASSERT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
         ret = OH_ImageProcessing_Compose(instance, srcImg, srcGainmap, dstImg);
         OH_NativeColorSpaceManager_Destroy(srcColorspace);
@@ -275,7 +278,8 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0080, TestSize.Level0)
         CreateEmptyPixelmap(&srcImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
         OH_NativeColorSpaceManager *srcColorspace = OH_NativeColorSpaceManager_CreateFromName(BT709);
         OH_PixelmapNative_SetColorSpaceNative(srcImg, srcColorspace);
-        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_METADATA_GENERATION);
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
+            IMAGE_PROCESSING_TYPE_METADATA_GENERATION);
         ASSERT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
         ret = OH_ImageProcessing_GenerateMetadata(instance, srcImg);
         OH_NativeColorSpaceManager_Destroy(srcColorspace);
@@ -344,7 +348,8 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0110, TestSize.Level0)
     if (OH_ImageProcessing_IsMetadataGenerationSupported(&COMPOSE_DST_INFO)) {
         OH_ImageProcessing *instance = nullptr;
         OH_PixelmapNative *srcImg = nullptr;
-        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_METADATA_GENERATION);
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
+            IMAGE_PROCESSING_TYPE_METADATA_GENERATION);
         ASSERT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
         ret = OH_ImageProcessing_GenerateMetadata(instance, srcImg);
         OH_ImageProcessing_Destroy(instance);
