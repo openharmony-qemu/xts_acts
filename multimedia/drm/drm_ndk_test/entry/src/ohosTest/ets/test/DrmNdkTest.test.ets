@@ -107,7 +107,6 @@ export default function abilityTest() {
       if(!wifiMg.isWifiActive()){
         console.info("======> wifi_test/enable wifi");
         wifiMg.enableWifi();
-        await sleep(1000);
       }
       try {
         let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
