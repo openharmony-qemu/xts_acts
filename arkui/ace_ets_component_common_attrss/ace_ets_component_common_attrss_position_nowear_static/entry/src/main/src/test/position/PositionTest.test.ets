@@ -134,8 +134,8 @@ export default function positionTest() {
         data.testValue.expectValue.left = Number(uiContext!.vp2px(parentWidth)) * 0.2
       }
       if (data.testValue.describe == "SetResource" ){
-        data.testValue.expectValue.top = Number(uiContext!.vp2px(200))
-        data.testValue.expectValue.left = Number(uiContext!.vp2px(100))
+        data.testValue.expectValue.top = Number(uiContext!.vp2px(100))
+        data.testValue.expectValue.left = Number(uiContext!.vp2px(200))
       }
 
       //Obtain the region information of the reference component.
