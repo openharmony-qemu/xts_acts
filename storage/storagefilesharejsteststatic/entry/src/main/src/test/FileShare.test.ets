@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,6 +30,7 @@ const FILE_CONTENT = 'hello world';
 export default function FileShare_test() {
   let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
   let context = abilityDelegator.getAppContext();
+  let data = context.filesDir;
   describe("FileShare_test", (): void => {
     hilog.info(domain, tag, '%{public}s', 'FileShare_test start');
 
@@ -54,8 +55,8 @@ export default function FileShare_test() {
     it('FileShare_activatePermission_static_001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const fileStr: String = "/data/storage/el2/base/haps/entry/files/FileShare_activatePermission_001.txt";
-        hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_001 START');
+        const fileStr: String = data + "/FileShare_activatePermission_static_001.txt";
+        hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_static_001 START');
 
         try {
           const uri = fileUri.getUriFromPath(fileStr);
@@ -69,10 +70,10 @@ export default function FileShare_test() {
           };
           let policies: Array<fileShare.PolicyInfo> = [policyInfo];
           await fileShare.activatePermission(policies);
-          hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_001: activatePermission success');
+          hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_static_001: activatePermission success');
           done();
         } catch (e : Error) {
-          hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_001 has failed for ' + e);
+          hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_static_001 has failed for ' + e);
           let err = e as BusinessError;
           if (err.code === 801) {
             expect(err.message === "The device doesn't support this api").assertTrue();
@@ -84,7 +85,7 @@ export default function FileShare_test() {
           }
           done();
         }
-        hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_001 END');
+        hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_static_001 END');
       });
 
 
@@ -101,8 +102,8 @@ export default function FileShare_test() {
     it('FileShare_activatePermission_static_002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const fileStr: String = "/data/storage/el2/base/haps/entry/files/FileShare_activatePermission_002.txt";
-        hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_002 START');
+        const fileStr: String = data + "/FileShare_activatePermission_static_002.txt";
+        hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_static_002 START');
 
         try {
           const uri = fileUri.getUriFromPath(fileStr);
@@ -115,12 +116,12 @@ export default function FileShare_test() {
           };
           let policies: Array<fileShare.PolicyInfo> = [policyInfo];
           await fileShare.activatePermission(policies);
-          hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_002 success');
+          hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_static_002 success');
           done();
         } catch (e) {
           const err = e as BusinessError;
           hilog.info(domain, tag,
-            'FileShare_activatePermission_002 failed: code = %{public}d, message = %{public}s',
+            'FileShare_activatePermission_static_002 failed: code = %{public}d, message = %{public}s',
             err.code, err.message);
           if (err.code === 801) {
             expect(err.message === "The device doesn't support this api").assertTrue();
@@ -133,7 +134,7 @@ export default function FileShare_test() {
           done();
         }
 
-        hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_002 END');
+        hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_static_002 END');
       });
 
 
@@ -150,9 +151,9 @@ export default function FileShare_test() {
     it('FileShare_activatePermission_static_003',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        const fileStr1: String = "/data/storage/el2/base/haps/entry/files/FileShare_activatePermission_003_1.txt";
-        const fileStr2: String = "/data/storage/el2/base/haps/entry/files/FileShare_activatePermission_003_2.txt";
-        hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_003 START');
+        const fileStr1: String = data + "/FileShare_activatePermission_static_003_1.txt";
+        const fileStr2: String = data + "/FileShare_activatePermission_static_003_2.txt";
+        hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_static_003 START');
 
         try {
           const uri1 = fileUri.getUriFromPath(fileStr1);
@@ -186,7 +187,7 @@ export default function FileShare_test() {
           }
           done();
         }
-        hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_003 END');
+        hilog.info(domain, tag, '%{public}s', 'FileShare_activatePermission_static_003 END');
       });
 
 
@@ -203,8 +204,8 @@ export default function FileShare_test() {
     it('FileShare_deactivatePermission_static_001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const fileStr: String = "/data/storage/el2/base/haps/entry/files/FileShare_deactivatePermission_001.txt";
-        hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_001 START');
+        const fileStr: String = data + "/FileShare_deactivatePermission_static_001.txt";
+        hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_static_001 START');
 
         try {
           const uri = fileUri.getUriFromPath(fileStr);
@@ -218,10 +219,10 @@ export default function FileShare_test() {
           };
           let policies: Array<fileShare.PolicyInfo> = [policyInfo];
           await fileShare.deactivatePermission(policies);
-          hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_001: deactivatePermission success');
+          hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_static_001: deactivatePermission success');
           done();
         } catch (e : Error) {
-          hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_001 has failed for ' + e);
+          hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_static_001 has failed for ' + e);
           let err = e as BusinessError;
           if (err.code === 801) {
             expect(err.message === "The device doesn't support this api").assertTrue();
@@ -233,7 +234,7 @@ export default function FileShare_test() {
           }
           done();
         }
-        hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_001 END');
+        hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_static_001 END');
       });
 
 
@@ -250,8 +251,8 @@ export default function FileShare_test() {
     it('FileShare_deactivatePermission_static_002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const fileStr: String = "/data/storage/el2/base/haps/entry/files/FileShare_deactivatePermission_002.txt";
-        hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_002 START');
+        const fileStr: String = data + "/FileShare_deactivatePermission_static_002.txt";
+        hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_static_002 START');
 
         try {
           const uri = fileUri.getUriFromPath(fileStr);
@@ -264,12 +265,12 @@ export default function FileShare_test() {
           };
           let policies: Array<fileShare.PolicyInfo> = [policyInfo];
           await fileShare.deactivatePermission(policies);
-          hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_002 success');
+          hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_static_002 success');
           done();
         } catch (e) {
           const err = e as BusinessError;
           hilog.info(domain, tag,
-            'FileShare_deactivatePermission_002 failed: code = %{public}d, message = %{public}s',
+            'FileShare_deactivatePermission_static_002 failed: code = %{public}d, message = %{public}s',
             err.code, err.message);
           if (err.code === 801) {
             expect(err.message === "The device doesn't support this api").assertTrue();
@@ -282,7 +283,7 @@ export default function FileShare_test() {
           done();
         }
 
-        hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_002 END');
+        hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_static_002 END');
       });
 
 
@@ -299,9 +300,9 @@ export default function FileShare_test() {
     it('FileShare_deactivatePermission_static_003',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        const fileStr1: String = "/data/storage/el2/base/haps/entry/files/FileShare_deactivatePermission_003_1.txt";
-        const fileStr2: String = "/data/storage/el2/base/haps/entry/files/FileShare_deactivatePermission_003_2.txt";
-        hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_003 START');
+        const fileStr1: String = data + "/FileShare_deactivatePermission_static_003_1.txt";
+        const fileStr2: String = data + "/FileShare_deactivatePermission_static_003_2.txt";
+        hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_static_003 START');
 
         try {
           const uri1 = fileUri.getUriFromPath(fileStr1);
@@ -336,8 +337,182 @@ export default function FileShare_test() {
           }
           done();
         }
-        hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_003 END');
+        hilog.info(domain, tag, '%{public}s', 'FileShare_deactivatePermission_static_003 END');
       });
+
+    /**
+     * @tc.name   FileShare_revokePermission_static_001
+     * @tc.number SUB_BASIC_FM_FileAPI_FileShare_RevokePermission_0100
+     * @tc.desc   Test revokePermission() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('FileShare_revokePermission_static_001',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      try {
+        const fileStr1: String = data + "/FileShare_revokePermission_static_001.txt";
+        let uriObject = new fileUri.FileUri(fileStr1);
+        let uri = uriObject.toString();
+        let fd = await fs.open(uri,fs.OpenMode.CREATE);
+        await fs.close(fd);
+        let policyInfo: fileShare.PolicyInfo = {
+          uri: uri, 
+          operationMode: fileShare.OperationMode.READ_MODE,
+        };
+        let policies: Array<fileShare.PolicyInfo> = [policyInfo];
+        fileShare.revokePermission(policies).then(() => {
+          hilog.info(domain, tag, "FileShare_revokePermission_static_001 successfully");
+          done();
+        }).catch((err: Error) => {
+          hilog.info(domain, tag, "FileShare_revokePermission_static_001 failed with error message: " 
+            + err.message + ", error code: " + err.code);
+          expect(err.code == 13900001 && err.message == 'Operation not permitted').assertTrue();
+          done();
+        });
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'FileShare_revokePermission_static_001 has failed for '
+         + e.message + ", err code: " + e.code);
+        expect(false).assertTrue();
+        if(e.code === 801){
+          expect(e.message == "The device doesn't support this api").assertTrue();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   FileShare_revokePermission_static_002
+     * @tc.number SUB_BASIC_FM_FileAPI_FileShare_RevokePermission_0200
+     * @tc.desc   Test revokePermission() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('FileShare_revokePermission_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          const fileStr1: String = data + "/FileShare_revokePermission_static_002.txt";
+          let uriObject = new fileUri.FileUri(fileStr1);
+          let uri = uriObject.toString();
+          let fd = await fs.open(uri,fs.OpenMode.CREATE);
+          await fs.close(fd);
+          let policyInfo: fileShare.PolicyInfo = {
+              uri: uri, 
+              operationMode: fileShare.OperationMode.READ_MODE | fileShare.OperationMode.WRITE_MODE,
+          };
+          let policies: Array<fileShare.PolicyInfo> = [policyInfo];
+          fileShare.revokePermission(policies).then(() => {
+            hilog.info(domain, tag, "FileShare_revokePermission_static_001 successfully");
+            done();
+          }).catch((err: Error) => {
+            hilog.info(domain, tag, "FileShare_revokePermission_static_001 failed with error message: " 
+              + err.message + ", error code: " + err.code);
+            expect(err.code == 13900001 && err.message == 'Operation not permitted').assertTrue();
+            done();
+          });
+        } catch (e: BusinessError) {
+          hilog.info(domain, tag, '%{public}s', 'FileShare_revokePermission_static_002 has failed for '
+           + e.message + ", err code: " + e.code);
+          expect(false).assertTrue();
+          if(e.code === 801){
+            expect(e.message == "The device doesn't support this api").assertTrue();
+          }
+          done();
+        }
+    });
+
+    /**
+     * @tc.name   FileShare_checkPersistentPermission_static_001
+     * @tc.number SUB_BASIC_FM_FileAPI_FileShare_CheckPersistentPermission_test_0100
+     * @tc.desc   Test checkPersistentPermission() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('FileShare_checkPersistentPermission_static_001',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      try {
+        const fileStr1: String = data + "/FileShare_checkPersistentPermission_static_001.txt";
+        let uriObject1 = new fileUri.FileUri(fileStr1);
+        let uri1 = uriObject1.toString();
+        let fd1 = await fs.open(uri1,fs.OpenMode.CREATE);
+        await fs.close(fd1);
+        let policyInfo1: fileShare.PolicyInfo = {
+            uri: uri1, 
+            operationMode: fileShare.OperationMode.READ_MODE,
+        };
+        const fileStr2: String = data + "/FileShare_checkPersistentPermission_static_00101.txt";
+        let uriObject2 = new fileUri.FileUri(fileStr2);
+        let uri2 = uriObject2.toString();
+        let fd2 = await fs.open(uri2,fs.OpenMode.CREATE);
+        await fs.close(fd2);
+        let policyInfo2: fileShare.PolicyInfo = {
+            uri: uri2, 
+            operationMode: fileShare.OperationMode.READ_MODE,
+        };
+        let policies: Array<fileShare.PolicyInfo> = [policyInfo1, policyInfo2];
+        let result = fileShare.checkPersistentPermission(policies);
+        hilog.info(domain, tag, "FileShare_checkPersistentPermission_static_001 successfully" + result);
+        expect(result[0] == false).assertTrue();
+        done();
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, 'FileShare_checkPersistentPermission_static_001 has failed for '
+         + e.message + ", err code: " + e.code);
+        expect(false).assertTrue();
+        if(e.code === 801){
+          expect(e.message == "The device doesn't support this api").assertTrue();
+        }
+        done();
+      }
+    });
+    
+    /**
+     * @tc.name   FileShare_checkPersistentPermission_static_002
+     * @tc.number SUB_BASIC_FM_FileAPI_FileShare_CheckPersistentPermission_test_0200
+     * @tc.desc   Test checkPersistentPermission() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('FileShare_checkPersistentPermission_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      try {
+        const fileStr1: String = data + "/FileShare_checkPersistentPermission_static_002.txt";
+        let uriObject1 = new fileUri.FileUri(fileStr1);
+        let uri1 = uriObject1.toString();
+        let fd1 = await fs.open(uri1,fs.OpenMode.CREATE);
+        await fs.close(fd1);
+        let policyInfo1: fileShare.PolicyInfo = {
+            uri: uri1, 
+            operationMode: fileShare.OperationMode.READ_MODE | fileShare.OperationMode.WRITE_MODE,
+        };
+        const fileStr2: String = data + "/FileShare_checkPersistentPermission_static_00201.txt";
+        let uriObject2 = new fileUri.FileUri(fileStr2);
+        let uri2 = uriObject2.toString();
+        let fd2 = await fs.open(uri2,fs.OpenMode.CREATE);
+        await fs.close(fd2);
+        let policyInfo2: fileShare.PolicyInfo = {
+            uri: uri2, 
+            operationMode: fileShare.OperationMode.READ_MODE | fileShare.OperationMode.WRITE_MODE,
+        };
+        let policies: Array<fileShare.PolicyInfo> = [policyInfo1, policyInfo2];
+        let result = fileShare.checkPersistentPermission(policies);
+        hilog.info(domain, tag, "FileShare_checkPersistentPermission_static_002 successfully" + result);
+        expect(result[0] == false).assertTrue();
+        done();
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, 'FileShare_checkPersistentPermission_static_002 has failed for '
+         + e.message + ", err code: " + e.code);
+        expect(false).assertTrue();
+        if(e.code === 801){
+          expect(e.message == "The device doesn't support this api").assertTrue();
+        }
+        done();
+      }
+    });
 
   })
   hilog.info(domain, tag, '%{public}s', 'FileShare_test end');
