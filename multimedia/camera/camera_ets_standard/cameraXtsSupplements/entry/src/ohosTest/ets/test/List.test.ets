@@ -38,6 +38,7 @@ import CameraManagerGetCameraDevicesTest from './camera/CameraManagerGetCameraDe
 import CameraManagerCreateMetadataOutputTest from './camera/CameraManagerCreateMetadataOutputTest.test';
 import CameraManagerCreatePhotoOutputTest from './camera/CameraManagerCreatePhotoOutputTest.test';
 import CameraManagerCreateVideoOutputTest from './camera/CameraManagerCreateVideoOutputTest.test';
+import CameraManagerGetSupportedOutputCapabilityTest from './camera/CameraManagerGetSupportedOutputCapabilityTest.test';
 
 export default function testsuite() {
   CameraSessionFlashSuppTest();
@@ -79,4 +80,5 @@ export default function testsuite() {
   CameraManagerCreateMetadataOutputTest();
   CameraManagerCreatePhotoOutputTest();
   CameraManagerCreateVideoOutputTest();
+  CameraManagerGetSupportedOutputCapabilityTest();
 }
