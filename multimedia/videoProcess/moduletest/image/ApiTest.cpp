@@ -160,7 +160,8 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0040, TestSize.Level0)
         CreateEmptyPixelmap(&dstImg, 720, 960, PIXEL_FORMAT_BGRA_8888);
         OH_NativeColorSpaceManager *dstColorspace = OH_NativeColorSpaceManager_CreateFromName(BT601_EBU);
         OH_PixelmapNative_SetColorSpaceNative(dstImg, dstColorspace);
-        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
+            IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
         ASSERT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
         ret = OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
         OH_NativeColorSpaceManager_Destroy(srcColorspace);
