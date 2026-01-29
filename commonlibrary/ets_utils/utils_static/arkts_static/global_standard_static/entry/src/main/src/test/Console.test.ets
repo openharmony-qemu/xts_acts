@@ -508,7 +508,7 @@ export default function ConsoleTest() {
     //  * @tc.size   MEDIUMTEST
     //  * @tc.level  LEVEL1
     //  */
-    //  it('testConsole057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    // it('testConsole057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
     //    try {
     //      console.traceHybridStack();
     // } catch (e) {
@@ -1165,25 +1165,7 @@ export default function ConsoleTest() {
         }
       }
     });
-    // /**
-    //  * @tc.name   testTime0006
-    //  * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3200
-    //  * @tc.desc   Test the function of the interface Time.
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   MEDIUMTEST
-    //  * @tc.level  LEVEL1
-    //  */
-    // it('testTime0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const TAG = 'testTime0006';
-    //   try {
-    //     console.time(null)
-    //   } catch (err) {
-    //     if (err instanceof BusinessError) {
-    //       console.error(`${TAG} failed, error: ${err.message}`);
-    //       expect().assertFail();
-    //     }
-    //   }
-    // });
+
     /**
      * @tc.name   testTime0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3300
@@ -1679,26 +1661,7 @@ export default function ConsoleTest() {
         }
       }
     });
-    // /**
-    //  * @tc.name   testTimeEnd0006
-    //  * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5700
-    //  * @tc.desc   Test the function of the interface TimeEnd.
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   MEDIUMTEST
-    //  * @tc.level  LEVEL1
-    //  */
-    // it('testTimeEnd0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const TAG = 'testTimeEnd0006';
-    //   try {
-    //     console.time(null);
-    //     console.timeEnd(null);
-    //   } catch (err) {
-    //     if (err instanceof BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect().assertFail();
-    //     }
-    //   }
-    // });
+
     /**
      * @tc.name   testTimeEnd0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5800
@@ -2229,28 +2192,7 @@ export default function ConsoleTest() {
         }
       }
     });
-    // /**
-    //  * @tc.name   testTimeLog0006
-    //  * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8000
-    //  * @tc.desc   Test the function of the interface TimeLog.
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   MEDIUMTEST
-    //  * @tc.level  LEVEL1
-    //  */
-    // it('testTimeLog0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const TAG = 'testTimeLog0006';
-    //   try {
-    //     const str = null;
-    //     console.time(str);
-    //     console.timeLog(str);
-    //     console.timeEnd(str);
-    //   } catch (err) {
-    //     if (err instanceof BusinessError) {
-    //       console.error(`${TAG} failed, error: ${err.message}`);
-    //       expect().assertFail();
-    //     }
-    //   }
-    // });
+
     /**
      * @tc.name   testTimeLog0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8100

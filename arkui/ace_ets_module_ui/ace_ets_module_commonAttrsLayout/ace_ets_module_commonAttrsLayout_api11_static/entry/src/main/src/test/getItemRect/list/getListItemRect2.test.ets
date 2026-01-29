@@ -38,13 +38,10 @@ export default function getListItemRect2() {
   describe('getListItemRect2', () => {
 
 
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
 
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getListItemRect2 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
     beforeEach(() => {
       console.info("getListItemRect2 beforeEach start");
@@ -84,6 +81,7 @@ export default function getListItemRect2() {
 it('getListItemRect2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect2_static_0100] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'x1', value: 20.0 })
@@ -143,6 +141,7 @@ it('getListItemRect2_static_0100', Level.LEVEL0, async (done: () => void): Promi
 it('getListItemRect2_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect2_static_0200] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'y1', value: 20.0 })

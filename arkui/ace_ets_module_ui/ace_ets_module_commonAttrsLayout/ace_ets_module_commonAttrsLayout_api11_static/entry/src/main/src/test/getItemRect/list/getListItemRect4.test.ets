@@ -37,13 +37,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function getListItemRect4() {
   describe('getListItemRect4', () => {
 
-    console.info("getListItemRect4 beforeAll start");
-
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-
-
-    beforeAll(() => {
-
+    beforeAll(async (): Promise<void> => {
+      console.info("getListItemRect4 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
     beforeEach(() => {
       console.info("getListItemRect4 beforeEach start");
@@ -83,6 +79,7 @@ export default function getListItemRect4() {
 it('getListItemRect4_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect4_static_0100] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       const message1: MessageManager<Visibility> =
         AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!
@@ -145,6 +142,7 @@ it('getListItemRect4_static_0100', Level.LEVEL0, async (done: () => void): Promi
 it('getListItemRect4_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect4_static_0200] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       const message1: MessageManager<Visibility> =
         AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!
@@ -206,6 +204,7 @@ it('getListItemRect4_static_0200', Level.LEVEL0, async (done: () => void): Promi
 it('getListItemRect4_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect4_static_0300] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       const message1: MessageManager<Visibility> =
         AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!

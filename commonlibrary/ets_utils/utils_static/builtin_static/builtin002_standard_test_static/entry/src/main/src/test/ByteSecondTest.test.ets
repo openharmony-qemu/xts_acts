@@ -1459,7 +1459,7 @@ export default function builtinsByteSecondPrototypebTest() {
     it('builtinsByteSecondPrototypebTest7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsByteSecondPrototypebTest7400';
-        const hexValue = new Byte(255 as byte);
+        const hexValue = new Byte((255).toByte());
         const hexString = hexValue.toString(16);
         expect(hexString.toString()).assertEqual('-1');
         console.info(`${caseName}, test end`);

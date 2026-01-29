@@ -75,7 +75,7 @@ export const testCalendarPickerWidth002: () => number;
 
 export const testCalendarPickerWidth003: () => number;
 
-
+export const testCalendarPickerWidth004: () => number;
 
 export const testCalendarPickerEdgeAlign005: () => number;
 

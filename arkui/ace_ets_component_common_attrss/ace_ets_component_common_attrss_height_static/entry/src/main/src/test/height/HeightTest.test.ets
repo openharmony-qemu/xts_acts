@@ -50,13 +50,6 @@ interface Attrs {
  */
 export default function heightTest() {
 
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000);
-
-  console.log('test start get UIContext before');
-  const uiContext = AppStorage.get<UIContext>('uiContext');
-  console.log('test start get UIContext before');
-
   //A list of components that support padding attributes is required.
   let supportView = [
     'AlphabetIndexer',
@@ -98,7 +91,6 @@ export default function heightTest() {
     'Grid',
     'List',
     'ListItem',
-    //    'Panel',
     'Refresh',
     'Row',
     //    'Scroll',
@@ -114,11 +106,9 @@ export default function heightTest() {
     'Rect',
     'Shape',
     'Line',
-    //    'StepperItem',
     //    'GridCol',
     'GridItem',
     'RelativeContainer',
-    // 'Navigator', // Navigation 替换
     'Menu',
     'MenuItem',
     //    'MenuItemGroup'
@@ -153,7 +143,7 @@ export default function heightTest() {
       },
       expectValue: {
         heightCompare: '550.00vp',
-        height: uiContext!.vp2px(550), ExceedParent: true
+        height:550, ExceedParent: true
       }
     },
     {
@@ -163,7 +153,7 @@ export default function heightTest() {
       },
       expectValue: {
         heightCompare: '50.00%',
-        height: uiContext!.vp2px(parentHeight) * 0.5
+        height: 300
       }
     },
     {
@@ -173,7 +163,7 @@ export default function heightTest() {
       },
       expectValue: {
         heightCompare: '200.00vp',
-        height: uiContext!.vp2px(200)
+        height: 200
       }
     },
     {
@@ -193,11 +183,22 @@ export default function heightTest() {
    * Create test suite.
    */
   describe('HeightTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log('test heightTest is start')
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+      if (data.testValue.describe == 'ExceedParent') {
+        data.testValue.expectValue.height = UIContext.resolveUIContext()!.vp2px(550)
+      }
+      if (data.testValue.describe == 'StringPercent') {
+        data.testValue.expectValue.height = UIContext.resolveUIContext()!.vp2px(300) * 0.5
+      }
+      if (data.testValue.describe == 'Resource') {
+        data.testValue.expectValue.height = UIContext.resolveUIContext()!.vp2px(200)
+      }
+
       //Obtain dimensional information for target components.
       console.info(' data.testValue.setValue.height is: ' + data.testValue.setValue.height);
       // AppStorage.setOrCreate<Length>('_height', data.testValue.setValue.height)

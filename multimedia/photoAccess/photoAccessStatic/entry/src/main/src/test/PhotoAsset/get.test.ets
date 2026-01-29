@@ -105,7 +105,7 @@ export default function getTest() {
         const fetchOps: photoAccessHelper.FetchOptions =
           photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await phAccessHelper.getAssets(fetchOps);
+          await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
         let fetchCount = fetchResult.getCount();
         hilog.info(domain, tag, `${testNum} :: fetchCount is ${fetchCount}`);
         if (fetchCount <= 0) {

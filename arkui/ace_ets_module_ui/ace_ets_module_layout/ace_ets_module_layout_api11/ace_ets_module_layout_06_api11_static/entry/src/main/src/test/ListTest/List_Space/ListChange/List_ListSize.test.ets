@@ -116,7 +116,7 @@ it('testListListSizeMeet_static', Level.LEVEL0, async (done: () => void): Promis
       expect(Math.round(List_ListSize_014.bottom - List_ListSize_014.top)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(100)));
 
       let driver = Driver.create();
-      driver.swipe(
+      await driver.swipe(
         (Math.round(List_ListSize_013.left + ((List_ListSize_013.right - List_ListSize_013.left) / 2))).toInt(),
         (Math.round(List_ListSize_013.bottom)).toInt(),
         (Math.round(List_ListSize_012.left + ((List_ListSize_012.right - List_ListSize_012.left) / 2))).toInt(),

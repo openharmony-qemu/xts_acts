@@ -45,6 +45,9 @@ napi_value captureCameraDeviceQueryInfoCameraPositions(napi_env env, napi_callba
 napi_value captureCameraDeviceQueryInfoCameraTypeSize(napi_env env, napi_callback_info info);
 napi_value captureCameraDeviceQueryInfoCameraTypeSizes(napi_env env, napi_callback_info info);
 napi_value captureCameraDeviceQueryInfo(napi_env env, napi_callback_info info);
+napi_value captureEnableBandwidthCompressionError(napi_env env, napi_callback_info info);
+napi_value captureIsGetCameraDevices(napi_env env, napi_callback_info info);
+napi_value getPreviewRotationWithoutDisplayRotation(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif

@@ -64,8 +64,6 @@ export default function touchableTest() {
     'Search',
     'Select',
     'Slider',
-    'Stepper',
-    'StepperItem',
     'TabContent',
     'Text',
     'TextArea',
@@ -88,8 +86,6 @@ export default function touchableTest() {
     'List',
     'ListItem',
     'ListItemGroup',  //pass
-    'Navigator',//pass
-    'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',

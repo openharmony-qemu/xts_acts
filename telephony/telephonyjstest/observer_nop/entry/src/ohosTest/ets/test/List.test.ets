@@ -14,12 +14,16 @@
  */
 
 import observerNopTest from './ObserverNopunit_test.test';
+import observerNopSimTest from './ObserverNopSimTest.test';
+import observerNopCallTest from './ObserverNopCallTest.test';
 import EmptyTest from './Empty.test';
 import sim from '@ohos.telephony.sim';
 
 export default function testsuite() {
   if (sim.getMaxSimCount()!=0){
     observerNopTest()
+    observerNopSimTest()
+    observerNopCallTest()
   }else{
     EmptyTest()
   }

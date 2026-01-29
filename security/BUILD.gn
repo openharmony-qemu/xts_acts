@@ -35,6 +35,7 @@ group("security") {
       "huks",
       "security_component",
       "sandbox",
+      "el5filekey",
     ]
   }
 }

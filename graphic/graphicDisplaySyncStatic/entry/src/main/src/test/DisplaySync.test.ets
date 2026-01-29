@@ -266,7 +266,7 @@ export default function displaySyncTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-        it('testDisplaySyncErrorCode_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+        it('testDisplaySyncErrorCode_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 let msg = "====testDisplaySyncErrorCode_0100===="
                 console.log(msg + ' begin')

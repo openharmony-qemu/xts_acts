@@ -16,7 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { camera } from '@kit.CameraKit';
 import { common } from '@kit.AbilityKit';
-import { cameraErrorCode, checkBackCamera, driveFn, getPermission, isEmpty } from '../common';
+import { cameraErrorCode, checkBackCamera, driveFn, getPermission, isEmpty, sleep } from '../common';
 import { indexSurfaceId } from '../../testability/pages/Index';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { image } from '@kit.ImageKit';
@@ -652,6 +652,7 @@ export default function PhotoOutputBackTest() {
           mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
           mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
           await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          let isCapture: boolean = false;
           mPhotoOutput.on('photoAvailable', (error, photo) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
@@ -661,8 +662,24 @@ export default function PhotoOutputBackTest() {
               let mainImage: image.Image = photo.main;
               console.info(TAG, testName + ' succeed to listen photoAvailable on.');
               expect(isEmpty(mainImage)).assertFalse();
+              isCapture = true
             }
           });
+          mPhotoOutput.capture();
+          // 设置超时循环检查
+          const maxRetry = 30; // 最大重试次数
+          const interval = 200; // 检查间隔200ms
+          for (let i = 0; i < maxRetry; i++) {
+            await sleep(interval);
+            if (isCapture) {
+              console.info(TAG, `${testName} succeed to listen photoAvailable on.`);
+              break;
+            }
+            if (i === maxRetry - 1) { // 最后一次循环
+              console.error(TAG, `${testName} failed to listen photoAvailable on.`);
+              expect().assertFail();
+            }
+          }
           await releasePhotoSession();
         }
         done();
@@ -698,6 +715,7 @@ export default function PhotoOutputBackTest() {
           mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
           mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
           await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          let isCapture: boolean = false;
           mPhotoOutput.on('photoAvailable', (error, photo) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
@@ -707,8 +725,24 @@ export default function PhotoOutputBackTest() {
               let mainImage: image.Image = photo.main;
               console.info(TAG, testName + ' succeed to listen photoAvailable on.');
               expect(isEmpty(mainImage)).assertFalse();
+              isCapture = true
             }
           });
+          mPhotoOutput.capture();
+          // 设置超时循环检查
+          const maxRetry = 30; // 最大重试次数
+          const interval = 200; // 检查间隔200ms
+          for (let i = 0; i < maxRetry; i++) {
+            await sleep(interval);
+            if (isCapture) {
+              console.info(TAG, `${testName} succeed to listen photoAvailable on.`);
+              break;
+            }
+            if (i === maxRetry - 1) { // 最后一次循环
+              console.error(TAG, `${testName} failed to listen photoAvailable on.`);
+              expect().assertFail();
+            }
+          }
           mPhotoOutput.off('photoAvailable', (error, photo) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
@@ -1325,6 +1359,7 @@ export default function PhotoOutputBackTest() {
             let mainImage: image.Image | image.Picture = CapturePhoto.main;
             console.info(TAG, testName + ' succeed to listen photoAvailable on.');
             expect(isEmpty(mainImage)).assertFalse();
+            CapturePhoto.release();
           });
           await mPhotoOutput.capture();
           await releasePhotoSession();
@@ -1379,6 +1414,7 @@ export default function PhotoOutputBackTest() {
             let mainImage: image.Image | image.Picture = CapturePhoto.main;
             console.info(TAG, testName + ' succeed to listen photoAvailable on.');
             expect(isEmpty(mainImage)).assertFalse();
+            CapturePhoto.release();
           });
           await mPhotoOutput.capture();
           mPhotoOutput.offCapturePhotoAvailable();

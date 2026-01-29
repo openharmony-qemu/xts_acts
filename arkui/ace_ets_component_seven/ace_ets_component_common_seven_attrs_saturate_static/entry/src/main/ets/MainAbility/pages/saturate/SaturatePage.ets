@@ -154,10 +154,6 @@ import {
   SpanAttribute,
   Stack,
   StackAttribute,
-  Stepper,
-  StepperAttribute,
-  StepperItem,
-  StepperItemAttribute,
   Swiper,
   SwiperAttribute,
   TabContent,
@@ -699,24 +695,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mSaturate: number = 10
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    console.info(`saturate page show ${JSON.stringify(this.mSaturate)}`)
-    instance.saturate(this.mSaturate)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mSaturate: number = 10
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    console.info(`saturate page show ${JSON.stringify(this.mSaturate)}`)
-    instance.saturate(this.mSaturate)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mSaturate: number = 10
 
@@ -1202,18 +1180,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
@@ -1408,8 +1374,6 @@ struct saturatePage {
   @State _saturateSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _saturateSliderMod: SliderModifier = new SliderModifier()
   @State _saturateStackMod: StackModifier = new StackModifier()
-  @State _saturateStepperMod: StepperModifier = new StepperModifier()
-  @State _saturateStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _saturateSwiperMod: SwiperModifier = new SwiperModifier()
   @State _saturateTabContentMod: TabContentModifier = new TabContentModifier()
   @State _saturateTabsMod: TabsModifier = new TabsModifier()
@@ -1543,14 +1507,6 @@ struct saturatePage {
           })
             .showTips(true)
             .commonStyle(this.componentKey).attributeModifier(this._saturateSliderMod)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }.commonStyle(this.componentKey).attributeModifier(this._saturateStepperMod)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -1772,19 +1728,6 @@ struct saturatePage {
               }
             }, (item: int) => item.toString())
           }.commonStyle(this.componentKey).attributeModifier(this._saturateWaterFlowMod)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            .commonStyle(this.componentKey).attributeModifier(this._saturateStepperItemMod)
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

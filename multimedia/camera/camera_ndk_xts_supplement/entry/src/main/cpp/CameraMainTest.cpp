@@ -64,6 +64,9 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("captureCameraDeviceQueryInfoCameraTypeSizes", captureCameraDeviceQueryInfoCameraTypeSizes),
     DESCRIPTOR("captureCameraDeviceQueryInfo", captureCameraDeviceQueryInfo),
     DESCRIPTOR("initWithSurfaces", initWithSurfaces),
+    DESCRIPTOR("captureEnableBandwidthCompressionError", captureEnableBandwidthCompressionError),
+    DESCRIPTOR("captureIsGetCameraDevices", captureIsGetCameraDevices),
+    DESCRIPTOR("getPreviewRotationWithoutDisplayRotation", getPreviewRotationWithoutDisplayRotation),
 };
 
 EXTERN_C_START 

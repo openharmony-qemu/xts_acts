@@ -55,7 +55,7 @@ interface ShadowValueInter {
 
 export default function imageEffectsJsunit() {
   describe('imageEffectsJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("hoverEffectJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")

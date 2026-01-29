@@ -46,7 +46,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SheetTransition() {
   describe('SheetTransition', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
     });

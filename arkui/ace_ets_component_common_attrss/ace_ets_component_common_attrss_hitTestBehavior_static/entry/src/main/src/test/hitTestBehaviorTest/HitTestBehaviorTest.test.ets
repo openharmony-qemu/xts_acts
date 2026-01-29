@@ -51,7 +51,7 @@ async function executeTouch(data: BasePageConfig, hitTestBehavior: string, refer
   //And the parent component can not be stack or relativeContainer
   if (data.pageConfig.targetView == 'Blank') {
     console.info('[' + data.caseTag + ']  targetView is Blank');
-    // return '';
+    return;
   }
 
   //Determine if the sibling component responds to touch test control.

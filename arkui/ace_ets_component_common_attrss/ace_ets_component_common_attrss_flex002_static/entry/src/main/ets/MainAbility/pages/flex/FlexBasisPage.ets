@@ -45,7 +45,6 @@ import {
   Rating,
   ScrollBar,
   Scroller,
-  Stepper,
   Search,
   Select,
   Slider,
@@ -90,7 +89,6 @@ import {
   MenuItem,
   ProgressType,
   BarState,
-  StepperItem,
   SliderStyle,
   Axis,
   ToggleType,
@@ -216,14 +214,6 @@ struct FlexBasisPage {
       ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
         Text().width(20).height(20).borderRadius(10)
       }.width(20).applyStyles(this.commonStyle)
-    } else if (this.targetView == 'Stepper') {
-      Stepper() {
-        StepperItem() {
-          Column() {
-            Text('Page One')
-          }
-        }
-      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Search') {
       Search({ placeholder: 'Type to search...' })
         .searchButton('SEARCH')

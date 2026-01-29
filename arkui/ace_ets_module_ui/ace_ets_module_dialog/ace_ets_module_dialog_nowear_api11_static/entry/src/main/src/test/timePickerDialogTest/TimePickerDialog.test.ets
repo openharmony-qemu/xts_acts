@@ -45,7 +45,7 @@ export default function TimePickerDialog() {
     beforeEach(async () => {
       console.info("TimePickerDialog beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/datePickerDialog/DatePickerDialog',
+        url: 'MainAbility/pages/timePickerDialog/TimePickerDialog',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router

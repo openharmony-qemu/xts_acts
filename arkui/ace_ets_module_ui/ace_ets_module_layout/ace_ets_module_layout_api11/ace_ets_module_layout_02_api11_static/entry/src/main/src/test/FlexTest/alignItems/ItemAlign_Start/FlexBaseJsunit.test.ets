@@ -126,10 +126,10 @@ it('testFlexItemAlignStartExceed_static', Level.LEVEL0, async () : Promise<void>
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'height', value: 420
+          name: 'width', value: 420
         });
         result!.notify({
-          name: 'width', value: 140
+          name: 'height', value: 140
         });
       }
       await CommonFunc.sleep(3000);

@@ -356,3 +356,146 @@ napi_value OHImageSourceNativeModifyImagePropertyBlobSupp(napi_env env, napi_cal
     napi_create_int32(env, errCode, &ret);
     return ret;
 }
+napi_value ImageModifyImagePropertyShortSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = NUM_4;
+    napi_value args[NUM_4] = {nullptr};
+    napi_value result = nullptr;
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc < NUM_4) {
+        return result;
+    }
+    int32_t index;
+    napi_get_value_int32(env, args[NUM_0], &index);
+    int32_t fd = 0;
+    napi_get_value_int32(env, args[NUM_1], &fd);
+    Image_ErrorCode errCode;
+    OH_ImageSourceNative *imageSource = nullptr;
+    errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    LOGI("OH_ImageSourceNative_CreateFromUri, errCode: %{public}d", errCode);
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOGE("Create ImageSource failed, errCode: %d", errCode);
+        napi_value ret;
+        napi_create_int32(env, errCode, &ret);
+        return ret;
+    }
+    Image_String key = CreateImageStringFromArg(env, args[NUM_2]);
+    uint32_t valueFromJS = 0;
+    napi_get_value_uint32(env, args[NUM_3], &valueFromJS);
+    uint16_t value = static_cast<uint16_t>(valueFromJS);
+    switch (index) {
+    case CASE_INDEX_1:
+        errCode = OH_ImageSourceNative_ModifyImagePropertyShort(nullptr, &key, value);
+        break;
+    case CASE_INDEX_2:
+        errCode = OH_ImageSourceNative_ModifyImagePropertyShort(imageSource, &key, value);
+        break;
+    default:
+        break;
+    }
+    if (imageSource != nullptr) {
+        OH_ImageSourceNative_Release(imageSource);
+    }
+    napi_value ret;
+    napi_create_int32(env, errCode, &ret);
+    return ret;
+}
+napi_value OHImageSourceNativeGetImagePropertyBlobSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = 4;
+    napi_value args[4] = {nullptr};
+    napi_value result = nullptr;
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc < NUM_4) {
+        return result;
+    }
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    int32_t fd = 0;
+    napi_get_value_int32(env, args[1], &fd);
+    Image_ErrorCode errCode;
+    OH_ImageSourceNative *imageSource = nullptr;
+    errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    LOGI("OH_ImageSourceNative_CreateFromUri, errCode: %{public}d", errCode);
+
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOGE("Create ImageSource failed, errCode: %d", errCode);
+        napi_value ret;
+        napi_create_int32(env, errCode, &ret);
+        return ret;
+    }
+    Image_String key = CreateImageStringFromArg(env, args[2]);
+        LOGI("Received key: %{public}s", key.data);
+//    int32_t bufSizeFromJS = 0;
+//    napi_get_value_int32(env, args[3], &bufSizeFromJS);
+//    size_t bufSize = static_cast<size_t>(bufSizeFromJS);
+//    char *value = new (std::nothrow) char[bufSize]();
+    size_t bufferSize = 0;
+    void *bufferData = ParseArrayBufferFromArg(env, args[3], &bufferSize);
+    switch (index) {
+    case CASE_INDEX_1:
+        errCode= OH_ImageSourceNative_ModifyImagePropertyBlob(imageSource, &key, bufferData, bufferSize);
+        LOGI("OH_ImageSourceNative_ModifyImagePropertyBlob: %{public}d,%{public}p,%{public}p,%{public}d", errCode,&key,bufferData,bufferSize);
+        errCode = OH_ImageSourceNative_GetImagePropertyBlob(imageSource, &key, bufferData, bufferSize);
+        LOGI("OH_ImageSourceNative_GetImagePropertyBlob: %{public}d,%{public}p,%{public}p,%{public}d", errCode,&key,bufferData,bufferSize);
+        break;
+    case CASE_INDEX_2:
+        errCode = OH_ImageSourceNative_GetImagePropertyBlob(nullptr, &key, bufferData, bufferSize);
+        break;
+    default:
+        break;
+    }
+    if (imageSource != nullptr) {
+        OH_ImageSourceNative_Release(imageSource);
+    }
+//        delete[] value;
+    napi_value ret;
+    napi_create_int32(env, errCode, &ret);
+    return ret;
+}
+napi_value OHImageSourceNativeGetImagePropertyStringSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = 4;
+    napi_value args[4] = {nullptr};
+    napi_value result = nullptr;
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc < NUM_4) {
+        return result;
+    }
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    int32_t fd = 0;
+    napi_get_value_int32(env, args[1], &fd);
+    Image_ErrorCode errCode;
+    OH_ImageSourceNative *imageSource = nullptr;
+    errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    LOGI("OH_ImageSourceNative_CreateFromUri, errCode: %{public}d", errCode);
+
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOGE("Create ImageSource failed, errCode: %d", errCode);
+        napi_value ret;
+        napi_create_int32(env, errCode, &ret);
+        return ret;
+    }
+    Image_String key = CreateImageStringFromArg(env, args[2]);
+    int32_t bufSizeFromJS = 0;
+    napi_get_value_int32(env, args[3], &bufSizeFromJS);
+    size_t bufSize = static_cast<size_t>(bufSizeFromJS);
+    char *value = new (std::nothrow) char[bufSize]();
+    switch (index) {
+    case CASE_INDEX_1:
+        errCode = OH_ImageSourceNative_GetImagePropertyString(imageSource, &key, value, bufSize);
+        break;
+    case CASE_INDEX_2:
+        errCode = OH_ImageSourceNative_GetImagePropertyString(nullptr, &key, value, bufSize);
+        break;
+    default:
+        break;
+    }
+    if (imageSource != nullptr) {
+        OH_ImageSourceNative_Release(imageSource);
+    }
+    napi_value ret;
+    napi_create_int32(env, errCode, &ret);
+    return ret;
+}

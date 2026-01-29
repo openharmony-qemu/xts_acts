@@ -135,7 +135,7 @@ struct LazyForEachInterface {
     Column() {
       Flex({ direction: FlexDirection.Row, wrap: FlexWrap.Wrap }) {
         Button('switch')
-          .id('switch')
+          .id('LazyForEachInterface_switch')
           .height('5%')
           .padding(5)
           .fontSize(12)
@@ -143,7 +143,6 @@ struct LazyForEachInterface {
             this.switch = !this.switch
           })
         Button('pushData')
-          .id('pushData')
           .height('5%')
           .padding(5)
           .fontSize(12)
@@ -153,7 +152,7 @@ struct LazyForEachInterface {
             }
           })
         Button('deleteData')
-          .id('deleteData')
+          .id('LazyForEachInterface_deleteData')
           .height('5%')
           .padding(5)
           .fontSize(12)
@@ -161,7 +160,6 @@ struct LazyForEachInterface {
             this.data.deleteData(2)
           })
         Button('moveData')
-          .id('moveData')
           .height('5%')
           .padding(5)
           .fontSize(12)
@@ -169,7 +167,6 @@ struct LazyForEachInterface {
             this.data.moveData(2, 0)
           })
         Button('operateData')
-          .id('operateData')
           .height('5%')
           .padding(5)
           .fontSize(12)
@@ -178,7 +175,7 @@ struct LazyForEachInterface {
           })
 
       }
-      Text(this.parentInfo).id('interfaceInfo')
+      Text(this.parentInfo).id('LazyForEachInterface_interfaceInfo')
       if(this.switch){
         List({ space: 3, initialIndex: 0 ,scroller:this.scroller}) {
           LazyForEach(this.data, (item: string, idex: number) => {

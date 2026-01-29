@@ -953,6 +953,8 @@ static napi_value OH_PreferencesValue_SetGetInt64Array_Value_0100(napi_env env, 
     uint32_t count = 0;
     ret = OH_PreferencesValue_GetInt64Array(value, &outArray, &count);
     NAPI_ASSERT(env, ret == PREFERENCES_OK, "OH_PreferencesValue_GetInt64Array is fail.");
+    ret = OH_PreferencesValue_GetInt64Array(nullptr, &outArray, &count);
+    NAPI_ASSERT(env, ret == PREFERENCES_ERROR_INVALID_PARAM, "OH_PreferencesValue_GetInt64Array invalid is fail.");
     NAPI_ASSERT(env, count == 3u, "count is fail4.");
     for (uint32_t i = 0; i < count; ++i) {
         NAPI_ASSERT(env, outArray[i] == int64Array[i], "outArray is fail4.");
@@ -980,6 +982,8 @@ static napi_value OH_PreferencesValue_SetGetDoubleArray_Value_0100(napi_env env,
     uint32_t count = 0;
     ret = OH_PreferencesValue_GetDoubleArray(value, &outArray, &count);
     NAPI_ASSERT(env, ret == PREFERENCES_OK, "OH_PreferencesValue_GetDoubleArray is fail.");
+    ret = OH_PreferencesValue_GetDoubleArray(nullptr, &outArray, &count);
+    NAPI_ASSERT(env, ret == PREFERENCES_ERROR_INVALID_PARAM, "OH_PreferencesValue_GetDoubleArray invalid is fail.");
     NAPI_ASSERT(env, count == 4u, "count is fail4.");
     for (uint32_t i = 0; i < count; ++i) {
         NAPI_ASSERT(env, outArray[i] == doubleArray[i], "outArray is fail4.");

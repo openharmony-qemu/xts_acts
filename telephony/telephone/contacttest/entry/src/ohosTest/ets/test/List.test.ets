@@ -14,6 +14,7 @@
  */
  
 import AddContactTest from './AddContact.test';
+import AddContactsTest from './AddContacts.test';
 import QueryByEmailTest from './QueryByEmail.test';
 import QueryKeyTest from './QueryKey.test';
 import QueryByEmailPhoneNumTest from './QueryByPhoneNum.test';
@@ -35,9 +36,9 @@ export default function testsuite() {
     AddContactTest();
     if (deviceInfo.deviceType !== 'wearable') {
       SelectContactsTest();
+      AddContactViaUITest();
+      SaveToExistingContactViaUITest();
     } 
-    AddContactViaUITest();
-    SaveToExistingContactViaUITest();
     QueryKeyTest();
     QueryByEmailTest();
     QueryByEmailPhoneNumTest();
@@ -47,6 +48,7 @@ export default function testsuite() {
     IsMyCardTest();
     ContactTest();
     ContactsTest()
+    AddContactsTest();
   }else{
     EmptyTest()
   }

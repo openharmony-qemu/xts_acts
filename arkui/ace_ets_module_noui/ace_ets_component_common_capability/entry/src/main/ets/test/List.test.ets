@@ -17,6 +17,7 @@ import inspectorTestJsunit from './inspectorTest/inspector.test';
 import LayoutInspectorTest from './layoutInspector/layoutInspector.test';
 import assemblyCallbackTest from './assemblycallback/assemblycallback.test';
 import enumTest from './enumTest/enum.test';
+import LayoutChildrenTest from './assemblycallback/LayoutChildren.test';
 
 
 export default function testsuite() {
@@ -24,4 +25,5 @@ export default function testsuite() {
   LayoutInspectorTest();
   assemblyCallbackTest();
   enumTest();
+  LayoutChildrenTest();
 }

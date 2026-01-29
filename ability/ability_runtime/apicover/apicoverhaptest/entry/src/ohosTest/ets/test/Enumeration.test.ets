@@ -21,6 +21,7 @@ import errorCode from '@ohos.ability.errorCode';
 import wantAgent from '@ohos.app.ability.wantAgent';
 import { ConfigurationConstant } from '@kit.AbilityKit';
 import application from '@ohos.app.ability.application';
+import insightIntent from '@ohos.app.ability.insightIntent';
 
 function sleep(time: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -712,6 +713,19 @@ export default function ApiCoverTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityBase_wantConstant_1800
+     * @tc.number SUB_Ability_AbilityBase_wantConstant_1800
+     * @tc.desc   Test wantConstant ShowMode.EMBEDDED_HALF.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_wantConstant_1800', Level.LEVEL0, async (done: Function) => {
+      expect('2').assertEqual(wantConstant.ShowMode.EMBEDDED_HALF + '');
+      done();
+    })
+
+    /**
      * @tc.name   SUB_Ability_AbilityBase_AppPreloadType_0100
      * @tc.number SUB_Ability_AbilityBase_AppPreloadType_0100
      * @tc.desc   Test AppPreloadType UNSPECIFIED.
@@ -749,7 +763,7 @@ export default function ApiCoverTest() {
       expect(2).assertEqual(application.AppPreloadType.TYPE_CREATE_ABILITY_STAGE);
       done();
     })
-        
+    
     /**
      * @tc.name   SUB_Ability_AbilityBase_AppPreloadType_0400
      * @tc.number SUB_Ability_AbilityBase_AppPreloadType_0400
@@ -762,5 +776,45 @@ export default function ApiCoverTest() {
       expect(3).assertEqual(application.AppPreloadType.TYPE_CREATE_WINDOW_STAGE);
       done();
     })
+    
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AppPreloadType_0500
+     * @tc.number SUB_Ability_AbilityBase_AppPreloadType_0500
+     * @tc.desc   Test AppPreloadType TYPE_CREATE_BACKGROUND_ABILITY.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AppPreloadType_0500', Level.LEVEL0, async (done: Function) => {
+      expect(4).assertEqual(application.AppPreloadType.TYPE_CREATE_BACKGROUND_ABILITY);
+      done();
+    })
+    
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_InsightIntent_0100
+     * @tc.number SUB_Ability_AbilityBase_InsightIntent_0100
+     * @tc.desc   Test ReturnMode CALLBACK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_InsightIntent_0100', Level.LEVEL0, async (done: Function) => {
+      expect(0).assertEqual(insightIntent.ReturnMode.CALLBACK);
+      done();
+    })
+    
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_InsightIntent_0200
+     * @tc.number SUB_Ability_AbilityBase_InsightIntent_0200
+     * @tc.desc   Test ReturnMode FUNCTION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_InsightIntent_0200', Level.LEVEL0, async (done: Function) => {
+      expect(1).assertEqual(insightIntent.ReturnMode.FUNCTION);
+      done();
+    })
+
   })
 }

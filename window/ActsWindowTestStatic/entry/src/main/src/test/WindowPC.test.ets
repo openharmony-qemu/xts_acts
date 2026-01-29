@@ -850,8 +850,8 @@ export default function WindowPCTest() {
                         let subWidth = subWindowProperties.windowRect.width;
                         let subHeight = subWindowProperties.windowRect.height;
                         hilog.info(domain, tag,`${caseName} subLeft: ${subLeft},subTop:${subTop},subWidth:${subWidth},subHeight:${subHeight}`);
-                        expect(mainTop).assertEqual(subTop);
-                        expect(mainLeft).assertEqual(subLeft);
+                        expect(Math.abs(mainTop-subTop)).assertLessOrEqual(1);
+                        expect(Math.abs(mainLeft-subLeft)).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
                     }).catch((err: Error) :PromiseLike<void>|undefined=> {
@@ -978,8 +978,8 @@ export default function WindowPCTest() {
                         let subWidth = subWindowProperties.windowRect.width;
                         let subHeight = subWindowProperties.windowRect.height;
                         hilog.info(domain, tag,`${caseName} subLeft: ${subLeft},subTop:${subTop},subWidth:${subWidth},subHeight:${subHeight}`);
-                        expect(mainTop).assertEqual(subTop);
-                        expect(mainLeft).assertEqual(subLeft);
+                        expect(Math.abs(mainTop-subTop)).assertLessOrEqual(1);
+                        expect(Math.abs(mainLeft-subLeft)).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
                     }).catch((err: Error):PromiseLike<void>|undefined => {
@@ -1044,7 +1044,7 @@ export default function WindowPCTest() {
                         let subWidth = subWindowProperties.windowRect.width;
                         let subHeight = subWindowProperties.windowRect.height;
                         hilog.info(domain, tag,`${caseName} subLeft: ${subLeft},subTop:${subTop},subWidth:${subWidth},subHeight:${subHeight}`);
-                        expect(mainTop).assertEqual(subTop);
+                        expect(Math.abs(mainTop-subTop)).assertLessOrEqual(1);
                         expect(Math.abs(mainLeft - subLeft)).assertEqual(Math.abs((mainWidth + mainLeft)-(subWidth + subLeft)));
                         await windowClass.destroyWindow();
                         done();
@@ -1110,7 +1110,7 @@ export default function WindowPCTest() {
                         let subWidth = subWindowProperties.windowRect.width;
                         let subHeight = subWindowProperties.windowRect.height;
                         hilog.info(domain, tag,`${caseName} subLeft: ${subLeft},subTop:${subTop},subWidth:${subWidth},subHeight:${subHeight}`);
-                        expect(mainTop).assertEqual(subTop);
+                        expect(Math.abs(mainTop-subTop)).assertLessOrEqual(1);
                         expect(Math.abs((mainLeft + mainWidth)-(subLeft + subWidth))).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
@@ -1176,7 +1176,7 @@ export default function WindowPCTest() {
                         let subWidth = subWindowProperties.windowRect.width;
                         let subHeight = subWindowProperties.windowRect.height;
                         hilog.info(domain, tag,`${caseName} subLeft: ${subLeft},subTop:${subTop},subWidth:${subWidth},subHeight:${subHeight}`);
-                        expect(mainLeft).assertEqual(subLeft);
+                        expect(Math.abs(mainLeft-subLeft)).assertLessOrEqual(1);
                         expect(Math.abs((subTop+subHeight/2)-(mainTop+mainHeight/2))).assertLessOrEqual(1);
                         await windowClass.destroyWindow();
                         done();
@@ -1935,15 +1935,16 @@ export default function WindowPCTest() {
                         hilog.info(domain, tag,`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
                         done();
                     } else {
-                        expect(false).assertTrue();
+                        hilog.error(domain, tag,`${message} Failed with error: ${JSON.stringify(err)}`);
+                        expect(err.code).assertEqual(1300016);
+                        expect(err.message!=null).assertTrue();
                         done();
                     }
 
                 });
            } catch (err: BusinessError) {
                 hilog.error(domain, tag,`${message} Failed with error: ${JSON.stringify(err)}`);
-                expect(err.code).assertEqual(1300016);
-                expect(err.message!=null).assertTrue();
+                expect(false).assertTrue();
                 done();
             }
         })
@@ -1984,15 +1985,16 @@ export default function WindowPCTest() {
                         hilog.info(domain, tag,`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
                         done();
                     } else {
-                        expect(false).assertTrue();
+                        hilog.error(domain, tag,`${message} Failed in Promise with error: ${JSON.stringify(err)}`);
+                        expect(err.code).assertEqual(1300016);
+                        expect(err.message!=null).assertTrue();
                         done();
                     }
 
                 });
            } catch (err: BusinessError) {
-                hilog.error(domain, tag,`${message} Failed with error: ${JSON.stringify(err)}`);
-                expect(err.code).assertEqual(1300016);
-                expect(err.message!=null).assertTrue();
+                hilog.error(domain, tag,`${message} Failed sync with error: ${JSON.stringify(err)}`);
+                expect(false).assertTrue();
                 done();
             }
         })

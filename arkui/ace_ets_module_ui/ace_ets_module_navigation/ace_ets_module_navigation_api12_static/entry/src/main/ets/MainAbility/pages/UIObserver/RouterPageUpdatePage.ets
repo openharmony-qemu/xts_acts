@@ -29,21 +29,21 @@ import { Router,UIContext,UIObserver } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import uiObserver from '@ohos.arkui.observer';
 
-AppStorage.setOrCreate<int>('RouterPageUpdatePage_callBackFuncOnCount', 0)
+
 
 export function callBackFunc(info: uiObserver.RouterPageInfo) {
   console.info('RouterPage state updated, called by ' + `${info.name}`);
   if (info.name == 'MainAbility/pages/UIObserver/RouterPageUpdatePage'){
-    let count: number | undefined = AppStorage.get('RouterPageUpdatePage_callBackFuncOnCount');
-    count = Number(count) + 1;
-    AppStorage.setOrCreate<number>('RouterPageUpdatePage_callBackFuncOnCount', count)
+    let count: int = AppStorage.get<int>('RouterPageUpdatePage_callBackFuncOnCount')!;
+    count = count+ 1;
+    AppStorage.setOrCreate<int>('RouterPageUpdatePage_callBackFuncOnCount', count)
   }
 }
 
 @Entry
 @Component
 struct RouterPageUpdatePage {
-
+static{AppStorage.setOrCreate<int>('RouterPageUpdatePage_callBackFuncOnCount', 0)}
   aboutToAppear(): void {
     let observer:UIObserver = this.getUIContext().getUIObserver();
     observer.onRouterPageUpdate(callBackFunc);

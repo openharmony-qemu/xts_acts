@@ -14,7 +14,6 @@ struct SelectedDragPreviewStyleTest {
   }
 
   @State value: number = 40
-  @State width1: string = '100%'
   @State _pixelMap: image.PixelMap|undefined = undefined;
 
   build() {
@@ -33,9 +32,9 @@ struct SelectedDragPreviewStyleTest {
         .onAppear(() => {
           nativeNode.createNativeNode("dragStart", this.getUIContext());
         })
-        .width(`${this.width1}`)
-        .height(700)
+        .height('100%')
+        .width('100%')
         .backgroundColor('#FFFAFA')
-    }
+    }.height('100%').width('100%')
   }
 }

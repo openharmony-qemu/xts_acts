@@ -15,7 +15,6 @@
  */
 import { RouterParams } from '../../common/Utils';
 import router from '@ohos.router'
-import { StepperView } from '../../view/alignRules/StepperView';
 import {
   Entry,
   Component,

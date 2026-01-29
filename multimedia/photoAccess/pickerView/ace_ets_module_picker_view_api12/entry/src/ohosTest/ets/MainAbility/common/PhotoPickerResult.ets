@@ -41,4 +41,6 @@ export class PhotoPickerResult {
   public preselectedUris: Array<string> = [];
   public movingPhotoBadgeStates?: number[];
   public gridPinchMode?: photoAccessHelper.GridPinchMode;
+  public autoPlayScenes: photoAccessHelper.AutoPlayScene[] = [];
+  public appAlbumFilters: Array<string> = [];
 }

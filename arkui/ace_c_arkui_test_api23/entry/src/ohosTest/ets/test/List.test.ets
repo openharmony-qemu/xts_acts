@@ -61,6 +61,11 @@ import SelectedDragPreviewStyleTextAreaTest from './SelectedDragPreviewStyleTest
 
 export default function testsuite() {
   IsInRenderStateReturnValueTest(); //此条方在最前面，勿动
+  TextAreaDeletBackward();
+  TextTest();
+  TextInputTest();
+  TextAreaTest();
+  TextInputDeletBackward();
   ConvertPositionToWindowTest();
   IsInRenderStateTest();
   ConvertPositionFromWindowTest();
@@ -96,11 +101,6 @@ export default function testsuite() {
   ImageAntialiasedTest();
   ListEmptyTest();
   GridEmptyTest();
-  TextAreaDeletBackward();
-  TextTest();
-  TextInputTest();
-  TextAreaTest();
-  TextInputDeletBackward();
   SelectedDragPreviewStyleTextTest()
   SelectedDragPreviewStyleTextAreaTest()
   SelectedDragPreviewStyleTextInputTest()

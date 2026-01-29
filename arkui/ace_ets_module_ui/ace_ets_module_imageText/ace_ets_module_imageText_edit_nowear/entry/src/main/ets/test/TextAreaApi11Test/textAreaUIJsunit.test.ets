@@ -325,7 +325,7 @@ export default function textAreaUIJsunit() {
         await CommonFunc.sleep(1000);
       }
       await CommonFunc.sleep(2000);
-      let textCut = await driver.findComponent(BY.key('cut'));
+      let textCut = await driver.findComponent(BY.key('cut_textAreaUI'));
       let text = await textCut.getText();
       console.info('textAreaUIJsunit_1000 component obj is: ' + text);
       expect(text).assertEqual('cut');

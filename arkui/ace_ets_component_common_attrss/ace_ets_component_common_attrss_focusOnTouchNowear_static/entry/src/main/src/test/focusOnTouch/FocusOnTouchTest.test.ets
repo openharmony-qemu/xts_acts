@@ -46,8 +46,6 @@ export default function FocusOnTouchTest() {
     "Select",
     "DatePicker",
     "TextInput",
-    "Stepper",
-    "StepperItem",
     "TextPicker",
     "TimePicker",
     "Scroll",

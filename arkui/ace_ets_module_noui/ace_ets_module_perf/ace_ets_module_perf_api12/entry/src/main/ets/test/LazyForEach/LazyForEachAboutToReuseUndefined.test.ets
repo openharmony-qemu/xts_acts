@@ -44,7 +44,7 @@ export default function LazyForEachAboutToReuseUndefined() {
         console.info("get LazyForEachAboutToReuseUndefined state success " + JSON.stringify(pages));
         if (!("LazyForEachAboutToReuseUndefined" == pages.name)) {
           console.info("get LazyForEachAboutToReuseUndefined state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options)
+          let result = await router.replaceUrl(options)
           console.info("push LazyForEachAboutToReuseUndefined page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -67,13 +67,16 @@ export default function LazyForEachAboutToReuseUndefined() {
      * @tc.level  LEVEL1
      */
     it('LazyForEachAboutToReuseUndefined_001', Level.LEVEL1, async (done: Function) => {
-      console.info('[LazyForEachAboutToReuseUndefined_001] START');      
+      console.info('[LazyForEachAboutToReuseUndefined_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
-      let operate_btn = await driver.findComponent(ON.id('operateData'))
+      let operate_btn = await driver.findComponent(ON.id('LazyForEachAboutToReuseUndefined_operateData'))
       await operate_btn.click();
+      console.info('[LazyForEachAboutToReuseUndefined_001] click LazyForEachAboutToReuseUndefined_operateData 1');
       await CommonFunc.sleep(1000);
       await operate_btn.click();
+      console.info('[LazyForEachAboutToReuseUndefined_001] click LazyForEachAboutToReuseUndefined_operateData 2');
+      await CommonFunc.sleep(1000);
       let info = await driver.findComponent(ON.id('Hello 1'));
       expect(await info.getText()).assertEqual('Hello 1');
       console.info('[LazyForEachAboutToReuseUndefined_001] END');

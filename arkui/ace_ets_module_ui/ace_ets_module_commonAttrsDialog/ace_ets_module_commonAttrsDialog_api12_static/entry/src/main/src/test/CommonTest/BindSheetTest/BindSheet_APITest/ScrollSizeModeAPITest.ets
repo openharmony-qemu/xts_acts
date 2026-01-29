@@ -43,11 +43,9 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-let abilityStage = AppStorage.get<common.BaseContext>("abilityContext")
-
 export default function ScrollSizeMode_APITest() {
   describe('ScrollSizeMode_APITest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
     });

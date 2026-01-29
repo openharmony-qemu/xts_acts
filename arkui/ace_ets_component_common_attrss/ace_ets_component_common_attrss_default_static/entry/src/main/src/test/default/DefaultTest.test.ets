@@ -82,7 +82,6 @@ export default function defaultTest() {
     'List',
     'ListItem',
     'ListItemGroup',
-    'Panel',
     'RelativeContainer',
     'Row',
     'Scroll',
@@ -158,7 +157,7 @@ export default function defaultTest() {
     }
   }, {
     describe: 'Visibility',
-    exceptView: ['RichText', 'Web', 'StepperItem', 'TabContent'],
+    exceptView: ['RichText', 'Web', 'TabContent'],
     expectValue: {
       visibility: 'Visibility.Visible'
     }

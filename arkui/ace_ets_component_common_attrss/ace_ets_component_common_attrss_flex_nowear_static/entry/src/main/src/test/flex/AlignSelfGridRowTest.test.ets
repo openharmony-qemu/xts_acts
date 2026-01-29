@@ -141,7 +141,7 @@ export default function alignSelfGridRowTest() {
   ]
 
   describe('AlignSelfGridRowTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("alignSelfGridRowTest beforeAll start");
 
     });

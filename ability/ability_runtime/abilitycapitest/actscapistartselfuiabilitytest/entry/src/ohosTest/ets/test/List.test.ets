@@ -23,6 +23,7 @@ import NdkApplicationContextGetVersionCodeTest from './NdkApplicationContextGetV
 import NdkSetIsolationUidTest from './NdkSetIsolationUidTest.test';
 import NdkGetLogDirTest from './NdkGetLogDirTest.test';
 import NdkKillChildProcessTest from './NdkKillChildProcessTest.test';
+import NdkNotifyPageChangedTest from './NdkNotifyPageChanged.test';
 
 export default function testsuite() {
   NdkWantTest();
@@ -35,4 +36,5 @@ export default function testsuite() {
   NdkSetIsolationUidTest();
   NdkGetLogDirTest();
   NdkKillChildProcessTest();
+  NdkNotifyPageChangedTest();
 }

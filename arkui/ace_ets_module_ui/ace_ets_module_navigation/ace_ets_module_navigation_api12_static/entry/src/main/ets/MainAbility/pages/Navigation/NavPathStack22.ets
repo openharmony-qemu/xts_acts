@@ -43,7 +43,10 @@ class DerivedNavPathStack extends NavPathStack{
   }
 
   pop(result?: Object | undefined, animated?: boolean | undefined): NavPathInfo | undefined {
-    return super.pop(result as Object,animated as boolean)
+    if(result == undefined){
+      return super.pop(animated)
+    }
+    return super.pop(result as Object, animated as boolean)
   }
 
 }

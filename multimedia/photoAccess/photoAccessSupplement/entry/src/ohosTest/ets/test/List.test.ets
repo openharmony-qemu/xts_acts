@@ -55,6 +55,10 @@ import sendablePhotoAccessHelperCreateAssetTest from './photoAccess/SendablePhot
 import PhotoAccessHelperRequestPhotoUrisReadPermissionSupp
   from './photoAccess/PhotoAccessHelperRequestPhotoUrisReadPermission.test';
 import PhotoAccessAPIEnumSupplementTest from "./photoAccess/PhotoAccessAPIEnumSupplement.test";
+import PhotoShowAssetsFetchResultTest from './photoAccess/PhotoAccessHelperFetchResult.test';
+import PhotoAccessHelperReadonlyCommentSupp from './photoAccess/PhotoAccessHelperReadonlyComment.test';
+import photoFetchResultGetObjectByPositionTestSupp from './photoAccess/PhotoFetchResultGetObjectByPosition.test';
+import requestImageTest from './photoAccess/RequestImage.test';
 
 export default function testsuite() {
   PhotoAccessMediaAssetChangeRequestSuppTest();
@@ -108,4 +112,8 @@ export default function testsuite() {
   sendablePhotoAccessHelperCreateAssetTest();
   PhotoAccessHelperRequestPhotoUrisReadPermissionSupp();
   PhotoAccessAPIEnumSupplementTest();
+  PhotoShowAssetsFetchResultTest();
+  PhotoAccessHelperReadonlyCommentSupp();
+  photoFetchResultGetObjectByPositionTestSupp();
+  requestImageTest();
 }

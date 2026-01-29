@@ -62,9 +62,9 @@ struct NavPathInfoIsEntry {
 
           Button('pushPath pageOne')
             .onClick((e: ClickEvent) => {
-              this.pageInfos.pushDestination(new NavPathInfo('pageOne',"mes",(popInfo: PopInfo) => {
+              this.pageInfos.pushDestination(new NavPathInfo('pageOne',"mes",  (popInfo: PopInfo) => {
                 this.message = 'isEntry is: ' + JSON.stringify(popInfo.info.isEntry);
-              }))
+              }, true))
             })
             .id('NavPathInfoIsEntry_btn1')
         }

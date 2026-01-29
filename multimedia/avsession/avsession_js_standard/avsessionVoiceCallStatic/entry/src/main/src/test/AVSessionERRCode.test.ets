@@ -1269,6 +1269,26 @@ export default function abilityTest() {
             };
             done();
         })
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_CALLTYPE_ENUM_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_CALLTYPE_ENUM_STATIC_0100
+         * @tc.desc        compare all value in CallerType to number value
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_CALLTYPE_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: () => void): Promise<void> => {
+            console.info(`TestLog: TYPE_CAST is ${avSession.CallerType.TYPE_CAST}`);
+            expect(avSession.CallerType.TYPE_CAST).assertEqual('cast' as avSession.CallerType);
+            console.info(`TestLog: TYPE_APP is ${avSession.CallerType.TYPE_APP}`);
+            expect(avSession.CallerType.TYPE_APP).assertEqual('app' as avSession.CallerType);
+            console.info(`TestLog: TYPE_BLUETOOTH is ${avSession.CallerType.TYPE_BLUETOOTH}`);
+            expect(avSession.CallerType.TYPE_BLUETOOTH).assertEqual('bluetooth' as avSession.CallerType);
+            console.info(`TestLog: TYPE_NEARLINK is ${avSession.CallerType.TYPE_NEARLINK}`);
+            expect(avSession.CallerType.TYPE_NEARLINK).assertEqual('nearlink' as avSession.CallerType);
+            done();
+        })
     })
 }
 

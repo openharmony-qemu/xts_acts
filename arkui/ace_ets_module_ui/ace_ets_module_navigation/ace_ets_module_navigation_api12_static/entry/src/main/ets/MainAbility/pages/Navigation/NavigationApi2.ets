@@ -52,11 +52,12 @@ struct NavigationApi2 {
             this.pageInfos.setInterception({
               willShow: (from: NavDestinationContext | "navBar", to: NavDestinationContext | "navBar",
                          operation: NavigationOperation, animated: boolean) => {
+                this.pageInfos.pop();
+                this.pageInfos.pushPath(new NavPathInfo('pageOne',null))
               },
               didShow:((from: NavDestinationContext | "navBar", to: NavDestinationContext | "navBar",
                         operation: NavigationOperation, animated: boolean) => {
-                this.pageInfos.pop();
-                this.pageInfos.pushPath(new NavPathInfo('pageOne',null))
+
               })
             })
           })

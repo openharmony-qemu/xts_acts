@@ -113,7 +113,7 @@ struct WebViewWindowFeatures {
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   await buttonOne.click()
-                  let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
+                  let webRect = Utils.getComponentRect('WebViewWindowFeaturesWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
@@ -141,7 +141,7 @@ struct WebViewWindowFeatures {
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   await buttonOne.click()
-                  let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
+                  let webRect = Utils.getComponentRect('WebViewWindowFeaturesWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
@@ -168,7 +168,7 @@ struct WebViewWindowFeatures {
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   await buttonOne.click()
-                  let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
+                  let webRect = Utils.getComponentRect('WebViewWindowFeaturesWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
@@ -195,7 +195,7 @@ struct WebViewWindowFeatures {
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   await buttonOne.click()
-                  let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
+                  let webRect = Utils.getComponentRect('WebViewWindowFeaturesWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
@@ -222,7 +222,7 @@ struct WebViewWindowFeatures {
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   await buttonOne.click()
-                  let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
+                  let webRect = Utils.getComponentRect('WebViewWindowFeaturesWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
@@ -250,7 +250,7 @@ struct WebViewWindowFeatures {
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   await buttonOne.click()
-                  let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
+                  let webRect = Utils.getComponentRect('WebViewWindowFeaturesWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
@@ -278,7 +278,7 @@ struct WebViewWindowFeatures {
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   await buttonOne.click()
-                  let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
+                  let webRect = Utils.getComponentRect('WebViewWindowFeaturesWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
@@ -306,7 +306,7 @@ struct WebViewWindowFeatures {
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   await buttonOne.click()
-                  let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
+                  let webRect = Utils.getComponentRect('WebViewWindowFeaturesWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);

@@ -99,20 +99,29 @@ export default function MultimodalInputDeviceTest() {
     it("SUB_MMI_Input_Api_IptDev_getDeviceInfo_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "SUB_MMI_Input_Api_IptDev_getDeviceInfo_0100";
       try {
-        inputDevice.getDeviceInfo(1, (error: Error, deviceData: inputDevice.InputDeviceData) => {
-          if (error) {
-            console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
-            ExpectFalse(true);
-            done();
-          } else {
-            console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
-            ExpectTrue(typeof (deviceData) == 'object');
-            done();
+        await inputDevice.getDeviceList().then((data) => {
+          console.info(`${caseName} Device List: ${JSON.stringify(data)}`);
+          expect(data).assertInstanceOf("Array");
+          if (data.length <= 0) {
+            return;
           }
-        });
+          inputDevice.getDeviceInfo(data[0], (error: Error, deviceData: inputDevice.InputDeviceData) => {
+            if (error) {
+              console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect().assertFail();
+              done();
+            } else {
+              console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
+              expect(deviceData).assertInstanceOf("Object");
+              expect(deviceData.isVirtual).assertInstanceOf("Boolean");
+              expect(deviceData.isLocal).assertInstanceOf("Boolean");
+              done();
+            }
+          });
+        })
       } catch (error) {
         console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
-        ExpectFalse(true);
+        expect().assertFail();
         done();
       }
     });
@@ -128,14 +137,23 @@ export default function MultimodalInputDeviceTest() {
     it("SUB_MMI_Input_Api_IptDev_getDeviceInfo_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "SUB_MMI_Input_Api_IptDev_getDeviceInfo_0200";
       try {
-        inputDevice.getDeviceInfo(1).then((deviceData: inputDevice.InputDeviceData) => {
-          console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
-          ExpectTrue(typeof (deviceData) == 'object');
-          done();
-        });
+        await inputDevice.getDeviceList().then((data) => {
+          console.info(`${caseName} Device List: ${JSON.stringify(data)}`);
+          expect(data).assertInstanceOf("Array");
+          if (data.length <= 0) {
+            return;
+          }
+          inputDevice.getDeviceInfo(data[0]).then((deviceData: inputDevice.InputDeviceData) => {
+            console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
+            expect(deviceData).assertInstanceOf("Object");
+            expect(deviceData.isVirtual).assertInstanceOf("Boolean");
+            expect(deviceData.isLocal).assertInstanceOf("Boolean");
+            done();
+          });
+        });        
       } catch (error) {
         console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
-        ExpectFalse(true);
+        expect().assertFail();
         done();
       }
     });
@@ -151,13 +169,22 @@ export default function MultimodalInputDeviceTest() {
     it("SUB_MMI_Input_Api_IptDev_getDeviceInfoSync_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "SUB_MMI_Input_Api_IptDev_getDeviceInfoSync_0100";
       try {
-        let deviceData: inputDevice.InputDeviceData = inputDevice.getDeviceInfoSync(1);
-        console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
-        ExpectTrue(typeof (deviceData) == 'object');
-        done();
+        await inputDevice.getDeviceList().then((data) => {
+          console.info(`${caseName} Device List: ${JSON.stringify(data)}`);
+          expect(data).assertInstanceOf("Array");
+          if (data.length <= 0) {
+            return;
+          }
+          let deviceData: inputDevice.InputDeviceData = inputDevice.getDeviceInfoSync(data[0]);
+          console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
+          expect(deviceData).assertInstanceOf("Object");
+          expect(deviceData.isVirtual).assertInstanceOf("Boolean");
+          expect(deviceData.isLocal).assertInstanceOf("Boolean");
+          done();          
+        });
       } catch (error) {
         console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
-        ExpectFalse(true);
+        expect().assertFail();
         done();
       }
     });

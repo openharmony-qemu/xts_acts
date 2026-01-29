@@ -32,6 +32,7 @@
 #include <arkui/native_type.h>
 #include <arkui/native_type.h>
 #include "ContainerTest.h"
+#include "../common/common.h"
 
 namespace NativeXComponentSample {
     enum {

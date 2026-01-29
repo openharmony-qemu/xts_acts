@@ -16,8 +16,14 @@ import rdbTest from './RdbTest.test';
 import relationalstoreTest from './relationalstoreTest.test';
 import reltioanlStoreCorruptedTest from './RdbCorruptedHandle.test';
 
+import RdbQueryWithoutRowCountTest from './RdbQueryWithoutRowCount.test';
+import TranQueryWithoutRowCountTest from './TranQueryWithoutRowCount.test';
+
 export default function testsuite() {
   rdbTest();
   relationalstoreTest();
   reltioanlStoreCorruptedTest();
+
+  RdbQueryWithoutRowCountTest();
+  TranQueryWithoutRowCountTest();
 }

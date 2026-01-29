@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,14 +55,14 @@ struct StateArrayNew {
         .height('5%')
         .id("reduce_Array")
         .onClick(() => {
-          this.res_reduce = this.arr_reduce.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+          this.res_reduce = this.arr_reduce.reduce((accumulator: number, currentValue: number) => accumulator + currentValue, 0)
         })
 
       Text('Click to reduceRight value to the array ' + this.res_reduceRight).fontSize(9)
         .height('5%')
         .id("reduceRight_Array")
         .onClick(() => {
-          this.res_reduceRight = this.arr_reduceRight.reduceRight((accumulator, currentValue) => accumulator.concat(currentValue))
+          this.res_reduceRight = this.arr_reduceRight.reduceRight((accumulator: number[], currentValue: number[]) => accumulator.concat(currentValue))
         })
     }.width('100%')
   }

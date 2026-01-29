@@ -39,13 +39,13 @@ struct navigation_add4_1 {
   }
 
   onPageShow(): void {
-    this.pageInfos.pushPath(new NavPathInfo('pageTwo',null))
+    this.pageInfos.pushPath(new NavPathInfo('pageOne',null))
   }
   build() {
     Navigation(this.pageInfos) {
       Column(){
         Button('push pageOne').onClick((event: ClickEvent) => {
-          this.pageInfos.pushPath(new NavPathInfo('pageTwo',null))
+          this.pageInfos.pushPath(new NavPathInfo('pageOne',null))
         })
       }
     }

@@ -50,7 +50,6 @@ export default function defaultFlexTest() {
     'GridRow',
     'Grid',
     'List',
-    'Panel',
     'Refresh',
     'Scroll',
     'Stack',

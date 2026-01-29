@@ -48,13 +48,6 @@ export default function BufferTest1() {
     afterEach(() => {
       await Utils.msSleep(10)
     })
-    // afterEach(async (done: Function) => {
-    //   // Presets a clear action, which is performed after each unit test case ends.
-    //   // The number of execution times is the same as the number of test cases defined by **it**.
-    //   // This API supports only one parameter: clear action function.
-    //   await sleep(10);
-    //   done();
-    // })
     /**
      * @tc.name   testAlloc0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0100

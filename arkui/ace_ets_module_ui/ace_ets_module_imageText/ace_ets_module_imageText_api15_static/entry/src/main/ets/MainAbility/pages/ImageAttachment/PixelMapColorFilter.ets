@@ -175,7 +175,13 @@ struct PixelMapColorFilter {
             }
           }
         })
-      Text(this.ColorFilter).id('ColorFilter_content').height('5%')
+      Text(){
+        ImageSpan($r('app.media.startIcon'))
+          .width(50)
+          .height(50)
+          .supportSvg2(true)
+          .colorFilter(this.DrawingColorFilterFirst)
+      }.id('ColorFilter_content').height('5%')
     }.width('100%')
   }
 }

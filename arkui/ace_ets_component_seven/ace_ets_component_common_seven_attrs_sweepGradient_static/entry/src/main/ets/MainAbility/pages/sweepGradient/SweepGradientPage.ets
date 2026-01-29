@@ -19,10 +19,10 @@ import router from '@ohos.router'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
   LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
-  Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
+  Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
+  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
@@ -33,8 +33,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
   ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
   RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
-  StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
+  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute,
+  SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, SweepGradientOptions } from '@ohos.arkui.component'
@@ -972,36 +972,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
 	}
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-	mSweepGradient: SweepGradientOptions = {
-		center: [20, 30],
-		start: 25,
-		end: 35,
-		rotation: 12,
-		colors: [['#FFFF0000', 0.0], ['#FF0000FF', 0.3], ['#FFFFFF00', 0.5]],
-		repeating: true
-	}
-
-	applyNormalAttribute(instance: StepperAttribute): void {
-		instance.sweepGradient(this.mSweepGradient)
-	}
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-	mSweepGradient: SweepGradientOptions = {
-		center: [20, 30],
-		start: 25,
-		end: 35,
-		rotation: 12,
-		colors: [['#FFFF0000', 0.0], ['#FF0000FF', 0.3], ['#FFFFFF00', 0.5]],
-		repeating: true
-	}
-
-	applyNormalAttribute(instance: StepperItemAttribute): void {
-		instance.sweepGradient(this.mSweepGradient)
-	}
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	mSweepGradient: SweepGradientOptions = {
 		center: [20, 30],
@@ -1523,16 +1493,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
 	return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-	this.key(componentKey)
-	return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-	this.key(componentKey)
-	return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
 	this.key(componentKey)
 	return this
@@ -1709,8 +1669,6 @@ struct SweepGradientPage {
 	@State _sweepGradientSliderModifier: SliderModifier = new SliderModifier()
 	@State _sweepGradientSpanModifier: SpanModifier = new SpanModifier()
 	@State _sweepGradientStackModifier: StackModifier = new StackModifier()
-	@State _sweepGradientStepperModifier: StepperModifier = new StepperModifier()
-	@State _sweepGradientStepperItemModifier: StepperItemModifier = new StepperItemModifier()
 	@State _sweepGradientSwiperModifier: SwiperModifier = new SwiperModifier()
 	@State _sweepGradientTabContentModifier: TabContentModifier = new TabContentModifier()
 	@State _sweepGradientTabsModifier: TabsModifier = new TabsModifier()
@@ -1897,32 +1855,6 @@ struct SweepGradientPage {
 					.showTips(true)
 					.commonStyle(this.componentKey)
 					.attributeModifier(this._sweepGradientSliderModifier)
-			}
-			if (this.targetView == 'Stepper') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-				}
-					.commonStyle(this.componentKey)
-					// .attributeModifier(this._sweepGradientStepperModifier)
-			}
-			if (this.targetView == 'StepperItem') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-						.backgroundColor(Color.Red)
-						.commonStyle(this.componentKey)
-						// .attributeModifier(this._sweepGradientStepperItemModifier)
-				}
-					.backgroundColor(Color.Yellow)
-					.width('100%')
-					.height('100%')
 			}
 			if (this.targetView == 'Text') {
 				Text('text1')
