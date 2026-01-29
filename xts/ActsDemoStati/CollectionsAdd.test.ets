@@ -438,7 +438,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("ASONTestClass001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('ASONTestClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let options : ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.PARSE_AS_BIGINT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.OBJECT,
@@ -457,7 +457,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("ASONTestClass002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('ASONTestClass002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let jsonText = '123';
       let obj = ArkTSUtils.ASON.parse(jsonText) as lang.ISendable;
       expect(obj).assertEqual(123);
@@ -472,7 +472,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("ASONTestClass003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('ASONTestClass003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let jsonText = '{"number":123}';
       let obj = ArkTSUtils.ASON.parse(jsonText) as lang.ISendable;
       expect((obj as object)?.["number"]).assertEqual(123);
@@ -487,7 +487,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("ASONTestClass004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('ASONTestClass004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let jsonText = '{"string":"testASON"}';
       let obj = ArkTSUtils.ASON.parse(jsonText) as lang.ISendable;
       expect((obj as object)?.["string"]).assertEqual("testASON");
@@ -502,7 +502,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let jsonText = '"testASON"';
       let obj = ArkTSUtils.ASON.parse(jsonText) as lang.ISendable;
       expect(obj).assertEqual("testASON");
@@ -517,7 +517,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let jsonText = '[1,2,3]';
       let obj : collections.Array<number> = ArkTSUtils.ASON.parse(jsonText) as collections.Array<number>;
       expect(obj.at(1)).assertEqual(2);
@@ -532,7 +532,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let jsonText = '{"arr":[1,3,5]}';
       let obj = ArkTSUtils.ASON.parse(jsonText) as lang.ISendable;
       let arr : collections.Array<number> = (obj as object)?.["arr"];
@@ -548,7 +548,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let jsonText = 'true';
       let obj = ArkTSUtils.ASON.parse(jsonText);
       expect(obj).assertEqual(true);
@@ -563,7 +563,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let jsonText = 'false';
       let obj = ArkTSUtils.ASON.parse(jsonText);
       expect(obj).assertEqual(false);
@@ -578,7 +578,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let jsonText = '{}';
       let obj = ArkTSUtils.ASON.parse(jsonText);
       expect(typeof obj).assertEqual("object");
@@ -593,7 +593,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let jsonText = '{"123":"123"}';
       let obj = ArkTSUtils.ASON.parse(jsonText);
       expect((obj as object)?.["123"]).assertEqual("123");
@@ -608,7 +608,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let options : ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.PARSE_AS_BIGINT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP,
@@ -627,7 +627,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let options : ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.DEFAULT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP,
@@ -646,7 +646,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let options : ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.DEFAULT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP,
@@ -666,7 +666,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let options : ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.DEFAULT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP,
@@ -688,7 +688,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let options : ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.DEFAULT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.OBJECT,
@@ -710,7 +710,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let options : ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.DEFAULT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP,
@@ -732,7 +732,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let options : ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.DEFAULT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.OBJECT,
@@ -754,7 +754,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let obj = 1122;
       let str = ArkTSUtils.ASON.stringify(obj);
       expect(str).assertEqual("1122");
@@ -769,7 +769,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let obj = "test ASON";
       let str = ArkTSUtils.ASON.stringify(obj);
       expect(str).assertEqual('"test ASON"');
@@ -784,7 +784,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let obj = true;
       let str = ArkTSUtils.ASON.stringify(obj);
       expect(str).assertEqual("true");
@@ -799,7 +799,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let obj = false;
       let str = ArkTSUtils.ASON.stringify(obj);
       expect(str).assertEqual("false");
@@ -814,7 +814,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let obj = null;
       let str = ArkTSUtils.ASON.stringify(obj);
       expect(str).assertEqual("null");
@@ -829,7 +829,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let obj = new collections.Array<number>(1, 3, 5);
       let str = ArkTSUtils.ASON.stringify(obj);
       expect(str).assertEqual("[1,3,5]");
@@ -844,7 +844,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let jsonText = '{"string":"testASON"}';
       let obj = ArkTSUtils.ASON.parse(jsonText) as lang.ISendable;
       let str = ArkTSUtils.ASON.stringify(obj);
@@ -860,7 +860,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let jsonText = '{}';
       let obj = ArkTSUtils.ASON.parse(jsonText) as lang.ISendable;
       let str = ArkTSUtils.ASON.stringify(obj);
@@ -876,7 +876,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let obj = 112233445566778899n;
       let str = ArkTSUtils.ASON.stringify(obj);
       expect(str).assertEqual('112233445566778899');
@@ -891,7 +891,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let options : ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.PARSE_AS_BIGINT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.OBJECT,
@@ -911,7 +911,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let options : ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.DEFAULT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.OBJECT,
@@ -931,7 +931,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let jsonText = '{"text":"ASON support MAP Test Start","largeNumber":112233445566778899,"people":{"name":"Mary","sex":"1","height":"165"}}';
       let options : ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.PARSE_AS_BIGINT,
@@ -951,7 +951,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let jsonText = '{"args1":true,"args2":false,"args3":null}';
       let options : ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.PARSE_AS_BIGINT,
@@ -971,7 +971,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let jsonText = '{"people":{"name":"Mary","sex":"1","height":165,"args":{"arr":[1,2,3],"check":true,"num":null}}}';
       let options : ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.PARSE_AS_BIGINT,
@@ -991,7 +991,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let set = new Set<number>();
       set.add(1);
       set.add(2);
@@ -1009,7 +1009,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let set = new collections.Set<number>();
       set.add(1);
       set.add(2);
@@ -1027,7 +1027,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let set = new HashSet<number>();
       set.add(1);
       set.add(2);
@@ -1045,7 +1045,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let arr = new collections.Array<string>();
       arr.push("a", "b", "c");
       let sendableObj = new SendableTestClass(arr);
@@ -1066,7 +1066,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let arr = ["a", "b", "c"];
       arr.push("a", "b", "c");
       let obj = new NormalTestClass(arr);
@@ -1091,7 +1091,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let map = new Map<string, Object>();
       let set = new Set<Object>();
       let hashMap = new HashMap<string, Object>();
@@ -1116,8 +1116,8 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let map = new Map<string | null | number | boolean, string | null | number | boolean>();
+    it('ASONTestClass039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let map = new Map<string>();
       map.set("a1", "A1");
       map.clear();
       map.set(1, 1);
@@ -1135,8 +1135,8 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let map = new collections.Map<string | null | number | boolean, string | null | number | boolean>();
+    it('ASONTestClass040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let map = new collections.Map<string>();
       map.set("a1", "A1");
       map.clear();
       map.set(1, 1);
@@ -1154,7 +1154,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let set = new Set<string | null | number | boolean>();
       set.add("a1");
       set.clear();
@@ -1173,7 +1173,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("ASONTestClass042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('ASONTestClass042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let set = new collections.Set<string | null | number | boolean>();
       set.add("a1");
       set.clear();
@@ -1192,7 +1192,7 @@ export default function collectionsAddTest1() {
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL0
       */
-     it("ASONTestClass043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+     it('ASONTestClass043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let map = new Map<string | null | number | boolean | undefined, string | null | number | boolean | undefined>();
       map.set("a1", 1);
       map.set(undefined, "a2");
@@ -1212,8 +1212,8 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("ASONTestClass044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let map = new collections.Map<string | null | number | boolean | undefined, string | null | number | boolean | undefined>();
+    it('ASONTestClass044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let map = new collections.Map<string>();
       map.set("a1", 1);
       map.set(undefined, "a2");
       map.set(null, undefined);
@@ -1232,7 +1232,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("ASONTestClass045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('ASONTestClass045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let map = new HashMap<string>();
       map.set("a1", 1);
       let str = ArkTSUtils.ASON.stringify(map);
@@ -1248,7 +1248,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("ASONTestClass046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('ASONTestClass046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let set = new Set<string | null | number | boolean | undefined>();
       set.add("a1");
       set.add(undefined);
@@ -1267,7 +1267,7 @@ export default function collectionsAddTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("ASONTestClass047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('ASONTestClass047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let set = new collections.Set<string | null | number | boolean | undefined>();
       set.add('ss');
       set.add(undefined);
