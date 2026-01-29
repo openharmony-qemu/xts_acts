@@ -39,7 +39,8 @@
 #include "i18n/timezone.h"
 #include "i18n/errorcode.h"
 
-
+const static double QUERY_BASE = 527014500000.0;
+const static int32_t PREV_RAW_OFFSET = 28800000;
 
 static napi_value TestUidna_openUTS46(napi_env env, napi_callback_info)
 {
@@ -3051,8 +3052,8 @@ static napi_value testOH_i18n_GetNextStartFromTimeArrayTimeZoneRules_0500(napi_e
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
     TimeArrayTimeZoneRule rule = rules.timeArrayRules[0];
     TimeZoneRuleQuery query;
-    query.base = 527014500000;
-    query.prevRawOffset = 28800000;
+    query.base = QUERY_BASE;
+    query.prevRawOffset = PREV_RAW_OFFSET;
     query.prevDSTSavings = 0;
     query.inclusive = false;
     errCode = OH_i18n_GetNextStartFromTimeArrayTimeZoneRule(&rule, &query);
@@ -3068,8 +3069,8 @@ static napi_value testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRules_0600(napi_e
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
     TimeArrayTimeZoneRule rule = rules.timeArrayRules[0];
     TimeZoneRuleQuery query;
-    query.base = 527014500000;
-    query.prevRawOffset = 28800000;
+    query.base = QUERY_BASE;
+    query.prevRawOffset = PREV_RAW_OFFSET;
     query.prevDSTSavings = 0;
     query.inclusive = false;
     errCode = OH_i18n_GetPrevStartFromTimeArrayTimeZoneRule(&rule, &query);
