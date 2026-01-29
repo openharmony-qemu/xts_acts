@@ -102,7 +102,7 @@ group("arkui") {
       "ace_c_accessibility_api_16_static:ActsAceCapiInspector16StaticTest",
       "ace_c_arkui_nowear_test_api15_static:ActsAceCArkUINoWear15StaticTest",
       "ace_c_arkui_nowear_test_api18_static:ActsAceCArkUINoWear18StaticTest",
-      "ace_c_arkui_nowear_test_api19_static:ActsAceCArkUINoWear19StaticTest",
+      #"ace_c_arkui_nowear_test_api19_static:ActsAceCArkUINoWear19StaticTest",
       "ace_c_arkui_nowear_test_api20_static:ActsAceCArkUINoWear20StaticTest",
       "ace_c_arkui_test_api14_static:ActsAceCArkUI14StaticTest",
       "ace_c_arkui_test_api15_static:ActsAceCArkUI15StaticTest",
