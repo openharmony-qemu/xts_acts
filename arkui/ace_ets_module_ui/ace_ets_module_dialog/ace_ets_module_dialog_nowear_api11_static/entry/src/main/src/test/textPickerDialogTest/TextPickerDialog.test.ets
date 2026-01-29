@@ -47,7 +47,7 @@ export default function TextPickerDialog() {
     beforeEach(async () => {
       console.info("TextPickerDialog beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/datePickerDialog/DatePickerDialog',
+        url: 'MainAbility/pages/textPickerDialog/TextPickerDialog',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router

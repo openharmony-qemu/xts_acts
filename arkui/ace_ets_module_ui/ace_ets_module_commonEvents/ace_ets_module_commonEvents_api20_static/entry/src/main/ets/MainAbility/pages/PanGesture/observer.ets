@@ -26,6 +26,7 @@ import {
   PanGesture,
   Button,
   PanDirection,
+  GestureRecognizer
 } from '@ohos.arkui.component';
 import {
   State,
@@ -48,13 +49,13 @@ struct observer{
   private panOption: PanGestureOptions = new PanGestureOptions({direction: PanDirection.All })
   aboutToAppear(): void {
     let observer = this.getUIContext().getUIObserver();
-    observer.on('beforePanStart', (event: GestureEvent) =>{
+    observer.onBeforePanStart((event: GestureEvent, current: GestureRecognizer) =>{
       this.isOnContent = String(event.offsetX);
     });
   }
   aboutToDisappear(): void {
     let observer = this.getUIContext().getUIObserver();
-    observer.off('beforePanStart', (event: GestureEvent) =>{
+    observer.onBeforePanStart((event: GestureEvent, current: GestureRecognizer) =>{
       this.isOffContent = String(event.offsetX);
     })
   }
