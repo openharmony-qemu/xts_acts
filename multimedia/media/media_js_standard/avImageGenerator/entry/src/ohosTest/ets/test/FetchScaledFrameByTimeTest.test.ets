@@ -104,10 +104,10 @@ async function fetchScaledFrameByTimeTest(testNum: string, done: Function, outSi
                     let imageInfo: image.ImageInfo = pixelMap.getImageInfoSync();
                     console.info(`${testNum} pixel_map size width: ${imageInfo.size.width}, height: ${imageInfo.size.height}`);
                     done()
-                }) else {
+                    });
+                } else {
                     console.error(`avImageGenerator is underfined`);
                     }
-                }
             }, 500);
         } else {
             console.error(`${testNum}createAVImageGenerator fail, error message:${err.message}`);
