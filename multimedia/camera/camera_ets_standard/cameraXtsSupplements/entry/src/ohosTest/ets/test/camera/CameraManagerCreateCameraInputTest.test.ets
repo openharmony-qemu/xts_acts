@@ -161,22 +161,22 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_CAMERA_DEVICE_001';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let position = camera.CameraPosition.CAMERA_POSITION_FRONT;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (position == mCameraDeviceArray[i].cameraPosition) {
               mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[i]);
-              console.log(TAG, testName, "createCameraInput ok:");
+              console.info(TAG, testName, "createCameraInput ok:");
               expect(mCameraInput != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -193,22 +193,22 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_CAMERA_DEVICE_002';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let position = camera.CameraPosition.CAMERA_POSITION_UNSPECIFIED;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (position == mCameraDeviceArray[i].cameraPosition) {
               mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[i]);
-              console.log(TAG, testName, "createCameraInput ok:");
+              console.info(TAG, testName, "createCameraInput ok:");
               expect(mCameraInput != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -225,22 +225,22 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_CAMERA_DEVICE_003';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let position = camera.CameraPosition.CAMERA_POSITION_FOLD_INNER;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (position == mCameraDeviceArray[i].cameraPosition) {
               mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[i]);
-              console.log(TAG, testName, "createCameraInput ok:");
+              console.info(TAG, testName, "createCameraInput ok:");
               expect(mCameraInput != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -257,22 +257,22 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_CAMERA_DEVICE_004';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let type = camera.CameraType.CAMERA_TYPE_WIDE_ANGLE;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (type == mCameraDeviceArray[i].cameraType) {
               mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[i]);
-              console.log(TAG, testName, "createCameraInput ok:");
+              console.info(TAG, testName, "createCameraInput ok:");
               expect(mCameraInput != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -289,22 +289,22 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_CAMERA_DEVICE_005';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let type = camera.CameraType.CAMERA_TYPE_ULTRA_WIDE;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (type == mCameraDeviceArray[i].cameraType) {
               mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[i]);
-              console.log(TAG, testName, "createCameraInput ok:");
+              console.info(TAG, testName, "createCameraInput ok:");
               expect(mCameraInput != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -321,22 +321,22 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_CAMERA_DEVICE_006';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let type = camera.CameraType.CAMERA_TYPE_TELEPHOTO;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (type == mCameraDeviceArray[i].cameraType) {
               mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[i]);
-              console.log(TAG, testName, "createCameraInput ok:");
+              console.info(TAG, testName, "createCameraInput ok:");
               expect(mCameraInput != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -353,22 +353,22 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_CAMERA_DEVICE_007';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let type = camera.CameraType.CAMERA_TYPE_TRUE_DEPTH;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (type == mCameraDeviceArray[i].cameraType) {
               mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[i]);
-              console.log(TAG, testName, "createCameraInput ok:");
+              console.info(TAG, testName, "createCameraInput ok:");
               expect(mCameraInput != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -385,22 +385,22 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_CAMERA_DEVICE_008';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let connectType = camera.ConnectionType.CAMERA_CONNECTION_USB_PLUGIN;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (connectType == mCameraDeviceArray[i].connectionType) {
               mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[i]);
-              console.log(TAG, testName, "createCameraInput ok:");
+              console.info(TAG, testName, "createCameraInput ok:");
               expect(mCameraInput != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -417,22 +417,22 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_CAMERA_DEVICE_009';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let connectType = camera.ConnectionType.CAMERA_CONNECTION_USB_PLUGIN;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (connectType == mCameraDeviceArray[i].connectionType) {
               mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[i]);
-              console.log(TAG, testName, "createCameraInput ok:");
+              console.info(TAG, testName, "createCameraInput ok:");
               expect(mCameraInput != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -449,22 +449,22 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_CAMERA_DEVICE_010';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let hosDeviceType = camera.HostDeviceType.PHONE;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (hosDeviceType == mCameraDeviceArray[i].hostDeviceType) {
               mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[i]);
-              console.log(TAG, testName, "createCameraInput ok:");
+              console.info(TAG, testName, "createCameraInput ok:");
               expect(mCameraInput != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -481,22 +481,22 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_CAMERA_DEVICE_011';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let hosDeviceType = camera.HostDeviceType.TABLET;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (hosDeviceType == mCameraDeviceArray[i].hostDeviceType) {
               mCameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[i]);
-              console.log(TAG, testName, "createCameraInput ok:");
+              console.info(TAG, testName, "createCameraInput ok:");
               expect(mCameraInput != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -514,7 +514,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_001';
       try {
-        console.log(TAG,testName,"start :");
+        console.info(TAG,testName,"start :");
         if(mCameraDeviceArray.length > 0){
         let position = camera.CameraPosition.CAMERA_POSITION_UNSPECIFIED;
         let type = camera.CameraType.CAMERA_TYPE_WIDE_ANGLE;
@@ -522,18 +522,18 @@ export default function createCameraInput() {
           if(position == mCameraDeviceArray[i].cameraPosition){
             if(type == mCameraDeviceArray[i].cameraType){
               mCameraInput = mCameraManager.createCameraInput(position, type);
-              console.log(TAG, testName, "createCameraInput ok:");
+              console.info(TAG, testName, "createCameraInput ok:");
               expect(mCameraInput != null).assertTrue();
             }else{
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }else{
-            console.log(TAG, testName, "该设备不支持:");
+            console.info(TAG, testName, "该设备不支持:");
           }
         }}
         done();
       } catch (error) {
-        console.log(TAG,testName,"fail,errorCode :",error.code);
+        console.error(TAG, testName, "fail,errorCode :", error.code);
         expect().assertFail();
         done();
       }
@@ -550,7 +550,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_002';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let position = camera.CameraPosition.CAMERA_POSITION_FRONT;
           let type = camera.CameraType.CAMERA_TYPE_TRUE_DEPTH;
@@ -558,18 +558,18 @@ export default function createCameraInput() {
             if(position == mCameraDeviceArray[i].cameraPosition){
               if(type == mCameraDeviceArray[i].cameraType){
                 mCameraInput = mCameraManager.createCameraInput(position, type);
-                console.log(TAG, testName, "createCameraInput ok:");
+                console.info(TAG, testName, "createCameraInput ok:");
                 expect(mCameraInput != null).assertTrue();
               }else{
-                console.log(TAG, testName, "该设备不支持:");
+                console.info(TAG, testName, "该设备不支持:");
               }
             }else{
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG,testName,"fail,errorCode :",error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -586,7 +586,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_003';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let position = camera.CameraPosition.CAMERA_POSITION_BACK;
           let type = camera.CameraType.CAMERA_TYPE_TELEPHOTO;
@@ -594,18 +594,18 @@ export default function createCameraInput() {
             if(position == mCameraDeviceArray[i].cameraPosition){
               if(type == mCameraDeviceArray[i].cameraType){
                 mCameraInput = mCameraManager.createCameraInput(position, type);
-                console.log(TAG, testName, "createCameraInput ok:");
+                console.info(TAG, testName, "createCameraInput ok:");
                 expect(mCameraInput != null).assertTrue();
               }else{
-                console.log(TAG, testName, "该设备不支持:");
+                console.info(TAG, testName, "该设备不支持:");
               }
             }else{
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG,testName,"fail,errorCode :",error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -622,7 +622,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_004';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let position = camera.CameraPosition.CAMERA_POSITION_BACK;
           let type = camera.CameraType.CAMERA_TYPE_TRUE_DEPTH;
@@ -630,18 +630,18 @@ export default function createCameraInput() {
             if(position == mCameraDeviceArray[i].cameraPosition){
               if(type == mCameraDeviceArray[i].cameraType){
                 mCameraInput = mCameraManager.createCameraInput(position, type);
-                console.log(TAG, testName, "createCameraInput ok:");
+                console.info(TAG, testName, "createCameraInput ok:");
                 expect(mCameraInput != null).assertTrue();
               }else{
-                console.log(TAG, testName, "该设备不支持:");
+                console.info(TAG, testName, "该设备不支持:");
               }
             }else{
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG,testName,"fail,errorCode :",error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -658,7 +658,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_005';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let position = camera.CameraPosition.CAMERA_POSITION_FRONT;
           let type = camera.CameraType.CAMERA_TYPE_WIDE_ANGLE;
@@ -666,18 +666,18 @@ export default function createCameraInput() {
             if(position == mCameraDeviceArray[i].cameraPosition){
               if(type == mCameraDeviceArray[i].cameraType){
                 mCameraInput = mCameraManager.createCameraInput(position, type);
-                console.log(TAG, testName, "createCameraInput ok:");
+                console.info(TAG, testName, "createCameraInput ok:");
                 expect(mCameraInput != null).assertTrue();
               }else{
-                console.log(TAG, testName, "该设备不支持:");
+                console.info(TAG, testName, "该设备不支持:");
               }
             }else{
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG,testName,"fail,errorCode :",error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -694,7 +694,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_006';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let position = camera.CameraPosition.CAMERA_POSITION_FRONT;
           let type = camera.CameraType.CAMERA_TYPE_ULTRA_WIDE;
@@ -702,18 +702,18 @@ export default function createCameraInput() {
             if(position == mCameraDeviceArray[i].cameraPosition){
               if(type == mCameraDeviceArray[i].cameraType){
                 mCameraInput = mCameraManager.createCameraInput(position, type);
-                console.log(TAG, testName, "createCameraInput ok:");
+                console.info(TAG, testName, "createCameraInput ok:");
                 expect(mCameraInput != null).assertTrue();
               }else{
-                console.log(TAG, testName, "该设备不支持:");
+                console.info(TAG, testName, "该设备不支持:");
               }
             }else{
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG,testName,"fail,errorCode :",error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -730,7 +730,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_007';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let position = camera.CameraPosition.CAMERA_POSITION_FRONT;
           let type = camera.CameraType.CAMERA_TYPE_TELEPHOTO;
@@ -738,18 +738,18 @@ export default function createCameraInput() {
             if(position == mCameraDeviceArray[i].cameraPosition){
               if(type == mCameraDeviceArray[i].cameraType){
                 mCameraInput = mCameraManager.createCameraInput(position, type);
-                console.log(TAG, testName, "createCameraInput ok:");
+                console.info(TAG, testName, "createCameraInput ok:");
                 expect(mCameraInput != null).assertTrue();
               }else{
-                console.log(TAG, testName, "该设备不支持:");
+                console.info(TAG, testName, "该设备不支持:");
               }
             }else{
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG,testName,"fail,errorCode :",error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -766,7 +766,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_008';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let position = camera.CameraPosition.CAMERA_POSITION_FRONT;
           let type = camera.CameraType.CAMERA_TYPE_TRUE_DEPTH;
@@ -774,18 +774,18 @@ export default function createCameraInput() {
             if(position == mCameraDeviceArray[i].cameraPosition){
               if(type == mCameraDeviceArray[i].cameraType){
                 mCameraInput = mCameraManager.createCameraInput(position, type);
-                console.log(TAG, testName, "createCameraInput ok:");
+                console.info(TAG, testName, "createCameraInput ok:");
                 expect(mCameraInput != null).assertTrue();
               }else{
-                console.log(TAG, testName, "该设备不支持:");
+                console.info(TAG, testName, "该设备不支持:");
               }
             }else{
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG,testName,"fail,errorCode :",error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -802,7 +802,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_009';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let position = camera.CameraPosition.CAMERA_POSITION_FOLD_INNER;
           let type = camera.CameraType.CAMERA_TYPE_WIDE_ANGLE;
@@ -810,18 +810,18 @@ export default function createCameraInput() {
             if(position == mCameraDeviceArray[i].cameraPosition){
               if(type == mCameraDeviceArray[i].cameraType){
                 mCameraInput = mCameraManager.createCameraInput(position, type);
-                console.log(TAG, testName, "createCameraInput ok:");
+                console.info(TAG, testName, "createCameraInput ok:");
                 expect(mCameraInput != null).assertTrue();
               }else{
-                console.log(TAG, testName, "该设备不支持:");
+                console.info(TAG, testName, "该设备不支持:");
               }
             }else{
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG,testName,"fail,errorCode :",error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -838,7 +838,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_010';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let position = camera.CameraPosition.CAMERA_POSITION_FOLD_INNER;
           let type = camera.CameraType.CAMERA_TYPE_ULTRA_WIDE;
@@ -846,18 +846,18 @@ export default function createCameraInput() {
             if(position == mCameraDeviceArray[i].cameraPosition){
               if(type == mCameraDeviceArray[i].cameraType){
                 mCameraInput = mCameraManager.createCameraInput(position, type);
-                console.log(TAG, testName, "createCameraInput ok:");
+                console.info(TAG, testName, "createCameraInput ok:");
                 expect(mCameraInput != null).assertTrue();
               }else{
-                console.log(TAG, testName, "该设备不支持:");
+                console.info(TAG, testName, "该设备不支持:");
               }
             }else{
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG,testName,"fail,errorCode :",error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -874,7 +874,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_011';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let position = camera.CameraPosition.CAMERA_POSITION_FOLD_INNER;
           let type = camera.CameraType.CAMERA_TYPE_TELEPHOTO;
@@ -882,18 +882,18 @@ export default function createCameraInput() {
             if(position == mCameraDeviceArray[i].cameraPosition){
               if(type == mCameraDeviceArray[i].cameraType){
                 mCameraInput = mCameraManager.createCameraInput(position, type);
-                console.log(TAG, testName, "createCameraInput ok:");
+                console.info(TAG, testName, "createCameraInput ok:");
                 expect(mCameraInput != null).assertTrue();
               }else{
-                console.log(TAG, testName, "该设备不支持:");
+                console.info(TAG, testName, "该设备不支持:");
               }
             }else{
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG,testName,"fail,errorCode :",error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -910,7 +910,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_012';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let position = camera.CameraPosition.CAMERA_POSITION_FOLD_INNER;
           let type = camera.CameraType.CAMERA_TYPE_TRUE_DEPTH;
@@ -918,18 +918,18 @@ export default function createCameraInput() {
             if(position == mCameraDeviceArray[i].cameraPosition){
               if(type == mCameraDeviceArray[i].cameraType){
                 mCameraInput = mCameraManager.createCameraInput(position, type);
-                console.log(TAG, testName, "createCameraInput ok:");
+                console.info(TAG, testName, "createCameraInput ok:");
                 expect(mCameraInput != null).assertTrue();
               }else{
-                console.log(TAG, testName, "该设备不支持:");
+                console.info(TAG, testName, "该设备不支持:");
               }
             }else{
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG,testName,"fail,errorCode :",error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -946,16 +946,16 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_013';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0){
           let type = camera.CameraType.CAMERA_TYPE_WIDE_ANGLE;
           mCameraInput = mCameraManager.createCameraInput(null, type);
-          console.log(TAG,testName,"createCameraInput :");
+          console.info(TAG,testName,"createCameraInput :");
           expect().assertFail();
           }
           done();
         } catch (error) {
-          console.log(TAG,testName,"fail,errorCode :",error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect(Number(error.code)).assertEqual(7400101)
           done();
         }
@@ -972,16 +972,16 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_014';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
             let position = camera.CameraPosition.CAMERA_POSITION_BACK;
             mCameraInput = mCameraManager.createCameraInput(position, null);
-            console.log(TAG, testName, "createCameraInput :");
+            console.info(TAG, testName, "createCameraInput :");
             expect().assertFail();
           }
           done();
         } catch (error) {
-          console.log(TAG,testName,"fail,errorCode :",error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect(Number(error.code)).assertEqual(7400101);
           done();
         }
@@ -998,7 +998,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_INPUT_015';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             let position = camera.CameraPosition.CAMERA_POSITION_UNSPECIFIED;
             let type = camera.CameraType.CAMERA_TYPE_TRUE_DEPTH;
@@ -1007,7 +1007,7 @@ export default function createCameraInput() {
           }
           done();
         } catch (error) {
-          console.log(TAG,testName,"fail,errorCode :",error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect(Number(error.code)).assertEqual(7400201);
           done();
         }
@@ -1024,23 +1024,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_001';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let position = camera.CameraPosition.CAMERA_POSITION_UNSPECIFIED;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (position == mCameraDeviceArray[i].cameraPosition) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1057,23 +1057,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_002';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let position = camera.CameraPosition.CAMERA_POSITION_BACK;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (position == mCameraDeviceArray[i].cameraPosition) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1090,23 +1090,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_003';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let position = camera.CameraPosition.CAMERA_POSITION_FRONT;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (position == mCameraDeviceArray[i].cameraPosition) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1123,7 +1123,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_004';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let position = camera.CameraPosition.CAMERA_POSITION_FOLD_INNER;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
@@ -1133,12 +1133,12 @@ export default function createCameraInput() {
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1155,23 +1155,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_005';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let type = camera.CameraType.CAMERA_TYPE_DEFAULT;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1188,23 +1188,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_006';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let type = camera.CameraType.CAMERA_TYPE_WIDE_ANGLE;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1221,23 +1221,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_007';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let type = camera.CameraType.CAMERA_TYPE_ULTRA_WIDE;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1254,23 +1254,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_008';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let type = camera.CameraType.CAMERA_TYPE_TELEPHOTO;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1287,23 +1287,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_009';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let type = camera.CameraType.CAMERA_TYPE_TRUE_DEPTH;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1320,23 +1320,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_010';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let connectType = camera.ConnectionType.CAMERA_CONNECTION_BUILT_IN;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (connectType == mCameraDeviceArray[i].connectionType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1353,23 +1353,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_011';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let connectType = camera.ConnectionType.CAMERA_CONNECTION_USB_PLUGIN;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (connectType == mCameraDeviceArray[i].connectionType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1386,23 +1386,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_012';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let connectType = camera.ConnectionType.CAMERA_CONNECTION_REMOTE;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (connectType == mCameraDeviceArray[i].connectionType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1419,23 +1419,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_013';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let hostType = camera.HostDeviceType.UNKNOWN_TYPE;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (hostType == mCameraDeviceArray[i].hostDeviceType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1452,23 +1452,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_014';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let hostType = camera.HostDeviceType.PHONE;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (hostType == mCameraDeviceArray[i].hostDeviceType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1485,23 +1485,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_015';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let hostType = camera.HostDeviceType.TABLET;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (hostType == mCameraDeviceArray[i].hostDeviceType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1518,7 +1518,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_016';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if ("" == mCameraDeviceArray[i].cameraId) {
@@ -1526,12 +1526,12 @@ export default function createCameraInput() {
               expect().assertFail();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect(Number(error.code)).assertEqual(7400101);
           done();
         }
@@ -1548,22 +1548,22 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_017';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if ("" == mCameraDeviceArray[i].hostDeviceName) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1580,14 +1580,14 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_018';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             mCameraManager.getSupportedOutputCapability(null, camera.SceneMode.NORMAL_PHOTO);
             expect().assertFail();
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect(Number(error.code)).assertEqual(7400101);
           done();
         }
@@ -1604,14 +1604,14 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_019';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             mCameraManager.getSupportedOutputCapability(undefined, camera.SceneMode.NORMAL_PHOTO);
             expect().assertFail();
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect(Number(error.code)).assertEqual(7400101);
           done();
         }
@@ -1628,23 +1628,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_020';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let position = camera.CameraPosition.CAMERA_POSITION_UNSPECIFIED;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (position == mCameraDeviceArray[i].cameraPosition) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1661,23 +1661,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_021';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let position = camera.CameraPosition.CAMERA_POSITION_BACK;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (position == mCameraDeviceArray[i].cameraPosition) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1694,23 +1694,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_022';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let position = camera.CameraPosition.CAMERA_POSITION_FRONT;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (position == mCameraDeviceArray[i].cameraPosition) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1727,7 +1727,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_023';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let position = camera.CameraPosition.CAMERA_POSITION_FOLD_INNER;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
@@ -1737,12 +1737,12 @@ export default function createCameraInput() {
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1759,23 +1759,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_024';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let type = camera.CameraType.CAMERA_TYPE_DEFAULT;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1792,23 +1792,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_025';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let type = camera.CameraType.CAMERA_TYPE_WIDE_ANGLE;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1825,23 +1825,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_026';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let type = camera.CameraType.CAMERA_TYPE_ULTRA_WIDE;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1858,23 +1858,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_027';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let type = camera.CameraType.CAMERA_TYPE_TELEPHOTO;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1891,23 +1891,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_028';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let type = camera.CameraType.CAMERA_TYPE_TRUE_DEPTH;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1924,23 +1924,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_029';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let connectType = camera.ConnectionType.CAMERA_CONNECTION_BUILT_IN;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (connectType == mCameraDeviceArray[i].connectionType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1957,23 +1957,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_030';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let connectType = camera.ConnectionType.CAMERA_CONNECTION_USB_PLUGIN;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (connectType == mCameraDeviceArray[i].connectionType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -1990,23 +1990,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_031';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let connectType = camera.ConnectionType.CAMERA_CONNECTION_REMOTE;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (connectType == mCameraDeviceArray[i].connectionType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2023,23 +2023,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_032';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let hostType = camera.HostDeviceType.UNKNOWN_TYPE;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (hostType == mCameraDeviceArray[i].hostDeviceType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2056,23 +2056,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_033';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let hostType = camera.HostDeviceType.PHONE;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (hostType == mCameraDeviceArray[i].hostDeviceType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2089,23 +2089,23 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_034';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           let hostType = camera.HostDeviceType.TABLET;
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if (hostType == mCameraDeviceArray[i].hostDeviceType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2122,7 +2122,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_035';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if ("" == mCameraDeviceArray[i].cameraId) {
@@ -2130,12 +2130,12 @@ export default function createCameraInput() {
               expect().assertFail();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect(Number(error.code)).assertEqual(7400101);
           done();
         }
@@ -2152,22 +2152,22 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_036';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
           for (let i = 0; i < mCameraDeviceArray.length; i++) {
             if ("" == mCameraDeviceArray[i].hostDeviceName) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.log(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:");
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
-              console.log(TAG, testName, "该设备不支持:");
+              console.info(TAG, testName, "该设备不支持:");
             }
           }}
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2184,14 +2184,14 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_037';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             mCameraManager.getSupportedOutputCapability(null, camera.SceneMode.NORMAL_VIDEO);
             expect().assertFail();
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect(Number(error.code)).assertEqual(7400101);
           done();
         }
@@ -2208,14 +2208,14 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_038';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             mCameraManager.getSupportedOutputCapability(undefined, camera.SceneMode.NORMAL_VIDEO);
             expect().assertFail();
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect(Number(error.code)).assertEqual(7400101);
           done();
         }
@@ -2232,16 +2232,16 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_039';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
             let cameraOutputCapability =
               mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_PHOTO);
-            console.log(TAG, testName, "getSupportedOutputCapability ok:");
+            console.info(TAG, testName, "getSupportedOutputCapability ok:");
             expect(cameraOutputCapability.previewProfiles[0].format != null).assertTrue();
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2258,16 +2258,16 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_040';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
             let cameraOutputCapability =
               mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_PHOTO);
-            console.log(TAG, testName, "getSupportedOutputCapability ok:");
+            console.info(TAG, testName, "getSupportedOutputCapability ok:");
             expect(cameraOutputCapability.previewProfiles[0].size != null).assertTrue();
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2284,16 +2284,16 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_041';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
             let cameraOutputCapability =
               mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_PHOTO);
-            console.log(TAG, testName, "getSupportedOutputCapability ok:");
+            console.info(TAG, testName, "getSupportedOutputCapability ok:");
             expect(cameraOutputCapability.photoProfiles[0].format != null).assertTrue();
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2310,16 +2310,16 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_042';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
             let cameraOutputCapability =
               mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_PHOTO);
-            console.log(TAG, testName, "getSupportedOutputCapability ok:");
+            console.info(TAG, testName, "getSupportedOutputCapability ok:");
             expect(cameraOutputCapability.photoProfiles[0].size != null).assertTrue();
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2336,17 +2336,17 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_043';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
             let cameraOutputCapability =
               mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_VIDEO);
-            console.log(TAG, testName, "getSupportedOutputCapability ok:");
+            console.info(TAG, testName, "getSupportedOutputCapability ok:");
             expect(cameraOutputCapability.videoProfiles[0].frameRateRange != null).assertTrue();
-            console.log(TAG, testName, "done ok:");
+            console.info(TAG, testName, "done ok:");
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2363,16 +2363,16 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_044';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
             let cameraOutputCapability =
               mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_VIDEO);
-            console.log(TAG, testName, "getSupportedOutputCapability ok:");
+            console.info(TAG, testName, "getSupportedOutputCapability ok:");
             expect(cameraOutputCapability.videoProfiles[0].format != null).assertTrue();
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2389,16 +2389,16 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_045';
         try {
-          console.log(TAG,testName,"start :");
+          console.info(TAG,testName,"start :");
           if(mCameraDeviceArray.length > 0) {
             let cameraOutputCapability =
               mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_VIDEO);
-            console.log(TAG, testName, "getSupportedOutputCapability ok:");
+            console.info(TAG, testName, "getSupportedOutputCapability ok:");
             expect(cameraOutputCapability.videoProfiles[0].size != null).assertTrue();
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2415,7 +2415,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_001';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             await getVideoSurfaceId();
             mCameraManager.createPreviewOutput(undefined, indexSurfaceId);
@@ -2423,7 +2423,7 @@ export default function createCameraInput() {
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect(Number(error.code)).assertEqual(7400101);
           done();
         }
@@ -2440,7 +2440,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_002';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             await getVideoSurfaceId();
             mCameraManager.createPreviewOutput(null, indexSurfaceId);
@@ -2448,7 +2448,7 @@ export default function createCameraInput() {
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect(Number(error.code)).assertEqual(7400101);
           done();
         }
@@ -2465,7 +2465,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_003';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             await getVideoSurfaceId();
             let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
@@ -2484,12 +2484,12 @@ export default function createCameraInput() {
             let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.NORMAL_VIDEO);
             let previewProfile = cameraOutputCap.previewProfiles[0];
             mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, "");
-            console.log(TAG, testName, "end :");
+            console.info(TAG, testName, "end :");
             expect(mPreviewOutput).assertUndefined()
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2506,7 +2506,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_004';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             await getVideoSurfaceId();
             let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
@@ -2529,7 +2529,7 @@ export default function createCameraInput() {
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect(Number(error.code)).assertEqual(7400101);
           done();
         }
@@ -2546,7 +2546,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_005';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             await getVideoSurfaceId();
             let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
@@ -2569,7 +2569,7 @@ export default function createCameraInput() {
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect(Number(error.code)).assertEqual(7400101);
           done();
         }
@@ -2586,7 +2586,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_006';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             await getVideoSurfaceId();
             let profile: camera.Profile = {
@@ -2599,7 +2599,7 @@ export default function createCameraInput() {
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2616,7 +2616,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_007';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             await getVideoSurfaceId();
             let profile: camera.Profile = {
@@ -2629,7 +2629,7 @@ export default function createCameraInput() {
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2646,7 +2646,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_008';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             await getVideoSurfaceId();
             let profile: camera.Profile = {
@@ -2659,7 +2659,7 @@ export default function createCameraInput() {
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2676,7 +2676,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_009';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             await getVideoSurfaceId();
             let profile: camera.Profile = {
@@ -2689,7 +2689,7 @@ export default function createCameraInput() {
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2706,7 +2706,7 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_010';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             await getVideoSurfaceId();
             let profile: camera.Profile = {
@@ -2719,7 +2719,7 @@ export default function createCameraInput() {
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2736,15 +2736,15 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_011';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             mPreviewOutput = mCameraManager.createPreviewOutput("");
-            console.log(TAG, testName, "end :");
+            console.info(TAG, testName, "end :");
             expect(mPreviewOutput).assertUndefined()
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect().assertFail();
           done();
         }
@@ -2761,14 +2761,14 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_012';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             mCameraManager.createPreviewOutput(undefined);
             expect().assertFail();
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect(Number(error.code)).assertEqual(7400101);
           done();
         }
@@ -2785,14 +2785,14 @@ export default function createCameraInput() {
       async (done: Function) => {
         const testName = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_013';
         try {
-          console.log(TAG, testName, "start :");
+          console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             mCameraManager.createPreviewOutput(null);
             expect().assertFail();
           }
           done();
         } catch (error) {
-          console.log(TAG, testName, "fail,errorCode :", error.code);
+          console.error(TAG, testName, "fail,errorCode :", error.code);
           expect(Number(error.code)).assertEqual(7400101);
           done();
         }
