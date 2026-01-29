@@ -1118,7 +1118,7 @@ export default function collectionsAddTest1() {
      */
     it('ASONTestClass039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let map = new Map<string>();
-      map.set("a1", "A1");
+      map.set('a1', 'a1');
       map.clear();
       map.set(1, 1);
       map.set(true, true);
@@ -1137,7 +1137,7 @@ export default function collectionsAddTest1() {
      */
     it('ASONTestClass040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let map = new collections.Map<string>();
-      map.set("a1", "A1");
+      map.set('a1', 'a1');
       map.clear();
       map.set(1, 1);
       map.set(true, true);
@@ -1156,7 +1156,7 @@ export default function collectionsAddTest1() {
      */
     it('ASONTestClass041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let set = new Set<string | null | number | boolean>();
-      set.add("a1");
+      set.add('a1');
       set.clear();
       set.add(1);
       set.add(true);
@@ -1175,7 +1175,7 @@ export default function collectionsAddTest1() {
      */
     it('ASONTestClass042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let set = new collections.Set<string | null | number | boolean>();
-      set.add("a1");
+      set.add('a1');
       set.clear();
       set.add(1);
       set.add(true);
@@ -1194,13 +1194,13 @@ export default function collectionsAddTest1() {
       */
      it('ASONTestClass043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let map = new Map<string | null | number | boolean | undefined, string | null | number | boolean | undefined>();
-      map.set("a1", 1);
+      map.set('a1', 1);
       map.set(undefined, "a2");
       map.set(null, undefined);
       map.set(undefined, undefined);
       map.set(undefined, null);
       let str = ArkTSUtils.ASON.stringify(map);
-      expect(str).assertEqual('{"a1":1,"undefined":null}');
+      expect(str).assertEqual('{'a1':1,"undefined":null}');
       done();
     })
 
@@ -1214,13 +1214,13 @@ export default function collectionsAddTest1() {
      */
     it('ASONTestClass044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let map = new collections.Map<string>();
-      map.set("a1", 1);
+      map.set('a1', 1);
       map.set(undefined, "a2");
       map.set(null, undefined);
       map.set(undefined, undefined);
       map.set(undefined, null);
       let str = ArkTSUtils.ASON.stringify(map);
-      expect(str).assertEqual('{"a1":1,"undefined":null}');
+      expect(str).assertEqual('{'a1':1,"undefined":null}');
       done();
     })
 
@@ -1234,9 +1234,9 @@ export default function collectionsAddTest1() {
      */
     it('ASONTestClass045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let map = new HashMap<string>();
-      map.set("a1", 1);
+      map.set('a1', 1);
       let str = ArkTSUtils.ASON.stringify(map);
-      expect(str).assertEqual('{"a1":1}');
+      expect(str).assertEqual('{'a1':1}');
       done();
     })
 
@@ -1250,12 +1250,12 @@ export default function collectionsAddTest1() {
      */
     it('ASONTestClass046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let set = new Set<string | null | number | boolean | undefined>();
-      set.add("a1");
+      set.add('a1');
       set.add(undefined);
       set.add(1);
       set.add(true);
       let str = ArkTSUtils.ASON.stringify(set);
-      expect(str).assertEqual('["a1",null,1,true]');
+      expect(str).assertEqual('['a1',null,1,true]');
       done();
     })
 
@@ -1274,7 +1274,7 @@ export default function collectionsAddTest1() {
       set.add(1);
       set.add(true);
       let str = ArkTSUtils.ASON.stringify(set);
-      expect(str).assertEqual('["a1",null,1,true]');
+      expect(str).assertEqual('['a1',null,1,true]');
       done();
     })
 
