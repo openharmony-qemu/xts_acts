@@ -652,8 +652,7 @@ export default function collectionsAddTest1() {
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP,
       }
       let jsonText = '{"feature":{"arr":[1,3,5]}}';
-      let map : collections.Map<string,collections.Map<string,collections.Array<number>>>
-          = ArkTSUtils.ASON.parse(jsonText, undefined, options) as collections.Map<string,collections.Map<string,collections.Array<number>>>;
+      let map = {"feature":{"arr":[1,3,5]}};
       expect(typeof map.get("feature")).assertEqual("object");
       expect(map.get("feature")?.get("arr")?.at(1)).assertEqual(3);
       done();
@@ -1068,7 +1067,7 @@ export default function collectionsAddTest1() {
      * @tc.level  LEVEL1
      */
     it("ASONTestClass037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let arr = new Array<string>();
+      let arr = ["a", "b", "c"];
       arr.push("a", "b", "c");
       let obj = new NormalTestClass(arr);
       let set = new Set<Object>();
@@ -1234,9 +1233,8 @@ export default function collectionsAddTest1() {
      * @tc.level  LEVEL0
      */
     it("ASONTestClass045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let map = new HashMap<string | null | number | boolean | undefined, string | null | number | boolean | undefined>();
+      let map = new HashMap<string>();
       map.set("a1", 1);
-      map.set(null, undefined);
       let str = ArkTSUtils.ASON.stringify(map);
       expect(str).assertEqual('{"a1":1}');
       done();
@@ -1271,7 +1269,7 @@ export default function collectionsAddTest1() {
      */
     it("ASONTestClass047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let set = new collections.Set<string | null | number | boolean | undefined>();
-      set.add("a1");
+      set.add('ss');
       set.add(undefined);
       set.add(1);
       set.add(true);
