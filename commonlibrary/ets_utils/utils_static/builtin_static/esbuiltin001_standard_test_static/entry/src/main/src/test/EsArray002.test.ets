@@ -187,7 +187,7 @@ export default function EsArrayTest002(){
       srcArr[1] = 1;
       srcArr[2] = 2;
 
-      let callbackfn = (val: number | undefined, idx: int, obj: Array<number>): number => {
+      let callbackfn = (val: number | undefined, idx: int, obj: Array<number>): number|undefined => {
         if (1000 < obj.length) {
           obj[1000] = 3;
         }
@@ -195,9 +195,10 @@ export default function EsArrayTest002(){
           callCnt++;
           return val!;
         }
+        return undefined
       }
 
-      let resArr = srcArr.map<number>(callbackfn);
+      let resArr = srcArr.map(callbackfn);
 
       expect(resArr.length).assertEqual(10);
       expect(callCnt).assertEqual(2);
