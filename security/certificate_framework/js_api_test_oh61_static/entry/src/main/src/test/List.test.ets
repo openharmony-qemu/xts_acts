@@ -16,29 +16,10 @@ import certFrameworkCertAllowDownloadInterCaTestUnit from './AllowDownloadInterm
 import certFrameworkCertReinforcementOfStringTestUnit from './CertframeworkReinforcement.test';
 import certFrameworkCertIgnoreNetworkIssuesTestUnit from './CertIgnoreNetworkIssues.test';
 import certFrameworkCertCheckOnlineCaTestUnit from './CertOnlineVerification.test';
-import wifiMg from '@ohos.wifiManager';
 
 
 export default function testsuite() {
   /* Networking is required and latest system time */
-  if(!wifiMg.isWifiActive()) {
-    console.info("=========>>>>>>> wifi_test/enable wifi:" + wifiMg.enableWifi());
-    await sleep(5000);
-  }
-  let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
-  console.info("=========>>>>>>> Internet WifiLinkedInfo : " + JSON.stringify(data));
-  console.info("=========>>>>>>> Internet speed : " + JSON.stringify(data.linkSpeed));
-  console.info("=========>>>>>>> Internet chLoad : " + JSON.stringify(data.chload));
-  console.info("=========>>>>>>> Internet rssi : " + JSON.stringify(data.rssi));
-
-  if (data.connState == wifiMg.ConnState.CONNECTED) {
-    console.info("=========>>>>>>> WLAN connection established");
-  } else {
-    throw new Error("=========>>>>>>> WLAN Network Error");
-  }
-  if (data.chload >= 800 || data.rssi <= -80) {
-    throw new Error("=========>>>>>>> WLAN Network Error (speed)");
-  }
   certFrameworkCertCheckOnlineCaTestUnit();
   certFrameworkCertIgnoreNetworkIssuesTestUnit();
   certFrameworkCertAllowDownloadInterCaTestUnit();

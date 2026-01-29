@@ -283,7 +283,7 @@ async function checkGetPublicKeyX509CertCallback(certType: string): Promise<void
   }
 }
 
-function createX509CrlInstanceCallback(certType: string): Promise<cert.X509CRL> {
+async function createX509CrlInstanceCallback(certType: string): Promise<cert.X509CRL> {
   let certformat: cert.EncodingFormat;
   let encodingData: Uint8Array = new Uint8Array();
 
