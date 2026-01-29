@@ -3670,7 +3670,7 @@ export class KeyboardController {
         data: 'FAILED'
     };
     try {
-      let Height = this.display_info.height * 0.15;
+      let Height = this.display_info.height * 0.15 + 1;
       this.softKeyboardPanel.setImmersiveMode(inputMethodEngine.ImmersiveMode.LIGHT_IMMERSIVE);
       let effect: inputMethodEngine.ImmersiveEffect = {
         gradientHeight: Height,
