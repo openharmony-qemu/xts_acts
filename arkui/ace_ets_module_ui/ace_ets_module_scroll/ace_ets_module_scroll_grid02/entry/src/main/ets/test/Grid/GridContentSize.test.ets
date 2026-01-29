@@ -84,7 +84,7 @@ export default function GridContentSize() {
       await CommonFunc.sleep(SLEEP_TIME);
       let strJson = getInspectorByKey('GridContentWidth');
       console.info('test_grid_getContentSize_002 content: ' + parseInt(JSON.parse(strJson).$attrs.content));
-      console.info('test_grid_getContentSize_002 HEIGHT: ' + HEIGHT);
+      console.info('test_grid_getContentSize_002 WIDTH: ' + WIDTH);
       expect(Math.floor(Math.abs(parseInt(JSON.parse(strJson).$attrs.content) - WIDTH)) <= 1).assertTrue();
       console.info('[test_grid_getContentSize_002] END');
       done();
