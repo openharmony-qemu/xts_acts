@@ -840,20 +840,24 @@ export default function api16CertFuncTestTwoUnit() {
      */
     it('SUB_Security_CertManager_Ukey_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_1200 start`);
-      const context :common.Context = await GlobalContext.getContext();
-      let keyUri: string = "test"
-      let ukeyAuthRequest: certManagerDialog.UkeyAuthRequest = { keyUri: keyUri }
+      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')){
+        const context :common.Context = await GlobalContext.getContext();
+        let keyUri: string = "test"
+        let ukeyAuthRequest: certManagerDialog.UkeyAuthRequest = { keyUri: keyUri }
 
-      try {
-        await certManagerDialog.openUkeyAuthDialog(context, ukeyAuthRequest);
-        expect(null).assertFail();
-      } catch (err:BusinessError) {
-        if (err.code == 801) {
-          done();
-        } else {
-          hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_1200 error.code: ${err.code}, message: ${err.message}`);
-          expect(err.code).assertEqual(29700003);
+        try {
+          await certManagerDialog.openUkeyAuthDialog(context, ukeyAuthRequest);
+          expect(null).assertFail();
+        } catch (err:BusinessError) {
+          if (err.code == 801) {
+            done();
+          } else {
+            hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_1200 error.code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(29700003);
+          }
         }
+      } else {
+        console.info(`SUB_Security_CertManager_Ukey_Static_1200 device not support openUkeyAuthDialog`)
       }
       done();
     });
@@ -868,19 +872,23 @@ export default function api16CertFuncTestTwoUnit() {
      */
     it('SUB_Security_CertManager_Ukey_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_Ukey_Static_1300: started ");
-      const context :common.Context = await GlobalContext.getContext();
-      let certTypes: Array<certManagerDialog.CertificateType> = [
-        certManagerDialog.CertificateType.CREDENTIAL_USER
-      ];
-      let certPurpose: certManager.CertificatePurpose = certManager.CertificatePurpose.PURPOSE_DEFAULT;
-      let authorizeRequest: certManagerDialog.AuthorizeRequest = { certTypes: certTypes, certPurpose: certPurpose };
+      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')){
+        const context :common.Context = await GlobalContext.getContext();
+        let certTypes: Array<certManagerDialog.CertificateType> = [
+          certManagerDialog.CertificateType.CREDENTIAL_USER
+        ];
+        let certPurpose: certManager.CertificatePurpose = certManager.CertificatePurpose.PURPOSE_DEFAULT;
+        let authorizeRequest: certManagerDialog.AuthorizeRequest = { certTypes: certTypes, certPurpose: certPurpose };
 
-      try {
-        await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
-        expect(null).assertFail();
-      } catch (error:BusinessError) {
-        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_1300 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(29700007);
+        try {
+          await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
+          expect(null).assertFail();
+        } catch (error:BusinessError) {
+          hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_1300 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(29700007);
+        }
+      } else {
+        console.info(`SUB_Security_CertManager_Ukey_Static_1300 device not support openAuthorizeDialog`)
       }
       done();
     });
