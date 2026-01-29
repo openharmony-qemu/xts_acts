@@ -41,6 +41,7 @@ import CameraManagerCreateVideoOutputTest from './camera/CameraManagerCreateVide
 import CameraManagerGetSupportedOutputCapabilityTest from './camera/CameraManagerGetSupportedOutputCapabilityTest.test';
 import createCameraInput from './camera/CameraManagerCreateCameraInputTest.test';
 
+
 export default function testsuite() {
   CameraSessionFlashSuppTest();
   cameraSetFocusModeTest();
