@@ -443,9 +443,9 @@ export default function collectionsAddTest1() {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.PARSE_AS_BIGINT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.OBJECT,
       }
-      let jsonText = '{"big":112233445566778898}';
+      let jsonText = '{'big':112233445566778898}';
       let obj = ArkTSUtils.ASON.parse(jsonText, undefined, options) as lang.ISendable;
-      expect((obj as object)?.["big"]).assertEqual(112233445566778898n);
+      expect((obj as object)?.['big']).assertEqual(112233445566778898n);
       done();
     })
 
@@ -473,9 +473,9 @@ export default function collectionsAddTest1() {
      * @tc.level  LEVEL0
      */
     it('ASONTestClass003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let jsonText = '{"number":123}';
+      let jsonText = '{'number':123}';
       let obj = ArkTSUtils.ASON.parse(jsonText) as lang.ISendable;
-      expect((obj as object)?.["number"]).assertEqual(123);
+      expect((obj as object)?.['number']).assertEqual(123);
       done();
     })
 
@@ -488,9 +488,9 @@ export default function collectionsAddTest1() {
      * @tc.level  LEVEL0
      */
     it('ASONTestClass004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let jsonText = '{"string":"testASON"}';
+      let jsonText = '{'string':'testASON'}';
       let obj = ArkTSUtils.ASON.parse(jsonText) as lang.ISendable;
-      expect((obj as object)?.["string"]).assertEqual("testASON");
+      expect((obj as object)?.['string']).assertEqual('testASON');
       done();
     })
 
@@ -503,9 +503,9 @@ export default function collectionsAddTest1() {
      * @tc.level  LEVEL1
      */
     it('ASONTestClass005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let jsonText = '"testASON"';
+      let jsonText = ''testASON'';
       let obj = ArkTSUtils.ASON.parse(jsonText) as lang.ISendable;
-      expect(obj).assertEqual("testASON");
+      expect(obj).assertEqual('testASON');
       done();
     })
 
@@ -533,9 +533,9 @@ export default function collectionsAddTest1() {
      * @tc.level  LEVEL1
      */
     it('ASONTestClass007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let jsonText = '{"arr":[1,3,5]}';
+      let jsonText = '{'arr':[1,3,5]}';
       let obj = ArkTSUtils.ASON.parse(jsonText) as lang.ISendable;
-      let arr : collections.Array<number> = (obj as object)?.["arr"];
+      let arr : collections.Array<number> = (obj as object)?.['arr'];
       expect(arr.at(1)).assertEqual(3);
       done();
     })
@@ -581,7 +581,7 @@ export default function collectionsAddTest1() {
     it('ASONTestClass010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let jsonText = '{}';
       let obj = ArkTSUtils.ASON.parse(jsonText);
-      expect(typeof obj).assertEqual("object");
+      expect(typeof obj).assertEqual('object');
       done();
     })
 
@@ -594,9 +594,9 @@ export default function collectionsAddTest1() {
      * @tc.level  LEVEL1
      */
     it('ASONTestClass011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let jsonText = '{"123":"123"}';
+      let jsonText = '{'123':'123'}';
       let obj = ArkTSUtils.ASON.parse(jsonText);
-      expect((obj as object)?.["123"]).assertEqual("123");
+      expect((obj as object)?.['123']).assertEqual('123');
       done();
     })
 
@@ -613,9 +613,9 @@ export default function collectionsAddTest1() {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.PARSE_AS_BIGINT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP,
       }
-      let jsonText = '{"big":112233445566778898}';
+      let jsonText = '{'big':112233445566778898}';
       let map = ArkTSUtils.ASON.parse(jsonText, undefined, options) as collections.Map<string,bigint>;
-      expect(map.get("big")).assertEqual(112233445566778898n);
+      expect(map.get('big')).assertEqual(112233445566778898n);
       done();
     })
 
@@ -634,7 +634,7 @@ export default function collectionsAddTest1() {
       }
       let jsonText = '{}';
       let map = ArkTSUtils.ASON.parse(jsonText, undefined, options);
-      expect(typeof map).assertEqual("object");
+      expect(typeof map).assertEqual('object');
       done();
     })
 
@@ -651,10 +651,10 @@ export default function collectionsAddTest1() {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.DEFAULT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP,
       }
-      let jsonText = '{"feature":{"arr":[1,3,5]}}';
-      let map = {"feature":{"arr":[1,3,5]}};
-      expect(typeof map.get("feature")).assertEqual("object");
-      expect(map.get("feature")?.get("arr")?.at(1)).assertEqual(3);
+      let jsonText = '{'feature':{'arr':[1,3,5]}}';
+      let map = {'feature':{'arr':[1,3,5]}};
+      expect(typeof map.get('feature')).assertEqual('object');
+      expect(map.get('feature')?.get('arr')?.at(1)).assertEqual(3);
       done();
     })
 
@@ -675,7 +675,7 @@ export default function collectionsAddTest1() {
         let jsonText = '{';
         ArkTSUtils.ASON.parse(jsonText, undefined, options);
       } catch (err) {
-        expect(err.message).assertEqual("Unexpected MAP Prop in JSON");
+        expect(err.message).assertEqual('Unexpected MAP Prop in JSON');
       }
       done();
     })
@@ -697,7 +697,7 @@ export default function collectionsAddTest1() {
         let jsonText = '{';
         ArkTSUtils.ASON.parse(jsonText, undefined, options);
       } catch (err) {
-        expect(err.message).assertEqual("Unexpected Object Prop in JSON");
+        expect(err.message).assertEqual('Unexpected Object Prop in JSON');
       }
       done();
     })
@@ -716,10 +716,10 @@ export default function collectionsAddTest1() {
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP,
       }
       try {
-        let jsonText = '{"error"}';
+        let jsonText = '{'error'}';
         ArkTSUtils.ASON.parse(jsonText, undefined, options);
       } catch (err) {
-        expect(err.message).assertEqual("Unexpected MAP in JSON");
+        expect(err.message).assertEqual('Unexpected MAP in JSON');
       }
       done();
     })
@@ -738,10 +738,10 @@ export default function collectionsAddTest1() {
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.OBJECT,
       }
       try {
-        let jsonText = '{"error"}';
+        let jsonText = '{'error'}';
         ArkTSUtils.ASON.parse(jsonText, undefined, options);
       } catch (err) {
-        expect(err.message).assertEqual("Unexpected Object in JSON");
+        expect(err.message).assertEqual('Unexpected Object in JSON');
       }
       done();
     })
@@ -757,7 +757,7 @@ export default function collectionsAddTest1() {
     it('ASONTestClass019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let obj = 1122;
       let str = ArkTSUtils.ASON.stringify(obj);
-      expect(str).assertEqual("1122");
+      expect(str).assertEqual('1122');
       done();
     })
 
@@ -770,9 +770,9 @@ export default function collectionsAddTest1() {
      * @tc.level  LEVEL1
      */
     it('ASONTestClass020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let obj = "test ASON";
+      let obj = 'test ASON';
       let str = ArkTSUtils.ASON.stringify(obj);
-      expect(str).assertEqual('"test ASON"');
+      expect(str).assertEqual(''test ASON'');
       done();
     })
 
@@ -787,7 +787,7 @@ export default function collectionsAddTest1() {
     it('ASONTestClass021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let obj = true;
       let str = ArkTSUtils.ASON.stringify(obj);
-      expect(str).assertEqual("true");
+      expect(str).assertEqual('true');
       done();
     })
 
@@ -802,7 +802,7 @@ export default function collectionsAddTest1() {
     it('ASONTestClass022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let obj = false;
       let str = ArkTSUtils.ASON.stringify(obj);
-      expect(str).assertEqual("false");
+      expect(str).assertEqual('false');
       done();
     })
 
@@ -817,7 +817,7 @@ export default function collectionsAddTest1() {
     it('ASONTestClass023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let obj = null;
       let str = ArkTSUtils.ASON.stringify(obj);
-      expect(str).assertEqual("null");
+      expect(str).assertEqual('null');
       done();
     })
 
@@ -832,7 +832,7 @@ export default function collectionsAddTest1() {
     it('ASONTestClass024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let obj = new collections.Array<number>(1, 3, 5);
       let str = ArkTSUtils.ASON.stringify(obj);
-      expect(str).assertEqual("[1,3,5]");
+      expect(str).assertEqual('[1,3,5]');
       done();
     })
 
@@ -845,10 +845,10 @@ export default function collectionsAddTest1() {
      * @tc.level  LEVEL1
      */
     it('ASONTestClass025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let jsonText = '{"string":"testASON"}';
+      let jsonText = '{'string':'testASON'}';
       let obj = ArkTSUtils.ASON.parse(jsonText) as lang.ISendable;
       let str = ArkTSUtils.ASON.stringify(obj);
-      expect(str).assertEqual('{"string":"testASON"}');
+      expect(str).assertEqual('{'string':'testASON'}');
       done();
     })
 
@@ -896,10 +896,10 @@ export default function collectionsAddTest1() {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.PARSE_AS_BIGINT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.OBJECT,
       }
-      let jsonText = '{"zerodeci1":0.0000123,"zerodeci2":0.4799123,"zerodeci3":0.7777334477383838389929292922,"zerodeci4":0.0000000000000123}';
+      let jsonText = '{'zerodeci1':0.0000123,'zerodeci2':0.4799123,'zerodeci3':0.7777334477383838389929292922,'zerodeci4':0.0000000000000123}';
       let obj = ArkTSUtils.ASON.parse(jsonText, undefined, options) as lang.ISendable;
       let str = ArkTSUtils.ASON.stringify(obj);
-      expect(str).assertEqual('{"zerodeci1":0.0000123,"zerodeci2":0.4799123,"zerodeci3":0.7777334477383838,"zerodeci4":1.23e-14}');
+      expect(str).assertEqual('{'zerodeci1':0.0000123,'zerodeci2':0.4799123,'zerodeci3':0.7777334477383838,'zerodeci4':1.23e-14}');
       done();
     })
 
@@ -916,10 +916,10 @@ export default function collectionsAddTest1() {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.DEFAULT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.OBJECT,
       }
-      let jsonText = '{"feature":{"arr":[1,3,5]}}';
+      let jsonText = '{'feature':{'arr':[1,3,5]}}';
       let obj = ArkTSUtils.ASON.parse(jsonText, undefined, options) as lang.ISendable;
       let str = ArkTSUtils.ASON.stringify(obj);
-      expect(str).assertEqual('{"feature":{"arr":[1,3,5]}}');
+      expect(str).assertEqual('{'feature':{'arr':[1,3,5]}}');
       done();
     })
 
@@ -932,14 +932,14 @@ export default function collectionsAddTest1() {
      * @tc.level  LEVEL1
      */
     it('ASONTestClass030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let jsonText = '{"text":"ASON support MAP Test Start","largeNumber":112233445566778899,"people":{"name":"Mary","sex":"1","height":"165"}}';
+      let jsonText = '{'text':'ASON support MAP Test Start','largeNumber':112233445566778899,'people':{'name':'Mary','sex':'1','height':'165'}}';
       let options : ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.PARSE_AS_BIGINT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP,
       }
       let map = ArkTSUtils.ASON.parse(jsonText, undefined, options);
       let output = ArkTSUtils.ASON.stringify(map);
-      expect(output).assertEqual('{"text":"ASON support MAP Test Start","largeNumber":112233445566778899,"people":{"name":"Mary","sex":"1","height":"165"}}');
+      expect(output).assertEqual('{'text':'ASON support MAP Test Start','largeNumber':112233445566778899,'people':{'name':'Mary','sex':'1','height':'165'}}');
       done();
     })
 
@@ -952,14 +952,14 @@ export default function collectionsAddTest1() {
      * @tc.level  LEVEL1
      */
     it('ASONTestClass031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let jsonText = '{"args1":true,"args2":false,"args3":null}';
+      let jsonText = '{'args1':true,'args2':false,'args3':null}';
       let options : ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.PARSE_AS_BIGINT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP,
       }
       let map = ArkTSUtils.ASON.parse(jsonText, undefined, options);
       let output = ArkTSUtils.ASON.stringify(map);
-      expect(output).assertEqual('{"args1":true,"args2":false,"args3":null}');
+      expect(output).assertEqual('{'args1':true,'args2':false,'args3':null}');
       done();
     })
 
@@ -972,14 +972,14 @@ export default function collectionsAddTest1() {
      * @tc.level  LEVEL1
      */
     it('ASONTestClass032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let jsonText = '{"people":{"name":"Mary","sex":"1","height":165,"args":{"arr":[1,2,3],"check":true,"num":null}}}';
+      let jsonText = '{'people':{'name':'Mary','sex':'1','height':165,'args':{'arr':[1,2,3],'check':true,'num':null}}}';
       let options : ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.PARSE_AS_BIGINT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP,
       }
       let map = ArkTSUtils.ASON.parse(jsonText, undefined, options);
       let output = ArkTSUtils.ASON.stringify(map);
-      expect(output).assertEqual('{"people":{"name":"Mary","sex":"1","height":165,"args":{"arr":[1,2,3],"check":true,"num":null}}}');
+      expect(output).assertEqual('{'people':{'name':'Mary','sex':'1','height':165,'args':{'arr':[1,2,3],'check':true,'num':null}}}');
       done();
     })
 
@@ -1047,14 +1047,14 @@ export default function collectionsAddTest1() {
      */
     it('ASONTestClass036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let arr = new collections.Array<string>();
-      arr.push("a", "b", "c");
+      arr.push('a', 'b', 'c');
       let sendableObj = new SendableTestClass(arr);
       let set = new collections.Set<SendableTestClass>();
       set.add(sendableObj);
       let map = new collections.Map<string, collections.Set<SendableTestClass>>();
-      map.set("set", set);
+      map.set('set', set);
       let output = ArkTSUtils.ASON.stringify(map);
-      expect(output).assertEqual('{"set":[{"arr":["a","b","c"]}]}');
+      expect(output).assertEqual('{'set':[{'arr':['a','b','c']}]}');
       done();
     })
 
@@ -1067,19 +1067,19 @@ export default function collectionsAddTest1() {
      * @tc.level  LEVEL1
      */
     it('ASONTestClass037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let arr = ["a", "b", "c"];
-      arr.push("a", "b", "c");
+      let arr = ['a', 'b', 'c'];
+      arr.push('a', 'b', 'c');
       let obj = new NormalTestClass(arr);
       let set = new Set<Object>();
       set.add(obj);
       let map = new Map<string, Set<Object>>();
-      map.set("set", set);
+      map.set('set', set);
       let hashSet = new HashSet<Object>();
       hashSet.add(map);
       let hashMap = new HashMap<string, HashSet<Object>>();
-      hashMap.set("hashSet", hashSet);
+      hashMap.set('hashSet', hashSet);
       let output = ArkTSUtils.ASON.stringify(hashMap);
-      expect(output).assertEqual('{"hashSet":[{"set":[{"arr":["a","b","c"]}]}]}');
+      expect(output).assertEqual('{'hashSet':[{'set':[{'arr':['a','b','c']}]}]}');
       done();
     })
 
@@ -1096,9 +1096,9 @@ export default function collectionsAddTest1() {
       let set = new Set<Object>();
       let hashMap = new HashMap<string, Object>();
       let hashSet = new HashSet<Object>();
-      map.set("set", set);
+      map.set('set', set);
       set.add(hashMap);
-      hashMap.set("hashSet", hashSet);
+      hashMap.set('hashSet', hashSet);
       hashSet.add(map);
       try {
         ArkTSUtils.ASON.stringify(map);
@@ -1123,7 +1123,7 @@ export default function collectionsAddTest1() {
       map.set(1, 1);
       map.set(true, true);
       let str = ArkTSUtils.ASON.stringify(map);
-      expect(str).assertEqual('{"1":1,"true":true}');
+      expect(str).assertEqual('{'1':1,'true':true}');
       done();
     })
 
@@ -1142,7 +1142,7 @@ export default function collectionsAddTest1() {
       map.set(1, 1);
       map.set(true, true);
       let str = ArkTSUtils.ASON.stringify(map);
-      expect(str).assertEqual('{"1":1,"true":true}');
+      expect(str).assertEqual('{'1':1,'true':true}');
       done();
     })
 
@@ -1195,12 +1195,12 @@ export default function collectionsAddTest1() {
      it('ASONTestClass043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let map = new Map<string | null | number | boolean | undefined, string | null | number | boolean | undefined>();
       map.set('a1', 1);
-      map.set(undefined, "a2");
+      map.set(undefined, 'a2');
       map.set(null, undefined);
       map.set(undefined, undefined);
       map.set(undefined, null);
       let str = ArkTSUtils.ASON.stringify(map);
-      expect(str).assertEqual('{'a1':1,"undefined":null}');
+      expect(str).assertEqual('{'a1':1,'undefined':null}');
       done();
     })
 
@@ -1215,12 +1215,12 @@ export default function collectionsAddTest1() {
     it('ASONTestClass044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let map = new collections.Map<string>();
       map.set('a1', 1);
-      map.set(undefined, "a2");
+      map.set(undefined, 'a2');
       map.set(null, undefined);
       map.set(undefined, undefined);
       map.set(undefined, null);
       let str = ArkTSUtils.ASON.stringify(map);
-      expect(str).assertEqual('{'a1':1,"undefined":null}');
+      expect(str).assertEqual('{'a1':1,'undefined':null}');
       done();
     })
 
