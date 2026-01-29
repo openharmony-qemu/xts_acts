@@ -3051,9 +3051,13 @@ static napi_value testOH_i18n_GetNextStartFromTimeArrayTimeZoneRules_0500(napi_e
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
     TimeArrayTimeZoneRule rule = rules.timeArrayRules[0];
     TimeZoneRuleQuery query;
+    query.base = 527014500000;
+    query.prevRawOffset = 28800000;
+    query.prevDSTSavings = 0;
+    query.inclusive = false;
     errCode = OH_i18n_GetNextStartFromTimeArrayTimeZoneRule(&rule, &query);
     napi_value nValue;
-    std::string resultStr = std::to_string((int)query.result)+"," + std::to_string((int)errCode);
+    std::string resultStr = std::to_string((int)query.result) + "," + std::to_string((int)errCode);
     napi_create_string_utf8(env, resultStr.c_str(), NAPI_AUTO_LENGTH, &nValue);
     return nValue;
 }
@@ -3064,9 +3068,13 @@ static napi_value testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRules_0600(napi_e
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
     TimeArrayTimeZoneRule rule = rules.timeArrayRules[0];
     TimeZoneRuleQuery query;
+    query.base = 527014500000;
+    query.prevRawOffset = 28800000;
+    query.prevDSTSavings = 0;
+    query.inclusive = false;
     errCode = OH_i18n_GetPrevStartFromTimeArrayTimeZoneRule(&rule, &query);
     napi_value nValue;
-    std::string resultStr = std::to_string((int)query.result)+"," + std::to_string((int)errCode);
+    std::string resultStr = std::to_string((int)query.result) + "," + std::to_string((int)errCode);
     napi_create_string_utf8(env, resultStr.c_str(), NAPI_AUTO_LENGTH, &nValue);
     return nValue;
 }
