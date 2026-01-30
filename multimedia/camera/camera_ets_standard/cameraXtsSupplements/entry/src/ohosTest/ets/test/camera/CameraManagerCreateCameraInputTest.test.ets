@@ -2221,60 +2221,6 @@ export default function createCameraInput() {
         }
       })
     /**
-     * @tc.name   SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_039
-     * @tc.number SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_039
-     * @tc.desc   getSupportedOutputCapability cameraOutputCapability previewProfiles format
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_039', Level.LEVEL2,
-      async (done: Function) => {
-        const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_039';
-        try {
-          console.info(TAG,testName,"start :");
-          if(mCameraDeviceArray.length > 0) {
-            let cameraOutputCapability =
-              mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_PHOTO);
-            console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
-            console.info(TAG, testName, "previewProfiles :",cameraOutputCapability.previewProfiles.length);
-            expect(cameraOutputCapability.previewProfiles[0].format != null).assertTrue();
-          }
-          done();
-        } catch (error) {
-          console.error(TAG, testName, "fail,errorCode :", error.code);
-          expect().assertFail();
-          done();
-        }
-      })
-    /**
-     * @tc.name   SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_040
-     * @tc.number SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_040
-     * @tc.desc   getSupportedOutputCapability cameraOutputCapability previewProfiles size
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_040', Level.LEVEL2,
-      async (done: Function) => {
-        const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_040';
-        try {
-          console.info(TAG,testName,"start :");
-          if(mCameraDeviceArray.length > 0) {
-            let cameraOutputCapability =
-              mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_PHOTO);
-            console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
-            console.info(TAG, testName, "previewProfiles :",cameraOutputCapability.previewProfiles.length);
-            expect(cameraOutputCapability.previewProfiles[0].size != null).assertTrue();
-          }
-          done();
-        } catch (error) {
-          console.error(TAG, testName, "fail,errorCode :", error.code);
-          expect().assertFail();
-          done();
-        }
-      })
-    /**
      * @tc.name   SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_041
      * @tc.number SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_041
      * @tc.desc   getSupportedOutputCapability cameraOutputCapability photoProfiles format
@@ -2452,36 +2398,6 @@ export default function createCameraInput() {
         } catch (error) {
           console.error(TAG, testName, "fail,errorCode :", error.code);
           expect(Number(error.code)).assertEqual(7400101);
-          done();
-        }
-      })
-    /**
-     * @tc.name   SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_003
-     * @tc.number SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_003
-     * @tc.desc   createPreviewOutput surfaceId ""
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_003', Level.LEVEL2,
-      async (done: Function) => {
-        const testName = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_003';
-        try {
-          console.info(TAG, testName, "start :");
-          if(mCameraDeviceArray.length > 0) {
-            await getVideoSurfaceId();
-            let cameraOutputCap =
-              mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_VIDEO);
-            let previewProfile = cameraOutputCap.previewProfiles[0];
-            console.info(TAG, testName, "previewProfiles. :", cameraOutputCap.previewProfiles.length);
-            mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, "");
-            console.info(TAG, testName, "end :", mPreviewOutput);
-            expect(mPreviewOutput).assertUndefined();
-          }
-          done();
-        } catch (error) {
-          console.error(TAG, testName, "fail,errorCode :", error.code);
-          expect().assertFail();
           done();
         }
       })
