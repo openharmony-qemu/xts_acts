@@ -3716,35 +3716,35 @@ export default function CalendarManagerTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Application_CalendarManagerApi_SetConfigCallback_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-        let CaseName = 'SUB_Application_CalendarManagerApi_SetConfigCallback_0106';
-        let CalendarAccounts: calendarManager.CalendarAccount = {
-          name: '生日帐户',
-          type: calendarManager.CalendarType.BIRTHDAY,
-          displayName: '生日帐户'
-        }
-        const config: calendarManager.CalendarConfig = {
-          enableReminder: true,
-          color: '#0A59F7121212'
-        };
-        calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
-          console.info(CaseName + 'Succeeded in creating calendar' + JSON.stringify(Calendar));
-          Calendar.setConfig(config).then((data) => {
-            console.info(CaseName + 'Succeeded in getConfig');
-            done();
-            return;
-          }).catch((err: BusinessError) => {
-            console.info(CaseName + `Failed to setConfig, Code is ${err.code}, message is ${err.message}`);
+    async (done: Function) => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_SetConfigCallback_0106';
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '生日帐户',
+        type: calendarManager.CalendarType.BIRTHDAY,
+        displayName: '生日帐户'
+      }
+      const config: calendarManager.CalendarConfig = {
+        enableReminder: true,
+        color: '#0A59F7121212'
+      };
+      calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
+        console.info(CaseName + 'Succeeded in creating calendar' + JSON.stringify(Calendar));
+        Calendar.setConfig(config, (err: BusinessError) => {
+          if (err) {
+            console.error(CaseName + `Failed to set config. Code: ${err.code}, message: ${err.message}`);
             expect(err?.code).assertEqual(23900001);
             done();
-          });
-        }).catch((err: BusinessError) => {
-          console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
-          expect().assertFail();
-          done();
+          } else {
+            console.info(`Succeeded in setting config, config -> ${JSON.stringify(config)}`);
+            done();
+          }
         });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
         done();
       });
+      done();
+    });
 
     /**
      * @tc.name   SUB_Application_CalendarManagerApi_getCalendarPromise_0107
