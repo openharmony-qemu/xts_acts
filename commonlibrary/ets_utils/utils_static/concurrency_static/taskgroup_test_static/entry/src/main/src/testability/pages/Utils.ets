@@ -50,7 +50,7 @@ export async function testUI(): Promise<string> {
   })
 }
 
-export function testUI1(): Promise<string> {
+export async function testUI1(): Promise<string> {
   return new Promise<string>((re, je) => {
     await testUISec1()
     re('')

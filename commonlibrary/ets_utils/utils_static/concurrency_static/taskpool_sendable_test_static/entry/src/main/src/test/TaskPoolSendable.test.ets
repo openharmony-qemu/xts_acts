@@ -62,7 +62,7 @@ function AddFunc2(sendAble: MyClass2): Promise<Array<Number>> {
   });
 }
 
-function sendableAFunc(sendAble: SendableA): Promise<Number> {
+async function sendableAFunc(sendAble: SendableA): Promise<Number> {
   sendAble.state = sendAble.state + 20;
   let task1: taskpool.Task = new taskpool.Task(sendableAFunc1, sendAble);
   try {
