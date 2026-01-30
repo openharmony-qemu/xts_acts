@@ -1317,25 +1317,25 @@ export default function NoPermissionTest() {
     });
 
         /**
-     * @tc.name   testTelephonyContactsqueryCount2000
-     * @tc.number SUB_Telephony_Contactquery_2000
-     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.name   testTelephonyContactqueryContactsCount2000
+     * @tc.number SUB_Telephony_Contact_queryContactsCount_2000
+     * @tc.desc   queryContactsCount and use Promise method as an asynchronous method
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTelephonyContactsqueryCount2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = "testTelephonyContactsqueryCount2000";
+    it('testTelephonyContactqueryContactsCount2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = "testTelephonyContactqueryContactsCount2000";
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       let promise = contact.queryContactsCount(context);
       await promise.then((data) => {
         console.log(`${caseName} fail: data->${JSON.stringify(data)}`);
-        except().assertFail();
+        expect().assertFail();
         done();
       }).catch((err: BusinessError) => {
         console.error(`${caseName} error: code 201->${JSON.stringify(err)}`);
-        except(err.code === 201).assertTrue();
+        expect(err.code === 201).assertTrue();
         done();
       });
       console.info(`${caseName} test end `);
