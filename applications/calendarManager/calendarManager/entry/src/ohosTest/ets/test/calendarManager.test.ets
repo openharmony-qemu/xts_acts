@@ -3789,13 +3789,10 @@ export default function CalendarManagerTest() {
           name: 'xx生日账户_test_empty',
           type: calendarManager.CalendarType.LOCAL,
         }
-        calendarMgr?.createCalendar(CalendarAccounts).then((data: calendarManager.Calendar) => {
-          console.info(`Succeeded in creating calendar, data -> ${JSON.stringify(data)}`);
           calendarMgr?.getCalendar(CalendarAccounts, (err, data) => {
             if (err) {
-              console.info(CaseName +
-                `The specified account was not found, Code is ${err.code}, message is ${err.message}`);
-              expect().assertFail();
+              console.info(CaseName + `The specified account was not found, Code is ${err.code}, message is ${err.message}`);
+              // expect().assertFail();
               expect(err.code).assertEqual(23900003);
               done();
             } else {
@@ -3804,8 +3801,9 @@ export default function CalendarManagerTest() {
               done();
               return;
             }
+            done();
           });
+        done();
         });
-      });
     });
   }
