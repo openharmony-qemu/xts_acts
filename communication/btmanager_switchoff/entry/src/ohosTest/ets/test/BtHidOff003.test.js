@@ -23,7 +23,7 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
 let hidDevice = hid.createHidDeviceProfile();
 let closeUnsupport = false;
 function sleep(delay) {
-    return new Promise(resovle => setTimeout(resovle, delay));
+    return new Promise(resolve => setTimeout(resolve, delay));
 }
 function onReceiveEvent_boolean(data){
     console.info('[bluetooth_js]hid registerHidDevice result'+ JSON.stringify(data));
@@ -73,7 +73,7 @@ async function tryToEnableBt() {
         console.info('[bluetooth_js] bt turn on:'+ JSON.stringify(sta));
         break;
       case 3:
-        btAccess.enableBluetooth();
+        bluetoothManager.enableBluetooth();
         await clickTheWindow(OPEN_BT_TEXT);
         let sta2 = bluetoothManager.getState();
         console.info('[bluetooth_js] bt turning off and enableBt:'+ JSON.stringify(sta2));
@@ -81,7 +81,7 @@ async function tryToEnableBt() {
       default:
         console.info('[bluetooth_js] state undefined');
     }
-  }
+}
 
 async function openPhone() {
     try{
@@ -94,6 +94,8 @@ async function openPhone() {
         await drivers.delayMs(10000);
     } catch (error) {
         console.info('[bluetooth_js] driver error info:'+ error);
+    } finally{
+        driver.release();
     }
 }
 
@@ -123,7 +125,7 @@ export default function btHidoff003Test() {
             await clickTheWindow(PERMISSION_TEXT);
             gattServer = ble.createGattServer();
             gattClient = ble.createGattClientDevice("11:22:33:44:55:66");
-            BleScanner = ble.createBleScanner();
+
             console.info('beforeAll end');
             done();
         })
@@ -145,6 +147,8 @@ export default function btHidoff003Test() {
         })
         afterAll(async function (done) {
             console.info('afterAll start')
+            gattServer.destroy();
+            gattClient.destroy();
             try {
                 await tryToEnableBt();
             } catch (error) {
