@@ -21,60 +21,25 @@ const PERMISSION_DENIED_CODE = 201;
 let PERMISSION_TEXT:string = "允许";
 let OPEN_BT_TEXT:string = "开启";
 let hidDevice: hid.HidDeviceProfile;
-
-function sleep(delay : number) : Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, delay))
-}
-function onReceiveEvent_void(){
-    console.info('[bluetooth_js] BLEscan device result_viod');
-}
 function onReceiveEvent_boolean(data : boolean){
     console.info('[bluetooth_js]hid registerHidDevice result'+ JSON.stringify(data));
     expect(data).assertTrue();
 }
-function onReceiveEvent_GetReportData(data : hid.GetReportData){
-    console.info('[bluetooth_js]hid on/offGetReport result'+ JSON.stringify(data));
-    console.info('[bluetooth_js]hid on/offGetReport result'+ JSON.stringify(data.type));
-    console.info('[bluetooth_js]hid on/offGetReport result'+ JSON.stringify(data.id));
-    console.info('[bluetooth_js]hid on/offGetReport result'+ JSON.stringify(data.bufferSize));
-    expect(data.type).not().assertUndefined();
-    expect(data.id).not().assertUndefined();
-    expect(data.bufferSize).not().assertUndefined();
-}
-function onReceiveEvent_SetReportData(data : hid.SetReportData){
-    console.info('[bluetooth_js]hid on/offSetReportData device result_viod'+ JSON.stringify(data));
-    console.info('[bluetooth_js]hid on/offSetReportData device result_viod'+ JSON.stringify(data));
-    console.info('[bluetooth_js]hid on/offSetReportData device result_viod'+ JSON.stringify(data));
-    console.info('[bluetooth_js]hid on/offSetReportData device result_viod'+ JSON.stringify(data));
-}
-function onReceiveEvent_InterruptData(data : hid.InterruptData){
-    console.info('[bluetooth_js]hid on/offInterruptDataReceived device result_viod'+ JSON.stringify(data));
-}	
-function onReceiveEvent_ProtocolData(data : hid.ProtocolData){
-    console.info('[bluetooth_js]hid on/offSetProtocol device result_viod'+ JSON.stringify(data));
-}
 export default function btHidNopUiJsunit() {
   describe('btHidNopUiJsunit', () => {
-
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async (done : Function) =>  {
       hidDevice = hid.createHidDeviceProfile();
       console.info('[bluetooth_js]createHidDeviceProfile success'+ JSON.stringify(hidDevice));
       done();
     });
     beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
+      console.info('beforeEach end');
     });
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
+      console.info('afterEach end');
     });
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+      console.info('afterAll end');
     });
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOP_0100
@@ -111,7 +76,6 @@ export default function btHidNopUiJsunit() {
             "delayVariation": -1,
           };
           let outqos: hid.HidDeviceQos = {};
-          hidDevice = hid.createHidDeviceProfile();
           hidDevice.registerHidDevice(sdp, inqos, outqos, onReceiveEvent_boolean);
           console.info("[bluetooth_js]hid registerHidDevice is success ");
           expect().assertFail();
@@ -187,7 +151,7 @@ export default function btHidNopUiJsunit() {
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOP_0500
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOP_0500
-     * @tc.desc   Test sendReport(id: number, reportData: Uint8Array): void;api23.
+     * @tc.desc   Test sendReport: void;api23.201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -200,7 +164,7 @@ export default function btHidNopUiJsunit() {
           console.info("[bluetooth_js]hid sendReport is success ");
           expect().assertFail();
         } catch (error) {
-            console.error(`[bluetooth_js]disconnect  is failed, code is ${error.code},message is ${error.message}`);
+            console.error(`[bluetooth_js]sendReport  is failed, code is ${error.code},message is ${error.message}`);
             expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
         }
         done();
@@ -208,7 +172,7 @@ export default function btHidNopUiJsunit() {
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOP_0600
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOP_0600
-     * @tc.desc   Test replyReport(type: ReportType, id: number, reportData: Uint8Array): void;api23.
+     * @tc.desc   Test replyReport: void;api23. 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -222,7 +186,7 @@ export default function btHidNopUiJsunit() {
           console.info("[bluetooth_js]hid replyReport is success ");
           expect().assertFail();
         } catch (error) {
-            console.error(`[bluetooth_js]disconnect  is failed, code is ${error.code},message is ${error.message}`);
+            console.error(`[bluetooth_js] replyReport is failed, code is ${error.code},message is ${error.message}`);
             expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
         }
         done();
@@ -230,7 +194,7 @@ export default function btHidNopUiJsunit() {
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOP_0700
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOP_0700
-     * @tc.desc   Test reportError(error: ErrorReason): void;api23.
+     * @tc.desc   Test reportError void;api23. 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -242,7 +206,7 @@ export default function btHidNopUiJsunit() {
           console.info("[bluetooth_js]hid reportError is success ");
           expect().assertFail();
         } catch (error) {
-            console.error(`[bluetooth_js]disconnect  is failed, code is ${error.code},message is ${error.message}`);
+            console.error(`[bluetooth_js]reportError is failed, code is ${error.code},message is ${error.message}`);
             expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
         }
         done();
