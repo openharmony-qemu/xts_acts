@@ -13,7 +13,8 @@
 * limitations under the License.
 */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { sleep } from '../../testability/pages/Utils';
 
 function createSymbol(description?: string): SymbolLike {
   return {
@@ -34,8 +35,8 @@ export default function IndexedCollections09Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
+    beforeEach(async () => {
+      await sleep(30);
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
@@ -1267,7 +1268,7 @@ export default function IndexedCollections09Test() {
         console.log(TAG + ' start');
 
         const arr53: (number | undefined)[] = [1, , 3];
-        const index53: number = arr53.findIndex( num => typeof num !== 'number');
+        const index53: number = arr53.findIndex(num => typeof num !== 'number');
         const result53: boolean = index53 === 1;
 
         expect(result53).assertTrue();

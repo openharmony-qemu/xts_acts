@@ -13,7 +13,8 @@
 * limitations under the License.
 */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { sleep } from '../../testability/pages/Utils';
 
 export default function IndexedCollections17Test() {
   describe('IndexedCollections17Test', () => {
@@ -22,8 +23,8 @@ export default function IndexedCollections17Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
+    beforeEach(async () => {
+      await sleep(30);
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
@@ -1531,7 +1532,7 @@ export default function IndexedCollections17Test() {
       async (done: () => void): Promise<void> => {
         const TAG = 'testArrayBuffer0013';
         console.log(TAG + ' start');
-        try{
+        try {
           const buffer33: ArrayBuffer = new ArrayBuffer(10);
           const arr33: Int32Array = new Int32Array(buffer33);
           console.log('non-byte-multiple length: ' + arr33.length);

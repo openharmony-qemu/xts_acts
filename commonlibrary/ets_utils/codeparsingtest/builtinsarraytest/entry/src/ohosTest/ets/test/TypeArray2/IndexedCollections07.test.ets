@@ -13,7 +13,8 @@
 * limitations under the License.
 */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach,afterEach,afterAll} from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { sleep } from '../../testability/pages/Utils';
 
 interface UniversalArrayLike {
   "0"?: string | number;
@@ -35,7 +36,7 @@ interface UniversalArrayLike {
   length: number | string;
 }
 
-interface ArrayLikeObject01{
+interface ArrayLikeObject01 {
   index0: string;
   index1: string;
   index2: string;
@@ -61,7 +62,8 @@ export default function IndexedCollections07Test() {
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(30);
       // Presets an action, which is performed before each unit test case starts.
     })
     afterEach(() => {
@@ -84,7 +86,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeLengthConsistency0010";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { "0": 'a', "1": 'b', length: 2 }
+        const likeArr: UniversalArrayLike = { "0": 'a', "1": 'b', length: 2 }
         expect(likeArr.length === 2).assertTrue();
 
         console.log(TAG + ' done');
@@ -105,7 +107,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeLengthConsistency0002";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { "0": 'x', "2": 'y', length: 3 };
+        const likeArr: UniversalArrayLike = { "0": 'x', "2": 'y', length: 3 };
         expect((likeArr.length === 3)).assertTrue();
 
         console.log(TAG + ' done');
@@ -150,7 +152,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeEmptyLength0004";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { length: 0 };
+        const likeArr: UniversalArrayLike = { length: 0 };
         expect((likeArr.length === 0)).assertTrue();
 
         console.log(TAG + ' done');
@@ -171,7 +173,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeStringLength0005";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { "0": 'a', length: '2' };
+        const likeArr: UniversalArrayLike = { "0": 'a', length: '2' };
         expect(typeof likeArr.length !== "number").assertTrue();
 
         console.log(TAG + ' done');
@@ -192,7 +194,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeNegativeLength0006";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { "0": 'a', length: -1 };
+        const likeArr: UniversalArrayLike = { "0": 'a', length: -1 };
         expect((likeArr.length < 0)).assertTrue();
 
         console.log(TAG + ' done');
@@ -213,7 +215,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeIndexAccess0007";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'apple', index1: 'banana', length: 2 };
+        const likeArr: UniversalArrayLike = { index0: 'apple', index1: 'banana', length: 2 };
         expect(likeArr.index0 === 'apple').assertTrue();
 
         console.log(TAG + ' done');
@@ -234,7 +236,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeIndexAccess0008";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'apple', index1: 'banana', length: 2 };
+        const likeArr: UniversalArrayLike = { index0: 'apple', index1: 'banana', length: 2 };
         expect(likeArr.index1 === 'banana').assertTrue();
 
         console.log(TAG + ' done');
@@ -278,7 +280,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeOutOfBounds0010";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'x', index1: 'y', length: 2 };
+        const likeArr: UniversalArrayLike = { index0: 'x', index1: 'y', length: 2 };
         expect((likeArr.index2 === undefined)).assertTrue();
 
         console.log(TAG + ' done');
@@ -299,7 +301,12 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeOutOfBounds0011";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 1, index1: 2, index2: 3, length: 3 };
+        const likeArr: UniversalArrayLike = {
+          index0: 1,
+          index1: 2,
+          index2: 3,
+          length: 3
+        };
         expect((likeArr.index5 === undefined)).assertTrue();
 
         console.log(TAG + ' done');
@@ -320,7 +327,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeNonexistentIndex0012";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'test', length: 1 };
+        const likeArr: UniversalArrayLike = { index0: 'test', length: 1 };
         expect((likeArr.index100 === undefined)).assertTrue();
 
         console.log(TAG + ' done');
@@ -341,7 +348,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeIndexConsistency0013";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index2: 'orange', length: 3 };
+        const likeArr: UniversalArrayLike = { index2: 'orange', length: 3 };
         expect((likeArr.index2 === 'orange')).assertTrue();
 
         console.log(TAG + ' done');
@@ -362,7 +369,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeLengthTruncation0014";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = {
+        const likeArr: UniversalArrayLike = {
           index0: 'a',
           index1: 'b',
           index2: 'c',
@@ -389,7 +396,13 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeLengthTruncationMulti0015";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 10, index1: 20, index2: 30, index3: 40, length: 4 };
+        const likeArr: UniversalArrayLike = {
+          index0: 10,
+          index1: 20,
+          index2: 30,
+          index3: 40,
+          length: 4
+        };
         likeArr.length = 1;
         const isTruncated = likeArr.index1 === undefined && likeArr.index3 === undefined;
         expect(isTruncated).assertFalse();
@@ -412,7 +425,12 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeLengthTruncationAccess0016";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'm', index1: 'n', index2: 'p', length: 3 };
+        const likeArr: UniversalArrayLike = {
+          index0: 'm',
+          index1: 'n',
+          index2: 'p',
+          length: 3
+        };
         likeArr.length = 2;
         const isInaccessible = likeArr.index2 === undefined;
         expect(isInaccessible).assertFalse();
@@ -435,7 +453,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeLengthZero0017";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'a', index1: 'b', length: 2 };
+        const likeArr: UniversalArrayLike = { index0: 'a', index1: 'b', length: 2 };
         likeArr.length = 0;
         expect(likeArr.index0 === undefined && likeArr.index1 === undefined).assertFalse();
 
@@ -457,7 +475,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeLengthExtend0018";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'x', index1: 'y', length: 2 };
+        const likeArr: UniversalArrayLike = { index0: 'x', index1: 'y', length: 2 };
         likeArr.length = 4;
         expect(likeArr.index2 === undefined).assertTrue()
 
@@ -479,7 +497,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeLengthExtendLarge0019";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 5, length: 1 };
+        const likeArr: UniversalArrayLike = { index0: 5, length: 1 };
         likeArr.length = 5;
         expect(likeArr.index3 === undefined).assertTrue();
 
@@ -501,7 +519,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeLengthExtendNoSlots0020";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'a', length: 1 };
+        const likeArr: UniversalArrayLike = { index0: 'a', length: 1 };
         likeArr.length = 3;
         expect(likeArr.index1 === undefined).assertTrue();
 
@@ -523,7 +541,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeLengthExtendAssign0021";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'test', length: 1 };
+        const likeArr: UniversalArrayLike = { index0: 'test', length: 1 };
         likeArr.length = 5;
         likeArr.index4 = 'new';
         expect(likeArr.index4 === 'new').assertTrue();
@@ -546,7 +564,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeLengthExtendConsistency0022";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 1, length: 1 };
+        const likeArr: UniversalArrayLike = { index0: 1, length: 1 };
         likeArr.length = 4;
         likeArr.index3 = 10;
         expect(likeArr.length === 3 + 1).assertTrue();
@@ -569,7 +587,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeNonIntegerLength0023";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'a', index1: 'b', length: 2.5 };
+        const likeArr: UniversalArrayLike = { index0: 'a', index1: 'b', length: 2.5 };
         expect(likeArr.length !== 2).assertTrue();
 
         console.log(TAG + ' done');
@@ -590,7 +608,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeNaNLength0024";
         console.log(TAG + ' start');
 
-        const likeArr: ArrayLikeObject03  = { index0: 'a', length: NaN };
+        const likeArr: ArrayLikeObject03 = { index0: 'a', length: NaN };
         expect(isNaN(likeArr.length)).assertTrue();
 
         console.log(TAG + ' done');
@@ -611,7 +629,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeInfinityLength0025";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'a', length: Infinity };
+        const likeArr: UniversalArrayLike = { index0: 'a', length: Infinity };
         expect(!Number.isInteger(likeArr.length)).assertTrue();
 
         console.log(TAG + ' done');
@@ -632,7 +650,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeNegativeIndex0026";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'x', index1: 'y', length: 2 };
+        const likeArr: UniversalArrayLike = { index0: 'x', index1: 'y', length: 2 };
         expect(likeArr.minus1 === undefined).assertTrue();
 
         console.log(TAG + ' done');
@@ -653,7 +671,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeNonNumericIndex0027";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'a', length: 1 };
+        const likeArr: UniversalArrayLike = { index0: 'a', length: 1 };
         expect(likeArr.demo === undefined).assertTrue();
 
         console.log(TAG + ' done');
@@ -674,7 +692,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeDecimalIndex0028";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index1_5: 'test', length: 2 };
+        const likeArr: UniversalArrayLike = { index1_5: 'test', length: 2 };
         expect(likeArr.length !== 1.5 + 1).assertTrue();
 
         console.log(TAG + ' done');
@@ -695,7 +713,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeDecimalIndexAccess0029";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index1_5: 'value', length: 2 };
+        const likeArr: UniversalArrayLike = { index1_5: 'value', length: 2 };
         expect(likeArr.index1_5 === 'value').assertTrue();
 
         console.log(TAG + ' done');
@@ -716,7 +734,12 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeTruncateReassign0030";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'a', index1: 'b', index2: 'c', length: 3 };
+        const likeArr: UniversalArrayLike = {
+          index0: 'a',
+          index1: 'b',
+          index2: 'c',
+          length: 3
+        };
         likeArr.length = 2;
         likeArr.index2 = 'new c';
         expect(likeArr.index2 === 'new c').assertTrue();
@@ -739,7 +762,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeExtendAssignLength0031";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'x', length: 1 };
+        const likeArr: UniversalArrayLike = { index0: 'x', length: 1 };
         likeArr.length = 3;
         likeArr.index2 = 'z';
         expect(likeArr.length === 3).assertTrue();
@@ -762,7 +785,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeNoIndexProperties0032";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { length: 5 };
+        const likeArr: UniversalArrayLike = { length: 5 };
         expect(likeArr.index3 === undefined).assertTrue();
 
         console.log(TAG + ' done');
@@ -783,7 +806,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeDiscontinuousIndex0033";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'a', index3: 'd', length: 4 };
+        const likeArr: UniversalArrayLike = { index0: 'a', index3: 'd', length: 4 };
         expect(likeArr.index1 === undefined).assertTrue();
 
         console.log(TAG + ' done');
@@ -804,7 +827,12 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeIndexValueMapping0034";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'a', index1: 'b', index2: 'c', length: 3 };
+        const likeArr: UniversalArrayLike = {
+          index0: 'a',
+          index1: 'b',
+          index2: 'c',
+          length: 3
+        };
         expect(likeArr.index2 === 'c').assertTrue();
 
         console.log(TAG + ' done');
@@ -825,7 +853,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeExtendPreserveOriginal0035";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'old', length: 1 };
+        const likeArr: UniversalArrayLike = { index0: 'old', length: 1 };
         likeArr.length = 4;
         expect(likeArr.index0 === 'old').assertTrue();
 
@@ -847,7 +875,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeZeroLength0036";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { length: 0 };
+        const likeArr: UniversalArrayLike = { length: 0 };
         const isAllUndefined = likeArr.index0 === undefined && likeArr.index10 === undefined;
         expect(isAllUndefined).assertTrue();
 
@@ -869,7 +897,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeLargeLength0037";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { length: 100 };
+        const likeArr: UniversalArrayLike = { length: 100 };
         expect(likeArr.index99 === undefined).assertTrue();
 
         console.log(TAG + ' done');
@@ -890,7 +918,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeLengthType0038";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'a', length: 1 };
+        const likeArr: UniversalArrayLike = { index0: 'a', length: 1 };
         likeArr.length = 5;
         expect(typeof likeArr.length === 'number').assertTrue();
 
@@ -898,7 +926,6 @@ export default function IndexedCollections07Test() {
         done();
         console.log(TAG + ' end');
       });
-
 
 
     /**
@@ -914,11 +941,22 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeForEach0001";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'a', index1: 'b', index2: 'c', length: 3 };
+        const likeArr: UniversalArrayLike = {
+          index0: 'a',
+          index1: 'b',
+          index2: 'c',
+          length: 3
+        };
         let count = 0;
-        if (likeArr.index0 !== undefined) count++;
-        if (likeArr.index1 !== undefined) count++;
-        if (likeArr.index2 !== undefined) count++;
+        if (likeArr.index0 !== undefined) {
+          count++;
+        }
+        if (likeArr.index1 !== undefined) {
+          count++;
+        }
+        if (likeArr.index2 !== undefined) {
+          count++;
+        }
 
         expect((count === 3)).assertTrue();
 
@@ -970,12 +1008,26 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeFilter0003";
         console.log(TAG + ' start');
 
-        const likeArr: ArrayLikeObject02  = { index0: 1, index1: 2, index2: 3, index3: 4, length: 4 };
+        const likeArr: ArrayLikeObject02 = {
+          index0: 1,
+          index1: 2,
+          index2: 3,
+          index3: 4,
+          length: 4
+        };
         const evens: number[] = [];
-        if (likeArr.index0 % 2 === 0) evens.push(likeArr.index0);
-        if (likeArr.index1 % 2 === 0) evens.push(likeArr.index1);
-        if (likeArr.index2 % 2 === 0) evens.push(likeArr.index2);
-        if (likeArr.index3 % 2 === 0) evens.push(likeArr.index3);
+        if (likeArr.index0 % 2 === 0) {
+          evens.push(likeArr.index0);
+        }
+        if (likeArr.index1 % 2 === 0) {
+          evens.push(likeArr.index1);
+        }
+        if (likeArr.index2 % 2 === 0) {
+          evens.push(likeArr.index2);
+        }
+        if (likeArr.index3 % 2 === 0) {
+          evens.push(likeArr.index3);
+        }
         const result = evens.join(',') === "2,4";
         expect(result).assertTrue();
 
@@ -997,7 +1049,13 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeSlice0004";
         console.log(TAG + ' start');
 
-        const likeArr: ArrayLikeObject01  = { index0: 'x', index1: 'y', index2: 'z', index3: 'w', length: 4 };
+        const likeArr: ArrayLikeObject01 = {
+          index0: 'x',
+          index1: 'y',
+          index2: 'z',
+          index3: 'w',
+          length: 4
+        };
         const sliced: string[] = [likeArr.index1, likeArr.index2];
         const result = sliced.join(',') === "y,z";
         expect(result).assertTrue();
@@ -1019,7 +1077,12 @@ export default function IndexedCollections07Test() {
       async (done: () => void) => {
         let TAG = "testArrayLikeJoin0005";
         console.log(TAG + ' start');
-        const divs: UniversalArrayLike  = { index0: 'div1', index1: 'div2', index2: 'div3', length: 3 };
+        const divs: UniversalArrayLike = {
+          index0: 'div1',
+          index1: 'div2',
+          index2: 'div3',
+          length: 3
+        };
         if (divs.length >= 3) {
           const joined = [divs.index0, divs.index1, divs.index2].join('-');
           expect((joined === "div1-div2-div3")).assertTrue();
@@ -1045,7 +1108,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeJoinEmpty0006";
         console.log(TAG + ' start');
         try {
-          const likeArr: UniversalArrayLike  = { length: 0 };
+          const likeArr: UniversalArrayLike = { length: 0 };
           //const joined = Array.prototype.join.call(likeArr, '-');
           const joined = "";
           expect((joined === "")).assertTrue();
@@ -1071,7 +1134,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeNoForEach0007";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'a', length: 1 };
+        const likeArr: UniversalArrayLike = { index0: 'a', length: 1 };
         let typeErrorThrown = false;
         try {
           throw new TypeError("likeArr.forEach is not a function");
@@ -1098,7 +1161,7 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikePush0008";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'a', length: 1 };
+        const likeArr: UniversalArrayLike = { index0: 'a', length: 1 };
         likeArr.index1 = 'b';
         likeArr.length = 2;
         expect((likeArr.length === 2 && likeArr.index1 === 'b')).assertTrue();
@@ -1121,12 +1184,17 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeSplice0009";
         console.log(TAG + ' start');
 
-        const likeArr: UniversalArrayLike  = { index0: 'a', index1: 'b', index2: 'c', length: 3 };
+        const likeArr: UniversalArrayLike = {
+          index0: 'a',
+          index1: 'b',
+          index2: 'c',
+          length: 3
+        };
         likeArr.index1 = likeArr.index2;
         likeArr.length = 2;
         const res = likeArr.length === 2 && likeArr.index1 === 'c' && likeArr.index2AfterSplice === undefined;
 
-          expect(res).assertTrue();
+        expect(res).assertTrue();
 
         console.log(TAG + ' done');
         done();
@@ -1146,11 +1214,22 @@ export default function IndexedCollections07Test() {
         let TAG = "testArrayLikeForEachNodeList0010";
         console.log(TAG + ' start');
 
-        const divs: UniversalArrayLike  = { index0: 'div1', index1: 'div2', index2: 'div3', length: 3 };
+        const divs: UniversalArrayLike = {
+          index0: 'div1',
+          index1: 'div2',
+          index2: 'div3',
+          length: 3
+        };
         let nodeCount = 0;
-        if (divs.index0 !== undefined) nodeCount++;
-        if (divs.index1 !== undefined) nodeCount++;
-        if (divs.index2 !== undefined) nodeCount++;
+        if (divs.index0 !== undefined) {
+          nodeCount++;
+        }
+        if (divs.index1 !== undefined) {
+          nodeCount++;
+        }
+        if (divs.index2 !== undefined) {
+          nodeCount++;
+        }
 
         expect((nodeCount === divs.length)).assertTrue();
 

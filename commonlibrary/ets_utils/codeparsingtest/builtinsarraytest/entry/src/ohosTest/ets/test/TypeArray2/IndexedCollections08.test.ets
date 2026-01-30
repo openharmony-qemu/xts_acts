@@ -13,18 +13,20 @@
 * limitations under the License.
 */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach,afterEach,afterAll} from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { sleep } from '../../testability/pages/Utils';
 
 interface TestObject01 {
   x: number;
 }
+
 export default function IndexedCollections08Test() {
   describe('IndexedCollections08Test', () => {
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
     })
-    beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
+    beforeEach(async () => {
+      await sleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -382,8 +384,8 @@ export default function IndexedCollections08Test() {
         let TAG = "testArrayLastIndexOfObject0017";
         console.log(TAG + ' start');
 
-        let obj: TestObject01 = {x: 1};
-        let arr17: TestObject01[] = [obj, {x: 1}, obj];
+        let obj: TestObject01 = { x: 1 };
+        let arr17: TestObject01[] = [obj, { x: 1 }, obj];
         let result17 = arr17.lastIndexOf(obj);
         expect(result17 === 2).assertTrue();
 
@@ -656,8 +658,8 @@ export default function IndexedCollections08Test() {
         let TAG = "testArrayIncludesObject0030";
         console.log(TAG + ' start');
 
-        let obj: TestObject01 = {x: 1};
-        let arr30: TestObject01[] = [obj, {x: 1}];
+        let obj: TestObject01 = { x: 1 };
+        let arr30: TestObject01[] = [obj, { x: 1 }];
         let result30 = arr30.includes(obj);
         expect(result30).assertTrue();
 

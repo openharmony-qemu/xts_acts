@@ -13,7 +13,8 @@
 * limitations under the License.
 */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { sleep } from '../../testability/pages/Utils';
 
 interface IBufferWrapper {
   readonly id: string;
@@ -23,6 +24,7 @@ interface IBufferWrapper {
 class BufferWrapper implements IBufferWrapper {
   public readonly id: string;
   public readonly buffer: ArrayBuffer;
+
   public constructor(size: number) {
     this.id = 'BufferWrapper-' + size;
     this.buffer = new ArrayBuffer(size);
@@ -36,8 +38,8 @@ export default function IndexedCollections20Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
+    beforeEach(async () => {
+      await sleep(30);
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
@@ -95,7 +97,13 @@ export default function IndexedCollections20Test() {
         const buffer = new ArrayBuffer(128);
 
         let ok = true;
-        try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = 256; })(buffer); ok = false; } catch {}
+        try {
+          ((b: Object) => {
+            (b as Record<string, number>)['byteLength'] = 256;
+          })(buffer);
+          ok = false;
+        } catch {
+        }
         expect(ok && buffer.byteLength === 128).assertTrue();
         console.log('test_ArrayBuffer_ByteLength_ReadOnly_0002 done');
         done();
@@ -116,7 +124,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         for (const v of [512, 1024, 2048]) {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         }
         expect(ok && buffer.byteLength === 256).assertTrue();
         console.log('testArraybuffer_ByteLength_ReadOnly_0003 done');
@@ -138,7 +152,13 @@ export default function IndexedCollections20Test() {
 
         let count = 0;
         for (const v of [1024, 2048, 4096]) {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ++count; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ++count;
+          } catch {
+          }
         }
 
         expect(count === 0 && buffer.byteLength === 512).assertTrue();
@@ -161,7 +181,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [20, 32, 64].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 16).assertTrue();
         console.log('test_ArrayBuffer_ByteLength_ReadOnly_0001 done');
@@ -185,7 +211,9 @@ export default function IndexedCollections20Test() {
         try {
           const view = new Uint8Array(buffer);
           success = (view.buffer === buffer);
-        } catch { success = false; }
+        } catch {
+          success = false;
+        }
 
         expect(success).assertTrue();
         console.log('test_ArrayBuffer_NotDetached_CreateView_0002 done');
@@ -207,7 +235,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [64, 128, 256].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 32).assertTrue();
         console.log('test_ArrayBuffer_ByteLength_ReadOnly_0003 done');
@@ -229,7 +263,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2048, 4096].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1024).assertTrue();
         console.log('test_ArrayBuffer_ByteLength_ReadOnly_0004 done');
@@ -251,7 +291,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2, 4, 8].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1).assertTrue();
         console.log('test_ArrayBuffer_ByteLength_ReadOnly_0005 done');
@@ -273,7 +319,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 0).assertTrue();
         console.log('test_ArrayBuffer_ByteLength_ReadOnly_0006 done');
@@ -295,7 +347,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [32, 64, 128].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
 
         expect(ok && buffer.byteLength === 16).assertTrue();
@@ -317,7 +375,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2048, 4096, 8192].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1024).assertTrue();
         console.log('test_ArrayBuffer_Transfer_LengthZero_0002 done');
@@ -339,7 +403,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2, 4, 8].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1).assertTrue();
         console.log('test_ArrayBuffer_Transfer_LengthZero_0003 done');
@@ -361,7 +431,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 0).assertTrue();
         console.log('test_ArrayBuffer_Transfer_LengthZero_0004 done');
@@ -383,7 +459,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [128, 256, 512].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 64).assertTrue();
         console.log('test_ArrayBuffer_Transfer_LengthZero_0005 done');
@@ -405,7 +487,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 256].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 32).assertTrue();
         console.log('test_ArrayBuffer_Transfer_LengthZero_0006 done');
@@ -427,7 +515,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [32, 64, 128].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 16).assertTrue();
         console.log('test_ArrayBuffer_Detached_NoView_0001 done');
@@ -449,7 +543,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2048, 4096, 8192].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1024).assertTrue();
         console.log('test_ArrayBuffer_Detached_NoView_0002 done');
@@ -471,7 +571,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2, 4, 8].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1).assertTrue();
         console.log('test_ArrayBuffer_Detached_NoView_0003 done');
@@ -493,7 +599,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 0).assertTrue();
         console.log('test_ArrayBuffer_Detached_NoView_0004 done');
@@ -516,7 +628,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [128, 256, 512].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 64).assertTrue();
         console.log('test_ArrayBuffer_Detached_NoView_0005 done');
@@ -538,7 +656,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 256].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 32).assertTrue();
         console.log('test_ArrayBuffer_Detached_NoView_0006 done');
@@ -560,7 +684,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [64, 128, 256].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 32).assertTrue();
         console.log('test_ArrayBuffer_SameLength_Inequality_0001 done');
@@ -582,7 +712,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2048, 4096, 8192].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1024).assertTrue();
         console.log('test_ArrayBuffer_SameLength_Inequality_0002 done');
@@ -604,7 +740,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2, 4, 8].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1).assertTrue();
         console.log('test_ArrayBuffer_SameLength_Inequality_0003 done');
@@ -626,7 +768,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 0).assertTrue();
         console.log('test_ArrayBuffer_SameLength_Inequality_0004 done');
@@ -648,7 +796,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [128, 256, 512].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 64).assertTrue();
         console.log('test_ArrayBuffer_SameLength_Inequality_0005 done');
@@ -670,7 +824,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 256].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 32).assertTrue();
         console.log('test_ArrayBuffer_SameLength_Inequality_0006 done');
@@ -692,7 +852,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [8, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 4).assertTrue();
         console.log('test_ArrayBuffer_MultiView_Shared_0001 done');
@@ -714,7 +880,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2048, 4096, 8192].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1024).assertTrue();
         console.log('test_ArrayBuffer_MultiView_Shared_0002 done');
@@ -736,7 +908,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2, 4, 8].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1).assertTrue();
         console.log('test_ArrayBuffer_MultiView_Shared_0003 done');
@@ -758,7 +936,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 0).assertTrue();
         console.log('test_ArrayBuffer_MultiView_Shared_0004 done');
@@ -780,7 +964,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [128, 256, 512].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 64).assertTrue();
         console.log('test_ArrayBuffer_MultiView_Shared_0005 done');
@@ -802,7 +992,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 256].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 32).assertTrue();
         console.log('test_ArrayBuffer_MultiView_Shared_0006 done');
@@ -824,7 +1020,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [16, 32, 64].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 8).assertTrue();
         console.log('test_ArrayBuffer_MultiView_Sync_0001 done');
@@ -846,7 +1048,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2048, 4096, 8192].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1024).assertTrue();
         console.log('test_ArrayBuffer_MultiView_Sync_0002 done');
@@ -868,7 +1076,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2, 4, 8].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1).assertTrue();
         console.log('test_ArrayBuffer_MultiView_Sync_0003 done');
@@ -890,7 +1104,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 0).assertTrue();
         console.log('test_ArrayBuffer_MultiView_Sync_0004 done');
@@ -912,7 +1132,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [128, 256, 512].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 64).assertTrue();
         console.log('test_ArrayBuffer_MultiView_Sync_0005 done');
@@ -934,7 +1160,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 256].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 32).assertTrue();
         console.log('test_ArrayBuffer_MultiView_Sync_0006 done');
@@ -956,7 +1188,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [8, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 4).assertTrue();
         console.log('test_ArrayBuffer_Slice_Independent_0001 done');
@@ -978,7 +1216,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2048, 4096, 8192].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1024).assertTrue();
         console.log('test_ArrayBuffer_Slice_Independent_0002 done');
@@ -1000,7 +1244,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2, 4, 8].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1).assertTrue();
         console.log('test_ArrayBuffer_Slice_Independent_0003 done');
@@ -1022,7 +1272,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 0).assertTrue();
         console.log('test_ArrayBuffer_Slice_Independent_0004 done');
@@ -1044,7 +1300,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [128, 256, 512].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 64).assertTrue();
         console.log('test_ArrayBuffer_Slice_Independent_0005 done');
@@ -1066,7 +1328,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 256].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 32).assertTrue();
         console.log('test_ArrayBuffer_Slice_Independent_0006 done');
@@ -1088,7 +1356,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [8, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 4).assertTrue();
         console.log('test_ArrayBuffer_DataView_Independent_0001 done');
@@ -1110,7 +1384,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2048, 4096, 8192].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1024).assertTrue();
         console.log('test_ArrayBuffer_DataView_Independent_0002 done');
@@ -1132,7 +1412,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2, 4, 8].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1).assertTrue();
         console.log('test_ArrayBuffer_DataView_Independent_0003 done');
@@ -1154,7 +1440,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 0).assertTrue();
         console.log('test_ArrayBuffer_DataView_Independent_0004 done');
@@ -1176,7 +1468,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [128, 256, 512].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 64).assertTrue();
         console.log('test_ArrayBuffer_DataView_Independent_0005 done');
@@ -1198,7 +1496,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 256].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 32).assertTrue();
         console.log('test_ArrayBuffer_DataView_Independent_0006 done');
@@ -1220,7 +1524,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [32, 64, 128].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 16).assertTrue();
         console.log('test_ArrayBuffer_Worker_Transfer_0001 done');
@@ -1242,7 +1552,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2048, 4096, 8192].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1024).assertTrue();
         console.log('test_ArrayBuffer_Worker_Transfer_0002 done');
@@ -1264,7 +1580,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2, 4, 8].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1).assertTrue();
         console.log('test_ArrayBuffer_Worker_Transfer_0003 done');
@@ -1286,7 +1608,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 0).assertTrue();
         console.log('test_ArrayBuffer_Worker_Transfer_0004 done');
@@ -1308,7 +1636,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [128, 256, 512].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 64).assertTrue();
         console.log('test_ArrayBuffer_Worker_Transfer_0005 done');
@@ -1330,7 +1664,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 256].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 32).assertTrue();
         console.log('test_ArrayBuffer_Worker_Transfer_0006 done');
@@ -1352,7 +1692,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [16, 32, 64].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 8).assertTrue();
         console.log('test_ArrayBuffer_TypedArray_AfterTransfer_0001 done');
@@ -1374,7 +1720,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2048, 4096, 8192].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1024).assertTrue();
         console.log('test_ArrayBuffer_TypedArray_AfterTransfer_0002 done');
@@ -1396,7 +1748,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2, 4, 8].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1).assertTrue();
         console.log('test_ArrayBuffer_TypedArray_AfterTransfer_0003 done');
@@ -1418,7 +1776,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 0).assertTrue();
         console.log('test_ArrayBuffer_TypedArray_AfterTransfer_0004 done');
@@ -1440,7 +1804,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [128, 256, 512].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 64).assertTrue();
         console.log('test_ArrayBuffer_TypedArray_AfterTransfer_0005 done');
@@ -1462,7 +1832,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 256].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 32).assertTrue();
         console.log('test_ArrayBuffer_TypedArray_AfterTransfer_0006 done');
@@ -1484,7 +1860,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [16, 32, 64].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 8).assertTrue();
         console.log('test_ArrayBuffer_DataView_OOB_0001 done');
@@ -1506,7 +1888,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2048, 4096, 8192].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1024).assertTrue();
         console.log('test_ArrayBuffer_DataView_OOB_0002 done');
@@ -1528,7 +1916,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2, 4, 8].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1).assertTrue();
         console.log('test_ArrayBuffer_DataView_OOB_0003 done');
@@ -1550,7 +1944,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 0).assertTrue();
         console.log('test_ArrayBuffer_DataView_OOB_0004 done');
@@ -1572,7 +1972,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [128, 256, 512].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 64).assertTrue();
         console.log('test_ArrayBuffer_DataView_OOB_0005 done');
@@ -1594,7 +2000,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 256].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 32).assertTrue();
         console.log('test_ArrayBuffer_DataView_OOB_0006 done');
@@ -1616,7 +2028,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [8, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 4).assertTrue();
         console.log('test_ArrayBuffer_GC_Unreachable_0001 done');
@@ -1638,7 +2056,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2048, 4096, 8192].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1024).assertTrue();
         console.log('test_ArrayBuffer_GC_Unreachable_0002 done');
@@ -1660,7 +2084,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2, 4, 8].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1).assertTrue();
         console.log('test_ArrayBuffer_GC_Unreachable_0003 done');
@@ -1682,7 +2112,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 0).assertTrue();
         console.log('test_ArrayBuffer_GC_Unreachable_0004 done');
@@ -1704,7 +2140,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [128, 256, 512].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 64).assertTrue();
         console.log('test_ArrayBuffer_GC_Unreachable_0005 done');
@@ -1726,7 +2168,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 256].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 32).assertTrue();
         console.log('test_ArrayBuffer_GC_Unreachable_0006 done');
@@ -1748,7 +2196,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1024 * 1024 * 11, 1024 * 1024 * 12, 1024 * 1024 * 13].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1024 * 1024 * 10).assertTrue();
         console.log('test_ArrayBuffer_10MB_Create_0001 done');
@@ -1770,7 +2224,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1024 * 1024 * 21, 1024 * 1024 * 22, 1024 * 1024 * 23].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1024 * 1024 * 20).assertTrue();
         console.log('test_ArrayBuffer_10MB_Create_0002 done');
@@ -1792,7 +2252,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2, 4, 8].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1).assertTrue();
         console.log('test_ArrayBuffer_10MB_Create_0003 done');
@@ -1814,7 +2280,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 0).assertTrue();
         console.log('test_ArrayBuffer_10MB_Create_0004 done');
@@ -1836,7 +2308,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [128, 256, 512].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 64).assertTrue();
         console.log('test_ArrayBuffer_10MB_Create_0005 done');
@@ -1858,7 +2336,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 256].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 32).assertTrue();
         console.log('test_ArrayBuffer_10MB_Create_0006 done');
@@ -1880,7 +2364,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1024 * 1024 + 1, 1024 * 1024 + 1024, 1024 * 1024 * 2].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1024 * 1024).assertTrue();
         console.log('test_ArrayBuffer_1MBLoop_Stability_0001 done');
@@ -1902,7 +2392,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1024 * 1024 * 11, 1024 * 1024 * 12, 1024 * 1024 * 13].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1024 * 1024 * 10).assertTrue();
         console.log('test_ArrayBuffer_1MBLoop_Stability_0002 done');
@@ -1924,7 +2420,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [2, 4, 8].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 1).assertTrue();
         console.log('test_ArrayBuffer_1MBLoop_Stability_0003 done');
@@ -1946,7 +2448,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 32].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 0).assertTrue();
         console.log('test_ArrayBuffer_1MBLoop_Stability_0004 done');
@@ -1968,7 +2476,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [128, 256, 512].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 64).assertTrue();
         console.log('test_ArrayBuffer_1MBLoop_Stability_0005 done');
@@ -1989,7 +2503,13 @@ export default function IndexedCollections20Test() {
 
         let ok = true;
         [1, 16, 256].forEach(v => {
-          try { ((b: Object) => { (b as Record<string, number>)['byteLength'] = v; })(buffer); ok = false; } catch {}
+          try {
+            ((b: Object) => {
+              (b as Record<string, number>)['byteLength'] = v;
+            })(buffer);
+            ok = false;
+          } catch {
+          }
         });
         expect(ok && buffer.byteLength === 32).assertTrue();
         console.log('test_ArrayBuffer_1MBLoop_Stability_0006 done');

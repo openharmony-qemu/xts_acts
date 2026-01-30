@@ -13,7 +13,8 @@
 * limitations under the License.
 */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { sleep } from '../../testability/pages/Utils';
 
 class ArrayLike {
   public length: number;
@@ -141,7 +142,8 @@ export default function IndexedCollections06Test() {
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(30);
       // Presets an action, which is performed before each unit test case starts.
     })
     afterEach(() => {
@@ -161,17 +163,17 @@ export default function IndexedCollections06Test() {
      */
     it('test_Array_Slice_Call_0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      console.log('test_Array_Slice_Call_0047 start');
+        console.log('test_Array_Slice_Call_0047 start');
 
-      const likeArr47 = new ArrayLike(2, 'x', 'y');
-      const arr47 = customSlice(likeArr47);
+        const likeArr47 = new ArrayLike(2, 'x', 'y');
+        const arr47 = customSlice(likeArr47);
 
-      expect(Array.isArray(arr47)).assertTrue();
-      expect(arr47.join(",")).assertEqual("x,y");
+        expect(Array.isArray(arr47)).assertTrue();
+        expect(arr47.join(",")).assertEqual("x,y");
 
-      done();
-      console.log('test_Array_Slice_Call_0047 end');
-    });
+        done();
+        console.log('test_Array_Slice_Call_0047 end');
+      });
 
     /**
      * @tc.number    SUB_ANI_ARRAY_METHOD_0048
@@ -242,6 +244,6 @@ export default function IndexedCollections06Test() {
 
         done();
         console.log('test_Array_Difference_0050 start');
-    });
+      });
   });
 }

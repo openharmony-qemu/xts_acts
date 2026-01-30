@@ -13,7 +13,8 @@
 * limitations under the License.
 */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { sleep } from '../../testability/pages/Utils';
 
 interface TestObject {
   id?: number;
@@ -51,8 +52,8 @@ export default function IndexedCollections19Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
+    beforeEach(async () => {
+      await sleep(30);
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
@@ -86,7 +87,7 @@ export default function IndexedCollections19Test() {
         done();
         expect(isExecuted).assertEqual(false);
         console.log('testArrayLikeEmptyForEach0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_EMPTY_SLICE_0100
@@ -104,7 +105,7 @@ export default function IndexedCollections19Test() {
         expect(resultArr.length).assertEqual(0);
         done();
         console.log('testArrayLikeEmptySlice0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_NO_INDEX_ACCESS_0100
@@ -128,7 +129,7 @@ export default function IndexedCollections19Test() {
         expect(result3).assertEqual(3);
         done();
         console.log('testArrayLikeNoIndexAccess0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_NO_INDEX_MAP_0100
@@ -149,7 +150,7 @@ export default function IndexedCollections19Test() {
         expect(result4).assertEqual(true);
         done();
         console.log('testArrayLikeNoIndexMap0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_NO_INDEX_FILTER_0100
@@ -170,7 +171,7 @@ export default function IndexedCollections19Test() {
         expect(result5).assertEqual(true);
         done();
         console.log('testArrayLikeNoIndexFilter0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_NON_INTEGER_INDEX_0100
@@ -192,7 +193,7 @@ export default function IndexedCollections19Test() {
         expect(objWithNonIntIndex.length).assertEqual(3);
         done();
         console.log('testArrayLikeNonIntegerIndex0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_NON_INTEGER_ITERATION_0100
@@ -216,7 +217,7 @@ export default function IndexedCollections19Test() {
         expect(result7).assertEqual(3);
         done();
         console.log('testArrayLikeNonIntegerIteration0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_NON_INTEGER_MAP_0100
@@ -228,19 +229,19 @@ export default function IndexedCollections19Test() {
      */
     it("testArrayLikeNonIntegerMap0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      console.log('testArrayLikeNonIntegerMap0001 start');
+        console.log('testArrayLikeNonIntegerMap0001 start');
 
-      const testArr: (number | undefined)[] = [1, undefined, undefined];
-      const mapped: (number | undefined)[] = testArr.map((x: number | undefined): number | undefined => {
-        return x ? x * 2 : undefined;
+        const testArr: (number | undefined)[] = [1, undefined, undefined];
+        const mapped: (number | undefined)[] = testArr.map((x: number | undefined): number | undefined => {
+          return x ? x * 2 : undefined;
+        });
+
+        const result8 = mapped[0] === 2 && mapped[1] === undefined && mapped[2] === undefined;
+
+        expect(result8).assertEqual(true);
+        done();
+        console.log('testArrayLikeNonIntegerMap0001 done');
       });
-
-      const result8 = mapped[0] === 2 && mapped[1] === undefined && mapped[2] === undefined;
-
-      expect(result8).assertEqual(true);
-      done();
-      console.log('testArrayLikeNonIntegerMap0001 done');
-    });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_NON_INDEX_FOREACH_0100
@@ -261,14 +262,14 @@ export default function IndexedCollections19Test() {
           if (item === 'num') {
             hasDesc = true;
           }
-      });
+        });
 
-      const result11 = `11. forEach ignores non-index: ${!hasDesc}`;
-      console.log(result11);
-      expect(result11).assertEqual("11. forEach ignores non-index: true");
-      done();
-      console.log('testArrayLikeNonIndexForEach0001 done');
-    });
+        const result11 = `11. forEach ignores non-index: ${!hasDesc}`;
+        console.log(result11);
+        expect(result11).assertEqual("11. forEach ignores non-index: true");
+        done();
+        console.log('testArrayLikeNonIndexForEach0001 done');
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_NEGATIVE_LENGTH_FOREACH_0100
@@ -298,7 +299,7 @@ export default function IndexedCollections19Test() {
         expect(result12Str).assertEqual("12. Negative length RangeError: false");
         done();
         console.log('testArrayLikeNegativeLengthForEach0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_NEGATIVE_LENGTH_SLICE_0100
@@ -310,23 +311,23 @@ export default function IndexedCollections19Test() {
      */
     it("testArrayLikeNegativeLengthSlice0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      console.log('testArrayLikeNegativeLengthSlice0001 start');
+        console.log('testArrayLikeNegativeLengthSlice0001 start');
 
-      const testArr: string[] = ['b'];
-      let result13 = false;
+        const testArr: string[] = ['b'];
+        let result13 = false;
 
-      try {
-        const sliced = testArr.slice(-2);
-        result13 = false;
-      } catch (e) {
-        result13 = e instanceof RangeError;
-      }
+        try {
+          const sliced = testArr.slice(-2);
+          result13 = false;
+        } catch (e) {
+          result13 = e instanceof RangeError;
+        }
 
-      const result13Str = result13;
-      expect(result13Str).assertEqual(false);
-      done();
-      console.log('testArrayLikeNegativeLengthSlice0001 done');
-    });
+        const result13Str = result13;
+        expect(result13Str).assertEqual(false);
+        done();
+        console.log('testArrayLikeNegativeLengthSlice0001 done');
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_STRING_LENGTH_SLICE_0100
@@ -347,7 +348,7 @@ export default function IndexedCollections19Test() {
         expect(result14).assertEqual("a,b");
         done();
         console.log('testArrayLikeStringLengthSlice0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_STRING_LENGTH_JOIN_0100
@@ -368,7 +369,7 @@ export default function IndexedCollections19Test() {
         expect(joined).assertEqual("1,2,3");
         done();
         console.log('testArrayLikeStringLengthJoin0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_NAN_LENGTH_FOREACH_0100
@@ -380,22 +381,22 @@ export default function IndexedCollections19Test() {
      */
     it("testArrayLikeNaNLengthForEach0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      console.log('testArrayLikeNaNLengthForEach0001 start');
+        console.log('testArrayLikeNaNLengthForEach0001 start');
 
-      const testArr: string[] = ['x'];
-      let result16 = false;
+        const testArr: string[] = ['x'];
+        let result16 = false;
 
-      try {
-        const element = testArr[NaN];
-        result16 = false;
-      } catch (e) {
-        result16 = e instanceof RangeError;
-      }
+        try {
+          const element = testArr[NaN];
+          result16 = false;
+        } catch (e) {
+          result16 = e instanceof RangeError;
+        }
 
-      expect(result16).assertEqual(false);
-      done();
-      console.log('testArrayLikeNaNLengthForEach0001 done');
-    });
+        expect(result16).assertEqual(false);
+        done();
+        console.log('testArrayLikeNaNLengthForEach0001 done');
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_INFINITY_LENGTH_MAP_0100
@@ -423,7 +424,7 @@ export default function IndexedCollections19Test() {
         expect(result17Str).assertEqual(false);
         done();
         console.log('testArrayLikeInfinityLengthMap0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_MIXED_INDEX_FOREACH_0100
@@ -449,7 +450,7 @@ export default function IndexedCollections19Test() {
         expect(result18).assertEqual("a,,c");
         done();
         console.log('testArrayLikeMixedIndexForEach0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_MIXED_PROP_FILTER_0100
@@ -471,7 +472,7 @@ export default function IndexedCollections19Test() {
         expect(result19).assertEqual("20");
         done();
         console.log('testArrayLikeMixedPropFilter0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_ERROR_LENGTH_JOIN_0100
@@ -492,7 +493,7 @@ export default function IndexedCollections19Test() {
         expect(joined).assertEqual("x-y");
         done();
         console.log('testArrayLikeErrorLengthJoin0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_TYPE_CHECK_0100
@@ -516,7 +517,7 @@ export default function IndexedCollections19Test() {
         expect(result1).assertEqual(false);
         done();
         console.log('testArrayLikeTypeCheck0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_INSTANCEOF_0100
@@ -536,7 +537,7 @@ export default function IndexedCollections19Test() {
         expect(result2).assertEqual(true);
         done();
         console.log('testArrayLikeInstanceOf0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_SPREAD_0100
@@ -557,7 +558,7 @@ export default function IndexedCollections19Test() {
         expect(result3).assertEqual(true);
         done();
         console.log('testArrayLikeSpread0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_DESTRUCTURE_0100
@@ -579,7 +580,7 @@ export default function IndexedCollections19Test() {
         expect(result4).assertEqual(true);
         done();
         console.log('testArrayLikeDestructure0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_SORT_0100
@@ -600,7 +601,7 @@ export default function IndexedCollections19Test() {
         expect(result5).assertEqual(true);
         done();
         console.log('testArrayLikeSort0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_FLAT_0100
@@ -612,22 +613,22 @@ export default function IndexedCollections19Test() {
      */
     it("testArrayLikeFlat0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      console.log('testArrayLikeFlat0001 start');
+        console.log('testArrayLikeFlat0001 start');
 
-      // Fix: Use explicit nested array type
-      const nestedArr: (number | number[])[][] = [
-        [1, 2],
-        [3],
-        [4, [5] as number[]]
-      ];
+        // Fix: Use explicit nested array type
+        const nestedArr: (number | number[])[][] = [
+          [1, 2],
+          [3],
+          [4, [5] as number[]]
+        ];
 
-      const flattened: number[] = nestedArr.flat(2) as number[];
-      const result6 = flattened.join(',') === "1,2,3,4,5";
+        const flattened: number[] = nestedArr.flat(2) as number[];
+        const result6 = flattened.join(',') === "1,2,3,4,5";
 
-      expect(result6).assertEqual(true);
-      done();
-      console.log('testArrayLikeFlat0001 done');
-    });
+        expect(result6).assertEqual(true);
+        done();
+        console.log('testArrayLikeFlat0001 done');
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_ARGUMENTS_0100
@@ -652,7 +653,7 @@ export default function IndexedCollections19Test() {
         testArgs(10, 20);
         done();
         console.log('testArrayLikeArguments0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_ARGUMENTS_SYNC_0100
@@ -679,7 +680,7 @@ export default function IndexedCollections19Test() {
         expect(result8).assertEqual(100);
         done();
         console.log('testArrayLikeArgumentsSync0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_THIS_0100
@@ -705,7 +706,7 @@ export default function IndexedCollections19Test() {
         expect(thisMatch).assertEqual(true);
         done();
         console.log('testArrayLikeThis0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_ARRAYLIKE_SPREAD_DIFF_0100
@@ -737,6 +738,6 @@ export default function IndexedCollections19Test() {
         expect(result10).assertEqual(true);
         done();
         console.log('testArrayLikeSpreadDiff0001 done');
-    });
+      });
   })
 }

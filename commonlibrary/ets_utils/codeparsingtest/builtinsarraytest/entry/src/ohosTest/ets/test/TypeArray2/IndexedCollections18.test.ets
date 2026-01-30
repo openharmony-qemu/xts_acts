@@ -13,7 +13,8 @@
 * limitations under the License.
 */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect ,TestType ,Size ,Level} from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { sleep } from '../../testability/pages/Utils';
 
 interface TestObject {
   id?: number;
@@ -51,8 +52,8 @@ export default function IndexedCollections18Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
+    beforeEach(async () => {
+      await sleep(30);
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
@@ -84,7 +85,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(4);
         done();
         console.log('testTypedArrayLengthConstructor0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_CONSTRUCTOR_LENGTH_0200
@@ -104,7 +105,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(5);
         done();
         console.log('testTypedArrayLengthConstructor0002 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_CONSTRUCTOR_LENGTH_0300
@@ -124,7 +125,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(6);
         done();
         console.log('testTypedArrayLengthConstructor0003 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_CONSTRUCTOR_LENGTH_0400
@@ -144,7 +145,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(4);
         done();
         console.log('testTypedArrayLengthConstructor0004 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_CONSTRUCTOR_LENGTH_0500
@@ -164,7 +165,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(16);
         done();
         console.log('testTypedArrayLengthConstructor0005 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_CONSTRUCTOR_LENGTH_0600
@@ -184,7 +185,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(4);
         done();
         console.log('testTypedArrayLengthConstructor0006 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_CONSTRUCTOR_LENGTH_0700
@@ -204,7 +205,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(8);
         done();
         console.log('testTypedArrayLengthConstructor0007 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_CONSTRUCTOR_LENGTH_0800
@@ -224,7 +225,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(24);
         done();
         console.log('testTypedArrayLengthConstructor0008 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_CONSTRUCTOR_LENGTH_0900
@@ -244,7 +245,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(0);
         done();
         console.log('testTypedArrayLengthConstructor0009 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_CONSTRUCTOR_LENGTH_1000
@@ -262,7 +263,7 @@ export default function IndexedCollections18Test() {
         expect(result1).assertEqual(0);
         done();
         console.log('testTypedArrayLengthConstructor0010 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_INITIAL_VALUES_0100
@@ -282,7 +283,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(0);
         done();
         console.log('testTypedArrayInitialValues0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_MODIFY_ELEMENT_0100
@@ -294,14 +295,14 @@ export default function IndexedCollections18Test() {
      */
     it("testTypedArrayModifyElement0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-       console.log('testTypedArrayModifyElement0001 start');
-       const arr12 = new Uint32Array(2);
-       arr12[0] = 100;
-       let result12 = arr12[0];
-       expect(result12).assertEqual(100);
-       done();
-       console.log('testTypedArrayModifyElement0001 done');
-    });
+        console.log('testTypedArrayModifyElement0001 start');
+        const arr12 = new Uint32Array(2);
+        arr12[0] = 100;
+        let result12 = arr12[0];
+        expect(result12).assertEqual(100);
+        done();
+        console.log('testTypedArrayModifyElement0001 done');
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_LARGE_LENGTH_0100
@@ -313,7 +314,7 @@ export default function IndexedCollections18Test() {
      */
     it("testTypedArrayLargeLength0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      console.log('testTypedArrayLargeLength0001 start');
+        console.log('testTypedArrayLargeLength0001 start');
         let result13 = false;
         try {
           const arr13 = new Uint8Array(1024 * 1024);
@@ -325,7 +326,7 @@ export default function IndexedCollections18Test() {
         expect(result13).assertTrue();
         done();
         console.log('testTypedArrayLargeLength0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FLOOR_LENGTH_0100
@@ -343,7 +344,7 @@ export default function IndexedCollections18Test() {
         expect(result14).assertEqual(3);
         done();
         console.log('testTypedArrayFloorLength0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FLOOR_LENGTH_0200
@@ -361,7 +362,7 @@ export default function IndexedCollections18Test() {
         expect(result15).assertEqual(5);
         done();
         console.log('testTypedArrayFloorLength0002 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_STRING_LENGTH_0100
@@ -379,7 +380,7 @@ export default function IndexedCollections18Test() {
         expect(result16).assertEqual(4);
         done();
         console.log('testTypedArrayStringLength0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_BOOLEAN_LENGTH_0100
@@ -397,7 +398,7 @@ export default function IndexedCollections18Test() {
         expect(result17).assertEqual(1);
         done();
         console.log('testTypedArrayBooleanLength0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_BOOLEAN_LENGTH_0200
@@ -415,7 +416,7 @@ export default function IndexedCollections18Test() {
         expect(result18).assertEqual(0);
         done();
         console.log('testTypedArrayBooleanLength0002 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_NEGATIVE_LENGTH_0100
@@ -439,7 +440,7 @@ export default function IndexedCollections18Test() {
         expect(result19).assertTrue();
         done();
         console.log('testTypedArrayNegativeLength0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_INFINITY_LENGTH_0100
@@ -463,7 +464,7 @@ export default function IndexedCollections18Test() {
         expect(result20).assertTrue();
         done();
         console.log('testTypedArrayInfinityLength0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAY_0100
@@ -483,7 +484,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(4);
         done();
         console.log('testTypedArrayFromArray0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAY_0200
@@ -503,7 +504,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(128);
         done();
         console.log('testTypedArrayFromArray0002 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_0100
@@ -522,7 +523,7 @@ export default function IndexedCollections18Test() {
         expect(result43).assertEqual(200);
         done();
         console.log('testTypedArrayFromArrayLike0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAY_0300
@@ -540,7 +541,7 @@ export default function IndexedCollections18Test() {
         expect(result44).assertEqual('1.23');
         done();
         console.log('testTypedArrayFromArray0003 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAY_0400
@@ -558,7 +559,7 @@ export default function IndexedCollections18Test() {
         expect(result45).assertEqual('1.23456789');
         done();
         console.log('testTypedArrayFromArray0004 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_RANGE_OVERFLOW_0100
@@ -578,7 +579,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(127);
         done();
         console.log('testTypedArrayRangeOverflow0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_RANGE_OVERFLOW_0200
@@ -598,7 +599,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(255);
         done();
         console.log('testTypedArrayRangeOverflow0002 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASEDATA_TYPEDARRAY_FLOAT_TO_INT_0100
@@ -618,7 +619,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(-2);
         done();
         console.log('testTypedArrayFloatToInt0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_STRING_CONVERSION_0100
@@ -638,7 +639,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(200);
         done();
         console.log('testTypedArrayStringConversion0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_INVALID_STRING_0100
@@ -658,7 +659,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(123);
         done();
         console.log('testTypedArrayInvalidString0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_NULL_CONVERSION_0100
@@ -678,7 +679,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(10);
         done();
         console.log('testTypedArrayNullConversion0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_UNDEFINED_CONVERSION_0100
@@ -698,7 +699,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(20);
         done();
         console.log('testTypedArrayUndefinedConversion0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_NAN_CONVERSION_0100
@@ -720,7 +721,7 @@ export default function IndexedCollections18Test() {
         expect(result3).assertEqual(-Infinity);
         done();
         console.log('testTypedArrayNaNConversion0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_EMPTY_ARRAY_0100
@@ -740,7 +741,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(0);
         done();
         console.log('testTypedArrayEmptyArray0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_SINGLE_ELEMENT_0100
@@ -760,7 +761,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(1);
         done();
         console.log('testTypedArraySingleElement0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_EMPTY_ARRAYLIKE_0100
@@ -772,13 +773,13 @@ export default function IndexedCollections18Test() {
      */
     it("testTypedArrayEmptyArrayLike0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      console.log('testTypedArrayEmptyArrayLike0001 start');
-      const arr56 = new Float32Array([]);
-      const result56 = arr56.length;
-      expect(result56).assertEqual(0);
-      done();
-      console.log('testTypedArrayEmptyArrayLike0001 done');
-    });
+        console.log('testTypedArrayEmptyArrayLike0001 start');
+        const arr56 = new Float32Array([]);
+        const result56 = arr56.length;
+        expect(result56).assertEqual(0);
+        done();
+        console.log('testTypedArrayEmptyArrayLike0001 done');
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_INCOMPLETE_ARRAYLIKE_0100
@@ -798,7 +799,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(0);
         done();
         console.log('testTypedArrayIncompleteArrayLike0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_OBJECT_CONVERSION_0100
@@ -818,7 +819,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(2);
         done();
         console.log('testTypedArrayObjectConversion0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FUNCTION_CONVERSION_0100
@@ -838,7 +839,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(10);
         done();
         console.log('testTypedArrayFunctionConversion0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_BOOLEAN_CONVERSION_0100
@@ -858,7 +859,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(0);
         done();
         console.log('testTypedArrayBooleanConversion0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_TYPEDARRAY_0100
@@ -879,7 +880,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(-128);
         done();
         console.log('testTypedArrayFromTypedArray0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_TYPEDARRAY_0200
@@ -900,7 +901,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(128);
         done();
         console.log('testTypedArrayFromTypedArray0002 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_TYPEDARRAY_0300
@@ -921,7 +922,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(2);
         done();
         console.log('testTypedArrayFromTypedArray0003 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_TYPEDARRAY_0400
@@ -942,7 +943,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(200);
         done();
         console.log('testTypedArrayFromTypedArray0004 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_TYPEDARRAY_0500
@@ -963,7 +964,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(4294967294);
         done();
         console.log('testTypedArrayFromTypedArray0005 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_LENGTH_CHANGE_0100
@@ -984,7 +985,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(4);
         done();
         console.log('testTypedArrayLengthChange0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_EMPTY_SOURCE_0100
@@ -1003,7 +1004,7 @@ export default function IndexedCollections18Test() {
         expect(result67).assertEqual(0);
         done();
         console.log('testTypedArrayEmptySource0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_LARGE_SOURCE_0100
@@ -1025,7 +1026,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(123);
         done();
         console.log('testTypedArrayLargeSource0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_SIGNED_TO_UNSIGNED_0100
@@ -1046,7 +1047,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(65534);
         done();
         console.log('testTypedArraySignedToUnsigned0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_UNSIGNED_TO_SIGNED_0100
@@ -1067,7 +1068,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(-2);
         done();
         console.log('testTypedArrayUnsignedToSigned0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_LONG_TO_SHORT_0100
@@ -1088,7 +1089,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(-44);
         done();
         console.log('testTypedArrayLongToShort0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_SHORT_TO_LONG_0100
@@ -1109,7 +1110,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(-50);
         done();
         console.log('testTypedArrayShortToLong0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FLOAT_TO_INT_0100
@@ -1132,7 +1133,7 @@ export default function IndexedCollections18Test() {
         expect(result3).assertEqual(-3);
         done();
         console.log('testTypedArrayFloatToInt0002 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_INT_TO_FLOAT_0100
@@ -1153,7 +1154,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(67890);
         done();
         console.log('testTypedArrayIntToFloat0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_BUFFER_INDEPENDENCE_0100
@@ -1175,7 +1176,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(100);
         done();
         console.log('testTypedArrayBufferIndependence0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_NEGATIVE_STORAGE_0100
@@ -1197,7 +1198,7 @@ export default function IndexedCollections18Test() {
         expect(result3).assertEqual(127);
         done();
         console.log('testTypedArrayNegativeStorage0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_INT16_BOUNDARY_0100
@@ -1219,7 +1220,7 @@ export default function IndexedCollections18Test() {
         expect(result3).assertEqual(-32768);
         done();
         console.log('testTypedArrayInt16Boundary0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_INT32_BOUNDARY_0100
@@ -1241,7 +1242,7 @@ export default function IndexedCollections18Test() {
         expect(result3).assertEqual(-2147483648);
         done();
         console.log('testTypedArrayInt32Boundary0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_UINT8_NEGATIVE_CONVERSION_0100
@@ -1263,7 +1264,7 @@ export default function IndexedCollections18Test() {
         expect(result3).assertEqual(0);
         done();
         console.log('testTypedArrayUint8NegativeConversion0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_UINT16_BOUNDARY_0100
@@ -1285,7 +1286,7 @@ export default function IndexedCollections18Test() {
         expect(result3).assertEqual(0);
         done();
         console.log('testTypedArrayUint16Boundary0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_UINT32_BOUNDARY_0100
@@ -1307,7 +1308,7 @@ export default function IndexedCollections18Test() {
         expect(result3).assertEqual(0);
         done();
         console.log('testTypedArrayUint32Boundary0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FLOAT32_PRECISION_0100
@@ -1325,7 +1326,7 @@ export default function IndexedCollections18Test() {
         expect(result82).assertEqual('1.2345679');
         done();
         console.log('testTypedArrayFloat32Precision0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FLOAT64_PRECISION_0100
@@ -1343,7 +1344,7 @@ export default function IndexedCollections18Test() {
         expect(result83).assertEqual('1.234567890123457');
         done();
         console.log('testTypedArrayFloat64Precision0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FLOAT32_MIN_VALUE_0100
@@ -1361,7 +1362,7 @@ export default function IndexedCollections18Test() {
         expect(result84).assertEqual(1.401298464324817e-45);
         done();
         console.log('testTypedArrayFloat32MinValue0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FLOAT64_MIN_VALUE_0100
@@ -1379,7 +1380,7 @@ export default function IndexedCollections18Test() {
         expect(result85).assertEqual(1e-323);
         done();
         console.log('testTypedArrayFloat64MinValue0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FLOAT32_INFINITY_0100
@@ -1399,7 +1400,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(-Infinity);
         done();
         console.log('testTypedArrayFloat32Infinity0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FLOAT64_SPECIAL_VALUES_0100
@@ -1418,7 +1419,7 @@ export default function IndexedCollections18Test() {
         expect(isNaN(arr87[2])).assertEqual(true);
         done();
         console.log('testTypedArrayFloat64SpecialValues0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_INT8_UPPER_OVERFLOW_0100
@@ -1440,7 +1441,7 @@ export default function IndexedCollections18Test() {
         expect(result3).assertEqual(-1);
         done();
         console.log('testTypedArrayInt8UpperOverflow0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_INT8_LOWER_OVERFLOW_0100
@@ -1462,7 +1463,7 @@ export default function IndexedCollections18Test() {
         expect(result3).assertEqual(0);
         done();
         console.log('testTypedArrayInt8LowerOverflow0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_UINT8_OVERFLOW_0100
@@ -1484,7 +1485,7 @@ export default function IndexedCollections18Test() {
         expect(result3).assertEqual(255);
         done();
         console.log('testTypedArrayUint8Overflow0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_MIXED_CONVERSION_0100
@@ -1508,7 +1509,7 @@ export default function IndexedCollections18Test() {
         expect(result4).assertEqual(0);
         done();
         console.log('testTypedArrayMixedConversion0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_LARGE_INT32_0100
@@ -1528,7 +1529,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(987654321);
         done();
         console.log('testTypedArrayLargeInt320001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_LARGE_UINT32_0100
@@ -1548,7 +1549,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(4000000000);
         done();
         console.log('testTypedArrayLargeUint320001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FLOAT32_PRECISION_LOSS_0100
@@ -1568,7 +1569,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(16777216);
         done();
         console.log('testTypedArrayFloat32PrecisionLoss0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FLOAT64_PRECISION_0200
@@ -1588,7 +1589,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(9007199254740992);
         done();
         console.log('testTypedArrayFloat64Precision0002 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_SIGN_EXTENSION_0100
@@ -1610,7 +1611,7 @@ export default function IndexedCollections18Test() {
         expect(result96).assertEqual(-1);
         done();
         console.log('testTypedArraySignExtension0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_UNSIGNED_HANDLING_0100
@@ -1632,7 +1633,7 @@ export default function IndexedCollections18Test() {
         expect(result97).assertEqual(65535);
         done();
         console.log('testTypedArrayUnsignedHandling0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FLOAT32_SPECIAL_VALUES_0100
@@ -1651,7 +1652,7 @@ export default function IndexedCollections18Test() {
         expect(isNaN(arr98[4])).assertEqual(true);
         done();
         console.log('testTypedArrayFloat32SpecialValues0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_CROSS_TYPE_BOUNDARY_0100
@@ -1670,7 +1671,7 @@ export default function IndexedCollections18Test() {
         expect(result99).assertEqual(-128);
         done();
         console.log('testTypedArrayCrossTypeBoundary0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_MAX_LENGTH_0100
@@ -1682,20 +1683,20 @@ export default function IndexedCollections18Test() {
      */
     it("testTypedArrayMaxLength0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      console.log('testTypedArrayMaxLength0001 start');
-      let result100 = false;
-      try {
-        const maxLen = Math.floor(1024 * 1024 / 4); // 4MB Int32Array
-        const arr100 = new Int32Array(maxLen);
-        result100 = arr100.length === maxLen;
-      } catch (e) {
-        result100 = false;
-      }
+        console.log('testTypedArrayMaxLength0001 start');
+        let result100 = false;
+        try {
+          const maxLen = Math.floor(1024 * 1024 / 4); // 4MB Int32Array
+          const arr100 = new Int32Array(maxLen);
+          result100 = arr100.length === maxLen;
+        } catch (e) {
+          result100 = false;
+        }
 
-      expect(result100).assertTrue();
-      done();
-      console.log('testTypedArrayMaxLength0001 done');
-    });
+        expect(result100).assertTrue();
+        done();
+        console.log('testTypedArrayMaxLength0001 done');
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_SHARED_BUFFER_0100
@@ -1719,7 +1720,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(5678);
         done();
         console.log('testTypedArraySharedBuffer0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_DIFF_TYPE_VIEWS_0100
@@ -1742,7 +1743,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(4660);
         done();
         console.log('testTypedArrayDiffTypeViews0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_SIGNED_UNSIGNED_0100
@@ -1766,7 +1767,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(128);
         done();
         console.log('testTypedArraySignedUnsigned0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_PARTITIONED_VIEWS_0100
@@ -1790,7 +1791,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(255);
         done();
         console.log('testTypedArrayPartitionedViews0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_OVERLAPPING_VIEWS_0100
@@ -1811,7 +1812,7 @@ export default function IndexedCollections18Test() {
         expect(result5).assertEqual('0.0');
         done();
         console.log('testTypedArrayOverlappingViews0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_EMPTY_BUFFER_0100
@@ -1833,7 +1834,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(0);
         done();
         console.log('testTypedArrayEmptyBuffer0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_LARGE_BUFFER_0100
@@ -1854,7 +1855,7 @@ export default function IndexedCollections18Test() {
         expect(view7b[1000 * 8] !== 0).assertEqual(true);
         done();
         console.log('testTypedArrayLargeBuffer0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_BUFFER_PERSISTENCE_0100
@@ -1875,7 +1876,7 @@ export default function IndexedCollections18Test() {
         expect(view8b[0]).assertEqual(555);
         done();
         console.log('testTypedArrayBufferPersistence0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_BUFFER_REFERENCE_0100
@@ -1894,7 +1895,7 @@ export default function IndexedCollections18Test() {
         expect(view9.buffer === buffer9).assertEqual(true);
         done();
         console.log('testTypedArrayBufferReference0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_BYTE_OFFSET_0100
@@ -1913,7 +1914,7 @@ export default function IndexedCollections18Test() {
         expect(result10).assertEqual(0);
         done();
         console.log('testTypedArrayByteOffset0001 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_1100
@@ -1935,7 +1936,7 @@ export default function IndexedCollections18Test() {
         expect(result43).assertEqual(200);
         done();
         console.log('testTypedArrayFromArrayLike0011 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_0200
@@ -1955,7 +1956,7 @@ export default function IndexedCollections18Test() {
         expect(result44).assertEqual(400);
         done();
         console.log('testTypedArrayFromArrayLike0002 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_0300
@@ -1975,7 +1976,7 @@ export default function IndexedCollections18Test() {
         expect(result45).assertEqual('2.5');
         done();
         console.log('testTypedArrayFromArrayLike0003 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_0400
@@ -1996,7 +1997,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(128);
         done();
         console.log('testTypedArrayFromArrayLike0004 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_0500
@@ -2017,7 +2018,7 @@ export default function IndexedCollections18Test() {
         expect(result47).assertEqual('3.14159');
         done();
         console.log('testTypedArrayFromArrayLike0005 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_0600
@@ -2037,7 +2038,7 @@ export default function IndexedCollections18Test() {
         expect(result48).assertEqual(0);
         done();
         console.log('testTypedArrayFromArrayLike0006 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_0700
@@ -2058,7 +2059,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(1);
         done();
         console.log('testTypedArrayFromArrayLike0007 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_0800
@@ -2080,7 +2081,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(3);
         done();
         console.log('testTypedArrayFromArrayLike0008 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_0900
@@ -2101,7 +2102,7 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual(12);
         done();
         console.log('testTypedArrayFromArrayLike0009 done');
-    });
+      });
 
     /**
      * @tc.number SUB_BASE_DATA_TYPEDARRAY_FROM_ARRAYLIKE_1000
@@ -2123,6 +2124,6 @@ export default function IndexedCollections18Test() {
         expect(result2).assertEqual('9.012');
         done();
         console.log('testTypedArrayFromArrayLike0010 done');
-    });
+      });
   })
 }
