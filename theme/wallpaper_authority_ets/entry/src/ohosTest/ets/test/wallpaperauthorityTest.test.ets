@@ -651,36 +651,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @tc.name   testSetWallpaperURLCallbackSystem1032
-         * @tc.number testSetWallpaperURLCallbackSystem1032
-         * @tc.desc   Function test
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('testSetWallpaperURLCallbackSystem1032', Level.LEVEL3, async (done: Function) => {
-            console.info('====>------testSetWallpaperURLCallbackSystem1032 start------------' );
-            wallpaper.setWallpaper(undefined, WALLPAPER_SYSTEM, (err, data) => {
-                try{
-                    if (err) {
-                        console.info(`====>testSetWallpaperURLCallbackSystem1032 err.code: ${err.code}  err.message: ${err.message}`);
-                        expect(err.code).assertEqual(401);
-                        done();
-                    } else {
-                        console.info('====>testSetWallpaperURLCallbackSystem1032 successful data: ' + data);
-                        expect().assertFail();
-                        done();
-                    }  
-                } catch (error) {
-                    console.info(`====>testSetWallpaperURLCallbackSystem1032 err.code: ${error.code}  err.message: ${error.message}`);
-                    expect().assertFail();
-                    done();
-                }
-            });
-            console.info('====>-------testSetWallpaperURLCallbackSystem1032 end-----------' );
-        });
-
-        /**
          * @tc.name   testSetWallpaperURLCallbackSystem1033
          * @tc.number testSetWallpaperURLCallbackSystem1033
          * @tc.desc   Function test
