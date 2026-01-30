@@ -254,8 +254,13 @@ export default function ActsNotificationWantUriTest() {
                     expect(dataArray.length).assertLarger(PARAM_0);
                     let testUri: Record<string, RecordData> = dataArray[0].extraInfo as Record<string, RecordData>;
                     hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} wantUri:${testUri[KEY_URI]}`);
-                    expect(Object.keys(testUri).includes(KEY_URI)).assertFalse();
-                    done();
+                    if (testUri[KEY_URI]) {
+                      expect(testUri[KEY_URI] as string).assertEqual(uri);
+                      done();
+                    } else {
+                      expect().assertFail();
+                      done();
+                    }
                   } else {
                     hilog.error(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} getActiveNotifications failed,
                       code:${err.code} message:${err.message}`);
