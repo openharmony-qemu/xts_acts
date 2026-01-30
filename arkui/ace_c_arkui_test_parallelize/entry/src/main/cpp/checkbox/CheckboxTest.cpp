@@ -88,10 +88,10 @@ napi_value CheckBoxTest::checkBoxTest(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem group_item = {.string = "group1"};
     nodeAPI->setAttribute(checkBox1, NODE_CHECKBOX_GROUP, &group_item);
 
-
+    const int CHECKBOX_TARGET_ID = 27123;
     nodeAPI->registerNodeEvent(checkBox1, NODE_CHECKBOX_EVENT_ON_CHANGE, NODE_CHECKBOX_EVENT_ON_CHANGE, nullptr);
     nodeAPI->addNodeEventReceiver(checkBox1, [](ArkUI_NodeEvent *event) {
-        if (OH_ArkUI_NodeEvent_GetTargetId(event) == 27123) {
+        if (OH_ArkUI_NodeEvent_GetTargetId(event) == CHECKBOX_TARGET_ID) {
             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager", "Node_Event: onCheckboxChange");
         }
     });
