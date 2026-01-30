@@ -973,7 +973,7 @@ static napi_value OH_LowPowerAudioSink_SetLoudnessGain0200(napi_env env, napi_ca
     int32_t number = 2;
     if (argc < number) {
         napi_throw_error(env, nullptr, "invalid number of arguments");
-        return result
+        return result;
     }
     OH_LowPowerAudioSink* streamer;
     napi_get_value_external(env, argv[0], (void**)&streamer);
