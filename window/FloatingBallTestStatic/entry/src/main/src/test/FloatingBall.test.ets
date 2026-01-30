@@ -67,7 +67,7 @@ export default function FloatingBallTest() {
     let driver:Driver;
     let pixelMapIcon:image.PixelMap|undefined;
     let pixelMapIcon1:image.PixelMap|undefined;
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -121,7 +121,7 @@ export default function FloatingBallTest() {
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
-    afterEach((): void => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(800);
     })
     afterAll(() => {
