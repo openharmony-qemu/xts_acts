@@ -84,14 +84,12 @@ export default function MouseEventWindowTest() {
 
       await driver.mouseClick({ x: rect.x, y: rect.y }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(2000);
-
-      expect(AppStorage.get('LEAVE_WINDOW')).assertEqual(MouseAction.LEAVE_WINDOW);
-      expect(MouseAction.LEAVE_WINDOW).assertEqual(5);
-
-      await text.click();
-      await CommonFunc.sleep(2000);
       expect(AppStorage.get('ENTER_WINDOW')).assertEqual(MouseAction.ENTER_WINDOW);
       expect(MouseAction.ENTER_WINDOW).assertEqual(4);
+      await text.click();
+      await CommonFunc.sleep(2000);
+      expect(AppStorage.get('LEAVE_WINDOW')).assertEqual(MouseAction.LEAVE_WINDOW);
+      expect(MouseAction.LEAVE_WINDOW).assertEqual(5);
       console.info('[MouseEventWindow_0100] END');
       done();
     });
