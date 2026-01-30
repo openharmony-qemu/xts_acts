@@ -17,8 +17,8 @@ ohos_app_assist_suite("ActsAudioHapMainTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsAudioHapMainTest"
-  subsystem_name = "graphic"
-  part_name = "graphic_2d"
+  subsystem_name = "multimedia"
+  part_name = "av_codec"
 }
 
 
@@ -27,8 +27,8 @@ ohos_js_app_suite("ActsAudioHapTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsAudioHapTest"
-  subsystem_name = "graphic"
-  part_name = "graphic_2d"
+  subsystem_name = "multimedia"
+  part_name = "av_codec"
   deps = [ ":ActsAudioHapMainTest" ]
 }
 
