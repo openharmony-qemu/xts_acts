@@ -49,7 +49,7 @@ export default function AudioTest() {
     afterAll(() => {
     })
 
-    /*
+    /**
      * @tc.name   EncoderConfigureLCAAC
      * @tc.number EncoderConfigureLCAAC
      * @tc.desc   EncoderConfigureLCAAC
@@ -63,7 +63,7 @@ export default function AudioTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.name   EncoderConfigureHEAAC
      * @tc.number EncoderConfigureHEAAC
      * @tc.desc   EncoderConfigureHEAAC
@@ -77,7 +77,7 @@ export default function AudioTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.name   EncoderConfigureHEAACv2
      * @tc.number EncoderConfigureHEAACv2
      * @tc.desc   EncoderConfigureHEAACv2
@@ -91,7 +91,7 @@ export default function AudioTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.name   EncoderConfigureByCap
      * @tc.number EncoderConfigureByCap
      * @tc.desc   EncoderConfigureByCap
@@ -105,7 +105,7 @@ export default function AudioTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.name   SampleRate
      * @tc.number SampleRate
      * @tc.desc   SampleRate
@@ -119,7 +119,7 @@ export default function AudioTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.name   ChannelCountV1
      * @tc.number ChannelCountV1
      * @tc.desc   ChannelCountV1
@@ -133,7 +133,7 @@ export default function AudioTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.name   ChannelCountV2
      * @tc.number ChannelCountV2
      * @tc.desc   ChannelCountV2
@@ -147,7 +147,7 @@ export default function AudioTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.name   ChannelLayoutV1
      * @tc.number ChannelLayoutV1
      * @tc.desc   ChannelLayoutV1
@@ -161,7 +161,7 @@ export default function AudioTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.name   ChannelLayoutV2
      * @tc.number ChannelLayoutV2
      * @tc.desc   ChannelLayoutV2
@@ -175,7 +175,7 @@ export default function AudioTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.name   AacProfile
      * @tc.number AacProfile
      * @tc.desc   AacProfile
