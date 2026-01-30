@@ -3792,7 +3792,6 @@ export default function CalendarManagerTest() {
           calendarMgr?.getCalendar(CalendarAccounts, (err, data) => {
             if (err) {
               console.info(CaseName + `The specified account was not found, Code is ${err.code}, message is ${err.message}`);
-              expect().assertFail();
               expect(err.code).assertEqual(23900003);
               done();
             } else {
