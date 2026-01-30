@@ -85,11 +85,11 @@ napi_value CheckBoxGroupTest::checkBoxGroupTest(napi_env env, napi_callback_info
                                                 sizeof(checkbox_shape_value) / sizeof(ArkUI_NumberValue) };
     nodeAPI->setAttribute(checkBoxGroup1, NODE_CHECKBOX_GROUP_SHAPE, &checkbox_shape_item);
 
-
+    const int CHECKBOXGROUP_TARGET_ID = 27123;
     nodeAPI->registerNodeEvent(checkBoxGroup1, NODE_CHECKBOX_GROUP_EVENT_ON_CHANGE,
                                NODE_CHECKBOX_GROUP_EVENT_ON_CHANGE, nullptr);
     nodeAPI->addNodeEventReceiver(checkBoxGroup1, [](ArkUI_NodeEvent *event) {
-        if (OH_ArkUI_NodeEvent_GetTargetId(event) == 27123) {
+        if (OH_ArkUI_NodeEvent_GetTargetId(event) == CHECKBOXGROUP_TARGET_ID) {
             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager", "Node_Event: onCheckboxGroupChange");
         }
     });
