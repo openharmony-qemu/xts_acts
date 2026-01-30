@@ -420,6 +420,7 @@ export default function wallpaperAuthorityJSUnit() {
                         callbackTimes = callbackTimes + 1;
                         console.info('====>testOffCallback101 on callbackTime: ' + callbackTimes);
                         expect(callbackTimes == 1).assertTrue();
+                        wallpaper.off('colorChange', () => {});
                         wallpaper.off('colorChange');
                         await wallpaper.reset(wallpaper.WallpaperType.WALLPAPER_LOCKSCREEN)
                         await wallpaper.setWallpaper(wallpaperPath, wallpaper.WallpaperType.WALLPAPER_LOCKSCREEN)
