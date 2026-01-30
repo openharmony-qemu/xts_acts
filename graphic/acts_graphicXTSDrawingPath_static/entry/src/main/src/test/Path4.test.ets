@@ -530,15 +530,39 @@ export default function drawingTsPath4Test() {
       try {
         const path = new drawing.Path();
         const dst = new drawing.Path();
-        path.offset(200, 200);
+        let dst0 = path.offset(200, 200);
+        if(dst0 == undefined){
+          console.info(msg + ' dst0 offset failed');
+          expect().assertFail();
+        }
         path.moveTo(200, 200);
         path.lineTo(300, 300);
-        path.offset(200, 200);
-        path.offset(100.1, 100.1);
-        path.offset(-200, 200);
-        path.offset(200, -200);
-        path.offset(maxVal, maxVal);
-        console.info(msg + 'reset successes');
+        let dst1 = path.offset(200, 200);
+        if(dst1 == undefined){
+          console.info(msg + ' dst1 offset failed');
+          expect().assertFail();
+        }
+        let dst2 = path.offset(100.1, 100.1);
+        if(dst2 == undefined){
+          console.info(msg + ' dst2 offset failed');
+          expect().assertFail();
+        }
+        let dst3 = path.offset(-200, 200);
+        if(dst3 == undefined){
+          console.info(msg + ' dst3 offset failed');
+          expect().assertFail();
+        }
+        let dst4 = path.offset(200, -200);
+        if(dst4 == undefined){
+          console.info(msg + ' dst4 offset failed');
+          expect().assertFail();
+        }
+        let dst5 = path.offset(maxVal, maxVal);
+        if(dst5 == undefined){
+          console.info(msg + ' dst5 offset failed');
+          expect().assertFail();
+        }
+        console.info(msg + 'offset successes');
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -744,6 +768,46 @@ export default function drawingTsPath4Test() {
         expect(isRect2).assertEqual(false);
       } catch (e: BusinessError) {
         console.info(msg + `path isRect2 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      path.lineTo(300, 100);
+      path.close();
+      try {
+        let isRect3 = path.isRect(rect);
+        console.info(msg + `path isRect3 success`);
+        expect(isRect3).assertEqual(true);
+      } catch (e: BusinessError) {
+        console.info(msg + `path isRect3 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      rect = { left : 0, top : 125, right : 100, bottom : 225 };
+      path.reset()
+      let rect11: common2D.Rect = {
+        left: 200,
+        top: 500,
+        right: 400,
+        bottom: 700
+      };
+      let roundRec11: drawing.RoundRect = new drawing.RoundRect(rect11, 20, 20);
+      path.addRoundRect(roundRec11);
+      try {
+        let isRect4 = path.isRect(rect);
+        console.info(msg + `path isRect4 success`);
+        expect(isRect4).assertEqual(false);
+      } catch (e: BusinessError) {
+        console.info(msg + `path isRect4 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      rect = { left : 200, top : 125, right : 500, bottom : 425 };
+      path.reset()
+      roundRec11 = new drawing.RoundRect(rect11, 0, 0);
+      path.addRoundRect(roundRec11);
+      try {
+        let isRect5 = path.isRect(rect);
+        console.info(msg + `path isRect5 success`);
+        expect(isRect5).assertEqual(true);
+      } catch (e: BusinessError) {
+        console.info(msg + `path isRect5 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }
     })

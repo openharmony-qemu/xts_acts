@@ -677,7 +677,10 @@ export default function drawingTsCanvasPart5Test() {
           expect(rect.top).assertEqual(-1)
           expect(rect.bottom).assertEqual(101)
         }
-
+        if(rect == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
         canvas.clipRect({
           left: 10, right: 50, top: 30, bottom: 90
         }, drawing.ClipOp.DIFFERENCE, true);
@@ -687,6 +690,10 @@ export default function drawingTsCanvasPart5Test() {
           expect(rect.right).assertEqual(101)
           expect(rect.top).assertEqual(-1)
           expect(rect.bottom).assertEqual(101)
+        }
+        if(rect == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
         }
         console.info(msg + 'test successes');
       } catch (e) {
@@ -747,12 +754,20 @@ export default function drawingTsCanvasPart5Test() {
         if( matrixResult1 ){
           expect(matrixResult1.getAll()).assertDeepEquals(matrix1.getAll());
         }
+        if( matrixResult1 == undefined ){
+          console.info(msg + ' matrixResult1 test failed');
+          expect().assertFail();
+        }
         let matrix2 = new drawing.Matrix();
         matrix2.setMatrix([1, 2, 3, 4, 5, 6, 7, 8, 9]);
         canvas.setMatrix(matrix2);
         let matrixResult2 = canvas.getTotalMatrix();
         if( matrixResult2 ){
           expect(matrixResult2.getAll()).assertDeepEquals(matrix2.getAll());
+        }
+        if( matrixResult2 == undefined ){
+          console.info(msg + ' matrixResult2 test failed');
+          expect().assertFail();
         }
         console.info(msg + 'test successes');
       } catch (e) {
