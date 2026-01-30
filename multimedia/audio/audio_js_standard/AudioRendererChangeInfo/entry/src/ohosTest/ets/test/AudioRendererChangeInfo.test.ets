@@ -130,7 +130,13 @@ export default function audioRendererChange() {
         rendererInfo: AudioRendererInfo
       }
       let resultFlag = false;
-
+      let audioManager = audio.getAudioManager();
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      let lineDigitalDevice: boolean = false;
+      console.info(`CHANGE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      lineDigitalDevice = outputDeviceDescription.some(device => 
+        device.deviceType === audio.DeviceType.DISPLAY_PORT || device.deviceType === audio.DeviceType.LINE_DIGITAL
+      );
       try {
         audioStreamManagerCB.on('audioRendererChange', (AudioRendererChangeInfoArray: ESObject) => {
           for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
@@ -146,8 +152,14 @@ export default function audioRendererChange() {
               console.info(`${Tag} : Id: ${i}  ${AudioRendererChangeInfoArray[i].deviceDescriptors[j].id}`);
               console.info(`${Tag} : Type: ${i}  ${AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceType}`);
               console.info(`${Tag} : Role: ${i}  ${AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceRole}`);
-              expect(AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceType)
-                .assertEqual(audio.DeviceType.INVALID);
+              if (lineDigitalDevice) {
+                expect(AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceType == audio.DeviceType.DISPLAY_PORT ||
+                       AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceType == audio.DeviceType.LINE_DIGITAL)
+                      .assertTrue();
+              } else {
+                expect(AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceType)
+                  .assertEqual(audio.DeviceType.INVALID);
+              }
               expect(AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceRole)
                 .assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
               console.info(`${Tag} : Name: ${i}  ${AudioRendererChangeInfoArray[i].deviceDescriptors[j].name}`);
