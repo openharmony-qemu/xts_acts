@@ -277,7 +277,7 @@ export default function wallpaperNoPermissionJSUnit() {
             console.info('--------------testGetFilePromiseNoPermission101 start-----------------');
             try{
                 console.info('====>testGetFilePromiseNoPermission101 NoPermission check');
-                await wallpaper.getFile(WALLPAPER_LOCKSCREEN);
+                await wallpaper.getFile(wallpaper.WallpaperType.WALLPAPER_LOCKSCREEN);
                 expect().assertFail();
                 done();
             }catch(err){
@@ -330,7 +330,7 @@ export default function wallpaperNoPermissionJSUnit() {
             console.info('--------------testGetFilePromiseNoPermission102 start-----------------');
             try{
                 console.info('====>testGetFilePromiseNoPermission102 NoPermission check');
-                await wallpaper.getFile(WALLPAPER_SYSTEM);
+                await wallpaper.getFile(wallpaper.WallpaperType.WALLPAPER_SYSTEM);
                 expect().assertFail();
                 done();
             }catch(err){
