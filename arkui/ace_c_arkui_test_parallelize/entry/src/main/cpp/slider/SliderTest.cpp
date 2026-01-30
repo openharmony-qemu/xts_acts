@@ -122,9 +122,10 @@ napi_value SliderTest::sliderTest(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem thick_item = { thick_value, sizeof(thick_value) / sizeof(ArkUI_NumberValue) };
     nodeAPI->setAttribute(slider1, NODE_SLIDER_TRACK_THICKNESS, &thick_item);
 
+    const int SLIDER_TARGET_ID = 27123;
     nodeAPI->registerNodeEvent(slider1, NODE_SLIDER_EVENT_ON_CHANGE, NODE_SLIDER_EVENT_ON_CHANGE, nullptr);
     nodeAPI->addNodeEventReceiver(slider1, [](ArkUI_NodeEvent *event) {
-        if (OH_ArkUI_NodeEvent_GetTargetId(event) == 27123) {
+        if (OH_ArkUI_NodeEvent_GetTargetId(event) == SLIDER_TARGET_ID) {
             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager", "Node_Event: onSliderChange");
         }
     });
