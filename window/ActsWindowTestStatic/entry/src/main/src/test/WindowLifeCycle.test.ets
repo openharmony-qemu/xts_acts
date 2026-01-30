@@ -113,7 +113,7 @@ export default function WindowLifeCycleTest() {
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
         let windowclassArr:Array<window.Window>;
-        beforeAll(() => {
+        beforeAll(async () => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //hilog.info(0x0000, '[ANI]','windowTest context: ' + JSON.stringify(context))
             try {

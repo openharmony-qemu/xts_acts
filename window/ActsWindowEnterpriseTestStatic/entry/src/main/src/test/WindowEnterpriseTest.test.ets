@@ -83,7 +83,7 @@ export default function WindowEnterpriseTest() {
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
-        beforeAll(() => {
+        beforeAll(async () => {
             hilog.info(domain, tag, 'beforeAll start');
             let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
             hilog.info(domain, tag, 'beforeAll AbilityDelegator');
