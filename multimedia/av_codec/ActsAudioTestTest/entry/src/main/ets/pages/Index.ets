@@ -16,7 +16,7 @@ struct Index {
           .fontWeight(FontWeight.Bold)
           .onClick(() => {
             this.message = 'Welcome';
-            hilog.info(DOMAIN, 'testTag', 'Test NAPI 2 + 3 = %{public}d', testNapi.encoderConfigureLCAAC);
+            hilog.info(DOMAIN, 'testTag', 'Test NAPI 2 + 3 = %{public}d', testNapi.EncoderConfigureLCAAC());
           })
       }
       .width('100%')
