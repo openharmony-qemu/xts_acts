@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+ 
 import { inspector } from '@kit.ArkUI';
-
+ 
 @Entry
 @Component
 struct ImageExample {
@@ -28,15 +28,15 @@ struct ImageExample {
   listenerForTextByID: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(9)
   @State ll: Resource | null = $r('app.media.icon');
   @State textString: string = ''
-
+ 
   @State layoutChildrenState: string = 'init'
-
+ 
   onLayoutChildrenCompleteByID() {
     console.log("lll onLayoutChildrenCompleteByID");
     let log='onLayoutChildrenByID'
     return log
   }
-
+ 
   build() {
     Column() {
       Column() {
@@ -50,7 +50,7 @@ struct ImageExample {
               .width(this.imageWidth)
           }.id('ROW_ID')
         }.width('100%')
-
+ 
         Column() {
           Text(this.layoutChildrenState).id('layoutChildrenStateid')
           Button("onLayoutChildrenByID").id("Button1").onClick((event: ClickEvent) => {
@@ -64,12 +64,17 @@ struct ImageExample {
             AppStorage.SetOrCreate('layoutChildrenState', this.layoutChildrenState);
             console.info("layoutChildrenState:offLayoutChildrenByID");
           })
+          Button("offLayoutChildren()").id("Button4").onClick((event: ClickEvent) => {
+            this.listenerForRow.offLayoutChildren();
+            this.layoutChildrenState = 'offLayoutChildrencomplete';
+            AppStorage.SetOrCreate('layoutChildrenState', this.layoutChildrenState);
+          })
           Button("change").id("Button3").onClick((event: ClickEvent) => {
             this.textString = this.textString + '1'
             this.imageWidth += 10;
           })
         }.padding({ top: 30 })
-
+ 
       }.padding({ right: 10, top: 10 }).id('Column_ID')
     }.width('100%')
   }
@@ -80,6 +85,6 @@ struct ImageExample {
     }catch (e) {
       console.log(`eee {e}` + e)
     }
-
+ 
   }
 }

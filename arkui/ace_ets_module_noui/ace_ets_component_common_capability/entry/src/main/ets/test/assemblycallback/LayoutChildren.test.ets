@@ -29,7 +29,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-
+ 
 export default function LayoutChildrenTest() {
   describe('LayoutChildrenTest', () => {
     beforeEach(async (done: Function) => {
@@ -53,7 +53,7 @@ export default function LayoutChildrenTest() {
       }
       done();
     });
-
+ 
     /**
      * @tc.name   LayoutChildrenTest_0100
      * @tc.number LayoutChildrenTest_0100
@@ -82,6 +82,37 @@ export default function LayoutChildrenTest() {
       expect(AppStorage.get('layoutChildrenState')).assertEqual('offLayoutChildrenByID');
       AppStorage.delete('layoutChildrenState')
       console.info('[LayoutChildrenTest_0100] END');
+      done();
+    });
+
+    /**
+     * @tc.name   LayoutChildrenTest_0200
+     * @tc.number LayoutChildrenTest_0200
+     * @tc.desc   api23
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('LayoutChildrenTest_0200', Level.LEVEL0, async (done: Function) => {
+      console.info('LayoutChildrenTest_0200 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      let btn = await driver.findComponent(ON.id('Button1'));
+      await btn.click();
+      await CommonFunc.sleep(500);
+      let btn1 = await driver.findComponent(ON.id('Button3'));
+      await btn1.click();
+      await CommonFunc.sleep(500);
+      expect(AppStorage.get('layoutChildrenState')).assertEqual('onLayoutChildrenByID');
+      AppStorage.delete('layoutChildrenState')
+      let btn2 = await driver.findComponent(ON.id('Button4'));
+      await btn2.click();
+      let btn3 = await driver.findComponent(ON.id('Button3'));
+      await btn3.click();
+      await CommonFunc.sleep(1000);
+      expect(AppStorage.get('layoutChildrenState')).assertEqual('offLayoutChildrencomplete');
+      AppStorage.delete('layoutChildrenState')
+      console.info('[LayoutChildrenTest_0200] END');
       done();
     });
   })
