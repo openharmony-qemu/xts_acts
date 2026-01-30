@@ -57,7 +57,7 @@ export default function AudioTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('EncoderConfigureLCAAC', 0, async (done: Function) => {
+    it('EncoderConfigureLCAAC', level.LEVEL1, async (done: Function) => {
       const result: number = await audioNapi.EncoderConfigureLCAAC();
       expect(result).assertEqual(0)
       done();
@@ -71,7 +71,7 @@ export default function AudioTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('EncoderConfigureHEAAC', 0, async (done: Function) => {
+    it('EncoderConfigureHEAAC', level.LEVEL1, async (done: Function) => {
       const result = await audioNapi.EncoderConfigureHEAAC()
       expect(result).assertEqual(0)
       done();
@@ -85,7 +85,7 @@ export default function AudioTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('EncoderConfigureHEAACv2', 0, async (done: Function) => {
+    it('EncoderConfigureHEAACv2', level.LEVEL1, async (done: Function) => {
       const result = await audioNapi.EncoderConfigureHEAACv2()
       expect(result).assertEqual(0)
       done();
@@ -99,92 +99,92 @@ export default function AudioTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('EncoderConfigureByCap', 0, async (done: Function) => {
+    it('EncoderConfigureByCap', level.LEVEL1, async (done: Function) => {
       const result = await audioNapi.EncoderConfigureByCap()
       expect(result).assertEqual(0)
       done();
     })
 
     /**
-     * @tc.name   sample_rate
-     * @tc.number sample_rate
-     * @tc.desc   sample_rate
+     * @tc.name   SampleRate
+     * @tc.number SampleRate
+     * @tc.desc   SampleRate
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('sample_rate', 0, async (done: Function) => {
-      const result = await audioNapi.sample_rate()
+    it('SampleRate', level.LEVEL1, async (done: Function) => {
+      const result = await audioNapi.SampleRate()
       expect(result).assertEqual(0)
       done();
     })
 
     /**
-     * @tc.name   channel_count_v1
-     * @tc.number channel_count_v1
-     * @tc.desc   channel_count_v1
+     * @tc.name   ChannelCountV1
+     * @tc.number ChannelCountV1
+     * @tc.desc   ChannelCountV1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('channel_count_v1', 0, async (done: Function) => {
-      const result = await audioNapi.channel_count_v1()
+    it('ChannelCountV1', level.LEVEL1, async (done: Function) => {
+      const result = await audioNapi.ChannelCountV1()
       expect(result).assertEqual(0)
       done();
     })
 
     /**
-     * @tc.name   channel_count_v2
-     * @tc.number channel_count_v2
-     * @tc.desc   channel_count_v2
+     * @tc.name   ChannelCountV2
+     * @tc.number ChannelCountV2
+     * @tc.desc   ChannelCountV2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('channel_count_v2', 0, async (done: Function) => {
-      const result = await audioNapi.channel_count_v2()
+    it('ChannelCountV2', level.LEVEL1, async (done: Function) => {
+      const result = await audioNapi.ChannelCountV2()
       expect(result).assertEqual(0)
       done();
     })
 
     /**
-     * @tc.name   channel_layout_v1
-     * @tc.number channel_layout_v1
-     * @tc.desc   channel_layout_v1
+     * @tc.name   ChannelLayoutV1
+     * @tc.number ChannelLayoutV1
+     * @tc.desc   ChannelLayoutV1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('channel_layout_v1', 0, async (done: Function) => {
-      const result = await audioNapi.channel_layout_v1()
+    it('ChannelLayoutV1', level.LEVEL1, async (done: Function) => {
+      const result = await audioNapi.ChannelLayoutV1()
       expect(result).assertEqual(0)
       done();
     })
 
     /**
-     * @tc.name   channel_layout_v2
-     * @tc.number channel_layout_v2
-     * @tc.desc   channel_layout_v2
+     * @tc.name   ChannelLayoutV2
+     * @tc.number ChannelLayoutV2
+     * @tc.desc   ChannelLayoutV2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('channel_layout_v2', 0, async (done: Function) => {
-      const result = await audioNapi.channel_layout_v2()
+    it('ChannelLayoutV2', level.LEVEL1, async (done: Function) => {
+      const result = await audioNapi.ChannelLayoutV2()
       expect(result).assertEqual(0)
       done();
     })
 
     /**
-     * @tc.name   aac_profile
-     * @tc.number aac_profile
-     * @tc.desc   aac_profile
+     * @tc.name   AacProfile
+     * @tc.number AacProfile
+     * @tc.desc   AacProfile
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('aac_profile', 0, async (done: Function) => {
-      const result = await audioNapi.aac_profile()
+    it('AacProfile', level.LEVEL1, async (done: Function) => {
+      const result = await audioNapi.AacProfile()
       expect(result).assertEqual(0)
       done();
     })

@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef ACTSAUDIOHAPTEST_AUDIO_ENCODER_CAPI_NDK_TEST_H
-#define ACTSAUDIOHAPTEST_AUDIO_ENCODER_CAPI_NDK_TEST_H
+#ifndef ACTSAUDIOHAPTEST_AUDIO_ENCODER_CAPI_TEST_H
+#define ACTSAUDIOHAPTEST_AUDIO_ENCODER_CAPI_TEST_H
 
 #include <atomic>
 #include <fstream>
@@ -40,10 +40,10 @@ constexpr int64_t BITS_RATE = 261000;
 constexpr uint32_t FRAME_DURATION_US = 33000;
 constexpr uint32_t AAC_DEFAULT_FRAME_BYTES = 2 * 1024 * 4;
 
-static constexpr const char* AAC_INPUT_FILE_PATH =
+constexpr const char* AAC_INPUT_FILE_PATH =
     "/data/storage/el2/base/haps/entry_test/files/aac_2c_44100hz_199k.pcm";
 
-static constexpr const char* AAC_OUTPUT_FILE_PATH =
+constexpr const char* AAC_OUTPUT_FILE_PATH =
     "/data/storage/el2/base/haps/entry_test/files/aac_2c_44100hz_encode.aac";
 
 class AEncSignalAv {
@@ -108,13 +108,13 @@ int EncoderConfigureLCAAC();
 int EncoderConfigureHEAAC();
 int EncoderConfigureHEAACv2();
 int EncoderConfigureByCap();
-int sample_rate();
-int channel_count_v1();
-int channel_count_v2();
-int channel_layout_v1();
-int channel_layout_v2();
-int aac_profile();
+int SampleRate();
+int ChannelCountV1();
+int ChannelCountV2();
+int ChannelLayoutV1();
+int ChannelLayoutV2();
+int AacProfile();
 
 } // namespace OHOS
 
-#endif // ACTSAUDIOHAPTEST_AUDIO_ENCODER_CAPI_NDK_TEST_H
+#endif // ACTSAUDIOHAPTEST_AUDIO_ENCODER_CAPI_TEST_H

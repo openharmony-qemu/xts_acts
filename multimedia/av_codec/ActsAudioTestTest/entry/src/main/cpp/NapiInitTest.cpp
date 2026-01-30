@@ -54,12 +54,10 @@ static void CompleteWork(napi_env env, napi_status status, void* data)
     }
 
     if (!workData->errorMsg.empty()) {
-        // 有异常，reject Promise
         napi_value error;
         napi_create_string_utf8(env, workData->errorMsg.c_str(), NAPI_AUTO_LENGTH, &error);
         napi_reject_deferred(env, workData->deferred, error);
     } else {
-        // 成功，resolve Promise（返回测试结果）
         napi_value result;
         napi_create_int32(env, workData->result, &result);
         napi_resolve_deferred(env, workData->deferred, result);
@@ -115,47 +113,51 @@ static napi_value EncoderConfigureByCapWrapper(napi_env env, napi_callback_info 
 
 static napi_value SampleRateWrapper(napi_env env, napi_callback_info info)
 {
-    return CreateAsyncWrapper(env, info, sample_rate);
+    return CreateAsyncWrapper(env, info, SampleRate);
 }
 
 static napi_value ChannelCountV1Wrapper(napi_env env, napi_callback_info info)
 {
-    return CreateAsyncWrapper(env, info, channel_count_v1);
+    return CreateAsyncWrapper(env, info, ChannelCountV1);
 }
 
 static napi_value ChannelCountV2Wrapper(napi_env env, napi_callback_info info)
 {
-    return CreateAsyncWrapper(env, info, channel_count_v2);
+    return CreateAsyncWrapper(env, info, ChannelCountV2);
 }
 
 static napi_value ChannelLayoutV1Wrapper(napi_env env, napi_callback_info info)
 {
-    return CreateAsyncWrapper(env, info, channel_layout_v1);
+    return CreateAsyncWrapper(env, info, ChannelLayoutV1);
 }
 
 static napi_value ChannelLayoutV2Wrapper(napi_env env, napi_callback_info info)
 {
-    return CreateAsyncWrapper(env, info, channel_layout_v2);
+    return CreateAsyncWrapper(env, info, ChannelLayoutV2);
 }
 
 static napi_value AacProfileWrapper(napi_env env, napi_callback_info info)
 {
-    return CreateAsyncWrapper(env, info, aac_profile);
+    return CreateAsyncWrapper(env, info, AacProfile);
 }
 
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        { "EncoderConfigureLCAAC", nullptr, EncoderConfigureLCAACWrapper, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "EncoderConfigureHEAAC", nullptr, EncoderConfigureHEAACWrapper, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "EncoderConfigureHEAACv2", nullptr, EncoderConfigureHEAACv2Wrapper, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "EncoderConfigureByCap", nullptr, EncoderConfigureByCapWrapper, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "sample_rate", nullptr, SampleRateWrapper, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "channel_count_v1", nullptr, ChannelCountV1Wrapper, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "channel_count_v2", nullptr, ChannelCountV2Wrapper, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "channel_layout_v1", nullptr, ChannelLayoutV1Wrapper, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "channel_layout_v2", nullptr, ChannelLayoutV2Wrapper, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "aac_profile", nullptr, AacProfileWrapper, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "EncoderConfigureLCAAC", nullptr, EncoderConfigureLCAACWrapper,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "EncoderConfigureHEAAC", nullptr, EncoderConfigureHEAACWrapper,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "EncoderConfigureHEAACv2", nullptr, EncoderConfigureHEAACv2Wrapper,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "EncoderConfigureByCap", nullptr, EncoderConfigureByCapWrapper,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SampleRate", nullptr, SampleRateWrapper, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ChannelCountV1", nullptr, ChannelCountV1Wrapper, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ChannelCountV2", nullptr, ChannelCountV2Wrapper, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ChannelLayoutV1", nullptr, ChannelLayoutV1Wrapper, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ChannelLayoutV2", nullptr, ChannelLayoutV2Wrapper, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AacProfile", nullptr, AacProfileWrapper, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

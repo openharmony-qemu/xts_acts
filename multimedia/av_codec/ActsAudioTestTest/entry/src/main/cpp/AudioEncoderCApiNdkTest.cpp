@@ -494,14 +494,14 @@ int EncoderConfigureByCap()
 }
 
 /**
- * @tc.name   sample_rate
- * @tc.number sample_rate
- * @tc.desc   sample_rate
+ * @tc.name   SampleRate
+ * @tc.number SampleRate
+ * @tc.desc   SampleRate
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int sample_rate()
+int SampleRate()
 {
     auto ctx = std::make_unique<AudioCodeCApiEncoderNdkTestContext>();
     if (!ctx->IsSupportHeAac()) {
@@ -514,14 +514,14 @@ int sample_rate()
 }
 
 /**
- * @tc.name   channel_count_v1
- * @tc.number channel_count_v1
- * @tc.desc   channel_count_v1
+ * @tc.name   ChannelCountV1
+ * @tc.number ChannelCountV1
+ * @tc.desc   ChannelCountV1
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int channel_count_v1()
+int ChannelCountV1()
 {
     auto ctx = std::make_unique<AudioCodeCApiEncoderNdkTestContext>();
     if (!ctx->IsSupportHeAac()) {
@@ -533,14 +533,14 @@ int channel_count_v1()
 }
 
 /**
- * @tc.name   channel_count_v2
- * @tc.number channel_count_v2
- * @tc.desc   channel_count_v2
+ * @tc.name   ChannelCountV2
+ * @tc.number ChannelCountV2
+ * @tc.desc   ChannelCountV2
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int channel_count_v2()
+int ChannelCountV2()
 {
     auto ctx = std::make_unique<AudioCodeCApiEncoderNdkTestContext>();
     if (!ctx->IsSupportHeAac()) {
@@ -552,14 +552,14 @@ int channel_count_v2()
 }
 
 /**
- * @tc.name   channel_layout_v1
- * @tc.number channel_layout_v1
- * @tc.desc   channel_layout_v1
+ * @tc.name   ChannelLayoutV1
+ * @tc.number ChannelLayoutV1
+ * @tc.desc   ChannelLayoutV1
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int channel_layout_v1()
+int ChannelLayoutV1()
 {
     auto ctx = std::make_unique<AudioCodeCApiEncoderNdkTestContext>();
     if (!ctx->IsSupportHeAac()) {
@@ -580,14 +580,14 @@ int channel_layout_v1()
 }
 
 /**
- * @tc.name   channel_layout_v2
- * @tc.number channel_layout_v2
- * @tc.desc   channel_layout_v2
+ * @tc.name   ChannelLayoutV2
+ * @tc.number ChannelLayoutV2
+ * @tc.desc   ChannelLayoutV2
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int channel_layout_v2()
+int ChannelLayoutV2()
 {
     auto ctx = std::make_unique<AudioCodeCApiEncoderNdkTestContext>();
     if (!ctx->IsSupportHeAac()) {
@@ -601,14 +601,14 @@ int channel_layout_v2()
 }
 
 /**
- * @tc.name   aac_profile
- * @tc.number aac_profile
- * @tc.desc   aac_profile
+ * @tc.name   AacProfile
+ * @tc.number AacProfile
+ * @tc.desc   AacProfile
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int aac_profile()
+int AacProfile()
 {
     auto ctx = std::make_unique<AudioCodeCApiEncoderNdkTestContext>();
     ctx->ProceByMimeFunc(OH_AVCODEC_MIMETYPE_AUDIO_AAC, true);
