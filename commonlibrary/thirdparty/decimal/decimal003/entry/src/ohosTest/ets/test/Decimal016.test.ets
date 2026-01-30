@@ -45,6 +45,7 @@ export default function DecimalTest016() {
         console.info("beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.");
     });
     afterEach(() => {
+        sleep(20);
         console.info("afterEach: Test case-level clearance conditions, which are executed after each test case is executed.");
     });
     afterAll(() => {
