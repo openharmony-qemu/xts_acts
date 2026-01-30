@@ -155,7 +155,7 @@ export default function AudioTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ChannelLayoutV1', level.LEVEL1, async (done: Function) => {
+    it('ChannelLayoutV1', Level.LEVEL1, async (done: Function) => {
       const result = await audioNapi.ChannelLayoutV1()
       expect(result).assertEqual(0)
       done();
