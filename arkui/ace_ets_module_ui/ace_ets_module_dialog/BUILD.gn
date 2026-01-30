@@ -69,6 +69,7 @@ group("ActsAceEtsModuleDialogTest") {
       "ace_ets_module_dialog_NoWear:ActsAceEtsModuleNoWearTest",
       "ace_ets_module_dialog_Popup:ActsAceEtsModulePopupTest",
       "ace_ets_module_dialog_Popup_static:ActsAceEtsModuleDialogPopupStaticTest",
+      "ace_ets_module_menu_static:ActsAceEtsModuleMenuStaticTest",
       "ace_ets_module_dialog_Prompt:ActsAceEtsModulePromptTest",
       "ace_ets_module_dialog_Rating:ActsAceEtsModuleRatingTest",
       "ace_ets_module_dialog_Select:ActsAceEtsModuleSelectTest",
