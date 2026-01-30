@@ -9,7 +9,7 @@
             "cloudType": ["Local", "Device DB"],
             "tableName": "EMPLOYEE",
             "deviceSyncFields": ["NAME", "AGE", "SALARY", "CODES"],
-            "fileds": [
+            "fields": [
               {
                 "columnName": "ID",
                 "type": "Integer",
@@ -58,7 +58,7 @@
             "cloudType": ["Local", "Device DB"],
             "tableName": "EMPLOYEE",
             "deviceSyncFields": ["NAME", "AGE", "SALARY", "CODES"],
-            "fileds": [
+            "fields": [
               {
                 "columnName": "ID",
                 "type": "Integer",
@@ -107,7 +107,7 @@
             "cloudType": ["Local", "Device DB"],
             "tableName": "EMPLOYEE",
             "deviceSyncFields": ["NAME", "SALARY", "CODES"],
-            "fileds": [
+            "fields": [
               {
                 "columnName": "NAME",
                 "type": "Text",
@@ -149,7 +149,7 @@
             "cloudType": ["Local", "Device DB"],
             "tableName": "EMPLOYEE",
             "deviceSyncFields": ["AGE", "SALARY", "CODES"],
-            "fileds": [
+            "fields": [
               {
                 "columnName": "NAME",
                 "type": "Text",
@@ -191,7 +191,7 @@
             "cloudType": ["Local", "Device DB"],
             "tableName": "EMPLOYEE",
             "deviceSyncFields": ["ID", "NAME", "AGE", "SALARY", "CODES"],
-            "fileds": [
+            "fields": [
               {
                 "columnName": "ID",
                 "type": "Integer",
@@ -240,7 +240,7 @@
             "cloudType": ["Local", "Device DB"],
             "tableName": "EMPLOYEE",
             "deviceSyncFields": ["NAME", "AGE", "SALARY", "CODES"],
-            "fileds": [
+            "fields": [
               {
                 "columnName": "ID",
                 "type": "Integer",
@@ -289,7 +289,7 @@
             "cloudType": ["Local", "Device DB"],
             "tableName": "EMPLOYEE",
             "deviceSyncFields": [],
-            "fileds": [
+            "fields": [
               {
                 "columnName": "ID",
                 "type": "Integer",

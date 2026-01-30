@@ -14,11 +14,52 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
-import relationalStore from '@ohos.data.relationalStore'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import common from '@ohos.app.ability.common'
+import relationalStore from '@ohos.data.relationalStore';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { abilityAccessCtrl, common, PermissionRequestResult } from '@kit.AbilityKit';
+import { Driver, ON } from '@kit.TestKit';
+import { BusinessError, Device, deviceInfo } from '@kit.BasicServicesKit';
 let context  =  abilityDelegatorRegistry.getAbilityDelegator().getAppContext().getApplicationContext()
 const TAG = "[RELATIONAL_STORE_SETDISTRIBUTEDTABLE_JSKITS_TEST]"
+let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+
+let getPermission = async () => {
+  console.info('getPermission isstart');
+  let context:common.UIAbilityContext | undefined = AppStorage.get("context") as common.UIAbilityContext;
+  atManager.requestPermissionsFromUser(context, ['ohos.permission.DISTRIBUTED_DATASYNC'], (err:BusinessError, data:PermissionRequestResult) => {
+    console.info('requestPermissionsFormUser success data is' + JSON.stringify(data));
+    console.info('requestPermissionsFormUser failed err is' + JSON.stringify(err));
+  })
+}
+
+let sleep = (ms:number) => {
+  return new Promise<ESObject>(resolve => setTimeout(resolve, ms));
+}
+
+let drivenFn = async () => {
+  try {
+    let driver: Driver = Driver.create();
+    console.info('come in driveFn');
+     console.info('driver is  ${JSON.stringify(driver)}');
+     await sleep(1000);
+     let button = await driver.findComponent(ON.text('始终允许'));
+     if (button) {
+      console.info('button is  ${JSON.stringify(button)}');
+      await sleep(1000);
+      await button.click();
+      await sleep(1000);
+     } else {
+      let button1 = await driver.findComponent(ON.text('允许'));
+      console.info('button is  ${JSON.stringify(button1)}');
+      await sleep(1000);
+      await button1.click();
+      await sleep(1000);
+     }
+  } catch (err) {
+     console.info('err is  ${JSON.stringify(err)}');
+     return
+  }
+}
 
 const DISTRIBUTED_CONFIG_COLLABORATION:relationalStore.DistributedConfig = {
   autoSync: false,
@@ -177,7 +218,7 @@ export default function RdbSetDistributedTable() {
           console.info('setDistributedTables EMPLOYEE SINGLE_VERSION successfully');
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         }
       }
       console.log(TAG + "************* setDistributedTableTest0001 end *************");  
@@ -216,7 +257,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE DEVICE_COLLABORATION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         }
       }
       console.log(TAG + "************* setDistributedTableTest0002 end *************");  
@@ -247,7 +288,7 @@ export default function RdbSetDistributedTable() {
           console.info('setDistributedTables EMPLOYEE SINGLE_VERSION successfully');
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         }
         try {
           await rdbStoreNoschema.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_COLLABORATION);
@@ -286,7 +327,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         }
       }
       if(rdbStore == undefined) {
@@ -337,7 +378,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         } 
       }
       console.log(TAG + "************* setDistributedTableTest0005 end *************");  
@@ -369,7 +410,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE INVALID_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual("401");
         }
       } 
       console.log(TAG + "************* setDistributedTableTest0006 end *************");  
@@ -432,7 +473,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         } 
       }
       console.log(TAG + "************* setDistributedTableTest0008 end *************");  
@@ -464,7 +505,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         }
       } 
       console.log(TAG + "************* setDistributedTableTest0009 end *************");  
@@ -527,7 +568,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         } 
       }
       console.log(TAG + "************* setDistributedTableTest0011 end *************");  
@@ -559,7 +600,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         } 
       }
       console.log(TAG + "************* setDistributedTableTest0012 end *************");  
@@ -591,7 +632,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         } 
       }
       console.log(TAG + "************* setDistributedTableTest0013 end *************");  
@@ -623,7 +664,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         } 
       }
       console.log(TAG + "************* setDistributedTableTest0014 end *************");  
@@ -655,7 +696,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         } 
       }
       console.log(TAG + "************* setDistributedTableTest0015 end *************");  
@@ -687,7 +728,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         }
       } 
       console.log(TAG + "************* setDistributedTableTest0016 end *************");  
@@ -719,7 +760,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         }
       } 
       console.log(TAG + "************* setDistributedTableTest0017 end *************");  
@@ -751,7 +792,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         } 
       }
       console.log(TAG + "************* setDistributedTableTest0018 end *************");  
@@ -782,7 +823,7 @@ export default function RdbSetDistributedTable() {
           console.info('setDistributedTables EMPLOYEE SINGLE_VERSION successfully');
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         } 
       }
       console.log(TAG + "************* setDistributedTableTest0019 end *************");  
@@ -813,7 +854,7 @@ export default function RdbSetDistributedTable() {
           console.info('setDistributedTables EMPLOYEE SINGLE_VERSION successfully');
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         } 
       }
       console.log(TAG + "************* setDistributedTableTest0020 end *************");  
@@ -845,7 +886,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE SINGLE_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         } 
       }
       console.log(TAG + "************* setDistributedTableTest0021 end *************");  
@@ -876,7 +917,7 @@ export default function RdbSetDistributedTable() {
           console.info('setCloudDistributedTables EMPLOYEE successfully');
         } catch (err) {
           console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         } 
       }
       console.log(TAG + "************* setCloudDistributedTableTest0001 end *************");  
@@ -908,7 +949,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual("801");
+          expect(err.code).assertEqual("801");
         } 
       } 
       console.log(TAG + "************* setCloudDistributedTableTest0002 end *************");  
@@ -971,7 +1012,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual("401");
+          expect(err.code).assertEqual("401");
         } 
       }
       console.log(TAG + "************* setCloudDistributedTableTest0004 end *************");  
@@ -1042,7 +1083,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         }  
       }
       console.log(TAG + "************* setMulteDistributedTest0001 end *************");  
@@ -1082,7 +1123,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).asserEqual(14800000);
+          expect(err.code).assertEqual(14800000);
         }  
       }     
       console.log(TAG + "************* setMulteDistributedTest0002 end *************");     
