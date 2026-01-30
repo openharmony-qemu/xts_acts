@@ -27,8 +27,8 @@ import { UtilsTest, startAbility } from '../../Util.test';
 import {SharedTransitionEffectType,Color} from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-export default function Navigation_L0_5_2() {
-  describe('Navigation_L0_5_2', () => {
+export default function Navigation_L0_21_2() {
+  describe('Navigation_L0_21_2', () => {
     beforeAll(() => {
 
       
@@ -37,49 +37,49 @@ export default function Navigation_L0_5_2() {
     });
 
     beforeEach(async (): Promise<void> => {
-      console.info("Navigation_L0_5_2 beforeEach start");
+      console.info("Navigation_L0_21_2 beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Navigation/Navigation_L0/Navigation_L0_5_2',
+        url: 'MainAbility/pages/Navigation/Navigation_L0/Navigation_L0_21_2',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get Navigation_L0_5_2 state pages:" + JSON.stringify(pages));
+        console.info("get Navigation_L0_21_2 state pages:" + JSON.stringify(pages));
         if (!("List_SpaceChange" == pages.name)) {
-          console.info("get Navigation_L0_5_2 pages.name:" + JSON.stringify(pages.name));
+          console.info("get Navigation_L0_21_2 pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push Navigation_L0_5_2 page result:");
+          console.info("push Navigation_L0_21_2 page result:");
         }
       } catch (err) {
-        console.error("push Navigation_L0_5_2 page error:" + err);
+        console.error("push Navigation_L0_21_2 page error:" + err);
       }
-      console.info("Navigation_L0_5_2 beforeEach end");
+      console.info("Navigation_L0_21_2 beforeEach end");
     });
     afterEach(async () => {
     });
 
     
     
-/*
-     * @tc.number   Navigation_L0_5_2_static_0100
-     * @tc.name     Navigation_L0_5_2_static_0100
-     * @tc.desc     Navigation_L0_5_2_static_0100
+/**
+     * @tc.number   Navigation_L0_21_2_static_0100
+     * @tc.name     Navigation_L0_21_2_static_0100
+     * @tc.desc     Navigation_L0_21_2_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('Navigation_L0_5_2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('Navigation_L0_5_2_static_0100 START');
+    it('Navigation_L0_21_2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('Navigation_L0_21_2_static_0100 START');
       await CommonFunc.sleep(1000);
 
 
-      inspector.sendEventByKey('Navigation_L0_5_2_btn1',10,"")
+      inspector.sendEventByKey('Navigation_L0_21_2_btn1',10,"")
       await CommonFunc.sleep(1000);
-      let text1 = inspector.getInspectorByKey('Navigation_L0_5_2_text1');
+      let text1 = inspector.getInspectorByKey('Navigation_L0_21_2_text1');
       expect(String(JSON.parseJsonElement(text1).getElement('$attrs').getString('content'))).assertEqual('100005');
       await CommonFunc.sleep(1000);
 
-      console.info('Navigation_L0_5_2_static_0100 END');
+      console.info('Navigation_L0_21_2_static_0100 END');
       done();
     });
 
