@@ -39,7 +39,7 @@ import wifiMg from '@ohos.wifiManager';
 export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
   describe("certFrameworkCertIgnoreNetworkIssuesTestUnit", (): void => {
 
-    beforeEach((): void => {
+    beforeEach(async (): void => {
       if(!wifiMg.isWifiActive()) {
         console.info("=========>>>>>>> wifi_test/enable wifi");
         await sleep(5000);
