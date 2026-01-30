@@ -26,20 +26,10 @@ struct FocusAxisEventAddExample {
   @State axisValue: string = '轴事件待触发...';
   @State axisEventJson: string = '完整事件信息待触发...';
 
-  @State stepTips: string = '设备仅使用游戏手柄操作可触发, 此外还需修改对应键值和轴值\n' +
+  @State stepTips: string = '设备使用游戏手柄操作时\n' +
     '操作步骤:\n' + '1、使用游戏手柄获焦在按钮FocusAxisEvent上,查看返回的数据\n' +
     '预期结果：\n' + 
-    '修改键值.json情况：\n' + 
-    '1.操作左摇杆时, 左操作的absHat1X的值范围在[-1,0], 右操作的absHat1X的值范围在[0,1], 上操作的absHat1Y的值范围在[-1,0], 下操作的absHat1Y的值范围在[0,1]\n' +
-    '2.操作左摇杆时, 左操作的absHat2X的值范围在[-1,0], 右操作的absHat2X的值范围在[0,1], 上操作的absHat2Y的值范围在[-1,0], 下操作的absHat2Y的值范围在[0,1]\n' +
-    '2.操作右摇杆时, 左操作的absHat2X的值范围在[-1,0], 右操作的absHat2X的值范围在[0,1], 上操作的absHat2Y的值范围在[-1,0], 下操作的absHat2Y的值范围在[0,1]\n' +
-    '3.操作十字键时, 上键时absHat3Y的值为-1, 下键时absHat3Y的值为1\n' +
-    '修改轴值.json情况：\n' + 
-    '1.操作右摇杆时, 左右操作的absThrottle的值范围在[0,1], 上下操作的absRudder的值范围在[-1,1]\n' +
-    '2.操作左摇杆时, 左操作的absRx的值范围在[-1,0], 右操作的absRx的值范围在[0,1], 上操作的absRy的值范围在[-1,0], 下操作的absRy的值范围在[0,1]\n' +
-    '3.操作十字键时, 左操作的absWheel的值为-1, 下操作的absWheel的值为1\n' +
-    '4.操作RT操作时, absThrottle的值范围在[0,1]' +
-    '5.操作LT操作时, absWheel的值范围在[0,1]';
+    '1.操作左摇杆时, 左操作的absX的值范围在[-1,0], 右操作的absX的值范围在[0,1], 上操作的absY的值范围在[-1,0], 下操作的absY的值范围在[0,1]\n';
   aboutToAppear(): void {
     FirstDialog.ChooseDialog(this.stepTips, this.name);
   }
@@ -165,7 +155,7 @@ struct FocusAxisEventAddExample {
 
       Column() {
         Row() {
-          Text('（墨将烈风）游戏手柄可测试')
+          Text('当前只支持游戏手柄测试')
           .fontColor(Color.Green)
           .fontSize('18fp')
           .margin({top:15})
@@ -173,6 +163,8 @@ struct FocusAxisEventAddExample {
         Button('FocusAxisEvent')
           .defaultFocus(true)
           .onFocusAxisEvent((event: FocusAxisEvent) => {
+            let absX = event.axisMap.get(AxisModel.ABS_X);
+            let absY = event.axisMap.get(AxisModel.ABS_Y);
             let absRx = event.axisMap.get(AxisModel.ABS_RX);
             let absRy = event.axisMap.get(AxisModel.ABS_RY);
             let absThrottle = event.axisMap.get(AxisModel.ABS_THROTTLE);
@@ -185,6 +177,7 @@ struct FocusAxisEventAddExample {
             let absHat3X = event.axisMap.get(AxisModel.ABS_HAT3X);
             let absHat3Y = event.axisMap.get(AxisModel.ABS_HAT3Y);
             this.axisValue = `
+            ABS_X = ${absX} | ABS_Y = ${absY}
             ABS_RX = ${absRx} | ABS_RY = ${absRy}
             ABS_HAT1X = ${absHat1X} | ABS_HAT1Y = ${absHat1Y}
             ABS_HAT2X = ${absHat2X} | ABS_HAT2Y = ${absHat2Y}
