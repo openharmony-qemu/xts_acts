@@ -61,7 +61,6 @@ public:
 };
 
 class AudioCodeCApiEncoderNdkTestContext {
-
 public:
     AudioCodeCApiEncoderNdkTestContext() {}
     ~AudioCodeCApiEncoderNdkTestContext()
