@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,150 +12,182 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, beforeAll, describe, expect, it, Level } from "@ohos/hypium"
-import libentry from "libentry.so"
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from "@ohos/hypium"
+import audioNapi from "libentry.so"
+import Utils, { Log } from "./Util.test"
 
-const TAG = 'AudioEncoderTest'
+const fileArr = [
+  "aac_2c_44100hz_199k.pcm"
+]
 
 export default function AudioTest() {
   describe('AcstAudioTest', () => {
-    beforeAll(() => {
-      console.info(`${TAG}: beforeAll: Init AAC encoder test env`)
+    beforeAll(async () => {
+      let context = getContext()
+      for (let i = 0; i < fileArr.length; i++) {
+        const fileName = fileArr[i]
+        Utils.copyRawfileToFilesDirSync(fileName, context)
+      }
+      Log.info(`[rawfile_copy_to_sandbox] sandbox path: ${context.filesDir}/`)
+      await Utils.sleep(500)
+    })
+    beforeEach(async () => {
+      let context = getContext()
+      Log.info(`AudioText beforeEach`);
+      for (let i = 0; i < fileArr.length; i++) {
+        const fileName = fileArr[i];
+        if (Utils.fileCheckSync(fileName, context)) {
+          Log.info(`AudioText ${fileName} file exists`);
+        } else {
+          Log.info(`AudioText ${fileName} file does not exists!`);
+        }
+      }
+      await Utils.sleep(500)
+    })
+    afterEach(() => {
     })
     afterAll(() => {
-      console.info(`${TAG}: afterAll: Clean AAC encoder test env`)
     })
 
     /**
-     * @tc.name   Encoder_Configure_LCAAC
-     * @tc.number Encoder_Configure_LCAAC
-     * @tc.desc   Encoder_Configure_LCAAC
+     * @tc.name   EncoderConfigureLCAAC
+     * @tc.number EncoderConfigureLCAAC
+     * @tc.desc   EncoderConfigureLCAAC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Encoder_Configure_LCAAC', Level.LEVEL1, () => {
-      const  result = libentry.encoderConfigureLCAAC();
+    it('EncoderConfigureLCAAC', 0, async (done: Function) => {
+      const result: number = await audioNapi.EncoderConfigureLCAAC();
       expect(result).assertEqual(0)
+      done();
     })
 
     /**
-     * @tc.name   Encoder_Configure_HEAAC
-     * @tc.number Encoder_Configure_HEAAC
-     * @tc.desc   Encoder_Configure_HEAAC
+     * @tc.name   EncoderConfigureHEAAC
+     * @tc.number EncoderConfigureHEAAC
+     * @tc.desc   EncoderConfigureHEAAC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Encoder_Configure_HEAAC', Level.LEVEL1, () => {
-      const result = libentry.encoderConfigureHEAAC(0);
-      expect(result).assertEqual(0);
+    it('EncoderConfigureHEAAC', 0, async (done: Function) => {
+      const result = await audioNapi.EncoderConfigureHEAAC()
+      expect(result).assertEqual(0)
+      done();
     })
 
     /**
-     * @tc.name   Encoder_Configure_HEAAC_v2
+     * @tc.name   EncoderConfigureHEAACv2
      * @tc.number EncoderConfigureHEAACv2
      * @tc.desc   EncoderConfigureHEAACv2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("Encoder_Configure_HEAAC_v2", Level.LEVEL1, () => {
-      const result = libentry.encoderConfigureHEAAC(1);
+    it('EncoderConfigureHEAACv2', 0, async (done: Function) => {
+      const result = await audioNapi.EncoderConfigureHEAACv2()
       expect(result).assertEqual(0)
+      done();
     })
 
     /**
-     * @tc.name   Encoder_Configure_By_Cap
-     * @tc.number Encoder_Configure_By_Cap
-     * @tc.desc   Encoder_Configure_By_Cap
+     * @tc.name   EncoderConfigureByCap
+     * @tc.number EncoderConfigureByCap
+     * @tc.desc   EncoderConfigureByCap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("Encoder_Configure_By_Cap", Level.LEVEL1, () => {
-      const result = libentry.encoderConfigureByCap();
-      expect(result).assertEqual(0);
+    it('EncoderConfigureByCap', 0, async (done: Function) => {
+      const result = await audioNapi.EncoderConfigureByCap()
+      expect(result).assertEqual(0)
+      done();
     })
 
     /**
-     * @tc.name   Sample_Rate
-     * @tc.number Sample_Rate
-     * @tc.desc   Sample_Rate
+     * @tc.name   sample_rate
+     * @tc.number sample_rate
+     * @tc.desc   sample_rate
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Sample_Rate', Level.LEVEL1, () => {
-      const  result = libentry.sample_rate();
-      expect(result).assertEqual(0);
+    it('sample_rate', 0, async (done: Function) => {
+      const result = await audioNapi.sample_rate()
+      expect(result).assertEqual(0)
+      done();
     })
 
     /**
-     * @tc.name   Channel_Count_v1
-     * @tc.number Channel_Count_v1
-     * @tc.desc   Channel_Count_v1
+     * @tc.name   channel_count_v1
+     * @tc.number channel_count_v1
+     * @tc.desc   channel_count_v1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("Channel_Count_v1", Level.LEVEL1, () => {
-      const result = libentry.channel_count(0);
-      expect(result).assertEqual(0);
+    it('channel_count_v1', 0, async (done: Function) => {
+      const result = await audioNapi.channel_count_v1()
+      expect(result).assertEqual(0)
+      done();
     })
 
     /**
-     * @tc.name   Channel_Count_v2
-     * @tc.number Channel_Count_v2
-     * @tc.desc   Channel_Count_v2
+     * @tc.name   channel_count_v2
+     * @tc.number channel_count_v2
+     * @tc.desc   channel_count_v2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("Channel_Count_v2", Level.LEVEL1, () => {
-      const result = libentry.channel_count(1);
-      expect(result).assertEqual(0);
+    it('channel_count_v2', 0, async (done: Function) => {
+      const result = await audioNapi.channel_count_v2()
+      expect(result).assertEqual(0)
+      done();
     })
 
     /**
-     * @tc.name   Channel_Layout_v1
+     * @tc.name   channel_layout_v1
      * @tc.number channel_layout_v1
-     * @tc.desc   Channel_Layout_v1
+     * @tc.desc   channel_layout_v1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("Channel_Layout_v1", Level.LEVEL1, () => {
-      const result = libentry.channel_layout(0);
+    it('channel_layout_v1', 0, async (done: Function) => {
+      const result = await audioNapi.channel_layout_v1()
       expect(result).assertEqual(0)
+      done();
     })
 
     /**
-     * @tc.name   Channel_Layout_v2
+     * @tc.name   channel_layout_v2
      * @tc.number channel_layout_v2
-     * @tc.desc   Channel_Layout_v2
+     * @tc.desc   channel_layout_v2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("Channel_Layout_v2", Level.LEVEL1, () => {
-      const result = libentry.channel_layout(1);
+    it('channel_layout_v2', 0, async (done: Function) => {
+      const result = await audioNapi.channel_layout_v2()
       expect(result).assertEqual(0)
+      done();
     })
 
     /**
-     * @tc.name   Aac_Profile
-     * @tc.number Aac_Profile
-     * @tc.desc   Aac_Profile
+     * @tc.name   aac_profile
+     * @tc.number aac_profile
+     * @tc.desc   aac_profile
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("Aac_Profile", Level.LEVEL1, () => {
-      const result = libentry.aac_profile();
-      expect(result).assertEqual(0);
+    it('aac_profile', 0, async (done: Function) => {
+      const result = await audioNapi.aac_profile()
+      expect(result).assertEqual(0)
+      done();
     })
+
   })
-
-
 }
