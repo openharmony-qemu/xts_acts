@@ -74,6 +74,9 @@ struct SearchPage {
         console.info("[SearchPage page]" + eventD!['placeholderFont']);
         this.placeholderFont =  eventD!['placeholderFont'] as Font;
       }
+      if (eventD!['positionValue'] != null) {
+        this.positionValue = eventD!['positionValue'] as int
+      }
     }
   }
   onPageShow() {

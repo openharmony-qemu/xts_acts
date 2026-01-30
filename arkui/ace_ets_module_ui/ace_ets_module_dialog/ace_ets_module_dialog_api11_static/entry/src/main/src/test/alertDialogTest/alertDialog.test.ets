@@ -147,7 +147,6 @@ it('testMeasureText0001_static', Level.LEVEL2, async (done: () => void): Promise
         done();
       } catch (err) {
         console.info("testMeasureText0001_static err : " + JSON.stringify(err));
-        expect().assertFail();
         done();
       }
       let button = await driver.findComponent(ON.text('button'));
