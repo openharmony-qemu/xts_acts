@@ -75,9 +75,10 @@ napi_value RadioTest::radioTest(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem group_item = { .string = "group01" };
     nodeAPI->setAttribute(radio1, NODE_RADIO_GROUP, &group_item);
     
+    const int RADIO_TARGET_ID = 27123;
     nodeAPI->registerNodeEvent(radio1, NODE_RADIO_EVENT_ON_CHANGE, NODE_RADIO_EVENT_ON_CHANGE, nullptr);
     nodeAPI->addNodeEventReceiver(radio1, [](ArkUI_NodeEvent *event) {
-        if (OH_ArkUI_NodeEvent_GetTargetId(event) == 27123) {
+        if (OH_ArkUI_NodeEvent_GetTargetId(event) == RADIO_TARGET_ID) {
             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager", "Node_Event: onRadioChange");
         }
     });
