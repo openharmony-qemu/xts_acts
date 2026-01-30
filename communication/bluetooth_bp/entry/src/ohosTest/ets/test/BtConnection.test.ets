@@ -43,10 +43,11 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
             console.info('pin required = '+ JSON.stringify(data));
         }
     function sleep(delay : number) : Promise<void> {
-            return new Promise(resovle => setTimeout(resovle, delay))
+            return new Promise(resolve => setTimeout(resolve, delay));
         }
     function onReceiveEvent_ScanMode(data : bluetooth.ScanMode){
         console.info('[bluetooth_js]hid registerHidDevice result'+ JSON.stringify(data));
+        expect(data).not().assertUndefined();
     }
     async function openPhone() {
         try{
