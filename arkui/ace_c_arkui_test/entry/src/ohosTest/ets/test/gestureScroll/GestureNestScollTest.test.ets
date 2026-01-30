@@ -67,7 +67,7 @@ export default function gestureNestScrollTest() {
       // the visual list height is vp2px(200)
       let y = Math.round(globalThis.winTop + rect.top);
       console.info("gestureNestScrollTest  x= " +  x  + ", y = " + y);
-      await driver.swipe(x, Math.round(y+(rect.bottom-rect.top)/20), x, y);
+      await driver.swipe(x, Math.round(y+(rect.bottom-rect.top)/40), x, y);
       await Utils.sleep(3000);
       console.info("test");
       let button = await driver.findComponent(ON.text('flowItem8'));
