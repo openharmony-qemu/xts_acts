@@ -8,39 +8,36 @@
 #ifndef CENC_INFO_TEST_CASE_H
 #define CENC_INFO_TEST_CASE_H
 
-namespace OHOS {
-    namespace CencInfoUT {
-        class CencInfoCapiTestCase {
-        public:
-            CencInfoCapiTestCase() = default;
-            ~CencInfoCapiTestCase() = default;
+namespace OHOS
+{
+    namespace CencInfoUT
+    {
 
-            int TestCencInfo_Create_001();
-            int TestCencInfo_Destroy_001();
-            int TestCencInfo_Destroy_002();
+        int TestCencInfo_Create_001();
+        int TestCencInfo_Destroy_001();
+        int TestCencInfo_Destroy_002();
 
-            int TestCencInfo_SetAlgorithm_001();
-            int TestCencInfo_SetAlgorithm_002();
+        int TestCencInfo_SetAlgorithm_001();
+        int TestCencInfo_SetAlgorithm_002();
 
-            int TestCencInfo_SetKeyIdAndIv_001();
-            int TestCencInfo_SetKeyIdAndIv_002();
-            int TestCencInfo_SetKeyIdAndIv_003();
-            int TestCencInfo_SetKeyIdAndIv_004();
-            int TestCencInfo_SetKeyIdAndIv_005();
-            int TestCencInfo_SetKeyIdAndIv_006();
+        int TestCencInfo_SetKeyIdAndIv_001();
+        int TestCencInfo_SetKeyIdAndIv_002();
+        int TestCencInfo_SetKeyIdAndIv_003();
+        int TestCencInfo_SetKeyIdAndIv_004();
+        int TestCencInfo_SetKeyIdAndIv_005();
+        int TestCencInfo_SetKeyIdAndIv_006();
 
-            int TestCencInfo_SetSubsampleInfo_001();
-            int TestCencInfo_SetSubsampleInfo_002();
-            int TestCencInfo_SetSubsampleInfo_003();
-            int TestCencInfo_SetSubsampleInfo_004();
+        int TestCencInfo_SetSubsampleInfo_001();
+        int TestCencInfo_SetSubsampleInfo_002();
+        int TestCencInfo_SetSubsampleInfo_003();
+        int TestCencInfo_SetSubsampleInfo_004();
 
-            int TestCencInfo_SetMode_001();
-            int TestCencInfo_SetMode_002();
+        int TestCencInfo_SetMode_001();
+        int TestCencInfo_SetMode_002();
 
-            int TestCencInfo_SetAVBuffer_001();
-            int TestCencInfo_SetAVBuffer_002();
-            int TestCencInfo_SetAVBuffer_003();
-        };
+        int TestCencInfo_SetAVBuffer_001();
+        int TestCencInfo_SetAVBuffer_002();
+        int TestCencInfo_SetAVBuffer_003();
     } // CencInfoUT
 } // OHOS
 #endif // CENC_INFO_TEST_CASE_H

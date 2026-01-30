@@ -3,11 +3,10 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  */
-#include <exception>
 #include "napi/native_api.h"
-#include "AvcencInfoCheckTest.h"
+#include "include/AvcencInfoCheckTest.h"
 #include <cstdint>
-#include <multimedia/player_framework/native_cencinfo.h>
+#include "include/OhosCommonTest.h"
 using namespace OHOS::CencInfoUT;
 
 namespace {
@@ -16,98 +15,47 @@ namespace {
     static constexpr int RESULT_ERROR = -1;
 }
 
+using AudioTestFn = int (*)();
 
-template <typename Func>
-napi_value NapiTry(napi_env env, Func &&func);
-using CencTestFunc = int (OHOS::CencInfoUT::CencInfoCapiTestCase::*)();
-
-int32_t GetInt32ArgImpl(napi_env env, napi_callback_info info, size_t index, int32_t defaultValue)
-{
-    size_t argc = index + 1;
-    napi_value args[index + 1];
-
-    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    if (status != napi_ok || argc <= index) {
-        napi_throw_type_error(env, nullptr, "Argument missing");
-        return defaultValue;
-    }
-
-    napi_valuetype valuetype;
-    napi_typeof(env, args[index], &valuetype);
-    if (valuetype != napi_number) {
-        napi_throw_type_error(env, nullptr, "Argument must be a number");
-        return defaultValue;
-    }
-
-    int32_t result = defaultValue;
-    status = napi_get_value_int32(env, args[index], &result);
-    if (status != napi_ok) {
-        napi_throw_type_error(env, nullptr, "Value is not int32");
-        return defaultValue;
-    }
-
-    return result;
-}
-
-inline int32_t GetInt32Arg(napi_env env, napi_callback_info info,
-                           size_t index, int32_t defaultValue)
-{
-    return GetInt32ArgImpl(env, info, index, defaultValue);
-}
-
-template <typename Func>
-napi_value NapiTry(napi_env env, Func &&func)
-{
-    try {
-        return func();
-    }
-    catch(const std::exception &e) {
-        napi_throw_error(env, nullptr, e.what());
-    }
-    catch(...) {
-        napi_throw_error(env, nullptr, "Unknown native error");
-    }
-    return nullptr;
-}
-static const CencTestFunc CENCINFO_CREATE_FUNCS[] = {
-    &CencInfoCapiTestCase::TestCencInfo_Create_001,
+static const AudioTestFn CENCINFO_CREATE_FUNCS[] = {
+    OHOS::CencInfoUT::TestCencInfo_Create_001,
 };
 
-static const CencTestFunc CENCINFO_DESTROY_FUNCS[] = {
-    &CencInfoCapiTestCase::TestCencInfo_Destroy_001,
-    &CencInfoCapiTestCase::TestCencInfo_Destroy_002,
+static const AudioTestFn CENCINFO_DESTROY_FUNCS[] = {
+    OHOS::CencInfoUT::TestCencInfo_Destroy_001,
+    OHOS::CencInfoUT::TestCencInfo_Destroy_002,
 };
 
-static const CencTestFunc CENCINFO_SETALGORITHM_FUNCS[] = {
-    &CencInfoCapiTestCase::TestCencInfo_SetAlgorithm_001,
-    &CencInfoCapiTestCase::TestCencInfo_SetAlgorithm_002,
+static const AudioTestFn CENCINFO_SETALGORITHM_FUNCS[] = {
+    OHOS::CencInfoUT::TestCencInfo_SetAlgorithm_001,
+    OHOS::CencInfoUT::TestCencInfo_SetAlgorithm_002,
 };
 
-static const CencTestFunc CENCINFO_SETKEYIDANDIV_FUNCS[] = {
-    &CencInfoCapiTestCase::TestCencInfo_SetKeyIdAndIv_001,
-    &CencInfoCapiTestCase::TestCencInfo_SetKeyIdAndIv_002,
-    &CencInfoCapiTestCase::TestCencInfo_SetKeyIdAndIv_003,
-    &CencInfoCapiTestCase::TestCencInfo_SetKeyIdAndIv_004,
-    &CencInfoCapiTestCase::TestCencInfo_SetKeyIdAndIv_005,
-    &CencInfoCapiTestCase::TestCencInfo_SetKeyIdAndIv_006,
+static const AudioTestFn CENCINFO_SETKEYIDANDIV_FUNCS[] = {
+    OHOS::CencInfoUT::TestCencInfo_SetKeyIdAndIv_001,
+    OHOS::CencInfoUT::TestCencInfo_SetKeyIdAndIv_002,
+    OHOS::CencInfoUT::TestCencInfo_SetKeyIdAndIv_003,
+    OHOS::CencInfoUT::TestCencInfo_SetKeyIdAndIv_004,
+    OHOS::CencInfoUT::TestCencInfo_SetKeyIdAndIv_005,
+    OHOS::CencInfoUT::TestCencInfo_SetKeyIdAndIv_006,
 };
 
-static const CencTestFunc CENCINFO_SETSUBSAMPLEINFO_FUNCS[] = {
-    &CencInfoCapiTestCase::TestCencInfo_SetSubsampleInfo_001,
-    &CencInfoCapiTestCase::TestCencInfo_SetSubsampleInfo_002,
-    &CencInfoCapiTestCase::TestCencInfo_SetSubsampleInfo_003,
-    &CencInfoCapiTestCase::TestCencInfo_SetSubsampleInfo_004,
+static const AudioTestFn CENCINFO_SETSUBSAMPLEINFO_FUNCS[] = {
+    OHOS::CencInfoUT::TestCencInfo_SetSubsampleInfo_001,
+    OHOS::CencInfoUT::TestCencInfo_SetSubsampleInfo_002,
+    OHOS::CencInfoUT::TestCencInfo_SetSubsampleInfo_003,
+    OHOS::CencInfoUT::TestCencInfo_SetSubsampleInfo_004,
 };
 
-static const CencTestFunc CENCINFO_SETMODE_FUNCS[] = {
-    &CencInfoCapiTestCase::TestCencInfo_SetMode_001,
-    &CencInfoCapiTestCase::TestCencInfo_SetMode_002,
+static const AudioTestFn CENCINFO_SETMODE_FUNCS[] = {
+    OHOS::CencInfoUT::TestCencInfo_SetMode_001,
+    OHOS::CencInfoUT::TestCencInfo_SetMode_002,
 };
 
-static const CencTestFunc CENCINFO_SETAVBUFFER_FUNCS[] = {
-    &CencInfoCapiTestCase::TestCencInfo_SetAVBuffer_001,
-    &CencInfoCapiTestCase::TestCencInfo_SetAVBuffer_002,
-    &CencInfoCapiTestCase::TestCencInfo_SetAVBuffer_003,
+static const AudioTestFn CENCINFO_SETAVBUFFER_FUNCS[] = {
+    OHOS::CencInfoUT::TestCencInfo_SetAVBuffer_001,
+    OHOS::CencInfoUT::TestCencInfo_SetAVBuffer_002,
+    OHOS::CencInfoUT::TestCencInfo_SetAVBuffer_003,
 };
 
 napi_value CencInfo_Creater(napi_env env, napi_callback_info info)
@@ -115,10 +63,9 @@ napi_value CencInfo_Creater(napi_env env, napi_callback_info info)
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         int result = RESULT_ERROR;
-        CencInfoCapiTestCase testObj;
         constexpr size_t FUNC_COUNT = sizeof(CENCINFO_CREATE_FUNCS) / sizeof(CENCINFO_CREATE_FUNCS[0]);
         if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
-            result = (testObj.*CENCINFO_CREATE_FUNCS[caseNum])();
+            result = CENCINFO_CREATE_FUNCS[caseNum]();
         }
         napi_value resultValue;
         napi_create_int32(env, result, &resultValue);
@@ -131,10 +78,9 @@ napi_value CencInfo_Destroy(napi_env env, napi_callback_info info)
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         int result = RESULT_ERROR;
-        CencInfoCapiTestCase testObj;
         constexpr size_t FUNC_COUNT = sizeof(CENCINFO_DESTROY_FUNCS) / sizeof(CENCINFO_DESTROY_FUNCS[0]);
         if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
-            result = (testObj.*CENCINFO_DESTROY_FUNCS[caseNum])();
+            result = CENCINFO_DESTROY_FUNCS[caseNum]();
         }
         napi_value resultValue;
         napi_create_int32(env, result, &resultValue);
@@ -147,10 +93,9 @@ napi_value CencInfo_SetAlgorithm(napi_env env, napi_callback_info info)
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         int result = RESULT_ERROR;
-        CencInfoCapiTestCase testObj;
         constexpr size_t FUNC_COUNT = sizeof(CENCINFO_SETALGORITHM_FUNCS) / sizeof(CENCINFO_SETALGORITHM_FUNCS[0]);
         if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
-            result = (testObj.*CENCINFO_SETALGORITHM_FUNCS[caseNum])();
+            result = CENCINFO_SETALGORITHM_FUNCS[caseNum]();
         }
         napi_value resultValue;
         napi_create_int32(env, result, &resultValue);
@@ -163,10 +108,9 @@ napi_value CencInfo_SetKeyIdAndIv(napi_env env, napi_callback_info info)
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         int result = RESULT_ERROR;
-        CencInfoCapiTestCase testObj;
         constexpr size_t FUNC_COUNT = sizeof(CENCINFO_SETKEYIDANDIV_FUNCS) / sizeof(CENCINFO_SETKEYIDANDIV_FUNCS[0]);
         if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
-            result = (testObj.*CENCINFO_SETKEYIDANDIV_FUNCS[caseNum])();
+            result = CENCINFO_SETKEYIDANDIV_FUNCS[caseNum]();
         }
         napi_value resultValue;
         napi_create_int32(env, result, &resultValue);
@@ -179,11 +123,10 @@ napi_value CencInfo_SetSubsampleInfo(napi_env env, napi_callback_info info)
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         int result = RESULT_ERROR;
-        CencInfoCapiTestCase testObj;
         constexpr size_t FUNC_COUNT =
             sizeof(CENCINFO_SETSUBSAMPLEINFO_FUNCS) / sizeof(CENCINFO_SETSUBSAMPLEINFO_FUNCS[0]);
         if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
-            result = (testObj.*CENCINFO_SETSUBSAMPLEINFO_FUNCS[caseNum])();
+            result = CENCINFO_SETSUBSAMPLEINFO_FUNCS[caseNum]();
         }
         napi_value resultValue;
         napi_create_int32(env, result, &resultValue);
@@ -196,10 +139,9 @@ napi_value CencInfo_SetMode(napi_env env, napi_callback_info info)
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         int result = RESULT_ERROR;
-        CencInfoCapiTestCase testObj;
         constexpr size_t FUNC_COUNT = sizeof(CENCINFO_SETMODE_FUNCS) / sizeof(CENCINFO_SETMODE_FUNCS[0]);
         if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
-            result = (testObj.*CENCINFO_SETMODE_FUNCS[caseNum])();
+            result = CENCINFO_SETMODE_FUNCS[caseNum]();
         }
         napi_value resultValue;
         napi_create_int32(env, result, &resultValue);
@@ -212,10 +154,9 @@ napi_value CencInfo_SetAVBuffer(napi_env env, napi_callback_info info)
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         int result = RESULT_ERROR;
-        CencInfoCapiTestCase testObj;
         constexpr size_t FUNC_COUNT = sizeof(CENCINFO_SETAVBUFFER_FUNCS) / sizeof(CENCINFO_SETAVBUFFER_FUNCS[0]);
         if (caseNum >= 0 && static_cast<size_t>(caseNum) < FUNC_COUNT) {
-            result = (testObj.*CENCINFO_SETAVBUFFER_FUNCS[caseNum])();
+            result = CENCINFO_SETAVBUFFER_FUNCS[caseNum]();
         }
         napi_value resultValue;
         napi_create_int32(env, result, &resultValue);
