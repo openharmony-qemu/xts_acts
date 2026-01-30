@@ -42,7 +42,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
 
     beforeEach((): void => {
       if(!wifiMg.isWifiActive()) {
-        console.info("=========>>>>>>> wifi_test/enable wifi:" + wifiMg.enableWifi());
+        console.info("=========>>>>>>> wifi_test/enable wifi");
         await sleep(5000);
       }
       let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
