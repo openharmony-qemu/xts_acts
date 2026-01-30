@@ -1012,7 +1012,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).assertEqual("401");
+          expect(Nmber(err.code)).assertEqual(401);
         } 
       }
       console.log(TAG + "************* setCloudDistributedTableTest0004 end *************");  
