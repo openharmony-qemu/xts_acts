@@ -89,7 +89,7 @@ export default function wallpaperAuthorityJSUnit() {
         it('testGetColorsPromiseSystem101', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetColorsPromiseSystem101 start-----------------');
             await wallpaper.setWallpaper(imageSourceLockscreen, wallpaper.WallpaperType.WALLPAPER_SYSTEM);
-            await wallpaper.getColors(WALLPAPER_SYSTEM).then((RgbaColors) => {
+            await wallpaper.getColors(wallpaper.WallpaperType.WALLPAPER_SYSTEM).then((RgbaColors) => {
                 console.info('====>testGetColorsPromiseSystem101  succesful RgbaColors: ' + JSON.stringify(RgbaColors));
                 expect(Number.isInteger(RgbaColors[0].red)).assertTrue();
                 expect(Number.isInteger(RgbaColors[0].green)).assertTrue();
@@ -148,7 +148,7 @@ export default function wallpaperAuthorityJSUnit() {
         it('testGetColorsPromiseLock102', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetColorsPromiseLock102 start-----------------');
             await wallpaper.setWallpaper(imageSourceLockscreen, wallpaper.WallpaperType.WALLPAPER_LOCKSCREEN);
-            await wallpaper.getColors(WALLPAPER_LOCKSCREEN).then((RgbaColors) => {
+            await wallpaper.getColors(wallpaper.WallpaperType.WALLPAPER_LOCKSCREEN).then((RgbaColors) => {
                 console.info('====>testGetColorsPromiseLock102  succesful RgbaColors: ' + JSON.stringify(RgbaColors));
                 expect(Number.isInteger(RgbaColors[0].red)).assertTrue();
                 expect(Number.isInteger(RgbaColors[0].green)).assertTrue();
@@ -173,7 +173,7 @@ export default function wallpaperAuthorityJSUnit() {
          */
         it('testResetCallbackSystem101', Level.LEVEL0, async (done: Function) => {
             console.info('--------------testResetCallbackSystem101 start-----------------');
-            wallpaper.reset(WALLPAPER_SYSTEM, (err, data) => {
+            wallpaper.reset(wallpaper.WallpaperType.WALLPAPER_SYSTEM, (err, data) => {
                 try {
                     if (err) {
                         console.info('====>testResetCallbackSystem101 fail: ' + JSON.stringify(err));
@@ -223,7 +223,7 @@ export default function wallpaperAuthorityJSUnit() {
          */
         it('testResetCallbackLock102', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testResetCallbackLock102 start-----------------');
-            wallpaper.reset(WALLPAPER_LOCKSCREEN, (err, data) => {
+            wallpaper.reset(wallpaper.WallpaperType.WALLPAPER_LOCKSCREEN, (err, data) => {
                 try {
                     if (err) {
                         console.info('====>testResetCallbackLock102 fail: ' + JSON.stringify(err));
@@ -589,6 +589,192 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testIsOperationAllowedPromise102 end-----------------');
         });
 
+        /**
+         * @tc.name   testSetWallpaperURLCallbackSystem1031
+         * @tc.number testSetWallpaperURLCallbackSystem1031
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testSetWallpaperURLCallbackSystem1031', Level.LEVEL3, async (done: Function) => {
+            console.info('====>------testSetWallpaperURLCallbackSystem1031 start------------' );
+            wallpaper.setWallpaper(null, WALLPAPER_SYSTEM, (err, data) => {
+                try{
+                    if (err) {
+                        console.info(`====>testSetWallpaperURLCallbackSystem1031 err.code: ${err.code}  err.message: ${err.message}`);
+                        expect(err.code).assertEqual(401);
+                        done();
+                    } else {
+                        console.info('====>testSetWallpaperURLCallbackSystem1031 successful data: ' + data);
+                        expect().assertFail();
+                        done();
+                    }  
+                } catch (error) {
+                    console.info(`====>testSetWallpaperURLCallbackSystem1031 err.code: ${error.code}  err.message: ${error.message}`);
+                    expect().assertFail();
+                    done();
+                }
+            });
+            console.info('====>-------testSetWallpaperURLCallbackSystem1031 end-----------' );
+        });
 
+        /**
+         * @tc.name   testSetWallpaperURLCallbackSystem1032
+         * @tc.number testSetWallpaperURLCallbackSystem1032
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testSetWallpaperURLCallbackSystem1032', Level.LEVEL3, async (done: Function) => {
+            console.info('====>------testSetWallpaperURLCallbackSystem1032 start------------' );
+            wallpaper.setWallpaper(undefined, WALLPAPER_SYSTEM, (err, data) => {
+                try{
+                    if (err) {
+                        console.info(`====>testSetWallpaperURLCallbackSystem1032 err.code: ${err.code}  err.message: ${err.message}`);
+                        expect(err.code).assertEqual(401);
+                        done();
+                    } else {
+                        console.info('====>testSetWallpaperURLCallbackSystem1032 successful data: ' + data);
+                        expect().assertFail();
+                        done();
+                    }  
+                } catch (error) {
+                    console.info(`====>testSetWallpaperURLCallbackSystem1032 err.code: ${error.code}  err.message: ${error.message}`);
+                    expect().assertFail();
+                    done();
+                }
+            });
+            console.info('====>-------testSetWallpaperURLCallbackSystem1032 end-----------' );
+        });
+
+        /**
+         * @tc.name   testSetWallpaperURLCallbackSystem1032
+         * @tc.number testSetWallpaperURLCallbackSystem1032
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testSetWallpaperURLCallbackSystem1032', Level.LEVEL3, async (done: Function) => {
+            console.info('====>------testSetWallpaperURLCallbackSystem1032 start------------' );
+            wallpaper.setWallpaper(undefined, WALLPAPER_SYSTEM, (err, data) => {
+                try{
+                    if (err) {
+                        console.info(`====>testSetWallpaperURLCallbackSystem1032 err.code: ${err.code}  err.message: ${err.message}`);
+                        expect(err.code).assertEqual(401);
+                        done();
+                    } else {
+                        console.info('====>testSetWallpaperURLCallbackSystem1032 successful data: ' + data);
+                        expect().assertFail();
+                        done();
+                    }  
+                } catch (error) {
+                    console.info(`====>testSetWallpaperURLCallbackSystem1032 err.code: ${error.code}  err.message: ${error.message}`);
+                    expect().assertFail();
+                    done();
+                }
+            });
+            console.info('====>-------testSetWallpaperURLCallbackSystem1032 end-----------' );
+        });
+
+        /**
+         * @tc.name   testSetWallpaperURLCallbackSystem1033
+         * @tc.number testSetWallpaperURLCallbackSystem1033
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testSetWallpaperURLCallbackSystem1033', Level.LEVEL3, async (done: Function) => {
+            console.info('====>------testSetWallpaperURLCallbackSystem1033 start------------' );
+            let path = '';
+            wallpaper.setWallpaper(path, WALLPAPER_SYSTEM, (err, data) => {
+                try{
+                    if (err) {
+                        console.info(`====>testSetWallpaperURLCallbackSystem1033 err.code: ${err.code}  err.message: ${err.message}`);
+                        expect(err.code).assertEqual(undefined);
+                        done();
+                    } else {
+                        console.info('====>testSetWallpaperURLCallbackSystem1033 successful data: ' + data);
+                        expect().assertFail();
+                        done();
+                    }  
+                } catch (error) {
+                    console.info(`====>testSetWallpaperURLCallbackSystem1033 err.code: ${error.code}  err.message: ${error.message}`);
+                    expect().assertFail();
+                    done();
+                }
+            });
+            console.info('====>-------testSetWallpaperURLCallbackSystem1033 end-----------' );
+        });
+
+        /**
+         * @tc.name   testSetWallpaperURLPromiseSystem1031
+         * @tc.number testSetWallpaperURLPromiseSystem1031
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testSetWallpaperURLPromiseSystem1031', Level.LEVEL3, async (done: Function) => {
+            console.info('====>------testSetWallpaperURLPromiseSystem1031 start------------' );
+            await wallpaper.setWallpaper(null, WALLPAPER_LOCKSCREEN).then((data) => {
+                console.info('====>testSetWallpaperURLPromiseSystem1031 successful data : ' + data);
+                expect().assertFail();
+                done();
+            }).catch((error: BusinessError) => {
+                console.info(`====>testSetWallpaperURLPromiseSystem1031 err.code: ${error.code}  err.message: ${error.message}`);
+                expect(error.code).assertEqual(401);
+                done();
+            });
+            console.info('====>-------testSetWallpaperURLPromiseSystem1031 end-----------' );
+        });
+
+        /**
+         * @tc.name   testSetWallpaperURLPromiseSystem1032
+         * @tc.number testSetWallpaperURLPromiseSystem1032
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testSetWallpaperURLPromiseSystem1032', Level.LEVEL3, async (done: Function) => {
+            console.info('====>------testSetWallpaperURLPromiseSystem1032 start------------' );
+            await wallpaper.setWallpaper(undefined, WALLPAPER_LOCKSCREEN).then((data) => {
+                console.info('====>testSetWallpaperURLPromiseSystem1032 successful data : ' + data);
+                expect().assertFail();
+                done();
+            }).catch((error: BusinessError) => {
+                console.info(`====>testSetWallpaperURLPromiseSystem1032 err.code: ${error.code}  err.message: ${error.message}`);
+                expect(error.code).assertEqual(401);
+                done();
+            });
+            console.info('====>-------testSetWallpaperURLPromiseSystem1032 end-----------' );
+        });
+
+        /**
+         * @tc.name   testSetWallpaperURLPromiseSystem1033
+         * @tc.number testSetWallpaperURLPromiseSystem1033
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testSetWallpaperURLPromiseSystem1033', Level.LEVEL3, async (done: Function) => {
+            console.info('====>------testSetWallpaperURLPromiseSystem1033 start------------' );
+            let path = '';
+            await wallpaper.setWallpaper(path, WALLPAPER_LOCKSCREEN).then((data) => {
+                console.info('====>testSetWallpaperURLPromiseSystem1033 successful data : ' + data);
+                expect().assertFail();
+                done();
+            }).catch((error: BusinessError) => {
+                console.info(`====>testSetWallpaperURLPromiseSystem1033 err.code: ${error.code}  err.message: ${error.message}`);
+                expect(error.code).assertEqual(undefined);
+                done();
+            });
+            console.info('====>-------testSetWallpaperURLPromiseSystem1033 end-----------' );
+        });
     });
 };
