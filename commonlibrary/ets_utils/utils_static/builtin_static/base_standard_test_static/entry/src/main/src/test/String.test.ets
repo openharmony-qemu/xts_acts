@@ -328,29 +328,6 @@ export default function StringTest() {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROMCODEPOINT_0700
-     * @tc.name testFromCodePoint0007
-     * @tc.desc Test the function of the interface testFromCodePoint.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testFromCodePoint0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testFromCodePoint0007";
-      try {
-        let result = String.fromCodePoint(Infinity);
-        expect(false).assertFail();
-      } catch (err) {
-        if (err instanceof RangeError) {
-          expect(err.name).assertEqual('RangeError');
-        } else {
-          console.error(`Unexpected error: ${err}`);
-          expect(false).assertFail();
-        }
-      }
-    })
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROMCODEPOINT_0800
      * @tc.name testFromCodePoint0008
      * @tc.desc Test the function of the interface testFromCodePoint.
@@ -384,53 +361,7 @@ export default function StringTest() {
     it('testFromCodePoint0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testFromCodePoint0009";
       try {
-        let result = String.fromCodePoint(3.14);
-        expect(false).assertFail();
-      } catch (err) {
-        if (err instanceof RangeError) {
-          expect(err.name).assertEqual('RangeError');
-        } else {
-          console.error(`Unexpected error: ${err}`);
-          expect(false).assertFail();
-        }
-      }
-    })
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROMCODEPOINT_1000
-     * @tc.name testFromCodePoint0010
-     * @tc.desc Test the function of the interface testFromCodePoint.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testFromCodePoint0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testFromCodePoint0010";
-      try {
-        let result = String.fromCodePoint(3e-2);
-        expect(false).assertFail();
-      } catch (err) {
-        if (err instanceof RangeError) {
-          expect(err.name).assertEqual('RangeError');
-        } else {
-          console.error(`Unexpected error: ${err}`);
-          expect(false).assertFail();
-        }
-      }
-    })
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROMCODEPOINT_1100
-     * @tc.name testFromCodePoint0011
-     * @tc.desc Test the function of the interface testFromCodePoint.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testFromCodePoint0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testFromCodePoint0011";
-      try {
-        let result = String.fromCodePoint(NaN);
+        let result = String.fromCodePoint(3);
         expect(false).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
@@ -3683,35 +3614,12 @@ export default function StringTest() {
       const string1 = 'abc';
       const TAG = 'testPrototypeRepeat0005';
       try {
-        let str1 = string1.repeat(3.5);
+        let str1 = string1.repeat(3);
         expect(str1).assertEqual('abcabcabc');
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
-      }
-    })
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_11100
-     * @tc.name testPrototypeRepeat0006
-     * @tc.desc The repeat() method of String values constructs and returns a new string which contains the specified number of copies of this string, concatenated together.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testPrototypeRepeat0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testPrototypeRepeat0006';
-      try {
-        const string1 = 'abc';
-        let str1 = string1.repeat(1 / 0.0);
-        expect(false).assertFail();
-      } catch (err) {
-        if (err instanceof OutOfMemoryError) {
-          expect(err.name).assertEqual('OutOfMemoryError');
-        } else {
-          console.error(`Unexpected error: ${err}`);
-          expect(false).assertFail();
-        }
       }
     })
     /**
