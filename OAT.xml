@@ -132,6 +132,7 @@ Note:If the text contains special characters, please escape them according to th
                 <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/avc_mp3_error.flv" desc="resource files do not to be added"/>
                 <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/mkv.mkv" desc="resource files do not to be added"/>
                 <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/avc_mp3.flv" desc="resource files do not to be added"/>
+                <filteritem type="filepath" name="multimedia/av_codec/ActsAudioTestTest/entry/src/main/resources/rawfile/aac_2c_44100hz_199k.pcm" desc="this file has been added to lfs, so the wildcard rule cannot be matched."/>
                 <filteritem type="filepath" name="global/global_stage/entry/src/main/resources/rawfile/rawfiletest.xml" desc="resource files do not to be added"/>
                 <filteritem type="filepath" name="global/crossplatform/resourcemanageretstest/src/main/resources/rawfile/rawfiletest.xml" desc="resource files do not to be added"/>
                 <filteritem type="filepath" name="global/global_napi_test/entry/src/main/resources/rawfile/test/aa.xml" desc="resource files do not to be added"/>
