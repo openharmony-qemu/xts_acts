@@ -265,7 +265,7 @@ bool AudioCodeCApiEncoderNdkTestContext::IsSupportHeAac()
     return false;
 }
 
-/**
+/*
  * @tc.name   EncoderConfigureLCAAC
  * @tc.number EncoderConfigureLCAAC
  * @tc.desc   EncoderConfigureLCAAC
@@ -318,7 +318,7 @@ int EncoderConfigureLCAAC()
     return SUCCESS_CODE;
 }
 
-/**
+/*
  * @tc.name   EncoderConfigureHEAAC
  * @tc.number EncoderConfigureHEAAC
  * @tc.desc   EncoderConfigureHEAAC
@@ -379,7 +379,7 @@ int EncoderConfigureHEAAC()
     return SUCCESS_CODE;
 }
 
-/**
+/*
  * @tc.name   EncoderConfigureHEAACv2
  * @tc.number EncoderConfigureHEAACv2
  * @tc.desc   EncoderConfigureHEAACv2
@@ -438,7 +438,7 @@ int EncoderConfigureHEAACv2()
     return SUCCESS_CODE;
 }
 
-/**
+/*
  * @tc.name   EncoderConfigureByCap
  * @tc.number EncoderConfigureByCap
  * @tc.desc   EncoderConfigureByCap
@@ -493,7 +493,7 @@ int EncoderConfigureByCap()
     return SUCCESS_CODE;
 }
 
-/**
+/*
  * @tc.name   SampleRate
  * @tc.number SampleRate
  * @tc.desc   SampleRate
@@ -513,7 +513,7 @@ int SampleRate()
     return SUCCESS_CODE;
 }
 
-/**
+/*
  * @tc.name   ChannelCountV1
  * @tc.number ChannelCountV1
  * @tc.desc   ChannelCountV1
@@ -532,7 +532,7 @@ int ChannelCountV1()
     return SUCCESS_CODE;
 }
 
-/**
+/*
  * @tc.name   ChannelCountV2
  * @tc.number ChannelCountV2
  * @tc.desc   ChannelCountV2
@@ -551,7 +551,7 @@ int ChannelCountV2()
     return SUCCESS_CODE;
 }
 
-/**
+/*
  * @tc.name   ChannelLayoutV1
  * @tc.number ChannelLayoutV1
  * @tc.desc   ChannelLayoutV1
@@ -579,7 +579,7 @@ int ChannelLayoutV1()
     return SUCCESS_CODE;
 }
 
-/**
+/*
  * @tc.name   ChannelLayoutV2
  * @tc.number ChannelLayoutV2
  * @tc.desc   ChannelLayoutV2
@@ -600,7 +600,7 @@ int ChannelLayoutV2()
     return SUCCESS_CODE;
 }
 
-/**
+/*
  * @tc.name   AacProfile
  * @tc.number AacProfile
  * @tc.desc   AacProfile
