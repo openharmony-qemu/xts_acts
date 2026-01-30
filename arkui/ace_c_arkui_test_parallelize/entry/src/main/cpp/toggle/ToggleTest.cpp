@@ -74,9 +74,10 @@ napi_value ToggleTest::toggleTest(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem unselectedColor_item = { unselectedColor_value, 1 };
     nodeAPI->setAttribute(toggle1, NODE_TOGGLE_UNSELECTED_COLOR, &unselectedColor_item);
 
+    const int TOGGLE_TARGET_ID = 27123;
     nodeAPI->registerNodeEvent(toggle1, NODE_TOGGLE_ON_CHANGE, NODE_TOGGLE_ON_CHANGE, nullptr);
     nodeAPI->addNodeEventReceiver(toggle1, [](ArkUI_NodeEvent *event) {
-        if (OH_ArkUI_NodeEvent_GetTargetId(event) == 27123) {
+        if (OH_ArkUI_NodeEvent_GetTargetId(event) == TOGGLE_TARGET_ID) {
             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager", "Node_Event: onToggleChange");
         }
     });
