@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeEach} from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
 import { cert } from "@kit.DeviceCertificateKit";
 import {
@@ -31,12 +31,34 @@ import {
   CHAIN_3_LEAF4_PEM,
   CHAIN_3_LEAF_PEM, CHAIN_3_ROOT_PEM,
   CHAIN_SELF_CA_ROOT_PEM } from "./utils/chain/chain";
-import { createX509CertPem } from "./utils/common/common";
+import { createX509CertPem, sleep } from "./utils/common/common";
 import { createCertChain } from "./utils/crl/crl";
+import wifiMg from '@ohos.wifiManager';
 
 
 export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
   describe("certFrameworkCertIgnoreNetworkIssuesTestUnit", (): void => {
+
+    beforeEach((): void => {
+      if(!wifiMg.isWifiActive()) {
+        console.info("=========>>>>>>> wifi_test/enable wifi");
+        await sleep(5000);
+      }
+      let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+      console.info("=========>>>>>>> Internet WifiLinkedInfo : " + JSON.stringify(data));
+      console.info("=========>>>>>>> Internet speed : " + JSON.stringify(data.linkSpeed));
+      console.info("=========>>>>>>> Internet chLoad : " + JSON.stringify(data.chload));
+      console.info("=========>>>>>>> Internet rssi : " + JSON.stringify(data.rssi));
+
+      if (data.connState == wifiMg.ConnState.CONNECTED) {
+        console.info("=========>>>>>>> WLAN connection established");
+      } else {
+        throw new Error("=========>>>>>>> WLAN Network Error");
+      }
+      if (data.chload >= 800 || data.rssi <= -80) {
+        throw new Error("=========>>>>>>> WLAN Network Error (speed)");
+      }
+    })
 
     /**
      * @tc.name   SUB_Security_Cert_Framework_Ignore_Network_Issues_Func_0100
