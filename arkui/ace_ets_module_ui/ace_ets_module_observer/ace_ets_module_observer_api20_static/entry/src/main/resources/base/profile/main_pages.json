@@ -1,7 +1,0 @@
-{
-  "src": [
-    "MainAbility/pages/index/index",
-    "MainAbility/pages/observer/axisHorizontal",
-    "MainAbility/pages/observer/axisVertical"
-  ]
-}

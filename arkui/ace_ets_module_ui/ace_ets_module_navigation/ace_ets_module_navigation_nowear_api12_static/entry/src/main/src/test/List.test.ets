@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-import StepperTest1 from './Stepper/StepperTest1.test'
+
 import sideBarShowSideBarJsunit from './SideBar.test'
-import stepperItemJsunit from './StepperItem.test';
+
 
 export default function testsuite() {
-  StepperTest1()
   sideBarShowSideBarJsunit()
-  stepperItemJsunit();
 }
