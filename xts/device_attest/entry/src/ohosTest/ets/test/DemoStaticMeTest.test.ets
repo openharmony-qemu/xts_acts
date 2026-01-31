@@ -674,7 +674,7 @@ export default function bluetoothBleTest() {
       } catch (error: BusinessError) {
         console.log('i18n_normalizer_test_static_0900 ' + error.code);
         console.log('i18n_normalizer_test_static_0900 ' + error.message);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     })
 
