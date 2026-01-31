@@ -36,7 +36,7 @@ export default function abilityTest() {
 
     describe("abilityTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'abilityTest describe start');
-        beforeAll(() => {
+        beforeAll(async () => {
             try {
                 hilog.info(domain, tag, '%{public}s', '  beforeAll get Context');
                 g_context = Hypium.get('Context') as Context;
@@ -74,16 +74,16 @@ export default function abilityTest() {
                 hilog.error(0x0000, 'testTag', '  beforeAll failed, err: ' + err);
             }
         })
-        beforeEach((): void => {
+        beforeEach(async () => {
             await Utils.msSleep(1000);
             console.info('  abilityTest beforeEach case');
         })
 
-        afterEach((): void => {
+        afterEach(async () => {
             console.info('  abilityTest afterEach case');
         })
 
-        afterAll((): void => {
+        afterAll(async () => {
             console.info('  abilityTest afterAll case');
         })
     })
