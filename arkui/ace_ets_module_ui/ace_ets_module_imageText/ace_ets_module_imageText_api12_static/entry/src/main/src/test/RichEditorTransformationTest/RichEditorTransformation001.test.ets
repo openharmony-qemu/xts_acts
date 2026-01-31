@@ -46,9 +46,9 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorTransformation001() {
-  describe('RichEditorThreeStrikes008', () => {
+  describe('RichEditorTransformation001', () => {
     beforeAll(() => {
-      console.info("RichEditorThreeStrikes008 beforeEach start");
+      console.info("RichEditorTransformation001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
     beforeEach(async (): Promise<void> => {
