@@ -34,7 +34,7 @@ let g_context: Context;
 
 export default function abilityTest() {
 
-    describe("abilityTest", (): void => {
+    describe("abilityTest", () => {
         hilog.info(domain, tag, '%{public}s', 'abilityTest describe start');
         beforeAll(async () => {
             try {
