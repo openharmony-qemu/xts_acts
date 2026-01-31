@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ let sleep = async (count:int) : Promise<int> => {
   });
 };
 
-let waitCallback = () => {
+let waitCallback = async () => {
   const date = Date.now();
   while ((Date.now() - date) < 1000) {
     if (g_callbackResult) {
@@ -64,7 +64,7 @@ export default function imageDecodeOptionsYuvTest() {
       return bufferRead
     }
 
-    const getImageSource = (fileName: string, type?: string) => {
+    const getImageSource = async (fileName: string, type?: string) => {
       let imageSourceApi: image.ImageSource | undefined;
       if (type === "buffer") {
         const buffer = getBuffer(fileName)
@@ -130,11 +130,11 @@ export default function imageDecodeOptionsYuvTest() {
       TAG: string, imageSourceApi: image.ImageSource,
       decodingOptions: image.DecodingOptions
     ) => {
-      imageSourceApi.createPixelMap(decodingOptions, (err : BusinessError|null, pixelMap : image.PixelMap|undefined) => {
+      imageSourceApi.createPixelMap(decodingOptions, async (err : BusinessError|null, pixelMap : image.PixelMap|undefined) => {
         if (err && err.code) {
           hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
           await imageSourceApi.release();
-        } else {
+        } else if (pixelMap) {
           globalPixelMap = pixelMap!;
           await imageSourceApi.release();
           let imageInfo = await pixelMap!.getImageInfo();
@@ -193,7 +193,7 @@ export default function imageDecodeOptionsYuvTest() {
       type: string, desiredColorSpace: colorSpaceManager.ColorSpaceManager
     ) => {
       result = false;
-      const imageSourceApi = getImageSource(fileName, type);
+      const imageSourceApi = await getImageSource(fileName, type);
       if (imageSourceApi == undefined) {
         console.info(TAG + " create image source failed");
       } else {
@@ -232,7 +232,7 @@ export default function imageDecodeOptionsYuvTest() {
         fileName: string, type: string, desiredColorSpace: colorSpaceManager.ColorSpaceManager
     ) => {
       result = false;
-      const imageSourceApi = getImageSource(fileName, type);
+      const imageSourceApi = await getImageSource(fileName, type);
       if (imageSourceApi == undefined) {
         console.info(TAG + " create image source failed");
       } else {
@@ -300,7 +300,7 @@ export default function imageDecodeOptionsYuvTest() {
         fileName: string, type: string
     ) => {
       result = false;
-      const imageSourceApi = getImageSource(fileName, type);
+      const imageSourceApi = await getImageSource(fileName, type);
       if (imageSourceApi == undefined) {
         console.info(TAG + " create image source failed");
       } else {
@@ -314,14 +314,14 @@ export default function imageDecodeOptionsYuvTest() {
       }
     }
 
-    beforeAll(() => {
+    beforeAll(async () => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       testContext = Hypium.get('context') as common.UIAbilityContext;
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeAll case');
     })
 
-    beforeEach(() => {
+    beforeEach(async () => {
       g_callbackResult = false;
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeEach case');
     })
@@ -338,7 +338,7 @@ export default function imageDecodeOptionsYuvTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'afterAll case');
     })
     
@@ -355,7 +355,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResult('SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_STATIC_0100',
           240, 180, image.PixelMapFormat.NV21, 'promiseCreate', "test_tree_444.jpg", "buffer",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.SRGB));
-        waitCallback()
+        await waitCallback()
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -379,7 +379,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResult("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_STATIC_0200",
           241, 181, image.PixelMapFormat.NV21, 'promiseCreate', "test_treeodd_440.jpg", "uri",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.DCI_P3));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -403,7 +403,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResult("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_STATIC_0300",
           240, 150, image.PixelMapFormat.NV21, 'syncCreate', "test_tree_422.jpg", "rawfile",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -427,7 +427,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResult("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_STATIC_0400",
           241, 151, image.PixelMapFormat.NV21, 'callBackCreate', "test_treeodd_420.jpg", "buffer",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -451,7 +451,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResult("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_STATIC_0500",
           241, 181, image.PixelMapFormat.NV21, 'callBackCreate', "test_tree_411.jpg", "fd",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.SRGB));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -475,7 +475,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResult("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_STATIC_0600",
           240, 180, image.PixelMapFormat.NV21, 'syncCreate', "test_treeodd_400.jpg", "buffer",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.DCI_P3));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -499,7 +499,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResult("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_STATIC_0700",
           481, 181, image.PixelMapFormat.NV12, 'syncCreate', "test_tree_444.jpg", "buffer",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -523,7 +523,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResult("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_STATIC_0800",
           480, 180, image.PixelMapFormat.NV12, 'promiseCreate', "test_treeodd_440.jpg", "uri",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -547,7 +547,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResult("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_STATIC_0900",
           480, 150, image.PixelMapFormat.NV12, 'promiseCreate', "test_tree_422.jpg", "rawfile",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.SRGB));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -572,7 +572,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResult("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_STATIC_1000",
           481, 151, image.PixelMapFormat.NV12, 'syncCreate', "test_treeodd_420.jpg", "buffer",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.DCI_P3));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -596,7 +596,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResult("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_STATIC_1100",
           480, 180, image.PixelMapFormat.NV12, 'callBackCreate', "test_tree_411.jpg", "fd",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -620,7 +620,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResult("SUB_DECODEOPTIONS_WITH_YUV_CREATEPIXELMAP_PIXELFORMAT_STATIC_1200",
           480, 180, image.PixelMapFormat.NV12, 'callBackCreate', "test_treeodd_400.jpg", "buffer",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -644,7 +644,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResultYuv311('SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_STATIC_0100',
           480, 360, image.PixelMapFormat.NV21, 'promiseCreate', "JPG-480360-YUV311.jpg", "buffer",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.SRGB));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -668,7 +668,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResultYuv311("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_STATIC_0200",
           480, 360, image.PixelMapFormat.NV12, 'callBackCreate', "JPG-480360-YUV311.jpg", "rawfile",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.DCI_P3));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -692,7 +692,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResultYuv311('SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_STATIC_0300',
           480, 361, image.PixelMapFormat.NV21, 'syncCreate', "JPG-480361-YUV311.jpg", "buffer",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -716,7 +716,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResultYuv311("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_STATIC_0400",
           480, 361, image.PixelMapFormat.NV12, 'promiseCreate', "JPG-480361-YUV311.jpg", "fd",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -740,7 +740,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResultYuv311('SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_STATIC_0500',
           481, 360, image.PixelMapFormat.NV21, 'callBackCreate', "JPG-481360-YUV311.jpg", "buffer",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.SRGB));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -764,7 +764,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResultYuv311("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_STATIC_0600",
           481, 360, image.PixelMapFormat.NV12, 'syncCreate', "JPG-481360-YUV311.jpg", "uri",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.DCI_P3));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -788,7 +788,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResultYuv311('SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_STATIC_0700',
           481, 361, image.PixelMapFormat.NV21, 'promiseCreate', "JPG-480360-YUV311.jpg", "rawfile",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -812,7 +812,7 @@ export default function imageDecodeOptionsYuvTest() {
         await getResultYuv311("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_STATIC_0800",
           481, 361, image.PixelMapFormat.NV12, 'callBackCreate', "JPG-480360-YUV311.jpg", "fd",
           colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998));
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -835,7 +835,7 @@ export default function imageDecodeOptionsYuvTest() {
       try {
         await getResultYuv311Null("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_STATIC_0900",
           'VerifyPixelMap', 480, 360, "JPG-480360-YUV311.jpg", "buffer");
-        waitCallback()
+        await waitCallback()
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -858,7 +858,7 @@ export default function imageDecodeOptionsYuvTest() {
       try {
         await getResultYuv311Null("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_STATIC_1000",
           'VerifyPixelMap', 480, 361, "JPG-480361-YUV311.jpg", "uri");
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -881,7 +881,7 @@ export default function imageDecodeOptionsYuvTest() {
       try {
         await getResultYuv311Null("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_STATIC_1100",
           'VerifyPixelMap', 481, 360, "JPG-481360-YUV311.jpg", "rawfile");
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
@@ -904,7 +904,7 @@ export default function imageDecodeOptionsYuvTest() {
       try {
         await getResultYuv311Null("SUB_DECODEOPTIONS_WITH_YUV311_CREATEPIXELMAP_PIXELFORMAT_STATIC_1200",
           'VerifyPixelMap', 481, 361, "JPG-481361-YUV311.jpg", "fd");
-        waitCallback();
+        await waitCallback();
         expect(result).assertTrue();
         done();
       } catch (e) {
