@@ -28,7 +28,7 @@ import { initialize } from './AbilityContextHelper.test';
 let testContext: common.UIAbilityContext | undefined;
 let sleep = (delay: int): Promise<void> => {
   return new Promise<void>((resolve, _) => {
-    setTimeout((): Promise<int> => {
+    setTimeout(() => {
       resolve(undefined);
     }, delay);
   });

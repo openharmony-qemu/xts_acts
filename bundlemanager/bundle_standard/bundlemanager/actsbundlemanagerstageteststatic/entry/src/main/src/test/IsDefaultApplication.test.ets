@@ -63,7 +63,7 @@ export default function isDefaultApplicationTest() {
 
         try {
           let damp1 = defaultAppManager.isDefaultApplication(type);
-          damp1.then((result: boolean): boolean => {
+          damp1.then((result: boolean) => {
             hilog.info(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_static_1000 success, boolean: ' + result);
             expect(result).assertFalse();
             done();

@@ -54,7 +54,7 @@ export default function ActsCommonEventSystemAPITest() {
     let TAG :string = 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST ===>'
     hilog.info(domain, TAG, '%{public}s', 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST START')
 
-    beforeAll(() => {
+    beforeAll(():void => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
 
       let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean

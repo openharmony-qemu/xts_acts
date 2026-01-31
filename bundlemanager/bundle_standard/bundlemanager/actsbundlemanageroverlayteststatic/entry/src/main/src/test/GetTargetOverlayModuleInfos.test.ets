@@ -54,7 +54,7 @@ export default function getTargetOverlayModuleInfos() {
         await Utils.msSleep(1000);
         try {
           let op4 = overlay.getTargetOverlayModuleInfos("");
-          op4.then((result: Array<OverlayModuleInfo>): Array<OverlayModuleInfo> => {
+          op4.then((result: Array<OverlayModuleInfo>) => {
             hilog.info(0x0000, 'testParamTag',
               'o8 getTargetOverlayModuleInfos Promise success, Array<OverlayModuleInfo> length: ' + result.length);
             expect().assertFail();

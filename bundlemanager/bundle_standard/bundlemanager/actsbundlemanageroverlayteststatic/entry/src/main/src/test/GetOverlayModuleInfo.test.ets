@@ -31,7 +31,7 @@ export default function getOverlayModuleInfo() {
       async (done: () => void): Promise<void> => {
         try {
           let op3 = overlay.getOverlayModuleInfo("");
-          op3.then((result: OverlayModuleInfo): OverlayModuleInfo => {
+          op3.then((result: OverlayModuleInfo) => {
             hilog.info(0x0000, 'testParamTag', 'o6 getOverlayModuleInfo Promise success');
             expect().assertFail();
             done();
@@ -94,7 +94,7 @@ export default function getOverlayModuleInfo() {
         });
         await Utils.msSleep(1000);
         let op3 = overlay.getOverlayModuleInfo(MODULE_NAME1);
-        op3.then((result: OverlayModuleInfo): OverlayModuleInfo => {
+        op3.then((result: OverlayModuleInfo) => {
           hilog.info(0x0000, 'testParamTag', 'o6 getOverlayModuleInfo Promise success');
           expect().assertFail();
           done();

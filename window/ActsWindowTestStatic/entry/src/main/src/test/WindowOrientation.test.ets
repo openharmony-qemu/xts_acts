@@ -220,7 +220,18 @@ export default function WindowOrientationTest() {
             let subWindowClass:window.Window = await windowStage!.createSubWindow('test_RotationChange_static_0100');
             await subWindowClass.destroyWindow();
             try {
-                let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult => {}
+                let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult => {
+                let rotationResult: window.RotationChangeResult = {
+                    rectType: window.RectType.RELATIVE_TO_SCREEN,
+                    windowRect: {
+                        left: 0,
+                        top: 0,
+                        width: 0,
+                        height: 0,
+                    }
+                };
+                return rotationResult;
+                }
                 subWindowClass.onRotationChange(rotationCallback);
                 done();
             } catch (err) {
@@ -334,6 +345,16 @@ export default function WindowOrientationTest() {
                 await subWindowClass.setUIContent('pages/index2');
                 await subWindowClass.showWindow();
                 let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult  => {
+                let rotationResult: window.RotationChangeResult = {
+                    rectType: window.RectType.RELATIVE_TO_SCREEN,
+                    windowRect: {
+                        left: 0,
+                        top: 0,
+                        width: 0,
+                        height: 0,
+                    }
+                };
+                return rotationResult;
                 }
                 subWindowClass.onRotationChange(rotationCallback);
                 subWindowClass.offRotationChange(rotationCallback);
