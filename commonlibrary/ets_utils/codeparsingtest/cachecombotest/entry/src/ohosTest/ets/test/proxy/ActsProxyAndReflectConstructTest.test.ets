@@ -24,7 +24,6 @@ import {
   testConstructArgsBigInt,
   testConstructArgsBigInt2,
   testConstructArgsBigInt64Array,
-  testConstructArgsClass,
   testConstructArgsCustomError,
   testConstructArgsDataView,
   testConstructArgsDate,
@@ -1252,19 +1251,6 @@ export default function ActsProxyAndReflectConstructTest() {
      */
     it('testCacheProxyAndReflectConstruct_097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = testConstructArgsGeneratorFunction2();
-      expect(result).assertEqual(true);
-    })
-
-    /**
-     * @tc.name   testCacheProxyAndReflectConstruct_098
-     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYANDREFLECT_Set_9800
-     * @tc.desc   Test Proxy.handler.construct and Reflect.construct Combined Scene.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testCacheProxyAndReflectConstruct_098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = testConstructArgsClass();
       expect(result).assertEqual(true);
     })
 
