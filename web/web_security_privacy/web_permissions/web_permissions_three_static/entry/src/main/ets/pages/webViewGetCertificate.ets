@@ -21,9 +21,7 @@ import {
   Component,
   Entry,
   Row,
-  Web,
-  Error
-} from '@ohos.arkui.component'
+  Web } from '@ohos.arkui.component'
 import { State, } from '@ohos.arkui.stateManagement'
 import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';

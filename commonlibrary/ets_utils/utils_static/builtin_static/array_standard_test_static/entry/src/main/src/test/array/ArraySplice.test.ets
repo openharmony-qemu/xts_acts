@@ -15,7 +15,6 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { Type } from '@kit.ArkUI';
 
 interface Obj10 { a: number }
 

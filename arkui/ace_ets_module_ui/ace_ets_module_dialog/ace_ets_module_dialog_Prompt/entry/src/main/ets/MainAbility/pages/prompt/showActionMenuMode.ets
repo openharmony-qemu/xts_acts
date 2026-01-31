@@ -14,7 +14,7 @@
  */
 
 import { router, BuilderNode } from '@kit.ArkUI';
-import promptAction from '@ohos.promptAction'
+import promptAction, { ImmersiveMode, LevelMode } from '@ohos.promptAction'
 
 @Preview
 @Component
