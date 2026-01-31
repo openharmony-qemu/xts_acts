@@ -75,7 +75,7 @@ export default function AudioHapticTest() {
     let sourceId_Notification = 0;
     let sourceId_Ringtone = 0;
 
-    let driveFn = () => {
+    let driveFn = async () => {
       let dr = Driver.create();
       await sleep(1000);
       let power = await dr.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
@@ -95,7 +95,7 @@ export default function AudioHapticTest() {
         })
     }
 
-    beforeAll(() => {
+    beforeAll(async () => {
       console.log(`beforeall come in`);
       testContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
       filesDir = testContext.filesDir as string | undefined | null;
