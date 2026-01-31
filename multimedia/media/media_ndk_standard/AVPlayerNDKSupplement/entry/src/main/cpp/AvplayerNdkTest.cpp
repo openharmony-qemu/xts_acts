@@ -2514,7 +2514,6 @@ static napi_value NAPI_AVHttpHeaderDestroy(napi_env env, napi_callback_info info
     if (errorCode == AV_ERR_OK) {
         res = 0;
     }
-    OH_AVHttpHeader_Destroy(header);
     napi_create_int32(env, res, &result);
     return result;
 }
