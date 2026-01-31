@@ -1312,7 +1312,7 @@ export default function HttpRequestOnOffTest() {
               for (let i = 0; i < TEST_MORE_REQUEST_LEN; i++) {
                 list.push(
                   new Promise<void>((resolve, reject) => {
-                    httpRequest.requestInStream('https://www.baidu.com', {
+                    httpRequest.requestInStream('http://www.baidu.com', {
                       method: http.RequestMethod.POST,
                     }, (err) => {
                       if (err) {
