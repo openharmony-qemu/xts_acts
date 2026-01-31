@@ -1455,7 +1455,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.getCurrentAudioCapturerInfoArray(async (err: BusinessError<void> | null, AudioCapturerChangeInfoArray: audio.AudioCapturerChangeInfoArray | undefined) => {
+      audioStreamManager.getCurrentAudioCapturerInfoArray((err: BusinessError<void> | null, AudioCapturerChangeInfoArray: audio.AudioCapturerChangeInfoArray | undefined) => {
         console.info(`${Tag}: ${Tag}: [GET_CAPTURER_STATE_1_CALLBACK] **** Get Callback Called ****`);
         await Utils.msSleep(100);
         if (err) {
@@ -1550,7 +1550,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManagerCB.getCurrentAudioCapturerInfoArray(async (err: BusinessError<void> | null, AudioCapturerChangeInfoArray: audio.AudioCapturerChangeInfoArray | undefined) => {
+      audioStreamManagerCB.getCurrentAudioCapturerInfoArray((err: BusinessError<void> | null, AudioCapturerChangeInfoArray: audio.AudioCapturerChangeInfoArray | undefined) => {
         console.info(`${Tag}: ${Tag}: [GET_CAPTURER_STATE_2_CALLBACK] **** Get Callback Called ****`);
         await Utils.msSleep(100);
         if (err) {
@@ -1655,7 +1655,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
 
-      audioStreamManager.getCurrentAudioCapturerInfoArray(async (err: BusinessError<void> | null, AudioCapturerChangeInfoArray: audio.AudioCapturerChangeInfoArray | undefined) => {
+      audioStreamManager.getCurrentAudioCapturerInfoArray((err: BusinessError<void> | null, AudioCapturerChangeInfoArray: audio.AudioCapturerChangeInfoArray | undefined) => {
         console.info(`${Tag}: ${Tag}: [GET_CAPTURER_STATE_3_CALLBACK] **** Get Callback Called ****`);
         await Utils.msSleep(100);
         if (err) {

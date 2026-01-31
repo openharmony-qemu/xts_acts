@@ -11566,7 +11566,7 @@ export default function audioRendererTest() {
       let audioManager = audio.getAudioManager();
       let audioVolumeManager: audio.AudioVolumeManager = audioManager.getVolumeManager();
 
-      audio.createAudioRenderer(audioRendererOptions, async (err: BusinessError | null, data: audio.AudioRenderer | null | undefined) => {
+      audio.createAudioRenderer(audioRendererOptions,(err: BusinessError | null, data: audio.AudioRenderer | null | undefined) => {
         if (err) {
           console.error(`AudioRenderer Created: Error: ${err}`);
           expect(true).assertFail();
