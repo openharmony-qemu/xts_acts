@@ -270,9 +270,9 @@ export default function bluetoothBleTest() {
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "createGattClientDevice get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 801) {
+        if (err.code === 801) {
           hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
+          expect(true).assertEqual(err.code === 801);
         } else {
           expect().assertFail();
         }
@@ -282,9 +282,9 @@ export default function bluetoothBleTest() {
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "clientDevice close get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 801) {
+        if (err.code === 801) {
           hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
+          expect(true).assertEqual(err.code === 801);
         } else {
           expect().assertFail();
         }
@@ -400,9 +400,9 @@ export default function bluetoothBleTest() {
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "serverDevice close get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 801) {
+        if (err.code === 801) {
           hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
+          expect(true).assertEqual(err.code === 801);
         } else {
           expect().assertFail();
         }
@@ -469,11 +469,11 @@ export default function bluetoothBleTest() {
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "setBLEMtuSize get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 801) {
+        if (err.code === 801) {
           hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
+          expect(true).assertEqual(err.code === 801);
         } else {
-          expect(true).assertEqual(err.code == 2900099);
+          expect(true).assertEqual(err.code === 2900099);
         }
       }
       done();
@@ -543,9 +543,9 @@ export default function bluetoothBleTest() {
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "gattClientDevice connect get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 801) {
+        if (err.code === 801) {
           hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
+          expect(true).assertEqual(err.code === 801);
         } else {
           expect().assertFail();
         }
@@ -555,9 +555,9 @@ export default function bluetoothBleTest() {
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "gattClientDevice disconnect get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 801) {
+        if (err.code === 801) {
           hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
+          expect(true).assertEqual(err.code === 801);
         } else {
           expect().assertFail();
         }
@@ -710,7 +710,7 @@ export default function bluetoothBleTest() {
       } catch (error: BusinessError) {
         console.log('i18n_normalizer_test_static_1000 ' + error.code);
         console.log('i18n_normalizer_test_static_1000 ' + error.message);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     })
 
@@ -728,9 +728,9 @@ export default function bluetoothBleTest() {
       } catch (err: BusinessError) {
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "stopBLEScan get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code == 801) {
+        if (err.code === 801) {
           hilog.info(domain, tag, 'api is not support');
-          expect(true).assertEqual(err.code == 801);
+          expect(true).assertEqual(err.code === 801);
         } else {
           expect().assertFail();
         }
