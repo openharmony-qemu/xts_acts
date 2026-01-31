@@ -18,44 +18,44 @@ namespace {
 using AudioTestFn = int (*)();
 
 static const AudioTestFn CENCINFO_CREATE_FUNCS[] = {
-    OHOS::CencInfoUT::TestCencInfo_Create_001,
+    OHOS::CencInfoUT::TestCencInfoCreate001,
 };
 
 static const AudioTestFn CENCINFO_DESTROY_FUNCS[] = {
-    OHOS::CencInfoUT::TestCencInfo_Destroy_001,
-    OHOS::CencInfoUT::TestCencInfo_Destroy_002,
+    OHOS::CencInfoUT::TestCencInfoDestroy001,
+    OHOS::CencInfoUT::TestCencInfoDestroy002,
 };
 
 static const AudioTestFn CENCINFO_SETALGORITHM_FUNCS[] = {
-    OHOS::CencInfoUT::TestCencInfo_SetAlgorithm_001,
-    OHOS::CencInfoUT::TestCencInfo_SetAlgorithm_002,
+    OHOS::CencInfoUT::TestCencInfoSetAlgorithm001,
+    OHOS::CencInfoUT::TestCencInfoSetAlgorithm002,
 };
 
 static const AudioTestFn CENCINFO_SETKEYIDANDIV_FUNCS[] = {
-    OHOS::CencInfoUT::TestCencInfo_SetKeyIdAndIv_001,
-    OHOS::CencInfoUT::TestCencInfo_SetKeyIdAndIv_002,
-    OHOS::CencInfoUT::TestCencInfo_SetKeyIdAndIv_003,
-    OHOS::CencInfoUT::TestCencInfo_SetKeyIdAndIv_004,
-    OHOS::CencInfoUT::TestCencInfo_SetKeyIdAndIv_005,
-    OHOS::CencInfoUT::TestCencInfo_SetKeyIdAndIv_006,
+    OHOS::CencInfoUT::TestCencInfoSetKeyIdAndIv001,
+    OHOS::CencInfoUT::TestCencInfoSetKeyIdAndIv002,
+    OHOS::CencInfoUT::TestCencInfoSetKeyIdAndIv003,
+    OHOS::CencInfoUT::TestCencInfoSetKeyIdAndIv004,
+    OHOS::CencInfoUT::TestCencInfoSetKeyIdAndIv005,
+    OHOS::CencInfoUT::TestCencInfoSetKeyIdAndIv006,
 };
 
 static const AudioTestFn CENCINFO_SETSUBSAMPLEINFO_FUNCS[] = {
-    OHOS::CencInfoUT::TestCencInfo_SetSubsampleInfo_001,
-    OHOS::CencInfoUT::TestCencInfo_SetSubsampleInfo_002,
-    OHOS::CencInfoUT::TestCencInfo_SetSubsampleInfo_003,
-    OHOS::CencInfoUT::TestCencInfo_SetSubsampleInfo_004,
+    OHOS::CencInfoUT::TestCencInfoSetSubsampleInfo001,
+    OHOS::CencInfoUT::TestCencInfoSetSubsampleInfo002,
+    OHOS::CencInfoUT::TestCencInfoSetSubsampleInfo003,
+    OHOS::CencInfoUT::TestCencInfoSetSubsampleInfo004,
 };
 
 static const AudioTestFn CENCINFO_SETMODE_FUNCS[] = {
-    OHOS::CencInfoUT::TestCencInfo_SetMode_001,
-    OHOS::CencInfoUT::TestCencInfo_SetMode_002,
+    OHOS::CencInfoUT::TestCencInfoSetMode001,
+    OHOS::CencInfoUT::TestCencInfoSetMode002,
 };
 
 static const AudioTestFn CENCINFO_SETAVBUFFER_FUNCS[] = {
-    OHOS::CencInfoUT::TestCencInfo_SetAVBuffer_001,
-    OHOS::CencInfoUT::TestCencInfo_SetAVBuffer_002,
-    OHOS::CencInfoUT::TestCencInfo_SetAVBuffer_003,
+    OHOS::CencInfoUT::TestCencInfoSetAVBuffer001,
+    OHOS::CencInfoUT::TestCencInfoSetAVBuffer002,
+    OHOS::CencInfoUT::TestCencInfoSetAVBuffer003,
 };
 
 napi_value CencInfo_Creater(napi_env env, napi_callback_info info)

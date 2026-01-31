@@ -17,8 +17,8 @@ add_library(cencinfotest SHARED
     OhosCommonTest.cpp)
 target_link_libraries(cencinfotest
     libace_napi.z.so
+    libhilog_ndk.z.so
     libnative_media_avcencinfo.so
     libnative_media_core.so
     libnative_media_acodec.so
-    libhilog_ndk.z.so
 )

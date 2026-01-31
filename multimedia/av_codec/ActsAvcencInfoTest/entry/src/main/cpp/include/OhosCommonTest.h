@@ -38,7 +38,6 @@ using std::stringstream;
 using std::to_string;
 using std::vector;
 
-
 void OHPrintf(const char* fmt, ...);
 
 bool CompFp32WithTData(float* actualOutputData,
@@ -52,9 +51,6 @@ bool CompUint8WithTData(uint8_t* actualOutputData,
                         float rtol,
                         float atol,
                         bool isquant);
-
-
-
 
 int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len);
 

@@ -10,34 +10,33 @@
 
 namespace OHOS
 {
-    namespace CencInfoUT
-    {
+    namespace CencInfoUT {
 
-        int TestCencInfo_Create_001();
-        int TestCencInfo_Destroy_001();
-        int TestCencInfo_Destroy_002();
+        int TestCencInfoCreate001();
+        int TestCencInfoDestroy001();
+        int TestCencInfoDestroy002();
 
-        int TestCencInfo_SetAlgorithm_001();
-        int TestCencInfo_SetAlgorithm_002();
+        int TestCencInfoSetAlgorithm001();
+        int TestCencInfoSetAlgorithm002();
 
-        int TestCencInfo_SetKeyIdAndIv_001();
-        int TestCencInfo_SetKeyIdAndIv_002();
-        int TestCencInfo_SetKeyIdAndIv_003();
-        int TestCencInfo_SetKeyIdAndIv_004();
-        int TestCencInfo_SetKeyIdAndIv_005();
-        int TestCencInfo_SetKeyIdAndIv_006();
+        int TestCencInfoSetKeyIdAndIv001();
+        int TestCencInfoSetKeyIdAndIv002();
+        int TestCencInfoSetKeyIdAndIv003();
+        int TestCencInfoSetKeyIdAndIv004();
+        int TestCencInfoSetKeyIdAndIv005();
+        int TestCencInfoSetKeyIdAndIv006();
 
-        int TestCencInfo_SetSubsampleInfo_001();
-        int TestCencInfo_SetSubsampleInfo_002();
-        int TestCencInfo_SetSubsampleInfo_003();
-        int TestCencInfo_SetSubsampleInfo_004();
+        int TestCencInfoSetSubsampleInfo001();
+        int TestCencInfoSetSubsampleInfo002();
+        int TestCencInfoSetSubsampleInfo003();
+        int TestCencInfoSetSubsampleInfo004();
 
-        int TestCencInfo_SetMode_001();
-        int TestCencInfo_SetMode_002();
+        int TestCencInfoSetMode001();
+        int TestCencInfoSetMode002();
 
-        int TestCencInfo_SetAVBuffer_001();
-        int TestCencInfo_SetAVBuffer_002();
-        int TestCencInfo_SetAVBuffer_003();
+        int TestCencInfoSetAVBuffer001();
+        int TestCencInfoSetAVBuffer002();
+        int TestCencInfoSetAVBuffer003();
     } // CencInfoUT
 } // OHOS
 #endif // CENC_INFO_TEST_CASE_H

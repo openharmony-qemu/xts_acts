@@ -24,8 +24,6 @@ using namespace std;
 namespace OHOS {
 namespace CencInfoUT {
 
-
-
 /**
  * @tc.name   CencInfo_Create_001
  * @tc.number CencInfo_Create_001
@@ -34,7 +32,7 @@ namespace CencInfoUT {
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_Create_001()
+int  TestCencInfoCreate001()
 {
     OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
     EXPECT_NE(cencInfo, nullptr);
@@ -49,7 +47,7 @@ int  TestCencInfo_Create_001()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_Destroy_001()
+int  TestCencInfoDestroy001()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
     OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
@@ -67,7 +65,7 @@ int  TestCencInfo_Destroy_001()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_Destroy_002()
+int  TestCencInfoDestroy002()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
     errNo = OH_AVCencInfo_Destroy(nullptr);
@@ -83,7 +81,7 @@ int  TestCencInfo_Destroy_002()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetAlgorithm_001()
+int  TestCencInfoSetAlgorithm001()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
     OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();
@@ -123,7 +121,7 @@ int  TestCencInfo_SetAlgorithm_001()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetAlgorithm_002()
+int  TestCencInfoSetAlgorithm002()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
     errNo = OH_AVCencInfo_SetAlgorithm(nullptr, DRM_ALG_CENC_SM4_CTR);
@@ -139,7 +137,7 @@ int  TestCencInfo_SetAlgorithm_002()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetKeyIdAndIv_001()
+int  TestCencInfoSetKeyIdAndIv001()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
     uint32_t keyIdLen = DRM_KEY_ID_SIZE;
@@ -168,7 +166,7 @@ int  TestCencInfo_SetKeyIdAndIv_001()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetKeyIdAndIv_002()
+int  TestCencInfoSetKeyIdAndIv002()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
     uint32_t keyIdLen = DRM_KEY_ID_SIZE;
@@ -192,7 +190,7 @@ int  TestCencInfo_SetKeyIdAndIv_002()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetKeyIdAndIv_003()
+int  TestCencInfoSetKeyIdAndIv003()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
     uint32_t keyIdLen = DRM_KEY_ID_SIZE;
@@ -218,7 +216,7 @@ int  TestCencInfo_SetKeyIdAndIv_003()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetKeyIdAndIv_004()
+int  TestCencInfoSetKeyIdAndIv004()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
     uint32_t keyIdLen = DRM_KEY_ID_SIZE;
@@ -247,7 +245,7 @@ int  TestCencInfo_SetKeyIdAndIv_004()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetKeyIdAndIv_005()
+int  TestCencInfoSetKeyIdAndIv005()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
     uint32_t keyIdLen = DRM_KEY_ID_SIZE;
@@ -273,7 +271,7 @@ int  TestCencInfo_SetKeyIdAndIv_005()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetKeyIdAndIv_006()
+int  TestCencInfoSetKeyIdAndIv006()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
     uint32_t keyIdLen = DRM_KEY_ID_SIZE;
@@ -302,7 +300,7 @@ int  TestCencInfo_SetKeyIdAndIv_006()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetSubsampleInfo_001()
+int  TestCencInfoSetSubsampleInfo001()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
     uint32_t encryptedBlockCount = 0;
@@ -329,7 +327,7 @@ int  TestCencInfo_SetSubsampleInfo_001()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetSubsampleInfo_002()
+int  TestCencInfoSetSubsampleInfo002()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
     uint32_t encryptedBlockCount = 0;
@@ -352,7 +350,7 @@ int  TestCencInfo_SetSubsampleInfo_002()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetSubsampleInfo_003()
+int  TestCencInfoSetSubsampleInfo003()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
     uint32_t encryptedBlockCount = 0;
@@ -379,7 +377,7 @@ int  TestCencInfo_SetSubsampleInfo_003()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetSubsampleInfo_004()
+int  TestCencInfoSetSubsampleInfo004()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
     uint32_t encryptedBlockCount = 0;
@@ -405,7 +403,7 @@ int  TestCencInfo_SetSubsampleInfo_004()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetMode_001()
+int  TestCencInfoSetMode001()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
 
@@ -435,7 +433,7 @@ int  TestCencInfo_SetMode_001()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetMode_002()
+int  TestCencInfoSetMode002()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
 
@@ -452,7 +450,7 @@ int  TestCencInfo_SetMode_002()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetAVBuffer_001()
+int  TestCencInfoSetAVBuffer001()
 {
     uint32_t keyIdLen = DRM_KEY_ID_SIZE;
     uint8_t keyId[] = {
@@ -505,10 +503,10 @@ int  TestCencInfo_SetAVBuffer_001()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetAVBuffer_002()
+int  TestCencInfoSetAVBuffer002()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
-    struct OH_AVBuffer *buffer =OH_AVBuffer_Create(DRM_KEY_ID_SIZE);
+    struct OH_AVBuffer *buffer = OH_AVBuffer_Create(DRM_KEY_ID_SIZE);
     EXPECT_NE(buffer, nullptr);
 
     errNo = OH_AVCencInfo_SetAVBuffer(nullptr, buffer);
@@ -526,7 +524,7 @@ int  TestCencInfo_SetAVBuffer_002()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int  TestCencInfo_SetAVBuffer_003()
+int  TestCencInfoSetAVBuffer003()
 {
     OH_AVErrCode errNo = AV_ERR_OK;
     OH_AVCencInfo *cencInfo = OH_AVCencInfo_Create();

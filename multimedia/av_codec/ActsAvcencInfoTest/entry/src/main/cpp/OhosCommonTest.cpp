@@ -24,7 +24,7 @@
 
 namespace  {
 const std::string DEFAULT_TAG = "ActsAvcencInfoTest";
-}  
+    }  
 
 namespace {
 constexpr size_t FORMAT_PUBLIC_RESERVED = 25;
