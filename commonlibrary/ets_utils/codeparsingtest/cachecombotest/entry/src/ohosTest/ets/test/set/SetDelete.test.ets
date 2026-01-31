@@ -962,10 +962,10 @@ export default function SetCache2Test() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    // it('testCache_set2_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   let result: boolean = test72_setWithArrayAsElement();
-    //   expect(result).assertEqual(true);
-    // });
+    it('testCache_set2_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test72_setWithArrayAsElement();
+      expect(result).assertEqual(true);
+    });
 
     /**
      * @tc.name testCache_set2_073

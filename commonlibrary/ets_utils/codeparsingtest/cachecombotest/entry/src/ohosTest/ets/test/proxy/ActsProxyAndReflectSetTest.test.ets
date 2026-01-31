@@ -913,10 +913,10 @@ export default function ActsProxyAndReflectSetTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testCacheProxyAndReflectSet_080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   let result: boolean = testSetUndefinedNoGetter();
-    //   expect(result).assertEqual(true);
-    // })
+    it('testCacheProxyAndReflectSet_080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testSetUndefinedNoGetter();
+      expect(result).assertEqual(true);
+    })
 
     /**
      * @tc.name   testCacheProxyAndReflectSet_081
