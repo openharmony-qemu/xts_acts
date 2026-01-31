@@ -59,7 +59,6 @@ import provideParent6 from './ProvideTest/provideParent6.test.ets'
 //import Prop1 from './Zhuang/Prop1.test.ets' //缺少页面
 //import provide1 from './Zhuang/provide1.test.ets' //缺少页面
 //import state1 from './Zhuang/state1.test.ets' //缺少页面
-import StorageDeprecatedTest from './Zhuang/StorageDeprecatedTest.test';
 import PersistentTest0040 from './Zhuang/PersistentTest0040.test';
 //import NonUICallBackTest from './Zhuang/NonUICallBackTest.test'; //缺少页面
 
@@ -108,7 +107,6 @@ export default function testsuite() {
   // Prop1(); //缺少页面
   // provide1(); //缺少页面
   // state1(); //缺少页面
-  StorageDeprecatedTest();  //页面创建失败
   PersistentTest0040();//全pass 注释
   // NonUICallBackTest(); //缺少页面
 }

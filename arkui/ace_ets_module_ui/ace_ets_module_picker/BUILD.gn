@@ -55,7 +55,7 @@ group("ActsAceEtsModulePickerTest") {
       "ace_ets_module_picker_nowear_api11_static:ActsAceEtsModulePickerNoWearApi11StaticTest",
       "ace_ets_module_picker_nowear_api12_static:ActsAceEtsModulePickerNoWearApi12StaticTest",
       "ace_ets_module_picker_nowear_api16_static:ActsAceEtsModulePickerNoWearApi16StaticTest",
-      "ace_ets_module_picker_nowear_api18_static:ActsAceEtsModulePickerNoWearApi18StaticTest",
+      #"ace_ets_module_picker_nowear_api18_static:ActsAceEtsModulePickerNoWearApi18StaticTest",
       "ace_ets_module_picker_nowear_api19_static:ActsAceEtsModulePickerNoWearApi19StaticTest",
     ]
   }

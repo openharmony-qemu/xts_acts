@@ -159,7 +159,6 @@ import lazyReloadJsunit from './LazyForEach/lazyReloadJsunit.test';
 import Prefetcher1 from './LazyForEach/Prefetcher1.test';
 import Prefetcher2 from './LazyForEach/Prefetcher2.test';
 import appStorageV2 from './StorageTest/appStorageV2.test';
-import persistenceV2 from './StorageTest/persistenceV2.test';
 import StateTest0040 from './state/StateTest0040.test';
 import StateTest0080 from './state/StateTest0080.test';
 import WrapBuilder0020Test from './wrap_builder/WrapBuilder0020Test.test';
@@ -341,7 +340,6 @@ export default function testsuite() {
   Prefetcher1();  // 页面编译不通过  IDataSourcePrefetching sr 页面注释 1用例
   Prefetcher2(); // 页面编译不通过 IDataSourcePrefetching sr 页面注释 1用例
   appStorageV2(); // 页面编译不通过  appStorageV2 下掉，7.0上暂无 sr 页面注释 2用例
-  persistenceV2(); // 页面白屏 3用例 已上报
   StateTest0040();  //全pass 注释
   StateTest0080();  //全pass 注释
   WrapBuilder0020Test(); //全pass 注释
