@@ -8,8 +8,7 @@
 #ifndef CENC_INFO_TEST_CASE_H
 #define CENC_INFO_TEST_CASE_H
 
-namespace OHOS
-{
+namespace OHOS {
     namespace CencInfoUT {
 
         int TestCencInfoCreate001();
