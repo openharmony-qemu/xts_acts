@@ -62,7 +62,7 @@ export default function Navigation_L0_4() {
 
     
     
-/*
+/**
      * @tc.number   Navigation_L0_4_static_0100
      * @tc.name     Navigation_L0_4_static_0100
      * @tc.desc     Navigation_L0_4_static_0100

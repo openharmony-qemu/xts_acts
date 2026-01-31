@@ -56,7 +56,7 @@ export default function ListTest() {
     });
 
     
-    /*
+    /**
      * @tc.number   ArkUI_Stage_List_OnDigitalCrown_Static_0100
      * @tc.name     ArkUI_Stage_List_OnDigitalCrown_Static_0100
      * @tc.desc     ArkUI_Stage_List_OnDigitalCrown_Static_0100
@@ -77,7 +77,7 @@ it('ArkUI_Stage_List_OnDigitalCrown_Static_0100', Level.LEVEL1, async (done: () 
     });
 
     
-    /*
+    /**
      * @tc.number   ArkUI_Stage_List_OnDigitalCrown_Static_0200
      * @tc.name     ArkUI_Stage_List_OnDigitalCrown_Static_0200
      * @tc.desc     ArkUI_Stage_List_OnDigitalCrown_Static_0200
@@ -98,7 +98,7 @@ it('ArkUI_Stage_List_OnDigitalCrown_Static_0200', Level.LEVEL1, async (done: () 
     });
 
     
-    /*
+    /**
      * @tc.number   ArkUI_Stage_List_OnDigitalCrown_Static_0300
      * @tc.name     ArkUI_Stage_List_OnDigitalCrown_Static_0300
      * @tc.desc     ArkUI_Stage_List_OnDigitalCrown_Static_0300
@@ -119,7 +119,7 @@ it('ArkUI_Stage_List_OnDigitalCrown_Static_0300', Level.LEVEL1, async (done: () 
     });
 
     
-    /*
+    /**
      * @tc.number   ArkUI_Stage_List_OnDigitalCrown_Static_0400
      * @tc.name     ArkUI_Stage_List_OnDigitalCrown_Static_0400
      * @tc.desc     ArkUI_Stage_List_OnDigitalCrown_Static_0400
@@ -140,7 +140,7 @@ it('ArkUI_Stage_List_OnDigitalCrown_Static_0400', Level.LEVEL1, async (done: () 
     });
 
     
-    /*
+    /**
      * @tc.number   ArkUI_Stage_List_OnDigitalCrown_Static_0500
      * @tc.name     ArkUI_Stage_List_OnDigitalCrown_Static_0500
      * @tc.desc     ArkUI_Stage_List_OnDigitalCrown_Static_0500
@@ -161,7 +161,7 @@ it('ArkUI_Stage_List_OnDigitalCrown_Static_0500', Level.LEVEL1, async (done: () 
     });
 
     
-    /*
+    /**
      * @tc.number   ArkUI_Stage_List_OnDigitalCrown_Static_0600
      * @tc.name     ArkUI_Stage_List_OnDigitalCrown_Static_0600
      * @tc.desc     ArkUI_Stage_List_OnDigitalCrown_Static_0600

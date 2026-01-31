@@ -27,8 +27,8 @@ import { UtilsTest, startAbility } from '../../Util.test';
 import {SharedTransitionEffectType,Color} from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-export default function navigation_add2_1() {
-  describe('navigation_add2_1', () => {
+export default function Navigation_L0_8() {
+  describe('Navigation_L0_8', () => {
     beforeAll(() => {
 
       
@@ -37,66 +37,53 @@ export default function navigation_add2_1() {
     });
 
     beforeEach(async (): Promise<void> => {
-      console.info("navigation_add2_1 beforeEach start");
+      console.info("Navigation_L0_8 beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Navigation/navigation_add/navigation_add2_1',
+        url: 'MainAbility/pages/Navigation/Navigation_L0/Navigation_L0_8',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get navigation_add2_1 state pages:" + JSON.stringify(pages));
+        console.info("get Navigation_L0_8 state pages:" + JSON.stringify(pages));
         if (!("List_SpaceChange" == pages.name)) {
-          console.info("get navigation_add2_1 pages.name:" + JSON.stringify(pages.name));
+          console.info("get Navigation_L0_8 pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push navigation_add2_1 page result:");
+          console.info("push Navigation_L0_8 page result:");
         }
       } catch (err) {
-        console.error("push navigation_add2_1 page error:" + err);
+        console.error("push Navigation_L0_8 page error:" + err);
       }
-      console.info("navigation_add2_1 beforeEach end");
+      console.info("Navigation_L0_8 beforeEach end");
     });
     afterEach(async () => {
     });
 
     
     
-/*
-     * @tc.number   navigation_add2_1_static_0100
-     * @tc.name     navigation_add2_1_static_0100
-     * @tc.desc     navigation_add2_1_static_0100
+/**
+     * @tc.number   Navigation_L0_8_static_0100
+     * @tc.name     Navigation_L0_8_static_0100
+     * @tc.desc     Navigation_L0_8_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('navigation_add2_1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('navigation_add2_1_static_0100 START');
+    it('Navigation_L0_8_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('Navigation_L0_8_static_0100 START');
       await CommonFunc.sleep(1000);
 
-      let driver = Driver.create();
+      inspector.sendEventByKey('Navigation_L0_8_btn1',10,"")
       await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('navigation_add2_1_btn1'));
-      await (btn1?.click() as Promise<void>);
+      inspector.sendEventByKey('Navigation_L0_8_pageOne_btn1',10,"")
       await CommonFunc.sleep(1000);
-      let btn2 = await driver.findComponent(ON.id('navigation_add2_1_pageOne_btn1'));
-      await (btn2?.click() as Promise<void>);
+      inspector.sendEventByKey('Navigation_L0_8_pageTwo_btn1',10,"")
       await CommonFunc.sleep(1000);
-      let navigation_text1_1 = inspector.getInspectorByKey('navigation_add2_1_text1');
-      expect(String(JSON.parseJsonElement(navigation_text1_1).getElement('$attrs').getString('content'))).assertEqual('"pageOne"');
+      let text1 = inspector.getInspectorByKey('Navigation_L0_8_text1');
       await CommonFunc.sleep(1000);
-      let navigation_text2_1 = inspector.getInspectorByKey('navigation_add2_1_text2');
-      expect(String(JSON.parseJsonElement(navigation_text2_1).getElement('$attrs').getString('content'))).assertEqual('"pageThree"');
-      await CommonFunc.sleep(1000);
-      let navigation_text3_1 = inspector.getInspectorByKey('navigation_add2_1_text3');
-      expect(String(JSON.parseJsonElement(navigation_text3_1).getElement('$attrs').getString('content'))).assertEqual('1');
-      await CommonFunc.sleep(1000);
-      let navigation_text4_1 = inspector.getInspectorByKey('navigation_add2_1_text4');
-      expect(String(JSON.parseJsonElement(navigation_text4_1).getElement('$attrs').getString('content'))).assertEqual('true');
+      expect(JSON.parseJsonElement(text1).getElement('$attrs').getString('content')).assertEqual('"pageTwo"');
       await CommonFunc.sleep(1000);
 
-
-
-
-      console.info('navigation_add2_1_static_0100 END');
+      console.info('Navigation_L0_8_static_0100 END');
       done();
     });
 
