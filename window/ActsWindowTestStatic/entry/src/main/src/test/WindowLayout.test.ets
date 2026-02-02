@@ -2205,7 +2205,7 @@ export default function WindowLayoutTest() {
                 done();
             } catch (err: BusinessError) {
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
-                if (err.code != 801) {
+                if (err.code !== 801) {
                     expect(err.code).assertEqual(1300002);
                     expect(err.message!=null).assertTrue();
                     done();
