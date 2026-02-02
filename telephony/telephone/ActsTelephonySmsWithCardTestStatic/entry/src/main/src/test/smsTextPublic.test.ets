@@ -355,7 +355,7 @@ export default function smsTextPublic() {
 
     /**
      * @tc.name   testTelephonySmsMmsHasSmsCapabilityStatic0100
-     * @tc.number SUB_Telephony_SmsMms_HasSmsCapability_0100
+     * @tc.number testTelephonySmsMmsHasSmsCapabilityStatic_0100
      * @tc.desc   Check if the current device has the ability to send and receive text messages, which is a synchronization method. version 7
      * @tc.level  Level 0
      * @tc.type   Function

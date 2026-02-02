@@ -148,7 +148,7 @@ export default function HasCard1PublicTest() {
     });
 
     /**
-     * @tc.nam    testTelephonyCallManagerFormatPhoneNumberToE164_static_0300
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE164_static_0300
      * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_0300
      * @tc.desc   Format the phone number in E.164 representation. Use callback for asynchronous callback.
      * @tc.size   MediumTest
