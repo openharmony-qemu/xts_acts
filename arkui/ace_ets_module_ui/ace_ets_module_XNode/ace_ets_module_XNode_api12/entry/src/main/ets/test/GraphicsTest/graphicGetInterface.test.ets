@@ -57,11 +57,14 @@ export default function graphicGetInterfaceTest() {
       // get the data
       let strJson: string = getInspectorByKey('overLay');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
+
       console.info("[graphicTestInterfaceTest_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.$attrs.content).assertEqual('150.00vp');
-      let strJson2 = getInspectorByKey('overLay2');
-      let obj2: ESObject = JSON.parse(strJson2);
-      expect(obj2.$attrs.content).assertEqual('150.00vp');
+      let graphic: RectValue = CommonFunc.getComponentRect('NodeContainerTest');
+      let graphic_width = graphic.right - graphic.left;
+      let graphic_height = graphic.bottom - graphic.top;
+      expect(Math.floor(Math.abs(graphic_width - vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(graphic_height - vp2px(150))) <= 1).assertTrue();
+      
       console.info('[graphicTestInterfaceTest_0100 ] END');
       done();
     });
