@@ -172,7 +172,7 @@ export default function imagePicturePack() {
       let result: image.Picture = picture as image.Picture;
       waitForCompletion(async () => {await imageSourceApi.release();})
       if (pixelMap != undefined) {
-        waitForCompletion(async () => {await pixelMap.release();})
+        waitForCompletion(async () => {await pixelMap!.release();})
       }
       return result;
     }
@@ -252,12 +252,12 @@ export default function imagePicturePack() {
       }
       let decodeProperties: Record<string, string | null> | undefined;
       let picture: image.Picture | undefined;
-      waitForCompletion(async () => {picture = await imageSource.createPicture();})
+      waitForCompletion(async () => {picture = await imageSource!.createPicture();})
       if (picture == undefined) {
         return false;
       }
       let imageInfo: image.ImageInfo | undefined;
-      waitForCompletion(async () => {imageInfo = await imageSource.getImageInfo();})
+      waitForCompletion(async () => {imageInfo = await imageSource!.getImageInfo();})
       if (imageInfo == undefined) {
         return false;
       }
@@ -266,14 +266,14 @@ export default function imagePicturePack() {
         let metadata: image.Metadata | undefined;
         waitForCompletion(async () => {await (picture as image.Picture).getMetadata(EXIF_METADATA);})
         if (packOpts.desiredDynamicRange == image.PackingDynamicRange.AUTO && packOpts.needsPackProperties == true && metadata != undefined) {
-          waitForCompletion(async () => {decodeProperties = await metadata.getAllProperties();})
-          picture.release();
-          waitForCompletion(async () => {await imageSource.release();})
-          return imageInfo.mimeType == packOpts.format && imageInfo.isHdr == false && JSON.stringify(properties) == JSON.stringify(decodeProperties);
+          waitForCompletion(async () => {decodeProperties = await metadata!.getAllProperties();})
+          picture!.release();
+          waitForCompletion(async () => {await imageSource!.release();})
+          return imageInfo!.mimeType == packOpts.format && imageInfo!.isHdr == false && JSON.stringify(properties) == JSON.stringify(decodeProperties);
         } else {
-          waitForCompletion(async () => {await imageSource.release();})
-          picture.release();
-          return imageInfo.mimeType == packOpts.format && imageInfo.isHdr == false && metadata == undefined;
+          waitForCompletion(async () => {await imageSource!.release();})
+          picture!.release();
+          return imageInfo!.mimeType == packOpts.format && imageInfo!.isHdr == false && metadata == undefined;
         }
       } else {
         let ret: Boolean = false;
@@ -283,18 +283,18 @@ export default function imagePicturePack() {
           if (imageInfo != undefined) {
             isHdr = imageInfo.isHdr;
           }
-          let auxPicGet = picture.getAuxiliaryPicture(type);
+          let auxPicGet = picture!.getAuxiliaryPicture(type);
           expect(auxPicGet != null).assertTrue();
           let auxPic = auxPicGet as image.AuxiliaryPicture;
           let auxType = auxPic.getType();
           logger.log(`packResult: type is  ${type}, isHdr ${isHdr}, ${auxPic != undefined}`);
           ret = (isHdr == true) && (auxPic != undefined) && (auxType == type);
         } else if (type == GAINMAP && (packOpts.desiredDynamicRange == image.PackingDynamicRange.SDR || packOpts.desiredDynamicRange == undefined)) {
-          let auxPic = picture.getAuxiliaryPicture(type);
+          let auxPic = picture!.getAuxiliaryPicture(type);
           logger.log(`packResult: ${type} ${auxPic == undefined}`);
           ret = (auxPic == undefined);
         } else {
-          let auxPicGet = picture.getAuxiliaryPicture(type);
+          let auxPicGet = picture!.getAuxiliaryPicture(type);
           expect(auxPicGet != null).assertTrue();
           let auxPic = auxPicGet as image.AuxiliaryPicture;
           let auxType = auxPic.getType();
@@ -305,13 +305,13 @@ export default function imagePicturePack() {
             let metadata: image.Metadata | undefined;
             waitForCompletion(async () => {metadata = await auxPic.getMetadata(FRAGMENT_METADATA);})
             if (metadata != undefined) {
-              waitForCompletion(async () => {decodeProperties = await metadata(metadata as image.Metadata).getAllProperties();})
+              waitForCompletion(async () => {decodeProperties = await (metadata as image.Metadata).getAllProperties();})
             }
             ret = ret && (JSON.stringify(properties) == JSON.stringify(decodeProperties));
           }
         }
-        waitForCompletion(async () => {await imageSource.release();})
-        picture.release();
+        waitForCompletion(async () => {await imageSource!.release();})
+        picture!.release();
         return ret;
       }
     }
@@ -341,12 +341,12 @@ export default function imagePicturePack() {
           waitForCompletion(async () => {metadata = await auxPic.getMetadata(FRAGMENT_METADATA);})
           if (metadata != undefined) {
             logger.log(`getMetadata success: ` + metadata);
-            waitForCompletion(async () => {properties = await metadata.getAllProperties();})
+            waitForCompletion(async () => {properties = await metadata!.getAllProperties();})
           }
         } else {
-          waitForCompletion(async () => {metadata = await picture.getMetadata(EXIF_METADATA);})
+          waitForCompletion(async () => {metadata = await picture!.getMetadata(EXIF_METADATA);})
           if (metadata != undefined) {
-            waitForCompletion(async () => {properties = await metadata.getAllProperties();})
+            waitForCompletion(async () => {properties = await metadata!.getAllProperties();})
           }
         }
 
@@ -354,8 +354,8 @@ export default function imagePicturePack() {
         if (packType === "packing") {
           try {
             let data: ArrayBuffer | undefined;
-            waitForCompletion(async () => {data = await imagePackerApi.packing(picture, packOpts);})
-            let imageSource = image.createImageSource(data);
+            waitForCompletion(async () => {data = await imagePackerApi.packing(picture!, packOpts);})
+            let imageSource = image.createImageSource(data!);
             let ret = checkPackResult(logger, imageSource, flag, packOpts, properties, type);
             expect(ret).assertTrue();
             picture.release();
@@ -370,7 +370,7 @@ export default function imagePicturePack() {
           }
         } else {
           try {
-            waitForCompletion(async () => {await imagePackerApi.packToFile(picture, fdNum, packOpts);})
+            waitForCompletion(async () => {await imagePackerApi.packToFile(picture!, fdNum, packOpts);})
             let imageSource = image.createImageSource(fdNum);
             let ret = checkPackResult(logger, imageSource, flag, packOpts, properties, type);
             waitForCompletion(async () => {await fs.close(fdNum);})
