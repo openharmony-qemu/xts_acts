@@ -2361,7 +2361,7 @@ export default function WindowLifeCycleTest() {
         it("testGetAllMainWindowInfo_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName:string =  "testGetAllMainWindowInfo_static_0200";
             console.log(caseName + " begin");
-            if (isPCStatus != '') {
+            if (isPCStatus !== '') {
                 try {
                     let windowClass:window.Window = windowStage.getMainWindowSync();
                     let windowId = windowClass.getWindowProperties().id;
@@ -2405,7 +2405,7 @@ export default function WindowLifeCycleTest() {
         it("testGetMainWindowSnapsho_statict_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName:string= "testGetMainWindowSnapsho_statict_0400";
             console.log(caseName + " begin");
-            if (isPCStatus != '') {
+            if (isPCStatus !== '') {
                 try {
                     let windowClass :window.Window= windowStage.getMainWindowSync();
                     let windowId:int = windowClass.getWindowProperties().id;
