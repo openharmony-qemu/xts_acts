@@ -222,6 +222,7 @@ import ImageExifMetadataTestSupp from './image/ImageExifMetadata.test';
 import CreatePixelMapSupp from './image/CreatePixelMap.test';
 import GetImageInfoSupp from './image/GetImageInfoTest.test';
 import ReadPixelsToBufferSupp from './image/ReadPixelsToBufferTest.test';
+import ImagePictureTest from './image/ImagePictureTest.test';
 
 
 
@@ -436,6 +437,6 @@ export default function testsuite() {
   CreatePixelMapSupp();
   GetImageInfoSupp();
   ReadPixelsToBufferSupp();
-
+  ImagePictureTest();
 
 }
