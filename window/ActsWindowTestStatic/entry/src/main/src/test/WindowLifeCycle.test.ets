@@ -1900,8 +1900,10 @@ export default function WindowLifeCycleTest() {
                         done();
                     })
                     .catch((error: Error):PromiseLike<void>|undefined => {
-                        hilog.info(domain, tag,msgStr + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
-                        if (error.code == 1300002) {
+                        hilog.info(domain, tag,msgStr + 'Failed to create the subwindow. Cause: ' + error.code);
+                        if (error.code === 1300002) {
+                            done();
+                        }else if(error.code === 801){
                             done();
                         } else {
                             expect(false).assertTrue();
@@ -1910,13 +1912,9 @@ export default function WindowLifeCycleTest() {
                     });
             } catch (error: BusinessError) {
                 hilog.info(domain, tag,msgStr + ',error code:' + error.code);
-                if(error.code==801){
-                    hilog.info(domain, tag,msgStr + 'The device not support APPLICATION_MODALITY');
-                    done();
-                }else{
-                    expect(false).assertTrue();
-                    done();
-                }
+                expect(false).assertTrue();
+                done();
+               
             }
 
         })
