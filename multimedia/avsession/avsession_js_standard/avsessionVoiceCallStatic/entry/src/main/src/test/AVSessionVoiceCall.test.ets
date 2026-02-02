@@ -3754,7 +3754,7 @@ export default function abilityTest() {
          * @tc.type   Function
          * @tc.level  Level2
          */
-        it('SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): Promise<void> => {
+        it('SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             await session!.destroy();
             try {
                 session!.onPlayNext((info:avSession.CommandInfo) => {
