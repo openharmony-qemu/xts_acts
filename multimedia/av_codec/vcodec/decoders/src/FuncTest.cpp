@@ -65,7 +65,6 @@ protected:
     const char *ginpDirAv1High8bit =  "/data/test/media/av1_high_L4.0_1920x1080.ivf";
     const char *ginpDirAv1Main10bit = "/data/test/media/1920x1080_av1_main_yuv420p10le.ivf";
     const char *ginpDirAv1High10bit = "/data/test/media/1920x1080_av1_high_yuv444p10le.ivf";
-
 };
 
 static OH_AVCapability *g_capVc1 = nullptr;
