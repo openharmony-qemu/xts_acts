@@ -51,7 +51,7 @@ export default function StyledString() {
         console.info("get StyledString state pages: " + JSON.stringify(pages));
         if (!("StyledString" == pages.name)) {
           console.info("get StyledString state pages.name: " + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {

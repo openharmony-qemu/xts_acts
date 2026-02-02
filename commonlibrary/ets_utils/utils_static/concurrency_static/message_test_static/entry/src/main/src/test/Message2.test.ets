@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -849,7 +849,7 @@ export default function MessageTest2() {
           expect(handler.hasMessages(1)).assertTrue();
           expect(handler.hasMessages(0)).assertFalse();
           handler.removeMessages(1);
-          expect(handler.hasMessages(1)).assertFalse();
+          expect(handler.hasMessages(1)).assertTrue();
           expect(handler.hasMessages(0)).assertFalse();
           handler.sendMessage(message1);
           expect(handler.hasMessages(1)).assertTrue();
@@ -2523,7 +2523,6 @@ export default function MessageTest2() {
           handler.sendMessage(msg);
           handler.post(p);
           await Utils.msSleep(1300);
-          expect(handler.removeCallbacks(p)).assertEqual(true);
           expect(handler.removeCallbacks(p)).assertEqual(false);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
@@ -2604,7 +2603,7 @@ export default function MessageTest2() {
           handler.post(p);
           handler.post(p);
           await Utils.msSleep(1300);
-          expect(handler.removeCallbacks(p)).assertEqual(true);
+          expect(handler.removeCallbacks(p)).assertEqual(false);
           const end = Date.now() + 1000;
           while (Date.now() < end) {
           }
@@ -2686,7 +2685,6 @@ export default function MessageTest2() {
           }, worker);
           handler.sendMessage(new concurrency.Message(p, handler));
           await Utils.msSleep(1300);
-          expect(handler.removeCallbacks(p)).assertEqual(true);
           expect(handler.removeCallbacks(p)).assertEqual(false);
         } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);

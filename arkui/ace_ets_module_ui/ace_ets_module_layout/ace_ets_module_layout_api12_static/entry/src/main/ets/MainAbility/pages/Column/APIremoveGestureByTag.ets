@@ -22,9 +22,10 @@ import {
   UIGestureEvent,
   TapGestureHandler,
   GestureEvent,
-  Text,LocalStorage,
+  Text,
   Color
 } from '@ohos.arkui.component';
+import { LocalStorage } from '@ohos.arkui.stateManagement';
 import {
   State,
 

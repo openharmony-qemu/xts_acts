@@ -165,7 +165,7 @@ it('ListJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
       let driver = Driver.create()
       console.info("windowRect Left: " + String((AppStorage.get<number>('winLeft')) as number) + ',' +
         "windowRect Top: " + String((AppStorage.get<number>('winTop')) as number));
-      driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
+      await driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
@@ -207,32 +207,32 @@ it('ListJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
       expect(text5).assertEqual('onScrollStop');
 
       
-      driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
+      await driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
         UIContext.resolveUIContext()!.vp2px(4))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt());
-      driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
+      await driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
         UIContext.resolveUIContext()!.vp2px(4))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt());
       await CommonFunc.sleep(1000);
-      driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
+      await driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
         UIContext.resolveUIContext()!.vp2px(4))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt());
-      driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
+      await driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -
         UIContext.resolveUIContext()!.vp2px(4))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt());
-      driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
+      await driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left +
         (right - left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + (bottom - top) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right - left) / 2 -

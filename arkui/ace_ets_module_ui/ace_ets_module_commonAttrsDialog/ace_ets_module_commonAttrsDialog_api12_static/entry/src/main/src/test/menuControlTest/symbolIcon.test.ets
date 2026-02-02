@@ -39,7 +39,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function symbolIcon() {
   describe('symbolIcon',  () =>{
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
     });

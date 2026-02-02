@@ -15,13 +15,13 @@
  */
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
+import { BusinessError } from '@ohos.base';
 import {
   Alignment,
   AlignRuleOption,
   Axis,
   BlurStyle,
   Builder,
-  BusinessError,
   Button,
   ClickEvent,
   Color,

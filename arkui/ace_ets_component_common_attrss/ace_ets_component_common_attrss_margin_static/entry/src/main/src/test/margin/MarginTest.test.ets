@@ -108,9 +108,7 @@ export default function marginTest() {
   'TabContent'
   ]
 
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
-  const uiContext = AppStorage.get<UIContext>('uiContext')!;
+
 
   let pageConfig: PageConfig = {
     testName: 'testMargin',
@@ -142,10 +140,10 @@ export default function marginTest() {
         bottom: '30.00vp',
         left: '20.00vp'
       },
-      top: uiContext.vp2px(20),
-      right: uiContext.vp2px(30),
-      bottom: uiContext.vp2px(30),
-      left: uiContext.vp2px(20)
+      top: 20,
+      right: 30,
+      bottom:30,
+      left: 20
     }
   }, {
     describe: 'SetTop',
@@ -161,10 +159,10 @@ export default function marginTest() {
         bottom: '0.00vp',
         left: '0.00vp'
       },
-      top: uiContext.vp2px(50),
-      right: uiContext.vp2px(0),
-      bottom: uiContext.vp2px(0),
-      left: uiContext.vp2px(0)
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0
     }
   }, {
     describe: 'SetRight',
@@ -180,10 +178,10 @@ export default function marginTest() {
         bottom: '0.00vp',
         left: '0.00vp'
       },
-      top: uiContext.vp2px(0),
-      right: uiContext.vp2px(50),
-      bottom: uiContext.vp2px(0),
-      left: uiContext.vp2px(0)
+      top: 0,
+      right: 50,
+      bottom: 0,
+      left:0
     }
   }, {
     describe: 'SetBottom',
@@ -199,10 +197,10 @@ export default function marginTest() {
         bottom: '50.00vp',
         left: '0.00vp'
       },
-      top: uiContext.vp2px(0),
-      right: uiContext.vp2px(0),
-      bottom: uiContext.vp2px(50),
-      left: uiContext.vp2px(0)
+      top: 0,
+      right: 0,
+      bottom: 50,
+      left: 0
     }
   }, {
     describe: 'SetLeft',
@@ -218,20 +216,51 @@ export default function marginTest() {
         bottom: '0.00vp',
         left: '50.00vp'
       },
-      top: uiContext.vp2px(0),
-      right: uiContext.vp2px(0),
-      bottom: uiContext.vp2px(0),
-      left: uiContext.vp2px(50)
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 50
     }
   }]
 
   describe('MarginTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("MarginTest beforeAll start");
-      
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });
     //Create test cases by config.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+      if(data.testValue.describe == "SetAll"){
+        data.testValue.expectValue.top = UIContext.resolveUIContext()!.vp2px(20)
+        data.testValue.expectValue.right = UIContext.resolveUIContext()!.vp2px(30)
+        data.testValue.expectValue.bottom = UIContext.resolveUIContext()!.vp2px(30)
+        data.testValue.expectValue.left= UIContext.resolveUIContext()!.vp2px(20)
+      }
+      if(data.testValue.describe == "SetTop"){
+        data.testValue.expectValue.top = UIContext.resolveUIContext()!.vp2px(50)
+        data.testValue.expectValue.right = UIContext.resolveUIContext()!.vp2px(0)
+        data.testValue.expectValue.bottom = UIContext.resolveUIContext()!.vp2px(0)
+        data.testValue.expectValue.left= UIContext.resolveUIContext()!.vp2px(0)
+      }
+      if(data.testValue.describe == "SetRight"){
+        data.testValue.expectValue.top = UIContext.resolveUIContext()!.vp2px(0)
+        data.testValue.expectValue.right = UIContext.resolveUIContext()!.vp2px(50)
+        data.testValue.expectValue.bottom = UIContext.resolveUIContext()!.vp2px(0)
+        data.testValue.expectValue.left= UIContext.resolveUIContext()!.vp2px(0)
+      }
+      if(data.testValue.describe == "SetBottom"){
+        data.testValue.expectValue.top = UIContext.resolveUIContext()!.vp2px(0)
+        data.testValue.expectValue.right = UIContext.resolveUIContext()!.vp2px(0)
+        data.testValue.expectValue.bottom = UIContext.resolveUIContext()!.vp2px(50)
+        data.testValue.expectValue.left= UIContext.resolveUIContext()!.vp2px(0)
+      }
+      if(data.testValue.describe == "SetLeft"){
+        data.testValue.expectValue.top = UIContext.resolveUIContext()!.vp2px(0)
+        data.testValue.expectValue.right = UIContext.resolveUIContext()!.vp2px(0)
+        data.testValue.expectValue.bottom = UIContext.resolveUIContext()!.vp2px(0)
+        data.testValue.expectValue.left= UIContext.resolveUIContext()!.vp2px(50)
+      }
+
       //Initialize margin properties
       console.info('[' + data.caseTag + '] setValue : ' + setInit);
       AppStorage.setOrCreate<Margin>('_margin', setInit)
@@ -267,17 +296,6 @@ export default function marginTest() {
         let referenceRect = Utils.getComponentRect(data.pageConfig.buttonComponentKey);
         //Component to reference component and parent component margin calculation
         top = rect.top - referenceRect.top;
-        left = rect.left - rectParent.left;
-        right = rectParent.right - rect.right;
-        bottom = rectParent.bottom - rect.bottom;
-      } else if (data.pageConfig.componentKey == 'StepperItem') {
-        //parentComponent
-        let rectParent = Utils.getComponentRectByObj(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]);
-        //Component to  parent component margin calculation
-        top = rect.top - rectParent.top;
         left = rect.left - rectParent.left;
         right = rectParent.right - rect.right;
         bottom = rectParent.bottom - rect.bottom;

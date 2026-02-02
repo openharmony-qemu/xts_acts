@@ -36,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function backgroundJsunit() {
   describe('backgroundTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("backgroundTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")

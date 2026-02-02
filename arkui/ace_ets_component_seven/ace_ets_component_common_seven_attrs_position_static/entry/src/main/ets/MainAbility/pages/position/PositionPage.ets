@@ -16,8 +16,6 @@
 
 import { ListItemGroupView } from '../../view/position/ListItemGroupView';
 import { FlowItemView } from '../../view/position/FlowItemView';
-import { StepperItemView } from '../../view/position/StepperItemView';
-import { StepperView } from '../../view/position/StepperView';
 import { NavRouterView } from '../../view/position/NavRouterView';
 import { WaterFlowView } from '../../view/position/WaterFlowView';
 import { TabsView } from '../../view/position/TabsView';
@@ -175,10 +173,6 @@ import {
   SpanAttribute,
   Stack,
   StackAttribute,
-  Stepper,
-  StepperAttribute,
-  StepperItem,
-  StepperItemAttribute,
   Swiper,
   SwiperAttribute,
   TabContent,
@@ -721,24 +715,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mPosition: Position = { x: 0, y: 0 };
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    console.info(`position page show ${JSON.stringify(this.mPosition)}`)
-    instance.position(this.mPosition)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mPosition: Position = { x: 0, y: 0 };
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    console.info(`position page show ${JSON.stringify(this.mPosition)}`)
-    instance.position(this.mPosition)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mPosition: Position = { x: 0, y: 0 };
 
@@ -1165,16 +1141,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.key(componentKey)
   return this
@@ -1362,8 +1328,6 @@ struct PositionPage {
   @State _positionSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _positionSliderMod: SliderModifier = new SliderModifier()
   @State _positionStackMod: StackModifier = new StackModifier()
-  @State _positionStepperMod: StepperModifier = new StepperModifier()
-  @State _positionStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _positionSwiperMod: SwiperModifier = new SwiperModifier()
   @State _positionTabContentMod: TabContentModifier = new TabContentModifier()
   @State _positionTabsMod: TabsModifier = new TabsModifier()
@@ -1510,14 +1474,6 @@ struct PositionPage {
           })
             .showTips(true)
             .commonStyle(this.componentKey).attributeModifier(this._positionSliderMod)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }.commonStyle(this.componentKey).attributeModifier(this._positionStepperMod)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -1740,19 +1696,6 @@ struct PositionPage {
               }
             }, (item: int) => item.toString())
           }.commonStyle(this.componentKey).attributeModifier(this._positionWaterFlowMod)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            .commonStyle(this.componentKey).attributeModifier(this._positionStepperItemMod)
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

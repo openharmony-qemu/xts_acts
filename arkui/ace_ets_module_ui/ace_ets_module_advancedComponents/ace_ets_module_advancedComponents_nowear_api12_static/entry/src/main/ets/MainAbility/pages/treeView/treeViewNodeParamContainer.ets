@@ -98,6 +98,7 @@ struct TreeViewDemo {
   }
 
   onChangedCallback: (callbackParam: CallbackParam) => void = (callbackParam: CallbackParam) => {
+    console.log("======================================= " + JSON.stringify(callbackParam));
     this.clickNodeId = callbackParam.currentNodeId;
     this.clickNodeChildIndex = callbackParam.childIndex;
   }

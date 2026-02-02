@@ -2753,5 +2753,187 @@ export default function OhAVPlayerNDKTest() {
       expect(ret).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
       done();
     });
+
+    /**
+     * @tc.number testAVLoadingRequestError0001
+     * @tc.name   testAVLoadingRequestError0001
+     * @tc.desc   OH_AVLoadingRequestError 
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testAVLoadingRequestError0001', Level.LEVEL0, async (done: Function) => {
+      let ret = avplayer.AVLoadingRequestError();
+      expect(ret).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number testAVHttpHeaderDestroy0001
+     * @tc.name   testAVHttpHeaderDestroy0001
+     * @tc.desc   testAVHttpHeaderDestroy 
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testAVHttpHeaderDestroy0001', Level.LEVEL0, async (done: Function) => {
+      let ret = avplayer.AVHttpHeaderDestroy();
+      expect(ret).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number testAVHttpHeaderDestroyError0001
+     * @tc.name   testAVHttpHeaderDestroyError0001
+     * @tc.desc   testAVHttpHeaderDestroyError 
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testAVHttpHeaderDestroyError0001', Level.LEVEL0, async (done: Function) => {
+      let ret = avplayer.AVHttpHeaderDestroyError();
+      expect(ret).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number testAVHttpHeaderCreate0001
+     * @tc.name   testAVHttpHeaderCreate0001
+     * @tc.desc   testAVHttpHeaderCreate 
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testAVHttpHeaderCreate0001', Level.LEVEL0, async (done: Function) => {
+      let ret = avplayer.AVHttpHeaderCreate();
+      expect(ret).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number testAVPlayerTrackSwitchMode0001
+     * @tc.name   testAVPlayerTrackSwitchMode0001
+     * @tc.desc   AVPlayerTrackSwitchMode 
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testAVPlayerTrackSwitchMode0001', Level.LEVEL0, async (done: Function) => {
+      let ret = avplayer.AVPlayerTrackSwitchMode();
+      expect(ret).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number testAVPlayerSeekMode0001
+     * @tc.name   testAVPlayerSeekMode0001
+     * @tc.desc   AVPlayerSeekMode 
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testAVPlayerSeekMode0001', Level.LEVEL0, async (done: Function) => {
+      let ret = avplayer.AVPlayerSeekMode();
+      expect(ret).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number testAVErrCode0001
+     * @tc.name   testAVErrCode0001
+     * @tc.desc   AVErrCode 
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testAVErrCode0001', Level.LEVEL0, async (done: Function) => {
+      let ret = avplayer.AVErrCode();
+      expect(ret).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlayerSetMediaMutedErr0001
+     * @tc.name   testOhAVPlayerSetMediaMutedErr0001
+     * @tc.desc   AVPlayerSetMediaMutedErr
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlayerSetMediaMutedErr0001', Level.LEVEL0, async (done: Function) => {
+      let ret = avplayer.AVPlayerSetMediaMutedErr();
+      expect(ret).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlayerSetMediaMutedErr10001
+     * @tc.name   testOhAVPlayerSetMediaMutedErr10001
+     * @tc.desc   AVPlayerSetMediaMutedErr1
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlayerSetMediaMutedErr10001', Level.LEVEL0, async (done: Function) => {
+      let ret = avplayer.AVPlayerSetMediaMutedErr1();
+      expect(ret).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number testAVPlayerSetSeiReceivedCallbackErr0001
+     * @tc.name   testAVPlayerSetSeiReceivedCallbackErr0001
+     * @tc.desc   AVPlayerSetSeiReceivedCallbackErr
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testAVPlayerSetSeiReceivedCallbackErr0001', Level.LEVEL0, async (done: Function) => {
+      let ret = avplayer.AVPlayerSetSeiReceivedCallbackErr();
+      expect(ret).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number testAVMediaSourceLoaderCreate0001
+     * @tc.name   testAVMediaSourceLoaderCreate0001
+     * @tc.desc   AVMediaSourceLoaderCreate 
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testAVMediaSourceLoaderCreate0001', Level.LEVEL0, async (done: Function) => {
+      let ret = avplayer.AVMediaSourceLoaderCreate();
+      expect(ret).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number testAVPlaybackStrategyDestoy0001
+     * @tc.name   testAVPlaybackStrategyDestoy0001
+     * @tc.desc   AVPlaybackStrategyDestoy
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testAVPlaybackStrategyDestoy0001', Level.LEVEL0, async (done: Function) => {
+      let ret = avplayer.AVPlaybackStrategyDestoy();
+      expect(ret).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number testAVPlaybackStrategyDestoyErr0001
+     * @tc.name   testAVPlaybackStrategyDestoyErr0001
+     * @tc.desc   AVPlaybackStrategyDestoyErr
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testAVPlaybackStrategyDestoyErr0001', Level.LEVEL0, async (done: Function) => {
+      let ret = avplayer.AVPlaybackStrategyDestoyErr();
+      expect(ret).assertEqual(0);
+      done();
+    });
   });
 }

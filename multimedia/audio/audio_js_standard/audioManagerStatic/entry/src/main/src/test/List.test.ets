@@ -18,6 +18,7 @@ import getAudioSceneApi12 from "./GetAudioScene.test"
 import audioRoutingManager from "./AudioRoutingManager.test"
 import audioLoopBack from './AudioLoopBack.test';
 import audioSpatializationManager from './AudioSpatializationManager.test';
+import audioSessionManagerTest from './AudioSessionManager.test';
 import Utils from './Util.test';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -52,6 +53,7 @@ let getPermission = async () => {
 
 export default function testsuite() {
     getPermission();
+    audioSessionManagerTest();
     audioManagerApi9();
     audioFramework();
     audioRoutingManager();

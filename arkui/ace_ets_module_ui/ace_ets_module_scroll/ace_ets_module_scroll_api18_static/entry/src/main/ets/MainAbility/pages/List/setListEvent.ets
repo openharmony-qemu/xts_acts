@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { FrameNode, NodeController } from '@ohos.arkui.node';
+import { FrameNode, NodeController, typeNode } from '@ohos.arkui.node';
 import {
   Button,
   ClickEvent,
@@ -30,6 +30,7 @@ import {
   ScrollSource,
   ScrollState,
   Text,
+  UIListEvent,
   VisibleListContentInfo
 } from '@ohos.arkui.component';
 import { State, LocalStorage } from '@ohos.arkui.stateManagement';
@@ -58,57 +59,57 @@ class MyNodeController extends NodeController {
   }
 
   addCommonEvent(frameNode: FrameNode) {
-    // let listEvent: UIListEvent | undefined = typeNode.getEvent(frameNode, 'List');
-    // listEvent?.setOnWillScroll((scrollOffset: number, scrollState: ScrollState, scrollSource: ScrollSource)=>{
-    //   // storage.set('List_setOnWillScroll', 'setOnWillScroll');
-    //   console.log(`List:: setOnWillScroll scrollOffset=${scrollOffset}, scrollState=${scrollState}, scrollSource=${scrollSource}`)
-    // })
-    // listEvent?.setOnDidScroll((scrollOffset: number, scrollState: ScrollState)=>{
-    //   // storage.set('List_setOnDidScroll', 'setOnDidScroll');
-    //   console.log(`List:: setOnDidScroll scrollOffset=${scrollOffset}, scrollState=${scrollState}`)
-    // })
-    // listEvent?.setOnReachStart(()=>{
-    //   // storage1.set('List_setOnReachStart', 'setOnReachStart');
-    //   console.log(`List:: setOnReachStart`)
-    // })
-    // listEvent?.setOnReachEnd(()=>{
-    //   // storage1.set('List_setOnReachEnd', 'setOnReachEnd');
-    //   console.log(`List:: setOnReachEnd`)
-    // })
-    // listEvent?.setOnScrollStart(()=>{
-    //   // storage2.set('List_setOnScrollStart', 'setOnScrollStart');
-    //   console.log(`List:: setOnScrollStart`)
-    // })
-    // listEvent?.setOnScrollStop(()=>{
-    //   // storage2.set('List_setOnScrollStop', 'setOnScrollStop');
-    //   console.log(`List:: setOnScrollStop`)
-    // })
-    // listEvent?.setOnScrollFrameBegin((offset: number, state: ScrollState) => {
-    //   // storage3.set('List_setOnScrollFrameBegin', 'setOnScrollFrameBegin');
-    //   console.log(`List:: setOnScrollFrameBegin offset=${offset}, state=${state}`)
-    //   return undefined;
-    // })
-    // listEvent?.setOnScrollIndex((start: number, end: number, center: number)=>{
-    //   // storage3.set('List_setOnScrollIndex', 'setOnScrollIndex');
-    //   console.log(`List:: setOnScrollIndex start=${start}, end=${end}, center=${center}`)
-    // })
-    // listEvent?.setOnScrollVisibleContentChange((start: VisibleListContentInfo, end: VisibleListContentInfo)=>{
-    //   // storage4.set('List_setOnVisibleContentChange', 'setOnScrollVisibleContentChange');
-    //   console.log(`List:: setOnScrollVisibleContentChange start=${JSON.stringify(start)}, end=${JSON.stringify(end)}`)
-    // })
+    let listEvent: UIListEvent | undefined = typeNode.getListEvent(frameNode);
+    listEvent?.setOnWillScroll((scrollOffset: Double, scrollState: ScrollState, scrollSource: ScrollSource)=>{
+      storage.set('List_setOnWillScroll', 'setOnWillScroll');
+      console.log(`List:: setOnWillScroll scrollOffset=${scrollOffset}, scrollState=${scrollState}, scrollSource=${scrollSource}`)
+    })
+    listEvent?.setOnDidScroll((scrollOffset: Double, scrollState: ScrollState)=>{
+      storage.set('List_setOnDidScroll', 'setOnDidScroll');
+      console.log(`List:: setOnDidScroll scrollOffset=${scrollOffset}, scrollState=${scrollState}`)
+    })
+    listEvent?.setOnReachStart(()=>{
+      storage1.set('List_setOnReachStart', 'setOnReachStart');
+      console.log(`List:: setOnReachStart`)
+    })
+    listEvent?.setOnReachEnd(()=>{
+      storage1.set('List_setOnReachEnd', 'setOnReachEnd');
+      console.log(`List:: setOnReachEnd`)
+    })
+    listEvent?.setOnScrollStart(()=>{
+      storage2.set('List_setOnScrollStart', 'setOnScrollStart');
+      console.log(`List:: setOnScrollStart`)
+    })
+    listEvent?.setOnScrollStop(()=>{
+      storage2.set('List_setOnScrollStop', 'setOnScrollStop');
+      console.log(`List:: setOnScrollStop`)
+    })
+    listEvent?.setOnScrollFrameBegin((offset: Double, state: ScrollState) => {
+      storage3.set('List_setOnScrollFrameBegin', 'setOnScrollFrameBegin');
+      console.log(`List:: setOnScrollFrameBegin offset=${offset}, state=${state}`)
+       return {offsetRemain: offset};
+    })
+    listEvent?.setOnScrollIndex((start: Int, end: Int, center: Int)=>{
+      storage3.set('List_setOnScrollIndex', 'setOnScrollIndex');
+      console.log(`List:: setOnScrollIndex start=${start}, end=${end}, center=${center}`)
+    })
+    listEvent?.setOnScrollVisibleContentChange((start: VisibleListContentInfo, end: VisibleListContentInfo)=>{
+      storage4.set('List_setOnVisibleContentChange', 'setOnScrollVisibleContentChange');
+      console.log(`List:: setOnScrollVisibleContentChange start=${JSON.stringify(start)}, end=${JSON.stringify(end)}`)
+    })
   }
 
   resetEvent(frameNode: FrameNode) {
-    // let listEvent: UIListEvent | undefined = typeNode.getEvent(frameNode, 'List');
-    // listEvent?.setOnWillScroll(undefined)
-    // listEvent?.setOnDidScroll(undefined)
-    // listEvent?.setOnReachStart(undefined)
-    // listEvent?.setOnReachEnd(undefined)
-    // listEvent?.setOnScrollStart(undefined)
-    // listEvent?.setOnScrollStop(undefined)
-    // listEvent?.setOnScrollFrameBegin(undefined)
-    // listEvent?.setOnScrollIndex(undefined)
-    // listEvent?.setOnScrollVisibleContentChange(undefined)
+    let listEvent: UIListEvent | undefined = typeNode.getListEvent(frameNode);
+    listEvent?.setOnWillScroll(undefined)
+    listEvent?.setOnDidScroll(undefined)
+    listEvent?.setOnReachStart(undefined)
+    listEvent?.setOnReachEnd(undefined)
+    listEvent?.setOnScrollStart(undefined)
+    listEvent?.setOnScrollStop(undefined)
+    listEvent?.setOnScrollFrameBegin(undefined)
+    listEvent?.setOnScrollIndex(undefined)
+    listEvent?.setOnScrollVisibleContentChange(undefined)
   }
 }
 
@@ -116,7 +117,7 @@ class MyNodeController extends NodeController {
 @Component
 struct setOnListIndex02 {
   private myNodeController: MyNodeController = new MyNodeController();
-  @State index: number = 0;
+  @State index: int = 0;
   @State text: string = 'start';
   @State text1: string = 'start';
   @State text2: string = 'start';
@@ -193,10 +194,10 @@ struct setOnListIndex02 {
       .height('50%')
       .id('key_listItem_set')
       .edgeEffect(EdgeEffect.None)
-      .onWillScroll((scrollOff: number, scrollState: ScrollState, scrollSource: ScrollSource): ScrollResult => {
+      .onWillScroll((scrollOff: Double, scrollState: ScrollState, scrollSource: ScrollSource): ScrollResult => {
         console.log(`List:: onWillScroll 1 scrollOff=${scrollOff}, scrollState=${scrollState}, scrollSource=${scrollSource}`)
       })
-      .onDidScroll((scrollOff: number, scrollState: ScrollState) => {
+      .onDidScroll((scrollOff: Double, scrollState: ScrollState) => {
         console.log(`List:: onDidScroll 1  scrollOff=${scrollOff}, scrollState=${scrollState}`)
       })
       .onReachStart(() => {
@@ -211,7 +212,7 @@ struct setOnListIndex02 {
       .onScrollStop(() => {
         console.log(`List:: onScrollStop 1 `)
       })
-      .onScrollFrameBegin((off: number, state: ScrollState): OnScrollFrameBeginHandlerResult => {
+      .onScrollFrameBegin((off: Double, state: ScrollState): OnScrollFrameBeginHandlerResult => {
         console.log(`List:: onScrollFrameBegin 1 off=${off}, state=${state}`)
         return { offsetRemain: 0 } as OnScrollFrameBeginHandlerResult;
       })

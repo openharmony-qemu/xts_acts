@@ -392,30 +392,42 @@ export default function formProviderTest() {
     it('SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0900';
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
-      let formId: string = '0';
-      await formProvider.getPublishedRunningFormInfos().then((data: formInfo.RunningFormInfo[]) => {
-        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', 
-        `${TAG} formProvider getPublishedRunningFormInfos success, data: ${JSON.stringify(data)}`);
-        if (data) {
-          formId = JSON.parse(JSON.stringify(data[0])).formId;
-        }
-      }).catch ((error: BusinessError) => {
-        if (error.code === ERROR_CODE) {
-          expect(error.code).assertEqual(ERROR_CODE);
-        } else if(error.code === ERROR_CODE1) {
-          expect(error.code).assertEqual(ERROR_CODE1);
-        } else if (error.code === ERROR_CODE2) {
-          expect(error.code).assertEqual(ERROR_CODE2);
-        } else if (error.code === ERROR_CODE3) {
-          expect(error.code).assertEqual(ERROR_CODE3);
-        } else {
-          hilog.info(DOMAIN, COMMON_TAG, '%{public}s',
-          `${TAG} formProvider getPublishedRunningFormInfos error: ${JSON.stringify(error)}`);
-          expect().assertFail();
-        }
-      });
       try {
         formProvider.closeFormEditAbility();
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider closeFormEditAbility success`);
+        done();
+      } catch (error) {
+        if (error.code === ERROR_CODE) {
+          expect(error.code).assertEqual(ERROR_CODE);
+        } else if (error.code === ERROR_CODE3) {
+          expect(error.code).assertEqual(ERROR_CODE3);
+        } else if (error.code === ERROR_CODE5) {
+          expect(error.code).assertEqual(ERROR_CODE5);
+        } else if (error.code === ERROR_CODE10) {
+          expect(error.code).assertEqual(ERROR_CODE10);
+        } else {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s',
+            `${TAG} formProvider closeFormEditAbility, error: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        }
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0901
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0901
+     * @tc.desc   Close the card EditAbility page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0901', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let TAG = 'SUB_ABILITY_FORM_FWK_TEST_CLOSE_FORM_EDIT_ABILITY_0901';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+      try {
+        formProvider.closeFormEditAbility(false);
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider closeFormEditAbility success`);
         done();
       } catch (error) {

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1647,6 +1647,235 @@ napi_value OHDrawingGetFontPathsByType003(napi_env env, napi_callback_info info)
             free(fontPaths);
         }
     }
+
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+// OH_Drawing_SetTypographyStyleAttributeBool - 行首标点压缩测试
+napi_value OHDrawingSetTypographyStyleAttributeBool001(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    OH_Drawing_TypographyStyle* style = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT_NO_MES(style != nullptr);
+
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeBool(
+        style, TYPOGRAPHY_STYLE_ATTR_B_COMPRESS_HEAD_PUNCTUATION, true);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+
+    OH_Drawing_DestroyTypographyStyle(style);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+// OH_Drawing_SetTypographyStyleAttributeBool - 字体内部padding测试
+napi_value OHDrawingSetTypographyStyleAttributeBool002(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    OH_Drawing_TypographyStyle* style = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT_NO_MES(style != nullptr);
+
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeBool(
+        style, TYPOGRAPHY_STYLE_ATTR_B_INCLUDE_FONT_PADDING, false);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+
+    OH_Drawing_DestroyTypographyStyle(style);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+// OH_Drawing_SetTypographyStyleAttributeBool - 行间距回退机制测试
+napi_value OHDrawingSetTypographyStyleAttributeBool003(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    OH_Drawing_TypographyStyle* style = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT_NO_MES(style != nullptr);
+
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeBool(
+        style, TYPOGRAPHY_STYLE_ATTR_B_FALLBACK_LINE_SPACING, true);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+
+    OH_Drawing_DestroyTypographyStyle(style);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+// OH_Drawing_SetTypographyStyleAttributeBool - nullptr参数测试
+napi_value OHDrawingSetTypographyStyleAttributeBool004(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeBool(
+        nullptr, TYPOGRAPHY_STYLE_ATTR_B_COMPRESS_HEAD_PUNCTUATION, true);
+    DRAWING_LOGI("OHDrawingSetTypographyStyleAttributeBool004 errorCode is %{public}u", errorCode);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHDrawingSetTypographyStyleAttributeBool005(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeBool(
+        nullptr, TYPOGRAPHY_STYLE_ATTR_B_COMPRESS_HEAD_PUNCTUATION, true);
+    DRAWING_LOGI("OHDrawingSetTypographyStyleAttributeBool004 errorCode is %{public}u", errorCode);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHDrawingSetTypographyStyleAttributeBool006(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    OH_Drawing_TypographyStyle* style = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT_NO_MES(style != nullptr);
+
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeBool(
+        style, TYPOGRAPHY_STYLE_ATTR_I_FONT_WIDTH, true);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH);
+
+    OH_Drawing_DestroyTypographyStyle(style);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+// OH_Drawing_GetTypographyStyleAttributeBool - 行首标点压缩获取测试
+napi_value OHDrawingGetTypographyStyleAttributeBool001(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    OH_Drawing_TypographyStyle* style = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT_NO_MES(style != nullptr);
+
+    bool value = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyStyleAttributeBool(
+        style, TYPOGRAPHY_STYLE_ATTR_B_COMPRESS_HEAD_PUNCTUATION, &value);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+
+    OH_Drawing_DestroyTypographyStyle(style);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+// OH_Drawing_GetTypographyStyleAttributeBool - 设置后获取验证
+napi_value OHDrawingGetTypographyStyleAttributeBool002(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    OH_Drawing_TypographyStyle* style = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT_NO_MES(style != nullptr);
+
+    OH_Drawing_SetTypographyStyleAttributeBool(style, TYPOGRAPHY_STYLE_ATTR_B_INCLUDE_FONT_PADDING, true);
+
+    bool value = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyStyleAttributeBool(
+        style, TYPOGRAPHY_STYLE_ATTR_B_INCLUDE_FONT_PADDING, &value);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    NAPI_ASSERT_NO_MES(value == true);
+
+    OH_Drawing_DestroyTypographyStyle(style);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+// OH_Drawing_GetTypographyStyleAttributeBool - nullptr参数测试
+napi_value OHDrawingGetTypographyStyleAttributeBool003(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    bool value = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyStyleAttributeBool(
+        nullptr, TYPOGRAPHY_STYLE_ATTR_B_FALLBACK_LINE_SPACING, &value);
+    DRAWING_LOGI("OHDrawingGetTypographyStyleAttributeBool003 errorCode is %{public}u", errorCode);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+// OH_Drawing_GetTypographyStyleAttributeBool - 输出参数为nullptr测试
+napi_value OHDrawingGetTypographyStyleAttributeBool004(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    OH_Drawing_TypographyStyle* style = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT_NO_MES(style != nullptr);
+
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyStyleAttributeBool(
+        style, TYPOGRAPHY_STYLE_ATTR_B_FALLBACK_LINE_SPACING, nullptr);
+    DRAWING_LOGI("OHDrawingGetTypographyStyleAttributeBool004 errorCode is %{public}u", errorCode);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+
+    OH_Drawing_DestroyTypographyStyle(style);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHDrawingGetTypographyStyleAttributeBool005(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    OH_Drawing_TypographyStyle* style = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT_NO_MES(style != nullptr);
+
+    bool value = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyStyleAttributeBool(
+        style, TYPOGRAPHY_STYLE_ATTR_I_FONT_WIDTH, &value);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH);
+
+    OH_Drawing_DestroyTypographyStyle(style);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+// OH_Drawing_DestroyPositionAndAffinity - 基本功能测试
+napi_value OHDrawingDestroyPositionAndAffinity001(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    OH_Drawing_TypographyCreate* handler =
+        OH_Drawing_CreateTypographyHandler(typoStyle, OH_Drawing_CreateFontCollection());
+    OH_Drawing_Typography* typography = OH_Drawing_CreateTypography(handler);
+    OH_Drawing_TextBox* textBox = OH_Drawing_TypographyGetRectsForPlaceholders(typography);
+    OH_Drawing_GetLeftFromTextBox(textBox, 0);
+    OH_Drawing_GetRightFromTextBox(textBox, 0);
+    OH_Drawing_GetTopFromTextBox(textBox, 0);
+    OH_Drawing_GetBottomFromTextBox(textBox, 0);
+    NAPI_ASSERT_NO_MES(OH_Drawing_GetTextDirectionFromTextBox(textBox, 0) == 0);
+    NAPI_ASSERT_NO_MES(OH_Drawing_GetSizeOfTextBox(textBox) == 0);
+
+    OH_Drawing_PositionAndAffinity* positionAndAffinity =
+        OH_Drawing_TypographyGetGlyphPositionAtCoordinate(typography, 1, 0);
+    OH_Drawing_GetPositionFromPositionAndAffinity(positionAndAffinity);
+    OH_Drawing_GetAffinityFromPositionAndAffinity(positionAndAffinity);
+
+    OH_Drawing_Range* range = OH_Drawing_TypographyGetWordBoundary(typography, 1);
+    OH_Drawing_GetStartFromRange(range);
+    OH_Drawing_GetEndFromRange(range);
+    OH_Drawing_TypographyGetLineHeight(typography, 1);
+    OH_Drawing_TypographyGetLineWidth(typography, 1);
+    NAPI_ASSERT_NO_MES(positionAndAffinity != nullptr);
+
+    OH_Drawing_DestroyPositionAndAffinity(positionAndAffinity);
+
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+// OH_Drawing_DestroyPositionAndAffinity - nullptr参数测试
+napi_value OHDrawingDestroyPositionAndAffinity002(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    OH_Drawing_DestroyPositionAndAffinity(nullptr);
 
     napi_create_int32(env, SUCCESS, &result);
     return result;

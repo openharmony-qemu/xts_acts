@@ -34,7 +34,7 @@ group("multimedia") {
   if (is_standard_system) {
     deps += [
       "audio/audio_cpp_standard:ActsOpenslesNdkTest",
-      "audio/ActsAudioCPPStandardTest:ActsAudioCPPStandardTest",
+      "audio/audio_js_standard/ActsAudioCPPStandardTest:ActsAudioCPPStandardTest",
       "audio/audio_js_standard/AudioCapturer:audio_capturer_js_hap",
       "audio/audio_js_standard/AudioCapturerChangeInfo:audio_capturerchangeInfo_js_hap",
       "audio/audio_js_standard/AudioCapturerChangeInfoStatic:audio_capturerchangeInfo_js_static_hap",
@@ -200,7 +200,6 @@ group("multimedia") {
       "media/media_ndk_standard/AVMetadataExtractorNDK:OhAVMetadataExtractorNDK",
       "media/media_ndk_standard/AVPlayerNDK:OhAVPlayerNDK",
       "media/media_ndk_standard/AVPlayerNDKSupplement:OhAVPlayersupNDK",
-      "media/media_ndk_standard/LowPowerPlayerNDK:LowPower_Player_hap",
       "media/media_js_standard/soundPoolStatic:soundpool_js_static_hap",
       "media/media_js_standard/avRecorderStatic:av_recorder_js_static_hap",
       "media/media_js_standard/avPlayerStatic:avplayer_js_static_hap",
@@ -219,6 +218,7 @@ group("multimedia") {
       "av_codec/ActsAudioEncoderTest:ActsAudioEncoderTest",
       "audio_ndk/ActsOhAudioRenderTest:ActsOhAudioRenderHapTest",
       "av_codec/ActsAudioDecoderTest:ActsAudioDecoderHapTest",
+      "av_codec/ActsCapabilityTest:ActsCapabilityHapTest",
     ]
   } else {
     deps += [

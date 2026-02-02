@@ -37,6 +37,7 @@ import {
   wrapBuilder,
   ScrollResult,
   ScrollSource,
+  UIWaterFlowEvent,
   EdgeEffect,NodeContainer
 } from '@ohos.arkui.component';
 
@@ -65,40 +66,40 @@ class MyNodeController extends NodeController {
   }
 
   addCommonEvent(frameNode: FrameNode) {
-    // let listEvent: UIWaterFlowEvent | undefined = typeNode.getEvent(frameNode, 'WaterFlow');
-    // listEvent?.setOnWillScroll((scrollOffset: number, scrollState: ScrollState, scrollSource: ScrollSource)=>{
-    //   storage.set('WaterFlow_setOnWillScroll', 'setOnWillScroll');
-    //   console.log(`WaterFlow:: setOnWillScroll scrollOffset=${scrollOffset}, scrollState=${scrollState}, scrollSource=${scrollSource}`)
-    // })
-    // listEvent?.setOnDidScroll((scrollOffset: number, scrollState: ScrollState)=>{
-    //   storage.set('WaterFlow_setOnDidScroll', 'setOnDidScroll');
-    //   console.log(`WaterFlow:: setOnDidScroll scrollOffset=${scrollOffset}, scrollState=${scrollState}`)
-    // })
-    // listEvent?.setOnReachStart(()=>{
-    //   storage1.set('WaterFlow_setOnReachStart', 'setOnReachStart');
-    //   console.log(`WaterFlow:: setOnReachStart`)
-    // })
-    // listEvent?.setOnReachEnd(()=>{
-    //   storage1.set('WaterFlow_setOnReachEnd', 'setOnReachEnd');
-    //   console.log(`WaterFlow:: setOnReachEnd`)
-    // })
-    // listEvent?.setOnScrollStart(()=>{
-    //   storage2.set('WaterFlow_setOnScrollStart', 'setOnScrollStart');
-    //   console.log(`WaterFlow:: setOnScrollStart`)
-    // })
-    // listEvent?.setOnScrollStop(()=>{
-    //   storage2.set('WaterFlow_setOnScrollStop', 'setOnScrollStop');
-    //   console.log(`WaterFlow:: setOnScrollStop`)
-    // })
-    // listEvent?.setOnScrollFrameBegin((offset: number, state: ScrollState) => {
-    //   storage3.set('WaterFlow_setOnScrollFrameBegin', 'setOnScrollFrameBegin');
-    //   console.log(`WaterFlow:: setOnScrollFrameBegin offset=${offset}, state=${state}`)
-    //   return undefined;
-    // })
-    // listEvent?.setOnScrollIndex((first: number, last: number)=>{
-    //   storage3.set('WaterFlow_setOnScrollIndex', 'setOnScrollIndex');
-    //   console.log(`WaterFlow:: setOnScrollIndex start=${first}, end=${last}`)
-    // })
+    let listEvent: UIWaterFlowEvent | undefined = typeNode.getWaterFlowEvent(frameNode);
+    listEvent?.setOnWillScroll((scrollOffset: Double, scrollState: ScrollState, scrollSource: ScrollSource)=>{
+      storage.set('WaterFlow_setOnWillScroll', 'setOnWillScroll');
+      console.log(`WaterFlow:: setOnWillScroll scrollOffset=${scrollOffset}, scrollState=${scrollState}, scrollSource=${scrollSource}`)
+    })
+    listEvent?.setOnDidScroll((scrollOffset: Double, scrollState: ScrollState)=>{
+      storage.set('WaterFlow_setOnDidScroll', 'setOnDidScroll');
+      console.log(`WaterFlow:: setOnDidScroll scrollOffset=${scrollOffset}, scrollState=${scrollState}`)
+    })
+    listEvent?.setOnReachStart(()=>{
+      storage1.set('WaterFlow_setOnReachStart', 'setOnReachStart');
+      console.log(`WaterFlow:: setOnReachStart`)
+    })
+    listEvent?.setOnReachEnd(()=>{
+      storage1.set('WaterFlow_setOnReachEnd', 'setOnReachEnd');
+      console.log(`WaterFlow:: setOnReachEnd`)
+    })
+    listEvent?.setOnScrollStart(()=>{
+      storage2.set('WaterFlow_setOnScrollStart', 'setOnScrollStart');
+      console.log(`WaterFlow:: setOnScrollStart`)
+    })
+    listEvent?.setOnScrollStop(()=>{
+      storage2.set('WaterFlow_setOnScrollStop', 'setOnScrollStop');
+      console.log(`WaterFlow:: setOnScrollStop`)
+    })
+    listEvent?.setOnScrollFrameBegin((offset: Double, state: ScrollState) => {
+      storage3.set('WaterFlow_setOnScrollFrameBegin', 'setOnScrollFrameBegin');
+      console.log(`WaterFlow:: setOnScrollFrameBegin offset=${offset}, state=${state}`)
+      return {offsetRemain: offset};
+    })
+    listEvent?.setOnScrollIndex((first: Int, last: Int)=>{
+      storage3.set('WaterFlow_setOnScrollIndex', 'setOnScrollIndex');
+      console.log(`WaterFlow:: setOnScrollIndex start=${first}, end=${last}`)
+    })
   }
 }
 
@@ -106,7 +107,7 @@ class MyNodeController extends NodeController {
 @Component
 struct setOnWaterFlowIndex04 {
   private myNodeController: MyNodeController = new MyNodeController();
-  @State index: number = 0;
+  @State index: int = 0;
   @State text: string = 'start';
   @State text1: string = 'start';
   @State text2: string = 'start';
@@ -161,10 +162,10 @@ struct setOnWaterFlowIndex04 {
       .height('50%')
       .id('key_WaterFlow_set')
       .edgeEffect(EdgeEffect.None)
-      // .onWillScroll((scrollOff: number, scrollState: ScrollState, scrollSource: ScrollSource): ScrollResult  => {
-      //   console.log(`WaterFlow:: onWillScroll 1 scrollOff=${scrollOff}, scrollState=${scrollState}, scrollSource=${scrollSource}`)
-      // })
-      .onDidScroll((scrollOff: number, scrollState: ScrollState): void => {
+      .onWillScroll((scrollOff: Double, scrollState: ScrollState, scrollSource: ScrollSource): ScrollResult  => {
+        console.log(`WaterFlow:: onWillScroll 1 scrollOff=${scrollOff}, scrollState=${scrollState}, scrollSource=${scrollSource}`)
+      })
+      .onDidScroll((scrollOff: Double, scrollState: ScrollState): void => {
         console.log(`WaterFlow:: onDidScroll 1  scrollOff=${scrollOff}, scrollState=${scrollState}`)
       })
       .onReachStart((): void => {
@@ -179,8 +180,9 @@ struct setOnWaterFlowIndex04 {
       .onScrollStop(() => {
         console.log(`WaterFlow:: onScrollStop 1 `)
       })
-      .onScrollFrameBegin((off: number, state: ScrollState): OnScrollFrameBeginHandlerResult => {
+      .onScrollFrameBegin((off: Double, state: ScrollState): OnScrollFrameBeginHandlerResult => {
         console.log(`WaterFlow:: onScrollFrameBegin 1 off=${off}, state=${state}`)
+       return {offsetRemain: off};
       })
       .onScrollIndex((first: int, last: int): void => {
         console.log(`WaterFlow:: onScrollIndex 1 start=${first}, end=${last}`)

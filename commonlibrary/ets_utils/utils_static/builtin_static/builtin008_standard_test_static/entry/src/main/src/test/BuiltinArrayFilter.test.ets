@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -99,7 +99,7 @@ export default function BuiltinArrayFilterTest() {
       const TAG = "testBuiltinArrayFilter70003";
       try {
         const arr: FixedArray<short> = [10, 20, 30, 40, 50];
-        const result = filter(arr, (val: short, idx: number) => val > 20 && idx % 2 === 0);
+        const result = filter(arr, (val: short, idx: int) => val > 20 && idx % 2 === 0);
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(30);
         expect(result[1]).assertEqual(50);
@@ -121,7 +121,7 @@ export default function BuiltinArrayFilterTest() {
       const TAG = "testBuiltinArrayFilter70004";
       try {
         const arr: FixedArray<short> = [5, 10, 15, 20];
-        const result = filter(arr, (val: short, idx: number, array: FixedArray<short>) => {
+        const result = filter(arr, (val: short, idx: int, array: FixedArray<short>) => {
           return val % 5 === 0;
         });
         expect(result.length).assertEqual(4);
@@ -192,7 +192,7 @@ export default function BuiltinArrayFilterTest() {
       try {
         const original: FixedArray<short> = [0, -0, 1, -1];
         const filtered = filter(original,
-          (v: short, k: number, arr: FixedArray<short>) => {
+          (v: short, k: int, arr: FixedArray<short>) => {
             return v !== 0 && k < arr.length;
           });
         expect(filtered.length).assertEqual(2);

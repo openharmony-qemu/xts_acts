@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -85,7 +85,7 @@ struct Navigation_SingleInstanceJump4{
         this.pathInfos.pushPath(new NavPathInfo('page1',this.count++),{animated:true})
       }).id('Navigation_SingleInstanceJump4_btn1')
       Button('push page2').onClick((event: ClickEvent) => {
-        this.pathInfos.pushPath(new NavPathInfo('page1',this.count++),{animated:true})
+        this.pathInfos.pushPath(new NavPathInfo('page2',this.count++),{animated:true})
       }).id('Navigation_SingleInstanceJump4_btn2')
       Text(this.text).id('Navigation_SingleInstanceJump4_text1')
       Button('getAll').onClick((e: ClickEvent) => {

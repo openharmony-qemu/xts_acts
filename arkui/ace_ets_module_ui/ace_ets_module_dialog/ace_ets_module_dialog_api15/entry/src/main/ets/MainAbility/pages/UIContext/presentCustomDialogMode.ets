@@ -14,7 +14,7 @@
  */
 
 import { BuilderNode, router } from '@kit.ArkUI';
-import promptAction from '@ohos.promptAction';
+import promptAction, { ImmersiveMode, LevelMode } from '@ohos.promptAction';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 

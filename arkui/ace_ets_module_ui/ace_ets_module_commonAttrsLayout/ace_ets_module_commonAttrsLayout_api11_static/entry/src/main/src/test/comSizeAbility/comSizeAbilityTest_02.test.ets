@@ -40,15 +40,11 @@ export default function comSizeAbilityTest_02() {
 
     console.info("comSizeAbilityTest_02 beforeAll start");
 
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-
-    beforeAll(() => {
-
+    beforeAll(async (): Promise<void> => {
+      console.info("comSizeAbilityTest_01 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
+
     beforeEach(() => {
       console.info("comSizeAbilityTest_02 beforeEach start")
       let options: router.RouterOptions = {
@@ -78,6 +74,8 @@ export default function comSizeAbilityTest_02() {
      */
 it('comSizeAbilityTestJsunit_static_05', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_05 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("CheckboxGroup_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("CheckboxGroup_Father");
@@ -138,6 +136,8 @@ it('comSizeAbilityTestJsunit_static_05', Level.LEVEL0, async (done: () => void):
      */
 it('comSizeAbilityTestJsunit_static_06', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_06 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Checkbox_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("Checkbox_Father");

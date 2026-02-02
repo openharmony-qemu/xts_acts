@@ -38,8 +38,6 @@ interface Attrs{
 export default function gridSpanTest() {
   let supportView:Array<string> = new Array <string>(
     'Select',
-    'Stepper',
-    'StepperItem',
     'ColumnSplit',
     'FlowItem',
     'RowSplit',

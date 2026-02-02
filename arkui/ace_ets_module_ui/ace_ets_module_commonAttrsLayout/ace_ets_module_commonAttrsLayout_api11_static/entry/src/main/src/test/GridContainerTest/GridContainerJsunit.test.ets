@@ -36,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function girdContainerJsunit() {
   describe('girdContainerTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("girdContainerTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")

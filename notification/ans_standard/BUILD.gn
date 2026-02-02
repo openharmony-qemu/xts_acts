@@ -34,6 +34,7 @@ group("ans_standard") {
       "actsNotificationEmitterTest:ActsNotificationEmitterTest",
       "actsNotificationEmitterTestStatic:ActsNotificationEmitterStaticTest",
       "actsNotificationGeofenceLiveViewTest:ActsNotificationGeofenceLiveViewTest",
+      "actsNotificationGeofenceLiveViewTestStatic:ActsNotificationGeofenceLiveViewStaticTest",
       "actsNotificationInterfaceChangeTest:ActsNotificationInterfaceChangeTest",
       "actsNotificationInterfaceChangeTestStatic:ActsNotificationInterfaceChangeStaticTest",
       "actsNotificationManagerSlotTest:ActsNotificationManagerSlotTest",
@@ -58,7 +59,9 @@ group("ans_standard") {
       "actsNotificationWantUriTest:ActsNotificationWantUriTest",
       "actsNotificationWantUriTestStatic:ActsNotificationWantUriStaticTest",
       "notificationManager:notificationManager",
-      "notificationManagerStatic:NotificationManagerStaticTest"
+      "notificationManagerStatic:NotificationManagerStaticTest",
+      "actsAnsNotificationBadgeNoSystemTest:ActsNotificationAnsBadgeNoSystemTest",
+      "actsAnsNotificationBadgeNoSystemTestStatic:ActsNotificationAnsBadgeNoSystemStaticTest"
     ]
   }
 }

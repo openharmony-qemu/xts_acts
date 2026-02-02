@@ -37,3 +37,13 @@ export async function createX509CertPem(input: string): Promise<cert.X509Cert> {
     throw error as Error;
   }
 }
+
+export async function sleep(timeout: int): Promise<int> {
+  let st = 0;
+  return new Promise<int>((resolve, reject) => {
+    st = setTimeout(() => {
+      resolve(0);
+      clearTimeout(st);
+    }, timeout);
+  });
+}

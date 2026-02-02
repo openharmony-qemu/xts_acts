@@ -2771,7 +2771,7 @@ export default function getType02Test() {
       const TAG = 'testmathClz6400002';
       try {
         const minByte: byte = 0 as byte;
-        const maxByte: byte = 255 as byte;
+        const maxByte: byte = (255).toByte();
         expect(clz64(minByte)).assertEqual(64);
         expect(clz64(maxByte)).assertEqual(0);
       } catch (err) {
@@ -2791,7 +2791,7 @@ export default function getType02Test() {
     it('testmathClz6400004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testmathClz6400004';
       try {
-        const overflowByte: byte = 256 as byte;
+        const overflowByte: byte = (256).toByte();
         expect(clz64(overflowByte)).assertEqual(64);
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
@@ -2830,7 +2830,7 @@ export default function getType02Test() {
       const TAG = 'testmathClz6400006';
       try {
         expect(clz64(0x01 as byte)).assertEqual(63);
-        expect(clz64(0x80 as byte)).assertEqual(0);
+        expect(clz64((0x80).toByte())).assertEqual(0);
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -2867,7 +2867,7 @@ export default function getType02Test() {
     it('testmathClz6400008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testmathClz6400008';
       try {
-        expect(clz64(511 as byte)).assertEqual(0);
+        expect(clz64((511).toByte())).assertEqual(0);
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();

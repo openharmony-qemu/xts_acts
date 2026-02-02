@@ -26,7 +26,6 @@ import {
   TabContent,
   ListItemGroup,
   ListItem,
-  StepperItem,
   SliderStyle,
   BadgeParamWithNumber,
   Blank,
@@ -126,7 +125,7 @@ import {
   ColumnOptions,
   MenuItemOptions,CommonMethod,applyStyles,
   CheckboxGroupOptions,DataPanelOptions,DatePickerOptions,ProgressOptions,RadioOptions,SliderOptions,WebviewController,Web,
-  Stepper,$r,Visibility,Axis,Navigation,Builder,NavPathStack
+  $r,Visibility,Axis,Navigation,Builder,NavPathStack
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
 import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
@@ -438,14 +437,6 @@ struct VisibilityPage {
             })
               .showTips(true)
               .applyStyles(this.commonStyle)
-          } else if (this.targetView == 'Stepper') {
-            Stepper() {
-              StepperItem() {
-                Column() {
-                  Text('Page One')
-                }
-              }
-            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'TextArea') {
             TextArea({
               placeholder: 'The text area can hold an unlimited amount of text. input your word...'

@@ -83,13 +83,14 @@ export default function List_aspectRatio_width() {
       console.info('[SUB_ACE_List_aspectRatio_width_0100]' + Math.round(List01.right - List01.left));
       console.info('[SUB_ACE_List_aspectRatio_width_0100]' + Math.round(List01.bottom - List01.top));
       let list_width = Math.round(List01.right - List01.left)
+      let list_height = Math.round(List01.bottom - List01.top)
 
       let column01: RectValue = CommonFunc.getComponentRect('Column_aspectRatio_width_01');
       let column_height = Math.round(column01.bottom - column01.top)
       console.info('[SUB_ACE_List_aspectRatio_width_0100] column_height: ' + column_height);
 
 	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(vp2px(160))) <= 1).assertTrue();
-      if (column_height > list_width*2) {
+      if (column_height > list_height) {
         console.info('[SUB_ACE_List_aspectRatio_width_0100] vp2px(230): '+ vp2px(230));
         expect(Math.floor(Math.abs(List01.bottom - List01.top) - vp2px(230)) <= 1).assertTrue();
       } else {
@@ -164,6 +165,7 @@ export default function List_aspectRatio_width() {
       await CommonFunc.sleep(1000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_width_01');
       let list_width = Math.round(List01.right - List01.left)
+      let list_height = Math.round(List01.bottom - List01.top)
       console.info('[SUB_ACE_List_aspectRatio_width_0400] list_width: ' + list_width);
       console.info('[SUB_ACE_List_aspectRatio_width_0400]' + Math.round(List01.bottom - List01.top));
 
@@ -172,7 +174,7 @@ export default function List_aspectRatio_width() {
       console.info('[SUB_ACE_List_aspectRatio_width_0400] column_height: ' + column_height);
 
 	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(vp2px(160))) <= 1).assertTrue();
-      if (column_height > list_width*2) {
+      if (column_height > list_height) {
         console.info('[SUB_ACE_List_aspectRatio_width_0400] vp2px(230): '+vp2px(230));
         expect(Math.floor(Math.abs(List01.bottom - List01.top) - vp2px(230)) <= 1).assertTrue();
       } else {

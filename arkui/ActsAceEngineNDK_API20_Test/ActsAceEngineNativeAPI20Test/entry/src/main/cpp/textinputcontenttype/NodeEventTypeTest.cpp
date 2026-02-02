@@ -157,11 +157,16 @@ void CreateSpanNode(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle column)
     nodeAPI->registerNodeEvent(span, NODE_TEXT_SPAN_ON_LONG_PRESS, PARAM_1, nullptr);
     
     ArkUI_NumberValue spanwidth[] = {{ .f32 = PARAM_100 }};
+    ArkUI_NumberValue spanHeight[] = {{ .f32 = PARAM_50 }};
     ArkUI_AttributeItem spanitem1 = {.value = spanwidth, .size = PARAM_1};
+    ArkUI_AttributeItem spanitem2 = {.value = spanHeight, .size = PARAM_1};
+    ArkUI_NumberValue maxLines[] = {{ .i32 = PARAM_1 }};
+    ArkUI_AttributeItem spanitem3 = {.value = maxLines, .size = PARAM_1};
     nodeAPI->setAttribute(text1, NODE_WIDTH, &spanitem1);
-    nodeAPI->setAttribute(text1, NODE_HEIGHT, &spanitem1);
+    nodeAPI->setAttribute(text1, NODE_HEIGHT, &spanitem2);
     nodeAPI->setAttribute(span, NODE_WIDTH, &spanitem1);
-    nodeAPI->setAttribute(span, NODE_HEIGHT, &spanitem1);
+    nodeAPI->setAttribute(span, NODE_HEIGHT, &spanitem2);
+    nodeAPI->setAttribute(text1, NODE_TEXT_MAX_LINES, &spanitem3);
     
     ArkUI_AttributeItem spaniditem = { .string = "span66", .size = PARAM_1};
     nodeAPI->setAttribute(text1, NODE_ID, &spaniditem);

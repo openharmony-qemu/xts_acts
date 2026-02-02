@@ -2907,15 +2907,14 @@ export default function WindowPropertiesTest() {
                 expect(callbackIndex).assertLarger(0)
                 callbackIndex = 0;
                 windowClass?.offFrameMetricsMeasured();
+                await Utils.msSleep(1000);
                 windowStage.setCustomDensity(-1.0);
                 await Utils.msSleep(1000);
                 console.log(`${caseName}  callbackIndex 4: ${JSON.stringify(callbackIndex)}`);
                 expect(callbackIndex).assertEqual(0)
-                await windowClass.destroyWindow()
                 done();
             } catch (exception: BusinessError) {
                 console.error(`${caseName} Error. Cause code: ${exception?.code}, message: ${exception?.message}`);
-                await windowClass.destroyWindow()
                 if(exception.code == 801){
                     expect(exception.code).assertEqual(801)
                 }else {
@@ -3204,7 +3203,7 @@ export default function WindowPropertiesTest() {
                     let windowClass :window.Window= windowStage.getMainWindowSync();
                     let windowId:int = windowClass.getWindowProperties().id;
                     console.info(caseName + ' windowId: ' + windowId);
-                    let windowIdArray:Array<Double> = [0, windowId];
+                    let windowIdArray:Array<int> = [0, windowId];
                     let configs: window.WindowSnapshotConfiguration = {
                         useCache: false
                     }

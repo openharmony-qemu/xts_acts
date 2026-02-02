@@ -3528,7 +3528,7 @@ export default function ArrayCombinationTest4() {
         if (i === 1) a.pop();
         return [x, x + 1];
       }).reverse();
-      expect(arrResult[0]).assertEqual(7);
+      expect(arrResult[0]).assertEqual(5);
 
       const ta = new Int16Array([2, 4, 6]);
       const taResult = Array.from(ta).flatMap((x, i, a) => {

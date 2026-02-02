@@ -37,7 +37,6 @@ interface Attrs{
 }
 
 export default function aspectRatioWidthTest() {
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
   // let uiContext = AppStorage.get<UIContext>("uiContext")
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
@@ -110,7 +109,6 @@ export default function aspectRatioWidthTest() {
     parentWidth: parentWidth,
     parentHeight: parentHeight
   }
-
   //Test content and expected results
   let testValues: TestValue[] = [
     {
@@ -121,7 +119,7 @@ export default function aspectRatioWidthTest() {
     },
     expectValue: {
       width: '100.00vp',
-      widthValue: AppStorage.get<UIContext>('uiContext')!.vp2px(100),
+      widthValue: 100,
       aspectRatio: 2.0
     }
   },
@@ -133,15 +131,14 @@ export default function aspectRatioWidthTest() {
     },
     expectValue: {
       width: '100.00vp',
-      widthValue: AppStorage.get<UIContext>('uiContext')!.vp2px(100),
+      widthValue: 100,
       aspectRatio: 0.5
     }
   }
   ]
-
   describe('AspectRatioWidthTest', () => {
-    beforeAll(() => {
-      console.info("aspectRatioWidthTest beforeAll start");
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });
 
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
@@ -154,6 +151,8 @@ export default function aspectRatioWidthTest() {
       let targetRectAspectRatio = targetRectWidth / targetRectHeight;
       //Check width and aspectRatio are set successfully
       let attrs = data.viewObj
+      data.testValue.expectValue.widthValue = UIContext.resolveUIContext()!.vp2px(100)
+
       console.info('[' + data.caseTag + '] data.viewObj.$attrs.width is:' + attrs?.getElement('$attrs').getString('width'));
       console.info('[' + data.caseTag + '] data.viewObj.$attrs.aspectRatio is:' + attrs?.getElement('$attrs').getDouble('aspectRatio'));
       expect(attrs?.getElement('$attrs').getString('width')).assertEqual(data.testValue.expectValue.width);

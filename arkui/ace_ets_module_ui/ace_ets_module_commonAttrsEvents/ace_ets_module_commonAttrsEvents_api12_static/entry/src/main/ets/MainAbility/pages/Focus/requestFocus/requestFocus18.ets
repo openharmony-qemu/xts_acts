@@ -49,7 +49,6 @@ import {
   Text,
   TextInput,
   TouchEvent,
-  TypeError,
   Visibility,$$,ContentCoverOptions,ModalTransition
 } from '@ohos.arkui.component'
 

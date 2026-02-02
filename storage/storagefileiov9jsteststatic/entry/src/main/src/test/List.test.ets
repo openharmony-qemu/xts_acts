@@ -58,6 +58,7 @@ import fileIORandomAccessFileRead from './class_randomAccessFile/Read.test';
 import fileIORandomAccessFileSetFilePointer from './class_randomAccessFile/SetFilePointer.test';
 import fileIORandomAccessFileWrite from './class_randomAccessFile/Write.test';
 import atomicFileTest from './class_atomicFile/AtomicFile.test';
+import fileIODfsConnect from './DfsConnect.test';
 export default function testsuite() {
     fileIOAccess();
     fileIOClose();
@@ -91,7 +92,7 @@ export default function testsuite() {
     fileIOWrite();
     fileIOLseek();
     fileIOListfile();
-	  fileIOHash();
+	fileIOHash();
     fileIOStreamClose();
     fileIOStreamFlush();
     fscreateReadStream();
@@ -104,4 +105,5 @@ export default function testsuite() {
     fileIORandomAccessFileSetFilePointer();
     fileIORandomAccessFileWrite();
     atomicFileTest();
+    fileIODfsConnect();
 }

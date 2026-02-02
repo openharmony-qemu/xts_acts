@@ -130,7 +130,11 @@ export default function audioRendererChange() {
         rendererInfo: AudioRendererInfo
       }
       let resultFlag = false;
-
+      let audioManager = audio.getAudioManager();
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      let dpDevice: boolean = false;
+      console.info(`CHANGE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      dpDevice = outputDeviceDescription.some(device => device.deviceType === audio.DeviceType.DISPLAY_PORT);
       try {
         audioStreamManagerCB.on('audioRendererChange', (AudioRendererChangeInfoArray: ESObject) => {
           for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
@@ -146,8 +150,13 @@ export default function audioRendererChange() {
               console.info(`${Tag} : Id: ${i}  ${AudioRendererChangeInfoArray[i].deviceDescriptors[j].id}`);
               console.info(`${Tag} : Type: ${i}  ${AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceType}`);
               console.info(`${Tag} : Role: ${i}  ${AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceRole}`);
-              expect(AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceType)
-                .assertEqual(audio.DeviceType.INVALID);
+              if (dpDevice) {
+                expect(AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceType)
+                  .assertEqual(audio.DeviceType.DISPLAY_PORT);
+              } else {
+                expect(AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceType)
+                  .assertEqual(audio.DeviceType.INVALID);
+              }
               expect(AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceRole)
                 .assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
               console.info(`${Tag} : Name: ${i}  ${AudioRendererChangeInfoArray[i].deviceDescriptors[j].name}`);

@@ -48,7 +48,7 @@ const uiContext = new UIContext();
 
 export default function outlineTest() {
   describe('outlineTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("outlineTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")

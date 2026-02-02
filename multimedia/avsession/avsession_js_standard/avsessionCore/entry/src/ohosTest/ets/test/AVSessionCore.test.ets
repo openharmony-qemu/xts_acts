@@ -116,7 +116,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_5400
      * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_5400
-     * @tc.desc   Testing call setAVMetadata(promise) set bundleIcon
+     * @tc.desc   Testing call setAVMetadata(promise) set bundleIcon - readonly , can't be set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -126,15 +126,17 @@ export default function abilityTest() {
         assetId: '121278',
       };
       await session.setAVMetadata(metadata0).then(() => {
-        console.info('TestLog: Set bundleIcon Successfully');
+        console.info('TestLog: Set metadata Successfully');
       }).catch((err: BusinessError ) => {
-        console.info(`TestLog: Set bundleIcon error: code: ${err.code}, message: ${err.message}`);
+        console.info(`TestLog: Set metadata error: code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
       });
 
       await controller.getAVMetadata().then((data: avSession.AVMetadata) => {
-        console.info(`${data.assetId} TestLog: Get bundleIcon Successfully`);
+        console.info(`${data.assetId} TestLog: Get assetId Successfully`);
         expect(data.assetId).assertEqual(metadata0.assetId);
+        console.info(`${data.bundleIcon} TestLog: Get bundleIcon Successfully`);
+        expect(data.bundleIcon).assertEqual(undefined);
       }).catch((err: BusinessError) => {
         console.info(`TestLog: Get assetId error: code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
@@ -162,7 +164,7 @@ export default function abilityTest() {
                 command: 'setTargetLoopMode',
                 parameter: avSession.LoopMode.LOOP_MODE_SINGLE
             });
-            console.info('TestLog: Controller sent setTargetLoopMode command successfully');
+            console.info('TestLog: Controller sent setTargetLoopMode command successfully, LoopMode=SINGLE, value=1');
         } catch (err) {
             console.error(`TestLog: Controller command error: code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
@@ -1647,7 +1649,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_0100
      * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_0100
-     * @tc.desc   Testing onDesktopLyricVisibilityChanged
+     * @tc.desc   Testing onDesktopLyricVisibilityChanged - callback equals true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1661,22 +1663,65 @@ export default function abilityTest() {
             done();
             return;
           }
+          let callbackData: boolean = false;
           let callbackTriggered: boolean = false;
           let callback = (data: boolean) => {
-            callbackTriggered = data;
-            console.info(`${TAG}: boolean: callback triggered (visible=${data})`);
+            callbackData = data;
+            callbackTriggered = true;
+            console.info(`${TAG}: onDesktopLyricVisibilityChanged callback triggered , data = ${data})`);
           }
           await session.enableDesktopLyric(true);
           session.onDesktopLyricVisibilityChanged(callback);
           await session.setDesktopLyricVisible(true);
           await sleep(200);
           expect(callbackTriggered).assertTrue();
+          expect(callbackData).assertTrue();
         } catch (err) {
           console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
         }
         done();
       });
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_2200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_2200
+     * @tc.desc   Testing onDesktopLyricVisibilityChanged - callback equals false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_2200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_2200';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          let callbackData: boolean = true;
+          let callbackTriggered: boolean = false;
+          let callback = (data: boolean) => {
+            callbackData = data;
+            callbackTriggered = true;
+            console.info(`${TAG}: onDesktopLyricVisibilityChanged callback triggered , data = ${data})`);
+          }
+          await session.enableDesktopLyric(true);
+          await session.setDesktopLyricVisible(true);
+          session.onDesktopLyricVisibilityChanged(callback);
+          await session.setDesktopLyricVisible(false);
+          await sleep(200);
+          expect(callbackTriggered).assertTrue();
+          expect(callbackData).assertFalse();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
 
     /**
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICVISIBLITYCHANGED_0100
