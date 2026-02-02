@@ -24,7 +24,8 @@ import NetworkManagerMulticastHTTP1Test from './NetworkManagerMulticastHTTP1.tes
 import NetworkManagerMulticastHTTP2Test from './NetworkManagerMulticastHTTP2.test';
 import NetworkManagerHTTP_Multicast1Test from './NetworkManagerHTTP_Multicast1.test';
 import NetworkManagerHTTP_Multicast2Test from './NetworkManagerHTTP_Multicast2.test';
-import EmptyTest from './Empty.test';
+import EmptyTestCheckCard from './EmptyTestCheckCard.test';
+import EmptyTestCheckNetwork from './EmptyTestCheckNetwork.test';
 import sim from '@ohos.telephony.sim';
 import connection from '@ohos.net.connection';
  	  	 
@@ -45,9 +46,9 @@ export default function testsuite() {
       NetworkManagerHTTP_Multicast1Test();
       NetworkManagerHTTP_Multicast2Test();
     } else {
-      EmptyTest();
+      EmptyTestCheckNetwork();
     }
   }else{
-    EmptyTest();
+    EmptyTestCheckCard();
   }
 }

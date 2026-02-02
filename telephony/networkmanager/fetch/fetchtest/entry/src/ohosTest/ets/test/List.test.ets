@@ -14,7 +14,8 @@
  */
 
 import httpFetchTest from './Fetch.test';
-import EmptyTest from './Empty.test';
+import EmptyTestCheckCard from './EmptyTestCheckCard.test';
+import EmptyTestCheckNetwork from './EmptyTestCheckNetwork.test';
 import sim from '@ohos.telephony.sim';
 import connection from '@ohos.net.connection';
  	 
@@ -25,9 +26,9 @@ export default function testsuite() {
     if(netHandle.netId != 0){
       httpFetchTest();    
     } else {
-      EmptyTest();
+      EmptyTestCheckNetwork();
     }
   }else{
-    EmptyTest();
+    EmptyTestCheckCard();
   }
 }

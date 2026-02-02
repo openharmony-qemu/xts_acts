@@ -19,7 +19,7 @@ import WebSocketApiTest from './WebSocketApi.test';
 import WebSocketCreateTest from './WebSocketCreate.test';
 import WebSocketTest from './Websocket.test';
 import WebSocketServerTest from './WebsocketServer.test';
-import EmptyTest from './Empty.test';
+import EmptyTestCheckNetwork from './EmptyTestCheckNetwork.test';
 import connection from '@ohos.net.connection';
  	 
 let netHandle = connection.getDefaultNetSync();
@@ -31,6 +31,6 @@ export default function testsuite() {
     WebSocketTest();
     WebSocketServerTest()
   } else {
-    EmptyTest();
+    EmptyTestCheckNetwork();
   }
 }

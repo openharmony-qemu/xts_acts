@@ -15,7 +15,8 @@
 
 import HttpResponseCodeTest from './HttpResponseCode.test';
 import HttpResponsePropertiesTest from './HttpResponseProperties.test';
-import EmptyTest from './Empty.test';
+import EmptyTestCheckCard from './EmptyTestCheckCard.test';
+import EmptyTestCheckNetwork from './EmptyTestCheckNetwork.test';
 import sim from '@ohos.telephony.sim';
 import connection from '@ohos.net.connection';
  	 
@@ -27,9 +28,9 @@ export default function testsuite() {
       HttpResponseCodeTest();
       HttpResponsePropertiesTest();
     } else {
-      EmptyTest();
+      EmptyTestCheckNetwork();
     }
   }else{
-    EmptyTest();
+    EmptyTestCheckCard();
   }
 }

@@ -16,7 +16,8 @@
 import HttpCreateHttpResponseCacheTest from './HttpCreateHttpResponseCache.test';
 import HttpFlushTest from './HttpFlush.test';
 import HttpDeleteTest from './HttpDelete.test';
-import EmptyTest from './Empty.test';
+import EmptyTestCheckCard from './EmptyTestCheckCard.test';
+import EmptyTestCheckNetwork from './EmptyTestCheckNetwork.test';
 import sim from '@ohos.telephony.sim';
 import connection from '@ohos.net.connection';
  	 
@@ -29,9 +30,9 @@ export default function testsuite() {
       HttpFlushTest();
       HttpDeleteTest();
     } else {
-      EmptyTest();
+      EmptyTestCheckNetwork();
     }
   }else{
-    EmptyTest();
+    EmptyTestCheckCard();
   }
 }
