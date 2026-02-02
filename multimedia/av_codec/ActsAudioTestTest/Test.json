@@ -18,8 +18,17 @@
         },{
             "type": "ShellKit",
             "run-command": [
+                "mkdir -p /data/storage/el2/base/haps/entry_test/files",
+                "chmod 777 -R /data/storage/el2/base/haps/entry_test",
+
                 "power-shell wakeup",
                 "power-shell setmode 602"
+            ]
+        },{
+            "type": "Pushkit",
+            "pre-push": [],
+            "push": [
+                "./resource/media/codec/audio_test/aac_2c_44100hz_199k.pcm ->/data/storage/el2/base/haps/entry_test/files"
             ]
         }
     ]

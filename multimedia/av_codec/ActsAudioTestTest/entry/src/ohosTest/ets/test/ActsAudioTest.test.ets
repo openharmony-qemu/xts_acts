@@ -22,31 +22,23 @@ const fileArr = [
 
 export default function AudioTest() {
   describe('AcstAudioTest', () => {
-    beforeAll(async () => {
-      let context = getContext()
-      for (let i = 0; i < fileArr.length; i++) {
-        const fileName = fileArr[i]
-        Utils.copyRawfileToFilesDirSync(fileName, context)
-      }
-      Log.info(`[rawfile_copy_to_sandbox] sandbox path: ${context.filesDir}/`)
-      await Utils.sleep(500)
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
-    beforeEach(async () => {
-      let context = getContext()
-      Log.info(`AudioText beforeEach`);
-      for (let i = 0; i < fileArr.length; i++) {
-        const fileName = fileArr[i];
-        if (Utils.fileCheckSync(fileName, context)) {
-          Log.info(`AudioText ${fileName} file exists`);
-        } else {
-          Log.info(`AudioText ${fileName} file does not exists!`);
-        }
-      }
-      await Utils.sleep(500)
+    beforeEach(() => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
     afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
     })
 
     /**
