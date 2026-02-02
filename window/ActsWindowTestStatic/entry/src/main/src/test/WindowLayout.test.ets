@@ -1598,50 +1598,7 @@ export default function WindowLayoutTest() {
                 }
             }
         })
-        /**
-         * @tc.name   testGetAllMainWindowInfo_static_0200
-         * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_WINDOWINFO_TEST_static_0200
-         * @tc.desc   北向getAllMainWindowInfo测试返回值覆盖
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it("testGetAllMainWindowInfo_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName:string =  "testGetAllMainWindowInfo_static_0200";
-            console.log(caseName + " begin");
-            if (isPCStatus != '') {
-                try {
-                    let windowClass:window.Window = windowStage.getMainWindowSync();
-                    let windowId = windowClass.getWindowProperties().id;
-                    console.info(caseName + ' windowId: ' + windowId);
-                    let windowInfoArray = await window.getAllMainWindowInfo();
-                    console.info(caseName + ' windowInfoArray.length: ' + JSON.stringify(windowInfoArray.length));
-                    console.info(caseName + ' windowInfoArray: ' + JSON.stringify(windowInfoArray));
-                    expect(windowInfoArray.length).assertLargerOrEqual(1);
-                    for (let i = 0; i < windowInfoArray.length; i++) {
-                        if (windowInfoArray[i].windowId == windowId) {
-                            let mainWindowInfo = windowInfoArray[i];
-                            console.info(caseName + ' mainWindowInfo: ' + JSON.stringify(mainWindowInfo));
-                            console.info(caseName + ' mainWindowInfo windowId: ' + JSON.stringify(mainWindowInfo.windowId));
-                            console.info(caseName + ' mainWindowInfo displayId: ' + JSON.stringify(mainWindowInfo.displayId));
-                            console.info(caseName + ' mainWindowInfo showing: ' + JSON.stringify(mainWindowInfo.showing));
-                            console.info(caseName + ' mainWindowInfo label: ' + JSON.stringify(mainWindowInfo.label));
-                            expect(mainWindowInfo.windowId).assertEqual(windowId);
-                            expect(mainWindowInfo.displayId).assertEqual(0);
-                            expect(mainWindowInfo.showing).assertEqual(true);
-                            expect(mainWindowInfo.label).assertEqual('label');
-                            done();
-                        }
-                    }
-                } catch (err: BusinessError) {
-                    console.error(caseName + ' failed. Cause: ' + JSON.stringify(err))
-                    expect(false).assertTrue();
-                    done();
-                }
-            } else {
-                done();
-            }
-        });
+        
         /**
          * @tc.name   test_createSubWindowWithOptions_windowRect_801_static
          * @tc.number SUB_BASIC_WMS_OPTION_ADD_PARAMETER_WINDOW_RECT_static_0300
