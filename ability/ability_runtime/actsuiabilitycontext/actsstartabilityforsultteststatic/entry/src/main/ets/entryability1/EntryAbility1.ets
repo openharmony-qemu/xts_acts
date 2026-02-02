@@ -59,7 +59,7 @@ class EntryAbility1 extends UIAbility {
       },
     };
     hilog.info(0x0000, 'testTag', '%{public}s', 'secondAbility terminateSelf really');
-    await this.context.terminateSelfWithResult(abilityResult).then(() => {
+    this.context.terminateSelfWithResult(abilityResult).then(() => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'secondAbility terminateSelf sucess');
     }).catch((err: Error): void => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'secondAbility terminateSelf errCode:' + JSON.stringify(err.code) +
