@@ -221,7 +221,7 @@ export default function ActsNotificationWantUriTest() {
         hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case start`);
         let uri: string = '';
         let wantAgent1: WantAgent | undefined = getWantAgentByUri(uri);
-        if (wantAgent1) {          
+        if (wantAgent1) {
           let uri2: string = '_____WantAgent2____';
           let wantAgent2: WantAgent | undefined = getWantAgentByUri(uri2);
           let actionButton: notificationManager.NotificationActionButton = {
@@ -254,9 +254,11 @@ export default function ActsNotificationWantUriTest() {
                     expect(dataArray.length).assertLarger(PARAM_0);
                     let testUri: Record<string, RecordData> = dataArray[0].extraInfo as Record<string, RecordData>;
                     hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} wantUri:${testUri[KEY_URI]}`);
-                    if (testUri[KEY_URI]) {
+                    hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} wantUri:${JSON.stringify(testUri)}`);
+                    if (JSON.stringify(testUri)) {
+                      expect(JSON.stringify(testUri).includes(KEY_URI)).assertTrue();
                       expect(testUri[KEY_URI] as string).assertEqual(uri);
-                      done();
+                      done()
                     } else {
                       expect().assertFail();
                       done();
