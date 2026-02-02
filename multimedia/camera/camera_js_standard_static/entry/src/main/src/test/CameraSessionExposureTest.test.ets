@@ -492,7 +492,7 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
 
   describe('cameraSessionExposureTest', () => {
     console.info(TAG + '----------cameraSessionExposureTest--------------')
-    beforeAll((): void => {
+    beforeAll(async () => {
       try {
         await Utils.msSleep(100);
         getPreviewOutputSurface();
@@ -506,7 +506,7 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
       await Utils.msSleep(1000);
     })
 
-    beforeEach((): void => {
+    beforeEach(async () => {
       await Utils.msSleep(1000);
       getCameraManagerInstance();
       getCameraSupportDevicesArray();
@@ -514,12 +514,12 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
       console.info('  cameraSessionExposureTest beforeEach case');
     })
 
-    afterEach((): void => {
+    afterEach(async () => {
       await releaseCameraSessionInstance();
       console.info('  cameraSessionExposureTest afterEach case');
     })
 
-    afterAll((): void => {
+    afterAll(async () => {
       await releaseVideoReceiveSurface();
       await releaseCameraSessionInstance();
       await Utils.msSleep(1000);
