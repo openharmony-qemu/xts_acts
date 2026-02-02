@@ -24,7 +24,7 @@
                 "power-shell setmode 602"
             ]
         },{
-            "type": "Pushkit",
+            "type": "PushKit",
             "pre-push": [],
             "push": [
                 "./resource/media/codec/audio_test/aac_2c_44100hz_199k.pcm ->/data/storage/el2/base/haps/entry_test/files"
