@@ -64,7 +64,7 @@ export default function imageDecodeOptionsYuvTest() {
       return bufferRead
     }
 
-    const getImageSource = async (fileName: string, type?: string) => {
+    const getImageSource = (fileName: string, type?: string) => {
       let imageSourceApi: image.ImageSource | undefined;
       if (type === "buffer") {
         const buffer = getBuffer(fileName)
@@ -74,7 +74,8 @@ export default function imageDecodeOptionsYuvTest() {
         imageSourceApi = image.createImageSource(filePath)
       } else if (type === "rawfile") {
         const resourceMgr: resourceManager.ResourceManager = testContext.resourceManager;
-        const rawFileDescriptor = await resourceMgr.getRawFd(fileName)
+        let rawFileDescriptor = 0;
+        waitForCompletion(async () => {rawFileDescriptor = await resourceMgr.getRawFd(fileName);})
         imageSourceApi = image.createImageSource(rawFileDescriptor)
       } else if (type === "incremental") {
         const picBuffer = getBuffer(fileName)
@@ -84,7 +85,7 @@ export default function imageDecodeOptionsYuvTest() {
         const file = fs.openSync(filePath)
         imageSourceApi = image.createImageSource(file.fd as int);
       }
-      await sleep(100);
+      waitForCompletion(async () => {await sleep(100);})
       if (imageSourceApi == undefined) {
         expect().assertFail();
       }
@@ -133,11 +134,11 @@ export default function imageDecodeOptionsYuvTest() {
       imageSourceApi.createPixelMap(decodingOptions, (err : BusinessError|null, pixelMap : image.PixelMap|undefined) => {
         if (err && err.code) {
           hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
-          imageSourceApi.release();
+          await imageSourceApi.release();
         } else {
           globalPixelMap = pixelMap!;
-          imageSourceApi.release();
-          let imageInfo = pixelMap!.getImageInfoSync();
+          await imageSourceApi.release();
+          let imageInfo = await pixelMap!.getImageInfo();
           if (imageInfo != undefined) {
             g_callbackResult = true;
             hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
@@ -193,7 +194,7 @@ export default function imageDecodeOptionsYuvTest() {
       type: string, desiredColorSpace: colorSpaceManager.ColorSpaceManager
     ) => {
       result = false;
-      const imageSourceApi = await getImageSource(fileName, type);
+      const imageSourceApi = getImageSource(fileName, type);
       if (imageSourceApi == undefined) {
         console.info(TAG + " create image source failed");
       } else {
@@ -232,7 +233,7 @@ export default function imageDecodeOptionsYuvTest() {
         fileName: string, type: string, desiredColorSpace: colorSpaceManager.ColorSpaceManager
     ) => {
       result = false;
-      const imageSourceApi = await getImageSource(fileName, type);
+      const imageSourceApi = getImageSource(fileName, type);
       if (imageSourceApi == undefined) {
         console.info(TAG + " create image source failed");
       } else {
@@ -300,7 +301,7 @@ export default function imageDecodeOptionsYuvTest() {
         fileName: string, type: string
     ) => {
       result = false;
-      const imageSourceApi = await getImageSource(fileName, type);
+      const imageSourceApi = getImageSource(fileName, type);
       if (imageSourceApi == undefined) {
         console.info(TAG + " create image source failed");
       } else {
@@ -321,7 +322,7 @@ export default function imageDecodeOptionsYuvTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeAll case');
     })
 
-    beforeEach(async () => {
+    beforeEach(() => {
       g_callbackResult = false;
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeEach case');
     })
@@ -338,7 +339,7 @@ export default function imageDecodeOptionsYuvTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'afterEach case');
     })
 
-    afterAll(async () => {
+    afterAll(() => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'afterAll case');
     })
     
