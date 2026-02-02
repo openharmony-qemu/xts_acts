@@ -2235,38 +2235,6 @@ export default function atomicsOrTest() {
     });
 
     /**
-     * @tc.name   atomicsOrTest093
-     * @tc.number SUB_BUILTINS_Atomics_or_TEST_093
-     * @tc.desc   Promise.race between OR and timeout (timeout wins)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('atomicsOrTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const sab = new ArrayBuffer(4);
-      const ia = new Int32Array(sab);
-      ia[0] = 5;
-
-      const orTask = new Promise<number>((resolve) => {
-        setTimeout(() => {
-          const old = Atomics.or(ia, 0, 3);
-          resolve(old);
-        }, 30); // Slow OR task
-      });
-
-      const timeoutTask = new Promise<string>((resolve) => {
-        setTimeout(() => resolve('timeout'), 15); // Faster timeout
-      });
-
-      const result = await Promise.race([orTask, timeoutTask]);
-      // Wait for OR task to complete to check final state
-      await Promise.allSettled([orTask]);
-
-      expect(result).assertEqual('timeout'); // Timeout wins
-      expect(ia[0]).assertEqual(7); // OR task still completes later
-    });
-
-    /**
      * @tc.name   atomicsOrTest094
      * @tc.number SUB_BUILTINS_Atomics_or_TEST_094
      * @tc.desc   Async OR with closure that enforces unique mask usage

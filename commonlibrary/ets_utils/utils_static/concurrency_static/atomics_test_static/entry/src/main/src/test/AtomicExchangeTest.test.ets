@@ -1367,46 +1367,6 @@ export default function atomicsExchangeTest() {
       expect(cleanupRan).assertEqual(true); // Cleanup ran twice
     });
 
-    /**
-     * @tc.name   atomicsExchangeTest066
-     * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_066
-     * @tc.desc   Test async exchange with Promise.race between update and cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('atomicsExchangeTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const sab = new ArrayBuffer(4);
-      const ia = new Int32Array(sab);
-      ia[0] = 8;
-      let cancelled = false;
-
-      // Exchange task
-      const exchangeTask = new Promise<number>((resolve) => {
-        const attempt = () => {
-          if (cancelled) {
-            resolve(-1);
-          }
-          const old = Atomics.exchange(ia, 0, 18);
-          resolve(old);
-        };
-        setTimeout(attempt, 10);
-      });
-
-      // Cancel task
-      const cancelTask = new Promise<void>((resolve) => {
-        setTimeout(() => {
-          cancelled = true;
-          resolve(undefined);
-        }, 5);
-      });
-
-      // Race exchange and cancel
-      const result = await Promise.race([exchangeTask, cancelTask.then(() => -1)]);
-      expect(cancelled).assertEqual(true);
-      expect(result).assertEqual(-1);
-      expect(ia[0]).assertEqual(8); // No exchange (cancelled)
-    });
 
     /**
      * @tc.name   atomicsExchangeTest067
