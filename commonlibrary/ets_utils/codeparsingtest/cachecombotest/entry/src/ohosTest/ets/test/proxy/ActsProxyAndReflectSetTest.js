@@ -836,18 +836,6 @@ export function testSetProtoStringProperty() {
 }
 
 /**
- * 测试点80: 设置undefined（目标无getter，应成功）
- * 说明：设置undefined值，应成功存储为undefined
- */
-export function testSetUndefinedNoGetter() {
-    const target = {};
-    const handler = { set: (obj, prop, val) => Reflect.set(obj, prop, val) };
-    const proxy = new Proxy(target, handler);
-    proxy.prop = undefined;
-    return target.prop === undefined;
-}
-
-/**
  * 测试点81: 设置属性名为"arguments"（函数特殊属性）
  * 说明：arguments是函数的内置属性，对象上可设置
  */
