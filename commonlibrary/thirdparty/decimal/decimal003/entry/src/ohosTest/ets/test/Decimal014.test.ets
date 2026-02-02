@@ -27,16 +27,19 @@ function test_toSignificantDigits_003 (expected: string, n: string, sd: number, 
 function test_toSignificantDigits_004 (expected: string, n: string) {
     expect(expected).assertEqual(new Decimal(n).toSignificantDigits().valueOf());
 }
+function sleep(ms: number) {
+    return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
 export default function DecimalTest014() {
   describe("DecimalTest014", () => {
     beforeAll(() => {
         console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");
     });
-    beforeEach(() => {
+    beforeEach(async () => {
+        await sleep(20);
         console.info("beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.");
     });
     afterEach(() => {
-        sleep(20);
         console.info("afterEach: Test case-level clearance conditions, which are executed after each test case is executed.");
     });
     afterAll(() => {
