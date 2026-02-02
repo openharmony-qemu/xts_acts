@@ -36,7 +36,7 @@ export default function ReadPixelsToBufferSupp() {
     /**
      * @tc.number     SUB_MEDIA_READ_PIXELS_TO_BUFFER_TEST_001
      * @tc.name       SUB_MEDIA_READ_PIXELS_TO_BUFFER_TEST_001
-     * @tc.desc       getImageInfo cover null
+     * @tc.desc       readPixelsToBuffer cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -60,7 +60,7 @@ export default function ReadPixelsToBufferSupp() {
         console.info(TAG, testName, `pixelmap创建成功`);
         exifCommodityPixelMap.readPixelsToBuffer(null).then(() => {
           console.info(TAG, testName,'Succeeded in reading image pixel data.');
-          expect(exifCommodityPixelMap != null).assertTrue();
+          expect().assertTrue();
         })
       } catch (error) {
         console.error(TAG, testName, `Failed to read image pixel data.code is ${error.code}, message is ${error.message}`);
@@ -71,7 +71,7 @@ export default function ReadPixelsToBufferSupp() {
     /**
      * @tc.number     SUB_MEDIA_READ_PIXELS_TO_BUFFER_TEST_002
      * @tc.name       SUB_MEDIA_READ_PIXELS_TO_BUFFER_TEST_002
-     * @tc.desc       getImageInfo cover null
+     * @tc.desc       readPixelsToBuffer cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -95,7 +95,7 @@ export default function ReadPixelsToBufferSupp() {
         console.info(TAG, testName, `pixelmap创建成功`);
         exifCommodityPixelMap.readPixelsToBuffer(undefined).then(() => {
           console.info(TAG, testName,'Succeeded in reading image pixel data.');
-          expect(exifCommodityPixelMap != null).assertTrue();
+          expect().assertTrue();
         })
       } catch (error) {
         console.error(TAG, testName, `Failed to read image pixel data.code is ${error.code}, message is ${error.message}`);
