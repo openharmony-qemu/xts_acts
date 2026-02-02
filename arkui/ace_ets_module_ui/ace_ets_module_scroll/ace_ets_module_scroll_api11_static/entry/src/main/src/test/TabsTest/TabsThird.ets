@@ -1045,9 +1045,9 @@ it('[ArkUI_Tabs_BarGridAlign_2500]', 0, async (done: () => void): Promise<void> 
 
     
     /**
-     * @tc.number   [ArkUI_Tabs_BarGridAlign_2600]
-     * @tc.name     [ArkUI_Tabs_BarGridAlign_2600]
-     * @tc.desc     [ArkUI_Tabs_BarGridAlign_2600]
+     * @tc.number  [ArkUI_Tabs_BarGridAlign_2600]
+     * @tc.name    [ArkUI_Tabs_BarGridAlign_2600]
+     * @tc.desc    [ArkUI_Tabs_BarGridAlign_2600]
      * @tc.level    0
      */
 it('[ArkUI_Tabs_BarGridAlign_2600]', 0, async (done: () => void): Promise<void> => {
@@ -1058,8 +1058,8 @@ it('[ArkUI_Tabs_BarGridAlign_2600]', 0, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 'undefined',
-            "barGridAlignMdNumber": 4.0,
-            "barGridAlignLgNumber": 6.0
+            "barGridAlignMdNumber": 4.0 as number,
+            "barGridAlignLgNumber": 6.0 as number
            } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -1093,7 +1093,7 @@ it('[ArkUI_Tabs_BarGridAlign_2600]', 0, async (done: () => void): Promise<void> 
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_2700]
      * @tc.level    0
      */
-it('[ArkUI_Tabs_BarGridAlign_2700]', 0, async (done: () => void): Promise<void> => {
+it('ArkUI_Tabs_BarGridAlign_2700', 0, async (done: () => void): Promise<void> => {
       console.info("[ArkUI_Tabs_BarGridAlign_2700] start");
       let strJson = inspector.getInspectorByKey('tabsNumberTest');
       console.info("[ArkUI_Tabs_BarGridAlign_2700]: " + strJson)
@@ -1101,8 +1101,8 @@ it('[ArkUI_Tabs_BarGridAlign_2700]', 0, async (done: () => void): Promise<void> 
         let eventData: events_emitter.EventData = {
           data: {
             "barGridAlignSmNumber": 'null',
-            "barGridAlignMdNumber": 4.0,
-            "barGridAlignLgNumber": 6.0
+            "barGridAlignMdNumber": 4.0 as number,
+            "barGridAlignLgNumber": 6.0 as number
            } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -4978,7 +4978,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100', 0, async (done: () => v
       }else if (obj.getElement('$attrs').getElement('tabBar').getString('layoutMode') == 'LayoutMode.HORIZONTAL') {
         expect(obj.getElement('$attrs').getElement('tabBar').getElement('labelStyle').getElement('font').getString('size')).assertEqual(tabsDefaultFontSize($r('sys.float.Caption_L_VP')));
       }
-      expect(obj.getElement('$attrs').getElement('tabBar').getElement('labelStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
+      expect(obj.getElement('$attrs').getElement('tabBar').getElement('labelStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Medium');
       expect(obj.getElement('$attrs').getElement('tabBar').getElement('labelStyle').getElement('font').getString('family')).assertEqual('HarmonyOS Sans');
       expect(obj.getElement('$attrs').getElement('tabBar').getElement('labelStyle').getElement('font').getString('style')).assertEqual('FontStyle.Normal');
 
@@ -6835,7 +6835,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000', 0, async (done: () => v
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000]: " + JSON.stringify(obj.getElement('$attrs').getElement('tabBar').getElement('labelStyle')));
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000]: " + JSON.stringify(obj.getElement('$attrs').getElement('tabBar').getElement('labelStyle').getElement('font')));
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000]: " + JSON.stringify(obj.getElement('$attrs').getElement('tabBar').getElement('labelStyle').getElement('font').getString('weight')));
-      expect(obj.getElement('$attrs').getElement('tabBar').getElement('labelStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
+      expect(obj.getElement('$attrs').getElement('tabBar').getElement('labelStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Medium');
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000] end");
       done();
     });
@@ -6874,7 +6874,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100', 0, async (done: () => v
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100]: " + JSON.stringify(obj.getElement('$attrs').getElement('tabBar').getElement('labelStyle')));
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100]: " + JSON.stringify(obj.getElement('$attrs').getElement('tabBar').getElement('labelStyle').getElement('font')));
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100]: " + JSON.stringify(obj.getElement('$attrs').getElement('tabBar').getElement('labelStyle').getElement('font').getString('weight')));
-      expect(obj.getElement('$attrs').getElement('tabBar').getElement('labelStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
+      expect(obj.getElement('$attrs').getElement('tabBar').getElement('labelStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Medium');
       console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100] end");
       done();
     });
