@@ -2749,5 +2749,1753 @@ export default function continuationManagerTest() {
             }
             console.info("----------------------testUpdateContinuationState006 end----------------------");
         })
+
+        /**
+         * @tc.name   testRegisterdeviceSelected001
+         * @tc.number testRegisterdeviceSelected001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testRegisterdeviceSelected001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.log("----------------------testRegisterdeviceSelected001 start----------------------");
+            let token = -1;
+            try {
+                await continuationManager.on(null, token, (data) => {
+                    console.log('testRegisterdeviceSelected001 onDeviceSelected len: ' + data.length);
+                    expect().assertFail()
+                });
+            } catch (error) {
+                console.log("testRegisterdeviceSelected001 continuationManager.on catch error is" + error.code);
+                expect(error.code == 401).assertFail();
+            }
+            console.log("----------------------testRegisterdeviceSelected001 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testOndeviceSelected002
+         * @tc.number testOndeviceSelected002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOndeviceSelected002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.log("----------------------testOndeviceSelected002 start----------------------");
+            let token = -1;
+            try {
+                await continuationManager.on(undefined, token, (data) => {
+                    console.log('testOndeviceSelected002 onDeviceSelected len: ' + data.length);
+                    expect().assertFail()
+                });
+            } catch (error) {
+                console.log("testOndeviceSelected002 continuationManager.on catch error is" + error.code);
+                expect(error.code == 401).assertFail();
+            }
+            console.log("----------------------testOndeviceSelected002 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testOndeviceSelected003
+         * @tc.number testOndeviceSelected003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOndeviceSelected003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.log("----------------------testOndeviceSelected003 start----------------------");
+            try {
+                await continuationManager.on("deviceSelected", null, (data) => {
+                    console.log('testOndeviceSelected003 onDeviceSelected len: ' + data.length);
+                    expect().assertFail()
+                });
+            } catch (error) {
+                console.log("testOndeviceSelected003 continuationManager.on catch error is" + error.code);
+                expect(error.code == 401).assertFail();
+            }
+            console.log("----------------------testOndeviceSelected003 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testOndeviceSelected004
+         * @tc.number testOndeviceSelected004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOndeviceSelected004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.log("----------------------testOndeviceSelected004 start----------------------");
+            try {
+                await continuationManager.on("deviceSelected", undefined, (data) => {
+                    console.log('testOndeviceSelected004 onDeviceSelected len: ' + data.length);
+                    expect().assertFail()
+                });
+            } catch (error) {
+                console.log("testOndeviceSelected004 continuationManager.on catch error is" + error.code);
+                expect(error.code == 401).assertFail();
+            }
+            console.log("----------------------testOndeviceSelected004 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testOffdeviceSelected001
+         * @tc.number testOffdeviceSelected001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOffdeviceSelected001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOffdeviceSelected001 start----------------------");
+            let token: number = 1;
+            try {
+                continuationManager.off(null, token);
+                expect().assertFail()
+                done();
+            } catch (error) {
+                console.info("testOffdeviceSelected001 catch error is" + error);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+            console.info("----------------------testOffdeviceSelected001 end----------------------");
+        })
+
+        /**
+         * @tc.name   testOffdeviceSelected002
+         * @tc.number testOffdeviceSelected002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOffdeviceSelected002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOffdeviceSelected002 start----------------------");
+            let token: number = 1;
+            try {
+                continuationManager.off(undefined, token);
+                expect().assertFail()
+                done();
+            } catch (error) {
+                console.info("testOffdeviceSelected002 catch error is" + error);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+            console.info("----------------------testOffdeviceSelected002 end----------------------");
+        })
+
+        /**
+         * @tc.name   testOffdeviceSelected003
+         * @tc.number testOffdeviceSelected003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOffdeviceSelected003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOffdeviceSelected003 start----------------------");
+            try {
+                continuationManager.off("deviceSelected", null);
+                expect().assertFail()
+                done();
+            } catch (error) {
+                console.info("testOffdeviceSelected003 catch error is" + error);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+            console.info("----------------------testOffdeviceSelected003 end----------------------");
+        })
+
+        /**
+         * @tc.name   testOffdeviceSelected004
+         * @tc.number testOffdeviceSelected004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOffdeviceSelected004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOffdeviceSelected004 start----------------------");
+            try {
+                continuationManager.off("deviceSelected", undefined);
+                expect().assertFail()
+                done();
+            } catch (error) {
+                console.info("testOffdeviceSelected004 catch error is" + error);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+            console.info("----------------------testOffdeviceSelected004 end----------------------");
+        })
+
+        /**
+         * @tc.name   testOndeviceUnselected001
+         * @tc.number testOndeviceUnselected001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOndeviceUnselected001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.log("----------------------testOndeviceUnselected001 start----------------------");
+            try {
+                await continuationManager.on("deviceUnselected", null, (data) => {
+                    console.log('testOndeviceUnselected001 onDeviceSelected len: ' + data.length);
+                    expect().assertFail()
+                });
+            } catch (error) {
+                console.log("testOndeviceUnselected001 continuationManager.on catch error is" + error.code);
+                expect(error.code == 401).assertFail();
+            }
+            console.log("----------------------testOndeviceUnselected001 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testOndeviceUnselected002
+         * @tc.number testOndeviceUnselected002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOndeviceUnselected002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.log("----------------------testOndeviceUnselected002 start----------------------");
+            try {
+                await continuationManager.on("deviceUnselected", undefined, (data) => {
+                    console.log('testOndeviceUnselected002 onDeviceSelected len: ' + data.length);
+                    expect().assertFail()
+                });
+            } catch (error) {
+                console.log("testOndeviceUnselected002 continuationManager.on catch error is" + error.code);
+                expect(error.code == 401).assertFail();
+            }
+            console.log("----------------------testOndeviceUnselected002 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testOffdeviceUnselected001
+         * @tc.number testOffdeviceUnselected001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOffdeviceUnselected001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOffdeviceUnselected001 start----------------------");
+            try {
+                continuationManager.off("deviceUnselected", null);
+                expect().assertFail()
+            } catch (error) {
+                console.info("testOffdeviceUnselected001 catch error is" + error);
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------testOffdeviceUnselected001 end----------------------");
+            done()
+        })
+
+        /**
+         * @tc.name   testOffdeviceSelected002
+         * @tc.number testOffdeviceSelected002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOffdeviceSelected002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOffdeviceSelected002 start----------------------");
+            try {
+                continuationManager.off("deviceUnselected", undefined);
+                expect().assertFail()
+            } catch (error) {
+                console.info("testOffdeviceSelected002 catch error is" + error);
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------testOffdeviceSelected002 end----------------------");
+            done()
+        })
+
+        /**
+         * @tc.name   testOndeviceConnect001
+         * @tc.number testOndeviceConnect001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOndeviceConnect001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOndeviceConnect001 start----------------------");
+            try {
+                await continuationManager.on(undefined, (data) => {
+                    console.log('testOndeviceConnect001 deviceConnect len: ' + data.length);
+                    expect().assertFail()
+                });
+            } catch (error) {
+                console.log("testOndeviceConnect001 deviceConnect catch error is" + error.code);
+                expect(error.code == 401).assertFail();
+            }
+            console.info("----------------------testOndeviceConnect001 end----------------------");
+            done()
+        })
+
+        /**
+         * @tc.name   testOndeviceConnect002
+         * @tc.number testOndeviceConnect002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOndeviceConnect002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOndeviceConnect002 start----------------------");
+            try {
+                await continuationManager.on(null, (data) => {
+                    console.log('testOndeviceConnect002 deviceConnect len: ' + data.length);
+                    expect().assertFail()
+                });
+            } catch (error) {
+                console.log("testOndeviceConnect002 deviceConnect catch error is" + error.code);
+                expect(error.code == 401).assertFail();
+            }
+            console.info("----------------------testOndeviceConnect002 end----------------------");
+            done()
+        })
+
+        /**
+         * @tc.name   testOffdeviceConnect003
+         * @tc.number testOffdeviceConnect003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOffdeviceConnect003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOffdeviceConnect003 start----------------------");
+            try {
+                await continuationManager.off(undefined, (data) => {
+                    console.log('testOffdeviceConnect003 deviceConnect len: ' + data.length);
+                    expect().assertFail()
+                });
+            } catch (error) {
+                console.log("testOffdeviceConnect003 deviceConnect catch error is" + error.code);
+                expect(error.code == 401).assertFail();
+            }
+            console.info("----------------------testOffdeviceConnect003 end----------------------");
+            done()
+        })
+
+        /**
+         * @tc.name   testOffdeviceConnect004
+         * @tc.number testOffdeviceConnect004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOffdeviceConnect004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOffdeviceConnect004 start----------------------");
+            try {
+                await continuationManager.off(null, (data) => {
+                    console.log('testOffdeviceConnect004 deviceConnect len: ' + data.length);
+                    expect().assertFail()
+                });
+            } catch (error) {
+                console.log("testOffdeviceConnect004 deviceConnect catch error is" + error.code);
+                expect(error.code == 401).assertFail();
+            }
+            console.info("----------------------testOffdeviceConnect004 end----------------------");
+            done()
+        })
+
+        /**
+         * @tc.name   testOffdeviceDisconnect001
+         * @tc.number testOffdeviceDisconnect001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOffdeviceDisconnect001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOffdeviceDisconnect001 start----------------------");
+            try {
+                continuationManager.off(undefined);
+                expect().assertFail()
+                done();
+            } catch (error) {
+                console.info("testOffdeviceDisconnect001 catch error is" + error);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+            console.info("----------------------testOffdeviceDisconnect001 end----------------------");
+        })
+
+        /**
+         * @tc.name   testOffdeviceDisconnect002
+         * @tc.number testOffdeviceDisconnect002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOffdeviceDisconnect002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOffdeviceDisconnect002 start----------------------");
+            try {
+                continuationManager.off(null);
+                expect().assertFail()
+                done();
+            } catch (error) {
+                console.info("testOffdeviceDisconnect002 catch error is" + error);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+            console.info("----------------------testOffdeviceDisconnect002 end----------------------");
+        })
+
+        /**
+         * @tc.name   testRegister001
+         * @tc.number testRegister001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testRegister001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testRegister001 start----------------------");
+            try {
+                continuationManager.register(undefined, (err, data) => {
+                    if (err.code != 0) {
+                        console.log('testRegister001 get register is faild' + err.code)
+                        expect().assertFail()
+                    }
+                    console.log('testRegister001 get register is success' + data)
+                    expect().assertFail()
+                })
+                done();
+            } catch (error) {
+                console.info("testRegister001 catch error is" + error.code);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+            console.info("----------------------testRegister001 end----------------------");
+        })
+
+        /**
+         * @tc.name   testRegister002
+         * @tc.number testRegister002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testRegister002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testRegister002 start----------------------");
+            try {
+                continuationManager.register(null, (err, data) => {
+                    if (err.code != 0) {
+                        console.log('testRegister002 get register is faild' + err.code)
+                        expect().assertFail()
+                    }
+                    console.log('testRegister002 get register is success' + data)
+                    expect().assertFail()
+                })
+                done();
+            } catch (error) {
+                console.info("testRegister001 catch error is" + error);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+            console.info("----------------------testRegister002 end----------------------");
+        })
+
+        /**
+         * @tc.name   testRegister003
+         * @tc.number testRegister003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testRegister003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testRegister003 start----------------------");
+            continuationManager.register(undefined).then((data) => {
+                console.info('register finished, ' + JSON.stringify(data));
+                expect().assertFail()
+            }).catch((error) => {
+                console.error('register failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------testRegister003 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testRegister004
+         * @tc.number testRegister004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testRegister004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testRegister004 start----------------------");
+            continuationManager.register(null).then((data) => {
+                console.info('register finished, ' + JSON.stringify(data));
+                expect().assertFail()
+            }).catch((error) => {
+                console.error('register failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------testRegister004 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testunregister001
+         * @tc.number testunregister001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testunregister001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testunregister001 start----------------------");
+            try {
+                continuationManager.unregister(undefined, (err, data) => {
+                    if (err.code != 0) {
+                        console.log('testunregister001 get unregister is faild' + err.code)
+                        expect().assertFail()
+                    }
+                    console.log('testunregister001 get unregister is success' + data)
+                    expect().assertFail()
+                })
+                done();
+            } catch (error) {
+                console.info("testunregister001 catch error is" + error);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+            console.info("----------------------testunregister001 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testunregister002
+         * @tc.number testunregister002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testunregister002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testunregister002 start----------------------");
+            try {
+                continuationManager.unregister(null, (err, data) => {
+                    if (err.code != 0) {
+                        console.log('testunregister002 get unregister is faild' + err.code)
+                        expect().assertFail()
+                    }
+                    console.log('testunregister002 get unregister is success' + data)
+                    expect().assertFail()
+                })
+                done();
+            } catch (error) {
+                console.info("testunregister002 catch error is" + error);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+            console.info("----------------------testunregister002 end----------------------");
+        })
+
+        /**
+         * @tc.name   testunregister003
+         * @tc.number testunregister003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testunregister003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testunregister003 start----------------------");
+            continuationManager.unregister(undefined).then((data) => {
+                console.info('unregister finished, ' + JSON.stringify(data));
+                expect().assertFail()
+            }).catch((error) => {
+                console.error('unregister failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------testunregister003 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testunregister004
+         * @tc.number testunregister004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testunregister004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testunregister004 start----------------------");
+            continuationManager.unregister(null).then((data) => {
+                console.info('unregister finished, ' + JSON.stringify(data));
+                expect().assertFail()
+            }).catch((error) => {
+                console.error('unregister failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------testunregister004 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateConnectStatus001
+         * @tc.number testupdateConnectStatus001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateConnectStatus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus001 start----------------------");
+            try {
+                continuationManager.updateConnectStatus(undefined, TEST_DEVICE_ID, continuationManager.DeviceConnectState.IDLE, (err) => {
+                    if (err.code != 0) {
+                        console.info('updateConnectStatus failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('unregister finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('unregister failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------testupdateConnectStatus001 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateConnectStatus002
+         * @tc.number testupdateConnectStatus002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateConnectStatus002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus002 start----------------------");
+            try {
+                continuationManager.updateConnectStatus(null, TEST_DEVICE_ID, continuationManager.DeviceConnectState.CONNECTING, (err) => {
+                    if (err.code != 0) {
+                        console.info('updateConnectStatus failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('unregister finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('unregister failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------testupdateConnectStatus002 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateConnectStatus003
+         * @tc.number testupdateConnectStatus003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateConnectStatus003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus003 start----------------------");
+            let token: number = -1;
+            try {
+                continuationManager.updateConnectStatus(token, '', continuationManager.DeviceConnectState.CONNECTED, (err) => {
+                    if (err.code != 0) {
+                        console.info('updateConnectStatus failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('unregister finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('unregister failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------testupdateConnectStatus003 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateConnectStatus004
+         * @tc.number testupdateConnectStatus004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateConnectStatus004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus004 start----------------------");
+            let token: number = -1;
+            try {
+                continuationManager.updateConnectStatus(token, undefined, continuationManager.DeviceConnectState.DISCONNECTING, (err) => {
+                    if (err.code != 0) {
+                        console.info('updateConnectStatus failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('unregister finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('unregister failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------testupdateConnectStatus004 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateConnectStatus005
+         * @tc.number testupdateConnectStatus005
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateConnectStatus005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus005 start----------------------");
+            let token: number = -1;
+            try {
+                continuationManager.updateConnectStatus(token, null, continuationManager.DeviceConnectState.CONNECTED, (err) => {
+                    if (err.code != 0) {
+                        console.info('updateConnectStatus failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('updateConnectStatus finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------testupdateConnectStatus005 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateConnectStatus006
+         * @tc.number testupdateConnectStatus006
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateConnectStatus006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus006 start----------------------");
+            continuationManager.updateConnectStatus(undefined, TEST_DEVICE_ID, continuationManager.DeviceConnectState.CONNECTED).then(() => {
+                console.info('testupdateConnectStatus006 updateConnectStatus finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.info('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------testupdateConnectStatus006 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateConnectStatus007
+         * @tc.number testupdateConnectStatus007
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateConnectStatus007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus007 start----------------------");
+            continuationManager.updateConnectStatus(null, TEST_DEVICE_ID, continuationManager.DeviceConnectState.CONNECTED).then(() => {
+                console.info('testupdateConnectStatus007 updateConnectStatus finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.info('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------testupdateConnectStatus007 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateConnectStatus008
+         * @tc.number testupdateConnectStatus008
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateConnectStatus008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus008 start----------------------");
+            let token: number = -1;
+            continuationManager.updateConnectStatus(token, '', continuationManager.DeviceConnectState.CONNECTED).then(() => {
+                console.info('testupdateConnectStatus008 updateConnectStatus finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.info('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------testupdateConnectStatus008 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateConnectStatus009
+         * @tc.number testupdateConnectStatus009
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateConnectStatus009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus009 start----------------------");
+            let token: number = -1;
+            continuationManager.updateConnectStatus(token, undefined, continuationManager.DeviceConnectState.CONNECTED).then(() => {
+                console.info('testupdateConnectStatus009 updateConnectStatus finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.info('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------testupdateConnectStatus009 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateConnectStatus010
+         * @tc.number testupdateConnectStatus010
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateConnectStatus010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus010 start----------------------");
+            let token: number = -1;
+            continuationManager.updateConnectStatus(token, null, continuationManager.DeviceConnectState.CONNECTED).then(() => {
+                console.info('testupdateConnectStatus010 updateConnectStatus finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.info('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------testupdateConnectStatus010 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   teststartDeviceManager001
+         * @tc.number teststartDeviceManager001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('teststartDeviceManager001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager001 start----------------------");
+            try {
+                continuationManager.startDeviceManager(undefined, (err) => {
+                    if (err.code != 0) {
+                        console.info('startDeviceManager failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('startDeviceManager finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------teststartDeviceManager001 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   teststartDeviceManager002
+         * @tc.number teststartDeviceManager002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('teststartDeviceManager002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager002 start----------------------");
+            try {
+                continuationManager.startDeviceManager(null, (err) => {
+                    if (err.code != 0) {
+                        console.info('startDeviceManager failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('startDeviceManager finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------teststartDeviceManager002 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   teststartDeviceManager003
+         * @tc.number teststartDeviceManager003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('teststartDeviceManager003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager003 start----------------------");
+            let token: number = 1;
+            try {
+                continuationManager.startDeviceManager(token, undefined, (err) => {
+                    if (err.code != 0) {
+                        console.info('startDeviceManager failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('startDeviceManager finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------teststartDeviceManager003 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   teststartDeviceManager004
+         * @tc.number teststartDeviceManager004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('teststartDeviceManager004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager004 start----------------------");
+            let token: number = 1;
+            try {
+                continuationManager.startDeviceManager(token, null, (err) => {
+                    if (err.code != 0) {
+                        console.info('startDeviceManager failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('startDeviceManager finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------teststartDeviceManager004 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   teststartDeviceManager005
+         * @tc.number teststartDeviceManager005
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('teststartDeviceManager005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager005 start----------------------");
+            let continuationExtraParams = {
+                deviceType: ["00E"],
+                description: "description",
+                filter: { "name": "authInfo", "length": 8 },
+                continuationMode: continuationManager.ContinuationMode.COLLABORATION_MUTIPLE,
+                authInfo: { "name": "authInfo", "length": 8 }
+            };
+            try {
+                continuationManager.startDeviceManager(undefined, continuationExtraParams, (err) => {
+                    if (err.code != 0) {
+                        console.info('startDeviceManager failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('startDeviceManager finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------teststartDeviceManager005 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   teststartDeviceManager006
+         * @tc.number teststartDeviceManager006
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('teststartDeviceManager006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager006 start----------------------");
+            let continuationExtraParams = {
+                deviceType: ["00E"],
+                description: "description",
+                filter: { "name": "authInfo", "length": 8 },
+                continuationMode: continuationManager.ContinuationMode.COLLABORATION_MUTIPLE,
+                authInfo: { "name": "authInfo", "length": 8 }
+            };
+            try {
+                continuationManager.startDeviceManager(null, continuationExtraParams, (err) => {
+                    if (err.code != 0) {
+                        console.info('startDeviceManager failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('startDeviceManager finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------teststartDeviceManager006 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   teststartDeviceManager007
+         * @tc.number teststartDeviceManager007
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('teststartDeviceManager007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager007 start----------------------");
+            let continuationExtraParams = {
+                deviceType: ["00E"],
+                description: "description",
+                filter: { "name": "authInfo", "length": 8 },
+                continuationMode: continuationManager.ContinuationMode.COLLABORATION_MUTIPLE,
+                authInfo: { "name": "authInfo", "length": 8 }
+            };
+            continuationManager.startDeviceManager(undefined, continuationExtraParams).then(() => {
+                console.info('teststartDeviceManager007 startDeviceManager finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.info('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------teststartDeviceManager007 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   teststartDeviceManager008
+         * @tc.number teststartDeviceManager008
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('teststartDeviceManager008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager008 start----------------------");
+            let continuationExtraParams = {
+                deviceType: ["00E"],
+                description: "description",
+                filter: { "name": "authInfo", "length": 8 },
+                continuationMode: continuationManager.ContinuationMode.COLLABORATION_MUTIPLE,
+                authInfo: { "name": "authInfo", "length": 8 }
+            };
+            continuationManager.startDeviceManager(null, continuationExtraParams).then(() => {
+                console.info('teststartDeviceManager008 startDeviceManager finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.info('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------teststartDeviceManager008 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   teststartDeviceManager009
+         * @tc.number teststartDeviceManager009
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('teststartDeviceManager009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager009 start----------------------");
+            let token: number = -1;
+            continuationManager.startDeviceManager(token, undefined).then(() => {
+                console.info('teststartDeviceManager009 startDeviceManager finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.info('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------teststartDeviceManager009 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   teststartDeviceManager010
+         * @tc.number teststartDeviceManager010
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('teststartDeviceManager010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager010 start----------------------");
+            let token: number = -1;
+            continuationManager.startDeviceManager(token, null).then(() => {
+                console.info('teststartDeviceManager010 startDeviceManager finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.info('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------teststartDeviceManager010 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   teststartDeviceManager011
+         * @tc.number teststartDeviceManager011
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('teststartDeviceManager011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager011 start----------------------");
+            continuationManager.startDeviceManager(undefined).then(() => {
+                console.info('teststartDeviceManager011 startDeviceManager finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.info('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------teststartDeviceManager011 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testregisterContinuation001
+         * @tc.number testregisterContinuation001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testregisterContinuation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testregisterContinuation001 start----------------------");
+            try {
+                continuationManager.registerContinuation(undefined, (err) => {
+                    if (err.code != 0) {
+                        console.info('registerContinuation failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('registerContinuation finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('registerContinuation failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------testregisterContinuation001 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testregisterContinuation002
+         * @tc.number testregisterContinuation002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testregisterContinuation002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testregisterContinuation002 start----------------------");
+            try {
+                continuationManager.registerContinuation(null, (err) => {
+                    if (err.code != 0) {
+                        console.info('registerContinuation failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('registerContinuation finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('registerContinuation failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------testregisterContinuation002 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testregisterContinuation003
+         * @tc.number testregisterContinuation003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testregisterContinuation003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testregisterContinuation003 start----------------------");
+            continuationManager.registerContinuation(undefined).then(() => {
+                console.info('testregisterContinuation003 registerContinuation finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.info('registerContinuation failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------testregisterContinuation003 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testregisterContinuation004
+         * @tc.number testregisterContinuation004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testregisterContinuation004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testregisterContinuation004 start----------------------");
+            continuationManager.registerContinuation(null).then(() => {
+                console.info('registerContinuation finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.info('registerContinuation failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------testregisterContinuation004 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateContinuationState001
+         * @tc.number testupdateContinuationState001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateConnectStatus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateContinuationState001 start----------------------");
+            try {
+                continuationManager.updateContinuationState(undefined, TEST_DEVICE_ID, continuationManager.DeviceConnectState.IDLE, (err) => {
+                    if (err.code != 0) {
+                        console.info('updateContinuationState failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('updateContinuationState finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------testupdateContinuationState001 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateContinuationState002
+         * @tc.number testupdateContinuationState002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateContinuationState002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateContinuationState002 start----------------------");
+            try {
+                continuationManager.updateContinuationState(null, TEST_DEVICE_ID, continuationManager.DeviceConnectState.CONNECTING, (err) => {
+                    if (err.code != 0) {
+                        console.info('updateContinuationState failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('updateContinuationState finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------testupdateContinuationState002 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateContinuationState003
+         * @tc.number testupdateContinuationState003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateContinuationState003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateContinuationState003 start----------------------");
+            try {
+                continuationManager.updateContinuationState(token, '', continuationManager.DeviceConnectState.CONNECTED, (err) => {
+                    if (err.code != 0) {
+                        console.info('updateContinuationState failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('updateContinuationState finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------testupdateContinuationState003 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateContinuationState004
+         * @tc.number testupdateContinuationState004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateContinuationState004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateContinuationState004 start----------------------");
+            try {
+                continuationManager.updateContinuationState(token, null, continuationManager.DeviceConnectState.DISCONNECTING, (err) => {
+                    if (err.code != 0) {
+                        console.info('updateContinuationState failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('updateContinuationState finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------testupdateContinuationState004 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateContinuationState005
+         * @tc.number testupdateContinuationState005
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateContinuationState005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateContinuationState005 start----------------------");
+            try {
+                continuationManager.updateContinuationState(token, undefined, continuationManager.DeviceConnectState.DISCONNECTING, (err) => {
+                    if (err.code != 0) {
+                        console.info('updateContinuationState failed, ' + JSON.stringify(err.code));
+                        expect().assertFail()
+                    }
+                    console.info('updateContinuationState finished');
+                    expect().assertFail()
+                })
+            } catch (error) {
+                console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------testupdateContinuationState005 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateContinuationState006
+         * @tc.number testupdateContinuationState006
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateContinuationState006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateContinuationState006 start----------------------");
+            continuationManager.updateContinuationState(undefined, TEST_DEVICE_ID, continuationManager.DeviceConnectState.DISCONNECTING).then(() => {
+                console.info('updateContinuationState finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------testupdateContinuationState006 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateContinuationState007
+         * @tc.number testupdateContinuationState007
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateContinuationState007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateContinuationState007 start----------------------");
+            continuationManager.updateContinuationState(null, TEST_DEVICE_ID, continuationManager.DeviceConnectState.DISCONNECTING).then(() => {
+                console.info('updateContinuationState finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------testupdateContinuationState007 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateContinuationState008
+         * @tc.number testupdateContinuationState008
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateContinuationState008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateContinuationState008 start----------------------");
+            continuationManager.updateContinuationState(token, '', continuationManager.DeviceConnectState.DISCONNECTING).then(() => {
+                console.info('updateContinuationState finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------testupdateContinuationState008 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateContinuationState009
+         * @tc.number testupdateContinuationState009
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateContinuationState009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateContinuationState009 start----------------------");
+            continuationManager.updateContinuationState(token, null, continuationManager.DeviceConnectState.DISCONNECTING).then(() => {
+                console.info('updateContinuationState finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------testupdateContinuationState009 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testupdateContinuationState010
+         * @tc.number testupdateContinuationState010
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testupdateContinuationState010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateContinuationState010 start----------------------");
+            continuationManager.updateContinuationState(token, undefined, continuationManager.DeviceConnectState.DISCONNECTING).then(() => {
+                console.info('updateContinuationState finished');
+                expect().assertFail()
+            }).catch((error) => {
+                console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
+                expect(error.code == 401).assertTrue();
+            })
+            console.info("----------------------testupdateContinuationState010 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testStartContinuationDeviceManager001
+         * @tc.number testStartContinuationDeviceManager001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testStartContinuationDeviceManager001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager001 start----------------------");
+            try {
+                continuationManager.startContinuationDeviceManager(undefined, (err, data) => {
+                    console.info("testStartContinuationDeviceManager001 data is" + data);
+                    expect().assertFail()
+                });
+            } catch (error) {
+                console.info("testStartContinuationDeviceManager001 catch error is" + error);
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------testStartContinuationDeviceManager001 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testStartContinuationDeviceManager002
+         * @tc.number testStartContinuationDeviceManager002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testStartContinuationDeviceManager002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager002 start----------------------");
+            try {
+                continuationManager.startContinuationDeviceManager(null, (err, data) => {
+                    console.info("testStartContinuationDeviceManager002 data is" + data);
+                    expect().assertFail()
+                });
+            } catch (error) {
+                console.info("testStartContinuationDeviceManager002 catch error is" + error);
+                expect(error.code == 401).assertTrue();
+            }
+            console.info("----------------------testStartContinuationDeviceManager002 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testStartContinuationDeviceManager003
+         * @tc.number testStartContinuationDeviceManager003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testStartContinuationDeviceManager003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager003 start----------------------");
+            try {
+                let continuationExtraParams = {
+                    deviceType: ["00E"],
+                    description: "description",
+                    filter: { "name": "authInfo", "length": 8 },
+                    continuationMode: continuationManager.ContinuationMode.COLLABORATION_MUTIPLE,
+                    authInfo: { "name": "authInfo", "length": 8 }
+                };
+                continuationManager.startContinuationDeviceManager(undefined, continuationExtraParams, (err, data) => {
+                    console.info("startContinuationDeviceManager data is" + data);
+                    expect().assertFail()
+                    done();
+                });
+            } catch (error) {
+                console.info("startContinuationDeviceManager catch error is" + error);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+            console.info("----------------------testStartContinuationDeviceManager003 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testStartContinuationDeviceManager004
+         * @tc.number testStartContinuationDeviceManager004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testStartContinuationDeviceManager004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager004 start----------------------");
+            try {
+                let continuationExtraParams = {
+                    deviceType: ["00E"],
+                    description: "description",
+                    filter: { "name": "authInfo", "length": 8 },
+                    continuationMode: continuationManager.ContinuationMode.COLLABORATION_MUTIPLE,
+                    authInfo: { "name": "authInfo", "length": 8 }
+                };
+                continuationManager.startContinuationDeviceManager(null, continuationExtraParams, (err, data) => {
+                    console.info("startContinuationDeviceManager data is" + data);
+                    expect().assertFail()
+                    done();
+                });
+            } catch (error) {
+                console.info("startContinuationDeviceManager catch error is" + error);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+            console.info("----------------------testStartContinuationDeviceManager004 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testStartContinuationDeviceManager005
+         * @tc.number testStartContinuationDeviceManager005
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testStartContinuationDeviceManager005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager005 start----------------------");
+            try {
+                continuationManager.startContinuationDeviceManager(token, undefined, (err, data) => {
+                    console.info("startContinuationDeviceManager data is" + data);
+                    expect().assertFail()
+                    done();
+                });
+            } catch (error) {
+                console.info("startContinuationDeviceManager catch error is" + error);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+            console.info("----------------------testStartContinuationDeviceManager005 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testStartContinuationDeviceManager006
+         * @tc.number testStartContinuationDeviceManager006
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testStartContinuationDeviceManager006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager006 start----------------------");
+            try {
+                continuationManager.startContinuationDeviceManager(token, null, (err, data) => {
+                    console.info("startContinuationDeviceManager data is" + data);
+                    expect().assertFail()
+                    done();
+                });
+            } catch (error) {
+                console.info("startContinuationDeviceManager catch error is" + error);
+                expect(error.code == 401).assertTrue();
+                done();
+            }
+            console.info("----------------------testStartContinuationDeviceManager006 end----------------------");
+            done();
+        })
+
+        /**
+         * @tc.name   testStartContinuationDeviceManager007
+         * @tc.number testStartContinuationDeviceManager007
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testStartContinuationDeviceManager007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager007 start----------------------");
+            let continuationExtraParams = {
+                deviceType: ["00E"],
+                description: "description",
+                filter: { "name": "authInfo", "length": 8 },
+                continuationMode: continuationManager.ContinuationMode.COLLABORATION_SINGLE,
+                authInfo: { "name": "authInfo", "length": 8 }
+            };
+            continuationManager.startContinuationDeviceManager(undefined, continuationExtraParams).then((data) => {
+                console.log('startContinuationDeviceManager data is' + data);
+                expect().assertFail();
+                done();
+            }).catch((err) => {
+                console.log('startContinuationDeviceManager err code is' + err.code);
+                expect(error.code == 401).assertTrue();
+                done();
+            });
+            console.info("----------------------testStartContinuationDeviceManager007 end----------------------");
+        })
+
+        /**
+         * @tc.name   testStartContinuationDeviceManager008
+         * @tc.number testStartContinuationDeviceManager008
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testStartContinuationDeviceManager008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager008 start----------------------");
+            let continuationExtraParams = {
+                deviceType: ["00E"],
+                description: "description",
+                filter: { "name": "authInfo", "length": 8 },
+                continuationMode: continuationManager.ContinuationMode.COLLABORATION_SINGLE,
+                authInfo: { "name": "authInfo", "length": 8 }
+            };
+            continuationManager.startContinuationDeviceManager(null, continuationExtraParams).then((data) => {
+                console.log('testStartContinuationDeviceManager008 data is' + data);
+                expect().assertFail();
+                done();
+            }).catch((err) => {
+                console.log('testStartContinuationDeviceManager008 err code is' + err.code);
+                expect(error.code == 401).assertTrue();
+                done();
+            });
+            console.info("----------------------testStartContinuationDeviceManager008 end----------------------");
+        })
+
+        /**
+         * @tc.name   testStartContinuationDeviceManager009
+         * @tc.number testStartContinuationDeviceManager009
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testStartContinuationDeviceManager009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager009 start----------------------");
+            continuationManager.startContinuationDeviceManager(token, undefined).then((data) => {
+                console.log('testStartContinuationDeviceManager009 data is' + data);
+                expect().assertFail();
+                done();
+            }).catch((err) => {
+                console.log('testStartContinuationDeviceManager009 err code is' + err.code);
+                expect(error.code == 401).assertTrue();
+                done();
+            });
+            console.info("----------------------testStartContinuationDeviceManager009 end----------------------");
+        })
+
+        /**
+         * @tc.name   testStartContinuationDeviceManager010
+         * @tc.number testStartContinuationDeviceManager010
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testStartContinuationDeviceManager010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager010 start----------------------");
+            continuationManager.startContinuationDeviceManager(token, null).then((data) => {
+                console.log('testStartContinuationDeviceManager010 data is' + data);
+                expect().assertFail();
+                done();
+            }).catch((err) => {
+                console.log('testStartContinuationDeviceManager010 err code is' + err.code);
+                expect(error.code == 401).assertTrue();
+                done();
+            });
+            console.info("----------------------testStartContinuationDeviceManager010 end----------------------");
+        })
     })
 }
