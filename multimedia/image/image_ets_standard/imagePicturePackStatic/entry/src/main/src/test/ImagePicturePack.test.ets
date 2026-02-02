@@ -134,7 +134,7 @@ export default function imagePicturePack() {
       size: image.Size
     ) => {
       const buffer = getBuffer(fileName);
-      let auxiliaryPicture: image.AuxiliaryPicture = await image.createAuxiliaryPicture(buffer, size, auxiliaryPictureType);
+      let auxiliaryPicture: image.AuxiliaryPicture = image.createAuxiliaryPicture(buffer, size, auxiliaryPictureType);
       return auxiliaryPicture;
     }
 
@@ -166,7 +166,7 @@ export default function imagePicturePack() {
         pixelMap = await imageSourceApi.createPixelMap();
       }
       expect(pixelMap != undefined).assertTrue();
-      let picture: image.Picture | undefined = await image.createPicture(pixelMap as image.PixelMap);
+      let picture: image.Picture | undefined = image.createPicture(pixelMap as image.PixelMap);
       expect(picture != undefined).assertTrue();
       let result: image.Picture = picture as image.Picture;
       await imageSourceApi.release();
@@ -180,25 +180,25 @@ export default function imagePicturePack() {
       let picture: image.Picture = await createPictureOnlyMainPic(fileName, type);
       let size: image.Size = {height: 960, width: 720};
       let gainMapAuxiliaryPicture = createAuxPic(GAINMAP, "GainMap.dat", size);
-      picture.setAuxiliaryPicture(GAINMAP, gainMapAuxiliaryPicture);
+      await picture.setAuxiliaryPicture(GAINMAP, gainMapAuxiliaryPicture);
       return picture;
     }
 
     const createPictureWithDepthMapAuxPic = async (fileName: string, type: string) => {
       let picture: image.Picture = await createPictureOnlyMainPic(fileName, type);
       let pictureAux = await createPictureImageSourcePic("AllAuxiliaryPictures.jpg", "fd", DEPTH_MAP);
-      let depthMapAuxiliaryPicture = await pictureAux.getAuxiliaryPicture(DEPTH_MAP);
+      let depthMapAuxiliaryPicture = pictureAux.getAuxiliaryPicture(DEPTH_MAP);
       expect(depthMapAuxiliaryPicture != null).assertTrue();
-      await picture.setAuxiliaryPicture(DEPTH_MAP, depthMapAuxiliaryPicture as image.AuxiliaryPicture);
+      picture.setAuxiliaryPicture(DEPTH_MAP, depthMapAuxiliaryPicture as image.AuxiliaryPicture);
       return picture;
     }
 
     const createPictureWithUnReFocusMapAuxPic = async (fileName: string, type: string) => {
       let picture: image.Picture = await createPictureOnlyMainPic(fileName, type);
       let pictureAux = await createPictureImageSourcePic("AllAuxiliaryPictures.jpg", "fd", UNREFOCUS_MAP);
-      let unrefocusMapAuxiliaryPicture = await pictureAux.getAuxiliaryPicture(UNREFOCUS_MAP);
+      let unrefocusMapAuxiliaryPicture = pictureAux.getAuxiliaryPicture(UNREFOCUS_MAP);
       expect(unrefocusMapAuxiliaryPicture != null).assertTrue();
-      await picture.setAuxiliaryPicture(UNREFOCUS_MAP, unrefocusMapAuxiliaryPicture as image.AuxiliaryPicture);
+      picture.setAuxiliaryPicture(UNREFOCUS_MAP, unrefocusMapAuxiliaryPicture as image.AuxiliaryPicture);
       return picture;
     }
 
@@ -208,31 +208,31 @@ export default function imagePicturePack() {
       if (pictureAux == undefined) {
         return undefined;
       }
-      let linearMapAuxiliaryPicture = await pictureAux.getAuxiliaryPicture(LINEAR_MAP);
+      let linearMapAuxiliaryPicture = pictureAux.getAuxiliaryPicture(LINEAR_MAP);
       expect(linearMapAuxiliaryPicture != null).assertTrue();
-      await picture.setAuxiliaryPicture(LINEAR_MAP, linearMapAuxiliaryPicture as image.AuxiliaryPicture);
+      picture.setAuxiliaryPicture(LINEAR_MAP, linearMapAuxiliaryPicture as image.AuxiliaryPicture);
       return picture;
     }
 
     const createPictureWithFragmentMapAuxPic = async (fileName: string, type: string) => {
       let picture: image.Picture = await createPictureOnlyMainPic(fileName, type);
       let pictureAux = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
-      let fragmentMapAuxiliaryPicture = await pictureAux.getAuxiliaryPicture(FRAGMENT_MAP);
+      let fragmentMapAuxiliaryPicture = pictureAux.getAuxiliaryPicture(FRAGMENT_MAP);
       expect(fragmentMapAuxiliaryPicture != null).assertTrue();
-      await picture.setAuxiliaryPicture(FRAGMENT_MAP, fragmentMapAuxiliaryPicture as image.AuxiliaryPicture);
+      picture.setAuxiliaryPicture(FRAGMENT_MAP, fragmentMapAuxiliaryPicture as image.AuxiliaryPicture);
       return picture;
     }
 
     const createPictureWithFragmentMapAuxPicHeif = async (fileName: string, type: string) => {
       let picture: image.Picture = await createPictureOnlyMainPic(fileName, type);
       let pictureAux = await createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
-      let fragmentMapAuxiliaryPicture = await pictureAux.getAuxiliaryPicture(FRAGMENT_MAP);
+      let fragmentMapAuxiliaryPicture = pictureAux.getAuxiliaryPicture(FRAGMENT_MAP);
       expect(fragmentMapAuxiliaryPicture != null).assertTrue();
-      await picture.setAuxiliaryPicture(FRAGMENT_MAP, fragmentMapAuxiliaryPicture as image.AuxiliaryPicture);
+      picture.setAuxiliaryPicture(FRAGMENT_MAP, fragmentMapAuxiliaryPicture as image.AuxiliaryPicture);
       return picture;
     }
 
-    const getFdCacheDir = async (fileName: string) => {
+    const getFdCacheDir = (fileName: string) => {
       const uri: string = cacheDir + '/' + fileName;
       const file: fs.File = fs.openSync(uri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
       return file.fd as int;
@@ -263,12 +263,12 @@ export default function imagePicturePack() {
         let metadata = await picture.getMetadata(EXIF_METADATA);
         if (packOpts.desiredDynamicRange == image.PackingDynamicRange.AUTO && packOpts.needsPackProperties == true && metadata != undefined) {
           decodeProperties = await metadata.getAllProperties();
-          await picture.release();
+          picture.release();
           await imageSource.release();
           return imageInfo.mimeType == packOpts.format && imageInfo.isHdr == false && JSON.stringify(properties) == JSON.stringify(decodeProperties);
         } else {
           await imageSource.release();
-          await picture.release();
+          picture.release();
           return imageInfo.mimeType == packOpts.format && imageInfo.isHdr == false && metadata == undefined;
         }
       } else {
@@ -279,21 +279,21 @@ export default function imagePicturePack() {
           if (imageInfo != undefined) {
             isHdr = imageInfo.isHdr;
           }
-          let auxPicGet = await picture.getAuxiliaryPicture(type);
+          let auxPicGet = picture.getAuxiliaryPicture(type);
           expect(auxPicGet != null).assertTrue();
           let auxPic = auxPicGet as image.AuxiliaryPicture;
-          let auxType = await auxPic.getType();
+          let auxType = auxPic.getType();
           logger.log(`packResult: type is  ${type}, isHdr ${isHdr}, ${auxPic != undefined}`);
           ret = (isHdr == true) && (auxPic != undefined) && (auxType == type);
         } else if (type == GAINMAP && (packOpts.desiredDynamicRange == image.PackingDynamicRange.SDR || packOpts.desiredDynamicRange == undefined)) {
-          let auxPic = await picture.getAuxiliaryPicture(type);
+          let auxPic = picture.getAuxiliaryPicture(type);
           logger.log(`packResult: ${type} ${auxPic == undefined}`);
           ret = (auxPic == undefined);
         } else {
-          let auxPicGet = await picture.getAuxiliaryPicture(type);
+          let auxPicGet = picture.getAuxiliaryPicture(type);
           expect(auxPicGet != null).assertTrue();
           let auxPic = auxPicGet as image.AuxiliaryPicture;
-          let auxType = await auxPic.getType();
+          let auxType = auxPic.getType();
           logger.log(`packResult: ${type} ${auxPic != undefined}`);
           ret = (auxPic != undefined) && (auxType == type);
           if (type == FRAGMENT_MAP && (packOpts.desiredDynamicRange == image.PackingDynamicRange.AUTO && packOpts.needsPackProperties == true)) {
@@ -306,7 +306,7 @@ export default function imagePicturePack() {
           }
         }
         await imageSource.release();
-        await picture.release();
+        picture.release();
         return ret;
       }
     }
@@ -330,7 +330,7 @@ export default function imagePicturePack() {
         let properties: Record<string, string | null> | undefined;
 
         if (type == FRAGMENT_MAP) {
-        let auxPicGet = await picture.getAuxiliaryPicture(type);
+        let auxPicGet = picture.getAuxiliaryPicture(type);
           expect(auxPicGet != null).assertTrue();
           let auxPic = auxPicGet as image.AuxiliaryPicture;
           metadata = await auxPic.getMetadata(FRAGMENT_METADATA);
@@ -349,33 +349,33 @@ export default function imagePicturePack() {
         if (packType === "packing") {
           try {
             let data: ArrayBuffer = await imagePackerApi.packing(picture, packOpts);
-            let imageSource = await image.createImageSource(data);
+            let imageSource = image.createImageSource(data);
             let ret = await checkPackResult(logger, imageSource, flag, packOpts, properties, type);
             expect(ret).assertTrue();
-            await picture.release();
+            picture.release();
             await sleep(5000);
             done();
           } catch(error: BusinessError) {
             logger.log(`packing picture to buffer failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             expect(false).assertTrue();
-            await picture.release();
+            picture.release();
             await sleep(5000);
             done();
           }
         } else {
           try {
             await imagePackerApi.packToFile(picture, fdNum, packOpts);
-            let imageSource = await image.createImageSource(fdNum);
+            let imageSource = image.createImageSource(fdNum);
             let ret = await checkPackResult(logger, imageSource, flag, packOpts, properties, type);
             await fs.close(fdNum);
             expect(ret).assertTrue();
-            await picture.release();
+            picture.release();
             await sleep(5000);
             done();
           } catch(error: BusinessError) {
             logger.log(`packToFile picture failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             expect(false).assertTrue();
-            await picture.release();
+            picture.release();
             await sleep(5000);
             done();
           };
@@ -454,7 +454,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_gainmap_02.jpg");
+        let writeFd = getFdCacheDir("pack_gainmap_02.jpg");
         let picture = await createPictureWithGainMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -483,7 +483,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_gainmap_03.jpg");
+        let writeFd = getFdCacheDir("pack_gainmap_03.jpg");
         let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd", GAINMAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -649,7 +649,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_depthMap_01.jpg");
+        let writeFd = getFdCacheDir("pack_depthMap_01.jpg");
         let picture = await createPictureWithDepthMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -678,7 +678,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_depthMap_02.jpg");
+        let writeFd = getFdCacheDir("pack_depthMap_02.jpg");
         let picture = await createPictureWithDepthMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -707,7 +707,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_depthMap_03.jpg");
+        let writeFd = getFdCacheDir("pack_depthMap_03.jpg");
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -736,7 +736,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_depthMap_05.jpg");
+        let writeFd = getFdCacheDir("pack_depthMap_05.jpg");
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -762,7 +762,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_depthMap_03.jpg");
+        let writeFd = getFdCacheDir("pack_depthMap_03.jpg");
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -928,7 +928,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_unRefocusMap_01.jpg");
+        let writeFd = getFdCacheDir("pack_unRefocusMap_01.jpg");
         let picture = await createPictureWithUnReFocusMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -957,7 +957,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_unRefocusMap_02.jpg");
+        let writeFd = getFdCacheDir("pack_unRefocusMap_02.jpg");
         let picture = await createPictureWithUnReFocusMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -986,7 +986,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_unRefocusMap_03.jpg");
+        let writeFd = getFdCacheDir("pack_unRefocusMap_03.jpg");
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -1015,7 +1015,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_unRefocusMap_04.jpg");
+        let writeFd = getFdCacheDir("pack_unRefocusMap_04.jpg");
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -1041,7 +1041,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_unRefocusMap_05.jpg");
+        let writeFd = getFdCacheDir("pack_unRefocusMap_05.jpg");
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -1207,7 +1207,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_linearMap_01.jpg");
+        let writeFd = getFdCacheDir("pack_linearMap_01.jpg");
         let picture = await createPictureWithLinearMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -1236,7 +1236,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_linearMap_02.jpg");
+        let writeFd = getFdCacheDir("pack_linearMap_02.jpg");
         let picture = await createPictureWithLinearMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -1265,7 +1265,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_linearMap_03.jpg");
+        let writeFd = getFdCacheDir("pack_linearMap_03.jpg");
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -1294,7 +1294,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_linearMap_05.jpg");
+        let writeFd = getFdCacheDir("pack_linearMap_05.jpg");
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -1320,7 +1320,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_linearMap_03.jpg");
+        let writeFd = getFdCacheDir("pack_linearMap_03.jpg");
         let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -1486,7 +1486,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_fragmentMap_01.jpg");
+        let writeFd = getFdCacheDir("pack_fragmentMap_01.jpg");
         let picture = await createPictureWithFragmentMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -1515,7 +1515,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_fragmentMap_02.jpg");
+        let writeFd = getFdCacheDir("pack_fragmentMap_02.jpg");
         let picture = await createPictureWithFragmentMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -1544,7 +1544,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_fragmentMap_03.jpg");
+        let writeFd = getFdCacheDir("pack_fragmentMap_03.jpg");
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -1573,7 +1573,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_fragmentMap_04.jpg");
+        let writeFd = getFdCacheDir("pack_fragmentMap_04.jpg");
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -1599,7 +1599,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_fragmentMap_05.jpg");
+        let writeFd = getFdCacheDir("pack_fragmentMap_05.jpg");
         let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -1780,7 +1780,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_depthMap_01.heic");
+        let writeFd = getFdCacheDir("pack_depthMap_01.heic");
         let picture = await createPictureWithDepthMapAuxPic("0801_sdr2.heic", "fd");
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -1811,7 +1811,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_depthMap_02.heic");
+        let writeFd = getFdCacheDir("pack_depthMap_02.heic");
         let picture = await createPictureWithDepthMapAuxPic("0801_sdr2.heic", "fd");
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -1842,7 +1842,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_depthMap_03.heic");
+        let writeFd = getFdCacheDir("pack_depthMap_03.heic");
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -1873,7 +1873,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_depthMap_04.heic");
+        let writeFd = getFdCacheDir("pack_depthMap_04.heic");
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -1904,7 +1904,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_depthMap_05.heic");
+        let writeFd = getFdCacheDir("pack_depthMap_05.heic");
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -2021,7 +2021,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_unRefocusMap_01.heic");
+        let writeFd = getFdCacheDir("pack_unRefocusMap_01.heic");
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -2052,7 +2052,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_unRefocusMap_02.heic");
+        let writeFd = getFdCacheDir("pack_unRefocusMap_02.heic");
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -2083,7 +2083,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_unRefocusMap_03.heic");
+        let writeFd = getFdCacheDir("pack_unRefocusMap_03.heic");
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -2260,7 +2260,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_linearMap_01.heic");
+        let writeFd = getFdCacheDir("pack_linearMap_01.heic");
         let picture = await createPictureWithLinearMapAuxPic("0801_sdr2.heic", "fd");
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -2291,7 +2291,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_linearMap_02.heic");
+        let writeFd = getFdCacheDir("pack_linearMap_02.heic");
         let picture = await createPictureWithLinearMapAuxPic("0801_sdr2.heic", "fd");
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -2322,7 +2322,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_linearMap_03.heic");
+        let writeFd = getFdCacheDir("pack_linearMap_03.heic");
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -2353,7 +2353,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_linearMap_04.heic");
+        let writeFd = getFdCacheDir("pack_linearMap_04.heic");
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -2384,7 +2384,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_linearMap_05.heic");
+        let writeFd = getFdCacheDir("pack_linearMap_05.heic");
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -2561,7 +2561,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_fragmentMap_01.heic");
+        let writeFd = getFdCacheDir("pack_fragmentMap_01.heic");
         let picture = await createPictureWithFragmentMapAuxPicHeif("0801_sdr2.heic", "fd");
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -2592,7 +2592,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_fragmentMap_02.heic");
+        let writeFd = getFdCacheDir("pack_fragmentMap_02.heic");
         let picture = await createPictureWithFragmentMapAuxPicHeif("0801_sdr2.heic", "fd");
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -2623,7 +2623,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_fragmentMap_03.heic");
+        let writeFd = getFdCacheDir("pack_fragmentMap_03.heic");
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -2654,7 +2654,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_fragmentMap_04.heic");
+        let writeFd = getFdCacheDir("pack_fragmentMap_04.heic");
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
@@ -2685,7 +2685,7 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let writeFd = await getFdCacheDir("pack_fragmentMap_05.heic");
+        let writeFd = getFdCacheDir("pack_fragmentMap_05.heic");
         let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
