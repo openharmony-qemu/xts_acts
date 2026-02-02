@@ -30,12 +30,12 @@ struct ImageExample {
 
   onLayoutChildrenCompleteByID: () => void = (): void =>  {
     this.layoutChildrenState1 = this.layoutChildrenState1 +"1"
-    console.log("lll onLayoutChildrenComplete")
+    console.log('lll onLayoutChildrenComplete')
   }
 
   onLayoutChildrenCompleteByID1: () => void = (): void =>  {
     this.layoutChildrenState2 = this.layoutChildrenState2 +"1"
-    console.log("lll onLayoutChildrenComplete1")
+    console.log('lll onLayoutChildrenComplete1')
   }
 
   build() {
