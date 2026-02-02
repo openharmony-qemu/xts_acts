@@ -2381,7 +2381,9 @@ export default function DisplayTest() {
         let caseName:string =  'testOnBrightnessInfoChange_static_0100';
         try {
             let windowClass:window.Window = windowStage.getMainWindowSync();
+            console.info(`${caseName} getMainWindowSync success`);
             await windowClass.setWindowBrightness(1);
+            console.info(`${caseName} setWindowBrightness 1 success`);
             await Utils.msSleep(100);
             let brightnessChangeCount1:number = 0;
             let brightnessChangeCount2:number = 0;
@@ -2439,7 +2441,7 @@ export default function DisplayTest() {
             await Utils.msSleep(100);
             done();
         } catch (e: BusinessError) {
-            console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+            console.error(`${caseName} Failed. Cause: ${e}`);
             if (e.code == 801) {
                 done()
             } else {
@@ -2459,6 +2461,7 @@ export default function DisplayTest() {
      */
     it('testCreateVirtualScreenwithSupportsFocusIsTrue_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         let caseName:string =  'testCreateVirtualScreenwithSupportsFocusIsTrue_static';
+        console.log(caseName + 'begin');
         try {
             display.createVirtualScreen({
                 name: 'createVirtualScreen1',
@@ -2468,6 +2471,7 @@ export default function DisplayTest() {
                 surfaceId: '',
                 supportsFocus: true
             }).then(async (displayId: Long) => {
+                console.log(caseName + 'createVirtualScreen success');
                 await display.makeUnique(displayId);
                 display.makeUnique(displayId).then(() => {
                     console.log(caseName + 'succeeded in makeUnique');
@@ -2480,7 +2484,7 @@ export default function DisplayTest() {
                     await terminateAbility(caseName);
                     done();
                 }).catch(async (err: Error) => {
-                    console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+                    console.error(caseName + 'failed in makeUnique, err : ' + err+ err.code);
                     if (err.code == 801) {
                         expect(err.code).assertEqual(801)
                         done();
@@ -2491,7 +2495,7 @@ export default function DisplayTest() {
                     }
                 })
             }).catch(async (err: Error) => {
-                console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+                console.error(caseName + 'failed in createVirtualScreen, err : ' + err+ err.code);
                 if (err.code == 801) {
                     expect(err.code).assertEqual(801)
                     done();
@@ -2502,7 +2506,7 @@ export default function DisplayTest() {
                 }
             })
         } catch (e: BusinessError) {
-            console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+            console.error(`${caseName} Failed. Cause: ${e}`);
             await terminateAbility(caseName);
             expect(false).assertTrue();
             done();
