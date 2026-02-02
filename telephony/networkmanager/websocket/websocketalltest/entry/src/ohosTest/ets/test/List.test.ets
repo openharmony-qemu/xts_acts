@@ -19,11 +19,18 @@ import WebSocketApiTest from './WebSocketApi.test';
 import WebSocketCreateTest from './WebSocketCreate.test';
 import WebSocketTest from './Websocket.test';
 import WebSocketServerTest from './WebsocketServer.test';
-
-
+import EmptyTest from './Empty.test';
+import connection from '@ohos.net.connection';
+ 	 
+let netHandle = connection.getDefaultNetSync();
+ 	 
 export default function testsuite() {
-  WebSocketApiTest();
-  WebSocketCreateTest();
-  WebSocketTest();
-  WebSocketServerTest()
+  if(netHandle.netId != 0){
+    WebSocketApiTest();
+    WebSocketCreateTest();
+    WebSocketTest();
+    WebSocketServerTest()
+  } else {
+    EmptyTest();
+  }
 }

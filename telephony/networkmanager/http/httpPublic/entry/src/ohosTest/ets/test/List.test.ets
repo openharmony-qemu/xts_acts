@@ -26,21 +26,28 @@ import NetworkManagerHTTP_Multicast1Test from './NetworkManagerHTTP_Multicast1.t
 import NetworkManagerHTTP_Multicast2Test from './NetworkManagerHTTP_Multicast2.test';
 import EmptyTest from './Empty.test';
 import sim from '@ohos.telephony.sim';
-
+import connection from '@ohos.net.connection';
+ 	  	 
+let netHandle = connection.getDefaultNetSync();
+ 	 
 export default function testsuite() {
-if (sim.getMaxSimCount()>1){
-  httpJsunit();
-  responseCodeJsunit();
-  requestMethodJsunit();
-  httpResponseJsunit();
-  HttpRequestOptionsJsunit();
-  httpRequestJsunit();
-  NetworkManagerHttpEnhanceTest();
-  NetworkManagerMulticastHTTP1Test();
-  NetworkManagerMulticastHTTP2Test();
-  NetworkManagerHTTP_Multicast1Test();
-  NetworkManagerHTTP_Multicast2Test();
+  if (sim.getMaxSimCount()>1){
+    if(netHandle.netId != 0){
+      httpJsunit();
+      responseCodeJsunit();
+      requestMethodJsunit();
+      httpResponseJsunit();
+      HttpRequestOptionsJsunit();
+      httpRequestJsunit();
+      NetworkManagerHttpEnhanceTest();
+      NetworkManagerMulticastHTTP1Test();
+      NetworkManagerMulticastHTTP2Test();
+      NetworkManagerHTTP_Multicast1Test();
+      NetworkManagerHTTP_Multicast2Test();
+    } else {
+      EmptyTest();
+    }
   }else{
-  EmptyTest()
-}
+    EmptyTest();
+  }
 }
