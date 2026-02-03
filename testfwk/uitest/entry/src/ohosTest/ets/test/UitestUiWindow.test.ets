@@ -16,7 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 import { BusinessError } from '@ohos.base';
-import display from '@kit.ArkUI'
+import { display } from '@kit.ArkUI'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 const delegator: AbilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -698,7 +698,8 @@ export default function uiUiWindowTest() {
               let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
               console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
               expect(window3 == null).assertTrue()
-            }else {
+            }
+            else {
               let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
               let bounds1 = await window2.getBounds()
               await window2.resize(0, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
