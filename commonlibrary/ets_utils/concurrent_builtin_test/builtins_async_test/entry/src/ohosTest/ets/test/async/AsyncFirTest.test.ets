@@ -3086,7 +3086,7 @@ export default function asyncFirTest(): void {
       };
 
       const existingUser = await returnNullableUser(true);
-      expect(existingUser).not().assertEqual(null);
+      expect(existingUser).not().assertNull();
       expect(existingUser!.name).assertEqual('Test User');
       expect(existingUser!.email).assertEqual('test@example.com');
 
@@ -3111,9 +3111,10 @@ export default function asyncFirTest(): void {
       };
 
       const validArray = await returnOptionalArray(true);
-      expect(validArray).not().assertEqual(undefined);
       expect(validArray!.length).assertEqual(3);
       expect(validArray![0]).assertEqual('item1');
+      expect(validArray![1]).assertEqual('item2');
+      expect(validArray![2]).assertEqual('item3');
 
       const undefinedArray = await returnOptionalArray(false);
       expect(undefinedArray).assertEqual(undefined);
