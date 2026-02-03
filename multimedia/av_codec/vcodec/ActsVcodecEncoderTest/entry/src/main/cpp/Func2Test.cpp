@@ -270,7 +270,7 @@ int VideoEncodeHevcCapability3900Test()
     if (cap) {
         ASSERT_NE(nullptr, cap);
         ASSERT_EQ(true, OH_AVCapability_AreVideoSizeAndFrameRateSupported(
-                cap, DEFAULT_WIDTH, DEFAULT_HEIGHT, FRAME_RATE_30_INT));
+            cap, DEFAULT_WIDTH, DEFAULT_HEIGHT, FRAME_RATE_30_INT));
         return 0;
     } else {
         return 0;

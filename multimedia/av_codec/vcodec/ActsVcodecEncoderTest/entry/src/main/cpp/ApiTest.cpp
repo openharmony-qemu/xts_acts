@@ -18,6 +18,7 @@
 #include <hilog/log.h>
 
 #include "include/OhosCommonTest.h"
+#include "include/SecureMemory.h"
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <multimedia/player_framework/native_avformat.h>
 #include <multimedia/player_framework/native_avcodec_videoencoder.h>
@@ -59,8 +60,9 @@ static void TestSetUpTestCase()
     }
     const char *tmpCodecName = OH_AVCapability_GetName(cap);
     if (tmpCodecName != nullptr) {
-        strncpy(g_codecName, tmpCodecName, CODEC_NAME_SIZE - 1);
-        g_codecName[CODEC_NAME_SIZE - 1] = '\0';
+        if (SecureMemcpy(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName)) != EOK) {
+            cout << "memcpy failed" << endl;
+        }
     } else {
     }
     cout << "codecname: " << g_codecName << endl;

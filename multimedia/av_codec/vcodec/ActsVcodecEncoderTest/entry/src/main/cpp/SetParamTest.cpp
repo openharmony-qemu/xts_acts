@@ -85,7 +85,8 @@ static void SetUpTestCase()
     if (cap_hevc != nullptr) {
         const char *tmpCodecNameHevc = OH_AVCapability_GetName(cap_hevc);
         if (tmpCodecNameHevc != nullptr) {
-            if (SecureMemcpy(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc)) != EOK) {
+            if (SecureMemcpy(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc,
+                strlen(tmpCodecNameHevc)) != EOK) {
                 cout << "memcpy failed" << endl;
             }
             cout << "codecname_hevc: " << g_codecNameHEVC << endl;

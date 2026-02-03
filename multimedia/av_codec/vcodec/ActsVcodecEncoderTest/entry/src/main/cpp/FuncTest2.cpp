@@ -251,7 +251,8 @@ int VideoEncodeCapability6500Test()
 
 int VideoEncodeCapability6600Test()
 {
-    ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(nullptr, DEFAULT_WIDTH, DEFAULT_HEIGHT, FRAME_RATE_30_INT));
+    ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(
+        nullptr, DEFAULT_WIDTH, DEFAULT_HEIGHT, FRAME_RATE_30_INT));
     return 0;
 }
 
@@ -259,7 +260,8 @@ int VideoEncodeCapability6700Test()
 {
     if (cap) {
         ASSERT_NE(nullptr, cap);
-        ASSERT_EQ(true, OH_AVCapability_AreVideoSizeAndFrameRateSupported(cap, DEFAULT_WIDTH, DEFAULT_HEIGHT, FRAME_RATE_30_INT));
+        ASSERT_EQ(true, OH_AVCapability_AreVideoSizeAndFrameRateSupported(
+            cap, DEFAULT_WIDTH, DEFAULT_HEIGHT, FRAME_RATE_30_INT));
         return 0;
     }
     return 0;

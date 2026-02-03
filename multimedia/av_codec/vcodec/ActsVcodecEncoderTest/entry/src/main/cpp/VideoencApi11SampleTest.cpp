@@ -15,8 +15,7 @@
 #include <arpa/inet.h>
 #include <sys/time.h>
 #include <utility>
-//#include "iconsumer_surface.h"
-//#include "native_buffer_inner.h"
+#include <random>
 #include "videoenc_api11_sample.h"
 #include <multimedia/player_framework/native_avcapability.h>
 using namespace OHOS;
@@ -87,11 +86,7 @@ static void VencFormatChanged(OH_AVCodec *codec, OH_AVFormat *format, void *user
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_PIC_HEIGHT, &g_picHeight);
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_WIDTH, &g_keyWidth);
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_HEIGHT, &g_keyHeight);
-    // OH_AVFormat_GetIntValue(
-    //                 format,
-    //                 OH_MD_KEY_VIDEO_NATIVE_BUFFER_FORMAT,
-    //                 &currentFormat);  // OH_MD_KEY_VIDEO_NATIVE_BUFFER_FORMAT not available
-    currentFormat = 0;  // Workaround
+    OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_NATIVE_BUFFER_FORMAT, &currentFormat);
     std::cout << "currentFormat:" << currentFormat << std::endl;
     enc_sample->onStreamChangedKey = currentFormat;
     cout << "format info: " << OH_AVFormat_DumpInfo(format) << ", OH_MD_KEY_VIDEO_PIC_WIDTH: " << g_picWidth
@@ -420,11 +415,7 @@ int32_t VEncAPI11Sample::CreateSurface()
     if (DEFAULT_PIX_FMT == AV_PIXEL_FORMAT_RGBA1010102) {
         ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_FORMAT, NATIVEBUFFER_PIXEL_FMT_RGBA_1010102);
     } else {
-        // ret = OH_NativeWindow_NativeWindowHandleOpt(
-        //                 nativeWindow,
-        //                 SET_FORMAT,
-        //                 GRAPHIC_PIXEL_FMT_YCBCR_420_SP);  // GRAPHIC_PIXEL_FMT not available
-        ret = AV_ERR_OK;  // Workaround
+        ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_FORMAT, GRAPHIC_PIXEL_FMT_YCBCR_420_SP);
     }
     if (ret != AV_ERR_OK) {
         cout << "NativeWindowHandleOpt SET_FORMAT fail" << endl;
@@ -637,7 +628,6 @@ uint32_t VEncAPI11Sample::FlushSurf(OHNativeWindowBuffer *ohNativeWindowBuffer, 
     rect->w = DEFAULT_WIDTH;
     rect->h = DEFAULT_HEIGHT;
     region.rects = rect;
-    // NativeWindowHandleOpt(nativeWindow, SET_UI_TIMESTAMP, GetSystemTimeUs());  // API not available
     ret = OH_NativeBuffer_Unmap(nativeBuffer);
     if (ret != 0) {
         cout << "OH_NativeBuffer_Unmap failed" << endl;
@@ -734,8 +724,7 @@ int32_t VEncAPI11Sample::InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer,
     if (fenceFd > 0) {
         close(fenceFd);
     }
-    // nativeBuffer = OH_NativeBufferFromNativeWindowBuffer(ohNativeWindowBuffer);  // API not available
-    nativeBuffer = nullptr;  // Workaround
+    nativeBuffer = nullptr;
     void *virAddr = nullptr;
     err = OH_NativeBuffer_Map(nativeBuffer, &virAddr);
     if (err != 0) {
@@ -744,14 +733,10 @@ int32_t VEncAPI11Sample::InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer,
         return 0;
     }
     dst = (uint8_t *)virAddr;
-    // const SurfaceBuffer *sbuffer =
-    //     SurfaceBuffer::NativeBufferToSurfaceBuffer(nativeBuffer);  // SurfaceBuffer not available
-    // int32_t stride = sbuffer->GetStride();  // Cannot call GetStride on nullptr
-    int32_t stride = DEFAULT_WIDTH;  // Workaround: use default width as stride
+    int32_t stride = DEFAULT_WIDTH;
     if (dst == nullptr || stride < (int32_t)DEFAULT_WIDTH) {
         cout << "invalid va or stride=" << stride << endl;
-        // err = NativeWindowCancelBuffer(nativeWindow, ohNativeWindowBuffer);  // API not available
-        err = 0;  // Workaround
+        err = 0;
         isRunning_.store(false);
         return 0;
     }
@@ -777,23 +762,20 @@ uint32_t VEncAPI11Sample::ReadOneFrameFromList(uint8_t *dst, int32_t &index)
         DEFAULT_WIDTH = fileInfos[index].width;
         DEFAULT_HEIGHT = fileInfos[index].height;
         if (setFormatRbgx) {
-            // ret = OH_NativeWindow_NativeWindowHandleOpt(
-            //                 nativeWindow,
-            //                 SET_FORMAT,
-            //                 GRAPHIC_PIXEL_FMT_RGBX_8888);  // GRAPHIC_PIXEL_FMT not available
-            ret = AV_ERR_OK;  // Workaround
+            ret = OH_NativeWindow_NativeWindowHandleOpt(
+                            nativeWindow,
+                            SET_FORMAT,
+                            GRAPHIC_PIXEL_FMT_RGBX_8888);
         } else if (setFormat8Bit) {
-            // ret = OH_NativeWindow_NativeWindowHandleOpt(
-            //                 nativeWindow,
-            //                 SET_FORMAT,
-            //                 GRAPHIC_PIXEL_FMT_YCBCR_420_SP);  // GRAPHIC_PIXEL_FMT not available
-            ret = AV_ERR_OK;  // Workaround
+            ret = OH_NativeWindow_NativeWindowHandleOpt(
+                            nativeWindow,
+                            SET_FORMAT,
+                            GRAPHIC_PIXEL_FMT_YCBCR_420_SP);
         } else if (setFormat10Bit) {
-            // ret = OH_NativeWindow_NativeWindowHandleOpt(
-            //                 nativeWindow,
-            //                 SET_FORMAT,
-            //                 GRAPHIC_PIXEL_FMT_YCBCR_P010);  // GRAPHIC_PIXEL_FMT not available
-            ret = AV_ERR_OK;  // Workaround
+            ret = OH_NativeWindow_NativeWindowHandleOpt(
+                            nativeWindow,
+                            SET_FORMAT,
+                            GRAPHIC_PIXEL_FMT_YCBCR_P010);
         } else {
             ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_FORMAT, fileInfos[index].format);
         }
@@ -881,7 +863,10 @@ void VEncAPI11Sample::RepeatStartBeforeEOS()
 
 bool VEncAPI11Sample::RandomEOS(uint32_t index)
 {
-    uint32_t random_eos = rand() % 25;
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    static std::uniform_int_distribution<uint32_t> dis(0, 24);
+    uint32_t random_eos = dis(gen);
     if (enable_random_eos && random_eos == frameCount) {
         OH_VideoEncoder_NotifyEndOfStream(venc_);
         cout << "random eos" << endl;
@@ -1479,11 +1464,7 @@ void VEncAPI11Sample::GetVideoSupportedPixelFormats()
         return;
     }
     OH_AVCapability *capability = OH_AVCodec_GetCapability(avcodecMimeType, isEncoder);
-    // OH_AVCapability_GetVideoSupportedNativeBufferFormats(
-    //                 capability,
-    //                 &pixlFormats,
-    //                 &pixlFormatNum);  // API not available
-    pixlFormatNum = 0;  // Workaround
+    OH_AVCapability_GetVideoSupportedNativeBufferFormats(capability, &pixlFormats, &pixlFormatNum);
     std::cout << "pixlFormats:" << *pixlFormats << "pixlFormatNum:" << pixlFormatNum << std::endl;
     isGetVideoSupportedPixelFormatsNum++;
 }
@@ -1496,11 +1477,7 @@ void VEncAPI11Sample::GetFormatKey()
     OH_AVFormat *format = OH_AVFormat_Create();
     OH_VideoEncoder_Configure(venc_, format);
     format = OH_VideoEncoder_GetOutputDescription(venc_);
-    // OH_AVFormat_GetIntValue(
-    //                 format,
-    //                 OH_MD_KEY_VIDEO_NATIVE_BUFFER_FORMAT,
-    //                 &firstCallBackKey);  // OH_MD_KEY_VIDEO_NATIVE_BUFFER_FORMAT not available
-    firstCallBackKey = 0;  // Workaround
+    OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_NATIVE_BUFFER_FORMAT, &firstCallBackKey);
     OH_AVFormat_Destroy(format);
     std::cout << "firstCallBackKey:" << firstCallBackKey << std::endl;
     isGetFormatKeyNum++;

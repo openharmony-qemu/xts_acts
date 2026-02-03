@@ -16,10 +16,6 @@
 #include <sys/time.h>
 #include <utility>
 #include <random>
-//#include "iconsumer_surface.h"
-//#include "openssl/crypto.h"
-//#include "openssl/sha.h"
-//#include "native_buffer_inner.h"
 #include "videoenc_sample.h"
 using namespace OHOS;
 using namespace OHOS::Media;
@@ -303,11 +299,10 @@ int32_t VEncNdkSample::CreateSurface()
         cout << "OH_VideoEncoder_GetSurface fail" << endl;
         return ret;
     }
-    // ret = OH_NativeWindow_NativeWindowHandleOpt(
-    //                 nativeWindow,
-    //                 SET_FORMAT,
-    //                 GRAPHIC_PIXEL_FMT_YCBCR_420_SP);  // GRAPHIC_PIXEL_FMT not available
-    ret = AV_ERR_OK;  // Workaround: assume success
+    ret = OH_NativeWindow_NativeWindowHandleOpt(
+                    nativeWindow,
+                    SET_FORMAT,
+                    GRAPHIC_PIXEL_FMT_YCBCR_420_SP);
     if (ret != AV_ERR_OK) {
         cout << "NativeWindowHandleOpt SET_FORMAT fail" << endl;
         return ret;
@@ -468,9 +463,7 @@ uint32_t VEncNdkSample::FlushSurf(OHNativeWindowBuffer *ohNativeWindowBuffer, OH
     rect->w = DEFAULT_WIDTH;
     rect->h = DEFAULT_HEIGHT;
     region.rects = rect;
-    // NativeWindowHandleOpt(nativeWindow, SET_UI_TIMESTAMP, GetSystemTimeUs());  // API not available
-    // int32_t err = OH_NativeBuffer_Unmap(nativeBuffer);  // OH_NativeBuffer_Unmap not available
-    int32_t err = 0;  // Workaround
+    int32_t err = OH_NativeBuffer_Unmap(nativeBuffer);
     if (err != 0) {
         cout << "OH_NativeBuffer_Unmap failed" << endl;
         return 1;
@@ -506,27 +499,19 @@ void VEncNdkSample::InputFuncSurface()
         if (fenceFd > 0) {
             close(fenceFd);
         }
-        // OH_NativeBuffer *nativeBuffer =
-        //     OH_NativeBufferFromNativeWindowBuffer(ohNativeWindowBuffer);  // API not available
-        OH_NativeBuffer *nativeBuffer = nullptr;  // Workaround
+        OH_NativeBuffer *nativeBuffer = nullptr;
         void *virAddr = nullptr;
-        // err = OH_NativeBuffer_Map(nativeBuffer, &virAddr);  // OH_NativeBuffer_Map not available
-        err = -1;  // Workaround: indicate error
+        err = -1;
         if (err != 0) {
             cout << "OH_NativeBuffer_Map failed, GSError=" << err << endl;
             isRunning_.store(false);
             break;
         }
         uint8_t *dst = (uint8_t *)virAddr;
-        // const SurfaceBuffer *sbuffer =
-        //     SurfaceBuffer::NativeBufferToSurfaceBuffer(nativeBuffer);  // SurfaceBuffer not available
-        // const void *sbuffer = nullptr;  // Workaround
-        // int stride = sbuffer->GetStride();  // Cannot call GetStride on nullptr
-        int stride = DEFAULT_WIDTH;  // Workaround: use default width as stride
+        int stride = DEFAULT_WIDTH;
         if (dst == nullptr || stride < DEFAULT_WIDTH) {
             cout << "invalid va or stride=" << stride << endl;
-            // err = NativeWindowCancelBuffer(nativeWindow, ohNativeWindowBuffer);  // API not available
-            err = 0;  // Workaround
+            err = 0;
             isRunning_.store(false);
             break;
         }

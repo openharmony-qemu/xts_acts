@@ -62,7 +62,6 @@ int SecureMemcpy(void *dest, size_t destMax, const void *src, size_t count)
     for (size_t i = 0; i < count; i++) {
         dstPtr[i] = srcPtr[i];
     }
-
     return EOK;
 }
 
