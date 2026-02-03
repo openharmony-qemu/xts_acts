@@ -328,50 +328,16 @@ export default function asyncSecTest(): void {
 
       expect(diff < 50).assertTrue();
     });
+
     /**
      * @tc.name   asyncSecTest0009
      * @tc.number ASYNC_SEC_TEST_0009
-     * @tc.desc   Verify total execution time of multiple serial awaits equals sum of individual durations
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('asyncSecTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const delayTask = async (ms: number): Promise<void> => {
-        return new Promise<void>((resolve) => {
-          setTimeout(resolve, ms);
-        });
-      };
-
-      const duration1 = 50;
-      const duration2 = 50;
-
-      // 2. Measure execution time
-      const startTime = new Date().getTime();
-
-      // Serial execution: Task 1 finishes, THEN Task 2 starts
-      await delayTask(duration1);
-      await delayTask(duration2);
-
-      const endTime = new Date().getTime();
-      const totalTime = endTime - startTime;
-
-      const expectedMin = duration1 + duration2;
-      expect(totalTime >= expectedMin).assertTrue();
-
-      // Upper bound check to ensure no excessive blocking (allow 200ms buffer)
-      expect(totalTime < expectedMin + 200).assertTrue();
-    });
-
-    /**
-     * @tc.name   asyncSecTest0010
-     * @tc.number ASYNC_SEC_TEST_0010
      * @tc.desc   Verify execution order of nested async functions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const executionLog: string[] = [];
 
       // Inner async function
@@ -403,14 +369,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0011
-     * @tc.number ASYNC_SEC_TEST_0011
+     * @tc.name   asyncSecTest0010
+     * @tc.number ASYNC_SEC_TEST_0010
      * @tc.desc   Verify 'for...of' loop with await executes strictly sequentially
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const inputs: number[] = [1, 2, 3];
       const trace: string[] = [];
 
@@ -442,53 +408,16 @@ export default function asyncSecTest(): void {
       expect(trace[4]).assertEqual('Start_3');
       expect(trace[5]).assertEqual('End_3');
     });
-    /**
-     * @tc.name   asyncSecTest0012
-     * @tc.number ASYNC_SEC_TEST_0012
-     * @tc.desc   Verify Promise.all efficiency: Total duration should be close to the longest task (Max)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('asyncSecTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const doTask = async (ms: number): Promise<number> => {
-        await new Promise<void>((resolve) => setTimeout(resolve, ms));
-        return ms;
-      };
-
-      const task1Duration = 50;
-      const task2Duration = 150;
-      const task3Duration = 50;
-
-      const startTime = new Date().getTime();
-
-      await Promise.all([
-        doTask(task1Duration),
-        doTask(task2Duration),
-        doTask(task3Duration)
-      ]);
-
-      const endTime = new Date().getTime();
-      const actualDuration = endTime - startTime;
-
-      const expectedMax = 150;
-      const serialSum = 250;
-
-      expect(actualDuration < serialSum).assertTrue();
-
-      expect(actualDuration >= expectedMax).assertTrue();
-      expect(actualDuration < expectedMax + 100).assertTrue();
-    });
 
     /**
-     * @tc.name   asyncSecTest0013
-     * @tc.number ASYNC_SEC_TEST_0013
+     * @tc.name   asyncSecTest0011
+     * @tc.number ASYNC_SEC_TEST_0011
      * @tc.desc   Verify logic correctness under high concurrency (1000+ tasks)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncSecTest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncSecTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const taskCount = 1000;
       const tasks: Promise<number>[] = [];
 
@@ -515,14 +444,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0014
-     * @tc.number ASYNC_SEC_TEST_0014
+     * @tc.name   asyncSecTest0012
+     * @tc.number ASYNC_SEC_TEST_0012
      * @tc.desc   Verify data isolation between concurrent tasks (Scope containment)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class UserSession {
         userId: number = 0;
         data: string = '';
@@ -551,14 +480,14 @@ export default function asyncSecTest(): void {
       expect(resultB).assertEqual('Bob');
     });
     /**
-     * @tc.name   asyncSecTest0015
-     * @tc.number ASYNC_SEC_TEST_0015
+     * @tc.name   asyncSecTest0013
+     * @tc.number ASYNC_SEC_TEST_0013
      * @tc.desc   Verify race condition handling: Ensure the latest call overwrites/ignores older results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class SearchState {
         lastRequestId: number = 0;
         displayValue: string = '';
@@ -587,14 +516,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0016
-     * @tc.number ASYNC_SEC_TEST_0016
+     * @tc.name   asyncSecTest0014
+     * @tc.number ASYNC_SEC_TEST_0014
      * @tc.desc   Verify concurrent update correctness using Mutex/Lock pattern
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
 
       class BankAccount {
         balance: number = 100;
@@ -641,14 +570,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0017
-     * @tc.number ASYNC_SEC_TEST_0017
+     * @tc.name   asyncSecTest0015
+     * @tc.number ASYNC_SEC_TEST_0015
      * @tc.desc   Verify re-entrancy control (prevention of overlapping execution)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class AsyncTaskManager {
         isProcessing: boolean = false;
         executionCount: number = 0;
@@ -687,14 +616,14 @@ export default function asyncSecTest(): void {
       expect(manager.executionCount).assertEqual(2);
     });
     /**
-     * @tc.name   asyncSecTest0018
-     * @tc.number ASYNC_SEC_TEST_0018
+     * @tc.name   asyncSecTest0016
+     * @tc.number ASYNC_SEC_TEST_0016
      * @tc.desc   Verify try/catch captures asynchronous exceptions thrown via await
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const asyncFailure = async (): Promise<string> => {
         await new Promise<void>((resolve) => setTimeout(resolve, 10));
         throw new Error('Network_Timeout');
@@ -716,14 +645,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0019
-     * @tc.number ASYNC_SEC_TEST_0019
+     * @tc.name   asyncSecTest0017
+     * @tc.number ASYNC_SEC_TEST_0017
      * @tc.desc   Verify try/catch captures synchronous exceptions thrown inside async functions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const syncFailure = async (): Promise<number> => {
         const x: number = 0;
         if (x === 0) {
@@ -749,14 +678,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0020
-     * @tc.number ASYNC_SEC_TEST_0020
+     * @tc.name   asyncSecTest0018
+     * @tc.number ASYNC_SEC_TEST_0018
      * @tc.desc   Verify exception bubbling from nested async functions to outer try/catch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const innerLevel = async (): Promise<void> => {
         throw new Error('Deep_Inner_Error');
       };
@@ -779,14 +708,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0021
-     * @tc.number ASYNC_SEC_TEST_0021
+     * @tc.name   asyncSecTest0019
+     * @tc.number ASYNC_SEC_TEST_0019
      * @tc.desc   Verify uncaught exception bubbling and error object accuracy (Type & Properties)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class DatabaseError extends Error {
         errorCode: number = 0;
         constructor(msg: string, code: number) {
@@ -818,14 +747,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0022
-     * @tc.number ASYNC_SEC_TEST_0022
+     * @tc.name   asyncSecTest0020
+     * @tc.number ASYNC_SEC_TEST_0020
      * @tc.desc   Verify network-related exception capture and property verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class NetworkError extends Error {
         statusCode: number = 0;
         url: string = '';
@@ -860,14 +789,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0023
-     * @tc.number ASYNC_SEC_TEST_0023
+     * @tc.name   asyncSecTest0021
+     * @tc.number ASYNC_SEC_TEST_0021
      * @tc.desc   Verify timeout exception handling using Promise.race simulation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       // A task that takes longer than the timeout limit
       const slowTask = async (): Promise<string> => {
         await new Promise<void>((resolve) => setTimeout(resolve, 100));
@@ -898,14 +827,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0024
-     * @tc.number ASYNC_SEC_TEST_0024
+     * @tc.name   asyncSecTest0022
+     * @tc.number ASYNC_SEC_TEST_0022
      * @tc.desc   Verify custom error code and message matching logic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       // Define structured business error
       class ServiceError extends Error {
         errorCode: string = '';
@@ -950,14 +879,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0025
-     * @tc.number ASYNC_SEC_TEST_0025
+     * @tc.name   asyncSecTest0023
+     * @tc.number ASYNC_SEC_TEST_0023
      * @tc.desc   Verify exception logic consistency in generic async functions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       // Generic function that validates input and throws error on demand
       const validateAndReturn = async <T>(input: T, shouldFail: boolean): Promise<T> => {
         await new Promise<void>((resolve) => setTimeout(resolve, 5));
@@ -1004,14 +933,14 @@ export default function asyncSecTest(): void {
       expect(validRes).assertEqual('Success');
     });
     /**
-     * @tc.name   asyncSecTest0026
-     * @tc.number ASYNC_SEC_TEST_0026
+     * @tc.name   asyncSecTest0024
+     * @tc.number ASYNC_SEC_TEST_0024
      * @tc.desc   Verify 'finally' block execution for resource release regardless of success or failure
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class dbConnection {
         isOpen: boolean = false;
 
@@ -1065,14 +994,14 @@ export default function asyncSecTest(): void {
      * @tc.level  LEVEL2
      */
     /**
-     * @tc.name   asyncSecTest0027
-     * @tc.number ASYNC_SEC_TEST_0027
+     * @tc.name   asyncSecTest0025
+     * @tc.number ASYNC_SEC_TEST_0025
      * @tc.desc   Verify cleanup of Timers/Locks/External resources upon exception
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class SystemLock {
         isLocked: boolean = false;
       }
@@ -1119,14 +1048,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0028
-     * @tc.number ASYNC_SEC_TEST_0028
+     * @tc.name   asyncSecTest0026
+     * @tc.number ASYNC_SEC_TEST_0026
      * @tc.desc   Verify fallback logic (Default Value/Reset State) when async fails
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class AppConfig {
         theme: string = 'light';
         retries: number = 0;
@@ -1163,14 +1092,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0029
-     * @tc.number ASYNC_SEC_TEST_0029
+     * @tc.name   asyncSecTest0027
+     * @tc.number ASYNC_SEC_TEST_0027
      * @tc.desc   Verify partial failure handling in batch tasks (Rollback successful tasks)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
     class FileStorage {
         storedFiles: string[] = [];
 
@@ -1224,14 +1153,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0030
-     * @tc.number ASYNC_SEC_TEST_0030
+     * @tc.name   asyncSecTest0028
+     * @tc.number ASYNC_SEC_TEST_0028
      * @tc.desc   Verify that inner await blocks the outer function's subsequent logic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const trace: string[] = [];
 
       const innerFunction = async (): Promise<void> => {
@@ -1258,14 +1187,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0031
-     * @tc.number ASYNC_SEC_TEST_0031
+     * @tc.name   asyncSecTest0029
+     * @tc.number ASYNC_SEC_TEST_0029
      * @tc.desc   Verify execution order of deep nested async calls (3+ layers)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const stackTrace: string[] = [];
 
       const level3 = async (): Promise<void> => {
@@ -1304,14 +1233,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0032
-     * @tc.number ASYNC_SEC_TEST_0032
+     * @tc.name   asyncSecTest0030
+     * @tc.number ASYNC_SEC_TEST_0030
      * @tc.desc   Verify execution order in mixed Nested + Concurrent scenarios
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const logs: string[] = [];
 
       const workerTask = async (name: string, delay: number): Promise<void> => {
@@ -1361,14 +1290,14 @@ export default function asyncSecTest(): void {
       expect(logs[logs.length - 1]).assertEqual('Director_End');
     });
     /**
-     * @tc.name   asyncSecTest0033
-     * @tc.number ASYNC_SEC_TEST_0033
+     * @tc.name   asyncSecTest0031
+     * @tc.number ASYNC_SEC_TEST_0031
      * @tc.desc   Verify that inner exceptions are captured by outer layers without data loss
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class PaymentError extends Error {
         transactionId: string;
         errorCode: number;
@@ -1405,14 +1334,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0034
-     * @tc.number ASYNC_SEC_TEST_0034
+     * @tc.name   asyncSecTest0032
+     * @tc.number ASYNC_SEC_TEST_0032
      * @tc.desc   Verify exception bubbling from deep nested calls to top level
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const trace: string[] = [];
 
       const deepFunction = async (): Promise<void> => {
@@ -1450,14 +1379,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0035
-     * @tc.number ASYNC_SEC_TEST_0035
+     * @tc.name   asyncSecTest0033
+     * @tc.number ASYNC_SEC_TEST_0033
      * @tc.desc   Verify impact of nested branch exception on other branches (Promise.all fail-fast)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
 
       const branchSuccess = async (): Promise<string> => {
         await new Promise<void>((resolve) => setTimeout(resolve, 50));
@@ -1484,14 +1413,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0036
-     * @tc.number ASYNC_SEC_TEST_0036
+     * @tc.name   asyncSecTest0034
+     * @tc.number ASYNC_SEC_TEST_0034
      * @tc.desc   Verify type inference and value propagation in multi-level generic async functions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class Box<T> {
         value: T;
         constructor(val: T) {
@@ -1528,14 +1457,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0037
-     * @tc.number ASYNC_SEC_TEST_0037
+     * @tc.name   asyncSecTest0035
+     * @tc.number ASYNC_SEC_TEST_0035
      * @tc.desc   Verify automatic unwrapping of nested Promises (Promise<Promise<T>> -> Promise<T>)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const returnDirect = async <T>(val: T): Promise<T> => {
         return val;
       };
@@ -1562,14 +1491,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0038
-     * @tc.number ASYNC_SEC_TEST_0038
+     * @tc.name   asyncSecTest0036
+     * @tc.number ASYNC_SEC_TEST_0036
      * @tc.desc   Verify transitivity of generic constraints (T extends Entity) in nested functions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class BaseEntity {
         id: number = 0;
         createdAt: number = 0;
@@ -1629,14 +1558,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0039
-     * @tc.number ASYNC_SEC_TEST_0039
+     * @tc.name   asyncSecTest0037
+     * @tc.number ASYNC_SEC_TEST_0037
      * @tc.desc   Verify consistency of parameters passed from outer to inner async functions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class ConfigObj {
         mode: string = '';
         active: boolean = false;
@@ -1668,14 +1597,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0040
-     * @tc.number ASYNC_SEC_TEST_0040
+     * @tc.name   asyncSecTest0038
+     * @tc.number ASYNC_SEC_TEST_0038
      * @tc.desc   Verify structure and type correctness of return values propagated from inner to outer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class UserProfile {
         id: number = 0;
         meta: Map<string, string> = new Map();
@@ -1705,14 +1634,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0041
-     * @tc.number ASYNC_SEC_TEST_0041
+     * @tc.name   asyncSecTest0039
+     * @tc.number ASYNC_SEC_TEST_0039
      * @tc.desc   Verify 'this' context binding in nested async class methods
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
 
       class AsyncCalculator {
         multiplier: number = 10;
@@ -1743,14 +1672,14 @@ export default function asyncSecTest(): void {
       expect(result2).assertEqual(100);
     });
     /**
-     * @tc.name   asyncSecTest0042
-     * @tc.number ASYNC_SEC_TEST_0042
+     * @tc.name   asyncSecTest0040
+     * @tc.number ASYNC_SEC_TEST_0040
      * @tc.desc   Verify handling of "illegal" inputs (null/undefined/NaN/Empty) without crashing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class InputWrapper {
         strVal: string | null | undefined = null;
         numVal: number = 0;
@@ -1798,14 +1727,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0043
-     * @tc.number ASYNC_SEC_TEST_0043
+     * @tc.name   asyncSecTest0041
+     * @tc.number ASYNC_SEC_TEST_0041
      * @tc.desc   Verify async calculation correctness with extreme numerical values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const asyncCalc = async (a: number, b: number): Promise<number> => {
         await new Promise<void>((resolve) => setTimeout(resolve, 5));
         return a + b;
@@ -1819,7 +1748,6 @@ export default function asyncSecTest(): void {
       const resMin = await asyncCalc(minSafe, 0);
       expect(resMin).assertEqual(minSafe);
 
-
       const overflowStart = Math.pow(2, 1024);
       const resInf = await asyncCalc(overflowStart, 0);
       expect(resInf).assertEqual(Infinity);
@@ -1829,14 +1757,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0044
-     * @tc.number ASYNC_SEC_TEST_0044
+     * @tc.name   asyncSecTest0042
+     * @tc.number ASYNC_SEC_TEST_0042
      * @tc.desc   Verify stability when parsing/transferring large data structures
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncSecTest0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncSecTest0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       class DataItem {
         id: number = 0;
         payload: string = '';
@@ -1875,14 +1803,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0045
-     * @tc.number ASYNC_SEC_TEST_0045
+     * @tc.name   asyncSecTest0043
+     * @tc.number ASYNC_SEC_TEST_0043
      * @tc.desc   Verify compatibility with special characters (symbols, escape chars, unicode)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const asyncEcho = async (input: string): Promise<string> => {
         await new Promise<void>((resolve) => setTimeout(resolve, 5));
         return input;
@@ -1905,14 +1833,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0046
-     * @tc.number ASYNC_SEC_TEST_0046
+     * @tc.name   asyncSecTest0044
+     * @tc.number ASYNC_SEC_TEST_0044
      * @tc.desc   Verify async operation throws timeout error and does not wait indefinitely
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const slowTask = async (): Promise<string> => {
         await new Promise<void>((resolve) => setTimeout(resolve, 100));
         return 'Finished_Slowly';
@@ -1954,20 +1882,19 @@ export default function asyncSecTest(): void {
           expect(e.message).assertEqual('Timeout_Occurred');
         }
 
-
         expect(duration < 80).assertTrue();
       }
     });
 
     /**
-     * @tc.name   asyncSecTest0047
-     * @tc.number ASYNC_SEC_TEST_0047
+     * @tc.name   asyncSecTest0045
+     * @tc.number ASYNC_SEC_TEST_0045
      * @tc.desc   Verify subsequent logic cancellation (cooperative cancellation) after timeout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class TaskContext {
         isCancelled: boolean = false;
         resultData: string = 'Initial';
@@ -2012,14 +1939,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0048
-     * @tc.number ASYNC_SEC_TEST_0048
+     * @tc.name   asyncSecTest0046
+     * @tc.number ASYNC_SEC_TEST_0046
      * @tc.desc   Verify retry mechanism (count and interval) upon failure/timeout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class ServiceMock {
         callCount: number = 0;
         lastCallTime: number = 0;
@@ -2072,20 +1999,19 @@ export default function asyncSecTest(): void {
 
       expect(service.callCount).assertEqual(3);
 
-
       const totalTime = new Date().getTime() - startTime;
       expect(totalTime >= 100).assertTrue();
     });
 
     /**
-     * @tc.name   asyncSecTest0049
-     * @tc.number ASYNC_SEC_TEST_0049
+     * @tc.name   asyncSecTest0047
+     * @tc.number ASYNC_SEC_TEST_0047
      * @tc.desc   Verify AbortController-like cancellation pattern throwing specific exception
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class CancelError extends Error {
         constructor(msg: string) {
           super(msg);
@@ -2138,14 +2064,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0050
-     * @tc.number ASYNC_SEC_TEST_0050
+     * @tc.name   asyncSecTest0048
+     * @tc.number ASYNC_SEC_TEST_0048
      * @tc.desc   Verify resource cleanup (locks/data) after cancellation using finally block
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class CancelError extends Error {
         constructor() { super('Aborted'); }
       }
@@ -2192,14 +2118,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0051
-     * @tc.number ASYNC_SEC_TEST_0051
+     * @tc.name   asyncSecTest0049
+     * @tc.number ASYNC_SEC_TEST_0049
      * @tc.desc   Verify full cancellation of batch async tasks (Promise.all)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class CancelSignal {
         isAborted: boolean = false;
         abort(): void { this.isAborted = true; }
@@ -2220,7 +2146,6 @@ export default function asyncSecTest(): void {
 
         tracker.completedCount++;
       };
-
 
       const tasks = [
         worker(1, 10),
@@ -2245,14 +2170,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0052
-     * @tc.number ASYNC_SEC_TEST_0052
+     * @tc.name   asyncSecTest0050
+     * @tc.number ASYNC_SEC_TEST_0050
      * @tc.desc   Verify result consistency across multiple calls (Pure Async Function)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const calculateAsync = async (base: number, exponent: number): Promise<number> => {
         await new Promise<void>((resolve) => setTimeout(resolve, 2));
         return Math.pow(base, exponent);
@@ -2284,14 +2209,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0053
-     * @tc.number ASYNC_SEC_TEST_0053
+     * @tc.name   asyncSecTest0051
+     * @tc.number ASYNC_SEC_TEST_0051
      * @tc.desc   Verify idempotency of repeated async calls (State should settle and remain consistent)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class ServiceManager {
         state: string = 'IDLE';
         initTimestamp: number = 0;
@@ -2332,14 +2257,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0054
-     * @tc.number ASYNC_SEC_TEST_0054
+     * @tc.name   asyncSecTest0052
+     * @tc.number ASYNC_SEC_TEST_0052
      * @tc.desc   Stress test: High frequency calls (1000+) to verify no degradation/leaks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('asyncSecTest0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('asyncSecTest0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const lightTask = async (index: number): Promise<number> => {
         await new Promise<void>((resolve) => setTimeout(resolve, 0));
         return index;
@@ -2369,14 +2294,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0055
-     * @tc.number ASYNC_SEC_TEST_0055
+     * @tc.name   asyncSecTest0053
+     * @tc.number ASYNC_SEC_TEST_0053
      * @tc.desc   Verify fault tolerance and retry effectiveness when dependencies are unstable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
 
       class UnstableService {
         failureThreshold: number;
@@ -2443,14 +2368,14 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncSecTest0056
-     * @tc.number ASYNC_SEC_TEST_0056
+     * @tc.name   asyncSecTest0054
+     * @tc.number ASYNC_SEC_TEST_0054
      * @tc.desc   Verify data consistency and resource competition control under multi-instance concurrent calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('asyncSecTest0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('asyncSecTest0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class Inventory {
         stock: number = 100;
         private _isLocked: boolean = false;
