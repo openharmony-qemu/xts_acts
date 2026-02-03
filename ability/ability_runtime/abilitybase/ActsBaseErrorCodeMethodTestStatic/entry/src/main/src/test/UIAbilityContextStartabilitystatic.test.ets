@@ -40,6 +40,17 @@ class AbilityStartCallbackExt implements common.AbilityStartCallback {
   onResult?: (abilityResult: common.AbilityResult) => void = (parameter: common.AbilityResult) => {
     console.log(`startAbilityByType resultCode:` + parameter.resultCode + `bundleName:` + parameter.want?.bundleName);
   }
+
+  completionHandler?: CompletionHandlerForAbilityStartCallback = {
+    onRequestSuccess: (name: string) => {
+      hilog.info(domain, tag, `startAbilityByType onRequestSuccess called,
+            name: ${JSON.stringify(name)}`);
+    },
+    onRequestFailure: (name: string, failureCode: AbilityStartFailureCode, failureMessage: string) => {
+      hilog.info(domain, tag, `startAbilityByType onRequestFailure called,
+            name: ${JSON.stringify(name)}, failureCode: ${failureCode}, failureMessage: ${failureMessage}`);
+    }
+  }
 }
 
 export default function UiAbilityContextStartAbilityStatic() {

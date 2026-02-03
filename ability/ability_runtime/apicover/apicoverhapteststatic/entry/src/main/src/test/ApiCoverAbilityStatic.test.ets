@@ -29,6 +29,8 @@ import { ElementName } from 'bundleManager.ElementName';
 import rpc from '@ohos.rpc';
 import { BusinessError } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
+import DemoProcess from '../process/AProcess';
+import childProcessManager from '@ohos.app.ability.childProcessManager';
 
 class ConnectOptions implements common.ConnectOptions {
   public isConnect: boolean = false;
@@ -497,5 +499,73 @@ export default function ApiCoverStaticTest() {
           hilog.info(domain, tag, `${itName} end`);
         }
       });
+
+    /**
+     * @tc.name   SUB_AA_ChildProcessManager_startChildProcess_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StateInfo_StartChildProcess_Static_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_ChildProcessManager_startChildProcess_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let tag = `SUB_AA_ChildProcessManager_startChildProcess_Static_0100`;
+      console.log(`${tag}, it begin`);
+      expect(0).assertEqual(childProcessManager.StartMode.SELF_FORK);
+      expect(1).assertEqual(childProcessManager.StartMode.APP_SPAWN_FORK);
+      let mode: childProcessManager.StartMode;
+      try {
+        mode = childProcessManager.StartMode.SELF_FORK;
+      } catch (err) {
+        console.log(`${tag} convert mode error, manual set 0`);
+        mode = childProcessManager.StartMode.SELF_FORK;
+      }
+
+      try {
+        childProcessManager.startChildProcess('./src/test/process/AProcess.ets', mode).then((pid) => {
+          console.log(`${tag} startChildProcess success, pid: ${pid}`);
+          done();
+        })
+        .catch((err: Error) => {
+          console.log(`${tag} startChildProcess business error, errorCode: ${err.code}, errorMsg:${err.message}`);
+          expect(err.code == 16000061).assertTrue();
+          done();
+        })
+      } catch (err) {
+        console.error(`${tag} startChildProcess error, errorCode: ${err}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_AA_ChildProcessManager_startChildProcess_AppSpawn_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StateInfo_StartChildProcess_AppSpawn_Static_0100
+     * @tc.desc   startChildProcess api cover
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_ChildProcessManager_startChildProcess_AppSpawn_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let tag = `SUB_AA_ChildProcessManager_startChildProcess_AppSpawn_Static_0100`;
+      console.log(`${tag}, it begin`);
+
+      let mode: childProcessManager.StartMode;
+      try {
+        mode = childProcessManager.StartMode.APP_SPAWN_FORK;
+      } catch (err) {
+        console.log(`${tag} convert mode error, manual set 1`);
+        mode = childProcessManager.StartMode.APP_SPAWN_FORK;
+      }
+
+      try {
+        let pid: int = await childProcessManager.startChildProcess('./src/test/process/AProcess.ets', mode);
+        console.log(`${tag} startChildProcess success, pid: ${pid}`);
+        done();
+      } catch (err) {
+        console.error(`${tag} startChildProcess error, err: ${err}`);
+        expect(err.code == 16000061).assertTrue();
+        done();
+      }
+    });
   })
 }
