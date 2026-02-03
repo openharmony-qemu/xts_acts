@@ -50,8 +50,8 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
         expect(data).not().assertUndefined();
     }
     async function openPhone() {
-        let drivers = Driver.create();
         try{
+            let drivers = Driver.create();
             console.info('[bluetooth_js] bt driver create:'+ drivers);            
             await drivers.delayMs(1000);
             await drivers.wakeUpDisplay();
