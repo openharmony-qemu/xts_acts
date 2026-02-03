@@ -11,11 +11,9 @@
     "MainAbility/pages/GestureRecognizer/RotationRecognizer",
     "MainAbility/pages/GestureRecognizer/TapRecognizer",
     "MainAbility/pages/InteractionEventBindingInfo/InteractionEventBindingInfo",
-    "MainAbility/pages/ListeningEvent/UIObserverEvent",
     "MainAbility/pages/nextFocus/nextFocus",
     "MainAbility/pages/nextFocus2/nextFocus2",
     "MainAbility/pages/onVisiable/onVisiable",
-    "MainAbility/pages/PanGesture/panGestureDistance",
-    "MainAbility/pages/PanGesture/panGestureOnOff"
+    "MainAbility/pages/PanGesture/panGestureDistance"
   ]
 }
