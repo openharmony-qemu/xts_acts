@@ -552,7 +552,7 @@ export default function VideoEncoderApiTest() {
     });
     /**
      * @tc.name VIDEO_ENCODE_API_1300
-     * @tc.number VIDEO_ENCODE_API_1200
+     * @tc.number VIDEO_ENCODE_API_1300
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

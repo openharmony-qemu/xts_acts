@@ -21,7 +21,7 @@ export default function VideoEncoderConfigureTest() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_1800
+     * @tc.name VideoEncodeHevcCapability1800Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_1800
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -35,7 +35,7 @@ export default function VideoEncoderConfigureTest() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_4000
+     * @tc.name VideoEncodeCapability4000Test
      * @tc.number VIDEO_ENCODE_CAPABILITY_4000
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -49,7 +49,7 @@ export default function VideoEncoderConfigureTest() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_4400
+     * @tc.name VideoEncodeCapability4400Test
      * @tc.number VIDEO_ENCODE_CAPABILITY_4400
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -63,7 +63,7 @@ export default function VideoEncoderConfigureTest() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_4410
+     * @tc.name VideoEncodeCapability4410Test
      * @tc.number VIDEO_ENCODE_CAPABILITY_4410
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -77,7 +77,7 @@ export default function VideoEncoderConfigureTest() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_4700
+     * @tc.name VideoEncodeCapability4700Test
      * @tc.number VIDEO_ENCODE_CAPABILITY_4700
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -91,7 +91,7 @@ export default function VideoEncoderConfigureTest() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_4710
+     * @tc.name VideoEncodeCapability4710Test
      * @tc.number VIDEO_ENCODE_CAPABILITY_4710
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -105,7 +105,7 @@ export default function VideoEncoderConfigureTest() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_5000
+     * @tc.name VideoEncodeCapability5000Test
      * @tc.number VIDEO_ENCODE_CAPABILITY_5000
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -119,7 +119,7 @@ export default function VideoEncoderConfigureTest() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_5010
+     * @tc.name VideoEncodeCapability5010Test
      * @tc.number VIDEO_ENCODE_CAPABILITY_5010
      * @tc.desc   api test
      * @tc.type   FUNCTION

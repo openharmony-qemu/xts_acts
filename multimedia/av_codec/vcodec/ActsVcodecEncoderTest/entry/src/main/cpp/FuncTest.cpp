@@ -50,6 +50,11 @@ constexpr uint32_t DEFAULT_WIDTH = 1280;
 constexpr uint32_t DEFAULT_HEIGHT = 720;
 constexpr uint32_t MAX_QUALITY = 100;
 constexpr uint32_t NO_SUPPORT_MODE = 100;
+constexpr uint32_t MAX_INSTANCES_HISI = 16;
+constexpr uint32_t MAX_INSTANCES_OTHER = 4;
+constexpr uint32_t TEST_QUALITY_VALUE = 60;
+constexpr uint32_t SLEEP_TIME_US = 1000000;
+constexpr uint32_t INVALID_INDEX = 9999999;
 } // namespace
 
 using namespace std;
@@ -96,13 +101,15 @@ static void TestSetUpTestCase()
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     const char *tmpCodecName = OH_AVCapability_GetName(cap);
-    if (memcpy_s(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName)) != 0)
+    if (memcpy_s(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName)) != 0) {
         cout << "memcpy failed" << endl;
+    }
     cout << "codecname: " << g_codecName << endl;
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     const char *tmpCodecNameHevc = OH_AVCapability_GetName(cap_hevc);
-    if (memcpy_s(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc)) != 0)
+    if (memcpy_s(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc)) != 0) {
         cout << "memcpy failed" << endl;
+    }
     cout << "codecname_hevc: " << g_codecNameHEVC << endl;
 }
 
@@ -146,9 +153,9 @@ int VideoEncodeFunction0400Test()
         }
         auto vEncSample = make_unique<VEncNdkSample>();
         vEncSample->INP_DIR = INP_DIR_720;
-        vEncSample->DEFAULT_WIDTH = 1280;
-        vEncSample->DEFAULT_HEIGHT = 720;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
         ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
@@ -169,9 +176,9 @@ int VideoEncodeFunction0500Test()
         }
         auto vEncSample = make_unique<VEncNdkSample>();
         vEncSample->INP_DIR = INP_DIR_720;
-        vEncSample->DEFAULT_WIDTH = 1280;
-        vEncSample->DEFAULT_HEIGHT = 720;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->SURF_INPUT = true;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -193,9 +200,9 @@ int VideoEncodeFunction0600Test()
         }
         auto vEncSample = make_unique<VEncNdkSample>();
         vEncSample->INP_DIR = INP_DIR_720;
-        vEncSample->DEFAULT_WIDTH = 1280;
-        vEncSample->DEFAULT_HEIGHT = 720;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->enableForceIDR = true;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -474,7 +481,7 @@ int VideoEncodeFunction1100Test()
             ASSERT_NE(nullptr, venc_);
             format = OH_AVFormat_Create();
             ASSERT_EQ(true, OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, CBR));
-            ASSERT_EQ(true, OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, 1000000));
+            ASSERT_EQ(true, OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE));
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[0]);
@@ -527,7 +534,7 @@ int VideoEncodeFunction1600Test()
         ASSERT_NE(nullptr, venc_);
         format = OH_AVFormat_Create();
         ASSERT_EQ(true, OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, CQ));
-        ASSERT_EQ(true, OH_AVFormat_SetIntValue(format, OH_MD_KEY_QUALITY, 60));
+        ASSERT_EQ(true, OH_AVFormat_SetIntValue(format, OH_MD_KEY_QUALITY, TEST_QUALITY_VALUE));
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_YUVI420);
@@ -552,9 +559,9 @@ int VideoEncodeFunction1700Test()
         }
         auto vEncSample = make_unique<VEncNdkSample>();
         vEncSample->INP_DIR = INP_DIR_720;
-        vEncSample->DEFAULT_WIDTH = 1280;
-        vEncSample->DEFAULT_HEIGHT = 720;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->enable_random_eos = true;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -577,9 +584,9 @@ int VideoEncodeFunction1800Test()
         }
         auto vEncSample = make_unique<VEncNdkSample>();
         vEncSample->INP_DIR = INP_DIR_720;
-        vEncSample->DEFAULT_WIDTH = 1280;
-        vEncSample->DEFAULT_HEIGHT = 720;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
         ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
@@ -601,9 +608,9 @@ int VideoEncodeFunction2000Test()
         }
         auto vEncSample = make_unique<VEncNdkSample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/test.rgba";
-        vEncSample->DEFAULT_WIDTH = 1280;
-        vEncSample->DEFAULT_HEIGHT = 720;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -626,9 +633,9 @@ int VideoEncodeFunction1900Test()
         }
         auto vEncSample = make_unique<VEncNdkSample>();
         vEncSample->INP_DIR = INP_DIR_720;
-        vEncSample->DEFAULT_WIDTH = 1280;
-        vEncSample->DEFAULT_HEIGHT = 720;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->SURF_INPUT = true;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -750,9 +757,9 @@ int VideoEncodeCapability1300Test()
 
         string codecName = OH_AVCapability_GetName(cap);
         if (codecName == "OMX.hisi.video.encoder.avc") {
-            ASSERT_EQ(16, OH_AVCapability_GetMaxSupportedInstances(cap));
+            ASSERT_EQ(MAX_INSTANCES_HISI, OH_AVCapability_GetMaxSupportedInstances(cap));
         } else {
-            ASSERT_EQ(4, OH_AVCapability_GetMaxSupportedInstances(cap));
+            ASSERT_EQ(MAX_INSTANCES_OTHER, OH_AVCapability_GetMaxSupportedInstances(cap));
         }
         return 0;
     } else {
@@ -768,9 +775,9 @@ int VideoEncodeCapability1310Test()
 
         string codecName = OH_AVCapability_GetName(cap);
         if (codecName == "OMX.hisi.video.encoder.hevc") {
-            ASSERT_EQ(16, OH_AVCapability_GetMaxSupportedInstances(cap));
+            ASSERT_EQ(MAX_INSTANCES_HISI, OH_AVCapability_GetMaxSupportedInstances(cap));
         } else {
-            ASSERT_EQ(4, OH_AVCapability_GetMaxSupportedInstances(cap));
+            ASSERT_EQ(MAX_INSTANCES_OTHER, OH_AVCapability_GetMaxSupportedInstances(cap));
         }
         return 0;
     } else {

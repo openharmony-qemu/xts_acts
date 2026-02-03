@@ -26,16 +26,12 @@
 #include <queue>
 #include <string>
 #include <unordered_map>
-//#include <securec.h>
 #include <multimedia/player_framework/native_avcodec_videoencoder.h>
 #include "nocopyable.h"
 #include <multimedia/player_framework/native_avbuffer.h>
 #include <multimedia/player_framework/native_avformat.h>
 #include <multimedia/player_framework/native_averrors.h>
 #include <multimedia/player_framework/native_avcapability.h>
-//#include "surface/window.h"
-//#include "media_description.h"
-//#include "av_common.h"
 #include <native_window/external_window.h>
 #include <native_buffer/native_buffer.h>
 namespace OHOS {

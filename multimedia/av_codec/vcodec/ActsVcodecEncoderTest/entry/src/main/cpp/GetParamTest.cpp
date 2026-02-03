@@ -36,6 +36,7 @@ char g_codecNameHEVC[CODEC_NAME_SIZE] = {};
 const char *INP_DIR_720 = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
 constexpr uint32_t DEFAULT_WIDTH = 1280;
 constexpr uint32_t DEFAULT_HEIGHT = 720;
+constexpr double DEFAULT_FRAME_RATE = 30.0;
 } // namespace
 
 using namespace std;
@@ -54,13 +55,15 @@ static void SetUpTestCase()
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     const char *tmpCodecName = OH_AVCapability_GetName(cap);
-    if (memcpy_s(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName)) != 0)
+    if (memcpy_s(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName)) != 0) {
         cout << "memcpy failed" << endl;
+    }
     cout << "codecname: " << g_codecName << endl;
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     const char *tmpCodecNameHevc = OH_AVCapability_GetName(cap_hevc);
-    if (memcpy_s(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc)) != 0)
+    if (memcpy_s(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc)) != 0) {
         cout << "memcpy failed" << endl;
+    }
     cout << "codecname_hevc: " << g_codecNameHEVC << endl;
 }
 static void TearDownTestCase() {}
@@ -81,7 +84,7 @@ int VideoEncodeMseQp0100Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE = DEFAULT_BITRATE;
         vEncSample->getQpMse = true;
         vEncSample->SURF_INPUT = false;
@@ -92,9 +95,8 @@ int VideoEncodeMseQp0100Test()
         ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
         vEncSample->WaitForEOS();
         ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
-}
-    else {
+        return 0;
+    } else {
         return 0;
     }
 }
@@ -107,7 +109,7 @@ int VideoEncodeMseQp0200Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE = DEFAULT_BITRATE;
         vEncSample->getQpMse = true;
         vEncSample->SURF_INPUT = true;
@@ -132,7 +134,7 @@ int VideoEncodeMseQp0300Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE = DEFAULT_BITRATE;
         vEncSample->getQpMse = true;
         vEncSample->SURF_INPUT = false;
@@ -157,7 +159,7 @@ int VideoEncodeMseQp0400Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE = DEFAULT_BITRATE;
         vEncSample->getQpMse = true;
         vEncSample->SURF_INPUT = true;

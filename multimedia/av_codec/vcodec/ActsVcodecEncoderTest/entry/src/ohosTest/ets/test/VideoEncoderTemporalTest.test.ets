@@ -95,7 +95,7 @@ export default function VideoEncoderTemporalTest() {
     });
 
     /**
-     * @tc.name VIDEO_TEMPORAL_ENCODE_API_0020
+     * @tc.name VideoTemporalEncodeApi0020Test
      * @tc.number VIDEO_TEMPORAL_ENCODE_API_0020
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -109,7 +109,7 @@ export default function VideoEncoderTemporalTest() {
     });
 
     /**
-     * @tc.name VIDEO_TEMPORAL_ENCODE_API_0030
+     * @tc.name VideoTemporalEncodeApi0030Test
      * @tc.number VIDEO_TEMPORAL_ENCODE_API_0030
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -123,7 +123,7 @@ export default function VideoEncoderTemporalTest() {
     });
 
     /**
-     * @tc.name VIDEO_TEMPORAL_ENCODE_FUNCTION_0010
+     * @tc.name VideoTemporalEncodeFunction0010Test
      * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0010
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -137,7 +137,7 @@ export default function VideoEncoderTemporalTest() {
     });
 
     /**
-     * @tc.name VIDEO_TEMPORAL_ENCODE_FUNCTION_0020
+     * @tc.name VideoTemporalEncodeFunction0020Test
      * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0020
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -151,7 +151,7 @@ export default function VideoEncoderTemporalTest() {
     });
 
     /**
-     * @tc.name VIDEO_TEMPORAL_ENCODE_FUNCTION_0100
+     * @tc.name VideoTemporalEncodeFunction0100Test
      * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0100
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -165,7 +165,7 @@ export default function VideoEncoderTemporalTest() {
     });
 
     /**
-     * @tc.name VIDEO_TEMPORAL_ENCODE_FUNCTION_0140
+     * @tc.name VideoTemporalEncodeFunction0140Test
      * @tc.number VIDEO_TEMPORAL_ENCODE_FUNCTION_0140
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -179,7 +179,7 @@ export default function VideoEncoderTemporalTest() {
     });
 
     /**
-     * @tc.name VIDEO_UNIFORMLY_ENCODE_FUNCTION_0100
+     * @tc.name VideoUniformlyEncodeFunction0100Test
      * @tc.number VIDEO_UNIFORMLY_ENCODE_FUNCTION_0100
      * @tc.desc   func test
      * @tc.type   FUNCTION
@@ -193,7 +193,7 @@ export default function VideoEncoderTemporalTest() {
     });
 
     /**
-     * @tc.name VIDEO_UNIFORMLY_ENCODE_FUNCTION_0200
+     * @tc.name VideoUniformlyEncodeFunction0200Test
      * @tc.number VIDEO_UNIFORMLY_ENCODE_FUNCTION_0200
      * @tc.desc   func test
      * @tc.type   FUNCTION
@@ -207,7 +207,7 @@ export default function VideoEncoderTemporalTest() {
     });
 
     /**
-     * @tc.name VIDEO_UNIFORMLY_ENCODE_FUNCTION_0300
+     * @tc.name VideoUniformlyEncodeFunction0300Test
      * @tc.number VIDEO_UNIFORMLY_ENCODE_FUNCTION_0300
      * @tc.desc   func test
      * @tc.type   FUNCTION
@@ -221,7 +221,7 @@ export default function VideoEncoderTemporalTest() {
     });
 
     /**
-     * @tc.name VIDEO_UNIFORMLY_ENCODE_FUNCTION_0400
+     * @tc.name VideoUniformlyEncodeFunction0400Test
      * @tc.number VIDEO_UNIFORMLY_ENCODE_FUNCTION_0400
      * @tc.desc   func test
      * @tc.type   FUNCTION
@@ -235,7 +235,7 @@ export default function VideoEncoderTemporalTest() {
     });
 
     /**
-     * @tc.name VIDEO_UNIFORMLY_ENCODE_FUNCTION_0500
+     * @tc.name VideoUniformlyEncodeFunction0500Test
      * @tc.number VIDEO_UNIFORMLY_ENCODE_FUNCTION_0500
      * @tc.desc   func test
      * @tc.type   FUNCTION

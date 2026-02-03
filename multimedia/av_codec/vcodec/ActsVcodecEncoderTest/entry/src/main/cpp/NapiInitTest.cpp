@@ -104,10 +104,10 @@ static napi_value RunTestAsync(napi_env env,
     napi_create_string_utf8(env, "VideoEncoderTest", NAPI_AUTO_LENGTH, &resourceName);
 
     napi_create_async_work(env, nullptr, resourceName,
-                          ExecuteTestAsync,
-                          CompleteTestAsync,
-                          context,
-                          &context->work);
+        ExecuteTestAsync,
+        CompleteTestAsync,
+        context,
+        &context->work);
 
     napi_queue_async_work(env, context->work);
 
@@ -115,7 +115,8 @@ static napi_value RunTestAsync(napi_env env,
 }
 
 // ==================== ApiTest Module ====================
-static const std::vector<TestFunction>& GetApiTestFunctions() {
+static const std::vector<TestFunction>& GetApiTestFunctions()
+{
     static const std::vector<TestFunction> functions = {
     VideoEncodeIllegalPara0100Test,
     VideoEncodeIllegalPara0200Test,
@@ -184,7 +185,8 @@ static napi_value RunApiTest(napi_env env, napi_callback_info info)
 }
 
 // ==================== FuncTest Module (前66个函数) ====================
-static const std::vector<TestFunction>& GetFuncTestFunctions() {
+static const std::vector<TestFunction>& GetFuncTestFunctions()
+{
     static const std::vector<TestFunction> functions = {
     VideoEncodeFunction0100Test,
     // VideoEncodeFunction0200Test,  // DISABLED: Uses SURF_INPUT
@@ -272,7 +274,8 @@ static napi_value RunFuncTest(napi_env env, napi_callback_info info)
 }
 
 // ==================== FuncTest2 Module (后67个函数) ====================
-static const std::vector<TestFunction>& GetFuncTest2Functions() {
+static const std::vector<TestFunction>& GetFuncTest2Functions()
+{
     static const std::vector<TestFunction> functions = {
     VideoEncodeCapability5100Test,
     VideoEncodeCapability5200Test,
@@ -356,7 +359,8 @@ static napi_value RunFuncTest2(napi_env env, napi_callback_info info)
 }
 
 // ==================== ConfigureTest Module ====================
-static const std::vector<TestFunction>& GetConfigureTestFunctions() {
+static const std::vector<TestFunction>& GetConfigureTestFunctions()
+{
     static const std::vector<TestFunction> functions = {
     VideoEncodeHevcCapability1800Test,
     VideoEncodeCapability4000Test,
@@ -383,7 +387,8 @@ static napi_value RunConfigureTest(napi_env env, napi_callback_info info)
 }
 
 // ==================== GetparamTest Module ====================
-static const std::vector<TestFunction>& GetGetparamTestFunctions() {
+static const std::vector<TestFunction>& GetGetparamTestFunctions()
+{
     // 只保留不使用 SURF_INPUT 的测试函数（HAP 模式下 Surface API 不完整）
     static const std::vector<TestFunction> functions = {
     VideoEncodeMseQp0100Test,
@@ -405,7 +410,8 @@ static napi_value RunGetparamTest(napi_env env, napi_callback_info info)
 }
 
 // ==================== SetparamTest Module ====================
-static const std::vector<TestFunction>& GetSetparamTestFunctions() {
+static const std::vector<TestFunction>& GetSetparamTestFunctions()
+{
     static const std::vector<TestFunction> functions = {
     RESET_BITRATE_001Test,
     RESET_BITRATE_002Test,
@@ -495,7 +501,8 @@ static napi_value RunSetparamTest(napi_env env, napi_callback_info info)
 }
 
 // ==================== StateTest Module ====================
-static const std::vector<TestFunction>& GetStateTestFunctions() {
+static const std::vector<TestFunction>& GetStateTestFunctions()
+{
     static const std::vector<TestFunction> functions = {
     VideoEncodeState0100Test,
     VideoEncodeState0101Test,
@@ -555,7 +562,8 @@ static napi_value RunStateTest(napi_env env, napi_callback_info info)
 }
 
 // ==================== TemporalTest Module ====================
-static const std::vector<TestFunction>& GetTemporalTestFunctions() {
+static const std::vector<TestFunction>& GetTemporalTestFunctions()
+{
     // 只保留不使用 SURF_INPUT 的测试函数（HAP 模式下 Surface API 不完整）
     static const std::vector<TestFunction> functions = {
     VideoTemporalEncodeApi0020Test,
@@ -586,7 +594,8 @@ static napi_value RunTemporalTest(napi_env env, napi_callback_info info)
 }
 
 // ==================== Func2Test Module ====================
-static const std::vector<TestFunction>& GetFunc2TestFunctions() {
+static const std::vector<TestFunction>& GetFunc2TestFunctions()
+{
     static const std::vector<TestFunction> functions = {
     VideoEncodeHevcCapability3100Test,
     VideoEncodeHevcCapability3200Test,

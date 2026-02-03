@@ -20,24 +20,11 @@ extern int VideoTemporalEncodeApi0020Test();
 extern int VideoTemporalEncodeApi0030Test();
 extern int VideoTemporalEncodeFunction0010Test();
 extern int VideoTemporalEncodeFunction0020Test();
-// SURF_INPUT NOT SUPPORTED - 以下函数使用 Surface 输入模式，HAP 模式下暂不支持
-// extern int VideoTemporalEncodeFunction0030Test();
-// extern int VideoTemporalEncodeFunction0040Test();
 extern int VideoTemporalEncodeFunction0440Test();
-// extern int VideoTemporalEncodeFunction0050Test();
-// extern int VideoTemporalEncodeFunction0060Test();
-// extern int VideoTemporalEncodeFunction0070Test();
-// extern int VideoTemporalEncodeFunction0080Test();
-// extern int VideoTemporalEncodeFunction0090Test();
 extern int VideoTemporalEncodeFunction0100Test();
 extern int VideoTemporalEncodeFunction0110Test();
-// extern int VideoTemporalEncodeFunction0120Test();
-// extern int VideoTemporalEncodeFunction0130Test();
 extern int VideoTemporalEncodeFunction0140Test();
 extern int VideoTemporalEncodeFunction0150Test();
-// extern int VideoTemporalEncodeFunction0160Test();
-// extern int VideoTemporalEncodeFunction0170Test();
-// extern int VideoTemporalEncodeFunction0180Test();
 extern int VideoUniformlyEncodeFunction0100Test();
 extern int VideoUniformlyEncodeFunction0200Test();
 extern int VideoUniformlyEncodeFunction0300Test();
@@ -45,9 +32,6 @@ extern int VideoUniformlyEncodeFunction0400Test();
 extern int VideoUniformlyEncodeFunction0500Test();
 extern int VideoUniformlyEncodeFunction0600Test();
 extern int VideoUniformlyEncodeFunction0700Test();
-// extern int VideoUniformlyEncodeFunction0800Test();
-// extern int VideoUniformlyEncodeFunction0900Test();
-// extern int VideoUniformlyEncodeFunction1000Test();
 
 extern void InitTemporalTest();
 

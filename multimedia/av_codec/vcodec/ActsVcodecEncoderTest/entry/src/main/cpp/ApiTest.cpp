@@ -37,9 +37,14 @@ static OH_AVCodec *venc_ = nullptr;
 static OH_AVFormat *format = nullptr;
 
 namespace {
-constexpr uint32_t DEFAULT_WIDTH = 1920;
-constexpr uint32_t DEFAULT_HEIGHT = 1080;
+constexpr uint32_t VIDEO_WIDTH_1080P = 1920;
+constexpr uint32_t VIDEO_HEIGHT_1080P = 1080;
+constexpr uint32_t DEFAULT_WIDTH = VIDEO_WIDTH_1080P;
+constexpr uint32_t DEFAULT_HEIGHT = VIDEO_HEIGHT_1080P;
 constexpr uint32_t CODEC_NAME_SIZE = 128;
+constexpr uint32_t SLEEP_TIME_1S_US = 1000000;
+constexpr uint32_t INVALID_INDEX_LARGE = 9999999;
+constexpr uint32_t INVALID_INDEX_99999 = 99999;
 char g_codecName[CODEC_NAME_SIZE] = {};
 OH_AVCapability *cap = nullptr;
 OHOS::Media::VEncSignal *signal_ = nullptr;
@@ -323,8 +328,8 @@ int VideoEncodeIllegalPara2300Test()
             ret = OH_VideoEncoder_Configure(venc_, format);
             ASSERT_EQ(ret, AV_ERR_OK);
             ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Start(venc_));
-            usleep(1000000);
-            ret = OH_VideoEncoder_FreeOutputData(venc_, 9999999);
+            usleep(SLEEP_TIME_1S_US);
+            ret = OH_VideoEncoder_FreeOutputData(venc_, INVALID_INDEX_LARGE);
             ASSERT_EQ(ret, AV_ERR_INVALID_STATE);
             return 0;
         }
@@ -390,7 +395,7 @@ int VideoEncodeIllegalPara2800Test()
         attr.size = 0;
         attr.offset = 0;
         attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
-        ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_PushInputData(nullptr, 99999, attr));
+        ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_PushInputData(nullptr, INVALID_INDEX_99999, attr));
         return 0;
     } else {
         return 0;

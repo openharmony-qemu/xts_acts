@@ -46,6 +46,12 @@ char g_codecNameHEVC[CODEC_NAME_SIZE] = {};
 const char *INP_DIR_720 = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
 constexpr uint32_t DEFAULT_WIDTH = 1280;
 constexpr uint32_t DEFAULT_HEIGHT = 720;
+constexpr double DEFAULT_FRAME_RATE = 30.0;
+constexpr uint32_t QP_MAX_200 = 200;
+constexpr uint32_t EXPECTED_FRAME_COUNT_25 = 25;
+constexpr uint32_t COLOR_PRIMARIES_100 = 100;
+constexpr uint32_t TRANSFER_CHARACTERISTICS_10000 = 10000;
+constexpr uint32_t MATRIX_COEFFICIENTS_10000 = 10000;
 } // namespace
 
 using namespace std;
@@ -105,7 +111,7 @@ int RESET_BITRATE_001Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
         ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
@@ -131,7 +137,7 @@ int RESET_BITRATE_002Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
         vEncSample->OUT_DIR = "/data/test/media/CQ_1s_.h264";
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
@@ -157,7 +163,7 @@ int RESET_BITRATE_003Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE_MODE = CBR;
         vEncSample->DEFAULT_KEY_FRAME_INTERVAL = -1;
         vEncSample->enableAutoSwitchParam = true;
@@ -183,7 +189,7 @@ int RESET_BITRATE_004Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE_MODE = CBR;
         vEncSample->DEFAULT_KEY_FRAME_INTERVAL = 0;
         vEncSample->enableAutoSwitchParam = true;
@@ -209,7 +215,7 @@ int RESET_BITRATE_005Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE_MODE = CBR;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetBitrate = true;
@@ -234,7 +240,7 @@ int RESET_BITRATE_006Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE_MODE = VBR;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetBitrate = true;
@@ -259,7 +265,7 @@ int RESET_BITRATE_007Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
         ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
@@ -285,7 +291,7 @@ int RESET_BITRATE_008Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
         vEncSample->OUT_DIR = "/data/test/media/CQ_1s_.h265";
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
@@ -311,7 +317,7 @@ int RESET_BITRATE_009Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE_MODE = CBR;
         vEncSample->DEFAULT_KEY_FRAME_INTERVAL = -1;
         vEncSample->enableAutoSwitchParam = true;
@@ -337,7 +343,7 @@ int RESET_BITRATE_010Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE_MODE = CBR;
         vEncSample->DEFAULT_KEY_FRAME_INTERVAL = 0;
         vEncSample->enableAutoSwitchParam = true;
@@ -363,7 +369,7 @@ int RESET_BITRATE_011Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE_MODE = CBR;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetBitrate = true;
@@ -388,7 +394,7 @@ int RESET_BITRATE_012Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE_MODE = VBR;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetBitrate = true;
@@ -412,7 +418,7 @@ int RESET_FRAMERATE_001Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -437,7 +443,7 @@ int RESET_FRAMERATE_012Test()
             vEncSample->INP_DIR = INP_DIR_720;
             vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
             vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-            vEncSample->DEFAULT_FRAME_RATE = 30;
+            vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
             vEncSample->DEFAULT_BITRATE_MODE = CQ;
             ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
             ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -464,7 +470,7 @@ int RESET_FRAMERATE_013Test()
             vEncSample->INP_DIR = INP_DIR_720;
             vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
             vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-            vEncSample->DEFAULT_FRAME_RATE = 30;
+            vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
             vEncSample->DEFAULT_BITRATE_MODE = CQ;
             ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
             ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -489,7 +495,7 @@ int RESET_FRAMERATE_014Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -512,7 +518,7 @@ int RESET_FRAMERATE_002Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetFrameRate = true;
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
@@ -536,7 +542,7 @@ int RESET_FRAMERATE_003Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetFrameRate = true;
         vEncSample->DEFAULT_KEY_FRAME_INTERVAL = -1;
@@ -562,7 +568,7 @@ int RESET_FRAMERATE_004Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetFrameRate = true;
         vEncSample->DEFAULT_KEY_FRAME_INTERVAL = 0;
@@ -588,7 +594,7 @@ int RESET_FRAMERATE_005Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetFrameRate = true;
         vEncSample->DEFAULT_BITRATE_MODE = CBR;
@@ -613,7 +619,7 @@ int RESET_FRAMERATE_006Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetFrameRate = true;
         vEncSample->DEFAULT_BITRATE_MODE = VBR;
@@ -637,7 +643,7 @@ int RESET_FRAMERATE_007Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetFrameRate = true;
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
@@ -661,7 +667,7 @@ int RESET_FRAMERATE_008Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetFrameRate = true;
         vEncSample->DEFAULT_KEY_FRAME_INTERVAL = -1;
@@ -687,7 +693,7 @@ int RESET_FRAMERATE_009Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetFrameRate = true;
         vEncSample->DEFAULT_KEY_FRAME_INTERVAL = 0;
@@ -713,7 +719,7 @@ int RESET_FRAMERATE_010Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetFrameRate = true;
         vEncSample->DEFAULT_BITRATE_MODE = CBR;
@@ -738,7 +744,7 @@ int RESET_FRAMERATE_011Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetFrameRate = true;
         vEncSample->DEFAULT_BITRATE_MODE = VBR;
@@ -762,7 +768,7 @@ int RESET_QP_001Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -774,8 +780,8 @@ int RESET_QP_001Test()
         EXPECT_EQ(AV_ERR_INVALID_VAL, vEncSample->SetParameter(format));
         OH_AVFormat_Destroy(format);
         format = OH_AVFormat_Create();
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_QP_MAX, 200);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_QP_MIN, 200);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_QP_MAX, QP_MAX_200);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_QP_MIN, QP_MAX_200);
         EXPECT_EQ(AV_ERR_INVALID_VAL, vEncSample->SetParameter(format));
         OH_AVFormat_Destroy(format);
         vEncSample->WaitForEOS();
@@ -791,7 +797,7 @@ int RESET_QP_002Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -803,8 +809,8 @@ int RESET_QP_002Test()
         EXPECT_EQ(AV_ERR_INVALID_VAL, vEncSample->SetParameter(format));
         OH_AVFormat_Destroy(format);
         format = OH_AVFormat_Create();
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_QP_MAX, 200);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_QP_MIN, 200);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_QP_MAX, QP_MAX_200);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_QP_MIN, QP_MAX_200);
         EXPECT_EQ(AV_ERR_INVALID_VAL, vEncSample->SetParameter(format));
         OH_AVFormat_Destroy(format);
         vEncSample->WaitForEOS();
@@ -1347,9 +1353,9 @@ int COLORSPACE_CONFIG_001Test()
         vEncSample->DEFAULT_BITRATE_MODE = VBR;
         vEncSample->DEFAULT_RANGE_FLAG = 1;
         vEncSample->enableColorSpaceParams = true;
-        vEncSample->DEFAULT_COLOR_PRIMARIES = 100;
-        vEncSample->DEFAULT_TRANSFER_CHARACTERISTICS = 10000;
-        vEncSample->DEFAULT_MATRIX_COEFFICIENTS = 10000;
+        vEncSample->DEFAULT_COLOR_PRIMARIES = COLOR_PRIMARIES_100;
+        vEncSample->DEFAULT_TRANSFER_CHARACTERISTICS = TRANSFER_CHARACTERISTICS_10000;
+        vEncSample->DEFAULT_MATRIX_COEFFICIENTS = MATRIX_COEFFICIENTS_10000;
         vEncSample->OUT_DIR = "/data/test/media/vbr_i.h264";
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -1772,14 +1778,14 @@ int FRAMENUM_JUDGMENT_001Test()
             vEncSample->OUT_DIR = "/data/test/media/1280_720_nv.h264";
             vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
             vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-            vEncSample->DEFAULT_FRAME_RATE = 30;
+            vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
             vEncSample->DEFAULT_BITRATE_MODE = CQ;
             ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
             ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
             ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
             ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
             vEncSample->WaitForEOS();
-            ASSERT_EQ(25, vEncSample->outCount);
+            ASSERT_EQ(EXPECTED_FRAME_COUNT_25, vEncSample->outCount);
             ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
             return 0;
         }
@@ -1795,14 +1801,14 @@ int FRAMENUM_JUDGMENT_002Test()
         vEncSample->OUT_DIR = "/data/test/media/EN_1280_720_nv.h265";
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 30;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
         ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
         ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
         vEncSample->WaitForEOS();
-        ASSERT_EQ(25, vEncSample->outCount);
+        ASSERT_EQ(EXPECTED_FRAME_COUNT_25, vEncSample->outCount);
         ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
     return 0;
 }

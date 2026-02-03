@@ -24,9 +24,6 @@
 #include "videoenc_sample.h"
 #include "videoenc_api11_sample.h"
 #include "avcodec_codec_name.h"
-//#include "avcodec_info.h"
-//#include "avcodec_list.h"
-//#include "avcodec_common.h"
 #include "include/OhosCommonTest.h"
 #include <hilog/log.h>
 
@@ -49,6 +46,17 @@ char g_codecName[CODEC_NAME_SIZE] = {};
 char g_codecNameHEVC[CODEC_NAME_SIZE] = {};
 constexpr uint32_t DEFAULT_WIDTH = 1280;
 constexpr uint32_t DEFAULT_HEIGHT = 720;
+constexpr uint32_t VIDEO_WIDTH_1080P = 1920;
+constexpr uint32_t VIDEO_HEIGHT_1080P = 1080;
+constexpr uint32_t VIDEO_WIDTH_4K = 4096;
+constexpr uint32_t VIDEO_HEIGHT_4K = 4096;
+constexpr uint32_t VIDEO_WIDTH_QCIF = 176;
+constexpr uint32_t VIDEO_HEIGHT_QCIF = 144;
+constexpr uint32_t SYNC_WAIT_TIME_100MS = 100000;
+constexpr uint32_t INDEX_OFFSET_100 = 100;
+constexpr uint32_t TEMPORAL_GOP_SIZE_8 = 8;
+constexpr uint32_t LTR_COUNT_5 = 5;
+constexpr uint32_t LTR_INTERVAL_5 = 5;
 } // namespace
 
 using namespace std;
@@ -95,13 +103,15 @@ static void SetUpTestCase()
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     const char *tmpCodecName = OH_AVCapability_GetName(cap);
-    if (memcpy_s(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName) + 1) != 0)
+    if (memcpy_s(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName) + 1) != 0) {
         cout << "memcpy failed" << endl;
+    }
     cout << "codecname: " << g_codecName << endl;
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     const char *tmpCodecNameHevc = OH_AVCapability_GetName(cap_hevc);
-    if (memcpy_s(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc) + 1) != 0)
+    if (memcpy_s(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc) + 1) != 0) {
         cout << "memcpy failed" << endl;
+    }
     cout << "codecname_hevc: " << g_codecNameHEVC << endl;
 }
 static void TearDownTestCase() {}
@@ -242,11 +252,11 @@ int VideoEncodeHevcCapability3800Test()
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap) {
-        OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory
-        (OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+        OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(
+            OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
         ASSERT_NE(nullptr, capability);
-        bool result = OH_AVCapability_AreVideoSizeAndFrameRateSupported
-            (capability, DEFAULT_WIDTH, DEFAULT_HEIGHT, 0);
+        bool result = OH_AVCapability_AreVideoSizeAndFrameRateSupported(
+            capability, DEFAULT_WIDTH, DEFAULT_HEIGHT, 0);
         ASSERT_EQ(false, result);
         return 0;
     } else {
@@ -258,8 +268,8 @@ int VideoEncodeHevcCapability3900Test()
 {
     if (cap) {
         ASSERT_NE(nullptr, cap);
-        ASSERT_EQ(true, OH_AVCapability_AreVideoSizeAndFrameRateSupported
-            (cap, DEFAULT_WIDTH, DEFAULT_HEIGHT, 30));
+        ASSERT_EQ(true, OH_AVCapability_AreVideoSizeAndFrameRateSupported(
+            cap, DEFAULT_WIDTH, DEFAULT_HEIGHT, 30));
         return 0;
     } else {
         return 0;
@@ -578,7 +588,7 @@ int VideoEncodeCapability8900Test()
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[0]);
             if (!strcmp(g_codecName, "OMX.hisi.video.encoder.avc")) {
                 EXPECT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_Configure(venc_, format));
-            }else {
+            } else {
                 ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
             }
             OH_AVFormat_Destroy(format);
@@ -627,7 +637,7 @@ int VideoEncodeHevcCapability5500Test()
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV21);
         if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
             EXPECT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
-        }else {
+        } else {
             ASSERT_EQ(AV_ERR_UNSUPPORT, OH_VideoEncoder_Configure(venc_, format));
         }
         OH_AVFormat_Destroy(format);
@@ -701,7 +711,7 @@ int VideoEncodeHevcCapability5800Test()
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
         if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
             EXPECT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_Configure(venc_, format));
-        }else {
+        } else {
             ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
         }
         OH_AVFormat_Destroy(format);
@@ -885,7 +895,7 @@ int VideoEncodeSyncFunc0100Test()
         ASSERT_EQ(AV_ERR_OK, vEncSample->Start());
         uint32_t index = 0;
         ASSERT_EQ(AV_ERR_OK, vEncSample->QueryInputBuffer(index, -1));
-        ASSERT_EQ(nullptr, vEncSample->GetInputBuffer(index+100));
+        ASSERT_EQ(nullptr, vEncSample->GetInputBuffer(index+INDEX_OFFSET_100));
     }
     return 0;
 }
@@ -1024,8 +1034,8 @@ int VideoEncodeSyncFunc0210Test()
 int VideoEncodeSyncFunc0220Test()
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap_hevc != nullptr && 
-                    InitHEVCCodecName() && 
+    if (cap_hevc != nullptr &&
+                    InitHEVCCodecName() &&
                     OH_AVCapability_IsEncoderBitrateModeSupported(cap_hevc, BITRATE_MODE_VBR)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
@@ -1045,8 +1055,8 @@ int VideoEncodeSyncFunc0220Test()
 int VideoEncodeSyncFunc0230Test()
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap_hevc != nullptr && 
-                    InitHEVCCodecName() && 
+    if (cap_hevc != nullptr &&
+                    InitHEVCCodecName() &&
                     OH_AVCapability_IsEncoderBitrateModeSupported(cap_hevc, BITRATE_MODE_CQ)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
@@ -1066,8 +1076,8 @@ int VideoEncodeSyncFunc0230Test()
 int VideoEncodeSyncFunc0240Test()
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap_hevc != nullptr && 
-                    InitHEVCCodecName() && 
+    if (cap_hevc != nullptr &&
+                    InitHEVCCodecName() &&
                     OH_AVCapability_IsEncoderBitrateModeSupported(cap_hevc, BITRATE_MODE_SQR)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
@@ -1149,7 +1159,7 @@ int VideoEncodeSyncFunc0390Test()
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_SYNC_FUNC_0390.h265";
         vEncSample->enbleSyncMode = 1;
-        vEncSample->syncOutputWaitTime = 100000;
+        vEncSample->syncOutputWaitTime = SYNC_WAIT_TIME_100MS;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
         ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
         ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
@@ -1208,8 +1218,8 @@ int VideoEncodeRgba10101020010Test()
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/176_144_rgba1010102.yuv";
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_RGBA1010102_0010.h265";
-        vEncSample->DEFAULT_WIDTH = 176;
-        vEncSample->DEFAULT_HEIGHT = 144;
+        vEncSample->DEFAULT_WIDTH = VIDEO_WIDTH_QCIF;
+        vEncSample->DEFAULT_HEIGHT = VIDEO_HEIGHT_QCIF;
         vEncSample->DEFAULT_BITRATE_MODE = CBR;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
         vEncSample->configMain10 = true;
@@ -1234,8 +1244,8 @@ int VideoEncodeRgba10101020020Test()
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_rgba1010102.yuv";
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_RGBA1010102_0020.h265";
-        vEncSample->DEFAULT_WIDTH = 1280;
-        vEncSample->DEFAULT_HEIGHT = 720;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
         vEncSample->configMain10 = true;
@@ -1260,8 +1270,8 @@ int VideoEncodeRgba10101020030Test()
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1920_1080_rgba1010102.yuv";
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_RGBA1010102_0030.h265";
-        vEncSample->DEFAULT_WIDTH = 1920;
-        vEncSample->DEFAULT_HEIGHT = 1080;
+        vEncSample->DEFAULT_WIDTH = VIDEO_WIDTH_1080P;
+        vEncSample->DEFAULT_HEIGHT = VIDEO_HEIGHT_1080P;
         vEncSample->DEFAULT_BITRATE_MODE = SQR;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
         vEncSample->configMain10 = true;
@@ -1286,8 +1296,8 @@ int VideoEncodeRgba10101020040Test()
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/4096_4096_rgba1010102.yuv";
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_RGBA1010102_0040.h265";
-        vEncSample->DEFAULT_WIDTH = 4096;
-        vEncSample->DEFAULT_HEIGHT = 4096;
+        vEncSample->DEFAULT_WIDTH = VIDEO_WIDTH_4K;
+        vEncSample->DEFAULT_HEIGHT = VIDEO_WIDTH_4K;
         vEncSample->DEFAULT_BITRATE_MODE = VBR;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
         vEncSample->configMain10 = true;
@@ -1312,14 +1322,14 @@ int VideoEncodeRgba10101020110Test()
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_rgba1010102.yuv";
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_RGBA1010102_0110.h265";
-        vEncSample->DEFAULT_WIDTH = 1280;
-        vEncSample->DEFAULT_HEIGHT = 720;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
         vEncSample->configMain10 = true;
         vEncSample->TEMPORAL_ENABLE = true;
         vEncSample->TEMPORAL_CONFIG = true;
         vEncSample->TEMPORAL_JUMP_MODE = true;
-        int32_t temporalGopSize = 8;
+        int32_t temporalGopSize = TEMPORAL_GOP_SIZE_8;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
         ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder_Temporal(temporalGopSize));
@@ -1341,13 +1351,13 @@ int VideoEncodeRgba10101020130Test()
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_rgba1010102.yuv";
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_RGBA1010102_0130.h265";
-        vEncSample->DEFAULT_WIDTH = 1280;
-        vEncSample->DEFAULT_HEIGHT = 720;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
         vEncSample->configMain10 = true;
         vEncSample->enableLTR = true;
-        vEncSample->ltrParam.ltrCount = 5;
-        vEncSample->ltrParam.ltrInterval = 5;
+        vEncSample->ltrParam.ltrCount = LTR_COUNT_5;
+        vEncSample->ltrParam.ltrInterval = LTR_INTERVAL_5;
         vEncSample->ltrParam.enableUseLtr = true;
         vEncSample->ltrParam.useLtrIndex = 1;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
@@ -1371,8 +1381,8 @@ int VideoEncodeRgba10101020150Test()
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_rgba1010102.yuv";
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_RGBA1010102_0150.h265";
-        vEncSample->DEFAULT_WIDTH = 1280;
-        vEncSample->DEFAULT_HEIGHT = 720;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
         vEncSample->configMain10 = true;
         vEncSample->enbleSyncMode = 1;
@@ -1395,8 +1405,8 @@ int VideoEncodeRgba10101020170Test()
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_rgba1010102.yuv";
-        vEncSample->DEFAULT_WIDTH = 1280;
-        vEncSample->DEFAULT_HEIGHT = 720;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
         vEncSample->configMain10 = true;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
@@ -1419,8 +1429,8 @@ int VideoEncodeRgba10101020180Test()
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_rgba1010102.yuv";
-        vEncSample->DEFAULT_WIDTH = 1280;
-        vEncSample->DEFAULT_HEIGHT = 720;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA;
         vEncSample->configMain10 = true;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
@@ -1443,8 +1453,8 @@ int VideoEncodeRgba10101020190Test()
         }
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_rgba1010102.yuv";
-        vEncSample->DEFAULT_WIDTH = 1280;
-        vEncSample->DEFAULT_HEIGHT = 720;
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
         vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_RGBA1010102;
         vEncSample->configMain10 = false;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));

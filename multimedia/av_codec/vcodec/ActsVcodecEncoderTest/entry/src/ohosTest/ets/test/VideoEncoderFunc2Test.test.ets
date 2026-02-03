@@ -102,7 +102,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3100
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3100Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3100
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -116,7 +116,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3200
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3200Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3200
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -130,7 +130,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3300
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3300Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3300
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -144,7 +144,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3400
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3400Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3400
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -158,7 +158,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3500
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3500Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3500
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -172,7 +172,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3600
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3600Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3600
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -186,7 +186,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3700
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3700Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3700
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -200,7 +200,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3800
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3800Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3800
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -214,7 +214,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3900
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_3900Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_3900
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -228,7 +228,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4000
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4000Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4000
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -242,7 +242,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4100
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4100Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4100
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -256,7 +256,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4200
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4200Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4200
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -270,7 +270,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4300
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4300Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4300
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -284,7 +284,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4400
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4400Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4400
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -298,7 +298,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4500
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4500Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4500
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -312,7 +312,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4600
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4600Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4600
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -326,7 +326,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4700
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4700Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4700
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -340,7 +340,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4800
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4800Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4800
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -354,7 +354,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4900
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_4900Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_4900
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -368,7 +368,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_5000
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_5000Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_5000
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -382,7 +382,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_5100
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_5100Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_5100
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -396,7 +396,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_8700
+     * @tc.name VIDEO_ENCODE_CAPABILITY_8700Test
      * @tc.number VIDEO_ENCODE_CAPABILITY_8700
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -410,7 +410,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_8800
+     * @tc.name VIDEO_ENCODE_CAPABILITY_8800Test
      * @tc.number VIDEO_ENCODE_CAPABILITY_8800
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -424,7 +424,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_8900
+     * @tc.name VIDEO_ENCODE_CAPABILITY_8900Test
      * @tc.number VIDEO_ENCODE_CAPABILITY_8900
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -438,7 +438,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_9000
+     * @tc.name VIDEO_ENCODE_CAPABILITY_9000Test
      * @tc.number VIDEO_ENCODE_CAPABILITY_9000
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -452,7 +452,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_5500
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_5500Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_5500
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -466,7 +466,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_5600
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_5600Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_5600
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -480,7 +480,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_5700
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_5700Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_5700
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -494,7 +494,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_5800
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_5800Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_5800
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -508,7 +508,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_5900
+     * @tc.name VIDEO_ENCODE_HEVC_CAPABILITY_5900Test
      * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_5900
      * @tc.desc   api test
      * @tc.type   FUNCTION
@@ -522,7 +522,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0010
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0010Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0010
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -536,7 +536,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0020
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0020Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0020
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -550,7 +550,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0030
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0030Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0030
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -564,7 +564,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0040
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0040Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0040
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -578,7 +578,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0050
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0050Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0050
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -592,7 +592,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0070
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0070Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0070
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -606,7 +606,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0080
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0080Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0080
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -620,7 +620,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0090
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0090Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0090
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -634,7 +634,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0100
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0100Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0100
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -648,7 +648,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0110
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0110Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0110
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -662,7 +662,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0120
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0120Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0120
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -676,7 +676,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0130
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0130Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0130
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -690,7 +690,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0140
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0140Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0140
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -704,7 +704,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0150
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0150Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0150
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -718,7 +718,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0160
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0160Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0160
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -732,7 +732,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0210
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0210Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0210
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -746,7 +746,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0220
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0220Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0220
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -760,7 +760,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0230
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0230Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0230
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -774,7 +774,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0240
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0240Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0240
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -788,7 +788,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0360
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0360Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0360
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -802,7 +802,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0370
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0370Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0370
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -816,7 +816,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0380
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0380Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0380
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -830,7 +830,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0390
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0390Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0390
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -844,7 +844,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0400
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0400Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0400
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -858,7 +858,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0410
+     * @tc.name VIDEO_ENCODE_SYNC_FUNC_0410Test
      * @tc.number VIDEO_ENCODE_SYNC_FUNC_0410
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -872,7 +872,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_RGBA1010102_0010
+     * @tc.name VIDEO_ENCODE_RGBA1010102_0010Test
      * @tc.number VIDEO_ENCODE_RGBA1010102_0010
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -886,7 +886,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_RGBA1010102_0020
+     * @tc.name VIDEO_ENCODE_RGBA1010102_0020Test
      * @tc.number VIDEO_ENCODE_RGBA1010102_0020
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -900,7 +900,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_RGBA1010102_0030
+     * @tc.name VIDEO_ENCODE_RGBA1010102_0030Test
      * @tc.number VIDEO_ENCODE_RGBA1010102_0030
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -914,7 +914,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_RGBA1010102_0040
+     * @tc.name VIDEO_ENCODE_RGBA1010102_0040Test
      * @tc.number VIDEO_ENCODE_RGBA1010102_0040
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -928,7 +928,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_RGBA1010102_0110
+     * @tc.name VIDEO_ENCODE_RGBA1010102_0110Test
      * @tc.number VIDEO_ENCODE_RGBA1010102_0110
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -942,7 +942,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_RGBA1010102_0130
+     * @tc.name VIDEO_ENCODE_RGBA1010102_0130Test
      * @tc.number VIDEO_ENCODE_RGBA1010102_0130
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -956,7 +956,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_RGBA1010102_0150
+     * @tc.name VIDEO_ENCODE_RGBA1010102_0150Test
      * @tc.number VIDEO_ENCODE_RGBA1010102_0150
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -970,7 +970,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_RGBA1010102_0170
+     * @tc.name VIDEO_ENCODE_RGBA1010102_0170Test
      * @tc.number VIDEO_ENCODE_RGBA1010102_0170
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -984,7 +984,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_RGBA1010102_0180
+     * @tc.name VIDEO_ENCODE_RGBA1010102_0180Test
      * @tc.number VIDEO_ENCODE_RGBA1010102_0180
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -998,7 +998,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_RGBA1010102_0190
+     * @tc.name VIDEO_ENCODE_RGBA1010102_0190Test
      * @tc.number VIDEO_ENCODE_RGBA1010102_0190
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -1012,7 +1012,7 @@ export default function VideoEncoderFunc2Test() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_PIXE_FORMAT_0010
+     * @tc.name VIDEO_ENCODE_PIXE_FORMAT_0010Test
      * @tc.number VIDEO_ENCODE_PIXE_FORMAT_0010
      * @tc.desc   function test
      * @tc.type   FUNCTION

@@ -228,11 +228,6 @@ export default function VideoEncoderFuncTest() {
       let result: number = await testNapi.runFuncTest(10);
       expect(result).assertEqual(0);
     });
-
-    // it('VIDEO_ENCODE_FUNCTION_1900', Level.LEVEL1, async () => {
-    //   let result: number = await testNapi.runFuncTest(11);
-    //   expect(result).assertEqual(0);
-    // });
     /**
      * @tc.name VIDEO_ENCODE_CAPABILITY_0100
      * @tc.number VIDEO_ENCODE_CAPABILITY_0100

@@ -95,7 +95,7 @@ export default function VideoEncoderGetparamTest() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_MSE_QP_0100
+     * @tc.name VideoEncodeMseQp0100Test
      * @tc.number VIDEO_ENCODE_MSE_QP_0100
      * @tc.desc   function test
      * @tc.type   FUNCTION
@@ -109,7 +109,7 @@ export default function VideoEncoderGetparamTest() {
     });
 
     /**
-     * @tc.name VIDEO_ENCODE_MSE_QP_0300
+     * @tc.name VideoEncodeMseQp0300Test
      * @tc.number VIDEO_ENCODE_MSE_QP_0300
      * @tc.desc   function test
      * @tc.type   FUNCTION

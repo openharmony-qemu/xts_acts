@@ -724,7 +724,7 @@ int VideoEncodeState3600Test()
         ASSERT_EQ(AV_ERR_OK, ret);
         vEncSample->WaitForEOS();
         return 0;
-    }else {
+    } else {
         return 0;
     }
 }
@@ -738,7 +738,7 @@ int VideoEncodeState3700Test()
         ASSERT_EQ(AV_ERR_OK, ret);
         vEncSample->WaitForEOS();
         return 0;
-    }else {
+    } else {
         return 0;
     }
 }
@@ -752,7 +752,7 @@ int VideoEncodeState3800Test()
         ASSERT_EQ(AV_ERR_OK, ret);
         vEncSample->WaitForEOS();
         return 0;
-    }else {
+    } else {
         return 0;
     }
 }
@@ -766,7 +766,7 @@ int VideoEncodeState3900Test()
         ASSERT_EQ(AV_ERR_OK, ret);
         vEncSample->WaitForEOS();
         return 0;
-    }else {
+    } else {
         return 0;
     }
 }
@@ -780,7 +780,7 @@ int VideoEncodeState4000Test()
         ASSERT_EQ(AV_ERR_OK, ret);
         vEncSample->WaitForEOS();
         return 0;
-    }else {
+    } else {
         return 0;
     }
 }
