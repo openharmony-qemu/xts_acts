@@ -36,7 +36,7 @@ class MovingPhotoHandler implements photoAccessHelper.MediaAssetDataHandler<phot
       "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/photos/" + imageFileName;
     let videoFileUri: string =
       "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/photos/" + videoFileName;
-    await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(imageFileUri, videoFileUri);
+    waitForCompletion(async () => {await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(imageFileUri, videoFileUri);})
     let photoUri = (movingPhoto as photoAccessHelper.MovingPhoto).getUri();
     hilog.info(domain, tag, `photoUri =====> ${photoUri}`);
     if (photoUri == undefined) {
@@ -52,7 +52,7 @@ class PhotoHandler implements photoAccessHelper.MediaAssetDataHandler<photoAcces
     hilog.info(domain, tag, "PhotoHandler::movingPhoto onDataPrepared");
     let imageFileUri: string =
       "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/photos/test_picture.jpg";
-    await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageFileUri);
+    waitForCompletion(async () => {await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageFileUri);})
     hilog.info(domain, tag, "moving photo image content retrieved successfully");
   }
 }
@@ -62,7 +62,7 @@ class VideoHandler implements photoAccessHelper.MediaAssetDataHandler<photoAcces
     hilog.info(domain, tag, "VideoHandler::movingPhoto onDataPrepared");
     let videoFileUri: string =
       "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/photos/test_video.mp4";
-    await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoFileUri);
+    waitForCompletion(async () => {await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoFileUri);})
     hilog.info(domain, tag, "moving photo video content retrieved successfully");
   }
 }
@@ -70,7 +70,8 @@ class VideoHandler implements photoAccessHelper.MediaAssetDataHandler<photoAcces
 class ArrayBufferHandler implements photoAccessHelper.MediaAssetDataHandler<photoAccessHelper.MovingPhoto> {
   onDataPrepared(movingPhoto: photoAccessHelper.MovingPhoto | undefined, map?: Map<string, string>) {
     hilog.info(domain, tag, "ArrayBufferHandler::movingPhoto onDataPrepared");
-    let buffer: ArrayBuffer = await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(photoAccessHelper.ResourceType.IMAGE_RESOURCE);
+    let buffer: ArrayBuffer | undefined;
+    waitForCompletion(async () => {buffer = await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(photoAccessHelper.ResourceType.IMAGE_RESOURCE);})
     if (buffer == undefined || buffer.byteLength <= 0) {
       hilog.info(domain, tag, `ArrayBufferHandler :: failed to request content ArrayBuffer !`);
       expect(false).assertTrue();
@@ -87,7 +88,7 @@ class ErrorHandlerMissingImageUri implements photoAccessHelper.MediaAssetDataHan
     let videoFileUri: string =
       "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/photos/" + videoFileName;
     try {
-      await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(imageFileUri, videoFileUri);
+      waitForCompletion(async () => {await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(imageFileUri, videoFileUri);})
       hilog.info(domain, tag, "ErrorHandlerMissingImageUri: requestContent should have thrown an error");
       expect(false).assertTrue();
     } catch (error: BusinessError) {
@@ -104,8 +105,7 @@ class ErrorHandlerMissingVideoUri implements photoAccessHelper.MediaAssetDataHan
       "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/photos/" + imageFileName;
     let videoFileUri: string | undefined = undefined;
     try {
-
-      await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(imageFileUri, videoFileUri! as string);
+      waitForCompletion(async () => {await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(imageFileUri, videoFileUri! as string);})
       hilog.info(domain, tag, "ErrorHandlerMissingVideoUri: requestContent should have thrown an error");
       expect(false).assertTrue();
     } catch (error: BusinessError) {
@@ -121,7 +121,7 @@ class ErrorPhotoHandlerWrongImageuri implements photoAccessHelper.MediaAssetData
     let imageFileUri: string =
       "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entryxxxx/filesxxxxxx/test_picture.jpg";
     try {
-      await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageFileUri);
+      waitForCompletion(async () => {await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageFileUri);})
       hilog.info(domain, tag, "moving photo image content retrieved successfully");
       expect(false).assertTrue();
     } catch (error: BusinessError) {
@@ -138,7 +138,7 @@ class ErrorPhotoHandlerMissingImageuri implements photoAccessHelper.MediaAssetDa
       "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/photos/test_picture.jpg";
     try {
       let filrUri: string | undefined = undefined;
-      await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(photoAccessHelper.ResourceType.IMAGE_RESOURCE, filrUri! as string);
+      waitForCompletion(async () => {await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(photoAccessHelper.ResourceType.IMAGE_RESOURCE, filrUri! as string);})
       hilog.info(domain, tag, "moving photo image content retrieved successfully");
       expect(false).assertTrue();
     } catch (error: BusinessError) {
@@ -153,7 +153,8 @@ class ErrorArrayBufferHandlerMissingType implements photoAccessHelper.MediaAsset
     hilog.info(domain, tag, "ErrorArrayBufferHandlerMissingType::movingPhoto onDataPrepared");
     try {
       let resourceType: photoAccessHelper.ResourceType | undefined = undefined;
-      let buffer: ArrayBuffer = await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(resourceType! as photoAccessHelper.ResourceType);
+      let buffer: ArrayBuffer | undefined; 
+      waitForCompletion(async () => { buffer = await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(resourceType! as photoAccessHelper.ResourceType);})
       expect(false).assertTrue();
     } catch (error: BusinessError) {
       hilog.info(domain, tag, `ErrorArrayBufferHandlerMissingType get moving photo uri fail !`);
@@ -165,7 +166,7 @@ class ErrorArrayBufferHandlerMissingType implements photoAccessHelper.MediaAsset
 export default function getMovingPhotoTest() {
 
   describe("getMovingPhotoTest", (): void => {
-    beforeAll(() => {
+    beforeAll(async () => {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
