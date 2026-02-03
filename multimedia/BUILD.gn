@@ -220,6 +220,7 @@ group("multimedia") {
       "av_codec/ActsAudioDecoderTest:ActsAudioDecoderHapTest",
       "av_codec/ActsCapabilityTest:ActsCapabilityHapTest",
       "av_codec/ActsAvcencInfoTest:ActsAvcencInfoHapTest",
+      "av_codec/ActsAudioHapTest:ActsAudioHapTest",
     ]
   } else {
     deps += [
