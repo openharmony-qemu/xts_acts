@@ -59,7 +59,7 @@ async function clickButtonDriver(){
     let buttonOne = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 10000);
     console.error(`buttonOne is ${JSON.stringify(buttonOne)}`);
     if(buttonOne!=null){
-        buttonOne.click();
+       await buttonOne.click();
     }
 
 }
@@ -155,6 +155,7 @@ export default function WindowLifeCycleTest() {
             await Utils.msSleep(500);
             await clickButtonDriver();
             hilog.info(domain, tag, 'jsUnittest clickButtonDriver after');
+            await Utils.msSleep(500);
         })
         /**
          * @tc.number     SUB_BASIC_WMS_FUNCTION_GETSUBWINDOW_static_0100
