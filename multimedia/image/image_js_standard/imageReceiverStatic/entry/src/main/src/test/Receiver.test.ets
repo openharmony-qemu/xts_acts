@@ -433,8 +433,7 @@ export default function ImageReceiver() {
 
           receiver1.onImageArrival(() => {
             console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 on [ENTER]!");
-            let latestImage: image.Image | undefined;
-            waitForCompletion(async () => {latestImage = await receiver1.readLatestImage();})
+            let latestImage = waitForCompletion<image.Image>(async ():Promise<image.Image> => {await receiver1!.readLatestImage();})
             globalImg = latestImage;
             if (latestImage != undefined) {
               console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 latestImage size: (${latestImage.size.width}, ${latestImage.size.height})`);
@@ -534,8 +533,7 @@ export default function ImageReceiver() {
 
           receiver1.onImageArrival(() => {
             console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 on [ENTER]!");
-            let nextImage: image.Image | undefined;
-            waitForCompletion(async () => {nextImage = await receiver1.readNextImage();})
+            let nextImage = waitForCompletion<image.Image>(async ():Promise<image.Image> => {await receiver1!.readNextImage();})
             globalImg = nextImage;
             if (nextImage != undefined) {
               console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 nextImage size: (${nextImage.size.width}, ${nextImage.size.height})`);
