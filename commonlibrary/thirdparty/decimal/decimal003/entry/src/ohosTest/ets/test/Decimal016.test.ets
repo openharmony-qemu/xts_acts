@@ -36,12 +36,16 @@ function test_sub_005 (minuend: string, subtrahend: string, expected: string, sd
     expect(expected).assertEqual(Decimal.sub(minuend, subtrahend).valueOf());
     expect(expected).assertEqual(new Decimal(minuend).sub(subtrahend).valueOf());
 }
+function sleep(ms: number) {
+    return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
 export default function DecimalTest016() {
   describe("DecimalTest016", () => {
     beforeAll(() => {
         console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");
     });
-    beforeEach(() => {
+    beforeEach(async () => {
+        await sleep(20);
         console.info("beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.");
     });
     afterEach(() => {
