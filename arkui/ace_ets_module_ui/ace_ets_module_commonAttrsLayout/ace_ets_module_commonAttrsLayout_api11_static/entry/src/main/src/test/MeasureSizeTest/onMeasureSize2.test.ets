@@ -41,7 +41,7 @@ export default function onMeasureSize2() {
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
     });
     beforeEach(() => {

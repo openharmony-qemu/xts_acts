@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function getGridItemRect1() {
   describe('getGridItemRect1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getGridItemRect1 beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")

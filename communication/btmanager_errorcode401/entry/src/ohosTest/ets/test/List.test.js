@@ -16,11 +16,12 @@
 import btManagerMError401Test from './BtMGattManager401.test.js';
 import btManagerAdvertError401Test from './BtMGattAdvertiser401.test.js';
 import parameter from '@ohos.systemparameter';
-
+import btBleError401Test from './BtBle401.test.js';
 let info = parameter.getSync("const.SystemCapability.Communication.Bluetooth.Core", "false");
 export default function testsuite() {
 	if (info != "false") {
 		btManagerMError401Test();
-	btManagerAdvertError401Test();
+		btManagerAdvertError401Test();
+		btBleError401Test();
 	}
 }

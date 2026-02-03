@@ -289,7 +289,11 @@ export default function fontTest() {
       }
 
       try {
-        font.getTypeface();
+        let typeface = font.getTypeface();
+        if(typeface == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
         console.info(msg + ' getTypeface succeeded');
       } catch (e) {
         e = e as BusinessError;
@@ -310,7 +314,11 @@ export default function fontTest() {
       }
 
       try {
-        font.getTypeface();
+        let typeface = font.getTypeface();
+        if(typeface == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
+        }
         console.info(msg + ' getTypeface succeeded');
       } catch (e) {
         e = e as BusinessError;
@@ -375,6 +383,10 @@ export default function fontTest() {
         const font = new drawing.Font();
         let metrics = font.getMetrics() as drawing.FontMetrics;
         console.info(msg + ' getMetrics successed' + JSON.stringify(metrics));
+        if(metrics == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
         expect(metrics.flags !== null).assertTrue();
         expect(metrics.top !== null).assertTrue();
         expect(metrics.ascent !== null).assertTrue();

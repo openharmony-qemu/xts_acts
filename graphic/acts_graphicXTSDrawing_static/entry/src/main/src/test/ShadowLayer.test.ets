@@ -53,10 +53,14 @@ export default function shadowLayerTest() {
       const pen = new drawing.Pen();
 
       try {
-        drawing.ShadowLayer.create(50, 100, 100, {
+        let shadowLayer = drawing.ShadowLayer.create(50, 100, 100, {
           alpha: 0xFF, red: 0x00, green: 0xFF, blue: 0x00
         });
         console.info(msg + ' create successed');
+        if(shadowLayer == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -67,8 +71,12 @@ export default function shadowLayerTest() {
         let color : common2D.Color = {
           alpha: 128, red: 246, green: 0, blue: 0
         };
-        drawing.ShadowLayer.create(50.2, 100.2, 100.1, color);
+        let shadowLayer = drawing.ShadowLayer.create(50.2, 100.2, 100.1, color);
         console.info(msg + ' create successed');
+        if(shadowLayer == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -76,10 +84,14 @@ export default function shadowLayerTest() {
       }
 
       try {
-        drawing.ShadowLayer.create(50, -100, -100, {
+        let shadowLayer = drawing.ShadowLayer.create(50, -100, -100, {
           alpha: 0xFF, red: 0x00, green: 0xFF, blue: 0x00
         });
         console.info(msg + ' create successed');
+        if(shadowLayer == undefined){
+          console.info(msg + ' 3 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -108,8 +120,12 @@ export default function shadowLayerTest() {
             green: Math.floor(Math.random() * 256).toInt(),
             blue: Math.floor(Math.random() * 256).toInt()
           };
-          drawing.ShadowLayer.create(randomRadius, randomOffsetX, randomOffsetY, randomColor);
+          let shadowLayer = drawing.ShadowLayer.create(randomRadius, randomOffsetX, randomOffsetY, randomColor);
           console.info(`${msg} create successed for iteration ${i}`);
+          if(shadowLayer == undefined){
+            console.info(msg + ' test failed step: ' + i);
+            expect().assertFail();
+          }
         } catch (e) {
           e = e as BusinessError;
           console.info(`${msg} create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -209,7 +225,56 @@ export default function shadowLayerTest() {
         expect(e.code).assertEqual(401);
       }
     });
+    /**
+     * @tc.name   testShadowLayerCreateNormal2Static
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADOWLAYER_STATIC_0200
+     * @tc.desc   Test for testShadowLayerCreateNormal2Static.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testShadowLayerCreateNormal2Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testShadowLayerCreateNormal2Static';
+      const pen = new drawing.Pen();
+      try {
+        let shadowLayer = drawing.ShadowLayer.create(50, 100, 100, 100);
+        console.info(msg + ' create successed');
+        if(shadowLayer == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
 
+      try {
+        let shadowLayer = drawing.ShadowLayer.create(50.2, 100.2, 100.1, 255);
+        console.info(msg + ' create successed');
+        if(shadowLayer == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+
+      try {
+        let shadowLayer = drawing.ShadowLayer.create(50, -100, -100, 10);
+        console.info(msg + ' create successed');
+        if(shadowLayer == undefined){
+          console.info(msg + ' 3 test failed');
+          expect().assertFail();
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
 
   });
 }

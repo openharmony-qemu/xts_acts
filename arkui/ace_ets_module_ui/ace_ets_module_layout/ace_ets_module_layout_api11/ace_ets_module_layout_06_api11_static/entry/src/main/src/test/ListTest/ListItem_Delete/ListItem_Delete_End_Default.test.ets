@@ -148,7 +148,7 @@ it('SUB_ACE_ListItem_Delete_End_Default_static_0300', Level.LEVEL0, async (done:
 
 
       console.log('slide ')
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + UIContext.resolveUIContext()!.vp2px(80))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + UIContext.resolveUIContext()!.vp2px(30))).toInt(),

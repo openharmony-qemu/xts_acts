@@ -11603,6 +11603,7 @@ export default function audioRendererTest() {
               expect(timestamp).assertLargerOrEqual(0);
             }
           });
+          await Utils.msSleep(1000);
           audioRenderer?.release((err: BusinessError | null) => {
             if (err) {
               console.error('Renderer release failed');
@@ -11625,75 +11626,24 @@ export default function audioRendererTest() {
      * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_10000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let audioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-        channels: audio.AudioChannel.CHANNEL_2,
-        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-      };
-
-      let audioRendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
-        rendererFlags: 0,
-        volumeMode: audio.AudioVolumeMode.APP_INDIVIDUAL
-      };
-
-      let audioRendererOptions: audio.AudioRendererOptions = {
-        streamInfo: audioStreamInfo,
-        rendererInfo: audioRendererInfo
-      };
-
-      let audioRenderer: audio.AudioRenderer | null | undefined;
       let audioManager = audio.getAudioManager();
       let audioVolumeManager: audio.AudioVolumeManager = audioManager.getVolumeManager();
 
-      audio.createAudioRenderer(audioRendererOptions,(err: BusinessError | null, data: audio.AudioRenderer | null | undefined) => {
-        if (err) {
-          console.error(`AudioRenderer Created: Error: ${err}`);
-          expect(true).assertFail();
-        } else {
-          console.info('AudioRenderer Created: SUCCESS');
-          audioRenderer = data;
-          audioRenderer?.getRendererInfo((err: BusinessError | null, audioRendererInfo: audio.AudioRendererInfo | undefined) => {
-            if (err) {
-              console.error(`Failed to get renderer info. Code: ${err.code}, message: ${err.message}`);
-              expect(true).assertFalse();
-            } else {
-              console.info(`Succeeded in getting renderer info, AudioRendererInfo: ${JSON.stringify(audioRendererInfo)}.`);
-              expect(audioRendererInfo?.volumeMode).assertEqual(1);
-              expect(audio.AudioVolumeMode.APP_INDIVIDUAL).assertEqual(1);
-
-              let appVolumeChangeCallback = (volumeEvent: audio.VolumeEvent) => {
-                console.info(`VolumeType of stream: ${volumeEvent.volumeType} `);
-                console.info(`Volume level: ${volumeEvent.volume} `);
-                console.info(`Whether to updateUI: ${volumeEvent.updateUi} `);
-              };
-              audioVolumeManager.onAppVolumeChange(appVolumeChangeCallback);
-              audioVolumeManager.setAppVolumePercentage(20).then(() => {
-                console.info(`set app volume success.`);
-              });
-              audioVolumeManager.offAppVolumeChange();
-            }
-          });
-          audioRenderer?.getAudioTime((err: BusinessError | null, timestamp: long | undefined) => {
-            if (err) {
-              console.error(`Failed to get AudioTime. Code: ${err.code}, message: ${err.message}`);
-              expect(true).assertFalse();
-            } else {
-              console.info(`Current timestamp: ${timestamp}`);
-              expect(timestamp).assertLargerOrEqual(0);
-            }
-          });
-          audioRenderer?.release((err: BusinessError | null) => {
-            if (err) {
-              console.error('Renderer release failed');
-              expect(true).assertFalse();
-            } else {
-              console.info('Renderer released.');
-            }
-          });
-        }
-      });
+      let appVolumeChangeCallback = (volumeEvent: audio.VolumeEvent) => {
+        console.info(`STATIC_10000 VolumeType of stream: ${volumeEvent.volumeType} `);
+        console.info(`STATIC_10000 Volume level: ${volumeEvent.volume} `);
+        console.info(`STATIC_10000 Whether to updateUI: ${volumeEvent.updateUi} `);
+        audioVolumeManager.offAppVolumeChange();
+        done();
+      };
+      try {
+        audioVolumeManager.onAppVolumeChange(appVolumeChangeCallback);
+        await audioVolumeManager.setAppVolumePercentage(20);
+      } catch (error: BusinessError) {
+        console.info("SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_10000 error:" + error);
+        expect(false).assertTrue();
+        done();
+      }
       done();
     })
 

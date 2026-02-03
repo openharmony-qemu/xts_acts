@@ -32,7 +32,7 @@ import {
   FontWeight,
   Axis,
   Margin,TextInput,KeyboardAvoidMode,wrapBuilder, Builder, CustomBuilderT,
-  PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
+  PickerTextStyle, CalendarAlign, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,ComponentContent,
 } from '@ohos.arkui.component';
 import {

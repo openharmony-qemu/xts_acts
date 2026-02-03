@@ -43,7 +43,7 @@ export default function deleteAssets() {
           let appContext: Context = Hypium.get("context") as Context;
           const uriList: Array<string> = new Array<string>();
           console.info(`${testNum} uriList: ${JSON.stringify(uriList)}`)
-          await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(appContext, uriList);
+          await photoAccessHelper.MediaAssetChangeRequest.deleteAssetsToTrashWithUris(appContext, uriList);
           console.info(`${testNum} succeed to delete assets by uri`)
           expect(false).assertTrue();
           done();

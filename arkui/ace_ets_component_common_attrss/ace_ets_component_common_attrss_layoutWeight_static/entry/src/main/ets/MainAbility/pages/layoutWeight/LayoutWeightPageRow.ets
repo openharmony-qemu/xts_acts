@@ -35,7 +35,6 @@ import {BadgeParamWithNumber,
 // WebController,
   ToggleType,
   TimePicker,
-  StepperItem,
   SliderStyle,
   FlexDirection,
   ProgressType,
@@ -84,7 +83,7 @@ import {BadgeParamWithNumber,
   Search,
   Select,
   Slider,
-  Stepper,
+
   TextArea,
   TextClock,ImageFit,
   TextInput,TextPicker,TextTimer,Toggle,Web,Circle,Ellipse,
@@ -296,16 +295,6 @@ struct LayoutWeightPageRow {
           max: 100,
           style: SliderStyle.OutSet
         }).showTips(true)
-          .applyStyles(this.commonStyle)
-
-      } else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-        }
           .applyStyles(this.commonStyle)
 
       } else if (this.targetView == 'TextArea') {

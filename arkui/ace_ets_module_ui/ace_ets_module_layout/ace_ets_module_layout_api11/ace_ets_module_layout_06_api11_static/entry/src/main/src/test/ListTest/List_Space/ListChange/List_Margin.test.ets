@@ -121,7 +121,7 @@ it('testListMargin_static', Level.LEVEL0, async (done: () => void): Promise<void
       expect(Math.abs(Math.round(List_Margin_01.bottom - List_Margin_01.top) - Math.round(UIContext.resolveUIContext()!.vp2px(520))) <= 1).assertTrue();
       expect(Math.abs(Math.round(List_Margin_01.right - List_Margin_01.left) - Math.round(UIContext.resolveUIContext()!.vp2px(350))) <= 1).assertTrue();
       let driver = Driver.create();
-      driver.swipe(360, 690, 360, 30);
+      await driver.swipe(360, 690, 360, 30);
       let List_Margin_014Again: RectValue = CommonFunc.getComponentRect('List_Margin_014');
       expect(Math.abs(List_Margin_014.top - List_Margin_014Again.top) <= 1).assertTrue();
       console.info('testListMargin END');

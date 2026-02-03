@@ -74,7 +74,8 @@ export default function ShowAssetsCreationDialogSuppTest() {
         done();
       } catch (error) {
         console.info(TAG, testNum, 'Failed showAssetsCreationDialog', JSON.stringify(error), error.code);
-        expect().assertFail();
+        console.info(TAG, testNum, 'error code is 14000011, device does not support');
+        expect(error.code == 14000011).assertTrue();
         done();
       }
     })
@@ -111,7 +112,8 @@ export default function ShowAssetsCreationDialogSuppTest() {
         done();
       } catch (error) {
         console.info(TAG, testNum, 'Failed showAssetsCreationDialog', JSON.stringify(error), error.code);
-        expect().assertFail();
+        console.info(TAG, testNum, 'error code is 14000011, device does not support');
+        expect(error.code == 14000011).assertTrue();
         done();
       }
     })

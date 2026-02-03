@@ -201,8 +201,8 @@ import RichEditorTextStyleTest from './RichEditorApi23Test/RichEditorTextStyle.t
 
 
 export default function testsuite() {
-  PresetTest();
   ActsRichEditorTest();
+  PresetTest();
   RichEditorApi13();
   onSelectionChange2();
   onSelectionChange3();

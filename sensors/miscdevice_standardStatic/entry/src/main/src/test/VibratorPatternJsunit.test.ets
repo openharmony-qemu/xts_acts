@@ -2096,6 +2096,7 @@ export default function VibratorJsTest_misc_9() {
         done();
       }
     })
+    
     /**
      * @tc.name   VibratorJsTest101
      * @tc.number SUB_SensorSystem_Vibrator_JsTest_1110
@@ -2111,10 +2112,17 @@ export default function VibratorJsTest_misc_9() {
         vibrator.stopVibrationSync();
         console.info(TAG + " stopVibrationSync success");
         done()
-      } catch (error) {
-        console.info(TAG + " stopVibrationSync error: " + JSON.stringify(error));
-        expect(false).assertTrue();
-        done()
+      } catch (err) {
+        let error = err as BusinessError;
+        if(isAvailable) {
+          hilog.info(domain, tag, TAG+`startVibration error:${JSON.stringify(error.code)}`);
+          expect(false).assertTrue();
+          done();
+        } else {
+          hilog.info(domain, tag, TAG+`isAvailable is false error:${JSON.stringify(error.code)}`);
+          expect(error.code).assertEqual(14600101);
+          done();
+        }
       }
     })
 
@@ -2133,10 +2141,17 @@ export default function VibratorJsTest_misc_9() {
         console.log(TAG + "ret:" + ret);
         expect(typeof ret === 'boolean').assertTrue();
         done();
-      } catch (error:Error) {
-        console.log(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
-        expect(false).assertTrue();
-        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        if(isAvailable) {
+          hilog.info(domain, tag, TAG+`startVibration error:${JSON.stringify(error.code)}`);
+          expect(false).assertTrue();
+          done();
+        } else {
+          hilog.info(domain, tag, TAG+`isAvailable is false error:${JSON.stringify(error.code)}`);
+          expect(error.code).assertEqual(14600101);
+          done();
+        }
       }
     })
 
@@ -2155,10 +2170,17 @@ export default function VibratorJsTest_misc_9() {
         console.log(TAG + "ret:" + ret);
         expect(typeof ret === 'boolean').assertTrue();
         done();
-      } catch (error:Error) {
-        console.log(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
-        expect(false).assertTrue();
-        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        if(isAvailable) {
+          hilog.info(domain, tag, TAG+`startVibration error:${JSON.stringify(error.code)}`);
+          expect(false).assertTrue();
+          done();
+        } else {
+          hilog.info(domain, tag, TAG+`isAvailable is false error:${JSON.stringify(error.code)}`);
+          expect(error.code).assertEqual(14600101);
+          done();
+        }
       }
     })
 

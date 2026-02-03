@@ -16,7 +16,7 @@
 import { describe, beforeEach, it, expect, Level, TestType, Size, beforeAll } from '@ohos/hypium'
 import nativeTest from 'libentry.so'
 import { GlobalContext } from '../test/global';
-import { ConfigurationConstant } from '@kit.AbilityKit';
+import { ConfigurationConstant, common} from '@kit.AbilityKit';
 import { display } from '@kit.ArkUI';
 import { deviceInfo } from '@kit.BasicServicesKit';
 import Utils from './common/Utils';
@@ -33,9 +33,12 @@ const ERROR_CODE_OVERLAY_RES_PATH_INVALID = 9001010 // 无效的资源路径.
 export default function NativeApiString3Test() {
   describe('NativeApiString3Test', () => {
     let resManager: Context;
+    let res: common.ApplicationContext;
     beforeEach(() => {
       resManager = (GlobalContext.getContext().getObject('yq') as Context);
       nativeTest.GetResourceManager3(resManager.resourceManager);
+      res = resManager.getApplicationContext();
+      res.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_LIGHT);
     })
 
     /**
@@ -218,7 +221,7 @@ export default function NativeApiString3Test() {
     it('TestGetColorModeLight0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetColorModeLight0100 start====");
-        let result: number = nativeTest.GetColorModeLight0100();
+        let result: number = nativeTest.GetColorModeLight0100(res.resourceManager);
         console.info(`====>TestGetColorModeLight0100 result====${result}`);
         expect(result).assertEqual(0);
         done()
@@ -577,7 +580,7 @@ export default function NativeApiString3Test() {
     it('TestGetConfigurations0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetConfigurations0400 start====");
-        let result: number = nativeTest.GetConfigurations0400();
+        let result: number = nativeTest.GetConfigurations0400(res.resourceManager);
         console.info(`====>TestGetConfigurations0400 result====${result}`);
         expect(result).assertEqual(0);
         done()
@@ -681,8 +684,6 @@ export default function NativeApiString3Test() {
     it('TestGetColorModeDark0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetColorModeDark0100 start====");
-        // globalThis.uiAbilityContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
-        let res = resManager.getApplicationContext()
         res.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK)
         let result: number = nativeTest.GetColorModeDark0100(res.resourceManager);
         console.info(`====>TestGetColorModeDark0100 result====${result}`);

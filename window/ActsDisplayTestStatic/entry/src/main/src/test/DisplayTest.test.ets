@@ -2382,6 +2382,7 @@ export default function DisplayTest() {
         try {
             let windowClass:window.Window = windowStage.getMainWindowSync();
             await windowClass.setWindowBrightness(1);
+            await Utils.msSleep(100);
             let brightnessChangeCount1:number = 0;
             let brightnessChangeCount2:number = 0;
             let callback1Triggered:boolean = false;
@@ -2414,6 +2415,7 @@ export default function DisplayTest() {
             display.onBrightnessInfoChange(callback2);
             console.info(caseName + ' Brightness change listeners registered successfully');
             await windowClass.setWindowBrightness(0);
+            await Utils.msSleep(100);
             while (!callback1Triggered) {
                 await Utils.msSleep(100);
             }
@@ -2434,6 +2436,7 @@ export default function DisplayTest() {
             expect(brightnessChangeCount1).assertEqual(0);
             expect(brightnessChangeCount2).assertEqual(0);
             await windowClass.setWindowBrightness(-1);
+            await Utils.msSleep(100);
             done();
         } catch (e: BusinessError) {
             console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);

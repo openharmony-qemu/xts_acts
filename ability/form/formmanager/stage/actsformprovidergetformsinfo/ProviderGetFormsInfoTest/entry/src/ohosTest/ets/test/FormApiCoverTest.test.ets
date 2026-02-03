@@ -98,6 +98,9 @@ const ERROR_CODE6 = 16501001;
 const ERROR_CODE7 = 16501002;
 const ERROR_CODE8 = 16501003;
 const ERROR_CODE9 = 202;
+const ERROR_CODE10 = 16501014;
+const ERROR_CODE11 = 16000121;
+const ERROR_CODE12 = 16000130;
 
 export default function formApiCoverTest() {
   describe('FormApiCoverTestTest', () => {
@@ -161,8 +164,12 @@ export default function formApiCoverTest() {
           expect(error.code).assertEqual(ERROR_CODE2);
         } else if(error.code === ERROR_CODE4) {
           expect(error.code).assertEqual(ERROR_CODE4);
-        } else if(error.code === ERROR_CODE5) {
-          expect(error.code).assertEqual(ERROR_CODE5);
+        } else if(error.code === ERROR_CODE10) {
+          expect(error.code).assertEqual(ERROR_CODE10);
+        } else if(error.code === ERROR_CODE11) {
+          expect(error.code).assertEqual(ERROR_CODE11);
+        } else if(error.code === ERROR_CODE12) {
+          expect(error.code).assertEqual(ERROR_CODE12);
         }
         done();
       }

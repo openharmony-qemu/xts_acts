@@ -110,12 +110,24 @@ export default function drawingTsPath3Test() {
         const path = new drawing.Path();
         path.lineTo(50, 40)
         rect = path.getBounds();
+        if(rect){
+          console.info(msg + ' 0 test successes');
+        }
+        if(rect == undefined){
+          console.info(msg + ' 0 test failed');
+          expect().assertFail();
+        }
         path.addRect({
           left: 10, right: 400, top: 100, bottom: 300
         }, drawing.PathDirection.CLOCKWISE);
         rect = path.getBounds();
-
-        console.info(msg + 'test successes');
+        if(rect){
+          console.info(msg + ' 1 test successes');
+        }
+        if(rect == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);

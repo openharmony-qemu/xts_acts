@@ -62,7 +62,7 @@ export default function fileIOAccess() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FileIO_Access_Sync_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+    it('test_FileIO_Access_Sync_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ():void => {
       let fpath = await Utils.nextFileName('test_FileIO_Access_Sync_Static_000');
 
       try {

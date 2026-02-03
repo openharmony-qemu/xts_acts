@@ -74,7 +74,7 @@
                 }
             },
             {
-                "name": "ohos.permission.MANAGE_PRIVATE_PHOTOS",
+                "name": "ohos.permission.MANAGE_RISK_PHOTOS",
                 "reason": "$string:reason",
                 "usedScene": {
                     "when": "always"

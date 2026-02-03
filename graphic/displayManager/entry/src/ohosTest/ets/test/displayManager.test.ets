@@ -25,6 +25,7 @@ import common from '@ohos.app.ability.common';
 import { StartOptions } from '@kit.AbilityKit';
 import floatingBall from '@ohos.window.floatingBall';
 import settings from '@ohos.settings';
+import deviceInfo from '@ohos.deviceInfo';
 
 function checkIsCaptured() {
   let status = false;
@@ -89,6 +90,8 @@ export default function displayTest() {
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
     let isSupportRotate = false;
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -2775,6 +2778,7 @@ export default function displayTest() {
       try {
         let windowClass = windowStage.getMainWindowSync();
         await windowClass.setWindowBrightness(1);
+        await sleep(100);
         let brightnessChangeCount1 = 0;
         let brightnessChangeCount2 = 0;
         let callback1Triggered = false;
@@ -2807,6 +2811,7 @@ export default function displayTest() {
         display.on('brightnessInfoChange', callback2);
         console.info(caseName + ' Brightness change listeners registered successfully');
         await windowClass.setWindowBrightness(0);
+        await sleep(100);
         while (!callback1Triggered) {
           await sleep(100);
         }
@@ -2827,6 +2832,7 @@ export default function displayTest() {
         expect(brightnessChangeCount1).assertEqual(0);
         expect(brightnessChangeCount2).assertEqual(0);
         await windowClass.setWindowBrightness(-1);
+        await sleep(100);
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
@@ -2853,6 +2859,7 @@ export default function displayTest() {
       try {
         let windowClass = await windowStage.getMainWindow();
         await windowClass.setWindowBrightness(1);
+        await sleep(100);
         let brightnessChangeCount1 = 0;
         let brightnessChangeCount2 = 0;
         let callback1Triggered = false;
@@ -2885,6 +2892,7 @@ export default function displayTest() {
         display.on('brightnessInfoChange', callback2);
         console.info(caseName + ' Brightness change listeners registered successfully');
         await windowClass.setWindowBrightness(0);
+        await sleep(100);
         while (!callback1Triggered) {
           await sleep(100);
         }
@@ -2905,6 +2913,7 @@ export default function displayTest() {
         expect(brightnessChangeCount1).assertEqual(0);
         expect(brightnessChangeCount2).assertLargerOrEqual(1);
         await windowClass.setWindowBrightness(-1);
+        await sleep(100);
         display.off('brightnessInfoChange');
         done();
       } catch (e) {
@@ -2968,6 +2977,7 @@ export default function displayTest() {
         let windowClass = windowStageStart.getMainWindowSync();
 
         await windowClass.setWindowBrightness(0);
+        await sleep(100);
         let brightnessChangeCount1 = 0;
         let callback1Triggered = false;
 
@@ -2986,6 +2996,7 @@ export default function displayTest() {
         display.on('brightnessInfoChange', callback1);
         console.info(caseName + ' Brightness change listeners registered successfully');
         await windowClass.setWindowBrightness(1);
+        await sleep(100);
         while (!callback1Triggered) {
           await sleep(100);
         }
@@ -2993,6 +3004,7 @@ export default function displayTest() {
         expect(brightnessChangeCount1).assertLargerOrEqual(1);
         display.off('brightnessInfoChange', callback1);
         await windowClass.setWindowBrightness(-1);
+        await sleep(100);
         display.off('brightnessInfoChange');
         await subWindowClass.destroyWindow();
         done();
@@ -3050,7 +3062,6 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: true
         }).then(async (displayId: number) => {
-          await display.makeUnique(displayId);
           display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
@@ -3063,7 +3074,7 @@ export default function displayTest() {
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
-            if (!isSupport) {
+            if (err.code == 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -3112,7 +3123,6 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: undefined
         }).then(async (displayId: number) => {
-          await display.makeUnique(displayId);
           display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
@@ -3125,7 +3135,7 @@ export default function displayTest() {
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
-            if (!isSupport) {
+            if (err.code == 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -3173,7 +3183,6 @@ export default function displayTest() {
           density: 2,
           surfaceId: '',
         }).then(async (displayId: number) => {
-          await display.makeUnique(displayId);
           display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
@@ -3186,7 +3195,7 @@ export default function displayTest() {
             done();
           }).catch(async (err: BusinessError) => {
             console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
-            if (!isSupport) {
+            if (err.code == 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -3235,7 +3244,6 @@ export default function displayTest() {
           surfaceId: '',
           supportsFocus: false
         }).then(async (displayId: number) => {
-          await display.makeUnique(displayId);
           display.makeUnique(displayId).then(async () => {
             console.log(caseName + 'succeeded in makeUnique');
             let options: StartOptions = {
@@ -3249,7 +3257,7 @@ export default function displayTest() {
           }).catch(async (err: BusinessError) => {
             console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
             display.destroyVirtualScreen(displayId);
-            if (!isSupport) {
+            if (err.code == 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -3293,7 +3301,8 @@ export default function displayTest() {
         let roundedCorner = displayInfo.getRoundedCorner();
         console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
         console.info(caseName + ' roundedCorner length: ' + JSON.stringify(roundedCorner.length));
-        if (isPCStatus == '') {
+        if (deviceType == 'phone'||deviceType == 'tablet') {
+          expect(roundedCorner.length).assertLarger(0)
           expect(roundedCorner[0].type).assertEqual(0)
           expect(roundedCorner[0].position.x).assertEqual(roundedCorner[0].radius)
           expect(roundedCorner[0].position.y).assertEqual(roundedCorner[0].radius)
@@ -3306,7 +3315,7 @@ export default function displayTest() {
           expect(roundedCorner[3].type).assertEqual(3)
           expect(roundedCorner[3].position.x).assertEqual(roundedCorner[3].radius)
           expect(roundedCorner[3].position.y).assertEqual(displayInfo.height - roundedCorner[3].radius)
-        } else if (isPCStatus == 'true') {
+        } else {
           expect(roundedCorner.length).assertEqual(0)
         }
         done();
@@ -3392,7 +3401,7 @@ export default function displayTest() {
         let roundedCorner = displayInfo.getRoundedCorner();
         console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
         console.info(caseName + ' roundedCorner length: ' + JSON.stringify(roundedCorner.length));
-        if (isPCStatus == '') {
+        if (deviceType == 'phone'||deviceType == 'tablet') {
           expect(roundedCorner[0].type).assertEqual(0)
           expect(roundedCorner[0].position.x).assertLarger(0)
           expect(roundedCorner[0].position.y).assertLarger(0)

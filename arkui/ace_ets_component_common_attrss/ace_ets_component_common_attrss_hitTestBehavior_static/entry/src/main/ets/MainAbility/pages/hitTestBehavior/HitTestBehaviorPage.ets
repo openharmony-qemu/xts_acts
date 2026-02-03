@@ -15,7 +15,6 @@
  */
 import { RouterParams,CustomValue } from '../../common/Utils';
 import router from '@ohos.router'
-import { StepperView } from '../../view/alignRules/StepperView';
 import {
   NavPathStack,
   ListItemGroup,
@@ -26,9 +25,7 @@ import {
   SliderStyle,
   MenuItemOptions,
   TabContent,
-  StepperItem,
   ImageFit,
-  Stepper,
   FlowItem,
   Blank,
   Span,
@@ -448,20 +445,6 @@ struct HitTestBehaviorPage {
       .width('100%')
       .height('70%')
       .backgroundColor(Color.Black)
-    } else if (this.targetView == 'StepperItem') {
-      Stepper() {
-        StepperItem() {
-          Column() {
-            Text('Page One')
-          }
-        }.applyStyles(this.onBrotherTouchStyle)
-
-        StepperItem() {
-          Column() {
-            Text('Page One')
-          }.applyStyles(this.onChildTouchStyle)
-        }.width('100%').height('100%').applyStyles(this.commonStyle)
-      }
     } else if (this.targetView == 'FlowItem') {
       WaterFlow() {
         FlowItem() {
@@ -544,14 +527,6 @@ struct HitTestBehaviorPage {
         max: 100,
         style: SliderStyle.OutSet
       } as SliderOptions).showTips(true).applyStyles(this.commonStyle)
-    } else if (this.targetView == 'Stepper') {
-      Stepper() {
-        StepperItem() {
-          Column() {
-            Text('Page One')
-          }
-        }.applyStyles(this.onChildTouchStyle)
-      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Badge') {
       Badge({
         count: 50,
@@ -636,7 +611,7 @@ struct HitTestBehaviorPage {
         RelativeContainer() {
           if (this.targetView == 'TabContent' || this.targetView == 'ListItemGroup' || this.targetView == 'ListItem'
             || this.targetView == 'GridItem' || this.targetView == 'GridCol' || this.targetView == 'FlowItem'
-            || this.targetView == 'StepperItem' || this.targetView == 'MenuItemGroup' || this.targetView == 'Blank') {
+            || this.targetView == 'MenuItemGroup' || this.targetView == 'Blank') {
             this.buildTargetView();
           } else {
             this.buttonBrotherView();
@@ -647,7 +622,7 @@ struct HitTestBehaviorPage {
         Stack() {
           if (this.targetView == 'TabContent' || this.targetView == 'ListItemGroup' || this.targetView == 'ListItem'
             || this.targetView == 'GridItem' || this.targetView == 'GridCol' || this.targetView == 'FlowItem'
-            || this.targetView == 'StepperItem' || this.targetView == 'MenuItemGroup' || this.targetView == 'Blank') {
+            || this.targetView == 'MenuItemGroup' || this.targetView == 'Blank') {
             this.buildTargetView();
           } else {
             this.buttonBrotherView();

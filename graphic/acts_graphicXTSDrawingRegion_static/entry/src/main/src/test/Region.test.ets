@@ -258,7 +258,9 @@ export default function drawingTsRegionTest() {
         let path = new drawing.Path();
         region.setRect(100, 100, 400, 400);
         path.arcTo(50, 50, 300, 300, 0, 359);
-        region.setPath(path, region);
+        let flag: boolean = region.setPath(path, region);
+        console.info(msg + " region setRect flag: " + flag);
+        expect(flag).assertTrue();
         canvas.drawRegion(region);
         console.info(msg + `setPath successed`);
       } catch (e) {

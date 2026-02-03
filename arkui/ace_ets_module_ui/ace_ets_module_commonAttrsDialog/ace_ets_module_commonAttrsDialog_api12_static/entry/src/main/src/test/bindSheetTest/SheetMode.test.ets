@@ -39,13 +39,12 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SheetMode() {
   describe('SheetMode', () => {
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
-    let abilityStage=AppStorage.get<common.BaseContext>("abilityContext")!
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
-
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
     });
+
     beforeEach(async (): Promise<void> => {
       console.info("SheetMode beforeEach start");
       let options: router.RouterOptions = {

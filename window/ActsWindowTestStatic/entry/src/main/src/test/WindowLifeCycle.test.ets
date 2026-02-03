@@ -32,6 +32,7 @@ import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 import { Permissions }  from 'permissions';
 import { Driver,ON,Component, Point } from '@ohos.UiTest';
+import settings from '@ohos.settings';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 async function getPermision(): Promise<void> {
@@ -111,9 +112,9 @@ export default function WindowLifeCycleTest() {
         let context: common.UIAbilityContext;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
-        //let isPCStatus: string = '';
+        let isPCStatus: string = '';
         let windowclassArr:Array<window.Window>;
-        beforeAll(() => {
+        beforeAll(async () => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //hilog.info(0x0000, '[ANI]','windowTest context: ' + JSON.stringify(context))
             try {
@@ -144,11 +145,11 @@ export default function WindowLifeCycleTest() {
             }
             //isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
             //hilog.info(0x0000, '[ANI]',`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
-            //isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
+            isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
             //isPCStatus == '' 非PC设备
             //isPCStatus == '1' PC设备状态栏dock未融合
             //isPCStatus == '0' PC设备状态栏dock融合
-            //hilog.info(0x0000, '[ANI]',`beforeAll isPCStatus: `+ isPCStatus);
+            hilog.info(0x0000, '[ANI]',`beforeAll isPCStatus: `+ isPCStatus);
             await getPermision();
             hilog.info(domain, tag, 'jsUnittest clickButtonDriver before');
             await Utils.msSleep(500);
@@ -1899,8 +1900,10 @@ export default function WindowLifeCycleTest() {
                         done();
                     })
                     .catch((error: Error):PromiseLike<void>|undefined => {
-                        hilog.info(domain, tag,msgStr + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
-                        if (error.code == 1300002) {
+                        hilog.info(domain, tag,msgStr + 'Failed to create the subwindow. Cause: ' + error.code);
+                        if (error.code === 1300002) {
+                            done();
+                        }else if(error.code === 801){
                             done();
                         } else {
                             expect(false).assertTrue();
@@ -1909,13 +1912,9 @@ export default function WindowLifeCycleTest() {
                     });
             } catch (error: BusinessError) {
                 hilog.info(domain, tag,msgStr + ',error code:' + error.code);
-                if(error.code==801){
-                    hilog.info(domain, tag,msgStr + 'The device not support APPLICATION_MODALITY');
-                    done();
-                }else{
-                    expect(false).assertTrue();
-                    done();
-                }
+                expect(false).assertTrue();
+                done();
+               
             }
 
         })
@@ -2315,7 +2314,7 @@ export default function WindowLifeCycleTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin');
             let wantInfo: Want = {
-                bundleName: 'com.example.helloworld',
+                bundleName: 'com.example.actswindowtest.static',
                 abilityName: 'StartAbility'
                 // parameters: {
                 //     info:'来自StartTestAbility页面'
@@ -2349,6 +2348,87 @@ export default function WindowLifeCycleTest() {
                 done()
             }
         })
+        /**
+         * @tc.name   testGetAllMainWindowInfo_static_0200
+         * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_WINDOWINFO_TEST_static_0200
+         * @tc.desc   北向getAllMainWindowInfo测试返回值覆盖
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testGetAllMainWindowInfo_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName:string =  "testGetAllMainWindowInfo_static_0200";
+            console.log(caseName + " begin");
+            if (isPCStatus !== '') {
+                try {
+                    let windowClass:window.Window = windowStage.getMainWindowSync();
+                    let windowId = windowClass.getWindowProperties().id;
+                    console.info(caseName + ' windowId: ' + windowId);
+                    let windowInfoArray = await window.getAllMainWindowInfo();
+                    console.info(caseName + ' windowInfoArray.length: ' + JSON.stringify(windowInfoArray.length));
+                    console.info(caseName + ' windowInfoArray: ' + JSON.stringify(windowInfoArray));
+                    expect(windowInfoArray.length).assertLargerOrEqual(1);
+                    for (let i = 0; i < windowInfoArray.length; i++) {
+                        if (windowInfoArray[i].windowId == windowId) {
+                            let mainWindowInfo = windowInfoArray[i];
+                            console.info(caseName + ' mainWindowInfo: ' + JSON.stringify(mainWindowInfo));
+                            console.info(caseName + ' mainWindowInfo windowId: ' + JSON.stringify(mainWindowInfo.windowId));
+                            console.info(caseName + ' mainWindowInfo displayId: ' + JSON.stringify(mainWindowInfo.displayId));
+                            console.info(caseName + ' mainWindowInfo showing: ' + JSON.stringify(mainWindowInfo.showing));
+                            console.info(caseName + ' mainWindowInfo label: ' + JSON.stringify(mainWindowInfo.label));
+                            expect(mainWindowInfo.windowId).assertEqual(windowId);
+                            expect(mainWindowInfo.displayId).assertEqual(0);
+                            expect(mainWindowInfo.showing).assertEqual(true);
+                            expect(mainWindowInfo.label).assertEqual('label');
+                            done();
+                        }
+                    }
+                } catch (err: BusinessError) {
+                    console.error(caseName + ' failed. Cause: ' + JSON.stringify(err))
+                    expect(false).assertTrue();
+                    done();
+                }
+            } else {
+                done();
+            }
+        });
+        /**
+         * @tc.name   testGetMainWindowSnapsho_statict_0400
+         * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_static_0400
+         * @tc.desc   北向getMainWindowSnapshot测试windowId入参包含0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testGetMainWindowSnapsho_statict_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName:string= "testGetMainWindowSnapsho_statict_0400";
+            console.log(caseName + " begin");
+            if (isPCStatus !== '') {
+                try {
+                    let windowClass :window.Window= windowStage.getMainWindowSync();
+                    let windowId:int = windowClass.getWindowProperties().id;
+                    console.info(caseName + ' windowId: ' + windowId);
+                    let windowIdArray:Array<int> = [0, windowId];
+                    let configs: window.WindowSnapshotConfiguration = {
+                        useCache: false
+                    }
+                    await window.getMainWindowSnapshot(windowIdArray, configs)
+                    expect(true).assertFail();
+                    done()
+                } catch (err: BusinessError){
+                    console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+                    if (err.code == 401) {
+                        expect(true).assertTrue()
+                        done();
+                    } else {
+                        expect(true).assertFail();
+                        done();
+                    }
+                }
+            } else {
+                done();
+            }
+        });
 
 
         

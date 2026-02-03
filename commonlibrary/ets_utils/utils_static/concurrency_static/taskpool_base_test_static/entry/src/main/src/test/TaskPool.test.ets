@@ -191,7 +191,7 @@ async function asyncTask(input: String): Promise<String> {
   });
 }
 
-function taskWrapper(args: Promise<String>): Promise<String> {
+async function taskWrapper(args: Promise<String>): Promise<String> {
   const resolvedValue = await args;
   return asyncTask(resolvedValue);
 }

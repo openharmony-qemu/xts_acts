@@ -28,7 +28,7 @@ let gattClient = null;
 let BleScanner = null;
 let closeUnsupport = false;
 function sleep(delay) {
-    return new Promise(resovle => setTimeout(resovle, delay));
+    return new Promise(resolve => setTimeout(resolve, delay));
 }
 
 async function tryToDisableBt() {
@@ -2688,5 +2688,103 @@ export default function btManagerError003Test() {
             }
             done();
         })
-})
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLE_S_OFF_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLE_S_OFF_0100
+         * @tc.desc   Test setLocalName api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+         it('SUB_COMMUNICATION_BLUETOOTH_BLE_S_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let deviceId = "00:11:22:33:44:55";
+                    let phyValue = {
+                        txPhy : ble.BlePhy.BLE_PHY_1M,
+                        rxPhy : ble.BlePhy.BLE_PHY_2M,
+                        phyMode : ble.CodedPhyMode.BLE_PHY_CODED_S2,
+                    };
+                    await gattServer.setPhy(deviceId , phyValue);
+                    console.info('[bt_arkts]不应该成功');
+                    expect().assertFail();
+                } catch (err) {
+                    console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                    expect(Number(err.code)).assertEqual(2900003);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLE_S_OFF_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLE_S_OFF_0200
+         * @tc.desc   Test setLocalName api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLE_S_OFF_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let deviceId = "00:11:22:33:44:55";
+                    await gattServer.readPhy(deviceId);
+                    console.info('[bt_arkts]不应该成功');
+                    expect().assertFail();
+                } catch (err) {
+                    console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                    expect(Number(err.code)).assertEqual(2900003);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLE_C_OFF_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLE_C_OFF_0100
+         * @tc.desc   Test setLocalName api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+         it('SUB_COMMUNICATION_BLUETOOTH_BLE_C_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let phyValue = {
+                        txPhy : ble.BlePhy.BLE_PHY_1M,
+                        rxPhy : ble.BlePhy.BLE_PHY_2M,
+                        phyMode : ble.CodedPhyMode.BLE_PHY_CODED_S2,
+                    };
+                    await gattClient.setPhy(phyValue);
+                    console.info('[bt_arkts]不应该成功');
+                    expect().assertFail();
+                } catch (err) {
+                    console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                    expect(Number(err.code)).assertEqual(2900003);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLE_C_OFF_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLE_C_OFF_0200
+         * @tc.desc   Test setLocalName api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLE_C_OFF_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    await gattClient.readPhy();
+                    console.info('[bt_arkts]不应该成功');
+                    expect().assertFail();
+                } catch (err) {
+                    console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                    expect(Number(err.code)).assertEqual(2900003);
+                }
+            }
+            done();
+        })
+
+    })
 }

@@ -116,7 +116,7 @@ export default class CommonTest {
               console.error(err.stack);
               if (err.name != 'AssertException') {
                 await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-                expect(msg).assertTrue();
+                expect().assertFail();
               }
             }
             await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);

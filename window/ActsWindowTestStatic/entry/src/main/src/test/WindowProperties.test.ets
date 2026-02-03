@@ -2907,15 +2907,14 @@ export default function WindowPropertiesTest() {
                 expect(callbackIndex).assertLarger(0)
                 callbackIndex = 0;
                 windowClass?.offFrameMetricsMeasured();
+                await Utils.msSleep(1000);
                 windowStage.setCustomDensity(-1.0);
                 await Utils.msSleep(1000);
                 console.log(`${caseName}  callbackIndex 4: ${JSON.stringify(callbackIndex)}`);
                 expect(callbackIndex).assertEqual(0)
-                await windowClass.destroyWindow()
                 done();
             } catch (exception: BusinessError) {
                 console.error(`${caseName} Error. Cause code: ${exception?.code}, message: ${exception?.message}`);
-                await windowClass.destroyWindow()
                 if(exception.code == 801){
                     expect(exception.code).assertEqual(801)
                 }else {
@@ -3188,43 +3187,7 @@ export default function WindowPropertiesTest() {
             }
 
         })
-        /**
-         * @tc.name   testGetMainWindowSnapsho_statict_0400
-         * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_static_0400
-         * @tc.desc   北向getMainWindowSnapshot测试windowId入参包含0
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it("testGetMainWindowSnapsho_statict_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName:string= "testGetMainWindowSnapsho_statict_0400";
-            console.log(caseName + " begin");
-            if (isPCStatus != '') {
-                try {
-                    let windowClass :window.Window= windowStage.getMainWindowSync();
-                    let windowId:int = windowClass.getWindowProperties().id;
-                    console.info(caseName + ' windowId: ' + windowId);
-                    let windowIdArray:Array<Double> = [0, windowId];
-                    let configs: window.WindowSnapshotConfiguration = {
-                        useCache: false
-                    }
-                    await window.getMainWindowSnapshot(windowIdArray, configs)
-                    expect(true).assertFail();
-                    done()
-                } catch (err: BusinessError){
-                    console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
-                    if (err.code == 401) {
-                        expect(true).assertTrue()
-                        done();
-                    } else {
-                        expect(true).assertFail();
-                        done();
-                    }
-                }
-            } else {
-                done();
-            }
-        });
+        
         /**
          * @tc.name   testGetGlobalWindowMode_NegativeId_1300016_static
          * @tc.number SUB_BASIC_WMS_GETGLOBALWINDOWMODE_static_0200

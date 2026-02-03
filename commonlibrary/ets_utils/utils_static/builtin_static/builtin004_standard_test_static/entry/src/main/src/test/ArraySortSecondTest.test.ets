@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -1169,7 +1169,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_4900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [];
-        sort(arr, (a: double, b: double) => a - b);
+        sort(arr, (a: double, b: double) => (a - b).toInt());
         expect(arr.length).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -1189,7 +1189,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_5000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [];
-        sort(arr, (a: double, b: double) => b - a);
+        sort(arr, (a: double, b: double) => (b - a).toInt());
         expect(arr.length).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -1209,7 +1209,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_5100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [1.1, 3.3, 6.6];
-        sort(arr, (a: double, b: double) => a - b);
+        sort(arr, (a: double, b: double) => (a - b).toInt());
         const expected: FixedArray<double> = [1.1, 3.3, 6.6]
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
@@ -1233,7 +1233,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_5200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [1.1, 3.3, 6.6];
-        sort(arr, (a: double, b: double) => b - a);
+        sort(arr, (a: double, b: double) => (b - a).toInt());
         const expected: FixedArray<double> = [6.6, 3.3, 1.1]
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
@@ -1257,7 +1257,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_5300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [5.5, -5.5, 0.0];
-        sort(arr, (a: double, b: double) => a - b);
+        sort(arr, (a: double, b: double) => (a - b).toInt());
         const expected: FixedArray<double> = [-5.5, 0.0, 5.5]
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
@@ -1281,7 +1281,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_5400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [5.5, -5.5, 0.0];
-        sort(arr, (a: double, b: double) => b - a);
+        sort(arr, (a: double, b: double) => (b - a).toInt());
         const expected: FixedArray<double> = [5.5, 0.0, -5.5]
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
@@ -1305,7 +1305,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_5500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [9.9, 9.9, 9.9];
-        sort(arr, (a: double, b: double) => a - b);
+        sort(arr, (a: double, b: double) => (a - b).toInt());
         const expected: FixedArray<double> = [9.9, 9.9, 9.9]
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
@@ -1329,7 +1329,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_5600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [9.9, -9.9, 9.9];
-        sort(arr, (a: double, b: double) => b - a);
+        sort(arr, (a: double, b: double) => (b - a).toInt());
         const expected: FixedArray<double> = [9.9, 9.9, -9.9]
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
@@ -1539,7 +1539,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_6500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [];
-        sort(arr, (a: float, b: float) => a - b);
+        sort(arr, (a: float, b: float) => (a - b).toInt());
         expect(arr.length).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -1559,7 +1559,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_6600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [80.0.toFloat()];
-        sort(arr, (a: float, b: float) => b - a);
+        sort(arr, (a: float, b: float) => (b - a).toInt());
         const expected: FixedArray<float> = [80.0.toFloat()];
         expect(arr.length).assertEqual(1);
         expect(arr[0]).assertEqual(expected[0]);
@@ -1581,7 +1581,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_6700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [5.5.toFloat(), 15.5.toFloat(), 25.5.toFloat()];
-        sort(arr, (a: float, b: float) => a - b);
+        sort(arr, (a: float, b: float) => (a - b).toInt());
         const expected: FixedArray<float> = [5.5.toFloat(), 15.5.toFloat(), 25.5.toFloat()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
@@ -1605,7 +1605,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_6800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [5.5.toFloat(), 15.5.toFloat(), 25.5.toFloat()];
-        sort(arr, (a: float, b: float) => b - a);
+        sort(arr, (a: float, b: float) => (b - a).toInt());
         const expected: FixedArray<float> = [25.5.toFloat(), 15.5.toFloat(), 5.5.toFloat()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
@@ -1629,7 +1629,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_6900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [20.0.toFloat(), -20.0.toFloat(), 20.0.toFloat()];
-        sort(arr, (a: float, b: float) => a - b);
+        sort(arr, (a: float, b: float) => (a - b).toInt());
         const expected: FixedArray<float> = [-20.0.toFloat(), 20.0.toFloat(), 20.0.toFloat()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
@@ -1653,7 +1653,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_7000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [20.0.toFloat(), -20.0.toFloat(), 20.0.toFloat()];
-        sort(arr, (a: float, b: float) => b - a);
+        sort(arr, (a: float, b: float) => (b - a).toInt());
         const expected: FixedArray<float> = [20.0.toFloat(), 20.0.toFloat(), -20.0.toFloat()];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
@@ -1677,7 +1677,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_7100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [3.3.toFloat(), 1.1.toFloat(), 4.4.toFloat(), 1.1.toFloat(), 5.5.toFloat()];
-        sort(arr, (a: float, b: float) => a - b);
+        sort(arr, (a: float, b: float) => (a - b).toInt());
         const expected: FixedArray<float> = [1.1.toFloat(), 1.1.toFloat(), 3.3.toFloat(), 4.4.toFloat(), 5.5.toFloat()];
         expect(arr.length).assertEqual(5);
         expect(arr[0]).assertEqual(expected[0]);
@@ -1703,7 +1703,7 @@ export default function Array_Sort_Second_Test_static() {
         const caseName = 'Array_Sort_Second_Test_static_7200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [3.3.toFloat(), 1.1.toFloat(), 4.4.toFloat(), 1.1.toFloat(), 5.5.toFloat()];
-        sort(arr, (a: float, b: float) => b - a);
+        sort(arr, (a: float, b: float) => (b - a).toInt());
         const expected: FixedArray<float> = [5.5.toFloat(), 4.4.toFloat(), 3.3.toFloat(), 1.1.toFloat(), 1.1.toFloat()];
         expect(arr.length).assertEqual(5);
         expect(arr[0]).assertEqual(expected[0]);

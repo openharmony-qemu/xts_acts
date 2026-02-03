@@ -70,8 +70,6 @@ export default function enabledTest() {
     'RelativeContainer',
     'GridItem',
     'TextTimer',
-    'Stepper',
-    'StepperItem',
     'Flex',
     'Progress',
     'QRCode',

@@ -21,7 +21,11 @@ import { resourceManager } from '@kit.LocalizationKit';
 
 function spliceColor(sysColor: Resource) {
   let resourceColor = getContext().resourceManager.getColorSync(sysColor.id)
-  let newArgb: string = '#0' + resourceColor.toString(16).toUpperCase()
+  let newArgb: string =  resourceColor.toString(16).toUpperCase()
+  while(newArgb.length<8){
+    newArgb = '0' + newArgb
+  }
+  newArgb = '#' + newArgb
   return newArgb;
 }
 

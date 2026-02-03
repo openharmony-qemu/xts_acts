@@ -22,6 +22,7 @@ export default function builtinsRegExpSymbolReplaceTest() {
     beforeAll(() => {
     })
     beforeEach(async () => {
+      await sleep(40);
     })
     afterEach(() => {
     })

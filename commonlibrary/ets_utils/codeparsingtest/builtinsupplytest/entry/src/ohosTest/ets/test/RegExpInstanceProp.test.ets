@@ -26,6 +26,7 @@ export default function builtinsRegExpInstancePropTest() {
     beforeAll(() => {
     })
     beforeEach(async () => {
+      await sleep(40);
     })
     afterEach(() => {
     })

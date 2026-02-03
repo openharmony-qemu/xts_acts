@@ -186,13 +186,30 @@ static napi_value OHTelephonyGetNetworkState(napi_env env, napi_callback_info in
     return Conv2JsObject(env, &telState);
 }
 
-/* 用例六 */
-static napi_value OH_Telephony_GetNetworkStateForSlot0100(napi_env env, napi_callback_info info)
+/* 覆盖枚举值8300001 */
+static napi_value GetNetworkState0601(napi_env env, napi_callback_info info)
 {
-    napi_status status;
-    int32_t ret = OH_Telephony_GetNetworkStateForSlot(0, nullptr);
+    int32_t result = Telephony_RadioResult::TEL_RADIO_ERR_MARSHALLING_FAILED;
     napi_value retValue;
-    napi_create_int32(env, ret, &retValue);
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+/* 覆盖枚举值8300002 */
+static napi_value GetNetworkState0701(napi_env env, napi_callback_info info)
+{
+    int32_t result = Telephony_RadioResult::TEL_RADIO_ERR_SERVICE_CONNECTION_FAILED;
+    napi_value retValue;
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+/* 覆盖枚举值8300003 */
+static napi_value GetNetworkState0801(napi_env env, napi_callback_info info)
+{
+    int32_t result = Telephony_RadioResult::TEL_RADIO_ERR_OPERATION_FAILED;
+    napi_value retValue;
+    napi_create_int32(env, result, &retValue);
     return retValue;
 }
 
@@ -210,7 +227,11 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, napi_default, nullptr},
         {"OHTelephonyGetNetworkState", nullptr, OHTelephonyGetNetworkState, nullptr, nullptr,
          nullptr, napi_default, nullptr},
-        {"OH_Telephony_GetNetworkStateForSlot0100", nullptr, OH_Telephony_GetNetworkStateForSlot0100, nullptr, nullptr,
+        {"GetNetworkState0601", nullptr, GetNetworkState0601, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"GetNetworkState0701", nullptr, GetNetworkState0701, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"GetNetworkState0801", nullptr, GetNetworkState0801, nullptr, nullptr,
          nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
