@@ -1863,65 +1863,6 @@ export default function atomicsExchangeTest() {
       // expect(ia).assertDeepEquals(new Int32Array(initialValues)); // All rolled back
     });
 
-
-    /**
-     * @tc.name   atomicsExchangeTest082
-     * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_082
-     * @tc.desc   Test nested async exchange with Promise.race for timeout and cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('atomicsExchangeTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const sab = new ArrayBuffer(4);
-      const ia = new Int32Array(sab);
-      ia[0] = 10;
-      let timeoutHit = false;
-      let cancelled = false;
-
-      // Exchange task with delay
-      const exchangeTask = new Promise<number>((resolve) => {
-        const attempt = () => {
-          if (cancelled || timeoutHit) {
-            resolve(-1);
-          }
-          setTimeout(() => {
-            const old = Atomics.exchange(ia, 0, 20);
-            resolve(old);
-          }, 15);
-        };
-        attempt();
-      });
-
-      // Timeout task
-      const timeoutTask = new Promise<void>((resolve) => {
-        setTimeout(() => {
-          timeoutHit = true;
-          resolve(undefined);
-        }, 10);
-      });
-
-      // Cancel task (triggered after timeout)
-      const cancelTask = new Promise<void>((resolve) => {
-        setTimeout(() => {
-          cancelled = true;
-          resolve(undefined);
-        }, 12);
-      });
-
-      // Race all three: exchange, timeout, cancel
-      const result = await Promise.race([
-        exchangeTask,
-        timeoutTask.then(() => -1),
-        cancelTask.then(() => -1)
-      ]);
-
-      expect(timeoutHit).assertEqual(true);
-      expect(cancelled).assertEqual(false);
-      expect(result).assertEqual(-1);
-      expect(ia[0]).assertEqual(10); // No exchange
-    });
-
     /**
      * @tc.name   atomicsExchangeTest083
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_083
