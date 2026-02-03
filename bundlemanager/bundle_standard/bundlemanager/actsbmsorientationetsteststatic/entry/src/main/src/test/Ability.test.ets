@@ -49,9 +49,9 @@ export default function abilityTest() {
      * @tc.desc   Query if the orientation value is FOLLOW_RECENT.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Acts_OrientationTest_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('Acts_OrientationTest_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         bundleManager.getBundleInfoForSelf(bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE |
         bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_ABILITY,

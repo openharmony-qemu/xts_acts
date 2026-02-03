@@ -32,9 +32,9 @@ export default function setShortcutVisible() {
      * @tc.desc   Obtain the shortcut config data through the get interface to determine if it is correct.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Sub_Bms_Framework_shortcutManager_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('Sub_Bms_Framework_shortcutManager_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let tag = 'Sub_Bms_Framework_shortcutManager_static_001';
         hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} begin`);
