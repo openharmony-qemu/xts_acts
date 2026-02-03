@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,7 +76,7 @@ export default function imagePixelmap() {
   const test_DMA_3071_4095 = "test_DMA_3071_4095.jpg";
 
   describe('imagePixelMapForDMA', () => {
-    beforeAll(() => {
+    beforeAll(async () => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       cacheDir = Hypium.get('cacheDir') as string | undefined | null;
@@ -94,7 +94,7 @@ export default function imagePixelmap() {
       }
     })
 
-    afterEach(() => {
+    afterEach(async () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'afterEach case');
       await sleep(3000);
     });
@@ -119,17 +119,17 @@ export default function imagePixelmap() {
       let pixelMap: image.PixelMap | undefined = undefined;
       let imageInfo: image.ImageInfo | undefined = undefined;
       if (decodingOptions != undefined) {
-        pixelMap = await imageSource.createPixelMap(decodingOptions);
+        waitForCompletion(async () => {pixelMap = await imageSource.createPixelMap(decodingOptions);})
       } else {
-        pixelMap = await imageSource.createPixelMap();
+        waitForCompletion(async () => {pixelMap = await imageSource.createPixelMap();})
       }
-      await imageSource.release();
+      waitForCompletion(async () => {await imageSource.release();})
       if (pixelMap == undefined) {
         logger.log("create pixelMap failed.")
         return undefined;
       }
-      imageInfo = await pixelMap.getImageInfo();
-      await pixelMap.release();
+      waitForCompletion(async () => {imageInfo = await pixelMap.getImageInfo();})
+      waitForCompletion(async () => {await pixelMap.release();})
       return imageInfo;
     }
 
@@ -156,21 +156,22 @@ export default function imagePixelmap() {
           }
         } else {
           if (decodingOptions != undefined && allocatorType == undefined) {
-            pixelMap = await imageSource.createPixelMapUsingAllocator(decodingOptions);
+            waitForCompletion(async () => {pixelMap = await imageSource.createPixelMapUsingAllocator(decodingOptions);})
           } else if (decodingOptions != undefined && allocatorType != undefined) {
-            pixelMap = await imageSource.createPixelMapUsingAllocator(decodingOptions, allocatorType);
+            waitForCompletion(async () => {pixelMap = await imageSource.createPixelMapUsingAllocator(decodingOptions, allocatorType);})
           } else if (decodingOptions == undefined && allocatorType == undefined) {
-            pixelMap = await imageSource.createPixelMapUsingAllocator();
+            waitForCompletion(async () => {pixelMap = await imageSource.createPixelMapUsingAllocator();})
           }
         }
-        await imageSource.release();
+        waitForCompletion(async () => {await imageSource.release();})
       } catch (error) {
         logger.log("getPixelmapFromAllocator error is: " + JSON.stringify(error));
         logger.log('Failed to create pixelMap.');
       }
       if(pixelMap != undefined) {
-        let dstImageInfo = await pixelMap.getImageInfo();
-        await pixelMap.release();
+        let dstImageInfo: image.ImageInfo
+        waitForCompletion(async () => {dstImageInfo = await pixelMap.getImageInfo();})
+        waitForCompletion(async () => {await pixelMap.release();})
         return dstImageInfo;
       } else {
         return undefined;
