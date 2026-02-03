@@ -40,31 +40,8 @@ const ExpectTrue = (n: boolean) => {
   }
 }
 
-async function getPermissions() {
-  hilog.info(domain, tag, 'getPermission start');
-  let list: Array<string> = ['ohos.permission.SEND_MESSAGES', 'ohos.permission.RECEIVE_MMS', 'ohos.permission.RECEIVE_SMS'];
-  try {
-    let userId: int = await account.getAccountManager().getOsAccountLocalId();
-    let applicationFlags: int = bundleManager.ApplicationFlag.GET_APPLICATION_INFO_DEFAULT;
-    let applicationInfo: bundleManager.ApplicationInfo =  bundleManager.getApplicationInfoSync('com.example.smswithcardtest.static', applicationFlags, userId);
-    let tokenId: long = applicationInfo.accessTokenId;
-    let tokenValue:int = tokenId as int;
-    for (let index = 0; index < list.length; index++) {
-      await abilityAccessCtrl.createAtManager().grantUserGrantedPermission(tokenValue,list[index] as Permissions, 1);
-    }
-  } catch (err) {
-    hilog.info(domain, tag, `getPermission error ${JSON.stringify(err)}`);
-  }
-  hilog.info(domain, tag, 'getPermission end');
-}
-
 export default function smsTextNoCardPublic() {
   describe("smsTextDoneCardPublic", () => {
-    beforeAll(async (done: () => void) => {
-      console.info('getPermission beforeAll');
-      await getPermissions();
-      done();
-    });
 
     let telphone: string = '+8617692630498';
     let telphoneErr: string = '+861xxxxxxxxxxx';
