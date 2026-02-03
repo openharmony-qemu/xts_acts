@@ -40,9 +40,9 @@ export default function bmsZlibChecksumCrc32Test() {
      * @tc.desc   test crc32(0,bufEmpty)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("Sub_Bms_Zlib_Checksum_Check_static_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("Sub_Bms_Zlib_Checksum_Check_static_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let crc: long = 0;
         hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_2600 start`);

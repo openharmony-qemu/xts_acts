@@ -34,9 +34,9 @@ export default function getBundleInfoForSelf() {
      * @tc.desc   Test getBundleInfoForSelf with GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION and GET_BUNDLE_INFO_WITH_SIGNATURE_INFO flag
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getBundleInfoForSelfWithREQUESTED_PERMISSION', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getBundleInfoForSelfWithREQUESTED_PERMISSION', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION |
         bundle.BundleFlag.GET_BUNDLE_INFO_WITH_SIGNATURE_INFO)
@@ -79,9 +79,9 @@ export default function getBundleInfoForSelf() {
      * @tc.desc   Test getBundleInfoForSelf with GET_BUNDLE_INFO_WITH_HAP_MODULE and GET_BUNDLE_INFO_WITH_METADATA flag
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getBundleInfoForSelfWithMETADATA', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getBundleInfoForSelfWithMETADATA', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE |
         bundle.BundleFlag.GET_BUNDLE_INFO_WITH_METADATA)

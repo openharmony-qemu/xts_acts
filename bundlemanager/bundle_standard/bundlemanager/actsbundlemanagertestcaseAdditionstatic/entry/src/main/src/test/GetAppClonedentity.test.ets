@@ -29,9 +29,9 @@ export default function getAppCloneIdentity() {
      * @tc.desc   Test GetAppCloneIdentity interfaces with other hap.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('getAppCloneIdentity_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('getAppCloneIdentity_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let dataInfo =
           bundleManager.getBundleInfoForSelfSync(bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);

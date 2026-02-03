@@ -53,9 +53,9 @@ export default function bmsZlibChecksumCrc32CombineTest() {
      * @tc.desc   test Crc32Combine(crc1,crc2,123)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("Sub_Bms_Zlib_Checksum_Check_static_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it("Sub_Bms_Zlib_Checksum_Check_static_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let len2: long = 123;

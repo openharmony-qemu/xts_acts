@@ -25,9 +25,9 @@ export default function getOverlayModuleInfo() {
      * @tc.desc   The query fails when the incoming moduleName is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("Sub_Bms_Framework_Overlay_Query_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("Sub_Bms_Framework_Overlay_Query_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let op3 = overlay.getOverlayModuleInfo("");
