@@ -25,8 +25,8 @@ function sleep(delay) {
 }
 
 async function openPhone() {
-     let drivers = Driver.create();
      try{
+         let drivers = Driver.create();
          console.info('[bluetooth_js] bt driver create:'+ drivers);            
          await drivers.delayMs(1000);
          await drivers.wakeUpDisplay();
@@ -51,10 +51,6 @@ async function clickTheWindow(text) {
           console.info('[bluetooth_js] click sucess');
      } catch (err) {
           console.info('[bluetooth_js] click failed. ' + JSON.stringify(err));
-     } finally{
-        if(driver){
-            await driver.close();
-        }
      }
 }
 
