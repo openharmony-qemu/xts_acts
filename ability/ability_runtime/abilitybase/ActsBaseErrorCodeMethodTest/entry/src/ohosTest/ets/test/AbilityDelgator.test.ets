@@ -34,10 +34,7 @@ export default function openLinkTest() {
     });
     afterEach((done: Function) => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Ability afterEach');
-      setTimeout(() => {
-        hilog.info(0x0000, 'testTag', '%{public}s', 'Ability setTimeout');
-        done();
-      }, 1000);
+      done();
     });
 
     /**
