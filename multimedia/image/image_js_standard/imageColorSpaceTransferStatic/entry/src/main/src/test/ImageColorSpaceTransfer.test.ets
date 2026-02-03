@@ -36,7 +36,7 @@ function getFd(fileName:string) {
   console.info("image case filePath is " + filePath);
   let file: fs.File | undefined;
   waitForCompletion(async () => {file = await fs.open(filePath, 0o0);})
-  return file.fd as int
+  return file!.fd as int
 }
 
 class Logger {
@@ -72,7 +72,7 @@ const createPixelmapTestPromise = async (
         csm = colorSpaceManager.create(colorSpace as colorSpaceManager.ColorSpace);
       }
       let decodingOptions: image.DecodingOptions = { desiredColorSpace: csm };
-      let pixelMap: image.PixelMap | undefined = await imageSource.createPixelMap(decodingOptions);
+      let pixelMap = waitForCompletion<image.PixelMap>(async ():Promise<image.PixelMap> => {await imageSource!.createPixelMap(decodingOptions);})
       logger.log("PixelMap " + pixelMap);
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;
@@ -160,7 +160,7 @@ const applyColorSpacePromiseTest = async (
     logger.log("ImageSource " + (imageSource != undefined));
     if (imageSource != undefined) {
       globalimageSource = imageSource;
-      let pixelMap = await imageSource.createPixelMap();
+      let pixelMap = waitForCompletion<image.PixelMap>(async ():Promise<image.PixelMap> => {await imageSource!.createPixelMap();})
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;
         let csmModify: colorSpaceManager.ColorSpaceManager;
@@ -171,7 +171,7 @@ const applyColorSpacePromiseTest = async (
         }
         logger.log("csmModify " + csmModify);
         try{
-          await pixelMap.applyColorSpace(csmModify);
+          waitForCompletion(async () => {await pixelMap!.applyColorSpace(csmModify);})
           let csm1 = pixelMap.getColorSpace();
           logger.log("getColorSpace " + csm1);
           let csmn = csm1.getColorSpaceName();
@@ -216,7 +216,7 @@ const applyColorSpaceCbTest = async (
     logger.log("ImageSource " + (imageSource != undefined));
     if (imageSource != undefined) {
       globalimageSource = imageSource;
-      let pixelMap = await imageSource.createPixelMap();
+      let pixelMap = waitForCompletion<image.PixelMap>(async ():Promise<image.PixelMap> => {await imageSource!.createPixelMap();})
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;
         let csmModify: colorSpaceManager.ColorSpaceManager;
