@@ -66,9 +66,9 @@ export default function webInitTest() {
      * @tc.desc   test once webInit should be called
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testOnceStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testOnceStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(5000);
       Utils.emitEvent('emitOnce001', 10)

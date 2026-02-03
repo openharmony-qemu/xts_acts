@@ -43,9 +43,9 @@ export default function webViewObjectEmbed() {
      * @tc.desc   test objectEmbed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testWebViewObjectEmbed_static_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testWebViewObjectEmbed_static_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitWebViewObjectEmbed01', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('emitWebViewObjectEmbed01', 'success', 8014, done);

@@ -64,9 +64,9 @@ export default function webViewSrollableJsunit() {
      * @tc.desc   test blurMode01 interface when choose callback mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('blurModeStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('blurModeStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000)
       Utils.emitEvent("blurMode01", 10)
       let driver = Driver.create();

@@ -58,15 +58,15 @@ export default function webCookieManagerExistCookie() {
       console.info("web beforeEach start");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_0200
-    * @tc.name       : testExistCookie002
-    * @tc.desc       : test existCookie
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
-    it('testExistCookie002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+     * @tc.name        testExistCookie002
+     * @tc.number      SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_0200
+     * @tc.desc        test existCookie
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testExistCookie002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent("testExistCookie002", 10)
