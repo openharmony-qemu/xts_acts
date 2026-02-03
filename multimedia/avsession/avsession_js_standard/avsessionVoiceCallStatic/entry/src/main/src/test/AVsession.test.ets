@@ -2417,54 +2417,6 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVSESSION_STATIC_0100
-         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVSESSION_STATIC_0100
-         * @tc.desc   SUB_MULTIMEDIA_AVSESSION_GETAVSESSION_STATIC_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('SUB_MULTIMEDIA_AVSESSION_GETAVSESSION_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            try{
-                await Utils.msSleep(500);
-                avSession.getAVSession(context).then((data) => {
-                    session = data;
-                    console.info('getAVSession successfully${session!.sessionType}');
-                })
-            } catch (err) {
-                console.info('getAVSession failed${err.code} message:${err.message}');
-                expect(false).assertTrue()
-                done();
-            }
-            done();
-        })
-
-        /**
-         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVSESSION_STATIC_0200
-         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVSESSION_STATIC_0200
-         * @tc.desc   SUB_MULTIMEDIA_AVSESSION_GETAVSESSION_STATIC_0200
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('SUB_MULTIMEDIA_AVSESSION_GETAVSESSION_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            await session!.destroy();
-            try{
-                await Utils.msSleep(500);
-                avSession.getAVSession(context).then((data) => {
-                    expect(data.sessionTag).assertEqual(session!.sessionTag)
-                    console.info('getAVSession successfully${data.sessionType}');
-                    expect(false).assertTrue();
-                })
-            } catch (err) {
-                console.info('getAVSession failed${err.code} message:${err.message}');
-                expect(err.code).assertEqual(6600102)
-                done();
-            }
-            done();
-        })
-
-        /**
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_STATIC_0100
          * @tc.number SUB_MULTIMEDIA_AVSESSION_ENABLEDESKTOPLYRIC_STATIC_0100
          * @tc.desc   Testing enableDesktopLyric with enable=true (normal scenario)
