@@ -65,7 +65,7 @@ struct RepeatLazy0150 {
           .virtualScroll({
             onTotalCount: ()=> {return 100},
             onLazyLoading: (index: int) => {
-              this.dataArr[index.toInt()] = index.toString()
+              this.dataArr.push(index.toString())
             }
           })
 
