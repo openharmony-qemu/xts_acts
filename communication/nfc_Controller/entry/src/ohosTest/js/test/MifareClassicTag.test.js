@@ -402,9 +402,9 @@ export default function nfcMifareClassicTag() {
                     if (err.code == 201) {
                         console.info("[NFC_test] MifareClassicTag9 decrementBlock1 err: " + err);
                         expect(true).assertTrue();
-                    } else if (err.code == 3100201) {
+                    } else if (err.code === '3100201') {
                         console.info("[NFC_test] MifareClassicTag9 decrementBlock1 err: " + err);
-                        expect(true).assertTrue();
+                        expect(err.code).assertEqual('3100201');
                     } else if (err.code == 3100204) {
                         console.info("[NFC_test] MifareClassicTag9 decrementBlock1 err: " + err);
                         expect(true).assertTrue();
