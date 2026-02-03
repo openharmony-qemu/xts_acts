@@ -535,6 +535,7 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getLong(9);
           expect().assertFail();
+          done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test004 code %{public}d", err.code);
           await rdbStore!.close();
@@ -858,6 +859,7 @@ export default function RdbStoreErrorCodeAddTest() {
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test005 code %{public}d", err.code);
+          await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -1220,7 +1222,6 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           const doc = resultSet.getAssets(resultSet.getColumnIndex("zhangsan"));
           expect().assertFail();
-          await rdbStore!.close();
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test018 code %{public}d", err.code);
@@ -1616,10 +1617,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getString(5);
           expect().assertFail();
-          await rdbStore!.close();
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800041Test005 code %{public}d", err.code);
+          await rdbStore!.close();
           expect(err.code === 14800041).assertTrue();
           done();
         }
