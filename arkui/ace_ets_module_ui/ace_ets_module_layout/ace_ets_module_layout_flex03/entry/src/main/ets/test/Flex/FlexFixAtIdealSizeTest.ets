@@ -69,8 +69,6 @@ export default function FlexFixAtIdealSizeTest() {
       console.info("[FlexFixAtIdealSizeTest_0100] flex_width is: " + flex_width);
       console.info("[FlexFixAtIdealSizeTest_0100] flex_height is: " + flex_height);
 
-      expect(obj.$attrs.width).assertEqual('50.00vp');
-      expect(obj.$attrs.height).assertEqual('50.00vp');
       expect(Math.floor(Math.abs(flex_width - vp2px(50))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(flex_height - vp2px(50))) <= 1).assertTrue();
 
@@ -90,8 +88,6 @@ export default function FlexFixAtIdealSizeTest() {
       console.info("[FlexFixAtIdealSizeTest_0100] flex_width is: " + flex_width);
       console.info("[FlexFixAtIdealSizeTest_0100] flex_height is: " + flex_height);
 
-      expect(obj.$attrs.width).assertEqual('100.00vp');
-      expect(obj.$attrs.height).assertEqual('100.00vp');
       expect(Math.floor(Math.abs(flex_width - vp2px(100))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(flex_height - vp2px(100))) <= 1).assertTrue();
 

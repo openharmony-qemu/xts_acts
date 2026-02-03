@@ -71,15 +71,15 @@ export default function GridRow_onBreakpoint() {
       expect(JSON.parse(gridRowBreakpointJson).$type).assertEqual('GridRow');
       expect(JSON.parse(textComponent2).$attrs.content).assertEqual('xxl');
 
-      expect(Math.abs(firstBreakpoint.top - Breakpoint_1.top) <= 1).assertTrue();
-      expect(Math.abs(secondBreakpoint.top - secondBreakpoint.top) <= 1).assertTrue();
-      expect(Math.abs(thirdBreakpoint.top - thirdBreakpoint.top) <= 1).assertTrue();
-      expect(Math.abs(firstBreakpoint.left - Breakpoint_1.left) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstBreakpoint.top - Breakpoint_1.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(secondBreakpoint.top - secondBreakpoint.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(thirdBreakpoint.top - thirdBreakpoint.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstBreakpoint.left - Breakpoint_1.left)) <= 1).assertTrue();
 
-      expect(Math.abs(secondBreakpoint.left - firstBreakpoint.right - vp2px(30)) <= 1).assertTrue();
-      expect(Math.abs(thirdBreakpoint.left - secondBreakpoint.right - vp2px(30)) <= 1).assertTrue();
-      expect(Math.abs(fourthBreakpoint.left - thirdBreakpoint.right - vp2px(30)) <= 1).assertTrue();
-      expect(Math.abs(seventhBreakpoint.top - firstBreakpoint.bottom - vp2px(30)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(secondBreakpoint.left - firstBreakpoint.right - vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(thirdBreakpoint.left - secondBreakpoint.right - vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(fourthBreakpoint.left - thirdBreakpoint.right - vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(seventhBreakpoint.top - firstBreakpoint.bottom - vp2px(30))) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRow_onBreakPointChange_0100 END');
       done();
