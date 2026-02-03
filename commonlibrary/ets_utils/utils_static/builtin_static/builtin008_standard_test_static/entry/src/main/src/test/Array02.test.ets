@@ -894,7 +894,7 @@ export default function Array_02Test() {
     it('testMapBoolean0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapBoolean0003";
       try {
-        const emptyArray = new boolean[0] as FixedArray<boolean>;
+        const emptyArray = new FixedArray<boolean>(0);
         const callback = (val: boolean): boolean => {
           expect().assertFail();
           return val;
@@ -940,7 +940,7 @@ export default function Array_02Test() {
     it('testMapByte0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapByte0002";
       try {
-        const empty: FixedArray<byte> = new byte[0] as FixedArray<byte>;
+        const empty: FixedArray<byte> = new FixedArray<byte>(0);
         const callback = (val: byte): byte => {
           expect().assertFail();
           return val;
@@ -986,7 +986,7 @@ export default function Array_02Test() {
     it('testMapChar0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapChar0001";
       try {
-        const empty: FixedArray<char> = new char[0] as FixedArray<char>;
+        const empty: FixedArray<char> = new FixedArray<char>(0);
         const callback = (val: char): char => {
           expect().assertFail();
           return val;
@@ -1034,7 +1034,7 @@ export default function Array_02Test() {
     it('testMapDouble0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapDouble0002";
       try {
-        const empty: FixedArray<double> = new double[0] as FixedArray<double>;
+        const empty: FixedArray<double> = new FixedArray<double>(0);
         const callback = (val: double): double => {
           expect().assertFail();
           return val;
@@ -1104,7 +1104,7 @@ export default function Array_02Test() {
     it('testMapFloat0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapFloat0001";
       try {
-        const empty: FixedArray<float> = new float[0] as FixedArray<float>;
+        const empty: FixedArray<float> = new FixedArray<float>(0);
         const callback = (val: float): float => {
           expect().assertFail();
           return val;
@@ -1174,7 +1174,7 @@ export default function Array_02Test() {
     it('testMapInt0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapInt0002";
       try {
-        const empty: FixedArray<int> = new int[0] as FixedArray<int>;
+        const empty: FixedArray<int> = new FixedArray<int>(0);
         const callback = (val: int): int => {
           expect().assertFail(); // 确保回调不被执行
           return val;
@@ -1292,7 +1292,7 @@ export default function Array_02Test() {
     it('testMapLong0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapLong0002";
       try {
-        const empty: FixedArray<long> = new long[0] as FixedArray<long>;
+        const empty: FixedArray<long> = new FixedArray<long>(0);
         const callback = (val: long): long => {
           expect().assertFail();
           return val;
@@ -1408,7 +1408,7 @@ export default function Array_02Test() {
     it('testMapShort0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapShort0002";
       try {
-        const empty: FixedArray<short> = new short[0] as FixedArray<short>;
+        const empty: FixedArray<short> = new FixedArray<short>(0);
         const callback = (val: short): short => {
           expect().assertFail();
           return val;
