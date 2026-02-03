@@ -111,13 +111,9 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getRow();
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800001Test003 code %{public}d", err.code);
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800001).assertTrue();
           done();
         }
@@ -142,13 +138,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.isColumnNull(1);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800001Test006 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800001).assertTrue();
           done();
         }
@@ -170,13 +163,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           rdbStore!.querySqlWithoutRowCountSync("");
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "RdbStoreSetErrCode14800001Test008 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800001).assertTrue();
           done()
         }
@@ -199,15 +189,11 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           rdbTrans.querySqlWithoutRowCountSync("");
           expect().assertFail();
-          rdbTrans.rollback();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "RdbStoreSetErrCode14800001Test009 code %{public}d", err.code);
           rdbTrans.rollback();
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800001).assertTrue();
           done()
         }
@@ -230,13 +216,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getBlob(9);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test001 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800012).assertTrue();
           done();
         }
@@ -259,13 +242,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getString(9);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test002 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800012).assertTrue();
           done();
         }
@@ -288,13 +268,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getLong(9);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test003 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800012).assertTrue();
           done();
         }
@@ -317,13 +294,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getValue(9);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test004 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800012).assertTrue();
           done();
         }
@@ -346,13 +320,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getDouble(9);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test005 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800012).assertTrue();
           done();
         }
@@ -376,13 +347,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getRow();
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test006 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800012).assertTrue();
           done();
         }
@@ -406,13 +374,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.isColumnNull(5);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test008 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800012).assertTrue();
           done();
         }
@@ -436,13 +401,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getAssets(5);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test010 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800012).assertTrue();
           done();
         }
@@ -465,13 +427,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getAsset(9);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test0011 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800012).assertTrue();
           done();
         }
@@ -495,13 +454,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getColumnName(9);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test001 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800013).assertTrue();
           done();
         }
@@ -525,13 +481,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getBlob(9);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test002 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800013).assertTrue();
           done();
         }
@@ -555,13 +508,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getString(9);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test003 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800013).assertTrue();
           done();
         }
@@ -585,13 +535,9 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getLong(9);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-          done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test004 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800013).assertTrue();
           done();
         }
@@ -615,13 +561,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getDouble(9);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test005 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800013).assertTrue();
           done();
         }
@@ -645,13 +588,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getAsset(9);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test006 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800013).assertTrue();
           done();
         }
@@ -675,13 +615,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getAssets(9);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test007 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800013).assertTrue();
           done();
         }
@@ -705,13 +642,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getValue(9);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test008 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800013).assertTrue();
           done();
         }
@@ -735,13 +669,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.isColumnNull(9);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test009 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800013).assertTrue();
           done();
         }
@@ -767,12 +698,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           await rdbStore!.queryWithoutRowCount(predicates);
           expect().assertFail();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "RdbStoreSetErrCode14800014Test001 code %{public}d", err.code);
           expect(err.code === 14800014).assertTrue();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done()
         }
         console.log(TAG + "************* RdbStoreSetErrCode14800014Test001 end *************");
@@ -796,12 +725,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           rdbStore!.queryWithoutRowCountSync(predicates);
           expect().assertFail();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "RdbStoreSetErrCode14800014Test002 code %{public}d", err.code);
           expect(err.code === 14800014).assertTrue();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         }
         console.log(TAG + "************* RdbStoreSetErrCode14800014Test002 end *************");
@@ -823,13 +750,9 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test");
           expect().assertFail();
-
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "RdbStoreSetErrCode14800014Test003 code %{public}d", err.code);
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -852,11 +775,9 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           rdbStore!.querySqlWithoutRowCountSync("SELECT * FROM test");
           expect().assertFail();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "RdbStoreSetErrCode14800014Test004 code %{public}d", err.code);
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -880,13 +801,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet!.getColumnIndex("data1");
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test001 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -910,13 +828,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet!.getColumnName(0);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test002 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -940,13 +855,9 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           const names = resultSet.getColumnNames();
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test005 code %{public}d", err.code);
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -971,13 +882,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           const rowData = resultSet.getCurrentRowData();
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test006 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -1001,13 +909,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.goToNextRow();
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test007 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -1033,13 +938,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           const name = resultSet.getBlob(resultSet.getColumnIndex("zhangsan"));
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test008 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -1064,13 +966,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           const name = resultSet.getString(resultSet.getColumnIndex("data1"));
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test009 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -1095,13 +994,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           const age = resultSet.getLong(resultSet.getColumnIndex("data2"));
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test010 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -1126,13 +1022,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           const salary = resultSet.getDouble(resultSet.getColumnIndex("data4"));
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test011 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -1158,13 +1051,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           const name = resultSet.getValue(resultSet.getColumnIndex("data1"));
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test012 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -1189,13 +1079,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           const rowData = resultSet.getRow();
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test013 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -1221,13 +1108,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           await resultSet.getRows(1);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test014 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -1252,13 +1136,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           let rowsData = await resultSet.getRowsData(3);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test015 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -1283,13 +1164,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           const name = resultSet.isColumnNull(resultSet.getColumnIndex("data1"));
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test016 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -1314,13 +1192,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           const doc = resultSet.getAsset(resultSet.getColumnIndex("zhangsan"));
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test017 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done()
         }
@@ -1346,12 +1221,10 @@ export default function RdbStoreErrorCodeAddTest() {
           const doc = resultSet.getAssets(resultSet.getColumnIndex("zhangsan"));
           expect().assertFail();
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test018 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800014).assertTrue();
           done();
         }
@@ -1373,13 +1246,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.goToNextRow();
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800019Test001 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800019).assertTrue();
           done();
         }
@@ -1402,13 +1272,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getRow();
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800019Test002 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800019).assertTrue();
           done();
         }
@@ -1431,13 +1298,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.isColumnNull(2);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800019Test004 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800019).assertTrue();
           done();
         }
@@ -1460,13 +1324,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getColumnIndex("data1");
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800019Test005 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800019).assertTrue();
           done();
         }
@@ -1489,13 +1350,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getColumnName(1);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800019Test006 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800019).assertTrue();
           done();
         }
@@ -1518,13 +1376,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getRow();
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800021Test0021111 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800021).assertTrue();
           done();
         }
@@ -1548,13 +1403,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.isColumnNull(6);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800021Test003 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800021).assertTrue();
           done();
         }
@@ -1577,13 +1429,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getColumnIndex("data1");
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800021Test004 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800021).assertTrue();
           done();
         }
@@ -1606,13 +1455,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getColumnName(1);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800021Test005 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800021).assertTrue();
           done();
         }
@@ -1635,13 +1481,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.goToNextRow();
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800021Test006 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800021).assertTrue();
           done();
         }
@@ -1665,13 +1508,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getAssets(2);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800041Test001 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800041).assertTrue();
           done();
         }
@@ -1695,13 +1535,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getAsset(2);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800021Test0041111 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800041).assertTrue();
           done();
         }
@@ -1725,13 +1562,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getDouble(5);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800041Test003 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800041).assertTrue();
           done();
         }
@@ -1755,13 +1589,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getLong(5);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800041Test004 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800041).assertTrue();
           done();
         }
@@ -1786,12 +1617,9 @@ export default function RdbStoreErrorCodeAddTest() {
           resultSet.getString(5);
           expect().assertFail();
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800041Test005 code %{public}d", err.code);
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800041).assertTrue();
           done();
         }
@@ -1815,13 +1643,10 @@ export default function RdbStoreErrorCodeAddTest() {
         try {
           resultSet.getBlob(5);
           expect().assertFail();
-          await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           done();
         } catch(err: BusinessError) {
           hilog.info(domain, tag, "LiteResultSetErrCode14800041Test006 code %{public}d", err.code);
           await rdbStore!.close();
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
           expect(err.code === 14800041).assertTrue();
           done();
         }
