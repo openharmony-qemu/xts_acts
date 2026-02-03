@@ -16,16 +16,16 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium'
 
 export default function EmptyTest() {
-  describe('EmptyTest', () => {
+  describe('EmptyTestCheckNetwork', () => {
     /**
-     * @tc.name   testTheDevicesNotSupportSyscap001
-     * @tc.number testTheDevicesNotSupportSyscap001
-     * @tc.desc   The Devices not support this stsCap.
+     * @tc.name   testTheDevicesNoNetwork001
+     * @tc.number testTheDevicesNoNetwork001
+     * @tc.desc   The Devices no Network.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testTheDevicesNotSupportSyscap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
+    it('testTheDevicesNoNetwork001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
       let a: number = 1;
       let b: number = 2;
       expect(a+b).assertEqual(3);
@@ -33,4 +33,3 @@ export default function EmptyTest() {
     });
   })
 }
-
