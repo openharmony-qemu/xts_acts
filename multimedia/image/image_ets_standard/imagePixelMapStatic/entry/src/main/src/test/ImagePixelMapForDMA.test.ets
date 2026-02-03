@@ -119,17 +119,17 @@ export default function imagePixelmap() {
       let pixelMap: image.PixelMap | undefined = undefined;
       let imageInfo: image.ImageInfo | undefined = undefined;
       if (decodingOptions != undefined) {
-        waitForCompletion(async () => {pixelMap = await imageSource.createPixelMap(decodingOptions);})
+        waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap(decodingOptions);})
       } else {
-        waitForCompletion(async () => {pixelMap = await imageSource.createPixelMap();})
+        waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap();})
       }
-      waitForCompletion(async () => {await imageSource.release();})
+      waitForCompletion(async () => {await imageSource!.release();})
       if (pixelMap == undefined) {
         logger.log("create pixelMap failed.")
         return undefined;
       }
-      waitForCompletion(async () => {imageInfo = await pixelMap.getImageInfo();})
-      waitForCompletion(async () => {await pixelMap.release();})
+      waitForCompletion(async () => {imageInfo = await pixelMap!.getImageInfo();})
+      waitForCompletion(async () => {await pixelMap!.release();})
       return imageInfo;
     }
 
@@ -156,22 +156,22 @@ export default function imagePixelmap() {
           }
         } else {
           if (decodingOptions != undefined && allocatorType == undefined) {
-            waitForCompletion(async () => {pixelMap = await imageSource.createPixelMapUsingAllocator(decodingOptions);})
+            waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMapUsingAllocator(decodingOptions);})
           } else if (decodingOptions != undefined && allocatorType != undefined) {
-            waitForCompletion(async () => {pixelMap = await imageSource.createPixelMapUsingAllocator(decodingOptions, allocatorType);})
+            waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMapUsingAllocator(decodingOptions, allocatorType);})
           } else if (decodingOptions == undefined && allocatorType == undefined) {
-            waitForCompletion(async () => {pixelMap = await imageSource.createPixelMapUsingAllocator();})
+            waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMapUsingAllocator();})
           }
         }
-        waitForCompletion(async () => {await imageSource.release();})
+        waitForCompletion(async () => {await imageSource!.release();})
       } catch (error) {
         logger.log("getPixelmapFromAllocator error is: " + JSON.stringify(error));
         logger.log('Failed to create pixelMap.');
       }
       if(pixelMap != undefined) {
         let dstImageInfo: image.ImageInfo
-        waitForCompletion(async () => {dstImageInfo = await pixelMap.getImageInfo();})
-        waitForCompletion(async () => {await pixelMap.release();})
+        waitForCompletion(async () => {dstImageInfo = await pixelMap!.getImageInfo();})
+        waitForCompletion(async () => {await pixelMap!.release();})
         return dstImageInfo;
       } else {
         return undefined;
