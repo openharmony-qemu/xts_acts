@@ -251,23 +251,23 @@ export default function imageSync() {
           } else {
             globalpixelmap = pixelMap;
             let pixelMapInfo: image.ImageInfo | undefined;
-            waitForCompletion(async () => {pixelMapInfo = await pixelMap.getImageInfo();})
+            waitForCompletion(async () => {pixelMapInfo = await pixelMap!.getImageInfo();})
             let pixelColorSpace = pixelMap.getColorSpace().getColorSpaceName();
             let pixelGamma = pixelMap.getColorSpace().getGamma();
             logger.log('pixelmap info:');
             expect(pixelMap != undefined).assertTrue();
-            expect(pixelMapInfo.size.width == opts?.desiredSize?.width).assertTrue();
-            expect(pixelMapInfo.size.height == opts?.desiredSize?.height).assertTrue();
-            expect(pixelMapInfo.pixelFormat == opts.desiredPixelFormat).assertTrue();
+            expect(pixelMapInfo!.size.width == opts?.desiredSize?.width).assertTrue();
+            expect(pixelMapInfo!.size.height == opts?.desiredSize?.height).assertTrue();
+            expect(pixelMapInfo!.pixelFormat == opts.desiredPixelFormat).assertTrue();
             expect(pixelMap.isEditable == opts.editable).assertTrue();
             expect(pixelMap.getDensity() == opts.fitDensity).assertTrue();
             expect(pixelColorSpace == opts?.desiredColorSpace?.getColorSpaceName()
               || pixelColorSpace == colorSpaceManager.ColorSpace.CUSTOM).assertTrue();
             expect(pixelGamma == opts?.desiredColorSpace?.getGamma()).assertTrue();
-            logger.log('pixelmap width: ' + pixelMapInfo.size.width);
-            logger.log('pixelmap height: ' + pixelMapInfo.size.height);
+            logger.log('pixelmap width: ' + pixelMapInfo!.size.width);
+            logger.log('pixelmap height: ' + pixelMapInfo!.size.height);
             logger.log('pixelmap editable: ' + pixelMap.isEditable);
-            logger.log('pixelmap pixel format: ' + pixelMapInfo.pixelFormat);
+            logger.log('pixelmap pixel format: ' + pixelMapInfo!.pixelFormat);
             logger.log('pixelmap density: ' + pixelMap.getDensity());
             logger.log('pixelmap color space name: ' + pixelColorSpace);
             logger.log('pixelmap color space gamma: ' + pixelGamma);
