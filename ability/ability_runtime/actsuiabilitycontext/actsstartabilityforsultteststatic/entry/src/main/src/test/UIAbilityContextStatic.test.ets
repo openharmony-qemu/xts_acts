@@ -72,9 +72,9 @@ export default function UIAbilityContextStatic() {
      * @tc.desc   Call UIAbilityContext showAbility succeeded.(promise),
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_Static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let want: Want = {
         bundleName: 'com.acts.startabilityforresulttest.static',
         abilityName: 'MainAbility1'
@@ -122,9 +122,9 @@ export default function UIAbilityContextStatic() {
      * @tc.desc   Call UIAbilityContext hideAbility succeeded.(promise),
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let want: Want = {
         bundleName: 'com.acts.startabilityforresulttest.static',
         abilityName: 'MainAbility1'
@@ -172,9 +172,9 @@ export default function UIAbilityContextStatic() {
      * @tc.desc   API test for context.setRestoreEnabled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_BackgroundRecovery_Static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_BackgroundRecovery_Static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let par: boolean = true
       try {
         context.setRestoreEnabled(par);
@@ -195,9 +195,9 @@ export default function UIAbilityContextStatic() {
      * @tc.desc   API test for context.SetAbilityInstanceInfo errcode 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "it begin");
       try {
         await context.setAbilityInstanceInfo('', pixelMap);
@@ -219,9 +219,9 @@ export default function UIAbilityContextStatic() {
      * @tc.desc   API test for context.SetAbilityInstanceInfo errcode 801, 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag , "it begin");
       try {
         await context.setAbilityInstanceInfo('instance label', pixelMap)
@@ -250,9 +250,9 @@ export default function UIAbilityContextStatic() {
      * @tc.desc   API test for context.revokeDelegator.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_HookAbility_Static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_HookAbility_Static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain,  tag , " it begin");
       if (disable) {
         done();
@@ -274,9 +274,9 @@ export default function UIAbilityContextStatic() {
      * @tc.desc   Expect: failed with code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_PluginAbility_Static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_PluginAbility_Static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         application.createPluginModuleContext(context, '', '')
           .then((data: common.Context): void => {

@@ -56,9 +56,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Unable to start specified PageAbility (AsyncCallback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700 begin');
       try {
@@ -89,9 +89,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Unable to start specified PageAbility(Promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800 begin');
       try {
@@ -124,9 +124,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Unable to start specified PageAbility(Promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12801', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12801', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800 begin');
       try {
@@ -159,9 +159,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Unable to start specified PageAbility (AsyncCallback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12701', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12701', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700 begin');
       try {
@@ -193,9 +193,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Unable to start specified PageAbility(Promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12802', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12802', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800 begin');
       try {
@@ -228,9 +228,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Unable to start specified PageAbility (AsyncCallback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12702', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12702', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700 begin');
       try {
@@ -263,9 +263,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Unable to start specified PageAbility(Promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12803', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12803', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800 begin');
       try {
@@ -295,9 +295,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Unable to start specified PageAbility (AsyncCallback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12703', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12703', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700 begin');
       abilityDelegator.executeShellCommand("aa start -a EntryAbility1 -b com.acts.abilitydelegatortest.static")

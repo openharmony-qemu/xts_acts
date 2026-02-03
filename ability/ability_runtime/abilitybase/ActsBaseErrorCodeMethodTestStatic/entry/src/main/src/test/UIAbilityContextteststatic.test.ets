@@ -57,9 +57,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000004 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test SUB_Ability_AbilityBase_UIAbilityContextError_static_0100 START');
         let want: Want = {
@@ -87,9 +87,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000019 is returned when the startAbilityForResult interface is invoked,Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_static_0200 start');
         let want: Want = {
@@ -117,9 +117,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000050 is returned when the startAbilityForResult interface is invoked,Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_static_1000 start');
         let Fd: Record<String,Object> = {
@@ -155,9 +155,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000004 is returned when the startAbilityForResult interface is invoked,Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -187,9 +187,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000019 is returned when the startAbilityForResult interface is invoked Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -220,9 +220,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000050 is returned when the startAbilityForResult interface is invoked,Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let Fd: Record<String,Object> = {
@@ -261,9 +261,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000004 is returned when the startAbilityForResult interface is invoked,Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -300,9 +300,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000019 is returned when the startAbilityForResult interface is invoked,Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -339,9 +339,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000050 is returned when the startAbilityForResult interface is invoked,Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let Fd: Record<String,Object> = {
@@ -386,9 +386,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000001 is returned when the startAbilityByCall interface is invoked Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test SUB_Ability_AbilityBase_UIAbilityContextError_static_3100 START');
         let caller: Caller;
@@ -423,9 +423,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000050 is returned when the startAbilityByCall interface is invoked Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test SUB_Ability_AbilityBase_UIAbilityContextError_static_3300 START');
         let caller: Caller;
@@ -468,9 +468,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000005 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -500,9 +500,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000005 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -529,9 +529,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000005 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -568,9 +568,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 201 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         context.moveAbilityToBackground()
@@ -608,9 +608,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 201 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         context.moveAbilityToBackground()
@@ -645,9 +645,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 201 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         context.moveAbilityToBackground()
@@ -692,9 +692,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 801 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -734,9 +734,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 201 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
