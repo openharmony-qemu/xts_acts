@@ -157,15 +157,17 @@ export default function bluetoothBleTest() {
             done();
         })
         beforeEach(async (done : Function) =>{
-            console.info('beforeEach called')
-            await tryToEnableBt()
+            console.info('beforeEach called');
+            await tryToEnableBt();
             done();
         })
         afterEach(() => {
             console.info('afterEach called')
         })
-        afterAll(() => {
-            console.info('afterAll called')
+        afterAll(async (done : Function) =>{
+            await tryToEnableBt();
+            console.info('afterAll called');
+            done();
         })
 
         /**
@@ -963,8 +965,7 @@ export default function bluetoothBleTest() {
             }
             done();
         })
-   
-        
+
         /**
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_0100
          * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_0100
@@ -1299,7 +1300,7 @@ export default function bluetoothBleTest() {
         /**
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0100
          * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0100
-         * @tc.desc API23 server setPhy 连接未建立 test 
+         * @tc.desc API23 server setPhy 连接未建立 test
          * @tc.type Method
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
@@ -1320,18 +1321,17 @@ export default function bluetoothBleTest() {
                 }
             }
             done();
-        })   
+        })
         /**
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0200
          * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0200
-         * @tc.desc API23 server readPhy 连接未建立 test 
+         * @tc.desc API23 server readPhy 连接未建立 test
          * @tc.type Method
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
-                
                 let data: bluetooth.PhyValue  = await gattServer.readPhy(deviceId);
                 console.info('[bt_arkts] server readPhy:'+ JSON.stringify(data));
                 console.info('[bt_arkts] server readPhy txPhy: ' + JSON.stringify(data.txPhy));
@@ -1351,18 +1351,17 @@ export default function bluetoothBleTest() {
                 }
             }
             done();
-        })  
+        })
         /**
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0300
          * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0300
-         * @tc.desc API23 client readPhy 连接未建立 test 
+         * @tc.desc API23 client readPhy 连接未建立 test
          * @tc.type Method
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
          it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0300', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
-
                 let data: bluetooth.PhyValue = await device.readPhy();
                 console.info('[bt_arkts] client readPhy:'+ JSON.stringify(data));
                 console.info('[bt_arkts] client readPhy txPhy: ' + JSON.stringify(data.txPhy));
@@ -1386,14 +1385,13 @@ export default function bluetoothBleTest() {
         /**
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0400
          * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0400
-         * @tc.desc API23 client setPhy 连接未建立 test 
+         * @tc.desc API23 client setPhy 连接未建立 test
          * @tc.type Method
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0400', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
-
                 await device.setPhy(phyValue1);
                 console.info('[bt_arkts] client setPhy success');
                 expect().assertFail();

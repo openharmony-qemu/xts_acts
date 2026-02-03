@@ -172,8 +172,10 @@ describe('btConnectionTest', () => {
     afterEach(() => {
         console.info('afterEach called')
     })
-    afterAll(() => {
+    afterAll(async (done : Function) => {
         console.info('afterAll called')
+        await tryToEnableBt()
+        done()
     })
 
     /**
@@ -2325,13 +2327,13 @@ describe('btConnectionTest', () => {
     })
 
     /**
- 	      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_0100
- 	      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_0100
- 	      * @tc.desc   Test common onScanModeChange api23
- 	      * @tc.type   FUNCTION
- 	      * @tc.size   MEDIUMTEST
- 	      * @tc.level  LEVEL0
- 	      */
+    * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_0100
+    * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_0100
+    * @tc.desc   Test common onScanModeChange api23
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
     it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             bluetooth.onScanModeChange(onReceiveEvent_ScanMode);

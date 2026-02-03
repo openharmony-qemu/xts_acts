@@ -104,7 +104,11 @@ export default function btBleError401Test() {
           afterAll(async function (done) {
                console.info('afterAll start');
                await sleep(900);
-               gattServer.close();
+               if(gattServer !=null){
+                 gattServer.close();
+                 console.info('delete gattServer');
+               };
+               await tryToEnableBt();
                console.info('afterAll end');
                done();
           })
