@@ -1,0 +1,24 @@
+{
+    "devices": {
+        "general": ["default"],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.Multimedia.Media.Spliter"
+                ]
+            }
+        ]
+    },
+    "production": {
+        "addedSysCaps": [
+        ],
+        "removedSysCaps": [
+            "SystemCapability.Security.DataTransitManager",
+            "SystemCapability.PowerManager.BatteryManager.Extension",
+            "SystemCapability.PowerManager.PowerManager.Extension",
+            "SystemCapability.Security.DeviceSecurityLevel",
+            "SystemCapability.UserIAM.UserAuth.PinAuth",
+            "SystemCapability.Window.SessionManager"
+        ]
+    }
+}
