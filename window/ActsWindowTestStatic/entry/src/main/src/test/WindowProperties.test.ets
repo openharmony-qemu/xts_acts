@@ -3214,6 +3214,168 @@ export default function WindowPropertiesTest() {
                 done();
             }
         })
+		
+		/**
+         * @tc.number    SUB_BASIC_WMS_GETWINDOWSBYCOORDINATE_static_errcode_0100
+         * @tc.name      testGetWindowsByCoordinate_static_errcode_0100
+         * @tc.desc      Test getWindowsByCoordinate with 401 error code when x and y exceed int range
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level3
+         */
+        it('testGetWindowsByCoordinate_static_errcode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testGetWindowsByCoordinate_static_errcode_0100';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, msgStr + 'begin');
+            try {
+                let mainWindow: window.Window = windowStage.getMainWindowSync();
+                let properties: window.WindowProperties = mainWindow.getWindowProperties();
+                let displayId: long = properties.displayId!;
+                hilog.info(domain, tag, msgStr + 'displayId: ' + displayId);
+
+                let xValue: Long = 2147483648;
+                let yValue: Long = 2147483648;
+
+                window.getWindowsByCoordinate(-1, 2, xValue as int, yValue as int).then((data: Array<window.Window>) => {
+                    hilog.error(domain, tag, msgStr + 'Succeeded in getting windows. Data: ' + JSON.stringify(data));
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: Error): PromiseLike<void> | undefined => {
+                    hilog.error(domain, tag, msgStr + 'Failed to get window from point. Cause code: ' + err.code + ', message: ' + err.message);
+                    if (err.code === 401) {
+                        expect(err.code).assertEqual(401);
+                        expect(err.message != null).assertTrue();
+                        done();
+                    } else if (err.code === 801) {
+                        hilog.error(domain, tag, msgStr + 'The current device type does not support this function.');
+                        done();
+                    } else {
+                        hilog.error(domain, tag, msgStr + 'Unexpected error code: ' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    }
+                });
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.error(domain, tag, msgStr + 'Failed. Cause code: ' + err.code + ', message: ' + err.message);
+                if (err.code === 401) {
+                    expect(err.code).assertEqual(401);
+                    expect(err.message != null).assertTrue();
+                    done();
+                } else if (err.code === 801) {
+                    hilog.error(domain, tag, msgStr + 'The current device type does not support this function.');
+                    done();
+                } else {
+                    hilog.error(domain, tag, msgStr + 'Unexpected error code: ' + err.code);
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        });
+
+        /**
+         * @tc.number    SUB_BASIC_WMS_GETWINDOWSBYCOORDINATE_static_parameter_0100
+         * @tc.name      testGetWindowsByCoordinate_static_parameter_0100
+         * @tc.desc      Test getWindowsByCoordinate with all 4 parameters
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level3
+         */
+        it('testGetWindowsByCoordinate_static_parameter_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testGetWindowsByCoordinate_static_parameter_0100';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, msgStr + 'begin');
+            try {
+                let mainWindow: window.Window = windowStage.getMainWindowSync();
+                let properties: window.WindowProperties = mainWindow.getWindowProperties();
+                let displayId: long = properties.displayId!;
+                let windowRect: window.Rect = properties.windowRect;
+                hilog.info(domain, tag, msgStr + 'displayId: ' + displayId);
+                hilog.info(domain, tag, msgStr + 'windowRect: ' + JSON.stringify(windowRect));
+
+                let x: int = Math.floor(windowRect.width / 2) as int;
+                let y: int = Math.floor(windowRect.height / 2) as int;
+                let windowNumber: int = 2;
+
+                window.getWindowsByCoordinate(displayId, windowNumber, x, y).then((data: Array<window.Window>) => {
+                    hilog.info(domain, tag, msgStr + 'Succeeded in getting windows. Data: ' + JSON.stringify(data));
+                    expect(data.length).assertEqual(1);
+                    done();
+                }).catch((err: Error): PromiseLike<void> | undefined => {
+                    hilog.error(domain, tag, msgStr + 'Failed to get window from point. Cause code: ' + err.code + ', message: ' + err.message);
+                    if (err.code === 801) {
+                        hilog.error(domain, tag, msgStr + 'The current device type does not support this function.');
+                        done();
+                    } else {
+                        hilog.error(domain, tag, msgStr + 'Unexpected error code: ' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    }
+                });
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.error(domain, tag, msgStr + 'Failed. Cause code: ' + err.code + ', message: ' + err.message);
+                if (err.code === 801) {
+                    hilog.error(domain, tag, msgStr + 'The current device type does not support this function.');
+                    done();
+                } else {
+                    hilog.error(domain, tag, msgStr + 'Unexpected error code: ' + err.code);
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        });
+
+        /**
+         * @tc.number    SUB_BASIC_WMS_GETWINDOWSBYCOORDINATE_static_parameter_0200
+         * @tc.name      testGetWindowsByCoordinate_static_parameter_0200
+         * @tc.desc      Test getWindowsByCoordinate with negative int parameters
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level3
+         */
+        it('testGetWindowsByCoordinate_static_parameter_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testGetWindowsByCoordinate_static_parameter_0200';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, msgStr + 'begin');
+            try {
+                let mainWindow: window.Window = windowStage.getMainWindowSync();
+                let properties: window.WindowProperties = mainWindow.getWindowProperties();
+                let displayId: Long = properties.displayId!;
+                hilog.info(domain, tag, msgStr + 'displayId: ' + displayId);
+
+                let windowNumber: int = -1;
+                let x: int = -1;
+                let y: int = -1;
+
+                window.getWindowsByCoordinate(displayId, windowNumber, x, y).then((data: Array<window.Window>) => {
+                    hilog.info(domain, tag, msgStr + 'Succeeded in getting windows. Data: ' + JSON.stringify(data));
+                    expect(data.length).assertEqual(1);
+                    done();
+                }).catch((err: Error): PromiseLike<void> | undefined => {
+                    hilog.error(domain, tag, msgStr + 'Failed to get window from point. Cause code: ' + err.code + ', message: ' + err.message);
+                    if (err.code === 801) {
+                        hilog.error(domain, tag, msgStr + 'The current device type does not support this function.');
+                        done();
+                    } else {
+                        hilog.error(domain, tag, msgStr + 'Unexpected error code: ' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    }
+                });
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.error(domain, tag, msgStr + 'Failed. Cause code: ' + err.code + ', message: ' + err.message);
+                if (err.code === 801) {
+                    hilog.error(domain, tag, msgStr + 'The current device type does not support this function.');
+                    done();
+                } else {
+                    hilog.error(domain, tag, msgStr + 'Unexpected error code: ' + err.code);
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        });
 
         
 
