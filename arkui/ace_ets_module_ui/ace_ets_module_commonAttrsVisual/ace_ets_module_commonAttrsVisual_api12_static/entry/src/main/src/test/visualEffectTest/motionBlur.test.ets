@@ -72,11 +72,14 @@ it('motionBlurTest_static_0100', Level.LEVEL2, async (done: () => void): Promise
       console.info('motionBlurTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('motionBlur_id');
-      console.log('motionBlurTest_static_0100', JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')))
-      console.log('motionBlurTest_static_0100',
-        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('motionBlur')))
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('motionBlur')))
-        .assertEqual('{"radius":0,"anchor":{"x":0,"y":0}}');
+      console.log('motionBlurTest_static_0100 :'
+        + JSON.parseJsonElement(strJson).getElement('$attrs').getElement('motionBlur').getDouble('radius'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('motionBlur').getDouble('radius'))
+        .assertEqual(0);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('motionBlur')
+        .getElement('anchor').getDouble('x')).assertEqual(0);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('motionBlur')
+        .getElement('anchor').getDouble('y')).assertEqual(0);
       console.info('motionBlurTest_static_0100 END');
       done();
     });
