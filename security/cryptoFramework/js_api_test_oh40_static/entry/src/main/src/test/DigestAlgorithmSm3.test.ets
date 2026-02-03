@@ -33,10 +33,10 @@ export default function DigestAlgorithmSm3Jsunit() {
      * @tc.desc   the asyAlgoName is "SM3", Use the Promise Style of Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_MDSM3_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await DigPromise.testMDDigestPromise("SM3")
         .then((result: boolean) => {
           expect(result).assertTrue();
