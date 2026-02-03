@@ -1942,5 +1942,1981 @@ export default function asyncFirTest(): void {
       expect(errorCaught).assertEqual(true);
     });
 
+    /**
+     * @tc.name   asyncFirTest0037
+     * @tc.number ASYNC_FIR_TEST_0037
+     * @tc.desc   Long type and mixed parameters validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const processIntegerLike = async (value: number): Promise<number> => {
+        const intValue = Math.floor(value);
+        return await Promise.resolve(intValue + 1);
+      };
+
+      const processFloatLike = async (value: number): Promise<number> => {
+        const floatValue = Math.round(value * 100) / 100;
+        return await Promise.resolve(floatValue * 2);
+      };
+
+      const processCharLike = async (char: string): Promise<number> => {
+        if (char.length !== 1) {
+          throw new Error('Expected single character');
+        }
+        return await Promise.resolve(char.charCodeAt(0));
+      };
+
+      const processLongLike = async (value: bigint): Promise<bigint> => {
+        return await Promise.resolve(value * 2n + 1n);
+      };
+
+      const processMixedTypes = async (
+        intLike: number,
+        floatLike: number,
+        charLike: string,
+        longLike: bigint
+      ): Promise<string> => {
+        const intResult = await processIntegerLike(intLike);
+        const floatResult = await processFloatLike(floatLike);
+        const charResult = await processCharLike(charLike);
+        const longResult = await processLongLike(longLike);
+
+        return await Promise.resolve(
+          `int:${intResult}_float:${floatResult}_char:${charResult}_long:${longResult}`
+        );
+      };
+
+      const longResult = await processLongLike(1000000000000n);
+      expect(longResult).assertEqual(2000000000001n);
+
+      const mixedResult = await processMixedTypes(5.8, 2.345, 'B', 500n);
+      expect(mixedResult).assertEqual('int:6_float:4.7_char:66_long:1001');
+    });
+
+    /**
+     * @tc.name   asyncFirTest0038
+     * @tc.number ASYNC_FIR_TEST_0038
+     * @tc.desc   Object parameter basic validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const processUserProfile = async (profile: ComplexUserProfile): Promise<string> => {
+        const ageStr = profile.age !== undefined ? profile.age.toString() : 'unknown';
+        return await Promise.resolve(`${profile.name}_${profile.email}_${ageStr}`);
+      };
+
+      const completeProfile: ComplexUserProfile = {
+        id: 1,
+        name: 'John Doe',
+        email: 'john@example.com',
+        age: 30
+      };
+
+      const result1 = await processUserProfile(completeProfile);
+      expect(result1).assertEqual('John Doe_john@example.com_30');
+
+      const partialProfile: ComplexUserProfile = {
+        id: 2,
+        name: 'Jane Smith',
+        email: 'jane@example.com'
+      };
+
+      const result2 = await processUserProfile(partialProfile);
+      expect(result2).assertEqual('Jane Smith_jane@example.com_unknown');
+    });
+
+    /**
+     * @tc.name   asyncFirTest0039
+     * @tc.number ASYNC_FIR_TEST_0039
+     * @tc.desc   Complex object with nested properties validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const processProductInfo = async (product: ProductInfo): Promise<string> => {
+        const tagsStr = product.tags.join(',');
+        return await Promise.resolve(`${product.name}_${product.category}_${tagsStr}_${product.price}`);
+      };
+
+      const product: ProductInfo = {
+        id: 100,
+        name: 'Laptop',
+        price: 999.99,
+        category: 'Electronics',
+        tags: ['computer', 'portable', 'work']
+      };
+
+      const result3 = await processProductInfo(product);
+      expect(result3).assertEqual('Laptop_Electronics_computer,portable,work_999.99');
+    });
+
+    /**
+     * @tc.name   asyncFirTest0040
+     * @tc.number ASYNC_FIR_TEST_0040
+     * @tc.desc   Object parameter validation and error handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+
+      interface ValidationResult {
+        isValid: boolean;
+        errors: string[];
+      }
+      const validateUserProfile = async (profile: ComplexUserProfile): Promise<ValidationResult> => {
+        const errors: string[] = [];
+
+        if (!profile.name || profile.name.length === 0) {
+          errors.push('Name is required');
+        }
+        if (!profile.email || !profile.email.includes('@')) {
+          errors.push('Valid email is required');
+        }
+        if (profile.age !== undefined && profile.age < 0) {
+          errors.push('Age must be non-negative');
+        }
+
+        const result: ValidationResult = {
+          isValid: errors.length === 0,
+          errors: errors
+        };
+        return await Promise.resolve(result);
+      };
+
+      const validProfile: ComplexUserProfile = {
+        id: 3,
+        name: 'Valid User',
+        email: 'valid@test.com',
+        age: 25
+      };
+
+      const validation1 = await validateUserProfile(validProfile);
+      expect(validation1.isValid).assertEqual(true);
+      expect(validation1.errors.length).assertEqual(0);
+
+      const invalidProfile: ComplexUserProfile = {
+        id: 4,
+        name: '',
+        email: 'invalid-email',
+        age: -5
+      };
+
+      const validation2 = await validateUserProfile(invalidProfile);
+      expect(validation2.isValid).assertEqual(false);
+      expect(validation2.errors.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0041
+     * @tc.number ASYNC_FIR_TEST_0041
+     * @tc.desc   Basic array parameter validation - number arrays and empty array handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const processNumberArray = async (numbers: number[]): Promise<number> => {
+        if (numbers.length === 0) {
+          return await Promise.resolve(0);
+        }
+        const sum = numbers.reduce((acc: number, num: number) => acc + num, 0);
+        return await Promise.resolve(sum / numbers.length);
+      };
+
+      const numbers = [1, 2, 3, 4, 5];
+      const average = await processNumberArray(numbers);
+      expect(average).assertEqual(3);
+
+      const emptyArray: number[] = [];
+      const emptyResult = await processNumberArray(emptyArray);
+      expect(emptyResult).assertEqual(0);
+
+      const largeArray: number[] = Array.from({ length: 1000 }, (_: undefined, i: number): number => i + 1);
+      const largeAverage = await processNumberArray(largeArray);
+      expect(largeAverage).assertEqual(500.5);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0042
+     * @tc.number ASYNC_FIR_TEST_0042
+     * @tc.desc   Complex object array parameter validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const processUserArray = async (users: ComplexUserProfile[]): Promise<string[]> => {
+        const promises = users.map(async (user: ComplexUserProfile): Promise<string> => {
+          return await Promise.resolve(`${user.name}:${user.id}`);
+        });
+        return await Promise.all(promises);
+      };
+
+      const users: ComplexUserProfile[] = [
+        { id: 1, name: 'User1', email: 'user1@test.com' },
+        { id: 2, name: 'User2', email: 'user2@test.com', age: 25 },
+        { id: 3, name: 'User3', email: 'user3@test.com', age: 30 }
+      ];
+
+      const userResults = await processUserArray(users);
+      expect(userResults).assertDeepEquals(['User1:1', 'User2:2', 'User3:3']);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0043
+     * @tc.number ASYNC_FIR_TEST_0043
+     * @tc.desc   Nested array and array length validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const processNestedArrays = async (matrix: number[][]): Promise<number[]> => {
+        const promises = matrix.map(async (row: number[]): Promise<number> => {
+          const sum = row.reduce((acc: number, val: number) => acc + val, 0);
+          return await Promise.resolve(sum);
+        });
+        return await Promise.all(promises);
+      };
+
+      const validateArrayLength = async <T>(arr: T[], minLength: number, maxLength: number): Promise<boolean> => {
+        const isValid = arr.length >= minLength && arr.length <= maxLength;
+        return await Promise.resolve(isValid);
+      };
+
+      const matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+      const rowSums = await processNestedArrays(matrix);
+      expect(rowSums).assertDeepEquals([6, 15, 24]);
+
+      const shortArray = [1, 2];
+      const mediumArray = [1, 2, 3, 4, 5];
+      const longArray: number[] = Array.from({ length: 15 }, (_: undefined, i: number): number => i);
+
+      const shortValid = await validateArrayLength<number>(shortArray, 1, 10);
+      expect(shortValid).assertEqual(true);
+
+      const mediumValid = await validateArrayLength<number>(mediumArray, 1, 10);
+      expect(mediumValid).assertEqual(true);
+
+      const longValid = await validateArrayLength<number>(longArray, 1, 10);
+      expect(longValid).assertEqual(false);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0044
+     * @tc.number ASYNC_FIR_TEST_0044
+     * @tc.desc   Basic callback parameter validation - sync and async callbacks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFirTest0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const processWithSyncCallback = async <T, R>(
+        data: T[],
+        processor: (item: T) => R
+      ): Promise<R[]> => {
+        const results: R[] = [];
+        for (const item of data) {
+          const processed = processor(item);
+          results.push(processed);
+        }
+        return await Promise.resolve(results);
+      };
+
+      const processWithAsyncCallback = async <T, R>(
+        data: T[],
+        processor: (item: T) => Promise<R>
+      ): Promise<R[]> => {
+        const promises = data.map(async (item: T): Promise<R> => {
+          return await processor(item);
+        });
+        return await Promise.all(promises);
+      };
+
+      const numbers = [1, 2, 3, 4, 5];
+      const doubleCallback = (num: number): number => num * 2;
+      const doubled = await processWithSyncCallback<number, number>(numbers, doubleCallback);
+      expect(doubled).assertDeepEquals([2, 4, 6, 8, 10]);
+
+      const strings = ['hello', 'world', 'test'];
+      const upperCallback = (str: string): string => str.toUpperCase();
+      const uppercased = await processWithSyncCallback<string, string>(strings, upperCallback);
+      expect(uppercased).assertDeepEquals(['HELLO', 'WORLD', 'TEST']);
+
+      const asyncDoubleCallback = async (num: number): Promise<number> => {
+        return await Promise.resolve(num * 3);
+      };
+      const tripled = await processWithAsyncCallback<number, number>(numbers, asyncDoubleCallback);
+      expect(tripled).assertDeepEquals([3, 6, 9, 12, 15]);
+
+      const asyncUpperCallback = async (str: string): Promise<string> => {
+        return await Promise.resolve(str.toLowerCase());
+      };
+      const lowercased = await processWithAsyncCallback<string, string>(strings, asyncUpperCallback);
+      expect(lowercased).assertDeepEquals(['hello', 'world', 'test']);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0045
+     * @tc.number ASYNC_FIR_TEST_0045
+     * @tc.desc   Callback with validation parameter validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFirTest0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const processWithValidation = async <T>(
+        data: T[],
+        validator: (item: T) => boolean,
+        processor: (item: T) => Promise<T>
+      ): Promise<T[]> => {
+        const validItems = data.filter(validator);
+        const promises = validItems.map(async (item: T): Promise<T> => {
+          return await processor(item);
+        });
+        return await Promise.all(promises);
+      };
+
+      const numbers = [1, 2, 3, 4, 5];
+      const isEven = (num: number): boolean => num % 2 === 0;
+      const asyncSquare = async (num: number): Promise<number> => {
+        return await Promise.resolve(num * num);
+      };
+      const evenSquares = await processWithValidation<number>(numbers, isEven, asyncSquare);
+      expect(evenSquares).assertDeepEquals([4, 16]);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0046
+     * @tc.number ASYNC_FIR_TEST_0046
+     * @tc.desc   Complex callback with multiple parameters and context validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFirTest0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const processWithComplexCallback = async <T, U, R>(
+        data: T[],
+        context: U,
+        processor: (item: T, ctx: U, index: number) => Promise<R>
+      ): Promise<R[]> => {
+        const promises = data.map(async (item: T, index: number): Promise<R> => {
+          return await processor(item, context, index);
+        });
+        return await Promise.all(promises);
+      };
+
+      const words = ['cat', 'dog', 'bird'];
+      const context: ProcessContext = { prefix: 'animal_', suffix: '_pet' };
+      const complexProcessor = async (
+        word: string,
+        ctx: ProcessContext,
+        index: number
+      ): Promise<string> => {
+        const result = `${ctx.prefix}${word}${ctx.suffix}_${index}`;
+        return await Promise.resolve(result);
+      };
+
+      const processed = await processWithComplexCallback<string, ProcessContext, string>(words, context, complexProcessor);
+      expect(processed).assertDeepEquals([
+        'animal_cat_pet_0',
+        'animal_dog_pet_1',
+        'animal_bird_pet_2'
+      ]);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0047
+     * @tc.number ASYNC_FIR_TEST_0047
+     * @tc.desc   Basic generic parameter constraints validation - single interface constraints
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFirTest0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const processWithId = async <T extends HasId>(item: T): Promise<string> => {
+        return await Promise.resolve(`Item_${item.id}`);
+      };
+
+      const processWithName = async <T extends HasName>(item: T): Promise<string> => {
+        return await Promise.resolve(`Name_${item.name}`);
+      };
+
+      const itemWithId: ItemWithId = { id: 100, data: 'test' };
+      const result1 = await processWithId<ItemWithId>(itemWithId);
+      expect(result1).assertEqual('Item_100');
+
+      const itemWithName: ItemWithName = { name: 'TestItem', value: 42 };
+      const result2 = await processWithName<ItemWithName>(itemWithName);
+      expect(result2).assertEqual('Name_TestItem');
+    });
+
+    /**
+     * @tc.name   asyncFirTest0048
+     * @tc.number ASYNC_FIR_TEST_0048
+     * @tc.desc   Combined interface constraints and array processing validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFirTest0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const processWithIdAndName = async <T extends HasIdAndName>(item: T): Promise<string> => {
+        return await Promise.resolve(`${item.name}_ID_${item.id}`);
+      };
+
+      const processArrayWithConstraint = async <T extends HasId>(items: T[]): Promise<number[]> => {
+        const promises = items.map(async (item: T): Promise<number> => {
+          return await Promise.resolve(item.id * 2);
+        });
+        return await Promise.all(promises);
+      };
+
+      const itemWithBoth: ItemWithBoth = { id: 200, name: 'ComplexItem', extra: true };
+      const result3 = await processWithIdAndName<ItemWithBoth>(itemWithBoth);
+      expect(result3).assertEqual('ComplexItem_ID_200');
+
+      interface TypedItem {
+        id: number;
+        type: string;
+      }
+      const itemsWithId: TypedItem[] = [
+        { id: 1, type: 'A' },
+        { id: 2, type: 'B' },
+        { id: 3, type: 'C' }
+      ];
+      const doubledIds = await processArrayWithConstraint<TypedItem>(itemsWithId);
+      expect(doubledIds).assertDeepEquals([2, 4, 6]);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0049
+     * @tc.number ASYNC_FIR_TEST_0049
+     * @tc.desc   Conditional processing and complex user profile constraints validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFirTest0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const processConditionally = async <T extends HasId>(
+        item: T,
+        condition: (obj: T) => boolean
+      ): Promise<T | null> => {
+        if (condition(item)) {
+          return await Promise.resolve(item);
+        }
+        return await Promise.resolve(null);
+      };
+
+      const highIdCondition = <T extends HasId>(obj: T): boolean => obj.id > 150;
+
+      interface StatusItem {
+        id: number;
+        status: string;
+      }
+      const highIdItem: StatusItem = { id: 200, status: 'active' };
+      const lowIdItem: StatusItem = { id: 50, status: 'inactive' };
+
+      const conditionalResult1 = await processConditionally<StatusItem>(highIdItem, highIdCondition);
+      expect(conditionalResult1).assertDeepEquals({ id: 200, status: 'active' });
+
+      const conditionalResult2 = await processConditionally<StatusItem>(lowIdItem, highIdCondition);
+      expect(conditionalResult2).assertEqual(null);
+
+      const userProfile: ComplexUserProfile = {
+        id: 300,
+        name: 'Generic User',
+        email: 'generic@test.com',
+        age: 28
+      };
+
+      const processWithId = async <T extends HasId>(item: T): Promise<string> => {
+        return await Promise.resolve(`Item_${item.id}`);
+      };
+
+      const processWithName = async <T extends HasName>(item: T): Promise<string> => {
+        return await Promise.resolve(`Name_${item.name}`);
+      };
+
+      const processWithIdAndName = async <T extends HasIdAndName>(item: T): Promise<string> => {
+        return await Promise.resolve(`${item.name}_ID_${item.id}`);
+      };
+
+      const userResult1 = await processWithId<ComplexUserProfile>(userProfile);
+      expect(userResult1).assertEqual('Item_300');
+
+      const userResult2 = await processWithName<ComplexUserProfile>(userProfile);
+      expect(userResult2).assertEqual('Name_Generic User');
+
+      const userResult3 = await processWithIdAndName<ComplexUserProfile>(userProfile);
+      expect(userResult3).assertEqual('Generic User_ID_300');
+    });
+
+    /**
+     * @tc.name   asyncFirTest0050
+     * @tc.number ASYNC_FIR_TEST_0050
+     * @tc.desc   Basic union type parameter validation - string or number types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFirTest0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      type StringOrNumber = string | number;
+      const processStringOrNumber = async (input: StringOrNumber): Promise<string> => {
+        if (typeof input === 'string') {
+          return await Promise.resolve(`String: ${input}`);
+        } else {
+          return await Promise.resolve(`Number: ${input}`);
+        }
+      };
+
+      type ProcessingMode = 'sync' | 'async' | 'batch';
+      const processWithMode = async (data: string, mode: ProcessingMode): Promise<string> => {
+        switch (mode) {
+          case 'sync':
+            return await Promise.resolve(`Sync: ${data}`);
+          case 'async':
+            return await Promise.resolve(`Async: ${data}`);
+          case 'batch':
+            return await Promise.resolve(`Batch: ${data}`);
+          default:
+            return await Promise.resolve(`Unknown: ${data}`);
+        }
+      };
+
+      const stringResult = await processStringOrNumber('hello');
+      expect(stringResult).assertEqual('String: hello');
+
+      const numberResult = await processStringOrNumber(42);
+      expect(numberResult).assertEqual('Number: 42');
+
+      const syncResult = await processWithMode('data', 'sync');
+      expect(syncResult).assertEqual('Sync: data');
+
+      const asyncResult = await processWithMode('data', 'async');
+      expect(asyncResult).assertEqual('Async: data');
+
+      const batchResult = await processWithMode('data', 'batch');
+      expect(batchResult).assertEqual('Batch: data');
+    });
+
+    /**
+     * @tc.name   asyncFirTest0051
+     * @tc.number ASYNC_FIR_TEST_0051
+     * @tc.desc   Inheritance type and union array parameter validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFirTest0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      interface UserWithProfile extends UserInfo {
+        id: number;
+        email: string;
+      }
+      const processUserWithProfile = async (user: UserWithProfile): Promise<string> => {
+        const ageStr = user.age !== undefined ? user.age.toString() : 'unknown';
+        return await Promise.resolve(`${user.name}_${user.email}_${ageStr}_${user.id}`);
+      };
+
+      const processUnionArray = async (items: (string | number)[]): Promise<string[]> => {
+        const promises = items.map(async (item: string | number): Promise<string> => {
+          if (typeof item === 'string') {
+            return await Promise.resolve(`STR_${item}`);
+          } else {
+            return await Promise.resolve(`NUM_${item}`);
+          }
+        });
+        return await Promise.all(promises);
+      };
+
+      const userWithProfile: UserWithProfile = {
+        name: 'John Inheritance',
+        age: 35,
+        id: 400,
+        email: 'john.inheritance@test.com'
+      };
+
+      const inheritanceResult = await processUserWithProfile(userWithProfile);
+      expect(inheritanceResult).assertEqual('John Inheritance_john.inheritance@test.com_35_400');
+
+      const mixedArray: (string | number)[] = ['hello', 123, 'world', 456];
+      const unionArrayResult = await processUnionArray(mixedArray);
+      expect(unionArrayResult).assertDeepEquals(['STR_hello', 'NUM_123', 'STR_world', 'NUM_456']);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0052
+     * @tc.number ASYNC_FIR_TEST_0052
+     * @tc.desc   Complex conditional union type parameter validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFirTest0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const processConditionalUnion = async (
+        input: string | number | boolean
+      ): Promise<ConditionalResult> => {
+        let type: string;
+        let value: string;
+        let length: number;
+
+        if (typeof input === 'string') {
+          type = 'string';
+          value = input;
+          length = input.length;
+        } else if (typeof input === 'number') {
+          type = 'number';
+          value = input.toString();
+          length = value.length;
+        } else {
+          type = 'boolean';
+          value = input.toString();
+          length = value.length;
+        }
+
+        const result: ConditionalResult = { type, value, length };
+        return await Promise.resolve(result);
+      };
+
+      const stringCondResult = await processConditionalUnion('test');
+      expect(stringCondResult.type).assertEqual('string');
+      expect(stringCondResult.value).assertEqual('test');
+      expect(stringCondResult.length).assertEqual(4);
+
+      const numberCondResult = await processConditionalUnion(12345);
+      expect(numberCondResult.type).assertEqual('number');
+      expect(numberCondResult.value).assertEqual('12345');
+      expect(numberCondResult.length).assertEqual(5);
+
+      const booleanCondResult = await processConditionalUnion(true);
+      expect(booleanCondResult.type).assertEqual('boolean');
+      expect(booleanCondResult.value).assertEqual('true');
+      expect(booleanCondResult.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0053
+     * @tc.number ASYNC_FIR_TEST_0053
+     * @tc.desc   Return value type strictly consistent with annotations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const returnString = async (): Promise<string> => {
+        return await Promise.resolve('typed_string');
+      };
+
+      const returnNumber = async (): Promise<number> => {
+        return await Promise.resolve(42);
+      };
+
+      const returnBoolean = async (): Promise<boolean> => {
+        return await Promise.resolve(true);
+      };
+
+      const returnUserProfile = async (): Promise<ComplexUserProfile> => {
+        const profile: ComplexUserProfile = {
+          id: 1,
+          name: 'Test User',
+          email: 'test@example.com',
+          age: 25
+        };
+        return await Promise.resolve(profile);
+      };
+
+      const returnNumberArray = async (): Promise<number[]> => {
+        const numbers: number[] = [1, 2, 3, 4, 5];
+        return await Promise.resolve(numbers);
+      };
+
+      const stringResult = await returnString();
+      expect(typeof stringResult).assertEqual('string');
+      expect(stringResult).assertEqual('typed_string');
+
+      const numberResult = await returnNumber();
+      expect(typeof numberResult).assertEqual('number');
+      expect(numberResult).assertEqual(42);
+
+      const booleanResult = await returnBoolean();
+      expect(typeof booleanResult).assertEqual('boolean');
+      expect(booleanResult).assertEqual(true);
+
+      const profileResult = await returnUserProfile();
+      expect(typeof profileResult).assertEqual('object');
+      expect(profileResult.id).assertEqual(1);
+      expect(profileResult.name).assertEqual('Test User');
+      expect(profileResult.email).assertEqual('test@example.com');
+      expect(profileResult.age).assertEqual(25);
+
+      const arrayResult = await returnNumberArray();
+      expect(Array.isArray(arrayResult)).assertEqual(true);
+      expect(arrayResult.length).assertEqual(5);
+      expect(arrayResult).assertDeepEquals([1, 2, 3, 4, 5]);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0054
+     * @tc.number ASYNC_FIR_TEST_0054
+     * @tc.desc   Generic async function return value conforms to generic definition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFirTest0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const genericReturn = async <T>(value: T): Promise<T> => {
+        return await Promise.resolve(value);
+      };
+
+      const genericWrapperReturn = async <T>(data: T): Promise<GenericReturnWrapper<T>> => {
+        const metaInfo: MetaInfo = {
+          timestamp: Date.now(),
+          version: '1.0.0'
+        };
+        const wrapper: GenericReturnWrapper<T> = {
+          data: data,
+          meta: metaInfo
+        };
+        return await Promise.resolve(wrapper);
+      };
+
+      const genericArrayReturn = async <T>(items: T[]): Promise<TypedArrayResult<T>> => {
+        const result: TypedArrayResult<T> = {
+          elements: items,
+          count: items.length,
+          type: typeof items[0]
+        };
+        return await Promise.resolve(result);
+      };
+
+      const stringGeneric = await genericReturn<string>('generic_string');
+      expect(typeof stringGeneric).assertEqual('string');
+      expect(stringGeneric).assertEqual('generic_string');
+
+      const numberGeneric = await genericReturn<number>(100);
+      expect(typeof numberGeneric).assertEqual('number');
+      expect(numberGeneric).assertEqual(100);
+
+      const wrappedString = await genericWrapperReturn<string>('wrapped_data');
+      expect(typeof wrappedString.data).assertEqual('string');
+      expect(wrappedString.data).assertEqual('wrapped_data');
+      expect(typeof wrappedString.meta.timestamp).assertEqual('number');
+      expect(wrappedString.meta.version).assertEqual('1.0.0');
+
+      const wrappedObject = await genericWrapperReturn<ComplexUserProfile>({
+        id: 2,
+        name: 'Generic User',
+        email: 'generic@test.com'
+      });
+      expect(typeof wrappedObject.data).assertEqual('object');
+      expect(wrappedObject.data.name).assertEqual('Generic User');
+
+      const stringArrayResult = await genericArrayReturn<string>(['a', 'b', 'c']);
+      expect(stringArrayResult.elements).assertDeepEquals(['a', 'b', 'c']);
+      expect(stringArrayResult.count).assertEqual(3);
+      expect(stringArrayResult.type).assertEqual('string');
+
+      const numberArrayResult = await genericArrayReturn<number>([10, 20, 30]);
+      expect(numberArrayResult.elements).assertDeepEquals([10, 20, 30]);
+      expect(numberArrayResult.count).assertEqual(3);
+      expect(numberArrayResult.type).assertEqual('number');
+    });
+
+    /**
+     * @tc.name   asyncFirTest0055
+     * @tc.number ASYNC_FIR_TEST_0055
+     * @tc.desc   Complex object return - nested properties existence and type validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const returnNestedData = async (): Promise<NestedReturnData> => {
+        const userSettings: UserSettings = {
+          theme: 'dark',
+          notifications: true
+        };
+
+        const userProfile: UserProfileNested = {
+          name: 'Nested User',
+          settings: userSettings
+        };
+
+        const userMetadata: UserMetadata = {
+          createdAt: '2024-01-01T00:00:00Z',
+          lastLogin: '2024-01-29T10:30:00Z'
+        };
+
+        const userData: UserDataNested = { profile: userProfile, metadata: userMetadata };
+
+        const data: NestedReturnData = { user: userData, permissions: ['read', 'write', 'admin'] };
+        return await Promise.resolve(data);
+      };
+
+      const buildNestedObject = async (userId: number): Promise<NestedReturnData> => {
+        const userName = await Promise.resolve(`User_${userId}`);
+        const userTheme = await Promise.resolve('light');
+        const userPermissions = await Promise.resolve(['read', 'write']);
+
+        const settings: UserSettings = {
+          theme: userTheme,
+          notifications: false
+        };
+
+        const profile: UserProfileNested = {
+          name: userName,
+          settings: settings
+        };
+
+        const metadata: UserMetadata = {
+          createdAt: await Promise.resolve('2024-01-15T08:00:00Z'),
+          lastLogin: await Promise.resolve('2024-01-29T14:20:00Z')
+        };
+
+        const user: UserDataNested = {
+          profile: profile,
+          metadata: metadata
+        };
+
+        const result: NestedReturnData = {
+          user: user,
+          permissions: userPermissions
+        };
+        return result;
+      };
+
+      const nestedResult = await returnNestedData();
+
+      expect(typeof nestedResult).assertEqual('object');
+      expect(typeof nestedResult.user).assertEqual('object');
+      expect(Array.isArray(nestedResult.permissions)).assertEqual(true);
+
+      expect(typeof nestedResult.user.profile).assertEqual('object');
+      expect(nestedResult.user.profile.name).assertEqual('Nested User');
+      expect(typeof nestedResult.user.profile.settings).assertEqual('object');
+      expect(nestedResult.user.profile.settings.theme).assertEqual('dark');
+      expect(nestedResult.user.profile.settings.notifications).assertEqual(true);
+
+      expect(typeof nestedResult.user.metadata).assertEqual('object');
+      expect(nestedResult.user.metadata.createdAt).assertEqual('2024-01-01T00:00:00Z');
+      expect(nestedResult.user.metadata.lastLogin).assertEqual('2024-01-29T10:30:00Z');
+
+      expect(nestedResult.permissions.length).assertEqual(3);
+      expect(nestedResult.permissions).assertDeepEquals(['read', 'write', 'admin']);
+
+      const builtResult = await buildNestedObject(123);
+      expect(builtResult.user.profile.name).assertEqual('User_123');
+      expect(builtResult.user.profile.settings.theme).assertEqual('light');
+      expect(builtResult.user.profile.settings.notifications).assertEqual(false);
+      expect(builtResult.permissions).assertDeepEquals(['read', 'write']);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0056
+     * @tc.number ASYNC_FIR_TEST_0056
+     * @tc.desc   Array return - element types and order consistency validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const returnTypedArray = async (): Promise<number[]> => {
+        const numbers: number[] = [10, 20, 30, 40, 50];
+        return await Promise.resolve(numbers);
+      };
+
+      const returnOrderedArray = async (input: string[]): Promise<string[]> => {
+        const processed = await Promise.all(
+          input.map(async (item: string, index: number): Promise<string> => {
+            return await Promise.resolve(`${index}_${item}`);
+          })
+        );
+        return processed;
+      };
+
+      const returnObjectArray = async (): Promise<ComplexUserProfile[]> => {
+        const users: ComplexUserProfile[] = [
+          { id: 1, name: 'User1', email: 'user1@test.com', age: 25 },
+          { id: 2, name: 'User2', email: 'user2@test.com', age: 30 },
+          { id: 3, name: 'User3', email: 'user3@test.com' }
+        ];
+        return await Promise.resolve(users);
+      };
+
+      const returnArrayWithSummary = async (numbers: number[]): Promise<ArrayReturnResult> => {
+        const total = numbers.reduce((sum: number, num: number) => sum + num, 0);
+        const average = total / numbers.length;
+        const max = Math.max(...numbers);
+        const min = Math.min(...numbers);
+
+        const result: ArrayReturnResult = {
+          items: numbers,
+          summary: {
+            total: total,
+            average: average,
+            max: max,
+            min: min
+          }
+        };
+        return await Promise.resolve(result);
+      };
+
+      const typedArray = await returnTypedArray();
+      expect(Array.isArray(typedArray)).assertEqual(true);
+      expect(typedArray.length).assertEqual(5);
+      typedArray.forEach((item: number, index: number) => {
+        expect(typeof item).assertEqual('number');
+        expect(item).assertEqual((index + 1) * 10);
+      });
+
+      const inputOrder = ['apple', 'banana', 'cherry'];
+      const orderedResult = await returnOrderedArray(inputOrder);
+      expect(orderedResult.length).assertEqual(3);
+      expect(orderedResult[0]).assertEqual('0_apple');
+      expect(orderedResult[1]).assertEqual('1_banana');
+      expect(orderedResult[2]).assertEqual('2_cherry');
+
+      const objectArray = await returnObjectArray();
+      expect(Array.isArray(objectArray)).assertEqual(true);
+      expect(objectArray.length).assertEqual(3);
+      expect(objectArray[0].id).assertEqual(1);
+      expect(objectArray[0].name).assertEqual('User1');
+      expect(objectArray[2].age).assertEqual(undefined);
+
+      const testNumbers = [5, 10, 15, 20, 25];
+      const summaryResult = await returnArrayWithSummary(testNumbers);
+      expect(summaryResult.items).assertDeepEquals(testNumbers);
+      expect(summaryResult.summary.total).assertEqual(75);
+      expect(summaryResult.summary.average).assertEqual(15);
+      expect(summaryResult.summary.max).assertEqual(25);
+      expect(summaryResult.summary.min).assertEqual(5);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0057
+     * @tc.number ASYNC_FIR_TEST_0057
+     * @tc.desc   Promise nested return auto-unwrapping validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFirTest0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const returnPromiseValue = async (): Promise<string> => {
+        return Promise.resolve('unwrapped_value');
+      };
+      const returnNestedPromise = async (): Promise<number> => {
+        const innerPromise = Promise.resolve(42);
+        return await innerPromise;
+      };
+
+      const returnChainedPromise = async (): Promise<string> => {
+        return Promise.resolve('base')
+          .then((val: string) => `${val}_step1`)
+          .then((val: string) => `${val}_step2`);
+      };
+
+      const returnPromiseAllResult = async (): Promise<number[]> => {
+        const promises = [
+          Promise.resolve(10),
+          Promise.resolve(20),
+          Promise.resolve(30)
+        ];
+        return Promise.all(promises);
+      };
+
+      const returnComplexPromiseObject = async (): Promise<GenericReturnWrapper<string>> => {
+        const dataPromise = Promise.resolve('complex_data');
+        const timestampPromise = Promise.resolve(Date.now());
+
+        const data = await dataPromise;
+        const timestamp = await timestampPromise;
+
+        const result: GenericReturnWrapper<string> = {
+          data: data,
+          meta: {
+            timestamp: timestamp,
+            version: '2.0.0'
+          }
+        };
+
+        return Promise.resolve(result);
+      };
+
+      const unwrappedValue = await returnPromiseValue();
+      expect(typeof unwrappedValue).assertEqual('string');
+      expect(unwrappedValue).assertEqual('unwrapped_value');
+
+      const nestedValue = await returnNestedPromise();
+      expect(typeof nestedValue).assertEqual('number');
+      expect(nestedValue).assertEqual(42);
+
+      const chainedValue = await returnChainedPromise();
+      expect(typeof chainedValue).assertEqual('string');
+      expect(chainedValue).assertEqual('base_step1_step2');
+
+      const allResult = await returnPromiseAllResult();
+      expect(Array.isArray(allResult)).assertEqual(true);
+      expect(allResult).assertDeepEquals([10, 20, 30]);
+
+      const complexResult = await returnComplexPromiseObject();
+      expect(typeof complexResult).assertEqual('object');
+      expect(complexResult.data).assertEqual('complex_data');
+      expect(typeof complexResult.meta.timestamp).assertEqual('number');
+      expect(complexResult.meta.version).assertEqual('2.0.0');
+
+      const directPromise = returnPromiseValue();
+      expect(directPromise instanceof Promise).assertEqual(true);
+
+      const resolvedDirect = await directPromise;
+      expect(typeof resolvedDirect).assertEqual('string');
+      expect(resolvedDirect).assertEqual('unwrapped_value');
+    });
+
+    /**
+     * @tc.name   asyncFirTest0058
+     * @tc.number ASYNC_FIR_TEST_0058
+     * @tc.desc   Return null type adaptation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const returnNullValue = async (): Promise<string | null> => {
+        return await Promise.resolve(null);
+      };
+
+      const returnNullableString = async (condition: boolean): Promise<string | null> => {
+        if (condition) {
+          return await Promise.resolve('valid_string');
+        }
+        return await Promise.resolve(null);
+      };
+
+      const nullResult = await returnNullValue();
+      expect(nullResult).assertEqual(null);
+
+      const validStringResult = await returnNullableString(true);
+      expect(validStringResult).assertEqual('valid_string');
+
+      const nullStringResult = await returnNullableString(false);
+      expect(nullStringResult).assertEqual(null);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0059
+     * @tc.number ASYNC_FIR_TEST_0059
+     * @tc.desc   Return undefined type adaptation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const returnUndefinedValue = async (): Promise<number | undefined> => {
+        return await Promise.resolve(undefined);
+      };
+
+      const returnOptionalNumber = async (hasValue: boolean): Promise<number | undefined> => {
+        if (hasValue) {
+          return await Promise.resolve(42);
+        }
+        return await Promise.resolve(undefined);
+      };
+
+      const undefinedResult = await returnUndefinedValue();
+      expect(undefinedResult).assertEqual(undefined);
+
+      const validNumberResult = await returnOptionalNumber(true);
+      expect(validNumberResult).assertEqual(42);
+
+      const undefinedNumberResult = await returnOptionalNumber(false);
+      expect(undefinedNumberResult).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0060
+     * @tc.number ASYNC_FIR_TEST_0060
+     * @tc.desc   Nullable result wrapper validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const returnNullableResult = async <T>(value: T | null): Promise<NullableResult<T>> => {
+        const result: NullableResult<T> = {
+          value: value,
+          hasValue: value !== null
+        };
+        return await Promise.resolve(result);
+      };
+
+      const nullableWrapper = await returnNullableResult<string>('test_value');
+      expect(nullableWrapper.value).assertEqual('test_value');
+      expect(nullableWrapper.hasValue).assertEqual(true);
+
+      const nullWrapper = await returnNullableResult<string>(null);
+      expect(nullWrapper.value).assertEqual(null);
+      expect(nullWrapper.hasValue).assertEqual(false);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0061
+     * @tc.number ASYNC_FIR_TEST_0061
+     * @tc.desc   Return null/undefined with object types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const returnNullableUser = async (exists: boolean): Promise<ComplexUserProfile | null> => {
+        if (exists) {
+          const user: ComplexUserProfile = {
+            id: 1,
+            name: 'Test User',
+            email: 'test@example.com',
+            age: 30
+          };
+          return await Promise.resolve(user);
+        }
+        return await Promise.resolve(null);
+      };
+
+      const existingUser = await returnNullableUser(true);
+      expect(existingUser).not().assertEqual(null);
+      expect(existingUser!.name).assertEqual('Test User');
+      expect(existingUser!.email).assertEqual('test@example.com');
+
+      const nullUser = await returnNullableUser(false);
+      expect(nullUser).assertEqual(null);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0062
+     * @tc.number ASYNC_FIR_TEST_0062
+     * @tc.desc   Return undefined with array types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const returnOptionalArray = async (hasData: boolean): Promise<string[] | undefined> => {
+        if (hasData) {
+          return await Promise.resolve(['item1', 'item2', 'item3']);
+        }
+        return await Promise.resolve(undefined);
+      };
+
+      const validArray = await returnOptionalArray(true);
+      expect(validArray).not().assertEqual(undefined);
+      expect(validArray!.length).assertEqual(3);
+      expect(validArray![0]).assertEqual('item1');
+
+      const undefinedArray = await returnOptionalArray(false);
+      expect(undefinedArray).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0063
+     * @tc.number ASYNC_FIR_TEST_0063
+     * @tc.desc   Undefined result wrapper and mixed scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const returnUndefinedResult = async <T>(value: T | undefined): Promise<UndefinedResult<T>> => {
+        const result: UndefinedResult<T> = {
+          value: value,
+          isPresent: value !== undefined
+        };
+        return await Promise.resolve(result);
+      };
+
+      const returnMixedOptional = async (mode: string): Promise<number | null | undefined> => {
+        switch (mode) {
+          case 'value':
+            return await Promise.resolve(100);
+          case 'null':
+            return await Promise.resolve(null);
+          case 'undefined':
+            return await Promise.resolve(undefined);
+          default:
+            return await Promise.resolve(undefined);
+        }
+      };
+
+      const undefinedWrapper = await returnUndefinedResult<number>(42);
+      expect(undefinedWrapper.value).assertEqual(42);
+      expect(undefinedWrapper.isPresent).assertEqual(true);
+
+      const undefinedValueWrapper = await returnUndefinedResult<number>(undefined);
+      expect(undefinedValueWrapper.value).assertEqual(undefined);
+      expect(undefinedValueWrapper.isPresent).assertEqual(false);
+
+      const valueResult = await returnMixedOptional('value');
+      expect(valueResult).assertEqual(100);
+
+      const nullResult = await returnMixedOptional('null');
+      expect(nullResult).assertEqual(null);
+
+      const undefinedResult = await returnMixedOptional('undefined');
+      expect(undefinedResult).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0064
+     * @tc.number ASYNC_FIR_TEST_0064
+     * @tc.desc   Empty array basic operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const returnEmptyArray = async (): Promise<string[]> => {
+        const emptyArray: string[] = [];
+        return await Promise.resolve(emptyArray);
+      };
+
+      const returnConditionalArray = async (hasItems: boolean): Promise<number[]> => {
+        if (hasItems) {
+          return await Promise.resolve([1, 2, 3, 4, 5]);
+        }
+        return await Promise.resolve([]);
+      };
+
+      const emptyArray = await returnEmptyArray();
+      expect(Array.isArray(emptyArray)).assertEqual(true);
+      expect(emptyArray.length).assertEqual(0);
+
+      const filledArray = await returnConditionalArray(true);
+      expect(filledArray.length).assertEqual(5);
+      expect(filledArray).assertDeepEquals([1, 2, 3, 4, 5]);
+
+      const emptyConditionalArray = await returnConditionalArray(false);
+      expect(emptyConditionalArray.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0065
+     * @tc.number ASYNC_FIR_TEST_0065
+     * @tc.desc   Empty array processing and metadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const processEmptyArray = async (input: string[]): Promise<string[]> => {
+        if (input.length === 0) {
+          return await Promise.resolve([]);
+        }
+        const processed = await Promise.all(
+          input.map(async (item: string): Promise<string> => {
+            return await Promise.resolve(item.toUpperCase());
+          })
+        );
+        return processed;
+      };
+
+      const returnEmptyWithMetadata = async (): Promise<EmptyDataResult> => {
+        const emptyMetadata: Record<string, string> = {};
+        const result: EmptyDataResult = {
+          items: [],
+          metadata: emptyMetadata,
+          isEmpty: true
+        };
+        return await Promise.resolve(result);
+      };
+
+      const processedEmpty = await processEmptyArray([]);
+      expect(processedEmpty.length).assertEqual(0);
+
+      const processedFilled = await processEmptyArray(['hello', 'world']);
+      expect(processedFilled.length).assertEqual(2);
+      expect(processedFilled).assertDeepEquals(['HELLO', 'WORLD']);
+
+      const emptyMetadata = await returnEmptyWithMetadata();
+      expect(emptyMetadata.items.length).assertEqual(0);
+      expect(Object.keys(emptyMetadata.metadata).length).assertEqual(0);
+      expect(emptyMetadata.isEmpty).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0066
+     * @tc.number ASYNC_FIR_TEST_0066
+     * @tc.desc   Array filtering to empty results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const filterToEmpty = async (numbers: number[]): Promise<number[]> => {
+        const filtered = await Promise.all(
+          numbers.map(async (num: number): Promise<number | null> => {
+            if (num > 1000) {
+              return await Promise.resolve(num);
+            }
+            return await Promise.resolve(null);
+          })
+        );
+        return filtered.filter((item: number | null): boolean => item !== null) as number[];
+      };
+
+      const filteredResult = await filterToEmpty([1, 5, 10, 50, 100]);
+      expect(filteredResult.length).assertEqual(0);
+
+      const filteredWithResults = await filterToEmpty([1, 5, 1500, 2000]);
+      expect(filteredWithResults.length).assertEqual(2);
+      expect(filteredWithResults).assertDeepEquals([1500, 2000]);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0067
+     * @tc.number ASYNC_FIR_TEST_0067
+     * @tc.desc   Empty object basic operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const returnEmptyObject = async (): Promise<Record<string, string>> => {
+        const emptyObj: Record<string, string> = {};
+        return await Promise.resolve(emptyObj);
+      };
+
+      const returnConditionalObject = async (hasData: boolean): Promise<Record<string, number>> => {
+        if (hasData) {
+          const dataObj: Record<string, number> = {};
+          dataObj.a = 1;
+          dataObj.b = 2;
+          dataObj.c = 3;
+          return await Promise.resolve(dataObj);
+        }
+        const emptyObj: Record<string, number> = {};
+        return await Promise.resolve(emptyObj);
+      };
+
+      const emptyObj = await returnEmptyObject();
+      expect(typeof emptyObj).assertEqual('object');
+      expect(Object.keys(emptyObj).length).assertEqual(0);
+
+      const filledObj = await returnConditionalObject(true);
+      expect(Object.keys(filledObj).length).assertEqual(3);
+      expect(filledObj.a).assertEqual(1);
+      expect(filledObj.b).assertEqual(2);
+      expect(filledObj.c).assertEqual(3);
+
+      const emptyConditionalObj = await returnConditionalObject(false);
+      expect(Object.keys(emptyConditionalObj).length).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0068
+     * @tc.number ASYNC_FIR_TEST_0068
+     * @tc.desc   Empty object processing and structured data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const processEmptyObject = async (input: Record<string, string>): Promise<Record<string, string>> => {
+        const keys = Object.keys(input);
+        if (keys.length === 0) {
+          const emptyResult: Record<string, string> = {};
+          return await Promise.resolve(emptyResult);
+        }
+
+        const processed: Record<string, string> = {};
+        for (const key of keys) {
+          processed[key] = await Promise.resolve(input[key].toUpperCase());
+        }
+        return processed;
+      };
+
+      const returnEmptyStructured = async (): Promise<EmptyDataResult> => {
+        const emptyMetadata: Record<string, string> = {};
+        const result: EmptyDataResult = {
+          items: [],
+          metadata: emptyMetadata,
+          isEmpty: true
+        };
+        return await Promise.resolve(result);
+      };
+
+      const emptyInput: Record<string, string> = {};
+      const processedEmpty = await processEmptyObject(emptyInput);
+      expect(Object.keys(processedEmpty).length).assertEqual(0);
+
+      const filledInput: Record<string, string> = {};
+      filledInput.hello = 'world';
+      filledInput.test = 'case';
+      const processedFilled = await processEmptyObject(filledInput);
+      expect(Object.keys(processedFilled).length).assertEqual(2);
+      expect(processedFilled.hello).assertEqual('WORLD');
+      expect(processedFilled.test).assertEqual('CASE');
+
+      const emptyStructured = await returnEmptyStructured();
+      expect(emptyStructured.items.length).assertEqual(0);
+      expect(Object.keys(emptyStructured.metadata).length).assertEqual(0);
+      expect(emptyStructured.isEmpty).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0069
+     * @tc.number ASYNC_FIR_TEST_0069
+     * @tc.desc   Object filtering to empty results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const filterObjectToEmpty = async (input: Record<string, number>): Promise<Record<string, number>> => {
+        const filtered: Record<string, number> = {};
+        const keys = Object.keys(input);
+
+        for (const key of keys) {
+          const value = input[key];
+          if (value > 1000) {
+            filtered[key] = await Promise.resolve(value);
+          }
+        }
+        return filtered;
+      };
+
+      const testInput1: Record<string, number> = {};
+      testInput1.a = 1;
+      testInput1.b = 5;
+      testInput1.c = 10;
+      const filteredEmpty = await filterObjectToEmpty(testInput1);
+      expect(Object.keys(filteredEmpty).length).assertEqual(0);
+
+      const testInput2: Record<string, number> = {};
+      testInput2.a = 1;
+      testInput2.b = 1500;
+      testInput2.c = 2000;
+      const filteredWithResults = await filterObjectToEmpty(testInput2);
+      expect(Object.keys(filteredWithResults).length).assertEqual(2);
+      expect(filteredWithResults.b).assertEqual(1500);
+      expect(filteredWithResults.c).assertEqual(2000);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0070
+     * @tc.number ASYNC_FIR_TEST_0070
+     * @tc.desc   Basic nested structure return validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const returnNestedStructure = async (): Promise<NestedDataStructure> => {
+        const level3Data: Level3Data = {
+          data: ['item1', 'item2', 'item3'],
+          count: 3
+        };
+
+        const level2Data: Level2Data = {
+          level3: level3Data,
+          metadata: 'level2_meta'
+        };
+
+        const level1Data: Level1Data = {
+          level2: level2Data,
+          summary: 'level1_summary'
+        };
+
+        const structure: NestedDataStructure = {
+          level1: level1Data,
+          status: 'complete'
+        };
+        return await Promise.resolve(structure);
+      };
+
+      const basicNested = await returnNestedStructure();
+      expect(typeof basicNested).assertEqual('object');
+      expect(typeof basicNested.level1).assertEqual('object');
+      expect(typeof basicNested.level1.level2).assertEqual('object');
+      expect(typeof basicNested.level1.level2.level3).assertEqual('object');
+
+      expect(Array.isArray(basicNested.level1.level2.level3.data)).assertEqual(true);
+      expect(basicNested.level1.level2.level3.data.length).assertEqual(3);
+      expect(basicNested.level1.level2.level3.count).assertEqual(3);
+      expect(basicNested.level1.level2.metadata).assertEqual('level2_meta');
+      expect(basicNested.level1.summary).assertEqual('level1_summary');
+      expect(basicNested.status).assertEqual('complete');
+    });
+
+    /**
+     * @tc.name   asyncFirTest0071
+     * @tc.number ASYNC_FIR_TEST_0071
+     * @tc.desc   Async constructed nested structure validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const buildNestedStructure = async (itemCount: number): Promise<NestedDataStructure> => {
+        const items: string[] = [];
+        for (let i = 0; i < itemCount; i++) {
+          const item = await Promise.resolve(`async_item_${i + 1}`);
+          items.push(item);
+        }
+
+        const metadata = await Promise.resolve(`metadata_for_${itemCount}_items`);
+        const summary = await Promise.resolve(`summary_${itemCount}_total`);
+        const status = await Promise.resolve('async_built');
+
+        const level3Data: Level3Data = {
+          data: items,
+          count: itemCount
+        };
+
+        const level2Data: Level2Data = {
+          level3: level3Data,
+          metadata: metadata
+        };
+
+        const level1Data: Level1Data = {
+          level2: level2Data,
+          summary: summary
+        };
+
+        const structure: NestedDataStructure = {
+          level1: level1Data,
+          status: status
+        };
+        return structure;
+      };
+
+      const builtNested = await buildNestedStructure(5);
+      expect(builtNested.level1.level2.level3.data.length).assertEqual(5);
+      expect(builtNested.level1.level2.level3.count).assertEqual(5);
+      expect(builtNested.level1.level2.level3.data[0]).assertEqual('async_item_1');
+      expect(builtNested.level1.level2.level3.data[4]).assertEqual('async_item_5');
+      expect(builtNested.level1.level2.metadata).assertEqual('metadata_for_5_items');
+      expect(builtNested.level1.summary).assertEqual('summary_5_total');
+      expect(builtNested.status).assertEqual('async_built');
+    });
+
+    /**
+     * @tc.name   asyncFirTest0072
+     * @tc.number ASYNC_FIR_TEST_0072
+     * @tc.desc   Partial nested structure validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('asyncFirTest0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const returnPartialStructure = async (includeData: boolean): Promise<NestedDataStructure> => {
+        const level3Data: Level3Data = {
+          data: includeData ? ['partial_item'] : [],
+          count: includeData ? 1 : 0
+        };
+
+        const level2Data: Level2Data = {
+          level3: level3Data,
+          metadata: includeData ? 'has_data' : 'no_data'
+        };
+
+        const level1Data: Level1Data = {
+          level2: level2Data,
+          summary: includeData ? 'partial_summary' : 'empty_summary'
+        };
+
+        const structure: NestedDataStructure = {
+          level1: level1Data,
+          status: includeData ? 'partial' : 'empty'
+        };
+        return await Promise.resolve(structure);
+      };
+
+      const partialWithData = await returnPartialStructure(true);
+      expect(partialWithData.level1.level2.level3.data.length).assertEqual(1);
+      expect(partialWithData.level1.level2.level3.count).assertEqual(1);
+      expect(partialWithData.status).assertEqual('partial');
+
+      const partialEmpty = await returnPartialStructure(false);
+      expect(partialEmpty.level1.level2.level3.data.length).assertEqual(0);
+      expect(partialEmpty.level1.level2.level3.count).assertEqual(0);
+      expect(partialEmpty.status).assertEqual('empty');
+    });
+
+    /**
+     * @tc.name   asyncFirTest0073
+     * @tc.number ASYNC_FIR_TEST_0073
+     * @tc.desc   Complex nested structure basic return validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFirTest0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const returnComplexStructure = async (): Promise<ComplexNestedStructure> => {
+        const activeUser1: UserInfo = {} as UserInfo;
+        activeUser1.name = 'Active User 1';
+        activeUser1.age = 25;
+
+        const activeUser2: UserInfo = {} as UserInfo;
+        activeUser2.name = 'Active User 2';
+        activeUser2.age = 30;
+        const activeUsers: UserInfo[] = [activeUser1, activeUser2];
+
+        const inactiveUser1: UserInfo = {} as UserInfo;
+        inactiveUser1.name = 'Inactive User 1';
+        inactiveUser1.age = 35;
+        const inactiveUsers: UserInfo[] = [inactiveUser1];
+
+        const userGroups: UserGroups = {
+          active: activeUsers,
+          inactive: inactiveUsers
+        };
+
+        const globalSettingsObj: Record<string, boolean> = {};
+        globalSettingsObj.enableNotifications = true;
+        globalSettingsObj.darkMode = false;
+        const globalSettings: Record<string, boolean> = globalSettingsObj;
+
+        const userSettingsObj: Record<string, string> = {};
+        userSettingsObj.theme = 'light';
+        userSettingsObj.language = 'en';
+        const userSettings: Record<string, string> = userSettingsObj;
+        const settingsData: SettingsData = {
+          global: globalSettings,
+          user: userSettings
+        };
+
+        const statisticsData: StatisticsData = {
+          totalUsers: 3,
+          activeCount: 2,
+          lastUpdate: '2024-01-29T10:00:00Z'
+        };
+
+        const structure: ComplexNestedStructure = {
+          users: userGroups,
+          settings: settingsData,
+          statistics: statisticsData
+        };
+        return await Promise.resolve(structure);
+      };
+
+      const complexStructure = await returnComplexStructure();
+      expect(typeof complexStructure).assertEqual('object');
+      expect(typeof complexStructure.users).assertEqual('object');
+      expect(Array.isArray(complexStructure.users.active)).assertEqual(true);
+      expect(Array.isArray(complexStructure.users.inactive)).assertEqual(true);
+
+      expect(complexStructure.users.active.length).assertEqual(2);
+      expect(complexStructure.users.inactive.length).assertEqual(1);
+      expect(complexStructure.users.active[0].name).assertEqual('Active User 1');
+      expect(complexStructure.users.active[0].age).assertEqual(25);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0074
+     * @tc.number ASYNC_FIR_TEST_0074
+     * @tc.desc   Complex nested structure settings and statistics validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFirTest0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const returnComplexStructure = async (): Promise<ComplexNestedStructure> => {
+        const activeUser1: UserInfo = {} as UserInfo;
+        activeUser1.name = 'Active User 1';
+        activeUser1.age = 25;
+
+        const activeUser2: UserInfo = {} as UserInfo;
+        activeUser2.name = 'Active User 2';
+        activeUser2.age = 30;
+        const activeUsers: UserInfo[] = [activeUser1, activeUser2];
+
+        const inactiveUser1: UserInfo = {} as UserInfo;
+        inactiveUser1.name = 'Inactive User 1';
+        inactiveUser1.age = 35;
+        const inactiveUsers: UserInfo[] = [inactiveUser1];
+
+        const userGroups: UserGroups = {
+          active: activeUsers,
+          inactive: inactiveUsers
+        };
+
+        const globalSettingsObj: Record<string, boolean> = {};
+        globalSettingsObj.enableNotifications = true;
+        globalSettingsObj.darkMode = false;
+        const globalSettings: Record<string, boolean> = globalSettingsObj;
+
+        const userSettingsObj: Record<string, string> = {};
+        userSettingsObj.theme = 'light';
+        userSettingsObj.language = 'en';
+        const userSettings: Record<string, string> = userSettingsObj;
+        const settingsData: SettingsData = {
+          global: globalSettings,
+          user: userSettings
+        };
+
+        const statisticsData: StatisticsData = {
+          totalUsers: 3,
+          activeCount: 2,
+          lastUpdate: '2024-01-29T10:00:00Z'
+        };
+
+        const structure: ComplexNestedStructure = {
+          users: userGroups,
+          settings: settingsData,
+          statistics: statisticsData
+        };
+        return await Promise.resolve(structure);
+      };
+
+      const complexStructure = await returnComplexStructure();
+
+      expect(typeof complexStructure.settings).assertEqual('object');
+      expect(typeof complexStructure.settings.global).assertEqual('object');
+      expect(typeof complexStructure.settings.user).assertEqual('object');
+      expect(complexStructure.settings.global.enableNotifications).assertEqual(true);
+      expect(complexStructure.settings.user.theme).assertEqual('light');
+
+      expect(typeof complexStructure.statistics).assertEqual('object');
+      expect(complexStructure.statistics.totalUsers).assertEqual(3);
+      expect(complexStructure.statistics.activeCount).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0075
+     * @tc.number ASYNC_FIR_TEST_0075
+     * @tc.desc   Complex nested structure async construction validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFirTest0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const buildComplexStructure = async (userCount: number): Promise<ComplexNestedStructure> => {
+        const activeUsers: UserInfo[] = [];
+        const inactiveUsers: UserInfo[] = [];
+
+        for (let i = 0; i < userCount; i++) {
+          const userName = await Promise.resolve(`User_${i + 1}`);
+          const userAge = await Promise.resolve(20 + i);
+          const user: UserInfo = {} as UserInfo;
+          user.name = userName;
+          user.age = userAge;
+
+          if (i % 2 === 0) {
+            activeUsers.push(user);
+          } else {
+            inactiveUsers.push(user);
+          }
+        }
+
+        const globalSettingsObj: Record<string, boolean> = {};
+        globalSettingsObj.enableNotifications = userCount > 5;
+        globalSettingsObj.darkMode = userCount > 10;
+        const globalSettings = await Promise.resolve(globalSettingsObj);
+
+        const userSettingsObj: Record<string, string> = {};
+        userSettingsObj.theme = userCount > 3 ? 'dark' : 'light';
+        userSettingsObj.language = 'en';
+        const userSettings = await Promise.resolve(userSettingsObj);
+
+        const lastUpdate = await Promise.resolve(new Date().toISOString());
+
+        const userGroups: UserGroups = { active: activeUsers, inactive: inactiveUsers };
+
+        const settingsData: SettingsData = { global: globalSettings, user: userSettings };
+
+        const statisticsData: StatisticsData = { totalUsers: userCount, activeCount: activeUsers.length, lastUpdate: lastUpdate };
+
+        const structure: ComplexNestedStructure = { users: userGroups, settings: settingsData, statistics: statisticsData };
+        return structure;
+      };
+
+      const builtComplex = await buildComplexStructure(8);
+      expect(builtComplex.users.active.length).assertEqual(4);
+      expect(builtComplex.users.inactive.length).assertEqual(4);
+      expect(builtComplex.statistics.totalUsers).assertEqual(8);
+      expect(builtComplex.statistics.activeCount).assertEqual(4);
+      expect(builtComplex.settings.global.enableNotifications).assertEqual(true);
+      expect(builtComplex.settings.user.theme).assertEqual('dark');
+    });
+
+    /**
+     * @tc.name   asyncFirTest0076
+     * @tc.number ASYNC_FIR_TEST_0076
+     * @tc.desc   Empty complex nested structure validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('asyncFirTest0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const returnEmptyComplexStructure = async (): Promise<ComplexNestedStructure> => {
+        const emptyUserGroups: UserGroups = { active: [], inactive: [] };
+
+        const emptyGlobalSettings: Record<string, boolean> = {};
+        const emptyUserSettings: Record<string, string> = {};
+        const emptySettingsData: SettingsData = { global: emptyGlobalSettings, user: emptyUserSettings };
+
+        const emptyStatisticsData: StatisticsData = { totalUsers: 0, activeCount: 0, lastUpdate: '1970-01-01T00:00:00Z' };
+
+        const structure: ComplexNestedStructure = { users: emptyUserGroups, settings: emptySettingsData, statistics: emptyStatisticsData };
+        return await Promise.resolve(structure);
+      };
+
+      const emptyComplex = await returnEmptyComplexStructure();
+      expect(emptyComplex.users.active.length).assertEqual(0);
+      expect(emptyComplex.users.inactive.length).assertEqual(0);
+      expect(Object.keys(emptyComplex.settings.global).length).assertEqual(0);
+      expect(Object.keys(emptyComplex.settings.user).length).assertEqual(0);
+      expect(emptyComplex.statistics.totalUsers).assertEqual(0);
+      expect(emptyComplex.statistics.activeCount).assertEqual(0);
+    });
+    /**
+     * @tc.name   asyncFirTest0077
+     * @tc.number ASYNC_FIR_TEST_0077
+     * @tc.desc   Test basic logic execution: computation, assignment, and state changes after await
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('asyncFirTest0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let globalState = 100;
+
+      const calculateAsync = async (input: number): Promise<number> => {
+        let localVal = input * 2;
+
+        const modifier = await Promise.resolve(5);
+
+        localVal += modifier;
+
+        globalState = globalState + localVal;
+
+        return localVal;
+      };
+
+      const result = await calculateAsync(10);
+
+      expect(result).assertEqual(25);
+      expect(globalState).assertEqual(125);
+    });
+
+    /**
+     * @tc.name   asyncFirTest0078
+     * @tc.number ASYNC_FIR_TEST_0078
+     * @tc.desc   Test conditional branches (if/else/switch) with async operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('asyncFirTest0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const processCondition = async (type: string): Promise<string> => {
+        let status = 'pending';
+
+        if (type === 'fast') {
+          status = await Promise.resolve('completed_fast');
+        } else if (type === 'slow') {
+          await Promise.resolve(1);
+          status = 'completed_slow';
+        } else {
+          switch (type) {
+            case 'complex':
+              const part1 = await Promise.resolve('comp');
+              const part2 = await Promise.resolve('lex');
+              status = part1 + part2;
+              break;
+            default:
+              status = 'unknown';
+          }
+        }
+        return status;
+      };
+
+      const resFast = await processCondition('fast');
+      expect(resFast).assertEqual('completed_fast');
+
+      const resSlow = await processCondition('slow');
+      expect(resSlow).assertEqual('completed_slow');
+
+      const resComplex = await processCondition('complex');
+      expect(resComplex).assertEqual('complex');
+
+      const resDefault = await processCondition('none');
+      expect(resDefault).assertEqual('unknown');
+    });
+
+    /**
+     * @tc.name   asyncFirTest0079
+     * @tc.number ASYNC_FIR_TEST_0079
+     * @tc.desc   Test loop integrity (for/for...of) ensuring await pauses iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('asyncFirTest0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const numbers = [10, 20, 30];
+      const accumulator: number[] = [];
+
+      const processArray = async (arr: number[]): Promise<number> => {
+        let sum = 0;
+        for (const num of arr) {
+          const val = await Promise.resolve(num + 1);
+          sum += val;
+          accumulator.push(val);
+        }
+        return sum;
+      };
+
+      const processLoopIndex = async (): Promise<string> => {
+        let str = '';
+        for (let i = 0; i < 3; i++) {
+          const char = await Promise.resolve(i.toString());
+          str += char;
+        }
+        return str;
+      };
+
+      const totalSum = await processArray(numbers);
+      expect(totalSum).assertEqual(63);
+
+      expect(accumulator.length).assertEqual(3);
+      expect(accumulator[0]).assertEqual(11);
+      expect(accumulator[2]).assertEqual(31);
+
+      const loopStr = await processLoopIndex();
+      expect(loopStr).assertEqual('012');
+    });
+
+    /**
+     * @tc.name   asyncFirTest0080
+     * @tc.number ASYNC_FIR_TEST_0080
+     * @tc.desc   Test generic async function compatibility and logic consistency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('asyncFirTest0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const wrapInAsync = async <T>(item: T): Promise<T> => {
+        const result = await Promise.resolve(item);
+        return result;
+      };
+
+      interface TestObj {
+        id: number;
+        val: string;
+      }
+
+      const numRes = await wrapInAsync<number>(12345);
+      expect(numRes).assertEqual(12345);
+
+      const strRes = await wrapInAsync<string>('Generic Test');
+      expect(strRes).assertEqual('Generic Test');
+
+      const objInput: TestObj = { id: 1, val: 'obj' };
+      const objRes = await wrapInAsync<TestObj>(objInput);
+      expect(objRes.id).assertEqual(1);
+      expect(objRes.val).assertEqual('obj');
+
+      expect(objRes).assertEqual(objInput);
+    });
   })
 }
