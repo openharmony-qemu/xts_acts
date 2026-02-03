@@ -171,7 +171,7 @@ export default function ProcessTest() {
         console.info(`${TAG} test start`);
         let worker = new EAWorker()
         worker.start()
-        worker.run(() => {
+        worker.run<void>(() => {
           try {
             for (let i = 0; i < 100; i++) {
               const currentUid = StdProcess.uid();
@@ -392,7 +392,7 @@ export default function ProcessTest() {
         console.info(`${TAG} test start`);
         let worker = new EAWorker()
         worker.start()
-        worker.run(() => {
+        worker.run<void>(() => {
           try {
             for (let i = 0; i < 100; i++) {
               const uidForName = 'g';
@@ -614,7 +614,7 @@ export default function ProcessTest() {
         try {
           const worker = new EAWorker();
           worker.start()
-          worker.run(() => {
+          worker.run<void>(() => {
             try {
               for (let i = 0; i < 100; i++) {
                 const _SC_ARG_MAX = 0;
@@ -738,7 +738,7 @@ export default function ProcessTest() {
         try {
           const worker = new EAWorker();
           worker.start()
-          worker.run(() => {
+          worker.run<void>(() => {
             for (let i = 0; i < 100; i++) {
               const pathName = "PATH";
               const processManager = new StdProcess.ProcessManager();
