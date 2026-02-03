@@ -16,7 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 import { BusinessError } from '@ohos.base';
-import display from '@ohos.display';
+import display from '@kit.ArkUI'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 const delegator: AbilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -672,20 +672,56 @@ export default function uiUiWindowTest() {
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
         let scbCom = await driver.findComponent(ON.id('SCBDividerFlex1'))
+        await driver.delayMs(waitUiReadyMs)
         if (scbCom != null) {
-          await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+          await driver.setDisplayRotationEnabled(true)
           await driver.delayMs(waitUiReadyMs)
-          let direction = await driver.getDisplayRotation()
-          console.log(`${TestTag}, testWindowResizeB_split1 setDisplayRotation success ,${JSON.stringify(direction)}`);
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
           await driver.delayMs(waitUiReadyMs)
-          expect(direction == 1).assertTrue()
-          let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
-          let bounds1 = await window2.getBounds()
-          await window2.resize(0, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
-          await driver.delayMs(waitUiReadyMs * 5)
-          let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
-          console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
-          expect(window3 == null).assertTrue()
+          let direction0 = await driver.getDisplayRotation()
+          console.log(`${TestTag}, testWindowResizeB_split1 setDisplayRotation_0 success ,${JSON.stringify(direction0)}`);
+          if (direction0 ==1 ) {
+            console.log('The device is displayed in horizontal on default')
+            let data: display.FoldStatus = display.getFoldStatus()
+            console.log(`Succeeded in obtaining fold status. Data,${data}`);
+            if (data != 0) {
+              await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+              await driver.delayMs(waitUiReadyMs)
+              if (data == 2) {
+                await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
+                await driver.delayMs(waitUiReadyMs)
+              }
+              let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+              let bounds1 = await window2.getBounds()
+              await window2.resize(0, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
+              await driver.delayMs(waitUiReadyMs * 5)
+              let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+              console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
+              expect(window3 == null).assertTrue()
+            }else {
+              let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+              let bounds1 = await window2.getBounds()
+              await window2.resize(0, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
+              await driver.delayMs(waitUiReadyMs * 5)
+              let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+              console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
+              expect(window3 == null).assertTrue()
+            }
+          }else {
+            console.log('The device is displayed in vertical on default')
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+            await driver.delayMs(waitUiReadyMs)
+            let direction = await driver.getDisplayRotation()
+            console.log(`${TestTag}, testWindowResizeB_split1 setDisplayRotation success ,${JSON.stringify(direction)}`);
+            expect(direction == 1).assertTrue()
+            let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+            let bounds1 = await window2.getBounds()
+            await window2.resize(0, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
+            await driver.delayMs(waitUiReadyMs * 5)
+            let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+            console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
+            expect(window3 == null).assertTrue()
+          }
         } else {
           let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
           let bounds1 = await window2.getBounds()
