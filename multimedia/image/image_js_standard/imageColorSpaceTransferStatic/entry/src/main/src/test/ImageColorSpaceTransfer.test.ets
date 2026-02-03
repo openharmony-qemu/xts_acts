@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,8 @@ let globalimageSource: image.ImageSource | undefined = undefined;
 function getFd(fileName:string) {
   let filePath = filesDir + "/" + fileName;
   console.info("image case filePath is " + filePath);
-  let file = await fs.open(filePath, 0o0);
+  let file: fs.File | undefined;
+  waitForCompletion(async () => {file = await fs.open(filePath, 0o0);})
   return file.fd as int
 }
 
@@ -259,7 +260,7 @@ const applyColorSpaceCbTest = async (
 
 export default function ImageColorSpaceTransferTest() {
   describe('ImageColorSpaceTransferTest', ()=> {
-    beforeAll(() => {
+    beforeAll(async () => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
     })
