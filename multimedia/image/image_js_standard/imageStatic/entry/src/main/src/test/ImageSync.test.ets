@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ export default function imageSync() {
 
     let globalpixelmap: image.PixelMap | undefined = undefined;
     let globalimageSource: image.ImageSource | undefined = undefined;
-    beforeAll(() => {
+    beforeAll(async () => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
     })
@@ -250,7 +250,8 @@ export default function imageSync() {
             done();
           } else {
             globalpixelmap = pixelMap;
-            let pixelMapInfo = await pixelMap.getImageInfo();
+            let pixelMapInfo: image.ImageInfo | undefined;
+            waitForCompletion(async () => {pixelMapInfo = await pixelMap.getImageInfo();})
             let pixelColorSpace = pixelMap.getColorSpace().getColorSpaceName();
             let pixelGamma = pixelMap.getColorSpace().getGamma();
             logger.log('pixelmap info:');
