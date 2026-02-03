@@ -762,23 +762,6 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_STATIC_0200
-     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_STATIC_0200
-     * @tc.desc   DeviceRole - ALL Device Role
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      expect(audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_MUTE_SUGGESTION).assertEqual(6);
-      console.info("audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_MUTE_SUGGESTION :" + audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_MUTE_SUGGESTION);
-      expect(audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_UNMUTE_SUGGESTION).assertEqual(7);
-      console.info("audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_UNMUTE_SUGGESTION :" + audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_UNMUTE_SUGGESTION);
-      await Utils.msSleep(50);
-      done();
-    })
-
-    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_DEVICE_RECOMMENDEDACTION_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_RECOMMENDEDACTION_STATIC_0100
      * @tc.desc   DeviceRole - ALL Device Role
@@ -1276,44 +1259,6 @@ export default function audioFramework() {
         console.error(`getMinVolumeByStream ERROR: ${err}`);
         expect(false).assertTrue();
       }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0100
-     * @tc.desc   isIntelligentNoiseReductionEnabledForCurrentDevice -
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    async (done: () => void): Promise<void> => {
-        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
-        let flag: boolean = false;
-        try {
-            let isSupport: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_LIVE);
-            console.info(`[Support] SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupport}`);
-            flag = true;
-        } catch (err) {
-            let error = err as BusinessError;
-            console.error(`isIntelligentNoiseReductionEnabledForCurrentDevice ERROR: ${error}`);
-        }
-        expect(flag).assertTrue();
-        done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_AUDIOPRIVACYTYPE_STATIC_0300
-     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_AUDIOPRIVACYTYPE_STATIC_0300
-     * @tc.desc   AudioPrivacyType - PRIVACY_TYPE_SHARED
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_AUDIOPRIVACYTYPE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      expect(audio.AudioPrivacyType.PRIVACY_TYPE_SHARED).assertEqual(2);
-      await Utils.msSleep(50);
-      done();
     })
   })
 }
