@@ -41,9 +41,9 @@ export default function webViewMetaViewportFalse() {
      * @tc.desc   test interface of metaViewport with runjavascript
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testWebViewMetaViewportFalseStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testWebViewMetaViewportFalseStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: ()=>void):Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitWebViewMetaViewportFalse', 10)

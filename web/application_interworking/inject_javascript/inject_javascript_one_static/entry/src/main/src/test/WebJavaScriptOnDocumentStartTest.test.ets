@@ -53,15 +53,15 @@ export default function webJavaScriptOnDocumentStartTest() {
       console.info("componentLifeCycleTestOne beforeEach start");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_JAVASCRIPTONDOCUMENTSTART_0100
-    * @tc.name       : testJavaScriptOnDocumentStartStatic001
-    * @tc.desc       : test javaScriptOnDocumentStart
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
-    it('testJavaScriptOnDocumentStartStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+     * @tc.name        testJavaScriptOnDocumentStartStatic001
+     * @tc.number      SUB_WEB_JAVASCRIPTONDOCUMENTSTART_0100
+     * @tc.desc        test javaScriptOnDocumentStart
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testJavaScriptOnDocumentStartStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testJavaScriptOnDocumentStart001", 10)
         await Utils.msSleep(2000);
