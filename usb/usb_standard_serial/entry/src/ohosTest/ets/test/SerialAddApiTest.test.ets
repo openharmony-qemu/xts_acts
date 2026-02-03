@@ -20,13 +20,6 @@ const TAG: string = "[SerialAddApiTest]";
 
 export default function SerialAddApiTest() {
   describe('SerialAddApiTest', () => {
-    beforeAll(async (done: Function) => {
-      console.info(TAG, 'beforeAll');
-    })
-    afterAll(async () => {
-      console.info(TAG, 'afterAll');
-    })
-
 
     /**
      * @tc.name   testHasSerialRightNull
