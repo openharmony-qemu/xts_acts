@@ -43,7 +43,6 @@ export default function intelligenceTest() {
         let retArray = [401, 801, 313000000];
 
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest0100
          * @tc.number intelligenceApiTest0100
          * @tc.desc   intelligenceApiTest0100
@@ -51,7 +50,6 @@ export default function intelligenceTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        //err
         it("intelligenceApiTest0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.info(TAG + "intelligenceApiTest0100 start")
             let text =
@@ -86,7 +84,6 @@ export default function intelligenceTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest0200
          * @tc.number intelligenceApiTest0200
          * @tc.desc   intelligenceApiTest0200
@@ -122,7 +119,6 @@ export default function intelligenceTest() {
             }
         })
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest0300
          * @tc.number intelligenceApiTest0300
          * @tc.desc   intelligenceApiTest0300
@@ -130,7 +126,6 @@ export default function intelligenceTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        //err
         it("intelligenceApiTest0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "intelligenceApiTest0300 start");
             if (currentDeviceIsPc) {
@@ -158,8 +153,8 @@ export default function intelligenceTest() {
                     })
             }
         })
+
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest0400
          * @tc.number intelligenceApiTest0400
          * @tc.desc   intelligenceApiTest0400
@@ -167,7 +162,6 @@ export default function intelligenceTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        //err
         it("intelligenceApiTest0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "intelligenceApiTest0400 start");
             if (currentDeviceIsPc) {
@@ -194,7 +188,6 @@ export default function intelligenceTest() {
             }
         })
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest0500
          * @tc.number intelligenceApiTest0500
          * @tc.desc   intelligenceApiTest0500
@@ -202,7 +195,6 @@ export default function intelligenceTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        //err
         it("intelligenceApiTest0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "intelligenceApiTest0500 start");
             if (currentDeviceIsPc) {
@@ -238,7 +230,6 @@ export default function intelligenceTest() {
             }
         })
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest0600
          * @tc.number intelligenceApiTest0600
          * @tc.desc   intelligenceApiTest0600
@@ -246,7 +237,6 @@ export default function intelligenceTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        //err
         it("intelligenceApiTest0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "intelligenceApiTest0600 start");
 
@@ -279,8 +269,8 @@ export default function intelligenceTest() {
                     })
             }
         })
+
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest0700
          * @tc.number intelligenceApiTest0700
          * @tc.desc   intelligenceApiTest0700
@@ -288,7 +278,6 @@ export default function intelligenceTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        //err
         it("intelligenceApiTest0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "intelligenceApiTest0700 start");
 
@@ -323,8 +312,8 @@ export default function intelligenceTest() {
                     })
             }
         })
+
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest0800
          * @tc.number intelligenceApiTest0800
          * @tc.desc   intelligenceApiTest0800
@@ -363,8 +352,8 @@ export default function intelligenceTest() {
                     })
             }
         })
+
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest0900
          * @tc.number intelligenceApiTest0900
          * @tc.desc   intelligenceApiTest0900
@@ -372,7 +361,6 @@ export default function intelligenceTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        //err
         it("intelligenceApiTest0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "intelligenceApiTest0900 start");
             if (currentDeviceIsPc) {
@@ -404,8 +392,8 @@ export default function intelligenceTest() {
                     })
             }
         })
+
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest1000
          * @tc.number intelligenceApiTest1000
          * @tc.desc   intelligenceApiTest1000
@@ -413,7 +401,6 @@ export default function intelligenceTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        //err
         it("intelligenceApiTest1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "intelligenceApiTest1000 start");
 
@@ -448,8 +435,8 @@ export default function intelligenceTest() {
                     })
             }
         })
+
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest1100
          * @tc.number intelligenceApiTest1100
          * @tc.desc   intelligenceApiTest1100
@@ -457,7 +444,6 @@ export default function intelligenceTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        //err
         it("intelligenceApiTest1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "intelligenceApiTest1100 start");
 
@@ -493,7 +479,6 @@ export default function intelligenceTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest1200
          * @tc.number intelligenceApiTest1200
          * @tc.desc   intelligenceApiTest1200
@@ -501,7 +486,6 @@ export default function intelligenceTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        //err
         it("intelligenceApiTest1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "intelligenceApiTest1200 start");
 
@@ -538,8 +522,8 @@ export default function intelligenceTest() {
             }
 
         })
+
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest2800
          * @tc.number intelligenceApiTest2800
          * @tc.desc   intelligenceApiTest2800
@@ -586,8 +570,8 @@ export default function intelligenceTest() {
                     })
             }
         })
+
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest3000
          * @tc.number intelligenceApiTest3000
          * @tc.desc   intelligenceApiTest3000
@@ -634,8 +618,8 @@ export default function intelligenceTest() {
                     })
             }
         })
+
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest3100
          * @tc.number intelligenceApiTest3100
          * @tc.desc   intelligenceApiTest3100
@@ -643,7 +627,6 @@ export default function intelligenceTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        //err
         it("intelligenceApiTest3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "intelligenceApiTest3100 start");
             if (currentDeviceIsPc) {
@@ -688,8 +671,8 @@ export default function intelligenceTest() {
                     })
             }
         })
+
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest3200
          * @tc.number intelligenceApiTest3200
          * @tc.desc   intelligenceApiTest3200
@@ -697,7 +680,6 @@ export default function intelligenceTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        //err
         it("intelligenceApiTest3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "intelligenceApiTest3200 start");
             if (currentDeviceIsPc) {
@@ -747,8 +729,8 @@ export default function intelligenceTest() {
                     })
             }
         })
+
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest3300
          * @tc.number intelligenceApiTest3300
          * @tc.desc   intelligenceApiTest3300
@@ -756,7 +738,6 @@ export default function intelligenceTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        //err
         it("intelligenceApiTest3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "intelligenceApiTest3300 start");
 
@@ -807,8 +788,8 @@ export default function intelligenceTest() {
                     })
             }
         })
+
         /**
-         * @generated.time 2025-11-09 20:49:54
          * @tc.name   intelligenceApiTest3400
          * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_3400
          * @tc.desc   getImageEmbeddingModel releaseModel abnormal interface test
@@ -816,7 +797,6 @@ export default function intelligenceTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        //err
         it("intelligenceApiTest3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "intelligenceApiTest3400 start");
 
