@@ -1,5 +1,5 @@
 {
-    "description": "Configuration for AudioCapturerPlaybackTest Tests",
+    "description": "Configuration for ActsAudioCapturerPlaybackTest Tests",
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "600000",
@@ -10,8 +10,8 @@
     "kits": [
         {
             "test-file-name": [
-                "AudioCapturerPlaybackTest.hap",
-                "AudioCapturerPlaybackMainTest.hap"
+                "ActsAudioCapturerPlaybackTest.hap",
+                "ActsAudioCapturerPlaybackMainTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
