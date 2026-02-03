@@ -141,5 +141,71 @@ export default function setOverlayEnabled() {
 
       })
 
+    /**
+     * @tc.name   Sub_Bms_Framework_Status_OverlayEnable_static_0700
+     * @tc.number Sub_Bms_Framework_Status_OverlayEnable_static_0700
+     * @tc.desc   Set isEnabled false callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("Sub_Bms_Framework_Status_OverlayEnable_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          overlay.setOverlayEnabled("", false, (err: BusinessError<void> | null) => {
+            if (err && err.code != 0) {
+              hilog.error(0x0000, 'testParamTag', 'o1 setOverlayEnabled callback failed: %{public}s',
+                JSON.stringify(err));
+              expect(err?.code).assertEqual(401);
+              expect(err?.message).assertEqual("BusinessError 401: Parameter error. The type of moduleName must be string.")
+              done();
+            } else {
+              hilog.info(0x0000, 'testParamTag', 'o1 setOverlayEnabled success');
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          let code = (error as BusinessError).code;
+          let message = (error as BusinessError).message;
+          hilog.error(0x0000, 'testParamTag', 'setOverlayEnabled failed ' + message + " " + code);
+          expect(code).assertEqual(401);
+          expect(message).assertEqual("BusinessError 401: Parameter error. The type of moduleName must be string.")
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Status_OverlayEnable_static_0710
+     * @tc.number Sub_Bms_Framework_Status_OverlayEnable_static_0710
+     * @tc.desc   Set isEnabled false promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("Sub_Bms_Framework_Status_OverlayEnable_static_0710", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          overlay.setOverlayEnabled("", false)
+            .then((): void => {
+              hilog.info(0x0000, 'testParamTag', 'o2 setOverlayEnabled Promise success');
+              expect().assertFail();
+              done();
+            }, (err: Error): void => {
+              hilog.error(0x0000, 'testParamTag', 'o2 setOverlayEnabled Promise then failed: %{public}s',
+                JSON.stringify(err));
+              expect(err.code).assertEqual(401);
+              expect(err.message).assertEqual("BusinessError 401: Parameter error. The type of moduleName must be string.")
+              done();
+            })
+        } catch (error) {
+          let code = (error as BusinessError).code;
+          let message = (error as BusinessError).message;
+          hilog.error(0x0000, 'testParamTag', 'setOverlayEnabled failed ' + message + " " + code);
+          expect(code).assertEqual(401);
+          expect(message).assertEqual("BusinessError 401: Parameter error. The type of moduleName must be string.")
+          done();
+        }
+      })
   })
 }
