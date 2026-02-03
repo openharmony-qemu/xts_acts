@@ -157,7 +157,7 @@ int32_t ActsGamePadRightTriggerRegisterAxisInputMonitor02()
 int32_t ActsGamePadRightTriggerUnregisterAxisInputMonitor01()
 {
     OH_GamePad_RightTrigger_RegisterAxisInputMonitor(AxisInputMonitorCallbackTest01);
-    GameController_ErrorCode code = OH_GamePad_RightTrigger_UnregisterButtonInputMonitor();
+    GameController_ErrorCode code = OH_GamePad_RightTrigger_UnregisterAxisInputMonitor();
     return static_cast<int32_t>(code);
 }
 
