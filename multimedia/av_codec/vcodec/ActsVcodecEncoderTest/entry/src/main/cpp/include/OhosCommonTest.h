@@ -163,12 +163,12 @@ inline void AssertLeImpl(const T1& v1, const T2& v2, const char* expr1, const ch
     AssertLeImpl((v1), (v2), #v1, #v2, AssertLocation({ __FILE__, __LINE__ }))
 
 // EXPECT 宏与 ASSERT 宏行为相同（都抛出异常）
-#define EXPECT_EQ(v1, v2) ASSERT_EQ(v1, v2)
-#define EXPECT_NE(v1, v2) ASSERT_NE(v1, v2)
-#define EXPECT_GE(v1, v2) ASSERT_GE(v1, v2)
-#define EXPECT_GT(v1, v2) ASSERT_GT(v1, v2)
-#define EXPECT_LE(v1, v2) ASSERT_LE(v1, v2)
-#define EXPECT_LT(v1, v2) ASSERT_LT(v1, v2)
+#define EXPECT_EQ(v1, v2) ASSERT_EQ(v1, v2) /* NOLINT(G.PRE.02-CPP) */
+#define EXPECT_NE(v1, v2) ASSERT_NE(v1, v2) /* NOLINT(G.PRE.02-CPP) */
+#define EXPECT_GE(v1, v2) ASSERT_GE(v1, v2) /* NOLINT(G.PRE.02-CPP) */
+#define EXPECT_GT(v1, v2) ASSERT_GT(v1, v2) /* NOLINT(G.PRE.02-CPP) */
+#define EXPECT_LE(v1, v2) ASSERT_LE(v1, v2) /* NOLINT(G.PRE.02-CPP) */
+#define EXPECT_LT(v1, v2) ASSERT_LT(v1, v2) /* NOLINT(G.PRE.02-CPP) */
 
 #endif // CUSTOM_ASSERT
 

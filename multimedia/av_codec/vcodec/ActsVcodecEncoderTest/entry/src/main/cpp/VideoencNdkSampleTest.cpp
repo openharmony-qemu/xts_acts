@@ -15,6 +15,7 @@
 #include <arpa/inet.h>
 #include <sys/time.h>
 #include <utility>
+#include <random>
 //#include "iconsumer_surface.h"
 //#include "openssl/crypto.h"
 //#include "openssl/sha.h"
@@ -404,7 +405,10 @@ int32_t VEncNdkSample::CreateVideoEncoder(const char *codecName)
 {
     venc_ = OH_VideoEncoder_CreateByName(codecName);
     enc_sample = this;
-    randomEos = rand() % TEST_FRAME_COUNT;
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    static std::uniform_int_distribution<uint32_t> dis(0, TEST_FRAME_COUNT - 1);
+    randomEos = dis(gen);
     return venc_ == nullptr ? AV_ERR_UNKNOWN : AV_ERR_OK;
 }
 

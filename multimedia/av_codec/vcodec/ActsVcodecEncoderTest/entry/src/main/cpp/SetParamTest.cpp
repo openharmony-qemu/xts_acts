@@ -47,6 +47,7 @@ const char *INP_DIR_720 = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
 constexpr uint32_t DEFAULT_WIDTH = 1280;
 constexpr uint32_t DEFAULT_HEIGHT = 720;
 constexpr double DEFAULT_FRAME_RATE = 30.0;
+constexpr uint32_t FRAME_RATE_10 = 10;
 constexpr uint32_t QP_MAX_200 = 200;
 constexpr uint32_t EXPECTED_FRAME_COUNT_25 = 25;
 constexpr uint32_t COLOR_PRIMARIES_100 = 100;
@@ -72,7 +73,7 @@ static void SetUpTestCase()
     if (cap != nullptr) {
         const char *tmpCodecName = OH_AVCapability_GetName(cap);
         if (tmpCodecName != nullptr) {
-            if (memcpy_s(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName)) != 0) {
+            if (SecureMemcpy(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName)) != EOK) {
                 cout << "memcpy failed" << endl;
             }
             cout << "codecname: " << g_codecName << endl;
@@ -84,7 +85,7 @@ static void SetUpTestCase()
     if (cap_hevc != nullptr) {
         const char *tmpCodecNameHevc = OH_AVCapability_GetName(cap_hevc);
         if (tmpCodecNameHevc != nullptr) {
-            if (memcpy_s(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc)) != 0) {
+            if (SecureMemcpy(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc)) != EOK) {
                 cout << "memcpy failed" << endl;
             }
             cout << "codecname_hevc: " << g_codecNameHEVC << endl;
@@ -827,7 +828,7 @@ int RESET_QP_003Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 10;
+        vEncSample->DEFAULT_FRAME_RATE = FRAME_RATE_10;
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
         vEncSample->enableAutoSwitchBufferParam = true;
         vEncSample->needResetQP = true;
@@ -851,7 +852,7 @@ int RESET_QP_004Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 10;
+        vEncSample->DEFAULT_FRAME_RATE = FRAME_RATE_10;
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetQP = true;
@@ -875,7 +876,7 @@ int RESET_QP_005Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 10;
+        vEncSample->DEFAULT_FRAME_RATE = FRAME_RATE_10;
         vEncSample->DEFAULT_BITRATE_MODE = CBR;
         vEncSample->enableAutoSwitchBufferParam = true;
         vEncSample->needResetQP = true;
@@ -899,7 +900,7 @@ int RESET_QP_006Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 10;
+        vEncSample->DEFAULT_FRAME_RATE = FRAME_RATE_10;
         vEncSample->DEFAULT_BITRATE_MODE = CBR;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetQP = true;
@@ -923,7 +924,7 @@ int RESET_QP_007Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 10;
+        vEncSample->DEFAULT_FRAME_RATE = FRAME_RATE_10;
         vEncSample->DEFAULT_BITRATE_MODE = VBR;
         vEncSample->enableAutoSwitchBufferParam = true;
         vEncSample->needResetQP = true;
@@ -947,7 +948,7 @@ int RESET_QP_008Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 10;
+        vEncSample->DEFAULT_FRAME_RATE = FRAME_RATE_10;
         vEncSample->DEFAULT_BITRATE_MODE = VBR;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetQP = true;
@@ -971,7 +972,7 @@ int RESET_QP_009Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 10;
+        vEncSample->DEFAULT_FRAME_RATE = FRAME_RATE_10;
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
         vEncSample->enableAutoSwitchBufferParam = true;
         vEncSample->needResetQP = true;
@@ -995,7 +996,7 @@ int RESET_QP_010Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 10;
+        vEncSample->DEFAULT_FRAME_RATE = FRAME_RATE_10;
         vEncSample->DEFAULT_BITRATE_MODE = CQ;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetQP = true;
@@ -1019,7 +1020,7 @@ int RESET_QP_011Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 10;
+        vEncSample->DEFAULT_FRAME_RATE = FRAME_RATE_10;
         vEncSample->DEFAULT_BITRATE_MODE = CBR;
         vEncSample->enableAutoSwitchBufferParam = true;
         vEncSample->needResetQP = true;
@@ -1043,7 +1044,7 @@ int RESET_QP_012Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 10;
+        vEncSample->DEFAULT_FRAME_RATE = FRAME_RATE_10;
         vEncSample->DEFAULT_BITRATE_MODE = CBR;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetQP = true;
@@ -1067,7 +1068,7 @@ int RESET_QP_013Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 10;
+        vEncSample->DEFAULT_FRAME_RATE = FRAME_RATE_10;
         vEncSample->DEFAULT_BITRATE_MODE = VBR;
         vEncSample->enableAutoSwitchBufferParam = true;
         vEncSample->needResetQP = true;
@@ -1091,7 +1092,7 @@ int RESET_QP_014Test()
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
         vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
-        vEncSample->DEFAULT_FRAME_RATE = 10;
+        vEncSample->DEFAULT_FRAME_RATE = FRAME_RATE_10;
         vEncSample->DEFAULT_BITRATE_MODE = VBR;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetQP = true;

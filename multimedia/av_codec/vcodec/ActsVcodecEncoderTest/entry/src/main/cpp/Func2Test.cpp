@@ -42,6 +42,7 @@ OH_AVCapability *cap_hevc = nullptr;
 constexpr uint32_t CODEC_NAME_SIZE = 128;
 constexpr uint32_t DEFAULT_BITRATE = 1000000;
 constexpr double DEFAULT_FRAME_RATE = 30.0;
+constexpr uint32_t FRAME_RATE_30_INT = 30;
 char g_codecName[CODEC_NAME_SIZE] = {};
 char g_codecNameHEVC[CODEC_NAME_SIZE] = {};
 constexpr uint32_t DEFAULT_WIDTH = 1280;
@@ -75,7 +76,7 @@ static bool InitAVCCodecName()
     if (tmpCodecName == nullptr) {
         return false;
     }
-    if (memcpy_s(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName) + 1) != 0) {
+    if (SecureMemcpy(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName) + 1) != EOK) {
         return false;
     }
     return true;
@@ -93,7 +94,7 @@ static bool InitHEVCCodecName()
     if (tmpCodecNameHevc == nullptr) {
         return false;
     }
-    if (memcpy_s(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc) + 1) != 0) {
+    if (SecureMemcpy(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc) + 1) != EOK) {
         return false;
     }
     return true;
@@ -103,13 +104,13 @@ static void SetUpTestCase()
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     const char *tmpCodecName = OH_AVCapability_GetName(cap);
-    if (memcpy_s(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName) + 1) != 0) {
+    if (SecureMemcpy(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName) + 1) != EOK) {
         cout << "memcpy failed" << endl;
     }
     cout << "codecname: " << g_codecName << endl;
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     const char *tmpCodecNameHevc = OH_AVCapability_GetName(cap_hevc);
-    if (memcpy_s(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc) + 1) != 0) {
+    if (SecureMemcpy(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc) + 1) != EOK) {
         cout << "memcpy failed" << endl;
     }
     cout << "codecname_hevc: " << g_codecNameHEVC << endl;
@@ -152,7 +153,7 @@ int VideoEncodeHevcCapability3100Test()
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
-        memset_s(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+        SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
         ASSERT_NE(nullptr, cap);
         ret = OH_AVCapability_GetVideoFrameRateRange(cap, &range);
         ASSERT_EQ(AV_ERR_OK, ret);
@@ -182,7 +183,7 @@ int VideoEncodeHevcCapability3300Test()
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
-        memset_s(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+        SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
         ASSERT_NE(nullptr, cap);
         ret = OH_AVCapability_GetVideoFrameRateRangeForSize(cap, 0, DEFAULT_HEIGHT, &range);
         ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
@@ -197,7 +198,7 @@ int VideoEncodeHevcCapability3400Test()
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
-        memset_s(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+        SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
         ASSERT_NE(nullptr, cap);
         ret = OH_AVCapability_GetVideoFrameRateRangeForSize(cap, DEFAULT_WIDTH, 0, &range);
         ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
@@ -212,7 +213,7 @@ int VideoEncodeHevcCapability3500Test()
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
-        memset_s(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+        SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
         ASSERT_NE(nullptr, cap);
         ret = OH_AVCapability_GetVideoFrameRateRangeForSize(cap, DEFAULT_WIDTH, DEFAULT_HEIGHT, &range);
         ASSERT_EQ(AV_ERR_OK, ret);
@@ -229,7 +230,7 @@ int VideoEncodeHevcCapability3600Test()
 {
     if (cap) {
         ASSERT_NE(nullptr, cap);
-        ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(cap, 0, DEFAULT_HEIGHT, 30));
+        ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(cap, 0, DEFAULT_HEIGHT, FRAME_RATE_30_INT));
         return 0;
     } else {
         return 0;
@@ -241,7 +242,7 @@ int VideoEncodeHevcCapability3700Test()
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName()) {
         ASSERT_NE(nullptr, cap);
-        ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(cap, DEFAULT_WIDTH, 0, 30));
+        ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(cap, DEFAULT_WIDTH, 0, FRAME_RATE_30_INT));
         return 0;
     } else {
         return 0;
@@ -269,7 +270,7 @@ int VideoEncodeHevcCapability3900Test()
     if (cap) {
         ASSERT_NE(nullptr, cap);
         ASSERT_EQ(true, OH_AVCapability_AreVideoSizeAndFrameRateSupported(
-            cap, DEFAULT_WIDTH, DEFAULT_HEIGHT, 30));
+                cap, DEFAULT_WIDTH, DEFAULT_HEIGHT, FRAME_RATE_30_INT));
         return 0;
     } else {
         return 0;
@@ -1121,7 +1122,7 @@ int VideoEncodeSyncFunc0370Test()
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
         vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_SYNC_FUNC_0370.h265";
         vEncSample->enbleSyncMode = 1;
-        vEncSample->syncInputWaitTime = 100000;
+        vEncSample->syncInputWaitTime = SYNC_WAIT_TIME_100MS;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
         ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
         ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());

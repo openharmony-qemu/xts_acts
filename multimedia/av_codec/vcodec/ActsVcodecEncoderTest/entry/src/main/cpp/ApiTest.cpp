@@ -43,6 +43,8 @@ constexpr uint32_t DEFAULT_WIDTH = VIDEO_WIDTH_1080P;
 constexpr uint32_t DEFAULT_HEIGHT = VIDEO_HEIGHT_1080P;
 constexpr uint32_t CODEC_NAME_SIZE = 128;
 constexpr uint32_t SLEEP_TIME_1S_US = 1000000;
+constexpr uint32_t QUALITY_INVALID_101 = 101;
+constexpr uint32_t BITRATE_100K = 100000;
 constexpr uint32_t INVALID_INDEX_LARGE = 9999999;
 constexpr uint32_t INVALID_INDEX_99999 = 99999;
 char g_codecName[CODEC_NAME_SIZE] = {};
@@ -222,7 +224,7 @@ int VideoEncodeIllegalPara1100Test()
         ASSERT_NE(nullptr, venc_);
         format = OH_AVFormat_Create();
         ASSERT_NE(nullptr, format);
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_BITRATE, 100000);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_BITRATE, BITRATE_100K);
         ret = OH_VideoEncoder_Configure(venc_, format);
         ASSERT_EQ(ret, AV_ERR_INVALID_VAL);
     return 0;
@@ -733,7 +735,7 @@ int VideoEncodeApi1400Test()
             ASSERT_NE(nullptr, venc_);
             format = OH_AVFormat_Create();
             ASSERT_EQ(true, OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, CQ));
-            ASSERT_EQ(true, OH_AVFormat_SetIntValue(format, OH_MD_KEY_QUALITY, 101));
+            ASSERT_EQ(true, OH_AVFormat_SetIntValue(format, OH_MD_KEY_QUALITY, QUALITY_INVALID_101));
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[0]);

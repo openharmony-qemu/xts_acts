@@ -58,13 +58,13 @@ static void SetUpTestCase()
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     const char *tmpCodecName = OH_AVCapability_GetName(cap);
-    if (memcpy_s(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName)) != 0) {
+    if (SecureMemcpy(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName)) != EOK) {
         cout << "memcpy failed" << endl;
     }
     cout << "codecname: " << g_codecName << endl;
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     const char *tmpCodecNameHevc = OH_AVCapability_GetName(cap_hevc);
-    if (memcpy_s(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc)) != 0) {
+    if (SecureMemcpy(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc, strlen(tmpCodecNameHevc)) != EOK) {
         cout << "memcpy failed" << endl;
     }
     cout << "codecname_hevc: " << g_codecNameHEVC << endl;
@@ -88,7 +88,7 @@ int VideoEncodeHevcCapability1800Test()
     if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
-        memset_s(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+        SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
         ASSERT_NE(nullptr, cap_hevc);
         ret = OH_AVCapability_GetVideoWidthRangeForHeight(cap_hevc, DEFAULT_HEIGHT, &range);
         ASSERT_EQ(AV_ERR_OK, ret);
@@ -117,7 +117,7 @@ int VideoEncodeCapability4000Test()
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
-        memset_s(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+        SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
         ASSERT_NE(nullptr, cap);
         ret = OH_AVCapability_GetVideoWidthRangeForHeight(cap, DEFAULT_HEIGHT, &range);
         cout << "minval=" << range.minVal << "  maxval=" << range.maxVal << endl;
@@ -149,7 +149,7 @@ int VideoEncodeCapability4400Test()
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
-        memset_s(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+        SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
         ASSERT_NE(nullptr, cap);
         ret = OH_AVCapability_GetVideoHeightRangeForWidth(cap, DEFAULT_WIDTH, &range);
         ASSERT_EQ(AV_ERR_OK, ret);
@@ -181,7 +181,7 @@ int VideoEncodeCapability4410Test()
     if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
-        memset_s(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+        SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
         ASSERT_NE(nullptr, cap_hevc);
         ret = OH_AVCapability_GetVideoHeightRangeForWidth(cap_hevc, DEFAULT_WIDTH, &range);
         ASSERT_EQ(AV_ERR_OK, ret);
@@ -213,7 +213,7 @@ int VideoEncodeCapability4700Test()
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
-        memset_s(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+        SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
         ASSERT_NE(nullptr, cap);
         ret = OH_AVCapability_GetVideoWidthRange(cap, &range);
         ASSERT_EQ(AV_ERR_OK, ret);
@@ -245,7 +245,7 @@ int VideoEncodeCapability4710Test()
     if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
-        memset_s(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+        SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
         ASSERT_NE(nullptr, cap_hevc);
         ret = OH_AVCapability_GetVideoWidthRange(cap_hevc, &range);
         ASSERT_EQ(AV_ERR_OK, ret);
@@ -277,7 +277,7 @@ int VideoEncodeCapability5000Test()
     if (cap) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
-        memset_s(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+        SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
         ASSERT_NE(nullptr, cap);
         ret = OH_AVCapability_GetVideoHeightRange(cap, &range);
         ASSERT_EQ(AV_ERR_OK, ret);
@@ -308,7 +308,7 @@ int VideoEncodeCapability5010Test()
     if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
-        memset_s(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+        SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
         ASSERT_NE(nullptr, cap_hevc);
         ret = OH_AVCapability_GetVideoHeightRange(cap_hevc, &range);
         ASSERT_EQ(AV_ERR_OK, ret);

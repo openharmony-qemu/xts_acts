@@ -115,60 +115,48 @@ static napi_value RunTestAsync(napi_env env,
 }
 
 // ==================== ApiTest Module ====================
+static std::vector<TestFunction> GetApiTestFunctionsPart1()
+{
+    return {
+        VideoEncodeIllegalPara0100Test, VideoEncodeIllegalPara0200Test,
+        VideoEncodeIllegalPara0300Test, VideoEncodeIllegalPara0400Test,
+        VideoEncodeIllegalPara0500Test, VideoEncodeIllegalPara0600Test,
+        VideoEncodeIllegalPara0700Test, VideoEncodeIllegalPara0800Test,
+        VideoEncodeIllegalPara0900Test, VideoEncodeIllegalPara1100Test,
+        VideoEncodeIllegalPara1400Test, VideoEncodeIllegalPara1500Test,
+        VideoEncodeIllegalPara1600Test, VideoEncodeIllegalPara1700Test,
+        VideoEncodeIllegalPara1800Test, VideoEncodeIllegalPara1900Test,
+        VideoEncodeIllegalPara2000Test, VideoEncodeIllegalPara2100Test,
+        VideoEncodeIllegalPara2200Test, VideoEncodeIllegalPara2300Test,
+        VideoEncodeIllegalPara2500Test, VideoEncodeIllegalPara2600Test,
+        VideoEncodeIllegalPara2700Test, VideoEncodeIllegalPara2800Test,
+        VideoEncodeIllegalPara2900Test
+    };
+}
+
+static std::vector<TestFunction> GetApiTestFunctionsPart2()
+{
+    return {
+        VideoEncodeApi0100Test, VideoEncodeApi3100Test, VideoEncodeApi0200Test,
+        VideoEncodeApi0300Test, VideoEncodeApi0400Test, VideoEncodeApi0500Test,
+        VideoEncodeApi0600Test, VideoEncodeApi0700Test, VideoEncodeApi0800Test,
+        VideoEncodeApi0900Test, VideoEncodeApi1000Test, VideoEncodeApi1100Test,
+        VideoEncodeApi1200Test, VideoEncodeApi1300Test, VideoEncodeApi1400Test,
+        VideoEncodeApi1410Test, VideoEncodeSyncApi0010Test, VideoEncodeSyncApi0040Test,
+        VideoEncodeSyncApi0050Test, VideoEncodeSyncApi0060Test, VideoEncodeSyncApi0070Test,
+        VideoEncodeSyncApi0080Test
+    };
+}
+
 static const std::vector<TestFunction>& GetApiTestFunctions()
 {
-    static const std::vector<TestFunction> functions = {
-    VideoEncodeIllegalPara0100Test,
-    VideoEncodeIllegalPara0200Test,
-    VideoEncodeIllegalPara0300Test,
-    VideoEncodeIllegalPara0400Test,
-    VideoEncodeIllegalPara0500Test,
-    VideoEncodeIllegalPara0600Test,
-    VideoEncodeIllegalPara0700Test,
-    VideoEncodeIllegalPara0800Test,
-    VideoEncodeIllegalPara0900Test,
-    VideoEncodeIllegalPara1100Test,
-    VideoEncodeIllegalPara1400Test,
-    VideoEncodeIllegalPara1500Test,
-    VideoEncodeIllegalPara1600Test,
-    VideoEncodeIllegalPara1700Test,
-    VideoEncodeIllegalPara1800Test,
-    VideoEncodeIllegalPara1900Test,
-    VideoEncodeIllegalPara2000Test,
-    VideoEncodeIllegalPara2100Test,
-    VideoEncodeIllegalPara2200Test,
-    VideoEncodeIllegalPara2300Test,
-    // VideoEncodeIllegalPara2400Test,  // DISABLED: Uses GetVideoSupportedPixelFormats
-    VideoEncodeIllegalPara2500Test,
-    VideoEncodeIllegalPara2600Test,
-    VideoEncodeIllegalPara2700Test,
-    VideoEncodeIllegalPara2800Test,
-    VideoEncodeIllegalPara2900Test,
-    VideoEncodeApi0100Test,
-    VideoEncodeApi3100Test,
-    VideoEncodeApi0200Test,
-    VideoEncodeApi0300Test,
-    VideoEncodeApi0400Test,
-    VideoEncodeApi0500Test,
-    VideoEncodeApi0600Test,
-    VideoEncodeApi0700Test,
-    VideoEncodeApi0800Test,
-    VideoEncodeApi0900Test,
-    VideoEncodeApi1000Test,
-    VideoEncodeApi1100Test,
-    VideoEncodeApi1200Test,
-    VideoEncodeApi1300Test,
-    VideoEncodeApi1400Test,
-    VideoEncodeApi1410Test,
-    VideoEncodeSyncApi0010Test,
-    // VideoEncodeSyncApi0020Test,  // DISABLED: Uses GetVideoSupportedPixelFormats
-    // VideoEncodeSyncApi0030Test,  // DISABLED: Uses GetVideoSupportedPixelFormats
-    VideoEncodeSyncApi0040Test,
-    VideoEncodeSyncApi0050Test,
-    VideoEncodeSyncApi0060Test,
-    VideoEncodeSyncApi0070Test,
-    VideoEncodeSyncApi0080Test,
-    };
+    static std::vector<TestFunction> functions;
+    if (functions.empty()) {
+        auto part1 = GetApiTestFunctionsPart1();
+        auto part2 = GetApiTestFunctionsPart2();
+        functions.insert(functions.end(), part1.begin(), part1.end());
+        functions.insert(functions.end(), part2.begin(), part2.end());
+    }
     return functions;
 }
 
@@ -185,9 +173,9 @@ static napi_value RunApiTest(napi_env env, napi_callback_info info)
 }
 
 // ==================== FuncTest Module (前66个函数) ====================
-static const std::vector<TestFunction>& GetFuncTestFunctions()
+static std::vector<TestFunction> GetFuncTestPart1()
 {
-    static const std::vector<TestFunction> functions = {
+    return {
     VideoEncodeFunction0100Test,
     // VideoEncodeFunction0200Test,  // DISABLED: Uses SURF_INPUT
     VideoEncodeFunction0300Test,
@@ -207,8 +195,13 @@ static const std::vector<TestFunction>& GetFuncTestFunctions()
     VideoEncodeFunction1600Test,
     VideoEncodeFunction1700Test,
     VideoEncodeFunction1800Test,
-    VideoEncodeFunction2000Test,
-    // VideoEncodeFunction1900Test,  // DISABLED: Uses SURF_INPUT - causes hang
+    VideoEncodeFunction2000Test
+    };
+}
+
+static std::vector<TestFunction> GetFuncTestPart2()
+{
+    return {
     VideoEncodeCapability0100Test,
     VideoEncodeCapability0200Test,
     VideoEncodeCapability0300Test,
@@ -256,8 +249,19 @@ static const std::vector<TestFunction>& GetFuncTestFunctions()
     VideoEncodeCapability4600Test,
     VideoEncodeCapability4800Test,
     VideoEncodeCapability4900Test,
-    VideoEncodeCapability9800Test,
+    VideoEncodeCapability9800Test
     };
+}
+
+static const std::vector<TestFunction>& GetFuncTestFunctions()
+{
+    static std::vector<TestFunction> functions;
+    if (functions.empty()) {
+        auto part1 = GetFuncTestPart1();
+        auto part2 = GetFuncTestPart2();
+        functions.insert(functions.end(), part1.begin(), part1.end());
+        functions.insert(functions.end(), part2.begin(), part2.end());
+    }
     return functions;
 }
 
@@ -274,9 +278,9 @@ static napi_value RunFuncTest(napi_env env, napi_callback_info info)
 }
 
 // ==================== FuncTest2 Module (后67个函数) ====================
-static const std::vector<TestFunction>& GetFuncTest2Functions()
+static std::vector<TestFunction> GetFuncTest2Part1()
 {
-    static const std::vector<TestFunction> functions = {
+    return {
     VideoEncodeCapability5100Test,
     VideoEncodeCapability5200Test,
     VideoEncodeCapability5300Test,
@@ -309,7 +313,13 @@ static const std::vector<TestFunction>& GetFuncTest2Functions()
     VideoEncodeCapability8000Test,
     VideoEncodeCapability8100Test,
     VideoEncodeCapability8200Test,
-    VideoEncodeCapability8300Test,
+    VideoEncodeCapability8300Test
+    };
+}
+
+static std::vector<TestFunction> GetFuncTest2Part2()
+{
+    return {
     VideoEncodeHevcCapability0100Test,
     VideoEncodeHevcCapability0200Test,
     VideoEncodeHevcCapability0300Test,
@@ -341,8 +351,19 @@ static const std::vector<TestFunction>& GetFuncTest2Functions()
     VideoEncodeHevcCapability2700Test,
     VideoEncodeHevcCapability2800Test,
     VideoEncodeHevcCapability2900Test,
-    VideoEncodeHevcCapability3000Test,
+    VideoEncodeHevcCapability3000Test
     };
+}
+
+static const std::vector<TestFunction>& GetFuncTest2Functions()
+{
+    static std::vector<TestFunction> functions;
+    if (functions.empty()) {
+        auto part1 = GetFuncTest2Part1();
+        auto part2 = GetFuncTest2Part2();
+        functions.insert(functions.end(), part1.begin(), part1.end());
+        functions.insert(functions.end(), part2.begin(), part2.end());
+    }
     return functions;
 }
 
@@ -410,9 +431,9 @@ static napi_value RunGetparamTest(napi_env env, napi_callback_info info)
 }
 
 // ==================== SetparamTest Module ====================
-static const std::vector<TestFunction>& GetSetparamTestFunctions()
+static std::vector<TestFunction> GetSetparamTestPart1()
 {
-    static const std::vector<TestFunction> functions = {
+    return {
     RESET_BITRATE_001Test,
     RESET_BITRATE_002Test,
     RESET_BITRATE_003Test,
@@ -438,53 +459,37 @@ static const std::vector<TestFunction>& GetSetparamTestFunctions()
     RESET_FRAMERATE_008Test,
     RESET_FRAMERATE_009Test,
     RESET_FRAMERATE_010Test,
-    RESET_FRAMERATE_011Test,
-    RESET_QP_001Test,
-    RESET_QP_002Test,
-    RESET_QP_003Test,
-    RESET_QP_004Test,
-    RESET_QP_005Test,
-    RESET_QP_006Test,
-    RESET_QP_007Test,
-    RESET_QP_008Test,
-    RESET_QP_009Test,
-    RESET_QP_010Test,
-    RESET_QP_011Test,
-    RESET_QP_012Test,
-    RESET_QP_013Test,
-    RESET_QP_014Test,
-    SET_PROFILE_001Test,
-    SET_PROFILE_002Test,
-    SET_PROFILE_003Test,
-    SET_PROFILE_004Test,
-    SET_PROFILE_005Test,
-    SET_RANGE_FLAG_001Test,
-    SET_RANGE_FLAG_002Test,
-    SET_COLORSPACE_001Test,
-    SET_COLORSPACE_002Test,
-    SET_FORCE_IDR_001Test,
-    SET_FORCE_IDR_002Test,
-    COLORSPACE_CONFIG_001Test,
-    COLORSPACE_CONFIG_002Test,
-    COLORSPACE_CONFIG_003Test,
-    COLORSPACE_CONFIG_004Test,
-    COLORSPACE_CONFIG_005Test,
-    COLORSPACE_CONFIG_006Test,
-    COLORSPACE_CONFIG_ADD_001Test,
-    COLORSPACE_CONFIG_ADD_002Test,
-    COLORSPACE_CONFIG_ADD_003Test,
-    COLORSPACE_CONFIG_ADD_004Test,
-    COLORSPACE_CONFIG_ADD_005Test,
-    COLORSPACE_CONFIG_ADD_006Test,
-    COLORSPACE_CONFIG_ADD_007Test,
-    COLORSPACE_CONFIG_ADD_008Test,
-    COLORSPACE_CONFIG_ADD_009Test,
-    COLORSPACE_CONFIG_ADD_010Test,
-    COLORSPACE_CONFIG_ADD_011Test,
-    COLORSPACE_CONFIG_ADD_012Test,
-    FRAMENUM_JUDGMENT_001Test,
-    FRAMENUM_JUDGMENT_002Test,
+    RESET_FRAMERATE_011Test
     };
+}
+
+static std::vector<TestFunction> GetSetparamTestPart2()
+{
+    return {
+    RESET_QP_001Test, RESET_QP_002Test, RESET_QP_003Test, RESET_QP_004Test,
+    RESET_QP_005Test, RESET_QP_006Test, RESET_QP_007Test, RESET_QP_008Test,
+    RESET_QP_009Test, RESET_QP_010Test, RESET_QP_011Test, RESET_QP_012Test,
+    RESET_QP_013Test, RESET_QP_014Test, SET_PROFILE_001Test, SET_PROFILE_002Test,
+    SET_PROFILE_003Test, SET_PROFILE_004Test, SET_PROFILE_005Test, SET_RANGE_FLAG_001Test,
+    SET_RANGE_FLAG_002Test, SET_COLORSPACE_001Test, SET_COLORSPACE_002Test, SET_FORCE_IDR_001Test,
+    SET_FORCE_IDR_002Test, COLORSPACE_CONFIG_001Test, COLORSPACE_CONFIG_002Test, COLORSPACE_CONFIG_003Test,
+    COLORSPACE_CONFIG_004Test, COLORSPACE_CONFIG_005Test, COLORSPACE_CONFIG_006Test, COLORSPACE_CONFIG_ADD_001Test,
+    COLORSPACE_CONFIG_ADD_002Test, COLORSPACE_CONFIG_ADD_003Test, COLORSPACE_CONFIG_ADD_004Test, COLORSPACE_CONFIG_ADD_005Test,
+    COLORSPACE_CONFIG_ADD_006Test, COLORSPACE_CONFIG_ADD_007Test, COLORSPACE_CONFIG_ADD_008Test, COLORSPACE_CONFIG_ADD_009Test,
+    COLORSPACE_CONFIG_ADD_010Test, COLORSPACE_CONFIG_ADD_011Test, COLORSPACE_CONFIG_ADD_012Test, FRAMENUM_JUDGMENT_001Test,
+    FRAMENUM_JUDGMENT_002Test
+    };
+}
+
+static const std::vector<TestFunction>& GetSetparamTestFunctions()
+{
+    static std::vector<TestFunction> functions;
+    if (functions.empty()) {
+        auto part1 = GetSetparamTestPart1();
+        auto part2 = GetSetparamTestPart2();
+        functions.insert(functions.end(), part1.begin(), part1.end());
+        functions.insert(functions.end(), part2.begin(), part2.end());
+    }
     return functions;
 }
 
@@ -594,9 +599,9 @@ static napi_value RunTemporalTest(napi_env env, napi_callback_info info)
 }
 
 // ==================== Func2Test Module ====================
-static const std::vector<TestFunction>& GetFunc2TestFunctions()
+static std::vector<TestFunction> GetFunc2TestPart1()
 {
-    static const std::vector<TestFunction> functions = {
+    return {
     VideoEncodeHevcCapability3100Test,
     VideoEncodeHevcCapability3200Test,
     VideoEncodeHevcCapability3300Test,
@@ -621,7 +626,13 @@ static const std::vector<TestFunction>& GetFunc2TestFunctions()
     VideoEncodeCapability8700Test,
     VideoEncodeCapability8800Test,
     VideoEncodeCapability8900Test,
-    VideoEncodeCapability9000Test,
+    VideoEncodeCapability9000Test
+    };
+}
+
+static std::vector<TestFunction> GetFunc2TestPart2()
+{
+    return {
     VideoEncodeHevcCapability5500Test,
     VideoEncodeHevcCapability5600Test,
     VideoEncodeHevcCapability5700Test,
@@ -662,8 +673,19 @@ static const std::vector<TestFunction>& GetFunc2TestFunctions()
     VideoEncodeRgba10101020170Test,
     VideoEncodeRgba10101020180Test,
     VideoEncodeRgba10101020190Test,
-    VideoEncodeSyncFormat0010Test,
+    VideoEncodeSyncFormat0010Test
     };
+}
+
+static const std::vector<TestFunction>& GetFunc2TestFunctions()
+{
+    static std::vector<TestFunction> functions;
+    if (functions.empty()) {
+        auto part1 = GetFunc2TestPart1();
+        auto part2 = GetFunc2TestPart2();
+        functions.insert(functions.end(), part1.begin(), part1.end());
+        functions.insert(functions.end(), part2.begin(), part2.end());
+    }
     return functions;
 }
 

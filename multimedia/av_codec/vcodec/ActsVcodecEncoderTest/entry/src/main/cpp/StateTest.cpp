@@ -32,7 +32,7 @@ using namespace OHOS::Media;
 
 VEncNdkSample *vEncSample = NULL;
 OH_AVCapability *cap = nullptr;
-bool createCodecSuccess_ = false;
+bool g_createCodecSuccess = false;
 
 static void InitCapAndEncoder(void)
 {
@@ -48,7 +48,7 @@ static void InitCapAndEncoder(void)
         ret = vEncSample->ConfigureVideoEncoder();
         ASSERT_EQ(AV_ERR_OK, ret);
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
-        createCodecSuccess_ = true;
+        g_createCodecSuccess = true;
     } else {
         cout << "can not get Capability" << endl;
     }
@@ -709,7 +709,7 @@ int VideoEncodeState3500Test()
         ASSERT_EQ(AV_ERR_OK, ret);
         vEncSample->WaitForEOS();
         return 0;
-    }else {
+    } else {
         return 0;
     }
 }
@@ -794,7 +794,7 @@ int VideoEncodeState4100Test()
         ASSERT_EQ(AV_ERR_OK, ret);
         vEncSample->WaitForEOS();
         return 0;
-    }else {
+    } else {
         return 0;
     }
 }

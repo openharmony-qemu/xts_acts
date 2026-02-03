@@ -27,6 +27,7 @@ add_library(vcodec_encoder_test SHARED
     TemporalTest.cpp
     VideoencApi11SampleTest.cpp
     VideoencNdkSampleTest.cpp
+    SecureMemory.cpp
 )
 target_link_libraries(vcodec_encoder_test PUBLIC
     libace_napi.z.so

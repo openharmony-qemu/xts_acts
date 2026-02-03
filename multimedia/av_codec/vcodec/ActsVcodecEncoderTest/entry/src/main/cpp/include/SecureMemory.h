@@ -16,39 +16,34 @@
 #ifndef SECURE_MEMORY_H
 #define SECURE_MEMORY_H
 
-#include <cstring>
 #include <cstddef>
+#include <cerrno>
 
-// 安全的内存拷贝函数
-inline int memcpy_s(void *dest, size_t destMax, const void *src, size_t count)
-{
-    if (dest == nullptr || src == nullptr) {
-        return -1;
-    }
-    if (destMax < count) {
-        return -1;
-    }
-    if (count == 0) {
-        return 0;
-    }
-    memcpy(dest, src, count);
-    return 0;
-}
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-// 安全的内存设置函数
-inline int memset_s(void *dest, size_t destMax, int value, size_t count)
-{
-    if (dest == nullptr) {
-        return -1;
-    }
-    if (destMax < count) {
-        return -1;
-    }
-    if (count == 0) {
-        return 0;
-    }
-    memset(dest, value, count);
-    return 0;
+#ifndef EOK
+#define EOK 0
+#endif
+
+#ifndef EINVAL
+#define EINVAL 22
+#endif
+
+#ifndef ERANGE
+#define ERANGE 34
+#endif
+
+#ifndef SECUREC_MEM_MAX_LEN
+#define SECUREC_MEM_MAX_LEN 0x7fffffffUL
+#endif
+
+int SecureMemcpy(void *dest, size_t destMax, const void *src, size_t count);
+int SecureMemset(void *dest, size_t destMax, int value, size_t count);
+
+#ifdef __cplusplus
 }
+#endif
 
 #endif // SECURE_MEMORY_H

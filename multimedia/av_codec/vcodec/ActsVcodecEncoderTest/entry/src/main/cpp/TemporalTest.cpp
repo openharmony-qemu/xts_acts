@@ -43,8 +43,10 @@ constexpr uint32_t DEFAULT_HEIGHT = 720;
 constexpr uint32_t DEFAULT_KEY_FRAME_INTERVAL = 1000;
 constexpr uint32_t DEFAULT_BITRATE = 10000000;
 constexpr double DEFAULT_FRAME_RATE = 30.0;
+constexpr uint32_t LTR_COUNT_2 = 2;
 constexpr uint32_t LTR_COUNT_5 = 5;
 constexpr uint32_t LTR_COUNT_10 = 10;
+constexpr uint32_t LTR_COUNT_INVALID_11 = 11;
 constexpr uint32_t LTR_INTERVAL_5 = 5;
 constexpr uint32_t TEMPORAL_GOP_SIZE_2 = 2;
 constexpr uint32_t TEMPORAL_GOP_SIZE_3 = 3;
@@ -53,11 +55,11 @@ constexpr uint32_t TEMPORAL_GOP_SIZE_5 = 5;
 constexpr uint32_t TEMPORAL_GOP_SIZE_6 = 6;
 constexpr uint32_t TEMPORAL_GOP_SIZE_8 = 8;
 constexpr uint32_t TEMPORAL_GOP_SIZE_9 = 9;
+constexpr uint32_t TEMPORAL_GOP_SIZE_30 = 30;
 constexpr uint32_t TEMPORAL_GOP_MODE_3 = 3;
 OH_AVPixelFormat DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
 const char *INP_DIR_720 = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
-const char *inpDir720 = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
-const char *inpDir720Array[16] = {
+const char *g_inpDir720Array[16] = {
     "/data/storage/el2/base/files/media/1280_720_nv.yuv",
     "/data/storage/el2/base/files/media/1280_720_nv_1.yuv",
     "/data/storage/el2/base/files/media/1280_720_nv_2.yuv",
@@ -87,7 +89,7 @@ static void SetUpTestCase()
     if (cap != nullptr) {
         const char *tmpCodecName = OH_AVCapability_GetName(cap);
         if (tmpCodecName != nullptr &&
-                memcpy_s(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName)) != 0) {
+                SecureMemcpy(g_codecName, sizeof(g_codecName), tmpCodecName, strlen(tmpCodecName)) != EOK) {
             cout << "memcpy failed" << endl;
         }
         cout << "codecname: " << g_codecName << endl;
@@ -96,8 +98,8 @@ static void SetUpTestCase()
     if (cap_hevc != nullptr) {
         const char *tmpCodecNameHevc = OH_AVCapability_GetName(cap_hevc);
         if (tmpCodecNameHevc != nullptr &&
-                memcpy_s(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc,
-                strlen(tmpCodecNameHevc)) != 0) {
+                SecureMemcpy(g_codecNameHEVC, sizeof(g_codecNameHEVC), tmpCodecNameHevc,
+                strlen(tmpCodecNameHevc)) != EOK) {
             cout << "memcpy failed" << endl;
         }
         cout << "codecname_hevc: " << g_codecNameHEVC << endl;
@@ -139,11 +141,11 @@ int VideoTemporalEncodeApi0020Test()
         if (!access("/system/lib64/media/", 0)) {
             ASSERT_EQ(ret, AV_ERR_INVALID_VAL);
         } else {
-                ASSERT_EQ(ret, AV_ERR_OK);
-       }
+            ASSERT_EQ(ret, AV_ERR_OK);
+        }
         return 0;
- }
-        return 0;
+    }
+    return 0;
 }
 
 int VideoTemporalEncodeApi0030Test()
@@ -163,7 +165,7 @@ int VideoTemporalEncodeApi0030Test()
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, DEFAULT_KEY_FRAME_INTERVAL);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_ENABLE_TEMPORAL_SCALABILITY, 1);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_TEMPORAL_GOP_SIZE, 30);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_TEMPORAL_GOP_SIZE, TEMPORAL_GOP_SIZE_30);
         ret = OH_VideoEncoder_Configure(venc_, format);
         if (!access("/system/lib64/media/", 0)) {
             ASSERT_EQ(ret, AV_ERR_INVALID_VAL);
@@ -607,7 +609,7 @@ int LTR_FUNC_001Test()
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
         ASSERT_EQ(AV_ERR_INVALID_VAL, vEncSample->ConfigureVideoEncoder());
         ASSERT_EQ(AV_ERR_OK, vEncSample->Reset());
-        vEncSample->ltrParam.ltrCount = 11;
+        vEncSample->ltrParam.ltrCount = LTR_COUNT_INVALID_11;
         ASSERT_EQ(AV_ERR_INVALID_VAL, vEncSample->ConfigureVideoEncoder());
         return 0;
     }
@@ -738,7 +740,7 @@ int LTR_FUNC_008Test()
         vEncSample->SURF_INPUT = true;
         vEncSample->ltrParam.enableUseLtr = true;
         vEncSample->enableLTR = true;
-        vEncSample->ltrParam.ltrCount = 2;
+        vEncSample->ltrParam.ltrCount = LTR_COUNT_2;
         vEncSample->ltrParam.ltrInterval = LTR_INTERVAL_5;
         vEncSample->ltrParam.useLtrIndex = 0;
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
