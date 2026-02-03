@@ -27,8 +27,8 @@ function sleep(delay : number) : Promise<void> {
     return new Promise(resolve => setTimeout(resolve, delay));
 }
 async function openPhone() {
-    let drivers = Driver.create();
     try{
+        let drivers = Driver.create();
         console.info('[bluetooth_js] bt driver create:'+ drivers);            
         await drivers.delayMs(1000);
         await drivers.wakeUpDisplay();
