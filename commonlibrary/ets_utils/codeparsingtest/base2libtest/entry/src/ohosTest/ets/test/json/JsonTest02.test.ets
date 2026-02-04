@@ -1972,5 +1972,119 @@ export default function Json02Test() {
       expect(errorCaught).assertTrue();
       expect(errorMessage.length).assertLarger(0);
     });
+
+    /**
+     * @tc.number    SUB_JSON_TEST01_9400
+     * @tc.name      testJson02Chapter0094
+     * @tc.desc      Test JSON.stringify with object containing getter property
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testJson02Chapter0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testJson02Chapter0094';
+      console.log(TAG + ' start');
+
+      class ComputedObject {
+        a: number;
+
+        constructor(a: number) {
+          this.a = a;
+        }
+
+        get computed() {
+          return this.a * 2;
+        }
+      }
+
+      const obj = new ComputedObject(1);
+      const result = JSON.stringify(obj);
+      expect(result).assertEqual('{"a":1}');
+    });
+
+    /**
+     * @tc.number    SUB_JSON_TEST01_9500
+     * @tc.name      testJson02Chapter0095
+     * @tc.desc      Test JSON.stringify with object containing inherited enumerable properties
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testJson02Chapter0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testJson02Chapter0095';
+      console.log(TAG + ' start');
+
+      class Parent {
+        parentProp = 100;
+      }
+
+      class Child extends Parent {
+        childProp = 200;
+      }
+
+      const obj = new Child();
+      const result = JSON.stringify(obj);
+      expect(result).assertEqual('{"parentProp":100,"childProp":200}');
+    });
+
+    /**
+     * @tc.number    SUB_JSON_TEST01_9600
+     * @tc.name      testJson02Chapter0096
+     * @tc.desc      Test JSON.stringify with mixed array containing various types
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testJson02Chapter0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testJson02Chapter0096';
+      console.log(TAG + ' start');
+      const date = new Date();
+      const mixedArray: (number | string | boolean | null | undefined | object | Date | number[])[] = [
+        1,
+        "string",
+        true,
+        null,
+        undefined,
+        JSON.parse(JSON.stringify({ a: 1 })), JSON.parse(JSON.stringify([2, 3])), date
+      ];
+      const result = JSON.stringify(mixedArray);
+      expect(result.includes('1')).assertTrue();
+      expect(result.includes('"string"')).assertTrue();
+      expect(result.includes('true')).assertTrue();
+      expect(result.includes('null')).assertTrue();
+      expect(result.includes('"a":1')).assertTrue();
+      expect(result.includes('[2,3]')).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_JSON_TEST01_9700
+     * @tc.name      testJson02Chapter0097
+     * @tc.desc      Test JSON.stringify performance with large object
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testJson02Chapter0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testJson02Chapter0097';
+      console.log(TAG + ' start');
+      let largeObjStr = '{';
+      for (let i = 0; i < 10000; i++) {
+        largeObjStr += `"property${i}":"value${i}"`;
+        if (i < 9999) {
+          largeObjStr += ',';
+        }
+      }
+      largeObjStr += '}';
+      const largeObj = JSON.parse(largeObjStr) as Record<string, string>;
+
+      const startTime = Date.now();
+      const result = JSON.stringify(largeObj);
+      const endTime = Date.now();
+      const duration = endTime - startTime;
+
+      expect(typeof result).assertEqual('string');
+      expect(result.length > 10000).assertTrue();
+      expect(duration < 1000).assertTrue();
+    });
   })
 }
