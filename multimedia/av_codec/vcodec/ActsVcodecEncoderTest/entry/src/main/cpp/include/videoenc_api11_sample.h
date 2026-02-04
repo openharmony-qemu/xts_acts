@@ -136,6 +136,7 @@ public:
     void OutputFunc();
     void SyncOutputFunc();
     uint32_t FlushSurf(OHNativeWindowBuffer *ohNativeWindowBuffer, OH_NativeBuffer *nativeBuffer);
+    int32_t SetupWindowFormat(int32_t index);
     void ReleaseSignal();
     void ReleaseInFile();
     void StopInloop();

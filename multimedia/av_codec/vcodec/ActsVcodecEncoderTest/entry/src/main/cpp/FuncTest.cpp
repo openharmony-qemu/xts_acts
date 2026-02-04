@@ -144,7 +144,7 @@ static int TestIFrameIntervalConfig(const char *mimeType, int32_t pixelFormat, i
 }
 
 static int TestProfileConfig(const char *mimeType, int32_t pixelFormat,
-                                int32_t profileValue, OH_AVErrCode expectedResult)
+    int32_t profileValue, OH_AVErrCode expectedResult)
 {
     venc_ = OH_VideoEncoder_CreateByMime(mimeType);
     ASSERT_NE(nullptr, venc_);

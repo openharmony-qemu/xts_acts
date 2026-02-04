@@ -34,7 +34,7 @@ target_link_libraries(vcodec_encoder_test PUBLIC
     libnative_media_codecbase.so
     libnative_media_core.so
     libnative_media_venc.so
+    libhilog_ndk.z.so
     libnative_window.so
     libnative_buffer.so
-    libhilog_ndk.z.so
 )

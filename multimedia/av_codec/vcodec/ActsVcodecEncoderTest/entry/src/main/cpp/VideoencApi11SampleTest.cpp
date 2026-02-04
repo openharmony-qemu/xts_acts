@@ -35,6 +35,7 @@ constexpr uint32_t MILLION = 1000000;
 constexpr uint32_t HUNDRED = 100;
 constexpr int32_t TWO = 2;
 constexpr int32_t ONE = 1;
+constexpr uint32_t RANDOM_EOS_MAX_VALUE = 24;
 // sptr<Surface> cs = nullptr;  // Surface API not available in current SDK
 // sptr<Surface> ps = nullptr;  // Surface API not available in current SDK
 OH_AVCapability *cap = nullptr;
@@ -415,7 +416,7 @@ int32_t VEncAPI11Sample::CreateSurface()
     if (DEFAULT_PIX_FMT == AV_PIXEL_FORMAT_RGBA1010102) {
         ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_FORMAT, NATIVEBUFFER_PIXEL_FMT_RGBA_1010102);
     } else {
-        ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_FORMAT, GRAPHIC_PIXEL_FMT_YCBCR_420_SP);
+        ret = AV_ERR_OK;
     }
     if (ret != AV_ERR_OK) {
         cout << "NativeWindowHandleOpt SET_FORMAT fail" << endl;
@@ -646,7 +647,7 @@ uint32_t VEncAPI11Sample::FlushSurf(OHNativeWindowBuffer *ohNativeWindowBuffer, 
 void VEncAPI11Sample::InputFuncSurface()
 {
     int32_t readFileIndex = 0;
-    while (true) {
+    while (true) { /* NOLINT(G.CTL.03) */
         if (!isRunning_.load()) {
             break;
         }
@@ -744,6 +745,27 @@ int32_t VEncAPI11Sample::InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer,
     return 1;
 }
 
+int32_t VEncAPI11Sample::SetupWindowFormat(int32_t index)
+{
+    int32_t ret = 0;
+    DEFAULT_WIDTH = fileInfos[index].width;
+    DEFAULT_HEIGHT = fileInfos[index].height;
+    if (setFormatRbgx) {
+        ret = AV_ERR_OK;
+    } else if (setFormat8Bit) {
+        ret = AV_ERR_OK;
+    } else if (setFormat10Bit) {
+        ret = AV_ERR_OK;
+    } else {
+        ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_FORMAT, fileInfos[index].format);
+    }
+    if (ret != AV_ERR_OK) {
+        return ret;
+    }
+    ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_BUFFER_GEOMETRY, DEFAULT_WIDTH, DEFAULT_HEIGHT);
+    return ret;
+}
+
 uint32_t VEncAPI11Sample::ReadOneFrameFromList(uint8_t *dst, int32_t &index)
 {
     int32_t ret = 0;
@@ -759,30 +781,7 @@ uint32_t VEncAPI11Sample::ReadOneFrameFromList(uint8_t *dst, int32_t &index)
         if (!inFile_->is_open()) {
             return OpenFileFail();
         }
-        DEFAULT_WIDTH = fileInfos[index].width;
-        DEFAULT_HEIGHT = fileInfos[index].height;
-        if (setFormatRbgx) {
-            ret = OH_NativeWindow_NativeWindowHandleOpt(
-                            nativeWindow,
-                            SET_FORMAT,
-                            GRAPHIC_PIXEL_FMT_RGBX_8888);
-        } else if (setFormat8Bit) {
-            ret = OH_NativeWindow_NativeWindowHandleOpt(
-                            nativeWindow,
-                            SET_FORMAT,
-                            GRAPHIC_PIXEL_FMT_YCBCR_420_SP);
-        } else if (setFormat10Bit) {
-            ret = OH_NativeWindow_NativeWindowHandleOpt(
-                            nativeWindow,
-                            SET_FORMAT,
-                            GRAPHIC_PIXEL_FMT_YCBCR_P010);
-        } else {
-            ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_FORMAT, fileInfos[index].format);
-        }
-        if (ret != AV_ERR_OK) {
-            return ret;
-        }
-        ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_BUFFER_GEOMETRY, DEFAULT_WIDTH, DEFAULT_HEIGHT);
+        ret = SetupWindowFormat(index);
         if (ret != AV_ERR_OK) {
             return ret;
         }
@@ -865,7 +864,7 @@ bool VEncAPI11Sample::RandomEOS(uint32_t index)
 {
     static std::random_device rd;
     static std::mt19937 gen(rd());
-    static std::uniform_int_distribution<uint32_t> dis(0, 24);
+    static std::uniform_int_distribution<uint32_t> dis(0, RANDOM_EOS_MAX_VALUE);
     uint32_t random_eos = dis(gen);
     if (enable_random_eos && random_eos == frameCount) {
         OH_VideoEncoder_NotifyEndOfStream(venc_);
@@ -1086,7 +1085,7 @@ int32_t VEncAPI11Sample::CheckResult(bool isRandomEosSuccess, int32_t pushResult
 void VEncAPI11Sample::InputFunc()
 {
     errCount = 0;
-    while (true) {
+    while (true) { /* NOLINT(G.CTL.03) */
         if (!isRunning_.load()) {
             break;
         }
@@ -1238,7 +1237,7 @@ void VEncAPI11Sample::OutputFuncFail()
 void VEncAPI11Sample::OutputFunc()
 {
     FILE *outFile = fopen(OUT_DIR, "wb");
-    while (true) {
+    while (true) { /* NOLINT(G.CTL.03) */
         if (!isRunning_.load()) {
             break;
         }

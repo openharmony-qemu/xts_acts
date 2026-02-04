@@ -199,7 +199,7 @@ static std::vector<TestFunction> GetFuncTestPart1()
     };
 }
 
-static std::vector<TestFunction> GetFuncTestPart2()
+static std::vector<TestFunction> GetFuncTestPart2a()
 {
     return {
     VideoEncodeCapability0100Test,
@@ -230,7 +230,13 @@ static std::vector<TestFunction> GetFuncTestPart2()
     VideoEncodeCapability2200Test,
     VideoEncodeCapability2300Test,
     VideoEncodeCapability2400Test,
-    VideoEncodeCapability2500Test,
+    VideoEncodeCapability2500Test
+    };
+}
+
+static std::vector<TestFunction> GetFuncTestPart2b()
+{
+    return {
     VideoEncodeCapability2700Test,
     VideoEncodeCapability2800Test,
     VideoEncodeCapability3100Test,
@@ -258,9 +264,11 @@ static const std::vector<TestFunction>& GetFuncTestFunctions()
     static std::vector<TestFunction> functions;
     if (functions.empty()) {
         auto part1 = GetFuncTestPart1();
-        auto part2 = GetFuncTestPart2();
+        auto part2a = GetFuncTestPart2a();
+        auto part2b = GetFuncTestPart2b();
         functions.insert(functions.end(), part1.begin(), part1.end());
-        functions.insert(functions.end(), part2.begin(), part2.end());
+        functions.insert(functions.end(), part2a.begin(), part2a.end());
+        functions.insert(functions.end(), part2b.begin(), part2b.end());
     }
     return functions;
 }

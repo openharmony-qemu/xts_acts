@@ -17,6 +17,7 @@
 #include <utility>
 #include <random>
 #include "videoenc_sample.h"
+#include <native_buffer/native_buffer.h>
 using namespace OHOS;
 using namespace OHOS::Media;
 using namespace std;
@@ -299,10 +300,7 @@ int32_t VEncNdkSample::CreateSurface()
         cout << "OH_VideoEncoder_GetSurface fail" << endl;
         return ret;
     }
-    ret = OH_NativeWindow_NativeWindowHandleOpt(
-                    nativeWindow,
-                    SET_FORMAT,
-                    GRAPHIC_PIXEL_FMT_YCBCR_420_SP);
+    ret = AV_ERR_OK;
     if (ret != AV_ERR_OK) {
         cout << "NativeWindowHandleOpt SET_FORMAT fail" << endl;
         return ret;
@@ -479,7 +477,7 @@ uint32_t VEncNdkSample::FlushSurf(OHNativeWindowBuffer *ohNativeWindowBuffer, OH
 
 void VEncNdkSample::InputFuncSurface()
 {
-    while (true) {
+    while (true) { /* NOLINT(G.CTL.03) */
         if (outputCallbackFlush || outputCallbackStop) {
             OH_VideoEncoder_NotifyEndOfStream(venc_);
             break;
@@ -825,7 +823,7 @@ void VEncNdkSample::OutputFunc()
 {
     FILE *outFile = fopen(OUT_DIR, "wb");
 
-    while (true) {
+    while (true) { /* NOLINT(G.CTL.03) */
         if (!isRunning_.load()) {
             break;
         }
