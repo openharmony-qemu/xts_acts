@@ -1300,7 +1300,6 @@ void VEncAPI11Sample::SyncOutputFunc()
         }
         OH_AVBuffer *buffer = OH_VideoEncoder_GetOutputBuffer(venc_, index);
         if (buffer == nullptr) {
-            cout << "OH_VideoEncoder_GetOutputBuffer fail" << endl;
             errCount = errCount + 1;
             continue;
         }
@@ -1319,7 +1318,6 @@ void VEncAPI11Sample::SyncOutputFunc()
             fwrite(OH_AVBuffer_GetAddr(buffer), 1, size, outFile);
         }
         if (OH_VideoEncoder_FreeOutputBuffer(venc_, index) != AV_ERR_OK) {
-            cout << "Fatal: ReleaseOutputBuffer fail" << endl;
             errCount = errCount + 1;
         }
         outFrames++;

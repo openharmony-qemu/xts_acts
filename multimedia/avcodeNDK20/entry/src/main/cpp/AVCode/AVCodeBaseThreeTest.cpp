@@ -810,10 +810,10 @@ napi_value VideoDecoder_Configure_Test(napi_env env, napi_callback_info info)
     OH_VideoDecoder_Destroy(videoDec);
     napi_value ret2;
     napi_create_int32(env, 0, &ret2);
-    if(ret == AV_ERR_VIDEO_UNSUPPORTED_COLOR_SPACE_CONVERSION) {
+    if (ret == AV_ERR_VIDEO_UNSUPPORTED_COLOR_SPACE_CONVERSION) {
         napi_create_int32(env, 1, &ret2);
     }
-    if(ret == AV_ERR_OK) {
+    if (ret == AV_ERR_OK) {
         napi_create_int32(env, 1, &ret2);
     }
     return ret2;
@@ -841,10 +841,10 @@ napi_value VideoDecoder_Prepare_Test(napi_env env, napi_callback_info info)
     OH_VideoDecoder_Destroy(videoDec);
     napi_value ret2;
     napi_create_int32(env, 0, &ret2);
-    if(ret == AV_ERR_OPERATE_NOT_PERMIT) {
+    if (ret == AV_ERR_OPERATE_NOT_PERMIT) {
         napi_create_int32(env, 1, &ret2);
     }
-    if(ret == AV_ERR_OK) {
+    if (ret == AV_ERR_OK) {
         napi_create_int32(env, 1, &ret2);
     }
     return ret2;
@@ -872,10 +872,10 @@ napi_value VideoDecoder_Start_Test(napi_env env, napi_callback_info info)
     OH_VideoDecoder_Destroy(videoDec);
     napi_value ret2;
     napi_create_int32(env, 0, &ret2);
-    if(ret == AV_ERR_OPERATE_NOT_PERMIT) {
+    if (ret == AV_ERR_OPERATE_NOT_PERMIT) {
         napi_create_int32(env, 1, &ret2);
     }
-    if(ret == AV_ERR_INVALID_STATE) {
+    if (ret == AV_ERR_INVALID_STATE) {
         napi_create_int32(env, 1, &ret2);
     }
     return ret2;
