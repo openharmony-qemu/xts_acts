@@ -282,7 +282,6 @@ describe('fileIO_fs_stream_read', function () {
     } catch (e) {
       console.log('fileIO_test_stream_read_sync_009 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
-      stream.closeSync();
       fileIO.unlinkSync(fpath);
     }
   });
@@ -306,7 +305,6 @@ describe('fileIO_fs_stream_read', function () {
     } catch (e) {
       console.log('fileIO_test_stream_read_sync_010 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
-      stream.closeSync();
       fileIO.unlinkSync(fpath);
     }
   });
@@ -950,7 +948,6 @@ describe('fileIO_fs_stream_read', function () {
         done();
       });
     } catch (e) {
-      sr.closeSync();
       console.log('fileIO_test_stream_read_async_019 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
       fileIO.unlinkSync(fpath);
@@ -982,7 +979,6 @@ describe('fileIO_fs_stream_read', function () {
         done();
       });
     } catch (e) {
-      sr.closeSync();
       console.log('fileIO_test_stream_read_async_020 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
       fileIO.unlinkSync(fpath);
@@ -1068,7 +1064,6 @@ describe('fileIO_fs_stream_read', function () {
       expect(false).assertTrue();
       done();
     } catch (e) {
-      sr.closeSync();
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_stream_read_async_023 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -1097,7 +1092,6 @@ describe('fileIO_fs_stream_read', function () {
       expect(false).assertTrue();
       done();
     } catch (e) {
-      sr.closeSync();
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_stream_read_async_024 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();

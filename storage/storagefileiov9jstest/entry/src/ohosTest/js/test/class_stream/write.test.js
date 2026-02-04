@@ -433,7 +433,6 @@ describe('fileIO_fs_stream_write', function () {
       let bytesWritten = sr.writeSync(null, { offset: 1 });
       expect(false).assertTrue();
     } catch (e) {
-      sr.closeSync();
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_stream_write_sync_015 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -458,7 +457,6 @@ describe('fileIO_fs_stream_write', function () {
       let bytesWritten = sr.writeSync(undefined, { offset: 1 });
       expect(false).assertTrue();
     } catch (e) {
-      sr.closeSync();
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_stream_write_sync_016 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -1344,7 +1342,6 @@ describe('fileIO_fs_stream_write', function () {
         expect(false).assertTrue();
         done();
       } catch (e) {
-        sr.closeSync();
         fileIO.unlinkSync(fpath);
         console.log('fileIO_test_stream_write_async_026 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -1378,7 +1375,6 @@ describe('fileIO_fs_stream_write', function () {
         expect(false).assertTrue();
         done();
       } catch (e) {
-        sr.closeSync();
         fileIO.unlinkSync(fpath);
         console.log('fileIO_test_stream_write_async_027 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -1557,7 +1553,6 @@ describe('fileIO_fs_stream_write', function () {
         expect(false).assertTrue();
         done();
       } catch (e) {
-        sr.closeSync();
         fileIO.unlinkSync(fpath);
         console.log('fileIO_test_stream_write_async_033 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -1584,7 +1579,6 @@ describe('fileIO_fs_stream_write', function () {
         expect(false).assertTrue();
         done();
       } catch (e) {
-        sr.closeSync();
         fileIO.unlinkSync(fpath);
         console.log('fileIO_test_stream_write_async_034 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
