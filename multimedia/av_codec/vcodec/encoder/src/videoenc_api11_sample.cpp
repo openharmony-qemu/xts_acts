@@ -674,14 +674,16 @@ void VEncAPI11Sample::InputFuncSurface()
             }
         } else if (DEFAULT_PIX_FMT == AV_PIXEL_FORMAT_NV12 && !ReadOneFrameYUV420SP(dst)) {
             err = OH_VideoEncoder_NotifyEndOfStream(venc_);
-            if (err != 0) {
+            if (err != AV_ERR_OK) {
                 cout << "OH_VideoEncoder_NotifyEndOfStream failed" << endl;
+                errCount ++;
             }
             break;
         } else if (DEFAULT_PIX_FMT == AV_PIXEL_FORMAT_RGBA1010102 && !ReadOneFrameRGBA8888(dst)) {
             err = OH_VideoEncoder_NotifyEndOfStream(venc_);
-            if (err != 0) {
+            if (err != AV_ERR_OK) {
                 cout << "OH_VideoEncoder_NotifyEndOfStream failed" << endl;
+                errCount ++;
             }
             break;
         }
@@ -1292,9 +1294,17 @@ void VEncAPI11Sample::SyncOutputFunc()
         if (ret != AV_ERR_OK) {
             continue;
         }
+        if (ret != AV_ERR_OK && index == 0) {
+            errCount = errCount + 1;
+            continue;
+        }
         OH_AVBuffer *buffer = OH_VideoEncoder_GetOutputBuffer(venc_, index);
         if (buffer == nullptr) {
             cout << "OH_VideoEncoder_GetOutputBuffer fail" << endl;
+            errCount = errCount + 1;
+            continue;
+        }
+        if (OH_AVBuffer_Destroy(buffer) != AV_ERR_OPERATE_NOT_PERMIT) {
             errCount = errCount + 1;
             continue;
         }

@@ -809,7 +809,13 @@ napi_value VideoDecoder_Configure_Test(napi_env env, napi_callback_info info)
     OH_AVErrCode ret = OH_VideoDecoder_Configure(videoDec, format.get());
     OH_VideoDecoder_Destroy(videoDec);
     napi_value ret2;
-    napi_create_int32(env, (ret == AV_ERR_VIDEO_UNSUPPORTED_COLOR_SPACE_CONVERSION || ret == AV_ERR_OK) ? 1: 0, &ret2);
+    napi_create_int32(env, 0, &ret2);
+    if(ret == AV_ERR_VIDEO_UNSUPPORTED_COLOR_SPACE_CONVERSION) {
+        napi_create_int32(env, 1, &ret2);
+    }
+    if(ret == AV_ERR_OK) {
+        napi_create_int32(env, 1, &ret2);
+    }
     return ret2;
 }
 
@@ -833,9 +839,15 @@ napi_value VideoDecoder_Prepare_Test(napi_env env, napi_callback_info info)
     OH_VideoDecoder_Configure(videoDec, format.get());
     OH_AVErrCode ret = OH_VideoDecoder_Prepare(videoDec);
     OH_VideoDecoder_Destroy(videoDec);
-    napi_value retValue;
-    napi_create_int32(env, (ret == AV_ERR_OPERATE_NOT_PERMIT || ret == AV_ERR_OK) ? 1: 0, &retValue);
-    return retValue;
+    napi_value ret2;
+    napi_create_int32(env, 0, &ret2);
+    if(ret == AV_ERR_OPERATE_NOT_PERMIT) {
+        napi_create_int32(env, 1, &ret2);
+    }
+    if(ret == AV_ERR_OK) {
+        napi_create_int32(env, 1, &ret2);
+    }
+    return ret2;
 }
 
 napi_value VideoDecoder_Start_Test(napi_env env, napi_callback_info info)
@@ -858,9 +870,15 @@ napi_value VideoDecoder_Start_Test(napi_env env, napi_callback_info info)
     OH_VideoDecoder_Configure(videoDec, format.get());
     OH_AVErrCode ret = OH_VideoDecoder_Start(videoDec);
     OH_VideoDecoder_Destroy(videoDec);
-    napi_value retValue;
-    napi_create_int32(env, (ret == AV_ERR_OPERATE_NOT_PERMIT || ret == AV_ERR_INVALID_STATE) ? 1: 0, &retValue);
-    return retValue;
+    napi_value ret2;
+    napi_create_int32(env, 0, &ret2);
+    if(ret == AV_ERR_OPERATE_NOT_PERMIT) {
+        napi_create_int32(env, 1, &ret2);
+    }
+    if(ret == AV_ERR_INVALID_STATE) {
+        napi_create_int32(env, 1, &ret2);
+    }
+    return ret2;
 }
 
 napi_value VideoEncoder_QueryOutputBuffer(napi_env env, napi_callback_info info)
