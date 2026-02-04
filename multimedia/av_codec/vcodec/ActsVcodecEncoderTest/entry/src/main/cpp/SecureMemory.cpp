@@ -33,7 +33,6 @@ int SecureMemset(void *dest, size_t destMax, int value, size_t count)
     for (size_t i = 0; i < count; i++) {
         ptr[i] = val;
     }
-
     return EOK;
 }
 
