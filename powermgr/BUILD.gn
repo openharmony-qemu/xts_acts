@@ -24,6 +24,7 @@ group("powermgr") {
     "thermal_manager:powermgr_thermal_test",
     # xts1.2
     "battery_manager_static:powermgr_battery_static_test",
+    "battery_statistics_static:powermgr_battery_statistics_static_test",
     "display_manager_static:powermgr_display_static_test",
     "permission_static:powermgr_permission_static_test",
     "power_manager_static:powermgr_power_static_test",

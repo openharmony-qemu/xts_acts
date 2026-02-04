@@ -26,7 +26,7 @@ export default function builtinsConcatArrayLengthTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(100);
+      await sleep(50);;
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

@@ -86,7 +86,7 @@ function getWantAgentByUri(uri: string): WantAgent | undefined {
         `${TEST_SUITE_NAME}#getWantAgentByUri getWantAgent failed, code:${err.code} message:${err.message}`);
     }
   });
-  await Utils.msSleep(WAIT_TIME4000);
+  waitForCompletion(async()=> {await Utils.msSleep(WAIT_TIME4000);});
   return wantAgent1;
 }
 
@@ -221,7 +221,7 @@ export default function ActsNotificationWantUriTest() {
         hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case start`);
         let uri: string = '';
         let wantAgent1: WantAgent | undefined = getWantAgentByUri(uri);
-        if (wantAgent1) {          
+        if (wantAgent1) {
           let uri2: string = '_____WantAgent2____';
           let wantAgent2: WantAgent | undefined = getWantAgentByUri(uri2);
           let actionButton: notificationManager.NotificationActionButton = {
@@ -254,8 +254,15 @@ export default function ActsNotificationWantUriTest() {
                     expect(dataArray.length).assertLarger(PARAM_0);
                     let testUri: Record<string, RecordData> = dataArray[0].extraInfo as Record<string, RecordData>;
                     hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} wantUri:${testUri[KEY_URI]}`);
-                    expect(Object.keys(testUri).includes(KEY_URI)).assertFalse();
-                    done();
+                    hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} wantUri:${JSON.stringify(testUri)}`);
+                    if (JSON.stringify(testUri)) {
+                      expect(JSON.stringify(testUri).includes(KEY_URI)).assertTrue();
+                      expect(testUri[KEY_URI] as string).assertEqual(uri);
+                      done()
+                    } else {
+                      expect().assertFail();
+                      done();
+                    }
                   } else {
                     hilog.error(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} getActiveNotifications failed,
                       code:${err.code} message:${err.message}`);

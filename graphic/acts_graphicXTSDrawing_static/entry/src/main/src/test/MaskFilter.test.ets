@@ -51,8 +51,12 @@ export default function maskFilterTest() {
       const msg = 'testCreateBlurMaskFilterNormalStatic';
 
       try {
-        drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.OUTER, 10);
+        let maskFilter = drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.OUTER, 10);
         console.info(msg + ' createBlurMaskFilter successed');
+        if(maskFilter == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` createBlurMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -60,10 +64,26 @@ export default function maskFilterTest() {
       }
 
       try {
-        drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.NORMAL, 10.5);
-        drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.SOLID, 10.5);
-        drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.OUTER, 10.5);
-        drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.INNER, 10.5);
+        let maskFilter1 = drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.NORMAL, 10.5);
+        if(maskFilter1 == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
+        }
+        let maskFilter2 = drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.SOLID, 10.5);
+        if(maskFilter2 == undefined){
+          console.info(msg + ' 3 test failed');
+          expect().assertFail();
+        }
+        let maskFilter3 = drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.OUTER, 10.5);
+        if(maskFilter3 == undefined){
+          console.info(msg + ' 4 test failed');
+          expect().assertFail();
+        }
+        let maskFilter4 = drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.INNER, 10.5);
+        if(maskFilter4 == undefined){
+          console.info(msg + ' 5 test failed');
+          expect().assertFail();
+        }
         console.info(msg + ' createBlurMaskFilter successed');
       } catch (e) {
         e = e as BusinessError;

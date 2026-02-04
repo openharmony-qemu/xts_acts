@@ -43,9 +43,9 @@ export default function webJsunitTwo() {
      * @tc.desc   test onFullScreenEnter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testOnFullScreenEnterStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testOnFullScreenEnterStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(5000);
       Utils.emitEvent("emitOnFullScreenEnter", 10)
       await Utils.msSleep(2000);

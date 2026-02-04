@@ -180,20 +180,36 @@ export default function roundRectTest() {
           expect(point1.x == 0 && point1.y == 0).assertTrue();
           console.info(msg + ' setAndGetCorner succeeded, point1：' + JSON.stringify(point1));
         }
+        if(point1 == undefined) {
+          console.info(msg + ' setAndGetCorner failed, point1：' + JSON.stringify(point1));
+          expect().assertFail();
+        }
         let point2 = roundRect_.getCorner(drawing.CornerPos.BOTTOM_RIGHT_POS);
         if (point2) {
           expect(point2.x == 150 && point2.y == 150).assertTrue();
           console.info(msg + ' setAndGetCorner succeeded，point2：' + JSON.stringify(point2));
+        }
+        if(point2 == undefined) {
+          console.info(msg + ' setAndGetCorner failed, point2：' + JSON.stringify(point2));
+          expect().assertFail();
         }
         let point3 = roundRect_.getCorner(drawing.CornerPos.TOP_LEFT_POS);
         if (point3) {
           expect(point3.x == 0 && point3.y == 0).assertTrue();
           console.info(msg + ' setAndGetCorner succeeded，point33：' + JSON.stringify(point3));
         }
+        if(point3 == undefined) {
+          console.info(msg + ' setAndGetCorner failed, point3：' + JSON.stringify(point3));
+          expect().assertFail();
+        }
         let point4 = roundRect_.getCorner(drawing.CornerPos.TOP_RIGHT_POS);
         if (point4) {
           expect(point4.x == 0 && point4.y == 0).assertTrue();
           console.info(msg + ' setAndGetCorner succeeded，point4：' + JSON.stringify(point4));
+        }
+        if(point4 == undefined) {
+          console.info(msg + ' setAndGetCorner failed, point4：' + JSON.stringify(point4));
+          expect().assertFail();
         }
         console.info(msg + ' setAndGetCorner succeeded');
       } catch (e) {

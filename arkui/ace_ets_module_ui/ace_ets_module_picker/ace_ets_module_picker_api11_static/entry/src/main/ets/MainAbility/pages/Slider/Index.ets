@@ -34,7 +34,6 @@ import {
   Margin,
   PickerTextStyle,
   CalendarAlign,
-  Date,
   CalendarPicker,
   Slider,
   SliderChangeMode,
@@ -51,8 +50,7 @@ import {
   TextOverflow,
   SliderBlockStyle,
   SliderBlockType,
-  SliderInteraction,
-} from '@ohos.arkui.component';
+  SliderInteraction } from '@ohos.arkui.component';
 import {
   State,
   Link,

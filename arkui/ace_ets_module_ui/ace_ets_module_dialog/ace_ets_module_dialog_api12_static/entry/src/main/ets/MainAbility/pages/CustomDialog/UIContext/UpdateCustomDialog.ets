@@ -33,7 +33,7 @@ import {
   FontWeight,
   Axis,
   Margin,DialogAlignment, CustomBuilderT, wrapBuilder,
-  PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
+  PickerTextStyle, CalendarAlign, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,DialogAlignment
 } from '@ohos.arkui.component';
 import {
@@ -68,7 +68,7 @@ struct updateCustomDialog {
   build() {
     Row() {
       Column({ space: 12 } as ColumnOptions) {
-        Text(this.change) 
+        Text(this.change)
           .id('UpdateCustomDialog')
         Button("click me")
           .id('btn')
@@ -81,7 +81,7 @@ struct updateCustomDialog {
             setTimeout(():void => {
               promptAction.updateCustomDialog(contentNode, { alignment: this.alignmentStatus });
               this.change = this.alignmentStatus + ''
-            }, 1000);   
+            }, 1000);
           })
       }
       .width('100%')

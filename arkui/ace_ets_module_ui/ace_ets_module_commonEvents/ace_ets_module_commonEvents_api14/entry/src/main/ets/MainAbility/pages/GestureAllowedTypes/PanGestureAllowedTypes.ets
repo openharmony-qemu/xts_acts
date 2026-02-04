@@ -17,10 +17,18 @@
 struct PanGestureAllowedTypes {
   @State types: Array<SourceTool | undefined | null> = [];
   @State result: string = 'allowed types default';
-  private panOption: PanGestureOptions = new PanGestureOptions({ direction: PanDirection.Left | PanDirection.Right | PanDirection.All | PanDirection.Horizontal | PanDirection.Vertical})
+  private panOption: PanGestureOptions = new PanGestureOptions({
+    direction: PanDirection.Left | PanDirection.Right | PanDirection.All | PanDirection.Horizontal |
+    PanDirection.Vertical
+  })
+
   build() {
-    Column({space: 10}) {
-      Text('Pan').fontSize(20).width(240).height(80).margin({left:0,top:0}).padding({left:0,top:0}).backgroundColor(Color.Yellow).key('PanGestureAllowedTypes_Text')
+    Column() {
+      Text('Pan')
+        .width('90%')
+        .height('55%')
+        .backgroundColor(Color.Yellow)
+        .key('PanGestureAllowedTypes_Text')
         .gesture(
           PanGesture(this.panOption)
             .allowedTypes(this.types)
@@ -32,23 +40,28 @@ struct PanGestureAllowedTypes {
             })
         )
 
-      Text(this.result).key('PanGestureAllowedTypes_result')
+      Text(this.result).key('PanGestureAllowedTypes_result').height('10%')
 
       Button('Mouse').key('Mouse_Type')
         .onClick(() => {
           this.result = 'allowed types default';
           this.types = [SourceTool.MOUSE];
-        })
+        }).height('10%')
       Button('Finger').key('Finger_Type')
         .onClick(() => {
           this.result = 'allowed types default';
           this.types = [SourceTool.Finger];
-        })
+        }).height('10%')
       Button('Invalid').id('Invalid_type')
-          .onClick(() => {
-            this.result = 'allowed types default';
-            this.types = [null, undefined];
-          })
-    }.alignItems(HorizontalAlign.Start).width('100%').height('100%').backgroundColor('#ffbebaba').key('PanGestureAllowedTypes_Father')
+        .onClick(() => {
+          this.result = 'allowed types default';
+          this.types = [null, undefined];
+        }).height('10%')
+    }
+    .alignItems(HorizontalAlign.Start)
+    .width('100%')
+    .height('100%')
+    .backgroundColor('#ffbebaba')
+    .key('PanGestureAllowedTypes_Father')
   }
 }

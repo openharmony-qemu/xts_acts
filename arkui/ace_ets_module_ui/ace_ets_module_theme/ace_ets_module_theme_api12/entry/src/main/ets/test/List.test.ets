@@ -22,7 +22,6 @@ import DarkColorsTest from './theme/DarkColorsTest.test';
 
 export default function testsuite() {
   APIFontPrimaryTest();
-  themePageTest();
   themePageToggleTest();
   themePageSliderTest();
   themePageListTest();

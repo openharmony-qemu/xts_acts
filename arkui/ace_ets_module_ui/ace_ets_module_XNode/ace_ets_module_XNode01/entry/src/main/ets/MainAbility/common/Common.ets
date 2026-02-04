@@ -12,9 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import screen from '@ohos.screen';
-import { BusinessError } from '@ohos.base';
-import RectValue from './Rect';
+export class RectValue {
+  left: number = 0;
+  top: number = 0;
+  right: number = 0;
+  bottom: number = 0;
+}
 
 export default class CommonFunc {
   static rect_left: number;
@@ -24,7 +27,7 @@ export default class CommonFunc {
   static rect_value: RectValue;
 
   static sleep(time: number) {
-    return new Promise<string>((resolve: (value: string) => void) => {
+    return new Promise((resolve: (value: string) => void) => {
       setTimeout(() => {
         resolve("ok")
       }, time)
@@ -33,7 +36,7 @@ export default class CommonFunc {
     })
   }
 
-  static getComponentRect(key: string): RectValue {
+  static getComponentRect(key: string) {
     let strJson: string = getInspectorByKey(key);
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
     console.info("[getInspectorByKey] rectInfo is: " + JSON.parse('[' + JSON.parse(strJson).$rect + ']'));
@@ -46,11 +49,11 @@ export default class CommonFunc {
     }
   }
 
-  static getComponentRectOnScreen(key: string): RectValue {
+  static getComponentRectOnScreen(key: string) {
     let strJson = getInspectorByKey(key);
     let obj: Record<string, Object> = JSON.parse(strJson);
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: string[] = JSON.parse('[' + obj.$rect + ']');
+    let rectInfo: Array<string> = JSON.parse('[' + obj.$rect + ']');
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop );
     CommonFunc.rect_left = JSON.parse('[' + rectInfo[0] + ']')[0] + globalThis.winLeft;
@@ -61,17 +64,8 @@ export default class CommonFunc {
       "left": CommonFunc.rect_left, "top": CommonFunc.rect_top, "right": CommonFunc.rect_right, "bottom": CommonFunc.rect_bottom
     }
   }
-
-  static setScreenOrientation(orientation: number) {
-    screen.getAllScreens().then(data => {
-        console.log('Succeeded in getting all screens. Data:'+ JSON.stringify(data));
-        return data[0];
-    }).then(screenClass => {
-        return screenClass.setOrientation(orientation);
-    }).then(() => {
-        console.log('Succeeded in setting the vertical orientation.');
-    }).catch((err: BusinessError) => {
-        console.error('Failed to set the vertical orientation. Cause: ' + err.toString());
-    });
-  }
 }
+
+
+
+

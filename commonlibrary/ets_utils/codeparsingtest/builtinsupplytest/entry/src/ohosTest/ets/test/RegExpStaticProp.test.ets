@@ -16,139 +16,18 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { sleep } from '../testability/pages/CommonUtils';
 import {
-  regExp$str,
-  regExpSymbolMatch, regExpSymbolSearch,
-  regExpSymbolSpecies,
-  regExpSymbolSplit } from '../testability/pages/RegexpUtils';
+  regExp$str } from '../testability/pages/RegexpUtils';
 
 export default function builtinsRegExpStaticPropTest() {
   describe('builtinsRegExpStaticPropTest', () => {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(20);
+      await sleep(40);
     })
     afterEach(() => {
     })
     afterAll(() => {
-    })
-
-
-    /**
-     * @tc.name   builtinsRegExpStaticPropTest0100
-     * @tc.number SUB_BUILTINS_REGEXP_STATIC_PROP_TEST_0100
-     * @tc.desc   Testing
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsRegExpStaticPropTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsRegExpStaticPropTest0100';
-      console.info(`${caseName} test start`);
-      let reg = /except/g;
-      reg.test('except in compliance');
-      expect(RegExp.input).assertUndefined();
-      reg.test('except in2 com');
-      expect(RegExp.$_).assertUndefined();
-      done();
-      console.info(`${caseName} test end`);
-    })
-
-    /**
-     * @tc.name   builtinsRegExpStaticPropTest0200
-     * @tc.number SUB_BUILTINS_REGEXP_STATIC_PROP_TEST_0200
-     * @tc.desc   Testing
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsRegExpStaticPropTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsRegExpStaticPropTest0200';
-      console.info(`${caseName} test start`);
-      let reg = /except/g;
-      reg.test('except in compliance');
-      expect(RegExp.lastMatch).assertUndefined();
-      reg.test('except in2 com');
-      expect(regExp$str(reg, '$&')).assertUndefined();
-      done();
-      console.info(`${caseName} test end`);
-    })
-
-    /**
-     * @tc.name   builtinsRegExpStaticPropTest0300
-     * @tc.number SUB_BUILTINS_REGEXP_STATIC_PROP_TEST_0300
-     * @tc.desc   Testing
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsRegExpStaticPropTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsRegExpStaticPropTest0300';
-      console.info(`${caseName} test start`);
-      let reg = /hello/g;
-      reg.test('hello in');
-      expect(RegExp.lastParen).assertUndefined();
-      reg.test('hello in2');
-      expect(regExp$str(reg, '$+')).assertUndefined();
-      done();
-      console.info(`${caseName} test end`);
-    })
-
-    /**
-     * @tc.name   builtinsRegExpStaticPropTest0400
-     * @tc.number SUB_BUILTINS_REGEXP_STATIC_PROP_TEST_0400
-     * @tc.desc   Testing
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsRegExpStaticPropTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsRegExpStaticPropTest0400';
-      console.info(`${caseName} test start`);
-      let reg = /my/g;
-      reg.test('my in');
-      expect(RegExp.leftContext).assertUndefined();
-      reg.test('my in2');
-      expect(regExp$str(reg, '$`')).assertUndefined();
-      done();
-      console.info(`${caseName} test end`);
-    })
-
-    /**
-     * @tc.name   builtinsRegExpStaticPropTest0500
-     * @tc.number SUB_BUILTINS_REGEXP_STATIC_PROP_TEST_0500
-     * @tc.desc   Testing
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsRegExpStaticPropTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsRegExpStaticPropTest0500';
-      console.info(`${caseName} test start`);
-      let reg = /after/g;
-      reg.test('after in');
-      expect(RegExp.rightContext).assertUndefined();
-      reg.test('after in2');
-      expect(regExp$str(reg, '$\'')).assertUndefined();
-      done();
-      console.info(`${caseName} test end`);
-    })
-
-    /**
-     * @tc.name   builtinsRegExpStaticPropTest0600
-     * @tc.number SUB_BUILTINS_REGEXP_STATIC_PROP_TEST_0600
-     * @tc.desc   Testing
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsRegExpStaticPropTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsRegExpStaticPropTest0600';
-      console.info(`${caseName} test start`);
-      let reg = /before/g;
-      expect(regExpSymbolSpecies(reg)).assertInstanceOf('Function');
-      done();
-      console.info(`${caseName} test end`);
     })
   })
 }

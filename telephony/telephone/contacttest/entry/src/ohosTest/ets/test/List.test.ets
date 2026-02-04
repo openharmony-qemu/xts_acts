@@ -32,24 +32,20 @@ import { deviceInfo } from '@kit.BasicServicesKit'
 import sim from '@ohos.telephony.sim';
 
 export default function testsuite() {
-  if (sim.getMaxSimCount()!=0){
-    AddContactTest();
-    if (deviceInfo.deviceType !== 'wearable') {
-      SelectContactsTest();
-    } 
+  AddContactTest();
+  if (deviceInfo.deviceType !== 'wearable') {
+    SelectContactsTest();
     AddContactViaUITest();
     SaveToExistingContactViaUITest();
-    QueryKeyTest();
-    QueryByEmailTest();
-    QueryByEmailPhoneNumTest();
-    QueryContactTest();
-    UpdateContactTest();
-    QueryGroupsTest();
-    IsMyCardTest();
-    ContactTest();
-    ContactsTest()
-    AddContactsTest();
-  }else{
-    EmptyTest()
-  }
+  } 
+  QueryKeyTest();
+  QueryByEmailTest();
+  QueryByEmailPhoneNumTest();
+  QueryContactTest();
+  UpdateContactTest();
+  QueryGroupsTest();
+  IsMyCardTest();
+  ContactTest();
+  ContactsTest()
+  AddContactsTest();
 }

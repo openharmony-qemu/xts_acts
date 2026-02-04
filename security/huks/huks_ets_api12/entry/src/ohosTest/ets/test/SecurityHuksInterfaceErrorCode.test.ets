@@ -673,7 +673,9 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
      * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_1700', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
-      await CheckWifiInfo();
+      if(!useSoftware){
+        await CheckWifiInfo();
+      }
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_1700";
       let attestOption: huks.HuksOptions = GetAttestKeyOptions();
       try {
@@ -696,7 +698,9 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
      * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_1710', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
-      await CheckWifiInfo();
+      if(!useSoftware){
+        await CheckWifiInfo();
+      }
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_1710";
       let attestOption: huks.HuksOptions = GetAttestKeyOptions();
       try {
@@ -1407,7 +1411,9 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
      * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1300', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
-      await CheckWifiInfo();
+      if(!useSoftware){
+        await CheckWifiInfo();
+      }
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1300";
       await huks.generateKeyItem(testNumber, GetEccGenerateOptions(256));
       let attestOptions = AddParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE, StringToUint8Array("challenge_data"));
@@ -1839,7 +1845,9 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
      * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1310', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
-      await CheckWifiInfo();
+      if(!useSoftware){
+        await CheckWifiInfo();
+      }
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1310";
       await huksCallback.generateKeyItem(testNumber, GetEccGenerateOptions(256));
       let attestOptions = AddParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE, StringToUint8Array("challenge_data"));

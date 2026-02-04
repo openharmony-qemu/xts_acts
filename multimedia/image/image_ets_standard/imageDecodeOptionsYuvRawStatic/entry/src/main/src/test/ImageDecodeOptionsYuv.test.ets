@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,10 +39,10 @@ let waitCallback = () => {
   const date = Date.now();
   while ((Date.now() - date) < 1000) {
     if (g_callbackResult) {
-      await sleep(50);
+      waitForCompletion(async () => {await sleep(50);})
       return;
     } else {
-      await sleep(50);
+      waitForCompletion(async () => {await sleep(50);})
     }
   }
   expect().assertFail();
@@ -74,8 +74,9 @@ export default function imageDecodeOptionsYuvTest() {
         imageSourceApi = image.createImageSource(filePath)
       } else if (type === "rawfile") {
         const resourceMgr: resourceManager.ResourceManager = testContext.resourceManager;
-        const rawFileDescriptor = await resourceMgr.getRawFd(fileName)
-        imageSourceApi = image.createImageSource(rawFileDescriptor)
+        let rawFileDescriptor: resourceManager.RawFileDescriptor | undefined;
+        waitForCompletion(async () => {rawFileDescriptor = await resourceMgr.getRawFd(fileName);})
+        imageSourceApi = image.createImageSource(rawFileDescriptor as resourceManager.RawFileDescriptor)
       } else if (type === "incremental") {
         const picBuffer = getBuffer(fileName)
         imageSourceApi = image.createIncrementalSource(picBuffer)
@@ -84,7 +85,7 @@ export default function imageDecodeOptionsYuvTest() {
         const file = fs.openSync(filePath)
         imageSourceApi = image.createImageSource(file.fd as int);
       }
-      await sleep(100);
+      waitForCompletion(async () => {await sleep(100);})
       if (imageSourceApi == undefined) {
         expect().assertFail();
       }
@@ -314,7 +315,7 @@ export default function imageDecodeOptionsYuvTest() {
       }
     }
 
-    beforeAll(() => {
+    beforeAll(async () => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       testContext = Hypium.get('context') as common.UIAbilityContext;

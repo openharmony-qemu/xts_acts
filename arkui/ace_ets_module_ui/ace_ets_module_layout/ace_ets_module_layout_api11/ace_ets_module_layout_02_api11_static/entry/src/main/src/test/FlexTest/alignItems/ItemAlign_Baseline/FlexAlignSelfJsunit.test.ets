@@ -36,7 +36,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function flexAlignSelf_BaselineJsunit() {
-  describe('flexItemAlignAutoTest8', () => {
+  describe('flexAlignSelfBaselineJsunit', () => {
 
     beforeAll(() => {
       console.info("flexItemAlignAutoTest8 beforeEach start");

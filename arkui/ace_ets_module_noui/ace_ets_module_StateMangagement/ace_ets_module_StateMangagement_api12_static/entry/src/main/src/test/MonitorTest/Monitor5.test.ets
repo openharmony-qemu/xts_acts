@@ -68,7 +68,7 @@ export default function Monitor5Test() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Monitor5Test state pages:" + JSON.stringify(pages));
-        if (!("Monitor5Test" == pages.name)) {
+        if (!("Monitor5" == pages.name)) {
           console.info("get Monitor5Test pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

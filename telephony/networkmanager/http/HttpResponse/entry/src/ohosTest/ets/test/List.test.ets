@@ -15,14 +15,22 @@
 
 import HttpResponseCodeTest from './HttpResponseCode.test';
 import HttpResponsePropertiesTest from './HttpResponseProperties.test';
-import EmptyTest from './Empty.test';
+import EmptyTestCheckCard from './EmptyTestCheckCard.test';
+import EmptyTestCheckNetwork from './EmptyTestCheckNetwork.test';
 import sim from '@ohos.telephony.sim';
+import connection from '@ohos.net.connection';
+ 	 
+let netHandle = connection.getDefaultNetSync();
 
 export default function testsuite() {
   if (sim.getMaxSimCount()>1){
-    HttpResponseCodeTest();
-    HttpResponsePropertiesTest();
+    if(netHandle.netId != 0){
+      HttpResponseCodeTest();
+      HttpResponsePropertiesTest();
+    } else {
+      EmptyTestCheckNetwork();
+    }
   }else{
-    EmptyTest()
+    EmptyTestCheckCard();
   }
 }

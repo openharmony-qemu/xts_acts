@@ -1876,7 +1876,7 @@ export default function streamTest() {
      * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const largeData = 'ab'.repeat(Math.floor(16384 / 2));
+      const largeData = 'ab'.repeat(Math.floor(16384 / 2).toInt());
       let writableStream = new MyWritableProperties010();
       let writeResult = writableStream.write(largeData);
       expect(writeResult).assertEqual(false);
@@ -1891,7 +1891,7 @@ export default function streamTest() {
      * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const largeData = 'ab'.repeat(Math.floor(16384 / 2));
+      const largeData = 'ab'.repeat(Math.floor(16384 / 2).toInt());
       let writableStream = new CustomWritable();
       writableStream.write(largeData);
       writableStream.write(largeData, 'utf8', mustCall(() => {
@@ -1913,7 +1913,7 @@ export default function streamTest() {
      * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      const largeData = 'ab'.repeat(Math.floor(16384 / 2));
+      const largeData = 'ab'.repeat(Math.floor(16384 / 2).toInt());
       let writableStream = new CustomWritable();
       writableStream.write(largeData);
       writableStream.on('drain', mustCall(() => {
@@ -1931,7 +1931,7 @@ export default function streamTest() {
      * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const largeData = 'ab'.repeat(Math.floor(16384 / 2));
+      const largeData = 'ab'.repeat(Math.floor(16384 / 2).toInt());
       let writableStream = new CustomWritable();
       writableStream.write(largeData);
       expect(writableStream.writable).assertEqual(true);

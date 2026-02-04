@@ -922,7 +922,7 @@ export default function pictureNdkTest() {
     beforeAll(async () => {
       isSupportHEIFDecode = 
         image.createImageSource(fileDir + '/' + 'test.jpg').supportedFormats.includes('image/heic')
-      isSupportVPE = await fs.access("/sys_prod/etc/VideoProcessingEngine/Image_SR_Model_576x576_20240402.omc").then((res: boolean) => {
+      isSupportVPE = await fs.access("/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so").then((res: boolean) => {
         if (res) {
           console.info("file exists");
           return true;

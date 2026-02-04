@@ -23,6 +23,7 @@ group("codeparsingtest") {
       "settest:ActsSetTest",
       "weaktest:ActsWeakTest",
       "builtinsarraytest:ActsBuiltinsArrayTest",
+      "builtinsarray2test:ActsBuiltinsArray2Test",
       "builtinstest:ActsBuiltinsTest",
       "builtinsupplytest:ActsBuiltinSupplyTest",
       "datetest:ActsDateTest",

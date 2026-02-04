@@ -22,11 +22,11 @@ import {
   Position,
   FontWeight
 } from '@ohos.arkui.component';
-import { Link } from '@ohos.arkui.stateManagement';
+import { PropRef } from '@ohos.arkui.stateManagement';
 
 @Component
 export struct AlphabetIndexerView {
-  private _position: Position={x:0,y:0} as Position;
+  @PropRef _position!: Position;
   private componentKey: string = '';
   private value: string[] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
     'H', 'I', 'J', 'K', 'L', 'M', 'N',

@@ -46,11 +46,11 @@ export default function SecurityCipherSM2SM4Jsunit() {
      * @tc.desc   the asyAlgoName is "SM4_128|CTR|NoPadding", Use the Promise Style of Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await symPromise
           .encryptAndDecryptNormalSM4Process(

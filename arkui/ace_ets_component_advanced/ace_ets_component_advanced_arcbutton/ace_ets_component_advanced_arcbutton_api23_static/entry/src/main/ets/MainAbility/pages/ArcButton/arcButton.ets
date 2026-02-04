@@ -19,7 +19,7 @@ import { Callback, BusinessError } from '@ohos.base';
 import { ComponentContent, FrameNode, Frame } from '@ohos.arkui.node';
 import { UIContext, OverlayManager, UIInspector, OverlayManagerOptions,
   PromptAction } from '@ohos.arkui.UIContext'
-import { $r, Entry, Text, Column, Component, Button, ClickEvent, LengthMetrics, Color,
+import { $r, Entry, Text, Column, Component, Button, ClickEvent, Color,
   TextAlign, List, ListItem, ListScroller, Builder, ForEach, Row, TransitionType, FlexAlign,
   ColumnOptions, Slider, SliderStyle, Divider, SliderBlockType, Path,
   SizeOptions, ResourceColor, Length, ResourceStr, Select, ArrowPosition,

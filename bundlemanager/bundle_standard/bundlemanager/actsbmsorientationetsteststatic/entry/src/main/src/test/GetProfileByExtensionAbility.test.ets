@@ -49,9 +49,9 @@ export default function getProfileByExtensionAbility() {
      * @tc.desc   Check the invalid moduleName (by promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('getProfileByExtensionAbilityInvalidModulePro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('getProfileByExtensionAbilityInvalidModulePro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       await manager.getProfileByExtensionAbility(MODULE_NAME_TEST, ABILITY_NAME, METADATA_NAME).then((data: Array<string>): void =>  {
         hilog.info(domain, tag, "getProfileByExtensionAbilityInvalidModulePro_static success" + JSON.stringify(data))
         expect(data).assertFail()
@@ -69,9 +69,9 @@ export default function getProfileByExtensionAbility() {
      * @tc.desc   Check the empty moduleName (by promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('getProfileByExtensionAbilityEmptyModulePro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('getProfileByExtensionAbilityEmptyModulePro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       await manager.getProfileByExtensionAbility('', ABILITY_NAME, METADATA_NAME).then((data: Array<string>): void =>  {
         hilog.info(domain, tag, "getProfileByExtensionAbilityEmptyModulePro_static success" + JSON.stringify(data))
         expect(data).assertFail()

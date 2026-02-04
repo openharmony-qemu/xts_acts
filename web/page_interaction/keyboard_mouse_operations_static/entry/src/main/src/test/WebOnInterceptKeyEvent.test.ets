@@ -44,9 +44,9 @@ export default function webOnInterceptKeyEvent() {
      * @tc.desc   test onInterceptKeyEvent when return true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testOnInterceptKeyEventStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void):Promise<void> => {
+    it('testOnInterceptKeyEventStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void):Promise<void> => {
       await Utils.msSleep(1000)
       let driver = Driver.create();
       Utils.emitEvent("emitOnInterceptKeyEvent002", 10)

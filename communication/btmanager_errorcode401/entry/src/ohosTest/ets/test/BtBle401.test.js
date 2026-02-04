@@ -21,7 +21,7 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
 let gattServer = null;
 
 function sleep(delay) {
-     return new Promise(resovle => setTimeout(resovle, delay));
+    return new Promise(resolve => setTimeout(resolve, delay));
 }
 
 async function openPhone() {
@@ -95,7 +95,7 @@ export default function btBleError401Test() {
           beforeEach(async function (done) {
                console.info('beforeEach start');
                await tryToEnableBt();
-               console.info('beforeAll end');
+               console.info('beforeEach end');
                done();
           })
           afterEach(function () {
@@ -104,7 +104,11 @@ export default function btBleError401Test() {
           afterAll(async function (done) {
                console.info('afterAll start');
                await sleep(900);
-               gattServer.close();
+               if(gattServer !=null){
+                 gattServer.close();
+                 console.info('delete gattServer');
+               };
+               await tryToEnableBt();
                console.info('afterAll end');
                done();
           })

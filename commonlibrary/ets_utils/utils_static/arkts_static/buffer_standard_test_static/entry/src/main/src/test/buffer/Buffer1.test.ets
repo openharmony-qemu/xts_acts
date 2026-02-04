@@ -3686,7 +3686,7 @@ export default function BufferTest1() {
         expect(num).assertEqual(2);
         let str = '';
         for (const codePoint of buf2) {
-          str += String.fromCharCode(codePoint);
+          str += String.fromCharCode(codePoint.toInt());
         }
         expect(str).assertEqual("12")
       } catch (err: BusinessError) {

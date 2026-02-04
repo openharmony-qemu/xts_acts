@@ -67,9 +67,9 @@ export default function webenableFollowSystemFontWeightJsunit() {
      * @tc.desc   test enableSmoothDragResize01 interface when choose callback mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('enableFollowSystemFontWeightStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('enableFollowSystemFontWeightStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:()=>void):Promise<void> =>{
       Utils.emitEvent('emitenableFollowSystemFontWeight01', 10)
       await Utils.msSleep(2000);

@@ -907,11 +907,11 @@ export default function BuiltinArrayindexOfTest() {
     it('testBuiltinArrayFilter10008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBuiltinArrayFilter10008";
       try {
-        const arr: FixedArray<byte> = [0 as byte, 255 as byte, 1 as byte];
-        const result = filter(arr, (v: byte) => v === 0 as byte || v === 255 as byte);
+        const arr: FixedArray<byte> = [0 as byte, (255).toByte(), 1 as byte];
+        const result = filter(arr, (v: byte) => v === 0 as byte || v === (255).toByte());
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(0 as byte);
-        expect(result[1]).assertEqual(255 as byte);
+        expect(result[1]).assertEqual((255).toByte());
       } catch (err: BusinessError) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();

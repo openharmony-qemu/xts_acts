@@ -60,6 +60,7 @@ import PhotoAccessHelperReadonlyCommentSupp from './photoAccess/PhotoAccessHelpe
 import photoFetchResultGetObjectByPositionTestSupp from './photoAccess/PhotoFetchResultGetObjectByPosition.test';
 import requestImageTest from './photoAccess/RequestImage.test';
 import PhotoGetAssetsTestSupp from './photoAccess/PhotoGetAssets.test';
+import PhotoAssertHelperSuppTest from './photoAccess/PhotoAssertHelperSuppTest.test';
 
 export default function testsuite() {
   PhotoAccessMediaAssetChangeRequestSuppTest();
@@ -118,4 +119,5 @@ export default function testsuite() {
   photoFetchResultGetObjectByPositionTestSupp();
   requestImageTest();
   PhotoGetAssetsTestSupp();
+  PhotoAssertHelperSuppTest();
 }

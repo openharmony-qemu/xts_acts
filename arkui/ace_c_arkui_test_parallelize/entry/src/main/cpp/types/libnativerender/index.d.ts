@@ -23,3 +23,15 @@ export const XComponentCreateNativeNode: (a: Content, b: UIContext) => void;
 export const XComponentDisposeNativeNode: (a: Content) => void;
 export const XComponentTextureCreateNativeNode: (a: Content, b: UIContext) => void;
 export const XComponentTextureDisposeNativeNode: (a: Content) => void;
+// button
+export const buttonTest: (a: string) => void;
+// checkbox
+export const checkBoxTest: (a: string) => void;
+// checkboxgroup
+export const checkBoxGroupTest: (a: string) => void;
+// radio
+export const radioTest: (a: string) => void;
+// slider
+export const sliderTest: (a: string) => void;
+// toggle
+export const toggleTest: (a: string) => void;

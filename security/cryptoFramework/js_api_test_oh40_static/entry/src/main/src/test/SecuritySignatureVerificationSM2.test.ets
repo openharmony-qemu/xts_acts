@@ -46,11 +46,11 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
      * @tc.desc   the asyAlgoName is "SM2_256|SM3", Use the Callback Style of Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it(
       "Security_CryptoFramework_SignatureVerificationSM2_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await asyCallback
           .signAndVerifyNormalProcess("SM2_256", "SM2_256|SM3")

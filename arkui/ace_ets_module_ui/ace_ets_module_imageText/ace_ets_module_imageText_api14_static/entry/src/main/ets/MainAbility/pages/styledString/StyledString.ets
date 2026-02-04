@@ -16,7 +16,7 @@
 import { image } from '@kit.ImageKit'
 import { LengthMetrics } from '@kit.ArkUI'
 import { Entry, Component, TextController, TextStyle, MutableStyledString, StyledString, StyledStringKey, Row, $r, Resource, Text, TextAlign,
-  Column, Color, SubmitEvent, Search, Button, ClickEvent, TextArea, BackgroundColorStyle, ImageAttachment, ArrayBuffer,
+  Column, Color, SubmitEvent, Search, Button, ClickEvent, TextArea, BackgroundColorStyle, ImageAttachment,
   AttachmentType,
   ImageSpanAlignment,
   ImageFit

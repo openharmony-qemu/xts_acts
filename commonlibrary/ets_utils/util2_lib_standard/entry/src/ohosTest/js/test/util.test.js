@@ -4151,14 +4151,14 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.name   testLRUCache[Symbol.iterator]001
+     * @tc.name   testLRUCacheSymbol001
      * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_[SYMBOL.ITERATOR]_001
      * @tc.desc   Returns a two - dimensional array in the form of key - value pairs.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLRUCache[Symbol.iterator]001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testLRUCacheSymbol001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
         that.put('string','abc')
         that.put('abc',20)
@@ -4174,14 +4174,14 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.name   testLRUCache[Symbol.iterator]002
+     * @tc.name   testLRUCacheSymbol002
      * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_[SYMBOL.ITERATOR]_002
      * @tc.desc   Returns a two - dimensional array in the form of key - value pairs.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLRUCache[Symbol.iterator]002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testLRUCacheSymbol002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
         that.put(1,2)
         that.put(3,10)
@@ -4199,14 +4199,14 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.name   testLRUCache[Symbol.iterator]003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_[SYMBOL.ITERATOR]_003
+     * @tc.name   testLRUCacheSymbol003
+     * @tc.number testLRUCacheSymbol003
      * @tc.desc   Returns a two - dimensional array in the form of key - value pairs.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLRUCache[Symbol.iterator]003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testLRUCacheSymbol003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
         that.put(1,2)
         that.put(3,10)
@@ -4225,14 +4225,14 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.name   testLRUCache[Symbol.iterator]004
+     * @tc.name   testLRUCacheSymbol004
      * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_[SYMBOL.ITERATOR]_004
      * @tc.desc   Returns a two - dimensional array in the form of key - value pairs.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLRUCache[Symbol.iterator]004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testLRUCacheSymbol004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
         that.put(1,2)
         that.put(3,10)
@@ -4253,14 +4253,14 @@ describe('LRUCacheTest', function () {
     })
 
     /**
-     * @tc.name   testLRUCache[Symbol.iterator]005
+     * @tc.name   testLRUCacheSymbol005
      * @tc.number SUB_COMMONLIBRARY_UTIL_LRU_CACHE_[SYMBOL.ITERATOR]_005
      * @tc.desc   Returns a two - dimensional array in the form of key - value pairs.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLRUCache[Symbol.iterator]005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testLRUCacheSymbol005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var that = new util.LRUCache()
         that.put(1,2)
         that.put(3,10)

@@ -15,7 +15,7 @@
  */
 import image from '@ohos.multimedia.image'
 import {
-  Entry,Uint8Array,
+  Entry,
   Component,
   Column,
   ColumnOptions,

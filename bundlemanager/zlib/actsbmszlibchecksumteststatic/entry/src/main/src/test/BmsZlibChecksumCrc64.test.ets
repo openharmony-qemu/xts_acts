@@ -40,9 +40,9 @@ export default function bmsZlibChecksumCrc64Test() {
      * @tc.desc    test crc64(0,bufEmpty)
      * @tc.size    MediumTest
      * @tc.type    Function
-     * @tc.level   Level2
+     * @tc.level   LEVEL0
      */
-    it("Sub_Bms_Zlib_Checksum_Check_static_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it("Sub_Bms_Zlib_Checksum_Check_static_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let crc: long = 0;

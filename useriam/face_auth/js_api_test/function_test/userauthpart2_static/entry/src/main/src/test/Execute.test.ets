@@ -47,7 +47,7 @@ const widgetParam: userAuth.WidgetParam  = {
   uiContext: undefined,
 };
 
-function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | string | int)[]): Promise<void> {
+async function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | string | int)[]): Promise<void> {
   return new Promise<void>((resolve, reject) => {
     try {
       const userAuthInstance: userAuth.UserAuthInstance =
@@ -81,7 +81,7 @@ function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | s
   })
 }
 
-function userAuthPromiseFace(...args: (userAuth.AuthParam | userAuth.WidgetParam | string | int)[]): Promise<void> {
+async function userAuthPromiseFace(...args: (userAuth.AuthParam | userAuth.WidgetParam | string | int)[]): Promise<void> {
   return new Promise<void>((resolve, reject) => {
     try {
       const userAuthInstance: userAuth.UserAuthInstance =
