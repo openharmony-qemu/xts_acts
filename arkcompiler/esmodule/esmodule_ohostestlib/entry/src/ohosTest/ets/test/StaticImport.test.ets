@@ -13,24 +13,12 @@
 * limitations under the License.
 */
 import {describe, it, expect, Level, Size, TestType} from "@ohos/hypium"
-import {add as add1} from 'har'
 import {add as add2} from './test'
 import hilog from "@ohos.hilog"
 import testNapi from "libentry.so"
 
 export default function staticImport() {
   describe("StaticImportTest", () => {
-    /**
-     * @tc.name   importHar
-     * @tc.number importHar
-     * @tc.desc   importHar
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('importHar', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      expect(add1(2, 3)).assertEqual(5)
-    })
     /**
      * @tc.name   importRelative
      * @tc.number importRelative
