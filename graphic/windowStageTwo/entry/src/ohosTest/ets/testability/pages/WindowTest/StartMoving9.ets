@@ -20,7 +20,7 @@ import { common } from '@kit.AbilityKit';
 let caseName: string = 'teststartMovingwithOffsetXandOffsetYRepeated';
 @Entry
 @Component
-struct StartMoving7 {
+struct StartMoving9 {
   @State message: string = 'startMoving'
 
   build() {

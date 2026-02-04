@@ -20,7 +20,7 @@ import { common } from '@kit.AbilityKit';
 
 @Entry
 @Component
-struct StartMoving7 {
+struct StartMoving8 {
   @State message: string = 'startMoving'
 
   build() {
