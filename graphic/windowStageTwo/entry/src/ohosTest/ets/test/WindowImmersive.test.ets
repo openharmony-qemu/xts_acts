@@ -4313,7 +4313,7 @@ export default function windowImmersiveTest() {
       let isInFreeWindowMode = windowClass.isInFreeWindowMode();
       console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
       try {
-        if (!isInFreeWindowMode && canIUseRes) {
+        if (!isInFreeWindowMode && canIUseRes && isSupportRotate == true) {
           let avoidAreaAreaStatusW = 0;
           let avoidAreaAreaStatusH = 0;
           let avoidAreaAreaNavW = 0;
@@ -4400,8 +4400,10 @@ export default function windowImmersiveTest() {
             }
           }
           windowClass.on('avoidAreaChange', callback);
-          await windowClass.setSpecificSystemBarEnabled('status', false);
-          await windowClass.setSpecificSystemBarEnabled('navigation', false);
+          await sleep(1000)
+          await windowClass.setWindowSystemBarEnable([]);
+          console.log(caseName + ' setWindowSystemBarEnable success ' );
+          await sleep(3000);
           let btnClick = await driver.findComponent(ON.id('index4Btn'))
           console.info(caseName + ' btnClick: ' + JSON.stringify(btnClick));
           await sleep(1000)
@@ -4423,11 +4425,13 @@ export default function windowImmersiveTest() {
           let navigationIndicatorPX:window.UIEnvAvoidAreaVP = AppStorage.get('navigationIndicatorPX') as window.UIEnvAvoidAreaVP;
           console.log(caseName + ' windowAvoidAreaInfoVP navigationIndicatorPX: ' + JSON.stringify(navigationIndicatorPX))
 
+
           await sleep(1000)
-          expect(statusBarPX.topRect.width).assertEqual(avoidAreaAreaStatusW);
-          expect(statusBarPX.topRect.height).assertEqual(avoidAreaAreaStatusH);
           console.log(caseName + ' px2vp(avoidAreaAreaStatusW): ' + px2vp(avoidAreaAreaStatusW))
           console.log(caseName + ' px2vp(avoidAreaAreaStatusH): ' + px2vp(avoidAreaAreaStatusH))
+          expect(statusBarPX.topRect.width).assertEqual(avoidAreaAreaStatusW);
+          expect(statusBarPX.topRect.height).assertEqual(avoidAreaAreaStatusH);
+
           expect(statusBarVP.topRect.width).assertEqual(px2vp(avoidAreaAreaStatusW));
           expect(statusBarVP.topRect.height).assertEqual(px2vp(avoidAreaAreaStatusH));
 

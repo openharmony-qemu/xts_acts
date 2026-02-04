@@ -37,21 +37,21 @@ struct StartMoving7 {
               let windowClass = AppStorage.get('windowClass2') as window.Window;
               let windowRect = windowClass.getWindowProperties().windowRect;
               console.log(`${caseName} subWindowClass windowRect: ${JSON.stringify(windowRect)}`);
-              let offSetX = windowRect.left + windowRect.width / 2;
+              let offSetX = Math.round(windowRect.width / 2);
               console.log(`${caseName}  offSetX: ${JSON.stringify(offSetX)}`);
-              let offSetY = windowRect.top + windowRect.height / 2;
+              let offSetY = Math.round(windowRect.height / 2);
               console.log(`${caseName}  offSetY: ${JSON.stringify(offSetY)}`);
                 windowClass.startMoving(offSetX, offSetY).then(async () => {
                   await windowClass.startMoving(offSetX, offSetY);
                   this.message = 'startMoving success'
                   console.info('start moving successfully');
                 }).catch((err: BusinessError) => {
+                  console.error('start moving : ' + err.code + ',message:' + err.message)
                   if (err.code == 801) {
                     this.message = 'startMoving 801'
                   } else if (err.code == 1300001) {
                     this.message = 'startMoving 1300001'
                   }
-                  console.error('start moving : ' + err.code + ',message:' + err.message)
                 })
             } catch (exception) {
               console.error(`Failed to start drag window. Cause code: ${exception.code}, message: ${exception.message}`)
