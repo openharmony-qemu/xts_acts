@@ -37,7 +37,7 @@ export default function getIdUndefinedTest() {
         }
       } catch (err) {
         console.error('push getIdUndefinedTest page error:' + JSON.stringify(err));
-        expect().assertFail('页面跳转失败'); 
+        expect().assertFail(); 
       }
       console.info('getIdUndefinedTest beforeEach end');
       done();

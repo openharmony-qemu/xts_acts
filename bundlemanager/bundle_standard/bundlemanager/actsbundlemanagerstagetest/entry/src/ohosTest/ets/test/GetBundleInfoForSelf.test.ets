@@ -122,7 +122,7 @@ export default function getBundleInfoForSelf() {
         expect(data.appInfo.iconId).assertLarger(0);
         expect(data.appInfo.process).assertEqual(BUNDLE_NAME);
         expect(data.appInfo.codePath).assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test");
-        expect(data.appInfo.removable).assertTrue(0);
+        expect(data.appInfo.removable).assertTrue();
         expect(data.appInfo.accessTokenId).assertLarger(0);
         expect(data.appInfo.uid).assertLarger(0);
         expect(data.appInfo.iconResource.bundleName).assertEqual(BUNDLE_NAME);
@@ -177,7 +177,7 @@ export default function getBundleInfoForSelf() {
         expect(data.appInfo.iconId).assertLarger(0);
         expect(data.appInfo.process).assertEqual(BUNDLE_NAME);
         expect(data.appInfo.codePath).assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test");
-        expect(data.appInfo.removable).assertTrue(0);
+        expect(data.appInfo.removable).assertTrue();
         expect(data.appInfo.accessTokenId).assertLarger(0);
         expect(data.appInfo.uid).assertLarger(0);
         expect(data.appInfo.iconResource.bundleName).assertEqual(BUNDLE_NAME);
@@ -1376,7 +1376,7 @@ export default function getBundleInfoForSelf() {
       expect(data.appInfo.iconId).assertLarger(0);
       expect(data.appInfo.process).assertEqual(BUNDLE_NAME);
       expect(data.appInfo.codePath).assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test");
-      expect(data.appInfo.removable).assertTrue(0);
+      expect(data.appInfo.removable).assertTrue();
       expect(data.appInfo.accessTokenId).assertLarger(0);
       expect(data.appInfo.uid).assertLarger(0);
       expect(data.appInfo.iconResource.bundleName).assertEqual(BUNDLE_NAME);
@@ -1939,7 +1939,7 @@ export default function getBundleInfoForSelf() {
       expect(data.appInfo.iconId).assertLarger(0);
       expect(data.appInfo.process).assertEqual(BUNDLE_NAME);
       expect(data.appInfo.codePath).assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test");
-      expect(data.appInfo.removable).assertTrue(0);
+      expect(data.appInfo.removable).assertTrue();
       expect(data.appInfo.accessTokenId).assertLarger(0);
       expect(data.appInfo.uid).assertLarger(0);
       expect(data.appInfo.iconResource.bundleName).assertEqual(BUNDLE_NAME);
