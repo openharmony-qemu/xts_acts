@@ -538,6 +538,11 @@ export default function testLightWeightSetTest02() {
       console.log(TAG + 'start');
       let lightWeightSet = new LightWeightSet<string>();
       lightWeightSet.increaseCapacityTo(32768);
+      for (let i = 0; i < 32768; i++) {
+        lightWeightSet.add('a');
+      }
+
+      expect(lightWeightSet.length).assertEqual(1);
       console.log(TAG + 'end');
     });
 
@@ -563,27 +568,6 @@ export default function testLightWeightSetTest02() {
       console.log(TAG + 'end');
     });
 
-    /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0027
-     * @tc.name      testLightWeightSetTest02Chapter0027
-     * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with int boundary upper value
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    /**it("testLightWeightSetTest02Chapter0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    const TAG = 'testLightWeightSetTest02Chapter0027';
-    console.log(TAG + 'start');
-    let lightWeightSet = new LightWeightSet<string>();
-    let result:boolean = false;
-    try{
-    lightWeightSet.increaseCapacityTo(2147483647);
-    }catch(e){
-    result = true;
-    }
-    expect(result).assertTrue();
-    console.log(TAG + 'end');
-    });**/
 
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0028

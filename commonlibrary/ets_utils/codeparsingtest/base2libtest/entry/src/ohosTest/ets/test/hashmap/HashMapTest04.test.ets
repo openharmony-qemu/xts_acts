@@ -721,44 +721,6 @@ export default function HashMapTest04Test() {
     });
 
 
-
-    /**
-     * @tc.number    SUB_HASHMAP_TEST_0415
-     * @tc.name      testHashMap0316
-     * @tc.desc      Verify that deleting non-configurable properties of objects stored in HashMap will not succeed,
-     *               and the property value remains unchanged
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testHashMap0315", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testHashMap0315';
-      console.log(TAG + ' start');
-
-     //
-
-      console.log(TAG + ' end');
-    });
-
-
-    /**
-     * @tc.number    SUB_HASHMAP_TEST_0416
-     * @tc.name      testHashMap0317
-     * @tc.desc      Verify that the delete operator can remove globally declared functions
-     *               (typeof becomes "undefined")
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testHashMap0317", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testHashMap0317';
-      console.log(TAG + ' start');
-      //删除函数
-
-      console.log(TAG + ' end');
-    });
-
-
     /**
      * @tc.number    SUB_HASHMAP_TEST_0417
      * @tc.name      testHashMap0318

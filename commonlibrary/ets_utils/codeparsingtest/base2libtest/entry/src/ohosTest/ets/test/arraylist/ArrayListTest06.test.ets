@@ -649,8 +649,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayDuplicateElements0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayDuplicateElements0029';
+    it("testArrayList06Chapter0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0029';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number>;
       arrayList = new ArrayList<number>();
@@ -839,8 +839,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayBooleanLikeElements0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayBooleanLikeElements0036';
+    it("testArrayList06Chapter0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0036';
       console.log(TAG + ' start');
       const booleanLikeList: ArrayList<boolean | number | string | null | undefined> = new ArrayList<boolean | number | string | null | undefined>();
       booleanLikeList.add(true);

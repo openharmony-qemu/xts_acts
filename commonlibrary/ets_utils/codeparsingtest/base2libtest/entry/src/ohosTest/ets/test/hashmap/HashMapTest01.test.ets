@@ -43,12 +43,12 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.name   SUB_HASHMAP_TEST_0100
-     * @tc.number testHashMap0001
-     * @tc.desc   Testing HashMap length is 0
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number   SUB_HASHMAP_TEST_0100
+     * @tc.name     testHashMap0001
+     * @tc.desc     Testing HashMap length is 0
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL0
      */
     it('testHashMap0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ()=> {
       const TAG = 'testHashMap0001';

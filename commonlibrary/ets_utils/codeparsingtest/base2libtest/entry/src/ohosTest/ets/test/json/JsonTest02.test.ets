@@ -156,7 +156,7 @@ export default function Json02Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_0700
+     * @tc.number    SUB_JSON_TEST02_0700
      * @tc.name      testJson02Chapter0007
      * @tc.desc      Test JSON.stringify with replacer array and space number
      * @tc.size      MediumTest
@@ -1285,7 +1285,7 @@ export default function Json02Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_6100
+     * @tc.number    SUB_JSON_TEST02_6100
      * @tc.name      testJson02Chapter0061
      * @tc.desc      Test JSON.stringify with different numeric types and boundaries
      * @tc.size      MediumTest

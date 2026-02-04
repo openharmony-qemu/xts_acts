@@ -1868,8 +1868,8 @@ export default function testLightWeightSetTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0085
-     * @tc.name      testLightWeightSetTest02Chapter0085
+     * @tc.number    SUB_LIGHTWEIGHTSET_TEST01_0085
+     * @tc.name      testLightWeightSetTest01Chapter0085
      * @tc.desc      Verify LightWeightSet's has method with number 0
      * @tc.size      MediumTest
      * @tc.type      Function

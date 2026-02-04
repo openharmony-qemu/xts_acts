@@ -493,7 +493,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0469
-     * @tc.name      testHashMap370
+     * @tc.name      testHashMap0370
      * @tc.desc      Verify the integrity of the RegExp objects stored in the HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
