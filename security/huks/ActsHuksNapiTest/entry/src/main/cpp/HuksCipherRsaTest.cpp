@@ -1,0 +1,334 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include "include/HuksCipherRsaTest.h"
+#include <huks/native_huks_api.h>
+#include  <huks/native_huks_param.h>
+#include <huks/native_huks_type.h>
+#include <string>
+#include <cstring>
+#include <cstdlib>
+
+namespace Acts {
+namespace Huks {
+
+// Constants and test data
+static const uint32_t RSA_COMMON_SIZE = 1024;
+static const uint32_t MAX_UPDATE_SIZE = 64;
+static const uint32_t TIMES = 4;
+static const uint32_t MAX_OUTDATA_SIZE = MAX_UPDATE_SIZE * TIMES;
+
+static const std::string g_inData_32 = "RSA_32_ttttttttttttttttttttttttt";
+
+// Helper function: Memory comparison
+static int32_t HksMemCmp(const void *ptr1, const void *ptr2, uint32_t size)
+{
+    return memcmp(ptr1, ptr2, size);
+}
+
+// Helper function: Free memory
+static void HksFree(void *ptr)
+{
+    if (ptr != nullptr) {
+        free(ptr);
+    }
+}
+
+// Helper function: Malloc and check blob data
+static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob *blob, const uint32_t blobSize)
+{
+    OH_Huks_Result ret;
+    ret.errorCode = (int32_t)OH_HUKS_SUCCESS;
+    
+    blob->data = (uint8_t *)malloc(blobSize);
+    if (blob->data == nullptr) {
+        ret.errorCode = (int32_t)OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+    }
+    return ret;
+}
+
+// Helper function: Initialize ParamSet
+static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet **paramSet, const struct OH_Huks_Param *params,
+                                    uint32_t paramCount)
+{
+    OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return ret;
+    }
+
+    ret = OH_Huks_AddParams(*paramSet, params, paramCount);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_Huks_FreeParamSet(paramSet);
+        return ret;
+    }
+
+    ret = OH_Huks_BuildParamSet(paramSet);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_Huks_FreeParamSet(paramSet);
+        return ret;
+    }
+
+    return ret;
+}
+
+// Helper function: Test update and finish
+static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob *handle, const struct OH_Huks_ParamSet *paramSet,
+                                       uint32_t purpose, const struct OH_Huks_Blob *inData,
+                                       struct OH_Huks_Blob *outData)
+{
+    struct OH_Huks_Result ret;
+    ret.errorCode = OH_HUKS_SUCCESS;
+
+    // For RSA encryption/decryption, we process data in one update and finish
+    if (inData->size <= MAX_UPDATE_SIZE) {
+        // Less than max segment size
+        struct OH_Huks_Blob tmpOutData = {.size = MAX_OUTDATA_SIZE, .data = nullptr};
+        if (MallocAndCheckBlobData(&tmpOutData, tmpOutData.size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
+            ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+            return ret;
+        }
+        
+        ret = OH_Huks_UpdateSession(handle, paramSet, inData, &tmpOutData);
+        HksFree(tmpOutData.data);
+        if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+            return ret;
+        }
+        
+        struct OH_Huks_Blob tmpInData = {.size = 0, .data = nullptr};
+        if (MallocAndCheckBlobData(&tmpInData, MAX_UPDATE_SIZE).errorCode != (int32_t)OH_HUKS_SUCCESS) {
+            ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+            return ret;
+        }
+
+        if (purpose == OH_HUKS_KEY_PURPOSE_VERIFY) {
+            ret = OH_Huks_FinishSession(handle, paramSet, outData, &tmpInData);
+        } else {
+            ret = OH_Huks_FinishSession(handle, paramSet, &tmpInData, outData);
+        }
+        HksFree(tmpInData.data);
+        if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+            return ret;
+        }
+    } else {
+        // Process in segments
+        struct OH_Huks_Blob inDataSeg = *inData;
+        inDataSeg.size = MAX_UPDATE_SIZE;
+
+        uint8_t *lastPtr = inData->data + inData->size - 1;
+        struct OH_Huks_Blob outDataSeg = {.size = MAX_OUTDATA_SIZE, .data = nullptr};
+        uint8_t *cur = outData->data;
+        outData->size = 0;
+
+        bool isFinished = false;
+
+        while (inDataSeg.data <= lastPtr) {
+            if (inDataSeg.data + MAX_UPDATE_SIZE <= lastPtr) {
+                outDataSeg.size = MAX_OUTDATA_SIZE;
+            } else {
+                isFinished = true;
+                inDataSeg.size = lastPtr - inDataSeg.data + 1;
+                break;
+            }
+            
+            if (MallocAndCheckBlobData(&outDataSeg, outDataSeg.size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
+                ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+                return ret;
+            }
+            
+            ret = OH_Huks_UpdateSession(handle, paramSet, &inDataSeg, &outDataSeg);
+            if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+                HksFree(outDataSeg.data);
+                return ret;
+            }
+            
+            if (outDataSeg.size != 0) {
+                memcpy(cur, outDataSeg.data, outDataSeg.size);
+                cur += outDataSeg.size;
+                outData->size += outDataSeg.size;
+            }
+            HksFree(outDataSeg.data);
+            inDataSeg.data += MAX_UPDATE_SIZE;
+        }
+
+        struct OH_Huks_Blob outDataFinish = {inData->size * 2, nullptr};
+        outDataFinish.data = (uint8_t *)malloc(outDataFinish.size);
+        if (outDataFinish.data == nullptr) {
+            ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+            return ret;
+        }
+
+        if (!isFinished) {
+            ret = OH_Huks_UpdateSession(handle, paramSet, &inDataSeg, &outDataFinish);
+            if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+                HksFree(outDataFinish.data);
+                return ret;
+            }
+            
+            if (outDataFinish.size != 0) {
+                memcpy(cur, outDataFinish.data, outDataFinish.size);
+                cur += outDataFinish.size;
+                outData->size += outDataFinish.size;
+            }
+            HksFree(outDataFinish.data);
+            
+            outDataFinish.size = inData->size * 2;
+            outDataFinish.data = (uint8_t *)malloc(outDataFinish.size);
+            if (outDataFinish.data == nullptr) {
+                ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+                return ret;
+            }
+        }
+
+        struct OH_Huks_Blob tmpInData = {.size = 0, .data = nullptr};
+        if (purpose == OH_HUKS_KEY_PURPOSE_VERIFY) {
+            ret = OH_Huks_FinishSession(handle, paramSet, &outDataFinish, &tmpInData);
+        } else {
+            ret = OH_Huks_FinishSession(handle, paramSet, &tmpInData, &outDataFinish);
+        }
+        
+        if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+            HksFree(outDataFinish.data);
+            return ret;
+        }
+        
+        if (outDataFinish.size != 0) {
+            memcpy(cur, outDataFinish.data, outDataFinish.size);
+            outData->size += outDataFinish.size;
+        }
+        HksFree(outDataFinish.data);
+    }
+
+    return ret;
+}
+
+// Helper function: RSA Cipher Test Encrypt
+static OH_Huks_Result HksRsaCipherTestEncrypt(const struct OH_Huks_Blob *keyAlias,
+                                               const struct OH_Huks_ParamSet *encryptParamSet,
+                                               const struct OH_Huks_Blob *inData, struct OH_Huks_Blob *cipherText)
+{
+    uint8_t handleE[sizeof(uint64_t)] = {0};
+    struct OH_Huks_Blob handleEncrypt = {sizeof(uint64_t), handleE};
+    OH_Huks_Result ret = OH_Huks_InitSession(keyAlias, encryptParamSet, &handleEncrypt, nullptr);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return ret;
+    }
+
+    ret = TestUpdateFinish(&handleEncrypt, encryptParamSet, OH_HUKS_KEY_PURPOSE_ENCRYPT, inData, cipherText);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return ret;
+    }
+    
+    int32_t ret1 = HksMemCmp(inData->data, cipherText->data, inData->size);
+    if (ret1 == (int32_t)OH_HUKS_SUCCESS) {
+        ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+        return ret;
+    }
+
+    return ret;
+}
+
+// Helper function: RSA Cipher Test Decrypt
+static OH_Huks_Result HksRsaCipherTestDecrypt(const struct OH_Huks_Blob *keyAlias,
+                                               const struct OH_Huks_ParamSet *decryptParamSet,
+                                               const struct OH_Huks_Blob *cipherText, struct OH_Huks_Blob *plainText,
+                                               const struct OH_Huks_Blob *inData)
+{
+    uint8_t handleD[sizeof(uint64_t)] = {0};
+    struct OH_Huks_Blob handleDecrypt = {sizeof(uint64_t), handleD};
+    OH_Huks_Result ret = OH_Huks_InitSession(keyAlias, decryptParamSet, &handleDecrypt, nullptr);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return ret;
+    }
+
+    ret = TestUpdateFinish(&handleDecrypt, decryptParamSet, OH_HUKS_KEY_PURPOSE_DECRYPT, cipherText, plainText);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return ret;
+    }
+    
+    int32_t ret1 = HksMemCmp(inData->data, plainText->data, inData->size);
+    if (ret1 != (int32_t)OH_HUKS_SUCCESS) {
+        ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+        return ret;
+    }
+
+    return ret;
+}
+
+// Helper function: RSA Cipher Test Case
+static OH_Huks_Result HksRsaCipherTestCase(const struct OH_Huks_Blob *keyAlias, struct OH_Huks_ParamSet *genParamSet,
+                                            struct OH_Huks_ParamSet *encryptParamSet,
+                                            struct OH_Huks_ParamSet *decryptParamSet,
+                                            const struct OH_Huks_Blob *inData)
+{
+    /* 1. Generate Key */
+    OH_Huks_Result ret = OH_Huks_GenerateKeyItem(keyAlias, genParamSet, nullptr);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return ret;
+    }
+
+    /* 2. Export Public Key */
+    uint8_t tmpPublicKey[OH_HUKS_RSA_KEY_SIZE_1024] = {0};
+    struct OH_Huks_Blob publicKey = {OH_HUKS_RSA_KEY_SIZE_1024, (uint8_t *)tmpPublicKey};
+    ret = OH_Huks_ExportPublicKeyItem(keyAlias, genParamSet, &publicKey);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_Huks_DeleteKeyItem(keyAlias, genParamSet);
+        return ret;
+    }
+
+    /* 3. Import Key */
+    char tmpKey[] = "RSA_Encrypt_Decrypt_KeyAlias";
+    struct OH_Huks_Blob newKeyAlias = {.size = static_cast<uint32_t>(strlen(tmpKey)), .data = (uint8_t *)tmpKey};
+    ret = OH_Huks_ImportKeyItem(&newKeyAlias, encryptParamSet, &publicKey);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_Huks_DeleteKeyItem(keyAlias, genParamSet);
+        return ret;
+    }
+
+    /* 4. Encrypt Three Stage */
+    uint8_t cipher[RSA_COMMON_SIZE] = {0};
+    struct OH_Huks_Blob cipherText = {RSA_COMMON_SIZE, cipher};
+    ret = HksRsaCipherTestEncrypt(&newKeyAlias, encryptParamSet, inData, &cipherText);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_Huks_DeleteKeyItem(keyAlias, genParamSet);
+        OH_Huks_DeleteKeyItem(&newKeyAlias, encryptParamSet);
+        return ret;
+    }
+
+    /* 5. Decrypt Three Stage */
+    uint8_t plain[RSA_COMMON_SIZE] = {0};
+    struct OH_Huks_Blob plainText = {RSA_COMMON_SIZE, plain};
+    ret = HksRsaCipherTestDecrypt(keyAlias, decryptParamSet, &cipherText, &plainText, inData);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_Huks_DeleteKeyItem(keyAlias, genParamSet);
+        OH_Huks_DeleteKeyItem(&newKeyAlias, encryptParamSet);
+        return ret;
+    }
+
+    /* 6. Delete Key */
+    OH_Huks_Result deleteRet1 = OH_Huks_DeleteKeyItem(keyAlias, genParamSet);
+    OH_Huks_Result deleteRet2 = OH_Huks_DeleteKeyItem(&newKeyAlias, encryptParamSet);
+    
+    if (deleteRet1.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return deleteRet1;
+    }
+    if (deleteRet2.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return deleteRet2;
+    }
+    
+    return ret;
+}
+
+} // namespace Huks
+} // namespace Acts
