@@ -87,7 +87,6 @@ struct BackgroundExample {
         } as BackgroundEffectOptions)
     }
     .width(200).height(200)
-    .background(this.renderBackground, undefined)
     .backgroundColor(Color.Gray)
 
   }
