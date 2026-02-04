@@ -21,4 +21,10 @@ ohos_js_app_suite("ActsBmsAccessTokenTest") {
   hap_name = "ActsBmsAccessTokenTest"
   subsystem_name = "bundlemanager"
   part_name = "bundle_framework"
+  deps = ["../sceneProject/bmsaccesstokenone:bmsAccessTokenTest1",
+  "../sceneProject/bmsaccesstokentwo:bmsAccessTokenTest2",
+  "../sceneProject/bmsaccesstokenthree:bmsAccessTokenTest3",
+  "../sceneProject/bmsaccesstokenfour:bmsAccessTokenTest4",
+  "../sceneProject/bmsaccesstokenfive:bmsAccessTokenTest5"]
+
 }
