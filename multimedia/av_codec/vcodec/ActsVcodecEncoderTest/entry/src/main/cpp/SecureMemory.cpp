@@ -27,7 +27,6 @@ int SecureMemset(void *dest, size_t destMax, int value, size_t count)
     if (count > destMax) {
         return ERANGE;
     }
-
     unsigned char *ptr = static_cast<unsigned char *>(dest);
     unsigned char val = static_cast<unsigned char>(value);
     for (size_t i = 0; i < count; i++) {
@@ -50,12 +49,10 @@ int SecureMemcpy(void *dest, size_t destMax, const void *src, size_t count)
     if (count == 0) {
         return EOK;
     }
-
     if ((dest >= src && dest < static_cast<const void*>(static_cast<const char*>(src) + count)) ||
         (src >= dest && src < static_cast<const void*>(static_cast<char*>(dest) + destMax))) {
         return EINVAL;
     }
-
     unsigned char *dstPtr = static_cast<unsigned char *>(dest);
     const unsigned char *srcPtr = static_cast<const unsigned char *>(src);
     for (size_t i = 0; i < count; i++) {
@@ -63,5 +60,4 @@ int SecureMemcpy(void *dest, size_t destMax, const void *src, size_t count)
     }
     return EOK;
 }
-
 }
