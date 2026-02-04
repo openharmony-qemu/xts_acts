@@ -114,3 +114,6 @@ export const getTrackDescription: (loudness:number) => number;
 export const getTrackDescriptionOne: (loudness:number) => number;
 export const getPlaybackStatisticMetrics: (fd: number, offset: number, length: number) => Record<string, number>;
 export const getPlaybackStatisticMetricsAbnormal: () => number;
+export const avPlayerOnInfoTypeEnum: () => number;
+export const avPlayerOnInfoTypeEnum1: () => number;
+export const avPlayerBufferingTypeEnum: () => number;

@@ -407,5 +407,259 @@ export default function requestUploadJSUnit() {
       }
     });
 
+    /**
+     * @tc.name   SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0100
+     * @tc.number SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0100
+     * @tc.desc   unload callback is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0100', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0100 is starting-----------------------");
+      try{
+        request.upload(undefined, async (err, downloadTask)=>{
+          try{
+            console.info("====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0100 into callback");
+            expect().assertFail();
+          } catch (err){
+            console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0100 err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0100 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 13499999).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0200
+     * @tc.number SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0200
+     * @tc.desc   unload callback is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0200', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0200 is starting-----------------------");
+      try{
+        request.upload(null, async (err, downloadTask)=>{
+          try{
+            console.info("====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0200 into callback");
+            expect().assertFail();
+          } catch (err){
+            console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0200 err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0200 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 13499999).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0300
+     * @tc.number SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0300
+     * @tc.desc   unload promise is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0300', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0300 is starting-----------------------");
+      try{
+        await request.upload(undefined);
+        console.info("====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0300 download success");
+        expect().assertFail();
+      } catch (err){
+        console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0300 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 13499999).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0400
+     * @tc.number SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0400
+     * @tc.desc   unload promise is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0400', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0400 is starting-----------------------");
+      try{
+        await request.upload(null);
+        console.info("====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0400 download success");
+        expect().assertFail();
+      } catch (err){
+        console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0400 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 13499999).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0500
+     * @tc.number SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0500
+     * @tc.desc   upload callback data files is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0500', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0500 is starting-----------------------");
+      let uploadConfig: request.UploadConfig = {
+        url: 'http://127.0.0.1',
+        header: {
+          headers: 'http'
+        },
+        method: 'POST',
+        files: [],
+        data: []
+      };
+      try {
+        console.info("====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0500 uploadConfig = " + JSON.stringify(uploadConfig));
+        request.upload(uploadConfig, (err, uploadTask) => {
+          try {
+            console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0500 into callback: ${JSON.stringify(err)}`);
+            expect().asserFail();
+          } catch (err) {
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0500 error: ${JSON.stringify(err.message)}`);
+        expect(err.message.includes('Parameter verification failed')).assertTrue();
+        expect(uploadConfig.files.length === 0).assertTrue();
+        expect(uploadConfig.data.length === 0).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0600
+     * @tc.number SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0600
+     * @tc.desc   upload promise data files is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0600', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0600 is starting-----------------------");
+      let uploadConfig: request.UploadConfig = {
+        url: 'http://127.0.0.1',
+        header: {
+          headers: 'http'
+        },
+        method: 'POST',
+        files: [],
+        data: []
+      };
+      try {
+        await request.upload(uploadConfig);
+        console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0600 upload success`);
+        expect().assertFail();
+      } catch (err) {
+        console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0600 error: ${JSON.stringify(err.message)}`);
+        expect(err.message.includes('Parameter verification failed')).assertTrue();
+        expect(uploadConfig.files.length === 0).assertTrue();
+        expect(uploadConfig.data.length === 0).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0700
+     * @tc.number SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0700
+     * @tc.desc   upload callback data asn files property is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0700', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0700 is starting-----------------------");
+      let RequestData: ESObject = {
+        name: '',
+        value: ''
+      }
+
+      let File: request.File = {
+        filename: '',
+        name: '',
+        uri: '',
+        type: ''
+      }
+      let uploadConfig: request.UploadConfig = {
+        url: 'http://127.0.0.1',
+        header: {
+          headers: 'http'
+        },
+        method: 'POST',
+        files: [File],
+        data: [RequestData]
+      };
+      try {
+        console.info("====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0700 uploadConfig = " + JSON.stringify(uploadConfig));
+        request.upload(uploadConfig, (err, uploadTask) => {
+          try {
+            console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0700 into callback: ${JSON.stringify(err)}`);
+            expect().asserFail();
+          } catch (err) {
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0700 error: ${JSON.stringify(err.message)}`);
+        expect(err.message.includes('File path not supported or invalid')).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0800
+     * @tc.number SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0800
+     * @tc.desc   upload promise data asn files property is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0800', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0800 is starting-----------------------");
+      let RequestData: ESObject = {
+        name: '',
+        value: ''
+      }
+
+      let File: request.File = {
+        filename: '',
+        name: '',
+        uri: '',
+        type: ''
+      }
+      let uploadConfig: request.UploadConfig = {
+        url: 'http://127.0.0.1',
+        header: {
+          headers: 'http'
+        },
+        method: 'POST',
+        files: [File],
+        data: [RequestData]
+      };
+      try {
+        await request.upload(uploadConfig);
+        console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0800 upload success`);
+        expect().assertFail();
+      } catch (err) {
+        console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0800 error: ${JSON.stringify(err.message)}`);
+        expect(err.message.includes('File path not supported or invalid')).assertTrue();
+        done();
+      }
+    });
+
   })
 }

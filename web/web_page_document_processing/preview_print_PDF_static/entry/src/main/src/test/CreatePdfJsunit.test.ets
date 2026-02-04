@@ -44,9 +44,9 @@ export default function webJsunit() {
      * @tc.desc   get createPdf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SavePDFStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SavePDFStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       emitKey = 'emitSavePDF';
       Utils.emitEvent(emitKey, 10)
       await Utils.msSleep(2000);

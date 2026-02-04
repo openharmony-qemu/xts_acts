@@ -47,19 +47,10 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function HoverJsunit25() {
 
-  console.info("HoverJsunit5 beforeAll start");
-  
-  await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
-  
-
-  let uiContext = AppStorage.get<UIContext>('uiContent')!;
-
   describe('HoverJsunit25', () => {
-    beforeAll(() => {
-      console.info("HoverJsunit25 beforeAll start");
-      
+    beforeAll(async (): Promise<void> => {
+      console.info("HoverJsunit5 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
-      
     });
 
     beforeEach(async (): Promise<void> => {

@@ -406,9 +406,9 @@ export default function rectUtilsTest() {
       let other: common2D.Rect = { left: 10, top: 10, right: 20, bottom: 20 };
       try {
         let isContains1 = drawing.RectUtils.contains(rect, other);
-        expect(isContains1 + '').assertEqual('true');
+        expect(isContains1).assertEqual(true);
         let isContains2 = drawing.RectUtils.contains(other, rect);
-        expect(isContains2 + '').assertEqual('false');
+        expect(isContains2).assertEqual(false);
       } catch (e: BusinessError) {
         console.info(msg + `RectContains errorCode is: ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
@@ -431,7 +431,7 @@ export default function rectUtilsTest() {
         try {
           let isContains = drawing.RectUtils.contains(rect, other);
           console.info(msg + `isContains = ` + isContains);
-          expect(isContains + '').assertEqual('true');
+          expect(isContains).assertEqual(true);
         } catch (e: BusinessError) {
           console.info(msg + `RectContains errorCode is: ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail()

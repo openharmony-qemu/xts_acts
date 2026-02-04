@@ -98,15 +98,19 @@ struct TabsExample {
       if (data['nullFlag'] != null) {
         this.nullFlag = data['nullFlag'] as boolean;
       }
+
       if (data['dividerColor'] != null) {
         this.dividerColor = data['dividerColor'] as Color;
       }
+
       if (data['strokeWidthNum'] != null) {
         this.strokeWidthNum = data['strokeWidthNum'] as number;
       }
+
       if (data['startMarginNum'] != null) {
         this.startMarginNum = data['startMarginNum'] as number;
       }
+
       if (data['endMarginNum'] != null) {
         this.endMarginNum = data['endMarginNum'] as number;
       }
@@ -114,12 +118,15 @@ struct TabsExample {
       if (data['dividerColorRes'] != null) {
         this.dividerColorRes = data['dividerColorRes'] as Resource;
       }
+
       if (data['strokeWidthRes'] != null) {
         this.strokeWidthRes = data['strokeWidthRes'] as Resource;
       }
+
       if (data['startMarginRes'] != null) {
         this.startMarginRes = data['startMarginRes'] as Resource;
       }
+
       if (data['endMarginRes'] != null) {
         this.endMarginRes = data['endMarginRes'] as Resource;
       }

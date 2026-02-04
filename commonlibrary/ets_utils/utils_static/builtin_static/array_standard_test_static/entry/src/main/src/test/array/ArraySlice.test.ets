@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -689,7 +689,7 @@ export default function ArraySliceTest() {
      */
     it('testArraySlice027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [3, 1, 4, 2];
-      arr.sort((a, b) => a - b);
+      arr.sort((a, b) => (a - b).toInt());
       const sliced: number[] = arr.slice(1, 3);
       expect(JSON.stringify(sliced)).assertEqual(JSON.stringify([2, 3]));
     });
@@ -1170,7 +1170,7 @@ export default function ArraySliceTest() {
      */
     it('testArraySlice060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [3, 1, 4, 2];
-      arr.sort((a, b) => a - b);
+      arr.sort((a, b) => (a - b).toInt());
       const sliced: number[] = arr.slice(1, 3);
       expect(JSON.stringify(sliced)).assertEqual(JSON.stringify([2, 3]));
     });
@@ -1460,7 +1460,7 @@ export default function ArraySliceTest() {
      */
     it('testArraySlice079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 3, 4, 1];
-      arr.sort((a, b) => b - a);
+      arr.sort((a, b) => (b - a).toInt());
       const sliced: number[] = arr.slice(1, 3);
       expect(JSON.stringify(sliced)).assertEqual(JSON.stringify([4, 3]));
     });

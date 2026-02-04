@@ -75,7 +75,7 @@ export default function AudioHapticTest() {
     let sourceId_Notification = 0;
     let sourceId_Ringtone = 0;
 
-    let driveFn = () => {
+    let driveFn = async () => {
       let dr = Driver.create();
       await sleep(1000);
       let power = await dr.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
@@ -95,7 +95,7 @@ export default function AudioHapticTest() {
         })
     }
 
-    beforeAll(() => {
+    beforeAll(async () => {
       console.log(`beforeall come in`);
       testContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
       filesDir = testContext.filesDir as string | undefined | null;
@@ -141,9 +141,9 @@ export default function AudioHapticTest() {
      * @tc.desc   registerSource_Ringtone_URI
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let data = await AudioHapticManager.registerSource(Ringtone_Audio_Uri, Ringtone_Haptic_Uri);
         try {
@@ -169,9 +169,9 @@ export default function AudioHapticTest() {
      * @tc.desc   registerSource_notification_URI
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         const data = await AudioHapticManager.registerSource(Notification_Audio_Uri, Notificatio_Haptic_Uri);
         try {

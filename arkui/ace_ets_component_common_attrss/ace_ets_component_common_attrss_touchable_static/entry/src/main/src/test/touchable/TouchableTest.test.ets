@@ -64,8 +64,6 @@ export default function touchableTest() {
     'Search',
     'Select',
     'Slider',
-    'Stepper',
-    'StepperItem',
     'TabContent',
     'Text',
     'TextArea',

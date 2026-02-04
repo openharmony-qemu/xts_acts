@@ -122,6 +122,7 @@ export default function windowModalTest() {
     let isAutoWindow:string = '';
     let isPCStatus: string = '';
     let driver: Driver;
+    let isFreeWindowMode = false;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
@@ -140,6 +141,11 @@ export default function windowModalTest() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
       driver = Driver.create();
       
     })
@@ -1468,9 +1474,9 @@ export default function windowModalTest() {
           done()
         }).catch(async (err: BusinessError) => {
           await terminateAbility(message);
-          if (err.code == 801) {
+          if (!isFreeWindowMode) {
             console.error(`${message} Capability not supported. Failed to call the API due to limited device capabilities`);
-            expect(false).assertFalse();
+            expect(err.code).assertEqual(801);
             done();
           } else {
             console.error(`${message} Failed to set window modal. Cause code: ${err.code}, message: ${err.message}`)
@@ -1537,9 +1543,9 @@ export default function windowModalTest() {
           done()
         }).catch(async (err: BusinessError) => {
           await terminateAbility(message);
-          if (err.code == 801) {
+          if (!isFreeWindowMode) {
             console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
-            expect(false).assertFalse();
+            expect(err.code).assertEqual(801);
             done();
           } else {
             console.error(`${message} Failed to set window modal. Cause code: ${err.code}, message: ${err.message}`)

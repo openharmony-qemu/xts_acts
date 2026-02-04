@@ -88,6 +88,8 @@ export default function windowRotationTest() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let isSupportRotate = false;
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     let driver = Driver.create();
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -1786,7 +1788,7 @@ export default function windowRotationTest() {
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
         await subWindowClass?.destroyWindow()
-        if (err.code == 801) {
+        if (!canIUseRes||(deviceType != 'phone' && deviceType != 'tablet')) {
           expect(err.code).assertEqual(801);
           done()
         } else {
@@ -1849,7 +1851,8 @@ export default function windowRotationTest() {
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        if (err.code == 801) {
+        if (!canIUseRes||(deviceType != 'phone' && deviceType != 'tablet')) {
+          expect(err.code).assertEqual(801);
           done()
         } else {
           expect().assertFail();
@@ -1910,7 +1913,8 @@ export default function windowRotationTest() {
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        if (err.code == 801) {
+        if (!canIUseRes||(deviceType != 'phone' && deviceType != 'tablet')) {
+          expect(err.code).assertEqual(801);
           done()
         } else {
           expect(err.code).assertEqual(401);
@@ -1942,7 +1946,8 @@ export default function windowRotationTest() {
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-        if (err.code == 801) {
+        if (!canIUseRes||(deviceType != 'phone' && deviceType != 'tablet')) {
+          expect(err.code).assertEqual(801);
           done()
         } else {
           expect(err.code).assertEqual(401);

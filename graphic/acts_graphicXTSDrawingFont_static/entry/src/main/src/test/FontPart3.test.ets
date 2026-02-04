@@ -68,6 +68,10 @@ export default function fontPart3Test() {
           expect(glyphs.length == 17).assertTrue();
           console.info(msg + ' textToGlyphs1 successed,glyphs:' + glyphs.length);
         }
+        if(glyphs == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` textToGlyphs1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -82,6 +86,10 @@ export default function fontPart3Test() {
           expect(glyphs.length == 17).assertTrue();
           console.info(msg + ' textToGlyphs2 successed,glyphs:' + glyphs.length);
         }
+        if(glyphs == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` textToGlyphs2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -95,6 +103,10 @@ export default function fontPart3Test() {
         if (glyphs) {
           console.info(msg + ' textToGlyphs5 successed,glyphs:' + glyphs);
           expect(glyphs.length == 0).assertEqual(true);
+        }
+        if(glyphs == undefined){
+          console.info(msg + ' 3 test failed');
+          expect().assertFail();
         }
       } catch (e) {
         e = e as BusinessError;
@@ -358,6 +370,10 @@ export default function fontPart3Test() {
             expect(path.getLength(false) > 0).assertTrue();
             console.info(msg + ' createPathForGlyph successed,path length:' + path.getLength(false));
           }
+          if(path == undefined){
+            console.info(msg + ' 1 test failed');
+            expect().assertFail();
+          }
         }
       } catch (e) {
         e = e as BusinessError;
@@ -373,6 +389,10 @@ export default function fontPart3Test() {
             let result = path.getLength(false);
             expect(path.getLength(false) == 0).assertTrue();
             console.info(msg + ' createPathForGlyph successed,path length:' + result);
+          }
+          if(path == undefined){
+            console.info(msg + ' 2 test failed');
+            expect().assertFail();
           }
         }
       } catch (e) {

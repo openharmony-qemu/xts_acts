@@ -52,7 +52,7 @@ const uiContext = new UIContext();
 
 export default function noBarriersGroupTest() {
   describe('noBarriersGroupTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("noBarriersGroupTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")

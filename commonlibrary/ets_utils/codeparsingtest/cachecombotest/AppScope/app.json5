@@ -14,7 +14,7 @@
  */
 {
   "app": {
-    "bundleName": "com.acts.test.arraytest",
+    "bundleName": "com.acts.test.corbomtest",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",

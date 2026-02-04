@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1093,7 +1093,7 @@ export default function ArrayFromTest() {
       sparseArr[3] = 4;
       sparseArr.length = 5;
 
-      const arr = Array.from(sparseArr, (val: number | undefined, idx: number) => val ?? idx * 10);
+      const arr = Array.from(sparseArr, (val: number | undefined, idx: int) => val ?? idx * 10);
       expect(JSON.stringify(arr)).assertDeepEquals(JSON.stringify([1, 10, 20, 4, 40]));
     });
   });

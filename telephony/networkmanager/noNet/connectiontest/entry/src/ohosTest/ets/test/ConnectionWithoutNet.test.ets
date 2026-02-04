@@ -13,29 +13,103 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
+import { describe, expect, it, TestType, Size, Level, beforeEach} from '@ohos/hypium';
 import socket from '@ohos.net.socket';
 import connection from '@ohos.net.connection';
 import { BusinessError } from '@ohos.base';
 
-const ExpectFail: () => void = () => {
+let isNetLost = false;
+let isNetAvailable = false;
+let isNetUnavailable = false;
+let isNetConnectionPropertiesChange = false;
+let isNetCapabilitiesChange = false;
+let netCapInfo: connection.NetCapabilityInfo | undefined = undefined;
+let netPropertyInfo: connection.NetConnectionPropertyInfo | undefined = undefined;
+let availableNet: connection.NetHandle | undefined = undefined;
+let lostNet: connection.NetHandle | undefined = undefined;
+let ListenTimes : number = 0;
+const NetBearTypeBEARER_CELLULAR = connection.NetBearType.BEARER_CELLULAR;
+const NetBearTypeBEARER_WIFI = connection.NetBearType.BEARER_WIFI;
+const NetBearTypeBEARER_BLUETOOTH = connection.NetBearType.BEARER_BLUETOOTH;
+const NetBearTypeBEARER_ETHERNET = connection.NetBearType.BEARER_ETHERNET;
+const NetBearTypeBEARER_VPN = connection.NetBearType.BEARER_VPN;
+const NetCapNET_CAPABILITY_MMS = connection.NetCap.NET_CAPABILITY_MMS;
+const NetCapNET_CAPABILITY_NOT_METERED = connection.NetCap.NET_CAPABILITY_NOT_METERED;
+const NetCapNET_CAPABILITY_INTERNET = connection.NetCap.NET_CAPABILITY_INTERNET;
+const NetCapNET_CAPABILITY_NOT_VPN = connection.NetCap.NET_CAPABILITY_NOT_VPN;
+const NetCapNET_NET_CAPABILITY_VALIDATED = connection.NetCap.NET_CAPABILITY_VALIDATED;
+const NetCapNET_CAPABILITY_PORTAL = connection.NetCap.NET_CAPABILITY_PORTAL;
+const NetCapNET_CAPABILITY_CHECKING_CONNECTIVITY = connection.NetCap.NET_CAPABILITY_CHECKING_CONNECTIVITY;
+
+let netConnOnEventAll = async (caseName: string, netConn: connection.NetConnection) => {
+  console.info(caseName + ": ==  Subscribing to Events start  === ")
+  netConn.on('netAvailable', (value: connection.NetHandle) => {
+    ListenTimes += 1;
+    isNetAvailable = true;
+    availableNet = value;
+    console.info(caseName+ " === on netAvailable " + JSON.stringify(value));
+  });
+  netConn.on('netConnectionPropertiesChange', (value: connection.NetConnectionPropertyInfo) => {
+    ListenTimes += 10;
+    isNetConnectionPropertiesChange = true;
+    netPropertyInfo = value;
+    console.info(caseName +" ===on netConnectionPropertiesChange" + JSON.stringify(value));
+  });
+  netConn.on('netCapabilitiesChange', (value: connection.NetCapabilityInfo) => {
+    ListenTimes += 100;
+    isNetCapabilitiesChange = true;
+    netCapInfo = value;
+    console.info(caseName + " ===on netCapabilitiesChange " + JSON.stringify(value));
+  });
+  netConn.on('netLost', (value: connection.NetHandle) => {
+    ListenTimes += 1000;
+    isNetLost = true;
+    lostNet = value;
+    console.info(caseName +" === on netLost" + JSON.stringify(value));
+  });
+  netConn.on('netUnavailable', () => {
+    ListenTimes += 10000;
+    isNetUnavailable = true;
+    console.info(caseName +" ===on netUnavailable ");
+  });
+  console.info(caseName + ": ==  Subscribing to Events end  === ");
+}
+
+const ExpectFail: (caseName:string) => void = (caseName:string) => {
   try {
     expect().assertFail();
   } catch (err) {
-    console.info(` exportFail failed err: ${JSON.stringify(err)}`);
+    console.info(caseName+'exportFail failed err:' +JSON.stringify(err));
   }
 };
-
-const ExpectTrue: (n: boolean) => void = (n: boolean) => {
+const ExpectTrue: ( caseName:string, n: boolean | undefined) => void = (caseName:string, n: boolean | undefined) => {
   try {
     expect(n).assertTrue();
   } catch (err) {
-    console.info(` exportTrue failed err: ${JSON.stringify(err)}`);
+    console.info(caseName+'exportFail failed err:' +JSON.stringify(err));
   }
 };
 
+function sleep (time:number):Promise<string>{
+  return new Promise<string>((resolve)=>{
+    setTimeout(()=>{
+      resolve('ok')},time)
+  });
+}
+
 export default function ConnectionWithoutNetTest() {
   describe('ConnectionWithoutNetTest', () => {
+    beforeEach(() => {
+      ListenTimes = 0;
+      isNetLost = false;
+      isNetAvailable = false;
+      isNetUnavailable = false;
+      isNetConnectionPropertiesChange = false;
+      isNetCapabilitiesChange = false;
+      netCapInfo = undefined;
+      netPropertyInfo = undefined;
+      availableNet = undefined;
+    })
 
     /**
      * @tc.name   testNetworkMgrConnectionBindSocketWithoutNet0100
@@ -58,19 +132,19 @@ export default function ConnectionWithoutNetTest() {
           } as socket.NetAddress, (error: BusinessError) => {
             if (error) {
               console.info(`${caseName} bind fail error: ${JSON.stringify(error)}`);
-              ExpectFail();
+              ExpectFail(caseName);
               console.info(`${caseName}---End`);
               done();
             } else {
               netHandle.bindSocket(tcp, (error: BusinessError, data: void) => {
                 if (error) {
                   console.info(`${caseName} bindSocket error: ${JSON.stringify(error)}`);
-                  ExpectTrue(error?.code == 2100001);
+                  ExpectTrue(caseName, error?.code == 2100001);
                   console.info(`${caseName}---End`);
                   done();
                 } else {
                   console.info(`${caseName} bindSocket success data: ${JSON.stringify(data)}`);
-                  ExpectFail();
+                  ExpectFail(caseName);
                   console.info(`${caseName}---End`);
                   done();
                 }
@@ -80,7 +154,7 @@ export default function ConnectionWithoutNetTest() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -107,19 +181,19 @@ export default function ConnectionWithoutNetTest() {
           } as socket.NetAddress, (error: BusinessError) => {
             if (error) {
               console.info(`${caseName} bind fail error: ${JSON.stringify(error)}`);
-              ExpectFail();
+              ExpectFail(caseName);
               console.info(`${caseName}---End`);
               done();
             } else {
               netHandle.bindSocket(udp, (error: BusinessError, data: void) => {
                 if (error) {
                   console.info(`${caseName} bindSocket error: ${JSON.stringify(error)}`);
-                  ExpectTrue(error?.code == 2100001);
+                  ExpectTrue(caseName, error?.code == 2100001);
                   console.info(`${caseName}---End`);
                   done();
                 } else {
                   console.info(`${caseName} bindSocket success data: ${JSON.stringify(data)}`);
-                  ExpectFail();
+                  ExpectFail(caseName);
                   console.info(`${caseName}---End`);
                   done();
                 }
@@ -129,7 +203,7 @@ export default function ConnectionWithoutNetTest() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -156,13 +230,13 @@ export default function ConnectionWithoutNetTest() {
           } as socket.NetAddress, (error: BusinessError) => {
             if (error) {
               console.info(`${caseName} bind fail error: ${JSON.stringify(error)}`);
-              ExpectFail();
+              ExpectFail(caseName);
               console.info(`${caseName}---End`);
               done();
             } else {
               netHandle.bindSocket(tcp).then().catch((error: BusinessError) => {
                 console.info(`${caseName} bindSocket error: ${JSON.stringify(error)}`);
-                ExpectTrue(error?.code == 2100001);
+                ExpectTrue(caseName, error?.code == 2100001);
                 console.info(`${caseName}---End`);
                 done();
               });
@@ -171,7 +245,7 @@ export default function ConnectionWithoutNetTest() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -198,13 +272,13 @@ export default function ConnectionWithoutNetTest() {
           } as socket.NetAddress, (error: BusinessError) => {
             if (error) {
               console.info(`${caseName} bind fail error: ${JSON.stringify(error)}`);
-              ExpectFail();
+              ExpectFail(caseName);
               console.info(`${caseName}---End`);
               done();
             } else {
               netHandle.bindSocket(udp).then().catch((error: BusinessError) => {
                 console.info(`${caseName} bindSocket error: ${JSON.stringify(error)}`);
-                ExpectTrue(error?.code == 2100001);
+                ExpectTrue(caseName, error?.code == 2100001);
                 console.info(`${caseName}---End`);
                 done();
               });
@@ -213,7 +287,7 @@ export default function ConnectionWithoutNetTest() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -240,7 +314,7 @@ export default function ConnectionWithoutNetTest() {
           } as socket.NetAddress, (error: BusinessError) => {
             if (error) {
               console.info(`${caseName} bind fail error: ${JSON.stringify(error)}`);
-              ExpectFail();
+              ExpectFail(caseName);
               console.info(`${caseName}---End`);
               done();
             } else {
@@ -248,11 +322,11 @@ export default function ConnectionWithoutNetTest() {
               netHandle.bindSocket(tcp, (error: BusinessError, data: void) => {
                 console.info(`${caseName} bindSocket error: ${JSON.stringify(error)} data: ${JSON.stringify(data)}`);
                 if (error) {
-                  ExpectFail();
+                  ExpectFail(caseName);
                   console.info(`${caseName}---End`);
                   done();
                 } else {
-                  ExpectTrue(true);
+                  ExpectTrue(caseName, true);
                   console.info(`${caseName}---End`);
                   done();
                 }
@@ -262,7 +336,7 @@ export default function ConnectionWithoutNetTest() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -289,7 +363,7 @@ export default function ConnectionWithoutNetTest() {
           } as socket.NetAddress, (error: BusinessError) => {
             if (error) {
               console.info(`${caseName} bind fail error: ${JSON.stringify(error)}`);
-              ExpectFail();
+              ExpectFail(caseName);
               console.info(`${caseName}---End`);
               done();
             } else {
@@ -297,11 +371,11 @@ export default function ConnectionWithoutNetTest() {
               netHandle.bindSocket(udp, (error: BusinessError, data: void) => {
                 console.info(`${caseName} bindSocket error: ${JSON.stringify(error)} data: ${JSON.stringify(data)}`);
                 if (error) {
-                  ExpectFail();
+                  ExpectFail(caseName);
                   console.info(`${caseName}---End`);
                   done();
                 } else {
-                  ExpectTrue(true);
+                  ExpectTrue(caseName, true);
                   console.info(`${caseName}---End`);
                   done();
                 }
@@ -311,7 +385,7 @@ export default function ConnectionWithoutNetTest() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -338,19 +412,19 @@ export default function ConnectionWithoutNetTest() {
           } as socket.NetAddress, (error: BusinessError) => {
             if (error) {
               console.info(`${caseName} bind fail error: ${JSON.stringify(error)}`);
-              ExpectFail();
+              ExpectFail(caseName);
               console.info(`${caseName}---End`);
               done();
             } else {
               netHandle.netId = 100;
               netHandle.bindSocket(tcp).then((data: void) => {
                 console.info(`${caseName} bindSocket data: ${JSON.stringify(data)}`);
-                ExpectTrue(true);
+                ExpectTrue(caseName, true);
                 console.info(`${caseName}---End`);
                 done();
               }).catch((error: BusinessError) => {
                 console.info(`${caseName} bindSocket error: ${JSON.stringify(error)}`);
-                ExpectFail();
+                ExpectFail(caseName);
                 console.info(`${caseName}---End`);
                 done();
               });
@@ -359,7 +433,7 @@ export default function ConnectionWithoutNetTest() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -386,19 +460,19 @@ export default function ConnectionWithoutNetTest() {
           } as socket.NetAddress, (error: BusinessError) => {
             if (error) {
               console.info(`${caseName} bind fail error: ${JSON.stringify(error)}`);
-              ExpectFail();
+              ExpectFail(caseName);
               console.info(`${caseName}---End`);
               done();
             } else {
               netHandle.netId = 100;
               netHandle.bindSocket(udp).then((data: void) => {
                 console.info(`${caseName} bindSocket data: ${JSON.stringify(data)}`);
-                ExpectTrue(true);
+                ExpectTrue(caseName, true);
                 console.info(`${caseName}---End`);
                 done();
               }).catch((error: BusinessError) => {
                 console.info(`${caseName} bindSocket error: ${JSON.stringify(error)}`);
-                ExpectFail();
+                ExpectFail(caseName);
                 console.info(`${caseName}---End`);
                 done();
               });
@@ -407,7 +481,7 @@ export default function ConnectionWithoutNetTest() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -428,19 +502,19 @@ export default function ConnectionWithoutNetTest() {
         connection.hasDefaultNet((error: BusinessError, data: boolean) => {
           if (error) {
             console.error(`${caseName} hasDefaultNet: BusinessError>${JSON.stringify(error)}`);
-            ExpectFail();
+            ExpectFail(caseName);
             console.info(`${caseName}---End`);
             done();
           } else {
             console.info(`${caseName} hasDefaultNet: data>${JSON.stringify(data)}`);
-            ExpectTrue(data == false);
+            ExpectTrue(caseName, data == false);
             console.info(`${caseName}---End`);
             done();
           }
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -460,18 +534,18 @@ export default function ConnectionWithoutNetTest() {
       try {
         connection.hasDefaultNet().then((data: boolean) => {
           console.info(`${caseName} hasDefaultNet: data>${JSON.stringify(data)}`);
-          ExpectTrue(data == false);
+          ExpectTrue(caseName, data == false);
           console.info(`${caseName}---End`);
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} hasDefaultNet: err->${JSON.stringify(err)}`);
-          ExpectFail();
+          ExpectFail(caseName);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -490,12 +564,12 @@ export default function ConnectionWithoutNetTest() {
       console.info(`${caseName} test start`);
       try {
         let isDefaultNet: boolean = connection.hasDefaultNetSync();
-        ExpectTrue(isDefaultNet == false);
+        ExpectTrue(caseName, isDefaultNet == false);
         console.info(`${caseName}---End`);
         done();
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -516,18 +590,18 @@ export default function ConnectionWithoutNetTest() {
         connection.getDefaultNet((err: BusinessError<void>, data: connection.NetHandle) => {
           console.info(`${caseName} getDefaultNet callback: err->${JSON.stringify(err)} data->${JSON.stringify(data)}`);
           if (err) {
-            ExpectFail();
+            ExpectFail(caseName);
             console.info(`${caseName}---End`);
             done();
           } else {
-            ExpectTrue(data.netId == 0);
+            ExpectTrue(caseName, data.netId == 0);
             console.info(`${caseName}---End`);
             done();
           }
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -547,18 +621,18 @@ export default function ConnectionWithoutNetTest() {
       try {
         connection.getDefaultNet().then((data: connection.NetHandle) => {
           console.info(`${caseName} getDefaultNet: data->${JSON.stringify(data)}`);
-          ExpectTrue(data.netId == 0);
+          ExpectTrue(caseName, data.netId == 0);
           console.info(`${caseName}---End`);
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} getDefaultNet: err->${JSON.stringify(err)}`);
-          ExpectFail();
+          ExpectFail(caseName);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -577,12 +651,12 @@ export default function ConnectionWithoutNetTest() {
       console.info(`${caseName} test start`);
       try {
         let netHandle: connection.NetHandle = connection.getDefaultNetSync();
-        ExpectTrue(netHandle.netId == 0);
+        ExpectTrue(caseName, netHandle.netId == 0);
         console.info(`${caseName}---End`);
         done();
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -603,19 +677,19 @@ export default function ConnectionWithoutNetTest() {
         connection.getAppNet((error: BusinessError, data: connection.NetHandle) => {
           if (error) {
             console.info(`${caseName} callback: err->${JSON.stringify(error)}`);
-            ExpectFail();
+            ExpectFail(caseName);
             console.info(`${caseName}---End`);
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectTrue(data.netId == 0);
+            ExpectTrue(caseName, data.netId == 0);
             console.info(`${caseName}---End`);
             done();
           }
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -636,18 +710,18 @@ export default function ConnectionWithoutNetTest() {
       try {
         connection.getAppNet().then((data: connection.NetHandle) => {
           console.info(`${caseName} getAppNet: success data->${JSON.stringify(data)}`);
-          ExpectTrue(data.netId == 0);
+          ExpectTrue(caseName, data.netId == 0);
           console.info(`${caseName}---End`);
           done();
         }).catch((error: BusinessError) => {
           console.info(`${caseName} getAppNet: err->${JSON.stringify(error)}`);
-          ExpectFail();
+          ExpectFail(caseName);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -667,12 +741,12 @@ export default function ConnectionWithoutNetTest() {
       try {
         let netHandle = connection.getAppNetSync();
         console.info(`${caseName} GetAppNetSync: success data->${JSON.stringify(netHandle)}`);
-        ExpectTrue(netHandle.netId == 0);
+        ExpectTrue(caseName, netHandle.netId == 0);
         console.info(`${caseName}---End`);
         done();
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -693,19 +767,19 @@ export default function ConnectionWithoutNetTest() {
         connection.getAllNets((error: BusinessError, data: connection.NetHandle[]) => {
           if (error) {
             console.info(`${caseName} getAllNets: err->${JSON.stringify(error)}`);
-            ExpectFail();
+            ExpectFail(caseName);
             console.info(`${caseName}---End`);
             done();
           } else {
             console.info(`${caseName} getAllNets: success data->${JSON.stringify(data)}`);
-            ExpectTrue(data.length == 0);
+            ExpectTrue(caseName, data.length == 0);
             console.info(`${caseName}---End`);
             done();
           }
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -725,18 +799,18 @@ export default function ConnectionWithoutNetTest() {
       try {
         connection.getAllNets().then((data: connection.NetHandle[]) => {
           console.info(`${caseName} getAllNets: success data->${JSON.stringify(data)}`);
-          ExpectTrue(data.length == 0);
+          ExpectTrue(caseName, data.length == 0);
           console.info(`${caseName}---End`);
           done();
         }).catch((error: BusinessError) => {
           console.info(`${caseName} getAllNets: err->${JSON.stringify(error)}`);
-          ExpectFail();
+          ExpectFail(caseName);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -756,12 +830,12 @@ export default function ConnectionWithoutNetTest() {
       try {
         let netHandle = connection.getAllNetsSync();
         console.info(`${caseName} GetAllNetsSync: success data->${JSON.stringify(netHandle)}`);
-        ExpectTrue(netHandle.length == 0);
+        ExpectTrue(caseName, netHandle.length == 0);
         console.info(`${caseName}---End`);
         done();
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -783,25 +857,25 @@ export default function ConnectionWithoutNetTest() {
           connection.getConnectionProperties(netHandle, (error: BusinessError, data: connection.ConnectionProperties) => {
             if (error) {
               console.info(`${caseName} getConnectionProperties: err->${JSON.stringify(error)}`);
-              ExpectTrue(error.code == 2100001);
+              ExpectTrue(caseName, error.code == 2100001);
               console.info(`${caseName}---End`);
               done();
             } else {
               console.info(`${caseName} getConnectionProperties: success data->${JSON.stringify(data)}`);
-              ExpectFail();
+              ExpectFail(caseName);
               console.info(`${caseName}---End`);
               done();
             }
           });
         }).catch((error: BusinessError) => {
           console.info(`${caseName} getDefaultNet: err->${JSON.stringify(error)}`);
-          ExpectFail();
+          ExpectFail(caseName);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -822,24 +896,24 @@ export default function ConnectionWithoutNetTest() {
         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           connection.getConnectionProperties(netHandle).then((data: connection.ConnectionProperties) => {
             console.info(`${caseName} getConnectionProperties: success data->${JSON.stringify(data)}`);
-            ExpectFail();
+            ExpectFail(caseName);
             console.info(`${caseName}---End`);
             done();
           }).catch((error: BusinessError) => {
             console.info(`${caseName} getConnectionProperties: err->${JSON.stringify(error)}`);
-            ExpectTrue(error.code == 2100001);
+            ExpectTrue(caseName, error.code == 2100001);
             console.info(`${caseName}---End`);
             done();
           });
         }).catch((error: BusinessError) => {
           console.info(`${caseName} getDefaultNet: err->${JSON.stringify(error)}`);
-          ExpectFail();
+          ExpectFail(caseName);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -860,12 +934,12 @@ export default function ConnectionWithoutNetTest() {
         let netHandle: connection.NetHandle = connection.getDefaultNetSync();
         let connectionProperties: connection.ConnectionProperties = connection.getConnectionPropertiesSync(netHandle);
         console.info(`${caseName} GetConnectionPropertiesSync: success data->${JSON.stringify(connectionProperties)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 2100001);
+        ExpectTrue(caseName, err.code == 2100001);
         console.info(`${caseName}---End`);
         done();
       }
@@ -887,25 +961,25 @@ export default function ConnectionWithoutNetTest() {
           connection.getNetCapabilities(netHandle, (error: BusinessError, data: connection.NetCapabilities) => {
             if (error) {
               console.info(`${caseName} getNetCapabilities: err->${JSON.stringify(error)}`);
-              ExpectTrue(error.code == 2100001);
+              ExpectTrue(caseName, error.code == 2100001);
               console.info(`${caseName}---End`);
               done();
             } else {
               console.info(`${caseName} getNetCapabilities: success data->${JSON.stringify(data)}`);
-              ExpectFail();
+              ExpectFail(caseName);
               console.info(`${caseName}---End`);
               done();
             }
           });
         }).catch((error: BusinessError) => {
           console.info(`${caseName} getDefaultNet: err->${JSON.stringify(error)}`);
-          ExpectFail();
+          ExpectFail(caseName);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -926,24 +1000,24 @@ export default function ConnectionWithoutNetTest() {
         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           connection.getNetCapabilities(netHandle).then((data: connection.NetCapabilities) => {
             console.info(`${caseName} getNetCapabilities: success data->${JSON.stringify(data)}`);
-            ExpectFail();
+            ExpectFail(caseName);
             console.info(`${caseName}---End`);
             done();
           }).catch((error: BusinessError) => {
             console.info(`${caseName} getNetCapabilities: err->${JSON.stringify(error)}`);
-            ExpectTrue(error.code == 2100001);
+            ExpectTrue(caseName, error.code == 2100001);
             console.info(`${caseName}---End`);
             done();
           });
         }).catch((error: BusinessError) => {
           console.info(`${caseName} getDefaultNet: err->${JSON.stringify(error)}`);
-          ExpectFail();
+          ExpectFail(caseName);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -964,12 +1038,12 @@ export default function ConnectionWithoutNetTest() {
         let netHandle: connection.NetHandle = connection.getDefaultNetSync();
         let getNetCapAbilitiesSync: connection.NetCapabilities = connection.getNetCapabilitiesSync(netHandle);
         console.info(`${caseName} getNetCapabilitiesSync: success data->${JSON.stringify(getNetCapAbilitiesSync)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 2100001);
+        ExpectTrue(caseName, err.code == 2100001);
         console.info(`${caseName}---End`);
         done();
       }
@@ -991,25 +1065,25 @@ export default function ConnectionWithoutNetTest() {
           connection.reportNetConnected(netHandle, (error: BusinessError) => {
             if (error) {
               console.info(`${caseName} reportNetConnected: BusinessError>${JSON.stringify(error)}`);
-              ExpectTrue(error.code == 2101006);
+              ExpectTrue(caseName, error.code == 2101006);
               console.info(`${caseName}---End`);
               done();
             } else {
               console.info(`${caseName}: reportNetConnected: success`);
-              ExpectFail();
+              ExpectFail(caseName);
               console.info(`${caseName}---End`);
               done();
             }
           });
         }).catch((err: BusinessError) => {
           console.info(`${caseName} getDefaultNet: err->${JSON.stringify(err)}`);
-          ExpectFail();
+          ExpectFail(caseName);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1030,24 +1104,24 @@ export default function ConnectionWithoutNetTest() {
         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           connection.reportNetConnected(netHandle).then(() => {
             console.info(`${caseName}: reportNetConnected: success`);
-            ExpectFail();
+            ExpectFail(caseName);
             console.info(`${caseName}---End`);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} reportNetConnected: err->${JSON.stringify(err)}`);
-            ExpectTrue(err.code == 2101006);
+            ExpectTrue(caseName, err.code == 2101006);
             console.info(`${caseName}---End`);
             done();
           });
         }).catch((err: BusinessError) => {
           console.info(`${caseName} getDefaultNet: err->${JSON.stringify(err)}`);
-          ExpectFail();
+          ExpectFail(caseName);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1069,25 +1143,25 @@ export default function ConnectionWithoutNetTest() {
           connection.reportNetDisconnected(netHandle, (error: BusinessError) => {
             if (error) {
               console.info(`${caseName} reportNetDisconnected: BusinessError>${JSON.stringify(error)}`);
-              ExpectTrue(error.code == 2101006);
+              ExpectTrue(caseName, error.code == 2101006);
               console.info(`${caseName}---End`);
               done();
             } else {
               console.info(`${caseName}: reportNetDisconnected: success`);
-              ExpectFail();
+              ExpectFail(caseName);
               console.info(`${caseName}---End`);
               done();
             }
           });
         }).catch((error: BusinessError) => {
           console.info(`${caseName} getDefaultNet: err->${JSON.stringify(error)}`);
-          ExpectFail();
+          ExpectFail(caseName);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1108,24 +1182,24 @@ export default function ConnectionWithoutNetTest() {
         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           connection.reportNetDisconnected(netHandle).then(() => {
             console.info(`${caseName}: reportNetDisconnected: success`);
-            ExpectFail();
+            ExpectFail(caseName);
             console.info(`${caseName}---End`);
             done();
           }).catch((error: BusinessError) => {
             console.info(`${caseName} reportNetDisconnected: err->${JSON.stringify(error)}`);
-            ExpectTrue(error.code == 2101006);
+            ExpectTrue(caseName, error.code == 2101006);
             console.info(`${caseName}---End`);
             done();
           });
         }).catch((error: BusinessError) => {
           console.info(`${caseName} getDefaultNet: err->${JSON.stringify(error)}`);
-          ExpectFail();
+          ExpectFail(caseName);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
+        ExpectFail(caseName);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1144,24 +1218,359 @@ export default function ConnectionWithoutNetTest() {
       console.info(`${caseName} test start`);
       try {
         let netCon: connection.NetConnection = connection.createNetConnection();
+        netCon.on('netUnavailable', () => {
+          console.info(`${caseName} Succeeded netUnavailable`);
+          ExpectTrue(caseName, true);
+          console.info(`${caseName}---End`);
+        });
         netCon.register((error: BusinessError) => {
           console.log(`${caseName} register error ${JSON.stringify(error)}`);
           if (error) {
-            ExpectFail();
+            ExpectFail(caseName);
             console.info(`${caseName}---End`);
             done();
           }
         });
-        netCon.on('netUnavailable', () => {
-          console.info(`${caseName} Succeeded netUnavailable`);
-          ExpectTrue(true);
+        await sleep(50)
+        netCon.unregister(()=>{
+          done()
+        })
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail(caseName);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionOn0500
+     * @tc.number testNetworkMgrConnectionOn0500
+     * @tc.desc   test use synchronization method to obtain default activated data network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrConnectionOn0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionOn0500";
+      try {
+        let netConn = connection.createNetConnection();
+        console.info(caseName+ " register start");
+        netConnOnEventAll(caseName, netConn);
+        netConn.register((error: BusinessError) => {
+          if (error) {
+            console.info(caseName + " register fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.info(caseName + " register success");
+          }
+        });
+        await sleep(50);
+        console.info(`${caseName}---check isNetAvailable`);
+        ExpectTrue(caseName, !isNetAvailable);
+        console.info(`${caseName}---check isNetLost`);
+        ExpectTrue(caseName, !isNetLost);
+        console.info(`${caseName}---check isNetUnavailable`);
+        ExpectTrue(caseName, isNetUnavailable);
+        console.info(`${caseName}---check isNetConnectionPropertiesChange`);
+        ExpectTrue(caseName, !isNetConnectionPropertiesChange);
+        console.info(`${caseName}---check isNetCapabilitiesChange`);
+        ExpectTrue(caseName, !isNetCapabilitiesChange);
+        console.info(caseName + " unregister start");
+        netConn.unregister((error: BusinessError) => {
+          if (error) {
+            console.info(caseName + "unregister fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+          } else {
+            console.info(caseName + " unregister success ");
+            console.info(caseName + " ListenTimes is :" + ListenTimes);
+            ExpectTrue(caseName, ListenTimes === 10000);
+          }
           console.info(`${caseName}---End`);
           done();
         });
       } catch (err) {
-        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectFail();
-        console.info(`${caseName}---End`);
+        ExpectFail(caseName);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionOn0600
+     * @tc.number testNetworkMgrConnectionOn0600
+     * @tc.desc   test use synchronization method to obtain default activated data network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrConnectionOn0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionOn0600";
+      try {
+        let netConn = connection.createNetConnection({
+          netCapabilities: {
+            bearerTypes: [connection.NetBearType.BEARER_WIFI]
+          },
+        }, 100);
+        console.info(caseName+ " register start");
+        netConnOnEventAll(caseName, netConn);
+        netConn.register((error: BusinessError) => {
+          if (error) {
+            console.info(caseName + " register fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.info(caseName + " register success");
+          }
+        });
+        await sleep(150);
+        console.info(`${caseName}---check isNetAvailable`);
+        ExpectTrue(caseName, !isNetAvailable);
+        console.info(`${caseName}---check isNetLost`);
+        ExpectTrue(caseName, !isNetLost);
+        console.info(`${caseName}---check isNetUnavailable`);
+        ExpectTrue(caseName, isNetUnavailable);
+        console.info(`${caseName}---check isNetConnectionPropertiesChange`);
+        ExpectTrue(caseName, !isNetConnectionPropertiesChange);
+        console.info(`${caseName}---check isNetCapabilitiesChange`);
+        ExpectTrue(caseName, !isNetCapabilitiesChange);
+        console.info(caseName + " unregister start");
+        netConn.unregister((error: BusinessError) => {
+          if (error) {
+            console.info(caseName + "unregister fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+          } else {
+            console.info(caseName + " unregister success ");
+            console.info(caseName + " ListenTimes is :" + ListenTimes);
+            ExpectTrue(caseName, ListenTimes === 10000);
+          }
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        ExpectFail(caseName);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionOn0700
+     * @tc.number testNetworkMgrConnectionOn0700
+     * @tc.desc   test use synchronization method to obtain default activated data network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrConnectionOn0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionOn0700";
+      try {
+        let netConn = connection.createNetConnection({
+          netCapabilities: {
+            bearerTypes: [connection.NetBearType.BEARER_CELLULAR]
+          },
+        }, 100);
+        console.info(caseName+ " register start");
+        netConnOnEventAll(caseName, netConn);
+        netConn.register((error: BusinessError) => {
+          if (error) {
+            console.info(caseName + " register fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.info(caseName + " register success");
+          }
+        });
+        await sleep(150);
+        console.info(`${caseName}---check isNetAvailable`);
+        ExpectTrue(caseName, !isNetAvailable);
+        console.info(`${caseName}---check isNetLost`);
+        ExpectTrue(caseName, !isNetLost);
+        console.info(`${caseName}---check isNetUnavailable`);
+        ExpectTrue(caseName, isNetUnavailable);
+        console.info(`${caseName}---check isNetConnectionPropertiesChange`);
+        ExpectTrue(caseName, !isNetConnectionPropertiesChange);
+        console.info(`${caseName}---check isNetCapabilitiesChange`);
+        ExpectTrue(caseName, !isNetCapabilitiesChange);
+        console.info(caseName + " unregister start");
+        netConn.unregister((error: BusinessError) => {
+          if (error) {
+            console.info(caseName + "unregister fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+          } else {
+            console.info(caseName + " unregister success ");
+            console.info(caseName + " ListenTimes is :" + ListenTimes);
+            ExpectTrue(caseName, ListenTimes === 10000);
+          }
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        ExpectFail(caseName);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionOn0800
+     * @tc.number testNetworkMgrConnectionOn0800
+     * @tc.desc   test use synchronization method to obtain default activated data network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrConnectionOn0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionOn0800";
+      try {
+        let netConn = connection.createNetConnection({
+          netCapabilities: {
+            bearerTypes: [connection.NetBearType.BEARER_WIFI]
+          },
+        }, 100);
+        console.info(caseName+ " register start");
+        netConnOnEventAll(caseName, netConn);
+        netConn.register((error: BusinessError) => {
+          if (error) {
+            console.info(caseName + " register fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.info(caseName + " register success");
+          }
+        });
+
+        let netConn2 = connection.createNetConnection({
+          netCapabilities: {
+            bearerTypes: [connection.NetBearType.BEARER_WIFI]
+          },
+        }, 100);
+        console.info(caseName+ " register start");
+        netConnOnEventAll(caseName, netConn2);
+        netConn2.register((error: BusinessError) => {
+          if (error) {
+            console.info(caseName + " register fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.info(caseName + " register success");
+          }
+        });
+        console.info(`${caseName}---start sleep 50ms`);
+        await sleep(50);
+        console.info(caseName + " ListenTimes is :" + ListenTimes);
+        ExpectTrue(caseName, ListenTimes === 0);
+        console.info(`${caseName}---start sleep 1000ms`);
+        await sleep(100);
+        console.info(`${caseName}---check isNetAvailable`);
+        ExpectTrue(caseName, !isNetAvailable);
+        console.info(`${caseName}---check isNetLost`);
+        ExpectTrue(caseName, !isNetLost);
+        console.info(`${caseName}---check isNetUnavailable`);
+        ExpectTrue(caseName, isNetUnavailable);
+        console.info(`${caseName}---check isNetConnectionPropertiesChange`);
+        ExpectTrue(caseName, !isNetConnectionPropertiesChange);
+        console.info(`${caseName}---check isNetCapabilitiesChange`);
+        ExpectTrue(caseName, !isNetCapabilitiesChange);
+        console.info(caseName + " unregister start");
+        netConn.unregister((error: BusinessError) => {
+          if (error) {
+            console.info(caseName + "unregister fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+          } else {
+            console.info(caseName + " unregister success ");
+            console.info(caseName + " ListenTimes is :" + ListenTimes);
+            ExpectTrue(caseName, ListenTimes === 20000);
+          }
+        });
+        netConn2.unregister((error: BusinessError) => {
+          console.info(`${caseName}---End`);
+          done()
+        })
+      } catch (err) {
+        ExpectFail(caseName);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionOn0900
+     * @tc.number testNetworkMgrConnectionOn0900
+     * @tc.desc   test use synchronization method to obtain default activated data network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrConnectionOn0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionOn0900";
+      try {
+        let netConn = connection.createNetConnection();
+        console.info(caseName+ " register start");
+        netConnOnEventAll(caseName, netConn);
+        netConn.register((error: BusinessError) => {
+          if (error) {
+            console.info(caseName + " register fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.info(caseName + " register success");
+          }
+        });
+
+        let netConn2 = connection.createNetConnection({
+          netCapabilities: {
+            bearerTypes: [connection.NetBearType.BEARER_CELLULAR]
+          },
+        }, 100);
+        console.info(caseName+ " register start");
+        netConnOnEventAll(caseName, netConn2);
+        netConn2.register((error: BusinessError) => {
+          if (error) {
+            console.info(caseName + " register fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.info(caseName + " register success");
+          }
+        });
+        console.info(`${caseName}---start sleep 50ms`);
+        await sleep(50);
+        console.info(caseName + " ListenTimes is :" + ListenTimes);
+        ExpectTrue(caseName, ListenTimes === 10000);
+        console.info(`${caseName}---start sleep 100ms`);
+        await sleep(100);
+        console.info(`${caseName}---check isNetAvailable`);
+        ExpectTrue(caseName, !isNetAvailable);
+        console.info(`${caseName}---check isNetLost`);
+        ExpectTrue(caseName, !isNetLost);
+        console.info(`${caseName}---check isNetUnavailable`);
+        ExpectTrue(caseName, isNetUnavailable);
+        console.info(`${caseName}---check isNetConnectionPropertiesChange`);
+        ExpectTrue(caseName, !isNetConnectionPropertiesChange);
+        console.info(`${caseName}---check isNetCapabilitiesChange`);
+        ExpectTrue(caseName, !isNetCapabilitiesChange);
+        console.info(caseName + " unregister start");
+        netConn.unregister((error: BusinessError) => {
+          if (error) {
+            console.info(caseName + "unregister fail: " + JSON.stringify(error));
+            ExpectFail(caseName);
+          } else {
+            console.info(caseName + " unregister success ");
+            console.info(caseName + " ListenTimes is :" + ListenTimes);
+            ExpectTrue(caseName, ListenTimes === 20000);
+          }
+        });
+        netConn2.unregister((error: BusinessError) => {
+          console.info(`${caseName}---End`);
+          done()
+        })
+      } catch (err) {
+        ExpectFail(caseName);
         done();
       }
     });
@@ -1178,14 +1587,14 @@ export default function ConnectionWithoutNetTest() {
       const caseName: string = 'testConnectionGetAddressesByNameWithOptions0100';
       console.info(`${caseName}---Start`);
       let host = "www.baidu.com";
-      connection.getAddressesByNameWithOptions(host, { family: connection.FamilyType.FAMILY_TYPE_ALL }).then((data: connection.NetAddress[])=>{
+      await connection.getAddressesByNameWithOptions(host, { family: connection.FamilyType.FAMILY_TYPE_ALL }).then((data: connection.NetAddress[])=>{
         console.info(`${caseName} data: ${JSON.stringify(data)}`);
         expect().assertFail();
         console.info(`${caseName}---End`);
         done();
       }).catch((error: BusinessError)=> {
         console.info(`${caseName} Failed to get addresses. error:${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 2100002);
+        ExpectTrue(caseName, error.code == 2100002);
         console.info(`${caseName}---End`);
         done();
       });

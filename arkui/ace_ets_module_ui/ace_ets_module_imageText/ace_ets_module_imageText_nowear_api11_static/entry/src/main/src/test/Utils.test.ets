@@ -41,7 +41,7 @@ export default class Utils {
   }
 
   static getComponentRect(key: string) {
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+    const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!;
     const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
     let strJson: componentRect.ComponentInfo = componentUtils1.getRectangleById(key);
     Utils.rect_width = strJson.size.width

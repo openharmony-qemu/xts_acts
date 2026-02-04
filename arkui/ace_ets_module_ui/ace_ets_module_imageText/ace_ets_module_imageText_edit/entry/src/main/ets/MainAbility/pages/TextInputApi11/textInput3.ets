@@ -68,7 +68,7 @@ struct TextAreaExample2 {
         .placeholderFont({ size: 30, weight: 100, family: 'cursive', style: FontStyle.Italic })
         .textAlign(this.textAlign)
         .caretColor(Color.Blue)
-        .height(50)
+        .height('10%')
         .fontSize(this.fontSize)
         .fontWeight(FontWeight.Bold)
         .fontFamily("sans-serif")
@@ -80,11 +80,11 @@ struct TextAreaExample2 {
         .onChange((value: string) => {
           this.text = value
         })
-      Text(this.text).width('90%').key('text')
+      Text(this.text).width('90%').key('text').height('5%')
       Button('caretPosition')
         .onClick(() => {
           this.controller.caretPosition(4)
-        })
+        }).height('5%')
 
       TextInput({ text: this.text2, placeholder: 'input your word', controller: this.controller2 })
         .key('TextInput2')
@@ -92,7 +92,7 @@ struct TextAreaExample2 {
         .placeholderFont({ size: 30, weight: 100, family: 'cursive', style: FontStyle.Italic })
         .textAlign(this.textAlign)
         .caretColor(Color.Blue)
-        .height(50)
+        .height('10%')
         .fontSize(this.fontSize)
         .fontWeight(FontWeight.Bold)
         .fontFamily("sans-serif")
@@ -111,10 +111,11 @@ struct TextAreaExample2 {
           console.info("index:" + this.positionInfo.index)
           this.caretIndex = this.positionInfo.index
         })
-        .key('caretOffsetBtn2')
+        .key('caretOffsetBtn2').height('5%')
 
       Text("Index" + this.caretIndex.toString())
-        .key('caretOffsetText2')
+        .key('caretOffsetText2').height('5%')
     }
+    .height('100%')
   }
 }

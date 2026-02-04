@@ -71,7 +71,7 @@ struct alignItemsGridIndex {
             Column() {
               Column().height(100).backgroundColor('#D5D5D5').width('100%')
               // 中间的Text设置flexGrow(1)来自适应填满父组件的空缺
-              Text('这是一段文字。'.repeat(this.items[item.toInt()]))
+              Text('这是一段文字。'.repeat(this.items[item.toInt()].toInt()))
                 .flexGrow(1)
                 .width('100%')
                 .align(Alignment.TopStart)
@@ -100,7 +100,7 @@ struct alignItemsGridIndex {
             Column() {
               Column().height(100).backgroundColor('#D5D5D5').width('100%')
               // 中间的Text设置flexGrow(1)来自适应填满父组件的空缺
-              Text('这是一段文字。'.repeat(this.items[item.toInt()]))
+              Text('这是一段文字。'.repeat(this.items[item.toInt()].toInt()))
                 .flexGrow(1)
                 .width('100%')
                 .align(Alignment.TopStart)

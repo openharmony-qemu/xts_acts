@@ -1858,5 +1858,19 @@ export default function AVTransCoderNdkTest() {
       expect(ret).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.number testAvPlayerTransCoderCreate0001
+     * @tc.name   testAvPlayerTransCoderCreate0001
+     * @tc.desc   AvPlayerTransCoderCreate
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testAvPlayerTransCoderCreate0001', Level.LEVEL0, async (done: Function) => {
+      let ret: number = avTransCoderNdk.AvTransCoderCreate();
+      expect(ret).assertEqual(0);
+      done();
+    });
   })
 }

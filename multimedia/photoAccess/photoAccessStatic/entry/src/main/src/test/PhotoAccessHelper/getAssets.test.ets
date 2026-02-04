@@ -37,7 +37,7 @@ export default function getAssetsTest() {
     const getAssetsCallbackTest = async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions,
       expectCount: number): Promise<void> => {
       try {
-        helper.getAssets(fetchOps, (err: BusinessError<void> | null,
+        (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps, (err: BusinessError<void> | null,
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
           try {
             if (err?.code !== 0) {
@@ -65,7 +65,7 @@ export default function getAssetsTest() {
     const getAssetsAbnormalCallbackTest = async (done: () => void, testNum: string,
       fetchOps: photoAccessHelper.FetchOptions | undefined): Promise<void> => {
       try {
-        helper.getAssets(fetchOps as photoAccessHelper.FetchOptions, (err: BusinessError<void> | null,
+        (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps as photoAccessHelper.FetchOptions, (err: BusinessError<void> | null,
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined): void => {
           try {
             if (err?.code !== 0) {
@@ -92,7 +92,7 @@ export default function getAssetsTest() {
     const getAssetsPromiseTest = async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions,
       expectCount: number): Promise<void> => {
       try {
-        const fetchResult = await helper.getAssets(fetchOps);
+        const fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
         expect(fetchResult.getCount()).assertEqual(expectCount);
         fetchResult.close();
         done();
@@ -107,7 +107,7 @@ export default function getAssetsTest() {
     const getAssetsAbnormalPromiseTest = async (done: () => void, testNum: string,
       fetchOps: photoAccessHelper.FetchOptions | undefined): Promise<void> => {
       try {
-        await helper.getAssets(fetchOps as photoAccessHelper.FetchOptions);
+        await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps as photoAccessHelper.FetchOptions);
         expect(false).assertTrue();
         done();
       } catch (error: Error) {
@@ -120,7 +120,7 @@ export default function getAssetsTest() {
     const getAssetsAbnormalCallbackWithInvalidTest = async (done: () => void, testNum: string,
       fetchOps: photoAccessHelper.FetchOptions | "invalid"): Promise<void> => {
       try {
-        helper.getAssets(fetchOps as photoAccessHelper.FetchOptions, (err: BusinessError | null,
+        (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps as photoAccessHelper.FetchOptions, (err: BusinessError | null,
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
           try {
             if (err?.code !== 0) {
@@ -147,7 +147,7 @@ export default function getAssetsTest() {
     const getAssetsAbnormalPromiseWithInvalidTest = async (done: () => void, testNum: string,
       fetchOps: photoAccessHelper.FetchOptions | "invalid"): Promise<void> => {
       try {
-        await helper.getAssets(fetchOps as photoAccessHelper.FetchOptions);
+        await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps as photoAccessHelper.FetchOptions);
         expect(false).assertTrue();
         done();
       } catch (error: BusinessError) {

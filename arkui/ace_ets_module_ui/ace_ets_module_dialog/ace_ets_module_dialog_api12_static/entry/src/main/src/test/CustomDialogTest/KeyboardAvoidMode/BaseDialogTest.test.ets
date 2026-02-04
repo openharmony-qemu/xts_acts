@@ -46,7 +46,7 @@ export default function BaseDialogTest() {
         BaseDialogTest.clear();
         let pages:router.RouterState = BaseDialogTest.getState();
         console.info("get BaseDialogTest state pages: " + JSON.stringify(pages));
-        if (!("BaseDialogTest" == pages.name)) {
+        if (!("BaseDialog" == pages.name)) {
           console.info("get BaseDialogTest state pages.name: " + JSON.stringify(pages.name));
           BaseDialogTest.pushUrl(options);
           await CommonFunc.sleep(2000);

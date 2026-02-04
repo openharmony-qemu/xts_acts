@@ -33,7 +33,6 @@ import {
   Margin,
   PickerTextStyle,
   CalendarAlign,
-  Date,
   CalendarPicker,
   ArrowPosition,
   Select,

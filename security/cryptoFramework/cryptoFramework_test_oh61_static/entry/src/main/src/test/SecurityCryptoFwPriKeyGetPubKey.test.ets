@@ -54,10 +54,10 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
      * @tc.desc   generateKey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_PriKeyToPubKey_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         for (let element of signAlgSpec) {
           let algName: string = element.split("|")[0];

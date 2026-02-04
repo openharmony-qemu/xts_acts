@@ -157,7 +157,7 @@ export default function defaultTest() {
     }
   }, {
     describe: 'Visibility',
-    exceptView: ['RichText', 'Web', 'StepperItem', 'TabContent'],
+    exceptView: ['RichText', 'Web', 'TabContent'],
     expectValue: {
       visibility: 'Visibility.Visible'
     }

@@ -47,21 +47,21 @@ struct ParticleEmitter {
   @State message: string = 'Hello World';
   @State myLifTime: number = 2000
 
-  // @State emitterProperties: Array<EmitterProperty> = [
-  //   {
-  //     index: 0,
-  //     emitRate: 500,
-  //     position: { x: 0, y: 0 },
-  //     size: { width: 300, height: 300 },
-  //     annulusRegion: {
-  //       center: { x: LengthMetrics.percent(0.5), y: LengthMetrics.percent(0.5) },
-  //       outerRadius: LengthMetrics.px(150),
-  //       innerRadius: LengthMetrics.px(100),
-  //       startAngle: 0,
-  //       endAngle: 360
-  //     }
-  //   }
-  // ] as Array<EmitterProperty>
+  @State emitterProperties: Array<EmitterProperty> = [
+    {
+      index: 0,
+      emitRate: 500,
+      position: { x: 0, y: 0 },
+      size: { width: 300, height: 300 },
+      annulusRegion: {
+        center: { x: LengthMetrics.percent(0.5), y: LengthMetrics.percent(0.5) },
+        outerRadius: LengthMetrics.px(150),
+        innerRadius: LengthMetrics.px(100),
+        startAngle: 0,
+        endAngle: 360
+      }
+    }
+  ] as Array<EmitterProperty>
 
   build() {
     Column() {
@@ -132,7 +132,7 @@ struct ParticleEmitter {
             }
           ]
         }).width(300).height(300).key('particle')
-        // .emitter(this.emitterProperties)
+        .emitter(this.emitterProperties)
       }.width('100%').height('50%').align(Alignment.Center)
 
       Button('GetInspector').id('getInspectorId').onClick((e: ClickEvent) => {
@@ -145,27 +145,27 @@ struct ParticleEmitter {
           JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')));
           console.log('XHQ' +
           JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')?.getElement('center')?.getString('x')));
-          AppStorage.setOrCreate('xValue',
+          AppStorage.setOrCreate<string>('xValue',
             JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')?.getElement('center')?.getString('x')));
           console.log('XHQ' +
           JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')?.getElement('center')?.getString('y')));
-          AppStorage.setOrCreate('yValue',
+          AppStorage.setOrCreate<string>('yValue',
             JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')?.getElement('center')?.getString('y')));
           console.log('XHQ' +
           JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')?.getString('innerRadius')));
-          AppStorage.setOrCreate('innerRadius',
+          AppStorage.setOrCreate<string>('innerRadius',
             JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')?.getString('innerRadius')));
           console.log('XHQ' +
           JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')?.getString('outerRadius')));
-          AppStorage.setOrCreate('outerRadius',
+          AppStorage.setOrCreate<string>('outerRadius',
             JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')?.getString('outerRadius')));
           console.log('XHQ' +
           JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')?.getString('startAngle')));
-          AppStorage.setOrCreate('startAngle',
+          AppStorage.setOrCreate<string>('startAngle',
             JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')?.getString('startAngle')));
           console.log('XHQ' +
           JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')?.getString('endAngle')));
-          AppStorage.setOrCreate('endAngle',
+          AppStorage.setOrCreate<string>('endAngle',
             JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')?.getString('endAngle')));
           console.log('XHQ2' +
           JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getElement('emitter')));
@@ -173,22 +173,22 @@ struct ParticleEmitter {
       })
       Button('Update').onClick((e: ClickEvent) => {
         this.flag = !this.flag
-        // this.emitterProperties = [
-        //   {
-        //     index: 0,
-        //     emitRate: 500,
-        //     position: { x: 0, y: 0 },
-        //     size: { width: 300, height: 300 },
-        //     annulusRegion: {
-        //       center: { x: LengthMetrics.percent(0.5), y: LengthMetrics.percent(0.5) },
-        //       outerRadius: LengthMetrics.px(this.flag ? 150 : 300),
-        //       innerRadius: LengthMetrics.px(this.flag ? 100 : 250),
-        //       startAngle: 0,
-        //       endAngle: 360
-        //     }
-        //
-        //   }
-        // ]
+        this.emitterProperties = [
+          {
+            index: 0,
+            emitRate: 500,
+            position: { x: 0, y: 0 },
+            size: { width: 300, height: 300 },
+            annulusRegion: {
+              center: { x: LengthMetrics.percent(0.5), y: LengthMetrics.percent(0.5) },
+              outerRadius: LengthMetrics.px(this.flag ? 150 : 300),
+              innerRadius: LengthMetrics.px(this.flag ? 100 : 250),
+              startAngle: 0,
+              endAngle: 360
+            }
+
+          }
+        ]
       })
     }
     .height('100%')

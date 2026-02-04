@@ -39,9 +39,9 @@ export default function DigestAlgorithmJsunit() {
      * @tc.desc   Use the Promise Style of Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("Security_crypto_framework_MD_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it("Security_crypto_framework_MD_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testMDDigestPromise("MD5")
         .then((data: boolean) => {
           expect(data).assertTrue();

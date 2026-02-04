@@ -38,7 +38,7 @@ export default function testsuite() {
   CounterComponentTest();
   datapanel();
 
-  // gaugeux();
+  gaugeux();
   gauge3Jsunit();
   GaugeJsunit();
   QRCodeUIJsunit();

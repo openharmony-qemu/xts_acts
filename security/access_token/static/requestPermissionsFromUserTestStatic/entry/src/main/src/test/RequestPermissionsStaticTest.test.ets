@@ -36,15 +36,19 @@ const ERR_PARAM_INVALID = 12100001;
 
 //Do NOT ALLOW/Prohibit/cancel ---- Both mean Prohibit
 function clickRequest(driver: Driver, name: string): boolean {
-  await Utils.msSleep(2000);
+  waitForCompletion(async () => {await Utils.msSleep(2000);})
   try {
-    let button = await driver.findComponent(ON.text(name));
-    await Utils.msSleep(1000);
-    if (button) {
-      await button.click();
-      return true;
-    }
-    return false;
+    hilog.error(domain, tag, ` 11111111111111111111111 error, ${ JSON.stringify(name) }`);
+    return waitForCompletion<boolean>(async (): Promise<boolean> => {
+      let button = await driver.findComponent(ON.text(name));
+      await Utils.msSleep(1000);
+      if (button !== null) {
+        hilog.error(domain, tag, ` 2222222222222222 error, ${ JSON.stringify(name) }`);
+        await button.click();
+        return true;
+      }
+      return false;
+    })
   } catch (error: BusinessError<void>) {
     hilog.error(domain, tag, ` findcomponent error, ${ JSON.stringify(error) }`);
     return false;
@@ -56,7 +60,7 @@ export default function requestPermissionsStaticTest() {
   let atManager = abilityAccessCtrl.createAtManager();
   describe("requestPermissionsStaticTest", (): void => {
     hilog.info(domain, tag, '##########start requestPermissionsStaticTest');
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
       abilityDelegator.addAbilityMonitor({
         abilityName: "EntryAbility",

@@ -40,17 +40,19 @@ const ERR_ALL_PERM_GRANTED = 12100011;
 const ERR_PERM_NOT_REVOKE_BY_USER = 12100012;
 
 function clickRequest(driver: Driver, name: string): boolean {
-  await Utils.msSleep(2000);
+  waitForCompletion(async () => {await Utils.msSleep(2000);})
   try {
     hilog.error(domain, tag, ` 11111111111111111111111 error, ${ JSON.stringify(name) }`);
-    let button = await driver.findComponent(ON.text(name));
-    await Utils.msSleep(1000);
-    if (button) {
-      hilog.error(domain, tag, ` 2222222222222222 error, ${ JSON.stringify(name) }`);
-      await button.click();
-      return true;
-    }
-    return false;
+    return waitForCompletion<boolean>(async (): Promise<boolean> => {
+      let button = await driver.findComponent(ON.text(name));
+      await Utils.msSleep(1000);
+      if (button !== null) {
+        hilog.error(domain, tag, ` 2222222222222222 error, ${ JSON.stringify(name) }`);
+        await button.click();
+        return true;
+      }
+      return false;
+    })
   } catch (error: BusinessError<void>) {
     hilog.error(domain, tag, ` findcomponent error, ${ JSON.stringify(error) }`);
     return false;
@@ -62,7 +64,7 @@ export default function requestPermissionOnSettingStaticTest() {
   let atManager = abilityAccessCtrl.createAtManager();
   describe("requestPermissionOnSettingStaticTest", (): void => {
     hilog.info(domain, tag, '##########start requestPermissionOnSettingStaticTest');
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
       let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
       try {

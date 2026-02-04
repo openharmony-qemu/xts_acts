@@ -3022,7 +3022,7 @@ export default function AddContactTest() {
             done();
           } else {
             console.log(`${caseName} success data>${JSON.stringify(data)}`);
-            ExpectTrue(data === false);
+            expect().assertFail();
             done();
           }
         });
@@ -3088,7 +3088,7 @@ export default function AddContactTest() {
             done();
           } else {
             console.log(`${caseName} callback: success data>${JSON.stringify(data)}`);
-            ExpectTrue(data === false)
+            expect().assertFail();
             done();
           }
         });
@@ -3227,9 +3227,9 @@ export default function AddContactTest() {
       try {
         sleep(500);
         let promise = contact.isLocalContact(context, -1);
-        promise.then((data: boolean) => {
+        await promise.then((data: boolean) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-          ExpectTrue(data === false);
+          expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
@@ -3292,7 +3292,7 @@ export default function AddContactTest() {
         let promise = contact.isLocalContact(context, -10000);
         promise.then((data: boolean) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-          ExpectTrue(data === false);
+          expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
@@ -3406,7 +3406,7 @@ export default function AddContactTest() {
             done();
           } else {
             console.info(`${caseName} deleteContacts:success`);
-            ExpectTrue(true);
+            expect().assertFail();
             done();
           }
         });
@@ -3451,7 +3451,7 @@ export default function AddContactTest() {
               let promise = contact.deleteContact(context, key);
               promise.then(() => {
                 console.info(`${caseName} deleteContacts:success`);
-                ExpectTrue(true);
+                expect(key.length !== 0).assertTrue();
                 done();
               }).catch((err: BusinessError) => {
                 console.error(`${caseName} deleteContacts:fail->${JSON.stringify(err)}`);
@@ -3481,7 +3481,7 @@ export default function AddContactTest() {
         let promise = contact.deleteContact(context, "");
         promise.then(() => {
           console.info(`${caseName} deleteContacts:success`);
-          ExpectTrue(true);
+          expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} deleteContacts:fail->${JSON.stringify(err)}`);

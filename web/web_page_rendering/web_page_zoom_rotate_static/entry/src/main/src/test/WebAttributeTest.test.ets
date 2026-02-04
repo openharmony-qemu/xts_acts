@@ -48,9 +48,9 @@ export default function WebAttributeTest() {
      * @tc.desc   test initialScale from 100 to 120
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testInitialScaleStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testInitialScaleStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1500);
         Utils.emitEvent("emitInitialScale001", 10)

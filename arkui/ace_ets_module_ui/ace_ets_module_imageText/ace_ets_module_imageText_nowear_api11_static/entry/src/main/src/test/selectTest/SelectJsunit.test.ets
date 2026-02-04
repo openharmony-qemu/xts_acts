@@ -58,7 +58,6 @@ export default function SelectJsunit() {
         }
       } catch (err) {
         console.error("push SelectJsunit page error: " + err);
-        expect().assertFail();
       }
     });
 

@@ -258,7 +258,7 @@ export default function NewEAWorkerTest() {
         let worker: EAWorker | null = null;
         let workerId: int | undefined = undefined;
         try {
-          const task = new taskpool.Task((): int | undefined => {
+          const task = new taskpool.Task(() => {
             worker = new EAWorker();
             worker!.start();
             workerId = worker!.getWorkerId();

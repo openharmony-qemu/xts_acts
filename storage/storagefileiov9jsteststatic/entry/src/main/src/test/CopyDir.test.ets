@@ -439,6 +439,38 @@ export default function fileIOCopyDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_copyDir_sync_static_009
+     * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_0900
+     * @tc.desc   Test copyDirSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_copyDir_sync_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_009 start');
+      let dpath = await Utils.nextFileName('fileIO_test_copyDir_sync_static_009');
+      let ddpath1 = dpath + '/srcDir';
+      let ddpath2 = dpath + '/destDir';
+      let dddpath1 = ddpath1 + '/srcDir_first';
+      let fpath1 = ddpath1 + '/srcFile_first_01';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath1);
+      fs.mkdirSync(ddpath2);
+      fs.mkdirSync(dddpath1);
+      expect(await Utils.prepareFile(fpath1, await Utils.randomString(10))).assertTrue();
+
+      try {
+        const INVALIDE_MODE = 2;
+        fs.copyDirSync(ddpath1, ddpath2, INVALIDE_MODE);
+        expect(false).assertTrue();
+      } catch (err: BusinessError) {
+        fs.rmdirSync(dpath);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_009 has failed for ' + err.message + ', code: ' + err.code);
+        expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      }
+    });
+
+    /**
      * @tc.name   fileIO_test_copyDir_async_static_000
      * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_0000
      * @tc.desc   Test copyDir() interface.Promise.

@@ -34,12 +34,14 @@ let resultCode = 111;
 let trueparameters: Record<String, RecordData> = {"demo_key": "demo_value"};
 let trueParamOptions: OpenLinkOptions = {
   appLinkingOnly: true,
-  parameters: trueparameters
+  parameters: trueparameters,
+  hideFailureTipDialog: false,
 };
 let falseparameters: Record<String, RecordData> = {"demo_key": "demo_value"};
 let falseParamOptions: OpenLinkOptions = {
   appLinkingOnly: false,
-  parameters: falseparameters
+  parameters: falseparameters,
+  hideFailureTipDialog: true,
 };
 let parameters: Record<String, RecordData> = {"demo_key": "demo_value", "demo_num": 111}
 let paramOptions: OpenLinkOptions = {

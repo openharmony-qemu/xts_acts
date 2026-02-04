@@ -15,6 +15,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
+import { BusinessError } from '@ohos.base';
 import Log from '../../common/Log';
 import {
   Alignment,
@@ -22,7 +23,6 @@ import {
   Axis,
   BlurStyle,
   Builder,
-  BusinessError,
   Button,
   ClickEvent,
   Color,

@@ -59,7 +59,7 @@ struct overflowShape{
   build() {
     Row() {
 
-      NodeContainer(this.myNodeController)
+      NodeContainer(this.myNodeController).id('NodeContainerTest')
 
       Text(this.text1).key("overLay")
       Text(this.text2).key("overLay2")

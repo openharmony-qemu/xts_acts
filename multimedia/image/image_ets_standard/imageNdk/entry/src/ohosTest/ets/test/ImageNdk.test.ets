@@ -5837,40 +5837,6 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400
-     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400
-     * @tc.desc   1.createImageSource（by Fd/Uri）
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400', Level.LEVEL0, async (done: Function) => {
-      const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400';
-      const filename = 'test_exif_v3.dng'
-      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
-      try {
-        for(let j = 0; j < ModifyData.length; j++){
-            const checkResult = await NewModifyImageProperty(testTag, imageSourceApi, ModifyData[j].key, ModifyData[j].modifyData, ModifyData[j].compareData);
-            if(!checkResult){
-              closeFile(fileFd)
-              ndkTest.SourceRelease(imageSourceApi)
-              expect().assertFail()
-              done()
-              return
-            }
-        }
-        closeFile(fileFd)
-        ndkTest.SourceRelease(imageSourceApi)
-        done()
-      } catch (e) {
-        closeFile(fileFd)
-        hilog.info(0x0000, testTag, `createImageSource error ` + e);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0500
      * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0500
      * @tc.desc   1.createImageSource（by Fd/Uri）

@@ -199,10 +199,11 @@ export default function fileIORandomAccessFileWrite() {
     it('fileIO_randomaccessfile_write_sync_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_006');
       let randomaccessfile = fs.createRandomAccessFileSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+      let length = 4095;
 
       try {
-        randomaccessfile.writeSync(new ArrayBuffer(4096), { offset: 5, length: 4095 });
-        expect(true).assertTrue();
+        let bytesWritten = randomaccessfile.writeSync(new ArrayBuffer(4096), { offset: 5, length: 4095 });
+        expect(bytesWritten == length).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
       } catch(err: BusinessError) {
@@ -225,8 +226,8 @@ export default function fileIORandomAccessFileWrite() {
 
       try {
         let length = 4096;
-        randomaccessfile.writeSync(new ArrayBuffer(length), { offset: length + 1 });
-        expect(true).assertTrue();
+        let bytesWritten = randomaccessfile.writeSync(new ArrayBuffer(length), { offset: length + 1 });
+        expect(bytesWritten == length).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
       } catch(err: BusinessError) {
@@ -492,7 +493,6 @@ export default function fileIORandomAccessFileWrite() {
       try {
         let length = 4096;
         await randomaccessfile.write(new ArrayBuffer(length), { offset: 5, length: 4095 });
-        expect(true).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();

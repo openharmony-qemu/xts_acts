@@ -481,7 +481,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+    it("effectKitTest_static_1600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap).then((colorPicker: effectKit.ColorPicker) => {
           console.info("www data effectKitTest_static_1600 color picker=" + colorPicker);
@@ -670,7 +670,7 @@ export default function GraphicEffectKitStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_2200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+    it("effectKitTest_static_2200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data testGetTopProportionColors_2 '
         let imageSource: image.ImageSource = image.createImageSource(testJpg.buffer) as image.ImageSource;

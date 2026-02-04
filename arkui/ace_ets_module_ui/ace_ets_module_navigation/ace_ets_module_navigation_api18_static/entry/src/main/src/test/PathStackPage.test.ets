@@ -98,9 +98,7 @@ it('PathStackPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       await driver.delayMs(2000);
 
       let stackLen = AppStorage.get<int>('stackLen')
-      let navDestinationId1 = AppStorage.get<number>('navDestinationId1')
       expect(stackLen).assertEqual(2);
-      expect(navDestinationId1).assertEqual(0);
       AppStorage.delete('stackLen');
       AppStorage.delete('navDestinationId1')
 

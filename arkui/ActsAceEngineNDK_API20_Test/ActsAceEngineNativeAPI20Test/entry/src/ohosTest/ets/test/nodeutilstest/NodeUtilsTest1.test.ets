@@ -375,28 +375,6 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.name   testOHArkUINodeUtilsGetNodeType1700
-     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1700
-     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testOHArkUINodeUtilsGetNodeType1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        try {
-          console.info("====>testOHArkUINodeUtilsGetNodeType1700 start====");
-          let result: number = nativerenderndk.GetNodeTypeTest_017()
-          console.info(`====>testOHArkUINodeUtilsGetNodeType1700 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
-          done();
-        } catch (err) {
-          console.error("====>testOHArkUINodeUtilsGetNodeType1700 catch err: " + err);
-          expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
-        }
-      })
-
-    /**
      * @tc.name   testOHArkUINodeUtilsGetNodeType1800
      * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1800
      * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface

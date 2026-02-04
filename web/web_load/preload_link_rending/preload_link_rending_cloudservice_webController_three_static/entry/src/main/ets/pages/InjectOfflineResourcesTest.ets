@@ -20,9 +20,7 @@ import {
   Row,
   Button,
   ClickEvent,
-  Web,
-  Uint8Array
-} from '@ohos.arkui.component'
+  Web } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import web_webview from '@ohos.web.webview'
 import { BusinessError, Callback, RecordData } from '@ohos.base';
