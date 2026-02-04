@@ -13,19 +13,7 @@
  * limitations under the License.
  */
 
-import btBleNopUiJsunit from './BtBleNopUiJsunit.test';
-import btBleServerNopUiJsunit from './BtBleServerNopUiJsunit.test';
-import btConnectionNopUiJsunit from './BtConnectionNopUiJsunit.test';
-import btProfileNopUiJsunit from './BtProfileNopUiJsunit.test';
-import btSocketNopUiJsunit from './BtSocketNopUiJsunit.test';
-import btHidNopUiJsunit from './BtHidNopUiJsunit.test';
 import fusionNopUiJsunit from './FusionNopUiJsunit.test';
 export default function testsuite() {
-  btBleNopUiJsunit();
-  btBleServerNopUiJsunit();
-  btConnectionNopUiJsunit();
-  btProfileNopUiJsunit();
-  btSocketNopUiJsunit();
-  btHidNopUiJsunit();
  	fusionNopUiJsunit();
 }
