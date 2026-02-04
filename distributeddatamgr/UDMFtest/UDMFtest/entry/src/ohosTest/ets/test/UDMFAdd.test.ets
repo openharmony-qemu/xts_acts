@@ -53,7 +53,7 @@ export default function UDMFAddAPITest() {
       } catch (e) {
         let error: BusinessError = e as BusinessError;
         console.log(tag, `Failed. code: ${error.code}, message: ${error.message}`)
-        expect(error.code).assertEqual('401');
+        expect(error.code == 401).assertTrue();
       }
       console.log(tag + 'SUB_DistributedData_UDMF_SDK_UDMFAddRecordTest_0100 end');
     })
@@ -74,7 +74,7 @@ export default function UDMFAddAPITest() {
       } catch (e) {
         let error: BusinessError = e as BusinessError;
         console.log(tag, `Failed. code: ${error.code}, message: ${error.message}`)
-        expect(error.code).assertEqual('401');
+        expect(error.code == 401).assertTrue();
       }
       console.log(tag + 'SUB_DistributedData_UDMF_SDK_UDMFAddRecordTest_0200 end');
     })
@@ -118,7 +118,7 @@ export default function UDMFAddAPITest() {
       } catch (e) {
         let error: BusinessError = e as BusinessError;
         console.error(tag, `Failed. code: ${error.code}, message: ${error.message}`)
-        expect(error.code).assertEqual('401');
+        expect(error.code == 401).assertTrue();
       }
       console.log(tag + 'SUB_DistributedData_UDMF_SDK_UDMFHasTypeTest_0200 end');
     })
@@ -140,7 +140,7 @@ export default function UDMFAddAPITest() {
       } catch (e) {
         let error: BusinessError = e as BusinessError;
         console.log(tag, `Failed. code: ${error.code}, message: ${error.message}`)
-        expect(error.code).assertEqual('401');
+        expect(error.code == 401).assertTrue();
       }
       console.log(tag + 'SUB_DistributedData_UDMF_SDK_UDMFHasTypeTest_0300 end');
     })
