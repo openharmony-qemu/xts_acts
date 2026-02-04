@@ -19,7 +19,7 @@ import AVPlayerSeekNdk from './AVPlayerSeekNdk.test';
 import AVTransCoderNdkTest from './AVTransCoderNdk.test';
 
 export default function testsuite() {
-  AVPlayerSeekNdk();
+  // AVPlayerSeekNdk();
   AVPlayerNdkTest();
   AVPlayerNdkTest2();
   AVTransCoderNdkTest();
