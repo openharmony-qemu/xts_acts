@@ -21,6 +21,7 @@ const TestTag = 'testTag';
 const ErrorCode = 401;
 const OldErrorCode = 5;
 const NewErrorCode = 17000007;
+const DeviceErrorCode = 801;
 
 export default function abilityTest() {
   describe('uitest401', () => {
@@ -3514,6 +3515,744 @@ export default function abilityTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi11_Driver_mouseDoubleClick_401 END`);
+    })
+
+     /**
+     * @tc.name   testApi11_Driver_mouseLongClick_401
+     * @tc.number UiTest_uitest401_085
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi11_Driver_mouseLongClick_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi11_Driver_mouseLongClick_401 start`);
+      let driver = Driver.create()
+      try {
+        driver.mouseLongClick(null, MouseButton.MOUSE_BUTTON_MIDDLE, 0, 0)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseLongClick_401 point = null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.mouseLongClick(undefined, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseLongClick_401 point = undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, null, 0)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseLongClick_401 key1 = null error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, undefined, 0)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseLongClick_401 key1 = undefined error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, null)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseLongClick_401 key2 = null error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, undefined)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseLongClick_401 key2 = undefined error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      console.log(`${TestTag}, testApi11_Driver_mouseLongClick_401 END`);
+    })
+
+     /**
+     * @tc.name   testApi20_Driver_mouseLongClick_401
+     * @tc.number UiTest_uitest401_086
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi20_Driver_mouseLongClick_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 start`);
+      let driver = Driver.create()
+      try {
+        driver.mouseLongClick(null, MouseButton.MOUSE_BUTTON_MIDDLE, 0, 0, 1600)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 point = null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.mouseLongClick(undefined, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0, 1600)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 point = undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_MIDDLE, null, 0, 1600)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 key1 = null error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_LEFT, undefined, 0, 1600)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 key1 = undefined error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_LEFT, 0, null, 1600)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 key2 = null error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, undefined, 1600)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 key2 = undefined error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0, null)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 spe = null error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0, undefined)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 spe = undefined error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0, 500)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 spe = 500 error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 END`);
+    })
+
+     /**
+     * @tc.name   testApi11_Driver_mouseMoveWithTrack_401
+     * @tc.number UiTest_uitest401_087
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi11_Driver_mouseMoveWithTrack_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 start`);
+      let driver = Driver.create()
+      try {
+        driver.mouseMoveWithTrack(null, {x: 100, y: 100}, 600)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 from = null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.mouseMoveWithTrack(undefined, {x: 100, y: 100}, 600)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 from = undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.mouseMoveWithTrack({x: 100, y: 100}, null, 600)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 to = null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.mouseMoveWithTrack({x: 100, y: 100}, undefined, 600)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 to = undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.mouseMoveWithTrack({x: 100, y: 100}, {x: 100, y: 100}, null)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 spe = null error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.mouseMoveWithTrack({x: 100, y: 100}, {x: 100, y: 100}, undefined)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 spe = undefined error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 END`);
+    })
+
+     /**
+     * @tc.name   testApi11_Driver_mouseDrag_401
+     * @tc.number UiTest_uitest401_088
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi11_Driver_mouseDrag_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 start`);
+      let driver = Driver.create()
+      try {
+        driver.mouseDrag(null, {x: 100, y: 100}, 600)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 from = null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.mouseDrag(undefined, {x: 100, y: 100}, 600)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 from = undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.mouseDrag({x: 100, y: 100}, null, 600)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 to = null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.mouseDrag({x: 100, y: 100}, undefined, 600)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 to = undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, null)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 spe = null error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, undefined)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 spe = undefined error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 END`);
+    })
+
+     /**
+     * @tc.name   testApi20_Driver_mouseDrag_401
+     * @tc.number UiTest_uitest401_089
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi20_Driver_mouseDrag_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 start`);
+      let driver = Driver.create()
+      try {
+        driver.mouseDrag(null, {x: 100, y: 100}, 600, 1600)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 from = null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.mouseDrag(undefined, {x: 100, y: 100}, 600, 1600)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 from = undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.mouseDrag({x: 100, y: 100}, null, 600, 1600)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 to = null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.mouseDrag({x: 100, y: 100}, undefined, 600, 1600)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 to = undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, null, 1600)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 spe = null error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, undefined, 1600)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 spe = undefined error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, 500, null)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 dur = null error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, 500, undefined)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 dur = undefined error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, 500, 1599)
+        expect().assertFail();               
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 dur = 1599 error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 END`);
+    })
+
+     /**
+     * @tc.name   testApi11_Driver_inputText_401
+     * @tc.number UiTest_uitest401_090
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi11_Driver_inputText_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi11_Driver_inputText_401 start`);
+      let driver = Driver.create()
+      try {
+        driver.inputText(null, 'hello')       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_inputText_401 point = null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.inputText(undefined, 'hello')       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_inputText_401 point = undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.inputText({x: 100, y: 100}, null)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_inputText_401 text = null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.inputText({x: 100, y: 100}, undefined)       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_inputText_401 text = undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.inputText({x: 100, y: 100}, '')       
+      } catch (error) {
+        console.log(`${TestTag}, testApi11_Driver_inputText_401 text = '' error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      console.log(`${TestTag}, testApi11_Driver_inputText_401 END`);
+    })
+
+     /**
+     * @tc.name   testApi20_Driver_inputText_401
+     * @tc.number UiTest_uitest401_091
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi20_Driver_inputText_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi20_Driver_inputText_401 start`);
+      let driver = Driver.create()
+      try {
+        driver.inputText(null, 'hello', {addition: false})       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_inputText_401 point = null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.inputText(undefined, 'hello', {addition: false})       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_inputText_401 point = undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.inputText({x: 100, y: 100}, null, {addition: false})       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_inputText_401 text = null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.inputText({x: 100, y: 100}, undefined, {addition: false})       
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_inputText_401 text = undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        driver.inputText({x: 100, y: 100}, '', {addition: false})       
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_inputText_401 text = '' error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.inputText({x: 100, y: 100}, 'Hello', null)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_inputText_401 model = null error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        driver.inputText({x: 100, y: 100}, 'Hello', undefined)       
+      } catch (error) {
+        console.log(`${TestTag}, testApi20_Driver_inputText_401 model = undefined error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      console.log(`${TestTag}, testApi20_Driver_inputText_401 END`);
+    })
+
+     /**
+     * @tc.name   testApi18_Driver_touchPadMultiFingerSwipe_401
+     * @tc.number UiTest_uitest401_092
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi18_Driver_touchPadMultiFingerSwipe_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi18_Driver_touchPadMultiFingerSwipe_401 start`);
+      let driver = Driver.create()
+      try {
+        await driver.touchPadMultiFingerSwipe(null, UiDirection.Right);
+        console.log(TestTag, `testApi18_Driver_touchPadMultiFingerSwipe_401`);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_touchPadMultiFingerSwipe_401, error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      console.log(`${TestTag}, testApi18_Driver_touchPadMultiFingerSwipe_401 END`);
+    })
+
+     /**
+     * @tc.name   testApi18_Driver_penLongClick_401
+     * @tc.number UiTest_uitest401_093
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi18_Driver_penLongClick_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi18_Driver_penLongClick_401 start`);
+      let driver = Driver.create()
+      try {
+        await driver.penLongClick({x: 100, y: 100}, null);
+        console.log(TestTag, `testApi18_Driver_penLongClick_401`);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_penLongClick_401, p = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.penLongClick({x: 100, y: 100}, undefined);
+        console.log(TestTag, `testApi18_Driver_penLongClick_401`);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_penLongClick_401, p = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      console.log(`${TestTag}, testApi18_Driver_penLongClick_401 END`);
+    })
+
+     /**
+     * @tc.name   testApi18_Driver_penSwipe_401
+     * @tc.number UiTest_uitest401_094
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi18_Driver_penSwipe_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi18_Driver_penSwipe_401 start`);
+      let driver = Driver.create()
+      try {
+        await driver.penSwipe(null, {x: 100, y: 100}, 600, 0.5);
+        console.log(TestTag, `testApi18_Driver_penSwipe_401`);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_penSwipe_401, sp = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.penSwipe(undefined, {x: 100, y: 100}, 600, 0.5);
+        console.log(TestTag, `testApi18_Driver_penSwipe_401`);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_penSwipe_401, sp = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.penSwipe({x: 100, y: 100}, null, 600, 0.5);
+        console.log(TestTag, `testApi18_Driver_penSwipe_401`);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_penSwipe_401, ep = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.penSwipe({x: 100, y: 100}, undefined, 600, 0.5);
+        console.log(TestTag, `testApi18_Driver_penSwipe_401`);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_penSwipe_401, ep = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.penSwipe({x: 100, y: 100}, {x: 100, y: 100}, null, 0.5);
+        console.log(TestTag, `testApi18_Driver_penSwipe_401`);
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_penSwipe_401, sp = null error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.penSwipe({x: 100, y: 100}, {x: 100, y: 100}, undefined, 0.5);
+        console.log(TestTag, `testApi18_Driver_penSwipe_401`);
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_penSwipe_401, sp = undefined error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.penSwipe({x: 100, y: 100}, {x: 100, y: 100}, 600, null);
+        console.log(TestTag, `testApi18_Driver_penSwipe_401`);
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_penSwipe_401, pre = null error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.penSwipe({x: 100, y: 100}, {x: 100, y: 100}, 600, undefined);
+        console.log(TestTag, `testApi18_Driver_penSwipe_401`);
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_penSwipe_401, pre = undefined error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      console.log(`${TestTag}, testApi18_Driver_penSwipe_401 END`);
+    })
+
+     /**
+     * @tc.name   testApi18_Driver_injectPenPointAction_401
+     * @tc.number UiTest_uitest401_095
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi18_Driver_injectPenPointAction_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi18_Driver_injectPenPointAction_401 start`);
+      let driver = Driver.create()
+      try {
+        await driver.injectPenPointAction(null, 600, 0.5);
+        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401`);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401, points = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        await driver.injectPenPointAction(undefined, 600, 0.5);
+        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401`);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401, points = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(1, 0, {x: 100, y: 100})       
+        await driver.injectPenPointAction(points, null, 0.5);
+        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401`);
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401, spe = null error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(1, 0, {x: 100, y: 100})       
+        await driver.injectPenPointAction(points, undefined, 0.5);
+        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401`);
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401, spe = undefined error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(1, 0, {x: 100, y: 100})       
+        await driver.injectPenPointAction(points, 600, null);
+        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401`);
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401, pre = null error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(1, 0, {x: 100, y: 100})       
+        await driver.injectPenPointAction(points, 600, undefined);
+        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401`);
+      } catch (error) {
+        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401, pre = undefined error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      console.log(`${TestTag}, testApi18_Driver_injectPenPointAction_401 END`);
+    })
+
+     /**
+     * @tc.name   testApi20_Driver_crownRotate_801
+     * @tc.number UiTest_uitest401_096
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi20_Driver_crownRotate_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi20_Driver_crownRotate_801 start`);
+      let driver = Driver.create()
+      try {
+        await driver.crownRotate(300,null);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_crownRotate_801, spe = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(DeviceErrorCode);
+      }
+      try {
+        await driver.crownRotate(300,undefined);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_crownRotate_801, spe = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(DeviceErrorCode);
+      }
+      console.log(`${TestTag}, testApi20_Driver_crownRotate_801 END`);
+    })
+
+     /**
+     * @tc.name   testApi20_Driver_isComponentPresentWhenLongClick_17000007
+     * @tc.number UiTest_uitest401_097
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi20_Driver_isComponentPresentWhenLongClick_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi20_Driver_isComponentPresentWhenLongClick_17000007 start`);
+      let driver = Driver.create()
+      try {
+        await driver.isComponentPresentWhenLongClick(null, {x: 100, y: 100}, 1600);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenLongClick_17000007, ON = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenLongClick(undefined, {x: 100, y: 100}, 1600);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenLongClick_17000007, ON = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenLongClick(ON.text('next page'), null, 1600);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenLongClick_17000007, point = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenLongClick(ON.text('next page'), undefined, 1600);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenLongClick_17000007, point = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenLongClick(ON.text('next page'), {x: 100, y: 100}, null);
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenLongClick_17000007, spe = null error is, ${JSON.stringify(error)}`);
+       expect().assertFail();
+      }
+      try {
+        await driver.isComponentPresentWhenLongClick(ON.text('next page'), {x: 100, y: 100}, undefined);
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenLongClick_17000007, spe = undefined error is, ${JSON.stringify(error)}`);
+       expect().assertFail();
+      }
+      console.log(`${TestTag}, testApi20_Driver_isComponentPresentWhenLongClick_17000007 END`);
+    })
+
+     /**
+     * @tc.name   testApi20_Driver_isComponentPresentWhenDrag_17000007
+     * @tc.number UiTest_uitest401_098
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi20_Driver_isComponentPresentWhenDrag_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi20_Driver_isComponentPresentWhenDrag_17000007 start`);
+      let driver = Driver.create()
+      try {
+        await driver.isComponentPresentWhenDrag(ON.text('next page'), {x: 100, y: 100}, null, 600, 1600);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenDrag_17000007, to = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.text('next page'), {x: 100, y: 100}, undefined, 600, 1600);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenDrag_17000007, to = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.text('next page'), {x: 100, y: 100}, {x: 200, y: 200}, null, 1600);
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenDrag_17000007, sp = null error is, ${JSON.stringify(error)}`);
+         expect().assertFail();
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.text('next page'), {x: 100, y: 100}, {x: 200, y: 200}, undefined, 1600);
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenDrag_17000007, sp = undefined error is, ${JSON.stringify(error)}`);
+         expect().assertFail();
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.text('next page'), {x: 100, y: 100}, {x: 200, y: 200}, 600, null);
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenDrag_17000007, dur = null error is, ${JSON.stringify(error)}`);
+         expect().assertFail();
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.text('next page'), {x: 100, y: 100}, {x: 200, y: 200}, 600, undefined);
+      } catch (error) {
+        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenDrag_17000007, dur = undefined error is, ${JSON.stringify(error)}`);
+         expect().assertFail();
+      }
+      console.log(`${TestTag}, testApi20_Driver_isComponentPresentWhenDrag_17000007 END`);
     })
   })
 }
