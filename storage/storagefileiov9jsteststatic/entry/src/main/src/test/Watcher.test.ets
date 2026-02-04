@@ -62,7 +62,7 @@ function startWatcher(testNum: string, eventCode: int|undefined , watchPath: str
     hilog.info(domain, tag, '%{public}s', 'eventCode get fail');
     return ret;
   }
-  await Utils.msSleep(10);
+  waitForCompletion(async()=> {await Utils.msSleep(10)});
   try {
     ret.watcher = fs.createWatcher(watchPath, eventCode, (data: WatchEvent) => {
       hilog.info(domain, tag, '%{public}s', `${testNum} :{event: ${data.event}, fileName: ${data.fileName}, cookie: ${data.cookie}}`);
