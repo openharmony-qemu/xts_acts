@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,16 +13,8 @@
  * limitations under the License.
  */
 
-/**
- * @tc.name   AppStorage Null, Undefined and Empty String Parameter Tests
- * @tc.number SUB_ARUI_APPSTORAGE_NULL_UNDEFINED_001
- * @tc.desc   Test AppStorage methods with null, undefined and empty string parameters
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL2
- */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 
 export default function appStorageNullUndefinedTest() {
   describe('AppStorageNullUndefinedTest', () => {
@@ -54,7 +46,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_setAndRef_null_001', 0, () => {
+    it('AppStorage_setAndRef_null_001', Level.LEVEL2, () => {
       console.info('[AppStorage_setAndRef_null_001] START');
       try {
         const propName: string = 'testSetAndRefNull';
@@ -85,7 +77,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_setAndRef_undefined_001', 0, () => {
+    it('AppStorage_setAndRef_undefined_001', Level.LEVEL2, () => {
       console.info('[AppStorage_setAndRef_undefined_001] START');
       try {
         const propName: string = 'testSetAndRefUndefined';
@@ -116,7 +108,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_link_null_001', 0, () => {
+    it('AppStorage_link_null_001', Level.LEVEL2, () => {
       console.info('[AppStorage_link_null_001] START');
       try {
         const propName: string | null = null;
@@ -140,7 +132,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_link_undefined_001', 0, () => {
+    it('AppStorage_link_undefined_001', Level.LEVEL2, () => {
       console.info('[AppStorage_link_undefined_001] START');
       try {
         const propName: string | undefined = undefined;
@@ -164,7 +156,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_prop_null_001', 0, () => {
+    it('AppStorage_prop_null_001', Level.LEVEL2, () => {
       console.info('[AppStorage_prop_null_001] START');
       try {
         const propName: string | null = null;
@@ -188,7 +180,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_prop_undefined_001', 0, () => {
+    it('AppStorage_prop_undefined_001', Level.LEVEL2, () => {
       console.info('[AppStorage_prop_undefined_001] START');
       try {
         const propName: string | undefined = undefined;
@@ -212,7 +204,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_setAndProp_null_001', 0, () => {
+    it('AppStorage_setAndProp_null_001', Level.LEVEL2, () => {
       console.info('[AppStorage_setAndProp_null_001] START');
       try {
         const propName: string = 'testSetAndPropNull';
@@ -246,7 +238,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_setAndProp_undefined_001', 0, () => {
+    it('AppStorage_setAndProp_undefined_001', Level.LEVEL2, () => {
       console.info('[AppStorage_setAndProp_undefined_001] START');
       try {
         const propName: string = 'testSetAndPropUndefined';
@@ -280,7 +272,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_set_null_001', 0, () => {
+    it('AppStorage_set_null_001', Level.LEVEL2, () => {
       console.info('[AppStorage_set_null_001] START');
       try {
         const propName: string = 'testSetNull';
@@ -316,7 +308,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_set_undefined_001', 0, () => {
+    it('AppStorage_set_undefined_001', Level.LEVEL2, () => {
       console.info('[AppStorage_set_undefined_001] START');
       try {
         const propName: string = 'testSetUndefined';
@@ -352,7 +344,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_set_null_nonExistent_001', 0, () => {
+    it('AppStorage_set_null_nonExistent_001', Level.LEVEL2, () => {
       console.info('[AppStorage_set_null_nonExistent_001] START');
       try {
         const propName: string = 'testSetNullNonExistent';
@@ -384,7 +376,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_set_undefined_nonExistent_001', 0, () => {
+    it('AppStorage_set_undefined_nonExistent_001', Level.LEVEL2, () => {
       console.info('[AppStorage_set_undefined_nonExistent_001] START');
       try {
         const propName: string = 'testSetUndefinedNonExistent';
@@ -416,7 +408,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_setAndRef_null_string_001', 0, () => {
+    it('AppStorage_setAndRef_null_string_001', Level.LEVEL2, () => {
       console.info('[AppStorage_setAndRef_null_string_001] START');
       try {
         const propName: string = 'testSetAndRefNullString';
@@ -443,7 +435,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_setAndRef_undefined_string_001', 0, () => {
+    it('AppStorage_setAndRef_undefined_string_001', Level.LEVEL2, () => {
       console.info('[AppStorage_setAndRef_undefined_string_001] START');
       try {
         const propName: string = 'testSetAndRefUndefinedString';
@@ -470,7 +462,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_setAndProp_null_string_001', 0, () => {
+    it('AppStorage_setAndProp_null_string_001', Level.LEVEL2, () => {
       console.info('[AppStorage_setAndProp_null_string_001] START');
       try {
         const propName: string = 'testSetAndPropNullString';
@@ -501,7 +493,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_setAndProp_undefined_string_001', 0, () => {
+    it('AppStorage_setAndProp_undefined_string_001', Level.LEVEL2, () => {
       console.info('[AppStorage_setAndProp_undefined_string_001] START');
       try {
         const propName: string = 'testSetAndPropUndefinedString';
@@ -532,7 +524,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_link_emptyString_001', 0, () => {
+    it('AppStorage_link_emptyString_001', Level.LEVEL2, () => {
       console.info('[AppStorage_link_emptyString_001] START');
       try {
         const propName: string = '';
@@ -556,7 +548,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_prop_emptyString_001', 0, () => {
+    it('AppStorage_prop_emptyString_001', Level.LEVEL2, () => {
       console.info('[AppStorage_prop_emptyString_001] START');
       try {
         const propName: string = '';
@@ -580,7 +572,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_setAndRef_emptyString_001', 0, () => {
+    it('AppStorage_setAndRef_emptyString_001', Level.LEVEL2, () => {
       console.info('[AppStorage_setAndRef_emptyString_001] START');
       try {
         const propName: string = 'testSetAndRefEmptyString';
@@ -611,7 +603,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_setAndProp_emptyString_001', 0, () => {
+    it('AppStorage_setAndProp_emptyString_001', Level.LEVEL2, () => {
       console.info('[AppStorage_setAndProp_emptyString_001] START');
       try {
         const propName: string = 'testSetAndPropEmptyString';
@@ -645,7 +637,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_set_emptyString_001', 0, () => {
+    it('AppStorage_set_emptyString_001', Level.LEVEL2, () => {
       console.info('[AppStorage_set_emptyString_001] START');
       try {
         const propName: string = 'testSetEmptyString';
@@ -681,7 +673,7 @@ export default function appStorageNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AppStorage_set_emptyString_nonExistent_001', 0, () => {
+    it('AppStorage_set_emptyString_nonExistent_001', Level.LEVEL2, () => {
       console.info('[AppStorage_set_emptyString_nonExistent_001] START');
       try {
         const propName: string = 'testSetEmptyStringNonExistent';
@@ -708,15 +700,15 @@ export default function appStorageNullUndefinedTest() {
     // ========== Deprecated API Tests: Link, Prop, SetAndProp ==========
 
     /**
-     * @tc.name   AppStorage_Link_null_001
-     * @tc.number SUB_ARUI_APPSTORAGE_LINK_PARAM_NULL_001
+     * @tc.name   AppStorage_Link_null_002
+     * @tc.number SUB_ARUI_APPSTORAGE_LINK_PARAM_NULL_002
      * @tc.desc   Test deprecated AppStorage.Link with null propName
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      * @deprecated since 10
      */
-    it('AppStorage_Link_null_001', 0, () => {
+    it('AppStorage_Link_null_002', Level.LEVEL2, () => {
       console.info('[AppStorage_Link_null_001] START');
       try {
         const propName: string | null = null;
@@ -732,15 +724,15 @@ export default function appStorageNullUndefinedTest() {
     });
 
     /**
-     * @tc.name   AppStorage_Link_undefined_001
-     * @tc.number SUB_ARUI_APPSTORAGE_LINK_PARAM_UNDEFINED_001
+     * @tc.name   AppStorage_Link_undefined_002
+     * @tc.number SUB_ARUI_APPSTORAGE_LINK_PARAM_UNDEFINED_002
      * @tc.desc   Test deprecated AppStorage.Link with undefined propName
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      * @deprecated since 10
      */
-    it('AppStorage_Link_undefined_001', 0, () => {
+    it('AppStorage_Link_undefined_002', Level.LEVEL2, () => {
       console.info('[AppStorage_Link_undefined_001] START');
       try {
         const propName: string | undefined = undefined;
@@ -756,15 +748,15 @@ export default function appStorageNullUndefinedTest() {
     });
 
     /**
-     * @tc.name   AppStorage_Link_emptyString_001
-     * @tc.number SUB_ARUI_APPSTORAGE_LINK_PARAM_EMPTYSTRING_001
+     * @tc.name   AppStorage_Link_emptyString_002
+     * @tc.number SUB_ARUI_APPSTORAGE_LINK_PARAM_EMPTYSTRING_002
      * @tc.desc   Test deprecated AppStorage.Link with empty string propName
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      * @deprecated since 10
      */
-    it('AppStorage_Link_emptyString_001', 0, () => {
+    it('AppStorage_Link_emptyString_002', Level.LEVEL2, () => {
       console.info('[AppStorage_Link_emptyString_001] START');
       try {
         const propName: string = '';
@@ -781,15 +773,15 @@ export default function appStorageNullUndefinedTest() {
 
 
     /**
-     * @tc.name   AppStorage_Prop_null_001
-     * @tc.number SUB_ARUI_APPSTORAGE_PROP_PARAM_NULL_001
+     * @tc.name   AppStorage_Prop_null_002
+     * @tc.number SUB_ARUI_APPSTORAGE_PROP_PARAM_NULL_002
      * @tc.desc   Test deprecated AppStorage.Prop with null propName
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      * @deprecated since 10
      */
-    it('AppStorage_Prop_null_001', 0, () => {
+    it('AppStorage_Prop_null_002', Level.LEVEL2, () => {
       console.info('[AppStorage_Prop_null_001] START');
       try {
         const propName: string | null = null;
@@ -805,15 +797,15 @@ export default function appStorageNullUndefinedTest() {
     });
 
     /**
-     * @tc.name   AppStorage_Prop_undefined_001
-     * @tc.number SUB_ARUI_APPSTORAGE_PROP_PARAM_UNDEFINED_001
+     * @tc.name   AppStorage_Prop_undefined_002
+     * @tc.number SUB_ARUI_APPSTORAGE_PROP_PARAM_UNDEFINED_002
      * @tc.desc   Test deprecated AppStorage.Prop with undefined propName
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      * @deprecated since 10
      */
-    it('AppStorage_Prop_undefined_001', 0, () => {
+    it('AppStorage_Prop_undefined_002', Level.LEVEL2, () => {
       console.info('[AppStorage_Prop_undefined_001] START');
       try {
         const propName: string | undefined = undefined;
@@ -829,15 +821,15 @@ export default function appStorageNullUndefinedTest() {
     });
 
     /**
-     * @tc.name   AppStorage_Prop_emptyString_001
-     * @tc.number SUB_ARUI_APPSTORAGE_PROP_PARAM_EMPTYSTRING_001
+     * @tc.name   AppStorage_Prop_emptyString_002
+     * @tc.number SUB_ARUI_APPSTORAGE_PROP_PARAM_EMPTYSTRING_002
      * @tc.desc   Test deprecated AppStorage.Prop with empty string propName
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      * @deprecated since 10
      */
-    it('AppStorage_Prop_emptyString_001', 0, () => {
+    it('AppStorage_Prop_emptyString_002', Level.LEVEL2, () => {
       console.info('[AppStorage_Prop_emptyString_001] START');
       try {
         const propName: string = '';
@@ -855,15 +847,15 @@ export default function appStorageNullUndefinedTest() {
 
 
     /**
-     * @tc.name   AppStorage_SetAndProp_null_001
-     * @tc.number SUB_ARUI_APPSTORAGE_SETANDPROP_PARAM_NULL_001
+     * @tc.name   AppStorage_SetAndProp_null_002
+     * @tc.number SUB_ARUI_APPSTORAGE_SETANDPROP_PARAM_NULL_002
      * @tc.desc   Test deprecated AppStorage.SetAndProp with null defaultValue
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      * @deprecated since 10
      */
-    it('AppStorage_SetAndProp_null_001', 0, () => {
+    it('AppStorage_SetAndProp_null_002', Level.LEVEL2, () => {
       console.info('[AppStorage_SetAndProp_null_001] START');
       try {
         const propName: string = 'testSetAndPropNullDeprecated';
@@ -888,15 +880,15 @@ export default function appStorageNullUndefinedTest() {
     });
 
     /**
-     * @tc.name   AppStorage_SetAndProp_undefined_001
-     * @tc.number SUB_ARUI_APPSTORAGE_SETANDPROP_PARAM_UNDEFINED_001
+     * @tc.name   AppStorage_SetAndProp_undefined_002
+     * @tc.number SUB_ARUI_APPSTORAGE_SETANDPROP_PARAM_UNDEFINED_002
      * @tc.desc   Test deprecated AppStorage.SetAndProp with undefined defaultValue
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      * @deprecated since 10
      */
-    it('AppStorage_SetAndProp_undefined_001', 0, () => {
+    it('AppStorage_SetAndProp_undefined_002', Level.LEVEL2, () => {
       console.info('[AppStorage_SetAndProp_undefined_001] START');
       try {
         const propName: string = 'testSetAndPropUndefinedDeprecated';
@@ -921,15 +913,15 @@ export default function appStorageNullUndefinedTest() {
     });
 
     /**
-     * @tc.name   AppStorage_SetAndProp_emptyString_001
-     * @tc.number SUB_ARUI_APPSTORAGE_SETANDPROP_PARAM_EMPTYSTRING_001
+     * @tc.name   AppStorage_SetAndProp_emptyString_002
+     * @tc.number SUB_ARUI_APPSTORAGE_SETANDPROP_PARAM_EMPTYSTRING_002
      * @tc.desc   Test deprecated AppStorage.SetAndProp with empty string defaultValue
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      * @deprecated since 10
      */
-    it('AppStorage_SetAndProp_emptyString_001', 0, () => {
+    it('AppStorage_SetAndProp_emptyString_002', Level.LEVEL2, () => {
       console.info('[AppStorage_SetAndProp_emptyString_001] START');
       try {
         const propName: string = 'testSetAndPropEmptyStringDeprecated';
