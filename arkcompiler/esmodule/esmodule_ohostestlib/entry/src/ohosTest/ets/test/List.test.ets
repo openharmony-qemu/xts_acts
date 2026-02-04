@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import staticImport from './StaticImport'
+import staticImport from './StaticImport.test'
 
 export default function testsuite() {
   staticImport()
