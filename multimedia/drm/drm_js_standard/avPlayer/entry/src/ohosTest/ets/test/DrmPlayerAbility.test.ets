@@ -110,7 +110,7 @@ export default function abilityTest() {
             // Presets an action, which is performed only once before all test cases of the test suite start.
             // This API supports only one parameter: preset action function.
         if(!wifiMg.isWifiActive()){
-            console.info("======> wifi_test/enable wifi");
+            console.info("======> wifi is not Active");
             wifiMg.enableWifi();
         }
         try {

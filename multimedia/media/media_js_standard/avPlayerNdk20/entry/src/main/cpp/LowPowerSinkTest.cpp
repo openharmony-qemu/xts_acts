@@ -958,38 +958,6 @@ static napi_value OH_LowPowerAudioSink_SetLoudnessGain0100(napi_env env, napi_ca
     return retValue;
 }
 
-static napi_value OH_LowPowerAudioSink_SetLoudnessGain0200(napi_env env, napi_callback_info info)
-{
-    if (!OH_LowPowerAVSink_GetCapability()) {
-        napi_value retValue;
-        napi_create_int32(env, 0, &retValue);
-        return retValue;
-    }
-    napi_value result;
-    napi_get_undefined(env, &result);
-    size_t argc = 2;
-    napi_value argv[argc];
-    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
-    int32_t number = 2;
-    if (argc < number) {
-        napi_throw_error(env, nullptr, "invalid number of arguments");
-        return result;
-    }
-    OH_LowPowerAudioSink* streamer;
-    napi_get_value_external(env, argv[0], (void**)&streamer);
-    double loudnessGainDouble;
-    napi_get_value_double(env, argv[1], &loudnessGainDouble);
-    float loudnessGain = static_cast<float>(loudnessGainDouble);
-    OH_AVErrCode errcode = OH_LowPowerAudioSink_SetLoudnessGain(streamer, loudnessGain);
-    int32_t res = 1;
-    if (errcode == AV_ERR_SERVICE_DIED) {
-        res = 0;
-    }
-    napi_value retValue;
-    napi_create_int32(env, res, &retValue);
-    return retValue;
-}
-
 static napi_value OH_LowPowerAudioSinkCallback_Create0100(napi_env env, napi_callback_info info)
 {
     OH_LowPowerAudioSinkCallback *callback = OH_LowPowerAudioSinkCallback_Create();
@@ -1209,8 +1177,6 @@ napi_property_descriptor desc[] = {
     {"OH_LowPowerVideoSinkCallback_Create0100", nullptr, OH_LowPowerVideoSinkCallback_Create0100, nullptr, nullptr,
      nullptr, napi_default, nullptr},
     {"OH_LowPowerAudioSink_CreateByMime0100", nullptr, OH_LowPowerAudioSink_CreateByMime0100, nullptr, nullptr,
-     nullptr, napi_default, nullptr},
-    {"OH_LowPowerAudioSink_SetLoudnessGain0200", nullptr, OH_LowPowerAudioSink_SetLoudnessGain0200, nullptr, nullptr,
      nullptr, napi_default, nullptr},
 
 };

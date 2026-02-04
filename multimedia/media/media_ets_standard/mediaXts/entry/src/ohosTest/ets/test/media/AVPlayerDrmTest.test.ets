@@ -40,7 +40,7 @@ export default function AVPlayerDrmTest() {
     beforeAll(async (done: Function) => {
       console.info(TAG, 'beforeAll case');
       if(!wifiMg.isWifiActive()){
-        console.info("======> wifi_test/enable wifi");
+        console.info("======> wifi is not Active");
         wifiMg.enableWifi();
       }
       try {
