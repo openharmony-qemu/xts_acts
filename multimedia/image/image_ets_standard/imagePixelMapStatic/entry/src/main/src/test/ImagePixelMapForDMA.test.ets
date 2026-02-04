@@ -119,16 +119,16 @@ export default function imagePixelmap() {
       let pixelMap: image.PixelMap | undefined = undefined;
       let imageInfo: image.ImageInfo | undefined = undefined;
       if (decodingOptions != undefined) {
-        pixelMap = waitForCompletion<image.PixelMap>(async ():Promise<image.PixelMap> => {await imageSource!.createPixelMap(decodingOptions);})
+        waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap(decodingOptions);})
       } else {
-        pixelMap = waitForCompletion<image.PixelMap>(async ():Promise<image.PixelMap> => {await imageSource!.createPixelMap();})
+        waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap();})
       }
       waitForCompletion(async () => {await imageSource!.release();})
       if (pixelMap == undefined) {
         logger.log("create pixelMap failed.")
         return undefined;
       }
-      imageInfo = waitForCompletion<image.ImageInfo>(async ():Promise<image.ImageInfo> => {await pixelMap!.getImageInfo();})
+      waitForCompletion(async () => {imageInfo = await pixelMap!.getImageInfo();})
       waitForCompletion(async () => {await pixelMap!.release();})
       return imageInfo;
     }
@@ -156,11 +156,11 @@ export default function imagePixelmap() {
           }
         } else {
           if (decodingOptions != undefined && allocatorType == undefined) {
-            pixelMap = waitForCompletion<image.PixelMap>(async ():Promise<image.PixelMap> => {await imageSource!.createPixelMapUsingAllocator(decodingOptions);})
+            waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMapUsingAllocator(decodingOptions);})
           } else if (decodingOptions != undefined && allocatorType != undefined) {
-            pixelMap = waitForCompletion<image.PixelMap>(async ():Promise<image.PixelMap> => {await imageSource!.createPixelMapUsingAllocator(decodingOptions, allocatorType);})
+            waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMapUsingAllocator(decodingOptions, allocatorType);})
           } else if (decodingOptions == undefined && allocatorType == undefined) {
-            pixelMap = waitForCompletion<image.PixelMap>(async ():Promise<image.PixelMap> => {await imageSource!.createPixelMapUsingAllocator();})
+            waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMapUsingAllocator();})
           }
         }
         waitForCompletion(async () => {await imageSource!.release();})
@@ -169,7 +169,8 @@ export default function imagePixelmap() {
         logger.log('Failed to create pixelMap.');
       }
       if(pixelMap != undefined) {
-        let dstImageInfo = waitForCompletion<image.ImageInfo>(async ():Promise<image.ImageInfo> => {await pixelMap!.getImageInfo();})
+        let dstImageInfo: image.ImageInfo | undefined;
+        waitForCompletion(async () => {dstImageInfo = await pixelMap!.getImageInfo();})
         waitForCompletion(async () => {await pixelMap!.release();})
         return dstImageInfo;
       } else {
