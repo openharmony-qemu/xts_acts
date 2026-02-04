@@ -216,6 +216,7 @@ group("multimedia") {
       "videoProcess/detail_enhancer_video_ndk:ActsDetailEnhancerVideoNdkUnitTest",
       "videoProcess/moduletest/image:ActsVpeImageNativModuleTest",
       "videoProcess/moduletest/video:ActsVpeVideoNativModuleTest",
+      "videoProcess/ActsDetailEnhancerImageNdkTest:ActsDetailEnhancerImageNdkUnitHapTest",
       "av_codec/ActsAudioEncoderTest:ActsAudioEncoderTest",
       "audio_ndk/ActsOhAudioRenderTest:ActsOhAudioRenderHapTest",
       "av_codec/ActsAudioDecoderTest:ActsAudioDecoderHapTest",
