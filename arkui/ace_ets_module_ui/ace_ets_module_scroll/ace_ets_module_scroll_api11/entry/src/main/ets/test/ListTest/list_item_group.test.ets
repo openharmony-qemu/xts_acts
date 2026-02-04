@@ -96,7 +96,7 @@ export default function list_item_groupJsunit() {
       let strJson: string = getInspectorByKey('Wens');
       console.info("[testlist_item_group0003] component border strJson:" + strJson);
       expect(JSON.parse(strJson).$type).assertEqual('ListItemGroup');
-      expect(JSON.parse(strJson).$attrs.header).not().assertEqual(undefined);
+      expect(JSON.parse(strJson).$attrs.header).assertNotEqual(undefined);
       console.info("[testlist_itemOnSelect0003] hear value :" + JSON.parse(strJson).$attrs.header);
       done();
     });
@@ -115,7 +115,7 @@ export default function list_item_groupJsunit() {
       let strJson: string = getInspectorByKey('Thurs');
       console.info("[testlist_item_group0004] component border strJson:" + strJson);
       expect(JSON.parse(strJson).$type).assertEqual('ListItemGroup');
-      expect(JSON.parse(strJson).$attrs.rooter).not().assertEqual(undefined);
+      expect(JSON.parse(strJson).$attrs.rooter).assertNotEqual(undefined);
       console.info("[testlist_item_group0004] hear value :" + JSON.parse(strJson).$attrs.rooter);
       done();
     });
