@@ -27,7 +27,7 @@ struct alignItemsGridIndex {
 
   getSize() {
     let ret = Math.floor(Math.random() * 5)
-    return Math.max(1, ret)
+    return Math.round(Math.max(1, ret))
   }
 
   build() {

@@ -102,7 +102,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0290', Level.LEVEL0,
       let height = bottom -top;
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0290 value is" + left + " --" + right + "--" + top + "--" + bottom);
       
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(62))).toInt(),
@@ -119,7 +119,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0290', Level.LEVEL0,
       buttonReset!.click();
       await CommonFunc.sleep(1000);
       
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(88))).toInt(),
@@ -171,7 +171,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0310', Level.LEVEL0,
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width*0.5)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(5000);
       
       let textSwipeOffset = inspector.getInspectorByKey('swipe29Offset');
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0310 json is ' + JSON.parseJsonElement(textSwipeOffset).getElement('$attrs').getString('content'));
@@ -191,7 +191,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0310', Level.LEVEL0,
       let buttonReset2 = await driver.findComponent(ON.id('btreset29'));
       await driver.delayMs(300);
       buttonReset2!.click();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(4000);
 
       
       await driver.swipe(
@@ -212,7 +212,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0310', Level.LEVEL0,
         (Math.round((AppStorage.get<number>('winLeft')) as number + left)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(5000);
       done();
     });
 

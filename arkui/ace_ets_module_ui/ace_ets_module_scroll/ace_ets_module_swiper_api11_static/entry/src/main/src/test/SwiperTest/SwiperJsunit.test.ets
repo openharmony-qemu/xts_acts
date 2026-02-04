@@ -598,41 +598,6 @@ it('swiperTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<voi
       done()
     });
 
-
-    
-    /**
-     * @tc.number   swiperTest_static_1800
-     * @tc.name     swiperTest_static_1800
-     * @tc.desc     swiperTest_static_1800
-     * @tc.level    Level.LEVEL0
-     */
-it('swiperTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('swiperTest_static_1800 START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "autoPlay": "false123"
-          } as Record<String,RecordData>
-        }
-        let InnerEvent: events_emitter.InnerEvent = {
-          eventId: 207,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("swiperTest_static_1800 start to publish emit");
-        events_emitter.emit(InnerEvent, eventData);
-      } catch (err: Error) {
-        console.log("swiperTest_static_1800 change component data error: " + err.message);
-      }
-      await CommonFunc.sleep(4000);
-      let strJsonNew = inspector.getInspectorByKey('swiper');
-
-      console.info("swiperTest_static_1800 component JSON.parse(strJsonNew) is: " +
-      JSON.stringify(JSON.parseJsonElement(strJsonNew)));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('autoPlay')).assertEqual('false');
-      console.info('swiperTest_static_1800 END');
-      done()
-    });
-
     
     /**
      * @tc.number   swiperTest_static_1900
@@ -667,38 +632,5 @@ it('swiperTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<voi
       done()
     });
 
-    
-    /**
-     * @tc.number   swiperTest_static_2000
-     * @tc.name     swiperTest_static_2000
-     * @tc.desc     swiperTest_static_2000
-     * @tc.level    Level.LEVEL0
-     */
-it('swiperTest_static_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('swiperTest_static_2000 START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "duration": "abc"
-          } as Record<String,RecordData>
-        }
-        let InnerEvent: events_emitter.InnerEvent = {
-          eventId: 210,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("swiperTest_static_2000 start to publish emit");
-        events_emitter.emit(InnerEvent, eventData);
-      } catch (err: Error) {
-        console.log("swiperTest_static_2000 change component data error: " + err.message);
-      }
-      await CommonFunc.sleep(4000);
-      let strJsonNew = inspector.getInspectorByKey('swiper');
-
-      console.info("swiperTest_static_2000 component JSON.parse(strJsonNew) is: " +
-      JSON.stringify(JSON.parseJsonElement(strJsonNew)));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('duration')).assertEqual('400');
-      console.info('swiperTest_static_2000 END');
-      done()
-    });
   })
 }

@@ -21,6 +21,8 @@ import Utils from '../Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import contextConstant from '@ohos.app.ability.contextConstant';
 import AtomicServiceOptions from '@ohos.app.ability.AtomicServiceOptions'
+import { FailureCode } from '@ohos.app.ability.CompletionHandlerForAtomicService'
+import CompletionHandlerForAtomicService from '@ohos.app.ability.CompletionHandlerForAtomicService'
 import { BusinessError, RecordData } from '@ohos.base';
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import Want from '@ohos.app.ability.Want';
@@ -31,6 +33,7 @@ import { Driver, ON, Component } from '@ohos.UiTest';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context: common.UIAbilityContext
+const MALFUNCTION_MSG: string = 'A system error occurred';
 
 export default function UIAbilityContextStatic() {
   describe("UIAbilityContextStatic", () => {
@@ -256,7 +259,25 @@ export default function UIAbilityContextStatic() {
           flags: wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
           parameters: {
             "demo.result": 123456
-          } as Record<string, RecordData>
+          } as Record<string, RecordData>,
+
+          completionHandlerForAtomicService:
+          {
+            onAtomicServiceRequestSuccess: (appId: string) => {
+              hilog.info(0x0000, 'testTag',
+                `UIAbilityContext.openAtomicService onAtomicServiceRequestSuccess appId:${appId}`);
+            },
+            onAtomicServiceRequestFailure: (appId: string, failureCode: FailureCode, failureMessage: string) => {
+              hilog.info(0x0000, 'testTag',
+                `UIAbilityContext.openAtomicService onAtomicServiceRequestFailure appId:${appId},
+                failureCode:${failureCode}, failureMessage:${failureMessage}`);
+              expect(failureCode === FailureCode.FAILURE_CODE_USER_CANCEL).assertFalse();
+              expect(failureCode === FailureCode.FAILURE_CODE_USER_REFUSE).assertFalse();
+              expect(failureCode).assertEqual(FailureCode.FAILURE_CODE_SYSTEM_MALFUNCTION);
+              expect(failureMessage).assertEqual(MALFUNCTION_MSG);
+              done();
+            }
+          }
         };
         context.openAtomicService('', options)
           .then((result: common.AbilityResult) => {

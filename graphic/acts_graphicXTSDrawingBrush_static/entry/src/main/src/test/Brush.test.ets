@@ -741,10 +741,27 @@ export default function brushTest() {
       try {
         let cf = drawing.ColorFilter.createLumaColorFilter();
         let cf2 = brush.getColorFilter();
-        console.info(msg + ' getColorFilter successed,cf:' + cf2);
+        console.info(msg + ' 1 getColorFilter successed,cf:' + cf2);
+        expect(cf2 == undefined).assertTrue();
       } catch(e) {
         e = e as BusinessError ;
-        console.info(msg + ` getColorFilter errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        console.info(msg + ` 1 getColorFilter errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
+        let setColorFilter = drawing.ColorFilter.createSRGBGammaToLinear();
+        if (setColorFilter != undefined) {
+          brush.setColorFilter(setColorFilter!);
+        }
+        let filter = brush.getColorFilter();
+        console.info(msg + ' 2 getColorFilter successed,cf:' + filter);
+        if(filter == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
+        }
+      } catch(e) {
+        e = e as BusinessError ;
+        console.info(msg + ` 2 getColorFilter errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
     });
@@ -763,6 +780,7 @@ export default function brushTest() {
         try {
           let cf2 = brush.getColorFilter();
           console.info(msg + ' getColorFilter successed,cf:' + cf2);
+          expect(cf2 == undefined).assertTrue();
         } catch(e) {
           e = e as BusinessError ;
           console.info(msg + ` getColorFilter errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
@@ -985,6 +1003,10 @@ export default function brushTest() {
         let colorGet = brush.getColor();
         expect(colorGet != null).assertTrue();
         console.info(msg + ' getColor successed,colorGet:'+ JSON.stringify(colorGet));
+        if(colorGet == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
       } catch(e) {
         e = e as BusinessError ;
         console.info(msg + ` getColor1 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);

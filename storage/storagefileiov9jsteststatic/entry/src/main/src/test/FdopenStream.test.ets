@@ -151,6 +151,31 @@ export default function fileIOFdopenStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_fdopenstream_sync_static_005
+     * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_SYNC_0500
+     * @tc.desc   Test fdopenStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_fdopenstream_sync_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_fdopenstream_sync_static_005');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
+
+      try {
+        expect(await Utils.isIntNum(file.fd)).assertTrue();
+        fs.fdopenStreamSync(file.fd, "");
+        expect(false).assertTrue();
+      } catch (e: BusinessError) {
+        fs.closeSync(file);
+        fs.unlinkSync(fpath);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_sync_static_005 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      }
+    });
+
+    /**
      * @tc.name   fileIO_test_fdopenstream_sync_static_006
      * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_SYNC_0600
      * @tc.desc   Test fdopenStreamSync() interface.
@@ -571,6 +596,31 @@ export default function fileIOFdopenStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_fdopenstream_async_static_007
+     * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_ASYNC_0700
+     * @tc.desc   Test fdopenStream() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_fdopenstream_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_fdopenstream_async_static_007');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
+
+      try {
+        expect(await Utils.isIntNum(file.fd)).assertTrue();
+        await fs.fdopenStream(file.fd, "");
+        expect(false).assertTrue();
+      } catch (e: BusinessError) {
+        fs.unlinkSync(fpath);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_007 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   fileIO_test_fdopenstream_async_static_008
      * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_ASYNC_0800
      * @tc.desc   Test fdopenStream() interface. Promise.
@@ -969,6 +1019,34 @@ export default function fileIOFdopenStream() {
         });
       } catch (e: BusinessError) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_019 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_fdopenstream_async_static_020
+     * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_ASYNC_2000
+     * @tc.desc   Test fdopenStream() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_fdopenstream_async_static_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_fdopenstream_async_static_020');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
+      expect(await Utils.isIntNum(file.fd)).assertTrue();
+
+      try {
+        fs.fdopenStream(file.fd, "", (err: BusinessError<void> | null) => {
+          if (err?.code !== 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_020 error package: ' + err?.message + ', code: ' + err?.code);
+            expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
+            done();
+          }
+        });
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_020 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
     });

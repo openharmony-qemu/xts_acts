@@ -43,8 +43,6 @@ export default function defaultTest() {
 
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
-     'Stepper',
-     'StepperItem',
     // 'Web',
      'ColumnSplit',
      'RowSplit',
@@ -114,7 +112,7 @@ export default function defaultTest() {
     }
   }, {
     describe: 'Visibility',
-    exceptView: ['RichText', 'Web', 'StepperItem', 'TabContent'],
+    exceptView: ['RichText', 'Web', 'TabContent'],
     expectValue: {
       visibility: 'Visibility.Visible'
     }

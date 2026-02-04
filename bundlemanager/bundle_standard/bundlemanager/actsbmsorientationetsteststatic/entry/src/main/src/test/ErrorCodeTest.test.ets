@@ -30,9 +30,9 @@ export default function ErrcodeTest() {
      * @tc.desc   test errCode 17700072 when call getLaunchWant
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('getLaunchWant_static_17700072', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('getLaunchWant_static_17700072', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "getLaunchWant_static_17700072 start");
       try {
         let want = bundleManager.getLaunchWant();

@@ -625,8 +625,52 @@ export default function ImageGetComponentSupp() {
         mPhotoSession.start();
       })
     })
-
-
+/**
+     * @tc.number     image_getMetadata_Error_test_001
+     * @tc.name       image_getMetadata_Error_test_001
+     * @tc.desc       Image.getMetadata23 error 7600302
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('image_getMetadata_Error_test_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'image_getMetadata_Error_test_001';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          let size: image.Size = {
+            height: 8192,
+            width: 8
+          }
+          let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+          mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
+          console.info(TAG,testName,"get receiver SurfaceId success",mReceiverSurfaceId);
+          receiver.on('imageArrival', async () => {
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
+            try {
+              let value = img.getMetadata(-1);
+              console.info(TAG, testName, 'img.getMetadata succeeded.',value);
+              expect().assertFail();
+            } catch (error) {
+              console.error(TAG ,testName, 'getMetadata',error.message, error.code);
+              expect(error.code).assertEqual('7600302');
+            }
+            done();
+          });
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          mPhotoSession.start();
+          await sleep(2000);
+          done();
+        }
+      } catch (error) {
+        console.info(TAG ,testName, error.message, error.code);
+        await releasePhotoSession();
+        done();
+      }
+    })
 
   })
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1077,7 +1077,7 @@ export default function Array_03Test() {
       let TAG = "testSort0185";
       try {
         let arr1: FixedArray<double> = [];
-        let sortedArr = sort(arr1,(a,b) => a-b);
+        let sortedArr = sort(arr1, (a, b) => (a - b).toInt());
         let expected: FixedArray<double> = [];
         expect(sortedArr.toString()).assertEqual(expected.toString());
       } catch (err: BusinessError) {
@@ -1098,7 +1098,7 @@ export default function Array_03Test() {
       let TAG = "testSort0186";
       try {
         let arr1: FixedArray<double> = [5.65498,9.5456564,6.1848];
-        let sortedArr = sort(arr1,(a,b) => a-b);
+        let sortedArr = sort(arr1, (a , b) => (a - b).toInt());
         let expected: FixedArray<double> = [5.65498,6.1848,9.5456564];
         expect(sortedArr.toString()).assertEqual(expected.toString());
       } catch (err: BusinessError) {
@@ -1119,7 +1119,7 @@ export default function Array_03Test() {
       let TAG = "testSort0187";
       try {
         let arr1: FixedArray<double> = [2.3, 5.6 ,9.99];
-        let sortedArr = sort(arr1,(a,b) => b-a);
+        let sortedArr = sort(arr1, (a, b) => (b - a).toInt());
         let expected: FixedArray<double> = [9.99, 5.6, 2.3];
         expect(sortedArr.toString()).assertEqual(expected.toString());
       } catch (err: BusinessError) {
@@ -1140,7 +1140,7 @@ export default function Array_03Test() {
       let TAG = "testSort0188";
       try {
         let arr1: FixedArray<double> = [79.99, 79.99];
-        let sortedArr = sort(arr1,(a,b) => a-b);
+        let sortedArr = sort(arr1, (a, b) => (a - b).toInt());
         let expected: FixedArray<double> = [79.99, 79.99];
         expect(sortedArr.toString()).assertEqual(expected.toString());
       } catch (err: BusinessError) {
@@ -1161,7 +1161,7 @@ export default function Array_03Test() {
       let TAG = "testSort0189";
       try {
         let arr1: FixedArray<double> = [1,2,3,4,5,6];
-        let sortedArr = sort(arr1,(a,b) => a-b);
+        let sortedArr = sort(arr1, (a, b) => (a - b).toInt());
         let expected: FixedArray<double> = [1,2,3,4,5,6];
         expect(sortedArr.toString()).assertEqual(expected.toString());
       } catch (err: BusinessError) {
@@ -1245,7 +1245,7 @@ export default function Array_03Test() {
       let TAG = "testSort0195";
       try {
         let arr1: FixedArray<float> = [];
-        let sortedArr = sort(arr1,(a,b) => a-b);
+        let sortedArr = sort(arr1, (a, b) => (a - b).toInt());
         let expected: FixedArray<float> = [];
         expect(sortedArr.toString()).assertEqual(expected.toString());
       } catch (err: BusinessError) {
@@ -1539,7 +1539,7 @@ export default function Array_03Test() {
       let TAG = "testSort0215";
       try {
         let arr1: FixedArray<long> = [];
-        let sortedArr1 = sort(arr1,(a,b) => a-b);
+        let sortedArr1 = sort(arr1, (a, b) => (a - b).toInt());
         let expected: FixedArray<long> = [];
         expect(sortedArr1.toString()).assertEqual(expected.toString());
       } catch (err: BusinessError) {
@@ -1560,7 +1560,7 @@ export default function Array_03Test() {
       let TAG = "testSort0216";
       try {
         let arr1: FixedArray<long> = [8,3,6];
-        let sortedArr1 = sort(arr1,(a,b) => a-b);
+        let sortedArr1 = sort(arr1, (a, b) => (a - b).toInt());
         let expected: FixedArray<long> = [3,6,8];
         expect(sortedArr1.toString()).assertEqual(expected.toString());
       } catch (err: BusinessError) {
@@ -1581,7 +1581,7 @@ export default function Array_03Test() {
       let TAG = "testSort0217";
       try {
         let arr1: FixedArray<long> = [8,3,6];
-        let sortedArr1 = sort(arr1,(a,b) => b-a);
+        let sortedArr1 = sort(arr1, (a, b) => (b - a).toInt());
         let expected: FixedArray<long> = [8,6,3];
         expect(sortedArr1.toString()).assertEqual(expected.toString());
       } catch (err: BusinessError) {
@@ -1602,7 +1602,7 @@ export default function Array_03Test() {
       let TAG = "testSort0218";
       try {
         let arr1: FixedArray<long> = [1,2,3];
-        let sortedArr1 = sort(arr1,(a,b) => a-b);
+        let sortedArr1 = sort(arr1, (a, b) => (a - b).toInt());
         let expected: FixedArray<long> = [1,2,3];
         expect(sortedArr1.toString()).assertEqual(expected.toString());
       } catch (err: BusinessError) {
@@ -1623,7 +1623,7 @@ export default function Array_03Test() {
       let TAG = "testSort0219";
       try {
         let arr1: FixedArray<long> = [1008611];
-        let sortedArr1 = sort(arr1,(a,b) => a-b);
+        let sortedArr1 = sort(arr1, (a, b) => (a - b).toInt());
         let expected: FixedArray<long> = [1008611];
         expect(sortedArr1.toString()).assertEqual(expected.toString());
       } catch (err: BusinessError) {

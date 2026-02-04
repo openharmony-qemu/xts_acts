@@ -78,10 +78,10 @@ it('PushNameRouterTest_static_0100', Level.LEVEL2, async (done: () => void): Pro
       let button = await driver.findComponent(ON.id("PushNameRouter_btn_push"));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-console.log('+++++++PushNameRouterPage_pushNamedRoute',AppStorage.get('PushNameRouterPage_pushNamedRoute'))
-console.log('+++++++PushNameRouterPage_aboutToAppear',AppStorage.get('PushNameRouterPage_aboutToAppear'))
-      expect(AppStorage.get('PushNameRouterPage_pushNamedRoute')).assertEqual('success');
-      expect(AppStorage.get('PushNameRouterPage_aboutToAppear')).assertEqual('success');
+console.log('+++++++PushNameRouterPage_pushNamedRoute',AppStorage.get<string>('PushNameRouterPage_pushNamedRoute'))
+console.log('+++++++PushNameRouterPage_aboutToAppear',AppStorage.get<string>('PushNameRouterPage_aboutToAppear'))
+      expect(AppStorage.get<string>('PushNameRouterPage_pushNamedRoute')).assertEqual('success');
+      expect(AppStorage.get<string>('PushNameRouterPage_aboutToAppear')).assertEqual('success');
       AppStorage.delete('PushNameRouterPage_pushNamedRoute')
       AppStorage.delete('PushNameRouterPage_aboutToAppear')
 

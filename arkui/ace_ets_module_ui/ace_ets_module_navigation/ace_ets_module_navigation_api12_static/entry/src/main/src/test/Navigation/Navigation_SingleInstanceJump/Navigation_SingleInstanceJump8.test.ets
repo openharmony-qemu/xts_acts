@@ -46,7 +46,7 @@ export default function Navigation_SingleInstanceJump8() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Navigation_SingleInstanceJump8 state pages:" + JSON.stringify(pages));
-        if (!("List_SpaceChange" == pages.name)) {
+        if (!("Navigation_SingleInstanceJump8" == pages.name)) {
           console.info("get Navigation_SingleInstanceJump8 pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

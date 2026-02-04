@@ -580,10 +580,18 @@ export default function drawingTsMatrixPart2Test() {
           console.info(msg + ' mapPoints successed dst.length is: ' + dst.length);
           expect(dst.length == 3).assertEqual(true);
         }
+        if(dst == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
         let dst2: Array<common2D.Point> | undefined = matrix.mapPoints(src);
         if (dst2) {
           console.info(msg + ' mapPoints successed dst2.length is: ' + dst2.length);
           expect(dst2.length == 3).assertEqual(true);
+        }
+        if(dst2 == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
         }
         console.info(msg + ' mapPoints successed');
       } catch (e) {
@@ -607,6 +615,10 @@ export default function drawingTsMatrixPart2Test() {
           console.info(msg + ' mapPoints successed dst3.length is: ' + dst3.length);
           expect(dst3.length == 3).assertEqual(true);
         }
+        if(dst3 == undefined){
+          console.info(msg + ' 3 test failed');
+          expect().assertFail();
+        }
         console.info(msg + ' mapPoints successed');
       } catch (e) {
         e = e as BusinessError;
@@ -619,6 +631,10 @@ export default function drawingTsMatrixPart2Test() {
         if (dst4) {
           console.info(msg + ' mapPoints successed dst4.length is: ' + dst4.length);
           expect(dst4.length == 1).assertEqual(true);
+        }
+        if(dst4 == undefined){
+          console.info(msg + ' 4 test failed');
+          expect().assertFail();
         }
         console.info(msg + ' mapPoints successed');
       } catch (e) {

@@ -33,7 +33,7 @@ let emitKey = "emitUserAgent";
 
 export default function clickeffectTest() {
   describe('ActsClickEffectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("clickeffectTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")

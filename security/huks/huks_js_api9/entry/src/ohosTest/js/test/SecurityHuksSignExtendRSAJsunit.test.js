@@ -2924,7 +2924,9 @@ export default function SecurityHuksSignExtendRSAJsunit() {
          * @tc.level  LEVEL2
          */
         it("Security_HUKS_Cipher_AnonAttestation_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            await CheckWifiInfo();
+            if(!useSoftware){
+                await CheckWifiInfo();
+            }
             let srcKeyAlies = "Security_HUKS_Cipher_AnonAttestation_0010";
             let properties = [
                 {
@@ -2977,7 +2979,9 @@ export default function SecurityHuksSignExtendRSAJsunit() {
          * @tc.level  LEVEL2
          */
         it("Security_HUKS_Cipher_AnonAttestation_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            await CheckWifiInfo();
+            if(!useSoftware){
+                await CheckWifiInfo();
+            }
             let srcKeyAlies = "Security_HUKS_Cipher_AnonAttestation_0012";
             let properties = [
                 {
@@ -3059,7 +3063,9 @@ export default function SecurityHuksSignExtendRSAJsunit() {
          * @tc.level  LEVEL2
          */
         it("Security_HUKS_Cipher_AnonAttestation_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            await CheckWifiInfo();
+            if(!useSoftware){
+                await CheckWifiInfo();
+            }
             let srcKeyAlies = "Security_HUKS_Cipher_AnonAttestation_0013";
             let properties = [
                 {
@@ -3131,7 +3137,9 @@ export default function SecurityHuksSignExtendRSAJsunit() {
          * @tc.level  LEVEL2
          */
         it("Security_HUKS_Cipher_AnonAttestation_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            await CheckWifiInfo();
+            if(!useSoftware){
+                await CheckWifiInfo();
+            }
             let srcKeyAlies = "Security_HUKS_Cipher_AnonAttestation_0014";
             let properties = [
                 {

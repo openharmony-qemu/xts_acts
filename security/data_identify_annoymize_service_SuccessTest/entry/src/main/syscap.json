@@ -4,6 +4,7 @@
         "custom": [
             {
                 "xts": [
+                    "SystemCapability.Customization.EnterpriseDeviceManager",
                     "SystemCapability.Security.DataLossPrevention"
                 ]
             }

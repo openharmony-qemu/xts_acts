@@ -92,6 +92,8 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr},
         {"testCalendarPickerWidth003", nullptr, TestCalendarPickerWidth003, nullptr, nullptr, nullptr, napi_default,
          nullptr},
+        {"testCalendarPickerWidth004", nullptr, TestCalendarPickerWidth004, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
         {"testCalendarPickerEdgeAlign005", nullptr, TestCalendarPickerEdgeAlign005, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testCalendarPickerSelectedDate001", nullptr, TestCalendarPickerSelectedDate001, nullptr, nullptr, nullptr,

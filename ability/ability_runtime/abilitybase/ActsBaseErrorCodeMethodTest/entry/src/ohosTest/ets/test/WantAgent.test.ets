@@ -458,7 +458,7 @@ export default function openLinkTest() {
     it('SUB_Ability_AbilityBase_WantAgentError_1600', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_1600 start');
       try {
-        wantAgent.getOperationType(null).then((data)=>{
+        wantAgent.getOperationType(undefined).then((data)=>{
           try{expect().assertFail();}catch(e){}
           done();
         }).catch((err:BusinessError)=>{

@@ -26,6 +26,14 @@ const ExpectTrue: (n: boolean) => void = (n: boolean) => {
   }
 }
 
+const ExpectFail = () => {
+  try {
+    expect().assertFail();
+  } catch (err) {
+    console.info("expectInfo", `test failed`);
+  }
+}
+
 
 function sleep(time: number): Promise<void> {
   return new Promise((resolve) => {
@@ -237,5 +245,224 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test end`);
     });
 
+    /**
+     * @tc.name   testTelephonyObserverOnGetSimActiveState0100
+     * @tc.number SUB_Telephony_Observer_OnGetSimActiveState_0100
+     * @tc.desc   Invalid parameter value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOnGetSimActiveState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverOnGetSimActiveState0100';
+      console.info(`${caseName} test start`);
+      try {
+        observer.onGetSimActiveState(null, (data: boolean) => {
+          console.info(`${caseName} data: ${data}}`);
+          ExpectFail();
+        });
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOnGetSimActiveState0200
+     * @tc.number SUB_Telephony_Observer_OnGetSimActiveState_0200
+     * @tc.desc   Invalid parameter value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOnGetSimActiveState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverOnGetSimActiveState0200';
+      console.info(`${caseName} test start`);
+      try {
+        let slotId: number = -1;
+        observer.onGetSimActiveState(slotId, (data: boolean) => {
+          console.info(`${caseName} data: ${data}}`);
+          ExpectFail();
+        });
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code == 8300001);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOnGetSimActiveState0300
+     * @tc.number SUB_Telephony_Observer_OnGetSimActiveState_0300
+     * @tc.desc   Invalid parameter value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOnGetSimActiveState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverOnGetSimActiveState0300';
+      console.info(`${caseName} test start`);
+      try {
+        let slotId: number = 0;
+        observer.onGetSimActiveState(slotId, (data: boolean) => {
+          console.info(`${caseName} data: ${data}}`);
+          ExpectTrue(data);
+        });
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOnGetSimActiveState0400
+     * @tc.number SUB_Telephony_Observer_OnGetSimActiveState_0400
+     * @tc.desc   Subscribe to sim active state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOnGetSimActiveState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverOnGetSimActiveState0400';
+      console.info(`${caseName} test start`);
+      try {
+        let slotId: number = 1;
+        observer.onGetSimActiveState(slotId, (data: boolean) => {
+          console.info(`${caseName} data: ${data}}`);
+          ExpectTrue(data);
+        });
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOnGetSimActiveState0500
+     * @tc.number SUB_Telephony_Observer_OnGetSimActiveState_0500
+     * @tc.desc   Subscribe to sim active state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOnGetSimActiveState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverOnGetSimActiveState0500';
+      console.info(`${caseName} test start`);
+      try {
+        let slotId: number = 2;
+        observer.onGetSimActiveState(slotId, (data: boolean) => {
+          console.info(`${caseName} data: ${data}}`);
+          ExpectFail();
+        });
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code == 8300001);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOffGetSimActiveState0100
+     * @tc.number SUB_Telephony_Observer_OffGetSimActiveState_0100
+     * @tc.desc   Cancel callback when the sim active state is updated.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOffGetSimActiveState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverOffGetSimActiveState0100';
+      console.info(`${caseName} test start`);
+      try {
+        let slotId: number = 0;
+        observer.onGetSimActiveState(slotId, (data: boolean) => {
+          console.info(`${caseName} data: ${data}}`);
+          ExpectTrue(data);
+          if (data) {
+            observer.offGetSimActiveState((res: boolean) => {
+              console.info(`${caseName} res: ${res}}`);
+              ExpectTrue(res);
+            });
+          }
+        });
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOffGetSimActiveState0200
+     * @tc.number SUB_Telephony_Observer_OffGetSimActiveState_0200
+     * @tc.desc   Cancel callback when the sim active state is updated.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOffGetSimActiveState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverOffGetSimActiveState0200';
+      console.info(`${caseName} test start`);
+      try {
+        let slotId: number = 1;
+        observer.onGetSimActiveState(slotId, (data: boolean) => {
+          console.info(`${caseName} data: ${data}}`);
+          ExpectTrue(data);
+          if (data) {
+            observer.offGetSimActiveState((res: boolean) => {
+              console.info(`${caseName} res: ${res}}`);
+              ExpectTrue(res);
+            });
+          }
+        });
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOffGetSimActiveState0300
+     * @tc.number SUB_Telephony_Observer_OffGetSimActiveState_0300
+     * @tc.desc   Cancel callback when the sim active state is updated.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOffGetSimActiveState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverOffGetSimActiveState0300';
+      console.info(`${caseName} test start`);
+      try {
+        let num: number = 1;
+        observer.offGetSimActiveState((data: boolean) => {
+          console.info(`${caseName} data: ${data}}`);
+          num++;
+        });
+        ExpectTrue(num === 1);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
   });
 }

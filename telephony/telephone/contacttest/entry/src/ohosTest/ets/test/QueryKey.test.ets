@@ -267,7 +267,7 @@ export default function QueryKeyTest() {
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectTrue(data === undefined);
+            expect().assertFail();
             done();
           }
         });
@@ -331,7 +331,7 @@ export default function QueryKeyTest() {
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectTrue(data === undefined);
+            expect().assertFail();
             done();
           }
         });
@@ -464,7 +464,7 @@ export default function QueryKeyTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data === undefined);
+                expect().assertFail();
                 done();
               }
             });
@@ -498,7 +498,7 @@ export default function QueryKeyTest() {
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectTrue(data === undefined);
+            expect().assertFail();
             done();
           }
         });
@@ -530,7 +530,7 @@ export default function QueryKeyTest() {
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectTrue(data === undefined);
+            expect().assertFail();
             done();
           }
         });
@@ -598,7 +598,7 @@ export default function QueryKeyTest() {
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectTrue(data === undefined);
+            expect().assertFail();
             done();
           }
         });
@@ -630,7 +630,7 @@ export default function QueryKeyTest() {
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectTrue(data === undefined);
+            expect().assertFail();
             done();
           }
         });
@@ -674,7 +674,7 @@ export default function QueryKeyTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data === undefined);
+                expect().assertFail();
                 done();
               }
             });
@@ -701,7 +701,7 @@ export default function QueryKeyTest() {
       let context: Context = AppStorage.get('context') as Context;
       try {
         sleep(500);
-        contact.addContact(context, contactData, (err, data) => {
+        contact.addContact(context, contactData, async (err, data) => {
           sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -711,7 +711,7 @@ export default function QueryKeyTest() {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
             ExpectTrue(data > 0);
             let promise = contact.queryKey(context, data, holder);
-            promise.then((data) => {
+            await promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
               ExpectTrue(data.length > 0);
               done();
@@ -743,7 +743,7 @@ export default function QueryKeyTest() {
       let context: Context = AppStorage.get('context') as Context;
       try {
         sleep(500);
-        contact.addContact(context, contactData, (err, data) => {
+        contact.addContact(context, contactData, async (err, data) => {
           sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -757,9 +757,9 @@ export default function QueryKeyTest() {
               bundleName: "",
               displayName: ""
             });
-            promise.then((data) => {
+            await promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data === undefined);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -789,7 +789,7 @@ export default function QueryKeyTest() {
       let context: Context = AppStorage.get('context') as Context;
       try {
         sleep(500);
-        contact.addContact(context, contactData, (err, data) => {
+        contact.addContact(context, contactData, async (err, data) => {
           sleep(500);
           if (err) {
             console.info(`${caseName} addContact: err->${JSON.stringify(err)}`);
@@ -803,9 +803,9 @@ export default function QueryKeyTest() {
               bundleName: "bundle",
               displayName: "display"
             });
-            promise.then((data) => {
+            await promise.then((data) => {
               console.info(`${caseName} queryKey: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data === undefined);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} queryKey: err->${JSON.stringify(err)}`);
@@ -838,7 +838,7 @@ export default function QueryKeyTest() {
         let promise = contact.queryKey(context, 564654156215646541561, holder);
         promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-          ExpectTrue(data === undefined);
+          expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -869,7 +869,7 @@ export default function QueryKeyTest() {
         let promise = contact.queryKey(context, -1, holder);
         promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-          ExpectTrue(data === undefined);
+          expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -939,7 +939,7 @@ export default function QueryKeyTest() {
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectTrue(data === undefined);
+            expect().assertFail();
             done();
           }
         });
@@ -967,7 +967,7 @@ export default function QueryKeyTest() {
         let promise = contact.queryKey(context, Number.MAX_VALUE, holder);
         promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-          ExpectTrue(data === undefined);
+          expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -1011,7 +1011,7 @@ export default function QueryKeyTest() {
             });
             promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data === undefined);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} callback: err->${JSON.stringify(err)}`);

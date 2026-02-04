@@ -59,7 +59,7 @@ export default function disableDateRangeAndMarkTodayTest() {
         // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info('get DisableDateRangeAndMarkToday state pages:' + JSON.stringify(pages));
-        if (!('MainAbility/pages/calendarPicker/disableDateRangeAndMarkToday' == pages.name)) {
+        if (!('disableDateRangeAndMarkToday' == pages.name)) {
           console.info('get DisableDateRangeAndMarkToday pages.name:' + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);

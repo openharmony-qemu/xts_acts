@@ -34,10 +34,7 @@ struct splitLayoutTest {
         mainImage: this.demoImage,
         primaryText: 'primaryText',
         secondaryText: 'secondaryText',
-        tertiaryText: 'tertiaryText',
-        container: () => {
-          this.Builder1()
-        },
+        tertiaryText: 'tertiaryText'
       })
       {
         Text('示例：空白区域容器内可添加组件')

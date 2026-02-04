@@ -313,7 +313,7 @@ export default function fileIOCreateStream() {
       } catch (e: BusinessError) {
         sa.closeSync();
         fs.unlinkSync(fpath);
-        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_012 end error' + JSON.stringify(e));
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_013 end error' + JSON.stringify(e));
         expect(e.code == 13900005 && e.message == 'I/O error').assertTrue();
       }
     });
@@ -364,6 +364,87 @@ export default function fileIOCreateStream() {
       } catch (e: BusinessError) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_015 end error' + JSON.stringify(e));
         expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_create_stream_sync_static_016
+     * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_1600
+     * @tc.desc   Test createStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_create_stream_sync_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      try {
+        fs.createStreamSync("", 'r');
+        expect(false).assertTrue();
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_016 end error' + JSON.stringify(e));
+        expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_create_stream_sync_static_017
+     * @tc.number SUB_DF_FILEIO_STREAM_CREATESTREAM_SYNC_1700
+     * @tc.desc   Test createStreamSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_create_stream_sync_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_create_stream_sync_static_017');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        fs.createStreamSync(fpath, '');
+        expect(false).assertTrue();
+      } catch (e: BusinessError) {
+        fs.unlinkSync(fpath);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_017 end error' + JSON.stringify(e));
+        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_create_stream_async_static_000
+     * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_0000
+     * @tc.desc   Test createStream() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_create_stream_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      try {
+        await fs.createStream("", 'r');
+        expect(false).assertTrue();
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_000 end error' + JSON.stringify(e));
+        expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_create_stream_async_static_001
+     * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_0100
+     * @tc.desc   Test createStream() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_create_stream_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_001');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        await fs.createStream(fpath, '');
+        expect(false).assertTrue();
+      } catch (e: BusinessError) {
+        fs.unlinkSync(fpath);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_001 end error' + JSON.stringify(e));
+        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        done();
       }
     });
 
@@ -509,6 +590,56 @@ export default function fileIOCreateStream() {
         });
       } catch (e: BusinessError) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_007 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_create_stream_async_static_008
+     * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_0800
+     * @tc.desc   Test createStream() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_create_stream_async_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      try {
+        fs.createStream("", 'r+', (err: BusinessError<void> | null) => {
+          if(err?.code != 0){
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_008 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code == 13900002 && err?.message == 'No such file or directory').assertTrue();
+            done();
+          }
+        });
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_008 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_create_stream_async_static_009
+     * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_0900
+     * @tc.desc   Test createStream() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_create_stream_async_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_create_stream_async_static_009');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        fs.createStream(fpath, '', (err: BusinessError<void> | null) => {
+          if(err?.code != 0){
+            fs.unlinkSync(fpath);
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_009 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
+            done();
+          }
+        });
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_009 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
     });

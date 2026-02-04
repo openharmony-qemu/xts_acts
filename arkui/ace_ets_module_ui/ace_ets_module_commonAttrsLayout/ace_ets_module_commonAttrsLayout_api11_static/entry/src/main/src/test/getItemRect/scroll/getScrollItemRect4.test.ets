@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function getScrollItemRect4() {
   describe('getScrollItemRect4', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getScrollItemRect4 beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")

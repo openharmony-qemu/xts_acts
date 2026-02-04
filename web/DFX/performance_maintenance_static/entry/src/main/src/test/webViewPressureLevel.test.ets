@@ -60,9 +60,9 @@ export default function ActsAceWebviewPressureLevel(){
      * @tc.desc   test testWebviewPressureLevelModerate
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testWebviewPressureLevelModerateStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testWebviewPressureLevelModerateStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:() => void): Promise<void> => {
         await Utils.msSleep(3000);
         Utils.emitEvent('emitWebviewPressureLevelModerate', 10)

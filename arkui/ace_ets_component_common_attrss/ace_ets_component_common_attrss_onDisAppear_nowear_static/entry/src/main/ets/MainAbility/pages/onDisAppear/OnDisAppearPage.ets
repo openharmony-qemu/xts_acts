@@ -18,7 +18,7 @@ import router from '@ohos.router'
 import {
   Entry,Text,Column,Button,Component,FlexDirection,ItemAlign,FlexAlign,FontWeight,$r,TextInput,TextArea,List,ListItem,Search,Image,
   Grid,GridItem,Rating,MenuItemGroup,MenuItem,Menu,ImageAnimator,DatePicker,CheckboxGroup,Checkbox,Search,Counter,ColumnSplit,AlphabetIndexer,Web,
-  Toggle,TimePicker,TextPicker,StepperItem,Stepper,Slider,Select,Swiper,Tabs,TabContent,SideBarContainer,Scroll,RowSplit,GridCol,ForEach,
+  Toggle,TimePicker,TextPicker,Slider,Select,Swiper,Tabs,TabContent,SideBarContainer,Scroll,RowSplit,GridCol,ForEach,
   Row,GridRow,Flex,Color,FlexAlign,ColumnOptions,Scroller,Margin,TextAlign,MenuItemOptions,Radio,ToggleType,GridRowDirection,Axis,ListItemGroup,SideBarContainerType,
   Stack,BreakPoints,GridRowOptions,GutterOption,BreakpointsReference,GridColColumnOption,TextTimerController,Blank,DataPanel,Divider,Gauge,LoadingProgress,Marquee,Navigation,PatternLock,Progress,QRCode,RichText,ScrollBar,
   TextClock,TextTimer,Badge,WaterFlow,Refresh,RelativeContainer,BarState,Circle,Ellipse,Line,Polyline,Polygon,CommonMethod,Path,Rect,Shape,BadgeParamWithNumber,FlowItem,VerticalAlign,
@@ -225,14 +225,6 @@ struct OnDisAppearPage {
           Slider()
             .backgroundColor(Color.Pink)
             .applyStyles(this.commonStyle)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem()
-          }.backgroundColor(Color.Pink).applyStyles(this.commonStyle)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem().backgroundColor(Color.Pink).applyStyles(this.commonStyle)
-          }
         } else if (this.targetView == 'Text') {
           Text('text')
             .fontSize(15)

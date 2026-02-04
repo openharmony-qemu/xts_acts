@@ -99,6 +99,8 @@ const SUBSCRIBE_EVENTS: Array<adminManager.ManagedEvent> = [
   adminManager.ManagedEvent.MANAGED_EVENT_ACCOUNT_ADDED,
   adminManager.ManagedEvent.MANAGED_EVENT_ACCOUNT_SWITCHED,
   adminManager.ManagedEvent.MANAGED_EVENT_ACCOUNT_REMOVED,
+  adminManager.ManagedEvent.MANAGED_EVENT_STARTUP_GUIDE_COMPLETED,
+  adminManager.ManagedEvent.MANAGED_EVENT_BOOT_COMPLETED,
 ];
 const SUBSCRIBE_INVALID_EVENTS: Array<number> = [20, 21];
 

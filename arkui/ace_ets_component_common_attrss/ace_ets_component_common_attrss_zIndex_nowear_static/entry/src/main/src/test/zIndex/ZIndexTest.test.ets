@@ -32,8 +32,6 @@ let testAbilityContext:common.UIAbilityContext;
 export default function zIndexTest() {
   let supportView = [
     'Select',
-    'Stepper',
-    'StepperItem',
     'ColumnSplit',
     'FlowItem',
     'RowSplit',

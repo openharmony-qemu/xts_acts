@@ -62,7 +62,7 @@ function startWatcher(testNum: string, eventCode: int|undefined , watchPath: str
     hilog.info(domain, tag, '%{public}s', 'eventCode get fail');
     return ret;
   }
-  await Utils.msSleep(10);
+  waitForCompletion(async()=> {await Utils.msSleep(10)});
   try {
     ret.watcher = fs.createWatcher(watchPath, eventCode, (data: WatchEvent) => {
       hilog.info(domain, tag, '%{public}s', `${testNum} :{event: ${data.event}, fileName: ${data.fileName}, cookie: ${data.cookie}}`);
@@ -89,7 +89,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_test_watcher_static_001', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_001';
       let dpath = await Utils.nextFileName(testNum);
       let fpath = dpath + '/file_001.txt';
@@ -121,7 +121,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_test_watcher_static_002', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_002';
       let dpath = await Utils.nextFileName(testNum);
       let fpath = dpath + '/file_002.txt';
@@ -153,7 +153,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_test_watcher_static_003', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_003';
       let dpath = await Utils.nextFileName(testNum);
       let fpath = dpath + '/file_003.txt';
@@ -184,7 +184,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_test_watcher_static_004', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_004';
       let dpath = await Utils.nextFileName(testNum);
       let fpath = dpath + '/file_004.txt';
@@ -215,7 +215,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_test_watcher_static_005', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_005';
       let dpath = await Utils.nextFileName(testNum);
       let fpath = dpath + '/file_005.txt';
@@ -246,7 +246,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_test_watcher_static_006', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_006';
       let dpath = await Utils.nextFileName(testNum);
       let fpath = dpath + '/file_006.txt';
@@ -287,7 +287,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_test_watcher_static_007', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_007';
       let dpath = await Utils.nextFileName(testNum);
       let fpath = dpath + '/file_007.txt';
@@ -316,7 +316,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_test_watcher_static_008', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_008';
       let dpath = await Utils.nextFileName(testNum);
       let ddpath = dpath + '/dir_008';
@@ -344,7 +344,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_test_watcher_static_009', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_009';
       let dpath = await Utils.nextFileName(testNum);
       let fpath = dpath + '/file_009.txt';
@@ -374,7 +374,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_test_watcher_static_010', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_010';
       let dpath = await Utils.nextFileName(testNum);
       let ddpath = dpath + '/dir_010';
@@ -403,7 +403,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_test_watcher_static_011', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_011';
       let dpath = await Utils.nextFileName(testNum);
       fs.mkdirSync(dpath);
@@ -429,7 +429,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_test_watcher_static_012', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_012';
       let dpath = await Utils.nextFileName(testNum);
       fs.mkdirSync(dpath);
@@ -456,7 +456,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('fileIO_test_watcher_static_013', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_013';
       let fpath = await Utils.nextFileName(testNum);
       let res = await Utils.prepareFile(fpath, FILE_CONTENT);
@@ -484,7 +484,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_test_watcher_static_014', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_014';
       let dpath = await Utils.nextFileName(testNum);
       let fpath = dpath + '/file_014.txt';
@@ -515,7 +515,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_test_watcher_static_015', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_015';
       let dpath = await Utils.nextFileName(testNum);
       let fpath1 = dpath + '/file_015.txt';
@@ -561,7 +561,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('fileIO_test_watcher_static_016', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_016';
       let dpath = await Utils.nextFileName(testNum);
       let fpath = dpath + '/file_005.txt';
@@ -599,7 +599,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('fileIO_test_watcher_static_017', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_017';
       let fpath = await Utils.nextFileName(testNum);
       let res = await Utils.prepareFile(fpath, FILE_CONTENT);
@@ -621,6 +621,31 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_018
+     * @tc.number SUB_DF_FILEIO_WATCHER_1800
+     * @tc.desc   null parameter, throw errno.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_watcher_static_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      let testNum = 'fileIO_test_watcher_static_018';
+      let watcher: Watcher;
+
+      try {
+        watcher = fs.createWatcher("", watcherEvent.get('IN_ACCESS', 0x00000001), callback);
+        watcher.start();
+        expect(false).assertTrue();
+        done();
+      } catch (e: BusinessError) {
+        watcher.stop();
+        hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   fileIO_test_watcher_static_021
      * @tc.number SUB_DF_FILEIO_WATCHER_2100
      * @tc.desc   No watcher started.
@@ -628,7 +653,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('fileIO_test_watcher_static_021', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_021';
       let fpath = await Utils.nextFileName(testNum);
       let res = await Utils.prepareFile(fpath, FILE_CONTENT);
@@ -654,7 +679,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('fileIO_test_watcher_static_023', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_023';
       let fpath = await Utils.nextFileName(testNum);
       let res = await Utils.prepareFile(fpath, FILE_CONTENT);
@@ -681,7 +706,7 @@ export default function fileIOWatcher() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('fileIO_test_watcher_static_025', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+    it('fileIO_test_watcher_static_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_025';
       let fpath = await Utils.nextFileName(testNum);
 

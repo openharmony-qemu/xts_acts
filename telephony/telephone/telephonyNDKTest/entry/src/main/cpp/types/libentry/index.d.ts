@@ -14,17 +14,17 @@
  */
 
 export interface XTSNetworkStateObj {
-    longOperatorName: string;
-    shortOperatorName: string;
-    plmnNumeric: string;
-    isRoaming: boolean;
-    regState: number;
-    nsaState: number;
-    cfgTech: number;
-    isCaActive: boolean;
-    isEmergency: boolean;
-  }
-  
+  longOperatorName: string;
+  shortOperatorName: string;
+  plmnNumeric: string;
+  isRoaming: boolean;
+  regState: number;
+  nsaState: number;
+  cfgTech: number;
+  isCaActive: boolean;
+  isEmergency: boolean;
+}
+
 export const OHTelephonyGetDefaultCellularDataSlotId: () => number;
 
 export const OHTelephonyGetNetworkStateForSlotParam: (a: number) => number;
@@ -35,4 +35,8 @@ export const OHTelephonyGetNetworkStateForSlot: (soltId: number) => XTSNetworkSt
 
 export const OHTelephonyGetNetworkState: () => XTSNetworkStateObj;
 
-export const OH_Telephony_GetNetworkStateForSlot0100: () => number;
+export const GetNetworkState0601: () => number;
+      
+export const GetNetworkState0701: () => number;
+
+export const GetNetworkState0801: () => number;

@@ -22,46 +22,48 @@ struct RichEditorUxConFormance005 {
   build() {
 
     Column() {
-      Text('spanInfo:' + this.spanInfo).id('spanInfo')
+      Text('spanInfo:' + this.spanInfo).id('spanInfo').height('5%')
 
-      Button('updateSpanStyle').onClick(() => {
-        console.log('RichEditorController updateSpanStyle');
-        this.controller.updateSpanStyle({
-          start: 0,
-          end: this.controller.getCaretOffset(),
-          textStyle:
-          {
-            fontSize: -1
-          }
-        })
-      }).id('updateSpanStyle')
-
-      Button('get spans').onClick(() => {
-        this.content = '';
-        this.controller.getSpans({
-          start: 0,
-          end: this.controller.getCaretOffset()
-        }).forEach(item => {
-          if (typeof (item as RichEditorImageSpanResult)['imageStyle'] != 'undefined') {
-            this.content += (item as RichEditorImageSpanResult).valueResourceStr;
-            if (typeof ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)['layoutStyle'] !=
-              'undefined') {
-              console.log('RichEditorController get imageStyle');
+      Row(){
+        Button('updateSpanStyle').onClick(() => {
+          console.log('RichEditorController updateSpanStyle');
+          this.controller.updateSpanStyle({
+            start: 0,
+            end: this.controller.getCaretOffset(),
+            textStyle:
+            {
+              fontSize: -1
             }
-            this.content += '\n'
-          } else {
-            if (typeof (item as RichEditorTextSpanResult)['symbolSpanStyle'] != 'undefined') {
-              this.content += (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize;
+          })
+        }).id('updateSpanStyle').width('50%')
+
+        Button('get spans').onClick(() => {
+          this.content = '';
+          this.controller.getSpans({
+            start: 0,
+            end: this.controller.getCaretOffset()
+          }).forEach(item => {
+            if (typeof (item as RichEditorImageSpanResult)['imageStyle'] != 'undefined') {
+              this.content += (item as RichEditorImageSpanResult).valueResourceStr;
+              if (typeof ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)['layoutStyle'] !=
+                'undefined') {
+                console.log('RichEditorController get imageStyle');
+              }
               this.content += '\n'
             } else {
-              console.log('RichEditorController textStyle:' + JSON.stringify((item as RichEditorTextSpanResult).textStyle));
-              this.spanInfo = JSON.stringify((item as RichEditorTextSpanResult).textStyle);
-              this.content += (item as RichEditorTextSpanResult).value;
-              this.content += '\n'
+              if (typeof (item as RichEditorTextSpanResult)['symbolSpanStyle'] != 'undefined') {
+                this.content += (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize;
+                this.content += '\n'
+              } else {
+                console.log('RichEditorController textStyle:' + JSON.stringify((item as RichEditorTextSpanResult).textStyle));
+                this.spanInfo = JSON.stringify((item as RichEditorTextSpanResult).textStyle);
+                this.content += (item as RichEditorTextSpanResult).value;
+                this.content += '\n'
+              }
             }
-          }
-        })
-      }).id('get_spans')
+          })
+        }).id('get_spans').width('50%')
+      }.height('5%')
 
       RichEditor({ controller: this.controller })
         .height(200)
@@ -80,5 +82,6 @@ struct RichEditorUxConFormance005 {
         .id('RichEditorUxConFormance005')
 
     }
+    .height('100%')
   }
 }

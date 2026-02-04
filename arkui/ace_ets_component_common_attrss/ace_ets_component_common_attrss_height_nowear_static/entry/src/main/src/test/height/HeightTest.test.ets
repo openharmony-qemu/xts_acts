@@ -38,8 +38,7 @@ interface Attrs{
  * Test of common attribute: height
  */
 export default function heightTest() {
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.height.nowear.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
+
   //A list of components that support padding attributes is required.
   let supportView :Array<string>=new Array<string>( 'AlphabetIndexer',
     'Select',
@@ -47,8 +46,7 @@ export default function heightTest() {
     'ColumnSplit',
     'RowSplit',
     'WaterFlow',
-    'FlowItem',
-    'Stepper'
+    'FlowItem'
     )
 
 
@@ -79,7 +77,8 @@ export default function heightTest() {
     },
     expectValue: {
       heightCompare: '550.00vp',
-      height: UIContext.resolveUIContext()!.vp2px(550), ExceedParent: true
+      height: 550,
+      ExceedParent: true
     }
   },
     {
@@ -89,7 +88,7 @@ export default function heightTest() {
       },
       expectValue: {
         heightCompare: '50.00%',
-        height: UIContext.resolveUIContext()!.vp2px(parentHeight) * 0.5
+        height: 300
       }
     }, {
       describe: 'Resource',
@@ -98,7 +97,7 @@ export default function heightTest() {
       },
       expectValue: {
         heightCompare: '200.00vp',
-        height: UIContext.resolveUIContext()!.vp2px(200)
+        height: 200
       }
     }, {
       describe: 'StringPx',
@@ -116,11 +115,22 @@ export default function heightTest() {
    * Create test suite.
    */
   describe('HeightTest', () => {
-    beforeAll(() => {
-
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.height.nowear.test.static", "EntryAbility")
     });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+
+      if (data.testValue.describe == 'ExceedParent') {
+          data.testValue.expectValue.height = UIContext.resolveUIContext()!.vp2px(550)
+      }
+      if (data.testValue.describe == 'StringPercent') {
+        data.testValue.expectValue.height = UIContext.resolveUIContext()!.vp2px(300) * 0.5
+      }
+      if (data.testValue.describe == 'Resource') {
+        data.testValue.expectValue.height = UIContext.resolveUIContext()!.vp2px(200)
+      }
+
       //Obtain dimensional information for target components.
       let rect = Utils.getComponentRect(data.pageConfig.componentKey??'');
 

@@ -60,24 +60,31 @@ export default function registerPhotoChangeTest () {
           fetchColumns: arr,
           predicates: predicates
         };
-        const fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper.getAssets(ops);
+        const fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(ops);
         console.log(`${testNum} :: fetchResult is undefined ? ${fetchResult === undefined}`);
         expect(fetchResult !== undefined).assertTrue();
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         fetchResult.close();
         let count = 0;
         await sleep(550);
-        helper.onPhotoChange((changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+        (helper as photoAccessHelper.PhotoAccessHelper).onPhotoChange((changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
           count++;
           console.info(`${testNum} changeData: ${JSON.stringify(changeData)}`);
-          helper.offPhotoChange();
+          (helper as photoAccessHelper.PhotoAccessHelper).offPhotoChange();
           expect(changeData.type).assertEqual(NOTIFY_CHANGE_UPDATE);
         });
         await sleep(550);
         const newTitle = testNum + photoAsset.get(photoAccessHelper.PhotoKeys.TITLE);
         photoAsset.set(photoAccessHelper.PhotoKeys.TITLE, newTitle);
         await photoAsset.commitModify();
-        await sleep(1000);
+        let sleep_time = 0;
+        while (sleep_time < 2000) {
+          if (count === 1) {
+            break;
+          }
+          await sleep(200);
+          sleep_time += 200;
+        }
         expect(count).assertEqual(1);
         done();
       } catch (error: Error) {

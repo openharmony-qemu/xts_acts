@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -837,7 +837,7 @@ export default function BuiltinArrayindexOfTest() {
       const TAG = "testBuiltinArrayFilter10005";
       try {
         const arr: FixedArray<byte> = [10, 20, 30, 40];
-        const result = filter(arr, (v: byte, k: number) => k % 2 === 0);
+        const result = filter(arr, (v: byte, k: int) => k % 2 === 0);
         expect(result[0]).assertEqual(10);
         expect(result[1]).assertEqual(30);
       } catch (err: BusinessError) {
@@ -882,7 +882,7 @@ export default function BuiltinArrayindexOfTest() {
       let hasThrown = false;
       try {
         const arr: FixedArray<byte> = [1, 2, 3];
-        filter(arr, (v: byte, idx: number) => {
+        filter(arr, (v: byte, idx: int) => {
           if (idx === 1) {
             throw new Error("Callback error");
           }
@@ -907,11 +907,11 @@ export default function BuiltinArrayindexOfTest() {
     it('testBuiltinArrayFilter10008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBuiltinArrayFilter10008";
       try {
-        const arr: FixedArray<byte> = [0 as byte, 255 as byte, 1 as byte];
-        const result = filter(arr, (v: byte) => v === 0 as byte || v === 255 as byte);
+        const arr: FixedArray<byte> = [0 as byte, (255).toByte(), 1 as byte];
+        const result = filter(arr, (v: byte) => v === 0 as byte || v === (255).toByte());
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(0 as byte);
-        expect(result[1]).assertEqual(255 as byte);
+        expect(result[1]).assertEqual((255).toByte());
       } catch (err: BusinessError) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -1068,8 +1068,8 @@ export default function BuiltinArrayindexOfTest() {
     it('testBuiltinArrayFilter20004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBuiltinArrayFilter20004";
       try {
-        const empty: FixedArray<char> = new char[0];
-        const filtered = filter(empty, (v: char, _k: number, _arr: FixedArray<char>) =>
+        const empty: FixedArray<char> = new FixedArray<char>(0);
+        const filtered = filter(empty, (v: char, _k: int, _arr: FixedArray<char>) =>
         v > 'a'.charCodeAt(0)
         );
         expect(filtered.length).assertEqual(0);
@@ -1156,7 +1156,7 @@ export default function BuiltinArrayindexOfTest() {
       const TAG = "testBuiltinArrayFilter30004";
       try {
         const original: FixedArray<double> = [10.1, 20.2, 30.3, 40.4];
-        const filtered = filter(original, (v: double, k: number) => k % 2 === 1);
+        const filtered = filter(original, (v: double, k: int) => k % 2 === 1);
         expect(filtered.length).assertEqual(2);
         expect(filtered[0]).assertEqual(20.2);
         expect(filtered[1]).assertEqual(40.4);
@@ -1200,7 +1200,7 @@ export default function BuiltinArrayindexOfTest() {
       const TAG = "testBuiltinArrayFilter30006";
       try {
         const original: FixedArray<double> = [1.1, 2.2, 3.3, 4.4];
-        const filtered = filter(original, (v: double, k: number, arr: FixedArray<double>) => {
+        const filtered = filter(original, (v: double, k: int, arr: FixedArray<double>) => {
           return k < arr.length - 1;
         });
         expect(filtered[0]).assertEqual(1.1);
@@ -1232,7 +1232,7 @@ export default function BuiltinArrayindexOfTest() {
           1.5
         ];
         const filtered = filter(original,
-          (v: double, k: number, arr: FixedArray<double>) => {
+          (v: double, k: int, arr: FixedArray<double>) => {
             return v > Number.MIN_VALUE && v < Number.MAX_VALUE;
           });
         expect(filtered.length).assertEqual(3);
@@ -1460,7 +1460,7 @@ export default function BuiltinArrayindexOfTest() {
       const TAG = "testBuiltinArrayFilter60002";
       try {
         const arr: FixedArray<long> = [10, 20, 30, 40, 50];
-        const result = filter(arr, (val: long, idx: number) => idx % 2 === 0);
+        const result = filter(arr, (val: long, idx: int) => idx % 2 === 0);
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(10);
         expect(result[1]).assertEqual(30);
@@ -1483,7 +1483,7 @@ export default function BuiltinArrayindexOfTest() {
       const TAG = "testBuiltinArrayFilter60003";
       try {
         const arr: FixedArray<long> = [1, 2, 3, 4];
-        const result = filter(arr, (val: long, idx: number, array: FixedArray<long>) =>
+        const result = filter(arr, (val: long, idx: int, array: FixedArray<long>) =>
         val === array[0]
         );
         expect(result.length).assertEqual(1);
@@ -1574,7 +1574,7 @@ export default function BuiltinArrayindexOfTest() {
         const MIN_LONG = -9223372036854775808;
         const original: FixedArray<long> = [MIN_LONG, 0, MAX_LONG];
         const filtered = filter(original,
-          (v: long, k: number, arr: FixedArray<long>) => {
+          (v: long, k: int, arr: FixedArray<long>) => {
             return v >= 0 && k < arr.length;
           });
         expect(filtered.length).assertEqual(2);

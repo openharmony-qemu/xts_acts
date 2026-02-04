@@ -19,10 +19,10 @@ import router from '@ohos.router'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
   LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
-  Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
+  Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
+  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
@@ -33,8 +33,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
   ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
   RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
-  StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
+  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute,
+  SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, ObscuredReasons, AlignRuleOption } from '@ohos.arkui.component'
@@ -562,22 +562,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
 	}
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-	mObscured: Array<ObscuredReasons> = []
-
-	applyNormalAttribute(instance: StepperAttribute): void {
-		instance.obscured(this.mObscured)
-	}
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-	mObscured: Array<ObscuredReasons> = []
-
-	applyNormalAttribute(instance: StepperItemAttribute): void {
-		instance.obscured(this.mObscured)
-	}
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	mObscured: Array<ObscuredReasons> = []
 
@@ -774,8 +758,6 @@ struct ObscuredPage {
 	@State _obscuredSliderModifier: SliderModifier = new SliderModifier()
 	@State _obscuredSpanModifier: SpanModifier = new SpanModifier()
 	@State _obscuredStackModifier: StackModifier = new StackModifier()
-	@State _obscuredStepperModifier: StepperModifier = new StepperModifier()
-	@State _obscuredStepperItemModifier: StepperItemModifier = new StepperItemModifier()
 	@State _obscuredSwiperModifier: SwiperModifier = new SwiperModifier()
 	@State _obscuredTabContentModifier: TabContentModifier = new TabContentModifier()
 	@State _obscuredTabsModifier: TabsModifier = new TabsModifier()
@@ -880,8 +862,6 @@ struct ObscuredPage {
 			this._obscuredSliderModifier.mObscured = value.obscured
 			this._obscuredSpanModifier.mObscured = value.obscured
 			this._obscuredStackModifier.mObscured = value.obscured
-			this._obscuredStepperModifier.mObscured = value.obscured
-			this._obscuredStepperItemModifier.mObscured = value.obscured
 			this._obscuredSwiperModifier.mObscured = value.obscured
 			this._obscuredTabContentModifier.mObscured = value.obscured
 			this._obscuredTabsModifier.mObscured = value.obscured
@@ -1056,32 +1036,6 @@ struct ObscuredPage {
 					.showTips(true)
 					
 					.attributeModifier(this._obscuredSliderModifier)
-			}
-			if (this.targetView == 'Stepper') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-				}
-					
-					
-			}
-			if (this.targetView == 'StepperItem') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-						.backgroundColor(Color.Red)
-						
-						
-				}
-					.backgroundColor(Color.Yellow)
-					.width('100%')
-					.height('100%')
 			}
 			if (this.targetView == 'Text') {
 				Text('text1')

@@ -836,5 +836,65 @@ export default function NetWorkManagerGetConnectOwnerUid() {
         done();
       }
     });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid9000
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_9000
+     * @tc.desc    Test error code 2100301
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid9000', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testNetManagerBaseGetConnectOwnerUid9000";
+      console.info(`${caseName}---Start`);
+      try {
+        let uid = await connection.getConnectOwnerUid(
+          connection.ProtocolType.PROTO_TYPE_TCP,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 12345 },
+          { address: '192.168.1.200', family: FAMILY_IPV4, port: 54321 }
+        );
+        console.info(`${caseName} [TCP_IPv4_IncorrectUsage] ${uid}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} [TCP_IPv4_IncorrectUsage] error: code=${error.code}`);
+        expect(Number(error.code)).assertEqual(2100301);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid9100
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_9100
+     * @tc.desc    Test error code 2100301
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid9100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testNetManagerBaseGetConnectOwnerUid9100";
+      console.info(`${caseName}---Start`);
+      try {
+        let uid = connection.getConnectOwnerUidSync(
+          connection.ProtocolType.PROTO_TYPE_TCP,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 12345 },
+          { address: '192.168.1.200', family: FAMILY_IPV4, port: 54321 }
+        );
+        console.info(`${caseName} [TCP_IPv4_Sync_IncorrectUsage] uid=${uid}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} [TCP_IPv4_Sync_IncorrectUsage] error: code=${error.code}`);
+        expect(Number(error.code)).assertEqual(2100301);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
   });
 }

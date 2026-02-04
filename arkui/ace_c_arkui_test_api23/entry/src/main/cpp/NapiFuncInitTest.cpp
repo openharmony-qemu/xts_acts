@@ -28,6 +28,7 @@
 #include "list/ListEmptyTest.cpp"
 #include "grid/GridEmptyTest.cpp"
 #include "TextMarqueeOptions/TextMarqueeOptionsTest.cpp"
+#include "TextMarqueeOptions/ControllerBaseCreatTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -184,6 +185,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TextEnumTest_023", nullptr, TextEnumTest_023, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"TextMarqueeOptionsTest", nullptr, TextMarqueeOptionsTest, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ControllerBaseCreatTest", nullptr, ControllerBaseCreatTest, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"TestAtomicServiceMenuBarSetVisible01", nullptr,
          TestAtomicServiceMenuBarSetVisible01, nullptr, nullptr, nullptr, napi_default, nullptr},

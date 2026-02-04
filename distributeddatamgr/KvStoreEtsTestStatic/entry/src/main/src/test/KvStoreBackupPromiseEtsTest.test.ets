@@ -39,13 +39,13 @@ function publicGetKvStore(optionsp: distributedData.Options) {
   //context = AppStorage.Get<common.UIAbilityContext>("TestAbilityContext") as common.UIAbilityContext;
 
   hilog.info(domain, tag, '%{public}s', '================ beforeAll start==========');
-  await Utils.msSleep(2000)
+  waitForCompletion(async ()=>{ await Utils.msSleep(2000)} );
   abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
   // await abilityDelegator.startAbility({
   //   bundleName: 'com.example.kvstoreetstest.static',
   //   abilityName: 'EntryAbility'
   // });
-  await Utils.msSleep(8000)
+  waitForCompletion(async ()=>{ await Utils.msSleep(8000)} );
   context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
   hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
   let mKVMgrConfig: distributedData.KVManagerConfig = {

@@ -94,7 +94,7 @@ export default function HeapSortTest() {
     it('testBuiltinArrayFind30003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBuiltinArrayFind30003";
       try {
-        const emptyArr: FixedArray<double> = new double[0];
+        const emptyArr: FixedArray<double> = new FixedArray<double>(0);
         const found = find(emptyArr, (v: double) => v === 1.1);
         expect(found).assertUndefined();
       } catch (err: BusinessError) {
@@ -154,7 +154,7 @@ export default function HeapSortTest() {
     it('testBuiltinArrayFind60003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBuiltinArrayFind60003";
       try {
-        const emptyArr: FixedArray<long> = new long[0];
+        const emptyArr: FixedArray<long> = new FixedArray<long>(0);
         const found = find(emptyArr, (v: long) => v === 1000);
         expect(found).assertUndefined();
       } catch (err: BusinessError) {

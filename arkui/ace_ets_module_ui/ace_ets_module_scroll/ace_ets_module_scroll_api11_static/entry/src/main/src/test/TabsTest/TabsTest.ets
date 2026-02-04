@@ -75,10 +75,10 @@ export default function tabs() {
 
             "nullFlag": false,
 
-            "strokeWidthNum": 10,
+            "strokeWidthNum": 10 as number,
             "dividerColorNum": 0xFFFF0000,
-            "startMarginNum": 5,
-            "endMarginNum": 5,
+            "startMarginNum": 5 as number,
+            "endMarginNum": 5 as number,
 
             "dividerColor": Color.Red,
 
@@ -89,11 +89,11 @@ export default function tabs() {
 
             "overflowFlag": false,
             "selfIndicatorColor": Color.Red,
-            "selfIndicatorHeight": 10.0,
-            "selfIndicatorWidth": 30.0,
-            "selfIndicatorBorderRadius": 5.0,
-            "selfMarginTop": 10.0,
-            "selfSubTabBorderRadius": 20.0,
+            "selfIndicatorHeight": 10.0 as number,
+            "selfIndicatorWidth": 30.0 as number,
+            "selfIndicatorBorderRadius": 5.0 as number,
+            "selfMarginTop": 10.0 as number,
+            "selfSubTabBorderRadius": 20.0 as number,
             "selfSelectedMode": SelectedMode.INDICATOR,
 
             "selfIndicatorColorStr": "#FFFF0000",
@@ -138,7 +138,7 @@ it('ArkUI_Tabs_Divider_static_0100', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_0200
      * @tc.name     ArkUI_Tabs_Divider_static_0200
@@ -161,7 +161,7 @@ it('ArkUI_Tabs_Divider_static_0200', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_0300
      * @tc.name     ArkUI_Tabs_Divider_static_0300
@@ -183,7 +183,7 @@ it('ArkUI_Tabs_Divider_static_0300', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_0400
      * @tc.name     ArkUI_Tabs_Divider_static_0400
@@ -206,7 +206,7 @@ it('ArkUI_Tabs_Divider_static_0400', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_0500
      * @tc.name     ArkUI_Tabs_Divider_static_0500
@@ -229,7 +229,7 @@ it('ArkUI_Tabs_Divider_static_0500', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_0600
      * @tc.name     ArkUI_Tabs_Divider_static_0600
@@ -267,15 +267,15 @@ it('ArkUI_Tabs_Divider_static_0600', Level.LEVEL0, async (done: () => void): Pro
       console.info("[ArkUI_Tabs_Divider_static_0600] divider:" +
       JSON.stringify(obj.getElement('$attrs').getElement('divider')));
       let dividerObject = obj.getElement('$attrs').getElement('divider');
-      expect(dividerObject.getString('strokeWidth')).assertEqual("0.00px");
-      expect(dividerObject.getString('color')).assertEqual(defaultDividerColor);
-      expect(dividerObject.getString('startMargin')).assertEqual('0.00px');
-      expect(dividerObject.getString('endMargin')).assertEqual('0.00px');
+      expect(dividerObject.tryGetString('strokeWidth')).assertEqual("0.00px");
+      expect(dividerObject.tryGetString('color')).assertEqual(defaultDividerColor);
+      expect(dividerObject.tryGetString('startMargin')).assertEqual('0.00px');
+      expect(dividerObject.tryGetString('endMargin')).assertEqual('0.00px');
       done();
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_0700
      * @tc.name     ArkUI_Tabs_Divider_static_0700
@@ -324,7 +324,7 @@ it('ArkUI_Tabs_Divider_static_0700', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_0800
      * @tc.name     ArkUI_Tabs_Divider_static_0800
@@ -363,7 +363,7 @@ it('ArkUI_Tabs_Divider_static_0800', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_0900
      * @tc.name     ArkUI_Tabs_Divider_static_0900
@@ -402,7 +402,7 @@ it('ArkUI_Tabs_Divider_static_0900', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_1000
      * @tc.name     ArkUI_Tabs_Divider_static_1000
@@ -441,7 +441,7 @@ it('ArkUI_Tabs_Divider_static_1000', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_1100
      * @tc.name     ArkUI_Tabs_Divider_static_1100
@@ -490,7 +490,7 @@ it('ArkUI_Tabs_Divider_static_1100', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_1200
      * @tc.name     ArkUI_Tabs_Divider_static_1200
@@ -611,7 +611,7 @@ it('ArkUI_Tabs_Divider_static_1200', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0100
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0100
@@ -667,7 +667,7 @@ it('ArkUI_Tabs_LabelStyle_static_0100', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0200
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0200
@@ -698,7 +698,7 @@ it('ArkUI_Tabs_LabelStyle_static_0200', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0300
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0300
@@ -731,7 +731,7 @@ it('ArkUI_Tabs_LabelStyle_static_0300', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0400
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0400
@@ -764,7 +764,7 @@ it('ArkUI_Tabs_LabelStyle_static_0400', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0500
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0500
@@ -797,7 +797,7 @@ it('ArkUI_Tabs_LabelStyle_static_0500', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0600
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0600
@@ -852,7 +852,7 @@ it('ArkUI_Tabs_LabelStyle_static_0600', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_FadingEdge_static_0100
      * @tc.name     ArkUI_Tabs_FadingEdge_static_0100
@@ -870,7 +870,7 @@ it('ArkUI_Tabs_FadingEdge_static_0100', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_FadingEdge_static_0200
      * @tc.name     ArkUI_Tabs_FadingEdge_static_0200
@@ -905,7 +905,7 @@ it('ArkUI_Tabs_FadingEdge_static_0200', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_FadingEdge_static_0300
      * @tc.name     ArkUI_Tabs_FadingEdge_static_0300
@@ -940,7 +940,7 @@ it('ArkUI_Tabs_FadingEdge_static_0300', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0100
      * @tc.name     ArkUI_Tabs_IndicatorColor_0100
@@ -969,7 +969,7 @@ it('ArkUI_Tabs_IndicatorColor_0100', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0200
      * @tc.name     ArkUI_Tabs_IndicatorColor_0200
@@ -989,7 +989,7 @@ it('ArkUI_Tabs_IndicatorColor_0200', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0300
      * @tc.name     ArkUI_Tabs_IndicatorColor_0300
@@ -1009,7 +1009,7 @@ it('ArkUI_Tabs_IndicatorColor_0300', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0400
      * @tc.name     ArkUI_Tabs_IndicatorColor_0400
@@ -1029,7 +1029,7 @@ it('ArkUI_Tabs_IndicatorColor_0400', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0500
      * @tc.name     ArkUI_Tabs_IndicatorColor_0500
@@ -1049,7 +1049,7 @@ it('ArkUI_Tabs_IndicatorColor_0500', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0600
      * @tc.name     ArkUI_Tabs_IndicatorColor_0600
@@ -2059,7 +2059,7 @@ it('ArkUI_Tabs_SelectedMode_static_0300', Level.LEVEL0, async (done: () => void)
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selfIndicatorHeight": 10,
+            "selfIndicatorHeight": 10 as number,
             "selfSelectedMode": SelectedMode.BOARD
           } as Record<String,RecordData>
         }
@@ -2182,8 +2182,8 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0500', Level.LEVEL0, async (done: () =>
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selfIndicatorHeight": 10.0,
-            "selfMarginTop": -1.0
+            "selfIndicatorHeight": 10.0 as number,
+            "selfMarginTop": -1.0 as number
           } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {

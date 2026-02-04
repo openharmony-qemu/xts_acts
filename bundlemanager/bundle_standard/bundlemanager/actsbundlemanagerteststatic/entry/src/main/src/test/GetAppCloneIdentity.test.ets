@@ -27,9 +27,9 @@ export default function GetAppCloneIdentityTest() {
      * @tc.desc   test errCode 201 when call getAppCloneIdentity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('getAppCloneIdentity201', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('getAppCloneIdentity201', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info(TAG + "getAppCloneIdentity201 start");
       try {
         await bundleManager.getAppCloneIdentity(-1).then((res: AppCloneIdentity) => {

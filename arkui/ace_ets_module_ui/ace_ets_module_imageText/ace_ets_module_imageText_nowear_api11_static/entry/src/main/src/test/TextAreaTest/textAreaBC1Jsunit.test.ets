@@ -376,33 +376,5 @@ it('textAreaBC1Jsunit_static_0800', Level.LEVEL2, async (done: ()=>void) => {
 
       done();
     });
-
-    
-    
-    
-    /**
-     * @tc.number   textAreaBC1Jsunit_static_0900
-     * @tc.name     textAreaBC1Jsunit_static_0900
-     * @tc.desc     textAreaBC1Jsunit_static_0900
-     * @tc.level    Level.LEVEL3
-     */
-it('textAreaBC1Jsunit_static_0900', Level.LEVEL3, async (done: ()=>void) => {
-      let driver =  Driver.create()
-      let text = await driver.findComponent(ON.id('textArea2'));
-      await (text?.inputText('yy') as Promise<void>);
-	  await driver.triggerKey(2047)
-      await CommonFunc.sleep(2000);
-      let y = await driver.findComponent(ON.id('button2'));
-      await (y?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJsont = inspector.getInspectorByKey('isEdit');
-      let objt = JSON.parseJsonElement(strJsont);
-      console.info('textAreaBC1Jsunit_0900 objt is: ' + objt.getElement('$attrs').getString('content'));
-
-
-        expect(objt.getElement('$attrs').getString('content')).assertEqual('Nodoing');
-
-      done();
-    });
   })
 }

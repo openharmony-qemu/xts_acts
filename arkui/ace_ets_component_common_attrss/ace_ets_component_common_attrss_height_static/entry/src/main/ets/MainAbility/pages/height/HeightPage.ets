@@ -102,8 +102,6 @@ import {
   Slider,
   SliderStyle,
   Stack,
-  Stepper,
-  StepperItem,
   Swiper,
   TabContent,
   Tabs,
@@ -568,20 +566,6 @@ struct heightPage {
         WaterFlow()
           .applyStyles(this.commonStyle)
           .backgroundColor(this.BackGroundColor).width(100)
-      } else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem()
-        }
-        .applyStyles(this.commonStyle)
-        .width(100)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Text('Page One')
-          }
-          .applyStyles(this.commonStyle)
-
-        }.key(this.parentComponentKey).width(this.parentWidth as number).height(this.parentHeight as number)
       } else if (this.targetView == 'FlowItem') {
         WaterFlow() {
           FlowItem()

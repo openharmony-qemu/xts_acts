@@ -297,7 +297,7 @@ export default function ErrTest() {
       } catch (err) {
         const ee: BusinessError = err as BusinessError;
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectTrue(ee.code === 401);
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} test end `);
@@ -1506,7 +1506,7 @@ export default function ErrTest() {
         }, (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
-            ExpectTrue(err.code === 401);
+            expect().assertFail();
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
@@ -1741,7 +1741,7 @@ export default function ErrTest() {
             done();
           } else {
             console.log(`${caseName} callback: success data>${JSON.stringify(data)}`);
-            ExpectTrue(data === false);
+            expect().assertFail();
             done();
           }
         });
@@ -1770,7 +1770,7 @@ export default function ErrTest() {
         let promise = contact.isLocalContact(context, 0);
         promise.then((data: boolean) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-          ExpectTrue(data === false);
+          expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} fail: err>${JSON.stringify(err)}`);

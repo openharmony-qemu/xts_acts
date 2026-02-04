@@ -41,9 +41,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function flexBasisTest() {
 
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.001.test.static", "EntryAbility")
-  
-  const uiContext = AppStorage.get<UIContext>('uiContext')!;
+
 
   let supportView = [
     'AlphabetIndexer',
@@ -122,7 +120,7 @@ export default function flexBasisTest() {
     },
     expectValue: {
       expectFlexBasis: '100.00vp',
-      expectSize: uiContext.vp2px(100.00)
+      expectSize: 100
     }
   }, {
     describe: 'SetStringPx',
@@ -139,13 +137,14 @@ export default function flexBasisTest() {
       flexBasis: '50%'
     },
     expectValue: {
-      expectSize: uiContext.vp2px(120)
+      expectSize: 120
     }
   }]
 
   describe('FlexBasisTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FlexBasisTest beforeEach start");
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.001.test.static", "EntryAbility")
     });
     
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues,
@@ -155,6 +154,15 @@ export default function flexBasisTest() {
         data.viewObj = JSON.parseJsonElement(strJson);
         //Verify the flexBasis is or not be set success
         console.info('[' + data.caseTag + '] check the flexBasis is or not be set success');
+
+        if (data.testValue.describe == 'SetNumber') {
+          data.testValue.expectValue.expectSize = UIContext.resolveUIContext()!.vp2px(100.00)
+
+        }
+        if (data.testValue.describe == 'SetStringPercent') {
+          data.testValue.expectValue.expectSize = UIContext.resolveUIContext()!.vp2px(120)
+        }
+
         if (data.testValue.describe == 'SetNumber' || data.testValue.describe == 'SetStringPx') {
           expect(data.viewObj!.getElement('$attrs').getString('flexBasis')).assertEqual(data.testValue.expectValue.expectFlexBasis);
           console.info('[' + data.caseTag + '] data.viewObj.$attrs.flexBasis' +

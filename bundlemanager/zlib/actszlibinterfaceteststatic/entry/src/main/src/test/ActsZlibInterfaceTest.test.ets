@@ -51,9 +51,9 @@ export default function ActsZlibInterfaceTest() {
      * @tc.desc   test getOriginalSize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('ActsZlibInterfaceTest_static_01', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ActsZlibInterfaceTest_static_01', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = 'ActsZlibInterfaceTest01';
       hilog.info(domain, tag, "==================ACTS_ZlibInterfaceTest_static_01 start==================");
       let inFile33: string = dir;

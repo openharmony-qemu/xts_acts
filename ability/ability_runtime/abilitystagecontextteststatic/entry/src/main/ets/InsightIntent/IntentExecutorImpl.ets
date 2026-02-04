@@ -50,7 +50,7 @@ export default class IntentExecutorImpl extends InsightIntentExecutor {
     };
 
     try {
-      await this.context.startAbility(want1);
+      this.context.startAbility(want1);
       hilog.info(0x0000, 'testTag', '%{public}s', 'Start ability finished');
     } catch (error) {
       hilog.error(0x0000, 'testTag', 'Start ability error caught %{public}s', JSON.stringify(error));

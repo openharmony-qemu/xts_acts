@@ -19,10 +19,10 @@ import router from '@ohos.router'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
   LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
-  Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
+  Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
+  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
@@ -33,8 +33,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
   ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
   RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
-  StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
+  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute,
+  SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
@@ -431,20 +431,6 @@ class SliderModifier implements AttributeModifier<SliderAttribute> {
 class StackModifier implements AttributeModifier<StackAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: StackAttribute): void {
-    console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
-   instance.useEffect(this.mUseEffect)
-  }
-}
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mUseEffect: boolean = true
-  applyNormalAttribute(instance: StepperAttribute): void {
-    console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
-   instance.useEffect(this.mUseEffect)
-  }
-}
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mUseEffect: boolean = true
-  applyNormalAttribute(instance: StepperItemAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
@@ -903,18 +889,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
@@ -1107,8 +1081,6 @@ struct useEffectPage {
   @State _useEffectSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _useEffectSliderMod: SliderModifier = new SliderModifier()
   @State _useEffectStackMod: StackModifier = new StackModifier()
-  @State _useEffectStepperMod: StepperModifier = new StepperModifier()
-  @State _useEffectStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _useEffectSwiperMod: SwiperModifier = new SwiperModifier()
   @State _useEffectTabContentMod: TabContentModifier = new TabContentModifier()
   @State _useEffectTabsMod: TabsModifier = new TabsModifier()
@@ -1201,8 +1173,6 @@ struct useEffectPage {
       this._useEffectSideBarContainerMod.mUseEffect = value.useEffect
       this._useEffectSliderMod.mUseEffect = value.useEffect
       this._useEffectStackMod.mUseEffect = value.useEffect
-      this._useEffectStepperMod.mUseEffect = value.useEffect
-      this._useEffectStepperItemMod.mUseEffect = value.useEffect
       this._useEffectSwiperMod.mUseEffect = value.useEffect
       this._useEffectTabContentMod.mUseEffect = value.useEffect
       this._useEffectTabsMod.mUseEffect = value.useEffect
@@ -1302,14 +1272,6 @@ struct useEffectPage {
           })
             .showTips(true)
             .commonStyle(this.componentKey).attributeModifier(this._useEffectSliderMod)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }.commonStyle(this.componentKey).attributeModifier(this._useEffectStepperMod)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -1518,19 +1480,6 @@ struct useEffectPage {
               }
             }, (item: int) => item.toString())
           }.commonStyle(this.componentKey).attributeModifier(this._useEffectWaterFlowMod)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            .commonStyle(this.componentKey).attributeModifier(this._useEffectStepperItemMod)
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

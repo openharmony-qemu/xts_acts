@@ -51,7 +51,7 @@ const uiContext = new UIContext();
 
 export default function noBarrierComponentsTest() {
   describe('noBarrierComponentsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("noBarrierComponentsTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
@@ -81,7 +81,7 @@ export default function noBarrierComponentsTest() {
 
 
     // // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    // beforeAll(() => {
+    // beforeAll(async (): Promise<void> => {
     //   // Presets an action, which is performed only once before all test cases of the test suite start.
     //   // This API supports only one parameter: preset action function.
     // })

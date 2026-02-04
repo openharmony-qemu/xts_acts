@@ -47,12 +47,15 @@ group("distributeddatamgr") {
       "preferencesjstest:preferences_js_test",
       "relationalStoretest:relationalStoretest",
       "relationalstoredatagroupidtest:ActsRelationalstoreDataGroupIdTest",
+      "dataShare_Static:dataShare_Static",
+      "intelligenceTest_static:ActsIntelligenceStaticTest",
     ]
   } else {
     deps = [
       "kvStorejstest/hap:distributeddatamgrfunctest_hap",
       "relationalStorejstest/hap:appdatamgrfunctest_hap",
       "searchtest/hap:searchfunctest_hap",
+      "dataShare_Static:dataShare_Static"
     ]
   }
 }

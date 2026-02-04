@@ -57,7 +57,7 @@ import PixelMapNativeCropTest from './PixelmapNativeCropTest.test';
 import ImagePackerNativeTest from './ImagePackerNativeTest.test';
 import ImagePictureNativeTest from './ImagePictureNativeTest.test';
 import OHImageSourceNativeSupplementTest from './OHImageSourceNativeSupplement.test';
-
+import ImageOHImageSourceInfoCreate from './ImageOHImageSourceInfoCreate.test';
 
 export default function testsuite() {
   ImageEffectSuppTest();
@@ -104,4 +104,5 @@ export default function testsuite() {
   ImagePackerNativeTest();
   ImagePictureNativeTest();
   OHImageSourceNativeSupplementTest()
+  ImageOHImageSourceInfoCreate();
 }

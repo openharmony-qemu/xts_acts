@@ -17,13 +17,13 @@ import prompt from '@ohos.prompt';
 import promptAction from '@ohos.promptAction';
 import events_emitter from '@ohos.events.emitter';
 import Log from '../../common/Log';
+import { BusinessError } from '@ohos.base';
 import {
   Alignment,
   AlignRuleOption,
   Axis,
   BlurStyle,
   Builder,
-  BusinessError,
   Button,
   ClickEvent,
   Color,

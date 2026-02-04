@@ -127,7 +127,7 @@ it('testListItemPadding_static', Level.LEVEL0, async (done: () => void): Promise
       expect(Math.abs(Math.round(locationText1.right - TextTest1.right)- Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText1.bottom - TextTest1.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       let driver = Driver.create();
-      driver.swipe(360, 690, 360, 30);
+      await driver.swipe(360, 690, 360, 30);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest24');
       expect(Math.abs(locationText4.top - locationText4Again.top) <= 1).assertTrue();
       console.info('new testListItemPadding END');

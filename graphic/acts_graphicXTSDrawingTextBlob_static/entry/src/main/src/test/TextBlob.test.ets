@@ -61,14 +61,28 @@ export default function textBlobTest() {
      */
     it('testTextBlobMakeFromStringNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testTextBlobMakeFromStringNormalStatic';
-
       let font = new drawing.Font();
-
       try {
-        drawing.TextBlob.makeFromString("drawing", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
-        drawing.TextBlob.makeFromString("drawing", font, drawing.TextEncoding.TEXT_ENCODING_UTF16);
-        drawing.TextBlob.makeFromString("drawing", font, drawing.TextEncoding.TEXT_ENCODING_UTF32);
-        drawing.TextBlob.makeFromString("drawing", font, drawing.TextEncoding.TEXT_ENCODING_GLYPH_ID);
+        let textBlob = drawing.TextBlob.makeFromString("drawing", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+        if(textBlob == undefined){
+          console.info(msg + ' textBlob makeFromString failed for encoding');
+          expect().assertFail();
+        }
+        let textBlob1 = drawing.TextBlob.makeFromString("drawing", font, drawing.TextEncoding.TEXT_ENCODING_UTF16);
+        if(textBlob1 == undefined){
+          console.info(msg + ' textBlob1 makeFromString failed for encoding');
+          expect().assertFail();
+        }
+        let textBlob2 = drawing.TextBlob.makeFromString("drawing", font, drawing.TextEncoding.TEXT_ENCODING_UTF32);
+        if(textBlob2 == undefined){
+          console.info(msg + ' textBlob2 makeFromString failed for encoding');
+          expect().assertFail();
+        }
+        let textBlob3 = drawing.TextBlob.makeFromString("drawing", font, drawing.TextEncoding.TEXT_ENCODING_GLYPH_ID);
+        if(textBlob3 == undefined){
+          console.info(msg + ' textBlob3 makeFromString failed for encoding');
+          expect().assertFail();
+        }
         console.info(msg + ' makeFromString succeeded for encoding');
       } catch (e) {
         e = e as BusinessError;
@@ -234,6 +248,14 @@ export default function textBlobTest() {
                 expect(0).assertEqual(b.bottom);
               }
             }
+            if(b == undefined){
+              console.info(`${msg} bounds failed  ${JSON.stringify(bounds)}`);
+              expect().assertFail();
+            }
+          }
+          if(textBlob == undefined){
+            console.info(`${msg} makeFromRunBuffer failed for bounds ${JSON.stringify(bounds)}`);
+            expect().assertFail();
           }
           console.info(`${msg} makeFromRunBuffer succeeded for bounds ${JSON.stringify(bounds)}`);
         } catch (e) {
@@ -315,11 +337,19 @@ export default function textBlobTest() {
                 expect(randomBounds.bottom).assertEqual(result.bottom);
                 console.info(`${msg} bounds succeeded`);
               }
+              if(result == undefined){
+                console.info(`${msg} failed for bounds ${JSON.stringify(result)}`);
+                expect().assertFail();
+              }
             } catch (e) {
               e = e as BusinessError;
               console.info(`${msg} bounds failed, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
               expect().assertFail();
             }
+          }
+          if(textBlob == undefined){
+            console.info(`${msg} undefined makeFromRunBuffer failed  ${JSON.stringify(textBlob)}`);
+            expect().assertFail();
           }
 
         } catch (e) {

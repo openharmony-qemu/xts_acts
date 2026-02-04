@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function InvertOptionsJsSuit() {
   describe('InvertOptionsJsSuit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("InvertOptionsJsSuit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")

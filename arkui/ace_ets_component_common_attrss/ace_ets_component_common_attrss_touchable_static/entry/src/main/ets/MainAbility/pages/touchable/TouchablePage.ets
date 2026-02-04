@@ -25,7 +25,6 @@ import {
   TabContent,
   ListItemGroup,
   ListItem,
-  StepperItem,
   SliderStyle,
   BadgeParamWithNumber,
   Blank,
@@ -128,7 +127,7 @@ import {
   Axis,Builder,CommonMethod,applyStyles,DataPanelType,/*NavRouter,Panel,Navigator,*/
   MenuItemOptions,
   CheckboxGroupOptions,DataPanelOptions,DatePickerOptions,ProgressOptions,RadioOptions,SliderOptions,WebviewController,Web,
-  Stepper,LineJoinStyle,HitTestMode,
+  LineJoinStyle,HitTestMode,
   NavPathStack,
   AlignRuleOption
 } from '@ohos.arkui.component';
@@ -240,16 +239,6 @@ struct TouchablePage {
         .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
         .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
         .backgroundColor(Color.Black)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Button('StepperItem')
-          }
-          .backgroundColor(Color.Green)
-          .applyStyles(this.commonStyle)
-        }
-        .width('100%')
-        .height('70%')
       } else if (this.targetView == 'FlowItem') {
         WaterFlow() {
           FlowItem() {
@@ -349,14 +338,6 @@ struct TouchablePage {
             .width(20)
             .backgroundColor('#ededed')
             .applyStyles(this.commonStyle)
-          } else if (this.targetView == 'Stepper') {
-            Stepper() {
-              StepperItem() {
-                Column() {
-                  Text('Page One')
-                }
-              }
-            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Search') {
             Search({ placeholder: 'Type to search...' })
               .backgroundColor(Color.White)

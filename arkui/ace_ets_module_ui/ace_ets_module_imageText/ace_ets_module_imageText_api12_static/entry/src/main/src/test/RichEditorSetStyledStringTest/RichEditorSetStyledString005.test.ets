@@ -100,8 +100,13 @@ export default function RichEditorSetStyledString005() {
       let content = await (driver.findComponent(ON.id('content')) as Promise<Component>);
       let contentText = await content.getText();
       await CommonFunc.sleep(500);
-      let imageStyle = 'verticalAlign:1;objectFit:0{"topLeft":"10.00vp","topRight":"10.00vp","bottomLeft":"10.00vp","bottomRight":"10.00vp"}';
-      expect(contentText).assertContain(imageStyle);
+      const contentStr = contentText.slice(contentText.indexOf('{'), contentText.lastIndexOf('}') + 1);
+      const contentElement = JSON.parseJsonElement(contentStr)
+      expect(contentText).assertContain('verticalAlign:1;objectFit:0');
+      expect(contentElement.getString("topLeft")).assertEqual("10.00vp");
+      expect(contentElement.getString("topRight")).assertEqual("10.00vp");
+      expect(contentElement.getString("bottomLeft")).assertEqual("10.00vp");
+      expect(contentElement.getString("bottomRight")).assertEqual("10.00vp");
       done();
     });
 

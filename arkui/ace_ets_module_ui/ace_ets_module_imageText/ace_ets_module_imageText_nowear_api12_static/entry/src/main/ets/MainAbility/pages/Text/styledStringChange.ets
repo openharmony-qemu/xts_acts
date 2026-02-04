@@ -51,7 +51,6 @@ import image from '@ohos.multimedia.image'
 import { LengthMetrics } from '@ohos.arkui.node';
 import drawing from '@ohos.graphics.drawing';
 import image from '@ohos.multimedia.image'
-import { LengthMetrics } from '@ohos.arkui.node';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 class MyCustomSpan extends CustomSpan {
 

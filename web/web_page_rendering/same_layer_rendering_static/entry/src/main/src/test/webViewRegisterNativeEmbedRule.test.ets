@@ -58,9 +58,9 @@ export default function webViewRegisterNativeEmbedRule() {
      * @tc.desc   test registerNativeEmbedRule
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testWebViewRegisterNativeEmbedRule_static_001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testWebViewRegisterNativeEmbedRule_static_001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitWebViewRegisterNativeEmbedRule', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('emitWebViewRegisterNativeEmbedRule', true, 10003, done);

@@ -219,29 +219,27 @@ export function getInitialIntValue(): int {
     return 0;
 }
 
-function getIntValue1(i: int): int {
+function getIntValue(i: int): int {
     return 0;
 }
-function getIntValue2(i: String): int {
+function getIntValue(i: String): int {
     return 1;
 }
-function getIntValue3(): int {
+function getIntValue(): int {
     return 2;
 }
 
-overload getIntValue {getIntValue1, getIntValue2, getIntValue3}
 export function getInitialStringValue(): String {
     return "a";
 }
 
-function overloaded1(i: int): int {
+function overloaded(i: int): int {
     return 0
 }
-function overloaded2(): int {
+function overloaded(): int {
     return 1
 }
 
-overload overloaded {overloaded1, overloaded2}
 
 function getIntValueA(i: int): void {}
 function getIntValueB(i: int): void {}

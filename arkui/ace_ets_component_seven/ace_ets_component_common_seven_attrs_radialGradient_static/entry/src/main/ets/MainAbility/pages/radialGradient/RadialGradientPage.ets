@@ -160,10 +160,6 @@ import {
   SpanAttribute,
   Stack,
   StackAttribute,
-  Stepper,
-  StepperAttribute,
-  StepperItem,
-  StepperItemAttribute,
   Swiper,
   SwiperAttribute,
   TabContent,
@@ -1007,32 +1003,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mRadialGradient: RadialGradientOptions = {
-    center: [50, 50],
-    radius: 60,
-    repeating: true,
-    colors: [['FFFF0000', 0.0], ['FF0000FF', 0.3], ['FFFFFF00', 0.5]]
-  }
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    instance.radialGradient(this.mRadialGradient)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mRadialGradient: RadialGradientOptions = {
-    center: [50, 50],
-    radius: 60,
-    repeating: true,
-    colors: [['FFFF0000', 0.0], ['FF0000FF', 0.3], ['FFFFFF00', 0.5]]
-  }
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    instance.radialGradient(this.mRadialGradient)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mRadialGradient: RadialGradientOptions = {
     center: [50, 50],
@@ -1523,16 +1493,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.key(componentKey)
   return this
@@ -1709,8 +1669,6 @@ struct RadialGradientPage {
   @State _radialGradientSliderModifier: SliderModifier = new SliderModifier()
   @State _radialGradientSpanModifier: SpanModifier = new SpanModifier()
   @State _radialGradientStackModifier: StackModifier = new StackModifier()
-  @State _radialGradientStepperModifier: StepperModifier = new StepperModifier()
-  @State _radialGradientStepperItemModifier: StepperItemModifier = new StepperItemModifier()
   @State _radialGradientSwiperModifier: SwiperModifier = new SwiperModifier()
   @State _radialGradientTabContentModifier: TabContentModifier = new TabContentModifier()
   @State _radialGradientTabsModifier: TabsModifier = new TabsModifier()
@@ -1902,32 +1860,6 @@ struct RadialGradientPage {
           .showTips(true)
           .commonStyle(this.componentKey)
           .attributeModifier(this._radialGradientSliderModifier)
-      }
-      if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-        }
-        .commonStyle(this.componentKey)
-        .attributeModifier(this._radialGradientStepperModifier)
-      }
-      if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-          .backgroundColor(Color.Red)
-          .commonStyle(this.componentKey)
-          .attributeModifier(this._radialGradientStepperItemModifier)
-        }
-        .backgroundColor(Color.Yellow)
-        .width('100%')
-        .height('100%')
       }
       if (this.targetView == 'Text') {
         Text('text1')

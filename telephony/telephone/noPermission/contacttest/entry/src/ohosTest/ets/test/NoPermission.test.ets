@@ -267,7 +267,7 @@ export default function NoPermissionTest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.queryContactsByEmail(context, '13800000000@email.com', holder, attr);
-        promise.then((data) => {
+        await promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
           ExpectFail();
           done();
@@ -360,7 +360,7 @@ export default function NoPermissionTest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.queryGroups(context, holder);
-        promise.then((data) => {
+        await promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
           ExpectFail();
           done();
@@ -422,7 +422,7 @@ export default function NoPermissionTest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.queryHolders(context);
-        promise.then((data) => {
+        await promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
           ExpectFail();
           done();
@@ -515,7 +515,7 @@ export default function NoPermissionTest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.queryKey(context, 1, holder);
-        promise.then((data) => {
+        await promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
           ExpectFail();
           done();
@@ -669,7 +669,7 @@ export default function NoPermissionTest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.queryContact(context, 'abcd', holder, attr);
-        promise.then((data) => {
+        await promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
           ExpectFail();
           done();
@@ -823,7 +823,7 @@ export default function NoPermissionTest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.queryContacts(context, holder, attr);
-        promise.then((data) => {
+        await promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
           ExpectFail();
           done();
@@ -915,7 +915,7 @@ export default function NoPermissionTest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.updateContact(context, contactData, attr);
-        promise.then((updateDate) => {
+        await promise.then((updateDate) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(updateDate)}`);
         }).catch((err: BusinessError) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(err)}`);
@@ -975,7 +975,7 @@ export default function NoPermissionTest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.deleteContact(context, "12");
-        promise.then(() => {
+        await promise.then(() => {
           console.info(`${caseName} deleteContacts:success`);
           ExpectFail();
           done();
@@ -1066,7 +1066,7 @@ export default function NoPermissionTest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.queryContactsByPhoneNumber(context, '13800000000', holder, attr);
-        promise.then((data) => {
+        await promise.then((data) => {
           console.log(`${caseName} queryContacts:success->${JSON.stringify(data)}`);
           ExpectFail();
           done()
@@ -1189,7 +1189,7 @@ export default function NoPermissionTest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.addContact(context, contactData);
-        promise.then((data) => {
+        await promise.then((data) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
           ExpectFail();
           done();
@@ -1250,7 +1250,7 @@ export default function NoPermissionTest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.isLocalContact(context, 11);
-        promise.then((data) => {
+        await promise.then((data) => {
           console.log(`isLocalContact success: data>${JSON.stringify(data)}`);
           ExpectFail();
           done();
@@ -1304,7 +1304,7 @@ export default function NoPermissionTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       let promise = contact.isMyCard(context, 0);
-      promise.then((data: boolean) => {
+      await promise.then((data: boolean) => {
         console.log(`${caseName} success: data->${JSON.stringify(data)}`);
         ExpectFail();
         done();
@@ -1315,5 +1315,32 @@ export default function NoPermissionTest() {
       });
       console.info(`${caseName} test end `);
     });
+
+        /**
+     * @tc.name   testTelephonyContactqueryContactsCount2000
+     * @tc.number SUB_Telephony_Contact_queryContactsCount_2000
+     * @tc.desc   queryContactsCount and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testTelephonyContactqueryContactsCount2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = "testTelephonyContactqueryContactsCount2000";
+      console.info(`${caseName} test start `);
+      let context: Context = AppStorage.get('context') as Context;
+      let promise = contact.queryContactsCount(context);
+      await promise.then((data) => {
+        console.log(`${caseName} fail: data->${JSON.stringify(data)}`);
+        expect().assertFail();
+        done();
+      }).catch((err: BusinessError) => {
+        console.error(`${caseName} error: code 201->${JSON.stringify(err)}`);
+        expect(err.code === 201).assertTrue();
+        done();
+      });
+      console.info(`${caseName} test end `);
+    });
+
+
   })
 }

@@ -102,6 +102,10 @@ struct Index {
   @State componentContentBeforeValue: string  = '9';
   @State componentContentAfterValue: string  = '9';
 
+  aboutToAppear(){
+    this.myNodeController.nodeAdapter?.dispose();
+  }
+
   build() {
     Column({ space: 2 }) {
       NodeContainer(this.myNodeController)

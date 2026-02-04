@@ -83,7 +83,7 @@ export default function ErrorCode201() {
         let win: window.Window;
         let context: common.UIAbilityContext;
         let isPCStatus: string = '';
-        beforeAll(() => {
+        beforeAll(async () => {
             hilog.info(domain, tag, 'beforeAll start');
             let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
             hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -255,6 +255,7 @@ export default function ErrorCode201() {
             let caseName:string = 'testSetWindowTopmost201_static';
             try {
                 let windowClass:window.Window = windowStage.getMainWindowSync();
+                hilog.info(domain, tag,caseName+'Succeeded in getMainWindowSync' );
                 windowClass.setWindowTopmost(false).then(() => {
                     hilog.info(domain, tag,caseName+'Succeeded in setting the window to be top most.' );
                     expect(true).assertTrue();
