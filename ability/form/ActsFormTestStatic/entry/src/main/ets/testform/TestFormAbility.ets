@@ -66,7 +66,7 @@ class TestFormAbility extends UIAbility {
     }
 
     hilog.info(DOMAIN, TAG, 'get main window start');
-    windowStage.getMainWindow().then((win: window.WindowManager) => {
+    windowStage.getMainWindow().then((win) => {
       hilog.info(DOMAIN, TAG, 'get main window success');
       this.uiContext = win.getUIContext();
       hilog.info(DOMAIN, TAG, 'getUIContext end');
