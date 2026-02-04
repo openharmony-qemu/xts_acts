@@ -112,7 +112,6 @@ export default function fusionAgentTest() {
 
         beforeAll(async (done : Function) => {
             await clickRequestPermission(PERMISSION_TEXT);
-            await openPhone();
             console.info('beforeAll called')
             done();
         })
