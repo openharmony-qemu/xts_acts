@@ -16,10 +16,12 @@ import ObjectStoreJsunitV9Ets from './ObjectStoreJsunitV9Ets.test.ets'
 import DataObjectErrTest from './DataObjectErrTest.test';
 import objectStoreTest from "./ObjectStoreJsunit.test";
 import objectStoreTestV9 from "./ObjectStoreJsunitV9.test";
+import DataObjectAddAPITest from "./DataObjectAdd.test";
 
 export default function testsuite() {
-    ObjectStoreJsunitV9Ets(globalThis.abilityContext);
+  ObjectStoreJsunitV9Ets(globalThis.abilityContext);
 	DataObjectErrTest();
 	objectStoreTest();
-	objectStoreTestV9()
+	objectStoreTestV9();
+	DataObjectAddAPITest();
 }
