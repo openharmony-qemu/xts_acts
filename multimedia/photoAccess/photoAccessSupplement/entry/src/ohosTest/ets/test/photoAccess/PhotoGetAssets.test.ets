@@ -755,7 +755,7 @@ export default function PhotoGetAssetsTestSupp() {
         });
       } catch (error) {
         console.error(TAG, testName, `createAsset failed002, error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual('13900020');
+        expect(Number(error.code)).assertEqual(13900020);
         done();
       }
     });
@@ -2506,6 +2506,59 @@ export default function PhotoGetAssetsTestSupp() {
         done();
       }
     });
-
+    /**
+     * @tc.number   SUB_GET_RECENT_PHOTO_INFO_002
+     * @tc.name     SUB_GET_RECENT_PHOTO_INFO_002
+     * @tc.desc     getRecentPhotoInfo-属性MIMEType枚举VIDEO_TYPE-属性photoSource枚举ALL
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_RECENT_PHOTO_INFO_002", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_RECENT_PHOTO_INFO_002";
+      try {
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let recentPhotoOptions: RecentPhotoOptions = {
+          period: 60 * 60,
+          MIMEType: photoAccessHelper.PhotoViewMIMETypes.VIDEO_TYPE,
+          photoSource: PhotoSource.ALL
+        }
+        await phAccessHelper.getRecentPhotoInfo(recentPhotoOptions)
+        console.info(TAG,testName,'successfully');
+        expect(recentPhotoOptions != undefined).assertTrue();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed getRecentPhotoInfo', JSON.stringify(error), error.code);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_GET_RECENT_PHOTO_INFO_003
+     * @tc.name     SUB_GET_RECENT_PHOTO_INFO_003
+     * @tc.desc     getRecentPhotoInfo-属性MIMEType枚举IMAGE_VIDEO_TYPE-属性photoSource枚举ALL
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_RECENT_PHOTO_INFO_003", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_RECENT_PHOTO_INFO_003";
+      try {
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let recentPhotoOptions: RecentPhotoOptions = {
+          period: 60 * 60,
+          MIMEType: photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE,
+          photoSource: PhotoSource.ALL
+        }
+        await phAccessHelper.getRecentPhotoInfo(recentPhotoOptions)
+        console.info(TAG,testName,'successfully');
+        expect(recentPhotoOptions != undefined).assertTrue();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed getRecentPhotoInfo', JSON.stringify(error), error.code);
+        expect().assertFail();
+        done();
+      }
+    });
   })
 }
