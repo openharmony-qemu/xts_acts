@@ -228,18 +228,18 @@ const applyColorSpaceCbTest = async (
         } else {
           csmModify = colorSpaceManager.create(colorSpace as colorSpaceManager.ColorSpace);
         }
-        pixelMap.applyColorSpace(csmModify, (err: BusinessError | null) => {
+        pixelMap!.applyColorSpace(csmModify, (err: BusinessError | null) => {
           if (err && err.code) {
             expect(false).assertTrue();
             logger.log("applyColorSpace err " + err);
             done();
           } else {
-            let csm1 = pixelMap.getColorSpace();
+            let csm1 = pixelMap!.getColorSpace();
             logger.log("getColorSpace " + csm1);
             let csmn = csm1.getColorSpaceName();
             logger.log("getColorSpaceName " + csmn);
             checkColorSpace(csmn);
-            let pixelSize = pixelMap.getPixelBytesNumber();
+            let pixelSize = pixelMap!.getPixelBytesNumber();
             logger.log(`new pixel size ${pixelSize}`);
             done();
           }
