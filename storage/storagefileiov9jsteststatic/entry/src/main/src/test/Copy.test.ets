@@ -174,6 +174,30 @@ export default function fileIOCopy() {
     });
 
     /**
+     * @tc.name   fileIO_copy_async_static_006
+     * @tc.number SUB_BASIC_FM_FileAPI_fileIO_copy_async_static_0600
+     * @tc.desc   Test copy() interfaces.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_copy_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_copy_async_static_006');
+      let fpathTarget = fpath + 'dst';
+      let srcDirUriLocal = fileUri.getUriFromPath(fpath);
+      let dstDirUriLocal = fileUri.getUriFromPath(fpathTarget);
+
+      try {
+        await fs.copy(srcDirUriLocal, dstDirUriLocal, undefined);
+        expect(false).assertTrue();
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_006 end error' + JSON.stringify(e));
+        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   fileIO_copy_async_static_007
      * @tc.number SUB_BASIC_FM_FileAPI_fileIO_copy_async_static_0700
      * @tc.desc   Test copy() interfaces.callback.
