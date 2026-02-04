@@ -1975,6 +1975,47 @@ export default function PlainArray01Test() {
       expect(thrown).assertTrue();
     });
 
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST01_6800
+     * @tc.name      testPlainArray01Chapter0068
+     * @tc.desc      Get value with int32 boundary overflow negative throws error
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray01Chapter0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray01Chapter0068';
+      console.log(TAG + ' start');
+      const arr: PlainArray<number> = new PlainArray<number>();
+      let thrown: boolean = false;
+      try {
+        arr.get(-2147483649);
+      } catch (e) {
+        thrown = true;
+      }
+      expect(thrown).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST01_6900
+     * @tc.name      testPlainArray01Chapter0069
+     * @tc.desc      Get value with negative Infinity key throws error
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray01Chapter0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray01Chapter0069';
+      console.log(TAG + ' start');
+      const arr: PlainArray<number> = new PlainArray<number>();
+      let thrown: boolean = false;
+      try {
+        arr.get(-Infinity);
+      } catch (e) {
+        thrown = true;
+      }
+      expect(thrown).assertTrue();
+    });
   })
 }
 
