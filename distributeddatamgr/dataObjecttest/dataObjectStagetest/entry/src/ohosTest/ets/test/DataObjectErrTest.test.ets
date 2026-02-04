@@ -232,7 +232,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'save fail: error code = ' + err.code)
-        expect(err.code).assertEqual('401')
+        expect(error.code == 401).assertTrue();
       }
 
       console.info(TAG + '************ DataObjectErrTest05 end ************')
@@ -255,7 +255,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'revokeSave fail: error code = ' + err.code)
-        expect(err.code).assertEqual('401')
+        expect(error.code == 401).assertTrue();
       }
       console.info(TAG + '************ DataObjectErrTest06 end ************')
     })
