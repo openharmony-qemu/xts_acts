@@ -222,8 +222,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithNaN0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithNaN0009';
+    it("testArrayList06Chapter0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0009';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -1167,8 +1167,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayEmptyAndSpaceStringElements0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayEmptyAndSpaceStringElements0047';
+    it("testArrayList06Chapter0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0047';
       console.log(TAG + ' start');
       const strList: ArrayList<string> = new ArrayList<string>();
       strList.add("");
@@ -1474,8 +1474,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testIsEmptyWithFalsyElements0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testIsEmptyWithFalsyElements0059';
+    it("testArrayList06Chapter0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0059';
       console.log(TAG + ' start');
       type FalsyType = number | string | null | undefined;
       let arrayList: ArrayList<FalsyType>;
@@ -1500,8 +1500,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testIsEmptyWithBooleanOperation0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testIsEmptyWithBooleanOperation0060';
+    it("testArrayList06Chapter0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0060';
       console.log(TAG + ' start');
       let arrayList1: ArrayList<boolean> = new ArrayList<boolean>();
       const boolVal1: boolean = !0;
@@ -1526,8 +1526,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testIsEmptyWithBooleanElementAddRemove0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testIsEmptyWithBooleanElementAddRemove0061';
+    it("testArrayList06Chapter0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0061';
       console.log(TAG + ' start');
       let arrayList: ArrayList<boolean> = new ArrayList<boolean>();
       expect(arrayList.isEmpty()).assertEqual(true);
@@ -1548,8 +1548,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testIsEmptyWithMixedBooleanTypeElements0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testIsEmptyWithMixedBooleanTypeElements0062';
+    it("testArrayList06Chapter0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0062';
       console.log(TAG + ' start');
       type MixedType = boolean | number | string;
       let arrayList: ArrayList<MixedType>;
@@ -1573,8 +1573,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testIsEmptyWithLargeBooleanList0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testIsEmptyWithLargeBooleanList0063';
+    it("testArrayList06Chapter0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0063';
       console.log(TAG + ' start');
       let arrayList: ArrayList<boolean> = new ArrayList<boolean>();
       for (let i = 0; i < 10000; i++) {
@@ -1594,8 +1594,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testIsEmptyWithNestedBooleanArrayList0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testIsEmptyWithNestedBooleanArrayList0064';
+    it("testArrayList06Chapter0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0064';
       console.log(TAG + ' start');
       type NestedBooleanList = ArrayList<boolean>;
       let arrayList: ArrayList<NestedBooleanList>;
@@ -1623,8 +1623,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testIsEmptyAfterRemoveLastBooleanElement0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testIsEmptyAfterRemoveLastBooleanElement0065';
+    it("testArrayList06Chapter0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0065';
       console.log(TAG + ' start');
       let arrayList: ArrayList<boolean> = new ArrayList<boolean>();
       arrayList.add(true);
@@ -1645,8 +1645,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testIsEmptyWithBooleanAndUndefinedNull0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testIsEmptyWithBooleanAndUndefinedNull0066';
+    it("testArrayList06Chapter0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0066';
       console.log(TAG + ' start');
       type BooleanExtType = boolean | null | undefined;
       let arrayList: ArrayList<BooleanExtType> = new ArrayList<BooleanExtType>();
@@ -1668,8 +1668,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testIsEmptyWithBooleanListCycleAddClear0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testIsEmptyWithBooleanListCycleAddClear0067';
+    it("testArrayList06Chapter0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0067';
       console.log(TAG + ' start');
       let arrayList: ArrayList<boolean> = new ArrayList<boolean>();
       for (let cycle = 0; cycle < 5; cycle++) {

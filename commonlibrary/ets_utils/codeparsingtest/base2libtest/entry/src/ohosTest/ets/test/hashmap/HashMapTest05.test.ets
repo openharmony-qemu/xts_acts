@@ -45,7 +45,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0455
-     * @tc.name      testHashMap356
+     * @tc.name      testHashMap0356
      * @tc.desc      Check the integrity of the key-value pairs, or Map objects, stored in the Map collection
      *               (nested structure/iteration order) in the HashMap
      * @tc.size      MediumTest
@@ -74,7 +74,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0456
-     * @tc.name      testHashMap357
+     * @tc.name      testHashMap0357
      * @tc.desc      Check the JSON nested structure processing in the key-value pairs of the Map collection
      *               (nested structure/iteration order) stored in HashMap
      * @tc.size      MediumTest
@@ -113,7 +113,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0457
-     * @tc.name      testHashMap358
+     * @tc.name      testHashMap0358
      * @tc.desc      Check the synchronization of nested data modifications in the key-value pairs of the
      *               Map collection (nested structure/iteration order) stored in the HashMap
      * @tc.size      MediumTest
@@ -163,7 +163,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0458
-     * @tc.name      testHashMap359
+     * @tc.name      testHashMap0359
      * @tc.desc      Check the iteration order of key-value pairs in the Map collection
      *               (nested structure/iteration order) stored in HashMap
      * @tc.size      MediumTest
@@ -200,7 +200,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0459
-     * @tc.name      testHashMap360
+     * @tc.name      testHashMap0360
      * @tc.desc      Check the synchronization of operations on the Map collection stored in the HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -235,7 +235,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0460
-     * @tc.name      testHashMap361
+     * @tc.name      testHashMap0361
      * @tc.desc      Verify the integrity of the Set object stored in HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -262,7 +262,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0461
-     * @tc.name      testHashMap362
+     * @tc.name      testHashMap0362
      * @tc.desc      Verify that Set objects stored in HashMap are automatically deduplicated
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -290,7 +290,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0462
-     * @tc.name      testHashMap363
+     * @tc.name      testHashMap0363
      * @tc.desc      Verify the iteration order of Set objects stored in HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -324,7 +324,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0463
-     * @tc.name      testHashMap364
+     * @tc.name      testHashMap0364
      * @tc.desc      Verify the synchronization of operations on Set objects stored in HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -356,7 +356,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0464
-     * @tc.name      testHashMap365
+     * @tc.name      testHashMap0365
      * @tc.desc      Verify the synchronization of the clearing operation of Set objects stored in HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -383,7 +383,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0465
-     * @tc.name      testHashMap366
+     * @tc.name      testHashMap0366
      * @tc.desc      Check the integrity of Promise objects stored in HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -410,7 +410,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0466
-     * @tc.name      testHashMap367
+     * @tc.name      testHashMap0367
      * @tc.desc      Check the Promise thenable handling and asynchronous status stored in HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -437,7 +437,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0467
-     * @tc.name      testHashMap368
+     * @tc.name      testHashMap0368
      * @tc.desc      Check the consistency of Promise object references stored in HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -461,7 +461,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0468
-     * @tc.name      testHashMap369
+     * @tc.name      testHashMap0369
      * @tc.desc      Check the asynchronous processing of reconstructing Promises within the Promise
      *               objects stored in a HashMap
      * @tc.size      MediumTest
@@ -523,7 +523,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0470
-     * @tc.name      testHashMap371
+     * @tc.name      testHashMap0371
      * @tc.desc      Verify that the regular expression matching pattern string stored in the RegExp object in
      *               HashMap has not been tampered with
      * @tc.size      MediumTest
@@ -552,7 +552,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0472
-     * @tc.name      testHashMap373
+     * @tc.name      testHashMap0373
      * @tc.desc      Verify the pattern matching capability of the RegExp object stored in the HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -585,7 +585,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0473
-     * @tc.name      testHashMap374
+     * @tc.name      testHashMap0374
      * @tc.desc      Verify the consistency of references to RegExp objects stored in a HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -614,7 +614,7 @@ export default function HashMapTest05Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0474
-     * @tc.name      testHashMap375
+     * @tc.name      testHashMap0375
      * @tc.desc      Verify the ability to call regular expression methods on RegExp objects stored in a HashMap
      * @tc.size      MediumTest
      * @tc.type      Function

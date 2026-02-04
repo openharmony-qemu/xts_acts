@@ -1434,7 +1434,7 @@ export default function HashMapTest04Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0441
-     * @tc.name      testHashMap342
+     * @tc.name      testHashMap0342
      * @tc.desc      Verify the traversal characteristics of HashMap containing null value attributes
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1555,7 +1555,7 @@ export default function HashMapTest04Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0445
-     * @tc.name      testHashMap346
+     * @tc.name      testHashMap0346
      * @tc.desc      Check the traversal characteristics of the attributes containing NaN values stored in HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1703,7 +1703,7 @@ export default function HashMapTest04Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0450
-     * @tc.name      testHashMap351
+     * @tc.name      testHashMap0351
      * @tc.desc      Verify the traversal characteristics of attributes containing Infinity values stored in a HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
