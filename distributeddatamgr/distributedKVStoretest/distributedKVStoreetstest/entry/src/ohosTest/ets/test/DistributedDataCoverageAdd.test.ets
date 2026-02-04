@@ -126,7 +126,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");;
       }
     })
 
@@ -147,7 +148,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -215,7 +217,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -236,7 +239,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -257,7 +261,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -278,7 +283,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -365,7 +371,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -386,7 +393,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -407,7 +415,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -428,7 +437,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -515,7 +525,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -536,7 +547,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -557,7 +569,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -578,7 +591,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -665,7 +679,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -686,7 +701,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -707,7 +723,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -728,7 +745,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -793,7 +811,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -814,7 +833,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -835,7 +855,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -856,7 +877,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -921,7 +943,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -942,7 +965,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -963,7 +987,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -984,7 +1009,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1049,7 +1075,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1070,7 +1097,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1113,7 +1141,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1134,7 +1163,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1155,7 +1185,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1176,7 +1207,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1197,7 +1229,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1240,7 +1273,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1261,7 +1295,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1282,7 +1317,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1303,7 +1339,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1324,7 +1361,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1367,7 +1405,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1388,7 +1427,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1409,7 +1449,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1430,7 +1471,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1452,7 +1494,8 @@ export default function DistributedDataCoverageAdd(){
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
 
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1495,7 +1538,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1516,7 +1560,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1537,7 +1582,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1558,7 +1604,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1580,7 +1627,8 @@ export default function DistributedDataCoverageAdd(){
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
 
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1623,7 +1671,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1644,7 +1693,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1665,7 +1715,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1686,7 +1737,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1750,7 +1802,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1771,7 +1824,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1792,7 +1846,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1813,7 +1868,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1922,7 +1978,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1943,7 +2000,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -1986,7 +2044,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -2007,7 +2066,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -2028,7 +2088,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -2049,7 +2110,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -2070,7 +2132,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -2091,7 +2154,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -2157,7 +2221,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -2178,7 +2243,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -2265,7 +2331,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -2286,7 +2353,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -2329,7 +2397,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -2350,7 +2419,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -2393,7 +2463,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
 
@@ -2414,7 +2485,8 @@ export default function DistributedDataCoverageAdd(){
         expect(null).assertFail();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(undefined)
+        expect(e.code).assertEqual(undefined);
+        expect(e.message).assertContain("failed: invalid arguments");
       }
     })
     console.info(TAG + '-------------------describe DisdataCoverageAdd  end-------------------');
