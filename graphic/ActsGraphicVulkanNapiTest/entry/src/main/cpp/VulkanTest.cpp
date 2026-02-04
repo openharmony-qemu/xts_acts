@@ -206,7 +206,6 @@ static void TearDownTestCase()
 
 int LoadBaseFuncPtrTest()
 {
-    
     uint32_t extensionCount = 0;
     VkResult result = vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, nullptr);
     if (result != VK_SUCCESS) {
