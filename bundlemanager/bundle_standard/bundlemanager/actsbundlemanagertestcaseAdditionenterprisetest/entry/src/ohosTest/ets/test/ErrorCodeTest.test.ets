@@ -741,8 +741,8 @@
      });
  
      /**
-      * @tc.name   getBundleInfoCallBackNullSup
-      * @tc.number  getBundleInfoCallBackNullSup_1005
+      * @tc.name   getBundleInfoCallBackUndefineSup
+      * @tc.number getBundleInfoCallBackNullSup_1005
       * @tc.desc   test errCode 401 when call getBundleInfo
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
