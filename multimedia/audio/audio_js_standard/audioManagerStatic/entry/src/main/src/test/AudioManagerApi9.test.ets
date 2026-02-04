@@ -23,8 +23,8 @@ let TagFrmwk = "audioManagerApi9Test";
 console.info(`${TagFrmwk}: Create AudioManger Object JS Framework`);
 let deviceTypeInfo: string = deviceInfo.deviceType
 const delegator = abilityDelegatorRegistry.getAbilityDelegator();
-let audioManager: audio.AudioManager;
-let streamManager: audio.AudioStreamManager;
+let audioManager: audio.AudioManager | undefined;
+let streamManager: audio.AudioStreamManager | undefined;
 let audioMedia = audio.AudioVolumeType.MEDIA;
 let minVol = 0;
 let maxVol = 15;
@@ -42,7 +42,7 @@ function getStreamManager() {
   audioManager = audio.getAudioManager();
   if (audioManager != null) {
     console.info(`${TagFrmwk}: getAudioManger : PASS`);
-    streamManager = audioManager.getStreamManager();
+    streamManager = audioManager!.getStreamManager();
     if (streamManager != null) {
       console.info(`${TagFrmwk}: getStreamManager : PASS`);
     } else {
@@ -148,7 +148,7 @@ export default function audioManagerApi9() {
      * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let audioVolumeManager = audioManager.getVolumeManager();
+      let audioVolumeManager = audioManager!.getVolumeManager();
       try {
         let groupManager = audioVolumeManager.getVolumeGroupManagerSync(audio.DEFAULT_VOLUME_GROUP_ID)
         if ((typeof groupManager) == 'object') {
@@ -177,7 +177,7 @@ export default function audioManagerApi9() {
      * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SYNC_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let audioVolumeManager = audioManager.getVolumeManager();
+      let audioVolumeManager = audioManager!.getVolumeManager();
       try {
         let groupManager = audioVolumeManager.getVolumeGroupManagerSync(numParams);
         console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getGroupManager  :  FAIL`);
@@ -199,7 +199,7 @@ export default function audioManagerApi9() {
      * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_PERCENTAGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let audioVolumeManager = audioManager.getVolumeManager();
+      let audioVolumeManager = audioManager!.getVolumeManager();
       try {
         let groupManager = audioVolumeManager.getAppVolumePercentage();
         if ((typeof groupManager) == 'object') {
@@ -228,7 +228,7 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGERERROR_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let audioVolumeManager = audioManager.getVolumeManager();
+        let audioVolumeManager = audioManager!.getVolumeManager();
         let groupManager: audio.AudioVolumeGroupManager = await audioVolumeManager.getVolumeGroupManager(numParams);
         if ((typeof groupManager) != 'undefined') {
           console.info('audioManagerApi9Test: Promise: getGroupManager  :  TYPE ERROR');
@@ -254,7 +254,7 @@ export default function audioManagerApi9() {
      * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let audioVolumeManager = audioManager.getVolumeManager();
+      let audioVolumeManager = audioManager!.getVolumeManager();
       audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID,
         (err: BusinessError<void> | null, groupManager: audio.AudioVolumeGroupManager | undefined) => {
         if (err) {
@@ -284,7 +284,7 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let audioVolumeManager = audioManager.getVolumeManager();
+        let audioVolumeManager = audioManager!.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         if ((typeof groupManager) == 'object') {
           console.info('audioManagerApi9Test: Promise: getGroupManager  :  PASS');
@@ -312,7 +312,7 @@ export default function audioManagerApi9() {
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let groupManager: audio.AudioVolumeGroupManager;
       try {
-        let audioVolumeManager = audioManager.getVolumeManager();
+        let audioVolumeManager = audioManager!.getVolumeManager();
         groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         groupManager.getVolume(audio.AudioVolumeType.MEDIA, (err: BusinessError<void> | null, value: int | undefined) => {
           if (err) {
@@ -344,7 +344,7 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let audioVolumeManager = audioManager.getVolumeManager();
+        let audioVolumeManager = audioManager!.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         let value = await groupManager.getVolume(audio.AudioVolumeType.MEDIA);
         if (value >= minVol && value <= maxVolPc) {
@@ -372,7 +372,7 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let audioVolumeManager = audioManager.getVolumeManager();
+        let audioVolumeManager = audioManager!.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         groupManager.getMaxVolume(audio.AudioVolumeType.RINGTONE, (err: BusinessError<void> | null, data) => {
           if (err) {
@@ -409,7 +409,7 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let audioVolumeManager = audioManager.getVolumeManager();
+        let audioVolumeManager = audioManager!.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         let maxVolume = await groupManager.getMaxVolume(audio.AudioVolumeType.RINGTONE);
         if (maxVolume == maxVol) {
@@ -439,7 +439,7 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let audioVolumeManager = audioManager.getVolumeManager();
+        let audioVolumeManager = audioManager!.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         groupManager.getMinVolume(audio.AudioVolumeType.RINGTONE, (err: BusinessError<void> | null, data) => {
           if (err) {
@@ -473,7 +473,7 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let audioVolumeManager = audioManager.getVolumeManager();
+        let audioVolumeManager = audioManager!.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         let minVolume = await groupManager.getMinVolume(audio.AudioVolumeType.RINGTONE);
         if (minVolume == minVol) {
@@ -501,7 +501,7 @@ export default function audioManagerApi9() {
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let groupManager: audio.AudioVolumeGroupManager;
       try {
-        let audioVolumeManager = audioManager.getVolumeManager();
+        let audioVolumeManager = audioManager!.getVolumeManager();
         groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         groupManager.isMute(audio.AudioVolumeType.RINGTONE, (err: BusinessError<void> | null, data: boolean | undefined) => {
           if (err) {
@@ -531,7 +531,7 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let audioVolumeManager = audioManager.getVolumeManager();
+        let audioVolumeManager = audioManager!.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         try {
           let data = await groupManager.isMute(audio.AudioVolumeType.RINGTONE);
@@ -563,7 +563,7 @@ export default function audioManagerApi9() {
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGERMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let groupManager: audio.AudioVolumeGroupManager;
       try {
-        let audioVolumeManager = audioManager.getVolumeManager();
+        let audioVolumeManager = audioManager!.getVolumeManager();
         groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         groupManager.getRingerMode((err: BusinessError<void> | null, data: audio.AudioRingMode | undefined) => {
           if (err) {
@@ -606,7 +606,7 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETRINGERMODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let audioVolumeManager = audioManager.getVolumeManager();
+        let audioVolumeManager = audioManager!.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         let value = await groupManager.getRingerMode();
         if (value == audio.AudioRingMode.RINGER_MODE_SILENT){
@@ -641,7 +641,7 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let audioVolumeManager = audioManager.getVolumeManager();
+        let audioVolumeManager = audioManager!.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         let ringerModeChangeCallback = (ringerMode: audio.AudioRingMode) => {
           console.info(`Updated ringermode: ${ringerMode}`);
@@ -681,7 +681,7 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info(`${TagFrmwk}: Promise : isActive Media: NOTE: audio NOT PLAYING as MEDIA for the test case to PASS`);
-      const PROMISE = streamManager.isActive(audioMedia);
+      const PROMISE = streamManager!.isActive(audioMedia);
       try {
         let data = await PROMISE;
         if (data == false) {
@@ -709,7 +709,7 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
       console.info(`${TagFrmwk}: Callback : isActive Media: NOTE: audio NOT PLAYING as MEDIA for the test case to PASS`);
-      streamManager.isActive(audioMedia, (err: BusinessError<void> | null, data: boolean | undefined) => {
+      streamManager!.isActive(audioMedia, (err: BusinessError<void> | null, data: boolean | undefined) => {
         if (err) {
           console.error(`Callback : Media : isActive: failed  ${err?.message}`);
           expect().assertFail();
@@ -735,7 +735,7 @@ export default function audioManagerApi9() {
     it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
       console.info(`${TagFrmwk}: Callback : isActive Media: NOTE: audio NOT PLAYING as MEDIA for the test case to PASS`);
       try {
-        let data = streamManager.isActiveSync(audioMedia)
+        let data = streamManager!.isActiveSync(audioMedia)
         if (data == false) {
           console.info(`${TagFrmwk}: Callback: isActive: Media: TRUE: PASS:${data}`);
           expect(true).assertTrue();
@@ -762,7 +762,7 @@ export default function audioManagerApi9() {
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ISCOMMUNICATIONDEVICE_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let flag: boolean | null = null;
-        let AudioRoutingManager = audioManager.getRoutingManager();
+        let AudioRoutingManager = audioManager!.getRoutingManager();
         let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
         // console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
         //         outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
@@ -812,7 +812,7 @@ export default function audioManagerApi9() {
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let flag: boolean | null = null;
-        let AudioRoutingManager = audioManager.getRoutingManager();
+        let AudioRoutingManager = audioManager!.getRoutingManager();
         let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
         // console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
         //         outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
@@ -863,7 +863,7 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let flag: boolean | null = null;
-      let AudioRoutingManager = audioManager.getRoutingManager();
+      let AudioRoutingManager = audioManager!.getRoutingManager();
       let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       // console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0200
       //       outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
@@ -909,7 +909,7 @@ export default function audioManagerApi9() {
      * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_VOLUMECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let audioVolumeManager = audioManager.getVolumeManager();
+      let audioVolumeManager = audioManager!.getVolumeManager();
       let groupManager = audioVolumeManager.getVolumeGroupManagerSync(audio.DEFAULT_VOLUME_GROUP_ID)
       let maxVolume = await groupManager.getMaxVolume(audio.AudioVolumeType.MEDIA)
       let minVolume = await groupManager.getMinVolume(audio.AudioVolumeType.MEDIA)
@@ -936,7 +936,7 @@ export default function audioManagerApi9() {
      */
     it('SUB_AUDIO_AUDIORENDER_OFF_DEVICECHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        let audioSpatializationManager: audio.AudioSpatializationManager = audioManager.getSpatializationManager();
+        let audioSpatializationManager: audio.AudioSpatializationManager = audioManager!.getSpatializationManager();
         done();
       } catch (error: BusinessError) {
         console.info(`ON_MICSTATECHANGE error ${error.message}, code ${error.code}`);
@@ -956,7 +956,7 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_ONAUDIOSCENECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        audioManager.onAudioSceneChange((audioScene) => {
+        audioManager!.onAudioSceneChange((audioScene) => {
           console.info(`AudioSceneChange event: ${audioScene} `);
         });
         expect(true).assertTrue();
@@ -981,10 +981,10 @@ export default function audioManagerApi9() {
           console.info(`AudioSceneChange event: ${audioScene} `);
       }
       try {
-        audioManager.onAudioSceneChange(cb);
-        audioManager.offAudioSceneChange(cb);
-        audioManager.onAudioSceneChange(cb);
-        audioManager.offAudioSceneChange();
+        audioManager!.onAudioSceneChange(cb);
+        audioManager!.offAudioSceneChange(cb);
+        audioManager!.onAudioSceneChange(cb);
+        audioManager!.offAudioSceneChange();
         expect(true).assertTrue();
         done();
       } catch (err: BusinessError) {
@@ -1008,7 +1008,7 @@ export default function audioManagerApi9() {
         capturerFlags: 0
       };
       try {
-        const isAvailable = streamManager.isRecordingAvailable(capturerInfo);
+        const isAvailable = streamManager!.isRecordingAvailable(capturerInfo);
         expect(isAvailable).assertTrue();
       } catch (error: BusinessError) {
         console.log(`error code: ${error.code} ,message:${error.message}`);
@@ -1048,7 +1048,7 @@ export default function audioManagerApi9() {
         let audioCap = await audio.createAudioCapturer(capturerOptions);
         console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
         await audioCap!.start();
-        const isAvailable = streamManager.isRecordingAvailable(checkCapturerInfo);
+        const isAvailable = streamManager!.isRecordingAvailable(checkCapturerInfo);
         expect(isAvailable).assertTrue();
         await audioCap!.stop();
         await audioCap!.release();
@@ -1073,7 +1073,7 @@ export default function audioManagerApi9() {
         capturerFlags: 0
       };
       try {
-        streamManager.isRecordingAvailable(capturerInfo);
+        streamManager!.isRecordingAvailable(capturerInfo);
         expect(false).assertTrue();
       } catch (error: BusinessError) {
         console.log(`error code: ${error.code} ,message:${error.message}`);

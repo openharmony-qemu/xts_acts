@@ -26,8 +26,8 @@ import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testBtErrCode2900003Tag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-let gattClientDevice: ble.GattClientDevice;
-let gattServerDevice: ble.GattServer;
+let gattClientDevice: ble.GattClientDevice | undefined;
+let gattServerDevice: ble.GattServer | undefined;
 let g_context: common.UIAbilityContext;
 
 export default function btManagerError003Test() {
@@ -208,7 +208,7 @@ export default function btManagerError003Test() {
          */
         it("clientCloseErrCode2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                gattClientDevice.close();
+                gattClientDevice!.close();
                 hilog.info(domain, tag, 'gattClientDevice close success');
                 expect().assertFail();
             } catch (err: BusinessError) {
@@ -234,7 +234,7 @@ export default function btManagerError003Test() {
          */
         it("serverCloseErrCode2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                gattServerDevice.close();
+                gattServerDevice!.close();
                 hilog.info(domain, tag, 'gattServerDevice close success');
                 expect().assertFail();
             } catch (err: BusinessError) {
@@ -260,7 +260,7 @@ export default function btManagerError003Test() {
          */
         it("clientConnectErrCode2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                gattClientDevice.connect();
+                gattClientDevice!.connect();
                 hilog.info(domain, tag, 'gattClientDevice connect success');
                 expect().assertFail();
             } catch (err: BusinessError) {
@@ -286,7 +286,7 @@ export default function btManagerError003Test() {
          */
         it("clientDisconnectErrCode2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                gattClientDevice.disconnect();
+                gattClientDevice!.disconnect();
                 hilog.info(domain, tag, 'gattClientDevice disconnect success');
                 expect().assertFail();
             } catch (err: BusinessError) {

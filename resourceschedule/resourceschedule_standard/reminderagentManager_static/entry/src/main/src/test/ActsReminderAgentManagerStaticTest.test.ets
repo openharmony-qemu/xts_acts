@@ -25,7 +25,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let testAbilityContext: common.UIAbilityContext
+let testAbilityContext: common.UIAbilityContext | undefined;
 let DOMAIN: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let TAG: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let bundle :string = 'com.acts.actsreminderagentmgr.static'
@@ -82,7 +82,7 @@ export default function ActsReminderAgentManagerStaticTest() {
 
         let TEST_CASE_NAME = 'SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_001'
         console.info(`${TEST_CASE_NAME} START requestEnableNotification`)
-        notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
+        notificationManager.requestEnableNotification(testAbilityContext!, (err: BusinessError | null) => {
           console.info(`${TEST_CASE_NAME} requestEnableNotification about is ${testAbilityContext}`)
           console.info(`${TEST_CASE_NAME} come in requestEnableNotification`);
           if (err) {

@@ -27,7 +27,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext | undefined;
 let bundle_name: string = 'com.example.notificationchangetest.static';
 
 export default function ActsNotificationRequestTest() {
@@ -78,7 +78,7 @@ export default function ActsNotificationRequestTest() {
           done()
         });
 
-        notificationManager.requestEnableNotification(testAbilityContext,(err: BusinessError | null) => {
+        notificationManager.requestEnableNotification(testAbilityContext!, (err: BusinessError | null) => {
           if (err) {
             console.error(`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
           } else {

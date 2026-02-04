@@ -21,7 +21,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 const TAG = "testTag"
 let rdbStore:data_Rdb.RdbStore |undefined = undefined;
@@ -78,7 +78,7 @@ export default function RelationalStoreSyncApiTest() {
 
     beforeEach(async (done: () => void) => {
       console.info(TAG + 'beforeEach');
-      rdbStore = await data_Rdb.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_Rdb.getRdbStore(context!, STORE_CONFIG);
       await rdbStore!.execute(CREATE_TABLE_TEST);
       done();
     })
@@ -86,7 +86,7 @@ export default function RelationalStoreSyncApiTest() {
     afterEach(async (done: () => void) => {
       console.info(TAG + 'afterEach');
       await rdbStore!.execute("DELETE FROM test");
-      await data_Rdb.deleteRdbStore(context, STORE_CONFIG);
+      await data_Rdb.deleteRdbStore(context!, STORE_CONFIG);
       done();
     })
 
@@ -104,7 +104,7 @@ export default function RelationalStoreSyncApiTest() {
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0100');
-      rdbStore = await data_Rdb.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_Rdb.getRdbStore(context!, STORE_CONFIG);
       await rdbStore!.execute(CREATE_TABLE_TEST);
       let u8 = new Uint8Array([1, 2, 3]);
       const valueBucket: data_Rdb.ValuesBucket = {
@@ -121,7 +121,7 @@ export default function RelationalStoreSyncApiTest() {
         expect().assertFail();
       }
       await rdbStore!.execute("DELETE FROM test");
-      await data_Rdb.deleteRdbStore(context, STORE_CONFIG);
+      await data_Rdb.deleteRdbStore(context!, STORE_CONFIG);
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0100');
       done();
     })

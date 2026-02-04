@@ -22,13 +22,13 @@ import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 export default function abilityTest() {
     describe('AVSessionControllerErrorCode', () => {
         let TAG: string = "[AVSessionTest]";
         let tag: string = 'ApplicationA';
-        let session: avSession.AVSession | null;
-        let controller: avSession.AVSessionController;
+        let session: avSession.AVSession | null = null;
+        let controller: avSession.AVSessionController | undefined;
         let OutputDeviceInfo: avSession.OutputDeviceInfo;
         let keyItem: Key = { code: KeyCode.KEYCODE_FN, pressedTime: 123456789, deviceId: 0 };
         let event: KeyEvent = {id:1, deviceId:0, actionTime:1, screenId:1, windowId:1, action:Action.UP, key:keyItem, unicodeChar:0, keys:[keyItem], ctrlKey:false, altKey:false, shiftKey:false, logoKey:false, fnKey:false, capsLock:false, numLock:false, scrollLock:false};
@@ -59,7 +59,7 @@ export default function abilityTest() {
 
         beforeEach(async () => {
             try{
-                session = await avSession.createAVSession(context, tag, 'video_call');
+                session = await avSession.createAVSession(context!, tag, 'video_call');
             }catch(err: BusinessError){
                 console.info(`TestLog: Session create error: code: ${err.code}, message: ${err.message}`);
             };
@@ -93,7 +93,7 @@ export default function abilityTest() {
             }
             if (controller != null) {
                 try{
-                    await controller.destroy()
+                    await controller!.destroy()
                     console.info(`TestLog: Controller destroy success`);
                 } catch (err: BusinessError) {
                     console.info(`TestLog: Controller destroy error: code: ${err.code}, message: ${err.message}`);
@@ -118,9 +118,9 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try {
-                controller.sendAVKeyEvent(event, (err: BusinessError|null) => {
+                controller!.sendAVKeyEvent(event, (err: BusinessError|null) => {
                     if (err?.code) {
                         console.info(`TestLog: sendAVKeyEvent error: code: ${err?.code}, message: ${err?.message}`);
                         expect(err?.code).assertEqual(6600103);
@@ -155,7 +155,7 @@ export default function abilityTest() {
                 expect(true).assertFalse();
             };
             try {
-                controller.sendAVKeyEvent(event, (err: BusinessError|null) => {
+                controller!.sendAVKeyEvent(event, (err: BusinessError|null) => {
                     if (err) {
                         console.info(`TestLog: sendAVKeyEvent error: code: ${err.code}, message: ${err.message}`);
                         expect(err?.code).assertEqual(6600106);
@@ -182,9 +182,9 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try{
-                await controller.sendAVKeyEvent(event);
+                await controller!.sendAVKeyEvent(event);
                 console.info('sendAVKeyEvent Successfully');
                 expect(true).assertFalse();
             } catch (err: BusinessError) {
@@ -212,7 +212,7 @@ export default function abilityTest() {
                 expect(true).assertFalse();
             };
             try{
-                await controller.sendAVKeyEvent(event)
+                await controller!.sendAVKeyEvent(event)
                 console.info('sendAVKeyEvent Successfully');
                 expect(true).assertFalse();
             } catch (err: BusinessError) {
@@ -232,9 +232,9 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try {
-                controller.getRealPlaybackPositionSync();
+                controller!.getRealPlaybackPositionSync();
                 expect(true).assertFalse();
             } catch (err: BusinessError) {
                 console.info(`TestLog: getRealPlaybackPositionSync error: code: ${err.code}, message: ${err.message}`);
@@ -254,9 +254,9 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try{
-                await controller.getValidCommands()
+                await controller!.getValidCommands()
                 console.info(`TestLog: getValidCommands Successfully.`);
                 expect(true).assertFalse();
             } catch (err: BusinessError) {
@@ -277,7 +277,7 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
-                await controller.getValidCommands().then((data) => {
+                await controller!.getValidCommands().then((data) => {
                     console.info(`TestLog: getValidCommands Successfully.`);
                     expect().assertFail();
                 }).catch((err: Error) => {
@@ -298,9 +298,9 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try {
-                controller.getValidCommands(err => {
+                controller!.getValidCommands(err => {
                     if (err) {
                         console.info(`TestLog: getValidCommands error: code: ${err.code}, message: ${err.message}`);
                         expect(err?.code).assertEqual(6600103);
@@ -329,7 +329,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
                 try {
-                    controller.getValidCommands(err => {
+                    controller!.getValidCommands(err => {
                         if (err) {
                             console.info(`TestLog: getValidCommands error: code: ${err.code}, message: ${err.message}`);
                             expect(err.code).assertEqual(6600102);
@@ -357,9 +357,9 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            await controller.destroy();
+            await controller!.destroy();
             try{
-                controller.onSessionEvent((command: string, args: Record<string, Object>) => {
+                controller!.onSessionEvent((command: string, args: Record<string, Object>) => {
                     console.info(`controller on_sessionEvent Successfully`);
                 });
             } catch(err: BusinessError) {
@@ -381,7 +381,7 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.deactivate()
-            try{await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
+            try{await controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
                 console.info('sendCommonCommand Successfully');
                 expect(true).assertFalse();
             }catch(err: BusinessError){
@@ -401,9 +401,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try{
-                await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
+                await controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
                 console.info('sendCommonCommand Successfully');
                 expect(true).assertFalse();
             }catch(err: BusinessError){
@@ -426,7 +426,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             await session!.deactivate()
                 try {
-                    controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS, (err: BusinessError|null) => {
+                    controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS, (err: BusinessError|null) => {
                         if (err) {
                             console.info(`TestLog: sendCommonCommand error: code: ${err.code}, message: ${err.message}`);
                             expect(err?.code).assertEqual(6600106);
@@ -453,9 +453,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try {
-                controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS, (err: BusinessError|null) => {
+                controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS, (err: BusinessError|null) => {
                     if (err) {
                         console.info(`TestLog: sendCommonCommand error: code: ${err.code}, message: ${err.message}`);
                         expect(err?.code).assertEqual(6600103);
@@ -483,7 +483,7 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async () => {
-                await controller.getExtras().then(() => {
+                await controller!.getExtras().then(() => {
                     console.info('getExtras Successfully');
                     expect().assertFail();
                 }).catch((err: Error) => {
@@ -504,9 +504,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try{
-                await controller.getExtras()
+                await controller!.getExtras()
                 console.info('getExtras Successfully');
                 expect(true).assertFalse();
             }catch(err: BusinessError){
@@ -528,7 +528,7 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
                 try {
-                    controller.getExtras(err => {
+                    controller!.getExtras(err => {
                         if (err) {
                             console.info(`TestLog: getExtras error: code: ${err.code}, message: ${err.message}`);
                             expect(err.code).assertEqual(6600102);
@@ -556,9 +556,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try {
-                controller.getExtras(err => {
+                controller!.getExtras(err => {
                     if (err) {
                         console.info(`TestLog: getExtras error: code: ${err.code}, message: ${err.message}`);
                         expect(err?.code).assertEqual(6600103);
@@ -584,9 +584,9 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            await controller.destroy();
+            await controller!.destroy();
             try{
-                controller.onExtrasChange((extras: Record<string,Object>) => {
+                controller!.onExtrasChange((extras: Record<string,Object>) => {
                     console.info(`controller on_extrasChange Successfully`);
                 });
             } catch(err: BusinessError) {
@@ -607,7 +607,7 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
-                await controller.skipToQueueItem(QUEUE_ITEM_ID).then(() => {
+                await controller!.skipToQueueItem(QUEUE_ITEM_ID).then(() => {
                     console.info('skipToQueueItem Successfully');
                     expect().assertFail();
                 }).catch((err: Error) => {
@@ -628,9 +628,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try{
-                await controller.skipToQueueItem(QUEUE_ITEM_ID);
+                await controller!.skipToQueueItem(QUEUE_ITEM_ID);
                 console.info('skipToQueueItem Successfully');
                 expect(true).assertFalse();
             }catch(err: BusinessError){
@@ -651,7 +651,7 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
                 try {
-                    controller.skipToQueueItem(QUEUE_ITEM_ID, err => {
+                    controller!.skipToQueueItem(QUEUE_ITEM_ID, err => {
                         if (err) {
                             console.info(`TestLog: skipToQueueItem error: code: ${err.code}, message: ${err.message}`);
                             expect(err.code).assertEqual(6600102);
@@ -679,9 +679,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try {
-                controller.skipToQueueItem(QUEUE_ITEM_ID, err => {
+                controller!.skipToQueueItem(QUEUE_ITEM_ID, err => {
                     if (err) {
                         console.info(`TestLog: skipToQueueItem error: code: ${err.code}, message: ${err.message}`);
                         expect(err?.code).assertEqual(6600103);
@@ -708,7 +708,7 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
-                await controller.getAVQueueItems().then(() => {
+                await controller!.getAVQueueItems().then(() => {
                     console.info('getAVQueueItems Successfully');
                     expect().assertFail();
                 }).catch((err: Error) => {
@@ -729,9 +729,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try{
-                await controller.getAVQueueItems()
+                await controller!.getAVQueueItems()
                 console.info('getAVQueueItems Successfully');
                 expect(true).assertFalse();
             }catch(err: BusinessError){
@@ -752,7 +752,7 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
                 try {
-                    controller.getAVQueueItems(err => {
+                    controller!.getAVQueueItems(err => {
                         if (err) {
                             console.info(`TestLog: getAVQueueItems error: code: ${err.code}, message: ${err.message}`);
                             expect(err.code).assertEqual(6600102);
@@ -780,9 +780,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try {
-                controller.getAVQueueItems(err => {
+                controller!.getAVQueueItems(err => {
                     if (err) {
                         console.info(`TestLog: getAVQueueItems error: code: ${err.code}, message: ${err.message}`);
                         expect(err?.code).assertEqual(6600103);
@@ -809,7 +809,7 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
-                await controller.getAVQueueTitle().then(() => {
+                await controller!.getAVQueueTitle().then(() => {
                     console.info('getAVQueueTitle Successfully');
                     expect().assertFail();
                 }).catch((err: Error) => {
@@ -830,9 +830,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try{
-                await controller.getAVQueueTitle()
+                await controller!.getAVQueueTitle()
                 console.info('getAVQueueTitle Successfully');
                 expect(true).assertFalse();
             }catch(err: BusinessError){
@@ -853,7 +853,7 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
                 try {
-                    controller.getAVQueueTitle(err => {
+                    controller!.getAVQueueTitle(err => {
                         if (err) {
                             console.info(`TestLog: getAVQueueTitle error: code: ${err.code}, message: ${err.message}`);
                             expect(err.code).assertEqual(6600102);
@@ -881,9 +881,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try {
-                controller.getAVQueueTitle(err => {
+                controller!.getAVQueueTitle(err => {
                     if (err) {
                         console.info(`TestLog: getAVQueueTitle error: code: ${err.code}, message: ${err.message}`);
                         expect(err?.code).assertEqual(6600103);
@@ -911,7 +911,7 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
                 try {
-                    controller.getAVPlaybackStateSync();
+                    controller!.getAVPlaybackStateSync();
                     expect().assertFail();
                 } catch (err: BusinessError) {
                     console.info(`getAVPlaybackStateSync failed: code: ${err.code}, message: ${err.message}`);
@@ -931,9 +931,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try {
-                controller.getAVPlaybackStateSync();
+                controller!.getAVPlaybackStateSync();
                 expect(true).assertFalse();
             }catch(err: BusinessError){
                 console.info(`getAVPlaybackStateSync failed: code: ${err.code}, message: ${err.message}`);
@@ -953,7 +953,7 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
                 try {
-                    controller.getAVMetadataSync();
+                    controller!.getAVMetadataSync();
                     expect().assertFail();
                 } catch (err: BusinessError) {
                     console.info(`getAVMetadataSync failed: code: ${err.code}, message: ${err.message}`);
@@ -973,9 +973,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try {
-                controller.getAVMetadataSync();
+                controller!.getAVMetadataSync();
                 expect(true).assertFalse();
             }catch(err: BusinessError){
                 console.info(`getAVMetadataSync failed: code: ${err.code}, message: ${err.message}`);
@@ -995,7 +995,7 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
                 try {
-                    controller.getAVQueueTitleSync();
+                    controller!.getAVQueueTitleSync();
                     expect().assertFail();
                 } catch (err: BusinessError) {
                     console.info(`getAVQueueTitleSync failed: code: ${err.code}, message: ${err.message}`);
@@ -1015,9 +1015,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try {
-                controller.getAVQueueTitleSync();
+                controller!.getAVQueueTitleSync();
                 expect(true).assertFalse();
             }catch(err: BusinessError){
                 console.info(`getAVQueueTitleSync failed: code: ${err.code}, message: ${err.message}`);
@@ -1037,7 +1037,7 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
                 try {
-                    controller.getAVQueueItemsSync();
+                    controller!.getAVQueueItemsSync();
                     expect().assertFail();
                 } catch (err: BusinessError) {
                     console.info(`getAVQueueItemsSync failed: code: ${err.code}, message: ${err.message}`);
@@ -1057,9 +1057,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try {
-                controller.getAVQueueItemsSync();
+                controller!.getAVQueueItemsSync();
                 expect(true).assertFalse();
             }catch(err: BusinessError){
                 console.info(`getAVQueueItemsSync failed: code: ${err.code}, message: ${err.message}`);
@@ -1078,9 +1078,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try {
-                controller.getOutputDeviceSync();
+                controller!.getOutputDeviceSync();
                 expect(true).assertFalse();
             }catch(err: BusinessError){
                 console.info(`getOutputDeviceSync failed: code: ${err.code}, message: ${err.message}`);
@@ -1100,7 +1100,7 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
                 try {
-                    controller.isActiveSync();
+                    controller!.isActiveSync();
                     expect().assertFail();
                 } catch (err: BusinessError) {
                     console.info(`isActiveSync failed: code: ${err.code}, message: ${err.message}`)
@@ -1120,9 +1120,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy();
+            await controller!.destroy();
             try {
-                controller.isActiveSync();
+                controller!.isActiveSync();
                 expect(true).assertFalse();
             }catch(err: BusinessError){
                 console.info(`isActiveSync failed: code: ${err.code}, message: ${err.message}`)
@@ -1142,7 +1142,7 @@ export default function abilityTest() {
 		it("SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         await invalidSession(async (): Promise<void> => {
                 try {
-                    controller.getValidCommandsSync();
+                    controller!.getValidCommandsSync();
                     expect().assertFail();
                 } catch (err: BusinessError) {
                     console.info(`getValidCommandsSync failed: code: ${err.code}, message: ${err.message}`)
@@ -1162,9 +1162,9 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            await controller.destroy()
+            await controller!.destroy()
             try {
-                controller.getValidCommandsSync();
+                controller!.getValidCommandsSync();
                 expect(true).assertFalse();
             }catch(err: BusinessError){
                 console.info(`getValidCommandsSync failed: code: ${err.code}, message: ${err.message}`)

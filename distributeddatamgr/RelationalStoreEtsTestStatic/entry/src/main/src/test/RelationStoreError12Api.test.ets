@@ -26,14 +26,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 
-let rdbStore: data_relationalStore.RdbStore;
+let rdbStore: data_relationalStore.RdbStore | undefined;
 const STORE_CONFIG: data_relationalStore.StoreConfig = {
   name: "testljj.db",
   securityLevel: data_relationalStore.SecurityLevel.S1
@@ -89,21 +89,21 @@ export default function RelationStoreError12Test() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
       await Utils.msSleep(2000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      dbPath = context.databaseDir + "/rdb/" + dbName;
-      dbPathWal = context.databaseDir + "/rdb/" + dbName + "-wal";
-      context.databaseDir + "/rdb/" + dbName + "-shm";
-      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+      dbPath = context!.databaseDir + "/rdb/" + dbName;
+      dbPathWal = context!.databaseDir + "/rdb/" + dbName + "-wal";
+      context!.databaseDir + "/rdb/" + dbName + "-shm";
+      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
     })
 
     beforeEach(async (): Promise<void> => {
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-      await rdbStore.execute(DROP_TABLE_TEST);
-      await rdbStore.execute(CREATE_TABLE_TEST);
-      let num = await rdbStore.insert("test", valueBucket0);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(CREATE_TABLE_TEST);
+      let num = await rdbStore!.insert("test", valueBucket0);
     })
 
     afterEach(async (): Promise<void> => {
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
 
     /**
@@ -117,7 +117,7 @@ export default function RelationStoreError12Test() {
     it('RelationStoreError12Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0001 start *************');
-        let resultSet = await rdbStore.querySql("");
+        let resultSet = await rdbStore!.querySql("");
         try {
           let res = resultSet.getLong(resultSet.getColumnIndex("data2"));
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0001 end *************' + res);
@@ -144,7 +144,7 @@ export default function RelationStoreError12Test() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '*************  RelationStoreError12Test0002 start *************');
         await CreateCorruptDb();
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         try {
           let res = resultSet.getLong(resultSet.getColumnIndex("data2"));
           hilog.info(domain, tag, '%{public}s', '*************  RelationStoreError12Test0002 res *************' + res);
@@ -170,7 +170,7 @@ export default function RelationStoreError12Test() {
     it('RelationStoreError12Test0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0003 start *************');
-        let resultSet = await rdbStore.querySql("");
+        let resultSet = await rdbStore!.querySql("");
         try {
           let res = resultSet.getDouble(resultSet.getColumnIndex("data3"));
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0003 end *************' + res);
@@ -197,7 +197,7 @@ export default function RelationStoreError12Test() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '*************  RelationStoreError12Test0004 start *************');
         await CreateCorruptDb();
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         try {
           let res = resultSet.getDouble(resultSet.getColumnIndex("data3"));
           hilog.info(domain, tag, '%{public}s', '*************  RelationStoreError12Test0004 res *************' + res);
@@ -223,7 +223,7 @@ export default function RelationStoreError12Test() {
     it('RelationStoreError12Test0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0005 start *************');
-        let resultSet = await rdbStore.querySql("");
+        let resultSet = await rdbStore!.querySql("");
         try {
           let res = resultSet.getString(resultSet.getColumnIndex("data1"));
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0005 end *************' + res);
@@ -250,7 +250,7 @@ export default function RelationStoreError12Test() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '*************  RelationStoreError12Test0006 start *************');
         await CreateCorruptDb();
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         try {
           let res = resultSet.getString(resultSet.getColumnIndex("data1"));
           hilog.info(domain, tag, '%{public}s', '*************  RelationStoreError12Test0006 res *************' + res);
@@ -276,7 +276,7 @@ export default function RelationStoreError12Test() {
     it('RelationStoreError12Test0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0007 start *************');
-        let resultSet = await rdbStore.querySql("");
+        let resultSet = await rdbStore!.querySql("");
         try {
           let res = resultSet.getBlob(resultSet.getColumnIndex("data4"));
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0007 end *************' + res);
@@ -303,7 +303,7 @@ export default function RelationStoreError12Test() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '*************  RelationStoreError12Test0008 start *************');
         await CreateCorruptDb();
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         try {
           let res = resultSet.getBlob(resultSet.getColumnIndex("data4"));
           hilog.info(domain, tag, '%{public}s', '*************  RelationStoreError12Test0008 res *************' + res);
@@ -329,7 +329,7 @@ export default function RelationStoreError12Test() {
     it('RelationStoreError12Test0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0009 start *************');
-        let resultSet = await rdbStore.querySql("");
+        let resultSet = await rdbStore!.querySql("");
         try {
           let res = resultSet.getAsset(resultSet.getColumnIndex("data5"));
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0009 end *************' + res);
@@ -357,7 +357,7 @@ export default function RelationStoreError12Test() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0010 start *************');
         await CreateCorruptDb();
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         try {
           let res = resultSet.getAsset(resultSet.getColumnIndex("data5"));
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0010 res *************' + res);
@@ -384,7 +384,7 @@ export default function RelationStoreError12Test() {
     it('RelationStoreError12Test0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0011 start *************');
-        let resultSet = await rdbStore.querySql("");
+        let resultSet = await rdbStore!.querySql("");
         try {
           let res = resultSet.getValue(resultSet.getColumnIndex("data6"));
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0011 end *************' + res);
@@ -411,7 +411,7 @@ export default function RelationStoreError12Test() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0012 start *************');
         await CreateCorruptDb();
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         try {
           let res = resultSet.getValue(resultSet.getColumnIndex("data5"));
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError12Test0012 res *************' + res);
@@ -457,9 +457,9 @@ export default function RelationStoreError12Test() {
           "data7": new Float32Array([1.5, 2.5]),
           "data8": 100n
         };
-        let num = await (rdbStore as data_relationalStore.RdbStore).insert("test", valueBucket);
+        let num = await (rdbStore! as data_relationalStore.RdbStore).insert("test", valueBucket);
         await CreateCorruptDb();
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         try {
           let res = resultSet.getAssets(resultSet.getColumnIndex("data6"));
           hilog.info(domain, tag, '%{public}s',

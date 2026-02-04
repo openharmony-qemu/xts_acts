@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from './Util.test';
 
-let context:common.UIAbilityContext;
+let context:common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 let domain: int  = 0x0000;
@@ -32,7 +32,7 @@ let tag: string = 'testTag';
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
   + "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL, " + "blobType BLOB)"
 const DATABASE_DIR = "/data/storage/el2/database/entry/rdb/"
-let RdbStore: relationalStore.RdbStore;
+let RdbStore: relationalStore.RdbStore | undefined;
 
 const DATABASE_BACKUP_NAME: string = "Backup.db"
 const STORE_CONFIG: relationalStore.StoreConfig = {
@@ -50,7 +50,7 @@ const STORE_CONFIG_BACKUP2: relationalStore.StoreConfig = {
 
 async function CreatRdbStore(context: common.UIAbilityContext, StoreConfig: relationalStore.StoreConfig): Promise<relationalStore.RdbStore> {
   let RdbStore = await relationalStore.getRdbStore(context, StoreConfig)
-  await RdbStore.executeSql(CREATE_TABLE_TEST)
+  await RdbStore!.executeSql(CREATE_TABLE_TEST)
   let u8 = new Uint8Array([1, 2, 3])
 
   const valueBucket1: relationalStore.ValuesBucket = {
@@ -59,7 +59,7 @@ async function CreatRdbStore(context: common.UIAbilityContext, StoreConfig: rela
     "salary": 100.5,
     "blobType": u8,
   }
-  await RdbStore.insert("test", valueBucket1)
+  await RdbStore!.insert("test", valueBucket1)
 
 
   const valueBucket2: relationalStore.ValuesBucket = {
@@ -68,7 +68,7 @@ async function CreatRdbStore(context: common.UIAbilityContext, StoreConfig: rela
     "salary": 100.5,
     "blobType": u8,
   }
-  await RdbStore.insert("test", valueBucket2)
+  await RdbStore!.insert("test", valueBucket2)
 
 
   const valueBucket3: relationalStore.ValuesBucket = {
@@ -77,7 +77,7 @@ async function CreatRdbStore(context: common.UIAbilityContext, StoreConfig: rela
     "salary": 90.0,
     "blobType": u8,
   }
-  await RdbStore.insert("test", valueBucket3)
+  await RdbStore!.insert("test", valueBucket3)
 
   return RdbStore
 }
@@ -94,15 +94,15 @@ export default function relationalStoreBackupRestorePromiseTest() {
 
     beforeEach(async (): Promise<void> => {
       console.info(tag + 'beforeEach')
-      RdbStore = await CreatRdbStore(context, STORE_CONFIG)
+      RdbStore = await CreatRdbStore(context!, STORE_CONFIG)
     })
 
     afterEach(async (): Promise<void> => {
       console.info(tag + 'afterEach')
       try {
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG)
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG_BACKUP1)
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG_BACKUP2)
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG)
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG_BACKUP1)
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG_BACKUP2)
       } catch (err: BusinessError) {
         console.info(tag + "deleteRdbStore err" + JSON.stringify(err))
       }
@@ -256,7 +256,7 @@ export default function relationalStoreBackupRestorePromiseTest() {
       }
 
       try {
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG_BACKUP1);
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG_BACKUP1);
         fileio.accessSync(DATABASE_DIR + DATABASE_BACKUP_NAME);
       } catch (err: BusinessError) {
         console.info(tag + 'error2  ' + err);

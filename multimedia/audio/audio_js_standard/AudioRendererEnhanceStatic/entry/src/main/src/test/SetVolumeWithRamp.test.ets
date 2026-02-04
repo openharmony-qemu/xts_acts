@@ -31,7 +31,7 @@ let g_context: common.UIAbilityContext;
 
 export default function audioRendererEnhanceTest() {
   describe('SetVolumeWithRampTest', () => {
-    let audioRen: audio.AudioRenderer | null;
+    let audioRen: audio.AudioRenderer | null = null;
     let Tag = "SetVolumeWithRampTest";
     beforeAll(async () => {
       try {
@@ -98,7 +98,7 @@ export default function audioRendererEnhanceTest() {
       console.info(`${Tag}: afterAll: Test suite-level cleanup condition`);
     })
 
-    let filePath: string;
+    let filePath: string = '';
     let renderPlay = async () => {
       let bufferSize: long;
       try {
@@ -428,7 +428,7 @@ export default function audioRendererEnhanceTest() {
             streamInfo: AudioStreamInfo,
             rendererInfo: AudioRendererInfo
           }
-          let audioRender: audio.AudioRenderer | null;
+          let audioRender: audio.AudioRenderer | null = null;
           try {
             let data = await audio.createAudioRenderer(AudioRendererOptions);
             audioRender = data;

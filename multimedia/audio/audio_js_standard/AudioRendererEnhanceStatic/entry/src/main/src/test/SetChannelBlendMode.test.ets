@@ -31,7 +31,7 @@ let g_context: common.UIAbilityContext;
 
 export default function audioRendererTest() {
   describe('setChannelBlendMode', () => {
-    let audioRen: audio.AudioRenderer | null;
+    let audioRen: audio.AudioRenderer | null = null;
     let Tag = "audioRendererEnhanceTest";
 
     beforeAll(async (): Promise<void> => {
@@ -270,7 +270,7 @@ export default function audioRendererTest() {
             streamInfo: AudioStreamInfo,
             rendererInfo: AudioRendererInfo
           }
-          let audioRender: audio.AudioRenderer | null;
+          let audioRender: audio.AudioRenderer | null = null;
           try {
             let data = await audio.createAudioRenderer(AudioRendererOptions);
             audioRender = data;

@@ -10,7 +10,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import dataRdb from '@ohos.data.relationalStore';
 
-let context:common.UIAbilityContext;
+let context:common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 let dataBaseDir : String;
@@ -29,7 +29,7 @@ let STORE_CONFIG :dataRdb.StoreConfig = {
 
 const DROP_TABLE_TESTTRANS = "DROP TABLE IF EXISTS testTrans";
 
-let rdbStore : dataRdb.RdbStore
+let rdbStore :dataRdb.RdbStore | undefined;
 let vbs :Array<dataRdb.ValuesBucket> = new Array<dataRdb.ValuesBucket>(3);
 const valueBucket0 :dataRdb.ValuesBucket = {
   "data1": "hello",
@@ -63,11 +63,11 @@ export default function RdbErrorCode14800024() {
       });
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
-      rdbStore = await dataRdb.getRdbStore(context, STORE_CONFIG);
-      await rdbStore.execute(DROP_TABLE_TEST);
-      await rdbStore.execute(CREATE_TABLE_TEST);
-      let num = await rdbStore.batchInsert("test", vbs);
+      hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
+      rdbStore = await dataRdb.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(CREATE_TABLE_TEST);
+      let num = await rdbStore!.batchInsert("test", vbs);
       hilog.info(domain, TAG, 'batchInsert %{public}d rows.', num)
     });
 
@@ -82,7 +82,7 @@ export default function RdbErrorCode14800024() {
     it('SUB_DDM_RELATIONALETS_ERRORCODETSET_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
       console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0010 start *************');
       let predicates = new dataRdb.RdbPredicates('test');
-      let resultSet: dataRdb.ResultSet = await rdbStore.query(predicates);
+      let resultSet: dataRdb.ResultSet = await rdbStore!.query(predicates);
       let MaxCount = 1;
       let columnIndex = 1;
       try {
@@ -116,13 +116,13 @@ export default function RdbErrorCode14800024() {
     it('SUB_DDM_RELATIONALETS_ERRORCODETSET_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
       console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0060 start *************');
       let predicates = new dataRdb.RdbPredicates('test');
-      let resultSet: dataRdb.ResultSet = await rdbStore.query(predicates);
+      let resultSet: dataRdb.ResultSet = await rdbStore!.query(predicates);
       const SQL_DELETE_TABLE = "DELETE FROM test WHERE data1 = 'zhangsan123'";
       const SQL_DELETE_TABLE1 = "DELETE FROM test WHERE name = ?";
       const SQL_CHECK_INTEGRITY = 'PRAGMA integrity_check';
 
       try {
-        await rdbStore.attach("/path/errPath/attach.db", "attachDB");
+        await rdbStore!.attach("/path/errPath/attach.db", "attachDB");
       } catch(e: BusinessError) {
         if (e.code != 14800010) {
           expect(14800024).assertEqual(e.code);
@@ -131,13 +131,13 @@ export default function RdbErrorCode14800024() {
 
       try {
         //TestCode
-        await rdbStore.backup("dbBackup002.db");
+        await rdbStore!.backup("dbBackup002.db");
       } catch (e: BusinessError) {
         expect(e.code).assertEqual(14800024);
       }
 
       try {
-        await rdbStore.attach(context, STORE_CONFIG, "attachDB");
+        await rdbStore!.attach(context!, STORE_CONFIG, "attachDB");
       } catch(e: BusinessError) {
         if (e.code == 14800024) {
           expect(14800024).assertEqual(e.code);
@@ -146,7 +146,7 @@ export default function RdbErrorCode14800024() {
 
       try {
         //TestCode
-        rdbStore.executeSync(SQL_CHECK_INTEGRITY);
+        rdbStore!.executeSync(SQL_CHECK_INTEGRITY);
       } catch (e: Error) {
         if (e.code != 801) {
           expect(e.code).assertEqual(14800024);
@@ -154,7 +154,7 @@ export default function RdbErrorCode14800024() {
       }
 
       try {
-        await rdbStore.detach("attachDB");
+        await rdbStore!.detach("attachDB");
       } catch(e: Error) {
         if (e.code == 14800024) {
           expect(14800024).assertEqual(e.code);
@@ -163,7 +163,7 @@ export default function RdbErrorCode14800024() {
 
       try {
         //TestCode
-        await rdbStore.restore("dbBackup002.db");
+        await rdbStore!.restore("dbBackup002.db");
       } catch (e: Error) {
         expect(e.code).assertEqual(14800024);
       }
@@ -185,12 +185,12 @@ export default function RdbErrorCode14800024() {
     it('SUB_DDM_RELATIONALETS_ERRORCODETSET_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
       console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0070 start *************');
       let predicates = new dataRdb.RdbPredicates('test');
-      let resultSet: dataRdb.ResultSet = await rdbStore.query(predicates);
+      let resultSet: dataRdb.ResultSet = await rdbStore!.query(predicates);
       predicates.equalTo("data", "Lisa");
 
       try {
         //TestCode
-        await rdbStore.lockRow(predicates)
+        await rdbStore!.lockRow(predicates)
       } catch (e: BusinessError) {
         if (e.code == 14800024) {
           expect(14800024).assertEqual(e.code);
@@ -199,7 +199,7 @@ export default function RdbErrorCode14800024() {
 
       try {
         //TestCode
-        await rdbStore.queryLockedRow(predicates)
+        await rdbStore!.queryLockedRow(predicates)
       } catch (e: BusinessError) {
         if (e.code == 14800024) {
           expect(14800024).assertEqual(e.code);
@@ -208,7 +208,7 @@ export default function RdbErrorCode14800024() {
 
       try {
         //TestCode
-        await rdbStore.unlockRow(predicates)
+        await rdbStore!.unlockRow(predicates)
       } catch (e: BusinessError) {
         if (e.code == 14800024) {
           expect(14800024).assertEqual(e.code);
@@ -216,7 +216,7 @@ export default function RdbErrorCode14800024() {
       }
 
       if(rdbStore != undefined) {
-        rdbStore.createTransaction().then((transaction: dataRdb.Transaction) => {
+        rdbStore!.createTransaction().then((transaction: dataRdb.Transaction) => {
           transaction.execute("DELETE FROM test WHERE data1 = ? OR data2 = ?", [21 as long, 20 as long]).then(() => {
           }).catch((e:Error) => {
             try {
@@ -331,17 +331,17 @@ export default function RdbErrorCode14800024() {
     it('SUB_DDM_RELATIONALETS_ERRORCODETSET_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
       console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0050 start *************');
       let predicates = new dataRdb.RdbPredicates('test');
-      let resultSet: dataRdb.ResultSet = await rdbStore.query(predicates);
+      let resultSet: dataRdb.ResultSet = await rdbStore!.query(predicates);
       let PRIKey:	dataRdb.PRIKeyType[] = [1 as long, 4 as long, 2 as long, 3 as long];
       try {
         //TestCode
-        rdbStore.getModifyTime("test", "data2", PRIKey);
+        rdbStore!.getModifyTime("test", "data2", PRIKey);
       } catch (e: Error) {
         expect(e.code).assertEqual(14800024);
       }
       try {
         //TestCode
-        rdbStore.cleanDirtyData('test_table', 100);
+        rdbStore!.cleanDirtyData('test_table', 100);
       } catch (e: Error) {
         if (e.code != 801) {
           expect(e.code).assertEqual(14800024);

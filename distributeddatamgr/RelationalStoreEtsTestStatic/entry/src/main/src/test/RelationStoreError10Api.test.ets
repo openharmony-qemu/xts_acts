@@ -26,7 +26,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 
-let context:common.UIAbilityContext;
+let context:common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 
 let domain: int = 0x0000;
@@ -88,14 +88,14 @@ export default function RelationStoreError10Test() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
       await Utils.msSleep(2000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      dbPath = context.databaseDir + "/rdb/" + dbName;
-      dbPathWal = context.databaseDir + "/rdb/" + dbName + "-wal";
-      dbPathShm = context.databaseDir + "/rdb/" + dbName + "-shm";
-      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+      dbPath = context!.databaseDir + "/rdb/" + dbName;
+      dbPathWal = context!.databaseDir + "/rdb/" + dbName + "-wal";
+      dbPathShm = context!.databaseDir + "/rdb/" + dbName + "-shm";
+      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
     })
 
     afterEach(async():Promise<void>  => {
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
     /**
      * @tc.name       RelationStoreError10Test0001
@@ -116,7 +116,7 @@ export default function RelationStoreError10Test() {
       }
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError10Test0001 22 *************");
       try {
-        await data_relationalStore.getRdbStore(context,STORE_CONFIG1);
+        await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
         hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError10Test0001 1111 *************");
         expect().assertFail();
       } catch (err) {
@@ -126,7 +126,7 @@ export default function RelationStoreError10Test() {
         expect(err.code).assertEqual(14800010);
       }
       try {
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG1);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
       } catch (err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', "deleteRdbStore, error code: "+err.code, "err message:"+ err.message);

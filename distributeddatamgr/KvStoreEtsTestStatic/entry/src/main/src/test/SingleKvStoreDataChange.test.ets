@@ -48,10 +48,10 @@ const VALUE_TEST_STRING_2 = 'value_string_2';
 const TEST_BUNDLE_NAME = 'com.example.kvstoreetstest.static';
 
 const TEST_STORE_ID = 'DataChangeStoreId';
-let kvManager: factory.KVManager | null;
-let kvStore: factory.SingleKVStore | null;
-let kvStore2: factory.SingleKVStore | null;
-let context: common.UIAbilityContext;
+let kvManager: factory.KVManager | null = null;
+let kvStore: factory.SingleKVStore | null =null;
+let kvStore2: factory.SingleKVStore | null = null;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 function sleep(count: int): Promise<int> {
@@ -82,16 +82,16 @@ export default function SingleKvStoreDataChange() {
         abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
         await Utils.msSleep(8000)
         context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-        hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+        hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
       } catch (e) {
         hilog.info(domain, TAG, '%{public}s', "============beforeAll context e: " + e);
         hilog.info(domain, TAG, '%{public}s', '================ beforeAll context end==========');
       }
       const config: factory.KVManagerConfig = {
         bundleName: TEST_BUNDLE_NAME,
-        context: context
+        context: context!
       };
-      console.info(TAG + 'beforeAll context.databaseDir=' + context.databaseDir);
+      console.info(TAG + 'beforeAll context.databaseDir=' + context!.databaseDir);
       kvManager = factory.createKVManager(config);
       console.info(TAG + 'beforeAll end, kvManager=' + kvManager);
       done();

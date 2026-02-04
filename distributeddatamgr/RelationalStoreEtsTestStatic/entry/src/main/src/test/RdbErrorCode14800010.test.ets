@@ -8,7 +8,7 @@ import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@ohos.base';
 
-let context:common.UIAbilityContext;
+let context:common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -71,7 +71,7 @@ export default function RdbErrorCode1480011() {
      */
     it('testRdbStoreAttach00013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "************* testRdbStoreAttach00013 start *************");
-      let store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      let store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await store.executeSql(CREATE_TABLE_TEST);
       await attachBatchInsert(store, "test");
       try {
@@ -81,7 +81,7 @@ export default function RdbErrorCode1480011() {
         hilog.info(domain, tag, '%{public}s', `testRdbStoreAttach00013 + ${e.code} + ${e.message}`);
         expect(14800010).assertEqual(e.code);
       }
-      await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       done();
       hilog.info(domain, tag, '%{public}s', "************* testRdbStoreAttach00013 start *************");
     })
@@ -96,17 +96,17 @@ export default function RdbErrorCode1480011() {
      */
     it('testRdbStoreAttach00012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "************* testRdbStoreAttach00012 start *************");
-      let store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      let store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await store.executeSql(CREATE_TABLE_TEST);
       await attachBatchInsert(store, "test");
       try {
-        await store.attach(context, STORE_CONFIG1, "");
+        await store.attach(context!, STORE_CONFIG1, "");
         expect().assertFail();
       } catch(e: BusinessError) {
         hilog.info(domain, tag, '%{public}s', `testRdbStoreAttach00012 + ${e.code} + ${e.message}`);
         expect(14800010).assertEqual(e.code);
       }
-      await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       done();
       hilog.info(domain, tag, '%{public}s', "************* testRdbStoreAttach00012 end *************");
     })
@@ -121,7 +121,7 @@ export default function RdbErrorCode1480011() {
      */
     it('RdbBackupRestoreTest_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "************* RdbBackupRestoreTest_0110 start *************");
-      let store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      let store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await store.executeSql(CREATE_TABLE_TEST);
       await attachBatchInsert(store, "test");
       try {
@@ -132,7 +132,7 @@ export default function RdbErrorCode1480011() {
         hilog.info(domain, tag, '%{public}s', `RdbBackupRestoreTest_0110 + ${e.code} + ${e.message}`);
         expect(14800010).assertEqual(e.code);
       }
-      await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       done();
       hilog.info(domain, tag, '%{public}s', "************* RdbBackupRestoreTest_0110 start *************");
     })

@@ -407,7 +407,7 @@ export default function imagePackToFileGif() {
 
     const packToFileCbErr = async (done: () => void, testNum: string, source: image.ImageSource | image.PixelMap, type: string, fd: int,
       ops: image.PackingOption) => {
-      let globalPacker: image.ImagePacker;
+      let globalPacker: image.ImagePacker | undefined;
       try {
         globalPacker = image.createImagePacker();
         expect(globalPacker != undefined).assertTrue();
@@ -418,11 +418,11 @@ export default function imagePackToFileGif() {
         }
         if(type == "PixelMap") {
           let pixelmap: image.PixelMap = source as image.PixelMap;
-          await globalPacker.packToFile(pixelmap, fd, ops);
+          await globalPacker!.packToFile(pixelmap, fd, ops);
           await pixelmap.release();
         } else {
           let imageSource: image.ImageSource = source as image.ImageSource;
-          await globalPacker.packToFile(imageSource, fd, ops);
+          await globalPacker!.packToFile(imageSource, fd, ops);
           await imageSource.release();
         }
         expect(false).assertTrue();
@@ -436,7 +436,7 @@ export default function imagePackToFileGif() {
         done();
       } finally {
         fs.closeSync(fd);
-        await globalPacker.release();
+        await globalPacker!.release();
       }
     }
 

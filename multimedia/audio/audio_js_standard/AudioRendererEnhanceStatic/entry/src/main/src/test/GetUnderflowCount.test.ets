@@ -37,7 +37,7 @@ let g_context: common.UIAbilityContext;
 
 export default function audioRendererTest() {
   describe('getUnderflowCount', () => {
-    let audioRen: audio.AudioRenderer | null;
+    let audioRen: audio.AudioRenderer | null = null;
     let TagFrmwkRender = "audioRendererEnhanceTest";
 
     beforeAll(async (): Promise<void> => {
@@ -322,7 +322,7 @@ export default function audioRendererTest() {
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         for (let index = 0; index < testConst.StreamUsage.length; index++) {
-          let audioRender: audio.AudioRenderer | null;
+          let audioRender: audio.AudioRenderer | null = null;
           let AudioStreamInfo: audio.AudioStreamInfo = {
             samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
             channels: audio.AudioChannel.CHANNEL_2,
@@ -448,7 +448,7 @@ export default function audioRendererTest() {
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         for (let index = 0; index < testConst.StreamUsage.length; index++) {
-          let audioRender: audio.AudioRenderer | null;
+          let audioRender: audio.AudioRenderer | null = null;
           let AudioStreamInfo: audio.AudioStreamInfo = {
             samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
             channels: audio.AudioChannel.CHANNEL_2,

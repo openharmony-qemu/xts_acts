@@ -455,7 +455,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
         let dsaGenerator: cryptoFramework.AsyKeyGeneratorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(
           asyCommon.genDsa2048KeyPairSpecBigE()
         );
-        let dsaKeyPair: cryptoFramework.KeyPair;
+        let dsaKeyPair: cryptoFramework.KeyPair | undefined;
         await new Promise<void>((resolve, reject) => {
           dsaGenerator.generateKeyPair((err: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
             if (err || keyPair === undefined) { // success: error is null, failed: data is undefined
@@ -467,7 +467,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
           });
         });
         try {
-          await verifyGenerator.init(dsaKeyPair.pubKey);
+          await verifyGenerator.init(dsaKeyPair!.pubKey);
           expect(null).assertFail();
         } catch (err: BusinessError) {
           expect(err.code).assertEqual(401);

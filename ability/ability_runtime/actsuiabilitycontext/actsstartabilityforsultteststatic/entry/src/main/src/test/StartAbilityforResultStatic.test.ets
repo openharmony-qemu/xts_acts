@@ -26,7 +26,7 @@ import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let context: common.UIAbilityContext
+let context: common.UIAbilityContext | undefined;
 
 export default function startAbilityForResultTestStatic() {
   describe('ActsstartAbilityForResultTestStatic', () => {
@@ -47,7 +47,7 @@ export default function startAbilityForResultTestStatic() {
       await Utils.msSleep(2000);
       hilog.info(domain, tag, 'start success');
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
-      hilog.info(domain, tag, 'getcontext success, context: ' + context);
+      hilog.info(domain, tag, 'getcontext success, context: ' + context!);
     })
 
     /**
@@ -66,7 +66,7 @@ export default function startAbilityForResultTestStatic() {
         abilityName: 'EntryAbility1'
       };
       try {
-        await context.startAbilityForResult(want).then(() => {
+        await context!.startAbilityForResult(want).then(() => {
           hilog.info(domain, tag, `startAbilityForResult success`);
           expect(true).assertTrue()
           done();
@@ -98,7 +98,7 @@ export default function startAbilityForResultTestStatic() {
         abilityName: 'EntryAbilityerror'
       };
       try {
-        context.startAbilityForResult(want).then(() => {
+        context?.startAbilityForResult(want).then(() => {
           hilog.info(domain, tag, `startAbilityForResult success`);
           expect().assertFail();
           done();
@@ -133,7 +133,7 @@ export default function startAbilityForResultTestStatic() {
         displayId: 0,
       };
       try {
-        await context.startAbilityForResult(want, options).then(() => {
+        await context!.startAbilityForResult(want, options).then(() => {
           hilog.info(domain, tag, `startAbilityForResult success`);
           expect(true).assertTrue()
           done();
@@ -168,7 +168,7 @@ export default function startAbilityForResultTestStatic() {
         displayId: 0
       };
       try {
-        context.startAbilityForResult(want, options).then(() => {
+        context?.startAbilityForResult(want, options).then(() => {
           hilog.info(domain, tag, `startAbilityForResult success`);
           expect().assertFail();
           done();
@@ -200,7 +200,7 @@ export default function startAbilityForResultTestStatic() {
         abilityName: 'EntryAbility1'
       };
       try {
-        context.startAbilityForResult(want, (err: BusinessError<void> | null) => {
+        context?.startAbilityForResult(want, (err: BusinessError<void> | null) => {
           if (err && err.code !== 0) {
             hilog.info(domain, tag,`startAbilityForResult failed, code is ${err?.code}, message is ${err?.message}`);
             expect().assertFail();
@@ -234,7 +234,7 @@ export default function startAbilityForResultTestStatic() {
         abilityName: 'EntryAbilityerror'
       };
       try {
-        context.startAbilityForResult(want, (err: BusinessError<void> | null) => {
+        context?.startAbilityForResult(want, (err: BusinessError<void> | null) => {
           if (err && err.code !== 0) {
             hilog.info(domain, tag,`startAbilityForResult failed, code is ${err?.code}, message is ${err?.message}`);
             expect(err?.code).assertEqual(16000001);
@@ -271,7 +271,7 @@ export default function startAbilityForResultTestStatic() {
         displayId: 0
       };
       try {
-        context.startAbilityForResult(want, options, (err: BusinessError<void> | null) => {
+        context?.startAbilityForResult(want, options, (err: BusinessError<void> | null) => {
         hilog.info(domain, tag,`startAbilityForResult start`);
           if (err && err.code !== 0) {
             hilog.info(domain, tag,`startAbilityForResult failed, code is ${err?.code}, message is ${err?.message}`);
@@ -310,7 +310,7 @@ export default function startAbilityForResultTestStatic() {
         displayId: 0
       };
       try {
-        context.startAbilityForResult(want, options, (err: BusinessError<void> | null) => {
+        context?.startAbilityForResult(want, options, (err: BusinessError<void> | null) => {
           if (err && err.code !== 0) {
             hilog.info(domain, tag,`startAbilityForResult failed, code is ${err?.code}, message is ${err?.message}`);
             expect(err?.code).assertEqual(16000001);

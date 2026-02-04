@@ -73,8 +73,8 @@ export default function certFrameworkResultCodeTestUnit() {
             encodingFormat: cert.EncodingFormat.FORMAT_PEM
           };
           let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
-          let pubKey: cryptoFramework.PubKey;
-          await x509Cert.verify(pubKey);
+          let pubKey: cryptoFramework.PubKey | undefined;
+          await x509Cert.verify(pubKey!);
           expect(null).assertFail();
         } catch (error: BusinessError) {
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_0100 ${error}, error code: ${error.code}`);
@@ -99,8 +99,8 @@ export default function certFrameworkResultCodeTestUnit() {
             encodingFormat: cert.EncodingFormat.FORMAT_PEM
           };
           let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
-          let pubKey: cryptoFramework.PubKey;
-          x509Cert.verify(pubKey, (err) => {});
+          let pubKey: cryptoFramework.PubKey | undefined;
+          x509Cert.verify(pubKey!, (err) => {});
           expect(null).assertFail();
         } catch (error: BusinessError) {
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_0200 ${error}, error code: ${error.code}`);
@@ -1159,9 +1159,9 @@ export default function certFrameworkResultCodeTestUnit() {
           encodingFormat: cert.EncodingFormat.FORMAT_PEM
         };
         let x509Crl = await cert.createX509CRL(encodingBlob);
-        let x509Cert: cert.X509Cert;
+        let x509Cert: cert.X509Cert | undefined;
         try {
-          x509Crl.getRevokedCertWithCert(x509Cert);
+          x509Crl.getRevokedCertWithCert(x509Cert!);
           expect(null).assertFail();
         } catch (error: BusinessError) {
           console.error(`x509Crl.isRevoked ${error}, error code: ${error.code}`);
@@ -1319,15 +1319,15 @@ export default function certFrameworkResultCodeTestUnit() {
           expect(error.code).assertEqual(cert.CertResult.NOT_SUPPORT);
         }
         let validator = cert.createCertChainValidator("PKIX");
-        let data: cert.CertChainData;
+        let data: cert.CertChainData | undefined;
         try {
-          await validator.validate(data);
+          await validator.validate(data!);
         } catch (error: BusinessError) {
           console.error(`validator.validate Promise ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
         try {
-          validator.validate(data, (err) => {});
+          validator.validate(data!, (err) => {});
         } catch (error: BusinessError) {
           console.error(`validator.validate Callback ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);

@@ -28,7 +28,7 @@ import { Driver, ON } from '@ohos.UiTest'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext | undefined;
 let tokenID: int;
 
 const ERR_PARAM_ILLEGAL = 401;
@@ -98,10 +98,10 @@ export default function requestPermissionsStaticTest() {
      */
     it('Test_requestPermissionsFromUser_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionsFromUser_001 start");
-      let context: common.UIAbilityContext;
+      let context: common.UIAbilityContext | undefined;
       let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.CAMERA");
       try {
-        await atManager.requestPermissionsFromUser(context, permissionList);
+        await atManager.requestPermissionsFromUser(context!, permissionList);
       } catch (error: BusinessError<void>) {
         hilog.info(domain, tag, "Test_requestPermissionsFromUser_001 catch err" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
@@ -121,7 +121,7 @@ export default function requestPermissionsStaticTest() {
       hilog.info(domain, tag, "Test_requestPermissionsFromUser_002 start");
       let permissionList: Array<Permissions> = new Array<Permissions>();
       try {
-        await atManager.requestPermissionsFromUser(testAbilityContext, permissionList);
+        await atManager.requestPermissionsFromUser(testAbilityContext!, permissionList);
       } catch (error: BusinessError<void>) {
         hilog.info(domain, tag, "Test_requestPermissionsFromUser_002 catch err" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
@@ -143,7 +143,7 @@ export default function requestPermissionsStaticTest() {
       let permissionList: Array<Permissions> = new Array<Permissions>(invalidPermission);
       if (testAbilityContext) {
         try {
-          atManager.requestPermissionsFromUser(testAbilityContext, permissionList).then((data: PermissionRequestResult): void => {
+          atManager.requestPermissionsFromUser(testAbilityContext!, permissionList).then((data: PermissionRequestResult): void => {
             hilog.info(domain, tag, "Test_requestPermissionsFromUser_003 data");
             expect(data.permissions.length).assertEqual(permissionList.length);
             expect(data.authResults[0]).assertEqual(2); // 2-invalid
@@ -176,7 +176,7 @@ export default function requestPermissionsStaticTest() {
       let permissionList: Array<Permissions> = new Array<Permissions>('ohos.permission.USE_BLUETOOTH');
       if (testAbilityContext) {
         try {
-          atManager.requestPermissionsFromUser(testAbilityContext, permissionList).then((data: PermissionRequestResult): void => {
+          atManager.requestPermissionsFromUser(testAbilityContext!, permissionList).then((data: PermissionRequestResult): void => {
             hilog.info(domain, tag, "Test_requestPermissionsFromUser_004 data");
             expect(data.permissions.length).assertEqual(permissionList.length);
             expect(data.authResults[0]).assertEqual(0); // 0: granted
@@ -210,7 +210,7 @@ export default function requestPermissionsStaticTest() {
         try {
           let driver: Driver = Driver.create();
           await Utils.msSleep(1000);
-          atManager.requestPermissionsFromUser(testAbilityContext, permissionList).then((data: PermissionRequestResult): void => {
+          atManager.requestPermissionsFromUser(testAbilityContext!, permissionList).then((data: PermissionRequestResult): void => {
             hilog.info(domain, tag, "Test_requestPermissionsFromUser_005 data1 ");
             expect(data.permissions.length).assertEqual(permissionList.length);
             expect(data.authResults[0]).assertEqual(0); // 0: granted
@@ -218,7 +218,7 @@ export default function requestPermissionsStaticTest() {
             expect(data.authResults[1]).assertEqual(0); // 0: granted
             expect(data.dialogShownResults?.[1]).assertEqual(true);
 
-            atManager.requestPermissionsFromUser(testAbilityContext, permissionList).then((data: PermissionRequestResult): void => {
+            atManager.requestPermissionsFromUser(testAbilityContext!, permissionList).then((data: PermissionRequestResult): void => {
               hilog.info(domain, tag, "Test_requestPermissionsFromUser_005 data2 ");
               expect(data.permissions.length).assertEqual(permissionList.length);
               expect(data.authResults[0]).assertEqual(0); // 0: granted
@@ -263,7 +263,7 @@ export default function requestPermissionsStaticTest() {
         try {
           let driver: Driver = Driver.create();
           await Utils.msSleep(1000);
-          atManager.requestPermissionsFromUser(testAbilityContext, permissionList).then((data: PermissionRequestResult): void => {
+          atManager.requestPermissionsFromUser(testAbilityContext!, permissionList).then((data: PermissionRequestResult): void => {
             hilog.info(domain, tag, "Test_requestPermissionsFromUser_006 data1 ");
             expect(data.permissions.length).assertEqual(permissionList.length);
             expect(data.authResults[0]).assertEqual(0); // 0: granted
@@ -271,7 +271,7 @@ export default function requestPermissionsStaticTest() {
             expect(data.authResults[1]).assertEqual(-1); // -1: not granted
             expect(data.dialogShownResults?.[1]).assertEqual(true);
 
-            atManager.requestPermissionsFromUser(testAbilityContext, permissionList).then((data: PermissionRequestResult): void => {
+            atManager.requestPermissionsFromUser(testAbilityContext!, permissionList).then((data: PermissionRequestResult): void => {
               hilog.info(domain, tag, "Test_requestPermissionsFromUser_006 data2 ");
               expect(data.permissions.length).assertEqual(permissionList.length);
               expect(data.authResults[0]).assertEqual(0); // 0: granted
@@ -322,7 +322,7 @@ export default function requestPermissionsStaticTest() {
       let permissionList: Array<Permissions> = new Array<Permissions>('ohos.permission.APP_TRACKING_CONSENT');
       if (testAbilityContext) {
         try {
-          atManager.requestPermissionsFromUser(testAbilityContext, permissionList).then((data: PermissionRequestResult): void => {
+          atManager.requestPermissionsFromUser(testAbilityContext!, permissionList).then((data: PermissionRequestResult): void => {
             hilog.info(domain, tag, "Test_requestPermissionsFromUser_007 data ");
             expect(data.permissions.length).assertEqual(permissionList.length);
             expect(data.authResults[0]).assertEqual(2); // 2: invalid
@@ -358,7 +358,7 @@ export default function requestPermissionsStaticTest() {
         try {
           let driver: Driver = Driver.create();
           await Utils.msSleep(1000);
-          atManager.requestPermissionsFromUser(testAbilityContext, permissionList).then((data: PermissionRequestResult): void => {
+          atManager.requestPermissionsFromUser(testAbilityContext!, permissionList).then((data: PermissionRequestResult): void => {
             hilog.info(domain, tag, "Test_requestPermissionsFromUser_008 first data ");
             firstCallback = true;
             expect(data.permissions.length).assertEqual(permissionList.length);
@@ -368,7 +368,7 @@ export default function requestPermissionsStaticTest() {
               done();
             }
           });
-          atManager.requestPermissionsFromUser(testAbilityContext, permissionList).then((data: PermissionRequestResult): void => {
+          atManager.requestPermissionsFromUser(testAbilityContext!, permissionList).then((data: PermissionRequestResult): void => {
             hilog.info(domain, tag, "Test_requestPermissionsFromUser_008 second data ");
             secondCallback = true;
             expect(data.permissions.length).assertEqual(permissionList.length);
@@ -406,7 +406,7 @@ export default function requestPermissionsStaticTest() {
         try {
           let driver: Driver = Driver.create();
           await Utils.msSleep(1000);
-          atManager.requestPermissionsFromUser(testAbilityContext, permissionList1).then((data: PermissionRequestResult): void => {
+          atManager.requestPermissionsFromUser(testAbilityContext!, permissionList1).then((data: PermissionRequestResult): void => {
             hilog.info(domain, tag, "Test_requestPermissionsFromUser_009 first data ");
             firstCallback = true;
             expect(data.permissions.length).assertEqual(permissionList1.length);
@@ -416,7 +416,7 @@ export default function requestPermissionsStaticTest() {
               done();
             }
           });
-          atManager.requestPermissionsFromUser(testAbilityContext, permissionList2).then((data: PermissionRequestResult): void => {
+          atManager.requestPermissionsFromUser(testAbilityContext!, permissionList2).then((data: PermissionRequestResult): void => {
             hilog.info(domain, tag, "Test_requestPermissionsFromUser_009 second data ");
             secondCallback = true;
             expect(data.permissions.length).assertEqual(permissionList2.length);
@@ -447,11 +447,11 @@ export default function requestPermissionsStaticTest() {
      */
     it('Test_requestPermissionsFromUser_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionsFromUser_010 start");
-      let context: common.UIAbilityContext;
+      let context: common.UIAbilityContext | undefined;
       let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.CAMERA");
       
       try {
-        atManager.requestPermissionsFromUser(context, permissionList, (error: BusinessError<void>|null, data: PermissionRequestResult|undefined):void => {
+        atManager.requestPermissionsFromUser(context!, permissionList, (error: BusinessError<void>|null, data: PermissionRequestResult|undefined):void => {
           expect(false).assertFail();
           done();
         });
@@ -474,7 +474,7 @@ export default function requestPermissionsStaticTest() {
       hilog.info(domain, tag, "Test_requestPermissionsFromUser_011 start");
       let permissionList: Array<Permissions> = new Array<Permissions>();
       try {
-        atManager.requestPermissionsFromUser(testAbilityContext, permissionList, (error: BusinessError<void>|null, data: PermissionRequestResult|undefined):void => {
+        atManager.requestPermissionsFromUser(testAbilityContext!, permissionList, (error: BusinessError<void>|null, data: PermissionRequestResult|undefined):void => {
           expect(false).assertFail();
           done();
         });

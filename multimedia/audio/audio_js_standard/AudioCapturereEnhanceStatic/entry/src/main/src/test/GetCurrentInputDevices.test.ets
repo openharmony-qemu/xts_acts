@@ -28,11 +28,11 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 
 const Tag: string = 'AudioCpaturerEnhanceTest: ';
 let g_context: common.UIAbilityContext;
-let audioCap: audio.AudioCapturer | null;
+let audioCap: audio.AudioCapturer | null = null;
 
 export default function getCurrentInputDevicesTest() {
   describe('getCurrentInputDevices', () => {
-    let dirPath: string;
+    let dirPath: string = "";
 
     let releaseFun = async (audioCap: audio.AudioCapturer) => {
       try {

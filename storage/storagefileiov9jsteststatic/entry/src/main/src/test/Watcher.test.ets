@@ -604,15 +604,15 @@ export default function fileIOWatcher() {
       let fpath = await Utils.nextFileName(testNum);
       let res = await Utils.prepareFile(fpath, FILE_CONTENT);
       expect(res).assertTrue();
-      let watcher: Watcher;
+      let watcher: Watcher | undefined;
 
       try {
         watcher = fs.createWatcher(fpath, watcherEvent.get('IN_ACCESS', 0x00000001), callback);
-        watcher.start();
+        watcher!.start();
         fs.createWatcher(fpath, watcherEvent.get('IN_ACCESS', 0x00000001), callback);
         expect(false).assertTrue();
       } catch (e: BusinessError) {
-        watcher.stop();
+        watcher!.stop();
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -630,15 +630,15 @@ export default function fileIOWatcher() {
      */
     it('fileIO_test_watcher_static_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_018';
-      let watcher: Watcher;
+      let watcher: Watcher | undefined;
 
       try {
         watcher = fs.createWatcher("", watcherEvent.get('IN_ACCESS', 0x00000001), callback);
-        watcher.start();
+        watcher?.start();
         expect(false).assertTrue();
         done();
       } catch (e: BusinessError) {
-        watcher.stop();
+        watcher?.stop();
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
         done();

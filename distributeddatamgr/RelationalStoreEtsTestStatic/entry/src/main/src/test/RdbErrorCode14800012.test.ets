@@ -12,7 +12,7 @@ import { BusinessError } from '@ohos.base';
 import relationalStore from '@ohos.data.relationalStore';
 import dataRdb from '@ohos.data.relationalStore';
 
-let context:common.UIAbilityContext;
+let context:common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 let num = 'a'.repeat(1024*1024*2);
@@ -44,7 +44,7 @@ let STORE_CONFIG :data_relationalStore.StoreConfig = {
 }
 
 
-let rdbStore : data_relationalStore.RdbStore
+let rdbStore : data_relationalStore.RdbStore | undefined;
 let rdbStore1 : data_relationalStore.RdbStore
 let rdbStore2 : data_relationalStore.RdbStore
 let vbs :Array<data_relationalStore.ValuesBucket> = new Array<data_relationalStore.ValuesBucket>(3);
@@ -104,18 +104,18 @@ export default function RdbErrorCode14800012() {
     });
 
     beforeEach(async(): Promise<void> => {
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
       hilog.info(domain, tag, '%{public}s', 'beforeEach: delete rdbStore success');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-      await rdbStore.execute(CREATE_TABLE_TEST);
-      await rdbStore.execute(CREATE_TABLE_TEST1);
-      await rdbStore.execute(CREATE_TABLE_EMPLOYEE);
-      let num = await rdbStore.batchInsert("test", vbs);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.execute(CREATE_TABLE_TEST);
+      await rdbStore!.execute(CREATE_TABLE_TEST1);
+      await rdbStore!.execute(CREATE_TABLE_EMPLOYEE);
+      let num = await rdbStore!.batchInsert("test", vbs);
       hilog.info(domain, tag, '%{public}s', 'beforeEach: creat rdbStore success');
     })
 
     afterAll(async () : Promise<void> => {
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
 
     /**
@@ -235,11 +235,11 @@ export default function RdbErrorCode14800012() {
       console.info(TAG + "************* relationalStoreTest029 start *************");
       let resultSet:relationalStore.ResultSet|undefined;
       console.info(TAG + "************* relationalStoreTest029 insertSync start *************");
-      rdbStore.insertSync("employee",valueBucket2m,relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+      rdbStore!.insertSync("employee",valueBucket2m,relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
       console.info(TAG + "************* relationalStoreTest029 RdbPredicates start *************");
       let predicates = new relationalStore.RdbPredicates("employee")
       console.info(TAG + "************* relationalStoreTest029 query start *************");
-      resultSet = await rdbStore.query(predicates);
+      resultSet = await rdbStore!.query(predicates);
       console.info(TAG + "************* relationalStoreTest029 goToFirstRow start *************");
       resultSet.goToFirstRow();
       try{
@@ -267,9 +267,9 @@ export default function RdbErrorCode14800012() {
     it('relationalStoreTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
       console.info(TAG + "************* relationalStoreTest031 start *************");
       let resultSet:relationalStore.ResultSet|undefined;
-      await rdbStore.insert("employee",valueBucket2k);
+      await rdbStore!.insert("employee",valueBucket2k);
       let predicates = new relationalStore.RdbPredicates("employee")
-      resultSet = await rdbStore.queryLockedRow(predicates);
+      resultSet = await rdbStore!.queryLockedRow(predicates);
       resultSet.goToFirstRow();
       try{
         console.info(TAG + "************* relationalStoreTest031 start getString *************");
@@ -300,12 +300,12 @@ export default function RdbErrorCode14800012() {
         'name':'lisi',
       }
       let resultSet:relationalStore.ResultSet|undefined;
-      await rdbStore.insert("employee",valueBucket);
+      await rdbStore!.insert("employee",valueBucket);
       let predicates = new relationalStore.RdbPredicates("employee")
       predicates.equalTo("name","lisi")
       rdbStore?.updateSync(valueBucketEqual2m,predicates,relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
       let predicates1 = new relationalStore.RdbPredicates("employee");
-      resultSet = await rdbStore.query(predicates1);
+      resultSet = await rdbStore!.query(predicates1);
       resultSet.goToFirstRow();
       try{
         const name = resultSet?.getString(resultSet.getColumnIndex("name"))
@@ -334,12 +334,12 @@ export default function RdbErrorCode14800012() {
         'name':'lisi',
       }
       let resultSet:relationalStore.ResultSet|undefined;
-      await rdbStore.insert("employee",valueBucket);
+      await rdbStore!.insert("employee",valueBucket);
       let predicates = new relationalStore.RdbPredicates("employee")
       predicates.equalTo("name","lisi")
       rdbStore?.updateSync(valueBucket2m,predicates,relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
       let predicates1 = new relationalStore.RdbPredicates("employee");
-      resultSet = await rdbStore.query(predicates1);
+      resultSet = await rdbStore!.query(predicates1);
       resultSet.goToFirstRow();
       try{
         const name = resultSet?.getString(resultSet.getColumnIndex("name"))

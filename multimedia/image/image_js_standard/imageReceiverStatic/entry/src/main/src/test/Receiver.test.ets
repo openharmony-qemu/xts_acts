@@ -117,7 +117,7 @@ export default function ImageReceiver() {
     height: HEIGHT,
     width: WIDTH
   }
-  let cameraManager: camera.CameraManager;
+  let cameraManager: camera.CameraManager | undefined;
 
   describe("ImageReceiver", (): void => {
     beforeAll(async () => {
@@ -369,7 +369,7 @@ export default function ImageReceiver() {
             done();
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
         } catch (error: BusinessError) {
           console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
@@ -446,7 +446,7 @@ export default function ImageReceiver() {
             }
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
         } catch (error: BusinessError) {
           console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
@@ -497,7 +497,7 @@ export default function ImageReceiver() {
             });
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
         } catch (error: BusinessError) {
           console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
@@ -546,7 +546,7 @@ export default function ImageReceiver() {
             }
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
         } catch (error: BusinessError) {
           console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
@@ -597,7 +597,7 @@ export default function ImageReceiver() {
             });
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
         } catch (error: BusinessError) {
           console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();

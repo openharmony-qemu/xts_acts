@@ -19,12 +19,12 @@ import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 export default function abilityTest() {
     describe('AVSessionDistributedtest', () => {
         let TAG: string = "[AVSessionDistributedtest]";
         let session: avSession.AVSession | null = null;
-        let controller: avSession.AVSessionController;
+        let controller: avSession.AVSessionController | undefined;
 
         beforeAll(async () => {
             context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
@@ -36,7 +36,7 @@ export default function abilityTest() {
             console.info(`${TAG}: createAVSession begin`);
             let tag = "createNewSession"
             try{
-                session = await avSession.createAVSession(context, tag, 'voice_call')
+                session = await avSession.createAVSession(context!, tag, 'voice_call')
                 console.info(`${TAG}: avSession create success`);
                 console.info(`${session!.sessionType}`);
             }catch(err: BusinessError){
@@ -71,7 +71,7 @@ export default function abilityTest() {
             }
             if (controller != null) {
                 try{
-                    await controller.destroy()
+                    await controller!.destroy()
                     console.info(`${TAG}: Controller destroy success`);
                 }catch(err: BusinessError){
                     console.info(`${TAG}: Controller destroy error: code: ${err.code}, message: ${err.message}`);
@@ -98,7 +98,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             const COMMON_COMMAND_STRING = "AUDIO_GET_XXX";
             try{
-                await controller.getExtrasWithEvent(COMMON_COMMAND_STRING)
+                await controller!.getExtrasWithEvent(COMMON_COMMAND_STRING)
                 console.info(`${TAG}: getExtrasWithEvent successfully`);
             }catch(err: BusinessError){
                 if (err.message == 'expect true, actualValue is false' || err.code == 6600105){
@@ -123,7 +123,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             const COMMON_COMMAND_STRING = "AUDIO_GET_VOLUME";
-            let extras: avSession.ExtraInfo = await controller.getExtrasWithEvent(COMMON_COMMAND_STRING);
+            let extras: avSession.ExtraInfo = await controller!.getExtrasWithEvent(COMMON_COMMAND_STRING);
             console.info(`${TAG}: aduio get volume with ${JSON.stringify(extras)}`);
             if (JSON.stringify(extras) == '{}' ||
                 (0 <= (extras[COMMON_COMMAND_STRING] as number) &&
@@ -149,7 +149,7 @@ export default function abilityTest() {
             const COMMON_COMMAND_STRING = "AUDIO_GET_AVAILABLE_DEVICES";
             let extras: avSession.ExtraInfo;
             try{
-                extras = await controller.getExtrasWithEvent(COMMON_COMMAND_STRING);
+                extras = await controller!.getExtrasWithEvent(COMMON_COMMAND_STRING);
                 console.info(` AUDIO_GET_AVAILABLE_DEVICES ${extras[COMMON_COMMAND_STRING]}`);
                 expect(true).assertTrue();
             }catch(err: BusinessError){
@@ -172,7 +172,7 @@ export default function abilityTest() {
             const COMMON_COMMAND_STRING = "AUDIO_GET_PREFERRED_OUTPUT_DEVICE_FOR_RENDERER_INFO";
             let extras: avSession.ExtraInfo;
             try{
-                extras = await controller.getExtrasWithEvent(COMMON_COMMAND_STRING);
+                extras = await controller!.getExtrasWithEvent(COMMON_COMMAND_STRING);
                 console.info(` AUDIO_GET_PREFERRED_OUTPUT_DEVICE_FOR_RENDERER_INFO ${extras[COMMON_COMMAND_STRING]}`);
             }catch(err: BusinessError){
                 console.info(`${TAG}: getExtrasWithEvent failed with err: ${err.code}, ${err.message}`);

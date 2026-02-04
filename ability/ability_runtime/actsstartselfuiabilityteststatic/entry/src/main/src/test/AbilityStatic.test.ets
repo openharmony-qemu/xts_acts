@@ -25,7 +25,7 @@ import abilityManager from '@ohos.app.ability.abilityManager';
 
 let tag: string = 'testTag';
 const domain = 0x0000;
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext | undefined;
 
 export default function abilitystaticTest() {
   describe("abilitystaticTest", (): void => {
@@ -72,7 +72,7 @@ export default function abilitystaticTest() {
             }
             break;
           }
-          testAbilityContext.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
+          testAbilityContext?.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
             .then(() => {
               await Utils.msSleep(2000);
               hilog.info(0x0000, 'testTag', 'startFlag:' + AppStorage.get('startFlag'));
@@ -140,7 +140,7 @@ export default function abilitystaticTest() {
         let flag: string = "6";
         let startOptions: StartOptions = {};
         try {
-          testAbilityContext.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
+          testAbilityContext?.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
             .then(() => {
               hilog.info(0x0000, 'testTag', '${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess succeed');
               expect().assertFail();
@@ -190,7 +190,7 @@ export default function abilitystaticTest() {
         let flag: string = "7";
         let startOptions: StartOptions = {};
         try {
-          testAbilityContext.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
+          testAbilityContext?.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
             .then(() => {
               hilog.info(0x0000, 'testTag', '${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess succeed');
               expect().assertFail();
@@ -241,7 +241,7 @@ export default function abilitystaticTest() {
         let startOptions: StartOptions = {};
         try {
 
-          testAbilityContext.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
+          testAbilityContext?.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
             .then(() => {
               hilog.info(0x0000, 'testTag', '${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess succeed');
               expect().assertFail();
@@ -291,7 +291,7 @@ export default function abilitystaticTest() {
         let flag: string = "11";
         let startOptions: StartOptions = {};
         try {
-          testAbilityContext.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
+          testAbilityContext?.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
             .then(() => {
               hilog.info(0x0000, 'testTag', '${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess succeed');
               expect().assertFail();
@@ -340,11 +340,11 @@ export default function abilitystaticTest() {
         let flag: string = "16";
         let startOptions: StartOptions = {};
         try {
-          await testAbilityContext.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
+          await testAbilityContext!.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
             .then(() => {
               hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME}0StartSelfUIAbilityInCurrentProcess succeed`);
               await Utils.msSleep(500);
-              await testAbilityContext.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
+              await testAbilityContext!.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
                 .then(() => {
                   hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME}1StartSelfUIAbilityInCurrentProcess succeed`);
                   expect().assertFail();
@@ -418,7 +418,7 @@ export default function abilitystaticTest() {
             }
             break;
           }
-          await testAbilityContext.startSelfUIAbilityInCurrentProcess(want, flag)
+          await testAbilityContext!.startSelfUIAbilityInCurrentProcess(want, flag)
             .then(async () => {
               await Utils.msSleep(2000);
               hilog.info(0x0000, 'testTag', 'startFlag:' + AppStorage.get('startFlag'));

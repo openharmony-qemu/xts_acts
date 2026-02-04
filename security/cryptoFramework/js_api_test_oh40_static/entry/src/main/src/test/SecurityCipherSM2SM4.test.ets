@@ -35,7 +35,7 @@ async function genSymKeyPair(): Promise<cryptoFramework.SymKey> {
 export default function SecurityCipherSM2SM4Jsunit() {
   describe("SecurityCipherSM2SM4Jsunit", () => {
     console.log("##########start SecurityCipherSM2SM4Jsunit##########");
-    let symKeyPairSM4: cryptoFramework.SymKey;
+    let symKeyPairSM4: cryptoFramework.SymKey | undefined;
     beforeAll(async () => {
       symKeyPairSM4 = await genSymKeyPair();
     });
@@ -54,7 +54,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       async (done: () => void): Promise<void> => {
         await symPromise
           .encryptAndDecryptNormalSM4Process(
-            symKeyPairSM4,
+            symKeyPairSM4!,
             "SM4_128|CTR|NoPadding"
           )
           .then((result: boolean) => {
@@ -83,7 +83,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
          await symCallback
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|CTR|PKCS5")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|CTR|PKCS5")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -110,7 +110,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await symPromise
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|CTR|PKCS7")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|CTR|PKCS7")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -138,7 +138,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       async (done: () => void): Promise<void> => {
         await symPromise
           .encryptAndDecryptNormalSM4Process(
-            symKeyPairSM4,
+            symKeyPairSM4!,
             "SM4_128|ECB|NoPadding"
           )
           .then((result: boolean) => {
@@ -167,7 +167,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
          await symCallback
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|ECB|PKCS5")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|ECB|PKCS5")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -194,7 +194,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await symPromise
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|ECB|PKCS7")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|ECB|PKCS7")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -222,7 +222,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       async (done: () => void): Promise<void> => {
         await symPromise
           .encryptAndDecryptNormalSM4Process(
-            symKeyPairSM4,
+            symKeyPairSM4!,
             "SM4_128|CBC|NoPadding"
           )
           .then((result: boolean) => {
@@ -251,7 +251,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
          await symCallback
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|CBC|PKCS5")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|CBC|PKCS5")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -278,7 +278,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await symPromise
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|CBC|PKCS7")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|CBC|PKCS7")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -306,7 +306,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       async (done: () => void): Promise<void> => {
         await symPromise
           .encryptAndDecryptNormalSM4Process(
-            symKeyPairSM4,
+            symKeyPairSM4!,
             "SM4_128|OFB|NoPadding"
           )
           .then((result: boolean) => {
@@ -335,7 +335,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
          await symCallback
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|OFB|PKCS5")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|OFB|PKCS5")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -362,7 +362,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await symPromise
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|OFB|PKCS7")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|OFB|PKCS7")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -390,7 +390,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       async (done: () => void): Promise<void> => {
         await symPromise
           .encryptAndDecryptNormalSM4Process(
-            symKeyPairSM4,
+            symKeyPairSM4!,
             "SM4_128|CFB|NoPadding"
           )
           .then((result: boolean) => {
@@ -419,7 +419,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
          await symCallback
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|CFB|PKCS5")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|CFB|PKCS5")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -446,7 +446,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await symPromise
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|CFB|PKCS7")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|CFB|PKCS7")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -474,7 +474,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       async (done: () => void): Promise<void> => {
         await symPromise
           .encryptAndDecryptNormalSM4Process(
-            symKeyPairSM4,
+            symKeyPairSM4!,
             "SM4_128|CFB128|NoPadding"
           )
           .then((result: boolean) => {
@@ -504,7 +504,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       async (done: () => void): Promise<void> => {
          await symCallback
           .encryptAndDecryptNormalSM4Process(
-            symKeyPairSM4,
+            symKeyPairSM4!,
             "SM4_128|CFB128|PKCS5"
           )
           .then((result: boolean) => {
@@ -534,7 +534,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       async (done: () => void): Promise<void> => {
         await symPromise
           .encryptAndDecryptNormalSM4Process(
-            symKeyPairSM4,
+            symKeyPairSM4!,
             "SM4_128|CFB128|PKCS7"
           )
           .then((result: boolean) => {
@@ -563,7 +563,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await symPromise
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4|ECB|PKCS7")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4|ECB|PKCS7")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -886,7 +886,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
         } catch (err: BusinessError) {
           expect(err.code).assertEqual(401);
         }
-        await cipherGenerator.init(encryptMode, symKeyPairSM4, null);
+        await cipherGenerator.init(encryptMode, symKeyPairSM4!, null);
         done();
       }
     );
@@ -929,7 +929,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
         } catch (err: BusinessError) {
           expect(err.code).assertEqual(401);
         }
-        await cipherGenerator.init(encryptMode, symKeyPairSM4, null);
+        await cipherGenerator.init(encryptMode, symKeyPairSM4!, null);
         try {
           await new Promise<cryptoFramework.DataBlob|null>((resolve, reject) => {
             cipherGenerator.doFinal(null, (err: BusinessError<void>|null, data: cryptoFramework.DataBlob|null|undefined) => {

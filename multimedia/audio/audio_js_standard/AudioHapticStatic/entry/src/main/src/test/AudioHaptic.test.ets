@@ -46,11 +46,11 @@ export default function AudioHapticTest() {
     let filePath: string;
     let tag = 'AudioHapticTest:';
     let AudioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
-    let testContext: common.UIAbilityContext;
+    let testContext: common.UIAbilityContext | undefined;
 
     let resourceFile = async (resourcePath: string): Promise<string> => {
       // 1.读取文件
-      let uint8Array: Uint8Array = testContext.resourceManager.getRawFileContentSync(resourcePath);
+      let uint8Array: Uint8Array = testContext!.resourceManager.getRawFileContentSync(resourcePath);
       let fileName = resourcePath.substring(resourcePath.lastIndexOf('/') + 1);
       console.log(`${tag} fileName:${fileName}`);
       // 2.创建沙箱文件
@@ -88,7 +88,7 @@ export default function AudioHapticTest() {
     let getPermission = () => {
       let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
       let permissions: Array<Permissions> = ['ohos.permission.MICROPHONE'];
-      atManager.requestPermissionsFromUser(testContext, permissions,
+      atManager.requestPermissionsFromUser(testContext!, permissions,
         (err: BusinessError | null, data: PermissionRequestResult | undefined) => {
           console.info("request success permissions" + JSON.stringify(data));
           console.info("getPermissionRequestResult err", JSON.stringify(err));
@@ -98,7 +98,7 @@ export default function AudioHapticTest() {
     beforeAll(async () => {
       console.log(`beforeall come in`);
       testContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-      filesDir = testContext.filesDir as string | undefined | null;
+      filesDir = testContext!.filesDir as string | undefined | null;
 
       getPermission();
       driveFn();
@@ -1670,11 +1670,11 @@ export default function AudioHapticTest() {
       let hapticFd: audioHaptic.AudioHapticFileDescriptor = {fd:0, length:0, offset:0}
       let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
       let testContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-      let rawFdOgg = testContext.resourceManager.getRawFdSync('notification.ogg');
+      let rawFdOgg = testContext!.resourceManager.getRawFdSync('notification.ogg');
       audioFd.fd = rawFdOgg.fd;
       audioFd.length = rawFdOgg.length;
       audioFd.offset = rawFdOgg.offset;
-      let rawFdJson = testContext.resourceManager.getRawFdSync('notification.json');
+      let rawFdJson = testContext!.resourceManager.getRawFdSync('notification.json');
       hapticFd.fd = rawFdJson.fd;
       hapticFd.length = rawFdJson.length;
       hapticFd.offset = rawFdJson.offset;
@@ -1740,11 +1740,11 @@ export default function AudioHapticTest() {
       let hapticFd:audioHaptic.AudioHapticFileDescriptor = {fd:0, length:0, offset:0}
       let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
       let testContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-      let rawFdOgg = testContext.resourceManager.getRawFdSync('notification.ogg');
+      let rawFdOgg = testContext!.resourceManager.getRawFdSync('notification.ogg');
       audioFd.fd = rawFdOgg.fd;
       audioFd.length = rawFdOgg.length;
       audioFd.offset = rawFdOgg.offset;
-      let rawFdJson = testContext.resourceManager.getRawFdSync('notification.json');
+      let rawFdJson = testContext!.resourceManager.getRawFdSync('notification.json');
       hapticFd.fd = rawFdJson.fd;
       hapticFd.length = rawFdJson.length;
       hapticFd.offset = rawFdJson.offset;

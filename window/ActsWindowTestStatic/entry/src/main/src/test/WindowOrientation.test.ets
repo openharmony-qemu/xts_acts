@@ -31,8 +31,8 @@ export default function WindowOrientationTest() {
 
     describe("WindowOrientationTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'WindowOrientationTest describe start');
-        let windowStage: window.WindowStage;
-        let win: window.Window;
+        let windowStage: window.WindowStage | undefined;
+        let win: window.Window | undefined;
         let context: common.UIAbilityContext;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
@@ -144,7 +144,7 @@ export default function WindowOrientationTest() {
             let msgStr:string  = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let win: window.Window;
-            win = await windowStage.createSubWindow('testSetPreferredOrientation_WinAbnormal_Promise');
+            win = await windowStage!.createSubWindow('testSetPreferredOrientation_WinAbnormal_Promise');
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
             expect(!!win).assertTrue();
             await (win as window.Window).destroyWindow();
@@ -178,7 +178,7 @@ export default function WindowOrientationTest() {
             let msgStr:string  = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let win: window.Window;
-            win = await windowStage.createSubWindow('testSetPreferredOrientation_WinAbnormal_Call');
+            win = await windowStage!.createSubWindow('testSetPreferredOrientation_WinAbnormal_Call');
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
             expect(!!win).assertTrue();
             await (win as window.Window).destroyWindow();
@@ -215,7 +215,7 @@ export default function WindowOrientationTest() {
             let caseName: string = 'test_RotationChange_static_0100';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let subWindowClass:window.Window = await windowStage.createSubWindow('test_RotationChange_static_0100');
+            let subWindowClass:window.Window = await windowStage!.createSubWindow('test_RotationChange_static_0100');
             await subWindowClass.destroyWindow();
             try {
                 let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult => {}
@@ -239,7 +239,7 @@ export default function WindowOrientationTest() {
             let caseName: string = 'test_RotationChange_static_0200';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let subWindowClass:window.Window = await windowStage.createSubWindow('test_RotationChange_static_0200');
+            let subWindowClass:window.Window = await windowStage!.createSubWindow('test_RotationChange_static_0200');
             await subWindowClass.destroyWindow();
             try {
                 let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult => {
@@ -325,7 +325,7 @@ export default function WindowOrientationTest() {
             let caseName: string = 'test_RotationChange_801_static_0300';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let subWindowClass:window.Window = await windowStage.createSubWindow('test_RotationChange_801_static_0300');
+            let subWindowClass:window.Window = await windowStage!.createSubWindow('test_RotationChange_801_static_0300');
             try {
                 await subWindowClass.setUIContent('pages/index2');
                 await subWindowClass.showWindow();
@@ -364,7 +364,7 @@ export default function WindowOrientationTest() {
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
 
-            let subWindowClass:window.Window = await windowStage.createSubWindow('test_RotationChange_801_static_0400');
+            let subWindowClass:window.Window = await windowStage!.createSubWindow('test_RotationChange_801_static_0400');
             try {
                 await subWindowClass.setUIContent('pages/index2');
                 await subWindowClass.showWindow();
@@ -417,7 +417,7 @@ export default function WindowOrientationTest() {
             let caseName: string = 'testGetPreferredOrientation_WindowAbnormal_static';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin');
-            let windowClass: window.Window = await windowStage.createSubWindow('testGetPreferredOrientation_WindowAbnormal')
+            let windowClass: window.Window = await windowStage!.createSubWindow('testGetPreferredOrientation_WindowAbnormal')
             hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
             expect(!!windowClass).assertTrue();
             await windowClass.destroyWindow();
@@ -446,7 +446,7 @@ export default function WindowOrientationTest() {
             let originalValue: int = 0;
             let fromType: window.RotationInfoType = window.RotationInfoType.WINDOW_ORIENTATION;
             let toType: window.RotationInfoType = window.RotationInfoType.DISPLAY_ORIENTATION;
-            let windowClass:window.Window = await windowStage.createSubWindow('testconvertOrientationAndRotationDestoryedWindow_static');
+            let windowClass:window.Window = await windowStage!.createSubWindow('testconvertOrientationAndRotationDestoryedWindow_static');
             await windowClass.destroyWindow();
             try {
                 windowClass.convertOrientationAndRotation(fromType, toType, originalValue);

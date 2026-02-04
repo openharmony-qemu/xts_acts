@@ -74,7 +74,7 @@ class CustomApplicationStateObserver implements appManager.ApplicationStateObser
 
 export default function abilitystaticTest() {
   describe('ActsAbilityStaticTest', (): void => {
-    let testAbilityContext: common.UIAbilityContext;
+    let testAbilityContext: common.UIAbilityContext | undefined;
     const BUNDLE_NAME: string = 'com.example.startuiserviceextensiontest.static';
     const RELY_BUNDLE_NAME: string = 'com.acts.startuiserviceextensionrely.static';
 
@@ -127,7 +127,7 @@ export default function abilitystaticTest() {
       let tag = "SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100";
       console.info('====> [SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100] start');
       try {
-        testAbilityContext.getApplicationContext().getAllRunningInstanceKeys()
+        testAbilityContext?.getApplicationContext().getAllRunningInstanceKeys()
       } catch (error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
@@ -150,7 +150,7 @@ export default function abilitystaticTest() {
       let tag = "SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100";
       console.info('====> [SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100] start');
       try {
-        testAbilityContext.getApplicationContext().getCurrentInstanceKey()
+        testAbilityContext?.getApplicationContext().getCurrentInstanceKey()
       } catch (error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
@@ -215,7 +215,7 @@ export default function abilitystaticTest() {
             bundleName: `${RELY_BUNDLE_NAME}`,
             abilityName: 'EntryAbility'
           }
-          await testAbilityContext.startAbility(want);
+          await testAbilityContext!.startAbility(want);
           await Utils.msSleep(2000);
 
           hilog.info(domain, tag, `${itName} AppStateData assert start`);

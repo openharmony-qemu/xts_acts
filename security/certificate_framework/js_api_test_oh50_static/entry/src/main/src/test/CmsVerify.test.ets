@@ -1019,7 +1019,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_2500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let verify: cert.CmsParser;
+      let verify: cert.CmsParser | undefined;
       try {
           let plainText: Uint8Array = new Uint8Array([0x01, 0x02, 0x03, 0x04]);
           let x509CertEntry: cert.X509Cert = await createX509Cert(CMS_SIGN_WITH_SHA224_PUB_CERT);
@@ -1031,15 +1031,15 @@ export default function certFrameworkCmsVerifyTestUnit() {
             signerCerts: [x509CertEntry]
           };
           verify= cert.createCmsParser();
-          await verify.setRawData(CMS_SIGN_DETACHED_DATA, cert.CmsFormat.PEM);
-          await verify.verifySignedData(config);
+          await verify!.setRawData(CMS_SIGN_DETACHED_DATA, cert.CmsFormat.PEM);
+          await verify!.verifySignedData(config);
           expect(null).assertFail();
         } catch (error: BusinessError) {
           console.error(`[XTS] Cms_Verify_Func_2500 1 “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_UNABLE_TO_GET_ISSUER_CERT_LOCALLY);
         } finally {
           try {
-            await verify.getContentData();
+            await verify!.getContentData();
             expect(null).assertFail();
           } catch (error: BusinessError) {
             console.error(`[XTS] Cms_Verify_Func_2500 2 “${error}“, error code: ${error.code}`);

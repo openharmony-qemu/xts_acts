@@ -22,7 +22,7 @@ import common from '@ohos.app.ability.common';
 import colorSpaceManager from '@ohos.graphics.colorSpaceManager';
 import { initialize } from './AbilityContextHelper.test';
 
-let testContext: common.UIAbilityContext;
+let testContext: common.UIAbilityContext | undefined;
 let filesDir: string | undefined | null;
 
 let g_callbackResult = false;
@@ -73,7 +73,7 @@ export default function imageDecodeOptionsYuvTest() {
         const filePath = filesDir + '/' + fileName
         imageSourceApi = image.createImageSource(filePath)
       } else if (type === "rawfile") {
-        const resourceMgr: resourceManager.ResourceManager = testContext.resourceManager;
+        const resourceMgr: resourceManager.ResourceManager = testContext!.resourceManager;
         let rawFileDescriptor: resourceManager.RawFileDescriptor | undefined;
         waitForCompletion(async () => {rawFileDescriptor = await resourceMgr.getRawFd(fileName);})
         imageSourceApi = image.createImageSource(rawFileDescriptor as resourceManager.RawFileDescriptor)

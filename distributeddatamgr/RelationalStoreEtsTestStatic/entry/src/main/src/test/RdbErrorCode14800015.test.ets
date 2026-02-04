@@ -9,10 +9,10 @@ import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
-let context:common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
-let dataBaseDir : String;
+let dataBaseDir: String = "";
 let domain: int  = 0x0000;
 let tag: string = 'RdbErrorCode14800015';
 const TAG = "[ttt]"
@@ -88,16 +88,16 @@ export default function RdbErrorCode14800015() {
       });
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
-      dataBaseDir = context.databaseDir + "/rdb/";
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
+      dataBaseDir = context!.databaseDir + "/rdb/";
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
     });
 
     afterAll(async () : Promise<void> => {
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
     })
 
     /**
@@ -111,7 +111,7 @@ export default function RdbErrorCode14800015() {
     it('testRdbStoreAttach0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
       console.log(TAG + "************* testRdbStoreAttach0008 start *************");
         try {
-        let store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        let store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         await store.executeSql(CREATE_TABLE_TEST1);
         await attachBatchInsert(store, "test1");
         let predicates = new data_relationalStore.RdbPredicates("test1");

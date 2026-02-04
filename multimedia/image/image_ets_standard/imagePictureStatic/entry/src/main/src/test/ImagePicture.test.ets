@@ -80,7 +80,7 @@ class MySequence implements rpc.Parcelable {
 export default function imagePicture() {
   let filesDir: string|undefined;
   let cacheDir: string|undefined;
-  let context: common.UIAbilityContext;
+  let context: common.UIAbilityContext | undefined;
   const Unsupported_operation_CODE = 7600201;
   const UNSUPPORTED_ERROR_CODE = 7600202;
   const UNSUPPORTED_DECODE_CODE = 7700301;
@@ -143,7 +143,7 @@ export default function imagePicture() {
         const filePath = filesDir + '/' + fileName
         imageSourceApi = image.createImageSource(filePath);
       } else if (type === "rawfile") {
-        const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+        const resourceMgr: resourceManager.ResourceManager = context!.resourceManager;
         const rawFileDescriptor = await resourceMgr.getRawFd(fileName);
         imageSourceApi = image.createImageSource(rawFileDescriptor);
       } else if (type === "incremental") {

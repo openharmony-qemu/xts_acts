@@ -27,7 +27,7 @@ import { initialize } from './AbilityContextHelper.test';
 
 let filesDir: string | undefined | null;
 let cacheDir: string | undefined | null;
-let testContext: common.UIAbilityContext;
+let testContext: common.UIAbilityContext | undefined;
 
 class picType {
   public name: string = ""
@@ -209,7 +209,7 @@ export default function imagePackerExifTest() {
         const filePath = filesDir + '/' + fileName
         imageSourceApi = image.createImageSource(filePath)
       } else if (type === "rawfile") {
-        const resourceMgr: resourceManager.ResourceManager = testContext.resourceManager
+        const resourceMgr: resourceManager.ResourceManager = testContext!.resourceManager
         const rawFileDescriptor = await resourceMgr.getRawFd(fileName)
         imageSourceApi = image.createImageSource(rawFileDescriptor)
       } else if (type === "incremental") {

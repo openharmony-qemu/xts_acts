@@ -23,8 +23,8 @@ import Utils from './Util.test';
 
 const TAG = "testTag";
 const STORE_NAME = "cursor_rdb.db";
-let rdbStore: relationalStore.RdbStore;
-let context: common.UIAbilityContext;
+let rdbStore: relationalStore.RdbStore | undefined;
+let context: common.UIAbilityContext | undefined;
 const config: relationalStore.StoreConfig = {
   "name": STORE_NAME,
   securityLevel: relationalStore.SecurityLevel.S1,
@@ -40,7 +40,7 @@ export default function relationalStoreCloudCursor() {
               abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
               await Utils.msSleep(5000);
               context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-              rdbStore = await relationalStore.getRdbStore(context, config);
+              rdbStore = await relationalStore.getRdbStore(context!, config);
               console.log(TAG + "create rdb store success")
               let sql = "CREATE TABLE IF NOT EXISTS query_tb (" +
                 "data TEXT, " +
@@ -98,7 +98,7 @@ export default function relationalStoreCloudCursor() {
         afterAll(async (): Promise<void> => {
             console.info(TAG + 'afterAll');
             try{
-                await relationalStore.deleteRdbStore(context, config)
+                await relationalStore.deleteRdbStore(context!, config)
                 console.log(TAG + "deleteRdbStore success")
               }catch (err: BusinessError)
               {
@@ -117,14 +117,14 @@ export default function relationalStoreCloudCursor() {
        */
       it('SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0100',
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
-          rdbStore = await relationalStore.getRdbStore(context, config);
-          if (rdbStore != undefined) {
+          rdbStore = await relationalStore.getRdbStore(context!, config);
+          if (rdbStore! != undefined) {
             try {
-              rdbStore.cleanDirtyData("wrongTest", 100, (err: BusinessError | null) => {
+              rdbStore?.cleanDirtyData("wrongTest", 100, (err: BusinessError | null) => {
               })
-              rdbStore.cleanDirtyData("test", 100, (err: BusinessError | null) => {
+              rdbStore?.cleanDirtyData("test", 100, (err: BusinessError | null) => {
               })
-              await rdbStore.cleanDirtyData("test");
+              await rdbStore!.cleanDirtyData("test");
               expect().assertFail();
             } catch (err) {
               console.error(TAG + 'Failed to cleanDirtyData: ' + err.code + ',message:' + err.message);

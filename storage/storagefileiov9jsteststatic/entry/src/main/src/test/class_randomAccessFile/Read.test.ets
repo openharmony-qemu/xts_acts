@@ -265,19 +265,19 @@ export default function fileIORandomAccessFileRead() {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_sync_static_010');
       let res = await Utils.prepareFile(fpath, FILE_CONTENT);
       expect(res).assertTrue();
-      let randomaccessfile: fs.RandomAccessFile;
+      let randomaccessfile: fs.RandomAccessFile | undefined;
 
       try {
         randomaccessfile = fs.createRandomAccessFileSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let length = 4096;
-        let bytesWritten = randomaccessfile.writeSync(new ArrayBuffer(length));
+        let bytesWritten = randomaccessfile!.writeSync(new ArrayBuffer(length));
         expect(bytesWritten == length).assertTrue();
-        randomaccessfile.setFilePointer(0);
-        randomaccessfile.readSync(new ArrayBuffer(16), { offset: 13, length: -1 });
+        randomaccessfile!.setFilePointer(0);
+        randomaccessfile!.readSync(new ArrayBuffer(16), { offset: 13, length: -1 });
         expect(false).assertTrue();
       } catch (err: BusinessError) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_sync_static_010 has failed for ' + err);
-        randomaccessfile.close();
+        randomaccessfile!.close();
         fs.unlinkSync(fpath);
         expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
       }
@@ -648,19 +648,19 @@ export default function fileIORandomAccessFileRead() {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_async_static_010');
       let res = await Utils.prepareFile(fpath, FILE_CONTENT);
       expect(res).assertTrue();
-      let randomaccessfile: fs.RandomAccessFile;
+      let randomaccessfile: fs.RandomAccessFile | undefined;
 
       try {
         randomaccessfile = await fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let length = 4096;
-        let bytesWritten = randomaccessfile.writeSync(new ArrayBuffer(length));
+        let bytesWritten = randomaccessfile!.writeSync(new ArrayBuffer(length));
         expect(bytesWritten == length).assertTrue();
-        randomaccessfile.setFilePointer(0);
-        await randomaccessfile.read(new ArrayBuffer(16), { offset: 13, length: -1 });
+        randomaccessfile!.setFilePointer(0);
+        await randomaccessfile!.read(new ArrayBuffer(16), { offset: 13, length: -1 });
         expect(false).assertTrue();
       } catch (err: BusinessError) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_async_static_010 has failed for ' + err);
-        randomaccessfile.close();
+        randomaccessfile!.close();
         fs.unlinkSync(fpath);
         expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
         done();

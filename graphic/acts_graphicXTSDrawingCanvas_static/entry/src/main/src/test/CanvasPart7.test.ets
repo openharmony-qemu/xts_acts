@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 
 export default function drawingTsCanvasPart7Test() {
   describe('DrawingTsCanvasPart7Test', () => {
-    let pixel: image.PixelMap;
+    let pixel: image.PixelMap | undefined;
     const DEFAULT = 0;
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
@@ -62,7 +62,7 @@ export default function drawingTsCanvasPart7Test() {
     it('testCanvasDrawQuickRejectPathNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testCanvasDrawQuickRejectPathNormalStatic';
       const path = new drawing.Path();
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       path.moveTo(-100,-100);
       path.lineTo(-50, -50);
       try {
@@ -146,7 +146,7 @@ export default function drawingTsCanvasPart7Test() {
     it('testCanvasDrawQuickRejectPathMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawQuickRejectPathMultipleCallsStatic';
       const path = new drawing.Path();
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       for(let i = 0; i < 20; i++) {
         path.moveTo(100 + i * 0.01, 100 + i * 0.01);
         path.lineTo(150 + i * 0.01, 50 + i * 0.01);
@@ -171,7 +171,7 @@ export default function drawingTsCanvasPart7Test() {
     it('testCanvasDrawQuickRejectRectNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, () => {
       const msg = 'testCanvasDrawQuickRejectRectNormalStatic';
       const path = new drawing.Path();
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       let rectQuire: common2D.Rect = { left: -150, top: 10, right: -100, bottom: 100 };
       try {
         let isSuccess1 = canvas.quickRejectRect(rectQuire);
@@ -261,7 +261,7 @@ export default function drawingTsCanvasPart7Test() {
      */
     it('testCanvasDrawQuickRejectRectMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawQuickRejectRectMultipleCallsStatic';
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       for(let i = 0; i < 20; i++) {
         let rect: common2D.Rect = {
             left: 100 + i * 0.01, top: 100 + i * 0.01, right: 300 + i * 0.01, bottom: 300 + i * 0.01
@@ -286,7 +286,7 @@ export default function drawingTsCanvasPart7Test() {
      */
     it('testCanvasDrawQuickRejectRectMaxStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawQuickRejectRectMaxStatic';
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       let rect: common2D.Rect = {
         left: Number.MAX_VALUE, top: Number.MAX_VALUE, right: Number.MAX_VALUE + 100, bottom: Number.MAX_VALUE + 100
       };
@@ -320,7 +320,7 @@ export default function drawingTsCanvasPart7Test() {
      */
     it('testCanvasDrawArcWithCenterNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawArcWithCenterNormalStatic';
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       let rect: common2D.Rect = {
         left: 100, top: 20, right: 120, bottom: 120
       };
@@ -450,7 +450,7 @@ export default function drawingTsCanvasPart7Test() {
     it('testCanvasDrawArcWithCenterMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawArcWithCenterMultipleCallsStatic';
       const path = new drawing.Path();
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       for(let i = 0; i < 20; i++) {
         let rect: common2D.Rect = {
           left: 100 + i * 0.01, top: 100 + i * 0.01, right: 300 + i * 0.01, bottom: 300 + i * 0.01
@@ -475,7 +475,7 @@ export default function drawingTsCanvasPart7Test() {
     it('testCanvasDrawArcWithCenterMaxStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawArcWithCenterMaxStatic';
       const path = new drawing.Path();
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       let rect: common2D.Rect = {
         left: Number.MAX_VALUE, top: Number.MAX_VALUE, right: Number.MAX_VALUE + 100, bottom: Number.MAX_VALUE + 100
       };
@@ -507,11 +507,11 @@ export default function drawingTsCanvasPart7Test() {
      */
     it('testCanvasDrawImageNineNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testCanvasDrawImageNineNormalStatic';
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       let center: common2D.Rect = { left: 100, top: 100, right: 900, bottom: 1500 };
       let dst: common2D.Rect = { left: -50, top: -50, right: 2000, bottom: 1600 };
       try {
-        canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_NEAREST);
+        canvas.drawImageNine(pixel!, center, dst, drawing.FilterMode.FILTER_MODE_NEAREST);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `drawImageNine 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -520,7 +520,7 @@ export default function drawingTsCanvasPart7Test() {
       center = { left: -100, top: -100, right: 50, bottom: 100 };
       dst = { left: 0, top: 0, right: 200, bottom: 200 };
       try {
-        canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
+        canvas.drawImageNine(pixel!, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `drawImageNine 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -529,7 +529,7 @@ export default function drawingTsCanvasPart7Test() {
       center = { left: 200, top: 200, right: 100000, bottom: 100000 };
       dst = { left: 0, top: 0, right: 200, bottom: 200 };
       try {
-        canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
+        canvas.drawImageNine(pixel!, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `drawImageNine 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -538,7 +538,7 @@ export default function drawingTsCanvasPart7Test() {
       center = { left: 100, top: 100, right: 200, bottom: 200 };
       dst = { left: 0, top: 0, right: 800, bottom: 800 };
       try {
-        canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_NEAREST);
+        canvas.drawImageNine(pixel!, center, dst, drawing.FilterMode.FILTER_MODE_NEAREST);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `drawImageNine 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -547,7 +547,7 @@ export default function drawingTsCanvasPart7Test() {
       center = { left: 10.1, top: 10.1, right: 300.1, bottom: 300.1 };
       dst = { left: 0, top: 0, right: 50.1, bottom: 50.1 };
       try {
-        canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
+        canvas.drawImageNine(pixel!, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `drawImageNine 5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -565,12 +565,12 @@ export default function drawingTsCanvasPart7Test() {
     it('testCanvasDrawImageNineMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawImageNineMultipleCallsStatic';
       const path = new drawing.Path();
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       for(let i = 0; i < 20; i++) {
         let center: common2D.Rect = { left: 100 + i * 0.01, top: 100 + i * 0.01, right: 900 + i * 0.01, bottom: 1500 + i * 0.01 };
         let dst: common2D.Rect = { left: -50 + i * 0.01, top: -50 + i * 0.01, right: 2000 + i * 0.01, bottom: 1600 + i * 0.01 };
         try {
-          canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
+          canvas.drawImageNine(pixel!, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
         } catch (e) {
           e = e as BusinessError;
           console.info(msg + `drawImageNine ${i} errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -589,13 +589,13 @@ export default function drawingTsCanvasPart7Test() {
     it('testCanvasDrawImageNineMaxStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawImageNineMaxStatic';
       const path = new drawing.Path();
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       let center: common2D.Rect = {
         left: Number.MAX_VALUE, top: Number.MAX_VALUE, right: Number.MAX_VALUE + 100, bottom: Number.MAX_VALUE + 100
       };
       let dst: common2D.Rect = { left: -50 , top: -50 , right: 2000 , bottom: 1600};
       try {
-        canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
+        canvas.drawImageNine(pixel!, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `drawImageNine 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -605,7 +605,7 @@ export default function drawingTsCanvasPart7Test() {
         left: -Number.MAX_VALUE, top: -Number.MAX_VALUE, right: Number.MAX_VALUE + 100, bottom: Number.MAX_VALUE + 100
       };
       try {
-        canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
+        canvas.drawImageNine(pixel!, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `drawImageNine 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -616,7 +616,7 @@ export default function drawingTsCanvasPart7Test() {
         left: Number.MAX_VALUE, top: Number.MAX_VALUE, right: Number.MAX_VALUE + 100, bottom: Number.MAX_VALUE + 100
       };
       try {
-        canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
+        canvas.drawImageNine(pixel!, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `drawImageNine 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -626,7 +626,7 @@ export default function drawingTsCanvasPart7Test() {
         left: -Number.MAX_VALUE, top: -Number.MAX_VALUE, right: Number.MAX_VALUE + 100, bottom: Number.MAX_VALUE + 100
       };
       try {
-        canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
+        canvas.drawImageNine(pixel!, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `drawImageNine 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -643,7 +643,7 @@ export default function drawingTsCanvasPart7Test() {
      */
     it('testCanvasDrawImageLatticeNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawImageLatticeNormalStatic';
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       let fXDivs: Array<int> = [80, 150];
       let fYDivs: Array<int> = [80, 150];
       let fXCount = 2
@@ -651,7 +651,7 @@ export default function drawingTsCanvasPart7Test() {
       let lattice = drawing.Lattice.createImageLattice(fXDivs, fYDivs, fXCount, fYCount, null, null, null) as drawing.Lattice;
       let dst: common2D.Rect = { left: 0, top: 0, right: 200, bottom: 200 };
       try {
-        canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_NEAREST);
+        canvas.drawImageLattice(pixel!, lattice, dst, drawing.FilterMode.FILTER_MODE_NEAREST);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `drawImageLattice 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -664,7 +664,7 @@ export default function drawingTsCanvasPart7Test() {
       lattice = drawing.Lattice.createImageLattice(fXDivs1, fYDivs1, fXCount, fYCount, null, null, null) as drawing.Lattice;
       dst = { left: 225, top:0, right: 425, bottom: 200 };
       try {
-        canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
+        canvas.drawImageLattice(pixel!, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `drawImageLattice 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -684,7 +684,7 @@ export default function drawingTsCanvasPart7Test() {
       lattice = drawing.Lattice.createImageLattice(fXDivs2, fYDivs2, fXCount, fYCount, bound1, null, null) as drawing.Lattice;
       dst = { left: 450, top:0, right: 650, bottom: 200 };
       try {
-        canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
+        canvas.drawImageLattice(pixel!, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `drawImageLattice 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -693,7 +693,7 @@ export default function drawingTsCanvasPart7Test() {
 
       dst = { left: 10.2, top: 550.1, right: 300.1, bottom: 850.1 };
       try {
-        canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
+        canvas.drawImageLattice(pixel!, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `drawImageLattice 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -702,7 +702,7 @@ export default function drawingTsCanvasPart7Test() {
 
       dst = { left: -10, top: -60, right: 300000, bottom: 300000 };
       try {
-        canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
+        canvas.drawImageLattice(pixel!, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `drawImageLattice 5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -720,7 +720,7 @@ export default function drawingTsCanvasPart7Test() {
     it('testCanvasDrawImageLatticeMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testCanvasDrawImageLatticeMultipleCallsStatic';
       const path = new drawing.Path();
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       for(let i = 0; i < 20; i++) {
         let xDivs: Array<int> = [80, 160, 320, 560];
         let yDivs: Array<int> = [80, 160, 320, 560];
@@ -729,7 +729,7 @@ export default function drawingTsCanvasPart7Test() {
         let lattice = drawing.Lattice.createImageLattice(xDivs, yDivs, xCount, yCount, null, null, null) as drawing.Lattice;
         let dst: common2D.Rect = { left: 0+ i * 0.01, top: 0+ i * 0.01, right: 200+ i * 0.01, bottom: 200+ i * 0.01 };
         try {
-          canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
+          canvas.drawImageLattice(pixel!, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
         } catch (e) {
           e = e as BusinessError;
           console.info(msg + `drawImageLattice 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -748,7 +748,7 @@ export default function drawingTsCanvasPart7Test() {
     it('testCanvasDrawImageLatticeMaxStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testCanvasDrawImageLatticeMaxStatic';
       const path = new drawing.Path();
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       let xDivs: Array<int> = [80, 160, 320, 560];
       let yDivs: Array<int> = [80, 160, 320, 560];
       let xCount = 4;
@@ -758,7 +758,7 @@ export default function drawingTsCanvasPart7Test() {
         left: Number.MAX_VALUE, top: Number.MAX_VALUE, right: Number.MAX_VALUE + 100, bottom: Number.MAX_VALUE + 100
       };
       try {
-        canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_NEAREST);
+        canvas.drawImageLattice(pixel!, lattice, dst, drawing.FilterMode.FILTER_MODE_NEAREST);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `drawImageLattice 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -768,7 +768,7 @@ export default function drawingTsCanvasPart7Test() {
         left: -Number.MAX_VALUE, top: -Number.MAX_VALUE, right: Number.MAX_VALUE + 100, bottom: Number.MAX_VALUE + 100
       };
       try {
-        canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_NEAREST);
+        canvas.drawImageLattice(pixel!, lattice, dst, drawing.FilterMode.FILTER_MODE_NEAREST);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `drawImageLattice 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);

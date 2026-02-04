@@ -35,7 +35,7 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
     console.log(
       "##########start SecuritySignatureVerificationSM2Jsunit##########"
     );
-    let asyKeyPair: cryptoFramework.KeyPair;
+    let asyKeyPair: cryptoFramework.KeyPair | undefined;
     beforeAll(async () => {
       asyKeyPair = await genAsyKeyPair();
     });
@@ -344,7 +344,7 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         } catch (err: BusinessError) {
           expect(err.code).assertEqual(401);
         }
-        await signGenerator.init(asyKeyPair.priKey);
+        await signGenerator.init(asyKeyPair!.priKey);
         done();
       }
     );
@@ -366,7 +366,7 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
           data: stringTouInt8Array(globalText)
         };
         let signGenerator: cryptoFramework.Sign = cryptoFramework.createSign("SM2_256|SM3");
-        await signGenerator.init(asyKeyPair.priKey);
+        await signGenerator.init(asyKeyPair!.priKey);
 
         try {
           await signGenerator.sign(null);

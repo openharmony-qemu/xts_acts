@@ -20,7 +20,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 export default function abilityTest() {
     describe('AVSessionManagerCallback', () => {
         console.info('TestLog: SAVSessionManagerCallback 1');
@@ -56,8 +56,8 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            let session: avSession.AVSession | null;
-            avSession.createAVSession(context, tag, 'audio', (err , value) => {
+            let session: avSession.AVSession | null = null;
+            avSession.createAVSession(context!, tag, 'audio', (err , value) => {
                 if (err?.code) {
                     console.info(`TestLog: AVSession created error: code: ${err?.code}, message: ${err?.message}`);
                     expect(false).assertTrue()
@@ -93,7 +93,7 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            avSession.createAVSession(context, '', 'audio', (err, data) => {
+            avSession.createAVSession(context!, '', 'audio', (err, data) => {
                 if (err) {
                     console.info(`TestLog: AVSession created error: code: ${err.code}, message: ${err.message}`);
                     expect(err?.code).assertEqual(401);
@@ -116,7 +116,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let session: avSession.AVSession|undefined;
-            avSession.createAVSession(context, tag, "video", (err, value) => {
+            avSession.createAVSession(context!, tag, "video", (err, value) => {
                 if (err?.code) {
                     console.info(`TestLog: AVSession created error: code: ${err?.code}, message: ${err?.message}`);
                     expect(false).assertTrue()

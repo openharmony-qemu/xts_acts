@@ -25,7 +25,7 @@ import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testBtBleTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-let gattClientDevice: ble.GattClientDevice;
+let gattClientDevice: ble.GattClientDevice | undefined;
 let gattServerDevice: ble.GattServer;
 let g_context: common.UIAbilityContext;
 
@@ -77,7 +77,7 @@ export default function bluetoothBleTest() {
          * @tc.level  LEVEL0
          */
         it("clientCloseTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let clientDevice: ble.GattClientDevice;
+            let clientDevice: ble.GattClientDevice | undefined;
             try {
                 clientDevice = ble.createGattClientDevice("00:00:00:00:00:00");
                 hilog.info(domain, tag, 'createGattClientDevice result:' + clientDevice);
@@ -93,7 +93,7 @@ export default function bluetoothBleTest() {
                 }
             }
             try {
-                clientDevice.close();
+                clientDevice?.close();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "clientDevice close get errCode:" + err.code + ",errMessage:" + err.message);
@@ -116,7 +116,7 @@ export default function bluetoothBleTest() {
          * @tc.level  LEVEL0
          */
         it("serverCloseTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let serverDevice:ble.GattServer;
+            let serverDevice:ble.GattServer | undefined;
             try {
                 serverDevice = ble.createGattServer();
                 hilog.info(domain, tag, 'createGattServer result:' + serverDevice);
@@ -127,7 +127,7 @@ export default function bluetoothBleTest() {
                 expect().assertFail();
             }
             try {
-                serverDevice.close();
+                serverDevice?.close();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "serverDevice close get errCode:" + err.code + ",errMessage:" + err.message);
@@ -151,7 +151,7 @@ export default function bluetoothBleTest() {
          */
         it("setBLEMtuSizeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                gattClientDevice.setBLEMtuSize(500);
+                gattClientDevice?.setBLEMtuSize(500);
                 hilog.info(domain, tag, 'setBLEMtuSize success');
                 expect().assertFail();
             } catch (err: BusinessError) {
@@ -177,7 +177,7 @@ export default function bluetoothBleTest() {
          */
         it("clientConnectDisconnectTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                gattClientDevice.connect();
+                gattClientDevice?.connect();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "gattClientDevice connect get errCode:" + err.code + ",errMessage:" + err.message);
@@ -189,7 +189,7 @@ export default function bluetoothBleTest() {
                 }
             }
             try {
-                gattClientDevice.disconnect();
+                gattClientDevice?.disconnect();
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "gattClientDevice disconnect get errCode:" + err.code + ",errMessage:" + err.message);

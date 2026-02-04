@@ -59,7 +59,7 @@ const USED_DEVICE_IDS = ['A12C1F9261528B21F95778D2FDC0B2E33943E6251AC5487F4473D0
 
 const UNUSED_DEVICE_IDS: string[] = []; /* add you test device-ids here */
 let syncDeviceIds = USED_DEVICE_IDS.concat(UNUSED_DEVICE_IDS);
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 function sleep(count: int): Promise<int> {
@@ -108,14 +108,14 @@ export default function SingleKvStoreCallbackTest() {
         // });
         await Utils.msSleep(8000)
         context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', "============beforeAll context e: " + e);
         hilog.info(domain, tag, '%{public}s', '================ beforeAll context end==========');
       }
       const config: factory.KVManagerConfig = {
         bundleName: TEST_BUNDLE_NAME,
-        context: context
+        context: context!
       };
 
       console.info('beforeAll config:' + JSON.stringify(config));
@@ -1999,7 +1999,7 @@ export default function SingleKvStoreCallbackTest() {
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULT_CALLBACK_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let resultSet: factory.KVStoreResultSet;
+        let resultSet: factory.KVStoreResultSet | undefined;
         console.info('SingleKvStoreGetResultSetCallbackTest001');
         try {
           let entries: factory.Entry[] = [];
@@ -2022,7 +2022,7 @@ export default function SingleKvStoreCallbackTest() {
                 resultSet = result as factory.KVStoreResultSet;
                 expect(resultSet!.getCount() == 10).assertTrue();
                 console.info('SingleKvStoreGetResultSetCallbackTest001 getCount() == 10');
-                kvStore!.closeResultSet(resultSet, (err, data) => {
+                kvStore!.closeResultSet(resultSet!, (err, data) => {
                   console.info('SingleKvStoreGetResultSetCallbackTest001 closeResultSet success');
                   expect(err == undefined).assertTrue();
                   done();
@@ -2049,7 +2049,7 @@ export default function SingleKvStoreCallbackTest() {
       async (done: () => void): Promise<void> => {
         console.log('SingleKvStoreGetResultSetPredicatesCallbackTest001');
         try {
-          let resultSet: factory.KVStoreResultSet;
+          let resultSet: factory.KVStoreResultSet | undefined;
           let query = new factory.Query();
           await kvStore!.getResultSet(query).then((result) => {
             console.log('SingleKvStoreGetResultSetPredicatesCallbackTest001 getResultSet success');
@@ -2059,7 +2059,7 @@ export default function SingleKvStoreCallbackTest() {
               ', error code is ${err.code}, message is ${err.message}');
             expect(err == undefined).assertTrue();
           });
-          kvStore!.closeResultSet(resultSet, (err, data) => {
+          kvStore!.closeResultSet(resultSet!, (err, data) => {
             console.info('SingleKvStoreGetResultSetPredicatesCallbackTest001 closeResultSet success');
             done();
           })
@@ -2082,14 +2082,14 @@ export default function SingleKvStoreCallbackTest() {
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_CLOSERESULT_CALLBACK_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let resultSet: factory.KVStoreResultSet;
+        let resultSet: factory.KVStoreResultSet | undefined;
         //(done: () => void) => {
         console.info('SingleKvStoreCloseResultSetCallbackTest002');
         try {
           kvStore!.getResultSet('batch_test_string_key',(err: BusinessError | null, result: factory.KVStoreResultSet | undefined) => {
             console.info('SingleKvStoreCloseResultSetCallbackTest002 getResultSet success');
             resultSet = result as factory.KVStoreResultSet;
-            kvStore!.closeResultSet(resultSet, (err, data) => {
+            kvStore!.closeResultSet(resultSet!, (err, data) => {
               if (err == undefined) {
                 console.info('SingleKvStoreCloseResultSetCallbackTest002 closeResultSet success');
                 expect(err == undefined).assertTrue();

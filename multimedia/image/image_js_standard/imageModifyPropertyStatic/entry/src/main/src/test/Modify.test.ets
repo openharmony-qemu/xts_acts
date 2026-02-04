@@ -35,7 +35,7 @@ class Logger {
 export default function imageModifyProperty() {
   describe('imageModifyProperty', (): void => {
     let filesDir: string | undefined | null;
-    let filePath: string;
+    let filePath: string = '';
     let ERROR_CODE1 = 62980135;
     let ERROR_CODE2 = 62980146;
     let ERROR_CODE3 = 62980096;

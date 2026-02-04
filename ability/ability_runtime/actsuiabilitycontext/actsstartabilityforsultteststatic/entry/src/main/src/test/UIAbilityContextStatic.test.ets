@@ -31,7 +31,7 @@ let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let context: common.UIAbilityContext
+let context: common.UIAbilityContext | undefined;
 
 let color: ArrayBuffer = new ArrayBuffer(512 * 512 * 4);
 let opts: image.InitializationOptions = {editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}};
@@ -55,7 +55,7 @@ export default function UIAbilityContextStatic() {
       await Utils.msSleep(2000);
       hilog.info(domain, tag, 'start success');
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
-      await context.revokeDelegator().then(() => {
+      await context!.revokeDelegator().then(() => {
         hilog.info(domain, tag, 'revokeDelegator success');
       }).catch((err: Error): void => {
         if (err.code == 801) {
@@ -63,7 +63,7 @@ export default function UIAbilityContextStatic() {
         }
         hilog.info(domain, tag, `beforeAll revokeDelegator failed, code is ${err.code}, message is ${err.message}`);
       });
-      hilog.info(domain, tag, 'getcontext success, context: ' + context);
+      hilog.info(domain, tag, 'getcontext success, context: ' + context!);
     })
 
     /**
@@ -80,7 +80,7 @@ export default function UIAbilityContextStatic() {
         abilityName: 'MainAbility1'
       };
       try {
-        context.startAbility(want, (err: BusinessError<void>|null) => {
+        context?.startAbility(want, (err: BusinessError<void>|null) => {
           if (err?.code) {
             hilog.info(domain, tag,`startAbility failed, code is ${err?.code}, message is ${err?.message}`);
             return;
@@ -93,7 +93,7 @@ export default function UIAbilityContextStatic() {
         hilog.info(domain, tag,`startAbility failed, code is ${code}, message is ${message}`);
       }
       let info: string;
-      context.showAbility().then(() => {
+      context?.showAbility().then(() => {
         hilog.info(domain, tag,`showAbility success`);
       }).catch((err: Error): void => {
         hilog.info(domain, tag,`showAbility fail, err: ${JSON.stringify(err)}`);
@@ -130,7 +130,7 @@ export default function UIAbilityContextStatic() {
         abilityName: 'MainAbility1'
       };
       try {
-        context.startAbility(want, (err: BusinessError<void>|null) => {
+        context?.startAbility(want, (err: BusinessError<void>|null) => {
           if (err?.code) {
             hilog.info(domain, tag,`startAbility failed, code is ${err?.code}, message is ${err?.message}`);
             return;
@@ -143,7 +143,7 @@ export default function UIAbilityContextStatic() {
         hilog.info(domain, tag,`startAbility failed, code is ${code}, message is ${message}`);
       }
       let info: string;
-      context.hideAbility().then(() => {
+      context?.hideAbility().then(() => {
         hilog.info(domain, tag,`highAbility success`);
       }).catch((err: Error): void => {
         hilog.info(domain, tag,`highAbility fail, err: ${JSON.stringify(err)}`);
@@ -177,7 +177,7 @@ export default function UIAbilityContextStatic() {
     it('SUB_Ability_AbilityRuntime_BackgroundRecovery_Static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let par: boolean = true
       try {
-        context.setRestoreEnabled(par);
+        context?.setRestoreEnabled(par);
         hilog.info(domain, tag, 'setRestoreEnabled success ');
         expect(par).assertTrue()
         done();
@@ -200,7 +200,7 @@ export default function UIAbilityContextStatic() {
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "it begin");
       try {
-        await context.setAbilityInstanceInfo('', pixelMap);
+        await context!.setAbilityInstanceInfo('', pixelMap);
         hilog.info(domain, tag, "fail");
         try { expect().assertFail(); } catch (err) {}
         done();
@@ -224,7 +224,7 @@ export default function UIAbilityContextStatic() {
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag , "it begin");
       try {
-        await context.setAbilityInstanceInfo('instance label', pixelMap)
+        await context!.setAbilityInstanceInfo('instance label', pixelMap)
           .catch((err: Error): void => {
             hilog.info(domain, tag , "setAbilityInstanceInfo failed: " + JSON.stringify(err))
             let code = err?.code;
@@ -258,7 +258,7 @@ export default function UIAbilityContextStatic() {
         done();
         return;
       }
-      context.revokeDelegator().then(() => {
+      context?.revokeDelegator().then(() => {
         hilog.info(domain,  tag ,'%{public}s', 'revokeDelegator success');
       }).catch((err: Error): void => {
         expect(err.code).assertEqual(16000084);
@@ -278,7 +278,7 @@ export default function UIAbilityContextStatic() {
      */
     it('SUB_Ability_AbilityRuntime_PluginAbility_Static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        application.createPluginModuleContext(context, '', '')
+        application.createPluginModuleContext(context!, '', '')
           .then((data: common.Context): void => {
             hilog.info(0x0000, 'testTag', 'createPluginModuleContext success data:' + JSON.stringify(data));
           })

@@ -27,10 +27,10 @@ const tag = "TestTag";
 
 const TEST_BUNDLE_NAME = 'com.example.kvstoreetstest.static';
 const TEST_STORE_ID = 'SingleKvStoreReturnValueId';
-let kvManager: factory.KVManager| null = null;
-let kvStore : factory.SingleKVStore| null = null;
+let kvManager: factory.KVManager | null = null;
+let kvStore: factory.SingleKVStore | null = null;
 let resultSet : factory.KVStoreResultSet | null = null;
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 const TAG = "[Kv_KVStoreResultSet_Ets_TEST >>>>>> ]"
@@ -58,17 +58,17 @@ export default function KVStoreResultSetReturnValue(){
         // });
         await Utils.msSleep(8000)
         context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', "============beforeAll context e: " + e);
         hilog.info(domain, tag, '%{public}s', '================ beforeAll context end==========');
       }
       const config: factory.KVManagerConfig = {
         bundleName: TEST_BUNDLE_NAME,
-        context: context
+        context: context!
       };
 
-      console.info(TAG + 'beforeAll context.databaseDir=' + context.databaseDir);
+      console.info(TAG + 'beforeAll context.databaseDir=' + context!.databaseDir);
       kvManager = factory.createKVManager(config);
       console.info(TAG + 'beforeAll end, kvManager=' + kvManager);
       console.info(TAG + 'beforeAll end');
@@ -354,7 +354,7 @@ export default function KVStoreResultSetReturnValue(){
      * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let resultSet1 : factory.KVStoreResultSet;
+      let resultSet1 : factory.KVStoreResultSet | null = null;
       if (kvStore !== null) {
         await kvStore!.getResultSet('AA').then((result) => {
           console.info(TAG +' getResultSet success');
@@ -367,7 +367,7 @@ export default function KVStoreResultSetReturnValue(){
           expect(null).assertFail();
         });
 
-        await kvStore!.closeResultSet(resultSet1).then((err) => {
+        await kvStore!.closeResultSet(resultSet1!).then((err) => {
           console.info(TAG +' closeResultSet success');
         }).catch((err: Error) => {
           console.error(TAG +' closeResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
