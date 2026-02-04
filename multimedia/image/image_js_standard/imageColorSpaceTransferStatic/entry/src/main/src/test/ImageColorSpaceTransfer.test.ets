@@ -72,7 +72,8 @@ const createPixelmapTestPromise = async (
         csm = colorSpaceManager.create(colorSpace as colorSpaceManager.ColorSpace);
       }
       let decodingOptions: image.DecodingOptions = { desiredColorSpace: csm };
-      let pixelMap = waitForCompletion<image.PixelMap>(async ():Promise<image.PixelMap> => {await imageSource!.createPixelMap(decodingOptions);})
+      let pixelMap: image.PixelMap | undefined;
+      waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap(decodingOptions);})
       logger.log("PixelMap " + pixelMap);
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;
@@ -160,7 +161,8 @@ const applyColorSpacePromiseTest = async (
     logger.log("ImageSource " + (imageSource != undefined));
     if (imageSource != undefined) {
       globalimageSource = imageSource;
-      let pixelMap = waitForCompletion<image.PixelMap>(async ():Promise<image.PixelMap> => {await imageSource!.createPixelMap();})
+      let pixelMap: image.PixelMap | undefined;
+      waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap();})
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;
         let csmModify: colorSpaceManager.ColorSpaceManager;
@@ -216,7 +218,8 @@ const applyColorSpaceCbTest = async (
     logger.log("ImageSource " + (imageSource != undefined));
     if (imageSource != undefined) {
       globalimageSource = imageSource;
-      let pixelMap = waitForCompletion<image.PixelMap>(async ():Promise<image.PixelMap> => {await imageSource!.createPixelMap();})
+      let pixelMap: image.PixelMap | undefined;
+      waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap();})
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;
         let csmModify: colorSpaceManager.ColorSpaceManager;
