@@ -22,18 +22,8 @@
 #include <vector>
 #include "vulkan/vulkan.h"
 #include "vulkan/vulkan_ohos.h"
-
 namespace vulkan {
 namespace loader {
-
-// 以下全局函数通过 libvulkan.so 链接直接可用，无需声明函数指针：
-// - vkEnumerateInstanceExtensionProperties
-// - vkEnumerateInstanceLayerProperties
-// - vkEnumerateDeviceExtensionProperties
-// - vkEnumerateDeviceLayerProperties
-// - vkCreateInstance
-// - vkGetInstanceProcAddr
-// - vkGetDeviceProcAddr
 
 // 扩展函数需要通过 vkGetInstanceProcAddr 动态获取
 static PFN_vkCreateDebugUtilsMessengerEXT vkCreateDebugUtilsMessengerEXT = nullptr;
