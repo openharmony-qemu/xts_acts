@@ -41,6 +41,7 @@ group("multimedia") {
       "audio/audio_js_standard/AudioCapturerStatic:audio_capturer_js_static_hap",
       "audio/audio_js_standard/AudioCapturereEnhance:audio_capturer_enhance_ets_hap",
       "audio/audio_js_standard/AudioCapturereEnhanceStatic:audio_capturer_enhance_ets_static_hap",
+      "audio/audio_js_standard/AudioCapturerPlayback:ActsAudioCapturerPlaybackTest",
       "audio/audio_js_standard/AudioEventManagement:audio_eventmanagement_js_hap",
       "audio/audio_js_standard/AudioEventManagementStatic:audio_eventmanagement_js_static_hap",
       "audio/audio_js_standard/AudioHaptic:audio_haptic_ets_hap",
