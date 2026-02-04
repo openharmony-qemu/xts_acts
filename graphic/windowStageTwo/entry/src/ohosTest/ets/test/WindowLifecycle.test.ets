@@ -20,6 +20,8 @@ import { BusinessError, settings } from '@kit.BasicServicesKit';
 import * as LoadContentByName from '../testability/pages/WindowTest/LoadContentByName';
 import { abilityAccessCtrl, PermissionRequestResult, Permissions, StartOptions } from '@kit.AbilityKit';
 import { Driver, ON } from '@kit.TestKit';
+import { display } from '@kit.ArkUI';
+import deviceInfo from '@ohos.deviceInfo';
 
 let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
 
@@ -155,6 +157,8 @@ export default function WindowLifecycle() {
     let isAutoWindow: string = '';
     let windowclassArr: Array<window.Window>;
     let isFreeWindowMode = false;
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -3144,7 +3148,7 @@ export default function WindowLifecycle() {
       console.log(caseName + " begin");
       let driver = Driver.create()
       let width = display.getDefaultDisplaySync().width;
-      if (isFreeWindowMode === true) {
+      if (deviceType === '2in1') {
         try {
           let mainWindowClass = windowStage.getMainWindowSync();
           await mainWindowClass.setWindowTitle("windowClass2")
@@ -3222,7 +3226,7 @@ export default function WindowLifecycle() {
       console.log(caseName + " begin");
       let driver = Driver.create()
       let width = display.getDefaultDisplaySync().width;
-      if (isFreeWindowMode === true) {
+      if (deviceType === '2in1') {
         try {
           let mainWindowClass = windowStage.getMainWindowSync();
           await mainWindowClass.setWindowTitle("windowClass2")
