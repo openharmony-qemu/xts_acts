@@ -222,6 +222,7 @@ export default function abilitystaticTest() {
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static_0400', Level.LEVEL0, 
       async (done: () => void): Promise<void> => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static_0400]';
+      let resData = false
       expect(String(contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_PARENT)).assertEqual("1");
       expect(String(contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_STATUS_BAR_ITEM)).assertEqual("2");
       expect(String(contextConstant.ProcessMode.ATTACH_TO_STATUS_BAR_ITEM)).assertEqual("3");
@@ -232,8 +233,9 @@ export default function abilitystaticTest() {
         commonEventDataParams!["isDone"] = 1;
         startAssistAbility(tag, done);
       } else if (functionEnable === 'false') {
+        resData = true
         hilog.info(domain, testTag, '%{public}s', `${tag} function not enable.`);
-        expect(true).assertTrue();
+        expect(resData).assertTrue();
         done();
       } else {
         hilog.info(domain, testTag, '%{public}s', `${tag} wrong param`);

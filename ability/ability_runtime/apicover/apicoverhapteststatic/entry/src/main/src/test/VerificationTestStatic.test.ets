@@ -124,5 +124,62 @@ export default function verificationStaticTest() {
           }
         })
       })
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_SetMissionLabel_static_0500
+     * @tc.number SUB_AA_OpenHarmony_SetMissionLabel_static_0500
+     * @tc.desc   Verify setMissionLabel that the input parameter is string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_AA_OpenHarmony_SetMissionLabel_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        tag = `SUB_AA_OpenHarmony_SetMissionLabel_static_0500`;
+        hilog.info(domain, tag, `it begin`);
+        let label = '';
+        let missionLabelUpdatedFlag = false;
+        const context: common.UIAbilityContext =
+          AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
+        context.setMissionLabel(label).then(() => {
+          hilog.info(domain, tag, 'setMissionLabel success');
+          missionLabelUpdatedFlag = true;
+          expect(missionLabelUpdatedFlag).assertTrue();
+          done();
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, 'setMissionLabel err');
+          expect().assertFail();
+          done();
+        });
+      })
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_SetMissionLabel_static_0600
+     * @tc.number SUB_AA_OpenHarmony_SetMissionLabel_static_0600
+     * @tc.desc   Verify multiple setMissionLabel that the input parameter is string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_AA_OpenHarmony_SetMissionLabel_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        tag = `SUB_AA_OpenHarmony_SetMissionLabel_static_0600`;
+        hilog.info(domain, tag, `it begin`);
+        let label = '';
+        let missionLabelUpdatedFlag = false;
+        const context: common.UIAbilityContext =
+          AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
+        context.setMissionLabel(label, (err: BusinessError<void> | null) => {
+          if (err == null || err.code == 0) {
+            missionLabelUpdatedFlag = true;
+            expect(missionLabelUpdatedFlag).assertTrue();
+            done();
+          } else {
+            hilog.info(domain, tag, 'setMissionLabel err');
+            expect().assertFail();
+            done()
+          }
+        })
+      })
   })
 }

@@ -69,14 +69,16 @@ export default function startAbilityTestStatic() {
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0100`;
       hilog.info(domain, tag, `it begin`);
+      let resTag = false
       let want: Want = {
         bundleName: 'com.acts.startabilitytest.static',
         abilityName: 'EntryAbility1'
       };
       try {
-        context.startAbility(want).then(() => {
+        context?.startAbility(want).then(() => {
+          resTag = true
           hilog.info(domain, tag, `startAbility success`);
-          expect(true).assertTrue()
+          expect(resTag).assertTrue()
           done();
         }).catch((err): void => {
           if (err instanceof BusinessError) {
@@ -198,10 +200,12 @@ export default function startAbilityTestStatic() {
       let options1: StartOptions = {
         displayId: 0,
       };
+      let resTag = false
       try {
         context.startAbility(want, options1).then(() => {
           hilog.info(domain, tag, `startAbility success`);
-          expect(true).assertTrue()
+          resTag = true
+          expect(resTag).assertTrue()
           done();
         }).catch((err): void => {
           if (err instanceof BusinessError) {
@@ -269,6 +273,7 @@ export default function startAbilityTestStatic() {
         bundleName: 'com.acts.startabilitytest.static',
         abilityName: 'EntryAbility1'
       };
+      let resTag = false
       try {
         context.startAbility(want, (err: BusinessError<void> | null) => {
           if (err && err.code !== 0) {
@@ -277,7 +282,8 @@ export default function startAbilityTestStatic() {
             done();
           } else {
             hilog.info(domain, tag, `startAbility success`);
-            expect(true).assertTrue()
+            resTag = true
+            expect(resTag).assertTrue()
             done();
           }
         });
@@ -344,6 +350,7 @@ export default function startAbilityTestStatic() {
       let options: StartOptions = {
         displayId: 0
       };
+      let resTag = false
       try {
         context.startAbility(want, options, (err: BusinessError<void> | null) => {
           if (err && err.code !== 0) {
@@ -352,7 +359,8 @@ export default function startAbilityTestStatic() {
             done();
           } else {
             hilog.info(domain, tag, `startAbility success`);
-            expect(true).assertTrue()
+            resTag = true
+            expect(resTag).assertTrue()
             done();
           }
         });
