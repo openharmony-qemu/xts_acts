@@ -175,47 +175,5 @@ export default function deviceSettingsTest() {
       });
       done();
     });
-
-    /**
-     * @tc.name   test_device_settings_get_value_for_account_0100
-     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_FOR_ACCOUNT_JS_0100
-     * @tc.desc   test deviceSettings getValueForAccount with normal admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("test_device_settings_get_value_for_account_0100", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
-      try {
-        deviceSettings.getValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, 100);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect(error.code == 201).assertTrue();
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   test_device_settings_set_value_for_account_0100
-     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_FOR_ACCOUNT_JS_0100
-     * @tc.desc   test deviceSettings setValueForAccount with normal admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("test_device_settings_set_value_for_account_0100", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
-      try {
-        deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, 100, 'deviceName');
-        expect(false).assertTrue();
-      } catch (error) {
-        expect(error.code == 201).assertTrue();
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
   })
 }

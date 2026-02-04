@@ -78,12 +78,4 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
  	  console.log(`onLogCollected result is FAIL? : ${result === common.Result.FAIL}`);
  	  console.log(`onLogCollected result is SUCCESS? : ${result === common.Result.SUCCESS}`);
  	}
-  onStartupGuideCompleted(scene: common.StartupScene): void {
-    console.info(`onStartupGuideCompleted scene is USER_SETUP?: ${scene === common.StartupScene.USER_SETUP}`);
-    console.info(`onStartupGuideCompleted scene is OTA?: ${scene === common.StartupScene.OTA}`);
-    console.info(`onStartupGuideCompleted scene is DEVICE_PROVISION?: ${scene === common.StartupScene.DEVICE_PROVISION}`);
-  }
-  onDeviceBootCompleted(): void {
-    console.info('EnterpriseAdminExtensionAbility onDeviceBootCompleted');
-  }
 }
