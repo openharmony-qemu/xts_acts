@@ -951,6 +951,7 @@ describe('fileIO_fs_stream_read', function () {
       console.log('fileIO_test_stream_read_async_019 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
       fileIO.unlinkSync(fpath);
+      done();
     }
   });
 
@@ -982,6 +983,7 @@ describe('fileIO_fs_stream_read', function () {
       console.log('fileIO_test_stream_read_async_020 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
       fileIO.unlinkSync(fpath);
+      done();
     }
   });
 
@@ -1008,6 +1010,7 @@ describe('fileIO_fs_stream_read', function () {
     } catch (e) {
       console.log('fileIO_test_stream_read_async_021 has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
+      done();
     }
   });
 
@@ -1039,6 +1042,7 @@ describe('fileIO_fs_stream_read', function () {
     } catch (e) {
       console.log('fileIO_test_stream_read_async_022 has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
+      done();
     }
   });
 
@@ -1067,6 +1071,7 @@ describe('fileIO_fs_stream_read', function () {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_stream_read_async_023 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
     }
   });
 
@@ -1095,6 +1100,7 @@ describe('fileIO_fs_stream_read', function () {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_stream_read_async_024 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
     }
   });
 
