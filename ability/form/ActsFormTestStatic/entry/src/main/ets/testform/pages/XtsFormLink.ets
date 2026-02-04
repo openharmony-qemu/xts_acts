@@ -19,7 +19,7 @@ import CommonEventManager from '@ohos.commonEventManager';
 
 
 const DOMAIN: int = 0x0000;
-const TAG: string = 'testTag';
+const TAG: string = 'testTag XtsFormLink';
 
 @Entry
 @Component
@@ -35,8 +35,9 @@ struct XtsFormLink {
     }) {
       Text('XTS FormLink').fontSize(20)
         .onAppear(() => {
+          hilog.info(DOMAIN, TAG, 'Text onAppear');
           CommonEventManager.publish('XTS_FormLinkTest_commonEvent', () => {
-            hilog.info(DOMAIN, TAG, 'FormLinkTest001 commonEvent publish');
+            hilog.info(DOMAIN, TAG, 'commonEvent XTS_FormLinkTest_commonEvent publish');
           })
         })
     }
