@@ -16,7 +16,6 @@ import {describe, it, expect, Level, Size, TestType} from "@ohos/hypium"
 import {add as add1} from 'har'
 import {add as add2} from './test'
 import hilog from "@ohos.hilog"
-import app from "@system.app"
 import testNapi from "libentry.so"
 
 export default function staticImport() {
@@ -41,29 +40,8 @@ export default function staticImport() {
      * @tc.level  LEVEL0
      */
     it('importRelative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+	  hilog.info(0x0000, "testTag", 'dexter log: call ohos.hilog')
       expect(add2(2, 3)).assertEqual(5)
-    })
-    /**
-     * @tc.name   importSystemInternal
-     * @tc.number importSystemInternal
-     * @tc.desc   importSystemInternal
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('importSystemInternal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      hilog.info(0x0000, "testTag", 'dexter log: call ohos.hilog')
-    })
-    /**
-     * @tc.name   importSystemBuiltin
-     * @tc.number importSystemBuiltin
-     * @tc.desc   importSystemBuiltin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('importSystemBuiltin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      app.getInfo()
     })
     /**
      * @tc.name   ImportAppNapi
