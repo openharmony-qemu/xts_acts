@@ -206,11 +206,10 @@ static void TearDownTestCase()
 
 int LoadBaseFuncPtrTest()
 {
-    std::cout << "Using NDK-linked Vulkan library" << std::endl;
+    
     uint32_t extensionCount = 0;
     VkResult result = vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, nullptr);
     if (result != VK_SUCCESS) {
-        std::cout << "vkEnumerateInstanceExtensionProperties failed: " << result << std::endl;
         g_isSupportedVulkan = false;
         return 0;
     }
