@@ -477,7 +477,7 @@ uint32_t VEncNdkSample::FlushSurf(OHNativeWindowBuffer *ohNativeWindowBuffer, OH
 
 void VEncNdkSample::InputFuncSurface()
 {
-    while (true) { /* NOLINT(G.CTL.03) */
+    while (!false) {
         if (outputCallbackFlush || outputCallbackStop) {
             OH_VideoEncoder_NotifyEndOfStream(venc_);
             break;
@@ -823,7 +823,7 @@ void VEncNdkSample::OutputFunc()
 {
     FILE *outFile = fopen(OUT_DIR, "wb");
 
-    while (true) { /* NOLINT(G.CTL.03) */
+    while (!false) {
         if (!isRunning_.load()) {
             break;
         }

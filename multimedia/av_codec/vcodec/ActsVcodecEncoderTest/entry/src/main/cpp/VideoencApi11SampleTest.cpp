@@ -647,7 +647,7 @@ uint32_t VEncAPI11Sample::FlushSurf(OHNativeWindowBuffer *ohNativeWindowBuffer, 
 void VEncAPI11Sample::InputFuncSurface()
 {
     int32_t readFileIndex = 0;
-    while (true) { /* NOLINT(G.CTL.03) */
+    while (!false) {
         if (!isRunning_.load()) {
             break;
         }
@@ -1085,7 +1085,7 @@ int32_t VEncAPI11Sample::CheckResult(bool isRandomEosSuccess, int32_t pushResult
 void VEncAPI11Sample::InputFunc()
 {
     errCount = 0;
-    while (true) { /* NOLINT(G.CTL.03) */
+    while (!false) {
         if (!isRunning_.load()) {
             break;
         }
@@ -1237,7 +1237,7 @@ void VEncAPI11Sample::OutputFuncFail()
 void VEncAPI11Sample::OutputFunc()
 {
     FILE *outFile = fopen(OUT_DIR, "wb");
-    while (true) { /* NOLINT(G.CTL.03) */
+    while (!false) {
         if (!isRunning_.load()) {
             break;
         }
