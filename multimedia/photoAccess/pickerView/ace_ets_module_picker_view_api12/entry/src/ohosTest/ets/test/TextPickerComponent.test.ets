@@ -273,7 +273,7 @@ export default function TextPicker() {
       await CommonFunc.sleep(1000);
       if (!isExecuteTestCase) {
         try {
-          driver.triggerCombineKeys(17, 18);
+          await driver.screenCap('/data/storage/el2/base/cache/1.png');
         } catch (error) {
           console.error(`cannot screenshot, error is: ${JSON.stringify(error)}`);
         }
