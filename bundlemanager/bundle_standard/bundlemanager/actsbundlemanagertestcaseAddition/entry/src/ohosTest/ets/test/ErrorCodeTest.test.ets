@@ -798,7 +798,7 @@
  
  
      /**
-      * @tc.name   getProfileByAbilityPromiseNullx
+      * @tc.name   getProfileByAbilityPromiseNullx3
       * @tc.number Sub_Bms_getProfileByAbility_1016
       * @tc.desc   test errCode 401 when call  getProfileByAbility
       * @tc.type   FUNCTION
@@ -828,7 +828,7 @@
  
  
      /**
-      * @tc.name   getProfileByAbilityPromiseUndefinedx
+      * @tc.name   getProfileByAbilityPromiseUndefinedx3
       * @tc.number Sub_Bms_getProfileByAbility_1017
       * @tc.desc   test errCode 401 when call  getProfileByAbility
       * @tc.type   FUNCTION
@@ -1349,7 +1349,7 @@
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL3
       */
-     it('getProfileByExtensionAbilityPromiseundefinedx3', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
+     it('getProfileByExtensionAbilityPromiseUndefinedx3', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
        console.info(TAG + "getProfileByExtensionAbilityPromiseundefinedx3 start");
        try {
          await bundleManager.getProfileByExtensionAbility(moduleName, extensionAbilityName, undefined).then((data) => {
