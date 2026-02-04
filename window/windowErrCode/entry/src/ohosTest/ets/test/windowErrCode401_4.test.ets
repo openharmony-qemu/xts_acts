@@ -1318,15 +1318,15 @@ export default function windowErrCode401_4() {
     })
 
     /**
-     * @tc.name   testCreateSubWindowWithOptions_0100
-     * @tc.number testCreateSubWindowWithOptions_0100
-     * @tc.desc   testCreateSubWindowWithOptions_0100
+     * @tc.name   testCreateSubWindowWithOptions_0200
+     * @tc.number testCreateSubWindowWithOptions_0200
+     * @tc.desc   testCreateSubWindowWithOptions_0200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCreateSubWindowWithOptions_0100', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testCreateSubWindowWithOptions_0100";
+    it('testCreateSubWindowWithOptions_0200', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testCreateSubWindowWithOptions_0200";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       try {
@@ -1437,15 +1437,15 @@ export default function windowErrCode401_4() {
     })
 
     /**
-     * @tc.name   testLoadContent_0600
-     * @tc.number testLoadContent_0600
-     * @tc.desc   testLoadContent_0600
+     * @tc.name   testLoadContent_0700
+     * @tc.number testLoadContent_0700
+     * @tc.desc   testLoadContent_0700
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testLoadContent_0600', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testLoadContent_0600";
+    it('testLoadContent_0700', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testLoadContent_0700";
       try {
         windowStage.loadContent(null, async (err: BusinessError) => {
           const errCode: number = err.code;
@@ -1747,7 +1747,7 @@ export default function windowErrCode401_4() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        if (exception.code == 801) {
+        if (exception.code === 801) {
           done();
         } else {
           expect(exception.code).assertEqual(401);
@@ -1761,7 +1761,7 @@ export default function windowErrCode401_4() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        if (exception.code == 801) {
+        if (exception.code === 801) {
           done();
         } else {
           expect(exception.code).assertEqual(401);
@@ -1800,7 +1800,7 @@ export default function windowErrCode401_4() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        if (exception.code == 801) {
+        if (exception.code === 801) {
           done();
         } else {
           expect(exception.code).assertEqual(401);
@@ -1818,7 +1818,7 @@ export default function windowErrCode401_4() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        if (exception.code == 801) {
+        if (exception.code === 801) {
           done();
         } else {
           expect(exception.code).assertEqual(401);
@@ -1830,15 +1830,15 @@ export default function windowErrCode401_4() {
     })
 
     /**
-     * @tc.name   testRestoreMainWindow_0100
-     * @tc.number testRestoreMainWindow_0100
-     * @tc.desc   testRestoreMainWindow_0100
+     * @tc.name   testRestoreMainWindow_0200
+     * @tc.number testRestoreMainWindow_0200
+     * @tc.desc   testRestoreMainWindow_0200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testRestoreMainWindow_0100', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testRestoreMainWindow_0100";
+    it('testRestoreMainWindow_0200', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testRestoreMainWindow_0200";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       let config: floatingBall.FloatingBallConfiguration = {
@@ -1858,7 +1858,7 @@ export default function windowErrCode401_4() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        if (exception.code == 801) {
+        if (exception.code === 801) {
           done();
         } else {
           expect(exception.code).assertEqual(401);
@@ -1875,7 +1875,7 @@ export default function windowErrCode401_4() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        if (exception.code == 801) {
+        if (exception.code === 801) {
           done();
         } else {
           expect(exception.code).assertEqual(401);

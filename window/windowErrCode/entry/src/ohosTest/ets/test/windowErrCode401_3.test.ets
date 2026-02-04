@@ -1952,14 +1952,14 @@ export default function windowErrCode401_3() {
 
     /**
      * @tc.name   testShowWindow_0100
-     * @tc.number testSetWatermarkImageForAppWindows_0100
-     * @tc.desc   testSetWatermarkImageForAppWindows_0100
+     * @tc.number testShowWindow_0100
+     * @tc.desc   testShowWindow_0100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testSetWatermarkImageForAppWindows_0100', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testSetWatermarkImageForAppWindows_0100";
+    it('testShowWindow_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testShowWindow_0100";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       let windowClass = windowStage.getMainWindowSync()

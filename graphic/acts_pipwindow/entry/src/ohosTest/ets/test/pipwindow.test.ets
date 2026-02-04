@@ -5789,15 +5789,15 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.name   tesCreate_null_undefined
+     * @tc.name   tesCreate_null_undefined2
      * @tc.number SUB_WMS_CREATE_PARAMETER_0200
-     * @tc.desc   tesCreate_null_undefined
+     * @tc.desc   tesCreate_null_undefined2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('tesCreate_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const message = 'tesCreate_null_undefined!';
+    it('tesCreate_null_undefined2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const message = 'tesCreate_null_undefined2!';
       let pipController:pipWindow.PiPController| undefined = undefined;
       let mXComponentController = new XComponentController();
       let config:pipWindow.PiPConfiguration = {
