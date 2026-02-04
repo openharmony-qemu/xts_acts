@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,7 @@ function initCamera(testNum: string, cameraManager: camera.CameraManager, surfac
     console.log(`${testNum} initCamera createCameraInput failed!`);
     return;
   }
-  await cameraInput.open();
+  waitForCompletion(async () => {await cameraInput.open();})
   let capability: camera.CameraOutputCapability =
     cameraManager.getSupportedOutputCapability(cameras[0], camera.SceneMode.NORMAL_VIDEO);
   if (!capability) {
@@ -101,8 +101,8 @@ function initCamera(testNum: string, cameraManager: camera.CameraManager, surfac
   session.addInput(cameraInput);
   session.addOutput(previewOutput1);
   session.addOutput(previewOutput2);
-  await session.commitConfig();
-  await session.start();
+  waitForCompletion(async () => {await session.commitConfig();})
+  waitForCompletion(async () => {await session.start();})
   console.log(`${testNum} initCamera initCamera Finished!`);
 }
 
@@ -120,7 +120,7 @@ export default function ImageReceiver() {
   let cameraManager: camera.CameraManager;
 
   describe("ImageReceiver", (): void => {
-    beforeAll(() => {
+    beforeAll(async () => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       cacheDir = Hypium.get('cacheDir') as string | undefined | null;
@@ -155,7 +155,7 @@ export default function ImageReceiver() {
       }
     })
 
-    afterEach(() => {
+    afterEach(async () => {
       if (globalImg != undefined) {
         console.info("globalImg release start");
         try {
@@ -433,7 +433,7 @@ export default function ImageReceiver() {
 
           receiver1.onImageArrival(() => {
             console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 on [ENTER]!");
-            let latestImage: image.Image = await receiver1.readLatestImage();
+            let latestImage = waitForCompletion<image.Image>(async ():Promise<image.Image> => {await receiver1!.readLatestImage();})
             globalImg = latestImage;
             if (latestImage != undefined) {
               console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 latestImage size: (${latestImage.size.width}, ${latestImage.size.height})`);
@@ -533,7 +533,7 @@ export default function ImageReceiver() {
 
           receiver1.onImageArrival(() => {
             console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 on [ENTER]!");
-            let nextImage: image.Image = await receiver1.readNextImage();
+            let nextImage = waitForCompletion<image.Image>(async ():Promise<image.Image> => {await receiver1!.readNextImage();})
             globalImg = nextImage;
             if (nextImage != undefined) {
               console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 nextImage size: (${nextImage.size.width}, ${nextImage.size.height})`);
