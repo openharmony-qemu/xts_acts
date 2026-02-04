@@ -1959,5 +1959,95 @@ export default function StreamWritable05Test() {
       }
     });
 
+    /**
+     * @tc.number    SUB_STREAM_WRITABLE_TEST05_5400
+     * @tc.name      testStreamWritable05Chapter0054
+     * @tc.desc      Test off method with unicode emoji event parameter, expect parameter error
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStreamWritable05Chapter0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testStreamWritable05Chapter0054';
+      console.log(TAG + ' start');
+
+      class TestWritable extends stream.Writable {
+        constructor() {
+          super();
+        }
+
+        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
+          callback();
+        }
+      }
+
+      let writableStream: stream.Writable = new TestWritable();
+      try {
+        writableStream.off('👆');
+      } catch (err) {
+        expect((err as Error).message.includes('Parameter error')).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_STREAM_WRITABLE_TEST05_5500
+     * @tc.name      testStreamWritable05Chapter0055
+     * @tc.desc      Test off method with multiple emoji characters event parameter, expect parameter error
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStreamWritable05Chapter0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testStreamWritable05Chapter0055';
+      console.log(TAG + ' start');
+
+      class TestWritable extends stream.Writable {
+        constructor() {
+          super();
+        }
+
+        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
+          callback();
+        }
+      }
+
+      let writableStream: stream.Writable = new TestWritable();
+      try {
+        writableStream.off('👿👀💯🎅😼🔧💇');
+      } catch (err) {
+        expect((err as Error).message.includes('Parameter error')).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_STREAM_WRITABLE_TEST05_5600
+     * @tc.name      testStreamWritable05Chapter0056
+     * @tc.desc      Test off method with invalid unicode event parameter, expect parameter error
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStreamWritable05Chapter0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testStreamWritable05Chapter0056';
+      console.log(TAG + ' start');
+
+      class TestWritable extends stream.Writable {
+        constructor() {
+          super();
+        }
+
+        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
+          callback();
+        }
+      }
+
+      let writableStream: stream.Writable = new TestWritable();
+      try {
+        let invalidUnicode: string = String.fromCodePoint(0xDC04);
+        writableStream.off(invalidUnicode);
+      } catch (err) {
+        expect((err as Error).message.includes('Parameter error')).assertFalse();
+      }
+    });
   })
 }
