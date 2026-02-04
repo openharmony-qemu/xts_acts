@@ -78,7 +78,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag}: afterEach: Test case-level clearance conditions`);
     })
 
-    afterAll(() => {
+    afterAll(async () => {
       await Utils.msSleep(1000);
       console.info(`${Tag}: afterAll: Test suite-level cleanup condition`);
     })
@@ -985,7 +985,7 @@ export default function audioCapturerChange() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_GET_CURRENT_AUDIOCAPTURERINFOARRAY_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
+    it('SUB_MULTIMEDIA_AUDIO_GET_CURRENT_AUDIOCAPTURERINFOARRAY_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,

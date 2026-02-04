@@ -39,7 +39,6 @@ export default function onAppearTest() {
   //Component to be tested
   let supportView:Array<string> = new Array<string>(
     'Select',
-    'StepperItem',
     'ColumnSplit',
     'FlowItem',
     'RowSplit',

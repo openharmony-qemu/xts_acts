@@ -120,7 +120,7 @@ it('testListLanesToTwo_static', Level.LEVEL0, async (done: () => void): Promise<
       expect(Math.abs(Math.floor((List_lanes_014.bottom - List_lanes_014.top) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      driver.swipe(100, 120, 100, 0);
+      await driver.swipe(100, 120, 100, 0);
       await CommonFunc.sleep(1000);
       let List_lanes_024: RectValue = CommonFunc.getComponentRect('List_lanes_013');
       expect(Math.abs(Math.floor((List_lanes_024.top - List_lanes_01.top) - UIContext.resolveUIContext()!.vp2px(120))) <= 1).assertTrue();
@@ -178,7 +178,7 @@ it('testListLanesToRange01_static', Level.LEVEL0, async (done: () => void): Prom
       expect(Math.abs(Math.round(List_lanes_014.bottom - List_lanes_014.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      driver.swipe(100, 120, 100, 0);
+      await driver.swipe(100, 120, 100, 0);
       await CommonFunc.sleep(1000);
       let List_lanes_024: RectValue = CommonFunc.getComponentRect('List_lanes_014');
       expect(Math.abs(List_lanes_024.top - List_lanes_01.top - Math.round(UIContext.resolveUIContext()!.vp2px(120))) <= 1).assertTrue();
@@ -236,7 +236,7 @@ it('testListLanesToRange02_static', Level.LEVEL0, async (done: () => void): Prom
       expect(Math.abs(Math.floor((List_lanes_014.bottom - List_lanes_014.top) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      driver.swipe(100, 120, 100, 0);
+      await driver.swipe(100, 120, 100, 0);
       await CommonFunc.sleep(1000);
       let List_lanes_024: RectValue = CommonFunc.getComponentRect('List_lanes_013');
       expect(Math.abs(Math.floor((List_lanes_024.top - List_lanes_01.top) - UIContext.resolveUIContext()!.vp2px(120))) <= 1).assertTrue();

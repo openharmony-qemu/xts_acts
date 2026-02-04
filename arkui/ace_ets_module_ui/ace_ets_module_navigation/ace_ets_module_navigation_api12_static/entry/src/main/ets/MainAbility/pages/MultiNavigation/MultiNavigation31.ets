@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavPathInfo,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -25,7 +25,7 @@ import {
   PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { MultiNavigation, MultiNavPathStack, SplitPolicy } from './mainpage/MultiNavigation';
+import {MultiNavigation,MultiNavPathStack, SplitPolicy}  from './mainpage/MultiNavigation';;
 
 @Entry
 @Component
@@ -36,13 +36,8 @@ struct MultiNavigation31 {
   @State text3:string = ''
 
   aboutToAppear(): void {
-    // this.pageStack.pushPath({
-    //   name: 'PageHome1',
-    //   param: "PageHome1",
-    //   onPop: (popInfo) => {
-    //   }
-    // }, false, SplitPolicy.HOME_PAGE);
-    // this.pageStack.setKeepBottomPage(true);
+    this.pageStack.pushPath(new NavPathInfo('PageHome1',"PageHome1",(popInfo) => {}),  false, SplitPolicy.HOME_PAGE);
+    this.pageStack.setKeepBottomPage(true);
   }
 
   @Builder
@@ -65,14 +60,13 @@ struct MultiNavigation31 {
       MultiNavigation({
         navDestination: this.PageMap,
         multiStack: this.pageStack,
-        // onHomeShowInTop: (name) => {
-        // }
+        onHomeShowInTop: (name: string) => {}
       })
-        // .width(350).height(250).border({width:1})
+        .width(350).height(250).border({width:1})
 
 
-      Button('setKeepBottomPage true').onClick((e: ClickEvent) => {
-        // this.pageStack.setKeepBottomPage(true)
+      Button('keepBottomPage true').onClick((e: ClickEvent) => {
+        this.pageStack.setKeepBottomPage(true)
       }).id('MultiNavigation31_btn1')
 
       Button('pop').onClick((e: ClickEvent) => {

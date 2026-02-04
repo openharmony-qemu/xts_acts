@@ -47,12 +47,10 @@ export default function ImagePropertyKeyArrayTest() {
       pngImageSourceApi = await getImageSource('test_exif_v2.png');
     });
     beforeEach(async () => {
-      await sleep(500);
       console.info('beforeEach case');
     });
     afterEach(async () => {
       console.info('afterEach case');
-      await sleep(500)
     });
     afterAll(async () => {
       console.info('afterAll case');
@@ -81,7 +79,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -106,7 +104,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -131,7 +129,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -156,7 +154,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -181,7 +179,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -206,7 +204,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -231,7 +229,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -256,7 +254,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -281,7 +279,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -306,7 +304,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -393,7 +391,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();;
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -418,7 +416,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -443,7 +441,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -468,7 +466,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -524,7 +522,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -549,7 +547,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -604,7 +602,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -629,7 +627,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -684,7 +682,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -709,7 +707,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -762,7 +760,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -843,7 +841,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -868,7 +866,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -893,7 +891,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -918,7 +916,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -943,7 +941,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -968,7 +966,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -993,7 +991,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1018,7 +1016,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1043,7 +1041,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1068,7 +1066,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1093,7 +1091,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1118,7 +1116,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1143,7 +1141,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1196,7 +1194,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1221,7 +1219,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1246,7 +1244,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1271,7 +1269,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1296,7 +1294,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1321,7 +1319,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1346,7 +1344,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1371,7 +1369,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1396,7 +1394,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1421,7 +1419,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1446,7 +1444,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1527,7 +1525,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1552,7 +1550,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1577,7 +1575,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1602,7 +1600,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1627,7 +1625,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1652,7 +1650,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1677,7 +1675,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1702,7 +1700,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1727,7 +1725,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1752,7 +1750,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1833,7 +1831,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1858,7 +1856,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1883,7 +1881,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1908,7 +1906,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1933,7 +1931,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1958,7 +1956,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -1983,7 +1981,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -2008,7 +2006,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -2033,7 +2031,7 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })
@@ -2058,7 +2056,313 @@ export default function ImagePropertyKeyArrayTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_080
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_080
+     * @tc.desc       ImageReadImageMetadata - ReferenceBlackWhite - Success
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_080', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_080';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.referenceBlackWhite = [1,255,0,255,0,255];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.referenceBlackWhite);
+        let resultStr = JSON.stringify(result.exifMetadata?.referenceBlackWhite);
+        console.info(TAG, testName, `resultStr:`, resultStr);
+        expect(resultStr).assertEqual('[1,255,0,255,0,255]');
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_081
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_081
+     * @tc.desc       ImageReadImageMetadata - ReferenceBlackWhite - Success
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_081', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_081';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.referenceBlackWhite = [0.25,0.25,0,25,0,25];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.referenceBlackWhite);
+        let resultStr = JSON.stringify(result.exifMetadata?.referenceBlackWhite);
+        console.info(TAG, testName, `resultStr:`, resultStr);
+        expect(resultStr).assertEqual('[0.25,0.25,0,25,0,25]');
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_082
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_082
+     * @tc.desc       ImageWriteImageMetadata - ReferenceBlackWhite - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_082', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_082';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.referenceBlackWhite = [ ];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_083
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_083
+     * @tc.desc       ImageWriteImageMetadata - ReferenceBlackWhite - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_083', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_083';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.referenceBlackWhite = [-1];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_084
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_084
+     * @tc.desc       ImageWriteImageMetadata - ReferenceBlackWhite - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_084', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_084';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.referenceBlackWhite = [1,255,0,255,0,255];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_085
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_085
+     * @tc.desc       ImageWriteImageMetadata - ReferenceBlackWhite - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_085', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_085';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.referenceBlackWhite = [0.25,0.25,0,25,0,25];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_086
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_086
+     * @tc.desc       ImageWriteImageMetadata - ReferenceBlackWhite - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_086', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_086';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.referenceBlackWhite = [ ];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_087
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_087
+     * @tc.desc       ImageWriteImageMetadata - ReferenceBlackWhite - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_087', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_087';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.referenceBlackWhite = [-1];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_088
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_088
+     * @tc.desc       ImageWriteImageMetadata - ReferenceBlackWhite - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_088', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_088';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.referenceBlackWhite = [1,255,0,255,0,255];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_089
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_089
+     * @tc.desc       ImageWriteImageMetadata - ReferenceBlackWhite - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_089', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_089';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.referenceBlackWhite = [0.25,0.25,0,25,0,25];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_090
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_090
+     * @tc.desc       ImageWriteImageMetadata - ReferenceBlackWhite - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_090', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_090';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.referenceBlackWhite = [ ];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_091
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_091
+     * @tc.desc       ImageWriteImageMetadata - ReferenceBlackWhite - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_091', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_REFERENCEBLACKWHITE_091';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.referenceBlackWhite = [-1];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
       }
       done();
     })

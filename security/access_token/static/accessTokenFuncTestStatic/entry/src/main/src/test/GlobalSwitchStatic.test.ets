@@ -40,7 +40,7 @@ export default function GlobalSwitchStaticTest() {
   let atManager = abilityAccessCtrl.createAtManager();
   describe("GlobalSwitchStaticTest", (): void => {
     hilog.info(domain, 'testTag', '##########start GlobalSwitchStaticTest');
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
       abilityDelegator.addAbilityMonitor({
         abilityName: "EntryAbility",

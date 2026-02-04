@@ -21,7 +21,7 @@ export default function SelectedDragPreviewStyleTextAreaTest() {
 
   describe('SelectedDragPreviewStyleTextAreaTest', () => {
 
-    let PAGE_TAG = 'SelectedDragPreviewStyleTextAreaTest';
+    let PAGE_TAG = 'SelectedDragPreviewStyleTest';
 
     beforeAll(async (done: Function) => {
       await Utils.pushPage(`SelectedDragPreviewStyleTest/${PAGE_TAG}`, done);
@@ -30,7 +30,7 @@ export default function SelectedDragPreviewStyleTextAreaTest() {
     /**
      * @tc.name   SelectedDragPreviewStyleTextAreaTest0737
      * @tc.number SUB_ARKUI_CAPI_TEXTAREA_METHOD_0100
-     * @tc.desc   test onCut event callback
+     * @tc.desc   test OH_ArkUI_SelectedDragPreviewStyle_SetColor on TextArea
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -38,8 +38,6 @@ export default function SelectedDragPreviewStyleTextAreaTest() {
     it('SelectedDragPreviewStyleTextAreaTest0737', Level.LEVEL1, async (done: Function) => {
       let driver = await Driver.create();
       let DragTextArea = await driver.findComponent(ON.id('textArea_test_capi'));
-      let DragCAPIText_2 = await driver.findComponent(ON.id('Drag'));
-      await DragTextArea.dragTo(DragCAPIText_2);
       await Utils.sleep(2000);
       let strJson = getInspectorByKey('textArea_test_capi');
       let obj: ESObject = JSON.parse(strJson);

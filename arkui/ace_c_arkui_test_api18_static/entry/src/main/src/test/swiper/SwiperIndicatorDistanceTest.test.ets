@@ -49,6 +49,7 @@ export default function swiperIndicatorDistanceTest() {
 
       console.info('Swiper_DigitIndicator START');
       let driverDigit: Driver = Driver.create();
+      await Utils.sleep(1000)
       let BottomButton: Component | null = await driverDigit.findComponent(ON.id('bottom'));
       let IgnoreSizeButton: Component | null = await driverDigit.findComponent(ON.id('ignoreSize'));
       let driverDot: Driver = Driver.create();

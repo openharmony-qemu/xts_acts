@@ -115,21 +115,23 @@ struct PhotoEditor {
     try {
       hilog.info(0x0000, TAG, '%{public}s', 'PhotoEditor createImageSource');
       let imageSourceApi: image.ImageSource | undefined = image.createImageSource(testJpg.buffer);
-      if (imageSourceApi) {
-        let pixmap: image.PixelMap | undefined = await imageSourceApi.createPixelMap();
-        hilog.info(0x0000, TAG, '%{public}s', 'PhotoEditor PackingOption');
-        let packOpts: image.PackingOption = { format: 'image/jpeg', quality: 98 };
-        if (uiContext && pixmap) {
-          uiContext.saveEditedContentWithImage(pixmap,
-            packOpts).then((data : AbilityResult) => {
-            if (data.resultCode == 0) {
-              hilog.info(0x0000, TAG, `Save succeed.`);
-            }
-            hilog.info(0x0000, TAG,
-              `saveContentEditingWithImage result: ${JSON.stringify(data)}`);
-          })
+      waitForCompletion(async () => {
+        if (imageSourceApi) {
+          let pixmap: image.PixelMap | undefined = await imageSourceApi.createPixelMap();
+          hilog.info(0x0000, TAG, '%{public}s', 'PhotoEditor PackingOption');
+          let packOpts: image.PackingOption = { format: 'image/jpeg', quality: 98 };
+          if (uiContext && pixmap) {
+            uiContext.saveEditedContentWithImage(pixmap,
+              packOpts).then((data : AbilityResult) => {
+              if (data.resultCode == 0) {
+                hilog.info(0x0000, TAG, `Save succeed.`);
+              }
+              hilog.info(0x0000, TAG,
+                `saveContentEditingWithImage result: ${JSON.stringify(data)}`);
+            })
+          }
         }
-      }
+      })
     } catch (e) {
       hilog.error(0x0000, TAG, `saveContentEditingWithImage failed:${e}`);
     }

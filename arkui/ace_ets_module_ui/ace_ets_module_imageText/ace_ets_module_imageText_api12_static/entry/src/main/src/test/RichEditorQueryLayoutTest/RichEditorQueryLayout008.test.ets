@@ -95,7 +95,8 @@ export default function RichEditorQueryLayout008() {
       let style = await (driver.findComponent(ON.id('style')) as Promise<Component>);
       let styleText = await style.getText();
       await CommonFunc.sleep(500);
-      expect(styleText.indexOf('{"textAlign":0,"leadingMargin":["20.00vp","0.00vp"]') > 0).assertEqual(true);
+      expect(styleText.indexOf('"textAlign":0') > 0).assertEqual(true);
+      expect(styleText.indexOf('"leadingMargin":{"size":["20.00vp","0.00vp"]}') > 0).assertEqual(true);
       done();
     });
 

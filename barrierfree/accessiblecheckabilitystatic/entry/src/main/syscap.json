@@ -12,7 +12,7 @@
                     "SystemCapability.Ability.AbilityTools.AbilityAssistant",
                     "SystemCapability.Ability.AppStartup",
                     "SystemCapability.Ability.AppExtension.PhotoEditorExtension",
-                    "SystemCapability.BarrierFree.Accessibility.Core"
+                    "SystemCapability.BarrierFree.Accessibility.Vision"
                 ]
             }
         ]

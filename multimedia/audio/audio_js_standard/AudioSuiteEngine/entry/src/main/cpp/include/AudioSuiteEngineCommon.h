@@ -140,4 +140,9 @@ enum class GeneralVoiceChangeTypeTest {
     GENERAL_VOICE_CHANGE_TYPE_TRILL_TEST = 9,
     GENERAL_VOICE_CHANGE_TYPE_WAR_TEST = 10,
 };
+
+enum class AudioSuiteSurroundDirectionTest {
+    SPACE_RENDER_CCW_TEST = 0,
+    SPACE_RENDER_CW_TEST = 1,
+};
 #endif

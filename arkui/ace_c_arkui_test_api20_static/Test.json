@@ -4,6 +4,7 @@
         "type": "OHJSUnitTest",
         "test-timeout": "800000",
         "shell-timeout": "800000",
+        "testcase-timeout":"180000",
         "bundle-name": "com.openharmony.arkui_capi_xts_api20.static",
         "module-name": "entry"
     },

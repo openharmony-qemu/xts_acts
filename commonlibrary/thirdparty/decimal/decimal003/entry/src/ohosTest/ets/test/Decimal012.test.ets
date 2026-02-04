@@ -24,12 +24,16 @@ function test_log2_002 (n: Value, expected: Value, sd: number, rm: Rounding) {
     Decimal.set ({ precision: sd, rounding: rm });
     expect(expected).assertEqual(Decimal.log2(n).valueOf());
 }
+function sleep(ms: number) {
+    return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
 export default function DecimalTest012() {
   describe("DecimalTest012", () => {
     beforeAll( () => {
         console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");
     });
-    beforeEach( () => {
+    beforeEach(async () => {
+        await sleep(20);
         console.info("beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.");
     });
     afterEach( () => {

@@ -883,5 +883,70 @@ export default function cameraSessionTest() {
       }
       done();
     })
+
+    /**
+         * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_CONTROL_CENTER_PROMISE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_CONTROL_CENTER_PROMISE_STATIC_0100
+         * @tc.desc   videosession callback on error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_CAMERA_VIDEO_CONTROL_CENTER_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+          console.info("--------------SUB_MULTIMEDIA_CAMERA_VIDEO_CONTROL_CENTER_PROMISE_STATIC_0100--------------");
+          try {
+            console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_CONTROL_CENTER_PROMISE_STATIC_0100 SUCCESS");
+            let callback = (err: BusinessError|null, data: cameraObj.ControlCenterStatusInfo|undefined) => {
+              if(data && data.effectType && data.isActive) {
+                console.info("control center status: " + data.effectType + "  " + data.isActive);
+              }
+            }
+            mCameraSession.onControlCenterEffectStatusChange(callback);
+            mCameraSession.offControlCenterEffectStatusChange(callback);
+            done();
+          } catch (error) {
+            let err = error as BusinessError;
+            console.info(TAG + "SUB_MULTIMEDIA_CAMERA_VIDEO_CONTROL_CENTER_PROMISE_STATIC_0100 ERRORCODE: " + err.code);
+            expect().assertFail();
+            done();
+          }
+          done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_CONTROL_CENTER_PROMISE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_CONTROL_CENTER_PROMISE_STATIC_0200
+         * @tc.desc   videosession callback on error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_CAMERA_VIDEO_CONTROL_CENTER_PROMISE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+          console.info("--------------SUB_MULTIMEDIA_CAMERA_VIDEO_CONTROL_CENTER_PROMISE_STATIC_0200--------------");
+          try {
+            console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_CONTROL_CENTER_PROMISE_STATIC_0200 SUCCESS");
+            createCameraSessionInstance();
+            await createInput(0)
+            mCameraSession.beginConfig();
+            mCameraSession.addInput(mCameraInput);
+            let flag = mCameraSession.isControlCenterSupported();
+            if (flag) {
+              console.info("THE CAMERA SUPPORT CONTROL CENTER");
+              let types = mCameraSession.getSupportedEffectTypes();
+              if(types.length > 0){
+                console.info("GET CONTROL CENTER EFFECT TYPES");
+              }
+              mCameraSession.enableControlCenter(true);
+            }
+            done();
+          } catch (error) {
+            let err = error as BusinessError;
+            console.info(TAG + "SUB_MULTIMEDIA_CAMERA_VIDEO_CONTROL_CENTER_PROMISE_STATIC_0200 ERRORCODE: " + err.code);
+            expect().assertFail();
+            done();
+          }
+          done();
+        })
+
   })
 }

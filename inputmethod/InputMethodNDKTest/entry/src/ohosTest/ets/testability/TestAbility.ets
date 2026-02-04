@@ -46,6 +46,19 @@ export default class TestAbility extends UIAbility {
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s',
         JSON.stringify(data) ?? '');
     });
+    let windowClass: window.Window | undefined = undefined;
+    windowStage.getMainWindow((err: BusinessError, data) => {
+      let errCode: number = err.code;
+      if (errCode) {
+        console.error(`Failed to obtain the main window. Cause code: ${err.code}, message: ${err.message}`);
+        return;
+      }
+      windowClass = data;
+      console.info('Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
+      let uiContext: UIContext | null = null;
+      uiContext = windowClass.getUIContext();
+      AppStorage.setOrCreate<UIContext>("uiContext", uiContext);
+    });
   }
 
   onWindowStageDestroy() {

@@ -2,6 +2,7 @@
   "src": [
      "testability/pages/WebViewScrollCallback",
      "testability/pages/WebViewNavigationPolicy",
-     "testability/pages/WebViewOnWindowNewExt"
+     "testability/pages/WebViewOnWindowNewExt",
+     "testability/pages/WebViewWindowFeatures"
   ]
 }

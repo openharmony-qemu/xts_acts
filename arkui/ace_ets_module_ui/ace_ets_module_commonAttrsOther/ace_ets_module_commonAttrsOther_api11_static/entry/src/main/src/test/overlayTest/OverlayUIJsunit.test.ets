@@ -47,12 +47,11 @@ import { RecordData } from '@ohos.base';
 let domain: number = 0x0000;
 let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
 
 
 export default function OverlayUIJsunit() {
   describe('OverlayUIJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("overLayJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")

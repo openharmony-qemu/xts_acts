@@ -43,7 +43,6 @@ import {
   GridRowDirection,
   ToggleType,
   TimePicker,
-  StepperItem,
   SliderStyle,
   FlexDirection,
   ProgressType,
@@ -93,7 +92,6 @@ import {
   Search,
   Select,
   Slider,
-  Stepper,
   TextArea,
   TextClock,
   ImageFit,
@@ -314,32 +312,6 @@ struct FocusableDefaultPage {
 
           .applyStyles(this.commonStyle)
 
-      } else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One').focusable(true)
-            }
-          }
-        }
-
-        .applyStyles(this.commonStyle)
-
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-                .focusable(true)
-            }
-          }
-
-          .applyStyles(this.commonStyle)
-
-          .backgroundColor(Color.Red)
-          .width('100%')
-          .height('100%')
-        }.backgroundColor(Color.Yellow).width(200).height(100)
       } else if (this.targetView == 'TextPicker') {
         TextPicker({ range: ['apple1', 'orange2', 'peach3', 'grape4'] })
           .width(200)

@@ -578,7 +578,7 @@ export default function ArrayIncludesTest() {
       let TAG = "test_array_indexof_072";
       try {
         let arr: FixedArray<byte> = [0x0A as byte, 0x0B as byte] as FixedArray<byte>;
-        let result = indexOf(arr, 0xFF as byte);
+        let result = indexOf(arr, (0xFF).toByte());
         expect(result).assertEqual(-1);
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1057,8 +1057,8 @@ export default function ArrayIncludesTest() {
     it("test_array_indexof_098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_indexof_098";
       try {
-        let arr: FixedArray<byte> = [0x0A as byte, 0x0B as byte] as FixedArray<byte>;
-        let result = indexOf(arr, 0xFF as byte);
+        let arr: FixedArray<byte> = [(0x0A).toByte(), (0x0B).toByte()] as FixedArray<byte>;
+        let result = indexOf(arr, (0xFF).toByte());
         expect(result).assertEqual(-1);
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1157,8 +1157,8 @@ export default function ArrayIncludesTest() {
     it("test_array_indexof_103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_indexof_103";
       try {
-        let arr: FixedArray<byte> = [0xFF as byte, 0xEE as byte, 0xDD as byte] as FixedArray<byte>;
-        let result = indexOf(arr, 0xFF as byte);
+        let arr: FixedArray<byte> = [(0xFF).toByte(), (0xEE).toByte(), (0xDD).toByte()] as FixedArray<byte>;
+        let result = indexOf(arr, (0xFF).toByte());
         expect(result).assertEqual(0);
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);

@@ -33,77 +33,108 @@ struct DragEvent {
   @State useCustomDropAnimation1: string = "useCustomDropAnimation";
   @State imgState: Visibility = Visibility.Visible;
 
-  @Builder DraggingBuilder() {
+  @Builder
+  DraggingBuilder() {
     Column() {
       Text("DraggingBuilder")
     }
-    .width(100)
-    .height(100)
+    .width('20%')
+    .height('10%')
     .backgroundColor(Color.Blue)
   }
 
   build() {
-    Row() {
-      Column() {
-        Text(this.dragBehavior).id("dragBehavior").margin(5)
-        Text(this.dragResult).id("dragResult").margin(5)
-        Text(this.useCustomDropAnimation1).id("useCustomDropAnimation").margin(5)
+    Column() {
+      Text(this.dragBehavior).id("dragBehavior").height('5%')
+      Text(this.dragResult).id("dragResult").height('5%')
+      Text(this.useCustomDropAnimation1).id("useCustomDropAnimation").height('5%')
 
-        Image($r('app.media.icon')).margin(5)
-          .width(100)
-          .height(100)
-          .draggable(true)
-          .margin({left: 15})
-          .visibility(this.imgState)
-          .onDragStart((event)=>{
-            event.dragBehavior = DragBehavior.COPY
-            event.setResult(DragResult.DRAG_SUCCESSFUL);
-          })
-          .onDragEnd((event)=>{
-            event.dragBehavior = DragBehavior.MOVE
-            this.dragBehavior = event.dragBehavior.toString()
-            event.useCustomDropAnimation === true
-            if(event.useCustomDropAnimation === true){
-              this.useCustomDropAnimation1 = "true"
-              promptAction.showToast({duration: 100, message: 'useCustomDropAnimation==true'});
-            }
-            if (event.getResult() === DragResult.DRAG_SUCCESSFUL) {
-              promptAction.showToast({duration: 100, message: 'Drag DRAG_SUCCESSFUL'});
-            } else if (event.getResult() === DragResult.DRAG_FAILED) {
-              promptAction.showToast({duration: 100, message: 'Drag Failed'});
-            } else if (event.getResult() === DragResult.DRAG_CANCELED) {
-              promptAction.showToast({duration: 100, message: 'Drag Canceled'});
-            } else if (event.getResult() === DragResult.DROP_DISABLED) {
-              promptAction.showToast({duration: 100, message: 'Drop Disabled'});
-            }else if (event.getResult() === DragResult.DROP_ENABLED) {
-              promptAction.showToast({duration: 100, message: 'Drop Enabled'});
-            }
-            this.dragResult = event.getResult().toString()
-          })
+      Image($r('app.media.icon'))
+        .margin(5)
+        .width('20%')
+        .height('10%')
+        .draggable(true)
+        .margin({ left: 15 })
+        .visibility(this.imgState)
+        .onDragStart((event) => {
+          event.dragBehavior = DragBehavior.COPY
+          event.setResult(DragResult.DRAG_SUCCESSFUL);
+        })
+        .onDragEnd((event) => {
+          event.dragBehavior = DragBehavior.MOVE
+          this.dragBehavior = event.dragBehavior.toString()
+          event.useCustomDropAnimation === true
+          if (event.useCustomDropAnimation === true) {
+            this.useCustomDropAnimation1 = "true"
+            promptAction.showToast({ duration: 100, message: 'useCustomDropAnimation==true' });
+          }
+          if (event.getResult() === DragResult.DRAG_SUCCESSFUL) {
+            promptAction.showToast({ duration: 100, message: 'Drag DRAG_SUCCESSFUL' });
+          } else if (event.getResult() === DragResult.DRAG_FAILED) {
+            promptAction.showToast({ duration: 100, message: 'Drag Failed' });
+          } else if (event.getResult() === DragResult.DRAG_CANCELED) {
+            promptAction.showToast({ duration: 100, message: 'Drag Canceled' });
+          } else if (event.getResult() === DragResult.DROP_DISABLED) {
+            promptAction.showToast({ duration: 100, message: 'Drop Disabled' });
+          } else if (event.getResult() === DragResult.DROP_ENABLED) {
+            promptAction.showToast({ duration: 100, message: 'Drop Enabled' });
+          }
+          this.dragResult = event.getResult().toString()
+        })
 
-        Button('touch to execute drag')
-          .onTouch((event: TouchEvent) => {
-            if (event.type == TouchType.Down) {
-              let text = new UDMF.Text()
-              let unifiedData = new UDMF.UnifiedData(text)
-              let dragInfo: dragController.DragInfo = {
-                pointerId: 0,
-                data: unifiedData,
-                extraParams: ''
+      Button('touch to execute drag')
+        .onTouch((event: TouchEvent) => {
+          if (event.type == TouchType.Down) {
+            let text = new UDMF.Text()
+            let unifiedData = new UDMF.UnifiedData(text)
+            let dragInfo: dragController.DragInfo = {
+              pointerId: 0,
+              extraParams: ''
+            }
+            dragController.executeDrag(this.DraggingBuilder.bind(this), dragInfo, (err, eve) => {
+              if (eve.event?.getResult() == DragResult.DRAG_SUCCESSFUL) {
+                console.log('executeDrag10001');
+              } else if (eve.event?.getResult() == DragResult.DRAG_FAILED) {
+                // ...
               }
-              dragController.executeDrag(this.DraggingBuilder.bind(this), dragInfo, (err, eve) => {
-                if (eve.event?.getResult() == DragResult.DRAG_SUCCESSFUL) {
-                  // ...
-                } else if (eve.event?.getResult() == DragResult.DRAG_FAILED) {
-                  // ...
-                }
-              })
-            }
-          })
-      }.width('90%')
-      .height('100%')
-      .margin({left: '5%'})
-    }
+              if (err) {
+                AppStorage.setOrCreate('executeDrag10001', err.code)
+              }
+            })
+          }
+          try {
+            let value = JSON.stringify(this.getUIContext()
+              .getComponentUtils()
+              .getRectangleById(null))
+          } catch (err) {
+            console.log(`getRectangleById error, err: ${JSON.stringify(err)}`);
+            AppStorage.setOrCreate('getRectangleById', '100001')
+          }
+        })
+        .id('10001')
+        .height('5%')
+      Button('401 drag')
+        .onClick((event: ClickEvent) => {
+
+          let dragInfo: dragController.DragInfo = {
+            pointerId: 1,
+            extraParams: ''
+          }
+          try {
+            dragController.executeDrag(undefined, dragInfo, (err, eve) => {
+              if (err) {
+                console.log('executeDrag401' + err.code);
+              }
+            })
+          } catch (e) {
+            console.log('executeDrag401', JSON.stringify(JSON.parse(JSON.stringify(e)).code))
+            AppStorage.setOrCreate('executeDrag401', JSON.stringify(JSON.parse(JSON.stringify(e)).code))
+          }
+        })
+        .id('401')
+        .height('5%')
+    }.width('90%')
     .height('100%')
+    .margin({ left: '5%' })
   }
 }

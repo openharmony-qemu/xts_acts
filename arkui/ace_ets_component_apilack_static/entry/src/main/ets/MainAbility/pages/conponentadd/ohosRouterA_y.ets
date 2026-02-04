@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
+import { BusinessError } from '@ohos.base';
 import {
   Alignment,
   AlignRuleOption,
   Axis,
   BlurStyle,
   Builder,
-  BusinessError,
   Button,
   ClickEvent,
   Color,
@@ -207,7 +207,7 @@ struct OhosRouterA {
           } catch (error: Error) {
             console.info(`replaceUrl args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
           }
-          
+
         });
 
       Button('clear')

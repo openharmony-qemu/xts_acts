@@ -2528,7 +2528,7 @@ export default function ArrayBlockingQueuetest() {
         const queue = new containers.ArrayBlockingQueue<number>(10);
         let popCompleted = false;
         let popResult: number = 0;
-        const popTask = new taskpool.Task((): number => {
+        const popTask = new taskpool.Task(() => {
           popResult = queue.pop();
           popCompleted = true;
         });

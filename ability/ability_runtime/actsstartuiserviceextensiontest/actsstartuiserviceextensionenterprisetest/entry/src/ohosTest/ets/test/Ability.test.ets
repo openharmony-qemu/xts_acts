@@ -147,6 +147,7 @@ export default function abilityTest() {
               expect(abilityStateData?.abilityType).assertEqual(1);
               expect(abilityStateData?.isAtomicService).assertFalse();
               expect(abilityStateData?.appCloneIndex).assertEqual(undefined);
+              expect(abilityStateData?.callerBundleName).assertEqual("com.acts.startuiserviceextensiontestenterprise");
             }catch(e){}
           }
         },

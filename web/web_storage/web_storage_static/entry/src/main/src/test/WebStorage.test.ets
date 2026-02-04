@@ -44,9 +44,9 @@ export default function webStorageTest() {
          * @tc.desc   test getOrigins
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL0
          */
-        it("testGetOrigins_static_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (): Promise<void> => {
+        it("testGetOrigins_static_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (): Promise<void> => {
             await Utils.msSleep(2000);
             try {
                 webView.WebStorage.getOrigins((error: BusinessError<void>|null, origins: webView.WebStorageOrigin[] | undefined) => {

@@ -32,9 +32,9 @@ export default function getSignatureAInfo() {
      * @tc.desc   Test getSignatureInfo with error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('Sub_Bms_Framework_getSignatureInfo_static_02', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('Sub_Bms_Framework_getSignatureInfo_static_02', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       try{
         let datas = bundleManager.getSignatureInfo(0);
         expect().assertFail();

@@ -107,6 +107,13 @@
         "usedScene": {
           "when": "always"
         }
+      },
+      {
+        "name": "ohos.permission.MANAGE_RISK_PHOTOS",
+        "reason": "$string:reason",
+        "usedScene": {
+            "when": "always"
+        }
       }
     ]
   }

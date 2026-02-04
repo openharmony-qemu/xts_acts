@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeEach} from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
 import { cert } from "@kit.DeviceCertificateKit";
 import { createCertChain, createX509Cert,
@@ -33,10 +33,33 @@ import { createCertChain, createX509Cert,
   leafCertRevokedChainTrustCert,
   leafCertRevokedChain
 } from "./utils/crl/crl";
+import { sleep } from "./utils/common/common";
+import wifiMg from '@ohos.wifiManager';
 
 
 export default function certFrameworkCertCheckOnlineCaTestUnit() {
   describe("certFrameworkCertCheckOnlineCaTestUnit", (): void => {
+
+    beforeEach(async (): void => {
+      if(!wifiMg.isWifiActive()) {
+        console.info("=========>>>>>>> wifi_test/enable wifi");
+        await sleep(5000);
+      }
+      let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+      console.info("=========>>>>>>> Internet WifiLinkedInfo : " + JSON.stringify(data));
+      console.info("=========>>>>>>> Internet speed : " + JSON.stringify(data.linkSpeed));
+      console.info("=========>>>>>>> Internet chLoad : " + JSON.stringify(data.chload));
+      console.info("=========>>>>>>> Internet rssi : " + JSON.stringify(data.rssi));
+
+      if (data.connState == wifiMg.ConnState.CONNECTED) {
+        console.info("=========>>>>>>> WLAN connection established");
+      } else {
+        throw new Error("=========>>>>>>> WLAN Network Error");
+      }
+      if (data.chload >= 800 || data.rssi <= -80) {
+        throw new Error("=========>>>>>>> WLAN Network Error (speed)");
+      }
+    })
 
     /**
      * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_0100

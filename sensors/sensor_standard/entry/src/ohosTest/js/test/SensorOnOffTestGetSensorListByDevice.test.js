@@ -89,6 +89,8 @@ describe("SensorJsTest_getSensorListbyDevice", function () {
                 console.info(TAG + " getSensorListByDeviceSync deviceId:" + result[0].deviceId);
                 console.info(TAG + " getSensorListByDeviceSync deviceName:" + result[0].deviceName);
                 console.info(TAG + " getSensorListByDeviceSync isLocalSensor:" + result[0].isLocalSensor);
+                console.info(TAG + " getSensorListByDeviceSync isMockSensor:" + result[0].isMockSensor);
+                expect(typeof(result[0].isMockSensor) === 'boolean').assertEqual(true);
                 const freshResultData = sensor.getSensorListByDeviceSync(deviceId);
                 expect(freshResultData[0].deviceId >= -1).assertEqual(true);
                 expect(freshResultData[0].deviceId === result[0].deviceId).assertEqual(true);

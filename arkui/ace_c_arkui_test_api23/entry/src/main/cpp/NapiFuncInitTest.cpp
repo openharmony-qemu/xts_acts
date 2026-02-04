@@ -25,7 +25,10 @@
 #include "node/IsInRenderStateReturnValueTest.cpp"
 #include "refresh/RefreshAttrsTest.cpp"
 #include "image/ImageAntialiasedTest.cpp"
+#include "list/ListEmptyTest.cpp"
+#include "grid/GridEmptyTest.cpp"
 #include "TextMarqueeOptions/TextMarqueeOptionsTest.cpp"
+#include "TextMarqueeOptions/ControllerBaseCreatTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -183,6 +186,8 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"TextMarqueeOptionsTest", nullptr, TextMarqueeOptionsTest, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"ControllerBaseCreatTest", nullptr, ControllerBaseCreatTest, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         {"TestAtomicServiceMenuBarSetVisible01", nullptr,
          TestAtomicServiceMenuBarSetVisible01, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextSelectionTest", nullptr, MotionPathNode, nullptr, nullptr, nullptr,
@@ -207,6 +212,24 @@ static napi_value Init(napi_env env, napi_value exports)
          TestImageAntialiased004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testImageAntialiased005", nullptr,
          TestImageAntialiased005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ListEmptyTest_001", nullptr, ListEmptyTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ListEmptyTest_002", nullptr, ListEmptyTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ListEmptyTest_003", nullptr, ListEmptyTest_003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ListEmptyTest_004", nullptr, ListEmptyTest_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GridIndexTest_001", nullptr, GridIndexTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GridEmptyTest_001", nullptr, GridEmptyTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GridEmptyTest_002", nullptr, GridEmptyTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GridEmptyTest_003", nullptr, GridEmptyTest_003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GridEmptyTest_004", nullptr, GridEmptyTest_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

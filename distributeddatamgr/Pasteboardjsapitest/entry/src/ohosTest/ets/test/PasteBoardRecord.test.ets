@@ -982,7 +982,7 @@ export default function pasteBoardRecordTest() {
       let mimeType = "x".repeat(1025);
       try {
         let pasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_PLAIN, ARRAY_BUFFER);
-        pasteDataRecord.getData(mimeType);
+        await pasteDataRecord.getData(mimeType);
       } catch (err) {
         console.info("Create record error, err code is: " + err.code);
         error = err;
@@ -1005,7 +1005,7 @@ export default function pasteBoardRecordTest() {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_0300 start");
       try {
         let pasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_PLAIN, ARRAY_BUFFER);
-        pasteDataRecord.getData('');
+        await pasteDataRecord.getData('');
       } catch (err) {
         console.info("Create record error, err code is: " + err.code);
         error = err;

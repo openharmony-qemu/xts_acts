@@ -1525,7 +1525,7 @@ export default function CreateImageSourceSuppTest() {
     it('SUB_SENDABLE_CREATE_IMAGE_SOURCE_0700', Level.LEVEL0, async (done: Function) => {
       const testName: string = 'SUB_SENDABLE_CREATE_IMAGE_SOURCE_0700';
       try {
-        let res = await image.createImageSource(1000);
+        let res = await image.createImageSource(1000000);
         console.info(TAG, testName, 'success', JSON.stringify(res));
         expect(res == undefined).assertTrue();
       } catch (err) {

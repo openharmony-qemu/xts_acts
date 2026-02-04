@@ -154,10 +154,6 @@ import {
   SpanAttribute,
   Stack,
   StackAttribute,
-  Stepper,
-  StepperAttribute,
-  StepperItem,
-  StepperItemAttribute,
   Swiper,
   SwiperAttribute,
   TabContent,
@@ -699,24 +695,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mSepia: number = 10
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    console.info(`sepia page show ${JSON.stringify(this.mSepia)}`)
-    instance.sepia(this.mSepia)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mSepia: number = 10
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    console.info(`sepia page show ${JSON.stringify(this.mSepia)}`)
-    instance.sepia(this.mSepia)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mSepia: number = 10
 
@@ -1202,18 +1180,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
@@ -1405,8 +1371,6 @@ struct sepiaPage {
   @State _sepiaSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _sepiaSliderMod: SliderModifier = new SliderModifier()
   @State _sepiaStackMod: StackModifier = new StackModifier()
-  @State _sepiaStepperMod: StepperModifier = new StepperModifier()
-  @State _sepiaStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _sepiaSwiperMod: SwiperModifier = new SwiperModifier()
   @State _sepiaTabContentMod: TabContentModifier = new TabContentModifier()
   @State _sepiaTabsMod: TabsModifier = new TabsModifier()
@@ -1543,14 +1507,6 @@ struct sepiaPage {
           })
             .showTips(true)
             .commonStyle(this.componentKey).attributeModifier(this._sepiaSliderMod)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }.commonStyle(this.componentKey).attributeModifier(this._sepiaStepperMod)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -1772,19 +1728,6 @@ struct sepiaPage {
               }
             }, (item: int) => item.toString())
           }.commonStyle(this.componentKey).attributeModifier(this._sepiaWaterFlowMod)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            .commonStyle(this.componentKey).attributeModifier(this._sepiaStepperItemMod)
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

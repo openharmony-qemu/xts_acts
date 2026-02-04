@@ -65,6 +65,14 @@ build() {
         .borderWidth(1)
         .borderColor(Color.Green)
         .onReady((): void => {
+          
+          this.controller!.addImageSpan($r('app.media.icon'),
+            {
+              imageStyle:
+              {
+                size: ['25px', '25px']
+              }
+            });
           this.controller!.addTextSpan('abcd', {
             style: {
               fontSize: 35,
@@ -74,14 +82,6 @@ build() {
               fontStyle: FontStyle.Italic
             }
           });
-          this.controller!.addImageSpan($r('app.media.icon'),
-            {
-              imageStyle:
-              {
-                size: ['25px', '25px']
-              }
-            });
-
         })
         .id('RichEditorShortCutKeys011')
 

@@ -320,6 +320,7 @@ export default class AVRecorderNdkTestBase {
       console.info(`wlan btn click`)
       await btn1.click()
     }
+    await this.msleepAsync(1000)
     for (let i = 0; i < num; i++) {
       let button = await driver.findComponent(BY.text('允许'))
       if (button == null) {
@@ -330,6 +331,7 @@ export default class AVRecorderNdkTestBase {
       console.info(`button is ${JSON.stringify(button)}`)
       await this.msleepAsync(1000)
       if (await driver.findComponent(BY.text('允许')) != null) {
+        console.info(`agreed btn click`)
         await button.click()
       }
       await this.msleepAsync(1000)

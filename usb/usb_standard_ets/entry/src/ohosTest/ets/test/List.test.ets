@@ -26,6 +26,7 @@ import UsbDevicePipeTestEx from './UsbDevicePipeTestEx.test';
 import UsbApiParamExceEtsTest from './UsbApiParamExceEtsTest.test';
 import UsbApiTransferCompatEtsTest from './UsbApiTransferCompatEtsTest.test';
 import UsbApiDeprecatedEtsTest from './UsbApiDeprecatedEtsTest.test';
+import UsbApiDeprecatedAddEtsTest from './UsbApiDeprecatedAddEtsTest.test';
 
 export default function testsuite() {
   UsbSystemApiNormalJsTest()
@@ -41,4 +42,5 @@ export default function testsuite() {
   UsbApiTransferCompatEtsTest()
   UsbAccessoryEtsTest()
   UsbApiDeprecatedEtsTest()
+  UsbApiDeprecatedAddEtsTest()
 }

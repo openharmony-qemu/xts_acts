@@ -30,7 +30,6 @@ let innerEvent11: emitter.InnerEvent = {
 const TAG = '[Screenshot]';
 const TIME: number = 0 // 设备可被发现的持续时间
 const isCore = canIUse('SystemCapability.Communication.Bluetooth.Core');
-const isLite = canIUse('SystemCapability.Communication.Bluetooth.Lite');
 
 @Entry
 @Component
@@ -81,7 +80,7 @@ struct StandardBluetooth {
   scroller: Scroller = new Scroller();
 
   async aboutToAppear() {
-    if (isCore && isLite) {
+    if (isCore) {
       await FirstDialog.ChooseDialog(this.StepTips, this.name);
       let state = access.getState()
       if (state === access.BluetoothState.STATE_ON) {

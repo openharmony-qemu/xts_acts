@@ -27,6 +27,7 @@ import { HuksAgreeECDH } from './utils/param/agree/publicAgreeParam';
 import { HuksCipherAES, HuksCipherRSA, HuksCipherSM4 } from './utils/param/cipher/publicCipherParam';
 import { HuksDeriveHKDF, HuksDerivePBKDF2 } from './utils/param/derive/publicDeriveParam';
 import { HuksHmac } from './utils/param/hmac/publicHmacParam';
+import { CheckWifiInfo } from './utils/common/NetworkUtils';
 
 let inDataString = "Hks_RSA_Sign_Verify_Test_0000000000000000000000000000000000000000000000000000000" +
     "00000000000000000000000000000000000000000000000000000000000000000000000000000000" +
@@ -2923,6 +2924,9 @@ export default function SecurityHuksSignExtendRSAJsunit() {
          * @tc.level  LEVEL2
          */
         it("Security_HUKS_Cipher_AnonAttestation_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            if(!useSoftware){
+                await CheckWifiInfo();
+            }
             let srcKeyAlies = "Security_HUKS_Cipher_AnonAttestation_0010";
             let properties = [
                 {
@@ -2975,6 +2979,9 @@ export default function SecurityHuksSignExtendRSAJsunit() {
          * @tc.level  LEVEL2
          */
         it("Security_HUKS_Cipher_AnonAttestation_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            if(!useSoftware){
+                await CheckWifiInfo();
+            }
             let srcKeyAlies = "Security_HUKS_Cipher_AnonAttestation_0012";
             let properties = [
                 {
@@ -3056,6 +3063,9 @@ export default function SecurityHuksSignExtendRSAJsunit() {
          * @tc.level  LEVEL2
          */
         it("Security_HUKS_Cipher_AnonAttestation_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            if(!useSoftware){
+                await CheckWifiInfo();
+            }
             let srcKeyAlies = "Security_HUKS_Cipher_AnonAttestation_0013";
             let properties = [
                 {
@@ -3127,6 +3137,9 @@ export default function SecurityHuksSignExtendRSAJsunit() {
          * @tc.level  LEVEL2
          */
         it("Security_HUKS_Cipher_AnonAttestation_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            if(!useSoftware){
+                await CheckWifiInfo();
+            }
             let srcKeyAlies = "Security_HUKS_Cipher_AnonAttestation_0014";
             let properties = [
                 {

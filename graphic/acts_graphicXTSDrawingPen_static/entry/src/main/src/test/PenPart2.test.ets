@@ -127,7 +127,24 @@ export default function penPart2Test() {
       try {
         let cf = drawing.ColorFilter.createLumaColorFilter();
         let cf2 = pen.getColorFilter();
-        console.info(msg + ' getColorFilter successed,colorFilter:' + cf2);
+        console.info(msg + ' 1 getColorFilter successed,colorFilter:' + cf2);
+        expect(cf2 == undefined).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` getColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let setColorFilter = drawing.ColorFilter.createSRGBGammaToLinear();
+        if (setColorFilter != undefined) {
+          pen.setColorFilter(setColorFilter!);
+        }
+        let filter = pen.getColorFilter();
+        console.info(msg + ' 2 getColorFilter successed,colorFilter:' + filter);
+        if(filter == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` getColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -150,7 +167,8 @@ export default function penPart2Test() {
       for (let i = 0; i < 20; i++) {
         try {
           let cf2 = pen.getColorFilter();
-          console.info(msg + ' getColorFilter succeeded,colorFilter:' + cf2);
+          console.info(msg + ' getColorFilter succeeded,colorFilter:' + cf2 + " step: " + i);
+          expect(cf2 == undefined).assertTrue();
         } catch (e) {
           e = e as BusinessError;
           console.info(msg + ` getColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);

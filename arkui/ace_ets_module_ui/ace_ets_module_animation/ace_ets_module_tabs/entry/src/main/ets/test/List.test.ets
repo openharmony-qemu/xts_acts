@@ -76,6 +76,9 @@ import tabs_undefinedTest from './TabsTest/Tabs_onContentDidScroll/tabs_undefine
 import DrawableTabBarIndicatorPage from './TabContent/DrawableTabBarIndicatorPage.test';
 import withIdTest from './TabsTest/observer/withId.test';
 import withoutIdTest from './TabsTest/observer/withoutId.test';
+import nestedScrollTest from './TabsTest/nestedScrollTest/nestedScrollTest.test';
+import nestedScroll01Test from './TabsTest/nestedScrollTest/nestedScroll01Test.test';
+import nestedScroll_CombinedTest from './TabsTest/nestedScrollTest/nestedScroll_CombinedTest.test';
 
 export default function testsuite() {
   tabsBarPositionJsunit();
@@ -135,4 +138,7 @@ export default function testsuite() {
   DrawableTabBarIndicatorPage();
   withoutIdTest();
   withIdTest(); 
+  nestedScrollTest();
+  nestedScroll01Test();
+  nestedScroll_CombinedTest();
   } 

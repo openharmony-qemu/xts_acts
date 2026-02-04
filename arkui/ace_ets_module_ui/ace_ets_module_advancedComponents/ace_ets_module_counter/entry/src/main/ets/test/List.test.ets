@@ -17,10 +17,17 @@
 
 import counterDirectionTest from './counter/counterDirection.test';
 import counterApi from './counter/counterApi.test';
-
+import ActsAceCounterComponentTest from './counter/ActsAceCounterComponentTest.test';
+import CounterComponentTest from './counter/CounterComponentTest.test';
+import CounterEnableTest from './counter/CounterEnableTest.test';
+import CounterJsunitTest from './counter/CounterJsunitTest.test';
 
 export default function testsuite() {
   counterDirectionTest();
   counterApi();
-
+    // CounterTest
+    ActsAceCounterComponentTest()
+    CounterComponentTest()
+    CounterEnableTest()
+    CounterJsunitTest()
 }

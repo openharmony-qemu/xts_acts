@@ -164,10 +164,6 @@ import {
   SpanAttribute,
   Stack,
   StackAttribute,
-  Stepper,
-  StepperAttribute,
-  StepperItem,
-  StepperItemAttribute,
   Swiper,
   SwiperAttribute,
   TabContent,
@@ -710,24 +706,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mRenderGroup: boolean = true
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    console.info(`renderGroup page show ${JSON.stringify(this.mRenderGroup)}`)
-    instance.renderGroup(this.mRenderGroup)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mRenderGroup: boolean = true
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    console.info(`renderGroup page show ${JSON.stringify(this.mRenderGroup)}`)
-    instance.renderGroup(this.mRenderGroup)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mRenderGroup: boolean = true
 
@@ -1212,18 +1190,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
@@ -1415,8 +1381,6 @@ struct renderGroupPage {
   @State _renderGroupSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _renderGroupSliderMod: SliderModifier = new SliderModifier()
   @State _renderGroupStackMod: StackModifier = new StackModifier()
-  @State _renderGroupStepperMod: StepperModifier = new StepperModifier()
-  @State _renderGroupStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _renderGroupSwiperMod: SwiperModifier = new SwiperModifier()
   @State _renderGroupTabContentMod: TabContentModifier = new TabContentModifier()
   @State _renderGroupTabsMod: TabsModifier = new TabsModifier()
@@ -1556,14 +1520,6 @@ struct renderGroupPage {
           })
             .showTips(true)
             .commonStyle(this.componentKey).attributeModifier(this._renderGroupSliderMod)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }.commonStyle(this.componentKey).attributeModifier(this._renderGroupStepperMod)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -1785,19 +1741,6 @@ struct renderGroupPage {
               }
             }, (item: int) => item.toString())
           }.commonStyle(this.componentKey).attributeModifier(this._renderGroupWaterFlowMod)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            .commonStyle(this.componentKey).attributeModifier(this._renderGroupStepperItemMod)
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

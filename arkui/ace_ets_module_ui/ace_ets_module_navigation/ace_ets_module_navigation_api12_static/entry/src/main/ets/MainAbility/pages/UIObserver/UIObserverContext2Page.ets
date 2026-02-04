@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,PopInfo,HorizontalAlign,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -43,9 +43,9 @@ struct PageOne {
 
 function callBackFunc(info: uiObserver.NavDestinationSwitchInfo) {
   console.info(`testTag navDestinationSwitch from: ${JSON.stringify(info.from)} to: ${JSON.stringify(info.to)}`)
-  let count: number = AppStorage.get('UIObserverContext2Page_callBackFuncOnCount') ?? 0;
-  count = Number(count) + 1;
-  AppStorage.setOrCreate<number>('UIObserverContext2Page_callBackFuncOnCount', count)
+  let count: int = AppStorage.get<int>('UIObserverContext2Page_callBackFuncOnCount') ?? 0;
+  count = count + 1;
+  AppStorage.setOrCreate<int>('UIObserverContext2Page_callBackFuncOnCount', count)
 }
 
 @Entry
@@ -74,10 +74,10 @@ struct UIObserverContext2Page {
           let obs = this.getUIContext().getUIObserver();
           obs.offNavDestinationSwitch( callBackFunc)
 
-          console.info(`get UIObserverContext2Page_callBackFuncOnCount is: ${AppStorage.get('UIObserverContext2Page_callBackFuncOnCount')}`)
-          console.info(`get UIObserverContext2Page_callBackFuncOnCount_2 is: ${AppStorage.get('UIObserverContext2Page_callBackFuncOnCount_2')}`)
-          AppStorage.setOrCreate<number>('UIObserverContext2Page_callBackFuncOnCount_2', AppStorage.get('UIObserverContext2Page_callBackFuncOnCount') ?? 0)
-          console.info(`set UIObserverContext2Page_callBackFuncOnCount_2 is: ${AppStorage.get('UIObserverContext2Page_callBackFuncOnCount')}`)
+          console.info(`get UIObserverContext2Page_callBackFuncOnCount is: ${AppStorage.get<int>('UIObserverContext2Page_callBackFuncOnCount')}`)
+          console.info(`get UIObserverContext2Page_callBackFuncOnCount_2 is: ${AppStorage.get<int>('UIObserverContext2Page_callBackFuncOnCount_2')}`)
+          AppStorage.setOrCreate<int>('UIObserverContext2Page_callBackFuncOnCount_2', AppStorage.get<int>('UIObserverContext2Page_callBackFuncOnCount') ?? 0)
+          console.info(`set UIObserverContext2Page_callBackFuncOnCount_2 is: ${AppStorage.get<int>('UIObserverContext2Page_callBackFuncOnCount')}`)
         })
           .id('UIObserverContext2_btn_off')
       }

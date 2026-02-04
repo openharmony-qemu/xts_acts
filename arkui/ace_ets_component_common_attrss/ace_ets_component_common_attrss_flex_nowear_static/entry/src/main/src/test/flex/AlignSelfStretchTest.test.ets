@@ -81,10 +81,8 @@ export default function alignSelfStretchTest() {
     'RowSplit',
     'Row',
     'RelativeContainer',
-    'Navigator',
     'ColumnSplit',
     'TextTimer',
-    'Stepper',
     'Flex',
     'Progress',
     'QRCode',
@@ -106,7 +104,6 @@ export default function alignSelfStretchTest() {
     'GridRow',
     'Grid',
     'List',
-    'Panel',
     'Refresh',
     'Scroll',
     'SideBarContainer',
@@ -254,7 +251,7 @@ export default function alignSelfStretchTest() {
   }]
 
   describe('AlignSelfStretchTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("alignSelfStretchTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.nowear.test.static", "EntryAbility")
       

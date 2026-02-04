@@ -34,10 +34,10 @@ export default function SecurityRandomJsunit() {
      * @tc.desc   the length of random is 32, use promise style of interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it("Security_crypto_framework_Random_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testSecurityRandomPromise(32)
         .then((data: boolean) => {
           expect(data).assertTrue();

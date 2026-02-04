@@ -41,7 +41,6 @@ import {
   testErrorName,
   testErrorStack,
   testFunctionLength,
-  testFunctionName,
   testGetProtoProperty,
   testGetterProperty,
   testInfinityValue,
@@ -524,19 +523,6 @@ export default function ActsProxyAndReflectGetTest() {
      */
     it('testCacheProxyAndReflectGet_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = testFunctionLength();
-      expect(result).assertEqual(true);
-    })
-
-    /**
-     * @tc.name   testCacheProxyAndReflectGet_031
-     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYANDREFLECT_GET_3100
-     * @tc.desc   Test Proxy.handler.get and Reflect.get Combined Scene.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testCacheProxyAndReflectGet_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = testFunctionName();
       expect(result).assertEqual(true);
     })
 

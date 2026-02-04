@@ -103,12 +103,14 @@ export default function RichEditorShortCutKeys020() {
       let style = await (driver.findComponent(ON.id('style')) as Promise<Component>);
       let styleText = await style.getText();
       await CommonFunc.sleep(500);
-      let textStyle1 = 'spanPosition:{"spanIndex":1,"spanRange":[1,3]},value:"ab",' +
-        'textStyle:{"fontColor":"#FFFF0000"';
-      let textStyle2 = 'spanPosition:{"spanIndex":2,"spanRange":[3,5]},value:"cd",' +
-        'textStyle:{"fontColor":"#FFFF0000"';
-      expect(styleText).assertContain(textStyle1);
-      expect(styleText).assertContain(textStyle2);
+      expect(styleText).assertContain('"spanIndex":1');
+      expect(styleText).assertContain('"spanRange":[1,3]');
+      expect(styleText).assertContain('value:"ab"');
+      expect(styleText).assertContain('"fontColor":"#FFFF0000"');
+      expect(styleText).assertContain('"spanIndex":2');
+      expect(styleText).assertContain('"spanRange":[3,5]');
+      expect(styleText).assertContain('value:"cd"');
+      expect(styleText).assertContain('"fontColor":"#FFFF0000"');
       done();
     });
 

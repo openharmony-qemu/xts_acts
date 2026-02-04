@@ -18,7 +18,7 @@ import transactionNdktest from './transactionNdk.test';
 import rdbCryptoParamNdkTest from './rdbCryptoParam.test';
 import rdbInterfaceNdkTest from './RdbInterfaceNdk.test';
 import rdbRekeyExNdkTest from './RdbRekeyEx.test';
-
+import rdbReturningNdkTest from './RdbReturning.test';
 
 export default function testsuite() {
   rdbConfigV2NdkTest();
@@ -27,4 +27,5 @@ export default function testsuite() {
   rdbCryptoParamNdkTest();
   rdbInterfaceNdkTest();
   rdbRekeyExNdkTest();
+  rdbReturningNdkTest();
 }

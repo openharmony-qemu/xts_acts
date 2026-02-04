@@ -81,7 +81,7 @@ export default function flexVisibility_CenterJsunit() {
 it('testFlexItemAlignCenterSubSetVisibilityNone_static', Level.LEVEL0, async () : Promise<void>=> {
       console.info('new testFlexItemAlignCenterSubSetVisibilityNone START');
       try {
-        let result = AppStorage.get<MessageManager<number>>("messageManager")
+        let result = AppStorage.get<MessageManager<Visibility>>("messageManager")
         if (result !== null) {
           result!.notify({
             name: 'visibility', value: Visibility.None
@@ -127,7 +127,7 @@ it('testFlexItemAlignCenterSubSetVisibilityNone_static', Level.LEVEL0, async () 
 it('testFlexItemAlignCenterSubSetVisibilityHidden_static', Level.LEVEL0, async () : Promise<void>=> {
       console.info('new testFlexItemAlignCenterSubSetVisibilityHidden START');
       try {
-        let result = AppStorage.get<MessageManager<number>>("messageManager")
+        let result = AppStorage.get<MessageManager<Visibility>>("messageManager")
         if (result !== null) {
           result!.notify({
             name: 'visibility', value: Visibility.Hidden

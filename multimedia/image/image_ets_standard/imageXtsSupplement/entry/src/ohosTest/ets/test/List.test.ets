@@ -183,8 +183,6 @@ import ImageSourcePixelYDimensionSupp from './image/ImageSourcePixelYDimension.t
 import ImageSourceRelatedSoundFileSupp from './image/ImageSourceRelatedSoundFile.test';
 import ImageWidthLengthSupp from './image/ImageExifWidthLength.test';
 import ImageDescriptionSupp from './image/ImageDescriptionPhotometricInterpretation.test';
-
-
 import ImageGPSSpeed from './image/ImageGPSSpeed.test';
 import ImageGPSTrackRef from './image/ImageGPSTrackRef.test';
 import ImageGPSTrack from './image/ImageGPSTrack.test';
@@ -199,6 +197,10 @@ import ImageExifDateTimeSupp from './image/ImageExifDateTime.test';
 import ImageExifVersionSupp from './image/ImageExifVersion.test';
 import ImageExifComponentsConfiguration from './image/ImageExifComponentsConfiguration.test';
 import ImageExifShutterSpeedValue from './image/ImageExifShutterSpeedValue.test';
+import imageCreateCroppedAndScaledPixelMap from './image/ImageCreateScaledPixelMap.test';
+import ImageBodySerialNumber from './image/ImageBodySerialNumber.test';
+import ImageCameraOwnerName from './image/ImageCameraOwnerName.test';
+import ImageGPSDest from './image/ImageGPSDest.test';
 import ImageSourceLensModelSupp from './image/ImageSourceLensModel.test';
 import ImageSourceLensMakeSupp from './image/ImageSourceLensMake.test';
 import ImageLensSerialNumberSupp from './image/ImageExifLensSerialNumber.test';
@@ -206,7 +208,23 @@ import ImageLensSpecificationSupp from './image/ImageExifLensSpecification.test'
 import ImageExifOECFSupp from './image/ImageExifOECF.test';
 import ImageBitsPerSampleStripOffsetsSupp from './image/ImageBitsPerSampleStripOffsets.test';
 import ImageSourceMetadataSupp from './image/ImageSourceMetadata.test';
+import ImageGetImagePropertyOptionsSupp from './image/ImageGetImagePropertyOptions.test';
 import ImageGammaSupp from './image/ImageGammaSupp.test';
+import PicturePackDataFirTestSupp from './Picture/PicturePacDataSuppFir.test';
+import PicturePackDataThrTestSupp from './Picture/PicturePacDataSuppThr.test';
+import PicturePackingPictureTestSupp from './Picture/PicturePackingSuppFir.test';
+import PicturePackingPictureSecTestSupp from './Picture/PicturePackingSuppSec.test';
+import ImageSourceModifyImagePropertySupp from './image/ImageModifyImagePropertySupp.test';
+import ImagePictureMetadataTest from './image/ImagePictureMetadata.Test.test';
+import MultimediaImageTest from './image/MultimediaImage.test';
+import ImageExifMetadataTestSupp from './image/ImageExifMetadata.test';
+import CreatePixelMapSupp from './image/CreatePixelMap.test';
+import GetImageInfoSupp from './image/GetImageInfoTest.test';
+import ReadPixelsToBufferSupp from './image/ReadPixelsToBufferTest.test';
+import ImagePictureTest from './image/ImagePictureTest.test';
+
+import CrateImageSupp from './image/CreateImageTest.test';
+
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -390,12 +408,31 @@ export default function testsuite() {
   ImageSourceRelatedSoundFileSupp();
   ImageWidthLengthSupp();
   ImageDescriptionSupp();
+  imageCreateCroppedAndScaledPixelMap();
+  ImageBodySerialNumber();
+  ImageCameraOwnerName();
+  ImageGPSDest();
   ImageSourceLensMakeSupp();
-  ImageSourceLensModelSupp()
+  ImageSourceLensModelSupp();
   ImageLensSpecificationSupp();
   ImageLensSerialNumberSupp();
   ImageExifOECFSupp();
   ImageBitsPerSampleStripOffsetsSupp();
   ImageSourceMetadataSupp();
+  ImageGetImagePropertyOptionsSupp();
+  ImagePictureMetadataTest();
+  MultimediaImageTest();
+  ImageExifMetadataTestSupp();
+  PicturePackDataFirTestSupp();
+  PicturePackDataThrTestSupp();
+  PicturePackingPictureTestSupp();
+  PicturePackingPictureSecTestSupp();
+  ImageSourceModifyImagePropertySupp();
   ImageGammaSupp()
+  CreatePixelMapSupp();
+  GetImageInfoSupp();
+  ReadPixelsToBufferSupp();
+  ImagePictureTest();
+
+  CrateImageSupp();
 }

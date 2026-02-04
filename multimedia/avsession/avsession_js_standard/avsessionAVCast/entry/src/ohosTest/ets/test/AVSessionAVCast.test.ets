@@ -547,18 +547,20 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_0100
      * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_0100
-     * @tc.desc   SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_0100
+     * @tc.desc   test session.on('customDataChange') callback registration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_0100]';
       let flag = false;
       await session.on('customDataChange',(data: Record<string,string>) => {
-        console.info(`session on_customDataChange Successfully ${data}`)
+        console.info(`${TAG}TestLog: session on_customDataChange callback succeed ${data}`)
         flag = true;
-      })    
-      await session.sendCustomData(customdata);
+      })
+      console.info(`${TAG}TestLog: session on_customDataChange registration succeed`)
+      await controller.sendCustomData(customdata);
       await sleep(300);
       expect(flag).assertTrue();
       done();
@@ -574,36 +576,38 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_0200]';
       await session.destroy();
       try{
         await session.on('customDataChange',(data: Record<string,string>) => {
-        console.info(`on_customDataChange Successfully ${data}`);
+          console.info(`${TAG}TestLog: on_customDataChange callback succeed ${data}`);
         });
       } catch(err) {
-        console.info(`session on_customDataChange BusinessError: code: ${err.code}, message: ${err.message}`);
+        console.info(`${TAG}TestLog: session on_customDataChange BusinessError: code: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(6600102);
       };
       await sleep(300);
+      session = null;
       done();
-    })    
+    })
 
 
     /**
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_0300
      * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_0300
-     * @tc.desc   SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_0300
+     * @tc.desc   test controller.on('customDataChange') callback registration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_0300]';
       let flag = false;
       await controller.on('customDataChange',(data: Record<string,string>) => {
-        console.info(`session on_customDataChange Successfully ${data}`)
+        console.info(`session on_customDataChange callback succeed ${data}`)
         flag = true;
-        controller.off('customDataChange');
       })    
-      await controller.sendCustomData(customdata);
+      await session.sendCustomData(customdata);
       await sleep(300);
       expect(flag).assertTrue();
       done();

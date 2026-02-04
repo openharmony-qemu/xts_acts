@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -923,7 +923,7 @@ export default function ArrayPopTest() {
      */
     it('testArrayPop0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 1, 3];
-      arr.sort((a, b) => a - b);
+      arr.sort((a, b) => (a - b).toInt())
       const popped: number | undefined = arr.pop();
       expect(popped).assertEqual(5);
     });
@@ -1367,7 +1367,7 @@ export default function ArrayPopTest() {
      */
     it('testArrayPop0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: C80[] = [new C80(2), new C80(1)];
-      arr.sort((a, b) => a.n - b.n);
+      arr.sort((a, b) => (a.n - b.n).toInt());
       const popped: C80 | undefined = arr.pop();
       expect(popped?.n).assertEqual(2);
     });
@@ -1918,7 +1918,7 @@ export default function ArrayPopTest() {
      */
     it('testArrayPop0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: C115[] = [new C115(5), new C115(3), new C115(7)];
-      arr.sort((a, b) => a.v - b.v);
+      arr.sort((a, b) => (a.v - b.v).toInt());
       const popped: C115 | undefined = arr.pop();
       expect(popped?.v).assertEqual(7);
     });

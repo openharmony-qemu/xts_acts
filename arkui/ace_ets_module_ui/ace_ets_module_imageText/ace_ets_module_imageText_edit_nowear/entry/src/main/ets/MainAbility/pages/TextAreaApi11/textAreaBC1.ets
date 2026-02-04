@@ -144,7 +144,7 @@ struct TextAreaExampleBC1 {
         Text(this.message2).key('copy').width('45%')
       }.height('5%')
       Row(){
-        Text(this.message3).key('cut').width('45%')
+        Text(this.message3).key('cut_textAreaBC1').width('45%')
         Text(this.message4).key('paste').width('45%')
       }.height('5%')
       Text(this.message5).key('isEdit').height('5%')

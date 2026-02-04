@@ -47,11 +47,11 @@ export default function AsyGetKeySpecBySpecJsunit() {
      * @tc.desc   the asyKeySpec is RSA key pair, Use the callback Style of Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it(
       "Security_CryptoFramework_AsyKeySpec_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let rsaKeyPairSpec: cryptoFramework.RSAKeyPairSpec = genRsa2048KeyPairSpec();
         let asyKeyGeneratorSpec: cryptoFramework.AsyKeyGeneratorBySpec =

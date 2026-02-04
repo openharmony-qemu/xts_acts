@@ -15,67 +15,68 @@
 
 @Entry
 @Component
-struct ColumnGesture1 {
-  @State monopolize: boolean = true
-  @State logMsg1: string = ''
-  @State logMsg2: string = ''
+struct columnMonopolize {
+  @State message: string = 'set monopolizeEvents false';
+  @State messageOut: string = ' ';
+  @State messageInner: string = ' ';
+  @State monopolize: boolean = false;
+
   build() {
-    Column({space:20}) {
-      Text("monopolize--" + this.monopolize)
-        .fontSize(20)
-        .margin(10)
-      Text(this.logMsg1 + ";" + this.logMsg2)
-        .id('columnText')
-        .fontSize(20)
-        .fontColor(Color.Pink)
-        .margin(10)
-      Column(){}
-      .id('column1')
-      .width(100)
-      .height(80)
-      .backgroundColor(Color.Pink)
-      .monopolizeEvents(this.monopolize)
-      .gesture(
-        LongPressGesture()
-          .onAction((event: GestureEvent) => {
-            if (event) {
-              console.info('长按触发')
-              this.logMsg1 = 'LongPressGesture onAction success'
+    Scroll() {
+      Column() {
+        Text(this.message)
+          .height('10%')
+        Text(this.messageOut)
+          .height('10%')
+          .id('outer')
+        Text(this.messageInner)
+          .height('10%')
+          .id('inner')
+        Button('clean')
+          .height('10%')
+          .id('clean')
+          .onClick(() => {
+            this.messageOut = ' '
+            this.messageInner = ' '
+          })
+        Button('change monopolizeEvents')
+          .height('10%')
+          .id('change')
+          .onClick(() => {
+            this.monopolize = !this.monopolize
+            if (!this.monopolize) {
+              this.message = 'set monopolizeEvents false'
+            } else {
+              this.message = 'set monopolizeEvents true'
             }
           })
-      )
-      Column(){}
-      .id('column2')
-      .backgroundColor(Color.Blue)
-      .width(100)
-      .height(80)
-      .gesture(
-        TapGesture({ count: 1 })
-          .onAction((event: GestureEvent) => {
-            if (event) {
-              console.info('tap触发')
-              this.logMsg2 = 'TapGesture success'
+        Column() {
+          Column() {
+          }
+          .monopolizeEvents(this.monopolize)
+          .width('100%')
+          .height('40%')
+          .id('innerColnum')
+          .backgroundColor(Color.Blue)
+          .onTouch((event: TouchEvent) => {
+            if (event.type == TouchType.Down) {
+              console.info('inner column touch down')
+              this.messageInner = 'inner column touch down'
             }
           })
-      )
-      Button('change monopolize')
-        .id('buttonBoolean')
-        .width(200)
-        .height(80)
-        .margin(10)
-        .onClick(()=>{
-          console.info('按钮触发')
-          this.monopolize = !this.monopolize
+        }
+        .backgroundColor(Color.Gray)
+        .height('100%')
+        .width('100%')
+        .id('outerColnum')
+        .onTouch((event) => {
+          if (event.type == TouchType.Down) {
+            console.info('outside column touch down')
+            this.messageOut = 'outside column touch down'
+          }
         })
-      Button('clean')
-        .id('button_clean')
-        .width(200)
-        .height(80)
-        .margin(10)
-        .onClick(()=>{
-          this.logMsg1 = ''
-          this.logMsg2 = ''
-        })
-    }.height('100%').width('100%').justifyContent(FlexAlign.Center)
+      }
+      .height('100%')
+    }.height('90%').width('100%')
   }
 }

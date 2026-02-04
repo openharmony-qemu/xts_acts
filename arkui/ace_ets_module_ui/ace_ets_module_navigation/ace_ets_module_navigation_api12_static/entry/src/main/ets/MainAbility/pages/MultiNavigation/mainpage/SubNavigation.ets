@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,
-  FontWeight,Axis,Margin,Swiper,ForEach,BuilderParam, TouchType, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
+  FontWeight,Axis,Margin,Swiper,ForEach,BuilderParam, TouchType, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -41,7 +41,7 @@ import { NavWidthRangeAttrModifier } from './NavAttributeModifier';
 export struct SubNavigation {
   @Link isPortrait: boolean | undefined = false;
   @State displayMode: number = 0;
-  @ObjectLink multiStack: MultiNavPathStack;
+  @ObjectLink multiStack: MultiNavPathStack = new MultiNavPathStack()
   @BuilderParam navDestination: (name: string, param?: object) => void = this.SubNavDestination;
   primaryStack: MyNavPathStack = new MyNavPathStack();
   @State secondaryStack: MyNavPathStack = new MyNavPathStack();

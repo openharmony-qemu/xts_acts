@@ -4,8 +4,7 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Sensors.Sensor",
-                    "SystemCapability.Sensors.Sensor.Lite"
+                    "SystemCapability.Sensors.Sensor"
                 ]
             }
         ]

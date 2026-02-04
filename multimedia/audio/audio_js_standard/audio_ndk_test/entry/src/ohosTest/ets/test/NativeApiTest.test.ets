@@ -4892,5 +4892,275 @@ export default function audioNDK() {
       expect(result).assertEqual(TEST_PASS);
       done();
     })
+    /**
+     * @tc.name   AudioSessionManagerIsOtherMediaPlaying_001
+     * @tc.number AudioSessionManagerIsOtherMediaPlaying_001
+     * @tc.desc   IsOtherMediaPlaying
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioSessionManagerIsOtherMediaPlaying_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioSessionManagerIsOtherMediaPlaying_001();
+      console.info(`Tag: AudioSessionManagerIsOtherMediaPlaying_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   AudioCapturer_RequestPlaybackStart_Callback_0001
+     * @tc.number AudioCapturer_RequestPlaybackStart_Callback_0001
+     * @tc.desc   AUDIOSTREAM_ERROR_INVALID_PARAM-no data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioCapturer_RequestPlaybackStart_Callback_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioCapturer_RequestPlaybackStart_Callback_0001();
+      console.info(`Tag: AudioCapturer_RequestPlaybackStart_Callback_0001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   AudioCapturer_RequestPlaybackStart_Callback_0002
+     * @tc.number AudioCapturer_RequestPlaybackStart_Callback_0002
+     * @tc.desc   AUDIOSTREAM_ERROR_INVALID_PARAM-capture is nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioCapturer_RequestPlaybackStart_Callback_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioCapturer_RequestPlaybackStart_Callback_0002();
+      console.info(`Tag: AudioCapturer_RequestPlaybackStart_Callback_0002 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   AudioCapturer_RequestPlaybackStart_Callback_0003
+     * @tc.number AudioCapturer_RequestPlaybackStart_Callback_0003
+     * @tc.desc   AUDIOSTREAM_ERROR_INVALID_PARAM-Callback is nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioCapturer_RequestPlaybackStart_Callback_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioCapturer_RequestPlaybackStart_Callback_0003();
+      console.info(`Tag: AudioCapturer_RequestPlaybackStart_Callback_0003 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   AudioCapturer_RequestPlaybackStart_Callback_0004
+     * @tc.number AudioCapturer_RequestPlaybackStart_Callback_0004
+     * @tc.desc   AUDIOSTREAM_ERROR_INVALID_PARAM-userdata is nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioCapturer_RequestPlaybackStart_Callback_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioCapturer_RequestPlaybackStart_Callback_0004();
+      console.info(`Tag: AudioCapturer_RequestPlaybackStart_Callback_0004 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+
+    /**
+     * @tc.name   AudioCapturer_RequestPlaybackStart_Callback_0005
+     * @tc.number AudioCapturer_RequestPlaybackStart_Callback_0005
+     * @tc.desc   AUDIOSTREAM_ERROR_INVALID_PARAM-capture and userdata are nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioCapturer_RequestPlaybackStart_Callback_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioCapturer_RequestPlaybackStart_Callback_0005();
+      console.info(`Tag: AudioCapturer_RequestPlaybackStart_Callback_0005 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   AudioCapturer_RequestPlaybackStart_Callback_0006
+     * @tc.number AudioCapturer_RequestPlaybackStart_Callback_0006
+     * @tc.desc   AUDIOSTREAM_ERROR_INVALID_PARAM-callback and userdata are nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioCapturer_RequestPlaybackStart_Callback_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioCapturer_RequestPlaybackStart_Callback_0006();
+      console.info(`Tag: AudioCapturer_RequestPlaybackStart_Callback_0006 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   AudioCapturer_RequestPlaybackStart_Callback_0007
+     * @tc.number AudioCapturer_RequestPlaybackStart_Callback_0007
+     * @tc.desc   AUDIOSTREAM_ERROR_INVALID_PARAM-all parameter are nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioCapturer_RequestPlaybackStart_Callback_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioCapturer_RequestPlaybackStart_Callback_0007();
+      console.info(`Tag: AudioCapturer_RequestPlaybackStart_Callback_0007 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   AudioStreamBuilder_SetPlaybackCaptureMode_0001
+     * @tc.number AudioStreamBuilder_SetPlaybackCaptureMode_0001
+     * @tc.desc   AUDIOSTREAM_SUCCESS-set three mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioStreamBuilder_SetPlaybackCaptureMode_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0001();
+      console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   AudioStreamBuilder_SetPlaybackCaptureMode_0002
+     * @tc.number AudioStreamBuilder_SetPlaybackCaptureMode_0002
+     * @tc.desc   AUDIOSTREAM_SUCCESS-set MEDIA and DEFAULT mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioStreamBuilder_SetPlaybackCaptureMode_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0002();
+      console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0002 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   AudioStreamBuilder_SetPlaybackCaptureMode_0003
+     * @tc.number AudioStreamBuilder_SetPlaybackCaptureMode_0003
+     * @tc.desc   AUDIOSTREAM_SUCCESS-set MEDIA and EXCLUDING_SELF mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioStreamBuilder_SetPlaybackCaptureMode_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0003();
+      console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0003 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   AudioStreamBuilder_SetPlaybackCaptureMode_0004
+     * @tc.number AudioStreamBuilder_SetPlaybackCaptureMode_0004
+     * @tc.desc   AUDIOSTREAM_SUCCESS-set EXCLUDING_SELF and DEFAULT mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioStreamBuilder_SetPlaybackCaptureMode_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0004();
+      console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0004 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   AudioStreamBuilder_SetPlaybackCaptureMode_0005
+     * @tc.number AudioStreamBuilder_SetPlaybackCaptureMode_0005
+     * @tc.desc   AUDIOSTREAM_SUCCESS-set DEFAULT mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioStreamBuilder_SetPlaybackCaptureMode_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0005();
+      console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0005 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   AudioStreamBuilder_SetPlaybackCaptureMode_0006
+     * @tc.number AudioStreamBuilder_SetPlaybackCaptureMode_0006
+     * @tc.desc   AUDIOSTREAM_SUCCESS-set EXCLUDING_SELF mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioStreamBuilder_SetPlaybackCaptureMode_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0006();
+      console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0006 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   AudioStreamBuilder_SetPlaybackCaptureMode_0007
+     * @tc.number AudioStreamBuilder_SetPlaybackCaptureMode_0007
+     * @tc.desc   AUDIOSTREAM_SUCCESS-set MEDIA mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioStreamBuilder_SetPlaybackCaptureMode_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0007();
+      console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0007 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   AudioStreamBuilder_SetPlaybackCaptureMode_0008
+     * @tc.number AudioStreamBuilder_SetPlaybackCaptureMode_0008
+     * @tc.desc   AUDIOSTREAM_ERROR_INVALID_PARAM-capture is nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioStreamBuilder_SetPlaybackCaptureMode_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0008();
+      console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0008 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   AudioStreamBuilder_SetPlaybackCaptureMode_0009
+     * @tc.number AudioStreamBuilder_SetPlaybackCaptureMode_0009
+     * @tc.desc   AUDIOSTREAM_ERROR_INVALID_PARAM-mode is not invaild
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioStreamBuilder_SetPlaybackCaptureMode_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.AudioStreamBuilder_SetPlaybackCaptureMode_0009();
+      console.info(`Tag: AudioStreamBuilder_SetPlaybackCaptureMode_0009 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   AudioStream_PlaybackCaptureStartState_0001
+     * @tc.number AudioStream_PlaybackCaptureStartState_0001
+     * @tc.desc   PlaybackCaptureStartState-check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AudioStream_PlaybackCaptureStartState_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.AudioStream_PlaybackCaptureStartState_0001();
+      console.info(`Tag: AudioStream_PlaybackCaptureStartState_0001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
   })
 }

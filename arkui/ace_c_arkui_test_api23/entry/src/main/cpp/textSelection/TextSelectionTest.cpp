@@ -90,6 +90,7 @@ namespace ArkUICapiTest {
                 if (g_optionsIndex == g_changeNumeber) {
                     g_optionsIndex = 0;
                 }
+                OH_ArkUI_SelectionOptions_Dispose(options);
             });
         std::string id(xComponentID);
         if (OH_NativeXComponent_AttachNativeRootNode(PluginManager::GetInstance()->GetNativeXComponent(id),

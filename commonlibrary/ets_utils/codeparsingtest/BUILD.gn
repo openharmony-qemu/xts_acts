@@ -23,6 +23,7 @@ group("codeparsingtest") {
       "settest:ActsSetTest",
       "weaktest:ActsWeakTest",
       "builtinsarraytest:ActsBuiltinsArrayTest",
+      "builtinsarray2test:ActsBuiltinsArray2Test",
       "builtinstest:ActsBuiltinsTest",
       "builtinsupplytest:ActsBuiltinSupplyTest",
       "datetest:ActsDateTest",
@@ -38,6 +39,7 @@ group("codeparsingtest") {
       "symbol1test:ActsSymbol1Test",
       "symbol2test:ActsSymbol2Test",
       "cachecombotest:ActsCacheComboTest",
+      "base2libtest:ActsBase2LibTest",
     ]
   }
 }

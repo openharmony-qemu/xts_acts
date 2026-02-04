@@ -270,7 +270,7 @@ export default function RdbGetCurrentRowData() {
         expect().assertFail();
       } catch (err) {
         console.error(`queryCurrentRowData_003 failed message:${err.message} code:${err.code}`);
-        expect('14800014').assertEqual(err.code);
+        expect(14800014).assertEqual(err.code);
       }
       resultSet?.close();
       console.log(TAG + '************* queryCurrentRowData_003 end *************');
@@ -295,7 +295,7 @@ export default function RdbGetCurrentRowData() {
         expect().assertFail();
       } catch (err) {
         console.error(`queryCurrentRowData_004 failed message:${err.message} code:${err.code}`);
-        expect('14800021').assertEqual(err.code);
+        expect(14800021).assertEqual(err.code);
       }
       resultSet?.close();
       console.log(TAG + '************* queryCurrentRowData_004 end *************');
@@ -320,7 +320,7 @@ export default function RdbGetCurrentRowData() {
         expect().assertFail();
       } catch (err) {
         console.error(`queryCurrentRowData_005 failed message:${err.message} code:${err.code}`);
-        expect('14800019').assertEqual(err.code);
+        expect(14800019).assertEqual(err.code);
       }
       resultSet?.close();
       console.log(TAG + '************* queryCurrentRowData_005 end *************');
@@ -345,7 +345,7 @@ export default function RdbGetCurrentRowData() {
         expect().assertFail();
       } catch (err) {
         console.error(`queryCurrentRowData_006 failed message:${err.message} code:${err.code}`);
-        expect('14800001').assertEqual(err.code);
+        expect(14800001).assertEqual(err.code);
       }
       resultSet?.close();
       console.log(TAG + '************* queryCurrentRowData_006 end *************');
@@ -370,7 +370,7 @@ export default function RdbGetCurrentRowData() {
         expect().assertFail();
       } catch (err) {
         console.error(`queryCurrentRowData_007 failed message:${err.message} code:${err.code}`);
-        expect('14800012').assertEqual(err.code);
+        expect(14800012).assertEqual(err.code);
       }
       resultSet?.close();
       console.log(TAG + '************* queryCurrentRowData_007 end *************');
@@ -558,7 +558,7 @@ export default function RdbGetCurrentRowData() {
         expect().assertFail();
       } catch(err) {
         console.error(`lite_queryCurrentRowData_003 failed message:${err.message} code:${err.code}`);
-        expect('14800014').assertEqual(err.code);
+        expect(14800014).assertEqual(err.code);
       }
       liteResultSet?.close();
       console.log(TAG + '************* lite_queryCurrentRowData_003 end *************');
@@ -583,7 +583,7 @@ export default function RdbGetCurrentRowData() {
         expect().assertFail();
       } catch(err) {
         console.error(`lite_queryCurrentRowData_004 failed message:${err.message} code:${err.code}`);
-        expect('14800021').assertEqual(err.code);
+        expect(14800021).assertEqual(err.code);
       }
       liteResultSet?.close();
       console.log(TAG + '************* lite_queryCurrentRowData_004 end *************');
@@ -608,7 +608,7 @@ export default function RdbGetCurrentRowData() {
         expect().assertFail();
       } catch(err) {
         console.error(`lite_queryCurrentRowData_005 failed message:${err.message} code:${err.code}`);
-        expect('14800019').assertEqual(err.code);
+        expect(14800019).assertEqual(err.code);
       }
       liteResultSet?.close();
       console.log(TAG + '************* lite_queryCurrentRowData_005 end *************');
@@ -633,7 +633,7 @@ export default function RdbGetCurrentRowData() {
         expect().assertFail();
       } catch(err) {
         console.error(`lite_queryCurrentRowData_006 failed message:${err.message} code:${err.code}`);
-        expect('14800001').assertEqual(err.code);
+        expect(14800001).assertEqual(err.code);
       }
       liteResultSet?.close();
       console.log(TAG + '************* lite_queryCurrentRowData_006 end *************');
@@ -658,7 +658,7 @@ export default function RdbGetCurrentRowData() {
         expect().assertFail();
       } catch(err) {
         console.error(`lite_queryCurrentRowData_007 failed message:${err.message} code:${err.code}`);
-        expect('14800012').assertEqual(err.code);
+        expect(14800012).assertEqual(err.code);
       }
       liteResultSet?.close();
       console.log(TAG + '************* lite_queryCurrentRowData_007 end *************');

@@ -17,7 +17,6 @@ import {OnFirstContentfulPaintEvent, Visibility,OnRenderExitedEvent, OnPageBegin
 import { State } from '@ohos.arkui.stateManagement'
 import web_webview from '@ohos.web.webview'
 import { BusinessError, RecordData } from '@ohos.base';
-import { setTimeout } from '@internal.full.global';
 import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'

@@ -765,7 +765,6 @@ export default function urlTest2() {
      */
     it('testParamsSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
-      // params.append("11","ACA");
       params.set("11", "CCC");
       const res = params.toString();
       expect(res).assertEqual("1=value1&2=value2&key3=3&11=CCC");
@@ -811,7 +810,6 @@ export default function urlTest2() {
      */
     it('testParamsSet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("1=value1&2=value2&key3=3");
-      // params.append("1","ACA");
       params.set("1", "CCC");
       const res = params.toString();
       expect(res).assertEqual("1=CCC&2=value2&key3=3");
@@ -1096,27 +1094,6 @@ export default function urlTest2() {
       expect(result).assertEqual("user=abc&query=xyz")
     })
 
-    // /**
-    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08000
-    //  * @tc.name testParamsConstruction002
-    //  * @tc.desc A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    //   it('testParamsConstruction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //  class c1 {
-    //    user: string;
-    //    query:string[];
-    //  }
-    //   let params: Url.URLParams<c1> = new Url.URLParams({
-    //     user: 'abc',
-    //     query: ['first', 'second']
-    //   });
-    //   const result= params.toString()
-    //   expect(result).assertEqual("user=abc&query=first%2Csecond")
-    // })
-
     /**
      * @tc.name   testParamsConstruction003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08100
@@ -1134,23 +1111,6 @@ export default function urlTest2() {
       const result = params.toString()
       expect(result).assertEqual("user=abc&query=first&query=second")
     })
-
-    // /**
-    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08200
-    //  * @tc.name testParamsConstruction004
-    //  * @tc.desc A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    // it('testParamsConstruction004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let map: Map<string, string> = new Map<string, string>();
-    //   map.set('user', 'abc');
-    //   map.set('query', 'xyz');
-    //   let params = new Url.URLParams(map)
-    //   const result = params.toString()
-    //   expect(result).assertEqual("user=abc&query=xyz")
-    // })
 
     /**
      * @tc.name   testParamsConstruction005
@@ -1185,23 +1145,6 @@ export default function urlTest2() {
       const paramsResult = params.toString()
       expect(paramsResult).assertEqual('abcde=fghki')
     })
-
-    // /**
-    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08800
-    //  * @tc.name testNewURLSearchParams001
-    //  * @tc.desc The input parameter for New URLParams is undefined or null.
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    // it('testNewURLSearchParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = new Url.URLParams(undefined);
-    //   let result = params.toString()
-    //   expect(result).assertEqual('')
-    //   let params1 = new Url.URLParams(null);
-    //   let result2 = params1.toString()
-    //   expect(result2).assertEqual('')
-    // })
 
     /**
      * @tc.name   testUrlAppend001
@@ -2302,22 +2245,6 @@ export default function urlTest2() {
       expect(result).assertEqual("user=abc&query=xyz")
     })
 
-    // /**
-    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_16000
-    //  * @tc.name testUrlSearchParamsConstruction002
-    //  * @tc.desc  A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    // it('testUrlSearchParamsConstruction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = new Url.URLParams({
-    //     user: 'abc',
-    //     query: ['first', 'second']
-    //   });
-    //   const result = params.toString()
-    //   expect(result).assertEqual("user=abc&query=first%2Csecond")
-    // })
 
     /**
      * @tc.name   testUrlSearchParamsConstruction003
@@ -2336,25 +2263,6 @@ export default function urlTest2() {
       const result = params.toString()
       expect(result).assertEqual("user=abc&query=first&query=second")
     })
-
-    // /**
-    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_16300
-    //  * @tc.name testUrlSearchParamsConstruction005
-    //  * @tc.desc  A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    // it('testUrlSearchParamsConstruction005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const getQueryPairs = () => [
-    //     ['user', 'abc'],
-    //     ['query', 'first'],
-    //     ['query', 'second'],
-    //   ]
-    //   let params = new Url.URLParams(getQueryPairs());
-    //   const result = params.toString()
-    //   expect(result).assertEqual("user=abc&query=first&query=second")
-    // })
 
     /**
      * @tc.name   testUrlSearchParamsConstruction006
@@ -5078,7 +4986,7 @@ export default function urlTest2() {
       expect(uriObj3.port).assertEqual("");
       expect(uriObj3.protocol).assertEqual("https:");
       expect(uriObj3.search).assertEqual("?id=10086&type=bond&region=CN&sort=amount_desc");
-      // expect(JSON.stringify(uriObj3.params)).assertEqual('{"urlClass":{},"parentUrl":"https://admin:SecurePass123!@api.example.com/v2/resources/finance/transactions/2025Q4?id=10086&type=bond&region=CN&sort=amount_desc#payment-detail-789"}');
+      expect(JSON.stringify(uriObj3.params)).assertEqual('{"parentUrl":"https://admin:SecurePass123!@api.example.com/v2/resources/finance/transactions/2025Q4?id=10086&type=bond&region=CN&sort=amount_desc#payment-detail-789"}');
       expect(uriObj3.username).assertEqual("admin");
     })
   })

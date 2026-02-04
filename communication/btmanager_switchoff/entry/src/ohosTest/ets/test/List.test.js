@@ -15,10 +15,11 @@
 
 import btManagerError003Test from './btManagerSwitchOff003.test.js';
 import parameter from '@ohos.systemparameter';
-
+import btHidoff003Test from './BtHidOff003.test.js';
 let info = parameter.getSync("const.SystemCapability.Communication.Bluetooth.Core", "false");
 export default function testsuite() {
     if (info != "false") {
         btManagerError003Test();
+        btHidoff003Test();
     }
 }

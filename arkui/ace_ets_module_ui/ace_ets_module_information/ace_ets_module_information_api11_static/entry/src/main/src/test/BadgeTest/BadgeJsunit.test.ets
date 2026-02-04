@@ -60,7 +60,7 @@ export default function badgeJsunit() {
         console.info("get Badge state success " + JSON.stringify(pages));
         if (!("Badge" == pages.name)) {
           console.info("get Badge state success " + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options)
+          routerInstance.replaceUrl(options)
         }
       } catch (err) {
         console.error("push Badge page error " + JSON.stringify(err));

@@ -71,7 +71,8 @@ export default function ParamTestJsunit() {
         if (!("ParamTest" == pages.name)) {
           console.info("get ParamTestJsunit pages.name:" + JSON.stringify(pages.name));
 
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
+          console.info("get ParamTestJsunit pages.name:" + JSON.stringify(routerInstance.getState().name));
           await CommonFunc.sleep(2000);
 
         }

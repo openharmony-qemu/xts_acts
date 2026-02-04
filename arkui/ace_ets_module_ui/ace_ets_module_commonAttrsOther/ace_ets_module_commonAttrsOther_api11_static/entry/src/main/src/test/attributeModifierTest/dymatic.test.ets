@@ -47,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function dymaticTest() {
   describe('dymaticTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("dymaticTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")

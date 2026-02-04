@@ -28,16 +28,16 @@ describe('file_uri_test', function () {
      * @tc.level  LEVEL0
      */
     it('test_Fileuri_Getpath_001', Level.LEVEL0, function () {
-      let fileuristr = "file://docs/storage/users/cuurrenUser/Docments/test.txt";
-      let uriOBJ = new fileUri.FileUri(fileuristr);
-      let fpath = uriOBJ.path
-      if(fpath == '/data/storage/el2/share/r/docs/storage/users/cuurrenUser/Docments/test.txt'){
-        expect(true).assertTrue();
-      }else if (fpath == '/storage/users/cuurrenUser/Docments/test.txt'){
-        expect(true).assertTrue();
-      }else{
+      try{
+        let fileuristr = "file://docs/storage/users/cuurrenUser/Docments/test.txt";
+        let uriOBJ = new fileUri.FileUri(fileuristr);
+        let fpath = uriOBJ.path
+        expect(fpath == '/storage/users/cuurrenUser/Docments/test.txt').assertTrue();
+      }catch(e){
+        console.log('test_Fileuri_Getpath_001 has failed for:' + e.message);
         expect(false).assertTrue();
       }
+
     });
 
     /**
@@ -73,11 +73,7 @@ describe('file_uri_test', function () {
         let fileuristr = "file://com.ohos.UserFile.ExternalFileManager/data/storage/el2/distributedfiles/.remote_share/***/storage/Users/currentUser/Documents/test.txt?networkid=***";
         let uriOBJ = new fileUri.FileUri(fileuristr);
         let fpath = uriOBJ.path;
-        if (fpath === '/storage/Users/currentUser/appdata/el2/distributedfiles/com.ohos.UserFile.ExternalFileManager/.remote_share/***/storage/Users/currentUser/Documents/test.txt'){
-          expect(true).assertTrue();
-        }else{
-          expect(fpath === '/data/storage/el2/share/r/***/com.ohos.UserFile.ExternalFileManager/data/storage/el2/distributedfiles/.remote_share/***/storage/Users/currentUser/Documents/test.txt').assertTrue();
-        }
+        expect(fpath === '/storage/Users/currentUser/appdata/el2/distributedfiles/com.ohos.UserFile.ExternalFileManager/.remote_share/***/storage/Users/currentUser/Documents/test.txt').assertTrue();
       }catch(e){
         console.log('test_Fileuri_Getpath_003 has failed for:' + e.message);
         expect(false).assertTrue();
@@ -93,16 +89,15 @@ describe('file_uri_test', function () {
      * @tc.level  LEVEL0
      */
     it('test_Fileuri_Getpath_004', Level.LEVEL0, function () {
-      let fileuristr = "file://docs/storage/users/cuurrenUser/Docments";
-      let uriOBJ = new fileUri.FileUri(fileuristr);
-      let fpath = uriOBJ.path
-      if(fpath === '/storage/users/cuurrenUser/Docments'){
-        expect(true).assertTrue();
-      }else if (fpath === '/data/storage/el2/share/r/docs/storage/users/cuurrenUser/Docments'){
-        expect(true).assertTrue();
-      }else {
-          expect(false).assertTrue()
-        };
+     try{
+        let fileuristr = "file://docs/storage/users/cuurrenUser/Docments";
+        let uriOBJ = new fileUri.FileUri(fileuristr);
+        let fpath = uriOBJ.path
+        expect(fpath === '/storage/users/cuurrenUser/Docments').assertTrue();
+      }catch(e){
+        console.log('test_Fileuri_Getpath_004 has failed for:' + e.message);
+        expect(false).assertTrue();
+      }
       });
 
     /**
@@ -139,11 +134,7 @@ describe('file_uri_test', function () {
         let uriOBJ = new fileUri.FileUri(fileuristr);
         let fpath = uriOBJ.path
         console.log('test_Fileuri_Getpath_006 fpath:' + fpath);
-        if (fpath === '/storage/Users/currentUser/appdata/el2/distributedfiles/com.ohos.UserFile.ExternalFileManager/.remote_share/storage/Users/currentUser/Documents/test.txt'){
-          expect(true).assertTrue();
-        }else{
-          expect(fpath === '/data/storage/el2/share/r/com.ohos.UserFile.ExternalFileManager/data/storage/el2/distributedfiles/.remote_share/storage/Users/currentUser/Documents/test.txt').assertTrue();
-        }
+        expect(fpath === '/storage/Users/currentUser/appdata/el2/distributedfiles/com.ohos.UserFile.ExternalFileManager/.remote_share/storage/Users/currentUser/Documents/test.txt').assertTrue();
       }catch(e){
         console.log('test_Fileuri_Getpath_006 has failed for:' + e.message);
         expect(false).assertTrue();
@@ -169,11 +160,7 @@ describe('file_uri_test', function () {
         let uriOBJ = new fileUri.FileUri(fileuri100);
         let fpath = uriOBJ.path
         console.log('test_Fileuri_Getpath_007 fpath:' + fpath);
-        if (fpath === '/storage/Users/currentUser/appdata/el2/distributedfiles/com.ohos.UserFile.ExternalFileManager/.remote_share/***/storage/Users/currentUser/Documents/test'){
-          expect(true).assertTrue();
-        }else{
-          expect(fpath === '/data/storage/el2/share/r/**TEST!@#/com.ohos.UserFile.ExternalFileManager/data/storage/el2/distributedfiles/.remote_share/***/storage/Users/currentUser/Documents/test').assertTrue();
-        }
+        expect(fpath === '/storage/Users/currentUser/appdata/el2/distributedfiles/com.ohos.UserFile.ExternalFileManager/.remote_share/***/storage/Users/currentUser/Documents/test').assertTrue();
       }catch(e){
         console.log('test_Fileuri_Getpath_007 has failed for:' + e.message);
         expect(false).assertTrue();

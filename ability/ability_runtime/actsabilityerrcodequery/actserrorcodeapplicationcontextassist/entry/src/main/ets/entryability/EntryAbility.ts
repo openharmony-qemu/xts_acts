@@ -16,16 +16,24 @@ import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import app, { AppResponse } from '@system.app'
+import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 
+function sleep(ms: number) {
+  return new Promise<void>(resolve => setTimeout(resolve, ms));
+}
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     console.info('EntryAbility onCreate');
     globalThis.abilityAssist = this.context
   }
 
-  onDestroy() {
+  async onDestroy() {
     console.info('EntryAbility onDestroy');
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
+    commonEventManager.publish('ACTS_TEST_DESTROY_ASSIST', function () {
+      console.info('====>SUB_ChildProcessManager_sendableContextManager_0800 publish ACTS_TEST_DESTROY_ASSIST');
+    });
+    await sleep(500);
   }
 
   onWindowStageCreate(windowStage: window.WindowStage) {

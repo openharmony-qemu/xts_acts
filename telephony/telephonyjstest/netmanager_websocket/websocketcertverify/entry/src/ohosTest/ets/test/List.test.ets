@@ -16,9 +16,19 @@
 import NetworkManagerWebsocketTest from './NetworkManagerWebsocketTest.test'
 import NetworkManagerSocketTest from './NetworkManagerSocketTest.test'
 import NetworkManagerVpnTest from './NetworkManagerVpnTest.test'
-
+import NetWorkManagerGetConnectOwnerUid from './NetWorkManagerGetConnectOwnerUid.test'
+import EmptyTestCheckNetwork from './EmptyTestCheckNetwork.test';
+import connection from '@ohos.net.connection';
+ 	 
+let netHandle = connection.getDefaultNetSync();
+ 	 
 export default function testsuite() {
-    NetworkManagerWebsocketTest();
-	NetworkManagerSocketTest();
-	NetworkManagerVpnTest();
+	if(netHandle.netId != 0){
+		NetworkManagerWebsocketTest();	 
+		NetworkManagerSocketTest();	 
+		NetworkManagerVpnTest();	 
+		NetWorkManagerGetConnectOwnerUid(); 
+	} else {
+		EmptyTestCheckNetwork();
+	}
 }

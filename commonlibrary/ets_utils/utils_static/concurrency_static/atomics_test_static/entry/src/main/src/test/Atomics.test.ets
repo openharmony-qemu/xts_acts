@@ -26,7 +26,7 @@ import {
   Size
 } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
-import Utils from './Util.test';
+import sleep from './Util.test';
 
 async function noParamNoReturnTask(): Promise<void> {
   await new Promise<string>((resolve) => {
@@ -37,7 +37,7 @@ async function noParamNoReturnTask(): Promise<void> {
 export default function AtomicsTest() {
   describe('AtomicsTest', (): void => {
     afterEach(() => {
-      await Utils.msSleep(200);
+      await sleep(200);
     })
     /**
      * @tc.number SUB_Atomics_Test_0100
@@ -265,7 +265,7 @@ export default function AtomicsTest() {
         array[0] = 0;
         const modifyTask = (array: Int32Array): void => {
           setTimeout(() => {
-            const newValue: number = 42;
+            const newValue: int = 42;
             Atomics.store(array, 0, newValue);
             const numAwoken: number = Atomics.notify(array, 0);
             console.log(`${TAG} TaskPool thread: notified ${numAwoken} waiting threads`);
@@ -1017,7 +1017,7 @@ export default function AtomicsTest() {
 
           for (let i = 0; i < taskCount; i++) {
             waitTasks.push(new Promise<void>((resolve, reject) => {
-              taskpool.execute(() => {
+              taskpool.execute(async () => {
                 Atomics.add(readyCounter, 0, 1);
                 const waitResult = Atomics.wait(sharedArray, 0, 0n);
                 if (waitResult === 'ok') {
@@ -1088,7 +1088,7 @@ export default function AtomicsTest() {
           for (let i = 0; i < taskCount; i++) {
             const waitValue = BigInt(i + 1);
             waitTasks.push(new Promise<void>((resolve, reject) => {
-              taskpool.execute(() => {
+              taskpool.execute(async () => {
                 Atomics.add(readyCounter, 0, 1);
                 const waitResult = Atomics.wait(sharedArray, 0, waitValue);
                 if (waitResult === 'ok') {
@@ -1164,7 +1164,7 @@ export default function AtomicsTest() {
             const waitValue = 0n;
 
             waitTasks.push(new Promise<void>((resolve, reject) => {
-              taskpool.execute(() => {
+              taskpool.execute(async () => {
                 Atomics.add(readyCounter, 0, 1);
                 Atomics.wait(sharedArray, waitPosition, waitValue);
                 resolve(undefined);

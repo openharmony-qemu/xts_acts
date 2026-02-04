@@ -41,9 +41,9 @@ export default function webFantasyFont() {
      * @tc.desc   test minLogicalFontSize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('emitWebFantasyFontStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('emitWebFantasyFontStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:() => void): Promise<void> => {
       Utils.emitEvent('emitWebFantasyFont001', 10)
       await Utils.msSleep(2000)

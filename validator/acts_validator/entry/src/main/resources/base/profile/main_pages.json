@@ -181,6 +181,7 @@
     "pages/ArkUI/Magnifier",
     "pages/ArkUI/RadiusRenderStrategy",
     "pages/ArkUI/ImageDownloadInfo",
-    "pages/ArkUI/GameAddTest"
+    "pages/ArkUI/GameAddTest",
+    "pages/ArkUI/AdvancedBlendMode"
   ]
 }

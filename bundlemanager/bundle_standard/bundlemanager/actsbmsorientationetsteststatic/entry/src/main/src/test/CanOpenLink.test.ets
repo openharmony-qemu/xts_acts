@@ -33,9 +33,9 @@ export default function canOpenLink() {
      * @tc.desc   The scheme of the specified link is not in the querySchemes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('canOpenLinkNotInQuerySchemes_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('canOpenLinkNotInQuerySchemes_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let data = bundle.canOpenLink("https://");
         expect(data).assertFail();

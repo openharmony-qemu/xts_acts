@@ -90,9 +90,9 @@ it('UIObserverUpdateContextTest_static_0100', Level.LEVEL2, async (done: () => v
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      console.info('UIObserverUpdateContextTest_static_0100 UIObserverUpdateContextPage_callBackFuncOnCount is: ' + AppStorage.get('UIObserverUpdateContextPage_callBackFuncOnCount'));
-      console.info('UIObserverUpdateContextTest_static_0100 UIObserverUpdateContextPage_callBackFuncOnCount_2 is: ' + AppStorage.get('UIObserverUpdateContextPage_callBackFuncOnCount_2'));
-      expect(AppStorage.get('UIObserverUpdateContextPage_callBackFuncOnCount')).assertEqual(AppStorage.get('UIObserverUpdateContextPage_callBackFuncOnCount_2'));
+      console.info('UIObserverUpdateContextTest_static_0100 UIObserverUpdateContextPage_callBackFuncOnCount is: ' + AppStorage.get<int>('UIObserverUpdateContextPage_callBackFuncOnCount'));
+      console.info('UIObserverUpdateContextTest_static_0100 UIObserverUpdateContextPage_callBackFuncOnCount_2 is: ' + AppStorage.get<int>('UIObserverUpdateContextPage_callBackFuncOnCount_2'));
+      expect(AppStorage.get<int>('UIObserverUpdateContextPage_callBackFuncOnCount')).assertEqual(AppStorage.get<int>('UIObserverUpdateContextPage_callBackFuncOnCount_2'));
       AppStorage.delete('UIObserverUpdateContextPage_callBackFuncOnCount')
       AppStorage.delete('UIObserverUpdateContextPage_callBackFuncOnCount_2')
 

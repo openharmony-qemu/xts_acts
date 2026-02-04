@@ -42,7 +42,6 @@ import {
   wrapBuilder,
   PickerTextStyle,
   CalendarAlign,
-  Date,
   CalendarPicker,
   Builder,
   TextOverflow,

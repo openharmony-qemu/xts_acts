@@ -91,9 +91,9 @@ export default function DecimalTest024() {
      * @tc.desc   Test abs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("Decimal_abs_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it("Decimal_abs_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       Decimal.set({
         precision: 20,
         rounding: 4,
@@ -122,9 +122,9 @@ export default function DecimalTest024() {
      * @tc.desc   Test abs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("Decimal_abs_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it("Decimal_abs_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       test_abs_002('1.1', 1.1);
       test_abs_002('1.1', -1.1);
       test_abs_001('1.5', '1.5');

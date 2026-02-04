@@ -187,6 +187,14 @@ export default function TlsSocketServerCloseTest() {
             console.log("--- connection start--")
             tlsClient.connect(tlsTwoWayConnectOptions).then(async () => {
               console.log(`${caseName} tlsClient connect success`);
+              await tlsClient.close().then(()=>{
+                console.log(`${caseName} tlsClient close success`);
+              }).catch((err: BusinessError)=>{
+                console.log(`${caseName} tlsClient close failed`+ JSON.stringify(err));
+                ExpectFail();
+                done();
+                console.info(`${caseName}---End`);
+              })
             }).catch((err: BusinessError) => {
               console.info(`${caseName}tlsClient connect failed catch  err is `+JSON.stringify(err));
               ExpectFail();
@@ -267,6 +275,14 @@ export default function TlsSocketServerCloseTest() {
             console.log("--- connection start---")
             tlsClient.connect(tlsTwoWayConnectOptions).then(async () => {
               console.log(`${caseName} tlsClient connect success`);
+              await tlsClient.close().then(()=>{
+                console.log(`${caseName} tlsClient close success`);
+              }).catch((err: BusinessError)=>{
+                console.log(`${caseName} tlsClient close failed`+ JSON.stringify(err));
+                ExpectFail();
+                done();
+                console.info(`${caseName}---End`);
+              })
             }).catch((err: BusinessError) => {
               console.info(`${caseName}tlsClient connect failed catch  err is `+JSON.stringify(err));
               ExpectFail();
@@ -353,6 +369,14 @@ export default function TlsSocketServerCloseTest() {
             console.log("--- connection start")
             tlsClient.connect(tlsTwoWayConnectOptions).then(async () => {
               console.log(`${caseName} tlsClient connect success`);
+              await tlsClient.close().then(()=>{
+                console.log(`${caseName} tlsClient close success`);
+              }).catch((err: BusinessError)=>{
+                console.log(`${caseName} tlsClient close failed`+ JSON.stringify(err));
+                ExpectFail();
+                done();
+                console.info(`${caseName}---End`);
+              })
             }).catch((err: BusinessError) => {
               console.info(`${caseName}tlsClient connect failed catch  err is `+JSON.stringify(err));
               ExpectFail();
@@ -440,6 +464,14 @@ export default function TlsSocketServerCloseTest() {
             console.log("--- connection start")
             tlsClient.connect(tlsTwoWayConnectOptions).then(async () => {
               console.log(`${caseName} tlsClient connect success`);
+              await tlsClient.close().then(()=>{
+                console.log(`${caseName} tlsClient close success`);
+              }).catch((err: BusinessError)=>{
+                console.log(`${caseName} tlsClient close failed`+ JSON.stringify(err));
+                ExpectFail();
+                done();
+                console.info(`${caseName}---End`);
+              })
             }).catch((err: BusinessError) => {
               console.info(`${caseName}tlsClient connect failed catch  err is `+JSON.stringify(err));
               ExpectFail();
@@ -700,6 +732,14 @@ export default function TlsSocketServerCloseTest() {
             console.log("--- connection start---")
             tlsClient.connect(tlsTwoWayConnectOptions).then(async () => {
               console.log(`${caseName} tlsClient connect success`);
+              await tlsClient.close().then(()=>{
+                console.log(`${caseName} tlsClient close success`);
+              }).catch((err: BusinessError)=>{
+                console.log(`${caseName} tlsClient close failed`+ JSON.stringify(err));
+                ExpectFail();
+                done();
+                console.info(`${caseName}---End`);
+              })
             }).catch((err: BusinessError) => {
               console.info(`${caseName} tlsClient connect failed catch  err is `+JSON.stringify(err));
               ExpectFail();
@@ -787,6 +827,14 @@ export default function TlsSocketServerCloseTest() {
             console.log("--- connection start---")
             tlsClient.connect(tlsTwoWayConnectOptions).then(async () => {
               console.log(`${caseName} tlsClient connect success`);
+              await tlsClient.close().then(()=>{
+                console.log(`${caseName} tlsClient close success`);
+              }).catch((err: BusinessError)=>{
+                console.log(`${caseName} tlsClient close failed`+ JSON.stringify(err));
+                ExpectFail();
+                done();
+                console.info(`${caseName}---End`);
+              })
             }).catch((err: BusinessError) => {
               console.info(`${caseName} tlsClient connect failed catch  err is `+JSON.stringify(err));
               ExpectFail();
@@ -1049,6 +1097,14 @@ export default function TlsSocketServerCloseTest() {
             console.log("--- connection--start---")
             tlsClient.connect(tlsTwoWayConnectOptions).then(async () => {
               console.log(`${caseName} tlsClient connect success`);
+              await tlsClient.close().then(()=>{
+                console.log(`${caseName} tlsClient close success`);
+              }).catch((err: BusinessError)=>{
+                console.log(`${caseName} tlsClient close failed`+ JSON.stringify(err));
+                ExpectFail();
+                done();
+                console.info(`${caseName}---End`);
+              })
             }).catch((err: BusinessError) => {
               console.info(`${caseName} tlsClient connect  get err is `+JSON.stringify(err));
               ExpectFail();
@@ -1137,6 +1193,14 @@ export default function TlsSocketServerCloseTest() {
             console.log("--- connection--start---")
             tlsClient.connect(tlsTwoWayConnectOptions).then(async () => {
               console.log(`${caseName} tlsClient connect success`);
+              await tlsClient.close().then(()=>{
+                console.log(`${caseName} tlsClient close success`);
+              }).catch((err: BusinessError)=>{
+                console.log(`${caseName} tlsClient close failed`+ JSON.stringify(err));
+                ExpectFail();
+                done();
+                console.info(`${caseName}---End`);
+              })
             }).catch((err: BusinessError) => {
               console.info(`${caseName} tlsClient connect  get err is `+JSON.stringify(err));
               ExpectFail();

@@ -47,12 +47,10 @@ export default function  ImageSourcePropertyKeyTest() {
       pngImageSourceApi = await getImageSource('test_exif_v2.png');
     });
     beforeEach(async () => {
-      await sleep(500);
       console.info('beforeEach case');
     });
     afterEach(async () => {
       console.info('afterEach case');
-      await sleep(500)
     });
     afterAll(async() => {
       console.info('afterAll case');
