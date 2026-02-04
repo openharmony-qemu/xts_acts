@@ -336,7 +336,7 @@
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL3
       */
-     it('getProfileByAbilityCallBack', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
+     it('getProfileByAbilityCallBackundefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
        console.info(TAG + "getProfileByAbilityCallBackundefined start");
        try {
          bundleManager.getProfileByAbility(undefined, abilityName, metadataName, (err:BusinessError, data:Array<string>) => {
@@ -949,7 +949,7 @@
  
      /**
       * @tc.name   getProfileByExtensionAbilityEmpty
-      * @tc.number Sub_Bms_getProfileByExtensionAbility_1021
+      * @tc.number Sub_Bms_getProfileByExtensionAbility_10210
       * @tc.desc   test errCode 401 when call getProfileByExtensionAbility
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
@@ -983,7 +983,7 @@
  
      /**
       * @tc.name   getProfileByExtensionAbilityUndefinedx
-      * @tc.number Sub_Bms_getProfileByExtensionAbility_1022
+      * @tc.number Sub_Bms_getProfileByExtensionAbility_10220
       * @tc.desc   test errCode 401 when call getProfileByExtensionAbility
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
@@ -1175,7 +1175,7 @@
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL3
       */
-     it('getProfileByExtensionAbilityPromiseundefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
+     it('getProfileByExtensionAbilityPromiseUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
        console.info(TAG + "getProfileByExtensionAbilityPromiseundefined start");
        try {
          await bundleManager.getProfileByExtensionAbility(undefined, extensionAbilityName, metadataName).then((data) => {
@@ -1261,7 +1261,7 @@
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL3
       */
-     it('getProfileByExtensionAbilityPromiseundefinedx', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
+     it('getProfileByExtensionAbilityPromiseUndefinedx', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
        console.info(TAG + "getProfileByExtensionAbilityPromiseundefined start");
        try {
          await bundleManager.getProfileByExtensionAbility(moduleName, undefined, metadataName).then((data) => {
@@ -1312,7 +1312,7 @@
  
      /**
       * @tc.name   getProfileByExtensionAbilityPromiseEmptyx
-      * @tc.number Sub_Bms_getProfileByExtensionAbility_1031
+      * @tc.number Sub_Bms_getProfileByExtensionAbility_10310
       * @tc.desc   test errCode 401 when call getProfileByExtensionAbility
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
@@ -1400,7 +1400,7 @@
  
      /**
       * @tc.name   getProfileByExtensionAbilityPromiseEmptyx3
-      * @tc.number Sub_Bms_getProfileByExtensionAbility_1032
+      * @tc.number Sub_Bms_getProfileByExtensionAbility_1033
       * @tc.desc   test errCode 401 when call getProfileByExtensionAbility
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
