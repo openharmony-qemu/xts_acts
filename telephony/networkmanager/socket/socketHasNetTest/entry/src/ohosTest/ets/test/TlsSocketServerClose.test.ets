@@ -151,6 +151,7 @@ export default function TlsSocketServerCloseTest() {
           console.log(`${caseName} tlsServer listen  success`)
           tlsServer.on('connect', async (client: socket.TLSSocketConnection) => {
             console.log(`${caseName} ======= tlsServer on  connect  success client is :`+ JSON.stringify(client));
+            await sleep(500);
             tlsServer.close().then(()=>{
               console.log(`${caseName} tlsServer close success`);
               ExpectTrue(true);
@@ -238,6 +239,7 @@ export default function TlsSocketServerCloseTest() {
           console.log(`${caseName} tlsServer listen  success`)
           tlsServer.on('connect', async (client: socket.TLSSocketConnection) => {
             console.log(`${caseName} ======= tlsServer on  connect  success client is :`+ JSON.stringify(client));
+            await sleep(500);
             tlsServer.close().then(()=>{
               console.log(`${caseName} tlsServer close success`);
               ExpectTrue(true);
@@ -325,6 +327,7 @@ export default function TlsSocketServerCloseTest() {
           console.log(`${caseName} tlsServer listen  success`)
           tlsServer.on('connect', async (tlsSocketConnection: socket.TLSSocketConnection) => {
             console.log(`${caseName} ======= tlsServer on  connect  success client is :`+ JSON.stringify(tlsSocketConnection));
+            await sleep(500);
             tlsServer.close().then(()=>{
               console.log(`${caseName} tlsServer close success`);
               tlsSocketConnection.send("tlsServer close send").then(()=>{
@@ -420,6 +423,7 @@ export default function TlsSocketServerCloseTest() {
           console.log(`${caseName} tlsServer listen  success`)
           tlsServer.on('connect', async (tlsSocketConnection: socket.TLSSocketConnection) => {
             console.log(`${caseName} ======= tlsServer on  connect  success client is :`+ JSON.stringify(tlsSocketConnection));
+            await sleep(500);
             tlsServer.close().then(()=>{
               console.log(`${caseName} tlsServer close success`);
               tlsSocketConnection.send("tlsServer close send").then(()=>{
@@ -514,6 +518,7 @@ export default function TlsSocketServerCloseTest() {
           console.log(`${caseName} tlsServer listen  success`)
           tlsServer.on('connect', async (client: socket.TLSSocketConnection) => {
             console.log(`${caseName} ======= tlsServer on  connect  success client is :`+ JSON.stringify(client));
+            await sleep(500);
             tlsServer.close().then(()=>{
               console.log(`${caseName} tlsServer close success`);
               tlsClient.send("send again").then(async ()=>{
@@ -601,6 +606,7 @@ export default function TlsSocketServerCloseTest() {
           console.log(`${caseName} tlsServer listen  success`)
           tlsServer.on('connect', async (client: socket.TLSSocketConnection) => {
             console.log(`${caseName} ======= tlsServer on  connect  success client is :`+ JSON.stringify(client));
+            await sleep(500);
             tlsServer.close().then(()=>{
               console.log(`${caseName} tlsServer close success`);
               tlsClient.send("send again").then(async ()=>{
@@ -688,6 +694,7 @@ export default function TlsSocketServerCloseTest() {
           console.log(`${caseName} tlsServer listen  success`)
           tlsServer.on('connect', async (client: socket.TLSSocketConnection) => {
             console.log(`${caseName} ======= tlsServer on  connect  success client is :`+ JSON.stringify(client));
+            await sleep(500);
             tlsServer.close().then(()=>{
               console.log(`${caseName} tlsServer close success`);
               tlsServer.listen(tlsConnectOptions).then(()=>{
@@ -783,6 +790,7 @@ export default function TlsSocketServerCloseTest() {
           console.log(`${caseName} tlsServer listen  success`)
           tlsServer.on('connect', async (client: socket.TLSSocketConnection) => {
             console.log(`${caseName} ======= tlsServer on  connect  success client is :`+ JSON.stringify(client));
+            await sleep(500);
             tlsServer.close().then(()=>{
               console.log(`${caseName} tlsServer close success`);
               tlsServer.listen(tlsConnectOptions).then(()=>{
@@ -877,6 +885,7 @@ export default function TlsSocketServerCloseTest() {
           console.log(`${caseName} tlsServer listen  success`)
           tlsServer.on('connect', async (client: socket.TLSSocketConnection) => {
             console.log(`${caseName} ======= tlsServer on  connect  success client is :`+ JSON.stringify(client));
+            await sleep(500);
             await tlsServer.close().then(()=>{
               console.log(`${caseName} tlsServer close success`);
               ExpectTrue(true);
@@ -965,6 +974,7 @@ export default function TlsSocketServerCloseTest() {
           console.log(`${caseName} tlsServer listen  success`)
           tlsServer.on('connect', async (client: socket.TLSSocketConnection) => {
             console.log(`${caseName} ======= tlsServer on  connect  success client is :`+ JSON.stringify(client));
+            await sleep(500);
             await tlsServer.close().then(()=>{
               console.log(`${caseName} tlsServer close success`);
               ExpectTrue(true);
@@ -1060,6 +1070,7 @@ export default function TlsSocketServerCloseTest() {
               done();
               console.info(`${caseName}---End`);
             })
+            await sleep(500);
             await tlsServer.close().then(()=>{
               console.log(`${caseName} tlsServer close success`);
               ExpectTrue(true);
@@ -1156,6 +1167,7 @@ export default function TlsSocketServerCloseTest() {
               done();
               console.info(`${caseName}---End`);
             })
+            await sleep(500);
             await tlsServer.close().then(()=>{
               console.log(`${caseName} tlsServer close success`);
               ExpectTrue(true);
