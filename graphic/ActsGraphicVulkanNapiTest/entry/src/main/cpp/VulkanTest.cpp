@@ -25,7 +25,6 @@
 namespace vulkan {
 namespace loader {
 
-// 扩展函数需要通过 vkGetInstanceProcAddr 动态获取
 static PFN_vkCreateDebugUtilsMessengerEXT vkCreateDebugUtilsMessengerEXT = nullptr;
 static PFN_vkDestroyDebugUtilsMessengerEXT vkDestroyDebugUtilsMessengerEXT = nullptr;
 static PFN_vkDestroyInstance vkDestroyInstance = nullptr;
@@ -213,13 +212,13 @@ int LoadBaseFuncPtrTest()
     if (result != VK_SUCCESS) {
         std::cout << "vkEnumerateInstanceExtensionProperties failed: " << result << std::endl;
         g_isSupportedVulkan = false;
-        return 0; 
+        return 0;
     }
     std::cout << "Vulkan base functions available, extension count: " << extensionCount << std::endl;
     TrytoCreateVkInstance();
     std::cout << "LoadBaseFuncPtr test completed, device Vulkan support: "
               << (g_isSupportedVulkan ? "true" : "false (no drivers)") << std::endl;
-    return 0; 
+    return 0;
 }
 
 template <typename T> static bool LoadInstanceFunc(T& funcPtr, const char* funcName)
