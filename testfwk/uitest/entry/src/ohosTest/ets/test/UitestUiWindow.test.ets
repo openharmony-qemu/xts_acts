@@ -686,11 +686,11 @@ export default function uiUiWindowTest() {
             let data: display.FoldStatus = display.getFoldStatus()
             console.log(`Succeeded in obtaining fold status. Data,${data}`);
             // Foldable device
-            if (data != FOLD_STATUS_UNKNOWN) {
+            if (data != FoldStatus.FOLD_STATUS_UNKNOWN) {
               await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
               await driver.delayMs(waitUiReadyMs)
               // The device is fully folded
-              if (data == FOLD_STATUS_FOLDED) {
+              if (data == FoldStatus.FOLD_STATUS_FOLDED) {
                 await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
                 await driver.delayMs(waitUiReadyMs)
               }
