@@ -29,6 +29,20 @@
 #include <hilog/log.h>
 #include "NativeBufferTest.h"
 
+std::vector<OH_NativeBuffer_ColorSpace> nativeBuffeColorSpace = {
+    OH_COLORSPACE_NONE,                 OH_COLORSPACE_BT601_EBU_FULL,        OH_COLORSPACE_BT601_SMPTE_C_FULL,
+    OH_COLORSPACE_BT709_FULL,           OH_COLORSPACE_BT2020_HLG_FULL,       OH_COLORSPACE_BT2020_PQ_FULL,
+    OH_COLORSPACE_BT601_EBU_LIMIT,      OH_COLORSPACE_BT601_SMPTE_C_LIMIT,   OH_COLORSPACE_BT709_LIMIT,
+    OH_COLORSPACE_BT2020_HLG_LIMIT,     OH_COLORSPACE_BT2020_PQ_LIMIT,       OH_COLORSPACE_SRGB_FULL,
+    OH_COLORSPACE_P3_FULL,              OH_COLORSPACE_P3_HLG_FULL,           OH_COLORSPACE_P3_PQ_FULL,
+    OH_COLORSPACE_ADOBERGB_FULL,        OH_COLORSPACE_SRGB_LIMIT,            OH_COLORSPACE_P3_LIMIT,
+    OH_COLORSPACE_P3_HLG_LIMIT,         OH_COLORSPACE_P3_PQ_LIMIT,           OH_COLORSPACE_ADOBERGB_LIMIT,
+    OH_COLORSPACE_LINEAR_SRGB,          OH_COLORSPACE_LINEAR_BT709,          OH_COLORSPACE_LINEAR_P3,
+    OH_COLORSPACE_LINEAR_BT2020,        OH_COLORSPACE_DISPLAY_SRGB,          OH_COLORSPACE_DISPLAY_P3_SRGB,
+    OH_COLORSPACE_DISPLAY_P3_HLG,       OH_COLORSPACE_DISPLAY_P3_PQ,         OH_COLORSPACE_DISPLAY_BT2020_SRGB,
+    OH_COLORSPACE_DISPLAY_BT2020_HLG,   OH_COLORSPACE_DISPLAY_BT2020_PQ
+};
+
 static OH_NativeBuffer *getBuffer()
 {
     OH_NativeBuffer_Config config = {
@@ -807,8 +821,8 @@ napi_value OHNativeBufferSetColorSpaceNormal(napi_env env, napi_callback_info in
         .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
         .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
     };
-    for (uint32_t index = 0; index < sizeof(OH_NativeBuffer_ColorSpace); index++) {
-        OH_NativeBuffer_ColorSpace colorSpace1 = static_cast<OH_NativeBuffer_ColorSpace>(index);
+    for (uint32_t index = 0; index < nativeBuffeColorSpace.size(); index++) {
+        OH_NativeBuffer_ColorSpace colorSpace1 = nativeBuffeColorSpace[index];
         OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&nativeBufferConfig);
         int32_t ret = OH_NativeBuffer_SetColorSpace(nativeBuffer, colorSpace1);
         if (ret != 0) {

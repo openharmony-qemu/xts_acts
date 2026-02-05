@@ -235,9 +235,9 @@ HWTEST_F(DrawingNativePixelMapTest, testPixelMapDissolveNormal, Function | Small
  */
 HWTEST_F(DrawingNativePixelMapTest, testPixelMapDissolveNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_PixelMapDissolve parameter is null
+    OH_Drawing_PixelMap *pixelMap = nullptr;
     OH_Drawing_PixelMapDissolve(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(pixelMap, nullptr);
 }
 
 } // namespace Drawing
