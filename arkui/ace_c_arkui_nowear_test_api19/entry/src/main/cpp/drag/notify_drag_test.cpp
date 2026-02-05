@@ -111,7 +111,7 @@ static void OnEventReceive(ArkUI_NodeEvent *event)
         }
     }
     
-    if (OH_ArkUI_NodeEvent_GetEventType(event)  == NODE_ON_DROP) {
+    if (OH_ArkUI_NodeEvent_GetEventType(event)  == NODE_ON_DRAG_ENTER) {
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "zxy dragTest", "zxy NODE_ON_DRAG_ENTER");
         ArkUI_DragEvent* dragEvent =  OH_ArkUI_NodeEvent_GetDragEvent(event);
         OH_ArkUI_DragEvent_SetDragResult(dragEvent, ARKUI_DRAG_RESULT_FAILED);
