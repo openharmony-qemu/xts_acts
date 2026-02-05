@@ -34,7 +34,7 @@ const int INPUT_FRAME_NUMBER = 10;
 const int QUEUE_BUFFER_SIZE = 5;
 } // namespace
 
-void onFrameAvailable(void* context)
+void OnFrameAvailable(void* context)
 {
     auto* obj = static_cast<VideoSample*>(context);
     obj->OnBufferAvailable();
@@ -94,7 +94,7 @@ int32_t VideoSample::InitVideoSample(VideoProcessParam param)
     customImage_ = OH_ConsumerSurface_Create();
     outWindow_ = OH_NativeImage_AcquireNativeWindow(customImage_);
     OH_OnFrameAvailableListener listener;
-    listener.onFrameAvailable = &onFrameAvailable;
+    listener.onFrameAvailable = &OnFrameAvailable;
     listener.context = this;
     OH_NativeImage_SetOnFrameAvailableListener(customImage_, listener);
 
@@ -147,7 +147,6 @@ int32_t VideoSample::InputFunc()
         OH_NativeBuffer* nativeBuffer = nullptr;
         OH_NativeBuffer_FromNativeWindowBuffer(ohNativeWindowBuffer, &nativeBuffer);
         OH_NativeWindow_NativeWindowFlushBuffer(inWindow_, ohNativeWindowBuffer, -1, region_);
-        OHPrintf("debug,OH_NativeWindow_NativeWindowFlushBuffer flush success,%d",i);
     }
     return 0;
 }

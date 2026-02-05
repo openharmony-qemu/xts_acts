@@ -38,7 +38,6 @@ template <size_t N> int DispatchByCaseNum(int caseNum, const std::array<TestFn, 
 
 static napi_value VpeVideoTest(napi_env env, napi_callback_info info)
 {
-    OHPrintf("debug,VPE_VIDEO_NDK");
     const int videoNdkFuncSize = 37; // Total 37 test functions
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);

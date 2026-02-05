@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef DETAIL_ENHANCER_VIDEO_NDK_UNIT_TEST_H
-#define DETAIL_ENHANCER_VIDEO_NDK_UNIT_TEST_H
+#ifndef DETAIL_ENHANCER_VIDEO_TEST_H
+#define DETAIL_ENHANCER_VIDEO_TEST_H
 
 namespace OHOS {
 namespace Media {
@@ -61,5 +61,5 @@ int VpeVideoNdk38();
 } // namespace Media
 } // namespace OHOS
 
-#endif // DETAIL_ENHANCER_VIDEO_NDK_UNIT_TEST_H
+#endif // DETAIL_ENHANCER_VIDEO_TEST_H
 
