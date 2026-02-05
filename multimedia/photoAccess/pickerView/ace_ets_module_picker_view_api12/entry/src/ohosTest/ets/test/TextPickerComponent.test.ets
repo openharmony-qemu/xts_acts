@@ -230,6 +230,7 @@ async function savePhoto() {
       }
     ];
     let result: string[] = await phAccessHelper.showAssetsCreationDialog(fileUriList, photoCreationConfig);
+    await CommonFunc.sleep(3000);
     await driveFn(); 
     readWriteFile(uri, result[0]);
     console.log('savePhoto success');
