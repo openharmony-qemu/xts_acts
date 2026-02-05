@@ -320,7 +320,7 @@ export default function TextPicker() {
       await CommonFunc.sleep(1000);
       if (!isExecuteTestCase) {
         try {
-          await driver.screenCap('/data/storage/el2/base/cache/1.png');
+          await savePhoto();
         } catch (error) {
           console.error(`cannot screenshot, error is: ${JSON.stringify(error)}`);
         }
