@@ -10,10 +10,8 @@ body:
     attributes:
       label: 覆盖定义的所有入参、返回值的所有可能取值
       options:
-
-    ​    - 满足
-
-    ​    - 不涉及
+        - 满足
+        - 不涉及
     validations:
       required: true
 
@@ -209,15 +207,12 @@ body:
   - type: dropdown
     id: review_check_1
     attributes:
-      label: 涉及Co-authored-by: Agent 标签标识
+      label: "标识提交信息中包含 Co-authored-by: Agent 标签"
       options:
-
-    ​    - 满足
-
-    ​    - 不涉及
-
+        - 满足
+        - 不涉及
     validations:
-        required: true
+      required: true
 
   - type: input
     id: review_check_1_notes
