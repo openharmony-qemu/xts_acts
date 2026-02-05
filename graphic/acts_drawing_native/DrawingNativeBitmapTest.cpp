@@ -138,8 +138,8 @@ HWTEST_F(DrawingNativeBitmapTest, testBitmapCreateFromPixelsNormal, Function | S
             bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes2);
             height_ = OH_Drawing_BitmapGetHeight(bitmap);
             width_ = OH_Drawing_BitmapGetWidth(bitmap);
-            EXPECT_EQ(height_, 0);
-            EXPECT_EQ(width_, 0);
+            EXPECT_EQ(height_, height);
+            EXPECT_EQ(width_, width);
             // 4. Free memory
             OH_Drawing_BitmapDestroy(bitmap);
         }
@@ -360,8 +360,8 @@ HWTEST_F(DrawingNativeBitmapTest, testBitmapCreateFromPixelsBoundary, Function |
             bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes2);
             height_ = OH_Drawing_BitmapGetHeight(bitmap);
             width_ = OH_Drawing_BitmapGetWidth(bitmap);
-            EXPECT_EQ(height_, 0);
-            EXPECT_EQ(width_, 0);
+            EXPECT_EQ(height_, height);
+            EXPECT_EQ(width_, width);
             // 4. Free memory
             OH_Drawing_BitmapDestroy(bitmap);
         }
