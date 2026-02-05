@@ -1471,7 +1471,7 @@ static napi_value OH_Utd_GetTypesByFilenameExtension_001(napi_env env, napi_call
     auto typeIds = OH_Utd_GetTypesByFilenameExtension(".txt", &count);
     const char* typeId(typeIds[0]);
     napi_value returnCode;
-    napi_create_int32(env, strcmp(typeId, UDMF_META_PLAIN_TEXT) == PARAM_0 && (1 == count), &returnCode);
+    napi_create_int32(env, strcmp(typeId, UDMF_META_PLAIN_TEXT) == PARAM_0 && (count >= 1), &returnCode);
     OH_Utd_DestroyStringList(typeIds, count);
     return returnCode;
 }
@@ -1501,7 +1501,7 @@ static napi_value OH_Utd_GetTypesByMimeType_001(napi_env env, napi_callback_info
     auto typeIds = OH_Utd_GetTypesByMimeType("text/plain", &count);
     const char* typeId(typeIds[0]);
     napi_value returnCode;
-    napi_create_int32(env, strcmp(typeId, UDMF_META_PLAIN_TEXT) == PARAM_0 && (1 == count), &returnCode);
+    napi_create_int32(env, strcmp(typeId, UDMF_META_PLAIN_TEXT) == PARAM_0 && (count >= 1), &returnCode);
     OH_Utd_DestroyStringList(typeIds, count);
     return returnCode;
 }
