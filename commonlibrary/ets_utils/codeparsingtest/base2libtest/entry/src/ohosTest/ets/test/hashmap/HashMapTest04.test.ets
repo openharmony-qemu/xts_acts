@@ -1375,7 +1375,7 @@ export default function HashMapTest04Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0439
-     * @tc.name      testHashMap340
+     * @tc.name      testHashMap0340
      * @tc.desc      Verify the synchronization of attribute modifications involving null values stored in HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1465,7 +1465,7 @@ export default function HashMapTest04Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0442
-     * @tc.name      testHashMap343
+     * @tc.name      testHashMap0343
      * @tc.desc      Check the integrity of the attributes containing NaN values stored in the HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1524,7 +1524,7 @@ export default function HashMapTest04Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0444
-     * @tc.name      testHashMap345
+     * @tc.name      testHashMap0345
      * @tc.desc      Check the differentiated handling of NaN values and other special values stored in HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1759,7 +1759,7 @@ export default function HashMapTest04Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0452
-     * @tc.name      testHashMap353
+     * @tc.name      testHashMap0353
      * @tc.desc      Verify the type recognition of TypedArray objects stored as attribute values
      *               (data access/type recognition) in HashMap
      * @tc.size      MediumTest
@@ -1785,7 +1785,7 @@ export default function HashMapTest04Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0453
-     * @tc.name      testHashMap354
+     * @tc.name      testHashMap0354
      * @tc.desc      Verify the synchronization of modifications to TypedArray data stored as attribute values
      *               (data access/type recognition) in HashMap
      * @tc.size      MediumTest
@@ -1818,7 +1818,7 @@ export default function HashMapTest04Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0454
-     * @tc.name      testHashMap355
+     * @tc.name      testHashMap0355
      * @tc.desc      Verify the integrity of the underlying ArrayBuffer for TypedArray data stored
      *               as attribute values (data access/type recognition) in HashMap
      * @tc.size      MediumTest

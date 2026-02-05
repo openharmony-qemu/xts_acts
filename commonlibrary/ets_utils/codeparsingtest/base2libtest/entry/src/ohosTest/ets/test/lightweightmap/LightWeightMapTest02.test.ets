@@ -572,8 +572,8 @@ export default function testLightWeightMapTest02() {
     * @tc.type      FUNCTION
     * @tc.level     LEVEL2
     */
-    it("testLightWeightMapTest01Chapter0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest01Chapter0020';
+    it("testLightWeightMapTest02Chapter0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest02Chapter0020';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<string, number | boolean | string | null | undefined>();
@@ -602,8 +602,8 @@ export default function testLightWeightMapTest02() {
     * @tc.type      FUNCTION
     * @tc.level     LEVEL2
     */
-    it("testLightWeightMapTest01Chapter0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest01Chapter0021';
+    it("testLightWeightMapTest02Chapter0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest02Chapter0021';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<string, number>();

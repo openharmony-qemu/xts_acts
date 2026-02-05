@@ -10,161 +10,173 @@ function initTreeString(size: number): string {
   return ans;
 }
 
+
+type Transformer = (key: string, value: Object) => Object | undefined;
+
+interface BasicObject {
+  a: number;
+  b: string;
+  c: number[];
+}
+
+interface NestedObjectLevel1 {
+  c: number;
+  d: NestedObjectLevel2;
+}
+
+interface NestedObjectLevel2 {
+  e: number;
+}
+
+interface NestedObject {
+  a: number;
+  b: NestedObjectLevel1;
+}
+
+interface Person {
+  name: string;
+  age: number;
+  city: string;
+}
+
+interface SimpleObject {
+  a?: number | null | undefined;
+  b: number;
+}
+
+interface BufferObject {
+  buffer: Uint8Array;
+}
+
+interface FunctionObject {
+  a: number;
+  b?: () => void;
+}
+
+interface SimpleTestObject {
+  a: number;
+}
+
+interface ArrayBufferObject {
+  buffer: ArrayBuffer;
+}
+
+interface MapObject {
+  map: Map<string, string | NestedMapObject>;
+}
+
+interface NestedMapObject {
+  a: number;
+}
+
+interface SetObject {
+  set: Set<number>;
+}
+
+interface PromiseObject {
+  promise: Promise<string>;
+}
+
+interface RegExpObject {
+  regex: RegExp;
+  flags: RegExp;
+}
+
+interface DeletableObject {
+  a: number;
+  b?: number;
+  c: number;
+}
+
+interface DataObject {
+  data: string;
+}
+
+interface PersonBasic {
+  name: string;
+  age: number;
+}
+
+interface ComplexArrayObject {
+  items: Array<NestedMapObject>;
+}
+
+interface CircularReferenceObject {
+  a: number;
+  self?: CircularReferenceObject;
+}
+
+interface EmptyObject {}
+
+interface NonEnumerablePropertyObject {
+  a: number;
+  b?: number;
+}
+
+interface ParentObject {
+  parentProp: number;
+}
+
+interface ChildObject {
+  childProp: number;
+}
+
+interface BigIntObject {
+  value: number;
+}
+
+interface SpecialArray extends Array<number> {
+  abc?: number;
+  aaa?: number;
+}
+
+interface PersonWithCity {
+  name: string;
+  age: number;
+  city: string;
+}
+
+interface DetailsObject {
+  age: number;
+}
+
+interface PersonWithDetails {
+  name: string;
+  details: DetailsObject;
+}
+
+interface ModifiedObject {
+  modified: boolean;
+  original: Object;
+}
+
+interface TransformerTestObject {
+  name: string;
+  age: number;
+  city: string;
+}
+
+
 export default function Json03Test() {
   describe('Json03Test', () => {
-
-    type Transformer = (key: string, value: Object) => Object | undefined;
-
-    interface BasicObject {
-      a: number;
-      b: string;
-      c: number[];
-    }
-
-    interface NestedObjectLevel1 {
-      c: number;
-      d: NestedObjectLevel2;
-    }
-
-    interface NestedObjectLevel2 {
-      e: number;
-    }
-
-    interface NestedObject {
-      a: number;
-      b: NestedObjectLevel1;
-    }
-
-    interface Person {
-      name: string;
-      age: number;
-      city: string;
-    }
-
-    interface SimpleObject {
-      a?: number | null | undefined;
-      b: number;
-    }
-
-    interface BufferObject {
-      buffer: Uint8Array;
-    }
-
-    interface FunctionObject {
-      a: number;
-      b?: () => void;
-    }
-
-    interface SimpleTestObject {
-      a: number;
-    }
-
-    interface ArrayBufferObject {
-      buffer: ArrayBuffer;
-    }
-
-    interface MapObject {
-      map: Map<string, string | NestedMapObject>;
-    }
-
-    interface NestedMapObject {
-      a: number;
-    }
-
-    interface SetObject {
-      set: Set<number>;
-    }
-
-    interface PromiseObject {
-      promise: Promise<string>;
-    }
-
-    interface RegExpObject {
-      regex: RegExp;
-      flags: RegExp;
-    }
-
-    interface DeletableObject {
-      a: number;
-      b?: number;
-      c: number;
-    }
-
-    interface DataObject {
-      data: string;
-    }
-
-    interface PersonBasic {
-      name: string;
-      age: number;
-    }
-
-    interface ComplexArrayObject {
-      items: Array<NestedMapObject>;
-    }
-
-    interface CircularReferenceObject {
-      a: number;
-      self?: CircularReferenceObject;
-    }
-
-    interface EmptyObject {}
-
-    interface NonEnumerablePropertyObject {
-      a: number;
-      b?: number;
-    }
-
-    interface ParentObject {
-      parentProp: number;
-    }
-
-    interface ChildObject {
-      childProp: number;
-    }
-
-    interface BigIntObject {
-      value: number;
-    }
-
-    interface SpecialArray extends Array<number> {
-      abc?: number;
-      aaa?: number;
-    }
-
-    interface PersonWithCity {
-      name: string;
-      age: number;
-      city: string;
-    }
-
-    interface DetailsObject {
-      age: number;
-    }
-
-    interface PersonWithDetails {
-      name: string;
-      details: DetailsObject;
-    }
-
-    interface ModifiedObject {
-      modified: boolean;
-      original: Object;
-    }
-
-    interface TransformerTestObject {
-      name: string;
-      age: number;
-      city: string;
-    }
-
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
     beforeEach(() => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
     afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
     })
     // =============== stringify(value: Object, replacer?: Transformer, space?: string | number): string ======================
 

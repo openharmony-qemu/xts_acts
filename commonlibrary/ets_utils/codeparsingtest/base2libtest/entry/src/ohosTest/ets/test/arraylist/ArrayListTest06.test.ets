@@ -37,8 +37,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithoutExpansion0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithoutExpansion0001';
+    it("testArrayList06Chapter0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0001';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number>;
       arrayList = new ArrayList<number>();
@@ -60,8 +60,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithExpansion0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithExpansion0002';
+    it("testArrayList06Chapter0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0002';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number>;
       arrayList = new ArrayList<number>();
@@ -83,8 +83,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityAfterIncrease0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityAfterIncrease0003';
+    it("testArrayList06Chapter0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0003';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number>;
       arrayList = new ArrayList<number>();
@@ -105,8 +105,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityAfterTrim0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityAfterTrim0004';
+    it("testArrayList06Chapter0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0004';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number>;
       arrayList = new ArrayList<number>();
@@ -129,8 +129,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityBindError0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityBindError0005';
+    it("testArrayList06Chapter0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0005';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number> = new ArrayList<number>(); // 简化声明
       try {
@@ -160,8 +160,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityForEmptyList0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityForEmptyList0006';
+    it("testArrayList06Chapter0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0006';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number>;
       arrayList = new ArrayList<number>();
@@ -180,8 +180,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithZeroValue0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithZeroValue0007';
+    it("testArrayList06Chapter0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0007';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -201,8 +201,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithUndefined0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithUndefined0008';
+    it("testArrayList06Chapter0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0008';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -243,8 +243,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithNegativeZero0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithNegativeZero0010';
+    it("testArrayList06Chapter0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0010';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -264,8 +264,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithInfinity0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithInfinity0011';
+    it("testArrayList06Chapter0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0011';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -285,8 +285,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithNegativeInfinity0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithNegativeInfinity0012';
+    it("testArrayList06Chapter0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0012';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -306,8 +306,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithMathFloor0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithMathFloor0013';
+    it("testArrayList06Chapter0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0013';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -327,8 +327,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithMaxValue0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithMaxValue0014';
+    it("testArrayList06Chapter0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0014';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -348,8 +348,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithMinValue0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithMinValue0015';
+    it("testArrayList06Chapter0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0015';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -369,8 +369,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithEpsilon0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithEpsilon0016';
+    it("testArrayList06Chapter0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0016';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -390,8 +390,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithMaxSafeInteger0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithMaxSafeInteger0017';
+    it("testArrayList06Chapter0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0017';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -411,8 +411,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithByteRange0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithByteRange0018';
+    it("testArrayList06Chapter0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0018';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -433,8 +433,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithShortRange0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithShortRange0019';
+    it("testArrayList06Chapter0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0019';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -455,8 +455,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithIntRange0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithIntRange0020';
+    it("testArrayList06Chapter0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0020';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -477,8 +477,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithLongRange0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithLongRange0021';
+    it("testArrayList06Chapter0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0021';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -499,8 +499,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithDouble0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithDouble0022';
+    it("testArrayList06Chapter0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0022';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -520,8 +520,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithHex0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithHex0023';
+    it("testArrayList06Chapter0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0023';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -541,8 +541,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithExponent(2Pow3)0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithExponent(2Pow3)0024';
+    it("testArrayList06Chapter0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0024';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -562,8 +562,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithScientificNotation0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithScientificNotation0025';
+    it("testArrayList06Chapter0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0025';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -584,8 +584,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGetCapacityWithBigInt0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGetCapacityWithBigInt0026';
+    it("testArrayList06Chapter0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0026';
       console.log(TAG + ' start');
       const arrayList: ArrayList<number> = new ArrayList<number>();
       const initialCapacity: number = arrayList.getCapacity();
@@ -606,8 +606,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayEmptyList0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayEmptyList0027';
+    it("testArrayList06Chapter0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0027';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number>;
       arrayList = new ArrayList<number>();
@@ -625,8 +625,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayNormalElements0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayNormalElements0028';
+    it("testArrayList06Chapter0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0028';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number>;
       arrayList = new ArrayList<number>();
@@ -674,8 +674,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayBindError0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayBindError0030';
+    it("testArrayList06Chapter0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0030';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number> = new ArrayList<number>();
       try {
@@ -705,8 +705,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayLongData0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayLongData0031';
+    it("testArrayList06Chapter0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0031';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number>;
       arrayList = new ArrayList<number>();
@@ -733,8 +733,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayDoubleElements0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayDoubleElements0032';
+    it("testArrayList06Chapter0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0032';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number>;
       arrayList = new ArrayList<number>();
@@ -760,8 +760,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayStringElements0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayStringElements0033';
+    it("testArrayList06Chapter0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0033';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number>;
       arrayList = new ArrayList<number>();
@@ -788,8 +788,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayBigIntElements0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayBigIntElements0034';
+    it("testArrayList06Chapter0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0034';
       console.log(TAG + ' start');
       const bigIntList: ArrayList<bigint> = new ArrayList<bigint>();
       bigIntList.add(10n);
@@ -813,8 +813,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArraySpecialNumberElements0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArraySpecialNumberElements0035';
+    it("testArrayList06Chapter0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0035';
       console.log(TAG + ' start');
       const numberList: ArrayList<number> = new ArrayList<number>();
       numberList.add(NaN);
@@ -869,8 +869,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArraySpecialCharElements0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArraySpecialCharElements0037';
+    it("testArrayList06Chapter0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0037';
       console.log(TAG + ' start');
       const specialChar = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
       const strList: ArrayList<string> = new ArrayList<string>();
@@ -899,8 +899,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayEmojiUnicodeElements0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayEmojiUnicodeElements0038';
+    it("testArrayList06Chapter0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0038';
       console.log(TAG + ' start');
       interface EmojiUnicodeItem {
         emoji: string;
@@ -940,8 +940,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayInvalidUnicodeElements0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayInvalidUnicodeElements0039';
+    it("testArrayList06Chapter0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0039';
       console.log(TAG + ' start');
       const invalidUnicodes = ['\udc04', '\ud83d', '\udff4'];
       const strList: ArrayList<string> = new ArrayList<string>();
@@ -967,8 +967,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayLargeStringElements0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayLargeStringElements0040';
+    it("testArrayList06Chapter0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0040';
       console.log(TAG + ' start');
       let largeStr = '';
       try {
@@ -994,8 +994,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayTreeStringElements0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayTreeStringElements0041';
+    it("testArrayList06Chapter0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0041';
       console.log(TAG + ' start');
       let treeStr = '[';
       while (treeStr.length < 2000) {
@@ -1022,8 +1022,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArraySliceStringElements0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArraySliceStringElements0042';
+    it("testArrayList06Chapter0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0042';
       console.log(TAG + ' start');
       let str = "{k1:value1,k2:value2}";
       for (let i = 0; i < 10; i++) {
@@ -1046,8 +1046,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayTypedArrayElements0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayTypedArrayElements0043';
+    it("testArrayList06Chapter0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0043';
       console.log(TAG + ' start');
       const uint8Arr = new Uint8Array([72, 101, 108, 108, 111]);
       const int16Arr = new Int16Array([32767, -32768]);
@@ -1076,8 +1076,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayArrayWithNonNumberElements0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayArrayWithNonNumberElements0044';
+    it("testArrayList06Chapter0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0044';
       console.log(TAG + ' start');
       interface TestObj {
         key: string;
@@ -1111,8 +1111,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayNestedArrayElements0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayNestedArrayElements0045';
+    it("testArrayList06Chapter0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0045';
       console.log(TAG + ' start');
       type NestedArrayType = Array<number>;
       const nestedList: ArrayList<NestedArrayType> = new ArrayList<NestedArrayType>();
@@ -1138,8 +1138,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayObjectElements0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayObjectElements0046';
+    it("testArrayList06Chapter0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0046';
       console.log(TAG + ' start');
       interface User {
         id: number;
@@ -1195,8 +1195,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayNegativeAndLargeNumberElements0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayNegativeAndLargeNumberElements0048';
+    it("testArrayList06Chapter0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0048';
       console.log(TAG + ' start');
       const numList: ArrayList<number> = new ArrayList<number>();
       numList.add(-100);
@@ -1223,8 +1223,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayReadOnlyArrayElements0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayReadOnlyArrayElements0049';
+    it("testArrayList06Chapter0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0049';
       console.log(TAG + ' start');
       type ReadOnlyArrayType = readonly string[];
       const roList: ArrayList<ReadOnlyArrayType> = new ArrayList<ReadOnlyArrayType>();
@@ -1250,8 +1250,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayCycleAddConvert0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayCycleAddConvert0050';
+    it("testArrayList06Chapter0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0050';
       console.log(TAG + ' start');
       const cycleList: ArrayList<number> = new ArrayList<number>();
       let cycleResult: Array<number> = [];
@@ -1275,8 +1275,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayBooleanOperationResultElements0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayBooleanOperationResultElements0051';
+    it("testArrayList06Chapter0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0051';
       console.log(TAG + ' start');
       const boolOpList: ArrayList<boolean> = new ArrayList<boolean>();
       boolOpList.add(!!0);
@@ -1302,8 +1302,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testConvertToArrayMixedEmptyAndNonEmptyElements0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConvertToArrayMixedEmptyAndNonEmptyElements0052';
+    it("testArrayList06Chapter0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0052';
       console.log(TAG + ' start');
       type BasicType = string | number | null | undefined;
       type MixedEmptyType = BasicType | string[];
@@ -1334,8 +1334,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testIsEmptyForEmptyList0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG  = 'testIsEmptyForEmptyList0053';
+    it("testArrayList06Chapter0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG  = 'testArrayList06Chapter0053';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number>;
       arrayList = new ArrayList<number>();
@@ -1354,8 +1354,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testIsEmptyForNonEmptyList0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testIsEmptyForNonEmptyList0054';
+    it("testArrayList06Chapter0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0054';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number>;
       arrayList = new ArrayList<number>();
@@ -1378,8 +1378,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testIsEmptyAfterClearList0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testIsEmptyAfterClearList0055';
+    it("testArrayList06Chapter0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0055';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number>;
       arrayList = new ArrayList<number>();
@@ -1401,8 +1401,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testIsEmptyBindError0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testIsEmptyBindError0056';
+    it("testArrayList06Chapter0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0056';
       console.log(TAG + ' start');
       let arrayList: ArrayList<number> = new ArrayList<number>();
       try {
@@ -1432,8 +1432,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testIsEmptyWithBooleanTrueElement0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testIsEmptyWithBooleanTrueElement0057';
+    it("testArrayList06Chapter0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0057';
       console.log(TAG + ' start');
       let arrayList: ArrayList<boolean>;
       arrayList = new ArrayList<boolean>();
@@ -1453,8 +1453,8 @@ export default function ArrayList06Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testIsEmptyWithBooleanFalseElement0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testIsEmptyWithBooleanFalseElement0058';
+    it("testArrayList06Chapter0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testArrayList06Chapter0058';
       console.log(TAG + ' start');
       let arrayList: ArrayList<boolean>;
       arrayList = new ArrayList<boolean>();

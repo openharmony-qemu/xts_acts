@@ -862,6 +862,8 @@ export default function vectorTest02() {
       for (let i = 0; i < typedArray.length; i++) {
         vector.add(typedArray[i])
       }
+	  expect(vector[0]).assertEqual(1);
+      expect(vector[4]).assertEqual(5);
     })
 
     /**
@@ -1046,8 +1048,8 @@ export default function vectorTest02() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
-
+     *
+	 */
     it("testVector02Chapter0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector02Chapter0057'
 

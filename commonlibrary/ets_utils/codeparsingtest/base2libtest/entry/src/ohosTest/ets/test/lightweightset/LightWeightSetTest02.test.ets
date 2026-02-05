@@ -386,6 +386,11 @@ export default function testLightWeightSetTest02() {
       console.log(TAG + 'start');
       let lightWeightSet = new LightWeightSet<string>();
       lightWeightSet.increaseCapacityTo(10);
+	  for (let i = 0; i < 10; i++) {
+        lightWeightSet.add('a');
+      }
+
+      expect(lightWeightSet.length).assertEqual(1);
       console.log(TAG + 'end');
     });
 
@@ -424,6 +429,11 @@ export default function testLightWeightSetTest02() {
       console.log(TAG + 'start');
       let lightWeightSet = new LightWeightSet<string>();
       lightWeightSet.increaseCapacityTo(127);
+	  for (let i = 0; i < 127; i++) {
+        lightWeightSet.add('a');
+      }
+
+      expect(lightWeightSet.length).assertEqual(1);
       console.log(TAG + 'end');
     });
 
@@ -462,6 +472,11 @@ export default function testLightWeightSetTest02() {
       console.log(TAG + 'start');
       let lightWeightSet = new LightWeightSet<string>();
       lightWeightSet.increaseCapacityTo(128);
+	  for (let i = 0; i < 128; i++) {
+        lightWeightSet.add('a');
+      }
+
+      expect(lightWeightSet.length).assertEqual(1);
       console.log(TAG + 'end');
     });
 
@@ -500,6 +515,11 @@ export default function testLightWeightSetTest02() {
       console.log(TAG + 'start');
       let lightWeightSet = new LightWeightSet<string>();
       lightWeightSet.increaseCapacityTo(32767);
+	  for (let i = 0; i < 32767; i++) {
+        lightWeightSet.add('a');
+      }
+
+      expect(lightWeightSet.length).assertEqual(1);
       console.log(TAG + 'end');
     });
 

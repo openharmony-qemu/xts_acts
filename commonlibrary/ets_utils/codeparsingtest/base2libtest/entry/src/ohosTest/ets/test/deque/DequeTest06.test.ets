@@ -1064,11 +1064,7 @@ export default function Deque06Test() {
         expect(result[1] as string).assertEqual("abc");
         expect(result[2] as boolean).assertTrue();
         expect(result[3]).assertNull();
-        if (result[4] === undefined) {
-          expect(true).assertTrue();
-        } else {
-          expect(false).assertTrue();
-        }
+        expect(result[4]).assertEqual(undefined);
         expect(result[5] as number).assertEqual(108);
         result = deque.popLast();
         expect(result.length).assertEqual(6);

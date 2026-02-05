@@ -3,14 +3,26 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 
 export default function StreamDuplex06Test() {
   describe('StreamDuplex06Test', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
     beforeEach(() => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
     afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
     })
+
     // =============== doWrite ======================
     /**
      * @tc.number    SUB_STREAM_DUPLEX_TEST06_0100
@@ -639,11 +651,8 @@ export default function StreamDuplex06Test() {
       }
 
       let duplexStream = new TestDuplex();
-      try {
-        duplexStream.write(JSON.stringify(123), 'utf8');
-      } catch (err) {
-        console.log(TAG + ' test case may not throw as expected');
-      }
+      duplexStream.write(JSON.stringify(123), 'utf8');
+      expect((duplexStream as TestDuplex).toString()).assertEqual('[object Object]');
     });
 
     /**
@@ -672,11 +681,8 @@ export default function StreamDuplex06Test() {
       }
 
       let duplexStream = new TestDuplex();
-      try {
-        duplexStream.write(JSON.stringify(true), 'utf8');
-      } catch (err) {
-        console.log(TAG + ' test case may not throw as expected');
-      }
+      duplexStream.write(JSON.stringify(true), 'utf8');
+      expect((duplexStream as TestDuplex).toString()).assertEqual('[object Object]');
     });
 
     /**
@@ -705,11 +711,8 @@ export default function StreamDuplex06Test() {
       }
 
       let duplexStream = new TestDuplex();
-      try {
-        duplexStream.write(JSON.stringify({}), 'utf8');
-      } catch (err) {
-        console.log(TAG + ' test case may not throw as expected');
-      }
+      duplexStream.write(JSON.stringify({}), 'utf8');
+      expect((duplexStream as TestDuplex).toString()).assertEqual('[object Object]');
     });
 
     /**
@@ -738,11 +741,8 @@ export default function StreamDuplex06Test() {
       }
 
       let duplexStream = new TestDuplex();
-      try {
-        duplexStream.write(JSON.stringify([1, 2, 3]), 'utf8');
-      } catch (err) {
-        console.log(TAG + ' test case may not throw as expected');
-      }
+      duplexStream.write(JSON.stringify([1, 2, 3]), 'utf8');
+      expect((duplexStream as TestDuplex).toString()).assertEqual('[object Object]');
     });
 
     /**

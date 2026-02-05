@@ -56,9 +56,9 @@ export default function ArrayList04Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testArrayList01AddUint8ArrayBoundary0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it("testArrayList01Add0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-        const TAG = 'testArrayList01AddUint8ArrayBoundary0002';
+        const TAG = 'testArrayList01Add0002';
         console.log(TAG + ' start');
         const list = new ArrayList<Int8Array>();
         const int8Array1 = new Int8Array([0,255]);
