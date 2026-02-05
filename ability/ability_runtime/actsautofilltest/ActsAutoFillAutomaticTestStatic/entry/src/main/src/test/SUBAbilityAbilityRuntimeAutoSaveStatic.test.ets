@@ -30,9 +30,9 @@ export default function AutoSaveTestStatic() {
      * @tc.desc   Manually call the RequestAutoSave interface with callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AutoSave_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AutoSave_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'SUB_Ability_AbilityRuntime_AutoSave_Static_0100';
       let isSuccess = false;
       let isFailure = false;
@@ -65,9 +65,9 @@ export default function AutoSaveTestStatic() {
      * @tc.desc   Manually call the RequestAutoSave interface no callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AutoSave_Static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AutoSave_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'SUB_Ability_AbilityRuntime_AutoSave_Static_0200';
       let isSuccess = false;
       let isFailure = false;

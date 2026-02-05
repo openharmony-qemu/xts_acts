@@ -63,9 +63,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Using the on method set color mode and check the result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
         'TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0200 begin');
       let applicationContext: common.ApplicationContext = testAbilityContext!.getApplicationContext();
@@ -95,9 +95,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Application call interface to set language
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0200 begin');
       let applicationContext: common.ApplicationContext = testAbilityContext!.getApplicationContext();
@@ -127,9 +127,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Check if the application can be successfully set to the font
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFontSize_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFontSize_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFontSize_0200 begin');
       let applicationContext: common.ApplicationContext = testAbilityContext!.getApplicationContext();
@@ -151,9 +151,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Check if the application can be successfully set to the font
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFont_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFont_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFont_0300 begin');
       let applicationContext: common.ApplicationContext = testAbilityContext!.getApplicationContext();
@@ -175,9 +175,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Test setSupportedProcessCache can not use in iphone.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_setSupportedProcessCache_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_setSupportedProcessCache_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityRuntime_setSupportedProcessCache_0100`;
         try{
           let ApplicationContexts:common.ApplicationContext = testAbilityContext!.getApplicationContext();
@@ -200,9 +200,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Test killAllProcess in ApplicationContext(AsyncCallback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_ProcessCache_3000', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_ProcessCache_3000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_ProcessCache_3000 begin');
       abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
@@ -232,9 +232,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Test killAllProcess in ApplicationContext with clearPageStack (promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_ProcessCache_3100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_ProcessCache_3100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_ProcessCache_3100 begin');
       abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
@@ -264,9 +264,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Test killAllProcess in ApplicationContext(promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_ProcessCache_3200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_ProcessCache_3200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_ProcessCache_3200 begin');
       abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
@@ -296,9 +296,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Unable to start specified PageAbility (AsyncCallback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_clearUpApplicationData_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_clearUpApplicationData_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_clearUpApplicationData_0100 begin');
       abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
@@ -329,9 +329,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Unable to start specified PageAbility (AsyncCallback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_clearUpApplicationData_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_clearUpApplicationData_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_clearUpApplicationData_0200 begin');
       abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
@@ -362,9 +362,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Unable to start specified PageAbility (AsyncCallback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_restartApp_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_restartApp_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_restartApp_0100 begin');
       abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
@@ -407,9 +407,9 @@ export default function abilityDelegatorStage() {
      * @tc.desc   Unable to start specified PageAbility (AsyncCallback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_restartApp_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_restartApp_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_restartApp_0300 begin');
       await Utils.msSleep(1000)

@@ -69,9 +69,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility with options failed.(callback),
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityBase_StartAbilityError_static_1200`;
       hilog.info(domain, tag, `it begin`);
       let Fd: Record<String,Object> = {
@@ -117,9 +117,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   To verify StartAbility with option ErrorCode.Expect: 16000004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_1700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityBase_StartAbilityError_static_1700`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -156,9 +156,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility with options failed.(promise).Expect: 16000004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_ErrorCode_static_1800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_ErrorCode_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityBase_ErrorCode_static_1800`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -192,9 +192,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility with options failed.(promise).Expect: 16000050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_ErrorCode_static_1900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_ErrorCode_static_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityBase_ErrorCode_static_1900`;
       hilog.info(domain, tag, `it begin`);
       let Fd: Record<String,Object> = {
@@ -237,9 +237,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility failed.(promise).Expect: 16000004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_ErrorCode_static_2000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_ErrorCode_static_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityBase_ErrorCode_static_2000`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -273,9 +273,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility failed.(promise).Expect: 16000050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_ErrorCode_static_2100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_ErrorCode_static_2100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0017`;
       hilog.info(domain, tag, `it begin`);
       let Fd: Record<String,Object> = {
@@ -318,9 +318,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility failed.(callback), Expect: 801
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_2600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_2600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_2600`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -359,9 +359,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   SUB_Ability_AbilityBase_StartAbilityError_static_2700
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_2700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_2700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2700`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -405,9 +405,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility with options failed.(callback), Expect: 16000005
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_1800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_1700`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -444,9 +444,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility failed.(callback), Expect: 16000005
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_1900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_1900`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -479,9 +479,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility with options failed.(promise).Expect: 16000005
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_2000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2000`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -516,9 +516,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility failed.(promise).Expect: 16000005
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_2100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_2100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2100`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -549,9 +549,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility failed.(promise) Expect: 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_2200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_2200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2200`;
       hilog.info(domain, tag, `it begin`);
       context?.moveAbilityToBackground()
@@ -590,9 +590,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility with options failed.(promise) Expect: 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_2300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_2300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2300`;
       hilog.info(domain, tag, `it begin`);
       context?.moveAbilityToBackground()
@@ -635,9 +635,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility with options failed.(callback), Expect: 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_2400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_2400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2400`;
       hilog.info(domain, tag, `it begin`);
       context?.moveAbilityToBackground()
@@ -682,9 +682,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility failed.(callback), Expect: 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_2500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_2500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2500`;
       hilog.info(domain, tag, `it begin`);
       context?.moveAbilityToBackground()
