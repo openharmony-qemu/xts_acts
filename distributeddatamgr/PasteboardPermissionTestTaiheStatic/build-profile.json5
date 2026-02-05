@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,20 +39,7 @@
         "name": "release"
       }
     ],
-    "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/isuser/.ohos/config/openharmony/default_bluetooth_ble_static_iGK1KR7FERhN082tOq7AEU1DYrby9Vggm4ebVNF0Kdc=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001BBEB30E3EA5B1ED49EDD4184D2D30E2D39CBE09CD6C577AB44010A2F35AA6A4E046EFB53DD2D29E",
-          "profile": "C:/Users/isuser/.ohos/config/openharmony/default_bluetooth_ble_static_iGK1KR7FERhN082tOq7AEU1DYrby9Vggm4ebVNF0Kdc=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/isuser/.ohos/config/openharmony/default_bluetooth_ble_static_iGK1KR7FERhN082tOq7AEU1DYrby9Vggm4ebVNF0Kdc=.p12",
-          "storePassword": "0000001B6BEB5DF27CE9E7C9DA45DCE09A601B2AA378B186FE862F7949FEB8195D595735A232219DCE248D"
-        }
-      }
-    ]
+    "signingConfigs": []
   },
   "modules": [
     {
