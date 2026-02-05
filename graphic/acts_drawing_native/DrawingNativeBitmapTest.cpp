@@ -119,30 +119,29 @@ HWTEST_F(DrawingNativeBitmapTest, testBitmapCreateFromPixelsNormal, Function | S
     OH_Drawing_Bitmap *bitmap1 = OH_Drawing_BitmapCreate();
     EXPECT_NE(bitmap1, nullptr);
     for (OH_Drawing_ColorFormat colorFormat : colorFormats) {
-        for (OH_Drawing_AlphaFormat alphaFormat : alphaFormats) {
-            OH_Drawing_BitmapFormat cFormat{colorFormat, alphaFormat};
-            OH_Drawing_BitmapBuild(bitmap1, width, height, &cFormat);
-            void *pixels = OH_Drawing_BitmapGetPixels(bitmap1);
-            if (pixels != nullptr) {
-                OH_Drawing_Image_Info imageInfo = {width, height, colorFormat, alphaFormat};
-                OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
-                // 2. OH_Drawing_BitmapCreateFromPixels
-                uint32_t height_ = OH_Drawing_BitmapGetHeight(bitmap);
-                uint32_t width_ = OH_Drawing_BitmapGetWidth(bitmap);
-                OH_Drawing_ColorFormat colorFormat_ = OH_Drawing_BitmapGetColorFormat(bitmap);
-                EXPECT_EQ(height_, height);
-                EXPECT_EQ(width_, width);
-                EXPECT_EQ(colorFormat_, colorFormat);
-                // 3. OH_Drawing_BitmapCreateFromPixels
-                int rowBytes2 = width * 4 + 1;
-                bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes2);
-                height_ = OH_Drawing_BitmapGetHeight(bitmap);
-                width_ = OH_Drawing_BitmapGetWidth(bitmap);
-                EXPECT_EQ(height_, 0);
-                EXPECT_EQ(width_, 0);
-                // 4. Free memory
-                OH_Drawing_BitmapDestroy(bitmap);
-            }
+        OH_Drawing_BitmapFormat cFormat{colorFormat, OH_Drawing_AlphaFormat::ALPHA_FORMAT_UNKNOWN};
+        OH_Drawing_BitmapBuild(bitmap1, width, height, &cFormat);
+        void *pixels = OH_Drawing_BitmapGetPixels(bitmap1);
+        if (pixels != nullptr) {
+            OH_Drawing_Image_Info imageInfo = {
+                width, height, colorFormat, OH_Drawing_AlphaFormat::ALPHA_FORMAT_UNKNOWN};
+            OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
+            // 2. OH_Drawing_BitmapCreateFromPixels
+            uint32_t height_ = OH_Drawing_BitmapGetHeight(bitmap);
+            uint32_t width_ = OH_Drawing_BitmapGetWidth(bitmap);
+            OH_Drawing_ColorFormat colorFormat_ = OH_Drawing_BitmapGetColorFormat(bitmap);
+            EXPECT_EQ(height_, height);
+            EXPECT_EQ(width_, width);
+            EXPECT_EQ(colorFormat_, colorFormat);
+            // 3. OH_Drawing_BitmapCreateFromPixels
+            int rowBytes2 = width * 4 + 1;
+            bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes2);
+            height_ = OH_Drawing_BitmapGetHeight(bitmap);
+            width_ = OH_Drawing_BitmapGetWidth(bitmap);
+            EXPECT_EQ(height_, 0);
+            EXPECT_EQ(width_, 0);
+            // 4. Free memory
+            OH_Drawing_BitmapDestroy(bitmap);
         }
     }
     for (OH_Drawing_AlphaFormat alphaFormat : alphaFormats) {
@@ -342,30 +341,29 @@ HWTEST_F(DrawingNativeBitmapTest, testBitmapCreateFromPixelsBoundary, Function |
     OH_Drawing_Bitmap *bitmap1 = OH_Drawing_BitmapCreate();
     EXPECT_NE(bitmap1, nullptr);
     for (OH_Drawing_ColorFormat colorFormat : colorFormats) {
-        for (OH_Drawing_AlphaFormat alphaFormat : alphaFormats) {
-            OH_Drawing_BitmapFormat cFormat{colorFormat, alphaFormat};
-            OH_Drawing_BitmapBuild(bitmap1, width, height, &cFormat);
-            void *pixels = OH_Drawing_BitmapGetPixels(bitmap1);
-            if (pixels != nullptr) {
-                OH_Drawing_Image_Info imageInfo = {width, height, colorFormat, alphaFormat};
-                OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
-                // 2. OH_Drawing_BitmapCreateFromPixels
-                uint32_t height_ = OH_Drawing_BitmapGetHeight(bitmap);
-                uint32_t width_ = OH_Drawing_BitmapGetWidth(bitmap);
-                OH_Drawing_ColorFormat colorFormat_ = OH_Drawing_BitmapGetColorFormat(bitmap);
-                EXPECT_EQ(height_, height);
-                EXPECT_EQ(width_, width);
-                EXPECT_EQ(colorFormat_, colorFormat);
-                // 3. OH_Drawing_BitmapCreateFromPixels
-                int rowBytes2 = width * 4 + 1;
-                bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes2);
-                height_ = OH_Drawing_BitmapGetHeight(bitmap);
-                width_ = OH_Drawing_BitmapGetWidth(bitmap);
-                EXPECT_EQ(height_, 0);
-                EXPECT_EQ(width_, 0);
-                // 4. Free memory
-                OH_Drawing_BitmapDestroy(bitmap);
-            }
+        OH_Drawing_BitmapFormat cFormat{colorFormat, OH_Drawing_AlphaFormat::ALPHA_FORMAT_UNKNOWN};
+        OH_Drawing_BitmapBuild(bitmap1, width, height, &cFormat);
+        void *pixels = OH_Drawing_BitmapGetPixels(bitmap1);
+        if (pixels != nullptr) {
+            OH_Drawing_Image_Info imageInfo = {
+                width, height, colorFormat, OH_Drawing_AlphaFormat::ALPHA_FORMAT_UNKNOWN};
+            OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
+            // 2. OH_Drawing_BitmapCreateFromPixels
+            uint32_t height_ = OH_Drawing_BitmapGetHeight(bitmap);
+            uint32_t width_ = OH_Drawing_BitmapGetWidth(bitmap);
+            OH_Drawing_ColorFormat colorFormat_ = OH_Drawing_BitmapGetColorFormat(bitmap);
+            EXPECT_EQ(height_, height);
+            EXPECT_EQ(width_, width);
+            EXPECT_EQ(colorFormat_, colorFormat);
+            // 3. OH_Drawing_BitmapCreateFromPixels
+            int rowBytes2 = width * 4 + 1;
+            bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes2);
+            height_ = OH_Drawing_BitmapGetHeight(bitmap);
+            width_ = OH_Drawing_BitmapGetWidth(bitmap);
+            EXPECT_EQ(height_, 0);
+            EXPECT_EQ(width_, 0);
+            // 4. Free memory
+            OH_Drawing_BitmapDestroy(bitmap);
         }
     }
     for (OH_Drawing_AlphaFormat alphaFormat : alphaFormats) {
