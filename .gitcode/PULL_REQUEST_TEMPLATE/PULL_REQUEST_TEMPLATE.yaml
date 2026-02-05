@@ -10,8 +10,10 @@ body:
     attributes:
       label: 覆盖定义的所有入参、返回值的所有可能取值
       options:
-        - 满足
-        - 不涉及
+
+    ​    - 满足
+
+    ​    - 不涉及
     validations:
       required: true
 
@@ -199,3 +201,25 @@ body:
     id: attachments
     attributes:
       placeholder: 请在此附上测试报告、评审结论或其余备注信息
+    
+  - type: markdown
+    attributes:
+      value: "# Review 工具辅助"
+    
+  - type: dropdown
+    id: review_check_1
+    attributes:
+      label: 涉及Co-authored-by: Agent 标签标识
+      options:
+
+    ​    - 满足
+
+    ​    - 不涉及
+
+    validations:
+        required: true
+
+  - type: input
+    id: review_check_1_notes
+    attributes:
+      placeholder: 备注（不涉及需说明原因）
