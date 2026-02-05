@@ -681,16 +681,16 @@ export default function uiUiWindowTest() {
           let direction0 = await driver.getDisplayRotation()
           console.log(`${TestTag}, testWindowResizeB_split1 setDisplayRotation_0 success ,${JSON.stringify(direction0)}`);
           // The device is displayed in horizontal on default
-          if (direction0 == 1) {
+          if (direction0 == DisplayRotation.ROTATION_90) {
             console.log('The device is displayed in horizontal on default')
             let data: display.FoldStatus = display.getFoldStatus()
             console.log(`Succeeded in obtaining fold status. Data,${data}`);
             // Foldable device
-            if (data != 0) {
+            if (data != FOLD_STATUS_UNKNOWN) {
               await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
               await driver.delayMs(waitUiReadyMs)
               // The device is fully folded
-              if (data == 2) {
+              if (data == FOLD_STATUS_FOLDED) {
                 await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
                 await driver.delayMs(waitUiReadyMs)
               }
