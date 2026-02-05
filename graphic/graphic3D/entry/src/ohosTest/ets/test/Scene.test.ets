@@ -769,6 +769,31 @@ export default function sceneTest() {
             let plugin = await renderContext.loadPlugin(pluginName);
             console.info(msg + ' plugin "' + pluginName + '" load result:', plugin);
             expect(plugin).assertTrue();
+
+            // Test with empty string parameter
+            let loadEmpty = await renderContext.loadPlugin("");
+            console.info(msg + ' plugin "" (empty string) load result:', loadEmpty);
+            expect(loadEmpty).assertFalse();
+
+            // Test with null parameter
+            try {
+              let loadNull = await renderContext.loadPlugin(null);
+              console.info(msg + ' plugin null load result:', loadNull);
+              expect(loadNull).assertUndefined();
+            } catch (nullErr) {
+              console.info(msg + ' plugin null parameter caused exception (expected):', JSON.stringify(nullErr));
+              expect(true).assertTrue();
+            }
+
+            // Test with undefined parameter
+            try {
+              let loadUndefined = await renderContext.loadPlugin(undefined);
+              console.info(msg + ' plugin undefined load result:', loadUndefined);
+              expect(loadUndefined).assertUndefined();
+            } catch (undefinedErr) {
+              console.info(msg + ' plugin undefined parameter caused exception (expected):', JSON.stringify(undefinedErr));
+              expect(true).assertTrue();
+            }
           }
           console.info(msg + " test completed successfully");
           done();
@@ -894,6 +919,76 @@ export default function sceneTest() {
             let registerSuss = renderContext.registerResourcePath("shaders_test", "OhosRawFile://shaders/custom_shader");
             console.info(msg + ' protocol "shaders_test" registration result:', registerSuss);
             expect(registerSuss).assertTrue();
+
+            // Test with empty uri parameter
+            let registerEmptyUri = renderContext.registerResourcePath("shaders_test2", "");
+            console.info(msg + ' uri "" (empty string) registration result:', registerEmptyUri);
+            expect(registerEmptyUri).assertFalse();
+
+            // Test with null protocol parameter
+            try {
+              let registerNullProtocol = renderContext.registerResourcePath(null, "OhosRawFile://shaders/custom_shader");
+              console.info(msg + ' null protocol registration result:', registerNullProtocol);
+              expect(registerNullProtocol).assertUndefined();
+            } catch (nullProtocolErr) {
+              console.info(msg + ' null protocol parameter caused exception (expected):', JSON.stringify(nullProtocolErr));
+              expect(true).assertTrue();
+            }
+
+            // Test with undefined protocol parameter
+            try {
+              let registerUndefinedProtocol = renderContext.registerResourcePath(undefined, "OhosRawFile://shaders/custom_shader");
+              console.info(msg + ' undefined protocol registration result:', registerUndefinedProtocol);
+              expect(registerUndefinedProtocol).assertUndefined();
+            } catch (undefinedProtocolErr) {
+              console.info(msg + ' undefined protocol parameter caused exception (expected):', JSON.stringify(undefinedProtocolErr));
+              expect(true).assertTrue();
+            }
+
+            // Test with null uri parameter
+            try {
+              let registerNullUri = renderContext.registerResourcePath("shaders_test3", null);
+              console.info(msg + ' null uri registration result:', registerNullUri);
+              expect(registerNullUri).assertUndefined();
+            } catch (nullUriErr) {
+              console.info(msg + ' null uri parameter caused exception (expected):', JSON.stringify(nullUriErr));
+              expect(true).assertTrue();
+            }
+
+            // Test with undefined uri parameter
+            try {
+              let registerUndefinedUri = renderContext.registerResourcePath("shaders_test4", undefined);
+              console.info(msg + ' undefined uri registration result:', registerUndefinedUri);
+              expect(registerUndefinedUri).assertUndefined();
+            } catch (undefinedUriErr) {
+              console.info(msg + ' undefined uri parameter caused exception (expected):', JSON.stringify(undefinedUriErr));
+              expect(true).assertTrue();
+            }
+
+            // Test with both parameters as null
+            try {
+              let registerBothNull = renderContext.registerResourcePath(null, null);
+              console.info(msg + ' both null parameters registration result:', registerBothNull);
+              expect(registerBothNull).assertUndefined();
+            } catch (bothNullErr) {
+              console.info(msg + ' both null parameters caused exception (expected):', JSON.stringify(bothNullErr));
+              expect(true).assertTrue();
+            }
+
+            // Test with both parameters as undefined
+            try {
+              let registerBothUndefined = renderContext.registerResourcePath(undefined, undefined);
+              console.info(msg + ' both undefined parameters registration result:', registerBothUndefined);
+              expect(registerBothUndefined).assertUndefined();
+            } catch (bothUndefinedErr) {
+              console.info(msg + ' both undefined parameters caused exception (expected):', JSON.stringify(bothUndefinedErr));
+              expect(true).assertTrue();
+            }
+
+            // Test with both parameters as empty string
+            let registerBothEmpty = renderContext.registerResourcePath("", "");
+            console.info(msg + ' both empty string parameters registration result:', registerBothEmpty);
+            expect(registerBothEmpty).assertFalse();
 
             rf = scene.getResourceFactory();
             let shader = rf.createShader({name: "CustomShader", uri: $rawfile('shaders/custom_shader/custom_material_sample_test.shader')});
