@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -68,7 +68,7 @@ async function terminateAbility(caseName: string) {
         }).catch((err: Error):PromiseLike<void>|undefined => {
             console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
-    } catch (e: BusinessError) {
+    } catch (e) {
         console.error(`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
     }
     await Utils.msSleep(1000)
@@ -135,7 +135,8 @@ export default function WindowLayoutTest() {
             try {
                 (subWin as window.Window).onWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window status changes.');
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -148,7 +149,8 @@ export default function WindowLayoutTest() {
             try {
                 (subWin as window.Window).offWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister for window status changes.');
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -161,7 +163,8 @@ export default function WindowLayoutTest() {
             try {
                 (subWin as window.Window).offWindowStatusChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister all for window status changes');
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -194,7 +197,8 @@ export default function WindowLayoutTest() {
             try {
                 mainWin.onWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window status changes.');
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -207,7 +211,8 @@ export default function WindowLayoutTest() {
             try {
                 mainWin.offWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister for window status changes.');
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -220,7 +225,8 @@ export default function WindowLayoutTest() {
             try {
                 mainWin.offWindowStatusChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister all for window status changes');;
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -375,7 +381,8 @@ export default function WindowLayoutTest() {
                     expect(err.code).assertEqual(1300002);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002);
                 done();
@@ -412,7 +419,8 @@ export default function WindowLayoutTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(1300002);
                 done()
@@ -445,7 +453,8 @@ export default function WindowLayoutTest() {
                     expect(err!.code).assertEqual(1300002);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause: ' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(1300002);
                 done();
@@ -481,7 +490,8 @@ export default function WindowLayoutTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(1300002);
                 done();
@@ -511,7 +521,8 @@ export default function WindowLayoutTest() {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling getGlobalRect.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call getGlobalRect. Cause:' + JSON.stringify(e));
                         expect(e!.code).assertEqual(1300002);
                         done()
@@ -543,7 +554,8 @@ export default function WindowLayoutTest() {
                 expect(rect.width).assertLarger(0);
                 expect(rect.height).assertLarger(0);
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception!.code === 801) {
                     hilog.error(0x0000, '[ANI]',`${caseName} The current device type does not support to getting the global rect.`);
                     done();
@@ -692,7 +704,8 @@ export default function WindowLayoutTest() {
                 hilog.info(domain, tag,msgStr + 'window.on_windowHighlightChange success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to on_windowHighlightChange. Cause code:' + JSON.stringify(exception));
@@ -812,7 +825,7 @@ export default function WindowLayoutTest() {
                 });
                 await subWindowClass.resize(500, 500);
                 hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in changing the sub window size.`);
-            } catch (error: BusinessError) {
+            } catch (error) {
                 hilog.error(0x0000, '[ANI]',`${caseName}: Error: ${JSON.stringify(error)}`);
                 expect(false).assertTrue();
                 done();
@@ -839,7 +852,8 @@ export default function WindowLayoutTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded window rect changes');
                 expect(false).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error));
                 if (error!.code === 801) {
                     hilog.error(0x0000, '[ANI]',`${msgStr} The current device type does not support to windowRectChange`);
@@ -870,7 +884,8 @@ export default function WindowLayoutTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded window rect changes');
                 expect(false).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error));
                 if (error!.code === 801) {
                     hilog.error(0x0000, '[ANI]',`${msgStr} The current device type does not support to windowRectChange`);
@@ -1385,7 +1400,8 @@ export default function WindowLayoutTest() {
                 hilog.info(domain, tag,caseName + ' position: ' + JSON.stringify(position));
                 expect(false).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 expect(err.code).assertEqual(1300002);
                 expect(err.message!=null).assertTrue();
@@ -1416,7 +1432,8 @@ export default function WindowLayoutTest() {
                 await windowClass.destroyWindow()
                 expect(false).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1446,7 +1463,8 @@ export default function WindowLayoutTest() {
                 hilog.info(domain, tag,caseName + ' position: ' + JSON.stringify(position));
                 expect(false).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 expect(err.code).assertEqual(1300002);
                 expect(err.message!=null).assertTrue();
@@ -1477,7 +1495,8 @@ export default function WindowLayoutTest() {
                 await windowClass.destroyWindow();
                 expect(false).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1504,7 +1523,7 @@ export default function WindowLayoutTest() {
                 expect(window.PixelUnit.PX).assertEqual(0);
                 expect(window.PixelUnit.VP).assertEqual(1);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
                 expect(false).assertTrue();
                 done();
@@ -1547,7 +1566,8 @@ export default function WindowLayoutTest() {
                 expect(windowLimits2?.maxHeight).assertEqual(setWindowLimits?.maxHeight)
                 await terminateAbility(caseName);
                 done()
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
                 await windowClass!.destroyWindow();
                 await terminateAbility(caseName);
@@ -1586,7 +1606,8 @@ export default function WindowLayoutTest() {
                 expect(position2.y).assertEqual(100);
                 await subWindowClass.destroyWindow()
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await subWindowClass.destroyWindow()
                 if (err.code == 801) {
@@ -1648,7 +1669,7 @@ export default function WindowLayoutTest() {
                     }
 
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(`Failed to create the subwindow, Cause code ${err.code}, message ${err.message} `);
                 expect(true).assertFail()
                 done();
@@ -1672,7 +1693,7 @@ export default function WindowLayoutTest() {
                 expect(window.OcclusionState.PARTIAL_OCCLUSION).assertEqual(1);
                 expect(window.OcclusionState.FULL_OCCLUSION).assertEqual(2);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
                 expect(false).assertTrue();
                 done();
@@ -1709,7 +1730,7 @@ export default function WindowLayoutTest() {
                     expect(err.message!=null).assertTrue();
                     done();
                 })
-            }catch (err: BusinessError) {
+            }catch (err) {
                 console.error(CaseName + ' failed,casued: err.code '+err.code +' ,err.message: '+err.message);
                 expect(false).assertTrue();
                 done();
@@ -1745,7 +1766,7 @@ export default function WindowLayoutTest() {
                     }
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
                 expect(false).assertTrue();
                 done();
@@ -1802,7 +1823,7 @@ export default function WindowLayoutTest() {
                             }
                         });
                     })
-                } catch (exception: BusinessError) {
+                } catch (exception) {
                     console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${exception.code}, message: ${exception.message}`)
                     expect(false).assertTrue();
                     done();
@@ -1841,7 +1862,7 @@ export default function WindowLayoutTest() {
                     }
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
                 expect(false).assertTrue();
                 done();
@@ -1891,7 +1912,7 @@ export default function WindowLayoutTest() {
                     }
 
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.log(msgStr + 'Failed. Cause code:' + JSON.stringify(error.code) + error.message);
                 expect(false).assertTrue();
                 done();
@@ -1930,7 +1951,7 @@ export default function WindowLayoutTest() {
                         done()
                     }
                 });
-            } catch (e: BusinessError) {
+            } catch (e) {
                 console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
                 await subWindow.destroyWindow();
                 expect(true).assertFail();
@@ -1961,7 +1982,8 @@ export default function WindowLayoutTest() {
                 await subWindowClass.destroyWindow()
                 expect(true).assertFail();
                 done()
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await subWindowClass!.destroyWindow()
                 if (err.code == 801) {
@@ -1989,7 +2011,8 @@ export default function WindowLayoutTest() {
                 await dialogWindowClass.destroyWindow()
                 expect(true).assertFail();
                 done()
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName} failed2, err: ${JSON.stringify(err)}`);
                 await dialogWindowClass!.destroyWindow()
                 if (err.code == 801) {
@@ -2032,7 +2055,7 @@ export default function WindowLayoutTest() {
                     }
 
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(true).assertFail();
                 done()
@@ -2064,7 +2087,7 @@ export default function WindowLayoutTest() {
                     expect(err.message!=null).assertTrue();
                 });
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(true).assertFail();
                 done()
@@ -2100,7 +2123,7 @@ export default function WindowLayoutTest() {
                     }
 
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(true).assertFail();
                 done()
@@ -2130,7 +2153,7 @@ export default function WindowLayoutTest() {
                     expect(err.message!=null).assertTrue();
                 });
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(true).assertFail();
                 done()
@@ -2169,7 +2192,8 @@ export default function WindowLayoutTest() {
                 windowClass.offRectChangeInGlobalDisplay();
                 await terminateAbility(caseName);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
                 await terminateAbility(caseName);
                 if (err.code == 801) {
@@ -2203,7 +2227,8 @@ export default function WindowLayoutTest() {
                 console.log(caseName + 'success. ');
                 expect(true).assertFail()
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
                 if (err.code !== 801) {
                     expect(err.code).assertEqual(1300002);
@@ -2237,7 +2262,8 @@ export default function WindowLayoutTest() {
                 console.log(caseName + 'success. ');
                 expect(true).assertFail()
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
                 if (err.code!==801) {
                     expect(err.code).assertEqual(1300002);
@@ -2270,7 +2296,8 @@ export default function WindowLayoutTest() {
                 console.log(msgStr + 'Succeeded to off the windowRectChange');
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code === 801) {
                     console.info(`${msgStr} The current device type does not support to windowRectChange`);
                     done();
@@ -2299,7 +2326,8 @@ export default function WindowLayoutTest() {
                 await Utils.msSleep(200);
                 expect(true).assertFail();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
                 expect(err.code).assertEqual(1300002)
                 expect(err.message != null).assertTrue();
@@ -2355,7 +2383,7 @@ export default function WindowLayoutTest() {
                     }
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.log(`${message} Failed to test MoveConfiguration.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
                 expect(true).assertFail();
                 done();
@@ -2380,7 +2408,8 @@ export default function WindowLayoutTest() {
                 let windowLimits: window.WindowLimits = mainWin.getWindowLimits();
                 console.info(msgStr + 'Succeeded in getWindowLimits ' + JSON.stringify(windowLimits));
                 expect(!!windowLimits).assertTrue();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     console.error(msgStr + `Failed to obtain the window limits of window. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(true).assertFail();
@@ -2414,7 +2443,8 @@ export default function WindowLayoutTest() {
                     done();
                 }
 
-            } catch (err: BusinessError){
+            } catch (err){
+                err = err as BusinessError;
                 console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
                 if (err.code == 801) {
                     expect(err.message != null).assertTrue();

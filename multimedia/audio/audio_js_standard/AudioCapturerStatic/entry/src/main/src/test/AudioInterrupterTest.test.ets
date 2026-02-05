@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -369,7 +369,8 @@ export default function audioInterrupterTest() {
         await render2!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
         await render2!.start()
         expect(false).assertTrue()
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("INTERRUPTER_TEST err:" + JSON.stringify(err))
         expect(err.code).assertEqual(6800301)
       }

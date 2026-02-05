@@ -94,7 +94,7 @@ export default function rdbStoreRekeyExEtsTest() {
         try {
           await rdbStore.rekeyEx(cryptoParam);
           console.log(TAG + "rekeyex success");
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
         }
@@ -128,7 +128,7 @@ export default function rdbStoreRekeyExEtsTest() {
         try {
           await rdbStore.rekeyEx(cryptoParam);
           console.log(TAG + "rekeyex success");
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
         }
@@ -162,7 +162,7 @@ export default function rdbStoreRekeyExEtsTest() {
         try {
           await rdbStore.rekeyEx(cryptoParam);
           console.log(TAG + "rekeyex success");
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
         }
@@ -196,7 +196,7 @@ export default function rdbStoreRekeyExEtsTest() {
         try {
           await rdbStore.rekeyEx(cryptoParam);
           console.log(TAG + "rekeyex success");
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
         }
@@ -230,7 +230,7 @@ export default function rdbStoreRekeyExEtsTest() {
         try {
           await rdbStore.rekeyEx(cryptoParam);
           console.log(TAG + "rekeyex success");
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
         }
@@ -292,7 +292,7 @@ export default function rdbStoreRekeyExEtsTest() {
           console.log(TAG + "num1" + num1)
           resultSet.close();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail()
           done();
@@ -351,7 +351,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(num1).assertEqual(1);
           console.log(TAG + "num1" + num1)
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail()
           done()
@@ -411,7 +411,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(num1).assertEqual(1);
           console.log(TAG + "num1" + num1)
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail()
           done()
@@ -471,7 +471,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(num1).assertEqual(1);
           console.log(TAG + "num1" + num1)
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail()
           done()
@@ -532,7 +532,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(num1).assertEqual(1);
           console.log(TAG + "num1" + num1)
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail()
           done()
@@ -592,7 +592,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(num1).assertEqual(1);
           console.log(TAG + "num1" + num1)
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail()
           done()
@@ -648,7 +648,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(num1).assertEqual(1);
           console.log(TAG + "num1" + num1)
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail()
           done()
@@ -704,7 +704,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(num1).assertEqual(1);
           console.log(TAG + "num1" + num1)
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail()
           done()
@@ -764,7 +764,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(num1).assertEqual(1);
           console.log(TAG + "num1" + num1)
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail()
           done()
@@ -812,7 +812,8 @@ export default function rdbStoreRekeyExEtsTest() {
           console.log(TAG + "rekeyEx success");
           expect().assertFail();
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect(err.code).assertEqual(14800024);
           done()
@@ -860,7 +861,8 @@ export default function rdbStoreRekeyExEtsTest() {
           console.log(TAG + "getrdbstore success");
           expect().assertFail();
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect(err.code).assertEqual(14800011)
           done()
@@ -889,7 +891,7 @@ export default function rdbStoreRekeyExEtsTest() {
     //     console.log(TAG + "rekeyEx success");
     //     expect().assertFail();
     //     done()
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.log("catch err: failed, err: code=" + err.code + " message=" + err.message);
     //     expect(err.code).assertEqual("401");
     //     done()
@@ -918,7 +920,7 @@ export default function rdbStoreRekeyExEtsTest() {
     //     console.log(TAG + "rekeyEx success");
     //     expect().assertFail();
     //     done()
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.log("catch err: failed, err: code=" + err.code + " message=" + err.message);
     //     expect(err.code).assertEqual("401");
     //     done()
@@ -966,7 +968,8 @@ export default function rdbStoreRekeyExEtsTest() {
           console.log(TAG + "rekeyEx success");
           expect().assertFail();
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log("catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect(err.code).assertEqual(14800024);
           done()
@@ -1013,7 +1016,8 @@ export default function rdbStoreRekeyExEtsTest() {
           console.log(TAG + "getrdbstore success");
           expect().assertFail();
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect(err.code).assertEqual(14800011)
           done()
@@ -1075,7 +1079,8 @@ export default function rdbStoreRekeyExEtsTest() {
           rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
           expect().assertFail();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect(err.code).assertEqual(14800011);
           done();
@@ -1124,7 +1129,8 @@ export default function rdbStoreRekeyExEtsTest() {
           console.log(TAG + "getrdbstore success");
           expect().assertFail();
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect(err.code).assertEqual(14800011)
           done()
@@ -1176,7 +1182,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(1).assertEqual(resultSet.rowCount);
           resultSet.close();
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
           done()
@@ -1228,7 +1234,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(1).assertEqual(resultSet.rowCount);
           resultSet.close();
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
           done()
@@ -1283,7 +1289,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(1).assertEqual(resultSet.rowCount);
           resultSet.close();
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
           done()
@@ -1329,7 +1335,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(1).assertEqual(resultSet.rowCount);
           resultSet.close();
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
           done()
@@ -1395,7 +1401,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(num1).assertEqual(1);
           console.log(TAG + "num1" + num1)
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
           done()
@@ -1462,7 +1468,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(num1).assertEqual(1);
           console.log(TAG + "num1" + num1)
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
           done()
@@ -1517,7 +1523,8 @@ export default function rdbStoreRekeyExEtsTest() {
           console.log(TAG + "rekey success");
           expect().assertFail();
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect(err.code).assertEqual(801);
           done()
@@ -1551,7 +1558,8 @@ export default function rdbStoreRekeyExEtsTest() {
           await rdbStore.rekeyEx(cryptoParam1);
           expect().assertFail();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect(err.code).assertEqual(14800014);
           done();
@@ -1614,7 +1622,7 @@ export default function rdbStoreRekeyExEtsTest() {
           console.log(TAG + "num1" + num1);
           expect(num1).assertEqual(1)
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
           done();
@@ -1691,7 +1699,7 @@ export default function rdbStoreRekeyExEtsTest() {
           console.log(TAG + "delete success,num:" + num1);
           expect(num1).assertEqual(1);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
           done();
@@ -1761,7 +1769,7 @@ export default function rdbStoreRekeyExEtsTest() {
           console.log(TAG + "delete success,num:" + num1);
           expect(num1).assertEqual(1);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
           done();
@@ -1835,7 +1843,7 @@ export default function rdbStoreRekeyExEtsTest() {
           console.log(TAG + "delete success,num:" + num1);
           expect(num1).assertEqual(1);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
           done();
@@ -1907,7 +1915,7 @@ export default function rdbStoreRekeyExEtsTest() {
           console.log(TAG + "delete success,num:" + num1);
           expect(num1).assertEqual(1);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
           done();
@@ -1992,7 +2000,7 @@ export default function rdbStoreRekeyExEtsTest() {
           console.log(TAG + "delete success,num:" + num1);
           expect(num1).assertEqual(1);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
           done();
@@ -2062,7 +2070,7 @@ export default function rdbStoreRekeyExEtsTest() {
           console.log(TAG + "delete success,num:" + num1);
           expect(num1).assertEqual(1);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
           done();
@@ -2142,7 +2150,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(num1).assertEqual(1);
           console.log(TAG + "num1" + num1)
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
           done()
@@ -2223,7 +2231,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(num1).assertEqual(1);
           console.log(TAG + "num1" + num1)
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
           expect().assertFail();
           done()
@@ -2304,7 +2312,7 @@ export default function rdbStoreRekeyExEtsTest() {
           expect(num1).assertEqual(1);
           console.log(TAG + "num1" + num1)
           done()
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
           expect().assertFail();
           done()
@@ -2342,7 +2350,7 @@ export default function rdbStoreRekeyExEtsTest() {
     //       console.log(TAG + "rekeyex success");
     //       expect().assertFail();
     //       done();
-    //     } catch (err: BusinessError) {
+    //     } catch (err) {
     //       console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
     //       expect(err.code).assertEqual("14800001");
     //       done();
@@ -2381,7 +2389,7 @@ export default function rdbStoreRekeyExEtsTest() {
     //       console.log(TAG + "rekeyex success");
     //       expect().assertFail();
     //       done();
-    //     } catch (err: BusinessError) {
+    //     } catch (err) {
     //       console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
     //       expect(err.code).assertEqual("14800001");
     //       done();
@@ -2419,7 +2427,7 @@ export default function rdbStoreRekeyExEtsTest() {
     //     console.log(TAG + "rekeyex success");
     //     expect().assertFail();
     //     done();
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
     //     expect(err.code).assertEqual("14800001");
     //     done();

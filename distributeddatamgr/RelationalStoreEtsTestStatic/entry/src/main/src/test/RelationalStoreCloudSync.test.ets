@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -65,7 +65,7 @@ export default function relationalStoreCloudSyncTest() {
         try {
           rdbStore = await relationalStore.getRdbStore(context!, config);
           console.log(tag + 'create rdb store success');
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + 'create rdb store failed' + `, error code is ${err.code}, message is ${err.message}`);
           expect().assertFail();
           done();
@@ -91,7 +91,7 @@ export default function relationalStoreCloudSyncTest() {
           await rdbStore!.executeSql(sql_int);
           await rdbStore!.executeSql(sql_integer);
           console.log(tag + 'create table cloud_text cloud_int cloud_integer success');
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + 'create table cloud_text cloud_int cloud_integer failed' +
             `, error code is ${err.code}, message is ${err.message}`)
           expect().assertFail();
@@ -105,7 +105,7 @@ export default function relationalStoreCloudSyncTest() {
         try {
           await rdbStore!.setDistributedTables(tableArray, relationalStore.DistributedType.DISTRIBUTED_CLOUD, setConfig);
           console.log(tag + 'setDistributedTables success');
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.log(tag + 'setDistributedTables fail' + `, error code is ${err.code}, message is ${err.message}`);
         }
 
@@ -132,7 +132,7 @@ export default function relationalStoreCloudSyncTest() {
         }
         await rdbStore!.batchInsert('cloud_integer', vBucketArray2);
         console.log(tag + 'create rdb store success');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(tag + 'create rdb store failed' + `, error code is ${err.code}, message is ${err.message}`);
         expect().assertFail();
       }
@@ -176,7 +176,7 @@ export default function relationalStoreCloudSyncTest() {
             expect(size == 2).assertTrue();
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + `get modify time fail, err code is ${err.code}, message is ${err.message}.`);
           expect().assertFail();
           done();

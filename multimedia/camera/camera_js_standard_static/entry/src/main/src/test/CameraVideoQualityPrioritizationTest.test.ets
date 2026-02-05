@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -490,7 +490,7 @@ export default function cameraVideoQualityPrioritizationTest() {
           await startCameraSession(i);
           try {
             mCameraSession!.setQualityPrioritization(cameraObj.QualityPrioritization.HIGH_QUALITY);
-          } catch (err: BusinessError) {
+          } catch (err) {
             console.info(TAG +
               `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0100 error: ${err}, ${err.code}, ${err.message}`);
             expect().assertFail();
@@ -541,7 +541,7 @@ export default function cameraVideoQualityPrioritizationTest() {
           await startCameraSession(i);
           try {
             mCameraSession!.setQualityPrioritization(cameraObj.QualityPrioritization.POWER_BALANCE);
-          } catch (err: BusinessError) {
+          } catch (err) {
             console.info(TAG +
               `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0400 error: ${err}, ${err.code}, ${err.message}`);
             expect().assertFail();

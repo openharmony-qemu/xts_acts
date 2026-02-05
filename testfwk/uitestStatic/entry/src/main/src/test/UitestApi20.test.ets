@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -832,9 +832,9 @@ export default function uitestEnumTest() {
         let toastBtn1 = await driver!.findComponent(ON.text('1'));
         await driver!.delayMs(1000);
         expect(toastBtn1 != null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, `testCrownRotate_static error is: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(801);
+        expect((error as BusinessError).code).assertEqual(801);
       }
       await stopApplication('com.uitestScene.acts')
       hilog.info(domain, tag, `testCrownRotate_static end`);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,7 +39,7 @@ export default function SecurityRandomSyncJsunit() {
         try {
           let dataBlob: cryptoFrameworks.DataBlob = rand.generateRandomSync(12);
           expect(dataBlob != null).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("RandomSync 0 catch error:" + err);
           console.log("[RandomSync]: 0 error code: 401");
           expect(null).assertFail();
@@ -64,17 +64,17 @@ export default function SecurityRandomSyncJsunit() {
         try {
           rand.generateRandomSync(0);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log("[RandomSync]: 0 error code: 401");
-          expect(err.code).assertEqual(401);
+          expect((err as BusinessError).code).assertEqual(401);
         }
 
         try {
           rand.generateRandomSync(-1);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log("[RandomSync]: -1 error code: 401");
-          expect(err.code).assertEqual(401);
+          expect((err as BusinessError).code).assertEqual(401);
         }
         done();
       }

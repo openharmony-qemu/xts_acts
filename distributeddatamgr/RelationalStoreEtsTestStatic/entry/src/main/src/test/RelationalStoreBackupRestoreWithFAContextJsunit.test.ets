@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -103,7 +103,7 @@ export default function relationalStoreBackupRestorePromiseTest() {
         await relationalStore.deleteRdbStore(context!, STORE_CONFIG)
         await relationalStore.deleteRdbStore(context!, STORE_CONFIG_BACKUP1)
         await relationalStore.deleteRdbStore(context!, STORE_CONFIG_BACKUP2)
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(tag + "deleteRdbStore err" + JSON.stringify(err))
       }
     })
@@ -130,7 +130,7 @@ export default function relationalStoreBackupRestorePromiseTest() {
       try {
         fileio.accessSync(DATABASE_DIR + DATABASE_BACKUP_NAME)
         fileio.accessSync(DATABASE_DIR + STORE_CONFIG.name)
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info("RdbBackupRestoreTest_0010 backup success")
         expect(false).assertTrue()
       }
@@ -144,13 +144,13 @@ export default function relationalStoreBackupRestorePromiseTest() {
       try {
         fileio.accessSync(DATABASE_DIR + DATABASE_BACKUP_NAME)
         console.info(tag + "RdbBackupRestoreTest_0010 restore success")
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(false).assertTrue()
       }
 
       try {
         fileio.accessSync(DATABASE_DIR + STORE_CONFIG.name)
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(false).assertTrue()
       }
       // RDB after restored, data query test
@@ -171,7 +171,7 @@ export default function relationalStoreBackupRestorePromiseTest() {
         expect(1).assertEqual(id)
         expect("zhangsan").assertEqual(name)
         expect(1).assertEqual(blobType[0])
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(tag + 'RdbBackupRestoreTest_0010 accessSync err4:  ' + err)
         expect(false).assertTrue()
       }
@@ -196,7 +196,7 @@ export default function relationalStoreBackupRestorePromiseTest() {
       try {
         await RdbStore!.backup(backupName)
         console.log(tag + "backup success")
-      }catch (err: BusinessError) {
+      }catch (err) {
         expect(true).assertFail()
         console.log(tag + "err" + err.code + err.message)
       }
@@ -225,11 +225,12 @@ export default function relationalStoreBackupRestorePromiseTest() {
         try {
           await RdbStore!.restore(dbName);
           expect().assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(tag + "err:" + err.code + err.message);
           expect("14800010").assertEqual(String(err.code))
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(false).assertTrue()
       }
       done()
@@ -251,14 +252,14 @@ export default function relationalStoreBackupRestorePromiseTest() {
         await RdbStore!.backup(DATABASE_BACKUP_NAME);
         fileio.accessSync(DATABASE_DIR + DATABASE_BACKUP_NAME);
         console.info(tag + 'Backup database success');
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(false).assertTrue();
       }
 
       try {
         await relationalStore.deleteRdbStore(context!, STORE_CONFIG_BACKUP1);
         fileio.accessSync(DATABASE_DIR + DATABASE_BACKUP_NAME);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(tag + 'error2  ' + err);
         expect(false).assertTrue();
       }
@@ -267,7 +268,7 @@ export default function relationalStoreBackupRestorePromiseTest() {
         await RdbStore!.backup(DATABASE_BACKUP_NAME);
         console.info(tag + 'Backup database success');
         fileio.accessSync(DATABASE_DIR + DATABASE_BACKUP_NAME)
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(tag + 'error3  ' + err);
         expect(false).assertTrue();
       }

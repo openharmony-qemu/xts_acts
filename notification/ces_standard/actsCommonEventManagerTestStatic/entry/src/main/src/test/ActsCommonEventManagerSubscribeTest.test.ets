@@ -1,5 +1,5 @@
 /**
-* Copyright (c) 2023 Huawei Device Co., Ltd.
+* Copyright (c) 2023-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License")
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -160,7 +160,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             })
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_1900 failed, code is ${err.code}, message is ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -273,7 +273,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
 
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_2000 failed, code is ${err.code}, message is ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -434,7 +434,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             }
           });
         }, 1000);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(TAG+`publish failed, code is ${err.code}, message is ${err.message}`)
       }
     })
@@ -547,7 +547,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
         setTimeout(()=>{
           commonEventManager.publish("eventname2", options, publishCB);
         }, 1000);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(TAG+`publish failed, code is ${err.code}, message is ${err.message}`)
         expect(false).assertTrue()
         done()

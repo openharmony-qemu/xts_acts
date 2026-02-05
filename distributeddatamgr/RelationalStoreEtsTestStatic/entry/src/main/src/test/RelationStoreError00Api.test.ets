@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 Huawei Device Co., Ltd.
+* Copyright (C) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -921,7 +921,8 @@ export default function RelationStoreError00Test() {
           hilog.info(domain, tag, '%{public}s', 'testCleanDirtyDataErrcode0100 end CreateCorruptDb');
           await rdbStore!.cleanDirtyData("test");
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `testCleanDirtyDataErrcode0100 + ${err.code} + ${err.message}`);
           expect(14800000).assertEqual(err.code);
           done();
@@ -953,7 +954,8 @@ export default function RelationStoreError00Test() {
           await CreateCorruptDb();
           hilog.info(domain, tag, '%{public}s', 'testGetModifyTimeErrcode0100 end CreateCorruptDb');
           await rdbStore!.getModifyTime("test1", "NAME", PRIKey);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `testGetModifyTimeErrcode0100 + ${err.code} + ${err.message}`);
           expect(14800000).assertEqual(err.code);
         }

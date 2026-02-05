@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -73,7 +73,8 @@ export default function RequestDownloadJSUnitStatic() {
         hilog.info(domain, tag, '%{public}s',"====>SUB_Misc_REQUEST_Create_Promise_Download_Promise_Static_0010 create success: " + task);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s',"====>SUB_Misc_REQUEST_Create_Promise_Download_Promise_Static_0010 catch error: " + err.code + JSON.stringify(err));
         expect(err.code).assertEqual(201);
         done();
@@ -108,7 +109,8 @@ export default function RequestDownloadJSUnitStatic() {
             done();
           } 
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s',"====>SUB_Misc_REQUEST_Create_Promise_Download_Callback_Static_0010 catch error: " + err.code + JSON.stringify(err));
         expect(err.code).assertEqual(201);
         done();

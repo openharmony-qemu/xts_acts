@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -124,14 +124,14 @@ export default function imagePackToData() {
               expect(data != undefined).assertTrue();
               console.info(`${testNum} success`);
               done();
-            } catch (error: BusinessError) {
+            } catch (error) {
               console.log(`${testNum} error:` + JSON.stringify(error));
               expect().assertFail();
               done();
             };
           }
         }
-    } catch (error: BusinessError) {
+    } catch (error) {
         console.log("createpixelmap error: " + JSON.stringify(error));
         expect().assertFail();
         done();
@@ -172,7 +172,8 @@ export default function imagePackToData() {
                 waitForCompletion(async () => {data = await imagePackerApi!.packToData(pixelmap, packOpts);})
                 expect(false).assertTrue();
                 done();
-            } catch(error: BusinessError)  {
+            } catch(error)  {
+              error = error as BusinessError;
               console.log(`${testNum} error:` + JSON.stringify(error));
               console.log(`${testNum} error.code:` + error.code);
               expect(error.code == ERROR_CODE).assertTrue();
@@ -180,7 +181,7 @@ export default function imagePackToData() {
             };
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.log("createpixelmap error: " + JSON.stringify(error));
         expect().assertFail();
         done();
@@ -211,7 +212,7 @@ export default function imagePackToData() {
               console.info(`${testNum} success`);
               expect(data != undefined).assertTrue();
               done();
-            } catch(error: BusinessError) {
+            } catch(error) {
               await imagePackerApi.release();
               await imageSourceApi.release();
               console.log(`${testNum} error.code:` + error.code + ` error.message: ` + error.message);
@@ -249,7 +250,8 @@ export default function imagePackToData() {
               console.info(`${testNum} failed`);
               expect(data == undefined).assertTrue();
               done();
-            } catch(error: BusinessError) {
+            } catch(error) {
+              error = error as BusinessError;
               console.log(`${testNum} error.code:` + error.code + ` error.message: ` + error.message);
               expect(error.code == ERROR_CODE).assertTrue();
               done();

@@ -89,7 +89,7 @@ export default function RdbStoreSetLocaleTest() {
                 resultSet.goToNextRow()
                 expect('张三').assertEqual(resultSet.getString(resultSet.getColumnIndex("name")));
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
                 console.error(`message is ${e.message}  code  ${e.code}`);
                 expect().assertFail();
                 done();
@@ -111,7 +111,8 @@ export default function RdbStoreSetLocaleTest() {
                 await rdbStore!.close();
                 await rdbStore!.setLocale("zh");
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.error(`message is ${e.message}  code  ${e.code}`);
                 expect(e.code).assertEqual(14800014);
                 done();
@@ -132,7 +133,8 @@ export default function RdbStoreSetLocaleTest() {
             try {
                 await rdbStore!.setLocale("111");
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.error(`message is ${e.message}  code  ${e.code}`);
                 expect(e.code).assertEqual(14800001);
                 done();
@@ -164,7 +166,7 @@ export default function RdbStoreSetLocaleTest() {
                 resultSet.goToNextRow()
                 expect('张三').assertEqual(resultSet.getString(resultSet.getColumnIndex("name")));
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
                 console.error(`message is ${e.message}  code  ${e.code}`);
                 expect().assertFail();
                 done();
@@ -195,7 +197,7 @@ export default function RdbStoreSetLocaleTest() {
                 expect('张三').assertEqual(resultSet.getString(resultSet.getColumnIndex("name")));
                 await rdbTrans.commit();
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
                 console.error(`message is ${e.message}  code  ${e.code}`);
                 expect().assertFail();
                 done();
@@ -216,7 +218,8 @@ export default function RdbStoreSetLocaleTest() {
             try {
                 await rdbStore!.setLocale("");
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.error(`message is ${e.message}  code  ${e.code}`);
                 expect(e.code).assertEqual(14800001);
                 done();

@@ -104,7 +104,7 @@ export default function CallbackTest() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`${TAG} close failed, SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1000 code is ${err.code},message is ${err.message}`);
         }
 
@@ -120,7 +120,8 @@ export default function CallbackTest() {
             console.info('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1000 Backup success.');
             done();
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.log(TAG + "SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1000 e.code:" + e.code);
           expect(e.code).assertEqual(14800014)
         }
@@ -160,7 +161,8 @@ export default function CallbackTest() {
             }
             console.info('clean dirty data succeeded');
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(TAG,
             `SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2300 updateSync err.code ${err.code}, err.message ${err.message}`)
           expect(err.code).assertEqual(14800021);
@@ -221,7 +223,8 @@ export default function CallbackTest() {
             (rdbStore as data_relationalStore.RdbStore).cleanDirtyData('test_table', () => {
               console.info(TAG + 'clean dirty data succeeded');
             })
-          } catch (err: BusinessError) {
+          } catch (err) {
+          err = err as BusinessError;
             console.error(TAG + 'Failed to cleanDirtyData.Code: ' + err.code + ',message:' + err.message);
             expect(err.code).assertEqual(801);
           }
@@ -290,7 +293,7 @@ export default function CallbackTest() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
         try {
@@ -654,7 +657,7 @@ export default function CallbackTest() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
         try {
@@ -721,7 +724,8 @@ export default function CallbackTest() {
             console.info('Backup success.');
           }).catch(() => {
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
 
@@ -844,7 +848,8 @@ export default function CallbackTest() {
           expect(rdbStore != null).assertTrue();
           done()
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+          err = err as BusinessError;
         console.info(TAG + "setDistributed002 failed" + `, error code is ${err.code}, message is ${err.message}`);
         expect(err.code == 801).assertTrue();
         done();
@@ -1097,7 +1102,7 @@ export default function CallbackTest() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
         try {

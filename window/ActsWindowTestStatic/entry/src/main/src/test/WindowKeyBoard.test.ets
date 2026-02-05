@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -95,7 +95,8 @@ export default function WindowKeyBoardTest() {
                 hilog.info(domain, tag,msgStr + 'window.isWindowShowing success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(exception.code == 1300002 || exception.code == 801).assertTrue();
                 if (exception.code != 801) {
@@ -134,7 +135,8 @@ export default function WindowKeyBoardTest() {
                 hilog.info(domain, tag,msgStr + 'window.off_keyboardDidShow success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(exception.code == 1300002 || exception.code == 801).assertTrue();
                 if (exception.code != 801) {
@@ -174,7 +176,8 @@ export default function WindowKeyBoardTest() {
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(exception.code == 1300002 || exception.code == 801).assertTrue();
                 if (exception.code != 801) {
@@ -213,7 +216,8 @@ export default function WindowKeyBoardTest() {
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(exception.code == 1300002 || exception.code == 801).assertTrue();
                 if (exception.code != 801) {
@@ -251,7 +255,7 @@ export default function WindowKeyBoardTest() {
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardHeightChange success');
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done()
@@ -282,7 +286,7 @@ export default function WindowKeyBoardTest() {
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardHeightChange success');
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done()
@@ -362,7 +366,7 @@ export default function WindowKeyBoardTest() {
                 expect(window.RotationInfoType.DISPLAY_ORIENTATION).assertEqual(1);
                 expect(window.RotationInfoType.DISPLAY_ROTATION).assertEqual(2);
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.error(caseName + ' Failed. Cause: ' + JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -383,7 +387,7 @@ export default function WindowKeyBoardTest() {
                 console.log(caseName + " window.testAnimationTypeEnum: " + window.AnimationType.FADE_IN_OUT);
                 expect(window.AnimationType.FADE_IN_OUT).assertEqual(0);
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.error(caseName + ' Failed. Cause: ' + JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -431,7 +435,8 @@ export default function WindowKeyBoardTest() {
                         done();
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 if (err.code != 801) {
                     console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
@@ -473,7 +478,8 @@ export default function WindowKeyBoardTest() {
                 }
                 subWindowClass.onKeyboardWillShow(callback);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(1300002);
                 expect(err.message != null).assertTrue();
@@ -509,7 +515,8 @@ export default function WindowKeyBoardTest() {
                 }
                 subWindowClass.offKeyboardWillShow(callback);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(1300002);
                 expect(err.message != null).assertTrue();
@@ -544,7 +551,8 @@ export default function WindowKeyBoardTest() {
                 }
                 subWindowClass.onKeyboardWillHide(callback);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(1300002);
                 expect(err.message != null).assertTrue();
@@ -580,7 +588,8 @@ export default function WindowKeyBoardTest() {
                 }
                 subWindowClass.offKeyboardWillHide(callback);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(1300002);
                 expect(err.message != null).assertTrue();
@@ -617,7 +626,8 @@ export default function WindowKeyBoardTest() {
                         let transitionAnimationResult = mainWin.getWindowTransitionAnimation(window.WindowTransitionType.DESTROY);
                         console.error(msgStr + `success obtain the window transition animation.`);
                         expect(!!transitionAnimationResult).assertTrue();
-                    } catch (err: BusinessError){
+                    } catch (err){
+                        err = err as BusinessError;
                         if (err.code != 801) {
                             console.error(msgStr + `Failed to obtain the window transition animation. Cause code: ${err.code}, message: ${err.message}`);
                             expect(true).assertFail();
@@ -639,7 +649,8 @@ export default function WindowKeyBoardTest() {
                         expect(err.message!=null).assertTrue();
                     }
                 });
-            } catch (err: BusinessError){
+            } catch (err){
+                err = err as BusinessError;
                 if (err.code != 801) {
                     console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
                     expect(true).assertFail();
@@ -694,7 +705,8 @@ export default function WindowKeyBoardTest() {
                     mainWindow.offKeyboardWillShow();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
                 mainWindow.offKeyboardWillShow();
                 if (err.code === 801) {

@@ -213,7 +213,8 @@ export default function RdbErrorCode14800032() {
         expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
         resultSet?.close();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "testgetColumnTypeSyncErrcode0100" + err.code + err.message);
         expect(err.code == 14800032).assertTrue();
         done();
@@ -271,7 +272,8 @@ export default function RdbErrorCode14800032() {
         expect(type).assertEqual(data_relationalStore.ColumnType.NULL);
         resultSet?.close();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "testgetColumnTypeErrcode0100" + err.code + err.message);
         expect(err.code == 14800032).assertTrue();
         done();
@@ -303,7 +305,8 @@ export default function RdbErrorCode14800032() {
           data_relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
         console.log(TAG + "testRdbStoreBatchInsertWithConflictResolutionErrcode0500 batch failed")
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(TAG + err +"testRdbStoreBatchInsertWithConflictResolutionErrcode0500 failed" + err.code);
         expect(err.code == 14800032).assertTrue();
         done();
@@ -335,7 +338,8 @@ export default function RdbErrorCode14800032() {
         (rdbStore as data_relationalStore.RdbStore).batchInsertWithConflictResolutionSync("test1", valueBucketArray,conflict);
         console.log(TAG + "testRdbStorebatchInsertWithConflictResolutionSyncErrcode0500 batch failed")
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(TAG + err +"testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0500 failed" + err.code);
         expect(err.code == 14800032).assertTrue()
         done();
@@ -360,7 +364,8 @@ export default function RdbErrorCode14800032() {
       try {
         let num = await store.attach(context!, STORE_CONFIG1, "attachDB");
         expect(1).assertEqual(num);
-      } catch(e: BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         console.log("testRdbStoreAttach0016 : failed, err: code=" + e.code + " message=" + e.message);
         expect('14800032').assertEqual(e.code);
         done();
@@ -387,7 +392,8 @@ export default function RdbErrorCode14800032() {
         console.log(TAG + "************* testRdbStoreAttach0018 attach start *************");
         let dataBaseDir = context!.databaseDir + "/rdb/";
         let num = await rdbStore!.attach(dataBaseDir + "store1.db", "attachDB");
-      } catch(e: BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         console.log("testRdbStoreAttach0018 err: failed, err: code=" + e.code + " message=" + e.message);
         expect().assertFail();
         done();
@@ -417,7 +423,8 @@ export default function RdbErrorCode14800032() {
       try{
         rdbStore!.insertSync("employee",valueBucket);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest001 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
         done();
@@ -444,7 +451,8 @@ export default function RdbErrorCode14800032() {
       try{
         rdbStore!.insertSync("employee",valueBucket,data_relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest002 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -472,7 +480,8 @@ export default function RdbErrorCode14800032() {
       try{
         rdbStore!.batchInsertSync("employee",values);
         console.info(TAG + "relationalStoreTest003 success ");
-      }catch (e: BusinessError) {
+      }catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest003 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -500,7 +509,8 @@ export default function RdbErrorCode14800032() {
       try{
         await rdbStore!.batchInsert("employee",values);
         console.info(TAG + "relationalStoreTest004 success ");
-      }catch (e: BusinessError) {
+      }catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest004 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -528,7 +538,8 @@ export default function RdbErrorCode14800032() {
         predicates.equalTo("name", "Jim");
         rdbStore!.updateSync(valueBucket,predicates);
         console.info(TAG + `relationalStoreTest006 updateSync is successful`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest006 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -551,7 +562,8 @@ export default function RdbErrorCode14800032() {
         predicates.equalTo("name", "Jim");
         rdbStore!.deleteSync(predicates);
         console.info(TAG + "deleteSync success ");
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest012 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -574,7 +586,8 @@ export default function RdbErrorCode14800032() {
       try {
         let PRIKey:	data_relationalStore.PRIKeyType[] = [1 as long, 4 as long, 2 as long];
         await rdbStore!.getModifyTime("employee", "id", PRIKey);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest015 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -597,7 +610,8 @@ export default function RdbErrorCode14800032() {
         ["employee"], data_relationalStore.DistributedType.DISTRIBUTED_CLOUD, {autoSync: false});
       try{
         await rdbStore!.cleanDirtyData('employee');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest016 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -618,7 +632,8 @@ export default function RdbErrorCode14800032() {
       const SQL_DELETE_TABLE = 'DELETE FROM employee';
       try{
         rdbStore!.executeSync(SQL_DELETE_TABLE);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "SUB_DistributedData_RelationalStore_SDK_RDBFGAPIexecuteTest_02300 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -637,7 +652,8 @@ export default function RdbErrorCode14800032() {
       console.info(TAG + "************* relationalStoreTest032 start *************");
       try{
         await rdbStore!.backup("backup.db");
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest032 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -657,7 +673,8 @@ export default function RdbErrorCode14800032() {
       await rdbStore!.backup("backup2.db");
       try{
         await rdbStore!.restore("backup2.db");
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest033 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -679,7 +696,8 @@ export default function RdbErrorCode14800032() {
         await resultSet.getRows(1);
         resultSet.close();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPIgetRowsTest_0200 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
         done();
@@ -701,7 +719,8 @@ export default function RdbErrorCode14800032() {
         let predicates = new data_relationalStore.RdbPredicates("employee");
         predicates.equalTo("id", "1");
         await rdbStore!.lockRow(predicates);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "testRdbStoreLockRow0003 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
         done();
@@ -724,7 +743,8 @@ export default function RdbErrorCode14800032() {
         let predicates = new data_relationalStore.RdbPredicates("employee");
         predicates.equalTo("name", "Jim");
         await rdbStore!.queryLockedRow(predicates,[]);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "testRdbStoreQueryLockedRow0003 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -747,7 +767,8 @@ export default function RdbErrorCode14800032() {
         let predicates = new data_relationalStore.RdbPredicates("employee");
         predicates.equalTo("name", "Jim");
         await rdbStore!.unlockRow(predicates);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "testRdbStoreUnLockRow0003 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
         done();
@@ -793,7 +814,8 @@ export default function RdbErrorCode14800032() {
           data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         console.log(TAG + "testbatchInsertWithConflictResolutionInTransaction0700 failed num " + num);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(TAG, ` testbatchInsertWithConflictResolutionInTransaction0700 failed, errCode:${err.code}, message:${err.message}`);
         expect(14800032).assertEqual(err.code);
         await transaction.rollback();
@@ -827,7 +849,8 @@ export default function RdbErrorCode14800032() {
         let num = transaction.batchInsertWithConflictResolutionSync("test1", valueBucketArray,
           data_relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
         console.log(TAG + "testbatchInsertWithConflictResolutionSyncInTransaction1200 insert num " + num);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(TAG, `testbatchInsertWithConflictResolutionSyncInTransaction1200 failed, errCode:${err.code}, message:${err.message}`);
         expect(14800032).assertEqual(err.code);
         await transaction.rollback();

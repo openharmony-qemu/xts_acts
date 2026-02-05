@@ -119,7 +119,8 @@ export default function RdbErrorCode14800015() {
         let count = resultSet.rowCount;
         await store.attach(dataBaseDir + "test7.db", "attachDB");
         expect().assertFail();
-      } catch(e: BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         console.log("testRdbStoreAttach0008 err: failed, err: code=" + e.code + " message=" + e.message);
         expect(14800015).assertEqual(e.code);
       }

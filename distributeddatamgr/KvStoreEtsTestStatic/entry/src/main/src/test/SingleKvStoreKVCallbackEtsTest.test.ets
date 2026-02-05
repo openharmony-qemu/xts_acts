@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2024 Huawei Device Co., Ltd.
+* Copyright (c) 2024-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -140,7 +140,7 @@ export default function SingleKvStoreCallbackTest() {
         kvStore = store;
         console.info('beforeEach getKVStore success');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.error('beforeEach getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
         done();
       }
@@ -192,7 +192,7 @@ export default function SingleKvStoreCallbackTest() {
               }
               done();
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutStringCallbackTest001 put e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -228,7 +228,7 @@ export default function SingleKvStoreCallbackTest() {
                   done();
                 });
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutStringCallbackTest002 put e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -260,7 +260,7 @@ export default function SingleKvStoreCallbackTest() {
               }
               done();
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreGetStringCallbackTest001 get e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -291,7 +291,7 @@ export default function SingleKvStoreCallbackTest() {
                   done();
                 });
             })
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreGetStringCallbackTest002 get e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -322,7 +322,7 @@ export default function SingleKvStoreCallbackTest() {
                   done();
                 })
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutIntCallbackTest001 put e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -354,7 +354,7 @@ export default function SingleKvStoreCallbackTest() {
                   done();
                 })
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutIntCallbackTest002 put e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -386,7 +386,7 @@ export default function SingleKvStoreCallbackTest() {
                   done();
                 })
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutIntCallbackTest003 put e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -418,7 +418,7 @@ export default function SingleKvStoreCallbackTest() {
                   done();
                 })
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutIntCallbackTest004 put e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -449,7 +449,7 @@ export default function SingleKvStoreCallbackTest() {
                   done();
                 })
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreGetIntCallbackTest001 put e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -481,7 +481,7 @@ export default function SingleKvStoreCallbackTest() {
               }
               done();
             })
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreGetIntCallbackTest002 put e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -507,7 +507,7 @@ export default function SingleKvStoreCallbackTest() {
               expect(err == undefined).assertTrue();
               done();
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutBoolCallbackTest001 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -539,7 +539,7 @@ export default function SingleKvStoreCallbackTest() {
               }
               done();
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreGetBoolCallbackTest001 e' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -571,7 +571,7 @@ export default function SingleKvStoreCallbackTest() {
                   done();
                 });
             })
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreGetBoolCallbackTest002 e' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -596,7 +596,7 @@ export default function SingleKvStoreCallbackTest() {
               expect(err == undefined).assertTrue();
               done();
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutFloatCallbackTest001 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -628,7 +628,7 @@ export default function SingleKvStoreCallbackTest() {
                   done();
                 })
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutFloatCallbackTest002 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -660,7 +660,7 @@ export default function SingleKvStoreCallbackTest() {
                   done();
                 })
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutFloatCallbackTest003 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -692,7 +692,7 @@ export default function SingleKvStoreCallbackTest() {
                   done();
                 })
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutFloatCallbackTest004 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -724,7 +724,7 @@ export default function SingleKvStoreCallbackTest() {
               }
               done();
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreGetFloatCallbackTest001 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -754,7 +754,7 @@ export default function SingleKvStoreCallbackTest() {
             }
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreDeleteStringCallbackTest001 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -784,7 +784,7 @@ export default function SingleKvStoreCallbackTest() {
                 done();
               });
             })
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreDeleteStringCallbackTest002 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -814,7 +814,7 @@ export default function SingleKvStoreCallbackTest() {
             }
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreDeleteIntCallbackTest001 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -844,7 +844,7 @@ export default function SingleKvStoreCallbackTest() {
                 done();
               });
             })
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreDeleteIntCallbackTest002 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -874,7 +874,7 @@ export default function SingleKvStoreCallbackTest() {
             }
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreDeleteFloatCallbackTest001 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -904,7 +904,7 @@ export default function SingleKvStoreCallbackTest() {
                 done();
               });
             })
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreDeleteFloatCallbackTest002 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -934,7 +934,7 @@ export default function SingleKvStoreCallbackTest() {
             }
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreDeleteBoolCallbackTest001 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -965,7 +965,7 @@ export default function SingleKvStoreCallbackTest() {
                   done();
                 });
             })
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreDeleteBoolCallbackTest002 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -991,7 +991,7 @@ export default function SingleKvStoreCallbackTest() {
             console.log('SUB_DDM_DKV_SINGLEKVSTORE_DELETE_CALLBACK_2700 expect fin');
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_DELETE_CALLBACK_2700 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(e.code == 401).assertTrue();
@@ -1020,7 +1020,7 @@ export default function SingleKvStoreCallbackTest() {
               done();
             });
           })
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreDeletePredicatesCallbackTest002 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1050,7 +1050,7 @@ export default function SingleKvStoreCallbackTest() {
               expect(err == undefined).assertTrue();
               done();
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreOnChangeCallbackTest001 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1080,7 +1080,7 @@ export default function SingleKvStoreCallbackTest() {
               expect(err == undefined).assertTrue();
               done();
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreOnChangeCallbackTest002 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1110,7 +1110,7 @@ export default function SingleKvStoreCallbackTest() {
               expect(err == undefined).assertTrue();
               done();
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreOnChangeCallbackTest003 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1142,11 +1142,11 @@ export default function SingleKvStoreCallbackTest() {
             let mode = factory.SyncMode.PULL_ONLY;
             console.info('kvStore!.sync to ' + JSON.stringify(syncDeviceIds));
             kvStore!.sync(syncDeviceIds, mode, 10);
-          } catch (e: Error) {
+          } catch (e) {
             console.error('SingleKvStoreOnSyncCompleteCallbackTest001 sync no peer device :e:' +
               `, error code is ${e.code}, message is ${e.message}`);
           }
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreOnSyncCompleteCallbackTest001 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1178,11 +1178,11 @@ export default function SingleKvStoreCallbackTest() {
             let mode = factory.SyncMode.PUSH_ONLY;
             console.info('kvStore!.sync to ' + JSON.stringify(syncDeviceIds));
             kvStore!.sync(syncDeviceIds, mode, 10);
-          } catch (e: Error) {
+          } catch (e) {
             console.error('SingleKvStoreOnSyncCompleteCallbackTest002 sync no peer device :e:' +
               `, error code is ${e.code}, message is ${e.message}`);
           }
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreOnSyncCompleteCallbackTest002 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1214,11 +1214,11 @@ export default function SingleKvStoreCallbackTest() {
             let mode = factory.SyncMode.PUSH_PULL;
             console.info('kvStore!.sync to ' + JSON.stringify(syncDeviceIds));
             kvStore!.sync(syncDeviceIds, mode, 10);
-          } catch (e: Error) {
+          } catch (e) {
             console.error('SingleKvStoreOnSyncCompleteCallbackTest003 sync no peer device :e:' +
               `, error code is ${e.code}, message is ${e.message}`);
           }
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreOnSyncCompleteCallbackTest003 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1246,7 +1246,7 @@ export default function SingleKvStoreCallbackTest() {
               expect(err == undefined).assertTrue();
               done();
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreSetSyncRangeCallbackTest001 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1274,7 +1274,7 @@ export default function SingleKvStoreCallbackTest() {
               expect(err == undefined).assertTrue();
               done();
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreSetSyncRangeCallbackTest002 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1302,7 +1302,7 @@ export default function SingleKvStoreCallbackTest() {
               expect(err == undefined).assertTrue();
               done();
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreSetSyncRangeCallbackTest003 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1347,7 +1347,7 @@ export default function SingleKvStoreCallbackTest() {
               done();
             });
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutBatchEntryCallbackTest001 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1390,7 +1390,7 @@ export default function SingleKvStoreCallbackTest() {
               done();
             });
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutBatchEntryCallbackTest002 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1433,7 +1433,7 @@ export default function SingleKvStoreCallbackTest() {
               done();
             });
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutBatchEntryCallbackTest003 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1476,7 +1476,7 @@ export default function SingleKvStoreCallbackTest() {
               done();
             });
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutBatchEntryCallbackTest004 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1520,7 +1520,7 @@ export default function SingleKvStoreCallbackTest() {
               done();
             });
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutBatchEntryCallbackTest005 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1564,7 +1564,7 @@ export default function SingleKvStoreCallbackTest() {
               done();
             });
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorePutBatchEntryCallbackTest006 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1607,7 +1607,7 @@ export default function SingleKvStoreCallbackTest() {
               done();
             });
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreDeleteBatchCallbackTest001 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1633,7 +1633,7 @@ export default function SingleKvStoreCallbackTest() {
             expect(err == undefined).assertTrue();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreDeleteBatchCallbackTest002 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1674,7 +1674,7 @@ export default function SingleKvStoreCallbackTest() {
               done();
             });
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreDeleteBatchCallbackTest003 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1721,7 +1721,7 @@ export default function SingleKvStoreCallbackTest() {
               });
             });
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorestartTransactionCallbackTest001 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1769,7 +1769,7 @@ export default function SingleKvStoreCallbackTest() {
               });
             });
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStorestartTransactionCallbackTest002 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1798,7 +1798,7 @@ export default function SingleKvStoreCallbackTest() {
             }
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreRollbackCallbackTest001 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           done();
@@ -1827,7 +1827,7 @@ export default function SingleKvStoreCallbackTest() {
             }
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreEnableSyncCallbackTest001 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1857,7 +1857,7 @@ export default function SingleKvStoreCallbackTest() {
             }
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreEnableSyncCallbackTest002 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1899,7 +1899,7 @@ export default function SingleKvStoreCallbackTest() {
                   }
                 });
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreRemoveDeviceDataCallbackTest001 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1928,7 +1928,7 @@ export default function SingleKvStoreCallbackTest() {
             }
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreRemoveDeviceDataCallbackTest003 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           done();
@@ -1953,7 +1953,7 @@ export default function SingleKvStoreCallbackTest() {
             expect(err == undefined).assertTrue();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreSetSyncParamCallbackTest001 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1981,7 +1981,7 @@ export default function SingleKvStoreCallbackTest() {
             expect(data == factory.SecurityLevel.S2).assertTrue();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreGetSecurityLevelCallbackTest001 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2029,7 +2029,7 @@ export default function SingleKvStoreCallbackTest() {
                 })
               });
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreGetResultSetCallbackTest001 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2063,7 +2063,7 @@ export default function SingleKvStoreCallbackTest() {
             console.info('SingleKvStoreGetResultSetPredicatesCallbackTest001 closeResultSet success');
             done();
           })
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreGetResultSetPredicatesCallbackTest001 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2101,7 +2101,7 @@ export default function SingleKvStoreCallbackTest() {
               }
             });
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreCloseResultSetCallbackTest002 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2149,7 +2149,7 @@ export default function SingleKvStoreCallbackTest() {
             });
           });
 
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SingleKvStoreGetEntriesCallbackTest001 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();

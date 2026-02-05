@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,7 +51,7 @@ export default function cloudCloudSyncTest() {
         }).catch((err: Error): Promise<void> => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_001 sync failed : " + err.message + ", error code: " + err.code);
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -81,7 +81,7 @@ export default function cloudCloudSyncTest() {
             expect(true).assertTrue();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -104,7 +104,7 @@ export default function cloudCloudSyncTest() {
           expect(cloudSync.SyncState.UPLOADING == 0).assertTrue();
         }
         fileSync.onProgress(callback);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_003 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -127,7 +127,7 @@ export default function cloudCloudSyncTest() {
           expect(cloudSync.SyncState.UPLOAD_FAILED == 1).assertTrue();
         }
         fileSync.onProgress(callback);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_004 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -150,7 +150,7 @@ export default function cloudCloudSyncTest() {
           expect(cloudSync.SyncState.DOWNLOADING == 2).assertTrue();
         }
         fileSync.onProgress(callback);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_005 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -174,7 +174,7 @@ export default function cloudCloudSyncTest() {
         }
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_006 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -198,7 +198,7 @@ export default function cloudCloudSyncTest() {
         }
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_007 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -222,7 +222,7 @@ export default function cloudCloudSyncTest() {
         }
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_008 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -247,7 +247,7 @@ export default function cloudCloudSyncTest() {
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_009 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -272,7 +272,7 @@ export default function cloudCloudSyncTest() {
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_010 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -297,7 +297,7 @@ export default function cloudCloudSyncTest() {
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_011 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -322,7 +322,7 @@ export default function cloudCloudSyncTest() {
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_012 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -347,7 +347,7 @@ export default function cloudCloudSyncTest() {
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_013 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -372,7 +372,7 @@ export default function cloudCloudSyncTest() {
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_014 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -397,7 +397,7 @@ export default function cloudCloudSyncTest() {
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_015 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -422,7 +422,7 @@ export default function cloudCloudSyncTest() {
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_016 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -446,7 +446,7 @@ export default function cloudCloudSyncTest() {
         }).catch((err: Error): void => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_017 sync failed : " + err.message + ", error code: " + err.code);
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_017 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -472,7 +472,7 @@ export default function cloudCloudSyncTest() {
             expect(true).assertTrue();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_018 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -498,7 +498,7 @@ export default function cloudCloudSyncTest() {
           expect(err.code == 401 && err.message =='The input parameter is invalid').assertTrue();
 
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_019 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -528,7 +528,7 @@ export default function cloudCloudSyncTest() {
             }
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_020 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -551,7 +551,7 @@ export default function cloudCloudSyncTest() {
         }
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_021 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -575,7 +575,7 @@ export default function cloudCloudSyncTest() {
         fileCache.onProgress(callback);
         fileCache.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_022 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -605,7 +605,7 @@ export default function cloudCloudSyncTest() {
         }).catch((err: Error): void => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_023 start download failed: " + err.message + ", error code: " + err.code);
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_023 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -637,7 +637,7 @@ export default function cloudCloudSyncTest() {
             expect(true).assertTrue();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_024 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -663,7 +663,7 @@ export default function cloudCloudSyncTest() {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_025 stop download failed: " + err.message + ", error code: " + err.code);
           expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_025 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -691,7 +691,7 @@ export default function cloudCloudSyncTest() {
             hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_026 start download successfully');
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_026 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -717,7 +717,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_027 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -741,7 +741,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_028 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -765,7 +765,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_029 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -789,7 +789,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_030 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -813,7 +813,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_031 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -837,7 +837,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_032 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -861,7 +861,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_033 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -885,7 +885,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_034 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -909,7 +909,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_035 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -933,7 +933,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_036 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,7 +55,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let res: boolean = await asyKeyGenPromiseFunc.convertX25519Key(param);
         expect(res).assertTrue();
         console.log(testNumber + ": convertKey success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -79,7 +79,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let res: boolean = await asyKeyGenCallbackFunc.convertX25519Key(param);
         expect(res).assertTrue();
         console.log(testNumber + ": convertKey success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -104,7 +104,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let pubKey: cryptoFramework.PubKey = await asyKeyGenPromiseFunc.genPubKey(spec);
         expect(pubKey != null).assertTrue();
         console.log(testNumber + ": genPubKey success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -129,7 +129,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let priKey: cryptoFramework.PriKey = await asyKeyGenPromiseFunc.genPriKey(spec);
         expect(priKey != null).assertTrue();
         console.log(testNumber + ": genPriKey success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -154,7 +154,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let pubKey: cryptoFramework.PubKey = await asyKeyGenCallbackFunc.genPubKey(spec);
         expect(pubKey != null).assertTrue();
         console.log(testNumber + ": genPubKey success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -179,7 +179,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let priKey: cryptoFramework.PriKey = await asyKeyGenCallbackFunc.genPriKey(spec);
         expect(priKey != null).assertTrue();
         console.log(testNumber + ": genPriKey success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -206,7 +206,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let res: boolean = compareSpecFunc.X25519KeyPair(keyPair.priKey, keyPair.pubKey);
         expect(res).assertTrue();
         console.log(testNumber + ": compareSpec success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -233,7 +233,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let res: boolean = compareSpecFunc.X25519KeyPair(keyPair.priKey, keyPair.pubKey);
         expect(res).assertTrue();
         console.log(testNumber + ": compareSpec success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -257,7 +257,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let res: boolean = await asyKeyGenPromiseFunc.convertEd25519Key(param);
         expect(res).assertTrue();
         console.log(testNumber + ": convertKey success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -281,7 +281,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let res: boolean = await asyKeyGenCallbackFunc.convertEd25519Key(param);
         expect(res).assertTrue();
         console.log(testNumber + ": convertKey success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -306,7 +306,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let pubKey: cryptoFramework.PubKey = await asyKeyGenPromiseFunc.genPubKey(spec);
         expect(pubKey != null).assertTrue();
         console.log(testNumber + ": genPubKey success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -331,7 +331,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let priKey: cryptoFramework.PriKey = await asyKeyGenPromiseFunc.genPriKey(spec);
         expect(priKey != null).assertTrue();
         console.log(testNumber + ": genPriKey success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -356,7 +356,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let pubKey: cryptoFramework.PubKey = await asyKeyGenCallbackFunc.genPubKey(spec);
         expect(pubKey != null).assertTrue();
         console.log(testNumber + ": genPubKey success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -381,7 +381,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let priKey: cryptoFramework.PriKey = await asyKeyGenCallbackFunc.genPriKey(spec);
         expect(priKey != null).assertTrue();
         console.log(testNumber + ": genPriKey success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -408,7 +408,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let res: boolean = compareSpecFunc.Ed25519KeyPair(keyPair.priKey, keyPair.pubKey);
         expect(res).assertTrue();
         console.log(testNumber + ": compareSpec success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -435,7 +435,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let res: boolean = compareSpecFunc.Ed25519KeyPair(keyPair.priKey, keyPair.pubKey);
         expect(res).assertTrue();
         console.log(testNumber + ": compareSpec success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -465,7 +465,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         expect(keyPair.pubKey.algName == "X25519").assertTrue();
         expect(keyPair.priKey.format == "PKCS#8").assertTrue();
         expect(keyPair.priKey.algName == "X25519").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -495,7 +495,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         expect(keyPair.pubKey.algName == "Ed25519").assertTrue();
         expect(keyPair.priKey.format == "PKCS#8").assertTrue();
         expect(keyPair.priKey.algName == "Ed25519").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -529,7 +529,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
           let res: boolean = compareSpecFunc.ECCKey(keyPair, postKeyPair);
           expect(res).assertEqual(true);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error ${err}`);
         expect(null).assertFail();
       }
@@ -564,7 +564,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
           let res: boolean = compareSpecFunc.ECCKey(keyPair, postKeyPair);
           expect(res).assertEqual(true);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error ${err}`);
         expect(null).assertFail();
       }
@@ -597,7 +597,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
           let res: boolean = compareSpecFunc.ECCKey(keyPair, postKeyPair);
           expect(res).assertEqual(true);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error ${err}`);
         expect(null).assertFail();
       }
@@ -632,7 +632,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
           let res: boolean = compareSpecFunc.ECCKey(keyPair, postKeyPair);
           expect(res).assertEqual(true);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error ${err}`);
         expect(null).assertFail();
       }
@@ -661,7 +661,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let postKeyPair: cryptoFramework.KeyPair = await generator.convertKey(pubData, priData);
         let res: boolean = await signVerifyPromise.keyPairProcess(algName + "|SHA256", postKeyPair);
         expect(res).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error ${err}`);
         expect(null).assertFail();
       }
@@ -690,7 +690,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let postKeyPair: cryptoFramework.KeyPair = await generator.convertKey(pubData, priData);
         let res: boolean = await agreementPromise.keyPairProcess(algName, postKeyPair.priKey, postKeyPair.pubKey);
         expect(res).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error ${err}`);
         expect(null).assertFail();
       }
@@ -715,8 +715,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let keyPair: cryptoFramework.KeyPair = await generator.generateKeyPair();
         keyPair.pubKey.getEncodedDer(format);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -740,8 +740,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let keyPair: cryptoFramework.KeyPair = await generator.generateKeyPair();
         keyPair.pubKey.getEncodedDer(format);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -765,8 +765,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let keyPair: cryptoFramework.KeyPair = await generator.generateKeyPair();
         keyPair.pubKey.getEncodedDer(format);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -790,8 +790,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let keyPair: cryptoFramework.KeyPair = await generator.generateKeyPair();
         keyPair.pubKey.getEncodedDer(format);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -823,7 +823,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let preCurveName = keyPair.pubKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_CURVE_NAME_STR);
         let postCurveName = postKeyPair.pubKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_CURVE_NAME_STR);
         expect(preCurveName).not().assertEqual(postCurveName);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error ${err}`);
         expect(null).assertFail();
       }
@@ -854,8 +854,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         pubData.data[0] = 49;
         let postKeyPair: cryptoFramework.KeyPair = await generator.convertKey(pubData, priData);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -885,8 +885,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         pubData.data[27] = 4;
         let postKeyPair: cryptoFramework.KeyPair = await generator.convertKey(pubData, priData);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -916,8 +916,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         pubData.data = pubData.data.slice(0, pubData.data.length - 1);
         let postKeyPair: cryptoFramework.KeyPair = await generator.convertKey(pubData, priData);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -949,7 +949,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let preCurveName = keyPair.pubKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_CURVE_NAME_STR);
         let postCurveName = postKeyPair.pubKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_CURVE_NAME_STR);
         expect(preCurveName).not().assertEqual(postCurveName);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error ${err}`);
         expect(null).assertFail();
       }
@@ -980,8 +980,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         pubData.data[0] = 49;
         let postKeyPair: cryptoFramework.KeyPair = await generator.convertKey(pubData, priData);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1011,8 +1011,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         pubData.data[27] = 2;
         let postKeyPair: cryptoFramework.KeyPair = await generator.convertKey(pubData, priData);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1042,8 +1042,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         pubData.data = pubData.data.slice(0, pubData.data.length - 1);
         let postKeyPair: cryptoFramework.KeyPair = await generator.convertKey(pubData, priData);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1073,8 +1073,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         pubData.data[28] = 0;
         let postKeyPair: cryptoFramework.KeyPair = await generator.convertKey(pubData, priData);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1104,7 +1104,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
           expect(postPoint.x).assertEqual(point.x);
           expect(postPoint.y).assertEqual(point.y);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error ${err}`);
         expect(null).assertFail();
       }
@@ -1137,7 +1137,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
           expect(postPoint.x).assertEqual(point.x);
           expect(postPoint.y).assertEqual(point.y);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error ${err}`);
         expect(null).assertFail();
       }
@@ -1166,7 +1166,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         console.log(testNumber + `: ${algName} convertPoint success`);
         expect(postPoint.x).assertEqual(point.x);
         expect(postPoint.y).assertEqual(point.y);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error ${err}`);
         expect(null).assertFail();
       }
@@ -1197,7 +1197,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
           expect(postPoint.x).assertEqual(point.x);
           expect(postPoint.y).assertEqual(point.y);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error ${err}`);
         expect(null).assertFail();
       }
@@ -1230,7 +1230,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
           expect(postPoint.x).assertEqual(point.x);
           expect(postPoint.y).assertEqual(point.y);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error ${err}`);
         expect(null).assertFail();
       }
@@ -1259,7 +1259,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         console.log(testNumber + `: ${algName} convertPoint success`);
         expect(postPoint.x).assertEqual(point.x);
         expect(postPoint.y).assertEqual(point.y);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error ${err}`);
         expect(null).assertFail();
       }
@@ -1284,8 +1284,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let point: cryptoFramework.Point = specUtil.pkPoint(algName);
         cryptoFramework.ECCKeyUtil.getEncodedPoint(errAlgName, point, format);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1309,8 +1309,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let point: cryptoFramework.Point = specUtil.pkPoint(algName);
         cryptoFramework.ECCKeyUtil.getEncodedPoint(errAlgName, point, format);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1334,8 +1334,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let point: cryptoFramework.Point = specUtil.pkPoint(algName);
         cryptoFramework.ECCKeyUtil.getEncodedPoint(errAlgName, point, format);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1359,8 +1359,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let point: cryptoFramework.Point = specUtil.pkPoint(algName);
         cryptoFramework.ECCKeyUtil.getEncodedPoint(errAlgName, point, format);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1383,8 +1383,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let point: cryptoFramework.Point = specUtil.pkPoint(algName);
         let pointData: Uint8Array = cryptoFramework.ECCKeyUtil.getEncodedPoint(specUtil.curveName(algName), point, format);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1407,8 +1407,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let point: cryptoFramework.Point = specUtil.pkPoint(algName);
         let pointData: Uint8Array = cryptoFramework.ECCKeyUtil.getEncodedPoint(specUtil.curveName(algName), point, format);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1432,8 +1432,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         point.x = BigInt("1214654654542154542124541214");
         cryptoFramework.ECCKeyUtil.getEncodedPoint(specUtil.curveName(algName), point, format);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1456,8 +1456,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let pointData: Uint8Array = specUtil.compressedPointData(algName);
         cryptoFramework.ECCKeyUtil.convertPoint(errAlgName, pointData);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1480,8 +1480,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let pointData: Uint8Array = specUtil.compressedPointData(algName);
         cryptoFramework.ECCKeyUtil.convertPoint(errAlgName, pointData);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1504,8 +1504,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let pointData: Uint8Array = specUtil.compressedPointData(algName);
         cryptoFramework.ECCKeyUtil.convertPoint(errAlgName, pointData);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1528,8 +1528,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         pointData[0] = 4;
         cryptoFramework.ECCKeyUtil.convertPoint(specUtil.curveName(algName), pointData);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1552,8 +1552,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         pointData = pointData.slice(0, pointData.length - 1);
         cryptoFramework.ECCKeyUtil.convertPoint(specUtil.curveName(algName), pointData);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1576,8 +1576,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let pointData: Uint8Array = specUtil.unCompressedPointData(algName);
         cryptoFramework.ECCKeyUtil.convertPoint(errAlgName, pointData);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1600,8 +1600,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         pointData[1] = 0;
         cryptoFramework.ECCKeyUtil.convertPoint(specUtil.curveName(algName), pointData);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1624,8 +1624,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         pointData[0] = 2;
         cryptoFramework.ECCKeyUtil.convertPoint(specUtil.curveName(algName), pointData);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1651,8 +1651,8 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         pointData = tmpArr;
         cryptoFramework.ECCKeyUtil.convertPoint(specUtil.curveName(algName), pointData);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual(err.code);
+      } catch (err) {
+        expect(cryptoFramework.Result.ERR_CRYPTO_OPERATION).assertEqual((err as BusinessError).code);
         console.error(testNumber + `: catch error ${err}`);
       }
       console.log(testNumber + ": success");
@@ -1682,7 +1682,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         let postKeyPair: cryptoFramework.KeyPair = generator.convertKeySync(pubData, priData);
         let res: boolean = compareSpecFunc.ECCKey(keyPair, postKeyPair);
         expect(res).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error ${err}`);
         expect(null).assertFail();
       }
@@ -1723,7 +1723,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error ${err}`);
         expect(null).assertFail();
       }

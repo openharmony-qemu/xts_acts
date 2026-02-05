@@ -88,7 +88,8 @@ export default function RdbErrorCode14800024() {
       try {
         //TestCode
         let row = await (resultSet as dataRdb.ResultSet).getRows(MaxCount);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(e.code).assertEqual(14800024);
       }
 
@@ -96,7 +97,8 @@ export default function RdbErrorCode14800024() {
         //TestCode
         resultSet.goToFirstRow();
         let row = (resultSet as dataRdb.ResultSet).isColumnNull(columnIndex);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(e.code).assertEqual(14800024);
       }
       resultSet.close();
@@ -123,7 +125,8 @@ export default function RdbErrorCode14800024() {
 
       try {
         await rdbStore!.attach("/path/errPath/attach.db", "attachDB");
-      } catch(e: BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         if (e.code != 14800010) {
           expect(14800024).assertEqual(e.code);
         }
@@ -132,13 +135,15 @@ export default function RdbErrorCode14800024() {
       try {
         //TestCode
         await rdbStore!.backup("dbBackup002.db");
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(e.code).assertEqual(14800024);
       }
 
       try {
         await rdbStore!.attach(context!, STORE_CONFIG, "attachDB");
-      } catch(e: BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         if (e.code == 14800024) {
           expect(14800024).assertEqual(e.code);
         }
@@ -147,7 +152,7 @@ export default function RdbErrorCode14800024() {
       try {
         //TestCode
         rdbStore!.executeSync(SQL_CHECK_INTEGRITY);
-      } catch (e: Error) {
+      } catch (e) {
         if (e.code != 801) {
           expect(e.code).assertEqual(14800024);
         }
@@ -155,7 +160,7 @@ export default function RdbErrorCode14800024() {
 
       try {
         await rdbStore!.detach("attachDB");
-      } catch(e: Error) {
+      } catch(e) {
         if (e.code == 14800024) {
           expect(14800024).assertEqual(e.code);
         }
@@ -164,7 +169,7 @@ export default function RdbErrorCode14800024() {
       try {
         //TestCode
         await rdbStore!.restore("dbBackup002.db");
-      } catch (e: Error) {
+      } catch (e) {
         expect(e.code).assertEqual(14800024);
       }
 
@@ -191,7 +196,8 @@ export default function RdbErrorCode14800024() {
       try {
         //TestCode
         await rdbStore!.lockRow(predicates)
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         if (e.code == 14800024) {
           expect(14800024).assertEqual(e.code);
         }
@@ -200,7 +206,8 @@ export default function RdbErrorCode14800024() {
       try {
         //TestCode
         await rdbStore!.queryLockedRow(predicates)
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         if (e.code == 14800024) {
           expect(14800024).assertEqual(e.code);
         }
@@ -209,7 +216,8 @@ export default function RdbErrorCode14800024() {
       try {
         //TestCode
         await rdbStore!.unlockRow(predicates)
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         if (e.code == 14800024) {
           expect(14800024).assertEqual(e.code);
         }
@@ -221,7 +229,7 @@ export default function RdbErrorCode14800024() {
           }).catch((e:Error) => {
             try {
               transaction.rollback();
-            } catch (e: Error) {
+            } catch (e) {
               if (e.code == 14800024) {
                 expect(14800024).assertEqual(e.code);
               }
@@ -246,28 +254,31 @@ export default function RdbErrorCode14800024() {
           try {
             transaction.insertSync("test", valueBucket1,
               dataRdb.ConflictResolution.ON_CONFLICT_REPLACE);
-          } catch (e: Error) {
+          } catch (e) {
+            e = e as BusinessError;
             expect(14800024).assertEqual(e.code);
           }
 
           try {
             await transaction.batchInsertWithConflictResolution("test", [valueBucket1],
               dataRdb.ConflictResolution.ON_CONFLICT_REPLACE);
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             expect(14800024).assertEqual(e.code);
           }
 
           try {
             transaction.insertSync("test", valueBucket1,
               dataRdb.ConflictResolution.ON_CONFLICT_REPLACE);
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             expect(14800024).assertEqual(e.code);
           }
 
           try {
             transaction.batchInsertWithConflictResolutionSync("test", [valueBucket1],
               dataRdb.ConflictResolution.ON_CONFLICT_REPLACE);
-          } catch (e: BusinessError) {
+          } catch (e) {
             expect(14800024).assertEqual(e.code);
           }
 
@@ -279,14 +290,14 @@ export default function RdbErrorCode14800024() {
             let rowId = transaction.updateSync(record, predicates1,
               dataRdb.ConflictResolution.ON_CONFLICT_REPLACE);
             console.info(TAG + "update one record success " + rowId)
-          } catch (e: Error) {
+          } catch (e) {
             expect(e.code).assertEqual(14800024);
           }
 
           try {
             //TestCode
             await transaction.execute("PRAGMA integrity_check");
-          } catch (e: Error) {
+          } catch (e) {
             expect(e.code).assertEqual(14800024);
           }
 
@@ -295,14 +306,15 @@ export default function RdbErrorCode14800024() {
             let predicates3 = new dataRdb.RdbPredicates('test');
             predicates3.equalTo("id", 2 as long);
             transaction.deleteSync(predicates3);
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             expect(e.code).assertEqual(14800024);
           }
 
           try {
             //TestCode
             let resultSet =  transaction.querySqlSync("SELECT * FROM test");
-          } catch (e: Error) {
+          } catch (e) {
             expect(e.code).assertEqual(14800024);
           }
 
@@ -336,13 +348,13 @@ export default function RdbErrorCode14800024() {
       try {
         //TestCode
         rdbStore!.getModifyTime("test", "data2", PRIKey);
-      } catch (e: Error) {
+      } catch (e) {
         expect(e.code).assertEqual(14800024);
       }
       try {
         //TestCode
         rdbStore!.cleanDirtyData('test_table', 100);
-      } catch (e: Error) {
+      } catch (e) {
         if (e.code != 801) {
           expect(e.code).assertEqual(14800024);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -60,7 +60,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       const param: cert.X509CRLMatchParameters = {
@@ -70,7 +70,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         const result = x509CRL!.match(param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -90,7 +90,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       const param: cert.X509CRLMatchParameters = {
@@ -100,7 +100,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         const result = x509CRL!.match(param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -120,7 +120,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       const param: cert.X509CRLMatchParameters = {
@@ -130,8 +130,8 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         const result = x509CRL!.match(param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -150,7 +150,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       const param: cert.X509CRLMatchParameters = {
@@ -160,7 +160,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         const result = x509CRL!.match(param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -180,7 +180,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       const param: cert.X509CRLMatchParameters = {
@@ -190,7 +190,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         const result = x509CRL!.match(param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -210,7 +210,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       const param: cert.X509CRLMatchParameters = {
@@ -220,8 +220,8 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         const result = x509CRL!.match(param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -240,7 +240,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       const param: cert.X509CRLMatchParameters = {
@@ -250,7 +250,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         const result = x509CRL!.match(param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -270,7 +270,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       const param: cert.X509CRLMatchParameters = {
@@ -280,7 +280,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         const result = x509CRL!.match(param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -300,7 +300,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       const param: cert.X509CRLMatchParameters = {
@@ -310,8 +310,8 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         const result = x509CRL!.match(param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -330,7 +330,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       const param: cert.X509CRLMatchParameters = {
@@ -341,8 +341,8 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         const result = x509CRL!.match(param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -77,7 +77,7 @@ export default function rdbStoreAttachEtsunitTest() {
                 await attachStore.executeSql(CREATE_TABLE_TEST1);
                 let attachStore1 = await relationalStore.getRdbStore(context!, STORE_CONFIG2);
                 await attachStore1.executeSql(CREATE_TABLE_TEST1);
-            } catch (e: BusinessError) {
+            } catch (e) {
                 console.info(tag + 'beforeEach STORE_CONFIG1 error, err: code=' + e.code + ' message=' + e.message);
             }
 
@@ -196,7 +196,7 @@ export default function rdbStoreAttachEtsunitTest() {
             hilog.info(domain, tag, 'RA0191 ');
             try {
                 await attachInsert(store, "test");
-            } catch (err:BusinessError){
+            } catch (err){
                 hilog.error(domain, tag, 'RA0198 err:' + JSON.stringify(err));
             }
 

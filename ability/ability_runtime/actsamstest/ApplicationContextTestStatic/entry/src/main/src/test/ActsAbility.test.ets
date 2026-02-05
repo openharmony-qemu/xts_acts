@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -81,7 +81,7 @@ export default function abilityDelegatorStage() {
           expect(testAbilityContext?.config.colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
         }
         done();
-      } catch (error:Error) {
+      } catch (error) {
         hilog.info(0x0000, 'testTag', '%{public}s',
           'SetColorMode_0200 failed ' +  error.message);
         expect().assertFail();
@@ -113,7 +113,7 @@ export default function abilityDelegatorStage() {
           expect(testAbilityContext?.config.language === 'zh-cn');
         }
         done();
-      } catch (error:Error) {
+      } catch (error) {
         hilog.info(0x0000, 'testTag', '%{public}s',
           'SetLanguage_0200 failed ' + error.message);
         expect().assertFail();
@@ -137,7 +137,8 @@ export default function abilityDelegatorStage() {
         applicationContext.setFontSizeScale(-1);
         expect().assertFail()
         done();
-      } catch (error:BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s','setFontSizeScale failed ' +  error?.message);
         expect(error.code).assertEqual(401);
         done();
@@ -160,7 +161,8 @@ export default function abilityDelegatorStage() {
         applicationContext.setFont('');
         expect().assertFail()
         done()
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s','setFont failed ' +  error?.message);
         expect(error.code).assertEqual(401);
         done();
@@ -181,7 +183,8 @@ export default function abilityDelegatorStage() {
           let ApplicationContexts:common.ApplicationContext = testAbilityContext!.getApplicationContext();
           ApplicationContexts?.setSupportedProcessCache(false)
           done();
-        }catch(e: BusinessError){
+        }catch(e){
+          e = e as BusinessError;
           if(JSON.stringify(e?.code) == '801'){
             done();
           }else{
@@ -420,7 +423,8 @@ export default function abilityDelegatorStage() {
           abilityName: 'EntryAbility3',
         })
         hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_restartApp_0300 restartApp');
-      } catch (error:BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(0x0000, 'testTag', '%{public}s',
           'SUB_Ability_AbilityRuntime_restartApp_0300 failed ' + JSON.stringify(error));
         expect(error?.code).assertEqual(16000063);

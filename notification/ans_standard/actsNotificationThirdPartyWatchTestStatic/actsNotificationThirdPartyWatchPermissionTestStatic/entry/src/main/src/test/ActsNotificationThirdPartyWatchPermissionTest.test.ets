@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -80,7 +80,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
             expect(err.code).assertEqual(201);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -112,7 +112,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
             expect(err.code).assertEqual(201);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -145,7 +145,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
               expect(err.code).assertEqual(201);
               done();
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -183,7 +183,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
               done();
             }
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -214,7 +214,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
             expect(err.code).assertEqual(201);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -253,7 +253,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
               done();
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -293,7 +293,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
               done();
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -330,7 +330,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
               done();
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -371,7 +371,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
             }
 
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -420,7 +420,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
               done();
             }
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();

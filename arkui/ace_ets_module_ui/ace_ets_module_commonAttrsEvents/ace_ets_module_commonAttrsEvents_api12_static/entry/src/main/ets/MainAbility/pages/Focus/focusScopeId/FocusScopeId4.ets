@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -111,7 +111,7 @@ struct FocusScopeId4 {
                     let val: string = i18n.System.getAppPreferredLanguage()
                     this.languageValue = val
                     console.log('getAppPreferredLanguage new ' + val)
-                  } catch (exception: Error) {
+                  } catch (exception) {
                     console.error(`Call System.setAppPreferredLanguage failed. Cause code: ${exception.code}, message: ${exception.message}`);
                     ;
                   }
@@ -126,7 +126,7 @@ struct FocusScopeId4 {
                     let val: string = i18n.System.getAppPreferredLanguage()
                     this.languageValue = val
                     console.log('getAppPreferredLanguage new ' + val)
-                  } catch (exception: Error) {
+                  } catch (exception) {
                     console.error(`Call System.setAppPreferredLanguage failed. Cause code: ${exception.code}, message: ${exception.message}`);
                     ;
                   }

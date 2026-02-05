@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -199,7 +199,7 @@ export default function KvStoreResultSetTest(){
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_GETCOUNT_0100 getCount " + count);
         expect(count == 10).assertTrue();
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_GETCOUNT_0100 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -244,7 +244,7 @@ export default function KvStoreResultSetTest(){
           expect(null).assertFail();
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_KVSTORERESULTSET_GETCOUNT_0200 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -274,7 +274,7 @@ export default function KvStoreResultSetTest(){
         expect(position == -1).assertTrue();
         console.info("Assertion passed");
         done();
-      } catch (e: Error) {
+      } catch (e) {
         hilog.info(domain, tag, TAG + ' catch ');
         hilog.info(domain, tag, TAG + "SUB_DDM_DKV_KVSTORERESULTSET_GETPOSITION_0100 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -303,7 +303,7 @@ export default function KvStoreResultSetTest(){
         expect(flag).assertTrue();
         position = resultSet!.getPosition();
         expect(position).assertEqual(9);
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_GETPOSITION_0200 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -327,7 +327,7 @@ export default function KvStoreResultSetTest(){
         let moved = resultSet!.moveToFirst();
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOFIRST_0100 moveToFirst " + moved);
         expect(moved).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOFIRST_0100 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -354,7 +354,7 @@ export default function KvStoreResultSetTest(){
         let pos = resultSet!.getPosition();
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOFIRST_0200 getPosition " + pos);
         expect(pos == 0).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         expect(null).assertFail();
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOFIRST_0200 fail " + `, error code is ${e.code}, message is ${e.message}`);
       }
@@ -380,7 +380,7 @@ export default function KvStoreResultSetTest(){
         expect(moved && (resultSet!.getPosition() == 9)).assertTrue();
         moved = resultSet!.moveToFirst();
         expect(moved && (resultSet!.getPosition() == 0)).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOFIRST_0500 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -404,7 +404,7 @@ export default function KvStoreResultSetTest(){
         let moved = resultSet!.moveToLast();
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOLAST_0100 moveToLast " + moved);
         expect(moved).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOLAST_0100 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -428,7 +428,7 @@ export default function KvStoreResultSetTest(){
         let moved = resultSet!.moveToLast();
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOLAST_0200 moveToLast " + moved);
         expect(moved && (resultSet!.getPosition() == 9)).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOLAST_0200 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -452,7 +452,7 @@ export default function KvStoreResultSetTest(){
         let moved = resultSet!.moveToNext();
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETONEXT_0100 moveToNext " + moved);
         expect(moved && (resultSet!.getPosition() == 0)).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETONEXT_0100 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -478,7 +478,7 @@ export default function KvStoreResultSetTest(){
         expect(moved && (resultSet!.getPosition() == 0)).assertTrue();
         moved = resultSet!.moveToNext();
         expect(moved && (resultSet!.getPosition() == 1)).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETONEXT_0200 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -502,7 +502,7 @@ export default function KvStoreResultSetTest(){
         let moved = resultSet!.moveToPrevious();
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOPREVIOUS_0100 moveToPrevious " + moved);
         expect(!moved).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOPREVIOUS_0100 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -531,7 +531,7 @@ export default function KvStoreResultSetTest(){
         moved = resultSet!.moveToPrevious();
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOPREVIOUS_0200 moveToPrevious " + moved);
         expect(moved && (resultSet!.getPosition() == 0)).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOPREVIOUS_0200 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -560,7 +560,7 @@ export default function KvStoreResultSetTest(){
         expect(moved == false).assertTrue();
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOPREVIOUS_0500 from 0 to " + resultSet!.getPosition());
         expect(-1).assertEqual(resultSet!.getPosition());
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVETOPREVIOUS_0500 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -588,7 +588,7 @@ export default function KvStoreResultSetTest(){
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVE_0200 move " + moved);
         expect(moved).assertTrue();
         expect(3).assertEqual(resultSet!.getPosition());
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVE_0200 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -616,7 +616,7 @@ export default function KvStoreResultSetTest(){
         moved = resultSet!.move(2);
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVE_0300 move " + moved);
         expect(moved && (resultSet!.getPosition() == 4)).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_SETMOVE_0300 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -641,7 +641,7 @@ export default function KvStoreResultSetTest(){
         let moved = resultSet!.moveToPosition(5);
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_MOVETOPOSITION_0200 moveToPosition " + moved);
         expect(moved && (resultSet!.getPosition() == 5)).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_MOVETOPOSITION_0200 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -668,7 +668,7 @@ export default function KvStoreResultSetTest(){
         moved = resultSet!.moveToPosition(5);
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_MOVETOPOSITION_0300 moveToPosition " + moved);
         expect(moved && (resultSet!.getPosition() == 5)).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_MOVETOPOSITION_0300 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -692,7 +692,7 @@ export default function KvStoreResultSetTest(){
         let flag = resultSet!.isFirst();
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_ISFIRST_0100 isFirst " + flag);
         expect(!flag).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         expect(null).assertFail();
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_ISFIRST_0100 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -721,7 +721,7 @@ export default function KvStoreResultSetTest(){
         flag = resultSet!.isFirst();
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_ISFIRST_0200 isFirst " + flag);
         expect(!flag).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_ISFIRST_0200 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -745,7 +745,7 @@ export default function KvStoreResultSetTest(){
         let flag = resultSet!.isLast();
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_ISLAST_0100 isLast " + flag);
         expect(!flag).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_ISFIRST_0400 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -770,7 +770,7 @@ export default function KvStoreResultSetTest(){
         let flag = resultSet!.isLast();
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_ISLAST_0200 isLast " + flag);
         expect(flag).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_ISLAST_0200 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -794,7 +794,7 @@ export default function KvStoreResultSetTest(){
         let flag = resultSet!.isBeforeFirst();
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_ISBEFOREFIRST_0100 isBeforeFirst " + flag);
         expect(flag).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_ISBEFOREFIRST_0100 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -820,7 +820,7 @@ export default function KvStoreResultSetTest(){
         let flag = resultSet!.isBeforeFirst();
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_ISBEFOREFIRST_0200 isBeforeFirst " + flag);
         expect(flag).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_ISBEFOREFIRST_0200 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -845,7 +845,7 @@ export default function KvStoreResultSetTest(){
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_ISAFTERLAST_0100 isAfterLast " + flag);
         expect(!flag).assertTrue();
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_ISAFTERLAST_0100 assertTrue ");
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_ISAFTERLAST_0100 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -875,7 +875,7 @@ export default function KvStoreResultSetTest(){
         let flag = resultSet!.isAfterLast();
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_ISAFTERLAST_0200  isAfterLast true=" + flag);
         expect(flag).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_ISAFTERLAST_0200 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -901,7 +901,7 @@ export default function KvStoreResultSetTest(){
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_GETENTRY_0100 getEntry " + entry);
         expect(moved && (entry.key == 'batch_test_string_key0')).assertTrue();
         expect(moved && (entry.value.value == 'batch_test_string_value')).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_GETENTRY_0100 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -933,7 +933,7 @@ export default function KvStoreResultSetTest(){
         console.info("SUB_DDM_DKV_KVSTORERESULTSET_GETENTRY_0200 getEntry " + entry);
         expect(entry.key == 'batch_test_string_key1').assertTrue();
         expect(entry.value.value == 'batch_test_string_value').assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.error("SUB_DDM_DKV_KVSTORERESULTSET_GETENTRY_0200 fail " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }

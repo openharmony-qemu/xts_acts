@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -339,7 +339,7 @@ export default function cameraPhotoSessionTest() {
           let whiteBalance: int = mCameraSession!.getWhiteBalance();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_STATIC_0100 start PASSED");
           await stopCameraSession();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(TAG + " SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_STATIC_0100 FAILED" + err.code);
           expect(true).assertFalse();
         }

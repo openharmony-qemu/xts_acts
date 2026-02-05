@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -73,7 +73,8 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(16000004);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_0100`, err.message);
           expect().assertFail();
           done();
@@ -103,7 +104,8 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(16000019);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_0200 ${err?.code}`);
           expect().assertFail();
           done();
@@ -141,7 +143,8 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(16000050);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_1000 ${err?.code}`);
           expect().assertFail();
           done();
@@ -173,7 +176,8 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(16000004);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_1100`, err.message);
           expect().assertFail();
           done();
@@ -206,7 +210,8 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(16000019);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_1100`, err.message);
           expect().assertFail();
           done();
@@ -247,7 +252,8 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(16000050);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2000`, err.message);
           expect().assertFail();
           done();
@@ -286,7 +292,8 @@ export default function UIAbilityContextteststatic() {
               expect(err.code).assertEqual(16000004);
               done();
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2100 ${err.code}`);
           expect().assertFail();
           done();
@@ -325,7 +332,8 @@ export default function UIAbilityContextteststatic() {
               expect(err.code).assertEqual(16000019);
               done();
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2200 ${err.code}`);
           expect().assertFail();
           done();
@@ -372,7 +380,8 @@ export default function UIAbilityContextteststatic() {
               expect(err.code).assertEqual(16000050);
               done();
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3000 ${err.code}`);
           expect().assertFail();
           done();
@@ -409,7 +418,8 @@ export default function UIAbilityContextteststatic() {
             expect(err.code).assertEqual(16000001);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3100 ${err.code}`);
           expect().assertFail();
           done();
@@ -454,7 +464,8 @@ export default function UIAbilityContextteststatic() {
             expect(err.code).assertEqual(16000050);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3300 ${err.code}`);
           expect().assertFail();
           done();
@@ -486,7 +497,8 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(16000005);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
           expect().assertFail();
           done();
@@ -515,7 +527,8 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(16000005);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
           expect().assertFail();
           done();
@@ -554,7 +567,8 @@ export default function UIAbilityContextteststatic() {
               expect(err.code).assertEqual(16000005);
               done();
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
           expect().assertFail();
           done();
@@ -594,7 +608,8 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(201);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
           expect().assertFail();
           done();
@@ -631,7 +646,8 @@ export default function UIAbilityContextteststatic() {
             expect(err?.code).assertEqual(201);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
           expect().assertFail();
           done();
@@ -678,7 +694,8 @@ export default function UIAbilityContextteststatic() {
               expect(err?.code).assertEqual(201);
               done();
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
           expect().assertFail();
           done();
@@ -720,7 +737,8 @@ export default function UIAbilityContextteststatic() {
               done();
             }
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
           expect().assertFail();
           done();
@@ -768,7 +786,8 @@ export default function UIAbilityContextteststatic() {
                 done();
               }
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
           expect().assertFail();
           done();

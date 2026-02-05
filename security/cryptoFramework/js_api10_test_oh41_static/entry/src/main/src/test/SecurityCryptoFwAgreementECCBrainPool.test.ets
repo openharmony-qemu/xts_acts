@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -54,7 +54,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_Agreement_BrainPool_Func_0100: agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Agreement_BrainPool_Func_0100 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -80,7 +80,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_Agreement_BrainPool_Func_0200: agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Agreement_BrainPool_Func_0200 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -106,7 +106,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_Agreement_BrainPool_Func_0300: agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Agreement_BrainPool_Func_0300 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -132,7 +132,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_Agreement_BrainPool_Func_0400: agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Agreement_BrainPool_Func_0400 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -158,7 +158,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_Agreement_BrainPool_Func_0500: agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Agreement_BrainPool_Func_0500 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -184,7 +184,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_Agreement_BrainPool_Func_0600: agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Agreement_BrainPool_Func_0600 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -210,7 +210,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_Agreement_BrainPool_Func_0700: agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Agreement_BrainPool_Func_0700 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -236,7 +236,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_Agreement_BrainPool_Func_0800: agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Agreement_BrainPool_Func_0800 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -262,7 +262,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_Agreement_BrainPool_Func_0900: agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Agreement_BrainPool_Func_0900 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -288,7 +288,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_Agreement_BrainPool_Func_1000: agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Agreement_BrainPool_Func_1000 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -314,7 +314,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_Agreement_BrainPool_Func_1100: agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Agreement_BrainPool_Func_1100 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -340,7 +340,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_Agreement_BrainPool_Func_1200: agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Agreement_BrainPool_Func_1200 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -366,7 +366,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_Agreement_BrainPool_Func_1300: agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Agreement_BrainPool_Func_1300 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -392,7 +392,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
         let res: boolean = await agreementAsyCallbackFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_Agreement_BrainPool_Func_1400: agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Agreement_BrainPool_Func_1400 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -415,7 +415,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, true, spec, param);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_Agreement_BrainPool_Func_1500: agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Agreement_BrainPool_Func_1500 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -445,7 +445,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
         let res: boolean = await agreementAsyCallbackFunc.normalProcess(param, true, spec, param);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_Agreement_BrainPool_Func_1600: agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Agreement_BrainPool_Func_1600 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -467,7 +467,7 @@ export default function SecurityCryptoFwAgreementECCBrainPoolTestUnit() {
       try {
         let agreement: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement(agreementAlg);
         expect(agreement.algName == agreementAlg).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -190,7 +190,7 @@ async function vectorTest(algName: string): Promise<boolean> {
     let ret: boolean = commonUtil.compareDataBlob(secret_a, secret_b);
     ret = ret && commonUtil.compareDataBlob(secret_a, {data: new Uint8Array(secret)});
     return ret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -202,7 +202,7 @@ async function createAsyKeyPromise(algName: string): Promise<cryptoFramework.Key
     let syncAsyKey: cryptoFramework.KeyPair = await asyKeyGenerator.generateKeyPair();
 
     return syncAsyKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -214,7 +214,7 @@ function createAsyKeySync(algName: string): cryptoFramework.KeyPair {
     let syncAsyKey: cryptoFramework.KeyPair = asyKeyGenerator.generateKeyPairSync();
 
     return syncAsyKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -240,7 +240,7 @@ async function convertAsyKeyPromise(algName: string, pubKeyData: cryptoFramework
     let syncAsyKey: cryptoFramework.KeyPair = await asyKeyGenerator.convertKey(pubKeyData, priKeyData);
 
     return syncAsyKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -253,7 +253,7 @@ function convertAsyKeySync(algName: string, pubKeyData: cryptoFramework.DataBlob
     let syncAsyKey: cryptoFramework.KeyPair = asyKeyGenerator.convertKeySync(pubKeyData, priKeyData);
 
     return syncAsyKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -320,7 +320,7 @@ function showEccSpecDetailInfo(key: cryptoFramework.PubKey | cryptoFramework.Pri
     //   let pkY = key.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_PK_Y_BN);
     //   showBigIntInfo('--- pkY', pkY);
     // }
-  } catch (e: BusinessError) {
+  } catch (e) {
     console.error(`getAsyKeySpec failed, ${e.code}, ${e.message}`);
   }
 }
@@ -337,7 +337,7 @@ async function doSignVerifyPromise(algName: string, keyPair: cryptoFramework.Key
     let ret: boolean = await verify.verify(msg, rawData);
 
     return ret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doSignVerify “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -351,7 +351,7 @@ async function doSignPromise(algName: string, keyPair: cryptoFramework.KeyPair,
     let rawData: cryptoFramework.DataBlob = await sign.sign(msg);
 
     return rawData;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doSignVerify “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -364,7 +364,7 @@ async function doAgreementPromise(algName: string, pubKey: cryptoFramework.PubKe
     let secret: cryptoFramework.DataBlob = await agreement.generateSecret(priKey, pubKey);
 
     return secret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doAgreementPromise “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -391,7 +391,7 @@ function doAgreementSync(algName: string, pubKey: cryptoFramework.PubKey,
     let secret: cryptoFramework.DataBlob = agreement.generateSecretSync(priKey, pubKey);
 
     return secret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doSignVerify “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -459,7 +459,7 @@ function doSignVerifySync(algName: string, keyPair: cryptoFramework.KeyPair,
     let ret: boolean = verify.verifySync(msg, rawData);
 
     return ret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doSignVerify “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -473,7 +473,7 @@ function doSignSync(algName: string, keyPair: cryptoFramework.KeyPair,
     let rawData: cryptoFramework.DataBlob = sign.signSync(msg);
 
     return rawData;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doSignSync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -487,7 +487,7 @@ function doVerifySync(algName: string, keyPair: cryptoFramework.KeyPair,
     let ret: boolean = verify.verifySync(msg, rawData);
 
     return ret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doVerifySync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -501,7 +501,7 @@ async function doVerifyPromise(algName: string, keyPair: cryptoFramework.KeyPair
     let ret: boolean = await verify.verify(msg, rawData);
 
     return ret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doVerifySync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -543,7 +543,7 @@ async function doSignUpdatePromise(algName: string, priKey: cryptoFramework.PriK
     let dataSign = await sign.sign(null);
 
     return dataSign;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doSignUpdatePromise “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -585,7 +585,7 @@ function doSignUpdateSync(algName: string, priKey: cryptoFramework.PriKey, msg: 
     let dataSign = sign.signSync(null);
 
     return dataSign;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doSignUpdatePromise “${error}“, error code: ${error.code}`);
     throw error as Error;
   }

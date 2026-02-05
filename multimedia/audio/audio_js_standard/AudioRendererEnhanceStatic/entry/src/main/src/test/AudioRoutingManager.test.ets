@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -94,7 +94,7 @@ export default function AudioRoutingManagerTest() {
         expect(devices[0].channelMasks[0]).assertEqual(0);
         expect(devices?.[0]?.encodingTypes?.[0]).assertEqual(audio.AudioEncodingType.ENCODING_TYPE_RAW);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -124,7 +124,7 @@ export default function AudioRoutingManagerTest() {
         expect(devices[0].channelMasks[0]).assertEqual(0);
         expect(devices?.[0]?.encodingTypes?.[0]).assertEqual(audio.AudioEncodingType.ENCODING_TYPE_RAW);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -149,7 +149,7 @@ export default function AudioRoutingManagerTest() {
         expect(devices[1].deviceType > 0).assertTrue();
         expect(devices[1].displayName != "").assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -175,7 +175,7 @@ export default function AudioRoutingManagerTest() {
         expect(devices[0].channelMasks[0]).assertEqual(0);
         expect(devices?.[0]?.encodingTypes?.[0]).assertEqual(audio.AudioEncodingType.ENCODING_TYPE_RAW);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -204,7 +204,7 @@ export default function AudioRoutingManagerTest() {
         expect(devices[0].channelMasks[0]).assertEqual(0);
         expect(devices?.[0]?.encodingTypes?.[0]).assertEqual(audio.AudioEncodingType.ENCODING_TYPE_RAW);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -229,7 +229,7 @@ export default function AudioRoutingManagerTest() {
           expect(devices[i].displayName != "").assertTrue();
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -253,7 +253,7 @@ export default function AudioRoutingManagerTest() {
         });
         expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -275,7 +275,7 @@ export default function AudioRoutingManagerTest() {
         audioRoutingManager.offAvailableDeviceChange();
         expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -309,7 +309,7 @@ export default function AudioRoutingManagerTest() {
           audioRoutingManager.offMicBlockStatusChanged(micBlockStatusCallback)
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`${Tag}:  on_micBlockStatusChanged ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
       }
@@ -345,7 +345,7 @@ export default function AudioRoutingManagerTest() {
           audioRoutingManager.offMicBlockStatusChanged()
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`${Tag}: on_micBlockStatusChanged ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
       }

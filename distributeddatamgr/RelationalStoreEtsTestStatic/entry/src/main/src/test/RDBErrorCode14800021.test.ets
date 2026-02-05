@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2024 Huawei Device Co., Ltd.
+* Copyright (c) 2024-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -111,7 +111,8 @@ export default function RDBErrorCode14800021() {
           await rdbStore!.batchInsertWithConflictResolution("test1", vbs,
             relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           expect().assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(TAG + err + "batchInsertWithConflictResolution failed" + err.code);
           expect(err.code).assertEqual(14800021);
         }
@@ -146,7 +147,8 @@ export default function RDBErrorCode14800021() {
           rdbStore!.batchInsertWithConflictResolutionSync("test1", vbs,
             relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           expect().assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(TAG + err + "batchInsertWithConflictResolutionSync failed" + err.code);
           expect(err.code).assertEqual(14800021);
         }
@@ -180,7 +182,8 @@ export default function RDBErrorCode14800021() {
           let num = transaction.batchInsertWithConflictResolutionSync("test", vbs,
             relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
           console.log(TAG + "testbatchInsertWithConflictResolutionInTransaction1200 insert num " + num);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.log(TAG + e + " code: " + e.code);
           expect(e.code).assertEqual(14800021);
         }
@@ -217,7 +220,8 @@ export default function RDBErrorCode14800021() {
             relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           expect().assertFail()
           console.log(TAG + "testTransactionBatchInsertWithConflictResolutionErrcode0300 error");
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(TAG + err + " code: " + err.code);
           expect(err.code).assertEqual(14800021);
         }
@@ -251,7 +255,8 @@ export default function RDBErrorCode14800021() {
           }).catch((err: Error) => {
             console.error(`Backup failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
@@ -277,7 +282,8 @@ export default function RDBErrorCode14800021() {
           }).catch((err: Error) => {
             console.error(`Backup failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
 
@@ -288,7 +294,8 @@ export default function RDBErrorCode14800021() {
           }).catch((err: Error) => {
             console.error(`Restore failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         const dbPath = context!.databaseDir + "/rdb/TransactionTest.db";
@@ -298,7 +305,8 @@ export default function RDBErrorCode14800021() {
           }).catch((err: Error) => {
             console.error(`attach failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         await rdbStore.executeSql("DROP TABLE IF EXISTS test1");
@@ -335,7 +343,8 @@ export default function RDBErrorCode14800021() {
           }).catch((err: Error) => {
             console.error(`Lock failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
 
@@ -345,7 +354,8 @@ export default function RDBErrorCode14800021() {
           }).catch((err: Error) => {
             console.error(`Unlock failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
 
@@ -359,7 +369,8 @@ export default function RDBErrorCode14800021() {
             .catch((err: Error) => {
               console.error(`Query failed, code is ${err.code},message is ${err.message}`);
             })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         let predicates1 = new relationalStore.RdbPredicates("test1");
@@ -367,7 +378,8 @@ export default function RDBErrorCode14800021() {
 
         try {
           await resultSet.getRows(resultSet.columnCount);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
@@ -403,7 +415,8 @@ export default function RDBErrorCode14800021() {
           rdbTrans.insert("test1", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then(() => {
             rdbTrans.rollback();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -411,7 +424,8 @@ export default function RDBErrorCode14800021() {
 
         try {
           rdbTrans.insertSync("test1", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -422,7 +436,8 @@ export default function RDBErrorCode14800021() {
           rdbTrans.batchInsert("test1", valueBuckets).then(() => {
             rdbTrans.rollback();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -431,7 +446,8 @@ export default function RDBErrorCode14800021() {
         try {
           rdbTrans.batchInsertSync("test1", valueBuckets)
           rdbTrans.rollback();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -462,7 +478,8 @@ export default function RDBErrorCode14800021() {
         predicates.equalTo("NAME", "lisi");
         try {
           await rdbTrans.delete(predicates);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           await rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -470,7 +487,8 @@ export default function RDBErrorCode14800021() {
         rdbTrans = await rdbStore!.createTransaction(options);
         try {
           rdbTrans.deleteSync(predicates);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           await rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -497,7 +515,8 @@ export default function RDBErrorCode14800021() {
           }).catch((err: Error) => {
             console.error(`attach failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         try {
@@ -506,7 +525,8 @@ export default function RDBErrorCode14800021() {
           }).catch((err: Error) => {
             console.error(`detach failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         try {
@@ -515,7 +535,8 @@ export default function RDBErrorCode14800021() {
           }).catch((err: Error) => {
             console.error(`detach failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         await rdbStore.executeSql("DROP TABLE IF EXISTS test1");
@@ -558,14 +579,16 @@ export default function RDBErrorCode14800021() {
         try {
           rdbTrans.update(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then(() => {
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(14800021)
         }
         try {
           rdbTrans.updateSync(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           rdbTrans.rollback();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -610,14 +633,16 @@ export default function RDBErrorCode14800021() {
           rdbTrans.querySql("SELECT * FROM test1").then(() => {
             rdbTrans.rollback();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021);
         }
         try {
           rdbTrans.querySqlSync("SELECT * FROM test1");
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -644,7 +669,8 @@ export default function RDBErrorCode14800021() {
             let data = transaction.executeSync(SQL_DELETE_TABLE);
             transaction.commit();
             console.info(`delete result: ${data}`);
-          } catch (err: BusinessError) {
+          } catch (err) {
+          err = err as BusinessError;
             transaction.rollback();
             console.error(`delete failed, code is ${err.code}, message is ${err.message}`);
             expect(err.code).assertEqual(14800021)
@@ -662,7 +688,8 @@ export default function RDBErrorCode14800021() {
               transaction.rollback();
               console.error(`delete failed, code is ${e.code}, message is ${e.message}`);
             });
-          } catch (err: BusinessError) {
+          } catch (err) {
+          err = err as BusinessError;
             transaction.rollback();
             console.error(`delete failed, code is ${err.code}, message is ${err.message}`);
             expect(err.code).assertEqual(14800021)
@@ -692,7 +719,8 @@ export default function RDBErrorCode14800021() {
       try{
         rdbStore!.insertSync("employ", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         expect().assertFail();
-      }catch(err: BusinessError){
+      }catch(err){
+          err = err as BusinessError;
         console.info(TAG + "err.code" + err.code + "err.message"+ err.message)
         expect(err.code).assertEqual(14800021);
       }

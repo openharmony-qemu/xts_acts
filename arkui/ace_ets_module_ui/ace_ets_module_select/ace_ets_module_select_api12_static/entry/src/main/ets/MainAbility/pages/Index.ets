@@ -91,7 +91,7 @@ struct SelectExample {
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
 

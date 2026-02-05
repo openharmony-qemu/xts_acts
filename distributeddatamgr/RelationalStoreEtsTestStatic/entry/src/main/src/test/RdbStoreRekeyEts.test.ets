@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -84,7 +84,8 @@ export default function RdbstoreRekeysEtsTest() {
 
       try {
         await rdbStore.rekey(cryptoParam);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect().assertFail();
         console.log(TAG + "************* testRekey0001 end *************");
@@ -117,7 +118,8 @@ export default function RdbstoreRekeysEtsTest() {
 
       try {
         await rdbStore.rekey(cryptoParam);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect().assertFail();
         console.log(TAG + "************* testRekey0002 end *************");
@@ -150,7 +152,8 @@ export default function RdbstoreRekeysEtsTest() {
 
       try {
         await rdbStore.rekey(cryptoParam);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect().assertFail();
         console.log(TAG + "************* testRekey0003 end *************");
@@ -183,7 +186,8 @@ export default function RdbstoreRekeysEtsTest() {
 
       try {
         await rdbStore.rekey(cryptoParam);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect().assertFail();
         console.log(TAG + "************* testRekey0004 end *************");
@@ -216,7 +220,8 @@ export default function RdbstoreRekeysEtsTest() {
 
       try {
         await rdbStore.rekey(cryptoParam);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect().assertFail();
         console.log(TAG + "************* testRekey0005 end *************");
@@ -248,7 +253,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0006 end *************");
@@ -282,7 +288,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0007 end *************");
@@ -316,7 +323,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0008 end *************");
@@ -350,7 +358,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0009 end *************");
@@ -384,7 +393,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0010 end *************");
@@ -418,7 +428,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0011 end *************");
@@ -474,7 +485,8 @@ export default function RdbstoreRekeysEtsTest() {
         predicates.equalTo("NAME", "zhangsan");
         await rdbStore.update(valueBucket1, predicates)
         await rdbStore.delete(predicates);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(false).assertTrue();
         console.log(TAG + "************* testRekey0012 end *************");
@@ -506,7 +518,8 @@ export default function RdbstoreRekeysEtsTest() {
 
       try {
         await rdbStore.rekey(cryptoParam1);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0013 end *************");
@@ -557,7 +570,8 @@ export default function RdbstoreRekeysEtsTest() {
         predicates.equalTo("NAME", "zhangsan");
         await rdbStore.update(valueBucket1, predicates)
         await rdbStore.delete(predicates);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(false).assertTrue();
         console.log(TAG + "************* testRekey0014 end *************");
@@ -594,7 +608,8 @@ export default function RdbstoreRekeysEtsTest() {
 
       try {
         await rdbStore.rekey(cryptoParam1);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0015 end *************");
@@ -641,7 +656,8 @@ export default function RdbstoreRekeysEtsTest() {
         await transaction!.insert("employee", valueBucket)
         await rdbStore.rekey(cryptoParam1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(14800015));
         console.log(TAG + "************* testRekey0016 end *************");
@@ -687,7 +703,8 @@ export default function RdbstoreRekeysEtsTest() {
         await transaction!.insert("employee", valueBucket)
         await rdbStore.rekey(cryptoParam1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(14800015));
         console.log(TAG + "************* testRekey0017 end *************");
@@ -713,7 +730,8 @@ export default function RdbstoreRekeysEtsTest() {
       let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
       try {
         await rdbStore.rekey(undefined);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(false).assertTrue();
         console.log(TAG + "************* testRekey0018 end *************");
@@ -740,7 +758,8 @@ export default function RdbstoreRekeysEtsTest() {
       let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
       try {
         await rdbStore.rekey(undefined);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(false).assertTrue();
         console.log(TAG + "************* testRekey0019 end *************");
@@ -767,7 +786,8 @@ export default function RdbstoreRekeysEtsTest() {
       let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
       try {
         await rdbStore.rekey();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(false).assertTrue();
         console.log(TAG + "************* testRekey0020 end *************");
@@ -813,7 +833,8 @@ export default function RdbstoreRekeysEtsTest() {
         resultSet.goToNextRow();
         await rdbStore.rekey(cryptoParam1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(14800015));
         console.log(TAG + "************* testRekey0021 end *************");
@@ -852,7 +873,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0022 end *************");
@@ -891,7 +913,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0023 end *************");
@@ -930,7 +953,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0024 end *************");
@@ -969,7 +993,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0025 end *************");
@@ -1036,7 +1061,8 @@ export default function RdbstoreRekeysEtsTest() {
         let num1 = await rdbStore.delete(predicates);
         console.log(TAG + "delete success,num:" + num1);
         expect(num1).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("catch err: failed, err: code=" + err.code + " message=" + err.message);
         expect().assertFail();
         console.log(TAG + "************* testRekey0026 end *************");
@@ -1106,7 +1132,8 @@ export default function RdbstoreRekeysEtsTest() {
         let num1 = await rdbStore.delete(predicates);
         console.log(TAG + "delete success,num:" + num1);
         expect(num1).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("catch err: failed, err: code=" + err.code + " message=" + err.message);
         expect().assertFail();
         console.log(TAG + "************* testRekey0027 end *************");

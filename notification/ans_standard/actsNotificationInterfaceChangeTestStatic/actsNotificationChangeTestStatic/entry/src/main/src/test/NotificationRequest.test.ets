@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -209,7 +209,8 @@ export default function ActsNotificationRequestTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err:BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result1 is : %{public}s', JSON.stringify(err));
           expect(err.code).assertEqual(401);
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
@@ -283,7 +284,7 @@ export default function ActsNotificationRequestTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err:BusinessError) {
+        } catch (err) {
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(err));
           expect().assertFail();
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
@@ -338,7 +339,7 @@ export default function ActsNotificationRequestTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err:BusinessError) {
+        } catch (err) {
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result1 is : %{public}s', JSON.stringify(err));
           expect().assertFail();
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
@@ -410,7 +411,7 @@ export default function ActsNotificationRequestTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err:BusinessError) {
+        } catch (err) {
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result1 is : %{public}s', JSON.stringify(err));
           expect().assertFail();
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);

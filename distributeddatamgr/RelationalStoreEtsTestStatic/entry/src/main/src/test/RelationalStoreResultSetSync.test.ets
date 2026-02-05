@@ -1,6 +1,6 @@
 
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -145,7 +145,7 @@ export default function rdbResultSetSyncTest() {
         hilog.info(domain, tag, 'RS0145:')
         await rdbStore!.insert("test", valueBucket);
         hilog.info(domain, tag, 'RS0147:')
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(tag + "testgetColumnTypeSync001 insert failed " + err);
         hilog.error(domain, tag, 'RS0146:')
       }
@@ -181,7 +181,7 @@ export default function rdbResultSetSyncTest() {
         expect(type).assertEqual(relationalStore.ColumnType.UNLIMITED_INT);
         resultSet.close();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(tag + "testgetColumnTypeSync0100  failed " + err.code + err.message);
         hilog.error(domain, tag, 'RS0177:')
         expect().assertFail();

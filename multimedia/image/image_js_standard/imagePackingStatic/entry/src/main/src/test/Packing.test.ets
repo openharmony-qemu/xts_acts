@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -79,7 +79,7 @@ export default function imagePacking() {
         globalImagesource = image.createImageSource(path);
         console.log('image source1111111: ' + globalImagesource)
         return globalImagesource;
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info("image getRawFileContent case" + error.code + ",err message" + error.message);
         return undefined;
       }
@@ -124,7 +124,7 @@ export default function imagePacking() {
             expect(false).assertTrue();
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("createPixelMapList error = " + error.code + "createPixelMapList errormsg = " + error.message);
           expect(false).assertTrue();
           done();
@@ -234,7 +234,7 @@ export default function imagePacking() {
           expect().assertFail();
           done();
         }
-      } catch (error: Error) {
+      } catch (error) {
         console.info(`${testNum} error: ` + JSON.stringify(error));
         expect().assertFail();
         done();
@@ -256,7 +256,8 @@ export default function imagePacking() {
         console.log(`${testNum} testPackingForSequencePromiseError success`);
         expect(false).assertTrue();
         done();
-      } catch(error: BusinessError) {
+      } catch(error) {
+        error = error as BusinessError;
         waitForCompletion(async () => {await globalPacker!.release();})
         for (let i = 0; i < pixelMapList.length; i++) {
           if (pixelMapList[i] != undefined) {

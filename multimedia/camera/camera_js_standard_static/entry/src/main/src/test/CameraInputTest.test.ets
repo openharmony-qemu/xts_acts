@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -169,7 +169,7 @@ let isEmpty08 = (data: BusinessError) => {
 
     try {
       mCameraSession = mCameraManager!.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
-    } catch(err: BusinessError) {
+    } catch(err) {
       console.info('createCaptureSession FAILED');
     }
 
@@ -405,7 +405,7 @@ let isEmpty08 = (data: BusinessError) => {
             mCameraInput!.offError( mCameraDevicesArray[i]);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100 off('reeor') SUCCESSFUL");
             done();
-          } catch (error:BusinessError) {
+          } catch (error) {
             let err = error as BusinessError
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100 off('error') FAILED!");
             console.info(TAG + 'ERRORCODE: ' + error.code)
@@ -459,7 +459,7 @@ let isEmpty08 = (data: BusinessError) => {
             cameraInput.onCameraOcclusionDetection(occlusionDetectChange);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 onCameraOcclusionDetection SUCCESSFUL");
             done();
-          } catch (error:BusinessError) {
+          } catch (error) {
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 onCameraOcclusionDetection FAILED!");
             console.info(TAG + 'ERRORCODE: ' + error.code)
             expect().assertFail()
@@ -470,7 +470,7 @@ let isEmpty08 = (data: BusinessError) => {
             cameraInput.offCameraOcclusionDetection(occlusionDetectChange);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 offCameraOcclusionDetectChange SUCCESSFUL");
             done();
-          } catch (error:BusinessError) {
+          } catch (error) {
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 offCameraOcclusionDetectChange FAILED!");
             console.info(TAG + 'ERRORCODE: ' + error.code)
             expect().assertFail()

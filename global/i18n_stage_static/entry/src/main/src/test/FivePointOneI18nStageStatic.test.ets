@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -165,7 +165,8 @@ export default function FivePointOne_i18nStageTest() {
     it('I18N_test_getTemperatureName_static_0400', Level.LEVEL3, async (): Promise<void> => {
       try {
         i18n.System.getTemperatureName(i18n.TemperatureType.KELVIN);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('I18N_test_getTemperatureName_static_0400 code&message:' + e.code + e.message);
         expect(e.code).assertEqual('890001');
       }
@@ -522,7 +523,8 @@ export default function FivePointOne_i18nStageTest() {
         let delimiter: string = "error";
         let locale: Intl.Locale = new Intl.Locale("ug");
         i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale);
-      } catch (e:BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('I18N_test_getUnicodeWrappedFilePath_static_0100 type_one:' + e.code);
         expect(JSON.stringify(e.code)).assertEqual('890001');
       }
@@ -571,7 +573,8 @@ export default function FivePointOne_i18nStageTest() {
       try {
         let locale: Intl.Locale = new Intl.Locale("zh-Hans-CN");
         i18n.getSimpleDateTimeFormatByPattern('error', locale);
-      } catch (e:BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('I18N_test_getSimpleDateTimeFormatByPattern_static_0100 error code:' + e.code);
         expect(e.code).assertEqual(890001);
       }
@@ -606,7 +609,8 @@ export default function FivePointOne_i18nStageTest() {
       try {
         let locale: Intl.Locale = new Intl.Locale("zh-Hans-CN");
         i18n.getSimpleDateTimeFormatBySkeleton('error', locale);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('I18N_test_getSimpleDateTimeFormatBySkeleton_static_0100 error code:' + e.code);
         expect(e.code).assertEqual(890001);
       }
@@ -646,7 +650,7 @@ export default function FivePointOne_i18nStageTest() {
         let numberFormatted: string = numberFormat.format(123.456);
         expect(numberFormatted == "123.46").assertEqual(true);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', `${TAG} failed, error: ${err.message}`);
         expect().assertFail();
         done();
@@ -671,7 +675,7 @@ export default function FivePointOne_i18nStageTest() {
         let numberFormatted: string = numberFormat.format(123.456);
         expect(numberFormatted == "123.46").assertEqual(true);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', `${TAG} failed, error: ${err.message}`);
         expect().assertFail();
         done();
@@ -690,7 +694,8 @@ export default function FivePointOne_i18nStageTest() {
       try {
         let locale: Intl.Locale = new Intl.Locale("zh-Hans-CN");
         i18n.getSimpleNumberFormatBySkeleton('error', locale);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('I18N_test_getSimpleNumberFormatBySkeleton_static_0100 error code:' + e.code);
         expect(e.code).assertEqual(890001);
       }
