@@ -16,8 +16,12 @@ import expressionTest3 from './expression/ExpressionTest3.test';
 import expressionTest4 from './expression/ExpressionTest4.test';
 import expressionTest5 from './expression/ExpressionTest5.test';
 import expressionTest6 from './expression/ExpressionTest6.test';
-
 import DoubleEnumTest from './enumerations/DoubleEnum.test';
+
+import SpecTypeTest from "./Types/Types.test";
+import SpecTypeTest1 from "./Types/Types1.test";
+import EqualityExpressions from "./Types/EqualityExpressions.test.ets";
+import ClassLateInitizationTest from "./Class/Class.test";
 
 export default function testsuite() {
   builtinsBlockTest();
@@ -38,6 +42,11 @@ export default function testsuite() {
   expressionTest4();
   expressionTest5();
   expressionTest6();
-
   DoubleEnumTest();
+
+  SpecTypeTest();
+  SpecTypeTest1();
+  ClassLateInitizationTest();
+  EqualityExpressions();
+  
 }
