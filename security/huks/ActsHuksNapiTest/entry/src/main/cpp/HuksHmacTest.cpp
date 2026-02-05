@@ -14,12 +14,12 @@
  */
 
 #include "include/HuksHmacTest.h"
+#include <cstdlib>
+#include <cstring>
 #include <huks/native_huks_api.h>
-#include  <huks/native_huks_param.h>
+#include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
 #include <string>
-#include <cstring>
-#include <cstdlib>
 
 namespace Acts {
 namespace Huks {
@@ -35,7 +35,7 @@ static const std::string g_inData =
     "0000000000000000000000000000000000000000000000000000000000000000000000000_string";
 
 // Helper function: Free memory
-static void HksFree(void *ptr)
+static void HksFree(void* ptr)
 {
     if (ptr != nullptr) {
         free(ptr);
@@ -43,12 +43,12 @@ static void HksFree(void *ptr)
 }
 
 // Helper function: Malloc and check blob data
-static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob *blob, const uint32_t blobSize)
+static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob* blob, const uint32_t blobSize)
 {
     OH_Huks_Result ret;
     ret.errorCode = OH_HUKS_SUCCESS;
-    
-    blob->data = (uint8_t *)malloc(blobSize);
+
+    blob->data = (uint8_t*)malloc(blobSize);
     if (blob->data == nullptr) {
         ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
     }
@@ -56,9 +56,8 @@ static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob *blob, const ui
 }
 
 // Helper function: Initialize parameter set
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet **paramSet,
-                                   const struct OH_Huks_Param *params,
-                                   uint32_t paramCount)
+static OH_Huks_Result
+    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramCount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -81,13 +80,15 @@ static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet **paramSet,
 }
 
 // Helper function: Test less than max segment
-static OH_Huks_Result TestLessThanMaxSeg(const struct OH_Huks_Blob *handle, const struct OH_Huks_ParamSet *paramSet,
-                                         uint32_t purpose, const struct OH_Huks_Blob *inData,
-                                         struct OH_Huks_Blob *outData)
+static OH_Huks_Result TestLessThanMaxSeg(const struct OH_Huks_Blob* handle,
+                                         const struct OH_Huks_ParamSet* paramSet,
+                                         uint32_t purpose,
+                                         const struct OH_Huks_Blob* inData,
+                                         struct OH_Huks_Blob* outData)
 {
     struct OH_Huks_Result ret;
     ret.errorCode = OH_HUKS_SUCCESS;
-    struct OH_Huks_Blob tmpOutData = {.size = MAX_OUTDATA_SIZE, .data = NULL};
+    struct OH_Huks_Blob tmpOutData = { .size = MAX_OUTDATA_SIZE, .data = NULL };
     if (MallocAndCheckBlobData(&tmpOutData, tmpOutData.size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
         ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
         return ret;
@@ -98,7 +99,7 @@ static OH_Huks_Result TestLessThanMaxSeg(const struct OH_Huks_Blob *handle, cons
         ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
         return ret;
     }
-    struct OH_Huks_Blob tmpInData = {.size = 0, .data = NULL};
+    struct OH_Huks_Blob tmpInData = { .size = 0, .data = NULL };
     if (MallocAndCheckBlobData(&tmpInData, MAX_UPDATE_SIZE).errorCode != (int32_t)OH_HUKS_SUCCESS) {
         ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
         return ret;
@@ -118,8 +119,11 @@ static OH_Huks_Result TestLessThanMaxSeg(const struct OH_Huks_Blob *handle, cons
 }
 
 // Helper function: Test Update and Finish
-static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob *handle, const struct OH_Huks_ParamSet *paramSet,
-                                       uint32_t purpose, const struct OH_Huks_Blob *inData, struct OH_Huks_Blob *outData)
+static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob* handle,
+                                       const struct OH_Huks_ParamSet* paramSet,
+                                       uint32_t purpose,
+                                       const struct OH_Huks_Blob* inData,
+                                       struct OH_Huks_Blob* outData)
 {
     struct OH_Huks_Result ret;
     ret.errorCode = OH_HUKS_SUCCESS;
@@ -127,8 +131,8 @@ static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob *handle, const 
     struct OH_Huks_Blob inDataSeg = *inData;
     inDataSeg.size = MAX_UPDATE_SIZE;
 
-    uint8_t *lastPtr = inData->data + inData->size - 1;
-    struct OH_Huks_Blob outDataSeg = {MAX_OUTDATA_SIZE, NULL};
+    uint8_t* lastPtr = inData->data + inData->size - 1;
+    struct OH_Huks_Blob outDataSeg = { MAX_OUTDATA_SIZE, NULL };
 
     bool isFinished = false;
 
@@ -167,7 +171,7 @@ static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob *handle, const 
         }
     } else {
         uint8_t tmp[] = "temp";
-        struct OH_Huks_Blob tempBlob = {sizeof(tmp), tmp};
+        struct OH_Huks_Blob tempBlob = { sizeof(tmp), tmp };
         if (OH_Huks_UpdateSession(handle, paramSet, &inDataSeg, &tempBlob).errorCode != (int32_t)OH_HUKS_SUCCESS) {
             ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
             return ret;
@@ -181,10 +185,11 @@ static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob *handle, const 
 }
 
 // Helper function: HMAC Test Case
-static OH_Huks_Result HksHmacTestCase(const struct OH_Huks_Blob *keyAlias, struct OH_Huks_ParamSet *genParamSet,
-                                      struct OH_Huks_ParamSet *hmacParamSet)
+static OH_Huks_Result HksHmacTestCase(const struct OH_Huks_Blob* keyAlias,
+                                      struct OH_Huks_ParamSet* genParamSet,
+                                      struct OH_Huks_ParamSet* hmacParamSet)
 {
-    struct OH_Huks_Blob inData = {static_cast<uint32_t>(g_inData.length()), (uint8_t *)g_inData.c_str()};
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(g_inData.length()), (uint8_t*)g_inData.c_str() };
 
     /* 1. Generate Key */
     OH_Huks_Result ret = OH_Huks_GenerateKeyItem(keyAlias, genParamSet, nullptr);
@@ -194,17 +199,17 @@ static OH_Huks_Result HksHmacTestCase(const struct OH_Huks_Blob *keyAlias, struc
 
     /* 2. HMAC Three Stage */
     // Init
-    uint8_t handle[sizeof(uint64_t)] = {0};
-    struct OH_Huks_Blob handleHMAC = {sizeof(uint64_t), handle};
+    uint8_t handle[sizeof(uint64_t)] = { 0 };
+    struct OH_Huks_Blob handleHMAC = { sizeof(uint64_t), handle };
     ret = OH_Huks_InitSession(keyAlias, hmacParamSet, &handleHMAC, nullptr);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_Huks_DeleteKeyItem(keyAlias, genParamSet);
         return ret;
     }
-    
+
     // Update & Finish
-    uint8_t out[COMMON_SIZE] = {0};
-    struct OH_Huks_Blob outData = {COMMON_SIZE, out};
+    uint8_t out[COMMON_SIZE] = { 0 };
+    struct OH_Huks_Blob outData = { COMMON_SIZE, out };
     ret = TestUpdateFinish(&handleHMAC, hmacParamSet, OH_HUKS_KEY_PURPOSE_MAC, &inData, &outData);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_Huks_DeleteKeyItem(keyAlias, genParamSet);
@@ -217,32 +222,34 @@ static OH_Huks_Result HksHmacTestCase(const struct OH_Huks_Blob *keyAlias, struc
 }
 
 // Test parameters for HMAC_hmac_0100
-static struct OH_Huks_Param g_genParams001[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_HMAC},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_MAC},
-    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA384},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = COMMON_SIZE},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
+static struct OH_Huks_Param g_genParams001[] = { { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_HMAC },
+                                                 { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_MAC },
+                                                 { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA384 },
+                                                 { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = COMMON_SIZE },
+                                                 { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL,
+                                                   .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE } };
 
 static struct OH_Huks_Param g_hmacParams001[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_HMAC},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_MAC},
-    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA384},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
+    { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_HMAC },
+    { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_MAC },
+    { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA384 },
+    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+};
 
 // Test parameters for HMAC_SM3_0100
-static struct OH_Huks_Param g_genParams006[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_HMAC},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_MAC},
-    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = COMMON_SIZE},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
+static struct OH_Huks_Param g_genParams006[] = { { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_HMAC },
+                                                 { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_MAC },
+                                                 { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3 },
+                                                 { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = COMMON_SIZE },
+                                                 { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL,
+                                                   .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE } };
 
 static struct OH_Huks_Param g_hmacParams006[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_HMAC},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_MAC},
-    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
+    { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_HMAC },
+    { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_MAC },
+    { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3 },
+    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+};
 
 /**
  * @tc.name   SecurityHuksNapiHmacHmac0100
@@ -255,15 +262,15 @@ static struct OH_Huks_Param g_hmacParams006[] = {
 int SecurityHuksNapiHmacHmac0100()
 {
     char tmpKeyAlias[] = "HksHMACKeyAliasTest001";
-    struct OH_Huks_Blob keyAlias = {static_cast<uint32_t>(strlen(tmpKeyAlias)), (uint8_t *)tmpKeyAlias};
+    struct OH_Huks_Blob keyAlias = { static_cast<uint32_t>(strlen(tmpKeyAlias)), (uint8_t*)tmpKeyAlias };
 
-    struct OH_Huks_ParamSet *genParamSet = nullptr;
+    struct OH_Huks_ParamSet* genParamSet = nullptr;
     OH_Huks_Result ret = InitParamSet(&genParamSet, g_genParams001, sizeof(g_genParams001) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return -1;
     }
 
-    struct OH_Huks_ParamSet *hmacParamSet = nullptr;
+    struct OH_Huks_ParamSet* hmacParamSet = nullptr;
     ret = InitParamSet(&hmacParamSet, g_hmacParams001, sizeof(g_hmacParams001) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_Huks_FreeParamSet(&genParamSet);
@@ -271,10 +278,10 @@ int SecurityHuksNapiHmacHmac0100()
     }
 
     ret = HksHmacTestCase(&keyAlias, genParamSet, hmacParamSet);
-    
+
     OH_Huks_FreeParamSet(&genParamSet);
     OH_Huks_FreeParamSet(&hmacParamSet);
-    
+
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return -1;
     }
@@ -293,15 +300,15 @@ int SecurityHuksNapiHmacHmac0100()
 int SecurityHuksNapiHmacSm30100()
 {
     char tmpKeyAlias[] = "HksHMACKeyAliasTest008";
-    struct OH_Huks_Blob keyAlias = {static_cast<uint32_t>(strlen(tmpKeyAlias)), (uint8_t *)tmpKeyAlias};
+    struct OH_Huks_Blob keyAlias = { static_cast<uint32_t>(strlen(tmpKeyAlias)), (uint8_t*)tmpKeyAlias };
 
-    struct OH_Huks_ParamSet *genParamSet = nullptr;
+    struct OH_Huks_ParamSet* genParamSet = nullptr;
     OH_Huks_Result ret = InitParamSet(&genParamSet, g_genParams006, sizeof(g_genParams006) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return -1;
     }
 
-    struct OH_Huks_ParamSet *hmacParamSet = nullptr;
+    struct OH_Huks_ParamSet* hmacParamSet = nullptr;
     ret = InitParamSet(&hmacParamSet, g_hmacParams006, sizeof(g_hmacParams006) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_Huks_FreeParamSet(&genParamSet);
@@ -309,10 +316,10 @@ int SecurityHuksNapiHmacSm30100()
     }
 
     ret = HksHmacTestCase(&keyAlias, genParamSet, hmacParamSet);
-    
+
     OH_Huks_FreeParamSet(&genParamSet);
     OH_Huks_FreeParamSet(&hmacParamSet);
-    
+
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return -1;
     }

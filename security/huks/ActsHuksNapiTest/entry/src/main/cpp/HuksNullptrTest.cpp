@@ -15,16 +15,16 @@
 
 #include "include/HuksNullptrTest.h"
 #include <huks/native_huks_api.h>
-#include  <huks/native_huks_param.h>
+#include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
 
 namespace Acts {
 namespace Huks {
 
-static struct OH_Huks_ParamSet *paramSetNullptr = nullptr;
-static struct OH_Huks_Param *paramNullptr = nullptr;
-static struct OH_Huks_Blob *blobNullptr = nullptr;
-static struct OH_Huks_CertChain *certChainNullptr = nullptr;
+static struct OH_Huks_ParamSet* paramSetNullptr = nullptr;
+static struct OH_Huks_Param* paramNullptr = nullptr;
+static struct OH_Huks_Blob* blobNullptr = nullptr;
+static struct OH_Huks_CertChain* certChainNullptr = nullptr;
 
 /**
  * @tc.name   SecurityHuksNapiNullptr0100
@@ -76,8 +76,8 @@ int SecurityHuksNapiNullptr0100()
         return -1;
     }
 
-    struct OH_Huks_Param baseParam = {.tag = OH_HUKS_TAG_ALGORITHM, .uint64Param = (uint64_t)1};
-    struct OH_Huks_Param otherParam = {.tag = OH_HUKS_TAG_ALGORITHM, .uint64Param = (uint64_t)2};
+    struct OH_Huks_Param baseParam = { .tag = OH_HUKS_TAG_ALGORITHM, .uint64Param = (uint64_t)1 };
+    struct OH_Huks_Param otherParam = { .tag = OH_HUKS_TAG_ALGORITHM, .uint64Param = (uint64_t)2 };
     ret = OH_Huks_CheckParamMatch(&baseParam, &otherParam);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
