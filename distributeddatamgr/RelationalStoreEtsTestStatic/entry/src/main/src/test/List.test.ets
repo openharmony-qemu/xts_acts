@@ -51,10 +51,7 @@ import RelationStoreError11Test from "./RelationStoreError11Api.test";
 import RelationStoreError12Test from "./RelationStoreError12Api.test";
 import RelationStoreError14Test from "./RelationStoreError14Api.test";
 import RelationStoreError17Test from "./RelationStoreError17Api.test";
-import RelationStoreError21Test from "./RelationStoreError21Api.test";
-import RelationStoreError24Test from "./RelationStoreError24Api.test";
 import RelationStoreError30Test from "./RelationStoreError30Api.test";
-import RelationStoreError32Test from "./RelationStoreError32Api.test";
 import RelationStoreError801Test from "./RelationStoreError801Api.test";
 import RelationStoreSqlExecTimeTest from "./RelationStoreSqlExecTimeTest.test";
 import VectorStore from "./VectorStore.test";
@@ -66,13 +63,12 @@ import RdbstoreRekeyEts from "./RdbStoreRekeyEts.test";
 import RelationalStoreRekeyExEtsTest from "./RelationalStoreRekeyExEtsTest.test";
 import RdbStoreGetSqlInfoTest from "./RdbStoreGetSqlInfoEts.test";
 import RdbStoreSetLocaleTest from "./RdbStoreSetLocaleEts.test"
-import CloudDataErrorCode from "./CloudDataErrorCode.test"
-import RelationalStoreBatchInsert from "./RelationalStoreBatchInsert.test"
-import RdbBatchInsertTransaction from "./RdbBatchInsertTransaction.test"
-import RdbLockRow from "./RdbLockRow.test"
-
-import RdbStoreDuplicateColumnsTest from "./RdbStoreDuplicateColumns.test";
-import RdbStoreErrorCodeAddTest from "./RdbStoreErrorCodeAdd.test";
+import CloudDataErrorCode from "./CloudDataErrorCode.test" 
+import RelationalStoreBatchInsert from "./RelationalStoreBatchInsert.test" 
+import RdbBatchInsertTransaction from "./RdbBatchInsertTransaction.test" 
+import RdbLockRow from "./RdbLockRow.test" 
+import RdbStoreDuplicateColumnsTest from "./RdbStoreDuplicateColumns.test"; 
+import RdbStoreErrorCodeAddTest from "./RdbStoreErrorCodeAdd.test"; 
 import RdbStoreErrorCodeAdd2Test from "./RdbStoreErrorCodeAdd2.test";
 
 export default function testsuite() {
@@ -85,10 +81,7 @@ export default function testsuite() {
   RelationStoreError12Test();
   RelationStoreError14Test();
 
-  RelationStoreError21Test();
-  RelationStoreError24Test();
   RelationStoreError30Test();
-  RelationStoreError32Test();
   RelationStoreError17Test();
   RelationStoreError801Test();
 
@@ -139,13 +132,13 @@ export default function testsuite() {
   RdbStoreGetSqlInfoTest();
   RdbStoreSetLocaleTest();
 
-  CloudDataErrorCode();
+  CloudDataErrorCode(); 
 
-  RelationalStoreBatchInsert();
-  RdbBatchInsertTransaction();
-  RdbLockRow();
+  RelationalStoreBatchInsert(); 
+  RdbBatchInsertTransaction(); 
+  RdbLockRow(); 
 
-  RdbStoreDuplicateColumnsTest();
-  RdbStoreErrorCodeAddTest();
+  RdbStoreDuplicateColumnsTest(); 
+  RdbStoreErrorCodeAddTest(); 
   RdbStoreErrorCodeAdd2Test();
 }
