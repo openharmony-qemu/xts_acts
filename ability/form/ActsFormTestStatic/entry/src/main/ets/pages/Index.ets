@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,17 +39,17 @@ struct MyStateSample {
 
     try {
       hilog.info(DOMAIN, TAG, `Index enter1 ${formInfo.PublishFormErrorCode.SUCCESS === 0}`);
-    } catch (err: Error) {
+    } catch (err) {
       hilog.info(DOMAIN, TAG, `Index enter1 ${err.message}`);
     }
     try {
       hilog.info(DOMAIN, TAG, `Index enter2 ${batteryInfo.BatteryCapacityLevel.LEVEL_FULL}`);
-    } catch (err: Error) {
+    } catch (err) {
       hilog.info(DOMAIN, TAG, `Index enter2 ${err.message}`);
     }
     try {
       hilog.info(DOMAIN, TAG, `Index enter3 ${formError.FormError.ERR_COMMON}`);
-    } catch (err: Error) {
+    } catch (err) {
       hilog.info(DOMAIN, TAG, `Index enter3 ${err.message}`);
     }
   }
@@ -69,7 +69,7 @@ struct MyStateSample {
           let aRouter = this.getUIContext().getRouter();
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormBindingData'});
-          } catch (err: Error) {
+          } catch (err) {
             hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
@@ -80,7 +80,7 @@ struct MyStateSample {
           let aRouter = this.getUIContext().getRouter();
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormComponent'});
-          } catch (err: Error) {
+          } catch (err) {
             hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
@@ -91,7 +91,7 @@ struct MyStateSample {
           let aRouter = this.getUIContext().getRouter();
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormInfo'});
-          } catch (err: Error) {
+          } catch (err) {
             hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
@@ -102,7 +102,7 @@ struct MyStateSample {
           let aRouter = this.getUIContext().getRouter();
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormLink'});
-          } catch (err: Error) {
+          } catch (err) {
             hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
@@ -113,7 +113,7 @@ struct MyStateSample {
           let aRouter = this.getUIContext().getRouter();
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormProvider'});
-          } catch (err: Error) {
+          } catch (err) {
             hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
@@ -124,7 +124,7 @@ struct MyStateSample {
           let aRouter = this.getUIContext().getRouter();
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormAgent'});
-          } catch (err: Error) {
+          } catch (err) {
             hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
@@ -135,7 +135,7 @@ struct MyStateSample {
           let aRouter = this.getUIContext().getRouter();
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormObserver'});
-          } catch (err: Error) {
+          } catch (err) {
             hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
@@ -146,7 +146,7 @@ struct MyStateSample {
           let aRouter = this.getUIContext().getRouter();
           try {
             aRouter.pushUrl({ url: 'testform/pages/XtsFormHost' });
-          } catch (err: Error) {
+          } catch (err) {
             hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })

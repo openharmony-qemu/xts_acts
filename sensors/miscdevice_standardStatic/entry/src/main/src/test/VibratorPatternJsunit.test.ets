@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -96,10 +96,10 @@ export default function VibratorJsTest_misc_9() {
             setTimeout(() => {
               done();
             }, 500);
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
             hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
-            expect(error.code == 401).assertTrue();
+            expect((error as BusinessError).code == 401).assertTrue();
             done();
           }
         } else {
@@ -127,10 +127,10 @@ export default function VibratorJsTest_misc_9() {
             setTimeout(() => {
               done();
             }, 500);
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
             hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
-            expect(error.code == 401).assertTrue();
+            expect((error as BusinessError).code == 401).assertTrue();
             done();
           }
         } else {
@@ -167,7 +167,7 @@ export default function VibratorJsTest_misc_9() {
             let pointsMe:  Array<vibrator.VibratorCurvePoint> = [data1,data2,data3,data4,data5,data6,data7,data8,data9,data10,data11,data12];
             hilog.info(domain, tag, TAG + ' pointsMe: ' + pointsMe);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
             hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
             expect(false).assertTrue();
@@ -208,7 +208,7 @@ export default function VibratorJsTest_misc_9() {
             }
             hilog.info(domain, tag, TAG + ' vibratorEvent: ' + vibratorEvent);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
             hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
             expect(false).assertTrue();
@@ -249,7 +249,7 @@ export default function VibratorJsTest_misc_9() {
             expect(error !== null).assertTrue();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
           expect(false).assertTrue();
           done();
@@ -281,7 +281,7 @@ export default function VibratorJsTest_misc_9() {
                 done();
               }
             });
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
             expect().assertFail();
             done();
@@ -310,7 +310,7 @@ export default function VibratorJsTest_misc_9() {
             hilog.info(domain, tag, TAG + ' isSupportEffect success ');
             expect(!isSupportEffectData).assertTrue();
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
             expect().assertFail();
             done();
@@ -362,10 +362,10 @@ export default function VibratorJsTest_misc_9() {
               done();
             }
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
-          expect(error.code == 401).assertTrue();
-          expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
+          expect((error as BusinessError).code == 401).assertTrue();
+          expect((error as BusinessError).message).assertEqual(PARAMETER_ERROR_MSG);
           done();
         }
       })
@@ -394,10 +394,10 @@ export default function VibratorJsTest_misc_9() {
           vibrator.startVibration(effect, attribute);
           expect(attribute !== null).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
-          expect(error.code == 401).assertTrue();
-          expect(error.message).assertEqual(PARAMETER_ERROR_MSG);
+          expect((error as BusinessError).code == 401).assertTrue();
+          expect((error as BusinessError).message).assertEqual(PARAMETER_ERROR_MSG);
           done();
         }
       })
@@ -425,10 +425,10 @@ export default function VibratorJsTest_misc_9() {
           vibrator.startVibration(effect, attribute);
           expect(attribute !== null).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
           if (error.code == 801) {
-            expect(error.code == 801).assertTrue();
+            expect((error as BusinessError).code == 801).assertTrue();
           } else {
             expect(false).assertTrue();
           }
@@ -504,10 +504,10 @@ export default function VibratorJsTest_misc_9() {
             }
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
           if (error.code == 801) {
-            expect(error.code == 801).assertTrue();
+            expect((error as BusinessError).code == 801).assertTrue();
           } else {
             expect(false).assertTrue();
           }
@@ -905,7 +905,7 @@ export default function VibratorJsTest_misc_9() {
         hilog.info(0x0000, 'testTag', TAG + "ret:" + JSON.stringify(ret));
         expect(typeof(ret) == 'boolean').assertEqual(true);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         expect(false).assertTrue();
         done();
@@ -950,7 +950,7 @@ export default function VibratorJsTest_misc_9() {
             done();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         expect(false).assertTrue();
         done();
@@ -982,7 +982,7 @@ export default function VibratorJsTest_misc_9() {
         hilog.info(0x0000, 'testTag', TAG + ' startVibration success');
         expect(attribute !== null).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         expect(false).assertTrue();
         done();
@@ -1013,7 +1013,7 @@ export default function VibratorJsTest_misc_9() {
         hilog.info(0x0000, 'testTag', TAG + ' startVibration success');
         expect(attribute !== null).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         expect(false).assertTrue();
         done();
@@ -1061,7 +1061,7 @@ export default function VibratorJsTest_misc_9() {
         hilog.info(0x0000, 'testTag', TAG + ' startVibration success');
         expect(attribute !== null).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         expect(false).assertTrue();
         done();
@@ -1095,7 +1095,7 @@ export default function VibratorJsTest_misc_9() {
         hilog.info(0x0000, 'testTag', TAG + ' startVibration success');
         expect(attribute !== null).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         expect(false).assertTrue();
         done();

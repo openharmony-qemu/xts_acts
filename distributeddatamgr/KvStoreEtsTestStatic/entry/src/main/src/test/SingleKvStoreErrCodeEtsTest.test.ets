@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -102,7 +102,7 @@ export default function SingleKvStoreErrCodeTest(){
           expect().assertFail();
           done();
         });
-      }catch (err: Error) {
+      }catch (err) {
         console.error(TAG + 'beforeEach getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
         expect().assertFail();
         done();
@@ -135,7 +135,7 @@ export default function SingleKvStoreErrCodeTest(){
           expect().assertFail();
           done();
         }
-      } catch (closeErr: Error) {
+      } catch (closeErr) {
         // 如果关闭失败，可能是已经关闭了，记录日志但不失败
         console.warn(TAG + 'afterEach closeKVStore warning: ' +
           `code: ${closeErr.code}, message: ${closeErr.message}`);
@@ -172,7 +172,7 @@ export default function SingleKvStoreErrCodeTest(){
         console.info(TAG + `Succeeded in getting data.data=${data}`);
         expect(data).assertEqual("zhangsan");
         done();
-      }catch (err:Error) {
+      }catch (err) {
         console.error(`Failed to get.code is ${err.code},message is ${err.message}`);
         expect().assertFail()
         done();
@@ -224,7 +224,7 @@ export default function SingleKvStoreErrCodeTest(){
             done();
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `An unexpected error occurred.code is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -257,7 +257,7 @@ export default function SingleKvStoreErrCodeTest(){
         console.info(TAG + 'Succeeded in getting result set');
         expect().assertFail()
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `An unexpected error occurred.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100001);
         await kvStore!.closeResultSet(resultSet0);
@@ -326,7 +326,7 @@ export default function SingleKvStoreErrCodeTest(){
             }
           });
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0740 An unexpected error occurred.code is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -360,7 +360,7 @@ export default function SingleKvStoreErrCodeTest(){
         await kvStore!.getResultSet(query)
         console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0750 Succeeded in getting result set');
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0750 An unexpected error occurred.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100001);
         await kvStore!.closeResultSet(resultSet0);
@@ -396,7 +396,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         expect().assertFail()
         done();
-      } catch (err:Error) {
+      } catch (err) {
         expect(err.code).assertEqual(15100001);
         console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0760 An unexpected error occurred.code is ${err.code},message is ${err.message}`);
         done();
@@ -422,7 +422,7 @@ export default function SingleKvStoreErrCodeTest(){
           console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0770 options1:' + JSON.stringify(options1));
           expect().assertFail()
         }
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0770 Failed to getKVStore.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100002);
       }
@@ -474,7 +474,7 @@ export default function SingleKvStoreErrCodeTest(){
             }
           });
         }
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0780 Failed to getKVStore.code is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -498,7 +498,7 @@ export default function SingleKvStoreErrCodeTest(){
           expect().assertFail();
         }
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0790 Failed to get.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100004);
         done();
@@ -531,7 +531,7 @@ export default function SingleKvStoreErrCodeTest(){
           expect().assertFail();
           done();
         }
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0800 Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -574,7 +574,7 @@ export default function SingleKvStoreErrCodeTest(){
           expect().assertFail();
           done();
         }
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0810 Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -600,7 +600,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         console.info(TAG + `Succeeded in getting data.`);
         expect().assertFail();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to get.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
       }
@@ -665,7 +665,7 @@ export default function SingleKvStoreErrCodeTest(){
         } else {
           done();
         }
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0830 Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -705,7 +705,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         console.info(TAG + `Succeeded in getting data.`);
         expect().assertFail();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to putBatch.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
       }
@@ -747,7 +747,7 @@ export default function SingleKvStoreErrCodeTest(){
           expect().assertFail();
           done();
         }
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0850 Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -774,7 +774,7 @@ export default function SingleKvStoreErrCodeTest(){
           console.info(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0860 Succeeded in delete data.`);
         }
         expect().assertFail();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0860 Failed to delete.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
       }
@@ -826,7 +826,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -854,7 +854,7 @@ export default function SingleKvStoreErrCodeTest(){
           console.info(TAG + `Succeeded in deleteBatch data.`);
         }
         expect().assertFail();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to deleteBatch.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
       }
@@ -904,7 +904,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -939,7 +939,7 @@ export default function SingleKvStoreErrCodeTest(){
           expect().assertFail();
         });
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to removeDeviceData.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
         done();
@@ -971,7 +971,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -999,7 +999,7 @@ export default function SingleKvStoreErrCodeTest(){
           expect().assertFail();
         }
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to get.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
         done();
@@ -1031,7 +1031,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -1059,7 +1059,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         expect().assertFail();
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to getEntries.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
         done();
@@ -1093,7 +1093,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -1123,7 +1123,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         expect().assertFail();
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to getEntries.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
         done();
@@ -1156,7 +1156,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -1184,7 +1184,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         expect().assertFail();
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to getResultSet.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
         done();
@@ -1218,7 +1218,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -1247,7 +1247,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         expect().assertFail();
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to getResultSet.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
         done();
@@ -1280,7 +1280,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -1309,7 +1309,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         expect().assertFail();
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to getResultSize.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
         done();
@@ -1341,7 +1341,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -1369,7 +1369,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         expect().assertFail();
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to backup.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
         done();
@@ -1402,7 +1402,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -1430,7 +1430,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         expect().assertFail();
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to restore.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
         done();
@@ -1462,7 +1462,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -1490,7 +1490,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         expect().assertFail();
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to startTransaction.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
         done();
@@ -1522,7 +1522,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -1550,7 +1550,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         expect().assertFail();
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to commit.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
         done();
@@ -1583,7 +1583,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -1611,7 +1611,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         expect().assertFail();
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1120 Failed to rollback.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
         done();
@@ -1639,7 +1639,7 @@ export default function SingleKvStoreErrCodeTest(){
         console.info(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1130 Succeeded in on `);
         expect().assertFail();
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1130 Failed to on.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
         console.info(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1130 15100005 `);
@@ -1673,7 +1673,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1150 Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -1701,7 +1701,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         expect().assertFail();
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1160 Failed to getSecurityLevel.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
         console.info(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1160 15100005`);
@@ -1730,7 +1730,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         console.info(TAG + `Succeeded in put`);
         expect().assertFail();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(14800047);
       };
@@ -1747,7 +1747,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -1775,7 +1775,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         console.info(TAG + `Succeeded in put`);
         expect().assertFail();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(14800047);
       };
@@ -1805,7 +1805,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -1833,7 +1833,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         console.info(TAG + `Succeeded in put`);
         expect().assertFail();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(14800047);
       };
@@ -1855,7 +1855,7 @@ export default function SingleKvStoreErrCodeTest(){
         console.info(TAG + `Succeeded in putBatch`);
         expect().assertFail();
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(14800047);
         await kvStore!.closeResultSet(resultSet!);
@@ -1886,7 +1886,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           console.info(TAG + `Succeeded in put`);
           expect().assertFail();
-        } catch (err:Error) {
+        } catch (err) {
           console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(14800047);
         };
@@ -1894,7 +1894,7 @@ export default function SingleKvStoreErrCodeTest(){
           await kvStore!.delete("key");
           console.info(TAG + `Succeeded in delete`);
           expect().assertFail();
-        } catch (err:Error) {
+        } catch (err) {
           console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(14800047);
         };
@@ -1911,12 +1911,12 @@ export default function SingleKvStoreErrCodeTest(){
             }
             done();
           });
-        } catch (err:Error) {
+        } catch (err) {
           console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
           expect().assertFail();
           done();
         }
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -1945,7 +1945,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         console.info(TAG + `Succeeded in put`);
         expect().assertFail();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(14800047);
       };
@@ -1954,7 +1954,7 @@ export default function SingleKvStoreErrCodeTest(){
         await kvStore!.deleteBatch(keys);
         console.info(TAG + `Succeeded in deleteBatch`);
         expect().assertFail();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(14800047);
       };
@@ -1971,7 +1971,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -1999,7 +1999,7 @@ export default function SingleKvStoreErrCodeTest(){
         }
         console.info(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1230 Succeeded in put`);
         expect().assertFail();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(14800047);
       };
@@ -2008,7 +2008,7 @@ export default function SingleKvStoreErrCodeTest(){
         await kvStore!.startTransaction();
         console.info(TAG + `Succeeded in startTransaction`);
         expect().assertFail();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(14800047);
       };
@@ -2025,7 +2025,7 @@ export default function SingleKvStoreErrCodeTest(){
           }
           done();
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -2052,7 +2052,7 @@ export default function SingleKvStoreErrCodeTest(){
         console.info(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1240 Succeeded in off `);
         expect().assertFail();
         done();
-      } catch (err:Error) {
+      } catch (err) {
         console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1240 Failed to off.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
         done();

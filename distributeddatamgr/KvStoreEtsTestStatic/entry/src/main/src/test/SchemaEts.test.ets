@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -105,7 +105,7 @@ async function testPutAndGet(kvManager: ddm.KVManager | null, options: ddm.Optio
       console.info('testPutAndGet canGet fail: ' + error);
       expect(null).assertFail();
     });
-  } catch (e: Error) {
+  } catch (e) {
     console.info('testPutAndGet get exception: ' + e);
     expect(null).assertFail();
   }
@@ -149,7 +149,7 @@ export default function schemaTest(){
         console.info(`beforeAll: createKVManager (single) with ${config}`);
         kvManager = ddm.createKVManager(config)
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.info("fail on exception: " + e);
         expect(null).assertFail();
         done();
@@ -223,7 +223,7 @@ export default function schemaTest(){
         let schema = new ddm.Schema();
         schema.root.appendChild(english);
         schema.indexes = ['$.english.first', '$.english.second'];
-      } catch (e: Error) {
+      } catch (e) {
         console.info("schema fail on exception: " + e);
         expect(null).assertFail();
       }
@@ -266,7 +266,7 @@ export default function schemaTest(){
         }
         await testPutAndGet(kvManager, options);
         console.info("schematestPutAndGet done");
-      } catch (e: Error) {
+      } catch (e) {
         console.info("schema fail on exception: " + e);
         expect(null).assertFail();
       }
@@ -324,7 +324,7 @@ export default function schemaTest(){
           expect(null).assertFail();
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.info("SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 fail on exception: " + e);
         expect(null).assertFail();
         done();
@@ -382,7 +382,7 @@ export default function schemaTest(){
           expect(null).assertFail();
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.info("SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 fail on exception: " + e);
         expect(null).assertFail();
         done();
@@ -407,7 +407,7 @@ export default function schemaTest(){
 
         let schema = new ddm.Schema();
         expect(schema.root instanceof ddm.FieldNode).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.info("schema fail on exception: " + e);
         expect(null).assertFail();
       }
@@ -428,7 +428,7 @@ export default function schemaTest(){
         let schema = new ddm.Schema();
         schema.indexes = ['$.english.first', '$.english.second'];
         expect(schema.indexes[0] === '$.english.first' && schema.indexes[1] === '$.english.second').assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.info("schema fail on exception: " + e);
         expect(null).assertFail();
       }
@@ -450,7 +450,7 @@ export default function schemaTest(){
         schema.mode = 1;
         console.info("schema mode = "+schema.mode)
         expect(schema.mode === 1).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.info("schema fail on exception: " + e);
         expect(null).assertFail();
       }
@@ -472,7 +472,7 @@ export default function schemaTest(){
         schema.mode = 0;
         console.info("schema mode = "+schema.mode)
         expect(schema.mode === 0).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.info("schema fail on exception: " + e);
         expect(null).assertFail();
       }
@@ -493,7 +493,7 @@ export default function schemaTest(){
         let schema = new ddm.Schema();
         schema.skip = 0;
         expect(schema.skip === 0).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.info("schema fail on exception: " + e);
         expect(null).assertFail();
       }

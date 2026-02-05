@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,7 +36,7 @@ export default function imageHDR() {
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       try {
         isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error("access failed with error message: " + err.message + ", error code: " + err.code);
         isSupportHdr = false;
       }

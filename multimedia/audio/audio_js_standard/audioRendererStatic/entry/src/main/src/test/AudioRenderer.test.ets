@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -11350,7 +11350,8 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
         expect(true).assertTrue();
         done();
-      } catch (error: BusinessError){
+      } catch (error){
+        error = error as BusinessError;
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
         expect(Number(error.code)).assertEqual(6800101);
         done();
@@ -11639,7 +11640,8 @@ export default function audioRendererTest() {
       try {
         audioVolumeManager.onAppVolumeChange(appVolumeChangeCallback);
         await audioVolumeManager.setAppVolumePercentage(20);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_10000 error:" + error);
         expect(false).assertTrue();
         done();

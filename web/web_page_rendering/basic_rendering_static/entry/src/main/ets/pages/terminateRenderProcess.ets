@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -83,7 +83,7 @@ struct webviewTerminateRenderProcess {
                 let result = this.controller.terminateRenderProcess();
                 hilog.info(0x0000, 'testTag', 'terminateRenderProcess result: ' + result);
                 Utils.emitEvent(result, 5300)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -105,7 +105,7 @@ struct webviewTerminateRenderProcess {
                 let result = this.controller.terminateRenderProcess();
                 hilog.info(0x0000, 'testTag', 'terminateRenderProcess result: ' + result);
                 Utils.emitEvent(result, 5304)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -126,7 +126,7 @@ struct webviewTerminateRenderProcess {
                 hilog.info(0x0000, 'testTag', 'terminateRenderProcess result: ' + result);
                 this.controller.slideScroll(500, 500);
                 Utils.emitEvent(true, 5306)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
               break;

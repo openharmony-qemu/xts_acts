@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -103,7 +103,8 @@ export default function UiAbilityContextStartAbilityStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -141,7 +142,8 @@ export default function UiAbilityContextStartAbilityStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -343,7 +345,8 @@ export default function UiAbilityContextStartAbilityStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -388,7 +391,8 @@ export default function UiAbilityContextStartAbilityStatic() {
           }
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + err);
         expect().assertFail();
         done();
@@ -426,7 +430,8 @@ export default function UiAbilityContextStartAbilityStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -460,7 +465,8 @@ export default function UiAbilityContextStartAbilityStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -496,7 +502,8 @@ export default function UiAbilityContextStartAbilityStatic() {
           expect(err.code).assertEqual(16000005);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + err);
         expect().assertFail();
         done();
@@ -528,7 +535,8 @@ export default function UiAbilityContextStartAbilityStatic() {
           expect(err.code).assertEqual(16000005);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + err);
         expect().assertFail();
         done();
@@ -568,7 +576,8 @@ export default function UiAbilityContextStartAbilityStatic() {
           expect(err.code).assertEqual(201);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + err);
         expect().assertFail();
         done();
@@ -612,7 +621,8 @@ export default function UiAbilityContextStartAbilityStatic() {
           expect(err.code).assertEqual(201);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + err);
         expect().assertFail();
         done();
@@ -658,7 +668,8 @@ export default function UiAbilityContextStartAbilityStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -700,7 +711,8 @@ export default function UiAbilityContextStartAbilityStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -735,7 +747,8 @@ export default function UiAbilityContextStartAbilityStatic() {
         await Utils.msSleep(500);
         expect(g_code).assertEqual(16000050);
         done();
-      } catch (Error: BusinessError) {
+      } catch (Error) {
+        Error = Error as BusinessError;
         hilog.info(domain, tag, `startAbilityByType001 fail: ` + JSON.stringify(Error));
         expect().assertFail();
         done();
@@ -767,7 +780,8 @@ export default function UiAbilityContextStartAbilityStatic() {
         await Utils.msSleep(500);
         expect(g_code).assertEqual(16000050);
         done();
-      } catch (Error: BusinessError) {
+      } catch (Error) {
+        Error = Error as BusinessError;
         hilog.info(domain, tag, `startAbilityByType002 fail: ` + JSON.stringify(Error));
         expect().assertFail();
         done();

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -84,7 +84,7 @@ struct httpAuthHandler {
                   let title4 = this.controllerone.getTitle();
                   Utils.emitEvent(title4, 7);
                 }, 3000);
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -96,7 +96,7 @@ struct httpAuthHandler {
                   let title5 = this.controllerone.getTitle();
                   Utils.emitEvent(title5, 8);
                 }, 3000);
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -106,7 +106,7 @@ struct httpAuthHandler {
                 this.errorCode = '0';
                 this.errorMsg = 'failed';
                 this.controllerTwo.onActive();
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`emitOnActiveInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
                 this.errorCode = '' + error.code
                 this.errorMsg = error.message
@@ -120,7 +120,7 @@ struct httpAuthHandler {
                 this.errorCode = '0';
                 this.errorMsg = 'failed';
                 this.controllerTwo.onInactive();
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`emitOnInactiveInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
                 this.errorCode = '' + error.code
                 this.errorMsg = error.message
@@ -143,7 +143,8 @@ struct httpAuthHandler {
                   Utils.emitEvent(onInactiveCalled, 31000)
                 })
               }
-              catch (error: BusinessError) {
+              catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 31000)
               }
@@ -159,7 +160,8 @@ struct httpAuthHandler {
                   Utils.emitEvent(onActiveCalled, 31001)
                 }, 5000)
               }
-              catch (error: BusinessError) {
+              catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 31001)
               }
@@ -174,7 +176,7 @@ struct httpAuthHandler {
                 await Utils.msSleep(3000)
                 let title = this.controllerone.getTitle();
                 Utils.emitEvent(title, 100077)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -188,7 +190,7 @@ struct httpAuthHandler {
                 await Utils.msSleep(3000)
                 let title = this.controllerone.getTitle();
                 Utils.emitEvent(title, 100078)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -223,7 +225,7 @@ struct httpAuthHandler {
                 } else {
                   Utils.emitEvent('fail', 8006);
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -245,7 +247,7 @@ struct httpAuthHandler {
                 } else {
                   Utils.emitEvent('fail', 8007);
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -282,7 +284,7 @@ struct httpAuthHandler {
                 this.errorCode = '0';
                 this.errorMsg = 'failed';
                 this.controllerTwo.getWebId();
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`emitGetWebIdInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
                 this.errorCode = '' + error.code
                 this.errorMsg = error.message
@@ -316,7 +318,7 @@ struct httpAuthHandler {
           try {
             let id = this.controllerone.getWebId();
             this.webId = id
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
           }
         })

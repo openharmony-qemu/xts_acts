@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -137,7 +137,8 @@ export default function relationalStoreCloudSyncEts() {
       let resultSet = await rdbStore!.querySql("SELECT * FROM test1");
       try {
         resultSet.getColumnIndex("data1")
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "business error code %{public}d", err.code)
         expect(true).assertEqual(err.code==14800021)
       }
@@ -158,7 +159,7 @@ export default function relationalStoreCloudSyncEts() {
       let resultSet =await rdbStore!.querySql("SELECT * FROM test")
       try {
         resultSet.getColumnIndex("dataX")
-      } catch(err: BusinessError) {
+      } catch(err) {
         let e = err as BusinessError;
         hilog.info(domain, tag, "business error code %{public}d", e.code)
         expect(true).assertEqual(e.code==14800000)
@@ -179,7 +180,7 @@ export default function relationalStoreCloudSyncEts() {
       let resultSet = await rdbStore!.querySql("SELECT * FROM test")
       try {
         resultSet.getColumnIndex("")
-      } catch(err: BusinessError) {
+      } catch(err) {
         let e = err as BusinessError
         hilog.info(domain, tag, "business error code %{public}d", e.code)
         expect(true).assertEqual(e.code==14800000)
@@ -248,7 +249,8 @@ export default function relationalStoreCloudSyncEts() {
       hilog.info(domain, tag, '%{public}s', 'S4 Get RdbStore successfully');
       try {
         store = await data_relationalStore.getRdbStore(context!, STORE_CONFIGS1)
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'Get RdbStore failed'+ err.code);
         expect(true).assertEqual(err.code == 14800017)
       }
@@ -271,7 +273,8 @@ export default function relationalStoreCloudSyncEts() {
         hilog.info(domain, tag, '%{public}s', 'executeSql successfully');
         expect().assertFail();
         done();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed',err.code,err.message);
         expect(err?.code == 14800021).assertTrue();
         done();
@@ -292,7 +295,8 @@ export default function relationalStoreCloudSyncEts() {
         await rdbStore2!.execute("select * FROM employee", undefined);
         expect().assertFail();
         done();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+ err.code);
         expect(err.code == 14800021).assertTrue();
         done();
@@ -314,7 +318,8 @@ export default function relationalStoreCloudSyncEts() {
         await rdbStore2!.execute("INSERT INTO testerrcode(data2, data3,data4) VALUES (?,?,?)",  [80 as long, 111188.1, new Uint8Array(0)])
         hilog.info(domain, tag, '%{public}s', 'executeSql suceess');
         expect().assertFail();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+err.code);
         expect(err.code).assertEqual(14800032);
       }
@@ -337,7 +342,8 @@ export default function relationalStoreCloudSyncEts() {
         await rdbStore2!.execute("INSERT INTO testerrcode(id, data1, data2, data3,data4) VALUES (?,?,?,?,?)",  ['abc','hello',80 as long, 111188.1, new Uint8Array(0)])
         hilog.info(domain, tag, '%{public}s', 'executeSql success');
         expect().assertFail();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+err.code);
         expect(err.code).assertEqual(14800033);
       }
@@ -362,7 +368,7 @@ export default function relationalStoreCloudSyncEts() {
           let num =
             await rdbStore!.insert("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           expect(num).assertEqual(1);
-        } catch (err: BusinessError) {
+        } catch (err) {
           expect().assertFail();
         }
         done();

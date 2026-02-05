@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -87,7 +87,7 @@ export default function getAudioSceneApi12() {
           }
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TagFrmwk} SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0100 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -119,7 +119,7 @@ export default function getAudioSceneApi12() {
           expect(value).assertEqual(3);
         }
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TagFrmwk} SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0200 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -151,7 +151,7 @@ export default function getAudioSceneApi12() {
           expect(value).assertEqual(3);
         }
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TagFrmwk} SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0300 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -187,7 +187,7 @@ export default function getAudioSceneApi12() {
         audioManager.onAudioSceneChange(audioSceneChangeCallback);
         audioManager.offAudioSceneChange(audioSceneChangeCallback);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log('audioSceneChange failed, err :' + err.message)
         expect(false).assertTrue();
         done();

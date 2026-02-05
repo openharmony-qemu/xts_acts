@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,7 +46,7 @@ export default function abilityTest() {
                 console.info('TestLog: session destroy success');
                 await validFunc();
 
-            }catch(err: BusinessError) {
+            }catch(err) {
                 console.info(`TestLog: session destroy error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
             }
@@ -60,19 +60,19 @@ export default function abilityTest() {
         beforeEach(async () => {
             try{
                 session = await avSession.createAVSession(context!, tag, 'video_call');
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`TestLog: Session create error: code: ${err.code}, message: ${err.message}`);
             };
             try{
                 await session!.activate();
                 console.info(`TestLog: Session activate`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`TestLog: Session activate error: code: ${err.code}, message: ${err.message}`);
             };
             try {
                 controller = await session!.getController();
                 console.info(`TestLog: controller getController`);
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`TestLog: getController error: code: ${err.code}, message: ${err.message}`);
             }
             await Utils.msSleep(800);
@@ -85,7 +85,7 @@ export default function abilityTest() {
                 try{
                     await session!.destroy()
                     console.info(`TestLog: Session destroy success`);
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.info(`TestLog: Session destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -95,7 +95,7 @@ export default function abilityTest() {
                 try{
                     await controller!.destroy()
                     console.info(`TestLog: Controller destroy success`);
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.info(`TestLog: Controller destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -130,7 +130,7 @@ export default function abilityTest() {
                     }
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`TestLog: sendAVKeyEvent error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -150,7 +150,7 @@ export default function abilityTest() {
             try{
             await session!.deactivate()
                 console.info('TestLog: session deactivate success');
-            }catch(err: BusinessError) {
+            }catch(err) {
                 console.info(`TestLog: session deactivate error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
             };
@@ -165,7 +165,7 @@ export default function abilityTest() {
                     }
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`TestLog: sendAVKeyEvent error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -187,7 +187,8 @@ export default function abilityTest() {
                 await controller!.sendAVKeyEvent(event);
                 console.info('sendAVKeyEvent Successfully');
                 expect(true).assertFalse();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: sendAVKeyEvent error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             };
@@ -207,7 +208,7 @@ export default function abilityTest() {
             try{
             await session!.deactivate()
                 console.info('TestLog: session deactivate success');
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`TestLog: session deactivate error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
             };
@@ -215,7 +216,8 @@ export default function abilityTest() {
                 await controller!.sendAVKeyEvent(event)
                 console.info('sendAVKeyEvent Successfully');
                 expect(true).assertFalse();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: sendAVKeyEvent error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600106);
             };
@@ -236,7 +238,8 @@ export default function abilityTest() {
             try {
                 controller!.getRealPlaybackPositionSync();
                 expect(true).assertFalse();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: getRealPlaybackPositionSync error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             }
@@ -259,7 +262,8 @@ export default function abilityTest() {
                 await controller!.getValidCommands()
                 console.info(`TestLog: getValidCommands Successfully.`);
                 expect(true).assertFalse();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: getValidCommands error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             };
@@ -310,7 +314,7 @@ export default function abilityTest() {
                     }
                     done();
                 });
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`TestLog: getValidCommands error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -339,7 +343,7 @@ export default function abilityTest() {
                         }
                         done();
                     });
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.info(`TestLog: getValidCommands error: code: ${err.code}, message: ${err.message}`);
                     expect().assertFail();
                     done();
@@ -362,7 +366,8 @@ export default function abilityTest() {
                 controller!.onSessionEvent((command: string, args: Record<string, Object>) => {
                     console.info(`controller on_sessionEvent Successfully`);
                 });
-            } catch(err: BusinessError) {
+            } catch(err) {
+                err = err as BusinessError;
                 console.info(`controller on_sessionEvent BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             };
@@ -384,7 +389,8 @@ export default function abilityTest() {
             try{await controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
                 console.info('sendCommonCommand Successfully');
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`TestLog: sendCommonCommand error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600106);
             };
@@ -406,7 +412,8 @@ export default function abilityTest() {
                 await controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
                 console.info('sendCommonCommand Successfully');
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`TestLog: sendCommonCommand error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             };
@@ -436,7 +443,7 @@ export default function abilityTest() {
                         }
                         done();
                     });
-                }catch(err: BusinessError){
+                }catch(err){
                     console.info(`TestLog: sendCommonCommand error: code: ${err.code}, message: ${err.message}`);
                     expect(true).assertFalse();
                     done();
@@ -465,7 +472,7 @@ export default function abilityTest() {
                     }
                     done();
                 });
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`TestLog: sendCommonCommand error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -509,7 +516,8 @@ export default function abilityTest() {
                 await controller!.getExtras()
                 console.info('getExtras Successfully');
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`TestLog: getExtras error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             };
@@ -538,7 +546,7 @@ export default function abilityTest() {
                         }
                         done();
                     });
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.info(`TestLog: getExtras error: code: ${err.code}, message: ${err.message}`);
                     expect().assertFail();
                     done();
@@ -568,7 +576,7 @@ export default function abilityTest() {
                     }
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`TestLog: getExtras error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -589,7 +597,8 @@ export default function abilityTest() {
                 controller!.onExtrasChange((extras: Record<string,Object>) => {
                     console.info(`controller on_extrasChange Successfully`);
                 });
-            } catch(err: BusinessError) {
+            } catch(err) {
+                err = err as BusinessError;
                 console.info(`controller on_extrasChange BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             };
@@ -633,7 +642,8 @@ export default function abilityTest() {
                 await controller!.skipToQueueItem(QUEUE_ITEM_ID);
                 console.info('skipToQueueItem Successfully');
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`TestLog: skipToQueueItem error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             };
@@ -661,7 +671,7 @@ export default function abilityTest() {
                         }
                         done();
                     })
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.info(`TestLog: skipToQueueItem error: code: ${err.code}, message: ${err.message}`);
                     expect().assertFail();
                     done();
@@ -691,7 +701,7 @@ export default function abilityTest() {
                     }
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`TestLog: skipToQueueItem error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -734,7 +744,8 @@ export default function abilityTest() {
                 await controller!.getAVQueueItems()
                 console.info('getAVQueueItems Successfully');
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`TestLog: getAVQueueItems error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             };
@@ -762,7 +773,7 @@ export default function abilityTest() {
                         }
                         done();
                     })
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.info(`TestLog: getAVQueueItems error: code: ${err.code}, message: ${err.message}`);
                     expect().assertFail();
                     done();
@@ -792,7 +803,7 @@ export default function abilityTest() {
                     }
                     done();
                 })
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`TestLog: getAVQueueItems error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -835,7 +846,8 @@ export default function abilityTest() {
                 await controller!.getAVQueueTitle()
                 console.info('getAVQueueTitle Successfully');
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`TestLog: getAVQueueTitle error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             };
@@ -863,7 +875,7 @@ export default function abilityTest() {
                         }
                         done();
                     })
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.info(`TestLog: getAVQueueTitle error: code: ${err.code}, message: ${err.message}`);
                     expect().assertFail();
                     done();
@@ -893,7 +905,7 @@ export default function abilityTest() {
                     }
                     done();
                 })
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`TestLog: getAVQueueTitle error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -913,7 +925,8 @@ export default function abilityTest() {
                 try {
                     controller!.getAVPlaybackStateSync();
                     expect().assertFail();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.info(`getAVPlaybackStateSync failed: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
                 }
@@ -935,7 +948,8 @@ export default function abilityTest() {
             try {
                 controller!.getAVPlaybackStateSync();
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`getAVPlaybackStateSync failed: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             }
@@ -955,7 +969,8 @@ export default function abilityTest() {
                 try {
                     controller!.getAVMetadataSync();
                     expect().assertFail();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.info(`getAVMetadataSync failed: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
                 }
@@ -977,7 +992,8 @@ export default function abilityTest() {
             try {
                 controller!.getAVMetadataSync();
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`getAVMetadataSync failed: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             }
@@ -997,7 +1013,8 @@ export default function abilityTest() {
                 try {
                     controller!.getAVQueueTitleSync();
                     expect().assertFail();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.info(`getAVQueueTitleSync failed: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
                 }
@@ -1019,7 +1036,8 @@ export default function abilityTest() {
             try {
                 controller!.getAVQueueTitleSync();
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`getAVQueueTitleSync failed: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             }
@@ -1039,7 +1057,8 @@ export default function abilityTest() {
                 try {
                     controller!.getAVQueueItemsSync();
                     expect().assertFail();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.info(`getAVQueueItemsSync failed: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
                 }
@@ -1061,7 +1080,8 @@ export default function abilityTest() {
             try {
                 controller!.getAVQueueItemsSync();
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`getAVQueueItemsSync failed: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             }
@@ -1082,7 +1102,8 @@ export default function abilityTest() {
             try {
                 controller!.getOutputDeviceSync();
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`getOutputDeviceSync failed: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             }
@@ -1102,7 +1123,8 @@ export default function abilityTest() {
                 try {
                     controller!.isActiveSync();
                     expect().assertFail();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.info(`isActiveSync failed: code: ${err.code}, message: ${err.message}`)
                     expect(err.code).assertEqual(6600102);
                 }
@@ -1124,7 +1146,8 @@ export default function abilityTest() {
             try {
                 controller!.isActiveSync();
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`isActiveSync failed: code: ${err.code}, message: ${err.message}`)
                 expect(err.code).assertEqual(6600103);
             }
@@ -1144,7 +1167,8 @@ export default function abilityTest() {
                 try {
                     controller!.getValidCommandsSync();
                     expect().assertFail();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.info(`getValidCommandsSync failed: code: ${err.code}, message: ${err.message}`)
                     expect(err.code).assertEqual(6600102);
                 }
@@ -1166,7 +1190,8 @@ export default function abilityTest() {
             try {
                 controller!.getValidCommandsSync();
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`getValidCommandsSync failed: code: ${err.code}, message: ${err.message}`)
                 expect(err.code).assertEqual(6600103);
             }

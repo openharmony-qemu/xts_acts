@@ -132,7 +132,7 @@ export default function RdbErrorCode14800012() {
           "data1": null,
         };
         await (rdbStore as data_relationalStore.RdbStore).insert("test", valueBucket);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(TAG + "testgetColumnTypeSync0400 insert failed " + err);
       }
       let resultSet:data_relationalStore.ResultSet;
@@ -142,7 +142,8 @@ export default function RdbErrorCode14800012() {
         console.error(TAG + "testgetColumnTypeSync0400 getColumnType success ");
         expect(true).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "testgetColumnTypeSync0400 getColumnType failed " + err);
         expect(14800012).assertEqual(err.code);
         resultSet?.close();
@@ -165,7 +166,7 @@ export default function RdbErrorCode14800012() {
           "data1": null,
         };
         await (rdbStore as data_relationalStore.RdbStore).insert("test", valueBucket);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(TAG + "SUB_DistributedData_RelationalStore_SDK_ResultSetJS_EtsAPI16getColumnTypeTest_0400 insert failed " + err);
       }
       let resultSet:data_relationalStore.ResultSet;
@@ -175,7 +176,8 @@ export default function RdbErrorCode14800012() {
         await resultSet.getColumnType(0);
         expect(true).assertFail();
         done();;
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(14800012).assertEqual(err.code);
         resultSet.close();
         done();
@@ -215,7 +217,8 @@ export default function RdbErrorCode14800012() {
         resultSet.close();
         expect().assertFail();
         resultSet.close();
-      }catch(err: BusinessError){
+      }catch(err){
+        err = err as BusinessError;
         console.log(TAG+"err.code"+err.code + "err.message"+err.message);
         expect(err.code == 14800012).assertTrue();
         done();
@@ -248,7 +251,8 @@ export default function RdbErrorCode14800012() {
         console.log(TAG + "relationalStoreTest029 name:" + name);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(TAG + "err" + err.code +err.message);
         expect(err.code == 14800012).assertTrue();
         done();
@@ -277,7 +281,8 @@ export default function RdbErrorCode14800012() {
         console.log(TAG + "relationalStoreTest031 name:" + name);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(TAG + "err" + err.code +err.message);
         expect(err.code == 14800012).assertTrue();
         done();
@@ -312,7 +317,8 @@ export default function RdbErrorCode14800012() {
         console.log(TAG + "name:" + name);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(TAG + "err" + err.code +err.message);
         expect(err.code == 14800012).assertTrue();
         done();
@@ -346,7 +352,8 @@ export default function RdbErrorCode14800012() {
         console.log(TAG + "name:" + name);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(TAG + "err" + err.code +err.message);
         expect(err.code == 14800012).assertTrue();
         done();

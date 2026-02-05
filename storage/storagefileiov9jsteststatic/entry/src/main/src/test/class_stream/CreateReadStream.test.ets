@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,8 @@ export default function fscreateReadStream() {
         expect(await Utils.isIntNum(wb)).assertTrue();
         expect(wpath == fpath).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_004 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -66,7 +67,8 @@ export default function fscreateReadStream() {
       try {
         fs.createWriteStream("");
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_005 has failed for' + e.code);
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }
@@ -90,7 +92,8 @@ export default function fscreateReadStream() {
         expect(await Utils.isIntNum(rb)).assertTrue();
         expect(rpath == fpath).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_006 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -108,7 +111,8 @@ export default function fscreateReadStream() {
       try {
         fs.createReadStream("");
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_007 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }
@@ -129,7 +133,8 @@ export default function fscreateReadStream() {
         let end = 11;
         let rs = fs.createReadStream(fpath, { start, end });
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_008 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }
@@ -147,7 +152,8 @@ export default function fscreateReadStream() {
       try {
         fs.createWriteStream("-1");
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_009 has failed for' + JSON.stringify(e));
         expect(e.code == 13900012 && e.message == 'Permission denied').assertTrue();
       }
@@ -171,7 +177,7 @@ export default function fscreateReadStream() {
         expect(await Utils.isIntNum(rb)).assertTrue();
         expect(rpath == fpath).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_010 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -194,7 +200,7 @@ export default function fscreateReadStream() {
         let curoff = ReadStream.seek(offset, fs.WhenceType.SEEK_SET);
         expect(offset == curoff).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_011 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -218,7 +224,7 @@ export default function fscreateReadStream() {
         expect(await Utils.isIntNum(wb)).assertTrue();
         expect(wpath == fpath).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_012 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -242,7 +248,7 @@ export default function fscreateReadStream() {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_013 curOff: ' + curOff);
           expect(curOff == 5).assertTrue();
           fs.unlinkSync(fpath);
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_013 has failed for ' + e.message + ', code: ' + e.code);
           expect(false).assertTrue();
         }
@@ -266,7 +272,7 @@ export default function fscreateReadStream() {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_014 curOff: ' + curOff);
         expect(curOff == 5).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_014 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -313,7 +319,7 @@ export default function fscreateReadStream() {
           ws.close();
         });
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_015 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -358,7 +364,7 @@ export default function fscreateReadStream() {
           ws.close();
         });
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_016 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -381,7 +387,7 @@ export default function fscreateReadStream() {
         let curoff = ReadStream.seek(offset);
         expect(offset == curoff).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_017 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }

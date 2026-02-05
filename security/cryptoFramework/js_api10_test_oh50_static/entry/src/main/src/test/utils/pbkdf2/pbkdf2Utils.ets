@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,7 +36,7 @@ function getPbkdf2Spec(password: string,
     };
 
     return spec;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`getPbkdf2Spec “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -48,7 +48,7 @@ function generateKdfKey(algName: string, pbkdf2Spec: cryptoFramework.PBKDF2Spec)
     let secretKey: cryptoFramework.DataBlob = kdf.generateSecretSync(pbkdf2Spec);
 
     return secretKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`generateKdfKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }

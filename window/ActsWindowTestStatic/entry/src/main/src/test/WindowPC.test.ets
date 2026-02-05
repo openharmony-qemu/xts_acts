@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -141,7 +141,7 @@ export default function WindowPCTest() {
                             expect(err!.code).assertEqual(1300002);
                         });
                         done()
-                    } catch (exception: BusinessError) {
+                    } catch (exception) {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call recover. Cause:' + JSON.stringify(exception));
                         expect(false).assertTrue();
                         done()
@@ -184,7 +184,7 @@ export default function WindowPCTest() {
                         done();
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.error(0x0000, '[ANI]',msgStr + ' Failed to testRecover. 04Cause: ' + JSON.stringify(err))
                 expect(false).assertTrue();
                 done();
@@ -632,7 +632,7 @@ export default function WindowPCTest() {
                     done()
                 });
 
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(domain, tag,msgStr + 'Failed to set the call restore. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done()
@@ -699,7 +699,8 @@ export default function WindowPCTest() {
                 } else {
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 if(err.code == 801){
                     expect(err.message!=null).assertTrue();
@@ -732,7 +733,8 @@ export default function WindowPCTest() {
                     hilog.info(domain, tag,caseName + 'main window succeed in calling setRelativePositionToParentWindowEnabled');
                     expect(false).assertTrue();
                     done();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     hilog.error(domain, tag,`${caseName} failed main window, err: ${JSON.stringify(err)}`);
                     if (err.code === 801) {
                         expect(err.message!=null).assertTrue();
@@ -755,7 +757,8 @@ export default function WindowPCTest() {
                     expect(false).assertTrue();
                     await windowClass2.destroyWindow();
                     done();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     hilog.error(domain, tag,`${caseName} failed dialog window, err: ${JSON.stringify(err)}`);
                     await windowClass2.destroyWindow();
                     if(err.code == 801){
@@ -795,7 +798,7 @@ export default function WindowPCTest() {
                             done();
                         }
                     });
-                } catch (e: BusinessError) {
+                } catch (e) {
                     hilog.error(domain, tag,`${caseName} Failed2 float window. Cause: ${JSON.stringify(e)}`);
                     await subWindowClass!.destroyWindow();
                     expect(false).assertTrue();
@@ -864,7 +867,8 @@ export default function WindowPCTest() {
                     await windowClass.destroyWindow();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -926,7 +930,8 @@ export default function WindowPCTest() {
                     await windowClass.destroyWindow();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -992,7 +997,8 @@ export default function WindowPCTest() {
                     await windowClass.destroyWindow();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1058,7 +1064,8 @@ export default function WindowPCTest() {
                     await windowClass.destroyWindow();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1124,7 +1131,8 @@ export default function WindowPCTest() {
                     await windowClass.destroyWindow();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1190,7 +1198,8 @@ export default function WindowPCTest() {
                     await windowClass.destroyWindow();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1256,7 +1265,8 @@ export default function WindowPCTest() {
                     await windowClass.destroyWindow();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1322,7 +1332,8 @@ export default function WindowPCTest() {
                     await windowClass.destroyWindow();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1388,7 +1399,8 @@ export default function WindowPCTest() {
                     await windowClass.destroyWindow();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1454,7 +1466,8 @@ export default function WindowPCTest() {
                     await windowClass.destroyWindow();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1520,7 +1533,8 @@ export default function WindowPCTest() {
                     await windowClass.destroyWindow();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1586,7 +1600,8 @@ export default function WindowPCTest() {
                     await windowClass.destroyWindow();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1652,7 +1667,8 @@ export default function WindowPCTest() {
                     await windowClass.destroyWindow();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1718,7 +1734,8 @@ export default function WindowPCTest() {
                     await windowClass.destroyWindow();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1784,7 +1801,8 @@ export default function WindowPCTest() {
                     await windowClass.destroyWindow();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1834,7 +1852,7 @@ export default function WindowPCTest() {
                     }
 
                 });
-           } catch (err: BusinessError) {
+           } catch (err) {
                 hilog.error(domain, tag,`${message} Failed with error: ${JSON.stringify(err)}`);
                 expect(false).assertTrue();
                 done();
@@ -1891,7 +1909,7 @@ export default function WindowPCTest() {
                     }
 
                 });
-           } catch (err: BusinessError) {
+           } catch (err) {
                 hilog.error(domain, tag,`${message} Failed with error: ${JSON.stringify(err)}`);
                 expect(false).assertTrue();
                 done();
@@ -1942,7 +1960,7 @@ export default function WindowPCTest() {
                     }
 
                 });
-           } catch (err: BusinessError) {
+           } catch (err) {
                 hilog.error(domain, tag,`${message} Failed with error: ${JSON.stringify(err)}`);
                 expect(false).assertTrue();
                 done();
@@ -1992,7 +2010,7 @@ export default function WindowPCTest() {
                     }
 
                 });
-           } catch (err: BusinessError) {
+           } catch (err) {
                 hilog.error(domain, tag,`${message} Failed sync with error: ${JSON.stringify(err)}`);
                 expect(false).assertTrue();
                 done();
@@ -2042,7 +2060,7 @@ export default function WindowPCTest() {
                     }
 
                 });
-           } catch (err: BusinessError) {
+           } catch (err) {
                 hilog.error(domain, tag,`${message} Failed with error: ${JSON.stringify(err)}`);
                 expect(false).assertTrue();
                 done();
@@ -2097,7 +2115,7 @@ export default function WindowPCTest() {
                     }
 
                 });
-           } catch (err: BusinessError) {
+           } catch (err) {
                 hilog.error(domain, tag,`${message} Failed with error: ${JSON.stringify(err)}`);
                 expect(false).assertTrue();
                 done();
@@ -2141,7 +2159,7 @@ export default function WindowPCTest() {
                     }
 
                 });
-           } catch (err: BusinessError) {
+           } catch (err) {
                 hilog.error(domain, tag,`${message} Failed with error: ${JSON.stringify(err)}`);
                 expect(false).assertTrue();
                 done();
@@ -2172,7 +2190,7 @@ export default function WindowPCTest() {
                     expect(err.message!=null).assertTrue();
                     done();
                 })
-            }catch (err:BusinessError) {
+            }catch (err) {
                 hilog.error(domain, tag,CaseName + ' failed, err: ' + JSON.stringify(err));
                 expect(false).assertTrue();
                 done();
@@ -2207,7 +2225,7 @@ export default function WindowPCTest() {
                         done();
                     }
                 });
-            } catch (exception:BusinessError) {
+            } catch (exception) {
                 hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -2245,7 +2263,7 @@ export default function WindowPCTest() {
                         done();
                     }
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception));
                 await windowClass.destroyWindow()
                 expect(false).assertTrue();
@@ -2289,7 +2307,8 @@ export default function WindowPCTest() {
                         done();
                     }
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName} failed, error: ${JSON.stringify(err)}`);
                 await subWindowClass.destroyWindow();
                 if (err.code == 801) {
@@ -2331,7 +2350,7 @@ export default function WindowPCTest() {
                         done();
                     }
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.log(msgStr + 'Failed to shift app window focus2. Cause:' + JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -2370,7 +2389,7 @@ export default function WindowPCTest() {
                     }
 
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -2417,7 +2436,7 @@ export default function WindowPCTest() {
                     }
 
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.error(caseName + ' Failed. Cause:' + JSON.stringify(error));
                 await terminateAbility(caseName);
                 expect(false).assertTrue();
@@ -2447,7 +2466,8 @@ export default function WindowPCTest() {
                 subWindowClass.onFreeWindowModeChange(callback)
                 expect(true).assertFail()
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(1300002);
             }
@@ -2458,7 +2478,8 @@ export default function WindowPCTest() {
                 subWindowClass.offFreeWindowModeChange(callback)
                 expect(true).assertFail()
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(1300002)
                 done();

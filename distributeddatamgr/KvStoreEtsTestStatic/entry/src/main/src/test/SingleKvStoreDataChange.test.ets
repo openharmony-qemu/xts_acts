@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -118,7 +118,7 @@ export default function SingleKvStoreDataChange() {
             console.error(TAG + `Failed to get KVStore.code is ${err.code},message is ${err.message}`);
             done();
           });
-        } catch (err: Error) {
+        } catch (err) {
           console.error(TAG + 'beforeEach getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
           done();
         }
@@ -259,7 +259,7 @@ export default function SingleKvStoreDataChange() {
             console.info(TAG + ' --------- SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0100 end--------- ');
             done();
 
-          } catch (e: Error) {
+          } catch (e) {
             console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
             expect(null).assertFail();
             done();
@@ -370,7 +370,7 @@ export default function SingleKvStoreDataChange() {
             console.info(TAG + ' --------- SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0200 end--------- ');
             done();
 
-          } catch (e: Error) {
+          } catch (e) {
             console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
             expect(null).assertFail();
             done();
@@ -481,7 +481,7 @@ export default function SingleKvStoreDataChange() {
             console.info(TAG + ' --------- SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0300 end--------- ');
             done();
 
-          } catch (e: Error) {
+          } catch (e) {
             console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
             expect(null).assertFail();
             done();
@@ -601,7 +601,7 @@ export default function SingleKvStoreDataChange() {
             });
             console.info(TAG + ' --------- SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0400 end--------- ');
             done();
-          } catch (e: Error) {
+          } catch (e) {
             console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
             expect(null).assertFail();
             done();

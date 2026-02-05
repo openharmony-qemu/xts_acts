@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -189,7 +189,7 @@ export default function UsbTransferTest() {
             UsbMgr.usbSubmitTransfer(transferParams);
             UsbMgr.usbCancelTransfer(transferParams);
             hilog.info(domain, tag, 'USB transfer request submitted.');
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.info(domain, tag, 'testUsbCancelTransfer004 catch err code================: ' + JSON.stringify(error));
           }
           done();
@@ -229,7 +229,8 @@ export default function UsbTransferTest() {
             UsbMgr.usbCancelTransfer(transferParams);
             expect().assertFail();
             hilog.info(domain, tag, 'USB transfer request submitted.');
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             hilog.info(domain, tag, 'interrupt cancel failed:' + error.code);
             expect(error.code).assertEqual(14400011);
           }
@@ -278,7 +279,7 @@ export default function UsbTransferTest() {
               expect(ret == 18).assertEqual(true);
             })
             UsbMgr.closePipe(devicePipe);
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.info(0, 'testTag ui', `closeAccessory error `)
             hilog.info(domain, tag, 'usbControlTransfer end');
             let err: BusinessError = error as BusinessError;
@@ -353,7 +354,7 @@ export default function UsbTransferTest() {
             }
             hilog.info(domain, tag, `bulkTransfer end `);
             UsbMgr.closePipe(devicePipe);
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.info(domain, tag, `bulkTransfer error `)
             hilog.info(domain, tag, `bulkTransfer err.code= ${error.code}`);
           }
@@ -396,7 +397,7 @@ export default function UsbTransferTest() {
             hilog.info(domain, tag, `usbControlTransfer size= ${ret}`);
             expect(ret == 0).assertEqual(true);
             UsbMgr.closePipe(devicePipe);
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.info(0, 'testTag ui', `test_usbControlTransfer002 error `)
             hilog.info(domain, tag, 'test_usbControlTransfer002 end');
             let err: BusinessError = error as BusinessError;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,7 +51,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
           let mdSize: number = digestSyncUtils.getMdSize(algName);
           expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`Digest “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -80,7 +80,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
           expect(dataResSpilt.mdObj.getMdLength()).assertEqual(mdSize);
           expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`Digest “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -102,7 +102,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
           let mdSize: number = digestSyncUtils.getMdSize(algName);
           expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`Digest “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -128,13 +128,13 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
           let md: cryptoFramework.Md = cryptoFramework.createMd(algName);
           try {
             md.updateSync(message);
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`Digest Update “${error}“, error code: ${error.code}`);
-            expect(error.code).assertEqual(401); // 1.1: 30001
+            expect((error as BusinessError).code).assertEqual(401); // 1.1: 30001
           }
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`Digest “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -154,9 +154,9 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
         let algName: string = "SHA3-224";
         cryptoFramework.createMd(algName);
         expect(null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`Digest “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });

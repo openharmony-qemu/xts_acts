@@ -7,7 +7,7 @@
  * @tc.level  LEVEL0
  */
 /*
- * Copyright (c) 2025 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Copyright (c) 2025-2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -70,7 +70,7 @@ export default function typefaceTest() {
       try {
         let typeFaceArgument = new drawing.TypefaceArguments();
         console.info(msg + ' TypefaceArguments successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` TypefaceArguments errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -89,7 +89,7 @@ export default function typefaceTest() {
         try {
           let typeFaceArgument = new drawing.TypefaceArguments();
           console.info(msg + ' TypefaceArguments successed step: ' + i);
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.info(msg + ` TypefaceArguments errorCode is:  ${e.code} + errormsg is: ${e.message} step: ${i}`);
           expect().assertFail();
         }

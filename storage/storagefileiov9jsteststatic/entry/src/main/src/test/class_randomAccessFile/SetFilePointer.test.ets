@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -53,7 +53,7 @@ export default function fileIORandomAccessFileSetFilePointer() {
 
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_set_file_pointer_sync_static_000 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }

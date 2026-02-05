@@ -50,7 +50,7 @@ export default function fileIODfsConnect() {
         expect(err.code == 13900004 && err.message == 'Interrupted system call').assertTrue();
         done();
       });
-    } catch (e: BusinessError) {
+    } catch (e) {
       hilog.error(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
     }
@@ -79,7 +79,7 @@ export default function fileIODfsConnect() {
         expect(err.code == 13900004 && err.message == 'Interrupted system call').assertTrue();
         done();
       });
-    } catch (e: BusinessError) {
+    } catch (e) {
       hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
       done();

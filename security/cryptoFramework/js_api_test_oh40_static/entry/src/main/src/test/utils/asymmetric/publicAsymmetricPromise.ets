@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -727,7 +727,7 @@ async function updateAbnormalParameterProcess(
         await updateSign(signGenerator, input);
         break;
     }
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("[Promise] updateAbnormalParameterProcess catch err: " + err);
     throw err as Error;
   }
@@ -765,7 +765,7 @@ async function verifyUpdateAbnormalParameterProcess(
         await updateVerify(verifyGenerator, input);
         break;
     }
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("[Promise] verifyUpdateAbnormalParameterProcess catch err: " + err);
     throw err as Error;
   }

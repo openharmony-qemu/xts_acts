@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -168,7 +168,8 @@ export default function audioFramework() {
         console.info(`${TagFrmwk}: Media getVolumeSync : success :${data}`);
         expect(true).assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
         expect(Number(err.code)).assertEqual(401);
         done();
@@ -195,7 +196,7 @@ export default function audioFramework() {
           expect(false).assertTrue();
           done();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log('err :' + JSON.stringify(err.message));
         expect(false).assertTrue();
         done();
@@ -217,7 +218,8 @@ export default function audioFramework() {
         console.log('getMinVolumeSync success');
         expect(true).assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
         expect(Number(err.code)).assertEqual(401);
         done();
@@ -247,7 +249,7 @@ export default function audioFramework() {
           expect(false).assertTrue();
           done();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log('err :' + JSON.stringify(err.message));
         expect(false).assertTrue();
         done();
@@ -269,7 +271,8 @@ export default function audioFramework() {
         console.log('getMaxVolumeSync success');
         expect(true).assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
         expect(Number(err.code)).assertEqual(401);
         done();
@@ -291,7 +294,8 @@ export default function audioFramework() {
         console.log('isMuteSync success');
         expect(true).assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
         expect(Number(err.code)).assertEqual(401);
         done();
@@ -323,7 +327,7 @@ export default function audioFramework() {
           expect(false).assertTrue();          
         }
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log('err :' + JSON.stringify(err.message));
         expect(false).assertTrue();        
       }
@@ -474,7 +478,7 @@ export default function audioFramework() {
         console.info('Capturer readData of success.');
         
         await audioCapturer!.release();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`AudioFrameworkRecLog: Capturer stop: ERROR: ${err}`);
         expect(true).assertFalse();
       }      
@@ -1158,7 +1162,7 @@ export default function audioFramework() {
         let value = AudioRoutingManager.getDevicesSync(audio.DeviceFlag.INPUT_DEVICES_FLAG);
         console.info(`${TagFrmwk}: getDevicesSync Success,value: ${value}`);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${TagFrmwk}: getDevicesSync Fail,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
         expect(false).assertTrue();
         done();
@@ -1178,7 +1182,7 @@ export default function audioFramework() {
         let audioSpatializationManager: audio.AudioSpatializationManager = audio.getAudioManager().getSpatializationManager();
         let isSpatializationEnabledForCurrentDevice: boolean = audioSpatializationManager.isSpatializationEnabledForCurrentDevice();
         console.info(`AudioSpatializationManager isSpatializationEnabledForCurrentDevice: ${isSpatializationEnabledForCurrentDevice}`);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`Fail, error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
         expect(false).assertTrue();
       }
@@ -1221,7 +1225,7 @@ export default function audioFramework() {
       try {
         let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_MUSIC);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`isStreamActive ERROR: ${err}`);
         expect(false).assertTrue();
       }
@@ -1238,7 +1242,7 @@ export default function audioFramework() {
     it("SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       try {
         let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`getVolumeByStream ERROR: ${err}`);
         expect(false).assertTrue();
       }
@@ -1255,7 +1259,7 @@ export default function audioFramework() {
     it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       try {
         let ret: int = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`getMaxVolumeByStream ERROR: ${err}`);
         expect(false).assertTrue();
       }
@@ -1272,7 +1276,7 @@ export default function audioFramework() {
     it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       try {
         let ret: int = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`getMinVolumeByStream ERROR: ${err}`);
         expect(false).assertTrue();
       }

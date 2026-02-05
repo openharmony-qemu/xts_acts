@@ -98,7 +98,7 @@ export default function FloatingBallTest() {
         const imageSource:image.ImageSource|undefined = image.createImageSource((file.buffer as ArrayBuffer));
         console.log(` beforeAll createImageSource success：${JSON.stringify(imageSource)}`);
         pixelMapIcon = await imageSource!.createPixelMap();
-      }catch (err: BusinessError) {
+      }catch (err) {
         console.error(` beforeAll pixelMapIcon failed. Cause:${err.code}, message:${err.message}`);
       }
 
@@ -108,7 +108,7 @@ export default function FloatingBallTest() {
         const imageSource1:image.ImageSource|undefined = image.createImageSource((file1.buffer as ArrayBuffer));
         console.log(` beforeAll createImageSource1 success：${JSON.stringify(imageSource1)}`);
         pixelMapIcon1 = await imageSource1!.createPixelMap();
-      }catch (err: BusinessError) {
+      }catch (err) {
         console.error(` beforeAll getPixelMap1 failed. Cause:${err.code}, message:${err.message}`);
       }
 

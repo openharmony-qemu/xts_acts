@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -70,7 +70,7 @@ function startWatcher(testNum: string, eventCode: int|undefined , watchPath: str
         ret.flag = true;
       }
     });
-  } catch (e: BusinessError) {
+  } catch (e) {
     hilog.info(domain, tag, '%{public}s', testNum + ' startWatcher failed for ' + e.message + ', code: ' + e.code);
     return ret;
   }
@@ -107,7 +107,7 @@ export default function fileIOWatcher() {
         fs.closeSync(file);
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -139,7 +139,7 @@ export default function fileIOWatcher() {
         fs.closeSync(file);
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -170,7 +170,7 @@ export default function fileIOWatcher() {
         resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -201,7 +201,7 @@ export default function fileIOWatcher() {
         resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -232,7 +232,7 @@ export default function fileIOWatcher() {
         fs.closeSync(file);
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -273,7 +273,7 @@ export default function fileIOWatcher() {
         watcher.stop();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -302,7 +302,7 @@ export default function fileIOWatcher() {
         fs.closeSync(file);
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -330,7 +330,7 @@ export default function fileIOWatcher() {
         resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -360,7 +360,7 @@ export default function fileIOWatcher() {
         resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -389,7 +389,7 @@ export default function fileIOWatcher() {
         resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -415,7 +415,7 @@ export default function fileIOWatcher() {
         expect(resWatcher.flag == true).assertTrue();
         resWatcher.watcher?.stop();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -442,7 +442,7 @@ export default function fileIOWatcher() {
         resWatcher.watcher?.stop();
         fs.rmdirSync(dpath + 'newd');
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -470,7 +470,7 @@ export default function fileIOWatcher() {
         resWatcher.watcher?.stop();
         fs.unlinkSync(fpath + 'newd');
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -501,7 +501,7 @@ export default function fileIOWatcher() {
         resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -548,7 +548,7 @@ export default function fileIOWatcher() {
         resWatcher.forEach(element => { element.stop(); });
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
       }
     });
@@ -585,7 +585,7 @@ export default function fileIOWatcher() {
         fs.closeSync(file);
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -611,7 +611,8 @@ export default function fileIOWatcher() {
         watcher!.start();
         fs.createWatcher(fpath, watcherEvent.get('IN_ACCESS', 0x00000001), callback);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         watcher!.stop();
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
@@ -637,7 +638,8 @@ export default function fileIOWatcher() {
         watcher?.start();
         expect(false).assertTrue();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         watcher?.stop();
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
@@ -663,7 +665,8 @@ export default function fileIOWatcher() {
         let watcher = fs.createWatcher(fpath, watcherEvent.get('IN_ACCESS', 0x00000001), (data: WatchEvent) => {});
         watcher.stop();
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -690,7 +693,8 @@ export default function fileIOWatcher() {
         let watcher = fs.createWatcher(fpath, invalidEvent, (data: WatchEvent) => {});
         watcher.start();
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -714,7 +718,8 @@ export default function fileIOWatcher() {
         let watcher = fs.createWatcher(fpath, watcherEvent.get('IN_ACCESS', 0x00000001), (data: WatchEvent) => {});
         watcher.start();
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
         done();

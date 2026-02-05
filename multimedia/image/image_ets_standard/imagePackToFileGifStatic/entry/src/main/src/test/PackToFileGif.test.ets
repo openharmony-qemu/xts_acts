@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -250,7 +250,7 @@ export default function imagePackToFileGif() {
           expect().assertFail();
           done();
         }
-      } catch(error: BusinessError) {
+      } catch(error) {
         console.log(`${testNum} error: ` + JSON.stringify(error));
         expect().assertFail();
         done();
@@ -284,7 +284,8 @@ export default function imagePackToFileGif() {
         console.log(`${testNum} packToFileFromPixelmapSequence success`);
         expect(false).assertTrue();
         done();
-      } catch(error: BusinessError) {
+      } catch(error) {
+          error = error as BusinessError;
         console.log(`${testNum} packToFileFromPixelmapSequence error: ` + JSON.stringify(error));
         console.log(`${testNum} packToFileFromPixelmapSequence error.code: ` + error.code);
         expect(error.code == ERROR_CODE1).assertTrue();
@@ -428,7 +429,8 @@ export default function imagePackToFileGif() {
         expect(false).assertTrue();
         console.info(`${testNum} packToFile test`);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+          error = error as BusinessError;
         console.log("packToFileCallback error: " + error);
         console.info(`${testNum} pack failerr: ${JSON.stringify(error)}`);
         console.info(`${testNum} pack failerr: ${error.code}`);
@@ -464,7 +466,8 @@ export default function imagePackToFileGif() {
           expect(false).assertTrue();
           console.info(`${testNum} packToFile test`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${testNum} packToFile error: ` + JSON.stringify(error));
           console.info(`${testNum} pack failerr: ${error.code}`);
           expect(error.code == ERROR_CODE).assertTrue();

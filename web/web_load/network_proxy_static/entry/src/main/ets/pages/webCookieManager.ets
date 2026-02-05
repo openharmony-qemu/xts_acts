@@ -61,7 +61,8 @@ struct webCookieManager {
               try {
                 webView.WebCookieManager.saveCookieSync();
                 Utils.emitEvent('success', 202502180);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent('fail', 202502180);
               }
@@ -71,7 +72,8 @@ struct webCookieManager {
               try {
                 webView.WebviewController.removeAllCache(true);
                 Utils.emitEvent('success', 202502211);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent('fail', 202502211);
               }

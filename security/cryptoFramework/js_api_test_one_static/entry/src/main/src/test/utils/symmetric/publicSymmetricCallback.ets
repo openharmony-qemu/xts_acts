@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ function createGlobalParams(symAlgoName: string, paramType: string): cryptoFrame
       params = null;
     }
     return params;
-  } catch (err: BusinessError) {
+  } catch (err) {
     throw err as Error;
   }
 }
