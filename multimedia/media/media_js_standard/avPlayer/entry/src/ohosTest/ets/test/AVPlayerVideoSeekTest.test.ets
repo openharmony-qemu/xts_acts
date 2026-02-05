@@ -20,8 +20,6 @@ let mediaTestBase = new MediaTestBase()
 let isSeek = false
 // #endregion
 
-
-
 // #region - public function
 function openFileFailed() {
     console.info('case file fail');
