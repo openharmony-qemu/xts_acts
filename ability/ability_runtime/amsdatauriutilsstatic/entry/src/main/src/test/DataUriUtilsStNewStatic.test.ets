@@ -15,6 +15,7 @@
 import dataUriUtils from '@ohos.app.ability.dataUriUtils';
 import hilog from '@ohos.hilog';
 import { describe, it, expect, TestType, Size, Level } from '../../../hypium/index';
+import { BusinessError } from '@ohos.base';
 
 const DOMAIN: Int = 0x0000;
 const TAG: string = 'DataUriUtilsStNewStaticTest';
@@ -128,6 +129,29 @@ export default function DataUriUtilsStNewStaticTest() {
 
         done();
       })
+      
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0600
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0600
+     * @tc.desc   Obtains the ID attached to the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          hilog.info(DOMAIN, TAG, 'dataUriUtils getId start6 ');
+          let result = dataUriUtils.getId("");
+          hilog.info(DOMAIN, TAG, 'dataUriUtils getId URI : ' + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          hilog.info(DOMAIN, TAG, 'dataUriUtils getId URI catch: ' + err?.code);
+          expect(err?.code).assertEqual(401);
+          done();
+        }
+      })
 
     /**
      * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0100
@@ -238,6 +262,28 @@ export default function DataUriUtilsStNewStaticTest() {
 
         done();
       })
+    
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0600
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0600
+     * @tc.desc   Attaches the given ID to the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, 'dataUriUtils attachId start6 ');
+        let idint = -1;
+        let result = dataUriUtils.attachId("", idint);
+        hilog.info(DOMAIN, TAG, 'dataUriUtils attachId URI :' + result)
+
+        expect(typeof (result)).assertEqual("string");
+        expect(result).assertEqual("/-1");
+        hilog.info(DOMAIN, TAG, 'dataUriUtils attachId_test start6 successful ');
+        done();
+      })
+
 
     /**
      * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0100
@@ -346,6 +392,29 @@ export default function DataUriUtilsStNewStaticTest() {
         hilog.info(DOMAIN, TAG, 'dataUriUtils deleteId_test start5 successful ');
 
         done();
+      })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0600
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0600
+     * @tc.desc   Deletes the ID from the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          hilog.info(DOMAIN, TAG, 'dataUriUtils deleteId start6 ');
+          let result = dataUriUtils.deleteId("");
+          hilog.info(DOMAIN, TAG, 'dataUriUtils deleteId URI : ' + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          hilog.info(DOMAIN, TAG, 'dataUriUtils deleteId URI catch: ' + err?.code);
+          expect(err?.code).assertEqual(401);
+          done();
+        }
       })
 
     /**
@@ -460,6 +529,30 @@ export default function DataUriUtilsStNewStaticTest() {
         expect(typeof (result)).assertEqual("string");
         expect(result).assertEqual("com.ix.dataUriUtils/0");
         done();
+      })
+      
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0600
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0600
+     * @tc.desc   Updates the ID in the specified dataUri. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, 'dataUriUtils updateId start6 ');
+        try {
+          let idint = 1122;
+          let result = dataUriUtils.updateId("", idint)
+          hilog.info(DOMAIN, TAG, 'updateId updateId URI : ' + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          hilog.info(DOMAIN, TAG, 'updateId updateId URI catch: ' + err?.code);
+          expect(err?.code).assertEqual(401);
+          done();
+        }
       })
   })
 }
