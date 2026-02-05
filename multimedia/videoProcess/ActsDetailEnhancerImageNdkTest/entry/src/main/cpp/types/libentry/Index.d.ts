@@ -12,4 +12,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export const VPE_IMAGE_NDK: (caseNumber: number) => number;
+export const VpeImageTest: (caseNumber: number) => number;

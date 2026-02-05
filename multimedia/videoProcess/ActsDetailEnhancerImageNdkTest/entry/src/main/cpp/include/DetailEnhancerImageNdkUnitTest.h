@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,157 +21,157 @@ namespace Media {
 namespace VideoProcessingEngine {
 
 // initialize environment
-int vpeImageNdk_01();
+int VpeImageNdk01();
 
 // initialize and de-initialize
-int vpeImageNdk_02();
+int VpeImageNdk02();
 
 // de-initialize without initialize
-int vpeImageNdk_03();
+int VpeImageNdk03();
 
 // create instance
-int vpeImageNdk_04();
+int VpeImageNdk04();
 
 // create instance with wrong type
-int vpeImageNdk_05();
+int VpeImageNdk05();
 
 // destroy instance
-int vpeImageNdk_06();
+int VpeImageNdk06();
 
 // destroy null instance
-int vpeImageNdk_07();
+int VpeImageNdk07();
 
 // set parameter normally
-int vpeImageNdk_08();
+int VpeImageNdk08();
 
 // set parameter with null
-int vpeImageNdk_09();
+int VpeImageNdk09();
 
 // set parameter but instance is null
-int vpeImageNdk_10();
+int VpeImageNdk10();
 
 // get parameter after set parameter
-int vpeImageNdk_11();
+int VpeImageNdk11();
 
 // get parameter after set parameter: level none
-int vpeImageNdk_11_2();
+int VpeImageNdk112();
 
 // get parameter after set parameter: level low
-int vpeImageNdk_11_3();
+int VpeImageNdk113();
 
 // get parameter after set parameter: level medium
-int vpeImageNdk_11_4();
+int VpeImageNdk114();
 
 // get parameter after set parameter: invalid param
-int vpeImageNdk_11_5();
+int VpeImageNdk115();
 
 // get parameter but parameter is null
-int vpeImageNdk_12();
+int VpeImageNdk12();
 
 // get parameter but instance is null set
-int vpeImageNdk_13();
+int VpeImageNdk13();
 
 // get parameter but parameter is not null
-int vpeImageNdk_14();
+int VpeImageNdk14();
 
 // colorspaceconversion support check 1
-int vpeImageNdk_15();
+int VpeImageNdk15();
 
 // colorspaceconversion support check 2
-int vpeImageNdk_16();
+int VpeImageNdk16();
 
 // colorspaceconversion support check 3
-int vpeImageNdk_17();
+int VpeImageNdk17();
 
 // colorspaceconversion support check 4
-int vpeImageNdk_18();
+int VpeImageNdk18();
 
 // conposition support check 1
-int vpeImageNdk_19();
+int VpeImageNdk19();
 
 // conposition support check 2
-int vpeImageNdk_20();
+int VpeImageNdk20();
 
 // conposition support check 3
-int vpeImageNdk_21();
+int VpeImageNdk21();
 
 // deconposition support check 1
-int vpeImageNdk_22();
+int VpeImageNdk22();
 
 // deconposition support check 2
-int vpeImageNdk_23();
+int VpeImageNdk23();
 
 // deconposition support check 3
-int vpeImageNdk_24();
+int VpeImageNdk24();
 
 // metadata generation support check 1
-int vpeImageNdk_25();
+int VpeImageNdk25();
 
 // metadata generation support check 2
-int vpeImageNdk_26();
+int VpeImageNdk26();
 
 // metadata generation support check 3
-int vpeImageNdk_27();
+int VpeImageNdk27();
 
 // metadata generation support check 4
-int vpeImageNdk_28();
+int VpeImageNdk28();
 
 // convert color space RGBA to BGRA impl
-int vpeImageNdk_29();
+int VpeImageNdk29();
 
 // convert color space BGRA to RGBA impl
-int vpeImageNdk_30();
+int VpeImageNdk30();
 
 // convert color space nullptr
-int vpeImageNdk_31();
+int VpeImageNdk31();
 
 // compose RGBA impl
-int vpeImageNdk_32();
+int VpeImageNdk32();
 
 // compose BGRA impl
-int vpeImageNdk_33();
+int VpeImageNdk33();
 
 // compose nullptr
-int vpeImageNdk_34();
+int VpeImageNdk34();
 
 // decompose RGBA impl
-int vpeImageNdk_35();
+int VpeImageNdk35();
 
 // decompose BGRA impl
-int vpeImageNdk_36();
+int VpeImageNdk36();
 
 // decompose nullptr
-int vpeImageNdk_37();
+int VpeImageNdk37();
 
 // generate metadata RGBA impl
-int vpeImageNdk_38();
+int VpeImageNdk38();
 
 // generate metadata BGRA impl
-int vpeImageNdk_39();
+int VpeImageNdk39();
 
 // generate metadata nullptr
-int vpeImageNdk_40();
+int VpeImageNdk40();
 
 // detail enhance RGBA
-int vpeImageNdk_41();
+int VpeImageNdk41();
 
 // detail enhance BGRA
-int vpeImageNdk_42();
+int VpeImageNdk42();
 
 // detail enhance nullptr
-int vpeImageNdk_43();
+int VpeImageNdk43();
 
 // DeinitializeEnvironment without initialization
-int vpeImageNdk_44();
+int VpeImageNdk44();
 
 // invalid parameter to create
-int vpeImageNdk_45();
+int VpeImageNdk45();
 
 // invalid instance to create
-int vpeImageNdk_46();
+int VpeImageNdk46();
 
 // invalid instance to destroy
-int vpeImageNdk_47();
+int VpeImageNdk47();
 
 } // namespace VideoProcessingEngine
 } // namespace Media

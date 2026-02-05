@@ -87,38 +87,38 @@ template <size_t N> int DispatchByCaseNum(int caseNum, const std::array<TestFn, 
     return handlers[caseNum]();
 }
 
-static napi_value VPE_IMAGE_NDK(napi_env env, napi_callback_info info)
+static napi_value VpeImageTest(napi_env env, napi_callback_info info)
 {
     const int nullCheckFuncSize = 51;
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         static const std::array<TestFn, nullCheckFuncSize> handlers = {
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_01,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_02,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_03,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_04,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_05,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_06,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_07,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_08,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_09,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_10,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_11,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_11_2,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_11_3, OHOS::Media::VideoProcessingEngine::vpeImageNdk_11_4,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_11_5, OHOS::Media::VideoProcessingEngine::vpeImageNdk_12,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_13,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_14,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_15,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_16,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_17,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_18,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_19,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_20,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_21,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_22,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_23,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_24,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_25,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_26,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_27,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_28,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_29,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_30,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_31,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_32,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_33,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_34,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_35,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_36,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_37,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_38,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_39,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_40,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_41,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_42,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_43,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_44,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_45,   OHOS::Media::VideoProcessingEngine::vpeImageNdk_46,
-            OHOS::Media::VideoProcessingEngine::vpeImageNdk_47
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk01,   OHOS::Media::VideoProcessingEngine::VpeImageNdk02,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk03,   OHOS::Media::VideoProcessingEngine::VpeImageNdk04,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk05,   OHOS::Media::VideoProcessingEngine::VpeImageNdk06,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk07,   OHOS::Media::VideoProcessingEngine::VpeImageNdk08,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk09,   OHOS::Media::VideoProcessingEngine::VpeImageNdk10,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk11,   OHOS::Media::VideoProcessingEngine::VpeImageNdk112,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk113, OHOS::Media::VideoProcessingEngine::VpeImageNdk114,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk115, OHOS::Media::VideoProcessingEngine::VpeImageNdk12,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk13,   OHOS::Media::VideoProcessingEngine::VpeImageNdk14,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk15,   OHOS::Media::VideoProcessingEngine::VpeImageNdk16,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk17,   OHOS::Media::VideoProcessingEngine::VpeImageNdk18,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk19,   OHOS::Media::VideoProcessingEngine::VpeImageNdk20,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk21,   OHOS::Media::VideoProcessingEngine::VpeImageNdk22,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk23,   OHOS::Media::VideoProcessingEngine::VpeImageNdk24,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk25,   OHOS::Media::VideoProcessingEngine::VpeImageNdk26,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk27,   OHOS::Media::VideoProcessingEngine::VpeImageNdk28,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk29,   OHOS::Media::VideoProcessingEngine::VpeImageNdk30,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk31,   OHOS::Media::VideoProcessingEngine::VpeImageNdk32,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk33,   OHOS::Media::VideoProcessingEngine::VpeImageNdk34,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk35,   OHOS::Media::VideoProcessingEngine::VpeImageNdk36,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk37,   OHOS::Media::VideoProcessingEngine::VpeImageNdk38,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk39,   OHOS::Media::VideoProcessingEngine::VpeImageNdk40,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk41,   OHOS::Media::VideoProcessingEngine::VpeImageNdk42,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk43,   OHOS::Media::VideoProcessingEngine::VpeImageNdk44,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk45,   OHOS::Media::VideoProcessingEngine::VpeImageNdk46,
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk47
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;
@@ -135,7 +135,7 @@ inline napi_property_descriptor MakeNapiDesc(const char* name, napi_callback cb)
 #define DECL_NAPI_DESC(fn) /* NOLINT(G.PRE.02-CPP) */ MakeNapiDesc(#fn, fn)
 
 static const napi_property_descriptor g_mindsporeDescriptors[] = {
-    DECL_NAPI_DESC(VPE_IMAGE_NDK),
+    DECL_NAPI_DESC(VpeImageTest),
 };
 
 EXTERN_C_START
