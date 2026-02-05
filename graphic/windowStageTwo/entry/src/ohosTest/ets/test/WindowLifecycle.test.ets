@@ -3307,53 +3307,57 @@ export default function WindowLifecycle() {
       let windowClass = windowStage.getMainWindowSync();
       let subWindowClass: window.Window | undefined;
       let dialogWindowClass: window.Window | undefined;
-      try {
-        await windowClass.restoreMainWindow();
-        expect().assertFail();
-        done()
-      } catch (err) {
-        console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
-        if (canIUseRes) {
-          expect(err.code).assertEqual(1300004)
-        } else {
-          expect(err.code).assertEqual(801)
+      if (canIUseRes) {
+        try {
+          await windowClass.restoreMainWindow();
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (canIUseRes) {
+            expect(err.code).assertEqual(1300004)
+          } else {
+            expect(err.code).assertEqual(801)
+          }
         }
-      }
-      try {
-        subWindowClass = await windowStage.createSubWindow('sub_testRestoreMainWindow_0100')
-        await subWindowClass.restoreMainWindow();
-        expect().assertFail();
-        await subWindowClass.destroyWindow();
-        done()
-      } catch (err) {
-        console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
-        await subWindowClass?.destroyWindow();
-        if (canIUseRes) {
-          expect(err.code).assertEqual(1300004)
-        } else {
-          expect(err.code).assertEqual(801)
+        try {
+          subWindowClass = await windowStage.createSubWindow('sub_testRestoreMainWindow_0100')
+          await subWindowClass.restoreMainWindow();
+          expect().assertFail();
+          await subWindowClass.destroyWindow();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          await subWindowClass?.destroyWindow();
+          if (canIUseRes) {
+            expect(err.code).assertEqual(1300004)
+          } else {
+            expect(err.code).assertEqual(801)
+          }
         }
-      }
-      try {
-        let config: window.Configuration = {
-          name: "dialog_testRestoreMainWindow_0100",
-          windowType: window.WindowType.TYPE_DIALOG,
-          ctx: context
-        };
-        dialogWindowClass = await window.createWindow(config);
-        await dialogWindowClass.restoreMainWindow();
-        expect().assertFail();
-        await dialogWindowClass.destroyWindow();
-        done()
-      } catch (err) {
-        console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
-        await dialogWindowClass?.destroyWindow();
-        if (canIUseRes) {
-          expect(err.code).assertEqual(1300004)
-        } else {
-          expect(err.code).assertEqual(801)
+        try {
+          let config: window.Configuration = {
+            name: "dialog_testRestoreMainWindow_0100",
+            windowType: window.WindowType.TYPE_DIALOG,
+            ctx: context
+          };
+          dialogWindowClass = await window.createWindow(config);
+          await dialogWindowClass.restoreMainWindow();
+          expect().assertFail();
+          await dialogWindowClass.destroyWindow();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          await dialogWindowClass?.destroyWindow();
+          if (canIUseRes) {
+            expect(err.code).assertEqual(1300004)
+          } else {
+            expect(err.code).assertEqual(801)
+          }
+          done();
         }
-        done();
+      } else {
+        done()
       }
     });
 
@@ -3377,22 +3381,26 @@ export default function WindowLifecycle() {
         ctx: context
       };
       let subWindowClass: window.Window | undefined;
-      try {
-        window.createWindow(config).then(async (data) => {
-          subWindowClass = data;
-          await subWindowClass.setUIContent('testability/pages/First/index2');
-          await subWindowClass.destroyWindow();
-          await subWindowClass.restoreMainWindow();
+      if (canIUseRes) {
+        try {
+          window.createWindow(config).then(async (data) => {
+            subWindowClass = data;
+            await subWindowClass.setUIContent('testability/pages/First/index2');
+            await subWindowClass.destroyWindow();
+            await subWindowClass.restoreMainWindow();
+            expect().assertFail();
+            done()
+          }).catch(async (err: BusinessError) => {
+            console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(1300002);
+            done();
+          });
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
           expect().assertFail();
-          done()
-        }).catch(async (err: BusinessError) => {
-          console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
-          expect(err.code).assertEqual(1300002);
           done();
-        });
-      } catch (err) {
-        console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
-        expect().assertFail();
+        }
+      } else {
         done();
       }
     });

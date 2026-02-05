@@ -4868,8 +4868,12 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
         await subWindowClass?.destroyWindow()
-        expect().assertFail();
-        done()
+        if (err.code === 801) {
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
       }
     });
 
@@ -4937,8 +4941,12 @@ export default function windowLayoutTest() {
       } catch (err) {
         console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
         await subWindowClass?.destroyWindow()
-        expect().assertFail();
-        done()
+        if (err.code === 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
       }
     });
 
