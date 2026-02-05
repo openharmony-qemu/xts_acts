@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
+import {UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 import { BusinessError } from '@ohos.base';
 import { display } from '@kit.ArkUI'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -680,13 +680,16 @@ export default function uiUiWindowTest() {
           await driver.delayMs(waitUiReadyMs)
           let direction0 = await driver.getDisplayRotation()
           console.log(`${TestTag}, testWindowResizeB_split1 setDisplayRotation_0 success ,${JSON.stringify(direction0)}`);
-          if (direction0 ==1 ) {
+          // The device is displayed in horizontal on default
+          if (direction0 == 1) {
             console.log('The device is displayed in horizontal on default')
             let data: display.FoldStatus = display.getFoldStatus()
             console.log(`Succeeded in obtaining fold status. Data,${data}`);
+            // Foldable device
             if (data != 0) {
               await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
               await driver.delayMs(waitUiReadyMs)
+              // The device is fully folded
               if (data == 2) {
                 await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
                 await driver.delayMs(waitUiReadyMs)
@@ -699,6 +702,7 @@ export default function uiUiWindowTest() {
               console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
               expect(window3 == null).assertTrue()
             }
+            // Non-foldable device
             else {
               let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
               let bounds1 = await window2.getBounds()
@@ -708,7 +712,9 @@ export default function uiUiWindowTest() {
               console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
               expect(window3 == null).assertTrue()
             }
-          }else {
+          }
+          // The device is displayed in vertical on default
+          else {
             console.log('The device is displayed in vertical on default')
             await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
             await driver.delayMs(waitUiReadyMs)
