@@ -3285,8 +3285,8 @@ export default function inputMethodDrawnControlJSUnit() {
     });
 
     /**
-     * @tc.name   Sub_Inputmethod_IMF_switchInputMethod_0800
-     * @tc.number Sub_Inputmethod_IMF_switchInputMethod_0800
+     * @tc.name   Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0800
+     * @tc.number Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0800
      * @tc.desc   401 Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3304,11 +3304,11 @@ export default function inputMethodDrawnControlJSUnit() {
       };
       try{
         await inputMethod.switchCurrentInputMethodAndSubtype(inputMethodProperty, undefined);
-        console.info("====>Sub_Inputmethod_IMF_switchInputMethod_0800 success");
+        console.info("====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0800 success");
         expect().assertFail();
         done();
       } catch (err) {
-        console.info(`====>Sub_Inputmethod_IMF_switchInputMethod_0800 catch err:  ${JSON.stringify(err)}`);
+        console.info(`====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0800 catch err:  ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(401);
         done();
       }
