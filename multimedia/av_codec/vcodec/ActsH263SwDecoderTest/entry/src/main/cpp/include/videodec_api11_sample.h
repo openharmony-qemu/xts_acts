@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,8 +32,6 @@
 #include <multimedia/player_framework/native_avmemory.h>
 #include <multimedia/player_framework/native_avformat.h>
 #include <multimedia/player_framework/native_averrors.h>
-//#include "surface/window.h"
-//#include "iconsumer_surface.h"
 
 namespace OHOS {
 namespace Media {
@@ -53,7 +51,7 @@ public:
 class VDecAPI11Sample : public NoCopyable {
 public:
     VDecAPI11Sample() = default;
-    ~VDecAPI11Sample();
+    ~VDecAPI11Sample() override;
     int32_t RunVideoDec_Surface(std::string codeName = "");
     int32_t RunVideoDec(std::string codeName = "");
     const char *INP_DIR = "/data/test/media/1920_1080_10_30Mb.h264";

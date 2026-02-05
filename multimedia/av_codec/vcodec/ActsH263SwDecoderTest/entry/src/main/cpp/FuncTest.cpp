@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,7 +20,6 @@
 #include <multimedia/player_framework/native_averrors.h>
 #include "include/videodec_api11_sample.h"
 #include <multimedia/player_framework/native_avcodec_base.h>
-#include "include/avcodec_codec_name.h"
 #include <multimedia/player_framework/native_avcapability.h>
 #include <multimedia/player_framework/native_avformat.h>
 #include <hilog/log.h>
@@ -46,6 +45,11 @@ static string g_codecName264 = "";
 
 constexpr uint32_t FRAMESIZE90 = 90;
 constexpr uint32_t FRAMESIZE75 = 75;
+constexpr uint32_t VIDEO_WIDTH_128 = 128;
+constexpr uint32_t VIDEO_HEIGHT_96 = 96;
+constexpr uint32_t VIDEO_WIDTH_20 = 20;
+constexpr uint32_t VIDEO_HEIGHT_20 = 20;
+constexpr uint32_t VIDEO_FRAME_RATE_30 = 30;
 
 void InitH263Capability()
 {
@@ -75,9 +79,9 @@ int VideoDecodeSyncSw263Func0010Test()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->INP_DIR = "/data/storage/el2/base/files/media/profile0_level10_I_128x96.h263";
-    vDecSample->DEFAULT_WIDTH = 128;
-    vDecSample->DEFAULT_HEIGHT = 96;
-    vDecSample->DEFAULT_FRAME_RATE = 30;
+    vDecSample->DEFAULT_WIDTH = VIDEO_WIDTH_128;
+    vDecSample->DEFAULT_HEIGHT = VIDEO_HEIGHT_96;
+    vDecSample->DEFAULT_FRAME_RATE = VIDEO_FRAME_RATE_30;
     vDecSample->enbleSyncMode = 1;
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
     
@@ -128,9 +132,9 @@ int VideoDecodeSyncSw263Func0020Test()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->INP_DIR = "/data/storage/el2/base/files/media/profile0_level10_I_128x96.h263";
-    vDecSample->DEFAULT_WIDTH = 128;
-    vDecSample->DEFAULT_HEIGHT = 96;
-    vDecSample->DEFAULT_FRAME_RATE = 30;
+    vDecSample->DEFAULT_WIDTH = VIDEO_WIDTH_128;
+    vDecSample->DEFAULT_HEIGHT = VIDEO_HEIGHT_96;
+    vDecSample->DEFAULT_FRAME_RATE = VIDEO_FRAME_RATE_30;
     vDecSample->enbleSyncMode = 1;
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV21;
     
@@ -181,9 +185,9 @@ int VideoDecodeSyncSw263Func0040Test()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->INP_DIR = "/data/storage/el2/base/files/media/profile0_level10_I_128x96.h263";
-    vDecSample->DEFAULT_WIDTH = 128;
-    vDecSample->DEFAULT_HEIGHT = 96;
-    vDecSample->DEFAULT_FRAME_RATE = 30;
+    vDecSample->DEFAULT_WIDTH = VIDEO_WIDTH_128;
+    vDecSample->DEFAULT_HEIGHT = VIDEO_HEIGHT_96;
+    vDecSample->DEFAULT_FRAME_RATE = VIDEO_FRAME_RATE_30;
     vDecSample->enbleSyncMode = 1;
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_RGBA;
     
@@ -234,9 +238,9 @@ int VideoDecodeSw263BlankFrame0010Test()
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
     vDecSample->INP_DIR = "/data/storage/el2/base/files/media/20x20.h263";
-    vDecSample->DEFAULT_WIDTH = 20;
-    vDecSample->DEFAULT_HEIGHT = 20;
-    vDecSample->DEFAULT_FRAME_RATE = 30;
+    vDecSample->DEFAULT_WIDTH = VIDEO_WIDTH_20;
+    vDecSample->DEFAULT_HEIGHT = VIDEO_HEIGHT_20;
+    vDecSample->DEFAULT_FRAME_RATE = VIDEO_FRAME_RATE_30;
     vDecSample->enbleBlankFrame = 1;
     
     OH_LOG_INFO(LOG_APP, "[BlankFrame] CreateVideoDecoder");
@@ -266,8 +270,9 @@ int VideoDecodeSw263BlankFrame0010Test()
     OH_LOG_INFO(LOG_APP, "[BlankFrame] WaitForEOS");
     vDecSample->WaitForEOS();
     
-    OH_LOG_INFO(LOG_APP, "[BlankFrame] Check results: errCount=%{public}d, outFrameCount=%{public}d, expected=%{public}d",
-        vDecSample->errCount, vDecSample->outFrameCount, FRAMESIZE75);
+    OH_LOG_INFO(LOG_APP,
+                "[BlankFrame] Check results: errCount=%{public}d, outFrameCount=%{public}d, expected=%{public}d",
+                vDecSample->errCount, vDecSample->outFrameCount, FRAMESIZE75);
     
     if (vDecSample->errCount != 0) {
         OH_LOG_ERROR(LOG_APP, "[BlankFrame] errCount != 0");

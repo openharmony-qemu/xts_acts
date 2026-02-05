@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -95,15 +95,6 @@ private:
 VDecAPI11Sample::~VDecAPI11Sample()
 {
     g_yuvSurface = false;
-    // OH_NativeWindow_DestroyNativeWindow not used in current tests
-    /*
-    for (int i = 0; i < MAX_SURF_NUM; i++) {
-        if (nativeWindow[i]) {
-            OH_NativeWindow_DestroyNativeWindow(nativeWindow[i]);
-            nativeWindow[i] = nullptr;
-        }
-    }
-    */
     Stop();
     Release();
 }
@@ -215,7 +206,7 @@ int64_t VDecAPI11Sample::GetSystemTimeUs()
 {
     struct timespec now;
     (void)clock_gettime(CLOCK_BOOTTIME, &now);
-    int64_t nanoTime = (int64_t)now.tv_sec * NANOS_IN_SECOND + now.tv_nsec;
+    int64_t nanoTime = static_cast<int64_t>(now.tv_sec) * NANOS_IN_SECOND + now.tv_nsec;
     return nanoTime / NANOS_IN_MICRO;
 }
 
@@ -506,33 +497,6 @@ int32_t VDecAPI11Sample::StartSyncVideoDecoder()
 
 void VDecAPI11Sample::testAPI()
 {
-    // Surface functionality not used in current tests
-    /*
-    cs[0] = Surface::CreateSurfaceAsConsumer();
-    sptr<IBufferConsumerListener> listener = new ConsumerListenerBuffer(cs[0], OUT_DIR);
-    cs[0]->RegisterConsumerListener(listener);
-    auto p = cs[0]->GetProducer();
-    ps[0] = Surface::CreateSurfaceAsProducer(p);
-    nativeWindow[0] = CreateNativeWindowFromSurface(&ps[0]);
-    OH_VideoDecoder_SetSurface(vdec_, nativeWindow[0]);
-
-    OH_VideoDecoder_Prepare(vdec_);
-    OH_VideoDecoder_Start(vdec_);
-
-    OH_AVFormat *format = OH_AVFormat_Create();
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
-    (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
-    OH_VideoDecoder_SetParameter(vdec_, format);
-    OH_AVFormat_Destroy(format);
-    OH_VideoDecoder_GetOutputDescription(vdec_);
-    OH_VideoDecoder_Flush(vdec_);
-    OH_VideoDecoder_Stop(vdec_);
-    OH_VideoDecoder_Reset(vdec_);
-    bool isvalid = false;
-    OH_VideoDecoder_IsValid(vdec_, &isvalid);
-    */
 }
 
 void VDecAPI11Sample::WaitForEOS()
@@ -582,7 +546,7 @@ void VDecAPI11Sample::InputFuncTest()
             }
         }
         if (sleepOnFPS) {
-            usleep(MICRO_IN_SECOND / (int32_t)DEFAULT_FRAME_RATE);
+            usleep(MICRO_IN_SECOND / static_cast<int32_t>(DEFAULT_FRAME_RATE));
         }
     }
 }
@@ -616,7 +580,7 @@ void VDecAPI11Sample::SyncInputFunc()
             }
         }
         if (sleepOnFPS) {
-            usleep(MICRO_IN_SECOND / (int32_t)DEFAULT_FRAME_RATE);
+            usleep(MICRO_IN_SECOND / static_cast<int32_t>(DEFAULT_FRAME_RATE));
         }
     }
 }
@@ -647,15 +611,15 @@ int32_t VDecAPI11Sample::PushData(uint32_t index, OH_AVBuffer *buffer)
         SetEOS(index, buffer);
         return 1;
     }
-    uint32_t bufferSize = (uint32_t)(((ch[3] & 0xFF)) | ((ch[2] & 0xFF) << EIGHT) | ((ch[1] & 0xFF) << SIXTEEN) |
-                                     ((ch[0] & 0xFF) << TWENTY_FOUR));
+    uint32_t bufferSize = static_cast<uint32_t>(((ch[3] & 0xFF)) | ((ch[2] & 0xFF) << EIGHT) |
+        ((ch[1] & 0xFF) << SIXTEEN) | ((ch[0] & 0xFF) << TWENTY_FOUR));
     if (useHDRSource) {
         uint32_t zero = 0;
         uint32_t one = 1;
         uint32_t two = 2;
         uint32_t three = 3;
-        bufferSize = (uint32_t)(((ch[zero] & 0xFF)) | ((ch[one] & 0xFF) << EIGHT) | ((ch[two] & 0xFF) << SIXTEEN) |
-                                     ((ch[three] & 0xFF) << TWENTY_FOUR));
+        bufferSize = static_cast<uint32_t>(((ch[zero] & 0xFF)) | ((ch[one] & 0xFF) << EIGHT) |
+            ((ch[two] & 0xFF) << SIXTEEN) | ((ch[three] & 0xFF) << TWENTY_FOUR));
     }
     if (bufferSize >= DEFAULT_WIDTH * DEFAULT_HEIGHT * THREE >> 1) {
         cout << "read bufferSize abnormal. buffersize = " << bufferSize << endl;
@@ -722,7 +686,7 @@ uint32_t VDecAPI11Sample::SendData(uint32_t bufferSize, uint32_t index, OH_AVBuf
         OH_VideoDecoder_PushInputBuffer(vdec_, index) == AV_ERR_OK ? (0) : (errCount++);
         frameCount_ = frameCount_ + 1;
         outCount = outCount + 1;
-        if (autoSwitchSurface && (frameCount_ % (int32_t)DEFAULT_FRAME_RATE == 0)) {
+        if (autoSwitchSurface && (frameCount_ % static_cast<int32_t>(DEFAULT_FRAME_RATE) == 0)) {
             switchSurfaceFlag = (switchSurfaceFlag == 1) ? 0 : 1;
             OH_VideoDecoder_SetSurface(vdec_, nativeWindow[switchSurfaceFlag]) == AV_ERR_OK ? (0) : (errCount++);
         }
@@ -922,13 +886,13 @@ void VDecAPI11Sample::ProcessOutputData(OH_AVBuffer *buffer, uint32_t index, int
         if (size >= DEFAULT_WIDTH * DEFAULT_HEIGHT * THREE >> 1) {
             uint8_t *cropBuffer = new uint8_t[size];
             if (SecureMemcpy(cropBuffer, size, OH_AVBuffer_GetAddr(buffer),
-                         DEFAULT_WIDTH * DEFAULT_HEIGHT) != EOK) {
+                DEFAULT_WIDTH * DEFAULT_HEIGHT) != EOK) {
                 cout << "Fatal: memory copy failed Y" << endl;
             }
             // copy UV
             uint32_t uvSize = size - DEFAULT_WIDTH * DEFAULT_HEIGHT;
             if (SecureMemcpy(cropBuffer + DEFAULT_WIDTH * DEFAULT_HEIGHT, uvSize,
-                         OH_AVBuffer_GetAddr(buffer) + DEFAULT_WIDTH * DEFAULT_HEIGHT, uvSize) != EOK) {
+                OH_AVBuffer_GetAddr(buffer) + DEFAULT_WIDTH * DEFAULT_HEIGHT, uvSize) != EOK) {
                 cout << "Fatal: memory copy failed UV" << endl;
             }
             SHA512_Update(&g_c, cropBuffer, size);
@@ -1077,10 +1041,5 @@ int32_t VDecAPI11Sample::RepeatCallSetSurface()
 
 int32_t VDecAPI11Sample::DecodeSetSurface()
 {
-    // Surface functionality not used in current tests
     return AV_ERR_UNSUPPORT;
-    /*
-    CreateSurface();
-    return OH_VideoDecoder_SetSurface(vdec_, nativeWindow[0]);
-    */
 }

@@ -83,6 +83,7 @@ group("multimedia") {
       "av_codec/vcodec/hwdecoder:ActsHwdecoderTest",
       "av_codec/vcodec/swdecoder:ActsSwDecodeTest",
       "av_codec/vcodec/h263swdecoder:ActsH263SwDecodeTest",
+      "av_codec/vcodec/ActsH263SwDecoderTest:ActsH263swDecoderHapTest",
       "av_codec/vcodec/hevcswdecoder:ActsHevcSwdecoderTest",
       "av_codec/vcodec/mpeg2swdecoder:ActsMpeg2SwdecoderTest",
       "av_codec/vcodec/mpeg4swdecoder:ActsMpeg4SwdecoderTest",
