@@ -114,6 +114,13 @@ static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob *blob, const ui
 {
     OH_Huks_Result ret;
     ret.errorCode = (int32_t)OH_HUKS_SUCCESS;
+
+    // G.MEM.01: 内存申请前，必须对申请内存大小进行合法性校验
+    if (blobSize == 0 || blobSize > X25519_COMMON_SIZE) {
+        ret.errorCode = (int32_t)OH_HUKS_ERR_CODE_INVALID_SIZE;
+        return ret;
+    }
+
     blob->data = (uint8_t *)malloc(blobSize);
     if (blob->data == nullptr) {
         ret.errorCode = (int32_t)OH_HUKS_ERR_CODE_INTERNAL_ERROR;

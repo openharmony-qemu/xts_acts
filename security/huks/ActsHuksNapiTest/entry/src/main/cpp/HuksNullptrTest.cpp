@@ -68,16 +68,16 @@ static int TestParamSetOperations(struct OH_Huks_ParamSet *paramSet, struct OH_H
 }
 
 // Helper function: Test parameter match and SDK operations
-static int TestParamAndSdkOperations(struct OH_Huks_Blob *blobNullptr)
+static int TestParamAndSdkOperations(struct OH_Huks_Blob *blob)
 {
     struct OH_Huks_Param baseParam = {.tag = OH_HUKS_TAG_ALGORITHM, .uint64Param = (uint64_t)1};
-    struct OH_Huks_Param otherParam = {.tag = OH_HUKS_TAG_ALGORITHM, .uint64Param = (uint64_t)2};
-    OH_Huks_Result ret = OH_Huks_CheckParamMatch(&baseParam, &otherParam);
+    struct OH_Huks_Param otherParam1 = {.tag = OH_HUKS_TAG_ALGORITHM, .uint64Param = (uint64_t)2};
+    OH_Huks_Result ret = OH_Huks_CheckParamMatch(&baseParam, &otherParam1);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
     }
 
-    ret = OH_Huks_GetSdkVersion(blobNullptr);
+    ret = OH_Huks_GetSdkVersion(blob);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
     }
@@ -86,40 +86,40 @@ static int TestParamAndSdkOperations(struct OH_Huks_Blob *blobNullptr)
 }
 
 // Helper function: Test key operations
-static int TestKeyOperations(struct OH_Huks_Blob *blobNullptr, struct OH_Huks_ParamSet *paramSet,
-                              struct OH_Huks_CertChain *certChainNullptr)
+static int TestKeyOperations(struct OH_Huks_Blob *blob, struct OH_Huks_ParamSet *paramSet,
+                              struct OH_Huks_CertChain *certChain)
 {
-    OH_Huks_Result ret = OH_Huks_GenerateKeyItem(blobNullptr, paramSet, paramSet);
+    OH_Huks_Result ret = OH_Huks_GenerateKeyItem(blob, paramSet, paramSet);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
     }
 
-    ret = OH_Huks_ImportWrappedKeyItem(blobNullptr, blobNullptr, paramSet, blobNullptr);
+    ret = OH_Huks_ImportWrappedKeyItem(blob, blob, paramSet, blob);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
     }
 
-    ret = OH_Huks_ExportPublicKeyItem(blobNullptr, paramSet, blobNullptr);
+    ret = OH_Huks_ExportPublicKeyItem(blob, paramSet, blob);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
     }
 
-    ret = OH_Huks_DeleteKeyItem(blobNullptr, paramSet);
+    ret = OH_Huks_DeleteKeyItem(blob, paramSet);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
     }
 
-    ret = OH_Huks_GetKeyItemParamSet(blobNullptr, paramSet, paramSet);
+    ret = OH_Huks_GetKeyItemParamSet(blob, paramSet, paramSet);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
     }
 
-    ret = OH_Huks_IsKeyItemExist(blobNullptr, paramSet);
+    ret = OH_Huks_IsKeyItemExist(blob, paramSet);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
     }
 
-    ret = OH_Huks_AttestKeyItem(blobNullptr, paramSet, certChainNullptr);
+    ret = OH_Huks_AttestKeyItem(blob, paramSet, certChain);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
     }
@@ -128,24 +128,24 @@ static int TestKeyOperations(struct OH_Huks_Blob *blobNullptr, struct OH_Huks_Pa
 }
 
 // Helper function: Test session operations
-static int TestSessionOperations(struct OH_Huks_Blob *blobNullptr, struct OH_Huks_ParamSet *paramSet)
+static int TestSessionOperations(struct OH_Huks_Blob *blob, struct OH_Huks_ParamSet *paramSet)
 {
-    OH_Huks_Result ret = OH_Huks_InitSession(blobNullptr, paramSet, blobNullptr, blobNullptr);
+    OH_Huks_Result ret = OH_Huks_InitSession(blob, paramSet, blob, blob);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
     }
 
-    ret = OH_Huks_UpdateSession(blobNullptr, paramSet, blobNullptr, blobNullptr);
+    ret = OH_Huks_UpdateSession(blob, paramSet, blob, blob);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
     }
 
-    ret = OH_Huks_FinishSession(blobNullptr, paramSet, blobNullptr, blobNullptr);
+    ret = OH_Huks_FinishSession(blob, paramSet, blob, blob);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
     }
 
-    ret = OH_Huks_AbortSession(blobNullptr, paramSet);
+    ret = OH_Huks_AbortSession(blob, paramSet);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
     }

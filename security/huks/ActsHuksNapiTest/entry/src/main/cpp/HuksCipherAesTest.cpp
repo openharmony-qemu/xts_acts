@@ -372,7 +372,9 @@ int SecurityHuksNapiCipherAes0100()
     OH_Huks_FreeParamSet(&decryptParamSet);
     
     // Check if error is due to environment limitations
-    if (ret.errorCode == -112 || ret.errorCode == -3 || ret.errorCode == -1) {
+    if (ret.errorCode == (int32_t)OH_HUKS_ERR_ALGORITHM_NOT_SUPPORTED ||
+        ret.errorCode == (int32_t)OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT ||
+        ret.errorCode == (int32_t)OH_HUKS_ERR_CODE_INTERNAL_ERROR) {
         return 0;  // Environment limitation, skip test gracefully
     }
     

@@ -110,7 +110,7 @@ static OH_Huks_Result HksTestUpdate(const struct OH_Huks_Blob *handle, const str
             outDataSeg.size = inDataSeg.size + MAX_UPDATE_SIZE;
         }
         
-        outDataSeg.data = (uint8_t *)malloc(outDataSeg.size);
+        outDataSeg.data = static_cast<uint8_t *>(malloc(outDataSeg.size));
         if (outDataSeg.data == nullptr) {
             ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
             return ret;
@@ -197,7 +197,7 @@ static OH_Huks_Result ExportAndImportPublicKey(struct OH_Huks_Blob keyAlias,
     OH_LOG_INFO(LOG_APP, "[Step 4/6] Importing public key...");
     char newKey[] = "RSA_Sign_Verify_Import_KeyAlias";
     newKeyAlias->size = static_cast<uint32_t>(strlen(newKey));
-    newKeyAlias->data = (uint8_t *)newKey;
+    newKeyAlias->data = reinterpret_cast<uint8_t *>(newKey);
     ret = OH_Huks_ImportKeyItem(newKeyAlias, verifyParamSet, publicKey);
     OH_LOG_INFO(LOG_APP, "[Step 4/6] ImportKeyItem: errorCode=%{public}d", ret.errorCode);
     
@@ -261,7 +261,8 @@ static OH_Huks_Result HksRsaSignVerifyTestNormalCase(struct OH_Huks_Blob keyAlia
 {
     OH_LOG_INFO(LOG_APP, "HksRsaSignVerifyTestNormalCase: Started");
     
-    struct OH_Huks_Blob inData = {static_cast<uint32_t>(g_inData.length()), (uint8_t *)g_inData.c_str()};
+    struct OH_Huks_Blob inData = {static_cast<uint32_t>(g_inData.length()), 
+                                  reinterpret_cast<uint8_t *>(const_cast<char *>(g_inData.c_str()))};
     uint8_t tmpIn[] = "tempIn";
     struct OH_Huks_Blob finishInData = {0, tmpIn};
     
@@ -367,7 +368,8 @@ int SecurityHuksNapiSignVerifyRsa0100()
     OH_LOG_INFO(LOG_APP, "[Init] All parameter sets initialized successfully");
 
     /* Execute Main Test Logic */
-    struct OH_Huks_Blob keyAlias = {static_cast<uint32_t>(strlen(keyAliasString)), (uint8_t *)keyAliasString};
+    struct OH_Huks_Blob keyAlias = {static_cast<uint32_t>(strlen(keyAliasString)), 
+                                    reinterpret_cast<uint8_t *>(const_cast<char *>(keyAliasString))};
     
     if ((genParamSet != nullptr) || (signParamSet != nullptr) || (verifyParamSet != nullptr)) {
         OH_LOG_INFO(LOG_APP, "[Execute] Calling HksRsaSignVerifyTestNormalCase...");

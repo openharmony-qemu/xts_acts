@@ -30,6 +30,8 @@ static const uint32_t RSA_COMMON_SIZE = 1024;
 static const uint32_t MAX_UPDATE_SIZE = 64;
 static const uint32_t TIMES = 4;
 static const uint32_t MAX_OUTDATA_SIZE = MAX_UPDATE_SIZE * TIMES;
+static const uint32_t DOUBLE_SIZE_MULTIPLIER = 2;
+static const uint32_t MAX_BLOB_SIZE = 1024 * 1024; // 1MB，合理的上限
 
 static const std::string g_inData_32 = "RSA_32_ttttttttttttttttttttttttt";
 
@@ -52,6 +54,12 @@ static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob *blob, const ui
 {
     OH_Huks_Result ret;
     ret.errorCode = (int32_t)OH_HUKS_SUCCESS;
+    
+    // G.MEM.01: 内存申请前，必须对申请内存大小进行合法性校验
+    if (blobSize == 0 || blobSize > MAX_BLOB_SIZE) {
+        ret.errorCode = (int32_t)OH_HUKS_ERR_CODE_INVALID_SIZE;
+        return ret;
+    }
     
     blob->data = (uint8_t *)malloc(blobSize);
     if (blob->data == nullptr) {
@@ -171,9 +179,8 @@ static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob *handle, const 
             inDataSeg.data += MAX_UPDATE_SIZE;
         }
 
-        struct OH_Huks_Blob outDataFinish = {inData->size * 2, nullptr};
-        outDataFinish.data = (uint8_t *)malloc(outDataFinish.size);
-        if (outDataFinish.data == nullptr) {
+        struct OH_Huks_Blob outDataFinish = {inData->size * DOUBLE_SIZE_MULTIPLIER, nullptr};
+        if (MallocAndCheckBlobData(&outDataFinish, outDataFinish.size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
             ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
             return ret;
         }
@@ -197,9 +204,8 @@ static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob *handle, const 
             }
             HksFree(outDataFinish.data);
             
-            outDataFinish.size = inData->size * 2;
-            outDataFinish.data = (uint8_t *)malloc(outDataFinish.size);
-            if (outDataFinish.data == nullptr) {
+            outDataFinish.size = inData->size * DOUBLE_SIZE_MULTIPLIER;
+            if (MallocAndCheckBlobData(&outDataFinish, outDataFinish.size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
                 ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
                 return ret;
             }

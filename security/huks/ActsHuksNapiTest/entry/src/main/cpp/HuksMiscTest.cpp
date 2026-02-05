@@ -189,6 +189,35 @@ const uint32_t CHALLENGE_POS_3_VALUE = 3;
 // 枚举值 - SECURE_SIGN
 const uint32_t SECURE_SIGN_WITH_AUTHINFO_VALUE = 1;
 
+// 密钥大小常量 - RSA
+const uint32_t RSA_KEY_SIZE_512 = 512;
+const uint32_t RSA_KEY_SIZE_768 = 768;
+const uint32_t RSA_KEY_SIZE_1024 = 1024;
+const uint32_t RSA_KEY_SIZE_2048 = 2048;
+const uint32_t RSA_KEY_SIZE_3072 = 3072;
+const uint32_t RSA_KEY_SIZE_4096 = 4096;
+
+// 密钥大小常量 - ECC
+const uint32_t ECC_KEY_SIZE_224 = 224;
+const uint32_t ECC_KEY_SIZE_256 = 256;
+const uint32_t ECC_KEY_SIZE_384 = 384;
+const uint32_t ECC_KEY_SIZE_521 = 521;
+
+// 密钥大小常量 - AES
+const uint32_t AES_KEY_SIZE_128 = 128;
+const uint32_t AES_KEY_SIZE_192 = 192;
+const uint32_t AES_KEY_SIZE_256 = 256;
+const uint32_t AES_KEY_SIZE_512 = 512;
+
+// 密钥大小常量 - DH
+const uint32_t DH_KEY_SIZE_2048 = 2048;
+const uint32_t DH_KEY_SIZE_3072 = 3072;
+const uint32_t DH_KEY_SIZE_4096 = 4096;
+
+// 密钥大小常量 - SM2/SM4
+const uint32_t SM2_KEY_SIZE_256 = 256;
+const uint32_t SM4_KEY_SIZE_128 = 128;
+
 // 位移操作常量 - TAG_TYPE
 const uint32_t TAG_TYPE_INVALID_SHIFT = 0;
 const uint32_t TAG_TYPE_INT_SHIFT = 1;
@@ -206,6 +235,18 @@ const uint32_t USER_AUTH_TYPE_PIN_BIT = 2;
 // 位移操作常量 - AUTH_ACCESS_INVALID
 const uint32_t AUTH_ACCESS_INVALID_CLEAR_PASSWORD_BIT = 0;
 const uint32_t AUTH_ACCESS_INVALID_NEW_BIO_ENROLL_BIT = 1;
+
+// ==================== 辅助函数 ====================
+
+// Helper function: 安全的内存分配函数
+static void* HksMalloc(size_t size)
+{
+    // G.MEM.01: 内存申请前，必须对申请内存大小进行合法性校验
+    if (size == 0 || size > (size_t)-1 / 2) {
+        return nullptr;
+    }
+    return malloc(size);
+}
 
 // ==================== 测试函数 ====================
 
@@ -265,25 +306,25 @@ int SecurityHuksNapiMisc0100()
     }
     
     // Verify key size constants (RSA, ECC, AES, DH, SM2/SM4)
-    if (((uint32_t)OH_HUKS_RSA_KEY_SIZE_512 != 512) ||
-        ((uint32_t)OH_HUKS_RSA_KEY_SIZE_768 != 768) ||
-        ((uint32_t)OH_HUKS_RSA_KEY_SIZE_1024 != 1024) ||
-        ((uint32_t)OH_HUKS_RSA_KEY_SIZE_2048 != 2048) ||
-        ((uint32_t)OH_HUKS_RSA_KEY_SIZE_3072 != 3072) ||
-        ((uint32_t)OH_HUKS_RSA_KEY_SIZE_4096 != 4096) ||
-        ((uint32_t)OH_HUKS_ECC_KEY_SIZE_224 != 224) ||
-        ((uint32_t)OH_HUKS_ECC_KEY_SIZE_256 != 256) ||
-        ((uint32_t)OH_HUKS_ECC_KEY_SIZE_384 != 384) ||
-        ((uint32_t)OH_HUKS_ECC_KEY_SIZE_521 != 521) ||
-        ((uint32_t)OH_HUKS_AES_KEY_SIZE_128 != 128) ||
-        ((uint32_t)OH_HUKS_AES_KEY_SIZE_192 != 192) ||
-        ((uint32_t)OH_HUKS_AES_KEY_SIZE_256 != 256) ||
-        ((uint32_t)OH_HUKS_AES_KEY_SIZE_512 != 512) ||
-        ((uint32_t)OH_HUKS_DH_KEY_SIZE_2048 != 2048) ||
-        ((uint32_t)OH_HUKS_DH_KEY_SIZE_3072 != 3072) ||
-        ((uint32_t)OH_HUKS_DH_KEY_SIZE_4096 != 4096) ||
-        ((uint32_t)OH_HUKS_SM2_KEY_SIZE_256 != 256) ||
-        ((uint32_t)OH_HUKS_SM4_KEY_SIZE_128 != 128)) {
+    if (((uint32_t)OH_HUKS_RSA_KEY_SIZE_512 != RSA_KEY_SIZE_512) ||
+        ((uint32_t)OH_HUKS_RSA_KEY_SIZE_768 != RSA_KEY_SIZE_768) ||
+        ((uint32_t)OH_HUKS_RSA_KEY_SIZE_1024 != RSA_KEY_SIZE_1024) ||
+        ((uint32_t)OH_HUKS_RSA_KEY_SIZE_2048 != RSA_KEY_SIZE_2048) ||
+        ((uint32_t)OH_HUKS_RSA_KEY_SIZE_3072 != RSA_KEY_SIZE_3072) ||
+        ((uint32_t)OH_HUKS_RSA_KEY_SIZE_4096 != RSA_KEY_SIZE_4096) ||
+        ((uint32_t)OH_HUKS_ECC_KEY_SIZE_224 != ECC_KEY_SIZE_224) ||
+        ((uint32_t)OH_HUKS_ECC_KEY_SIZE_256 != ECC_KEY_SIZE_256) ||
+        ((uint32_t)OH_HUKS_ECC_KEY_SIZE_384 != ECC_KEY_SIZE_384) ||
+        ((uint32_t)OH_HUKS_ECC_KEY_SIZE_521 != ECC_KEY_SIZE_521) ||
+        ((uint32_t)OH_HUKS_AES_KEY_SIZE_128 != AES_KEY_SIZE_128) ||
+        ((uint32_t)OH_HUKS_AES_KEY_SIZE_192 != AES_KEY_SIZE_192) ||
+        ((uint32_t)OH_HUKS_AES_KEY_SIZE_256 != AES_KEY_SIZE_256) ||
+        ((uint32_t)OH_HUKS_AES_KEY_SIZE_512 != AES_KEY_SIZE_512) ||
+        ((uint32_t)OH_HUKS_DH_KEY_SIZE_2048 != DH_KEY_SIZE_2048) ||
+        ((uint32_t)OH_HUKS_DH_KEY_SIZE_3072 != DH_KEY_SIZE_3072) ||
+        ((uint32_t)OH_HUKS_DH_KEY_SIZE_4096 != DH_KEY_SIZE_4096) ||
+        ((uint32_t)OH_HUKS_SM2_KEY_SIZE_256 != SM2_KEY_SIZE_256) ||
+        ((uint32_t)OH_HUKS_SM4_KEY_SIZE_128 != SM4_KEY_SIZE_128)) {
         return -1;
     }
     

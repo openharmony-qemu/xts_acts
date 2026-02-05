@@ -302,7 +302,7 @@ static OH_Huks_Result HksTestSignVerify(const struct OH_Huks_Blob *keyAlias, con
             break;
         }
 
-        struct OH_Huks_Param *tmpParam = NULL;
+        struct OH_Huks_Param *tmpParam = nullptr;
         ret = OH_Huks_GetParam(paramSet, OH_HUKS_TAG_PURPOSE, &tmpParam);
         if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
             break;
