@@ -233,6 +233,8 @@ async function savePhoto() {
     await driveFn(); 
     readWriteFile(uri, result[0]);
     console.log('savePhoto success');
+  } catch (error) {
+    console.log('savePhoto fail')
   }
 }
 
