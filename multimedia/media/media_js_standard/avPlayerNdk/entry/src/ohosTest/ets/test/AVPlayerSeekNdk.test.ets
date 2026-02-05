@@ -216,41 +216,41 @@ export default function AVPlayerSeekNdk() {
       await avplayer.release();
       done();
     });
-     /** 
-      * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_0600 
-      * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_0600 
-      * @tc.desc   test seekAvPlayerStateTest 
-      * @tc.type   FUNCTION 
-      * @tc.size   MEDIUMTEST 
-      * @tc.level  LEVEL0 
-      */ 
-     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_0600', Level.LEVEL0, async (done: Function) => { 
-      fileNameTest = "mpeg2video_320x240_60.mkv"; 
-      await getFileFd(fileNameTest); 
-      console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd); 
-      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length); 
-      expect(result).assertEqual(0); 
-      await Utils.sleep(5000) 
-      await avplayer.release(); 
-      done(); 
-    }); 
-    /** 
-     * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_1100 
-     * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_1100 
-     * @tc.desc   test seekAvPlayerStateTest 
-     * @tc.type   FUNCTION 
-     * @tc.size   MEDIUMTEST 
-     * @tc.level  LEVEL0 
-     */ 
-    it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_1100', Level.LEVEL0, async (done: Function) => { 
-      fileNameTest = "test_hdr_1.mp4"; 
-      await getFileFd(fileNameTest); 
-      console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd); 
-      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length); 
-      expect(result).assertEqual(0); 
-      await Utils.sleep(5000) 
-      await avplayer.release(); 
-      done(); 
+    /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_0600
+    * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_0600
+    * @tc.desc   test seekAvPlayerStateTest
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_0600', Level.LEVEL0, async (done: Function) => {
+      fileNameTest = "mpeg2video_320x240_60.mkv";
+      await getFileFd(fileNameTest);
+      console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
+      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      expect(result).assertEqual(0);
+      await Utils.sleep(5000)
+      await avplayer.release();
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_1100
+     * @tc.desc   test seekAvPlayerStateTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_1100', Level.LEVEL0, async (done: Function) => {
+      fileNameTest = "test_hdr_1.mp4";
+      await getFileFd(fileNameTest);
+      console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
+      let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
+      expect(result).assertEqual(0);
+      await Utils.sleep(5000)
+      await avplayer.release();
+      done();
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_0500
