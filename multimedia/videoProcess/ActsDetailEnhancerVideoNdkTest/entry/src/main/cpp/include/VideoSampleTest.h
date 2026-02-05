@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,8 +25,6 @@
 #include <native_buffer/buffer_common.h>
 #include <native_buffer/native_buffer.h>
 #include <multimedia/video_processing_engine/video_processing_types.h>
-
-
 
 typedef struct VideoProcessParam {
     OH_NativeBuffer_Format inFmt;

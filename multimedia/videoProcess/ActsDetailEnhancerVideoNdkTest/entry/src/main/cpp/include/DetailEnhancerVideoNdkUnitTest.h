@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,43 +20,43 @@ namespace OHOS {
 namespace Media {
 namespace VideoProcessingEngine {
 
-int vpeVideoNdk_01();
-int vpeVideoNdk_02();
-int vpeVideoNdk_03();
-int vpeVideoNdk_05();
-int vpeVideoNdk_06();
-int vpeVideoNdk_07();
-int vpeVideoNdk_08();
-int vpeVideoNdk_09();
-int vpeVideoNdk_10();
-int vpeVideoNdk_11();
-int vpeVideoNdk_12();
-int vpeVideoNdk_13();
-int vpeVideoNdk_14();
-int vpeVideoNdk_15();
-int vpeVideoNdk_16();
-int vpeVideoNdk_17();
-int vpeVideoNdk_18();
-int vpeVideoNdk_19();
-int vpeVideoNdk_20();
-int vpeVideoNdk_21();
-int vpeVideoNdk_22();
-int vpeVideoNdk_23();
-int vpeVideoNdk_24();
-int vpeVideoNdk_25();
-int vpeVideoNdk_26();
-int vpeVideoNdk_27();
-int vpeVideoNdk_28();
-int vpeVideoNdk_29();
-int vpeVideoNdk_30();
-int vpeVideoNdk_31();
-int vpeVideoNdk_32();
-int vpeVideoNdk_33();
-int vpeVideoNdk_34();
-int vpeVideoNdk_34_2();
-int vpeVideoNdk_35();
-int vpeVideoNdk_37();
-int vpeVideoNdk_38();
+int VpeVideoNdk01();
+int VpeVideoNdk02();
+int VpeVideoNdk03();
+int VpeVideoNdk05();
+int VpeVideoNdk06();
+int VpeVideoNdk07();
+int VpeVideoNdk08();
+int VpeVideoNdk09();
+int VpeVideoNdk10();
+int VpeVideoNdk11();
+int VpeVideoNdk12();
+int VpeVideoNdk13();
+int VpeVideoNdk14();
+int VpeVideoNdk15();
+int VpeVideoNdk16();
+int VpeVideoNdk17();
+int VpeVideoNdk18();
+int VpeVideoNdk19();
+int VpeVideoNdk20();
+int VpeVideoNdk21();
+int VpeVideoNdk22();
+int VpeVideoNdk23();
+int VpeVideoNdk24();
+int VpeVideoNdk25();
+int VpeVideoNdk26();
+int VpeVideoNdk27();
+int VpeVideoNdk28();
+int VpeVideoNdk29();
+int VpeVideoNdk30();
+int VpeVideoNdk31();
+int VpeVideoNdk32();
+int VpeVideoNdk33();
+int VpeVideoNdk34();
+int VpeVideoNdk342();
+int VpeVideoNdk35();
+int VpeVideoNdk37();
+int VpeVideoNdk38();
 } // namespace VideoProcessingEngine
 } // namespace Media
 } // namespace OHOS

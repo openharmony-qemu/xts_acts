@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -87,14 +87,14 @@ uint32_t FlushSurf(OHNativeWindowBuffer* ohNativeWindowBuffer, OHNativeWindow* w
 
 // initialize context with nullptr
 /**
- * @tc.name   vpeVideoNdk_01
- * @tc.number vpeVideoNdk_01
- * @tc.desc   vpeVideoNdk_01
+ * @tc.name   VpeVideoNdk01
+ * @tc.number VpeVideoNdk01
+ * @tc.desc   VpeVideoNdk01
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_01()
+int VpeVideoNdk01()
 {
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -109,14 +109,14 @@ int vpeVideoNdk_01()
 
 // create context without initialization
 /**
- * @tc.name   vpeVideoNdk_02
- * @tc.number vpeVideoNdk_02
- * @tc.desc   vpeVideoNdk_02
+ * @tc.name   VpeVideoNdk02
+ * @tc.number VpeVideoNdk02
+ * @tc.desc   VpeVideoNdk02
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_02()
+int VpeVideoNdk02()
 {
     OH_VideoProcessing* instance = nullptr;
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_Create(&instance, CREATE_TYPE);
@@ -127,14 +127,14 @@ int vpeVideoNdk_02()
 
 // initialize context with wrong type
 /**
- * @tc.name   vpeVideoNdk_03
- * @tc.number vpeVideoNdk_03
- * @tc.desc   vpeVideoNdk_03
+ * @tc.name   VpeVideoNdk03
+ * @tc.number VpeVideoNdk03
+ * @tc.desc   VpeVideoNdk03
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_03()
+int VpeVideoNdk03()
 {
     int badCreateType = 0x3; // 3 is not support
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_InitializeEnvironment();
@@ -150,14 +150,14 @@ int vpeVideoNdk_03()
 
 // destroy context without create
 /**
- * @tc.name   vpeVideoNdk_05
- * @tc.number vpeVideoNdk_05
- * @tc.desc   vpeVideoNdk_05
+ * @tc.name   VpeVideoNdk05
+ * @tc.number VpeVideoNdk05
+ * @tc.desc   VpeVideoNdk05
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_05()
+int VpeVideoNdk05()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -170,14 +170,14 @@ int vpeVideoNdk_05()
 
 // destroy context without create or initialize
 /**
- * @tc.name   vpeVideoNdk_06
- * @tc.number vpeVideoNdk_06
- * @tc.desc   vpeVideoNdk_06
+ * @tc.name   VpeVideoNdk06
+ * @tc.number VpeVideoNdk06
+ * @tc.desc   VpeVideoNdk06
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_06()
+int VpeVideoNdk06()
 {
     OH_VideoProcessing* instance = nullptr;
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_Destroy(instance);
@@ -187,14 +187,14 @@ int vpeVideoNdk_06()
 
 // support check with null
 /**
- * @tc.name   vpeVideoNdk_07
- * @tc.number vpeVideoNdk_07
- * @tc.desc   vpeVideoNdk_07
+ * @tc.name   VpeVideoNdk07
+ * @tc.number VpeVideoNdk07
+ * @tc.desc   VpeVideoNdk07
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_07()
+int VpeVideoNdk07()
 {
     OH_VideoProcessing_InitializeEnvironment();
     bool res = OH_VideoProcessing_IsColorSpaceConversionSupported(nullptr, nullptr);
@@ -205,14 +205,14 @@ int vpeVideoNdk_07()
 
 // support check
 /**
- * @tc.name   vpeVideoNdk_08
- * @tc.number vpeVideoNdk_08
- * @tc.desc   vpeVideoNdk_08
+ * @tc.name   VpeVideoNdk08
+ * @tc.number VpeVideoNdk08
+ * @tc.desc   VpeVideoNdk08
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_08()
+int VpeVideoNdk08()
 {
     OH_VideoProcessing_InitializeEnvironment();
     bool res = OH_VideoProcessing_IsColorSpaceConversionSupported(&SRC_INFO, &DST_INFO);
@@ -223,14 +223,14 @@ int vpeVideoNdk_08()
 
 // support check 2
 /**
- * @tc.name   vpeVideoNdk_09
- * @tc.number vpeVideoNdk_09
- * @tc.desc   vpeVideoNdk_09
+ * @tc.name   VpeVideoNdk09
+ * @tc.number VpeVideoNdk09
+ * @tc.desc   VpeVideoNdk09
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_09()
+int VpeVideoNdk09()
 {
     OH_VideoProcessing_InitializeEnvironment();
     bool res = OH_VideoProcessing_IsColorSpaceConversionSupported(&SRC_INFO, nullptr);
@@ -241,14 +241,14 @@ int vpeVideoNdk_09()
 
 // support check 3
 /**
- * @tc.name   vpeVideoNdk_10
- * @tc.number vpeVideoNdk_10
- * @tc.desc   vpeVideoNdk_10
+ * @tc.name   VpeVideoNdk10
+ * @tc.number VpeVideoNdk10
+ * @tc.desc   VpeVideoNdk10
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_10()
+int VpeVideoNdk10()
 {
     OH_VideoProcessing_InitializeEnvironment();
     bool res = OH_VideoProcessing_IsColorSpaceConversionSupported(nullptr, &DST_INFO);
@@ -259,14 +259,14 @@ int vpeVideoNdk_10()
 
 // metagen check
 /**
- * @tc.name   vpeVideoNdk_11
- * @tc.number vpeVideoNdk_11
- * @tc.desc   vpeVideoNdk_11
+ * @tc.name   VpeVideoNdk11
+ * @tc.number VpeVideoNdk11
+ * @tc.desc   VpeVideoNdk11
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_11()
+int VpeVideoNdk11()
 {
     OH_VideoProcessing_InitializeEnvironment();
     bool ret = OH_VideoProcessing_IsMetadataGenerationSupported(nullptr);
@@ -277,14 +277,14 @@ int vpeVideoNdk_11()
 
 // metagen check 2
 /**
- * @tc.name   vpeVideoNdk_12
- * @tc.number vpeVideoNdk_12
- * @tc.desc   vpeVideoNdk_12
+ * @tc.name   VpeVideoNdk12
+ * @tc.number VpeVideoNdk12
+ * @tc.desc   VpeVideoNdk12
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_12()
+int VpeVideoNdk12()
 {
     OH_VideoProcessing_InitializeEnvironment();
     bool ret = OH_VideoProcessing_IsMetadataGenerationSupported(&SRC_INFO);
@@ -295,14 +295,14 @@ int vpeVideoNdk_12()
 
 // metagen check 3
 /**
- * @tc.name   vpeVideoNdk_13
- * @tc.number vpeVideoNdk_13
- * @tc.desc   vpeVideoNdk_13
+ * @tc.name   VpeVideoNdk13
+ * @tc.number VpeVideoNdk13
+ * @tc.desc   VpeVideoNdk13
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_13()
+int VpeVideoNdk13()
 {
     OH_VideoProcessing_InitializeEnvironment();
     bool ret = OH_VideoProcessing_IsMetadataGenerationSupported(&DST_INFO);
@@ -313,14 +313,14 @@ int vpeVideoNdk_13()
 
 // set parameter to nullptr
 /**
- * @tc.name   vpeVideoNdk_14
- * @tc.number vpeVideoNdk_14
- * @tc.desc   vpeVideoNdk_14
+ * @tc.name   VpeVideoNdk14
+ * @tc.number VpeVideoNdk14
+ * @tc.desc   VpeVideoNdk14
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_14()
+int VpeVideoNdk14()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -335,14 +335,14 @@ int vpeVideoNdk_14()
 
 // set parameter quality level to high
 /**
- * @tc.name   vpeVideoNdk_15
- * @tc.number vpeVideoNdk_15
- * @tc.desc   vpeVideoNdk_15
+ * @tc.name   VpeVideoNdk15
+ * @tc.number VpeVideoNdk15
+ * @tc.desc   VpeVideoNdk15
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_15()
+int VpeVideoNdk15()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -359,14 +359,14 @@ int vpeVideoNdk_15()
 
 // set parameter quality level to medium
 /**
- * @tc.name   vpeVideoNdk_16
- * @tc.number vpeVideoNdk_16
- * @tc.desc   vpeVideoNdk_16
+ * @tc.name   VpeVideoNdk16
+ * @tc.number VpeVideoNdk16
+ * @tc.desc   VpeVideoNdk16
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_16()
+int VpeVideoNdk16()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -383,14 +383,14 @@ int vpeVideoNdk_16()
 
 // set parameter quality level to low
 /**
- * @tc.name   vpeVideoNdk_17
- * @tc.number vpeVideoNdk_17
- * @tc.desc   vpeVideoNdk_17
+ * @tc.name   VpeVideoNdk17
+ * @tc.number VpeVideoNdk17
+ * @tc.desc   VpeVideoNdk17
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_17()
+int VpeVideoNdk17()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -407,14 +407,14 @@ int vpeVideoNdk_17()
 
 // set parameter quality level to none
 /**
- * @tc.name   vpeVideoNdk_18
- * @tc.number vpeVideoNdk_18
- * @tc.desc   vpeVideoNdk_18
+ * @tc.name   VpeVideoNdk18
+ * @tc.number VpeVideoNdk18
+ * @tc.desc   VpeVideoNdk18
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_18()
+int VpeVideoNdk18()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -432,14 +432,14 @@ int vpeVideoNdk_18()
 
 // get parameter to non-nullptr
 /**
- * @tc.name   vpeVideoNdk_19
- * @tc.number vpeVideoNdk_19
- * @tc.desc   vpeVideoNdk_19
+ * @tc.name   VpeVideoNdk19
+ * @tc.number VpeVideoNdk19
+ * @tc.desc   VpeVideoNdk19
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_19()
+int VpeVideoNdk19()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -454,14 +454,14 @@ int vpeVideoNdk_19()
 
 // get parameter to nullptr
 /**
- * @tc.name   vpeVideoNdk_20
- * @tc.number vpeVideoNdk_20
- * @tc.desc   vpeVideoNdk_20
+ * @tc.name   VpeVideoNdk20
+ * @tc.number VpeVideoNdk20
+ * @tc.desc   VpeVideoNdk20
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_20()
+int VpeVideoNdk20()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -476,14 +476,14 @@ int vpeVideoNdk_20()
 
 // get parameter after setting to high
 /**
- * @tc.name   vpeVideoNdk_21
- * @tc.number vpeVideoNdk_21
- * @tc.desc   vpeVideoNdk_21
+ * @tc.name   VpeVideoNdk21
+ * @tc.number VpeVideoNdk21
+ * @tc.desc   VpeVideoNdk21
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_21()
+int VpeVideoNdk21()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -502,14 +502,14 @@ int vpeVideoNdk_21()
 
 // set surface with surface from another instance
 /**
- * @tc.name   vpeVideoNdk_22
- * @tc.number vpeVideoNdk_22
- * @tc.desc   vpeVideoNdk_22
+ * @tc.name   VpeVideoNdk22
+ * @tc.number VpeVideoNdk22
+ * @tc.desc   VpeVideoNdk22
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_22()
+int VpeVideoNdk22()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -529,14 +529,14 @@ int vpeVideoNdk_22()
 
 // set surface with nullptr
 /**
- * @tc.name   vpeVideoNdk_23
- * @tc.number vpeVideoNdk_23
- * @tc.desc   vpeVideoNdk_23
+ * @tc.name   VpeVideoNdk23
+ * @tc.number VpeVideoNdk23
+ * @tc.desc   VpeVideoNdk23
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_23()
+int VpeVideoNdk23()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -551,14 +551,14 @@ int vpeVideoNdk_23()
 
 // get surface to nullptr
 /**
- * @tc.name   vpeVideoNdk_24
- * @tc.number vpeVideoNdk_24
- * @tc.desc   vpeVideoNdk_24
+ * @tc.name   VpeVideoNdk24
+ * @tc.number VpeVideoNdk24
+ * @tc.desc   VpeVideoNdk24
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_24()
+int VpeVideoNdk24()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -573,14 +573,14 @@ int vpeVideoNdk_24()
 
 // create callback function
 /**
- * @tc.name   vpeVideoNdk_25
- * @tc.number vpeVideoNdk_25
- * @tc.desc   vpeVideoNdk_25
+ * @tc.name   VpeVideoNdk25
+ * @tc.number VpeVideoNdk25
+ * @tc.desc   VpeVideoNdk25
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_25()
+int VpeVideoNdk25()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -595,14 +595,14 @@ int vpeVideoNdk_25()
 
 // create and destroy callback function
 /**
- * @tc.name   vpeVideoNdk_26
- * @tc.number vpeVideoNdk_26
- * @tc.desc   vpeVideoNdk_26
+ * @tc.name   VpeVideoNdk26
+ * @tc.number VpeVideoNdk26
+ * @tc.desc   VpeVideoNdk26
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_26()
+int VpeVideoNdk26()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -618,14 +618,14 @@ int vpeVideoNdk_26()
 
 // destroy callback without create
 /**
- * @tc.name   vpeVideoNdk_27
- * @tc.number vpeVideoNdk_27
- * @tc.desc   vpeVideoNdk_27
+ * @tc.name   VpeVideoNdk27
+ * @tc.number VpeVideoNdk27
+ * @tc.desc   VpeVideoNdk27
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_27()
+int VpeVideoNdk27()
 {
     VideoProcessing_Callback* callback = nullptr;
     VideoProcessing_ErrorCode ret = OH_VideoProcessingCallback_Destroy(callback);
@@ -635,14 +635,14 @@ int vpeVideoNdk_27()
 
 // create callback function then register
 /**
- * @tc.name   vpeVideoNdk_28
- * @tc.number vpeVideoNdk_28
- * @tc.desc   vpeVideoNdk_28
+ * @tc.name   VpeVideoNdk28
+ * @tc.number VpeVideoNdk28
+ * @tc.desc   VpeVideoNdk28
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_28()
+int VpeVideoNdk28()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -666,14 +666,14 @@ int vpeVideoNdk_28()
 
 // create callback but register null function
 /**
- * @tc.name   vpeVideoNdk_29
- * @tc.number vpeVideoNdk_29
- * @tc.desc   vpeVideoNdk_29
+ * @tc.name   VpeVideoNdk29
+ * @tc.number VpeVideoNdk29
+ * @tc.desc   VpeVideoNdk29
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_29()
+int VpeVideoNdk29()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -698,14 +698,14 @@ int vpeVideoNdk_29()
 
 // createa and destroy callback function with register
 /**
- * @tc.name   vpeVideoNdk_30
- * @tc.number vpeVideoNdk_30
- * @tc.desc   vpeVideoNdk_30
+ * @tc.name   VpeVideoNdk30
+ * @tc.number VpeVideoNdk30
+ * @tc.desc   VpeVideoNdk30
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_30()
+int VpeVideoNdk30()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -727,14 +727,14 @@ int vpeVideoNdk_30()
 
 // create callback and register but instance is nullptr
 /**
- * @tc.name   vpeVideoNdk_31
- * @tc.number vpeVideoNdk_31
- * @tc.desc   vpeVideoNdk_31
+ * @tc.name   VpeVideoNdk31
+ * @tc.number VpeVideoNdk31
+ * @tc.desc   VpeVideoNdk31
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_31()
+int VpeVideoNdk31()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -755,14 +755,14 @@ int vpeVideoNdk_31()
 
 // create callback and register but callback is nullptr
 /**
- * @tc.name   vpeVideoNdk_32
- * @tc.number vpeVideoNdk_32
- * @tc.desc   vpeVideoNdk_32
+ * @tc.name   VpeVideoNdk32
+ * @tc.number VpeVideoNdk32
+ * @tc.desc   VpeVideoNdk32
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_32()
+int VpeVideoNdk32()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -784,14 +784,14 @@ int vpeVideoNdk_32()
 
 // start processing with flush surface then stop
 /**
- * @tc.name   vpeVideoNdk_33
- * @tc.number vpeVideoNdk_33
- * @tc.desc   vpeVideoNdk_33
+ * @tc.name   VpeVideoNdk33
+ * @tc.number VpeVideoNdk33
+ * @tc.desc   VpeVideoNdk33
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_33()
+int VpeVideoNdk33()
 {
     OHNativeWindowBuffer* ohNativeWindowBuffer;
     OH_VideoProcessing_InitializeEnvironment();
@@ -832,14 +832,14 @@ int vpeVideoNdk_33()
 
 // bind on null callback
 /**
- * @tc.name   vpeVideoNdk_34
- * @tc.number vpeVideoNdk_34
- * @tc.desc   vpeVideoNdk_34
+ * @tc.name   VpeVideoNdk34
+ * @tc.number VpeVideoNdk34
+ * @tc.desc   VpeVideoNdk34
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_34()
+int VpeVideoNdk34()
 {
     OHNativeWindowBuffer* ohNativeWindowBuffer;
     OH_VideoProcessing_InitializeEnvironment();
@@ -881,14 +881,14 @@ int vpeVideoNdk_34()
 
 // register null callback
 /**
- * @tc.name   vpeVideoNdk_34_2
- * @tc.number vpeVideoNdk_34_2
- * @tc.desc   vpeVideoNdk_34_2
+ * @tc.name   VpeVideoNdk342
+ * @tc.number VpeVideoNdk342
+ * @tc.desc   VpeVideoNdk342
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_34_2()
+int VpeVideoNdk342()
 {
     OHNativeWindowBuffer* ohNativeWindowBuffer;
     OH_VideoProcessing_InitializeEnvironment();
@@ -926,14 +926,14 @@ int vpeVideoNdk_34_2()
 
 // call output buffer
 /**
- * @tc.name   vpeVideoNdk_35
- * @tc.number vpeVideoNdk_35
- * @tc.desc   vpeVideoNdk_35
+ * @tc.name   VpeVideoNdk35
+ * @tc.number VpeVideoNdk35
+ * @tc.desc   VpeVideoNdk35
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_35()
+int VpeVideoNdk35()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -946,14 +946,14 @@ int vpeVideoNdk_35()
 
 // bind callback after start
 /**
- * @tc.name   vpeVideoNdk_37
- * @tc.number vpeVideoNdk_37
- * @tc.desc   vpeVideoNdk_37
+ * @tc.name   VpeVideoNdk37
+ * @tc.number VpeVideoNdk37
+ * @tc.desc   VpeVideoNdk37
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_37()
+int VpeVideoNdk37()
 {
     OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
@@ -968,20 +968,20 @@ int vpeVideoNdk_37()
 
 // sample multi thread start
 /**
- * @tc.name   vpeVideoNdk_38
- * @tc.number vpeVideoNdk_38
- * @tc.desc   vpeVideoNdk_38
+ * @tc.name   VpeVideoNdk38
+ * @tc.number VpeVideoNdk38
+ * @tc.desc   VpeVideoNdk38
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int vpeVideoNdk_38()
+int VpeVideoNdk38()
 {
     std::unique_ptr<VideoSample> sample = std::make_unique<VideoSample>();
     sample->SetQualityLevel(VIDEO_DETAIL_ENHANCER_QUALITY_LEVEL_HIGH);
-    VideoProcessParam Param = { NATIVEBUFFER_PIXEL_FMT_YCRCB_420_P, 480,  360,
+    VideoProcessParam param = { NATIVEBUFFER_PIXEL_FMT_YCRCB_420_P, 480,  360,
                                 NATIVEBUFFER_PIXEL_FMT_YCRCB_420_P, 1280, 720 };
-    int32_t ret = sample->InitVideoSample(Param);
+    int32_t ret = sample->InitVideoSample(param);
     EXPECT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
     sample->StartProcess();
     EXPECT_EQ(sample->WaitAndStopSample(), VIDEO_PROCESSING_SUCCESS);

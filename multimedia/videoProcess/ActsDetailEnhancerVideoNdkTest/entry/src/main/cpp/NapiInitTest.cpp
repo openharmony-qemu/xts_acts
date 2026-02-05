@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,50 +36,50 @@ template <size_t N> int DispatchByCaseNum(int caseNum, const std::array<TestFn, 
     return handlers[caseNum]();
 }
 
-static napi_value VPE_VIDEO_NDK(napi_env env, napi_callback_info info)
+static napi_value VpeVideoTest(napi_env env, napi_callback_info info)
 {
     OHPrintf("debug,VPE_VIDEO_NDK");
     const int videoNdkFuncSize = 37; // Total 37 test functions
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         static const std::array<TestFn, videoNdkFuncSize> handlers = {
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_01,   // index 0
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_02,   // index 1
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_03,   // index 2
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_05,   // index 3
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_06,   // index 4
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_07,   // index 5
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_08,   // index 6
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_09,   // index 7
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_10,   // index 8
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_11,   // index 9
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_12,   // index 10
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_13,   // index 11
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_14,   // index 12
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_15,   // index 13
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_16,   // index 14
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_17,   // index 15
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_18,   // index 16
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_19,   // index 17
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_20,   // index 18
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_21,   // index 19
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_22,   // index 20
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_23,   // index 21
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_24,   // index 22
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_25,   // index 23
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_26,   // index 24
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_27,   // index 25
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_28,   // index 26
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_29,   // index 27
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_30,   // index 28
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_31,   // index 29
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_32,   // index 30
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_33,   // index 31
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_34,   // index 32
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_34_2, // index 33
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_35,   // index 34
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_37,   // index 35
-            OHOS::Media::VideoProcessingEngine::vpeVideoNdk_38,   // index 36
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk01,   // index 0
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk02,   // index 1
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk03,   // index 2
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk05,   // index 3
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk06,   // index 4
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk07,   // index 5
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk08,   // index 6
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk09,   // index 7
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk10,   // index 8
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk11,   // index 9
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk12,   // index 10
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk13,   // index 11
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk14,   // index 12
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk15,   // index 13
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk16,   // index 14
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk17,   // index 15
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk18,   // index 16
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk19,   // index 17
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk20,   // index 18
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk21,   // index 19
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk22,   // index 20
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk23,   // index 21
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk24,   // index 22
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk25,   // index 23
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk26,   // index 24
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk27,   // index 25
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk28,   // index 26
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk29,   // index 27
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk30,   // index 28
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk31,   // index 29
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk32,   // index 30
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk33,   // index 31
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk34,   // index 32
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk342, // index 33
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk35,   // index 34
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk37,   // index 35
+            OHOS::Media::VideoProcessingEngine::VpeVideoNdk38,   // index 36
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;
@@ -96,7 +96,7 @@ inline napi_property_descriptor MakeNapiDesc(const char* name, napi_callback cb)
 #define DECL_NAPI_DESC(fn) /* NOLINT(G.PRE.02-CPP) */ MakeNapiDesc(#fn, fn)
 
 static const napi_property_descriptor g_mindsporeDescriptors[] = {
-    DECL_NAPI_DESC(VPE_VIDEO_NDK),
+    DECL_NAPI_DESC(VpeVideoTest),
 };
 
 EXTERN_C_START
