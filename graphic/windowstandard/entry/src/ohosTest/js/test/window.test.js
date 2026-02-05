@@ -2215,7 +2215,7 @@ export default function window_test() {
                 done();
             } catch (err) {
                 console.error(msgStr + ' windowproperties error ' + JSON.stringify(err));
-                expect.assertFail();
+                expect().assertFail();
                 done();
             }
         })

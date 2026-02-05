@@ -331,7 +331,7 @@ export default function requestUploadJSUnit() {
         });
       } catch (e) {
         console.error("====>SUB_REQUEST_UPLOAD_API_PROMISE_0001 error: " + JSON.stringify(e));
-        expect(true).assertFail(true);
+        expect(true).assertFail();
       }
     });
 

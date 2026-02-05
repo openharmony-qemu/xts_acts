@@ -90,7 +90,7 @@ it('drawCanvas_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
         try {
           let value: drawing.Canvas | undefined =
             AppStorage.get<drawing.Canvas | undefined>("canvas");
-          // expect(value).assertNotEqual(undefined)
+          // expect(value).not().assertEqual(undefined)
           expect(value !== undefined).assertEqual(true);
         } catch (err) {
           console.error("push drawCanvas page error" + JSON.stringify(err));
