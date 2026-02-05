@@ -56,7 +56,7 @@ export default function wallpaperAuthorityJSUnit() {
         it('testGetColorsCallbackSystem101', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetColorsCallbackSystem101 start-----------------');
             await wallpaper.setWallpaper(imageSourceLockscreen, wallpaper.WallpaperType.WALLPAPER_SYSTEM);
-            wallpaper.getColors(WALLPAPER_SYSTEM, (err, RgbaColors) => {
+            wallpaper.getColors(wallpaper.WallpaperType.WALLPAPER_SYSTEM, (err, RgbaColors) => {
                 try {
                     if (err) {
                         console.info('====>testGetColorsCallbackSystem101  fail: ' + JSON.stringify(err));
@@ -116,7 +116,7 @@ export default function wallpaperAuthorityJSUnit() {
         it('testGetColorsCallbackLock102', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetColorsCallbackLock102 start-----------------');
             await wallpaper.setWallpaper(imageSourceLockscreen, wallpaper.WallpaperType.WALLPAPER_LOCKSCREEN);
-            wallpaper.getColors(WALLPAPER_LOCKSCREEN, (err, RgbaColors) => {
+            wallpaper.getColors(wallpaper.WallpaperType.WALLPAPER_LOCKSCREEN, (err, RgbaColors) => {
                 try {
                     if (err) {
                         console.info('====>testGetColorsCallbackLock102  fail: ' + JSON.stringify(err));
@@ -175,13 +175,8 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testResetCallbackSystem101 start-----------------');
             wallpaper.reset(wallpaper.WallpaperType.WALLPAPER_SYSTEM, (err, data) => {
                 try {
-                    if (err) {
-                        console.info('====>testResetCallbackSystem101 fail: ' + JSON.stringify(err));
-                        expect().assertFail();
-                        done();
-                    }
-                    console.info('====>testResetCallbackSystem101 successful data: ' + JSON.stringify(data));
-                    expect(true).assertTrue();
+                    console.info(`====>testResetCallbackSystem101 successful data: ${JSON.stringify(data)},err: ${JSON.stringify(err)}`);
+                    expect(err == undefined).assertTrue();
                     done();
                 } catch (err) {
                     console.info('====>testResetCallbackSystem101 catch err : ' + JSON.stringify(err));
@@ -203,7 +198,7 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testResetPromiseSystem101 start-----------------');
             await wallpaper.reset(WALLPAPER_SYSTEM).then((data) => {
                 console.info('====>testResetPromiseSystem101 successful data : ' + JSON.stringify(data));
-                expect(true).assertTrue();
+                expect(data == undefined).assertTrue();
                 done();
             }).catch((error: BusinessError) => {
                 console.info('====>testResetPromiseSystem101 err : ' + JSON.stringify(error));
@@ -225,13 +220,8 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testResetCallbackLock102 start-----------------');
             wallpaper.reset(wallpaper.WallpaperType.WALLPAPER_LOCKSCREEN, (err, data) => {
                 try {
-                    if (err) {
-                        console.info('====>testResetCallbackLock102 fail: ' + JSON.stringify(err));
-                        expect().assertFail();
-                        done();
-                    }
-                    console.info('====>testResetCallbackLock102 successful data: ' + JSON.stringify(data));
-                    expect(true).assertTrue();
+                    console.info(`====>testResetCallbackLock102 successful data: ${JSON.stringify(data)},err: ${JSON.stringify(err)}`);
+                    expect(err == undefined).assertTrue();
                     done();
                 } catch (err) {
                     console.info('====>testResetCallbackLock102 catch err : ' + JSON.stringify(err));
@@ -253,7 +243,7 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testResetPromiseLock102 start-----------------');
             await wallpaper.reset(WALLPAPER_LOCKSCREEN).then((data) => {
                 console.info('====>testResetPromiseLock102 successful data : ' + JSON.stringify(data));
-                expect(true).assertTrue();
+                expect(data == undefined).assertTrue();
                 done();
             }).catch((error: BusinessError) => {
                 console.info('====>testResetPromiseLock102 err : ' + JSON.stringify(error));
@@ -275,7 +265,7 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------------testSetWallpaperURLPromiseLock104 start------------------' );
             await wallpaper.setWallpaper(imageSourceLockscreen, WALLPAPER_LOCKSCREEN).then((data) => {
                 console.info('====>testSetWallpaperURLPromiseLock104 successful data : ' + data);
-                expect(true).assertTrue();
+                expect(data == undefined).assertTrue();
                 done();
             }).catch((error: BusinessError) => {
                 console.info('====>testSetWallpaperURLPromiseLock104 fail: ' + error);
@@ -297,13 +287,8 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------------testSetWallpaperURLCallbackSystem103 start------------------' );
             wallpaper.setWallpaper(imageSourceSystem, WALLPAPER_SYSTEM, (err, data) => {
                 try{
-                    if (err) {
-                        console.info('====->testSetWallpaperURLCallbackSystem103 err : ' + err);
-                        expect().assertFail();
-                        done();
-                    }
-                    console.info('====>testSetWallpaperURLCallbackSystem103 successful data: ' + data);
-                    expect(true).assertTrue();
+                    console.info(`====>testSetWallpaperURLCallbackSystem103 successful data: ${data},err: ${err}`);
+                    expect(err == undefined).assertTrue();
                     done();
                 }catch(error){
                     console.info('testSetWallpaperURLCallbackSystem103 catch error: ' + error);
@@ -325,7 +310,7 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------------testSetWallpaperURLPromiseSystem103 start------------------' );
             await wallpaper.setWallpaper(imageSourceLockscreen, WALLPAPER_LOCKSCREEN).then((data) => {
                 console.info('====>testSetWallpaperURLPromiseSystem103 successful data : ' + data);
-                expect(true).assertTrue();
+                expect(data == undefined).assertTrue();
                 done();
             }).catch((error: BusinessError) => {
                 console.info('====>testSetWallpaperURLPromiseSystem103 fail: ' + error);
@@ -347,13 +332,8 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------------testSetWallpaperURLCallbackLock104 start------------------' );
             wallpaper.setWallpaper(imageSourceSystem, WALLPAPER_LOCKSCREEN, (err, data) => {
                 try{
-                    if (err) {
-                        console.info('====->testSetWallpaperURLCallbackLock104 err : ' + err);
-                        expect().assertFail();
-                        done();
-                    }
-                    console.info('====>testSetWallpaperURLCallbackLock104 successful data: ' + data);
-                    expect(true).assertTrue();
+                    console.info(`====>testSetWallpaperURLCallbackLock104 successful data: ${data},err: ${err}`);
+                    expect(err == undefined).assertTrue();
                     done();
                 }catch(error){
                     console.info('testSetWallpaperURLCallbackLock104 catch error: ' + error);
@@ -449,7 +429,7 @@ export default function wallpaperAuthorityJSUnit() {
          */
         it('testGetFileCallback101', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetFileCallback101 start-----------------');
-            wallpaper.getFile(WALLPAPER_SYSTEM, (err, data) => {
+            wallpaper.getFile(wallpaper.WallpaperType.WALLPAPER_SYSTEM, (err, data) => {
                 try {
                     if (err) {
                         console.info('====>testGetFileCallback101 fail: ' + JSON.stringify(err));
