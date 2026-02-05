@@ -1,6 +1,25 @@
 body:
   - type: markdown
     attributes:
+      value: "# Review 工具辅助生成用例"
+    
+  - type: dropdown
+    id: review_check_1
+    attributes:
+      label: "标识提交信息中包含 Co-authored-by: Agent 标签"
+      options:
+        - 满足
+        - 不涉及
+    validations:
+      required: true
+
+  - type: input
+    id: review_check_1_notes
+    attributes:
+      placeholder: 备注（不涉及需说明原因）
+
+  - type: markdown
+    attributes:
       value: |
         # 新增用例检查项
         请自我检视，并确认以下项目
