@@ -52,6 +52,7 @@ import {
 } from '@ohos.file.RecentPhotoComponent';
 import { fileUri } from '@kit.CoreFileKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import fs, { ReadOptions, WriteOptions } from '@ohos.file.fs';
 
 const SEEK_START = 3;
 const SEEK_FINISH = 4;
@@ -212,6 +213,52 @@ async function testCompleteButton(driver: Driver, options: router.RouterOptions,
   }
   await CommonFunc.sleep(1000);
   router.back();
+}
+
+async function savePhoto() {
+  console.log('savePhoto start');
+  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext(this));
+  try {
+    let uri = 'data/storage/el2/base/haps/files/demo.jpg';
+    let fileUriList = [fileUri.getUriFromPath(uri)];
+    let photoCreationConfig: Array<photoAccessHelper.PhotoCreationConfig> = [
+      {
+        title: 'showAssetsCreationDialogTest',
+        fileNameExtension: 'jpg',
+        photoType: photoAccessHelper.PhotoType.IMAGE,
+        subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
+      }
+    ];
+    let result: string[] = await phAccessHelper.showAssetsCreationDialog(fileUriList, photoCreationConfig);
+    await driveFn(); 
+    readWriteFile(uri, result[0]);
+    console.log('savePhoto success');
+  }
+}
+
+function readWriteFile(srcUri: string, dstUri: string) {
+  let srcFile = fs.openSync(srcUri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+  let destFile = fs.openSync(dstUri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+  let bufSize = 4096;
+  let readSize = 0;
+  let buf = new ArrayBuffer(bufSize);
+  let readOptions: ReadOptions = {
+    offset: readSize,
+    length: bufSize
+  };
+  let readLen = fs.readSync(srcFile.fd, buf, readOptions);
+  console.log(`srcUri: ${srcUri}, dstUri: ${dstUri}, readLen: ${readLen}`);
+  while (readLen > 0) {
+    readSize += readLen;
+    let writeOptions: WriteOptions = {
+      length: readLen
+    };
+    fs.writeSync(destFile.fd, buf, writeOptions);
+    readOptions.offset = readSize;
+    readLen = fs.readSync(srcFile.fd, buf, readOptions);
+  }
+  fs.closeSync(srcFile);
+  fs.closeSync(destFile);
 }
 
 async function saveMovingPhoto() {
