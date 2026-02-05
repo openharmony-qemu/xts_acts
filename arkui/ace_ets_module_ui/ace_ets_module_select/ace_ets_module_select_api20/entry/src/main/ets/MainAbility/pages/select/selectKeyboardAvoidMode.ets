@@ -19,30 +19,6 @@ struct Index {
       value: 'bbb',
     },
     {
-      value: 'bbb',
-    },
-    {
-      value: 'bbb',
-    },
-    {
-      value: 'ccc',
-    },
-    {
-      value: 'bbb',
-    },
-    {
-      value: 'ccc',
-    },
-    {
-      value: 'bbb',
-    },
-    {
-      value: 'ccc',
-    },
-    {
-      value: 'bbb',
-    },
-    {
       value: 'ccc',
     },
     {
@@ -87,6 +63,7 @@ struct Index {
         })
       Select(this.selectOptions)
         .value('Click Show Options')
+        .selected(17)
         .id('select03')
         .keyboardAvoidMode(MenuKeyboardAvoidMode.TRANSLATE_AND_RESIZE)
         .minKeyboardAvoidDistance(LengthMetrics.vp(20))
@@ -96,7 +73,8 @@ struct Index {
           }, 2000)
         })
     }
-    .height('100%')
+    .position({ bottom: 20 })
+    .height('50%')
     .width('100%')
   }
 
