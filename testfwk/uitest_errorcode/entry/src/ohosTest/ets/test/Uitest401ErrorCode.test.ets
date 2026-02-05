@@ -4150,57 +4150,57 @@ export default function abilityTest() {
     })
 
      /**
-     * @tc.name   testApi20_Driver_isComponentPresentWhenLongClick_17000007
+     * @tc.name   testApi22_Driver_isComponentPresentWhenLongClick_17000007
      * @tc.number UiTest_uitest401_097
      * @tc.desc   type 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testApi20_Driver_isComponentPresentWhenLongClick_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(`${TestTag}, testApi20_Driver_isComponentPresentWhenLongClick_17000007 start`);
+    it('testApi22_Driver_isComponentPresentWhenLongClick_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi22_Driver_isComponentPresentWhenLongClick_17000007 start`);
       let driver = Driver.create()
       try {
         await driver.isComponentPresentWhenLongClick(null, {x: 100, y: 100}, 1600);
         expect().assertFail();
       } catch (error) {
-        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenLongClick_17000007, ON = null error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenLongClick_17000007, ON = null error is, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
         await driver.isComponentPresentWhenLongClick(undefined, {x: 100, y: 100}, 1600);
         expect().assertFail();
       } catch (error) {
-        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenLongClick_17000007, ON = undefined error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenLongClick_17000007, ON = undefined error is, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
         await driver.isComponentPresentWhenLongClick(ON.text('next page'), null, 1600);
         expect().assertFail();
       } catch (error) {
-        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenLongClick_17000007, point = null error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenLongClick_17000007, point = null error is, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
         await driver.isComponentPresentWhenLongClick(ON.text('next page'), undefined, 1600);
         expect().assertFail();
       } catch (error) {
-        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenLongClick_17000007, point = undefined error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenLongClick_17000007, point = undefined error is, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
         await driver.isComponentPresentWhenLongClick(ON.text('next page'), {x: 100, y: 100}, null);
       } catch (error) {
-        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenLongClick_17000007, spe = null error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenLongClick_17000007, spe = null error is, ${JSON.stringify(error)}`);
        expect().assertFail();
       }
       try {
         await driver.isComponentPresentWhenLongClick(ON.text('next page'), {x: 100, y: 100}, undefined);
       } catch (error) {
-        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenLongClick_17000007, spe = undefined error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenLongClick_17000007, spe = undefined error is, ${JSON.stringify(error)}`);
        expect().assertFail();
       }
-      console.log(`${TestTag}, testApi20_Driver_isComponentPresentWhenLongClick_17000007 END`);
+      console.log(`${TestTag}, testApi22_Driver_isComponentPresentWhenLongClick_17000007 END`);
     })
 
      /**
@@ -4211,48 +4211,191 @@ export default function abilityTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testApi20_Driver_isComponentPresentWhenDrag_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(`${TestTag}, testApi20_Driver_isComponentPresentWhenDrag_17000007 start`);
+    it('testApi22_Driver_isComponentPresentWhenDrag_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi22_Driver_isComponentPresentWhenDrag_17000007 start`);
       let driver = Driver.create()
       try {
         await driver.isComponentPresentWhenDrag(ON.text('next page'), {x: 100, y: 100}, null, 600, 1600);
         expect().assertFail();
       } catch (error) {
-        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenDrag_17000007, to = null error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenDrag_17000007, to = null error is, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
         await driver.isComponentPresentWhenDrag(ON.text('next page'), {x: 100, y: 100}, undefined, 600, 1600);
         expect().assertFail();
       } catch (error) {
-        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenDrag_17000007, to = undefined error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenDrag_17000007, to = undefined error is, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
         await driver.isComponentPresentWhenDrag(ON.text('next page'), {x: 100, y: 100}, {x: 200, y: 200}, null, 1600);
       } catch (error) {
-        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenDrag_17000007, sp = null error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenDrag_17000007, sp = null error is, ${JSON.stringify(error)}`);
          expect().assertFail();
       }
       try {
         await driver.isComponentPresentWhenDrag(ON.text('next page'), {x: 100, y: 100}, {x: 200, y: 200}, undefined, 1600);
       } catch (error) {
-        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenDrag_17000007, sp = undefined error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenDrag_17000007, sp = undefined error is, ${JSON.stringify(error)}`);
          expect().assertFail();
       }
       try {
         await driver.isComponentPresentWhenDrag(ON.text('next page'), {x: 100, y: 100}, {x: 200, y: 200}, 600, null);
       } catch (error) {
-        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenDrag_17000007, dur = null error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenDrag_17000007, dur = null error is, ${JSON.stringify(error)}`);
          expect().assertFail();
       }
       try {
         await driver.isComponentPresentWhenDrag(ON.text('next page'), {x: 100, y: 100}, {x: 200, y: 200}, 600, undefined);
       } catch (error) {
-        console.log(TestTag, `testApi20_Driver_isComponentPresentWhenDrag_17000007, dur = undefined error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenDrag_17000007, dur = undefined error is, ${JSON.stringify(error)}`);
          expect().assertFail();
       }
-      console.log(`${TestTag}, testApi20_Driver_isComponentPresentWhenDrag_17000007 END`);
+      console.log(`${TestTag}, testApi22_Driver_isComponentPresentWhenDrag_17000007 END`);
+    })
+
+     /**
+     * @tc.name   testApi22_Driver_isComponentPresentWhenSwipe_17000007
+     * @tc.number UiTest_uitest401_099
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi22_Driver_isComponentPresentWhenSwipe_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi22_Driver_isComponentPresentWhenSwipe_17000007 start`);
+      let driver = Driver.create()
+      try {
+        await driver.isComponentPresentWhenSwipe(ON.text('next page'), {x: 100, y: 100}, null, 600);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenSwipe_17000007, to = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenSwipe(ON.text('next page'), {x: 100, y: 100}, undefined, 600);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenSwipe_17000007, to = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenSwipe(ON.text('next page'), {x: 100, y: 100}, {x: 100, y: 100}, null);
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenSwipe_17000007, spe = null error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver.isComponentPresentWhenSwipe(ON.text('next page'), {x: 100, y: 100}, {x: 100, y: 100}, undefined);
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_isComponentPresentWhenSwipe_17000007, spe = undefined error is, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      console.log(`${TestTag}, testApi22_Driver_isComponentPresentWhenSwipe_17000007 END`);
+    })
+
+     /**
+     * @tc.name   testApi22_Driver_touchPadTwoFingersScroll_17000007
+     * @tc.number UiTest_uitest401_0100
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi22_Driver_touchPadTwoFingersScroll_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi22_Driver_touchPadTwoFingersScroll_17000007 start`);
+      let driver = Driver.create()
+      try {
+        await driver.touchPadTwoFingersScroll(null, UiDirection.LEFT, 30, 600);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_touchPadTwoFingersScroll_17000007, point = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.touchPadTwoFingersScroll(undefined, UiDirection.RIGHT, 30, 600);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_touchPadTwoFingersScroll_17000007, point = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.touchPadTwoFingersScroll({x: 100, y: 100}, UiDirection.UP, null, 600);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_touchPadTwoFingersScroll_17000007, d = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.touchPadTwoFingersScroll({x: 100, y: 100}, UiDirection.UP, undefined, 600);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_touchPadTwoFingersScroll_17000007, d = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.touchPadTwoFingersScroll({x: 100, y: 100}, UiDirection.UP, 50, null);
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_touchPadTwoFingersScroll_17000007, spe = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(17000005);
+      }
+      try {
+        await driver.touchPadTwoFingersScroll({x: 100, y: 100}, UiDirection.UP, 50, undefined);
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_touchPadTwoFingersScroll_17000007, spe = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(17000005);
+      }
+      console.log(`${TestTag}, testApi22_Driver_touchPadTwoFingersScroll_17000007 END`);
+    })
+
+     /**
+     * @tc.name   testApi22_Driver_knuckleKnock_17000007
+     * @tc.number UiTest_uitest401_0101
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi22_Driver_knuckleKnock_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi22_Driver_knuckleKnock_17000007 start`);
+      let driver = Driver.create()
+      try {
+        await driver.knuckleKnock([], 2);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_knuckleKnock_17000007, points = [] error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.knuckleKnock(null, 2);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_knuckleKnock_17000007, points = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.knuckleKnock(undefined, 2);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_knuckleKnock_17000007, points = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.knuckleKnock([{x: 100, y: 100}], null);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_knuckleKnock_17000007, time = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      try {
+        await driver.knuckleKnock([{x: 100, y: 100}], undefined);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_knuckleKnock_17000007, time = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
+      }
+      console.log(`${TestTag}, testApi22_Driver_knuckleKnock_17000007 END`);
     })
   })
 }
