@@ -217,13 +217,13 @@ export default function AVPlayerSeekNdk() {
       done();
     });
     /**
-    * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_0600
-    * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_0600
-    * @tc.desc   test seekAvPlayerStateTest
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
-    */
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_0600
+     * @tc.desc   test seekAvPlayerStateTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_INTEGRATION_ACCURATESEEKNDKINTERFACE_0600', Level.LEVEL0, async (done: Function) => {
       fileNameTest = "mpeg2video_320x240_60.mkv";
       await getFileFd(fileNameTest);
