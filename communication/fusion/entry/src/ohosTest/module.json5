@@ -46,11 +46,8 @@
     ],
     "requestPermissions":[
       {
-        "name": "ohos.permission.MANAGE_BLUETOOTH",
-    },
-    {
-        "name": "ohos.permission.ACCESS_BLUETOOTH",
-    }
+          "name": "ohos.permission.ACCESS_BLUETOOTH",
+      }
     ],
     "testRunner": {
       "name": "OpenHarmonyTestRunner",
