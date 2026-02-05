@@ -435,7 +435,7 @@ export default function DataObjectAddAPITest() {
       } catch (e) {
         let error: BusinessError = e as BusinessError;
         console.error(tag, `Failed. code: ${error.code}, message: ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code).assertEqual('401');
         done();
       }
       console.info(tag + '************ SUB_DistributedData_DataObject_BindAssetStoreTest_0100 end ************');
@@ -484,7 +484,7 @@ export default function DataObjectAddAPITest() {
       } catch (e) {
         let error: BusinessError = e as BusinessError;
         console.error(tag, `Failed. code: ${error.code}, message: ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code).assertEqual('401');
         done();
       }
       console.info(tag + '************ SUB_DistributedData_DataObject_BindAssetStoreTest_0200 end ************');
@@ -521,7 +521,7 @@ export default function DataObjectAddAPITest() {
         expect().assertFail();
       } catch (error) {
         console.info(`V9testbindAssetStore009 err is: ${error.code} and msg is: ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code).assertEqual('401');
       }
       console.info(tag + '************ SUB_DistributedData_DataObject_BindAssetStoreTest_0300 end ************');
     })
@@ -567,7 +567,7 @@ export default function DataObjectAddAPITest() {
         expect().assertFail();
       } catch (error) {
         console.info(`V9testbindAssetStore009 err is: ${error.code} and msg is: ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code).assertEqual('401');
       }
       console.info(tag + '************ SUB_DistributedData_DataObject_BindAssetStoreTest_0400 end ************');
     })
@@ -612,7 +612,7 @@ export default function DataObjectAddAPITest() {
         expect().assertFail();
       } catch (error) {
         console.info(`V9testbindAssetStore009 err is: ${error.code} and msg is: ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code).assertEqual('401');
       }
       console.info(tag + '************ SUB_DistributedData_DataObject_BindAssetStoreTest_0500 end ************');
     })
@@ -657,7 +657,7 @@ export default function DataObjectAddAPITest() {
         expect().assertFail();
       } catch (error) {
         console.info(`V9testbindAssetStore009 err is: ${error.code} and msg is: ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code).assertEqual('401');
       }
       console.info(tag + '************ SUB_DistributedData_DataObject_BindAssetStoreTest_0600 end ************');
     })

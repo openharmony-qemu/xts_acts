@@ -232,7 +232,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'save fail: error code = ' + err.code)
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
 
       console.info(TAG + '************ DataObjectErrTest05 end ************')
@@ -255,7 +255,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'revokeSave fail: error code = ' + err.code)
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest06 end ************')
     })
@@ -1958,7 +1958,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'Failed to on change20. code: ' + err.code + '.message:' + err.message);
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest80 end ************')
     })
@@ -1980,7 +1980,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'Failed to off change 20. code: ' + err.code + '.message:' + err.message);
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest81 end ************')
     })
@@ -2045,7 +2045,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'Failed to on status20. code: ' + err.code + '.message:' + err.message);
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest84 end ************')
     })
@@ -2068,7 +2068,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'Failed to on status20. code: ' + err.code + '.message:' + err.message);
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest85 end ************')
     })
@@ -2114,7 +2114,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'Failed to on status20. code: ' + err.code + '.message:' + err.message);
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest87 end ************')
     })
@@ -2137,7 +2137,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'Failed to on status20. code: ' + err.code + '.message:' + err.message);
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest88 end ************')
     })
@@ -2163,7 +2163,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'Failed to off status9. code: ' + err.code + '.message:' + err.message);
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest89 end ************')
     })
@@ -2189,7 +2189,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'Failed to off status9. code: ' + err.code + '.message:' + err.message);
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest90 end ************')
     })
@@ -2215,7 +2215,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'Failed to off change9. code: ' + err.code + '.message:' + err.message);
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest91 end ************')
     })
@@ -2241,7 +2241,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'Failed to off change9. code: ' + err.code + '.message:' + err.message);
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest92 end ************')
     })
@@ -2263,7 +2263,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'save fail: error code = ' + err.code)
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest93 end ************')
     })
@@ -2276,7 +2276,7 @@ export default function DataObjectErrTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('DataObjectErrTest94', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('DataObjectErrTest94', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ DataObjectErrTest94 start ************')
       let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
       await g_object.setSessionId("0123456789");
@@ -2285,7 +2285,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'save fail: error code = ' + err.code)
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest94 end ************')
     })
@@ -2306,7 +2306,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'Failed to on progressChanged. code: ' + err.code + '.message:' + err.message);
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest95 end ************');
     })
@@ -2327,7 +2327,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'Failed to on progressChanged. code: ' + err.code + '.message:' + err.message);
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest96 end ************');
     })
@@ -2349,7 +2349,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'Failed to off progressChanged. code: ' + err.code + '.message:' + err.message);
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest97 end ************');
     })
@@ -2371,7 +2371,7 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG + 'Failed to off progressChanged. code: ' + err.code + '.message:' + err.message);
-        expect(error.code == 401).assertTrue();
+        expect(err.code).assertEqual('401');
       }
       console.info(TAG + '************ DataObjectErrTest98 end ************');
     })
