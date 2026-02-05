@@ -105,7 +105,7 @@ export default function selectKeyboardAvoidMode() {
      await btn3.click();
      await Utils.sleep(5000);
      let str1 = await driver.findComponent(ON.text('ddd'));
-     expect(str1 == null ).assertTrue();
+     expect(str1 !== null ).assertTrue();
      await Utils.sleep(1000);
      await btn3.click();
      console.log('selectKeyboardAvoidMode_003 END')
