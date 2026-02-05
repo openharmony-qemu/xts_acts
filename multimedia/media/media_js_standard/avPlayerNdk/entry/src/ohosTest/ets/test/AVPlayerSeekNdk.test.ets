@@ -83,11 +83,9 @@ export default function AVPlayerSeekNdk() {
         closeFileFd(fileDescriptorFs.fd);
         fileDescriptorFs.fd = -1;
       }
-      await Utils.sleep(2000)
     });
     afterAll(async () => {
       console.info('afterAll case');
-      await Utils.sleep(2000)
     });
 
     /**
