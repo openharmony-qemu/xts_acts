@@ -74,6 +74,10 @@ static void HksFree(void *ptr)
 // Helper function: Allocate memory
 static void* HksMalloc(size_t size)
 {
+    // G.MEM.01: 内存申请前，必须对申请内存大小进行合法性校验
+    if (size == 0) {
+        return nullptr;
+    }
     return malloc(size);
 }
 
@@ -171,7 +175,7 @@ static int32_t ConstructDataToCertChain(struct OH_Huks_CertChain **certChain, co
     }
     for (uint32_t i = 0; i < (*certChain)->certsCount; i++) {
         (*certChain)->certs[i].size = certChainParam->certDataSize;
-        (*certChain)->certs[i].data = (uint8_t *)HksMalloc((*certChain)->certs[i].size);
+        (*certChain)->certs[i].data = static_cast<uint8_t*>(HksMalloc((*certChain)->certs[i].size));
         if ((*certChain)->certs[i].data == nullptr) {
             FreeCertChain(certChain, i);
             return OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
@@ -215,16 +219,16 @@ static int32_t ValidataAndCompareCertInfo(ParamType type, const struct OH_Huks_C
     // Note: HksValidateCertChain is not available in NDK, skip validation
     int32_t ret = OH_HUKS_SUCCESS;
     if (ret == OH_HUKS_SUCCESS) {
-        ret |= strcmp(SEC_INFO_DATA, (char *)paramSet->params[g_index0].blob.data);
-        ret |= strcmp(CHALLENGE_DATA, (char *)paramSet->params[g_index1].blob.data);
-        ret |= strcmp(VERSION_DATA, (char *)paramSet->params[g_index2].blob.data);
-        ret |= strcmp(ALIAS, (char *)paramSet->params[g_index3].blob.data);
+        ret |= strcmp(SEC_INFO_DATA, reinterpret_cast<char*>(paramSet->params[g_index0].blob.data));
+        ret |= strcmp(CHALLENGE_DATA, reinterpret_cast<char*>(paramSet->params[g_index1].blob.data));
+        ret |= strcmp(VERSION_DATA, reinterpret_cast<char*>(paramSet->params[g_index2].blob.data));
+        ret |= strcmp(ALIAS, reinterpret_cast<char*>(paramSet->params[g_index3].blob.data));
     }
     if (type == IDS_PARAM) {
         if (ret == OH_HUKS_SUCCESS) {
-            ret |= strcmp(UDID_DATA, (char *)paramSet->params[g_index4].blob.data);
-            ret |= strcmp(SN_DATA, (char *)paramSet->params[g_index5].blob.data);
-            ret |= strcmp(DEVICE_ID, (char *)paramSet->params[g_index6].blob.data);
+            ret |= strcmp(UDID_DATA, reinterpret_cast<char*>(paramSet->params[g_index4].blob.data));
+            ret |= strcmp(SN_DATA, reinterpret_cast<char*>(paramSet->params[g_index5].blob.data));
+            ret |= strcmp(DEVICE_ID, reinterpret_cast<char*>(paramSet->params[g_index6].blob.data));
         }
     }
     return ret;
@@ -275,7 +279,7 @@ static bool CheckUseSoftware()
         {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
     
     struct OH_Huks_ParamSet *genParamSet = nullptr;
-    struct OH_Huks_Blob keyAlias = {static_cast<uint32_t>(strlen(keyAliasString)), (uint8_t *)keyAliasString};
+    struct OH_Huks_Blob keyAlias = {static_cast<uint32_t>(strlen(keyAliasString)), reinterpret_cast<uint8_t*>(const_cast<char*>(keyAliasString))};
     
     OH_Huks_Result initRet = OH_Huks_InitParamSet(&genParamSet);
     OH_LOG_INFO(LOG_APP, "CheckUseSoftware: InitParamSet errorCode=%{public}d", initRet.errorCode);
@@ -333,10 +337,10 @@ int SecurityHuksNapiAttest0100()
     if (useSoftware) {
         OH_LOG_INFO(LOG_APP, "========== Entering software mode branch ==========");
         
-        static struct OH_Huks_Blob g_secInfo = {sizeof(SEC_INFO_DATA), (uint8_t *)SEC_INFO_DATA};
-        static struct OH_Huks_Blob g_challenge = {sizeof(CHALLENGE_DATA), (uint8_t *)CHALLENGE_DATA};
-        static struct OH_Huks_Blob g_version = {sizeof(VERSION_DATA), (uint8_t *)VERSION_DATA};
-        static const struct OH_Huks_Blob g_keyAlias = {sizeof(ALIAS), (uint8_t *)ALIAS};
+        static struct OH_Huks_Blob g_secInfo = {sizeof(SEC_INFO_DATA), reinterpret_cast<uint8_t*>(const_cast<char*>(SEC_INFO_DATA))};
+        static struct OH_Huks_Blob g_challenge = {sizeof(CHALLENGE_DATA), reinterpret_cast<uint8_t*>(const_cast<char*>(CHALLENGE_DATA))};
+        static struct OH_Huks_Blob g_version = {sizeof(VERSION_DATA), reinterpret_cast<uint8_t*>(const_cast<char*>(VERSION_DATA))};
+        static const struct OH_Huks_Blob g_keyAlias = {sizeof(ALIAS), reinterpret_cast<uint8_t*>(const_cast<char*>(ALIAS))};
         
         static const struct OH_Huks_Param g_commonParams[] = {
             {.tag = OH_HUKS_TAG_ATTESTATION_ID_SEC_LEVEL_INFO, .blob = g_secInfo},

@@ -22,6 +22,193 @@
 namespace Acts {
 namespace Huks {
 
+// ==================== 常量定义区域 ====================
+
+// TAG 基础 ID - 通用 TAG (与 TAG_TYPE 位运算使用)
+const uint32_t TAG_ALGORITHM_ID = 1;
+const uint32_t TAG_PURPOSE_ID = 2;
+const uint32_t TAG_KEY_SIZE_ID = 3;
+const uint32_t TAG_DIGEST_ID = 4;
+const uint32_t TAG_PADDING_ID = 5;
+const uint32_t TAG_BLOCK_MODE_ID = 6;
+const uint32_t TAG_KEY_TYPE_ID = 7;
+const uint32_t TAG_ASSOCIATED_DATA_ID = 8;
+const uint32_t TAG_NONCE_ID = 9;
+const uint32_t TAG_IV_ID = 10;
+const uint32_t TAG_INFO_ID = 11;
+const uint32_t TAG_SALT_ID = 12;
+const uint32_t TAG_ITERATION_ID = 14;
+const uint32_t TAG_KEY_GENERATE_TYPE_ID = 15;
+const uint32_t TAG_AGREE_ALG_ID = 19;
+const uint32_t TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS_ID = 20;
+const uint32_t TAG_AGREE_PRIVATE_KEY_ALIAS_ID = 21;
+const uint32_t TAG_AGREE_PUBLIC_KEY_ID = 22;
+const uint32_t TAG_KEY_ALIAS_ID = 23;
+const uint32_t TAG_DERIVE_KEY_SIZE_ID = 24;
+const uint32_t TAG_IMPORT_KEY_TYPE_ID = 25;
+const uint32_t TAG_UNWRAP_ALGORITHM_SUITE_ID = 26;
+
+// TAG 基础 ID - 用户认证 TAG
+const uint32_t TAG_ALL_USERS_ID = 301;
+const uint32_t TAG_USER_ID_ID = 302;
+const uint32_t TAG_NO_AUTH_REQUIRED_ID = 303;
+const uint32_t TAG_USER_AUTH_TYPE_ID = 304;
+const uint32_t TAG_AUTH_TIMEOUT_ID = 305;
+const uint32_t TAG_AUTH_TOKEN_ID = 306;
+const uint32_t TAG_KEY_AUTH_ACCESS_TYPE_ID = 307;
+const uint32_t TAG_KEY_SECURE_SIGN_TYPE_ID = 308;
+const uint32_t TAG_CHALLENGE_TYPE_ID = 309;
+const uint32_t TAG_CHALLENGE_POS_ID = 310;
+
+// TAG 基础 ID - 认证 TAG
+const uint32_t TAG_ATTESTATION_CHALLENGE_ID = 501;
+const uint32_t TAG_ATTESTATION_APPLICATION_ID = 502;
+const uint32_t TAG_ATTESTATION_ID_ALIAS_ID = 511;
+const uint32_t TAG_ATTESTATION_ID_SEC_LEVEL_INFO_ID = 514;
+const uint32_t TAG_ATTESTATION_ID_VERSION_INFO_ID = 515;
+
+// TAG 基础 ID - 密钥管理 TAG
+const uint32_t TAG_IS_KEY_ALIAS_ID = 1001;
+const uint32_t TAG_KEY_STORAGE_FLAG_ID = 1002;
+const uint32_t TAG_IS_ALLOWED_WRAP_ID = 1003;
+const uint32_t TAG_KEY_WRAP_TYPE_ID = 1004;
+const uint32_t TAG_KEY_AUTH_ID_ID = 1005;
+const uint32_t TAG_KEY_ROLE_ID = 1006;
+const uint32_t TAG_KEY_FLAG_ID = 1007;
+const uint32_t TAG_IS_ASYNCHRONIZED_ID = 1008;
+const uint32_t TAG_KEY_DOMAIN_ID = 1011;
+const uint32_t TAG_SYMMETRIC_KEY_DATA_ID = 20001;
+const uint32_t TAG_ASYMMETRIC_PUBLIC_KEY_DATA_ID = 20002;
+const uint32_t TAG_ASYMMETRIC_PRIVATE_KEY_DATA_ID = 20003;
+
+// 枚举值 - DIGEST
+const uint32_t DIGEST_NONE_VALUE = 0;
+const uint32_t DIGEST_MD5_VALUE = 1;
+const uint32_t DIGEST_SM3_VALUE = 2;
+const uint32_t DIGEST_SHA1_VALUE = 10;
+const uint32_t DIGEST_SHA224_VALUE = 11;
+const uint32_t DIGEST_SHA256_VALUE = 12;
+const uint32_t DIGEST_SHA384_VALUE = 13;
+const uint32_t DIGEST_SHA512_VALUE = 14;
+
+// 枚举值 - PADDING
+const uint32_t PADDING_NONE_VALUE = 0;
+const uint32_t PADDING_OAEP_VALUE = 1;
+const uint32_t PADDING_PSS_VALUE = 2;
+const uint32_t PADDING_PKCS1_V1_5_VALUE = 3;
+const uint32_t PADDING_PKCS5_VALUE = 4;
+const uint32_t PADDING_PKCS7_VALUE = 5;
+
+// 枚举值 - MODE
+const uint32_t MODE_ECB_VALUE = 1;
+const uint32_t MODE_CBC_VALUE = 2;
+const uint32_t MODE_CTR_VALUE = 3;
+const uint32_t MODE_OFB_VALUE = 4;
+const uint32_t MODE_CCM_VALUE = 31;
+const uint32_t MODE_GCM_VALUE = 32;
+
+// 枚举值 - KEY_PURPOSE
+const uint32_t KEY_PURPOSE_ENCRYPT_VALUE = 1;
+const uint32_t KEY_PURPOSE_DECRYPT_VALUE = 2;
+const uint32_t KEY_PURPOSE_SIGN_VALUE = 4;
+const uint32_t KEY_PURPOSE_VERIFY_VALUE = 8;
+const uint32_t KEY_PURPOSE_DERIVE_VALUE = 16;
+const uint32_t KEY_PURPOSE_WRAP_VALUE = 32;
+const uint32_t KEY_PURPOSE_UNWRAP_VALUE = 64;
+const uint32_t KEY_PURPOSE_MAC_VALUE = 128;
+const uint32_t KEY_PURPOSE_AGREE_VALUE = 256;
+
+// 枚举值 - ALG
+const uint32_t ALG_RSA_VALUE = 1;
+const uint32_t ALG_ECC_VALUE = 2;
+const uint32_t ALG_DSA_VALUE = 3;
+const uint32_t ALG_AES_VALUE = 20;
+const uint32_t ALG_HMAC_VALUE = 50;
+const uint32_t ALG_HKDF_VALUE = 51;
+const uint32_t ALG_PBKDF2_VALUE = 52;
+const uint32_t ALG_ECDH_VALUE = 100;
+const uint32_t ALG_X25519_VALUE = 101;
+const uint32_t ALG_ED25519_VALUE = 102;
+const uint32_t ALG_DH_VALUE = 103;
+const uint32_t ALG_SM2_VALUE = 150;
+const uint32_t ALG_SM3_VALUE = 151;
+const uint32_t ALG_SM4_VALUE = 152;
+
+// 枚举值 - UNWRAP_SUITE
+const uint32_t UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING_VALUE = 1;
+const uint32_t UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING_VALUE = 2;
+
+// 枚举值 - KEY_GENERATE_TYPE
+const uint32_t KEY_GENERATE_TYPE_DEFAULT_VALUE = 0;
+const uint32_t KEY_GENERATE_TYPE_DERIVE_VALUE = 1;
+const uint32_t KEY_GENERATE_TYPE_AGREE_VALUE = 2;
+
+// 枚举值 - KEY_FLAG
+const uint32_t KEY_FLAG_IMPORT_KEY_VALUE = 1;
+const uint32_t KEY_FLAG_GENERATE_KEY_VALUE = 2;
+const uint32_t KEY_FLAG_AGREE_KEY_VALUE = 3;
+const uint32_t KEY_FLAG_DERIVE_KEY_VALUE = 4;
+
+// 枚举值 - STORAGE
+const uint32_t STORAGE_TEMP_VALUE = 0;
+const uint32_t STORAGE_PERSISTENT_VALUE = 1;
+
+// 枚举值 - KEY_TYPE
+const uint32_t KEY_TYPE_PUBLIC_KEY_VALUE = 0;
+const uint32_t KEY_TYPE_PRIVATE_KEY_VALUE = 1;
+const uint32_t KEY_TYPE_KEY_PAIR_VALUE = 2;
+
+// 枚举值 - ERROR_CODE
+const uint32_t SUCCESS_VALUE = 0;
+const uint32_t ERR_CODE_PERMISSION_FAIL_VALUE = 201;
+const uint32_t ERR_CODE_ILLEGAL_ARGUMENT_VALUE = 401;
+const uint32_t ERR_CODE_NOT_SUPPORTED_API_VALUE = 801;
+const uint32_t ERR_CODE_FEATURE_NOT_SUPPORTED_VALUE = 12000001;
+const uint32_t ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT_VALUE = 12000002;
+const uint32_t ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT_VALUE = 12000003;
+const uint32_t ERR_CODE_FILE_OPERATION_FAIL_VALUE = 12000004;
+const uint32_t ERR_CODE_COMMUNICATION_FAIL_VALUE = 12000005;
+const uint32_t ERR_CODE_CRYPTO_FAIL_VALUE = 12000006;
+const uint32_t ERR_CODE_KEY_AUTH_PERMANENTLY_INVALIDATED_VALUE = 12000007;
+const uint32_t ERR_CODE_KEY_AUTH_VERIFY_FAILED_VALUE = 12000008;
+const uint32_t ERR_CODE_KEY_AUTH_TIME_OUT_VALUE = 12000009;
+const uint32_t ERR_CODE_SESSION_LIMIT_VALUE = 12000010;
+const uint32_t ERR_CODE_ITEM_NOT_EXIST_VALUE = 12000011;
+const uint32_t ERR_CODE_INTERNAL_ERROR_VALUE = 12000012;
+const uint32_t ERR_CODE_CREDENTIAL_NOT_EXIST_VALUE = 12000013;
+
+// 枚举值 - CHALLENGE
+const uint32_t CHALLENGE_TYPE_NORMAL_VALUE = 0;
+const uint32_t CHALLENGE_TYPE_CUSTOM_VALUE = 1;
+const uint32_t CHALLENGE_TYPE_NONE_VALUE = 2;
+const uint32_t CHALLENGE_POS_0_VALUE = 0;
+const uint32_t CHALLENGE_POS_1_VALUE = 1;
+const uint32_t CHALLENGE_POS_2_VALUE = 2;
+const uint32_t CHALLENGE_POS_3_VALUE = 3;
+
+// 枚举值 - SECURE_SIGN
+const uint32_t SECURE_SIGN_WITH_AUTHINFO_VALUE = 1;
+
+// 位移操作常量 - TAG_TYPE
+const uint32_t TAG_TYPE_INVALID_SHIFT = 0;
+const uint32_t TAG_TYPE_INT_SHIFT = 1;
+const uint32_t TAG_TYPE_UINT_SHIFT = 2;
+const uint32_t TAG_TYPE_ULONG_SHIFT = 3;
+const uint32_t TAG_TYPE_BOOL_SHIFT = 4;
+const uint32_t TAG_TYPE_BYTES_SHIFT = 5;
+const uint32_t TAG_TYPE_SHIFT_BITS = 28;
+
+// 位移操作常量 - USER_AUTH_TYPE
+const uint32_t USER_AUTH_TYPE_FINGERPRINT_BIT = 0;
+const uint32_t USER_AUTH_TYPE_FACE_BIT = 1;
+const uint32_t USER_AUTH_TYPE_PIN_BIT = 2;
+
+// 位移操作常量 - AUTH_ACCESS_INVALID
+const uint32_t AUTH_ACCESS_INVALID_CLEAR_PASSWORD_BIT = 0;
+const uint32_t AUTH_ACCESS_INVALID_NEW_BIO_ENROLL_BIT = 1;
+
+// ==================== 测试函数 ====================
+
 /**
  * @tc.name   SecurityHuksNapiMisc0100
  * @tc.number Security_HUKS_NAPI_Misc_0100
@@ -33,41 +220,41 @@ namespace Huks {
 int SecurityHuksNapiMisc0100()
 {
     // Verify digest constants
-    if ((uint32_t)OH_HUKS_DIGEST_NONE != 0) return -1;
-    if ((uint32_t)OH_HUKS_DIGEST_MD5 != 1) return -1;
-    if ((uint32_t)OH_HUKS_DIGEST_SM3 != 2) return -1;
-    if ((uint32_t)OH_HUKS_DIGEST_SHA1 != 10) return -1;
-    if ((uint32_t)OH_HUKS_DIGEST_SHA224 != 11) return -1;
-    if ((uint32_t)OH_HUKS_DIGEST_SHA256 != 12) return -1;
-    if ((uint32_t)OH_HUKS_DIGEST_SHA384 != 13) return -1;
-    if ((uint32_t)OH_HUKS_DIGEST_SHA512 != 14) return -1;
+    if ((uint32_t)OH_HUKS_DIGEST_NONE != DIGEST_NONE_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_DIGEST_MD5 != DIGEST_MD5_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_DIGEST_SM3 != DIGEST_SM3_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_DIGEST_SHA1 != DIGEST_SHA1_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_DIGEST_SHA224 != DIGEST_SHA224_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_DIGEST_SHA256 != DIGEST_SHA256_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_DIGEST_SHA384 != DIGEST_SHA384_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_DIGEST_SHA512 != DIGEST_SHA512_VALUE) return -1;
     
     // Verify padding constants
-    if ((uint32_t)OH_HUKS_PADDING_NONE != 0) return -1;
-    if ((uint32_t)OH_HUKS_PADDING_OAEP != 1) return -1;
-    if ((uint32_t)OH_HUKS_PADDING_PSS != 2) return -1;
-    if ((uint32_t)OH_HUKS_PADDING_PKCS1_V1_5 != 3) return -1;
-    if ((uint32_t)OH_HUKS_PADDING_PKCS5 != 4) return -1;
-    if ((uint32_t)OH_HUKS_PADDING_PKCS7 != 5) return -1;
+    if ((uint32_t)OH_HUKS_PADDING_NONE != PADDING_NONE_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_PADDING_OAEP != PADDING_OAEP_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_PADDING_PSS != PADDING_PSS_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_PADDING_PKCS1_V1_5 != PADDING_PKCS1_V1_5_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_PADDING_PKCS5 != PADDING_PKCS5_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_PADDING_PKCS7 != PADDING_PKCS7_VALUE) return -1;
     
     // Verify mode constants
-    if ((uint32_t)OH_HUKS_MODE_ECB != 1) return -1;
-    if ((uint32_t)OH_HUKS_MODE_CBC != 2) return -1;
-    if ((uint32_t)OH_HUKS_MODE_CTR != 3) return -1;
-    if ((uint32_t)OH_HUKS_MODE_OFB != 4) return -1;
-    if ((uint32_t)OH_HUKS_MODE_CCM != 31) return -1;
-    if ((uint32_t)OH_HUKS_MODE_GCM != 32) return -1;
+    if ((uint32_t)OH_HUKS_MODE_ECB != MODE_ECB_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_MODE_CBC != MODE_CBC_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_MODE_CTR != MODE_CTR_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_MODE_OFB != MODE_OFB_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_MODE_CCM != MODE_CCM_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_MODE_GCM != MODE_GCM_VALUE) return -1;
     
     // Verify key purpose constants
-    if ((uint32_t)OH_HUKS_KEY_PURPOSE_ENCRYPT != 1) return -1;
-    if ((uint32_t)OH_HUKS_KEY_PURPOSE_DECRYPT != 2) return -1;
-    if ((uint32_t)OH_HUKS_KEY_PURPOSE_SIGN != 4) return -1;
-    if ((uint32_t)OH_HUKS_KEY_PURPOSE_VERIFY != 8) return -1;
-    if ((uint32_t)OH_HUKS_KEY_PURPOSE_DERIVE != 16) return -1;
-    if ((uint32_t)OH_HUKS_KEY_PURPOSE_WRAP != 32) return -1;
-    if ((uint32_t)OH_HUKS_KEY_PURPOSE_UNWRAP != 64) return -1;
-    if ((uint32_t)OH_HUKS_KEY_PURPOSE_MAC != 128) return -1;
-    if ((uint32_t)OH_HUKS_KEY_PURPOSE_AGREE != 256) return -1;
+    if ((uint32_t)OH_HUKS_KEY_PURPOSE_ENCRYPT != KEY_PURPOSE_ENCRYPT_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_KEY_PURPOSE_DECRYPT != KEY_PURPOSE_DECRYPT_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_KEY_PURPOSE_SIGN != KEY_PURPOSE_SIGN_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_KEY_PURPOSE_VERIFY != KEY_PURPOSE_VERIFY_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_KEY_PURPOSE_DERIVE != KEY_PURPOSE_DERIVE_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_KEY_PURPOSE_WRAP != KEY_PURPOSE_WRAP_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_KEY_PURPOSE_UNWRAP != KEY_PURPOSE_UNWRAP_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_KEY_PURPOSE_MAC != KEY_PURPOSE_MAC_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_KEY_PURPOSE_AGREE != KEY_PURPOSE_AGREE_VALUE) return -1;
     
     // Verify RSA key size constants
     if ((uint32_t)OH_HUKS_RSA_KEY_SIZE_512 != 512) return -1;
@@ -99,149 +286,149 @@ int SecurityHuksNapiMisc0100()
     if ((uint32_t)OH_HUKS_SM4_KEY_SIZE_128 != 128) return -1;
     
     // Verify algorithm constants
-    if ((uint32_t)OH_HUKS_ALG_RSA != 1) return -1;
-    if ((uint32_t)OH_HUKS_ALG_ECC != 2) return -1;
-    if ((uint32_t)OH_HUKS_ALG_DSA != 3) return -1;
-    if ((uint32_t)OH_HUKS_ALG_AES != 20) return -1;
-    if ((uint32_t)OH_HUKS_ALG_HMAC != 50) return -1;
-    if ((uint32_t)OH_HUKS_ALG_HKDF != 51) return -1;
-    if ((uint32_t)OH_HUKS_ALG_PBKDF2 != 52) return -1;
-    if ((uint32_t)OH_HUKS_ALG_ECDH != 100) return -1;
-    if ((uint32_t)OH_HUKS_ALG_X25519 != 101) return -1;
-    if ((uint32_t)OH_HUKS_ALG_ED25519 != 102) return -1;
-    if ((uint32_t)OH_HUKS_ALG_DH != 103) return -1;
-    if ((uint32_t)OH_HUKS_ALG_SM2 != 150) return -1;
-    if ((uint32_t)OH_HUKS_ALG_SM3 != 151) return -1;
-    if ((uint32_t)OH_HUKS_ALG_SM4 != 152) return -1;
+    if ((uint32_t)OH_HUKS_ALG_RSA != ALG_RSA_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ALG_ECC != ALG_ECC_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ALG_DSA != ALG_DSA_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ALG_AES != ALG_AES_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ALG_HMAC != ALG_HMAC_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ALG_HKDF != ALG_HKDF_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ALG_PBKDF2 != ALG_PBKDF2_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ALG_ECDH != ALG_ECDH_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ALG_X25519 != ALG_X25519_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ALG_ED25519 != ALG_ED25519_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ALG_DH != ALG_DH_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ALG_SM2 != ALG_SM2_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ALG_SM3 != ALG_SM3_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ALG_SM4 != ALG_SM4_VALUE) return -1;
     
     // Verify unwrap suite constants
-    if ((uint32_t)OH_HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING != 1) return -1;
-    if ((uint32_t)OH_HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING != 2) return -1;
+    if ((uint32_t)OH_HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING != UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING != UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING_VALUE) return -1;
     
     // Verify key generate type constants
-    if ((uint32_t)OH_HUKS_KEY_GENERATE_TYPE_DEFAULT != 0) return -1;
-    if ((uint32_t)OH_HUKS_KEY_GENERATE_TYPE_DERIVE != 1) return -1;
-    if ((uint32_t)OH_HUKS_KEY_GENERATE_TYPE_AGREE != 2) return -1;
+    if ((uint32_t)OH_HUKS_KEY_GENERATE_TYPE_DEFAULT != KEY_GENERATE_TYPE_DEFAULT_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_KEY_GENERATE_TYPE_DERIVE != KEY_GENERATE_TYPE_DERIVE_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_KEY_GENERATE_TYPE_AGREE != KEY_GENERATE_TYPE_AGREE_VALUE) return -1;
     
     // Verify key flag constants
-    if ((uint32_t)OH_HUKS_KEY_FLAG_IMPORT_KEY != 1) return -1;
-    if ((uint32_t)OH_HUKS_KEY_FLAG_GENERATE_KEY != 2) return -1;
-    if ((uint32_t)OH_HUKS_KEY_FLAG_AGREE_KEY != 3) return -1;
-    if ((uint32_t)OH_HUKS_KEY_FLAG_DERIVE_KEY != 4) return -1;
+    if ((uint32_t)OH_HUKS_KEY_FLAG_IMPORT_KEY != KEY_FLAG_IMPORT_KEY_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_KEY_FLAG_GENERATE_KEY != KEY_FLAG_GENERATE_KEY_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_KEY_FLAG_AGREE_KEY != KEY_FLAG_AGREE_KEY_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_KEY_FLAG_DERIVE_KEY != KEY_FLAG_DERIVE_KEY_VALUE) return -1;
     
     // Verify storage constants
-    if ((uint32_t)OH_HUKS_STORAGE_TEMP != 0) return -1;
-    if ((uint32_t)OH_HUKS_STORAGE_PERSISTENT != 1) return -1;
+    if ((uint32_t)OH_HUKS_STORAGE_TEMP != STORAGE_TEMP_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_STORAGE_PERSISTENT != STORAGE_PERSISTENT_VALUE) return -1;
     
     // Verify key type constants
-    if ((uint32_t)OH_HUKS_KEY_TYPE_PUBLIC_KEY != 0) return -1;
-    if ((uint32_t)OH_HUKS_KEY_TYPE_PRIVATE_KEY != 1) return -1;
-    if ((uint32_t)OH_HUKS_KEY_TYPE_KEY_PAIR != 2) return -1;
+    if ((uint32_t)OH_HUKS_KEY_TYPE_PUBLIC_KEY != KEY_TYPE_PUBLIC_KEY_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_KEY_TYPE_PRIVATE_KEY != KEY_TYPE_PRIVATE_KEY_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_KEY_TYPE_KEY_PAIR != KEY_TYPE_KEY_PAIR_VALUE) return -1;
     
     // Verify error code constants
-    if ((uint32_t)OH_HUKS_SUCCESS != 0) return -1;
-    if ((uint32_t)OH_HUKS_ERR_CODE_PERMISSION_FAIL != 201) return -1;
-    if ((uint32_t)OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT != 401) return -1;
-    if ((uint32_t)OH_HUKS_ERR_CODE_NOT_SUPPORTED_API != 801) return -1;
-    if ((uint32_t)OH_HUKS_ERR_CODE_FEATURE_NOT_SUPPORTED != 12000001) return -1;
-    if ((uint32_t)OH_HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT != 12000002) return -1;
-    if ((uint32_t)OH_HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT != 12000003) return -1;
-    if ((uint32_t)OH_HUKS_ERR_CODE_FILE_OPERATION_FAIL != 12000004) return -1;
-    if ((uint32_t)OH_HUKS_ERR_CODE_COMMUNICATION_FAIL != 12000005) return -1;
-    if ((uint32_t)OH_HUKS_ERR_CODE_CRYPTO_FAIL != 12000006) return -1;
-    if ((uint32_t)OH_HUKS_ERR_CODE_KEY_AUTH_PERMANENTLY_INVALIDATED != 12000007) return -1;
-    if ((uint32_t)OH_HUKS_ERR_CODE_KEY_AUTH_VERIFY_FAILED != 12000008) return -1;
-    if ((uint32_t)OH_HUKS_ERR_CODE_KEY_AUTH_TIME_OUT != 12000009) return -1;
-    if ((uint32_t)OH_HUKS_ERR_CODE_SESSION_LIMIT != 12000010) return -1;
-    if ((uint32_t)OH_HUKS_ERR_CODE_ITEM_NOT_EXIST != 12000011) return -1;
-    if ((uint32_t)OH_HUKS_ERR_CODE_INTERNAL_ERROR != 12000012) return -1;
-    if ((uint32_t)OH_HUKS_ERR_CODE_CREDENTIAL_NOT_EXIST != 12000013) return -1;
+    if ((uint32_t)OH_HUKS_SUCCESS != SUCCESS_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ERR_CODE_PERMISSION_FAIL != ERR_CODE_PERMISSION_FAIL_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT != ERR_CODE_ILLEGAL_ARGUMENT_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ERR_CODE_NOT_SUPPORTED_API != ERR_CODE_NOT_SUPPORTED_API_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ERR_CODE_FEATURE_NOT_SUPPORTED != ERR_CODE_FEATURE_NOT_SUPPORTED_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT != ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT != ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ERR_CODE_FILE_OPERATION_FAIL != ERR_CODE_FILE_OPERATION_FAIL_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ERR_CODE_COMMUNICATION_FAIL != ERR_CODE_COMMUNICATION_FAIL_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ERR_CODE_CRYPTO_FAIL != ERR_CODE_CRYPTO_FAIL_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ERR_CODE_KEY_AUTH_PERMANENTLY_INVALIDATED != ERR_CODE_KEY_AUTH_PERMANENTLY_INVALIDATED_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ERR_CODE_KEY_AUTH_VERIFY_FAILED != ERR_CODE_KEY_AUTH_VERIFY_FAILED_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ERR_CODE_KEY_AUTH_TIME_OUT != ERR_CODE_KEY_AUTH_TIME_OUT_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ERR_CODE_SESSION_LIMIT != ERR_CODE_SESSION_LIMIT_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ERR_CODE_ITEM_NOT_EXIST != ERR_CODE_ITEM_NOT_EXIST_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ERR_CODE_INTERNAL_ERROR != ERR_CODE_INTERNAL_ERROR_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_ERR_CODE_CREDENTIAL_NOT_EXIST != ERR_CODE_CREDENTIAL_NOT_EXIST_VALUE) return -1;
     
     // Verify tag type constants
-    if ((uint32_t)OH_HUKS_TAG_TYPE_INVALID != (0 << 28)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_TYPE_INT != (1 << 28)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_TYPE_UINT != (2 << 28)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_TYPE_ULONG != (3 << 28)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_TYPE_BOOL != (4 << 28)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_TYPE_BYTES != (5 << 28)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_TYPE_INVALID != (TAG_TYPE_INVALID_SHIFT << TAG_TYPE_SHIFT_BITS)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_TYPE_INT != (TAG_TYPE_INT_SHIFT << TAG_TYPE_SHIFT_BITS)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_TYPE_UINT != (TAG_TYPE_UINT_SHIFT << TAG_TYPE_SHIFT_BITS)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_TYPE_ULONG != (TAG_TYPE_ULONG_SHIFT << TAG_TYPE_SHIFT_BITS)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_TYPE_BOOL != (TAG_TYPE_BOOL_SHIFT << TAG_TYPE_SHIFT_BITS)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_TYPE_BYTES != (TAG_TYPE_BYTES_SHIFT << TAG_TYPE_SHIFT_BITS)) return -1;
     
     // Verify user auth type constants
-    if ((uint32_t)OH_HUKS_USER_AUTH_TYPE_FINGERPRINT != (1 << 0)) return -1;
-    if ((uint32_t)OH_HUKS_USER_AUTH_TYPE_FACE != (1 << 1)) return -1;
-    if ((uint32_t)OH_HUKS_USER_AUTH_TYPE_PIN != (1 << 2)) return -1;
+    if ((uint32_t)OH_HUKS_USER_AUTH_TYPE_FINGERPRINT != (1 << USER_AUTH_TYPE_FINGERPRINT_BIT)) return -1;
+    if ((uint32_t)OH_HUKS_USER_AUTH_TYPE_FACE != (1 << USER_AUTH_TYPE_FACE_BIT)) return -1;
+    if ((uint32_t)OH_HUKS_USER_AUTH_TYPE_PIN != (1 << USER_AUTH_TYPE_PIN_BIT)) return -1;
     
     // Verify auth access invalid constants
-    if ((uint32_t)OH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD != (1 << 0)) return -1;
-    if ((uint32_t)OH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL != (1 << 1)) return -1;
+    if ((uint32_t)OH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD != (1 << AUTH_ACCESS_INVALID_CLEAR_PASSWORD_BIT)) return -1;
+    if ((uint32_t)OH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL != (1 << AUTH_ACCESS_INVALID_NEW_BIO_ENROLL_BIT)) return -1;
     
     // Verify challenge type constants
-    if ((uint32_t)OH_HUKS_CHALLENGE_TYPE_NORMAL != 0) return -1;
-    if ((uint32_t)OH_HUKS_CHALLENGE_TYPE_CUSTOM != 1) return -1;
-    if ((uint32_t)OH_HUKS_CHALLENGE_TYPE_NONE != 2) return -1;
+    if ((uint32_t)OH_HUKS_CHALLENGE_TYPE_NORMAL != CHALLENGE_TYPE_NORMAL_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_CHALLENGE_TYPE_CUSTOM != CHALLENGE_TYPE_CUSTOM_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_CHALLENGE_TYPE_NONE != CHALLENGE_TYPE_NONE_VALUE) return -1;
     
     // Verify challenge pos constants
-    if ((uint32_t)OH_HUKS_CHALLENGE_POS_0 != 0) return -1;
-    if ((uint32_t)OH_HUKS_CHALLENGE_POS_1 != 1) return -1;
-    if ((uint32_t)OH_HUKS_CHALLENGE_POS_2 != 2) return -1;
-    if ((uint32_t)OH_HUKS_CHALLENGE_POS_3 != 3) return -1;
+    if ((uint32_t)OH_HUKS_CHALLENGE_POS_0 != CHALLENGE_POS_0_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_CHALLENGE_POS_1 != CHALLENGE_POS_1_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_CHALLENGE_POS_2 != CHALLENGE_POS_2_VALUE) return -1;
+    if ((uint32_t)OH_HUKS_CHALLENGE_POS_3 != CHALLENGE_POS_3_VALUE) return -1;
     
     // Verify secure sign constants
-    if ((uint32_t)OH_HUKS_SECURE_SIGN_WITH_AUTHINFO != 1) return -1;
+    if ((uint32_t)OH_HUKS_SECURE_SIGN_WITH_AUTHINFO != SECURE_SIGN_WITH_AUTHINFO_VALUE) return -1;
     
     // Verify tag constants
-    if ((uint32_t)OH_HUKS_TAG_ALGORITHM != (OH_HUKS_TAG_TYPE_UINT | 1)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_PURPOSE != (OH_HUKS_TAG_TYPE_UINT | 2)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_KEY_SIZE != (OH_HUKS_TAG_TYPE_UINT | 3)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_DIGEST != (OH_HUKS_TAG_TYPE_UINT | 4)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_PADDING != (OH_HUKS_TAG_TYPE_UINT | 5)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_BLOCK_MODE != (OH_HUKS_TAG_TYPE_UINT | 6)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_KEY_TYPE != (OH_HUKS_TAG_TYPE_UINT | 7)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_ASSOCIATED_DATA != (OH_HUKS_TAG_TYPE_BYTES | 8)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_NONCE != (OH_HUKS_TAG_TYPE_BYTES | 9)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_IV != (OH_HUKS_TAG_TYPE_BYTES | 10)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_INFO != (OH_HUKS_TAG_TYPE_BYTES | 11)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_SALT != (OH_HUKS_TAG_TYPE_BYTES | 12)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_ITERATION != (OH_HUKS_TAG_TYPE_UINT | 14)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_KEY_GENERATE_TYPE != (OH_HUKS_TAG_TYPE_UINT | 15)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_AGREE_ALG != (OH_HUKS_TAG_TYPE_UINT | 19)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS != (OH_HUKS_TAG_TYPE_BOOL | 20)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS != (OH_HUKS_TAG_TYPE_BYTES | 21)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_AGREE_PUBLIC_KEY != (OH_HUKS_TAG_TYPE_BYTES | 22)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_KEY_ALIAS != (OH_HUKS_TAG_TYPE_BYTES | 23)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_DERIVE_KEY_SIZE != (OH_HUKS_TAG_TYPE_UINT | 24)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_IMPORT_KEY_TYPE != (OH_HUKS_TAG_TYPE_UINT | 25)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_UNWRAP_ALGORITHM_SUITE != (OH_HUKS_TAG_TYPE_UINT | 26)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_ALL_USERS != (OH_HUKS_TAG_TYPE_BOOL | 301)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_USER_ID != (OH_HUKS_TAG_TYPE_UINT | 302)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_NO_AUTH_REQUIRED != (OH_HUKS_TAG_TYPE_BOOL | 303)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_USER_AUTH_TYPE != (OH_HUKS_TAG_TYPE_UINT | 304)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_AUTH_TIMEOUT != (OH_HUKS_TAG_TYPE_UINT | 305)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_AUTH_TOKEN != (OH_HUKS_TAG_TYPE_BYTES | 306)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE != (OH_HUKS_TAG_TYPE_UINT | 307)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_KEY_SECURE_SIGN_TYPE != (OH_HUKS_TAG_TYPE_UINT | 308)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_CHALLENGE_TYPE != (OH_HUKS_TAG_TYPE_UINT | 309)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_CHALLENGE_POS != (OH_HUKS_TAG_TYPE_UINT | 310)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_ALGORITHM != (OH_HUKS_TAG_TYPE_UINT | TAG_ALGORITHM_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_PURPOSE != (OH_HUKS_TAG_TYPE_UINT | TAG_PURPOSE_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_KEY_SIZE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_SIZE_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_DIGEST != (OH_HUKS_TAG_TYPE_UINT | TAG_DIGEST_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_PADDING != (OH_HUKS_TAG_TYPE_UINT | TAG_PADDING_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_BLOCK_MODE != (OH_HUKS_TAG_TYPE_UINT | TAG_BLOCK_MODE_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_KEY_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_TYPE_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_ASSOCIATED_DATA != (OH_HUKS_TAG_TYPE_BYTES | TAG_ASSOCIATED_DATA_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_NONCE != (OH_HUKS_TAG_TYPE_BYTES | TAG_NONCE_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_IV != (OH_HUKS_TAG_TYPE_BYTES | TAG_IV_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_INFO != (OH_HUKS_TAG_TYPE_BYTES | TAG_INFO_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_SALT != (OH_HUKS_TAG_TYPE_BYTES | TAG_SALT_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_ITERATION != (OH_HUKS_TAG_TYPE_UINT | TAG_ITERATION_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_KEY_GENERATE_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_GENERATE_TYPE_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_AGREE_ALG != (OH_HUKS_TAG_TYPE_UINT | TAG_AGREE_ALG_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS != (OH_HUKS_TAG_TYPE_BOOL | TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS != (OH_HUKS_TAG_TYPE_BYTES | TAG_AGREE_PRIVATE_KEY_ALIAS_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_AGREE_PUBLIC_KEY != (OH_HUKS_TAG_TYPE_BYTES | TAG_AGREE_PUBLIC_KEY_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_KEY_ALIAS != (OH_HUKS_TAG_TYPE_BYTES | TAG_KEY_ALIAS_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_DERIVE_KEY_SIZE != (OH_HUKS_TAG_TYPE_UINT | TAG_DERIVE_KEY_SIZE_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_IMPORT_KEY_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_IMPORT_KEY_TYPE_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_UNWRAP_ALGORITHM_SUITE != (OH_HUKS_TAG_TYPE_UINT | TAG_UNWRAP_ALGORITHM_SUITE_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_ALL_USERS != (OH_HUKS_TAG_TYPE_BOOL | TAG_ALL_USERS_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_USER_ID != (OH_HUKS_TAG_TYPE_UINT | TAG_USER_ID_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_NO_AUTH_REQUIRED != (OH_HUKS_TAG_TYPE_BOOL | TAG_NO_AUTH_REQUIRED_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_USER_AUTH_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_USER_AUTH_TYPE_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_AUTH_TIMEOUT != (OH_HUKS_TAG_TYPE_UINT | TAG_AUTH_TIMEOUT_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_AUTH_TOKEN != (OH_HUKS_TAG_TYPE_BYTES | TAG_AUTH_TOKEN_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_AUTH_ACCESS_TYPE_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_KEY_SECURE_SIGN_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_SECURE_SIGN_TYPE_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_CHALLENGE_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_CHALLENGE_TYPE_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_CHALLENGE_POS != (OH_HUKS_TAG_TYPE_UINT | TAG_CHALLENGE_POS_ID)) return -1;
     
     // Verify attestation tag constants
-    if ((uint32_t)OH_HUKS_TAG_ATTESTATION_CHALLENGE != (OH_HUKS_TAG_TYPE_BYTES | 501)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_ATTESTATION_APPLICATION_ID != (OH_HUKS_TAG_TYPE_BYTES | 502)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_ATTESTATION_ID_ALIAS != (OH_HUKS_TAG_TYPE_BYTES | 511)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_ATTESTATION_ID_SEC_LEVEL_INFO != (OH_HUKS_TAG_TYPE_BYTES | 514)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_ATTESTATION_ID_VERSION_INFO != (OH_HUKS_TAG_TYPE_BYTES | 515)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_ATTESTATION_CHALLENGE != (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_CHALLENGE_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_ATTESTATION_APPLICATION_ID != (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_APPLICATION_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_ATTESTATION_ID_ALIAS != (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_ID_ALIAS_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_ATTESTATION_ID_SEC_LEVEL_INFO != (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_ID_SEC_LEVEL_INFO_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_ATTESTATION_ID_VERSION_INFO != (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_ID_VERSION_INFO_ID)) return -1;
     
     // Verify key management tag constants
-    if ((uint32_t)OH_HUKS_TAG_IS_KEY_ALIAS != (OH_HUKS_TAG_TYPE_BOOL | 1001)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_KEY_STORAGE_FLAG != (OH_HUKS_TAG_TYPE_UINT | 1002)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_IS_ALLOWED_WRAP != (OH_HUKS_TAG_TYPE_BOOL | 1003)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_KEY_WRAP_TYPE != (OH_HUKS_TAG_TYPE_UINT | 1004)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_KEY_AUTH_ID != (OH_HUKS_TAG_TYPE_BYTES | 1005)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_KEY_ROLE != (OH_HUKS_TAG_TYPE_UINT | 1006)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_KEY_FLAG != (OH_HUKS_TAG_TYPE_UINT | 1007)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_IS_ASYNCHRONIZED != (OH_HUKS_TAG_TYPE_UINT | 1008)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_KEY_DOMAIN != (OH_HUKS_TAG_TYPE_UINT | 1011)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_SYMMETRIC_KEY_DATA != (OH_HUKS_TAG_TYPE_BYTES | 20001)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA != (OH_HUKS_TAG_TYPE_BYTES | 20002)) return -1;
-    if ((uint32_t)OH_HUKS_TAG_ASYMMETRIC_PRIVATE_KEY_DATA != (OH_HUKS_TAG_TYPE_BYTES | 20003)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_IS_KEY_ALIAS != (OH_HUKS_TAG_TYPE_BOOL | TAG_IS_KEY_ALIAS_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_KEY_STORAGE_FLAG != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_STORAGE_FLAG_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_IS_ALLOWED_WRAP != (OH_HUKS_TAG_TYPE_BOOL | TAG_IS_ALLOWED_WRAP_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_KEY_WRAP_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_WRAP_TYPE_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_KEY_AUTH_ID != (OH_HUKS_TAG_TYPE_BYTES | TAG_KEY_AUTH_ID_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_KEY_ROLE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_ROLE_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_KEY_FLAG != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_FLAG_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_IS_ASYNCHRONIZED != (OH_HUKS_TAG_TYPE_UINT | TAG_IS_ASYNCHRONIZED_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_KEY_DOMAIN != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_DOMAIN_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_SYMMETRIC_KEY_DATA != (OH_HUKS_TAG_TYPE_BYTES | TAG_SYMMETRIC_KEY_DATA_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA != (OH_HUKS_TAG_TYPE_BYTES | TAG_ASYMMETRIC_PUBLIC_KEY_DATA_ID)) return -1;
+    if ((uint32_t)OH_HUKS_TAG_ASYMMETRIC_PRIVATE_KEY_DATA != (OH_HUKS_TAG_TYPE_BYTES | TAG_ASYMMETRIC_PRIVATE_KEY_DATA_ID)) return -1;
     
     // Verify struct sizes
     struct OH_Huks_Result result;

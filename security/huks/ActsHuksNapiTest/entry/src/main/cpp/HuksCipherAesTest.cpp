@@ -20,6 +20,7 @@
 #include <string>
 #include <cstring>
 #include <cstdlib>
+#include <securec.h>
 
 namespace Acts {
 namespace Huks {
@@ -148,7 +149,11 @@ static OH_Huks_Result TestUpdateLoopFinish(const struct OH_Huks_Blob *handle, co
             free(outDataSeg.data);
             return ret;
         }
-        memcpy(cur, outDataSeg.data, outDataSeg.size);
+        if (memcpy_s(cur, AES_COMMON_SIZE - (cur - outData->data), outDataSeg.data, outDataSeg.size) != EOK) {
+            free(outDataSeg.data);
+            ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+            return ret;
+        }
         cur += outDataSeg.size;
         outData->size += outDataSeg.size;
         free(outDataSeg.data);
@@ -168,7 +173,11 @@ static OH_Huks_Result TestUpdateLoopFinish(const struct OH_Huks_Blob *handle, co
             free(outDataFinish.data);
             return ret;
         }
-        memcpy(cur, outDataFinish.data, outDataFinish.size);
+        if (memcpy_s(cur, AES_COMMON_SIZE - (cur - outData->data), outDataFinish.data, outDataFinish.size) != EOK) {
+            free(outDataFinish.data);
+            ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+            return ret;
+        }
         cur += outDataFinish.size;
         outData->size += outDataFinish.size;
         free(outDataFinish.data);
@@ -185,7 +194,11 @@ static OH_Huks_Result TestUpdateLoopFinish(const struct OH_Huks_Blob *handle, co
         free(outDataFinish.data);
         return ret;
     }
-    memcpy(cur, outDataFinish.data, outDataFinish.size);
+    if (memcpy_s(cur, AES_COMMON_SIZE - (cur - outData->data), outDataFinish.data, outDataFinish.size) != EOK) {
+        free(outDataFinish.data);
+        ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+        return ret;
+    }
     outData->size += outDataFinish.size;
     free(outDataFinish.data);
 

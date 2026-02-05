@@ -19,9 +19,9 @@
 #include "napi/native_api.h"
 #include <functional>
 
-static constexpr int ARG_INDEX = 0;
-static constexpr int DEFAULT_ARG = -1;
-static constexpr int RESULT_ERROR = -1;
+constexpr int ARG_INDEX = 0;
+constexpr int DEFAULT_ARG = -1;
+constexpr int RESULT_ERROR = -1;
 
 // Helper function to safely execute NAPI operations
 inline napi_value NapiTry(napi_env env, std::function<napi_value()> func)

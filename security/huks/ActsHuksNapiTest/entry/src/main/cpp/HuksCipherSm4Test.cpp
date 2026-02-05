@@ -29,6 +29,7 @@ static const uint32_t SM4_COMMON_SIZE = 256;
 static const uint32_t HKS_SM4_IV_SIZE = 16;
 static const uint32_t MAX_UPDATE_SIZE = 64;
 static const uint32_t MAX_OUTDATA_SIZE = MAX_UPDATE_SIZE * 2;
+static const uint32_t DOUBLE_SIZE = 2;  // 用于计算输出缓冲区大小的倍数因子
 
 static const std::string g_inData =
     "Hks_SM4_Cipher_Test_000000000000000000000000000000000000000000000000000000000000"
@@ -107,7 +108,7 @@ static OH_Huks_Result TestUpdateLoopFinish(const struct OH_Huks_Blob *handle, co
         inDataSeg.data += MAX_UPDATE_SIZE;
     }
 
-    struct OH_Huks_Blob outDataFinish = {inData->size * 2, nullptr};
+    struct OH_Huks_Blob outDataFinish = {inData->size * DOUBLE_SIZE, nullptr};
     outDataFinish.data = (uint8_t *)malloc(outDataFinish.size);
     if (outDataFinish.data == nullptr) {
         ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
@@ -124,7 +125,7 @@ static OH_Huks_Result TestUpdateLoopFinish(const struct OH_Huks_Blob *handle, co
         cur += outDataFinish.size;
         outData->size += outDataFinish.size;
         free(outDataFinish.data);
-        outDataFinish.size = inData->size * 2;
+        outDataFinish.size = inData->size * DOUBLE_SIZE;
         outDataFinish.data = (uint8_t *)malloc(outDataFinish.size);
         if (outDataFinish.data == nullptr) {
             ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;

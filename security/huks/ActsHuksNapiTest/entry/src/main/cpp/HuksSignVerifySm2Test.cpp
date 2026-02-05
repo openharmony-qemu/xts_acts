@@ -386,7 +386,7 @@ static OH_Huks_Result HksSm2SignVerifyTestRun(const struct OH_Huks_Blob *keyAlia
             break;
         }
         ret = OH_Huks_GenerateKeyItem(keyAlias, genParamSet, nullptr);
-        if (ret.errorCode == -112) {
+        if (ret.errorCode == (int32_t)OH_HUKS_ERR_ALGORITHM_NOT_SUPPORTED) {
             // Algorithm not supported, return success to skip test gracefully
             ret.errorCode = (int32_t)OH_HUKS_SUCCESS;
             break;
