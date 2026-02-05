@@ -59,7 +59,9 @@ group("ans_standard") {
       "actsNotificationWantUriTest:ActsNotificationWantUriTest",
       "actsNotificationWantUriTestStatic:ActsNotificationWantUriStaticTest",
       "notificationManager:notificationManager",
-      "notificationManagerStatic:NotificationManagerStaticTest"
+      "notificationManagerStatic:NotificationManagerStaticTest",
+      "actsAnsNotificationBadgeNoSystemTest:ActsNotificationAnsBadgeNoSystemTest",
+      "actsAnsNotificationBadgeNoSystemTestStatic:ActsNotificationAnsBadgeNoSystemStaticTest"
     ]
   }
 }

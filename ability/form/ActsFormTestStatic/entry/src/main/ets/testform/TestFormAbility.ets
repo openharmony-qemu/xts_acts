@@ -65,12 +65,14 @@ class TestFormAbility extends UIAbility {
       hilog.error(DOMAIN, TAG, `loadContent catch error: ${e?.message}`);
     }
 
-    try {
-      let windowClass = windowStage.getMainWindowSync();
-      this.uiContext = windowClass!.getUIContext();
-      hilog.info(DOMAIN, TAG, 'getUIContext');
-    } catch (e: BusinessError) {
-      hilog.error(DOMAIN, TAG, `getUIContext error: ${e?.message}`);
-    }
+    hilog.info(DOMAIN, TAG, 'get main window start');
+    windowStage.getMainWindow().then((win) => {
+      hilog.info(DOMAIN, TAG, 'get main window success');
+      this.uiContext = win.getUIContext();
+      hilog.info(DOMAIN, TAG, 'getUIContext end');
+    }).catch((err) => {
+      hilog.info(DOMAIN, TAG, `Failed to get main window: ${JSON.stringify(err)}`);
+    });
+    hilog.info(DOMAIN, TAG, 'onWindowStageCreate end');
   }
 }

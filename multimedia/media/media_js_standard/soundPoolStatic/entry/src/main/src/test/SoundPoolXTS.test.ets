@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 let TAG = "[soundPoolTest]";
 let filePath: string | null = null;
-let soundPool: media.SoundPool | null;
+let soundPool: media.SoundPool | null = null;
 let maxStreams = 3;
 let soundId = -1;
 let returnMsg: string = ``;

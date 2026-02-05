@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 import { UIUtils, Local, Trace, ObservedV2, IMonitor, IMonitorDecoratedVariable, Param } from '@ohos.arkui.stateManagement';
-import { ComponentV2, Entry, Column, Row, Button, Scroll, ForEach, Text, Divider, Set, DatePicker, TextAlign, Margin } from '@ohos.arkui.component';
+import { ComponentV2, Entry, Column, Row, Button, Scroll, ForEach, Text, Divider, DatePicker, TextAlign, Margin } from '@ohos.arkui.component';
 //二维数组
 @ObservedV2
 class MatrixData {

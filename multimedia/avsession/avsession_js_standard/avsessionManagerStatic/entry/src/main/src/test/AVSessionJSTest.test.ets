@@ -20,18 +20,18 @@ import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 const TAG = "[AVSessionJSTest]";
 export default function abilityTest() {
     describe("AVSessionJsTest", () => {
-        let session: avSession.AVSession | null;
-        let controller: avSession.AVSessionController;
+        let session: avSession.AVSession | null = null;
+        let controller: avSession.AVSessionController | undefined;
         let receivedCallback = false;
         let receivedCallback2 = false;
-        let receivedString: string;
-        let receivedString2: string;
-        let receivedParam: Record<string, Object>;
-        let receivedParam2: Record<string, Object>;
+        let receivedString: string = '';
+        let receivedString2: string = '';
+        let receivedParam: Record<string, Object> = {};
+        let receivedParam2: Record<string, Object> = {};
         const INVALID_STRING = "invalid string";
         const UPDATE_LYRICS_EVENT = "dynamic_lyrics";
         const UPDATE_LYRICS_WANT_PARAMS: Record<string, Object> = {
@@ -65,7 +65,7 @@ export default function abilityTest() {
 
         beforeEach(async () => {
             try{
-                session = await avSession.createAVSession(context, "AVSessionDemo", 'video_call');
+                session = await avSession.createAVSession(context!, "AVSessionDemo", 'video_call');
             }catch(err: BusinessError){
                 console.info(`TestLog: Session create error: code: ${err.code}, message: ${err.message}`);
             };
@@ -210,7 +210,7 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             session!.onCommonCommand(commonCommandCallback1);
             try {
-                await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
+                await controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
             }catch(err: BusinessError){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_STATIC_0100 error " + JSON.stringify(err));
                 expect(true).assertFalse();
@@ -244,7 +244,7 @@ export default function abilityTest() {
             session!.onCommonCommand(commonCommandCallback1);
             session!.onCommonCommand(commonCommandCallback2);
             try {
-                await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
+                await controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
             }catch(err: BusinessError){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_STATIC_0200 Send common command error " + JSON.stringify(err));
                 expect(true).assertFalse();
@@ -284,7 +284,7 @@ export default function abilityTest() {
             session!.onCommonCommand(commonCommandCallback2);
             session!.offCommonCommand(commonCommandCallback2);
             try {
-                await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
+                await controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
             }catch(err: BusinessError){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0100 Send common command error" + JSON.stringify(err));
                 expect(true).assertFalse();
@@ -321,7 +321,7 @@ export default function abilityTest() {
             session!.offCommonCommand(commonCommandCallback1);
             session!.offCommonCommand(commonCommandCallback2);
             try {
-                await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
+                await controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
             }catch(err: BusinessError){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0200 Send common command error" + JSON.stringify(err));
                 expect(true).assertFalse();
@@ -353,7 +353,7 @@ export default function abilityTest() {
             session!.onCommonCommand(commonCommandCallback2);
             session!.offCommonCommand();
             try {
-                await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
+                await controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
             }catch(err: BusinessError){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0300 Send common command error" + JSON.stringify(err));
                 expect(true).assertFalse();

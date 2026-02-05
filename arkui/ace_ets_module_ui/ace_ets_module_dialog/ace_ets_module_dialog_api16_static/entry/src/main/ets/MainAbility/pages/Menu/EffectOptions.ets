@@ -61,7 +61,6 @@ import {
   Scroller,
   Color,
   Rectangle,
-  LevelMode,
   ActionSheetOptions,
   ControlSize,
   DialogAlignment,
@@ -75,7 +74,7 @@ import { UIContext, Router, KeyboardAvoidMode, PromptAction } from '@ohos.arkui.
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import { BuilderNode, FrameNode } from '@ohos.arkui.node';
-import { ImmersiveMode } from '@ohos.promptAction';
+import { ImmersiveMode, LevelMode } from '@ohos.promptAction';
 import { LengthMetrics, ComponentContent } from '@ohos.arkui.node';
 import { Callback, BusinessError } from '@ohos.base';
 import { Router } from '@ohos.arkui.UIContext';

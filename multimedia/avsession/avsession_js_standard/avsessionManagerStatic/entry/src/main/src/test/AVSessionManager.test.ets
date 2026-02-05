@@ -20,7 +20,7 @@ import Utils from './Util.test';
 import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 export default function AVSessionManager() {
     describe('AVSessionManager', () => {
         let tag = 'ApplicationA';
@@ -64,7 +64,7 @@ export default function AVSessionManager() {
             async (done: () => void): Promise<void> => {
             try{
                 let data: avSession.AVSession;
-                currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
+                currentAVSession = await avSession.createAVSession(context!, tag, 'video_call')
                 if (currentAVSession?.sessionId.length === 64) {
                     console.info('TestLog: avSession create successfully');
                     expect(true).assertTrue();
@@ -92,14 +92,14 @@ export default function AVSessionManager() {
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try{
-                await avSession.createAVSession(context, '', 'video_call')
+                await avSession.createAVSession(context!, '', 'video_call')
                 console.info('TestLog: avSession create successfully');
             }catch(err: BusinessError){
                 console.info(`TestLog: avSession create error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(401);
             };
             Utils.msSleep(200);
-            currentAVSession = await avSession.createAVSession(context,tag,'video_call');
+            currentAVSession = await avSession.createAVSession(context!,tag,'video_call');
             done();
         })
 
@@ -114,7 +114,7 @@ export default function AVSessionManager() {
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             try{
-                currentAVSession = await avSession.createAVSession(context, tag, "video")
+                currentAVSession = await avSession.createAVSession(context!, tag, "video")
                 if (currentAVSession?.sessionId.length === 64) {
                     console.info('TestLog: avSession create successfully');
                     expect(true).assertTrue();
@@ -143,7 +143,7 @@ export default function AVSessionManager() {
         it('SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try {
-                currentAVSession = await avSession.createAVSession(context, tag, 'video_call');
+                currentAVSession = await avSession.createAVSession(context!, tag, 'video_call');
                 console.info(`CreateAVSession 111BusinessError: code: `);
                 console.info(`CreateAVSession 333BusinessError: code: `);
                 currentAVSession?.getAVCastController((err: BusinessError|null, data: avSession.AVCastController | undefined|undefined) => {
@@ -174,7 +174,7 @@ export default function AVSessionManager() {
             async (done: () => void): Promise<void> => {
             try {
                 try{
-                    currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
+                    currentAVSession = await avSession.createAVSession(context!, tag, 'video_call')
                     console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession?.sessionId}`);
                 }catch(err: BusinessError){
                     console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -208,7 +208,7 @@ export default function AVSessionManager() {
         it('SUB_MULTIMEDIA_AVSESSION_STOPCASTING_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try {
-                await avSession.createAVSession(context, tag, 'video_call').then((data) => {
+                await avSession.createAVSession(context!, tag, 'video_call').then((data) => {
                     currentAVSession = data;
                     console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession?.sessionId}`);
                     try{
@@ -246,7 +246,7 @@ export default function AVSessionManager() {
             async (done: () => void): Promise<void> => {
             try {
                 try{
-                    currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
+                    currentAVSession = await avSession.createAVSession(context!, tag, 'video_call')
                     console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession?.sessionId}`);
                 }catch(err: BusinessError){
                     console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -281,7 +281,7 @@ export default function AVSessionManager() {
             async (done: () => void): Promise<void> => {
             try {
                 try{
-                    currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
+                    currentAVSession = await avSession.createAVSession(context!, tag, 'video_call')
                     console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession?.sessionId}`);
                 }catch(err: BusinessError){
                     console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -322,7 +322,7 @@ export default function AVSessionManager() {
             async (done: () => void): Promise<void> => {
             try {
                 try{
-                    currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
+                    currentAVSession = await avSession.createAVSession(context!, tag, 'video_call')
                     console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession?.sessionId}`);
                 }catch(err: BusinessError){
                     console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);

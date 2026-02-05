@@ -115,7 +115,7 @@ export default function AudioRendererInterruptUnitTest() {
             AudioStreamInfo: audio.AudioStreamInfo,
             done: () => void
         ): Promise<audio.AudioRenderer> => {
-            let render: audio.AudioRenderer | null;
+            let render: audio.AudioRenderer | null = null;
 
             let AudioRendererOptions: audio.AudioRendererOptions = {
                 streamInfo: AudioStreamInfo,

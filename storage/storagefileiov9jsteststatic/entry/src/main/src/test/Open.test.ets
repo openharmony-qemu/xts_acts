@@ -331,16 +331,16 @@ export default function fileIOOpen() {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_012 start');
       let fpath = await Utils.nextFileName('fileIO_test_open_sync_static_012');
       expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
-      let file: fs.File;
+      let file: fs.File | undefined;
       try {
         file = fs.openSync(fpath, undefined);
-        expect(await Utils.isIntNum(file.fd)).assertTrue();
-        let readLen = fs.readSync(file.fd, new ArrayBuffer(4096));
+        expect(await Utils.isIntNum(file!.fd)).assertTrue();
+        let readLen = fs.readSync(file!.fd, new ArrayBuffer(4096));
         expect(readLen == FILE_CONTENT.length).assertTrue();
-        fs.writeSync(file.fd, new ArrayBuffer(4096));
+        fs.writeSync(file!.fd, new ArrayBuffer(4096));
         expect(false).assertTrue();
       } catch (e: BusinessError) {
-        fs.closeSync(file);
+        fs.closeSync(file!);
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_012 has failed for' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
@@ -1081,16 +1081,16 @@ export default function fileIOOpen() {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_026 start');
       let fpath = await Utils.nextFileName('fileIO_test_open_async_static_026');
       expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
-      let file: fs.File;
+      let file: fs.File | undefined;
       try {
         file = await fs.open(fpath, undefined);
-        expect(await Utils.isIntNum(file.fd)).assertTrue();
-        let readLen = fs.readSync(file.fd, new ArrayBuffer(4096));
+        expect(await Utils.isIntNum(file!.fd)).assertTrue();
+        let readLen = fs.readSync(file!.fd, new ArrayBuffer(4096));
         expect(readLen == FILE_CONTENT.length).assertTrue();
-        fs.writeSync(file.fd, new ArrayBuffer(4096));
+        fs.writeSync(file!.fd, new ArrayBuffer(4096));
         expect(false).assertTrue();
       } catch (e: BusinessError) {
-        fs.closeSync(file);
+        fs.closeSync(file!);
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_026 has failed for' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();

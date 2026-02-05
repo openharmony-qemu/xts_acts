@@ -60,7 +60,7 @@ import wifiMg from '@ohos.wifiManager';
 export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
   describe("certFrameworkCertAllowDownloadInterCaTestUnit", (): void => {
 
-    beforeEach((): void => {
+    beforeEach(async (): void => {
       if(!wifiMg.isWifiActive()) {
         console.info("=========>>>>>>> wifi_test/enable wifi");
         await sleep(5000);

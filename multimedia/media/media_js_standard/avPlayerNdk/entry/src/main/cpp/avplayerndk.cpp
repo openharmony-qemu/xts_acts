@@ -3171,6 +3171,84 @@ static napi_value NAPI_Global_setLoudnessGain2(napi_env env, napi_callback_info 
     napi_create_int32(env, backParam, &result);
     return result;
 }
+
+static napi_value NAPI_Global_AVPlayerOnInfoTypeEnum(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t seekdone = 0;
+    int32_t speeddone = 1;
+    int32_t bitratedone = 2;
+    int32_t eos = 3;
+    int32_t state = 4;
+    int32_t position = 5;
+    int32_t message = 6;
+    int32_t volume = 7;
+    int32_t resolution = 8;
+    int32_t buffering = 9;
+    int32_t res = 1;
+    if (AVPlayerOnInfoType::AV_INFO_TYPE_SEEKDONE == seekdone &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_SPEEDDONE == speeddone &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_BITRATEDONE == bitratedone &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_EOS == eos &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_STATE_CHANGE == state &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_POSITION_UPDATE == position &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_MESSAGE == message &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_VOLUME_CHANGE == volume &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_RESOLUTION_CHANGE == resolution &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_BUFFERING_UPDATE == buffering) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value NAPI_Global_AVPlayerOnInfoTypeEnum1(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t bitrate = 10;
+    int32_t interrupt = 11;
+    int32_t duration = 12;
+    int32_t isLive = 13;
+    int32_t trackChange = 14;
+    int32_t trackInfo = 15;
+    int32_t subtitle = 16;
+    int32_t audioOutput = 17;
+    int32_t playbackRate = 18;
+    int32_t resolution = 19;
+    int32_t res = 1;
+    if (AVPlayerOnInfoType::AV_INFO_TYPE_BITRATE_COLLECT == bitrate &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_INTERRUPT_EVENT == interrupt &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_DURATION_UPDATE == duration &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_IS_LIVE_STREAM == isLive &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_TRACKCHANGE == trackChange &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_TRACK_INFO_UPDATE == trackInfo &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_SUBTITLE_UPDATE == subtitle &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_AUDIO_OUTPUT_DEVICE_CHANGE == audioOutput &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_PLAYBACK_RATE_DONE == playbackRate &&
+        AVPlayerOnInfoType::AV_INFO_TYPE_SUPER_RESOLUTION_CHANGED == resolution) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value NAPI_Global_AVPlayerBufferingTypeEnum(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t start = 1;
+    int32_t end = 2;
+    int32_t percent = 3;
+    int32_t duration = 4;
+    int32_t res = 1;
+    if (AVPlayerBufferingType::AVPLAYER_BUFFERING_START == start &&
+        AVPlayerBufferingType::AVPLAYER_BUFFERING_END == end &&
+        AVPlayerBufferingType::AVPLAYER_BUFFERING_PERCENT == percent &&
+        AVPlayerBufferingType::AVPLAYER_BUFFERING_CACHED_DURATION ==duration) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -3343,6 +3421,12 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr},
         {"getPlaybackStatisticMetricsAbnormal", nullptr, NAPI_Global_GetPlaybackStatisticMetricsAbnormal,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"avPlayerOnInfoTypeEnum", nullptr, NAPI_Global_AVPlayerOnInfoTypeEnum, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"avPlayerOnInfoTypeEnum1", nullptr, NAPI_Global_AVPlayerOnInfoTypeEnum1, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"avPlayerBufferingTypeEnum", nullptr, NAPI_Global_AVPlayerBufferingTypeEnum, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

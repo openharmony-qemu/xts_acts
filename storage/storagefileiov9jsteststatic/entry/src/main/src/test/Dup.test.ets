@@ -156,5 +156,34 @@ export default function fileIODup() {
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
       }
     });
+
+    /**
+     * @tc.name   fileIO_test_dup_sync_static_006
+     * @tc.number SUB_DF_FILEIO_DUP_SYNC_0600
+     * @tc.desc   Test dup() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_dup_sync_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_dup_sync_static_006');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
+        let newFile = fs.dup(file.fd);
+        expect(await Utils.isIntNum(newFile.fd)).assertTrue();
+        let bytesWritten = fs.writeSync(newFile.fd, new ArrayBuffer(20));
+        expect(bytesWritten == 20).assertTrue();
+        let readlen = fs.readSync(file.fd, new ArrayBuffer(4096));
+        expect(readlen == 0).assertTrue();
+        fs.closeSync(file);
+        fs.closeSync(newFile);
+        fs.unlinkSync(fpath);
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_dup_sync_static_006 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
   });
 }

@@ -94,16 +94,16 @@ async function maxUiWindow(driver: Driver, window: UiWindow | null): Promise<boo
 
 export default function uitestUiWindowTest() {
   describe('uitestUiWindowTest', (): void => {
-    let driver: Driver;
+    let driver: Driver | undefined;
     beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, "uitestUiWindowTest loadup start!!!!!")
       driver = Driver.create();
       await Utils.msSleep(1000);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      await driver.delayMs(waitUiReadyMs);
-      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
-      await driver.delayMs(waitUiReadyMs);
-      await initSpite(driver, window);
+      await driver!.delayMs(waitUiReadyMs);
+      let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
+      await driver!.delayMs(waitUiReadyMs);
+      await initSpite(driver!, window);
       await stopApplication('com.uitestScene.acts');
       hilog.info(domain, tag, "uitestUiWindowTest loadup over!!!!!")
     })
@@ -113,11 +113,11 @@ export default function uitestUiWindowTest() {
     afterAll(async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       const driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
-      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
-      await driver.delayMs(waitUiReadyMs);
-      await maxUiWindow(driver, window);
-      await driver.delayMs(waitUiReadyMs);
+      await driver!.delayMs(waitUiReadyMs);
+      let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
+      await driver!.delayMs(waitUiReadyMs);
+      await maxUiWindow(driver!, window);
+      await driver!.delayMs(waitUiReadyMs);
       await stopApplication('com.uitestScene.acts');
     })
 
@@ -135,8 +135,8 @@ export default function uitestUiWindowTest() {
         let disPlay = display.getDefaultDisplaySync();
         hilog.info(domain, tag, `testFindWindowWithId_static id, ${JSON.stringify(disPlay)}`);
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-        await driver.delayMs(waitUiReadyMs);
-        let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disPlay.id.toInt() });
+        await driver!.delayMs(waitUiReadyMs);
+        let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disPlay.id.toInt() });
         hilog.info(domain, tag, `testFindWindowWithId_static window , ${JSON.stringify(window)}`);
         expect(window != null).assertTrue();
         if (window != null) {
@@ -165,32 +165,32 @@ export default function uitestUiWindowTest() {
      */
     it('testSplit_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs);
-      let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+      await driver!.delayMs(waitUiReadyMs);
+      let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
       expect(window1 != null).assertTrue();
       try {
         if (window1 != null) {
           await window1.split();
-          await driver.delayMs(waitUiReadyMs * 2)
+          await driver!.delayMs(waitUiReadyMs * 2)
         }
-        let scbCom = await driver.findComponent(ON.id('scb_block_cover'));
+        let scbCom = await driver!.findComponent(ON.id('scb_block_cover'));
         hilog.info(domain, tag, `testSplit_static scbCom, ${JSON.stringify(scbCom)}`);
         if (scbCom != null) {
           expect(scbCom != null).assertTrue();
         } else {
-          let testLabel = await driver.findComponent(ON.text('test label'));
+          let testLabel = await driver!.findComponent(ON.text('test label'));
           hilog.info(domain, tag, `testSplit_static testLabel, ${JSON.stringify(testLabel)}`);
           if (testLabel != null) {
             await testLabel.click();
-            await driver.delayMs(waitUiReadyMs);
-            let window2 = await driver.findWindow({bundleName:'com.uitestScene.acts'});
-            await driver.delayMs(waitUiReadyMs);
+            await driver!.delayMs(waitUiReadyMs);
+            let window2 = await driver!.findWindow({bundleName:'com.uitestScene.acts'});
+            await driver!.delayMs(waitUiReadyMs);
             expect(window2 != null).assertTrue();
             if (window2 != null) {
               let window2Mode = await window2.getWindowMode();
               expect(window2Mode == WindowMode.PRIMARY).assertTrue();
             }
-            let testWindow = await driver.findWindow({bundleName:'com.uitest.acts.static'});
+            let testWindow = await driver!.findWindow({bundleName:'com.uitest.acts.static'});
             expect(testWindow != null).assertTrue();
             if (testWindow != null) {
               let testWindowMode = await testWindow.getWindowMode();
@@ -221,13 +221,13 @@ export default function uitestUiWindowTest() {
       hilog.info(domain, tag, `testResume_static start `);
       const driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      await driver.delayMs(waitUiReadyMs);
-      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+      await driver!.delayMs(waitUiReadyMs);
+      let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
       expect(window != null).assertTrue();
       try {
         if (window != null) {
           await window.resume();
-          await driver.delayMs(waitUiReadyMs);
+          await driver!.delayMs(waitUiReadyMs);
         }
       } catch (err: BusinessError) {
         hilog.info(domain, tag, `testResume_static resume error, ${JSON.stringify(err)}`);
@@ -254,8 +254,8 @@ export default function uitestUiWindowTest() {
       hilog.info(domain, tag, `testWindowResizeA_static start `);
       const driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+      await driver!.delayMs(waitUiReadyMs)
+      let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
       hilog.info(domain, tag, `testWindowResizeA_static  window , ${JSON.stringify(window)}`);
       expect(window != null).assertTrue();
       try {
@@ -264,15 +264,15 @@ export default function uitestUiWindowTest() {
           if (windowMode != WindowMode.FLOATING) {
             await window.resume();
           }
-          await driver.delayMs(1000);
-          let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+          await driver!.delayMs(1000);
+          let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
           hilog.info(domain, tag, `testWindowResizeA_static  window1 , ${JSON.stringify(window1)}`);
           expect(window1 != null).assertTrue();
           if (window1 != null) {
             let bounds1 = await window1.getBounds();
             hilog.info(domain, tag, `testWindowResizeA_static bounds1, ${JSON.stringify(bounds1)} `);
             await window1.resize(600, 600, ResizeDirection.RIGHT_DOWN);
-            let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+            let window2 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
             hilog.info(domain, tag, `testWindowResizeA_static  window2 , ${JSON.stringify(window2)}`);
             expect(window2 != null).assertTrue();
             if (window2 != null) {
@@ -280,7 +280,7 @@ export default function uitestUiWindowTest() {
               hilog.info(domain, tag, `testWindowResizeA_static bounds2, ${JSON.stringify(bounds2)} `);
               expect(bounds2 != bounds1).assertTrue();
               await window2.resize(400, 400, ResizeDirection.RIGHT_UP);
-              let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+              let window3 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
               hilog.info(domain, tag, `testWindowResizeA_static  window3 , ${JSON.stringify(window3)}`);
               expect(window3 != null).assertTrue();
               if (window3 != null) {
@@ -288,7 +288,7 @@ export default function uitestUiWindowTest() {
                 hilog.info(domain, tag, `testWindowResizeA_static bounds3, ${JSON.stringify(bounds3)} `);
                 expect(bounds3 != bounds2).assertTrue();
                 await window3.resize(300, 300, ResizeDirection.LEFT_DOWN);
-                let window4 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+                let window4 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
                 hilog.info(domain, tag, `testWindowResizeA_static  window4 , ${JSON.stringify(window4)}`);
                 expect(window4 != null).assertTrue();
                 if (window4 != null) {
@@ -296,7 +296,7 @@ export default function uitestUiWindowTest() {
                   hilog.info(domain, tag, `testWindowResizeA_static bounds4, ${JSON.stringify(bounds4)} `);
                   expect(bounds4 != bounds3).assertTrue();
                   await window4.resize(500, 500, ResizeDirection.LEFT_UP);
-                  let window5 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+                  let window5 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
                   hilog.info(domain, tag, `testWindowResizeA_static  window5 , ${JSON.stringify(window5)}`);
                   expect(window5 != null).assertTrue();
                   if (window5 != null) {
@@ -334,8 +334,8 @@ export default function uitestUiWindowTest() {
       hilog.info(domain, tag, `testWindowMoveTo_static start `);
       const driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+      await driver!.delayMs(waitUiReadyMs)
+      let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
       hilog.info(domain, tag, `testWindowMoveTo_static window, ${JSON.stringify(window)} `);
       expect(window != null).assertTrue();
       try {
@@ -345,14 +345,14 @@ export default function uitestUiWindowTest() {
             await window.resume();
           }
         }
-        let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+        let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
         hilog.info(domain, tag, `testWindowMoveTo_static window1, ${JSON.stringify(window1)} `);
         expect(window1 != null).assertTrue();
         if (window1 != null) {
           let bounds1 = await window1.getBounds();
           hilog.info(domain, tag, `testWindowMoveTo_static bounds1, ${JSON.stringify(bounds1)} `);
           await window1.moveTo(100, 100);
-          let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+          let window2 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
           hilog.info(domain, tag, `testWindowMoveTo_static window2, ${JSON.stringify(window2)} `);
           expect(window2 != null).assertTrue();
           if (window2 != null) {
@@ -386,15 +386,15 @@ export default function uitestUiWindowTest() {
       hilog.info(domain, tag, `testWindowMinimize_static start `);
       const driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+      await driver!.delayMs(waitUiReadyMs)
+      let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
       hilog.info(domain, tag, `testWindowMinimize_static window, ${JSON.stringify(window)} `);
       expect(window != null).assertTrue();
       try {
         if (window != null) {
           await window.minimize();
-          await driver.delayMs(waitUiReadyMs)
-          let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+          await driver!.delayMs(waitUiReadyMs)
+          let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
           hilog.info(domain, tag, `testWindowMinimize_static window1, ${JSON.stringify(window1)} `);
           expect(window1 == null).assertTrue();
         }
@@ -423,8 +423,8 @@ export default function uitestUiWindowTest() {
       hilog.info(domain, tag, `testWindowMaximize_static start `);
       const driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+      await driver!.delayMs(waitUiReadyMs)
+      let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
       expect(window != null).assertTrue();
       try {
         if (window != null) {
@@ -433,14 +433,14 @@ export default function uitestUiWindowTest() {
             await window.resume();
           }
         }
-        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+        let window2 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
         expect(window2 != null).assertTrue();
         if (window2 != null) {
           await window2.maximize();
           hilog.info(domain, tag, `testWindowMaximize_static maximize sccessful`);
         }
-        //  await driver.delayMs(1000);
-        let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+        //  await driver!.delayMs(1000);
+        let window3 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
         hilog.info(domain, tag, `testWindowMaximize_static window3, ${JSON.stringify(window3)} `);
         expect(window3 != null).assertTrue();
         if (window3 != null) {
@@ -473,8 +473,8 @@ export default function uitestUiWindowTest() {
       try {
         const driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-        await driver.delayMs(waitUiReadyMs)
-        let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', focused: true });
+        await driver!.delayMs(waitUiReadyMs)
+        let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts', focused: true });
         hilog.info(domain, tag, `testWindowIsFocused window, ${JSON.stringify(window)} `);
         expect(window != null).assertTrue();
         if (window != null) {
@@ -505,8 +505,8 @@ export default function uitestUiWindowTest() {
       try {
         const driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-        await driver.delayMs(waitUiReadyMs)
-        let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', focused: true, active: true });
+        await driver!.delayMs(waitUiReadyMs)
+        let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts', focused: true, active: true });
         hilog.info(domain, tag, `testWindowIsActive window, ${JSON.stringify(window)} `);
         expect(window != null).assertTrue();
         if (window != null) {
@@ -537,8 +537,8 @@ export default function uitestUiWindowTest() {
       try {
         const driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-        await driver.delayMs(waitUiReadyMs)
-        let window = await driver.findWindow({
+        await driver!.delayMs(waitUiReadyMs)
+        let window = await driver!.findWindow({
           bundleName: 'com.uitestScene.acts',
           focused: true,
           active: true,
@@ -574,8 +574,8 @@ export default function uitestUiWindowTest() {
       try {
         const driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-        await driver.delayMs(waitUiReadyMs)
-        let window = await driver.findWindow({
+        await driver!.delayMs(waitUiReadyMs)
+        let window = await driver!.findWindow({
           bundleName: 'com.uitestScene.acts',
           focused: true,
           active: true,
@@ -610,8 +610,8 @@ export default function uitestUiWindowTest() {
       hilog.info(domain, tag, `testGetWindowMode_static start `);
       const driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+      await driver!.delayMs(waitUiReadyMs)
+      let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
       hilog.info(domain, tag, `testGetWindowMode window1, ${JSON.stringify(window1)} `);
       expect(window1 != null).assertTrue();
       try {
@@ -620,7 +620,7 @@ export default function uitestUiWindowTest() {
           hilog.info(domain, tag, `testGetWindowMode_static mode1, ${JSON.stringify(mode1)} `);
           await window1.resume();
           hilog.info(domain, tag, `testGetWindowMode_static resume `);
-          let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+          let window2 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
           hilog.info(domain, tag, `testGetWindowMode_static window2, ${JSON.stringify(window2)} `);
           expect(window2 != null).assertTrue();
           if (window2 != null) {
@@ -660,8 +660,8 @@ export default function uitestUiWindowTest() {
       try {
         const driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-        await driver.delayMs(waitUiReadyMs)
-        let window = await driver.findWindow({
+        await driver!.delayMs(waitUiReadyMs)
+        let window = await driver!.findWindow({
           bundleName: 'com.uitestScene.acts',
           focused: true,
           active: true,
@@ -696,8 +696,8 @@ export default function uitestUiWindowTest() {
       hilog.info(domain, tag, `testWindowClose_static start `);
       const driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+      await driver!.delayMs(waitUiReadyMs)
+      let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
       hilog.info(domain, tag, `testWindowClose_static window, ${JSON.stringify(window)} `);
       expect(window != null).assertTrue();
       try {
@@ -705,7 +705,7 @@ export default function uitestUiWindowTest() {
           await window.close();
           hilog.info(domain, tag, `testWindowClose_static close sccessful`);
         }
-        let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+        let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
         hilog.info(domain, tag, `testWindowClose_static window1, ${JSON.stringify(window1)} `);
         expect(window1 == null).assertTrue()
       } catch (err: BusinessError) {

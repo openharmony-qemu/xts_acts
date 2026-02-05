@@ -20,6 +20,7 @@ import { BusinessError, settings } from '@kit.BasicServicesKit';
 import * as LoadContentByName from '../testability/pages/WindowTest/LoadContentByName';
 import { abilityAccessCtrl, PermissionRequestResult, Permissions, StartOptions } from '@kit.AbilityKit';
 import { Driver, ON } from '@kit.TestKit';
+import deviceInfo from '@ohos.deviceInfo';
 
 let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
 
@@ -155,6 +156,8 @@ export default function WindowLifecycle() {
     let isAutoWindow: string = '';
     let windowclassArr: Array<window.Window>;
     let isFreeWindowMode = false;
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -3253,34 +3256,38 @@ export default function WindowLifecycle() {
       console.log(caseName + " begin");
       let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
       console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let subWindowClass: window.Window | undefined;
+      let windowStageStart = await startAbility3(caseName, context);
+      let contextTest3 = AppStorage.get('contextTest3') as common.UIAbilityContext;
+      console.log(`${caseName} contextTest3: ${contextTest3}`);
       let config: window.Configuration = {
         name: "testRestoreMainWindow_0300",
         windowType: window.WindowType.TYPE_FLOAT,
-        ctx: context
+        ctx: contextTest3
       };
-      let subWindowClass: window.Window | undefined;
-      let windowStageStart = await startAbility3(caseName, context);
-      let mainWindow = windowStageStart.getMainWindowSync();
       try {
         window.createWindow(config).then(async (data) => {
           subWindowClass = data;
           await subWindowClass.setUIContent('testability/pages/First/index2');
-          await mainWindow.destroyWindow();
-          await subWindowClass.restoreMainWindow();
-          expect().assertFail();
-          await subWindowClass?.destroyWindow();
           await terminateAbility3(caseName);
+          await sleep(1000);
+          await subWindowClass.restoreMainWindow();
+          expect(true).assertFail();
           done()
         }).catch(async (err: BusinessError) => {
           console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
-          await subWindowClass?.destroyWindow();
           await terminateAbility3(caseName);
-          if (!canIUseRes) {
-            expect(err.code).assertEqual(801);
+          if (err.code == 1300002) {
             done();
           } else {
-            expect(err.code).assertEqual(1300004);
-            done();
+            await subWindowClass?.destroyWindow();
+            if (!canIUseRes || (deviceType != 'phone' && deviceType != 'tablet' && deviceType != '2in1')) {
+              expect(err.code).assertEqual(801);
+              done();
+            } else {
+              expect(err.code).assertEqual(1300004);
+              done();
+            }
           }
         });
       } catch (err) {
@@ -3293,14 +3300,14 @@ export default function WindowLifecycle() {
     });
 
     /**
-     * @tc.name   testRestoreMainWindow_0500
+     * @tc.name testRestoreMainWindow_0500
      * @tc.number SUB_WMS_RESTORE_MAIN_WINDOW_0500
-     * @tc.desc   验证float窗口在前台且有down时间时调用restoreMainWindow拉起主窗到前台，未传入wantparameters
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc 验证float窗口在前台且有down时间时调用restoreMainWindow拉起主窗到前台，未传入wantparameters
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
      */
-    it("testRestoreMainWindow_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it("testRestoreMainWindow_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testRestoreMainWindow_0500";
       console.log(caseName + " begin");
       let driver = Driver.create()
@@ -3325,44 +3332,51 @@ export default function WindowLifecycle() {
           subWindowClass = data;
           await subWindowClass.setUIContent('testability/pages/First/index2');
           await subWindowClass.showWindow();
+          await subWindowClass.resize(800, 1200);
           await sleep(500);
-          await mainWindow.minimize();
-          await sleep(500);
-          let text = await driver.findComponent(ON.id('textId'))
-          console.error(`${caseName} text: ${text}`);
-          await sleep(1000);
-          await text.click();
-          await sleep(500);
-          mainWindow.on('windowEvent', callback)
-          await subWindowClass.restoreMainWindow();
-          await sleep(1000);
+          if (canIUseRes && (deviceType == 'phone' || deviceType == 'tablet' || deviceType == '2in1')) {
+            console.log(`${caseName} minimize`);
+            await mainWindow.minimize();
+            await sleep(500);
+            let text = await driver.findComponent(ON.id('textId'))
+            console.log(`${caseName} text: ${text}`);
+            await sleep(1000);
+            await text.click();
+            await sleep(500);
+            mainWindow.on('windowEvent', callback);
+            await subWindowClass.restoreMainWindow();
+            await sleep(500);
+          } else {
+            await subWindowClass?.destroyWindow();
+            done();
+          }
         }).catch(async (err: BusinessError) => {
           console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
           await subWindowClass?.destroyWindow();
           if (err.code == 1300002) {
             done();
           } else {
-            expect().assertFail();
+            expect(true).assertFail();
             done();
           }
         });
       } catch (err) {
         console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
         await subWindowClass?.destroyWindow();
-        expect().assertFail();
+        expect(true).assertFail();
         done();
       }
     });
-    
+
     /**
-     * @tc.name   testRestoreMainWindow_0600
+     * @tc.name testRestoreMainWindow_0600
      * @tc.number SUB_WMS_RESTORE_MAIN_WINDOW_0600
-     * @tc.desc   验证float窗口在前台且有down时间时调用restoreMainWindow拉起主窗到前台，传入wantparameters
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc 验证float窗口在前台且有down时间时调用restoreMainWindow拉起主窗到前台，传入wantparameters
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
      */
-    it("testRestoreMainWindow_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it("testRestoreMainWindow_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testRestoreMainWindow_0600";
       console.log(caseName + " begin");
       let driver = Driver.create()
@@ -3381,39 +3395,47 @@ export default function WindowLifecycle() {
           expect(res).assertEqual(window.WindowEventType.WINDOW_SHOWN);
           mainWindow.off('windowEvent', callback)
           await subWindowClass?.destroyWindow();
-          done()
+          done();
         }
         window.createWindow(config).then(async (data) => {
           subWindowClass = data;
           await subWindowClass.setUIContent('testability/pages/First/index2');
           await subWindowClass.showWindow();
+          await subWindowClass.resize(800, 1200);
           await sleep(500);
-          await mainWindow.minimize();
-          await sleep(1000);
-          mainWindow.on('windowEvent', callback)
-          let text = await driver.findComponent(ON.id('textId'))
-          await sleep(1000);
-          await text.click();
-          await sleep(500);
-          let param: Record<string, Object> = {
-            'info': 'restoreMainWindow',
-          };
-          await subWindowClass.restoreMainWindow(param);
-          await sleep(500)
+          if (canIUseRes && (deviceType == 'phone' || deviceType == 'tablet' || deviceType == '2in1')) {
+            console.log(`${caseName} minimize`);
+            await mainWindow.minimize();
+            await sleep(500);
+            let text = await driver.findComponent(ON.id('textId'))
+            console.log(`${caseName} text: ${text}`);
+            await sleep(1000);
+            await text.click();
+            await sleep(500);
+            mainWindow.on('windowEvent', callback);
+            let param: Record<string, Object> = {
+              'info': 'restoreMainWindow',
+            };
+            await subWindowClass.restoreMainWindow(param);
+            await sleep(500)
+          } else {
+            await subWindowClass?.destroyWindow();
+            done();
+          }
         }).catch(async (err: BusinessError) => {
           console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
           await subWindowClass?.destroyWindow();
           if (err.code == 1300002) {
             done();
           } else {
-            expect().assertFail();
+            expect(true).assertFail();
             done();
           }
         });
       } catch (err) {
         console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
         await subWindowClass?.destroyWindow();
-        expect().assertFail();
+        expect(true).assertFail();
         done();
       }
     });

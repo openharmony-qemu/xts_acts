@@ -29,11 +29,11 @@ export default function SecurityRandomSyncJsunit() {
      * @tc.desc   the length of random is 12, use sync style of interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it(
       "Security_CryptoFramework_RandomSync_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let rand: cryptoFrameworks.Random = cryptoFrameworks.createRandom();
         try {

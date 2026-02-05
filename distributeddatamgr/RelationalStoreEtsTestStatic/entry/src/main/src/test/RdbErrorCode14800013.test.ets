@@ -8,7 +8,7 @@ import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
-let context:common.UIAbilityContext;
+let context:common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 let dataBaseDir : String;
@@ -29,7 +29,7 @@ let STORE_CONFIG :data_relationalStore.StoreConfig = {
 const DROP_TABLE_TESTTRANS = "DROP TABLE IF EXISTS testTrans";
 
 const TABLE_NAME = "testTrans"
-let rdbStore : data_relationalStore.RdbStore
+let rdbStore : data_relationalStore.RdbStore | undefined;
 let vbs :Array<data_relationalStore.ValuesBucket> = new Array<data_relationalStore.ValuesBucket>(3);
 const valueBucket0 :data_relationalStore.ValuesBucket = {
   "data1": "hello",
@@ -63,16 +63,16 @@ export default function RdbErrorCode14800013() {
       });
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-      await rdbStore.execute(DROP_TABLE_TEST);
-      await rdbStore.execute(CREATE_TABLE_TEST);
-      let num = await rdbStore.batchInsert("test", vbs);
+      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(CREATE_TABLE_TEST);
+      let num = await rdbStore!.batchInsert("test", vbs);
       hilog.info(domain, tag, 'batchInsert %{public}d rows.', num);
     });
 
     afterAll(async () : Promise<void> => {
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
     /**
      * @tc.name   testgetColumnTypeSync0500

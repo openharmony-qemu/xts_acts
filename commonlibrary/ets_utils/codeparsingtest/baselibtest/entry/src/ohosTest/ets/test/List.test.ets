@@ -15,6 +15,7 @@
 
 import buffer1Test from './buffer/Buffer1.test';
 import buffer2Test from './buffer/Buffer2.test';
+import buffer3Test from './buffer/Buffer3.test';
 import fastbufferBase1Test from './fastbuffer/FastBufferBase1.test';
 import fastbufferBase2Test from './fastbuffer/FastBufferBase2.test';
 import processTest from './process/Process.test';
@@ -59,6 +60,7 @@ import fastBuffer3Test from './fastbuffer/FastBuffer3.test.ets';
 export default function testsuite() {
   buffer1Test();
   buffer2Test();
+  buffer3Test();
   fastbufferBase1Test();
   fastbufferBase2Test();
   processTest();

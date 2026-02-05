@@ -365,7 +365,7 @@ napi_value DRM_MediaKeyRequestTypeValue(napi_env env, napi_callback_info info)
 {
     napi_value result;
     DRM_MediaKeyRequest requestData;
-    requestData.type == MEDIA_KEY_REQUEST_TYPE_UNKNOWN;
+    requestData.type = MEDIA_KEY_REQUEST_TYPE_UNKNOWN;
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(nullptr, nullptr, &requestData);
     napi_create_int32(env, requestData.type == MEDIA_KEY_REQUEST_TYPE_UNKNOWN, &result);
     return result;
@@ -410,7 +410,7 @@ napi_value DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN(napi_env env, n
 {
     napi_value result;
     DRM_MediaKeyRequest requestData;
-    requestData.type == MEDIA_KEY_REQUEST_TYPE_UNKNOWN;
+    requestData.type = MEDIA_KEY_REQUEST_TYPE_UNKNOWN;
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(nullptr, nullptr, &requestData);
     napi_create_int32(env, requestData.type == MEDIA_KEY_REQUEST_TYPE_UNKNOWN, &result);
     return result;

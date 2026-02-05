@@ -34,11 +34,11 @@ export default function SecuritySignatureVerificationTwoJsunit() {
      * @tc.desc   Pass in the DSAKeyPar structure with a signature verification type of "DSA|SHA224"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it(
       "Security_CryptoFramework_SignatureVerification_Func_1900",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await asyCallback
           .signAndVerifyBySpecProcess(
@@ -455,7 +455,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
         let dsaGenerator: cryptoFramework.AsyKeyGeneratorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(
           asyCommon.genDsa2048KeyPairSpecBigE()
         );
-        let dsaKeyPair: cryptoFramework.KeyPair;
+        let dsaKeyPair: cryptoFramework.KeyPair | undefined;
         await new Promise<void>((resolve, reject) => {
           dsaGenerator.generateKeyPair((err: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
             if (err || keyPair === undefined) { // success: error is null, failed: data is undefined
@@ -467,7 +467,7 @@ export default function SecuritySignatureVerificationTwoJsunit() {
           });
         });
         try {
-          await verifyGenerator.init(dsaKeyPair.pubKey);
+          await verifyGenerator.init(dsaKeyPair!.pubKey);
           expect(null).assertFail();
         } catch (err: BusinessError) {
           expect(err.code).assertEqual(401);

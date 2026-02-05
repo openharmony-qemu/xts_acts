@@ -27,7 +27,6 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import { Error } from '@ohos.arkui.component'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -67,8 +66,8 @@ export default function DatePickerDialog() {
     });
 
 
-    
-    
+
+
 
     /**
      * @tc.number   DatePickerDialog_static_0100

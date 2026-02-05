@@ -33,10 +33,10 @@ export default function DigestAlgorithmSm3Jsunit() {
      * @tc.desc   the asyAlgoName is "SM3", Use the Promise Style of Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_MDSM3_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await DigPromise.testMDDigestPromise("SM3")
         .then((result: boolean) => {
           expect(result).assertTrue();
@@ -323,7 +323,7 @@ export default function DigestAlgorithmSm3Jsunit() {
      */
     it("Security_CryptoFramework_HMACSM3_Func_0700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let globalHMAC: cryptoFramework.Mac;
+      let globalHMAC: cryptoFramework.Mac | undefined;
       let globalText: string = "";
       let globalSymKeyGenerator: cryptoFramework.SymKeyGenerator;
       let t: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz";
@@ -343,16 +343,16 @@ export default function DigestAlgorithmSm3Jsunit() {
           await globalSymKeyGenerator
             .generateSymKey()
             .then((symKey: cryptoFramework.SymKey) => {
-              return globalHMAC.init(symKey);
+              return globalHMAC!.init(symKey);
             })
             .then(() => {
-              return globalHMAC.update(ginBlob);
+              return globalHMAC!.update(ginBlob);
             })
             .then<cryptoFramework.DataBlob>(() => {
-              return globalHMAC.doFinal();
+              return globalHMAC!.doFinal();
             })
             .then((doFinalBlob: cryptoFramework.DataBlob) => {
-              let mdLen: int = globalHMAC.getMacLength();
+              let mdLen: int = globalHMAC!.getMacLength();
               console.log("HMAC HMAC len: " + mdLen);
               if (doFinalBlob != null && mdLen != 0 && mdLen != null) {
                 resolve(true);
@@ -383,7 +383,7 @@ export default function DigestAlgorithmSm3Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let signGenerator: cryptoFramework.Sign = cryptoFramework.createSign("SM2_256|SM3");
       let rsaGenerator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("RSA1024");
-      let rsaKeyPair: cryptoFramework.KeyPair;
+      let rsaKeyPair: cryptoFramework.KeyPair | undefined;
       await new Promise<void>((resolve, reject) => {
         rsaGenerator.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
           if (err || tmp === undefined) { // success: error is null, failed: data is undefined
@@ -395,7 +395,7 @@ export default function DigestAlgorithmSm3Jsunit() {
         });
       });
       try {
-        await signGenerator.init(rsaKeyPair.priKey);
+        await signGenerator.init(rsaKeyPair!.priKey);
         expect(null).assertFail();
       } catch (err: BusinessError) {
         expect(err.code).assertEqual(401);
@@ -421,7 +421,7 @@ export default function DigestAlgorithmSm3Jsunit() {
       let globalSymKeyGenerator: cryptoFramework.SymKeyGenerator =
         cryptoFramework.createSymKeyGenerator("SM4_128");
 
-      let globalSymKey: cryptoFramework.SymKey;
+      let globalSymKey: cryptoFramework.SymKey | undefined;
       await new Promise<void>((resolve, reject) => {
         globalSymKeyGenerator.generateSymKey((err: BusinessError<void>|null, tmp: cryptoFramework.SymKey|undefined) => {
           if (err || tmp === undefined) { // success: error is null, failed: data is undefined
@@ -438,7 +438,7 @@ export default function DigestAlgorithmSm3Jsunit() {
       } catch (err: BusinessError) {
         expect(err.code).assertEqual(17630001);
       }
-      await globalHMAC.init(globalSymKey);
+      await globalHMAC.init(globalSymKey!);
       done();
     });
 

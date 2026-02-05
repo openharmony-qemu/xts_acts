@@ -117,7 +117,7 @@ export default function DisplayTest() {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         hilog.info(domain, tag, 'DisplayTest start');
         let abilityDelegator : abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-        let windowStage: window.WindowStage;
+        let windowStage: window.WindowStage | undefined;
         let win: window.Window;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
@@ -129,7 +129,7 @@ export default function DisplayTest() {
         let orientation:string[];
         let code:number = 0;
         let displayFoldStatus:display.FoldStatus;
-        let context: common.UIAbilityContext;
+        let context: common.UIAbilityContext | undefined;
         beforeAll(async (): Promise<void> => {
             hilog.info(domain, tag, 'beforeAll start');
             abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
@@ -1093,7 +1093,7 @@ export default function DisplayTest() {
             let storage: LocalStorage = new LocalStorage();
             // storage.setOrCreate('storageSimpleProp', 121);
             try {
-                let promise1 = windowStage.createSubWindow('test_getAvailableArea_subWindow');
+                let promise1 = windowStage!.createSubWindow('test_getAvailableArea_subWindow');
                 promise1.then(async (data:window.Window) => {
                     if (data == null) {
                         hilog.error(0x0000, '[ANI]',msgStr + "Failed to create the subWindow. Cause: The data is empty");
@@ -1173,7 +1173,7 @@ export default function DisplayTest() {
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let displayClass: display.Display;
             try {
-                let mainWindowClass:window.Window = await windowStage.getMainWindow();
+                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
                 displayClass = display.getDefaultDisplaySync();
                 let promise1 = displayClass.getAvailableArea();
                 promise1.then(async (data:display.Rect) => {
@@ -1234,7 +1234,7 @@ export default function DisplayTest() {
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let displayClass: display.Display;
             try {
-                let mainWindowClass:window.Window = await windowStage.getMainWindow();
+                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
                 displayClass = display.getDefaultDisplaySync();
                 let promise1 = displayClass.getAvailableArea();
                 promise1.then(async (data:display.Rect) => {
@@ -1344,7 +1344,7 @@ export default function DisplayTest() {
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let displayClass: display.Display;
             try {
-                let mainWindowClass:window.Window = await windowStage.getMainWindow();
+                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
                 displayClass = display.getDefaultDisplaySync();
                 let promise1 = displayClass.getAvailableArea();
                 promise1.then(async (data:display.Rect) => {
@@ -1411,7 +1411,7 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]','Listening callback2 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
             };
             try {
-                let mainWindowClass:window.Window = await windowStage.getMainWindow();
+                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
                 displayClass = display.getDefaultDisplaySync();
                 let promise1 = displayClass.getAvailableArea();
                 promise1.then(async (data:display.Rect) => {
@@ -1476,7 +1476,7 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]','Listening callback2 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
             };
             try {
-                let mainWindowClass:window.Window = await windowStage.getMainWindow();
+                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
                 displayClass = display.getDefaultDisplaySync();
                 let promise1 = displayClass.getAvailableArea();
                 promise1.then(async (data:display.Rect) => {
@@ -1542,7 +1542,7 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]','Listening callback2 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
             };
             try {
-                let mainWindowClass:window.Window = await windowStage.getMainWindow();
+                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
                 displayClass = display.getDefaultDisplaySync();
                 let promise1 = displayClass.getAvailableArea();
                 promise1.then(async (data:display.Rect) => {
@@ -2073,7 +2073,7 @@ export default function DisplayTest() {
         it('test_js_capture_privateWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'test_js_capture_privateWindow_static';
             try{
-                let windowClass:window.Window = windowStage.getMainWindowSync();
+                let windowClass:window.Window = windowStage!.getMainWindowSync();
                 windowClass.setWindowPrivacyMode(true, (err: BusinessError<void> | null) :void => {
                     const errCode: number = err!.code;
                     if (errCode) {
@@ -2380,8 +2380,10 @@ export default function DisplayTest() {
     it('testOnBrightnessInfoChange_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         let caseName:string =  'testOnBrightnessInfoChange_static_0100';
         try {
-            let windowClass:window.Window = windowStage.getMainWindowSync();
+            let windowClass:window.Window = windowStage!.getMainWindowSync();
+            console.info(`${caseName} getMainWindowSync success`);
             await windowClass.setWindowBrightness(1);
+            console.info(`${caseName} setWindowBrightness 1 success`);
             await Utils.msSleep(100);
             let brightnessChangeCount1:number = 0;
             let brightnessChangeCount2:number = 0;
@@ -2439,7 +2441,7 @@ export default function DisplayTest() {
             await Utils.msSleep(100);
             done();
         } catch (e: BusinessError) {
-            console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+            console.error(`${caseName} Failed. Cause: ${e}`);
             if (e.code == 801) {
                 done()
             } else {
@@ -2459,6 +2461,7 @@ export default function DisplayTest() {
      */
     it('testCreateVirtualScreenwithSupportsFocusIsTrue_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         let caseName:string =  'testCreateVirtualScreenwithSupportsFocusIsTrue_static';
+        console.log(caseName + 'begin');
         try {
             display.createVirtualScreen({
                 name: 'createVirtualScreen1',
@@ -2468,19 +2471,20 @@ export default function DisplayTest() {
                 surfaceId: '',
                 supportsFocus: true
             }).then(async (displayId: Long) => {
+                console.log(caseName + 'createVirtualScreen success');
                 await display.makeUnique(displayId);
                 display.makeUnique(displayId).then(() => {
                     console.log(caseName + 'succeeded in makeUnique');
                     let options: StartOptions = {
                         displayId: displayId
                     }
-                    let windowStageStart = await startAbility(caseName, context, options);
+                    let windowStageStart = await startAbility(caseName, context!, options);
                     let windowClass:window.Window = windowStageStart.getMainWindowSync();
                     await windowClass.setWindowFocusable(true);
                     await terminateAbility(caseName);
                     done();
                 }).catch(async (err: Error) => {
-                    console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+                    console.error(caseName + 'failed in makeUnique, err : ' + err+ err.code);
                     if (err.code == 801) {
                         expect(err.code).assertEqual(801)
                         done();
@@ -2491,7 +2495,7 @@ export default function DisplayTest() {
                     }
                 })
             }).catch(async (err: Error) => {
-                console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+                console.error(caseName + 'failed in createVirtualScreen, err : ' + err+ err.code);
                 if (err.code == 801) {
                     expect(err.code).assertEqual(801)
                     done();
@@ -2502,7 +2506,7 @@ export default function DisplayTest() {
                 }
             })
         } catch (e: BusinessError) {
-            console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+            console.error(`${caseName} Failed. Cause: ${e}`);
             await terminateAbility(caseName);
             expect(false).assertTrue();
             done();

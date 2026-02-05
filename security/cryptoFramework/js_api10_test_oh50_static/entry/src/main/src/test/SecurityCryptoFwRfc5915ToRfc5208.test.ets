@@ -188,7 +188,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
     it("SUB_Security_CryptoFramework_ECCRFC5915_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "DSA1024";
-        let keyPair: cryptoFramework.KeyPair;
+        let keyPair: cryptoFramework.KeyPair | undefined;
         let cipher: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         if (pkcs8Utils.keys.key_1024) {
           let priKey: cryptoFramework.DataBlob = {data: new Uint8Array(pkcs8Utils.keys.key_1024.pri)}
@@ -196,7 +196,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
           keyPair = await cipher.convertKey(pubKey, priKey)
         }
         try {
-          keyPair.priKey.getEncodedDer("PKCS8");
+          keyPair!.priKey.getEncodedDer("PKCS8");
           expect(null).assertFail();
         } catch (error: BusinessError) {
           console.error(`DSA PriKey “${error}“, error code: ${error.code}`);

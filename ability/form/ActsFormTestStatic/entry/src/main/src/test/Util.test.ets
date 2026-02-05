@@ -64,18 +64,19 @@ export default class Utils {
         uri: uri,
         bundleName: bundleName,
       }).then(() => {
-        hilog.info(DOMAIN, TAG, `start ${abilityName} success.`);
+        hilog.info(DOMAIN, TAG, `start ${abilityName}-uri:${uri} success.`);
         isSuccessStartAbility = true;
       });
       await Utils.msSleep(500);
     } catch (error: BusinessError) {
-      hilog.error(DOMAIN, TAG, `start ${abilityName} fail. message: ${error?.message}`);
+      hilog.error(DOMAIN, TAG, `start ${abilityName}-uri:${uri} fail. message: ${error?.message}`);
       return false;
     }
     if (isSuccessStartAbility) {
+      hilog.info(DOMAIN, TAG, `start ${abilityName}-uri:${uri} success, isSuccessStartAbility is true`);
       return true;
     }
-    hilog.error(DOMAIN, TAG, `start ${abilityName} timeout so failed.`);
+    hilog.error(DOMAIN, TAG, `start ${abilityName}-uri:${uri} timeout so failed.`);
     return false;
   }
 

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ export default function imagePackToData() {
       console.log('image case filePath is', fdNumber + filePath)
     }
 
-    beforeAll(() => {
+    beforeAll(async () => {
       console.info("beforeAll case");
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
@@ -112,10 +112,11 @@ export default function imagePackToData() {
           } else {
             globalPacker = imagePackerApi;
             try {
-              let data: ArrayBuffer = await imagePackerApi.packToData(pixelmap, arg);
-              await pixelmap.release();
-              await imagePackerApi.release();
-              let dataArr = new Uint8Array(data);
+              let data: ArrayBuffer | undefined;
+              waitForCompletion(async () => {data = await imagePackerApi!.packToData(pixelmap, arg);})
+              waitForCompletion(async () => {await pixelmap!.release();})
+              waitForCompletion(async () => {await imagePackerApi!.release();})
+              let dataArr = new Uint8Array(data as ArrayBuffer);
               console.info(`${testNum} dataArr.length=` + dataArr.length);
               for (let i = 0; i < dataArr.length; i++) {
                 console.info(`dataArr[` + i + `]=` + dataArr[i]);
@@ -167,7 +168,8 @@ export default function imagePackToData() {
           } else {
             globalPacker = imagePackerApi;
             try {
-                let data: ArrayBuffer = await imagePackerApi.packToData(pixelmap, packOpts);
+                let data: ArrayBuffer | undefined;
+                waitForCompletion(async () => {data = await imagePackerApi!.packToData(pixelmap, packOpts);})
                 expect(false).assertTrue();
                 done();
             } catch(error: BusinessError)  {

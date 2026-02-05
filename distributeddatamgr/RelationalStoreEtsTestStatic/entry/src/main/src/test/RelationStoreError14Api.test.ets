@@ -36,7 +36,7 @@ import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 let options: data_relationalStore.TransactionOptions = {
   transactionType: data_relationalStore.TransactionType.DEFERRED
@@ -54,7 +54,7 @@ let STORE_CONFIG: data_relationalStore.StoreConfig = {
   securityLevel: data_relationalStore.SecurityLevel.S1,
 }
 
-let rdbStore: data_relationalStore.RdbStore
+let rdbStore: data_relationalStore.RdbStore | undefined;
 let vbs: Array<data_relationalStore.ValuesBucket> = new Array<data_relationalStore.ValuesBucket>(3);
 const valueBucket0: data_relationalStore.ValuesBucket = {
   "data1": "hello",
@@ -94,17 +94,17 @@ export default function ErrorCodeRdbStore14Test() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
       await Utils.msSleep(2000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
     })
 
     beforeEach(async (): Promise<void> => {
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-      await rdbStore.execute(DROP_TABLE_TEST);
-      await rdbStore.execute(CREATE_TABLE_TEST);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(CREATE_TABLE_TEST);
     })
 
     afterEach(async (): Promise<void> => {
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
 
     /**
@@ -118,9 +118,9 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0001 start *************');
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
-          let num = await rdbStore.insert("test", valueBucket0);
+          let num = await rdbStore!.insert("test", valueBucket0);
           expect(num == 1).assertFail();
         } catch (err) {
           err = err as BusinessError;
@@ -141,10 +141,10 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0002 start *************');
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
           let num =
-            await rdbStore.insert("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+            await rdbStore!.insert("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           expect(num == 1).assertFail();
         } catch (err) {
           err = err as BusinessError;
@@ -165,10 +165,10 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0003 start *************');
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
           let num =
-            rdbStore.insertSync("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+            rdbStore!.insertSync("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           expect(num == 1).assertFail();
         } catch (err) {
           err = err as BusinessError;
@@ -189,9 +189,9 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0004 start *************');
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
-          let num = rdbStore.insertSync("test", valueBucket1);
+          let num = rdbStore!.insertSync("test", valueBucket1);
           expect(num == 1).assertFail();
         } catch (err) {
           err = err as BusinessError;
@@ -212,9 +212,9 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0005 start *************');
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
-          let num = await rdbStore.batchInsert("test", vbs);
+          let num = await rdbStore!.batchInsert("test", vbs);
           expect(num == 3).assertFail();
         } catch (err) {
           err = err as BusinessError;
@@ -235,9 +235,9 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0006 start *************');
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
-          let num = rdbStore.batchInsertSync("test", vbs);
+          let num = rdbStore!.batchInsertSync("test", vbs);
           expect(num == 3).assertFail();
         } catch (err) {
           err = err as BusinessError;
@@ -258,12 +258,12 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0007 start *************');
-        let num = await rdbStore.insert("test", valueBucket0);
+        let num = await rdbStore!.insert("test", valueBucket0);
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
-          let rows: number = await rdbStore.update(valueBucket3, predicates);
+          let rows: number = await rdbStore!.update(valueBucket3, predicates);
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0007 rows *************' + rows);
           expect(rows == 1).assertFail();
         } catch (err) {
@@ -286,12 +286,12 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0008 start *************');
-        let num = await rdbStore.insert("test", valueBucket0);
+        let num = await rdbStore!.insert("test", valueBucket0);
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
-          let rows: number = rdbStore.updateSync(valueBucket3, predicates);
+          let rows: number = rdbStore!.updateSync(valueBucket3, predicates);
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0008 rows *************' + rows);
           expect(rows == 1).assertFail();
         } catch (err) {
@@ -314,12 +314,12 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0009 start *************');
-        let num = await rdbStore.insert("test", valueBucket0);
+        let num = await rdbStore!.insert("test", valueBucket0);
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
-          let rows: number = await rdbStore.update(valueBucket3, predicates,
+          let rows: number = await rdbStore!.update(valueBucket3, predicates,
             data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0009 rows *************' + rows);
           expect(rows == 1).assertFail();
@@ -343,13 +343,13 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0010 start *************');
-        let num = await rdbStore.insert("test", valueBucket0);
+        let num = await rdbStore!.insert("test", valueBucket0);
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
           let rows: number =
-            rdbStore.updateSync(valueBucket3, predicates, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+            rdbStore!.updateSync(valueBucket3, predicates, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0010 rows *************' + rows);
           expect(rows == 1).assertFail();
         } catch (err) {
@@ -372,12 +372,12 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0011 start *************');
-        let num = await rdbStore.insert("test", valueBucket0);
+        let num = await rdbStore!.insert("test", valueBucket0);
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
-          let rows = await rdbStore.delete(predicates);
+          let rows = await rdbStore!.delete(predicates);
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0011 rows *************' + rows);
           expect(rows == 1).assertFail();
         } catch (err) {
@@ -400,12 +400,12 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0012 start *************');
-        let num = await rdbStore.insert("test", valueBucket0);
+        let num = await rdbStore!.insert("test", valueBucket0);
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
-          let rows = rdbStore.deleteSync(predicates);
+          let rows = rdbStore!.deleteSync(predicates);
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0012 rows *************' + rows);
           expect(rows == 1).assertFail();
         } catch (err) {
@@ -428,12 +428,12 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0013 start *************');
-        let num = await rdbStore.insert("test", valueBucket0);
+        let num = await rdbStore!.insert("test", valueBucket0);
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
-          let rows = await rdbStore.query(predicates, ["data1"]);
+          let rows = await rdbStore!.query(predicates, ["data1"]);
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError14Test0013 rows *************' + rows.columnCount);
           expect(rows.columnCount == 1).assertFail();
@@ -457,12 +457,12 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0014 start *************');
-        let num = await rdbStore.insert("test", valueBucket0);
+        let num = await rdbStore!.insert("test", valueBucket0);
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
-          let rows = await rdbStore.query(predicates);
+          let rows = await rdbStore!.query(predicates);
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0014 rows *************' + rows);
           expect(rows.columnCount == 1).assertFail();
         } catch (err) {
@@ -485,12 +485,12 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0015 start *************');
-        let num = await rdbStore.insert("test", valueBucket0);
+        let num = await rdbStore!.insert("test", valueBucket0);
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
-          let rows = rdbStore.querySync(predicates, ["data1"]);
+          let rows = rdbStore!.querySync(predicates, ["data1"]);
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError14Test0015 rows *************' + rows.columnCount);
           expect(rows.columnCount == 1).assertFail();
@@ -514,12 +514,12 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0016 start *************');
-        let num = await rdbStore.insert("test", valueBucket0);
+        let num = await rdbStore!.insert("test", valueBucket0);
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
-          let rows = rdbStore.querySync(predicates);
+          let rows = rdbStore!.querySync(predicates);
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError14Test0016 rows *************' + rows.rowCount);
           expect(rows.columnCount == 1).assertFail();
@@ -543,12 +543,12 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0017 start *************');
-        let num = await rdbStore.insert("test", valueBucket0);
+        let num = await rdbStore!.insert("test", valueBucket0);
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
-          let rows = await rdbStore.querySql("SELECT * FROM test WHERE data1 = ?", ['hello']);
+          let rows = await rdbStore!.querySql("SELECT * FROM test WHERE data1 = ?", ['hello']);
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError14Test0017 rows *************' + rows.rowCount);
           expect(rows.columnCount == 1).assertFail();
@@ -572,10 +572,10 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0018 start *************');
-        let num = await rdbStore.batchInsert("test", vbs);
-        await rdbStore.close();
+        let num = await rdbStore!.batchInsert("test", vbs);
+        await rdbStore!.close();
         try {
-          let rows = await rdbStore.execute("select data1 from test");
+          let rows = await rdbStore!.execute("select data1 from test");
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0018 rows *************' + rows);
           expect(rows).assertEqual("ok");
         } catch (err) {
@@ -598,10 +598,10 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0019 start *************');
-        let num = await rdbStore.batchInsert("test", vbs);
-        await rdbStore.close();
+        let num = await rdbStore!.batchInsert("test", vbs);
+        await rdbStore!.close();
         try {
-          let rows = await rdbStore.execute("select data1 from test where data1", []);
+          let rows = await rdbStore!.execute("select data1 from test where data1", []);
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0019 rows *************' + rows);
           expect(rows).assertEqual("ok");
         } catch (err) {
@@ -624,10 +624,10 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0020 start *************');
-        let num = await rdbStore.batchInsert("test", vbs);
-        await rdbStore.close();
+        let num = await rdbStore!.batchInsert("test", vbs);
+        await rdbStore!.close();
         try {
-          let rows = await rdbStore.createTransaction();
+          let rows = await rdbStore!.createTransaction();
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0020 rows *************' + rows);
           expect(rows).assertFail();
         } catch (err) {
@@ -650,9 +650,9 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0021 start *************');
-        let num = await rdbStore.batchInsert("test", vbs);
-        let trans = await rdbStore.createTransaction();
-        await rdbStore.close();
+        let num = await rdbStore!.batchInsert("test", vbs);
+        let trans = await rdbStore!.createTransaction();
+        await rdbStore!.close();
         try {
           let rows = await trans.insert("test", valueBucket1);
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0021 rows *************' + rows);
@@ -679,9 +679,9 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0022 start *************');
-        let num = await rdbStore.batchInsert("test", vbs);
-        let trans = await rdbStore.createTransaction();
-        await rdbStore.close();
+        let num = await rdbStore!.batchInsert("test", vbs);
+        let trans = await rdbStore!.createTransaction();
+        await rdbStore!.close();
         try {
           let rows = await trans.insert("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0022 rows *************' + rows);
@@ -708,9 +708,9 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0023 start *************');
-        let num = await rdbStore.batchInsert("test", vbs);
-        let trans = await rdbStore.createTransaction();
-        await rdbStore.close();
+        let num = await rdbStore!.batchInsert("test", vbs);
+        let trans = await rdbStore!.createTransaction();
+        await rdbStore!.close();
         try {
           let rows = trans.insertSync("test", valueBucket1);
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0023 rows *************' + rows);
@@ -737,9 +737,9 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0024 start *************');
-        let num = await rdbStore.batchInsert("test", vbs);
-        let trans = await rdbStore.createTransaction();
-        await rdbStore.close();
+        let num = await rdbStore!.batchInsert("test", vbs);
+        let trans = await rdbStore!.createTransaction();
+        await rdbStore!.close();
         try {
           let rows = trans.insertSync("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0024 rows *************' + rows);
@@ -766,13 +766,13 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0025 start *************');
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-        await rdbStore.execute(DROP_TABLE_TEST);
-        await rdbStore.execute(CREATE_TABLE_TEST);
-        await rdbStore.insert("test", valueBucket0);
-        await rdbStore.close();
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+        await rdbStore!.execute(DROP_TABLE_TEST);
+        await rdbStore!.execute(CREATE_TABLE_TEST);
+        await rdbStore!.insert("test", valueBucket0);
+        await rdbStore!.close();
         try {
-          let rows: number = rdbStore.batchInsertSync("test", vbs);
+          let rows: number = rdbStore!.batchInsertSync("test", vbs);
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0025 rows *************' + rows);
           expect(rows == 1).assertFail();
         } catch (err) {
@@ -795,7 +795,7 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0026 start *************');
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.close();
         try {
           let res = resultSet.goTo(1)
@@ -821,7 +821,7 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0027 start *************');
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.close();
         try {
           let res = resultSet.goToRow(-1);
@@ -848,7 +848,7 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0028 start *************');
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.close();
         try {
           let res = resultSet.goToFirstRow();
@@ -874,7 +874,7 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0029 start *************');
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.close();
         try {
           let res = resultSet.goToLastRow();
@@ -901,7 +901,7 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0030 start *************');
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.close();
         try {
           let res = resultSet.goToNextRow();
@@ -928,7 +928,7 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0031 start *************');
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.close();
         try {
           let res = resultSet.goToPreviousRow();
@@ -955,7 +955,7 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0032 start *************');
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.goTo(resultSet.rowCount);
         resultSet.close();
         try {
@@ -984,8 +984,8 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0035 start *************');
-        await rdbStore.insert("test", valueBucket0);
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        await rdbStore!.insert("test", valueBucket0);
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.goToFirstRow();
         resultSet.close();
         try {
@@ -1012,7 +1012,7 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0036 start *************');
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.goToFirstRow();
         let num = resultSet.getColumnIndex("data4")
         resultSet.close();
@@ -1040,7 +1040,7 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0037 start *************');
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.goToFirstRow();
         let num = resultSet.getColumnIndex("data2");
         resultSet.close();
@@ -1069,7 +1069,7 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0038 start *************');
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.goToFirstRow();
         let num = resultSet.getColumnIndex("data3");
         resultSet.close();
@@ -1098,7 +1098,7 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0039 start *************');
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.goToFirstRow();
         let num = resultSet.getColumnIndex("data5");
         resultSet.close();
@@ -1128,7 +1128,7 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0041 start *************');
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.goToFirstRow();
         let num = resultSet.getColumnIndex("data5");
         resultSet.close();
@@ -1157,7 +1157,7 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0042 start *************');
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.goToFirstRow();
         resultSet.close();
         try {
@@ -1188,7 +1188,7 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0043 start *************');
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.goToFirstRow();
         let num = resultSet.getColumnIndex("data5");
         resultSet.close();
@@ -1216,7 +1216,7 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0044 start *************');
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.goToFirstRow();
         let num = resultSet.getColumnIndex("data7");
         resultSet.close();
@@ -1246,11 +1246,11 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0045 start *************');
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-        await rdbStore.execute(DROP_TABLE_TEST);
-        await rdbStore.execute(CREATE_TABLE_TEST);
-        await rdbStore.insert("test", valueBucket0);
-        let trans = await rdbStore.createTransaction();
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+        await rdbStore!.execute(DROP_TABLE_TEST);
+        await rdbStore!.execute(CREATE_TABLE_TEST);
+        await rdbStore!.insert("test", valueBucket0);
+        let trans = await rdbStore!.createTransaction();
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
         await trans.commit();
@@ -1277,11 +1277,11 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0046 start *************');
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-        await rdbStore.execute(DROP_TABLE_TEST);
-        await rdbStore.execute(CREATE_TABLE_TEST);
-        await rdbStore.insert("test", valueBucket0);
-        let trans = await rdbStore.createTransaction();
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+        await rdbStore!.execute(DROP_TABLE_TEST);
+        await rdbStore!.execute(CREATE_TABLE_TEST);
+        await rdbStore!.insert("test", valueBucket0);
+        let trans = await rdbStore!.createTransaction();
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
         await trans.commit();
@@ -1308,11 +1308,11 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0047 start *************');
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-        await rdbStore.execute(DROP_TABLE_TEST);
-        await rdbStore.execute(CREATE_TABLE_TEST);
-        await rdbStore.insert("test", valueBucket0);
-        let trans = await rdbStore.createTransaction();
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+        await rdbStore!.execute(DROP_TABLE_TEST);
+        await rdbStore!.execute(CREATE_TABLE_TEST);
+        await rdbStore!.insert("test", valueBucket0);
+        let trans = await rdbStore!.createTransaction();
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
         await trans.commit();
@@ -1339,11 +1339,11 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0048 start *************');
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-        await rdbStore.execute(DROP_TABLE_TEST);
-        await rdbStore.execute(CREATE_TABLE_TEST);
-        let trans = await rdbStore.createTransaction();
-        let num = await rdbStore.insert("test", valueBucket0);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+        await rdbStore!.execute(DROP_TABLE_TEST);
+        await rdbStore!.execute(CREATE_TABLE_TEST);
+        let trans = await rdbStore!.createTransaction();
+        let num = await rdbStore!.insert("test", valueBucket0);
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
         await trans.commit();
@@ -1372,11 +1372,11 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0049 start *************');
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-        await rdbStore.execute(DROP_TABLE_TEST);
-        await rdbStore.execute(CREATE_TABLE_TEST);
-        await rdbStore.insert("test", valueBucket0);
-        let trans = await rdbStore.createTransaction();
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+        await rdbStore!.execute(DROP_TABLE_TEST);
+        await rdbStore!.execute(CREATE_TABLE_TEST);
+        await rdbStore!.insert("test", valueBucket0);
+        let trans = await rdbStore!.createTransaction();
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
         await trans.commit();
@@ -1403,11 +1403,11 @@ export default function ErrorCodeRdbStore14Test() {
      */
     it('RelationStoreError14Test0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-        await rdbStore.execute(DROP_TABLE_TEST);
-        await rdbStore.execute(CREATE_TABLE_TEST);
-        await rdbStore.insert("test", valueBucket0);
-        let trans = await rdbStore.createTransaction();
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+        await rdbStore!.execute(DROP_TABLE_TEST);
+        await rdbStore!.execute(CREATE_TABLE_TEST);
+        await rdbStore!.insert("test", valueBucket0);
+        let trans = await rdbStore!.createTransaction();
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
         await trans.commit();
@@ -1436,11 +1436,11 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0051 start *************');
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-        await rdbStore.execute(DROP_TABLE_TEST);
-        await rdbStore.execute(CREATE_TABLE_TEST);
-        await rdbStore.insert("test", valueBucket0);
-        let trans = await rdbStore.createTransaction();
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+        await rdbStore!.execute(DROP_TABLE_TEST);
+        await rdbStore!.execute(CREATE_TABLE_TEST);
+        await rdbStore!.insert("test", valueBucket0);
+        let trans = await rdbStore!.createTransaction();
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
         await trans.commit();
@@ -1468,11 +1468,11 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0052 start *************');
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-        await rdbStore.execute(DROP_TABLE_TEST);
-        await rdbStore.execute(CREATE_TABLE_TEST);
-        await rdbStore.insert("test", valueBucket0);
-        let trans = await rdbStore.createTransaction();
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+        await rdbStore!.execute(DROP_TABLE_TEST);
+        await rdbStore!.execute(CREATE_TABLE_TEST);
+        await rdbStore!.insert("test", valueBucket0);
+        let trans = await rdbStore!.createTransaction();
         let predicates = new data_relationalStore.RdbPredicates("test");
         predicates.equalTo("data1", "hello");
         await trans.commit();
@@ -1500,8 +1500,8 @@ export default function ErrorCodeRdbStore14Test() {
     it('RelationStoreError14Test0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError14Test0053 start *************');
-        let trans = await rdbStore.createTransaction();
-        await rdbStore.close();
+        let trans = await rdbStore!.createTransaction();
+        await rdbStore!.close();
         try {
           await trans.commit();
           expect().assertFail();
@@ -1539,10 +1539,10 @@ export default function ErrorCodeRdbStore14Test() {
           "data3": 1.0,
           "data4": new Uint8Array([1, 2, 3]),
         }
-        await rdbStore.insert("test", valueBucket2);
-        let resultSet = await rdbStore.querySql("SELECT * FROM test");
+        await rdbStore!.insert("test", valueBucket2);
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
         resultSet.close();
-        await rdbStore.close();
+        await rdbStore!.close();
         try {
           let res = resultSet.getAssets(resultSet.getColumnIndex("data1"));
           expect().assertFail();

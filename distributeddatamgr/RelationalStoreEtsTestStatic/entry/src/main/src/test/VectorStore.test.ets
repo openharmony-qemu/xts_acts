@@ -39,7 +39,7 @@ import relationalStore from '@ohos.data.relationalStore';
 import data_Rdb from '@ohos.data.relationalStore';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 
 const TAG = "[RelationalStore_Ets_TEST >>>>>> ]";
@@ -79,7 +79,7 @@ export default function VectorStoreTest() {
     });
     afterAll(async (): Promise<void> => {
       console.info(TAG + 'afterAll');
-      await data_Rdb.deleteRdbStore(context, STORE_CONFIG);
+      await data_Rdb.deleteRdbStore(context!, STORE_CONFIG);
     });
     console.info(TAG + "*************Unit Test Begin*************");
 
@@ -96,7 +96,7 @@ export default function VectorStoreTest() {
       console.info(TAG + "VectorStoreTest0100 res=" + res);
       if (res == false) {
         try {
-          rdbStore = await data_Rdb.getRdbStore(context, STORE_CONFIG);
+          rdbStore = await data_Rdb.getRdbStore(context!, STORE_CONFIG);
           console.info(TAG + "VectorStoreTest0100 success getRdbStore. rdbStore=" + rdbStore);
           expect().assertFail();
           done()
@@ -107,7 +107,7 @@ export default function VectorStoreTest() {
         }
       } else {
         try {
-          rdbStore = await data_Rdb.getRdbStore(context, STORE_CONFIG);
+          rdbStore = await data_Rdb.getRdbStore(context!, STORE_CONFIG);
           console.info(TAG + "VectorStoreTest0100 getRdbStore is successful, rdbStore = " + rdbStore);
           expect(rdbStore != null).assertTrue();
           await rdbStore.execute(CREATE_TABLE_TEST, 0 ,undefined);

@@ -28,8 +28,8 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
   name: "rdbStore14800051.db",
   securityLevel: relationalStore.SecurityLevel.S1,
 }
-let context: common.UIAbilityContext;
-let rdbStore: relationalStore.RdbStore;
+let context: common.UIAbilityContext | undefined;
+let rdbStore: relationalStore.RdbStore | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 export default function RdbErrorCode14800051() {
@@ -40,15 +40,15 @@ export default function RdbErrorCode14800051() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
       await Utils.msSleep(5000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
     });
 
     beforeEach(async (): Promise<void> => {
       console.info(TAG + 'beforeEach');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       console.info(TAG + "create rdb store success")
-      await rdbStore.executeSql(CREATE_TABLE_TEST);
+      await rdbStore!.executeSql(CREATE_TABLE_TEST);
       let u8 = new Uint8Array([3, 4, 5])
       const valueBucket: relationalStore.ValuesBucket = {
         "name": "Jim",
@@ -56,12 +56,12 @@ export default function RdbErrorCode14800051() {
         "salary": 2000.0,
         "data4": u8
       }
-      await rdbStore.insert("employee", valueBucket);
+      await rdbStore!.insert("employee", valueBucket);
     })
 
     afterAll(async (): Promise<void> => {
       console.info(TAG + 'afterAll');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
 
     /**
@@ -76,7 +76,7 @@ export default function RdbErrorCode14800051() {
       console.info(TAG + "************* testRdbSetDistributedTables14800051_001 start *************");
       try {
         console.info(TAG + "************* testRdbSetDistributedTables14800051_001 start *************");
-        await rdbStore.setDistributedTables(["employee"], relationalStore.DistributedType.DISTRIBUTED_CLOUD)
+        await rdbStore!.setDistributedTables(["employee"], relationalStore.DistributedType.DISTRIBUTED_CLOUD)
       } catch (e) {
         console.error(TAG + `setDistributedTables failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800051);

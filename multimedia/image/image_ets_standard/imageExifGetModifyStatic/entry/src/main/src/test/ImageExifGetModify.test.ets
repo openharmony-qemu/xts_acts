@@ -70,10 +70,10 @@ function sleep(count:int) : Promise<int> {
 export default function imageExifGetModifyTest() {
 
   describe('ImageExifGetModify', () => {
-    let filePath: string;
+    let filePath: string = "";
     let fdNumber: int
     const modfiyFileSuffixs: Array<string> = ["jpg", "webp", "png", "heic"]
-    let testContext: common.UIAbilityContext;
+    let testContext: common.UIAbilityContext | undefined;
     let filesDir: string | undefined | null;
 
     beforeAll(async () => {
@@ -128,7 +128,7 @@ export default function imageExifGetModifyTest() {
         getFd(fileName);
         imageSourceApi = image.createImageSource(filePath)
       }else if(type === "rawfile"){
-        const resourceMgr: resourceManager.ResourceManager = testContext.resourceManager;
+        const resourceMgr: resourceManager.ResourceManager = testContext!.resourceManager;
         const rawFileDescriptor = await resourceMgr.getRawFd(fileName)
         imageSourceApi = image.createImageSource(rawFileDescriptor)
         await resourceMgr.closeRawFd(fileName);

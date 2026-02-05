@@ -23,9 +23,9 @@ let TagFrmwk: string = "AudioFrameworkTest";
 console.info(`${TagFrmwk}: Create AudioManger Object JS Framework`);
 let deviceTypeInfo: string = deviceInfo.deviceType
 const delegator = abilityDelegatorRegistry.getAbilityDelegator();
-let audioManager: audio.AudioManager;
+let audioManager: audio.AudioManager | undefined;
 let audioVolumeManager: audio.AudioVolumeManager;
-let audioVolumeGroupManager: audio.AudioVolumeGroupManager;
+let audioVolumeGroupManager: audio.AudioVolumeGroupManager | undefined;
 let dRValue: audio.DeviceRole;
 let dTValue: audio.DeviceType;
 let devId: number = 0;
@@ -58,7 +58,7 @@ async function getVolumeGroupManager() {
   audioManager = audio.getAudioManager();
   if (audioManager != null) {
     console.info(`${TagFrmwk}: getAudioManger : PASS`);
-    audioVolumeManager = audioManager.getVolumeManager();
+    audioVolumeManager = audioManager!.getVolumeManager();
     audioVolumeGroupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
     if (audioVolumeGroupManager != null) {
       console.info(`${TagFrmwk}: getVolumeGroupManager : PASS`);
@@ -164,7 +164,7 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let data = audioVolumeGroupManager.getVolumeSync(audio.AudioVolumeType.RINGTONE);
+        let data = audioVolumeGroupManager!.getVolumeSync(audio.AudioVolumeType.RINGTONE);
         console.info(`${TagFrmwk}: Media getVolumeSync : success :${data}`);
         expect(true).assertTrue();
         done();
@@ -185,7 +185,7 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let data = audioVolumeGroupManager.getMinVolumeSync(audio.AudioVolumeType.MEDIA);
+        let data = audioVolumeGroupManager!.getMinVolumeSync(audio.AudioVolumeType.MEDIA);
         if (data == 0) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
           expect(true).assertTrue();
@@ -213,7 +213,7 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let data = audioVolumeGroupManager.getMinVolumeSync(audio.AudioVolumeType.RINGTONE);
+        let data = audioVolumeGroupManager!.getMinVolumeSync(audio.AudioVolumeType.RINGTONE);
         console.log('getMinVolumeSync success');
         expect(true).assertTrue();
         done();
@@ -235,7 +235,7 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let data = audioVolumeGroupManager.getMaxVolumeSync(audio.AudioVolumeType.MEDIA);
+        let data = audioVolumeGroupManager!.getMaxVolumeSync(audio.AudioVolumeType.MEDIA);
         if (data == maxVol) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
           expect(true).assertTrue();
@@ -265,7 +265,7 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let data = audioVolumeGroupManager.getMaxVolumeSync(audio.AudioVolumeType.ALARM);
+        let data = audioVolumeGroupManager!.getMaxVolumeSync(audio.AudioVolumeType.ALARM);
         console.log('getMaxVolumeSync success');
         expect(true).assertTrue();
         done();
@@ -287,7 +287,7 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let data = audioVolumeGroupManager.isMuteSync(audio.AudioVolumeType.ACCESSIBILITY);
+        let data = audioVolumeGroupManager!.isMuteSync(audio.AudioVolumeType.ACCESSIBILITY);
         console.log('isMuteSync success');
         expect(true).assertTrue();
         done();
@@ -308,7 +308,7 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let data: audio.AudioRingMode = audioVolumeGroupManager.getRingerModeSync();
+        let data: audio.AudioRingMode = audioVolumeGroupManager!.getRingerModeSync();
         if (data == audio.AudioRingMode.RINGER_MODE_SILENT) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
           expect(data).assertEqual(audio.AudioRingMode.RINGER_MODE_SILENT);     
@@ -339,7 +339,6 @@ export default function audioFramework() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIOCAPTURER_STATECHANGE_PERIODREACH_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -763,6 +762,23 @@ export default function audioFramework() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_STATIC_0200
+     * @tc.desc   DeviceRole - ALL Device Role
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_STATE_CHANGE_HINT_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      expect(audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_MUTE_SUGGESTION).assertEqual(6);
+      console.info("audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_MUTE_SUGGESTION :" + audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_MUTE_SUGGESTION);
+      expect(audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_UNMUTE_SUGGESTION).assertEqual(7);
+      console.info("audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_UNMUTE_SUGGESTION :" + audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_UNMUTE_SUGGESTION);
+      await Utils.msSleep(50);
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_DEVICE_RECOMMENDEDACTION_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICE_RECOMMENDEDACTION_STATIC_0100
      * @tc.desc   DeviceRole - ALL Device Role
@@ -805,7 +821,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioRoutingManager = audioManager.getRoutingManager();
+      let AudioRoutingManager = audioManager!.getRoutingManager();
       AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG,
         (err: BusinessError<void> | null, value: audio.AudioDeviceDescriptors | undefined) => {
         // Getting all Output devices Enumb 1 = OUTPUT_DEVICES_FLAG
@@ -841,7 +857,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioRoutingManager = audioManager.getRoutingManager();
+      let AudioRoutingManager = audioManager!.getRoutingManager();
       AudioRoutingManager.getDevices(audio.DeviceFlag.INPUT_DEVICES_FLAG,
         (err: BusinessError<void> | null, value: audio.AudioDeviceDescriptors | undefined) => {
         // Getting all Input Devices ENUM 2 = INPUT_DEVICES_FLAG
@@ -876,7 +892,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioRoutingManager = audioManager.getRoutingManager();
+      let AudioRoutingManager = audioManager!.getRoutingManager();
       AudioRoutingManager.getDevices(audio.DeviceFlag.ALL_DEVICES_FLAG, (err: BusinessError<void> | null, value: audio.AudioDeviceDescriptors | undefined) => {
         // Getting all devies connected 3 = ALL_DEVICES_FLAG
         console.info(`${TagFrmwk}: Callback: getDevices ALL_DEVICES_FLAG`);
@@ -911,7 +927,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioRoutingManager = audioManager.getRoutingManager();
+      let AudioRoutingManager = audioManager!.getRoutingManager();
       AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG,
         (err: BusinessError<void> | null, value: audio.AudioDeviceDescriptors | undefined) => {
         console.info(`${TagFrmwk}: Callback: getDevices OUTPUT_DEVICES_FLAG`);
@@ -945,7 +961,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioRoutingManager = audioManager.getRoutingManager();
+      let AudioRoutingManager = audioManager!.getRoutingManager();
       AudioRoutingManager.getDevices(audio.DeviceFlag.INPUT_DEVICES_FLAG,
         (err: BusinessError<void> | null, value: audio.AudioDeviceDescriptors | undefined) => {
         console.info(`${TagFrmwk}: Callback: getDevices INPUT_DEVICES_FLAG`);
@@ -979,7 +995,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioRoutingManager = audioManager.getRoutingManager();
+      let AudioRoutingManager = audioManager!.getRoutingManager();
       AudioRoutingManager.getDevices(audio.DeviceFlag.ALL_DEVICES_FLAG,
         (err: BusinessError<void> | null, value: audio.AudioDeviceDescriptors | undefined) => {
         console.info(`${TagFrmwk}: Callback: getDevices ALL_DEVICES_FLAG`);
@@ -1013,7 +1029,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioRoutingManager = audioManager.getRoutingManager();
+      let AudioRoutingManager = audioManager!.getRoutingManager();
       let value = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`${TagFrmwk}: Promise: getDevices OUTPUT_DEVICES_FLAG`);
       value.forEach(displayDeviceProp);
@@ -1037,7 +1053,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioRoutingManager = audioManager.getRoutingManager();
+      let AudioRoutingManager = audioManager!.getRoutingManager();
       let value = await AudioRoutingManager.getDevices(audio.DeviceFlag.INPUT_DEVICES_FLAG);
       console.info(`${TagFrmwk}: Promise: getDevices INPUT_DEVICES_FLAG`);
       value.forEach(displayDeviceProp);
@@ -1060,7 +1076,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioRoutingManager = audioManager.getRoutingManager();
+      let AudioRoutingManager = audioManager!.getRoutingManager();
       let value = await AudioRoutingManager.getDevices(audio.DeviceFlag.ALL_DEVICES_FLAG);
       console.info(`${TagFrmwk}: Promise: getDevices ALL_DEVICES_FLAG`);
       value.forEach(displayDeviceProp);
@@ -1113,7 +1129,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioRoutingManager = audioManager.getRoutingManager();
+      let AudioRoutingManager = audioManager!.getRoutingManager();
       let value = AudioRoutingManager.getDevicesSync(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`${TagFrmwk}: Promise: getDevices OUTPUT_DEVICES_FLAG`);
       value.forEach(displayDeviceProp);
@@ -1137,7 +1153,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioRoutingManager = audioManager.getRoutingManager();
+      let AudioRoutingManager = audioManager!.getRoutingManager();
       try {
         let value = AudioRoutingManager.getDevicesSync(audio.DeviceFlag.INPUT_DEVICES_FLAG);
         console.info(`${TagFrmwk}: getDevicesSync Success,value: ${value}`);
@@ -1262,5 +1278,42 @@ export default function audioFramework() {
       }
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0100
+     * @tc.desc   isIntelligentNoiseReductionEnabledForCurrentDevice -
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+            let isSupport: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_LIVE);
+            console.info(`[Support] SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupport}`);
+            flag = true;
+        } catch (err) {
+            let error = err as BusinessError;
+            console.error(`isIntelligentNoiseReductionEnabledForCurrentDevice ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_AUDIOPRIVACYTYPE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_AUDIOPRIVACYTYPE_STATIC_0300
+     * @tc.desc   AudioPrivacyType - PRIVACY_TYPE_SHARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_AUDIOPRIVACYTYPE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      expect(audio.AudioPrivacyType.PRIVACY_TYPE_SHARED).assertEqual(2);
+      await Utils.msSleep(50);
+      done();
+    })
   })
 }

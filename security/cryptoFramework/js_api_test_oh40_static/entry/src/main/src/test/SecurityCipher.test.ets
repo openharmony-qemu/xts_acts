@@ -36,7 +36,7 @@ async function genRsa2048KeyPairSpec(): Promise<cryptoFramework.KeyPair> {
 export default function SecurityCipherJsunit() {
   describe("SecurityCipherJsunit", () => {
     console.log("##########start SecurityCipherJsunit##########");
-    let gKeyPairSpec: cryptoFramework.KeyPair;
+    let gKeyPairSpec: cryptoFramework.KeyPair | undefined;
     beforeAll(async () => {
       gKeyPairSpec = await genRsa2048KeyPairSpec();
     });
@@ -47,12 +47,12 @@ export default function SecurityCipherJsunit() {
      * @tc.desc   the asyAlgoName is "RSA|PKCS1|SHA1", Use the Callback Style of Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_Cipher_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await asyPromise
-        .encryptAndDecryptBySpecProcess(gKeyPairSpec, "RSA|PKCS1")
+        .encryptAndDecryptBySpecProcess(gKeyPairSpec!, "RSA|PKCS1")
         .then((result: boolean) => {
           expect(result).assertTrue();
         })
@@ -76,7 +76,7 @@ export default function SecurityCipherJsunit() {
     it("Security_CryptoFramework_Cipher_Func_0200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await asyPromise
-        .encryptAndDecryptBySpecProcess(gKeyPairSpec, "RSA|PKCS1|SHA224")
+        .encryptAndDecryptBySpecProcess(gKeyPairSpec!, "RSA|PKCS1|SHA224")
         .then((result:boolean) => {
           expect(result).assertTrue();
         })
@@ -100,7 +100,7 @@ export default function SecurityCipherJsunit() {
     it("Security_CryptoFramework_Cipher_Func_0300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await asyCallback
-        .encryptAndDecryptBySpecProcess(gKeyPairSpec, "RSA|PKCS1|SHA256")
+        .encryptAndDecryptBySpecProcess(gKeyPairSpec!, "RSA|PKCS1|SHA256")
         .then((result: boolean) => {
           expect(result).assertTrue();
         })
@@ -124,7 +124,7 @@ export default function SecurityCipherJsunit() {
     it("Security_CryptoFramework_Cipher_Func_0400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await asyPromise
-        .encryptAndDecryptBySpecProcess(gKeyPairSpec, "RSA|PKCS1|SHA384")
+        .encryptAndDecryptBySpecProcess(gKeyPairSpec!, "RSA|PKCS1|SHA384")
         .then((result: boolean) => {
           expect(result).assertTrue();
         })
@@ -148,7 +148,7 @@ export default function SecurityCipherJsunit() {
     it("Security_CryptoFramework_Cipher_Func_0500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await asyCallback
-        .encryptAndDecryptBySpecProcess(gKeyPairSpec, "RSA|PKCS1|SHA512")
+        .encryptAndDecryptBySpecProcess(gKeyPairSpec!, "RSA|PKCS1|SHA512")
         .then((result: boolean) => {
           expect(result).assertTrue();
         })
@@ -172,7 +172,7 @@ export default function SecurityCipherJsunit() {
     it("Security_CryptoFramework_Cipher_Func_0600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await asyPromise
-        .encryptAndDecryptBySpecProcess(gKeyPairSpec, "RSA|PKCS1|MD5")
+        .encryptAndDecryptBySpecProcess(gKeyPairSpec!, "RSA|PKCS1|MD5")
         .then((result: boolean) => {
           expect(result).assertTrue();
         })
@@ -197,7 +197,7 @@ export default function SecurityCipherJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await asyCallback
         .encryptAndDecryptBySpecProcess(
-          gKeyPairSpec,
+          gKeyPairSpec!,
           "RSA|PKCS1_OAEP|SHA1|MGF1_SHA1"
         )
         .then((result: boolean) => {
@@ -224,7 +224,7 @@ export default function SecurityCipherJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await asyPromise
         .encryptAndDecryptBySpecProcess(
-          gKeyPairSpec,
+          gKeyPairSpec!,
           "RSA|PKCS1_OAEP|SHA1|MGF1_SHA224"
         )
         .then((result: boolean) => {
@@ -251,7 +251,7 @@ export default function SecurityCipherJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await asyCallback
         .encryptAndDecryptBySpecProcess(
-          gKeyPairSpec,
+          gKeyPairSpec!,
           "RSA|PKCS1_OAEP|SHA1|MGF1_SHA256"
         )
         .then((result: boolean) => {
@@ -278,7 +278,7 @@ export default function SecurityCipherJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await asyPromise
         .encryptAndDecryptBySpecProcess(
-          gKeyPairSpec,
+          gKeyPairSpec!,
           "RSA|PKCS1_OAEP|SHA1|MGF1_SHA384"
         )
         .then((result: boolean) => {
@@ -305,7 +305,7 @@ export default function SecurityCipherJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await asyCallback
         .encryptAndDecryptBySpecProcess(
-          gKeyPairSpec,
+          gKeyPairSpec!,
           "RSA|PKCS1_OAEP|SHA1|MGF1_SHA512"
         )
         .then((result: boolean) => {
@@ -332,7 +332,7 @@ export default function SecurityCipherJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await asyPromise
         .encryptAndDecryptBySpecProcess(
-          gKeyPairSpec,
+          gKeyPairSpec!,
           "RSA|PKCS1_OAEP|SHA1|MGF1_MD5"
         )
         .then((result: boolean) => {
@@ -515,7 +515,7 @@ export default function SecurityCipherJsunit() {
       } catch (err: BusinessError) {
         expect(err.code).assertEqual(401);
       }
-      await cipherGenerator.init(encryptMode, gKeyPairSpec.pubKey, null);
+      await cipherGenerator.init(encryptMode, gKeyPairSpec!.pubKey, null);
       try {
         await cipherGenerator.doFinal(null);
         expect(null).assertFail();
@@ -551,7 +551,7 @@ export default function SecurityCipherJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await asyCallback
         .encryptSetAndGetSpecInitProcess(
-          gKeyPairSpec,
+          gKeyPairSpec!,
           "RSA|PKCS1_OAEP|SHA256|MGF1_SHA1"
         )
         .then((result: boolean) => {
@@ -578,7 +578,7 @@ export default function SecurityCipherJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await asyPromise
         .encryptInitSetAndGetSpecProcess(
-          gKeyPairSpec,
+          gKeyPairSpec!,
           "RSA|PKCS1_OAEP|SHA256|MGF1_SHA1"
         )
         .then((result: boolean) => {

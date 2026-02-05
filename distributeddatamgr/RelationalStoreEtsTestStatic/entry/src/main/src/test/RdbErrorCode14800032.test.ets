@@ -8,7 +8,7 @@ import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@ohos.base';
 
-let context:common.UIAbilityContext;
+let context:common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -124,14 +124,14 @@ export default function RdbErrorCode14800032() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll:start context');
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      hilog.info(domain, tag, '%{public}s', 'beforeAll:' + context.databaseDir);
+      hilog.info(domain, tag, '%{public}s', 'beforeAll:' + context!.databaseDir);
     });
     beforeEach(async (): Promise<void> => {
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
       hilog.info(domain, tag, '%{public}s', 'beforeEach: delete rdbStore success');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-      let attachStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+      let attachStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
       await attachStore.executeSql(CREATE_TABLE_TEST1);
       await rdbStore!.execute(CREATE_TABLE_TEST);
       await rdbStore!.execute(CREATE_TABLE_TEST4);
@@ -353,12 +353,12 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbStoreAttach0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log(TAG + "************* testRdbStoreAttach0016 start *************");
-      let store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      let store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await store.executeSql(CREATE_TABLE_TEST1);
       await store.executeSql(CREATE_TABLE_TEST4);
       await attachInsert(store, "test1");
       try {
-        let num = await store.attach(context, STORE_CONFIG1, "attachDB");
+        let num = await store.attach(context!, STORE_CONFIG1, "attachDB");
         expect(1).assertEqual(num);
       } catch(e: BusinessError) {
         console.log("testRdbStoreAttach0016 : failed, err: code=" + e.code + " message=" + e.message);
@@ -385,7 +385,7 @@ export default function RdbErrorCode14800032() {
       await attachInsert(rdbStore!, "test1");
       try {
         console.log(TAG + "************* testRdbStoreAttach0018 attach start *************");
-        let dataBaseDir = context.databaseDir + "/rdb/";
+        let dataBaseDir = context!.databaseDir + "/rdb/";
         let num = await rdbStore!.attach(dataBaseDir + "store1.db", "attachDB");
       } catch(e: BusinessError) {
         console.log("testRdbStoreAttach0018 err: failed, err: code=" + e.code + " message=" + e.message);

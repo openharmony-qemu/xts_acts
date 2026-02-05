@@ -17,7 +17,7 @@ import { Entry,NavPathStack,Scroll,Component,XComponent,Image,ImageSize, XCompon
   XComponentParameters,$r,ResourceStr,Builder,List,ListItem,Resource,NavigationTitleMode,
   NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,Position,
   EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,
-  Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,
+  Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,
   EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,
   TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {

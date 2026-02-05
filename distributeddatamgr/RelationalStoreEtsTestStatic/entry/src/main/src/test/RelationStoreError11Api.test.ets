@@ -26,14 +26,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 
-let context:common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 
-let rdbStore:data_relationalStore.RdbStore;
+let rdbStore:data_relationalStore.RdbStore | undefined;
 const STORE_CONFIG: data_relationalStore.StoreConfig = {
   name: "testxq.db",
   securityLevel: data_relationalStore.SecurityLevel.S1
@@ -108,21 +108,21 @@ export default function RelationStoreError11Test() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
       await Utils.msSleep(2000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      dbPath = context.databaseDir + "/rdb/" + dbName;
-      dbPathWal = context.databaseDir + "/rdb/" + dbName + "-wal";
-      dbPathShm = context.databaseDir + "/rdb/" + dbName + "-shm";
-      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+      dbPath = context!.databaseDir + "/rdb/" + dbName;
+      dbPathWal = context!.databaseDir + "/rdb/" + dbName + "-wal";
+      dbPathShm = context!.databaseDir + "/rdb/" + dbName + "-shm";
+      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
     })
 
     beforeEach(async (): Promise<void> => {
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
-      await rdbStore.execute(DROP_TABLE_TEST);
-      await rdbStore.execute(CREATE_TABLE_TEST);
-      let num = await rdbStore.insert("test", valueBucket0);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(CREATE_TABLE_TEST);
+      let num = await rdbStore!.insert("test", valueBucket0);
     })
 
     afterEach(async (): Promise<void> => {
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
 
     /**
@@ -137,7 +137,7 @@ export default function RelationStoreError11Test() {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0001 start *************');
       await CreateCorruptDb();
       try{
-        let num = await rdbStore.insert("test", valueBucket1);
+        let num = await rdbStore!.insert("test", valueBucket1);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0001 ************* num ' + num);
         expect(num == 1).assertFail();
       }catch(err) {
@@ -161,7 +161,7 @@ export default function RelationStoreError11Test() {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0002 start *************');
       await CreateCorruptDb();
       try{
-        let num = await rdbStore.insert("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
+        let num = await rdbStore!.insert("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0002 ************* num ' + num);
         expect(num == 1).assertFail();
       }catch(err) {
@@ -185,7 +185,7 @@ export default function RelationStoreError11Test() {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0003 start *************');
       await CreateCorruptDb();
       try{
-        let num = rdbStore.insertSync("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
+        let num = rdbStore!.insertSync("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0003 ************* num ' + num);
         expect(num == 1).assertFail();
       }catch(err) {
@@ -208,7 +208,7 @@ export default function RelationStoreError11Test() {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0004 start *************');
       await CreateCorruptDb();
       try{
-        let num = rdbStore.insertSync("test", valueBucket1);
+        let num = rdbStore!.insertSync("test", valueBucket1);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0004 ************* num ' + num);
         expect(num == 1).assertFail();
       }catch(err) {
@@ -234,7 +234,7 @@ export default function RelationStoreError11Test() {
       predicates.equalTo("data1", "hello");
       await CreateCorruptDb();
       try{
-        let rows:number = await rdbStore.update(valueBucket1, predicates);
+        let rows:number = await rdbStore!.update(valueBucket1, predicates);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0005 end *************' + rows);
         expect(rows == 1).assertFail();
       }catch(err) {
@@ -260,7 +260,7 @@ export default function RelationStoreError11Test() {
       predicates.equalTo("data1", "hello");
       await CreateCorruptDb();
       try{
-        let rows:number = rdbStore.updateSync(valueBucket1, predicates);
+        let rows:number = rdbStore!.updateSync(valueBucket1, predicates);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0006 end *************' + rows);
         expect(rows == 1).assertFail();
       }catch(err) {
@@ -286,7 +286,7 @@ export default function RelationStoreError11Test() {
       predicates.equalTo("data1", "hello");
       await CreateCorruptDb();
       try{
-        let rows:number = await rdbStore.update(valueBucket1, predicates, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        let rows:number = await rdbStore!.update(valueBucket1, predicates, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0007 rows *************' + rows);
         expect(rows == 1).assertFail();
       }catch(err) {
@@ -312,7 +312,7 @@ export default function RelationStoreError11Test() {
       predicates.equalTo("data1", "hello");
       await CreateCorruptDb();
       try{
-        let rows:number = rdbStore.updateSync(valueBucket1, predicates, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        let rows:number = rdbStore!.updateSync(valueBucket1, predicates, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0008 rows *************' + rows);
         expect(rows == 1).assertFail();
       }catch(err) {
@@ -338,7 +338,7 @@ export default function RelationStoreError11Test() {
       predicates.equalTo("data1", "hello");
       await CreateCorruptDb();
       try{
-        let rows =await rdbStore.delete(predicates);
+        let rows =await rdbStore!.delete(predicates);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0009 rows *************' + rows);
         expect(rows == 1).assertFail();
       }catch(err) {
@@ -364,7 +364,7 @@ export default function RelationStoreError11Test() {
       predicates.equalTo("data1", "hello");
       await CreateCorruptDb();
       try{
-        let rows = rdbStore.deleteSync(predicates);
+        let rows = rdbStore!.deleteSync(predicates);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0010 rows *************' + rows);
         expect(rows == 1).assertFail();
       }catch(err) {
@@ -386,10 +386,10 @@ export default function RelationStoreError11Test() {
      */
     it('RelationStoreError11Test0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0011 start *************');
-      await rdbStore.insert("test", valueBucket0);
+      await rdbStore!.insert("test", valueBucket0);
       await CreateCorruptDb();
       try{
-        let rows = await rdbStore.execute("PRAGMA integrity_check");
+        let rows = await rdbStore!.execute("PRAGMA integrity_check");
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0011 rows *************' + rows);
         expect(rows == "ok").assertFail();
       }catch(err) {
@@ -411,8 +411,8 @@ export default function RelationStoreError11Test() {
      */
     it('RelationStoreError11Test0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0012 start *************');
-      await rdbStore.insert("test", valueBucket0);
-      let trans = await rdbStore.createTransaction();
+      await rdbStore!.insert("test", valueBucket0);
+      let trans = await rdbStore!.createTransaction();
       await CreateCorruptDb();
       try{
         let rows = await trans.insert("test", valueBucket1);
@@ -439,8 +439,8 @@ export default function RelationStoreError11Test() {
      */
     it('RelationStoreError11Test0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0013 start *************');
-      await rdbStore.insert("test", valueBucket0);
-      let trans = await rdbStore.createTransaction();
+      await rdbStore!.insert("test", valueBucket0);
+      let trans = await rdbStore!.createTransaction();
       await CreateCorruptDb();
       try{
         let rows = await trans.insert("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
@@ -467,8 +467,8 @@ export default function RelationStoreError11Test() {
      */
     it('RelationStoreError11Test0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0014 start *************');
-      await rdbStore.insert("test", valueBucket0);
-      let trans = await rdbStore.createTransaction();
+      await rdbStore!.insert("test", valueBucket0);
+      let trans = await rdbStore!.createTransaction();
       await CreateCorruptDb();
       try{
         let rows =  trans.insertSync("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
@@ -495,8 +495,8 @@ export default function RelationStoreError11Test() {
      */
     it('RelationStoreError11Test0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0015 start *************');
-      await rdbStore.insert("test", valueBucket0);
-      let trans = await rdbStore.createTransaction();
+      await rdbStore!.insert("test", valueBucket0);
+      let trans = await rdbStore!.createTransaction();
       await CreateCorruptDb();
       try{
         let rows = trans.insertSync("test", valueBucket1);
@@ -522,8 +522,8 @@ export default function RelationStoreError11Test() {
      */
     it('RelationStoreError11Test0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0016 start *************');
-      await rdbStore.insert("test", valueBucket0);
-      let trans = await rdbStore.createTransaction();
+      await rdbStore!.insert("test", valueBucket0);
+      let trans = await rdbStore!.createTransaction();
       let predicates = new data_relationalStore.RdbPredicates("test");
       await CreateCorruptDb();
       try{
@@ -551,8 +551,8 @@ export default function RelationStoreError11Test() {
      */
     it('RelationStoreError11Test0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0017 start *************');
-      await rdbStore.insert("test", valueBucket0);
-      let trans = await rdbStore.createTransaction();
+      await rdbStore!.insert("test", valueBucket0);
+      let trans = await rdbStore!.createTransaction();
       let predicates = new data_relationalStore.RdbPredicates("test");
       await CreateCorruptDb();
       try{
@@ -580,8 +580,8 @@ export default function RelationStoreError11Test() {
      */
     it('RelationStoreError11Test0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0018 start *************');
-      await rdbStore.insert("test", valueBucket0);
-      let trans = await rdbStore.createTransaction();
+      await rdbStore!.insert("test", valueBucket0);
+      let trans = await rdbStore!.createTransaction();
       let predicates = new data_relationalStore.RdbPredicates("test");
       await CreateCorruptDb();
       try{
@@ -609,8 +609,8 @@ export default function RelationStoreError11Test() {
      */
     it('RelationStoreError11Test0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0019 start *************');
-      await rdbStore.insert("test", valueBucket0);
-      let trans = await rdbStore.createTransaction();
+      await rdbStore!.insert("test", valueBucket0);
+      let trans = await rdbStore!.createTransaction();
       let predicates = new data_relationalStore.RdbPredicates("test");
       await CreateCorruptDb();
       try{
@@ -638,8 +638,8 @@ export default function RelationStoreError11Test() {
      */
     it('RelationStoreError11Test0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0020 start *************');
-      await rdbStore.insert("test", valueBucket0);
-      let trans = await rdbStore.createTransaction();
+      await rdbStore!.insert("test", valueBucket0);
+      let trans = await rdbStore!.createTransaction();
       let predicates = new data_relationalStore.RdbPredicates("test");
       await CreateCorruptDb();
       try{
@@ -667,8 +667,8 @@ export default function RelationStoreError11Test() {
      */
     it('RelationStoreError11Test0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0021 start *************');
-      await rdbStore.insert("test", valueBucket0);
-      let trans = await rdbStore.createTransaction();
+      await rdbStore!.insert("test", valueBucket0);
+      let trans = await rdbStore!.createTransaction();
       let predicates = new data_relationalStore.RdbPredicates("test");
       await CreateCorruptDb();
       try{
@@ -696,8 +696,8 @@ export default function RelationStoreError11Test() {
      */
     it('RelationStoreError11Test0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0022 start *************');
-      await rdbStore.insert("test", valueBucket0);
-      let trans = await rdbStore.createTransaction();
+      await rdbStore!.insert("test", valueBucket0);
+      let trans = await rdbStore!.createTransaction();
       let predicates = new data_relationalStore.RdbPredicates("test");
       await CreateCorruptDb();
       try{
@@ -725,7 +725,7 @@ export default function RelationStoreError11Test() {
     it('RelationStoreError11Test0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0023 start *************');
       await CreateCorruptDb();
-      let resultSet = await rdbStore.querySql("SELECT * FROM test");
+      let resultSet = await rdbStore!.querySql("SELECT * FROM test");
       try {
         let res = resultSet.getColumnIndex("data1");
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0023 res *************' + res);
@@ -750,7 +750,7 @@ export default function RelationStoreError11Test() {
     it('RelationStoreError11Test0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0024 start *************');
       await CreateCorruptDb();
-      let resultSet = await rdbStore.querySql("SELECT * FROM test");
+      let resultSet = await rdbStore!.querySql("SELECT * FROM test");
       try{
         let res = resultSet.getColumnName(0);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0024 res *************' +res);
@@ -775,7 +775,7 @@ export default function RelationStoreError11Test() {
     it('RelationStoreError11Test0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0032 start *************');
       await CreateCorruptDb();
-      let resultSet = await rdbStore.querySql("SELECT * FROM test");
+      let resultSet = await rdbStore!.querySql("SELECT * FROM test");
       try{
         let res = resultSet.getRow();
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0032 end *************' +JSON.stringify(res));
@@ -800,7 +800,7 @@ export default function RelationStoreError11Test() {
     it('RelationStoreError11Test0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0033 start *************');
       await CreateCorruptDb();
-      let resultSet = await rdbStore.querySql("SELECT * FROM test");
+      let resultSet = await rdbStore!.querySql("SELECT * FROM test");
       try{
         let res = resultSet.isColumnNull(resultSet.getColumnIndex("data5"));
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0033 end *************' +res);
@@ -825,9 +825,9 @@ export default function RelationStoreError11Test() {
     it('RelationStoreError11Test0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0034 start *************');
       await CreateCorruptDb1();
-      await rdbStore.close();
+      await rdbStore!.close();
       try{
-        await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0034  ************* res');
         expect().assertFail();
       }catch(err) {
@@ -849,8 +849,8 @@ export default function RelationStoreError11Test() {
      */
     it('RelationStoreError11Test0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0035 start *************');
-      await rdbStore.insert("test", valueBucket0);
-      let trans = await rdbStore.createTransaction();
+      await rdbStore!.insert("test", valueBucket0);
+      let trans = await rdbStore!.createTransaction();
       let predicates = new data_relationalStore.RdbPredicates("test");
       await CreateCorruptDb();
       try{
@@ -877,11 +877,11 @@ export default function RelationStoreError11Test() {
      */
     it('RelationStoreError11Test0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0036 start *************');
-      await rdbStore.insert("test", valueBucket0);
+      await rdbStore!.insert("test", valueBucket0);
       let predicates = new data_relationalStore.RdbPredicates("test");
       await CreateCorruptDb();
       try{
-        await rdbStore.createTransaction();
+        await rdbStore!.createTransaction();
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0036 1111111111111 *************');
         expect().assertFail();
       }catch(err) {

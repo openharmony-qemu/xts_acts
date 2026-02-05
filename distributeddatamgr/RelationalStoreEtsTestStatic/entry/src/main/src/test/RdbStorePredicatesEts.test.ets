@@ -34,7 +34,7 @@ import { BusinessError } from '@ohos.base';
 
 let domain: int = 0x0000;
 const TAG = "[STAGE_RELATIONAL_STORE_JSKITS_TEST]";
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 const STORE_CONFIG: relationalStore.StoreConfig = {
   name: "Predicates.db",
@@ -42,7 +42,7 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
 };
 const SQL_CREATE_TABLE =
   'CREATE TABLE IF NOT EXISTS orders (id INTEGER PRIMARY KEY AUTOINCREMENT, customer_id INTEGER, amount INTEGER)';
-let rdbStore: relationalStore.RdbStore;
+let rdbStore: relationalStore.RdbStore | undefined;
 
 async function preData(rdbStore: relationalStore.RdbStore): Promise<void> {
   const INSERT_SQL =
@@ -59,22 +59,22 @@ export default function RdbPredicatesEtsTest() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>('abilityContextMainAbility2') as common.UIAbilityContext;
-      hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       expect(rdbStore != undefined).assertTrue();
       console.info(TAG + 'beforeAll end');
     });
     beforeEach(async (): Promise<void> => {
-      await rdbStore.executeSql(SQL_CREATE_TABLE);
-      await preData(rdbStore);
+      await rdbStore!.executeSql(SQL_CREATE_TABLE);
+      await preData(rdbStore!);
       console.info(TAG + 'beforeEach');
     });
     afterEach(async (): Promise<void> => {
-      await rdbStore.executeSql('DROP TABLE IF EXISTS orders');
+      await rdbStore!.executeSql('DROP TABLE IF EXISTS orders');
       console.info(TAG + 'afterEach');
     });
     afterAll(async (): Promise<void> => {
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
       console.info(TAG + 'afterAll');
     });
 
@@ -96,7 +96,7 @@ export default function RdbPredicatesEtsTest() {
         predicates.groupBy(["customer_id"]);
         predicates.having("total > 5000 AND count >= 3", []);
         let resultSet: relationalStore.ResultSet =
-          rdbStore.querySync(predicates, ["customer_id", "COUNT(*) AS count", "SUM(amount) AS total"]);
+          rdbStore!.querySync(predicates, ["customer_id", "COUNT(*) AS count", "SUM(amount) AS total"]);
         console.info(TAG + 'testHaving001 rowCount ' + resultSet.rowCount);
         expect(2).assertEqual(resultSet.rowCount);
         expect(true).assertEqual(resultSet.goToNextRow());
@@ -135,7 +135,7 @@ export default function RdbPredicatesEtsTest() {
         predicates.groupBy(["customer_id"]);
         predicates.having("total > 5000 AND count >= 3");
         let resultSet: relationalStore.ResultSet =
-          rdbStore.querySync(predicates,
+          rdbStore!.querySync(predicates,
             ["customer_id", "COUNT(*) AS count", "SUM(amount) AS total"]) as relationalStore.ResultSet;
         console.info(TAG + 'testHaving002 rowCount ' + resultSet.rowCount);
         expect(2).assertEqual(resultSet.rowCount);
@@ -175,7 +175,7 @@ export default function RdbPredicatesEtsTest() {
         predicates.groupBy(["customer_id"]);
         predicates.having("total > 5000 AND count >= 3", undefined);
         let resultSet: relationalStore.ResultSet =
-          rdbStore.querySync(predicates,
+          rdbStore!.querySync(predicates,
             ["customer_id", "COUNT(*) AS count", "SUM(amount) AS total"]) as relationalStore.ResultSet;
         console.info(TAG + 'testHaving003 rowCount ' + resultSet.rowCount);
         expect(2).assertEqual(resultSet.rowCount);
@@ -215,7 +215,7 @@ export default function RdbPredicatesEtsTest() {
         predicates.groupBy(["customer_id"]);
         predicates.having("total > 5000 AND count >= 3", undefined);
         let resultSet: relationalStore.ResultSet =
-          rdbStore.querySync(predicates,
+          rdbStore!.querySync(predicates,
             ["customer_id", "COUNT(*) AS count", "SUM(amount) AS total"]) as relationalStore.ResultSet;
         console.info(TAG + 'testHaving004 rowCount ' + resultSet.rowCount);
         expect(2).assertEqual(resultSet.rowCount);
@@ -279,7 +279,7 @@ export default function RdbPredicatesEtsTest() {
         let predicates = new relationalStore.RdbPredicates("orders");
         predicates.groupBy(["customer_id"]);
         predicates.having("SALARY == 1.2");
-        let resultSet: relationalStore.ResultSet = rdbStore.querySync(predicates) as relationalStore.ResultSet;
+        let resultSet: relationalStore.ResultSet = rdbStore!.querySync(predicates) as relationalStore.ResultSet;
         expect(false).assertEqual(resultSet.goToFirstRow());
         resultSet.getRow();
         console.log(TAG + " testHaving006 having success");
@@ -309,7 +309,7 @@ export default function RdbPredicatesEtsTest() {
         predicates.groupBy(["customer_id"]);
         predicates.having("total > ? AND count >= ?");
         let resultSet: relationalStore.ResultSet =
-          rdbStore.querySync(predicates, ["customer_id", "COUNT(*) AS count", "SUM(amount) AS total"]);
+          rdbStore!.querySync(predicates, ["customer_id", "COUNT(*) AS count", "SUM(amount) AS total"]);
         expect(0).assertEqual(resultSet.rowCount);
         resultSet.close();
         console.log(TAG + " testHaving007 having success");
@@ -360,7 +360,7 @@ export default function RdbPredicatesEtsTest() {
         predicates.groupBy(["customer_id"]);
         predicates.having("total > ? AND count >= ?", [5000 as long, 3 as long]);
         let resultSet: relationalStore.ResultSet =
-          rdbStore.querySync(predicates,
+          rdbStore!.querySync(predicates,
             ["customer_id", "COUNT(*) AS count", "SUM(amount) AS total"]) as relationalStore.ResultSet;
         console.info(TAG + 'testHaving009 rowCount ' + resultSet.rowCount);
         expect(2).assertEqual(resultSet.rowCount);
@@ -400,7 +400,7 @@ export default function RdbPredicatesEtsTest() {
         predicates.having("total > ? AND count >= ?", [5000 as long, 3 as long]);
         let count = 200;
         for (let i = 0; i < count; ++i) {
-          let resultSet = await rdbStore.query(predicates, ["customer_id", "COUNT(*) AS count", "SUM(amount) AS total"]);
+          let resultSet = await rdbStore!.query(predicates, ["customer_id", "COUNT(*) AS count", "SUM(amount) AS total"]);
           expect(2).assertEqual(resultSet.rowCount);
           expect(true).assertEqual(resultSet.goToNextRow());
           let row: relationalStore.ValuesBucket = resultSet.getRow();

@@ -61,7 +61,7 @@ const SHOW_ABILITY_EVENT = "show_ability_event";
 const HIDE_ABILITY_EVENT = "hide_ability_event";
 const NOTIFY_PID_EVENT = "notify_pid_event";
 const KILL_PROCESS_EVENT = "kill_process_event";
-let context:common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let functionEnable = '';
 let eventsAry = new Array<string>(ON_WINDOW_STAGE_CREATE,ON_DESTROY,ON_FOREGROUND,START_ABILITY_IN_NEW_PROCESS_EVENT,FOREGROUND_EVENT,NOTIFY_PID_EVENT)
 let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
@@ -129,7 +129,7 @@ let startAssistAbility = async (tag:string, done: ()=> void):Promise<void> => {
   };
   try {
     hilog.info(domain, testTag, '%{public}s', `${tag} startAssistAbility, ${JSON.stringify(want)}`);
-    context.startAbility(want, (err: BusinessError<void> | null) => {
+    context?.startAbility(want, (err: BusinessError<void> | null) => {
       if (err?.code) {
         hilog.info(domain, testTag, `${tag} startAbility failed, code is ${err?.code}, message is ${err?.message}`);
         expect().assertFail();
@@ -235,13 +235,13 @@ export default function abilitystaticTest() {
       } else if (functionEnable === 'false') {
         resData = true
         hilog.info(domain, testTag, '%{public}s', `${tag} function not enable.`);
-        expect(resData).assertTrue();
-        done();
       } else {
         hilog.info(domain, testTag, '%{public}s', `${tag} wrong param`);
         expect().assertFail();
         done();
       }
+      expect(resData).assertTrue();
+      done();
     })
   })
   hilog.info(domain, testTag, '%{public}s', 'abilityTest end');

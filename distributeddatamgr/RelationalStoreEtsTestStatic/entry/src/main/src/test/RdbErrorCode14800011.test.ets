@@ -8,7 +8,7 @@ import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@ohos.base';
 
-let context:common.UIAbilityContext;
+let context:common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -127,14 +127,14 @@ export default function RdbErrorCode14800011() {
       });
       await Utils.msSleep(5000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      hilog.info(domain, tag, '%{public}s', 'beforeAll:' + context.databaseDir);
+      hilog.info(domain, tag, '%{public}s', 'beforeAll:' + context!.databaseDir);
     });
 
     beforeEach(async(): Promise<void> => {
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
       hilog.info(domain, tag, '%{public}s', 'beforeEach: delete rdbStore success');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore!.execute(CREATE_TABLE_TEST);
       hilog.info(domain, tag, '%{public}s', 'beforeEach: creat rdbStore success');
     })
@@ -243,7 +243,7 @@ export default function RdbErrorCode14800011() {
       try {
         await CreateCorruptDb();
         hilog.info(domain, tag, '%{public}s', 'testAttachContextErrcode0100 end CreateCorruptDb');
-        let resulet: int = await rdbStore!.attach(context, STORE_CONFIG, "Resultset.db");
+        let resulet: int = await rdbStore!.attach(context!, STORE_CONFIG, "Resultset.db");
         done();
       } catch (err: BusinessError) {
         hilog.info(domain, tag, '%{public}s', `testAttachContextErrcode0100 + ${err.code} + ${err.message}`);
@@ -265,7 +265,7 @@ export default function RdbErrorCode14800011() {
       try {
         await CreateCorruptDb();
         hilog.info(domain, tag, '%{public}s', 'testAttachFullPathErrcode0100 end CreateCorruptDb');
-        const dbPath = context.databaseDir+"/rdb/Resultset.db";
+        const dbPath = context!.databaseDir+"/rdb/Resultset.db";
         let resulet: int = await rdbStore!.attach(dbPath, "Resultset.db");
         done();
       } catch (err: BusinessError) {
@@ -307,7 +307,7 @@ export default function RdbErrorCode14800011() {
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done: () => void): Promise<void> => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4000');
-      let rdbStore1 = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+      let rdbStore1 = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
       await rdbStore1!.execute(CREATE_TABLE_TEST1);
       let u8 = new Uint8Array([1, 2, 3]);
       const valueBucket:data_relationalStore.ValuesBucket = {
@@ -330,7 +330,7 @@ export default function RdbErrorCode14800011() {
         expect(14800011).assertEqual(err.code);
       }
       res.close();
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4000');
       done();
     })
@@ -516,7 +516,7 @@ export default function RdbErrorCode14800011() {
      * @tc.level  LEVEL2
      */
     it('testLockRowErrcode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done: () => void): Promise<void> => {
-      let rdbStore1 = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+      let rdbStore1 = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
       await rdbStore1!.execute(CREATE_TABLE_TEST1);
       let u8 = new Uint8Array([1, 2, 3]);
       const valueBucket:data_relationalStore.ValuesBucket = {
@@ -538,7 +538,7 @@ export default function RdbErrorCode14800011() {
         console.info(TAG, `testLockRowErrcode0100 err.code ${err.code}, err.message ${err.message}`)
         expect(14800011).assertEqual(err.code);
       }
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
       console.info('testLockRowErrcode0100');
       done();
     })
@@ -615,7 +615,7 @@ export default function RdbErrorCode14800011() {
     it("testUnlockRowErrcode0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "************* testUnlockRowErrcode0200 start *************");
       try {
-        let rdbStore1 = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+        let rdbStore1 = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
         await rdbStore1!.execute(CREATE_TABLE_TEST1);
         await rdbStore1.setDistributedTables(['test1']);
         let u8 = new Uint8Array([1, 2, 3]);
@@ -637,7 +637,7 @@ export default function RdbErrorCode14800011() {
       } catch (err: BusinessError) {
         hilog.info(domain, tag, '%{public}s', `testUnlockRowErrcode0200 + ${err.code} + ${err.message}`);
         expect(14800011).assertEqual(err.code);;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
         done();
       }
     })
@@ -653,7 +653,7 @@ export default function RdbErrorCode14800011() {
     it("testUpdateSyncErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "************* testUpdateSyncErrcode0100 start *************");
       try {
-        let rdbStore1 = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+        let rdbStore1 = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
         await rdbStore1!.execute(CREATE_TABLE_TEST1);
         let u8 = new Uint8Array([1, 2, 3]);
         const valueBucket:data_relationalStore.ValuesBucket = {
@@ -679,7 +679,7 @@ export default function RdbErrorCode14800011() {
       } catch (err: BusinessError) {
         hilog.info(domain, tag, '%{public}s', `testUpdateSyncErrcode0100 + ${err.code} + ${err.message}`);
         expect(14800011).assertEqual(err.code);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
         done();
       }
     })
@@ -694,7 +694,7 @@ export default function RdbErrorCode14800011() {
      */
     it('testBatchInsertSyncErrTest0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): void => {
-        let transaction: data_relationalStore.Transaction;
+        let transaction: data_relationalStore.Transaction | undefined;
         try {
           await rdbStore!.execute(CREATE_TABLE_TEST1);
           transaction = await (rdbStore as data_relationalStore.RdbStore).createTransaction();
@@ -710,10 +710,10 @@ export default function RdbErrorCode14800011() {
           let valueBuckets: Array<data_relationalStore.ValuesBucket> =
             new Array<data_relationalStore.ValuesBucket>(valueBucket);
           let insertNum: number =
-            transaction.batchInsertSync("test1", valueBuckets);
+            transaction!.batchInsertSync("test1", valueBuckets);
           done();
         } catch(err: BusinessError) {
-          await transaction.rollback();
+          await transaction!.rollback();
           hilog.info(domain, tag, '%{public}s', `testBatchInsertSyncErrTest0200 + ${err.code} + ${err.message}`);
           expect(14800011).assertEqual(err.code);;
           done();
@@ -729,7 +729,7 @@ export default function RdbErrorCode14800011() {
      * @tc.level  LEVEL2
      */
     it('testBatchInsertWithConflictResolutionErrcode0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): void => {
-      let transaction: data_relationalStore.Transaction;
+      let transaction: data_relationalStore.Transaction | undefined;
       try {
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         transaction = await (rdbStore as data_relationalStore.RdbStore).createTransaction();
@@ -747,10 +747,10 @@ export default function RdbErrorCode14800011() {
         hilog.info(domain, tag, '%{public}s',
           'testBatchInsertWithConflictResolutionErrcode0200 end CreateCorruptDb');
         let insertNum: number =
-         await transaction.batchInsertWithConflictResolution("test1", valueBuckets, conflict);
+         await transaction!.batchInsertWithConflictResolution("test1", valueBuckets, conflict);
         done();
       } catch(err: BusinessError) {
-        await transaction.rollback()
+        await transaction!.rollback()
         hilog.info(domain, tag, '%{public}s', `testBatchInsertWithConflictResolutionErrcode0200 + ${err.code} + ${err.message}`);
         expect(14800011).assertEqual(err.code);
         done();
@@ -766,7 +766,7 @@ export default function RdbErrorCode14800011() {
      * @tc.level  LEVEL2
      */
     it('testBatchInsertWithConflictResolutionSyncErrcode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): void => {
-      let transaction: data_relationalStore.Transaction;
+      let transaction: data_relationalStore.Transaction | undefined;
       try {
         hilog.info(domain, tag, '%{public}s', "************* testBatchInsertWithConflictResolutionSyncErrcode0200 start *************");
         await rdbStore!.execute(CREATE_TABLE_TEST1);
@@ -783,10 +783,10 @@ export default function RdbErrorCode14800011() {
         let conflict: data_relationalStore.ConflictResolution = data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE;
         await CreateCorruptDb();
         hilog.info(domain, tag, '%{public}s','testBatchInsertWithConflictResolutionSyncErrcode0200 end CreateCorruptDb');
-        let insertNum: number = transaction.batchInsertWithConflictResolutionSync("test1", valueBuckets, conflict);
+        let insertNum: number = transaction!.batchInsertWithConflictResolutionSync("test1", valueBuckets, conflict);
         done();
       } catch(err: BusinessError) {
-        await transaction.rollback()
+        await transaction!.rollback()
         hilog.info(domain, tag, '%{public}s', `testBatchInsertWithConflictResolutionSyncErrcode0200 + ${err.code} + ${err.message}`);
         expect(14800011).assertEqual(err.code);
         done();
@@ -803,7 +803,7 @@ export default function RdbErrorCode14800011() {
      */
     it("testDeleteSyncErrcode0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "************* testDeleteSyncErrcode0200 start *************");
-      let transaction: data_relationalStore.Transaction;
+      let transaction: data_relationalStore.Transaction | undefined;
       try {
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         let u8 = new Uint8Array([1, 2, 3]);
@@ -820,10 +820,10 @@ export default function RdbErrorCode14800011() {
         hilog.info(domain, tag, '%{public}s','testDeleteSyncErrcode0200 end createTransaction');
         await CreateCorruptDb();
         hilog.info(domain, tag, '%{public}s','testDeleteSyncErrcode0200 end CreateCorruptDb');
-        let result =  transaction.deleteSync(predicates);
+        let result =  transaction!.deleteSync(predicates);
         done();
       } catch (err: BusinessError) {
-        await transaction.rollback();
+        await transaction!.rollback();
         hilog.info(domain, tag, '%{public}s', `testDeleteSyncErrcode0200 + ${err.code} + ${err.message}`);
         expect(14800011).assertEqual(err.code);
         done();
@@ -840,16 +840,16 @@ export default function RdbErrorCode14800011() {
      */
     it("testExecuteErrcode0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "************* testExecuteErrcode0200 start *************");
-      let transaction: data_relationalStore.Transaction;
+      let transaction: data_relationalStore.Transaction | undefined;
       try {
         transaction = await (rdbStore as data_relationalStore.RdbStore).createTransaction();
         hilog.info(domain, tag, '%{public}s','testExecuteErrcode0200 end createTransaction');
         await CreateCorruptDb();
         hilog.info(domain, tag, '%{public}s','testExecuteErrcode0200 end CreateCorruptDb');
-        let result =  await transaction.execute(CREATE_TABLE_TEST1);
+        let result =  await transaction!.execute(CREATE_TABLE_TEST1);
         done();
       } catch (err: BusinessError) {
-        await transaction.rollback();
+        await transaction!.rollback();
         hilog.info(domain, tag, '%{public}s', `testExecuteErrcode0200 + ${err.code} + ${err.message}`);
         expect(14800011).assertEqual(err.code);
         done();
@@ -866,16 +866,16 @@ export default function RdbErrorCode14800011() {
      */
     it("testExecuteSyncErrcode0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "************* testExecuteSyncErrcode0200 start *************");
-      let transaction: data_relationalStore.Transaction;
+      let transaction: data_relationalStore.Transaction | undefined;
       try {
         transaction = await (rdbStore as data_relationalStore.RdbStore).createTransaction();
         hilog.info(domain, tag, '%{public}s','testExecuteSyncErrcode0200 end createTransaction');
         await CreateCorruptDb();
         hilog.info(domain, tag, '%{public}s','testExecuteSyncErrcode0200 end CreateCorruptDb');
-        let result =  transaction.executeSync(CREATE_TABLE_TEST1);
+        let result =  transaction!.executeSync(CREATE_TABLE_TEST1);
         done();
       } catch (err: BusinessError) {
-        await transaction.rollback();
+        await transaction!.rollback();
         hilog.info(domain, tag, '%{public}s', `testExecuteSyncErrcode0200 + ${err.code} + ${err.message}`);
         expect(14800011).assertEqual(err.code);
         done();
@@ -892,7 +892,7 @@ export default function RdbErrorCode14800011() {
      */
     it("testInsertSyncErrcode0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "************* testInsertSyncErrcode0300 start *************");
-      let transaction: data_relationalStore.Transaction;
+      let transaction: data_relationalStore.Transaction | undefined;
       try {
         rdbStore!.executeSync(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
@@ -906,10 +906,10 @@ export default function RdbErrorCode14800011() {
         hilog.info(domain, tag, '%{public}s','testExecuteSyncErrcode0200 end createTransaction');
         await CreateCorruptDb();
         hilog.info(domain, tag, '%{public}s', 'testInsertSyncErrcode0300 end CreateCorruptDb');
-        transaction.insertSync("test1", valueBucket);
+        transaction!.insertSync("test1", valueBucket);
         done();
       } catch (err: BusinessError) {
-        await transaction.rollback();
+        await transaction!.rollback();
         hilog.info(domain, tag, '%{public}s', `testInsertSyncErrcode0300 + ${err.code} + ${err.message}`);
         expect(14800011).assertEqual(err.code);
         done();
@@ -926,7 +926,7 @@ export default function RdbErrorCode14800011() {
      */
     it("SUB_DistributedData_RelationalStore_SDK_InsertSyncUint8ArrayTest_1000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "************* SUB_DistributedData_RelationalStore_SDK_InsertSyncUint8ArrayTest_1000 start *************");
-      let transaction: data_relationalStore.Transaction;
+      let transaction: data_relationalStore.Transaction | undefined;
       try {
         rdbStore!.executeSync(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
@@ -938,14 +938,14 @@ export default function RdbErrorCode14800011() {
         };
         transaction = await (rdbStore as data_relationalStore.RdbStore).createTransaction();
         hilog.info(domain, tag, '%{public}s','SUB_DistributedData_RelationalStore_SDK_InsertSyncUint8ArrayTest_1000 end createTransaction');
-        transaction.insertSync("test1", valueBucket);
+        transaction!.insertSync("test1", valueBucket);
         await CreateCorruptDb();
         hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_RelationalStore_SDK_InsertSyncUint8ArrayTest_1000 end CreateCorruptDb');
         let array: Array<data_relationalStore.ValueType> = new Array<data_relationalStore.ValueType>("zhangsan");
-        transaction.querySqlSync("select * from test where name = ?", array);
+        transaction!.querySqlSync("select * from test where name = ?", array);
         done();
       } catch (err: BusinessError) {
-        await transaction.rollback();
+        await transaction!.rollback();
         hilog.info(domain, tag, '%{public}s', `SUB_DistributedData_RelationalStore_SDK_InsertSyncUint8ArrayTest_1000 + ${err.code} + ${err.message}`);
         expect(14800011).assertEqual(err.code);
         done();

@@ -35,9 +35,9 @@ export default function WindowFocusTest() {
 
     describe("WindowFocusTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'WindowFocusTest describe start');
-        let windowStage: window.WindowStage;
-        let win: window.Window;
-        let context: common.UIAbilityContext;
+        let windowStage: window.WindowStage | undefined;
+        let win: window.Window | undefined;
+        let context: common.UIAbilityContext | undefined;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
@@ -77,9 +77,9 @@ export default function WindowFocusTest() {
             let caseName: string = 'test_shiftAppWindowPointerEvent_window_destroyed_static';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin');
-            let mainWindow:window.Window = windowStage.getMainWindowSync();
+            let mainWindow:window.Window = windowStage!.getMainWindowSync();
             try{
-                let promise1 = windowStage.createSubWindow('test_shiftAppWindowPointerEvent_window_destroyed_static');
+                let promise1 = windowStage!.createSubWindow('test_shiftAppWindowPointerEvent_window_destroyed_static');
                 promise1.then((data:window.Window) => {
                     let subWindowClass:window.Window = data;
                     hilog.info(domain, tag,caseName+ ' Succeeded in creating the subwindow. Data: ' + data);
@@ -132,12 +132,12 @@ export default function WindowFocusTest() {
             let caseName: string = 'test_shiftAppWindowPointerEvent_Dialog_window_static';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin');
-            let mainWindow:window.Window = windowStage.getMainWindowSync();
+            let mainWindow:window.Window = windowStage!.getMainWindowSync();
             try{
                 let config: window.Configuration = {
                     name: "test",
                     windowType: window.WindowType.TYPE_DIALOG,
-                    ctx: context,
+                    ctx: context!,
                     decorEnabled:true,
                     title:'dialog Window'
                 };
@@ -196,7 +196,7 @@ export default function WindowFocusTest() {
         it('testTouchOutsideBaseTest_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4,  async (done: () => void): Promise<void> => {
             let caseName: string = 'testTouchOutsideBaseTest_static';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
-            let mainWin: window.Window = await windowStage.getMainWindow();
+            let mainWin: window.Window = await windowStage!.getMainWindow();
             let callback = () => {
                 console.log('windowTest on/off touchOutside callback success');
             }
@@ -229,7 +229,7 @@ export default function WindowFocusTest() {
             let caseName:string = "testOnScreenShotAppEventwithDestoryedSubWindow_static";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin.');
-            let windowClass:window.Window = await windowStage.createSubWindow('testOnScreenShotAppEventwithDestoryedSubWindow_static');
+            let windowClass:window.Window = await windowStage!.createSubWindow('testOnScreenShotAppEventwithDestoryedSubWindow_static');
             await windowClass.destroyWindow();
             try {
                 const callback = (data: window.ScreenshotEventType) => {
@@ -259,7 +259,7 @@ export default function WindowFocusTest() {
             let caseName:string = "testOffScreenShotAppEventwithDestoryedSubWindow_static";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin.');
-            let windowClass:window.Window = await windowStage.createSubWindow('testOffScreenShotAppEventwithDestoryedSubWindow_static');
+            let windowClass:window.Window = await windowStage!.createSubWindow('testOffScreenShotAppEventwithDestoryedSubWindow_static');
             await windowClass.destroyWindow();
             try {
                 const callback = (data: window.ScreenshotEventType) => {
@@ -288,7 +288,7 @@ export default function WindowFocusTest() {
             let caseName:string = 'testWindowOffDialogTargetTouch_RepeatOff_static';
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin');
-            let win: window.Window = await windowStage.createSubWindow('testWindowOffDialogTargetTouch_RepeatOff_static');
+            let win: window.Window = await windowStage!.createSubWindow('testWindowOffDialogTargetTouch_RepeatOff_static');
             console.log(msgStr + 'windowStage.createSubWindow success');
             expect(!!win).assertTrue();
             try {
@@ -331,7 +331,7 @@ export default function WindowFocusTest() {
         it('testisSeparationTouchEnabledwithDestoryedWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string = 'testisSeparationTouchEnabledwithDestoryedWindow_static';
             console.log(caseName + 'begin.');
-            let windowClass:window.Window = await windowStage.createSubWindow('testisSeparationTouchEnabledwithDestoryedWindow_static')
+            let windowClass:window.Window = await windowStage!.createSubWindow('testisSeparationTouchEnabledwithDestoryedWindow_static')
             await windowClass.destroyWindow();
             try {
                 windowClass.isSeparationTouchEnabled();

@@ -40,7 +40,7 @@ let STORE_CONFIG2: data_relationalStore.StoreConfig = {
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 
 let deviceId: string | undefined = undefined;
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let rdbStore: data_relationalStore.RdbStore | undefined | null;
 const TAG = "[RelationalStore_JSKITS_TEST]";
@@ -63,7 +63,7 @@ export default function CallbackTest() {
 
     beforeEach(async () => {
       console.info(TAG + 'beforeEach');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       console.info(TAG + "create rdb store success")
       await rdbStore!.executeSql(CREATE_TABLE_TEST);
       let u8 = new Uint8Array([3, 4, 5])
@@ -98,7 +98,7 @@ export default function CallbackTest() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
         await rdbStore!.executeSql(CREATE_TABLE_TEST1);
 
         try {
@@ -138,7 +138,7 @@ export default function CallbackTest() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        let rdbStore1 = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+        let rdbStore1 = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
         // rdbStore1.beginTransaction();
         try {
           let PRIKey: Array<data_relationalStore.PRIKeyType> = [1 as long, 4 as long, 2 as long, 3 as long];
@@ -214,7 +214,7 @@ export default function CallbackTest() {
     it('SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0500 start-----")
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
 
         if (rdbStore != undefined) {
           try {
@@ -240,7 +240,7 @@ export default function CallbackTest() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_Callback_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        let rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+        let rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
         await rdbStore.executeSql(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: data_relationalStore.ValuesBucket = {
@@ -274,7 +274,7 @@ export default function CallbackTest() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
         await rdbStore!.executeSql(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: data_relationalStore.ValuesBucket = {
@@ -446,7 +446,7 @@ export default function CallbackTest() {
     it('SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0100 start-----")
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         let sql_text = "CREATE TABLE IF NOT EXISTS cloud_text (" +
           "data TEXT, " +
           "recycled BOOLEAN, " +
@@ -577,7 +577,7 @@ export default function CallbackTest() {
     it('SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0400 start-----")
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         if (rdbStore != undefined) {
           try {
             (rdbStore as data_relationalStore.RdbStore).cleanDirtyData('test_table', 100, (err) => {
@@ -619,7 +619,7 @@ export default function CallbackTest() {
           let message = (err as BusinessError).message
           console.error(TAG + "createDeviceManager errCode:" + code + ",errMessage:" + message);
         }
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         if (rdbStore != undefined && deviceId != undefined) {
           (rdbStore as data_relationalStore.RdbStore).obtainDistributedTableName(deviceId, "EMPLOYEE",
             (err, tableName) => {
@@ -648,7 +648,7 @@ export default function CallbackTest() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
         await rdbStore!.executeSql(CREATE_TABLE_TEST1);
 
         try {
@@ -685,7 +685,7 @@ export default function CallbackTest() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
         await rdbStore!.executeSql(CREATE_TABLE_TEST1);
         console.info('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Callback_1200 obtainDistributedTableName.');
 
@@ -713,7 +713,7 @@ export default function CallbackTest() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_Callback_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        let rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+        let rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
         await rdbStore.executeSql(CREATE_TABLE_TEST1);
         try {
           let promiseBackup = (rdbStore as data_relationalStore.RdbStore).backup("TransactionTest.db");
@@ -811,7 +811,7 @@ export default function CallbackTest() {
       async (done: () => void) => {
         let Tag: string = 'testtag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
         let deviceId: string;
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
         await rdbStore!.executeSql(CREATE_TABLE_TEST1);
         let predicates: data_relationalStore.RdbPredicates = new data_relationalStore.RdbPredicates('EMPLOYEE');
         try {
@@ -1049,7 +1049,7 @@ export default function CallbackTest() {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0100 -----")
         let predicates = new data_relationalStore.RdbPredicates('EMPLOYEE');
         predicates.inDevices(deviceIds);
-        let rdbStore2 = await data_relationalStore.getRdbStore(context, STORE_CONFIG2);
+        let rdbStore2 = await data_relationalStore.getRdbStore(context!, STORE_CONFIG2);
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_sync_ErrTest_0100 -----")
         if (rdbStore2 != undefined) {
           rdbStore2!.sync(data_relationalStore.SyncMode.SYNC_MODE_PUSH, predicates, (err, result) => {
@@ -1075,7 +1075,7 @@ export default function CallbackTest() {
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
         console.info(TAG + "-----SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1300 start-----")
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
         await rdbStore!.executeSql(CREATE_TABLE_TEST1);
         let deviceId: String | undefined;
         console.info(TAG + "-----SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1300 -----")

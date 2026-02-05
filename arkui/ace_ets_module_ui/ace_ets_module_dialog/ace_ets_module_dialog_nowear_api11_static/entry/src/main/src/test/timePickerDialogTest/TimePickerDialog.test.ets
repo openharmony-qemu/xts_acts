@@ -28,7 +28,6 @@ import deviceInfo from "@ohos.deviceInfo"
 import { BusinessError } from '@ohos.base';
 import window from '@ohos.window';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import { Error } from '@ohos.arkui.component'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -69,8 +68,8 @@ export default function TimePickerDialog() {
 
 
 
-    
-    
+
+
 
     /**
      * @tc.number   TimePickerDialog_static_0100

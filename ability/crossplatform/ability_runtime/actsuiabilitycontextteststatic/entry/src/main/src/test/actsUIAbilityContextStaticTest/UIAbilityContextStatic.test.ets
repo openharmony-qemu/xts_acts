@@ -32,7 +32,7 @@ import { Driver, ON, Component } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let context: common.UIAbilityContext
+let context: common.UIAbilityContext | undefined;
 const MALFUNCTION_MSG: string = 'A system error occurred';
 
 export default function UIAbilityContextStatic() {
@@ -82,7 +82,7 @@ export default function UIAbilityContextStatic() {
         hilog.info(domain, tag, 'testAbilityInfoStatic001 info '+ JSON.stringify(context));
         if (context){
           expect(context != null).assertTrue();
-          let abilityInfo = context.abilityInfo;
+          let abilityInfo = context!.abilityInfo;
           hilog.info(domain, tag, 'testAbilityInfoStatic001 info '+ JSON.stringify(abilityInfo));
           expect(abilityInfo != null).assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.bundleName: ` + abilityInfo.bundleName);
@@ -129,7 +129,7 @@ export default function UIAbilityContextStatic() {
       hilog.info(domain, tag, "testUIAbilityContextCurrentHapModuleInfoStatic001 begin");
       try {
         if (context) {
-          let hapModuleInfo = context.currentHapModuleInfo;
+          let hapModuleInfo = context!.currentHapModuleInfo;
           expect(hapModuleInfo != null).assertTrue();
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.name: ' + hapModuleInfo.name);
           expect(hapModuleInfo.name == "entry").assertTrue();
@@ -174,7 +174,7 @@ export default function UIAbilityContextStatic() {
     it('testResourceManagerStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         if (context) {
-          let result = context.resourceManager
+          let result = context!.resourceManager
           hilog.info(domain, tag, "testResourceManagerStatic001 resourceManager:" + JSON.stringify(result));
           expect(result != null).assertTrue();
           done();
@@ -201,21 +201,17 @@ export default function UIAbilityContextStatic() {
     it('testCreateAreaModeContextStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         if (context) {
-          let moduleContext: common.Context = context.createAreaModeContext(contextConstant.AreaMode.EL2)
+          let moduleContext: common.Context = context!.createAreaModeContext(contextConstant.AreaMode.EL2)
           hilog.info(domain, tag, "testCreateAreaModeContextStatic001 moduleContext:" + JSON.stringify(moduleContext));
           expect(moduleContext != null).assertTrue();
-          expect(typeof (moduleContext.filesDir)).assertEqual("string");
-          expect(typeof (moduleContext.tempDir)).assertEqual("string");
-          expect(typeof (moduleContext.preferencesDir)).assertEqual("string");
-          expect(typeof (moduleContext.databaseDir)).assertEqual("string");
-          expect(typeof (moduleContext.cacheDir)).assertEqual("string");
-          expect(typeof (moduleContext.cloudFileDir)).assertEqual("string");
-          expect(typeof (moduleContext.distributedFilesDir)).assertEqual("string");
-          expect(typeof (moduleContext.bundleCodeDir)).assertEqual("string");
-          expect(typeof (moduleContext.resourceDir) == 'string').assertTrue();
-          expect(typeof (moduleContext.applicationInfo)).assertEqual("object");
-          expect(typeof (moduleContext.resourceManager)).assertEqual("object");
-          expect(typeof (moduleContext.eventHub)).assertEqual("object");
+          expect(moduleContext.filesDir).assertEqual("/data/storage/el2/base/haps/entry/files");
+          expect(moduleContext.tempDir).assertEqual("/data/storage/el2/base/haps/entry/temp");
+          expect(moduleContext.preferencesDir).assertEqual("/data/storage/el2/base/haps/entry/preferences");
+          expect(moduleContext.databaseDir).assertEqual("/data/storage/el2/database/entry");
+          expect(moduleContext.cacheDir).assertEqual("/data/storage/el2/base/haps/entry/cache");
+          expect(moduleContext.cloudFileDir).assertEqual("/data/storage/el2/cloud");
+          expect(moduleContext.distributedFilesDir).assertEqual("/data/storage/el2/distributedfiles");
+          expect(moduleContext.bundleCodeDir).assertEqual("/data/storage/el1/bundle");
           expect(moduleContext.processName).assertEqual('com.example.uiabilitycontexttest.static');
           done();
         } else {
@@ -241,21 +237,17 @@ export default function UIAbilityContextStatic() {
     it('testCreateAreaModeContextStatic002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         if (context) {
-          let moduleContext: common.Context = context.createAreaModeContext(contextConstant.AreaMode.EL1)
+          let moduleContext: common.Context = context!.createAreaModeContext(contextConstant.AreaMode.EL1)
           hilog.info(domain, tag, "testCreateAreaModeContextStatic002 moduleContext:" + JSON.stringify(moduleContext));
           expect(moduleContext != null).assertTrue();
-          expect(typeof (moduleContext.filesDir)).assertEqual("string");
-          expect(typeof (moduleContext.tempDir)).assertEqual("string");
-          expect(typeof (moduleContext.preferencesDir)).assertEqual("string");
-          expect(typeof (moduleContext.databaseDir)).assertEqual("string");
-          expect(typeof (moduleContext.cacheDir)).assertEqual("string");
-          expect(typeof (moduleContext.cloudFileDir)).assertEqual("string");
-          expect(typeof (moduleContext.distributedFilesDir)).assertEqual("string");
-          expect(typeof (moduleContext.bundleCodeDir)).assertEqual("string");
-          expect(typeof (moduleContext.resourceDir) == 'string').assertTrue();
-          expect(typeof (moduleContext.applicationInfo)).assertEqual("object");
-          expect(typeof (moduleContext.resourceManager)).assertEqual("object");
-          expect(typeof (moduleContext.eventHub)).assertEqual("object");
+          expect(moduleContext.filesDir).assertEqual("/data/storage/el1/base/haps/entry/files");
+          expect(moduleContext.tempDir).assertEqual("/data/storage/el1/base/haps/entry/temp");
+          expect(moduleContext.preferencesDir).assertEqual("/data/storage/el1/base/haps/entry/preferences");
+          expect(moduleContext.databaseDir).assertEqual("/data/storage/el1/database/entry");
+          expect(moduleContext.cacheDir).assertEqual("/data/storage/el1/base/haps/entry/cache");
+          expect(moduleContext.cloudFileDir).assertEqual("/data/storage/el2/cloud");
+          expect(moduleContext.distributedFilesDir).assertEqual("/data/storage/el1/distributedfiles");
+          expect(moduleContext.bundleCodeDir).assertEqual("/data/storage/el1/bundle");
           expect(moduleContext.processName).assertEqual('com.example.uiabilitycontexttest.static');
           done();
         } else {
@@ -281,21 +273,17 @@ export default function UIAbilityContextStatic() {
     it('testCreateAreaModeContextStatic003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         if (context) {
-          let moduleContext: common.Context = context.createAreaModeContext(contextConstant.AreaMode.EL3)
+          let moduleContext: common.Context = context!.createAreaModeContext(contextConstant.AreaMode.EL3)
           hilog.info(domain, tag, "testCreateAreaModeContextStatic003 moduleContext:" + JSON.stringify(moduleContext));
           expect(moduleContext != null).assertTrue();
-          expect(typeof (moduleContext.filesDir)).assertEqual("string");
-          expect(typeof (moduleContext.tempDir)).assertEqual("string");
-          expect(typeof (moduleContext.preferencesDir)).assertEqual("string");
-          expect(typeof (moduleContext.databaseDir)).assertEqual("string");
-          expect(typeof (moduleContext.cacheDir)).assertEqual("string");
-          expect(typeof (moduleContext.cloudFileDir)).assertEqual("string");
-          expect(typeof (moduleContext.distributedFilesDir)).assertEqual("string");
-          expect(typeof (moduleContext.bundleCodeDir)).assertEqual("string");
-          expect(typeof (moduleContext.resourceDir) == 'string').assertTrue();
-          expect(typeof (moduleContext.applicationInfo)).assertEqual("object");
-          expect(typeof (moduleContext.resourceManager)).assertEqual("object");
-          expect(typeof (moduleContext.eventHub)).assertEqual("object");
+          expect(moduleContext.filesDir).assertEqual("/data/storage/el3/base/haps/entry/files");
+          expect(moduleContext.tempDir).assertEqual("/data/storage/el3/base/haps/entry/temp");
+          expect(moduleContext.preferencesDir).assertEqual("/data/storage/el3/base/haps/entry/preferences");
+          expect(moduleContext.databaseDir).assertEqual("/data/storage/el3/database/entry");
+          expect(moduleContext.cacheDir).assertEqual("/data/storage/el3/base/haps/entry/cache");
+          expect(moduleContext.cloudFileDir).assertEqual("/data/storage/el2/cloud");
+          expect(moduleContext.distributedFilesDir).assertEqual("/data/storage/el2/distributedfiles");
+          expect(moduleContext.bundleCodeDir).assertEqual("/data/storage/el1/bundle");
           expect(moduleContext.processName).assertEqual('com.example.uiabilitycontexttest.static');
           done();
         } else {
@@ -321,21 +309,17 @@ export default function UIAbilityContextStatic() {
     it('testCreateAreaModeContextStatic004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         if (context) {
-          let moduleContext: common.Context = context.createAreaModeContext(contextConstant.AreaMode.EL4)
+          let moduleContext: common.Context = context!.createAreaModeContext(contextConstant.AreaMode.EL4)
           hilog.info(domain, tag, "testCreateAreaModeContextStatic004 moduleContext:" + JSON.stringify(moduleContext));
           expect(moduleContext != null).assertTrue();
-          expect(typeof (moduleContext.filesDir)).assertEqual("string");
-          expect(typeof (moduleContext.tempDir)).assertEqual("string");
-          expect(typeof (moduleContext.preferencesDir)).assertEqual("string");
-          expect(typeof (moduleContext.databaseDir)).assertEqual("string");
-          expect(typeof (moduleContext.cacheDir)).assertEqual("string");
-          expect(typeof (moduleContext.cloudFileDir)).assertEqual("string");
-          expect(typeof (moduleContext.distributedFilesDir)).assertEqual("string");
-          expect(typeof (moduleContext.bundleCodeDir)).assertEqual("string");
-          expect(typeof (moduleContext.resourceDir) == 'string').assertTrue();
-          expect(typeof (moduleContext.applicationInfo)).assertEqual("object");
-          expect(typeof (moduleContext.resourceManager)).assertEqual("object");
-          expect(typeof (moduleContext.eventHub)).assertEqual("object");
+          expect(moduleContext.filesDir).assertEqual("/data/storage/el4/base/haps/entry/files");
+          expect(moduleContext.tempDir).assertEqual("/data/storage/el4/base/haps/entry/temp");
+          expect(moduleContext.preferencesDir).assertEqual("/data/storage/el4/base/haps/entry/preferences");
+          expect(moduleContext.databaseDir).assertEqual("/data/storage/el4/database/entry");
+          expect(moduleContext.cacheDir).assertEqual("/data/storage/el4/base/haps/entry/cache");
+          expect(moduleContext.cloudFileDir).assertEqual("/data/storage/el2/cloud");
+          expect(moduleContext.distributedFilesDir).assertEqual("/data/storage/el2/distributedfiles");
+          expect(moduleContext.bundleCodeDir).assertEqual("/data/storage/el1/bundle");
           expect(moduleContext.processName).assertEqual('com.example.uiabilitycontexttest.static');
           done();
         } else {
@@ -361,21 +345,17 @@ export default function UIAbilityContextStatic() {
     it('testCreateAreaModeContextStatic005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         if (context) {
-          let moduleContext: common.Context = context.createAreaModeContext(contextConstant.AreaMode.EL5)
+          let moduleContext: common.Context = context!.createAreaModeContext(contextConstant.AreaMode.EL5)
           hilog.info(domain, tag, "testCreateAreaModeContextStatic005 moduleContext:" + JSON.stringify(moduleContext));
           expect(moduleContext != null).assertTrue();
-          expect(typeof (moduleContext.filesDir)).assertEqual("string");
-          expect(typeof (moduleContext.tempDir)).assertEqual("string");
-          expect(typeof (moduleContext.preferencesDir)).assertEqual("string");
-          expect(typeof (moduleContext.databaseDir)).assertEqual("string");
-          expect(typeof (moduleContext.cacheDir)).assertEqual("string");
-          expect(typeof (moduleContext.cloudFileDir)).assertEqual("string");
-          expect(typeof (moduleContext.distributedFilesDir)).assertEqual("string");
-          expect(typeof (moduleContext.bundleCodeDir)).assertEqual("string");
-          expect(typeof (moduleContext.resourceDir) == 'string').assertTrue();
-          expect(typeof (moduleContext.applicationInfo)).assertEqual("object");
-          expect(typeof (moduleContext.resourceManager)).assertEqual("object");
-          expect(typeof (moduleContext.eventHub)).assertEqual("object");
+          expect(moduleContext.filesDir).assertEqual("/data/storage/el5/base/haps/entry/files");
+          expect(moduleContext.tempDir).assertEqual("/data/storage/el5/base/haps/entry/temp");
+          expect(moduleContext.preferencesDir).assertEqual("/data/storage/el5/base/haps/entry/preferences");
+          expect(moduleContext.databaseDir).assertEqual("/data/storage/el5/database/entry");
+          expect(moduleContext.cacheDir).assertEqual("/data/storage/el5/base/haps/entry/cache");
+          expect(moduleContext.cloudFileDir).assertEqual("/data/storage/el2/cloud");
+          expect(moduleContext.distributedFilesDir).assertEqual("/data/storage/el2/distributedfiles");
+          expect(moduleContext.bundleCodeDir).assertEqual("/data/storage/el1/bundle");
           expect(moduleContext.processName).assertEqual('com.example.uiabilitycontexttest.static');
           done();
         } else {
@@ -401,21 +381,17 @@ export default function UIAbilityContextStatic() {
     it('testCreateDisplayContextStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         if (context) {
-          let displayContext: common.Context = context.createDisplayContext(0)
+          let displayContext: common.Context = context!.createDisplayContext(0)
           hilog.info(domain, tag, "testCreateDisplayContextStatic001 displayContext:" + JSON.stringify(displayContext));
           expect(displayContext != null).assertTrue();
-          expect(typeof (displayContext.filesDir)).assertEqual("string");
-          expect(typeof (displayContext.tempDir)).assertEqual("string");
-          expect(typeof (displayContext.preferencesDir)).assertEqual("string");
-          expect(typeof (displayContext.databaseDir)).assertEqual("string");
-          expect(typeof (displayContext.cacheDir)).assertEqual("string");
-          expect(typeof (displayContext.cloudFileDir)).assertEqual("string");
-          expect(typeof (displayContext.distributedFilesDir)).assertEqual("string");
-          expect(typeof (displayContext.bundleCodeDir)).assertEqual("string");
-          expect(typeof (displayContext.resourceDir) == 'string').assertTrue();
-          expect(typeof (displayContext.applicationInfo)).assertEqual("object");
-          expect(typeof (displayContext.resourceManager)).assertEqual("object");
-          expect(typeof (displayContext.eventHub)).assertEqual("object");
+          expect(displayContext.filesDir).assertEqual("/data/storage/el2/base/haps/entry/files");
+          expect(displayContext.tempDir).assertEqual("/data/storage/el2/base/haps/entry/temp");
+          expect(displayContext.preferencesDir).assertEqual("/data/storage/el2/base/haps/entry/preferences");
+          expect(displayContext.databaseDir).assertEqual("/data/storage/el2/database/entry");
+          expect(displayContext.cacheDir).assertEqual("/data/storage/el2/base/haps/entry/cache");
+          expect(displayContext.cloudFileDir).assertEqual("/data/storage/el2/cloud");
+          expect(displayContext.distributedFilesDir).assertEqual("/data/storage/el2/distributedfiles");
+          expect(displayContext.bundleCodeDir).assertEqual("/data/storage/el1/bundle");
           expect(displayContext.processName).assertEqual('com.example.uiabilitycontexttest.static');
           done();
         } else {
@@ -465,7 +441,7 @@ export default function UIAbilityContextStatic() {
             }
           }
         };
-        context.openAtomicService('', options)
+        context?.openAtomicService('', options)
           .then((result: common.AbilityResult) => {
             console.info('openAtomicService succeed');
             expect().assertFail();
@@ -494,7 +470,7 @@ export default function UIAbilityContextStatic() {
     it('testOpenAtomicServiceStatic002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       try {
-        context.openAtomicService('')
+        context?.openAtomicService('')
           .then((result: common.AbilityResult) => {
             console.info('openAtomicService succeed');
             expect().assertFail();
@@ -523,7 +499,7 @@ export default function UIAbilityContextStatic() {
     it('testReportDrawnCompletedStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let temp = false;
       try {
-        context.reportDrawnCompleted((err) => {
+        context?.reportDrawnCompleted((err) => {
           if (err?.code) {
             console.error(`reportDrawnCompleted failed, code is ${err?.code}, message is ${err?.message}`);
             expect().assertFail();
@@ -551,8 +527,8 @@ export default function UIAbilityContextStatic() {
      */
     it('testsetColorModeStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        context.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
-        expect(context.config.colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
+        context?.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
+        expect(context?.config.colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
         done();
       } catch (err) {
         hilog.info(domain, tag, `testsetColorModeStatic001 fail: ` + err);
@@ -577,7 +553,7 @@ export default function UIAbilityContextStatic() {
           "abilityName": "MainAbility",
           "moduleName": "entry"
         }
-        context.startAbility(want).then(() => {
+        context?.startAbility(want).then(() => {
           hilog.info(0x0000, tag, '%{public}s', 'testTerminateSelfCallback001 start successful. ');
         }).catch((error: Error): void => {
           hilog.info(0x0000, tag, '%{public}s', 'testTerminateSelfCallback001 start failed. Cause: ' + JSON.stringify(error));

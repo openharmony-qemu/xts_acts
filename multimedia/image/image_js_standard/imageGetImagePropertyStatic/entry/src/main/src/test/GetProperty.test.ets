@@ -42,7 +42,7 @@ interface LOOP {
 export default function imageGetImageProperty() {
   describe('imageGetImageProperty', (): void => {
     let filesDir: string | undefined | null;
-    let filePath: string;
+    let filePath: string = '';
     let GET_PROPERTIES_ERROR_CODE = 62980096;
     const ORIENTATION = image.PropertyKey.ORIENTATION
     const IMAGE_LENGTH = image.PropertyKey.IMAGE_LENGTH

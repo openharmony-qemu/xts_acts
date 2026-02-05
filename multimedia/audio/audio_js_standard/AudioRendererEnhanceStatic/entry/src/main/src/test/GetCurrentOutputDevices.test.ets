@@ -32,7 +32,7 @@ let g_context: common.UIAbilityContext;
 
 export default function audioRendererTest() {
   describe('getCurrentOutputDevices', () => {
-    let audioRen: audio.AudioRenderer | null;
+    let audioRen: audio.AudioRenderer | null = null;
     let TagFrmwkRender = "audioRendererEnhanceTest";
 
     beforeAll(async (): Promise<void> => {

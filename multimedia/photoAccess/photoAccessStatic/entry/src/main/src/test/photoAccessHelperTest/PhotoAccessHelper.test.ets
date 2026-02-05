@@ -40,8 +40,8 @@ import hilog from '@ohos.hilog';
 
 let domain: int= 0x0000;
 let tag: string = 'testTag';
-let phAccessHelper: photoAccessHelper.PhotoAccessHelper | null;
-let predicates: dataSharePredicates.DataSharePredicates;
+let phAccessHelper: photoAccessHelper.PhotoAccessHelper | null = null;
+let predicates: dataSharePredicates.DataSharePredicates | null = null;
 
 export default function photoAccessHelperTest() {
   describe('PhotoAccessHelperTest', () => {
@@ -75,7 +75,7 @@ export default function photoAccessHelperTest() {
         try {
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: [],
-            predicates: predicates
+            predicates: predicates!
           };
           (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions, (err, fetchResult) => {
             expect(fetchResult).not().assertUndefined();
@@ -102,7 +102,7 @@ export default function photoAccessHelperTest() {
         try {
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: [],
-            predicates: predicates
+            predicates: predicates!
           };
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
             await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
@@ -129,7 +129,7 @@ export default function photoAccessHelperTest() {
         try {
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: ['screenshot_20240805_124506.jpeg'],
-            predicates: predicates
+            predicates: predicates!
           };
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
             await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
@@ -155,7 +155,7 @@ export default function photoAccessHelperTest() {
         try {
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: ['screenshot_20240805_124506'],
-            predicates: predicates
+            predicates: predicates!
           };
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
             await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
@@ -181,7 +181,7 @@ export default function photoAccessHelperTest() {
         try {
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: ['uri', 'media_type', 'subtype', 'display_name'],
-            predicates: predicates
+            predicates: predicates!
           };
           (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions, (err, fetchResult) => {
             expect(fetchResult).not().assertUndefined();

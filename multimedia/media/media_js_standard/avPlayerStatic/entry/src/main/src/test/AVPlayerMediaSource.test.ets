@@ -19,7 +19,7 @@ import { Hypium } from "../../../hypium/index";
 
 export default function AVPlayerMediaSource() {
   let player: media.AVPlayer | undefined;
-  let header: Record<string, string>;
+  let header: Record<string, string> = {};
   describe('AVPlayerMediaSource', () => {
     beforeAll(async () => {
       player = await media.createAVPlayer();

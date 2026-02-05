@@ -29,7 +29,7 @@ import bundleManager from '@ohos.bundle.bundleManager';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext | undefined;
 let tokenID: int;
 
 const ERR_PARAM_ILLEGAL = 401;
@@ -40,17 +40,19 @@ const ERR_ALL_PERM_GRANTED = 12100011;
 const ERR_PERM_NOT_REVOKE_BY_USER = 12100012;
 
 function clickRequest(driver: Driver, name: string): boolean {
-  await Utils.msSleep(2000);
+  waitForCompletion(async () => {await Utils.msSleep(2000);})
   try {
     hilog.error(domain, tag, ` 11111111111111111111111 error, ${ JSON.stringify(name) }`);
-    let button = await driver.findComponent(ON.text(name));
-    await Utils.msSleep(1000);
-    if (button) {
-      hilog.error(domain, tag, ` 2222222222222222 error, ${ JSON.stringify(name) }`);
-      await button.click();
-      return true;
-    }
-    return false;
+    return waitForCompletion<boolean>(async (): Promise<boolean> => {
+      let button = await driver.findComponent(ON.text(name));
+      await Utils.msSleep(1000);
+      if (button !== null) {
+        hilog.error(domain, tag, ` 2222222222222222 error, ${ JSON.stringify(name) }`);
+        await button.click();
+        return true;
+      }
+      return false;
+    })
   } catch (error: BusinessError<void>) {
     hilog.error(domain, tag, ` findcomponent error, ${ JSON.stringify(error) }`);
     return false;
@@ -62,7 +64,7 @@ export default function requestPermissionOnSettingStaticTest() {
   let atManager = abilityAccessCtrl.createAtManager();
   describe("requestPermissionOnSettingStaticTest", (): void => {
     hilog.info(domain, tag, '##########start requestPermissionOnSettingStaticTest');
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
       let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION;
       try {
@@ -111,10 +113,10 @@ export default function requestPermissionOnSettingStaticTest() {
      */
     it('Test_requestPermissionOnSetting_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionOnSetting_001 start");
-      let context: common.UIAbilityContext;
+      let context: common.UIAbilityContext | undefined;
       let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.CAMERA");
       try {
-        await atManager.requestPermissionOnSetting(context, permissionList);
+        await atManager.requestPermissionOnSetting(context!, permissionList);
       } catch (error: BusinessError<void>) {
         hilog.info(domain, tag, "Test_requestPermissionOnSetting_001 catch err" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
@@ -134,7 +136,7 @@ export default function requestPermissionOnSettingStaticTest() {
       hilog.info(domain, tag, "Test_requestPermissionOnSetting_002 start");
       let permissionList: Array<Permissions> = new Array<Permissions>();
       try {
-        await atManager.requestPermissionOnSetting(testAbilityContext, permissionList);
+        await atManager.requestPermissionOnSetting(testAbilityContext!, permissionList);
       } catch (error: BusinessError<void>) {
         hilog.info(domain, tag, "Test_requestPermissionOnSetting_002 catch err" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
@@ -156,7 +158,7 @@ export default function requestPermissionOnSettingStaticTest() {
       let permissionList: Array<Permissions> = new Array<Permissions>(invalidPermission);
       if (testAbilityContext) {
         try {
-          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
+          atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).catch((error: Error): void => {
             hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_003 error" + JSON.stringify(error));
             expect(error.code).assertEqual(ERR_PARAM_INVALID);
             done();
@@ -182,7 +184,7 @@ export default function requestPermissionOnSettingStaticTest() {
       let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.APP_TRACKING_CONSENT");
       if (testAbilityContext) {
         try {
-          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
+          atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).catch((error: Error): void => {
             hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_004 error" + JSON.stringify(error));
             expect(error.code).assertEqual(ERR_PARAM_INVALID);
             done();
@@ -208,7 +210,7 @@ export default function requestPermissionOnSettingStaticTest() {
       let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.USE_BLUETOOTH");
       if (testAbilityContext) {
         try {
-          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
+          atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).catch((error: Error): void => {
             hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_005 error" + JSON.stringify(error));
             expect(error.code).assertEqual(ERR_PARAM_INVALID);
             done();
@@ -234,7 +236,7 @@ export default function requestPermissionOnSettingStaticTest() {
       let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.CAMERA", "ohos.permission.MICROPHONE");
       if (testAbilityContext) {
         try {
-          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
+          atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).catch((error: Error): void => {
             hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_006 error" + JSON.stringify(error));
             expect(error.code).assertEqual(ERR_PARAM_INVALID);
             done();
@@ -261,7 +263,7 @@ export default function requestPermissionOnSettingStaticTest() {
       if (testAbilityContext) {
         try {
           // 1. 申请的权限未被操作过
-          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
+          atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).catch((error: Error): void => {
             hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_007 error1" + JSON.stringify(error));
             expect(error.code).assertEqual(ERR_PERM_NOT_REVOKE_BY_USER);
 
@@ -269,7 +271,7 @@ export default function requestPermissionOnSettingStaticTest() {
             await Utils.msSleep(1000);
             // 2. 申请权限弹框，并选择允许
             hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_007 begin request permisson from user");
-            atManager.requestPermissionsFromUser(testAbilityContext, permissionList).then((data: PermissionRequestResult): void => {
+            atManager.requestPermissionsFromUser(testAbilityContext!, permissionList).then((data: PermissionRequestResult): void => {
               hilog.info(domain, tag, "requestPermissionsFromUser data " + JSON.stringify(data));
               expect(data.permissions.length).assertEqual(permissionList.length);
               expect(data.authResults[0]).assertEqual(0); // 0: granted
@@ -278,7 +280,7 @@ export default function requestPermissionOnSettingStaticTest() {
               hilog.info(domain, tag, "requestPermissionsFromUser expect ");
 
               // 3. 申请已经被用户授予的权限
-              atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
+              atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).catch((error: Error): void => {
                 hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_007 error2" + JSON.stringify(error));
                 expect(error.code).assertEqual(ERR_ALL_PERM_GRANTED);
                 done();
@@ -310,27 +312,27 @@ export default function requestPermissionOnSettingStaticTest() {
       if (testAbilityContext) {
         try {
           // 1. 申请的权限未被操作过
-          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
+          atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).catch((error: Error): void => {
             hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_008 error1 " + JSON.stringify(error));
             expect(error.code).assertEqual(ERR_PERM_NOT_REVOKE_BY_USER);
 
             let driver1: Driver = Driver.create();
             await Utils.msSleep(1000);
             // 申请WRITE_CALENDAR权限弹框，并选择禁止
-            atManager.requestPermissionsFromUser(testAbilityContext, new Array<Permissions>('ohos.permission.WRITE_CALENDAR')).then((data: PermissionRequestResult): void => {
+            atManager.requestPermissionsFromUser(testAbilityContext!, new Array<Permissions>('ohos.permission.WRITE_CALENDAR')).then((data: PermissionRequestResult): void => {
               hilog.info(domain, tag, "requestPermissionsFromUser data1 ");
               expect(data.authResults[0]).assertEqual(-1); // -1: not granted
               expect(data.dialogShownResults?.[0]).assertEqual(true);
 
               // 2. 申请权限，禁止一个权限，另外一个未操作, throw 12100012
-              atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
+              atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).catch((error: Error): void => {
                 hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_008 error2 " + JSON.stringify(error));
                 expect(error.code).assertEqual(ERR_PERM_NOT_REVOKE_BY_USER);
 
                 let driver2: Driver = Driver.create();
                 await Utils.msSleep(1000);
                 // 申请权限，选择允许
-                atManager.requestPermissionsFromUser(testAbilityContext, new Array<Permissions>('ohos.permission.READ_CALENDAR')).then((data: PermissionRequestResult): void => {
+                atManager.requestPermissionsFromUser(testAbilityContext!, new Array<Permissions>('ohos.permission.READ_CALENDAR')).then((data: PermissionRequestResult): void => {
                   hilog.info(domain, tag, "requestPermissionsFromUser data2 " + JSON.stringify(data));
                   expect(data.authResults[0]).assertEqual(0); // 0: granted
                   expect(data.dialogShownResults?.[0]).assertEqual(true);
@@ -338,13 +340,13 @@ export default function requestPermissionOnSettingStaticTest() {
                   let driver3: Driver = Driver.create();
                   await Utils.msSleep(1000);
                   // 3. 1个被允许，一个被禁止，正常弹框(选择允许)
-                  atManager.requestPermissionOnSetting(testAbilityContext, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
+                  atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
                     // hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_008 data " + JSON.stringify(data));
                     expect(data.length).assertEqual(permissionList.length);
                     expect(data[0]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED); // 0: granted
                     expect(data[1]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED); // 0: granted
 
-                    atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
+                    atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).catch((error: Error): void => {
                       hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_008 error3 " + JSON.stringify(error));
                       expect(error.code).assertEqual(ERR_ALL_PERM_GRANTED);
 
@@ -394,7 +396,7 @@ export default function requestPermissionOnSettingStaticTest() {
           let driver1: Driver = Driver.create();
           await Utils.msSleep(1000);
           // 1. 申请权限弹框，并选择禁止
-          atManager.requestPermissionsFromUser(testAbilityContext, permissionList).then((data: PermissionRequestResult): void => {
+          atManager.requestPermissionsFromUser(testAbilityContext!, permissionList).then((data: PermissionRequestResult): void => {
             hilog.info(domain, tag, "requestPermissionsFromUser data ");
             expect(data.permissions.length).assertEqual(permissionList.length);
             expect(data.authResults[0]).assertEqual(-1); // -1: granted
@@ -403,28 +405,28 @@ export default function requestPermissionOnSettingStaticTest() {
             let driver2: Driver = Driver.create();
             await Utils.msSleep(1000);
             // 2. 嵌套式重复调用
-            atManager.requestPermissionOnSetting(testAbilityContext, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
+            atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
               // hilog.info(domain, tag, "Test_requestPermissionOnSetting_009 data1 " + JSON.stringify(data));
               expect(data[0]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED); // -1: not granted
               expect(data[0] != null).assertTrue();
 
               let driver3: Driver = Driver.create();
               await Utils.msSleep(1000);
-              atManager.requestPermissionOnSetting(testAbilityContext, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
+              atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
                 // hilog.info(domain, tag, "Test_requestPermissionOnSetting_009 data2 " + JSON.stringify(data));
                 expect(data[0]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED); // -1: not granted
                 expect(data[0] != null).assertTrue();
 
                 let driver4: Driver = Driver.create();
                 await Utils.msSleep(1000);
-                atManager.requestPermissionOnSetting(testAbilityContext, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
+                atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
                   // hilog.info(domain, tag, "Test_requestPermissionOnSetting_009 data3 " + JSON.stringify(data));
                   expect(data[0]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED); // -1: not granted
                   expect(data[0] != null).assertTrue();
 
                   let driver5: Driver = Driver.create();
                   await Utils.msSleep(1000);
-                  atManager.requestPermissionOnSetting(testAbilityContext, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
+                  atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
                     // hilog.info(domain, tag, "Test_requestPermissionOnSetting_009 data4 " + JSON.stringify(data));
                     expect(data[0]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED); // -1: not granted
                     expect(data[0] != null).assertTrue();
@@ -503,12 +505,12 @@ export default function requestPermissionOnSettingStaticTest() {
         try {
           let driver1: Driver = Driver.create();
           await Utils.msSleep(1000);
-          atManager.requestPermissionsFromUser(testAbilityContext, permissionList).then((data: PermissionRequestResult): void => {
+          atManager.requestPermissionsFromUser(testAbilityContext!, permissionList).then((data: PermissionRequestResult): void => {
             hilog.info(domain, 'testTag', "requestPermissionsFromUser data " + JSON.stringify(data));
 
             let driver2: Driver = Driver.create();
             await Utils.msSleep(1000);
-            atManager.requestPermissionOnSetting(testAbilityContext, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
+            atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
               // hilog.info(domain, tag, "Test_requestPermissionOnSetting_010 data1 " + JSON.stringify(data));
               expect(data[0]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED); // 0: granted
               firstCallback = true;
@@ -516,7 +518,7 @@ export default function requestPermissionOnSettingStaticTest() {
                 done();
               }
             });
-            atManager.requestPermissionOnSetting(testAbilityContext, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
+            atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
               // hilog.info(domain, tag, "Test_requestPermissionOnSetting_010 data2 " + JSON.stringify(data));
               expect(data[0]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED); // 0: granted
               secondCallback = true;
@@ -561,13 +563,13 @@ export default function requestPermissionOnSettingStaticTest() {
           let driver1: Driver = Driver.create();
           await Utils.msSleep(1000);
           // 1. 申请权限弹框，并选择禁止
-          atManager.requestPermissionsFromUser(testAbilityContext, permissionList).then((data: PermissionRequestResult): void => {
+          atManager.requestPermissionsFromUser(testAbilityContext!, permissionList).then((data: PermissionRequestResult): void => {
             hilog.info(domain, tag, "requestPermissionsFromUser data ");
 
             let driver2: Driver = Driver.create();
             await Utils.msSleep(1000);
             let permissionList1: Array<Permissions> = new Array<Permissions>('ohos.permission.MICROPHONE');
-            atManager.requestPermissionOnSetting(testAbilityContext, permissionList1).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
+            atManager.requestPermissionOnSetting(testAbilityContext!, permissionList1).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
               // hilog.info(domain, tag, "Test_requestPermissionOnSetting_010 data1 " + JSON.stringify(data));
               firstCallback = true;
               if (firstCallback && secondCallback) {
@@ -575,7 +577,7 @@ export default function requestPermissionOnSettingStaticTest() {
               }
             });
             let permissionList2: Array<Permissions> = new Array<Permissions>('ohos.permission.ACCESS_BLUETOOTH');
-            atManager.requestPermissionOnSetting(testAbilityContext, permissionList2).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
+            atManager.requestPermissionOnSetting(testAbilityContext!, permissionList2).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
               // hilog.info(domain, tag, "Test_requestPermissionOnSetting_010 data2 " + JSON.stringify(data));
               secondCallback = true;
               if (firstCallback && secondCallback) {

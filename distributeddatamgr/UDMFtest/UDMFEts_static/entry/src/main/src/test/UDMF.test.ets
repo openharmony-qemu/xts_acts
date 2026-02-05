@@ -23,7 +23,7 @@ import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
 import uniformDataStruct from '@ohos.data.uniformDataStruct';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let resProgressInfo: unifiedDataChannel.ProgressInfo;
+let resProgressInfo: unifiedDataChannel.ProgressInfo | undefined;
 
 const KEY_TEST_ELEMENT = 'TestKey';
 const VALUE_TEST_ELEMENT = 'TestValue';
@@ -850,8 +850,8 @@ export default function UDMFApiTest() {
       let obj = getDataParams;
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1600 end");
     })
     /**
@@ -878,8 +878,8 @@ export default function UDMFApiTest() {
       let obj = getDataParams;
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1700 end");
     })
     /**
@@ -906,8 +906,8 @@ export default function UDMFApiTest() {
       let obj = getDataParams;
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1800 end");
     })
     /**
@@ -934,8 +934,8 @@ export default function UDMFApiTest() {
       let obj = getDataParams;
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1900 end");
     })
     /**
@@ -962,8 +962,8 @@ export default function UDMFApiTest() {
       let obj = getDataParams;
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2000 end");
     })
 
@@ -991,8 +991,8 @@ export default function UDMFApiTest() {
       let obj = getDataParams;
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2100 end");
     })
     /**
@@ -1021,8 +1021,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2200 end");
     })
     /**
@@ -1049,8 +1049,8 @@ export default function UDMFApiTest() {
       let obj = getDataParams;
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2300 end");
     })
 
@@ -1078,8 +1078,8 @@ export default function UDMFApiTest() {
       let obj = getDataParams;
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2400 end");
     })
     /**
@@ -1108,8 +1108,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2500 end");
     })
     /**
@@ -1136,8 +1136,8 @@ export default function UDMFApiTest() {
       let obj = getDataParams;
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2600 end");
     })
     /**
@@ -1164,8 +1164,8 @@ export default function UDMFApiTest() {
       let obj = getDataParams;
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2700 end");
     })
     /**
@@ -1192,8 +1192,8 @@ export default function UDMFApiTest() {
       let obj = getDataParams;
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator)
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2800 end");
     })
 
@@ -1221,8 +1221,8 @@ export default function UDMFApiTest() {
       let obj = getDataParams;
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_2900 end");
     })
     /**
@@ -1249,8 +1249,8 @@ export default function UDMFApiTest() {
       let obj = getDataParams;
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3000 end");
     })
     /**
@@ -1277,8 +1277,8 @@ export default function UDMFApiTest() {
       let obj = getDataParams;
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3100 end");
     })
 
@@ -1308,8 +1308,8 @@ export default function UDMFApiTest() {
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3200 end");
     })
     /**
@@ -1338,8 +1338,8 @@ export default function UDMFApiTest() {
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3300 end");
     })
     /**
@@ -1368,8 +1368,8 @@ export default function UDMFApiTest() {
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3400 end");
     })
     /**
@@ -1398,8 +1398,8 @@ export default function UDMFApiTest() {
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3500 end");
     })
     /**
@@ -1428,8 +1428,8 @@ export default function UDMFApiTest() {
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3600 end");
     })
     /**
@@ -1458,8 +1458,8 @@ export default function UDMFApiTest() {
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3700 end");
     })
     /**
@@ -1488,8 +1488,8 @@ export default function UDMFApiTest() {
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3800 end");
     })
     /**
@@ -1518,8 +1518,8 @@ export default function UDMFApiTest() {
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_3900 end");
     })
 
@@ -1549,7 +1549,7 @@ export default function UDMFApiTest() {
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4000 end");
     })
     /**
@@ -1578,7 +1578,7 @@ export default function UDMFApiTest() {
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4100 end");
     })
     /**
@@ -1607,7 +1607,7 @@ export default function UDMFApiTest() {
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4200 end");
     })
     /**
@@ -1636,7 +1636,7 @@ export default function UDMFApiTest() {
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4300 end");
     })
     /**
@@ -1665,7 +1665,7 @@ export default function UDMFApiTest() {
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4400 end");
     })
     /**
@@ -1694,7 +1694,7 @@ export default function UDMFApiTest() {
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4500 end");
     })
     /**
@@ -1723,7 +1723,7 @@ export default function UDMFApiTest() {
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4600 end");
     })
     /**
@@ -1752,7 +1752,7 @@ export default function UDMFApiTest() {
       progressListener(progressInfo, null);
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4700 end");
     })
 
@@ -1784,8 +1784,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4800 end");
     })
     /**
@@ -1816,8 +1816,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_4900 end");
     })
     /**
@@ -1848,8 +1848,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5000 end");
     })
     /**
@@ -1880,8 +1880,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5100 end");
     })
     /**
@@ -1912,8 +1912,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5200 end");
     })
     /**
@@ -1944,8 +1944,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5300 end");
     })
     /**
@@ -1976,8 +1976,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5400 end");
     })
     /**
@@ -2008,8 +2008,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5500 end");
     })
 
@@ -2042,8 +2042,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5600 end");
     })
     /**
@@ -2074,8 +2074,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5700 end");
     })
     /**
@@ -2106,8 +2106,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5800 end");
     })
     /**
@@ -2138,8 +2138,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_5900 end");
     })
     /**
@@ -2170,8 +2170,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6000 end");
     })
     /**
@@ -2202,8 +2202,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6100 end");
     })
     /**
@@ -2234,8 +2234,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6200 end");
     })
     /**
@@ -2266,8 +2266,8 @@ export default function UDMFApiTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-      expect(resProgressInfo.status).assertEqual(progressInfo.status);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.status).assertEqual(progressInfo.status);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6300 end");
     })
     /**
@@ -3499,8 +3499,8 @@ export default function UDMFApiTest() {
         expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
         expect(obj.acceptableInfo).assertEqual(getDataParams.acceptableInfo);
 
-        expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
-        expect(resProgressInfo.status).assertEqual(progressInfo.status);
+        expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
+        expect(resProgressInfo!.status).assertEqual(progressInfo.status);
         hilog.info(domain, tag, TAG + ' end ');
         done()
       } catch (err) {

@@ -43,7 +43,7 @@ interface User {
 
 export default function ProcessTest() {
   describe("ProcessTest", (): void => {
-    afterEach(() => {
+    afterEach(async () => {
       await Utils.msSleep(200);
     })
     /**
@@ -356,7 +356,7 @@ export default function ProcessTest() {
      * @tc.level Level 1
      */
     it('ProcessTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'ProcessTest012';
         const results: number[] = [];
         try {
@@ -419,7 +419,7 @@ export default function ProcessTest() {
      * @tc.level Level 1
      */
     it('ProcessTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'ProcessTest014';
         console.info(`${TAG} test start`);
         let count: Number = 0;
@@ -577,7 +577,7 @@ export default function ProcessTest() {
      * @tc.level Level 1
      */
     it('ProcessTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'ProcessTest019';
         console.info(`${TAG} test start`);
         let count: number = 0;
@@ -697,7 +697,7 @@ export default function ProcessTest() {
      * @tc.level Level 1
      */
     it('ProcessTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         const TAG: string = 'ProcessTest023';
         console.info(`${TAG} test start`);
         let count: number = 0;

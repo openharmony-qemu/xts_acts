@@ -25,9 +25,8 @@ import application from '@ohos.app.ability.application';
 import window from '@ohos.window';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
-let targetVersion:number;
 let tag = 'testTag'
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext | undefined;
 
 export default function ActsGetAllWindowStagesStaticTest() {
   describe('ActsGetAllWindowStagesStaticTest', () => {
@@ -64,9 +63,9 @@ export default function ActsGetAllWindowStagesStaticTest() {
     it('SUB_Ability_AbilityRuntime_getAllWindowStages_static_2600', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_getAllWindowStages_static_2600 begin');
-      let applicationContext: common.ApplicationContext = testAbilityContext.getApplicationContext();
+      let applicationContext: common.ApplicationContext = testAbilityContext!.getApplicationContext();
       try {
-        applicationContext.getAllWindowStages()
+        applicationContext?.getAllWindowStages()
           .then((data: Array<window.WindowStage>) => {
             hilog.info(0x0000, 'testTag', `getAllWindowStages success data is ${JSON.stringify(data)} `);
             hilog.info(0x0000, 'testTag', `Data: ` + (data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
@@ -80,8 +79,8 @@ export default function ActsGetAllWindowStagesStaticTest() {
             expect().assertFail();
             done();
           });
-        done();
-      } catch (error:Error) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s',
           'SUB_Ability_AbilityRuntime_getAllWindowStages_static_2600 failed ' +  error.message);
         expect().assertFail();

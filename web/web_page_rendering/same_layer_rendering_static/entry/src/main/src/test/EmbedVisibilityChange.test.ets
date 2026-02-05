@@ -58,9 +58,9 @@ export default function EmbedVisibilityChange() {
      * @tc.desc   test EmbedVisibilityChange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('emitEmbedVisibilityChange_static_001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('emitEmbedVisibilityChange_static_001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);
       Utils.emitEvent('emitEmbedVisibilityChange001', 10)
       await Utils.msSleep(3000);

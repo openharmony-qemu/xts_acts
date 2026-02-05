@@ -18,7 +18,6 @@ import {OnTitleReceiveEvent,OnHttpErrorReceiveEvent,$rawfile,Header,OnRenderExit
 import { State } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins
 import web_webview from '@ohos.web.webview'
 import { BusinessError } from '@ohos.base';
-import { setTimeout } from '@internal.full.global';
 import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import image from '@ohos.multimedia.image';

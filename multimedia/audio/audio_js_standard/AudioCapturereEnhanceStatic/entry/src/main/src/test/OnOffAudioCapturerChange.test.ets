@@ -27,13 +27,13 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 const Tag: string = 'AudioCpaturerEnhanceTest: ';
 let tag: string = 'AudioCpaturerEnhanceTest';
 let g_context: common.UIAbilityContext;
-let audioCap: audio.AudioCapturer | null;
+let audioCap: audio.AudioCapturer | null = null;
 
 
 export default function onOffAudioCapturerChangeTest() {
   describe('onOffAudioCapturerChange', () => {
     let dirPath: string;
-    let audioCap: audio.AudioCapturer | null;
+    let audioCap: audio.AudioCapturer | null = null;
     let audioManager: audio.AudioManager;
     let flag1: boolean = false;
     let flag2: boolean = false;

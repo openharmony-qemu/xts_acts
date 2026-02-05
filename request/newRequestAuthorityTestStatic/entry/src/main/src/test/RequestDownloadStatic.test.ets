@@ -23,7 +23,7 @@ import common from "@ohos.app.ability.common";
 import fs from "@ohos.file.fs";
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-let baseContext: common.UIAbilityContext;
+let baseContext: common.UIAbilityContext | undefined;
 
 export default function RequestDownloadStaticTest() {
 
@@ -38,7 +38,7 @@ export default function RequestDownloadStaticTest() {
         moduleName:"entry",
         onAbilityCreate: (abilitys : UIAbility) : void => {
           baseContext = abilitys.context;
-          let pathDir: string = baseContext.cacheDir;
+          let pathDir: string = baseContext!.cacheDir;
           let filePath = pathDir + `/test.txt`;
           let file = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
           let content = ''.padEnd(1 * 1024, 'Hello world');
@@ -112,7 +112,7 @@ export default function RequestDownloadStaticTest() {
         saveas: './SUB_Misc_REQUEST_Create_Download_Promise_Static_0010.txt',
       };
       try {
-        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
         expect(task !== undefined).assertEqual(true);
         hilog.info(domain, tag, '%{public}s',"====>SUB_Misc_REQUEST_Create_Download_Promise_Static_0010 create success: " + task);
       } catch (err: BusinessError) {
@@ -139,7 +139,7 @@ export default function RequestDownloadStaticTest() {
         saveas: './SUB_Misc_REQUEST_Start_Download_Promise_Static_0010.txt',
       };
       try {
-        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
         await task.start();
         expect(task !== undefined).assertEqual(true);
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Start_Download_Promise_Static_0010 download start success: " + task);
@@ -168,7 +168,7 @@ export default function RequestDownloadStaticTest() {
         data: '',
       };
 
-      request.agent.create(baseContext, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
+      request.agent.create(baseContext!, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
         hilog.info(domain, tag, '%{public}s', "====>SUB_Misc_REQUEST_Create_Download_Callback_Static_0010 downloadTask: " + task);
         try{
           if (err !== null) {
@@ -212,7 +212,7 @@ export default function RequestDownloadStaticTest() {
         data: attachments,
       };
       try {
-        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
         await task.start();
         expect(task !== undefined).assertEqual(true);
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Start_Upload_Promise_Static_0010 download start success: " + task);
@@ -240,7 +240,7 @@ export default function RequestDownloadStaticTest() {
         saveas: './SUB_Misc_REQUEST_On_Download_Completed_Static_0040',
       };
       try {
-        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Completed_Static_0040 create success");
         let on_completedCallback = (pro: request.agent.Progress): void => {
           try {
@@ -284,7 +284,7 @@ export default function RequestDownloadStaticTest() {
         saveas: './SUB_Request_Agent_onResponse_Static_0100',
       };
       try {
-        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
         hilog.info(domain, tag, "====>SUB_Request_Agent_onResponse_Static_0100 create success");
         let responseCallback_1 = (info: request.agent.HttpResponse) => {
           try {
@@ -324,7 +324,7 @@ export default function RequestDownloadStaticTest() {
         saveas: './SUB_Misc_REQUEST_Start_Download_Callback_Static_0010.txt',
       };
       try {
-        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
         task.start((err: BusinessError | null): void => {
           if (err !== null) {
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Start_Download_Callback_Static_0010 create err: " + err?.code + JSON.stringify(err));
@@ -359,7 +359,7 @@ export default function RequestDownloadStaticTest() {
         saveas: '/data/storage/el2/base',
       };
       try {
-        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
         hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_1000 create not err");
         expect().assertFail();
         done();
@@ -386,7 +386,7 @@ export default function RequestDownloadStaticTest() {
         saveas: '/data/storage/el2/base',
       };
       try {
-        request.agent.create(baseContext, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
+        request.agent.create(baseContext!, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
           hilog.info(domain, tag, '%{public}s', "====>SUB_Request_Agent_TaskSaveas_Static_1100 downloadTask: " + task);
           expect().assertFail();
           done();
@@ -414,7 +414,7 @@ export default function RequestDownloadStaticTest() {
         saveas: '/ request/SUB_Request_Agent_TaskSaveas_Static_0500',
       };
       try {
-        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
         hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_0500 create not err");
         expect().assertFail();
         done();
@@ -441,7 +441,7 @@ export default function RequestDownloadStaticTest() {
         saveas: '/ request/SUB_Request_Agent_TaskSaveas_Static_0600',
       };
       try {
-        request.agent.create(baseContext, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
+        request.agent.create(baseContext!, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
           hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_0600 create callback");
           expect().assertFail();
           done();
@@ -470,7 +470,7 @@ export default function RequestDownloadStaticTest() {
       };
 
       try {
-        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
         hilog.info(domain, tag, '====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 create success');
         let on_progressCallback = async (pro: request.agent.Progress): void => {
           try {
@@ -510,7 +510,7 @@ export default function RequestDownloadStaticTest() {
         saveas: './SUB_Misc_REQUEST_On_Download_Progress_Static_0030.txt',
       };
       try {
-        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
         hilog.info(domain, tag, '====>SUB_Misc_REQUEST_On_Download_Progress_Static_0030 create success');
         let flag = false
         let flag1 = false
@@ -556,11 +556,11 @@ export default function RequestDownloadStaticTest() {
         overwrite: true
       };
       try {
-        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 create success");
         let on_completedCallback = (pro: request.agent.Progress): void => {
           try {
-            let task: request.agent.Task = await request.agent.create(baseContext, config);
+            let task: request.agent.Task = await request.agent.create(baseContext!, config);
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 task.start twice");
             await task.start();
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 task.start success");
@@ -599,11 +599,11 @@ export default function RequestDownloadStaticTest() {
         overwrite: false
       };
       try {
-        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 create success");
         let on_completedCallback = async (pro: request.agent.Progress): void => {
           try {
-            let task: request.agent.Task = await request.agent.create(baseContext, config);
+            let task: request.agent.Task = await request.agent.create(baseContext!, config);
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 task.start twice");
             await task.start();
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 task start twice success");
@@ -647,7 +647,7 @@ export default function RequestDownloadStaticTest() {
         overwrite: false
       };
       try {
-        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0300 create success");
         let on_completedCallback = async (pro: request.agent.Progress): void => {
           try {

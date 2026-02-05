@@ -31,7 +31,6 @@ import {
   StyledStringKey,
   DecorationStyle,
   Resource,
-  Uint8Array,
   PixelMap,
   ColumnOptions,
   ImageAttachment,

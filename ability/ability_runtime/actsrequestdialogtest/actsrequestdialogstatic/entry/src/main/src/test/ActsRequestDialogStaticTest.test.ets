@@ -28,8 +28,8 @@ import { ProcessInfo } from 'app.processInfo';
 const domain: int = 0x0000;
 const tag: string = 'ActsRequestDialogStaticTest';
 const TEST_SUITE_NAME: string = 'ActsRequestDialogStaticTest';
-let testAbilityContext: common.UIAbilityContext;
-let subscriber: CommonEventManager.CommonEventSubscriber;
+let testAbilityContext: common.UIAbilityContext | undefined;
+let subscriber: CommonEventManager.CommonEventSubscriber | undefined;
 let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 let commonEventSubscribeInfo: CommonEventManager.CommonEventSubscribeInfo = {
   events: ["ACTS_REQUEST_DIALOG_EVENT1", "ACTS_REQUEST_DIALOG_EVENT2"]
@@ -83,7 +83,7 @@ export default function ActsRequestDialogStaticTest() {
             expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
             expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
             expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
-            CommonEventManager.unsubscribe(subscriber, () => {
+            CommonEventManager.unsubscribe(subscriber!, () => {
               console.info("====>UnSubscribe0100 CallBack====>");
             });
             done();
@@ -93,7 +93,7 @@ export default function ActsRequestDialogStaticTest() {
         CommonEventManager.createSubscriber(commonEventSubscribeInfo)
           .then((data: CommonEventManager.CommonEventSubscriber | null) => {
             subscriber = data as CommonEventManager.CommonEventSubscriber;
-            CommonEventManager.subscribe(subscriber, SubscribeCallBack)
+            CommonEventManager.subscribe(subscriber!, SubscribeCallBack)
           })
 
         let want: Want = {
@@ -105,7 +105,7 @@ export default function ActsRequestDialogStaticTest() {
           resultCode = result?.result;
         }
 
-        testAbilityContext.requestDialogService(want, result)
+        testAbilityContext?.requestDialogService(want, result)
       } catch (paramError) {
         console.info("====>ACTS_requestDialog_static_0100 requestDialogSerivce paramError====>");
       }
@@ -146,7 +146,7 @@ export default function ActsRequestDialogStaticTest() {
             expect(typeof AppStorage.get<int>("windowRectTop")!).assertEqual('int');
             expect(typeof AppStorage.get<int>("windowRectWidth")!).assertEqual('int');
             expect(typeof AppStorage.get<int>("windowRectHeight")!).assertEqual('int');
-            CommonEventManager.unsubscribe(subscriber, () => {
+            CommonEventManager.unsubscribe(subscriber!, () => {
               console.info("====>UnSubscribe0100 CallBack====>");
             });
             done();
@@ -156,7 +156,7 @@ export default function ActsRequestDialogStaticTest() {
         CommonEventManager.createSubscriber(commonEventSubscribeInfo)
           .then((data: CommonEventManager.CommonEventSubscriber | null) => {
             subscriber = data as CommonEventManager.CommonEventSubscriber;
-            CommonEventManager.subscribe(subscriber, SubscribeCallBack)
+            CommonEventManager.subscribe(subscriber!, SubscribeCallBack)
           })
 
         let want: Want = {
@@ -168,7 +168,7 @@ export default function ActsRequestDialogStaticTest() {
           resultCode = result?.result;
         }
 
-        testAbilityContext.requestDialogService(want, result)
+        testAbilityContext?.requestDialogService(want, result)
       } catch (paramError) {
         console.info("====>ACTS_requestDialog_static_0200 requestDialogSerivce paramError====>");
       }
@@ -208,7 +208,7 @@ export default function ActsRequestDialogStaticTest() {
           }
         }
 
-        testAbilityContext.requestDialogService(want, result)
+        testAbilityContext?.requestDialogService(want, result)
       } catch (paramError) {
         console.info("====>ACTS_requestDialog_static_0300 requestDialogSerivce paramError====>");
       }
@@ -249,7 +249,7 @@ export default function ActsRequestDialogStaticTest() {
           }
         }
 
-        testAbilityContext.requestDialogService(want, result)
+        testAbilityContext?.requestDialogService(want, result)
       } catch (paramError) {
         console.info("====>ACTS_requestDialog_static_0500 requestDialogSerivce paramError====>");
       }

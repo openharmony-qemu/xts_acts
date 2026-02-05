@@ -23,13 +23,13 @@ import { WantAgent } from '@ohos.app.ability.wantAgent';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 export default function AVSessionErrorCode() {
     describe('AVSessionErrorCode', () => {
         let tag = 'ApplicationA';
         let type = 'audio';
-        let session: avSession.AVSession | null;
-        let controller: avSession.AVSessionController;
+        let session: avSession.AVSession | null = null;
+        let controller: avSession.AVSessionController | undefined;
         const INVALID_STRING = "invalid string";
         const UPDATE_LYRICS_EVENT = "dynamic_lyrics";
         const UPDATE_LYRICS_WANT_PARAMS: Record<string, Object> = {
@@ -107,7 +107,7 @@ export default function AVSessionErrorCode() {
         beforeEach(async () => {
             try{
                 console.info(`TestLog: createAVSession 1111`);
-                session = await avSession.createAVSession(context, tag, 'video_call');
+                session = await avSession.createAVSession(context!, tag, 'video_call');
             }catch(err: BusinessError){
                 console.info(`TestLog: Session create error: code: ${err.code}, message: ${err.message}`);
             };
@@ -141,7 +141,7 @@ export default function AVSessionErrorCode() {
             }
             if (controller != null) {
                 try{
-                    await controller.destroy()
+                    await controller!.destroy()
                     console.info(`TestLog: Controller destroy success`);
                 } catch (err: BusinessError) {
                     console.info(`TestLog: Controller destroy error: code: ${err.code}, message: ${err.message}`);
@@ -337,12 +337,12 @@ export default function AVSessionErrorCode() {
                 requestCode: 0,
                 actionFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
             };
-            let agent: WantAgent;
+            let agent: WantAgent | undefined;
             await wantAgent.getWantAgent(wantAgentInfo).then((callback) => {
                 agent = callback;
             });
             await invalidSession(async (): Promise<void> => {
-                await session!.setLaunchAbility(agent).then(() => {
+                await session!.setLaunchAbility(agent!).then(() => {
                     console.info('TestLog: AVSessionTest : Set LaunchAbility');
                     expect().assertFail();
                 }).catch((err: Error) => {
@@ -374,13 +374,13 @@ export default function AVSessionErrorCode() {
                 requestCode: 0,
                 actionFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
             };
-            let agent: WantAgent;
+            let agent: WantAgent | undefined;
             await wantAgent.getWantAgent(wantAgentInfo).then((callback) => {
                 agent = callback;
             });
             await session!.destroy()
             try {
-                session!.setLaunchAbility(agent, (err) => {
+                session!.setLaunchAbility(agent!, (err) => {
                     if (err) {
                         console.info(`TestLog: Set launchAbility error: code: ${err.code}, message: ${err.message}`);
                         expect(err?.code).assertEqual(6600102);

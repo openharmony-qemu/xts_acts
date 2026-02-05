@@ -26,9 +26,9 @@ export default function actsGetLauncherAbilityInfo2Test() {
      * @tc.desc   Test getLauncherAbilityInfoSync with permission denied return errcode 201.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_1200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+    it("Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_1200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME = 'Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_1200';
         try {

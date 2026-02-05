@@ -28,10 +28,10 @@ let Subscriber:CommonEventManager.CommonEventSubscriber;
 let subscriberInfo_MainAbility:CommonEventManager.CommonEventSubscribeInfo = {
   events: ['RELY_ABILITY_RESTART_SUCCESS']
 };
-let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
+let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator | undefined;
 let targetVersion:number;
 let tag = 'testTag'
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext | undefined;
 
 export default function abilityDelegatorStage() {
   describe('abilityDelegatorStage', () => {
@@ -50,7 +50,7 @@ export default function abilityDelegatorStage() {
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start1');
       await Utils.msSleep(2000)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start2');
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start3');
       await Utils.msSleep(2000)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll end');
@@ -68,17 +68,17 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
         'TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0200 begin');
-      let applicationContext: common.ApplicationContext = testAbilityContext.getApplicationContext();
-      let colorMode = testAbilityContext.config.colorMode;
+      let applicationContext: common.ApplicationContext = testAbilityContext!.getApplicationContext();
+      let colorMode = testAbilityContext!.config.colorMode;
       try {
         if (colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_DARK) {
           applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_LIGHT);
           await Utils.msSleep(2000);
-          expect(testAbilityContext.config.colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_LIGHT);
+          expect(testAbilityContext?.config.colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_LIGHT);
         } else {
           applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
           await Utils.msSleep(2000);
-          expect(testAbilityContext.config.colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
+          expect(testAbilityContext?.config.colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
         }
         done();
       } catch (error:Error) {
@@ -100,17 +100,17 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0200 begin');
-      let applicationContext: common.ApplicationContext = testAbilityContext.getApplicationContext();
-      let language = testAbilityContext.config.language;
+      let applicationContext: common.ApplicationContext = testAbilityContext!.getApplicationContext();
+      let language = testAbilityContext!.config.language;
       try {
         if (language === 'zh-cn') {
           applicationContext.setLanguage('en-us');
           await Utils.msSleep(2000);
-          expect(testAbilityContext.config.language === 'en-us');
+          expect(testAbilityContext?.config.language === 'en-us');
         } else {
           applicationContext.setLanguage('zh-cn');
           await Utils.msSleep(2000);
-          expect(testAbilityContext.config.language === 'zh-cn');
+          expect(testAbilityContext?.config.language === 'zh-cn');
         }
         done();
       } catch (error:Error) {
@@ -132,7 +132,7 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFontSize_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFontSize_0200 begin');
-      let applicationContext: common.ApplicationContext = testAbilityContext.getApplicationContext();
+      let applicationContext: common.ApplicationContext = testAbilityContext!.getApplicationContext();
       try {
         applicationContext.setFontSizeScale(-1);
         expect().assertFail()
@@ -155,7 +155,7 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFont_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFont_0300 begin');
-      let applicationContext: common.ApplicationContext = testAbilityContext.getApplicationContext();
+      let applicationContext: common.ApplicationContext = testAbilityContext!.getApplicationContext();
       try {
         applicationContext.setFont('');
         expect().assertFail()
@@ -178,7 +178,7 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_setSupportedProcessCache_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityRuntime_setSupportedProcessCache_0100`;
         try{
-          let ApplicationContexts:common.ApplicationContext = testAbilityContext.getApplicationContext();
+          let ApplicationContexts:common.ApplicationContext = testAbilityContext!.getApplicationContext();
           ApplicationContexts?.setSupportedProcessCache(false)
           done();
         }catch(e: BusinessError){
@@ -202,10 +202,11 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_setSupportedProcessCache_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityRuntime_setSupportedProcessCache_0200`;
       try{
-        let ApplicationContexts:common.ApplicationContext = testAbilityContext.getApplicationContext();
+        let ApplicationContexts:common.ApplicationContext = testAbilityContext!.getApplicationContext();
         ApplicationContexts?.setSupportedProcessCache(true)
         done();
-      }catch(e: BusinessError){
+      }catch(e){
+        e = e as BusinessError;
         if(JSON.stringify(e?.code) == '801'){
           done();
         }else{
@@ -226,10 +227,10 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_ProcessCache_3000', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_ProcessCache_3000 begin');
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
       await Utils.msSleep(2000)
       try {
-        testAbilityContext.startAbilityForResult({
+        testAbilityContext?.startAbilityForResult({
           bundleName: 'com.acts.abilitydelegatorrely.static',
           abilityName: 'EntryAbility3',
           action: 'killAllProcess-callback'
@@ -258,10 +259,10 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_ProcessCache_3100', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_ProcessCache_3100 begin');
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
       await Utils.msSleep(2000)
       try {
-        testAbilityContext.startAbilityForResult({
+        testAbilityContext?.startAbilityForResult({
           bundleName: 'com.acts.abilitydelegatorrely.static',
           abilityName: 'EntryAbility3',
           action: 'killAllProcess-clearPageStack'
@@ -290,10 +291,10 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_ProcessCache_3200', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_ProcessCache_3200 begin');
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
       await Utils.msSleep(2000)
       try {
-        testAbilityContext.startAbilityForResult({
+        testAbilityContext?.startAbilityForResult({
           bundleName: 'com.acts.abilitydelegatorrely.static',
           abilityName: 'EntryAbility3',
           action: 'killAllProcess-promise'
@@ -322,10 +323,10 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_clearUpApplicationData_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_clearUpApplicationData_0100 begin');
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
       await Utils.msSleep(2000)
       try {
-        testAbilityContext.startAbilityForResult({
+        testAbilityContext?.startAbilityForResult({
           bundleName: 'com.acts.abilitydelegatorrely.static',
           abilityName: 'EntryAbility3',
           action: 'clearUpApplicationData-callback'
@@ -355,10 +356,10 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_clearUpApplicationData_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_clearUpApplicationData_0200 begin');
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
       await Utils.msSleep(2000)
       try {
-        testAbilityContext.startAbilityForResult({
+        testAbilityContext?.startAbilityForResult({
           bundleName: 'com.acts.abilitydelegatorrely.static',
           abilityName: 'EntryAbility3',
           action: 'clearUpApplicationData-promise'
@@ -388,7 +389,7 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_restartApp_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_restartApp_0100 begin');
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
       await Utils.msSleep(2000);
       let SubscribeCallBack = (err:BusinessError | null, data:CommonEventManager.CommonEventData | undefined):void => {
         hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -404,7 +405,7 @@ export default function abilityDelegatorStage() {
       })
       await Utils.msSleep(1000)
       try {
-        testAbilityContext.startAbilityForResult({
+        testAbilityContext?.startAbilityForResult({
           bundleName: 'com.acts.abilitydelegatorrely.static',
           abilityName: 'EntryAbility3',
           action: 'restartApp-success'
@@ -434,12 +435,12 @@ export default function abilityDelegatorStage() {
       hilog.info(0x0000, 'testTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_restartApp_0300 begin');
       await Utils.msSleep(1000)
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
       await Utils.msSleep(2000)
             hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_restartApp_0300 afterback');
-      let ApplicationContexts:common.ApplicationContext = testAbilityContext.getApplicationContext();
+      let ApplicationContexts:common.ApplicationContext = testAbilityContext!.getApplicationContext();
       try {
-        ApplicationContexts.restartApp({
+        ApplicationContexts?.restartApp({
           bundleName: 'com.acts.abilitydelegatorrely.static',
           abilityName: 'EntryAbility3',
         })

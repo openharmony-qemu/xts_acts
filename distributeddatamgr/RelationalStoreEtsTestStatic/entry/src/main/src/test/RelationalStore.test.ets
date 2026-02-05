@@ -37,7 +37,7 @@ import common from '@ohos.app.ability.common';
 
 import deviceInfo from '@ohos.deviceInfo';
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let domain: int = 0x0000;
 let tag: string = "[relationalStoreTest]";
@@ -57,7 +57,7 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
   name: dbName,
   securityLevel: relationalStore.SecurityLevel.S1,
 }
-let rdbStore: relationalStore.RdbStore;
+let rdbStore: relationalStore.RdbStore | undefined;
 
 export default function relationalStoreTest() {
   describe('relationalStoreTest', (): void => {
@@ -71,16 +71,16 @@ export default function relationalStoreTest() {
 
     beforeEach(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeEach');
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       hilog.info(domain, tag, "create rdb store success")
-      await rdbStore.executeSql(CREATE_TABLE_EMPLOYEE);
-      await rdbStore.executeSql(CREATE_TABLE_TEST);
+      await rdbStore!.executeSql(CREATE_TABLE_EMPLOYEE);
+      await rdbStore!.executeSql(CREATE_TABLE_TEST);
       hilog.info(domain, tag, 'beforeEach success');
     });
 
     afterEach(async (): Promise<void> => {
       hilog.info(domain, tag, 'afterEach');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG)
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG)
       hilog.info(domain, tag, 'afterEach success');
     });
 
@@ -522,9 +522,9 @@ export default function relationalStoreTest() {
     it('relationalStoreTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.info(tag + "************* relationalStoreTest027 start *************");
-        rdbStore.insert("employee", valueBucket2m);
+        rdbStore!.insert("employee", valueBucket2m);
         let predicates = new relationalStore.RdbPredicates("employee")
-        let resultSet: relationalStore.ResultSet = await rdbStore.query(predicates);
+        let resultSet: relationalStore.ResultSet = await rdbStore!.query(predicates);
         resultSet.goToFirstRow();
         try {
           const name = resultSet.getString(resultSet.getColumnIndex("name") as int)
@@ -550,9 +550,9 @@ export default function relationalStoreTest() {
     it('relationalStoreTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.info(tag + "************* relationalStoreTest028 start *************");
-        rdbStore.insert("employee", valueBucket2m, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        rdbStore!.insert("employee", valueBucket2m, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         let predicates = new relationalStore.RdbPredicates("employee")
-        let resultSet: relationalStore.ResultSet = await rdbStore.query(predicates);
+        let resultSet: relationalStore.ResultSet = await rdbStore!.query(predicates);
         resultSet.goToFirstRow();
         try {
           const name = resultSet.getString(resultSet.getColumnIndex("name") as int)
@@ -578,9 +578,9 @@ export default function relationalStoreTest() {
     it('relationalStoreTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.info(tag + "************* relationalStoreTest029 start *************");
-        rdbStore.insertSync("employee", valueBucket2m, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        rdbStore!.insertSync("employee", valueBucket2m, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         let predicates = new relationalStore.RdbPredicates("employee")
-        let resultSet: relationalStore.ResultSet = await rdbStore.query(predicates);
+        let resultSet: relationalStore.ResultSet = await rdbStore!.query(predicates);
         resultSet.goToFirstRow();
         try {
           const name = resultSet.getString(resultSet.getColumnIndex("name") as int)
@@ -606,9 +606,9 @@ export default function relationalStoreTest() {
     it('relationalStoreTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.info(tag + "************* relationalStoreTest031 start *************");
-        rdbStore.insert("employee", valueBucket2m);
+        rdbStore!.insert("employee", valueBucket2m);
         let predicates = new relationalStore.RdbPredicates("employee")
-        let resultSet: relationalStore.ResultSet = await rdbStore.queryLockedRow(predicates);
+        let resultSet: relationalStore.ResultSet = await rdbStore!.queryLockedRow(predicates);
         resultSet.goToFirstRow();
         try {
           const name = resultSet.getString(resultSet.getColumnIndex("name") as int)
@@ -684,7 +684,7 @@ export default function relationalStoreTest() {
           console.info(tag + " dataChange storeObserver10 into");
           status10 = 1;
         };
-        let rdbStore2: relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        let rdbStore2: relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(rdbStore2 != undefined).assertTrue();
         try {
           rdbStore?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
@@ -797,7 +797,7 @@ export default function relationalStoreTest() {
           console.info(tag + " dataChange1 storeObserver10 into");
           status10 = 1;
         };
-        let rdbStore2: relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        let rdbStore2: relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(rdbStore2 != undefined).assertTrue();
         try {
           rdbStore?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
@@ -907,7 +907,7 @@ export default function relationalStoreTest() {
           console.info(tag + " event storeObserver10 into");
           status10 = 1;
         };
-        let rdbStore2: relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        let rdbStore2: relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(rdbStore2 != undefined).assertTrue();
         try {
           rdbStore?.on('event', true, storeObserver1);
@@ -1013,7 +1013,7 @@ export default function relationalStoreTest() {
         console.info(tag + " event1 storeObserver10 into");
         status10 = 1;
       };
-      let rdbStore2: relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      let rdbStore2: relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       expect(rdbStore2 != undefined).assertTrue();
       try {
         rdbStore?.on('event', true, storeObserver1);
@@ -1116,7 +1116,7 @@ export default function relationalStoreTest() {
           status10 = 1;
         };
         //
-        let rdbStore2: relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        let rdbStore2: relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(rdbStore2 != undefined).assertTrue();
         try {
           rdbStore?.onStatistics(storeObserver1);
@@ -1226,7 +1226,7 @@ export default function relationalStoreTest() {
           console.info(tag + " statistics1 storeObserver10 into");
           status10 = 1;
         };
-        let rdbStore2: relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        let rdbStore2: relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(rdbStore2 != undefined).assertTrue();
         try {
           rdbStore?.onStatistics(storeObserver1);
@@ -1289,7 +1289,7 @@ export default function relationalStoreTest() {
         let predicates = new relationalStore.RdbPredicates("employee")
         predicates.equalTo("name", "lisi");
         let resultSet: relationalStore.ResultSet;
-        resultSet = await rdbStore.query(predicates);
+        resultSet = await rdbStore!.query(predicates);
         let res: boolean = resultSet.goToFirstRow();
         try {
           let Array1 = await resultSet.getRows(1);
@@ -1318,7 +1318,7 @@ export default function relationalStoreTest() {
         const valueBucket: relationalStore.ValuesBucket = {
           'name': 'lisi',
         }
-        const transaction = await rdbStore.createTransaction();
+        const transaction = await rdbStore!.createTransaction();
         try {
           let rowId =
             transaction.insertSync('employee', valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
@@ -1401,7 +1401,7 @@ export default function relationalStoreTest() {
       async (done: () => void): Promise<void> => {
         console.info(tag + "************* deleteRdbStoreWithNamePromise start *************");
         try {
-          await relationalStore.deleteRdbStore(context, dbName);
+          await relationalStore.deleteRdbStore(context!, dbName);
         } catch (err) {
           console.log(tag + "deleteRdbStoreWithNamePromise err" + err.code + err.message);
           expect().assertFail();
@@ -1421,7 +1421,7 @@ export default function relationalStoreTest() {
     it('deleteRdbStoreWithNameAsyncCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.info(tag + "************* deleteRdbStoreWithNameAsyncCallback start *************");
-        relationalStore.deleteRdbStore(context, dbName, (err) => {
+        relationalStore.deleteRdbStore(context!, dbName, (err) => {
           if (err) {
             console.log(tag + "deleteRdbStoreWithNameAsyncCallback err" + err.code + err.message);
             expect().assertFail();
@@ -1443,7 +1443,7 @@ export default function relationalStoreTest() {
       async (done: () => void): Promise<void> => {
         console.info(tag + "************* deleteRdbStoreWithWrongNamePromise start *************");
         try {
-          await relationalStore.deleteRdbStore(context, "/");
+          await relationalStore.deleteRdbStore(context!, "/");
           expect().assertFail();
         } catch (err) {
           console.log(tag + "deleteRdbStoreWithWrongNamePromise err" + err.code + err.message);
@@ -1464,7 +1464,7 @@ export default function relationalStoreTest() {
     it('deleteRdbStoreWithWrongNameAsyncCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.info(tag + "************* deleteRdbStoreWithWrongNameAsyncCallback start *************");
-        relationalStore.deleteRdbStore(context, "/", (err) => {
+        relationalStore.deleteRdbStore(context!, "/", (err) => {
           if (err) {
             console.log(tag + "deleteRdbStoreWithWrongNameAsyncCallback err" + err.code + err.message);
             expect(err.code).assertEqual(401);

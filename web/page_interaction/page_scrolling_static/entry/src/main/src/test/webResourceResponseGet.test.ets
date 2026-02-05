@@ -44,9 +44,9 @@ export default function webResourceResponseGet() {
      * @tc.desc   test ScrollType
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testScrollTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testScrollTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testScrollType001', 10)
         await Utils.msSleep(1000);

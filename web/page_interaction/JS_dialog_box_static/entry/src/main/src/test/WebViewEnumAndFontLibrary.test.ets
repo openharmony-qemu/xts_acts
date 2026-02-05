@@ -45,9 +45,9 @@ export default function WebViewEnumAndFontLibrary() {
      * @tc.desc   test FileSelectorModeFileOpenMode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testFileSelectorModeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testFileSelectorModeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitFileSelectorModeFileOpenMode', 10)

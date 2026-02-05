@@ -59,7 +59,7 @@ export default function image10bitPixelMap() {
     const YCRCB_P010: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
     let filesDir: string | undefined;
     let cacheDir: string | undefined;
-    let openHdrPic: HdrPicture;
+    let openHdrPic: HdrPicture | undefined;
     let isSupportHEICEncode: boolean;
 
     beforeAll(() => {
@@ -97,7 +97,7 @@ export default function image10bitPixelMap() {
         }
       }
       try {
-        fs.closeSync(openHdrPic.fd)
+        fs.closeSync(openHdrPic!.fd)
       } catch (error) {
         hilog.info(0x0000, '10bitPixelMap', '%{public}s', 'fileDescriptor close failed. ' + error);
       }

@@ -45,7 +45,7 @@ export default function FivePointOne_resMgrStageTest() {
   describe("FivePointOne_resMgrStageTest", (): void => {
     hilog.info(0x0000, 'testTag', '%{public}s', '*************start FivePointOne_resMgrStageTest*************');
     let resContext: Context;
-    let res: resourceManager.ResourceManager;
+    let res: resourceManager.ResourceManager | undefined;
 
     beforeAll(async () => {
       console.info("beforeAll case");
@@ -72,7 +72,7 @@ export default function FivePointOne_resMgrStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getIntPluralStringValueSync_static_0100', Level.LEVEL2, async (): Promise<void> => {
-      let value = res.getIntPluralStringValueSync(0x01000036, 2, 2, 'test');
+      let value = res!.getIntPluralStringValueSync(0x01000036, 2, 2, 'test');
       console.log('resourceManager_test_getIntPluralStringValueSync_static_0100:' + value);
       expect(value).assertEqual('2 apples');
     })
@@ -86,7 +86,7 @@ export default function FivePointOne_resMgrStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getDoublePluralStringByNameSync_static_0100', Level.LEVEL2, async (): Promise<void> => {
-      let value = res.getDoublePluralStringByNameSync('p_str4', 2.1, 2, 'test');
+      let value = res!.getDoublePluralStringByNameSync('p_str4', 2.1, 2, 'test');
       console.log('resourceManager_test_getDoublePluralStringByNameSync_static_0100:' + value);
       expect(value).assertEqual('2 apples');
     })
@@ -101,7 +101,7 @@ export default function FivePointOne_resMgrStageTest() {
      */
     it('resourceManager_test_getIntPluralStringValueSync_static_0970', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getIntPluralStringValueSync(123, 1);
+        res?.getIntPluralStringValueSync(123, 1);
       } catch (err) {
         let error = err as BusinessError
         console.log('resourceManager_test_getIntPluralStringValueSync_static_0970 error code:' + error.code);
@@ -119,7 +119,7 @@ export default function FivePointOne_resMgrStageTest() {
      */
     it('resourceManager_test_getDoublePluralStringValueSync_static_0990', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDoublePluralStringValueSync(123, 2.1);
+        res?.getDoublePluralStringValueSync(123, 2.1);
       } catch (err) {
         let error = err as BusinessError
         console.log('resourceManager_test_getDoublePluralStringValueSync_static_0990 error code:' + error.code);
@@ -136,7 +136,7 @@ export default function FivePointOne_resMgrStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getIntPluralStringByNameSync_static_0100', Level.LEVEL2, async (): Promise<void> => {
-      let value = res.getIntPluralStringByNameSync('p_str4', 2, 2, 'test');
+      let value = res!.getIntPluralStringByNameSync('p_str4', 2, 2, 'test');
       console.log('resourceManager_test_getIntPluralStringByNameSync_0100:' + value);
       expect(value).assertEqual('2 apples');
     })
@@ -151,7 +151,7 @@ export default function FivePointOne_resMgrStageTest() {
      */
     it('resourceManager_test_getIntPluralStringValueSync_static_1010', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getIntPluralStringValueSync(0x01000014, 1);
+        res?.getIntPluralStringValueSync(0x01000014, 1);
       } catch (err: BusinessError) {
         console.log('resourceManager_test_getIntPluralStringValueSync_static_1010 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
@@ -168,7 +168,7 @@ export default function FivePointOne_resMgrStageTest() {
      */
     it('resourceManager_test_getDoublePluralStringValueSync_static_1030', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDoublePluralStringValueSync(0x0100000d, 2.1);
+        res?.getDoublePluralStringValueSync(0x0100000d, 2.1);
       } catch (err: BusinessError) {
         console.log('resourceManager_test_getDoublePluralStringValueSync_static_1030 error code:' + err.code);
         expect(err.code == 9001002).assertTrue();
@@ -185,7 +185,7 @@ export default function FivePointOne_resMgrStageTest() {
      */
     it('resourceManager_test_getIntPluralStringValueSync_static_1050', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getIntPluralStringValueSync(0x01000038, 1);
+        res?.getIntPluralStringValueSync(0x01000038, 1);
       } catch (err: BusinessError) {
         console.log('resourceManager_test_getIntPluralStringValueSync_static_1050 error code:' + err.code);
         expect(err.code).assertEqual(9001006);
@@ -202,7 +202,7 @@ export default function FivePointOne_resMgrStageTest() {
      */
     it('resourceManager_test_getDoublePluralStringValueSync_static_1070', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDoublePluralStringValueSync(0x01000038, 2.1);
+        res?.getDoublePluralStringValueSync(0x01000038, 2.1);
       } catch (err: BusinessError) {
         console.log('resourceManager_test_getDoublePluralStringValueSync_static_1070 error code:' + err.code);
         expect(err.code == 9001006).assertTrue();
@@ -219,7 +219,7 @@ export default function FivePointOne_resMgrStageTest() {
      */
     it('resourceManager_test_getIntPluralStringValueSync_static_1090', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getIntPluralStringValueSync(0x01000037, 1, 'test');
+        res?.getIntPluralStringValueSync(0x01000037, 1, 'test');
       } catch (err: BusinessError) {
         console.log('resourceManager_test_getIntPluralStringValueSync_static_1090 error code:' + err.code);
         expect(err.code).assertEqual(9001007);
@@ -236,7 +236,7 @@ export default function FivePointOne_resMgrStageTest() {
      */
     it('resourceManager_test_getDoublePluralStringValueSync_static_1110', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDoublePluralStringValueSync(0x01000037, 2.1, 'test');
+        res?.getDoublePluralStringValueSync(0x01000037, 2.1, 'test');
       } catch (err: BusinessError) {
         console.log('resourceManager_test_getDoublePluralStringValueSync_static_1110 error code:' + err.code);
         expect(err.code == 9001007).assertTrue();
@@ -253,7 +253,7 @@ export default function FivePointOne_resMgrStageTest() {
      */
     it('resourceManager_test_getIntPluralStringByNameSync_static_1130', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getIntPluralStringByNameSync('invalidName', 1);
+        res?.getIntPluralStringByNameSync('invalidName', 1);
       } catch (err) {
         let error = err as BusinessError
         console.log('resourceManager_test_getIntPluralStringByNameSync_static_1130 error code:' + error.code);
@@ -271,7 +271,7 @@ export default function FivePointOne_resMgrStageTest() {
      */
     it('resourceManager_test_getDoublePluralStringByNameSync_static_1140', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDoublePluralStringByNameSync('invalidName', 2.1);
+        res?.getDoublePluralStringByNameSync('invalidName', 2.1);
       } catch (err) {
         let error = err as BusinessError
         console.log('resourceManager_test_getDoublePluralStringByNameSync_static_1140 error code:' + error.code);
@@ -289,7 +289,7 @@ export default function FivePointOne_resMgrStageTest() {
      */
     it('resourceManager_test_getIntPluralStringByNameSync_static_1150', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getIntPluralStringByNameSync('test_cyc', 1);
+        res?.getIntPluralStringByNameSync('test_cyc', 1);
       } catch (err: BusinessError) {
         console.log('resourceManager_test_getIntPluralStringByNameSync_static_1150 error code:' + err.code);
         expect(err.code == 9001006).assertTrue();
@@ -306,7 +306,7 @@ export default function FivePointOne_resMgrStageTest() {
      */
     it('resourceManager_test_getDoublePluralStringByNameSync_static_1160', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDoublePluralStringByNameSync('test_cyc', 2.1);
+        res?.getDoublePluralStringByNameSync('test_cyc', 2.1);
       } catch (err: BusinessError) {
         console.log('resourceManager_test_getDoublePluralStringByNameSync_static_1160 error code:' + err.code);
         expect(err.code == 9001006).assertTrue();
@@ -324,7 +324,7 @@ export default function FivePointOne_resMgrStageTest() {
      */
     it('resourceManager_test_getIntPluralStringByNameSync_static_1170', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getIntPluralStringByNameSync('string_format7', 1, 'test');
+        res?.getIntPluralStringByNameSync('string_format7', 1, 'test');
       } catch (err: BusinessError) {
         console.log('resourceManager_test_getIntPluralStringByNameSync_static_1170 error code:' + err.code);
         expect(err.code == 9001008).assertTrue();
@@ -341,7 +341,7 @@ export default function FivePointOne_resMgrStageTest() {
      */
     it('resourceManager_test_getDoublePluralStringByNameSync_static_1180', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDoublePluralStringByNameSync('string_format7', 2.1, 'test');
+        res?.getDoublePluralStringByNameSync('string_format7', 2.1, 'test');
       } catch (err: BusinessError) {
         console.log('resourceManager_test_getDoublePluralStringByNameSync_static_1180 error code:' + err.code);
         expect(err.code == 9001008).assertTrue();

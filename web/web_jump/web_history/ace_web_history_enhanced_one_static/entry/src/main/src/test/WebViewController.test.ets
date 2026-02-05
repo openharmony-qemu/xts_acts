@@ -60,9 +60,9 @@ export default function WebViewControllerTest() {
      * @tc.desc   test BackForwardList CurrentIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testBackForwardListCurrentIndexStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testBackForwardListCurrentIndexStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testBackForwardListCurrentIndex001', 10)
         await Utils.msSleep(2000);

@@ -83,11 +83,11 @@ let g_context: common.UIAbilityContext;
 
 export default function audioVoip() {
     describe('audioVoip', (): void => {
-        let mediaDir: string;
+        let mediaDir: string = '';
         let fdRead: int;
         let readpath: string;
         let fdPath: string;
-        let filePath: string;
+        let filePath: string = '';
         let TagRender = "AudioFrameworkRenderLog";
         let TagRec = "AudioFrameworkRecLog";
         const AUDIOMANAGER = audio.getAudioManager();
@@ -403,9 +403,9 @@ export default function audioVoip() {
          * @tc.desc   AudioRenderer with parameter set 1
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.level  LEVEL0
          */
-        it('SUB_MULTIMEDIA_AUDIO_VOIP_PLAY_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        it('SUB_MULTIMEDIA_AUDIO_VOIP_PLAY_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
             let AudioStreamInfo: audio.AudioStreamInfo = {
                 samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,

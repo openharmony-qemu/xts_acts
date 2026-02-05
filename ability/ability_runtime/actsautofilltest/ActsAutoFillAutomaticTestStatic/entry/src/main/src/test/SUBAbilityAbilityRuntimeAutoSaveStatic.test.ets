@@ -36,7 +36,7 @@ export default function AutoSaveTestStatic() {
       const TAG = 'SUB_Ability_AbilityRuntime_AutoSave_Static_0100';
       let isSuccess = false;
       let isFailure = false;
-      let uiContext: UIContext
+      let uiContext: UIContext | undefined;
       hilog.info(domain,  tag ,"uiContext: ", uiContext);
       let callback: autoFillManager.AutoSaveCallback = {
         onSuccess: () => {
@@ -49,7 +49,7 @@ export default function AutoSaveTestStatic() {
         }
       }
       try {
-        autoFillManager.requestAutoSave(uiContext, callback);
+        autoFillManager.requestAutoSave(uiContext!, callback);
       } catch (error) {
         expect(isSuccess).assertFalse();
         expect(isFailure).assertFalse();
@@ -71,10 +71,10 @@ export default function AutoSaveTestStatic() {
       const TAG = 'SUB_Ability_AbilityRuntime_AutoSave_Static_0200';
       let isSuccess = false;
       let isFailure = false;
-      let uiContext: UIContext
+      let uiContext: UIContext | undefined;
       hilog.info(domain,  tag ,"uiContext: ", uiContext);
       try {
-        autoFillManager.requestAutoSave(uiContext);
+        autoFillManager.requestAutoSave(uiContext!);
       } catch (error) {
         expect(isSuccess).assertFalse();
         expect(isFailure).assertFalse();

@@ -459,7 +459,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
      */
     it("SUB_Security_CryptoFramework_DataBlobToPem_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let algName: string = "ECC256";
-      let generator: cryptoFramework.AsyKeyGenerator;
+      let generator: cryptoFramework.AsyKeyGenerator | undefined;
       try {
         generator = cryptoFramework.createAsyKeyGenerator(algName);
       } catch (error: BusinessError) {
@@ -467,13 +467,13 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         expect(null).assertFail();
       }
       try {
-        await generator.convertPemKey(null, null);
+        await generator!.convertPemKey(null, null);
       } catch (error: BusinessError) {
         console.error(`${algName} convertPemKey “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
       try {
-        generator.convertPemKeySync(null, null);
+        generator!.convertPemKeySync(null, null);
       } catch (error: BusinessError) {
         console.error(`${algName} convertPemKeySync “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);

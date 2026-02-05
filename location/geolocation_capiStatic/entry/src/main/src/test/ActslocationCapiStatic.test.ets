@@ -1278,11 +1278,11 @@ export default function actslocationTest() {
                   console.info("getCurrentLocation_1200 ======>timeSinceBoot", typeof location.timeSinceBoot)
                   expect(typeof location.timeSinceBoot).assertEqual("long");
                   console.info("getCurrentLocation_1200 ======>additions", typeof location.additions)
-                  expect(location.additions instanceof Array<string>);
+                  expect(location.additions instanceof Array);
                   console.info("getCurrentLocation_1200 ======>additionSize", typeof location.additionSize)
                   expect(typeof location.additionSize).assertEqual("int");
                   console.info("getCurrentLocation_1200 ======>additionsMap", typeof location.additionsMap)
-                  expect(location.additionsMap instanceof Map<string, string>);
+                  expect(location.additionsMap instanceof Map);
                   console.info("getCurrentLocation_1200 ======>altitudeAccuracy", typeof location.altitudeAccuracy)
                   expect(typeof location.altitudeAccuracy).assertEqual("number");
                   console.info("getCurrentLocation_1200 ======>speedAccuracy", typeof location.speedAccuracy)
@@ -1602,7 +1602,7 @@ export default function actslocationTest() {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301300);
               }
-          await Utils.msSleep(1000)
+          Utils.msSleep(1000)
       })   
 
         /**
@@ -1660,7 +1660,7 @@ export default function actslocationTest() {
                     expect(typeof data[0].descriptionsSize).assertEqual("int");
                     console.info("getAddressesFromLocation_0100 ======>descriptions ", typeof data[0].descriptions)
                     if(data[0].descriptions != undefined){
-                      expect(typeof data[0].descriptions instanceof Array<string>);
+                      expect(typeof data[0].descriptions instanceof Array);
                     }
                     expect(data.length>0).assertTrue();
                 }

@@ -17,7 +17,7 @@ import audio from '@ohos.multimedia.audio';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 
-let audioVolumeGroupManager: audio.AudioVolumeGroupManager;
+let audioVolumeGroupManager: audio.AudioVolumeGroupManager | undefined;
 let TagFrmwk = "audioManagerEnhanceTest";
 
 function getAudioManager() {
@@ -74,7 +74,7 @@ export default function audioManagerTest() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISVOLUMEUNADJUSTABLE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        let bol = audioVolumeGroupManager.isVolumeUnadjustable();
+        let bol = audioVolumeGroupManager!.isVolumeUnadjustable();
         console.info(`isVolumeUnadjustable SUCCESS, is ${bol}`);
         expect(bol).assertEqual(false);
         done();

@@ -13,12 +13,10 @@
  * limitations under the License.
  */
 
-export default class Utils{
-  static async msSleep(count:int) : Promise<int> {
-    return new Promise<int>((resolve, reject) => {
-      setTimeout(() => {
-        resolve(0)
-      }, count)
-    })
-  }
+export default function sleep(time: int) : Promise<void> {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve(undefined)
+    }, time)
+  })
 }

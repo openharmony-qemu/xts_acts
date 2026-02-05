@@ -8,7 +8,7 @@ import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
-let context:common.UIAbilityContext;
+let context:common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 let dataBaseDir : String;
@@ -60,14 +60,14 @@ export default function RdbErrorCode14800016() {
       });
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+      hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
       await rdbStore.execute(CREATE_TABLE_TEST1);
       await rdbStore.close();
     });
 
     afterAll(async () : Promise<void> => {
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
     })
 
     /**
@@ -80,7 +80,7 @@ export default function RdbErrorCode14800016() {
      */
     it('testRdbStoreAttach0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) => {
       console.log(TAG + "************* testRdbStoreAttach0009 start *************");
-      let store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      let store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       try{
         await store.execute(CREATE_TABLE_TEST);
         await attachBatchInsert(store, "test1");
@@ -89,21 +89,21 @@ export default function RdbErrorCode14800016() {
         expect().assertFail();
       }
       try {
-        let num = await store.attach(context, STORE_CONFIG1, 'attachDB');
+        let num = await store.attach(context!, STORE_CONFIG1, 'attachDB');
         expect(1).assertEqual(num);
       } catch(e: BusinessError) {
         console.log("testRdbStoreAttach0009: attachOne failed1, err: code=" + e.code + " message=" + e.message);
         expect().assertFail();
       }
       try {
-        await store.attach(context, STORE_CONFIG1, 'attachDB');
+        await store.attach(context!, STORE_CONFIG1, 'attachDB');
         expect().assertFail();
       } catch(e: BusinessError) {
         console.log("testRdbStoreAttach0009: attachTne  failed2, err: code=" + e.code + " message=" + e.message);
         expect(14800016).assertEqual(e.code);
       }
       expect(0).assertEqual(await store.detach("attachDB"));
-      data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+      data_relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
       console.log(TAG + "************* testRdbStoreAttach0009 end *************");
       done();
     })

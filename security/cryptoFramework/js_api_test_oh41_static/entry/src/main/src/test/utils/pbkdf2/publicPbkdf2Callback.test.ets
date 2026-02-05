@@ -31,8 +31,8 @@ async function kdfGenerateSecret(kdfObj: crypto.Kdf, params: crypto.KdfSpec): Pr
 
 async function kdfParamSpecWithNull(kdfObj: crypto.Kdf): Promise<crypto.DataBlob> {
   return await new Promise<crypto.DataBlob>((resolve, reject) => {
-    let paramSpec: crypto.KdfSpec;
-    kdfObj.generateSecret(paramSpec, (err: BusinessError<void>|null, dataBlob: crypto.DataBlob|undefined) => {
+    let paramSpec: crypto.KdfSpec | undefined;
+    kdfObj.generateSecret(paramSpec!, (err: BusinessError<void>|null, dataBlob: crypto.DataBlob|undefined) => {
       if (err || dataBlob === undefined) { // success: error is null, failed: data is undefined
         reject(err as Error);
       } else {

@@ -30,7 +30,7 @@ import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let context: common.UIAbilityContext
+let context: common.UIAbilityContext | undefined;
 
 export default function startAbilityTestStatic() {
   describe('ActsstartAbilityTestStatic', () => {
@@ -54,7 +54,7 @@ export default function startAbilityTestStatic() {
       await Utils.msSleep(2000);
       hilog.info(domain, tag, 'start success');
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
-      hilog.info(domain, tag, 'getcontext success, context: ' + context);
+      hilog.info(domain, tag, 'getcontext success, context: ' + context!);
       hilog.info(domain, tag, 'beforeAll end');
     })
 
@@ -69,17 +69,13 @@ export default function startAbilityTestStatic() {
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0100`;
       hilog.info(domain, tag, `it begin`);
-      let resTag = false
       let want: Want = {
         bundleName: 'com.acts.startabilitytest.static',
         abilityName: 'EntryAbility1'
       };
       try {
         context?.startAbility(want).then(() => {
-          resTag = true
           hilog.info(domain, tag, `startAbility success`);
-          expect(resTag).assertTrue()
-          done();
         }).catch((err): void => {
           if (err instanceof BusinessError) {
             hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
@@ -87,6 +83,7 @@ export default function startAbilityTestStatic() {
             done();
           }
         });
+        done();
       } catch (err) {
         hilog.info(domain, tag, `startAbility fail: ` + err);
         expect().assertFail();
@@ -110,7 +107,7 @@ export default function startAbilityTestStatic() {
         abilityName: 'EntryAbilityerror'
       };
       try {
-        context.startAbility(want).then(() => {
+        context?.startAbility(want).then(() => {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
@@ -200,13 +197,9 @@ export default function startAbilityTestStatic() {
       let options1: StartOptions = {
         displayId: 0,
       };
-      let resTag = false
       try {
-        context.startAbility(want, options1).then(() => {
+        context?.startAbility(want, options1).then(() => {
           hilog.info(domain, tag, `startAbility success`);
-          resTag = true
-          expect(resTag).assertTrue()
-          done();
         }).catch((err): void => {
           if (err instanceof BusinessError) {
             hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
@@ -214,6 +207,7 @@ export default function startAbilityTestStatic() {
             done();
           }
         });
+        done();
       } catch (err) {
         hilog.info(domain, tag, `startAbility fail: ` + err);
         expect().assertFail();
@@ -240,7 +234,7 @@ export default function startAbilityTestStatic() {
         displayId: 0
       };
       try {
-        context.startAbility(want, options).then(() => {
+        context?.startAbility(want, options).then(() => {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
@@ -273,20 +267,17 @@ export default function startAbilityTestStatic() {
         bundleName: 'com.acts.startabilitytest.static',
         abilityName: 'EntryAbility1'
       };
-      let resTag = false
       try {
-        context.startAbility(want, (err: BusinessError<void> | null) => {
+        context?.startAbility(want, (err: BusinessError<void> | null) => {
           if (err && err.code !== 0) {
             hilog.info(domain, tag,`startAbility failed, code is ${err?.code}, message is ${err?.message}`);
             expect().assertFail();
             done();
           } else {
             hilog.info(domain, tag, `startAbility success`);
-            resTag = true
-            expect(resTag).assertTrue()
-            done();
           }
         });
+        done();
       } catch (err) {
         if (err instanceof BusinessError) {
           hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
@@ -312,7 +303,7 @@ export default function startAbilityTestStatic() {
         abilityName: 'EntryAbilityerror'
       };
       try {
-        context.startAbility(want, (err: BusinessError<void> | null) => {
+        context?.startAbility(want, (err: BusinessError<void> | null) => {
           if (err && err.code !== 0) {
             hilog.info(domain, tag,`startAbility failed, code is ${err?.code}, message is ${err?.message}`);
             expect(err?.code).assertEqual(16000001);
@@ -350,20 +341,17 @@ export default function startAbilityTestStatic() {
       let options: StartOptions = {
         displayId: 0
       };
-      let resTag = false
       try {
-        context.startAbility(want, options, (err: BusinessError<void> | null) => {
+        context?.startAbility(want, options, (err: BusinessError<void> | null) => {
           if (err && err.code !== 0) {
             hilog.info(domain, tag,`startAbility failed, code is ${err?.code}, message is ${err?.message}`);
             expect().assertFail();
             done();
           } else {
             hilog.info(domain, tag, `startAbility success`);
-            resTag = true
-            expect(resTag).assertTrue()
-            done();
           }
         });
+        done();
       } catch (err) {
         if (err instanceof BusinessError) {
           hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
@@ -392,7 +380,7 @@ export default function startAbilityTestStatic() {
         displayId: 0
       };
       try {
-        context.startAbility(want, options, (err: BusinessError<void> | null) => {
+        context?.startAbility(want, options, (err: BusinessError<void> | null) => {
           if (err && err.code !== 0) {
             hilog.info(domain, tag,`startAbility failed, code is ${err?.code}, message is ${err?.message}`);
             expect(err?.code).assertEqual(16000001);

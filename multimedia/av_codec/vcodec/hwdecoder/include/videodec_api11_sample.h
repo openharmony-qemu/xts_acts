@@ -185,6 +185,7 @@ public:
     std::vector<uint8_t> LoadHashFile();
     VDecAPI11Signal *signal_;
     uint32_t errCount = 0;
+    uint32_t changeCount = 0;
     uint32_t outCount = 0;
     int64_t renderTimestampNs = 0;
     bool rsAtTime = false;

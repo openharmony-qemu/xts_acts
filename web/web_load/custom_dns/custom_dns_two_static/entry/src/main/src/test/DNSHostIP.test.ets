@@ -54,9 +54,9 @@ export default function DNSHostIP() {
      * @tc.desc   test DNSHostIP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SetHostIPStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SetHostIPStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent("setHostIP0100", 10)
