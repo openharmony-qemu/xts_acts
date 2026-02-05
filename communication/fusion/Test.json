@@ -18,6 +18,8 @@
         },{
             "type": "ShellKit",
             "run-command": [
+                "param set persist.usb.setting.gadget_conn_prompt false",
+                "param set persist.skip_scb_charging 1",
                 "wait 5",
                 "power-shell wakeup",
                 "uinput -T -m 300 2600 280 200",
@@ -28,6 +30,9 @@
                 "uinput -K -d 2054 -u 2054",
                 "hidumper -s 3301 -a -t",
                 "uitest dumpLayout"
+            ],
+            "teardown-command": [
+                "param set persist.usb.setting.gadget_conn_prompt true"
             ]
         }
     ]
