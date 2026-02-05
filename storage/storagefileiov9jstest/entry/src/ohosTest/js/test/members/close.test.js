@@ -153,6 +153,44 @@ describe('fileIO_fs_close', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_close_sync_006
+   * @tc.number SUB_DF_FILEIO_CLOSE_SYNC_0600
+   * @tc.desc   Test closeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_close_sync_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  function () {
+
+    try {
+      fileIO.closeSync(null);
+      expect().assertFail();
+    } catch (e) {
+      console.log('fileIO_test_close_sync_006 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_close_sync_007
+   * @tc.number SUB_DF_FILEIO_CLOSE_SYNC_0700
+   * @tc.desc   Test closeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_close_sync_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  function () {
+
+    try {
+      fileIO.closeSync(undefined);
+      expect().assertFail();
+    } catch (e) {
+      console.log('fileIO_test_close_sync_007 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
    * @tc.name   fileIO_test_close_async_000
    * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_0000
    * @tc.desc   Test close() interfaces. Callback.
@@ -402,6 +440,131 @@ describe('fileIO_fs_close', function () {
     } catch (e) {
       console.log('fileIO_test_close_async_009 has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_close_async_010
+   * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_1000
+   * @tc.desc   Test close() interfaces. Promise. File is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_close_async_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async function (done) {
+    let fpath = await nextFileName('fileIO_test_close_async_010');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      await fileIO.close(null);
+      expect().assertFail();
+      done();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_close_async_010 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_close_async_011
+   * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_1100
+   * @tc.desc   Test close() interfaces. Promise. File is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_close_async_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async function (done) {
+    let fpath = await nextFileName('fileIO_test_close_async_011');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      await fileIO.close(undefined);
+      expect().assertFail();
+      done();
+    } catch (e) {
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_close_async_011 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_close_async_012
+   * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_1200
+   * @tc.desc   Test close() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_close_async_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async function (done) {
+
+    try {
+      fileIO.close(100, (err) => {
+        if(err) {
+          console.log('fileIO_test_close_async_012 error package: ' + err.message + ', code: ' + err.code);
+          expect(err.code == 13900008 && err.message == 'Bad file descriptor').assertTrue();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_close_async_012 has failed for ' + e.message + ', code: ' + e.code);
+      expect().assertFail();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_close_async_013
+   * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_1300
+   * @tc.desc   Test close() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_close_async_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async function (done) {
+
+    try {
+      fileIO.close(null, (err) => {
+        if(err) {
+          console.log('fileIO_test_close_async_013 error package: ' + err.message + ', code: ' + err.code);
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_close_async_013 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_close_async_014
+   * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_1400
+   * @tc.desc   Test close() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_close_async_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async function (done) {
+
+    try {
+      fileIO.close(undefined, (err) => {
+        if(err) {
+          console.log('fileIO_test_close_async_014 error package: ' + err.message + ', code: ' + err.code);
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_close_async_014 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
     }
   });
 });
