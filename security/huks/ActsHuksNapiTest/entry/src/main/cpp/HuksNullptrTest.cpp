@@ -15,19 +15,19 @@
 
 #include "include/HuksNullptrTest.h"
 #include <huks/native_huks_api.h>
-#include  <huks/native_huks_param.h>
+#include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
 
 namespace Acts {
 namespace Huks {
 
-static struct OH_Huks_ParamSet *paramSetNullptr = nullptr;
-static struct OH_Huks_Param *paramNullptr = nullptr;
-static struct OH_Huks_Blob *blobNullptr = nullptr;
-static struct OH_Huks_CertChain *certChainNullptr = nullptr;
+static struct OH_Huks_ParamSet* paramSetNullptr = nullptr;
+static struct OH_Huks_Param* paramNullptr = nullptr;
+static struct OH_Huks_Blob* blobNullptr = nullptr;
+static struct OH_Huks_CertChain* certChainNullptr = nullptr;
 
 // Helper function: Test parameter set operations
-static int TestParamSetOperations(struct OH_Huks_ParamSet *paramSet, struct OH_Huks_Param *paramNullptr)
+static int TestParamSetOperations(struct OH_Huks_ParamSet* paramSet, struct OH_Huks_Param* paramNullptr)
 {
     OH_Huks_Result ret = OH_Huks_AddParams(paramSet, paramNullptr, 0);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
@@ -68,10 +68,10 @@ static int TestParamSetOperations(struct OH_Huks_ParamSet *paramSet, struct OH_H
 }
 
 // Helper function: Test parameter match and SDK operations
-static int TestParamAndSdkOperations(struct OH_Huks_Blob *blob)
+static int TestParamAndSdkOperations(struct OH_Huks_Blob* blob)
 {
-    struct OH_Huks_Param baseParam = {.tag = OH_HUKS_TAG_ALGORITHM, .uint64Param = (uint64_t)1};
-    struct OH_Huks_Param otherParam1 = {.tag = OH_HUKS_TAG_ALGORITHM, .uint64Param = (uint64_t)2};
+    struct OH_Huks_Param baseParam = { .tag = OH_HUKS_TAG_ALGORITHM, .uint64Param = (uint64_t)1 };
+    struct OH_Huks_Param otherParam1 = { .tag = OH_HUKS_TAG_ALGORITHM, .uint64Param = (uint64_t)2 };
     OH_Huks_Result ret = OH_Huks_CheckParamMatch(&baseParam, &otherParam1);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
@@ -86,8 +86,8 @@ static int TestParamAndSdkOperations(struct OH_Huks_Blob *blob)
 }
 
 // Helper function: Test key operations
-static int TestKeyOperations(struct OH_Huks_Blob *blob, struct OH_Huks_ParamSet *paramSet,
-                              struct OH_Huks_CertChain *certChain)
+static int
+    TestKeyOperations(struct OH_Huks_Blob* blob, struct OH_Huks_ParamSet* paramSet, struct OH_Huks_CertChain* certChain)
 {
     OH_Huks_Result ret = OH_Huks_GenerateKeyItem(blob, paramSet, paramSet);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
@@ -128,7 +128,7 @@ static int TestKeyOperations(struct OH_Huks_Blob *blob, struct OH_Huks_ParamSet 
 }
 
 // Helper function: Test session operations
-static int TestSessionOperations(struct OH_Huks_Blob *blob, struct OH_Huks_ParamSet *paramSet)
+static int TestSessionOperations(struct OH_Huks_Blob* blob, struct OH_Huks_ParamSet* paramSet)
 {
     OH_Huks_Result ret = OH_Huks_InitSession(blob, paramSet, blob, blob);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
