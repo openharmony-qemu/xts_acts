@@ -380,7 +380,8 @@ int VpeImageNdk115()
     OH_ImageProcessing* instance = nullptr;
     OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DETAIL_ENHANCER);
     OH_AVFormat* parameter = OH_AVFormat_Create();
-    OH_AVFormat_SetIntValue(parameter, IMAGE_DETAIL_ENHANCER_PARAMETER_KEY_QUALITY_LEVEL, INVALID_QUALITY_LEVEL); // invalid param
+    // invalid param
+    OH_AVFormat_SetIntValue(parameter, IMAGE_DETAIL_ENHANCER_PARAMETER_KEY_QUALITY_LEVEL, INVALID_QUALITY_LEVEL);
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_SetParameter(instance, parameter);
     EXPECT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_PARAMETER);
     OH_ImageProcessing_Destroy(instance);
@@ -1107,7 +1108,8 @@ int VpeImageNdk44()
 int VpeImageNdk45()
 {
     OH_ImageProcessing* instance = nullptr;
-    ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance, INVALID_PROCESSING_TYPE_NEGATIVE); // invalid type
+    // invalid type
+    ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance, INVALID_PROCESSING_TYPE_NEGATIVE);
     EXPECT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_PARAMETER);
     return SUCCESS_CODE;
 }
