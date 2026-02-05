@@ -39,12 +39,11 @@ import {
 let gContext: common.UIAbilityContext;
 
 export default function pasteComponentStaticTest() {
-  console.info('====>pasteComponentStaticTest start');
   describe('pasteComponentStaticTest', () => {
+    console.info('====>pasteComponentStaticTest start');
     beforeAll(() => {
       await UtilsTest.startAbility('com.example.securitycomponent.static', 'EntryAbility')
       await UtilsTest.msSleep(2000);
-      gContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       let options: router.RouterOptions = {
         url: 'pages/pasteButton',
       }
@@ -72,11 +71,11 @@ export default function pasteComponentStaticTest() {
 
     /**
      * @tc.number SUB_SEC_AccCtl_SpecialItem_XTS_Controls_StaticPaste_0100
-     * @tc.name Test_Security_Button_StaticPaste_0100
-     * @tc.desc Test SecurityComponent Default parameters and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.name   Test_Security_Button_StaticPaste_0100
+     * @tc.desc   Test SecurityComponent Default parameters and Authorization is successful
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 0
      */
     it('Test_Security_Button_StaticPaste_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('====>[Test_Security_Button_StaticPaste_0100] START');
@@ -145,7 +144,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0100] once clickEvent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0100] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
@@ -156,17 +155,17 @@ export default function pasteComponentStaticTest() {
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0100] clickSecComponent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0100] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
     /**
      * @tc.number SUB_SEC_AccCtl_SpecialItem_XTS_Controls_StaticPaste_0200
-     * @tc.name Test_Security_Button_StaticPaste_0200
-     * @tc.desc Test SecurityComponent layoutDirection attribute is VERTICAL and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name   Test_Security_Button_StaticPaste_0200
+     * @tc.desc   Test SecurityComponent layoutDirection attribute is VERTICAL and Authorization is successful
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
      */
     it('Test_Security_Button_StaticPaste_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('====>[Test_Security_Button_StaticPaste_0200] START====');
@@ -210,7 +209,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0200] change component data error: ' + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_0200] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson: string = inspector.getInspectorByKey('keyPaste');
@@ -248,7 +247,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0200] once clickEvent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0200] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
@@ -259,18 +258,18 @@ export default function pasteComponentStaticTest() {
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0200] clickSecComponent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0200] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
     /**
      * @tc.number SUB_SEC_AccCtl_SpecialItem_XTS_Controls_StaticPaste_0300
-     * @tc.name Test_Security_Button_StaticPaste_0300
-     * @tc.desc Test SecurityComponent position.x is 150.00vp and position.y is 20.00vp
+     * @tc.name   Test_Security_Button_StaticPaste_0300
+     * @tc.desc   Test SecurityComponent position.x is 150.00vp and position.y is 20.00vp
      * markAnchor.x is 20.00vp and markAnchor.y is 20.00vp and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
      */
     it('Test_Security_Button_StaticPaste_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('====>[Test_Security_Button_StaticPaste_0300] START====');
@@ -314,7 +313,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0300] change component data error: ' + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_0300] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson = inspector.getInspectorByKey('keyPaste');
@@ -355,7 +354,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0300] once clickEvent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0300] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
@@ -366,17 +365,17 @@ export default function pasteComponentStaticTest() {
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0300] clickSecComponent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0300] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
     /**
      * @tc.number SUB_SEC_AccCtl_SpecialItem_XTS_Controls_StaticPaste_0400
-     * @tc.name Test_Security_Button_StaticPaste_0400
-     * @tc.desc Test SecurityComponent offset and markAnchor attribute is normal and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name   Test_Security_Button_StaticPaste_0400
+     * @tc.desc   Test SecurityComponent offset and markAnchor attribute is normal and Authorization is successful
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
      */
     it('Test_Security_Button_StaticPaste_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('====>[Test_Security_Button_StaticPaste_0400] START====');
@@ -420,7 +419,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0400] change component data error: ' + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_0400] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson = inspector.getInspectorByKey('keyPaste');
@@ -461,7 +460,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0400] once clickEvent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0400] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
@@ -472,17 +471,17 @@ export default function pasteComponentStaticTest() {
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0400] clickSecComponent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0400] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
     /**
      * @tc.number SUB_SEC_AccCtl_SpecialItem_XTS_Controls_StaticPaste_0500
-     * @tc.name Test_Security_Button_StaticPaste_0500
-     * @tc.desc Test SecurityComponent FontStyle attribute is Italic and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name   Test_Security_Button_StaticPaste_0500
+     * @tc.desc   Test SecurityComponent FontStyle attribute is Italic and Authorization is successful
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
      */
     it('Test_Security_Button_StaticPaste_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('====>[Test_Security_Button_StaticPaste_0500] START====');
@@ -526,7 +525,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0500] change component data error: ' + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_0500] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson = inspector.getInspectorByKey('keyPaste');
@@ -564,7 +563,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0500] once clickEvent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0500] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
@@ -575,17 +574,17 @@ export default function pasteComponentStaticTest() {
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0500] clickSecComponent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0500] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
     /**
      * @tc.number SUB_SEC_AccCtl_SpecialItem_XTS_Controls_StaticPaste_0600
-     * @tc.name Test_Security_Button_StaticPaste_0600
-     * @tc.desc Test SecurityComponent FontWeight attribute is Lighter and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name   Test_Security_Button_StaticPaste_0600
+     * @tc.desc   Test SecurityComponent FontWeight attribute is Lighter and Authorization is successful
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
      */
     it('Test_Security_Button_StaticPaste_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('====>[Test_Security_Button_StaticPaste_0600] START====');
@@ -629,7 +628,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0600] change component data error: ' + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_0600] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson = inspector.getInspectorByKey('keyPaste');
@@ -667,7 +666,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0600] once clickEvent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0600] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
@@ -678,17 +677,17 @@ export default function pasteComponentStaticTest() {
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0600] clickSecComponent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0600] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
     /**
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_StaticPaste_0700
-     * @tc.name Test_Security_Button_StaticPaste_0700
-     * @tc.desc Test SecurityComponent FontWeight attribute is Normal and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name   Test_Security_Button_StaticPaste_0700
+     * @tc.desc   Test SecurityComponent FontWeight attribute is Normal and Authorization is successful
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
      */
     it('Test_Security_Button_StaticPaste_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('====>[Test_Security_Button_StaticPaste_0700] START====');
@@ -732,7 +731,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0700] change component data error: ' + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_0700] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson = inspector.getInspectorByKey('keyPaste');
@@ -770,7 +769,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0700] once clickEvent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0700] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
@@ -781,17 +780,17 @@ export default function pasteComponentStaticTest() {
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0700] clickSecComponent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0700] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
     /**
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_StaticPaste_0800
-     * @tc.name Test_Security_Button_StaticPaste_0800
-     * @tc.desc Test SecurityComponent FontWeight attribute is Regular and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name   Test_Security_Button_StaticPaste_0800
+     * @tc.desc   Test SecurityComponent FontWeight attribute is Regular and Authorization is successful
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
      */
     it('Test_Security_Button_StaticPaste_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('====>[Test_Security_Button_StaticPaste_0800] START====');
@@ -835,7 +834,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0800] change component data error: ' + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_0800] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson = inspector.getInspectorByKey('keyPaste');
@@ -873,7 +872,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0800] once clickEvent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0800] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
@@ -884,17 +883,17 @@ export default function pasteComponentStaticTest() {
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0800] clickSecComponent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0800] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
     /**
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_StaticPaste_0900
-     * @tc.name Test_Security_Button_StaticPaste_0900
-     * @tc.desc Test SecurityComponent FontWeight attribute is Bold and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name   Test_Security_Button_StaticPaste_0900
+     * @tc.desc   Test SecurityComponent FontWeight attribute is Bold and Authorization is successful
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
      */
     it('Test_Security_Button_StaticPaste_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('====>[Test_Security_Button_StaticPaste_0900] START====');
@@ -938,7 +937,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0900] change component data error: ' + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_0900] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson = inspector.getInspectorByKey('keyPaste');
@@ -976,7 +975,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0900] once clickEvent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0900] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
@@ -987,17 +986,17 @@ export default function pasteComponentStaticTest() {
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_0900] clickSecComponent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_0900] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
     /**
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_StaticPaste_1000
-     * @tc.name Test_Security_Button_StaticPaste_1000
-     * @tc.desc Test SecurityComponent FontWeight attribute is Bolder and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name   Test_Security_Button_StaticPaste_1000
+     * @tc.desc   Test SecurityComponent FontWeight attribute is Bolder and Authorization is successful
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
      */
     it('Test_Security_Button_StaticPaste_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('====>[Test_Security_Button_StaticPaste_1000] START====');
@@ -1041,7 +1040,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_1000] change component data error: ' + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_1000] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson = inspector.getInspectorByKey('keyPaste');
@@ -1079,7 +1078,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_1000] once clickEvent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1000] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
@@ -1090,17 +1089,17 @@ export default function pasteComponentStaticTest() {
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_1000] clickSecComponent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1000] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
     /**
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_StaticPaste_1100
-     * @tc.name Test_Security_Button_StaticPaste_1100
-     * @tc.desc Test SecurityComponent BorderStyle is Dotted , borderWidth , borderColor , borderRadius attribute is normal and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name   Test_Security_Button_StaticPaste_1100
+     * @tc.desc   Test SecurityComponent BorderStyle is Dotted , borderWidth , borderColor , borderRadius attribute is normal and Authorization is successful
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
      */
     it('Test_Security_Button_StaticPaste_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('====>[Test_Security_Button_StaticPaste_1100] START====');
@@ -1144,7 +1143,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_1100] change component data error: ' + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_1100] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson = inspector.getInspectorByKey('keyPaste');
@@ -1185,7 +1184,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_1100] once clickEvent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1100] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
@@ -1196,17 +1195,17 @@ export default function pasteComponentStaticTest() {
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_1100] clickSecComponent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1100] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
     /**
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_StaticPaste_1200
-     * @tc.name Test_Security_Button_StaticPaste_1200
-     * @tc.desc Test SecurityComponent BorderStyle attribute is Dashed and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name   Test_Security_Button_StaticPaste_1200
+     * @tc.desc   Test SecurityComponent BorderStyle attribute is Dashed and Authorization is successful
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
      * @tc.require
      */
     it('Test_Security_Button_StaticPaste_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -1251,7 +1250,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_1200] change component data error: ' + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_1200] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson = inspector.getInspectorByKey('keyPaste');
@@ -1292,7 +1291,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_1200] once clickEvent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1200] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
@@ -1303,17 +1302,17 @@ export default function pasteComponentStaticTest() {
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_1200] clickSecComponent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1200] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
     /**
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_StaticPaste_1300
-     * @tc.name Test_Security_Button_StaticPaste_1300
-     * @tc.desc Test SecurityComponent BorderStyle attribute is Solid and Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name   Test_Security_Button_StaticPaste_1300
+     * @tc.desc   Test SecurityComponent BorderStyle attribute is Solid and Authorization is successful
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
      */
     it('Test_Security_Button_StaticPaste_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('====>[Test_Security_Button_StaticPaste_1300] START====');
@@ -1357,7 +1356,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_1300] change component data error: ' + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_1300] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson = inspector.getInspectorByKey('keyPaste');
@@ -1398,7 +1397,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_1300] once clickEvent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1300] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
@@ -1409,22 +1408,23 @@ export default function pasteComponentStaticTest() {
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_1300] clickSecComponent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1300] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
     /**
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_StaticPaste_1400
-     * @tc.name Test_Security_Button_StaticPaste_1400
-     * @tc.desc Test SecurityComponent offset.x attribute is 200.00vp result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name   Test_Security_Button_StaticPaste_1400
+     * @tc.desc   Test SecurityComponent offset.x attribute is 200.00vp result in Authorization is failed
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
      */
     it('Test_Security_Button_StaticPaste_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('====>[Test_Security_Button_StaticPaste_1400] START====');
       await UtilsTest.msSleep(1000);
       let positX: String = '0';
+      gContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       try{
         let windowClass: window.Window | undefined = await window.getLastWindow(gContext);
         if (windowClass) {
@@ -1479,7 +1479,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_1400] change component data error: ' + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_1400] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       try {
@@ -1513,7 +1513,7 @@ export default function pasteComponentStaticTest() {
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_1400] once clickEvent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1400] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
@@ -1524,22 +1524,23 @@ export default function pasteComponentStaticTest() {
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info('====>[Test_Security_Button_StaticPaste_1400] clickSecComponent err : ' + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1400] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
     /**
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_StaticPaste_1500
-     * @tc.name Test_Security_Button_StaticPaste_1500
-     * @tc.desc Test SecurityComponent offset.x attribute is -200.00vp result in Authorization is failed
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name   Test_Security_Button_StaticPaste_1500
+     * @tc.desc   Test SecurityComponent offset.x attribute is -200.00vp result in Authorization is failed
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
      */
     it('Test_Security_Button_StaticPaste_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('====>[Test_Security_Button_StaticPaste_1500] START====');
       await UtilsTest.msSleep(1000);
       let positX: String = '0';
+      gContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       try {
         let windowClass: window.Window | undefined = await window.getLastWindow(gContext);
         if (windowClass) {
@@ -1555,32 +1556,32 @@ export default function pasteComponentStaticTest() {
       }
       try {
         let data: Record<string, RecordData> = {
-          "icon": 0,
-          "textType": 0,
-          "bgType": ButtonType.Normal,
-          "iconSize": 16,
-          "direct": SecurityComponentLayoutDirection.HORIZONTAL,
-          "positionX": positX,
-          "positionY": '0',
-          "anchorX": '0',
-          "anchorY": '0',
-          "offsetX": '0',
-          "offsetY": '0',
-          "fontSize": 16,
-          "fontStyle": FontStyle.Normal,
-          "fontWeight": FontWeight.Medium,
-          "fontColor": '#ffffffff',
-          "iconColor": '#ffffffff',
-          "bgColor": '#ff007dff',
-          "borderSty": BorderStyle.Dashed,
-          "borderWid": 0,
-          "borderCol": '#ffffffff',
-          "borderRad": 0,
-          "left": 12,
-          "right": 12,
-          "top": 4,
-          "bottom": 4,
-          "middle": 4
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': positX,
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4
         };
         let eventData:events_emitter.EventData = {};
         eventData.data = data;
@@ -1589,11 +1590,11 @@ export default function pasteComponentStaticTest() {
           priority: events_emitter.EventPriority.LOW
         }
         await UtilsTest.msSleep(500);
-        console.info("====>[Test_Security_Button_StaticPaste_1500] start to publish emit");
+        console.info('====>[Test_Security_Button_StaticPaste_1500] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_1500] change component data error: " + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_1500] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       try {
@@ -1604,51 +1605,51 @@ export default function pasteComponentStaticTest() {
         let clickCallback = (clickData:events_emitter.EventData) => {
           if(clickData.data !=undefined){
             const data = clickData.data as Record<string, RecordData>;
-            console.info("====>[Test_Security_Button_StaticPaste_1500] get clickEvent result is: " + JSON.stringify(clickEvent));
-            console.info("====>[Test_Security_Button_StaticPaste_1500] get clickData.data.clickResult is: " + JSON.stringify(data['clickResult']));
+            console.info('====>[Test_Security_Button_StaticPaste_1500] get clickEvent result is: ' + JSON.stringify(clickEvent));
+            console.info('====>[Test_Security_Button_StaticPaste_1500] get clickData.data.clickResult is: ' + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == PasteButtonOnClickResult.TEMPORARY_AUTHORIZATION_FAILED) {
-              console.info("====>[Test_Security_Button_StaticPaste_1500] ERR CASE 成功");
+              console.info('====>[Test_Security_Button_StaticPaste_1500] ERR CASE 成功');
               expect(data['clickResult'] == PasteButtonOnClickResult.TEMPORARY_AUTHORIZATION_FAILED).assertTrue();
-              console.info("====>[Test_Security_Button_StaticPaste_1500] END====");
+              console.info('====>[Test_Security_Button_StaticPaste_1500] END====');
               done();
             } else {
-              console.info("====>[Test_Security_Button_StaticPaste_1500] ERR CASE 失败");
+              console.info('====>[Test_Security_Button_StaticPaste_1500] ERR CASE 失败');
               expect(false).assertTrue();
-              console.info("====>[Test_Security_Button_StaticPaste_1500] END====");
+              console.info('====>[Test_Security_Button_StaticPaste_1500] END====');
               done();
             }
           } else {
-            console.info("====>[Test_Security_Button_StaticPaste_1500] ERR CASE 失败");
+            console.info('====>[Test_Security_Button_StaticPaste_1500] ERR CASE 失败');
             expect(false).assertTrue();
-            console.info("====>[Test_Security_Button_StaticPaste_1500] END====");
+            console.info('====>[Test_Security_Button_StaticPaste_1500] END====');
             done();
           }
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_1500] once clickEvent err : " + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1500] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('PasteButton'));
         await UtilsTest.msSleep(500);
-        console.info("====>[Test_Security_Button_StaticPaste_1500] button is:" + JSON.stringify(button));
+        console.info('====>[Test_Security_Button_StaticPaste_1500] button is:' + JSON.stringify(button));
         await (button?.click() as Promise<void>);
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_1500] clickSecComponent err : " + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1500] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
     /**
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_StaticPaste_1600
-     * @tc.name Test_Security_Button_StaticPaste_1600
-     * @tc.desc Test SecurityComponent Size excood displaysSize 10% result in Authorization is successful
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name   Test_Security_Button_StaticPaste_1600
+     * @tc.desc   Test SecurityComponent Size excood displaysSize 10% result in Authorization is successful
+     * @tc.size   MEDIUMTEST
+     * @tc.type   Function
+     * @tc.level  LEVEL 3
      */
     it('Test_Security_Button_StaticPaste_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('====>[Test_Security_Button_StaticPaste_1600] START====');
@@ -1671,36 +1672,36 @@ export default function pasteComponentStaticTest() {
       }
       try {
         let data: Record<string, RecordData> = {
-          "icon": 0,
-          "textType": 0,
-          "bgType": ButtonType.Normal,
-          "iconSize": 16,
-          "direct": SecurityComponentLayoutDirection.HORIZONTAL,
-          "positionX": '0',
-          "positionY": '0',
-          "anchorX": '0',
-          "anchorY": '0',
-          "offsetX": '0',
-          "offsetY": '0',
-          "fontSize": 16,
-          "fontStyle": FontStyle.Normal,
-          "fontWeight": FontWeight.Medium,
-          "fontColor": '#ffffffff',
-          "iconColor": '#ffffffff',
-          "bgColor": '#ff007dff',
-          "borderSty": BorderStyle.Dashed,
-          "borderWid": 0,
-          "borderCol": '#ffffffff',
-          "borderRad": 0,
-          "left": 12,
-          "right": 12,
-          "top": 4,
-          "bottom": 4,
-          "middle": 4,
-          "buWidth": button_width,
-          "buHeight": button_height,
-          "rowWidth": button_width,
-          "rowHeight": button_height
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'buWidth': button_width,
+          'buHeight': button_height,
+          'rowWidth': button_width,
+          'rowHeight': button_height
         };
         let eventData:events_emitter.EventData = {};
         eventData.data = data;
@@ -1710,11 +1711,11 @@ export default function pasteComponentStaticTest() {
           priority: events_emitter.EventPriority.LOW
         }
         await UtilsTest.msSleep(500);
-        console.info("====>[Test_Security_Button_StaticPaste_1600] start to publish emit");
+        console.info('====>[Test_Security_Button_StaticPaste_1600] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_1600] change component data error: " + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_1600] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       try {
@@ -1725,41 +1726,41 @@ export default function pasteComponentStaticTest() {
         let clickCallback = (clickData:events_emitter.EventData) => {
           if(clickData.data !=undefined){
             const data = clickData.data as Record<string, RecordData>;
-            console.info("====>[Test_Security_Button_StaticPaste_1600] get clickEvent result is: " + JSON.stringify(clickEvent));
-            console.info("====>[Test_Security_Button_StaticPaste_1600] get clickData.data.clickResult is: " + JSON.stringify(data['clickResult']));
+            console.info('====>[Test_Security_Button_StaticPaste_1600] get clickEvent result is: ' + JSON.stringify(clickEvent));
+            console.info('====>[Test_Security_Button_StaticPaste_1600] get clickData.data.clickResult is: ' + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == PasteButtonOnClickResult.SUCCESS) {
-              console.info("====>[Test_Security_Button_StaticPaste_1600] 设置权限成功");
+              console.info('====>[Test_Security_Button_StaticPaste_1600] 设置权限成功');
               expect(data['clickResult'] == PasteButtonOnClickResult.SUCCESS).assertTrue();
-              console.info("====>[Test_Security_Button_StaticPaste_1600] END====");
+              console.info('====>[Test_Security_Button_StaticPaste_1600] END====');
               done();
             } else {
-              console.info("====>[Test_Security_Button_StaticPaste_1600] 设置权限失败");
+              console.info('====>[Test_Security_Button_StaticPaste_1600] 设置权限失败');
               expect(false).assertTrue();
-              console.info("====>[Test_Security_Button_StaticPaste_1600] END====");
+              console.info('====>[Test_Security_Button_StaticPaste_1600] END====');
               done();
             }
           } else {
-            console.info("====>[Test_Security_Button_StaticPaste_1600] ERR CASE 失败");
+            console.info('====>[Test_Security_Button_StaticPaste_1600] ERR CASE 失败');
             expect(false).assertTrue();
-            console.info("====>[Test_Security_Button_StaticPaste_1600] END====");
+            console.info('====>[Test_Security_Button_StaticPaste_1600] END====');
             done();
           }
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_1600] once clickEvent err : " + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1600] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('PasteButton'));
         await UtilsTest.msSleep(500);
-        console.info("====>[Test_Security_Button_StaticPaste_1600] button is:" + JSON.stringify(button));
+        console.info('====>[Test_Security_Button_StaticPaste_1600] button is:' + JSON.stringify(button));
         await (button?.click() as Promise<void>);
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_1600] clickSecComponent err : " + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1600] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
@@ -1776,32 +1777,32 @@ export default function pasteComponentStaticTest() {
       await UtilsTest.msSleep(1000);
       try {
         let data: Record<string, RecordData> = {
-          "icon": 0,
-          "textType": 0,
-          "bgType": ButtonType.Normal,
-          "iconSize": 16,
-          "direct": SecurityComponentLayoutDirection.HORIZONTAL,
-          "positionX": '0',
-          "positionY": '0',
-          "anchorX": '0',
-          "anchorY": '0',
-          "offsetX": '0',
-          "offsetY": '0',
-          "fontSize": 16,
-          "fontStyle": FontStyle.Normal,
-          "fontWeight": FontWeight.Medium,
-          "fontColor": '#ffffffff',
-          "iconColor": '#10ff0000',
-          "bgColor": '#ff007dff',
-          "borderSty": BorderStyle.Dashed,
-          "borderWid": 0,
-          "borderCol": '#ffffffff',
-          "borderRad": 0,
-          "left": 12,
-          "right": 12,
-          "top": 4,
-          "bottom": 4,
-          "middle": 4
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#10ff0000',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4
         };
         let eventData:events_emitter.EventData = {};
         eventData.data = data;
@@ -1809,11 +1810,11 @@ export default function pasteComponentStaticTest() {
           eventId: 1,
           priority: events_emitter.EventPriority.LOW
         }
-        console.info("====>[Test_Security_Button_StaticPaste_1700] start to publish emit");
+        console.info('====>[Test_Security_Button_StaticPaste_1700] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_1700] change component data error: " + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_1700] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson = inspector.getInspectorByKey('keyPaste');
@@ -1828,41 +1829,41 @@ export default function pasteComponentStaticTest() {
         let clickCallback = (clickData:events_emitter.EventData) => {
           if(clickData.data != undefined){
             const data = clickData.data as Record<string, RecordData>;
-            console.info("====>[Test_Security_Button_StaticPaste_1700] get clickEvent result is: " + JSON.stringify(clickEvent));
-            console.info("====>[Test_Security_Button_StaticPaste_1700] get clickData.data.clickResult is: " + JSON.stringify(data['clickResult']));
+            console.info('====>[Test_Security_Button_StaticPaste_1700] get clickEvent result is: ' + JSON.stringify(clickEvent));
+            console.info('====>[Test_Security_Button_StaticPaste_1700] get clickData.data.clickResult is: ' + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == PasteButtonOnClickResult.TEMPORARY_AUTHORIZATION_FAILED) {
-              console.info("====>[Test_Security_Button_StaticPaste_1700] ERR CASE 成功");
+              console.info('====>[Test_Security_Button_StaticPaste_1700] ERR CASE 成功');
               expect(data['clickResult'] == PasteButtonOnClickResult.TEMPORARY_AUTHORIZATION_FAILED).assertTrue();
-              console.info("====>[Test_Security_Button_StaticPaste_1700] END====");
+              console.info('====>[Test_Security_Button_StaticPaste_1700] END====');
               done();
             } else {
-              console.info("====>[Test_Security_Button_StaticPaste_1700] ERR CASE 失败");
+              console.info('====>[Test_Security_Button_StaticPaste_1700] ERR CASE 失败');
               expect(false).assertTrue();
-              console.info("====>[Test_Security_Button_StaticPaste_1700] END====");
+              console.info('====>[Test_Security_Button_StaticPaste_1700] END====');
               done();
             }
           } else {
-            console.info("====>[Test_Security_Button_StaticPaste_1700] ERR CASE 失败");
+            console.info('====>[Test_Security_Button_StaticPaste_1700] ERR CASE 失败');
             expect(false).assertTrue();
-            console.info("====>[Test_Security_Button_StaticPaste_1700] END====");
+            console.info('====>[Test_Security_Button_StaticPaste_1700] END====');
             done();
           }
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_1700] once clickEvent err : " + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1700] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('PasteButton'));
         await UtilsTest.msSleep(500);
-        console.info("====>[Test_Security_Button_StaticPaste_1700] button is:" + JSON.stringify(button));
+        console.info('====>[Test_Security_Button_StaticPaste_1700] button is:' + JSON.stringify(button));
         await (button?.click() as Promise<void>);
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_1700] clickSecComponent err : " + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1700] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
@@ -1879,32 +1880,32 @@ export default function pasteComponentStaticTest() {
       await UtilsTest.msSleep(1000);
       try {
         let data: Record<string, RecordData> = {
-          "icon": 0,
-          "textType": 0,
-          "bgType": ButtonType.Normal,
-          "iconSize": 20,
-          "direct": SecurityComponentLayoutDirection.HORIZONTAL,
-          "positionX": '0',
-          "positionY": '0',
-          "anchorX": '0',
-          "anchorY": '0',
-          "offsetX": '0',
-          "offsetY": '0',
-          "fontSize": 16,
-          "fontStyle": FontStyle.Normal,
-          "fontWeight": FontWeight.Medium,
-          "fontColor": '#ffffffff',
-          "iconColor": '#fffa0050',
-          "bgColor": '#ffff0000',
-          "borderSty": BorderStyle.Dashed,
-          "borderWid": 0,
-          "borderCol": '#ffffffff',
-          "borderRad": 0,
-          "left": 12,
-          "right": 12,
-          "top": 4,
-          "bottom": 4,
-          "middle": 4
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 20,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#fffa0050',
+          'bgColor': '#ffff0000',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4
         };
         let eventData:events_emitter.EventData = {};
         eventData.data = data;
@@ -1912,11 +1913,11 @@ export default function pasteComponentStaticTest() {
           eventId: 1,
           priority: events_emitter.EventPriority.LOW
         }
-        console.info("====>[Test_Security_Button_StaticPaste_1800] start to publish emit");
+        console.info('====>[Test_Security_Button_StaticPaste_1800] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_1800] change component data error: " + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_1800] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson = inspector.getInspectorByKey('keyPaste');
@@ -1934,41 +1935,41 @@ export default function pasteComponentStaticTest() {
         let clickCallback = (clickData:events_emitter.EventData) => {
           if(clickData.data != undefined){
             const data = clickData.data as Record<string, RecordData>;
-            console.info("====>[Test_Security_Button_StaticPaste_1800] get clickEvent result is: " + JSON.stringify(clickEvent));
-            console.info("====>[Test_Security_Button_StaticPaste_1800] get clickData.data.clickResult is: " + JSON.stringify(data['clickResult']));
+            console.info('====>[Test_Security_Button_StaticPaste_1800] get clickEvent result is: ' + JSON.stringify(clickEvent));
+            console.info('====>[Test_Security_Button_StaticPaste_1800] get clickData.data.clickResult is: ' + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == PasteButtonOnClickResult.SUCCESS) {
-              console.info("====>[Test_Security_Button_StaticPaste_1800] 设置权限成功");
+              console.info('====>[Test_Security_Button_StaticPaste_1800] 设置权限成功');
               expect(data['clickResult'] == PasteButtonOnClickResult.SUCCESS).assertTrue();
-              console.info("====>[Test_Security_Button_StaticPaste_1800] END====");
+              console.info('====>[Test_Security_Button_StaticPaste_1800] END====');
               done();
             } else {
-              console.info("====>[Test_Security_Button_StaticPaste_1800] 设置权限失败");
+              console.info('====>[Test_Security_Button_StaticPaste_1800] 设置权限失败');
               expect(false).assertTrue();
-              console.info("====>[Test_Security_Button_StaticPaste_1800] END====");
+              console.info('====>[Test_Security_Button_StaticPaste_1800] END====');
               done();
             }
           } else {
-            console.info("====>[Test_Security_Button_StaticPaste_1800] ERR CASE 失败");
+            console.info('====>[Test_Security_Button_StaticPaste_1800] ERR CASE 失败');
             expect(false).assertTrue();
-            console.info("====>[Test_Security_Button_StaticPaste_1800] END====");
+            console.info('====>[Test_Security_Button_StaticPaste_1800] END====');
             done();
           }
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_1800] once clickEvent err : " + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1800] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('PasteButton'));
         await UtilsTest.msSleep(500);
-        console.info("====>[Test_Security_Button_StaticPaste_1800] button is:" + JSON.stringify(button));
+        console.info('====>[Test_Security_Button_StaticPaste_1800] button is:' + JSON.stringify(button));
         await (button?.click() as Promise<void>);
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_1800] clickSecComponent err : " + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1800] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
@@ -1985,32 +1986,32 @@ export default function pasteComponentStaticTest() {
       await UtilsTest.msSleep(1000);
       try {
         let data: Record<String, RecordData> ={
-          "icon": 0,
-          "textType": 0,
-          "bgType": ButtonType.Normal,
-          "iconSize": 1,
-          "direct": SecurityComponentLayoutDirection.HORIZONTAL,
-          "positionX": '0',
-          "positionY": '0',
-          "anchorX": '0',
-          "anchorY": '0',
-          "offsetX": '0',
-          "offsetY": '0',
-          "fontSize": 20,
-          "fontStyle": FontStyle.Normal,
-          "fontWeight": FontWeight.Medium,
-          "fontColor": '#ffffffff',
-          "iconColor": '#ffffffff',
-          "bgColor": '#ff007dff',
-          "borderSty": BorderStyle.Dashed,
-          "borderWid": 0,
-          "borderCol": '#ffffffff',
-          "borderRad": 0,
-          "left": 12,
-          "right": 12,
-          "top": 4,
-          "bottom": 4,
-          "middle": 4
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 1,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 20,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4
         };
         let eventData:events_emitter.EventData = {};
         eventData.data = data;
@@ -2018,11 +2019,11 @@ export default function pasteComponentStaticTest() {
           eventId: 1,
           priority: events_emitter.EventPriority.LOW
         }
-        console.info("====>[Test_Security_Button_StaticPaste_1900] start to publish emit");
+        console.info('====>[Test_Security_Button_StaticPaste_1900] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_1900] change component data error: " + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_1900] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson: string = inspector.getInspectorByKey('keyPaste');
@@ -2038,41 +2039,41 @@ export default function pasteComponentStaticTest() {
         let clickCallback = (clickData:events_emitter.EventData) => {
           if(clickData.data !=undefined){
             const data = clickData.data as Record<string, RecordData>;
-            console.info("====>[Test_Security_Button_StaticPaste_1900] get clickEvent result is: " + JSON.stringify(clickEvent));
-            console.info("====>[Test_Security_Button_StaticPaste_1900] get clickData.data.clickResult is: " + JSON.stringify(data['clickResult']));
+            console.info('====>[Test_Security_Button_StaticPaste_1900] get clickEvent result is: ' + JSON.stringify(clickEvent));
+            console.info('====>[Test_Security_Button_StaticPaste_1900] get clickData.data.clickResult is: ' + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == PasteButtonOnClickResult.TEMPORARY_AUTHORIZATION_FAILED) {
-              console.info("====>[Test_Security_Button_StaticPaste_1900] ERR CASE 成功");
+              console.info('====>[Test_Security_Button_StaticPaste_1900] ERR CASE 成功');
               expect(data['clickResult'] == PasteButtonOnClickResult.TEMPORARY_AUTHORIZATION_FAILED).assertTrue();
-              console.info("====>[Test_Security_Button_StaticPaste_1900] END====");
+              console.info('====>[Test_Security_Button_StaticPaste_1900] END====');
               done();
             } else {
-              console.info("====>[Test_Security_Button_StaticPaste_1900] ERR CASE 失败");
+              console.info('====>[Test_Security_Button_StaticPaste_1900] ERR CASE 失败');
               expect(false).assertTrue();
-              console.info("====>[Test_Security_Button_StaticPaste_1900] END====");
+              console.info('====>[Test_Security_Button_StaticPaste_1900] END====');
               done();
             }
           } else {
-            console.info("====>[Test_Security_Button_StaticPaste_1900] ERR CASE 失败");
+            console.info('====>[Test_Security_Button_StaticPaste_1900] ERR CASE 失败');
             expect(false).assertTrue();
-            console.info("====>[Test_Security_Button_StaticPaste_1900] END====");
+            console.info('====>[Test_Security_Button_StaticPaste_1900] END====');
             done();
           }
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_1900] once clickEvent err : " + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1900] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('PasteButton'));
         await UtilsTest.msSleep(500);
-        console.info("====>[Test_Security_Button_StaticPaste_1900] button is:" + JSON.stringify(button));
+        console.info('====>[Test_Security_Button_StaticPaste_1900] button is:' + JSON.stringify(button));
         await (button?.click() as Promise<void>);
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_1900] clickSecComponent err : " + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_1900] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
@@ -2089,32 +2090,32 @@ export default function pasteComponentStaticTest() {
       await UtilsTest.msSleep(1000);
       try {
         let data: Record<String, RecordData> ={
-          "icon": 0,
-          "textType": 0,
-          "bgType": ButtonType.Normal,
-          "iconSize": 16,
-          "direct": SecurityComponentLayoutDirection.HORIZONTAL,
-          "positionX": '0',
-          "positionY": '0',
-          "anchorX": '0',
-          "anchorY": '0',
-          "offsetX": '0',
-          "offsetY": '0',
-          "fontSize": 16,
-          "fontStyle": FontStyle.Normal,
-          "fontWeight": FontWeight.Medium,
-          "fontColor": '#ffffffff',
-          "iconColor": Color.Transparent,
-          "bgColor": '#ff007dff',
-          "borderSty": BorderStyle.Dashed,
-          "borderWid": 0,
-          "borderCol": '#ffffffff',
-          "borderRad": 0,
-          "left": 12,
-          "right": 12,
-          "top": 4,
-          "bottom": 4,
-          "middle": 4
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': Color.Transparent,
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4
         };
         let eventData:events_emitter.EventData = {};
         eventData.data = data;
@@ -2122,11 +2123,11 @@ export default function pasteComponentStaticTest() {
           eventId: 1,
           priority: events_emitter.EventPriority.LOW
         }
-        console.info("====>[Test_Security_Button_StaticPaste_2000] start to publish emit");
+        console.info('====>[Test_Security_Button_StaticPaste_2000] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_2000] change component data error: " + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_2000] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson: string = inspector.getInspectorByKey('keyPaste');
@@ -2141,41 +2142,41 @@ export default function pasteComponentStaticTest() {
         let clickCallback = (clickData:events_emitter.EventData) => {
           if(clickData.data !=undefined){
             const data = clickData.data as Record<string, RecordData>;
-            console.info("====>[Test_Security_Button_StaticPaste_2000] get clickEvent result is: " + JSON.stringify(clickEvent));
-            console.info("====>[Test_Security_Button_StaticPaste_2000] get clickData.data.clickResult is: " + JSON.stringify(data['clickResult']));
+            console.info('====>[Test_Security_Button_StaticPaste_2000] get clickEvent result is: ' + JSON.stringify(clickEvent));
+            console.info('====>[Test_Security_Button_StaticPaste_2000] get clickData.data.clickResult is: ' + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == PasteButtonOnClickResult.TEMPORARY_AUTHORIZATION_FAILED) {
-              console.info("====>[Test_Security_Button_StaticPaste_2000] ERR CASE 成功");
+              console.info('====>[Test_Security_Button_StaticPaste_2000] ERR CASE 成功');
               expect(data['clickResult'] == PasteButtonOnClickResult.TEMPORARY_AUTHORIZATION_FAILED).assertTrue();
-              console.info("====>[Test_Security_Button_StaticPaste_2000] END====");
+              console.info('====>[Test_Security_Button_StaticPaste_2000] END====');
               done();
             } else {
-              console.info("====>[Test_Security_Button_StaticPaste_2000] ERR CASE 失败");
+              console.info('====>[Test_Security_Button_StaticPaste_2000] ERR CASE 失败');
               expect(false).assertTrue();
-              console.info("====>[Test_Security_Button_StaticPaste_2000] END====");
+              console.info('====>[Test_Security_Button_StaticPaste_2000] END====');
               done();
             }
           } else {
-            console.info("====>[Test_Security_Button_StaticPaste_2000] ERR CASE 失败");
+            console.info('====>[Test_Security_Button_StaticPaste_2000] ERR CASE 失败');
             expect(false).assertTrue();
-            console.info("====>[Test_Security_Button_StaticPaste_2000] END====");
+            console.info('====>[Test_Security_Button_StaticPaste_2000] END====');
             done();
           }
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_2000] once clickEvent err : " + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_2000] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('PasteButton'));
         await UtilsTest.msSleep(500);
-        console.info("====>[Test_Security_Button_StaticPaste_2000] button is:" + JSON.stringify(button));
+        console.info('====>[Test_Security_Button_StaticPaste_2000] button is:' + JSON.stringify(button));
         await (button?.click() as Promise<void>);
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_2000] clickSecComponent err : " + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_2000] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
 
@@ -2192,32 +2193,32 @@ export default function pasteComponentStaticTest() {
       await UtilsTest.msSleep(1000);
       try {
         let data: Record<String, RecordData> = {
-          "icon": 0,
-          "textType": 0,
-          "bgType": ButtonType.Normal,
-          "iconSize": 16,
-          "direct": SecurityComponentLayoutDirection.HORIZONTAL,
-          "positionX": '0',
-          "positionY": '0',
-          "anchorX": '0',
-          "anchorY": '0',
-          "offsetX": '0',
-          "offsetY": '0',
-          "fontSize": 16,
-          "fontStyle": FontStyle.Normal,
-          "fontWeight": FontWeight.Medium,
-          "fontColor": Color.Transparent,
-          "iconColor":'#ffffffff',
-          "bgColor": '#ff007dff',
-          "borderSty": BorderStyle.Dashed,
-          "borderWid": 0,
-          "borderCol": '#ffffffff',
-          "borderRad": 0,
-          "left": 12,
-          "right": 12,
-          "top": 4,
-          "bottom": 4,
-          "middle": 4
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': Color.Transparent,
+          'iconColor':'#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4
         };
         let eventData:events_emitter.EventData = {};
         eventData.data = data;
@@ -2225,11 +2226,11 @@ export default function pasteComponentStaticTest() {
           eventId: 1,
           priority: events_emitter.EventPriority.LOW
         }
-        console.info("====>[Test_Security_Button_StaticPaste_2100] start to publish emit");
+        console.info('====>[Test_Security_Button_StaticPaste_2100] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_2100] change component data error: " + err.message);
+        console.error('====>[Test_Security_Button_StaticPaste_2100] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(1000);
       let strJson: string = inspector.getInspectorByKey('keyPaste');
@@ -2244,41 +2245,41 @@ export default function pasteComponentStaticTest() {
         let clickCallback = (clickData:events_emitter.EventData) => {
           if(clickData.data !=undefined){
             const data = clickData.data as Record<string, RecordData>;
-            console.info("====>[Test_Security_Button_StaticPaste_2100] get clickEvent result is: " + JSON.stringify(clickEvent));
-            console.info("====>[Test_Security_Button_StaticPaste_2100] get clickData.data.clickResult is: " + JSON.stringify(data['clickResult']));
+            console.info('====>[Test_Security_Button_StaticPaste_2100] get clickEvent result is: ' + JSON.stringify(clickEvent));
+            console.info('====>[Test_Security_Button_StaticPaste_2100] get clickData.data.clickResult is: ' + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == PasteButtonOnClickResult.TEMPORARY_AUTHORIZATION_FAILED) {
-              console.info("====>[Test_Security_Button_StaticPaste_2100] ERR CASE 成功");
+              console.info('====>[Test_Security_Button_StaticPaste_2100] ERR CASE 成功');
               expect(data['clickResult'] == PasteButtonOnClickResult.TEMPORARY_AUTHORIZATION_FAILED).assertTrue();
-              console.info("====>[Test_Security_Button_StaticPaste_2100] END====");
+              console.info('====>[Test_Security_Button_StaticPaste_2100] END====');
               done();
             } else {
-              console.info("====>[Test_Security_Button_StaticPaste_2100] ERR CASE 失败");
+              console.info('====>[Test_Security_Button_StaticPaste_2100] ERR CASE 失败');
               expect(false).assertTrue();
-              console.info("====>[Test_Security_Button_StaticPaste_2100] END====");
+              console.info('====>[Test_Security_Button_StaticPaste_2100] END====');
               done();
             }
           } else {
-            console.info("====>[Test_Security_Button_StaticPaste_2100] ERR CASE 失败");
+            console.info('====>[Test_Security_Button_StaticPaste_2100] ERR CASE 失败');
             expect(false).assertTrue();
-            console.info("====>[Test_Security_Button_StaticPaste_2100] END====");
+            console.info('====>[Test_Security_Button_StaticPaste_2100] END====');
             done();
           }
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_2100] once clickEvent err : " + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_2100] once clickEvent err : ' + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('PasteButton'));
         await UtilsTest.msSleep(500);
-        console.info("====>[Test_Security_Button_StaticPaste_2100] button is:" + JSON.stringify(button));
+        console.info('====>[Test_Security_Button_StaticPaste_2100] button is:' + JSON.stringify(button));
         await (button?.click() as Promise<void>);
         await UtilsTest.msSleep(1000);
       } catch (err) {
         err = err as BusinessError;
-        console.info("====>[Test_Security_Button_StaticPaste_2100] clickSecComponent err : " + JSON.stringify(err));
+        console.error('====>[Test_Security_Button_StaticPaste_2100] clickSecComponent err : ' + JSON.stringify(err));
       }
     });
   })
