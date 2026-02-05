@@ -15,16 +15,143 @@
 
 #include "include/HuksNullptrTest.h"
 #include <huks/native_huks_api.h>
-#include <huks/native_huks_param.h>
+#include  <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
 
 namespace Acts {
 namespace Huks {
 
-static struct OH_Huks_ParamSet* paramSetNullptr = nullptr;
-static struct OH_Huks_Param* paramNullptr = nullptr;
-static struct OH_Huks_Blob* blobNullptr = nullptr;
-static struct OH_Huks_CertChain* certChainNullptr = nullptr;
+static struct OH_Huks_ParamSet *paramSetNullptr = nullptr;
+static struct OH_Huks_Param *paramNullptr = nullptr;
+static struct OH_Huks_Blob *blobNullptr = nullptr;
+static struct OH_Huks_CertChain *certChainNullptr = nullptr;
+
+// Helper function: Test parameter set operations
+static int TestParamSetOperations(struct OH_Huks_ParamSet *paramSet, struct OH_Huks_Param *paramNullptr)
+{
+    OH_Huks_Result ret = OH_Huks_AddParams(paramSet, paramNullptr, 0);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    ret = OH_Huks_BuildParamSet(&paramSet);
+    if (ret.errorCode != OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    ret = OH_Huks_CopyParamSet(paramSet, 0, &paramSet);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    ret = OH_Huks_GetParam(paramSet, 0, &paramNullptr);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    ret = OH_Huks_FreshParamSet(paramSet, 0);
+    if (ret.errorCode != OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    ret = OH_Huks_IsParamSetTagValid(paramSet);
+    if (ret.errorCode != OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    ret = OH_Huks_IsParamSetValid(paramSet, 0);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    return 0;
+}
+
+// Helper function: Test parameter match and SDK operations
+static int TestParamAndSdkOperations(struct OH_Huks_Blob *blobNullptr)
+{
+    struct OH_Huks_Param baseParam = {.tag = OH_HUKS_TAG_ALGORITHM, .uint64Param = (uint64_t)1};
+    struct OH_Huks_Param otherParam = {.tag = OH_HUKS_TAG_ALGORITHM, .uint64Param = (uint64_t)2};
+    OH_Huks_Result ret = OH_Huks_CheckParamMatch(&baseParam, &otherParam);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    ret = OH_Huks_GetSdkVersion(blobNullptr);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    return 0;
+}
+
+// Helper function: Test key operations
+static int TestKeyOperations(struct OH_Huks_Blob *blobNullptr, struct OH_Huks_ParamSet *paramSet,
+                              struct OH_Huks_CertChain *certChainNullptr)
+{
+    OH_Huks_Result ret = OH_Huks_GenerateKeyItem(blobNullptr, paramSet, paramSet);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    ret = OH_Huks_ImportWrappedKeyItem(blobNullptr, blobNullptr, paramSet, blobNullptr);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    ret = OH_Huks_ExportPublicKeyItem(blobNullptr, paramSet, blobNullptr);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    ret = OH_Huks_DeleteKeyItem(blobNullptr, paramSet);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    ret = OH_Huks_GetKeyItemParamSet(blobNullptr, paramSet, paramSet);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    ret = OH_Huks_IsKeyItemExist(blobNullptr, paramSet);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    ret = OH_Huks_AttestKeyItem(blobNullptr, paramSet, certChainNullptr);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    return 0;
+}
+
+// Helper function: Test session operations
+static int TestSessionOperations(struct OH_Huks_Blob *blobNullptr, struct OH_Huks_ParamSet *paramSet)
+{
+    OH_Huks_Result ret = OH_Huks_InitSession(blobNullptr, paramSet, blobNullptr, blobNullptr);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    ret = OH_Huks_UpdateSession(blobNullptr, paramSet, blobNullptr, blobNullptr);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    ret = OH_Huks_FinishSession(blobNullptr, paramSet, blobNullptr, blobNullptr);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    ret = OH_Huks_AbortSession(blobNullptr, paramSet);
+    if (ret.errorCode == OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    return 0;
+}
 
 /**
  * @tc.name   SecurityHuksNapiNullptr0100
@@ -41,105 +168,23 @@ int SecurityHuksNapiNullptr0100()
         return -1;
     }
 
-    ret = OH_Huks_AddParams(paramSetNullptr, paramNullptr, 0);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
+    // 测试参数集操作
+    if (TestParamSetOperations(paramSetNullptr, paramNullptr) != 0) {
         return -1;
     }
 
-    ret = OH_Huks_BuildParamSet(&paramSetNullptr);
-    if (ret.errorCode != OH_HUKS_SUCCESS) {
+    // 测试参数匹配和SDK操作
+    if (TestParamAndSdkOperations(blobNullptr) != 0) {
         return -1;
     }
 
-    ret = OH_Huks_CopyParamSet(paramSetNullptr, 0, &paramSetNullptr);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
+    // 测试密钥操作
+    if (TestKeyOperations(blobNullptr, paramSetNullptr, certChainNullptr) != 0) {
         return -1;
     }
 
-    ret = OH_Huks_GetParam(paramSetNullptr, 0, &paramNullptr);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
-        return -1;
-    }
-
-    ret = OH_Huks_FreshParamSet(paramSetNullptr, 0);
-    if (ret.errorCode != OH_HUKS_SUCCESS) {
-        return -1;
-    }
-
-    ret = OH_Huks_IsParamSetTagValid(paramSetNullptr);
-    if (ret.errorCode != OH_HUKS_SUCCESS) {
-        return -1;
-    }
-
-    ret = OH_Huks_IsParamSetValid(paramSetNullptr, 0);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
-        return -1;
-    }
-
-    struct OH_Huks_Param baseParam = { .tag = OH_HUKS_TAG_ALGORITHM, .uint64Param = (uint64_t)1 };
-    struct OH_Huks_Param otherParam = { .tag = OH_HUKS_TAG_ALGORITHM, .uint64Param = (uint64_t)2 };
-    ret = OH_Huks_CheckParamMatch(&baseParam, &otherParam);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
-        return -1;
-    }
-
-    ret = OH_Huks_GetSdkVersion(blobNullptr);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
-        return -1;
-    }
-
-    ret = OH_Huks_GenerateKeyItem(blobNullptr, paramSetNullptr, paramSetNullptr);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
-        return -1;
-    }
-
-    ret = OH_Huks_ImportWrappedKeyItem(blobNullptr, blobNullptr, paramSetNullptr, blobNullptr);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
-        return -1;
-    }
-
-    ret = OH_Huks_ExportPublicKeyItem(blobNullptr, paramSetNullptr, blobNullptr);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
-        return -1;
-    }
-
-    ret = OH_Huks_DeleteKeyItem(blobNullptr, paramSetNullptr);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
-        return -1;
-    }
-
-    ret = OH_Huks_GetKeyItemParamSet(blobNullptr, paramSetNullptr, paramSetNullptr);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
-        return -1;
-    }
-
-    ret = OH_Huks_IsKeyItemExist(blobNullptr, paramSetNullptr);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
-        return -1;
-    }
-
-    ret = OH_Huks_AttestKeyItem(blobNullptr, paramSetNullptr, certChainNullptr);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
-        return -1;
-    }
-
-    ret = OH_Huks_InitSession(blobNullptr, paramSetNullptr, blobNullptr, blobNullptr);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
-        return -1;
-    }
-
-    ret = OH_Huks_UpdateSession(blobNullptr, paramSetNullptr, blobNullptr, blobNullptr);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
-        return -1;
-    }
-
-    ret = OH_Huks_FinishSession(blobNullptr, paramSetNullptr, blobNullptr, blobNullptr);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
-        return -1;
-    }
-
-    ret = OH_Huks_AbortSession(blobNullptr, paramSetNullptr);
-    if (ret.errorCode == OH_HUKS_SUCCESS) {
+    // 测试会话操作
+    if (TestSessionOperations(blobNullptr, paramSetNullptr) != 0) {
         return -1;
     }
 
