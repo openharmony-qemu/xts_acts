@@ -1,22 +1,18 @@
 body:
   - type: markdown
     attributes:
-      value: "# Review 工具辅助生成用例"
-    
+      value: "# Review 工具辅助"
+
   - type: dropdown
     id: review_check_1
     attributes:
-      label: "标识提交信息中包含 Co-authored-by: Agent 标签"
+      label: "是否基于Review 工具完成检视"
+      description: "详细操作请参考：https://gitcode.com/openharmony/xts_acts/wiki/AI_Review_%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C.md"
       options:
-        - 满足
-        - 不涉及
+        - 是
+        - 否
     validations:
       required: true
-
-  - type: input
-    id: review_check_1_notes
-    attributes:
-      placeholder: 备注（不涉及需说明原因）
 
   - type: markdown
     attributes:
