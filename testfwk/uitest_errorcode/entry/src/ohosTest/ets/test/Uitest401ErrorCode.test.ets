@@ -4397,5 +4397,235 @@ export default function abilityTest() {
       }
       console.log(`${TestTag}, testApi22_Driver_knuckleKnock_17000007 END`);
     })
+
+     /**
+     * @tc.name   testApi22_Driver_injectKnucklePointerAction_17000005
+     * @tc.number UiTest_uitest401_0102
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi22_Driver_injectKnucklePointerAction_17000005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi22_Driver_injectKnucklePointerAction_17000005 start`);
+      let driver = Driver.create()
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(0, 0, {x: 100, y: 100})                
+        await driver.injectKnucklePointerAction(points, null);
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_injectKnucklePointerAction_17000005, spe = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(17000005);
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(0, 0, {x: 100, y: 100})                
+        await driver.injectKnucklePointerAction(points, undefined);
+      } catch (error) {
+        console.log(TestTag, `testApi22_Driver_injectKnucklePointerAction_17000005, spe = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(17000005);
+      }
+      console.log(`${TestTag}, testApi22_Driver_injectKnucklePointerAction_17000005 END`);
+    })
+
+     /**
+     * @tc.name   testApi9_UiWindow_moveTo_401
+     * @tc.number UiTest_uitest401_0102
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi9_UiWindow_moveTo_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi9_UiWindow_moveTo_401 start`);
+      let driver = Driver.create()
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(1000)
+      try {
+        let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'})
+        await window.moveTo(null, 100)
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_UiWindow_moveTo_401, x = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'})
+        await window.moveTo(undefined, 100)
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_UiWindow_moveTo_401, x = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'})
+        await window.moveTo(100, null)
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_UiWindow_moveTo_401, y = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'})
+        await window.moveTo(100, undefined)
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_UiWindow_moveTo_401, y = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      await stopApplication('com.uitestScene.acts')
+      console.log(`${TestTag}, testApi9_UiWindow_moveTo_401 END`);
+    })
+
+     /**
+     * @tc.name   testApi9_UiWindow_resize_401
+     * @tc.number UiTest_uitest401_0103
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi9_UiWindow_resize_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi9_UiWindow_resize_401 start`);
+      let driver = Driver.create()
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(1000)
+      try {
+        let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'})
+        await window.resize(null, 100, ResizeDirection.UP)
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_UiWindow_resize_401, width = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'})
+        await window.resize(undefined, 100, ResizeDirection.DOWN)
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_UiWindow_resize_401, width = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'})
+        await window.resize(100, null, ResizeDirection.LEFT)
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_UiWindow_resize_401, height = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'})
+        await window.resize(100, undefined, ResizeDirection.RIGHT)
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_UiWindow_resize_401, height = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      await stopApplication('com.uitestScene.acts')
+      console.log(`${TestTag}, testApi9_UiWindow_resize_401 END`);
+    })
+
+     /**
+     * @tc.name   testApi9_PointerMatrix_create_401
+     * @tc.number UiTest_uitest401_0104
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi9_PointerMatrix_create_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi9_PointerMatrix_create_401 start`);
+      try {
+        let points = PointerMatrix.create(null, 1);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_PointerMatrix_create_401, finger = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let points = PointerMatrix.create(undefined, 1);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_PointerMatrix_create_401, finger = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let points = PointerMatrix.create(1, null);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_PointerMatrix_create_401, step = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let points = PointerMatrix.create(1, undefined);
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_PointerMatrix_create_401, step = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      console.log(`${TestTag}, testApi9_PointerMatrix_create_401 END`);
+    })
+
+     /**
+     * @tc.name   testApi9_PointerMatrix_setPoint_401
+     * @tc.number UiTest_uitest401_0105
+     * @tc.desc   type 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi9_PointerMatrix_setPoint_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi9_PointerMatrix_setPoint_401 start`);
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(null, 0, {x: 100, y: 100})
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_PointerMatrix_setPoint_401, finger = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(undefined, 0, {x: 100, y: 100})
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_PointerMatrix_setPoint_401, finger = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(0, null, {x: 100, y: 100})
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_PointerMatrix_setPoint_401, step = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(0, undefined, {x: 100, y: 100})
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_PointerMatrix_setPoint_401, step = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(0, 0, null)
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_PointerMatrix_setPoint_401, point = null error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      try {
+        let points = PointerMatrix.create(1, 1);
+        points.setPoint(0, 0, undefined)
+        expect().assertFail();
+      } catch (error) {
+        console.log(TestTag, `testApi9_PointerMatrix_setPoint_401, point = undefined error is, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ErrorCode);
+      }
+      console.log(`${TestTag}, testApi9_PointerMatrix_setPoint_401 END`);
+    })
   })
 }
