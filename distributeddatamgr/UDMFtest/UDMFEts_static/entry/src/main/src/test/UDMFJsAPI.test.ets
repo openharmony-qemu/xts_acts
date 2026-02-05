@@ -3680,10 +3680,10 @@ export default function UDMFJsApiTest() {
           visibility: unifiedDataChannel.Visibility.ALL
         };
         try {
-          unifiedDataChannel.updateData(options1,unifiedData1).then((ret) =>{
+          await unifiedDataChannel.updateData(options1,unifiedData1).then((ret) =>{
             console.info(`updateData success; data = ${ret}, options = ${options1}`);
             expect(options1.visibility).assertEqual(unifiedDataChannel.Visibility.ALL);
-            unifiedDataChannel.queryData(options1).then((ret: Array<unifiedDataChannel.UnifiedData>) => {
+            await unifiedDataChannel.queryData(options1).then((ret: Array<unifiedDataChannel.UnifiedData>) => {
               let size = ret.length;
               console.info(`data.size = ${size}`);
               for (let i = 0; i < size; i++) {
@@ -3703,7 +3703,7 @@ export default function UDMFJsApiTest() {
                   }
                 }
               }
-              unifiedDataChannel.deleteData(options1);
+              await unifiedDataChannel.deleteData(options1);
               done();
             }).catch((err1) => {
               let err = err1 as BusinessError;
@@ -3728,7 +3728,6 @@ export default function UDMFJsApiTest() {
         done();
       }
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9470 end");
-      done();
     })
 
     /**
@@ -3790,7 +3789,7 @@ export default function UDMFJsApiTest() {
         };
         let options5: unifiedDataChannel.Options = {
           intention: unifiedDataChannel.Intention.DATA_HUB,
-          key: keyData
+          key: keyData1
         };
         await unifiedDataChannel.deleteData(options4);
         await unifiedDataChannel.deleteData(options5);
@@ -3798,6 +3797,7 @@ export default function UDMFJsApiTest() {
       }catch(err){
         console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9480 " + err.code + err.message);
         expect().assertFail();
+        done();
       }
     })
 
@@ -3859,7 +3859,7 @@ export default function UDMFJsApiTest() {
         };
         let options5: unifiedDataChannel.Options = {
           intention: unifiedDataChannel.Intention.DATA_HUB,
-          key: keyData
+          key: keyData1
         };
         await unifiedDataChannel.deleteData(options4);
         await unifiedDataChannel.deleteData(options5);
@@ -3867,6 +3867,7 @@ export default function UDMFJsApiTest() {
       }catch(err){
         console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9480 " + err.code + err.message);
         expect().assertFail();
+        done();
       }
     })
 

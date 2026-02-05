@@ -4612,7 +4612,7 @@ export default function UDMFApiTest() {
         };
         let options5: unifiedDataChannel.Options = {
           intention: unifiedDataChannel.Intention.DATA_HUB,
-          key: keyData
+          key: keyData1
         };
         await unifiedDataChannel.deleteData(options4);
         await unifiedDataChannel.deleteData(options5);
@@ -4620,6 +4620,7 @@ export default function UDMFApiTest() {
       }catch(err){
         console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9480 " + err.code + err.message);
         expect().assertFail();
+        done();
       }
     })
 
@@ -4681,7 +4682,7 @@ export default function UDMFApiTest() {
         };
         let options5: unifiedDataChannel.Options = {
           intention: unifiedDataChannel.Intention.DATA_HUB,
-          key: keyData
+          key: keyData1
         };
         await unifiedDataChannel.deleteData(options4);
         await unifiedDataChannel.deleteData(options5);
@@ -4689,6 +4690,7 @@ export default function UDMFApiTest() {
       }catch(err){
         console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9480 " + err.code + err.message);
         expect().assertFail();
+        done();
       }
     })
 
