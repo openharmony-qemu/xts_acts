@@ -15,7 +15,7 @@
 import events_emitter from '@ohos.events.emitter';
 import { expect } from '@ohos/hypium';
 import { Driver, ON, PointerMatrix } from '@ohos.UiTest';
-import { ComponentInfo, RectInfo } from './Interfaces';
+import { ComponentInfo, RectInfo } from './Interfaces.test';
 import systemDateTime from '@ohos.systemDateTime';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import fs from '@ohos.file.fs';
