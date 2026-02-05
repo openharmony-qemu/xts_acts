@@ -330,7 +330,7 @@ export default function wallpaperAuthorityJSUnit() {
          */
         it('testSetWallpaperURLCallbackLock104', Level.LEVEL2, async (done: Function) => {
             console.info('--------------------testSetWallpaperURLCallbackLock104 start------------------' );
-            wallpaper.setWallpaper(imageSourceSystem, WALLPAPER_LOCKSCREEN, (err, data) => {
+            wallpaper.setWallpaper(imageSourceSystem, wallpaper.WallpaperType.WALLPAPER_LOCKSCREEN, (err, data) => {
                 try{
                     console.info(`====>testSetWallpaperURLCallbackLock104 successful data: ${data},err: ${err}`);
                     expect(err == undefined).assertTrue();
@@ -580,7 +580,7 @@ export default function wallpaperAuthorityJSUnit() {
          */
         it('testSetWallpaperURLCallbackSystem1031', Level.LEVEL3, async (done: Function) => {
             console.info('====>------testSetWallpaperURLCallbackSystem1031 start------------' );
-            wallpaper.setWallpaper(null, WALLPAPER_SYSTEM, (err, data) => {
+            wallpaper.setWallpaper(null, wallpaper.WallpaperType.WALLPAPER_SYSTEM, (err, data) => {
                 try{
                     if (err) {
                         console.info(`====>testSetWallpaperURLCallbackSystem1031 err.code: ${err.code}  err.message: ${err.message}`);
