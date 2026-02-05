@@ -217,7 +217,7 @@ async function testCompleteButton(driver: Driver, options: router.RouterOptions,
 
 async function savePhoto() {
   console.log('savePhoto start');
-  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext(this));
+  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
   try {
     let uri = 'data/storage/el2/base/haps/files/demo.jpg';
     let fileUriList = [fileUri.getUriFromPath(uri)];
