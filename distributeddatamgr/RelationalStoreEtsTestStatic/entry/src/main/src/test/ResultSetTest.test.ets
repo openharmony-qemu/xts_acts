@@ -33,7 +33,7 @@ import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let domain: int = 0x0000;
 let tag: string = "[ResultSetTest]";
@@ -45,7 +45,7 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
   name: dbName,
   securityLevel: relationalStore.SecurityLevel.S1,
 }
-let rdbStore: relationalStore.RdbStore;
+let rdbStore: relationalStore.RdbStore | undefined;
 
 export default function ResultSetTest() {
   describe('ResultSetTest', (): void => {
@@ -59,9 +59,9 @@ export default function ResultSetTest() {
 
     beforeEach(async () : Promise<void> => {
       hilog.info(domain, tag, 'beforeEach start');
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       hilog.info(domain, tag, "create rdb store success")
-      await rdbStore.executeSql(CREATE_TABLE_TEST);
+      await rdbStore!.executeSql(CREATE_TABLE_TEST);
       // 插入测试数据
       const values1: relationalStore.ValuesBucket = {
         "name": "Alice",
@@ -77,14 +77,14 @@ export default function ResultSetTest() {
         "email": "bob@example.com",
         "data": new Uint8Array([4, 5, 6])
       };
-      await rdbStore.insert("test", values1);
-      await rdbStore.insert("test", values2);
+      await rdbStore!.insert("test", values1);
+      await rdbStore!.insert("test", values2);
       hilog.info(domain, tag, 'beforeEach end');
     });
 
     afterEach(async () : Promise<void> => {
       hilog.info(domain, tag, 'afterEach start');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG)
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG)
       hilog.info(domain, tag, 'afterEach end');
     });
 
@@ -105,7 +105,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testColumnNamesProperty start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         let columnNames = resultSet.columnNames;
         hilog.info(domain, tag, `columnNames: ${JSON.stringify(columnNames)}`);
         expect(columnNames.length).assertLarger(0);
@@ -133,7 +133,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testColumnCountProperty start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         expect(resultSet.columnCount).assertEqual(6); // id, name, age, salary, email, data
         resultSet.close();
         done();
@@ -157,7 +157,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGetColumnNames start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         let columnNames = resultSet.getColumnNames();
         expect(columnNames.length).assertLarger(0);
         resultSet.close();
@@ -182,7 +182,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGetColumnIndex start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         let index = resultSet.getColumnIndex("name");
         expect(index).assertLarger(-1);
         resultSet.close();
@@ -207,7 +207,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGetColumnName start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         let name = resultSet.getColumnName(1);
         expect(name.length).assertLarger(0);
         resultSet.close();
@@ -232,7 +232,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGetColumnType start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         resultSet.goToFirstRow();
         let type = await resultSet.getColumnType(1);
         expect(type).assertEqual(relationalStore.ColumnType.TEXT);
@@ -247,6 +247,30 @@ export default function ResultSetTest() {
     })
 
     /**
+     * @tc.name   testGetColumnTypeWhenCursorIsInvalid
+     * @tc.number SUB_DDM_RELATIONALSTORE_RESULTSET_GETCOLUMNTYPE_0200
+     * @tc.desc   Test getColumnType method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetColumnTypeWhenCursorIsInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, "************* testGetColumnTypeWhenCursorIsInvalid start *************");
+      let predicates = new relationalStore.RdbPredicates("test");
+      let resultSet = await rdbStore!.query(predicates, []);
+      try {
+        let type = await resultSet.getColumnType(1);
+        expect().assertFail();
+      } catch (err) {
+        hilog.error(domain, tag, `testGetColumnTypeWhenCursorIsInvalid failed: ${err.code + ", " + err.message}`);
+        expect(err.code).assertEqual(14800012);
+        resultSet.close();
+        done();
+      }
+      hilog.info(domain, tag, "************* testGetColumnTypeWhenCursorIsInvalid end *************");
+    })
+
+    /**
      * @tc.name   testGetColumnTypeSync
      * @tc.number SUB_DDM_RELATIONALSTORE_RESULTSET_GETCOLUMNTYPESYNC_0100
      * @tc.desc   Test getColumnTypeSync method
@@ -258,7 +282,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGetColumnTypeSync start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         resultSet.goToFirstRow();
         let type = resultSet.getColumnTypeSync(1);
         expect(type).assertEqual(relationalStore.ColumnType.TEXT);
@@ -284,7 +308,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGoToFirstRow start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         let result = resultSet.goToFirstRow();
         expect(result).assertTrue();
         resultSet.close();
@@ -309,7 +333,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGoToLastRow start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         let result = resultSet.goToLastRow();
         expect(result).assertTrue();
         resultSet.close();
@@ -334,7 +358,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGoToNextRow start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         resultSet.goToFirstRow();
         let result = resultSet.goToNextRow();
         expect(result).assertTrue();
@@ -360,7 +384,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGoToPreviousRow start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         resultSet.goToFirstRow();
         resultSet.goToNextRow();
         let result = resultSet.goToPreviousRow();
@@ -387,7 +411,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGoTo start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         let result = resultSet.goTo(1);
         expect(result).assertTrue();
         resultSet.close();
@@ -412,7 +436,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGoToRow start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         let result = resultSet.goToRow(0);
         expect(result).assertTrue();
         resultSet.close();
@@ -437,7 +461,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGetString start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         resultSet.goToFirstRow();
         let name = resultSet.getString(resultSet.getColumnIndex("name"));
         expect(name).assertEqual("Alice");
@@ -463,7 +487,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGetLong start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         resultSet.goToFirstRow();
         let age = resultSet.getLong(resultSet.getColumnIndex("age"));
         expect(age).assertEqual(25);
@@ -489,7 +513,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGetDouble start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         resultSet.goToFirstRow();
         let salary = resultSet.getDouble(resultSet.getColumnIndex("salary"));
         expect(salary).assertEqual(5000.50);
@@ -515,7 +539,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGetBlob start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         resultSet.goToFirstRow();
         let data = resultSet.getBlob(resultSet.getColumnIndex("data"));
         expect(data.length).assertEqual(3);
@@ -547,11 +571,11 @@ export default function ResultSetTest() {
           "age": 35 as long,
           "salary": 7000.00,
         };
-        await rdbStore.insert("test", values);
+        await rdbStore!.insert("test", values);
 
         let predicates = new relationalStore.RdbPredicates("test");
         predicates.equalTo("name", "Charlie");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         resultSet.goToFirstRow();
         let isNull = resultSet.isColumnNull(resultSet.getColumnIndex("email"));
         expect(isNull).assertTrue();
@@ -577,7 +601,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testClose start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         resultSet.close();
         done();
       } catch (err) {
@@ -600,7 +624,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGetRow start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         resultSet.goToFirstRow();
         let row = resultSet.getRow();
         expect(row !== undefined).assertTrue();
@@ -627,7 +651,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGetValue start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         resultSet.goToFirstRow();
         let value = resultSet.getValue(resultSet.getColumnIndex("name"));
         expect(value !== undefined).assertTrue();
@@ -653,7 +677,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGetRows start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         let rows = await resultSet.getRows(10);
         expect(rows.length).assertEqual(2);
         resultSet.close();
@@ -678,7 +702,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGetCurrentRowData start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         resultSet.goToFirstRow();
         let rowData = resultSet.getCurrentRowData();
         expect(rowData.length).assertLarger(0);
@@ -704,7 +728,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGetRowsData start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         let rowsData = await resultSet.getRowsData(10);
         expect(rowsData.length).assertEqual(2);
         resultSet.close();
@@ -729,7 +753,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGetRowsWithPosition start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         let rows = await resultSet.getRows(1, 0);
         expect(rows.length).assertEqual(1);
         resultSet.close();
@@ -754,7 +778,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGetRowsDataWithPosition start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         let rowsData = await resultSet.getRowsData(1, 0);
         expect(rowsData.length).assertEqual(1);
         resultSet.close();
@@ -779,7 +803,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testRowCountProperty start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         expect(resultSet.rowCount).assertEqual(2);
         resultSet.close();
         done();
@@ -803,7 +827,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testRowIndexProperty start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         resultSet.goToFirstRow();
         expect(resultSet.rowIndex).assertEqual(0);
         resultSet.close();
@@ -828,7 +852,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testIsAtFirstRowProperty start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         resultSet.goToFirstRow();
         expect(resultSet.isAtFirstRow).assertTrue();
         resultSet.close();
@@ -853,7 +877,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testIsAtLastRowProperty start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         resultSet.goToLastRow();
         expect(resultSet.isAtLastRow).assertTrue();
         resultSet.close();
@@ -878,7 +902,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testIsEndedProperty start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         expect(resultSet.isEnded).assertFalse();
         resultSet.goToLastRow();
         resultSet.goToNextRow();
@@ -905,7 +929,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testIsStartedProperty start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         expect(resultSet.isStarted).assertFalse();
         resultSet.goToFirstRow();
         expect(resultSet.isStarted).assertTrue();
@@ -931,7 +955,7 @@ export default function ResultSetTest() {
       hilog.info(domain, tag, "************* testGoToInvalidOffset start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await rdbStore.query(predicates, []);
+        let resultSet = await rdbStore!.query(predicates, []);
         let result = resultSet.goTo(100);
         expect(result).assertFalse();
         resultSet.close();

@@ -74,6 +74,10 @@ import RdbLockRow from "./RdbLockRow.test"
 import RdbStoreDuplicateColumnsTest from "./RdbStoreDuplicateColumns.test";
 import RdbStoreErrorCodeAddTest from "./RdbStoreErrorCodeAdd.test";
 import RdbStoreErrorCodeAdd2Test from "./RdbStoreErrorCodeAdd2.test";
+import RdbPredicatesTest from "./RdbPredicatesTest.test";
+import ResultSetTest from "./ResultSetTest.test";
+import RdbStoreTest from "./RdbStoreTest.test";
+import TransactionTest from "./TransactionTest.test";
 
 export default function testsuite() {
   RelationStoreRdbStoreTest();
@@ -148,4 +152,9 @@ export default function testsuite() {
   RdbStoreDuplicateColumnsTest();
   RdbStoreErrorCodeAddTest();
   RdbStoreErrorCodeAdd2Test();
+
+  RdbPredicatesTest();
+  ResultSetTest();
+  RdbStoreTest();
+  TransactionTest();
 }

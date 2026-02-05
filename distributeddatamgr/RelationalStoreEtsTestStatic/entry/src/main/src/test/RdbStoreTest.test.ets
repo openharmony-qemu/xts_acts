@@ -34,7 +34,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let domain: int = 0x0000;
 let tag: string = "[RdbStoreTest]";
@@ -46,7 +46,7 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
   name: dbName,
   securityLevel: relationalStore.SecurityLevel.S1,
 }
-let rdbStore: relationalStore.RdbStore;
+let rdbStore: relationalStore.RdbStore | undefined;
 
 export default function RdbStoreTest() {
   describe('RdbStoreTest', (): void => {
@@ -60,9 +60,9 @@ export default function RdbStoreTest() {
 
     beforeEach(async () : Promise<void> => {
       hilog.info(domain, tag, 'beforeEach start');
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       hilog.info(domain, tag, "create rdb store success")
-      await rdbStore.executeSql(CREATE_TABLE_TEST);
+      await rdbStore!.executeSql(CREATE_TABLE_TEST);
       // 插入测试数据
       const values1: relationalStore.ValuesBucket = {
         "name": "Alice",
@@ -74,14 +74,14 @@ export default function RdbStoreTest() {
         "age": 30 as long,
         "salary": 6000.00,
       };
-      await rdbStore.insert("test", values1);
-      await rdbStore.insert("test", values2);
+      await rdbStore!.insert("test", values1);
+      await rdbStore!.insert("test", values2);
       hilog.info(domain, tag, 'beforeEach end');
     });
 
     afterEach(async () : Promise<void> => {
       hilog.info(domain, tag, 'afterEach start');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG)
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG)
       hilog.info(domain, tag, 'afterEach end');
     });
 
@@ -104,7 +104,7 @@ export default function RdbStoreTest() {
         try {
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "Alice");
-          rdbStore.query(predicates, (err, resultSet) => {
+          rdbStore!.query(predicates, (err, resultSet) => {
             if (err) {
               hilog.error(domain, tag, `testQueryWithPredicatesNormal failed: ${err.code + ", " + err.message}`);
               expect().assertFail();
@@ -145,7 +145,7 @@ export default function RdbStoreTest() {
         try {
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("age", 25 as long);
-          rdbStore.query(predicates, ["name", "age"], (err, resultSet) => {
+          rdbStore!.query(predicates, ["name", "age"], (err, resultSet) => {
             if (err) {
               hilog.error(domain, tag, `testQueryWithPredicatesAndColumns failed: ${err.code + ", " + err.message}`);
               expect().assertFail();
@@ -187,7 +187,7 @@ export default function RdbStoreTest() {
         try {
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("nonexistent", "value");
-          rdbStore.query(predicates, (err, resultSet) => {
+          rdbStore!.query(predicates, (err, resultSet) => {
             if (err) {
               hilog.info(domain, tag, `testQueryWithNullPredicates expected error: ${err.code + ", " + err.message}`);
               expect(err.code !== 0).assertTrue();
@@ -222,7 +222,7 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testQuerySqlNormal start *************");
         try {
-          rdbStore.querySql("SELECT * FROM test WHERE name = ?", ["Alice"], (err, resultSet) => {
+          rdbStore!.querySql("SELECT * FROM test WHERE name = ?", ["Alice"], (err, resultSet) => {
             if (err) {
               hilog.error(domain, tag, `testQuerySqlNormal failed: ${err.code + ", " + err.message}`);
               expect().assertFail();
@@ -261,7 +261,7 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testQuerySqlWithoutBindArgs start *************");
         try {
-          rdbStore.querySql("SELECT * FROM test", (err, resultSet) => {
+          rdbStore!.querySql("SELECT * FROM test", (err, resultSet) => {
             if (err) {
               hilog.error(domain, tag, `testQuerySqlWithoutBindArgs failed: ${err.code + ", " + err.message}`);
               expect().assertFail();
@@ -298,7 +298,7 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testQuerySqlWithInvalidSql start *************");
         try {
-          rdbStore.querySql("INVALID SQL STATEMENT", (err, resultSet) => {
+          rdbStore!.querySql("INVALID SQL STATEMENT", (err, resultSet) => {
             if (err) {
               hilog.info(domain, tag, `testQuerySqlWithInvalidSql expected error: ${err.code + ", " + err.message}`);
               expect(err.code !== 0).assertTrue();
@@ -331,20 +331,20 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testBeginTransactionNormal start *************");
         try {
-          rdbStore.beginTransaction();
+          rdbStore!.beginTransaction();
           const values: relationalStore.ValuesBucket = {
             "name": "Charlie",
             "age": 35 as long,
             "salary": 7000.00,
           };
-          await rdbStore.insert("test", values);
+          await rdbStore!.insert("test", values);
           // 提交事务
-          rdbStore.commit();
+          rdbStore!.commit();
 
           // 验证数据已插入
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "Charlie");
-          let resultSet = await rdbStore.query(predicates, []);
+          let resultSet = await rdbStore!.query(predicates, []);
           expect(resultSet.rowCount).assertEqual(1);
           resultSet.close();
           done();
@@ -369,21 +369,21 @@ export default function RdbStoreTest() {
         hilog.info(domain, tag, "************* testBeginTransactionRollback start *************");
         try {
           // 开始事务
-          rdbStore.beginTransaction();
+          rdbStore!.beginTransaction();
           const values: relationalStore.ValuesBucket = {
             "name": "David",
             "age": 40 as long,
             "salary": 8000.00,
           };
-          await rdbStore.insert("test", values);
+          await rdbStore!.insert("test", values);
 
           // 回滚事务
-          rdbStore.rollBack();
+          rdbStore!.rollBack();
 
           // 验证数据未插入
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "David");
-          let resultSet = await rdbStore.query(predicates, []);
+          let resultSet = await rdbStore!.query(predicates, []);
           expect(resultSet.rowCount).assertEqual(0);
           resultSet.close();
           done();
@@ -408,29 +408,29 @@ export default function RdbStoreTest() {
         hilog.info(domain, tag, "************* testBeginTransactionMultiple start *************");
         try {
           // 第一次开始事务
-          rdbStore.beginTransaction();
+          rdbStore!.beginTransaction();
           const values1: relationalStore.ValuesBucket = {
             "name": "Eve",
             "age": 28 as long,
             "salary": 5500.00,
           };
-          await rdbStore.insert("test", values1);
-          rdbStore.commit();
+          await rdbStore!.insert("test", values1);
+          rdbStore!.commit();
 
           // 第二次开始事务
-          rdbStore.beginTransaction();
+          rdbStore!.beginTransaction();
           const values2: relationalStore.ValuesBucket = {
             "name": "Frank",
             "age": 32 as long,
             "salary": 6500.00,
           };
-          await rdbStore.insert("test", values2);
-          rdbStore.commit();
+          await rdbStore!.insert("test", values2);
+          rdbStore!.commit();
 
           // 验证两条数据都已插入
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "Eve").or().equalTo("name", "Frank");
-          let resultSet = await rdbStore.query(predicates, []);
+          let resultSet = await rdbStore!.query(predicates, []);
           expect(resultSet.rowCount).assertEqual(2);
           resultSet.close();
           done();
@@ -456,7 +456,7 @@ export default function RdbStoreTest() {
         try {
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "NonExistent");
-          rdbStore.query(predicates, (err, resultSet) => {
+          rdbStore!.query(predicates, (err, resultSet) => {
             if (err) {
               hilog.error(domain, tag, `testQueryWithEmptyResultSet failed: ${err.code + ", " + err.message}`);
               expect().assertFail();
@@ -494,7 +494,7 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testQuerySqlWithEmptyBindArgs start *************");
         try {
-          rdbStore.querySql("SELECT * FROM test WHERE name = ?", [], (err, resultSet) => {
+          rdbStore!.querySql("SELECT * FROM test WHERE name = ?", [], (err, resultSet) => {
             // 空绑定参数应该导致错误
             if (err) {
               hilog.info(domain, tag, `testQuerySqlWithEmptyBindArgs expected error: ${err.code + ", " + err.message}`);
@@ -538,7 +538,7 @@ export default function RdbStoreTest() {
             .greaterThanOrEqualTo("age", 20 as long)
             .orderByAsc("age")
             .limitAs(10);
-          rdbStore.query(predicates, (err, resultSet) => {
+          rdbStore!.query(predicates, (err, resultSet) => {
             if (err) {
               hilog.error(domain, tag, `testQueryWithComplexPredicates failed: ${err.code + ", " + err.message}`);
               expect().assertFail();
@@ -582,7 +582,7 @@ export default function RdbStoreTest() {
             "age": 35 as long,
             "salary": 7000.00,
           };
-          let id = await rdbStore.insert("test", values);
+          let id = await rdbStore!.insert("test", values);
           expect(id).assertLarger(0);
           done();
         } catch (err) {
@@ -610,7 +610,7 @@ export default function RdbStoreTest() {
             "age": 40 as long,
             "salary": 8000.00,
           };
-          let id = await rdbStore.insert("test", values, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+          let id = await rdbStore!.insert("test", values, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           expect(id).assertLarger(0);
           done();
         } catch (err) {
@@ -638,7 +638,7 @@ export default function RdbStoreTest() {
             "age": 28 as long,
             "salary": 5500.00,
           };
-          rdbStore.insert("test", values, (err, id) => {
+          rdbStore!.insert("test", values, (err, id) => {
             if (err) {
               hilog.error(domain, tag, `testInsertCallback failed: ${err.code + ", " + err.message}`);
               expect().assertFail();
@@ -673,7 +673,7 @@ export default function RdbStoreTest() {
             "age": 32 as long,
             "salary": 6500.00,
           };
-          let id = rdbStore.insertSync("test", values);
+          let id = rdbStore!.insertSync("test", values);
           expect(id).assertLarger(0);
           done();
         } catch (err) {
@@ -700,7 +700,7 @@ export default function RdbStoreTest() {
             { "name": "Grace", "age": 27 as long, "salary": 5700.00 },
             { "name": "Henry", "age": 33 as long, "salary": 6700.00 }
           ];
-          let num = await rdbStore.batchInsert("test", values);
+          let num = await rdbStore!.batchInsert("test", values);
           expect(num).assertEqual(2);
           done();
         } catch (err) {
@@ -727,7 +727,7 @@ export default function RdbStoreTest() {
             { "name": "Iris", "age": 29 as long, "salary": 5900.00 },
             { "name": "Jack", "age": 31 as long, "salary": 6300.00 }
           ];
-          let num = rdbStore.batchInsertSync("test", values);
+          let num = rdbStore!.batchInsertSync("test", values);
           expect(num).assertEqual(2);
           done();
         } catch (err) {
@@ -754,7 +754,7 @@ export default function RdbStoreTest() {
             { "name": "Kate", "age": 26 as long, "salary": 5200.00 },
             { "name": "Leo", "age": 34 as long, "salary": 6800.00 }
           ];
-          let num = await rdbStore.batchInsertWithConflictResolution("test", values,
+          let num = await rdbStore!.batchInsertWithConflictResolution("test", values,
             relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           expect(num).assertEqual(2);
           done();
@@ -782,7 +782,7 @@ export default function RdbStoreTest() {
             { "name": "Mia", "age": 24 as long, "salary": 5400.00 },
             { "name": "Noah", "age": 36 as long, "salary": 7200.00 }
           ];
-          let num = rdbStore.batchInsertWithConflictResolutionSync("test", values,
+          let num = rdbStore!.batchInsertWithConflictResolutionSync("test", values,
             relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           expect(num).assertEqual(2);
           done();
@@ -811,7 +811,7 @@ export default function RdbStoreTest() {
             "age": 38 as number,
             "salary": 7500.00,
           };
-          rdbStore.insert("test", values, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE, (err, id) => {
+          rdbStore!.insert("test", values, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE, (err, id) => {
             if (err) {
               hilog.error(domain, tag, `testInsertCallbackWithConflict failed: ${err.code + ", " + err.message}`);
               expect().assertFail();
@@ -845,7 +845,7 @@ export default function RdbStoreTest() {
             { "name": "Paul", "age": 30 as number, "salary": 6000.00 },
             { "name": "Quinn", "age": 32 as number, "salary": 6200.00 }
           ];
-          rdbStore.batchInsert("test", values, (err, num) => {
+          rdbStore!.batchInsert("test", values, (err, num) => {
             if (err) {
               hilog.error(domain, tag, `testBatchInsertCallback failed: ${err.code + ", " + err.message}`);
               expect().assertFail();
@@ -879,7 +879,7 @@ export default function RdbStoreTest() {
         try {
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "Alice");
-          let count = await rdbStore.delete(predicates);
+          let count = await rdbStore!.delete(predicates);
           expect(count).assertEqual(1);
           done();
         } catch (err) {
@@ -904,7 +904,7 @@ export default function RdbStoreTest() {
         try {
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "Bob");
-          rdbStore.delete(predicates, (err, count) => {
+          rdbStore!.delete(predicates, (err, count) => {
             if (err) {
               hilog.error(domain, tag, `testDeleteCallback failed: ${err.code + ", " + err.message}`);
               expect().assertFail();
@@ -936,7 +936,7 @@ export default function RdbStoreTest() {
         try {
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("age", 25 as long);
-          let count = rdbStore.deleteSync(predicates);
+          let count = rdbStore!.deleteSync(predicates);
           expect(count).assertEqual(1);
           done();
         } catch (err) {
@@ -961,7 +961,7 @@ export default function RdbStoreTest() {
         try {
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "NonExistent");
-          let count = await rdbStore.delete(predicates);
+          let count = await rdbStore!.delete(predicates);
           expect(count).assertEqual(0);
           done();
         } catch (err) {
@@ -991,7 +991,7 @@ export default function RdbStoreTest() {
           };
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "Alice");
-          let count = await rdbStore.update(values, predicates);
+          let count = await rdbStore!.update(values, predicates);
           expect(count).assertEqual(1);
           done();
         } catch (err) {
@@ -1019,7 +1019,7 @@ export default function RdbStoreTest() {
           };
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "Bob");
-          let count = await rdbStore.update(values, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+          let count = await rdbStore!.update(values, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           expect(count).assertEqual(1);
           done();
         } catch (err) {
@@ -1047,7 +1047,7 @@ export default function RdbStoreTest() {
           };
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("age", 25 as long);
-          rdbStore.update(values, predicates, (err, count) => {
+          rdbStore!.update(values, predicates, (err, count) => {
             if (err) {
               hilog.error(domain, tag, `testUpdateCallback failed: ${err.code + ", " + err.message}`);
               expect().assertFail();
@@ -1082,7 +1082,7 @@ export default function RdbStoreTest() {
           };
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "Alice");
-          let count = rdbStore.updateSync(values, predicates);
+          let count = rdbStore!.updateSync(values, predicates);
           expect(count).assertEqual(1);
           done();
         } catch (err) {
@@ -1110,7 +1110,7 @@ export default function RdbStoreTest() {
           };
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.greaterThanOrEqualTo("age", 20 as long);
-          let count = await rdbStore.update(values, predicates);
+          let count = await rdbStore!.update(values, predicates);
           expect(count).assertLarger(0);
           done();
         } catch (err) {
@@ -1138,7 +1138,7 @@ export default function RdbStoreTest() {
           };
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "NonExistent");
-          let count = await rdbStore.update(values, predicates);
+          let count = await rdbStore!.update(values, predicates);
           expect(count).assertEqual(0);
           done();
         } catch (err) {
@@ -1166,7 +1166,7 @@ export default function RdbStoreTest() {
           };
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "Alice");
-          rdbStore.update(values, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE, (err, count) => {
+          rdbStore!.update(values, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE, (err, count) => {
             if (err) {
               hilog.error(domain, tag, `testUpdateCallbackWithConflict failed: ${err.code + ", " + err.message}`);
               expect().assertFail();
@@ -1200,7 +1200,7 @@ export default function RdbStoreTest() {
         try {
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "Alice");
-          let resultSet = await rdbStore.query(predicates);
+          let resultSet = await rdbStore!.query(predicates);
           expect(resultSet.rowCount).assertEqual(1);
           resultSet.close();
           done();
@@ -1225,7 +1225,7 @@ export default function RdbStoreTest() {
       try {
         let predicates = new relationalStore.RdbPredicates("test");
         predicates.equalTo("age", 25 as number);
-        let resultSet = rdbStore.querySync(predicates, ["name", "age"]);
+        let resultSet = rdbStore!.querySync(predicates, ["name", "age"]);
         expect(resultSet.rowCount).assertEqual(1);
         resultSet.close();
         done();
@@ -1249,7 +1249,7 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testQuerySqlPromise start *************");
         try {
-          let resultSet = await rdbStore.querySql("SELECT * FROM test WHERE name = ?", ["Alice"]);
+          let resultSet = await rdbStore!.querySql("SELECT * FROM test WHERE name = ?", ["Alice"]);
           expect(resultSet.rowCount).assertEqual(1);
           resultSet.close();
           done();
@@ -1273,7 +1273,7 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testQuerySqlSync start *************");
         try {
-          let resultSet = rdbStore.querySqlSync("SELECT * FROM test");
+          let resultSet = rdbStore!.querySqlSync("SELECT * FROM test");
           expect(resultSet.rowCount).assertLarger(0);
           resultSet.close();
           done();
@@ -1299,12 +1299,12 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testExecuteSqlPromise start *************");
         try {
-          await rdbStore.executeSql("INSERT INTO test (name, age, salary) VALUES (?, ?, ?)",
+          await rdbStore!.executeSql("INSERT INTO test (name, age, salary) VALUES (?, ?, ?)",
             ["TestUser", 50 as number, 8000.00]);
           // 验证插入成功
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "TestUser");
-          let resultSet = await rdbStore.query(predicates);
+          let resultSet = await rdbStore!.query(predicates);
           expect(resultSet.rowCount).assertEqual(1);
           resultSet.close();
           done();
@@ -1328,7 +1328,7 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testExecuteSqlCallback start *************");
         try {
-          rdbStore.executeSql("UPDATE test SET salary = 9000 WHERE name = ?", ["Alice"], (err) => {
+          rdbStore!.executeSql("UPDATE test SET salary = 9000 WHERE name = ?", ["Alice"], (err) => {
             if (err) {
               hilog.error(domain, tag, `testExecuteSqlCallback failed: ${err.code + ", " + err.message}`);
               expect().assertFail();
@@ -1357,7 +1357,7 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testExecuteSync start *************");
         try {
-          let result = rdbStore.executeSync("DELETE FROM test WHERE name = ?", ["TestUser"]);
+          let result = rdbStore!.executeSync("DELETE FROM test WHERE name = ?", ["TestUser"]);
           // executeSync返回ValueType，验证执行成功
           expect(result !== undefined).assertTrue();
           done();
@@ -1386,7 +1386,7 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testBackupPromise start *************");
         try {
-          await rdbStore.backup("test_backup");
+          await rdbStore!.backup("test_backup");
           done();
         } catch (err) {
           hilog.error(domain, tag, `testBackupPromise failed: ${err.code + ", " + err.message}`);
@@ -1408,7 +1408,7 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testBackupCallback start *************");
         try {
-          rdbStore.backup("test_backup_cb", (err) => {
+          rdbStore!.backup("test_backup_cb", (err) => {
             if (err) {
               hilog.error(domain, tag, `testBackupCallback failed: ${err.code + ", " + err.message}`);
               expect().assertFail();
@@ -1438,9 +1438,9 @@ export default function RdbStoreTest() {
         hilog.info(domain, tag, "************* testRestorePromise start *************");
         try {
           // 先备份
-          await rdbStore.backup("test_restore_backup");
+          await rdbStore!.backup("test_restore_backup");
           // 然后恢复
-          await rdbStore.restore("test_restore_backup");
+          await rdbStore!.restore("test_restore_backup");
           done();
         } catch (err) {
           hilog.error(domain, tag, `testRestorePromise failed: ${err.code + ", " + err.message}`);
@@ -1462,7 +1462,7 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testRestoreCallback start *************");
         try {
-          rdbStore.restore("test_restore_backup", (err) => {
+          rdbStore!.restore("test_restore_backup", (err) => {
             if (err) {
               hilog.error(domain, tag, `testRestoreCallback failed: ${err.code + ", " + err.message}`);
               expect().assertFail();
@@ -1493,7 +1493,7 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testSetDistributedTablesPromise start *************");
         try {
-          await rdbStore.setDistributedTables(["test"]);
+          await rdbStore!.setDistributedTables(["test"]);
           done();
         } catch (err) {
           hilog.error(domain, tag, `testSetDistributedTablesPromise failed: ${err.code + ", " + err.message}`);
@@ -1516,7 +1516,7 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testSetDistributedTablesCallback start *************");
         try {
-          rdbStore.setDistributedTables(["test"], (err) => {
+          rdbStore!.setDistributedTables(["test"], (err) => {
             if (err) {
               hilog.info(domain, tag, `Distributed feature may not be available: ${err.code + ", " + err.message}`);
             }
@@ -1541,7 +1541,7 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testObtainDistributedTableName start *************");
         try {
-          let tableName = await rdbStore.obtainDistributedTableName("testDevice", "test");
+          let tableName = await rdbStore!.obtainDistributedTableName("testDevice", "test");
           hilog.info(domain, tag, `Distributed table name: ${tableName}`);
           done();
         } catch (err) {
@@ -1568,7 +1568,7 @@ export default function RdbStoreTest() {
           const progressCallback = (progress: relationalStore.ProgressDetails) => {
             hilog.info(domain, tag, `Cloud sync progress: ${JSON.stringify(progress)}`);
           };
-          await rdbStore.cloudSync(relationalStore.SyncMode.SYNC_MODE_PUSH, progressCallback);
+          await rdbStore!.cloudSync(relationalStore.SyncMode.SYNC_MODE_PUSH, progressCallback);
           done();
         } catch (err) {
           hilog.info(domain, tag, `Cloud sync feature may not be available: ${err.code + ", " + err.message}`);
@@ -1593,7 +1593,7 @@ export default function RdbStoreTest() {
         try {
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "Alice");
-          let resultSet = await rdbStore.remoteQuery("testDevice", "test", predicates, ["name", "age"]);
+          let resultSet = await rdbStore!.remoteQuery("testDevice", "test", predicates, ["name", "age"]);
           if (resultSet) {
             resultSet.close();
           }
@@ -1618,7 +1618,7 @@ export default function RdbStoreTest() {
     it('testClose', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, "************* testClose start *************");
       try {
-        await rdbStore.close();
+        await rdbStore!.close();
         done();
       } catch (err) {
         hilog.error(domain, tag, `testClose failed: ${err.code + ", " + err.message}`);
@@ -1640,7 +1640,7 @@ export default function RdbStoreTest() {
       async (done:()=>void) : Promise<void> => {
         hilog.info(domain, tag, "************* testCreateTransaction start *************");
         try {
-          let transaction = await rdbStore.createTransaction();
+          let transaction = await rdbStore!.createTransaction();
           expect(transaction !== null).assertTrue();
           done();
         } catch (err) {
