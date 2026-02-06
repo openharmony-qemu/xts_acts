@@ -225,10 +225,10 @@ HWTEST_F(DrawingNativeBitmapTest, testBitmapCreateFromPixelsMismatch, Function |
     // 4. OH_Drawing_BitmapCreateFromPixels
     rowBytes = width * 4 + 1;
     OH_Drawing_Bitmap *bitmap4 = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
-    int height_ = OH_Drawing_BitmapGetHeight(bitmap4);
-    int width_ = OH_Drawing_BitmapGetWidth(bitmap4);
-    EXPECT_EQ(height_, 0);
-    EXPECT_EQ(width_, 0);
+    height = OH_Drawing_BitmapGetHeight(bitmap4);
+    width = OH_Drawing_BitmapGetWidth(bitmap4);
+    EXPECT_EQ(height, 0);
+    EXPECT_EQ(width, 0);
     // 4. Free memory
     OH_Drawing_BitmapDestroy(bitmap1);
     OH_Drawing_BitmapDestroy(bitmap2);
