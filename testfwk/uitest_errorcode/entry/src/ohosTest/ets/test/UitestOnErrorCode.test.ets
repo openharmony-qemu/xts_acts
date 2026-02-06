@@ -1,6 +1,6 @@
 import { describe, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver,
-  InputTextMode } from '@ohos.UiTest'
+  InputTextMode } from '@kit.TestKit'
 import { BusinessError } from '@ohos.base';
 
 const waitUiReadyMs : number = 1000;

@@ -14,7 +14,7 @@
  */
 
 import { describe, beforeAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
-import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType, On, WindowChangeType } from '@ohos.UiTest'
+import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType, On, WindowChangeType } from '@kit.TestKit'
 import { startAbility, stopApplication } from './Utils.test.ets';
 
 const TestTag = 'testTag';
@@ -420,10 +420,10 @@ export default function abilityTest() {
       let driver = UiDriver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       try {
-        let input = await driver.findComponent(ON.type('TextInput'))
+        let input = await driver.findComponent(BY.type('TextInput'))
         if (input == null) {
-          let scorll = await driver.findComponent(ON.type('Scroll'))
-          input = await scorll.scrollSearch(ON.type('TextInput'))
+          let scorll = await driver.findComponent(BY.type('Scroll'))
+          input = await scorll.scrollSearch(BY.type('TextInput'))
         }
         await input.inputText(null);
         expect().assertFail();
@@ -432,10 +432,10 @@ export default function abilityTest() {
         expect(error.code).assertEqual(OldErrorCode);
       }
       try {
-        let input = await driver.findComponent(ON.type('TextInput'))
+        let input = await driver.findComponent(BY.type('TextInput'))
         if (input == null) {
-          let scorll = await driver.findComponent(ON.type('Scroll'))
-          input = await scorll.scrollSearch(ON.type('TextInput'))
+          let scorll = await driver.findComponent(BY.type('Scroll'))
+          input = await scorll.scrollSearch(BY.type('TextInput'))
         }
         await input.inputText(undefined);
         expect().assertFail();
@@ -460,7 +460,7 @@ export default function abilityTest() {
       let driver = UiDriver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       try {
-        let scroll = await driver.findComponent(ON.type('Scroll')) 
+        let scroll = await driver.findComponent(BY.type('Scroll')) 
         await scroll.scrollSearch(null);
         expect().assertFail();
       } catch (error) {
@@ -468,7 +468,7 @@ export default function abilityTest() {
         expect(error.code).assertEqual(OldErrorCode);
       }
       try {
-        let scroll = await driver.findComponent(ON.type('Scroll')) 
+        let scroll = await driver.findComponent(BY.type('Scroll')) 
         await scroll.scrollSearch(undefined);
         expect().assertFail();
       } catch (error) {
@@ -825,39 +825,38 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   testApi8_UiDriver_savePath_401
+     * @tc.name   testApi8_UiDriver_screenCap_401
      * @tc.number UiTest_uitest401_027
      * @tc.desc   type 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testApi8_UiDriver_savePath_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(`${TestTag}, testApi8_UiDriver_savePath_401 start`);
+    it('testApi8_UiDriver_screenCap_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi8_UiDriver_screenCap_401 start`);
       let driver = UiDriver.create();
       try {
-        await driver.savePath('');
+        await driver.screenCap('');
         expect().assertFail();
       } catch (error) {
-        console.log(`${TestTag}, testApi8_UiDriver_savePath_401 path = '' error, ${JSON.stringify(error)}`);
+        console.log(`${TestTag}, testApi8_UiDriver_screenCap_401 path = '' error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        await driver.savePath(null);
+        await driver.screenCap(null);
         expect().assertFail();
       } catch (error) {
-        console.log(`${TestTag}, testApi8_UiDriver_savePath_401 path = null error, ${JSON.stringify(error)}`);
+        console.log(`${TestTag}, testApi8_UiDriver_screenCap_401 path = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        await driver.savePath(undefined);
+        await driver.screenCap(undefined);
         expect().assertFail();
       } catch (error) {
-        console.log(`${TestTag}, testApi8_UiDriver_savePath_401 path = undefined error, ${JSON.stringify(error)}`);
+        console.log(`${TestTag}, testApi8_UiDriver_screenCap_401 path = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
-      console.log(`${TestTag}, testApi8_UiDriver_savePath_401 END`);
-      await stopApplication('com.uitestScene.acts');
+      console.log(`${TestTag}, testApi8_UiDriver_screenCap_401 END`);
     })
 
     /**
@@ -901,42 +900,42 @@ export default function abilityTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        observer.once(null, WindowChangeType.WINDOE_ADDED, {}, (elementInfo) => {})
+        observer.once(null, WindowChangeType.WINDOW_ADDED, {}, (elementInfo) => {})
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_once_401 windowChange type = null, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        observer.once(undefined, WindowChangeType.WINDOE_ADDED, {}, (elementInfo) => {})
+        observer.once(undefined, WindowChangeType.WINDOW_ADDED, {}, (elementInfo) => {})
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_once_401 windowChange type = undefined, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        observer.once('windowChange', WindowChangeType.WINDOE_ADDED, null, (elementInfo) => {})
+        observer.once('windowChange', WindowChangeType.WINDOW_ADDED, null, (elementInfo) => {})
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_once_401 windowChange options = null, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
-        observer.once('windowChange', WindowChangeType.WINDOE_ADDED, undefined, (elementInfo) => {})
+        observer.once('windowChange', WindowChangeType.WINDOW_ADDED, undefined, (elementInfo) => {})
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_once_401 windowChange options = undefined, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
-        observer.once('windowChange', WindowChangeType.WINDOE_ADDED, {}, null)
+        observer.once('windowChange', WindowChangeType.WINDOW_ADDED, {}, null)
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_once_401 windowChange callback = null, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        observer.once('windowChange', WindowChangeType.WINDOE_ADDED, {}, undefined)
+        observer.once('windowChange', WindowChangeType.WINDOW_ADDED, {}, undefined)
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_once_401 windowChange callback = undefined, ${JSON.stringify(error)}`);
@@ -3941,7 +3940,7 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi18_Driver_touchPadMultiFingerSwipe_401 start`);
       let driver = Driver.create()
       try {
-        await driver.touchPadMultiFingerSwipe(null, UiDirection.Right);
+        await driver.touchPadMultiFingerSwipe(null, UiDirection.RIGHT);
         console.log(TestTag, `testApi18_Driver_touchPadMultiFingerSwipe_401`);
         expect().assertFail();
       } catch (error) {
@@ -4056,69 +4055,63 @@ export default function abilityTest() {
     })
 
      /**
-     * @tc.name   testApi18_Driver_injectPenPointAction_401
+     * @tc.name   testApi18_Driver_injectPenPointerAction401
      * @tc.number UiTest_uitest401_095
      * @tc.desc   type 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testApi18_Driver_injectPenPointAction_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(`${TestTag}, testApi18_Driver_injectPenPointAction_401 start`);
+    it('testApi18_Driver_injectPenPointerAction401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi18_Driver_injectPenPointerAction401 start`);
       let driver = Driver.create()
       try {
-        await driver.injectPenPointAction(null, 600, 0.5);
-        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401`);
+        await driver.injectPenPointerAction(null, 600, 0.5);
         expect().assertFail();
       } catch (error) {
-        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401, points = null error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, points = null error is, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        await driver.injectPenPointAction(undefined, 600, 0.5);
-        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401`);
+        await driver.injectPenPointerAction(undefined, 600, 0.5);
         expect().assertFail();
       } catch (error) {
-        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401, points = undefined error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, points = undefined error is, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
         let points = PointerMatrix.create(1, 1);
         points.setPoint(1, 0, {x: 100, y: 100})       
-        await driver.injectPenPointAction(points, null, 0.5);
-        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401`);
+        await driver.injectPenPointerAction(points, null, 0.5);
       } catch (error) {
-        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401, spe = null error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, spe = null error is, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
         let points = PointerMatrix.create(1, 1);
         points.setPoint(1, 0, {x: 100, y: 100})       
-        await driver.injectPenPointAction(points, undefined, 0.5);
-        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401`);
+        await driver.injectPenPointerAction(points, undefined, 0.5);
       } catch (error) {
-        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401, spe = undefined error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, spe = undefined error is, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
         let points = PointerMatrix.create(1, 1);
         points.setPoint(1, 0, {x: 100, y: 100})       
-        await driver.injectPenPointAction(points, 600, null);
-        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401`);
+        await driver.injectPenPointerAction(points, 600, null);
       } catch (error) {
-        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401, pre = null error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, pre = null error is, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
         let points = PointerMatrix.create(1, 1);
         points.setPoint(1, 0, {x: 100, y: 100})       
-        await driver.injectPenPointAction(points, 600, undefined);
-        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401`);
+        await driver.injectPenPointerAction(points, 600, undefined);
       } catch (error) {
-        console.log(TestTag, `testApi18_Driver_injectPenPointAction_401, pre = undefined error is, ${JSON.stringify(error)}`);
+        console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, pre = undefined error is, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
-      console.log(`${TestTag}, testApi18_Driver_injectPenPointAction_401 END`);
+      console.log(`${TestTag}, testApi18_Driver_injectPenPointerAction401 END`);
     })
 
      /**
