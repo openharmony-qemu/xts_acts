@@ -16,462 +16,30 @@ export default function LRUCache05Test() {
     afterAll(() => {
       console.info('LRUCache05Test: afterAll');
     })
-
-    interface RemovalEvent<K, V> {
-      isEvict: boolean;
-      key: K;
-      value: V;
-      newValue: V | null | undefined;
-    }
-
-    class ChildLRUCache<K, V> extends util.LRUCache<K, V> {
-
-      public eventLog: Array<RemovalEvent<K, V>> = [];
-
-      constructor(capacity?: number) {
-        super(capacity);
-      }
-
-      afterRemoval(isEvict: boolean, key: K, value: V, newValue: V): void {
-        this.eventLog.push({ isEvict: isEvict, key: key, value: value, newValue: newValue });
-      }
-    }
-
+    
     class ConfigurableCache<K, V> extends util.LRUCache<K, V> {
-      // Function to delegate creation logic
       private logic: (key: K) => V;
 
       constructor(capacity: number, logic: (key: K) => V) {
         super(capacity);
         this.logic = logic;
       }
-
-      // Override createDefault to use the custom logic
       createDefault(key: K): V {
-        // Directly return the result of logic, trusting it matches V
+        
         return this.logic(key);
       }
     }
 
     /**
      * @tc.number    SUB_UTIL_LRU_CACHE05_0100
-     * @tc.name      testLRUCacheAfterRemoval05_0001
-     * @tc.desc      Verify afterRemoval triggered by Eviction (Overflow).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testLRUCacheAfterRemoval05_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheAfterRemoval05_0001";
-      console.log(TAG + " start");
-
-      const lru = new ChildLRUCache<number, number>(2);
-      lru.put(1, 1);
-      lru.put(2, 2);
-
-      lru.put(3, 3);
-
-      expect(lru.eventLog.length).assertEqual(1);
-      const event = lru.eventLog[0];
-
-      expect(event.isEvict).assertEqual(true);
-      expect(event.key).assertEqual(1);
-      expect(event.value).assertEqual(1);
-
-      if (event.newValue !== null && event.newValue !== undefined) {
-        expect().assertFail();
-      }
-
-      console.log(TAG + " end");
-    });
-
-    /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_0200
-     * @tc.name      testLRUCacheAfterRemoval05_0002
-     * @tc.desc      Verify afterRemoval triggered by Manual Removal (remove/delete).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testLRUCacheAfterRemoval05_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheAfterRemoval05_0002";
-      console.log(TAG + " start");
-
-      const lru = new ChildLRUCache<number, string>(5);
-      lru.put(1, "A");
-
-      lru.remove(1);
-
-      expect(lru.eventLog.length).assertEqual(1);
-      const event = lru.eventLog[0];
-
-      expect(event.isEvict).assertEqual(false);
-      expect(event.key).assertEqual(1);
-      expect(event.value).assertEqual("A");
-
-      console.log(TAG + " end");
-    });
-
-    /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_0300
-     * @tc.name      testLRUCacheAfterRemoval05_0003
-     * @tc.desc      Verify afterRemoval triggered by Key Update (put existing key).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testLRUCacheAfterRemoval05_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheAfterRemoval05_0003";
-      console.log(TAG + " start");
-
-      const lru = new ChildLRUCache<number, string>(5);
-      lru.put(1, "Old");
-
-      lru.put(1, "New");
-
-      expect(lru.eventLog.length).assertEqual(1);
-      const event = lru.eventLog[0];
-
-      expect(event.isEvict).assertEqual(false);
-      expect(event.key).assertEqual(1);
-      expect(event.value).assertEqual("Old");
-      expect(event.newValue).assertEqual("New");
-
-      console.log(TAG + " end");
-    });
-
-    /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_0400
-     * @tc.name      testLRUCacheAfterRemoval05_0004
-     * @tc.desc      Verify afterRemoval triggered by Clear operation.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testLRUCacheAfterRemoval05_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheAfterRemoval05_0004";
-      console.log(TAG + " start");
-
-      const lru = new ChildLRUCache<number, string>(5);
-      lru.put(1, "A");
-      lru.put(2, "B");
-
-      lru.clear();
-
-      console.info("Clear events count: " + lru.eventLog.length);
-
-      if (lru.eventLog.length > 0) {
-        expect(lru.eventLog[0].isEvict).assertEqual(false);
-      }
-
-      expect(lru.isEmpty()).assertTrue();
-      expect(lru.length).assertEqual(0);
-
-      console.log(TAG + " end");
-    });
-
-    /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_0500
-     * @tc.name      testLRUCacheAfterRemoval05_0005
-     * @tc.desc      Verify String Keys are correctly passed to afterRemoval.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testLRUCacheAfterRemoval05_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheAfterRemoval05_0005";
-      console.log(TAG + " start");
-
-      const lru = new ChildLRUCache<string, number>(2);
-      lru.put("KeyA", 100);
-      lru.put("KeyB", 200);
-
-      lru.put("KeyC", 300);
-
-      expect(lru.eventLog.length).assertEqual(1);
-      expect(lru.eventLog[0].key).assertEqual("KeyA");
-      expect(lru.eventLog[0].value).assertEqual(100);
-
-      console.log(TAG + " end");
-    });
-
-    /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_0600
-     * @tc.name      testLRUCacheAfterRemoval05_0006
-     * @tc.desc      Verify Object Values are passed by reference to afterRemoval.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testLRUCacheAfterRemoval05_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheAfterRemoval05_0006";
-      console.log(TAG + " start");
-
-      interface TestObj { id: number }
-      const lru = new ChildLRUCache<number, TestObj>(5);
-
-      const obj1: TestObj = { id: 1 };
-      lru.put(1, obj1);
-
-      lru.remove(1);
-
-      expect(lru.eventLog.length).assertEqual(1);
-      expect(lru.eventLog[0].value).assertEqual(obj1);
-      expect(lru.eventLog[0].value.id).assertEqual(1);
-
-      console.log(TAG + " end");
-    });
-
-    /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_0700
-     * @tc.name      testLRUCacheAfterRemoval05_0007
-     * @tc.desc      Verify afterRemoval sequence with Array values.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testLRUCacheAfterRemoval05_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheAfterRemoval05_0007";
-      console.log(TAG + " start");
-
-      const lru = new ChildLRUCache<string, number[]>(5);
-      lru.put("Arr", [1, 2]);
-
-      const newArr = [3, 4];
-      lru.put("Arr", newArr);
-
-      expect(lru.eventLog.length).assertEqual(1);
-      expect(lru.eventLog[0].isEvict).assertEqual(false);
-      expect(lru.eventLog[0].value.length).assertEqual(2);
-
-      const nv = lru.eventLog[0].newValue;
-      if (nv) {
-        expect(nv.length).assertEqual(2);
-        expect(nv[0]).assertEqual(3);
-      } else {
-        expect().assertFail();
-      }
-
-      console.log(TAG + " end");
-    });
-
-    /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_0800
-     * @tc.name      testLRUCacheAfterRemoval05_0008
-     * @tc.desc      Verify behavior with Capacity 1 (Ping-Pong eviction).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testLRUCacheAfterRemoval05_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheAfterRemoval05_0008";
-      console.log(TAG + " start");
-
-      const lru = new ChildLRUCache<number, string>(1);
-      lru.put(1, "A");
-
-      lru.put(2, "B");
-
-      lru.put(3, "C");
-
-      expect(lru.eventLog.length).assertEqual(2);
-
-      expect(lru.eventLog[0].key).assertEqual(1);
-      expect(lru.eventLog[0].isEvict).assertEqual(true);
-
-      expect(lru.eventLog[1].key).assertEqual(2);
-      expect(lru.eventLog[1].isEvict).assertEqual(true);
-
-      console.log(TAG + " end");
-    });
-
-    /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_0900
-     * @tc.name      testLRUCacheAfterRemoval05_0009
-     * @tc.desc      Verify removing non-existent key does NOT trigger afterRemoval.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testLRUCacheAfterRemoval05_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheAfterRemoval05_0009";
-      console.log(TAG + " start");
-
-      const lru = new ChildLRUCache<number, string>(5);
-      lru.put(1, "A");
-
-      lru.remove(99);
-
-      expect(lru.eventLog.length).assertEqual(0);
-
-      console.log(TAG + " end");
-    });
-
-    /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_1000
-     * @tc.name      testLRUCacheAfterRemoval05_0010
-     * @tc.desc      Verify clearing empty cache behavior.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testLRUCacheAfterRemoval05_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheAfterRemoval05_0010";
-      console.log(TAG + " start");
-
-      const lru = new ChildLRUCache<number, string>(5);
-
-      lru.clear();
-
-      expect(lru.isEmpty()).assertTrue();
-      expect(lru.length).assertEqual(0);
-
-      console.log(TAG + " end");
-    });
-
-    /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_1100
-     * @tc.name      testLRUCacheAfterRemoval05_0011
-     * @tc.desc      Verify recursive logic (Resurrection): Performing put() inside afterRemoval().
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testLRUCacheAfterRemoval05_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheAfterRemoval05_0011";
-      console.log(TAG + " start");
-
-      class RecursiveCache extends util.LRUCache<number, string> {
-        afterRemoval(isEvict: boolean, key: number, value: string) {
-          if (key === 1) {
-            this.put(99, value);
-          }
-        }
-      }
-
-      const lru = new RecursiveCache(5);
-      lru.put(1, "Resurrect");
-
-      lru.remove(1);
-
-      expect(lru.contains(1)).assertFalse();
-      expect(lru.contains(99)).assertTrue();
-      expect(lru.get(99)).assertEqual("Resurrect");
-
-      console.log(TAG + " end");
-    });
-
-    /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_1200
-     * @tc.name      testLRUCacheAfterRemoval05_0012
-     * @tc.desc      Verify mixed sequence: Update then Evict.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testLRUCacheAfterRemoval05_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheAfterRemoval05_0012";
-      console.log(TAG + " start");
-
-      const lru = new ChildLRUCache<number, string>(1);
-      lru.put(1, "Version1");
-
-      // Update -> Version2 (triggers afterRemoval with isEvict=false)
-      lru.put(1, "Version2");
-
-      // Evict -> (triggers afterRemoval with isEvict=true)
-      lru.put(2, "B");
-
-      expect(lru.eventLog.length).assertEqual(2);
-
-      expect(lru.eventLog[0].isEvict).assertEqual(false);
-      expect(lru.eventLog[0].value).assertEqual("Version1");
-      expect(lru.eventLog[0].newValue).assertEqual("Version2");
-
-      expect(lru.eventLog[1].isEvict).assertEqual(true);
-      expect(lru.eventLog[1].key).assertEqual(1);
-      expect(lru.eventLog[1].value).assertEqual("Version2");
-
-      console.log(TAG + " end");
-    });
-
-    /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_1300
-     * @tc.name      testLRUCacheAfterRemoval05_0013
-     * @tc.desc      Verify multiple items eviction when putting after capacity reduction manually.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testLRUCacheAfterRemoval05_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheAfterRemoval05_0013";
-      console.log(TAG + " start");
-
-      const lru = new ChildLRUCache<number, string>(2);
-      lru.put(1, "A");
-      lru.put(2, "B");
-
-      lru.put(3, "C");
-      lru.put(4, "D");
-
-      expect(lru.eventLog.length).assertEqual(2);
-      expect(lru.eventLog[0].key).assertEqual(1);
-      expect(lru.eventLog[1].key).assertEqual(2);
-
-      console.log(TAG + " end");
-    });
-
-    /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_1400
-     * @tc.name      testLRUCacheAfterRemoval05_0014
-     * @tc.desc      Verify afterRemoval with valid Object values.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testLRUCacheAfterRemoval05_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheAfterRemoval05_0014";
-      console.log(TAG + " start");
-
-      class ValidObj {
-        name: string = "";
-      }
-
-      const lru = new ChildLRUCache<string, ValidObj>(5);
-      const obj1 = new ValidObj();
-      obj1.name = "First";
-
-      const obj2 = new ValidObj();
-      obj2.name = "Second";
-
-      lru.put("Key", obj1);
-
-      lru.put("Key", obj2);
-
-      lru.remove("Key");
-
-      expect(lru.eventLog.length).assertEqual(2);
-
-      expect(lru.eventLog[0].value).assertEqual(obj1);
-      expect(lru.eventLog[0].newValue).assertEqual(obj2);
-      expect(lru.eventLog[0].isEvict).assertEqual(false);
-
-      expect(lru.eventLog[1].value).assertEqual(obj2);
-      expect(lru.eventLog[1].isEvict).assertEqual(false);
-
-      console.log(TAG + " end");
-    });
-
-    /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_1500
-     * @tc.name      testLRUCacheContains05_0015
+     * @tc.name      testLRUCacheContains05_0001
      * @tc.desc      Verify contains returns true for an existing key (Basic Hit).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheContains05_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheContains05_0015";
+    it('testLRUCacheContains05_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheContains05_0001";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, number>();
@@ -486,21 +54,20 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_1600
-     * @tc.name      testLRUCacheContains05_0016
+     * @tc.number    SUB_UTIL_LRU_CACHE05_0200
+     * @tc.name      testLRUCacheContains05_0002
      * @tc.desc      Verify contains returns false for a non-existent key (Basic Miss).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheContains05_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheContains05_0016";
+    it('testLRUCacheContains05_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheContains05_0002";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, number>();
       pro.put(2, 10);
-
-      // Check a key that was never added
+      
       let result = pro.contains(99);
       console.info('result = ' + result);
 
@@ -510,15 +77,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_1700
-     * @tc.name      testLRUCacheContains05_0017
+     * @tc.number    SUB_UTIL_LRU_CACHE05_0300
+     * @tc.name      testLRUCacheContains05_0003
      * @tc.desc      Verify contains returns false when cache is empty.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheContains05_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheContains05_0017";
+    it('testLRUCacheContains05_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheContains05_0003";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>();
@@ -533,24 +100,22 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_1800
-     * @tc.name      testLRUCacheContains05_0018
+     * @tc.number    SUB_UTIL_LRU_CACHE05_0400
+     * @tc.name      testLRUCacheContains05_0004
      * @tc.desc      Verify contains returns false after a key has been removed.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheContains05_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheContains05_0018";
+    it('testLRUCacheContains05_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheContains05_0004";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>();
       pro.put(1, "A");
-
-      // Initially true
+      
       expect(pro.contains(1)).assertTrue();
-
-      // Remove
+      
       pro.remove(1);
 
       let result = pro.contains(1);
@@ -562,15 +127,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_1900
-     * @tc.name      testLRUCacheContains05_0019
+     * @tc.number    SUB_UTIL_LRU_CACHE05_0500
+     * @tc.name      testLRUCacheContains05_0005
      * @tc.desc      Verify contains returns false for all keys after clear().
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheContains05_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheContains05_0019";
+    it('testLRUCacheContains05_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheContains05_0005";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>();
@@ -586,15 +151,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_2000
-     * @tc.name      testLRUCacheContains05_0020
+     * @tc.number    SUB_UTIL_LRU_CACHE05_0600
+     * @tc.name      testLRUCacheContains05_0006
      * @tc.desc      Verify contains returns true after updating a key's value.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheContains05_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheContains05_0020";
+    it('testLRUCacheContains05_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheContains05_0006";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>();
@@ -611,15 +176,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_2100
-     * @tc.name      testLRUCacheContains05_0021
+     * @tc.number    SUB_UTIL_LRU_CACHE05_0700
+     * @tc.name      testLRUCacheContains05_0007
      * @tc.desc      Verify contains returns false for evicted keys (Capacity Overflow).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheContains05_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheContains05_0021";
+    it('testLRUCacheContains05_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheContains05_0007";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(2);
@@ -636,15 +201,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_2200
-     * @tc.name      testLRUCacheContains05_0022
+     * @tc.number    SUB_UTIL_LRU_CACHE05_0800
+     * @tc.name      testLRUCacheContains05_0008
      * @tc.desc      Verify contains behavior with Capacity 1.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheContains05_0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheContains05_0022";
+    it('testLRUCacheContains05_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheContains05_0008";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(1);
@@ -660,15 +225,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_2300
-     * @tc.name      testLRUCacheContains05_0023
+     * @tc.number    SUB_UTIL_LRU_CACHE05_0900
+     * @tc.name      testLRUCacheContains05_0009
      * @tc.desc      Verify contains works correctly with String keys.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheContains05_0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheContains05_0023";
+    it('testLRUCacheContains05_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheContains05_0009";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<string, number>();
@@ -681,15 +246,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_2400
-     * @tc.name      testLRUCacheContains05_0024
+     * @tc.number    SUB_UTIL_LRU_CACHE05_1000
+     * @tc.name      testLRUCacheContains05_0010
      * @tc.desc      Verify contains works with Object keys (Reference Equality).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheContains05_0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheContains05_0024";
+    it('testLRUCacheContains05_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheContains05_0010";
       console.log(TAG + " start");
 
       interface KeyObj { id: number }
@@ -707,15 +272,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_2500
-     * @tc.name      testLRUCacheContains05_0025
+     * @tc.number    SUB_UTIL_LRU_CACHE05_1100
+     * @tc.name      testLRUCacheContains05_0011
      * @tc.desc      Verify contains with Object Values (checking key presence independent of value type).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheContains05_0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheContains05_0025";
+    it('testLRUCacheContains05_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheContains05_0011";
       console.log(TAG + " start");
 
       class ValObj { name: string = "test" }
@@ -733,15 +298,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_2600
-     * @tc.name      testLRUCacheContains05_0026
+     * @tc.number    SUB_UTIL_LRU_CACHE05_1200
+     * @tc.name      testLRUCacheContains05_0012
      * @tc.desc      Verify contains works after accessing key via get().
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheContains05_0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheContains05_0026";
+    it('testLRUCacheContains05_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheContains05_0012";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(5);
@@ -755,15 +320,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_2700
-     * @tc.name      testLRUCacheContains05_0027
+     * @tc.number    SUB_UTIL_LRU_CACHE05_1300
+     * @tc.name      testLRUCacheContains05_0013
      * @tc.desc      Verify contains works with mixed sequence of operations.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheContains05_0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheContains05_0027";
+    it('testLRUCacheContains05_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheContains05_0013";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(3);
@@ -782,15 +347,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_2800
-     * @tc.name      testLRUCacheContains05_0028
+     * @tc.number    SUB_UTIL_LRU_CACHE05_1400
+     * @tc.name      testLRUCacheContains05_0014
      * @tc.desc      Verify contains after updateCapacity triggers eviction.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheContains05_0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheContains05_0028";
+    it('testLRUCacheContains05_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheContains05_0014";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(5);
@@ -808,15 +373,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_2900
-     * @tc.name      testLRUCacheCreateDefault05_0029
+     * @tc.number    SUB_UTIL_LRU_CACHE05_1500
+     * @tc.name      testLRUCacheCreateDefault05_0015
      * @tc.desc      Verify base createDefault returns undefined (Default behavior).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheCreateDefault05_0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheCreateDefault05_0029";
+    it('testLRUCacheCreateDefault05_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheCreateDefault05_0015";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, number>();
@@ -830,15 +395,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_3000
-     * @tc.name      testLRUCacheCreateDefault05_0030
+     * @tc.number    SUB_UTIL_LRU_CACHE05_1600
+     * @tc.name      testLRUCacheCreateDefault05_0016
      * @tc.desc      Verify overridden createDefault returns correct value when called directly.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheCreateDefault05_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheCreateDefault05_0030";
+    it('testLRUCacheCreateDefault05_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheCreateDefault05_0016";
       console.log(TAG + " start");
 
       const cache = new ConfigurableCache<number, number>(5, (key) => {
@@ -852,15 +417,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_3100
-     * @tc.name      testLRUCacheCreateDefault05_0031
+     * @tc.number    SUB_UTIL_LRU_CACHE05_1700
+     * @tc.name      testLRUCacheCreateDefault05_0017
      * @tc.desc      Verify get() triggers createDefault and caches the value (Cache Miss -> Hit).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheCreateDefault05_0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheCreateDefault05_0031";
+    it('testLRUCacheCreateDefault05_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheCreateDefault05_0017";
       console.log(TAG + " start");
 
       const cache = new ConfigurableCache<number, string>(5, (key) => {
@@ -878,15 +443,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_3200
-     * @tc.name      testLRUCacheCreateDefault05_0032
+     * @tc.number    SUB_UTIL_LRU_CACHE05_1800
+     * @tc.name      testLRUCacheCreateDefault05_0018
      * @tc.desc      Verify createDefault is NOT called if key already exists (Cache Hit).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheCreateDefault05_0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheCreateDefault05_0032";
+    it('testLRUCacheCreateDefault05_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheCreateDefault05_0018";
       console.log(TAG + " start");
 
       let callCount = 0;
@@ -906,15 +471,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_3300
-     * @tc.name      testLRUCacheCreateDefault05_0033
+     * @tc.number    SUB_UTIL_LRU_CACHE05_1900
+     * @tc.name      testLRUCacheCreateDefault05_0019
      * @tc.desc      Verify get() returns undefined if createDefault returns undefined (Creation Fail).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheCreateDefault05_0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheCreateDefault05_0033";
+    it('testLRUCacheCreateDefault05_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheCreateDefault05_0019";
       console.log(TAG + " start");
 
       const cache = new ConfigurableCache<number, string | undefined>(5, (key: number): string | undefined => {
@@ -930,15 +495,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_3400
-     * @tc.name      testLRUCacheCreateDefault05_0034
+     * @tc.number    SUB_UTIL_LRU_CACHE05_2000
+     * @tc.name      testLRUCacheCreateDefault05_0020
      * @tc.desc      Verify subsequent get() calls use the cached value (createDefault called once).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheCreateDefault05_0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheCreateDefault05_0034";
+    it('testLRUCacheCreateDefault05_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheCreateDefault05_0020";
       console.log(TAG + " start");
 
       let callCount = 0;
@@ -957,15 +522,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_3500
-     * @tc.name      testLRUCacheCreateDefault05_0035
+     * @tc.number    SUB_UTIL_LRU_CACHE05_2100
+     * @tc.name      testLRUCacheCreateDefault05_0021
      * @tc.desc      Verify creation via get() triggers Eviction when capacity is full.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheCreateDefault05_0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheCreateDefault05_0035";
+    it('testLRUCacheCreateDefault05_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheCreateDefault05_0021";
       console.log(TAG + " start");
 
       const cache = new ConfigurableCache<number, string>(2, (key) => {
@@ -986,15 +551,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_3600
-     * @tc.name      testLRUCacheCreateDefault05_0036
+     * @tc.number    SUB_UTIL_LRU_CACHE05_2200
+     * @tc.name      testLRUCacheCreateDefault05_0022
      * @tc.desc      Verify createDefault with Object return values.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheCreateDefault05_0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheCreateDefault05_0036";
+    it('testLRUCacheCreateDefault05_0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheCreateDefault05_0022";
       console.log(TAG + " start");
 
       interface User { id: number; name: string }
@@ -1019,15 +584,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_3700
-     * @tc.name      testLRUCacheCreateDefault05_0037
+     * @tc.number    SUB_UTIL_LRU_CACHE05_2300
+     * @tc.name      testLRUCacheCreateDefault05_0023
      * @tc.desc      Verify createDefault works with String keys.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheCreateDefault05_0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheCreateDefault05_0037";
+    it('testLRUCacheCreateDefault05_0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheCreateDefault05_0023";
       console.log(TAG + " start");
 
       const cache = new ConfigurableCache<string, number>(5, (key) => {
@@ -1042,15 +607,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_3800
-     * @tc.name      testLRUCacheCreateDefault05_0038
+     * @tc.number    SUB_UTIL_LRU_CACHE05_2400
+     * @tc.name      testLRUCacheCreateDefault05_0024
      * @tc.desc      Verify Exception in createDefault is propagated.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheCreateDefault05_0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheCreateDefault05_0038";
+    it('testLRUCacheCreateDefault05_0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheCreateDefault05_0024";
       console.log(TAG + " start");
 
       const cache = new ConfigurableCache<number, string>(5, (key) => {
@@ -1070,15 +635,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_3900
-     * @tc.name      testLRUCacheCreateDefault05_0039
+     * @tc.number    SUB_UTIL_LRU_CACHE05_2500
+     * @tc.name      testLRUCacheCreateDefault05_0025
      * @tc.desc      Verify created items are placed at MRU (Most Recently Used) position.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheCreateDefault05_0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheCreateDefault05_0039";
+    it('testLRUCacheCreateDefault05_0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheCreateDefault05_0025";
       console.log(TAG + " start");
 
       const cache = new ConfigurableCache<number, string>(3, (key) => {
@@ -1098,15 +663,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_4000
-     * @tc.name      testLRUCacheCreateDefault05_0040
+     * @tc.number    SUB_UTIL_LRU_CACHE05_2600
+     * @tc.name      testLRUCacheCreateDefault05_0026
      * @tc.desc      Verify createDefault with side effects (external counter).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheCreateDefault05_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheCreateDefault05_0040";
+    it('testLRUCacheCreateDefault05_0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheCreateDefault05_0026";
       console.log(TAG + " start");
 
       let counter = 0;
@@ -1123,15 +688,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_4100
-     * @tc.name      testLRUCacheCreateDefault05_0041
+     * @tc.number    SUB_UTIL_LRU_CACHE05_2700
+     * @tc.name      testLRUCacheCreateDefault05_0027
      * @tc.desc      Verify Batch creation via loop.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheCreateDefault05_0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheCreateDefault05_0041";
+    it('testLRUCacheCreateDefault05_0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheCreateDefault05_0027";
       console.log(TAG + " start");
 
       const cache = new ConfigurableCache<number, number>(10, (key) => key);
@@ -1148,15 +713,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_4200
-     * @tc.name      testLRUCacheEntries05_0042
+     * @tc.number    SUB_UTIL_LRU_CACHE05_2800
+     * @tc.name      testLRUCacheEntries05_0028
      * @tc.desc      Verify entries returns correct key-value pairs in insertion order.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheEntries05_0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheEntries05_0042";
+    it('testLRUCacheEntries05_0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheEntries05_0028";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, number>();
@@ -1181,15 +746,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_4300
-     * @tc.name      testLRUCacheEntries05_0043
+     * @tc.number    SUB_UTIL_LRU_CACHE05_2900
+     * @tc.name      testLRUCacheEntries05_0029
      * @tc.desc      Verify entries returns empty array for empty cache.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheEntries05_0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheEntries05_0043";
+    it('testLRUCacheEntries05_0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheEntries05_0029";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, number>();
@@ -1206,15 +771,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_4400
-     * @tc.name      testLRUCacheEntries05_0044
+     * @tc.number    SUB_UTIL_LRU_CACHE05_3000
+     * @tc.name      testLRUCacheEntries05_0030
      * @tc.desc      Verify entries with a single item.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheEntries05_0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheEntries05_0044";
+    it('testLRUCacheEntries05_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheEntries05_0030";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>();
@@ -1234,15 +799,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_4500
-     * @tc.name      testLRUCacheEntries05_0045
+     * @tc.number    SUB_UTIL_LRU_CACHE05_3100
+     * @tc.name      testLRUCacheEntries05_0031
      * @tc.desc      Verify entries reflect eviction order (Capacity Overflow).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheEntries05_0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheEntries05_0045";
+    it('testLRUCacheEntries05_0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheEntries05_0031";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(2);
@@ -1269,15 +834,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_4600
-     * @tc.name      testLRUCacheEntries05_0046
+     * @tc.number    SUB_UTIL_LRU_CACHE05_3200
+     * @tc.name      testLRUCacheEntries05_0032
      * @tc.desc      Verify entries order changes after access via get().
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheEntries05_0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheEntries05_0046";
+    it('testLRUCacheEntries05_0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheEntries05_0032";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(3);
@@ -1303,15 +868,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_4700
-     * @tc.name      testLRUCacheEntries05_0047
+     * @tc.number    SUB_UTIL_LRU_CACHE05_3300
+     * @tc.name      testLRUCacheEntries05_0033
      * @tc.desc      Verify entries order changes after updating an existing key.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheEntries05_0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheEntries05_0047";
+    it('testLRUCacheEntries05_0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheEntries05_0033";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(3);
@@ -1327,12 +892,10 @@ export default function LRUCache05Test() {
       }
 
       expect(entries.length).assertEqual(2);
-
-      // LRU: 2
+      
       expect(entries[0][0]).assertEqual(2);
       expect(entries[0][1]).assertEqual("B");
-
-      // MRU: 1
+      
       expect(entries[1][0]).assertEqual(1);
       expect(entries[1][1]).assertEqual("A_New");
 
@@ -1340,15 +903,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_4800
-     * @tc.name      testLRUCacheEntries05_0048
+     * @tc.number    SUB_UTIL_LRU_CACHE05_3400
+     * @tc.name      testLRUCacheEntries05_0034
      * @tc.desc      Verify entries after removing an item.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheEntries05_0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheEntries05_0048";
+    it('testLRUCacheEntries05_0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheEntries05_0034";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(3);
@@ -1373,15 +936,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_4900
-     * @tc.name      testLRUCacheEntries05_0049
+     * @tc.number    SUB_UTIL_LRU_CACHE05_3500
+     * @tc.name      testLRUCacheEntries05_0035
      * @tc.desc      Verify entries is empty after clear().
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheEntries05_0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheEntries05_0049";
+    it('testLRUCacheEntries05_0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheEntries05_0035";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>();
@@ -1402,15 +965,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_5000
-     * @tc.name      testLRUCacheEntries05_0050
+     * @tc.number    SUB_UTIL_LRU_CACHE05_3600
+     * @tc.name      testLRUCacheEntries05_0036
      * @tc.desc      Verify entries with String keys.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheEntries05_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheEntries05_0050";
+    it('testLRUCacheEntries05_0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheEntries05_0036";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<string, number>();
@@ -1433,15 +996,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_5100
-     * @tc.name      testLRUCacheEntries05_0051
+     * @tc.number    SUB_UTIL_LRU_CACHE05_3700
+     * @tc.name      testLRUCacheEntries05_0037
      * @tc.desc      Verify entries with Object values (Reference check).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheEntries05_0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheEntries05_0051";
+    it('testLRUCacheEntries05_0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheEntries05_0037";
       console.log(TAG + " start");
 
       class User { name: string = "" }
@@ -1469,15 +1032,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_5200
-     * @tc.name      testLRUCacheEntries05_0052
+     * @tc.number    SUB_UTIL_LRU_CACHE05_3800
+     * @tc.name      testLRUCacheEntries05_0038
      * @tc.desc      Verify entries with Array values.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheEntries05_0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheEntries05_0052";
+    it('testLRUCacheEntries05_0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheEntries05_0038";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<string, number[]>();
@@ -1500,15 +1063,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_5300
-     * @tc.name      testLRUCacheEntries05_0053
+     * @tc.number    SUB_UTIL_LRU_CACHE05_3900
+     * @tc.name      testLRUCacheEntries05_0039
      * @tc.desc      Verify entries with Capacity 1 (Constant overwrite).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheEntries05_0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheEntries05_0053";
+    it('testLRUCacheEntries05_0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheEntries05_0039";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(1);
@@ -1535,15 +1098,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_5400
-     * @tc.name      testLRUCacheEntries05_0054
+     * @tc.number    SUB_UTIL_LRU_CACHE05_4000
+     * @tc.name      testLRUCacheEntries05_0040
      * @tc.desc      Verify entries using loop/iteration (Typical Usage).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheEntries05_0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheEntries05_0054";
+    it('testLRUCacheEntries05_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheEntries05_0040";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, number>(5);
@@ -1566,15 +1129,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_5500
-     * @tc.name      testLRUCacheEntries05_0055
+     * @tc.number    SUB_UTIL_LRU_CACHE05_4100
+     * @tc.name      testLRUCacheEntries05_0041
      * @tc.desc      Verify multiple calls to entries() return independent snapshots (new Iterators).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheEntries05_0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheEntries05_0055";
+    it('testLRUCacheEntries05_0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheEntries05_0041";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(5);
@@ -1599,15 +1162,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_5600
-     * @tc.name      testLRUCacheSymbol05_0056
+     * @tc.number    SUB_UTIL_LRU_CACHE05_4200
+     * @tc.name      testLRUCacheSymbol05_0042
      * @tc.desc      Verify default iterator (Symbol.iterator) yields [key, value] pairs in insertion order.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheSymbol05_0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheSymbol05_0056";
+    it('testLRUCacheSymbol05_0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0042";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, number>();
@@ -1633,15 +1196,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_5700
-     * @tc.name      testLRUCacheSymbol05_0057
+     * @tc.number    SUB_UTIL_LRU_CACHE05_4300
+     * @tc.name      testLRUCacheSymbol05_0043
      * @tc.desc      Verify iterator works correctly on an empty cache.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheSymbol05_0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheSymbol05_0057";
+    it('testLRUCacheSymbol05_0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0043";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, number>();
@@ -1657,15 +1220,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_5800
-     * @tc.name      testLRUCacheSymbol05_0058
+     * @tc.number    SUB_UTIL_LRU_CACHE05_4400
+     * @tc.name      testLRUCacheSymbol05_0044
      * @tc.desc      Verify iterator with a single item.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheSymbol05_0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheSymbol05_0058";
+    it('testLRUCacheSymbol05_0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0044";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>();
@@ -1684,15 +1247,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_5900
-     * @tc.name      testLRUCacheSymbol05_0059
+     * @tc.number    SUB_UTIL_LRU_CACHE05_4500
+     * @tc.name      testLRUCacheSymbol05_0045
      * @tc.desc      Verify iterator reflects eviction order (Capacity Overflow).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheSymbol05_0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheSymbol05_0059";
+    it('testLRUCacheSymbol05_0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0045";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(2);
@@ -1720,24 +1283,22 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_6000
-     * @tc.name      testLRUCacheSymbol05_0060
+     * @tc.number    SUB_UTIL_LRU_CACHE05_4600
+     * @tc.name      testLRUCacheSymbol05_0046
      * @tc.desc      Verify iterator order updates after access via get() (LRU update).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheSymbol05_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheSymbol05_0060";
+    it('testLRUCacheSymbol05_0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0046";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(3);
       pro.put(1, "A");
       pro.put(2, "B");
       pro.put(3, "C");
-      // Order: 1, 2, 3
-
-      // Access 1 -> Moves to MRU (end). New Order: 2, 3, 1
+     
       pro.get(1);
 
       let result: Array<[number, string]> = [];
@@ -1754,23 +1315,21 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_6100
-     * @tc.name      testLRUCacheSymbol05_0061
+     * @tc.number    SUB_UTIL_LRU_CACHE05_4700
+     * @tc.name      testLRUCacheSymbol05_0047
      * @tc.desc      Verify iterator order updates after updating an existing key.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheSymbol05_0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheSymbol05_0061";
+    it('testLRUCacheSymbol05_0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0047";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(3);
       pro.put(1, "A");
       pro.put(2, "B");
-      // Order: 1, 2
-
-      // Update 1 -> Moves to MRU. Order: 2, 1
+      
       pro.put(1, "A_New");
 
       let result: Array<[number, string]> = [];
@@ -1787,15 +1346,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_6200
-     * @tc.name      testLRUCacheSymbol05_0062
+     * @tc.number    SUB_UTIL_LRU_CACHE05_4800
+     * @tc.name      testLRUCacheSymbol05_0048
      * @tc.desc      Verify iterator reflects removal of items.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheSymbol05_0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheSymbol05_0062";
+    it('testLRUCacheSymbol05_0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0048";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(3);
@@ -1803,7 +1362,6 @@ export default function LRUCache05Test() {
       pro.put(2, "B");
       pro.put(3, "C");
 
-      // Remove 2. Order: 1, 3
       pro.remove(2);
 
       let result: Array<[number, string]> = [];
@@ -1819,15 +1377,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_6300
-     * @tc.name      testLRUCacheSymbol05_0063
+     * @tc.number    SUB_UTIL_LRU_CACHE05_4900
+     * @tc.name      testLRUCacheSymbol05_0049
      * @tc.desc      Verify iterator yields nothing after clear().
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheSymbol05_0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheSymbol05_0063";
+    it('testLRUCacheSymbol05_0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0049";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>();
@@ -1847,15 +1405,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_6400
-     * @tc.name      testLRUCacheSymbol05_0064
+     * @tc.number    SUB_UTIL_LRU_CACHE05_5000
+     * @tc.name      testLRUCacheSymbol05_0050
      * @tc.desc      Verify iterator works with String keys.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheSymbol05_0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheSymbol05_0064";
+    it('testLRUCacheSymbol05_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0050";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<string, number>();
@@ -1875,15 +1433,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_6500
-     * @tc.name      testLRUCacheSymbol05_0065
+     * @tc.number    SUB_UTIL_LRU_CACHE05_5100
+     * @tc.name      testLRUCacheSymbol05_0051
      * @tc.desc      Verify iterator works with Object values (Reference check).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheSymbol05_0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheSymbol05_0065";
+    it('testLRUCacheSymbol05_0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0051";
       console.log(TAG + " start");
 
       class User { name: string = "" }
@@ -1908,22 +1466,21 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_6600
-     * @tc.name      testLRUCacheSymbol05_0066
+     * @tc.number    SUB_UTIL_LRU_CACHE05_5200
+     * @tc.name      testLRUCacheSymbol05_0052
      * @tc.desc      Verify manual usage of [Symbol.iterator] via next().
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheSymbol05_0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheSymbol05_0066";
+    it('testLRUCacheSymbol05_0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0052";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(5);
       pro.put(1, "A");
       pro.put(2, "B");
 
-      // Manually get iterator
       let iter = pro[Symbol.iterator]();
 
       let next1 = iter.next();
@@ -1943,15 +1500,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_6700
-     * @tc.name      testLRUCacheSymbol05_0067
+     * @tc.number    SUB_UTIL_LRU_CACHE05_5300
+     * @tc.name      testLRUCacheSymbol05_0053
      * @tc.desc      Verify independent iterators (multiple loops do not affect each other).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheSymbol05_0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheSymbol05_0067";
+    it('testLRUCacheSymbol05_0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0053";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, number>();
@@ -1972,15 +1529,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_6800
-     * @tc.name      testLRUCacheSymbol05_0068
+     * @tc.number    SUB_UTIL_LRU_CACHE05_5400
+     * @tc.name      testLRUCacheSymbol05_0054
      * @tc.desc      Verify iterator behavior with Capacity 1 (overwrite).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheSymbol05_0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheSymbol05_0068";
+    it('testLRUCacheSymbol05_0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0054";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, string>(1);
@@ -1990,7 +1547,7 @@ export default function LRUCache05Test() {
       for (let v of pro) res1.push(v);
       expect(res1[0][0]).assertEqual(1);
 
-      pro.put(2, "B"); // Evicts 1
+      pro.put(2, "B"); 
 
       let res2: Array<[number, string]> = [];
       for (let v of pro) res2.push(v);
@@ -2003,15 +1560,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_6900
-     * @tc.name      testLRUCacheSymbol05_0069
+     * @tc.number    SUB_UTIL_LRU_CACHE05_5500
+     * @tc.name      testLRUCacheSymbol05_0055
      * @tc.desc      Verify iterator with large volume (Stress).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheSymbol05_0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheSymbol05_0069";
+    it('testLRUCacheSymbol05_0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0055";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<number, number>(100);
@@ -2032,15 +1589,15 @@ export default function LRUCache05Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE05_7000
-     * @tc.name      testLRUCacheSymbol05_0070
+     * @tc.number    SUB_UTIL_LRU_CACHE05_5600
+     * @tc.name      testLRUCacheSymbol05_0056
      * @tc.desc      Verify iterator with Mixed Types (string keys and number values).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLRUCacheSymbol05_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testLRUCacheSymbol05_0070";
+    it('testLRUCacheSymbol05_0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0056";
       console.log(TAG + " start");
 
       let pro = new util.LRUCache<string, number>();
@@ -2057,6 +1614,389 @@ export default function LRUCache05Test() {
       expect(result[1][0]).assertEqual("B");
 
       console.log(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_5700
+     * @tc.name      testLRUCacheAfterRemoval05_0057
+     * @tc.desc      Verify Eviction behavior (Capacity Overflow) by checking cache state.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0057";
+      console.info(TAG + " start");
+      
+      const lru = new util.LRUCache<number, number>(2);
+      lru.put(1, 1);
+      lru.put(2, 2);
+
+      lru.put(3, 3);
+
+      expect(lru.length).assertEqual(2);
+
+      expect(lru.contains(1)).assertFalse();
+      expect(lru.get(1)).assertUndefined();
+
+      expect(lru.contains(2)).assertTrue();
+      expect(lru.contains(3)).assertTrue();
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_5800
+     * @tc.name      testLRUCacheAfterRemoval05_0058
+     * @tc.desc      Verify Manual Removal (remove/delete) updates state correctly.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0058";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(5);
+      lru.put(1, "A");
+
+      const removedVal = lru.remove(1);
+
+      expect(removedVal).assertEqual("A");
+      expect(lru.length).assertEqual(0);
+      expect(lru.contains(1)).assertFalse();
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_5900
+     * @tc.name      testLRUCacheAfterRemoval05_0059
+     * @tc.desc      Verify Key Update (put existing key) updates value correctly.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0059";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(5);
+      lru.put(1, "Old");
+      expect(lru.get(1)).assertEqual("Old");
+
+      lru.put(1, "New");
+
+      expect(lru.length).assertEqual(1);
+      expect(lru.get(1)).assertEqual("New");
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_6000
+     * @tc.name      testLRUCacheAfterRemoval05_0060
+     * @tc.desc      Verify Clear operation resets the cache state.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0060";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(5);
+      lru.put(1, "A");
+      lru.put(2, "B");
+
+      lru.clear();
+
+      expect(lru.isEmpty()).assertTrue();
+      expect(lru.length).assertEqual(0);
+      expect(lru.get(1)).assertUndefined();
+      expect(lru.get(2)).assertUndefined();
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_6100
+     * @tc.name      testLRUCacheAfterRemoval05_0061
+     * @tc.desc      Verify String Keys are handled correctly.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0061";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<string, number>(2);
+      lru.put("KeyA", 100);
+      lru.put("KeyB", 200);
+      lru.put("KeyC", 300);
+
+      expect(lru.contains("KeyA")).assertFalse();
+      expect(lru.get("KeyB")).assertEqual(200);
+      expect(lru.get("KeyC")).assertEqual(300);
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_6200
+     * @tc.name      testLRUCacheAfterRemoval05_0062
+     * @tc.desc      Verify Object Values are stored and retrieved by reference.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0062";
+      console.info(TAG + " start");
+
+      interface TestObj { id: number }
+      const lru = new util.LRUCache<number, TestObj>(5);
+
+      const obj1: TestObj = { id: 1 };
+      lru.put(1, obj1);
+
+      const retrieved = lru.get(1);
+      
+      expect(retrieved).assertEqual(obj1);
+
+      if (retrieved) {
+        expect(retrieved.id).assertEqual(1);
+      }
+
+      lru.remove(1);
+      expect(lru.get(1)).assertUndefined();
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_6300
+     * @tc.name      testLRUCacheAfterRemoval05_0063
+     * @tc.desc      Verify behavior with Array values (Update logic).
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0063";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<string, number[]>(5);
+      lru.put("Arr", [1, 2]);
+
+      const newArr = [3, 4];
+      lru.put("Arr", newArr);
+
+      const result = lru.get("Arr");
+
+      expect(result).assertEqual(newArr);
+      if (result) {
+        expect(result.length).assertEqual(2);
+        expect(result[0]).assertEqual(3);
+      } else {
+        expect().assertFail();
+      }
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_6400
+     * @tc.name      testLRUCacheAfterRemoval05_0064
+     * @tc.desc      Verify behavior with Capacity 1 (Ping-Pong eviction).
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0064";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(1);
+
+      lru.put(1, "A");
+      expect(lru.contains(1)).assertTrue();
+
+      lru.put(2, "B");
+      expect(lru.contains(1)).assertFalse();
+      expect(lru.contains(2)).assertTrue();
+
+      lru.put(3, "C"); 
+      expect(lru.contains(2)).assertFalse();
+      expect(lru.contains(3)).assertTrue();
+      expect(lru.get(3)).assertEqual("C");
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_6500
+     * @tc.name      testLRUCacheAfterRemoval05_0065
+     * @tc.desc      Verify removing non-existent key behaves correctly (No Op).
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0065";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(5);
+      lru.put(1, "A");
+
+      const result = lru.remove(99);
+
+      expect(result).assertUndefined();
+      expect(lru.length).assertEqual(1);
+      expect(lru.get(1)).assertEqual("A");
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_6600
+     * @tc.name      testLRUCacheAfterRemoval05_0066
+     * @tc.desc      Verify clearing empty cache is safe.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0066";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(5);
+      expect(lru.length).assertEqual(0);
+
+      lru.clear();
+
+      expect(lru.isEmpty()).assertTrue();
+      expect(lru.length).assertEqual(0);
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_6700
+     * @tc.name      testLRUCacheAfterRemoval05_0067
+     * @tc.desc      Verify re-insertion logic (Manual Resurrection).
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0067";
+      console.info(TAG + " start");
+      
+      const lru = new util.LRUCache<number, string>(5);
+      lru.put(1, "Resurrect");
+
+      lru.remove(1);
+      expect(lru.contains(1)).assertFalse();
+
+      lru.put(99, "Resurrect");
+
+      expect(lru.contains(1)).assertFalse();
+      expect(lru.contains(99)).assertTrue();
+      expect(lru.get(99)).assertEqual("Resurrect");
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_6800
+     * @tc.name      testLRUCacheAfterRemoval05_0068
+     * @tc.desc      Verify mixed sequence: Update then Evict (State Check).
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0068";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(1);
+      lru.put(1, "Version1");
+
+      lru.put(1, "Version2");
+      expect(lru.get(1)).assertEqual("Version2");
+
+      lru.put(2, "B");
+
+      expect(lru.contains(1)).assertFalse();
+      expect(lru.get(2)).assertEqual("B");
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_6900
+     * @tc.name      testLRUCacheAfterRemoval05_0069
+     * @tc.desc      Verify multiple items eviction logic.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0069";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(2);
+      lru.put(1, "A");
+      lru.put(2, "B");
+
+      lru.put(3, "C");
+      lru.put(4, "D");
+
+      expect(lru.contains(1)).assertFalse();
+      expect(lru.contains(2)).assertFalse();
+
+      expect(lru.contains(3)).assertTrue();
+      expect(lru.contains(4)).assertTrue();
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_7000
+     * @tc.name      testLRUCacheAfterRemoval05_0070
+     * @tc.desc      Verify basic object put/remove lifecycle.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0070";
+      console.info(TAG + " start");
+
+      class ValidObj {
+        name: string = "";
+      }
+
+      const lru = new util.LRUCache<string, ValidObj>(5);
+      const obj1 = new ValidObj();
+      obj1.name = "First";
+
+      const obj2 = new ValidObj();
+      obj2.name = "Second";
+
+      lru.put("Key", obj1);
+      expect(lru.get("Key")).assertEqual(obj1);
+
+      lru.put("Key", obj2);
+      expect(lru.get("Key")).assertEqual(obj2);
+
+      lru.remove("Key");
+      expect(lru.get("Key")).assertUndefined();
+      expect(lru.length).assertEqual(0);
+
+      console.info(TAG + " end");
     });
   });
 }
