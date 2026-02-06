@@ -63,12 +63,12 @@ import RdbstoreRekeyEts from "./RdbStoreRekeyEts.test";
 import RelationalStoreRekeyExEtsTest from "./RelationalStoreRekeyExEtsTest.test";
 import RdbStoreGetSqlInfoTest from "./RdbStoreGetSqlInfoEts.test";
 import RdbStoreSetLocaleTest from "./RdbStoreSetLocaleEts.test"
-import CloudDataErrorCode from "./CloudDataErrorCode.test" 
-import RelationalStoreBatchInsert from "./RelationalStoreBatchInsert.test" 
-import RdbBatchInsertTransaction from "./RdbBatchInsertTransaction.test" 
-import RdbLockRow from "./RdbLockRow.test" 
-import RdbStoreDuplicateColumnsTest from "./RdbStoreDuplicateColumns.test"; 
-import RdbStoreErrorCodeAddTest from "./RdbStoreErrorCodeAdd.test"; 
+import CloudDataErrorCode from "./CloudDataErrorCode.test"
+import RelationalStoreBatchInsert from "./RelationalStoreBatchInsert.test"
+import RdbBatchInsertTransaction from "./RdbBatchInsertTransaction.test"
+import RdbLockRow from "./RdbLockRow.test"
+import RdbStoreDuplicateColumnsTest from "./RdbStoreDuplicateColumns.test";
+import RdbStoreErrorCodeAddTest from "./RdbStoreErrorCodeAdd.test";
 import RdbStoreErrorCodeAdd2Test from "./RdbStoreErrorCodeAdd2.test";
 
 export default function testsuite() {
@@ -132,13 +132,13 @@ export default function testsuite() {
   RdbStoreGetSqlInfoTest();
   RdbStoreSetLocaleTest();
 
-  CloudDataErrorCode(); 
+  CloudDataErrorCode();
 
-  RelationalStoreBatchInsert(); 
-  RdbBatchInsertTransaction(); 
-  RdbLockRow(); 
+  RelationalStoreBatchInsert();
+  RdbBatchInsertTransaction();
+  RdbLockRow();
 
-  RdbStoreDuplicateColumnsTest(); 
-  RdbStoreErrorCodeAddTest(); 
+  RdbStoreDuplicateColumnsTest();
+  RdbStoreErrorCodeAddTest();
   RdbStoreErrorCodeAdd2Test();
 }
