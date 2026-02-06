@@ -15,6 +15,7 @@
 
 #include "include/HuksMiscTest.h"
 #include <cstddef>
+#include <cstdint>
 #include <huks/native_huks_api.h>
 #include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
@@ -233,13 +234,16 @@ const uint32_t USER_AUTH_TYPE_PIN_BIT = 2;
 const uint32_t AUTH_ACCESS_INVALID_CLEAR_PASSWORD_BIT = 0;
 const uint32_t AUTH_ACCESS_INVALID_NEW_BIO_ENROLL_BIT = 1;
 
+// 内存分配上限常量
+static const size_t MAX_ALLOC_SIZE = SIZE_MAX / 2; // size_t 最大值的一半，防止整数溢出
+
 // ==================== 辅助函数 ====================
 
 // Helper function: 安全的内存分配函数
 static void* HksMalloc(size_t size)
 {
     // G.MEM.01: 内存申请前，必须对申请内存大小进行合法性校验
-    if (size == 0 || size > (size_t)-1 / 2) {
+    if (size == 0 || size > MAX_ALLOC_SIZE) {
         return nullptr;
     }
     return malloc(size);

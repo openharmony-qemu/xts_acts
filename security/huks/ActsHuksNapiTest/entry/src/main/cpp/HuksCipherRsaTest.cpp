@@ -92,6 +92,199 @@ static OH_Huks_Result
     return ret;
 }
 
+// Helper function: Process small data update and finish
+static OH_Huks_Result ProcessSmallDataUpdateFinish(const struct OH_Huks_Blob* handle,
+                                                   const struct OH_Huks_ParamSet* paramSet,
+                                                   uint32_t purpose,
+                                                   const struct OH_Huks_Blob* inData,
+                                                   struct OH_Huks_Blob* outData)
+{
+    struct OH_Huks_Result ret;
+    ret.errorCode = OH_HUKS_SUCCESS;
+
+    // Allocate temporary output buffer for UpdateSession
+    struct OH_Huks_Blob tmpOutData = { .size = MAX_OUTDATA_SIZE, .data = nullptr };
+    if (MallocAndCheckBlobData(&tmpOutData, tmpOutData.size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+        return ret;
+    }
+
+    // Execute UpdateSession
+    ret = OH_Huks_UpdateSession(handle, paramSet, inData, &tmpOutData);
+    HksFree(tmpOutData.data);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return ret;
+    }
+
+    // Allocate temporary input buffer for FinishSession
+    struct OH_Huks_Blob tmpInData = { .size = 0, .data = nullptr };
+    if (MallocAndCheckBlobData(&tmpInData, MAX_UPDATE_SIZE).errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+        return ret;
+    }
+
+    // Execute FinishSession with parameter order based on purpose
+    if (purpose == OH_HUKS_KEY_PURPOSE_VERIFY) {
+        ret = OH_Huks_FinishSession(handle, paramSet, outData, &tmpInData);
+    } else {
+        ret = OH_Huks_FinishSession(handle, paramSet, &tmpInData, outData);
+    }
+    HksFree(tmpInData.data);
+
+    return ret;
+}
+
+// Helper function: Process update loop
+static OH_Huks_Result ProcessUpdateLoop(const struct OH_Huks_Blob* handle,
+                                        const struct OH_Huks_ParamSet* paramSet,
+                                        struct OH_Huks_Blob* inDataSeg,
+                                        uint8_t* lastPtr,
+                                        struct OH_Huks_Blob* outData,
+                                        uint8_t** cur,
+                                        uint32_t outDataBufferSize,
+                                        bool* isFinished)
+{
+    struct OH_Huks_Result ret;
+    ret.errorCode = OH_HUKS_SUCCESS;
+    while (inDataSeg->data <= lastPtr) {
+        struct OH_Huks_Blob outDataSeg = { .size = MAX_OUTDATA_SIZE, .data = nullptr };
+        if (inDataSeg->data + MAX_UPDATE_SIZE <= lastPtr) {
+            outDataSeg.size = MAX_OUTDATA_SIZE;
+        } else {
+            *isFinished = true;
+            inDataSeg->size = lastPtr - inDataSeg->data + 1;
+            break;
+        }
+        if (MallocAndCheckBlobData(&outDataSeg, outDataSeg.size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
+            ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+            return ret;
+        }
+        ret = OH_Huks_UpdateSession(handle, paramSet, inDataSeg, &outDataSeg);
+        if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+            HksFree(outDataSeg.data);
+            return ret;
+        }
+
+        // Early exit pattern - skip if no data
+        if (outDataSeg.size == 0) {
+            HksFree(outDataSeg.data);
+            inDataSeg->data += MAX_UPDATE_SIZE;
+            continue;
+        }
+
+        // Extract variable to reduce nesting
+        size_t remainingSize = outDataBufferSize - (*cur - outData->data);
+        int memcpyResult = memcpy_s(*cur, remainingSize, outDataSeg.data, outDataSeg.size);
+        if (memcpyResult != EOK) {
+            HksFree(outDataSeg.data);
+            ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+            return ret;
+        }
+        *cur += outDataSeg.size;
+        outData->size += outDataSeg.size;
+
+        HksFree(outDataSeg.data);
+        inDataSeg->data += MAX_UPDATE_SIZE;
+    }
+    return ret;
+}
+
+// Helper function: Process final update
+static OH_Huks_Result ProcessFinalUpdate(const struct OH_Huks_Blob* handle,
+                                         const struct OH_Huks_ParamSet* paramSet,
+                                         struct OH_Huks_Blob* inDataSeg,
+                                         uint32_t inDataSize,
+                                         struct OH_Huks_Blob* outData,
+                                         uint8_t** cur,
+                                         uint32_t outDataBufferSize,
+                                         bool isFinished)
+{
+    struct OH_Huks_Result ret;
+    ret.errorCode = OH_HUKS_SUCCESS;
+
+    if (isFinished) {
+        return ret;
+    }
+
+    struct OH_Huks_Blob outDataFinish = { inDataSize * DOUBLE_SIZE_MULTIPLIER, nullptr };
+    if (MallocAndCheckBlobData(&outDataFinish, outDataFinish.size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+        return ret;
+    }
+
+    ret = OH_Huks_UpdateSession(handle, paramSet, inDataSeg, &outDataFinish);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        HksFree(outDataFinish.data);
+        return ret;
+    }
+
+    // Early exit pattern - skip if no data
+    if (outDataFinish.size == 0) {
+        HksFree(outDataFinish.data);
+        return ret;
+    }
+
+    // Extract variable to reduce nesting
+    size_t remainingSize = outDataBufferSize - (*cur - outData->data);
+    int memcpyResult = memcpy_s(*cur, remainingSize, outDataFinish.data, outDataFinish.size);
+    if (memcpyResult != EOK) {
+        HksFree(outDataFinish.data);
+        ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+        return ret;
+    }
+    *cur += outDataFinish.size;
+    outData->size += outDataFinish.size;
+    HksFree(outDataFinish.data);
+
+    return ret;
+}
+
+// Helper function: Process finish session
+static OH_Huks_Result ProcessFinishSession(const struct OH_Huks_Blob* handle,
+                                           const struct OH_Huks_ParamSet* paramSet,
+                                           uint32_t purpose,
+                                           struct OH_Huks_Blob* outDataFinish,
+                                           struct OH_Huks_Blob* outData,
+                                           uint8_t* cur,
+                                           uint32_t outDataBufferSize)
+{
+    struct OH_Huks_Result ret;
+    ret.errorCode = OH_HUKS_SUCCESS;
+
+    struct OH_Huks_Blob tmpInData = { .size = 0, .data = nullptr };
+
+    // Execute FinishSession with parameter order based on purpose
+    if (purpose == OH_HUKS_KEY_PURPOSE_VERIFY) {
+        ret = OH_Huks_FinishSession(handle, paramSet, outDataFinish, &tmpInData);
+    } else {
+        ret = OH_Huks_FinishSession(handle, paramSet, &tmpInData, outDataFinish);
+    }
+
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        HksFree(outDataFinish->data);
+        return ret;
+    }
+
+    // Early exit pattern - skip if no data
+    if (outDataFinish->size == 0) {
+        HksFree(outDataFinish->data);
+        return ret;
+    }
+
+    // Extract variable to reduce nesting
+    size_t remainingSize = outDataBufferSize - (cur - outData->data);
+    int memcpyResult = memcpy_s(cur, remainingSize, outDataFinish->data, outDataFinish->size);
+    if (memcpyResult != EOK) {
+        HksFree(outDataFinish->data);
+        ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+        return ret;
+    }
+    outData->size += outDataFinish->size;
+    HksFree(outDataFinish->data);
+
+    return ret;
+}
+
 // Helper function: Test update and finish
 static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob* handle,
                                        const struct OH_Huks_ParamSet* paramSet,
@@ -101,142 +294,36 @@ static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob* handle,
 {
     struct OH_Huks_Result ret;
     ret.errorCode = OH_HUKS_SUCCESS;
-
-    // Save original buffer size for memcpy_s
     uint32_t outDataBufferSize = outData->size;
 
-    // For RSA encryption/decryption, we process data in one update and finish
     if (inData->size <= MAX_UPDATE_SIZE) {
-        // Less than max segment size
-        struct OH_Huks_Blob tmpOutData = { .size = MAX_OUTDATA_SIZE, .data = nullptr };
-        if (MallocAndCheckBlobData(&tmpOutData, tmpOutData.size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
-            ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
-            return ret;
-        }
-
-        ret = OH_Huks_UpdateSession(handle, paramSet, inData, &tmpOutData);
-        HksFree(tmpOutData.data);
-        if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-            return ret;
-        }
-
-        struct OH_Huks_Blob tmpInData = { .size = 0, .data = nullptr };
-        if (MallocAndCheckBlobData(&tmpInData, MAX_UPDATE_SIZE).errorCode != (int32_t)OH_HUKS_SUCCESS) {
-            ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
-            return ret;
-        }
-
-        if (purpose == OH_HUKS_KEY_PURPOSE_VERIFY) {
-            ret = OH_Huks_FinishSession(handle, paramSet, outData, &tmpInData);
-        } else {
-            ret = OH_Huks_FinishSession(handle, paramSet, &tmpInData, outData);
-        }
-        HksFree(tmpInData.data);
-        if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-            return ret;
-        }
-    } else {
-        // Process in segments
-        struct OH_Huks_Blob inDataSeg = *inData;
-        inDataSeg.size = MAX_UPDATE_SIZE;
-
-        uint8_t* lastPtr = inData->data + inData->size - 1;
-        struct OH_Huks_Blob outDataSeg = { .size = MAX_OUTDATA_SIZE, .data = nullptr };
-        uint8_t* cur = outData->data;
-        outData->size = 0;
-
-        bool isFinished = false;
-
-        while (inDataSeg.data <= lastPtr) {
-            if (inDataSeg.data + MAX_UPDATE_SIZE <= lastPtr) {
-                outDataSeg.size = MAX_OUTDATA_SIZE;
-            } else {
-                isFinished = true;
-                inDataSeg.size = lastPtr - inDataSeg.data + 1;
-                break;
-            }
-
-            if (MallocAndCheckBlobData(&outDataSeg, outDataSeg.size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
-                ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
-                return ret;
-            }
-
-            ret = OH_Huks_UpdateSession(handle, paramSet, &inDataSeg, &outDataSeg);
-            if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-                HksFree(outDataSeg.data);
-                return ret;
-            }
-
-            if (outDataSeg.size != 0) {
-                size_t remainingSize = outDataBufferSize - (cur - outData->data);
-                if (memcpy_s(cur, remainingSize, outDataSeg.data, outDataSeg.size) != EOK) {
-                    HksFree(outDataSeg.data);
-                    ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
-                    return ret;
-                }
-                cur += outDataSeg.size;
-                outData->size += outDataSeg.size;
-            }
-            HksFree(outDataSeg.data);
-            inDataSeg.data += MAX_UPDATE_SIZE;
-        }
-
-        struct OH_Huks_Blob outDataFinish = { inData->size * DOUBLE_SIZE_MULTIPLIER, nullptr };
-        if (MallocAndCheckBlobData(&outDataFinish, outDataFinish.size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
-            ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
-            return ret;
-        }
-
-        if (!isFinished) {
-            ret = OH_Huks_UpdateSession(handle, paramSet, &inDataSeg, &outDataFinish);
-            if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-                HksFree(outDataFinish.data);
-                return ret;
-            }
-
-            if (outDataFinish.size != 0) {
-                size_t remainingSize = outDataBufferSize - (cur - outData->data);
-                if (memcpy_s(cur, remainingSize, outDataFinish.data, outDataFinish.size) != EOK) {
-                    HksFree(outDataFinish.data);
-                    ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
-                    return ret;
-                }
-                cur += outDataFinish.size;
-                outData->size += outDataFinish.size;
-            }
-            HksFree(outDataFinish.data);
-
-            outDataFinish.size = inData->size * DOUBLE_SIZE_MULTIPLIER;
-            if (MallocAndCheckBlobData(&outDataFinish, outDataFinish.size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
-                ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
-                return ret;
-            }
-        }
-
-        struct OH_Huks_Blob tmpInData = { .size = 0, .data = nullptr };
-        if (purpose == OH_HUKS_KEY_PURPOSE_VERIFY) {
-            ret = OH_Huks_FinishSession(handle, paramSet, &outDataFinish, &tmpInData);
-        } else {
-            ret = OH_Huks_FinishSession(handle, paramSet, &tmpInData, &outDataFinish);
-        }
-
-        if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-            HksFree(outDataFinish.data);
-            return ret;
-        }
-
-        if (outDataFinish.size != 0) {
-            size_t remainingSize = outDataBufferSize - (cur - outData->data);
-            if (memcpy_s(cur, remainingSize, outDataFinish.data, outDataFinish.size) != EOK) {
-                HksFree(outDataFinish.data);
-                ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
-                return ret;
-            }
-            outData->size += outDataFinish.size;
-        }
-        HksFree(outDataFinish.data);
+        return ProcessSmallDataUpdateFinish(handle, paramSet, purpose, inData, outData);
     }
 
+    struct OH_Huks_Blob inDataSeg = *inData;
+    inDataSeg.size = MAX_UPDATE_SIZE;
+    uint8_t* lastPtr = inData->data + inData->size - 1;
+    uint8_t* cur = outData->data;
+    outData->size = 0;
+    bool isFinished = false;
+
+    ret = ProcessUpdateLoop(handle, paramSet, &inDataSeg, lastPtr, outData, &cur, outDataBufferSize, &isFinished);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return ret;
+    }
+
+    ret = ProcessFinalUpdate(handle, paramSet, &inDataSeg, inData->size, outData, &cur, outDataBufferSize, isFinished);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return ret;
+    }
+
+    struct OH_Huks_Blob outDataFinish = { inData->size * DOUBLE_SIZE_MULTIPLIER, nullptr };
+    if (MallocAndCheckBlobData(&outDataFinish, outDataFinish.size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+        return ret;
+    }
+
+    ret = ProcessFinishSession(handle, paramSet, purpose, &outDataFinish, outData, cur, outDataBufferSize);
     return ret;
 }
 

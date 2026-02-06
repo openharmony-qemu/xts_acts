@@ -27,9 +27,9 @@ static struct OH_Huks_Blob* blobNullptr = nullptr;
 static struct OH_Huks_CertChain* certChainNullptr = nullptr;
 
 // Helper function: Test parameter set operations
-static int TestParamSetOperations(struct OH_Huks_ParamSet* paramSet, struct OH_Huks_Param* paramNullptr)
+static int TestParamSetOperations(struct OH_Huks_ParamSet* paramSet, struct OH_Huks_Param* param)
 {
-    OH_Huks_Result ret = OH_Huks_AddParams(paramSet, paramNullptr, 0);
+    OH_Huks_Result ret = OH_Huks_AddParams(paramSet, param, 0);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
     }
@@ -44,7 +44,7 @@ static int TestParamSetOperations(struct OH_Huks_ParamSet* paramSet, struct OH_H
         return -1;
     }
 
-    ret = OH_Huks_GetParam(paramSet, 0, &paramNullptr);
+    ret = OH_Huks_GetParam(paramSet, 0, &param);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
         return -1;
     }

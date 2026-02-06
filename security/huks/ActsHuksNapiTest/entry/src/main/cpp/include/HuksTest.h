@@ -35,6 +35,19 @@ inline napi_value NapiTry(napi_env env, std::function<napi_value()> func)
     }
 }
 
+// Helper function to extract int32 value from napi_value
+static inline bool TryGetInt32Value(napi_env env, napi_value arg, int32_t* result)
+{
+    napi_valuetype valuetype;
+    napi_status status = napi_typeof(env, arg, &valuetype);
+    if (status != napi_ok || valuetype != napi_number) {
+        return false;
+    }
+    
+    status = napi_get_value_int32(env, arg, result);
+    return (status == napi_ok);
+}
+
 // Helper function to get int32 argument
 inline int32_t GetInt32Arg(napi_env env, napi_callback_info info, size_t index, int32_t defaultValue)
 {
@@ -45,15 +58,8 @@ inline int32_t GetInt32Arg(napi_env env, napi_callback_info info, size_t index, 
         return defaultValue;
     }
     
-    napi_valuetype valuetype;
-    napi_typeof(env, args[index], &valuetype);
-    if (valuetype != napi_number) {
-        return defaultValue;
-    }
-    
-    int32_t value = defaultValue;
-    napi_get_value_int32(env, args[index], &value);
-    return value;
+    int32_t value;
+    return TryGetInt32Value(env, args[index], &value) ? value : defaultValue;
 }
 
 #endif // ACTSHUKSNAPITEST_HUKS_TEST_H

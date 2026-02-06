@@ -14,6 +14,7 @@
  */
 
 #include "include/HuksSignVerifySm2Test.h"
+#include <cstdint>
 #include <cstring>
 #include <huks/native_huks_api.h>
 #include <huks/native_huks_param.h>
@@ -28,6 +29,7 @@ static const uint32_t SM2_COMMON_SIZE = 1024;
 static const uint32_t MAX_UPDATE_SIZE = 64;
 static const uint32_t MAX_OUTDATA_SIZE = 256;
 static const uint32_t SUCCESS_RETURN_INDEX = 0;
+static const size_t MAX_ALLOC_SIZE = SIZE_MAX / 2; // size_t 最大值的一半，防止整数溢出
 
 static const std::string g_inData =
     "Hks_SM2_Sign_Verify_Test_0000000000000000000000000000000000000000000000000000000"
@@ -193,6 +195,10 @@ static OH_Huks_Result
 // Helper function: HksMalloc
 static void* HksMalloc(size_t size)
 {
+    // G.MEM.01: 内存申请前，必须对申请内存大小进行合法性校验
+    if (size == 0 || size > MAX_ALLOC_SIZE) {
+        return nullptr;
+    }
     return malloc(size);
 }
 
@@ -228,7 +234,7 @@ static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob* handle,
         if (inDataSeg.data + MAX_UPDATE_SIZE <= lastPtr) {
             outDataSeg.size = MAX_OUTDATA_SIZE;
             if (purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
-                outDataSeg.data = (uint8_t*)HksMalloc(outDataSeg.size);
+                outDataSeg.data = static_cast<uint8_t*>(HksMalloc(outDataSeg.size));
                 if (outDataSeg.data == nullptr) {
                     ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
                     return ret;
@@ -259,7 +265,7 @@ static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob* handle,
 
     outDataSeg.size = MAX_OUTDATA_SIZE;
     if (purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
-        outDataSeg.data = (uint8_t*)HksMalloc(outDataSeg.size);
+        outDataSeg.data = static_cast<uint8_t*>(HksMalloc(outDataSeg.size));
         if (outDataSeg.data == nullptr) {
             ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
             return ret;
@@ -330,7 +336,7 @@ static OH_Huks_Result CreateImportKeyAlias(struct OH_Huks_Blob* importKeyAlias, 
     ret.errorCode = OH_HUKS_SUCCESS;
     const char* tmp = "new";
     importKeyAlias->size = keyAlias->size + strlen(tmp);
-    importKeyAlias->data = (uint8_t*)HksMalloc(importKeyAlias->size);
+    importKeyAlias->data = static_cast<uint8_t*>(HksMalloc(importKeyAlias->size));
     if (importKeyAlias->data == nullptr) {
         ret.errorCode = OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
         return ret;
@@ -472,7 +478,8 @@ static OH_Huks_Result HksSm2SignVerifyTestRun(const struct OH_Huks_Blob* keyAlia
     struct OH_Huks_ParamSet* signParamSet = nullptr;
     struct OH_Huks_ParamSet* verifyParamSet = nullptr;
 
-    struct OH_Huks_Blob inData = { static_cast<uint32_t>(g_inData.length()), (uint8_t*)g_inData.c_str() };
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(g_inData.length()),
+                                   static_cast<uint8_t*>(const_cast<char*>(g_inData.c_str())) };
     uint8_t outDataS[SM2_COMMON_SIZE] = { 0 };
     struct OH_Huks_Blob outDataSign = { SM2_COMMON_SIZE, outDataS };
 

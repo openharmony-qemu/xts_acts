@@ -309,35 +309,41 @@ static int AllocateAndExportX25519PublicKeys(struct OH_Huks_Blob* publicKey01,
     return 0;
 }
 
+// Parameter structure for X25519 key agreement
+struct X25519KeyAgreementParams {
+    const struct OH_Huks_Blob* publicKey01;
+    const struct OH_Huks_Blob* publicKey02;
+    const struct OH_Huks_ParamSet* initParamSet01;
+    const struct OH_Huks_ParamSet* finishParamSet01;
+    const struct OH_Huks_ParamSet* initParamSet02;
+    const struct OH_Huks_ParamSet* finishParamSet02;
+    struct OH_Huks_Blob* outData01;
+    struct OH_Huks_Blob* outData02;
+};
+
 // Helper function: Perform X25519 key agreement
-static int PerformX25519KeyAgreement(const struct OH_Huks_Blob* publicKey01,
-                                     const struct OH_Huks_Blob* publicKey02,
-                                     const struct OH_Huks_ParamSet* initParamSet01,
-                                     const struct OH_Huks_ParamSet* finishParamSet01,
-                                     const struct OH_Huks_ParamSet* initParamSet02,
-                                     const struct OH_Huks_ParamSet* finishParamSet02,
-                                     struct OH_Huks_Blob* outData01,
-                                     struct OH_Huks_Blob* outData02)
+static int PerformX25519KeyAgreement(const struct X25519KeyAgreementParams* params)
 {
-    if (MallocAndCheckBlobData(outData01, outData01->size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
+    if (MallocAndCheckBlobData(params->outData01, params->outData01->size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return -1;
     }
 
-    if (MallocAndCheckBlobData(outData02, outData02->size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        HksX25519AgreeFreeBlob(outData01, nullptr, nullptr, nullptr);
+    if (MallocAndCheckBlobData(params->outData02, params->outData02->size).errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        HksX25519AgreeFreeBlob(params->outData01, nullptr, nullptr, nullptr);
         return -1;
     }
 
-    OH_Huks_Result ret =
-        HksX25519AgreeFinish(&g_keyAlias01001, publicKey02, initParamSet01, finishParamSet01, outData01);
+    OH_Huks_Result ret = HksX25519AgreeFinish(
+        &g_keyAlias01001, params->publicKey02, params->initParamSet01, params->finishParamSet01, params->outData01);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        HksX25519AgreeFreeBlob(outData01, outData02, nullptr, nullptr);
+        HksX25519AgreeFreeBlob(params->outData01, params->outData02, nullptr, nullptr);
         return -1;
     }
 
-    ret = HksX25519AgreeFinish(&g_keyAlias02001, publicKey01, initParamSet02, finishParamSet02, outData02);
+    ret = HksX25519AgreeFinish(
+        &g_keyAlias02001, params->publicKey01, params->initParamSet02, params->finishParamSet02, params->outData02);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        HksX25519AgreeFreeBlob(outData01, outData02, nullptr, nullptr);
+        HksX25519AgreeFreeBlob(params->outData01, params->outData02, nullptr, nullptr);
         return -1;
     }
 
@@ -404,14 +410,15 @@ int SecurityHuksNapiAgreeX255190100()
     // 执行密钥协商
     struct OH_Huks_Blob outData01 = { .size = X25519_COMMON_SIZE, .data = nullptr };
     struct OH_Huks_Blob outData02 = { .size = X25519_COMMON_SIZE, .data = nullptr };
-    if (PerformX25519KeyAgreement(&publicKey01,
-                                  &publicKey02,
-                                  initParamSet01,
-                                  finishParamSet01,
-                                  initParamSet02,
-                                  finishParamSet02,
-                                  &outData01,
-                                  &outData02) != 0) {
+    struct X25519KeyAgreementParams agreementParams = { .publicKey01 = &publicKey01,
+                                                        .publicKey02 = &publicKey02,
+                                                        .initParamSet01 = initParamSet01,
+                                                        .finishParamSet01 = finishParamSet01,
+                                                        .initParamSet02 = initParamSet02,
+                                                        .finishParamSet02 = finishParamSet02,
+                                                        .outData01 = &outData01,
+                                                        .outData02 = &outData02 };
+    if (PerformX25519KeyAgreement(&agreementParams) != 0) {
         HksX25519AgreeFreeBlob(&publicKey01, &publicKey02, nullptr, nullptr);
         OH_Huks_DeleteKeyItem(&g_keyAlias01001, genParamSet);
         OH_Huks_DeleteKeyItem(&g_keyAlias02001, genParamSet);

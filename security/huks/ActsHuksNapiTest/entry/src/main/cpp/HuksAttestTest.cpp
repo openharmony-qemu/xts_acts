@@ -14,6 +14,7 @@
  */
 
 #include "include/HuksAttestTest.h"
+#include <cstdint>
 #include <cstdlib>
 #include <cstring>
 #include <hilog/log.h>
@@ -72,11 +73,14 @@ static void HksFree(void* ptr)
     }
 }
 
+// Memory allocation limit constant
+static const size_t MAX_ALLOC_SIZE = SIZE_MAX / 2; // Half of size_t max value to prevent overflow
+
 // Helper function: Allocate memory
 static void* HksMalloc(size_t size)
 {
     // G.MEM.01: 内存申请前，必须对申请内存大小进行合法性校验
-    if (size == 0) {
+    if (size == 0 || size > MAX_ALLOC_SIZE) {
         return nullptr;
     }
     return malloc(size);
