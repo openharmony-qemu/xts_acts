@@ -42,11 +42,11 @@ export default function mathTypeTest() {
     })
 
     console.log(domain, tag, '%{public}s', 'describe start');
-    const getValidIntType = (): IntType => {
+    const getValidIntType = () => {
       const tempData: int = 0;
     };
 
-    const getValidLambdaType = (): LambdaType => {
+    const getValidLambdaType = () => {
     };
 
     const getValidFunction = (): Function => {
