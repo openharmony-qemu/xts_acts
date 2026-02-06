@@ -7,9 +7,6 @@ struct Index {
   private inputController: inputMethod.InputMethodController = inputMethod.getController();
   @State private selectOptions: SelectOption[] = [
     {
-      value: 'aaa',
-    },
-    {
       value: 'bbb',
     },
     {
