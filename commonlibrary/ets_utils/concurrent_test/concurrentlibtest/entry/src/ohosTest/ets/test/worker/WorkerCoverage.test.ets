@@ -23,8 +23,8 @@ export default function workerCoverageTest() {
 
     /**
      * @tc.name   testWorkerPostMessageWithEmptyTransfer
-     * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_EMPTY_TRANSFER_001
-     * @tc.desc   Test Worker.postMessage with empty transfer array (E列: 第2个参数缺少空数组覆盖)
+     * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_PARAM_001
+     * @tc.desc   Test Worker.postMessage with empty transfer array.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -62,8 +62,8 @@ export default function workerCoverageTest() {
 
     /**
      * @tc.name   testWorkerPostMessageWithOptionsEmptyTransfer
-     * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_OPTIONS_EMPTY_TRANSFER_001
-     * @tc.desc   Test Worker.postMessage with options.transfer empty (E列: transfer缺少空数组覆盖)
+     * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_PARAM_002
+     * @tc.desc   Test Worker.postMessage with options.transfer empty.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -101,8 +101,8 @@ export default function workerCoverageTest() {
 
     /**
      * @tc.name   testWorkerPostMessageWithOptionsTransfer
-     * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_OPTIONS_TRANSFER_001
-     * @tc.desc   Test Worker.postMessage with options.transfer array (E列: transfer缺少非空数组覆盖)
+     * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_PARAM_003
+     * @tc.desc   Test Worker.postMessage with options.transfer array.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -142,7 +142,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testWorkerPostMessageWithSharedSendableEmpty
      * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_SHARED_EMPTY_001
-     * @tc.desc   Test postMessageWithSharedSendable with empty transfer (E列: 第2个参数缺少空数组覆盖)
+     * @tc.desc   Test postMessageWithSharedSendable with empty transfer.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -181,7 +181,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testWorkerPostMessageWithSharedSendableTransfer
      * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_SHARED_TRANSFER_001
-     * @tc.desc   Test postMessageWithSharedSendable with non-empty transfer (补充覆盖)
+     * @tc.desc   Test postMessageWithSharedSendable with non-empty transfer.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -221,7 +221,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerDispatchEventReturnValueTrue
      * @tc.number SUB_RUNTIME_WORKER_DISPATCHEVENT_RETURN_TRUE_001
-     * @tc.desc   Test ThreadWorker.dispatchEvent returns true (E列: 缺少true值覆盖)
+     * @tc.desc   Test ThreadWorker.dispatchEvent returns true.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -256,7 +256,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerOnNullType
      * @tc.number SUB_RUNTIME_WORKER_ON_TYPE_NULL_001
-     * @tc.desc   Test ThreadWorker.on with null type (E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.on with null type.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -269,9 +269,8 @@ export default function workerCoverageTest() {
         try {
           workerInstance.on(null, () => {
           });
-
         } catch (e) {
-
+          console.error(`${caseName} catch: ${e}`);
         }
 
         workerInstance.onexit = (code: number) => {
@@ -294,7 +293,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerOnEmptyStringType
      * @tc.number SUB_RUNTIME_WORKER_ON_TYPE_EMPTY_001
-     * @tc.desc   Test ThreadWorker.on with empty string type (E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.on with empty string type.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -308,9 +307,8 @@ export default function workerCoverageTest() {
           try {
             workerInstance.on("", () => {
             });
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -333,7 +331,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerOnUndefinedType
      * @tc.number SUB_RUNTIME_WORKER_ON_TYPE_UNDEF_001
-     * @tc.desc   Test ThreadWorker.on with undefined type (E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.on with undefined type.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -346,9 +344,8 @@ export default function workerCoverageTest() {
         try {
           workerInstance.on(undefined, () => {
           });
-
         } catch (e) {
-
+          console.error(`${caseName} catch: ${e}`);
         }
 
         workerInstance.onexit = (code: number) => {
@@ -371,7 +368,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerOnNullListener
      * @tc.number SUB_RUNTIME_WORKER_ON_LISTENER_NULL_001
-     * @tc.desc   Test ThreadWorker.on with null listener (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.on with null listener.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -383,9 +380,8 @@ export default function workerCoverageTest() {
         let finished = false;
         try {
           workerInstance.on("message", null);
-
         } catch (e) {
-
+          console.error(`${caseName} catch: ${e}`);
         }
 
         workerInstance.onexit = (code: number) => {
@@ -408,7 +404,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerOnUndefinedListener
      * @tc.number SUB_RUNTIME_WORKER_ON_LISTENER_UNDEF_001
-     * @tc.desc   Test ThreadWorker.on with undefined listener (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.on with undefined listener.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -421,9 +417,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.on("message", undefined);
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -446,7 +441,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerOnceNullType
      * @tc.number SUB_RUNTIME_WORKER_ONCE_TYPE_NULL_001
-     * @tc.desc   Test ThreadWorker.once with null type (E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.once with null type.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -459,9 +454,8 @@ export default function workerCoverageTest() {
         try {
           workerInstance.once(null, () => {
           });
-
         } catch (e) {
-
+          console.error(`${caseName} catch: ${e}`);
         }
 
         workerInstance.onexit = (code: number) => {
@@ -484,7 +478,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerOnceEmptyStringType
      * @tc.number SUB_RUNTIME_WORKER_ONCE_TYPE_EMPTY_001
-     * @tc.desc   Test ThreadWorker.once with empty string type (E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.once with empty string type.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -498,9 +492,8 @@ export default function workerCoverageTest() {
           try {
             workerInstance.once("", () => {
             });
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -523,7 +516,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerOnceUndefinedType
      * @tc.number SUB_RUNTIME_WORKER_ONCE_TYPE_UNDEF_001
-     * @tc.desc   Test ThreadWorker.once with undefined type (E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.once with undefined type.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -537,9 +530,8 @@ export default function workerCoverageTest() {
           try {
             workerInstance.once(undefined, () => {
             });
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -562,7 +554,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerOnceNullListener
      * @tc.number SUB_RUNTIME_WORKER_ONCE_LISTENER_NULL_001
-     * @tc.desc   Test ThreadWorker.once with null listener (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.once with null listener.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -575,9 +567,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.once("message", null);
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -600,7 +591,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerOnceUndefinedListener
      * @tc.number SUB_RUNTIME_WORKER_ONCE_LISTENER_UNDEF_001
-     * @tc.desc   Test ThreadWorker.once with undefined listener (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.once with undefined listener.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -613,9 +604,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.once("message", undefined);
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -638,7 +628,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerOffNullType
      * @tc.number SUB_RUNTIME_WORKER_OFF_TYPE_NULL_001
-     * @tc.desc   Test ThreadWorker.off with null type (E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.off with null type.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -650,9 +640,8 @@ export default function workerCoverageTest() {
         let finished = false;
         try {
           workerInstance.off(null);
-
         } catch (e) {
-
+          console.error(`${caseName} catch: ${e}`);
         }
 
         workerInstance.onexit = (code: number) => {
@@ -675,7 +664,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerOffEmptyStringType
      * @tc.number SUB_RUNTIME_WORKER_OFF_TYPE_EMPTY_001
-     * @tc.desc   Test ThreadWorker.off with empty string type (E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.off with empty string type.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -688,9 +677,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.off("");
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -713,7 +701,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerOffUndefinedType
      * @tc.number SUB_RUNTIME_WORKER_OFF_TYPE_UNDEF_001
-     * @tc.desc   Test ThreadWorker.off with undefined type (E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.off with undefined type.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -726,9 +714,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.off(undefined);
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -751,7 +738,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerOffNullListener
      * @tc.number SUB_RUNTIME_WORKER_OFF_LISTENER_NULL_001
-     * @tc.desc   Test ThreadWorker.off with null listener (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.off with null listener.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -763,9 +750,8 @@ export default function workerCoverageTest() {
         let finished = false;
         try {
           workerInstance.off("message", null);
-
         } catch (e) {
-
+          console.error(`${caseName} catch: ${e}`);
         }
 
         workerInstance.onexit = (code: number) => {
@@ -788,7 +774,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerOffUndefinedListener
      * @tc.number SUB_RUNTIME_WORKER_OFF_LISTENER_UNDEF_001
-     * @tc.desc   Test ThreadWorker.off with undefined listener (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.off with undefined listener.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -801,9 +787,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.off("message", undefined);
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -826,7 +811,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerAddEventListenerNullType
      * @tc.number SUB_RUNTIME_WORKER_ADDLISTENER_TYPE_NULL_001
-     * @tc.desc   Test ThreadWorker.addEventListener with null type (E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.addEventListener with null type.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -841,7 +826,7 @@ export default function workerCoverageTest() {
             workerInstance.addEventListener(null, () => {
             });
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
           workerInstance.onexit = (code: number) => {
             finished = true;
@@ -863,7 +848,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerAddEventListenerEmptyStringType
      * @tc.number SUB_RUNTIME_WORKER_ADDLISTENER_TYPE_EMPTY_001
-     * @tc.desc   Test ThreadWorker.addEventListener with empty string type (E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.addEventListener with empty string type.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -877,9 +862,8 @@ export default function workerCoverageTest() {
           try {
             workerInstance.addEventListener("", () => {
             });
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -902,7 +886,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerAddEventListenerUndefinedType
      * @tc.number SUB_RUNTIME_WORKER_ADDLISTENER_TYPE_UNDEF_001
-     * @tc.desc   Test ThreadWorker.addEventListener with undefined type (E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.addEventListener with undefined type.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -916,9 +900,8 @@ export default function workerCoverageTest() {
           try {
             workerInstance.addEventListener(undefined, () => {
             });
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -941,7 +924,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerAddEventListenerNullListener
      * @tc.number SUB_RUNTIME_WORKER_ADDLISTENER_LISTENER_NULL_001
-     * @tc.desc   Test ThreadWorker.addEventListener with null listener (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.addEventListener with null listener.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -954,9 +937,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.addEventListener("message", null);
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -979,7 +961,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerAddEventListenerUndefinedListener
      * @tc.number SUB_RUNTIME_WORKER_ADDLISTENER_LISTENER_UNDEF_001
-     * @tc.desc   Test ThreadWorker.addEventListener with undefined listener (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.addEventListener with undefined listener.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -992,9 +974,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.addEventListener("message", undefined);
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1017,7 +998,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerRemoveEventListenerNullType
      * @tc.number SUB_RUNTIME_WORKER_REMOVELISTENER_TYPE_NULL_001
-     * @tc.desc   Test ThreadWorker.removeEventListener with null type (E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.removeEventListener with null type.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1030,9 +1011,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.removeEventListener(null);
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1055,7 +1035,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerRemoveEventListenerEmptyStringType
      * @tc.number SUB_RUNTIME_WORKER_REMOVELISTENER_TYPE_EMPTY_001
-     * @tc.desc   Test ThreadWorker.removeEventListener with empty string type (E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.removeEventListener with empty string type.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1068,9 +1048,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.removeEventListener("");
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1093,7 +1072,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerRemoveEventListenerUndefinedType
      * @tc.number SUB_RUNTIME_WORKER_REMOVELISTENER_TYPE_UNDEF_001
-     * @tc.desc   Test ThreadWorker.removeEventListener with undefined type (E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.removeEventListener with undefined type.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1106,9 +1085,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.removeEventListener(undefined);
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1131,7 +1109,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerRemoveEventListenerNullCallback
      * @tc.number SUB_RUNTIME_WORKER_REMOVELISTENER_CALLBACK_NULL_001
-     * @tc.desc   Test ThreadWorker.removeEventListener with null callback (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.removeEventListener with null callback.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1144,9 +1122,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.removeEventListener("message", null);
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1169,7 +1146,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerRemoveEventListenerUndefinedCallback
      * @tc.number SUB_RUNTIME_WORKER_REMOVELISTENER_CALLBACK_UNDEF_001
-     * @tc.desc   Test ThreadWorker.removeEventListener with undefined callback (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.removeEventListener with undefined callback.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1182,9 +1159,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.removeEventListener("message", undefined);
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1207,7 +1183,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testWorkerPostMessageWithSharedSendableNull
      * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_SHARED_NULL_001
-     * @tc.desc   Test postMessageWithSharedSendable with null message (E列: 第1个参数缺少null/undefined覆盖)
+     * @tc.desc   Test postMessageWithSharedSendable with null message.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1220,9 +1196,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.postMessageWithSharedSendable(null);
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1245,7 +1220,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testWorkerPostMessageWithSharedSendableUndefined
      * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_SHARED_UNDEF_001
-     * @tc.desc   Test postMessageWithSharedSendable with undefined message (E列: 第1个参数缺少null/undefined覆盖)
+     * @tc.desc   Test postMessageWithSharedSendable with undefined message.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1258,9 +1233,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.postMessageWithSharedSendable(undefined);
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1283,7 +1257,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testWorkerPostMessageWithSharedSendableNullTransfer
      * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_SHARED_TRANSFER_NULL_001
-     * @tc.desc   Test postMessageWithSharedSendable with null transfer (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test postMessageWithSharedSendable with null transfer.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1296,9 +1270,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.postMessageWithSharedSendable("test", null);
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1321,7 +1294,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testWorkerPostMessageWithSharedSendableUndefinedTransfer
      * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_SHARED_TRANSFER_UNDEF_001
-     * @tc.desc   Test postMessageWithSharedSendable with undefined transfer (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test postMessageWithSharedSendable with undefined transfer.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1334,9 +1307,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.postMessageWithSharedSendable("test", undefined);
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1359,7 +1331,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testWorkerDispatchEventNull
      * @tc.number SUB_RUNTIME_WORKER_DISPATCHEVENT_NULL_001
-     * @tc.desc   Test dispatchEvent with null event (E列: 第1个参数缺少null/undefined覆盖)
+     * @tc.desc   Test dispatchEvent with null event.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1373,7 +1345,7 @@ export default function workerCoverageTest() {
           const result = workerInstance.dispatchEvent(null);
           expect(result === true || result === false).assertTrue();
         } catch (e) {
-
+          console.error(`${caseName} catch: ${e}`);
         }
 
         workerInstance.onexit = (code: number) => {
@@ -1396,7 +1368,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testWorkerDispatchEventUndefined
      * @tc.number SUB_RUNTIME_WORKER_DISPATCHEVENT_UNDEF_001
-     * @tc.desc   Test dispatchEvent with undefined event (E列: 第1个参数缺少null/undefined覆盖)
+     * @tc.desc   Test dispatchEvent with undefined event.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1411,7 +1383,7 @@ export default function workerCoverageTest() {
             const result = workerInstance.dispatchEvent(undefined);
             expect(result === true || result === false).assertTrue();
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1433,8 +1405,8 @@ export default function workerCoverageTest() {
 
     /**
      * @tc.name   testWorkerAddEventListenerNullType
-     * @tc.number SUB_RUNTIME_WORKER_ADDLISTENER_TYPE_NULL_001
-     * @tc.desc   Test Worker.addEventListener with null type (EventTarget, E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.number SUB_RUNTIME_WORKER_ADDLISTENER_TYPE_NULL_003
+     * @tc.desc   Test Worker.addEventListener with null type (EventTarget API).
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1448,9 +1420,8 @@ export default function workerCoverageTest() {
           try {
             workerInstance.addEventListener(null, () => {
             });
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1472,8 +1443,8 @@ export default function workerCoverageTest() {
 
     /**
      * @tc.name   testWorkerAddEventListenerEmptyStringType
-     * @tc.number SUB_RUNTIME_WORKER_ADDLISTENER_TYPE_EMPTY_001
-     * @tc.desc   Test Worker.addEventListener with empty string type (EventTarget, E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.number SUB_RUNTIME_WORKER_ADDLISTENER_TYPE_EMPTY_002
+     * @tc.desc   Test Worker.addEventListener with empty string type (EventTarget API).
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1487,9 +1458,8 @@ export default function workerCoverageTest() {
           try {
             workerInstance.addEventListener("", () => {
             });
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1511,8 +1481,8 @@ export default function workerCoverageTest() {
 
     /**
      * @tc.name   testWorkerAddEventListenerUndefinedType
-     * @tc.number SUB_RUNTIME_WORKER_ADDLISTENER_TYPE_UNDEF_001
-     * @tc.desc   Test Worker.addEventListener with undefined type (EventTarget, E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.number SUB_RUNTIME_WORKER_ADDLISTENER_TYPE_UNDEF_002
+     * @tc.desc   Test Worker.addEventListener with undefined type (EventTarget API).
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1526,9 +1496,8 @@ export default function workerCoverageTest() {
           try {
             workerInstance.addEventListener(undefined, () => {
             });
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1550,8 +1519,8 @@ export default function workerCoverageTest() {
 
     /**
      * @tc.name   testWorkerAddEventListenerNullListener
-     * @tc.number SUB_RUNTIME_WORKER_ADDLISTENER_LISTENER_NULL_001
-     * @tc.desc   Test Worker.addEventListener with null listener (EventTarget, E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.number SUB_RUNTIME_WORKER_ADDLISTENER_LISTENER_NULL_002
+     * @tc.desc   Test Worker.addEventListener with null listener (EventTarget API).
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1564,9 +1533,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.addEventListener("message", null);
-
           } catch (e) {
-
+            console.error(`${caseName} catch: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1588,8 +1556,8 @@ export default function workerCoverageTest() {
 
     /**
      * @tc.name   testWorkerAddEventListenerUndefinedListener
-     * @tc.number SUB_RUNTIME_WORKER_ADDLISTENER_LISTENER_UNDEF_001
-     * @tc.desc   Test Worker.addEventListener with undefined listener (EventTarget, E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.number SUB_RUNTIME_WORKER_ADDLISTENER_LISTENER_UNDEF_002
+     * @tc.desc   Test Worker.addEventListener with undefined listener (EventTarget API).
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1602,9 +1570,8 @@ export default function workerCoverageTest() {
           let finished = false;
           try {
             workerInstance.addEventListener("message", undefined);
-
           } catch (e) {
-
+            console.log(`${caseName} catch error: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1626,8 +1593,8 @@ export default function workerCoverageTest() {
 
     /**
      * @tc.name   testWorkerRemoveEventListenerNullType
-     * @tc.number SUB_RUNTIME_WORKER_REMOVELISTENER_TYPE_NULL_001
-     * @tc.desc   Test Worker.removeEventListener with null type (EventTarget, E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.number SUB_RUNTIME_WORKER_REMOVELISTENER_TYPE_NULL_002
+     * @tc.desc   Test Worker.removeEventListener with null type (EventTarget API).
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1642,7 +1609,7 @@ export default function workerCoverageTest() {
             workerInstance.removeEventListener(null);
 
           } catch (e) {
-
+            console.log(`${caseName} catch error: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1664,8 +1631,8 @@ export default function workerCoverageTest() {
 
     /**
      * @tc.name   testWorkerRemoveEventListenerEmptyStringType
-     * @tc.number SUB_RUNTIME_WORKER_REMOVELISTENER_TYPE_EMPTY_001
-     * @tc.desc   Test Worker.removeEventListener with empty string type (EventTarget, E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.number SUB_RUNTIME_WORKER_REMOVELISTENER_TYPE_EMPTY_002
+     * @tc.desc   Test Worker.removeEventListener with empty string type (EventTarget API).
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1680,7 +1647,7 @@ export default function workerCoverageTest() {
             workerInstance.removeEventListener("");
 
           } catch (e) {
-
+            console.log(`${caseName} catch error: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1702,8 +1669,8 @@ export default function workerCoverageTest() {
 
     /**
      * @tc.name   testWorkerRemoveEventListenerUndefinedType
-     * @tc.number SUB_RUNTIME_WORKER_REMOVELISTENER_TYPE_UNDEF_001
-     * @tc.desc   Test Worker.removeEventListener with undefined type (EventTarget, E列: 第1个参数缺少空值""//null/undefined覆盖)
+     * @tc.number SUB_RUNTIME_WORKER_REMOVELISTENER_TYPE_UNDEF_002
+     * @tc.desc   Test Worker.removeEventListener with undefined type (EventTarget API).
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1718,7 +1685,7 @@ export default function workerCoverageTest() {
             workerInstance.removeEventListener(undefined);
 
           } catch (e) {
-
+            console.log(`${caseName} catch error: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1740,8 +1707,8 @@ export default function workerCoverageTest() {
 
     /**
      * @tc.name   testWorkerRemoveEventListenerNullCallback
-     * @tc.number SUB_RUNTIME_WORKER_REMOVELISTENER_CALLBACK_NULL_001
-     * @tc.desc   Test Worker.removeEventListener with null callback (EventTarget, E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.number SUB_RUNTIME_WORKER_REMOVELISTENER_CALLBACK_NULL_002
+     * @tc.desc   Test Worker.removeEventListener with null callback (EventTarget API).
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1756,7 +1723,7 @@ export default function workerCoverageTest() {
             workerInstance.removeEventListener("message", null);
 
           } catch (e) {
-
+            console.log(`${caseName} catch error: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1778,8 +1745,8 @@ export default function workerCoverageTest() {
 
     /**
      * @tc.name   testWorkerRemoveEventListenerUndefinedCallback
-     * @tc.number SUB_RUNTIME_WORKER_REMOVELISTENER_CALLBACK_UNDEF_001
-     * @tc.desc   Test Worker.removeEventListener with undefined callback (EventTarget, E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.number SUB_RUNTIME_WORKER_REMOVELISTENER_CALLBACK_UNDEF_002
+     * @tc.desc   Test Worker.removeEventListener with undefined callback (EventTarget API).
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1794,7 +1761,7 @@ export default function workerCoverageTest() {
             workerInstance.removeEventListener("message", undefined);
 
           } catch (e) {
-
+            console.log(`${caseName} catch error: ${e}`);
           }
 
           workerInstance.onexit = (code: number) => {
@@ -1814,573 +1781,25 @@ export default function workerCoverageTest() {
         }
       });
 
-    // ========== Worker (废弃API) 缺失场景补充 ==========
 
-    /**
-     * @tc.name   testWorkerOnNullType
-     * @tc.number SUB_RUNTIME_WORKER_ON_TYPE_NULL_002
-     * @tc.desc   Test Worker.on with null type (Worker API, E列: 第1个参数缺少空值""//null/undefined覆盖)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testWorkerOnNullType', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      const caseName = "testWorkerOnNullType";
-      try {
-        const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
-        let finished = false;
-        try {
-          workerInstance.on(null, () => {
-          });
 
-        } catch (e) {
 
-        }
 
-        workerInstance.onexit = (code: number) => {
-          finished = true;
-          expect(code).assertEqual(0);
-        };
 
-        workerInstance.terminate();
-        while (!finished) {
-          await Sleep(100)
-        }
-        done();
-      } catch (error) {
-        console.error(`${caseName} error: ${error}`);
-        expect().assertFail();
-        done();
-      }
-    });
 
-    /**
-     * @tc.name   testWorkerOnEmptyStringType
-     * @tc.number SUB_RUNTIME_WORKER_ON_TYPE_EMPTY_002
-     * @tc.desc   Test Worker.on with empty string type (Worker API, E列: 第1个参数缺少空值""//null/undefined覆盖)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testWorkerOnEmptyStringType', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      const caseName = "testWorkerOnEmptyStringType";
-      try {
-        const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
-        let finished = false;
-        try {
-          workerInstance.on("", () => {
-          });
 
-        } catch (e) {
 
-        }
 
-        workerInstance.onexit = (code: number) => {
-          finished = true;
-          expect(code).assertEqual(0);
-        };
 
-        workerInstance.terminate();
-        while (!finished) {
-          await Sleep(100)
-        }
-        done();
-      } catch (error) {
-        console.error(`${caseName} error: ${error}`);
-        expect().assertFail();
-        done();
-      }
-    });
 
-    /**
-     * @tc.name   testWorkerOnUndefinedType
-     * @tc.number SUB_RUNTIME_WORKER_ON_TYPE_UNDEF_002
-     * @tc.desc   Test Worker.on with undefined type (Worker API, E列: 第1个参数缺少空值""//null/undefined覆盖)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testWorkerOnUndefinedType', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      const caseName = "testWorkerOnUndefinedType";
-      try {
-        const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
-        let finished = false;
-        try {
-          workerInstance.on(undefined, () => {
-          });
 
-        } catch (e) {
 
-        }
 
-        workerInstance.onexit = (code: number) => {
-          finished = true;
-          expect(code).assertEqual(0);
-        };
-
-        workerInstance.terminate();
-        while (!finished) {
-          await Sleep(100)
-        }
-        done();
-      } catch (error) {
-        console.error(`${caseName} error: ${error}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testWorkerOnNullListener
-     * @tc.number SUB_RUNTIME_WORKER_ON_LISTENER_NULL_002
-     * @tc.desc   Test Worker.on with null listener (Worker API, E列: 第2个参数缺少null/undefined覆盖)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testWorkerOnNullListener', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      const caseName = "testWorkerOnNullListener";
-      try {
-        const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
-        let finished = false;
-        try {
-          workerInstance.on("message", null);
-
-        } catch (e) {
-
-        }
-
-        workerInstance.onexit = (code: number) => {
-          finished = true;
-          expect(code).assertEqual(0);
-        };
-
-        workerInstance.terminate();
-        while (!finished) {
-          await Sleep(100)
-        }
-        done();
-      } catch (error) {
-        console.error(`${caseName} error: ${error}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testWorkerOnUndefinedListener
-     * @tc.number SUB_RUNTIME_WORKER_ON_LISTENER_UNDEF_002
-     * @tc.desc   Test Worker.on with undefined listener (Worker API, E列: 第2个参数缺少null/undefined覆盖)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testWorkerOnUndefinedListener', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      const caseName = "testWorkerOnUndefinedListener";
-      try {
-        const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
-        let finished = false;
-        try {
-          workerInstance.on("message", undefined);
-
-        } catch (e) {
-
-        }
-
-        workerInstance.onexit = (code: number) => {
-          finished = true;
-          expect(code).assertEqual(0);
-        };
-
-        workerInstance.terminate();
-        while (!finished) {
-          await Sleep(100)
-        }
-        done();
-      } catch (error) {
-        console.error(`${caseName} error: ${error}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testWorkerOnceNullType
-     * @tc.number SUB_RUNTIME_WORKER_ONCE_TYPE_NULL_002
-     * @tc.desc   Test Worker.once with null type (Worker API, E列: 第1个参数缺少空值""//null/undefined覆盖)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testWorkerOnceNullType', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      const caseName = "testWorkerOnceNullType";
-      try {
-        const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
-        let finished = false;
-        try {
-          workerInstance.once(null, () => {
-          });
-
-        } catch (e) {
-
-        }
-
-        workerInstance.onexit = (code: number) => {
-          finished = true;
-          expect(code).assertEqual(0);
-        };
-
-        workerInstance.terminate();
-        while (!finished) {
-          await Sleep(100)
-        }
-        done();
-      } catch (error) {
-        console.error(`${caseName} error: ${error}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testWorkerOnceEmptyStringType
-     * @tc.number SUB_RUNTIME_WORKER_ONCE_TYPE_EMPTY_002
-     * @tc.desc   Test Worker.once with empty string type (Worker API, E列: 第1个参数缺少空值""//null/undefined覆盖)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testWorkerOnceEmptyStringType', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      const caseName = "testWorkerOnceEmptyStringType";
-      try {
-        const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
-        let finished = false;
-        try {
-          workerInstance.once("", () => {
-          });
-
-        } catch (e) {
-
-        }
-
-        workerInstance.onexit = (code: number) => {
-          finished = true;
-          expect(code).assertEqual(0);
-        };
-
-        workerInstance.terminate();
-        while (!finished) {
-          await Sleep(100)
-        }
-        done();
-      } catch (error) {
-        console.error(`${caseName} error: ${error}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testWorkerOnceUndefinedType
-     * @tc.number SUB_RUNTIME_WORKER_ONCE_TYPE_UNDEF_002
-     * @tc.desc   Test Worker.once with undefined type (Worker API, E列: 第1个参数缺少空值""//null/undefined覆盖)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testWorkerOnceUndefinedType', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      const caseName = "testWorkerOnceUndefinedType";
-      try {
-        const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
-        let finished = false;
-        try {
-          workerInstance.once(undefined, () => {
-          });
-
-        } catch (e) {
-
-        }
-
-        workerInstance.onexit = (code: number) => {
-          finished = true;
-          expect(code).assertEqual(0);
-        };
-
-        workerInstance.terminate();
-        while (!finished) {
-          await Sleep(100)
-        }
-        done();
-      } catch (error) {
-        console.error(`${caseName} error: ${error}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testWorkerOnceNullListener
-     * @tc.number SUB_RUNTIME_WORKER_ONCE_LISTENER_NULL_002
-     * @tc.desc   Test Worker.once with null listener (Worker API, E列: 第2个参数缺少null/undefined覆盖)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testWorkerOnceNullListener', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      const caseName = "testWorkerOnceNullListener";
-      try {
-        const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
-        let finished = false;
-        try {
-          workerInstance.once("message", null);
-
-        } catch (e) {
-
-        }
-
-        workerInstance.onexit = (code: number) => {
-          finished = true;
-          expect(code).assertEqual(0);
-        };
-
-        workerInstance.terminate();
-        while (!finished) {
-          await Sleep(100)
-        }
-        done();
-      } catch (error) {
-        console.error(`${caseName} error: ${error}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testWorkerOnceUndefinedListener
-     * @tc.number SUB_RUNTIME_WORKER_ONCE_LISTENER_UNDEF_002
-     * @tc.desc   Test Worker.once with undefined listener (Worker API, E列: 第2个参数缺少null/undefined覆盖)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testWorkerOnceUndefinedListener', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      const caseName = "testWorkerOnceUndefinedListener";
-      try {
-        const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
-        let finished = false;
-        try {
-          workerInstance.once("message", undefined);
-
-        } catch (e) {
-
-        }
-
-        workerInstance.onexit = (code: number) => {
-          finished = true;
-          expect(code).assertEqual(0);
-        };
-
-        workerInstance.terminate();
-        while (!finished) {
-          await Sleep(100)
-        }
-        done();
-      } catch (error) {
-        console.error(`${caseName} error: ${error}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testWorkerOffNullType
-     * @tc.number SUB_RUNTIME_WORKER_OFF_TYPE_NULL_002
-     * @tc.desc   Test Worker.off with null type (Worker API, E列: 第1个参数缺少空值""//null/undefined覆盖)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testWorkerOffNullType', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      const caseName = "testWorkerOffNullType";
-      try {
-        const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
-        let finished = false;
-        try {
-          workerInstance.off(null);
-
-        } catch (e) {
-
-        }
-
-        workerInstance.onexit = (code: number) => {
-          finished = true;
-          expect(code).assertEqual(0);
-        };
-
-        workerInstance.terminate();
-        while (!finished) {
-          await Sleep(100)
-        }
-        done();
-      } catch (error) {
-        console.error(`${caseName} error: ${error}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testWorkerOffEmptyStringType
-     * @tc.number SUB_RUNTIME_WORKER_OFF_TYPE_EMPTY_002
-     * @tc.desc   Test Worker.off with empty string type (Worker API, E列: 第1个参数缺少空值""//null/undefined覆盖)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testWorkerOffEmptyStringType', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      const caseName = "testWorkerOffEmptyStringType";
-      try {
-        const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
-        let finished = false;
-        try {
-          workerInstance.off("");
-
-        } catch (e) {
-
-        }
-
-        workerInstance.onexit = (code: number) => {
-          finished = true;
-          expect(code).assertEqual(0);
-        };
-
-        workerInstance.terminate();
-        while (!finished) {
-          await Sleep(100)
-        }
-        done();
-      } catch (error) {
-        console.error(`${caseName} error: ${error}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testWorkerOffUndefinedType
-     * @tc.number SUB_RUNTIME_WORKER_OFF_TYPE_UNDEF_002
-     * @tc.desc   Test Worker.off with undefined type (Worker API, E列: 第1个参数缺少空值""//null/undefined覆盖)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testWorkerOffUndefinedType', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      const caseName = "testWorkerOffUndefinedType";
-      try {
-        const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
-        let finished = false;
-        try {
-          workerInstance.off(undefined);
-
-        } catch (e) {
-
-        }
-
-        workerInstance.onexit = (code: number) => {
-          finished = true;
-          expect(code).assertEqual(0);
-        };
-
-        workerInstance.terminate();
-        while (!finished) {
-          await Sleep(100)
-        }
-        done();
-      } catch (error) {
-        console.error(`${caseName} error: ${error}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testWorkerOffNullListener
-     * @tc.number SUB_RUNTIME_WORKER_OFF_LISTENER_NULL_002
-     * @tc.desc   Test Worker.off with null listener (Worker API, E列: 第2个参数缺少null/undefined覆盖)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testWorkerOffNullListener', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      const caseName = "testWorkerOffNullListener";
-      try {
-        const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
-        let finished = false;
-        try {
-          workerInstance.off("message", null);
-
-        } catch (e) {
-
-        }
-
-        workerInstance.onexit = (code: number) => {
-          finished = true;
-          expect(code).assertEqual(0);
-        };
-
-        workerInstance.terminate();
-        while (!finished) {
-          await Sleep(100)
-        }
-        done();
-      } catch (error) {
-        console.error(`${caseName} error: ${error}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testWorkerOffUndefinedListener
-     * @tc.number SUB_RUNTIME_WORKER_OFF_LISTENER_UNDEF_002
-     * @tc.desc   Test Worker.off with undefined listener (Worker API, E列: 第2个参数缺少null/undefined覆盖)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testWorkerOffUndefinedListener', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      const caseName = "testWorkerOffUndefinedListener";
-      try {
-        const workerInstance = new worker.ThreadWorker("../../workers/Worker1.ets");
-        let finished = false;
-        try {
-          workerInstance.off("message", undefined);
-
-        } catch (e) {
-
-        }
-
-        workerInstance.onexit = (code: number) => {
-          finished = true;
-          expect(code).assertEqual(0);
-        };
-
-        workerInstance.terminate();
-        while (!finished) {
-          await Sleep(100)
-        }
-        done();
-      } catch (error) {
-        console.error(`${caseName} error: ${error}`);
-        expect().assertFail();
-        done();
-      }
-    });
 
     /**
      * @tc.name   testThreadWorkerDispatchEventReturnValueFalse
      * @tc.number SUB_RUNTIME_WORKER_DISPATCHEVENT_RETURN_FALSE_001
-     * @tc.desc   Test ThreadWorker.dispatchEvent returns false (E列: 缺少false值覆盖)
+     * @tc.desc   Test ThreadWorker.dispatchEvent returns false.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -2419,7 +1838,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testWorkerPostMessageNull
      * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_NULL_001
-     * @tc.desc   Test Worker.postMessage with null message (E列: 第1个参数缺少null/undefined覆盖)
+     * @tc.desc   Test Worker.postMessage with null message.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -2455,7 +1874,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testWorkerPostMessageUndefined
      * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_UNDEF_001
-     * @tc.desc   Test Worker.postMessage with undefined message (E列: 第1个参数缺少null/undefined覆盖)
+     * @tc.desc   Test Worker.postMessage with undefined message.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -2491,7 +1910,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testWorkerPostMessageTransferNull
      * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_TRANSFER_NULL_001
-     * @tc.desc   Test Worker.postMessage with null transfer (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test Worker.postMessage with null transfer.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -2528,7 +1947,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testWorkerPostMessageTransferUndefined
      * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_TRANSFER_UNDEF_001
-     * @tc.desc   Test Worker.postMessage with undefined transfer (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test Worker.postMessage with undefined transfer.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -2565,7 +1984,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testWorkerPostMessageWithOptionsTransferNonEmpty
      * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_OPTIONS_TRANSFER_002
-     * @tc.desc   Test Worker.postMessage with options.transfer non-empty array (E列: options.transfer缺少非空数组覆盖)
+     * @tc.desc   Test Worker.postMessage with options.transfer non-empty array.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -2605,7 +2024,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testWorkerPostMessageWithOptionsTransferNull
      * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_OPTIONS_TRANSFER_NULL_001
-     * @tc.desc   Test Worker.postMessage with options.transfer null (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test Worker.postMessage with options.transfer null.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -2642,7 +2061,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testWorkerPostMessageWithOptionsTransferUndefined
      * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_OPTIONS_TRANSFER_UNDEF_001
-     * @tc.desc   Test Worker.postMessage with options.transfer undefined (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test Worker.postMessage with options.transfer undefined.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -2679,7 +2098,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testWorkerDispatchEventReturnValueFalse
      * @tc.number SUB_RUNTIME_WORKER_DISPATCHEVENT_RETURN_FALSE_002
-     * @tc.desc   Test Worker.dispatchEvent returns false (EventTarget, E列: 缺少false值覆盖)
+     * @tc.desc   Test Worker.dispatchEvent returns false (EventTarget.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -2717,7 +2136,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerPostMessageOptionsTransferNonEmpty
      * @tc.number SUB_RUNTIME_THREADWORKER_POSTMESSAGE_OPTIONS_TRANSFER_001
-     * @tc.desc   Test ThreadWorker.postMessage with options.transfer non-empty (E列: options.transfer缺少非空数组覆盖)
+     * @tc.desc   Test ThreadWorker.postMessage with options.transfer non-empty.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -2757,7 +2176,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerRegisterGlobalCallObjectNullObject
      * @tc.number SUB_RUNTIME_THREADWORKER_REG_GLOBAL_NULL_001
-     * @tc.desc   Test ThreadWorker.registerGlobalCallObject with null object (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.registerGlobalCallObject with null object.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -2794,7 +2213,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerRegisterGlobalCallObjectUndefinedObject
      * @tc.number SUB_RUNTIME_THREADWORKER_REG_GLOBAL_UNDEF_001
-     * @tc.desc   Test ThreadWorker.registerGlobalCallObject with undefined object (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.registerGlobalCallObject with undefined object.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -2830,7 +2249,7 @@ export default function workerCoverageTest() {
     /**
      * @tc.name   testThreadWorkerRegisterGlobalCallObjectUndefinedObject2
      * @tc.number SUB_RUNTIME_THREADWORKER_REG_GLOBAL_UNDEF_002
-     * @tc.desc   Test ThreadWorker.registerGlobalCallObject with undefined object (E列: 第2个参数缺少null/undefined覆盖)
+     * @tc.desc   Test ThreadWorker.registerGlobalCallObject with undefined object.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1

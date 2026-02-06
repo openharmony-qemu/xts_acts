@@ -55,10 +55,10 @@ export default function ProcessBoundaryTest() {
         try {
           const result = process.isAppUid(null);
           console.info(`${caseName}, unexpected success with null: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(undefined);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -79,10 +79,10 @@ export default function ProcessBoundaryTest() {
         try {
           const result = process.isAppUid(undefined);
           console.info(`${caseName}, unexpected success with undefined: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(undefined);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -109,7 +109,7 @@ export default function ProcessBoundaryTest() {
           expect(result === -1).assertEqual(true);
         } catch (error) {
           console.info(`${caseName}, error with empty string: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -130,10 +130,10 @@ export default function ProcessBoundaryTest() {
         try {
           const result = process.getUidForName(null);
           console.info(`${caseName}, unexpected success with null: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(undefined);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -154,10 +154,10 @@ export default function ProcessBoundaryTest() {
         try {
           const result = process.getUidForName(undefined);
           console.info(`${caseName}, unexpected success with undefined: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(undefined);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -180,10 +180,10 @@ export default function ProcessBoundaryTest() {
         try {
           const result = process.getThreadPriority(null);
           console.info(`${caseName}, unexpected success with null: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(undefined);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -204,10 +204,10 @@ export default function ProcessBoundaryTest() {
         try {
           const result = process.getThreadPriority(undefined);
           console.info(`${caseName}, unexpected success with undefined: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(undefined);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -230,10 +230,10 @@ export default function ProcessBoundaryTest() {
         try {
           const result = process.getSystemConfig(null);
           console.info(`${caseName}, unexpected success with null: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(undefined);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -254,10 +254,10 @@ export default function ProcessBoundaryTest() {
         try {
           const result = process.getSystemConfig(undefined);
           console.info(`${caseName}, unexpected success with undefined: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(undefined);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -285,7 +285,7 @@ export default function ProcessBoundaryTest() {
           expect(isValid).assertEqual(true);
         } catch (error) {
           console.info(`${caseName}, error with empty string: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -306,10 +306,10 @@ export default function ProcessBoundaryTest() {
         try {
           const result = process.getEnvironmentVar(null);
           console.info(`${caseName}, unexpected success with null: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(undefined);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -330,10 +330,10 @@ export default function ProcessBoundaryTest() {
         try {
           const result = process.getEnvironmentVar(undefined);
           console.info(`${caseName}, unexpected success with undefined: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(undefined);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -356,8 +356,10 @@ export default function ProcessBoundaryTest() {
         // Test exit with null parameter
         process.exit(null);
         console.info(`${caseName}, exit with null succeeded`);
+        expect().assertFail();
       } catch (error) {
         console.info(`${caseName}, error with null: ${error.message}`);
+        expect(error.code).assertEqual(undefined);
       }
       console.info(`${caseName}, test end`);
       Done();
@@ -378,8 +380,10 @@ export default function ProcessBoundaryTest() {
         // Test exit with undefined parameter
         process.exit(undefined);
         console.info(`${caseName}, exit with undefined succeeded`);
+        expect().assertFail();
       } catch (error) {
         console.info(`${caseName}, error with undefined: ${error.message}`);
+        expect(error.code).assertEqual(undefined);
       }
       console.info(`${caseName}, test end`);
       Done();
@@ -496,7 +500,7 @@ export default function ProcessBoundaryTest() {
         expect(result === false).assertEqual(true);
       } catch (error) {
         console.info(`${caseName}, expected error with invalid pid: ${error.message}`);
-        expect(error !== null && error !== undefined).assertEqual(true);
+        expect(error.code).assertEqual(401);
       }
       console.info(`${caseName}, test end`);
       Done();
@@ -520,10 +524,10 @@ export default function ProcessBoundaryTest() {
           const pro = new process.ProcessManager();
           const result = pro.isAppUid(null);
           console.info(`${caseName}, unexpected success with null: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -545,10 +549,10 @@ export default function ProcessBoundaryTest() {
           const pro = new process.ProcessManager();
           const result = pro.isAppUid(undefined);
           console.info(`${caseName}, unexpected success with undefined: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -574,7 +578,7 @@ export default function ProcessBoundaryTest() {
           expect(result === -1).assertEqual(true);
         } catch (error) {
           console.info(`${caseName}, error with empty string: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -596,10 +600,10 @@ export default function ProcessBoundaryTest() {
           const pro = new process.ProcessManager();
           const result = pro.getUidForName(null);
           console.info(`${caseName}, unexpected success with null: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -621,10 +625,10 @@ export default function ProcessBoundaryTest() {
           const pro = new process.ProcessManager();
           const result = pro.getUidForName(undefined);
           console.info(`${caseName}, unexpected success with undefined: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -646,10 +650,10 @@ export default function ProcessBoundaryTest() {
           const pro = new process.ProcessManager();
           const result = pro.getThreadPriority(null);
           console.info(`${caseName}, unexpected success with null: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -671,10 +675,10 @@ export default function ProcessBoundaryTest() {
           const pro = new process.ProcessManager();
           const result = pro.getThreadPriority(undefined);
           console.info(`${caseName}, unexpected success with undefined: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -696,10 +700,10 @@ export default function ProcessBoundaryTest() {
           const pro = new process.ProcessManager();
           const result = pro.getSystemConfig(null);
           console.info(`${caseName}, unexpected success with null: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -721,10 +725,10 @@ export default function ProcessBoundaryTest() {
           const pro = new process.ProcessManager();
           const result = pro.getSystemConfig(undefined);
           console.info(`${caseName}, unexpected success with undefined: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -750,7 +754,7 @@ export default function ProcessBoundaryTest() {
           expect(isValid).assertEqual(true);
         } catch (error) {
           console.info(`${caseName}, error with empty string: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -772,10 +776,10 @@ export default function ProcessBoundaryTest() {
           const pro = new process.ProcessManager();
           const result = pro.getEnvironmentVar(null);
           console.info(`${caseName}, unexpected success with null: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -797,10 +801,10 @@ export default function ProcessBoundaryTest() {
           const pro = new process.ProcessManager();
           const result = pro.getEnvironmentVar(undefined);
           console.info(`${caseName}, unexpected success with undefined: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -871,10 +875,10 @@ export default function ProcessBoundaryTest() {
           // Use invalid PID to avoid killing actual process
           const result = pro.kill(null, -1);
           console.info(`${caseName}, unexpected success with null signal: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null signal: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -897,10 +901,10 @@ export default function ProcessBoundaryTest() {
           // Use invalid PID to avoid killing actual process
           const result = pro.kill(undefined, -1);
           console.info(`${caseName}, unexpected success with undefined signal: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined signal: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -922,10 +926,10 @@ export default function ProcessBoundaryTest() {
           const pro = new process.ProcessManager();
           const result = pro.kill(9, null);
           console.info(`${caseName}, unexpected success with null pid: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null pid: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -947,10 +951,10 @@ export default function ProcessBoundaryTest() {
           const pro = new process.ProcessManager();
           const result = pro.kill(9, undefined);
           console.info(`${caseName}, unexpected success with undefined pid: ${result}`);
-          expect(false).assertEqual(true);
+          expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined pid: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -977,7 +981,7 @@ export default function ProcessBoundaryTest() {
           expect(result === false).assertEqual(true);
         } catch (error) {
           console.info(`${caseName}, expected error with invalid pid: ${error.message}`);
-          expect(error !== null && error !== undefined).assertEqual(true);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();

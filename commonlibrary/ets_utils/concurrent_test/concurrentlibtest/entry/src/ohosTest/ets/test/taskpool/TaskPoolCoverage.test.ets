@@ -54,13 +54,12 @@ function promiseTask(arg: number): Promise<number> {
 export default function taskPoolCoverageTest() {
   describe('TaskPoolCoverageTest', () => {
 
-    // Task.setTransferList - null/undefined coverage (E列: 第1个参数缺少null/undefined覆盖)
     /**
      * @tc.name   testTaskSetTransferListWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_0101
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_SETTRANSFERLIST_NULL_001
+     * @tc.desc   Test Task.setTransferList with null parameter.
      * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
+     * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it('testTaskSetTransferListWithNull', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
@@ -73,14 +72,14 @@ export default function taskPoolCoverageTest() {
       } catch (error) {
         console.log(`${tag} test catch: ${error.code}`)
         expect(error.code).assertEqual(401);
-        done();
       }
+      done();
     });
 
     /**
      * @tc.name   testTaskSetTransferListWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_0102
-     * @tc.desc   test Task.setTransferList with undefined
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_SETTRANSFERLIST_PARAM_002
+     * @tc.desc   Test Task.setTransferList with undefined parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -100,11 +99,10 @@ export default function taskPoolCoverageTest() {
         }
       });
 
-    // Task.setCloneList - null/undefined coverage (E列: 第1个参数缺少null/undefined覆盖)
     /**
      * @tc.name   testTaskSetCloneListWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_0103
-     * @tc.desc   test Task.setCloneList with null
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_SETCLONELIST_PARAM_001
+     * @tc.desc   Test Task.setCloneList with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -125,8 +123,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testTaskSetCloneListWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_0104
-     * @tc.desc   test Task.setCloneList with undefined
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_SETCLONELIST_PARAM_002
+     * @tc.desc   Test Task.setCloneList with undefined parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -146,11 +144,10 @@ export default function taskPoolCoverageTest() {
         }
       });
 
-    // Task.onReceiveData - null/undefined coverage (E列: 第1个参数缺少null/undefined覆盖)
     /**
      * @tc.name   testTaskOnReceiveDataWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_0105
-     * @tc.desc   test Task.onReceiveData with null
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_ONRECEIVEDATA_PARAM_001
+     * @tc.desc   Test Task.onReceiveData with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -171,8 +168,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testTaskOnReceiveDataWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_0106
-     * @tc.desc   test Task.onReceiveData with undefined
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_ONRECEIVEDATA_PARAM_002
+     * @tc.desc   Test Task.onReceiveData with undefined parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -192,11 +189,10 @@ export default function taskPoolCoverageTest() {
         }
       });
 
-    // TaskGroup.addDependency - null/undefined coverage (E列: 第1个参数缺少null/undefined覆盖)
     /**
      * @tc.name   testTaskGroupAddDependencyWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_0107
-     * @tc.desc   test TaskGroup.addDependency with null
+     * @tc.number SUB_CONCURRENCY_TASKGROUP_ADDDEPENDENCY_PARAM_001
+     * @tc.desc   Test TaskGroup.addDependency with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -218,8 +214,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testTaskGroupAddDependencyWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_0108
-     * @tc.desc   test TaskGroup.addDependency with undefined
+     * @tc.number SUB_CONCURRENCY_TASKGROUP_ADDDEPENDENCY_PARAM_002
+     * @tc.desc   Test TaskGroup.addDependency with undefined parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -239,11 +235,10 @@ export default function taskPoolCoverageTest() {
         }
       });
 
-    // TaskGroup.removeDependency - null/undefined coverage (E列: 第1个参数缺少null/undefined覆盖)
     /**
      * @tc.name   testTaskGroupRemoveDependencyWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_0109
-     * @tc.desc   test TaskGroup.removeDependency with null
+     * @tc.number SUB_CONCURRENCY_TASKGROUP_REMOVEDEPENDENCY_PARAM_001
+     * @tc.desc   Test TaskGroup.removeDependency with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -265,8 +260,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testTaskGroupRemoveDependencyWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_0110
-     * @tc.desc   test TaskGroup.removeDependency with undefined
+     * @tc.number SUB_CONCURRENCY_TASKGROUP_REMOVEDEPENDENCY_PARAM_002
+     * @tc.desc   Test TaskGroup.removeDependency with undefined parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -286,11 +281,10 @@ export default function taskPoolCoverageTest() {
         }
       });
 
-    // TaskGroup.addTask(func) - null/undefined coverage (E列: 第1个参数缺少null/undefined覆盖)
     /**
      * @tc.name   testTaskGroupAddTaskFuncWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_0111
-     * @tc.desc   test TaskGroup.addTask with null function
+     * @tc.number SUB_CONCURRENCY_TASKGROUP_ADDTASK_PARAM_001
+     * @tc.desc   Test TaskGroup.addTask with null function parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -312,8 +306,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testTaskGroupAddTaskFuncWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_0112
-     * @tc.desc   test TaskGroup.addTask with undefined function
+     * @tc.number SUB_CONCURRENCY_TASKGROUP_ADDTASK_PARAM_002
+     * @tc.desc   Test TaskGroup.addTask with undefined function parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -333,11 +327,10 @@ export default function taskPoolCoverageTest() {
         }
       });
 
-    // TaskGroup.addTask(task) - null/undefined coverage (E列: 第1个参数缺少null/undefined覆盖; arguments:缺少空数组覆盖；缺少非空数组覆盖；name:缺少空值""覆盖)
     /**
      * @tc.name   testTaskGroupAddTaskWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_101
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKGROUP_ADDTASK_PARAM_003
+     * @tc.desc   Test TaskGroup.addTask with null task parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -358,8 +351,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testTaskGroupAddTaskWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_102
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKGROUP_ADDTASK_PARAM_004
+     * @tc.desc   Test TaskGroup.addTask with undefined task parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -381,8 +374,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testTaskGroupAddTaskWithEmptyArguments
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_103
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKGROUP_ADDTASK_PARAM_005
+     * @tc.desc   Test TaskGroup.addTask with empty arguments array.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -400,8 +393,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testTaskGroupAddTaskWithNonEmptyArguments
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_104
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKGROUP_ADDTASK_PARAM_006
+     * @tc.desc   Test TaskGroup.addTask with non-empty arguments array.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -419,8 +412,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testTaskGroupAddTaskWithEmptyName
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_105
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKGROUP_ADDTASK_PARAM_007
+     * @tc.desc   Test TaskGroup.addTask with empty name string.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -435,11 +428,10 @@ export default function taskPoolCoverageTest() {
         done();
       });
 
-    // execute(task) - null/undefined and properties coverage (E列: 第1个参数缺少null/undefined覆盖; arguments:缺少空数组覆盖；缺少非空数组覆盖；name:缺少空值""覆盖)
     /**
      * @tc.name   testExecuteTaskWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_106
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_SEQUENCERUNNER_EXECUTE_PARAM_001
+     * @tc.desc   Test SequenceRunner.execute with null task parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -459,8 +451,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteTaskWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_107
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_SEQUENCERUNNER_EXECUTE_PARAM_002
+     * @tc.desc   Test SequenceRunner.execute with undefined task parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -480,8 +472,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteTaskWithEmptyArguments
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_108
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_SEQUENCERUNNER_EXECUTE_PARAM_003
+     * @tc.desc   Test SequenceRunner.execute with empty arguments array.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -497,8 +489,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteTaskWithNonEmptyArguments
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_109
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_SEQUENCERUNNER_EXECUTE_PARAM_004
+     * @tc.desc   Test SequenceRunner.execute with non-empty arguments array.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -514,8 +506,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteTaskWithEmptyName
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_110
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_SEQUENCERUNNER_EXECUTE_PARAM_005
+     * @tc.desc   Test SequenceRunner.execute with empty name string.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -529,32 +521,10 @@ export default function taskPoolCoverageTest() {
     });
 
 
-    // execute(task) - null/undefined and properties coverage (E列: 第1个参数缺少null/undefined覆盖; arguments:缺少空数组覆盖；缺少非空数组覆盖；name:缺少空值""覆盖)
-    // it('testExecuteTaskWithSecondNull', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-    //   try {
-    //     let result = await taskpool.execute(simpleFunc, null);
-    //     expect(result).assertEqual(1);
-    //     done();
-    //   } catch (error) {
-    //   } catch (error) {
-    //   }
-    // });
-    //
-    // it('testExecuteTaskWithSecondUndefined', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
-    //   async (done: Function) => {
-    //     try {
-    //       let result = await taskpool.execute(simpleFunc, undefined);
-    //       expect(result).assertEqual(1);
-    //       done();
-    //     } catch (error) {
-    //     } catch (error) {
-    //     }
-    //   });
-    // execute(func, ...args) - null/undefined coverage (E列: 第1个参数缺少null/undefined覆盖;第2个参数缺少null/undefined覆盖)
     /**
      * @tc.name   testExecuteVerifyTaskWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_111
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_001
+     * @tc.desc   Test taskpool.execute with null function parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -573,8 +543,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteVerifyFuncWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_112
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_002
+     * @tc.desc   Test taskpool.execute with undefined function parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -594,8 +564,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteVerifyArgsWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_113
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_003
+     * @tc.desc   Test taskpool.execute with null args parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -614,8 +584,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteVerifyArgsWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_114
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_004
+     * @tc.desc   Test taskpool.execute with undefined args parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -626,7 +596,7 @@ export default function taskPoolCoverageTest() {
         console.log(`${tag} test start.`)
         try {
           let result = await taskpool.execute<number[], number>(simpleFunc, undefined);
-          assertNaN(result)
+          expect(result).assertNaN()
           done();
         } catch (error) {
           console.log(`${tag} test catch: ${error.code}`)
@@ -634,11 +604,10 @@ export default function taskPoolCoverageTest() {
         }
       });
 
-    // execute(task, priority) - priority coverage
     /**
      * @tc.name   testExecuteTaskPriorityHIGH
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_115
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_005
+     * @tc.desc   Test taskpool.execute with HIGH priority.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -652,8 +621,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteTaskPriorityMEDIUM
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_116
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_006
+     * @tc.desc   Test taskpool.execute with MEDIUM priority.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -667,8 +636,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteTaskPriorityLOW
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_117
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_007
+     * @tc.desc   Test taskpool.execute with LOW priority.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -682,8 +651,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteTaskPriorityWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_118
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_008
+     * @tc.desc   Test taskpool.execute with null task parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -702,8 +671,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteTaskPriorityWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_119
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_009
+     * @tc.desc   Test taskpool.execute with undefined task parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -722,8 +691,8 @@ export default function taskPoolCoverageTest() {
       });
     /**
      * @tc.name   testExecuteVerifyPriorityTaskWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_120
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_010
+     * @tc.desc   Test taskpool.execute with null task and priority.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -743,8 +712,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteVerifyPriorityFuncWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_121
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_011
+     * @tc.desc   Test taskpool.execute with undefined function and priority.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -764,8 +733,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteVerifyPriorityArgsWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_122
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_012
+     * @tc.desc   Test taskpool.execute with null args and priority.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -785,8 +754,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteVerifyPriorityArgsWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_123
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_013
+     * @tc.desc   Test taskpool.execute with undefined args and priority.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -797,18 +766,17 @@ export default function taskPoolCoverageTest() {
         console.log(`${tag} test start.`)
         try {
           let result = await taskpool.execute<number[], number>(simpleFunc, undefined, taskpool.Priority.MEDIUM);
-          assertNaN(result)
+          expect(result).assertNaN()
           done();
         } catch (error) {
           console.log(`${tag} test catch: ${error.code}`)
           done();
         }
       });
-    // execute(group, priority) - null/undefined and name coverage (E列: 第1个参数缺少null/undefined覆盖; name:缺少空值""覆盖)
     /**
      * @tc.name   testExecuteGroupWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_124
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_014
+     * @tc.desc   Test taskpool.execute with null group parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -827,8 +795,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteGroupPriorityWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_125
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_015
+     * @tc.desc   Test taskpool.execute with group and MEDIUM priority.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -844,8 +812,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteGroupWithEmptyName
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_126
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_016
+     * @tc.desc   Test taskpool.execute group with empty name.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -858,11 +826,10 @@ export default function taskPoolCoverageTest() {
       done();
     });
 
-    // executeDelayed - arguments and name coverage (E列: 第2个参数属性arguments:缺少空数组覆盖；缺少非空数组覆盖；name:缺少空值""覆盖)
     /**
      * @tc.name   testExecuteDelayedWithEmptyArguments
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_127
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEDELAYED_PARAM_001
+     * @tc.desc   Test taskpool.executeDelayed with empty arguments array.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -877,8 +844,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteDelayedWithNonEmptyArguments
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_128
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEDELAYED_PARAM_002
+     * @tc.desc   Test taskpool.executeDelayed with non-empty arguments array.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -893,8 +860,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteDelayedWithEmptyName
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_129
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEDELAYED_PARAM_003
+     * @tc.desc   Test taskpool.executeDelayed with empty name.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -906,11 +873,10 @@ export default function taskPoolCoverageTest() {
       done();
     });
 
-    // executePeriodically - arguments, name and IDLE priority coverage (E列: 第2个参数属性arguments:缺少空数组覆盖；缺少非空数组覆盖；name:缺少空值""覆盖；第3个参数未覆盖枚举:['IDLE'])
     /**
      * @tc.name   testExecutePeriodicallyWithEmptyArguments
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_130
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEPERIODICALLY_PARAM_001
+     * @tc.desc   Test taskpool.executePeriodically with empty arguments array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -927,8 +893,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecutePeriodicallyWithNonEmptyArguments
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_131
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEPERIODICALLY_PARAM_002
+     * @tc.desc   Test taskpool.executePeriodically with non-empty arguments array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -946,8 +912,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecutePeriodicallyWithEmptyName
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_132
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEPERIODICALLY_PARAM_003
+     * @tc.desc   Test taskpool.executePeriodically with empty name.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -957,15 +923,14 @@ export default function taskPoolCoverageTest() {
       taskpool.executePeriodically(100, task);
       setTimeout(() => {
         taskpool.cancel(task);
-
         done();
       }, 200);
     });
 
     /**
      * @tc.name   testExecutePeriodicallyWithIDLE
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_133
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEPERIODICALLY_PARAM_004
+     * @tc.desc   Test taskpool.executePeriodically with IDLE priority.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -980,8 +945,8 @@ export default function taskPoolCoverageTest() {
     });
     /**
      * @tc.name   testExecuteVerifyPeriodicallyWithIDLE
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_134
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTEPERIODICALLY_PARAM_005
+     * @tc.desc   Test taskpool.executePeriodically verify with IDLE priority.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -996,11 +961,10 @@ export default function taskPoolCoverageTest() {
         }, 200);
       });
 
-    // cancel(task) - null/undefined and properties coverage (E列: 第1个参数缺少null/undefined覆盖; arguments:缺少空数组覆盖；缺少非空数组覆盖；name:缺少空值""覆盖)
     /**
      * @tc.name   testCancelTaskWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_135
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_CANCEL_PARAM_001
+     * @tc.desc   Test taskpool.cancel with null task parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1012,15 +976,15 @@ export default function taskPoolCoverageTest() {
         taskpool.cancel(null);
       } catch (error) {
         console.log(`${tag} test catch: ${error.code}`)
-        expect(error != null).assertEqual(true);
+        expect(error.code).assertEqual(401);
         done();
       }
     });
 
     /**
      * @tc.name   testCancelTaskWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_136
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_CANCEL_PARAM_002
+     * @tc.desc   Test taskpool.cancel with undefined task parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1039,8 +1003,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testCancelTaskWithEmptyArguments
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_137
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_CANCEL_PARAM_003
+     * @tc.desc   Test taskpool.cancel task with empty arguments array.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1060,8 +1024,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testCancelTaskWithNonEmptyArguments
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_138
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_CANCEL_PARAM_004
+     * @tc.desc   Test taskpool.cancel task with non-empty arguments array.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1081,8 +1045,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testCancelTaskWithEmptyName
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_139
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_CANCEL_PARAM_005
+     * @tc.desc   Test taskpool.cancel task with empty name.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1103,8 +1067,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testCancelGroupWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_140
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_CANCEL_PARAM_006
+     * @tc.desc   Test taskpool.cancel with null group parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1123,8 +1087,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testCancelGroupWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_141
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_CANCEL_PARAM_007
+     * @tc.desc   Test taskpool.cancel with undefined group parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1143,8 +1107,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testCancelGroupWithEmptyName
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_142
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_CANCEL_PARAM_008
+     * @tc.desc   Test taskpool.cancel group with empty name.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1165,11 +1129,10 @@ export default function taskPoolCoverageTest() {
     });
 
 
-    // getTaskPoolInfo - threadInfos and taskInfos coverage (F列: threadInfos缺少空覆盖；缺少非空覆盖；taskInfos缺少非空覆盖；子属性未覆盖：['taskId', 'state', 'duration', 'name'])
     /**
      * @tc.name   testGetTaskPoolInfoThreadInfos
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_143
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_GETTASKPOOLINFO_RETURN_001
+     * @tc.desc   Test taskpool.getTaskPoolInfo returns threadInfos array.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1184,8 +1147,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testGetTaskPoolInfoTaskInfos
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_144
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_GETTASKPOOLINFO_RETURN_002
+     * @tc.desc   Test taskpool.getTaskPoolInfo returns taskInfos array.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1203,8 +1166,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testGetTaskPoolInfoTaskState
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_145
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_GETTASKPOOLINFO_RETURN_003
+     * @tc.desc   Test taskpool.getTaskPoolInfo taskInfo state property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1222,8 +1185,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testGetTaskPoolInfoTaskDuration
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_146
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_GETTASKPOOLINFO_RETURN_004
+     * @tc.desc   Test taskpool.getTaskPoolInfo taskInfo duration property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1241,8 +1204,8 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testGetTaskPoolInfoTaskName
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_147
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_GETTASKPOOLINFO_RETURN_005
+     * @tc.desc   Test taskpool.getTaskPoolInfo taskInfo name property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1258,11 +1221,10 @@ export default function taskPoolCoverageTest() {
       done();
     });
 
-    // terminateTask - null/undefined coverage (E列: 第1个参数缺少null/undefined覆盖)
     /**
      * @tc.name   testTerminateTaskWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_148
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TERMINATETASK_PARAM_001
+     * @tc.desc   Test taskpool.terminateTask with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1274,15 +1236,15 @@ export default function taskPoolCoverageTest() {
         taskpool.terminateTask(null);
       } catch (error) {
         console.log(`${tag} test catch: ${error.code}`)
-        expect(error.code == 401).assertTrue();
+        expect(error.code).assertEqual(401);
         done();
       }
     });
 
     /**
      * @tc.name   testTerminateTaskWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_149
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TERMINATETASK_PARAM_002
+     * @tc.desc   Test taskpool.terminateTask with undefined parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1294,16 +1256,15 @@ export default function taskPoolCoverageTest() {
         taskpool.terminateTask(undefined);
       } catch (error) {
         console.log(`${tag} test catch: ${error.code}`)
-        expect(error.code == 401).assertTrue();
-        done();
+        expect(error.code).assertEqual(401);
       }
+      done();
     });
 
-    // isConcurrent - null/undefined coverage (E列: 第1个参数缺少null/undefined覆盖)
     /**
      * @tc.name   testIsConcurrentWithNull
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_150
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_ISCONCURRENT_PARAM_001
+     * @tc.desc   Test taskpool.isConcurrent with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1316,15 +1277,16 @@ export default function taskPoolCoverageTest() {
         expect(result).assertFalse();
         done();
       } catch (error) {
-
+        console.log(`${tag} catch error.code: ${error.code}`);
+        expect(error.code).assertEqual(401);
         done();
       }
     });
 
     /**
      * @tc.name   testIsConcurrentWithUndefined
-     * @tc.number SUB_CONCURRENCY_Param_COVERED_TEST_151
-     * @tc.desc   test
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_ISCONCURRENT_PARAM_002
+     * @tc.desc   Test taskpool.isConcurrent with undefined parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -1337,12 +1299,20 @@ export default function taskPoolCoverageTest() {
         expect(result).assertFalse();
         done();
       } catch (error) {
-
+        console.log(`${tag} catch error.code: ${error.code}`);
+        expect(error.code).assertEqual(401);
         done();
       }
     });
 
-    // getTask - properties coverage (F列: 所有属性未覆盖)
+    /**
+     * @tc.name   testGetTaskById
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_GETTASK_RETURN_001
+     * @tc.desc   Test taskpool.getTask by taskId.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetTaskById', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       const task = new taskpool.Task(simpleFunc, 1);
       const taskId = task.taskId;
@@ -1355,6 +1325,14 @@ export default function taskPoolCoverageTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetTaskByIdAndName
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_GETTASK_RETURN_002
+     * @tc.desc   Test taskpool.getTask by taskId and name.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetTaskByIdAndName', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       const task = new taskpool.Task("testTask", simpleFunc, 1);
       const taskId = task.taskId;
@@ -1368,12 +1346,28 @@ export default function taskPoolCoverageTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetTaskByIdNotFound
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_GETTASK_RETURN_003
+     * @tc.desc   Test taskpool.getTask with non-existent taskId.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetTaskByIdNotFound', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       const foundTask = taskpool.getTask(999999);
       expect(foundTask === undefined).assertTrue();
       done();
     });
 
+    /**
+     * @tc.name   testGetTaskByIdAndNameNotFound
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_GETTASK_RETURN_004
+     * @tc.desc   Test taskpool.getTask with mismatched name.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetTaskByIdAndNameNotFound', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       const task = new taskpool.Task("testTask", simpleFunc, 1);
       const taskId = task.taskId;
@@ -1382,6 +1376,14 @@ export default function taskPoolCoverageTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetTaskProperties
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_GETTASK_RETURN_005
+     * @tc.desc   Test taskpool.getTask returns task with correct properties.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetTaskProperties', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       const task = new taskpool.Task("testProps", simpleFunc, 1);
       const taskId = task.taskId;
@@ -1394,9 +1396,6 @@ export default function taskPoolCoverageTest() {
       done();
     });
 
-    // ========== AsyncRunner 缺失场景补充测试 ==========
-
-    // AsyncRunner.execute - arguments 缺少非空参数测试
     /**
      * @tc.name   testAsyncRunnerExecuteWithNullTask
      * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_PARAM_0101
@@ -1443,7 +1442,6 @@ export default function taskPoolCoverageTest() {
         done();
       });
 
-    // AsyncRunner - 缺少必选参数测试（无参数）
     /**
      * @tc.name   testAsyncRunnerConstructorNoParams
      * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_PARAM_0201
@@ -1464,7 +1462,6 @@ export default function taskPoolCoverageTest() {
         done();
       });
 
-    // AsyncRunner - name 缺少空值""测试
     /**
      * @tc.name   testAsyncRunnerConstructorWithEmptyName
      * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_PARAM_0301
@@ -1485,7 +1482,6 @@ export default function taskPoolCoverageTest() {
         done();
       });
 
-    // AsyncRunner - 缺少null/undefined参数测试（通过返回值类型未声明场景间接测试）
     /**
      * @tc.name   testAsyncRunnerExecuteWithEmptyName
      * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_RETURN_0101
