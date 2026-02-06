@@ -122,9 +122,9 @@ async function terminateAbility3(caseName: string) {
   await sleep(1000)
 }
 
-function getPermision(){
-  let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-  let context : common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
+function getPermision() {
+  let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+  let context: common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
   let permissions: Permissions[] = ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
   atManager.requestPermissionsFromUser(context, permissions, (err: BusinessError, data: PermissionRequestResult) => {
     if (err) {
@@ -156,7 +156,7 @@ export default function WindowLifecycle() {
     let isAutoWindow: string = '';
     let windowclassArr: Array<window.Window>;
     let isFreeWindowMode = false;
-    let deviceType:string = deviceInfo.deviceType;
+    let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -3077,12 +3077,12 @@ export default function WindowLifecycle() {
           console.info(`${msgStr} terminateSelf end.`);
           done();
         }).catch((err: BusinessError) => {
-          console.error(msgStr + `Failed to starting ability.Cause code: ${ err.code }, message: ${ err.message }`);
+          console.error(msgStr + `Failed to starting ability.Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
           done();
         });
       } catch (err) {
-        console.error(msgStr + `Failed to starting ability.outcatch Cause code: ${ err.code }, message: ${ err.message }`);
+        console.error(msgStr + `Failed to starting ability.outcatch Cause code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
         done();
       }
@@ -3100,7 +3100,7 @@ export default function WindowLifecycle() {
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
       let wantInfo: Want = {
-        bundleName:AppStorage.get('bundleName'),
+        bundleName: AppStorage.get('bundleName'),
         abilityName: 'StartTestAbility'
       };
       let animation_param: window.StartAnimationParams = {
@@ -3122,12 +3122,12 @@ export default function WindowLifecycle() {
           console.info(`${msgStr} terminateSelf end.`);
           done();
         }).catch((err: BusinessError) => {
-          console.error(msgStr + `Failed to starting ability.Cause code: ${ err.code }, message: ${ err.message }`);
+          console.error(msgStr + `Failed to starting ability.Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
           done();
         });
       } catch (err) {
-        console.error(msgStr + `Failed to starting ability.outcatch Cause code: ${ err.code }, message: ${ err.message }`);
+        console.error(msgStr + `Failed to starting ability.outcatch Cause code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
         done();
       }
@@ -3144,7 +3144,7 @@ export default function WindowLifecycle() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("testRestoreMainWindow_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+    it("testRestoreMainWindow_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testRestoreMainWindow_0100";
       console.log(caseName + " begin");
       let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
@@ -3211,7 +3211,7 @@ export default function WindowLifecycle() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("testRestoreMainWindow_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    it("testRestoreMainWindow_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "testRestoreMainWindow_0200";
       console.log(caseName + " begin");
       let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
@@ -3251,7 +3251,7 @@ export default function WindowLifecycle() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("testRestoreMainWindow_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+    it("testRestoreMainWindow_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testRestoreMainWindow_0300";
       console.log(caseName + " begin");
       let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
@@ -3437,6 +3437,49 @@ export default function WindowLifecycle() {
         await subWindowClass?.destroyWindow();
         expect(true).assertFail();
         done();
+      }
+    });
+    /**
+    * @tc.name testcreateWindowCallback1300002_0100
+    * @tc.number testcreateWindowCallback1300002_0100
+    * @tc.desc testcreateWindowCallback1300002_0100
+    * @tc.type FUNCTION
+    * @tc.size MEDIUMTEST
+    * @tc.level LEVEL3
+    */
+    it("testcreateWindowCallback1300002_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "testcreateWindowCallback1300002_0100";
+      console.log(caseName + " begin");
+      let windowConfig: window.Configuration = {
+        name: "testcreateWindowCallback1300002_0100",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context,
+      };
+      try {
+        window.createWindow(windowConfig, async (err, data) => {
+          const errCode: number = err!.code;
+          if (errCode) {
+            console.log(caseName + 'Failed to call createWindow. Cause:' + JSON.stringify(err));
+            if (err!.code === 1300002) {
+              done();
+            } else if (err!.code === 801) {
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          } else {
+            console.log(caseName + 'Succeeded in calling createWindow.');
+            expect(!!data).assertTrue();
+            await data.destroyWindow();
+            done();
+          }
+
+        });
+      } catch (exception) {
+        console.error(caseName + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+        expect(false).assertTrue();
+        done()
       }
     });
 
