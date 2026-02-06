@@ -1082,6 +1082,7 @@ napi_value captureCameraDeviceQueryInfoCameraTypeSizes(napi_env env, napi_callba
         if (found(queryInfo4)) {
             result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo0, &cameraSize, &cameras);
         }
+        break;
     default:
         break;
     }
