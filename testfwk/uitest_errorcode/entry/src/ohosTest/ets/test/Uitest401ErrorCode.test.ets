@@ -1613,21 +1613,21 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Component_scrollSearch_401 start`);
       let driver = Driver.create()
       try {
-        driver.delayMs(null)
+        await driver.delayMs(null)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_delayMs_401 dur = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.delayMs(undefined)
+        await driver.delayMs(undefined)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_delayMs_401 dur = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.delayMs(-1)
+        await driver.delayMs(-1)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_delayMs_401 dur = -1 error, ${JSON.stringify(error)}`);
@@ -1648,14 +1648,14 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Driver_findComponent_401 start`);
       let driver = Driver.create()
       try {
-        driver.findComponent(null)
+        await driver.findComponent(null)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_findComponent_401 on = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.findComponent(undefined)
+        await driver.findComponent(undefined)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_findComponent_401 on = undefined error, ${JSON.stringify(error)}`);
@@ -1676,14 +1676,14 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Driver_findWindow_401 start`);
       let driver = Driver.create()
       try {
-        driver.findWindow(null)
+        await driver.findWindow(null)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_findWindow_401 filter = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.findWindow(undefined)
+        await driver.findWindow(undefined)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_findWindow_401 filter = undefined error, ${JSON.stringify(error)}`);
@@ -1704,35 +1704,35 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Driver_waitForComponent_401 start`);
       let driver = Driver.create()
       try {
-        driver.waitForComponent(null, 500)
+        await driver.waitForComponent(null, 500)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_waitForComponent_401 on = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.waitForComponent(undefined, 500)
+        await driver.waitForComponent(undefined, 500)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_waitForComponent_401 on = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.waitForComponent(ON.text('next page'), null)
+        await driver.waitForComponent(ON.text('next page'), null)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_waitForComponent_401 time = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.waitForComponent(ON.text('next page'), undefined)
+        await driver.waitForComponent(ON.text('next page'), undefined)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_waitForComponent_401 time = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.waitForComponent(ON.text('next page'), -1)
+        await driver.waitForComponent(ON.text('next page'), -1)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_waitForComponent_401 time = -1 error, ${JSON.stringify(error)}`);
@@ -1753,14 +1753,14 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Driver_findComponents_401 start`);
       let driver = Driver.create()
       try {
-        driver.findComponents(null)
+        await driver.findComponents(null)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_findComponents_401 on = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.findComponents(undefined)
+        await driver.findComponents(undefined)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_findComponents_401 on = undefined error, ${JSON.stringify(error)}`);
@@ -1781,14 +1781,14 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Driver_assertComponentExist_401 start`);
       let driver = Driver.create()
       try {
-        driver.assertComponentExist(null)
+        await driver.assertComponentExist(null)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_assertComponentExist_401 on = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.assertComponentExist(undefined)
+        await driver.assertComponentExist(undefined)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_assertComponentExist_401 on = undefined error, ${JSON.stringify(error)}`);
@@ -1809,19 +1809,19 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi20_Driver_pressBack_17000007 start`);
       let driver = Driver.create()
       try {
-        driver.pressBack(null)       
+        await driver.pressBack(null)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_pressBack_17000007 id = null error, ${JSON.stringify(error)}`);
         expect().assertFail(); 
       } 
       try {
-        driver.pressBack(undefined)     
+        await driver.pressBack(undefined)     
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_pressBack_17000007 id = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail(); 
       } 
       try {
-        driver.pressBack(-1)
+        await driver.pressBack(-1)
         expect().assertFail();        
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_pressBack_17000007 id = -1 error, ${JSON.stringify(error)}`);
@@ -1842,14 +1842,14 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Driver_triggerKey_401 start`);
       let driver = Driver.create()
       try {
-        driver.triggerKey(null)       
+        await driver.triggerKey(null)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_triggerKey_401 id = null error, ${JSON.stringify(error)}`);
          
       } 
       try {
-        driver.triggerKey(undefined)     
+        await driver.triggerKey(undefined)     
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_triggerKey_401 id = undefined error, ${JSON.stringify(error)}`);
@@ -1870,33 +1870,33 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi20_Driver_triggerKey_401 start`);
       let driver = Driver.create()
       try {
-        driver.triggerKey(null, 0)
+        await driver.triggerKey(null, 0)
         expect().assertFail();               
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerKey_401 kecode = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode); 
       } 
       try {
-        driver.triggerKey(undefined, 0)     
+        await driver.triggerKey(undefined, 0)     
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerKey_401 kecode = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode); 
       } 
       try {
-        driver.triggerKey(0, null)     
+        await driver.triggerKey(0, null)     
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerKey_401 id = null error, ${JSON.stringify(error)}`);
         expect().assertFail(); 
       } 
       try {
-        driver.triggerKey(0, undefined)     
+        await driver.triggerKey(0, undefined)     
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerKey_401 id = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail(); 
       }
       try {
-        driver.triggerKey(0, -1)     
+        await driver.triggerKey(0, -1)     
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerKey_401 id = -1 error, ${JSON.stringify(error)}`); 
@@ -1917,61 +1917,61 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Driver_triggerCombineKeys_401 start`);
       let driver = Driver.create()
       try {
-        driver.triggerCombineKeys(null, 0)       
+        await driver.triggerCombineKeys(null, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_triggerCombineKeys_401 kecode = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.triggerCombineKeys(undefined, 0)     
+        await driver.triggerCombineKeys(undefined, 0)     
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_triggerCombineKeys_401 kecode = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode); 
       } 
       try {
-        driver.triggerCombineKeys(-1, 0)     
+        await driver.triggerCombineKeys(-1, 0)     
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_triggerCombineKeys_401 kecode = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode); 
       }
       try {
-        driver.triggerCombineKeys(0, null)       
+        await driver.triggerCombineKeys(0, null)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_triggerCombineKeys_401 kecode1 = null error, ${JSON.stringify(error)}`);
        expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.triggerCombineKeys(0, undefined)       
+        await driver.triggerCombineKeys(0, undefined)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_triggerCombineKeys_401 kecode1 = undefined error, ${JSON.stringify(error)}`);
        expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.triggerCombineKeys(0, -1)       
+        await driver.triggerCombineKeys(0, -1)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_triggerCombineKeys_401 kecode1 = -1 error, ${JSON.stringify(error)}`);
        expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.triggerCombineKeys(0, 0, null)       
+        await driver.triggerCombineKeys(0, 0, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_triggerCombineKeys_401 id = null error, ${JSON.stringify(error)}`);
         expect().assertFail(); 
       }
       try {
-        driver.triggerCombineKeys(0, 0, undefined)       
+        await driver.triggerCombineKeys(0, 0, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_triggerCombineKeys_401 id = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail(); 
       }
       try {
-        driver.triggerCombineKeys(0, 0, -1)       
+        await driver.triggerCombineKeys(0, 0, -1)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_triggerCombineKeys_401 id = -1 error, ${JSON.stringify(error)}`);
@@ -1992,80 +1992,80 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi20_Driver_triggerCombineKeys_401 start`);
       let driver = Driver.create()
       try {
-        driver.triggerCombineKeys(null, 0, 0, 0)       
+        await driver.triggerCombineKeys(null, 0, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerCombineKeys_401 kecode = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.triggerCombineKeys(undefined, 0, 0, 0)     
+        await driver.triggerCombineKeys(undefined, 0, 0, 0)     
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerCombineKeys_401 kecode = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode); 
       } 
       try {
-        driver.triggerCombineKeys(-1, 0, 0, 0)     
+        await driver.triggerCombineKeys(-1, 0, 0, 0)     
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerCombineKeys_401 kecode = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode); 
       }
       try {
-        driver.triggerCombineKeys(0, null, 0, 0)       
+        await driver.triggerCombineKeys(0, null, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerCombineKeys_401 kecode1 = null error, ${JSON.stringify(error)}`);
        expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.triggerCombineKeys(0, undefined, 0, 0)       
+        await driver.triggerCombineKeys(0, undefined, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerCombineKeys_401 kecode1 = undefined error, ${JSON.stringify(error)}`);
        expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.triggerCombineKeys(0, -1, 0, 0)       
+        await driver.triggerCombineKeys(0, -1, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerCombineKeys_401 kecode1 = -1 error, ${JSON.stringify(error)}`);
        expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.triggerCombineKeys(0, 0, null, 0)       
+        await driver.triggerCombineKeys(0, 0, null, 0)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerCombineKeys_401 kecode2 = null error, ${JSON.stringify(error)}`);
         expect().assertFail(); 
       }
       try {
-        driver.triggerCombineKeys(0, 0, undefined, 0)       
+        await driver.triggerCombineKeys(0, 0, undefined, 0)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerCombineKeys_401 kecode2 = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail(); 
       }
       try {
-        driver.triggerCombineKeys(0, 0, -1, 0)       
+        await driver.triggerCombineKeys(0, 0, -1, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerCombineKeys_401 kecode2 = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.triggerCombineKeys(0, 0, 0, null)       
+        await driver.triggerCombineKeys(0, 0, 0, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerCombineKeys_401 id = null error, ${JSON.stringify(error)}`);
         expect().assertFail(); 
       }
       try {
-        driver.triggerCombineKeys(0, 0, 0, undefined)       
+        await driver.triggerCombineKeys(0, 0, 0, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerCombineKeys_401 id = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail(); 
       }
       try {
-        driver.triggerCombineKeys(0, 0, 0, -1)       
+        await driver.triggerCombineKeys(0, 0, 0, -1)       
         expect().assertFail(); 
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_triggerCombineKeys_401 id = -1 error, ${JSON.stringify(error)}`);
@@ -2086,42 +2086,42 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Driver_click_401 start`);
       let driver = Driver.create()
       try {
-        driver.click(null, 100)       
+        await driver.click(null, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_click_401 x = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.click(undefined, 100)       
+        await driver.click(undefined, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_click_401 x = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.click(-1, 100)       
+       await driver.click(-1, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_click_401 x = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.click(100, null)       
+        await driver.click(100, null)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_click_401 y = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.click(100, undefined)       
+        await driver.click(100, undefined)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_click_401 y = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.click(100, -1)       
+        await driver.click(100, -1)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_click_401 y = -1 error, ${JSON.stringify(error)}`);
@@ -2142,42 +2142,42 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Driver_doubleClick_401 start`);
       let driver = Driver.create()
       try {
-        driver.doubleClick(null, 100)       
+        await driver.doubleClick(null, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_doubleClick_401 x = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.doubleClick(undefined, 100)       
+        await driver.doubleClick(undefined, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_doubleClick_401 x = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.doubleClick(-1, 100)       
+        await driver.doubleClick(-1, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_doubleClick_401 x = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.doubleClick(100, null)       
+        await driver.doubleClick(100, null)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_doubleClick_401 y = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.doubleClick(100, undefined)       
+        await driver.doubleClick(100, undefined)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_doubleClick_401 y = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.doubleClick(100, -1)       
+        await driver.doubleClick(100, -1)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_doubleClick_401 y = -1 error, ${JSON.stringify(error)}`);
@@ -2198,42 +2198,42 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Driver_longClick_401 start`);
       let driver = Driver.create()
       try {
-        driver.longClick(null, 100)       
+        await driver.longClick(null, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_longClick_401 x = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.longClick(undefined, 100)       
+        await driver.longClick(undefined, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_longClick_401 x = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.longClick(-1, 100)       
+        await driver.longClick(-1, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_longClick_401 x = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.longClick(100, null)       
+        await driver.longClick(100, null)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_longClick_401 y = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.longClick(100, undefined)       
+        await driver.longClick(100, undefined)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_longClick_401 y = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.longClick(100, -1)       
+        await driver.longClick(100, -1)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_longClick_401 y = -1 error, ${JSON.stringify(error)}`);
@@ -2254,104 +2254,104 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Driver_swipe_401 start`);
       let driver = Driver.create()
       try {
-        driver.swipe(null, 100, 100, 100, 600)       
+        await driver.swipe(null, 100, 100, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_swipe_401 sx = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.swipe(undefined, 100, 100, 100, 600)       
+        await driver.swipe(undefined, 100, 100, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_swipe_401 sx = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.swipe(-1, 100, 100, 100, 600)       
+        await driver.swipe(-1, 100, 100, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_swipe_401 sx = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.swipe(100, null, 100, 100, 600)       
+        await driver.swipe(100, null, 100, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_swipe_401 sy = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.swipe(100, undefined, 100, 100, 600)       
+        await driver.swipe(100, undefined, 100, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_swipe_401 sy = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.swipe(100, -1, 100, 100, 600)       
+        await driver.swipe(100, -1, 100, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_swipe_401 sy = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.swipe(100, 100, null, 100, 600)       
+        await driver.swipe(100, 100, null, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_swipe_401 ex = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.swipe(100, 100, undefined, 100, 600)       
+        await driver.swipe(100, 100, undefined, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_swipe_401 ex = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.swipe(100, 100, -1, 100, 600)       
+        await driver.swipe(100, 100, -1, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_swipe_401 ex = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.swipe(100, 100, 100, null, 600)       
+        await driver.swipe(100, 100, 100, null, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_swipe_401 ey = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.swipe(100, 100, 100, undefined, 600)       
+        await driver.swipe(100, 100, 100, undefined, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_swipe_401 ey = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.swipe(100, 100, 100, -1, 600)       
+        await driver.swipe(100, 100, 100, -1, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_swipe_401 ey = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.swipe(100, 100, 100, 100, -1)       
+        await driver.swipe(100, 100, 100, 100, -1)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_swipe_401 sp = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.swipe(100, 100, 100, 100, null)       
+        await driver.swipe(100, 100, 100, 100, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_swipe_401 sp = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.swipe(100, 100, 100, 100, undefined)       
+        await driver.swipe(100, 100, 100, 100, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_swipe_401 sp = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -2371,104 +2371,104 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Driver_drag_401 start`);
       let driver = Driver.create()
       try {
-        driver.drag(null, 100, 100, 100, 600)       
+        await driver.drag(null, 100, 100, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_drag_401 sx = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.drag(undefined, 100, 100, 100, 600)       
+        await driver.drag(undefined, 100, 100, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_drag_401 sx = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.drag(-1, 100, 100, 100, 600)       
+        await driver.drag(-1, 100, 100, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_drag_401 sx = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.drag(100, null, 100, 100, 600)       
+        await driver.drag(100, null, 100, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_drag_401 sy = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.drag(100, undefined, 100, 100, 600)       
+        await driver.drag(100, undefined, 100, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_drag_401 sy = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.drag(100, -1, 100, 100, 600)       
+        await driver.drag(100, -1, 100, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_drag_401 sy = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.drag(100, 100, null, 100, 600)       
+        await driver.drag(100, 100, null, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_drag_401 ex = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.drag(100, 100, undefined, 100, 600)       
+        await driver.drag(100, 100, undefined, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_drag_401 ex = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.drag(100, 100, -1, 100, 600)       
+        await driver.drag(100, 100, -1, 100, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_drag_401 ex = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.drag(100, 100, 100, null, 600)       
+        await driver.drag(100, 100, 100, null, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_drag_401 ey = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.drag(100, 100, 100, undefined, 600)       
+        await driver.drag(100, 100, 100, undefined, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_drag_401 ey = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.drag(100, 100, 100, -1, 600)       
+        await driver.drag(100, 100, 100, -1, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_drag_401 ey = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.drag(100, 100, 100, 100, -1)       
+        await driver.drag(100, 100, 100, 100, -1)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_drag_401 sp = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.drag(100, 100, 100, 100, null)       
+        await driver.drag(100, 100, 100, 100, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_drag_401 sp = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.drag(100, 100, 100, 100, undefined)       
+        await driver.drag(100, 100, 100, 100, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_drag_401 sp = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -2488,34 +2488,34 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi20_Driver_longClickAt_17000007 start`);
       let driver = Driver.create()
       try {
-        driver.longClickAt(null, 600)       
+        await driver.longClickAt(null, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_longClickAt_17000007 point = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       } 
       try {
-        driver.longClickAt(undefined, 600)       
+        await driver.longClickAt(undefined, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_longClickAt_17000007 point = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
-        driver.longClickAt({x: 100, y: 100}, -1)       
+        await driver.longClickAt({x: 100, y: 100}, -1)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_longClickAt_17000007 dur = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
-        driver.longClickAt({x: 100, y: 100}, null)       
+        await driver.longClickAt({x: 100, y: 100}, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_longClickAt_17000007 dur = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.longClickAt({x: 100, y: 100}, undefined)       
+        await driver.longClickAt({x: 100, y: 100}, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_longClickAt_17000007 dur = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -2535,48 +2535,48 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi20_Driver_swipeBetween_17000007 start`);
       let driver = Driver.create()
       try {
-        driver.swipeBetween(null, {x: 100, y: 100}, 600)       
+        await driver.swipeBetween(null, {x: 100, y: 100}, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_swipeBetween_17000007 from = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       } 
       try {
-        driver.swipeBetween(undefined, {x: 100, y: 100}, 600)       
+        await driver.swipeBetween(undefined, {x: 100, y: 100}, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_swipeBetween_17000007 from = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
-        driver.swipeBetween({x: 100, y: 100}, null , 600)       
+        await driver.swipeBetween({x: 100, y: 100}, null , 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_swipeBetween_17000007 to = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
-        driver.swipeBetween({x: 100, y: 100}, undefined , 600)       
+        await driver.swipeBetween({x: 100, y: 100}, undefined , 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_swipeBetween_17000007 to = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
-        driver.swipeBetween({x: 100, y: 100}, {x: 100, y: 100} , -1)       
+        await driver.swipeBetween({x: 100, y: 100}, {x: 100, y: 100} , -1)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_swipeBetween_17000007 sp = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
-        driver.swipeBetween({x: 100, y: 100}, {x: 100, y: 100} , null)       
+        await driver.swipeBetween({x: 100, y: 100}, {x: 100, y: 100} , null)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_swipeBetween_17000007 sp = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.swipeBetween({x: 100, y: 100}, {x: 100, y: 100} , undefined)       
+        await driver.swipeBetween({x: 100, y: 100}, {x: 100, y: 100} , undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_swipeBetween_17000007 sp = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -2596,48 +2596,48 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi20_Driver_dragBetween_17000007 start`);
       let driver = Driver.create()
       try {
-        driver.dragBetween(null, {x: 100, y: 100}, 600)       
+        await driver.dragBetween(null, {x: 100, y: 100}, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_dragBetween_17000007 from = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       } 
       try {
-        driver.dragBetween(undefined, {x: 100, y: 100}, 600)       
+        await driver.dragBetween(undefined, {x: 100, y: 100}, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_dragBetween_17000007 from = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
-        driver.dragBetween({x: 100, y: 100}, null , 600)       
+        await driver.dragBetween({x: 100, y: 100}, null , 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_dragBetween_17000007 to = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
-        driver.dragBetween({x: 100, y: 100}, undefined , 600)       
+        await driver.dragBetween({x: 100, y: 100}, undefined , 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_dragBetween_17000007 to = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
-        driver.dragBetween({x: 100, y: 100}, {x: 100, y: 100} , -1)       
+        await driver.dragBetween({x: 100, y: 100}, {x: 100, y: 100} , -1)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_dragBetween_17000007 sp = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       }
       try {
-        driver.dragBetween({x: 100, y: 100}, {x: 100, y: 100} , null)       
+        await driver.dragBetween({x: 100, y: 100}, {x: 100, y: 100} , null)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_dragBetween_17000007 sp = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.dragBetween({x: 100, y: 100}, {x: 100, y: 100} , undefined)       
+        await driver.dragBetween({x: 100, y: 100}, {x: 100, y: 100} , undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_dragBetween_17000007 sp = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -2657,21 +2657,21 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Driver_screenCap_401 start`);
       let driver = Driver.create()
       try {
-        driver.screenCap(null)       
+        await driver.screenCap(null)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_screenCap_401 path = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.screenCap(undefined)       
+        await driver.screenCap(undefined)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_screenCap_401 path = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.screenCap('')       
+        await driver.screenCap('')       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_screenCap_401 path = '' error, ${JSON.stringify(error)}`);
@@ -2692,21 +2692,21 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi20_Driver_screenCap_401 start`);
       let driver = Driver.create()
       try {
-        driver.screenCap(null, 0)       
+        await driver.screenCap(null, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_screenCap_401 path = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.screenCap(undefined, 0)       
+        await driver.screenCap(undefined, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_screenCap_401 path = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.screenCap('', 0)       
+        await driver.screenCap('', 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_screenCap_401 path = '' error, ${JSON.stringify(error)}`);
@@ -2714,7 +2714,7 @@ export default function abilityTest() {
       }
       try {
         let savePath = '/data/storage/el2/base/cache/1.png'        
-        driver.screenCap(savePath, -1)       
+        await driver.screenCap(savePath, -1)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_screenCap_401 id = -1, ${JSON.stringify(error)}`);
@@ -2722,14 +2722,14 @@ export default function abilityTest() {
       }
       try {
         let savePath = '/data/storage/el2/base/cache/2.png'        
-        driver.screenCap(savePath, null)       
+        await driver.screenCap(savePath, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_screenCap_401 id = null, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
         let savePath = '/data/storage/el2/base/cache/3.png'        
-        driver.screenCap(savePath, undefined)       
+        await driver.screenCap(savePath, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_screenCap_401 id = undefined, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -2749,20 +2749,20 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi20_Driver_getDisplayRotation_17000007 start`);
       let driver = Driver.create()
       try {
-        driver.getDisplayRotation(-1)       
+        await driver.getDisplayRotation(-1)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_getDisplayRotation_17000007 id = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       } 
       try {
-        driver.getDisplayRotation(null)       
+        await driver.getDisplayRotation(null)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_getDisplayRotation_17000007 id = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.getDisplayRotation(undefined)       
+        await driver.getDisplayRotation(undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_getDisplayRotation_17000007 id = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -2782,20 +2782,20 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi20_Driver_getDisplaySize_17000007 start`);
       let driver = Driver.create()
       try {
-        driver.getDisplaySize(-1)       
+        await driver.getDisplaySize(-1)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_getDisplaySize_17000007 id = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       } 
       try {
-        driver.getDisplaySize(null)       
+        await driver.getDisplaySize(null)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_getDisplaySize_17000007 id = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.getDisplaySize(undefined)       
+        await driver.getDisplaySize(undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_getDisplaySize_17000007 id = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -2815,20 +2815,20 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi20_Driver_getDisplayDensity_17000007 start`);
       let driver = Driver.create()
       try {
-        driver.getDisplayDensity(-1)       
+        await driver.getDisplayDensity(-1)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_getDisplayDensity_17000007 id = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       } 
       try {
-        driver.getDisplayDensity(null)       
+        await driver.getDisplayDensity(null)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_getDisplayDensity_17000007 id = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.getDisplayDensity(undefined)       
+        await driver.getDisplayDensity(undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_getDisplayDensity_17000007 id = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -2848,20 +2848,20 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi20_Driver_pressHome_17000007 start`);
       let driver = Driver.create()
       try {
-        driver.pressHome(-1)       
+        await driver.pressHome(-1)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_pressHome_17000007 id = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(NewErrorCode);
       } 
       try {
-        driver.pressHome(null)       
+        await driver.pressHome(null)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_pressHome_17000007 id = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.pressHome(undefined)       
+        await driver.pressHome(undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_pressHome_17000007 id = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -2881,42 +2881,42 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Driver_waitForIdle_401 start`);
       let driver = Driver.create()
       try {
-        driver.waitForIdle(null, 100)       
+        await driver.waitForIdle(null, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_waitForIdle_401 id = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.waitForIdle(undefined, 100)       
+        await driver.waitForIdle(undefined, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_waitForIdle_401 id = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.waitForIdle(-1, 100)       
+        await driver.waitForIdle(-1, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_waitForIdle_401 id = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.waitForIdle(100, null)       
+        await driver.waitForIdle(100, null)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_waitForIdle_401 time = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.waitForIdle(100, undefined)       
+        await driver.waitForIdle(100, undefined)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_waitForIdle_401 time = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.waitForIdle(100, -1)       
+        await driver.waitForIdle(100, -1)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_waitForIdle_401 time = -1 error, ${JSON.stringify(error)}`);
@@ -2937,126 +2937,56 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Driver_fling_401 start`);
       let driver = Driver.create()
       try {
-        driver.fling(null, {x: 100, y: 100}, 100, 100)       
+        await driver.fling(null, {x: 100, y: 100}, 100, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_fling_401 from = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        driver.fling(undefined, {x: 100, y: 100}, 100, 100)       
+        await driver.fling(undefined, {x: 100, y: 100}, 100, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_fling_401 from = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.fling({x: 100, y: 100}, null, 100, 100)       
+        await driver.fling({x: 100, y: 100}, null, 100, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_fling_401 to = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.fling({x: 100, y: 100}, undefined, 100, 100)       
+        await driver.fling({x: 100, y: 100}, undefined, 100, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_fling_401 to = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.fling({x: 100, y: 100}, {x: 100, y: 100}, null, 100)       
+        await driver.fling({x: 100, y: 100}, {x: 100, y: 100}, null, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_fling_401 ste = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.fling({x: 100, y: 100}, {x: 100, y: 100}, undefined, 100)       
+        await driver.fling({x: 100, y: 100}, {x: 100, y: 100}, undefined, 100)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_fling_401 ste = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.fling({x: 100, y: 100}, {x: 100, y: 100}, 100, null)       
+        await driver.fling({x: 100, y: 100}, {x: 100, y: 100}, 100, null)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_fling_401 spe = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.fling({x: 100, y: 100}, {x: 100, y: 100}, 100, undefined)       
-        expect().assertFail();
-      } catch (error) {
-        console.log(`${TestTag}, testApi9_Driver_fling_401 spe = undefined error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ErrorCode);
-      }
-      console.log(`${TestTag}, testApi9_Driver_fling_401 END`);
-    })
-
-     /**
-     * @tc.name   testApi9_Driver_fling_401
-     * @tc.number UiTest_uitest401_075
-     * @tc.desc   type 401 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testApi9_Driver_fling_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(`${TestTag}, testApi9_Driver_fling_401 start`);
-      let driver = Driver.create()
-      try {
-        driver.fling(null, {x: 100, y: 100}, 100, 100)       
-        expect().assertFail();
-      } catch (error) {
-        console.log(`${TestTag}, testApi9_Driver_fling_401 from = null error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ErrorCode);
-      } 
-      try {
-        driver.fling(undefined, {x: 100, y: 100}, 100, 100)       
-        expect().assertFail();
-      } catch (error) {
-        console.log(`${TestTag}, testApi9_Driver_fling_401 from = undefined error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ErrorCode);
-      }
-      try {
-        driver.fling({x: 100, y: 100}, null, 100, 100)       
-        expect().assertFail();
-      } catch (error) {
-        console.log(`${TestTag}, testApi9_Driver_fling_401 to = null error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ErrorCode);
-      }
-      try {
-        driver.fling({x: 100, y: 100}, undefined, 100, 100)       
-        expect().assertFail();
-      } catch (error) {
-        console.log(`${TestTag}, testApi9_Driver_fling_401 to = undefined error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ErrorCode);
-      }
-      try {
-        driver.fling({x: 100, y: 100}, {x: 100, y: 100}, null, 100)       
-        expect().assertFail();
-      } catch (error) {
-        console.log(`${TestTag}, testApi9_Driver_fling_401 ste = null error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ErrorCode);
-      }
-      try {
-        driver.fling({x: 100, y: 100}, {x: 100, y: 100}, undefined, 100)       
-        expect().assertFail();
-      } catch (error) {
-        console.log(`${TestTag}, testApi9_Driver_fling_401 ste = undefined error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ErrorCode);
-      }
-      try {
-        driver.fling({x: 100, y: 100}, {x: 100, y: 100}, 100, null)       
-        expect().assertFail();
-      } catch (error) {
-        console.log(`${TestTag}, testApi9_Driver_fling_401 spe = null error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ErrorCode);
-      }
-      try {
-        driver.fling({x: 100, y: 100}, {x: 100, y: 100}, 100, undefined)       
+        await driver.fling({x: 100, y: 100}, {x: 100, y: 100}, 100, undefined)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_fling_401 spe = undefined error, ${JSON.stringify(error)}`);
@@ -3077,14 +3007,14 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi9_Driver_injectMultiPointerAction_401 start`);
       let driver = Driver.create()
       try {
-        driver.injectMultiPointerAction(null, 500)       
+        await driver.injectMultiPointerAction(null, 500)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_injectMultiPointerAction_401 points = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.injectMultiPointerAction(undefined, 500)       
+        await driver.injectMultiPointerAction(undefined, 500)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_injectMultiPointerAction_401 points = undefined error, ${JSON.stringify(error)}`);
@@ -3093,7 +3023,7 @@ export default function abilityTest() {
       try {
         let points = PointerMatrix.create(1, 1);
         points.setPoint(1, 0, {x: 100, y: 100})             
-        driver.injectMultiPointerAction(points, null)       
+        await driver.injectMultiPointerAction(points, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_injectMultiPointerAction_401 spe = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -3101,7 +3031,7 @@ export default function abilityTest() {
       try {
         let points = PointerMatrix.create(1, 1);
         points.setPoint(1, 0, {x: 100, y: 100})             
-        driver.injectMultiPointerAction(points, undefined)       
+        await driver.injectMultiPointerAction(points, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_injectMultiPointerAction_401 spe = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -3110,31 +3040,31 @@ export default function abilityTest() {
     })
 
      /**
-     * @tc.name   testApi9_Driver_fling_401
+     * @tc.name   testApi9_Driver_flingDir_401
      * @tc.number UiTest_uitest401_077
      * @tc.desc   type 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testApi9_Driver_fling_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(`${TestTag}, testApi9_Driver_fling_401 start`);
+    it('testApi9_Driver_flingDir_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi9_Driver_flingDir_401 start`);
       let driver = Driver.create()
       try {
-        driver.fling(UiDirection.DOWN, null)       
+        await driver.fling(UiDirection.DOWN, null)       
         expect().assertFail();
       } catch (error) {
-        console.log(`${TestTag}, testApi9_Driver_fling_401 dir = null error, ${JSON.stringify(error)}`);
+        console.log(`${TestTag}, testApi9_Driver_flingDir_401 dir = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.fling(UiDirection.DOWN, undefined)       
+        await driver.fling(UiDirection.DOWN, undefined)       
         expect().assertFail();
       } catch (error) {
-        console.log(`${TestTag}, testApi9_Driver_fling_401 dir = undefined error, ${JSON.stringify(error)}`);
+        console.log(`${TestTag}, testApi9_Driver_flingDir_401 dir = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
-      console.log(`${TestTag}, testApi9_Driver_fling_401 END`);
+      console.log(`${TestTag}, testApi9_Driver_flingDir_401 END`);
     })
 
      /**
@@ -3156,20 +3086,20 @@ export default function abilityTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.fling(UiDirection.DOWN, undefined, 0)       
+        await driver.fling(UiDirection.DOWN, undefined, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_fling_401 spe = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.fling(UiDirection.DOWN, 500, null)       
+        await driver.fling(UiDirection.DOWN, 500, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_fling_401 id = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.fling(UiDirection.DOWN, 500, undefined)       
+        await driver.fling(UiDirection.DOWN, 500, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_fling_401 id = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -3189,53 +3119,53 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi10_Driver_mouseClick_401 start`);
       let driver = Driver.create()
       try {
-        driver.mouseClick(null, 0, 0, 0)       
+        await driver.mouseClick(null, 0, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseClick_401 point = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseClick(undefined, 0, 0, 0)       
+        await driver.mouseClick(undefined, 0, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseClick_401 point = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseClick({x: 100, y: 100}, null, 0, 0)       
+        await driver.mouseClick({x: 100, y: 100}, null, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseClick_401 btn = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseClick({x: 100, y: 100}, undefined, 0, 0)       
+        await driver.mouseClick({x: 100, y: 100}, undefined, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseClick_401 btn = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseClick({x: 100, y: 100}, 0, null, 0)       
+        await driver.mouseClick({x: 100, y: 100}, 0, null, 0)       
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseClick_401 key1 = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseClick({x: 100, y: 100}, 0, undefined, 0)       
+        await driver.mouseClick({x: 100, y: 100}, 0, undefined, 0)       
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseClick_401 key1 = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseClick({x: 100, y: 100}, 0, 0, null)       
+        await driver.mouseClick({x: 100, y: 100}, 0, 0, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseClick_401 key2 = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseClick({x: 100, y: 100}, 0, 0, undefined)       
+        await driver.mouseClick({x: 100, y: 100}, 0, 0, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseClick_401 key2 = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -3255,14 +3185,14 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi10_Driver_mouseMoveTo_401 start`);
       let driver = Driver.create()
       try {
-        driver.mouseMoveTo(null)       
+        await driver.mouseMoveTo(null)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseMoveTo_401 point = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseMoveTo(undefined)       
+        await driver.mouseMoveTo(undefined)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseMoveTo_401 point = undefined error, ${JSON.stringify(error)}`);
@@ -3283,53 +3213,53 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi10_Driver_mouseScroll_401 start`);
       let driver = Driver.create()
       try {
-        driver.mouseScroll(null, true, 0, 0, 0)       
+        await driver.mouseScroll(null, true, 0, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseScroll_401 point = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseScroll(undefined, false, 0, 0, 0)       
+        await driver.mouseScroll(undefined, false, 0, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseScroll_401 point = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseScroll({x: 100, y: 100}, false, null, 0, 0)       
+        await driver.mouseScroll({x: 100, y: 100}, false, null, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseScroll_401 d = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseScroll({x: 100, y: 100}, false, null, 0, 0)       
+        await driver.mouseScroll({x: 100, y: 100}, false, null, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseScroll_401 d = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseScroll({x: 100, y: 100}, false, 0, null, 0)       
+        await driver.mouseScroll({x: 100, y: 100}, false, 0, null, 0)       
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseScroll_401 key1 = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseScroll({x: 100, y: 100}, false, 0, undefined, 0)       
+        await driver.mouseScroll({x: 100, y: 100}, false, 0, undefined, 0)       
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseScroll_401 key1 = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseScroll({x: 100, y: 100}, false, 0, 0, null)       
+        await driver.mouseScroll({x: 100, y: 100}, false, 0, 0, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseScroll_401 key2 = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseScroll({x: 100, y: 100}, false, 0, 0, undefined)       
+        await driver.mouseScroll({x: 100, y: 100}, false, 0, 0, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi10_Driver_mouseScroll_401 key2 = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -3349,65 +3279,65 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi11_Driver_mouseScroll_401 start`);
       let driver = Driver.create()
       try {
-        driver.mouseScroll(null, true, 0, 0, 0, 0)       
+        await driver.mouseScroll(null, true, 0, 0, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseScroll_401 point = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseScroll(undefined, false, 0, 0, 0, 0)       
+        await driver.mouseScroll(undefined, false, 0, 0, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseScroll_401 point = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseScroll({x: 100, y: 100}, false, null, 0, 0, 0)       
+        await driver.mouseScroll({x: 100, y: 100}, false, null, 0, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseScroll_401 d = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseScroll({x: 100, y: 100}, false, undefined, 0, 0, 0)       
+        await driver.mouseScroll({x: 100, y: 100}, false, undefined, 0, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseScroll_401 d = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseScroll({x: 100, y: 100}, false, 0, null, 0, 0)       
+        await driver.mouseScroll({x: 100, y: 100}, false, 0, null, 0, 0)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseScroll_401 key1 = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseScroll({x: 100, y: 100}, false, 0, undefined, 0, 0)       
+        await driver.mouseScroll({x: 100, y: 100}, false, 0, undefined, 0, 0)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseScroll_401 key1 = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseScroll({x: 100, y: 100}, false, 0, 0, null, 0)       
+        await driver.mouseScroll({x: 100, y: 100}, false, 0, 0, null, 0)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseScroll_401 key2 = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseScroll({x: 100, y: 100}, false, 0, 0, undefined, 0)       
+        await driver.mouseScroll({x: 100, y: 100}, false, 0, 0, undefined, 0)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseScroll_401 key2 = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseScroll({x: 100, y: 100}, false, 0, 0, 0, null)       
+        await driver.mouseScroll({x: 100, y: 100}, false, 0, 0, 0, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseScroll_401 spe = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseScroll({x: 100, y: 100}, false, 0, 0, 0, undefined)       
+        await driver.mouseScroll({x: 100, y: 100}, false, 0, 0, 0, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseScroll_401 spe = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -3427,21 +3357,21 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi11_Driver_screenCapture_401 start`);
       let driver = Driver.create()
       try {
-        driver.screenCapture('', {left: 100, right: 100, top: 100, bottom: 100})       
+        await driver.screenCapture('', {left: 100, right: 100, top: 100, bottom: 100})       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_screenCapture_401 path = '' error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.screenCapture(null, {left: 100, right: 100, top: 100, bottom: 100})       
+        await driver.screenCapture(null, {left: 100, right: 100, top: 100, bottom: 100})       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_screenCapture_401 path = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.screenCapture(undefined, {left: 100, right: 100, top: 100, bottom: 100})       
+        await driver.screenCapture(undefined, {left: 100, right: 100, top: 100, bottom: 100})       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_screenCapture_401 path = undefined error, ${JSON.stringify(error)}`);
@@ -3449,14 +3379,14 @@ export default function abilityTest() {
       }
       try {
         let savePath = '/data/storage/el2/base/cache/screenCapture_401.png'        
-        driver.screenCapture(savePath, null)       
+        await driver.screenCapture(savePath, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_screenCapture_401 rect = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
         let savePath = '/data/storage/el2/base/cache/screenCapture_402.png'        
-        driver.screenCapture(savePath, undefined)       
+        await driver.screenCapture(savePath, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_screenCapture_401 rect = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -3476,39 +3406,39 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi11_Driver_mouseDoubleClick_401 start`);
       let driver = Driver.create()
       try {
-        driver.mouseDoubleClick(null, MouseButton.MOUSE_BUTTON_MIDDLE, 0, 0)       
+        await driver.mouseDoubleClick(null, MouseButton.MOUSE_BUTTON_MIDDLE, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseDoubleClick_401 point = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseDoubleClick(undefined, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0)       
+        await driver.mouseDoubleClick(undefined, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseDoubleClick_401 point = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseDoubleClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, null, 0)       
+        await driver.mouseDoubleClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, null, 0)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseDoubleClick_401 key1 = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseDoubleClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, undefined, 0)       
+        await driver.mouseDoubleClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, undefined, 0)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseDoubleClick_401 key1 = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseDoubleClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, null)       
+        await driver.mouseDoubleClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseDoubleClick_401 key2 = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseDoubleClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, undefined)       
+        await driver.mouseDoubleClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseDoubleClick_401 key2 = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -3528,39 +3458,39 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi11_Driver_mouseLongClick_401 start`);
       let driver = Driver.create()
       try {
-        driver.mouseLongClick(null, MouseButton.MOUSE_BUTTON_MIDDLE, 0, 0)       
+        await driver.mouseLongClick(null, MouseButton.MOUSE_BUTTON_MIDDLE, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseLongClick_401 point = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseLongClick(undefined, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0)       
+        await driver.mouseLongClick(undefined, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseLongClick_401 point = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, null, 0)       
+        await driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, null, 0)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseLongClick_401 key1 = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, undefined, 0)       
+        await driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, undefined, 0)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseLongClick_401 key1 = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, null)       
+        await driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseLongClick_401 key2 = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, undefined)       
+        await driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseLongClick_401 key2 = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -3580,57 +3510,57 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 start`);
       let driver = Driver.create()
       try {
-        driver.mouseLongClick(null, MouseButton.MOUSE_BUTTON_MIDDLE, 0, 0, 1600)       
+        await driver.mouseLongClick(null, MouseButton.MOUSE_BUTTON_MIDDLE, 0, 0, 1600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 point = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseLongClick(undefined, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0, 1600)       
+        await driver.mouseLongClick(undefined, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0, 1600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 point = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_MIDDLE, null, 0, 1600)       
+        await driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_MIDDLE, null, 0, 1600)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 key1 = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_LEFT, undefined, 0, 1600)       
+        await driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_LEFT, undefined, 0, 1600)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 key1 = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_LEFT, 0, null, 1600)       
+        await driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_LEFT, 0, null, 1600)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 key2 = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, undefined, 1600)       
+        await driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, undefined, 1600)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 key2 = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0, null)       
+        await driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 spe = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0, undefined)       
+        await driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 spe = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0, 500)       
+        await driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_RIGHT, 0, 0, 500)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 spe = 500 error, ${JSON.stringify(error)}`);
@@ -3651,41 +3581,41 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 start`);
       let driver = Driver.create()
       try {
-        driver.mouseMoveWithTrack(null, {x: 100, y: 100}, 600)       
+        await driver.mouseMoveWithTrack(null, {x: 100, y: 100}, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 from = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseMoveWithTrack(undefined, {x: 100, y: 100}, 600)       
+        await driver.mouseMoveWithTrack(undefined, {x: 100, y: 100}, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 from = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseMoveWithTrack({x: 100, y: 100}, null, 600)       
+        await driver.mouseMoveWithTrack({x: 100, y: 100}, null, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 to = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseMoveWithTrack({x: 100, y: 100}, undefined, 600)       
+        await driver.mouseMoveWithTrack({x: 100, y: 100}, undefined, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 to = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseMoveWithTrack({x: 100, y: 100}, {x: 100, y: 100}, null)       
+        await driver.mouseMoveWithTrack({x: 100, y: 100}, {x: 100, y: 100}, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 spe = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseMoveWithTrack({x: 100, y: 100}, {x: 100, y: 100}, undefined)       
+        await driver.mouseMoveWithTrack({x: 100, y: 100}, {x: 100, y: 100}, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 spe = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -3705,41 +3635,41 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 start`);
       let driver = Driver.create()
       try {
-        driver.mouseDrag(null, {x: 100, y: 100}, 600)       
+        await driver.mouseDrag(null, {x: 100, y: 100}, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 from = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseDrag(undefined, {x: 100, y: 100}, 600)       
+        await driver.mouseDrag(undefined, {x: 100, y: 100}, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 from = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseDrag({x: 100, y: 100}, null, 600)       
+        await driver.mouseDrag({x: 100, y: 100}, null, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 to = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseDrag({x: 100, y: 100}, undefined, 600)       
+        await driver.mouseDrag({x: 100, y: 100}, undefined, 600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 to = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, null)       
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 spe = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, undefined)       
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 spe = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -3759,59 +3689,59 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 start`);
       let driver = Driver.create()
       try {
-        driver.mouseDrag(null, {x: 100, y: 100}, 600, 1600)       
+        await driver.mouseDrag(null, {x: 100, y: 100}, 600, 1600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 from = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseDrag(undefined, {x: 100, y: 100}, 600, 1600)       
+        await driver.mouseDrag(undefined, {x: 100, y: 100}, 600, 1600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 from = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseDrag({x: 100, y: 100}, null, 600, 1600)       
+        await driver.mouseDrag({x: 100, y: 100}, null, 600, 1600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 to = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseDrag({x: 100, y: 100}, undefined, 600, 1600)       
+        await driver.mouseDrag({x: 100, y: 100}, undefined, 600, 1600)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 to = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, null, 1600)       
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, null, 1600)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 spe = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, undefined, 1600)       
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, undefined, 1600)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 spe = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, 500, null)       
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, 500, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 dur = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, 500, undefined)       
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, 500, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 dur = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, 500, 1599)
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, 500, 1599)
         expect().assertFail();               
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 dur = 1599 error, ${JSON.stringify(error)}`);
@@ -3832,35 +3762,35 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi11_Driver_inputText_401 start`);
       let driver = Driver.create()
       try {
-        driver.inputText(null, 'hello')       
+        await driver.inputText(null, 'hello')       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_inputText_401 point = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.inputText(undefined, 'hello')       
+        await driver.inputText(undefined, 'hello')       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_inputText_401 point = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.inputText({x: 100, y: 100}, null)       
+        await driver.inputText({x: 100, y: 100}, null)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_inputText_401 text = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.inputText({x: 100, y: 100}, undefined)       
+        await driver.inputText({x: 100, y: 100}, undefined)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_inputText_401 text = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.inputText({x: 100, y: 100}, '')       
+        await driver.inputText({x: 100, y: 100}, '')       
       } catch (error) {
         console.log(`${TestTag}, testApi11_Driver_inputText_401 text = '' error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -3880,47 +3810,47 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi20_Driver_inputText_401 start`);
       let driver = Driver.create()
       try {
-        driver.inputText(null, 'hello', {addition: false})       
+        await driver.inputText(null, 'hello', {addition: false})       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_inputText_401 point = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.inputText(undefined, 'hello', {addition: false})       
+        await driver.inputText(undefined, 'hello', {addition: false})       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_inputText_401 point = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.inputText({x: 100, y: 100}, null, {addition: false})       
+        await driver.inputText({x: 100, y: 100}, null, {addition: false})       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_inputText_401 text = null error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.inputText({x: 100, y: 100}, undefined, {addition: false})       
+        await driver.inputText({x: 100, y: 100}, undefined, {addition: false})       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_inputText_401 text = undefined error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       }
       try {
-        driver.inputText({x: 100, y: 100}, '', {addition: false})       
+        await driver.inputText({x: 100, y: 100}, '', {addition: false})       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_inputText_401 text = '' error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.inputText({x: 100, y: 100}, 'Hello', null)       
+        await driver.inputText({x: 100, y: 100}, 'Hello', null)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_inputText_401 model = null error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       try {
-        driver.inputText({x: 100, y: 100}, 'Hello', undefined)       
+        await driver.inputText({x: 100, y: 100}, 'Hello', undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_inputText_401 model = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
