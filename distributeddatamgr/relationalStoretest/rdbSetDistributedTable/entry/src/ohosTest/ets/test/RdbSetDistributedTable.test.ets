@@ -410,7 +410,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setDistributedTables EMPLOYEE INVALID_VERSION failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).assertEqual(401);
+          expect(err.code == 401).assertTrue();
         }
       } 
       console.log(TAG + "************* setDistributedTableTest0006 end *************");  
@@ -949,7 +949,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).assertEqual(801);
+          expect(err.code == 801).assertTrue();
         } 
       } 
       console.log(TAG + "************* setCloudDistributedTableTest0002 end *************");  
@@ -1012,7 +1012,7 @@ export default function RdbSetDistributedTable() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
-          expect(err.code).assertEqual(401);
+          expect(err.code == 401).assertTrue();
         } 
       }
       console.log(TAG + "************* setCloudDistributedTableTest0004 end *************");  
