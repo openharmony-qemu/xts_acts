@@ -4871,26 +4871,14 @@ export default function UiTest() {
             let Button4 = await driver.findComponent(BY.text('ext', MatchPattern.CONTAINS))
             expect(await Button4.getText() == 'next page').assertTrue()
             let btn5 = await driver.findComponent(BY.text('').type('Button'))
-            if (btn5 == null) {
-                let scroll = await driver.findComponent(BY.type('Scroll'))
-                btn5 = scroll.scrollSearch(BY.text('').type('Button'))
-            }
             let btn5Msg = await btn5.getText()
             console.log(`#{TestTag}, testMatchPattern btn5Msg，${JSON.stringify(btn5Msg)}`)
             expect(btn5Msg).assertEqual('')
-            let btn6 = driver.findComponent(BY.text('next \\w{2, 6}', MatchPattern.REG_EXP))
-             if (btn6 == null) {
-                let scroll = await driver.findComponent(BY.type('Scroll'))
-                btn6 = driver.findComponent(BY.text('next \\w{2, 6}', MatchPattern.REG_EXP))
-            }
+            let btn6 = await driver.findComponent(BY.text('next page', MatchPattern.REG_EXP))
             let btn6Msg = await btn6.getText()
              console.log(`#{TestTag}, testMatchPattern btn6Msg${JSON.stringify(btn6Msg)}`)           
             expect(btn6Msg).assertEqual('next page')
-            let btn7 = driver.findComponent(BY.text('next \\w{2, 6}', MatchPattern.REG_EXP_ICASE))
-             if (btn7 == null) {
-                let scroll = await driver.findComponent(BY.type('Scroll'))
-                btn7 = driver.findComponent(BY.text('next \\w{2, 6}', MatchPattern.REG_EXP_ICASE))
-            }
+            let btn7 = await driver.findComponent(BY.text('next page', MatchPattern.REG_EXP_ICASE))
             let btn7Msg = await btn7.getText()
              console.log(`#{TestTag}, testMatchPattern btn7Msg${JSON.stringify(btn7Msg)}`)           
             expect(btn7Msg).assertEqual('next page')
