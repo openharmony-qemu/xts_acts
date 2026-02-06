@@ -56,19 +56,31 @@ export default function SearchEnableKeyboardOnFocusTest() {
         // 获取设置了 enableKeyboardOnFocus(null) 的 Search 组件信息
         let strJson = getInspectorByKey('searchEnableKeyboardOnFocusNull');
         let obj: Record<string, Object> = JSON.parse(strJson);
-        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_NULL_001] component obj is: " + JSON.stringify(obj));
+        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_NULL_001] component obj is: " + 
+          JSON.stringify(obj));
 
         // 验证组件类型
         expect(obj.$type).assertEqual('Search');
+        let strJson2 = getInspectorByKey('searchEnableKeyboardOnFocusDefault');
+        let obj2: Record<string, Object> = JSON.parse(strJson2);
+        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_NULL_001] component obj is: " + 
+          JSON.stringify(obj2));
 
         // 验证 enableKeyboardOnFocus 属性值（null 被视为 falsy 值，等同于 false）
         let attrs = obj['$attrs'] as Record<string, Object>;
         let enableKeyboardOnFocusValue = attrs ? attrs['enableKeyboardOnFocus'] : undefined;
-        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_NULL_001] enableKeyboardOnFocus value: " + JSON.stringify(enableKeyboardOnFocusValue));
-        // null 作为 boolean 参数时，应被转换为 false 或默认值 true
-        expect(enableKeyboardOnFocusValue == undefined).assertTrue();
+        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_NULL_001] enableKeyboardOnFocus value: " +
+          JSON.stringify(enableKeyboardOnFocusValue));
 
-        console.info('[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_NULL_001] Search component with enableKeyboardOnFocus(null) is rendered correctly');
+        let attrs2 = obj2['$attrs'] as Record<string, Object>;
+        let enableKeyboardOnFocusValue2 = attrs2 ? attrs2['enableKeyboardOnFocus'] : undefined;
+        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_NULL_001] enableKeyboardOnFocus value: " +
+          JSON.stringify(enableKeyboardOnFocusValue2));
+        // null 作为 boolean 参数时，应被转换为 false 或默认值 true
+        expect(enableKeyboardOnFocusValue).assertEqual(enableKeyboardOnFocusValue2);
+
+        console.info('[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_NULL_001] Search component 
+          with enableKeyboardOnFocus(null) is rendered correctly');
       } catch (err) {
         console.error(`[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_NULL_001] error: ${JSON.stringify(err)}`);
       }
@@ -92,19 +104,31 @@ export default function SearchEnableKeyboardOnFocusTest() {
         // 获取设置了 enableKeyboardOnFocus(undefined) 的 Search 组件信息
         let strJson = getInspectorByKey('searchEnableKeyboardOnFocusUndefined');
         let obj: Record<string, Object> = JSON.parse(strJson);
-        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_UNDEFINED_001] component obj is: " + JSON.stringify(obj));
+        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_UNDEFINED_001] component obj is: " + 
+          JSON.stringify(obj));
 
         // 验证组件类型
         expect(obj.$type).assertEqual('Search');
+        let strJson2 = getInspectorByKey('searchEnableKeyboardOnFocusDefault');
+        let obj2: Record<string, Object> = JSON.parse(strJson2);
+        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_UNDEFINED_001] component obj is: " + 
+          JSON.stringify(obj2));
 
-        // 验证 enableKeyboardOnFocus 属性值（undefined 应保持默认值 true）
+        // 验证 enableKeyboardOnFocus 属性值（undefined 被视为 falsy 值，等同于 false）
         let attrs = obj['$attrs'] as Record<string, Object>;
         let enableKeyboardOnFocusValue = attrs ? attrs['enableKeyboardOnFocus'] : undefined;
-        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_UNDEFINED_001] enableKeyboardOnFocus value: " + JSON.stringify(enableKeyboardOnFocusValue));
-        // undefined 作为 boolean 参数时，应保持默认值 true
-        expect(enableKeyboardOnFocusValue == undefined).assertTrue();
+        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_UNDEFINED_001] enableKeyboardOnFocus value: " +
+          JSON.stringify(enableKeyboardOnFocusValue));
 
-        console.info('[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_UNDEFINED_001] Search component with enableKeyboardOnFocus(undefined) is rendered correctly');
+        let attrs2 = obj2['$attrs'] as Record<string, Object>;
+        let enableKeyboardOnFocusValue2 = attrs2 ? attrs2['enableKeyboardOnFocus'] : undefined;
+        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_UNDEFINED_001] enableKeyboardOnFocus value: " +
+          JSON.stringify(enableKeyboardOnFocusValue2));
+        // undefined 作为 boolean 参数时，应被转换为 false 或默认值 true
+        expect(enableKeyboardOnFocusValue).assertEqual(enableKeyboardOnFocusValue2);
+
+        console.info('[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_UNDEFINED_001] Search component 
+          with enableKeyboardOnFocus(undefined) is rendered correctly');
       } catch (err) {
         console.error(`[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_PARAM_UNDEFINED_001] error: ${JSON.stringify(err)}`);
       }
@@ -136,18 +160,30 @@ export default function SearchEnableKeyboardOnFocusTest() {
         // 验证组件仍然可以正常渲染
         let strJson = getInspectorByKey('searchEnableKeyboardOnFocusTest');
         let obj: Record<string, Object> = JSON.parse(strJson);
-        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_NULL_001] component obj is: " + JSON.stringify(obj));
+        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_NULL_001] component obj is: " +
+          JSON.stringify(obj));
 
         // 验证组件类型
         expect(obj.$type).assertEqual('Search');
 
         // 验证 enableKeyboardOnFocus 属性值（null 被视为 falsy 值）
+        let strJson2 = getInspectorByKey('searchEnableKeyboardOnFocusDefault');
+        let obj2: Record<string, Object> = JSON.parse(strJson2);
+        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_NULL_001] component obj is: " +
+          JSON.stringify(obj2));
+
+        // 验证 enableKeyboardOnFocus 属性值（null 被视为 falsy 值，等同于 false）
         let attrs = obj['$attrs'] as Record<string, Object>;
         let enableKeyboardOnFocusValue = attrs ? attrs['enableKeyboardOnFocus'] : undefined;
-        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_NULL_001] enableKeyboardOnFocus value: " + JSON.stringify(enableKeyboardOnFocusValue));
-        // 组件应能正常处理 null 值
-        expect(enableKeyboardOnFocusValue == undefined).assertTrue();
+        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_NULL_001] enableKeyboardOnFocus value: " +
+        JSON.stringify(enableKeyboardOnFocusValue));
 
+        let attrs2 = obj2['$attrs'] as Record<string, Object>;
+        let enableKeyboardOnFocusValue2 = attrs2 ? attrs2['enableKeyboardOnFocus'] : undefined;
+        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_NULL_001] enableKeyboardOnFocus value: " +
+        JSON.stringify(enableKeyboardOnFocusValue2));
+        // 组件属性动态切换应能正常处理 null 值
+        expect(enableKeyboardOnFocusValue).assertEqual(enableKeyboardOnFocusValue2);
         console.info('[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_NULL_001] Search handles null value correctly');
       } catch (err) {
         console.error(`[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_NULL_001] error: ${JSON.stringify(err)}`);
@@ -180,19 +216,32 @@ export default function SearchEnableKeyboardOnFocusTest() {
         // 验证组件仍然可以正常渲染
         let strJson = getInspectorByKey('searchEnableKeyboardOnFocusTest');
         let obj: Record<string, Object> = JSON.parse(strJson);
-        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_UNDEFINED_001] component obj is: " + JSON.stringify(obj));
+        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_UNDEFINED_001] component obj is: " + 
+          JSON.stringify(obj));
 
         // 验证组件类型
         expect(obj.$type).assertEqual('Search');
 
         // 验证 enableKeyboardOnFocus 属性值（undefined 应保持默认值）
+        let strJson2 = getInspectorByKey('searchEnableKeyboardOnFocusDefault');
+        let obj2: Record<string, Object> = JSON.parse(strJson2);
+        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_UNDEFINED_001] component obj is: " +
+          JSON.stringify(obj2));
+
+        // 验证 enableKeyboardOnFocus 属性值（undefined 被视为 falsy 值，等同于 false）
         let attrs = obj['$attrs'] as Record<string, Object>;
         let enableKeyboardOnFocusValue = attrs ? attrs['enableKeyboardOnFocus'] : undefined;
-        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_UNDEFINED_001] enableKeyboardOnFocus value: " + JSON.stringify(enableKeyboardOnFocusValue));
-        // 组件应能正常处理 undefined 值，使用默认值
-        expect(enableKeyboardOnFocusValue == undefined).assertTrue();
+        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_UNDEFINED_001] enableKeyboardOnFocus value: " +
+          JSON.stringify(enableKeyboardOnFocusValue));
 
-        console.info('[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_UNDEFINED_001] Search handles undefined value correctly');
+        let attrs2 = obj2['$attrs'] as Record<string, Object>;
+        let enableKeyboardOnFocusValue2 = attrs2 ? attrs2['enableKeyboardOnFocus'] : undefined;
+        console.info("[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_UNDEFINED_001] enableKeyboardOnFocus value: " +
+          JSON.stringify(enableKeyboardOnFocusValue2));
+        // 组件属性动态切换应能正常处理 undefined 值
+        expect(enableKeyboardOnFocusValue).assertEqual(enableKeyboardOnFocusValue2);
+
+        console.info('[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_UNDEFINED_001] undefined value correctly');
       } catch (err) {
         console.error(`[SUB_ARKUI_SEARCH_ENABLEKEYBOARDONFOCUS_BOUNDARY_UNDEFINED_001] error: ${JSON.stringify(err)}`);
       }

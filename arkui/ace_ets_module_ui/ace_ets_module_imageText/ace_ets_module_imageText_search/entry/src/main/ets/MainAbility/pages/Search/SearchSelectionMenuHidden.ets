@@ -51,27 +51,39 @@ struct SearchSelectionMenuHiddenDemo {
       Text(`Current selectionMenuHidden value: ${JSON.stringify(this.selectionMenuHiddenValue)}`)
         .fontSize(16).height('3%')
 
-      // 测试 null 值的 Search
-      Search({
-        value: 'test null',
-        placeholder: 'null test...',
-        controller: new SearchController()
-      })
-        .width('90%')
-        .height('3%')
-        .selectionMenuHidden(null)
-        .key('searchSelectionMenuHiddenNull')
+      Row(){
+        // 测试 默认值的 Search
+        Search({
+          value: 'Default',
+          placeholder: 'null test...',
+          controller: new SearchController()
+        })
+          .width('90%')
+          .height('3%')
+          .key('searchSelectionMenuHiddenDefault')
 
-      // 测试 undefined 值的 Search
-      Search({
-        value: 'test undefined',
-        placeholder: 'undefined test...',
-        controller: new SearchController()
-      })
-        .width('90%')
-        .height('3%')
-        .selectionMenuHidden(undefined)
-        .key('searchSelectionMenuHiddenUndefined')
+        // 测试 null 值的 Search
+        Search({
+          value: 'null',
+          placeholder: 'null test...',
+          controller: new SearchController()
+        })
+          .width('90%')
+          .height('3%')
+          .selectionMenuHidden(null)
+          .key('searchSelectionMenuHiddenNull')
+
+        // 测试 undefined 值的 Search
+        Search({
+          value: 'undefined',
+          placeholder: 'undefined test...',
+          controller: new SearchController()
+        })
+          .width('90%')
+          .height('3%')
+          .selectionMenuHidden(undefined)
+          .key('searchSelectionMenuHiddenUndefined')
+      }      
     }
     .width('100%')
     .height('100%')

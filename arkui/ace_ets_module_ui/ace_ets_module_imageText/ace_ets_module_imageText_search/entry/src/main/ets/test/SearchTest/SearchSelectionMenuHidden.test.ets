@@ -55,7 +55,8 @@ export default function SearchSelectionMenuHiddenTest() {
         // 获取设置了 selectionMenuHidden(null) 的 Search 组件信息
         let strJson = getInspectorByKey('searchSelectionMenuHiddenNull');
         let obj: Record<string, Object> = JSON.parse(strJson);
-        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_NULL_001] component obj is: " + JSON.stringify(obj.$attrs));
+        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_NULL_001] component obj is: " +
+          JSON.stringify(obj.$attrs));
 
         // 验证组件类型
         expect(obj.$type).assertEqual('Search');
@@ -63,11 +64,24 @@ export default function SearchSelectionMenuHiddenTest() {
         // 验证 selectionMenuHidden 属性值（null 被视为 falsy 值，等同于 false）
         let attrs = obj['$attrs'] as Record<string, Object>;
         let selectionMenuHiddenValue = attrs ? attrs['selectionMenuHidden'] : undefined;
-        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_NULL_001] selectionMenuHidden value: " + JSON.stringify(selectionMenuHiddenValue));
-        // null 作为 boolean 参数时，应被转换为 false 或默认值 false
-        expect(selectionMenuHiddenValue == undefined).assertTrue();
+        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_NULL_001] selectionMenuHidden value: " +
+          JSON.stringify(selectionMenuHiddenValue));
 
-        console.info('[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_NULL_001] Search component with selectionMenuHidden(null) is rendered correctly');
+        let strJson2 = getInspectorByKey('searchSelectionMenuHiddenDefault');
+        let obj2: Record<string, Object> = JSON.parse(strJson2);
+        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_NULL_001] component obj is: " +
+        JSON.stringify(obj2.$attrs));
+
+        // 验证 selectionMenuHidden 属性默认值
+        let attrs2 = obj['$attrs'] as Record<string, Object>;
+        let selectionMenuHiddenValue2 = attrs2 ? attrs2['selectionMenuHidden'] : undefined;
+        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_NULL_001] selectionMenuHidden value: " +
+        JSON.stringify(selectionMenuHiddenValue2));
+        // null 作为 boolean 参数时，应被转换为 false 或默认值 false
+        expect(selectionMenuHiddenValue).assertEqual(selectionMenuHiddenValue2);
+
+        console.info('[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_NULL_001] Search component with ' +
+          'selectionMenuHidden(null) is rendered correctly');
       } catch (err) {
         console.error(`[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_NULL_001] error: ${JSON.stringify(err)}`);
       }
@@ -91,7 +105,8 @@ export default function SearchSelectionMenuHiddenTest() {
         // 获取设置了 selectionMenuHidden(undefined) 的 Search 组件信息
         let strJson = getInspectorByKey('searchSelectionMenuHiddenUndefined');
         let obj: Record<string, Object> = JSON.parse(strJson);
-        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_UNDEFINED_001] component obj is: " + JSON.stringify(obj));
+        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_UNDEFINED_001] component obj is: " +
+          JSON.stringify(obj));
 
         // 验证组件类型
         expect(obj.$type).assertEqual('Search');
@@ -99,11 +114,23 @@ export default function SearchSelectionMenuHiddenTest() {
         // 验证 selectionMenuHidden 属性值（undefined 应保持默认值 false）
         let attrs = obj['$attrs'] as Record<string, Object>;
         let selectionMenuHiddenValue = attrs ? attrs['selectionMenuHidden'] : undefined;
-        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_UNDEFINED_001] selectionMenuHidden value: " + JSON.stringify(selectionMenuHiddenValue));
-        // undefined 作为 boolean 参数时，应保持默认值 false
-        expect(selectionMenuHiddenValue == undefined).assertTrue();
+        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_UNDEFINED_001] selectionMenuHidden value: " +
+          JSON.stringify(selectionMenuHiddenValue));
 
-        console.info('[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_UNDEFINED_001] Search component with selectionMenuHidden(undefined) is rendered correctly');
+        let strJson2 = getInspectorByKey('searchSelectionMenuHiddenDefault');
+        let obj2: Record<string, Object> = JSON.parse(strJson2);
+        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_UNDEFINED_001] component obj is: " +
+        JSON.stringify(obj2.$attrs));
+
+        // 验证 selectionMenuHidden 属性默认值
+        let attrs2 = obj['$attrs'] as Record<string, Object>;
+        let selectionMenuHiddenValue2 = attrs2 ? attrs2['selectionMenuHidden'] : undefined;
+        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_UNDEFINED_001] selectionMenuHidden value: " +
+        JSON.stringify(selectionMenuHiddenValue2));
+        // undefined 作为 boolean 参数时，应保持默认值 false
+        expect(selectionMenuHiddenValue).assertEqual(selectionMenuHiddenValue2);
+        console.info('[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_UNDEFINED_001] Search component ' +
+          'with selectionMenuHidden(undefined) is rendered correctly');
       } catch (err) {
         console.error(`[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_PARAM_UNDEFINED_001] error: ${JSON.stringify(err)}`);
       }
@@ -135,7 +162,8 @@ export default function SearchSelectionMenuHiddenTest() {
         // 验证组件仍然可以正常渲染
         let strJson = getInspectorByKey('searchSelectionMenuHiddenTest');
         let obj: Record<string, Object> = JSON.parse(strJson);
-        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_NULL_001] component obj is: " + JSON.stringify(obj));
+        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_NULL_001] component obj is: " +
+          JSON.stringify(obj));
 
         // 验证组件类型
         expect(obj.$type).assertEqual('Search');
@@ -143,10 +171,21 @@ export default function SearchSelectionMenuHiddenTest() {
         // 验证 selectionMenuHidden 属性值（null 被视为 falsy 值）
         let attrs = obj['$attrs'] as Record<string, Object>;
         let selectionMenuHiddenValue = attrs ? attrs['selectionMenuHidden'] : undefined;
-        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_NULL_001] selectionMenuHidden value: " + JSON.stringify(selectionMenuHiddenValue));
-        // 组件应能正常处理 null 值
-        expect(selectionMenuHiddenValue == undefined).assertTrue();
+        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_NULL_001] selectionMenuHidden value: " +
+          JSON.stringify(selectionMenuHiddenValue));
 
+        let strJson2 = getInspectorByKey('searchSelectionMenuHiddenDefault');
+        let obj2: Record<string, Object> = JSON.parse(strJson2);
+        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_NULL_001] component obj is: " +
+        JSON.stringify(obj2.$attrs));
+
+        // 验证 selectionMenuHidden 属性默认值
+        let attrs2 = obj['$attrs'] as Record<string, Object>;
+        let selectionMenuHiddenValue2 = attrs2 ? attrs2['selectionMenuHidden'] : undefined;
+        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_NULL_001] selectionMenuHidden value: " +
+        JSON.stringify(selectionMenuHiddenValue2));
+        // 组件动态传参应能正常处理 null 值
+        expect(selectionMenuHiddenValue).assertEqual(selectionMenuHiddenValue2);
         console.info('[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_NULL_001] Search handles null value correctly');
       } catch (err) {
         console.error(`[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_NULL_001] error: ${JSON.stringify(err)}`);
@@ -179,7 +218,8 @@ export default function SearchSelectionMenuHiddenTest() {
         // 验证组件仍然可以正常渲染
         let strJson = getInspectorByKey('searchSelectionMenuHiddenTest');
         let obj: Record<string, Object> = JSON.parse(strJson);
-        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_UNDEFINED_001] component obj is: " + JSON.stringify(obj));
+        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_UNDEFINED_001] component obj is: " +
+          JSON.stringify(obj));
 
         // 验证组件类型
         expect(obj.$type).assertEqual('Search');
@@ -187,15 +227,25 @@ export default function SearchSelectionMenuHiddenTest() {
         // 验证 selectionMenuHidden 属性值（undefined 应保持默认值）
         let attrs = obj['$attrs'] as Record<string, Object>;
         let selectionMenuHiddenValue = attrs ? attrs['selectionMenuHidden'] : undefined;
-        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_UNDEFINED_001] selectionMenuHidden value: " + JSON.stringify(selectionMenuHiddenValue));
-        // 组件应能正常处理 undefined 值，使用默认值
-        expect(selectionMenuHiddenValue == undefined).assertTrue();
+        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_UNDEFINED_001] selectionMenuHidden value: " +
+          JSON.stringify(selectionMenuHiddenValue));
 
-        console.info('[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_UNDEFINED_001] Search handles undefined value correctly');
+        let strJson2 = getInspectorByKey('searchSelectionMenuHiddenDefault');
+        let obj2: Record<string, Object> = JSON.parse(strJson2);
+        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_UNDEFINED_001] component obj is: " +
+          JSON.stringify(obj2.$attrs));
+
+        // 验证 selectionMenuHidden 属性默认值
+        let attrs2 = obj['$attrs'] as Record<string, Object>;
+        let selectionMenuHiddenValue2 = attrs2 ? attrs2['selectionMenuHidden'] : undefined;
+        console.info("[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_UNDEFINED_001] selectionMenuHidden value: " +
+          JSON.stringify(selectionMenuHiddenValue2));
+        // 组件应能正常处理 undefined 值，使用默认值
+        expect(selectionMenuHiddenValue).assertEqual(selectionMenuHiddenValue2);
+        console.info('[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_UNDEFINED_001] undefined value correctly');
       } catch (err) {
         console.error(`[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_UNDEFINED_001] error: ${JSON.stringify(err)}`);
       }
-
       console.info('[SUB_ARKUI_SEARCH_SELECTIONMENUHIDDEN_BOUNDARY_UNDEFINED_001] END');
       done();
     });

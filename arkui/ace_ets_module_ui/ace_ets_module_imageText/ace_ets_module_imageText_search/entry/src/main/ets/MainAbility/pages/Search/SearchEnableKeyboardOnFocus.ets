@@ -33,6 +33,14 @@ struct SearchEnableKeyboardOnFocusDemo {
       })
         .width('90%')
         .height(50)
+        .key('searchEnableKeyboardOnFocusDefault')
+
+      Search({
+        placeholder: 'Type to search...',
+        controller: this.controller
+      })
+        .width('90%')
+        .height(50)
         .enableKeyboardOnFocus(this.enableKeyboardOnFocusValue)
         .key('searchEnableKeyboardOnFocusTest')
 
