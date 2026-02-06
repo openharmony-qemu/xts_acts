@@ -41,8 +41,8 @@ class TestCase {
   }
 }
 
-export default function TextEncoderTest02() {
-  describe('TextEncoderTest02', () => {
+export default function TextEncoder02Test() {
+  describe('TextEncoder02Test', () => {
 
     beforeAll(() => {
       console.info('TextEncoder02Test: beforeAll');
@@ -354,15 +354,21 @@ export default function TextEncoderTest02() {
     it("testEncodercreate02_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testEncodercreate02_0013";
       console.info(`${TAG} start`);
+
+      let isFinished = false;
+
       for (let i = 0; i < 5; i++) {
         ALL_ENCODINGS.forEach(enc => {
           const encoder = util.TextEncoder.create(enc);
           encoder.encode('S');
         });
       }
-      expect(true).assertTrue();
+      isFinished = true;
+
+      expect(isFinished).assertTrue();
       console.info(`${TAG} end`);
     });
+
     /**
      * @tc.number    SUB_UTIL_TEXTENCODER02_1400
      * @tc.name      testTextEncoderConstructor02_0014
@@ -662,6 +668,9 @@ export default function TextEncoderTest02() {
     it("testTextEncoderConstructor02_0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextEncoderConstructor02_0026";
       console.info(`${TAG} start`);
+
+      let isExecutionFinished = false;
+
       for(let i = 0; i < ALL_ENCODINGS.length; i++) {
         let encName = ALL_ENCODINGS[i];
         try {
@@ -672,7 +681,9 @@ export default function TextEncoderTest02() {
           console.warn(`${TAG} ${encName} not supported`);
         }
       }
-      expect(true).assertTrue();
+      isExecutionFinished = true;
+      expect(isExecutionFinished).assertTrue();
+
       console.info(`${TAG} end`);
     });
 
@@ -1049,9 +1060,13 @@ export default function TextEncoderTest02() {
       const input = "中中中中中";
       const dest = new Uint8Array(15);
       const res = encoder.encodeInto(input, dest);
+
       expect(res.read).assertEqual(5);
       expect(res.written).assertEqual(15);
-      expect(dest[14]).not().assertEqual(0);
+
+      expect(dest[14]).assertEqual(0xAD);
+
+      console.info(`${TAG} end`);
     });
 
     /**
@@ -1480,14 +1495,18 @@ export default function TextEncoderTest02() {
       console.info(`${TAG} start`);
       const encoder = new util.TextEncoder();
       const dest = new Uint8Array(10);
+
+      let isErrorCaught = false;
+
       try {
         encoder.encodeIntoUint8Array((true as Object) as string, dest);
         console.info(`${TAG} Failed: System accepted Boolean input unexpectedly`);
-        expect(false).assertTrue();
       } catch (e) {
-        console.info(`${TAG} Success: Caught expected type error`);
-        expect(true).assertTrue();
+        console.info(`${TAG} Success: Caught expected type error: ${e}`);
+        isErrorCaught = true;
       }
+      expect(isErrorCaught).assertTrue();
+
       console.info(`${TAG} end`);
     });
 

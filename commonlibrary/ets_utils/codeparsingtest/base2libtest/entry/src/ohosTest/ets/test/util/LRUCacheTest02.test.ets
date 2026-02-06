@@ -1136,20 +1136,17 @@ export default function LRUCache02Test() {
      */
     it('testLRUCacheClear02_0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testLRUCacheClear02_0034";
-      console.log(TAG + " start");
+      console.info(TAG + " start");
 
       const cache = new util.LRUCache<string, string>(5);
       expect(cache.get("nonExistentKey")).assertUndefined();
 
+      cache.clear();
 
-      try {
-        cache.clear();
-        expect(true).assertTrue();
-      } catch (error) {
-        expect(false).assertTrue();
-      }
+      expect(cache.length).assertEqual(0);
+      expect(cache.isEmpty()).assertTrue();
 
-      console.log(TAG + " end");
+      console.info(TAG + " end");
     });
 
     /**
@@ -1282,27 +1279,25 @@ export default function LRUCache02Test() {
      */
     it('testLRUCacheClear02_0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testLRUCacheClear02_0039";
-      console.log(TAG + " start");
+      console.info(TAG + " start");
 
       const cache = new util.LRUCache<string, string>(5);
 
       cache.put("key1", "value1");
       cache.put("key2", "value2");
 
-      try {
-        cache.clear();
-        expect(cache.get("key1")).assertUndefined();
+      cache.clear();
+      expect(cache.get("key1")).assertUndefined();
 
-        cache.clear();
-        expect(cache.get("key2")).assertUndefined();
+      cache.clear();
+      expect(cache.get("key2")).assertUndefined();
 
-        cache.clear();
-        expect(true).assertTrue();
-      } catch (error) {
-        expect(false).assertTrue();
-      }
+      cache.clear();
 
-      console.log(TAG + " end");
+      expect(cache.length).assertEqual(0);
+      expect(cache.isEmpty()).assertTrue();
+
+      console.info(TAG + " end");
     });
 
     /**
@@ -1454,32 +1449,29 @@ export default function LRUCache02Test() {
     /**
      * @tc.number    SUB_UTIL_LRU_CACHE02_4500
      * @tc.name      testLRUCacheClear02_0045
-     * @tc.desc      Verify clear method with error handling
+     * @tc.desc      Verify clear method with error handling (Sequence check)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it('testLRUCacheClear02_0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testLRUCacheClear02_0045";
-      console.log(TAG + " start");
+      console.info(TAG + " start");
 
       const cache = new util.LRUCache<string, string>(5);
 
-      try {
-        cache.clear();
-        expect(cache.get("anyKey")).assertUndefined();
+      cache.clear();
+      expect(cache.get("anyKey")).assertUndefined();
 
-        cache.put("key1", "value1");
-        cache.clear();
-        expect(cache.get("key1")).assertUndefined();
+      cache.put("key1", "value1");
+      cache.clear();
+      expect(cache.get("key1")).assertUndefined();
 
-        cache.clear();
-        expect(true).assertTrue();
-      } catch (error) {
-        expect(false).assertTrue();
-      }
+      cache.clear();
 
-      console.log(TAG + " end");
+      expect(cache.length).assertEqual(0);
+
+      console.info(TAG + " end");
     });
 
     /**

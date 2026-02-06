@@ -6,6 +6,19 @@ import StringDecoder02Test from './util/StringDecoderTest02.test'
 import RationalNumberTest from './util/RationalNumberTest.test'
 import Util1Test from './util/Util.test';
 import TextEncoderTest from './util/TextEncoderTest.test'
+
+import UtilTest01 from './util/Base64HelperTest02.test';
+import UtilTest02 from './util/Base64HelperTest03.test';
+import UtilTest03 from './util/LRUCacheTest02.test';
+import UtilTest04 from './util/LRUCacheTest03.test';
+import UtilTest05 from './util/LRUCacheTest04.test';
+import UtilTest06 from './util/LRUCacheTest05.test';
+import UtilTest07 from './util/RationalNumberTest02.test';
+import UtilTest08 from './util/RationalNumberTest03.test';
+import UtilTest09 from './util/RationalNumberTest04.test';
+import UtilTest10 from './util/TextDecoderTest02.test';
+import UtilTest11 from './util/TextEncoderTest02.test';
+
 import XmlTest01 from "./xml/XmlTest01.test"
 import XmlTest02 from "./xml/XmlTest02.test"
 import XmlTest03 from "./xml/XmlTest03.test"
@@ -161,6 +174,18 @@ export default function testsuite() {
   RationalNumberTest(); 
   TextEncoderTest();
   Util1Test();
+  UtilTest01();
+  UtilTest02();
+  UtilTest03();
+  UtilTest04();
+  UtilTest05();
+  UtilTest06();
+  UtilTest07();
+  UtilTest08();
+  UtilTest09();
+  UtilTest10();
+  UtilTest11();
+
   XmlTest01();
   XmlTest02();
   XmlTest03();

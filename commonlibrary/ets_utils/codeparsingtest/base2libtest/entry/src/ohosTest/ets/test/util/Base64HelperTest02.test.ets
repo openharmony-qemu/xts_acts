@@ -73,12 +73,13 @@ export default function Base64Helper02Test() {
       const TAG = "testEncodeSync02_0003";
       console.info(TAG + " start");
       let base64Helper = new util.Base64Helper();
-      // 'ABC' -> "QUJD"
       let array = new Uint8Array([65, 66, 67]);
       let result = base64Helper.encodeSync(array);
       console.info("result = " + result);
       expect(result.length).assertEqual(4);
-      expect(result[3]).not().assertEqual(61);
+
+      expect(result[3]).assertEqual(68);
+
       console.info(TAG + " end");
     });
 
@@ -1105,14 +1106,16 @@ export default function Base64Helper02Test() {
       console.info(TAG + " start");
       try {
         let base64Helper = new util.Base64Helper();
-        let array = new Uint8Array([65, 66, 67]);
+        let array = new Uint8Array([65, 66, 67]); 
         let result = await base64Helper.encode(array);
         console.info("result = " + result);
+
         expect(result.length).assertEqual(4);
-        expect(result[3]).not().assertEqual(61);
+        expect(result[3]).assertEqual(68);
         done();
       } catch (e) {
-        expect(false).assertTrue();
+        console.error(TAG + " failed: " + e);
+        expect().assertFail();
         done();
       }
     });
@@ -1231,7 +1234,8 @@ export default function Base64Helper02Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEncode02_0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testEncode02_0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       const TAG = "testEncode02_0056";
       console.info(TAG + " start");
       try {
@@ -1257,7 +1261,8 @@ export default function Base64Helper02Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEncode02_0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testEncode02_0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       const TAG = "testEncode02_0057";
       console.info(TAG + " start");
       try {
@@ -1285,7 +1290,8 @@ export default function Base64Helper02Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEncode02_0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testEncode02_0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       const TAG = "testEncode02_0058";
       console.info(TAG + " start");
       try {
@@ -1312,7 +1318,8 @@ export default function Base64Helper02Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEncode02_0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testEncode02_0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       const TAG = "testEncode02_0059";
       console.info(TAG + " start");
       try {
@@ -1332,13 +1339,14 @@ export default function Base64Helper02Test() {
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER02_6000
-     * @tc.name      testEncode02_0061
+     * @tc.name      testEncode02_0060
      * @tc.desc      [Performance] Verify encoding 1KB buffer
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEncode02_0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testEncode02_0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       const TAG = "testEncode02_0060";
       console.info(TAG + " start");
       try {
@@ -1363,7 +1371,8 @@ export default function Base64Helper02Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEncode02_0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testEncode02_0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       const TAG = "testEncode02_0061";
       console.info(TAG + " start");
       try {
@@ -1388,7 +1397,8 @@ export default function Base64Helper02Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEncode02_0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testEncode02_0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       const TAG = "testEncode02_0062";
       console.info(TAG + " start");
       try {
@@ -1413,7 +1423,8 @@ export default function Base64Helper02Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEncode02_0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testEncode02_0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       const TAG = "testEncode02_0063";
       console.info(TAG + " start");
       try {
@@ -1438,7 +1449,8 @@ export default function Base64Helper02Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEncode02_0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testEncode02_0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       const TAG = "testEncode02_0064";
       console.info(TAG + " start");
       try {
@@ -1463,7 +1475,8 @@ export default function Base64Helper02Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEncode02_0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testEncode02_0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       const TAG = "testEncode02_0065";
       console.info(TAG + " start");
       try {
@@ -1490,7 +1503,8 @@ export default function Base64Helper02Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEncode02_0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testEncode02_0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       const TAG = "testEncode02_0066";
       console.info(TAG + " start");
       try {
@@ -1514,7 +1528,8 @@ export default function Base64Helper02Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEncode02_0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testEncode02_0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       const TAG = "testEncode02_0067";
       console.info(TAG + " start");
       try {
@@ -1538,7 +1553,8 @@ export default function Base64Helper02Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEncode02_0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testEncode02_0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       const TAG = "testEncode02_0068";
       console.info(TAG + " start");
       try {
@@ -1560,7 +1576,8 @@ export default function Base64Helper02Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEncode02_0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testEncode02_0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       const TAG = "testEncode02_0069";
       console.info(TAG + " start");
       try {
@@ -1585,7 +1602,8 @@ export default function Base64Helper02Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEncode02_0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testEncode02_0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       const TAG = "testEncode02_0070";
       console.info(TAG + " start");
       try {
@@ -1612,7 +1630,8 @@ export default function Base64Helper02Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testEncode02_0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testEncode02_0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
       const TAG = "testEncode02_0071";
       console.info(TAG + " start");
       try {
@@ -1631,14 +1650,15 @@ export default function Base64Helper02Test() {
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER02_7200
-     * @tc.name      testBase64HelperDecoder0072
+     * @tc.name      testBase64HelperDecoder02_0072
      * @tc.desc      [Padding] Verify decoding string with 2 padding chars "QQ==" -> 'A'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperDecoder0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const TAG = "testBase64HelperDecoder0072";
+    it("testBase64HelperDecoder02_0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      const TAG = "testBase64HelperDecoder02_0072";
       console.info(TAG + " start");
       try {
         let base64Helper = new util.Base64Helper();
@@ -1657,14 +1677,15 @@ export default function Base64Helper02Test() {
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER02_7300
-     * @tc.name      testBase64HelperDecoder0073
+     * @tc.name      testBase64HelperDecoder02_0073
      * @tc.desc      [Padding] Verify decoding string with 1 padding char "QUI=" -> 'AB'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperDecoder0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const TAG = "testBase64HelperDecoder0073";
+    it("testBase64HelperDecoder02_0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      const TAG = "testBase64HelperDecode02_0073";
       console.info(TAG + " start");
       try {
         let base64Helper = new util.Base64Helper();
@@ -1683,14 +1704,15 @@ export default function Base64Helper02Test() {
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER02_7400
-     * @tc.name      testBase64HelperDecoder0074
+     * @tc.name      testBase64HelperDecoder02_0074
      * @tc.desc      [Padding] Verify decoding string with 0 padding chars "QUJD" -> 'ABC'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperDecoder0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const TAG = "testBase64HelperDecoder0074";
+    it("testBase64HelperDecoder02_0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      const TAG = "testBase64HelperDecoder02_0074";
       console.info(TAG + " start");
       try {
         let base64Helper = new util.Base64Helper();
@@ -1709,14 +1731,15 @@ export default function Base64Helper02Test() {
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER02_7500
-     * @tc.name      testBase64HelperDecoder0075
+     * @tc.name      testBase64HelperDecoder02_0075
      * @tc.desc      [Content] Verify decoding standard Base64 symbols (+/) -> "+/w="
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperDecoder0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const TAG = "testBase64HelperDecoder0075";
+    it("testBase64HelperDecoder02_0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      const TAG = "testBase64HelperDecoder02_0075";
       console.info(TAG + " start");
       try {
         let base64Helper = new util.Base64Helper();
@@ -1734,14 +1757,15 @@ export default function Base64Helper02Test() {
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER02_7600
-     * @tc.name      testBase64HelperDecoder0076
+     * @tc.name      testBase64HelperDecoder02_0076
      * @tc.desc      [Content] Verify decoding result is Null bytes "AA==" -> 0x00
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperDecoder0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const TAG = "testBase64HelperDecoder0076";
+    it("testBase64HelperDecoder02_0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      const TAG = "testBase64HelperDecoder02_0076";
       console.info(TAG + " start");
       try {
         let base64Helper = new util.Base64Helper();
@@ -1758,14 +1782,15 @@ export default function Base64Helper02Test() {
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER02_7700
-     * @tc.name      testBase64HelperDecoder0077
+     * @tc.name      testBase64HelperDecoder02_0077
      * @tc.desc      [Content] Verify decoding result is Max bytes "////" -> 0xFF, 0xFF, 0xFF
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperDecoder0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const TAG = "testBase64HelperDecoder0077";
+    it("testBase64HelperDecoder02_0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      const TAG = "testBase64HelperDecoder02_0077";
       console.info(TAG + " start");
       try {
         let base64Helper = new util.Base64Helper();
@@ -1784,14 +1809,15 @@ export default function Base64Helper02Test() {
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER02_7800
-     * @tc.name      testBase64HelperDecoder0078
+     * @tc.name      testBase64HelperDecoder02_0078
      * @tc.desc      [Memory] Verify decoding from a Subarray view (Buffer Offset)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperDecoder0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const TAG = "testBase64HelperDecoder0078";
+    it("testBase64HelperDecoder02_0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      const TAG = "testBase64HelperDecoder02_0078";
       console.info(TAG + " start");
       try {
         let base64Helper = new util.Base64Helper();
@@ -1809,14 +1835,15 @@ export default function Base64Helper02Test() {
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER02_7900
-     * @tc.name      testBase64HelperDecoder0079
+     * @tc.name      testBase64HelperDecoder02_0079
      * @tc.desc      [Performance] Verify decoding a larger buffer (1KB Base64)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperDecoder0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const TAG = "testBase64HelperDecoder0079";
+    it("testBase64HelperDecoder02_0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      const TAG = "testBase64HelperDecoder02_0079";
       console.info(TAG + " start");
       try {
         let base64Helper = new util.Base64Helper();
@@ -1833,14 +1860,15 @@ export default function Base64Helper02Test() {
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER02_8000
-     * @tc.name      testBase64HelperDecoder0080
+     * @tc.name      testBase64HelperDecoder02_0080
      * @tc.desc      [Type] Verify return type is Uint8Array instance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperDecoder0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const TAG = "testBase64HelperDecoder0080";
+    it("testBase64HelperDecoder02_0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      const TAG = "testBase64HelperDecoder02_0080";
       console.info(TAG + " start");
       try {
         let base64Helper = new util.Base64Helper();
@@ -1856,14 +1884,15 @@ export default function Base64Helper02Test() {
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER02_8100
-     * @tc.name      testBase64HelperDecoder0081
+     * @tc.name      testBase64HelperDecoder02_0081
      * @tc.desc      [Logic] Verify reusing same instance for sequential calls
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperDecoder0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const TAG = "testBase64HelperDecoder0081";
+    it("testBase64HelperDecoder02_0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      const TAG = "testBase64HelperDecoder02_0081";
       console.info(TAG + " start");
       try {
         let helper = new util.Base64Helper();
