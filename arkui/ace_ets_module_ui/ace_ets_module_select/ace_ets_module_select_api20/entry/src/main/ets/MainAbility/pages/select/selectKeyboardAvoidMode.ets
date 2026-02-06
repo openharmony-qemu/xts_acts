@@ -28,35 +28,6 @@ struct Index {
       value: 'bbb',
     },
     {
-      value: 'ccc',
-    },
-    {
-      value: 'ddd',
-    }
-  ];
-  @State private selectOptions1: SelectOption[] = [
-    {
-      value: 'bbb',
-    },
-    {
-      value: 'ccc',
-    },
-    {
-      value: 'bbb',
-    },
-    {
-      value: 'ccc',
-    },
-    {
-      value: 'bbb',
-    },
-    {
-      value: 'ccc',
-    },
-    {
-      value: 'bbb',
-    },
-    {
       value: 'ddd',
     }
   ];
