@@ -33,7 +33,16 @@ struct KeyboardAvoidModeNone {
   }
 
   build() {
-    RelativeContainer() {
+    Flex() {
+      Button('显示软键盘')
+              .height(20)
+              .fontSize(20)
+              .margin({bottom:10})
+              .onClick(() => {
+                // 显示软键盘
+                this.hideKeyboard();
+              })
+              .id('hideBtn')
       Button('Click Show Menu')
         // .alignRules({
         //   center: { anchor: '__container__', align: VerticalAlign.Center },
@@ -67,6 +76,14 @@ struct KeyboardAvoidModeNone {
       })
     } catch (err) {
       console.error('Fail to attach')
+    }
+  }
+  async hideKeyboard() {
+    try {
+      await this.inputController.detach();
+
+    } catch (err) {
+      console.error('Fail to hide keyboard: ' + JSON.stringify(err));
     }
   }
 }
