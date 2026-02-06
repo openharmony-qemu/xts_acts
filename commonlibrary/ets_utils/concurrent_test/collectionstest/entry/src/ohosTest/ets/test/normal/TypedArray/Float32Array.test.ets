@@ -14,9 +14,29 @@
  */
 import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { sleep } from '../../TestUtils';
 
 export default function Float32ArrayTest() {
   describe('Float32ArrayTest', () => {
+        // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () => {
+      // Add delay to ensure resources from the previous test case are released
+      await sleep(20);
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
+
     /**
      * @tc.name   testFloat32Array0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FLOAT32ARRAY_0100

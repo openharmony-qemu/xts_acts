@@ -1,6 +1,7 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { sleep } from '../TestUtils';
 
 export default function BitVectorTest() {
   describe('BitVectorTest', () => {
@@ -19,9 +20,9 @@ export default function BitVectorTest() {
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
     })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+    afterAll(async () => {
+      // Add delay to ensure resources from the previous test case are released
+      await sleep(100);
     })
     /**
      * @tc.name   testBitVectorConstructor0001
