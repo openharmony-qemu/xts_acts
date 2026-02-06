@@ -67,7 +67,9 @@ export default class Utils {
         hilog.info(DOMAIN, TAG, `start ${abilityName}-uri:${uri} success.`);
         isSuccessStartAbility = true;
       });
-      await Utils.msSleep(500);
+      hilog.info(DOMAIN, TAG, 'msSleep 500 start');
+      waitForCompletion(async ()=>{await Utils.msSleep(500);});
+      hilog.info(DOMAIN, TAG, 'msSleep 500 end');
     } catch (error) {
       error = error as BusinessError;
       hilog.error(DOMAIN, TAG, `start ${abilityName}-uri:${uri} fail. message: ${error?.message}`);
